@@ -2320,7 +2320,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
@@ -2441,7 +2441,7 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
