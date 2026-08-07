@@ -30902,8 +30902,8 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. No c
 **Do you service non-Mercury motors?**
 No. For engine repairs, we only service Mercury and Mercruiser. We can't help with Yamaha, Honda, or Suzuki.
 
-**Can I store my boat with you year-round?**
-Outdoor storage with shrinkwrap, yes. It makes logistical sense for Whitby customers who are boating on Rice Lake or the Kawarthas, since the boat stays close to the water.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **What's the best time to drive up?**
 Weekend mornings before 10 a.m. are reliably smooth from Whitby. Weekday mornings work too. Avoid driving back Saturday or Sunday afternoon during peak summer if you can, the 401 west can back up even from Bowmanville and Oshawa.
@@ -35137,7 +35137,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
       { question: 'Is there a Mercury Premier dealer in Lindsay?', answer: 'Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Premier Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Premier-tier service, HBW is the closest option. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'Is HBW worth the 45-minute drive for routine service?', answer: 'For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.' },
       { question: 'Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?', answer: 'Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist.' },
-      { question: 'Can I store my boat at HBW year-round if I am based in Lindsay?', answer: 'Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years.' },
+      { question: 'Can I store my boat at HBW through the winter if I am based in Lindsay?', answer: "Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1." },
       { question: 'Does HBW install ProKickers on Sturgeon Lake fishing boats?', answer: 'Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing boats. A full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.' },
     ],
     content: `## Quick Answer
@@ -35245,8 +35245,8 @@ Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls lan
 **Can I drop off at HBW before a Trent-Severn cruise?**
 Yes, many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor with shrinkwrap. For Lindsay cottagers who want to skip the Kawartha storage market and pick up the boat already at Rice Lake in spring, this works well.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **Do you offer pickup/delivery?**
 No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site.

@@ -129,9 +129,9 @@ For routine oil changes and basic seasonal work, maybe not. For a major repower,
 
 Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist.
 
-### Can I store my boat at HBW year-round if I am based in Lindsay?
+### Can I store my boat at HBW through the winter if I am based in Lindsay?
 
-Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years.
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 ### Does HBW install ProKickers on Sturgeon Lake fishing boats?
 

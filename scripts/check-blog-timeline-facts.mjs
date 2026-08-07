@@ -39,7 +39,7 @@ function extractArticles(src) {
     const block = src.slice(positions[i].start, positions[i + 1].start);
     const content = readTemplate(block, 'content');
     const description = readQuoted(block, 'description');
-    articles.push({ slug: positions[i].slug, content, description, blockStart: positions[i].start });
+    articles.push({ slug: positions[i].slug, content, description, raw: block, blockStart: positions[i].start });
   }
   return articles;
 }
@@ -797,7 +797,10 @@ for (const file of BLOG_FILES) {
     checkFounder(text, localPush);
     checkAge(text, localPush);
     checkPresent(text, localPush);
-    checkDealerSeasonalClaims(a.slug, text, localPush);
+    // Dealer-page policy also appears in the structured `faqs` array, which is
+    // customer-facing via FAQ schema. Scan the full article block so a corrected
+    // body answer cannot leave a contradictory structured answer behind.
+    checkDealerSeasonalClaims(a.slug, a.raw, localPush);
     checkArticleContract(a.slug, text, localPush);
   }
 }
