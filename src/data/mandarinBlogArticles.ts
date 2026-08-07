@@ -130,7 +130,7 @@ ${ZH_LANGUAGE_NOTE}
     image: '/lovable-uploads/aluminum-fishing-hero-real.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-03',
+    dateModified: '2026-08-07',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
