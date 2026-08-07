@@ -191,7 +191,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || requiresStrokeConfirmation) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || !effectiveEngineType) {
       console.log('Missing required fields');
       return;
     }
@@ -214,7 +214,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
-    if (hbwResult.ok) {
+    if (hbwResult.ok === true) {
       console.log('✅ HBW API returned valuation:', hbwResult.value);
       tradeEstimate = hbwResult.value;
     } else {
@@ -244,7 +244,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
-          stroke: effectiveEngineType!,
+          stroke: effectiveEngineType,
         })
       : undefined;
 

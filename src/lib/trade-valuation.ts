@@ -115,6 +115,16 @@ export type HBWValuationFetchResult =
   | { ok: true; value: HBWValuationResult }
   | { ok: false; reason: HBWValuationFailure };
 
+export interface HBWValuationParams {
+  brand: string;
+  year: number;
+  horsepower?: number;
+  condition: TradeInInfo['condition'];
+  stroke: NonNullable<TradeInInfo['engineType']>;
+  hours?: number;
+  model?: string;
+}
+
 /** Pull an HTTP status off a supabase.functions.invoke error, which wraps the
  *  Response rather than exposing the status directly. */
 async function statusFromInvokeError(error: unknown): Promise<number | null> {
@@ -130,15 +140,7 @@ async function statusFromInvokeError(error: unknown): Promise<number | null> {
  * module global that concurrent callers could overwrite.
  */
 export async function fetchHBWValuationFromInvoker(
-  params: {
-  brand: string;
-  year: number;
-  horsepower?: number;
-  condition: string;
-  stroke: string;
-  hours?: number;
-  model?: string;
-  },
+  params: HBWValuationParams,
   invoke: (name: string, options: { body: Record<string, unknown> }) => Promise<{ data: unknown; error: unknown }>,
 ): Promise<HBWValuationFetchResult> {
   // Build body with only the fields we have. The canonical service can decode HP
@@ -201,15 +203,7 @@ export async function fetchHBWValuationFromInvoker(
 }
 
 /** Fetch a motor valuation from the canonical HBW API through Supabase. */
-export async function fetchHBWValuation(params: {
-  brand: string;
-  year: number;
-  horsepower?: number;
-  condition: string;
-  stroke?: string;
-  hours?: number;
-  model?: string;
-}): Promise<HBWValuationFetchResult> {
+export async function fetchHBWValuation(params: HBWValuationParams): Promise<HBWValuationFetchResult> {
   try {
     // Lazy import to avoid pulling the supabase client into non-React contexts
     const { supabase } = await import('@/integrations/supabase/client');
