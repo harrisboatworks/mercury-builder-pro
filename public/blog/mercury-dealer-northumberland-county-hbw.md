@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Northumberland HBW"
 description: "Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-07-24
+date_modified: 2026-08-07
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-07  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 
@@ -73,7 +73,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [year-round storage](/blog/boat-storage-kawartha-lakes) means the spring launch is already at the lake.
+Outdoor winter storage with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/boat-storage-kawartha-lakes) leaves it close to Rice Lake when we reopen April 1.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.

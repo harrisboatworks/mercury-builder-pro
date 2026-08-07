@@ -138,7 +138,45 @@ function checkPresent(text, push) {
   }
 }
 
-// R5: article-specific operating contracts that previously drifted back into
+// R5: dealer pages must not imply that storage, service, installations, or
+// customer access operate year-round. Negative statements such as "we don't
+// offer year-round storage" remain allowed because they state the boundary.
+const DEALER_PAGE_SLUG_RX = /^mercury-dealer-/;
+const UNSCOPED_SEASONAL_CLAIMS = [
+  {
+    rx: /\byear-round storage\b/i,
+    rule: 'no-year-round-storage-claim',
+    allow: /\b(?:no|not|never)\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)?n['’]t\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)? not\b[^.\n]{0,80}\byear-round storage\b/i,
+  },
+  {
+    rx: /\byear-round (?:service|installations?|customer access|operations?)\b|\bopen 365\b/i,
+    rule: 'no-year-round-operations-claim',
+  },
+  {
+    rx: /\b(?:offers?|provides?|has) (?:indoor|heated|climate-controlled) storage\b/i,
+    rule: 'outdoor-storage-only',
+  },
+  {
+    rx: /\b(?:service|installations?|repairs?) (?:continues?|runs?|is available) (?:through|all) winter\b/i,
+    rule: 'no-winter-shop-work',
+  },
+];
+function checkDealerSeasonalClaims(slug, text, push) {
+  if (!DEALER_PAGE_SLUG_RX.test(slug)) return;
+  const yearRoundStorageCheck = UNSCOPED_SEASONAL_CLAIMS[0];
+  for (const sentence of sentences(text)) {
+    const match = sentence.match(yearRoundStorageCheck.rx);
+    if (match && !yearRoundStorageCheck.allow.test(sentence)) {
+      push(yearRoundStorageCheck.rule, sentence);
+    }
+  }
+  for (const check of UNSCOPED_SEASONAL_CLAIMS.slice(1)) {
+    const match = text.match(check.rx);
+    if (match) push(check.rule, match[0]);
+  }
+}
+
+// R6: article-specific operating contracts that previously drifted back into
 // customer-facing copy. Keep these semantic and narrow: they protect durable
 // HBW business rules without turning ordinary wording changes into failures.
 const GTA_DRIVE_IN_REQUIRED = [
@@ -759,6 +797,7 @@ for (const file of BLOG_FILES) {
     checkFounder(text, localPush);
     checkAge(text, localPush);
     checkPresent(text, localPush);
+    checkDealerSeasonalClaims(a.slug, text, localPush);
     checkArticleContract(a.slug, text, localPush);
   }
 }

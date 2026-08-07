@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake"
 description: "Mercury Premier dealer for Ajax: Harris Boat Works on Rice Lake, 45 minutes via 401 and 115. Repower, sales, parts, winter storage for Durham Region boat owners."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-07
 keywords: ["mercury dealer ajax","mercury repower ajax","mercury outboard ajax ontario","boat motor service durham region ajax"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-08-07  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw
 
@@ -79,7 +79,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. Ajax customers who boat on Rice Lake or the Kawarthas find year-round storage here makes logistical sense, the boat's already close to the water.
+Outdoor winter storage with shrinkwrap. No indoor storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes after we reopen April 1.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Ajax.

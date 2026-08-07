@@ -30804,7 +30804,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -30860,7 +30860,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 45 minutes, [the year-round storage relationship makes a lot of sense](/blog/winter-storage-near-toronto-hbw), boat stays here, we commission it in spring, you pick it up when Rice Lake is ready.
+Outdoor winter storage with shrinkwrap. No indoor storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes after we reopen April 1.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Whitby.
@@ -30954,7 +30954,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-ajax.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -31011,7 +31011,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. Ajax customers who boat on Rice Lake or the Kawarthas find year-round storage here makes logistical sense, the boat's already close to the water.
+Outdoor winter storage with shrinkwrap. No indoor storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes after we reopen April 1.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Ajax.
@@ -31103,7 +31103,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography of a 115 HP FourStroke on a family pontoon',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -31165,7 +31165,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 40 minutes, year-round storage here makes solid logistical sense for most Oshawa boaters.
+Outdoor winter storage with shrinkwrap. No indoor storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes after we reopen April 1.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you even pick up the phone.
@@ -31260,7 +31260,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-bowmanville.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -31320,7 +31320,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 35 minutes, year-round storage here is one of the more practical arrangements for Bowmanville boat owners. Drop off in October, pick up in spring, done.
+Outdoor winter storage with shrinkwrap. No indoor storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes after we reopen April 1.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.
@@ -34719,7 +34719,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Man steering a Mercury outboard on a calm Ontario lake during fall, highlighting Harris Boat Works' local service area.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -34786,7 +34786,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, year-round storage at HBW means the boat is already close to launch in spring.
+Outdoor winter storage with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen April 1.
 
 **Live installed pricing online**
 mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.
@@ -34827,8 +34827,8 @@ For most Peterborough addresses, yes, Toronto is roughly 90-120 minutes through 
 **What do you charge for a Mercury repower?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Peterborough customers who launch on Rice Lake or the Trent system, year-round storage at HBW makes the launch logistics simpler.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **Do you sell new boats too?**
 Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons primarily, all Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -34851,7 +34851,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
     image: '/lovable-uploads/hero-mercury-dealer-cobourg.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -34925,7 +34925,7 @@ Full job: motor, rigging, controls, prop selection, installation, sea trial on R
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor option. For Cobourg customers whose boat lives on Rice Lake during the season, year-round storage at HBW means the launch is already at the lake when spring arrives.
+Outdoor winter storage with shrinkwrap. No indoor storage. For Cobourg customers whose boat lives on Rice Lake during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen April 1.
 
 **Trailer-in service for Lake Ontario boats**
 Cobourg customers whose boat lives on Lake Ontario can trailer up for major service. The route makes drop-off practical, but routine work still requires an appointment and a confirmed completion plan.
@@ -34966,8 +34966,8 @@ HBW does NOT offer pickup or delivery, customers bring the boat to us. We have t
 **What's the typical repower cost from a Cobourg perspective?**
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Cobourg customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW is logistically clean.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **Do you do warranty work on a Mercury I bought elsewhere?**
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork; we register the work in Mercury's central system.
@@ -34988,7 +34988,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -35063,7 +35063,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor option. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the spring launch logistics simpler.
+Outdoor winter storage with shrinkwrap. No indoor storage. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen April 1.
 
 **Trailer-in for Lake Ontario boats**
 Port Hope customers with Lake Ontario boats can trailer up for major service. Half-hour drive each way works fine for routine maintenance.
@@ -35104,8 +35104,8 @@ Yes, we install a lot of them, especially for Port Hope and Cobourg anglers runn
 **What's the typical Port Hope repower cost?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor with shrinkwrap. For Port Hope customers whose boat lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the launch logistics simpler.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **Do you offer pickup/delivery?**
 No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We have trailer parking on site for drop-offs.
@@ -35267,7 +35267,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     imageAlt: 'Harris Boat Works technician installing and inspecting a Mercury outboard in the Gores Landing service shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '5 min read',
@@ -35325,7 +35325,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [year-round storage](/blog/boat-storage-kawartha-lakes) means the spring launch is already at the lake.
+Outdoor winter storage with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/boat-storage-kawartha-lakes) leaves it close to Rice Lake when we reopen April 1.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -35383,8 +35383,8 @@ Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine rep
 **What's the typical repower cost in Northumberland?**
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD number. Most repowers in the typical Northumberland boat range land in the $13,000-$25,000 installed range including HST.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Northumberland boaters whose boat already lives on Rice Lake during the season, year-round storage at HBW puts the spring launch already at the water.
+**Can I store my boat with you through the winter?**
+Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume after we reopen April 1.
 
 **Do you offer pickup/delivery?**
 No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
