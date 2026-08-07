@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Financing Ontario (2026): Rates"
 description: "How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-08-02
+date_modified: 2026-08-07
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
 ## Quick answer
 
-Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. The current headline rate is 5.48% APR (OAC). Under the active TD program, the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
+Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. The current headline rate is 5.48% APR (OAC). Through August 31, 2026, Mercury Summer Savings also offers up to $700 CAD back on eligible new FourStroke repower outboards plus promotional financing as low as 2.99% APR for 24 months (OAC). Under the active TD program, the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
 
 Money is the part of a repower nobody likes to ask about at the counter, so people circle it. They'll spend twenty minutes on props and shaft length and then mumble "and, uh, do you guys do financing?" on the way out the door. Yes. We do. And it's a lot simpler and a lot less painful than most people expect.
 
@@ -44,7 +44,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 ## How HBW financing actually works
 
-**Current promotional rate (as of July 2026):** TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026. Financing minimum $5,000 before tax. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
+**Two Mercury offers are live right now.** Mercury Summer Savings runs July 15 to August 31, 2026: up to $700 CAD back on eligible new Mercury FourStroke repower outboards, layered with promotional financing as low as 2.99% APR for 24 months (OAC). Running alongside it, TD "Always On" promotional financing is 5.48% APR (OAC) through December 31, 2026, arranged via DealerPlan. The 2.99% program is the short 24-month term on eligible FourStroke models; the TD program is the longer-term option, so which one fits depends on the motor and the term you want. Financing minimum $5,000 before tax. The lender confirms approval, eligibility, and final terms in writing. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
 
 We don't lend the money ourselves, and we're not a bank. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. The current headline program is through TD Auto Finance; the signed lender disclosure identifies the actual lender and controls the approval and terms.
 
