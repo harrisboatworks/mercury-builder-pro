@@ -206,7 +206,7 @@ export async function fetchHBWValuation(params: {
   year: number;
   horsepower?: number;
   condition: string;
-  stroke?: string;
+  stroke: string;
   hours?: number;
   model?: string;
 }): Promise<HBWValuationFetchResult> {
