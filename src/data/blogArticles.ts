@@ -20266,7 +20266,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',
@@ -20362,7 +20362,7 @@ At HBW:
 
 - Submit fall service before the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
-- Spring service resumes after the April 1 reopening.
+- Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.
 
 Low hours do not automatically erase a calendar interval. The exact manual still decides what is due.
