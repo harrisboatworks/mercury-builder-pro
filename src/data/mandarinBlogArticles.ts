@@ -3706,12 +3706,12 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Me
     image: '/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
-    publishDate: '2026-05-17',
-    category: 'Maintenance',
-    readTime: '8 分钟',
-    keywords: ['Mercury 故障排查', 'outboard troubleshooting', '船外机不启动', 'SmartCraft alarm', '安省 Mercury service', 'HBW service'],
-    content: `# Mercury 船外机故障排查中文指南：先别一直拧钥匙
+     dateModified: '2026-08-07',
+     publishDate: '2026-05-17',
+     category: 'Maintenance',
+     readTime: '8 分钟',
+     keywords: ['Mercury 故障排查', 'outboard troubleshooting', '船外机不启动', 'SmartCraft alarm', '安省 Mercury service', 'HBW service'],
+     content: `# Mercury 船外机故障排查中文指南：先别一直拧钥匙
 
 ## 快速答案
 
@@ -3794,7 +3794,7 @@ HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使�
 
 这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 HBW service request。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbw.wiki/service)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
 ## FAQ
 
