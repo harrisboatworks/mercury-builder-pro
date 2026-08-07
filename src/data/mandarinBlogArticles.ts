@@ -313,7 +313,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 ## 内部连结
 
 - [新移民安大略省买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
-- [大多伦多华人买 Mercury 船外机指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [大多伦多华人买 Mercury 船外机指南](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
 - [多伦多到 Rice Lake 一日钓鱼游完整指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [安省华人船主入门：PCOC、PCL、钓鱼证](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
 
