@@ -37292,7 +37292,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
     description: 'Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.',
     image: '/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero.jpg',
     imageAlt: 'Aluminum V-hull fishing boat powered by a Mercury FourStroke outboard on a calm Ontario lake at golden hour.',
-    content: `*Last reviewed: 2026-07-09*
+    content: `*Last reviewed: 2026-08-07*
 
 > **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
 
@@ -37302,7 +37302,7 @@ For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
-> "Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said 115 Command Thrust will do everything you want with better fuel economy. He was right. 38 mph loaded, sips fuel." Tom K., HBW customer, Lakefield 2026
+**From the shop:** On a planing aluminum V-hull, we do not use Command Thrust to make a 115 behave like a 150. We choose the horsepower the capacity plate and loaded use support, then match the standard gearcase and propeller to the boat.
 
 This page gives you the actual dividing lines. By hull type, by boat length, by use case. We base it on hundreds of repowers we've rigged on Rice Lake and the Kawarthas. It's not theoretical.
 
@@ -37460,7 +37460,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -39571,7 +39571,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
     imageAlt: 'Freshwater photos comparing a Mercury 90 HP Command Thrust pontoon setup with a Mercury 115 HP FourStroke on a family pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-07-06',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-07',
     category: 'Repower',
     readTime: '~9 min read',
     keywords: ['Mercury 90', 'Mercury 115', 'Ontario boating', 'repower', 'aluminum boat', 'Mercury FourStroke', 'Outboard Comparison'],
@@ -39586,7 +39586,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
       { question: "Can I put a 115 hp engine on a boat rated for 90 hp?", answer: "Treat 90 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. Do not use an oversized existing setup as approval. A 115 HP setup can create serious safety, insurance, warranty, liability, financing, and resale problems." },
       { question: "Is the Mercury 115 FourStroke just a tuned 90?", answer: "Essentially, yes. The 90 hp and 115 hp FourStroke share the same 2.1L block and many internal components. Differences in ECM tuning, camshaft design, and throttle-body size allow the 115 to deliver more power, but the core engine is nearly identical in weight and dimensions." },
       { question: "How much fuel will I save by choosing the 90 hp over the 115?", answer: "At typical cruising speeds the difference is minor, often within half a litre per hour. Both motors are efficient four-strokes. The 115 may use slightly more fuel at wide-open throttle, but its ability to plane at lower RPM with heavy loads can offset that in real-world use." },
-      { question: "Do both engines come with Command Thrust?", answer: "Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine." },
+      { question: "Do both engines come with Command Thrust?", answer: "Both the Mercury 90 hp and 115 hp FourStroke have Command Thrust configurations, but availability does not make CT the right choice for a planing aluminum V-hull. Command Thrust is for pontoons and specific workboats. Use the standard gearcase on a 17- to 19-ft aluminum V-hull, then match the propeller to the loaded boat. A ProKicker with Command Thrust is a separate, legitimate trolling application." },
       { question: "Should I repower with a 90 or 115 if I plan to sell the boat in a few years?", answer: "For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard generally retains better resale value and appeals to a wider range of buyers. If the price difference fits your budget now, the 115 often pays off in quicker sales and higher offers down the road." },
     ],
     content: `> **Quick answer:** Choose the highest horsepower your boat's capacity plate allows only when your normal load and use justify it. A Mercury 90 can suit a lighter 17- to 19-ft aluminum boat, while a 115 gives more reserve for passengers and gear. Match the exact model, gearcase, shaft length, rigging, and propeller to the hull before ordering.
@@ -39617,11 +39617,11 @@ Because the two engines share the same displacement, their fuel consumption at t
 
 The real-world fuel cost difference over a season of weekend boating on Ontario lakes is modest. The 115's ability to plane at lower RPM can actually improve cruise economy when loaded heavily, because you are not forcing the engine to labour at high throttle openings just to stay on plane. That nuance is exactly why we encourage boaters to consider their typical load, not just the engine spec sheet, when comparing fuel use.
 
-## Command Thrust: Why It Matters for Heavy Loads
+## Command Thrust: Who It's Actually For
 
-Both the 90 and 115 are available with Mercury's Command Thrust (CT) gearcase. A CT gearcase uses a larger-diameter gearcase housing and propeller, which bites more water and generates additional stern lift. For aluminum boats that run heavy, carry multiple passengers, or frequently operate at cottage-settlement loading, Command Thrust can dramatically improve hole shot, handling, and ability to stay on plane at lower speeds.
+Both the 90 and 115 are available with Mercury's Command Thrust (CT) gearcase, but CT is not a general heavy-load upgrade. Its larger gearcase and propeller trade top-end efficiency for low-speed push, which is useful on pontoons and specific workboats.
 
-Choosing a CT model does not change the horsepower rating but can make a 90 feel closer to a standard 115 in terms of load handling, and a 115 CT feels even more authoritative. If your boat is near the maximum recommended weight for its horsepower, opting for the CT gearcase on either the 90 or 115 is a sensible upgrade that we routinely recommend for Ontario cottage and fishing boats.
+The standard gearcase is the right choice for a planing aluminum or fibreglass V-hull. In one HBW back-to-back comparison of two 4.9 m (16 ft) Legend boats with 60 hp, the standard-gearcase boat was faster at the top end. That shop result is boat-specific, but it illustrates the trade-off. If a V-hull struggles under its normal load, check the capacity plate, horsepower, propeller, engine height, and actual load instead of using CT to mask the mismatch. A 9.9 or 15 HP ProKicker with Command Thrust is a different application because the kicker is built for slow trolling. See the [full Command Thrust V-hull and pontoon guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull).
 
 ## Price Difference in Canada (CAD)
 
@@ -39639,9 +39639,9 @@ A well-maintained 115 will typically fetch a higher resale value and sell more q
 
 Instead of choosing solely by horsepower number, think about the total weight you regularly put on the water. A simple framework is:
 
-- Light loads (under 998 kg (2,200 lb) total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
+- Light loads (under 998 kg (2,200 lb) total on-plane weight): A standard-gearcase 90 hp FourStroke is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
 - Medium loads (998 to 1,270 kg (2,200 to 2,800 lbs)): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
-- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
+- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the standard-gearcase 115 is the clear choice. If the boat still struggles under its normal load, reassess the propeller, rigging, load, and hull instead of adding Command Thrust.
 
 Run through your typical crew, fuel, batteries, and tackle. Multiply by real weights, and you will quickly see whether the 90 or 115 deserves the nod.
 
@@ -39663,7 +39663,7 @@ Essentially, yes. The 90 hp and 115 hp FourStroke share the same 2.1L block and 
 At typical cruising speeds the difference is minor, often within half a litre per hour. Both motors are efficient four-strokes. The 115 may use slightly more fuel at wide-open throttle, but its ability to plane at lower RPM with heavy loads can offset that in real-world use.
 
 **Do both engines come with Command Thrust?**
-Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine.
+Both the Mercury 90 hp and 115 hp FourStroke have Command Thrust configurations, but availability does not make CT the right choice for a planing aluminum V-hull. Command Thrust is for pontoons and specific workboats. Use the standard gearcase on a 17- to 19-ft aluminum V-hull, then match the propeller to the loaded boat. A ProKicker with Command Thrust is a separate, legitimate trolling application.
 
 **Should I repower with a 90 or 115 if I plan to sell the boat in a few years?**
 For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard generally retains better resale value and appeals to a wider range of buyers. If the price difference fits your budget now, the 115 often pays off in quicker sales and higher offers down the road.
