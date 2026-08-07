@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 describe('TradeInValuation brand select', () => {
   it('keeps brand options off the popper ResizeObserver positioning path', () => {
     const source = readFileSync(
-      new URL('./TradeInValuation.tsx', import.meta.url),
+      'src/components/quote-builder/TradeInValuation.tsx',
       'utf8',
     );
     const brandField = source.match(
