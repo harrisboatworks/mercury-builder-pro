@@ -222,8 +222,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       // local table — it drifts out of sync with the canonical HBW engine
       // (hbw-valuation on Vercel) and quietly shows customers numbers we never
       // quoted. Fail honestly: offer retry + a direct line instead.
-      console.warn(`⚠️ HBW valuation unavailable (${hbwResult.reason}) — showing retry/contact message (no local fallback)`);
-      setFailureReason(hbwResult.reason);
+      const failure = (hbwResult as Extract<typeof hbwResult, { ok: false }>).reason;
+      console.warn(`⚠️ HBW valuation unavailable (${failure}) — showing retry/contact message (no local fallback)`);
+      setFailureReason(failure);
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
