@@ -2144,6 +2144,42 @@ export type Database = {
         }
         Relationships: []
       }
+      mercury_post_sale_sends: {
+        Row: {
+          customer_email: string
+          deal_no: string | null
+          dealid: string
+          mailchimp_status: string
+          motor: string | null
+          mpp_status: string
+          processed_at: string
+          sale_date: string | null
+          svc_status: string
+        }
+        Insert: {
+          customer_email: string
+          deal_no?: string | null
+          dealid: string
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Update: {
+          customer_email?: string
+          deal_no?: string | null
+          dealid?: string
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Relationships: []
+      }
       motor_custom_sources: {
         Row: {
           created_at: string
@@ -6746,6 +6782,37 @@ export type Database = {
           _user_id: string
         }
         Returns: undefined
+      }
+      mercury_post_sale_candidates: {
+        Args: never
+        Returns: {
+          customer_email: string
+          deal_no: string
+          dealid: string
+          first_name: string
+          last_name: string
+          motor: string
+          motor_hp: number
+          mpp_purchased: boolean
+          sale_date: string
+          season: string
+        }[]
+      }
+      mercury_post_sale_mpp_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_mpp_status: string
+        }[]
+      }
+      mercury_post_sale_svc_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_svc_status: string
+        }[]
       }
       normalize_phone: { Args: { p: string }; Returns: string }
       open_ro_brief: {
