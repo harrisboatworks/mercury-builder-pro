@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-08-08
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Entretien  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
@@ -154,6 +154,12 @@ Réservez à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2
 Les cadres de remorque sont soudables. Tasseaux, rouleaux, lumières et freins sont tous des pièces remplaçables. Une remorque de 15 ans avec un cadre solide vaut habituellement la peine d'être remise à neuf.
 
 Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 pi coûte 3 000 $ à 5 000 $ CAD en Ontario. Un rafraîchissement complet (tasseaux, roulements, freins, lumières, pneus) sur un cadre solide coûte habituellement 800 $ à 1 500 $.
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 ---
 
