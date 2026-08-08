@@ -448,9 +448,7 @@ function renderArticleBodyHtml(content, { hasStructuredFaqs = false } = {}) {
   // H1 and trigger duplicate-H1 warnings in Bing Site Scan.
   s = s.replace(/^\s*#\s+.+$/gm, '');
   // Strip author footer signature (handled by AuthorByline component in SPA).
-  s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
-  s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
-  s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+  s = stripPrerenderAuthorFooter(s);
   // Expand visual directives (decision-card, diagnostic-flow, cost-stack,
   // bilingual-trust) into HTML matching the React components. Other
   // `:::name ... :::` directive blocks (image-placeholder, motor-pricing,
@@ -467,6 +465,13 @@ function renderArticleBodyHtml(content, { hasStructuredFaqs = false } = {}) {
     console.warn('[static-prerender] marked render failed:', err?.message);
     return '';
   }
+}
+
+function stripPrerenderAuthorFooter(content) {
+  return String(content || '')
+    .replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '')
+    .replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '')
+    .replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
 }
 
 function renderWalkaroundLeadCaptureHtml() {
@@ -3124,6 +3129,11 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
         bodySource = bodySource.slice(0, idx);
       }
     }
+    const cleanedBodySource = stripPrerenderAuthorFooter(
+      cleanBlogContent(bodySource, {
+        hasStructuredFaqs: Boolean(article.faqs?.length),
+      }),
+    );
     const bodyHtml = renderArticleBodyHtml(bodySource, {
       hasStructuredFaqs: Boolean(article.faqs?.length),
     });
@@ -3139,8 +3149,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
     const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
     const relatedGuidesHtml = renderRelatedGuidesHtml(
       article.slug,
-      article.content,
-      article.relatedSlugs,
+      cleanedBodySource,
     );
     return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${ctaHtml}${relatedGuidesHtml}`;
   }
