@@ -31,6 +31,9 @@ const canonicalComponent = read('src/components/seo/Canonical.tsx');
 const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
 const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
+const publicBlogIndex = JSON.parse(read('public/blog-index.json'));
+const publicCatalog = read('public/catalog.md');
+const repowerCostMarkdown = read('public/blog/mercury-repower-cost-ontario-2026-cad.md');
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
 const parsedVercelConfig = JSON.parse(vercelConfig);
@@ -432,6 +435,49 @@ check(
 );
 const articleSource = (slug) =>
   blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+const repowerCostSlug = 'mercury-repower-cost-ontario-2026-cad';
+const repowerCostHtmlPath = `/blog/${repowerCostSlug}`;
+const repowerCostArticle = articleSource(repowerCostSlug);
+const repowerCostIndexEntries = publicBlogIndex.articles.filter(
+  (article) => article.slug === repowerCostSlug,
+);
+const repowerCostSitemapUrl = `<loc>https://www.mercuryrepower.ca${repowerCostHtmlPath}</loc>`;
+const repowerCostCatalogUrl = `https://www.mercuryrepower.ca${repowerCostHtmlPath}.md`;
+check(
+  repowerCostArticle.length > 5_000 &&
+    /There is no dependable one-price-fits-all installed range/.test(repowerCostArticle),
+  'The canonical Mercury repower-cost article source is missing or unexpectedly empty.',
+);
+check(
+  repowerCostMarkdown.length > 5_000 &&
+    repowerCostMarkdown.includes(`# Mercury Repower Guide: Cost, Timeline & When It's Worth It`) &&
+    repowerCostMarkdown.includes(`**Canonical (HTML for humans):** https://www.mercuryrepower.ca${repowerCostHtmlPath}`),
+  'The generated Mercury repower-cost Markdown twin is missing, empty, or points at the wrong HTML canonical.',
+);
+check(
+  repowerCostIndexEntries.length === 1 &&
+    repowerCostIndexEntries[0].title === "Mercury Repower Guide: Cost, Timeline & When It's Worth It" &&
+    repowerCostIndexEntries[0].description?.length > 80,
+  'blog-index.json must contain one complete Mercury repower-cost entry.',
+);
+check(
+  publicSitemap.split(repowerCostSitemapUrl).length - 1 === 1 &&
+    publicSitemap.includes(`hreflang="en-CA" href="https://www.mercuryrepower.ca${repowerCostHtmlPath}"`) &&
+    publicSitemap.includes('hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario"'),
+  'sitemap.xml must contain one canonical Mercury repower-cost URL with its reciprocal English and French alternates.',
+);
+check(
+  publicCatalog.split(repowerCostCatalogUrl).length - 1 === 1,
+  'catalog.md must contain one Mercury repower-cost Markdown-twin URL.',
+);
+check(
+  (caseStudyGenerator.match(new RegExp(`['"]${repowerCostSlug}['"]`, 'g')) ?? []).length === 1,
+  'The Markdown-twin generator must enumerate the Mercury repower-cost slug exactly once.',
+);
+check(
+  !/Mercury Repower Cost by Horsepower \(CAD, Ontario, 2026\)/.test(prerenderScript),
+  'The prerender must not append the retired installed-range table after the canonical repower-cost article.',
+);
 const dealerHeroCanon = [
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
