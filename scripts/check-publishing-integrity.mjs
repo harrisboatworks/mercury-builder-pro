@@ -36,6 +36,15 @@ const frenchPremierArticle = read('src/pages/blog/FrenchBlogArticle.tsx');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
+  !/Legend[^.\n]{0,100}(?:built in Whitefish|Canadian-built|built in Canada|Ontario-built|made in Canada|manufactured in Whitefish|manufactured in Canada)/i.test(blogArticles),
+  'Legend copy must not imply Canadian or Whitefish manufacturing.',
+);
+check(
+  /Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury, and its boats are designed by Canadians for Canadian water/i.test(blogArticles),
+  'The Legend power-package guide must use the approved Canadian design and headquarters disclosure.',
+);
+
+check(
   /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
   'MercuryProXSSEO must derive prices from CANONICAL_SKUS.',
 );

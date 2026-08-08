@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-05-21
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Legend Boats Mercury Packages Ontario"
 description: "Legend Boats with Mercury power: 2026 lineup, pairings, all-in pricing, and hull recommendations from an Ontario Legend dealer."
 category: "Buying Guide"
 date_published: 2026-05-21
-date_modified: 2026-05-21
+date_modified: 2026-08-08
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-21  
-**Last updated:** 2026-05-21  
+**Last updated:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 
 # Legend Boats + Mercury Power Packages. Ontario Buyer's Guide (2026)
 
-> **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+> **Quick answer:** Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury, and its boats are designed by Canadians for Canadian water. Legend pairs its boats with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
 
 For pricing on the engines included in Legend power packages, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what's included in a typical rigging package, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains the factory coverage.
 
