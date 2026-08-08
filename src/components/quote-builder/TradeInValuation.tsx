@@ -191,7 +191,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || requiresStrokeConfirmation) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || !effectiveEngineType) {
       console.log('Missing required fields');
       return;
     }
@@ -214,7 +214,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
-    if (hbwResult.ok) {
+    if (hbwResult.ok === true) {
       console.log('✅ HBW API returned valuation:', hbwResult.value);
       tradeEstimate = hbwResult.value;
     } else {
@@ -222,9 +222,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       // local table — it drifts out of sync with the canonical HBW engine
       // (hbw-valuation on Vercel) and quietly shows customers numbers we never
       // quoted. Fail honestly: offer retry + a direct line instead.
-      const failure = (hbwResult as Extract<typeof hbwResult, { ok: false }>).reason;
-      console.warn(`⚠️ HBW valuation unavailable (${failure}) — showing retry/contact message (no local fallback)`);
-      setFailureReason(failure);
+      console.warn(`⚠️ HBW valuation unavailable (${hbwResult.reason}) — showing retry/contact message (no local fallback)`);
+      setFailureReason(hbwResult.reason);
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
@@ -245,7 +244,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
-          stroke: effectiveEngineType!,
+          stroke: effectiveEngineType,
         })
       : undefined;
 

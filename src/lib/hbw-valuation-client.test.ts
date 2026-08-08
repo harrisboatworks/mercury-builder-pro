@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fetchHBWValuationFromInvoker } from './trade-valuation';
+import { fetchHBWValuationFromInvoker, type HBWValuationParams } from './trade-valuation';
 
 const params = {
   brand: 'Mercury',
@@ -7,7 +7,7 @@ const params = {
   horsepower: 115,
   condition: 'good',
   stroke: '4-stroke',
-};
+} satisfies HBWValuationParams;
 
 const successPayload = {
   wholesale: 5000,
