@@ -315,6 +315,11 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /一日 Sport Fishing Licence 不需要 Outdoors Card/i,
     /不要把 walleye 误认成 yellow perch（黄鲈）/i,
   ],
+  'ontario-boating-season-tips': [
+    /battery stays in the boat, disconnected and maintained over winter/i,
+    /leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions/i,
+    /parasitic draw, not cold, is the usual problem/i,
+  ],
 };
 
 const factualCorrectionForbiddenPatterns: Record<string, RegExp[]> = {
@@ -337,6 +342,12 @@ const factualCorrectionForbiddenPatterns: Record<string, RegExp[]> = {
     /Walleye 黄鲈/i,
     /从中国带的救生衣不被加拿大法规承认/i,
     /30-46 cm/i,
+  ],
+  'ontario-boating-season-tips': [
+    /battery prep \(off the boat, on a tender\)/i,
+    /storing the battery on the boat over winter/i,
+    /off the boat, on a tender/i,
+    /battery test and reinstall/i,
   ],
 };
 
