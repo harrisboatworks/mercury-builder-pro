@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-08
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
@@ -46,7 +46,7 @@ Three patterns come up most often at Harris Boat Works:
 
 **Reusing old controls that don't match the new motor.** A 1998 binnacle from a carbureted 90 HP does not always work cleanly on a 2026 Mercury 90 EFI. Corroded wiring and a worn kill switch can turn into a mid-season service call.
 
-**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected to old analog gauges gives up roughly 80% of what the motor knows about itself, fault codes, fuel economy data, engine hours, advance warning before something fails.
+**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected only to old analog gauges can hide much of the information the motor makes available, including fault codes, fuel economy data, engine hours and advance warnings.
 
 **Underspeccing steering on a V6.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is the standard recommendation for anything 115 HP and up.
 
@@ -210,7 +210,7 @@ The three big ones, reusing tired controls, skipping the gauge upgrade, and unde
 
 ## What we see at HBW
 
-The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
+The controls-and-rigging audit is the first thing we do on every repower quote. In our shop experience, many motors that look fine to keep the existing controls still need new cables, shift linkage or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
 
 The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
