@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-07-31
+date_modified: 2026-08-04
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,19 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last updated:** 2026-07-31  
+**Last updated:** 2026-08-04
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
 
-[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
+::cta
+variant: inline
+heading: Bring the boat details into the repower conversation
+body: Use this two-page worksheet to record the hull, current engine, rigging, typical load and performance goals. It starts the assessment; it does not replace HBW's fitment check.
+primaryLabel: Download repower worksheet (PDF)
+primaryHref: /downloads/mercury-repower-planning-worksheet-hbw.pdf
+::
 
 ## Winter Repower Planning
 
@@ -190,4 +196,3 @@ Clean out the boat, document any electrical issues, gather all paperwork, and en
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

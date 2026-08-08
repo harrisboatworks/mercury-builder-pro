@@ -40,14 +40,49 @@ ALARM_URL = "https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-g
 SERIAL_URL = "https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number"
 WINTER_URL = "https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide"
 MTO_URL = "https://www.ontario.ca/document/official-mto-drivers-handbook/towing"
-TC_URL = "https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf"
+FONT_CANDIDATES = (
+    (
+        Path("/System/Library/Fonts/Supplemental"),
+        ("Arial.ttf", "Arial Bold.ttf", "Arial Italic.ttf"),
+    ),
+    (
+        Path("/usr/share/fonts/truetype/liberation2"),
+        (
+            "LiberationSans-Regular.ttf",
+            "LiberationSans-Bold.ttf",
+            "LiberationSans-Italic.ttf",
+        ),
+    ),
+)
+RESOURCE_FILENAMES = (
+    "mercury-service-request-prep-sheet-hbw.pdf",
+    "mercury-spring-launch-first-run-checklist-hbw.pdf",
+    "marine-fuel-storage-quick-guide-hbw.pdf",
+    "five-minute-boat-trailer-check-hbw.pdf",
+    "mercury-alarm-no-start-action-card-hbw.pdf",
+    "mercury-repower-planning-worksheet-hbw.pdf",
+    "fall-storage-winterization-checklist-hbw.pdf",
+)
 
 
-def setup_fonts():
-    fonts = Path("/System/Library/Fonts/Supplemental")
-    pdfmetrics.registerFont(TTFont("HBW", str(fonts / "Arial.ttf")))
-    pdfmetrics.registerFont(TTFont("HBW-Bold", str(fonts / "Arial Bold.ttf")))
-    pdfmetrics.registerFont(TTFont("HBW-Italic", str(fonts / "Arial Italic.ttf")))
+def setup_fonts(fonts_dir: Path | None = None):
+    candidates = []
+    if fonts_dir is not None:
+        candidates.extend(
+            (fonts_dir, filenames) for _, filenames in FONT_CANDIDATES
+        )
+    candidates.extend(FONT_CANDIDATES)
+    for directory, filenames in candidates:
+        paths = tuple(directory / filename for filename in filenames)
+        if all(path.is_file() for path in paths):
+            pdfmetrics.registerFont(TTFont("HBW", str(paths[0])))
+            pdfmetrics.registerFont(TTFont("HBW-Bold", str(paths[1])))
+            pdfmetrics.registerFont(TTFont("HBW-Italic", str(paths[2])))
+            return
+    raise FileNotFoundError(
+        "No supported font family found. Pass --fonts-dir containing Arial "
+        "or Liberation Sans regular, bold and italic TTF files."
+    )
 
 
 def image_fit(c, path, x, y, w, h):
@@ -318,7 +353,7 @@ def fuel_guide(path, root):
            "Octane and ethanol are separate checks. Fresh fuel still matters, even when it's ethanol-free.")
     top = field_band(c, [[(30, 170, "Engine / HP"), (225, 170, "Serial number"), (420, 162, "Manual minimum octane")]])
     callout(c, 30, top - 59, W - 60, 49, "HBW Marine Gas",
-            "During marina season, HBW sells confirmed 89 AKI ethanol-free gasoline in Gores Landing, by road or water. It must still be fresh and meet your exact engine's minimum octane.")
+            "During marina season, HBW sells ethanol-free 89 AKI gasoline at the fuel dock in Gores Landing. It must still be fresh and meet your exact engine's minimum octane.")
     cw, gap = (W - 70) / 2, 10
     section_card(c, 30, top - 244, cw, 175, "At the pump", [
         "Check the serial-number manual for minimum octane. Don't assume by engine family.",
@@ -539,7 +574,7 @@ def fall_check(path, root):
         "Start with suitable fresh fuel. Treat and circulate it exactly as directed.",
         "Don't assume ethanol-free fuel can sit forever. It still oxidizes and collects water.",
         "Complete due oil, filters, gear-lube, corrosion protection and model-specific internal protection.",
-        "Store the outboard in the drainage position specified by Mercury, commonly vertical or full-down.",
+        "Store the outboard in the drainage position specified by the serial-number manual so water is not trapped.",
     ])
     section_card(c, 30, top - 386, cw, 185, "Boat and systems", [
         "Drain freshwater, livewell, washdown, bilge and sanitation systems as applicable.",
@@ -562,7 +597,7 @@ def fall_check(path, root):
     c.save()
 
 
-def generate_all(output_dir: Path, root: Path):
+def generate_all(output_dir: Path, root: Path, only: set[str] | None = None):
     output_dir.mkdir(parents=True, exist_ok=True)
     jobs = [
         ("mercury-service-request-prep-sheet-hbw.pdf", service_prep),
@@ -574,6 +609,8 @@ def generate_all(output_dir: Path, root: Path):
         ("fall-storage-winterization-checklist-hbw.pdf", fall_check),
     ]
     for filename, builder in jobs:
+        if only is not None and filename not in only:
+            continue
         path = output_dir / filename
         builder(path, root)
         print(path)
@@ -583,9 +620,24 @@ def main():
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=root / "public/downloads")
+    parser.add_argument(
+        "--fonts-dir",
+        type=Path,
+        help="Directory containing Arial or Liberation Sans TTF files",
+    )
+    parser.add_argument(
+        "--only",
+        action="append",
+        choices=RESOURCE_FILENAMES,
+        help="Generate only this filename; repeat for multiple resources",
+    )
     args = parser.parse_args()
-    setup_fonts()
-    generate_all(args.output_dir.resolve(), root)
+    setup_fonts(args.fonts_dir.resolve() if args.fonts_dir else None)
+    generate_all(
+        args.output_dir.resolve(),
+        root,
+        set(args.only) if args.only else None,
+    )
 
 
 if __name__ == "__main__":
