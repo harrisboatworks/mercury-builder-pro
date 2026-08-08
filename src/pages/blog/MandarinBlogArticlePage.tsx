@@ -247,6 +247,11 @@ export default function MandarinBlogArticlePage() {
                     containerClassName="my-6"
                   />
                 ),
+                table: ({ node, ...props }) => (
+                  <div className="my-6 w-full overflow-x-auto overscroll-x-contain">
+                    <table {...props} />
+                  </div>
+                ),
               }}
             />
           </div>
