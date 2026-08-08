@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Choosing the Right Mercury for Your Bass Boat (Ontario 2026)"
 description: "Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing."
 category: "Buying Guide"
 date_published: 2026-03-09
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 
@@ -192,7 +192,7 @@ Stainless on any tournament boat. Aluminum is fine for the 150 FourStroke break-
 
 ### How much does a Mercury Pro XS cost in Canada in 2026?
 
-Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, 250 Pro XS V8 around $33,500-$34,500. Final pricing depends on configuration and live quote.
+Planning-level CAD ranges as of August 8, 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, and 250 Pro XS V8 from $34,848 to $37,741. Check the [live pricing reference](/pricing-reference) because shaft length, controls, and configuration change the figure.
 
 ### What warranty does a Mercury outboard come with in Canada?
 
