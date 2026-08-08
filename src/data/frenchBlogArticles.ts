@@ -2338,7 +2338,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-08-07',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
