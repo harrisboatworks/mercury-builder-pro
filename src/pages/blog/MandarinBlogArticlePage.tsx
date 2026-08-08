@@ -106,7 +106,6 @@ export default function MandarinBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <BlogHreflangLinks locale="zh" slug={article.slug} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="zh_CN" />
@@ -115,6 +114,7 @@ export default function MandarinBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogHreflangLinks locale="zh" slug={article.slug} />
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 

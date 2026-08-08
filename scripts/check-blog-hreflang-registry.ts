@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { blogArticles } from '../src/data/blogArticles';
 import { frenchBlogArticles } from '../src/data/frenchBlogArticles';
 import { koreanBlogArticles } from '../src/data/koreanBlogArticles';
@@ -34,6 +35,30 @@ const registered = new Set<string>();
 const redirectSources = new Set(
   (vercelConfig.redirects || []).map((redirect) => redirect.source.replace(/\.md$/, '')),
 );
+
+const localizedPageFiles = [
+  'FrenchBlogArticlePage.tsx',
+  'HindiBlogArticlePage.tsx',
+  'KoreanBlogArticlePage.tsx',
+  'MandarinBlogArticlePage.tsx',
+  'PunjabiBlogArticlePage.tsx',
+  'SpanishBlogArticlePage.tsx',
+  'TagalogBlogArticlePage.tsx',
+  'UrduBlogArticlePage.tsx',
+];
+
+const hreflangComponent = fs.readFileSync('src/components/seo/BlogHreflangLinks.tsx', 'utf8');
+if (!/<Helmet>[\s\S]*<link[\s\S]*<\/Helmet>/.test(hreflangComponent)) {
+  failures.push('BlogHreflangLinks must own its Helmet boundary');
+}
+for (const file of localizedPageFiles) {
+  const source = fs.readFileSync(`src/pages/blog/${file}`, 'utf8');
+  const useIndex = source.indexOf('<BlogHreflangLinks');
+  const helmetCloseIndex = source.indexOf('</Helmet>');
+  if (useIndex === -1 || helmetCloseIndex === -1 || useIndex < helmetCloseIndex) {
+    failures.push(`${file}: BlogHreflangLinks must render beside, not inside, the page Helmet`);
+  }
+}
 
 for (const group of BLOG_TRANSLATION_GROUPS) {
   for (const [locale, slug] of Object.entries(group)) {
