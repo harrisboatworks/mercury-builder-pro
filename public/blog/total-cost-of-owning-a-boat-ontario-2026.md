@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
@@ -171,7 +171,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 ## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
 
-[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
 [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
@@ -303,4 +303,3 @@ Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized,
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

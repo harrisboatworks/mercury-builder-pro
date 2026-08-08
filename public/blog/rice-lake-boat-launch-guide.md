@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Where to Launch Boat on Rice Lake"
 description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp."
 category: "Local Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-08
 keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Local Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last updated:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
 
@@ -129,7 +129,7 @@ For any powered boat in Ontario waters:
 
 **Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
 
 **Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
@@ -246,4 +246,3 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
