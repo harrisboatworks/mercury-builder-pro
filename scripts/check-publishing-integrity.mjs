@@ -16,6 +16,7 @@ const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
 const brandMetadata = read('public/.well-known/brand.json');
 const blogArticles = read('src/data/blogArticles.ts');
+const frenchBlogArticles = read('src/data/frenchBlogArticles.ts');
 const mercury115Twin = read('public/blog/mercury-115-hp-fourstroke-review-ontario.md');
 const caseStudies = read('src/data/caseStudiesLongForm.ts');
 const baseCaseStudies = read('src/data/caseStudies.ts');
@@ -32,7 +33,6 @@ const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
-const frenchPremierArticle = read('src/pages/blog/FrenchBlogArticle.tsx');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
@@ -77,16 +77,18 @@ check(
   'vercel.json must preserve the renamed standalone French Premier article prerender route.',
 );
 check(
-  /\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(appSource) &&
-    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource),
-  'The hydrated app must own the French Premier URL and must not revive the retired Platinum route.',
+  /<Route path="\/blog\/fr\/:slug" element=\{<FrenchBlogArticlePage \/>\}/.test(appSource) &&
+    !/FrenchBlogArticle(?:"|'|\))/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(prerenderScript),
+  'The canonical French article pipeline must own the Premier URL without reviving a one-off route, duplicate static prerender, or retired Platinum route.',
 );
 check(
-  /const ARTICLE_PATH = '\/blog\/fr\/concessionnaire-mercury-premier-ontario'/.test(frenchPremierArticle) &&
-    /premier arrivé, premier servi/i.test(frenchPremierArticle) &&
-    /ferme le 1er décembre/i.test(frenchPremierArticle) &&
-    !/Accès prioritaire aux pièces|le niveau le plus élevé|Mercury les envoie chez nous|le prix que vous voyez, c'est le prix/i.test(frenchPremierArticle),
-  'The French Premier article must keep the canonical URL and verified HBW service guidance without unsupported dealer claims.',
+  /slug:\s*['"]concessionnaire-mercury-premier-ontario['"]/.test(frenchBlogArticles) &&
+    /premier arrivé, premier servi/i.test(frenchBlogArticles) &&
+    /ferme le 1er décembre/i.test(frenchBlogArticles) &&
+    !/Accès prioritaire aux pièces|le niveau le plus élevé|Mercury les envoie chez nous|le prix que vous voyez, c'est le prix/i.test(frenchBlogArticles),
+  'The canonical French Premier source must keep the verified HBW service guidance without unsupported dealer claims.',
 );
 check(
   /socialImage\?: string/.test(blogArticles) &&

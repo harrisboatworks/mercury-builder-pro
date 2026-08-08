@@ -30,6 +30,7 @@ import { lazyWithRetry } from "@/lib/lazyWithRetry";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
 import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
+import { useQuoteActivityTracker } from "@/hooks/useQuoteActivityTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -161,7 +162,6 @@ const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboa
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
-const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
@@ -216,12 +216,29 @@ function RootRedirect() {
   return <Index />;
 }
 
+function QuoteActivityTracker() {
+  useQuoteActivityTracker();
+  return null;
+}
+
+/**
+ * Keep one tracker instance alive while the customer moves between keyed quote
+ * routes. Mounting it inside each QuoteLayout replays already-populated quote
+ * state whenever the route changes.
+ */
+function QuoteActivityTrackerMount() {
+  const location = useLocation();
+  const isQuoteRoute = location.pathname === "/quote" || location.pathname.startsWith("/quote/");
+  return isQuoteRoute ? <QuoteActivityTracker /> : null;
+}
+
 function AnimatedRoutes() {
   const location = useLocation();
   usePageViewTracker();
   
   return (
     <LazyRouteBoundary>
+      <QuoteActivityTrackerMount />
       <Suspense fallback={<RouteLoader />}>
         <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />
@@ -587,7 +604,6 @@ function AnimatedRoutes() {
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
         <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
-        <Route path="/blog/fr/concessionnaire-mercury-premier-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh" element={<BlogIndexZh />} />

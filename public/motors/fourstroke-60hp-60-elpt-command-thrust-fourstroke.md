@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke
-last_updated: 2026-08-04
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 8f7b62e5-e3d4-41d5-8489-9aa50c476d46
 slug: fourstroke-60hp-60-elpt-command-thrust-fourstroke
 family: FourStroke

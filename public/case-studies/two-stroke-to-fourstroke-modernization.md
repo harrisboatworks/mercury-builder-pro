@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/two-stroke-to-fourstroke-modernization
-last_updated: 2026-08-04
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS08
 slug: two-stroke-to-fourstroke-modernization
 boat_type: "17-foot aluminum runabout"

@@ -167,6 +167,11 @@ export const locations: LocationPageData[] = [
       { question: 'Are your recommendations appropriate for Kawartha lake conditions?', answer: 'Yes. We write for real Ontario lake use, Sturgeon, Pigeon, Buckhorn, Balsam, not generic brochure use.' },
       { question: 'Do you quote in USD?', answer: 'No. All pricing is CAD only.' },
       { question: 'Can Kawartha Lakes customers compare motors before driving down?', answer: 'Yes. Use the quote builder or the motor pages, both show live CAD pricing.' },
+      {
+        question: 'Where can I get a Mercury outboard serviced in the Kawarthas?',
+        answer:
+          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All the work happens in our shop, so you arrange transport to us and pick the boat or motor back up when it's done. We don't offer mobile, dockside, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
+      },
     ],
     pickupPolicy: PICKUP_POLICY,
     serviceBoundary: boundary('the Kawartha Lakes region'),

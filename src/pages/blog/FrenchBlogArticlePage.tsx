@@ -266,6 +266,10 @@ export default function FrenchBlogArticlePage() {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
   const tocItems = extractHeaders(cleanedContent);
+  const shareImage = article.socialImage || article.image;
+  const absoluteShareImage = shareImage
+    ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+    : undefined;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -281,7 +285,15 @@ export default function FrenchBlogArticlePage() {
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
         "inLanguage": "fr-CA",
-        "isAccessibleForFree": true
+        "isAccessibleForFree": true,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
+        ...(article.citations?.length ? {
+          "citation": article.citations.map((citation) => ({
+            "@type": "CreativeWork",
+            "name": citation.name,
+            "url": citation.url,
+          })),
+        } : {})
       },
       {
         "@type": "WebPage",
@@ -329,6 +341,9 @@ export default function FrenchBlogArticlePage() {
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
+        {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        {absoluteShareImage && <meta name="twitter:image" content={absoluteShareImage} />}
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

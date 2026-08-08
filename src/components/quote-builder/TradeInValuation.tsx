@@ -442,7 +442,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
-                    <SelectContent>
+                    {/* Avoid the popper ResizeObserver loop reported by iOS Safari (#176). */}
+                    <SelectContent position="item-aligned">
                       {brandOptions.map(brand => (
                         <SelectItem key={brand} value={brand} className="font-sans">{brand}</SelectItem>
                       ))}

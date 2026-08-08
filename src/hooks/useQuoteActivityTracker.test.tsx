@@ -122,6 +122,7 @@ describe('useQuoteActivityTracker queue', () => {
         assignmentType: 'available',
         isIncluded: false,
       }],
+      purchasePath: 'loose-motor',
       completedSteps: [1, 2, 7],
       currentStep: 7,
     });
@@ -135,11 +136,93 @@ describe('useQuoteActivityTracker queue', () => {
       await firstWrite;
     });
 
-    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(3));
+    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(4));
     expect(trackerHarness.insert.mock.calls.map(([payload]) => payload.event_type)).toEqual([
       'motor_selected',
       'options_configured',
+      'purchase_path_chosen',
       'quote_submitted',
+    ]);
+
+    trackerHarness.pathname.current = '/quote/trade-in';
+    rerender();
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+    expect(trackerHarness.insert).toHaveBeenCalledTimes(4);
+    expect(fetchSpy.mock.calls.some(([input]) => String(input).includes('submit-quote-lead'))).toBe(false);
+
+    fetchSpy.mockRestore();
+    unmount();
+  });
+
+  it('tracks two identical quote journeys with their original event routes', async () => {
+    trackerHarness.insert.mockResolvedValue({ error: null });
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response('{}', { status: 200 }),
+    );
+    const selectedOptions = [{
+      optionId: 'battery',
+      name: 'Starting battery',
+      price: 179.99,
+      category: 'electrical',
+      assignmentType: 'available',
+      isIncluded: false,
+    }];
+
+    const { rerender, unmount } = renderHook(() => useQuoteActivityTracker());
+
+    const runJourney = () => {
+      trackerHarness.pathname.current = '/quote/motor-selection';
+      trackerHarness.state.current = quoteState({ motor });
+      rerender();
+
+      trackerHarness.pathname.current = '/quote/options';
+      trackerHarness.state.current = quoteState({ motor, selectedOptions });
+      rerender();
+
+      trackerHarness.pathname.current = '/quote/purchase-path';
+      trackerHarness.state.current = quoteState({
+        motor,
+        selectedOptions,
+        purchasePath: 'loose-motor',
+      });
+      rerender();
+
+      trackerHarness.pathname.current = '/quote/schedule';
+      trackerHarness.state.current = quoteState({
+        motor,
+        selectedOptions,
+        purchasePath: 'loose-motor',
+        completedSteps: [1, 2, 7],
+        currentStep: 7,
+      });
+      rerender();
+    };
+
+    runJourney();
+    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(4));
+
+    trackerHarness.pathname.current = '/quote/motor-selection';
+    trackerHarness.state.current = quoteState();
+    rerender();
+
+    runJourney();
+    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(8));
+
+    expect(trackerHarness.insert.mock.calls.map(([payload]) => [
+      payload.event_type,
+      payload.page_path,
+    ])).toEqual([
+      ['motor_selected', '/quote/motor-selection'],
+      ['options_configured', '/quote/options'],
+      ['purchase_path_chosen', '/quote/purchase-path'],
+      ['quote_submitted', '/quote/schedule'],
+      ['motor_selected', '/quote/motor-selection'],
+      ['options_configured', '/quote/options'],
+      ['purchase_path_chosen', '/quote/purchase-path'],
+      ['quote_submitted', '/quote/schedule'],
     ]);
     expect(fetchSpy.mock.calls.some(([input]) => String(input).includes('submit-quote-lead'))).toBe(false);
 
