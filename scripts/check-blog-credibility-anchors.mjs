@@ -1,16 +1,22 @@
 #!/usr/bin/env node
 /**
- * Enforce the one-anchor credibility budget on the articles identified by the
- * 2026-08-06 audit. Repeated references to the same fact are allowed when the
- * article's subject requires them; mixing two or more anchor classes is not.
+ * Enforce the one-anchor credibility budget where readers actually encounter
+ * the claims. Different paragraphs may use different relevant credentials;
+ * one paragraph or sentence may not stack multiple credibility classes.
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, relative } from 'node:path';
 
-const source = readFileSync('src/data/blogArticles.ts', 'utf8');
 const staticPrerender = readFileSync('scripts/static-prerender.mjs', 'utf8');
 const authorByline = readFileSync('src/components/blog/AuthorByline.tsx', 'utf8');
 
-const auditedSlugs = [
+const anchorClasses = [
+  ['heritage', /\b1947\b|third[- ]generation|three generations/i],
+  ['mercury-tenure', /\b1965\b/i],
+  ['premier-tier', /Mercury(?: Marine)? Premier|Premier[- ]tier|Premier dealer/i],
+];
+
+const enforcedSlugs = new Set([
   '2026-boating-market-ontario-boat-buyers',
   '2026-rice-lake-fishing-season-outlook',
   'mercury-75-hp-fourstroke-review-ontario',
@@ -32,29 +38,86 @@ const auditedSlugs = [
   'mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026',
   'outboard-vs-sterndrive-2026-ontario-repower',
   'renting-vs-owning-boat-ontario-math',
-];
+]);
 
-const slugMatches = [...source.matchAll(/slug:\s*['"]([^'"]+)['"]/g)];
-const blocks = new Map(slugMatches.map((match, index) => [
-  match[1],
-  source.slice(match.index, slugMatches[index + 1]?.index ?? source.length),
-]));
+// Main already contains legacy co-located stacks outside the audit's corrected
+// routes. Sweep every twin and prevent that corpus-wide count from increasing;
+// later remediation may lower this ceiling without blocking unrelated releases.
+const MAX_BASELINE_STACKED_UNITS = 157;
 
-const anchorClasses = [
-  ['heritage', /\b1947\b|third[- ]generation|three generations/i],
-  ['mercury-tenure', /\b1965\b/i],
-  ['premier-tier', /Mercury(?: Marine)? Premier|Premier[- ]tier|Premier dealer/i],
-];
+// This article is explicitly about the business history, so the facts are its
+// subject matter rather than promotional proof stacked onto an unrelated claim.
+const subjectMatterAllowlist = new Set([
+  'public/blog/harris-boat-works-since-1947-rice-lake-institution.md',
+]);
+
+function markdownFiles(root) {
+  const files = [];
+  for (const entry of readdirSync(root, { withFileTypes: true })) {
+    const path = join(root, entry.name);
+    if (entry.isDirectory()) files.push(...markdownFiles(path));
+    else if (entry.isFile() && entry.name.endsWith('.md')) files.push(path);
+  }
+  return files;
+}
+
+function readableBody(markdown) {
+  return markdown.replace(/^---\n[\s\S]*?\n---\n/, '');
+}
+
+function classesIn(text) {
+  return anchorClasses.filter(([, rx]) => rx.test(text)).map(([name]) => name);
+}
 
 const errors = [];
-for (const slug of auditedSlugs) {
-  const block = blocks.get(slug);
-  if (!block) {
-    errors.push(`${slug}: article not found`);
-    continue;
+const observedStacks = [];
+const twins = markdownFiles('public/blog');
+let paragraphCount = 0;
+let sentenceCount = 0;
+
+for (const twin of twins) {
+  const label = relative('.', twin);
+  const slug = twin.slice(twin.lastIndexOf('/') + 1, -3);
+  if (subjectMatterAllowlist.has(label)) continue;
+
+  const paragraphs = readableBody(readFileSync(twin, 'utf8'))
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
+  for (const [paragraphIndex, paragraph] of paragraphs.entries()) {
+    paragraphCount += 1;
+    // Markdown lists, tables, directive fields, and blockquotes are separate
+    // visible units even when no blank line separates their source lines.
+    const visibleUnits = paragraph.includes('\n')
+      ? paragraph.split('\n').map((line) => line.trim()).filter(Boolean)
+      : [paragraph];
+
+    for (const unit of visibleUnits) {
+      const unitClasses = classesIn(unit);
+      if (unitClasses.length > 1) {
+        const finding = `${label}: paragraph ${paragraphIndex + 1} stacks ${unitClasses.join(', ')}`;
+        observedStacks.push(finding);
+        if (enforcedSlugs.has(slug)) errors.push(finding);
+        continue;
+      }
+
+      const sentences = unit.split(/(?<=[.!?])\s+(?=[A-Z0-9"“])/);
+      for (const sentence of sentences) {
+        sentenceCount += 1;
+        const sentenceClasses = classesIn(sentence);
+        if (sentenceClasses.length > 1) {
+          const finding = `${label}: sentence stacks ${sentenceClasses.join(', ')}`;
+          observedStacks.push(finding);
+          if (enforcedSlugs.has(slug)) errors.push(finding);
+        }
+      }
+    }
   }
-  const classes = anchorClasses.filter(([, rx]) => rx.test(block)).map(([name]) => name);
-  if (classes.length > 1) errors.push(`${slug}: stacks ${classes.join(', ')}`);
+}
+
+if (observedStacks.length > MAX_BASELINE_STACKED_UNITS) {
+  errors.push(`Markdown twin stack count grew from the ${MAX_BASELINE_STACKED_UNITS}-unit baseline to ${observedStacks.length}`);
 }
 
 const injectedStripLines = staticPrerender
@@ -77,4 +140,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Credibility-anchor budget passed for ${auditedSlugs.length} audited articles and shared blog chrome.`);
+console.log(`Credibility-anchor budget passed for ${twins.length} Markdown twins, ${paragraphCount} paragraphs, ${sentenceCount} sentences, and shared blog chrome (${observedStacks.length}/${MAX_BASELINE_STACKED_UNITS} legacy stacked units).`);
