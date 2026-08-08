@@ -278,7 +278,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-12',
     category: 'Comparaison',
     readTime: '7 min',
@@ -316,8 +316,8 @@ Le Mercury 150 FourStroke est une famille entièrement différente, un bloc 4 cy
 | Cylindrée | 2,1 L | 3,0 L |
 | Cylindres | 4 en ligne | 4 en ligne |
 | Poids (arbre 20") | ~163 kg (359 lb) | ~206 kg (455 lb) |
-| Plage de régime | 5 000, 6 000 tr/min | 5 000, 5 800 tr/min |
-| Embarcations idéales | 16, 19 pieds | 19, 22 pieds |
+| Plage de régime | 5 000–6 000 tr/min | 5 000–5 800 tr/min |
+| Embarcations idéales | 16–19 pieds | 19–22 pieds |
 
 ---
 
@@ -331,7 +331,7 @@ La différence se fait vraiment sentir à pleine charge : quatre adultes, une gl
 
 ### Consommation de carburant
 
-À vitesse de croisière normale, ce qui représente la plupart des journées sur les lacs des Kawartha ou le lac Rice, les deux moteurs peuvent être très proches en consommation. Un 150 utilisé à 60, 70 % de sa capacité sur une grosse embarcation peut être aussi efficace qu'un 115 poussé à fond sur une petite. L'hélice choisie a aussi un impact important sur la consommation réelle.
+À vitesse de croisière normale, ce qui représente la plupart des journées sur les lacs des Kawartha ou le lac Rice, les deux moteurs peuvent être très proches en consommation. Un 150 utilisé à 60–70 % de sa capacité sur une grosse embarcation peut être aussi efficace qu'un 115 poussé à fond sur une petite. L'hélice choisie a aussi un impact important sur la consommation réelle.
 
 ### Poids
 
@@ -388,10 +388,10 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 ## Foire aux questions
 
 **Le 115 HP suffit-il pour un ponton de 20 pieds ?** 
-Oui, pour un ponton de 20 pieds avec une charge normale (3, 4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
+Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
 
 **Le 150 consomme-t-il beaucoup plus que le 115 ?** 
-À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65, 70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
+À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65–70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
 
 **Dois-je prendre la version Command Thrust sur un ponton ?** 
 Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
