@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion.md
-last_updated: 2026-06-19
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP: Comparación completa para remotorización"
 description: "Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso."
 category: "Comparación de motores"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-08
 keywords: ["Mercury 115 vs 150","motor fuera de borda 115 o 150 HP","Mercury FourStroke comparación","remotorización Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: es
 
 **Category:** Comparación de motores  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 
 ### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16, 19 pies con 2, 3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19, 22 pies con cargas de 4, 5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -55,8 +55,8 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Potencia | 115 HP | 150 HP |
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
-| RPM máximo (WOT) | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
-| Rango de botes | 16, 19 pies | 19, 22 pies |
+| RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
+| Rango de botes | 16–19 pies | 19–22 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -80,7 +80,7 @@ Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian 
 
 ### Consumo de combustible
 
-Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60, 70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
+Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
@@ -107,15 +107,15 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote es de 16, 19 pies
-- Sales típicamente con 2, 3 personas
+- Tu bote es de 16–19 pies
+- Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote es de 19, 22 pies
-- Sales regularmente con 4, 5 personas o carga completa
+- Tu bote es de 19–22 pies
+- Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
 - Planeas usar el bote para deportes acuáticos (esquí, wakeboard)
@@ -126,7 +126,7 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000, $5,000+ CAD dependiendo de la configuración.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000–$5,000+ CAD dependiendo de la configuración.
 
 ---
 

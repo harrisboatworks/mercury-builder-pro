@@ -15370,7 +15370,7 @@ Tournament use rewards the Pro XS for faster acceleration and more water covered
 
 ### Charter Fishing Operations
 
-**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP 300-350 HP Pro XS V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
+**Recommended:** 26–30+ ft deep-V + Mercury 300 HP Pro XS V8 or 300–350 HP SeaPro commercial-duty variant + 15 HP ProKicker.
 
 Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and Mercruiser.
 
@@ -15398,9 +15398,9 @@ rightLabel: 20+ miles for offshore salmon
 rightCriteria:
   - You run east-west to find temperature breaks
   - You fish 3 to 6 ft chop regularly, not just on calm days
-  - A 9.9 ProKicker for slow trolling is non-negotiable
+  - A 15 HP ProKicker for slow trolling is non-negotiable
   - Boat is 21 ft or bigger with offshore-rated hull
-rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 9.9 ProKicker
+rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker
 rightVariant: recommended
 whenInDoubt: If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
 ::

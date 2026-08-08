@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-08-01
+date_modified: 2026-08-08
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: es
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-01  
+**Last updated:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 
@@ -62,10 +62,10 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye (lucioperca / doré) | 2.º sábado de mayo , 15 noviembre | 4 |
-| Bass de boca grande (largemouth) | 3.er sábado de junio , 15 diciembre | 6 |
-| Bass de boca pequeña (smallmouth) | 3.er sábado de junio , 15 diciembre | 6 |
-| Muskie (lucio almizclero) | 1.er sábado de junio , 15 diciembre | 1 |
+| Walleye (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre | 4 |
+| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
+| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
+| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
 | Perca amarilla (yellow perch) | Todo el año | 50 |
 | Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
 
@@ -78,13 +78,13 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 El walleye (en inglés: walleye; en francés: doré) es la especie estrella de Rice Lake. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
 
 **Por qué Rice Lake produce walleye consistentemente:**
-- Profundidad moderada con áreas de 3, 8 metros ideales para walleye
+- Profundidad moderada con áreas de 3–8 metros ideales para walleye
 - Vegetación acuática (cabeza de flecha, nenúfar) que crea cover natural
 - El sistema Trent-Severn mantiene corrientes que el walleye prefiere para desovar
 
 **Técnicas básicas:**
-- **Jigging vertical** en 8, 15 pies con jig de 1/4, 1/2 oz en colores chartreuse, blanco o naranja
-- **Arrastre lento (trolling)** a 1.3, 1.8 mph con señuelos de buceo o cucharas articuladas
+- **Jigging vertical** en 8–15 pies con jig de 1/4–1/2 oz en colores chartreuse, blanco o naranja
+- **Arrastre lento (trolling)** a 1.3–1.8 mph con señuelos de buceo o cucharas articuladas
 - La hora dorada es al amanecer y al atardecer, el walleye es especialmente activo con poca luz
 
 ---
@@ -109,8 +109,8 @@ La perca es la opción más accesible, disponible todo el año, con un límite g
 
 Para pescar en Ontario se requiere:
 
-1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9, 11 CAD, válida 3 años
-2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25, 30 CAD anuales (varía según categoría)
+1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9–$11 CAD, válida 3 años
+2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25–$30 CAD anuales (varía según categoría)
 
 Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
 
@@ -145,11 +145,11 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 **5:30 AM**, Salida de Toronto por 401E 
 **7:00 AM**, Llegada a Gores Landing, Harris Boat Works 
 **7:15 AM**, Salida al lago (equipo propio o renta) 
-**7:30, 11:00 AM**, Pesca matutina (mejor hora para walleye) 
+**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye) 
 **11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra 
-**1:00, 5:00 PM**, Tarde: bass o perca 
+**1:00–5:00 PM**, Tarde: bass o perca 
 **5:30 PM**, Regreso a HBW, combustible 
-**6:00, 7:00 PM**, Regreso a Toronto
+**6:00–7:00 PM**, Regreso a Toronto
 
 ---
 
