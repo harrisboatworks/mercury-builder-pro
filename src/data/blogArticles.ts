@@ -12024,7 +12024,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
-**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Bonus warranty programs are time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
+**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Additional promotional coverage is time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
 ## What Year-End Specifically Looks Like at HBW
 
@@ -12049,7 +12049,7 @@ These are the patterns we see across hundreds of repower conversations a year.
 - **Waiting until April to "see what's available."** By April, the popular HP classes are spoken for through opener. You can still buy, but the install slot is the constraint, not the motor.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
-- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Bonus coverage can add value when an eligible promotion is active, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
+- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Additional promotional coverage can add value when written terms include it, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
 - **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
 
 ## Pricing and Install Timing Together: The Two Levers
@@ -12088,7 +12088,7 @@ Late April through early June. Demand is at peak, inventory is tightest, and the
 It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price. If you just want the motor, compare the written numbers and availability. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
-The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
+The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; additional promotional coverage applies only when written terms include it. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
 
 **Should I wait for the Toronto International Boat Show?**
 Depends on what you're hoping to find. The show is good for browsing the full lineup in person, comparing brands, and catching Mercury's January promotional pricing on display. If you've already built a quote and just want to confirm, the show might not add much beyond a vibe check. If you haven't started shopping yet, the show is a productive way to compress a few weeks of research into a weekend.
@@ -12096,8 +12096,8 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 **How does HBW handle install scheduling for spring delivery?**
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
-**Does bonus warranty coverage depend on when I buy?**
-Yes. Mercury's standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
+**Does additional promotional coverage depend on when I buy?**
+Yes. Mercury's standard Canadian warranty is 3 years. Additional promotional coverage applies only when written terms include it and the purchase and motor meet the offer's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
 
 ## Ready to See Your Number?
 
@@ -12129,7 +12129,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'What\'s actually negotiable on a new Mercury purchase?',
-        answer: 'The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury\'s standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that\'s not negotiable is the install slot if it\'s not available, you can\'t buy time we don\'t have.'
+        answer: 'The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury\'s standard Canadian warranty is 3 years; additional promotional coverage applies only when written terms include it. The thing that\'s not negotiable is the install slot if it\'s not available, you can\'t buy time we don\'t have.'
       },
       {
         question: 'Should I wait for the Toronto International Boat Show?',
@@ -12140,8 +12140,8 @@ Honest version: the right month to buy is the month you actually need the boat o
         answer: 'We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
       },
       {
-        question: 'Does bonus warranty coverage depend on when I buy?',
-        answer: 'Yes. Mercury\'s standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion\'s dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).'
+        question: 'Does additional promotional coverage depend on when I buy?',
+        answer: 'Yes. Mercury\'s standard Canadian warranty is 3 years. Additional promotional coverage applies only when written terms include it and the purchase and motor meet the offer\'s dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).'
       }
     ]
   },
@@ -12787,7 +12787,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     content: `
 *Last reviewed: 2026-07-02*
 
-> **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
+> **Quick answer:** Mercury controls promotions; dealers can't invent discounts. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
 
 ## How Mercury Pricing Works in 2026
 
@@ -12910,7 +12910,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 **Current warranty position (verified July 2026)**:
 - Mercury's standard Canadian limited factory warranty is 3 years
-- Bonus warranty coverage applies only when a current promotion explicitly includes it
+- Additional promotional coverage applies only when a current promotion explicitly includes it
 - See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
@@ -21149,7 +21149,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-07-23*
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
+> **Quick answer:** Eligible new Mercury FourStroke outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -21169,7 +21169,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Bonus warranty promotions sometimes extend that base for eligible purchases, but those offers are time-limited. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
+That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
 
 ---
 
@@ -25382,13 +25382,13 @@ For the motor price itself, Premier and Bronze dealers are generally within a fe
 
 Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
 
-## Mercury promotional pricing and bonus warranty
+## Mercury promotional pricing and coverage
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms.
+Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.
 
 ## About the author
 
@@ -25423,7 +25423,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
       { question: 'What\'s the difference between MSRP and dealer price?', answer: 'MSRP is Mercury Canada\'s suggested retail. Dealer price is what we actually sell for, at or below MSRP. Harris Boat Works publishes both numbers next to every motor so you can see exactly what the difference is.' },
       { question: 'Does the motor price include installation?', answer: 'No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.' },
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
-      { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Bonus coverage applies only when an eligible promotion is active. What\'s active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).' },
+      { question: 'How long is the Mercury warranty?', answer: 'Eligible pleasure-use motors in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. Both run concurrently, not as six stacked years. Additional promotional coverage applies only when written terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.' },
       { question: 'Can I order any model, or only what\'s in stock?', answer: "Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typical wait depends on the model and Mercury's current availability." },
       { question: 'Are these prices final?', answer: 'The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at pickup, before HST.' }
     ]
@@ -27673,7 +27673,7 @@ The propeller allowance in our quote builder is there for a reason.
 
 At HBW, motor pricing from 25 HP and up doesn't include a propeller. We match the starting prop to the boat, then check the result during water testing. If a customer already has a suitable prop, we can account for that, but “it fits the shaft” doesn't mean it is the right prop.
 
-An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any bonus coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
+An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any additional promotional coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
 
 We check:
 
@@ -36662,7 +36662,7 @@ If the boat passes the structural assessment, it is ready for a real repower quo
 
 ## What does a typical Mercury repower include?
 
-An installed repower quote should identify the exact Mercury outboard, controls, steering, rigging, propeller, removal, installation, testing, warranty registration, HST, and exclusions that apply to the boat. Do not assume that every item is bundled the same way on every project. Confirm current warranty terms and any eligible bonus coverage on the [promotions page](/promotions), and use the [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for context. Financing is OAC through HBW's Canadian lending provider; the lender's current disclosure controls the rate, contract term, amortization, fees, down payment, and approval. Build a starting quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and rely on the written boat-specific total. Pickup only at Gores Landing, no shipping, no delivery.
+An installed repower quote should identify the exact Mercury outboard, controls, steering, rigging, propeller, removal, installation, testing, warranty registration, HST, and exclusions that apply to the boat. Do not assume that every item is bundled the same way on every project. Confirm current warranty terms and any eligible additional promotional coverage on the [promotions page](/promotions), and use the [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for context. Financing is OAC through HBW's Canadian lending provider; the lender's current disclosure controls the rate, contract term, amortization, fees, down payment, and approval. Build a starting quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and rely on the written boat-specific total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 

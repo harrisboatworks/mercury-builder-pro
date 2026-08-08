@@ -3,6 +3,7 @@ import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
+import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -477,7 +478,7 @@ function motorMarkdown(m) {
     '',
     isVerado ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.' : null,
     `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
-    '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
+    WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
@@ -694,7 +695,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
-    '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
+    WARRANTY_AGENT_NOTE_BOLD,
     `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
@@ -941,7 +942,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
           '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
           '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
           '- Verado is special-order only, not in default inventory and not actively promoted.',
-          '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
+          WARRANTY_AGENT_NOTE,
           '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
         ]),
     '',

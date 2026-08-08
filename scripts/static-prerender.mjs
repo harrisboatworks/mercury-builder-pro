@@ -25,6 +25,7 @@ import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOf
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
+import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -1805,7 +1806,7 @@ const TRUST_FAQ_PRERENDER = [
   { question: "What Mercury motor lines do you carry?", answer: "We carry the full Mercury outboard lineup: portable FourStroke (2.5–20hp), mid-range FourStroke (25–115hp), Command Thrust (40–150hp for pontoons and heavy hulls), Pro XS performance (115–300hp), SeaPro commercial-duty, ProKicker trolling motors (9.9hp/15hp), and FourStroke V8 (250–300hp). We also stock genuine Mercury parts, oils, and accessories." },
   { question: "Are your prices in Canadian dollars?", answer: "Yes, all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games." },
   { question: "Do you offer Mercury financing?", answer: "Yes. HBW arranges financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more. The quote builder uses the current promotional rate, includes the $349 DealerPlan documentation fee where applicable, and shows the contract and amortization disclosure." },
-  { question: "What warranty comes with a new Mercury outboard?", answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Bonus warranty coverage applies only while an eligible promotion is active. Harris Boat Works registers the warranty directly with Mercury Marine at pickup." },
+  { question: "What warranty comes with a new Mercury outboard?", answer: `${WARRANTY_POLICY_SENTENCE} Harris Boat Works registers the warranty directly with Mercury Marine at pickup.` },
   { question: "Are Mercury motors made in Canada?", answer: "Mercury Marine is headquartered in Fond du Lac, Wisconsin, USA, where most outboard motors are manufactured. Mercury has been building outboards since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been the authorized Canadian Mercury dealer for the Rice Lake / Kawartha region since 1965." },
   { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
   { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
@@ -2056,7 +2057,7 @@ const PRO_XS_FAQ_PRERENDER = [
   { question: "What HP Pro XS models does Harris Boat Works carry?", answer: "We list 115 HP, 150 HP, 200 HP, and 250 HP Pro XS options with current CAD pricing online. Inventory status varies by exact model; the quote builder shows the current status and Harris Boat Works completes warranty registration at pickup." },
   { question: "Pro XS vs FourStroke, which should I buy?", answer: "Pro XS for performance: tournament bass, fast bowriders, ski/wake boats, and anyone chasing top-end speed and hole-shot. Standard FourStroke for cruising, fishing, pontoons, and fuel economy. Same Mercury reliability, different tuning. We can walk you through the right choice for your hull at (905) 342-2153 or via the configurator." },
   { question: "Are Pro XS prices in Canadian dollars?", answer: "Yes. Pro XS prices on mercuryrepower.ca are in CAD and show the bare motor price before HST, controls, propeller, rigging, and installation. The quote builder adds the items needed for your boat so you can compare the complete package." },
-  { question: "What's the warranty on a new Pro XS?", answer: "Standard Mercury warranty is 3 years. Bonus coverage applies only while an eligible promotion is active. Harris Boat Works registers the warranty at pickup." },
+  { question: "What's the warranty on a new Pro XS?", answer: `${WARRANTY_POLICY_SENTENCE} Harris Boat Works registers the warranty at pickup.` },
   { question: "Can I finance a Pro XS purchase?", answer: "Yes. HBW arranges financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more. Estimated payments use the current promotional rate and include the $349 DealerPlan documentation fee where applicable." },
   { question: "How do I take delivery of a Pro XS from Harris Boat Works?", answer: "Pickup only at our Gores Landing location on Rice Lake. Two paths: (1) bring your boat for full installation including controls, prop, and lake test, or (2) pick up the loose motor for self-install. We do not ship motors. Pickup ensures every customer gets a personal walk-through and clean Mercury warranty registration." },
   { question: "Where can I see current Pro XS inventory and pricing?", answer: "Build a quote at mercuryrepower.ca/quote/motor-selection, filter by Pro XS family. Live CAD pricing, in-stock indicators, and monthly payment estimates update directly from our inventory." }
@@ -2069,7 +2070,7 @@ const ONTARIO_HUB_FAQ_PRERENDER = [
   { question: "What areas of Ontario does Harris Boat Works serve?", answer: "Our location at Gores Landing on Rice Lake (Northumberland County) puts us within easy reach of Peterborough (35 min), Cobourg (20 min), Port Hope, the Kawartha Lakes, the Trent-Severn Waterway, and the Greater Toronto Area (90 min via 401). Customers come from across Ontario including Lake Simcoe, Lake Scugog, Bay of Quinte, and the GTA. Pickup only at our Gores Landing location." },
   { question: "Are Mercury outboard prices in Canadian dollars?", answer: "Yes. The pricing reference shows current bare-motor prices in CAD before HST, controls, propeller, rigging, and installation. The quote builder adds the boat-specific items and financing estimate." },
   { question: "Can I finance a Mercury outboard purchase?", answer: "Yes. HBW arranges financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more. Monthly estimates use the current promotional rate and include the $349 DealerPlan documentation fee where applicable. Apply at mercuryrepower.ca/financing-application." },
-  { question: "What warranty comes with a new Mercury motor?", answer: "Standard Mercury Marine factory warranty is 3 years. Bonus coverage applies only while an eligible promotion is active. Harris Boat Works registers every warranty at pickup." },
+  { question: "What warranty comes with a new Mercury motor?", answer: `${WARRANTY_POLICY_SENTENCE} Harris Boat Works registers every warranty at pickup.` },
   { question: "Do you ship Mercury motors across Ontario?", answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Premier status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install." },
   { question: "Do you take trade-ins on Mercury outboard purchases?", answer: "Yes. We accept trade-ins on Mercury and most other outboard brands. Get an instant trade-in estimate at mercuryrepower.ca/trade-in-value, values are anchored to our actual selling prices, not blue-book guesses. Trade credit applies directly to the new motor quote." },
   { question: "Is Harris Boat Works near me?", answer: "If you're in Ontario, probably yes. Travel times: Peterborough 35 min, Cobourg 20 min, Port Hope 25 min, Lindsay 50 min, Bowmanville 45 min, Oshawa 55 min, Port Perry 50 min, downtown Toronto 90 min via 401. We also serve Northumberland County, Hastings County, the Kawarthas, and the GTA. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." }
@@ -2092,7 +2093,7 @@ const PRO_XS_250_VARIANTS_PRERENDER = [
 const PRO_XS_250_FAQ_PRERENDER = [
   { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.' },
   { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
-  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 includes the standard 3-year Mercury Marine factory warranty. Extended coverage is available. Any active Mercury bonus-warranty promotion is confirmed at quote time.' },
+  { question: 'What warranty comes with a Pro XS 250?', answer: WARRANTY_POLICY_SENTENCE },
   { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
   { question: 'How long does a Pro XS 250 repower take?', answer: 'Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock 250s ship immediately, special-order Pro XS lead time depends on Mercury availability, and your boat stays with you until the motor arrives. Spring (April and May) books up early, plan ahead.' },
 ];
@@ -2956,7 +2957,7 @@ const BLOG_TABLE_FALLBACKS = {
     '<tr><th scope="row">Cruise fuel burn @ 25 mph</th><td>~5.5 GPH</td><td>~5.8 GPH</td></tr>' +
     '<tr><th scope="row">Typical price (CAD)</th><td>$15,500</td><td>$18,000</td></tr>' +
     '<tr><th scope="row">Best for</th><td>16–19 ft tinnies, light pontoons</td><td>18–22 ft, tritoons, family runabouts</td></tr>' +
-    '<tr><th scope="row">Warranty</th><td>3-year (up to 7 with promo)</td><td>3-year (up to 7 with promo)</td></tr>' +
+    `<tr><th scope="row">Warranty</th><td>${escapeHtml(WARRANTY_TABLE_CELL)}</td><td>${escapeHtml(WARRANTY_TABLE_CELL)}</td></tr>` +
     '</tbody></table>',
 };
 
@@ -3663,7 +3664,7 @@ const motorPageRoutes = motorRecords
         (modelNo ? `<tr><th scope="row">Model number</th><td>${escapeHtml(modelNo)}</td></tr>` : '') +
         `<tr><th scope="row">Price (CAD)</th><td>${escapeHtml(priceStr)}</td></tr>` +
         `<tr><th scope="row">Availability</th><td>${inStock ? 'In stock' : 'Special order'}</td></tr>` +
-        `<tr><th scope="row">Warranty</th><td>3-year factory warranty; bonus coverage only while an eligible promotion is active</td></tr>` +
+        `<tr><th scope="row">Warranty</th><td>${escapeHtml(WARRANTY_TABLE_CELL)}</td></tr>` +
         `<tr><th scope="row">Pickup</th><td>Gores Landing, ON (no shipping)</td></tr>` +
         '</tbody></table>' +
         `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>` +
@@ -6445,7 +6446,7 @@ function motorMarkdown(m) {
       ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.'
       : null,
     `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
-    '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
+    WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
   ].filter(l => l !== null);
@@ -6605,7 +6606,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
-    '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
+    WARRANTY_AGENT_NOTE_BOLD,
     `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',

@@ -88,7 +88,7 @@ If the boat passes the structural assessment, it is ready for a real repower quo
 
 ## What does a typical Mercury repower include?
 
-An installed repower quote should identify the exact Mercury outboard, controls, steering, rigging, propeller, removal, installation, testing, warranty registration, HST, and exclusions that apply to the boat. Do not assume that every item is bundled the same way on every project. Confirm current warranty terms and any eligible bonus coverage on the [promotions page](/promotions), and use the [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for context. Financing is OAC through HBW's Canadian lending provider; the lender's current disclosure controls the rate, contract term, amortization, fees, down payment, and approval. Build a starting quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and rely on the written boat-specific total. Pickup only at Gores Landing, no shipping, no delivery.
+An installed repower quote should identify the exact Mercury outboard, controls, steering, rigging, propeller, removal, installation, testing, warranty registration, HST, and exclusions that apply to the boat. Do not assume that every item is bundled the same way on every project. Confirm current warranty terms and any eligible additional promotional coverage on the [promotions page](/promotions), and use the [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for context. Financing is OAC through HBW's Canadian lending provider; the lender's current disclosure controls the rate, contract term, amortization, fees, down payment, and approval. Build a starting quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and rely on the written boat-specific total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 
@@ -196,6 +196,6 @@ Ask for a current written value for the complete boat or the old motor, dependin
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

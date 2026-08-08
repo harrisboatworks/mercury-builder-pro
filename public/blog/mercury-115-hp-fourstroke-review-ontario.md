@@ -286,7 +286,7 @@ The propeller allowance in our quote builder is there for a reason.
 
 At HBW, motor pricing from 25 HP and up doesn't include a propeller. We match the starting prop to the boat, then check the result during water testing. If a customer already has a suitable prop, we can account for that, but “it fits the shaft” doesn't mean it is the right prop.
 
-An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any bonus coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
+An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any additional promotional coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
 
 We check:
 
@@ -413,6 +413,6 @@ Pricing varies by calibration, gearcase, shaft length and current Mercury progra
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 
