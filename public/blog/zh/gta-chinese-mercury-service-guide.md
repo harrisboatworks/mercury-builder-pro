@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md
-last_updated: 2026-08-03
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 发动机维修保养完整指南：从机油到
 description: "多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-03
+date_modified: 2026-08-08
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-08-03  
+**Last updated:** 2026-08-08
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
@@ -82,7 +82,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 
 ### 阳极 / Anodes（视情况）
 
-锌或铝阳极是发动机水下部分的"牺牲品"，定期更换可以保护齿轮箱和螺旋桨轴。淡水（Rice Lake、Kawarthas）腐蚀较慢，但年度检查仍是标准。
+牺牲阳极会优先腐蚀，从而保护齿轮箱和螺旋桨轴。Rice Lake、Kawarthas 等淡水环境通常使用镁阳极；咸水环境使用锌阳极。铝阳极是否适用，要按具体 Mercury 机型、零件编号和使用水域确认。无论在哪种水域，都应每年检查阳极，并在明显消耗后更换。
 
 ---
 
@@ -94,7 +94,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 |---|---|---|
 | 发动机品牌 | Mercury / Mercruiser（全系） | Yamaha / Honda / Suzuki / Tohatsu |
 | 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
-| 操作员卡 / 钓鱼证 | 不销售（请到 ontario.ca 办理） | ， |
+| 操作员卡 / 钓鱼证 | 不适用 | 不销售；请到 ontario.ca 办理 |
 
 如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 

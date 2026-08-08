@@ -34,6 +34,19 @@ const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
 const parsedVercelConfig = JSON.parse(vercelConfig);
+const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
+const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
+const mandarinServiceSurface = `${mandarinServiceGuide}\n${mandarinServiceTwin}`;
+
+check(
+  !/锌或铝阳极是发动机水下部分的["“]牺牲品|\| 操作员卡 \/ 钓鱼证 \| 不销售（请到 ontario\.ca 办理） \| ， \|/.test(mandarinServiceSurface),
+  'Mandarin service guide revived the anode mistranslation or malformed service table row.',
+);
+check(
+  /淡水环境通常使用镁阳极；咸水环境使用锌阳极/.test(mandarinServiceSurface) &&
+    /\| 操作员卡 \/ 钓鱼证 \| 不适用 \| 不销售；请到 ontario\.ca 办理 \|/.test(mandarinServiceSurface),
+  'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
+);
 
 check(
   !/Legend[^.\n]{0,100}(?:built in Whitefish|Canadian-built|built in Canada|Ontario-built|made in Canada|manufactured in Whitefish|manufactured in Canada)/i.test(blogArticles),
