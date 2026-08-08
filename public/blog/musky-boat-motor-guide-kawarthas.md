@@ -151,10 +151,10 @@ Not recommended on a planing musky V-hull. Command Thrust is a pontoon and workb
 
 ## Related guides
 
-- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 - [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 - [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 
 ## Next steps
 

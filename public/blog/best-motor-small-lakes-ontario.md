@@ -151,10 +151,10 @@ Yes. Mercury's Avator electric line includes models from 7.5e to 110e. Contact u
 
 ## Related guides
 
-- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
-- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 - [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 - [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 
 ## Next steps
 

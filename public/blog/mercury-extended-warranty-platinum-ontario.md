@@ -235,8 +235,8 @@ Use the Mercury Product Protection page at /mercury-product-protection for the m
 
 ## Related guides
 
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 - [Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)](/blog/legend-boats-warranty-canada-wowranty-guide-2026), the Legend Boats WOWranty guide
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 
 ## Next steps
 

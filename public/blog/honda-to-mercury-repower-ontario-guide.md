@@ -175,10 +175,10 @@ It depends on year, hours, condition, configuration, and the current Ontario mar
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower), two-stroke to four-stroke repower notes
+- [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
+- [Mercruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
+- [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
 
 ## Next steps
 

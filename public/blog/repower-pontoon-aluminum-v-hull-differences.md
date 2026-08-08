@@ -131,10 +131,10 @@ Yes. Pontoons typically need a long (20-inch) shaft, most aluminum fishing boats
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers), Pro XS repower for Kawartha anglers
+- [Mercury DTS vs Mechanical Ontario](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS vs mechanical controls on a repower
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
 
 ## Next steps
 

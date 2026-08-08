@@ -198,6 +198,7 @@ export const blogClusters: BlogCluster[] = [
       "boat-motor-trade-in-guide",
       "outboard-trade-in-value-ontario-hbw",
       "bilge-pump-troubleshooting-guide",
+      "mercury-outboard-repair-guide",
     ],
   },
   {
@@ -509,6 +510,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-100-hour-service-cost-ontario": "what the 100-hour service covers",
   "spring-commissioning-cost-ontario": "spring commissioning costs in Ontario",
   "bilge-pump-troubleshooting-guide": "diagnosing a bilge pump that won't run",
+  "mercury-outboard-repair-guide": "repair symptoms, triage, and service next steps",
   "mercury-outboard-reliability-2026": "how Mercury reliability holds up in 2026",
   "renting-vs-owning-boat-ontario-math": "the rent vs own math for Ontario boaters",
   "group-boat-rentals-rice-lake": "renting for a group on Rice Lake",
@@ -587,13 +589,17 @@ export function getRelatedSlugs(slug: string, max = 5): string[] {
   const cluster = getClusterForSlug(slug);
   if (!cluster) return [];
   const isPillar = cluster.pillar === slug;
-  const out: string[] = [];
-  if (!isPillar) out.push(cluster.pillar);
-  for (const s of cluster.spokes) {
-    if (s === slug) continue;
-    if (s === cluster.pillar) continue;
-    out.push(s);
-    if (out.length >= max) break;
+  const out: string[] = isPillar ? [] : [cluster.pillar];
+  const start = isPillar ? 0 : cluster.spokes.indexOf(slug) + 1;
+
+  // Walk the spokes as a ring. The previous first-N strategy sent every
+  // article to the same handful of early spokes, leaving later articles with
+  // no inbound link even though they belonged to a cluster. Spokes still lead
+  // with the pillar, then distribute their remaining links across neighbours.
+  for (let offset = 0; offset < cluster.spokes.length && out.length < max; offset++) {
+    const candidate = cluster.spokes[(start + offset) % cluster.spokes.length];
+    if (candidate === slug) continue;
+    out.push(candidate);
   }
   return out.slice(0, max);
 }
