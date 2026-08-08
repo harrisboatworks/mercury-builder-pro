@@ -20915,7 +20915,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Legend XT18 aluminum boat with a Mercury 115 Pro XS outboard motor docked at an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-21',
-    dateModified: '2026-05-21',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-21',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -20923,9 +20923,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Legend Boats + Mercury Power Packages. Ontario Buyer's Guide (2026)
 
-*Last reviewed: 2026-05-21*
+*Last reviewed: 2026-08-08*
 
-> **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+> **Quick answer:** Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury, and its boats are designed by Canadians for Canadian water. Legend pairs its boats with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
 
 For pricing on the engines included in Legend power packages, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what's included in a typical rigging package, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains the factory coverage.
 
