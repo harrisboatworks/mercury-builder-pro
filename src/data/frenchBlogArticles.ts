@@ -2625,7 +2625,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina 
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: "Guide d'achat",
     readTime: '10 min',
@@ -2701,6 +2701,12 @@ Ce tableau est un point de départ, pas une prescription. Le bon HP pour votre c
 Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://www.mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
 
 Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 *Dernière révision : 2026-05-13.*
 
