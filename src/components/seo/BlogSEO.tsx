@@ -2,7 +2,7 @@ import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
-import { EN_TO_FR_SLUG } from '@/data/frenchEnglishSlugMap';
+import { getBlogHreflangAlternates } from '@/data/blogI18nRegistry.js';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -16,6 +16,7 @@ function getDealerCityFromSlug(slug: string): string | null {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const hreflangAlternates = getBlogHreflangAlternates('en', article.slug);
   const shareImage = article.socialImage || article.image;
   const absoluteShareImage = shareImage
     ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
@@ -278,15 +279,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <title>{renderedTitle}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
-      {EN_TO_FR_SLUG[article.slug] && (
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/blog/fr/${EN_TO_FR_SLUG[article.slug]}`} />
-      )}
-      {EN_TO_FR_SLUG[article.slug] && (
-        <link rel="alternate" hrefLang="en-CA" href={url} />
-      )}
-      {EN_TO_FR_SLUG[article.slug] && (
-        <link rel="alternate" hrefLang="x-default" href={url} />
-      )}
+      {hreflangAlternates.map((alternate) => (
+        <link
+          key={alternate.hrefLang}
+          rel="alternate"
+          hrefLang={alternate.hrefLang}
+          href={`${SITE_URL}${alternate.path}`}
+        />
+      ))}
       
       {/* Open Graph */}
       <meta property="og:title" content={renderedTitle} />

@@ -24,6 +24,7 @@ import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -3063,87 +3064,15 @@ function renderAuthorBylineHtml(authorName) {
   );
 }
 
-// ============================================================
-// Cross-language hreflang slug maps (mirror src/data/frenchEnglishSlugMap.ts).
-// Only includes pairs where an alternate actually exists. Fabricating a
-// hreflang to a slug that doesn't exist gets the cluster ignored by Google.
-// ============================================================
-const FR_TO_EN_SLUG = {
-  'prix-remotorisation-mercury-ontario': 'mercury-repower-cost-ontario-2026-cad',
-  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
-  'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
-  'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
-  'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',
-  'surchauffe-moteur-mercury-guide-urgence': 'mercury-outboard-overheating-at-idle-fix-ontario',
-  'entretien-remorque-bateau-ontario': 'boat-trailer-maintenance-guide-ontario',
-  'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
-  'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
-  'gamme-mercury-hors-bord-2026-ontario': 'mercury-outboard-lineup-ontario',
-  'peche-lac-rice-ontario-guide-plaisanciers': 'rice-lake-boating-guide-2026',
-  'permis-bateau-ontario-carte-conducteur-embarcation': 'pleasure-craft-licence-update-repower-ontario',
-  'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
-  'revue-mercury-75-hp-fourstroke-ontario': 'mercury-75-hp-fourstroke-review-ontario',
-  'revue-mercury-90-hp-fourstroke-ontario': 'mercury-90-hp-fourstroke-review-ontario',
-  'moteur-hors-bord-electrique-mercury-avator': 'mercury-avator-electric-boating-ontario',
-  'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
-  'poids-moteur-hors-bord-mercury': 'mercury-outboard-weight-chart',
-};
-const ZH_TO_EN_SLUG = {
-  'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
-  // Retired slugs (per vercel.json 301s) remapped to canonical zh targets:
-  'gta-chinese-rice-lake-winter-storage-complete-guide': 'diy-mercury-outboard-winterization-guide',
-  'mercury-repower-guide-gta': 'repower-vs-new-boat',
-  'mercury-fourstroke-pro-xs-verado-chinese-comparison': 'fourstroke-vs-pro-xs',
-};
-const KO_TO_EN_SLUG = {
-  'mercury-avator-jeondong-seonoegi': 'mercury-avator-electric-boating-ontario',
-  'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
-  'mercury-seonoegi-muge': 'mercury-outboard-weight-chart',
-};
-const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
-const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
-const EN_TO_KO_SLUG = Object.fromEntries(Object.entries(KO_TO_EN_SLUG).map(([ko, en]) => [en, ko]));
-
-// zh-Hant pilot slug map (mirrors src/data/traditionalChineseBlogArticles.ts
-// ZH_HANT_TO_HANS_SLUG). Retained for the future native-review rollout; the
-// current Traditional Chinese pilot remains noindex and outside hreflang.
-const ZH_HANT_TO_HANS_SLUG = {
-  'ontario-boat-winterization-guide-chinese': 'ontario-boat-winterization-guide-chinese',
-  'first-boat-rental-rice-lake-chinese-guide': 'first-boat-rental-rice-lake-chinese-guide',
-  'pcoc-pcl-fishing-licence-difference-ontario': 'pcoc-pcl-fishing-licence-difference-ontario',
-  'gta-chinese-rice-lake-day-trip-plan': 'gta-chinese-rice-lake-day-trip-plan',
-  'gta-chinese-buy-boat-rice-lake-guide': 'gta-chinese-buy-boat-rice-lake-guide',
-};
-const ZH_HANS_TO_ZH_HANT_SLUG = Object.fromEntries(
-  Object.entries(ZH_HANT_TO_HANS_SLUG).map(([hant, hans]) => [hans, hant])
-);
-
-function blogHreflangTags(enSlug) {
-  const frSlug = EN_TO_FR_SLUG[enSlug];
-  const zhSlug = EN_TO_ZH_SLUG[enSlug];
-  const koSlug = EN_TO_KO_SLUG[enSlug];
-  if (!frSlug && !zhSlug && !koSlug) return '';
-  const tags = [
-    `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
-  ];
-  if (frSlug) tags.push(`<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
-  if (zhSlug) {
-    tags.push(`<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
-  }
-  if (koSlug) tags.push(`<link rel="alternate" hreflang="ko" href="${SITE_URL}/blog/ko/${koSlug}" />`);
-  tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
-  return tags.join('\n  ');
-}
-
-// ZH-only fallback: for Chinese-targeted posts with no English twin, point
-// zh-Hans and x-default to the same page. The zh-Hant pilot is noindex pending
-// native review, so it must not participate in hreflang clusters yet.
-function zhOnlyHreflangTags(zhSlug) {
-  const out = [
-    `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
-  ];
-  out.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
-  return out.join('\n  ');
+// Article-level alternates come from the shared route registry. data-rh lets
+// Helmet adopt these prerendered nodes during hydration instead of duplicating
+// the same hreflang set in the browser.
+function blogHreflangTags(locale, slug) {
+  return getBlogHreflangAlternates(locale, slug)
+    .map(({ hrefLang, path }) =>
+      `<link data-rh="true" rel="alternate" hreflang="${hrefLang}" href="${SITE_URL}${path}" />`
+    )
+    .join('\n  ');
 }
 
 // Dedupe blogArticles by slug, keeping the FIRST occurrence so prerender
@@ -3179,7 +3108,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
     article.description,
   ),
   schemas: [blogArticleSchema(article)],
-  extraHead: [blogHreflangTags(article.slug), renderHeroPreloadTag(article.image)]
+  extraHead: [blogHreflangTags('en', article.slug), renderHeroPreloadTag(article.image)]
     .filter(Boolean)
     .join('\n  '),
   extraNoscript: () => {
@@ -3268,26 +3197,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         }))
       }] : [])
     ],
-    extraHead: (() => {
-      const hreflang = (() => {
-      const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
-                   : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
-                   : langCode === 'ko' ? KO_TO_EN_SLUG[article.slug]
-                   : undefined;
-      if (enSlug) return blogHreflangTags(enSlug);
-      if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
-      // Wave-1 self-referencing hreflang for pa/ur/tl/hi (no EN twins yet).
-      if (langCode === 'pa' || langCode === 'ur' || langCode === 'tl' || langCode === 'hi') {
-        const href = `${SITE_URL}/blog/${langCode}/${article.slug}`;
-        return [
-          `<link rel="alternate" hreflang="${langCode}" href="${href}" />`,
-          `<link rel="alternate" hreflang="x-default" href="${href}" />`,
-        ].join('\n  ');
-      }
-      return '';
-      })();
-      return [hreflang, renderHeroPreloadTag(article.image)].filter(Boolean).join('\n  ');
-    })(),
+    extraHead: [blogHreflangTags(langCode, article.slug), renderHeroPreloadTag(article.image)]
+      .filter(Boolean)
+      .join('\n  '),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
       const bylineHtml = renderAuthorBylineHtml(article.author);
@@ -6206,40 +6118,16 @@ const allSitemapEntries = [
 ];
 
 function sitemapHreflangBlock(loc) {
-  // loc looks like /blog/{slug}, /blog/fr/{slug}, /blog/ko/{slug}, or /blog/zh/{slug}.
-  // Emit xhtml:link alternates only when an EN counterpart exists in the slug maps.
-  let enSlug;
-  const mFr = loc.match(/^\/blog\/fr\/(.+)$/);
-  const mZh = loc.match(/^\/blog\/zh\/(.+)$/);
-  const mKo = loc.match(/^\/blog\/ko\/(.+)$/);
-  const mEn = loc.match(/^\/blog\/([^/]+)$/);
-  if (mFr) enSlug = FR_TO_EN_SLUG[mFr[1]];
-  else if (mZh) enSlug = ZH_TO_EN_SLUG[mZh[1]];
-  else if (mKo) enSlug = KO_TO_EN_SLUG[mKo[1]];
-  else if (mEn) enSlug = mEn[1];
-  if (!enSlug) {
-    // ZH-only fallback: use the same real page for zh-Hans and x-default.
-    // Do not fake an English twin or point x-default at a different hub page.
-    if (mZh) {
-      return '\n' + [
-        `    <xhtml:link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${mZh[1]}" />`,
-        `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh/${mZh[1]}" />`,
-      ].join('\n');
-    }
-    return '';
-  }
-  const frSlug = EN_TO_FR_SLUG[enSlug];
-  const zhSlug = EN_TO_ZH_SLUG[enSlug];
-  const koSlug = EN_TO_KO_SLUG[enSlug];
-  if (!frSlug && !zhSlug && !koSlug) return '';
-  const links = [
-    `    <xhtml:link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
-  ];
-  if (frSlug) links.push(`    <xhtml:link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
-  if (zhSlug) links.push(`    <xhtml:link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
-  if (koSlug) links.push(`    <xhtml:link rel="alternate" hreflang="ko" href="${SITE_URL}/blog/ko/${koSlug}" />`);
-  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
-  return '\n' + links.join('\n');
+  const localized = loc.match(/^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/);
+  const english = loc.match(/^\/blog\/([^/]+)$/);
+  const locale = localized?.[1] || (english ? 'en' : null);
+  const slug = localized?.[2] || english?.[1];
+  if (!locale || !slug) return '';
+
+  const links = getBlogHreflangAlternates(locale, slug).map(({ hrefLang, path }) =>
+    `    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${SITE_URL}${path}" />`
+  );
+  return links.length ? `\n${links.join('\n')}` : '';
 }
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

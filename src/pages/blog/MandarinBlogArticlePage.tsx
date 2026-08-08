@@ -15,6 +15,7 @@ import {
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
@@ -105,9 +106,7 @@ export default function MandarinBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="zh-Hans" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <link rel="alternate" hrefLang="x-default" href={url} />
+        <BlogHreflangLinks locale="zh" slug={article.slug} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="zh_CN" />

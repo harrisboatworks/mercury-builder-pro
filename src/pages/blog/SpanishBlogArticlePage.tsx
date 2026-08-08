@@ -14,6 +14,7 @@ import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import {
   Accordion,
   AccordionContent,
@@ -297,8 +298,7 @@ export default function SpanishBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="es" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
+        <BlogHreflangLinks locale="es" slug={article.slug} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="es_419" />
