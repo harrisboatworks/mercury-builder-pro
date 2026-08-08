@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-07-18
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Product Protection Platinum : couverture et prix canadiens"
 description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-07-18
+date_modified: 2026-08-08
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Garantie  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-08-08  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 
@@ -113,6 +113,12 @@ Le contrat peut être transféré à un acheteur subséquent à usage récréati
 Pour une réclamation, apportez le produit à un concessionnaire Mercury autorisé. Le concessionnaire effectue le diagnostic et demande l'approbation de Mercury. La franchise canadienne actuelle est de 50 $ par réclamation. Seules les réparations et les pièces admissibles selon le contrat sont payées.
 
 ---
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 ## Comment obtenir une soumission
 
