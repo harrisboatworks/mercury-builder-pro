@@ -32,7 +32,7 @@ language: en-CA
 
 For most boats on Rice Lake and the Kawarthas, the Mercury FourStroke is the right call: efficient, quiet, and fair-priced. Choose Pro XS for performance and hole shot on a bass or walleye rig. Verado is the big, quiet option for larger offshore and luxury boats. Same horsepower, three personalities. The boat decides. Build a quote at mercuryrepower.ca.
 
-# Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)
+## Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)
 
 We have this conversation at the counter every spring. Somebody walks in, leans on the parts desk, and says "okay, so what's the difference between a Pro XS and a regular one, and is it worth the extra money?" Fair question. It's also the question Mercury's own marketing tends to muddy, because all three families share horsepower numbers and a lot of the same DNA.
 
@@ -102,13 +102,11 @@ Walk it back to three honest questions:
 2. **Will you actually use the performance?** If "fast" genuinely matters to you, Pro XS. If you're nodding along but you really just want to get to the fishing hole and back, FourStroke.
 3. **How much does quiet and smooth matter?** On a big boat with people aboard all day, Verado's refinement is a real upgrade. On a 17-foot tinny, you won't notice it enough to justify the spend.
 
-::cta
-variant: inline
-heading: Found your family? Price it out.
-body: Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
-primaryLabel: See live pricing by family
-primaryHref: /pricing-reference
-::
+### Found your family? Price it out.
+
+Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
+
+[See live pricing by family](/pricing-reference)
 
 ## What we see at HBW
 
@@ -143,15 +141,15 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 - Mercury Marine, "How to Choose the Right Mercury Outboard for Your Boat."
 - Pro XS fuel and performance specs (87 octane, RPM range, Transient Spark): Mercury Marine product documentation.
 
-::cta
-variant: banner
-heading: The right family, the real price, no games.
-body: Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-phone: 905-342-2153
-footer: Not sure repower makes sense yet? Start with the [repower basics](/repower).
-::
+### The right family, the real price, no games.
+
+Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
+
+[Build Your Quote](/quote/motor-selection)
+
+905-342-2153
+
+Not sure repower makes sense yet? Start with the [repower basics](/repower).
 
 ## FAQs
 

@@ -28,8 +28,6 @@ language: zh-CN
 **Read time:** 16 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 
-# 多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选
-
 如果你从 GTA 出发，Rice Lake 更适合家庭租船、pontoon day trip、第一次湖上钓鱼和后续 boat ownership/repower 需求；Lake Simcoe 更适合很多人熟悉的 open-water fishing 和 ice fishing 话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同 lake、lock、cottage 和 boat-use scenarios 的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario fishing regulations、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
 
 先问自己：你要的是钓鱼，还是湖上一天？

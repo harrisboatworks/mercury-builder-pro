@@ -28,35 +28,38 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
-# Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
+## Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
 
 ## Quick answer
 On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-::decision-card
-heading: Trolling motor or kicker motor for your boat?
-eyebrow: Honest auxiliary pick
-subhead: Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
-leftLabel: Choose a trolling motor if
-leftCriteria:
-  - You fish predominantly in 8 to 15 ft of water
-  - Spot-Lock and GPS-anchor are important
-  - Stealth matters (no gas engine running while fishing)
-  - Battery management is something you can handle
-  - Primary use is bass, walleye drifting, or controlled presentations
-leftOutcome: Pick a trolling motor (Minn Kota or Lowrance)
-leftVariant: recommended
-rightLabel: Choose a kicker motor if
-rightCriteria:
-  - You troll for salmon or lake trout in deep water (40 ft or more)
-  - All-day trolling outlasts any practical battery
-  - You don't want to babysit charging schedules
-  - Boat is on bigger water (Lake Ontario, Simcoe deep zones)
-  - You want simpler, less maintenance, more range
-rightOutcome: Pick a Mercury 9.9 EFI kicker
-rightVariant: alternative
-whenInDoubt: For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
-::
+*Honest auxiliary pick*
+
+### Trolling motor or kicker motor for your boat?
+
+Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
+
+#### Choose a trolling motor if
+
+- You fish predominantly in 8 to 15 ft of water
+- Spot-Lock and GPS-anchor are important
+- Stealth matters (no gas engine running while fishing)
+- Battery management is something you can handle
+- Primary use is bass, walleye drifting, or controlled presentations
+
+**Pick a trolling motor (Minn Kota or Lowrance)**
+
+#### Choose a kicker motor if
+
+- You troll for salmon or lake trout in deep water (40 ft or more)
+- All-day trolling outlasts any practical battery
+- You don't want to babysit charging schedules
+- Boat is on bigger water (Lake Ontario, Simcoe deep zones)
+- You want simpler, less maintenance, more range
+
+**Pick a Mercury 9.9 EFI kicker**
+
+For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
 
 ## What each one actually does
 

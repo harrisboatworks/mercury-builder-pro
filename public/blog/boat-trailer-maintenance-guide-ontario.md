@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 
-# The Five-Minute Boat-Trailer Check Before Every Trip
-
 > **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, don't move the trailer until it's fixed.
 
 A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.

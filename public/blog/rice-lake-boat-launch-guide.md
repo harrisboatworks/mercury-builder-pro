@@ -80,26 +80,31 @@ For most Toronto-area or GTA visitors, Gores Landing is the most accessible choi
 
 ---
 
-::decision-card
-eyebrow: Which Rice Lake ramp makes sense
-heading: Pick the launch that matches your boat and schedule
-subhead: Not all ramps handle all boats the same way. Match the ramp to your hull size and how busy you want your Saturday morning to be.
-leftLabel: If you are launching a small fishing boat or pontoon
-leftCriteria:
-  - Boat under 18 feet, light aluminum or pontoon
-  - Comfortable with a shallow, easy-access ramp
-  - Do not mind a busy summer Saturday
-  - Prefer proximity to mid-lake fishing and the Trent-Severn east
-leftOutcome: Gores Landing public ramp
-rightLabel: If you are launching a bigger boat or trailering on weekends
-rightCriteria:
-  - Boat 20 to 24 feet, deeper draft, or heavier rig
-  - Want deeper water and more parking on peak days
-  - Prefer less congestion while you rig the boat
-  - Need a ramp that handles larger trailers reliably
-rightOutcome: Provincial park ramps east on the lake
-whenInDoubt: Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
-::
+*Which Rice Lake ramp makes sense*
+
+### Pick the launch that matches your boat and schedule
+
+Not all ramps handle all boats the same way. Match the ramp to your hull size and how busy you want your Saturday morning to be.
+
+#### If you are launching a small fishing boat or pontoon
+
+- Boat under 18 feet, light aluminum or pontoon
+- Comfortable with a shallow, easy-access ramp
+- Do not mind a busy summer Saturday
+- Prefer proximity to mid-lake fishing and the Trent-Severn east
+
+**Gores Landing public ramp**
+
+#### If you are launching a bigger boat or trailering on weekends
+
+- Boat 20 to 24 feet, deeper draft, or heavier rig
+- Want deeper water and more parking on peak days
+- Prefer less congestion while you rig the boat
+- Need a ramp that handles larger trailers reliably
+
+**Provincial park ramps east on the lake**
+
+Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
 
 ## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 

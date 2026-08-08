@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 
-# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
+## 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
 
 > **Quick answer:** Most boat-trailer damage happens to the boat owner, not in transit. The worst Ontario trailering mistakes we see: improper tongue weight, loose strap-downs, missing safety chains, bald or under-inflated trailer tires, skipped wheel-bearing lubrication, ramp-launching with the plug out, and not knowing your tow vehicle's weight rating. Most cost time. The expensive ones cost time and money.
 
@@ -94,28 +94,45 @@ Two minutes at the ramp. Every time.
 
 ---
 
-::diagnostic-flow
-eyebrow: Roadside diagnosis
-heading: Trailer acting up? Work the symptoms in this order
-subhead: Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
-step1Label: Hot wheel hubs
-step1Question: Can you hold your hand on the hub for 5 seconds after a 30-minute run?
-step1Tip: A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
-step2Label: Tire pressure and condition
-step2Question: Are both trailer tires at the sidewall PSI, with no sidewall cracking?
-step2Tip: Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
-step3Label: Tongue weight
-step3Question: Does the tongue sit level on the ball, not nose-up or nose-down?
-step3Tip: 10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
-step4Label: Load distribution
-step4Question: Is the bow of the boat snug against the bow stop, with the transom strapped?
-step4Tip: A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
-step5Label: Lights and connection
-step5Question: Do brake lights, turn signals, and running lights all work with the truck engine running?
-step5Tip: A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
-escalationLabel: Bearings or tires need attention?
-escalationBody: We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
-::
+*Roadside diagnosis*
+
+### Trailer acting up? Work the symptoms in this order
+
+Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
+
+#### Hot wheel hubs
+
+**Can you hold your hand on the hub for 5 seconds after a 30-minute run?**
+
+A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
+
+#### Tire pressure and condition
+
+**Are both trailer tires at the sidewall PSI, with no sidewall cracking?**
+
+Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
+
+#### Tongue weight
+
+**Does the tongue sit level on the ball, not nose-up or nose-down?**
+
+10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
+
+#### Load distribution
+
+**Is the bow of the boat snug against the bow stop, with the transom strapped?**
+
+A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
+
+#### Lights and connection
+
+**Do brake lights, turn signals, and running lights all work with the truck engine running?**
+
+A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
+
+#### Bearings or tires need attention?
+
+We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
 
 ### 6. Not Securing the Motor
 

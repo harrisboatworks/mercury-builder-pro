@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
-# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
+## Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
 > **Quick answer:** Mercury 75, 90 and 115 FourStroke models share a 2.1L block and Mercury-listed lightest dry weight. The right choice depends on the capacity plate, hull, normal passenger load, steering and gearcase configuration. The 90 is HBW's usual fit for many 16 to 18 ft aluminum console boats; confirm your boat before ordering.
 
@@ -83,12 +83,7 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
 
-slug: mercury-75-90-115-best-fit-matrix
-type: infographic
-aspect: 16:9
-description: Visual matrix showing which Mercury (75/90/115) fits which boat type and use case
-prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/mercury-75-90-115-best-fit-matrix.png
+![Visual matrix showing which Mercury (75/90/115) fits which boat type and use case](/lovable-uploads/mercury-75-90-115-best-fit-matrix.png)
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
@@ -138,8 +133,6 @@ The 90 is the most-installed Mercury in this class for a reason. It performs wel
 
 For the typical 16 to 18 ft aluminum console at HBW, the all-in repower lands $17,000 to $22,000 CAD. [Live pricing here.](/quote/motor-selection)
 
-::walkaround-lead-capture
-
 ## Mercury 115 EXLPT FourStroke: when the step-up earns its price
 
 The 115 HP FourStroke is the right call when:
@@ -152,13 +145,11 @@ The 115 HP FourStroke is the right call when:
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
 
-::cta
-variant: inline
-heading: Narrowed it down? See what it actually costs.
-body: Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
-primaryLabel: See live Ontario pricing
-primaryHref: /pricing-reference
-::
+### Narrowed it down? See what it actually costs.
+
+Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
+
+[See live Ontario pricing](/pricing-reference)
 
 ## What HBW checks before recommending 75, 90, or 115
 
@@ -229,15 +220,15 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-::cta
-variant: banner
-heading: Stop comparing. Start pricing.
-body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-phone: 905-342-2153
-footer: Repowering an older rig? Here's how the [repower process](/repower) works.
-::
+### Stop comparing. Start pricing.
+
+You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+
+[Build Your Quote](/quote/motor-selection)
+
+905-342-2153
+
+Repowering an older rig? Here's how the [repower process](/repower) works.
 
 ## FAQs
 

@@ -72,33 +72,53 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - Adjustments and setup
 - Delivery before the season
 
-::cost-stack
-eyebrow: Spring repower budget (off-season ordering)
-heading: What an order-ahead spring repower actually costs
-subhead: Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
-item1Label: Motor (90 to 150 HP FourStroke)
-item1Value: $13,500 to $22,000
-item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
-item2Label: Install and rigging
-item2Value: $1,200 to $2,400
-item2Note: Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
-item3Label: Control conversion (if needed)
-item3Value: $800 to $2,000
-item3Note: Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
-item4Label: New propeller
-item4Value: $350 to $1,200
-item4Note: Sized after sea trial. Standard allowance applies on most installs.
-item5Label: First-year service
-item5Value: $200 to $350
-item5Note: Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
-item6Label: Mercury Product Protection (optional)
-item6Value: $700 to $1,800
-item6Note: 8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
-item6Accent: true
-totalLabel: Typical out-the-door range
-totalValue: $16,000 to $28,000
-caveat: All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.
-::
+*Spring repower budget (off-season ordering)*
+
+### What an order-ahead spring repower actually costs
+
+Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+
+#### Motor (90 to 150 HP FourStroke)
+
+**$13,500 to $22,000**
+
+Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+
+#### Install and rigging
+
+**$1,200 to $2,400**
+
+Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+
+#### Control conversion (if needed)
+
+**$800 to $2,000**
+
+Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
+
+#### New propeller
+
+**$350 to $1,200**
+
+Sized after sea trial. Standard allowance applies on most installs.
+
+#### First-year service
+
+**$200 to $350**
+
+Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
+
+#### Mercury Product Protection (optional)
+
+**$700 to $1,800**
+
+8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+
+#### Typical out-the-door range
+
+**$16,000 to $28,000**
+
+*All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.*
 
 ### Assessment Checklist
 

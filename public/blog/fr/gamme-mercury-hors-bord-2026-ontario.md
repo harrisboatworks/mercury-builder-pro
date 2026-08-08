@@ -28,7 +28,7 @@ language: fr-CA
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 
-# Gamme de hors-bord Mercury 2026 : ce que les plaisanciers ontariens doivent vraiment savoir
+## Gamme de hors-bord Mercury 2026 : ce que les plaisanciers ontariens doivent vraiment savoir
 
 ## Réponse rapide
 

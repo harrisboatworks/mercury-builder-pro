@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
-# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
+## The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
 
 > **Quick answer:** Battery-related no-starts are HBW's #1 spring service call. Most Mercury 4-strokes 75 HP and up need at least 800 MCA at startup. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise. Disconnect or use a battery switch for winter storage, top up monthly with a maintenance charger, and replace at 5-7 years even if it still cranks.
 
@@ -42,25 +42,39 @@ This guide is the preventive medicine version of that service call. Battery type
 
 ---
 
-::diagnostic-flow
-heading: Battery won't crank? Diagnose in this order.
-eyebrow: Marine battery triage
-subhead: Most marine battery "failures" are one of these four things. Walk in order, don't guess.
-step1Label: Load test
-step1Question: Does the battery hold above 9.5V under starter load?
-step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
-step2Label: Terminals and cables
-step2Question: Are the terminals clean and the cable connections tight?
-step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
-step3Label: Charging system (alternator output)
-step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
-step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
-step4Label: Age and replacement
-step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
-step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
-escalationLabel: Want HBW to diagnose?
-escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
-::
+*Marine battery triage*
+
+### Battery won't crank? Diagnose in this order.
+
+Most marine battery "failures" are one of these four things. Walk in order, don't guess.
+
+#### Load test
+
+**Does the battery hold above 9.5V under starter load?**
+
+Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
+
+#### Terminals and cables
+
+**Are the terminals clean and the cable connections tight?**
+
+White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+
+#### Charging system (alternator output)
+
+**With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?**
+
+Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
+
+#### Age and replacement
+
+**Is the battery 5+ years old, or did it spend a winter without a maintainer?**
+
+Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
+
+#### Want HBW to diagnose?
+
+We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
 
 ## Why Batteries Are Our #1 Spring Service Call
 

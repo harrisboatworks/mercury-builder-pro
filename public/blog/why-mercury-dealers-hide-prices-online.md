@@ -133,8 +133,6 @@ Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
----
-
 ## FAQs
 
 ### Why don't most marine dealers list prices online?

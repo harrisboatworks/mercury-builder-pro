@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
-# Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
-
 > **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
 
 Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.

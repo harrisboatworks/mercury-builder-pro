@@ -105,28 +105,31 @@ Electric pump does most of the work. One-finger steering at any speed. Recommend
 
 ---
 
-::decision-card
-eyebrow: Controls upgrade decision
-heading: Is digital throttle worth the upgrade?
-subhead: DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
-leftLabel: Stick with mechanical cable controls
-leftCriteria:
-  - Motor is 90 HP or smaller
-  - Existing rigging is in good shape
-  - You're not planning to upgrade the boat soon
-  - Budget matters more than the smoother feel
-leftOutcome: Cable controls, $0 to $400 to refresh
-leftVariant: alternative
-rightLabel: Go to DTS digital controls
-rightCriteria:
-  - Motor is 100+ HP, new build or full repower
-  - You want smooth idle shifting and joystick-ready wiring
-  - You plan to keep the boat 7+ years
-  - You'd add VesselView or autopilot later
-rightOutcome: DTS controls, $1,500 to $3,000 extra
-rightVariant: recommended
-whenInDoubt: If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
-::
+*Controls upgrade decision*
+
+### Is digital throttle worth the upgrade?
+
+DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
+
+#### Stick with mechanical cable controls
+
+- Motor is 90 HP or smaller
+- Existing rigging is in good shape
+- You're not planning to upgrade the boat soon
+- Budget matters more than the smoother feel
+
+**Cable controls, $0 to $400 to refresh**
+
+#### Go to DTS digital controls
+
+- Motor is 100+ HP, new build or full repower
+- You want smooth idle shifting and joystick-ready wiring
+- You plan to keep the boat 7+ years
+- You'd add VesselView or autopilot later
+
+**DTS controls, $1,500 to $3,000 extra**
+
+If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
 
 ## Gauges: Analog, SmartCraft Connect, or VesselView
 
@@ -215,8 +218,6 @@ The controls-and-rigging audit is the first thing we do on every repower quote. 
 The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
 It's also why we quote the installed number, not the box-only number. The price on a competitor's website is usually MSRP without HST, controls, rigging, install, or prop. Half our first conversations are clarifying what's actually included.
-
----
 
 ---
 

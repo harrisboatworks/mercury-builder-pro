@@ -18,6 +18,7 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import { filterToOneBlogCredibilityAnchor } from '@/lib/blogCredibilityAnchorPolicy';
 
 const PHONE_LINK_RE = /^(?:tel|sms):\+?[0-9().\s-]+$/i;
 
@@ -38,6 +39,7 @@ import {
   normalizeSectionCardHeading,
   type BlogSectionCardKind as CardKind,
 } from '@/lib/blogSectionCardHeadings';
+import { stripSuppressedBlogPullQuotes } from '@/lib/blogPullQuotePolicy.js';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -642,12 +644,15 @@ function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
     }
   }
   if (!flat.heading || !flat.headingTranslated) return null;
-  const items: BilingualTrustItem[] = Object.keys(itemMap)
-    .map(Number)
-    .sort((a, b) => a - b)
-    .map((i) => itemMap[i])
-    .filter((it) => it.en && it.zh)
-    .map((it) => ({ en: it.en!, zh: it.zh! }));
+  const items: BilingualTrustItem[] = filterToOneBlogCredibilityAnchor(
+    Object.keys(itemMap)
+      .map(Number)
+      .sort((a, b) => a - b)
+      .map((i) => itemMap[i])
+      .filter((it) => it.en && it.zh)
+      .map((it) => ({ en: it.en!, zh: it.zh! })),
+    (item) => `${item.en} ${item.zh}`,
+  );
   const cta = flat.ctaEn && flat.ctaZh && flat.ctaHref
     ? { en: flat.ctaEn, zh: flat.ctaZh, href: flat.ctaHref }
     : undefined;
@@ -1247,11 +1252,12 @@ const cardConfig: Record<
 interface Props {
   content: string;
   markdownComponents: Components;
+  articleSlug?: string;
 }
 
-export function MarkdownSectionCards({ content, markdownComponents }: Props) {
+export function MarkdownSectionCards({ content, markdownComponents, articleSlug }: Props) {
   const { preamble, sections } = splitIntoH2Sections(
-    preprocessSpecialBlocks(content),
+    preprocessSpecialBlocks(stripSuppressedBlogPullQuotes(content, articleSlug)),
   );
 
   // Inline H3/H4 "Recommended Choice" wrapping is handled via component overrides

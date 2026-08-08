@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
-# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
+## Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
 > **Quick answer:** HBW offers outdoor shrinkwrap storage only. Customers arrange their own fall drop-off and spring pickup at Gores Landing; HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. Request the current storage scope and price at [hbw.wiki/service](https://hbw.wiki/service).
 

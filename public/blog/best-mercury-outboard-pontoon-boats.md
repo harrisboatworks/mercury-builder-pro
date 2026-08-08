@@ -34,28 +34,31 @@ language: en-CA
 
 ---
 
-::decision-card
-eyebrow: Pontoon HP decision
-heading: How big is your pontoon and how do you load it?
-subhead: Tube count and use case matter more than the HP number alone.
-leftLabel: 16 to 18 ft two-tube, cruising and light fishing
-leftCriteria:
-  - 6 people maximum, no active water sports
-  - Sheltered Kawartha bays, short runs
-  - Fuel economy and quiet matter
-  - You want the more affordable setup
-leftOutcome: 90 HP Command Thrust FourStroke
-leftVariant: recommended
-rightLabel: 20 to 22+ ft tritoon, full crew with water sports
-rightCriteria:
-  - 8 to 10 passengers, tubing or skiing weekly
-  - Open water on Rice Lake or larger Kawartha lakes
-  - Fast hole shot with the boat loaded matters
-  - Long-term hold, you want the right motor once
-rightOutcome: 150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)
-rightVariant: alternative
-whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
-::
+*Pontoon HP decision*
+
+### How big is your pontoon and how do you load it?
+
+Tube count and use case matter more than the HP number alone.
+
+#### 16 to 18 ft two-tube, cruising and light fishing
+
+- 6 people maximum, no active water sports
+- Sheltered Kawartha bays, short runs
+- Fuel economy and quiet matter
+- You want the more affordable setup
+
+**90 HP Command Thrust FourStroke**
+
+#### 20 to 22+ ft tritoon, full crew with water sports
+
+- 8 to 10 passengers, tubing or skiing weekly
+- Open water on Rice Lake or larger Kawartha lakes
+- Fast hole shot with the boat loaded matters
+- Long-term hold, you want the right motor once
+
+**150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)**
+
+Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
 
 ## The gearcase is the part most people overlook
 
@@ -106,13 +109,11 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Best fit: 150 HP and up (standard gearcase).** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP FourStroke (standard gearcase) is typical.
 
-::cta
-variant: inline
-heading: Know which one fits your pontoon? See the price.
-body: Live pricing on the pontoon-friendly motors is right here, in real CAD.
-primaryLabel: See live pontoon motor pricing
-primaryHref: /pricing-reference
-::
+### Know which one fits your pontoon? See the price.
+
+Live pricing on the pontoon-friendly motors is right here, in real CAD.
+
+[See live pontoon motor pricing](/pricing-reference)
 
 ---
 

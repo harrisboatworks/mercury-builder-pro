@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
 
-# Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
-
 > **Quick answer:** Choose a pontoon for calm-water family days, big groups, shore lounging, and shallow Rice Lake bays. Choose a V-hull for rough water, serious fishing, watersports, and trailering to bigger lakes like Simcoe or Ontario. On Rice Lake and most of the Kawarthas either works most of the season; once the wind picks up on open water, the V-hull is the safer call. The honest decision comes down to two questions: how many people are usually aboard, and what water do you actually run.
 
 ## Pontoon vs v-hull at a glance
@@ -118,8 +116,6 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-115 HP range, standard gearcase for 150 and up since CT tops out at 115; standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
-
-::walkaround-lead-capture
 
 ## About the author
 

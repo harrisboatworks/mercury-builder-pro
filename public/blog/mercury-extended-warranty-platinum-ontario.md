@@ -39,30 +39,47 @@ language: en-CA
 
 [See current Canadian pricing](/mercury-product-protection), with the full rate card by horsepower and plan term.
 
-::cost-stack
-heading: What an extended Mercury warranty actually costs
-eyebrow: The math at a glance
-subhead: Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
-item1Label: Small portable (2.5 to 39.9 HP), 2-year plan
-item1Value: $137 - $319
-item1Note: Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
-item2Label: Mid-range (40 to 74.9 HP), 3-year plan
-item2Value: $904
-item2Note: Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
-item3Label: High-HP (75 to 199.9 HP), 3-year plan
-item3Value: $1,376 - $1,921
-item3Note: Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
-item3Accent: true
-item4Label: Big block (200 to 399.9 HP), 3-year plan
-item4Value: $4,612 - $6,579
-item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
-item5Label: Current Canadian deductible
-item5Value: $50 per claim
-item5Note: Paid directly to the authorized servicing dealer. The complete Canadian Platinum contract terms govern.
-totalLabel: Reality check
-totalValue: Coverage costs less than one bad day
-caveat: Pricing is before HST and subject to current Mercury eligibility and contract terms. HBW confirms the motor's serial record, manufacture date, hours, current coverage and final price before registration.
-::
+*The math at a glance*
+
+### What an extended Mercury warranty actually costs
+
+Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
+
+#### Small portable (2.5 to 39.9 HP), 2-year plan
+
+**$137 - $319**
+
+Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
+
+#### Mid-range (40 to 74.9 HP), 3-year plan
+
+**$904**
+
+Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
+
+#### High-HP (75 to 199.9 HP), 3-year plan
+
+**$1,376 - $1,921**
+
+Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
+
+#### Big block (200 to 399.9 HP), 3-year plan
+
+**$4,612 - $6,579**
+
+V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
+
+#### Current Canadian deductible
+
+**$50 per claim**
+
+Paid directly to the authorized servicing dealer. The complete Canadian Platinum contract terms govern.
+
+#### Reality check
+
+**Coverage costs less than one bad day**
+
+*Pricing is before HST and subject to current Mercury eligibility and contract terms. HBW confirms the motor's serial record, manufacture date, hours, current coverage and final price before registration.*
 
 ## What Mercury Product Protection Is
 

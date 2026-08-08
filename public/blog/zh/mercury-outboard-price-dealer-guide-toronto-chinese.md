@@ -28,8 +28,6 @@ language: zh-CN
 **Read time:** 13 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese
 
-# 多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？
-
 买 Mercury 船外机时，最低 motor price 不一定是最低总成本。真正要比较的是 out-the-door quote：motor、removal、installation、rigging、controls、prop、battery/electrical、lake test、warranty registration、service support 和后续责任。HBW Mercury page 说明 its repower pricing includes removal and installation, new Mercury outboard, rigging components, lake test and warranty registration，这比只看一个裸 motor 价格更接近真实购买决策 (Harris Boat Works Mercury Outboards).
 
 最低价不等于最低总成本

@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
-# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
+## Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
 
 ## Quick answer
 

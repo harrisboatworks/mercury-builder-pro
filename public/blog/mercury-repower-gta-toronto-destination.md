@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
-# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
+## Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
 > **Quick answer:** A GTA repower at HBW is a customer drop-off and pickup job. Start with the boat's capacity label, build a current quote, send the hull and rigging details, then bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 

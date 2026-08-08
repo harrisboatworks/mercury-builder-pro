@@ -37,30 +37,48 @@ language: en-CA
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 > **Quick estimate:** Try our [Repower Cost Estimator](/tools#repower-cost) for a CAD ballpark based on your boat size and current motor. Free, no email required.
-::cost-stack
-heading: What changes the real out-the-door price?
-eyebrow: Where the money goes
-subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
-item1Label: Motor (the big number)
-item1Value: $1,298 - $39,402 CAD
-item1Note: HBW dealer selling price, 2.5MH FourStroke to 300EXLPT Pro XS DTS, as of August 8, 2026. See /pricing-reference for the live list.
-item1Accent: true
-item2Label: Rigging (steering, controls, gauges)
-item2Value: $1,500 - $4,500
-item2Note: Cables, controls, key switches, gauge cluster
-item3Label: Propeller
-item3Value: $300 - $1,200
-item3Note: Aluminum starts around $300, stainless 4-blade can hit $1,200
-item4Label: Labour (install + sea trial)
-item4Value: $1,800 - $3,500
-item4Note: Depends on hours and access, bracket installs add time
-item5Label: HST (13 percent)
-item5Value: $2,000 - $5,500
-item5Note: Applied on motor + parts + labour. Trade-in HST credit can offset this.
-totalLabel: All-in typical range
-totalValue: $17,600 - $49,700 CAD
-caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.
-::
+
+*Where the money goes*
+
+### What changes the real out-the-door price?
+
+A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
+
+#### Motor (the big number)
+
+**$1,298 - $39,402 CAD**
+
+HBW dealer selling price, 2.5MH FourStroke to 300EXLPT Pro XS DTS, as of August 8, 2026. See /pricing-reference for the live list.
+
+#### Rigging (steering, controls, gauges)
+
+**$1,500 - $4,500**
+
+Cables, controls, key switches, gauge cluster
+
+#### Propeller
+
+**$300 - $1,200**
+
+Aluminum starts around $300, stainless 4-blade can hit $1,200
+
+#### Labour (install + sea trial)
+
+**$1,800 - $3,500**
+
+Depends on hours and access, bracket installs add time
+
+#### HST (13 percent)
+
+**$2,000 - $5,500**
+
+Applied on motor + parts + labour. Trade-in HST credit can offset this.
+
+#### All-in typical range
+
+**$17,600 - $49,700 CAD**
+
+*Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.*
 
 ---
 

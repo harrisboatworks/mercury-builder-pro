@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Markham boaters drive to Harris Boat Works: about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
 
-# Why Markham Customers Make the Drive to Rice Lake
+## Why Markham Customers Make the Drive to Rice Lake
 
 Markham has Mercury dealers closer to home. We know that. We're not pretending distance doesn't exist.
 

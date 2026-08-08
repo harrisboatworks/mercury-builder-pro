@@ -100,28 +100,31 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ---
 
-::decision-card
-eyebrow: 2026 timing decision
-heading: Buy this season, or wait for fall pricing?
-subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
-leftLabel: You need a boat for this season
-leftCriteria:
-  - You sold or lost your previous boat and want water time in 2026
-  - You have a family vacation or cottage booked that needs the boat
-  - Current inventory has something close to what you want
-  - You can pay or finance now without stretching
-leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
-leftVariant: recommended
-rightLabel: You can wait until late fall
-rightCriteria:
-  - You have a working boat that will get through 2026
-  - You want a specific model or HP not currently in stock
-  - You want to negotiate from a position of patience
-  - October to December dealer flexibility matters to you
-rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
-rightVariant: alternative
-whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
-::
+*2026 timing decision*
+
+### Buy this season, or wait for fall pricing?
+
+The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+
+#### You need a boat for this season
+
+- You sold or lost your previous boat and want water time in 2026
+- You have a family vacation or cottage booked that needs the boat
+- Current inventory has something close to what you want
+- You can pay or finance now without stretching
+
+**Buy now, the market is what it is. Lose a season chasing a discount.**
+
+#### You can wait until late fall
+
+- You have a working boat that will get through 2026
+- You want a specific model or HP not currently in stock
+- You want to negotiate from a position of patience
+- October to December dealer flexibility matters to you
+
+**Wait. Off-season pricing and trade-in flexibility are real.**
+
+A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
 
 ---
 
@@ -160,8 +163,6 @@ Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepow
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
 ---
 
 ## FAQs

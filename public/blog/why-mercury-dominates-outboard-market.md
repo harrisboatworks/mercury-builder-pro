@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
 
-# Why Mercury Outboards Make Practical Sense for Ontario Boaters (And Where We Are Biased)
+## Why Mercury Outboards Make Practical Sense for Ontario Boaters (And Where We Are Biased)
 
 ## Quick answer
 Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).

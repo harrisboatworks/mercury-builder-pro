@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull
 
-# Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)
-
 > **Quick answer:** Command Thrust is Mercury's big-gearcase option, born as BigFoot in the 1990s to push pontoons and workboats. Bigger gearcase, taller gear ratio, bigger prop, more push. On a pontoon it's the standard choice. On a planing V-hull it costs real speed: our own back-to-back test on a 16 ft hull measured 6 mph gone. Call 905-342-2153 if you're not sure which gearcase your boat wants.
 
 Somewhere right now, a boater with a 16-foot aluminum fishing boat is being told the Command Thrust model is "the upgrade." Costs a few hundred more, must be better, right?

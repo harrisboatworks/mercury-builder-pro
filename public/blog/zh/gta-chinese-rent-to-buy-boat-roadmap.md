@@ -28,7 +28,7 @@ language: zh-CN
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap
 
-# GTA 华人从租船到买船路线图：先体验，再决定
+## GTA 华人从租船到买船路线图：先体验，再决定
 
 快速答案
 

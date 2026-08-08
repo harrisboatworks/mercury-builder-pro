@@ -32,24 +32,15 @@ language: zh-CN
 
 40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的14至16英尺铝船，这个区间是「真正开始好用」的起点。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 

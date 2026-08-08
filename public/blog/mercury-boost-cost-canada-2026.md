@@ -30,11 +30,7 @@ language: en-CA
 
 > **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. Mercury describes it as improving mid-range acceleration and throttle response, and its five published tests show 5 to 21 percent quicker zero-to-top-speed acceleration depending on the complete boat-and-engine setup. It does not change horsepower, top speed, maximum RPM, or time to plane. Eligibility depends on the engine family, model code, and serial number. HBW confirms current Canadian pricing only after checking that exact motor.
 
-# Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
-
-**Published:** 2026-05-28 | **Updated:** 2026-07-18 (Mercury June 2026 documentation)
-**Author:** Jay Harris, Harris Boat Works
-**Reading time:** 10 minutes
+## Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
 > **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 

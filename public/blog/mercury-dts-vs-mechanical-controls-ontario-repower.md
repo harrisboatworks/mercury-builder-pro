@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
-# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
+## Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
 
 ## Quick answer
 

@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
-# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
+## [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ![Infographic comparing pre-2026 lifetime PCL rules with new 5-year renewal and fee requirements for Ontario boaters.](/lovable-uploads/diagram-pcl-2026-changes.png)
 

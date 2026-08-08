@@ -181,8 +181,6 @@ _Service pricing varies by motor, condition, and work due. HBW confirms the curr
 
 ---
 
----
-
 ## FAQs
 
 ### How often should I change the oil in my Mercury 4-stroke?

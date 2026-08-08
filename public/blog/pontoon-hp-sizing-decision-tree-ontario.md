@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
-# Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
+## Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
 
 > **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
 

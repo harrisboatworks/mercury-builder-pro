@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Mississauga boaters drive to Harris Boat Works: about 90 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-mississauga-worth-the-drive.png)
 
-# Mercury Dealer for Mississauga: When the Drive Is the Point
+## Mercury Dealer for Mississauga: When the Drive Is the Point
 
 Mississauga is not a short drive from Rice Lake. Let's be direct about that. Ninety minutes northeast on the 401 is a real commitment, and we'd rather acknowledge it upfront than pretend you wouldn't notice.
 

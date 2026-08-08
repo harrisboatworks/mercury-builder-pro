@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
-# What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
+## What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -112,8 +112,6 @@ In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-l
 **The "what if I skip it" cost:** [A cracked engine block from a missed winterization](/blog/boat-winterization-cost-ontario-2026) runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
 ---
-
-::walkaround-lead-capture
 
 ## 4. Fuel
 
@@ -242,7 +240,6 @@ If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-on
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
----
 ---
 
 ## What we see at HBW

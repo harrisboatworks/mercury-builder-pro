@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
-# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
+## Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 1 hour 45 minutes from central Toronto in light traffic to Harris Boat Works in Gores Landing, and allow more time during GTA or summer-weekend traffic. Check the live listings, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
 

@@ -170,32 +170,33 @@ Third pattern: the trip log feature changes how people use the boat. Instead of 
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
 
-::pull-quote
-quote: I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
-attribution: What we hear most at HBW after Connect setup
-::
+> I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
+>
+> What we hear most at HBW after Connect setup
 
-::decision-card
-eyebrow: SmartCraft Connect decision
-heading: Do I need SmartCraft Connect?
-leftLabel: Skip it
-leftCriteria:
-  - You boat 5 times a year or less
-  - You don't care about engine diagnostics
-  - Simple rig with no current SmartCraft integration
-  - The data wouldn't change how you use the boat
-leftOutcome: Save the money
-leftVariant: alternative
-rightLabel: Worth it
-rightCriteria:
-  - You repower often or track engine hours closely
-  - You value live diagnostics
-  - You want service alerts pushed before they're overdue
-  - You boat 20+ days a year
-rightOutcome: Install it on the next service visit
-rightVariant: recommended
-whenInDoubt: Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
-::
+*SmartCraft Connect decision*
+
+### Do I need SmartCraft Connect?
+
+#### Skip it
+
+- You boat 5 times a year or less
+- You don't care about engine diagnostics
+- Simple rig with no current SmartCraft integration
+- The data wouldn't change how you use the boat
+
+**Save the money**
+
+#### Worth it
+
+- You repower often or track engine hours closely
+- You value live diagnostics
+- You want service alerts pushed before they're overdue
+- You boat 20+ days a year
+
+**Install it on the next service visit**
+
+Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
 
 ## Why this matters for Ontario boaters
 

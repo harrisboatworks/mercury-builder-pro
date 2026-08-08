@@ -3,6 +3,8 @@ import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
+import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
+import { isBlogPullQuoteSuppressed } from '../src/lib/blogPullQuotePolicy.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -327,10 +329,66 @@ function mdFrontmatter(
 // legacy inline FAQ section when the article has a faqs[] array. Mirrors
 // the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
 // what readers see.
-function cleanBlogContent(content, hasFaqs) {
+const SUPPRESSED_PULL_QUOTE_MARKERS = new Map([
+  ['breaking-in-new-mercury-motor-guide', ['Greg T.']],
+  ['complete-guide-boat-repower-kawarthas', ['Brian K.']],
+  ['evinrude-to-mercury-repower-ontario-guide', ['Dave M.']],
+  ['harris-boat-works-since-1947-rice-lake-institution', ['Mike S.']],
+  ['mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', ['Tom K.']],
+  ['mercury-9-9-efi-review-ontario', ['Steve H.']],
+  ['outboard-trade-in-value-ontario-hbw', ['Mark T.']],
+]);
+
+function mapFencedMarkdown(markdown, mapBlock) {
+  const output = [];
+  let fenced = null;
+  let block = [];
+  let blockIndex = 0;
+
+  for (const line of String(markdown || '').split('\n')) {
+    const marker = line.match(/^\s{0,3}(`{3,}|~{3,})/);
+    if (!fenced) {
+      if (!marker) {
+        output.push(line);
+        continue;
+      }
+      fenced = { char: marker[1][0], length: marker[1].length };
+      block = [line];
+      continue;
+    }
+
+    block.push(line);
+    if (!marker || marker[1][0] !== fenced.char || marker[1].length < fenced.length) continue;
+    if (!/^\s{0,3}(?:`+|~+)\s*$/.test(line)) continue;
+
+    output.push(mapBlock(block.join('\n'), blockIndex));
+    blockIndex += 1;
+    fenced = null;
+    block = [];
+  }
+
+  // An unclosed fence is ordinary source text for this transform. Preserve it
+  // so later validation can report the actual authoring problem.
+  if (block.length) output.push(...block);
+  return output.join('\n');
+}
+
+function cleanBlogContent(content, hasFaqs, context = {}) {
   let c = cleanLegacyBlogContent(content, {
     hasStructuredFaqs: hasFaqs,
   });
+  // Protect fenced examples before directive matching. A code sample can
+  // legitimately demonstrate `::name` or `:::name` syntax and must remain
+  // byte-for-byte content rather than being interpreted as an article block.
+  const fencedBlocks = [];
+  c = mapFencedMarkdown(c, (block, index) => {
+    const token = `@@HBW_FENCED_BLOCK_${index}@@`;
+    fencedBlocks.push(block);
+    return token;
+  });
+  // Some visual CTAs are intentionally bodiless. Remove them before matching
+  // block directives so they cannot swallow the next closed directive.
+  c = c.replace(/^:{2,3}walkaround-lead-capture\s*$/gim, '');
   // Replace the visual MyBoatCard helper with an equivalent text-first block
   // so the markdown twin keeps the customer guidance and referral disclosure.
   c = c.replace(
@@ -349,10 +407,23 @@ function cleanBlogContent(content, hasFaqs) {
     /^:::youtube-embed\s*\nid:\s*([A-Za-z0-9_-]+)(?:\ntitle:\s*([^\n]+))?\n:::\s*$/gim,
     (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})`,
   );
-  // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
-  // The inner block content is kept verbatim as plain markdown so AI agents
-  // reading the twin don't see raw fence markup as junk.
-  c = c.replace(/^:::[a-z-]*\s*$/gim, '');
+  // Twins-only: convert visual directives into text-first Markdown. Leaving
+  // their YAML-like properties in the twin exposes authoring instructions to
+  // readers and agents.
+  c = c.replace(
+    /^:::([a-z-]+)\s*\n([\s\S]*?)\n:::\s*$/gim,
+    (_match, name, body) => {
+      const rendered = renderBlogDirectiveMarkdown(name, body, context);
+      return rendered ? `\n\n${rendered}\n\n` : '';
+    },
+  );
+  c = c.replace(
+    /^::([a-z-]+)\s*\n([\s\S]*?)\n::\s*$/gim,
+    (_match, name, body) => {
+      const rendered = renderBlogDirectiveMarkdown(name, body, context);
+      return rendered ? `\n\n${rendered}\n\n` : '';
+    },
+  );
   // Rewrite YAML-ish claim/rebuttal and quote/response bullet blocks
   // (used in "Common mistakes" and "Customer language we hear" sections)
   // into rich markdown bullets so the twin renders the content instead of
@@ -365,7 +436,286 @@ function cleanBlogContent(content, hasFaqs) {
     /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
     '- **"$1"**  \n  $2',
   );
-  return c.replace(/\n{3,}/g, '\n\n').trim();
+  c = c.replace(/\n{3,}/g, '\n\n').trim();
+  return c.replace(/@@HBW_FENCED_BLOCK_(\d+)@@/g, (_match, index) => fencedBlocks[Number(index)] || '');
+}
+
+function parseDirectiveFields(body) {
+  const fields = [];
+  let current = null;
+  for (const line of String(body || '').split('\n')) {
+    const field = line.match(/^([A-Za-z][A-Za-z0-9]*):\s*(.*)$/);
+    if (field) {
+      current = { key: field[1], value: field[2].trim(), items: [] };
+      fields.push(current);
+      continue;
+    }
+    const item = line.match(/^\s+-\s+(.+)$/);
+    if (item && current) {
+      current.items.push(item[1].trim());
+      continue;
+    }
+    if (/^\s+\S/.test(line) && current) {
+      current.value = [current.value, line.trim()].filter(Boolean).join(' ');
+      continue;
+    }
+    if (line.trim()) return fields.length > 0 ? null : [];
+  }
+  return fields;
+}
+
+function directiveFieldsByKey(fields) {
+  return Object.fromEntries(fields.map((field) => [field.key, field]));
+}
+
+function assertDirectiveFields(slug, directive, fields, allowed) {
+  const unexpected = fields.map((field) => field.key).filter((key) => !allowed.test(key));
+  if (unexpected.length) {
+    throw new Error(
+      `[markdown-twins] ${slug}: unsupported ${directive} field(s): ${unexpected.join(', ')}`,
+    );
+  }
+}
+
+function renderDirectiveHeading(byKey) {
+  return [
+    byKey.eyebrow?.value ? `*${byKey.eyebrow.value}*` : '',
+    byKey.heading?.value ? `### ${byKey.heading.value}` : '',
+    byKey.subhead?.value || '',
+  ].filter(Boolean);
+}
+
+function directiveFieldIndexes(byKey, prefix) {
+  return [...new Set(
+    Object.keys(byKey)
+      .map((key) => key.match(new RegExp(`^${prefix}(\\d+)`))?.[1])
+      .filter(Boolean)
+      .map(Number),
+  )].sort((a, b) => a - b);
+}
+
+function renderDecisionCardMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const side of ['left', 'right']) {
+    const label = byKey[`${side}Label`]?.value;
+    const criteria = byKey[`${side}Criteria`]?.items || [];
+    const outcome = byKey[`${side}Outcome`]?.value;
+    if (label) output.push(`#### ${label}`);
+    if (criteria.length) output.push(criteria.map((item) => `- ${item}`).join('\n'));
+    if (outcome) output.push(`**${outcome}**`);
+  }
+  if (byKey.whenInDoubt?.value) output.push(byKey.whenInDoubt.value);
+  return output.join('\n\n');
+}
+
+function renderDiagnosticFlowMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const step of directiveFieldIndexes(byKey, 'step')) {
+    const label = byKey[`step${step}Label`]?.value;
+    const question = byKey[`step${step}Question`]?.value;
+    const tip = byKey[`step${step}Tip`]?.value;
+    if (!label && !question && !tip) continue;
+    if (label) output.push(`#### ${label}`);
+    if (question) output.push(`**${question}**`);
+    if (tip) output.push(tip);
+  }
+  if (byKey.escalationLabel?.value) output.push(`#### ${byKey.escalationLabel.value}`);
+  if (byKey.escalationBody?.value) output.push(byKey.escalationBody.value);
+  return output.join('\n\n');
+}
+
+function renderCostStackMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const item of directiveFieldIndexes(byKey, 'item')) {
+    const label = byKey[`item${item}Label`]?.value;
+    const value = byKey[`item${item}Value`]?.value;
+    const note = byKey[`item${item}Note`]?.value;
+    if (!label && !value && !note) continue;
+    if (label) output.push(`#### ${label}`);
+    if (value) output.push(`**${value}**`);
+    if (note) output.push(note);
+  }
+  if (byKey.totalLabel?.value) output.push(`#### ${byKey.totalLabel.value}`);
+  if (byKey.totalValue?.value) output.push(`**${byKey.totalValue.value}**`);
+  if (byKey.caveat?.value) output.push(`*${byKey.caveat.value}*`);
+  return output.join('\n\n');
+}
+
+function localizedEyebrow(value, language) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  if (!String(language).startsWith('zh')) return text;
+  const translated = text.split('/').map((part) => part.trim()).find((part) => /[\u3400-\u9fff]/.test(part));
+  return translated || (/[\u3400-\u9fff]/.test(text) ? text : '');
+}
+
+function renderTrustBlockMarkdown(byKey, language) {
+  const isChinese = String(language).startsWith('zh');
+  const heading = isChinese
+    ? byKey.headingTranslated?.value
+    : byKey.heading?.value;
+  const eyebrow = localizedEyebrow(byKey.eyebrow?.value, language);
+  const output = [eyebrow ? `*${eyebrow}*` : '', heading ? `### ${heading}` : ''].filter(Boolean);
+  const localizedItems = directiveFieldIndexes(byKey, 'item')
+    .map((item) => (isChinese
+      ? byKey[`item${item}Zh`]?.value
+      : byKey[`item${item}En`]?.value))
+    .filter(Boolean);
+  const items = filterToOneBlogCredibilityAnchor(localizedItems)
+    .map((value) => `- ${value}`);
+  if (items.length) output.push(items.join('\n'));
+
+  const ctaLabel = isChinese ? byKey.ctaZh?.value : byKey.ctaEn?.value;
+  if (ctaLabel && byKey.ctaHref?.value) {
+    output.push(`[${ctaLabel}](${byKey.ctaHref.value})`);
+  }
+  return output.join('\n\n');
+}
+
+function renderPullQuoteMarkdown(byKey) {
+  const quote = byKey.quote?.value;
+  if (!quote) return '';
+  const footer = [byKey.attribution?.value, byKey.source?.value].filter(Boolean).join(', ');
+  return [
+    `> ${quote}`,
+    footer ? `>\n> ${footer}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+function renderCtaMarkdown(byKey) {
+  const output = [];
+  if (byKey.heading?.value) output.push(`### ${byKey.heading.value}`);
+  if (byKey.body?.value) output.push(byKey.body.value);
+  if (byKey.primaryHref?.value && byKey.primaryLabel?.value) {
+    output.push(`[${byKey.primaryLabel.value}](${byKey.primaryHref.value})`);
+  }
+  if (byKey.secondaryHref?.value && byKey.secondaryLabel?.value) {
+    output.push(`[${byKey.secondaryLabel.value}](${byKey.secondaryHref.value})`);
+  }
+  if (byKey.phone?.value) output.push(byKey.phone.value);
+  if (byKey.footer?.value) output.push(byKey.footer.value);
+  return output.join('\n\n');
+}
+
+function renderBlogDirectiveMarkdown(name, body, context = {}) {
+  const directive = String(name || '').toLowerCase();
+  const cleanBody = String(body || '').trim();
+  const { slug = 'unknown', language = 'en-CA', routePrefix = '/blog' } = context;
+
+  // These directive bodies already contain valid Markdown or a generated
+  // Markdown table. Only their transport fences need to disappear.
+  if (directive === 'mythbuster') {
+    const heading = cleanBody.match(/^heading:\s*(.+)(?:\n|$)/i);
+    return heading
+      ? `### ${heading[1].trim()}\n\n${cleanBody.slice(heading[0].length).trim()}`
+      : cleanBody;
+  }
+  if (['customer-voice', 'mercury-capacity-lookup'].includes(directive)) {
+    return cleanBody;
+  }
+  if (directive === 'related-posts') {
+    return cleanBody.split('\n').map((item) => item.trim().replace(/^-\s+/, '')).filter(Boolean)
+      .map((item) => `- [${item}](${routePrefix}/${item})`).join('\n');
+  }
+
+  const fields = parseDirectiveFields(cleanBody);
+  if (fields === null) {
+    throw new Error(`[markdown-twins] ${slug}: malformed ${directive} directive field schema`);
+  }
+  if (fields.length === 0) {
+    if (directive === 'decision-card') return cleanBody;
+    throw new Error(`[markdown-twins] ${slug}: ${directive} directive has no renderable field schema`);
+  }
+  const byKey = directiveFieldsByKey(fields);
+
+  if (directive === 'image-placeholder') {
+    assertDirectiveFields(slug, directive, fields, /^(?:slug|type|aspect|description|prompt|image)$/);
+    const image = byKey.image?.value;
+    const alt = byKey.description?.value || byKey.slug?.value || 'Article visual';
+    return image ? `![${alt}](${image})` : '';
+  }
+  if (directive === 'pull-quote') {
+    assertDirectiveFields(slug, directive, fields, /^(?:quote|attribution|source)$/);
+    if (isBlogPullQuoteSuppressed(slug)) return '';
+    return renderPullQuoteMarkdown(byKey);
+  }
+  if (directive === 'cta') {
+    assertDirectiveFields(slug, directive, fields, /^(?:variant|heading|body|primaryLabel|primaryHref|secondaryLabel|secondaryHref|phone|footer)$/);
+    return renderCtaMarkdown(byKey);
+  }
+  if (directive === 'decision-card') {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|left(?:Label|Criteria|Outcome|Variant)|right(?:Label|Criteria|Outcome|Variant)|whenInDoubt)$/);
+    return renderDecisionCardMarkdown(byKey);
+  }
+  if (['diagnostic-flow', 'step-flow'].includes(directive)) {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|step\d+(?:Label|Question|Tip)|escalation(?:Label|Body))$/);
+    return renderDiagnosticFlowMarkdown(byKey);
+  }
+  if (directive === 'cost-stack') {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|item\d+(?:Label|Value|Note|Accent)|total(?:Label|Value)|caveat)$/);
+    return renderCostStackMarkdown(byKey);
+  }
+  if (['bilingual-trust', 'bilingual-trust-card', 'trust-block'].includes(directive)) {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|headingTranslated|item\d+(?:En|Zh)|cta(?:En|Zh|Href))$/);
+    return renderTrustBlockMarkdown(byKey, language);
+  }
+  if (directive === 'mercury-price-table') {
+    assertDirectiveFields(slug, directive, fields, /^(?:group|minHp|maxHp)$/);
+    return language === 'en-CA'
+      ? '[See current Mercury outboard pricing](/pricing-reference)'
+      : '';
+  }
+
+  // A new schema-backed directive must get a deliberate template. Never fall
+  // back to exposing `key: value` authoring properties in a public twin.
+  throw new Error(`[markdown-twins] ${slug}: no Markdown template for ${directive} directive`);
+}
+
+function normalizeHeadingText(value) {
+  return String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .match(/[\p{L}\p{N}]+/gu)?.join(' ') || '';
+}
+
+function normalizeBlogTwinStructure(content, articleTitle) {
+  const normalizedTitle = normalizeHeadingText(articleTitle);
+  const output = [];
+  let fence = null;
+
+  for (const originalLine of String(content || '').split('\n')) {
+    let line = originalLine;
+    const fenceMarker = line.match(/^\s{0,3}(`{3,}|~{3,})/);
+    if (fence) {
+      output.push(line);
+      if (fenceMarker && fenceMarker[1][0] === fence.char && fenceMarker[1].length >= fence.length) {
+        fence = null;
+      }
+      continue;
+    }
+    if (fenceMarker) {
+      fence = { char: fenceMarker[1][0], length: fenceMarker[1].length };
+      output.push(line);
+      continue;
+    }
+    const h1 = line.match(/^#\s+(.+)$/);
+    if (h1) {
+      if (normalizeHeadingText(h1[1]) === normalizedTitle) continue;
+      line = `## ${h1[1]}`;
+    }
+
+    // The twin header already owns publication, author, and read-time fields.
+    if (/^\*\*(?:Published|Updated|Author|Reading time|Read time):\*\*/i.test(line)) continue;
+
+    if (line.trim() === '---') {
+      let previous = output.length - 1;
+      while (previous >= 0 && output[previous].trim() === '') previous -= 1;
+      if (previous >= 0 && output[previous].trim() === '---') continue;
+    }
+    output.push(line);
+  }
+
+  return output.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function motorBestFit(family, hp) {
@@ -860,6 +1210,41 @@ function isDiagnosticBlogArticle(article) {
   );
 }
 
+function isFaultCodeBlogArticle(article) {
+  const slug = String(article.slug || '').toLowerCase();
+  return /(?:fault-code|alarm-code|alarm-decoder|beeping-codes|smartcraft-alarm)/.test(slug);
+}
+
+function lintBlogTwin(slug, markdown) {
+  // Code samples can legitimately contain shell comments or Markdown-looking
+  // text. Structural lint applies to the document outside fenced examples.
+  const structuralMarkdown = mapFencedMarkdown(markdown, () => '');
+  const h1Count = (structuralMarkdown.match(/^#\s+/gm) || []).length;
+  if (h1Count !== 1) {
+    throw new Error(`[markdown-twins] ${slug}: expected exactly one H1, found ${h1Count}`);
+  }
+  const leakedFence = structuralMarkdown.match(/^:{2,3}(?:[a-z-]+)?\s*$/im);
+  if (leakedFence) {
+    throw new Error(`[markdown-twins] ${slug}: raw directive fence leaked into twin (${leakedFence[0]})`);
+  }
+  const rawSchemaProperty = /^(?:eyebrow|heading|headingTranslated|subhead|left(?:Label|Criteria|Outcome|Variant)|right(?:Label|Criteria|Outcome|Variant)|whenInDoubt|step\d+(?:Label|Question|Tip)|escalation(?:Label|Body)|item\d+(?:Label|Value|Note|Accent|En|Zh)|total(?:Label|Value)|caveat|quote|attribution|source|primary(?:Label|Href)|secondary(?:Label|Href)|cta(?:En|Zh|Href))\s*:.*$/m;
+  const boldTitleSchemaProperty = /^\*\*(?:Eyebrow|Heading(?:\s+Translated)?|Subhead|Left\s+(?:Label|Criteria|Outcome|Variant)|Right\s+(?:Label|Criteria|Outcome|Variant)|When\s+In\s+Doubt|Step\s+\d+\s+(?:Label|Question|Tip)|Escalation\s+(?:Label|Body)|Item\s+\d+\s+(?:Label|Value|Note|Accent|En|Zh)|Total\s+(?:Label|Value)|Caveat|Primary\s+(?:Label|Href)|Secondary\s+(?:Label|Href)|Cta\s+(?:En|Zh|Href)):\*\*.*$/im;
+  const leakedProperty = structuralMarkdown.match(rawSchemaProperty)
+    || structuralMarkdown.match(boldTitleSchemaProperty);
+  if (leakedProperty) {
+    throw new Error(`[markdown-twins] ${slug}: directive property leaked into twin (${leakedProperty[0]})`);
+  }
+  if (/(?:^|\n)---[ \t]*\n(?:[ \t]*\n)*---[ \t]*(?=\n|$)/m.test(structuralMarkdown)) {
+    throw new Error(`[markdown-twins] ${slug}: repeated horizontal-rule run remains`);
+  }
+  const bareSlug = String(slug).split('/').pop();
+  for (const marker of SUPPRESSED_PULL_QUOTE_MARKERS.get(bareSlug) || []) {
+    if (structuralMarkdown.includes(marker)) {
+      throw new Error(`[markdown-twins] ${slug}: unresolved testimonial marker leaked into twin (${marker})`);
+    }
+  }
+}
+
 function lastReviewedLabel(language) {
   if (language === 'fr-CA') return 'Dernière révision';
   if (language === 'ko-KR') return '마지막 검토';
@@ -876,6 +1261,7 @@ function lastReviewedLabel(language) {
 function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'en-CA') {
   const url = `${SITE_URL}${routePrefix}/${article.slug}`;
   const isDiagnostic = isDiagnosticBlogArticle(article);
+  const isFaultCode = isFaultCodeBlogArticle(article);
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
     `description: ${JSON.stringify(article.description)}`,
@@ -891,7 +1277,14 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const faqBlock = faqs.length
     ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
-  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
+  const cleanedContent = normalizeBlogTwinStructure(
+    cleanBlogContent(article.content, faqs.length > 0, {
+      slug: article.slug,
+      language,
+      routePrefix,
+    }),
+    article.title,
+  );
   const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
@@ -917,11 +1310,16 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     relatedGuidesMd ? '' : null,
     '## Next steps',
     '',
-    ...(isDiagnostic
+    ...(isFaultCode
       ? [
           '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
           '- Include the exact code, engine serial number, hours, and a photo of the full display.',
         ]
+      : isDiagnostic
+        ? [
+            '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+            '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
+          ]
       : [
           `- Build a quote: ${SITE_URL}/quote/motor-selection`,
           `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
@@ -931,13 +1329,20 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     '',
     '## Notes for AI agents',
     '',
-    ...(isDiagnostic
+    ...(isFaultCode
       ? [
           '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
           '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
           '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
           '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
         ]
+      : isDiagnostic
+        ? [
+            '- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.',
+            '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+            '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+            '- A symptom is not a confirmed root cause. Preserve the article\'s test order and escalation limits.',
+          ]
       : [
           '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
           '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
@@ -1255,7 +1660,9 @@ console.log(`[markdown-twins] loaded blog cluster data for ${Object.keys(blogClu
 const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
-  writePublicMd(path, blogMarkdown(article, blogClusterData));
+  const markdown = blogMarkdown(article, blogClusterData);
+  lintBlogTwin(article.slug, markdown);
+  writePublicMd(path, markdown);
   verifyPublicMd(path, 'English blog twin freshness', ['**Last reviewed:**']);
   blogTwinSummaries.push({
     path,
@@ -1267,7 +1674,9 @@ for (const article of blogArticlesAll) {
 for (const group of localizedBlogGroups) {
   for (const article of group.articles) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
-    writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
+    const markdown = blogMarkdown(article, null, `/blog/${group.prefix}`, group.language);
+    lintBlogTwin(`${group.prefix}/${article.slug}`, markdown);
+    writePublicMd(path, markdown);
     verifyPublicMd(path, `${group.language} blog twin`, [
       `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
       `**${lastReviewedLabel(group.language)}:**`,

@@ -140,8 +140,6 @@ For Mercury service, parts, or repower questions, we're a Mercury Marine Premier
 
 ---
 
----
-
 ## What we see at HBW
 
 Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.

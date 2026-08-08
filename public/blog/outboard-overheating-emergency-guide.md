@@ -27,28 +27,45 @@ language: en-CA
 
 If an overheat warning appears, reduce throttle immediately, follow the warning instructions on the display or in the serial-specific Mercury owner's manual, and get the boat into a safe position. Check the telltale and cooling-water intakes only when it's safe. A normal telltale doesn't prove the whole cooling system is working. If the warning persists, the telltale is weak or absent, or the manual directs you to stop, shut the engine down and arrange a tow.
 
-::diagnostic-flow
-heading: Mercury overheating? Run this checklist before damage gets expensive
-eyebrow: Emergency diagnostic
-subhead: Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
-step1Label: Stop the boat
-step1Question: Have you throttled down to idle and shifted to neutral?
-step1Tip: Reduce throttle immediately and follow the display or owner's-manual warning procedure for the exact motor. The correct shutdown sequence can vary by model and warning.
-step2Label: Telltale stream
-step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
-step2Tip: A weak or absent stream can mean weeds, debris, or a cooling-system fault. A normal stream doesn't rule out a thermostat, sensor, water-pressure, or internal-flow problem.
-step3Label: Cooling inlet
-step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
-step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
-step4Label: Recheck after clearing
-step4Question: After clearing visible debris and following the manual's restart procedure, does the telltale return and the warning stay off?
-step4Tip: Don't assume the motor is fixed because the stream returns. Head for the nearest safe landing at the speed permitted by the warning procedure, and book an inspection before the next outing.
-step5Label: Alarm persists
-step5Question: Is the overheat alarm still active or coming back at low RPM?
-step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
-escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
-::
+*Emergency diagnostic*
+
+### Mercury overheating? Run this checklist before damage gets expensive
+
+Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
+
+#### Stop the boat
+
+**Have you throttled down to idle and shifted to neutral?**
+
+Reduce throttle immediately and follow the display or owner's-manual warning procedure for the exact motor. The correct shutdown sequence can vary by model and warning.
+
+#### Telltale stream
+
+**Is the telltale (pee stream) flowing, and is it the normal volume?**
+
+A weak or absent stream can mean weeds, debris, or a cooling-system fault. A normal stream doesn't rule out a thermostat, sensor, water-pressure, or internal-flow problem.
+
+#### Cooling inlet
+
+**Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?**
+
+Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
+
+#### Recheck after clearing
+
+**After clearing visible debris and following the manual's restart procedure, does the telltale return and the warning stay off?**
+
+Don't assume the motor is fixed because the stream returns. Head for the nearest safe landing at the speed permitted by the warning procedure, and book an inspection before the next outing.
+
+#### Alarm persists
+
+**Is the overheat alarm still active or coming back at low RPM?**
+
+Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
+
+#### Alarm still on? Don't push it.
+
+Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
 
 ---
 
@@ -201,12 +218,12 @@ Reduce throttle, get the boat into a safe position, and follow the warning instr
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 

@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
-# Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
+## Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
 
 > **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 4.5 to 7 kg (10 to 15 lb) weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 

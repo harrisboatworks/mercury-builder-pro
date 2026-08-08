@@ -33,28 +33,45 @@ For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/se
 
 ---
 
-::diagnostic-flow
-heading: Won't start after sitting? Work through these five
-eyebrow: Post-storage diagnostic
-subhead: Long storage is the #1 cause of spring and post-vacation no-starts. Run these in order.
-step1Label: How long has it sat?
-step1Question: Has the boat been stored more than 4 weeks without running?
-step1Tip: 4 weeks is the rough threshold where fuel starts to break down and batteries lose enough charge to affect starting. Anything over 3 months, treat it as a full spring commission.
-step2Label: Battery first
-step2Question: Does the battery read 12.4V or higher at rest, with clean terminals?
-step2Tip: If the boat was on a charger, you are fine. If it sat in storage without a maintainer, the battery is the #1 suspect. Charge fully before further testing.
-step3Label: Fuel age
-step3Question: Is the fuel less than 6 months old, and does the primer bulb firm up?
-step3Tip: Old E10 phase-separates. If the boat is sitting on last season's fuel, drain and refill before troubleshooting further. A soft primer bulb usually means an air leak or empty line.
-step4Label: Carb or EFI clog
-step4Question: Did the engine run well before storage?
-step4Tip: If yes, and fuel + battery check out, suspect varnish buildup in the carb or injector. Carbureted motors are more sensitive to old fuel than EFI. EFI Mercurys usually start once fresh fuel reaches the injectors.
-step5Label: Engine cutoff and spark
-step5Question: Is the lanyard attached, and does the engine crank without firing?
-step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
-escalationLabel: Tried everything?
-escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
-::
+*Post-storage diagnostic*
+
+### Won't start after sitting? Work through these five
+
+Long storage is the #1 cause of spring and post-vacation no-starts. Run these in order.
+
+#### How long has it sat?
+
+**Has the boat been stored more than 4 weeks without running?**
+
+4 weeks is the rough threshold where fuel starts to break down and batteries lose enough charge to affect starting. Anything over 3 months, treat it as a full spring commission.
+
+#### Battery first
+
+**Does the battery read 12.4V or higher at rest, with clean terminals?**
+
+If the boat was on a charger, you are fine. If it sat in storage without a maintainer, the battery is the #1 suspect. Charge fully before further testing.
+
+#### Fuel age
+
+**Is the fuel less than 6 months old, and does the primer bulb firm up?**
+
+Old E10 phase-separates. If the boat is sitting on last season's fuel, drain and refill before troubleshooting further. A soft primer bulb usually means an air leak or empty line.
+
+#### Carb or EFI clog
+
+**Did the engine run well before storage?**
+
+If yes, and fuel + battery check out, suspect varnish buildup in the carb or injector. Carbureted motors are more sensitive to old fuel than EFI. EFI Mercurys usually start once fresh fuel reaches the injectors.
+
+#### Engine cutoff and spark
+
+**Is the lanyard attached, and does the engine crank without firing?**
+
+Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
+
+#### Tried everything?
+
+After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
 
 ---
 
@@ -200,12 +217,12 @@ No. Repeated cranking can drain the battery and make diagnosis harder. Check bas
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 

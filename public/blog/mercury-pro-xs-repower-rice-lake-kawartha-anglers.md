@@ -65,27 +65,29 @@ The other reason matters less in marketing copy but a lot in real life: when you
 
 ## Choosing your Pro XS HP
 
-::decision-card
-heading: Which Pro XS for your fishing?
-subhead: Hull rating is the hard limit. After that, fishing style decides.
-leftLabel: 115–150 Pro XS
-leftCriteria:
-  - Smaller bass boats (16–17 ft aluminum or fiberglass)
-  - Single-angler or two-angler max
-  - Tight-water lakes and weed-edge fishing
-  - 150 Pro XS = inline-4, lighter rigged package
-leftOutcome: Best for light, tight-water bass rigs
-leftVariant: standard
-rightLabel: 175–225 Pro XS V6
-rightCriteria:
-  - 18–20 ft aluminum or fiberglass angler hulls
-  - Multi-lake days across Rice, Pigeon, Stoney
-  - Two- or three-up fishing, full livewells
-  - Top end of roughly 50–58 mph depending on hull
-rightOutcome: Sweet spot for most Kawartha anglers
-rightVariant: recommended
-whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
-::
+### Which Pro XS for your fishing?
+
+Hull rating is the hard limit. After that, fishing style decides.
+
+#### 115–150 Pro XS
+
+- Smaller bass boats (16–17 ft aluminum or fiberglass)
+- Single-angler or two-angler max
+- Tight-water lakes and weed-edge fishing
+- 150 Pro XS = inline-4, lighter rigged package
+
+**Best for light, tight-water bass rigs**
+
+#### 175–225 Pro XS V6
+
+- 18–20 ft aluminum or fiberglass angler hulls
+- Multi-lake days across Rice, Pigeon, Stoney
+- Two- or three-up fishing, full livewells
+- Top end of roughly 50–58 mph depending on hull
+
+**Sweet spot for most Kawartha anglers**
+
+Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
 

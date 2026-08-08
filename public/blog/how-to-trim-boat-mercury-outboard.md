@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 
-# How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge
-
 > **Quick answer:** Tuck the outboard in before accelerating onto plane. Once the boat settles, trim out in short taps while holding steady throttle. Stop when speed quits improving, RPM rises without matching speed, steering gets loose, the bow starts bouncing, or the prop ventilates. Load, speed and water conditions change the right setting, so read the boat rather than memorizing a gauge number.
 
 You bring the boat onto plane, leave the throttle alone and tap the trim switch. The bow lifts a little. Steering gets lighter. Speed rises. It feels like somebody quietly removed a load from the boat.

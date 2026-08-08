@@ -94,12 +94,7 @@ The big-picture matching table. Specific pitch depends on horsepower and how the
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-slug: prop-selection-by-hull-matrix
-type: infographic
-aspect: 16:9
-description: Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family
-prompt: HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/prop-selection-by-hull-matrix.svg
+![Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family](/lovable-uploads/prop-selection-by-hull-matrix.svg)
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 

@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
 
-# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
-
 > **Quick answer:** At HBW, the standard spring check is **free for our winter-storage customers** and **$99 labour before HST for everyone else**, with parts only when something needs attention. That pricing was verified August 2, 2026 and is confirmed on your service request. A bigger spring invoice usually means the check uncovered deferred service or a repair, not that routine commissioning itself became expensive.
 
 The 9,540 figure is real HBW Lightspeed data, with one important noun attached: **jobs**. It is a frozen count of individual spring-labelled service jobs, not 9,540 unique boats, customers, or repair orders. One repair order can carry separate “Spring Check Boat” and “Spring Check Motor” jobs.

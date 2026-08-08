@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
-# Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
+## Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 

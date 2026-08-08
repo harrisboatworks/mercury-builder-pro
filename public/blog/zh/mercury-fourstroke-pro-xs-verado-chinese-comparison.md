@@ -77,28 +77,31 @@ GTA 华人 angler 中常见购买理由：
 - Bass boat 18-19 英尺 → Mercury 200 Pro XS
 - Multi-species fishing boat 20-22 英尺 → Mercury 250-300 Pro XS
 
-::decision-card
-eyebrow: FourStroke 还是 Pro XS
-heading: GTA 华人船主该怎么选?
-subhead: 大部分 GTA 华人家庭和钓鱼客户买 FourStroke 就够用。Pro XS 适合特定场景, 不要为了"看起来更好"多花钱。
-leftLabel: 钓鱼休闲: FourStroke
-leftCriteria:
-  - 莱斯湖, Kawarthas 周末钓鱼或家庭游
-  - 载人载货稳定, 不追求极速
-  - 在意油耗和保养间隔
-  - Pontoon 或铝制钓鱼船首选
-leftOutcome: Mercury FourStroke 90 至 200 HP
-leftVariant: recommended
-rightLabel: 速度滑水: Pro XS
-rightCriteria:
-  - Bass 锦标赛或专业竞速钓鱼
-  - 滑水, 拖管, 拉滑水板
-  - 经常满载且需要快速起步
-  - 玻璃钢运动艇首选
-rightOutcome: Mercury Pro XS 115 至 250 HP
-rightVariant: alternative
-whenInDoubt: 大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够用还省油。按用途选, 不要按品牌系列选。
-::
+*FourStroke 还是 Pro XS*
+
+### GTA 华人船主该怎么选?
+
+大部分 GTA 华人家庭和钓鱼客户买 FourStroke 就够用。Pro XS 适合特定场景, 不要为了"看起来更好"多花钱。
+
+#### 钓鱼休闲: FourStroke
+
+- 莱斯湖, Kawarthas 周末钓鱼或家庭游
+- 载人载货稳定, 不追求极速
+- 在意油耗和保养间隔
+- Pontoon 或铝制钓鱼船首选
+
+**Mercury FourStroke 90 至 200 HP**
+
+#### 速度滑水: Pro XS
+
+- Bass 锦标赛或专业竞速钓鱼
+- 滑水, 拖管, 拉滑水板
+- 经常满载且需要快速起步
+- 玻璃钢运动艇首选
+
+**Mercury Pro XS 115 至 250 HP**
+
+大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够用还省油。按用途选, 不要按品牌系列选。
 
 ## Verado V8/V10/V12：HBW 按需特别订货
 

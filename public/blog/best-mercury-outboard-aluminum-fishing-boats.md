@@ -34,30 +34,33 @@ language: en-CA
 
 ---
 
-::decision-card
-eyebrow: Hull material decision
-heading: Aluminum or fiberglass? Same question, two right answers.
-subhead: Both materials make great boats, but they reward different priorities. Here's the framework we use with HBW customers.
-leftLabel: Aluminum
-leftCriteria:
-  - You fish, run shallow water, hit logs or rocks occasionally
-  - You trailer regularly and want a lighter rig
-  - You launch at unimproved ramps where dragging happens
-  - You want lower maintenance and won't repaint or gel-coat-fix
-  - Repair-ability matters to you (welding > fiberglass work)
-leftOutcome: Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.
-leftVariant: recommended
-rightLabel: Fiberglass
-rightCriteria:
-  - You want a quieter, smoother ride on bigger water
-  - Cosmetics, gel coat depth, and resale curb appeal matter
-  - You're 18-22+ ft for runabout, bowrider, or wakeboard use
-  - You can absorb higher maintenance (gel coat, blisters, hull cleaning)
-  - You'll keep the boat 8+ years and value the smoother trip
-rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.
-rightVariant: alternative
-whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
-::
+*Hull material decision*
+
+### Aluminum or fiberglass? Same question, two right answers.
+
+Both materials make great boats, but they reward different priorities. Here's the framework we use with HBW customers.
+
+#### Aluminum
+
+- You fish, run shallow water, hit logs or rocks occasionally
+- You trailer regularly and want a lighter rig
+- You launch at unimproved ramps where dragging happens
+- You want lower maintenance and won't repaint or gel-coat-fix
+- Repair-ability matters to you (welding > fiberglass work)
+
+**Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.**
+
+#### Fiberglass
+
+- You want a quieter, smoother ride on bigger water
+- Cosmetics, gel coat depth, and resale curb appeal matter
+- You're 18-22+ ft for runabout, bowrider, or wakeboard use
+- You can absorb higher maintenance (gel coat, blisters, hull cleaning)
+- You'll keep the boat 8+ years and value the smoother trip
+
+**Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.**
+
+Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
 
 ## How we think about aluminum fishing boats
 
@@ -127,7 +130,8 @@ A kicker can be worth the added cost when slow trolling, backup propulsion, or l
 
 ## Common mistakes on aluminum fishing boat repowers
 
-heading: Common mistakes on aluminum fishing boat repowers
+### Common mistakes on aluminum fishing boat repowers
+
 - **Underbuying HP.**  
   A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
 - **Skipping the kicker.**  
@@ -144,8 +148,6 @@ heading: Common mistakes on aluminum fishing boat repowers
 ## Ready to find your motor?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
-
----
 
 ---
 

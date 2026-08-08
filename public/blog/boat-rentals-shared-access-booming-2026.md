@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026
 
-# Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You
-
 > **Quick answer:** Rent if you want occasional days on the water without ownership's fixed costs. Buy if regular access, spontaneity, and keeping your own setup matter enough to justify insurance, storage, winterizing, maintenance, and depreciation. There is no universal day-count threshold: compare the live rental rate for the boat you would use against your own annual ownership costs. Book a Rice Lake rental at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 Renting and owning solve different problems. A rental gives you a planned day on the water without year-round carrying costs. Ownership gives you your own boat, your own setup, and the ability to go when conditions and your calendar line up.

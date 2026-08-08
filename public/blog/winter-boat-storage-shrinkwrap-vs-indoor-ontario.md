@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 
-# Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
+## Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
 > **Quick answer:** HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage, and we don't provide pickup, delivery, hauling, mobile service, or transport referrals. Customers handle fall drop-off and spring pickup. The marina is closed December 1 through April 1. Compare storage quotes by written scope, not an old per-foot number.
 

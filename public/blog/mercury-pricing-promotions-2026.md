@@ -96,30 +96,47 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 - Spring delivery available
 - Ideal for repower projects
 
-::cost-stack
-heading: 2026 Mercury tier pricing, what you actually pay in CAD
-eyebrow: All-in ballparks
-subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
-item1Label: FourStroke 9.9 (kicker / small tiller)
-item1Value: $2,999 - $5,200
-item1Note: Motor only. ProKicker remote variants land at the top of the range.
-item2Label: FourStroke 60 to 115 (mid-range main)
-item2Value: $12,000 - $18,000
-item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
-item2Accent: true
-item3Label: FourStroke / Pro XS 150 to 250 (V6)
-item3Value: $22,000 - $37,500
-item3Note: Bass boats, performance hulls, offshore Lake Ontario rigs
-item4Label: Install and rigging (any tier)
-item4Value: $1,500 - $4,500
-item4Note: Cables, controls, gauges, prop swap. Brand conversions add $1,500 to $3,000.
-item5Label: First-year service (100-hour)
-item5Value: $400 - $700
-item5Note: Oil, gear lube, plugs, water pump check. Required for warranty.
-totalLabel: Typical all-in range
-totalValue: $17,600 - $40,000+ CAD
-caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
-::
+*All-in ballparks*
+
+### 2026 Mercury tier pricing, what you actually pay in CAD
+
+Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
+
+#### FourStroke 9.9 (kicker / small tiller)
+
+**$2,999 - $5,200**
+
+Motor only. ProKicker remote variants land at the top of the range.
+
+#### FourStroke 60 to 115 (mid-range main)
+
+**$12,000 - $18,000**
+
+Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
+
+#### FourStroke / Pro XS 150 to 250 (V6)
+
+**$22,000 - $37,500**
+
+Bass boats, performance hulls, offshore Lake Ontario rigs
+
+#### Install and rigging (any tier)
+
+**$1,500 - $4,500**
+
+Cables, controls, gauges, prop swap. Brand conversions add $1,500 to $3,000.
+
+#### First-year service (100-hour)
+
+**$400 - $700**
+
+Oil, gear lube, plugs, water pump check. Required for warranty.
+
+#### Typical all-in range
+
+**$17,600 - $40,000+ CAD**
+
+*HST extra. Live pricing and current promos at mercuryrepower.ca.*
 
 ---
 

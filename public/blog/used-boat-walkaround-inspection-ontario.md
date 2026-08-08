@@ -28,9 +28,7 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 
-::walkaround-lead-capture
-
-# The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
+## The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
 
@@ -218,8 +216,6 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Get the printable guide
-
-::walkaround-lead-capture
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

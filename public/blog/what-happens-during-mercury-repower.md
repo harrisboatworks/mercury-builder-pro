@@ -179,8 +179,6 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 
 ---
 
----
-
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
 
 Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.

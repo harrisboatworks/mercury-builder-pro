@@ -86,28 +86,31 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 
 ---
 
-::decision-card
-eyebrow: HP sizing approach
-heading: Are you matching a new hull or repowering one you know?
-subhead: The right HP target depends as much on how well you know the boat as on what the plate says.
-leftLabel: New boat, hull you don't know yet
-leftCriteria:
-  - Buying a hull you haven't owned before
-  - Resale matters in 3 to 5 years
-  - You'll typically run with mixed loads
-  - You want the boat to handle worst-case days
-leftOutcome: Size to capacity plate max
-leftVariant: recommended
-rightLabel: Repower of a hull you know well
-rightCriteria:
-  - You've owned this boat 5+ seasons
-  - You know your typical load and usage
-  - You want efficiency, not max top end
-  - Resale is not the primary concern
-rightOutcome: Target 70 to 85 percent of plate max
-rightVariant: alternative
-whenInDoubt: The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
-::
+*HP sizing approach*
+
+### Are you matching a new hull or repowering one you know?
+
+The right HP target depends as much on how well you know the boat as on what the plate says.
+
+#### New boat, hull you don't know yet
+
+- Buying a hull you haven't owned before
+- Resale matters in 3 to 5 years
+- You'll typically run with mixed loads
+- You want the boat to handle worst-case days
+
+**Size to capacity plate max**
+
+#### Repower of a hull you know well
+
+- You've owned this boat 5+ seasons
+- You know your typical load and usage
+- You want efficiency, not max top end
+- Resale is not the primary concern
+
+**Target 70 to 85 percent of plate max**
+
+The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
 
 ## Sizing guidelines
 

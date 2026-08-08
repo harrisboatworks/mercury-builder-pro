@@ -74,28 +74,31 @@ Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice 
 
 *Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
 
-::decision-card
-eyebrow: Portable Mercury sizing
-heading: What are you actually pushing?
-subhead: The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
-leftLabel: Dinghy, canoe, or small jon boat
-leftCriteria:
-  - Tender for a larger boat at anchor
-  - Solo or two-person fishing on a small pond or river
-  - Boat under 12 feet, light aluminum or inflatable
-  - Want one-hand carry and easy stowage
-leftOutcome: Mercury 2.5 to 6 HP MH
-leftVariant: alternative
-rightLabel: Small fishing boat or backup kicker
-rightCriteria:
-  - 14 to 16 foot aluminum used regularly
-  - Trolling for walleye or bass on Kawartha lakes
-  - Backup or kicker for a larger main motor
-  - Need electric start and remote tiller options
-rightOutcome: Mercury 9.9 to 20 HP EH or ELH
-rightVariant: recommended
-whenInDoubt: A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
-::
+*Portable Mercury sizing*
+
+### What are you actually pushing?
+
+The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
+
+#### Dinghy, canoe, or small jon boat
+
+- Tender for a larger boat at anchor
+- Solo or two-person fishing on a small pond or river
+- Boat under 12 feet, light aluminum or inflatable
+- Want one-hand carry and easy stowage
+
+**Mercury 2.5 to 6 HP MH**
+
+#### Small fishing boat or backup kicker
+
+- 14 to 16 foot aluminum used regularly
+- Trolling for walleye or bass on Kawartha lakes
+- Backup or kicker for a larger main motor
+- Need electric start and remote tiller options
+
+**Mercury 9.9 to 20 HP EH or ELH**
+
+A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
 
 ### Mercury 15 MH and 15 EH (15 HP)
 14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.

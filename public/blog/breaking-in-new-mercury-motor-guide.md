@@ -113,12 +113,6 @@ HBW recommends an optional early oil-and-filter change around 20 hours as dealer
 
 ---
 
-::pull-quote
-quote: First time I bought new, I almost skipped the break-in because another dealer said "just baby it for a few hours." **HBW walked me through the real Mercury procedure step by step.** Two seasons in, the motor still sounds brand new.
-attribution: Greg T.
-source: Cobourg
-::
-
 ## Common break-in mistakes
 
 **Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
@@ -171,8 +165,6 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 ## Need service on your Mercury?
 
 Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
----
 
 ---
 

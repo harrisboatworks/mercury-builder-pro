@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario
 
-# Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)
-
 > **Quick answer:** In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about **$210 in labour plus $76 in pump parts**, before HST. Those are historical shop medians, not a package price or quote. The engine, gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners and any cooling-system diagnosis can change both numbers.
 
 Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and timing. The next question at the counter is simpler: what changes the bill?

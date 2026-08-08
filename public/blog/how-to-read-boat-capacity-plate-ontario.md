@@ -86,8 +86,6 @@ Transport Canada's 2026 guide says most powered pleasure craft under 24 metres r
 
 For a boat built after April 29, 2010, contact the manufacturer or importer and ask for the missing notice. For an older boat, contact them first; if they are no longer in business or cannot provide one, Transport Canada recommends a naval architect's assessment of the boat's safe operating limits. Do not substitute an internet formula or a plate from a similar model.
 
-::walkaround-lead-capture
-
 ![Macro close-up of a Transport Canada Compliance Notice showing max persons, horsepower, and load fields](/lovable-uploads/inline/inline-capacity-plate-macro.png)
 
 ## What this means for engine repowering

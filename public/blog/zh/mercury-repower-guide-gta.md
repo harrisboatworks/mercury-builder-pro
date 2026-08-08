@@ -36,24 +36,15 @@ language: zh-CN
 
 Harris Boat Works 是安大略省 Rice Lake 的 [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 授权经销商，1947 年创办至今第三代经营。你可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 查看透明的加元报价，不需要打电话，不需要谈判。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: Mercury Marine Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- Mercury Marine Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 
@@ -157,8 +148,6 @@ HBW 的做法不同：[mercuryrepower.ca](https://www.mercuryrepower.ca) 是一�
 - **你对旧机的信任感如何？** 如果你每次出水都不确定能不能回来，这本身就是一个问题
 
 具体的换机建议，可以联系 HBW 提交服务请求，告知旧机情况让技师评估。
-
----
 
 ---
 

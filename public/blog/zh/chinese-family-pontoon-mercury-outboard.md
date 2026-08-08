@@ -32,24 +32,15 @@ language: zh-CN
 
 Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展示厅的空船表现**。家庭聚会、父母访加、孩子暑假, Pontoon常常是真正满载使用的船型。马力太小让船起步慢、转向重、逆风费力；太小的马力也不一定更省油。对多数GTA华人家庭，正确的问题不是「最低可以配多少马力」，而是「我们平常怎么用这艘船」。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item4En: 60 to 90 minutes from GTA via 401 + 115
-item4Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item5En: Mercury dealer since 1965
-item5Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ## 关于语言的说明
 

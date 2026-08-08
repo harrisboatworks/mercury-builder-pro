@@ -46,28 +46,45 @@ https://www.youtube.com/watch?v=YGuQjF6vuao
 
 ---
 
-::diagnostic-flow
-heading: Winterizing your Mercury? Start with the exact manual
-eyebrow: Safe fall checklist
-subhead: The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
-step1Label: Identify
-step1Question: Do you have the operation and maintenance manual for the exact engine?
-step1Tip: Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
-step2Label: Fuel
-step2Question: Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?
-step2Tip: Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
-step3Label: Gearcase
-step3Question: Is the lubricant due, and did it show water or metal?
-step3Tip: Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
-step4Label: Engine protection
-step4Question: Are you following the exact internal-protection and flushing method?
-step4Tip: Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
-step5Label: Battery and position
-step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
-step5Tip: The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
-escalationLabel: Need the model-specific scope?
-escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
-::
+*Safe fall checklist*
+
+### Winterizing your Mercury? Start with the exact manual
+
+The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
+
+#### Identify
+
+**Do you have the operation and maintenance manual for the exact engine?**
+
+Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
+
+#### Fuel
+
+**Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?**
+
+Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
+
+#### Gearcase
+
+**Is the lubricant due, and did it show water or metal?**
+
+Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
+
+#### Engine protection
+
+**Are you following the exact internal-protection and flushing method?**
+
+Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
+
+#### Battery and position
+
+**Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?**
+
+The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+
+#### Need the model-specific scope?
+
+Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
 
 ---
 
@@ -211,8 +228,6 @@ Based on what we see in spring diagnostics at HBW:
 The guide above is a decision framework, not a substitute for the serial-number manual. If you find water or metal in the gearcase lubricant, damaged seals, alarms, fuel contamination, corrosion, or a procedure you cannot complete exactly, stop and request professional service.
 
 If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
-
----
 
 ---
 

@@ -38,28 +38,31 @@ For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke*
 
 ---
 
-::decision-card
-eyebrow: Runabout use-case decision
-heading: Calm cruising or active watersports?
-subhead: Same boat length, two very different right answers on motor and gearcase.
-leftLabel: Primary use is calm cruising and dinner runs
-leftCriteria:
-  - Mostly 2 to 4 people, light loading
-  - Occasional tubing for the kids
-  - Fuel economy and quiet matter most
-  - You want lower upfront cost
-leftOutcome: 90 to 115 HP FourStroke, standard gearcase
-leftVariant: recommended
-rightLabel: You tow watersports regularly
-rightCriteria:
-  - Skiing, wakeboarding, or wakesurfing most weekends
-  - 4 to 6 people aboard with full gear
-  - Hole shot with the boat loaded matters
-  - Boat is 19 ft or larger
-rightOutcome: 150 to 200 HP, Pro XS if hole shot is critical
-rightVariant: alternative
-whenInDoubt: Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
-::
+*Runabout use-case decision*
+
+### Calm cruising or active watersports?
+
+Same boat length, two very different right answers on motor and gearcase.
+
+#### Primary use is calm cruising and dinner runs
+
+- Mostly 2 to 4 people, light loading
+- Occasional tubing for the kids
+- Fuel economy and quiet matter most
+- You want lower upfront cost
+
+**90 to 115 HP FourStroke, standard gearcase**
+
+#### You tow watersports regularly
+
+- Skiing, wakeboarding, or wakesurfing most weekends
+- 4 to 6 people aboard with full gear
+- Hole shot with the boat loaded matters
+- Boat is 19 ft or larger
+
+**150 to 200 HP, Pro XS if hole shot is critical**
+
+Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
 
 ## Full Article
 
@@ -165,8 +168,6 @@ We rig family runabouts every spring in Gores Landing. Specifically:
 - **Annual service**, Mercury Premier dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
 If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
-
----
 
 ---
 

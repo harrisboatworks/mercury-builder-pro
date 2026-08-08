@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 
-# Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
+## Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
 
 ## Quick answer
 For Rice Lake under $30,000, your three realistic paths are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon with a repower budget built in, or a clean used hull paired with a current Mercury at HBW. The used-hull-plus-repower path typically gives you the most boat for the money. Build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).

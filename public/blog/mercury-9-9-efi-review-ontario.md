@@ -91,12 +91,6 @@ The 9.9 MH EFI is the wrong motor if:
 
 ---
 
-::pull-quote
-quote: Bought the 9.9 EFI as a kicker for trolling. **Ended up using it more than the main motor** on small-lake mornings. Quietest motor I've owned and the EFI starts on the first pull every time.
-attribution: Steve H.
-source: Peterborough
-::
-
 ## Standard 9.9 EFI vs. ProKicker-Style Use
 
 "Mercury 9.9 EFI" means different things depending on the version. The motor in this review is the standard 9.9 MH EFI: manual start, tiller handle, short shaft, standard gearcase.
@@ -147,8 +141,6 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 
 ---
 
----
-
 ## What we see at HBW
 
 The 9.9 EFI is the workhorse kicker in our service bay. We see them on every musky boat in the Kawarthas, every salmon rig on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
@@ -168,8 +160,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Premier dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
 ---
 
 ## FAQs

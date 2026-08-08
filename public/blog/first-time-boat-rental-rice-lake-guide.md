@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 
-# First Time Renting a Boat? What We Tell Every Renter at Our Dock
-
 > **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Every driver must bring a valid Pleasure Craft Operator Card and photo ID; passengers do not need one.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.

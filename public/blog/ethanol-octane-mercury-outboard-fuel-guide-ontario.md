@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
-# Mercury Outboard Octane and Ethanol Guide for Ontario
-
 > **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
 
 At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.

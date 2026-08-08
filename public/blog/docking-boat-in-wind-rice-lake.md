@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 
-# Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
+## Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
 
@@ -74,28 +74,45 @@ Approach downwind and the wind is adding speed while you're trying to bleed it o
 
 ---
 
-::diagnostic-flow
-eyebrow: Wind-docking sequence
-heading: Coming in on a windy Rice Lake afternoon? Run the list before you commit
-subhead: Rice Lake's prevailing west wind builds steady chop by mid-afternoon. The wrong approach turns a routine dock into a fender-grinding mess. Work the five steps in order before final approach.
-step1Label: Assess wind direction relative to the slip
-step1Question: Is the wind pushing you onto the dock, off the dock, or square at the slip mouth?
-step1Tip: Cross-onto wind is the easiest, you can let the boat drift in. Cross-off wind is hardest and requires power-on holding. Decide before you commit to a line.
-step2Label: Set fenders and lines before final approach
-step2Question: Are bow, stern, and spring lines pre-rigged on the windward side?
-step2Tip: A crew member fumbling for a line in 20 km/h wind is how dings happen. Tie the lines on the cleats, coil them in the cockpit, and place fenders at the right height before you turn into the wind.
-step3Label: Approach into the wind whenever possible
-step3Question: Can you turn the boat so the bow points into the wind on final?
-step3Tip: Wind into the bow lets you control speed with throttle alone. Wind from behind takes away your brakes. If approaching with the wind is unavoidable, plan a slower, longer approach.
-step4Label: Use the wind to lay the boat down
-step4Question: Can you cut power early and let the wind drift you the last few feet onto fenders?
-step4Tip: On a cross-onto wind, kill power 8 to 10 feet out and let the wind do the work. Idle in is harder to control than a gentle drift.
-step5Label: Know when to abort
-step5Question: If the approach is going wrong, will you re-circle or push through?
-step5Tip: A clean re-circle costs 90 seconds. A bad dock costs a fender, a rub rail, or worse. The right call is almost always to back off, go around, and try again with a fresh setup.
-escalationLabel: Want better control on windy days?
-escalationBody: Power-assist steering and a bow thruster make a real difference on bigger boats. Talk to us about rigging upgrades at (905) 342-2153.
-::
+*Wind-docking sequence*
+
+### Coming in on a windy Rice Lake afternoon? Run the list before you commit
+
+Rice Lake's prevailing west wind builds steady chop by mid-afternoon. The wrong approach turns a routine dock into a fender-grinding mess. Work the five steps in order before final approach.
+
+#### Assess wind direction relative to the slip
+
+**Is the wind pushing you onto the dock, off the dock, or square at the slip mouth?**
+
+Cross-onto wind is the easiest, you can let the boat drift in. Cross-off wind is hardest and requires power-on holding. Decide before you commit to a line.
+
+#### Set fenders and lines before final approach
+
+**Are bow, stern, and spring lines pre-rigged on the windward side?**
+
+A crew member fumbling for a line in 20 km/h wind is how dings happen. Tie the lines on the cleats, coil them in the cockpit, and place fenders at the right height before you turn into the wind.
+
+#### Approach into the wind whenever possible
+
+**Can you turn the boat so the bow points into the wind on final?**
+
+Wind into the bow lets you control speed with throttle alone. Wind from behind takes away your brakes. If approaching with the wind is unavoidable, plan a slower, longer approach.
+
+#### Use the wind to lay the boat down
+
+**Can you cut power early and let the wind drift you the last few feet onto fenders?**
+
+On a cross-onto wind, kill power 8 to 10 feet out and let the wind do the work. Idle in is harder to control than a gentle drift.
+
+#### Know when to abort
+
+**If the approach is going wrong, will you re-circle or push through?**
+
+A clean re-circle costs 90 seconds. A bad dock costs a fender, a rub rail, or worse. The right call is almost always to back off, go around, and try again with a fresh setup.
+
+#### Want better control on windy days?
+
+Power-assist steering and a bow thruster make a real difference on bigger boats. Talk to us about rigging upgrades at (905) 342-2153.
 
 ## Slip-Style Docking in a Crosswind
 

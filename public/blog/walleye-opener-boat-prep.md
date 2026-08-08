@@ -77,28 +77,45 @@ Five factors affect how thorough your opener prep needs to be:
 - **Check all required safety gear:** a Transport Canada-approved PFD for every person on board, throwable cushion, anchor and rope, paddle, bailer, sound device, lights, fire extinguisher.
 - **Top off fuel with fresh gas.** If you treated your tank last fall with stabilizer and ran it through the system, you are in better shape. If not, fill with fresh and add stabilizer before any long storage.
 
-::diagnostic-flow
-eyebrow: Walleye opener checklist
-heading: Pre-opener prep in the order that matters
-subhead: Walleye opener morning is the worst time to find a problem. Run these five checks in this sequence the week before, not the morning of.
-step1Label: Battery and electrical
-step1Question: Does the main battery load test, and are all connections clean?
-step1Tip: Cold spring mornings expose weak batteries. Load-test it on the bench, don't trust a resting voltage reading. Wire-brush terminals and grease them.
-step2Label: Fuel system and filter
-step2Question: Is the fuel fresh, stabilized, and is the filter under a year old?
-step2Tip: Old fuel is the #1 spring no-start at our shop. Run the tank near empty in fall, top up with fresh in spring, and replace the water-separator filter while you're in there.
-step3Label: Motor flush and tell-tale
-step3Question: Will the motor start, idle smoothly on muffs, and produce a steady tell-tale stream?
-step3Tip: Steady tell-tale within 30 seconds of start means the impeller is good. Weak or absent stream means stop and replace before the lake.
-step4Label: Trailer bearings and tires
-step4Question: Do the trailer hubs run cool after a 20-minute test tow, and are tires at sidewall PSI?
-step4Tip: Cold-stored bearings dry out. Spin the wheels by hand listening for grinding, and check date code on tires. A blowout on opener weekend ends the trip.
-step5Label: Live well, nav lights, electronics
-step5Question: Does the live well fill and drain, and do nav lights work on both bow and stern?
-step5Tip: Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
-escalationLabel: Want HBW to do the opener prep?
-escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
-::
+*Walleye opener checklist*
+
+### Pre-opener prep in the order that matters
+
+Walleye opener morning is the worst time to find a problem. Run these five checks in this sequence the week before, not the morning of.
+
+#### Battery and electrical
+
+**Does the main battery load test, and are all connections clean?**
+
+Cold spring mornings expose weak batteries. Load-test it on the bench, don't trust a resting voltage reading. Wire-brush terminals and grease them.
+
+#### Fuel system and filter
+
+**Is the fuel fresh, stabilized, and is the filter under a year old?**
+
+Old fuel is the #1 spring no-start at our shop. Run the tank near empty in fall, top up with fresh in spring, and replace the water-separator filter while you're in there.
+
+#### Motor flush and tell-tale
+
+**Will the motor start, idle smoothly on muffs, and produce a steady tell-tale stream?**
+
+Steady tell-tale within 30 seconds of start means the impeller is good. Weak or absent stream means stop and replace before the lake.
+
+#### Trailer bearings and tires
+
+**Do the trailer hubs run cool after a 20-minute test tow, and are tires at sidewall PSI?**
+
+Cold-stored bearings dry out. Spin the wheels by hand listening for grinding, and check date code on tires. A blowout on opener weekend ends the trip.
+
+#### Live well, nav lights, electronics
+
+**Does the live well fill and drain, and do nav lights work on both bow and stern?**
+
+Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
+
+#### Want HBW to do the opener prep?
+
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
 
 ### Three Days Before Opener
 

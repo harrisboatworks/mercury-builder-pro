@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
-# Toronto to Rice Lake: How HBW Drive-In Service Works
-
 > **Quick answer:** Book first, confirm that the job fits HBW, then bring the boat and trailer to Gores Landing at the approved drop-off time. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. Drop-off and pickup are two separate trips. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.

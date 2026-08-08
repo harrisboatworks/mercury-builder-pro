@@ -33,26 +33,41 @@ If the display shows a number as well as a horn pattern, use the [Mercury fault-
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 
-::diagnostic-flow
-heading: What to do when your Mercury starts beeping
-eyebrow: Beep diagnostic flow
-subhead: Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
-step1Label: Stop and idle the motor down
-step1Question: Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.
-step1Tip: Continuous beep at idle means stop running it entirely. Tow in.
-step2Label: Identify the pattern
-step2Question: One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.
-step3Label: Check the telltale stream
-step3Question: If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.
-step3Tip: A strong telltale with continuous beep usually points to oil pressure, not overheat.
-step4Label: Check oil level (4-strokes)
-step4Question: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.
-step5Label: Pull codes with SmartCraft if equipped
-step5Question: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
-step5Tip: Take a photo of the code on the screen so you can text it to us.
-escalationLabel: Still beeping after all 5? Put in a service request at hbw.wiki/service.
-escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
-::
+*Beep diagnostic flow*
+
+### What to do when your Mercury starts beeping
+
+Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
+
+#### Stop and idle the motor down
+
+**Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.**
+
+Continuous beep at idle means stop running it entirely. Tow in.
+
+#### Identify the pattern
+
+**One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.**
+
+#### Check the telltale stream
+
+**If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.**
+
+A strong telltale with continuous beep usually points to oil pressure, not overheat.
+
+#### Check oil level (4-strokes)
+
+**Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.**
+
+#### Pull codes with SmartCraft if equipped
+
+**VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.**
+
+Take a photo of the code on the screen so you can text it to us.
+
+#### Still beeping after all 5? Put in a service request at hbw.wiki/service.
+
+Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
 
 ---
 
@@ -181,8 +196,6 @@ When you book a diagnostic related to an alarm, bring:
 - Motor model, year, and serial number
 
 This information cuts diagnostic time significantly.
-
----
 
 ---
 

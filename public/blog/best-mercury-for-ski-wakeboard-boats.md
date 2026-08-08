@@ -30,28 +30,31 @@ language: en-CA
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
 
-::decision-card
-eyebrow: Wake profile decision
-heading: Wakeboarding or skiing? Different wake, different motor.
-subhead: Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
-leftLabel: Skiing is the focus
-leftCriteria:
-  - Slalom or course skiing most of the time
-  - You want a flat, clean, low wake
-  - Hole shot for getting the skier up matters most
-  - Lighter boat, minimal ballast
-leftOutcome: 175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop
-leftVariant: recommended
-rightLabel: Wakeboarding is the focus
-rightCriteria:
-  - You want a big, lipped, firm wake to ride
-  - You run real ballast (454 kg (1,000 lb) or more)
-  - Boat is 20 ft or larger with a tow tower
-  - Sustained mid-range torque matters more than top end
-rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
-rightVariant: alternative
-whenInDoubt: If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
-::
+*Wake profile decision*
+
+### Wakeboarding or skiing? Different wake, different motor.
+
+Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
+
+#### Skiing is the focus
+
+- Slalom or course skiing most of the time
+- You want a flat, clean, low wake
+- Hole shot for getting the skier up matters most
+- Lighter boat, minimal ballast
+
+**175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop**
+
+#### Wakeboarding is the focus
+
+- You want a big, lipped, firm wake to ride
+- You run real ballast (454 kg (1,000 lb) or more)
+- Boat is 20 ft or larger with a tow tower
+- Sustained mid-range torque matters more than top end
+
+**225 to 300 HP V6 or V8, more weight, more sustained pull**
+
+If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
 
 For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 

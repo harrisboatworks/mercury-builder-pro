@@ -94,11 +94,9 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 ---
 
-::pull-quote
-quote: Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
-attribution: Jamal R.
-source: Mississauga
-::
+> Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+>
+> Jamal R., Mississauga
 
 ## Trailer Weight and Tow Vehicle Considerations
 
