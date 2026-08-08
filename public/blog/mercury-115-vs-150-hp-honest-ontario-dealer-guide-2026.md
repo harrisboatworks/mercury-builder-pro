@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-07
+date_modified: 2026-08-08
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Premier dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-07  
+**Last updated:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -109,11 +109,11 @@ This is the practical "ceiling speed" difference. The 150 gives you more usable 
 
 ## The fuel cost math (with honest Ontario use patterns)
 
-We see online comparisons assume 100 hours of use per season as the baseline. **In our shop's actual customer data, Rice Lake cottage owners average closer to 20 hours per season.** 100 hours is a reasonable upper bound for boats that fish hard or travel the Trent-Severn extensively. It's not the average.
+Online comparisons often assume 100 hours of use per season. The examples below use a 20-hour light-use scenario and a 100-hour heavy-use scenario so you can see how the answer changes. They're planning illustrations, not a claim about the average Rice Lake owner.
 
-Using realistic Ontario use patterns:
+Using two illustrative Ontario use patterns:
 
-**20-hour season fuel cost delta (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
+**20-hour light-use scenario (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
 - 115 fuel: 20 hr × 26.5 L/h (7 GPH) × $1.85 = $980
 - 150 fuel: 20 hr × 30.3 L/h (8 GPH) × $1.85 = $1,120
 - Annual delta: $140
@@ -123,13 +123,13 @@ Using realistic Ontario use patterns:
 - 150 fuel: 100 hr × 30.3 L/h (8 GPH) × $1.85 = $5,600
 - Annual delta: $700
 
-For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding factor. The motor price delta matters more.
+In the 20-hour illustration, fuel cost isn't the deciding factor. The motor price delta matters more.
 
 ## Motor price delta over the ownership period
 
 Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
-If you keep the motor 10 years at 20 hr/year average use, the $6,859 motor price delta is $686 per year of ownership. At 100 hr/year heavy use, it's still $686 per year of ownership. Motor price doesn't change with use.
+If you keep the motor for 10 years, the $6,859 motor price delta is $686 per year of ownership whether you run 20 or 100 hours per year. Motor price doesn't change with use.
 
 For a customer who'll genuinely use the extra HP (full crew, heavy load, regularly cruising at 30+ MPH), the 150 is worth it.
 
@@ -215,7 +215,7 @@ On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typic
 
 ### What's the fuel cost difference between 115 and 150?
 
-At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant.
+In an illustrative 20-hour light-use season, the fuel-cost delta is roughly $140 per year. In the 100-hour heavy-use scenario, it is roughly $700 per year. They're planning examples, not an average-use claim. The motor price delta of about $6,900 is more significant.
 
 ### What's the right pontoon answer if I'm not sure between 115 and 150?
 
@@ -247,4 +247,3 @@ No. HBW will not rig above the boat manufacturer's maximum recommended horsepowe
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

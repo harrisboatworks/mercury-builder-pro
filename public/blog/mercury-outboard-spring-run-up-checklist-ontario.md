@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-08
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
@@ -38,7 +38,7 @@ Before you launch your Mercury outboard for the first time after winter storage,
 
 A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. All three failure modes are predictable. All three are preventable.
 
-We see roughly 40 spring run-up issues in a typical April-May at our service shop. About 30 of those would have been avoided if the owner had spent 10 minutes on a structured run-up before launching.
+Every April and May, our service shop sees spring run-up problems that a short structured check before launch would likely have caught. The checklist below covers the patterns we see most often.
 
 ## The checklist
 
@@ -104,7 +104,7 @@ Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-
 
 ## What we see at HBW
 
-The single most common spring issue we diagnose is a weak or dead battery. Number two is a fuel-related issue (stale fuel, ethanol separation, or fuel line problems). Number three is impeller failure. Together those three account for roughly 80 percent of our April-May service calls. All three are 5-10 minute checks the owner can do themselves.
+The single most common spring issue we diagnose is a weak or dead battery. Fuel-related problems, including stale fuel, ethanol separation or damaged fuel lines, and impeller failures are also frequent. Together, those patterns make up a large share of the spring calls we receive, and each starts with a short owner-side check.
 
 If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
 

@@ -117,6 +117,28 @@ warn(
   `PCL fee needs its annual post-April-1 review. Last reviewed ${pclFeeReviewedOn.toISOString().slice(0, 10)}.`,
 );
 
+const unsourcedStatTwins = [
+  'best-pontoon-boats-rice-lake-cottage-use',
+  'mercury-9-9-vs-15-hp-tiller-ontario',
+  'walleye-opener-boat-prep',
+  'mercury-controls-rigging-guide-ontario',
+  'mercury-outboard-spring-run-up-checklist-ontario',
+  'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
+].map((slug) => read(`public/blog/${slug}.md`)).join('\n');
+const unsourcedStatSurface = `${blogArticles}\n${unsourcedStatTwins}`;
+
+check(
+  !/70% of our Rice Lake customers|70 percent of our small-motor customers|25 percent walk out|remaining 5 percent|40% of opener-morning failures|about 40% of failures|6 out of 10 motors|80% of what the motor knows|roughly 40 spring run-up issues|roughly 80 percent of our April-May service calls|actual customer data[\s\S]{0,120}average closer to 20 hours/i.test(unsourcedStatSurface),
+  'Blog source or Markdown twins revived an audit-identified unsourced internal statistic.',
+);
+check(
+  /In our shop experience, the 15 HP is the more common choice/.test(unsourcedStatSurface) &&
+    /one of the most common opener-morning failures we see/.test(unsourcedStatSurface) &&
+    /many motors that look fine to keep the existing controls still need new cables/.test(unsourcedStatSurface) &&
+    /planning illustrations, not a claim about the average Rice Lake owner/.test(unsourcedStatSurface),
+  'Shop-experience and scenario framing must remain on the corrected internal-stat surfaces.',
+);
+
 check(
   /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
   'MercuryProXSSEO must derive prices from CANONICAL_SKUS.',

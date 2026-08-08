@@ -4762,7 +4762,7 @@ Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on R
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-18',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -4902,11 +4902,11 @@ Translation: pick the motor that fits the boat and the use case. Don't pick the 
 
 After decades of small-motor sales on Rice Lake and across the Kawarthas, here's the pattern:
 
-About 70 percent of our small-motor customers walk out with the 15. They're rigging a 14 foot aluminum jon boat plated at 15 HP, or replacing a tired 9.9 on a 16 foot tiller skiff and want a bit more headroom, or running a heavier pontoon kicker that needs the extra HP for upwind trolling.
+In our shop experience, the 15 HP is the more common choice for small boats that are plated for it. Typical buyers are rigging a 14 foot aluminum jon boat, replacing a tired 9.9 on a 16 foot tiller skiff and wanting more headroom, or running a heavier pontoon kicker that needs extra push into the wind.
 
-About 25 percent walk out with the 9.9. They're tournament anglers, sailboat owners replacing an aging Yamaha or Honda auxiliary, or boaters on HP-restricted lakes where the 15 isn't legal.
+The 9.9 is still a common fit for tournament anglers, sailboat owners replacing an aging auxiliary, and boaters on HP-restricted lakes where a 15 is not permitted.
 
-The remaining 5 percent are buying because their old 9.9 or 15 finally died and they're matching what they had. That's a legitimate reason on its own. Familiarity with the controls, the fuel tank you already own, the prop you already own, the bracket you already mounted: all valid.
+Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
 The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
 
@@ -7383,7 +7383,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero.jpg',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-05-04',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -7415,7 +7415,7 @@ rightCriteria:
   - You want better gas mileage and easier trailering than a pontoon
 rightOutcome: Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury, $50K-$75K.
 rightVariant: recommended
-whenInDoubt: Honest answer, 70% of our Rice Lake customers should be in a pontoon, 30% in a V-hull. We sell Legend in both shapes, so we have no incentive to push you the wrong way. Tell us how you'll use it and we'll point you at the right hull.
+whenInDoubt: In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull. Tell us how you actually use the boat and we'll point you at the right hull.
 ::
 
 ## Why pontoons dominate Rice Lake cottages
@@ -11276,7 +11276,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## The Most Common Opener Morning Failures
 
-Dead battery accounts for roughly 40% of opener-morning failures. The battery sat all winter and was never put on a tender. Prevention: charge or replace one week before opener. If your battery is over four or five years old, replace it before opener.
+A weak or dead battery is one of the most common opener-morning failures we see. The battery sat all winter and was never maintained or tested. Prevention: charge and load-test it one week before opener, then replace it if it fails the test.
 
 **Kicker won't start** is the next most common. Fuel sat all winter without stabilizer, the carburetor gummed up. Prevention: run the kicker for five to ten minutes one week before opener.
 
@@ -11399,7 +11399,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What\'s the most common opener morning failure?',
-        answer: 'Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.'
+        answer: 'A weak or dead battery is one of the most common opener-morning failures we see, followed by stale fuel and kicker problems. They\'re usually preventable with prep 1 to 2 weeks before opener.'
       },
     ]
   },
@@ -25450,7 +25450,7 @@ Three patterns come up most often at Harris Boat Works:
 
 **Reusing old controls that don't match the new motor.** A 1998 binnacle from a carbureted 90 HP does not always work cleanly on a 2026 Mercury 90 EFI. Corroded wiring and a worn kill switch can turn into a mid-season service call.
 
-**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected to old analog gauges gives up roughly 80% of what the motor knows about itself, fault codes, fuel economy data, engine hours, advance warning before something fails.
+**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected only to old analog gauges can hide much of the information the motor makes available, including fault codes, fuel economy data, engine hours and advance warnings.
 
 **Underspeccing steering on a V6.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is the standard recommendation for anything 115 HP and up.
 
@@ -25614,7 +25614,7 @@ The three big ones, reusing tired controls, skipping the gauge upgrade, and unde
 
 ## What we see at HBW
 
-The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
+The controls-and-rigging audit is the first thing we do on every repower quote. In our shop experience, many motors that look fine to keep the existing controls still need new cables, shift linkage or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
 
 The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
@@ -25652,7 +25652,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -34072,7 +34072,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Harris Boat Works technician servicing a Mercury outboard during installation',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
@@ -34095,7 +34095,7 @@ Before you launch your Mercury outboard for the first time after winter storage,
 
 A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. All three failure modes are predictable. All three are preventable.
 
-We see roughly 40 spring run-up issues in a typical April-May at our service shop. About 30 of those would have been avoided if the owner had spent 10 minutes on a structured run-up before launching.
+Every April and May, our service shop sees spring run-up problems that a short structured check before launch would likely have caught. The checklist below covers the patterns we see most often.
 
 ## The checklist
 
@@ -34161,7 +34161,7 @@ Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-
 
 ## What we see at HBW
 
-The single most common spring issue we diagnose is a weak or dead battery. Number two is a fuel-related issue (stale fuel, ethanol separation, or fuel line problems). Number three is impeller failure. Together those three account for roughly 80 percent of our April-May service calls. All three are 5-10 minute checks the owner can do themselves.
+The single most common spring issue we diagnose is a weak or dead battery. Fuel-related problems, including stale fuel, ethanol separation or damaged fuel lines, and impeller failures are also frequent. Together, those patterns make up a large share of the spring calls we receive, and each starts with a short owner-side check.
 
 If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
 
@@ -37292,7 +37292,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
     description: 'Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.',
     image: '/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero.jpg',
     imageAlt: 'Aluminum V-hull fishing boat powered by a Mercury FourStroke outboard on a calm Ontario lake at golden hour.',
-    content: `*Last reviewed: 2026-08-07*
+    content: `*Last reviewed: 2026-08-08*
 
 > **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
 
@@ -37375,11 +37375,11 @@ This is the practical "ceiling speed" difference. The 150 gives you more usable 
 
 ## The fuel cost math (with honest Ontario use patterns)
 
-We see online comparisons assume 100 hours of use per season as the baseline. **In our shop's actual customer data, Rice Lake cottage owners average closer to 20 hours per season.** 100 hours is a reasonable upper bound for boats that fish hard or travel the Trent-Severn extensively. It's not the average.
+Online comparisons often assume 100 hours of use per season. The examples below use a 20-hour light-use scenario and a 100-hour heavy-use scenario so you can see how the answer changes. They're planning illustrations, not a claim about the average Rice Lake owner.
 
-Using realistic Ontario use patterns:
+Using two illustrative Ontario use patterns:
 
-**20-hour season fuel cost delta (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
+**20-hour light-use scenario (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
 - 115 fuel: 20 hr × 26.5 L/h (7 GPH) × $1.85 = $980
 - 150 fuel: 20 hr × 30.3 L/h (8 GPH) × $1.85 = $1,120
 - Annual delta: $140
@@ -37389,13 +37389,13 @@ Using realistic Ontario use patterns:
 - 150 fuel: 100 hr × 30.3 L/h (8 GPH) × $1.85 = $5,600
 - Annual delta: $700
 
-For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding factor. The motor price delta matters more.
+In the 20-hour illustration, fuel cost isn't the deciding factor. The motor price delta matters more.
 
 ## Motor price delta over the ownership period
 
 Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
-If you keep the motor 10 years at 20 hr/year average use, the $6,859 motor price delta is $686 per year of ownership. At 100 hr/year heavy use, it's still $686 per year of ownership. Motor price doesn't change with use.
+If you keep the motor for 10 years, the $6,859 motor price delta is $686 per year of ownership whether you run 20 or 100 hours per year. Motor price doesn't change with use.
 
 For a customer who'll genuinely use the extra HP (full crew, heavy load, regularly cruising at 30+ MPH), the 150 is worth it.
 
@@ -37460,7 +37460,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-07',
+    dateModified: '2026-08-08',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -37471,7 +37471,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "Should I get a 115 Command Thrust for my aluminum V-hull?", answer: "Almost certainly not. Command Thrust is engineered for pontoons and specific work-boat applications. For a V-hull, the standard 115 ELPT or 115 Pro XS is the correct gearcase choice. We see other dealers rig V-hulls with Command Thrust based on a \"more thrust is better\" pitch. For a V-hull, the standard gearcase gives you better top-end speed and equivalent low-end performance for typical use." },
       { question: "Will a 115 plane my 19ft aluminum V-hull with 4 people?", answer: "Yes, but it works hard. A 19ft V-hull with 4 adults and gear is right at the edge of the 115's comfortable envelope. It will plane but with longer time-to-plane and the motor running at higher cruise RPM. A 150 cruises easier on the same load. If you'll regularly run with 4+ people, the 150 is the smarter call." },
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
-      { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
+      { question: "What's the fuel cost difference between 115 and 150?", answer: "In an illustrative 20-hour light-use season, the fuel-cost delta is roughly $140 per year. In the 100-hour heavy-use scenario, it is roughly $700 per year. They're planning examples, not an average-use claim. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
       { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. HBW will not rig above the boat manufacturer's maximum recommended horsepower. Doing so creates safety, compliance, insurance, financing, resale, liability, and potential warranty problems. If the plate says 115 HP maximum, the honest answer is 115 HP or lower." }
     ]

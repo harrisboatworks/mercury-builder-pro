@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -151,11 +151,11 @@ Translation: pick the motor that fits the boat and the use case. Don't pick the 
 
 After decades of small-motor sales on Rice Lake and across the Kawarthas, here's the pattern:
 
-About 70 percent of our small-motor customers walk out with the 15. They're rigging a 14 foot aluminum jon boat plated at 15 HP, or replacing a tired 9.9 on a 16 foot tiller skiff and want a bit more headroom, or running a heavier pontoon kicker that needs the extra HP for upwind trolling.
+In our shop experience, the 15 HP is the more common choice for small boats that are plated for it. Typical buyers are rigging a 14 foot aluminum jon boat, replacing a tired 9.9 on a 16 foot tiller skiff and wanting more headroom, or running a heavier pontoon kicker that needs extra push into the wind.
 
-About 25 percent walk out with the 9.9. They're tournament anglers, sailboat owners replacing an aging Yamaha or Honda auxiliary, or boaters on HP-restricted lakes where the 15 isn't legal.
+The 9.9 is still a common fit for tournament anglers, sailboat owners replacing an aging auxiliary, and boaters on HP-restricted lakes where a 15 is not permitted.
 
-The remaining 5 percent are buying because their old 9.9 or 15 finally died and they're matching what they had. That's a legitimate reason on its own. Familiarity with the controls, the fuel tank you already own, the prop you already own, the bracket you already mounted: all valid.
+Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
 The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
 
@@ -249,4 +249,3 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

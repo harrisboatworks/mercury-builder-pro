@@ -140,7 +140,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## The Most Common Opener Morning Failures
 
-Dead battery accounts for roughly 40% of opener-morning failures. The battery sat all winter and was never put on a tender. Prevention: charge or replace one week before opener. If your battery is over four or five years old, replace it before opener.
+A weak or dead battery is one of the most common opener-morning failures we see. The battery sat all winter and was never maintained or tested. Prevention: charge and load-test it one week before opener, then replace it if it fails the test.
 
 **Kicker won't start** is the next most common. Fuel sat all winter without stabilizer, the carburetor gummed up. Prevention: run the kicker for five to ten minutes one week before opener.
 
@@ -217,7 +217,7 @@ No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pi
 
 ### What's the most common opener morning failure?
 
-Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.
+A weak or dead battery is one of the most common opener-morning failures we see, followed by stale fuel and kicker problems. They're usually preventable with prep 1 to 2 weeks before opener.
 
 ## Related guides
 
