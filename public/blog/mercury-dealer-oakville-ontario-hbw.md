@@ -9,20 +9,21 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Oakville Ontario HBW"
 description: "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-05-11
 keywords: ["mercury dealer oakville","mercury repower oakville","mercury outboard oakville ontario","boat motor service oakville"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Oakville Ontario HBW
 
 > Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
 **Last reviewed:** 2026-05-11  
 **Read time:** 4 min  
@@ -89,8 +90,6 @@ Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage w
 
 ## Getting to Harris Boat Works from Oakville
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Route:** QEW east to Highway 401 east through Toronto, then exit Highway 115 east (Peterborough direction), then County Road 28 north into Gores Landing.
 
 **Approximate drive time:** Around 110 minutes outside rush hour. The 401 through Toronto is variable. Saturday mornings early, before the cottage crowds, are the best window from Oakville. Come back before 3 p.m. or wait for late evening; the 401 west into Toronto on a summer Saturday afternoon is not forgiving.
@@ -139,8 +138,6 @@ Why Oakville boaters drive to HBW for repower:
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
 - **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -167,13 +164,12 @@ Yes. Quote online, confirm by phone or text, then trailer the boat to us for ins
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

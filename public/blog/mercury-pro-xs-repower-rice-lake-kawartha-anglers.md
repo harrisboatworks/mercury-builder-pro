@@ -16,6 +16,7 @@ keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers"
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Pro XS Repower for Rice Lake & Kawartha Anglers
@@ -115,8 +116,6 @@ Honest framing matters. We sell both because they're both right for different pe
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
@@ -196,7 +195,6 @@ Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Premier Dealer. Established 1947.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -243,13 +241,12 @@ Yes, on repowers above $5,000 CAD. We offer financing through Mercury's preferre
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

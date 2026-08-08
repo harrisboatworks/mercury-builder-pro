@@ -16,6 +16,7 @@ keywords: ["머큐리 Pro XS","머큐리 FourStroke","머큐리 Verado","Mercury
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # 머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?
@@ -102,13 +103,12 @@ Verado는 Harris Boat Works에서 상시 재고가 아닌 주문 제작 모델�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

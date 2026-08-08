@@ -16,6 +16,7 @@ keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: rentals
 ---
 
 # 安省租船需要驾照吗？PCOC 与租船安全清单一次讲清
@@ -251,13 +252,12 @@ PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $5
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -72,4 +72,22 @@ Done.
 
     expect(cleanBlogContent(content)).toBe('## Closing\n\nDone.');
   });
+
+  it('removes the two injected repower CTA boilerplate sentences', () => {
+    const content = `## Step one
+
+Check the battery switch.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Step two
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Continue the checklist.`;
+
+    expect(cleanBlogContent(content)).toBe(
+      '## Step one\n\nCheck the battery switch.\n\n## Step two\n\nContinue the checklist.',
+    );
+  });
 });

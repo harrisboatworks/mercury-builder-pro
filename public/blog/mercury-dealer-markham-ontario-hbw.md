@@ -9,20 +9,21 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Markham Ontario HBW"
 description: "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-07-24
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Markham Ontario HBW
 
 > Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
 **Last reviewed:** 2026-07-24  
 **Read time:** 5 min  
@@ -97,8 +98,6 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
@@ -152,8 +151,6 @@ Markham repower customers often:
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Is there a Mercury dealer in Markham?
@@ -182,13 +179,12 @@ Yes. We serve a broad Markham-area customer base including Unionville, Stouffvil
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

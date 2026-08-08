@@ -16,6 +16,7 @@ keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Warranty Canada 2026
@@ -133,8 +134,6 @@ Transferability can also be useful at resale, but it is a documented process, no
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
 Mercury's limited-warranty and Product Protection transfer rules are not identical. Mercury's Canadian limited warranty allows unexpired pleasure-use coverage to transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. For Product Protection, the current Canadian Platinum provisions allow transfer to a subsequent recreational-use buyer when the transfer is submitted within 30 business days and Mercury's eligibility, documentation, inspection and fee requirements are met.
@@ -209,8 +208,6 @@ An authorized dealer can verify registration, document the work it performs, and
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Sources
 
 - [Mercury Marine Canada Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) - Official maintenance, exclusion, claim and transfer terms.
@@ -249,13 +246,12 @@ No. Mercury's current guidance permits gasoline containing up to 10% ethanol. Fu
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

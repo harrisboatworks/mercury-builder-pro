@@ -16,6 +16,7 @@ keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boa
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Electric Trolling Motor vs Kicker Guide
@@ -115,8 +116,6 @@ This is what kickers were made for. [Walleye trolling on Rice Lake](/blog/best-m
 ### You fish big water or serious chop
 [Lake Simcoe](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Your main motor is a V6 or V8
 Larger Mercury 4-strokes (175 HP and up) are not built to idle at 600 to 800 RPM for hours. Extended low-RPM operation glazes cylinders and burns oil. Trolling on a dedicated kicker instead of lugging your main motor at idle will extend your powerhead life measurably.
 
@@ -175,8 +174,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -215,13 +212,12 @@ Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice L
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

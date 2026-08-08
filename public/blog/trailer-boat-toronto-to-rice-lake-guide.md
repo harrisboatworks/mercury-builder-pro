@@ -16,6 +16,7 @@ keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Trailering a Boat: Toronto to Rice Lake
@@ -104,8 +105,6 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **Gross trailer weight from 1,360 to 3,400 kg (3,000 to 7,500 lb):** Trailer brakes are required by law in Ontario. Verify that your tow vehicle and hitch ratings exceed the loaded trailer weight.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Combined weight over 3,400 kg (7,500 lbs):** A full-size truck or HD truck is typically required. Verify against the tow vehicle's gross combined weight rating (GCWR).
 
 When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the $15.
@@ -150,7 +149,6 @@ Service requests for HBW: **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Phone: **905-342-2153**.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947
 
 ## FAQs
@@ -205,13 +203,12 @@ Use the trailering position and support method specified for your exact Mercury 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

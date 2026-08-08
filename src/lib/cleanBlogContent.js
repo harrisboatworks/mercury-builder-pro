@@ -12,6 +12,8 @@ const BOLD_RELATED_RE =
   /^\s*\*\*\s*Related(?:\s+(?:guides?|posts?|articles?))?\s*:?\s*\*\*\s*$/i;
 const ITALIC_RELATED_RE =
   /^\s*\*\s*Related(?:\s+(?:guides?|posts?|articles?))?\s*:[^*]*\*\s*$/i;
+const INJECTED_REPOWER_CTA_RE =
+  /^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at (?:the )?\[Mercury Repower Centre\]\(https:\/\/www\.mercuryrepower\.ca\/quote\/motor-selection\)\.\s*$/i;
 
 /**
  * Remove legacy authoring scaffolding before blog content reaches readers,
@@ -44,7 +46,11 @@ export function cleanBlogContent(
       skipRelatedList = false;
     }
 
-    if (LAST_REVIEWED_RE.test(line) || LANGUAGE_RE.test(line)) continue;
+    if (
+      LAST_REVIEWED_RE.test(line) ||
+      LANGUAGE_RE.test(line) ||
+      INJECTED_REPOWER_CTA_RE.test(line.trim())
+    ) continue;
 
     if (CTA_HEADING_RE.test(line)) continue;
 

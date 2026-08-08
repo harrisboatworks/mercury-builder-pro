@@ -9,20 +9,21 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-08-02
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Burlington Ontario HBW
 
 > Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
 **Last reviewed:** 2026-08-02  
 **Read time:** 4 min  
@@ -87,8 +88,6 @@ Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake 
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Getting to Harris Boat Works from Burlington
 
 **Route:** QEW east to Highway 401 east through Toronto, then Highway 115 east (Peterborough direction), then County Road 28 north into Gores Landing.
@@ -137,8 +136,6 @@ Why Burlington boaters still drive to HBW:
 - **Annual repower or winterization trip.** Burlington owners can trailer their boat to HBW for booked repower work or winterization and storage, then return it to their local marina for the season.
 - **Mercury Premier-level support.** The practical reasons to make the drive are Mercury-specific diagnostics, a documented rigging scope, current pricing, and one shop accountable for the installation and future service history.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -165,13 +162,12 @@ Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

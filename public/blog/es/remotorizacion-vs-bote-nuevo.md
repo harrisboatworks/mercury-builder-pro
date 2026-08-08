@@ -16,6 +16,7 @@ keywords: ["remotorización vs bote nuevo","repower Mercury Ontario","cambiar mo
 author: Harris Boat Works
 content_type: blog_article
 language: es
+revenue_driver: repower
 ---
 
 # Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?
@@ -168,13 +169,12 @@ Sí. En mercuryrepower.ca puede ver un precio en línea, en dólares canadienses
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -16,6 +16,7 @@ keywords: ["portable outboard","small boat motor","dinghy motor","mercury portab
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
@@ -129,8 +130,6 @@ For most small fishing applications, manual start (MH) is fine. For older operat
 
 **Short shaft (15 inches):** Standard for most tin boats and small dinghies.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats.
 
 Wrong shaft length is the most common portable motor mistake. If the shaft is too short for the transom, the motor cavitates at speed. Too long and the lower unit drags unnecessarily deep.
@@ -200,13 +199,12 @@ Yes. Follow the same winterization procedures as larger motors: stabilize fuel, 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

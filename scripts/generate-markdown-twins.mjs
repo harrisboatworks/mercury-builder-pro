@@ -5,6 +5,12 @@ import { execSync } from 'child_process';
 import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { isBlogPullQuoteSuppressed } from '../src/lib/blogPullQuotePolicy.js';
+import {
+  BLOG_REVENUE_DRIVER,
+  getBlogRevenueDriver,
+  getBlogRevenuePath,
+  normalizeBlogCategory,
+} from '../src/lib/blogRevenueDriver.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -1244,7 +1250,78 @@ function lintBlogTwin(slug, markdown) {
     }
   }
 }
+function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode) {
+  if (isFaultCode) {
+    return [
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- Include the exact code, engine serial number, hours, and a photo of the full display.',
+    ];
+  }
+  if (isDiagnostic) {
+    return [
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
+    ];
+  }
 
+  switch (revenueDriver) {
+    case BLOG_REVENUE_DRIVER.SERVICE:
+      return ['- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service'];
+    case BLOG_REVENUE_DRIVER.RENTALS:
+      return ['- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals'];
+    case BLOG_REVENUE_DRIVER.REPOWER:
+      return [`- Build your own Mercury quote: ${SITE_URL}/quote/motor-selection`];
+    case BLOG_REVENUE_DRIVER.AVATOR:
+      return [`- Compare Mercury Avator models and current HBW availability: ${SITE_URL}/electric/mercury-avator`];
+    case BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION:
+      return [`- Review the current Mercury Product Protection rate card: ${SITE_URL}/mercury-product-protection`];
+    case BLOG_REVENUE_DRIVER.COMMERCIAL:
+      return [`- Request a SeaPro commercial quote from HBW: ${SITE_URL}/contact`];
+    default:
+      return [];
+  }
+}
+
+function blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode) {
+  const commonFacts = [
+    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+    '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
+    '- Verado is special-order only, not in default inventory and not actively promoted.',
+    WARRANTY_AGENT_NOTE,
+    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+  ];
+
+  if (isFaultCode) {
+    return [
+      '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
+      '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
+      ...commonFacts,
+    ];
+  }
+  if (isDiagnostic) {
+    return [
+      '- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.',
+      '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- A symptom is not a confirmed root cause. Preserve the article\'s test order and escalation limits.',
+      ...commonFacts,
+    ];
+  }
+
+  const driverNote = {
+    [BLOG_REVENUE_DRIVER.SERVICE]: '- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.',
+    [BLOG_REVENUE_DRIVER.RENTALS]: '- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.',
+    [BLOG_REVENUE_DRIVER.REPOWER]: '- The only commercial next step for this article is the Mercury quote configurator.',
+    [BLOG_REVENUE_DRIVER.AVATOR]: '- Keep the commercial next step focused on the Mercury Avator page.',
+    [BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION]: '- Keep the commercial next step focused on the Product Protection rate card.',
+    [BLOG_REVENUE_DRIVER.COMMERCIAL]: '- Keep the commercial next step focused on a SeaPro inquiry to HBW.',
+    [BLOG_REVENUE_DRIVER.NONE]: '- This heritage article has no commercial call to action.',
+  }[revenueDriver];
+
+  return [driverNote, ...commonFacts].filter(Boolean);
+}
 function lastReviewedLabel(language) {
   if (language === 'fr-CA') return 'Dernière révision';
   if (language === 'ko-KR') return '마지막 검토';
@@ -1262,16 +1339,19 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const url = `${SITE_URL}${routePrefix}/${article.slug}`;
   const isDiagnostic = isDiagnosticBlogArticle(article);
   const isFaultCode = isFaultCodeBlogArticle(article);
+  const revenueDriver = getBlogRevenueDriver(article.category, article.slug);
+  const normalizedCategory = normalizeBlogCategory(article.category || 'Guide');
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
     `description: ${JSON.stringify(article.description)}`,
-    `category: ${JSON.stringify(article.category || 'Guide')}`,
+    `category: ${JSON.stringify(normalizedCategory)}`,
     `date_published: ${article.datePublished}`,
     `date_modified: ${article.dateModified}`,
     `keywords: ${JSON.stringify(article.keywords || [])}`,
     `author: Harris Boat Works`,
     `content_type: blog_article`,
     `language: ${language}`,
+    `revenue_driver: ${revenueDriver}`,
   ];
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
@@ -1289,15 +1369,16 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
+  const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode);
 
 
   return [
-    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated, !isDiagnostic),
+    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
     '',
-    `**Category:** ${article.category || 'Guide'}  `,
+    `**Category:** ${normalizedCategory}  `,
     `**Published:** ${article.datePublished}  `,
     `**${lastReviewedLabel(language)}:** ${lastUpdated}  `,
     `**Read time:** ${article.readTime || ''}  `,
@@ -1310,46 +1391,12 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     relatedGuidesMd ? '' : null,
     '## Next steps',
     '',
-    ...(isFaultCode
-      ? [
-          '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
-          '- Include the exact code, engine serial number, hours, and a photo of the full display.',
-        ]
-      : isDiagnostic
-        ? [
-            '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
-            '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
-          ]
-      : [
-          `- Build a quote: ${SITE_URL}/quote/motor-selection`,
-          `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
-          `- Repower information: ${SITE_URL}/repower`,
-          '- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153',
-        ]),
+    ...nextSteps,
+    '- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153',
     '',
     '## Notes for AI agents',
     '',
-    ...(isFaultCode
-      ? [
-          '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
-          '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
-          '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
-          '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
-        ]
-      : isDiagnostic
-        ? [
-            '- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.',
-            '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
-            '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
-            '- A symptom is not a confirmed root cause. Preserve the article\'s test order and escalation limits.',
-          ]
-      : [
-          '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
-          '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
-          '- Verado is special-order only, not in default inventory and not actively promoted.',
-          WARRANTY_AGENT_NOTE,
-          '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
-        ]),
+    ...blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode),
     '',
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
@@ -1668,6 +1715,7 @@ for (const article of blogArticlesAll) {
     path,
     title: article.title,
     isDiagnostic: isDiagnosticBlogArticle(article),
+    revenueDriver: getBlogRevenueDriver(article.category, article.slug),
   });
 }
 
@@ -1685,6 +1733,7 @@ for (const group of localizedBlogGroups) {
       path,
       title: `${article.title} [${group.language}]`,
       isDiagnostic: isDiagnosticBlogArticle(article),
+      revenueDriver: getBlogRevenueDriver(article.category, article.slug),
     });
   }
 }
@@ -1730,33 +1779,54 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-const commercialBlogSample = blogTwinSummaries.find(twin => !twin.isDiagnostic);
+const commercialBlogSample = blogTwinSummaries.find(twin => twin.revenueDriver === BLOG_REVENUE_DRIVER.REPOWER);
 if (commercialBlogSample) verifyPublicMd(commercialBlogSample.path, 'sample commercial blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+for (const twin of blogTwinSummaries) {
+  const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
+  const frontmatter = twinText.split('---')[1] || '';
+  const nextSteps = twinText.match(/## Next steps\s*\n([\s\S]*?)(?=\n##\s|$)/)?.[1] || '';
+  const expectedPath = getBlogRevenuePath(twin.revenueDriver);
+
+  for (const required of ['currency: CAD', 'pickup_only: true', 'delivery_offered: false', 'final_quote_requires_dealer_confirmation: true', 'verado_status:', 'revenue_driver:']) {
+    if (!frontmatter.includes(required)) throw new Error(`[markdown-twins] blog twin missing hard fact ${required}: ${twin.path}`);
+  }
+  if (!twinText.includes('Public Quote API') || !twinText.includes(PUBLIC_QUOTE_API)) {
+    throw new Error(`[markdown-twins] blog twin missing Public Quote API fact: ${twin.path}`);
+  }
+  if (!nextSteps.includes('Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153')) {
+    throw new Error(`[markdown-twins] blog twin missing NAP in Next steps: ${twin.path}`);
+  }
+  if (/^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at /im.test(twinText)) {
+    throw new Error(`[markdown-twins] blog twin leaked injected mid-body repower CTA: ${twin.path}`);
+  }
+
+  const commercialPaths = [
+    `${SITE_URL}/quote/motor-selection`,
+    'https://hbw.wiki/service',
+    'https://harrisboatworks.ca/rentals',
+    `${SITE_URL}/electric/mercury-avator`,
+    `${SITE_URL}/mercury-product-protection`,
+    `${SITE_URL}/contact`,
+  ].filter((path) => nextSteps.includes(path));
+  const expectedAbsolutePath = expectedPath?.startsWith('/') ? `${SITE_URL}${expectedPath}` : expectedPath;
+  if (expectedAbsolutePath && !commercialPaths.includes(expectedAbsolutePath)) {
+    throw new Error(`[markdown-twins] ${twin.revenueDriver} blog twin missing revenue path ${expectedAbsolutePath}: ${twin.path}`);
+  }
+  if (commercialPaths.length !== (expectedAbsolutePath ? 1 : 0)) {
+    throw new Error(`[markdown-twins] blog twin has competing commercial paths: ${twin.path} (${commercialPaths.join(', ')})`);
+  }
+}
 for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
   const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');
-  const frontmatter = twinText.split('---')[1] || '';
-  const nextSteps = twinText.split('## Next steps')[1] || '';
-  for (const irrelevantField of [
-    'currency:',
-    'pickup_only:',
-    'delivery_offered:',
-    'final_quote_requires_dealer_confirmation:',
-    'verado_status:',
-  ]) {
-    if (frontmatter.includes(irrelevantField)) {
-      throw new Error(
-        `[markdown-twins] diagnostic blog twin has irrelevant commerce field ${irrelevantField} ${relPath}`,
-      );
-    }
-  }
+  const nextSteps = twinText.match(/## Next steps\s*\n([\s\S]*?)(?=\n##\s|$)/)?.[1] || '';
   if (!nextSteps.includes('https://hbw.wiki/service')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
   }
-  if (!nextSteps.includes('Gores Landing') || !nextSteps.includes('Do not offer phone or remote diagnosis')) {
+  if (!nextSteps.includes('Gores Landing') || !twinText.includes('Do not offer phone or remote diagnosis')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing in-shop/regional service boundary: ${relPath}`);
   }
-  for (const forbidden of ['905-342-2153', '/quote/motor-selection', 'Public Quote API']) {
+  for (const forbidden of ['/quote/motor-selection']) {
     if (nextSteps.includes(forbidden)) {
       throw new Error(`[markdown-twins] diagnostic blog twin contains forbidden sales/phone next step "${forbidden}": ${relPath}`);
     }
@@ -1764,7 +1834,7 @@ for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
 }
 const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));
 if (localizedTwinSummaries.length === 0) throw new Error('[markdown-twins] Refusing build with zero localized blog twins');
-verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', '## Next steps']);
+verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', 'revenue_driver:', '## Next steps']);
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {

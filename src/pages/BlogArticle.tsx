@@ -24,8 +24,8 @@ import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
+import { BLOG_REVENUE_DRIVER, getBlogRevenueDriver } from '@/lib/blogRevenueDriver.js';
 import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
-import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
@@ -81,6 +81,7 @@ export default function BlogArticle() {
   })();
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
+  const revenueDriver = getBlogRevenueDriver(article.category, article.slug);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -364,7 +365,7 @@ export default function BlogArticle() {
           <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
 
           {/* Dealer credentials strip */}
-          <DealerConfidenceStrip showQuoteLink={!isDiagnostic} />
+          <DealerConfidenceStrip showQuoteLink={revenueDriver === BLOG_REVENUE_DRIVER.REPOWER} />
 
           {/* Top contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="inline" />
@@ -567,10 +568,6 @@ export default function BlogArticle() {
             <BlogCTA category={article.category} slug={article.slug} variant="banner" />
           )}
 
-          {/* Auto category CTA — suppressed if article body contains its own CTA markers */}
-          {!isDiagnostic && !shouldSuppressAutoCTA(article.content) && (
-            <CategoryCTA category={article.category} />
-          )}
         </article>
 
         {/* Related Articles */}

@@ -16,6 +16,7 @@ keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","to
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Choosing the Right Mercury for Your Bass Boat (Ontario 2026)
@@ -127,8 +128,6 @@ What is standard at the tournament level is a bow-mount trolling motor for posit
 
 If you're considering a kicker for a backup or occasional slow-trolling use, not all bass boat hulls are configured for transom-mount kickers. Bring the boat in and we'll assess whether it works for your specific setup.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ![Tournament bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario lake at dawn.](/lovable-uploads/inline/inline-bass-tournament.png)
@@ -205,13 +204,12 @@ Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosio
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

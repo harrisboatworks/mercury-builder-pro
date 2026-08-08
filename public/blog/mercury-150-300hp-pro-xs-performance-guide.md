@@ -16,6 +16,7 @@ keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercu
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 150 Pro XS to 300 Compared for Ontario Boats
@@ -165,8 +166,6 @@ For higher-horsepower Pro XS conversations, HBW provides:
 
 If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Sources and Review Notes
 
 This guide was checked July 27, 2026 against Mercury's current product pages and June 2026 Boost instructions. Performance figures stay attached to the exact boat, propeller, load and test conditions that produced them.
@@ -228,13 +227,12 @@ Our [live pricing reference](/pricing-reference) lists the current Canadian bare
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

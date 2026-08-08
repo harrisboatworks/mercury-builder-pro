@@ -16,6 +16,7 @@ keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for water
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury for Ski Boats 2026
@@ -98,8 +99,6 @@ For outboard tow boats specifically:
 
 **Wakeboarding**, wake should be mid-size, firm, and curl over (a "lipped" wake). Needs more boat weight + more sustained power. **200-225 HP minimum on a tow-spec hull.** Add ballast to get the wake bigger.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (680-1,361 kg (1,500-3,000 lbs) of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
 If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
@@ -154,8 +153,6 @@ Tow boats run hard. We'll talk through your annual hours and use case before quo
 
 Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What's the minimum HP for pulling a wakeboarder?
@@ -196,13 +193,12 @@ It'll work, the question is whether the hole shot is good enough for your skier.
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -16,6 +16,7 @@ keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Boat Battery Guide Ontario
@@ -163,8 +164,6 @@ One more note: never switch directly from 1 to 2 while the engine is running. Sw
 
 ### Adding an ACR or VSR
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 An Automatic Charging Relay (ACR) or Voltage Sensitive Relay (VSR) monitors both battery banks and automatically connects them for charging when the engine runs, then isolates them when it shuts off. Both batteries charge on every engine run. Neither can drain the other in storage. No operator input required. If you're doing a dual battery upgrade, an ACR is worth the investment.
 
 ---
@@ -300,8 +299,6 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 
 Phone: 905-342-2153
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What size battery does a Mercury outboard need?
@@ -338,13 +335,12 @@ Bring the battery to a full charge before storage, never store at 50 percent. Tu
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

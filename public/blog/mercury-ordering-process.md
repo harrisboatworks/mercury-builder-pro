@@ -16,6 +16,7 @@ keywords: ["mercury outboard ordering process","how to order mercury","mercury r
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Ordering Your Mercury: What to Expect
@@ -123,8 +124,6 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 ### Step 5: Installation
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **What Is Involved**:
 - Mount motor on transom
 - Install controls (throttle, shift)
@@ -210,8 +209,6 @@ Typically when motor is installed and ready for water test. Review payment terms
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### How long does the whole process take?
@@ -240,13 +237,12 @@ Issues found during water test are addressed before handover. This is exactly wh
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

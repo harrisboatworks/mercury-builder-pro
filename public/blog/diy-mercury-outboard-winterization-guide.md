@@ -16,6 +16,7 @@ keywords: ["diy mercury outboard winterization","how to winterize mercury outboa
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # DIY Mercury Outboard Winterization
@@ -177,8 +178,6 @@ The lower unit gearcase contains gear lube that absorbs water through the seals 
 
 Use Mercury-branded gear lube appropriate for your motor. The spec is in your owner's manual.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Step 5: Lubricate All Grease Points
 
 Every Mercury has grease fittings on the steering and tilt/trim pivot points. These need marine grease before storage. Dry or under-greased pivot points seize over winter and result in stiff, damaged components in spring.
@@ -240,7 +239,6 @@ Request professional winterization at [hbw.wiki/service](https://hbw.wiki/servic
 
 Phone: 905-342-2153
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -295,13 +293,12 @@ Fuel preparation, internal engine protection, oil service, flushing, and storage
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
