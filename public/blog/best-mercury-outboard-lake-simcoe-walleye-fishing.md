@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 

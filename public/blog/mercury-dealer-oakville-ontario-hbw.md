@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
 

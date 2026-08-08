@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 

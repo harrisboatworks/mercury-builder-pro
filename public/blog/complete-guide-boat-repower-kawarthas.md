@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -328,3 +328,4 @@ October through March. Off-season ordering gets you the best motor availability 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

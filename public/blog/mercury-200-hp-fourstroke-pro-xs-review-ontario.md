@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-28  
+**Last reviewed:** 2026-07-28  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario
 

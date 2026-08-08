@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-07-18  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 

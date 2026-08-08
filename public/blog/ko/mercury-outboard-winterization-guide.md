@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 정비 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 

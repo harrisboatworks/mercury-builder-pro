@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-07-23  
-**Last updated:** 2026-07-28  
+**Last reviewed:** 2026-07-28  
 **Read time:** 31 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup
 

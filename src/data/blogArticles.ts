@@ -19346,7 +19346,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-08",
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",

@@ -859,6 +859,19 @@ function isDiagnosticBlogArticle(article) {
   );
 }
 
+function lastReviewedLabel(language) {
+  if (language === 'fr-CA') return 'Dernière révision';
+  if (language === 'ko-KR') return '마지막 검토';
+  if (language === 'zh-CN') return '最后审核';
+  if (language === 'zh-Hant') return '最後審核';
+  if (language === 'es') return 'Última revisión';
+  if (language === 'pa') return 'ਆਖਰੀ ਸਮੀਖਿਆ';
+  if (language === 'ur') return 'آخری جائزہ';
+  if (language === 'tl') return 'Huling sinuri';
+  if (language === 'hi') return 'अंतिम समीक्षा';
+  return 'Last reviewed';
+}
+
 function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'en-CA') {
   const url = `${SITE_URL}${routePrefix}/${article.slug}`;
   const isDiagnostic = isDiagnosticBlogArticle(article);
@@ -892,7 +905,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     '',
     `**Category:** ${article.category || 'Guide'}  `,
     `**Published:** ${article.datePublished}  `,
-    `**Last updated:** ${lastUpdated}  `,
+    `**${lastReviewedLabel(language)}:** ${lastUpdated}  `,
     `**Read time:** ${article.readTime || ''}  `,
     `**Canonical (HTML for humans):** ${url}`,
     '',
@@ -1242,6 +1255,7 @@ const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
   writePublicMd(path, blogMarkdown(article, blogClusterData));
+  verifyPublicMd(path, 'English blog twin freshness', ['**Last reviewed:**']);
   blogTwinSummaries.push({
     path,
     title: article.title,
@@ -1255,6 +1269,7 @@ for (const group of localizedBlogGroups) {
     writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
     verifyPublicMd(path, `${group.language} blog twin`, [
       `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
+      `**${lastReviewedLabel(group.language)}:**`,
     ]);
     blogTwinSummaries.push({
       path,

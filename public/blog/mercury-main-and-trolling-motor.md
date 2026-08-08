@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last updated:** 2026-05-25  
+**Last reviewed:** 2026-05-25  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
 

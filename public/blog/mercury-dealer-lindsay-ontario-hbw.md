@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw
 
@@ -159,3 +159,4 @@ Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

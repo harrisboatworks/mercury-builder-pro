@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 

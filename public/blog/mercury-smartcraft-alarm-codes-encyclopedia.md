@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 

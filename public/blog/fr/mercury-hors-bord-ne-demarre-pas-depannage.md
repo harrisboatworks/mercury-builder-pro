@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Dépannage  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Dernière révision:** 2026-05-13  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
 

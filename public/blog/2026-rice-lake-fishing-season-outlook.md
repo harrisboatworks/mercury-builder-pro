@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 

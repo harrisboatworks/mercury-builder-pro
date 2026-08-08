@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 

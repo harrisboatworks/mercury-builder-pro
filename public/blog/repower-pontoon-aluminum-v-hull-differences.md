@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
 

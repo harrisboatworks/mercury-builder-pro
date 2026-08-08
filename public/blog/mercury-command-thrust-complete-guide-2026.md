@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 

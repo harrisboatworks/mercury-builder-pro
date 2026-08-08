@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-07-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 

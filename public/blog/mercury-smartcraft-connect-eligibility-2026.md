@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 

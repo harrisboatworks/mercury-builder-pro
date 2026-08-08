@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 구매 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 12 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide
 

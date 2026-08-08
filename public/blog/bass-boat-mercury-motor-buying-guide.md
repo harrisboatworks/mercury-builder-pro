@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 

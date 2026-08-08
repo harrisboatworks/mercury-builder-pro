@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -180,3 +180,4 @@ Yes. Clarington and Newcastle are within the same drive time. We have customers 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

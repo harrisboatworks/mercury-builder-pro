@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-07-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 

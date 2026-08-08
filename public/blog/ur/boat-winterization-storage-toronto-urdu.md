@@ -24,7 +24,7 @@ language: ur
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
+**آخری جائزہ:** 2026-08-02  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 

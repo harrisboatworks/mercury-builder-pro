@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 

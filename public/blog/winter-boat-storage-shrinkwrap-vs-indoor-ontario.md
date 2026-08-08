@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 

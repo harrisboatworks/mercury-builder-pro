@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-04  
+**Last reviewed:** 2026-07-04  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
 

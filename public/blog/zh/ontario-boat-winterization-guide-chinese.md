@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-03  
+**最后审核:** 2026-08-03  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last updated:** 2026-07-31  
+**Last reviewed:** 2026-07-31  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
@@ -52,7 +52,7 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 
 ### Planning Timeline
 
-> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens after we reopen in early April.
+> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens when we reopen in early April.
 
 **November**:
 - Assess current motor condition

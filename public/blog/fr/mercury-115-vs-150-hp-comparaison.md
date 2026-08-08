@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Comparaison  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-08  
+**Dernière révision:** 2026-08-08  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison
 

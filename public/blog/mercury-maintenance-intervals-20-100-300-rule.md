@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last updated:** 2026-08-07  
+**Last reviewed:** 2026-08-07  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 

@@ -24,7 +24,7 @@ language: es
 
 **Category:** Comparación de motores  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-08  
+**Última revisión:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 

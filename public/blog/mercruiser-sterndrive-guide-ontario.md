@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
-**Last updated:** 2026-05-14  
+**Last reviewed:** 2026-05-14  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 

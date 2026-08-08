@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last updated:** 2026-08-07  
+**Last reviewed:** 2026-08-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 

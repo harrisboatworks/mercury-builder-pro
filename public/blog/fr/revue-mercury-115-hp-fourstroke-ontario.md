@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Avis produit  
 **Published:** 2026-05-13  
-**Last updated:** 2026-08-08  
+**Dernière révision:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 

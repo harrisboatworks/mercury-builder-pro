@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last updated:** 2026-07-10  
+**Last reviewed:** 2026-07-10  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-17  
-**Last updated:** 2026-04-17  
+**Last reviewed:** 2026-04-17  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
 

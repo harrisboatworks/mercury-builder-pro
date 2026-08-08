@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-08-04  
-**Last updated:** 2026-08-04  
+**Last reviewed:** 2026-08-04  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario
 

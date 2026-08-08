@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-07  
+**最后审核:** 2026-08-07  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 

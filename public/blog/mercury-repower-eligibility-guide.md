@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Decision  
 **Published:** 2026-05-27  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
 

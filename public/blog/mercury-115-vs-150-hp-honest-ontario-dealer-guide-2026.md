@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -247,3 +247,4 @@ No. HBW will not rig above the boat manufacturer's maximum recommended horsepowe
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 

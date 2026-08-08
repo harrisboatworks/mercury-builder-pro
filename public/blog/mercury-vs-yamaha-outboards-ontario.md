@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha Outboards: Honest Comparison"
 description: "Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["Mercury vs Yamaha outboard","Mercury vs Yamaha Ontario","Mercury or Yamaha which is better","Yamaha to Mercury repower","best outboard motor Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 

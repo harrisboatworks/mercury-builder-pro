@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 产品对比  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**最后审核:** 2026-04-12  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
 

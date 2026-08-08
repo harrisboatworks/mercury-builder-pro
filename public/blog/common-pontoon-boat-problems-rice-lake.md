@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 

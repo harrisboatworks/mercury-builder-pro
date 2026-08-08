@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Dépannage  
 **Published:** 2026-05-13  
-**Last updated:** 2026-08-08  
+**Dernière révision:** 2026-08-08  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Local Guide  
 **Published:** 2026-06-29  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
 

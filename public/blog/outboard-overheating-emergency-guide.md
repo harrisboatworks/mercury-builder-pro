@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-07-30  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 

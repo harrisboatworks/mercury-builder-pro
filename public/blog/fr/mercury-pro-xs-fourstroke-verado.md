@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-06-08  
-**Last updated:** 2026-08-02  
+**Dernière révision:** 2026-08-02  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
 

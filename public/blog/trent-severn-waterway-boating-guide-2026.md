@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last updated:** 2026-08-01  
+**Last reviewed:** 2026-08-01  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 

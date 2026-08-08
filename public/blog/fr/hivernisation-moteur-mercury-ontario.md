@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Entretien  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Dernière révision:** 2026-06-19  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 

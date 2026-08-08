@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-07  
+**最后审核:** 2026-08-07  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 

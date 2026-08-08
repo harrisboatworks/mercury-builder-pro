@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Concessionnaire Mercury  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-02  
+**Dernière révision:** 2026-08-02  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 

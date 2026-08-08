@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
 
@@ -159,3 +159,4 @@ From our position as a Mercury Premier dealer, new motor allocation is healthy.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

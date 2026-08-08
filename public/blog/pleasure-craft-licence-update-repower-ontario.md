@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last updated:** 2026-08-08
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 

@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-31  
+**Dernière révision:** 2026-07-31  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 

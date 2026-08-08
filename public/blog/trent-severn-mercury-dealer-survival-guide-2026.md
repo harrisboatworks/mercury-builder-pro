@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 

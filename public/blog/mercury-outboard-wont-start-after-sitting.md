@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 

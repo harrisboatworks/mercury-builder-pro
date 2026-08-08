@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-31  
+**Last reviewed:** 2026-07-31  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 

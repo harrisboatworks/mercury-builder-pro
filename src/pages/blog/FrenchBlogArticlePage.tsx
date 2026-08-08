@@ -383,6 +383,14 @@ export default function FrenchBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <p className="text-sm text-muted-foreground mb-4">
+          <strong>Dernière révision :</strong>{' '}
+          {new Date(`${article.dateModified || article.datePublished}T12:00:00Z`).toLocaleDateString('fr-CA', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
         <div className="mb-8 pb-4 border-b border-border">
           <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" />
         </div>

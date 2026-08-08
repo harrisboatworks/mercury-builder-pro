@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 

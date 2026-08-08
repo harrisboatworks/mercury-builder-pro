@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 

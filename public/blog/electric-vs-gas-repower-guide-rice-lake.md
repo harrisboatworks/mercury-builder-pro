@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-15  
-**Last updated:** 2026-07-28  
+**Last reviewed:** 2026-07-28  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 

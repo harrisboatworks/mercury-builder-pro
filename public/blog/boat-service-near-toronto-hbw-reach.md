@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 

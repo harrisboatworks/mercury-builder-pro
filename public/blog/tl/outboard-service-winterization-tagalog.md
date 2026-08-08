@@ -24,7 +24,7 @@ language: tl
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
+**Huling sinuri:** 2026-08-02  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog
 

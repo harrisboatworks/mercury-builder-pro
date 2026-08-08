@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 

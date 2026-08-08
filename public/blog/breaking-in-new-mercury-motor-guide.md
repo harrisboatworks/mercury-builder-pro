@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-07-31  
+**Last reviewed:** 2026-07-31  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 

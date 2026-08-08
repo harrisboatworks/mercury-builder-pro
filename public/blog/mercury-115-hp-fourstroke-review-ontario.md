@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-07-27  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 

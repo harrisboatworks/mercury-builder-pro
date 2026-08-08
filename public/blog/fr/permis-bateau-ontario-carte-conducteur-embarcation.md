@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Réglementation  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Dernière révision:** 2026-04-12  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 

@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 钓鱼指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-04  
+**最后审核:** 2026-07-04  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 

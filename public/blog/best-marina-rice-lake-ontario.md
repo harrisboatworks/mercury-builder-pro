@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 

@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-08-08
+**最后审核:** 2026-08-08  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
