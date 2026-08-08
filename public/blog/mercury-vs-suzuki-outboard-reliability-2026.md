@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-06-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-06-10
+date_modified: 2026-08-08
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-06-10  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -57,7 +57,7 @@ What we hear that actually predicts motor longevity is not the brand. It is the 
 
 The real difference between Mercury and Suzuki in Ontario is not the motor itself. It is the service network behind it.
 
-Mercury has the deepest dealer network in Ontario by a wide margin. Premier and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
+Mercury has broad dealer coverage across the Kawarthas, the GTA and Ontario cottage corridors. That gives many owners multiple service options, but parts inventory and repair timing vary by dealer and season. Confirm the required part and appointment capacity before changing a trip plan.
 
 Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
 
@@ -87,7 +87,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 
 **Parts shelf depth.** Mercury's parts availability in Ontario is consistently strong. Common service items are on dealer shelves. Less common items are usually one day away.
 
-**Resale in Ontario.** Mercury motors and Mercury-powered boats have the largest buyer pool in Ontario. The resale market is deeper for Mercury than for Suzuki, particularly in the recreational segment.
+**Resale in Ontario.** Mercury-powered boats are common in the recreational market. Resale demand depends on the exact boat, motor, condition, service history and local buyer pool, so compare current listings rather than assuming one brand always wins.
 
 ## The Mercury vs Suzuki comparison table
 
@@ -114,7 +114,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 These are the head-to-head classes we hear about most often from Ontario shoppers, and the factors that actually settle them.
 
-**90 to 115 HP class.** This is the aluminum fishing boat and small pontoon heartland, and the decision usually comes down to service access and resale. In the Kawarthas and Rice Lake region the Mercury service map is much denser, and the resale pool for Mercury-powered boats in this class is the deepest in Ontario. If you are switching brands on a repower, add the rigging conversion cost to the comparison before you decide.
+**90 to 115 HP class.** This is the aluminum fishing boat and small pontoon heartland, and the decision usually comes down to service access and resale. In the Kawarthas and Rice Lake region, Mercury has many nearby service options and a familiar resale market. If you are switching brands on a repower, add the rigging conversion cost to the comparison before you decide.
 
 **150 HP class.** Bigger pontoons, bass boats, and family runabouts. Digital integration starts to matter here: if you want SmartCraft gauges and the software upgrade pathway, that points to Mercury; if your local Suzuki dealer is strong and close, that is a legitimate counterweight. Intended use and dealer proximity decide this class more often than anything on a brochure.
 
