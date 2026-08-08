@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence.md
-last_updated: 2026-05-13
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-08-08
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Dépannage  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-08-08  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
@@ -137,6 +137,12 @@ Si vous soupçonnez un problème du système de refroidissement, prenez rendez-v
 - [Intervalles d'entretien Mercury](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ---
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 ## Appel à l'action
 
