@@ -206,15 +206,15 @@ For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://ww
 
 ---
 
-> ### Mercruiser Sterndrives We Still Service
->
-> If you have a sterndrive and you want to keep it, we support that decision.
->
-> Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
->
-> One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
->
-> Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+## From the Shop: Mercruiser Sterndrives We Still Service
+
+If you have a sterndrive and you want to keep it, we support that decision.
+
+Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
+
+One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
+
+Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
 
 ---
 
@@ -301,4 +301,3 @@ Modern 4-stroke outboards trim up in seconds, which lets you pick through shallo
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

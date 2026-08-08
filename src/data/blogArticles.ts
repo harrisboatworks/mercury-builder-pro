@@ -23979,15 +23979,15 @@ For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://ww
 
 ---
 
-> ### Mercruiser Sterndrives We Still Service
->
-> If you have a sterndrive and you want to keep it, we support that decision.
->
-> Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
->
-> One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
->
-> Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+## From the Shop: Mercruiser Sterndrives We Still Service
+
+If you have a sterndrive and you want to keep it, we support that decision.
+
+Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
+
+One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
+
+Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
 
 ---
 
