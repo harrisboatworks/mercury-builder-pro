@@ -13502,7 +13502,7 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-05-04',
+    dateModified: '2026-08-08',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -13510,22 +13510,22 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
     content: `# Why Mercury Outboards Make Practical Sense for Ontario Boaters (And Where We Are Biased)
 
 ## Quick answer
-Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Mercury often has practical advantages in Ontario through dealer coverage, parts availability and resale demand. Yamaha and Honda also make reliable motors. The best choice depends on the service support near where you boat. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Let us get the bias disclosure out of the way
 
-Harris Boat Works has sold Mercury exclusively since 1965. We are not a neutral source. But our bias came after the market reality, not before it. Mercury was already the established outboard brand in Ontario, with the deepest service network and the strongest factory relationships with Canadian boat builders. We aligned our business to where our customers were.
+Harris Boat Works has sold Mercury exclusively since 1965. We are not a neutral source. Mercury has an established Ontario service network and long-running factory relationships with Canadian boat builders. We aligned our business to the brand our customers were already using.
 
 ## What "established North American presence" means in practice
 
-[Mercury Marine](https://www.mercurymarine.com/canada/en/) is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
+[Mercury Marine](https://www.mercurymarine.com/canada/en/) is an established outboard manufacturer with broad Canadian dealer coverage, certified technicians and a mature parts supply chain. Check Mercury's dealer locator for current support near where you boat.
 
 When your motor needs a water pump impeller on a Thursday in August, that means the part is on a shelf at a local dealer. When you sell the boat in five years, the buyer local dealer already knows the platform.
 
 ## The four reasons Mercury makes sense for Ontario boaters
 
 ### 1. Dealer network density
-Ontario has [one of the strongest dealer networks](/blog/best-mercury-dealer-ontario-hbw-difference) for outboards. Parts on hand, technician depth, coverage when you travel, resale support. Finding [a qualified Honda or Yamaha tech](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) in Gores Landing or Bobcaygeon is harder than finding a Mercury tech.
+Mercury has a [broad Ontario dealer network](/blog/best-mercury-dealer-ontario-hbw-difference) for outboards. Parts availability, technician depth and travel coverage vary by location, so confirm the closest qualified shop before choosing a brand.
 
 ### 2. Factory relationships with Canadian boat builders
 Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [$2,000 to $3,000 CAD brand-conversion cost](/blog/mercury-repower-cost-ontario-2026-cad).
@@ -13566,11 +13566,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 `,
     faqs: [
-      { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region.' },
+      { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. For Ontario boaters, the practical differences are local dealer access, parts availability and resale demand. Mercury often fits well in our region, but buyers should check support where they boat.' },
       { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Premier dealer relationship today.' },
       { question: 'Why do most aluminum boats sold in Ontario come Mercury-rigged?', answer: 'Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market: Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built around Mercury.' },
       { question: 'Is Mercury more expensive than Yamaha or Honda?', answer: 'At comparable HP and trim, pricing is similar. Total cost of ownership tends to favor Mercury in Ontario because dealer network density reduces practical service costs.' },
-      { question: 'What is Mercury most popular model in Ontario?', answer: 'The Mercury 9.9 ProKicker is the most commonly installed kicker motor on Canadian fishing boats. In the main motor class, the 90 EXLPT FourStroke and 115 EXLPT FourStroke are common on 16 to 18 ft aluminum console boats.' },
+      { question: 'What is a common Mercury model in Ontario?', answer: 'The Mercury 9.9 ProKicker is a common kicker choice on Canadian fishing boats. In the main-motor class, the 90 EXLPT FourStroke and 115 EXLPT FourStroke are common on 16 to 18 ft aluminum console boats.' },
       { question: 'Should I switch from Yamaha or Honda to Mercury?', answer: 'If you are doing a full repower and the rigging investment is already committed, switching to Mercury at repower time makes sense for Ontario boaters. If your motor runs fine, do not switch for brand loyalty reasons.' },
       { question: 'Is Mercury reliable for cottage use on Rice Lake?', answer: 'Yes. Most cottage boats in this region came from the factory or previous owners with Mercury motors. At 50 to 150 hours of seasonal use, a properly maintained Mercury lasts 15 to 25 years.' },
     ]
@@ -14939,7 +14939,7 @@ For Rice Lake boaters, the practical advantage is having Mercury-specific diagno
 
 If you removed the brand badges and asked owners to compare a 2026 Mercury 150 FourStroke to a 2026 Yamaha F150 on the same boat, most couldn't reliably tell which was which on perceived performance.
 
-## Where Mercury wins
+## Where Mercury may fit better
 
 **Service access.** Mercury publishes an authorized dealer locator. Check the exact dealer, service capability, and travel time from where the boat lives; network size alone does not guarantee parts availability or turnaround.
 
@@ -15012,7 +15012,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - [Should I Repower or Buy a New Boat? (Ontario)](/blog/repower-vs-new-boat)
 - [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)`,
     faqs: [
-      { question: "Is Mercury better than Yamaha?", answer: "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers." },
+      { question: "Is Mercury better than Yamaha?", answer: "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury often benefits from dealer density, parts availability and factory relationships with Canadian aluminum boat builders. Check local service access, the exact boat package and resale demand before choosing." },
       { question: "Should I switch from Yamaha to Mercury during a repower?", answer: "Depends on local dealer access, hull condition, and ownership plan. If your Yamaha dealer access is good and your motor is fine, no need to switch. If you're repowering anyway and Mercury support is stronger in your area, switching makes sense." },
       { question: "How much does it cost to switch from Yamaha to Mercury?", answer: "The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca." },
       { question: "Is Yamaha more reliable than Mercury?", answer: "Mechanically, similar. Both brands have demonstrated long service life with proper maintenance. Reliability in real life is mechanical durability plus service availability. The service availability favors Mercury in Ontario." },
@@ -16256,7 +16256,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-24',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-24',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -16266,7 +16266,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 # Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
 
 ## Quick answer
-Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical reliability difference comes from dealer network, parts availability, and how fast you can get a motor fixed when something goes wrong. On those metrics, Mercury wins in this region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical difference often comes from local dealer access, parts availability and repair capacity. Mercury is well represented in our region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Three-brand quick comparison (2026, Ontario lens)
 
@@ -16304,7 +16304,7 @@ No brand has an honest universal service-life promise. Engine family, installati
 
 A motor is reliable if it starts when you turn the key, runs through the season without unexpected failures, and gets fixed quickly when something does go wrong. That last part is the one that varies most by brand and region.
 
-**Mercury** has [the deepest dealer network in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference). More dealers means more certified technicians, more parts on local shelves, shorter diagnosis-to-repair windows. If you break down on Rice Lake in July and need a parts-shelf impeller or a diagnostic on your fuel system, Mercury regional dealer density gives you options.
+**Mercury** has a [broad Ontario dealer network](/blog/best-mercury-dealer-ontario-hbw-difference). In the Rice Lake and Kawarthas region, that can provide more options for certified service and common parts. Exact inventory and appointment timing still need to be confirmed with the dealer.
 
 **Yamaha** makes excellent motors. Legendary saltwater durability, well-respected in the offshore community. In Ontario cottage country, Yamaha dealers are present but thinner on the ground than Mercury. Parts that are common in a coastal Yamaha dealer warehouse can take weeks to source inland.
 
@@ -16317,7 +16317,7 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 ## Where each brand has had issues (honest version)
 
 ### Mercury
-**Strengths:** Largest dealer network in Ontario and Canada. Modern Mercury FourStrokes (post-2010) have a strong track record. The 9.9 ProKicker is the default kicker motor on most Canadian fishing boats.
+**Strengths:** Broad Canadian dealer coverage. Modern Mercury FourStrokes (post-2010) have a strong track record. The 9.9 ProKicker is a common kicker choice on Canadian fishing boats.
 
 **Where to be careful:** Older generation Pro XS motors had some early production issues that were worked out in subsequent model years. Current-generation Mercury is a mature product.
 
@@ -16328,7 +16328,7 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 
 **Where to be careful:** Ontario dealer density is lower than Mercury. Repowering from Mercury to Yamaha, or [Yamaha to Mercury, requires replacing the full control system](/blog/yamaha-to-mercury-repower-ontario-guide): $2,000 to $3,000 CAD in rigging on top of the motor cost.
 
-**Our honest take:** In saltwater on the coast, [Yamaha is a legitimate competitor to Mercury](/blog/mercury-vs-yamaha-outboards-ontario). In Ontario freshwater, Mercury wins on dealer support.
+**Our honest take:** In saltwater on the coast, [Yamaha is a legitimate competitor to Mercury](/blog/mercury-vs-yamaha-outboards-ontario). In our part of Ontario, Mercury often offers more nearby dealer-support options.
 
 ### Honda
 **Strengths:** Reliable four-stroke engineering. Quiet operation, fuel-efficient at cruise, well-built mechanically. Strong reputation in the small-HP portable class.
@@ -16349,7 +16349,7 @@ leftCriteria:
   - You travel the Trent-Severn or run between lakes
   - You do not have a current dealer relationship
   - You want resale support when you eventually sell
-leftOutcome: Mercury wins on Ontario dealer density
+leftOutcome: Mercury often offers more nearby Ontario dealer options
 leftVariant: recommended
 rightLabel: You already have a relationship that works
 rightCriteria:
@@ -16382,7 +16382,7 @@ A well-maintained Yamaha or Honda will outlast a neglected Mercury. We see this 
 2. What does your current boat already have? A boat that came factory-rigged for Mercury is most cost-effective to keep Mercury during a repower.
 3. How are your service habits? If you are meticulous, any of the three brands works long-term.
 4. What is your boating plan? Freshwater recreational, saltwater, racing, commercial.
-5. Are you planning to sell the boat in five to ten years? Mercury holds resale value strongest in Ontario.
+5. Are you planning to sell the boat in five to ten years? Compare local resale demand for the exact brand, horsepower and boat package.
 
 ## When it makes sense to switch brands
 
@@ -16419,12 +16419,12 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     faqs: [
     { question: 'Which outboard brand is most reliable in 2026: Mercury, Yamaha, or Honda?', answer: 'All three produce reliable four-stroke outboards. The practical reliability difference in Ontario (how fast you can get a motor fixed when something goes wrong) favors Mercury, because of dealer network density and parts availability in this region.' },
     { question: 'How long does a Mercury, Yamaha, or Honda outboard last?', answer: 'Properly maintained, all three last well beyond 1,500 engine hours. For a recreational boater running 50 to 150 hours a season, that is 15 to 25 years of useful life with consistent service.' },
-    { question: 'Is Mercury better than Yamaha for fishing boats in Ontario?', answer: 'For Ontario freshwater fishing boats, Mercury wins on dealer support and parts availability, especially in the cottage country dealer network. Most Lund, Crestliner, and Princecraft boats come Mercury-rigged from the factory.' },
+    { question: 'Is Mercury better than Yamaha for fishing boats in Ontario?', answer: 'For Ontario freshwater fishing boats, Mercury often has practical dealer-support and parts-availability advantages in cottage country. Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with. The right answer still depends on the exact boat package and service access where you boat.' },
     { question: 'Is Mercury better than Honda for pontoon boats?', answer: 'Mercury Command Thrust gearcase, available on FourStroke models from 40 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.' },
     { question: 'What is the most reliable Mercury outboard?', answer: 'The FourStroke series in the 60 to 150 HP class has an exceptionally strong track record over the past 15+ years. The 9.9 ProKicker is the most common kicker motor in Canada.' },
     { question: 'How much does it cost to switch from Yamaha or Honda to Mercury?', answer: 'Switching brands during a repower typically adds $2,000 to $3,000 CAD in rigging on top of the motor cost. The full control system (throttle, shift cables, harness, gauges) needs to be replaced when switching brands.' },
-    { question: 'Are Yamaha outboards better in saltwater than Mercury?', answer: 'Yamaha has a well-earned saltwater durability reputation. Mercury SeaPro line is purpose-built for commercial and saltwater applications. For Ontario freshwater, Mercury wins on dealer support in this region.' },
-    { question: 'Why do most Canadian boat manufacturers ship Mercury-rigged?', answer: 'Mercury dealer network in Canada is the deepest, parts supply is most consistent, and the relationship between Mercury Marine and Canadian boat manufacturers goes back decades.' },
+    { question: 'Are Yamaha outboards better in saltwater than Mercury?', answer: 'Yamaha has a well-earned saltwater durability reputation. Mercury SeaPro is purpose-built for commercial and saltwater applications. For Ontario freshwater, compare the nearby authorized service options for both brands.' },
+    { question: 'Why do many Canadian boat manufacturers ship Mercury-rigged?', answer: 'Mercury has long-running relationships with Canadian boat manufacturers, broad dealer coverage and an established parts supply chain. Factory rigging still varies by boat brand, model and package.' },
     { question: 'Why is HBW only a Mercury dealer?', answer: 'We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Premier dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.' },
   ],
   },
@@ -16438,7 +16438,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     imageAlt: 'Lund boat with Mercury outboard docked on an Ontario lake, illustrating local reliability for the brand comparison guide.',
     author: 'Jay Harris',
     datePublished: '2026-06-06',
-    dateModified: '2026-06-10',
+    dateModified: '2026-08-08',
     category: 'Brand Comparison',
     readTime: '8 min',
     keywords: ['mercury vs suzuki', 'suzuki outboard reliability', 'ontario outboard comparison', 'mercury suzuki repower'],
@@ -16473,7 +16473,7 @@ What we hear that actually predicts motor longevity is not the brand. It is the 
 
 The real difference between Mercury and Suzuki in Ontario is not the motor itself. It is the service network behind it.
 
-Mercury has the deepest dealer network in Ontario by a wide margin. Premier and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
+Mercury has broad dealer coverage across the Kawarthas, the GTA and Ontario cottage corridors. That gives many owners multiple service options, but parts inventory and repair timing vary by dealer and season. Confirm the required part and appointment capacity before changing a trip plan.
 
 Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
 
@@ -16503,7 +16503,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 
 **Parts shelf depth.** Mercury's parts availability in Ontario is consistently strong. Common service items are on dealer shelves. Less common items are usually one day away.
 
-**Resale in Ontario.** Mercury motors and Mercury-powered boats have the largest buyer pool in Ontario. The resale market is deeper for Mercury than for Suzuki, particularly in the recreational segment.
+**Resale in Ontario.** Mercury-powered boats are common in the recreational market. Resale demand depends on the exact boat, motor, condition, service history and local buyer pool, so compare current listings rather than assuming one brand always wins.
 
 ## The Mercury vs Suzuki comparison table
 
@@ -16530,7 +16530,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 These are the head-to-head classes we hear about most often from Ontario shoppers, and the factors that actually settle them.
 
-**90 to 115 HP class.** This is the aluminum fishing boat and small pontoon heartland, and the decision usually comes down to service access and resale. In the Kawarthas and Rice Lake region the Mercury service map is much denser, and the resale pool for Mercury-powered boats in this class is the deepest in Ontario. If you are switching brands on a repower, add the rigging conversion cost to the comparison before you decide.
+**90 to 115 HP class.** This is the aluminum fishing boat and small pontoon heartland, and the decision usually comes down to service access and resale. In the Kawarthas and Rice Lake region, Mercury has many nearby service options and a familiar resale market. If you are switching brands on a repower, add the rigging conversion cost to the comparison before you decide.
 
 **150 HP class.** Bigger pontoons, bass boats, and family runabouts. Digital integration starts to matter here: if you want SmartCraft gauges and the software upgrade pathway, that points to Mercury; if your local Suzuki dealer is strong and close, that is a legitimate counterweight. Intended use and dealer proximity decide this class more often than anything on a brochure.
 
@@ -31008,7 +31008,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging conversation shapes how the motor performs, we don't skip it.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.
@@ -35884,7 +35884,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
     imageAlt: "Mercury Avator electric outboard on a dock, illustrating the motor's design for the Avator vs Torqeedo comparison.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-07-04',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '7 min read',
@@ -35903,7 +35903,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Premier dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
+Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for many Ontario buyers is not the motor itself but local service support. Avator uses Mercury's broader Canadian dealer network, while Torqeedo has a smaller specialized network. Not every dealer stocks every part or services every electric package, so confirm the exact location and capability before buying.
 
 ## Mercury Avator vs Torqeedo at a glance
 
@@ -35912,7 +35912,7 @@ Both Mercury Avator and Torqeedo make legitimate electric outboards. The decidin
 | Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
 | 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
 | Power range | 0.75-11 kW rated prop-shaft power | Portable to large commercial |
-| Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
+| Ontario service access | Broad Mercury network; confirm Avator capability locally | More concentrated network; confirm locally |
 | Parts | On shelf at Mercury Premier dealers | Often ordered from Torqeedo Canada |
 | Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
 | SmartCraft / VesselView | Yes | No |
@@ -35927,7 +35927,7 @@ If you want a truly neutral comparison, find a marine specialty shop that carrie
 ## What both companies actually make
 
 **Mercury Avator (Mercury Marine):**
-- Backed by Mercury Marine (Brunswick Corporation), one of the largest outboard manufacturers globally
+- Backed by Mercury Marine (Brunswick Corporation), an established global outboard manufacturer
 - Full integration with Mercury's SmartCraft / VesselView ecosystem
 - Models: 7.5e, 20e, 35e, 75e, 110e (2026 lineup)
 - Rated prop-shaft power: 0.75 kW to 11 kW; compare thrust and performance on the exact hull rather than converting to gas horsepower
@@ -35946,7 +35946,7 @@ The product gap is smaller than the marketing makes it seem. Both companies have
 
 ## The dealer network difference
 
-Mercury Avator inherits Mercury's broader Canadian dealer network, hundreds of Mercury dealers across the country, with Mercury Premier dealers like HBW handling the most complex repower and service work. For Ontario buyers specifically, there's a Mercury dealer within an hour of nearly every populated area.
+Mercury Avator inherits Mercury's broader Canadian dealer network. Dealer capability, parts inventory and appointment capacity vary, so use the current dealer locator and confirm Avator support directly before relying on a location.
 
 Torqeedo's Canadian dealer network is smaller and more concentrated in larger urban markets. For a Toronto, Ottawa, or Vancouver buyer, Torqeedo support is reasonable. For a Northumberland County, Kawartha Lakes, or remote-cottage buyer, the nearest Torqeedo authorized service may be several hours away.
 
@@ -36003,7 +36003,7 @@ Torqeedo has been in the electric outboard market longer than Mercury Avator. Th
 
 For specialized applications (commercial use, sailboat auxiliary, large electric cruisers), Torqeedo's product depth may matter more than dealer network.
 
-## Where Mercury Avator wins
+## Where Mercury Avator may fit better
 
 For [typical Ontario recreational boating](/blog/mercury-avator-electric-boating-ontario):
 

@@ -44,6 +44,7 @@ const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
+const blogClusters = read('src/data/blogClusters.ts');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
 const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
@@ -579,6 +580,170 @@ checkSpecRoute('best-mercury-outboard-lake-ontario-salmon-trout', (surface, labe
 check(
   checkedSpecRoutes.size === 7,
   `Product-spec integrity must cover exactly seven route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
+);
+
+const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
+const ajaxPartsQualification = 'HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock.';
+const originalMarketRelatedLink = '[Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
+const marketRelatedOverride = blogClusters.match(/["']why-mercury-dominates-outboard-market["']\s*:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
+const marketRelatedOverrideSlugs = [...marketRelatedOverride.matchAll(/["']([a-z0-9-]+)["']/g)].map((match) => match[1]);
+const expectedMarketRelatedOverride = [
+  'mercury-vs-yamaha-outboards-ontario',
+  'mercury-vs-yamaha-vs-honda-reliability-2026',
+  'mercury-vs-suzuki-outboard-reliability-2026',
+  'why-harris-boat-works-mercury-dealer',
+  'harris-boat-works-since-1947-rice-lake-institution',
+];
+check(
+  JSON.stringify(marketRelatedOverrideSlugs) === JSON.stringify(expectedMarketRelatedOverride),
+  'The why-mercury related-guide source override must retain the reviewed five-route order, including Harris history.',
+);
+const superlativeRouteContracts = [
+  {
+    slug: 'why-mercury-dominates-outboard-market',
+    forbidden: [
+      [/deepest service network/i, 'deepest-service-network claim'],
+      [/strongest factory relationships/i, 'strongest-factory-relationships claim'],
+      [/one of the leading outboard manufacturers in the world by volume/i, 'unsupported manufacturer-volume ranking'],
+      [/more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand/i, 'unsupported dealer and parts ranking'],
+      [/one of the strongest dealer networks/i, 'strongest-dealer-network claim'],
+      [/On those metrics, Mercury wins in this region/i, 'blanket regional winner FAQ'],
+      [/most commonly installed kicker motor on Canadian fishing boats/i, 'unsupported most-common kicker claim'],
+      [/Why Mercury Is a Practical (?:Ontario Outboard Choice|Outboard Choice in Ontario)/i, 'unauthorized SEO retitle'],
+    ],
+    required: [
+      [/Mercury often has practical advantages in Ontario[\s\S]{0,220}service support near where you boat/i, 'qualified quick answer'],
+      [/established Ontario service network[\s\S]{0,180}brand our customers were already using/i, 'qualified bias disclosure'],
+      [/established outboard manufacturer[\s\S]{0,220}dealer locator for current support/i, 'qualified manufacturer and dealer statement'],
+      [/broad Ontario dealer network[\s\S]{0,220}confirm the closest qualified shop/i, 'qualified local-network statement'],
+      [/Mercury often fits well in our region[\s\S]{0,120}check support where they boat/i, 'qualified brand-comparison FAQ'],
+      [/9\.9 ProKicker is a common kicker choice on Canadian fishing boats/i, 'qualified common-model FAQ'],
+    ],
+    sourceRequired: [
+      [/seoTitle:\s*["']Why Mercury Leads the Outboard Market in 2026 \| HBW["']/, 'original SEO title'],
+      [/title:\s*["']Why Mercury Dominates the Outboard Market in 2026["']/, 'original article title'],
+      [/description:\s*"Mercury Marine builds outboards from 2\.5 HP to 600 HP, with one of the largest dealer networks in Canada\. What makes Mercury the default choice in Ontario\."/, 'original description'],
+      [/content:\s*`# Why Mercury Outboards Make Practical Sense for Ontario Boaters \(And Where We Are Biased\)/, 'original body H1'],
+    ],
+    twinRequired: [
+      [/^title: "Why Mercury Dominates the Outboard Market in 2026"$/m, 'original twin title'],
+      [/^description: "Mercury Marine builds outboards from 2\.5 HP to 600 HP, with one of the largest dealer networks in Canada\. What makes Mercury the default choice in Ontario\."$/m, 'original twin description'],
+      [/^# Why Mercury Dominates the Outboard Market in 2026$/m, 'original generated H1'],
+      [/## Related guides[\s\S]*\[Harris Boat Works: On Rice Lake Since 1947\]\(\/blog\/harris-boat-works-since-1947-rice-lake-institution\), the Harris Boat Works story since 1947/, 'Harris history link in the generated related guides'],
+    ],
+  },
+  {
+    slug: 'mercury-vs-yamaha-outboards-ontario',
+    forbidden: [
+      [/^## Where Mercury wins$/im, 'blanket Mercury-wins heading'],
+      [/Mercury wins on dealer network density/i, 'blanket dealer-network winner FAQ'],
+      [/practical reliability picture favors Mercury/i, 'blanket reliability winner FAQ'],
+    ],
+    required: [
+      [/^## Where Mercury may fit better$/im, 'qualified comparison heading'],
+      [/Mercury often benefits from dealer density[\s\S]{0,220}Check local service access, the exact boat package and resale demand before choosing/i, 'qualified comparison FAQ'],
+    ],
+    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+  },
+  {
+    slug: 'mercury-vs-yamaha-vs-honda-reliability-2026',
+    forbidden: [
+      [/On those metrics, Mercury wins in this region/i, 'blanket regional winner'],
+      [/deepest dealer network in Ontario/i, 'deepest-dealer-network claim'],
+      [/Largest dealer network in Ontario and Canada/i, 'largest-dealer-network claim'],
+      [/default kicker motor on most Canadian fishing boats/i, 'unsupported default-kicker claim'],
+      [/In Ontario freshwater, Mercury wins on dealer support/i, 'blanket freshwater winner'],
+      [/Mercury wins on Ontario dealer density/i, 'blanket decision-card outcome'],
+      [/Mercury holds resale value strongest in Ontario/i, 'unsupported resale ranking'],
+      [/Mercury dealer network in Canada is the deepest/i, 'deepest Canadian network claim'],
+      [/Most Lund, Crestliner, and Princecraft boats come Mercury-rigged from the factory/i, 'unqualified factory-rigging claim'],
+    ],
+    required: [
+      [/practical difference often comes from local dealer access[\s\S]{0,180}Mercury is well represented in our region/i, 'qualified quick answer'],
+      [/broad Ontario dealer network[\s\S]{0,220}inventory and appointment timing still need to be confirmed/i, 'qualified dealer-network paragraph'],
+      [/Broad Canadian dealer coverage[\s\S]{0,160}common kicker choice/i, 'qualified strengths line'],
+      [/In our part of Ontario, Mercury often offers more nearby dealer-support options/i, 'qualified regional service wording'],
+      [/Mercury often offers more nearby Ontario dealer options/i, 'qualified decision-card outcome'],
+      [/Compare local resale demand for the exact brand, horsepower and boat package/i, 'qualified resale question'],
+      [qualifiedFactoryRigging, 'qualified factory-rigging FAQ'],
+      [/For Ontario freshwater, compare the nearby authorized service options for both brands/i, 'qualified saltwater FAQ'],
+      [/long-running relationships with Canadian boat manufacturers[\s\S]{0,180}Factory rigging still varies by boat brand, model and package/i, 'qualified manufacturer-relationship FAQ'],
+    ],
+    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+  },
+  {
+    slug: 'mercury-vs-suzuki-outboard-reliability-2026',
+    forbidden: [
+      [/deepest dealer network in Ontario by a wide margin/i, 'deepest-dealer-network claim'],
+      [/largest buyer pool in Ontario/i, 'largest-buyer-pool claim'],
+      [/resale pool for Mercury-powered boats in this class is the deepest in Ontario/i, 'deepest-resale-pool claim'],
+    ],
+    required: [
+      [/broad dealer coverage across the Kawarthas, the GTA and Ontario cottage corridors[\s\S]{0,240}Confirm the required part and appointment capacity/i, 'qualified dealer-coverage paragraph'],
+      [/Mercury-powered boats are common in the recreational market[\s\S]{0,220}compare current listings rather than assuming one brand always wins/i, 'qualified resale paragraph'],
+      [/90 to 115 HP class[\s\S]{0,300}many nearby service options and a familiar resale market/i, 'qualified 90-to-115 HP comparison'],
+    ],
+    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+  },
+  {
+    slug: 'mercury-dealer-ajax-ontario-hbw',
+    forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim']],
+    required: [
+      [ajaxPartsQualification, 'Jay-approved Ajax parts qualification'],
+      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
+      [/physical service resumes when we reopen in early April/i, 'protected early-April reopening wording'],
+    ],
+  },
+  {
+    slug: 'mercury-avator-vs-torqeedo',
+    forbidden: [
+      [/deepest Mercury Premier dealer network in Canada/i, 'deepest Avator dealer-network claim'],
+      [/parts, service, and warranty work happen at any Mercury dealer across the country/i, 'any-dealer service promise'],
+      [/Mercury Avator wins on infrastructure/i, 'blanket infrastructure winner'],
+      [/within an hour of nearly every populated area/i, 'unsupported proximity claim'],
+      [/one of the largest outboard manufacturers globally/i, 'unsupported manufacturer ranking'],
+      [/^## Where Mercury Avator wins$/im, 'blanket Avator-wins heading'],
+    ],
+    required: [
+      [/deciding factor for many Ontario buyers[\s\S]{0,260}confirm the exact location and capability before buying/i, 'qualified local-service quick answer'],
+      [/\| Ontario service access \| Broad Mercury network; confirm Avator capability locally \| More concentrated network; confirm locally \|/, 'qualified service-access table row'],
+      [/established global outboard manufacturer/i, 'qualified manufacturer wording'],
+      [/Dealer capability, parts inventory and appointment capacity vary[\s\S]{0,180}confirm Avator support directly/i, 'qualified dealer-capability paragraph'],
+      [/^## Where Mercury Avator may fit better$/im, 'qualified Avator heading'],
+    ],
+  },
+];
+
+const contractMatch = (surface, matcher) => typeof matcher === 'string' ? surface.includes(matcher) : matcher.test(surface);
+for (const contract of superlativeRouteContracts) {
+  const [[sourceLabel, source], [twinLabel, twin]] = specRouteSurfaces(contract.slug);
+  check(source.length > 0, `${sourceLabel} is missing from the market-claim integrity review.`);
+  check(twin.length > 0, `${twinLabel} is missing from the market-claim integrity review.`);
+
+  for (const [label, surface] of [[sourceLabel, source], [twinLabel, twin]]) {
+    for (const [matcher, description] of contract.forbidden) {
+      check(!contractMatch(surface, matcher), `${label} revived the ${description}.`);
+    }
+    for (const [matcher, description] of contract.required) {
+      check(contractMatch(surface, matcher), `${label} is missing the ${description}.`);
+    }
+  }
+
+  for (const [matcher, description] of contract.sourceRequired ?? []) {
+    check(contractMatch(source, matcher), `${sourceLabel} is missing the ${description}.`);
+  }
+  for (const [matcher, description] of contract.twinRequired ?? []) {
+    check(contractMatch(twin, matcher), `${twinLabel} is missing the ${description}.`);
+  }
+
+  const sourceReviewDate = source.match(/dateModified:\s*["'](\d{4}-\d{2}-\d{2})["']/)?.[1] ?? '';
+  const twinReviewDate = twin.match(/^date_modified:\s*(\d{4}-\d{2}-\d{2})$/m)?.[1] ?? '';
+  check(sourceReviewDate >= '2026-08-08', `${sourceLabel} must be reviewed on or after 2026-08-08.`);
+  check(twinReviewDate >= '2026-08-08', `${twinLabel} must be reviewed on or after 2026-08-08.`);
+}
+check(
+  superlativeRouteContracts.length === 6,
+  `Market-claim integrity must cover exactly six route-scoped source/twin contracts; found ${superlativeRouteContracts.length}.`,
 );
 
 const accuracyFiles = [

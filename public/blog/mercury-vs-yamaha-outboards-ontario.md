@@ -62,7 +62,7 @@ For Rice Lake boaters, the practical advantage is having Mercury-specific diagno
 
 If you removed the brand badges and asked owners to compare a 2026 Mercury 150 FourStroke to a 2026 Yamaha F150 on the same boat, most couldn't reliably tell which was which on perceived performance.
 
-## Where Mercury wins
+## Where Mercury may fit better
 
 **Service access.** Mercury publishes an authorized dealer locator. Check the exact dealer, service capability, and travel time from where the boat lives; network size alone does not guarantee parts availability or turnaround.
 
@@ -137,7 +137,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ### Is Mercury better than Yamaha?
 
-Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers.
+Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury often benefits from dealer density, parts availability and factory relationships with Canadian aluminum boat builders. Check local service access, the exact boat package and resale demand before choosing.
 
 ### Should I switch from Yamaha to Mercury during a repower?
 

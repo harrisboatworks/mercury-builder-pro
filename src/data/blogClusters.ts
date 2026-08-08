@@ -538,6 +538,13 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
  * neighbours live outside their primary cluster.
  */
 export const relatedSlugsOverrides: Record<string, string[]> = {
+  "why-mercury-dominates-outboard-market": [
+    "mercury-vs-yamaha-outboards-ontario",
+    "mercury-vs-yamaha-vs-honda-reliability-2026",
+    "mercury-vs-suzuki-outboard-reliability-2026",
+    "why-harris-boat-works-mercury-dealer",
+    "harris-boat-works-since-1947-rice-lake-institution",
+  ],
   "renting-vs-owning-boat-ontario-math": [
     "rice-lake-boat-rental-guide-2026",
     "first-time-boat-rental-rice-lake-guide",
