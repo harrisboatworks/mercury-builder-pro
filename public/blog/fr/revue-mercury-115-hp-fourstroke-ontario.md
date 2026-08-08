@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md
-last_updated: 2026-07-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible
 description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-07-10
+date_modified: 2026-08-08
 keywords: ["revue Mercury 115 HP","Mercury 115 HP FourStroke","Mercury 115 ELPT Ontario","Mercury 115 CT Command Thrust","115 HP ponton","Mercury 115 vs 150","Mercury 115 FourStroke vs Pro XS"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Avis produit  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 
@@ -157,6 +157,12 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 ## Bâtissez une soumission
 
