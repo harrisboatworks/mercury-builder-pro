@@ -16,6 +16,7 @@ keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth"
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Outboard Trade-In Value in Ontario (2026)
@@ -35,7 +36,7 @@ language: en-CA
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-> **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
+> **Price the complete repower:** Start with the [Mercury quote configurator](/quote/motor-selection) for the replacement motor. HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
 
 *Trade-in value ladder*
 
@@ -172,8 +173,6 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 - Oil weep at the lower unit seal (typically a $400 to $700 fix)
 - Stale fuel that ran through the system
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Trade vs private sale vs scrap
 
 | Path | Typical Net | What You Do | Risk |
@@ -248,9 +247,7 @@ We cannot inflate it, because we have to move the motor afterward. We will not l
 
 We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
 
-> **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+> **Ready to compare the complete transaction?** Build the replacement-motor side in the [Mercury quote configurator](/quote/motor-selection), then provide the serial number, hours, condition, and service history so HBW can confirm the trade value.
 
 ---
 
@@ -290,13 +287,12 @@ Some go to other customers looking for used motors. Some go to boat brokers or u
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

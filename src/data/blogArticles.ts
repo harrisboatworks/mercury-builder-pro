@@ -25981,7 +25981,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-> **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
+> **Price the complete repower:** Start with the [Mercury quote configurator](/quote/motor-selection) for the replacement motor. HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
 
 ::cost-stack
 heading: What your trade-in is actually worth, by condition
@@ -26182,7 +26182,7 @@ We cannot inflate it, because we have to move the motor afterward. We will not l
 
 We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
 
-> **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
+> **Ready to compare the complete transaction?** Build the replacement-motor side in the [Mercury quote configurator](/quote/motor-selection), then provide the serial number, hours, condition, and service history so HBW can confirm the trade value.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -29361,7 +29361,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '5 min',
     keywords: ['mercury dealer markham', 'mercury repower markham', 'mercury outboard markham ontario', 'boat motor dealer markham', 'harris boat works markham customers'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 70 minutes north of Markham via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is available in minutes at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -29531,7 +29531,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '5 min',
     keywords: ['mercury dealer richmond hill', 'mercury repower richmond hill', 'mercury outboard richmond hill ontario', 'boat motor dealer aurora newmarket', 'harris boat works richmond hill customers'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 75 minutes north of Richmond Hill via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -29693,7 +29693,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '5 min',
     keywords: ['mercury dealer mississauga', 'mercury repower mississauga', 'mercury outboard mississauga ontario', 'boat motor dealer mississauga', 'harris boat works mississauga customers'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -29859,7 +29859,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer vaughan', 'mercury repower vaughan', 'mercury outboard vaughan ontario', 'boat motor dealer vaughan woodbridge maple'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 80 minutes north of Vaughan via Highway 400 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30007,7 +30007,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-07-23',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer brampton', 'mercury repower brampton', 'mercury outboard brampton ontario', 'boat motor dealer brampton caledon'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 95 minutes northeast of Brampton via Highway 410 to Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30157,7 +30157,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-05-11',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer oakville', 'mercury repower oakville', 'mercury outboard oakville ontario', 'boat motor service oakville'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30311,7 +30311,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-08-02',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer burlington', 'mercury repower burlington', 'mercury outboard burlington ontario', 'boat motor service burlington hamilton'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30659,7 +30659,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
     datePublished: '2026-05-11',
     dateModified: "2026-07-17",
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer pickering', 'mercury repower pickering', 'mercury outboard pickering ontario', 'boat motor dealer pickering'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30806,7 +30806,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-08-08',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer whitby', 'mercury repower whitby', 'mercury outboard whitby ontario', 'boat motor service durham region'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -30956,7 +30956,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-08-08',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer ajax', 'mercury repower ajax', 'mercury outboard ajax ontario', 'boat motor service durham region ajax'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -31105,7 +31105,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-08-08',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer oshawa', 'mercury repower oshawa', 'mercury outboard oshawa ontario', 'boat motor service durham region oshawa'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 40 minutes northeast of Oshawa via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
@@ -31262,7 +31262,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     datePublished: '2026-05-11',
     dateModified: '2026-08-08',
     publishDate: '2026-05-11',
-    category: 'Service Area',
+    category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer bowmanville', 'mercury repower bowmanville', 'mercury outboard bowmanville ontario', 'boat motor service clarington'],
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.

@@ -9,20 +9,21 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Vaughan Ontario HBW"
 description: "Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-07-24
 keywords: ["mercury dealer vaughan","mercury repower vaughan","mercury outboard vaughan ontario","boat motor dealer vaughan woodbridge maple"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Vaughan Ontario HBW
 
 > Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
 **Last reviewed:** 2026-07-24  
 **Read time:** 4 min  
@@ -87,8 +88,6 @@ Premier-tier parts and warranty authorization. For engine repairs, we only servi
 
 **Route:** Highway 400 south to connect to 401 east (or take 400 to 407 east to 115), then Highway 115 east, then County Road 28 north into Gores Landing. The 407 to 115 route avoids the 401 through Toronto and may be faster depending on time of day.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Approximate drive time:** Around 80 minutes in normal traffic.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -132,8 +131,6 @@ Why [Vaughan boaters drive to HBW](/blog/mercury-repower-gta-toronto-destination
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -160,13 +157,12 @@ Yes. Build a quote at mercuryrepower.ca/quote in three minutes. Real CAD pricing
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

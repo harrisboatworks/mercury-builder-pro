@@ -16,6 +16,7 @@ keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-Hant
+revenue_driver: repower
 ---
 
 # PCOC、PCL、釣魚證區別：安省新手別搞混
@@ -89,13 +90,12 @@ PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

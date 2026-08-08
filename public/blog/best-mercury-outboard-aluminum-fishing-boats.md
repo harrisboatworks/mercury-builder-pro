@@ -16,6 +16,7 @@ keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","me
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury for Aluminum Boats 2026
@@ -114,8 +115,6 @@ For serious fishing on Rice Lake or the Kawarthas, a kicker motor isn't optional
 
 **Trolling speed control.** A main motor at idle is almost always too fast for walleye trolling at 1–2 mph. The 9.9 ProKicker idles down to true trolling speed.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
 
 **Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph wastes fuel. A 9.9 at the same speed sips it.
@@ -203,13 +202,12 @@ The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

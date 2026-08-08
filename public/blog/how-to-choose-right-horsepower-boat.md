@@ -16,6 +16,7 @@ keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # How to Choose the Right Boat Horsepower
@@ -141,8 +142,6 @@ Recreational family use: **150 to 200 HP.** The exact answer depends on hull wei
 ### Bass boats (17–21 ft)
 Tournament-level performance: **200 to 250 HP Pro XS.** The Pro XS line is the standard tournament motor.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Recreational bass fishing: **150 HP FourStroke or Pro XS**, depending on whether you need the performance step-up.
 
 ---
@@ -250,13 +249,12 @@ To pull a tube with one or two riders, most 16-18 ft boats need a minimum of 75 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

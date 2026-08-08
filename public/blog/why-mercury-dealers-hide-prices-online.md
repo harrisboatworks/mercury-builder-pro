@@ -16,6 +16,7 @@ keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Why Mercury Dealers Hide Prices (HBW Doesn't)
@@ -83,8 +84,6 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 **It builds trust.** The price you see online is the price you pay. No surprises at the counter.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
 
 **It respects everyone's time.** Three generations of this family have answered "what does it cost?" more times than anyone can count. Online pricing means the team can focus on conversations that matter.
@@ -130,7 +129,6 @@ Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryre
 Questions after you see it? Call 905-342-2153. 
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -185,13 +183,12 @@ Build a quote at HBW first and use it as a written reference. Compare the exact 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

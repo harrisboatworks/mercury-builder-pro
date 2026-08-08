@@ -16,6 +16,7 @@ keywords: ["mercury marine market share","best outboard brand","mercury vs yamah
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Why Mercury Dominates the Outboard Market in 2026
@@ -57,8 +58,6 @@ Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe)
 ### 4. Parts and service continuity over the motor life
 A well-maintained Mercury lasts 15 to 25 years. Mercury depth in Ontario means we can service every motor we sell for the full life of that motor.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Where Mercury is not automatically the right answer
 
 **Coastal saltwater.** Yamaha has strong saltwater dealer coverage. In Florida or Pacific Northwest, the dealer math may favor Yamaha.
@@ -79,8 +78,6 @@ If you want to talk through whether Mercury is the right answer for your specifi
 
 Harris Boat Works. Mercury dealer since 1965, Mercury Premier dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -124,13 +121,12 @@ Yes. Most cottage boats in this region came from the factory or previous owners 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

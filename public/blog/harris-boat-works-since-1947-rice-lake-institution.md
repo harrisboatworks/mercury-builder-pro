@@ -16,6 +16,7 @@ keywords: ["Harris Boat Works since 1947","third generation marina Ontario","his
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: none
 ---
 
 # Harris Boat Works: On Rice Lake Since 1947
@@ -102,8 +103,6 @@ These aren't things a new dealer can fake. They take time. We have time on Rice 
 ---
 
 ## The Rice Lake Lens. Why Location Matters
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 A dealer in Toronto sells Mercurys. We sell Mercurys *to people who'll use them on Rice Lake, the Kawarthas, and the Trent-Severn.* Different application.
 
@@ -231,13 +230,11 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- This heritage article has no commercial call to action.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

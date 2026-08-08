@@ -16,6 +16,7 @@ keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat la
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: rentals
 ---
 
 # Rice Lake Boating Guide 2026
@@ -110,8 +111,6 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 
 If you don't have a boat, HBW offers pontoon and fishing-boat rentals on Rice Lake. The current lineup, live rates, capacity, equipment, and availability are listed at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals); rental bookings are online only.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Other rental options exist around Bewdley, but availability and quality vary. Call ahead before driving up.
 
 ---
@@ -164,7 +163,6 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 
 ## FAQs
@@ -203,13 +201,12 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

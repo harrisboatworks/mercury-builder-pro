@@ -16,6 +16,7 @@ keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp"
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)
@@ -118,8 +119,6 @@ Live pricing on the pontoon-friendly motors is right here, in real CAD.
 ---
 
 ## Why Command Thrust makes the difference on pontoons
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Pontoons are unique among recreational hulls:
 - Blunt-fronted, the noses push water rather than slice it
@@ -241,13 +240,12 @@ FourStroke is almost always the right answer for pontoons. Pro XS is built for t
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

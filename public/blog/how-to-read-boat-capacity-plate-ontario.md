@@ -16,6 +16,7 @@ keywords: ["boat capacity plate","capacity plate ontario","transport canada comp
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # How to Read a Boat Capacity Plate in Ontario
@@ -107,8 +108,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - [Small Vessel Regulations, section 811](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-811.html), replacement of an illegible compliance notice
 - [Construction Standards for Small Vessels, TP 1332](https://tc.canada.ca/sites/default/files/2023-11/TP1332E.pdf), compliance-notice construction standards
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Can I install more horsepower than the compliance notice shows?
@@ -145,13 +144,12 @@ The persons figure limits headcount, while the load figure accounts for the comb
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

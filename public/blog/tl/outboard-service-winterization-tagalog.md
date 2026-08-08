@@ -16,6 +16,7 @@ keywords: ["mekaniko ng bangka sa Toronto (boat mechanic in Toronto)","pagawaan 
 author: Harris Boat Works
 content_type: blog_article
 language: tl
+revenue_driver: service
 ---
 
 # Outboard motor service at winterization sa Ontario (Tagalog Guide)
@@ -140,13 +141,12 @@ Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: mag
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -16,6 +16,7 @@ keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hul
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Aluminum vs Fiberglass Hull Ontario
@@ -80,8 +81,6 @@ For Rice Lake at typical conditions, the difference is minor. Most of the season
 
 This is why a [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) puts so much weight on the transom-flex test and gelcoat inspection on fiberglass boats. The structural problems hide.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Resale: fiberglass usually wins
 
 The marketplace is honest about this: a 10-year-old fiberglass bowrider in clean condition holds more dollars than a comparable aluminum boat. Buyers see the gelcoat finish as evidence of care; they see scratches on aluminum as evidence of use.
@@ -123,8 +122,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - HBW internal trade-in and consignment data, 2018-2026
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Are aluminum hulls noisier than fiberglass?
@@ -161,13 +158,12 @@ Marginally yes, because aluminum hides fewer structural problems and the failure
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

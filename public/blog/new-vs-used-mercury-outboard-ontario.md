@@ -16,6 +16,7 @@ keywords: ["new vs used mercury outboard","used mercury outboard ontario","new m
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # New vs Used Mercury Outboard in Ontario, by the Numbers
@@ -93,8 +94,6 @@ The new-Mercury decision usually wins when at least two of these are true:
 
 Customers we steer toward new: repower projects on solid hulls (an 18-foot aluminum that is going to outlive everyone), first-time boat buyers who want a one-decision setup, and anyone with kids who are about to learn to water-ski.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## When used is the right answer
 
 The used-Mercury decision usually wins when at least two of these are true:
@@ -165,13 +164,12 @@ Once you factor in cross-border duties, exchange rates, and the loss of Canadian
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

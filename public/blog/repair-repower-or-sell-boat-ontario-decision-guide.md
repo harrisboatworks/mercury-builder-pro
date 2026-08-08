@@ -16,6 +16,7 @@ keywords: ["repair repower or sell boat ontario decision guide","repair repower 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Repair, Repower or Sell? Ontario Decision Guide
@@ -116,8 +117,6 @@ If your answer is "I'm not sure," repair is the conservative choice. You can alw
 
 **What we recommend:** a good Mercury shop for the install, with Mercury Product Protection (MPP) for extended warranty coverage. Match motor horsepower carefully to your boat's capacity plate. Read our [Complete Boat Repower Guide for the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) for the full process walkthrough.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **The honest math:** a new Mercury 90 HP repower on a typical Ontario aluminum boat lands in the $13,000-$15,000 range in 2026 including controls, rigging, and labour. For most owners, that buys a full factory warranty (3 years, with current promotions often extending factory-backed coverage) and 15-20 years of expected motor life. The cost-per-year math is usually better than people expect.
 
 For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guide](/blog/new-vs-used-mercury-outboard-ontario) covers the trade-offs.
@@ -209,13 +208,12 @@ Yes. We are not a parts-volume shop. We make our long-term business by being hon
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

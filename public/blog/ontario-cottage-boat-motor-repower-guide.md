@@ -16,6 +16,7 @@ keywords: ["repower cottage boat","replace outboard motor","cottage boat motor",
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Ontario Cottage Boat Motor Repower Guide (2026)
@@ -75,8 +76,6 @@ An 18 to 22 ft pontoon used for cruising, fishing with the kids, and the occasio
 ### The tin boat
 A 14 to 16 ft tiller boat used for solo fishing and quick runs. The motor has been getting harder to start and parts for it have been getting harder to find. These are simple repowers, smaller motor, less rigging, lower cost.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## When should you repower a cottage boat?
 
 **If the motor is dead:** Solve it before next season. A non-running motor at the cottage is a problem that only gets worse waiting.
@@ -131,8 +130,6 @@ HBW is drop-off only for repower projects. Bring the boat to our Gores Landing s
 
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -183,13 +180,12 @@ HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
