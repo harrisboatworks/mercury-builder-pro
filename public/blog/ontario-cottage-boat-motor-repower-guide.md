@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-07-24
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-07-24
+date_modified: 2026-08-08
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
@@ -155,7 +155,7 @@ Most of the time, yes. Evinrude stopped making outboards in 2020 and parts suppo
 
 ### Can I get financing for a cottage repower?
 
-Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms.
 
 ### When is the best time to repower a cottage boat?
 
@@ -195,4 +195,3 @@ HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

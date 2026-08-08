@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -226,7 +226,9 @@ Not every repower guide is written for this water. A few things specific to wher
 
 ## Financing
 
-Mercury offers competitive repower financing for qualified buyers, and HBW processes applications right in the shop. Trade-in credit on your old motor, even a dead one, reduces the amount you finance. Off-season Mercury Canada promotions sometimes improve the terms further. For the current rate and any active promotion, check the promotions page or call us.
+HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check [current financing terms](/promotions) before relying on any rate or payment estimate.
+
+Trade-in credit on your old motor, even a dead one, reduces the amount you finance.
 
 ---
 
@@ -326,4 +328,3 @@ October through March. Off-season ordering gets you the best motor availability 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

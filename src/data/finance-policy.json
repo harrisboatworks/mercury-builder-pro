@@ -1,6 +1,8 @@
 {
   "minimumCad": 5000,
   "dealerplanFeeCad": 349,
+  "contractTermMonths": 60,
+  "maximumAmortizationMonths": 240,
   "standardApr": {
     "under10000": 8.99,
     "atLeast10000": 7.99

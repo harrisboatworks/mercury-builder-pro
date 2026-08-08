@@ -1,4 +1,5 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
+import { canonicalBlogFinancingCopy, canonicalBlogFinancingFaqCopy } from './blogFinancingCopy';
 
 export interface HowToStep {
   name: string;
@@ -7827,7 +7828,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-08',
     publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
@@ -7947,7 +7948,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'How long does a cottage aluminum boat last?', answer: 'Properly maintained aluminum cottage boats regularly last 30 to 50 years or more. Many Kawartha aluminum hulls from the 1980s and 1990s are still on the water, often on their second or third Mercury repower.' },
       { question: 'What HP do I need for my cottage boat?', answer: 'Start with the boat\'s Canadian compliance notice or capacity label and the manufacturer\'s rating. For an outboard boat 6 metres or shorter, the capacity label shows the maximum safe motor size; do not exceed it. If the label is missing or the boat is longer than 6 metres, HBW verifies the manufacturer\'s limit and the hull, load, controls, shaft length, and use before recommending a Mercury. Length alone is not enough.' },
       { question: 'Should I switch from Evinrude to Mercury during a cottage repower?', answer: 'Most of the time, yes. Evinrude stopped making outboards in 2020 and parts support is only getting thinner. A brand conversion adds some rigging cost but pays back over the life of the new motor.' },
-      { question: 'Can I get financing for a cottage repower?', answer: 'Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.' },
+      { question: 'Can I get financing for a cottage repower?', answer: canonicalBlogFinancingFaqCopy },
       { question: 'When is the best time to repower a cottage boat?', answer: 'Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.' },
       { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes, if the motor horsepower, brand, or model changes. The update is free online and takes fifteen minutes. We help HBW customers through it.' },
       { question: 'Should I keep my old motor as a backup?', answer: 'Usually no. Old Evinrudes and older Mercurys have limited practical value as backups and the storage hassle is real. We give fair-market trade-in value during a repower.' },
@@ -8331,7 +8332,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
     imageAlt: 'Lund fishing boat with a Mercury outboard motor cruising on a calm Kawartha lake during a repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
@@ -8340,7 +8341,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 
 A repower means a new Mercury on your existing hull. For many Kawartha boats with a sound hull and transom, it can be the practical move: you keep the boat you know and avoid replacing the whole package. Motor availability, rigging, hull condition, parts, and current shop capacity determine the schedule. Build your starting quote at mercuryrepower.ca, then use the written HBW quote and work order for the project-specific timeline.
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-08*
 
 There is a moment every boat owner on these lakes eventually meets. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
@@ -8536,7 +8537,9 @@ Not every repower guide is written for this water. A few things specific to wher
 
 ## Financing
 
-Mercury offers competitive repower financing for qualified buyers, and HBW processes applications right in the shop. Trade-in credit on your old motor, even a dead one, reduces the amount you finance. Off-season Mercury Canada promotions sometimes improve the terms further. For the current rate and any active promotion, check the promotions page or call us.
+${canonicalBlogFinancingCopy}
+
+Trade-in credit on your old motor, even a dead one, reduces the amount you finance.
 
 ---
 
@@ -16238,7 +16241,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
       { question: 'Should I buy the cheapest motor I can afford?', answer: 'Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.' },
-      { question: 'Can I finance a small Mercury outboard?', answer: 'Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).' },
+      { question: 'Can I finance a small Mercury outboard?', answer: canonicalBlogFinancingFaqCopy },
       { question: 'How long does a small Mercury outboard last?', answer: 'There is no reliable universal lifespan in hours or years. Maintenance, corrosion control, storage, operating load and parts availability all matter. A documented motor that follows its serial-number maintenance schedule is a better bet than one sold on a generic lifetime estimate.' },
       { question: 'What is the cheapest Mercury that can pull a tube?', answer: 'You need at least 60 HP to pull a tube reliably with one rider, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke, but you almost always want at least 90 HP for family tubing on Rice Lake or any open water. See the [motor selection page](/quote/motor-selection) for live pricing on the lineup.' },
       { question: 'Do I need rigging when I buy a small Mercury tiller?', answer: 'No. Tiller motors 20 HP and under are drop-in installs. You hang it on the transom, hook up the fuel line, and go. No controls, no cables, no install labour. The motor itself is the whole purchase. Above 25 HP, motors are typically remote-control installs with rigging, controls, and labour as separate line items.' },
@@ -33382,7 +33385,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-07-23",
+    dateModified: "2026-08-08",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -33406,13 +33409,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is a 5-year-old Mercury outboard still considered "new enough"?', answer: "A Mercury from 2020-2021 with under 300 hours and documented service is functionally a current-generation motor. The EFI, SmartCraft, and cowling design have not changed significantly since then. Mechanically you are in good shape. The only real difference is the remaining warranty (zero on a private sale, possibly transferable if the original owner enrolled MPP)." },
       { question: 'How many hours is "too many" on a used Mercury?', answer: "There is no reliable hour number by itself. Judge the exact engine family, service records, fault history, compression or leak-down results, gearcase condition, corrosion, storage history, and a proper test run together. A well-documented higher-hour motor can be a better purchase than a neglected low-hour motor." },
       { question: "Can a Mercury dealer transfer factory warranty to a second owner?", answer: "Unexpired recreational-use Mercury limited-warranty coverage can transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. Mercury Product Protection has its own transfer timing, eligibility, documentation, inspection, and fee rules, so have an authorized dealer verify the serial record before purchase." },
-      { question: "What is the financing difference between new and used?", answer: "New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used." },
+      { question: "What is the financing difference between new and used?", answer: `${canonicalBlogFinancingFaqCopy} Used motor purchases are typically cash or personal-loan financed. The financing math can tip the decision toward new even when the sticker price favours used.` },
       { question: "Should I get a pre-purchase inspection on a used Mercury?", answer: "Yes, always, if you are spending more than a few thousand dollars. A compression test, a quick scan of the SmartCraft data (hours, fault codes), and a 20-minute test run is a $150-$250 service that has saved Ontario buyers tens of thousands of dollars in our experience. We do this for customers regularly, and we will do it for boats they have not bought yet." },
       { question: "Is buying new from a US dealer cheaper than buying from a Canadian dealer?", answer: "Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Premier dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve." },
     ],
     content: `# New vs Used Mercury Outboard in Ontario, by the Numbers
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-08*
 
 ## Quick answer
 
@@ -34372,14 +34375,14 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
     imageAlt: 'Older Mercury outboard and worn transom beside a new Mercury repower installation at Harris Boat Works',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-07-04',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
     keywords: ['repair repower or sell boat ontario decision guide', 'repair repower or sell boat ontario decision guide ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
     faqs: [
       { question: "Is it ever worth repowering a boat with a damaged hull?", answer: "Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat." },
-      { question: "Can I finance just a repower without buying the whole boat?", answer: "Yes. Mercury Marine financing programs (current rates available through your Mercury dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates." },
+      { question: "Can I finance just a repower without buying the whole boat?", answer: canonicalBlogFinancingFaqCopy },
       { question: "What's the resale impact of doing a repower right before selling?", answer: "Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue." },
       { question: "How do I get an honest repair estimate?", answer: "Get two estimates from Mercury dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended \"we'll see what we find\" estimates that have no upper bound." },
       { question: "Does the season matter for selling?", answer: "Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring." },
@@ -36843,15 +36846,15 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
     content: `## Quick answer
 
-A Mercury outboard purchase at HBW may qualify for {{LIVE_RATE}} promotional financing through DealerPlan and participating Canadian lenders through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, a Mercury 115 Pro XS at $17,490 is about $123 per month and a 150 Pro XS at $24,349 is about $170 per month on a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
+A Mercury outboard purchase at HBW may qualify for {{LIVE_RATE}} promotional financing through DealerPlan, primarily with TD Auto Finance, through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, a Mercury 115 Pro XS at $17,490 is about $123 per month and a 150 Pro XS at $24,349 is about $170 per month on a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
 
-*Last reviewed: 2026-07-18*
+*Last reviewed: 2026-08-08*
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
@@ -36859,11 +36862,9 @@ This page shows the current bare-motor examples, Ontario tax treatment, the mand
 
 ## How HBW finances Mercury repowers
 
-HBW arranges [outboard financing](/blog/mercury-outboard-financing-ontario-2026) through **DealerPlan** and participating Canadian lenders. The lender depends on the application and approval; this is financing arranged by HBW, not a direct loan issued by Mercury Marine.
+${canonicalBlogFinancingCopy}
 
-A common misconception is that a U.S. Mercury financing page applies in Canada. Sheffield Financial is not the HBW Canadian path; HBW routes eligible applications through DealerPlan.
-
-**The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC).** HBW confirms the lender, contract, amortization, amount financed, $349 DealerPlan documentation fee, and any balance due at maturity in the written disclosure. Check the [promotions page](/promotions) for current program dates and terms.
+HBW arranges the application; Mercury Marine does not issue the loan. The written lender disclosure confirms the lender, approval, down payment, fee, balance at maturity, and final terms. U.S. lender pages do not apply to an HBW Canadian purchase.
 
 **What this financing path gives you:**
 - Fixed APR (no rate changes during the term)
@@ -36905,7 +36906,7 @@ Repowers combine a new motor with an existing hull and rigging. HBW's standard h
 
 ## Common mistakes
 
-- **Using a U.S. financing page for a Canadian purchase.** HBW arranges eligible Canadian applications through DealerPlan and participating Canadian lenders. The U.S. Sheffield path does not apply.
+- **Using a U.S. financing page for a Canadian purchase.** HBW arranges eligible Canadian applications through DealerPlan and participating Canadian lenders. The U.S.-only lender path does not apply.
 - **Comparing the headline payment without the fee or HST choice.** The $349 DealerPlan fee is mandatory on financed purchases. HST may be paid at closing or included in the financed amount, which changes both the monthly payment and balance at maturity.
 - **Treating 240 months as the contract term.** It is the amortization basis in these examples. The active contract is up to 60 months, so a remaining balance may be due at maturity.
 - **Assuming an advertised rate is an approval.** {{LIVE_RATE}} is the current headline rate through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
@@ -36960,11 +36961,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
 
 `,
     faqs: [
-      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan and participating Canadian lenders; the signed lender disclosure controls the actual approval and terms." },
+      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms." },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
       { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
-      { question: "Is Sheffield Financial available to Canadian buyers?", answer: "The U.S. Sheffield path does not apply to an HBW Canadian purchase. HBW arranges eligible applications through DealerPlan and participating Canadian lenders." },
+      { question: "Does a U.S. Mercury financing page apply to Canadian buyers?", answer: "No. That U.S.-only lender path does not apply to an HBW Canadian purchase. HBW arranges eligible applications through DealerPlan, primarily with TD Auto Finance." },
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
       { question: "What fee is added to a financed purchase?", answer: "A mandatory $349 DealerPlan documentation fee is added after HST to every financed purchase. The payment example must include it." },

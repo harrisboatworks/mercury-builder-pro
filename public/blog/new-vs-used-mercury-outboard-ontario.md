@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -149,7 +149,7 @@ Unexpired recreational-use Mercury limited-warranty coverage can transfer to a s
 
 ### What is the financing difference between new and used?
 
-New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used.
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms. Used motor purchases are typically cash or personal-loan financed. The financing math can tip the decision toward new even when the sticker price favours used.
 
 ### Should I get a pre-purchase inspection on a used Mercury?
 
@@ -181,4 +181,3 @@ Once you factor in cross-border duties, exchange rates, and the loss of Canadian
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
