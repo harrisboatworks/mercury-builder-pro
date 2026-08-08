@@ -39,7 +39,7 @@ function extractArticles(src) {
     const block = src.slice(positions[i].start, positions[i + 1].start);
     const content = readTemplate(block, 'content');
     const description = readQuoted(block, 'description');
-    articles.push({ slug: positions[i].slug, content, description, blockStart: positions[i].start });
+    articles.push({ slug: positions[i].slug, content, description, raw: block, blockStart: positions[i].start });
   }
   return articles;
 }
@@ -138,7 +138,66 @@ function checkPresent(text, push) {
   }
 }
 
-// R5: article-specific operating contracts that previously drifted back into
+// R5: dealer pages must not imply that storage, service, installations, or
+// customer access operate year-round. Negative statements such as "we don't
+// offer year-round storage" remain allowed because they state the boundary.
+const DEALER_PAGE_SLUG_RX = /^mercury-dealer-/;
+const SEASONAL_STORAGE_DEALER_SLUGS = new Set([
+  'mercury-dealer-ajax-ontario-hbw',
+  'mercury-dealer-bowmanville-ontario-hbw',
+  'mercury-dealer-cobourg-ontario-hbw',
+  'mercury-dealer-lindsay-ontario-hbw',
+  'mercury-dealer-northumberland-county-hbw',
+  'mercury-dealer-oshawa-ontario-hbw',
+  'mercury-dealer-peterborough-ontario-hbw',
+  'mercury-dealer-port-hope-ontario-hbw',
+  'mercury-dealer-whitby-ontario-hbw',
+]);
+const UNSCOPED_SEASONAL_CLAIMS = [
+  {
+    rx: /\byear-round storage\b/i,
+    rule: 'no-year-round-storage-claim',
+    allow: /\b(?:no|not|never)\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)?n['’]t\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)? not\b[^.\n]{0,80}\byear-round storage\b/i,
+  },
+  {
+    rx: /\byear-round (?:service|installations?|customer access|operations?|option)\b|\bopen 365\b|\bone marina, all season\b/i,
+    rule: 'no-year-round-operations-claim',
+  },
+  {
+    rx: /\b(?:offers?|provides?|has) (?:indoor|heated|climate-controlled) storage\b/i,
+    rule: 'outdoor-storage-only',
+  },
+  {
+    rx: /\b(?:service|installations?|repairs?) (?:continues?|runs?|is available) (?:through|all) winter\b/i,
+    rule: 'no-winter-shop-work',
+  },
+];
+function checkDealerSeasonalClaims(slug, text, push) {
+  if (!DEALER_PAGE_SLUG_RX.test(slug)) return;
+  const yearRoundStorageCheck = UNSCOPED_SEASONAL_CLAIMS[0];
+  for (const sentence of sentences(text)) {
+    const match = sentence.match(yearRoundStorageCheck.rx);
+    if (match && !yearRoundStorageCheck.allow.test(sentence)) {
+      push(yearRoundStorageCheck.rule, sentence);
+    }
+  }
+  for (const check of UNSCOPED_SEASONAL_CLAIMS.slice(1)) {
+    const match = text.match(check.rx);
+    if (match) push(check.rule, match[0]);
+  }
+  if (SEASONAL_STORAGE_DEALER_SLUGS.has(slug)) {
+    if (!/don['’]t offer indoor, heated, climate-controlled, summer, or year-round storage/i.test(text)) {
+      push('storage-denial-required', 'Missing the approved outdoor-winter-storage boundary.');
+    }
+    if (!/when we reopen in early April/i.test(text)) {
+      push('seasonal-reopen-wording', 'Missing the approved early-April reopening wording.');
+    }
+    const hardDateReopen = text.match(/(?:when|after) we reopen April 1/i);
+    if (hardDateReopen) push('no-hard-reopen-date', hardDateReopen[0]);
+  }
+}
+
+// R6: article-specific operating contracts that previously drifted back into
 // customer-facing copy. Keep these semantic and narrow: they protect durable
 // HBW business rules without turning ordinary wording changes into failures.
 const GTA_DRIVE_IN_REQUIRED = [
@@ -759,6 +818,10 @@ for (const file of BLOG_FILES) {
     checkFounder(text, localPush);
     checkAge(text, localPush);
     checkPresent(text, localPush);
+    // Dealer-page policy also appears in the structured `faqs` array, which is
+    // customer-facing via FAQ schema. Scan the full article block so a corrected
+    // body answer cannot leave a contradictory structured answer behind.
+    checkDealerSeasonalClaims(a.slug, a.raw, localPush);
     checkArticleContract(a.slug, text, localPush);
   }
 }
