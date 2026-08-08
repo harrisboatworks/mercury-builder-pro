@@ -345,7 +345,7 @@ export default function TagalogBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Mercury dealer mula 1965" />
+          <AuthorByline name="Jay Harris" title="May-ari, Harris Boat Works" />
         </div>
 
         {tocItems.length > 2 && (

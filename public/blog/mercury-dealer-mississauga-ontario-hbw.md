@@ -66,7 +66,7 @@ Mercury Premier is the top tier in their dealer program. It means deeper parts i
 
 ## A Business Built on Repeat, Not Volume
 
-Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not a high-volume sales floor, we're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
+We're not a high-volume sales floor. We're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
 
 ---
 
@@ -124,12 +124,12 @@ We're not going to tell you to repower when you shouldn't. If the hull isn't wor
 
 We're going to rig the motor the right way, not the fast way.
 
-That's the deal. It's been the deal since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 

@@ -62,9 +62,9 @@ A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamil
 
 The technical depth on harder jobs is where Premier certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
 
-## Third Generation, Since 1947
+## A Shop Built on Repeat Customers
 
-Harris Boat Works has been in Gores Landing since 1947. Jay Harris's grandfather started it. Three generations later, the business still runs on repeat customers and referrals. The model depends on doing right by people, not on a quarterly sales number.
+The business runs on repeat customers and referrals. The model depends on doing right by people, not on a quarterly sales number.
 
 ---
 
@@ -118,12 +118,12 @@ This is the trip that most rewards preparation:
 
 You see the installed price before you commit to anything, including the drive. The rigging conversation happens before we order a motor, not after. The job gets done properly. You leave with a motor that's set up for your hull, not just mounted.
 
-That's been the deal since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 

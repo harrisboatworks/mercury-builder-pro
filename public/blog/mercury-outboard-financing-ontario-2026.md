@@ -131,7 +131,7 @@ Worth knowing, because people assume it's either/or: financing and bonus-coverag
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. Our tooling, parts support, rigging, water testing, and service are Mercury-focused right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the quote, application, rigging, and later service. That continuity is worth weighing alongside the written rate and terms.
+We're a family marina with Mercury-focused tooling, parts support, rigging, water testing, and service right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the quote, application, rigging, and later service. That continuity is worth weighing alongside the written rate and terms.
 
 ## Ready to see your real number?
 

@@ -228,8 +228,6 @@ A few specific reasons we're confident in this recommendation for most Ontario o
 
 **We're a Mercury Premier Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
 
-**79 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
-
 We're not the biggest dealer in Ontario. But we're on the water, we know Rice Lake, and we tell people the truth, including when the truth is that their hull isn't worth a repower, or that keeping their existing engine makes more sense.
 
 ---
@@ -255,7 +253,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Premier Dealer.*
+*Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
 ---
 

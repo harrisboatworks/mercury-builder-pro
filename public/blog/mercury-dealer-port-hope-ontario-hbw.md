@@ -30,7 +30,7 @@ language: en-CA
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -121,7 +121,7 @@ For a motor purchase conversation, call: 905-342-2153.
 
 ### Is there a Mercury Premier dealer in Port Hope?
 
-Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction.
 
 ### How long is the drive from Port Hope to HBW?
 

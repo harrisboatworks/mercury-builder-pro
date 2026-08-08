@@ -220,7 +220,7 @@ Always confirm current regulations at ontario.ca/fishing before you fish.
 
 ## Plan Your Rice Lake Season
 
-Whether you are rigging a new boat for the lake or repowering the one you have, we can help you match the motor to the water. Harris Boat Works has been on the south shore of Rice Lake since 1947, and a Mercury dealer since 1965.
+Whether you are rigging a new boat for the lake or repowering the one you have, we can help you match the motor to the water. Harris Boat Works has been on the south shore of Rice Lake since 1947.
 
 **Phone:** 905-342-2153
 **Build a quote:** [mercuryrepower.ca](https://mercuryrepower.ca)

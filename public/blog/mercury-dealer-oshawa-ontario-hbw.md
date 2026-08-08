@@ -66,9 +66,9 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 
-## Mercury Premier, Third Generation Since 1947
+## Why Oshawa Boaters Make the Drive
 
-Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
+Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
 
 ---
 
@@ -124,7 +124,7 @@ You're practically in our neighbourhood. Let's work together.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 

@@ -2519,7 +2519,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 
 ## What HBW checks before you buy from us
 
-If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. Since 1947 we've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
+If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. Over decades we've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
 
 ---
 
@@ -4595,7 +4595,7 @@ Quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) includes a 
 
 If you have a current Mercury setup and the prop is wrong (over-pitched, under-pitched, wrong family for the hull), bring it in for a service visit. We will run the WOT test and recommend the right replacement.
 
-Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: (905) 342-2153
 Text: (647) 952-2153`,
@@ -13326,7 +13326,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Financing is improving.
 - The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
-We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We watch the market from our shop on Rice Lake. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -13580,7 +13580,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-lineup-ontario',
     title: 'Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)',
-    description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.",
+    description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes.",
     image: '/lovable-uploads/hero-mercury-motor-families.webp',
     imageAlt: 'Mercury outboard motors on a Harris Boat Works dock representing the 2027 model year lineup for Ontario boaters.',
     author: 'Jay Harris',
@@ -13610,7 +13610,7 @@ Mercury's model year rolled over to 2027 on July 1, 2026. If that sentence makes
 
 What the flip does change is the conversation. The spec sheet you're shopping is now the 2027 lineup, official 2027 announcements are trickling out from Mercury through the summer, and pricing is in transition. This guide covers both halves: which Mercury family actually fits your boat, and how to handle the model year change without overthinking it.
 
-We've been selling Mercury since 1965, from the same Rice Lake dock the family has run since 1947. Here's the honest version.
+We've been selling Mercury since 1965 from our Rice Lake dock. Here's the honest version.
 
 ## The Mercury Families, Explained
 
@@ -14082,7 +14082,7 @@ Always confirm current regulations at ontario.ca/fishing before you fish.
 
 ## Plan Your Rice Lake Season
 
-Whether you are rigging a new boat for the lake or repowering the one you have, we can help you match the motor to the water. Harris Boat Works has been on the south shore of Rice Lake since 1947, and a Mercury dealer since 1965.
+Whether you are rigging a new boat for the lake or repowering the one you have, we can help you match the motor to the water. Harris Boat Works has been on the south shore of Rice Lake since 1947.
 
 **Phone:** 905-342-2153
 **Build a quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -15135,7 +15135,7 @@ Worth knowing, because people assume it's either/or: financing and bonus-coverag
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. Our tooling, parts support, rigging, water testing, and service are Mercury-focused right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the quote, application, rigging, and later service. That continuity is worth weighing alongside the written rate and terms.
+We're a family marina with Mercury-focused tooling, parts support, rigging, water testing, and service right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the quote, application, rigging, and later service. That continuity is worth weighing alongside the written rate and terms.
 
 ## Related guides
 
@@ -21519,7 +21519,7 @@ Choosing a dealer by distance alone is easy. Choosing by the complete job takes 
 
 For a portable outboard, the nearest authorized dealer may be the practical answer. For a full repower, the better comparison is the written scope: motor, controls, rigging, propeller, installation, testing, warranty registration, and the support you will receive after pickup.
 
-HBW has sold Mercury outboards since 1965 and operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
+HBW operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
 
 ---
 
@@ -24001,8 +24001,6 @@ A few specific reasons we're confident in this recommendation for most Ontario o
 
 **We're a Mercury Premier Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
 
-**79 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
-
 We're not the biggest dealer in Ontario. But we're on the water, we know Rice Lake, and we tell people the truth, including when the truth is that their hull isn't worth a repower, or that keeping their existing engine makes more sense.
 
 ---
@@ -24028,7 +24026,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Premier Dealer.*
+*Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
 ---
 
@@ -29236,7 +29234,7 @@ whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once the
 
 We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
 
-Harris Boat Works has served Rice Lake boaters since 1947 and sold and serviced Mercury outboards since 1965. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and services these motors on Rice Lake. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
 ---
 
@@ -29396,9 +29394,9 @@ Mercury has a dealer tier program. Premier is the top level. It's not a marketin
 
 In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
-## We're Third-Generation, and That Changes Things
+## Why the Reputation Matters
 
-Harris Boat Works has been on Rice Lake since 1947. Jay Harris's grandfather started it, his father ran it, and Jay runs it now. When you're the third generation, the reputation you're managing was built before you were born. You don't blow that on a sale.
+This shop runs on repeat customers and referrals. The recommendation has to make sense after the invoice is paid and the boat is back on the water.
 
 We're not running a sales floor with monthly quotas. We're running a family marina where the next customer is often the neighbour of the last one. The conversation is different.
 
@@ -29487,12 +29485,12 @@ No quote fog machine. No "call us and we'll work something up." No bait pricing.
 
 You see the installed price. We talk through the rigging. We do the job properly. You get back on the water.
 
-That's been the model since 1947. It still works.
+That's the model. It still works.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -29515,7 +29513,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program." },
       { question: 'How far is Harris Boat Works from Markham?', answer: 'Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.' },
-      { question: 'Why drive to Rice Lake instead of a closer GTA dealer?', answer: 'Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).' },
+      { question: 'Why drive to Rice Lake instead of a closer GTA dealer?', answer: 'Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture.' },
       { question: 'Does HBW serve Unionville and Stouffville too?', answer: 'Yes. We serve a broad Markham-area customer base including Unionville, Stouffville, and the surrounding York Region communities.' },
     ],
   },
@@ -29734,7 +29732,7 @@ Mercury Premier is the top tier in their dealer program. It means deeper parts i
 
 ## A Business Built on Repeat, Not Volume
 
-Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not a high-volume sales floor, we're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
+We're not a high-volume sales floor. We're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
 
 ---
 
@@ -29814,12 +29812,12 @@ We're not going to tell you to repower when you shouldn't. If the hull isn't wor
 
 We're going to rig the motor the right way, not the fast way.
 
-That's the deal. It's been the deal since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -30194,9 +30192,9 @@ A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamil
 
 The technical depth on harder jobs is where Premier certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
 
-## Third Generation, Since 1947
+## A Shop Built on Repeat Customers
 
-Harris Boat Works has been in Gores Landing since 1947. Jay Harris's grandfather started it. Three generations later, the business still runs on repeat customers and referrals. The model depends on doing right by people, not on a quarterly sales number.
+The business runs on repeat customers and referrals. The model depends on doing right by people, not on a quarterly sales number.
 
 ---
 
@@ -30269,12 +30267,12 @@ Call us at 905-342-2153 or text. We can have a real conversation about whether t
 
 You see the installed price before you commit to anything, including the drive. The rigging conversation happens before we order a motor, not after. The job gets done properly. You leave with a motor that's set up for your hull, not just mounted.
 
-That's been the deal since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -30692,9 +30690,9 @@ This isn't accidental. It's a process designed to put a salesperson in the conve
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) does the opposite. Real installed pricing in Canadian dollars, in about three minutes, before any conversation starts. You see the number. You think it over. You engage us when you're ready. Prefer to scan the list first? [What each Mercury motor costs](/pricing-reference) is published on our price reference.
 
-## Mercury Premier, Third Generation
+## What Mercury Premier Means on a Repower
 
-Mercury Premier is the top tier in their dealer program. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
+Mercury Premier is the top tier in their dealer program. Harris Boat Works has held it for years. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
 
 ---
 
@@ -30769,7 +30767,7 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -30992,9 +30990,9 @@ Durham Region buyers tend to be experienced boaters. They've owned boats, dealt 
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
-## Mercury Premier, Rice Lake Since 1947
+## Why Ajax Boaters Make the Drive
 
-Top dealer tier in Mercury's program. Third-generation family marina, on Rice Lake since 1947. The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
+The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
 
 ---
 
@@ -31064,12 +31062,12 @@ Build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and 
 
 You see the price before you leave Ajax. The rigging gets discussed before we order anything. The job gets done right. You're back on the water with a motor that performs the way it was designed to.
 
-45 minutes. Three generations. Since 1947.
+About 45 minutes from Ajax. Straight pricing before you leave home.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -31090,7 +31088,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'How far is HBW from Ajax?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
-      { question: 'Why drive to Rice Lake from Ajax?', answer: 'Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.' },
+      { question: 'Why drive to Rice Lake from Ajax?', answer: 'Mercury Premier tier, transparent CAD pricing online, and no high-pressure dealer culture.' },
       { question: 'Can I use HBW as my primary Mercury dealer?', answer: 'Yes. Many Durham Region customers do - spring commissioning, mid-season service, fall winterization. 45 minutes is short enough to make it practical.' },
     ],
   },
@@ -31146,9 +31144,9 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 
-## Mercury Premier, Third Generation Since 1947
+## Why Oshawa Boaters Make the Drive
 
-Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
+Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
 
 ---
 
@@ -31226,7 +31224,7 @@ You're practically in our neighbourhood. Let's work together.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -31301,9 +31299,9 @@ Most of what we do is repower, replacing aging motors on hulls that still have y
 
 The rigging conversation matters here: what HP, what controls, what prop for your hull and how you use it. We have that conversation before we order anything. The result is a motor that performs the way Mercury designed it to for your specific application.
 
-## Mercury Premier, Third Generation Since 1947
+## Why Bowmanville Boaters Make the Drive
 
-Top tier in Mercury's dealer program. Harris Boat Works has been on Rice Lake since 1947, three generations. Third-generation means the reputation that's built was started before Jay Harris was born, and he intends to keep it. The business depends on the next customer being the referral from the last one.
+Top tier in Mercury's dealer program. The business depends on the next customer being the referral from the last one, so the quote and rigging advice have to hold up after pickup.
 
 ---
 
@@ -31383,7 +31381,7 @@ This is what a dealer relationship is supposed to feel like.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -34725,7 +34723,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury dealer peterborough', 'peterborough mercury outboard', 'mercury premier dealer ontario', 'kawartha mercury repower'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive.
 
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
@@ -34734,7 +34732,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ## The short answer for Peterborough boaters
 
-If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: [Mercury Premier Dealer status](/blog/best-mercury-dealer-ontario-hbw-difference), real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 35 minutes south of Peterborough via Highway 28 in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
+If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: [Mercury Premier Dealer status](/blog/best-mercury-dealer-ontario-hbw-difference), real prices published online in our quote configurator (no "call for price"), and water testing on Rice Lake before you take delivery. We're about 35 minutes south of Peterborough via Highway 28 in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those things.
 
 ## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
 
@@ -34794,7 +34792,7 @@ mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote befo
 
 Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
 
-Our quote builder skips the call-for-a-starting-price step and shows the current configuration in Canadian dollars. The boat-specific written quote controls the final motor, rigging, labour, tax, trade-in, and financing figures. Three generations of HBW have built this business on returning customers and referrals, not quota-driven sales tactics.
+Our quote builder skips the call-for-a-starting-price step and shows the current configuration in Canadian dollars. The boat-specific written quote controls the final motor, rigging, labour, tax, trade-in, and financing figures. HBW has built this business on returning customers and referrals, not quota-driven sales tactics.
 
 ## What we see at HBW
 
@@ -34832,14 +34830,14 @@ Yes. Outdoor storage with shrinkwrap. For Peterborough customers who launch on R
 **Do you sell new boats too?**
 Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons primarily, all Mercury-rigged. Worth a conversation if you're in the new-boat market.
 
-Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-07-18.*
 `,
     faqs: [
-      { question: "Who is the best Mercury dealer near Peterborough, Ontario?", answer: "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965." },
+      { question: "Who is the best Mercury dealer near Peterborough, Ontario?", answer: "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online and water tests repowers on Rice Lake." },
       { question: "How far is Harris Boat Works from Peterborough?", answer: "About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore." },
-      { question: "Is Harris Boat Works a Mercury Premier dealer?", answer: "Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947." },
+      { question: "Is Harris Boat Works a Mercury Premier dealer?", answer: "Yes. Harris Boat Works holds Mercury's Premier dealer status and provides authorized Mercury sales and service on Rice Lake." },
     ],
   },
   {
@@ -34993,7 +34991,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     readTime: '6 min read',
     keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury premier'],
     faqs: [
-      { question: 'Is there a Mercury Premier dealer in Port Hope?', answer: 'Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
+      { question: 'Is there a Mercury Premier dealer in Port Hope?', answer: 'Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction.' },
       { question: 'How long is the drive from Port Hope to HBW?', answer: 'About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.' },
       { question: 'Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?', answer: 'Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup.' },
       { question: 'Will HBW service my Lake Ontario boat without me storing it on Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser.' },
@@ -35001,7 +34999,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     ],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca.
 
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
@@ -35112,7 +35110,7 @@ No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We 
 **Can I trade in my current boat or motor?**
 Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
 
-Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
 
@@ -35261,7 +35259,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     slug: 'mercury-dealer-northumberland-county-hbw',
     title: 'Mercury Dealer Northumberland HBW',
     seoTitle: 'Mercury Dealer Northumberland County | HBW Rice Lake',
-    description: 'Harris Boat Works is Mercury Premier dealer for Northumberland County since 1947. Serves Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system.',
+    description: 'Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system.',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
     imageAlt: 'Harris Boat Works technician installing and inspecting a Mercury outboard in the Gores Landing service shop',
     author: 'Harris Boat Works',
@@ -35272,7 +35270,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     readTime: '5 min read',
     keywords: ['mercury dealer northumberland county', 'northumberland mercury premier', 'rice lake mercury dealer', 'trent system mercury'],
     faqs: [
-      { question: 'Who is the Mercury dealer for Northumberland County?', answer: 'Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.' },
+      { question: 'Who is the Mercury dealer for Northumberland County?', answer: 'Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.' },
       { question: 'How far is HBW from each Northumberland community?', answer: 'Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes via County Roads 18 and 28. Hastings is 25 minutes via County Road 9 east across the Trent. Campbellford is 35 minutes. Colborne is 35 minutes via Highway 401. Trent Hills is 30 minutes. Brighton is the furthest at about 50 minutes via the 401 east to County Road 64.' },
       { question: 'Does HBW service Bay of Quinte boats from Brighton?', answer: 'Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser.' },
       { question: 'Does HBW sell new boats in addition to Mercury motors?', answer: 'Yes. We are also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged. Worth a conversation if you are in the new-boat market.' },
@@ -35280,7 +35278,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     ],
     content: `## Quick Answer
 
-Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
+Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
 
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
@@ -35289,7 +35287,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities, Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
 
-For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
+For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW provides Mercury sales and service right on Rice Lake at Gores Landing.
 
 If you live anywhere in Northumberland County, HBW is your [local Mercury Premier dealer](/blog/best-mercury-dealer-ontario-hbw-difference).
 
@@ -35347,7 +35345,7 @@ This range is why HBW carries the full Mercury lineup and full SmartCraft diagno
 
 In some markets, "local" is just a 5-kilometer marketing claim. In Northumberland, "local" is functional. The Northumberland boating community is small enough that a bad service experience travels by word of mouth fast. HBW is the dealer that picks up the phone when a Cobourg customer's neighbour calls because the original customer recommended us.
 
-Three generations of HBW have been on Rice Lake. That's longer than most boats in the county have been on the water.
+HBW is on Rice Lake inside Northumberland County. The shop's reputation depends on returning customers and referrals from local boaters.
 
 ## What we see at HBW
 
@@ -35391,7 +35389,7 @@ No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
 **Do you sell new boats?**
 Yes. We're also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged.
 
-Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
 `,
@@ -36949,7 +36947,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to 
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 ## Sources
 
@@ -37175,8 +37173,6 @@ We'll check the serial number against Mercury's current eligibility information 
     content: `> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda is often considered for refinement and quiet running in the 9.9 to 90 HP range; Mercury offers Pro XS performance and a broader lineup above 350 HP. On Rice Lake, HBW provides authorized Mercury sales and service directly on the lake. For either brand, check the current dealer route from where the boat lives.
 
 - Mercury Premier Dealer
-- Family-owned since 1947
-- Mercury dealer since 1965
 - Gores Landing, ON
 - Quote builder available
 
@@ -37277,7 +37273,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 **Comparing real numbers beats comparing brochures.** Build a Mercury quote for your boat at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).`,
     faqs: [

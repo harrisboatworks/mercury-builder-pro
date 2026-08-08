@@ -60,9 +60,9 @@ Mercury has a dealer tier program. Premier is the top level. It's not a marketin
 
 In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
-## We're Third-Generation, and That Changes Things
+## Why the Reputation Matters
 
-Harris Boat Works has been on Rice Lake since 1947. Jay Harris's grandfather started it, his father ran it, and Jay runs it now. When you're the third generation, the reputation you're managing was built before you were born. You don't blow that on a sale.
+This shop runs on repeat customers and referrals. The recommendation has to make sense after the invoice is paid and the boat is back on the water.
 
 We're not running a sales floor with monthly quotas. We're running a family marina where the next customer is often the neighbour of the last one. The conversation is different.
 
@@ -129,12 +129,12 @@ No quote fog machine. No "call us and we'll work something up." No bait pricing.
 
 You see the installed price. We talk through the rigging. We do the job properly. You get back on the water.
 
-That's been the model since 1947. It still works.
+That's the model. It still works.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -166,7 +166,7 @@ Approximately 70 minutes via Highway 404 north and County Road 28. Distance is a
 
 ### Why drive to Rice Lake instead of a closer GTA dealer?
 
-Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).
+Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture.
 
 ### Does HBW serve Unionville and Stouffville too?
 

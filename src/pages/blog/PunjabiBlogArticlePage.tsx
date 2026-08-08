@@ -345,7 +345,7 @@ export default function PunjabiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 ਤੋਂ Mercury ਡੀਲਰ" />
+          <AuthorByline name="Jay Harris" title="Harris Boat Works ਦੇ ਮਾਲਕ" />
         </div>
 
         {tocItems.length > 2 && (

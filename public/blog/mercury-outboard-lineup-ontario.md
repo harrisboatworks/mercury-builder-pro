@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)"
-description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes."
+description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes."
 category: "Buying Guide"
 date_published: 2026-07-09
 date_modified: 2026-07-31
@@ -20,7 +20,7 @@ language: en-CA
 
 # Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)
 
-> Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.
+> Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes.
 
 **Category:** Buying Guide  
 **Published:** 2026-07-09  
@@ -36,7 +36,7 @@ Mercury's model year rolled over to 2027 on July 1, 2026. If that sentence makes
 
 What the flip does change is the conversation. The spec sheet you're shopping is now the 2027 lineup, official 2027 announcements are trickling out from Mercury through the summer, and pricing is in transition. This guide covers both halves: which Mercury family actually fits your boat, and how to handle the model year change without overthinking it.
 
-We've been selling Mercury since 1965, from the same Rice Lake dock the family has run since 1947. Here's the honest version.
+We've been selling Mercury since 1965 from our Rice Lake dock. Here's the honest version.
 
 ## The Mercury Families, Explained
 
