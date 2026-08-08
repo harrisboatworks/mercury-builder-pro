@@ -454,6 +454,27 @@ check(
 );
 const articleSource = (slug) =>
   blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+const mercury90Vs115Article = articleSource('mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat');
+check(
+  /Command Thrust: Who It's Actually For/.test(mercury90Vs115Article) &&
+    /standard gearcase is the right choice for a planing aluminum or fibreglass V-hull/.test(mercury90Vs115Article),
+  'The 90-vs-115 guide must preserve the pontoon/workboat Command Thrust boundary for planing V-hulls.',
+);
+check(
+  !/(?:sensible upgrade that we routinely recommend|CT gearcase is worth considering on either engine|especially with Command Thrust|Pairing it with Command Thrust)/i.test(
+    mercury90Vs115Article,
+  ) && !/6 mph faster/i.test(mercury90Vs115Article),
+  'The 90-vs-115 guide must not recommend Command Thrust as a V-hull load upgrade or hard-code the boat-specific speed delta.',
+);
+const mercury115Vs150Article = articleSource('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
+check(
+  /we do not use Command Thrust to make a 115 behave like a 150/.test(mercury115Vs150Article),
+  'The 115-vs-150 guide must preserve the V-hull Command Thrust correction.',
+);
+check(
+  !/Tom K\.|115 Command Thrust will do everything you want/i.test(mercury115Vs150Article),
+  'The 115-vs-150 guide must not restore the Tom K. Command Thrust testimonial.',
+);
 const dealerHeroCanon = [
   {
     slug: 'mercury-dealer-markham-ontario-hbw',

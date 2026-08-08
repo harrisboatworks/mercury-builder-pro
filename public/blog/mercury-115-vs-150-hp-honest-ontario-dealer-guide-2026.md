@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-08-07
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Premier dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -36,7 +36,7 @@ For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
-> "Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said 115 Command Thrust will do everything you want with better fuel economy. He was right. 38 mph loaded, sips fuel." Tom K., HBW customer, Lakefield 2026
+**From the shop:** On a planing aluminum V-hull, we do not use Command Thrust to make a 115 behave like a 150. We choose the horsepower the capacity plate and loaded use support, then match the standard gearcase and propeller to the boat.
 
 This page gives you the actual dividing lines. By hull type, by boat length, by use case. We base it on hundreds of repowers we've rigged on Rice Lake and the Kawarthas. It's not theoretical.
 
