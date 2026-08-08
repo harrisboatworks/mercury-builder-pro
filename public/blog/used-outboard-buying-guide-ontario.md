@@ -111,8 +111,6 @@ While the plugs are already out, read them:
 
 Then smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like exactly what it is.
 
-::walkaround-lead-capture
-
 ---
 
 ## The On-Water Test: Do Not Skip This

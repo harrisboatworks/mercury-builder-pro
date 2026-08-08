@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
 
-# What the 2026 Boating Market Means for Ontario Boat Buyers
+## What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
 The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, and used-boat values have corrected. The federal luxury tax is no longer payable on subject vessels effective November 5, 2025. Bill C-15 received Royal Assent on March 26, 2026. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -49,30 +49,47 @@ Industry survey data from the Baird/MRAA Pulse Report: roughly 71% of dealers re
 
 Used boat prices have pulled back 5 to 10% from pandemic highs.
 
-::cost-stack
-eyebrow: 2026 Ontario boat market ranges
-heading: What you'll actually pay for a boat in 2026
-subhead: Real Ontario CAD ranges by category. New-boat pricing has softened from the 2022 peak. Used pricing has finally normalized. Repower remains the best dollar-per-season deal.
-item1Label: Aluminum fishing boat, 16 to 18 ft new
-item1Value: $22,000 to $42,000
-item1Note: Package with 40 to 90 HP Mercury FourStroke and trailer. Range depends on console, electronics, and live well config.
-item2Label: Pontoon, 20 to 22 ft new
-item2Value: $38,000 to $75,000
-item2Note: Dual or triple tube with 90 to 150 HP. Mid-range is the sweet spot for most cottage owners.
-item3Label: Bowrider or runabout, 18 to 21 ft new
-item3Value: $55,000 to $110,000
-item3Note: Fiberglass with 150 to 250 HP. Tower, upholstery, and audio package drive the upper end.
-item4Label: Used boat, 5 to 10 years old
-item4Value: $15,000 to $45,000
-item4Note: Wide range. Hull condition, hours, and trailer matter more than year. Always check compression and lower unit oil.
-item5Label: Repower of an existing hull
-item5Value: $12,000 to $24,000
-item5Note: Best dollar-per-season value if the hull and trailer are sound. New motor, new warranty, no boat-shopping required.
-item5Accent: true
-totalLabel: Best value path for most buyers
-totalValue: Repower if the hull is good
-caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryrepower.ca.
-::
+*2026 Ontario boat market ranges*
+
+### What you'll actually pay for a boat in 2026
+
+Real Ontario CAD ranges by category. New-boat pricing has softened from the 2022 peak. Used pricing has finally normalized. Repower remains the best dollar-per-season deal.
+
+#### Aluminum fishing boat, 16 to 18 ft new
+
+**$22,000 to $42,000**
+
+Package with 40 to 90 HP Mercury FourStroke and trailer. Range depends on console, electronics, and live well config.
+
+#### Pontoon, 20 to 22 ft new
+
+**$38,000 to $75,000**
+
+Dual or triple tube with 90 to 150 HP. Mid-range is the sweet spot for most cottage owners.
+
+#### Bowrider or runabout, 18 to 21 ft new
+
+**$55,000 to $110,000**
+
+Fiberglass with 150 to 250 HP. Tower, upholstery, and audio package drive the upper end.
+
+#### Used boat, 5 to 10 years old
+
+**$15,000 to $45,000**
+
+Wide range. Hull condition, hours, and trailer matter more than year. Always check compression and lower unit oil.
+
+#### Repower of an existing hull
+
+**$12,000 to $24,000**
+
+Best dollar-per-season value if the hull and trailer are sound. New motor, new warranty, no boat-shopping required.
+
+#### Best value path for most buyers
+
+**Repower if the hull is good**
+
+*All CAD, pickup only at Gores Landing. Build a repower quote at mercuryrepower.ca.*
 
 ## The segments that matter on Rice Lake
 

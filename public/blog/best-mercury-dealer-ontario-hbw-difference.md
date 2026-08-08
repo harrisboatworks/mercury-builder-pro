@@ -30,8 +30,6 @@ language: en-CA
 
 > **Quick answer:** The best Mercury dealer is the one whose reputation still holds after the sale. Look for consistent people, clear written pricing, careful rigging, an on-water test, and a shop that wants to know your boat for years, not just close one transaction. Harris Boat Works has been family-owned on Rice Lake since 1947 and a Mercury dealer since 1965. We build long-term relationships with customers and with the people who work here because consistency is how good service becomes repeatable.
 
-# Best Mercury Dealer in Ontario: The HBW Difference (2026)
-
 Harris Boat Works is a **Mercury Marine Premier dealer** and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization.
 
 Searching for the "best Mercury dealer in Ontario" is really asking a more useful question:

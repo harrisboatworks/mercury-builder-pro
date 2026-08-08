@@ -87,28 +87,31 @@ The module is purchased separately from the motor. Pricing is set by Mercury Can
 
 ---
 
-::decision-card
-eyebrow: SmartCraft tier decision
-heading: How seriously do you actually use the boat?
-subhead: SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
-leftLabel: Basic SmartCraft Link is enough
-leftCriteria:
-  - You boat a handful of times per season
-  - You already have working analog gauges
-  - You don't track maintenance digitally
-  - Single user, simple use case
-leftOutcome: Stock gauges, no upgrade
-leftVariant: alternative
-rightLabel: SmartCraft Connect pays back season one
-rightCriteria:
-  - 30+ hours per season on the water
-  - You share the boat with family or partners
-  - You want service intervals tracked automatically
-  - You'd benefit from fuel-burn and route history
-rightOutcome: SmartCraft Connect + Mercury app
-rightVariant: recommended
-whenInDoubt: If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
-::
+*SmartCraft tier decision*
+
+### How seriously do you actually use the boat?
+
+SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
+
+#### Basic SmartCraft Link is enough
+
+- You boat a handful of times per season
+- You already have working analog gauges
+- You don't track maintenance digitally
+- Single user, simple use case
+
+**Stock gauges, no upgrade**
+
+#### SmartCraft Connect pays back season one
+
+- 30+ hours per season on the water
+- You share the boat with family or partners
+- You want service intervals tracked automatically
+- You'd benefit from fuel-burn and route history
+
+**SmartCraft Connect + Mercury app**
+
+If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
 
 ## How It Compares to VesselView Mobile and SmartCraft Gauges
 

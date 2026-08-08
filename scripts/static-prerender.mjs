@@ -23,6 +23,8 @@ import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
+import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
+import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
@@ -287,8 +289,11 @@ function renderBilingualTrustHtml(body) {
     } else flat[key] = val;
   }
   if (!flat.heading || !flat.headingTranslated) return '';
-  const items = Object.keys(itemMap).map(Number).sort((a, b) => a - b)
-    .map(i => itemMap[i]).filter(it => it.en && it.zh);
+  const items = filterToOneBlogCredibilityAnchor(
+    Object.keys(itemMap).map(Number).sort((a, b) => a - b)
+      .map(i => itemMap[i]).filter(it => it.en && it.zh),
+    (item) => `${item.en} ${item.zh}`,
+  );
   const eyebrow = flat.eyebrow ? `<div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">${escHtml(flat.eyebrow)}</div>` : '';
   const tiles = items.map(it =>
     `<div class="rounded-lg bg-repower-navy-900/5 p-4 flex flex-col gap-1"><span class="font-display font-semibold text-repower-navy-900 text-sm">${escHtml(it.en)}</span><span class="font-sans text-repower-navy-900/70 text-sm" lang="zh-Hans">${escHtml(it.zh)}</span></div>`
@@ -435,9 +440,9 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
-function renderArticleBodyHtml(content, { hasStructuredFaqs = false } = {}) {
+function renderArticleBodyHtml(content, { hasStructuredFaqs = false, articleSlug = '' } = {}) {
   if (!content) return '';
-  let s = String(content);
+  let s = stripSuppressedBlogPullQuotes(content, articleSlug);
   // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
   // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
   // body never contains literal placeholder strings.
@@ -3160,9 +3165,10 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
     );
     const bodyHtml = renderArticleBodyHtml(bodySource, {
       hasStructuredFaqs: Boolean(article.faqs?.length),
+      articleSlug: article.slug,
     });
     const ctaHtml = ctaSource
-      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false })
+      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false, articleSlug: article.slug })
       : '';
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
@@ -3242,6 +3248,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       );
       const bodyHtml = renderArticleBodyHtml(article.content, {
         hasStructuredFaqs: Boolean(article.faqs?.length),
+        articleSlug: article.slug,
       });
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>

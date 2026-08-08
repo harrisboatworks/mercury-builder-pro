@@ -30,10 +30,7 @@ language: en-CA
 
 > **Quick answer:** HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test scope follows the specific motor, hull, rigging, load, and Mercury documentation. Any alternate acceptance plan is documented with the customer.
 
-# What an On-Water Mercury Repower Check Can Verify
-
-**Published:** 2026-05-28 | **Updated:** 2026-08-02
-**Author:** Jay Harris, Harris Boat Works
+## What an On-Water Mercury Repower Check Can Verify
 
 An outboard can start and idle correctly at the shop while the boat still needs a propeller, mounting-height, steering, trim, gauge, or rigging adjustment. An on-water check adds evidence that a trailer or shop test cannot provide.
 

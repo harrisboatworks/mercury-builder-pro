@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Oakville boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
 
-# Mercury Dealer for Oakville: The Drive That Makes Sense When the Answers Get Clearer
+## Mercury Dealer for Oakville: The Drive That Makes Sense When the Answers Get Clearer
 
 Oakville is at the western end of the GTA, which means Rice Lake is one of the longer drives in this group, roughly 110 minutes northeast. That's a significant trip. We're not going to underplay it.
 

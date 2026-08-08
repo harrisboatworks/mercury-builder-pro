@@ -32,7 +32,7 @@ language: en-CA
 
 Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and are a current Mercury Premier Dealer. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
-# Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
+## Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
 The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer.
 
@@ -98,14 +98,6 @@ Specific things a multi-generational family marina knows:
 - **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds relationships across generations.
 
 These aren't things a new dealer can fake. They take time. We have time on Rice Lake.
-
----
-
-::pull-quote
-quote: My grandfather bought his first boat from George Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
-attribution: Mike S.
-source: Third-generation Rice Lake cottager
-::
 
 ---
 

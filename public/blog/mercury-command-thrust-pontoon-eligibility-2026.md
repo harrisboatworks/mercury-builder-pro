@@ -168,32 +168,33 @@ Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in
 
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
 
-::pull-quote
-quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
-attribution: Common shop-floor pattern after a Command Thrust repower at HBW
-::
+> Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
+>
+> Common shop-floor pattern after a Command Thrust repower at HBW
 
-::decision-card
-eyebrow: Command Thrust decision
-heading: Is Command Thrust right for your pontoon?
-leftLabel: Skip it
-leftCriteria:
-  - 16 to 18 ft light cruising pontoon
-  - Trolling-only fishing use
-  - Light loads (2 to 4 people)
-  - Already at capacity-plate maximum HP
-leftOutcome: Standard gearcase is the right call
-leftVariant: alternative
-rightLabel: Yes, strong fit
-rightCriteria:
-  - Tritoon of any size
-  - 20+ ft twin tube pontoon
-  - Heavy loads (8+ people) or water sports
-  - Cottage hauling or regular full-load use
-rightOutcome: Order Command Thrust with the repower
-rightVariant: recommended
-whenInDoubt: Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
-::
+*Command Thrust decision*
+
+### Is Command Thrust right for your pontoon?
+
+#### Skip it
+
+- 16 to 18 ft light cruising pontoon
+- Trolling-only fishing use
+- Light loads (2 to 4 people)
+- Already at capacity-plate maximum HP
+
+**Standard gearcase is the right call**
+
+#### Yes, strong fit
+
+- Tritoon of any size
+- 20+ ft twin tube pontoon
+- Heavy loads (8+ people) or water sports
+- Cottage hauling or regular full-load use
+
+**Order Command Thrust with the repower**
+
+Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
 
 ## Why this matters for Ontario pontoon boaters
 

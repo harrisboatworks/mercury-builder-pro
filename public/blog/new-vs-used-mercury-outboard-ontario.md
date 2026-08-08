@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
-# New vs Used Mercury Outboard in Ontario, by the Numbers
-
 ## Quick answer
 
 A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and a known maintenance baseline. A well-kept used Mercury can save substantially on the purchase price, but its remaining coverage and catch-up service depend on the serial record, service history, inspection, and proper warranty transfer where eligible. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
@@ -80,8 +78,6 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
-
-::walkaround-lead-capture
 
 ## The trade-in wrinkle: HST only on the difference
 

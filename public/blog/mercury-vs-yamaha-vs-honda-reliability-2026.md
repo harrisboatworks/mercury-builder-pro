@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 
-# Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
+## Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
 
 ## Quick answer
 Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical reliability difference comes from dealer network, parts availability, and how fast you can get a motor fixed when something goes wrong. On those metrics, Mercury wins in this region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -104,28 +104,31 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Our honest take:** Nothing wrong with the motor itself. The practical reliability disadvantage comes from the thinner dealer network in Ontario, not from the engineering.
 
-::decision-card
-eyebrow: Brand decision
-heading: Switch brands, or stay where you are?
-subhead: All three brands are mechanically reliable in 2026. The deciding factor is who services it when something goes wrong.
-leftLabel: Service network matters most
-leftCriteria:
-  - You boat in Ontario and want parts in hand same week
-  - You travel the Trent-Severn or run between lakes
-  - You do not have a current dealer relationship
-  - You want resale support when you eventually sell
-leftOutcome: Mercury wins on Ontario dealer density
-leftVariant: recommended
-rightLabel: You already have a relationship that works
-rightCriteria:
-  - Your current Yamaha or Honda dealer treats you well
-  - Parts and service have not been a problem
-  - The motor is under 10 years old with reasonable hours
-  - Switching brands adds $1,500 to $3,000 in rigging
-rightOutcome: Stay with what works. Reliability follows the relationship.
-rightVariant: alternative
-whenInDoubt: If service access is the problem, compare the actual dealer route, written parts lead time, and complete brand-swap cost before switching.
-::
+*Brand decision*
+
+### Switch brands, or stay where you are?
+
+All three brands are mechanically reliable in 2026. The deciding factor is who services it when something goes wrong.
+
+#### Service network matters most
+
+- You boat in Ontario and want parts in hand same week
+- You travel the Trent-Severn or run between lakes
+- You do not have a current dealer relationship
+- You want resale support when you eventually sell
+
+**Mercury wins on Ontario dealer density**
+
+#### You already have a relationship that works
+
+- Your current Yamaha or Honda dealer treats you well
+- Parts and service have not been a problem
+- The motor is under 10 years old with reasonable hours
+- Switching brands adds $1,500 to $3,000 in rigging
+
+**Stay with what works. Reliability follows the relationship.**
+
+If service access is the problem, compare the actual dealer route, written parts lead time, and complete brand-swap cost before switching.
 
 ---
 

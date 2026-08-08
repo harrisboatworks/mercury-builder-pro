@@ -38,36 +38,59 @@ Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap
 
 ---
 
-::cost-stack
-eyebrow: Where the money goes
-heading: What's actually in a Mercury rigging quote?
-subhead: Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
-item1Label: Throttle and shift control (if replaced)
-item1Value: $400 - $900
-item1Note: Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
-item2Label: Steering (cable, kept or refreshed)
-item2Value: $200 - $600
-item2Note: Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
-item2Accent: true
-item3Label: Wiring harness and connectors
-item3Value: $150 - $400
-item3Note: Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
-item4Label: Gauges or SmartCraft display
-item4Value: $0 - $1,200
-item4Note: Compatible existing gauges stay for free. SmartCraft Connect Mobile adds several hundred to $1,200+.
-item5Label: Fuel hose, primer bulb, water-separator filter
-item5Value: $80 - $200
-item5Note: Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
-item6Label: Propeller (aluminum 3-blade, 90 to 115 HP)
-item6Value: $400 - $500
-item6Note: Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
-item7Label: Install labour (Mercury-to-Mercury, post-2010)
-item7Value: $700 - $1,400
-item7Note: Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
-totalLabel: Typical Mercury-to-Mercury 90-115 HP rigging total
-totalValue: $1,900 - $5,200 CAD
-caveat: Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.
-::
+*Where the money goes*
+
+### What's actually in a Mercury rigging quote?
+
+Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
+
+#### Throttle and shift control (if replaced)
+
+**$400 - $900**
+
+Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
+
+#### Steering (cable, kept or refreshed)
+
+**$200 - $600**
+
+Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
+
+#### Wiring harness and connectors
+
+**$150 - $400**
+
+Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
+
+#### Gauges or SmartCraft display
+
+**$0 - $1,200**
+
+Compatible existing gauges stay for free. SmartCraft Connect Mobile adds several hundred to $1,200+.
+
+#### Fuel hose, primer bulb, water-separator filter
+
+**$80 - $200**
+
+Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
+
+#### Propeller (aluminum 3-blade, 90 to 115 HP)
+
+**$400 - $500**
+
+Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
+
+#### Install labour (Mercury-to-Mercury, post-2010)
+
+**$700 - $1,400**
+
+Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
+
+#### Typical Mercury-to-Mercury 90-115 HP rigging total
+
+**$1,900 - $5,200 CAD**
+
+*Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.*
 
 ## Full Article
 
@@ -173,8 +196,6 @@ The walk-around is free. The findings determine where in the range your quote la
 **Forgetting the steering upgrade math.** If your cable steering is at end of life and you know you'll upgrade eventually, the cheapest moment is during the repower, the dash is already open.
 
 **DIY partial rigging on a brand conversion.** Brand conversions have enough system interaction (throttle mapping, harness compatibility, sensor calibration) that partial DIY rigging regularly causes problems that cost more to fix than the initial savings.
-
----
 
 ---
 

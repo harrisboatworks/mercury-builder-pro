@@ -28,35 +28,38 @@ language: en-CA
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
-# Choosing a Mercury Motor for Your Center Console: An Ontario-First Guide
+## Choosing a Mercury Motor for Your Center Console: An Ontario-First Guide
 
 ## Quick answer
 Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is usually a 200 to 250 HP V6 Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP V8 for larger or premium twin configurations. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-::decision-card
-heading: Single or twin Mercurys on a center console?
-eyebrow: Honest rigging pick
-subhead: Most 22 to 25 ft center consoles run great on a single. Twins are about redundancy, not speed.
-leftLabel: Choose single engine if
-leftCriteria:
-  - Center console is 22 to 25 ft
-  - Most runs are coastal cruising, family use, dock-and-dine
-  - Fuel economy and quiet operation matter
-  - You want single-engine simplicity (one motor to maintain)
-  - The boat is rated for a single-engine setup
-leftOutcome: Single Mercury 250 or 300 HP
-leftVariant: recommended
-rightLabel: Choose twin engines if
-rightCriteria:
-  - Center console is 25 ft or larger and runs offshore
-  - Redundancy matters (limp-home capability if one fails)
-  - You want maximum performance for chasing fish or rough water
-  - Twin-engine handling at the dock is a feature, not a problem
-  - The boat was designed for twins from the factory
-rightOutcome: Twin Mercury V8 outboards
-rightVariant: alternative
-whenInDoubt: Single 300 HP Verado handles most 22 to 25 ft center consoles beautifully. Twins are only worth it if you fish offshore or want the safety net of redundancy.
-::
+*Honest rigging pick*
+
+### Single or twin Mercurys on a center console?
+
+Most 22 to 25 ft center consoles run great on a single. Twins are about redundancy, not speed.
+
+#### Choose single engine if
+
+- Center console is 22 to 25 ft
+- Most runs are coastal cruising, family use, dock-and-dine
+- Fuel economy and quiet operation matter
+- You want single-engine simplicity (one motor to maintain)
+- The boat is rated for a single-engine setup
+
+**Single Mercury 250 or 300 HP**
+
+#### Choose twin engines if
+
+- Center console is 25 ft or larger and runs offshore
+- Redundancy matters (limp-home capability if one fails)
+- You want maximum performance for chasing fish or rough water
+- Twin-engine handling at the dock is a feature, not a problem
+- The boat was designed for twins from the factory
+
+**Twin Mercury V8 outboards**
+
+Single 300 HP Verado handles most 22 to 25 ft center consoles beautifully. Twins are only worth it if you fish offshore or want the safety net of redundancy.
 
 ## Why this guide is different
 
@@ -102,8 +105,6 @@ Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at c
 For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. We recommend Verado for twin-engine setups where the ride quality and noise difference actually matters across multiple hours at cruise.
 
 **Best for:** Premium builds, twin-engine setups, buyers prioritizing ride quality and quiet operation.
-
-::walkaround-lead-capture
 
 ## Recommended motor by boat size
 

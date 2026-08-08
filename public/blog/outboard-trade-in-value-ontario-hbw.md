@@ -30,68 +30,82 @@ language: en-CA
 
 > **Quick answer:** There is no blue book for outboards. Trade-in value comes down to brand, hours, age, condition, and service history, with Mercury and Yamaha 4-strokes holding value best. In Ontario, the trade credit also reduces the taxable amount of your new motor, a 13% HST saving most customers miss. Get a preliminary number in minutes at mercuryrepower.ca.
 
-# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
+## What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 > **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
 
-::cost-stack
-heading: What your trade-in is actually worth, by condition
-eyebrow: Trade-in value ladder
-subhead: Mercury outboard trade-in value depends mostly on condition, hours, and whether it runs. Here is how we look at a trade on the shop floor.
-item1Label: Runs great, full service history, low hours
-item1Value: 55 to 75% of comparable retail used price
-item1Note: The unicorn category. Original owner, all receipts, compression numbers documented. We can sell this immediately, so we pay the most.
-item1Accent: true
-item2Label: Runs, decent shape, some unknowns
-item2Value: 35 to 50% of comparable retail used price
-item2Note: Most trade-ins fall here. Started, ran around the dock, but the service history is patchy or there are obvious cosmetic issues. We discount for the diagnostic time on our end.
-item3Label: Won't start, but turns over
-item3Value: $300 to $1,500 depending on HP
-item3Note: We can usually get these running with carb work, fuel system flush, and new spark plugs. Pricing reflects parts and roughly 4 to 8 hours of shop labour we have to absorb before resale.
-item4Label: Seized, locked-up, or major mechanical damage
-item4Value: $100 to $500
-item4Note: Scrap or parts-motor value. Lower unit, cowl, and electronics may still be sellable separately. We do not buy these for resale.
-item5Label: 1990s and older 2-stroke
-item5Value: $200 to $1,200 regardless of running condition
-item5Note: Old carbureted 2-strokes have limited market in Ontario in 2026. We will take them on trade, but the value is what we can resell to a fixer-upper, not blue-book optimistic numbers.
-totalLabel: Honest framing
-totalValue: We do not sandbag trades, but we are not Kelley Blue Book either
-caveat: Final trade value is set after a 15-minute in-person inspection at HBW. We hook it up on muffs, check compression, scan codes if SmartCraft equipped, and look at the lower unit. Bring it to (905) 342-2153 or book at /quote.
-::
+*Trade-in value ladder*
 
-::pull-quote
-quote: I called three dealers about repowering my pontoon. Two ghosted me. Jay had a **written quote in my inbox the same afternoon**, with the trade-in number already baked in. That is why I drove past two closer shops to pick it up.
-attribution: Mark T.
-source: HBW Customer, Rice Lake 2026
-::
+### What your trade-in is actually worth, by condition
 
-::decision-card
-heading: What helps or hurts your trade-in value?
-eyebrow: Honest appraisal factors
-subhead: Two things matter most. The condition of your motor, and how easy it is for us to resell.
-leftLabel: What helps your value
-leftCriteria:
-  - Service history with receipts (impeller, lower unit, plugs, oil)
-  - Original cowl in good shape, no major dings or fade
-  - Compression test within 10 percent across cylinders
-  - Runs and shifts cleanly with no smoke or alarms
-  - Current model line (last 5 years of Mercury or major OEM)
-leftOutcome: Top end of our offer range
-leftVariant: recommended
-rightLabel: What hurts your value
-rightCriteria:
-  - No service records and unclear maintenance history
-  - Saltwater use or visible corrosion on powerhead or lower unit
-  - Compression imbalance across cylinders
-  - Smokes, runs rough, or has stored alarm codes
-  - Discontinued model line (15 plus years old, parts hard to source)
-rightOutcome: Bottom of range or sell privately instead
-rightVariant: alternative
-whenInDoubt: Bring it in for a free 30 minute appraisal. We will be honest about both numbers, what we would pay and what a private sale would likely net you.
-::
+Mercury outboard trade-in value depends mostly on condition, hours, and whether it runs. Here is how we look at a trade on the shop floor.
+
+#### Runs great, full service history, low hours
+
+**55 to 75% of comparable retail used price**
+
+The unicorn category. Original owner, all receipts, compression numbers documented. We can sell this immediately, so we pay the most.
+
+#### Runs, decent shape, some unknowns
+
+**35 to 50% of comparable retail used price**
+
+Most trade-ins fall here. Started, ran around the dock, but the service history is patchy or there are obvious cosmetic issues. We discount for the diagnostic time on our end.
+
+#### Won't start, but turns over
+
+**$300 to $1,500 depending on HP**
+
+We can usually get these running with carb work, fuel system flush, and new spark plugs. Pricing reflects parts and roughly 4 to 8 hours of shop labour we have to absorb before resale.
+
+#### Seized, locked-up, or major mechanical damage
+
+**$100 to $500**
+
+Scrap or parts-motor value. Lower unit, cowl, and electronics may still be sellable separately. We do not buy these for resale.
+
+#### 1990s and older 2-stroke
+
+**$200 to $1,200 regardless of running condition**
+
+Old carbureted 2-strokes have limited market in Ontario in 2026. We will take them on trade, but the value is what we can resell to a fixer-upper, not blue-book optimistic numbers.
+
+#### Honest framing
+
+**We do not sandbag trades, but we are not Kelley Blue Book either**
+
+*Final trade value is set after a 15-minute in-person inspection at HBW. We hook it up on muffs, check compression, scan codes if SmartCraft equipped, and look at the lower unit. Bring it to (905) 342-2153 or book at /quote.*
+
+*Honest appraisal factors*
+
+### What helps or hurts your trade-in value?
+
+Two things matter most. The condition of your motor, and how easy it is for us to resell.
+
+#### What helps your value
+
+- Service history with receipts (impeller, lower unit, plugs, oil)
+- Original cowl in good shape, no major dings or fade
+- Compression test within 10 percent across cylinders
+- Runs and shifts cleanly with no smoke or alarms
+- Current model line (last 5 years of Mercury or major OEM)
+
+**Top end of our offer range**
+
+#### What hurts your value
+
+- No service records and unclear maintenance history
+- Saltwater use or visible corrosion on powerhead or lower unit
+- Compression imbalance across cylinders
+- Smokes, runs rough, or has stored alarm codes
+- Discontinued model line (15 plus years old, parts hard to source)
+
+**Bottom of range or sell privately instead**
+
+Bring it in for a free 30 minute appraisal. We will be honest about both numbers, what we would pay and what a private sale would likely net you.
 
 ## The first question in every repower conversation
 
@@ -100,8 +114,6 @@ whenInDoubt: Bring it in for a free 30 minute appraisal. We will be honest about
 It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect.
 
 This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
-
-::walkaround-lead-capture
 
 ## The five things we look at
 

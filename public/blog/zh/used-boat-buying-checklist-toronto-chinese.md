@@ -28,7 +28,7 @@ language: zh-CN
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese
 
-# 多伦多华人二手船购买检查清单：便宜不等于划算
+## 多伦多华人二手船购买检查清单：便宜不等于划算
 
 快速答案
 

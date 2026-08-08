@@ -86,27 +86,41 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 
 ---
 
-::cost-stack
-eyebrow: 2026 Ontario fuel cost ranges
-heading: What you'll actually spend on fuel per season
-subhead: Estimates based on Ontario marina gas pricing and realistic L/h (GPH) for a properly propped Mercury FourStroke 90 to 150.
-item1Label: Weekend family cruiser (50 hrs/season)
-item1Value: $550 to $850
-item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
-item2Label: Heavy weekender (100 hrs/season)
-item2Value: $1,100 to $1,800
-item2Note: Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
-item3Label: Seasonal angler (75 hrs/season)
-item3Value: $700 to $1,100
-item3Note: Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
-item4Label: Lake Ontario offshore (150 hrs/season)
-item4Value: $2,200 to $3,400
-item4Note: Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
-item4Accent: true
-totalLabel: Biggest variable
-totalValue: Prop pitch, not horsepower
-caveat: A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.
-::
+*2026 Ontario fuel cost ranges*
+
+### What you'll actually spend on fuel per season
+
+Estimates based on Ontario marina gas pricing and realistic L/h (GPH) for a properly propped Mercury FourStroke 90 to 150.
+
+#### Weekend family cruiser (50 hrs/season)
+
+**$550 to $850**
+
+Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
+
+#### Heavy weekender (100 hrs/season)
+
+**$1,100 to $1,800**
+
+Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
+
+#### Seasonal angler (75 hrs/season)
+
+**$700 to $1,100**
+
+Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
+
+#### Lake Ontario offshore (150 hrs/season)
+
+**$2,200 to $3,400**
+
+Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
+
+#### Biggest variable
+
+**Prop pitch, not horsepower**
+
+*A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.*
 
 ## Practical Fuel Consumption Ranges
 
@@ -154,8 +168,6 @@ HBW's standard repower handoff includes an on-water setup check on Rice Lake bef
 For engine repairs, we only service Mercury and Mercruiser.
 
 Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
-
----
 
 ---
 

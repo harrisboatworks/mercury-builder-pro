@@ -398,6 +398,7 @@ export default function BlogArticle() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
+              articleSlug={article.slug}
               content={(() => {
                 // Strip the first body H1 anywhere in the article (not just
                 // when it is the first line). Many posts open with a Quick
@@ -516,6 +517,7 @@ export default function BlogArticle() {
           {terminalCtaSplit.cta && (
             <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose mt-12">
               <MarkdownSectionCards
+                articleSlug={article.slug}
                 content={substituteLiveRateTokens(terminalCtaSplit.cta)}
                 markdownComponents={{
                   h2: ({ node, children, ...props }) => {

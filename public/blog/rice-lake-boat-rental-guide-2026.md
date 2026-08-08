@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
-# Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
-
 > **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
 
 Most rental questions start in the same place: what boats are currently available, what does it cost, and what licence does the driver need?

@@ -28,7 +28,7 @@ language: fr-CA
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
-# Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
+## Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
 
 *Dernière révision : 2026-05-13*
 

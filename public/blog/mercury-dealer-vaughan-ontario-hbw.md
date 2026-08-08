@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Vaughan boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
 
-# Mercury Dealer for Vaughan: Why the Drive North Makes Sense
+## Mercury Dealer for Vaughan: Why the Drive North Makes Sense
 
 Vaughan is deep GTA. Woodbridge, Maple, Thornhill, Concord, the whole corridor is close to Highway 400, which means Barrie is easy but Rice Lake isn't. About 80 minutes when traffic cooperates.
 

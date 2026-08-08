@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
 
-# Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)
-
 > **Quick answer:** Mercury's current lineup for the 2027 model year covers four gas families: FourStroke (2.5 to 300 hp) for everyday boating, Pro XS (115 to 300 hp) for performance fishing, SeaPro for commercial duty, and Verado (special order only). Most Rice Lake and Kawarthas boats land in the FourStroke 40 to 150 hp range. Build a live CAD quote at mercuryrepower.ca.
 
 Mercury's model year rolled over to 2027 on July 1, 2026. If that sentence makes you wonder whether the motor you were pricing in June just became obsolete, relax: it didn't. The powerheads are the same, the rigging is the same, and your boat doesn't know what year is printed on the cowl decal.

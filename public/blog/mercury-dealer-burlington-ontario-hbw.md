@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Burlington boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
-# Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
+## Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 
 Burlington has marine options closer to home. There are dealers in the Hamilton area, including one that carries Mercury. So why do some Burlington customers make the longer drive to Gores Landing?
 

@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
-# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
+## Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
 
 > **Quick answer:** For most families on Rice Lake and the Kawarthas, a pontoon is the best all-around boat: safe with kids, roomy, stable, and great for cruising and swimming. It pulls a tube too, with enough power (115 hp and up). What it isn't is a dedicated ski boat. If hard watersports rule your summer, look at a tritoon or a V-hull. Not sure? Rent one first.
 

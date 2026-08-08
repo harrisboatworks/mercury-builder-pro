@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
-# Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
+## Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
 > **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 
@@ -96,25 +96,39 @@ If you're buying a used pontoon, press down on the deck with your foot in a few 
 
 ---
 
-::diagnostic-flow
-heading: Pontoon acting up? Run this check before calling
-eyebrow: Pontoon diagnostic flow
-subhead: Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
-step1Label: Weeds in the prop
-step1Question: Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?
-step1Tip: Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
-step2Label: Corroded fittings at the helm
-step2Question: Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?
-step2Tip: Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
-step3Label: Soft spots in the deck
-step3Question: Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?
-step3Tip: A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
-step4Label: Tube damage from grounding
-step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
-step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
-escalationLabel: Found something or unsure?
-escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
-::
+*Pontoon diagnostic flow*
+
+### Pontoon acting up? Run this check before calling
+
+Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
+
+#### Weeds in the prop
+
+**Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?**
+
+Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
+
+#### Corroded fittings at the helm
+
+**Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?**
+
+Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
+
+#### Soft spots in the deck
+
+**Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?**
+
+A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
+
+#### Tube damage from grounding
+
+**With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.**
+
+Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
+
+#### Found something or unsure?
+
+Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
 
 ---
 

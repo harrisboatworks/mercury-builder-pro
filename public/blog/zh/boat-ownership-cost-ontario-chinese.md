@@ -28,7 +28,7 @@ language: zh-CN
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese
 
-# 安省华人 Boat Ownership Cost Guide：买船不是只买船
+## 安省华人 Boat Ownership Cost Guide：买船不是只买船
 
 快速答案
 

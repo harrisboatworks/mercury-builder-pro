@@ -36,30 +36,33 @@ For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is e
 
 ---
 
-::decision-card
-heading: Should you choose Mercury 40 or 60 HP?
-eyebrow: Honest power pick
-subhead: For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate and load.
-leftLabel: Choose 40 HP if
-leftCriteria:
-  - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
-  - Capacity plate caps you at 40 HP
-  - Use is fishing, calm-water cruising, 2 to 3 people max
-  - You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
-  - Tiller is preferred and 40 HP tiller models suit your setup
-leftOutcome: Pick 40 HP FourStroke
-leftVariant: alternative
-rightLabel: Choose 60 HP if
-rightCriteria:
-  - Boat is 16 to 18 ft aluminum or fibreglass
-  - Capacity plate allows 60 HP or higher
-  - You carry 3 to 4 people, gear, or tow a small tube
-  - You want stronger hole shot with a loaded boat
-  - The boat will see bigger water (Trent-Severn, Kawarthas, Lake Simcoe)
-rightOutcome: Pick 60 HP FourStroke
-rightVariant: recommended
-whenInDoubt: 60 HP gives margin without much more fuel cost. 40 HP is the right call only when your capacity plate caps you there, or weight on the transom is critical.
-::
+*Honest power pick*
+
+### Should you choose Mercury 40 or 60 HP?
+
+For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate and load.
+
+#### Choose 40 HP if
+
+- Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
+- Capacity plate caps you at 40 HP
+- Use is fishing, calm-water cruising, 2 to 3 people max
+- You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
+- Tiller is preferred and 40 HP tiller models suit your setup
+
+**Pick 40 HP FourStroke**
+
+#### Choose 60 HP if
+
+- Boat is 16 to 18 ft aluminum or fibreglass
+- Capacity plate allows 60 HP or higher
+- You carry 3 to 4 people, gear, or tow a small tube
+- You want stronger hole shot with a loaded boat
+- The boat will see bigger water (Trent-Severn, Kawarthas, Lake Simcoe)
+
+**Pick 60 HP FourStroke**
+
+60 HP gives margin without much more fuel cost. 40 HP is the right call only when your capacity plate caps you there, or weight on the transom is critical.
 
 ---
 
@@ -104,8 +107,6 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 The 60 weighs 10 kg (23 lb) more. On a light 15 ft aluminum with a transom already sitting low, that changes the resting attitude of the boat. The 60 is smoother at idle, has more amperage for charging electronics, and, if you're running a fish-finder, livewell, and stereo off the same battery, the 25-amp alternator matters.
 
 ---
-
-::walkaround-lead-capture
 
 ## Performance on Common Ontario Boats
 

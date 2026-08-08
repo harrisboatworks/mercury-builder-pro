@@ -28,7 +28,7 @@ language: zh-CN
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
 
-# 安省华人船主春季开船检查清单：下水前先别急
+## 安省华人船主春季开船检查清单：下水前先别急
 
 快速答案
 

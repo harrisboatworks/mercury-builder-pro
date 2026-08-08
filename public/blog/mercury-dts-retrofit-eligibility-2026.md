@@ -164,32 +164,33 @@ The third pattern, specific to Ontario boating: late-season dock approaches in f
 
 Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
 
-::pull-quote
-quote: Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
-attribution: Most common DTS retrofit conversation at HBW
-::
+> Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
+>
+> Most common DTS retrofit conversation at HBW
 
-::decision-card
-eyebrow: DTS retrofit decision
-heading: Retrofit DTS or repower?
-leftLabel: Repower territory
-leftCriteria:
-  - Mechanical motor 5+ years old
-  - High hours on the existing engine
-  - You want joystick (requires DTS-equipped twins or more)
-  - Retrofit cost is close to a new motor
-leftOutcome: New DTS-equipped motor is the right answer
-leftVariant: alternative
-rightLabel: Retrofit makes sense
-rightCriteria:
-  - Your motor is already DTS-capable (some older Verado I6 models)
-  - You currently have mechanical controls at the helm
-  - The helm-side upgrade enables DTS without engine work
-  - Single-engine and you're not chasing joystick
-rightOutcome: Helm-side retrofit is the real upgrade
-rightVariant: recommended
-whenInDoubt: Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
-::
+*DTS retrofit decision*
+
+### Retrofit DTS or repower?
+
+#### Repower territory
+
+- Mechanical motor 5+ years old
+- High hours on the existing engine
+- You want joystick (requires DTS-equipped twins or more)
+- Retrofit cost is close to a new motor
+
+**New DTS-equipped motor is the right answer**
+
+#### Retrofit makes sense
+
+- Your motor is already DTS-capable (some older Verado I6 models)
+- You currently have mechanical controls at the helm
+- The helm-side upgrade enables DTS without engine work
+- Single-engine and you're not chasing joystick
+
+**Helm-side retrofit is the real upgrade**
+
+Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
 
 ## Why this matters for Ontario boaters
 

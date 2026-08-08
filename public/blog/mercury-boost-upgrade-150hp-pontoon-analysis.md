@@ -71,28 +71,31 @@ The hierarchy of what actually drives pontoon performance:
 
 Boost cannot compensate for an ineligible motor, an underpowered boat, or an incorrect propeller. Confirm those fundamentals first.
 
-::decision-card
-eyebrow: Boost eligibility check
-heading: Is your setup actually a Boost candidate?
-subhead: Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
-leftLabel: Boost is worth the conversation
-leftCriteria:
-  - Mercury has confirmed the exact serial number is eligible
-  - The boat is correctly powered and propped
-  - Mid-range acceleration is the specific concern
-  - You understand that horsepower and top speed do not increase
-leftOutcome: Talk to us about Boost
-leftVariant: recommended
-rightLabel: Boost is not the right lever
-rightCriteria:
-  - Standard Mercury 150 FourStroke, not the Racing 150R
-  - Serial number outside Mercury's published range
-  - The boat is underpowered for its rating and load
-  - Propeller or setup has not been checked
-rightOutcome: Skip Boost, check the prop
-rightVariant: alternative
-whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
-::
+*Boost eligibility check*
+
+### Is your setup actually a Boost candidate?
+
+Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+
+#### Boost is worth the conversation
+
+- Mercury has confirmed the exact serial number is eligible
+- The boat is correctly powered and propped
+- Mid-range acceleration is the specific concern
+- You understand that horsepower and top speed do not increase
+
+**Talk to us about Boost**
+
+#### Boost is not the right lever
+
+- Standard Mercury 150 FourStroke, not the Racing 150R
+- Serial number outside Mercury's published range
+- The boat is underpowered for its rating and load
+- Propeller or setup has not been checked
+
+**Skip Boost, check the prop**
+
+A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
 
 ### When Boost Actually Makes Sense
 
@@ -122,13 +125,11 @@ When customers ask about Boost, we want to know:
 
 For a standard 150 FourStroke pontoon, we start with eligibility and usually move directly to propeller, setup, and load checks because the common 150 FourStroke is not on the current retrofit list.
 
-::cta
-variant: inline
-heading: Wondering what the upgrade runs?
-body: Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
-primaryLabel: Price your upgrade
-primaryHref: /pricing-reference
-::
+### Wondering what the upgrade runs?
+
+Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
+
+[Price your upgrade](/pricing-reference)
 
 ---
 
@@ -140,16 +141,16 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-::cta
-variant: banner
-heading: Worth it? Run your own numbers.
-body: Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-secondaryLabel: See current financing offers
-secondaryHref: /promotions
-phone: 905-342-2153
-::
+### Worth it? Run your own numbers.
+
+Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
+
+[Build Your Quote](/quote/motor-selection)
+
+[See current financing offers](/promotions)
+
+905-342-2153
+
 ---
 
 ## FAQs

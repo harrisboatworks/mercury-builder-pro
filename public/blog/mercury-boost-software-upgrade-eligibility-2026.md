@@ -123,8 +123,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
----
-
 ## What we see at HBW
 
 Boost is a software calibration that improves mid-range and zero-to-top-speed acceleration. It does not change rated horsepower, top speed, maximum RPM, or time to plane. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: standard outboards below 175 HP are outside the current Boost list, except the Mercury Racing 150R. If time to plane is the complaint, Boost is not the promised fix; start with correct horsepower, propeller, setup, and load.
@@ -142,8 +140,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Premier dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
 ---
 
 ## FAQs

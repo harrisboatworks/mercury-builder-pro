@@ -23,8 +23,6 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
 
-# Mercury Outboard Overheating at High Speed: What to Check
-
 > **Quick answer:** If your Mercury's overheat alarm fires at high speed but stays quiet at idle, you have a flow problem that only shows up under load. Check it in this order: intake screens for weeds or debris, the water pump impeller, and the poppet valve (the most common high-RPM-specific culprit), then the thermostat and cooling passages. Don't keep running it hot. A cooked powerhead costs far more than the fix.
 
 There's a specific kind of stress that comes with an overheat alarm going off at cruise. You're a long way from the launch, the boat's running great, and then the buzzer kills the mood and you're nursing it back at idle wondering what just happened. Here's the part that trips people up: a motor that overheats at speed but runs cool at idle is telling you something specific. The cooling system has just enough flow to handle low demand and not enough to handle the heat load at 4,000 or 5,000 RPM.
@@ -134,12 +132,12 @@ Treat it like one. It won't strand you the way a dead motor will, but continuing
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 

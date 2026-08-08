@@ -102,28 +102,45 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 
 ---
 
-::diagnostic-flow
-eyebrow: First start of the season
-heading: Spring commissioning in the order that matters
-subhead: Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
-step1Label: Fuel system check
-step1Question: Is the fuel from last fall still in the tank, and was it stabilized?
-step1Tip: Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
-step2Label: Water pump and impeller
-step2Question: Has the impeller been replaced or inspected within the last two seasons?
-step2Tip: A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A $40 impeller saves a $2,500 powerhead.
-step3Label: Battery and electrical
-step3Question: Does the battery hold a load test, and are all connections clean?
-step3Tip: A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
-step4Label: Flush and dry start on muffs
-step4Question: Will the motor start, idle, and reach operating temp on muffs?
-step4Tip: Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
-step5Label: First water trial
-step5Question: Does the motor reach its rated WOT RPM with normal load?
-step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
-escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at hbw.wiki/service.
-::
+*First start of the season*
+
+### Spring commissioning in the order that matters
+
+Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
+
+#### Fuel system check
+
+**Is the fuel from last fall still in the tank, and was it stabilized?**
+
+Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
+
+#### Water pump and impeller
+
+**Has the impeller been replaced or inspected within the last two seasons?**
+
+A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A $40 impeller saves a $2,500 powerhead.
+
+#### Battery and electrical
+
+**Does the battery hold a load test, and are all connections clean?**
+
+A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
+
+#### Flush and dry start on muffs
+
+**Will the motor start, idle, and reach operating temp on muffs?**
+
+Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
+
+#### First water trial
+
+**Does the motor reach its rated WOT RPM with normal load?**
+
+Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
+
+#### Want us to handle it?
+
+Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at hbw.wiki/service.
 
 ### Step 5, Lubrication
 
@@ -195,13 +212,9 @@ Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if M
 
 ---
 
----
-
 ## What we see at HBW
 
 The spring no-starts that fill our May schedule almost all trace back to the same three things: untreated fuel that sat all winter, batteries that quietly died in storage, and impellers past their interval. None of them are expensive to catch in March. All of them are expensive to discover on launch day. If the boat sat outside uncovered, add mouse damage to the list. We find chewed harnesses every spring.
-
----
 
 ---
 

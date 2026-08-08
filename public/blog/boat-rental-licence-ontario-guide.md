@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
 
-# Do You Need a Licence to Rent a Boat in Ontario? (2026)
-
 > **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A completed rental safety checklist can satisfy that rule for some rentals, but Harris Boat Works has a stricter policy: every person who may drive an HBW rental must show a valid Pleasure Craft Operator Card and photo ID. Passengers do not need one.
 
 The easiest rental check-in is the one where the driver arrives with the required proof of competency already complete.

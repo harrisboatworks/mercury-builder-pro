@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
-# How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
+## How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
 
 > **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
 
@@ -154,8 +154,6 @@ A more loaded code like **115EXLPT-CT**:
 The cowl says "115 FourStroke." The model number says exactly which 115 FourStroke you have, what shaft, and what gearcase. Different parts depending on the answer.
 
 ---
-
-::walkaround-lead-capture
 
 ## Decoding the Year (When the Year Isn't Printed)
 

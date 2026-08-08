@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
 
-# Five Boat Problems That Get Expensive When You Keep Running
-
 > **Quick answer:** Don't treat a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
 
 The most avoidable service bills don't usually begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.

@@ -28,34 +28,37 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
-# Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
+## Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
 
 > **Quick answer:** Some used boats are worth buying; many will drain your bank account. The worst offenders we see in Ontario: hulls with structural rot, sterndrives facing imminent rebuild, brand-orphaned motors with no parts pipeline, and wet-floor pontoons hiding deck damage. Inspect transom flex, lower-unit oil colour, and fuel system condition before any private-sale used purchase. The cheap boat is rarely the cheap boat.
 
-::decision-card
-heading: New Mercury outboard, or solid used?
-eyebrow: The real trade-off
-subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
-leftLabel: New Mercury
-leftCriteria:
-  - You want Mercury's 3-year factory warranty, with optional Mercury Product Protection available for up to eight total years
-  - You finance and need lender-approved collateral
-  - You will own the boat 7+ years and amortize the cost
-  - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
-  - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Factory coverage plus optional Mercury Product Protection can extend protection to eight total years; the written terms and exclusions control.
-leftVariant: recommended
-rightLabel: Used Mercury
-rightCriteria:
-  - Cash budget is tight or you want to spend the difference on a better boat
-  - You have a mechanic, or you're handy with a wrench
-  - You only need the motor for 3-5 years
-  - You're willing to accept some service history unknowns
-  - You found a low-hour motor from a trusted source (like HBW certified used)
-rightOutcome: Lower upfront cost, higher risk on repairs after year 2 if the warranty is gone. Buy from a dealer who services Mercury and stand behind it.
-rightVariant: alternative
-whenInDoubt: Bring us the boat. We'll quote both a new motor and a comparable used motor from our inventory so you can see the real per-month cost difference. No pressure either way, we sell both.
-::
+*The real trade-off*
+
+### New Mercury outboard, or solid used?
+
+Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
+
+#### New Mercury
+
+- You want Mercury's 3-year factory warranty, with optional Mercury Product Protection available for up to eight total years
+- You finance and need lender-approved collateral
+- You will own the boat 7+ years and amortize the cost
+- You want the latest tech (SmartCraft, joystick, V8/V10 power options)
+- Resale value matters to you down the line
+
+**Higher upfront cost, but lower per-hour cost of ownership over a long run. Factory coverage plus optional Mercury Product Protection can extend protection to eight total years; the written terms and exclusions control.**
+
+#### Used Mercury
+
+- Cash budget is tight or you want to spend the difference on a better boat
+- You have a mechanic, or you're handy with a wrench
+- You only need the motor for 3-5 years
+- You're willing to accept some service history unknowns
+- You found a low-hour motor from a trusted source (like HBW certified used)
+
+**Lower upfront cost, higher risk on repairs after year 2 if the warranty is gone. Buy from a dealer who services Mercury and stand behind it.**
+
+Bring us the boat. We'll quote both a new motor and a comparable used motor from our inventory so you can see the real per-month cost difference. No pressure either way, we sell both.
 
 ## The Used Boat Market Is Full of Money Pits
 

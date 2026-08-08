@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 
-# Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
+## Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
 
 ## Quick answer
 
@@ -69,8 +69,6 @@ This is the honest one. A fiberglass V-hull glides through chop in a way aluminu
 Aluminum hulls bounce more, rattle more (the rivets are part of the design but also part of the sound), and feel less substantial at speed. Some modern welded aluminum boats with foam-injected hulls have closed much of the gap, but they have not eliminated it.
 
 For Rice Lake at typical conditions, the difference is minor. Most of the season you would not notice. For consistent rougher-water use, fiberglass is meaningfully more comfortable.
-
-::walkaround-lead-capture
 
 ## Durability: a tie, but for different reasons
 

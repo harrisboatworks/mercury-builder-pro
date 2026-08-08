@@ -34,30 +34,33 @@ language: en-CA
 
 ---
 
-::decision-card
-heading: Mercury Pro XS or FourStroke for your bass boat?
-eyebrow: Honest power family pick
-subhead: Both are great. The real question is how you actually fish.
-leftLabel: Choose Pro XS if
-leftCriteria:
-  - You fish bass tournaments or run in heavy chop
-  - Your boat is rated for the higher RPM and Pro XS horsepower
-  - You want maximum hole shot and top end
-  - You are comfortable trading some fuel economy for performance
-  - The boat will live mostly on lakes you ride hard
-leftOutcome: Pick Pro XS
-leftVariant: recommended
-rightLabel: Choose FourStroke if
-rightCriteria:
-  - You fish recreationally, not tournaments
-  - Boat use includes family time, not just bass runs
-  - You want lower fuel burn and a quieter idle
-  - The Pro XS price gap does not justify the speed gain for your use
-  - You are repowering an older bass boat that was originally FourStroke
-rightOutcome: Pick FourStroke
-rightVariant: alternative
-whenInDoubt: For competitive tournaments, decide whether the Pro XS performance premium has real value in your use. For weekend fishing, FourStroke is usually the simpler comparison.
-::
+*Honest power family pick*
+
+### Mercury Pro XS or FourStroke for your bass boat?
+
+Both are great. The real question is how you actually fish.
+
+#### Choose Pro XS if
+
+- You fish bass tournaments or run in heavy chop
+- Your boat is rated for the higher RPM and Pro XS horsepower
+- You want maximum hole shot and top end
+- You are comfortable trading some fuel economy for performance
+- The boat will live mostly on lakes you ride hard
+
+**Pick Pro XS**
+
+#### Choose FourStroke if
+
+- You fish recreationally, not tournaments
+- Boat use includes family time, not just bass runs
+- You want lower fuel burn and a quieter idle
+- The Pro XS price gap does not justify the speed gain for your use
+- You are repowering an older bass boat that was originally FourStroke
+
+**Pick FourStroke**
+
+For competitive tournaments, decide whether the Pro XS performance premium has real value in your use. For weekend fishing, FourStroke is usually the simpler comparison.
 
 ---
 
@@ -87,8 +90,6 @@ The right Mercury for a bass boat depends on how you fish: competitively or recr
 | Ontario tournament use | Standard at semi-competitive to elite level | Fine for local recreational circuits |
 
 ---
-
-::walkaround-lead-capture
 
 ## HP recommendations for bass boats
 
@@ -148,15 +149,11 @@ Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with ac
 
 ---
 
----
-
 ## What we see at HBW
 
 Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
 
 The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
-
----
 
 ---
 

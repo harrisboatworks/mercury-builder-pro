@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Brampton boaters drive to Harris Boat Works: about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
 
-# Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
+## Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
 
 Brampton to Rice Lake is a real drive, roughly 95 minutes when the 401 cooperates, longer when it doesn't. We're not going to dress that up.
 

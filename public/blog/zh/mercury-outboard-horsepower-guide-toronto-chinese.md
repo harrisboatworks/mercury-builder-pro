@@ -28,8 +28,6 @@ language: zh-CN
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese
 
-# 多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？
-
 Mercury 船外机马力不是越大越好，而是要按 boat capacity plate、船型、载重、用途、湖区、控制系统、shaft length、prop 和预算一起选。HBW 的 Mercury outboard 页面列出 portable 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP 和 Pro XS 115-300 HP 等主要 families；官方 Mercury Canada 页面也确认 2.5-20 HP FourStroke、75-150 HP FourStroke 和 Pro XS 115-300 HP 这些范围 (Harris Boat Works Mercury Outboards, Mercury FourStroke 2.5-20hp, Mercury FourStroke 75-150hp, Mercury Pro XS).
 
 马力不是越大越好，是越适合越好

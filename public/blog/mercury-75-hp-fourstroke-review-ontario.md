@@ -34,29 +34,32 @@ The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inl
 
 ---
 
-::decision-card
-heading: 75 HP or 90 HP? The honest answer
-eyebrow: Why HBW doesn't stock 75
-subhead: We will order 75 HP, but here is why almost every buyer ends up with the 90.
-leftLabel: Choose 90 HP if
-leftCriteria:
-  - You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
-  - You want stronger hole shot and a bit more top end
-  - The price difference vs 75 HP is typically under $1,500 in 2026
-  - Resale value holds better (more buyer demand for 90 HP)
-  - You want flexibility to add a kicker without underpowering the main
-leftOutcome: Pick 90 HP FourStroke
-leftVariant: recommended
-rightLabel: Choose 75 HP if
-rightCriteria:
-  - Your boat is rated max 75 HP on the capacity plate
-  - You specifically want the lightest powerhead in this range
-  - The budget gap matters more than 15 HP of headroom
-  - You are not towing or carrying full passenger loads
-rightOutcome: Pick 75 HP FourStroke
-rightVariant: alternative
-whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
-::
+*Why HBW doesn't stock 75*
+
+### 75 HP or 90 HP? The honest answer
+
+We will order 75 HP, but here is why almost every buyer ends up with the 90.
+
+#### Choose 90 HP if
+
+- You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+- You want stronger hole shot and a bit more top end
+- The price difference vs 75 HP is typically under $1,500 in 2026
+- Resale value holds better (more buyer demand for 90 HP)
+- You want flexibility to add a kicker without underpowering the main
+
+**Pick 90 HP FourStroke**
+
+#### Choose 75 HP if
+
+- Your boat is rated max 75 HP on the capacity plate
+- You specifically want the lightest powerhead in this range
+- The budget gap matters more than 15 HP of headroom
+- You are not towing or carrying full passenger loads
+
+**Pick 75 HP FourStroke**
+
+We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
 
 ---
 
@@ -90,8 +93,6 @@ The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. 
 The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
 
 ---
-
-::walkaround-lead-capture
 
 ## Why HBW Doesn't Stock the Mercury 75
 
@@ -146,8 +147,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
 ---
 
 ## FAQs

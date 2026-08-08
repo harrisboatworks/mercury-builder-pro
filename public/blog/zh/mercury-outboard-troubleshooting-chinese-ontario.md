@@ -28,7 +28,7 @@ language: zh-CN
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 
-# Mercury 船外机故障排查中文指南：先别一直拧钥匙
+## Mercury 船外机故障排查中文指南：先别一直拧钥匙
 
 ## 快速答案
 

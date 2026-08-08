@@ -42,30 +42,33 @@ If the hull is sound and the motor is tired, repower. If the hull is rotting, st
 
 ---
 
-::decision-card
-heading: Repower the hull, or replace it?
-eyebrow: Honest hull check
-subhead: The motor is rarely the most expensive thing on a boat. The hull underneath it is.
-leftLabel: Repower the existing hull if
-leftCriteria:
-  - Stringers, transom, and floor are solid (no soft spots, no rot)
-  - Hydraulic steering and rigging are in working order
-  - Hull layout, seating, and gunwale height still suit how you boat
-  - The motor is the only major problem
-  - You are attached to the boat or it has sentimental value
-leftOutcome: Repower this boat
-leftVariant: recommended
-rightLabel: Replace the hull if
-rightCriteria:
-  - Transom is soft, cracked, or has obvious water damage
-  - Stringers are rotting or the floor is spongy
-  - You would need to rebuild more than the motor (electronics, controls, seats)
-  - The hull is 30 plus years old with no maintenance records
-  - Your family use has grown beyond what the boat can carry
-rightOutcome: Sell or scrap, buy a different hull
-rightVariant: alternative
-whenInDoubt: Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
-::
+*Honest hull check*
+
+### Repower the hull, or replace it?
+
+The motor is rarely the most expensive thing on a boat. The hull underneath it is.
+
+#### Repower the existing hull if
+
+- Stringers, transom, and floor are solid (no soft spots, no rot)
+- Hydraulic steering and rigging are in working order
+- Hull layout, seating, and gunwale height still suit how you boat
+- The motor is the only major problem
+- You are attached to the boat or it has sentimental value
+
+**Repower this boat**
+
+#### Replace the hull if
+
+- Transom is soft, cracked, or has obvious water damage
+- Stringers are rotting or the floor is spongy
+- You would need to rebuild more than the motor (electronics, controls, seats)
+- The hull is 30 plus years old with no maintenance records
+- Your family use has grown beyond what the boat can carry
+
+**Sell or scrap, buy a different hull**
+
+Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
 
 ---
 

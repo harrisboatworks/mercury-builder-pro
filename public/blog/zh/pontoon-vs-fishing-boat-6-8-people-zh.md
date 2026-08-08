@@ -67,28 +67,31 @@ language: zh-CN
 
 钓鱼船更适合。
 
-::decision-card
-eyebrow: Pontoon 还是钓鱼船
-heading: 6 至 8 人家庭该选哪一种?
-subhead: 大部分 GTA 华人家庭买船是为了周末带家人朋友上湖。船型选错, 后悔一整个夏天。按真实用途选。
-leftLabel: Pontoon 平台船
-leftCriteria:
-  - 6 至 8 人家庭聚会, 烧烤, 游泳
-  - 老人小孩同船, 需要平稳和宽敞甲板
-  - 莱斯湖, Kawarthas 这类相对平静的水域
-  - 偶尔钓鱼可以, 但不是主要用途
-leftOutcome: Legend 20 至 22 ft Pontoon
-leftVariant: recommended
-rightLabel: 铝制或玻璃钢钓鱼船
-rightCriteria:
-  - 主要目的是认真钓鱼 (Bass, Walleye)
-  - 通常 2 至 4 人出船, 偶尔带家人
-  - 需要在湖上快速移动到不同钓点
-  - 在意操控灵活和续航
-rightOutcome: 17 至 19 ft 铝制钓鱼船
-rightVariant: alternative
-whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想带亲戚朋友上湖玩, 不是钓鱼。先问家人, 再选船型。
-::
+*Pontoon 还是钓鱼船*
+
+### 6 至 8 人家庭该选哪一种?
+
+大部分 GTA 华人家庭买船是为了周末带家人朋友上湖。船型选错, 后悔一整个夏天。按真实用途选。
+
+#### Pontoon 平台船
+
+- 6 至 8 人家庭聚会, 烧烤, 游泳
+- 老人小孩同船, 需要平稳和宽敞甲板
+- 莱斯湖, Kawarthas 这类相对平静的水域
+- 偶尔钓鱼可以, 但不是主要用途
+
+**Legend 20 至 22 ft Pontoon**
+
+#### 铝制或玻璃钢钓鱼船
+
+- 主要目的是认真钓鱼 (Bass, Walleye)
+- 通常 2 至 4 人出船, 偶尔带家人
+- 需要在湖上快速移动到不同钓点
+- 在意操控灵活和续航
+
+**17 至 19 ft 铝制钓鱼船**
+
+一半华人家庭买了钓鱼船后才发现, 周末其实更想带亲戚朋友上湖玩, 不是钓鱼。先问家人, 再选船型。
 
 ## 莱斯湖船型推荐
 

@@ -23,8 +23,6 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 
-# Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)
-
 > **Quick answer:** Milky or coffee-coloured gearcase lubricant can indicate water intrusion. Stop treating it as a routine oil change. A technician needs to identify the source, often with pressure and vacuum testing, then inspect the seals and internal condition before quoting the repair. Mercury warns that water in the lubricant can damage bearings and can freeze inside the gearcase.
 
 There's a ten-second moment in every gearcase oil change that matters more than the oil itself: watching what comes out.
@@ -177,12 +175,12 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 

@@ -78,28 +78,31 @@ Six variables move the right HP for your specific boat:
 
 ---
 
-::decision-card
-eyebrow: HP sizing decision
-heading: How heavy do you actually load the boat?
-subhead: The plate max is the ceiling, not the recommendation. Where you target inside that range depends on load.
-leftLabel: Light load (1 to 2 people, fishing gear)
-leftCriteria:
-  - Solo or two-person fishing most outings
-  - Light tackle, no tow toys, half tank
-  - Calm protected water (Rice Lake, small Kawarthas)
-  - You care more about fuel economy than hole shot
-leftOutcome: Target 60 to 70 percent of plate max
-leftVariant: alternative
-rightLabel: Heavy load (4+ people, tubes, full gear)
-rightCriteria:
-  - Family of four plus a friend most weekends
-  - Tubing, wakeboarding, or skiing on the regular
-  - Full cooler, full tank, full gear
-  - Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
-rightOutcome: Target 90 to 100 percent of plate max
-rightVariant: recommended
-whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
-::
+*HP sizing decision*
+
+### How heavy do you actually load the boat?
+
+The plate max is the ceiling, not the recommendation. Where you target inside that range depends on load.
+
+#### Light load (1 to 2 people, fishing gear)
+
+- Solo or two-person fishing most outings
+- Light tackle, no tow toys, half tank
+- Calm protected water (Rice Lake, small Kawarthas)
+- You care more about fuel economy than hole shot
+
+**Target 60 to 70 percent of plate max**
+
+#### Heavy load (4+ people, tubes, full gear)
+
+- Family of four plus a friend most weekends
+- Tubing, wakeboarding, or skiing on the regular
+- Full cooler, full tank, full gear
+- Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
+
+**Target 90 to 100 percent of plate max**
+
+Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
 
 ---
 

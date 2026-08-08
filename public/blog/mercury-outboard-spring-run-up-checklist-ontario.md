@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
-# Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
+## Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
 
 ## Quick answer
 

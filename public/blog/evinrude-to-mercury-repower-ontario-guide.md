@@ -77,12 +77,6 @@ Not everyone should switch this year. Here is the real framework.
 
 We will tell you which column you are in. The relationship matters more to us than one motor sale, so if your Evinrude has good years left and your plans are short-term, we will say so.
 
-::pull-quote
-quote: Loved my old Johnson 90 but Evinrude's gone and the parts kept getting harder. Jay walked me through the Mercury 90 FourStroke swap and three weeks later it was on the transom. **First start of the season I forgot what a quiet motor sounds like.**
-attribution: Dave M.
-source: HBW Bewdley repower customer
-::
-
 ---
 
 ## What the Conversion Actually Involves

@@ -36,7 +36,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Oshawa boaters drive to Harris Boat Works: about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
 
-# Mercury Dealer for Oshawa: We're Basically Durham Region
+## Mercury Dealer for Oshawa: We're Basically Durham Region
 
 Oshawa is one of the closest major cities to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
 

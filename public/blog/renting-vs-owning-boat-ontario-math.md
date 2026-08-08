@@ -28,8 +28,6 @@ language: en-CA
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
-# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
-
 > **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
 
 We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.

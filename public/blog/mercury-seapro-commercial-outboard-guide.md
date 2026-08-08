@@ -76,28 +76,31 @@ If downtime has a real daily business cost, compare SeaPro's configured premium 
 
 ---
 
-::decision-card
-eyebrow: Commercial vs recreational duty
-heading: Do you actually need a SeaPro?
-subhead: SeaPro is built for operators who cannot afford downtime. For most Ontario boaters, it is overkill at a price premium you will not recover.
-leftLabel: If you run a guide service, water taxi, or commercial fishing operation
-leftCriteria:
-  - Annual hours above 300 to 600, with some seasons hitting 1,500+
-  - One breakdown day costs more than a modest daily rate in lost revenue
-  - Extended 200-hour maintenance intervals on SeaPro V6 and V8 models reduce service trips; smaller SeaPro models follow the standard 100-hour schedule
-  - Reinforced lower unit and enhanced cooling handle sustained loads
-leftOutcome: SeaPro is built for this
-leftVariant: alternative
-rightLabel: If you are a heavy-use recreational angler
-rightCriteria:
-  - Weekend fishing, cottage use, or family boating under 200 hours per season
-  - Standard FourStroke reliability is more than adequate
-  - The 10 to 15 percent price premium is not recovered in service savings
-  - Annual maintenance at 100-hour intervals is acceptable
-rightOutcome: FourStroke is enough
-rightVariant: recommended
-whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not earning income from the boat, the standard FourStroke is the smarter buy.
-::
+*Commercial vs recreational duty*
+
+### Do you actually need a SeaPro?
+
+SeaPro is built for operators who cannot afford downtime. For most Ontario boaters, it is overkill at a price premium you will not recover.
+
+#### If you run a guide service, water taxi, or commercial fishing operation
+
+- Annual hours above 300 to 600, with some seasons hitting 1,500+
+- One breakdown day costs more than a modest daily rate in lost revenue
+- Extended 200-hour maintenance intervals on SeaPro V6 and V8 models reduce service trips; smaller SeaPro models follow the standard 100-hour schedule
+- Reinforced lower unit and enhanced cooling handle sustained loads
+
+**SeaPro is built for this**
+
+#### If you are a heavy-use recreational angler
+
+- Weekend fishing, cottage use, or family boating under 200 hours per season
+- Standard FourStroke reliability is more than adequate
+- The 10 to 15 percent price premium is not recovered in service savings
+- Annual maintenance at 100-hour intervals is acceptable
+
+**FourStroke is enough**
+
+Most Ontario recreational buyers do not need SeaPro. If you are not earning income from the boat, the standard FourStroke is the smarter buy.
 
 ## SeaPro vs FourStroke: real differences
 

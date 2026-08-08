@@ -88,28 +88,31 @@ The same boat handles salmon trolling offshore, walleye fishing on Bay of Quinte
 
 ---
 
-::decision-card
-eyebrow: Lake Ontario HP decision
-heading: How far offshore do you actually run for salmon?
-subhead: Lake Ontario is two different fisheries. Be honest about the one you fish most.
-leftLabel: Near-shore and calm bays
-leftCriteria:
-  - Most days you stay within sight of the marina
-  - You troll in protected water and only leave on calm forecasts
-  - Fuel economy matters more than top end
-  - Boat is 17 to 19 ft with a single main
-leftOutcome: Mercury 115 to 150 FourStroke, no kicker required
-leftVariant: alternative
-rightLabel: 20+ miles for offshore salmon
-rightCriteria:
-  - You run east-west to find temperature breaks
-  - You fish 3 to 6 ft chop regularly, not just on calm days
-  - A 15 HP ProKicker for slow trolling is non-negotiable
-  - Boat is 21 ft or bigger with offshore-rated hull
-rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker
-rightVariant: recommended
-whenInDoubt: If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
-::
+*Lake Ontario HP decision*
+
+### How far offshore do you actually run for salmon?
+
+Lake Ontario is two different fisheries. Be honest about the one you fish most.
+
+#### Near-shore and calm bays
+
+- Most days you stay within sight of the marina
+- You troll in protected water and only leave on calm forecasts
+- Fuel economy matters more than top end
+- Boat is 17 to 19 ft with a single main
+
+**Mercury 115 to 150 FourStroke, no kicker required**
+
+#### 20+ miles for offshore salmon
+
+- You run east-west to find temperature breaks
+- You fish 3 to 6 ft chop regularly, not just on calm days
+- A 15 HP ProKicker for slow trolling is non-negotiable
+- Boat is 21 ft or bigger with offshore-rated hull
+
+**Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker**
+
+If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
 
 ---
 

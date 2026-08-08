@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
-# Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
+## Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
 
 ## Quick answer
 Start with the boat's compliance notice or capacity label and the manufacturer's rating, not a horsepower-by-length chart. For an outboard boat 6 metres or shorter, [Transport Canada says the capacity label shows the maximum safe motor size](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft). HBW then matches a Mercury within that limit to the hull, load, controls, shaft length, and use. For a real number on your boat, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).

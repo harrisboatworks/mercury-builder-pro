@@ -86,28 +86,45 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 Merc
 
 ---
 
-::diagnostic-flow
-eyebrow: GTA 华人船主必备证件
-heading: PCOC、PCL 加钓鱼资格办理顺序
-subhead: 第一次办的话, 按这个顺序走最不容易出错。整个流程在线就能完成大部分, 不用排队。
-step1Label: 选择认可的 PCOC 课程提供方
-step1Question: 你是否已完成认可考试机构的在线课程?
-step1Tip: 使用 Transport Canada 当前认可名单。课程语言、费用、考试形式和发证步骤以提供方当下说明为准。
-step2Label: 完成在线考试拿到 PCOC
-step2Question: 考试通过后是否已取得并携带有效证明?
-step2Tip: PCOC 终身有效。不要假设手机照片或普通复印件一定可替代有效证明；按官方和发证机构的说明携带。
-step3Label: 船只登记号 (Pleasure Craft Licence)
-step3Question: 你的船发动机总功率是否达到 10 HP, 已向 Transport Canada 申请 PCL 并正确显示号码?
-step3Tip: 新办、续期、转让或补发会收取当前服务费。号码必须显示在船首两侧, 字高至少 7.5 cm；申请资料和牌照副本也要按官方要求保存。
-step4Label: 申请钓鱼证 (Outdoors Card + Fishing Licence)
-step4Question: 你是否在 Ontario.ca 上买好 Outdoors Card 和当年钓鱼证?
-step4Tip: Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conservation (保育) 看你计划带几条鱼回家, 多数家庭选 Sport。
-step5Label: 了解每个湖的鱼种规则
-step5Question: 你是否清楚目标湖的禁渔期, 大小限制和每日限额?
-step5Tip: 莱斯湖, Kawarthas, Lake Simcoe 各有不同规则。每年下载 Ontario Fishing Regulations Summary, 出门前查一遍。
-escalationLabel: 不确定哪些证件适合你?
-escalationBody: 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
-::
+*GTA 华人船主必备证件*
+
+### PCOC、PCL 加钓鱼资格办理顺序
+
+第一次办的话, 按这个顺序走最不容易出错。整个流程在线就能完成大部分, 不用排队。
+
+#### 选择认可的 PCOC 课程提供方
+
+**你是否已完成认可考试机构的在线课程?**
+
+使用 Transport Canada 当前认可名单。课程语言、费用、考试形式和发证步骤以提供方当下说明为准。
+
+#### 完成在线考试拿到 PCOC
+
+**考试通过后是否已取得并携带有效证明?**
+
+PCOC 终身有效。不要假设手机照片或普通复印件一定可替代有效证明；按官方和发证机构的说明携带。
+
+#### 船只登记号 (Pleasure Craft Licence)
+
+**你的船发动机总功率是否达到 10 HP, 已向 Transport Canada 申请 PCL 并正确显示号码?**
+
+新办、续期、转让或补发会收取当前服务费。号码必须显示在船首两侧, 字高至少 7.5 cm；申请资料和牌照副本也要按官方要求保存。
+
+#### 申请钓鱼证 (Outdoors Card + Fishing Licence)
+
+**你是否在 Ontario.ca 上买好 Outdoors Card 和当年钓鱼证?**
+
+Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conservation (保育) 看你计划带几条鱼回家, 多数家庭选 Sport。
+
+#### 了解每个湖的鱼种规则
+
+**你是否清楚目标湖的禁渔期, 大小限制和每日限额?**
+
+莱斯湖, Kawarthas, Lake Simcoe 各有不同规则。每年下载 Ontario Fishing Regulations Summary, 出门前查一遍。
+
+#### 不确定哪些证件适合你?
+
+我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 

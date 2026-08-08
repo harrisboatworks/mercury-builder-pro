@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
-# Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
+## Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
 > **Quick answer:** Eligible new Mercury FourStroke outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
@@ -84,28 +84,31 @@ The phrase "improper installation" matters. Mercury can exclude damage caused by
 
 ---
 
-::decision-card
-eyebrow: Extended warranty decision
-heading: Should you buy Mercury Product Protection?
-subhead: Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
-leftLabel: Take MPP extended coverage
-leftCriteria:
-  - You're financing the motor over 5+ years
-  - You plan to keep the boat 7+ years
-  - You run meaningful seasonal hours or tow regularly
-  - Peace of mind matters more than the upfront cost
-leftOutcome: Price the eligible Platinum term
-leftVariant: recommended
-rightLabel: Factory coverage is enough
-rightCriteria:
-  - You're paying cash
-  - You typically flip boats every 3 to 5 years
-  - You run a modest seasonal schedule
-  - You service religiously and keep records
-rightOutcome: Stick with the 3-year factory
-rightVariant: alternative
-whenInDoubt: Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
-::
+*Extended warranty decision*
+
+### Should you buy Mercury Product Protection?
+
+Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
+
+#### Take MPP extended coverage
+
+- You're financing the motor over 5+ years
+- You plan to keep the boat 7+ years
+- You run meaningful seasonal hours or tow regularly
+- Peace of mind matters more than the upfront cost
+
+**Price the eligible Platinum term**
+
+#### Factory coverage is enough
+
+- You're paying cash
+- You typically flip boats every 3 to 5 years
+- You run a modest seasonal schedule
+- You service religiously and keep records
+
+**Stick with the 3-year factory**
+
+Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
 
 ## Mercury Product Protection Platinum. The Extended Service Contract
 

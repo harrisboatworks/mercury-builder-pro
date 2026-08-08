@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
-# Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
+## Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
 
 > **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
 
@@ -40,28 +40,31 @@ Here's the full picture, the good, the honest, and the stuff that will actually 
 
 ---
 
-::decision-card
-eyebrow: Repower platform decision
-heading: Outboard or sterndrive on your hull?
-subhead: For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
-leftLabel: Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
-leftCriteria:
-  - Ontario freshwater, mostly inland lakes
-  - Reliability and fuel economy matter
-  - You want shallow-water trim ability for Kawartha shoals
-  - Resale matters in 5 to 10 years
-leftOutcome: Go outboard. 2026 market has decisively moved.
-leftVariant: recommended
-rightLabel: Boat is 22+ ft with high-deadrise hull or dedicated tow boat
-rightCriteria:
-  - Big-water cruiser with cabin, indoor cockpit comfort matters
-  - Watersports inboard tow boat where wake shape is the whole point
-  - You want maximum cockpit space with no transom motor
-  - You'll keep the boat 10+ years and accept the service intervals
-rightOutcome: Sterndrive or inboard can still make sense
-rightVariant: alternative
-whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
-::
+*Repower platform decision*
+
+### Outboard or sterndrive on your hull?
+
+For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
+
+#### Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
+
+- Ontario freshwater, mostly inland lakes
+- Reliability and fuel economy matter
+- You want shallow-water trim ability for Kawartha shoals
+- Resale matters in 5 to 10 years
+
+**Go outboard. 2026 market has decisively moved.**
+
+#### Boat is 22+ ft with high-deadrise hull or dedicated tow boat
+
+- Big-water cruiser with cabin, indoor cockpit comfort matters
+- Watersports inboard tow boat where wake shape is the whole point
+- You want maximum cockpit space with no transom motor
+- You'll keep the boat 10+ years and accept the service intervals
+
+**Sterndrive or inboard can still make sense**
+
+Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
 
 ## Outboard vs sterndrive at a glance
 
