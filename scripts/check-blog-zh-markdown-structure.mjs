@@ -50,4 +50,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Chinese Markdown structure check passed for ${slugs.length} routes (F-008 structure half only; code-mix remains open).`);
+console.log(`Chinese Markdown structure check passed for ${slugs.length} F-008 routes.`);
