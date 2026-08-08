@@ -13326,7 +13326,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Financing is improving.
 - The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
-We watch the market from our shop on Rice Lake. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -13580,7 +13580,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-lineup-ontario',
     title: 'Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)',
-    description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes.",
+    description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.",
     image: '/lovable-uploads/hero-mercury-motor-families.webp',
     imageAlt: 'Mercury outboard motors on a Harris Boat Works dock representing the 2027 model year lineup for Ontario boaters.',
     author: 'Jay Harris',

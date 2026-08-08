@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)"
-description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes."
+description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes."
 category: "Buying Guide"
 date_published: 2026-07-09
 date_modified: 2026-07-31
@@ -20,7 +20,7 @@ language: en-CA
 
 # Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)
 
-> Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario dealer, with honest pricing notes.
+> Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.
 
 **Category:** Buying Guide  
 **Published:** 2026-07-09  
@@ -199,4 +199,3 @@ Not meaningfully. Trade values move with brand, age, hours, and condition, not w
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
