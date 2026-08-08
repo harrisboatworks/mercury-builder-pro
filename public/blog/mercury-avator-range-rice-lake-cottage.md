@@ -113,7 +113,7 @@ For the first two patterns, Avator works. For the third, plan on running [a gas 
 
 ## Charging at the cottage
 
-[Charging is half the Avator equation](/blog/mercury-avator-charging-cottage-dock). The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer, plan on overnight per pack from 110V.
+[Charging is half the Avator equation](/blog/mercury-avator-charging-cottage-dock). Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger external battery packs take longer, so confirm the charger and pack combination before planning turnaround time.
 
 What that means in practice:
 
@@ -163,7 +163,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 
 ### Can I charge an Avator at the dock with regular cottage power?
 
-Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
+Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger.
 
 ### Is Avator practical as a primary motor on Rice Lake?
 

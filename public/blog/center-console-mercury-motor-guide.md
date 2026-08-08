@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-07-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury for Center Console Boats Ontario"
 description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"
 date_published: 2026-03-23
-date_modified: 2026-07-10
+date_modified: 2026-08-08
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last reviewed:** 2026-07-10  
+**Last reviewed:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
@@ -100,8 +100,8 @@ For Ontario center consoles, Pro XS is the default recommendation for fishing-fo
 
 **Best for:** Fishing-focused center consoles, 20 to 25 ft hulls, buyers who want aggressive performance and do not need quiet cruise.
 
-### Verado (200 to 600 HP)
-Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at comparable HP. Available in V8, V10, and V12 configurations. Joystick Piloting works with Verado.
+### Verado (250 to 600 HP)
+Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at comparable HP. The current [Mercury Verado lineup](https://www.mercurymarine.com/ca/en/engines/outboard/verado) runs from 250 to 600 HP across V8, V10, and V12 configurations. Verado is special-order at HBW, so check our [live pricing reference](/pricing-reference) before planning availability.
 
 For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. We recommend Verado for twin-engine setups where the ride quality and noise difference actually matters across multiple hours at cruise.
 

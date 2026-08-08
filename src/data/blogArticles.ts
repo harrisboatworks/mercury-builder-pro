@@ -3832,7 +3832,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'Mercury FourStroke outboard with Command Thrust gearcase on a pontoon boat to illustrate eligibility requirements.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '11 min',
@@ -3848,7 +3848,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "Does Command Thrust affect my motor warranty?", answer: "No. CT is a Mercury factory option installed at build time. Mercury's standard warranty applies to CT motors the same way as standard motors. Repower into a new CT motor at HBW and the standard Mercury Marine factory warranty applies." },
       { question: "Do I need a special prop for Command Thrust?", answer: "Yes. Command Thrust uses a different prop shaft and a larger prop diameter than standard gearcase. The prop you have on a standard gearcase will not fit a CT gearcase, and vice versa. Prop selection for CT is part of the install conversation at HBW." }
     ],
-    content: `*Last reviewed: 2026-05-28*
+    content: `*Last reviewed: 2026-08-08*
 
 > **Quick answer:** Mercury Command Thrust fits most pontoons over 20 feet, all tritoons, and any pontoon regularly run at heavy loads (8+ people, water sports, cottage hauling). It's overkill on light 16-18 ft two-tube pontoons used for casual cruising. Email your boat photo and current motor serial number to info@harrisboatworks.ca for a fit check.
 
@@ -3956,7 +3956,7 @@ For the long version of motor serial number decoding, our [Mercury Outboard Seri
 
 ## HP class availability
 
-Mercury offers Command Thrust as an option on select FourStroke models in the 25 to 115 HP range. Specific HP and shaft length availability varies by model year, and Mercury updates the lineup periodically.
+As of August 8, 2026, current Canadian listings include 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
 
 Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
@@ -9104,7 +9104,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Single-engine center console fishing boat with a Mercury 90 FourStroke on the stern, skipper at the helm, on a calm Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-08',
     publishDate: '2026-03-23',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -9177,8 +9177,8 @@ For Ontario center consoles, Pro XS is the default recommendation for fishing-fo
 
 **Best for:** Fishing-focused center consoles, 20 to 25 ft hulls, buyers who want aggressive performance and do not need quiet cruise.
 
-### Verado (200 to 600 HP)
-Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at comparable HP. Available in V8, V10, and V12 configurations. Joystick Piloting works with Verado.
+### Verado (250 to 600 HP)
+Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at comparable HP. The current [Mercury Verado lineup](https://www.mercurymarine.com/ca/en/engines/outboard/verado) runs from 250 to 600 HP across V8, V10, and V12 configurations. Verado is special-order at HBW, so check our [live pricing reference](/pricing-reference) before planning availability.
 
 For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. We recommend Verado for twin-engine setups where the ride quality and noise difference actually matters across multiple hours at cruise.
 
@@ -12389,13 +12389,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury Pro XS outboard engine on a bowrider boat pulling a wakeboarder, demonstrating power for watersports.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-03',
-    dateModified: '2026-05-03',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-03',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury ski boat motor', 'wakeboard boat outboard', 'mercury for watersports', 'best outboard for skiing', 'wakesurf outboard motor', 'best Mercury for ski wakeboard boats', 'Mercury Pro XS tow boat', 'Mercury V8 wakeboard', 'hole shot tow boat'],
     content: `
-*Last reviewed: 2026-05-03*
+*Last reviewed: 2026-08-08*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
 
@@ -12503,7 +12503,7 @@ The V8 also has DTS standard, which on a tow boat is genuinely worth having, smo
 
 Mercury Verado (V8/V10 naturally aspirated) is the **premium quiet option**. For tow boats specifically, Verado matters because **a quieter motor at the dock means happier neighbours at the dock**, and the tow community spends a lot of time idling at the dock between runs.
 
-A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise, has integrated power steering as standard, and supports single-engine joystick steering (since Mercury added that capability in 2024-2025).
+A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise and has integrated power steering as standard. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) is a package for electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP, paired with a compatible CAN-based variable-speed thruster. That package is not a fit recommendation for the ski and wake hulls discussed here, so we confirm the exact hull, steering, controls, and thruster package with Mercury before quoting.
 
 The trade-off: Verados are special-order and significantly more expensive. We don't keep them in stock; we order to spec. For a custom tow boat build, ask us, we can quote.
 
@@ -35741,7 +35741,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     keywords: ['mercury avator range', 'avator electric outboard rice lake', 'mercury electric outboard ontario', 'avator cottage range'],
     faqs: [
       { question: "How far can a Mercury Avator 7.5e really go on Rice Lake?", answer: "3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions." },
-      { question: "Can I charge an Avator at the dock with regular cottage power?", answer: "Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs." },
+      { question: "Can I charge an Avator at the dock with regular cottage power?", answer: "Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger." },
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
       { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "It depends on the specific water. The federal 7.5 kW electric allowance applies to waters listed in Schedule 3 of the Vessel Operation Restriction Regulations, where power-driven vessels and electric propulsion above 7.5 kW are prohibited. It is not a general rule for most freshwater lakes. Confirm the current schedule and local restrictions before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
@@ -35833,7 +35833,7 @@ For the first two patterns, Avator works. For the third, plan on running [a gas 
 
 ## Charging at the cottage
 
-[Charging is half the Avator equation](/blog/mercury-avator-charging-cottage-dock). The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer, plan on overnight per pack from 110V.
+[Charging is half the Avator equation](/blog/mercury-avator-charging-cottage-dock). Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger external battery packs take longer, so confirm the charger and pack combination before planning turnaround time.
 
 What that means in practice:
 
@@ -36039,13 +36039,13 @@ For pure side-by-side product comparison without the dealer factor: both brands 
     imageAlt: 'Mercury Avator 7.5e electric outboard charging at a wooden cottage dock on an aluminum boat at sunset.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
     keywords: ['mercury avator charging', 'electric outboard cottage charging', 'avator dock charging', 'ontario electric boat charging'],
     faqs: [
-      { question: "Can I charge a Mercury Avator from a standard cottage outlet?", answer: "For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly." },
+      { question: "Can I charge a Mercury Avator from a standard cottage outlet?", answer: "Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger." },
       { question: "Do I need a special charger?", answer: "The charger comes with the Avator. Mercury supplies the appropriate charger for each model. For 240V upgrades, the higher-output charger is an additional purchase but uses the same battery interface." },
       { question: "What does a dock outlet install cost?", answer: "$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install, don't DIY near water." },
       { question: "Can I charge with solar at a remote cottage?", answer: "Theoretically yes, practically no for serious use. The solar array required to charge a meaningful Avator battery bank is large and expensive. For remote cottages without shore power, gas outboards remain the practical answer." },
@@ -36059,7 +36059,7 @@ For pure side-by-side product comparison without the dealer factor: both brands 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
+Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger Avator models use different battery and charger combinations, so confirm the package and electrical requirements before planning turnaround time. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
 
 ## What charging actually requires
 
@@ -36075,15 +36075,15 @@ For a cottage with existing dock or boathouse power, the setup is usually straig
 
 ### Avator 7.5e (integrated 1 kWh battery)
 
-- **Standard 110V outlet**: 3-4 hours from empty to full
-- **240V charging**: not applicable for this model (single integrated battery, 110V charger only)
+- **Included 110 W charger with a standard household outlet**: about nine hours from fully depleted
+- **Optional faster charger**: confirm the current compatible charger and input requirements with Mercury
 
 For typical cottage use (a few hours on the water, then dock for the night), [the 7.5e's overnight 110V charge](/blog/mercury-avator-7-5e-review) is comfortable.
 
 ### Avator 20e and 35e (external 2,300 Wh packs, up to 3-4 packs)
 
 - **Standard 110V outlet, single pack**: ~10-12 hours
-- **240V charger, single pack**: ~3-4 hours
+- **Higher-output charger, single pack**: confirm the current compatible charger and pack with Mercury before planning turnaround time
 - **Multiple packs simultaneously**: depends on charger configuration
 
 For multi-pack setups, overnight 110V charging works if you have outlets to spare. A single 240V charger is the better answer for serious use.

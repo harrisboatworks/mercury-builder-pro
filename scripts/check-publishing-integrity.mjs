@@ -135,8 +135,16 @@ const pclRouteSlugs = [
   'total-cost-of-owning-a-boat-ontario-2026',
   'walleye-opener-boat-prep',
 ];
-const sourceArticleSection = (slug) =>
-  blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+const sourceArticleSection = (slug) => {
+  const start = blogArticles.search(new RegExp(`slug: ['"]${slug}['"],`));
+  if (start < 0) return '';
+  const remainder = blogArticles.slice(start + 1);
+  const nextArticle = remainder.search(/\n {4}slug: ['"]/);
+  const articleArrayEnd = remainder.search(/\n\s*},\n\s*];/);
+  const boundaries = [nextArticle, articleArrayEnd].filter((offset) => offset >= 0);
+  const end = boundaries.length ? start + 1 + Math.min(...boundaries) : blogArticles.length;
+  return blogArticles.slice(start, end);
+};
 const pclRouteReview = pclRouteSlugs.map((slug) => {
   const surface = `${sourceArticleSection(slug)}\n${read(`public/blog/${slug}.md`)}`;
   return {
@@ -416,6 +424,162 @@ for (const hp of [115, 150, 200, 250]) {
   check(matching.length > 0, `Canonical pricing is missing a ${hp} HP Pro XS SKU.`);
   check(matching.every((sku) => Number.isFinite(sku.dealer) && sku.dealer > 0), `Canonical ${hp} HP Pro XS price is invalid.`);
 }
+
+const specRouteSurfaces = (slug) => {
+  const twinPath = `public/blog/${slug}.md`;
+  return [
+    [`${slug} source`, sourceArticleSection(slug)],
+    [`${slug} twin`, existsSync(twinPath) ? read(twinPath) : ''],
+  ];
+};
+const canonicalCommandThrustHps = [...new Set(
+  skus.filter((sku) => /Command Thrust/i.test(sku.model)).map((sku) => sku.hp),
+)].sort((a, b) => a - b);
+check(canonicalCommandThrustHps.length > 0, 'Canonical pricing must contain at least one Command Thrust SKU.');
+const checkedSpecRoutes = new Set();
+const checkSpecRoute = (slug, inspect) => {
+  checkedSpecRoutes.add(slug);
+  for (const [label, surface] of specRouteSurfaces(slug)) {
+    check(surface.length > 0, `${label} is missing from the product-spec integrity review.`);
+    check(!surface.includes('\u2014'), `${label} contains a banned em dash.`);
+    inspect(surface, label);
+  }
+};
+
+checkSpecRoute('mercury-command-thrust-pontoon-eligibility-2026', (surface, label) => {
+  const availabilitySection = surface.match(/## HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
+  const listing = availabilitySection
+    .split(/\n\s*\n/)
+    .find((paragraph) => /As of August 8, 2026,/i.test(paragraph) && /current Canadian listings/i.test(paragraph)) ?? '';
+  check(!/25\s*(?:to|[-–])\s*115 HP/i.test(surface), `${label} revived the stale 25-to-115 HP Command Thrust range.`);
+  check(
+    /9\.9 HP/i.test(listing) &&
+      /Command Thrust/i.test(listing) &&
+      /ProKicker/i.test(listing) &&
+      /9\.9 HP[\s\S]{0,180}40\s*,\s*50\s*,\s*60\s*,\s*90\s+and\s+115 HP/i.test(listing) &&
+      canonicalCommandThrustHps.every((hp) => new RegExp(`(?:^|\\D)${String(hp).replace('.', '\\.')}\\b`).test(listing)) &&
+      !/\b25\s*HP\b/i.test(listing),
+    `${label} must retain the cache-busted Canadian Command Thrust configurations as of August 8, 2026.`,
+  );
+  check(surface.includes('/pricing-reference'), `${label} must point readers to the live pricing reference.`);
+});
+
+checkSpecRoute('center-console-mercury-motor-guide', (surface, label) => {
+  const veradoSection = surface.match(/### Verado \(250 to 600 HP\)[\s\S]*?(?=\n### |\n## |$)/)?.[0] ?? '';
+  check(
+    !/Verado[\s\S]{0,80}200\s*(?:to|[-–])\s*600 HP/i.test(surface),
+    `${label} revived the stale Verado 200-to-600 HP range.`,
+  );
+  check(
+    /\bV8\b/.test(veradoSection) && /\bV10\b/.test(veradoSection) && /\bV12\b/.test(veradoSection),
+    `${label} must retain the current Verado V8, V10 and V12 families within the 250-to-600 HP section.`,
+  );
+  check(/special-order at HBW/i.test(veradoSection), `${label} must retain HBW's Verado special-order disclosure.`);
+  check(
+    /mercurymarine\.com\/ca\/en\/engines\/outboard\/verado/.test(veradoSection) &&
+      /\/pricing-reference/.test(veradoSection),
+    `${label} must cite Mercury's Verado lineup and HBW's live availability source.`,
+  );
+});
+
+checkSpecRoute('best-mercury-for-ski-wakeboard-boats', (surface, label) => {
+  const joystickParagraph = surface
+    .split(/\n\s*\n/)
+    .find((paragraph) => /Joystick Piloting for Single-Engine Outboards with Thruster/i.test(paragraph)) ?? '';
+  check(
+    !/supports single-engine joystick steering/i.test(surface),
+    `${label} revived the broad single-engine joystick claim.`,
+  );
+  check(
+    /Joystick Piloting for Single-Engine Outboards with Thruster/i.test(surface) &&
+      /electric[- ]steering/i.test(surface) &&
+      /\bVerado\b/.test(surface) &&
+      /\bSeaPro\b/.test(surface) &&
+      /\bV8\b/.test(surface) &&
+      /\bV10\b/.test(surface) &&
+      /\bV12\b/.test(surface) &&
+      /250 to 600 HP/.test(surface) &&
+      /CAN-based variable-speed thruster/i.test(surface),
+    `${label} must keep the narrow 250-to-600 HP Verado and SeaPro single-engine thruster-package constraints.`,
+  );
+  check(
+    /not a fit recommendation for the ski and wake hulls/i.test(surface),
+    `${label} must state that the package is not a ski/wake hull fit recommendation.`,
+  );
+  check(
+    /mercurymarine\.com\/us\/en\/about-us\/news\/mercury-introduces-joystick-piloting-for-single-engine-outboards\.html/.test(surface),
+    `${label} must cite Mercury's February 12, 2025 single-engine thruster-package release.`,
+  );
+  check(
+    joystickParagraph.length > 0 && !/pontoon/i.test(joystickParagraph),
+    `${label} must not associate the single-engine joystick package with a pontoon without route-specific evidence.`,
+  );
+});
+
+for (const slug of [
+  'mercury-avator-range-rice-lake-cottage',
+  'mercury-avator-charging-cottage-dock',
+]) {
+  checkSpecRoute(slug, (surface, label) => {
+    const chargerContext = surface
+      .split(/\n\s*\n/)
+      .find((passage) =>
+        /110\s*W/i.test(passage) &&
+        /standard household outlet/i.test(passage) &&
+        /(?:about|approximately|roughly)\s*(?:9|nine)\s*hours/i.test(passage) &&
+        /fully depleted/i.test(passage)
+      ) ?? '';
+    check(
+      !/\b3\s*(?:to|[-–])\s*4\s*hours?\b/i.test(surface),
+      `${label} revived the incorrect three-to-four-hour Avator charging claim.`,
+    );
+    check(
+      !/(?:9\.5|9½|nine and a half)\s*hours?|offer ends|register by/i.test(surface),
+      `${label} contains the expired-promotion charge figure or offer framing.`,
+    );
+    check(
+      /standard household outlet/i.test(chargerContext) &&
+        /(?:about|approximately|roughly)\s*(?:9|nine)\s*hours/i.test(chargerContext) &&
+        /fully depleted/i.test(chargerContext),
+      `${label} must pair the included 110 W charger with a standard outlet and about-nine-hour depleted-battery timing.`,
+    );
+    check(
+      /mercurymarine\.com\/ca\/en\/engines\/electric\/avator\/avator-7-5e/.test(surface) &&
+        /EMEA_Avator_Brochure_EN_screen\.pdf/.test(surface),
+      `${label} must cite Mercury's current Avator 7.5e page and family brochure.`,
+    );
+  });
+}
+
+checkSpecRoute('mercury-avator-7-5e-review', (surface, label) => {
+  check(/110\s*W/i.test(surface) && /standard household outlet/i.test(surface), `${label} must keep the included-charger reference facts.`);
+  check(!/\b3\s*(?:to|[-–])\s*4\s*hours?\b/i.test(surface), `${label} contains the retired Avator 7.5e charge time.`);
+});
+
+const canonicalMaxProXsHp = Math.max(...skus.filter((sku) => sku.family === 'ProXS').map((sku) => sku.hp));
+check(Number.isFinite(canonicalMaxProXsHp), 'Canonical pricing must contain at least one Pro XS SKU.');
+check(canonicalMaxProXsHp === 300, `Canonical pricing changed the audited Pro XS maximum from 300 HP to ${canonicalMaxProXsHp} HP; re-review the salmon contract.`);
+checkSpecRoute('best-mercury-outboard-lake-ontario-salmon-trout', (surface, label) => {
+  const proXsClaims = [
+    ...surface.matchAll(/\b(\d{2,3})(?:\s*(?:to|[-–])\s*(\d{2,3}))?\s*HP\s+Pro\s*XS\b/gi),
+    ...surface.matchAll(/\bPro\s*XS\s*(?:\(|:)?\s*(\d{2,3})(?:\s*(?:to|[-–])\s*(\d{2,3}))?\s*HP\b/gi),
+  ];
+  const overMaximum = proXsClaims.filter((match) => Number(match[2] ?? match[1]) > canonicalMaxProXsHp);
+  check(
+    overMaximum.length === 0,
+    `${label} contains a Pro XS claim above the canonical ${canonicalMaxProXsHp} HP maximum: ${overMaximum.map((match) => match[0]).join(', ')}`,
+  );
+  check(
+    surface.includes('300 HP Pro XS V8 or 300–350 HP SeaPro') &&
+      surface.includes('Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker'),
+    `${label} must retain the approved salmon recommendation and 15 HP ProKicker outcome.`,
+  );
+});
+
+check(
+  checkedSpecRoutes.size === 7,
+  `Product-spec integrity must cover exactly seven route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
+);
 
 const accuracyFiles = [
   'src/data/blogArticles.ts',
