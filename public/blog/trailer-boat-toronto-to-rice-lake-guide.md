@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trailering a Boat: Toronto to Rice Lake"
 description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** How To  
 **Published:** 2026-04-26  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 
 ## Quick Answer
 
-Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Ontario requires trailer brakes when gross trailer weight, including the load, is 1,360 kg (3,000 lb) or more. Confirm tire pressure, lights and bearing condition before you leave, and verify current traffic conditions before departing.
 
 ---
 
@@ -102,9 +102,9 @@ source: Mississauga
 
 ## Trailer Weight and Tow Vehicle Considerations
 
-**Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
+**Gross trailer weight below 1,360 kg (3,000 lb):** Ontario's trailer-brake threshold does not apply, but the trailer and tow vehicle must still meet their ratings and all other safety requirements.
 
-**Combined weight 1,400–3,400 kg (1,361-3,402 kg (3,000–7,500 lbs)):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
+**Gross trailer weight from 1,360 to 3,400 kg (3,000 to 7,500 lb):** Trailer brakes are required by law in Ontario. Verify that your tow vehicle and hitch ratings exceed the loaded trailer weight.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
 description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge."
 category: "Canadian Boating Regulations"
 date_published: 2026-04-15
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
@@ -33,7 +33,7 @@ language: en-CA
 ![Infographic comparing pre-2026 lifetime PCL rules with new 5-year renewal and fee requirements for Ontario boaters.](/lovable-uploads/diagram-pcl-2026-changes.png)
 
 ## Quick answer
-When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
+When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada adjusts fees for inflation each April 1, so check the live fee page before applying. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
 
 ## What changed in 2026 that you actually need to know
 
@@ -41,7 +41,7 @@ As of December 31, 2025, Transport Canada made several significant changes to th
 
 Key 2026 changes:
 - PCLs are now valid for 5 years only. Previous licences issued without an expiry date now have one assigned. Check the table below.
-- A $24 fee now applies to new, renewed, transferred, and duplicate PCLs. Updates to existing licence information remain free.
+- As of August 8, 2026, a $24.41 fee applies to new, renewed and transferred PCLs and duplicate documents. Updates to existing licence information remain free. Fees may change for inflation each April 1.
 - You must update your PCL within 30 days of any change to your name, address, phone number, email, or pleasure craft details (including motor specs after a repower).
 - Starting December 31, 2027, wind-powered pleasure craft over 6 metres will also need a PCL.
 - The $250 fine for operating without a valid licence is unchanged.
@@ -128,7 +128,7 @@ The update is free and takes 15 minutes. There is no reason not to do it.
 
 ## Sources
 
-- Transport Canada, Pleasure Craft Licence (5-year validity, $24 fee, 30-day update window, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Transport Canada, Pleasure Craft Licence (5-year validity, current fees and 30-day update window). [Fees and service standards](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)
 - [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
 
@@ -144,7 +144,7 @@ Yes, in most cases. When motor HP, brand, or model changes, you must update the 
 
 ### Is the PCL update free?
 
-Yes. Updates to existing licence information (including motor specs after a repower) are free. New licences, renewals, and transfers carry a $24 fee as of December 31, 2025.
+Yes. Updates to existing licence information, including motor specs after a repower, are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada may adjust fees for inflation each April 1.
 
 ### Is the PCL the same as my boater licence?
 

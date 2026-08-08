@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboard Range on Rice Lake (2026)"
 description: "How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
 
@@ -170,7 +170,7 @@ For specific patterns (short-hop cottage use, small boats, quiet operation) yes.
 
 ### Can I run a Mercury Avator on an HP-restricted Ontario lake?
 
-Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.
+It depends on the specific water. The federal 7.5 kW electric allowance applies to waters listed in Schedule 3 of the Vessel Operation Restriction Regulations, where power-driven vessels and electric propulsion above 7.5 kW are prohibited. It is not a general rule for most freshwater lakes. Confirm the current schedule and local restrictions before buying.
 
 ### Does Avator work in cold weather?
 

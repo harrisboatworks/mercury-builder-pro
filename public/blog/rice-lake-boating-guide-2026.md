@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -120,7 +120,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
-**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
 
 **[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
@@ -217,4 +217,3 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

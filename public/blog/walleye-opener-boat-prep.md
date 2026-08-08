@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
@@ -64,7 +64,7 @@ Five factors affect how thorough your opener prep needs to be:
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
 - Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
 
 ### One Week Before Opener
 
@@ -241,4 +241,3 @@ Dead battery (about 40% of failures), followed by stale fuel and kicker problems
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

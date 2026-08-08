@@ -11159,7 +11159,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Angler netting a walleye from a Mercury-powered boat at sunrise for Ontario walleye opener preparation.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-01',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-01',
     category: 'Tips',
     readTime: '8 min read',
@@ -11200,7 +11200,7 @@ Five factors affect how thorough your opener prep needs to be:
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
 - Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
 
 ### One Week Before Opener
 
@@ -14322,7 +14322,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     category: 'Canadian Boating Regulations',
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
@@ -14332,7 +14332,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ![Infographic comparing pre-2026 lifetime PCL rules with new 5-year renewal and fee requirements for Ontario boaters.](/lovable-uploads/diagram-pcl-2026-changes.png)
 
 ## Quick answer
-When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
+When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada adjusts fees for inflation each April 1, so check the live fee page before applying. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
 
 ## What changed in 2026 that you actually need to know
 
@@ -14340,7 +14340,7 @@ As of December 31, 2025, Transport Canada made several significant changes to th
 
 Key 2026 changes:
 - PCLs are now valid for 5 years only. Previous licences issued without an expiry date now have one assigned. Check the table below.
-- A $24 fee now applies to new, renewed, transferred, and duplicate PCLs. Updates to existing licence information remain free.
+- As of August 8, 2026, a $24.41 fee applies to new, renewed and transferred PCLs and duplicate documents. Updates to existing licence information remain free. Fees may change for inflation each April 1.
 - You must update your PCL within 30 days of any change to your name, address, phone number, email, or pleasure craft details (including motor specs after a repower).
 - Starting December 31, 2027, wind-powered pleasure craft over 6 metres will also need a PCL.
 - The $250 fine for operating without a valid licence is unchanged.
@@ -14427,11 +14427,11 @@ The update is free and takes 15 minutes. There is no reason not to do it.
 
 ## Sources
 
-- Transport Canada, Pleasure Craft Licence (5-year validity, $24 fee, 30-day update window, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Transport Canada, Pleasure Craft Licence (5-year validity, current fees and 30-day update window). [Fees and service standards](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)
 - [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
 
-*Last reviewed: 2026-05-11.*
+*Last reviewed: 2026-08-08.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -14440,7 +14440,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'Do I need to update my PCL when I change motors?', answer: 'Yes, in most cases. When motor HP, brand, or model changes, you must update the PCL within 30 days. Updates are free.' },
-      { question: 'Is the PCL update free?', answer: 'Yes. Updates to existing licence information (including motor specs after a repower) are free. New licences, renewals, and transfers carry a $24 fee as of December 31, 2025.' },
+      { question: 'Is the PCL update free?', answer: 'Yes. Updates to existing licence information, including motor specs after a repower, are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada may adjust fees for inflation each April 1.' },
       { question: 'Is the PCL the same as my boater licence?', answer: 'No. The PCL is the boat identification document, tied to the hull. The PCOC (Pleasure Craft Operator Card) is your personal operator licence. You need both.' },
       { question: 'How long is a PCL valid?', answer: 'As of December 31, 2025, new and renewed PCLs are valid for 5 years. Older licences without an expiry date have been assigned one based on issue year.' },
       { question: 'What HP threshold requires a PCL?', answer: 'Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.' },
@@ -14897,7 +14897,7 @@ Start with the exact motor in the [Mercury repower configurator](/quote/motor-se
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-08",
     category: 'Buying Guide',
     readTime: '13 min read',
     keywords: ['Mercury vs Yamaha outboard', 'Mercury vs Yamaha Ontario', 'Mercury or Yamaha which is better', 'Yamaha to Mercury repower', 'best outboard motor Ontario'],
@@ -16724,14 +16724,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trailer-boat-toronto.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-26',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-26',
     category: 'How To',
     readTime: '12 min read',
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
     content: `## Quick Answer
 
-Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Ontario requires trailer brakes when gross trailer weight, including the load, is 1,360 kg (3,000 lb) or more. Confirm tire pressure, lights and bearing condition before you leave, and verify current traffic conditions before departing.
 
 ---
 
@@ -16803,9 +16803,9 @@ source: Mississauga
 
 ## Trailer Weight and Tow Vehicle Considerations
 
-**Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
+**Gross trailer weight below 1,360 kg (3,000 lb):** Ontario's trailer-brake threshold does not apply, but the trailer and tow vehicle must still meet their ratings and all other safety requirements.
 
-**Combined weight 1,400–3,400 kg (1,361-3,402 kg (3,000–7,500 lbs)):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
+**Gross trailer weight from 1,360 to 3,400 kg (3,000 to 7,500 lb):** Trailer brakes are required by law in Ontario. Verify that your tow vehicle and hitch ratings exceed the loaded trailer weight.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -16850,8 +16850,8 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 **How long is the drive from Toronto to Rice Lake?**
 Roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north, longer on summer weekends.
 
-**Do I need trailer brakes for a boat under 1,400 kg?**
-Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
+**When does Ontario require trailer brakes?**
+When gross trailer weight, including the load, is 1,360 kg (3,000 lb) or more. Below that threshold, check the trailer, hitch and tow-vehicle ratings and all other applicable requirements.
 
 **What's the speed limit for towing a trailer in Ontario?**
 Same as the posted limit, but never above 110 km/h on most highways. Some trailers have lower speed-rated tires; check yours.
@@ -19440,7 +19440,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
-**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
 
 **[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
@@ -20643,7 +20643,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     imageAlt: 'Man sitting on a dock at Harris Boat Works in Gores Landing, illustrating the local lifestyle of Ontario boat ownership.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -20651,7 +20651,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     content: `
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-08*
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -20794,7 +20794,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 ## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
 
-[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
 [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
@@ -26644,7 +26644,7 @@ Ready to price a Mercury repower? Build a live CAD quote at the [Mercury Repower
     image: "/lovable-uploads/hero-rice-lake-boat-launch-ramp.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-08-08",
     publishDate: "2026-05-10",
     category: "Local Guides",
     readTime: "8 min read",
@@ -26759,7 +26759,7 @@ For any powered boat in Ontario waters:
 
 **Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
 
 **Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
@@ -35731,7 +35731,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -35740,7 +35740,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "How far can a Mercury Avator 7.5e really go on Rice Lake?", answer: "3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions." },
       { question: "Can I charge an Avator at the dock with regular cottage power?", answer: "Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs." },
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
-      { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
+      { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "It depends on the specific water. The federal 7.5 kW electric allowance applies to waters listed in Schedule 3 of the Vessel Operation Restriction Regulations, where power-driven vessels and electric propulsion above 7.5 kW are prohibited. It is not a general rule for most freshwater lakes. Confirm the current schedule and local restrictions before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
       { question: "What does an Avator setup cost installed?", answer: "The installed total depends on the Avator model, battery count, charger, controls and mounting. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path." },
     ],

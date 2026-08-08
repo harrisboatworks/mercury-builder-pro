@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 
 const failures = [];
+const warnings = [];
 const check = (condition, message) => {
   if (!condition) failures.push(message);
+};
+const warn = (condition, message) => {
+  if (!condition) warnings.push(message);
 };
 
 const read = (path) => readFileSync(path, 'utf8');
@@ -55,6 +59,62 @@ check(
 check(
   /Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury, and its boats are designed by Canadians for Canadian water/i.test(blogArticles),
   'The Legend power-package guide must use the approved Canadian design and headquarters disclosure.',
+);
+
+const pclRouteSlugs = [
+  'pleasure-craft-licence-update-repower-ontario',
+  'rice-lake-boat-launch-guide',
+  'ontario-boating-season-tips',
+  'rice-lake-boating-guide-2026',
+  'total-cost-of-owning-a-boat-ontario-2026',
+  'walleye-opener-boat-prep',
+];
+const sourceArticleSection = (slug) =>
+  blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+const pclRouteReview = pclRouteSlugs.map((slug) => {
+  const surface = `${sourceArticleSection(slug)}\n${read(`public/blog/${slug}.md`)}`;
+  return {
+    slug,
+    surface,
+    amounts: [...new Set(surface.match(/\$24(?:\.41)?/g) ?? [])],
+    hasBare24: /\$24(?!\.41\b|[\d,])/.test(surface),
+  };
+});
+for (const route of pclRouteReview) {
+  check(!route.hasBare24, `${route.slug} contains a bare $24 PCL fee instead of $24.41.`);
+}
+
+const regulatoryTwins = [
+  'pleasure-craft-licence-update-repower-ontario',
+  'trailer-boat-toronto-to-rice-lake-guide',
+  'mercury-avator-range-rice-lake-cottage',
+].map((slug) => read(`public/blog/${slug}.md`)).join('\n');
+const regulatorySurface = `${blogArticles}\n${regulatoryTwins}`;
+const pclFeeReviewedOn = new Date('2026-08-08T00:00:00Z');
+const evaluatedAt = process.env.BLOG_REGULATORY_NOW
+  ? new Date(process.env.BLOG_REGULATORY_NOW)
+  : new Date();
+check(!Number.isNaN(evaluatedAt.getTime()), 'BLOG_REGULATORY_NOW must be a valid date when provided.');
+const now = Number.isNaN(evaluatedAt.getTime()) ? new Date() : evaluatedAt;
+const thisYearsAprilReview = new Date(Date.UTC(now.getUTCFullYear(), 3, 1));
+const latestAprilReview = now >= thisYearsAprilReview
+  ? thisYearsAprilReview
+  : new Date(Date.UTC(now.getUTCFullYear() - 1, 3, 1));
+const pclFeeReviewStale = pclFeeReviewedOn < latestAprilReview;
+
+check(
+  !/1,400 kg|1,400–3,400 kg|7\.5 kW aggregate power for most freshwater lakes/i.test(regulatorySurface),
+  'Blog source or Markdown twins revived an audit-identified stale regulatory figure.',
+);
+check(
+  /\$24\.41 fee[\s\S]{0,180}inflation each April 1/.test(regulatorySurface) &&
+    /1,360 kg \(3,000 lb\) or more/.test(regulatorySurface) &&
+    /Schedule 3 of the Vessel Operation Restriction Regulations[\s\S]{0,220}not a general rule for most freshwater lakes/.test(regulatorySurface),
+  'PCL fee, Ontario trailer-brake threshold and Schedule 3 electric allowance must retain current qualification.',
+);
+warn(
+  !pclFeeReviewStale,
+  `PCL fee needs its annual post-April-1 review. Last reviewed ${pclFeeReviewedOn.toISOString().slice(0, 10)}.`,
 );
 
 check(
@@ -592,6 +652,25 @@ for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) 
   check(/is_illustrative:\s*true/.test(markdown), `${file} is missing illustrative frontmatter.`);
   check(/Illustrative planning scenario:/.test(markdown), `${file} is missing the agent-facing illustrative disclosure.`);
   check(!/## Customer quote/.test(markdown), `${file} labels planning prose as a customer quote.`);
+}
+
+mkdirSync('reports', { recursive: true });
+writeFileSync(
+  'reports/blog-regulatory-review.json',
+  `${JSON.stringify({
+    evaluatedAt: now.toISOString(),
+    pclFeeReviewedOn: pclFeeReviewedOn.toISOString().slice(0, 10),
+    latestAprilReview: latestAprilReview.toISOString().slice(0, 10),
+    stale: pclFeeReviewStale,
+    warnings,
+    hardFailureCount: failures.length,
+    pclRoutes: pclRouteReview.map(({ slug, amounts, hasBare24 }) => ({ slug, amounts, hasBare24 })),
+  }, null, 2)}\n`,
+);
+
+if (warnings.length) {
+  console.warn('\nPublishing integrity warnings\n');
+  for (const warning of warnings) console.warn(`- ${warning}`);
 }
 
 if (failures.length) {
