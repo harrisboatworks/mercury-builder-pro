@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-05-03
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Ski Boats 2026"
 description: "Best Mercury outboard for ski and wakeboard boats. Covers hole shot, Pro XS vs FourStroke, and correct HP for desired wake. Ontario dealer's real-world picks."
 category: "Buying Guide"
 date_published: 2026-05-03
-date_modified: 2026-05-03
+date_modified: 2026-08-08
 keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for watersports","best outboard for skiing","wakesurf outboard motor","best Mercury for ski wakeboard boats","Mercury Pro XS tow boat","Mercury V8 wakeboard","hole shot tow boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-03  
-**Last reviewed:** 2026-05-03  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
 
@@ -136,7 +136,7 @@ The V8 also has DTS standard, which on a tow boat is genuinely worth having, smo
 
 Mercury Verado (V8/V10 naturally aspirated) is the **premium quiet option**. For tow boats specifically, Verado matters because **a quieter motor at the dock means happier neighbours at the dock**, and the tow community spends a lot of time idling at the dock between runs.
 
-A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise, has integrated power steering as standard, and supports single-engine joystick steering (since Mercury added that capability in 2024-2025).
+A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise and has integrated power steering as standard. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) is a package for electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP, paired with a compatible CAN-based variable-speed thruster. That package is not a fit recommendation for the ski and wake hulls discussed here, so we confirm the exact hull, steering, controls, and thruster package with Mercury before quoting.
 
 The trade-off: Verados are special-order and significantly more expensive. We don't keep them in stock; we order to spec. For a custom tow boat build, ask us, we can quote.
 

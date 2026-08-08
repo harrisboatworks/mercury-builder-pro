@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
 description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,14 +25,14 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-06-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
+Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger Avator models use different battery and charger combinations, so confirm the package and electrical requirements before planning turnaround time. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
 
 ## What charging actually requires
 
@@ -48,15 +48,15 @@ For a cottage with existing dock or boathouse power, the setup is usually straig
 
 ### Avator 7.5e (integrated 1 kWh battery)
 
-- **Standard 110V outlet**: 3-4 hours from empty to full
-- **240V charging**: not applicable for this model (single integrated battery, 110V charger only)
+- **Included 110 W charger with a standard household outlet**: about nine hours from fully depleted
+- **Optional faster charger**: confirm the current compatible charger and input requirements with Mercury
 
 For typical cottage use (a few hours on the water, then dock for the night), [the 7.5e's overnight 110V charge](/blog/mercury-avator-7-5e-review) is comfortable.
 
 ### Avator 20e and 35e (external 2,300 Wh packs, up to 3-4 packs)
 
 - **Standard 110V outlet, single pack**: ~10-12 hours
-- **240V charger, single pack**: ~3-4 hours
+- **Higher-output charger, single pack**: confirm the current compatible charger and pack with Mercury before planning turnaround time
 - **Multiple packs simultaneously**: depends on charger configuration
 
 For multi-pack setups, overnight 110V charging works if you have outlets to spare. A single 240V charger is the better answer for serious use.
@@ -134,7 +134,7 @@ The other common situation: cottagers who add Avator without consulting their co
 
 ### Can I charge a Mercury Avator from a standard cottage outlet?
 
-For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
+Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger.
 
 ### Do I need a special charger?
 
