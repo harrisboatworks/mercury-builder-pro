@@ -349,7 +349,7 @@ export default function SpanishBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Distribuidor Mercury concesionario Mercury desde 1965" />
+          <AuthorByline name="Jay Harris" title="Propietario, Harris Boat Works" />
         </div>
 
         {/* Table of Contents */}

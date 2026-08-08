@@ -36,7 +36,7 @@ Choosing a dealer by distance alone is easy. Choosing by the complete job takes 
 
 For a portable outboard, the nearest authorized dealer may be the practical answer. For a full repower, the better comparison is the written scope: motor, controls, rigging, propeller, installation, testing, warranty registration, and the support you will receive after pickup.
 
-HBW has sold Mercury outboards since 1965 and operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
+HBW operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
 
 ---
 

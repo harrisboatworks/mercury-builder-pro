@@ -31,8 +31,6 @@ language: en-CA
 > **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda is often considered for refinement and quiet running in the 9.9 to 90 HP range; Mercury offers Pro XS performance and a broader lineup above 350 HP. On Rice Lake, HBW provides authorized Mercury sales and service directly on the lake. For either brand, check the current dealer route from where the boat lives.
 
 - Mercury Premier Dealer
-- Family-owned since 1947
-- Mercury dealer since 1965
 - Gores Landing, ON
 - Quote builder available
 
@@ -129,7 +127,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 **Comparing real numbers beats comparing brochures.** Build a Mercury quote for your boat at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 

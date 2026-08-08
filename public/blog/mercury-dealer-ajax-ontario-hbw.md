@@ -61,9 +61,9 @@ Durham Region buyers tend to be experienced boaters. They've owned boats, dealt 
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
-## Mercury Premier, Rice Lake Since 1947
+## Why Ajax Boaters Make the Drive
 
-Top dealer tier in Mercury's program. Third-generation family marina, on Rice Lake since 1947. The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
+The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
 
 ---
 
@@ -114,12 +114,12 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 You see the price before you leave Ajax. The rigging gets discussed before we order anything. The job gets done right. You're back on the water with a motor that performs the way it was designed to.
 
-45 minutes. Three generations. Since 1947.
+About 45 minutes from Ajax. Straight pricing before you leave home.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -146,7 +146,7 @@ About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One 
 
 ### Why drive to Rice Lake from Ajax?
 
-Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.
+Mercury Premier tier, transparent CAD pricing online, and no high-pressure dealer culture.
 
 ### Can I use HBW as my primary Mercury dealer?
 

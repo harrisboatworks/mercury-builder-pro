@@ -8,8 +8,7 @@ interface AuthorBylineProps {
   variant?: 'inline' | 'card';
 }
 
-const JAY_CREDENTIALS =
-  'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Premier Dealer';
+const JAY_CREDENTIALS = 'Owner, Harris Boat Works';
 
 /**
  * Standardized author byline for blog articles.
