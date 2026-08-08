@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**Last updated:** 2026-06-26  
+**最后审核:** 2026-06-26  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 

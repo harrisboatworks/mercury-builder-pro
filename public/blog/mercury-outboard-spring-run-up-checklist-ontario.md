@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-08
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 

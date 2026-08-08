@@ -24,7 +24,7 @@ language: es
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Última revisión:** 2026-04-12  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 

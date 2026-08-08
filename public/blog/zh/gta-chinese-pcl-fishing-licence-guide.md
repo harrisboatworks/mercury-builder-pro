@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-08-03  
+**最后审核:** 2026-08-03  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 

@@ -24,7 +24,7 @@ language: hi
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
+**अंतिम समीक्षा:** 2026-08-02  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 

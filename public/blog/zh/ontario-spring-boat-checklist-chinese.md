@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**最后审核:** 2026-05-17  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
 

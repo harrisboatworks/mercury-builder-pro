@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-07  
+**Last reviewed:** 2026-05-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 

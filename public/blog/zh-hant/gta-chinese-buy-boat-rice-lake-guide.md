@@ -24,7 +24,7 @@ language: zh-Hant
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**最後審核:** 2026-06-12  
 **Read time:** 6 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
 

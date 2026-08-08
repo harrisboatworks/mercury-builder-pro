@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-31  
+**Last reviewed:** 2026-07-31  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 

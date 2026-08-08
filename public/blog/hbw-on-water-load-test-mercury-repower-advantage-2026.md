@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** HBW Process  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026
 

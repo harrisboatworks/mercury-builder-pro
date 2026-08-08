@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
-**Last updated:** 2026-05-04  
+**Last reviewed:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
 

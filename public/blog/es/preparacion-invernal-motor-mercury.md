@@ -24,7 +24,7 @@ language: es
 
 **Category:** Mantenimiento  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Última revisión:** 2026-06-19  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
 

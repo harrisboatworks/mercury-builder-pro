@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 

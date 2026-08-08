@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last updated:** 2026-07-31  
+**Last reviewed:** 2026-07-31  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 

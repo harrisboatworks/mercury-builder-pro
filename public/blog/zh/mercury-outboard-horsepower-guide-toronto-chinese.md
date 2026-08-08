@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**最后审核:** 2026-05-17  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese
 

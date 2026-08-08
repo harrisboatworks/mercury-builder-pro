@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-01  
+**Last reviewed:** 2026-08-01  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 

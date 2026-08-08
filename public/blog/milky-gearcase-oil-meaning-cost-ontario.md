@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -221,3 +221,4 @@ Yes. We are not a parts-volume shop. We make our long-term business by being hon
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

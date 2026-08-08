@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 

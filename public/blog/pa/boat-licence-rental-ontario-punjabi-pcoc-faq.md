@@ -24,7 +24,7 @@ language: pa
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-08-02  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 

@@ -24,7 +24,7 @@ language: zh-Hant
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-03  
+**最後審核:** 2026-08-03  
 **Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 

@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 

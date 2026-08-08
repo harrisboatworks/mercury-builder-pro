@@ -24,7 +24,7 @@ language: pa
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-07-10  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-07-10  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
 

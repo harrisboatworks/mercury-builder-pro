@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
@@ -70,7 +70,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 ## What Year-End Specifically Looks Like at HBW
 
-The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens after we reopen in early April. Here is what actually happens:
+The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens when we reopen in early April. Here is what actually happens:
 
 **November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 

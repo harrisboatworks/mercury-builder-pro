@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-10  
+**Last reviewed:** 2026-06-10  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 

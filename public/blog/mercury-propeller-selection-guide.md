@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Technical Reference  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last reviewed:** 2026-05-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 

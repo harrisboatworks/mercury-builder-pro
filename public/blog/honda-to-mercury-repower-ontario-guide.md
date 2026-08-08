@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 

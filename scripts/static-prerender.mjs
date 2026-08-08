@@ -3080,6 +3080,25 @@ function blogHreflangTags(locale, slug) {
     .join('\n  ');
 }
 
+const LAST_REVIEWED_LABELS = {
+  en: 'Last reviewed',
+  fr: 'Dernière révision',
+  ko: '마지막 검토',
+  zh: '最后审核',
+  'zh-hant': '最後審核',
+  es: 'Última revisión',
+  pa: 'ਆਖਰੀ ਸਮੀਖਿਆ',
+  ur: 'آخری جائزہ',
+  tl: 'Huling sinuri',
+  hi: 'अंतिम समीक्षा',
+};
+
+function renderLastReviewedHtml(locale, dateValue) {
+  if (!dateValue) return '';
+  const label = LAST_REVIEWED_LABELS[locale] || LAST_REVIEWED_LABELS.en;
+  return `<p class="blog-last-reviewed"><strong>${escapeHtml(label)}:</strong> ${escapeHtml(dateValue)}</p>`;
+}
+
 // Dedupe blogArticles by slug, keeping the FIRST occurrence so prerender
 // matches runtime getArticleBySlug (which uses Array.prototype.find).
 // Without this, a duplicate slug would silently let the LAST entry win on
@@ -3119,6 +3138,10 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
+    const lastReviewedHtml = renderLastReviewedHtml(
+      'en',
+      article.dateModified || article.datePublished,
+    );
     const TERMINAL_CTA_SPLIT_SLUGS = new Set(['new-vs-used-pontoon-boats-ontario']);
     let ctaSource = '';
     let bodySource = article.content;
@@ -3151,7 +3174,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
       article.slug,
       cleanedBodySource,
     );
-    return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${ctaHtml}${relatedGuidesHtml}`;
+    return `${heroHtml}${bylineHtml}${lastReviewedHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${ctaHtml}${relatedGuidesHtml}`;
   }
 }));
 
@@ -3212,6 +3235,10 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
       const bylineHtml = renderAuthorBylineHtml(article.author);
+      const lastReviewedHtml = renderLastReviewedHtml(
+        langCode,
+        article.dateModified || article.datePublished,
+      );
       const bodyHtml = renderArticleBodyHtml(article.content, {
         hasStructuredFaqs: Boolean(article.faqs?.length),
       });
@@ -3220,7 +3247,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';
-      return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
+      return `${heroHtml}${bylineHtml}${lastReviewedHtml}${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
     }
   }));
 }
@@ -6918,6 +6945,31 @@ for (const r of tableRoutes) {
   const html = readFileSync(p, 'utf8');
   if (!/<table[\s>]/i.test(html) || !/<thead[\s>]/i.test(html) || !/<tbody[\s>]/i.test(html)) {
     verifyErrors.push(`${r}: missing real <table>/<thead>/<tbody> in raw HTML.`);
+  }
+}
+
+const freshnessRoutes = [
+  ...blogArticleRoutes,
+  ...frenchBlogArticleRoutes,
+  ...koreanBlogArticleRoutes,
+  ...mandarinBlogArticleRoutes,
+  ...spanishBlogArticleRoutes,
+  ...punjabiBlogArticleRoutes,
+  ...urduBlogArticleRoutes,
+  ...tagalogBlogArticleRoutes,
+  ...hindiBlogArticleRoutes,
+  ...traditionalChineseBlogArticleRoutes,
+];
+for (const route of freshnessRoutes) {
+  const routeFile = join(DIST, route.path.replace(/^\//, ''), 'index.html');
+  if (!existsSync(routeFile)) {
+    verifyErrors.push(`${route.path}: missing raw HTML for freshness check.`);
+    continue;
+  }
+  const routeHtml = readFileSync(routeFile, 'utf8');
+  const reviewCount = (routeHtml.match(/class="blog-last-reviewed"/g) || []).length;
+  if (reviewCount !== 1) {
+    verifyErrors.push(`${route.path}: expected one raw last-reviewed line, found ${reviewCount}.`);
   }
 }
 

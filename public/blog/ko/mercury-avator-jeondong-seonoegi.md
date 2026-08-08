@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
+**마지막 검토:** 2026-06-08  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 

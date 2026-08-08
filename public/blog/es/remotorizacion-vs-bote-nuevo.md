@@ -24,7 +24,7 @@ language: es
 
 **Category:** Remotorización  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Última revisión:** 2026-06-19  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo
 

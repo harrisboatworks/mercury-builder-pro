@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Local Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-08-08  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
 
@@ -246,3 +246,4 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

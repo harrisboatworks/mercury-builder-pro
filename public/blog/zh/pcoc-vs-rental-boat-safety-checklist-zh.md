@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 安省法规中文  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**最后审核:** 2026-05-11  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**Last reviewed:** 2026-05-16  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 

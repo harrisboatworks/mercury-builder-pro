@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-04-12  
-**Last updated:** 2026-07-04  
+**Dernière révision:** 2026-07-04  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
 

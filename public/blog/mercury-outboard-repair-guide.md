@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-07-30  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-07-30  
 **Read time:** 16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide
 
@@ -231,6 +231,14 @@ Consider repowering when major repairs overlap, corrosion or parts availability 
 
 Use Mercury Marine’s online owner-manual lookup and match the manual to the engine serial number. Horsepower alone is not specific enough because procedures and specifications can change by engine family and serial break.
 
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
@@ -243,10 +251,3 @@ Use Mercury Marine’s online owner-manual lookup and match the manual to the en
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 
-## Related guides
-
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility

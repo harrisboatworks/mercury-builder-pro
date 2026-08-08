@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 租船与钓鱼  
 **Published:** 2026-05-11  
-**Last updated:** 2026-08-02  
+**最后审核:** 2026-08-02  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh
 

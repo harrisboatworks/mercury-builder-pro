@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-17  
+**Last reviewed:** 2026-07-17  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 

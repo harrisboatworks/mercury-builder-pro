@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 小马力指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**最后审核:** 2026-05-10  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 

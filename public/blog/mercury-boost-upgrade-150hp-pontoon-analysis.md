@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-07-18  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 

@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**最后审核:** 2026-05-17  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap
 

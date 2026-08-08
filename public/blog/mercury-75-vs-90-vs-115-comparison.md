@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 

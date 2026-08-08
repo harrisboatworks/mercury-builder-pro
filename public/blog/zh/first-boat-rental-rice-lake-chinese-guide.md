@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
+**最后审核:** 2026-08-02  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 

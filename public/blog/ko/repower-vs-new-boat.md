@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 엔진 교체  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
 

@@ -24,7 +24,7 @@ language: es
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-08  
+**Última revisión:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 

@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 

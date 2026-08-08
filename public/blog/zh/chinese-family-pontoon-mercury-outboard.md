@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 家庭买船指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-06-19  
+**最后审核:** 2026-06-19  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
 

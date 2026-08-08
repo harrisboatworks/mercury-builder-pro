@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-05-13  
-**Last updated:** 2026-08-08  
+**Dernière révision:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 

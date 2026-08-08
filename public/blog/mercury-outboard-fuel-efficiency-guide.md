@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last updated:** 2026-08-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 

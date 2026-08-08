@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 成本分析  
 **Published:** 2026-05-12  
-**Last updated:** 2026-05-12  
+**最后审核:** 2026-05-12  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
