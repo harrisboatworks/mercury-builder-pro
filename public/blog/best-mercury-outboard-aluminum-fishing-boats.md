@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Aluminum Boats 2026"
 description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
@@ -177,7 +177,7 @@ Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft o
 
 ### How much does it cost to power an aluminum fishing boat in Ontario in 2026?
 
-For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.
+As of August 8, 2026, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail for a 14-16ft boat. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) because shaft length and configuration change the figure. These are planning figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a configured quote at mercuryrepower.ca/quote/motor-selection.
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is 2026 a Good Year to Buy a Boat in Canada?"
 description: "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative."
 category: "Buying Guide"
 date_published: 2026-04-28
-date_modified: 2026-08-01
+date_modified: 2026-08-08
 keywords: ["buy boat canada 2026","boat market canada","best time to buy boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-28  
-**Last updated:** 2026-08-01  
+**Last updated:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada
 
@@ -40,7 +40,7 @@ language: en-CA
 
 Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have dealt with in the last decade.
 
-Here is an honest read on the market from a third-generation family marina that has been selling and servicing Mercury motors on Rice Lake since 1947. We are not going to tell you it is a great time to buy if we do not believe that.
+Here is an honest read on the market from a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. We are not going to tell you it is a great time to buy if we do not believe that.
 
 ---
 
@@ -180,7 +180,7 @@ Most major outboard motors and many boat brands sold in Canada have significant 
 
 ### Is it better to buy a new boat or repower an old one in 2026?
 
-For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you're paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As a reference point, a 2026 Mercury 115 ELPT starts at $19,220 MSRP at HBW, that's the motor only, but it's real inventory at a published price you can act on. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.
+For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you're paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As of August 8, 2026, the [live pricing reference](/pricing-reference) lists the 115 ELPT FourStroke at a $17,083 HBW selling price and $19,030 MSRP, motor only. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.
 
 ### What is a realistic budget for a boat in Canada in 2026?
 
