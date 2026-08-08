@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .vercel
 supabase/.temp
+
+# Generated maintenance reports
+reports/*.json

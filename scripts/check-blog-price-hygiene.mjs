@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { loadCanonicalPricing, slugifyModel } from './lib/canonical-pricing.mjs';
 
 const SOURCE = readFileSync('src/data/blogArticles.ts', 'utf8');
@@ -10,6 +10,14 @@ const MAX_REVIEW_AGE_DAYS = 100;
 const LIVE_URL = `https://www.mercuryrepower.ca/pricing-reference.md?cb=${Date.now()}`;
 const reportMode = process.argv.includes('--report');
 const liveMode = process.argv.includes('--live');
+const REPORT_PATH = 'reports/blog-price-hygiene.json';
+const reviewedAtCoupling = `Changing REVIEWED_AT or REVIEWED_LABEL also requires updating the as-of prose in both src/data/blogArticles.ts and the affected public/blog Markdown twins.`;
+const evaluatedAt = process.env.BLOG_PRICE_HYGIENE_NOW
+  ? new Date(process.env.BLOG_PRICE_HYGIENE_NOW)
+  : new Date();
+if (Number.isNaN(evaluatedAt.getTime())) {
+  throw new Error('BLOG_PRICE_HYGIENE_NOW must be a valid date when provided.');
+}
 
 const fmt = (value) => `$${Math.round(value).toLocaleString('en-CA')}`;
 
@@ -101,6 +109,7 @@ const contracts = [
 ];
 
 const errors = [];
+const warnings = [];
 const results = [];
 for (const contract of contracts) {
   const source = articleBlock(contract.slug);
@@ -119,42 +128,58 @@ for (const contract of contracts) {
   results.push({ slug: contract.slug, required: contract.required, stale: contract.stale });
 }
 
-const ageDays = Math.floor((Date.now() - Date.parse(`${REVIEWED_AT}T00:00:00Z`)) / 86_400_000);
-if (ageDays > MAX_REVIEW_AGE_DAYS) {
-  errors.push(`Price review is ${ageDays} days old; run the live quarterly report and refresh the contracts.`);
-}
+const ageDays = Math.floor((evaluatedAt.getTime() - Date.parse(`${REVIEWED_AT}T00:00:00Z`)) / 86_400_000);
+const stale = ageDays > MAX_REVIEW_AGE_DAYS;
+if (stale) warnings.push(`Price review is ${ageDays} days old; run the live quarterly report and refresh the contracts.`);
 
 let live = null;
 if (liveMode) {
-  const response = await fetch(LIVE_URL, { headers: { 'user-agent': 'HBW-price-hygiene/1.0' } });
-  if (!response.ok) throw new Error(`Live pricing reference returned HTTP ${response.status}`);
-  const livePricing = parsePricing(await response.text());
-  const liveFacts = pricingFacts(livePricing);
-  live = { lastUpdated: livePricing.lastUpdated, facts: liveFacts };
-  for (const key of ['lineupMin', 'lineupMax', 'proXs250Min', 'proXs250Max', 'salmonPairFloor']) {
-    if (liveFacts[key] !== localFacts[key]) errors.push(`Live/local pricing drift for ${key}: ${fmt(liveFacts[key])} live vs ${fmt(localFacts[key])} local`);
-  }
-  for (const key of ['dealer', 'msrp']) {
-    if (liveFacts.mercury115Elpt[key] !== localFacts.mercury115Elpt[key]) {
-      errors.push(`Live/local pricing drift for 115ELPT ${key}: ${fmt(liveFacts.mercury115Elpt[key])} live vs ${fmt(localFacts.mercury115Elpt[key])} local`);
+  try {
+    const response = await fetch(LIVE_URL, { headers: { 'user-agent': 'HBW-price-hygiene/1.0' } });
+    if (!response.ok) {
+      warnings.push(`Live pricing reference returned HTTP ${response.status}; local content contracts still ran.`);
+    } else {
+      const livePricing = parsePricing(await response.text());
+      const liveFacts = pricingFacts(livePricing);
+      live = { lastUpdated: livePricing.lastUpdated, facts: liveFacts };
+      for (const key of ['lineupMin', 'lineupMax', 'proXs250Min', 'proXs250Max', 'salmonPairFloor']) {
+        if (liveFacts[key] !== localFacts[key]) errors.push(`Live/local pricing drift for ${key}: ${fmt(liveFacts[key])} live vs ${fmt(localFacts[key])} local`);
+      }
+      for (const key of ['dealer', 'msrp']) {
+        if (liveFacts.mercury115Elpt[key] !== localFacts.mercury115Elpt[key]) {
+          errors.push(`Live/local pricing drift for 115ELPT ${key}: ${fmt(liveFacts.mercury115Elpt[key])} live vs ${fmt(localFacts.mercury115Elpt[key])} local`);
+        }
+      }
     }
+  } catch (error) {
+    warnings.push(`Live pricing check unavailable: ${error instanceof Error ? error.message : String(error)}; local content contracts still ran.`);
   }
 }
 
 const report = {
   ok: errors.length === 0,
+  evaluatedAt: evaluatedAt.toISOString(),
   reviewedAt: REVIEWED_AT,
+  reviewedLabel: REVIEWED_LABEL,
   ageDays,
+  maxAgeDays: MAX_REVIEW_AGE_DAYS,
+  stale,
   localPricingUpdatedAt: localPricing.lastUpdated,
   livePricingUpdatedAt: live?.lastUpdated ?? null,
+  reviewedAtCoupling,
   contracts: results,
+  warnings,
   errors,
 };
 
+mkdirSync('reports', { recursive: true });
+writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`);
+
+console.log(`Blog price hygiene: ${report.ok ? 'PASS' : 'FAIL'} (${contracts.length} audited routes, review age ${ageDays} days, report ${REPORT_PATH})`);
 if (reportMode) console.log(JSON.stringify(report, null, 2));
-else console.log(`Blog price hygiene: ${report.ok ? 'PASS' : 'FAIL'} (${contracts.length} audited routes, review age ${ageDays} days)`);
+for (const warning of warnings) console.warn(`- WARNING: ${warning}`);
 
 if (errors.length) {
-  if (!reportMode) errors.forEach((error) => console.error(`- ${error}`));
+  errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }

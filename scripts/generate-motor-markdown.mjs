@@ -65,6 +65,12 @@ function extractMsrp(body) {
   return m ? Number(m[1].replace(/,/g, '')) : null;
 }
 
+function extractQuickFact(body, label) {
+  const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = body.match(new RegExp(`^- \\*\\*${escaped}:\\*\\*\\s*(.+)$`, 'm'));
+  return match ? match[1].trim() : '';
+}
+
 // ---------- Template ----------
 
 const fmtMoney = (n) =>
@@ -76,7 +82,7 @@ function renderMotorMd(m) {
   const inStock = String(m.availability).toLowerCase() === 'in_stock';
   const availLabel = inStock
     ? 'In stock at Gores Landing'
-    : 'Special order â€” brought in for this build';
+    : 'Special order, contact dealer for ETA';
   const bestFit = m.best_fit || 'Confirm boat rating and rigging with the dealer.';
   const notIdeal = m.not_ideal || 'Match HP to transom rating, never exceed it.';
 
@@ -86,9 +92,9 @@ last_updated: ${m.last_updated}
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: ${m.motor_id}
 slug: ${m.slug}
 family: ${m.family}
@@ -109,7 +115,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury ${m.family}
 - **Horsepower:** ${m.horsepower} HP
 - **Model number:** ${m.model_number}
-
+${m.shaft ? `- **Shaft:** ${m.shaft}\n` : ''}${m.controlType ? `- **Control type:** ${m.controlType}\n` : ''}
 ## Pricing (CAD)
 
 - **Selling price:** $${price}
@@ -194,6 +200,8 @@ function main() {
       last_updated: data.last_updated || new Date().toISOString().slice(0, 10),
       title: extractH1(body),
       msrp: extractMsrp(body),
+      shaft: extractQuickFact(body, 'Shaft'),
+      controlType: extractQuickFact(body, 'Control type'),
       best_fit: extractSection(body, 'Best fit for'),
       not_ideal: extractSection(body, 'Not ideal for'),
     };
