@@ -6696,7 +6696,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     image: '/lovable-uploads/aluminum-fishing-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -6887,7 +6887,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does it cost to power an aluminum fishing boat in Ontario in 2026?',
-        answer: 'For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.'
+        answer: 'As of August 8, 2026, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail for a 14-16ft boat. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) because shaft length and configuration change the figure. These are planning figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a configured quote at mercuryrepower.ca/quote/motor-selection.'
       },
       {
         question: 'Is EFI worth it over a carbureted motor on an aluminum fishing boat?',
@@ -8633,7 +8633,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-03-09',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -8846,7 +8846,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
-        answer: 'Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, 250 Pro XS V8 around $33,500-$34,500. Final pricing depends on configuration and live quote.'
+        answer: 'Planning-level CAD ranges as of August 8, 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, and 250 Pro XS V8 from $34,848 to $37,741. Check the [live pricing reference](/pricing-reference) because shaft length, controls, and configuration change the figure.'
       },
       {
         question: 'What warranty does a Mercury outboard come with in Canada?',
@@ -12153,7 +12153,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -12275,7 +12275,7 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 
 | Motor | All-In (CAD, before HST) |
 |---|---|
-| 90 HP FourStroke | $15,500 to $18,500 |
+| 90 HP FourStroke | [Live motor price](/pricing-reference) plus quoted rigging, prop, and installation |
 | 115 HP FourStroke | $17,500 to $22,500 |
 | 150 HP FourStroke | $23,000 to $30,000 |
 | 175 HP V6 FourStroke | $26,000 to $32,500 |
@@ -15318,7 +15318,7 @@ Pricing ranges in this article are HBW's working 2026 estimates, verified June 2
     imageAlt: 'Deep-V boat with Mercury outboard and ProKicker trolling motor for Lake Ontario salmon and trout fishing.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     category: 'Fishing & Local',
     readTime: '15 min read',
     keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
@@ -15511,7 +15511,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
       },
       {
         question: 'What\'s the cost of a typical Lake Ontario salmon repower?',
-        answer: 'For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,000 to $50,000+ CAD all-in at HBW. Includes rigging, prop, and install. [Live pricing here.](/quote/motor-selection)'
+        answer: 'As of August 8, 2026, the lowest listed 250 to 300 HP V8 main-motor price plus a remote 15 HP ProKicker totals $41,921 CAD before rigging, prop, and installation. Check the [live pricing reference](/pricing-reference), then build a configured quote for the actual 22 to 25 ft setup.'
       },
       {
         question: 'Should I consider a sport fisher hull for Lake Ontario?',
@@ -16059,7 +16059,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-23',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -16078,8 +16078,8 @@ heading: What changes the real out-the-door price?
 eyebrow: Where the money goes
 subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
 item1Label: Motor (the big number)
-item1Value: $1,298 - $38,539 CAD
-item1Note: HBW dealer selling price, 2.5MH FourStroke to 300XL FourStroke DTS (canonical 2026-06-03).
+item1Value: $1,298 - $39,402 CAD
+item1Note: HBW dealer selling price, 2.5MH FourStroke to 300EXLPT Pro XS DTS, as of August 8, 2026. See /pricing-reference for the live list.
 item1Accent: true
 item2Label: Rigging (steering, controls, gauges)
 item2Value: $1,500 - $4,500
@@ -17126,7 +17126,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['buy boat canada 2026', 'boat market canada', 'best time to buy boat'],
-    content: `*Last reviewed: 2026-08-01*
+    content: `*Last reviewed: 2026-08-08*
 
 > **Quick answer:** 2026 is a functional year to buy a boat in Canada, not a deal year. Inventory has recovered, lead times are normal, and prices sit above 2019 levels with little sign of dropping. If your hull is sound, a Mercury repower is often better value than buying new. Build a repower quote at mercuryrepower.ca.
 
@@ -17306,7 +17306,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Is it better to buy a new boat or repower an old one in 2026?',
-        answer: 'For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you\'re paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As a reference point, a 2026 Mercury 115 ELPT starts at $19,220 MSRP at HBW, that\'s the motor only, but it\'s real inventory at a published price you can act on. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.'
+        answer: 'For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you\'re paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As of August 8, 2026, the [live pricing reference](/pricing-reference) lists the 115 ELPT FourStroke at a $17,083 HBW selling price and $19,030 MSRP, motor only. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.'
       },
       {
         question: 'What is a realistic budget for a boat in Canada in 2026?',
