@@ -107,6 +107,38 @@ export function useQuoteActivityTracker() {
   const hasActiveQuote = useRef(false);
 
   const utmParams = useRef(captureUtmParams());
+  const isBlankQuote = !state.isLoading
+    && !state.motor
+    && state.selectedOptions.length === 0
+    && !state.purchasePath
+    && !state.boatInfo
+    && !state.tradeInInfo
+    && !state.installConfig
+    && !state.selectedPromoOption
+    && !state.selectedPackage
+    && state.completedSteps.length === 0
+    && state.currentStep === 1;
+
+  // The tracker stays mounted across quote routes, so its deduplication refs
+  // must be reset when QuoteContext returns to its blank-journey shape. The
+  // full shape avoids treating a transient missing motor as a new journey.
+  // Keep the session, attribution, and queued writes intact across the reset.
+  useEffect(() => {
+    if (!isBlankQuote || !hasActiveQuote.current) return;
+
+    prevMotorId.current = null;
+    prevOptionsCount.current = 0;
+    prevPurchasePath.current = null;
+    prevHasTradeIn.current = false;
+    prevFinancingTerm.current = 0;
+    prevHasBoatInfo.current = false;
+    prevHasInstallConfig.current = false;
+    prevPromoOption.current = null;
+    prevPackageId.current = null;
+    prevSummaryPath.current = false;
+    submittedTracked.current = false;
+    hasActiveQuote.current = false;
+  }, [isBlankQuote]);
 
   const insertEvent = useCallback(async (event: PendingEvent) => {
     try {
