@@ -2144,11 +2144,68 @@ export type Database = {
         }
         Relationships: []
       }
+      mercury_post_sale_runs: {
+        Row: {
+          candidates: number
+          error_codes: Json
+          failed: number
+          finished_at: string | null
+          id: number
+          invocation: string
+          mpp_failed: number
+          mpp_updated: number
+          processed: number
+          skipped: number
+          started_at: string
+          status: string
+          svc_failed: number
+          svc_updated: number
+        }
+        Insert: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Update: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Relationships: []
+      }
       mercury_post_sale_sends: {
         Row: {
+          attempt_count: number
+          consent_basis: string
+          consent_expires_at: string | null
           customer_email: string
           deal_no: string | null
           dealid: string
+          entry_method: string
+          last_attempt_at: string | null
+          last_error_code: string | null
           mailchimp_status: string
           motor: string | null
           mpp_status: string
@@ -2157,9 +2214,15 @@ export type Database = {
           svc_status: string
         }
         Insert: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
           customer_email: string
           deal_no?: string | null
           dealid: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
           mailchimp_status?: string
           motor?: string | null
           mpp_status?: string
@@ -2168,15 +2231,51 @@ export type Database = {
           svc_status?: string
         }
         Update: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
           customer_email?: string
           deal_no?: string | null
           dealid?: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
           mailchimp_status?: string
           motor?: string | null
           mpp_status?: string
           processed_at?: string
           sale_date?: string | null
           svc_status?: string
+        }
+        Relationships: []
+      }
+      mercury_post_sale_webhook_events: {
+        Row: {
+          error_code: string | null
+          finished_at: string | null
+          received_at: string
+          resend_email_id: string
+          stage: string
+          status: string
+          svix_id: string
+        }
+        Insert: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id: string
+          stage?: string
+          status?: string
+          svix_id: string
+        }
+        Update: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id?: string
+          stage?: string
+          status?: string
+          svix_id?: string
         }
         Relationships: []
       }
