@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-08
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
@@ -47,7 +47,7 @@ Spring is the high-stakes phase. The first run of the year reveals every shortcu
 **What HBW commissioning covers:**
 
 - Pull the cover, inspect for winter damage
-- Battery test and reinstall (most batteries fail the first or third spring after install)
+- Battery reconnect and load test (the battery stays in the boat, disconnected and maintained over winter)
 - Fuel system inspection, fresh fuel, ethanol treatment
 - Lower unit oil change and seal inspection
 - Cooling system check, impeller inspection (replace at the 3-year mark or sooner)
@@ -93,7 +93,7 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 - Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
-- Battery prep (off the boat, on a tender)
+- Battery prep: leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions
 - Cover or shrinkwrap (we offer outdoor shrinkwrap, indoor heated isn't our setup)
 - Note any spring service that should be queued
 
@@ -119,7 +119,7 @@ A few things don't follow the seasons.
 
 - **Skipping winterization to save $300.** The cracked-block math always wins this argument. Winterize.
 - **DIY impeller jobs without the right tools.** The gearcase has to come off, the housing has to be inspected, the wear plate matters. Most DIY impellers we see come back as full lower-unit rebuilds. $40 part, $4,500 risk.
-- **Storing the battery on the boat over winter.** Cold kills batteries faster than discharge. Off the boat, on a tender, in a heated space.
+- **Leaving the battery connected over winter.** Parasitic draw, not cold, is the usual problem. Leave the battery in the boat, disconnect it, and maintain it according to the battery maker's instructions.
 - **Running on last year's fuel after a long winter.** Ethanol absorbs moisture. Drain, treat, or replace.
 - **Pushing the season too far in November.** Cold-water survival is short. A motor stall on a 45-degree morning is a different problem than a stall on a July afternoon.
 - **Booking spring commissioning in March.** Booking in March means you're competing with every other procrastinator for an April-mid slot. Book in October when you book winterization.
@@ -203,4 +203,3 @@ Fall is the busiest trade-in window because customers swap before winter storage
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -11612,7 +11612,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Couple cruising in a Mercury boat on an Ontario lake during fall to illustrate extending the boating season.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-22',
     category: 'Boating Lifestyle',
     readTime: '~8 min read',
@@ -11620,7 +11620,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-08*
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 
@@ -11639,7 +11639,7 @@ Spring is the high-stakes phase. The first run of the year reveals every shortcu
 **What HBW commissioning covers:**
 
 - Pull the cover, inspect for winter damage
-- Battery test and reinstall (most batteries fail the first or third spring after install)
+- Battery reconnect and load test (the battery stays in the boat, disconnected and maintained over winter)
 - Fuel system inspection, fresh fuel, ethanol treatment
 - Lower unit oil change and seal inspection
 - Cooling system check, impeller inspection (replace at the 3-year mark or sooner)
@@ -11685,7 +11685,7 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 - Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
-- Battery prep (off the boat, on a tender)
+- Battery prep: leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions
 - Cover or shrinkwrap (we offer outdoor shrinkwrap, indoor heated isn't our setup)
 - Note any spring service that should be queued
 
@@ -11711,7 +11711,7 @@ A few things don't follow the seasons.
 
 - **Skipping winterization to save $300.** The cracked-block math always wins this argument. Winterize.
 - **DIY impeller jobs without the right tools.** The gearcase has to come off, the housing has to be inspected, the wear plate matters. Most DIY impellers we see come back as full lower-unit rebuilds. $40 part, $4,500 risk.
-- **Storing the battery on the boat over winter.** Cold kills batteries faster than discharge. Off the boat, on a tender, in a heated space.
+- **Leaving the battery connected over winter.** Parasitic draw, not cold, is the usual problem. Leave the battery in the boat, disconnect it, and maintain it according to the battery maker's instructions.
 - **Running on last year's fuel after a long winter.** Ethanol absorbs moisture. Drain, treat, or replace.
 - **Pushing the season too far in November.** Cold-water survival is short. A motor stall on a 45-degree morning is a different problem than a stall on a July afternoon.
 - **Booking spring commissioning in March.** Booking in March means you're competing with every other procrastinator for an April-mid slot. Book in October when you book winterization.
