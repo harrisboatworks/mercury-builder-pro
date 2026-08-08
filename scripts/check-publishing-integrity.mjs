@@ -21,6 +21,7 @@ const prerenderScript = read('scripts/static-prerender.mjs');
 const brandMetadata = read('public/.well-known/brand.json');
 const blogArticles = read('src/data/blogArticles.ts');
 const frenchBlogArticles = read('src/data/frenchBlogArticles.ts');
+const blogFinancingCopy = read('src/data/blogFinancingCopy.ts');
 const mercury115Twin = read('public/blog/mercury-115-hp-fourstroke-review-ontario.md');
 const caseStudies = read('src/data/caseStudiesLongForm.ts');
 const baseCaseStudies = read('src/data/caseStudies.ts');
@@ -137,6 +138,20 @@ check(
     /many motors that look fine to keep the existing controls still need new cables/.test(unsourcedStatSurface) &&
     /planning illustrations, not a claim about the average Rice Lake owner/.test(unsourcedStatSurface),
   'Shop-experience and scenario framing must remain on the corrected internal-stat surfaces.',
+);
+
+check(
+  /DealerPlan/.test(blogFinancingCopy) &&
+    /TD Auto Finance/.test(blogFinancingCopy) &&
+    /on approved credit/.test(blogFinancingCopy) &&
+    /canonicalBlogFinancingFaqCopy/.test(blogFinancingCopy) &&
+    /mercuryrepower\.ca\/promotions/.test(blogFinancingCopy),
+  'Canonical blog financing copy must identify DealerPlan and TD Auto Finance, include the approval qualifier, and keep FAQ schema plain-text.',
+);
+check(
+  (blogArticles.match(/canonicalBlogFinancingCopy/g) || []).length >= 2 &&
+    (blogArticles.match(/canonicalBlogFinancingFaqCopy/g) || []).length >= 5,
+  'Affected blog financing body and FAQ answers must use the canonical shared financing copy.',
 );
 
 check(
@@ -666,7 +681,20 @@ function walk(dir, predicate) {
   return out;
 }
 
-for (const file of walk('public/blog', (path) => path.endsWith('.md'))) {
+const blogMarkdownFiles = walk('public/blog', (path) => path.endsWith('.md'));
+const blogPublishingSurface = `${blogArticles}\n${blogMarkdownFiles.map(read).join('\n')}`;
+for (const bannedLender of ['Medallion', 'Sheffield', 'LightStream', 'Financeit']) {
+  check(
+    !new RegExp(`\\b${bannedLender}\\b`, 'i').test(blogPublishingSurface),
+    `Blog source or Markdown twins must not promote the US-only or non-partner lender ${bannedLender}.`,
+  );
+}
+check(
+  !/Mercury Repower Financing|Mercury repower financing|Mercury Marine financing programs|Mercury offers competitive repower financing/i.test(blogPublishingSurface),
+  'Blog source or Markdown twins still contain US-program or generic Mercury-financing wording.',
+);
+
+for (const file of blogMarkdownFiles) {
   check(!/\{\{LIVE_RATE(?:_PCT)?\}\}/.test(read(file)), `${file} contains an unresolved live-rate placeholder.`);
 }
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
