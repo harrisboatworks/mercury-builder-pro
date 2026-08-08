@@ -3,6 +3,12 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import {
+  WARRANTY_AGENT_NOTE,
+  WARRANTY_AGENT_NOTE_BOLD,
+  WARRANTY_POLICY_SENTENCE,
+  WARRANTY_TABLE_CELL,
+} from './lib/warranty-copy.mjs';
 
 const failures = [];
 const warnings = [];
@@ -42,6 +48,65 @@ const parsedVercelConfig = JSON.parse(vercelConfig);
 const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
 const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
 const mandarinServiceSurface = `${mandarinServiceGuide}\n${mandarinServiceTwin}`;
+const warrantyCopySource = read('scripts/lib/warranty-copy.mjs');
+const faqDataSource = read('src/data/faqData.ts');
+const warrantySources = [
+  ['src/data/blogArticles.ts', blogArticles],
+  ['scripts/static-prerender.mjs', prerenderScript],
+  ['scripts/generate-markdown-twins.mjs', caseStudyGenerator],
+  ['scripts/generate-motor-markdown.mjs', read('scripts/generate-motor-markdown.mjs')],
+  ['scripts/lib/warranty-copy.mjs', warrantyCopySource],
+  ['src/data/faqData.ts', faqDataSource],
+];
+const bonusWarrantyAllowlist = [
+  'promotional bonus coverage can change',
+  'promotional bonus coverage must be confirmed at the time of sale because those programs can change',
+];
+
+for (const allowed of bonusWarrantyAllowlist) {
+  check(
+    warrantySources.some(([, source]) => source.includes(allowed)),
+    `Reviewed bonus-warranty allowlist entry is missing: ${allowed}`,
+  );
+}
+
+for (const [sourceName, source] of warrantySources) {
+  const unreviewed = bonusWarrantyAllowlist.reduce(
+    (value, allowed) => value.split(allowed).join(''),
+    source,
+  );
+  check(
+    !/bonus\s+(warranty|coverage)/i.test(unreviewed),
+    `${sourceName} contains unreviewed bonus warranty or bonus coverage wording.`,
+  );
+}
+
+for (const [sourceName, source] of warrantySources.filter(([name]) => name !== 'src/data/blogArticles.ts')) {
+  check(
+    !/bonus-(warranty|coverage)/i.test(source),
+    `${sourceName} contains retired hyphenated bonus-warranty wording.`,
+  );
+}
+
+check(
+  /run concurrently, not as six stacked years/i.test(WARRANTY_POLICY_SENTENCE) &&
+    /written promotion terms explicitly include it/i.test(WARRANTY_POLICY_SENTENCE),
+  'Shared warranty policy must state concurrent standard coverage and require explicit written promotional terms.',
+);
+check(
+  WARRANTY_AGENT_NOTE.includes(WARRANTY_POLICY_SENTENCE) &&
+    /running concurrently/i.test(WARRANTY_AGENT_NOTE_BOLD) &&
+    /written promotion terms explicitly include it/i.test(WARRANTY_AGENT_NOTE_BOLD) &&
+    /running concurrently/i.test(WARRANTY_TABLE_CELL) &&
+    /written terms explicitly include it/i.test(WARRANTY_TABLE_CELL),
+  'Every shared warranty output must preserve concurrent coverage and written-promotion qualification.',
+);
+check(
+  /3-year limited warranty and a separate 3-year corrosion warranty/i.test(faqDataSource) &&
+    /run concurrently, not as six stacked years/i.test(faqDataSource) &&
+    /written promotion terms explicitly include it/i.test(faqDataSource),
+  'Customer FAQ warranty copy must remain aligned with the shared Canadian policy.',
+);
 
 check(
   !/锌或铝阳极是发动机水下部分的["“]牺牲品|\| 操作员卡 \/ 钓鱼证 \| 不销售（请到 ontario\.ca 办理） \| ， \|/.test(mandarinServiceSurface),
