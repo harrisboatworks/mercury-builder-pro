@@ -2466,7 +2466,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-18',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Garantie',
     readTime: '9 min',
@@ -2557,6 +2557,12 @@ Le contrat peut être transféré à un acheteur subséquent à usage récréati
 Pour une réclamation, apportez le produit à un concessionnaire Mercury autorisé. Le concessionnaire effectue le diagnostic et demande l'approbation de Mercury. La franchise canadienne actuelle est de 50 $ par réclamation. Seules les réparations et les pièces admissibles selon le contrat sont payées.
 
 ---
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 ## Comment obtenir une soumission
 
