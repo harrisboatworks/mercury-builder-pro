@@ -1,6 +1,5 @@
 export type BoundDepositQuoteData = {
   saved_quote_id?: string | null;
-  quote_pdf_path?: string | null;
 };
 
 export type BoundDeposit = {
@@ -14,7 +13,6 @@ export type BoundSavedQuote = {
   email?: string | null;
   deposit_status?: string | null;
   deposit_amount?: string | number | null;
-  quote_pdf_path?: string | null;
 };
 
 export type DepositPreclaimInput = {
@@ -22,7 +20,6 @@ export type DepositPreclaimInput = {
   sessionAmountTotal?: number | null;
   metadataDepositAmount?: string | null;
   metadataSavedQuoteId?: string | null;
-  metadataQuotePdfPath?: string | null;
   stripeReceiptEmail?: string | null;
   boundDeposit: BoundDeposit;
   boundSavedQuote?: BoundSavedQuote | null;
@@ -32,7 +29,6 @@ export type ReconciledDeposit = {
   depositAmount: number;
   depositAmountCents: number;
   savedQuoteId: string;
-  quotePdfPath: string;
   quoteAuthorizationEmail: string;
   stripeReceiptEmail: string;
 };
@@ -52,8 +48,6 @@ export function validateDepositBeforeClaim(input: DepositPreclaimInput): Reconci
   const metadataDepositAmount = Number(input.metadataDepositAmount);
   const boundSavedQuoteId = String(boundQuoteData.saved_quote_id || "");
   const metadataSavedQuoteId = String(input.metadataSavedQuoteId || "");
-  const boundQuotePdfPath = String(boundQuoteData.quote_pdf_path || "");
-  const metadataQuotePdfPath = String(input.metadataQuotePdfPath || "");
   const quoteAuthorizationEmail = normalizeEmail(input.boundDeposit.customer_email);
 
   if (
@@ -74,10 +68,7 @@ export function validateDepositBeforeClaim(input: DepositPreclaimInput): Reconci
     throw new Error("Stripe deposit total does not match the bound deposit amount");
   }
 
-  if (
-    boundSavedQuoteId !== metadataSavedQuoteId
-    || boundQuotePdfPath !== metadataQuotePdfPath
-  ) {
+  if (boundSavedQuoteId !== metadataSavedQuoteId) {
     throw new Error("Stripe deposit metadata does not match the bound record");
   }
 
@@ -92,7 +83,6 @@ export function validateDepositBeforeClaim(input: DepositPreclaimInput): Reconci
       || savedQuote.id !== boundSavedQuoteId
       || normalizeEmail(savedQuote.email) !== quoteAuthorizationEmail
       || Number(savedQuote.deposit_amount) !== boundDepositAmount
-      || String(savedQuote.quote_pdf_path || "") !== boundQuotePdfPath
       || !["pending", "paid"].includes(String(savedQuote.deposit_status || ""))
     ) {
       throw new Error("Bound saved quote could not be verified");
@@ -105,7 +95,6 @@ export function validateDepositBeforeClaim(input: DepositPreclaimInput): Reconci
     depositAmount: boundDepositAmount,
     depositAmountCents: boundDepositAmountCents,
     savedQuoteId: boundSavedQuoteId,
-    quotePdfPath: boundQuotePdfPath,
     quoteAuthorizationEmail,
     stripeReceiptEmail: normalizeEmail(input.stripeReceiptEmail),
   };

@@ -130,8 +130,6 @@ serve(async (req) => {
           savedQuoteId: metadataSavedQuoteId,
         });
 
-        const metadataQuotePdfPath = session.metadata.quote_pdf_path || "";
-
         // The row created before checkout is the authoritative binding. Claim
         // pending -> paid atomically before sending any customer/admin side
         // effects, so a retry or concurrent delivery cannot notify twice.
@@ -152,7 +150,7 @@ serve(async (req) => {
         if (boundSavedQuoteId) {
           const { data, error } = await supabase
             .from("saved_quotes")
-            .select("id, email, deposit_status, deposit_amount, quote_pdf_path")
+            .select("id, email, deposit_status, deposit_amount")
             .eq("id", boundSavedQuoteId)
             .maybeSingle();
           if (error) {
@@ -169,7 +167,6 @@ serve(async (req) => {
           sessionAmountTotal: session.amount_total,
           metadataDepositAmount,
           metadataSavedQuoteId,
-          metadataQuotePdfPath,
           stripeReceiptEmail,
           boundDeposit: existingDeposit,
           boundSavedQuote,
@@ -199,7 +196,6 @@ serve(async (req) => {
           stripe_payment_intent: paymentIntentId,
           payment_status: "paid",
           motor_info: motorInfo,
-          quote_pdf_path: boundQuoteData.quote_pdf_path || null,
           ...(reconciledDeposit.stripeReceiptEmail
             ? { stripe_receipt_email: reconciledDeposit.stripeReceiptEmail }
             : {}),
