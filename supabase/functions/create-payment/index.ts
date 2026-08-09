@@ -4,6 +4,12 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { getMotorReservationDeposit } from "../_shared/deposit-policy.ts";
+import {
+  assertQuoteDocumentPaymentAvailable,
+  quoteDocumentBinding,
+  sha256Hex,
+  validateQuotePdf,
+} from "../_shared/quote-document-policy.ts";
 
 const baseCorsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
@@ -96,7 +102,6 @@ const paymentRequestSchema = z.object({
   paymentType: z.enum(["deposit", "quote"]).optional(),
   depositMode: z.enum(["general_deposit", "motor_reservation"]).optional(),
   motorInfo: motorInfoSchema,
-  quotePdfPath: z.string().trim().max(500).regex(/^deposit-quotes\/[A-Za-z0-9._/-]+\.pdf$/).optional(),
   savedQuoteId: z.string().uuid().optional(),
   quoteSnapshot: quoteSnapshotSchema,
 });
@@ -225,7 +230,6 @@ serve(async (req) => {
       paymentType,
       depositMode: requestedDepositMode,
       motorInfo: requestedMotorInfo,
-      quotePdfPath: requestedQuotePdfPath,
       savedQuoteId: requestedSavedQuoteId,
       quoteSnapshot,
     } = validationResult.data;
@@ -301,11 +305,10 @@ serve(async (req) => {
       const customerName = customerInfo!.name!;
       const customerPhone = customerInfo!.phone!;
 
-      // A supplied saved quote may carry the quote PDF into the paid receipt
-      // email, so bind it to the same customer, amount, and motor before its
-      // ID or path reaches Stripe metadata.
+      // A motor reservation requires a server-bound document before checkout.
+      // The object key is derived from the saved quote ID and is never accepted
+      // from the browser or copied into Stripe metadata.
       let savedQuoteId = "";
-      let quotePdfPath = "";
       if (isMotorReservation) {
         if (!requestedSavedQuoteId || !quoteData?.motorId) {
           throw new Error("Invalid saved quote for deposit");
@@ -313,7 +316,7 @@ serve(async (req) => {
 
         const { data: savedQuote, error: savedQuoteError } = await supabaseService
           .from("saved_quotes")
-          .select("id, email, deposit_status, deposit_amount, quote_pdf_path, quote_state")
+          .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256, quote_state")
           .eq("id", requestedSavedQuoteId)
           .maybeSingle();
 
@@ -326,9 +329,42 @@ serve(async (req) => {
           || savedQuote.deposit_status !== "pending"
           || !savedMotorId
           || savedMotorId !== quoteData.motorId
-          || (requestedQuotePdfPath && savedQuote.quote_pdf_path !== requestedQuotePdfPath)
         ) {
           throw new Error("Invalid saved quote for deposit");
+        }
+        try {
+          assertQuoteDocumentPaymentAvailable({
+            row: savedQuote,
+            savedQuoteId: requestedSavedQuoteId,
+          });
+        } catch {
+          throw new Error("Invalid saved quote for deposit");
+        }
+
+        let documentBinding: ReturnType<typeof quoteDocumentBinding>;
+        try {
+          documentBinding = quoteDocumentBinding({ row: savedQuote, savedQuoteId: savedQuote.id });
+        } catch {
+          throw new Error("Invalid saved quote document for deposit");
+        }
+        if (!documentBinding.path || !documentBinding.sha256) {
+          throw new Error("Invalid saved quote document for deposit");
+        }
+        const { data: quoteDocument, error: quoteDocumentError } = await supabaseService
+          .storage
+          .from("quotes")
+          .download(documentBinding.path);
+        if (quoteDocumentError || !quoteDocument) {
+          throw new Error("Invalid saved quote document for deposit");
+        }
+        try {
+          const documentBytes = new Uint8Array(await quoteDocument.arrayBuffer());
+          validateQuotePdf(documentBytes, quoteDocument.type || "application/pdf");
+          if (await sha256Hex(documentBytes) !== documentBinding.sha256) {
+            throw new Error("Quote document digest mismatch");
+          }
+        } catch {
+          throw new Error("Invalid saved quote document for deposit");
         }
 
         const { data: reservationMotor, error: reservationMotorError } = await supabaseService
@@ -362,11 +398,9 @@ serve(async (req) => {
         };
 
         savedQuoteId = savedQuote.id;
-        quotePdfPath = savedQuote.quote_pdf_path || "";
       } else if (
         depositAmount === "100"
         || requestedSavedQuoteId
-        || requestedQuotePdfPath
         || quoteData?.motorId
         || requestedMotorInfo
         || quoteSnapshot
@@ -407,7 +441,6 @@ serve(async (req) => {
           customer_email: userEmail || customerInfo?.email || "",
           customer_phone: customerPhone,
           motor_info: verifiedMotorInfo ? JSON.stringify(verifiedMotorInfo) : "",
-          quote_pdf_path: quotePdfPath,
           saved_quote_id: savedQuoteId,
         }
       };
@@ -451,7 +484,6 @@ serve(async (req) => {
             stripe_session_id: session.id,
             payment_status: "pending",
             motor_info: verifiedMotorInfo,
-            quote_pdf_path: quotePdfPath || null,
             saved_quote_id: savedQuoteId || null,
             ...(quoteSnapshot ? { quote_snapshot: quoteSnapshot } : {}),
           },
