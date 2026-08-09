@@ -41,7 +41,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
-import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
+import { buildPdfLeadIdempotencyKey, hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -787,6 +787,10 @@ export default function QuoteSummaryPage() {
       if (hasIdentifiedPdfCustomer({ name: state.customerName, email: state.customerEmail })) {
         try {
           const { saveLead } = await import('@/lib/leadCapture');
+          const idempotencyKey = await buildPdfLeadIdempotencyKey({
+            email: state.customerEmail!,
+            snapshot: pdfSnapshot,
+          });
           await saveLead({
             motor_model: quoteData.motor?.model,
             motor_hp: quoteData.motor?.hp,
@@ -797,7 +801,8 @@ export default function QuoteSummaryPage() {
             customer_phone: state.customerPhone || undefined,
             lead_status: 'downloaded',
             lead_source: 'pdf_download',
-            quote_data: quoteData
+            quote_data: quoteData,
+            idempotency_key: idempotencyKey,
           });
         } catch (leadError) {
           console.error('Failed to save identified PDF lead:', leadError);

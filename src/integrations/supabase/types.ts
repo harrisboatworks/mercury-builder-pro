@@ -640,6 +640,7 @@ export type Database = {
           final_price: number
           follow_up_date: string | null
           id: string
+          idempotency_key: string | null
           is_admin_quote: boolean | null
           last_contact_attempt: string | null
           last_modified_at: string | null
@@ -680,6 +681,7 @@ export type Database = {
           final_price: number
           follow_up_date?: string | null
           id?: string
+          idempotency_key?: string | null
           is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
           last_modified_at?: string | null
@@ -720,6 +722,7 @@ export type Database = {
           final_price?: number
           follow_up_date?: string | null
           id?: string
+          idempotency_key?: string | null
           is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
           last_modified_at?: string | null
