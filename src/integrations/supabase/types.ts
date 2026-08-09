@@ -7252,6 +7252,10 @@ export type Database = {
         Args: { p_rows: Json }
         Returns: number
       }
+      upsert_soft_lead_quote: {
+        Args: { p_quote_state: Json; p_session_id: string }
+        Returns: string
+      }
       upsert_customer_comms_event: {
         Args: {
           p_body_preview?: string

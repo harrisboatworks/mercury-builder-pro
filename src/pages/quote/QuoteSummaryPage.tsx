@@ -42,6 +42,7 @@ import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
+import { persistSoftLeadQuote } from '@/lib/soft-lead-save';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -122,17 +123,17 @@ export default function QuoteSummaryPage() {
     latestQuoteStateRef.current = state;
   }, [state]);
   const softLeadSnapshotRef = useRef<string | null>(null);
+  const softLeadSaveQueueRef = useRef<Promise<void>>(Promise.resolve());
   useEffect(() => {
-    if (state.isLoading || !state.motor) return;
+    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
     const snapshotKey = [
       state.motor.id,
       state.warrantyConfig?.extendedYears ?? 0,
       state.warrantyConfig?.warrantyPrice ?? 0,
       state.warrantyConfig?.totalYears ?? currentCoverageYears,
-      state.pdfSnapshot?.createdAt ?? 'snapshot-pending',
+      state.pdfSnapshot.createdAt,
     ].join(':');
     if (softLeadSnapshotRef.current === snapshotKey) return;
-    softLeadSnapshotRef.current = snapshotKey;
     const quoteStateSnapshot = latestQuoteStateRef.current;
 
     // Analytics: count the viewed quote once. Warranty changes still refresh
@@ -148,40 +149,19 @@ export default function QuoteSummaryPage() {
     }
 
     const sessionId = getOrCreateSessionId();
-    (async () => {
-      try {
-        // Check if a soft-lead already exists for this session
-        const { data: existing } = await (supabase as any)
-          .from('saved_quotes')
-          .select('id')
-          .eq('session_id', sessionId)
-          .eq('is_soft_lead', true)
-          .maybeSingle();
-
-        if (existing) {
-          // Update the existing soft lead with latest state
-          await (supabase as any)
-            .from('saved_quotes')
-            .update({ quote_state: quoteStateSnapshot as any, updated_at: new Date().toISOString() })
-            .eq('id', existing.id);
-        } else {
-          // Create new soft-lead record
-          await (supabase as any)
-            .from('saved_quotes')
-            .insert({
-              email: 'anonymous@soft-lead.local',
-              resume_token: `sl_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: quoteStateSnapshot as any,
-              user_id: user?.id || null,
-              session_id: sessionId,
-              is_soft_lead: true,
-              expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
-            } as any);
-        }
-      } catch {
-        // Silently fail, analytics should never break the app
-      }
-    })();
+    softLeadSaveQueueRef.current = softLeadSaveQueueRef.current
+      .catch(() => undefined)
+      .then(async () => {
+        await persistSoftLeadQuote({
+          sessionId,
+          quoteState: quoteStateSnapshot,
+        });
+        softLeadSnapshotRef.current = snapshotKey;
+      })
+      .catch((error) => {
+        // Soft-lead persistence must never block the customer-facing quote.
+        console.warn('Soft-lead save failed after retry:', error);
+      });
   }, [
     state.isLoading,
     state.motor,
