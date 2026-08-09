@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-05-14
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercruiser Sterndrive Ontario Guide"
 description: "Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works."
 category: "Service & Maintenance"
 date_published: 2026-05-14
-date_modified: 2026-05-14
+date_modified: 2026-08-08
 keywords: ["Mercruiser sterndrive Ontario","Mercruiser bellows replacement Ontario","sterndrive winterization Ontario","Mercruiser repower cost","sterndrive to outboard conversion","Mercruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
-**Last reviewed:** 2026-05-14  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 

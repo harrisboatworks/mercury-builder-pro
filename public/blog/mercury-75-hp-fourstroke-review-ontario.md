@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
 description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 

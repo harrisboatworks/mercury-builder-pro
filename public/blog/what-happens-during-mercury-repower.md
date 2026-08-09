@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SeaPro Commercial Outboard Guide"
 description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs."
 category: "Buying Guide"
 date_published: 2026-04-20
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury seapro","commercial outboard","guide motor","heavy duty outboard","commercial boat motor","SeaPro vs FourStroke","commercial outboard motor","guide boat outboard","SeaPro 200 hour service","charter boat motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: commercial
 
 **Category:** Buying Guide  
 **Published:** 2026-04-20  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Brampton Ontario HBW"
 description: "Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["mercury dealer brampton","mercury repower brampton","mercury outboard brampton ontario","boat motor dealer brampton caledon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-08-08  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw
 
