@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  claimDepositAfterValidation,
+  validateDepositBeforeClaim,
+} from "./deposit-reconciliation.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -99,14 +103,14 @@ serve(async (req) => {
       }
 
       if (session.metadata?.payment_type === "motor_deposit") {
-        const depositAmount = session.metadata.deposit_amount;
+        const metadataDepositAmount = session.metadata.deposit_amount;
         const customerName = session.metadata.customer_name || "Customer";
-        const customerEmail = session.customer_email || session.metadata.customer_email;
+        const stripeReceiptEmail = session.customer_details?.email || session.customer_email || "";
         const customerPhone = session.metadata.customer_phone || "";
         const paymentIntentId = typeof session.payment_intent === "string" 
           ? session.payment_intent 
           : session.payment_intent?.id;
-        const savedQuoteId = session.metadata.saved_quote_id || "";
+        const metadataSavedQuoteId = session.metadata.saved_quote_id || "";
         
         let motorInfo = null;
         if (session.metadata.motor_info) {
@@ -118,10 +122,15 @@ serve(async (req) => {
         }
 
         logStep("Processing deposit confirmation", {
-          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, savedQuoteId,
+          depositAmount: metadataDepositAmount,
+          customerName,
+          stripeReceiptEmail,
+          paymentIntentId,
+          motorInfo,
+          savedQuoteId: metadataSavedQuoteId,
         });
 
-        const quotePdfPath = session.metadata.quote_pdf_path || "";
+        const metadataQuotePdfPath = session.metadata.quote_pdf_path || "";
 
         // The row created before checkout is the authoritative binding. Claim
         // pending -> paid atomically before sending any customer/admin side
@@ -139,13 +148,36 @@ serve(async (req) => {
 
         const boundQuoteData = existingDeposit.quote_data || {};
         const boundSavedQuoteId = boundQuoteData.saved_quote_id || "";
-        if (
-          Number(existingDeposit.deposit_amount) !== Number(depositAmount)
-          || boundSavedQuoteId !== savedQuoteId
-          || (boundQuoteData.quote_pdf_path || "") !== quotePdfPath
-        ) {
-          throw new Error("Stripe deposit metadata does not match the bound record");
+        let boundSavedQuote = null;
+        if (boundSavedQuoteId) {
+          const { data, error } = await supabase
+            .from("saved_quotes")
+            .select("id, email, deposit_status, deposit_amount, quote_pdf_path")
+            .eq("id", boundSavedQuoteId)
+            .maybeSingle();
+          if (error) {
+            throw new Error(`Bound saved quote lookup failed: ${error.message}`);
+          }
+          boundSavedQuote = data;
         }
+
+        // Reconcile every Stripe-controlled value and saved-quote identity
+        // before pending -> paid. A mismatch therefore leaves the deposit
+        // pending and cannot trigger customer or admin notifications.
+        const depositPreclaimInput = {
+          sessionCurrency: session.currency,
+          sessionAmountTotal: session.amount_total,
+          metadataDepositAmount,
+          metadataSavedQuoteId,
+          metadataQuotePdfPath,
+          stripeReceiptEmail,
+          boundDeposit: existingDeposit,
+          boundSavedQuote,
+        };
+        const reconciledDeposit = validateDepositBeforeClaim(depositPreclaimInput);
+        const depositAmount = String(reconciledDeposit.depositAmount);
+        const savedQuoteId = reconciledDeposit.savedQuoteId;
+        const customerEmail = reconciledDeposit.quoteAuthorizationEmail;
         motorInfo = boundQuoteData.motor_info || motorInfo;
 
         if (boundQuoteData.payment_status === "paid" && notificationsComplete(boundQuoteData)) {
@@ -168,24 +200,32 @@ serve(async (req) => {
           payment_status: "paid",
           motor_info: motorInfo,
           quote_pdf_path: boundQuoteData.quote_pdf_path || null,
+          ...(reconciledDeposit.stripeReceiptEmail
+            ? { stripe_receipt_email: reconciledDeposit.stripeReceiptEmail }
+            : {}),
           notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),
         };
-        let claimQuery = supabase
-          .from("customer_quotes")
-          .update({ lead_status: "scheduled", quote_data: paidQuoteData })
-          .eq("id", existingDeposit.id);
-        claimQuery = boundQuoteData.payment_status === "paid"
-          ? claimQuery.contains("quote_data", {
-              payment_status: "paid",
-              notification_status: "processing",
-              notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
-            })
-          : claimQuery.contains("quote_data", { payment_status: "pending" });
-        const { data: claimedDeposit, error: updateError } = await claimQuery
-          .select("*")
-          .maybeSingle();
+        const { data: claimedDeposit, error: updateError } = await claimDepositAfterValidation(
+          depositPreclaimInput,
+          async () => {
+            let claimQuery = supabase
+              .from("customer_quotes")
+              .update({ lead_status: "scheduled", quote_data: paidQuoteData })
+              .eq("id", existingDeposit.id);
+            claimQuery = boundQuoteData.payment_status === "paid"
+              ? claimQuery.contains("quote_data", {
+                  payment_status: "paid",
+                  notification_status: "processing",
+                  notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
+                })
+              : claimQuery.contains("quote_data", { payment_status: "pending" });
+            return await claimQuery
+              .select("*")
+              .maybeSingle();
+          },
+        );
 
         if (updateError) {
           throw new Error(`Failed to reconcile paid deposit: ${updateError.message}`);
@@ -208,20 +248,7 @@ serve(async (req) => {
         logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id });
 
         // Update saved_quotes record with deposit confirmation
-        if (savedQuoteId && savedQuoteId === boundSavedQuoteId && customerEmail) {
-          const { data: boundSavedQuote, error: boundSavedQuoteError } = await supabase
-            .from("saved_quotes")
-            .select("id, email, deposit_status")
-            .eq("id", savedQuoteId)
-            .maybeSingle();
-          if (
-            boundSavedQuoteError
-            || !boundSavedQuote
-            || boundSavedQuote.email?.trim().toLowerCase() !== customerEmail.trim().toLowerCase()
-          ) {
-            throw new Error("Bound saved quote could not be verified");
-          }
-
+        if (savedQuoteId && boundSavedQuote) {
           if (boundSavedQuote.deposit_status === "paid") {
             logStep("saved_quotes deposit was already paid", { savedQuoteId });
           } else if (boundSavedQuote.deposit_status === "pending") {
@@ -233,6 +260,8 @@ serve(async (req) => {
                 deposit_paid_at: new Date().toISOString(),
               })
               .eq("id", savedQuoteId)
+              .eq("email", boundSavedQuote.email)
+              .eq("deposit_amount", reconciledDeposit.depositAmount)
               .eq("deposit_status", "pending")
               .select("id")
               .maybeSingle();
@@ -243,11 +272,6 @@ serve(async (req) => {
           } else {
             throw new Error("Saved quote deposit has an invalid state");
           }
-        } else if (savedQuoteId) {
-          logStep("WARNING: Ignoring unbound saved quote metadata", {
-            savedQuoteId,
-            boundSavedQuoteId,
-          });
         }
 
         // Send confirmation emails
