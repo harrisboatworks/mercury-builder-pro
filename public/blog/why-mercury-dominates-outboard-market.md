@@ -50,7 +50,7 @@ When your motor needs a water pump impeller on a Thursday in August, that means 
 Mercury has a [broad Ontario dealer network](/blog/best-mercury-dealer-ontario-hbw-difference) for outboards. Parts availability, technician depth and travel coverage vary by location, so confirm the closest qualified shop before choosing a brand.
 
 ### 2. Factory relationships with Canadian boat builders
-Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [$2,000 to $3,000 CAD brand-conversion cost](/blog/mercury-repower-cost-ontario-2026-cad).
+Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [$2,000 to $3,000 CAD brand-conversion cost](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ### 3. Full lineup coverage for every Ontario use case
 [Mercury FourStroke covers 2.5 HP through 300 HP](/blog/mercury-outboard-lineup-ontario). Pro XS handles performance fishing. SeaPro covers commercial-duty. Verado covers premium high-horsepower applications (special-order at HBW).
@@ -91,9 +91,9 @@ Mechanically, all three brands make reliable modern four-stroke outboards. For O
 
 We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Premier dealer relationship today.
 
-### Why do most aluminum boats sold in Ontario come Mercury-rigged?
+### Why is Mercury commonly paired with aluminum boats sold in Ontario?
 
-Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market: Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built around Mercury.
+Mercury has long-running supply relationships with several North American aluminum boat builders, including Lund, Crestliner, Lowe and Princecraft. Factory rigging varies by brand, model and package, so confirm the specific boat rather than assuming Mercury is standard. Customer demand and local dealer support also influence the packages sold in Ontario.
 
 ### Is Mercury more expensive than Yamaha or Honda?
 
@@ -132,4 +132,3 @@ Yes. Most cottage boats in this region came from the factory or previous owners 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
