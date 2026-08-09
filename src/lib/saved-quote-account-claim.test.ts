@@ -5,6 +5,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mocks = vi.hoisted(() => ({
   calls: [] as string[],
+  eqFilters: [] as Array<[string, unknown]>,
+  orFilters: [] as string[],
   rpc: vi.fn(),
   order: vi.fn(),
 }));
@@ -12,11 +14,20 @@ const mocks = vi.hoisted(() => ({
 vi.mock('@/integrations/supabase/client', () => ({
   supabase: {
     rpc: mocks.rpc,
-    from: vi.fn(() => ({
-      select: vi.fn(() => ({
-        eq: vi.fn(() => ({ order: mocks.order })),
-      })),
-    })),
+    from: vi.fn(() => {
+      const query = {
+        eq: vi.fn((column: string, value: unknown) => {
+          mocks.eqFilters.push([column, value]);
+          return query;
+        }),
+        or: vi.fn((filter: string) => {
+          mocks.orFilters.push(filter);
+          return query;
+        }),
+        order: mocks.order,
+      };
+      return { select: vi.fn(() => query) };
+    }),
   },
 }));
 
@@ -28,6 +39,8 @@ describe('saved quote account claim contract', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mocks.calls.length = 0;
+    mocks.eqFilters.length = 0;
+    mocks.orFilters.length = 0;
     mocks.rpc.mockImplementation(async () => {
       mocks.calls.push('claim');
       return { data: 0, error: new Error('claim unavailable') };
@@ -38,7 +51,7 @@ describe('saved quote account claim contract', () => {
     });
   });
 
-  it('claims guest saves before My Quotes filters by explicit ownership', () => {
+  it('claims guest saves before My Quotes filters by ownership and soft-lead status', () => {
     const loader = read('src/lib/saved-quote-account.ts');
     const claimAt = loader.indexOf(".rpc('claim_saved_quotes_for_current_user')");
     const listAt = loader.indexOf(".from('saved_quotes')");
@@ -46,6 +59,7 @@ describe('saved quote account claim contract', () => {
     expect(claimAt).toBeGreaterThan(0);
     expect(listAt).toBeGreaterThan(claimAt);
     expect(loader).toContain(".eq('user_id', userId)");
+    expect(loader).toContain(".or('is_soft_lead.is.null,is_soft_lead.eq.false')");
   });
 
   it('still lists already-owned quotes when claim reconciliation fails', async () => {
@@ -54,6 +68,8 @@ describe('saved quote account claim contract', () => {
       error: null,
     });
     expect(mocks.calls).toEqual(['claim', 'list']);
+    expect(mocks.eqFilters).toEqual([['user_id', 'user-1']]);
+    expect(mocks.orFilters).toEqual(['is_soft_lead.is.null,is_soft_lead.eq.false']);
   });
 
   it('still lists already-owned quotes when the claim request rejects', async () => {
@@ -67,6 +83,8 @@ describe('saved quote account claim contract', () => {
       error: null,
     });
     expect(mocks.calls).toEqual(['claim', 'list']);
+    expect(mocks.eqFilters).toEqual([['user_id', 'user-1']]);
+    expect(mocks.orFilters).toEqual(['is_soft_lead.is.null,is_soft_lead.eq.false']);
   });
 
   it('uses a least-privilege confirmed-email claim and user-id-only RLS', () => {

@@ -20,5 +20,6 @@ export async function loadOwnedSavedQuotes(userId: string) {
     .from('saved_quotes')
     .select('*')
     .eq('user_id', userId)
+    .or('is_soft_lead.is.null,is_soft_lead.eq.false')
     .order('created_at', { ascending: false });
 }
