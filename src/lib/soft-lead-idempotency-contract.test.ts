@@ -10,16 +10,18 @@ describe('soft-lead idempotency contract', () => {
     const summary = read('src/pages/quote/QuoteSummaryPage.tsx');
     const section = summary.slice(
       summary.indexOf('// Silent soft-lead save'),
-      summary.indexOf('// Listen for quote-saved-via-auth event'),
+      summary.indexOf('// CTA handlers'),
     );
 
     expect(section).toContain('isQuotePdfSnapshot(state.pdfSnapshot)');
-    expect(section).toContain('persistSoftLeadQuote');
-    expect(section).toContain('softLeadSaveQueueRef.current = softLeadSaveQueueRef.current');
+    expect(section).toContain('buildSoftLeadSnapshotKey(state.pdfSnapshot)');
+    expect(section).toContain('buildSoftLeadSnapshotKey(quoteStateSnapshot)');
+    expect(section).toContain('softLeadSaveCoordinatorRef.current.enqueue');
     expect(section).not.toContain(".from('saved_quotes')");
     expect(section).not.toContain('snapshot-pending');
-    expect(section.indexOf('softLeadSnapshotRef.current = snapshotKey')).toBeGreaterThan(
-      section.indexOf('persistSoftLeadQuote'),
+    expect(section).not.toContain('state.pdfSnapshot?.createdAt');
+    expect(summary.indexOf('// Silent soft-lead save')).toBeGreaterThan(
+      summary.indexOf("dispatch({ type: 'SET_PDF_SNAPSHOT'"),
     );
   });
 

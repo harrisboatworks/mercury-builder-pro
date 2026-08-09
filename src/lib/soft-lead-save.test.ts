@@ -7,12 +7,108 @@ vi.mock('@/integrations/supabase/client', () => ({
   supabase: { rpc },
 }));
 
-import { persistSoftLeadQuote } from './soft-lead-save';
+import {
+  buildSoftLeadSnapshotKey,
+  createSoftLeadSaveCoordinator,
+  persistSoftLeadQuote,
+} from './soft-lead-save';
 
 describe('persistSoftLeadQuote', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.useRealTimers();
+  });
+
+  it('changes the persistence key when snapshot facts change but createdAt does not', () => {
+    const original = {
+      motor: { id: 'motor-1' },
+      pdfSnapshot: {
+        createdAt: '2026-08-09T12:00:00.000Z',
+        pricing: { totalCashPrice: 12_000 },
+      },
+    };
+    const updated = {
+      ...original,
+      pdfSnapshot: {
+        ...original.pdfSnapshot,
+        pricing: { totalCashPrice: 13_000 },
+      },
+    };
+
+    expect(buildSoftLeadSnapshotKey(updated)).not.toBe(buildSoftLeadSnapshotKey(original));
+  });
+
+  it('reconciles to the latest desired state when a quote reverts during an in-flight write', async () => {
+    let resolveMiddleWrite: ((rowId: string) => void) | undefined;
+    const persist = vi
+      .fn()
+      .mockResolvedValueOnce('row-a-1')
+      .mockImplementationOnce(() => new Promise<string>((resolve) => {
+        resolveMiddleWrite = resolve;
+      }))
+      .mockResolvedValueOnce('row-a-2');
+    const coordinator = createSoftLeadSaveCoordinator({ persist });
+    const sessionId = 'qa_0123456789abcdef01234567';
+    const stateA = { motor: { id: 'motor-1' }, customerNotes: 'A' };
+    const stateB = { motor: { id: 'motor-1' }, customerNotes: 'B' };
+
+    await coordinator.enqueue({
+      sessionId,
+      quoteState: stateA,
+      snapshotKey: buildSoftLeadSnapshotKey(stateA),
+    });
+    const inFlight = coordinator.enqueue({
+      sessionId,
+      quoteState: stateB,
+      snapshotKey: buildSoftLeadSnapshotKey(stateB),
+    });
+    void coordinator.enqueue({
+      sessionId,
+      quoteState: stateA,
+      snapshotKey: buildSoftLeadSnapshotKey(stateA),
+    });
+    resolveMiddleWrite?.('row-b');
+    await inFlight;
+
+    expect(persist).toHaveBeenCalledTimes(3);
+    expect(persist.mock.calls.map(([input]) => input.quoteState)).toEqual([stateA, stateB, stateA]);
+  });
+
+  it('repersists the desired state after an ambiguous in-flight write failure', async () => {
+    let rejectMiddleWrite: ((error: Error) => void) | undefined;
+    const onError = vi.fn();
+    const persist = vi
+      .fn()
+      .mockResolvedValueOnce('row-a-1')
+      .mockImplementationOnce(() => new Promise<string>((_resolve, reject) => {
+        rejectMiddleWrite = reject;
+      }))
+      .mockResolvedValueOnce('row-a-2');
+    const coordinator = createSoftLeadSaveCoordinator({ persist, onError });
+    const sessionId = 'qa_0123456789abcdef01234567';
+    const stateA = { motor: { id: 'motor-1' }, customerNotes: 'A' };
+    const stateB = { motor: { id: 'motor-1' }, customerNotes: 'B' };
+
+    await coordinator.enqueue({
+      sessionId,
+      quoteState: stateA,
+      snapshotKey: buildSoftLeadSnapshotKey(stateA),
+    });
+    const inFlight = coordinator.enqueue({
+      sessionId,
+      quoteState: stateB,
+      snapshotKey: buildSoftLeadSnapshotKey(stateB),
+    });
+    void coordinator.enqueue({
+      sessionId,
+      quoteState: stateA,
+      snapshotKey: buildSoftLeadSnapshotKey(stateA),
+    });
+    rejectMiddleWrite?.(new Error('response lost'));
+    await inFlight;
+
+    expect(onError).toHaveBeenCalledOnce();
+    expect(persist.mock.calls.map(([input]) => input.quoteState)).toEqual([stateA, stateB, stateA]);
   });
 
   it('uses the atomic soft-lead RPC and returns its canonical row ID', async () => {

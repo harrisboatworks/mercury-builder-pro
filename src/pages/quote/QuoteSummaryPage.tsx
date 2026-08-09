@@ -42,7 +42,7 @@ import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
-import { persistSoftLeadQuote } from '@/lib/soft-lead-save';
+import { buildSoftLeadSnapshotKey, createSoftLeadSaveCoordinator } from '@/lib/soft-lead-save';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -116,62 +116,16 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
-  // Silent soft-lead save, auto-persist quote snapshot for anonymous visitors
-  const latestQuoteStateRef = useRef(state);
   const softLeadAnalyticsTrackedRef = useRef(false);
-  useEffect(() => {
-    latestQuoteStateRef.current = state;
-  }, [state]);
-  const softLeadSnapshotRef = useRef<string | null>(null);
-  const softLeadSaveQueueRef = useRef<Promise<void>>(Promise.resolve());
-  useEffect(() => {
-    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
-    const snapshotKey = [
-      state.motor.id,
-      state.warrantyConfig?.extendedYears ?? 0,
-      state.warrantyConfig?.warrantyPrice ?? 0,
-      state.warrantyConfig?.totalYears ?? currentCoverageYears,
-      state.pdfSnapshot.createdAt,
-    ].join(':');
-    if (softLeadSnapshotRef.current === snapshotKey) return;
-    const quoteStateSnapshot = latestQuoteStateRef.current;
-
-    // Analytics: count the viewed quote once. Warranty changes still refresh
-    // the saved snapshot below without inflating quote-generated reporting.
-    if (!softLeadAnalyticsTrackedRef.current) {
-      softLeadAnalyticsTrackedRef.current = true;
-      trackAgentEvent({
-        event_type: 'quote_generated',
-        motor_model: quoteStateSnapshot.motor?.model || null,
-        motor_hp: (quoteStateSnapshot.motor as any)?.hp ?? (quoteStateSnapshot.motor as any)?.horsepower ?? null,
-        motor_id: quoteStateSnapshot.motor?.id ?? null,
-      });
-    }
-
-    const sessionId = getOrCreateSessionId();
-    softLeadSaveQueueRef.current = softLeadSaveQueueRef.current
-      .catch(() => undefined)
-      .then(async () => {
-        await persistSoftLeadQuote({
-          sessionId,
-          quoteState: quoteStateSnapshot,
-        });
-        softLeadSnapshotRef.current = snapshotKey;
-      })
-      .catch((error) => {
+  const softLeadSaveCoordinatorRef = useRef<ReturnType<typeof createSoftLeadSaveCoordinator> | null>(null);
+  if (!softLeadSaveCoordinatorRef.current) {
+    softLeadSaveCoordinatorRef.current = createSoftLeadSaveCoordinator({
+      onError: (error) => {
         // Soft-lead persistence must never block the customer-facing quote.
         console.warn('Soft-lead save failed after retry:', error);
-      });
-  }, [
-    state.isLoading,
-    state.motor,
-    state.warrantyConfig?.extendedYears,
-    state.warrantyConfig?.warrantyPrice,
-    state.warrantyConfig?.totalYears,
-    state.pdfSnapshot?.createdAt,
-    currentCoverageYears,
-    user?.id,
-  ]);
+      },
+    });
+  }
 
   // Listen for quote-saved-via-auth event to show phone capture
   useEffect(() => {
@@ -655,6 +609,34 @@ export default function QuoteSummaryPage() {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
   }, [dispatch, pdfSnapshot, state.pdfSnapshot]);
+
+  // Silent soft-lead save, auto-persist the canonical quote snapshot for anonymous visitors.
+  useEffect(() => {
+    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
+    if (buildSoftLeadSnapshotKey(state.pdfSnapshot) !== buildSoftLeadSnapshotKey(pdfSnapshot)) return;
+
+    const quoteStateSnapshot = state;
+    const snapshotKey = buildSoftLeadSnapshotKey(quoteStateSnapshot);
+
+    // Analytics: count the viewed quote once. Quote changes still refresh the
+    // saved snapshot below without inflating quote-generated reporting.
+    if (!softLeadAnalyticsTrackedRef.current) {
+      softLeadAnalyticsTrackedRef.current = true;
+      trackAgentEvent({
+        event_type: 'quote_generated',
+        motor_model: quoteStateSnapshot.motor?.model || null,
+        motor_hp: (quoteStateSnapshot.motor as any)?.hp ?? (quoteStateSnapshot.motor as any)?.horsepower ?? null,
+        motor_id: quoteStateSnapshot.motor?.id ?? null,
+      });
+    }
+
+    const sessionId = getOrCreateSessionId();
+    void softLeadSaveCoordinatorRef.current.enqueue({
+      sessionId,
+      quoteState: quoteStateSnapshot,
+      snapshotKey,
+    });
+  }, [pdfSnapshot, state]);
 
   // CTA handlers
   const noMotorSelected = !state.motor;
