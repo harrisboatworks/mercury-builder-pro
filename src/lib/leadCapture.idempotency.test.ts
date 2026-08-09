@@ -26,6 +26,7 @@ vi.mock('./smsTemplates', () => ({
 }));
 
 import { isLeadIdempotencyConflict, saveLead } from './leadCapture';
+import { executePdfDownloadAttempt } from './pdf-lead-tracking';
 
 describe('saveLead PDF idempotency', () => {
   beforeEach(() => {
@@ -69,6 +70,47 @@ describe('saveLead PDF idempotency', () => {
     expect(mocks.insert).toHaveBeenCalledTimes(2);
     expect(mocks.triggerWebhooks).toHaveBeenCalledTimes(1);
     expect(mocks.invoke).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not duplicate CRM or hot notifications when PDF generation fails and is retried', async () => {
+    mocks.insert
+      .mockResolvedValueOnce({ error: null })
+      .mockResolvedValueOnce({
+        error: {
+          code: '23505',
+          message: 'duplicate key value violates unique constraint "uq_customer_quotes_idempotency_key"',
+        },
+      });
+    const lead = {
+      customer_name: 'Taylor',
+      customer_email: 'taylor@example.com',
+      final_price: 25000,
+      lead_status: 'downloaded' as const,
+      lead_source: 'pdf_download' as const,
+      idempotency_key: `pdf_${'c'.repeat(64)}`,
+    };
+    const generatePdf = vi
+      .fn<() => Promise<string>>()
+      .mockRejectedValueOnce(new Error('PDF generation failed'))
+      .mockResolvedValueOnce('blob:quote');
+    const downloadPdf = vi.fn<(pdf: string) => Promise<void>>().mockResolvedValue(undefined);
+    const afterDownload = vi.fn<() => Promise<void>>().mockResolvedValue(undefined);
+    const attempt = () => executePdfDownloadAttempt({
+      persistLead: () => saveLead(lead),
+      generatePdf,
+      downloadPdf,
+      afterDownload,
+    });
+
+    await expect(attempt()).rejects.toThrow('PDF generation failed');
+    await expect(attempt()).resolves.toBeUndefined();
+
+    expect(mocks.insert).toHaveBeenCalledTimes(2);
+    expect(mocks.triggerWebhooks).toHaveBeenCalledTimes(1);
+    expect(mocks.invoke).toHaveBeenCalledTimes(1);
+    expect(generatePdf).toHaveBeenCalledTimes(2);
+    expect(downloadPdf).toHaveBeenCalledTimes(1);
+    expect(afterDownload).toHaveBeenCalledTimes(1);
   });
 
   it('does not suppress an unrelated unique-constraint error', () => {

@@ -8,6 +8,14 @@ export interface PdfLeadIdempotencyInput {
   snapshot: unknown;
 }
 
+export interface PdfDownloadAttemptInput<TPdf> {
+  persistLead?: () => Promise<unknown>;
+  onLeadError?: (error: unknown) => void;
+  generatePdf: () => Promise<TPdf>;
+  downloadPdf: (pdf: TPdf) => Promise<void>;
+  afterDownload?: () => Promise<void> | void;
+}
+
 function canonicalizeSnapshot(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(canonicalizeSnapshot);
   if (!value || typeof value !== 'object') return value;
@@ -28,6 +36,31 @@ function canonicalizeSnapshot(value: unknown): unknown {
  */
 export function hasIdentifiedPdfCustomer(customer: IdentifiedPdfCustomer): boolean {
   return Boolean(customer.name?.trim() && customer.email?.trim());
+}
+
+/**
+ * Keep CRM persistence independent from PDF generation while making the
+ * success boundary explicit. Lead persistence remains best effort; download
+ * and post-download activity run only after generation succeeds.
+ */
+export async function executePdfDownloadAttempt<TPdf>({
+  persistLead,
+  onLeadError = () => undefined,
+  generatePdf,
+  downloadPdf,
+  afterDownload,
+}: PdfDownloadAttemptInput<TPdf>): Promise<void> {
+  if (persistLead) {
+    try {
+      await persistLead();
+    } catch (error) {
+      onLeadError(error);
+    }
+  }
+
+  const pdf = await generatePdf();
+  await downloadPdf(pdf);
+  await afterDownload?.();
 }
 
 /**

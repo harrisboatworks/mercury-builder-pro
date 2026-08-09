@@ -41,7 +41,11 @@ import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
-import { buildPdfLeadIdempotencyKey, hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
+import {
+  buildPdfLeadIdempotencyKey,
+  executePdfDownloadAttempt,
+  hasIdentifiedPdfCustomer,
+} from '@/lib/pdf-lead-tracking';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -784,8 +788,11 @@ export default function QuoteSummaryPage() {
       // Save a CRM lead only when the quote has a real, contactable customer.
       // Anonymous downloads remain represented by saved_quotes + activity
       // tracking without inventing placeholder CRM identities.
-      if (hasIdentifiedPdfCustomer({ name: state.customerName, email: state.customerEmail })) {
-        try {
+      const persistIdentifiedLead = hasIdentifiedPdfCustomer({
+        name: state.customerName,
+        email: state.customerEmail,
+      })
+        ? async () => {
           const { saveLead } = await import('@/lib/leadCapture');
           const idempotencyKey = await buildPdfLeadIdempotencyKey({
             email: state.customerEmail!,
@@ -804,32 +811,37 @@ export default function QuoteSummaryPage() {
             quote_data: quoteData,
             idempotency_key: idempotencyKey,
           });
-        } catch (leadError) {
-          console.error('Failed to save identified PDF lead:', leadError);
         }
-      }
+        : undefined;
       
       const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
-      const pdfUrl = await generateQuotePDF(pdfData);
-      await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
-      
-      // Notify admin via SMS about the PDF download
-      try {
-        const customerLabel = state.customerName || state.customerEmail || 'Anonymous visitor';
-        const tradeInNote = state.tradeInInfo?.hasTradeIn 
-          ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
-          : '';
-        const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
-        const refNote = savedQuoteRefForSms ? `\nRef: ${savedQuoteRefForSms}` : '';
-        const quoteLink = savedQuoteIdForSms ? `\nView: https://www.mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
-        const smsMessage = `👀 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}${quoteLink}`;
-        
-        await supabase.functions.invoke('send-sms', {
-          body: { to: 'admin', message: smsMessage }
-        });
-      } catch (smsErr) {
-        console.warn('Admin SMS notification failed:', smsErr);
-      }
+      await executePdfDownloadAttempt({
+        persistLead: persistIdentifiedLead,
+        onLeadError: (leadError) => {
+          console.error('Failed to save identified PDF lead:', leadError);
+        },
+        generatePdf: () => generateQuotePDF(pdfData),
+        downloadPdf: (pdfUrl) => downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`),
+        afterDownload: async () => {
+          // Notify admin only after the PDF download starts successfully.
+          try {
+            const customerLabel = state.customerName || state.customerEmail || 'Anonymous visitor';
+            const tradeInNote = state.tradeInInfo?.hasTradeIn
+              ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
+              : '';
+            const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
+            const refNote = savedQuoteRefForSms ? `\nRef: ${savedQuoteRefForSms}` : '';
+            const quoteLink = savedQuoteIdForSms ? `\nView: https://www.mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
+            const smsMessage = `👀 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}${quoteLink}`;
+
+            await supabase.functions.invoke('send-sms', {
+              body: { to: 'admin', message: smsMessage },
+            });
+          } catch (smsErr) {
+            console.warn('Admin SMS notification failed:', smsErr);
+          }
+        },
+      });
       
     } catch (error) {
       console.error('PDF generation error:', error);
