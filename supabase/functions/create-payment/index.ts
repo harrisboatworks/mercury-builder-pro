@@ -3,49 +3,12 @@ import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { resolvePaymentOrigin } from "./origin-policy.ts";
 
 const baseCorsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
-
-const PAYMENT_ORIGINS = new Set([
-  "https://www.mercuryrepower.ca",
-  "https://mercuryrepower.ca",
-  "https://quote.harrisboatworks.ca",
-  "https://www.mercuryquote.ca",
-  "https://mercuryquote.ca",
-]);
-
-// Preview/staging hosts (Lovable + Vercel) are also allowed so deposit
-// checkout works outside the primary production domain.
-const PAYMENT_ORIGIN_SUFFIXES = [".lovable.app", ".lovable.dev", ".vercel.app"];
-
-function resolvePaymentOrigin(req: Request): string | null {
-  const rawOrigin = req.headers.get("origin");
-  if (!rawOrigin) return null;
-
-  try {
-    const parsed = new URL(rawOrigin);
-    if (PAYMENT_ORIGINS.has(parsed.origin)) return parsed.origin;
-    if (
-      parsed.protocol === "https:"
-      && PAYMENT_ORIGIN_SUFFIXES.some((suffix) => parsed.hostname.endsWith(suffix))
-    ) {
-      return parsed.origin;
-    }
-    if (
-      parsed.protocol === "http:"
-      && (parsed.hostname === "127.0.0.1" || parsed.hostname === "localhost")
-    ) {
-      return parsed.origin;
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
 
 // Motor deposit price mapping - CAD prices (Canadian dollars)
 const DEPOSIT_PRICES: Record<string, string | null> = {
@@ -110,7 +73,10 @@ const logStep = (step: string, details?: unknown) => {
 };
 
 serve(async (req) => {
-  const paymentOrigin = resolvePaymentOrigin(req);
+  const paymentOrigin = resolvePaymentOrigin(
+    req,
+    Deno.env.get("PAYMENT_PREVIEW_ORIGINS"),
+  );
   const corsHeaders = {
     ...baseCorsHeaders,
     "Access-Control-Allow-Origin": paymentOrigin || "https://www.mercuryrepower.ca",
