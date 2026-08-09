@@ -129,13 +129,6 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-## Liens internes
-- Permis de conduire une embarcation au Canada
-- Guide d'hivernisation du moteur Mercury Ontario
-- Concessionnaire Mercury Premier Ontario
-
-## Appel à l'action
-
 **Réservez votre embarcation ou planifiez votre saison.** 
 Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
@@ -143,7 +136,7 @@ Téléphone : **905-342-2153**
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Faut-il un permis de pêche?
 

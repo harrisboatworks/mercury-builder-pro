@@ -130,13 +130,6 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## Liens internes
-- Guide de pêche sur le lac Rice
-- Guide d'hivernisation du moteur Mercury Ontario
-- Concessionnaire Mercury Premier Ontario
-
-## Appel à l'action
-
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
@@ -145,7 +138,7 @@ Demande de service : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez n
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Mon permis de conduire automobile remplace-t-il la CCEP?
 

@@ -174,7 +174,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
 - [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 
-## FAQs
+## Foire aux questions
 
 ### À quelle fréquence devrais-je regraisser les roulements de remorque?
 

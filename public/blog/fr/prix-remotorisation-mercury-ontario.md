@@ -133,28 +133,6 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
-## Foire aux questions
-
-**Est-ce que ça vaut vraiment la peine de remplacer un vieux moteur ?** 
-Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
-
-**Comment savoir si ma coque est en bon état ?** 
-Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
-
-**Est-ce que je peux obtenir un prix sans parler à quelqu'un ?** 
-Oui. L'outil de configuration sur mercuryrepower.ca vous donne un vrai prix en dollars canadiens, sans avoir besoin de parler à l'équipe. Entrez les informations sur votre embarcation et choisissez la puissance.
-
-**L'équipe peut-elle communiquer en français ?** 
-L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
-
-**Faut-il amener le bateau sur place pour obtenir un devis ?** 
-Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
-
-**Est-ce que vous installez des moteurs d'autres marques ?** 
-Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.
-
----
-
 ## Comment obtenir votre prix
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
@@ -170,7 +148,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Combien de temps dure une remotorisation?
 
@@ -186,11 +164,27 @@ Oui. Les moteurs Mercury FourStroke neufs sont couverts par une garantie limité
 
 ### Une remotorisation coûte-t-elle moins cher qu'un bateau neuf?
 
-Dans la plupart des cas, oui , si la coque est saine.
+Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
 
 ### Puis-je obtenir un prix sans appeler?
 
 Oui. mercuryrepower.ca affiche un prix en ligne, en dollars canadiens.
+
+### Comment savoir si ma coque est en bon état ?
+
+Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
+
+### L'équipe peut-elle communiquer en français ?
+
+L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+
+### Faut-il amener le bateau sur place pour obtenir un devis ?
+
+Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
+
+### Est-ce que vous installez des moteurs d'autres marques ?
+
+Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.
 
 ## Prochaines étapes
 

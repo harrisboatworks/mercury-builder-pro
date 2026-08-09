@@ -131,28 +131,6 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
 - [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
 
-## Foire aux questions
-
-**Le 115 HP suffit-il pour un ponton de 20 pieds ?** 
-Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
-
-**Le 150 consomme-t-il beaucoup plus que le 115 ?** 
-À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65–70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
-
-**Dois-je prendre la version Command Thrust sur un ponton ?** 
-Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
-
-**Quelle est la différence entre le FourStroke standard et le Pro XS ?** 
-Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
-
-**Puis-je obtenir un devis en français ?** 
-Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbw.wiki/service (nous répondrons en anglais).
-
-**L'équipe parle-t-elle français ?** 
-Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
-
----
-
 ## Comment nous joindre
 
 **Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
@@ -168,7 +146,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Ontario Mercury Outboard Price Guide*
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Le 150 consomme-t-il beaucoup plus que le 115?
 
@@ -181,6 +159,26 @@ Non. Les blocs sont différents. Mais les deux sont dans la famille Mercury Four
 ### Si mon bateau accepte les deux, lequel choisir?
 
 Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps , pas selon la sortie idéale une fois par été.
+
+### Le 115 HP suffit-il pour un ponton de 20 pieds ?
+
+Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
+
+### Dois-je prendre la version Command Thrust sur un ponton ?
+
+Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
+
+### Quelle est la différence entre le FourStroke standard et le Pro XS ?
+
+Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
+
+### Puis-je obtenir un devis en français ?
+
+Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbw.wiki/service (nous répondrons en anglais).
+
+### L'équipe parle-t-elle français ?
+
+Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ## Prochaines étapes
 

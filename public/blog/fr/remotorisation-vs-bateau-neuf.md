@@ -87,7 +87,7 @@ Demande de service : **hbw.wiki/service**
 Téléphone : **905-342-2153**
 En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; moins de 3 heures de Montréal)
 
-## FAQs
+## Foire aux questions
 
 ### Combien coûte une remotorisation Mercury en Ontario?
 

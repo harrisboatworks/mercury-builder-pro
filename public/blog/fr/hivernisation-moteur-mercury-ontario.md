@@ -110,12 +110,6 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
-## Liens internes
-- Guide de pêche sur le lac Rice
-- Permis de conduire une embarcation au Canada
-
-## Appel à l'action
-
 **N'attendez pas la dernière minute.** Les places pour l'hivernisation se remplissent en octobre. 
 Réservez en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
@@ -130,7 +124,7 @@ Si vous demandez un rendez-vous de service chez HBW, voici la limite importante 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Combien coûte une hivernisation professionnelle?
 

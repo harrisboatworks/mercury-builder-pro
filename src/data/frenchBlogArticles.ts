@@ -262,11 +262,27 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
       },
       {
         question: 'Une remotorisation coûte-t-elle moins cher qu\'un bateau neuf?',
-        answer: 'Dans la plupart des cas, oui , si la coque est saine.'
+        answer: 'Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d\'un nouveau bateau équivalent.'
       },
       {
         question: 'Puis-je obtenir un prix sans appeler?',
         answer: 'Oui. mercuryrepower.ca affiche un prix en ligne, en dollars canadiens.'
+      },
+      {
+        question: 'Comment savoir si ma coque est en bon état ?',
+        answer: 'Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.'
+      },
+      {
+        question: 'L\'équipe peut-elle communiquer en français ?',
+        answer: 'L\'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
+      },
+      {
+        question: 'Faut-il amener le bateau sur place pour obtenir un devis ?',
+        answer: 'Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l\'état de la coque et le câblage existant.'
+      },
+      {
+        question: 'Est-ce que vous installez des moteurs d\'autres marques ?',
+        answer: 'Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.'
       }
     ]
   },
@@ -433,6 +449,26 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
       {
         question: 'Si mon bateau accepte les deux, lequel choisir?',
         answer: 'Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps , pas selon la sortie idéale une fois par été.'
+      },
+      {
+        question: 'Le 115 HP suffit-il pour un ponton de 20 pieds ?',
+        answer: 'Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d\'être considérés.'
+      },
+      {
+        question: 'Dois-je prendre la version Command Thrust sur un ponton ?',
+        answer: 'Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.'
+      },
+      {
+        question: 'Quelle est la différence entre le FourStroke standard et le Pro XS ?',
+        answer: 'Le FourStroke standard est optimisé pour la croisière confortable, l\'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.'
+      },
+      {
+        question: 'Puis-je obtenir un devis en français ?',
+        answer: 'Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbw.wiki/service (nous répondrons en anglais).'
+      },
+      {
+        question: 'L\'équipe parle-t-elle français ?',
+        answer: 'Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
       }
     ]
   },
@@ -1252,7 +1288,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       },
       {
         question: 'Est-ce mauvais de lancer le démarreur d\'un moteur qui ne part pas, à répétition ?',
-        answer: 'Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s\'il y a de l\'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d\'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.'
+        answer: 'Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s\'il y a de l\'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Ne faites jamais tourner le moteur à sec, sans alimentation en eau de refroidissement, car la turbine de la pompe à eau peut être endommagée en quelques secondes. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d\'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.'
       },
       {
         question: 'C\'est quoi le cordon du coupe-circuit Mercury et où s\'attache-t-il ?',
@@ -1261,6 +1297,18 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       {
         question: 'Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?',
         answer: 'Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d\'avertissement se fait entendre et le moteur s\'arrête en protection; vous soupçonnez que de l\'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l\'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.'
+      },
+      {
+        question: 'Combien de temps prend le diagnostic d\'un Mercury qui ne démarre pas ?',
+        answer: 'Un technicien avec les bons outils peut généralement identifier la cause en 30 à 90 minutes. Le dépannage par le propriétaire à la maison peut prendre plus de temps sans équipement de test spécialisé. Nous n\'estimons pas de délais précis pour des diagnostics à distance.'
+      },
+      {
+        question: 'Devrais-je utiliser un additif pour nettoyer les injecteurs ?',
+        answer: 'Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d\'un nettoyage physique ou d\'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.'
+      },
+      {
+        question: 'Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu\'est-ce qui a changé ?',
+        answer: 'Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l\'interne, ou un système de carburant marginal. Cela peut aussi être le début d\'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.'
       }
     ]
   },
