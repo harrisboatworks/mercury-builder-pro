@@ -610,6 +610,8 @@ const superlativeRouteContracts = [
       [/On those metrics, Mercury wins in this region/i, 'blanket regional winner FAQ'],
       [/most commonly installed kicker motor on Canadian fishing boats/i, 'unsupported most-common kicker claim'],
       [/Most aluminum fishing boats sold in Canada[\s\S]{0,120}come Mercury-rigged from the factory/i, 'unqualified factory-rigging claim'],
+      [/Why do most aluminum boats sold in Ontario come Mercury-rigged\?/i, 'unqualified factory-rigging FAQ question'],
+      [/factories rig with Mercury/i, 'unqualified factory-rigging FAQ answer'],
       [/Why Mercury Is a Practical (?:Ontario Outboard Choice|Outboard Choice in Ontario)/i, 'unauthorized SEO retitle'],
     ],
     required: [
@@ -620,6 +622,7 @@ const superlativeRouteContracts = [
       [/Mercury often fits well in our region[\s\S]{0,120}check support where they boat/i, 'qualified brand-comparison FAQ'],
       [/9\.9 ProKicker is a common kicker choice on Canadian fishing boats/i, 'qualified common-model FAQ'],
       [qualifiedFactoryRigging, 'qualified factory-rigging paragraph'],
+      [/Why is Mercury commonly paired with aluminum boats sold in Ontario\?[\s\S]{0,500}Factory rigging varies by brand, model and package/i, 'qualified factory-rigging FAQ'],
     ],
     sourceRequired: [
       [/seoTitle:\s*["']Why Mercury Leads the Outboard Market in 2026 \| HBW["']/, 'original SEO title'],

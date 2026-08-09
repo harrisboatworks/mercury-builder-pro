@@ -91,9 +91,9 @@ Mechanically, all three brands make reliable modern four-stroke outboards. For O
 
 We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Premier dealer relationship today.
 
-### Why do most aluminum boats sold in Ontario come Mercury-rigged?
+### Why is Mercury commonly paired with aluminum boats sold in Ontario?
 
-Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market: Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built around Mercury.
+Mercury has long-running supply relationships with several North American aluminum boat builders, including Lund, Crestliner, Lowe and Princecraft. Factory rigging varies by brand, model and package, so confirm the specific boat rather than assuming Mercury is standard. Customer demand and local dealer support also influence the packages sold in Ontario.
 
 ### Is Mercury more expensive than Yamaha or Honda?
 
