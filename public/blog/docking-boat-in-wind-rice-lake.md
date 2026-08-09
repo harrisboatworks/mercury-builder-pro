@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Docking a Boat in Wind: Rice Lake Guide"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 
@@ -217,7 +217,7 @@ Technique is the foundation. But some equipment makes a real difference.
 
 **Mercury Command Thrust gearcase:** Purpose-built for pontoons. Better low-RPM thrust, easier to hold position in wind. If every docking feels like a workout, this addresses the actual cause.
 
-**Mercury Joystick Piloting (twin-engine setups):** Point the joystick where you want the boat to go. Worth every dollar if your setup qualifies.
+**Mercury Joystick Piloting (eligible packages):** Point the joystick where you want the boat to go. Conventional outboard packages use multiple DTS-equipped engines. Mercury also offers [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) for an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster. Most single-engine rigs do not qualify, so the exact engine, steering, controls, and thruster package must be confirmed.
 
 Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or fishing boat. For that setup, technique plus a Command Thrust gearcase covers 95% of docking situations.
 

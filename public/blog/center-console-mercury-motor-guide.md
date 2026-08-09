@@ -145,21 +145,23 @@ If you are buying a 25 to 28 ft center console in Ontario and you plan to run it
 
 **2. How far offshore you run in worst-case conditions.** If your longest trip is 5 to 8 km offshore on Lake Ontario on a calm summer day, a single is fine. If you are running 25 to 30 km offshore in October targeting salmon, a twin gives you get-home redundancy when one motor quits far from shore.
 
-**3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. It requires twin engines minimum.
+**3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. The conventional outboard package uses two or more DTS-equipped engines. Mercury also offers package-specific single-engine systems, but most single-engine rigs do not qualify. The available package has to be confirmed against the exact engine, steering, controls, and hull.
 
 The cost difference is real. A twin-Mercury 250 Pro XS V8 setup gives you 500 total HP and costs roughly 1.8 to 1.9 times as much as a single 300 Pro XS V8. Twins are not an equivalent-horsepower alternative; they are a redundancy and power upgrade. For most Ontario trailerable buyers, single is the right answer.
 
 ## Mercury Joystick Piloting: what it actually does
 
-Joystick Piloting controls thrust direction across both motors, letting you walk the boat sideways into a slip at low speed without using the wheel. In practice, it is genuinely useful for:
+Conventional Joystick Piloting controls thrust direction across multiple motors, letting you walk the boat sideways into a slip at low speed without using the wheel. In practice, it is genuinely useful for:
 - Tight marina slips with crosswind
 - Docking single-handed
 - Trent-Severn locks where you are holding position against current
 
-**Requirements:**
+**Conventional multi-engine package requirements:**
 - Twin or more matched Mercury outboards (same family, same HP, same generation where possible)
 - Electronic shift and throttle (no mechanical cable)
 - Compatible Mercury motors from 2014 onward
+
+Single-engine joystick is a narrow, package-specific exception, not a general feature of single-engine Mercury rigs. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) requires an electric-steering Verado or SeaPro V8, V10, or V12 outboard from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Mercury also lists Joystick Steering for Single-Engine Vessels as a separate system. Most single-engine center consoles do not qualify, so confirm the complete package before treating joystick as part of the repower plan.
 
 **Cost:** Roughly $4,000 to $7,000 CAD added to a twin rigging, depending on motor generation and existing controls.
 
@@ -209,7 +211,7 @@ As a planning reference: a twin Mercury 250 Pro XS V8 setup is roughly $69,700 t
 
 ### What is Mercury Joystick Piloting, and do I need it on a center console?
 
-Joystick Piloting uses electronic shift and throttle across both motors to let you move the boat sideways at low speed, useful for docking in tight slips. It requires twin matched Mercury motors from 2014 onward. Most buyers do not need it, but if precise docking matters to you and you are already buying a twin setup, it is a meaningful quality-of-life upgrade.
+Conventional Joystick Piloting uses electronic shift and throttle across multiple motors to move the boat sideways at low speed. Mercury also offers package-specific single-engine systems, but most single-engine rigs do not qualify. Joystick Piloting for Single-Engine Outboards with Thruster requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and hull before planning around joystick.
 
 ### Is a center console a good choice for Lake Ontario salmon fishing?
 

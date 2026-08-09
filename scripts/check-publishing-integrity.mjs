@@ -447,6 +447,39 @@ const checkSpecRoute = (slug, inspect) => {
   }
 };
 
+const checkJoystickPackageTruth = (surface, label) => {
+  const citedPackageParagraph = surface
+    .split(/\n\s*\n/)
+    .find((paragraph) => /mercury-introduces-joystick-piloting-for-single-engine-outboards\.html/i.test(paragraph)) ?? '';
+  check(
+    !/Single-engine boats are not eligible(?: for joystick)?(?:,|\s)+(?:regardless|period)/i.test(surface) &&
+      !/requires twin engines minimum/i.test(surface) &&
+      !/requires twin matched Mercury motors from 2014 onward/i.test(surface) &&
+      !/joystick isn['’]t on the table/i.test(surface),
+    `${label} revived an absolute twin-only joystick claim.`,
+  );
+  check(
+    /most single-engine (?:rigs|center consoles) do not qualify/i.test(surface) &&
+      /electric[- ]steering/i.test(surface) &&
+      /\bVerado\b/i.test(surface) &&
+      /\bSeaPro\b/i.test(surface) &&
+      /\bV8\b/.test(surface) &&
+      /\bV10\b/.test(surface) &&
+      /\bV12\b/.test(surface) &&
+      /250 to 600 HP/i.test(surface) &&
+      /CAN-based variable-speed thruster/i.test(surface),
+    `${label} must retain the narrow 250-to-600 HP Verado and SeaPro single-engine thruster-package constraints.`,
+  );
+  check(
+    citedPackageParagraph.length > 0,
+    `${label} must cite Mercury's February 12, 2025 single-engine thruster-package release.`,
+  );
+  check(
+    citedPackageParagraph.length > 0 && !/pontoon/i.test(citedPackageParagraph),
+    `${label} must not associate the package-specific single-engine joystick system with a pontoon.`,
+  );
+};
+
 checkSpecRoute('mercury-command-thrust-pontoon-eligibility-2026', (surface, label) => {
   const availabilitySection = surface.match(/## HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
   const listing = availabilitySection
@@ -481,7 +514,11 @@ checkSpecRoute('center-console-mercury-motor-guide', (surface, label) => {
       /\/pricing-reference/.test(veradoSection),
     `${label} must cite Mercury's Verado lineup and HBW's live availability source.`,
   );
+  checkJoystickPackageTruth(surface, label);
 });
+
+checkSpecRoute('mercury-dts-retrofit-eligibility-2026', checkJoystickPackageTruth);
+checkSpecRoute('docking-boat-in-wind-rice-lake', checkJoystickPackageTruth);
 
 checkSpecRoute('best-mercury-for-ski-wakeboard-boats', (surface, label) => {
   const joystickParagraph = surface
@@ -578,8 +615,8 @@ checkSpecRoute('best-mercury-outboard-lake-ontario-salmon-trout', (surface, labe
 });
 
 check(
-  checkedSpecRoutes.size === 7,
-  `Product-spec integrity must cover exactly seven route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
+  checkedSpecRoutes.size === 9,
+  `Product-spec integrity must cover exactly nine route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
 );
 
 const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';

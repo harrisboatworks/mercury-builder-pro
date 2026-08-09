@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
@@ -130,14 +130,16 @@ For the official source, Mercury's product pages at [mercurymarine.com](https://
 
 Roughly half the customers who call us asking about DTS retrofit are actually asking about joystick piloting, even if they don't say it that way. They want the ability to slide the boat sideways at the dock or hold position with one hand.
 
-Joystick piloting (Mercury Joystick Piloting for Outboards) requires:
+Conventional Mercury Joystick Piloting for Outboards requires:
 
-- Two or more Mercury outboards (single-engine boats are not eligible, period)
+- Two or more Mercury outboards
 - All engines DTS-equipped
 - Specific helm hardware (joystick module, SmartCraft gateway, compatible VesselView display)
 - Proper boat geometry (motors must be far enough apart for vectoring to work)
 
-If you're calling about DTS retrofit and you have a single engine, joystick isn't on the table. Stop the retrofit math right there. DTS alone for single-engine boats rarely justifies the cost.
+That conventional package is not the whole lineup. Mercury also lists Joystick Steering for Single-Engine Vessels and [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html). The thruster package is limited to electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster.
+
+If you're calling about a DTS retrofit with one engine, do not assume DTS alone enables joystick. Most single-engine rigs do not qualify, and the package-specific exceptions require more than a control-box change. We confirm the exact engine, steering, controls, and thruster package before quoting.
 
 If you have twins or triples, joystick is the real eligibility question. DTS is just the prerequisite.
 
@@ -177,7 +179,7 @@ Fourth pattern: the worst DTS install we ever rescued was a customer who had bou
 
 - Mechanical motor 5+ years old
 - High hours on the existing engine
-- You want joystick (requires DTS-equipped twins or more)
+- You want conventional multi-engine joystick (requires DTS-equipped twins or more)
 - Retrofit cost is close to a new motor
 
 **New DTS-equipped motor is the right answer**
@@ -229,7 +231,7 @@ When your engine is already DTS-capable and you're upgrading just the helm side 
 
 ### Do I need DTS for Mercury joystick piloting?
 
-Yes. Mercury Joystick Piloting requires twin or more outboards, all DTS-equipped, plus the joystick module, SmartCraft gateway, and compatible VesselView display. Single-engine boats are not eligible for joystick, regardless of motor or HP. If joystick is your real goal, DTS is just the prerequisite.
+Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting.
 
 ### Will DTS make my boat faster or more fuel-efficient?
 
