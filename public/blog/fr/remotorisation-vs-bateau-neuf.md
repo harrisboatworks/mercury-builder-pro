@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing.
 
-**Category:** Guide d'achat  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-07-04  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-07-04\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
 
 > **Réponse rapide :** Si votre coque est en bon état et que le problème vient du moteur, remotorisez. Une remotorisation coûte souvent 20 à 40 % du prix d'un bateau neuf équivalent. Si la coque est compromise ou si vous souhaitez un type d'embarcation complètement différent, l'achat d'un bateau neuf est la bonne option. Ni l'une ni l'autre n'est toujours la meilleure : tout dépend de votre situation.
 
@@ -113,10 +113,10 @@ Non, le configurateur sur mercuryrepower.ca vous donne un prix en temps réel, s
 
 Grosso modo de mai à octobre, soit environ six mois. Une raison de plus de ne pas attendre si vous avez un projet de remotorisation ou d'achat.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

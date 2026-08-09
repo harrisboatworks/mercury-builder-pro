@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier.
 
-**Category:** Guide d'achat  
-**Published:** 2026-06-08  
-**Dernière révision:** 2026-08-02  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-06-08\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
 
 ## Moteurs hors-bord électriques Mercury Avator : ce qu'ils sont, ce qu'ils coûtent, et à qui ils conviennent
 
@@ -100,10 +100,10 @@ La batterie de 1 kWh du 7.5e prend environ 9 heures sur le chargeur de 110 W inc
 
 Le total dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. Les prix de Mercury Canada sont encore en cours de finalisation; consultez la [page Avator](/electric/mercury-avator) pour la disponibilité actuelle. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

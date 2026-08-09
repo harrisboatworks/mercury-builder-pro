@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport.
 
-**Category:** Guide d'achat  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-07-31  
-**Read time:** 12 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-07-31\
+**Temps de lecture :** 12 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
 ## Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
 
@@ -272,10 +272,10 @@ Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass b
 
 Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

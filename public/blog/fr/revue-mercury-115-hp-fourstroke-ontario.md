@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré...
 
-**Category:** Avis produit  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 10 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
+**Catégorie :** Avis produit\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 10 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 
 ### Réponse rapide
 
@@ -207,10 +207,10 @@ Oui. Intégration SmartCraft disponible, notamment NMEA 2000, SmartCraft Connect
 
 Oui. Mercury fabrique un 115 CXL pour configurations à deux moteurs. Moins courant chez HBW parce que les 115 jumelés sont inhabituels sur les bateaux du lac Rice, mais disponibles pour la bonne application.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

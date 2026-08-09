@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière.
 
-**Category:** Guide d'achat  
-**Published:** 2026-06-08  
-**Dernière révision:** 2026-08-02  
-**Read time:** 6 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-06-08\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 6 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 
 ## Poids des moteurs hors-bord Mercury : de 2,5 à 300 ch
 
@@ -105,10 +105,10 @@ Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de 
 
 Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu'ils remplacent. Vérifiez la capacité du tableau arrière avant d'acheter.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

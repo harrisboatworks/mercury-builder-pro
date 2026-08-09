@@ -126,7 +126,7 @@ function loadLocalizedBlogArticles() {
       ...a,
       description: getCleanDescription(a),
     }));
-    process.stdout.write(JSON.stringify([
+    const localizedGroups = [
       { prefix: 'fr', language: 'fr-CA', articles: clean(frenchBlogArticles) },
       { prefix: 'ko', language: 'ko-KR', articles: clean(koreanBlogArticles) },
       { prefix: 'zh', language: 'zh-CN', articles: clean(mandarinBlogArticles) },
@@ -136,7 +136,8 @@ function loadLocalizedBlogArticles() {
       { prefix: 'ur', language: 'ur', articles: clean(urduBlogArticles) },
       { prefix: 'tl', language: 'tl', articles: clean(tagalogBlogArticles) },
       { prefix: 'hi', language: 'hi', articles: clean(hindiBlogArticles) },
-    ]));
+    ];
+    process.stdout.write(JSON.stringify(localizedGroups), () => process.exit(0));
   `;
   const tmpFile = join(ROOT, 'scripts', '.localized-blog-twins-dump.ts');
   writeFileSync(tmpFile, dumpScript);
@@ -1250,18 +1251,79 @@ function lintBlogTwin(slug, markdown) {
     }
   }
 }
-function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode) {
+function blogTwinLabels(language) {
+  if (language === 'fr-CA') {
+    return {
+      category: 'Catégorie',
+      published: 'Publié le',
+      lastReviewed: 'Dernière révision',
+      readTime: 'Temps de lecture',
+      canonical: 'URL canonique (HTML pour les lecteurs)',
+      nextSteps: 'Prochaines étapes',
+      pickupContact: 'Lieu de ramassage et coordonnées',
+    };
+  }
+
+  return {
+    category: 'Category',
+    published: 'Published',
+    lastReviewed: lastReviewedLabel(language),
+    readTime: 'Read time',
+    canonical: 'Canonical (HTML for humans)',
+    nextSteps: 'Next steps',
+    pickupContact: 'Pickup location & contact',
+  };
+}
+
+function blogNextStepsSection(markdown, language = 'en-CA') {
+  const heading = blogTwinLabels(language).nextSteps.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return markdown.match(new RegExp(`## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n##\\s|$)`))?.[1] || '';
+}
+
+function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language = 'en-CA') {
+  const isFrench = language === 'fr-CA';
   if (isFaultCode) {
+    if (isFrench) {
+      return [
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        "- Indiquez le code exact, le numéro de série du moteur, le nombre d'heures et joignez une photo complète de l'écran.",
+      ];
+    }
     return [
       '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
       '- Include the exact code, engine serial number, hours, and a photo of the full display.',
     ];
   }
   if (isDiagnostic) {
+    if (isFrench) {
+      return [
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        "- Indiquez le numéro de série du moteur, les symptômes, joignez des photos nettes et précisez tout entretien ou changement récent au montage ou aux commandes.",
+      ];
+    }
     return [
       '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
       '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
     ];
+  }
+
+  if (isFrench) {
+    switch (revenueDriver) {
+      case BLOG_REVENUE_DRIVER.SERVICE:
+        return ["- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service"];
+      case BLOG_REVENUE_DRIVER.RENTALS:
+        return ['- Consultez la flotte de location actuelle sur le lac Rice et les disponibilités : https://harrisboatworks.ca/rentals'];
+      case BLOG_REVENUE_DRIVER.REPOWER:
+        return [`- Bâtissez votre soumission Mercury : ${SITE_URL}/quote/motor-selection`];
+      case BLOG_REVENUE_DRIVER.AVATOR:
+        return [`- Comparez les modèles Mercury Avator et leur disponibilité actuelle chez HBW : ${SITE_URL}/electric/mercury-avator`];
+      case BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION:
+        return [`- Consultez le barème actuel de la Protection de produit Mercury : ${SITE_URL}/mercury-product-protection`];
+      case BLOG_REVENUE_DRIVER.COMMERCIAL:
+        return [`- Demandez une soumission commerciale SeaPro à HBW : ${SITE_URL}/contact`];
+      default:
+        return [];
+    }
   }
 
   switch (revenueDriver) {
@@ -1369,7 +1431,10 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
-  const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode);
+  const labels = blogTwinLabels(language);
+  const labelSeparator = language === 'fr-CA' ? ' :' : ':';
+  const metadataLineBreak = language === 'fr-CA' ? '\\' : '  ';
+  const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language);
 
 
   return [
@@ -1378,21 +1443,21 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     '',
     `> ${article.description}`,
     '',
-    `**Category:** ${normalizedCategory}  `,
-    `**Published:** ${article.datePublished}  `,
-    `**${lastReviewedLabel(language)}:** ${lastUpdated}  `,
-    `**Read time:** ${article.readTime || ''}  `,
-    `**Canonical (HTML for humans):** ${url}`,
+    `**${labels.category}${labelSeparator}** ${normalizedCategory}${metadataLineBreak}`,
+    `**${labels.published}${labelSeparator}** ${article.datePublished}${metadataLineBreak}`,
+    `**${labels.lastReviewed}${labelSeparator}** ${lastUpdated}${metadataLineBreak}`,
+    `**${labels.readTime}${labelSeparator}** ${article.readTime || ''}${metadataLineBreak}`,
+    `**${labels.canonical}${labelSeparator}** ${url}`,
     '',
     cleanedContent,
     '',
     faqBlock || null,
     relatedGuidesMd,
     relatedGuidesMd ? '' : null,
-    '## Next steps',
+    `## ${labels.nextSteps}`,
     '',
     ...nextSteps,
-    '- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153',
+    `- ${labels.pickupContact}${labelSeparator} Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
     '',
     '## Notes for AI agents',
     '',
@@ -1714,6 +1779,7 @@ for (const article of blogArticlesAll) {
   blogTwinSummaries.push({
     path,
     title: article.title,
+    language: 'en-CA',
     isDiagnostic: isDiagnosticBlogArticle(article),
     revenueDriver: getBlogRevenueDriver(article.category, article.slug),
   });
@@ -1725,13 +1791,15 @@ for (const group of localizedBlogGroups) {
     const markdown = blogMarkdown(article, null, `/blog/${group.prefix}`, group.language);
     lintBlogTwin(`${group.prefix}/${article.slug}`, markdown);
     writePublicMd(path, markdown);
+    const localizedLabelSeparator = group.language === 'fr-CA' ? ' :' : ':';
     verifyPublicMd(path, `${group.language} blog twin`, [
       `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
-      `**${lastReviewedLabel(group.language)}:**`,
+      `**${lastReviewedLabel(group.language)}${localizedLabelSeparator}**`,
     ]);
     blogTwinSummaries.push({
       path,
       title: `${article.title} [${group.language}]`,
+      language: group.language,
       isDiagnostic: isDiagnosticBlogArticle(article),
       revenueDriver: getBlogRevenueDriver(article.category, article.slug),
     });
@@ -1784,7 +1852,7 @@ if (commercialBlogSample) verifyPublicMd(commercialBlogSample.path, 'sample comm
 for (const twin of blogTwinSummaries) {
   const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
   const frontmatter = twinText.split('---')[1] || '';
-  const nextSteps = twinText.match(/## Next steps\s*\n([\s\S]*?)(?=\n##\s|$)/)?.[1] || '';
+  const nextSteps = blogNextStepsSection(twinText, twin.language);
   const expectedPath = getBlogRevenuePath(twin.revenueDriver);
 
   for (const required of ['currency: CAD', 'pickup_only: true', 'delivery_offered: false', 'final_quote_requires_dealer_confirmation: true', 'verado_status:', 'revenue_driver:']) {
@@ -1834,7 +1902,53 @@ for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
 }
 const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));
 if (localizedTwinSummaries.length === 0) throw new Error('[markdown-twins] Refusing build with zero localized blog twins');
-verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', 'revenue_driver:', '## Next steps']);
+const localizedSample = localizedTwinSummaries[0];
+verifyPublicMd(localizedSample.path, 'sample localized blog twin', [
+  'canonical:',
+  'language:',
+  'content_type: blog_article',
+  'revenue_driver:',
+  `## ${blogTwinLabels(localizedSample.language).nextSteps}`,
+]);
+
+const frenchTwinSummaries = blogTwinSummaries.filter(twin => twin.language === 'fr-CA');
+const expectedFrenchTwinCount = localizedBlogGroups.find(group => group.language === 'fr-CA')?.articles.length || 0;
+if (expectedFrenchTwinCount === 0 || frenchTwinSummaries.length !== expectedFrenchTwinCount) {
+  throw new Error(`[markdown-twins] expected ${expectedFrenchTwinCount} French blog twins from source, found ${frenchTwinSummaries.length}`);
+}
+const frenchRequired = [
+  '**Catégorie :**',
+  '**Publié le :**',
+  '**Dernière révision :**',
+  '**Temps de lecture :**',
+  '**URL canonique (HTML pour les lecteurs) :**',
+  '## Prochaines étapes',
+  '- Lieu de ramassage et coordonnées :',
+];
+const frenchForbidden = [
+  '**Category:**',
+  '**Published:**',
+  '**Read time:**',
+  '**Canonical (HTML for humans):**',
+  '## Next steps',
+  '- Pickup location & contact:',
+  'Build your own Mercury quote',
+  'submit a service request',
+];
+for (const twin of frenchTwinSummaries) {
+  const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
+  const customerFacingText = twinText.split('\n## Notes for AI agents')[0];
+  for (const required of frenchRequired) {
+    if (!twinText.includes(required)) {
+      throw new Error(`[markdown-twins] French blog twin missing localized boilerplate ${required}: ${twin.path}`);
+    }
+  }
+  for (const forbidden of frenchForbidden) {
+    if (customerFacingText.includes(forbidden)) {
+      throw new Error(`[markdown-twins] French blog twin leaked English boilerplate ${forbidden}: ${twin.path}`);
+    }
+  }
+}
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {

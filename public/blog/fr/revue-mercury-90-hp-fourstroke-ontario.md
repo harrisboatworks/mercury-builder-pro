@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux...
 
-**Category:** Avis produit  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-07-31  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
+**Catégorie :** Avis produit\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-07-31\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
 
 ### Réponse rapide
 
@@ -173,10 +173,10 @@ Oui. Tous les Mercury 90 HP FourStroke utilisent l'injection électronique de ca
 
 Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année qui la porte à 6 ans au total. Demandez-nous le statut promotionnel actuel lors de la soumission.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

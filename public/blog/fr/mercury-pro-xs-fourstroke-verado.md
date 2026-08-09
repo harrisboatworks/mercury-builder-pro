@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d'un concessionnaire Mercury.
 
-**Category:** Guide d'achat  
-**Published:** 2026-06-08  
-**Dernière révision:** 2026-08-02  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-06-08\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
 
 ## Mercury Pro XS, FourStroke ou Verado : lequel vous faut-il vraiment ?
 
@@ -92,10 +92,10 @@ Les deux partagent la même base quatre-temps de 2,1 L, et Mercury publie le mê
 
 Les trois sont des quatre-temps réglés pour des usages différents. Le FourStroke est le polyvalent économe et fiable pour la plupart des pontons, chaloupes de pêche et bateaux familiaux. Le Pro XS est la version haute performance pour ceux qui veulent de l'accélération et de la vitesse de pointe. Le Verado est l'option raffinée, la plus douce et la plus silencieuse, conçue pour les plus gros bateaux où le confort compte. Chez Harris Boat Works, le Verado est sur commande spéciale.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

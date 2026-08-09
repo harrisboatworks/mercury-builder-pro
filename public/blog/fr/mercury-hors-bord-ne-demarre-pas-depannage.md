@@ -23,11 +23,11 @@ revenue_driver: service
 
 > La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète.
 
-**Category:** Dépannage  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-05-13  
-**Read time:** 12 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
+**Catégorie :** Dépannage\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-05-13\
+**Temps de lecture :** 12 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
 
 **Langue :** Français (Québec)
 
@@ -248,10 +248,10 @@ Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) 
 
 Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
 
-## Next steps
+## Prochaines étapes
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

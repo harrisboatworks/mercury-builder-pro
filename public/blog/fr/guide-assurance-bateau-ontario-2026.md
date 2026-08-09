@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par...
 
-**Category:** Assurance  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
+**Catégorie :** Assurance\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
 ## Réponse rapide
 
@@ -180,10 +180,10 @@ La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entre
 
 Non. L'assurance est vendue par des courtiers autorisés. Nous pouvons recommander de trouver un courtier spécialiste maritime, mais nous n'écrivons pas de polices.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

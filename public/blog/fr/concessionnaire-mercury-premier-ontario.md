@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers...
 
-**Category:** Concessionnaire Mercury  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-08-02  
-**Read time:** 5 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
+**Catégorie :** Concessionnaire Mercury\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 5 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 
 ### Réponse rapide
 
@@ -91,10 +91,10 @@ HBW prend les travaux selon le principe du premier arrivé, premier servi. Il n'
 
 Non. Les achats et les projets de remotorisation sont ramassés à l'emplacement de Gores Landing. HBW n'expédie pas et ne livre pas les moteurs.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

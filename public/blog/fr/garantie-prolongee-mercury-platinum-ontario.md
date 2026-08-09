@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les...
 
-**Category:** Garantie  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
+**Catégorie :** Garantie\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 
 ## Réponse rapide
 
@@ -166,10 +166,10 @@ Non. Les vidanges d'huile, turbines, bougies, anodes, filtres, hélices et autre
 
 La page /mercury-product-protection affiche la fiche de prix HBW par puissance et durée. Les prix sont en CAD avant TVH, et HBW confirme le prix final et l'admissibilité avec le numéro de série.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

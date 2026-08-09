@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf.
 
-**Category:** Guide d'achat  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-06-19  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-06-19\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 
 ### Réponse rapide
 
@@ -192,10 +192,10 @@ Dans la plupart des cas, oui , si la coque est saine.
 
 Oui. mercuryrepower.ca affiche un prix en ligne, en dollars canadiens.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

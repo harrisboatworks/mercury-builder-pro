@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury...
 
-**Category:** Avis produit  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-07-31  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
+**Catégorie :** Avis produit\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-07-31\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 
 ### Réponse rapide
 
@@ -146,10 +146,10 @@ Techniquement oui pour les plus petits pontons sous 20 pi avec des charges lég�
 
 Parfois, oui. Des 75 usagés se présentent sur le marché. Nous pouvons aider à évaluer l'état et décider si un 75 usagé a plus de sens qu'un 90 neuf pour votre situation.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
