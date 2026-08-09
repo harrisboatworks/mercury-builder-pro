@@ -659,7 +659,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need DTS for Mercury joystick piloting?",
-        "a": "Yes. Mercury Joystick Piloting requires twin or more outboards, all DTS-equipped, plus the joystick module, SmartCraft gateway, and compatible VesselView display. Single-engine boats are not eligible for joystick, regardless of motor or HP. If joystick is your real goal, DTS is just the prerequisite."
+        "a": "Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster packag…"
       }
     ]
   },
@@ -2158,8 +2158,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Premier dealer relationship today."
       },
       {
-        "q": "Why do most aluminum boats sold in Ontario come Mercury-rigged?",
-        "a": "Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market: Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built ar…"
+        "q": "Why is Mercury commonly paired with aluminum boats sold in Ontario?",
+        "a": "Mercury has long-running supply relationships with several North American aluminum boat builders, including Lund, Crestliner, Lowe and Princecraft. Factory rigging varies by brand, model and package, so confirm the specific boat rather than assuming Mercury is standard. Customer demand and local dealer support also in…"
       },
       {
         "q": "Is Mercury more expensive than Yamaha or Honda?",
