@@ -25,6 +25,7 @@ import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOf
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
+import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
@@ -2743,7 +2744,7 @@ function promotionsNoscriptSnapshot(now = new Date()) {
 
 function blogArticleSchema(article) {
   const url = `${SITE_URL}/blog/${article.slug}`;
-  const shareImage = article.socialImage || article.image;
+  const shareImage = getBlogOgImagePath(article.socialImage || article.image);
   const absoluteShareImage = shareImage
     ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
     : undefined;
@@ -3125,9 +3126,9 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   title: buildBlogHeadTitle(article.title),
   description: article.description,
   ogImage: article.socialImage || article.image
-    ? ((article.socialImage || article.image).startsWith('http')
-      ? (article.socialImage || article.image)
-      : `${SITE_URL}${article.socialImage || article.image}`)
+    ? (getBlogOgImagePath(article.socialImage || article.image).startsWith('http')
+      ? getBlogOgImagePath(article.socialImage || article.image)
+      : `${SITE_URL}${getBlogOgImagePath(article.socialImage || article.image)}`)
     : undefined,
   ogType: 'article',
   h1: article.title,
@@ -3197,7 +3198,11 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     path: `/blog/${langCode}/${article.slug}`,
     title: buildBlogHeadTitle(article.title),
     description: article.description,
-    ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
+    ogImage: article.socialImage || article.image
+      ? (getBlogOgImagePath(article.socialImage || article.image).startsWith('http')
+        ? getBlogOgImagePath(article.socialImage || article.image)
+        : `${SITE_URL}${getBlogOgImagePath(article.socialImage || article.image)}`)
+      : undefined,
     ogType: 'article',
     ogLocale,
     h1: article.title,
@@ -5905,6 +5910,13 @@ function stamp(route) {
     { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
     { re: /<meta\s+name=["']twitter:image["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:image" content="${ogImage}" />` }
   ];
+  if (ogImage.includes('/generated-og/')) {
+    socialReplacements.push(
+      { re: /<meta\s+property=["']og:image:width["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:width" content="1200" />' },
+      { re: /<meta\s+property=["']og:image:height["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:height" content="630" />' },
+      { re: /<meta\s+property=["']og:image:type["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:type" content="image/webp" />' },
+    );
+  }
   for (const { re, tag } of socialReplacements) {
     if (re.test(html)) {
       // Replace the FIRST occurrence (any duplicates already in shell) and strip

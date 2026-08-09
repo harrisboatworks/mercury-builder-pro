@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-08-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions"
 description: "Plan a 2026 Rice Lake fishing trip with current FMZ 17 season context, an honest species outlook, local hazards, and seasonal conditions."
 category: "Lifestyle"
 date_published: 2026-02-06
-date_modified: 2026-08-02
+date_modified: 2026-08-08
 keywords: ["rice lake fishing","rice lake fishing guide 2026","rice lake walleye","rice lake bass fishing","rice lake muskie fishing","FMZ 17 fishing regulations","rice lake ontario fishing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 

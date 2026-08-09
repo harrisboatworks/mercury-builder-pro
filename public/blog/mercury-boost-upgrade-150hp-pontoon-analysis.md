@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-07-18
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-07-18
+date_modified: 2026-08-08
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last reviewed:** 2026-07-18  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 

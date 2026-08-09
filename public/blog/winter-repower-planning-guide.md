@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-07-31
+date_modified: 2026-08-08
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 

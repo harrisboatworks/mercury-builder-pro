@@ -9,6 +9,7 @@
  */
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
@@ -77,6 +78,7 @@ export default function TraditionalChineseBlogArticlePage() {
         <meta property="og:locale" content="zh_TW" />
         <meta property="og:type" content="article" />
       </Helmet>
+      <BlogOgImageMeta image={article.socialImage || article.image} />
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 

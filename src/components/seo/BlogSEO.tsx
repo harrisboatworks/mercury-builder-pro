@@ -3,6 +3,7 @@ import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
 import { getBlogHreflangAlternates } from '@/data/blogI18nRegistry.js';
+import { getBlogOgImagePath } from '@/lib/blogOgImage.js';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -17,10 +18,11 @@ function getDealerCityFromSlug(slug: string): string | null {
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const hreflangAlternates = getBlogHreflangAlternates('en', article.slug);
-  const shareImage = article.socialImage || article.image;
+  const shareImage = getBlogOgImagePath(article.socialImage || article.image);
   const absoluteShareImage = shareImage
     ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
     : undefined;
+  const hasGeneratedShareImage = shareImage?.startsWith('/generated-og/');
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
   // Head <title> prefers the article's explicit `seoTitle` when provided (so the
@@ -292,6 +294,9 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
       {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
+      {hasGeneratedShareImage && <meta property="og:image:width" content="1200" />}
+      {hasGeneratedShareImage && <meta property="og:image:height" content="630" />}
+      {hasGeneratedShareImage && <meta property="og:image:type" content="image/webp" />}
       <meta property="og:type" content="article" />
       <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />

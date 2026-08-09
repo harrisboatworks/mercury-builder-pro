@@ -10,6 +10,7 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
 import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
+import { getBlogOgImagePath } from '@/lib/blogOgImage.js';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -266,10 +267,11 @@ export default function FrenchBlogArticlePage() {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
   const tocItems = extractHeaders(cleanedContent);
-  const shareImage = article.socialImage || article.image;
+  const shareImage = getBlogOgImagePath(article.socialImage || article.image);
   const absoluteShareImage = shareImage
     ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
     : undefined;
+  const hasGeneratedShareImage = shareImage?.startsWith('/generated-og/');
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -335,6 +337,9 @@ export default function FrenchBlogArticlePage() {
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
         {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
+        {hasGeneratedShareImage && <meta property="og:image:width" content="1200" />}
+        {hasGeneratedShareImage && <meta property="og:image:height" content="630" />}
+        {hasGeneratedShareImage && <meta property="og:image:type" content="image/webp" />}
         <meta name="twitter:card" content="summary_large_image" />
         {absoluteShareImage && <meta name="twitter:image" content={absoluteShareImage} />}
         <meta property="article:published_time" content={article.datePublished} />

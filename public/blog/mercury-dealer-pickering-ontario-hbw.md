@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw.md
-last_updated: 2026-07-17
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Pickering: 50 Minutes from Rice Lake"
 description: "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-17
+date_modified: 2026-08-08
 keywords: ["mercury dealer pickering","mercury repower pickering","mercury outboard pickering ontario","boat motor dealer pickering"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-17  
+**Last reviewed:** 2026-08-08  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw
 

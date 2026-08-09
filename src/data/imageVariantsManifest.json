@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-04T17:58:58.487Z",
-  "count": 418,
+  "generatedAt": "2026-08-09T00:36:32.863Z",
+  "count": 421,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -383,6 +383,9 @@
     "/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360",
     "/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem",
     "/lovable-uploads/mercury-vs-honda-hero-2026",
+    "/lovable-uploads/official-mercury-75-fourstroke",
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp",
+    "/lovable-uploads/official-mercury-seapro-350-v10",
     "/lovable-uploads/ontario-mercury-outboard-price-tier-chart",
     "/lovable-uploads/outboard-shaft-length-transom-measurement-diagram",
     "/lovable-uploads/pontoon-115-ct-detail-real",
@@ -2326,6 +2329,21 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/official-mercury-75-fourstroke": [
+      640,
+      1024,
+      1050
+    ],
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp": [
+      640,
+      696,
+      696
+    ],
+    "/lovable-uploads/official-mercury-seapro-350-v10": [
+      514,
+      514,
+      514
     ],
     "/lovable-uploads/ontario-mercury-outboard-price-tier-chart": [
       640,
