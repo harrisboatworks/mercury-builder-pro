@@ -11,6 +11,17 @@ export const FINANCING_MINIMUM = financePolicy.minimumCad;
 export const DEALERPLAN_FEE = financePolicy.dealerplanFeeCad;
 
 /**
+ * Ontario HST applied to the motor price before the DealerPlan fee.
+ */
+export const ONTARIO_HST_RATE = 0.13;
+
+/**
+ * The lender contract and maximum amortization limits disclosed to customers.
+ */
+export const FINANCING_CONTRACT_TERM_MONTHS = financePolicy.contractTermMonths;
+export const FINANCING_MAXIMUM_AMORTIZATION_MONTHS = financePolicy.maximumAmortizationMonths;
+
+/**
  * Get default financing rate based on price tier
  * Under $10,000: 8.99% APR
  * $10,000 and up: 7.99% APR
@@ -33,6 +44,10 @@ export const MERCURY_PROMO_APR = financePolicy.mercuryPromo.apr;
  */
 export const MERCURY_PROMO_END_ISO = financePolicy.mercuryPromo.endsAt;
 
+export const isMercuryPromoActive = (now: number = Date.now()): boolean => {
+  return now <= new Date(MERCURY_PROMO_END_ISO).getTime();
+};
+
 /**
  * Current standing Mercury financing rate (APR, % units).
  * Single source of truth for content surfaces (blog tokens, marketing copy)
@@ -40,9 +55,7 @@ export const MERCURY_PROMO_END_ISO = financePolicy.mercuryPromo.endsAt;
  * Returns the active promo while live, otherwise the post-promo standard rate.
  */
 export const getCurrentMercuryFinancingRate = (): number => {
-  const now = Date.now();
-  const end = new Date(MERCURY_PROMO_END_ISO).getTime();
-  return now <= end ? MERCURY_PROMO_APR : financePolicy.standardApr.atLeast10000;
+  return isMercuryPromoActive() ? MERCURY_PROMO_APR : financePolicy.standardApr.atLeast10000;
 };
 
 /**
@@ -59,8 +72,7 @@ export const getMotorCalculatorApr = (
   if (selectedPromoRate !== null && selectedPromoRate < tieredRate) {
     return selectedPromoRate;
   }
-  const standingOfferActive = Date.now() <= new Date(MERCURY_PROMO_END_ISO).getTime();
-  return standingOfferActive
+  return isMercuryPromoActive()
     ? Math.min(getCurrentMercuryFinancingRate(), tieredRate)
     : tieredRate;
 };
@@ -195,6 +207,36 @@ export const calculateMonthlyPayment = (
   termMonthsOverride: number | null = null,
 ) => {
   return calculatePaymentWithFrequency(price, 'monthly', promoRate, termMonthsOverride);
+};
+
+export type MotorFinancingEstimate = ReturnType<typeof calculateMonthlyPayment> & {
+  amountFinanced: number;
+};
+
+/**
+ * Build the monthly estimate shown beside a bare-motor price.
+ *
+ * This is the single policy-backed path for motor-card estimates: eligibility
+ * is checked against the before-tax motor price, while the payment is
+ * amortized on the motor price plus Ontario HST and the mandatory DealerPlan
+ * fee. An explicitly supplied APR keeps the card and its page disclosure in
+ * sync; otherwise the current standing/tiered rate is resolved here.
+ */
+export const calculateMotorFinancingEstimate = (
+  motorPrice: number,
+  annualRate: number | null = null,
+): MotorFinancingEstimate | null => {
+  if (!Number.isFinite(motorPrice) || motorPrice < FINANCING_MINIMUM) {
+    return null;
+  }
+
+  const amountFinanced = motorPrice * (1 + ONTARIO_HST_RATE) + DEALERPLAN_FEE;
+  const effectiveRate = annualRate ?? getMotorCalculatorApr(amountFinanced);
+
+  return {
+    ...calculateMonthlyPayment(amountFinanced, effectiveRate),
+    amountFinanced,
+  };
 };
 
 /**
