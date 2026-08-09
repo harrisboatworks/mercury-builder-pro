@@ -24,6 +24,9 @@ const BLOG_LANG_RX = /^(mandarin|korean|french|spanish|hindi|punjabi|tagalog|urd
 const BLOG_FILES = readdirSync('src/data')
   .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
   .map((f) => `src/data/${f}`);
+const BLOG_TWIN_FILES = readdirSync('public/blog', { recursive: true })
+  .filter((f) => String(f).endsWith('.md'))
+  .map((f) => `public/blog/${f}`);
 
 // Extract every { slug: '...', ..., content: `...`, ..., description: '...' }
 // chunk. We keep this regex-based (no TS parse) because the file is a flat
@@ -155,9 +158,9 @@ const SEASONAL_STORAGE_DEALER_SLUGS = new Set([
 ]);
 const UNSCOPED_SEASONAL_CLAIMS = [
   {
-    rx: /\byear-round storage\b/i,
+    rx: /\byear-round\b[^.\n]{0,60}\bstorage\b/i,
     rule: 'no-year-round-storage-claim',
-    allow: /\b(?:no|not|never)\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)?n['’]t\b[^.\n]{0,80}\byear-round storage\b|\bdo(?:es)? not\b[^.\n]{0,80}\byear-round storage\b/i,
+    allow: /\b(?:no|not|never)\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b|\bdo(?:es)?n['’]t\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b|\bdo(?:es)? not\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b/i,
   },
   {
     rx: /\byear-round (?:service|installations?|customer access|operations?|option)\b|\bopen 365\b|\bone marina, all season\b/i,
@@ -826,6 +829,16 @@ for (const file of BLOG_FILES) {
   }
 }
 
+// Generated Markdown twins are public content surfaces too. Scan every twin
+// so a stale or hand-edited dealer page cannot bypass the canonical source
+// checks, including article body copy and rendered FAQ content.
+for (const file of BLOG_TWIN_FILES) {
+  const slug = file.slice('public/blog/'.length, -'.md'.length);
+  const text = readFileSync(file, 'utf8');
+  const localPush = (rule, snippet) => push(file, slug, rule, snippet);
+  checkDealerSeasonalClaims(slug, text, localPush);
+}
+
 const categoryCtaFile = 'src/components/blog/CategoryCTA.tsx';
 const categoryCtaSource = readFileSync(categoryCtaFile, 'utf8');
 if (!/HBW confirms the final installed total in a written quote/i.test(categoryCtaSource)) {
@@ -854,5 +867,5 @@ if (errors.length) {
   console.error(`\nSource of truth: owner took over ${OWNER_TAKEOVER_YEAR}, founded ${FOUNDER_YEAR}, current year ${CURRENT_YEAR}.\n`);
   process.exit(1);
 } else {
-  console.log(`Blog timeline-fact validation PASSED - ${BLOG_FILES.length} file(s) checked.`);
+  console.log(`Blog timeline-fact validation PASSED - ${BLOG_FILES.length} source file(s) and ${BLOG_TWIN_FILES.length} Markdown twin(s) checked.`);
 }

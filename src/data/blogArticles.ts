@@ -31139,7 +31139,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 **Winterization:** October drop-off, November shrinkwrap, spring pickup. The whole fall routine makes sense at this distance.
 
-**Storage:** Year-round outdoor storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here is more convenient than hauling them back for the winter.
+**Storage:** Outdoor winter storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
 
 ## The Pricing Conversation Starts Before You Arrive
 
