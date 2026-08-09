@@ -39,6 +39,7 @@ export function useAutoSaveQuoteOnAuth() {
         const quoteData = getQuoteData();
         const motorModel = state.motor?.model || 'Mercury Motor';
         const hp = state.motor?.hp || 0;
+        const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
 
         // Generate resume token
         const tokenArray = new Uint8Array(24);
@@ -53,6 +54,8 @@ export function useAutoSaveQuoteOnAuth() {
             resume_token: resumeToken,
             quote_state: {
               ...state,
+              customerName: userName,
+              customerEmail: user.email || '',
               ...(isQuotePdfSnapshot(state.pdfSnapshot) ? {
                 frozenPricing: frozenPricingFromPdfSnapshot(state.pdfSnapshot),
               } : {}),
@@ -91,7 +94,6 @@ export function useAutoSaveQuoteOnAuth() {
         }, 1500);
 
         // Admin notifications (non-blocking)
-        const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
         const finalPrice = quoteData.motor?.price || 0;
 
         supabase.functions.invoke('send-quote-email', {
@@ -120,15 +122,8 @@ export function useAutoSaveQuoteOnAuth() {
         // Send customer their saved quote email
         supabase.functions.invoke('send-saved-quote-email', {
           body: {
-            customerEmail: user.email,
-            customerName: userName,
-            quoteId: savedQuote.id,
             savedQuoteId: savedQuote.id,
             resumeToken,
-            motorModel,
-            finalPrice,
-            quoteData: state,
-            includeAccountInfo: false,
           },
         }).catch(() => {});
 

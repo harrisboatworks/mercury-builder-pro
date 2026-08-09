@@ -115,6 +115,12 @@ function generateShareToken(): string {
   return token;
 }
 
+function generateResumeToken(): string {
+  const bytes = new Uint8Array(24);
+  crypto.getRandomValues(bytes);
+  return `quote_${Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("")}`;
+}
+
 function calcPricing(opts: {
   motorPrice: number;
   customItemsTotal?: number;
@@ -995,15 +1001,19 @@ async function createQuote(supabase: any, body: any) {
 
   // --- Dual-write to saved_quotes so the quote appears on "My Quotes" dashboard ---
   const shareToken = data.share_token || generateShareToken();
+  const savedResumeToken = generateResumeToken();
+  let savedQuoteReady = false;
   try {
-    await supabase.from("saved_quotes").insert({
+    const { error: savedQuoteError } = await supabase.from("saved_quotes").insert({
       id: data.id,
       email: customer_email.trim(),
-      resume_token: shareToken,
+      resume_token: savedResumeToken,
       quote_state: quoteData,
       expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(), // 90 days
       access_count: 0,
     });
+    if (savedQuoteError) throw savedQuoteError;
+    savedQuoteReady = true;
   } catch (savedErr: any) {
     console.error("saved_quotes dual-write failed (non-fatal):", savedErr.message);
   }
@@ -1038,25 +1048,23 @@ async function createQuote(supabase: any, body: any) {
 
   // --- Customer email (branded "quote saved" with link) ---
   // Skip when caller explicitly opts out (e.g., admin-created quotes that don't want to notify yet)
-  if (body.send_customer_email !== false) {
+  if (body.send_customer_email !== false && savedQuoteReady) {
     try {
-      await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-saved-quote-email`, {
+      const emailResponse = await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-saved-quote-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`,
         },
         body: JSON.stringify({
-          customerEmail: customer_email.trim(),
-          customerName: customer_name.trim(),
-          quoteId: data.id,
           savedQuoteId: data.id,
-          motorModel: motor.model_display || motor.model || `${motor.horsepower}HP Mercury`,
-          finalPrice: pricing.finalPrice,
-          includeAccountInfo: false,
+          resumeToken: savedResumeToken,
         }),
       });
-      console.log("Customer quote email sent to:", customer_email.trim());
+      if (!emailResponse.ok) {
+        throw new Error(`send-saved-quote-email returned HTTP ${emailResponse.status}`);
+      }
+      console.log("Customer quote email accepted", { quoteId: data.id });
     } catch (emailErr: any) {
       console.error("Customer quote email failed (non-fatal):", emailErr.message);
     }
@@ -1275,10 +1283,19 @@ async function updateQuote(supabase: any, body: any) {
 
   // Sync saved_quotes if it exists
   try {
-    await supabase.from("saved_quotes").update({
+    const savedQuoteUpdates: Record<string, unknown> = {
       quote_state: updates.quote_data,
       updated_at: new Date().toISOString(),
-    }).eq("id", quote_id);
+    };
+    if (typeof updates.customer_email === "string") {
+      savedQuoteUpdates.email = updates.customer_email;
+    }
+
+    const { error: syncError } = await supabase
+      .from("saved_quotes")
+      .update(savedQuoteUpdates)
+      .eq("id", quote_id);
+    if (syncError) throw syncError;
   } catch (syncErr: any) {
     console.error("saved_quotes sync failed (non-fatal):", syncErr.message);
   }

@@ -34,6 +34,7 @@ export function SaveQuoteDialog({
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [savedEmailSent, setSavedEmailSent] = useState(false);
   const { toast } = useToast();
   const { user } = useAuth();
   const isMobile = useIsMobile();
@@ -103,27 +104,33 @@ export function SaveQuoteDialog({
       crypto.getRandomValues(tokenArray);
       const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
       const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
+      const persistedQuoteState = {
+        ...quoteData,
+        customerName: name.trim(),
+        customerEmail: email.trim(),
+        ...(typeof finalPrice === 'number' && Number.isFinite(finalPrice) ? { finalPrice } : {}),
+      };
 
       const { data: savedQuote, error: savedQuoteError } = await supabase
         .from('saved_quotes')
         .insert({
           email: email,
           resume_token: resumeToken,
-          quote_state: quoteData, // Full QuoteContext state
+          quote_state: persistedQuoteState, // Full QuoteContext state plus the exact save-time display facts
           user_id: user?.id || null, // Link to user if logged in
           expires_at: expiresAt.toISOString(),
         })
         .select()
         .single();
 
-      if (savedQuoteError) {
+      if (savedQuoteError || !savedQuote?.id) {
         console.error('Error saving quote state:', savedQuoteError);
-        // Continue anyway - we have the customer_quotes record
-      } else if (savedQuote?.id) {
-        // Store saved quote ID for QR code generation
-        localStorage.setItem('current_saved_quote_id', savedQuote.id);
-        console.log('Saved quote ID for QR code:', savedQuote.id);
+        throw savedQuoteError || new Error('Saved quote row was not returned');
       }
+
+      // Store saved quote ID for QR code generation
+      localStorage.setItem('current_saved_quote_id', savedQuote.id);
+      console.log('Saved quote ID for QR code:', savedQuote.id);
 
       // Analytics: quote_saved + lead_submitted
       trackAgentEvent({
@@ -159,24 +166,19 @@ export function SaveQuoteDialog({
         }
       }
 
-      // Send email with quote link
+      // Send only after the durable saved quote exists. The Edge Function
+      // derives every email fact from that row and treats the token as proof.
       const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
         body: {
-          customerEmail: email,
-          customerName: name || 'Valued Customer',
-          quoteId: leadRecord.id,
-          savedQuoteId: savedQuote?.id,
-          resumeToken: resumeToken,
-          motorModel: motorModel || 'Mercury Motor',
-          finalPrice: finalPrice || 0,
-          quoteData: quoteData,
-          includeAccountInfo: !user, // Flag to include account access info
+          savedQuoteId: savedQuote.id,
+          resumeToken,
         }
       });
 
       if (emailError) {
         console.error('Error sending email:', emailError);
       }
+      setSavedEmailSent(!emailError);
 
       // Notify admin about new saved quote (email + SMS)
       try {
@@ -230,6 +232,7 @@ export function SaveQuoteDialog({
       setEmail("");
       setName("");
       setPhone("");
+      setSavedEmailSent(false);
     }, 300);
   };
 
@@ -241,15 +244,19 @@ export function SaveQuoteDialog({
       </div>
       <div className="text-xl font-semibold">Quote Saved!</div>
       <div className="space-y-3 text-muted-foreground">
-        <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
-        {!user && (
+        {savedEmailSent ? (
+          <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
+        ) : (
+          <p>Your configuration is saved, but the confirmation email could not be sent. Please call us at (905) 342-2153 if you need the link.</p>
+        )}
+        {!user && savedEmailSent && (
           <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
             <div className="flex items-start gap-3">
               <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <div className="text-sm">
                 <p className="font-medium text-foreground">Check your email</p>
                 <p className="text-muted-foreground mt-1">
-                  Click the link in your email to access your account and view all your saved quotes anytime.
+                  Use the saved quote link in that email to reopen this configuration. If your sign-in email arrived, you can also view saved quotes in My Quotes.
                 </p>
               </div>
             </div>
