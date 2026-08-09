@@ -49,6 +49,456 @@
       "statusCode": 301
     },
     {
+      "source": "/motors/fs-115-elpt-ct",
+      "destination": "/motors/fourstroke-115hp-115elpt-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-115-elpt-ct.md",
+      "destination": "/motors/fourstroke-115hp-115elpt-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-115-exlpt-ct",
+      "destination": "/motors/fourstroke-115hp-115exlpt-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-115-exlpt-ct.md",
+      "destination": "/motors/fourstroke-115hp-115exlpt-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-elpt",
+      "destination": "/motors/proxs-115hp-115-elpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-elpt.md",
+      "destination": "/motors/proxs-115hp-115-elpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-exlpt",
+      "destination": "/motors/proxs-115hp-115-exlpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-exlpt.md",
+      "destination": "/motors/proxs-115hp-115-exlpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-elpt-ct",
+      "destination": "/motors/proxs-115hp-115-elpt-pro-xs-command-thrust",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-elpt-ct.md",
+      "destination": "/motors/proxs-115hp-115-elpt-pro-xs-command-thrust.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-exlpt-ct",
+      "destination": "/motors/proxs-115hp-115-exlpt-pro-xs-command-thrust",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-115-exlpt-ct.md",
+      "destination": "/motors/proxs-115hp-115-exlpt-pro-xs-command-thrust.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-150-l",
+      "destination": "/motors/fourstroke-150hp-150-l-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-150-l.md",
+      "destination": "/motors/fourstroke-150hp-150-l-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-150-xl",
+      "destination": "/motors/fourstroke-150hp-150-xl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-150-xl.md",
+      "destination": "/motors/fourstroke-150hp-150-xl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-150-l",
+      "destination": "/motors/proxs-150hp-150-elpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-150-l.md",
+      "destination": "/motors/proxs-150hp-150-elpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-150-xl",
+      "destination": "/motors/proxs-150hp-150-exlpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-150-xl.md",
+      "destination": "/motors/proxs-150hp-150-exlpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-175-l",
+      "destination": "/motors/proxs-175hp-175-elpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-175-l.md",
+      "destination": "/motors/proxs-175hp-175-elpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-175-xl",
+      "destination": "/motors/proxs-175hp-175-exlpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-175-xl.md",
+      "destination": "/motors/proxs-175hp-175-exlpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-175-l-dts",
+      "destination": "/motors/fourstroke-175hp-175-l-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-175-l-dts.md",
+      "destination": "/motors/fourstroke-175hp-175-l-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-175-xl-dts",
+      "destination": "/motors/fourstroke-175hp-175-xl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-175-xl-dts.md",
+      "destination": "/motors/fourstroke-175hp-175-xl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-200-l-dts",
+      "destination": "/motors/fourstroke-200hp-200-l-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-200-l-dts.md",
+      "destination": "/motors/fourstroke-200hp-200-l-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-200-xl",
+      "destination": "/motors/fourstroke-200hp-200-xl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-200-xl.md",
+      "destination": "/motors/fourstroke-200hp-200-xl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-l-dts-tm",
+      "destination": "/motors/proxs-200hp-200-elpt-proxs-dts",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-l-dts-tm.md",
+      "destination": "/motors/proxs-200hp-200-elpt-proxs-dts.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-l",
+      "destination": "/motors/proxs-200hp-200-elpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-l.md",
+      "destination": "/motors/proxs-200hp-200-elpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-xl-dts",
+      "destination": "/motors/proxs-200hp-200-exlpt-proxs-dts",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-200-xl-dts.md",
+      "destination": "/motors/proxs-200hp-200-exlpt-proxs-dts.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-l",
+      "destination": "/motors/fourstroke-225hp-225-l-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-l.md",
+      "destination": "/motors/fourstroke-225hp-225-l-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-xl-dts",
+      "destination": "/motors/fourstroke-225hp-225-xl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-xl-dts.md",
+      "destination": "/motors/fourstroke-225hp-225-xl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-xxl-dts",
+      "destination": "/motors/fourstroke-225hp-225-xxl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-xxl-dts.md",
+      "destination": "/motors/fourstroke-225hp-225-xxl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-cxxl-dts",
+      "destination": "/motors/fourstroke-225hp-225cxxl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-225-cxxl-dts.md",
+      "destination": "/motors/fourstroke-225hp-225cxxl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-225-l-tm",
+      "destination": "/motors/proxs-225hp-225-elpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-225-l-tm.md",
+      "destination": "/motors/proxs-225hp-225-elpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-225-xl-dts",
+      "destination": "/motors/proxs-225hp-225-exlpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-225-xl-dts.md",
+      "destination": "/motors/proxs-225hp-225-exlpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-l-dts",
+      "destination": "/motors/fourstroke-250hp-250-l-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-l-dts.md",
+      "destination": "/motors/fourstroke-250hp-250-l-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-xl-dts",
+      "destination": "/motors/fourstroke-250hp-250-xl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-xl-dts.md",
+      "destination": "/motors/fourstroke-250hp-250-xl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-xxl-dts",
+      "destination": "/motors/fourstroke-250hp-250-xxl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-xxl-dts.md",
+      "destination": "/motors/fourstroke-250hp-250-xxl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-xl",
+      "destination": "/motors/proxs-250hp-250-exlpt-proxs",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-xl.md",
+      "destination": "/motors/proxs-250hp-250-exlpt-proxs.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-cxxl",
+      "destination": "/motors/fourstroke-250hp-250cxxl-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-250-cxxl.md",
+      "destination": "/motors/fourstroke-250hp-250cxxl-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-l-dts-tm",
+      "destination": "/motors/proxs-250hp-250-elpt-proxs-dts",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-l-dts-tm.md",
+      "destination": "/motors/proxs-250hp-250-elpt-proxs-dts.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-xl-dts",
+      "destination": "/motors/proxs-250hp-250-exlpt-proxs-dts",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/pxs-250-xl-dts.md",
+      "destination": "/motors/proxs-250hp-250-exlpt-proxs-dts.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-mh",
+      "destination": "/motors/fourstroke-8hp-8mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-mh.md",
+      "destination": "/motors/fourstroke-8hp-8mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-mlh",
+      "destination": "/motors/fourstroke-8hp-8mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-mlh.md",
+      "destination": "/motors/fourstroke-8hp-8mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-eh",
+      "destination": "/motors/fourstroke-8hp-8eh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-eh.md",
+      "destination": "/motors/fourstroke-8hp-8eh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-elh",
+      "destination": "/motors/fourstroke-8hp-8elh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-8-elh.md",
+      "destination": "/motors/fourstroke-8hp-8elh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mh",
+      "destination": "/motors/fourstroke-9-9hp-9-9mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mh.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mlh",
+      "destination": "/motors/fourstroke-9-9hp-9-9mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mlh.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mlh-ct",
+      "destination": "/motors/fourstroke-9-9hp-9-9mlh-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-mlh-ct.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9mlh-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-eh",
+      "destination": "/motors/fourstroke-9-9hp-9-9eh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-eh.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9eh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elh",
+      "destination": "/motors/fourstroke-9-9hp-9-9elh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elh.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9elh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elh-ct",
+      "destination": "/motors/fourstroke-9-9hp-9-9elh-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elh-ct.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9elh-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-exlh-ct",
+      "destination": "/motors/fourstroke-9-9hp-9-9exlh-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-exlh-ct.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9exlh-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elhpt-pk",
+      "destination": "/motors/fourstroke-9-9hp-9-9elhpt-command-thrust-prokicker-efi-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elhpt-pk.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9elhpt-command-thrust-prokicker-efi-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elpt-pk",
+      "destination": "/motors/fourstroke-9-9hp-9-9elpt-command-thrust-prokicker-efi-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-elpt-pk.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9elpt-command-thrust-prokicker-efi-fourstroke.md",
+      "statusCode": 301
+    },
+    {
       "source": "/motors/fs-9.9-exlhpt-pk",
       "destination": "/motors/fourstroke-9-9hp-9-9exlhpt-command-thrust-prokicker-efi-fourstroke",
       "statusCode": 301
@@ -56,6 +506,446 @@
     {
       "source": "/motors/fs-9.9-exlhpt-pk.md",
       "destination": "/motors/fourstroke-9-9hp-9-9exlhpt-command-thrust-prokicker-efi-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-exlpt-pk",
+      "destination": "/motors/fourstroke-9-9hp-9-9-exlpt-command-thrust-prokicker-efi-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-exlpt-pk.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9-exlpt-command-thrust-prokicker-efi-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-mh",
+      "destination": "/motors/fourstroke-15hp-15-mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-mh.md",
+      "destination": "/motors/fourstroke-15hp-15-mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-mlh",
+      "destination": "/motors/fourstroke-15hp-15-mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-mlh.md",
+      "destination": "/motors/fourstroke-15hp-15-mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-eh",
+      "destination": "/motors/fourstroke-15hp-15-eh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-eh.md",
+      "destination": "/motors/fourstroke-15hp-15-eh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-elh",
+      "destination": "/motors/fourstroke-15hp-15-elh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-elh.md",
+      "destination": "/motors/fourstroke-15hp-15-elh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-elhpt-pk",
+      "destination": "/motors/fourstroke-15hp-15elhpt-prokicker-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-elhpt-pk.md",
+      "destination": "/motors/fourstroke-15hp-15elhpt-prokicker-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-15hp-elpt-prokicker",
+      "destination": "/motors/fourstroke-15hp-15elpt-prokicker-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-15hp-elpt-prokicker.md",
+      "destination": "/motors/fourstroke-15hp-15elpt-prokicker-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-exlhpt-pk",
+      "destination": "/motors/fourstroke-15hp-15exlhpt-prokicker-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-exlhpt-pk.md",
+      "destination": "/motors/fourstroke-15hp-15exlhpt-prokicker-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-exlpt-pk",
+      "destination": "/motors/fourstroke-15hp-15exlpt-prokicker-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-15-exlpt-pk.md",
+      "destination": "/motors/fourstroke-15hp-15exlpt-prokicker-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-mh",
+      "destination": "/motors/fourstroke-20hp-20-mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-mh.md",
+      "destination": "/motors/fourstroke-20hp-20-mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-mlh",
+      "destination": "/motors/fourstroke-20hp-20-mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-mlh.md",
+      "destination": "/motors/fourstroke-20hp-20-mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-eh",
+      "destination": "/motors/fourstroke-20hp-20-eh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-eh.md",
+      "destination": "/motors/fourstroke-20hp-20-eh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-elh",
+      "destination": "/motors/fourstroke-20hp-20-elh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-elh.md",
+      "destination": "/motors/fourstroke-20hp-20-elh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-elhpt",
+      "destination": "/motors/fourstroke-20hp-20-elhpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-20-elhpt.md",
+      "destination": "/motors/fourstroke-20hp-20-elhpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-mlh",
+      "destination": "/motors/fourstroke-25hp-25-mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-mlh.md",
+      "destination": "/motors/fourstroke-25hp-25-mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-elhpt",
+      "destination": "/motors/fourstroke-25hp-25-elhpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-elhpt.md",
+      "destination": "/motors/fourstroke-25hp-25-elhpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-elpt",
+      "destination": "/motors/fourstroke-25hp-25-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-25-elpt.md",
+      "destination": "/motors/fourstroke-25hp-25-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-30-elhpt",
+      "destination": "/motors/fourstroke-30hp-30-elhpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-30-elhpt.md",
+      "destination": "/motors/fourstroke-30hp-30-elhpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-30-elpt",
+      "destination": "/motors/fourstroke-30hp-30-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-30-elpt.md",
+      "destination": "/motors/fourstroke-30hp-30-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-2.5-mh",
+      "destination": "/motors/fourstroke-2-5hp-2-5mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-2.5-mh.md",
+      "destination": "/motors/fourstroke-2-5hp-2-5mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-3.5-mh",
+      "destination": "/motors/fourstroke-3-5hp-3-5mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-3.5-mh.md",
+      "destination": "/motors/fourstroke-3-5hp-3-5mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-3.5-mlh",
+      "destination": "/motors/fourstroke-3-5hp-3-5mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-3.5-mlh.md",
+      "destination": "/motors/fourstroke-3-5hp-3-5mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-4-mh",
+      "destination": "/motors/fourstroke-4hp-4mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-4-mh.md",
+      "destination": "/motors/fourstroke-4hp-4mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-4-mlh",
+      "destination": "/motors/fourstroke-4hp-4mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-4-mlh.md",
+      "destination": "/motors/fourstroke-4hp-4mlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mlha",
+      "destination": "/motors/fourstroke-5hp-5mlha-sail-power-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mlha.md",
+      "destination": "/motors/fourstroke-5hp-5mlha-sail-power-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mxlh",
+      "destination": "/motors/fourstroke-5hp-5mxlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mxlh.md",
+      "destination": "/motors/fourstroke-5hp-5mxlh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elpt",
+      "destination": "/motors/fourstroke-40hp-40-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elpt.md",
+      "destination": "/motors/fourstroke-40hp-40-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elhpt-t",
+      "destination": "/motors/fourstroke-40hp-40-elhpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elhpt-t.md",
+      "destination": "/motors/fourstroke-40hp-40-elhpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elpt-ct",
+      "destination": "/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-40-elpt-ct.md",
+      "destination": "/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elpt",
+      "destination": "/motors/fourstroke-50hp-50-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elpt.md",
+      "destination": "/motors/fourstroke-50hp-50-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elpt-ct",
+      "destination": "/motors/fourstroke-50hp-50-elpt-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elpt-ct.md",
+      "destination": "/motors/fourstroke-50hp-50-elpt-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elhpt-ct-t",
+      "destination": "/motors/fourstroke-50hp-50-elhpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-50-elhpt-ct-t.md",
+      "destination": "/motors/fourstroke-50hp-50-elhpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-efi-elpt",
+      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-efi-elpt.md",
+      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke",
+      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md",
+      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-60-elhpt-t",
+      "destination": "/motors/fourstroke-60hp-60-elhpt-fourstroke-tiller",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-60-elhpt-t.md",
+      "destination": "/motors/fourstroke-60hp-60-elhpt-fourstroke-tiller.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-efi-ct-tiller-elhpt",
+      "destination": "/motors/fourstroke-60hp-60-elhpt-command-thrust-fourstroke-tiller",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-efi-ct-tiller-elhpt.md",
+      "destination": "/motors/fourstroke-60hp-60-elhpt-command-thrust-fourstroke-tiller.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-60-exlpt-ct",
+      "destination": "/motors/fourstroke-60hp-60-exlpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-60-exlpt-ct.md",
+      "destination": "/motors/fourstroke-60hp-60-exlpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-75-elpt",
+      "destination": "/motors/fourstroke-75hp-75-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-75-elpt.md",
+      "destination": "/motors/fourstroke-75hp-75-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-elpt",
+      "destination": "/motors/fourstroke-90hp-90-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-elpt.md",
+      "destination": "/motors/fourstroke-90hp-90-elpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-elpt-ct",
+      "destination": "/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-elpt-ct.md",
+      "destination": "/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-exlpt-ct",
+      "destination": "/motors/fourstroke-90hp-90-exlpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-90-exlpt-ct.md",
+      "destination": "/motors/fourstroke-90hp-90-exlpt-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mh",
+      "destination": "/motors/fourstroke-5hp-5mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-5-mh.md",
+      "destination": "/motors/fourstroke-5hp-5mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-6-mh",
+      "destination": "/motors/fourstroke-6hp-6mh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-6-mh.md",
+      "destination": "/motors/fourstroke-6hp-6mh-fourstroke.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-6-mlh",
+      "destination": "/motors/fourstroke-6hp-6mlh-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-6-mlh.md",
+      "destination": "/motors/fourstroke-6hp-6mlh-fourstroke.md",
       "statusCode": 301
     },
     {
@@ -163,7 +1053,6 @@
       "destination": "/blog/mercury-outboard-lineup-ontario.md",
       "statusCode": 301
     },
-
     {
       "source": "/warranty",
       "destination": "/mercury-product-protection",
@@ -227,11 +1116,6 @@
     {
       "source": "/blog/boat-motor-financing-guide-ontario.md",
       "destination": "/blog/mercury-outboard-financing-ontario-2026.md",
-      "statusCode": 301
-    },
-    {
-      "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke",
-      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
       "statusCode": 301
     },
     {
@@ -873,7 +1757,6 @@
       "source": "/pricing-reference",
       "destination": "/pricing-reference/index.html"
     },
-
     {
       "source": "/pricing-reference.md",
       "destination": "/pricing-reference.md"
