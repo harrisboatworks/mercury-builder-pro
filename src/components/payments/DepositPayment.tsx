@@ -64,6 +64,7 @@ export const DepositPayment = () => {
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
+          depositMode: 'general_deposit',
           depositAmount: selectedDeposit,
           customerInfo
         }
