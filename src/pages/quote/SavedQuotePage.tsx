@@ -65,19 +65,14 @@ export default function SavedQuotePage() {
               ...quoteData,
               motor: motorData || null,
               customerName: quoteData.customerName ?? quote.customer_name ?? '',
-              customerEmail: quoteData.customerEmail ?? '',
-              customerPhone: quoteData.customerPhone ?? '',
+              // Public bearer links never hydrate contact details or edit state.
+              customerEmail: '',
+              customerPhone: '',
               customerNotes: quoteData.customerNotes ?? quote.customer_notes ?? '',
-              isAdminQuote: quoteData.isAdminQuote ?? quote.is_admin_quote ?? false,
+              isAdminQuote: false,
+              editingQuoteId: null,
             },
           });
-
-          if (quoteData.isAdminQuote || quote.is_admin_quote) {
-            dispatch({
-              type: 'SET_ADMIN_MODE',
-              payload: { isAdmin: true, editingQuoteId: quoteId },
-            });
-          }
         }
 
         // Navigate to summary page
