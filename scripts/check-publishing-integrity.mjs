@@ -146,6 +146,22 @@ const sourceArticleSection = (slug) => {
   const end = boundaries.length ? start + 1 + Math.min(...boundaries) : blogArticles.length;
   return blogArticles.slice(start, end);
 };
+
+const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
+const quickAnswerIntroCount = (surface) => (
+  (surface.match(/^> \*\*Quick answer:\*\*/gmi) ?? []).length
+  + (surface.match(/^## Quick Answer\s*$/gmi) ?? []).length
+);
+for (const [label, surface] of [
+  [`${boostPontoonSlug} source`, sourceArticleSection(boostPontoonSlug)],
+  [`${boostPontoonSlug} twin`, read(`public/blog/${boostPontoonSlug}.md`)],
+]) {
+  check(
+    quickAnswerIntroCount(surface) === 1,
+    `${label} must contain exactly one opening Quick Answer surface.`,
+  );
+}
+
 const pclRouteReview = pclRouteSlugs.map((slug) => {
   const surface = `${sourceArticleSection(slug)}\n${read(`public/blog/${slug}.md`)}`;
   return {

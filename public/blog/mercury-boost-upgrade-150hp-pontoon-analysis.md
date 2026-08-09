@@ -35,12 +35,6 @@ revenue_driver: repower
 
 ---
 
-## Quick Answer
-
-For most owners of a standard Mercury 150 FourStroke pontoon motor, the first question has a simple answer: the motor is not on Mercury's currently published dealer-installed Boost eligibility list. Do not compare gains or pricing until a Mercury dealer has checked the exact engine family and serial number. If the motor is eligible, Boost is an automatic software calibration that can improve mid-range acceleration without changing rated horsepower.
-
----
-
 ## Full Article
 
 Mercury Boost is a software calibration for specific eligible Mercury outboards. It can improve zero-to-top-speed and mid-range acceleration by 5 to 21 percent depending on the boat-and-engine combination. It does not raise horsepower, top speed, or maximum RPM.
@@ -215,4 +209,3 @@ Boost is available for eligible motors through Mercury's supported app flow on s
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
