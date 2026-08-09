@@ -6191,6 +6191,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_saved_quotes_for_current_user: { Args: never; Returns: number }
       claim_due_hbw_bot_reminders: {
         Args: {
           p_gateway_secret: string
