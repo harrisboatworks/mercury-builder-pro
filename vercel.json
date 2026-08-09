@@ -49,6 +49,16 @@
       "statusCode": 301
     },
     {
+      "source": "/motors/fs-9.9-exlhpt-pk",
+      "destination": "/motors/fourstroke-9-9hp-9-9exlhpt-command-thrust-prokicker-efi-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fs-9.9-exlhpt-pk.md",
+      "destination": "/motors/fourstroke-9-9hp-9-9exlhpt-command-thrust-prokicker-efi-fourstroke.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/boat-trim-explained-rice-lake-ontario",
       "destination": "/blog/how-to-trim-boat-mercury-outboard",
       "statusCode": 301
