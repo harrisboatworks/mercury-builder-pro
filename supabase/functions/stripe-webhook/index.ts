@@ -5,6 +5,11 @@ import {
   claimDepositAfterValidation,
   validateDepositBeforeClaim,
 } from "./deposit-reconciliation.ts";
+import {
+  paymentEmailRetryWindowExpired,
+  paymentNotificationAttemptedAt,
+  paymentSmsAttemptIsActive,
+} from "../_shared/payment-notification-idempotency.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -33,6 +38,15 @@ function notificationLeaseIsActive(quoteData: Record<string, any>): boolean {
 function notificationsComplete(quoteData: Record<string, any>): boolean {
   return quoteData.notification_status === "delivered"
     || quoteData.notification_status === "manual_follow_up";
+}
+
+function notificationSmsOutcomeAmbiguous(quoteData: Record<string, any>): boolean {
+  return notificationsComplete(quoteData)
+    && quoteData.notification_sms_status === "attempting"
+    && !paymentSmsAttemptIsActive(
+      quoteData.notification_sms_status,
+      quoteData.notification_sms_attempted_at,
+    );
 }
 
 function logStep(step: string, data?: Record<string, unknown>) {
@@ -177,6 +191,43 @@ serve(async (req) => {
         const customerEmail = reconciledDeposit.quoteAuthorizationEmail;
         motorInfo = boundQuoteData.motor_info || motorInfo;
 
+        if (
+          boundQuoteData.payment_status === "paid"
+          && paymentSmsAttemptIsActive(
+            boundQuoteData.notification_sms_status,
+            boundQuoteData.notification_sms_attempted_at,
+          )
+        ) {
+          throw new Error("Deposit SMS delivery is already in progress");
+        }
+        if (boundQuoteData.payment_status === "paid" && notificationSmsOutcomeAmbiguous(boundQuoteData)) {
+          const { data: ambiguousSmsUpdate, error: ambiguousSmsError } = await supabase
+            .from("customer_quotes")
+            .update({
+              quote_data: {
+                ...boundQuoteData,
+                notification_status: "manual_follow_up",
+                notification_sms_status: "manual_follow_up",
+                notification_sms_completed_at: new Date().toISOString(),
+                notification_error: "SMS outcome unknown after interrupted delivery",
+              },
+            })
+            .eq("id", existingDeposit.id)
+            .contains("quote_data", {
+              notification_status: boundQuoteData.notification_status,
+              notification_sms_status: "attempting",
+            })
+            .select("id")
+            .maybeSingle();
+          if (ambiguousSmsError || !ambiguousSmsUpdate) {
+            throw new Error(`Could not flag ambiguous deposit SMS outcome: ${ambiguousSmsError?.message || "claim lost"}`);
+          }
+          logStep("Deposit SMS outcome requires manual follow-up", { sessionId: session.id });
+          return new Response(JSON.stringify({ received: true, processed: true, manualFollowUp: true }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            status: 200,
+          });
+        }
         if (boundQuoteData.payment_status === "paid" && notificationsComplete(boundQuoteData)) {
           logStep("Deposit session already processed", { sessionId: session.id });
           return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
@@ -187,6 +238,9 @@ serve(async (req) => {
         if (boundQuoteData.payment_status === "paid" && notificationLeaseIsActive(boundQuoteData)) {
           throw new Error("Deposit notification delivery is already in progress");
         }
+        const emailRetryWindowExpired = paymentEmailRetryWindowExpired(
+          boundQuoteData.notification_email_attempted_at,
+        );
 
         const paidQuoteData = {
           ...boundQuoteData,
@@ -202,6 +256,9 @@ serve(async (req) => {
           notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),
+          notification_email_attempted_at: paymentNotificationAttemptedAt(
+            boundQuoteData.notification_email_attempted_at,
+          ),
         };
         const { data: claimedDeposit, error: updateError } = await claimDepositAfterValidation(
           depositPreclaimInput,
@@ -242,6 +299,35 @@ serve(async (req) => {
           throw new Error("Deposit notification lease could not be atomically claimed");
         }
         logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id });
+
+        if (emailRetryWindowExpired) {
+          const { data: expiredRetryUpdate, error: expiredRetryError } = await supabase
+            .from("customer_quotes")
+            .update({
+              quote_data: {
+                ...paidQuoteData,
+                notification_status: "manual_follow_up",
+                notification_completed_at: new Date().toISOString(),
+                notification_lease_expires_at: null,
+                notification_error: "Provider idempotency retry window expired",
+              },
+            })
+            .eq("id", claimedDeposit.id)
+            .contains("quote_data", {
+              notification_status: "processing",
+              notification_event_id: event.id,
+            })
+            .select("id")
+            .maybeSingle();
+          if (expiredRetryError || !expiredRetryUpdate) {
+            throw new Error(`Could not record expired notification retry: ${expiredRetryError?.message || "claim lost"}`);
+          }
+          logStep("Deposit notification retry requires manual follow-up", { sessionId: session.id });
+          return new Response(JSON.stringify({ received: true, processed: true, manualFollowUp: true }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            status: 200,
+          });
+        }
 
         // Update saved_quotes record with deposit confirmation
         if (savedQuoteId && boundSavedQuote) {
@@ -289,61 +375,17 @@ serve(async (req) => {
           logStep("ERROR: Deposit confirmation email threw", { error: e?.message });
         }
 
-        // Safety-net admin SMS if confirmation email failed
-        if (emailFailed) {
-          try {
-            await supabase.functions.invoke("send-sms", {
-              body: {
-                to: "admin",
-                message: `Deposit email FAILED for ${customerEmail || "(no email)"} - follow up manually`,
-                messageType: "hot_lead",
-              },
-            });
-          } catch (e: any) {
-            logStep("WARNING: Admin email-failure SMS failed", { error: e?.message });
-          }
-        }
-
-        // Customer SMS confirmation
-        if (customerPhone) {
-          try {
-            await supabase.functions.invoke("send-sms", {
-              body: {
-                to: customerPhone,
-                message: `Harris Boat Works: deposit received for your ${motorLabel}. We'll call you to confirm details and pickup. Questions? (905) 342-2153`,
-                messageType: "quote_confirmation",
-                customerName,
-              },
-            });
-            logStep("Customer SMS confirmation sent");
-          } catch (e: any) {
-            logStep("WARNING: Customer SMS failed", { error: e?.message });
-          }
-        }
-
-        // Admin SMS notification
-        try {
-          await supabase.functions.invoke("send-sms", {
-            body: {
-              to: "admin",
-              message: `Deposit paid: ${customerName}, ${motorLabel}, $${depositAmount}`,
-              messageType: "hot_lead",
-            },
-          });
-        } catch (e: any) {
-          logStep("WARNING: Admin deposit SMS failed", { error: e?.message });
-        }
-
+        const completedDepositNotification = {
+          ...paidQuoteData,
+          notification_status: emailFailed ? "manual_follow_up" : "delivered",
+          notification_completed_at: new Date().toISOString(),
+          notification_lease_expires_at: null,
+          notification_sms_status: "attempting",
+          notification_sms_attempted_at: new Date().toISOString(),
+        };
         const { data: notificationUpdate, error: notificationUpdateError } = await supabase
           .from("customer_quotes")
-          .update({
-            quote_data: {
-              ...paidQuoteData,
-              notification_status: emailFailed ? "manual_follow_up" : "delivered",
-              notification_completed_at: new Date().toISOString(),
-              notification_lease_expires_at: null,
-            },
-          })
+          .update({ quote_data: completedDepositNotification })
           .eq("id", claimedDeposit.id)
           .contains("quote_data", {
             notification_status: "processing",
@@ -353,6 +395,78 @@ serve(async (req) => {
           .maybeSingle();
         if (notificationUpdateError || !notificationUpdate) {
           throw new Error(`Could not record notification outcome: ${notificationUpdateError?.message || "claim lost"}`);
+        }
+
+        // SMS is secondary and begins only after the durable email outcome. A
+        // webhook replay cannot repeat it. If execution stops mid-send, the
+        // durable "attempting" state requires review instead of an unsafe retry.
+        let smsFailed = false;
+        if (emailFailed) {
+          try {
+            const { error: failureSmsError } = await supabase.functions.invoke("send-sms", {
+              body: {
+                to: "admin",
+                message: `Deposit email FAILED for ${customerEmail || "(no email)"} - follow up manually`,
+                messageType: "hot_lead",
+              },
+            });
+            if (failureSmsError) throw failureSmsError;
+          } catch (e: any) {
+            smsFailed = true;
+            logStep("WARNING: Admin email-failure SMS failed", { error: e?.message });
+          }
+        }
+
+        if (customerPhone) {
+          try {
+            const { error: customerSmsError } = await supabase.functions.invoke("send-sms", {
+              body: {
+                to: customerPhone,
+                message: `Harris Boat Works: deposit received for your ${motorLabel}. We'll call you to confirm details and pickup. Questions? (905) 342-2153`,
+                messageType: "quote_confirmation",
+                customerName,
+              },
+            });
+            if (customerSmsError) throw customerSmsError;
+            logStep("Customer SMS confirmation sent");
+          } catch (e: any) {
+            smsFailed = true;
+            logStep("WARNING: Customer SMS failed", { error: e?.message });
+          }
+        }
+
+        try {
+          const { error: adminSmsError } = await supabase.functions.invoke("send-sms", {
+            body: {
+              to: "admin",
+              message: `Deposit paid: ${customerName}, ${motorLabel}, $${depositAmount}`,
+              messageType: "hot_lead",
+            },
+          });
+          if (adminSmsError) throw adminSmsError;
+        } catch (e: any) {
+          smsFailed = true;
+          logStep("WARNING: Admin deposit SMS failed", { error: e?.message });
+        }
+
+        const { data: smsOutcome, error: smsOutcomeError } = await supabase
+          .from("customer_quotes")
+          .update({
+            quote_data: {
+              ...completedDepositNotification,
+              notification_sms_status: smsFailed ? "partial_failure" : "delivered",
+              notification_sms_completed_at: new Date().toISOString(),
+            },
+          })
+          .eq("id", claimedDeposit.id)
+          .contains("quote_data", {
+            notification_event_id: event.id,
+            notification_sms_status: "attempting",
+          })
+          .select("id")
+          .maybeSingle();
+        if (smsOutcomeError || !smsOutcome) {
+          throw new Error(`Could not record deposit SMS outcome: ${smsOutcomeError?.message || "claim lost"}`);
         }
       } else if (session.metadata?.payment_type === "quote") {
         // Quote-path payment: mark quote paid and notify admins
@@ -372,6 +486,43 @@ serve(async (req) => {
         }
 
         const existingQuoteData = quoteRow.quote_data || {};
+        if (
+          existingQuoteData.payment_status === "paid"
+          && paymentSmsAttemptIsActive(
+            existingQuoteData.notification_sms_status,
+            existingQuoteData.notification_sms_attempted_at,
+          )
+        ) {
+          throw new Error("Quote SMS delivery is already in progress");
+        }
+        if (existingQuoteData.payment_status === "paid" && notificationSmsOutcomeAmbiguous(existingQuoteData)) {
+          const { data: ambiguousQuoteSms, error: ambiguousQuoteSmsError } = await supabase
+            .from("quotes")
+            .update({
+              quote_data: {
+                ...existingQuoteData,
+                notification_status: "manual_follow_up",
+                notification_sms_status: "manual_follow_up",
+                notification_sms_completed_at: new Date().toISOString(),
+                notification_error: "SMS outcome unknown after interrupted delivery",
+              },
+            })
+            .eq("id", quoteRow.id)
+            .contains("quote_data", {
+              notification_status: existingQuoteData.notification_status,
+              notification_sms_status: "attempting",
+            })
+            .select("id")
+            .maybeSingle();
+          if (ambiguousQuoteSmsError || !ambiguousQuoteSms) {
+            throw new Error(`Could not flag ambiguous quote SMS outcome: ${ambiguousQuoteSmsError?.message || "claim lost"}`);
+          }
+          logStep("Quote SMS outcome requires manual follow-up", { sessionId: session.id });
+          return new Response(JSON.stringify({ received: true, processed: true, manualFollowUp: true }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            status: 200,
+          });
+        }
         if (existingQuoteData.payment_status === "paid" && notificationsComplete(existingQuoteData)) {
           logStep("Quote session already processed", { sessionId: session.id });
           return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
@@ -382,6 +533,9 @@ serve(async (req) => {
         if (existingQuoteData.payment_status === "paid" && notificationLeaseIsActive(existingQuoteData)) {
           throw new Error("Quote notification delivery is already in progress");
         }
+        const quoteEmailRetryWindowExpired = paymentEmailRetryWindowExpired(
+          existingQuoteData.notification_email_attempted_at,
+        );
 
         const paidQuoteData = {
           ...existingQuoteData,
@@ -391,6 +545,9 @@ serve(async (req) => {
           notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),
+          notification_email_attempted_at: paymentNotificationAttemptedAt(
+            existingQuoteData.notification_email_attempted_at,
+          ),
         };
         let quoteClaimQuery = supabase
           .from("quotes")
@@ -425,11 +582,86 @@ serve(async (req) => {
           throw new Error("Quote notification lease could not be atomically claimed");
         }
 
+        if (quoteEmailRetryWindowExpired) {
+          const { data: expiredQuoteRetry, error: expiredQuoteRetryError } = await supabase
+            .from("quotes")
+            .update({
+              quote_data: {
+                ...paidQuoteData,
+                notification_status: "manual_follow_up",
+                notification_completed_at: new Date().toISOString(),
+                notification_lease_expires_at: null,
+                notification_error: "Provider idempotency retry window expired",
+              },
+            })
+            .eq("id", quoteRow.id)
+            .contains("quote_data", {
+              notification_status: "processing",
+              notification_event_id: event.id,
+            })
+            .select("id")
+            .maybeSingle();
+          if (expiredQuoteRetryError || !expiredQuoteRetry) {
+            throw new Error(`Could not record expired quote notification retry: ${expiredQuoteRetryError?.message || "claim lost"}`);
+          }
+          logStep("Quote notification retry requires manual follow-up", { sessionId: session.id });
+          return new Response(JSON.stringify({ received: true, processed: true, manualFollowUp: true }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            status: 200,
+          });
+        }
+
         const customerName = quoteRow.customer_name || "Customer";
         const motorLabel = quoteRow.motor_model || "Mercury motor";
         logStep("Quote marked paid", { quoteId: quoteRow.id, customerEmail, amountTotal });
 
-        // Admin SMS
+        // Admin email notification (reuse deposit confirmation function in adminOnly mode)
+        let quoteEmailFailed = false;
+        try {
+          const { error: quoteEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
+            body: {
+              customerEmail: "",
+              customerName,
+              customerPhone: quoteRow.customer_phone || "",
+              depositAmount: amountTotal,
+              paymentId: typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id,
+              motorInfo: { model: motorLabel, paymentType: "quote", customerEmail },
+              sendAdminNotification: true,
+              adminOnly: true,
+              quotePaymentSessionId: session.id,
+              notificationTimestamp: paidQuoteData.notification_email_attempted_at,
+            },
+          });
+          if (quoteEmailError) throw quoteEmailError;
+        } catch (e: any) {
+          quoteEmailFailed = true;
+          logStep("WARNING: Admin quote-payment email failed", { error: e?.message });
+        }
+
+        const completedQuoteNotification = {
+          ...paidQuoteData,
+          notification_status: quoteEmailFailed ? "manual_follow_up" : "delivered",
+          notification_completed_at: new Date().toISOString(),
+          notification_lease_expires_at: null,
+          notification_sms_status: "attempting",
+          notification_sms_attempted_at: new Date().toISOString(),
+        };
+        const { data: quoteNotificationUpdate, error: quoteNotificationUpdateError } = await supabase
+          .from("quotes")
+          .update({ quote_data: completedQuoteNotification })
+          .eq("id", quoteRow.id)
+          .contains("quote_data", {
+            notification_status: "processing",
+            notification_event_id: event.id,
+          })
+          .select("id")
+          .maybeSingle();
+        if (quoteNotificationUpdateError || !quoteNotificationUpdate) {
+          throw new Error(`Could not record quote notification outcome: ${quoteNotificationUpdateError?.message || "claim lost"}`);
+        }
+
+        // As with deposits, the secondary SMS runs only after the durable
+        // email outcome so a stale webhook lease cannot repeat it.
         let quoteSmsFailed = false;
         try {
           const { error: quoteSmsError } = await supabase.functions.invoke("send-sms", {
@@ -445,46 +677,24 @@ serve(async (req) => {
           logStep("WARNING: Admin quote-payment SMS failed", { error: e?.message });
         }
 
-        // Admin email notification (reuse deposit confirmation function in adminOnly mode)
-        let quoteEmailFailed = false;
-        try {
-          const { error: quoteEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
-            body: {
-              customerEmail: "",
-              customerName,
-              customerPhone: quoteRow.customer_phone || "",
-              depositAmount: amountTotal,
-              paymentId: typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id,
-              motorInfo: { model: motorLabel, paymentType: "quote", customerEmail },
-              sendAdminNotification: true,
-              adminOnly: true,
-            },
-          });
-          if (quoteEmailError) throw quoteEmailError;
-        } catch (e: any) {
-          quoteEmailFailed = true;
-          logStep("WARNING: Admin quote-payment email failed", { error: e?.message });
-        }
-
-        const { data: quoteNotificationUpdate, error: quoteNotificationUpdateError } = await supabase
+        const { data: quoteSmsOutcome, error: quoteSmsOutcomeError } = await supabase
           .from("quotes")
           .update({
             quote_data: {
-              ...paidQuoteData,
-              notification_status: quoteSmsFailed && quoteEmailFailed ? "manual_follow_up" : "delivered",
-              notification_completed_at: new Date().toISOString(),
-              notification_lease_expires_at: null,
+              ...completedQuoteNotification,
+              notification_sms_status: quoteSmsFailed ? "partial_failure" : "delivered",
+              notification_sms_completed_at: new Date().toISOString(),
             },
           })
           .eq("id", quoteRow.id)
           .contains("quote_data", {
-            notification_status: "processing",
             notification_event_id: event.id,
+            notification_sms_status: "attempting",
           })
           .select("id")
           .maybeSingle();
-        if (quoteNotificationUpdateError || !quoteNotificationUpdate) {
-          throw new Error(`Could not record quote notification outcome: ${quoteNotificationUpdateError?.message || "claim lost"}`);
+        if (quoteSmsOutcomeError || !quoteSmsOutcome) {
+          throw new Error(`Could not record quote SMS outcome: ${quoteSmsOutcomeError?.message || "claim lost"}`);
         }
       }
 
