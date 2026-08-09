@@ -1,153 +1,161 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  handleServiceRoleRequest,
+  validateNotificationPayload,
+} from "../_shared/send-notification-policy.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+const jsonResponse = (
+  body: Record<string, unknown>,
+  status: number,
+  headers: Record<string, string> = {},
+) => new Response(JSON.stringify(body), {
+  status,
+  headers: { 'Content-Type': 'application/json', ...headers },
+});
 
-serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders })
+const processNotification = async (req: Request): Promise<Response> => {
+  if (req.method !== 'POST') {
+    return jsonResponse({ error: 'Method not allowed' }, 405, { Allow: 'POST' });
   }
 
+  let rawPayload: unknown;
   try {
-    const supabaseClient = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    )
+    rawPayload = await req.json();
+  } catch {
+    return jsonResponse({ error: 'Request body must be valid JSON' }, 400);
+  }
 
-    const { user_id, title, message, type = 'info', metadata = {} } = await req.json()
+  const payload = validateNotificationPayload(rawPayload);
+  if (!payload.ok) {
+    return jsonResponse({ error: payload.error }, 400);
+  }
 
-    if (!user_id || !message) {
-      return new Response(
-        JSON.stringify({ error: 'user_id and message are required' }),
-        { status: 400, headers: corsHeaders }
-      )
-    }
+  const { user_id, title, message, type, metadata } = payload.value;
+  const supabaseClient = createClient(
+    Deno.env.get('SUPABASE_URL') ?? '',
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
+  );
 
-    // Get user preferences
-    const { data: profile } = await supabaseClient
-      .from('profiles')
-      .select('*')
-      .eq('user_id', user_id)
-      .single()
+  // Get user preferences.
+  const { data: profile } = await supabaseClient
+    .from('profiles')
+    .select('*')
+    .eq('user_id', user_id)
+    .single();
 
-    if (!profile) {
-      return new Response(
-        JSON.stringify({ error: 'User profile not found' }),
-        { status: 404, headers: corsHeaders }
-      )
-    }
+  if (!profile) {
+    return jsonResponse({ error: 'User profile not found' }, 404);
+  }
 
-    // Create in-app notification
-    const { data: notification, error: notificationError } = await supabaseClient
-      .from('notifications')
-      .insert({
-        user_id,
-        title,
-        message,
-        type,
-        metadata,
-        channel: 'in_app'
-      })
-      .select()
-      .single()
+  // Create the in-app notification for the trusted caller's chosen recipient.
+  const { data: notification, error: notificationError } = await supabaseClient
+    .from('notifications')
+    .insert({
+      user_id,
+      title,
+      message,
+      type,
+      metadata,
+      channel: 'in_app',
+    })
+    .select()
+    .single();
 
-    if (notificationError) {
-      console.error('Failed to create notification:', notificationError)
-      return new Response(
-        JSON.stringify({ error: 'Failed to create notification' }),
-        { status: 500, headers: corsHeaders }
-      )
-    }
+  if (notificationError) {
+    console.error('Failed to create notification:', notificationError);
+    return jsonResponse({ error: 'Failed to create notification' }, 500);
+  }
 
-    let smsResult = null
+  let smsResult = null;
 
-    // Send SMS if enabled and within allowed hours
-    if (profile.notification_sms_enabled && profile.phone) {
-      const now = new Date()
-      const currentTime = now.toTimeString().slice(0, 5)
-      const quietStart = profile.quiet_hours_start
-      const quietEnd = profile.quiet_hours_end
-      
-      const isQuietTime = quietStart <= quietEnd 
-        ? currentTime >= quietStart && currentTime <= quietEnd
-        : currentTime >= quietStart || currentTime <= quietEnd
+  // Send SMS if enabled and within allowed hours.
+  if (profile.notification_sms_enabled && profile.phone) {
+    const now = new Date();
+    const currentTime = now.toTimeString().slice(0, 5);
+    const quietStart = profile.quiet_hours_start;
+    const quietEnd = profile.quiet_hours_end;
 
-      if (!isQuietTime && Deno.env.get('NOTIFICATIONS_SMS_ENABLED') === 'true') {
-        try {
-          const twilioAccountSid = Deno.env.get('TWILIO_ACCOUNT_SID')
-          const twilioAuthToken = Deno.env.get('TWILIO_AUTH_TOKEN')
-          const twilioFromNumber = Deno.env.get('TWILIO_FROM_NUMBER')
+    const isQuietTime = quietStart <= quietEnd
+      ? currentTime >= quietStart && currentTime <= quietEnd
+      : currentTime >= quietStart || currentTime <= quietEnd;
 
-          if (twilioAccountSid && twilioAuthToken && twilioFromNumber) {
-            const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${twilioAccountSid}/Messages.json`
-            
-            const formData = new URLSearchParams()
-            formData.append('From', twilioFromNumber)
-            formData.append('To', profile.phone)
-            formData.append('Body', `${title ? title + ': ' : ''}${message}`)
+    if (!isQuietTime && Deno.env.get('NOTIFICATIONS_SMS_ENABLED') === 'true') {
+      try {
+        const twilioAccountSid = Deno.env.get('TWILIO_ACCOUNT_SID');
+        const twilioAuthToken = Deno.env.get('TWILIO_AUTH_TOKEN');
+        const twilioFromNumber = Deno.env.get('TWILIO_FROM_NUMBER');
 
-            const twilioResponse = await fetch(twilioUrl, {
-              method: 'POST',
-              headers: {
-                'Authorization': `Basic ${btoa(`${twilioAccountSid}:${twilioAuthToken}`)}`,
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              body: formData
-            })
+        if (twilioAccountSid && twilioAuthToken && twilioFromNumber) {
+          const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${twilioAccountSid}/Messages.json`;
 
-            const twilioResult = await twilioResponse.json()
-            
-            // Log SMS attempt
-            await supabaseClient
-              .from('sms_logs')
-              .insert({
-                to_phone: profile.phone,
-                message: `${title ? title + ': ' : ''}${message}`,
-                status: twilioResult.status || 'sent',
-                error: twilioResult.error_message || null,
-                notification_id: notification.id
-              })
+          const smsMessage = `${title ? `${title}: ` : ''}${message}`;
+          const formData = new URLSearchParams();
+          formData.append('From', twilioFromNumber);
+          formData.append('To', profile.phone);
+          formData.append('Body', smsMessage);
 
-            smsResult = {
-              sent: twilioResponse.ok,
-              status: twilioResult.status,
-              sid: twilioResult.sid
-            }
-          }
-        } catch (smsError) {
-          console.error('SMS sending failed:', smsError)
-          
-          // Log failed SMS attempt
+          const twilioResponse = await fetch(twilioUrl, {
+            method: 'POST',
+            headers: {
+              Authorization: `Basic ${btoa(`${twilioAccountSid}:${twilioAuthToken}`)}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData,
+          });
+
+          const twilioResult = await twilioResponse.json();
+
+          // Log SMS attempt.
           await supabaseClient
             .from('sms_logs')
             .insert({
               to_phone: profile.phone,
-              message: `${title ? title + ': ' : ''}${message}`,
-              status: 'failed',
-              error: smsError.message,
-              notification_id: notification.id
-            })
+              message: smsMessage,
+              status: twilioResult.status || 'sent',
+              error: twilioResult.error_message || null,
+              notification_id: notification.id,
+            });
+
+          smsResult = {
+            sent: twilioResponse.ok,
+            status: twilioResult.status,
+            sid: twilioResult.sid,
+          };
         }
+      } catch (smsError) {
+        console.error('SMS sending failed:', smsError);
+
+        // Log failed SMS attempt.
+        await supabaseClient
+          .from('sms_logs')
+          .insert({
+            to_phone: profile.phone,
+            message: `${title ? `${title}: ` : ''}${message}`,
+            status: 'failed',
+            error: smsError instanceof Error ? smsError.message : 'Unknown SMS error',
+            notification_id: notification.id,
+          });
       }
     }
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        notification,
-        sms: smsResult
-      }),
-      { status: 200, headers: corsHeaders }
-    )
-
-  } catch (error) {
-    console.error('Error in send-notification:', error)
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      { status: 500, headers: corsHeaders }
-    )
   }
-})
+
+  return jsonResponse({
+    success: true,
+    notification,
+    sms: smsResult,
+  }, 200);
+};
+
+serve((req) => handleServiceRoleRequest(
+  req,
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'),
+  async () => {
+    try {
+      return await processNotification(req);
+    } catch (error) {
+      console.error('Error in send-notification:', error);
+      return jsonResponse({ error: 'Failed to send notification' }, 500);
+    }
+  },
+));
