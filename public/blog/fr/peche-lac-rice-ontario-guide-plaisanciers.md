@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works.
 
-**Category:** Destination  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-08-02  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
+**Catégorie :** Destination\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
 ### Réponse rapide
 
@@ -161,10 +161,10 @@ Doré jaune, achigan (grande et petite bouche), maskinongé.
 
 Environ 1 h 30 par la 401 Est puis la 115 Nord.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

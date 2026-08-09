@@ -23,11 +23,11 @@ revenue_driver: service
 
 > Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux.
 
-**Category:** Entretien  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 10 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
+**Catégorie :** Entretien\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 10 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
 ## Réponse rapide
 
@@ -196,10 +196,10 @@ Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir u
 
 100 km/h sur la plupart des autoroutes. Les pneus de remorque ont souvent une vitesse cotée plus basse (typiquement 105 km/h / 65 mi/h). Ne forcez pas votre chance, la chaleur s'accumule rapidement aux vitesses de remorquage en été.
 
-## Next steps
+## Prochaines étapes
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial.
 
-**Category:** Guide d'achat  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 10 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 10 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 
 ## Gamme de hors-bord Mercury 2026 : ce que les plaisanciers ontariens doivent vraiment savoir
 
@@ -142,10 +142,10 @@ Un moteur principal dans la plage FourStroke 60 à 115 HP jumelé à un Mercury 
 
 Commencez avec le HP maximum de la plaque de capacité de votre coque. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

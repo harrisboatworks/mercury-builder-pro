@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation et prix , tout ce que vous devez savoir pour.
 
-**Category:** Comparaison  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-08-08  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison
+**Catégorie :** Comparaison\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison
 
 ### Réponse rapide
 
@@ -182,10 +182,10 @@ Non. Les blocs sont différents. Mais les deux sont dans la famille Mercury Four
 
 Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps , pas selon la sortie idéale une fois par été.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

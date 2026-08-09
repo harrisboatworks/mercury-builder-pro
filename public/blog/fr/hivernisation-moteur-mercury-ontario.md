@@ -23,11 +23,11 @@ revenue_driver: service
 
 > Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne.
 
-**Category:** Entretien  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-06-19  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
+**Catégorie :** Entretien\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-06-19\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 
 ### Réponse rapide
 
@@ -144,10 +144,10 @@ Idéalement en septembre ou début octobre. Les places se remplissent vite aprè
 
 Oui. Nous gérons 311 contrats d'entreposage par année , intérieur et extérieur.
 
-## Next steps
+## Prochaines étapes
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

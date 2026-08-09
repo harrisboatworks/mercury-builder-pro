@@ -23,11 +23,11 @@ revenue_driver: repower
 
 > Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et...
 
-**Category:** Réglementation  
-**Published:** 2026-04-12  
-**Dernière révision:** 2026-04-12  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
+**Catégorie :** Réglementation\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-04-12\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
 ### Réponse rapide
 
@@ -167,10 +167,10 @@ Non , seulement pour les embarcations motorisées. Les kayaks, canots et planche
 
 Non. La CCEP concerne la compétence du conducteur; l'immatriculation (licence de plaisance) concerne l'embarcation elle-même.
 
-## Next steps
+## Prochaines étapes
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 

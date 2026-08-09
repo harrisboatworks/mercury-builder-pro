@@ -23,11 +23,11 @@ revenue_driver: service
 
 > Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines...
 
-**Category:** Dépannage  
-**Published:** 2026-05-13  
-**Dernière révision:** 2026-08-08  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
+**Catégorie :** Dépannage\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
 ## Réponse rapide
 
@@ -186,10 +186,10 @@ Pas directement, la surchauffe est un problème du côté refroidissement, pas d
 
 Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur.
 
-## Next steps
+## Prochaines étapes
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
