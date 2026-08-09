@@ -15518,7 +15518,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
       },
       {
         question: 'What\'s the cost of a typical Lake Ontario salmon repower?',
-        answer: 'As of August 8, 2026, the lowest listed 250 to 300 HP V8 main-motor price plus a remote 15 HP ProKicker totals $41,921 CAD before rigging, prop, and installation. Check the [live pricing reference](/pricing-reference), then build a configured quote for the actual 22 to 25 ft setup.'
+        answer: 'As of August 8, 2026, the lowest listed 250 to 300 HP V8 main-motor price plus a remote 15 HP ProKicker totals $40,348 CAD before rigging, prop, and installation. That is the listed 250ELPT ProXS at $34,848 plus the 15ELPT ProKicker FourStroke at $5,500. Check the [live pricing reference](/pricing-reference), then build a configured quote for the actual 22 to 25 ft setup.'
       },
       {
         question: 'Should I consider a sport fisher hull for Lake Ontario?',
