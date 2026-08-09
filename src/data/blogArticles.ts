@@ -3620,7 +3620,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'Mercury DTS throttle and VesselView display on a boat helm, illustrating the digital controls discussed in the guide.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
@@ -3630,7 +3630,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "Does my motor already have DTS without me knowing?", answer: "Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. Email a photo of your helm control to info@harrisboatworks.ca for confirmation." },
       { question: "Can I really not bolt DTS onto my mechanical Mercury?", answer: "Not in a way that makes financial sense for most customers. DTS-equipped motors have different internal components (electronic throttle body, electronic shift actuator, dedicated harness, SmartCraft-compatible ECU). Converting a mechanical motor that wasn't built with these means replacing more parts than the motor is usually worth. The honest path is to repower into a DTS-equipped motor." },
       { question: "What does a DTS retrofit cost when it does make sense?", answer: "When your engine is already DTS-capable and you're upgrading just the helm side (controls, harness, gateway, display), expect a four-figure ticket including parts and labor. Exact cost depends on engine count, helm complexity, and existing wiring. We quote both retrofit and repower paths at HBW so you can compare side by side." },
-      { question: "Do I need DTS for Mercury joystick piloting?", answer: "Yes. Mercury Joystick Piloting requires twin or more outboards, all DTS-equipped, plus the joystick module, SmartCraft gateway, and compatible VesselView display. Single-engine boats are not eligible for joystick, regardless of motor or HP. If joystick is your real goal, DTS is just the prerequisite." },
+      { question: "Do I need DTS for Mercury joystick piloting?", answer: "Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting." },
       { question: "Will DTS make my boat faster or more fuel-efficient?", answer: "No. DTS is drive-by-wire. It changes how throttle and shift commands travel from the helm to the engine, but it doesn't change combustion, peak HP, or fuel burn. Same motor, same performance, smoother control feel. The real benefits are precision, multi-engine sync, and joystick eligibility, not raw numbers." },
       { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most current Verado V8/V10/V12, Pro XS 150+, and FourStroke 200+ models DTS-equipped from factory. Under 75 HP, mechanical controls remain the standard. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
       { question: "How do I check if my exact motor supports DTS?", answer: "Email the motor serial number from your cowl plate to info@harrisboatworks.ca. We'll cross-reference it against Mercury's records and confirm whether your specific motor is DTS-capable, already DTS-equipped, or not eligible." },
@@ -3739,14 +3739,16 @@ For the official source, Mercury's product pages at [mercurymarine.com](https://
 
 Roughly half the customers who call us asking about DTS retrofit are actually asking about joystick piloting, even if they don't say it that way. They want the ability to slide the boat sideways at the dock or hold position with one hand.
 
-Joystick piloting (Mercury Joystick Piloting for Outboards) requires:
+Conventional Mercury Joystick Piloting for Outboards requires:
 
-- Two or more Mercury outboards (single-engine boats are not eligible, period)
+- Two or more Mercury outboards
 - All engines DTS-equipped
 - Specific helm hardware (joystick module, SmartCraft gateway, compatible VesselView display)
 - Proper boat geometry (motors must be far enough apart for vectoring to work)
 
-If you're calling about DTS retrofit and you have a single engine, joystick isn't on the table. Stop the retrofit math right there. DTS alone for single-engine boats rarely justifies the cost.
+That conventional package is not the whole lineup. Mercury also lists Joystick Steering for Single-Engine Vessels and [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html). The thruster package is limited to electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster.
+
+If you're calling about a DTS retrofit with one engine, do not assume DTS alone enables joystick. Most single-engine rigs do not qualify, and the package-specific exceptions require more than a control-box change. We confirm the exact engine, steering, controls, and thruster package before quoting.
 
 If you have twins or triples, joystick is the real eligibility question. DTS is just the prerequisite.
 
@@ -3786,7 +3788,7 @@ leftLabel: Repower territory
 leftCriteria:
   - Mechanical motor 5+ years old
   - High hours on the existing engine
-  - You want joystick (requires DTS-equipped twins or more)
+  - You want conventional multi-engine joystick (requires DTS-equipped twins or more)
   - Retrofit cost is close to a new motor
 leftOutcome: New DTS-equipped motor is the right answer
 leftVariant: alternative
@@ -9226,21 +9228,23 @@ If you are buying a 25 to 28 ft center console in Ontario and you plan to run it
 
 **2. How far offshore you run in worst-case conditions.** If your longest trip is 5 to 8 km offshore on Lake Ontario on a calm summer day, a single is fine. If you are running 25 to 30 km offshore in October targeting salmon, a twin gives you get-home redundancy when one motor quits far from shore.
 
-**3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. It requires twin engines minimum.
+**3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. The conventional outboard package uses two or more DTS-equipped engines. Mercury also offers package-specific single-engine systems, but most single-engine rigs do not qualify. The available package has to be confirmed against the exact engine, steering, controls, and hull.
 
 The cost difference is real. A twin-Mercury 250 Pro XS V8 setup gives you 500 total HP and costs roughly 1.8 to 1.9 times as much as a single 300 Pro XS V8. Twins are not an equivalent-horsepower alternative; they are a redundancy and power upgrade. For most Ontario trailerable buyers, single is the right answer.
 
 ## Mercury Joystick Piloting: what it actually does
 
-Joystick Piloting controls thrust direction across both motors, letting you walk the boat sideways into a slip at low speed without using the wheel. In practice, it is genuinely useful for:
+Conventional Joystick Piloting controls thrust direction across multiple motors, letting you walk the boat sideways into a slip at low speed without using the wheel. In practice, it is genuinely useful for:
 - Tight marina slips with crosswind
 - Docking single-handed
 - Trent-Severn locks where you are holding position against current
 
-**Requirements:**
+**Conventional multi-engine package requirements:**
 - Twin or more matched Mercury outboards (same family, same HP, same generation where possible)
 - Electronic shift and throttle (no mechanical cable)
 - Compatible Mercury motors from 2014 onward
+
+Single-engine joystick is a narrow, package-specific exception, not a general feature of single-engine Mercury rigs. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) requires an electric-steering Verado or SeaPro V8, V10, or V12 outboard from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Mercury also lists Joystick Steering for Single-Engine Vessels as a separate system. Most single-engine center consoles do not qualify, so confirm the complete package before treating joystick as part of the repower plan.
 
 **Cost:** Roughly $4,000 to $7,000 CAD added to a twin rigging, depending on motor generation and existing controls.
 
@@ -9286,7 +9290,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What is the difference between Mercury Pro XS and Verado for a center console?', answer: 'Pro XS is Mercury performance-fishing motor, more aggressive hole-shot, optimized for hard-use fishing, louder at cruise. Verado is the premium outboard, quieter, smoother at cruise, more refined ride, and compatible with Joystick Piloting. For a fishing-focused trailerable Ontario center console, Pro XS is the right answer for most buyers.' },
       { question: 'Can I run mixed motor sizes on a twin center console setup?', answer: 'No. Mercury twin-engine architecture requires matched motors, same family, same HP, same generation where possible.' },
       { question: 'How much does a twin Mercury outboard setup cost in Ontario?', answer: 'As a planning reference: a twin Mercury 250 Pro XS V8 setup is roughly $69,700 to $75,500 CAD for the pair depending on shaft length and controls (a 250ELPT Pro XS is $34,848 each on our current pricing reference), plus $8,000 to $15,000 for rigging, totalling approximately $78,000 to $90,000 installed before HST. Adding Joystick Piloting: another $4,000 to $7,000. Get a current quote at mercuryrepower.ca.' },
-      { question: 'What is Mercury Joystick Piloting, and do I need it on a center console?', answer: 'Joystick Piloting uses electronic shift and throttle across both motors to let you move the boat sideways at low speed, useful for docking in tight slips. It requires twin matched Mercury motors from 2014 onward. Most buyers do not need it, but if precise docking matters to you and you are already buying a twin setup, it is a meaningful quality-of-life upgrade.' },
+      { question: 'What is Mercury Joystick Piloting, and do I need it on a center console?', answer: 'Conventional Joystick Piloting uses electronic shift and throttle across multiple motors to move the boat sideways at low speed. Mercury also offers package-specific single-engine systems, but most single-engine rigs do not qualify. Joystick Piloting for Single-Engine Outboards with Thruster requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and hull before planning around joystick.' },
       { question: 'Is a center console a good choice for Lake Ontario salmon fishing?', answer: 'Yes, for the right hull size. A 20 to 24 ft trailerable center console is one of the most practical platforms for Lake Ontario salmon. A 22-foot hull with a 200 to 250 HP V8 is the most capable all-around trailerable salmon setup in Ontario.' },
     ],
   },
@@ -24275,7 +24279,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-08',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -24462,7 +24466,7 @@ Technique is the foundation. But some equipment makes a real difference.
 
 **Mercury Command Thrust gearcase:** Purpose-built for pontoons. Better low-RPM thrust, easier to hold position in wind. If every docking feels like a workout, this addresses the actual cause.
 
-**Mercury Joystick Piloting (twin-engine setups):** Point the joystick where you want the boat to go. Worth every dollar if your setup qualifies.
+**Mercury Joystick Piloting (eligible packages):** Point the joystick where you want the boat to go. Conventional outboard packages use multiple DTS-equipped engines. Mercury also offers [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) for an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster. Most single-engine rigs do not qualify, so the exact engine, steering, controls, and thruster package must be confirmed.
 
 Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or fishing boat. For that setup, technique plus a Command Thrust gearcase covers 95% of docking situations.
 
