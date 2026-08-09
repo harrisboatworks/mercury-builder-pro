@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import {
   fetchValidatedQuotePdf,
+  normalizeQuoteUrls,
   validateQuotePageUrl,
   validateQuotePdfUrl,
 } from "../../supabase/functions/send-quote-email/attachment-policy";
@@ -46,6 +47,18 @@ describe("quote email attachment URL policy", () => {
     expect(() => validateQuotePageUrl(QUOTE_PAGE_URL.replace("www.mercuryrepower.ca", "example.com"))).toThrow();
     expect(() => validateQuotePageUrl(`${QUOTE_PAGE_URL}?redirect=https://example.com`)).toThrow();
     expect(() => validateQuotePageUrl("https://www.mercuryrepower.ca/quote/saved/not-a-uuid")).toThrow();
+  });
+
+  it("reclassifies the legacy admin saved-page pdfUrl without fetching it", () => {
+    expect(normalizeQuoteUrls({
+      pdfUrl: QUOTE_PAGE_URL,
+      supabaseUrl: SUPABASE_URL,
+    })).toEqual({ pdfUrl: undefined, quotePageUrl: QUOTE_PAGE_URL });
+
+    expect(normalizeQuoteUrls({
+      pdfUrl: PDF_URL,
+      supabaseUrl: SUPABASE_URL,
+    })).toEqual({ pdfUrl: PDF_URL, quotePageUrl: undefined });
   });
 });
 

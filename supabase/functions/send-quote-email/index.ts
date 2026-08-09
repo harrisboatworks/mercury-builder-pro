@@ -6,8 +6,7 @@ import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import {
   fetchValidatedQuotePdf,
-  validateQuotePageUrl,
-  validateQuotePdfUrl,
+  normalizeQuoteUrls,
 } from "./attachment-policy.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
@@ -189,14 +188,14 @@ serve(async (req) => {
     const parsedEmailData = validationResult.data;
     let emailData: QuoteEmailRequest;
     try {
+      const normalizedUrls = normalizeQuoteUrls({
+        pdfUrl: parsedEmailData.pdfUrl,
+        quotePageUrl: parsedEmailData.quotePageUrl,
+        supabaseUrl,
+      });
       emailData = {
         ...parsedEmailData,
-        pdfUrl: parsedEmailData.pdfUrl
-          ? validateQuotePdfUrl(parsedEmailData.pdfUrl, supabaseUrl).toString()
-          : undefined,
-        quotePageUrl: parsedEmailData.quotePageUrl
-          ? validateQuotePageUrl(parsedEmailData.quotePageUrl).toString()
-          : undefined,
+        ...normalizedUrls,
       };
     } catch (urlError) {
       return new Response(JSON.stringify({

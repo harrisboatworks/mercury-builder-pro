@@ -53,6 +53,37 @@ export function validateQuotePageUrl(rawUrl: string): URL {
   return url;
 }
 
+export function normalizeQuoteUrls(options: {
+  pdfUrl?: string;
+  quotePageUrl?: string;
+  supabaseUrl: string;
+}): { pdfUrl?: string; quotePageUrl?: string } {
+  const normalizedQuotePageUrl = options.quotePageUrl
+    ? validateQuotePageUrl(options.quotePageUrl).toString()
+    : undefined;
+
+  if (!options.pdfUrl) return { pdfUrl: undefined, quotePageUrl: normalizedQuotePageUrl };
+
+  // Deployment compatibility: the old admin caller mislabeled its canonical
+  // saved-quote page as pdfUrl. Reclassify that exact safe shape without
+  // fetching it so the Edge Function can ship before the frontend change.
+  if (!normalizedQuotePageUrl) {
+    try {
+      return {
+        pdfUrl: undefined,
+        quotePageUrl: validateQuotePageUrl(options.pdfUrl).toString(),
+      };
+    } catch {
+      // A real attachment is validated against the Storage-only policy below.
+    }
+  }
+
+  return {
+    pdfUrl: validateQuotePdfUrl(options.pdfUrl, options.supabaseUrl).toString(),
+    quotePageUrl: normalizedQuotePageUrl,
+  };
+}
+
 function parseContentLength(value: string | null): number | null {
   if (value === null) return null;
   if (!/^\d+$/.test(value)) throw new Error("PDF response has an invalid Content-Length");
