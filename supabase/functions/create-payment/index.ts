@@ -12,7 +12,14 @@ const baseCorsHeaders = {
 const PAYMENT_ORIGINS = new Set([
   "https://www.mercuryrepower.ca",
   "https://mercuryrepower.ca",
+  "https://quote.harrisboatworks.ca",
+  "https://www.mercuryquote.ca",
+  "https://mercuryquote.ca",
 ]);
+
+// Preview/staging hosts (Lovable + Vercel) are also allowed so deposit
+// checkout works outside the primary production domain.
+const PAYMENT_ORIGIN_SUFFIXES = [".lovable.app", ".lovable.dev", ".vercel.app"];
 
 function resolvePaymentOrigin(req: Request): string | null {
   const rawOrigin = req.headers.get("origin");
@@ -21,6 +28,12 @@ function resolvePaymentOrigin(req: Request): string | null {
   try {
     const parsed = new URL(rawOrigin);
     if (PAYMENT_ORIGINS.has(parsed.origin)) return parsed.origin;
+    if (
+      parsed.protocol === "https:"
+      && PAYMENT_ORIGIN_SUFFIXES.some((suffix) => parsed.hostname.endsWith(suffix))
+    ) {
+      return parsed.origin;
+    }
     if (
       parsed.protocol === "http:"
       && (parsed.hostname === "127.0.0.1" || parsed.hostname === "localhost")
