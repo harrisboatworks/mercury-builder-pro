@@ -55,20 +55,14 @@ function pricingFacts(model) {
   };
   const lineup = model.skus.map((sku) => sku.dealer);
   const proXs250 = model.skus.filter((sku) => sku.hp === 250 && /pro\s*xs/i.test(sku.model));
-  const v8Main = model.skus.filter(
-    (sku) =>
-      (sku.hp === 250 || sku.hp === 300) &&
-      /fourstroke/i.test(sku.model) &&
-      !/pro\s*xs/i.test(sku.model) &&
-      !/xxl/i.test(sku.model),
-  );
-  const kicker15 = model.skus.filter((sku) => sku.hp === 15 && /prokicker/i.test(sku.model) && /elpt/i.test(sku.model));
+  const salmonMain = required('250elpt-pro-xs');
+  const salmonKicker = required('15elpt-prokicker-fourstroke');
   return {
     lineupMin: Math.min(...lineup),
     lineupMax: Math.max(...lineup),
     proXs250Min: Math.min(...proXs250.map((sku) => sku.dealer)),
     proXs250Max: Math.max(...proXs250.map((sku) => sku.dealer)),
-    salmonPairFloor: Math.min(...v8Main.map((sku) => sku.dealer)) + Math.min(...kicker15.map((sku) => sku.dealer)),
+    salmonPairFloor: salmonMain.dealer + salmonKicker.dealer,
     mercury115Elpt: required('115elpt-fourstroke'),
   };
 }

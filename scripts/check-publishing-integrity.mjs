@@ -560,6 +560,16 @@ checkSpecRoute('mercury-avator-7-5e-review', (surface, label) => {
 const canonicalMaxProXsHp = Math.max(...skus.filter((sku) => sku.family === 'ProXS').map((sku) => sku.hp));
 check(Number.isFinite(canonicalMaxProXsHp), 'Canonical pricing must contain at least one Pro XS SKU.');
 check(canonicalMaxProXsHp === 300, `Canonical pricing changed the audited Pro XS maximum from 300 HP to ${canonicalMaxProXsHp} HP; re-review the salmon contract.`);
+const salmonMainSku = skus.find((sku) => sku.model === '250ELPT ProXS');
+const salmonKickerSku = skus.find((sku) => sku.model === '15ELPT ProKicker FourStroke');
+check(Boolean(salmonMainSku), 'Canonical pricing is missing the audited 250ELPT ProXS salmon main motor.');
+check(Boolean(salmonKickerSku), 'Canonical pricing is missing the audited 15ELPT ProKicker FourStroke.');
+const salmonPackageTotal = (salmonMainSku?.dealer ?? 0) + (salmonKickerSku?.dealer ?? 0);
+const salmonPackageTotalCad = new Intl.NumberFormat('en-CA', {
+  style: 'currency',
+  currency: 'CAD',
+  maximumFractionDigits: 0,
+}).format(salmonPackageTotal);
 checkSpecRoute('best-mercury-outboard-lake-ontario-salmon-trout', (surface, label) => {
   const proXsClaims = [
     ...surface.matchAll(/\b(\d{2,3})(?:\s*(?:to|[-–])\s*(\d{2,3}))?\s*HP\s+Pro\s*XS\b/gi),
@@ -575,6 +585,14 @@ checkSpecRoute('best-mercury-outboard-lake-ontario-salmon-trout', (surface, labe
       surface.includes('Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker'),
     `${label} must retain the approved salmon recommendation and 15 HP ProKicker outcome.`,
   );
+  check(
+    surface.includes(`totals ${salmonPackageTotalCad} CAD`) &&
+      surface.includes(`250ELPT ProXS at $${salmonMainSku?.dealer.toLocaleString('en-CA')}`) &&
+      surface.includes(`15ELPT ProKicker FourStroke at $${salmonKickerSku?.dealer.toLocaleString('en-CA')}`) &&
+      surface.includes('/pricing-reference'),
+    `${label} must derive the dated salmon package total and component prices from canonical pricing.`,
+  );
+  check(!surface.includes('$41,921'), `${label} revived the stale salmon package total.`);
 });
 
 check(
