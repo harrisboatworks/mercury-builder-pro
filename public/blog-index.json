@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "352af3c37b71ee9f9764",
+  "sourceVersion": "62aad1e9eeaf004f9e74",
   "count": 203,
   "articles": [
     {
@@ -2140,7 +2140,7 @@
       "faqs": [
         {
           "q": "Is Mercury actually better than Yamaha or Honda?",
-          "a": "Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region."
+          "a": "Mechanically, all three brands make reliable modern four-stroke outboards. For Ontario boaters, the practical differences are local dealer access, parts availability and resale demand. Mercury often fits well in our region, but buyers should check support where they boat."
         },
         {
           "q": "Why does HBW sell only Mercury?",
@@ -2309,7 +2309,7 @@
         },
         {
           "q": "Is the PCL update free?",
-          "a": "Yes. Updates to existing licence information (including motor specs after a repower) are free. New licences, renewals, and transfers carry a $24 fee as of December 31, 2025."
+          "a": "Yes. Updates to existing licence information, including motor specs after a repower, are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada may adjust fees for inflation each April 1."
         },
         {
           "q": "Is the PCL the same as my boater licence?",
@@ -2401,7 +2401,7 @@
       "faqs": [
         {
           "q": "Is Mercury better than Yamaha?",
-          "a": "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers."
+          "a": "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury often benefits from dealer density, parts availability and factory relationships with Canadian aluminum boat builders. Check local service access, the exact boat package and resale demand before choosing."
         },
         {
           "q": "Should I switch from Yamaha to Mercury during a repower?",
@@ -2627,7 +2627,7 @@
         },
         {
           "q": "Is Mercury better than Yamaha for fishing boats in Ontario?",
-          "a": "For Ontario freshwater fishing boats, Mercury wins on dealer support and parts availability, especially in the cottage country dealer network. Most Lund, Crestliner, and Princecraft boats come Mercury-rigged from the factory."
+          "a": "For Ontario freshwater fishing boats, Mercury often has practical dealer-support and parts-availability advantages in cottage country. Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and packa…"
         },
         {
           "q": "Is Mercury better than Honda for pontoon boats?",
@@ -4417,7 +4417,7 @@
       "slug": "mercury-dealer-markham-ontario-hbw",
       "title": "Mercury Dealer Markham Ontario HBW",
       "description": "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer markham",
@@ -4449,7 +4449,7 @@
       "slug": "mercury-dealer-richmond-hill-ontario-hbw",
       "title": "Mercury Dealer Richmond Hill HBW",
       "description": "Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer richmond hill",
@@ -4481,7 +4481,7 @@
       "slug": "mercury-dealer-mississauga-ontario-hbw",
       "title": "Mercury Dealer Mississauga HBW",
       "description": "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer mississauga",
@@ -4513,7 +4513,7 @@
       "slug": "mercury-dealer-vaughan-ontario-hbw",
       "title": "Mercury Dealer Vaughan Ontario HBW",
       "description": "Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer vaughan",
@@ -4540,7 +4540,7 @@
       "slug": "mercury-dealer-brampton-ontario-hbw",
       "title": "Mercury Dealer Brampton Ontario HBW",
       "description": "Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer brampton",
@@ -4567,7 +4567,7 @@
       "slug": "mercury-dealer-oakville-ontario-hbw",
       "title": "Mercury Dealer Oakville Ontario HBW",
       "description": "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer oakville",
@@ -4594,7 +4594,7 @@
       "slug": "mercury-dealer-burlington-ontario-hbw",
       "title": "Mercury Dealer Burlington Ontario HBW",
       "description": "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer burlington",
@@ -4653,7 +4653,7 @@
       "slug": "mercury-dealer-pickering-ontario-hbw",
       "title": "Mercury Dealer for Pickering: 50 Minutes from Rice Lake",
       "description": "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer pickering",
@@ -4680,7 +4680,7 @@
       "slug": "mercury-dealer-whitby-ontario-hbw",
       "title": "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake",
       "description": "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer whitby",
@@ -4707,7 +4707,7 @@
       "slug": "mercury-dealer-ajax-ontario-hbw",
       "title": "Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake",
       "description": "Mercury Premier dealer for Ajax: Harris Boat Works on Rice Lake, 45 minutes via 401 and 115. Repower, sales, parts, winter storage for Durham Region boat owners.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer ajax",
@@ -4734,7 +4734,7 @@
       "slug": "mercury-dealer-oshawa-ontario-hbw",
       "title": "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake",
       "description": "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer oshawa",
@@ -4761,7 +4761,7 @@
       "slug": "mercury-dealer-bowmanville-ontario-hbw",
       "title": "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake",
       "description": "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door.",
-      "category": "Service Area",
+      "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
         "mercury dealer bowmanville",
@@ -5114,7 +5114,7 @@
         },
         {
           "q": "What is the financing difference between new and used?",
-          "a": "New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward n…"
+          "a": "Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD \"Always On\" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when…"
         }
       ]
     },
@@ -5336,7 +5336,7 @@
         },
         {
           "q": "Can I finance just a repower without buying the whole boat?",
-          "a": "Yes. Mercury Marine financing programs (current rates available through your Mercury dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates."
+          "a": "Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD \"Always On\" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when…"
         },
         {
           "q": "What's the resale impact of doing a repower right before selling?",
@@ -5495,8 +5495,8 @@
           "a": "Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist."
         },
         {
-          "q": "Can I store my boat at HBW year-round if I am based in Lindsay?",
-          "a": "Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years."
+          "q": "Can I store my boat at HBW through the winter if I am based in Lindsay?",
+          "a": "Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April."
         }
       ]
     },
@@ -5612,7 +5612,7 @@
         },
         {
           "q": "Can I charge an Avator at the dock with regular cottage power?",
-          "a": "Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs."
+          "a": "Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger."
         },
         {
           "q": "Is Avator practical as a primary motor on Rice Lake?",
@@ -5620,7 +5620,7 @@
         },
         {
           "q": "Can I run a Mercury Avator on an HP-restricted Ontario lake?",
-          "a": "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying."
+          "a": "It depends on the specific water. The federal 7.5 kW electric allowance applies to waters listed in Schedule 3 of the Vessel Operation Restriction Regulations, where power-driven vessels and electric propulsion above 7.5 kW are prohibited. It is not a general rule for most freshwater lakes. Confirm the current schedul…"
         }
       ]
     },
@@ -5670,7 +5670,7 @@
       "faqs": [
         {
           "q": "Can I charge a Mercury Avator from a standard cottage outlet?",
-          "a": "For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly."
+          "a": "Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger."
         },
         {
           "q": "Do I need a special charger?",
@@ -5872,7 +5872,7 @@
       "faqs": [
         {
           "q": "What is the current promotional APR through HBW?",
-          "a": "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan and participating Canadian lenders; the signed lender disclosure controls the actual approval and terms."
+          "a": "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
         },
         {
           "q": "Does HBW require a down payment to finance a Mercury repower?",
@@ -6477,7 +6477,7 @@
         },
         {
           "q": "Do both engines come with Command Thrust?",
-          "a": "Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine."
+          "a": "Both the Mercury 90 hp and 115 hp FourStroke have Command Thrust configurations, but availability does not make CT the right choice for a planing aluminum V-hull. Command Thrust is for pontoons and specific workboats. Use the standard gearcase on a 17- to 19-ft aluminum V-hull, then match the propeller to the loaded b…"
         }
       ]
     },

@@ -32,6 +32,8 @@
     "check:blog-price-hygiene": "node scripts/check-blog-price-hygiene.mjs",
     "report:blog-price-hygiene": "node scripts/check-blog-price-hygiene.mjs --report --live",
     "check:publishing-integrity": "node scripts/check-publishing-integrity.mjs",
+    "summarize:blog-maintenance": "node scripts/summarize-blog-maintenance-reports.mjs",
+    "check:blog-live-readback": "node scripts/blog-live-readback.mjs",
     "check:lockfile-sync": "node scripts/check-lockfile-sync.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
     "check:promo-quote-live": "node scripts/promo-quote-live-check.mjs",
