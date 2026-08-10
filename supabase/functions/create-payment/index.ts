@@ -17,9 +17,10 @@ const PAYMENT_ORIGINS = new Set([
   "https://mercuryquote.ca",
 ]);
 
-// Preview/staging hosts (Lovable + Vercel) are also allowed so deposit
-// checkout works outside the primary production domain.
-const PAYMENT_ORIGIN_SUFFIXES = [".lovable.app", ".lovable.dev", ".vercel.app"];
+// Preview hosts: ONLY this project's own Vercel previews, which are team-scoped.
+// Open wildcards (.lovable.app / .lovable.dev / bare .vercel.app) were removed
+// 2026-08-09 — any third party can occupy those and this is a payment path.
+const PAYMENT_PREVIEW_ORIGIN = /^https:\/\/mercury-builder[a-z0-9-]*-hbw\.vercel\.app$/;
 
 function resolvePaymentOrigin(req: Request): string | null {
   const rawOrigin = req.headers.get("origin");
@@ -27,18 +28,16 @@ function resolvePaymentOrigin(req: Request): string | null {
 
   try {
     const parsed = new URL(rawOrigin);
-    if (PAYMENT_ORIGINS.has(parsed.origin)) return parsed.origin;
-    if (
-      parsed.protocol === "https:"
-      && PAYMENT_ORIGIN_SUFFIXES.some((suffix) => parsed.hostname.endsWith(suffix))
-    ) {
-      return parsed.origin;
+    const normalizedOrigin = parsed.origin.toLowerCase();
+    if (PAYMENT_ORIGINS.has(normalizedOrigin)) return normalizedOrigin;
+    if (PAYMENT_PREVIEW_ORIGIN.test(normalizedOrigin)) {
+      return normalizedOrigin;
     }
     if (
       parsed.protocol === "http:"
       && (parsed.hostname === "127.0.0.1" || parsed.hostname === "localhost")
     ) {
-      return parsed.origin;
+      return normalizedOrigin;
     }
   } catch {
     return null;

@@ -5,18 +5,16 @@
 const ALLOWED_HOSTS = [
   'mercuryrepower.ca',
   'www.mercuryrepower.ca',
-  'mercury-quote-tool.lovable.app',
+  'quote.harrisboatworks.ca',
   'mercuryquote.ca',
   'www.mercuryquote.ca',
   'localhost',
   '127.0.0.1',
 ];
 
-const ALLOWED_SUFFIXES = [
-  '.lovable.app',
-  '.lovable.dev',
-  '.vercel.app',
-];
+// Only this project's own team-scoped Vercel previews. Open wildcards
+// (.lovable.app / .lovable.dev / bare .vercel.app) removed 2026-08-09.
+const ALLOWED_PREVIEW_HOST = /^mercury-builder[a-z0-9-]*-hbw\.vercel\.app$/;
 
 export function isAllowedOrigin(req: Request): boolean {
   const origin = req.headers.get('origin') || req.headers.get('referer') || '';
@@ -28,7 +26,7 @@ export function isAllowedOrigin(req: Request): boolean {
     return false;
   }
   if (ALLOWED_HOSTS.includes(host)) return true;
-  return ALLOWED_SUFFIXES.some((s) => host.endsWith(s));
+  return ALLOWED_PREVIEW_HOST.test(host);
 }
 
 export function forbiddenOriginResponse(corsHeaders: Record<string, string>) {
