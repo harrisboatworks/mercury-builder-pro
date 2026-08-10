@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-02
+date_modified: 2026-08-09
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-09  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -141,6 +141,10 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 ![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
 
 ## Install: DIY vs. HBW
+
+Mercury's official walkthrough shows the single-engine under-cowl 8M0173128 installation. Multi-engine setups with one to four engines use the under-helm 8M0173129 kit. Confirm compatibility and follow the current instructions for the exact boat.
+
+[SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)](https://www.youtube.com/watch?v=lEa_MVfOs7M)
 
 The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
 

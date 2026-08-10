@@ -116,6 +116,7 @@ Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-ca
 **Watch Mercury's official gear lube change:**
 
 [Changing Gear Lube on a Mercury 40-300 HP FourStroke](https://www.youtube.com/watch?v=BBbQVH5j0W0)
+
 *Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
 
 ---
