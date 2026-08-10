@@ -233,3 +233,6 @@ verify_jwt = false
 
 [functions.grok-supabase-read]
 verify_jwt = false
+
+[functions.grok-supabase-oauth]
+verify_jwt = false
