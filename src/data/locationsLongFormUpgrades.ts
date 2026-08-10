@@ -132,6 +132,11 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { question: 'Do you deliver Mercury motors to Kawartha cottages?', answer: "No. We're pickup-only at Gores Landing. We rig the motor, water-test it on Rice Lake, and you drive to us for pickup." },
       { question: 'What HP Mercury is most common for Kawartha boats?', answer: 'Pontoons and family runabouts on Pigeon, Sturgeon, and Buckhorn typically repower with Mercury FourStroke 90–150 HP or Pro XS 175–225 HP. Big-block FourStrokes show up on heavier boats. Smaller tiller setups on Cameron and Balsam often land in the 9.9–25 HP range.' },
       { question: 'Can Kawartha Lakes customers finance a Mercury repower?', answer: 'Yes. Financing is available on approved credit, at 7.99% APR over $10,000 and 8.99% APR under $10,000. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).' },
+      {
+        question: 'Where can I get a Mercury outboard serviced in the Kawarthas?',
+        answer:
+          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All the work happens in our shop, so you arrange transport to us and pick the boat or motor back up when it's done. We don't offer mobile, dockside, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
+      },
     ],
     visit: VISIT,
     related: [
