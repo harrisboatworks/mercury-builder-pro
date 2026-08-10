@@ -272,6 +272,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const medianValue = estimate 
     ? estimate.average
     : 0;
+  const penaltyMessage = estimate
+    && 'penaltyMessage' in estimate
+    && typeof estimate.penaltyMessage === 'string'
+    ? estimate.penaltyMessage
+    : null;
 
   return (
     <motion.div
@@ -984,11 +989,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     )}
 
-                    {(estimate as any).penaltyMessage && (
+                    {penaltyMessage && (
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="font-sans text-sm text-repower-gold">{(estimate as any).penaltyMessage}</p>
+                          <p className="font-sans text-sm text-repower-gold">{penaltyMessage}</p>
                         </div>
                       </div>
                     )}
@@ -1028,15 +1033,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </AlertDescription>
                   </Alert>
 
-                  {/* Continue button */}
-                  <Button
-                    type="button"
-                    onClick={() => onAutoAdvance?.()}
-                    className="mt-4 min-h-[52px] w-full rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
-                  >
-                    Continue →
-                  </Button>
                 </motion.div>
+              )}
+
+              {!standalone && tradeInInfo.hasTradeIn && onAutoAdvance && (
+                <Button
+                  data-testid="trade-in-continue"
+                  type="button"
+                  onClick={onAutoAdvance}
+                  className="mt-4 min-h-[52px] w-full rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
+                >
+                  Continue →
+                </Button>
               )}
             </motion.div>
           )}

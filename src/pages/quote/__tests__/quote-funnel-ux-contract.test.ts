@@ -4,6 +4,13 @@ import { describe, expect, it } from 'vitest';
 const read = (path: string) => readFileSync(path, 'utf8');
 
 describe('quote funnel UX contract', () => {
+  it('lets customers continue when a trade-in estimate is unavailable', () => {
+    const tradeInSource = read('src/components/quote-builder/TradeInValuation.tsx');
+
+    expect(tradeInSource).toContain('!standalone && tradeInInfo.hasTradeIn && onAutoAdvance');
+    expect(tradeInSource).toContain('data-testid="trade-in-continue"');
+  });
+
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
