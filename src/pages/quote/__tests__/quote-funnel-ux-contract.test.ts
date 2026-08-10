@@ -58,8 +58,10 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('Customer information required for deposit');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
-    expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
+    expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(');
+    expect(paymentSource).toContain('Deno.env.get("PAYMENT_PREVIEW_ORIGINS")');
     expect(paymentSource).toContain('const origin = paymentOrigin');
+    expect(paymentSource).not.toContain('PAYMENT_ORIGIN_SUFFIXES');
     expect(paymentSource).toContain('action: z.literal("verify")');
     expect(paymentSource).toContain('phone: z.string().trim().min(7)');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
