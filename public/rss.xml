@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 04 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list</guid>
+      <pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP.]]></description>
+      <category><![CDATA[Service]]></category>
+    </item>
     <item>
       <title><![CDATA[New vs. Used Pontoon Boats in Ontario: What Actually Determines Value]]></title>
       <link>https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario</link>
@@ -403,14 +411,6 @@
       <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table.]]></description>
       <category><![CDATA[Repower Guide]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Overheat Alarm Decoder: Beep Meanings]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder</guid>
-      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.]]></description>
-      <category><![CDATA[Service & Troubleshooting]]></category>
     </item>
   </channel>
 </rss>

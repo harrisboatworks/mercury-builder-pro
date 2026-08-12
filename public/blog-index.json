@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sourceVersion": "1ff7896705c9ce951a42",
-  "count": 203,
+  "sourceVersion": "5048dfcf1dcdf200251b",
+  "count": 204,
   "articles": [
     {
       "slug": "new-vs-used-pontoon-boats-ontario",
@@ -6543,6 +6543,38 @@
         {
           "q": "Do current Legend pontoons use the 6-year WOWranty?",
           "a": "Current pontoons use a separate 5 | 10 | Lifetime structure. Legend publishes lifetime structural parts with up to 10 years of labour, 10 years on qualifying canvas and upholstery, and 5 years on factory-installed tech, electronics and structural fibreglass."
+        }
+      ]
+    },
+    {
+      "slug": "mercury-outboard-maintenance-parts-list",
+      "title": "Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)",
+      "description": "Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP.",
+      "category": "Service",
+      "publishDate": "2026-08-11",
+      "keywords": [
+        "Mercury outboard maintenance parts list",
+        "Mercury outboard oil filter part number",
+        "Mercury 100 hour maintenance kit",
+        "Mercury 300 hour service kit",
+        "Mercury outboard impeller part number"
+      ],
+      "faqs": [
+        {
+          "q": "Are these part numbers current for my motor?",
+          "a": "They're from Mercury's Quick Reference Guide, Feb 2024 revision (MER-5746), which covers current four-stroke families back through the serial ranges shown in each table. Mercury supersedes part numbers occasionally, and a superseded number will cross-reference to its replacement when ordered. Always confirm against yo…"
+        },
+        {
+          "q": "What's the difference between the 100-hour and 300-hour kits?",
+          "a": "The 100-hour kit covers the annual service: oil filter, fuel filter, and the gaskets and seals that job needs. The 300-hour kit adds longer-interval wear parts like water pump components and thermostat pieces. Run the 100-hour kit yearly and the 300-hour kit every third year, or sooner if your hours pile up fast."
+        },
+        {
+          "q": "Can I use an automotive oil filter on my Mercury outboard?",
+          "a": "No. Marine filters are built to different burst-pressure and anti-drainback standards, and outboards live at sustained high RPM in a way car engines don't. The same goes for oil: it needs the FC-W marine four-stroke rating, not just the right viscosity number on the jug."
+        },
+        {
+          "q": "Does my Mercury take 10W-30 or 25W-40?",
+          "a": "Depends on the model, not preference. Small portables, the 2.1L 75-115 block, the 150, the V6/V8, and the V12 spec 10W-30. The 15/20 EFI, 40-60, the 1.7L 75-115 block, SeaPro models, and most Verados spec 25W-40. The tables above list each one, and your owner's manual is the final word."
         }
       ]
     }
