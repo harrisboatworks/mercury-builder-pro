@@ -52,9 +52,9 @@ describe('quote funnel UX contract', () => {
     expect(depositDialogSource).toContain('you approve the order in writing');
     expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
     expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
-    expect(paymentSource).toContain('if (depositAmount === "100")');
-    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
-    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('savedMotorId === EXPRESS_MOTOR_ID');
+    expect(paymentSource).toContain('resolvedModelNumber === EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('getMotorReservationDeposit(');
     expect(paymentSource).toContain('Customer information required for deposit');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
@@ -227,5 +227,35 @@ describe('quote funnel UX contract', () => {
 
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
+  });
+
+  it('binds exact-motor reservations before creating Stripe checkout', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const genericDepositSource = read('src/components/payments/DepositPayment.tsx');
+    const paymentSource = read('supabase/functions/create-payment/index.ts');
+    const checkoutBindingMigration = read(
+      'supabase/migrations/20260809153000_enforce_unique_deposit_checkout_bindings.sql',
+    );
+
+    expect(summarySource).toContain("depositMode: 'motor_reservation'");
+    expect(summarySource).toContain('const savedQuoteId = crypto.randomUUID()');
+    expect(summarySource).toContain('if (sqError)');
+    expect(summarySource.indexOf('if (sqError)')).toBeLessThan(
+      summarySource.indexOf("supabase.functions.invoke('create-payment'"),
+    );
+    expect(genericDepositSource).toContain("depositMode: 'general_deposit'");
+
+    expect(paymentSource).toContain('const isMotorReservation = depositMode === "motor_reservation"');
+    expect(paymentSource).toContain('if (!requestedSavedQuoteId || !quoteData?.motorId)');
+    expect(paymentSource).toContain('savedMotorId !== quoteData.motorId');
+    expect(paymentSource).toContain('Number(depositAmount) !== authoritativeDeposit');
+    expect(paymentSource).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
+    expect(paymentSource).toContain('idempotencyKey: `motor-reservation:${savedQuoteId}`');
+    expect(paymentSource).toContain('depositSaveError.code === "23505"');
+    expect(paymentSource).toContain('Reusing existing motor reservation checkout');
+    expect(paymentSource).toContain('General deposits intentionally remain customer-selected');
+    expect(paymentSource).not.toContain('let verifiedMotorInfo = requestedMotorInfo');
+    expect(checkoutBindingMigration).toContain('uq_customer_quotes_deposit_saved_quote');
+    expect(checkoutBindingMigration).toContain('uq_customer_quotes_deposit_stripe_session');
   });
 });

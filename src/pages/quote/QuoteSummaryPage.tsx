@@ -918,31 +918,28 @@ export default function QuoteSummaryPage() {
         console.warn('Could not generate quote PDFs for deposit:', pdfErr);
       }
 
-      // Save/update saved_quotes record with PDF paths
-      let savedQuoteId: string | undefined;
-      try {
-        const { data: savedQuote, error: sqError } = await supabase
-          .from('saved_quotes')
-          .insert({
-            email: customerInfo.email,
-            resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
-            user_id: user?.id || null,
-            expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
-            quote_pdf_path: quotePdfPath || null,
-            deposit_pdf_path: null,
-            deposit_status: 'pending',
-            deposit_amount: depositAmount,
-          } as any)
-          .select('id')
-          .single();
-        if (!sqError && savedQuote) {
-          savedQuoteId = savedQuote.id;
-          console.log('Saved quote created for deposit tracking:', savedQuoteId);
-        }
-      } catch (sqErr) {
-        console.warn('Could not create saved_quotes record:', sqErr);
+      // A motor reservation must have its durable quote binding before a
+      // customer can be sent to Stripe. Generate the ID client-side so an
+      // anonymous insert does not depend on SELECT permission to return it.
+      const savedQuoteId = crypto.randomUUID();
+      const { error: sqError } = await supabase
+        .from('saved_quotes')
+        .insert({
+          id: savedQuoteId,
+          email: customerInfo.email,
+          resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
+          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          user_id: user?.id || null,
+          expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+          quote_pdf_path: quotePdfPath || null,
+          deposit_pdf_path: null,
+          deposit_status: 'pending',
+          deposit_amount: depositAmount,
+        } as any);
+      if (sqError) {
+        throw new Error('Could not prepare this motor reservation. Please try again.');
       }
+      console.log('Saved quote created for deposit tracking:', savedQuoteId);
 
       // Build full quote snapshot for persistence
       const quoteSnapshot = {
@@ -979,6 +976,7 @@ export default function QuoteSummaryPage() {
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
+          depositMode: 'motor_reservation',
           depositAmount: String(depositAmount),
           customerInfo: {
             name: customerInfo.name,

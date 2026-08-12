@@ -3,6 +3,7 @@ import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { getMotorReservationDeposit } from "../_shared/deposit-policy.ts";
 
 const baseCorsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
@@ -92,6 +93,7 @@ const paymentRequestSchema = z.object({
   depositAmount: z.enum(["100", "200", "500", "1000", "2500"]).optional(),
   customerInfo: customerInfoSchema,
   paymentType: z.enum(["deposit", "quote"]).optional(),
+  depositMode: z.enum(["general_deposit", "motor_reservation"]).optional(),
   motorInfo: motorInfoSchema,
   quotePdfPath: z.string().trim().max(500).regex(/^deposit-quotes\/[A-Za-z0-9._/-]+\.pdf$/).optional(),
   savedQuoteId: z.string().uuid().optional(),
@@ -220,6 +222,7 @@ serve(async (req) => {
       depositAmount,
       customerInfo,
       paymentType,
+      depositMode: requestedDepositMode,
       motorInfo: requestedMotorInfo,
       quotePdfPath: requestedQuotePdfPath,
       savedQuoteId: requestedSavedQuoteId,
@@ -288,40 +291,9 @@ serve(async (req) => {
         throw new Error(`Invalid deposit amount. Available: ${Object.keys(DEPOSIT_PRICES).join(", ")}`);
       }
 
-      let verifiedMotorInfo = requestedMotorInfo || null;
-
-      // This express offer is intentionally bound to the exact 9.9 MH sale
-      // model. Resolve identity from the authoritative row rather than
-      // trusting client-supplied model or horsepower values.
-      if (depositAmount === "100") {
-        if (quoteData?.motorId !== EXPRESS_MOTOR_ID) {
-          throw new Error("Invalid deposit amount for selected motor");
-        }
-
-        const { data: reservationMotor, error: reservationMotorError } = await supabaseService
-          .from("motor_models")
-          .select("model, model_display, horsepower, mercury_model_no, model_number")
-          .eq("id", quoteData.motorId)
-          .single();
-
-        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
-        if (
-          reservationMotorError
-          || !reservationMotor
-          || reservationMotor.horsepower == null
-          || resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER
-        ) {
-          throw new Error("Invalid deposit amount for selected motor");
-        }
-
-        verifiedMotorInfo = {
-          model: reservationMotor.model_display || reservationMotor.model,
-          hp: Number(reservationMotor.horsepower),
-        };
-      }
-
-      const priceId = DEPOSIT_PRICES[depositAmount];
-      logStep("Processing deposit payment", { depositAmount, priceId });
+      const depositMode = requestedDepositMode || "general_deposit";
+      const isMotorReservation = depositMode === "motor_reservation";
+      let verifiedMotorInfo: { model?: string; hp?: number } | null = null;
 
       const origin = paymentOrigin;
       
@@ -333,29 +305,78 @@ serve(async (req) => {
       // ID or path reaches Stripe metadata.
       let savedQuoteId = "";
       let quotePdfPath = "";
-      if (requestedSavedQuoteId) {
+      if (isMotorReservation) {
+        if (!requestedSavedQuoteId || !quoteData?.motorId) {
+          throw new Error("Invalid saved quote for deposit");
+        }
+
         const { data: savedQuote, error: savedQuoteError } = await supabaseService
           .from("saved_quotes")
           .select("id, email, deposit_status, deposit_amount, quote_pdf_path, quote_state")
           .eq("id", requestedSavedQuoteId)
           .maybeSingle();
 
-        const savedMotorId = (savedQuote?.quote_state as Record<string, any> | null)?.motor?.id;
+        const savedQuoteState = savedQuote?.quote_state as Record<string, any> | null;
+        const savedMotorId = savedQuoteState?.motor?.id;
         if (
           savedQuoteError
           || !savedQuote
           || savedQuote.email?.trim().toLowerCase() !== customerInfo!.email!.trim().toLowerCase()
           || savedQuote.deposit_status !== "pending"
-          || Number(savedQuote.deposit_amount) !== Number(depositAmount)
-          || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
+          || !savedMotorId
+          || savedMotorId !== quoteData.motorId
           || (requestedQuotePdfPath && savedQuote.quote_pdf_path !== requestedQuotePdfPath)
         ) {
           throw new Error("Invalid saved quote for deposit");
         }
 
+        const { data: reservationMotor, error: reservationMotorError } = await supabaseService
+          .from("motor_models")
+          .select("id, model, model_display, horsepower, mercury_model_no, model_number")
+          .eq("id", savedMotorId)
+          .single();
+
+        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
+        const expressOfferVerified = savedQuoteState?.uiFlags?.motorOnlyExpress === true
+          && savedMotorId === EXPRESS_MOTOR_ID
+          && resolvedModelNumber === EXPRESS_MOTOR_MODEL_NUMBER;
+        if (reservationMotorError || !reservationMotor || reservationMotor.horsepower == null) {
+          throw new Error("Invalid saved quote for deposit");
+        }
+
+        const authoritativeDeposit = getMotorReservationDeposit(
+          Number(reservationMotor.horsepower),
+          expressOfferVerified,
+        );
+        if (
+          Number(depositAmount) !== authoritativeDeposit
+          || Number(savedQuote.deposit_amount) !== authoritativeDeposit
+        ) {
+          throw new Error("Invalid deposit amount for selected motor");
+        }
+
+        verifiedMotorInfo = {
+          model: reservationMotor.model_display || reservationMotor.model,
+          hp: Number(reservationMotor.horsepower),
+        };
+
         savedQuoteId = savedQuote.id;
         quotePdfPath = savedQuote.quote_pdf_path || "";
+      } else if (
+        depositAmount === "100"
+        || requestedSavedQuoteId
+        || requestedQuotePdfPath
+        || quoteData?.motorId
+        || requestedMotorInfo
+        || quoteSnapshot
+      ) {
+        // General deposits intentionally remain customer-selected, but they
+        // cannot claim an exact motor or saved quote association.
+        throw new Error("Invalid deposit mode");
       }
+
+      const priceId = DEPOSIT_PRICES[depositAmount];
+      logStep("Processing deposit payment", { depositAmount, depositMode, priceId });
       
       const depositLineItem: Stripe.Checkout.SessionCreateParams.LineItem = priceId
         ? { price: priceId, quantity: 1 }
@@ -379,6 +400,7 @@ serve(async (req) => {
         cancel_url: `${origin}/payment-canceled`,
         metadata: {
           deposit_amount: depositAmount,
+          deposit_mode: depositMode,
           payment_type: "motor_deposit",
           customer_name: customerName,
           customer_email: userEmail || customerInfo?.email || "",
@@ -395,7 +417,12 @@ serve(async (req) => {
         sessionData.customer_email = userEmail;
       }
 
-      const session = await stripe.checkout.sessions.create(sessionData);
+      const session = await stripe.checkout.sessions.create(
+        sessionData,
+        isMotorReservation
+          ? { idempotencyKey: `motor-reservation:${savedQuoteId}` }
+          : undefined,
+      );
       logStep("Deposit payment session created", { sessionId: session.id });
 
       // Persist the server binding before returning a usable checkout URL. If
@@ -418,6 +445,7 @@ serve(async (req) => {
           lead_source: "deposit",
           quote_data: {
             deposit_amount: depositAmount,
+            deposit_mode: depositMode,
             payment_type: "motor_deposit",
             stripe_session_id: session.id,
             payment_status: "pending",
@@ -428,8 +456,51 @@ serve(async (req) => {
           },
       });
       if (depositSaveError) {
+        if (isMotorReservation && depositSaveError.code === "23505") {
+          const { data: existingBinding, error: existingBindingError } = await supabaseService
+            .from("customer_quotes")
+            .select("customer_email, deposit_amount, quote_data")
+            .eq("lead_source", "deposit")
+            .contains("quote_data", { saved_quote_id: savedQuoteId })
+            .maybeSingle();
+          const existingQuoteData = existingBinding?.quote_data as Record<string, any> | null;
+          const existingSessionId = existingQuoteData?.stripe_session_id;
+          const bindingMatches = !existingBindingError
+            && existingBinding
+            && existingBinding.customer_email?.trim().toLowerCase() === customerInfo!.email!.trim().toLowerCase()
+            && Number(existingBinding.deposit_amount) === Number(depositAmount)
+            && existingQuoteData?.saved_quote_id === savedQuoteId
+            && typeof existingSessionId === "string";
+
+          if (bindingMatches) {
+            if (existingSessionId !== session.id) {
+              await stripe.checkout.sessions.expire(session.id);
+            }
+            const existingSession = existingSessionId === session.id
+              ? session
+              : await stripe.checkout.sessions.retrieve(existingSessionId);
+            if (existingSession.status === "open" && existingSession.url) {
+              logStep("Reusing existing motor reservation checkout", {
+                sessionId: existingSession.id,
+              });
+              return new Response(JSON.stringify({
+                url: existingSession.url,
+                sessionId: existingSession.id,
+              }), {
+                headers: { ...corsHeaders, "Content-Type": "application/json" },
+                status: 200,
+              });
+            }
+          }
+        }
+
         logStep("ERROR: Failed to save deposit record", { error: depositSaveError.message });
-        await stripe.checkout.sessions.expire(session.id);
+        // A motor-reservation retry uses the same Stripe idempotency key, so
+        // leave that unreachable session open and let the retry persist its
+        // binding. Generic sessions cannot be recovered and are expired.
+        if (!isMotorReservation) {
+          await stripe.checkout.sessions.expire(session.id);
+        }
         throw new Error("Unable to prepare reservation checkout");
       }
       logStep("Deposit record saved to customer_quotes");
@@ -609,6 +680,7 @@ serve(async (req) => {
     const isClientError = errorMessage.includes("Invalid deposit amount")
       || errorMessage.includes("Customer information required")
       || errorMessage.includes("Invalid saved quote")
+      || errorMessage.includes("Invalid deposit mode")
       || errorMessage.includes("Invalid quote snapshot")
       || errorMessage.includes("Price validation failed")
       || errorMessage.includes("Quote data is required")
@@ -618,6 +690,7 @@ serve(async (req) => {
       : errorMessage.includes("Invalid deposit amount") ? "Invalid deposit amount"
       : errorMessage.includes("Customer information required") ? "Name, email, and phone are required for a deposit"
       : errorMessage.includes("Invalid saved quote") ? "The saved quote could not be verified. Please refresh and try again."
+      : errorMessage.includes("Invalid deposit mode") ? "The deposit request could not be verified. Please refresh and try again."
       : errorMessage.includes("Invalid quote snapshot") ? "Invalid quote data"
       : errorMessage.includes("Price validation failed") ? "Price validation failed. Please refresh and try again."
       : errorMessage.includes("Quote data is required") ? "Quote data is required"
