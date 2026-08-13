@@ -1,77 +1,56 @@
-# Welcome to your Lovable project
+# Mercury Repower
 
-## Project info
+Mercury Repower is Harris Boat Works' public Mercury outboard catalogue and quote builder.
 
-**URL**: https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121
+## Source and release authority
 
-## How can I edit this code?
+- GitHub [`harrisboatworks/mercury-builder-pro`](https://github.com/harrisboatworks/mercury-builder-pro) on `main` is the authoritative source.
+- HBW's Vercel project is the production release path. Merges and production deployments require explicit authorization.
+- [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121) may be used as an optional editor, but do not rely on automatic GitHub synchronization without verifying it first.
 
-There are several ways of editing your application.
+## Local setup
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Use Node 22, as declared in `engines.node`.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm ci --ignore-scripts
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The Vite development server runs on `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Quick validation
 
-**Use GitHub Codespaces**
+For a normal small change, run:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm run verify:small
+```
 
-## What technologies are used for this project?
+This runs TypeScript checking followed by the Vitest suite. To run one test file directly:
 
-This project is built with:
+```sh
+npx vitest run path/to/file.test.ts
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+`npm run build` is the full release/content pipeline, not the routine small-change check. Its lifecycle regenerates and validates many content artifacts, fetches live Google Places data, and runs `scripts/indexnow-ping.mjs` in `postbuild`. Treat it as release-adjacent external work and require the same authorization as a production trigger.
 
-## How can I deploy this project?
+## Generated artifacts
 
-Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121) and click on Share -> Publish.
+Do not hand-edit files marked as generated. Change the owning source or generator, run the relevant `generate:*`, `rewrite:agent-urls`, or other named generator script from `package.json`, and review the resulting diff before committing it.
 
-# Manual Inventory Sync Trigger
+## Environment and secrets
 
-Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view).
-Do **not** invoke `sync-lightspeed-inventory` from the public quote builder or by pasting a service-role key into a local curl.
+- The tracked `.env` is public-only.
+- Private local overrides belong in `.env.local`; `*.local` is already ignored.
+- Keep secrets in Vercel or Supabase secret storage. Never paste them into shell history, documentation, commits, issues, logs, or model-worker prompts.
 
-For a manual sync, use the authenticated admin Stock Sync / inventory dashboard. Never put an internal secret in frontend code.
+## Inventory sync safety
 
-## Automated Sync
+Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view). The public quote builder must not invoke `sync-lightspeed-inventory`.
 
-Nightly Lightspeed sync remains a server-side scheduler concern. This frontend change does not alter Edge Function auth or cron.
+For a manual sync, use the authenticated admin Stock Sync or inventory dashboard. Never put an internal secret in frontend code or paste a service-role key into a local curl.
 
+Nightly Lightspeed sync remains a server-side scheduler concern. Changing Edge Function auth or cron is a separate production configuration change.
+
+Inventory sync is production-adjacent. Do not document service-role keys, bearer tokens, customer-private data, or copy-and-paste production requests in this repository. Any manual production trigger or write requires explicit authorization and must use approved stored-secret tooling.
