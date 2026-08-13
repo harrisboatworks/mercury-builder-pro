@@ -1,28 +1,32 @@
 import { describe, expect, it } from 'vitest';
 
-import { isStandaloneMarkdownImageParagraph } from './markdown-paragraph';
+import { shouldUnwrapMarkdownImageParagraph } from './markdown-paragraph';
 
-describe('isStandaloneMarkdownImageParagraph', () => {
+describe('shouldUnwrapMarkdownImageParagraph', () => {
   it('unwraps a paragraph whose only child is an image', () => {
     expect(
-      isStandaloneMarkdownImageParagraph({
+      shouldUnwrapMarkdownImageParagraph({
         children: [{ type: 'element', tagName: 'img' }],
       }),
     ).toBe(true);
   });
 
-  it('keeps ordinary and mixed-content paragraphs', () => {
+  it('unwraps an image followed by an inline caption', () => {
     expect(
-      isStandaloneMarkdownImageParagraph({
-        children: [{ type: 'text' }],
-      }),
-    ).toBe(false);
-    expect(
-      isStandaloneMarkdownImageParagraph({
+      shouldUnwrapMarkdownImageParagraph({
         children: [
-          { type: 'text' },
           { type: 'element', tagName: 'img' },
+          { type: 'text' },
+          { type: 'element', tagName: 'em' },
         ],
+      }),
+    ).toBe(true);
+  });
+
+  it('keeps ordinary paragraphs', () => {
+    expect(
+      shouldUnwrapMarkdownImageParagraph({
+        children: [{ type: 'text' }],
       }),
     ).toBe(false);
   });

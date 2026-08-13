@@ -7,9 +7,8 @@ interface MarkdownNode {
   children?: MarkdownNodeChild[];
 }
 
-export function isStandaloneMarkdownImageParagraph(node: MarkdownNode | undefined): boolean {
-  if (node?.children?.length !== 1) return false;
-
-  const [child] = node.children;
-  return child.type === 'element' && child.tagName === 'img';
+export function shouldUnwrapMarkdownImageParagraph(node: MarkdownNode | undefined): boolean {
+  return node?.children?.some(
+    (child) => child.type === 'element' && child.tagName === 'img',
+  ) ?? false;
 }
