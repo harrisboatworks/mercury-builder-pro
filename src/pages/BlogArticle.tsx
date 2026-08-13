@@ -20,6 +20,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { isStandaloneMarkdownImageParagraph } from '@/lib/markdown-paragraph';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -450,6 +451,10 @@ export default function BlogArticle() {
                     return <Link to={to} className={linkClass}>{children}</Link>;
                   }
                   return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                },
+                p: ({ node, children, ...props }) => {
+                  if (isStandaloneMarkdownImageParagraph(node)) return <>{children}</>;
+                  return <p {...props}>{children}</p>;
                 },
                 img: ({ node, src, alt, title }) => (
                   <ExpandableImage
