@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-09T11:13:33.605Z",
-  "count": 423,
+  "generatedAt": "2026-08-12T01:49:39.432Z",
+  "count": 424,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -371,6 +371,7 @@
     "/lovable-uploads/mercury-break-in-timeline-hbw",
     "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison",
     "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero",
+    "/lovable-uploads/mercury-maintenance-parts-hero",
     "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social",
     "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social",
     "/lovable-uploads/mercury-outboard-beep-codes-action-card",
@@ -2271,6 +2272,11 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/mercury-maintenance-parts-hero": [
+      640,
+      1024,
+      1600
     ],
     "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social": [
       640,

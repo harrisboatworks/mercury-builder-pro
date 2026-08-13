@@ -155,6 +155,7 @@ export const blogClusters: BlogCluster[] = [
       "breaking-in-new-mercury-motor-guide",
       "new-mercury-outboard-first-season-guide-ontario",
       "mercury-outboard-oil-capacity-chart",
+      "mercury-outboard-maintenance-parts-list",
       "boat-trailer-maintenance-guide-ontario",
       "boat-trailering-mistakes-ontario",
       "accidentally-increase-boat-service-bills-ontario",
@@ -392,6 +393,7 @@ export const blogClusterContexts: Record<string, string> = {
   "trailer-boat-toronto-to-rice-lake-guide": "trailering from Toronto to Rice Lake",
   // Cluster 6 — Maintenance, Service & Seasonal
   "mercury-maintenance-intervals-20-100-300-rule": "the model-specific Mercury service schedule",
+  "mercury-outboard-maintenance-parts-list": "the full Mercury maintenance parts and part-number list",
   "mercury-motor-maintenance-seasonal-tips": "seasonal maintenance tips",
   "diy-mercury-outboard-winterization-guide": "DIY winterization steps",
   "boat-winterization-cost-ontario-2026": "boat winterization cost in Ontario",
