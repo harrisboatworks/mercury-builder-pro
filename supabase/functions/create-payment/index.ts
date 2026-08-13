@@ -3,47 +3,15 @@ import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
 
 const baseCorsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const PAYMENT_ORIGINS = new Set([
-  "https://www.mercuryrepower.ca",
-  "https://mercuryrepower.ca",
-  "https://quote.harrisboatworks.ca",
-  "https://www.mercuryquote.ca",
-  "https://mercuryquote.ca",
-]);
-
-// Preview hosts: ONLY this project's own Vercel previews, which are team-scoped.
-// Open wildcards (.lovable.app / .lovable.dev / bare .vercel.app) were removed
-// 2026-08-09 — any third party can occupy those and this is a payment path.
-const PAYMENT_PREVIEW_ORIGIN = /^https:\/\/mercury-builder[a-z0-9-]*-hbw\.vercel\.app$/;
-
 function resolvePaymentOrigin(req: Request): string | null {
-  const rawOrigin = req.headers.get("origin");
-  if (!rawOrigin) return null;
-
-  try {
-    const parsed = new URL(rawOrigin);
-    const normalizedOrigin = parsed.origin.toLowerCase();
-    if (PAYMENT_ORIGINS.has(normalizedOrigin)) return normalizedOrigin;
-    if (PAYMENT_PREVIEW_ORIGIN.test(normalizedOrigin)) {
-      return normalizedOrigin;
-    }
-    if (
-      parsed.protocol === "http:"
-      && (parsed.hostname === "127.0.0.1" || parsed.hostname === "localhost")
-    ) {
-      return normalizedOrigin;
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
+  return resolveAllowedBrowserOrigin(req.headers.get("origin"));
 }
 
 // Motor deposit price mapping - CAD prices (Canadian dollars)
