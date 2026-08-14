@@ -1,20 +1,27 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import {
+  forbiddenAdminBrowserOrigin,
+  resolveAdminBrowserCors,
+} from "../_shared/admin-browser-cors.ts";
+import { fetchAllowedDropboxFile, resolveAllowedDropboxFileUrl } from "../_shared/dropbox-file-url.ts";
+import { getDropboxAccessToken } from "../_shared/dropbox-token.ts";
 
 serve(async (req) => {
+  const { origin, headers: corsHeaders } = resolveAdminBrowserCors(req);
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return origin ? new Response(null, { headers: corsHeaders }) : forbiddenAdminBrowserOrigin(corsHeaders);
   }
+  if (!origin) return forbiddenAdminBrowserOrigin(corsHeaders);
+
+  const admin = await requireAdmin(req, corsHeaders);
+  if (admin instanceof Response) return admin;
 
   try {
     console.log('Dropbox file handler called');
     
-    const { fileUrl, fileName, motorId, accessToken } = await req.json();
+    const { fileUrl, fileName, motorId } = await req.json();
     
     if (!fileUrl || !fileName) {
       return new Response(
@@ -25,12 +32,20 @@ serve(async (req) => {
         }
       );
     }
+    if (!resolveAllowedDropboxFileUrl(fileUrl)) {
+      return new Response(JSON.stringify({ error: 'Dropbox file URL is not allowed' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     // Create Supabase client
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    const { accessToken } = await getDropboxAccessToken(supabase);
 
     let fileData: Uint8Array;
     let contentType: string = 'application/octet-stream';
@@ -59,7 +74,7 @@ serve(async (req) => {
       } else {
         console.log('Dropbox API failed, falling back to direct URL');
         // Fallback to direct URL
-        const fallbackResponse = await fetch(fileUrl);
+        const fallbackResponse = await fetchAllowedDropboxFile(fileUrl);
         if (!fallbackResponse.ok) {
           throw new Error(`Failed to download file: ${fallbackResponse.status}`);
         }
@@ -69,7 +84,7 @@ serve(async (req) => {
     } else {
       console.log('Using direct URL (no access token)');
       // Direct URL download (original method)
-      const response = await fetch(fileUrl);
+      const response = await fetchAllowedDropboxFile(fileUrl);
       if (!response.ok) {
         throw new Error(`Failed to download file: ${response.status}`);
       }
