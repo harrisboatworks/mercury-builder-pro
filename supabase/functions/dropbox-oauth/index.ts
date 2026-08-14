@@ -1,102 +1,122 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import {
+  forbiddenAdminBrowserOrigin,
+  resolveAdminBrowserCors,
+} from "../_shared/admin-browser-cors.ts";
+import { verifyDropboxOAuthState } from "../_shared/dropbox-oauth-state.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+interface DropboxTokenResponse {
+  access_token?: string;
+  refresh_token?: string;
+  token_type?: string;
+  expires_in?: number;
+  scope?: string;
+  account_id?: string;
+}
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+  const { origin, headers: corsHeaders } = resolveAdminBrowserCors(req);
+  if (req.method === "OPTIONS") {
+    return origin ? new Response(null, { headers: corsHeaders }) : forbiddenAdminBrowserOrigin(corsHeaders);
+  }
+  if (!origin) return forbiddenAdminBrowserOrigin(corsHeaders);
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
 
+  const admin = await requireAdmin(req, corsHeaders);
+  if (admin instanceof Response) return admin;
+
   try {
-    console.log('Dropbox OAuth handler called');
-    
-    const url = new URL(req.url);
-    const code = url.searchParams.get('code');
-    const state = url.searchParams.get('state');
-    
-    if (!code) {
-      return new Response(
-        JSON.stringify({ error: 'Authorization code not provided' }),
-        { 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          status: 400 
-        }
-      );
+    const body = await req.json();
+    const code = typeof body?.code === "string" ? body.code.trim() : "";
+    const state = typeof body?.state === "string" ? body.state : "";
+    if (!code || !state) {
+      return new Response(JSON.stringify({ error: "Authorization code and state are required" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
-    // Get Dropbox app credentials from environment
-    const appKey = Deno.env.get('DROPBOX_APP_KEY');
-    const appSecret = Deno.env.get('DROPBOX_APP_SECRET');
-    
+    const appKey = Deno.env.get("DROPBOX_APP_KEY") || "";
+    const appSecret = Deno.env.get("DROPBOX_APP_SECRET") || "";
     if (!appKey || !appSecret) {
-      console.error('Missing Dropbox app credentials');
-      return new Response(
-        JSON.stringify({ error: 'Dropbox app not configured' }),
-        { 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          status: 500 
-        }
-      );
+      return new Response(JSON.stringify({ error: "Dropbox app not configured" }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
-    // Exchange authorization code for access token
-    const tokenResponse = await fetch('https://api.dropboxapi.com/oauth2/token', {
-      method: 'POST',
+    const redirectUri = `${origin}/admin/motor-images`;
+    const verifiedState = await verifyDropboxOAuthState(
+      state,
+      { sub: admin.userId, origin, redirectUri },
+      appSecret,
+    );
+    if (!verifiedState) {
+      return new Response(JSON.stringify({ error: "Invalid or expired OAuth state" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const tokenResponse = await fetch("https://api.dropboxapi.com/oauth2/token", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Basic ${btoa(`${appKey}:${appSecret}`)}`
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": `Basic ${btoa(`${appKey}:${appSecret}`)}`,
       },
-      body: new URLSearchParams({
-        code: code,
-        grant_type: 'authorization_code',
-        redirect_uri: `${url.origin}/admin/motor-images` // Adjust as needed
-      })
+      body: new URLSearchParams({ code, grant_type: "authorization_code", redirect_uri: redirectUri }),
     });
-
     if (!tokenResponse.ok) {
-      const error = await tokenResponse.text();
-      console.error('Failed to exchange code for token:', error);
-      return new Response(
-        JSON.stringify({ error: 'Failed to get access token' }),
-        { 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          status: 400 
-        }
-      );
+      console.error("Dropbox token exchange failed with status", tokenResponse.status);
+      return new Response(JSON.stringify({ error: "Dropbox authorization failed" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
-    const tokenData = await tokenResponse.json();
-    
-    console.log('Successfully obtained Dropbox access token');
+    const tokenData = await tokenResponse.json() as DropboxTokenResponse;
+    if (!tokenData.access_token) throw new Error("Dropbox token response did not include an access token");
 
-    // Return the access token (in production, you might want to store this securely)
-    return new Response(
-      JSON.stringify({ 
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL") || "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "",
+      { auth: { persistSession: false } },
+    );
+    const expiresAt = tokenData.expires_in
+      ? new Date(Date.now() + tokenData.expires_in * 1000).toISOString()
+      : null;
+    const { error: storeError } = await supabase.rpc("store_dropbox_oauth_token", {
+      p_token: {
         access_token: tokenData.access_token,
-        token_type: tokenData.token_type,
-        expires_in: tokenData.expires_in,
-        state: state
-      }),
-      { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-      }
-    );
+        refresh_token: tokenData.refresh_token || null,
+        token_type: tokenData.token_type || "bearer",
+        expires_at: expiresAt,
+        scope: tokenData.scope || null,
+        account_id: tokenData.account_id || null,
+        connected_by: admin.userId,
+        connected_at: new Date().toISOString(),
+      },
+    });
+    if (storeError) {
+      console.error("Dropbox token storage failed:", storeError.message);
+      throw new Error("Dropbox token could not be stored securely");
+    }
 
+    return new Response(JSON.stringify({ ok: true, connected: true, expiresAt }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   } catch (error) {
-    console.error('Error in Dropbox OAuth handler:', error);
-    
-    return new Response(
-      JSON.stringify({ 
-        error: 'OAuth exchange failed',
-        details: error.message
-      }),
-      { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 500 
-      }
-    );
+    console.error("Dropbox OAuth handler failed:", error instanceof Error ? error.message : String(error));
+    return new Response(JSON.stringify({ error: "OAuth exchange failed" }), {
+      status: 500,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
 });

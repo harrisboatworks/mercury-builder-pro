@@ -27,14 +27,20 @@ interface DropboxIntegrationProps {
   onUploadComplete?: () => void;
 }
 
+interface DropboxConfig {
+  appKey?: string;
+  hasOAuth?: boolean;
+  connected?: boolean;
+  expiresAt?: string | null;
+}
+
 export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: DropboxIntegrationProps = {}) {
   const [uploading, setUploading] = useState(false);
   const [motorId, setMotorId] = useState(propMotorId || '');
   const [dropboxReady, setDropboxReady] = useState(false);
   const [configLoading, setConfigLoading] = useState(true);
   const [appKeyError, setAppKeyError] = useState<string | null>(null);
-  const [dropboxConfig, setDropboxConfig] = useState<any>(null);
-  const [accessToken, setAccessToken] = useState<string>('');
+  const [dropboxConfig, setDropboxConfig] = useState<DropboxConfig | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -73,7 +79,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
               body: { code: oauthCode, state: oauthState }
             });
             
-            if (oauthError || !oauthData?.access_token) {
+            if (oauthError || !oauthData?.ok) {
               console.error('OAuth exchange failed:', oauthError);
               toast({
                 title: "OAuth failed",
@@ -81,8 +87,8 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
                 variant: "destructive",
               });
             } else {
-              console.log('OAuth successful, got access token');
-              setAccessToken(oauthData.access_token);
+              console.log('OAuth successful; Dropbox token stored server-side');
+              setDropboxConfig((current) => ({ ...current, connected: true }));
               // Clean up URL
               window.history.replaceState({}, document.title, window.location.pathname);
             }
@@ -120,7 +126,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
     };
 
     loadDropboxConfig();
-  }, []);
+  }, [toast]);
 
   const startOAuthFlow = async () => {
     try {
@@ -176,7 +182,6 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
                   fileUrl: file.link,
                   fileName: file.name,
                   motorId: propMotorId || null,
-                  accessToken: accessToken || null // Include access token if available
                 }
               });
 
@@ -270,7 +275,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
 
         {!appKeyError && !configLoading && (
           <div className="space-y-4">
-            {dropboxConfig?.hasOAuth && !accessToken && (
+            {dropboxConfig?.hasOAuth && !dropboxConfig?.connected && (
               <Alert>
                 <Cloud className="h-4 w-4" />
                 <AlertDescription className="flex items-center justify-between">
@@ -282,7 +287,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
               </Alert>
             )}
 
-            {accessToken && (
+            {dropboxConfig?.connected && (
               <Alert>
                 <Cloud className="h-4 w-4 text-green-600" />
                 <AlertDescription className="text-green-700">
@@ -341,7 +346,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
 
               <p className="text-xs text-muted-foreground text-center max-w-md">
                 Supported formats: JPG, PNG, GIF, WebP, PDF, DOC, DOCX, MP4, MOV. 
-                {accessToken ? ' Enhanced authentication provides better file access.' : ' Authenticate for improved compatibility.'}
+                {dropboxConfig?.connected ? ' Enhanced authentication provides better file access.' : ' Authenticate for improved compatibility.'}
               </p>
             </div>
           </div>
