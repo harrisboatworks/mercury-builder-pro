@@ -114,6 +114,12 @@ Status: **Fixed in this PR** or **Open**.
 | O2 | Info | Open | 100+ edge functions. Several admin scrapers/syncs (`scrape-mercury-*`, Dropbox, Lightspeed) must stay `requireAdmin` or cron-secret gated — spot-check any new function the same way as `send-sms`. |
 | O3 | Info | Open | Service-worker is a retirement worker (correct). `/manifest.json` 404s; live file is `/site.webmanifest`. |
 
+### Dependencies (`npm audit --omit=dev`)
+
+| ID | Sev | Status | Finding |
+|---|---|---|---|
+| D1 | Medium | Open | 19 high, 0 critical in production tree (2026-08-14). Notable: `react-router` / `@remix-run/router` XSS + open-redirect advisories; `vite` dev-middleware file serve; `ws` memory issues; `lodash` / `serialize-javascript` injection. Most are transitive. Do **not** `npm audit fix --force`. Review `react-router-dom` upgrade path first (this app uses `^6.30.1`). |
+
 ### Compliance
 
 | ID | Sev | Status | Finding |
@@ -145,6 +151,7 @@ Not changed here (need product/auth design): S1–S3, S5–S6, S8–S12, payment
 3. Server-recompute accessories + install + trade-in in `create-payment` (S6).
 4. Stop treating service_role JWT as an admin user (S5).
 5. Prerender full privacy/terms; add competitive compare landings if Jay wants that SEO bet.
+6. Review `react-router-dom` / Vite advisories (D1) before a blanket audit-fix.
 
 ---
 
