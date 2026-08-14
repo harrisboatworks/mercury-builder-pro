@@ -4,6 +4,12 @@ import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import {
+  fetchAllowedQuotePdf,
+  resolveAllowedQuotePdfUrl,
+} from "../_shared/quote-pdf-url.ts";
+import { replaceTemplateVariables, sanitizeEmailSubject } from "../_shared/quote-email-template.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -37,15 +43,6 @@ type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 
-// Replace template variables with actual data
-function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
-  return template
-    .replace(/{{customerName}}/g, data.customerName)
-    .replace(/{{quoteNumber}}/g, data.quoteNumber)
-    .replace(/{{motorModel}}/g, data.motorModel)
-    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
-}
-
 function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
   const rows = [
     { label: "Quote #", value: esc(data.quoteNumber) },
@@ -68,7 +65,7 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
     ctaUrl: data.pdfUrl,
@@ -120,7 +117,7 @@ function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
   `;
   return buildAdminEmail({
     preheader: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
-    heading: `${esc(data.leadData?.customerName || "Lead")} - ${esc(data.motorModel)} - $${data.totalPrice?.toLocaleString()}`,
+    heading: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
     bodyHtml: body,
     tag: "Quote",
   });
@@ -163,7 +160,17 @@ serve(async (req) => {
       });
     }
 
-    const emailData = validationResult.data;
+    let emailData = validationResult.data;
+    if (emailData.pdfUrl) {
+      const allowedPdfUrl = resolveAllowedQuotePdfUrl(emailData.pdfUrl);
+      if (!allowedPdfUrl) {
+        return new Response(JSON.stringify({ success: false, error: 'Invalid PDF URL' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      emailData = { ...emailData, pdfUrl: allowedPdfUrl.toString() };
+    }
 
     const ipAllowed = await checkRateLimit(req, {
       action: 'send_quote_email_ip',
@@ -225,6 +232,7 @@ serve(async (req) => {
           htmlContent = generateQuoteDeliveryEmail(emailData);
       }
     }
+    subject = sanitizeEmailSubject(subject);
 
     // Prepare email options
     const emailOptions: {
@@ -246,13 +254,7 @@ serve(async (req) => {
     if (emailData.pdfUrl) {
       try {
         console.log('Fetching PDF from:', emailData.pdfUrl);
-        const pdfResponse = await fetch(emailData.pdfUrl);
-        
-        if (!pdfResponse.ok) {
-          throw new Error(`Failed to fetch PDF: ${pdfResponse.statusText}`);
-        }
-        
-        const pdfBuffer = await pdfResponse.arrayBuffer();
+        const pdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl);
         const pdfBase64 = btoa(
           new Uint8Array(pdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
         );
@@ -265,7 +267,8 @@ serve(async (req) => {
         console.log('PDF attachment prepared, size:', pdfBuffer.byteLength, 'bytes');
       } catch (pdfError) {
         console.error('Error fetching/attaching PDF:', pdfError);
-        // Continue sending email without attachment
+        // A disallowed redirect is never followed. Preserve public quote
+        // delivery by sending the message without the rejected attachment.
       }
     }
 
@@ -274,13 +277,17 @@ serve(async (req) => {
 
     console.log('Email sent successfully:', emailResponse);
 
-    // Log the email activity
-    await supabase
-      .from('customer_quotes')
-      .update({
-        notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
-      })
-      .eq('quote_number', emailData.quoteNumber);
+    // Public quote delivery remains available, but only a verified admin may
+    // write internal quote notes through the service-role client.
+    const admin = await requireAdmin(req, corsHeaders);
+    if (!(admin instanceof Response) && emailData.leadData?.quoteId) {
+      await supabase
+        .from('customer_quotes')
+        .update({
+          notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
+        })
+        .eq('id', emailData.leadData.quoteId);
+    }
 
     return new Response(
       JSON.stringify({ 
