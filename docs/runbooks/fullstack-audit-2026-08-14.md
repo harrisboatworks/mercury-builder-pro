@@ -5,7 +5,8 @@
 **Live:** https://www.mercuryrepower.ca  
 **Build probed:** `8cbf8edf507c7fad885d74e641bdcd531b745308`  
 **Scope:** Security, SEO/crawl, content integrity, performance, accessibility, conversion, backend/ops, deploy/CI, compliance.  
-**Method:** Live HTTP probes + source review + existing check/script inventory. No exploit PoCs.
+**Method:** Live HTTP probes + source review + existing check/script inventory. No exploit PoCs.  
+**Codex implementation brief:** `docs/runbooks/CODEX-fullstack-audit-2026-08-14.md`
 
 This is a delta audit. Financing security (Jan 2025) and the May 2026 customer-facing audit remain the baselines; this pass verifies what is still true on production.
 
