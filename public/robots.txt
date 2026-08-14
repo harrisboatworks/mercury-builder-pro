@@ -1,6 +1,6 @@
 # Harris Boat Works - Mercury Outboard Repower
 # https://www.mercuryrepower.ca
-# Last updated: 2026-07-15
+# Last updated: 2026-08-14
 
 # Default: open access for everyone, including AI crawlers we want
 User-agent: *

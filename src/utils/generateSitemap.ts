@@ -114,6 +114,12 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/about/jay-harris', lastmod: '2026-05-10', changefreq: 'yearly', priority: 0.7 },
     { loc: '/tools', lastmod: '2026-05-10', changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: 0.8 },
+    { loc: '/blog/zh', lastmod: today, changefreq: 'weekly', priority: 0.7 },
+    { loc: '/blog/fr', lastmod: today, changefreq: 'weekly', priority: 0.65 },
+    { loc: '/blog/ko', lastmod: today, changefreq: 'weekly', priority: 0.6 },
+    { loc: '/blog/es', lastmod: today, changefreq: 'weekly', priority: 0.6 },
+    { loc: '/blog/hi', lastmod: today, changefreq: 'weekly', priority: 0.55 },
+    { loc: '/blog/pa', lastmod: today, changefreq: 'weekly', priority: 0.55 },
     // Pilot SEO landing pages: Batch 1
     { loc: '/how-to-repower-a-boat', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-canada-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
