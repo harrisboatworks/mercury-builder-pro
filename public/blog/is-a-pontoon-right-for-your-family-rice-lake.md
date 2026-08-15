@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-06-19
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-06-19
+date_modified: 2026-07-27
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Is a Pontoon Right for Your Family?
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last updated:** 2026-06-19  
+**Last reviewed:** 2026-07-27  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
-# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
+## Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
 
 > **Quick answer:** For most families on Rice Lake and the Kawarthas, a pontoon is the best all-around boat: safe with kids, roomy, stable, and great for cruising and swimming. It pulls a tube too, with enough power (115 hp and up). What it isn't is a dedicated ski boat. If hard watersports rule your summer, look at a tritoon or a V-hull. Not sure? Rent one first.
 
@@ -70,7 +71,7 @@ Yes. This is the question we get most, and the answer is yes, with a caveat abou
 
 ![Kids tubing behind a pontoon boat on Rice Lake](/lovable-uploads/pontoon-family-tubing.png)
 
-Towing a tube takes roughly one horsepower for every 40 pounds you are pulling, and you need to comfortably reach about 20 mph. In practice:
+There is no useful one-number horsepower formula for tubing. The right setup depends on the boat's capacity plate, total people and gear, tube design, water conditions, propeller, and the riders' size and experience. A properly powered pontoon can tow a tube, but choose the engine for the whole loaded boat and the manufacturer's rating, not the tube's weight alone. In practice:
 
 - **Light tubing with younger kids:** a 90 to 115 hp pontoon handles it fine.
 - **Comfortable all-day tubing, a loaded boat, bigger kids:** you want 115 hp and up.
@@ -129,19 +130,18 @@ Here is the advantage of buying from [a marina that also rents](/blog/rice-lake-
 
 Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 
 ## Sources
 
 - Mercury Marine and HBW rigging experience: pontoon horsepower and Command Thrust gearcase guidance.
-- General pontoon family-use, safety, and tubing-power guidance from boating-industry sources.
-- Legend Boats product lineup (LE, Q, Halo series) and 6-Year WOWranty.
+- [Discover Boating: boat tubing guidance](https://www.discoverboating.com/activities/boat-tubing)
+- [Discover Boating: buying a pontoon boat](https://www.discoverboating.com/resources/buying-a-pontoon-boat)
+- [Transport Canada: choosing lifejackets and PFDs](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/choosing-lifejackets-personal-flotation-devices-pfds)
+- [Legend Boats: 6-Year WOWranty](https://www.legendboats.com/?basic-page=legend-boats-6-year-wowranty)
 
 ## FAQs
 
@@ -167,7 +167,7 @@ For most of what families do here, yes. Rice Lake is calm a lot of the time and 
 
 ### What does it cost to power a family pontoon?
 
-Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.
+Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.
 
 ### Can I rent a pontoon before I buy one?
 
@@ -176,23 +176,22 @@ Yes, and we recommend it. Rent one for a weekend, use it the way your family act
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
-- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
-- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

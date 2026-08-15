@@ -80,9 +80,6 @@ export default function MandarinLanding() {
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
         <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
-        <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
         <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury Premier 授权经销商" />
         <meta property="og:description" content="安大略省Mercury Marine Premier 授权经销商。在线透明报价。" />
         <meta property="og:locale" content="zh_CN" />

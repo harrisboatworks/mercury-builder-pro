@@ -1,34 +1,35 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-06-19
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SmartCraft Connect Eligibility 2026"
-description: "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect."
+location: Gores Landing, ON, Canada
+title: "Will SmartCraft Connect Work With My Mercury? Eligibility Check"
+description: "Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check."
 category: "Mercury Technology"
 date_published: 2026-05-27
-date_modified: 2026-06-19
+date_modified: 2026-08-02
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
-# Mercury SmartCraft Connect Eligibility 2026
+# Will SmartCraft Connect Work With My Mercury? Eligibility Check
 
-> Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect.
+> Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-06-19  
+**Last reviewed:** 2026-08-02  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 
-> **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a same-day yes or no.
+> **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a compatibility check.
 
 Most Mercury owners hear about SmartCraft Connect from a buddy at the dock and ask the same first question: does it even work on my motor. The short version is above. The full version, including the exceptions and the "ask first" cases, is below. We see this question every week at the shop, so we put the answer in one place.
 
@@ -36,7 +37,7 @@ If your motor turns out to be compatible, you also need a gateway module (one-ti
 
 ## Quick eligibility check
 
-The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-mercury-outboard-serial-number), email it to info@harrisboatworks.ca, and we'll reply same-day with a yes or no. The table below covers 95 percent of cases.
+The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-mercury-outboard-serial-number), email it to info@harrisboatworks.ca, and we'll check compatibility. The table below covers the common cases.
 
 | Motor class | Compatible? | Notes |
 |---|---|---|
@@ -55,7 +56,7 @@ If your motor isn't on this table, send the serial number and we'll check.
 
 ## What SmartCraft Connect actually does
 
-Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
+Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (see [Mercury's official SmartCraft Connect overview](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
 
 - Live engine data on your phone: RPM, fuel flow, hours, water temp, oil pressure, alarms
 - Trip logs and engine hour tracking automatically saved to the cloud
@@ -128,7 +129,7 @@ Five places to look. Try them in this order.
 4. **[VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide).** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
 5. **Original purchase paperwork.** Bill of sale, warranty registration, or invoice from the original dealer.
 
-Once you have it, email info@harrisboatworks.ca with the serial and we'll confirm SmartCraft Connect eligibility in one reply. Most replies go out same business day.
+Once you have it, email info@harrisboatworks.ca with the serial and we'll check SmartCraft Connect eligibility against the exact motor record.
 
 For the long version of serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year decoding by character position.
 
@@ -154,7 +155,7 @@ DIY makes sense if you already have engine wiring experience and the boat is eas
 
 ### HBW install
 
-Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Bench time is typically 1 to 1.5 hours. Most installs go out same-day if booked ahead.
+Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Appointment and completion timing are confirmed after HBW checks the motor, required parts, and current shop schedule.
 
 The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -162,40 +163,41 @@ The HBW install is the right call if you want it done once, done right, and you'
 
 We've done a lot of these installs since 2023, and a few patterns are worth mentioning.
 
-The Connect module pays for itself first on the maintenance side. We get customers calling in after a beep code and the answer is now five seconds long because they screenshot the app and text it to us before they call. We diagnose remote-first whenever we can, and Connect cut our "guess what the alarm is" calls roughly in half last summer.
+The practical maintenance value is better diagnostic context. An owner can share the alert details before calling, which may help the service team narrow the first checks. It does not replace Mercury diagnostics or a physical inspection when either is required.
 
 The second pattern: customers with an older boat that has a current Mercury (so a 2006 hull with a 2021 FourStroke 150, for example) often think Connect won't work because the boat is old. The boat doesn't matter. The motor's year and family matter. If the engine is 2004+ and not a portable / 2-stroke / Optimax, it's eligible.
 
-Third pattern: the trip log feature changes how people use the boat. We've had a few customers swap from "I think I have 40 hours on this motor" to "I have exactly 42.3 hours and my 20-hour service is overdue" within a week of installing the module. That data is gold for resale value down the road too, because it documents real run hours rather than guessing.
+Third pattern: the trip log feature changes how people use the boat. Instead of guessing that a motor has roughly 40 hours, owners can see the actual total and compare it with both the hour and calendar columns in the model-specific maintenance schedule. That data is useful for service planning and resale because it documents real run hours.
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
 
-::pull-quote
-quote: I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
-attribution: What we hear most at HBW after Connect setup
-::
+> I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
+>
+> What we hear most at HBW after Connect setup
 
-::decision-card
-eyebrow: SmartCraft Connect decision
-heading: Do I need SmartCraft Connect?
-leftLabel: Skip it
-leftCriteria:
-  - You boat 5 times a year or less
-  - You don't care about engine diagnostics
-  - Simple rig with no current SmartCraft integration
-  - The data wouldn't change how you use the boat
-leftOutcome: Save the money
-leftVariant: alternative
-rightLabel: Worth it
-rightCriteria:
-  - You repower often or track engine hours closely
-  - You value live diagnostics
-  - You want service alerts pushed before they're overdue
-  - You boat 20+ days a year
-rightOutcome: Install it on the next service visit
-rightVariant: recommended
-whenInDoubt: Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
-::
+*SmartCraft Connect decision*
+
+### Do I need SmartCraft Connect?
+
+#### Skip it
+
+- You boat 5 times a year or less
+- You don't care about engine diagnostics
+- Simple rig with no current SmartCraft integration
+- The data wouldn't change how you use the boat
+
+**Save the money**
+
+#### Worth it
+
+- You repower often or track engine hours closely
+- You value live diagnostics
+- You want service alerts pushed before they're overdue
+- You boat 20+ days a year
+
+**Install it on the next service visit**
+
+Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
 
 ## Why this matters for Ontario boaters
 
@@ -240,7 +242,7 @@ You can DIY if you're comfortable with engine harness work. Allow 1-2 hours and 
 
 ### How do I confirm my exact motor is eligible?
 
-Email your Mercury serial number to info@harrisboatworks.ca. We confirm in one reply, usually same business day. The serial is on the cowl plate, the lower starboard side of the motor, the mounting bracket, the VesselView display, or your original purchase paperwork.
+Email your Mercury serial number to info@harrisboatworks.ca. HBW will check it against Mercury's records and reply with the eligibility result or any follow-up information needed. The serial is on the cowl plate, the lower starboard side of the motor, the mounting bracket, the VesselView display, or your original purchase paperwork.
 
 ### What if I'm not eligible but I want Connect?
 
@@ -253,23 +255,22 @@ Yes, but with a different gateway module than the gas Connect path. The customer
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
+- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

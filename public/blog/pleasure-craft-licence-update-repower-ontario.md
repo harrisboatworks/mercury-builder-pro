@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-07-04
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
 description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge."
 category: "Canadian Boating Regulations"
 date_published: 2026-04-15
-date_modified: 2026-07-04
+date_modified: 2026-08-08
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Pleasure Craft Licence Update During Repower (Ontario 2026)
@@ -24,16 +25,16 @@ language: en-CA
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last updated:** 2026-07-04  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
-# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
+## [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ![Infographic comparing pre-2026 lifetime PCL rules with new 5-year renewal and fee requirements for Ontario boaters.](/lovable-uploads/diagram-pcl-2026-changes.png)
 
 ## Quick answer
-When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
+When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada adjusts fees for inflation each April 1, so check the live fee page before applying. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
 
 ## What changed in 2026 that you actually need to know
 
@@ -41,7 +42,7 @@ As of December 31, 2025, Transport Canada made several significant changes to th
 
 Key 2026 changes:
 - PCLs are now valid for 5 years only. Previous licences issued without an expiry date now have one assigned. Check the table below.
-- A $24 fee now applies to new, renewed, transferred, and duplicate PCLs. Updates to existing licence information remain free.
+- As of August 8, 2026, a $24.41 fee applies to new, renewed and transferred PCLs and duplicate documents. Updates to existing licence information remain free. Fees may change for inflation each April 1.
 - You must update your PCL within 30 days of any change to your name, address, phone number, email, or pleasure craft details (including motor specs after a repower).
 - Starting December 31, 2027, wind-powered pleasure craft over 6 metres will also need a PCL.
 - The $250 fine for operating without a valid licence is unchanged.
@@ -82,8 +83,6 @@ The PCL records more than just your name and address. It includes your vessel's 
 Same-brand, same-HP, same-model swaps are the rare case where an update might not be strictly required. But given that updates are free and take about 15 minutes online, the answer is always to update. If you're still working out the repower budget, our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the Ontario numbers.
 
 ## How to update your PCL
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 The process is online at [Transport Canada's Pleasure Craft Licensing portal](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl). Updates are free, no fee, no credit card required.
 
@@ -128,11 +127,9 @@ The update is free and takes 15 minutes. There is no reason not to do it.
 
 ## Sources
 
-- Transport Canada, Pleasure Craft Licence (5-year validity, $24 fee, 30-day update window, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Transport Canada, Pleasure Craft Licence (5-year validity, current fees and 30-day update window). [Fees and service standards](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)
 - [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -144,7 +141,7 @@ Yes, in most cases. When motor HP, brand, or model changes, you must update the 
 
 ### Is the PCL update free?
 
-Yes. Updates to existing licence information (including motor specs after a repower) are free. New licences, renewals, and transfers carry a $24 fee as of December 31, 2025.
+Yes. Updates to existing licence information, including motor specs after a repower, are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada may adjust fees for inflation each April 1.
 
 ### Is the PCL the same as my boater licence?
 
@@ -165,23 +162,22 @@ We provide all the motor data you need and walk you through the process. The act
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
+- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide), year-end timing and incentives
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

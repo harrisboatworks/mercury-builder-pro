@@ -4,9 +4,9 @@ last_updated: 2026-07-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury VesselView vs SmartCraft Explained (Ontario)"
 description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake."
 category: "Tech & Features"
@@ -16,6 +16,7 @@ keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraf
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury VesselView vs SmartCraft Explained (Ontario)
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-13  
+**Last reviewed:** 2026-07-13  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
-# Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
+## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
 
 > **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
 
@@ -81,7 +82,7 @@ Once your phone is paired, here's what's on screen:
 - **Maintenance reminders**: "100-hour service due in 12 hours" instead of you guessing
 - **GPS range rings (new app)**, see how far you can go on remaining fuel before you commit to a long run
 
-The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the GPH drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
+The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the L/h drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
 
 ---
 
@@ -91,14 +92,12 @@ The features people actually use: **fuel flow at cruise** (saves real money over
 
 What that gets you:
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 - **Zero hesitation.** Move the lever, the engine responds immediately. No cable lag.
 - **Smoother shifting.** The "clunk" goes away. Forward, neutral, reverse all transition cleanly.
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
 - **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
 
-DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+DTS is **standard** on all current Verado models (V8 250-300 HP, V10 350-425 HP, and V12 600 HP) and is available on selected FourStroke and Pro XS configurations. If you're running a smaller engine, you likely have mechanical throttle and shift, and that's fine. Verify the exact model and serial before planning a control-system change.
 
 Worth retrofitting? Almost never on existing boats. [DTS retrofit involves changing the lever, the cables, the helm wiring](/blog/mercury-dts-retrofit-eligibility-2026), and possibly the engine's computer. New repower? Worth it on V8s.
 
@@ -163,8 +162,6 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Do I need cell service for VesselView Mobile / Mercury Marine App?
@@ -210,23 +207,22 @@ Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
+- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

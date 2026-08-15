@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-05-24
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Time to Buy Boat Motor Ontario"
 description: "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-05-24
+date_modified: 2026-07-23
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Time to Buy Boat Motor Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last updated:** 2026-05-24  
+**Last reviewed:** 2026-07-23  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
-# When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
+## When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
 
 > **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed roughly December 1 to April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
@@ -66,11 +67,11 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
-**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Bonus warranty programs are time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
+**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Additional promotional coverage is time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
 ## What Year-End Specifically Looks Like at HBW
 
-The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens after we reopen in early April. Here is what actually happens:
+The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens when we reopen in early April. Here is what actually happens:
 
 **November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 
@@ -91,7 +92,7 @@ These are the patterns we see across hundreds of repower conversations a year.
 - **Waiting until April to "see what's available."** By April, the popular HP classes are spoken for through opener. You can still buy, but the install slot is the constraint, not the motor.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
-- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Bonus coverage can add value when an eligible promotion is active, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
+- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Additional promotional coverage can add value when written terms include it, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
 - **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
 
 ## Pricing and Install Timing Together: The Two Levers
@@ -134,7 +135,7 @@ Not always. Late summer (August, post-model-year flip) can carry stronger closeo
 
 ### Why are boat show prices not automatically the cheapest?
 
-Boat shows often have show-specific promotions, but they're usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn't always include is the install slot, which by January is the actual constraint for opener.
+Boat shows can have show-specific promotions, but they are often similar to what is available at the shop in the same period. Sometimes show pricing is better. Bring us the complete written quote and we'll review whether we can improve our price. We can't promise to match every offer because packages, rigging, promotions, availability, and install timing differ.
 
 ### When's the worst time to negotiate?
 
@@ -146,7 +147,7 @@ It can. If you wait until August, you might catch a 2026 closeout discount or ge
 
 ### What's actually negotiable on a new Mercury purchase?
 
-The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
+The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; additional promotional coverage applies only when written terms include it. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
 
 ### Should I wait for the Toronto International Boat Show?
 
@@ -156,30 +157,29 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
-### Does bonus warranty coverage depend on when I buy?
+### Does additional promotional coverage depend on when I buy?
 
-Yes. Mercury's standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).
+Yes. Mercury's standard Canadian warranty is 3 years. Additional promotional coverage applies only when written terms include it and the purchase and motor meet the offer's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,5 +1,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
+import {
+  type CanonicalHbwValuation,
+  fetchCanonicalHbwValuation,
+  HbwValuationError,
+  normalizeHbwStroke,
+} from "../_shared/hbw-valuation.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -71,6 +77,12 @@ Deno.serve(async (req) => {
     }
   } catch (err: any) {
     console.error("agent-quote-api error:", err);
+    if (err instanceof HbwValuationError) {
+      return json(
+        { error: err.message, code: err.code },
+        err.status,
+      );
+    }
     return json({ error: err.message || "Internal server error" }, 500);
   }
 });
@@ -211,13 +223,13 @@ function buildAgentAccessoryBreakdown(opts: {
     }
   }
 
-  // Warranty extension
+  // Mercury Platinum Product Protection
   if (warrantyCost > 0 && warrantyYearsExtra > 0) {
     const totalYears = totalBaseWarranty + warrantyYearsExtra;
     items.push({
-      name: `Extended Warranty (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})`,
+      name: `Mercury Platinum Product Protection (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})`,
       price: warrantyCost,
-      description: `Total coverage: ${totalYears} years`,
+      description: `Combined coverage: ${totalYears} years`,
     });
   }
 
@@ -228,208 +240,6 @@ function buildAgentAccessoryBreakdown(opts: {
 
   const totalCost = items.reduce((sum, i) => sum + (i.price || 0), 0);
   return { items, totalCost };
-}
-
-// ── Trade-In Valuation (ported from src/lib/trade-valuation.ts) ──
-
-const BRAND_PENALTIES: Record<string, number> = {
-  JOHNSON: 0.5,
-  EVINRUDE: 0.5,
-  OMC: 0.5,
-};
-const MIN_TRADE_VALUE = 100;
-
-function getBrandPenalty(brand: string, config?: Record<string, Record<string, number>>): number {
-  const b = brand.trim().toUpperCase();
-  if (!b) return 1;
-  let factor = 1;
-  for (const key of Object.keys(BRAND_PENALTIES)) {
-    const configFactor = config?.[`BRAND_PENALTY_${key}`]?.factor;
-    const penalty = configFactor ?? BRAND_PENALTIES[key];
-    if (b.includes(key)) factor = Math.min(factor, penalty);
-  }
-  return factor;
-}
-
-function getHpClassFloor(hp: number, config: Record<string, Record<string, number>>): number {
-  const floors = config?.HP_CLASS_FLOORS;
-  if (hp >= 200) return floors?.["200_plus"] ?? 2500;
-  if (hp >= 90) return floors?.["90_150"] ?? 1500;
-  if (hp >= 25) return floors?.["25_75"] ?? 1000;
-  return floors?.under_25 ?? 200;
-}
-
-function runTradeEstimate(
-  brand: string, year: number, horsepower: number, condition: string,
-  brackets: any[], config: Record<string, Record<string, number>>,
-  engineType?: string, engineHours?: number,
-  msrpLookup?: Record<number, number>
-) {
-  const currentYear = new Date().getFullYear();
-  const minValue = getHpClassFloor(horsepower, config);
-  const mercuryMaxAge = config?.MERCURY_BONUS_YEARS?.max_age ?? 3;
-  const mercuryBonusFactor = config?.MERCURY_BONUS_YEARS?.factor ?? 1.1;
-
-  // Convert brackets to lookup
-  const lookup: Record<string, Record<string, Record<string, any>>> = {};
-  for (const b of brackets) {
-    if (!lookup[b.brand]) lookup[b.brand] = {};
-    if (!lookup[b.brand][b.year_range]) lookup[b.brand][b.year_range] = {};
-    lookup[b.brand][b.year_range][b.horsepower.toString()] = {
-      excellent: Number(b.excellent), good: Number(b.good),
-      fair: Number(b.fair), poor: Number(b.poor),
-    };
-  }
-
-  // Helper to apply engine-type and hours adjustments
-  function applyEngineAdjustments(low: number, high: number, factors: string[]): [number, number] {
-    // 2-stroke / OptiMax haircut
-    const et = (engineType || "").toLowerCase();
-    if (et === "2-stroke" || et === "optimax") {
-      const factor = config?.TWO_STROKE_PENALTY?.factor ?? 0.825;
-      low *= factor;
-      high *= factor;
-      factors.push(`${et === "optimax" ? "OptiMax" : "2-stroke"} engine penalty applied (-${Math.round((1 - factor) * 100)}%)`);
-    }
-    // Hours adjustment
-    if (engineHours != null && engineHours >= 0) {
-      if (engineHours <= 100) {
-        const bonus = config?.HOURS_ADJUSTMENT?.low_hours_bonus ?? 0.075;
-        low *= (1 + bonus);
-        high *= (1 + bonus);
-        factors.push(`Low hours bonus (+${Math.round(bonus * 100)}%)`);
-      } else if (engineHours >= 1000) {
-        const penalty = config?.HOURS_ADJUSTMENT?.high_hours_penalty ?? 0.175;
-        low *= (1 - penalty);
-        high *= (1 - penalty);
-        factors.push(`High hours penalty (-${Math.round(penalty * 100)}%)`);
-      } else if (engineHours >= 500) {
-        const penalty = config?.HOURS_ADJUSTMENT?.moderate_hours_penalty ?? 0.10;
-        low *= (1 - penalty);
-        high *= (1 - penalty);
-        factors.push(`Moderate hours penalty (-${Math.round(penalty * 100)}%)`);
-      }
-    }
-    return [low, high];
-  }
-
-  // --- MSRP-based path for Mercury motors ---
-  const msrpPcts = config?.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined;
-  if (brand === "Mercury" && msrpLookup && msrpPcts) {
-    const motorAge = currentYear - year;
-    let ageBracket: string | null = null;
-    if (motorAge >= 1 && motorAge <= 3) ageBracket = "1-3";
-    else if (motorAge >= 4 && motorAge <= 7) ageBracket = "4-7";
-    else if (motorAge >= 8 && motorAge <= 12) ageBracket = "8-12";
-    else if (motorAge >= 13 && motorAge <= 17) ageBracket = "13-17";
-    else if (motorAge >= 18 && motorAge <= 20) ageBracket = "18-20";
-
-    if (ageBracket && msrpPcts[ageBracket]) {
-      const pcts = msrpPcts[ageBracket];
-      const pct = pcts[condition];
-      if (pct !== undefined) {
-        // Find closest HP in MSRP lookup
-        const availMsrpHPs = Object.keys(msrpLookup).map(Number).sort((a, b) => a - b);
-        if (availMsrpHPs.length > 0) {
-          const closestMsrpHP = availMsrpHPs.reduce((prev, curr) =>
-            Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
-          );
-          const msrp = msrpLookup[closestMsrpHP];
-          if (msrp && msrp > 0) {
-            const baseValue = msrp * pct;
-            const msrpFactors: string[] = ["MSRP-anchored valuation"];
-            let low = baseValue * 0.85, high = baseValue * 1.15;
-            [low, high] = applyEngineAdjustments(low, high, msrpFactors);
-            low = Math.max(low, minValue); high = Math.max(high, minValue);
-            let confidence = "high";
-            if (motorAge > 12) confidence = "low";
-            else if (motorAge > 7) confidence = "medium";
-            console.log(`msrp_trade_estimate brand=Mercury hp=${horsepower} closestHP=${closestMsrpHP} msrp=${msrp} age=${motorAge} bracket=${ageBracket} condition=${condition} pct=${pct} baseValue=${baseValue}`);
-            return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence, factors: msrpFactors };
-          }
-        }
-      }
-    }
-  }
-
-  // --- Bracket-based fallback ---
-  const brandData = lookup[brand];
-  const factors: string[] = [];
-
-  if (!brandData) {
-    // Generic estimate
-    const baseValue = horsepower * 30;
-    const ageDep = Math.max(0.3, 1 - ((currentYear - year) * 0.1));
-    const condMult: Record<string, number> = { excellent: 1.0, good: 0.75, fair: 0.55, poor: 0.3 };
-    const est = baseValue * ageDep * (condMult[condition] || 0.55);
-    let low = est * 0.85, high = est * 1.15;
-    factors.push("Unknown brand", "Estimated depreciation");
-    const pf = getBrandPenalty(brand, config);
-    if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
-    [low, high] = applyEngineAdjustments(low, high, factors);
-    low = Math.max(low, minValue); high = Math.max(high, minValue);
-    return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence: "low", factors };
-  }
-
-  // Find year range
-  let yearRange = "";
-  if (year >= 2025) yearRange = "2025-2029";
-  else if (year >= 2020) yearRange = "2020-2024";
-  else if (year >= 2015) yearRange = "2015-2019";
-  else if (year >= 2010) yearRange = "2010-2014";
-  else if (year >= 2005) yearRange = "2005-2009";
-  else {
-    const motorAge = currentYear - year;
-    const baseValue = horsepower * 30;
-    const ageDep = Math.max(0.3, 1 - (motorAge - 20) * 0.03);
-    const condMult: Record<string, number> = { excellent: 0.85, good: 0.65, fair: 0.45, poor: 0.25 };
-    const est = baseValue * ageDep * (condMult[condition] || 0.45);
-    let low = est * 0.8, high = est * 1.2;
-    factors.push("Motor age over 20 years");
-    const pf = getBrandPenalty(brand, config);
-    if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
-    [low, high] = applyEngineAdjustments(low, high, factors);
-    low = Math.max(low, minValue); high = Math.max(high, minValue);
-    return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence: "low", factors };
-  }
-
-  const yearData = brandData[yearRange];
-  if (!yearData) {
-    return runTradeEstimate("Generic", year, horsepower, condition, brackets, config, engineType, engineHours);
-  }
-
-  const availableHPs = Object.keys(yearData).map(Number).sort((a, b) => a - b);
-  const closestHP = availableHPs.reduce((prev, curr) =>
-    Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
-  );
-
-  const hpData = yearData[closestHP.toString()];
-  if (!hpData) return runTradeEstimate("Generic", year, horsepower, condition, brackets, config, engineType, engineHours);
-
-  let baseValue = hpData[condition] || hpData.fair;
-  const motorAge = currentYear - year;
-  if (brand === "Mercury" && motorAge < mercuryMaxAge) {
-    baseValue *= mercuryBonusFactor;
-    factors.push("Mercury trade bonus applied");
-  }
-  if (Math.abs(closestHP - horsepower) > 15) factors.push(`Estimated from ${closestHP}HP value`);
-
-  let low = baseValue * 0.85, high = baseValue * 1.15;
-  const pf = getBrandPenalty(brand, config);
-  if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
-  [low, high] = applyEngineAdjustments(low, high, factors);
-  low = Math.max(low, minValue); high = Math.max(high, minValue);
-
-  let confidence: string = "high";
-  if (Math.abs(closestHP - horsepower) > 15) confidence = "medium";
-  if (year < 2015) confidence = "low";
-
-  return {
-    low: Math.round(low), high: Math.round(high),
-    average: Math.round((low + high) / 2),
-    confidence,
-    factors: factors.length > 0 ? factors : ["Exact model match found"],
-  };
 }
 
 // ── Actions ─────────────────────────────────────────────
@@ -547,7 +357,7 @@ async function listPromotions(supabase: any) {
   });
 }
 
-async function estimateTradeIn(supabase: any, body: any) {
+async function estimateTradeIn(_supabase: any, body: any) {
   const { brand, year, horsepower, condition, engine_type, engine_hours } = body;
   if (!brand) throw new Error("brand is required (e.g. 'Mercury', 'Yamaha')");
   if (!year) throw new Error("year is required (e.g. 2018)");
@@ -556,58 +366,34 @@ async function estimateTradeIn(supabase: any, body: any) {
   const cond = (condition || "good").toLowerCase();
   if (!validConditions.includes(cond)) throw new Error(`condition must be one of: ${validConditions.join(", ")}`);
 
-  // Auto-detect engine type from model field if not explicitly set
-  let effectiveEngineType = engine_type;
-  if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
-    const modelLower = (body.model || "").toLowerCase();
-    if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
-      effectiveEngineType = "2-stroke";
-    } else if (modelLower.includes("optimax")) {
-      effectiveEngineType = "optimax";
-    }
-  }
-
-  // Fetch valuation data and Mercury MSRPs from DB
-  const [bracketsRes, configRes, msrpRes] = await Promise.all([
-    supabase.from("trade_valuation_brackets").select("*"),
-    supabase.from("trade_valuation_config").select("*"),
-    supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
-  ]);
-
-  const brackets = bracketsRes.data || [];
-  const configMap: Record<string, Record<string, number>> = {};
-  for (const item of (configRes.data || [])) {
-    configMap[item.key] = item.value;
-  }
-
-  // Build HP-to-MSRP lookup
-  const msrpLookup: Record<number, number> = {};
-  for (const m of (msrpRes.data || [])) {
-    const hp = Number(m.horsepower);
-    const msrp = Number(m.msrp);
-    if (hp && msrp && (!msrpLookup[hp] || msrp > msrpLookup[hp])) {
-      msrpLookup[hp] = msrp;
-    }
-  }
-
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours, msrpLookup);
-
-  // Compute the rounded median value (to nearest $25)
-  const median = (estimate.low + estimate.high) / 2;
-  const hpFloor = getHpClassFloor(horsepower, configMap);
-  const rounded = Math.max(Math.round(median / 25) * 25, hpFloor);
+  const stroke = normalizeHbwStroke(engine_type);
+  const estimate = await fetchCanonicalHbwValuation({
+    brand: String(brand).trim(),
+    year: Number(year),
+    hp: Number(horsepower),
+    condition: cond,
+    stroke,
+    hours: typeof engine_hours === "number" ? engine_hours : undefined,
+    model: typeof body.model === "string" && body.model.trim()
+      ? body.model.trim()
+      : undefined,
+  });
 
   return json({
     ok: true,
     trade_in: {
       brand, year, horsepower, condition: cond,
-      engine_type: effectiveEngineType || "4-stroke",
+      engine_type: stroke ?? null,
       engine_hours: engine_hours ?? null,
-      estimated_value: rounded,
-      range_low: estimate.low,
-      range_high: estimate.high,
+      estimated_value: estimate.wholesale,
+      range_low: estimate.rangeLow,
+      range_high: estimate.rangeHigh,
+      listing_value: estimate.listing,
+      hst_savings: estimate.hstSavings,
       confidence: estimate.confidence,
       factors: estimate.factors,
+      source: "HBW Motor Valuation API (canonical)",
+      report_url: estimate.reportUrl ?? null,
     },
   });
 }
@@ -616,13 +402,23 @@ async function getWarrantyPricing(supabase: any, body: any) {
   const hp = body.horsepower;
   if (!hp) throw new Error("horsepower is required");
 
-  const { data, error } = await supabase
-    .from("warranty_pricing")
-    .select("*")
-    .lte("hp_min", hp)
-    .gte("hp_max", hp);
+  const today = new Date().toISOString().split("T")[0];
+  const [{ data, error }, { data: activePromotions, error: promotionsError }] = await Promise.all([
+    supabase
+      .from("warranty_pricing")
+      .select("*")
+      .lte("hp_min", hp)
+      .gte("hp_max", hp),
+    supabase
+      .from("promotions")
+      .select("warranty_extra_years")
+      .eq("is_active", true)
+      .or(`start_date.is.null,start_date.lte.${today}`)
+      .or(`end_date.is.null,end_date.gte.${today}`),
+  ]);
 
   if (error) throw new Error(`get_warranty_pricing failed: ${error.message}`);
+  if (promotionsError) throw new Error(`active promotion lookup failed: ${promotionsError.message}`);
 
   const row = (data || [])[0];
   if (!row) {
@@ -633,21 +429,42 @@ async function getWarrantyPricing(supabase: any, body: any) {
     });
   }
 
-  // Base warranty is 3 years. Any bonus years come from the active promotions data, not hardcoded here.
-  // Extensions are priced per additional year beyond the base (plus any active promo bonus years).
+  const promotionalWarrantyYears = (activePromotions || []).reduce(
+    (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
+    0,
+  );
+  const includedCoverageYears = Math.min(3 + promotionalWarrantyYears, 8);
+  const planPrices = [row.year_1_price, row.year_2_price, row.year_3_price, row.year_4_price, row.year_5_price];
+  const extensionCosts: Record<string, number> = {};
+
+  for (let targetYear = 4; targetYear <= 8; targetYear++) {
+    const paidPlanYears = Math.max(0, targetYear - includedCoverageYears);
+    extensionCosts[`year_${targetYear}`] = paidPlanYears === 0
+      ? 0
+      : Number(planPrices[paidPlanYears - 1]);
+  }
+
+  // Keep the legacy total-year mapping for API compatibility, but calculate
+  // it from today's included promotional coverage. Also expose the underlying
+  // purchased-plan terms explicitly so agents do not sum cumulative columns.
   return json({
     ok: true,
     warranty_pricing: {
       hp_range: `${row.hp_min}-${row.hp_max}`,
       base_warranty_years: 3,
-      extension_costs: {
-        year_4: row.year_1_price,
-        year_5: row.year_2_price,
-        year_6: row.year_3_price,
-        year_7: row.year_4_price,
-        year_8: row.year_5_price,
+      promotional_warranty_years: promotionalWarrantyYears,
+      included_coverage_years: includedCoverageYears,
+      extension_costs: extensionCosts,
+      platinum_plan_prices: {
+        one_year: row.year_1_price,
+        two_year: row.year_2_price,
+        three_year: row.year_3_price,
+        four_year: row.year_4_price,
+        five_year: row.year_5_price,
       },
-      note: "Base Mercury factory warranty is 3 years. If the active promotions data lists a warranty bonus, those bonus years are included free and only years beyond that total cost extra.",
+      currency: "CAD",
+      prices_exclude_tax: true,
+      note: "Each value is the cumulative price of the purchased 1-5 year Platinum plan. Base coverage is 3 years. Active promotional years are counted first and reduce the paid plan term; combined coverage cannot exceed 8 years.",
     },
   });
 }
@@ -845,19 +662,28 @@ async function createQuote(supabase: any, body: any) {
   let rebateAmount = 0;
   let promoData: any = null;
   let promoWarnings: string[] = [];
+  let totalPromoWarrantyYears = 0;
 
   // Always fetch promos — auto-default to cash_rebate if not specified
   {
     // Fetch active promo
-    const { data: promos } = await supabase
+    const { data: promos, error: promotionsError } = await supabase
       .from("promotions")
       .select("id, name, promo_options, warranty_extra_years, end_date")
       .eq("is_active", true)
-      .or('end_date.is.null,end_date.gte.' + new Date().toISOString())
-      .order("priority", { ascending: false })
-      .limit(1);
+      .or('start_date.is.null,start_date.lte.' + new Date().toISOString().split("T")[0])
+      .or('end_date.is.null,end_date.gte.' + new Date().toISOString().split("T")[0])
+      .order("priority", { ascending: false });
+
+    if (promotionsError) {
+      throw new Error(`active promotion lookup failed: ${promotionsError.message}`);
+    }
 
     const activePromo = (promos || [])[0];
+    totalPromoWarrantyYears = (promos || []).reduce(
+      (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
+      0,
+    );
     if (!activePromo) {
       promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
     }
@@ -903,56 +729,57 @@ async function createQuote(supabase: any, body: any) {
   if (body.trade_in && body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
     const ti = body.trade_in;
     const cond = (ti.condition || "good").toLowerCase();
-
-    // Auto-detect engine type from model field if not explicitly set
-    let effectiveEngineType = ti.engine_type;
-    if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
-      const modelLower = (ti.model || "").toLowerCase();
-      if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
-        effectiveEngineType = "2-stroke";
-      } else if (modelLower.includes("optimax")) {
-        effectiveEngineType = "optimax";
-      }
+    const stroke = normalizeHbwStroke(ti.engine_type);
+    const overrideValue = ti.override_value != null &&
+        typeof ti.override_value === "number" && ti.override_value > 0
+      ? ti.override_value
+      : null;
+    let estimate: CanonicalHbwValuation | null = null;
+    try {
+      estimate = await fetchCanonicalHbwValuation({
+        brand: String(ti.brand).trim(),
+        year: Number(ti.year),
+        hp: Number(ti.horsepower),
+        condition: cond,
+        stroke,
+        hours: typeof ti.engine_hours === "number" ? ti.engine_hours : undefined,
+        model: typeof ti.model === "string" && ti.model.trim()
+          ? ti.model.trim()
+          : undefined,
+      });
+    } catch (error) {
+      if (
+        overrideValue === null ||
+        !(error instanceof HbwValuationError) ||
+        error.status < 500
+      ) throw error;
+      console.warn("Canonical valuation unavailable; preserving explicit agent override", error);
     }
-
-    const [bracketsRes, configRes, msrpRes2] = await Promise.all([
-      supabase.from("trade_valuation_brackets").select("*"),
-      supabase.from("trade_valuation_config").select("*"),
-      supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
-    ]);
-    const brackets = bracketsRes.data || [];
-    const configMap: Record<string, Record<string, number>> = {};
-    for (const item of (configRes.data || [])) configMap[item.key] = item.value;
-    const msrpLookup2: Record<number, number> = {};
-    for (const m of (msrpRes2.data || [])) {
-      const hp = Number(m.horsepower); const msrp = Number(m.msrp);
-      if (hp && msrp && (!msrpLookup2[hp] || msrp > msrpLookup2[hp])) msrpLookup2[hp] = msrp;
-    }
-
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours, msrpLookup2);
-    const median = (estimate.low + estimate.high) / 2;
-    const hpFloor = getHpClassFloor(ti.horsepower, configMap);
-    tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
-
-    // Check for admin/agent override
-    const formulaEstimate = tradeInValue;
-    if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
-      tradeInValue = ti.override_value;
-    }
+    const formulaEstimate = estimate?.wholesale ?? null;
+    tradeInValue = overrideValue ?? formulaEstimate!;
 
     tradeInData = {
       brand: ti.brand,
       year: ti.year,
       horsepower: ti.horsepower,
       condition: cond,
-      engine_type: effectiveEngineType || "4-stroke",
+      engine_type: stroke ?? null,
       engine_hours: ti.engine_hours ?? null,
       model: ti.model || "",
       serialNumber: ti.serial_number || "",
       estimatedValue: tradeInValue,
       originalEstimate: formulaEstimate,
-      overrideValue: ti.override_value != null ? ti.override_value : undefined,
-      confidence: estimate.confidence,
+      overrideValue: overrideValue ?? undefined,
+      confidence: estimate?.confidence ?? "manual",
+      rangeLow: estimate?.rangeLow,
+      rangeHigh: estimate?.rangeHigh,
+      listingValue: estimate?.listing,
+      hstSavings: estimate?.hstSavings,
+      valuationReportUrl: estimate?.reportUrl,
+      valuationSource: estimate
+        ? "HBW Motor Valuation API (canonical)"
+        : "Explicit agent override",
+      valuationStatus: estimate ? "canonical" : "manual_override_without_canonical_readback",
       hasTradeIn: true,
     };
   }
@@ -961,28 +788,53 @@ async function createQuote(supabase: any, body: any) {
   let warrantyCost = 0;
   let warrantyYearsExtra = 0;
   const baseWarrantyYears = 3;
-  const promoWarrantyYears = promoData?.warranty_extra_years || 0;
-  const totalBaseWarranty = baseWarrantyYears + promoWarrantyYears; // 3 base + any active promo bonus years
+  const promoWarrantyYears = totalPromoWarrantyYears;
+  const totalBaseWarranty = Math.min(baseWarrantyYears + promoWarrantyYears, 8); // never exceed Mercury's combined maximum
 
-  if (body.warranty_years && body.warranty_years > totalBaseWarranty) {
-    warrantyYearsExtra = body.warranty_years - totalBaseWarranty;
+  const requestedWarrantyYears = body.warranty_years == null
+    ? totalBaseWarranty
+    : Number(body.warranty_years);
+
+  if (!Number.isInteger(requestedWarrantyYears) || requestedWarrantyYears < 0) {
+    throw new Error("warranty_years must be a non-negative whole number of combined coverage years");
+  }
+
+  if (requestedWarrantyYears > 8) {
+    throw new Error("Mercury Product Protection cannot exceed 8 years of combined coverage");
+  }
+
+  if (requestedWarrantyYears > totalBaseWarranty) {
+    warrantyYearsExtra = requestedWarrantyYears - totalBaseWarranty;
+    if (warrantyYearsExtra > 5) {
+      throw new Error("Mercury Platinum Product Protection plans are available in 1-5 year terms");
+    }
     if (motor.horsepower) {
-      const { data: wpRows } = await supabase
+      const { data: wpRows, error: warrantyPricingError } = await supabase
         .from("warranty_pricing")
         .select("*")
         .lte("hp_min", motor.horsepower)
         .gte("hp_max", motor.horsepower);
 
+      if (warrantyPricingError) {
+        throw new Error(`Mercury Platinum Product Protection pricing lookup failed: ${warrantyPricingError.message}`);
+      }
+
       const wp = (wpRows || [])[0];
       if (wp) {
-        // Map extra years to pricing columns
+        // These are cumulative prices for the purchased 1-5 year Platinum
+        // plan. Promotional coverage has already reduced warrantyYearsExtra;
+        // summing cumulative columns would overcharge the customer.
         const yearPrices = [wp.year_1_price, wp.year_2_price, wp.year_3_price, wp.year_4_price, wp.year_5_price];
-        // Start from year after promo coverage
-        const startIndex = promoWarrantyYears; // if promo gives 4 extra years, start at index 4
-        for (let i = 0; i < warrantyYearsExtra && (startIndex + i) < yearPrices.length; i++) {
-          warrantyCost += yearPrices[startIndex + i] || 0;
+        const selectedPrice = Number(yearPrices[warrantyYearsExtra - 1]);
+        if (!Number.isFinite(selectedPrice) || selectedPrice <= 0) {
+          throw new Error(`Mercury Platinum Product Protection pricing is incomplete for ${motor.horsepower}HP and a ${warrantyYearsExtra}-year plan`);
         }
+        warrantyCost = selectedPrice;
+      } else {
+        throw new Error(`No Mercury Platinum Product Protection pricing found for ${motor.horsepower}HP`);
       }
+    } else {
+      throw new Error("Motor horsepower is required to price Mercury Platinum Product Protection");
     }
   }
 
@@ -1035,7 +887,7 @@ async function createQuote(supabase: any, body: any) {
   }
 
   // Build warrantyConfig that SavedQuotePage expects
-  const totalWarrantyYears = body.warranty_years || totalBaseWarranty;
+  const totalWarrantyYears = Math.max(totalBaseWarranty, requestedWarrantyYears);
   const warrantyConfig = {
     totalYears: totalWarrantyYears,
     extendedYears: warrantyYearsExtra,
@@ -1246,7 +1098,7 @@ async function createQuote(supabase: any, body: any) {
     pricing,
     promo_applied: promoOption ? { option: promoOption, rebate_amount: rebateAmount, promo_name: promoData?.name } : null,
     trade_in_applied: tradeInData ? { value: tradeInValue, brand: tradeInData.brand, condition: tradeInData.condition } : null,
-    warranty: { total_years: body.warranty_years || totalBaseWarranty, extra_cost: warrantyCost },
+    warranty: { total_years: totalWarrantyYears, extra_cost: warrantyCost },
   };
 
   if (financingData) response.financing = financingData;
@@ -1319,60 +1171,53 @@ async function updateQuote(supabase: any, body: any) {
     } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
       const ti = body.trade_in;
       const cond = (ti.condition || "good").toLowerCase();
-
-      // Auto-detect engine type from model field if not explicitly set
-      let effectiveEngineType = ti.engine_type;
-      if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
-        const modelLower = (ti.model || "").toLowerCase();
-        if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
-          effectiveEngineType = "2-stroke";
-        } else if (modelLower.includes("optimax")) {
-          effectiveEngineType = "optimax";
-        }
+      const stroke = normalizeHbwStroke(ti.engine_type);
+      const overrideValue = ti.override_value != null &&
+          typeof ti.override_value === "number" && ti.override_value > 0
+        ? ti.override_value
+        : null;
+      let estimate: CanonicalHbwValuation | null = null;
+      try {
+        estimate = await fetchCanonicalHbwValuation({
+          brand: String(ti.brand).trim(),
+          year: Number(ti.year),
+          hp: Number(ti.horsepower),
+          condition: cond,
+          stroke,
+          hours: typeof ti.engine_hours === "number" ? ti.engine_hours : undefined,
+          model: typeof ti.model === "string" && ti.model.trim()
+            ? ti.model.trim()
+            : undefined,
+        });
+      } catch (error) {
+        if (
+          overrideValue === null ||
+          !(error instanceof HbwValuationError) ||
+          error.status < 500
+        ) throw error;
+        console.warn("Canonical valuation unavailable; preserving explicit agent override", error);
       }
-
-      const [bracketsRes, configRes, msrpRes3] = await Promise.all([
-        supabase.from("trade_valuation_brackets").select("*"),
-        supabase.from("trade_valuation_config").select("*"),
-        supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
-      ]);
-      const brackets = bracketsRes.data || [];
-      const configMap: Record<string, Record<string, number>> = {};
-      for (const item of (configRes.data || [])) configMap[item.key] = item.value;
-      const msrpLookup3: Record<number, number> = {};
-      for (const m of (msrpRes3.data || [])) {
-        const hp = Number(m.horsepower); const msrp = Number(m.msrp);
-        if (hp && msrp && (!msrpLookup3[hp] || msrp > msrpLookup3[hp])) msrpLookup3[hp] = msrp;
-      }
-      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours, msrpLookup3);
-      const median = (estimate.low + estimate.high) / 2;
-      const hpFloor = getHpClassFloor(ti.horsepower, configMap);
-      let tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
-      // Check for admin/agent override
-      const formulaEstimate = tradeInValue;
-      if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
-        const finalTradeIn = ti.override_value;
-        const tradeInObj = {
-          brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, engine_type: effectiveEngineType || "4-stroke", engine_hours: ti.engine_hours ?? null,
-          model: ti.model || "", serialNumber: ti.serial_number || "",
-          estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
-          overrideValue: ti.override_value, hasTradeIn: true,
-        };
-        quoteData.tradeIn = tradeInObj;
-        quoteData.tradeInInfo = tradeInObj;
-        updates.tradein_value_final = finalTradeIn;
-      } else {
-        const tradeInObj = {
-          brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, engine_type: effectiveEngineType || "4-stroke", engine_hours: ti.engine_hours ?? null,
-          model: ti.model || "", serialNumber: ti.serial_number || "",
-          estimatedValue: tradeInValue, originalEstimate: formulaEstimate, hasTradeIn: true,
-        };
-        quoteData.tradeIn = tradeInObj;
-        quoteData.tradeInInfo = tradeInObj;
-        updates.tradein_value_final = tradeInValue;
-      }
+      const formulaEstimate = estimate?.wholesale ?? null;
+      const finalTradeIn = overrideValue ?? formulaEstimate!;
+      const tradeInObj = {
+        brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
+        condition: cond, engine_type: stroke ?? null, engine_hours: ti.engine_hours ?? null,
+        model: ti.model || "", serialNumber: ti.serial_number || "",
+        estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
+        overrideValue: overrideValue ?? undefined,
+        confidence: estimate?.confidence ?? "manual",
+        rangeLow: estimate?.rangeLow, rangeHigh: estimate?.rangeHigh,
+        listingValue: estimate?.listing, hstSavings: estimate?.hstSavings,
+        valuationReportUrl: estimate?.reportUrl,
+        valuationSource: estimate
+          ? "HBW Motor Valuation API (canonical)"
+          : "Explicit agent override",
+        valuationStatus: estimate ? "canonical" : "manual_override_without_canonical_readback",
+        hasTradeIn: true,
+      };
+      quoteData.tradeIn = tradeInObj;
+      quoteData.tradeInInfo = tradeInObj;
+      updates.tradein_value_final = finalTradeIn;
     }
   }
 

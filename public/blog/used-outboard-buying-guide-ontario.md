@@ -4,9 +4,9 @@ last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Used Outboard Buying Guide Ontario"
 description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test."
 category: "Buying Guide"
@@ -16,6 +16,7 @@ keywords: ["used outboard buying guide Ontario","how to inspect a used outboard"
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Used Outboard Buying Guide Ontario
@@ -24,13 +25,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-07  
-**Last updated:** 2026-05-23  
+**Last reviewed:** 2026-05-23  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario
 
 > **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
 
-Harris Boat Works has been a Mercury dealer and service shop on Rice Lake since 1947. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
+Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
 A used outboard can be a smart buy. Ontario is the right place to shop for one, too. The Kawarthas and Rice Lake run almost entirely freshwater motors, and freshwater is the best possible starting point. A single saltwater season leaves corrosion you cannot undo.
 
@@ -110,8 +111,6 @@ While the plugs are already out, read them:
 - **White or blistered** means it is running lean and hot, with possible head gasket trouble.
 
 Then smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like exactly what it is.
-
-::walkaround-lead-capture
 
 ---
 
@@ -234,23 +233,22 @@ Yes. We are a full-service Mercury Premier dealer and we work on everything from
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
+- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario), used-boat walkaround inspection
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

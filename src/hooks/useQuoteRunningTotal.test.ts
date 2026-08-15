@@ -49,6 +49,17 @@ describe('calculateRunningTotal', () => {
     expect(r.lineItems.find(l => l.label === 'Installation Labor')?.value).toBe(450);
   });
 
+  it('adds a supplied propeller allowance to the running total', () => {
+    const r = calculateRunningTotal(motor(), {
+      propellerAllowance: { name: 'Propeller Allowance (Aluminum)', price: 350 },
+    });
+    expect(r.subtotal).toBe(10350);
+    expect(r.lineItems).toContainEqual({
+      label: 'Propeller Allowance (Aluminum)',
+      value: 350,
+    });
+  });
+
   it('skips installation labor for tiller (TLR) motor', () => {
     const r = calculateRunningTotal(motor({ model: 'F25TLR' }), { purchasePath: 'installed' });
     expect(r.subtotal).toBe(10000);

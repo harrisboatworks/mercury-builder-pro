@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
@@ -16,6 +16,7 @@ keywords: ["boat electrical safety checklist","marine electrical ontario","boat 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Boat Electrical Safety Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
-# Boat Electrical Safety Checklist for Ontario Freshwater Boats
+## Boat Electrical Safety Checklist for Ontario Freshwater Boats
 
 ## Quick answer
 
@@ -105,8 +106,6 @@ Visually inspect any wiring you can see, especially around connections to the he
 
 This is the single most common pattern we see when diagnosing intermittent electrical issues at our service shop. Amateur wiring with the wrong terminals creates resistance, the resistance creates voltage drops, and the voltage drops create faults that look mysterious until you trace them back to a corroded crimp.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 For the broader battery conversation, our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers selection and care in more detail.
 
 ## The marine-grade vs automotive-grade trap
@@ -174,8 +173,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Is it safe to add a trolling motor or fishfinder myself?
@@ -205,23 +202,26 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
+- [Boat Motor Trade-In Ontario Guide](/blog/boat-motor-trade-in-guide), trade-in valuation guide
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

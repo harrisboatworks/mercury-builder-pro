@@ -20,7 +20,7 @@ const statNumberClass =
   'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = { letterSpacing: '-0.035em', lineHeight: 1 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-1 sm:mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/70 mt-1 sm:mt-2 leading-tight sm:max-w-[18ch]';
 const statLabelStyle = { letterSpacing: '0.16em' } as const;
 
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
@@ -207,11 +207,17 @@ export function HeroRepower() {
         </motion.div>
 
         <motion.div {...fadeUp(0.8)} className="flex flex-col sm:flex-row gap-4">
-          <RepowerCta to="/quote/motor-selection" variant="primary" size="lg">
+          <RepowerCta
+            to="/quote/motor-selection"
+            variant="primary"
+            size="lg"
+            data-cta="quote-start"
+            data-cta-location="home_hero"
+          >
             {variation.ctaLabel}
             <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </RepowerCta>
-          <RepowerCta href="tel:9053422153" variant="secondary" size="lg">
+          <RepowerCta href="tel:9053422153" variant="secondary" size="lg" data-cta-location="home_hero_phone">
             <Phone className="w-4 h-4" />
             (905) 342-2153
           </RepowerCta>

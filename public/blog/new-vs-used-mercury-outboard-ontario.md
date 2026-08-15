@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-06-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-06-10
+date_modified: 2026-08-08
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # New vs Used Mercury Outboard in Ontario, by the Numbers
@@ -24,23 +25,21 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-06-10  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
-# New vs Used Mercury Outboard in Ontario, by the Numbers
-
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and a known maintenance baseline. A well-kept used Mercury can save substantially on the purchase price, but its remaining coverage and catch-up service depend on the serial record, service history, inspection, and proper warranty transfer where eligible. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
 The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty. Current promotions can extend total coverage; see [current offers](/promotions). Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
-- First 20-hour service is on the dealer's calendar
-- 100-hour service intervals are predictable for the first 5-7 years
+- The model-specific break-in and first scheduled service are documented
+- For most current FourStrokes, the 100-hour or annual interval is predictable
 - Impeller, plugs, and gearcase service have a documented baseline
 - If something fails inside the warranty period, it is the manufacturer's problem
 
@@ -72,16 +71,14 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 |---|---|---|
 | Motor purchase | $11,500 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
-| Year-one service (catch-up) | $250 (20-hour) | $800-1,200 (impeller, plugs, gear lube, full diagnostic) |
-| Warranty | 3 years factory (see /promotions for current offers) | None |
-| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
+| Year-one service | 100-hour or annual service, scoped by model | Catch-up service based on records and inspection |
+| Warranty | 3 years factory (see /promotions for current offers) | Verify any unexpired transferable coverage by serial number |
+| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
-
-::walkaround-lead-capture
 
 ## The trade-in wrinkle: HST only on the difference
 
@@ -96,8 +93,6 @@ The new-Mercury decision usually wins when at least two of these are true:
 - The boat itself is structurally sound and worth pairing with a long-lived motor
 
 Customers we steer toward new: repower projects on solid hulls (an 18-foot aluminum that is going to outlive everyone), first-time boat buyers who want a one-decision setup, and anyone with kids who are about to learn to water-ski.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## When used is the right answer
 
@@ -141,15 +136,15 @@ A Mercury from 2020-2021 with under 300 hours and documented service is function
 
 ### How many hours is "too many" on a used Mercury?
 
-For a four-stroke kept in fresh water with documented service, 800-1,200 hours is mid-life. Past 1,500 hours we start asking harder questions about the powerhead, the gearcase, and how the boat was stored. Two-strokes (rare on the dock now) have shorter useful lives.
+There is no reliable hour number by itself. Judge the exact engine family, service records, fault history, compression or leak-down results, gearcase condition, corrosion, storage history, and a proper test run together. A well-documented higher-hour motor can be a better purchase than a neglected low-hour motor.
 
 ### Can a Mercury dealer transfer factory warranty to a second owner?
 
-Standard Mercury limited warranty is non-transferable. Mercury Product Protection (the extended program) IS transferable for a small fee through an authorized dealer if the program is still in force. If you are buying a used Mercury with under 5 years on the original purchase date, ask whether MPP was enrolled and whether the transfer paperwork is available.
+Unexpired recreational-use Mercury limited-warranty coverage can transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. Mercury Product Protection has its own transfer timing, eligibility, documentation, inspection, and fee rules, so have an authorized dealer verify the serial record before purchase.
 
 ### What is the financing difference between new and used?
 
-New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used.
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms. Used motor purchases are typically cash or personal-loan financed. The financing math can tip the decision toward new even when the sticker price favours used.
 
 ### Should I get a pre-purchase inspection on a used Mercury?
 
@@ -162,23 +157,22 @@ Once you factor in cross-border duties, exchange rates, and the loss of Canadian
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario), pontoon vs V-hull comparison
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

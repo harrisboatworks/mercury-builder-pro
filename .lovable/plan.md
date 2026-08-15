@@ -1,121 +1,85 @@
-# Duplicate-content diagnostic — findings and fix plan
+# Audit findings — desktop tables + imperial units
 
-Investigation done, no code touched. Answers to your four questions first, plan at the end.
-
----
-
-## 1. Why doesn't the `quote.harrisboatworks.ca` redirect fire?
-
-**It does fire, right now, server-side.** Direct probes from this sandbox:
-
-```
-curl -I https://quote.harrisboatworks.ca/repower
-→ HTTP/2 301, location: https://www.mercuryrepower.ca/repower, server: Vercel
-
-curl -I https://mercuryrepower.ca/
-→ HTTP/2 301, location: https://www.mercuryrepower.ca/, server: Vercel
-```
-
-Both hosts return a real 301 from Vercel. The `vercel.json` host-conditional redirect wins before the SPA rewrite (Vercel evaluates `redirects` before `rewrites`), and `middleware.ts` is a backup that also fires. Neither is being shadowed.
-
-So the browser behaviour you saw at `quote.harrisboatworks.ca/repower` (full app rendered, two canonicals) is **not** an active Vercel misconfig. Most likely causes, in order:
-
-1. **Stale service worker.** `public/service-worker.js` and `public/sw.js` exist; if a visitor installed the SW at that host months ago, the SW serves a cached shell (with the old canonicals) before the network 301 is ever consulted. This is by far the most common cause of "the redirect isn't working but curl says it is."
-2. **HSTS or disk cache pinned to old response.** Chrome will happily serve a cached 200 for a URL that later returns 301, until the cache entry expires.
-3. **Not the config.** The catch-all rewrite (`/((?!api/|...).*)`) doesn't shadow redirects on Vercel — redirects run first.
-
-**Not a DNS issue either:** DNS resolves to Vercel, Vercel is doing the 301. It's a **client-side stale cache/SW at `quote.harrisboatworks.ca`.**
+Article prose column is `max-w-[880px]` (`src/pages/BlogArticle.tsx:282`). At 1440px viewport that leaves ~560px of unused horizontal space; at 1280px, ~400px. That's the "wasted width" the lg-breakout on `MercuryCapacityLookup` reclaimed.
 
 ---
 
-## 2. Where the canonical / og:url comes from — and why you'd see two
+## PART A — Desktop wide-content overflow
 
-Emitters (verified by grep):
+Headless check at 1440 and 1280: every rendered `<table>` measured 846px wide with `scrollWidth == clientWidth` (no active horizontal scroll inside the card). So none of the other tables silently overflow on desktop the way the capacity lookup did — but several are visually cramped inside the 880px prose column when a wider component would breathe better.
 
-| Source | Behaviour |
-|---|---|
-| `index.html` | Static single canonical `https://www.mercuryrepower.ca/` |
-| `scripts/static-prerender.mjs` (lines 5294-5304, 5324-5354) | Rewrites the shell canonical + og:url per route, keyed off `SITE_URL` (always `https://www.mercuryrepower.ca`), tags with `data-rh="true"` |
-| `src/lib/site.ts` | `SITE_URL` is hardcoded to `https://www.mercuryrepower.ca` and rejects stale `VITE_SITE_URL` env values. Origin is **never** derived from `window.location` here. |
-| Per-page Helmet SEO components (`RepowerPageSEO`, `HubPageSEO`, `BoatInfoPageSEO`, `ContactPageSEO`, `FAQPageSEO`, `MotorPageSEO`, `PromotionsPageSEO`, `QuoteSummaryPageSEO`, `MotorSelectionSEO`, `TradeInValuePage`, `Terms`, `Privacy`, `Locations`, `LocationDetail`, `MandarinLanding`, `FrenchLanding`, `MotorPage`, `CaseStudyDetail`, `ToolsIndex`, `PricingReference`, `AboutJayHarris`, plus every localized blog page) | Each emits its own `<link rel="canonical">` and `<meta property="og:url">` through `react-helmet-async`. |
-| `src/App.tsx` line 198-215 `<Canonical>` fallback | Uses `SITE_URL` (good), and short-circuits if a canonical already exists. |
-| **`src/components/QuoteBuilder.tsx` line 192-198** | **Grabs the existing canonical and OVERWRITES its href to `window.location.origin + '/'`** — this is host-derived and page-agnostic. |
-| Also runtime host-derived: `src/pages/AdminQuotes.tsx:111`, `src/pages/FinanceCalculator.tsx:67`, `src/pages/StagingImageSizing{,V2,Final}.tsx` | Set canonical from `window.location.origin` / `.href` |
+Ranked (real overflow risk first, then "wasted width" candidates):
 
-**Why two canonicals appear on `/repower`:**
+| # | Component / file | Article slug(s) | Cols | 1440 / 1280 behaviour | Fix / effort |
+|---|---|---|---|---|---|
+| 1 | `src/components/blog/BlogTable.tsx` (markdown table renderer, `min-w-[640px] md:min-w-full`, wraps everything in `overflow-x-auto`) | 7-col: `mercury-main-and-trolling-motor`; 6-col: `year-end-boat-motor-buying-guide`, `mercury-controls-rigging-guide-ontario`, `mercury-extended-warranty-platinum-ontario`, `mercury-avator-range-rice-lake-cottage`; 5-col: `mercury-outboard-overheat-alarm-decoder`, `mercury-propeller-selection-guide`, `fourstroke-vs-pro-xs`, `best-mercury-outboard-rice-lake-fishing`, `boat-rentals-shared-access-booming-2026`, `2026-rice-lake-fishing-season-outlook`, `mercury-90-hp-fourstroke-review-ontario`, `mercury-250-hp-fourstroke-pro-xs-review-ontario`, `mercury-outboard-monthly-payment-ontario-2026`, `bilge-pump-troubleshooting-guide` | 3–7 | Fits 846px, no scroll. Cells with long text wrap heavily on 6/7-col tables — cramped but not overflowing. | **Medium.** Add an opt-in `wide` prop / detection (≥5 cols) that triggers an lg breakout wrapper mirroring `MercuryCapacityLookup` (`lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))]`). Keep mobile scroll-in-card. Highest payoff on the 7- and 6-col tables above. |
+| 2 | `src/components/blog/visuals/BlogComparison.tsx` (hbw-comparison directive) | No live usages in `blogArticles.ts` or `public/blog/*.md` today | variable | Would overflow whenever ≥5 columns because header cells and row labels are `whitespace-nowrap` and it lives inside 880px prose. | **Low.** No article uses it right now — leave as-is, but when re-enabled, apply the same lg-breakout pattern and drop the `whitespace-nowrap` at lg. |
+| 3 | `src/components/blog/MercuryPriceTable.tsx` | Blog directive; used where authors insert `::mercury-price-table` | 3 | Fits well inside 846px, no overflow observed. | **None.** Fine as-is. |
+| 4 | `src/components/blog/visuals/BlogCostBreakdown.tsx` | List of cards, not a table (uses `min-w-0` for text truncation only) | n/a | No overflow. | **None.** |
+| 5 | `src/components/blog/MultilingualHub.tsx` | Multilingual index page, not article body | n/a | `whitespace-nowrap` only on short chips. No overflow. | **None.** |
 
-`react-helmet-async` deduplicates `<meta>` tags by `name` / `property`, but **does not deduplicate `<link>` tags by `rel`** (this is a known Helmet behaviour, noted in the project's own `head-meta` knowledge). Sequence on `/repower`:
+Nothing else in `src/components/blog/` matched `overflow-x-auto`, `min-w-`, `whitespace-nowrap`, or `<table>` in a way that affects article-body layout.
 
-1. Prerender writes `<link data-rh="true" rel="canonical" href="https://www.mercuryrepower.ca/repower">` into the shell.
-2. React hydrates. `RepowerPageSEO` runs and Helmet appends **another** `<link rel="canonical" href="https://www.mercuryrepower.ca/repower">` — same href, but a **second element**.
-3. If any code path also runs `QuoteBuilder`'s effect (or one of the other runtime canonical mutators), it locates the *first* `<link rel=canonical>` and rewrites its `href` to `window.location.origin + '/'` — which on `quote.harrisboatworks.ca` becomes `https://quote.harrisboatworks.ca/`, and on `harrisboatworks.ca` becomes `https://harrisboatworks.ca/repower`. That's exactly the "second canonical pointing to a wrong domain" you observed.
-
-The two `<meta property="og:url">` tags come from the same Helmet-vs-prerender adoption gap: some pages carry Helmet `og:url` while the prerender has already stamped one; if Helmet's tag doesn't dedupe against the `data-rh` marker on hydration (it usually does for meta, but not always for cached routes / different attribute orderings), you can end up with two.
-
-**Bottom line:** the duplication is not caused by DNS. It's caused by (a) the runtime mutators that use `window.location.origin`, and (b) Helmet not deduping `<link rel=canonical>`.
+**Recommendation:** only #1 is worth acting on. A single change to `BlogTable.tsx` (opt-in wide mode) fixes the entire ranked list of 15 articles in one shot, without touching article markdown.
 
 ---
 
-## 3. Cleanest fix (single source of truth)
+## PART B — Imperial-first fluid units
 
-Make `SITE_URL` the only origin used anywhere for canonicals/og:url, and let the prerender's `data-rh` tag be the only canonical element on the page.
+Bucketed by article slug from `src/data/blogArticles.ts` (markdown twins in `public/blog/*.md` are regenerated from this source, so fixing the TS fixes both).
 
-Files to change (no code written yet):
+Ranked by count of imperial fluid mentions (`qt/quart/oz/fl oz/gallon/gal/GPH/mpg`). Only the ones that still present imperial-first or imperial-only for **oil / gear lube / fuel / coolant** capacities:
 
-1. **`src/components/QuoteBuilder.tsx`** (~L192-198) — delete the runtime canonical mutator entirely. The route already has its own SEO component; there's no reason to rewrite the canonical from `window.location.origin`.
-2. **`src/pages/AdminQuotes.tsx`** (L111) — same: remove the runtime `canonical.href = window.location.origin + '/admin/quotes'` (admin is not indexable anyway).
-3. **`src/pages/FinanceCalculator.tsx`** (L67) — replace `window.location.origin + '/finance-calculator'` with `${SITE_URL}/finance-calculator` from `@/lib/site`. Better: delete and rely on a `<Helmet><link rel="canonical" href={`${SITE_URL}/finance-calculator`} /></Helmet>` in the SEO component (there's a prerender entry for it already).
-4. **`src/pages/StagingImageSizing.tsx`, `StagingImageSizingV2.tsx`, `StagingImageSizingFinal.tsx`** — these set `canonical` to `window.location.href`. They are staging pages; add `<meta name="robots" content="noindex">` and drop the canonical mutation. If they must have one, use `${SITE_URL}/staging-...`.
-5. **All Helmet-based SEO components** that emit `<link rel="canonical">` — audit whether they should still ship a Helmet canonical at all, given the prerender already stamps one with `data-rh`. Two safe options:
-   - **Preferred:** delete the Helmet canonical from every SEO component and let the prerender be authoritative. Result: exactly one `<link rel=canonical>` in the DOM, always from `SITE_URL`.
-   - **Alternative:** keep Helmet canonical but strip the prerendered one on hydration by giving the SEO components the same `data-rh="true"` attribute (Helmet already does this) AND adding a small `useEffect` in `src/main.tsx` that removes any extra `link[rel=canonical]` beyond the first. Uglier; not recommended.
-6. **Service worker.** Update `public/service-worker.js` and `public/sw.js` to (a) claim clients aggressively and (b) delete any cached HTML for the `quote.harrisboatworks.ca` origin on activate. Or, simpler: bump the SW version so old clients unregister on next visit and revalidate. This is what will actually make legacy `quote.*` visitors stop seeing the stale shell.
-7. **Lovable second host (`mercuryrepower.lovable.app`).** This is Lovable's own preview/publish, not Vercel. It currently serves 200 with a clean canonical pointing to www.mercuryrepower.ca (verified), so it will not steal ranking — but it *is* a second indexable copy. Two mitigations:
-   - Add `X-Robots-Tag: noindex` for the `.lovable.app` host (has to be set in Lovable publish settings, not in repo).
-   - Or unpublish the Lovable copy entirely, since production is Vercel per your project memory.
+| # | Slug | Hits | What's wrong | Fix / effort |
+|---|---|---|---|---|
+| 1 | `bilge-pump-troubleshooting-guide` | 15 | Pump ratings quoted GPH-only ("1,000 GPH", "600 GPH"). | Add L/h in parentheses (1 US gal = 3.785 L). **Low.** |
+| 2 | `mercury-outboard-oil-capacity-chart` | 12 | Already metric-first from prior fix. Remaining hits are the "(US qt)" parenthetical — correct. | **None — already done.** |
+| 3 | `mercury-outboard-fuel-efficiency-guide` | 8 | Fuel burn quoted GPH-first / gal-only ("6-7 gallons per hour", "1 gallon per 10 HP"). | Swap to L/h primary. **Low–medium** (touch ~8 strings). |
+| 4 | `mercury-9-9-vs-15-hp-tiller-ontario` | 7 | "25 to 50 gallons per season", "15 to 25 gallons", "6-gallon portable tank". Imperial-only. | Metric-first with US gal in parens. **Low.** |
+| 5 | `mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026` | 6 | "7 GPH", "8 GPH" in the cost calc block; also `3.785 L/gal` shown inline (partial metric). | Convert GPH → L/h primary; keep the multiplier. **Low.** |
+| 6 | `best-mercury-for-family-runabouts` | 5 | Fuel burn in GPH-only. | **Low.** |
+| 7 | `mercury-200-hp-fourstroke-pro-xs-review-ontario` | 4 | Mercury perf-test tables cite "US gal/h" (source unit). | Add "(≈X L/h)" once per row or in the table header. **Low.** |
+| 8 | `mercury-90-hp-fourstroke-review-ontario` | 3 | Same — Mercury perf tables cite "US gal/h" and "gallon". | **Low.** |
+| 9 | `mercury-150-hp-fourstroke-pro-xs-review-ontario` | 3 | Same. | **Low.** |
+| 10 | `mercury-9-9-efi-review-ontario` | 2 | "External 12L / 3.2 gal" — already metric-first ✓. Fine. | **None.** |
+| 11 | `mercury-vesselview-smartcraft-plain-english-guide` | 1 | "gallons per hour" in feature-list prose. | Trivial swap. **Low.** |
+| 12 | `ethanol-octane-mercury-outboard-fuel-guide-ontario` | 1 | "less energy per gallon". | Reword to "per litre". **Low.** |
+| 13 | `mercury-40-vs-60-hp-outboard-ontario` | 1 | "3.5-4 gallons per hour", "5-5.5 GPH". | L/h primary. **Low.** |
+| 14 | `mercury-smartcraft-connect-guide-ontario` | 1 | GPH in feature description. | **Low.** |
+| 15 | `mercury-115-hp-fourstroke-review-ontario` | 1 | "US gal/h" in Mercury perf table. | **Low.** |
+| 16 | `mercury-dts-vs-mechanical-controls-ontario-repower` | 1 | "fraction of a gallon at cruise". | Reword. **Low.** |
+| 17 | `boat-trim-explained-rice-lake-ontario` | 1 | "6-7 gallons per hour". | **Low.** |
+| 18 | `mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat` | 1 | Fuel burn "4-5 gallons per hour (15-19 L)" — already dual, just swap order. | **Trivial.** |
 
----
+Total: **17 articles** need imperial → metric-first work on fluid volumes (the oil chart is already done).
 
-## 4. H1 theory — confirmed
-
-Prerendered routes have H1s (either via React + Helmet or via the `<noscript>` fallback the prerender injects). Routes present in `<Route>` in `src/App.tsx` but **not** in `scripts/static-prerender.mjs`'s `routes` array serve only the empty `<div id="root">` shell to crawlers, with no `<h1>` at all.
-
-Indexable-looking routes that are client-rendered only (no prerender entry, no `robots noindex`):
-
-- `/how-to-repower-a-boat`
-- `/electric/mercury-avator`
-- `/lakes`
-- `/accessories`
-- `/mercury/250-pro-xs` (note: `/mercury/pro-xs-250` IS prerendered — near-duplicate)
-- `/mercury-outboards-ajax`, `/-bowmanville`, `/-oshawa`, `/-pickering`, `/-whitby`
-- `/motor-selection` (legacy path; `/quote/motor-selection` is prerendered)
-- `/fr` (French landing — not in prerender excerpt)
-- `/blog/tl`, `/blog/tl/:slug`, `/blog/ur`, `/blog/ur/:slug`, `/blog/zh-hant`, `/blog/zh-hant/:slug` (only fr/zh/ko/es/hi/pa language indexes are prerendered)
-- `/case-studies/:slug` (index is prerendered, individual slugs are not)
-- `/locations/:slug` (index is prerendered, individual slugs are not — need to verify)
-
-These are almost certainly Bing's 40 "missing H1" pages. Fix: add each to the prerender routes array in `scripts/static-prerender.mjs`, or noindex the ones that shouldn't be in the index (staging, /n, /dev, /agents, /financing/success, /payment-canceled, /my-quotes, admin routes, /auth, /login).
+Guidance for the fix pass (mirrors the oil-chart rules):
+- Fuel burn: L/h primary, US gal/h in parens. 1 US gal = 3.785 L.
+- Tank sizes: L primary, US gal in parens.
+- Pump flow: L/h primary, GPH in parens.
+- Where Mercury publishes both (perf-test tables), just add the L/h once in the table header rather than every cell.
 
 ---
 
-## Plan (files, in order)
+## Extra flag list — imperial-first NON-fluid measurements (Part B item 5)
 
-1. **Kill runtime canonical mutators** using `window.location.origin`:
-   - `src/components/QuoteBuilder.tsx` (delete the effect block that touches `<link rel=canonical>`)
-   - `src/pages/AdminQuotes.tsx` (same)
-   - `src/pages/FinanceCalculator.tsx` (switch to `SITE_URL` or delete and let the SEO component own it)
-   - `src/pages/StagingImageSizing.tsx`, `StagingImageSizingV2.tsx`, `StagingImageSizingFinal.tsx` (delete + add robots noindex)
+Not fixing in this turn — just flagged, per your instruction. Top offenders:
 
-2. **Pick one canonical owner per route.** Decide between "prerender-only" (cleanest — delete Helmet canonicals from SEO components) or "Helmet-only" (delete prerender canonical writer and let Helmet stamp on hydration; loses the raw-HTML canonical for crawlers, so **not** recommended). Recommend prerender-only, since it's the only source that survives no-JS crawlers.
+**Weight (lbs-only) — likely wants kg primary:**
+- `mercury-outboard-weight-chart` (31 hits — it's the whole point of the article)
+- `boat-motor-size-calculator-guide` (13)
+- `mercury-250-hp-fourstroke-pro-xs-review-ontario` (8), `-200-` (7), `-150-` (6)
+- Reviews and comparisons with dry-weight callouts: `mercury-9-9-vs-15`, `mercury-75-vs-90-vs-115`, `mercury-40-vs-60`, `mercury-115-hp-fourstroke-review`, `two-stroke-vs-four-stroke-repower`, `mercury-90-vs-115`, plus ~25 others at 1–4 hits each.
 
-3. **Deduplicate the SPA-shell `og:url`** the same way: leave prerender as the single source, drop Helmet `og:url` from the per-page SEO components, or make the SEO components skip emitting them when a `data-rh="true"` `og:url` is already in the head at mount.
+**Distance/length (ft / in / mi-only) — boat length and shaft length conventions are US-imperial industry-wide, so most are intentional:**
+- Highest counts on shaft-length and boat-sizing guides: `outboard-shaft-length-guide` (32), `center-console-mercury-motor-guide` (28), `2026-rice-lake-fishing-season-outlook` (24), `mercury-40-vs-60` (24), `best-mercury-outboard-rice-lake-fishing` (23), etc. Recommend leaving boat LOA and shaft length in inches/feet (industry standard), but adding cm/m where a Canadian audience would find it useful (transom heights especially).
 
-4. **Bust the stale SW at `quote.harrisboatworks.ca`.** Bump the SW version constant in `public/service-worker.js` and `public/sw.js`, and register a one-shot self-unregister for hosts other than `www.mercuryrepower.ca`. This is what makes real users' browsers actually see the 301.
+**Temperature (°F-only):**
+- `late-season-boating-safety` (4 hits) — cold-water safety numbers, add °C.
+- `best-mercury-outboard-rice-lake-fishing` (2), `mercury-boat-battery-guide-ontario` (1).
 
-5. **Retire `mercuryrepower.lovable.app`** or noindex it via Lovable publish settings — done outside the repo.
+---
 
-6. **Fix the H1-missing set.** Add `/how-to-repower-a-boat`, `/electric/mercury-avator`, `/lakes`, `/accessories`, the five `mercury-outboards-<city>` pages, `/motor-selection`, `/fr`, the tl/ur/zh-hant blog hubs and slug renderers, and per-slug case-study/location pages to the prerender routes array in `scripts/static-prerender.mjs`. Noindex the utility/admin routes listed above.
+## No code changes made this turn
 
-7. **Bing sitemap cleanup** (outside repo): remove the `quote.harrisboatworks.ca/sitemap.xml` and `mercuryrepower.ca/sitemap.xml` submissions from Bing Webmaster Tools; keep only `https://www.mercuryrepower.ca/sitemap.xml`.
-
-No code will be written until you approve.
+Approve this plan to move into a follow-up build turn where you can pick which of Part A #1 (BlogTable wide-mode) and which Part B slugs to actually convert. I'd suggest bundling: (a) BlogTable opt-in wide mode as one commit, (b) fluid units for the 17 slugs as a second commit, and (c) the non-fluid list as a separate future decision.

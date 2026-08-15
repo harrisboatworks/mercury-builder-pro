@@ -1,32 +1,33 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)"
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-08-08
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: service
 ---
 
 # Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)
 
 > Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux.
 
-**Category:** Entretien  
-**Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
-**Read time:** 10 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
+**Catégorie :** Entretien\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 10 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
 ## Réponse rapide
 
@@ -155,11 +156,17 @@ Les cadres de remorque sont soudables. Tasseaux, rouleaux, lumières et freins s
 
 Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 pi coûte 3 000 $ à 5 000 $ CAD en Ontario. Un rafraîchissement complet (tasseaux, roulements, freins, lumières, pneus) sur un cadre solide coûte habituellement 800 $ à 1 500 $.
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ---
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
@@ -189,18 +196,17 @@ Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir u
 
 100 km/h sur la plupart des autoroutes. Les pneus de remorque ont souvent une vitesse cotée plus basse (typiquement 105 km/h / 65 mi/h). Ne forcez pas votre chance, la chaleur s'accumule rapidement aux vitesses de remorquage en été.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

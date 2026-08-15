@@ -173,19 +173,23 @@ export function CoApplicantStep() {
                     <MaskedInput
                       id="sin"
                       maskType="sin"
+                      sensitive
                       {...register('sin')}
                       value={watch('sin')}
                       onChange={(e) => setValue('sin', e.target.value, { shouldValidate: true })}
                       autoComplete="off"
-                      className="pr-10"
+                      className="pr-20"
                     />
                     <FieldValidationIndicator 
                       isValid={!errors.sin && !!watch('sin')}
                       isTouched={touchedFields.sin}
-                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                      className="absolute right-12 top-1/2 -translate-y-1/2"
                     />
                   </div>
                   <FormErrorMessage error={errors.sin?.message} field="SIN" />
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    Encrypted before storage. This SIN is excluded from saved drafts and is never emailed.
+                  </p>
                 </div>
               </div>
 

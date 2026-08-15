@@ -1,32 +1,33 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury.md
-last_updated: 2026-06-08
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Poids des hors-bord Mercury (2,5 à 300 ch)"
 description: "Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-08-02
 keywords: ["poids moteur Mercury","tableau poids hors-bord","Mercury 115 poids","capacité tableau arrière"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Poids des hors-bord Mercury (2,5 à 300 ch)
 
 > Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière.
 
-**Category:** Guide d'achat  
-**Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
-**Read time:** 6 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-06-08\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 6 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 
 ## Poids des moteurs hors-bord Mercury : de 2,5 à 300 ch
 
@@ -80,7 +81,7 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 **Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
 ## FAQs
 
@@ -104,18 +105,17 @@ Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de 
 
 Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu'ils remplacent. Vérifiez la capacité du tableau arrière avant d'acheter.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

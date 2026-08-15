@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-05-09
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Trent-Severn Waterway 2026 Guide"
 description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-05-09
+date_modified: 2026-08-01
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: rentals
 ---
 
 # Trent-Severn Waterway 2026 Guide
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last updated:** 2026-05-09  
+**Last reviewed:** 2026-08-01  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -105,26 +106,31 @@ A good lockmaster will walk a first-timer through it without making a thing of i
 
 ---
 
-::decision-card
-eyebrow: Boat sizing for the Trent-Severn
-heading: Will your boat actually fit through the locks?
-subhead: In 2026, free lockage from June 19 to September 7 means more boats will try the system. Make sure yours is one of them.
-leftLabel: If you mostly stay on one lake or section between locks
-leftCriteria:
-  - Fishing on Rice Lake, the Kawarthas, or a single stretch
-  - Pontoon boats, wide fishing rigs, and smaller cruisers all work fine
-  - No beam or draft restrictions on open water
-  - Locking through only one or two locks for a weekend trip
-leftOutcome: Any size fits
-rightLabel: If you plan to run the full lock system
-rightCriteria:
-  - Long-distance transit from Trenton to Port Severn or vice versa
-  - Beam under 8.5 feet clears all locks without issue
-  - Draft under 3 feet handles the shallowest chambers
-  - Length 21 to 25 feet is the practical sweet spot
-rightOutcome: Check your dimensions
-whenInDoubt: Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
-::
+*Boat sizing for the Trent-Severn*
+
+### Will your boat actually fit through the locks?
+
+In 2026, free lockage from June 19 to September 7 means more boats will try the system. Make sure yours is one of them.
+
+#### If you mostly stay on one lake or section between locks
+
+- Fishing on Rice Lake, the Kawarthas, or a single stretch
+- Pontoon boats, wide fishing rigs, and smaller cruisers all work fine
+- No beam or draft restrictions on open water
+- Locking through only one or two locks for a weekend trip
+
+**Any size fits**
+
+#### If you plan to run the full lock system
+
+- Long-distance transit from Trenton to Port Severn or vice versa
+- Beam under 8.5 feet clears all locks without issue
+- Draft under 3 feet handles the shallowest chambers
+- Length 21 to 25 feet is the practical sweet spot
+
+**Check your dimensions**
+
+Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
 
 ## Vessel Constraints, Will Your Boat Fit?
 
@@ -142,8 +148,6 @@ Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs 
 ---
 
 ![Pleasure boat in Trent-Severn Waterway lock chamber mid-fill](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Fees Outside the Free Window
 
@@ -187,7 +191,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Don't Own a Boat? You Can Still Do This
 
-**Rent from HBW.** [Our 9-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**Rent from HBW.** [Our current Rice Lake rental lineup](/blog/rice-lake-boat-rental-guide-2026) includes ProSport fishing boats, Transporter pontoons, 23 Cruise pontoons, and the Halo pontoon. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
@@ -195,34 +199,25 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Why HBW Is a Useful Home Base
 
-HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from Toronto.
+HBW is at Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 | Service | Detail |
 |---|---|
 | Fuel | Ethanol-free 89-octane marine gas at the dock |
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
-| Rentals | 9-boat fleet for day trips |
+| Rentals | Current pontoon and fishing-boat lineup for Rice Lake trips |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
-## Related reading
-- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep)
-- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
-- Rice Lake Fishing Guide
-- Boat Rentals on Rice Lake
-
 **Starting from Rice Lake? HBW is between Locks 18 and 19.** 
 Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
 Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca). 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
 ---
 
@@ -250,24 +245,23 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
 
 ## Related guides
 
-- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
-- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
-- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
-- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
+- [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer Vaughan Ontario HBW"
 description: "Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-24
 keywords: ["mercury dealer vaughan","mercury repower vaughan","mercury outboard vaughan ontario","boat motor dealer vaughan woodbridge maple"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Vaughan Ontario HBW
 
 > Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-07-24  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Vaughan boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
 
-# Mercury Dealer for Vaughan: Why the Drive North Makes Sense
+## Mercury Dealer for Vaughan: Why the Drive North Makes Sense
 
 Vaughan is deep GTA. Woodbridge, Maple, Thornhill, Concord, the whole corridor is close to Highway 400, which means Barrie is easy but Rice Lake isn't. About 80 minutes when traffic cooperates.
 
@@ -67,7 +68,7 @@ That means the conversation about which motor to buy, and whether to repower at 
 ## What Harris Boat Works Handles for Vaughan Customers
 
 **Mercury outboard sales**
-2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a straight conversation about what works for your specific hull and use case.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have a straight conversation about what works for your specific hull and use case.
 
 **Repower service**
 Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
@@ -86,8 +87,6 @@ Premier-tier parts and warranty authorization. For engine repairs, we only servi
 ## Getting to Harris Boat Works from Vaughan
 
 **Route:** Highway 400 south to connect to 401 east (or take 400 to 407 east to 115), then Highway 115 east, then County Road 28 north into Gores Landing. The 407 to 115 route avoids the 401 through Toronto and may be faster depending on time of day.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Approximate drive time:** Around 80 minutes in normal traffic.
 
@@ -132,8 +131,6 @@ Why [Vaughan boaters drive to HBW](/blog/mercury-repower-gta-toronto-destination
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -152,24 +149,23 @@ Yes. Build a quote at mercuryrepower.ca/quote in three minutes. Real CAD pricing
 
 ## Related guides
 
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
 - [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

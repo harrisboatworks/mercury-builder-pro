@@ -16,7 +16,7 @@
  */
 
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
-import { join, dirname, basename, extname } from 'node:path';
+import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -35,7 +35,10 @@ const SCAN_DIRS = [
   join(ROOT, 'src', 'components'),
 ];
 
-const REF_RE = /\/lovable-uploads\/([A-Za-z0-9_\-.]+?\.(?:png|jpg|jpeg))/gi;
+// Capture both root-level uploads and nested folders so the production check
+// cannot silently skip responsive variants for organized hero directories.
+const REF_RE =
+  /\/lovable-uploads\/([A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)*\.(?:png|jpg|jpeg))/gi;
 const REQUIRED_SUFFIXES = ['.webp', '-1024.webp', '-640.webp'];
 
 function walk(dir) {
@@ -69,7 +72,8 @@ let okCount = 0;
 let skippedCount = 0;
 
 for (const [fname, sources] of referenced) {
-  const base = basename(fname, extname(fname));
+  // Variants live beside their source, including for nested upload folders.
+  const base = fname.slice(0, -extname(fname).length);
   const masterPath = join(UPLOADS_DIR, fname);
 
   if (!existsSync(masterPath)) {

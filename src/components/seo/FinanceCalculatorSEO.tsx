@@ -40,7 +40,7 @@ export function FinanceCalculatorSEO() {
       {
         "@type": "FinancialProduct",
         "name": "Mercury Outboard Motor Financing",
-        "description": "Flexible financing for Mercury outboard motor purchases and repowers. Calculate monthly payments with different terms and rates.",
+        "description": "Flexible financing for Mercury outboard purchases and repowers. The active TD program uses a contract term of up to 60 months; payment estimates may use amortization up to 240 months and a remaining balance may be due at maturity. OAC.",
         "provider": {
           "@type": "Organization",
           "name": "Harris Boat Works",
@@ -93,12 +93,12 @@ export function FinanceCalculatorSEO() {
   return (
     <Helmet>
       <title>Mercury Outboard Financing Calculator - Ontario | HBW</title>
-      <meta name="description" content={`Estimate monthly payments on a Mercury outboard repower. ${CURRENT_RATE.programLabel}. Terms from 36-180 months. No early payoff penalties. Harris Boat Works, Ontario Mercury dealer since 1947.`} />
+      <meta name="description" content={`Estimate monthly payments on a Mercury outboard repower. ${CURRENT_RATE.programLabel}. Contract up to 60 months; amortization up to 240 months, OAC. Harris Boat Works, Ontario Mercury dealer since 1947.`} />
       <meta name="keywords" content="Mercury financing calculator, outboard motor financing, boat motor payment estimator, Mercury repower financing, marine financing Ontario" />
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Repower Financing Calculator | Harris Boat Works" />
-      <meta property="og:description" content="Estimate monthly payments on a Mercury outboard. Flexible terms from 36–180 months." />
+      <meta property="og:description" content="Estimate Mercury outboard payments. Contract up to 60 months with amortization up to 240 months, OAC." />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-05-23
+date_modified: 2026-08-02
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury ProKicker for Rice Lake Walleye
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
-**Last updated:** 2026-05-23  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
-> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
+> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local details.
 
 For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -131,7 +132,7 @@ A proper ProKicker install on a Rice Lake fishing boat covers:
 
 **Helm integration.** Electric-start models need a key switch and wiring run to the helm. If you want kicker RPM shown on your chartplotter or a SmartCraft display, that is a conversation to have before the install, not after.
 
-**Sea trial.** We run every install on the lake before you take delivery. Trolling-speed testing, fuel-flow confirmation, tiller-reach check. That is how we catch the things that look right on the transom and feel wrong on the water.
+**On-water check.** When safe seasonal conditions allow, the applicable work order can include trolling-speed, fuel-flow, and tiller-reach checks on the lake before pickup. If an on-water check is not possible, the alternate acceptance plan is documented with the customer.
 
 ---
 
@@ -170,7 +171,7 @@ Lock-to-lock travel moves at displacement speed, so your main motor is fine for 
 The Mercury 9.9 EFI ProKicker is easy to live with. The EFI powerhead has no oil filter to change, and the camshaft is maintenance-free with no valve-lash adjustments for the life of the engine. That leaves a short, predictable service list:
 
 - **Annual service:** engine oil change, gear lube, fuel filter, spark plug inspection, and a general going-over. Once a year or roughly every 100 hours, whichever comes first.
-- **Water pump and impeller:** Mercury's schedule puts water pump service in the 300-hour range. On Rice Lake's weedy, silty water we often recommend it sooner, every 2 to 3 seasons. The impeller is the single most important item on any water-cooled outboard. Do not stretch it.
+- **Water pump and impeller:** Follow the exact ProKicker manual. Expanded water-pump service is commonly around 300 hours or three years, while Rice Lake weeds, silt, reduced water pressure, or an overheat warning can justify earlier inspection.
 - **EFI throttle body:** inspect and clean every few seasons if you run ethanol-blended fuel regularly.
 
 HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
@@ -240,24 +241,23 @@ Yes. It is used for trolling on the connecting lakes and as a backup motor on cr
 
 ## Related guides
 
-- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
-- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

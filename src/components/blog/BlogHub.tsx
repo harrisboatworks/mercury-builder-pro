@@ -12,7 +12,8 @@ import {
 } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { BlogArticle, parseLocalDate } from '@/data/blogArticles';
+import { parseLocalDate, type BlogListingArticle } from '@/data/blogArticleListing';
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCardImage } from './BlogCardImage';
 
@@ -20,6 +21,7 @@ export interface BlogHubStrings {
   heroTitleLine1: string;          // white
   heroTitleLine2: string;          // red
   heroSubhead: string;
+  skipLinkLabel: string;
   searchLabel: string;
   searchPlaceholder: string;
   trustItems: string[];
@@ -54,7 +56,7 @@ type IntentKey = 'repower' | 'choose' | 'trouble' | 'local';
 
 interface BlogHubProps {
   strings: BlogHubStrings;
-  articles: BlogArticle[];
+  articles: BlogListingArticle[];
   basePath: string; // e.g. "/blog" or "/fr/blog"
   heroImage?: string;
   featuredSlug?: string;
@@ -66,7 +68,7 @@ interface BlogHubProps {
   categoryToIntent?: Record<string, IntentKey>;
 }
 
-function matchesIntentDefault(article: BlogArticle, intent: IntentKey): boolean {
+function matchesIntentDefault(article: BlogListingArticle, intent: IntentKey): boolean {
   const cat = (article.category || '').toLowerCase();
   const kw = (article.keywords || []).join(' ').toLowerCase();
   const blob = `${cat} ${kw} ${article.title.toLowerCase()}`;
@@ -88,7 +90,7 @@ function matchesIntentDefault(article: BlogArticle, intent: IntentKey): boolean 
 
 function makeMatcher(
   categoryToIntent?: Record<string, IntentKey>,
-): (article: BlogArticle, intent: IntentKey) => boolean {
+): (article: BlogListingArticle, intent: IntentKey) => boolean {
   if (!categoryToIntent) return matchesIntentDefault;
   return (article, intent) => categoryToIntent[article.category || ''] === intent;
 }
@@ -98,7 +100,7 @@ function ArticleCard({
   basePath,
   badge,
 }: {
-  article: BlogArticle;
+  article: BlogListingArticle;
   basePath: string;
   badge?: string;
 }) {
@@ -132,12 +134,41 @@ function ArticleCard({
         <p className="mt-2 font-sans text-sm text-repower-navy-900/65 line-clamp-2 leading-relaxed flex-1">
           {getCleanDescription(article)}
         </p>
-        <div className="mt-4 flex items-center gap-1 text-xs text-repower-navy-900/55">
-          <Clock className="h-3.5 w-3.5" />
-          <span>{article.readTime}</span>
+        <div className="mt-4 flex items-center justify-between gap-3 text-xs text-repower-navy-900/60">
+          <span className="flex items-center gap-1">
+            <Clock className="h-3.5 w-3.5" />
+            {article.readTime}
+          </span>
+          <span className="inline-flex items-center gap-1 font-semibold text-repower-mercury-red">
+            Read guide <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </span>
         </div>
       </div>
     </Link>
+  );
+}
+
+function BlogHubHeroImage({ src }: { src: string }) {
+  const webpSrcSet = getResponsiveWebpSrcSet(src);
+
+  return (
+    <picture>
+      {webpSrcSet && (
+        <source
+          srcSet={webpSrcSet}
+          sizes="100vw"
+          type="image/webp"
+        />
+      )}
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+        fetchPriority="high"
+        className="w-full h-full object-cover"
+      />
+    </picture>
   );
 }
 
@@ -172,7 +203,7 @@ export function BlogHub({
       const hay = `${a.title} ${(a.keywords || []).join(' ')} ${a.category}`.toLowerCase();
       return hay.includes(q);
     });
-  }, [sorted, query, intent]);
+  }, [sorted, query, intent, matchesIntent]);
 
   const featured =
     sorted.find((a) => a.slug === featuredSlug) ||
@@ -227,17 +258,18 @@ export function BlogHub({
 
   return (
     <div className="min-h-screen bg-repower-paper">
+      <a
+        href="#blog-main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-3 focus:font-sans focus:font-semibold focus:text-repower-navy-900 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-repower-mercury-red"
+      >
+        {strings.skipLinkLabel}
+      </a>
       <RepowerHeader />
 
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover"
-          />
+          <BlogHubHeroImage src={heroImage} />
           <div
             className="absolute inset-0"
             style={{
@@ -285,8 +317,23 @@ export function BlogHub({
               </div>
             </form>
 
+            <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <Link
+                to="/quote/motor-selection"
+                className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-md bg-repower-mercury-red px-5 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-repower-mercury-red-deep"
+              >
+                Build My Mercury Quote <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="tel:9053422153"
+                className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-md border border-white/35 px-5 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                <Phone className="h-4 w-4" /> (905) 342-2153
+              </a>
+            </div>
+
             {/* Trust row */}
-            <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] md:text-[13px] text-white/65 font-sans">
+            <ul className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] md:text-[13px] text-white/80 font-sans">
               {strings.trustItems.map((t, i) => (
                 <li key={i} className="flex items-center gap-2">
                   {i > 0 && <span className="hidden md:inline h-1 w-1 rounded-full bg-white/30" />}
@@ -298,7 +345,11 @@ export function BlogHub({
         </div>
       </section>
 
-      <main className="container mx-auto px-6 md:px-14 max-w-[1200px] py-14 md:py-20">
+      <main
+        id="blog-main-content"
+        tabIndex={-1}
+        className="container mx-auto px-6 md:px-14 max-w-[1200px] py-14 md:py-20"
+      >
         {/* INTENT TILES */}
         <section aria-labelledby="intent-heading" className="mb-16 md:mb-20">
           <h2 id="intent-heading" className="sr-only">
@@ -480,9 +531,10 @@ export function BlogHub({
                     <button
                       type="button"
                       onClick={() => setIntent(sec.id as IntentKey)}
+                      aria-label={`${strings.allHeading}: ${sec.heading}`}
                       className="text-sm font-medium text-repower-mercury-red hover:underline underline-offset-4"
                     >
-                      {strings.featuredReadCta}
+                      {strings.allHeading}
                       <ArrowRight className="inline h-3.5 w-3.5 ml-1" />
                     </button>
                   </div>

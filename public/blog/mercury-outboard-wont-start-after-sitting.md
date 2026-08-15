@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md
-last_updated: 2026-05-11
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Won't Start After Sitting: Fixes"
 description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-24
 keywords: ["mercury outboard wont start after sitting","mercury outboard stale fuel","mercury outboard spring no start","outboard wont start after winter storage"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Won't Start After Sitting: Fixes
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-07-24  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 
@@ -38,28 +39,45 @@ For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/se
 
 ---
 
-::diagnostic-flow
-heading: Won't start after sitting? Work through these five
-eyebrow: Post-storage diagnostic
-subhead: Long storage is the #1 cause of spring and post-vacation no-starts. Run these in order.
-step1Label: How long has it sat?
-step1Question: Has the boat been stored more than 4 weeks without running?
-step1Tip: 4 weeks is the rough threshold where fuel starts to break down and batteries lose enough charge to affect starting. Anything over 3 months, treat it as a full spring commission.
-step2Label: Battery first
-step2Question: Does the battery read 12.4V or higher at rest, with clean terminals?
-step2Tip: If the boat was on a charger, you are fine. If it sat in storage without a maintainer, the battery is the #1 suspect. Charge fully before further testing.
-step3Label: Fuel age
-step3Question: Is the fuel less than 6 months old, and does the primer bulb firm up?
-step3Tip: Old E10 phase-separates. If the boat is sitting on last season's fuel, drain and refill before troubleshooting further. A soft primer bulb usually means an air leak or empty line.
-step4Label: Carb or EFI clog
-step4Question: Did the engine run well before storage?
-step4Tip: If yes, and fuel + battery check out, suspect varnish buildup in the carb or injector. Carbureted motors are more sensitive to old fuel than EFI. EFI Mercurys usually start once fresh fuel reaches the injectors.
-step5Label: Engine cutoff and spark
-step5Question: Is the lanyard attached, and does the engine crank without firing?
-step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
-escalationLabel: Tried everything?
-escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
-::
+*Post-storage diagnostic*
+
+### Won't start after sitting? Work through these five
+
+Long storage is the #1 cause of spring and post-vacation no-starts. Run these in order.
+
+#### How long has it sat?
+
+**Has the boat been stored more than 4 weeks without running?**
+
+4 weeks is the rough threshold where fuel starts to break down and batteries lose enough charge to affect starting. Anything over 3 months, treat it as a full spring commission.
+
+#### Battery first
+
+**Does the battery read 12.4V or higher at rest, with clean terminals?**
+
+If the boat was on a charger, you are fine. If it sat in storage without a maintainer, the battery is the #1 suspect. Charge fully before further testing.
+
+#### Fuel age
+
+**Is the fuel less than 6 months old, and does the primer bulb firm up?**
+
+Old E10 phase-separates. If the boat is sitting on last season's fuel, drain and refill before troubleshooting further. A soft primer bulb usually means an air leak or empty line.
+
+#### Carb or EFI clog
+
+**Did the engine run well before storage?**
+
+If yes, and fuel + battery check out, suspect varnish buildup in the carb or injector. Carbureted motors are more sensitive to old fuel than EFI. EFI Mercurys usually start once fresh fuel reaches the injectors.
+
+#### Engine cutoff and spark
+
+**Is the lanyard attached, and does the engine crank without firing?**
+
+Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
+
+#### Tried everything?
+
+After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
 
 ---
 
@@ -92,7 +110,7 @@ An Ontario winter is genuinely hard on lead-acid marine batteries. The combinati
 
 What to check:
 - **Resting voltage:** 12.6V = fully charged. 12.4V = acceptable, charge before using. Below 12.2V = seriously compromised.
-- **Cranking test:** With a load tester (or by watching voltage during crank): should hold above 9.5, 10V while the starter runs. Drop below this and the battery can't do the job.
+- **Cranking test:** With a load tester (or by watching voltage during crank): should hold above 9.5-10V while the starter runs. Drop below this and the battery can't do the job.
 - **Terminal condition:** White or green deposits on terminals = corrosion = resistance. Clean with a wire brush and baking soda solution, dry, reconnect, then retest.
 - **Cable connections:** All tight? A cable that loosened over the winter creates intermittent no-start symptoms.
 
@@ -115,7 +133,7 @@ What to check:
 - **Smell the fuel.** Fresh gas smells like fuel. Stale gas smells sour or like nail polish remover. If it smells off, it is.
 - **Check the fuel tank for water.** Water is heavier than fuel and sinks. If there's a drain or sump on the tank, check it.
 - **Drain the fuel filter/water separator.** Mercury FourStrokes have one inline. Drain the bowl and look for water droplets or discolouration.
-- **Check the primer bulb.** Should pump firm in 6, 8 squeezes and hold pressure. Stays soft = air leak in the fuel line connections or a deteriorated bulb.
+- **Check the primer bulb.** Should pump firm in 6-8 squeezes and hold pressure. Stays soft = air leak in the fuel line connections or a deteriorated bulb.
 - **Check fuel lines.** Old rubber fuel lines harden and crack. A cracked line lets air in, causing lean running or no-start. Inspect visually and by feel.
 - **Tank vent open?** An unvented tank creates vacuum as fuel draws out. The motor starves.
 
@@ -152,7 +170,7 @@ Take a photo of any message displayed. Include this when booking service, it sav
 If the motor wasn't properly winterized last fall, some of the causes above are more likely and some additional ones are possible:
 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
-- **No fogging oil** means cylinder walls may have surface corrosion
+- **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
 - **Battery not tendered or removed**, compromised battery from winter discharge
 
@@ -172,13 +190,6 @@ DIY troubleshooting makes sense when you can identify and fix the problem. It st
 For engine repairs, we only service Mercury and Mercruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consistent volume of spring diagnostic work every May, the sooner you book, the sooner you're on the water.
-
----
-
-## Related reading
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
 
@@ -204,23 +215,26 @@ No. Repeated cranking can drain the battery and make diagnosis harder. Check bas
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
+- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
+- [Mercury Overheating at Idle Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario), overheating at idle fixes
+- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

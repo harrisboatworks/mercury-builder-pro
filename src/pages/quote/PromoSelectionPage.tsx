@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Percent, Banknote, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
+import { Shield, Percent, Banknote, CreditCard, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -12,13 +12,15 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
-import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
+import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
 
-type PromoOptionId = 'special_financing' | 'cash_rebate';
+type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
 interface PromoOption {
-  id: PromoOptionId;
+  id: PaymentOptionId;
   title: string;
   subtitle: string;
   description: string;
@@ -35,15 +37,16 @@ interface FinancingRate {
 export default function PromoSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { promotions, loading: promoLoading, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
 
   // Restore from context if user navigates back
-  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(
-    (state.selectedPromoOption === 'special_financing' || state.selectedPromoOption === 'cash_rebate')
-      ? state.selectedPromoOption
-      : null
-  );
+  const [selectedOption, setSelectedOption] = useState<PaymentOptionId | null>(() => {
+    if (state.selectedPaymentMethod) return state.selectedPaymentMethod;
+    if (state.selectedPromoOption === 'special_financing') return 'special_financing';
+    if (state.selectedPromoOption === 'cash_rebate') return 'standard_financing';
+    return null;
+  });
   const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
     state.selectedPromoRate && state.selectedPromoTerm
       ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
@@ -61,54 +64,108 @@ export default function PromoSelectionPage() {
   // Get dynamic values based on motor HP
   const motorHP = state.motor?.hp || 150;
   const rebateAmount = getRebateForHP(motorHP) || 0;
-  const financingRates = getSpecialFinancingRates() || [];
+  const financingRates = useMemo(
+    () => getSpecialFinancingRates() || [],
+    [getSpecialFinancingRates],
+  );
   const lowestRate = financingRates?.[0]?.rate || 2.99;
   const shortestPromoTerm = financingRates.length > 0
     ? financingRates.reduce((min, r) => (r.months < min.months ? r : min), financingRates[0])
     : null;
 
-  // Estimate financing amount (motor price + tax + fees - trade-in)
-  const estimatedFinancingAmount = useMemo(() => {
-    const motorPrice = state.motor?.salePrice || state.motor?.price || 0;
-    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    const taxMultiplier = 1.13; // HST
-    const dealerplanFee = 349;
-    return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
-  }, [state.motor, state.tradeInInfo]);
+  // Use the same pricing order and quote inputs as the final summary so the
+  // payment preview cannot drift from the amount ultimately financed.
+  const financingEstimate = useMemo(() => {
+    if (!state.motor) return null;
+    const motorMSRP = state.frozenPricing?.motorMSRP
+      ?? (state.motor.msrp || state.motor.basePrice || state.motor.price || 0);
+    const promotionalSavings = state.frozenPricing?.promoSavings
+      ?? getPromotionSavingsForMotor(motorHP, motorMSRP);
 
-  // Check if eligible for financing-dependent options
-  const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
+    return calculateQuoteFinancingEstimate({
+      selectedOptions: state.selectedOptions,
+      motor: state.motor,
+      boatInfo: state.boatInfo,
+      purchasePath: state.purchasePath,
+      installConfig: state.installConfig,
+      looseMotorBattery: state.looseMotorBattery,
+      selectedPackage: state.selectedPackage?.id || 'good',
+      adminCustomItems: state.adminCustomItems,
+      warrantyConfig: state.warrantyConfig,
+      tradeInInfo: state.tradeInInfo,
+      adminDiscount: state.adminDiscount,
+      promotionalSavings,
+      motorMSRPOverride: state.frozenPricing?.motorMSRP,
+      motorDiscountOverride: state.frozenPricing?.motorDiscount,
+      frozenSubtotal: state.frozenPricing?.subtotal,
+      dealerFee: DEALERPLAN_FEE,
+    });
+  }, [
+    getPromotionSavingsForMotor,
+    motorHP,
+    state.adminCustomItems,
+    state.adminDiscount,
+    state.boatInfo,
+    state.frozenPricing,
+    state.installConfig,
+    state.looseMotorBattery,
+    state.motor,
+    state.selectedOptions,
+    state.selectedPackage?.id,
+    state.tradeInInfo,
+    state.warrantyConfig,
+    state.purchasePath,
+  ]);
+  const estimatedFinancingAmount = financingEstimate?.financeableAmount || 0;
+  const financingEligibilityAmount = state.frozenPricing?.total
+    ?? financingEstimate?.pricing.total
+    ?? 0;
 
-  const options: PromoOption[] = [
-    {
-      id: 'special_financing',
-      title: 'Promotional Financing',
-      subtitle: shortestPromoTerm
-        ? `${shortestPromoTerm.rate}% for ${shortestPromoTerm.months} months (OAC)`
-        : `As Low As ${lowestRate}% APR (OAC)`,
-      description: 'Layered on top of your rebate. Pick promo financing to lock in a low promotional rate, or keep standard TD financing.',
-      highlight: 'Optional Add-On',
-      icon: Percent,
-    },
-    {
-      id: 'cash_rebate',
-      title: 'Standard TD Financing',
-      subtitle: 'As low as 5.48% APR',
-      description: 'Keep the standard TD "Always On" program. Your factory rebate above is still applied either way.',
-      highlight: 'Default',
-      icon: Banknote,
-    },
-  ];
+  // Match the summary CTA gate: DealerPlan's fee is financed, but it does not
+  // turn an otherwise below-minimum purchase into an eligible application.
+  const isEligibleForFinancing = financingEligibilityAmount >= FINANCING_MINIMUM;
+
+  const options = useMemo<PromoOption[]>(() => [
+      {
+        id: 'cash_purchase',
+        title: 'Cash Purchase',
+        subtitle: 'No financing',
+        description: 'Pay without financing. Your eligible factory rebate remains fully applied to the quote.',
+        highlight: 'No Loan',
+        icon: Banknote,
+      },
+      {
+        id: 'special_financing',
+        title: 'Promotional Financing',
+        subtitle: shortestPromoTerm
+          ? `${shortestPromoTerm.rate}% for ${shortestPromoTerm.months} months (OAC)`
+          : `As Low As ${lowestRate}% APR (OAC)`,
+        description: 'Layered on top of your rebate. Pick promo financing to lock in a low promotional rate, or keep standard TD financing.',
+        highlight: 'Optional Add-On',
+        icon: Percent,
+      },
+      {
+        id: 'standard_financing',
+        title: 'Standard TD Financing',
+        subtitle: 'As low as 5.48% APR',
+        description: 'Use the standard TD "Always On" program. Your eligible factory rebate remains fully applied.',
+        highlight: 'Flexible Terms',
+        icon: CreditCard,
+      },
+    ],
+    [lowestRate, shortestPromoTerm],
+  );
 
   // Filter to only eligible options - hide financing-only options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
-      if (option.id === 'special_financing' && !isEligibleForFinancing) return false;
+      if ((option.id === 'special_financing' || option.id === 'standard_financing') && !isEligibleForFinancing) return false;
       return true;
     });
-  }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
+  }, [options, isEligibleForFinancing]);
 
   const persistFinancingRate = useCallback((rate: FinancingRate) => {
+    dispatch({ type: 'SET_PAYMENT_METHOD', payload: 'special_financing' });
     dispatch({
       type: 'SET_PROMO_DETAILS',
       payload: {
@@ -172,34 +229,48 @@ export default function PromoSelectionPage() {
     });
   }, [state.motor, activePromo, rebateAmount, state.selectedPromoOption, state.selectedPromoRate, dispatch]);
 
-  // Auto-skip only when we KNOW there is no eligible "choose one" promo.
+  // Auto-skip only when we KNOW there are no promotion options. Layered
+  // offers still need this step so the customer can opt into promo financing
+  // while the rebate remains automatic.
   // Guard against the loading race: while promotions are still loading we
   // must not redirect, otherwise the customer skips the screen before we
   // ever hear back from the DB and the rebate is silently dropped.
-  const hasChooseOneOptions = activePromo?.promo_options?.type === 'choose_one' &&
-    (activePromo.promo_options.options?.length ?? 0) > 0;
+  const hasPromotionOptions = (
+    activePromo?.promo_options?.type === 'choose_one' ||
+    activePromo?.promo_options?.type === 'layered'
+  ) && (activePromo.promo_options.options?.length ?? 0) > 0;
 
   useEffect(() => {
     if (promoLoading) return;
     if (!state.motor) return;
-    if (activePromo && hasChooseOneOptions) return;
+    if (activePromo && hasPromotionOptions) return;
 
     // For warranty-only promos, auto-apply the warranty and skip
-    if (activePromo && !hasChooseOneOptions) {
-      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
-      dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + (activePromo.warranty_extra_years || 0) } });
+    if (activePromo && !hasPromotionOptions) {
+      const includedCoverageYears = Math.min(3 + (activePromo.warranty_extra_years || 0), 8);
+      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
+      dispatch({
+        type: 'SET_WARRANTY_CONFIG',
+        payload: reconcileWarrantyConfig(
+          Number(motorHP),
+          includedCoverageYears,
+          state.warrantyConfig,
+        ),
+      });
     }
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, hasChooseOneOptions, state.motor, navigate, dispatch]);
+  }, [promoLoading, activePromo, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
 
-  const handleOptionSelect = (optionId: PromoOptionId) => {
+  const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
     setHasJustSelected(true);
     setHasUserInteracted(true);
     triggerHaptic('light');
 
-    if (optionId === 'cash_rebate') {
-      // Standard TD financing — clear any promo rate/term, keep rebate.
+    dispatch({ type: 'SET_PAYMENT_METHOD', payload: optionId });
+
+    if (optionId === 'cash_purchase' || optionId === 'standard_financing') {
+      // Cash and standard financing both keep the independently layered rebate.
       setSelectedRate(null);
       dispatch({
         type: 'SET_PROMO_DETAILS',
@@ -231,9 +302,16 @@ export default function PromoSelectionPage() {
       persistFinancingRate(selectedRate);
     }
 
-    const totalWarrantyYears = 3 + (activePromo?.warranty_extra_years ?? 0);
-    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
-    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: totalWarrantyYears } });
+    const totalWarrantyYears = Math.min(3 + (activePromo?.warranty_extra_years ?? 0), 8);
+    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
+    dispatch({
+      type: 'SET_WARRANTY_CONFIG',
+      payload: reconcileWarrantyConfig(
+        Number(motorHP),
+        totalWarrantyYears,
+        state.warrantyConfig,
+      ),
+    });
     navigate('/quote/summary');
   };
 
@@ -354,9 +432,9 @@ export default function PromoSelectionPage() {
 
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="flex-1 h-px bg-border"></div>
-              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Financing</span>
-              <div className="flex-1 h-px bg-border"></div>
+              <div className="h-px flex-1 bg-repower-navy-900/10"></div>
+              <span className="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-repower-navy-900/55">Choose how you'll pay</span>
+              <div className="h-px flex-1 bg-repower-navy-900/10"></div>
             </div>
 
 
@@ -385,16 +463,16 @@ export default function PromoSelectionPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
                     className={cn(
-                      'relative bg-white rounded-xl border-2 p-6 text-left transition-all duration-200',
+                      'relative rounded-sm border bg-repower-cream p-6 text-left transition-all duration-200',
                       isSelected
-                        ? 'border-primary shadow-xl ring-2 ring-primary/30'
-                        : 'border-transparent hover:border-primary/50 hover:shadow-xl'
+                        ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] ring-2 ring-repower-mercury-red/10'
+                        : 'border-repower-navy-900/10 hover:border-repower-gold/60'
                     )}
                   >
                     {/* Selected Checkmark */}
                     {isSelected && (
                       <motion.div 
-                        className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg"
+                        className="absolute -right-3 -top-3 flex h-8 w-8 items-center justify-center rounded-full bg-repower-mercury-red shadow-sm"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 15 }}
@@ -405,23 +483,27 @@ export default function PromoSelectionPage() {
 
                     {/* Icon with Hover Effect */}
                     <motion.div 
-                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
+                      className="mb-4 flex h-14 w-14 items-center justify-center rounded-sm border border-repower-gold/30 bg-repower-paper"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className="w-7 h-7 text-primary" />
+                      <Icon className="h-7 w-7 text-repower-mercury-red" />
                     </motion.div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
+                    <h3 className="mb-1 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">{option.title}</h3>
+
+                    <div className="mb-3 font-sans text-sm font-semibold text-repower-navy-900/75">
+                      {option.subtitle}
+                    </div>
 
                     {/* Highlight Badge */}
-                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-repower-cream text-repower-navy-900 border border-repower-gold/30">
+                    <span className="mb-3 inline-block rounded-sm border border-repower-gold/35 bg-repower-paper px-3 py-1 font-sans text-sm font-semibold text-repower-navy-900">
                       {option.highlight}
                     </span>
 
                     {/* Description */}
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-sans text-sm leading-relaxed text-repower-navy-900/60">
                       {option.description}
                     </p>
                   </motion.button>
@@ -441,8 +523,8 @@ export default function PromoSelectionPage() {
                   className="mb-8"
                   style={{ opacity: 1 }}
                 >
-                    <div className="bg-card border border-border rounded-xl p-6 max-w-2xl mx-auto">
-                    <h3 className="text-foreground font-semibold mb-4">Select Your Rate & Term</h3>
+                    <div className="mx-auto max-w-2xl rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6">
+                    <h3 className="mb-4 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Select your rate and term</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
@@ -453,10 +535,10 @@ export default function PromoSelectionPage() {
                             key={rate.months}
                             onClick={() => handleRateSelect(rate)}
                             className={cn(
-                              'p-4 rounded-lg border-2 text-center transition-all duration-200',
+                              'rounded-sm border p-4 text-center transition-all duration-200',
                               isRateSelected
-                                ? 'border-primary bg-primary/10 shadow-lg'
-                                : 'border-border bg-muted/50 hover:border-primary/50 hover:bg-accent'
+                                ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
+                                : 'border-repower-navy-900/15 bg-repower-paper hover:border-repower-gold/60'
                             )}
                           >
                             <div className="text-2xl font-bold text-foreground">{rate.rate}%</div>
@@ -503,7 +585,7 @@ export default function PromoSelectionPage() {
                 disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
-                Apply Bonus & Continue
+                Continue to Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (

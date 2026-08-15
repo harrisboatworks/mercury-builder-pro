@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat Trailering Mistakes to Avoid, Ontario"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
-date_modified: 2026-06-09
+date_modified: 2026-07-23
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Boat Trailering Mistakes to Avoid, Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-28  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-07-23  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 
-# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
+## 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
 
 > **Quick answer:** Most boat-trailer damage happens to the boat owner, not in transit. The worst Ontario trailering mistakes we see: improper tongue weight, loose strap-downs, missing safety chains, bald or under-inflated trailer tires, skipped wheel-bearing lubrication, ramp-launching with the plug out, and not knowing your tow vehicle's weight rating. Most cost time. The expensive ones cost time and money.
 
@@ -94,28 +95,45 @@ Two minutes at the ramp. Every time.
 
 ---
 
-::diagnostic-flow
-eyebrow: Roadside diagnosis
-heading: Trailer acting up? Work the symptoms in this order
-subhead: Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
-step1Label: Hot wheel hubs
-step1Question: Can you hold your hand on the hub for 5 seconds after a 30-minute run?
-step1Tip: A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
-step2Label: Tire pressure and condition
-step2Question: Are both trailer tires at the sidewall PSI, with no sidewall cracking?
-step2Tip: Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
-step3Label: Tongue weight
-step3Question: Does the tongue sit level on the ball, not nose-up or nose-down?
-step3Tip: 10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
-step4Label: Load distribution
-step4Question: Is the bow of the boat snug against the bow stop, with the transom strapped?
-step4Tip: A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
-step5Label: Lights and connection
-step5Question: Do brake lights, turn signals, and running lights all work with the truck engine running?
-step5Tip: A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
-escalationLabel: Bearings or tires need attention?
-escalationBody: We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
-::
+*Roadside diagnosis*
+
+### Trailer acting up? Work the symptoms in this order
+
+Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
+
+#### Hot wheel hubs
+
+**Can you hold your hand on the hub for 5 seconds after a 30-minute run?**
+
+A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
+
+#### Tire pressure and condition
+
+**Are both trailer tires at the sidewall PSI, with no sidewall cracking?**
+
+Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
+
+#### Tongue weight
+
+**Does the tongue sit level on the ball, not nose-up or nose-down?**
+
+10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
+
+#### Load distribution
+
+**Is the bow of the boat snug against the bow stop, with the transom strapped?**
+
+A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
+
+#### Lights and connection
+
+**Do brake lights, turn signals, and running lights all work with the truck engine running?**
+
+A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
+
+#### Bearings or tires need attention?
+
+We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
 
 ### 6. Not Securing the Motor
 
@@ -128,8 +146,6 @@ Transom savers cost next to nothing. They attach between the trailer roller and 
 ---
 
 ### 7. Failed or Unplugged Trailer Lights
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Ontario police ticket trailer lighting violations, and they're not shy about it. Working brake lights, turn signals, and tail lights are required, not optional.
 
@@ -194,7 +210,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 **Lights and reflectors:** All trailers require working brake lights, tail lights, turn signals, and rear reflectors. Larger trailers may require side marker lights. Equipment violations are actively ticketed.
 
-**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lbs) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
+**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lb) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
 
 **Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are now 110 km/h for passenger vehicles). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
 
@@ -202,7 +218,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 ## More from the Blog
 
-If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fogging, lower unit oil, impeller checks, and battery prep.
+If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fuel, gearcase, cooling-system, and battery checks.
 
 For walleye opener timing and what to have ready before May, [the walleye opener boat prep guide](https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep) is worth a read.
 
@@ -221,8 +237,6 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 *Harris Boat Works, est. 1947. Gores Landing, ON. Mercury Marine Premier Dealer.*
 *905-342-2153 | mercuryrepower.ca*
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What is the right tongue weight for a boat trailer?
@@ -235,7 +249,7 @@ Replace trailer tires every 5 to 6 years regardless of tread, and check sidewall
 
 ### When does Ontario require trailer brakes on a boat trailer?
 
-Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.
+Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.
 
 ### Do I need a separate licence plate for my boat trailer in Ontario?
 
@@ -251,24 +265,23 @@ Back in slowly until the bunks are just below the surface and the boat floats. T
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
+- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

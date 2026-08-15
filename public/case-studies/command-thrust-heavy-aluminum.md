@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/command-thrust-heavy-aluminum
-last_updated: 2026-07-15
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS11
 slug: command-thrust-heavy-aluminum
 boat_type: "18-foot deep-V aluminum"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
 # Command Thrust 60 HP on Heavy Aluminum
 
-Repower an 18-foot deep-V aluminum with a Mercury 60 HP Command Thrust for $10,000–$13,000 all-in at Harris Boat Works.
+An illustrative 18-foot deep-V aluminum-boat scenario comparing a Mercury 60 HP Command Thrust repower with a standard gearcase.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ Repower an 18-foot deep-V aluminum with a Mercury 60 HP Command Thrust for $10,0
 
 ## Recommendation
 
-Best for heavy 17–19-foot deep-V aluminum hulls rated 60 HP that need more low-end pull without exceeding the transom rating or insurance class.
+Consider for a properly rated heavier deep-V aluminum hull after comparing the standard and Command Thrust gearcases, actual load, propeller options, and measured WOT RPM.
 
-## Why it worked
+## Why this configuration may fit
 
 - Larger gearcase and high-thrust prop move more water
-- Hole shot time roughly cut in half on loaded hulls
+- Larger propeller options may improve loaded acceleration and low-speed control
 - Stays inside the boat's 60 HP transom rating
 
-## Customer quote
+## Planning takeaway
 
-> Same horsepower on the plate, twice the hole shot under load.
+The larger Command Thrust gearcase may help a properly rated heavy hull carry load without changing the horsepower rating.
 
 ## Quote a similar repower
 

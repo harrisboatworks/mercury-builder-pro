@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들"
 description: "PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다."
 category: "규정 가이드"
@@ -16,6 +16,7 @@ keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC �
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # 온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 규정 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 11 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 
@@ -158,22 +159,6 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 
 ---
 
-## 자주 묻는 질문
-
-**PCOC 시험은 어디서 볼 수 있나요?** 
-Transport Canada 공인 기관에서 온라인으로 응시할 수 있습니다. "pleasure craft operator card test"로 검색하면 여러 공인 기관을 찾을 수 있습니다.
-
-**PCL이 없으면 어떻게 되나요?** 
-OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작합니다.
-
-**중고 보트를 살 때 PCL이 이전되나요?** 
-보트 소유권이 이전되면 새 소유자 이름으로 PCL을 새로 신청해야 합니다.
-
-**HBW에서 보트 서비스를 예약하려면?** 
-[hbw.wiki/service](https://hbw.wiki/service)에서 온라인 양식을 작성하세요.
-
----
-
 ## 내부 링크
 - 온타리오 보트 구매 가이드
 - Rice Lake 낚시 가이드
@@ -212,16 +197,15 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

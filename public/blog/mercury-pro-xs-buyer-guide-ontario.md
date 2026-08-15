@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Pro XS Buyer Guide for Ontario (2026)"
 description: "The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-07-18
 keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Pro XS Buyer Guide for Ontario (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-07-18  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
 
@@ -177,7 +178,7 @@ Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Hig
 
 ### Does Pro XS warranty match FourStroke?
 
-Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Premier) extension applies the same way.
+The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can bring combined coverage to a maximum of 8 years, subject to serial-record eligibility.
 
 ### Can I repower from a FourStroke to a Pro XS?
 
@@ -194,23 +195,22 @@ Pro XS resale stays strong. A used Pro XS in good condition from a known service
 ## Related guides
 
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
-- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

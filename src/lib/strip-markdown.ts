@@ -100,7 +100,7 @@ function truncateAtSentence(text: string, max = 170): string {
 
 interface ArticleLike {
   description: string;
-  content: string;
+  content?: string;
 }
 
 /**

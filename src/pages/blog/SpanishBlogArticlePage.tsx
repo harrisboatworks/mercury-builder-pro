@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -13,6 +15,7 @@ import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import {
   Accordion,
   AccordionContent,
@@ -241,7 +244,10 @@ export default function SpanishBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/es/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -293,8 +299,6 @@ export default function SpanishBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="es" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="es_419" />
@@ -303,6 +307,8 @@ export default function SpanishBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogOgImageMeta image={article.socialImage || article.image} />
+      <BlogHreflangLinks locale="es" slug={article.slug} />
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -345,7 +351,7 @@ export default function SpanishBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Distribuidor Mercury concesionario Mercury desde 1965" />
+          <AuthorByline name="Jay Harris" title="Propietario, Harris Boat Works" />
         </div>
 
         {/* Table of Contents */}
@@ -357,7 +363,7 @@ export default function SpanishBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {!shouldSuppressAutoCTA(article.content) && (

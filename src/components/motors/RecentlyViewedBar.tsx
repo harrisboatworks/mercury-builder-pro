@@ -29,7 +29,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
             <Clock size={14} />
             <span>Recently Viewed</span>
           </div>
-          
+
           {/* Scrollable items with scroll-snap on mobile */}
           <div className="min-w-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory sm:snap-none">
             <div className="flex flex-nowrap gap-1.5 sm:gap-2">
@@ -40,10 +40,10 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
                   className="snap-start inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 bg-repower-paper/80 hover:bg-repower-paper border border-repower-gold/10 rounded-full transition-colors flex-shrink-0 group max-w-[180px]"
                 >
                   {item.image && (
-                    <img 
-                      src={item.image} 
+                    <img
+                      src={item.image}
                       alt={item.model}
-                      className="w-5 h-5 sm:w-6 sm:h-6 object-contain flex-shrink-0 mix-blend-multiply"
+                      className="w-5 h-5 sm:w-6 sm:h-6 object-contain flex-shrink-0"
                     />
                   )}
                   <span className="text-[11px] sm:text-xs font-medium text-repower-navy-900/75 whitespace-nowrap truncate">
@@ -56,7 +56,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
               ))}
             </div>
           </div>
-          
+
           {/* Clear button */}
           <button
             onClick={onClear}

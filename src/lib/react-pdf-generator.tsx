@@ -1,9 +1,18 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
+import {
+  resolveFinancingContractTermMonths,
+  resolveQuoteMotorImage,
+  validateQuotePdfSnapshot,
+  type QuotePdfSnapshot,
+} from '@/lib/quote-pdf-data';
+import { getRecommendedDeposit } from '@/lib/deposit';
+import { Buffer as BrowserBuffer } from 'buffer';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
+  quoteDate?: string;
   customerName: string;
   customerEmail: string;
   customerPhone?: string;
@@ -25,6 +34,7 @@ export interface ReactPdfQuoteData {
     price: number;
   }>;
   accessoryBreakdown?: any[];
+  snapshot?: QuotePdfSnapshot;
   warranty?: {
     years: number;
     price: number;
@@ -48,15 +58,32 @@ export interface ReactPdfQuoteData {
     downPayment?: number;
     term: number;
     rate: number;
+    amountFinanced?: number;
+    dealerFee?: number;
+    contractTermMonths?: number;
   };
   monthlyPayment?: number;
   financingTerm?: number;
   financingRate?: number;
+  savedQuoteQrCode?: string;
+  recommendedDepositAmount?: number;
+  reservationRequiresConfirmation?: boolean;
+  promotionalFinancingAlternative?: {
+    rate: number;
+    termMonths: number;
+  };
+  googleRating?: number;
+  googleReviewCount?: number;
+  /** @deprecated Use savedQuoteQrCode. Kept for older callers during migration. */
   financingQrCode?: string;
   pricing?: any;
   // Selected promo option
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  selectedPaymentMethod?: 'cash_purchase' | 'standard_financing' | 'special_financing' | null;
+  promotionName?: string;
+  promotionCombinationMode?: 'layered' | 'choose_one';
+  promoEndDate?: string;
   customerNotes?: string;
   // Deposit/payment confirmation info
   depositInfo?: {
@@ -76,7 +103,57 @@ type QuotePdfRenderer = {
 
 let quotePdfRendererPromise: Promise<QuotePdfRenderer> | null = null;
 
+export function ensureReactPdfBrowserBuffer(
+  target: Record<string, unknown> = globalThis as unknown as Record<string, unknown>,
+): void {
+  // Several image paths inside React PDF still expect Node's Buffer global.
+  // Vite does not provide it automatically in production browser bundles.
+  if (typeof target.Buffer === 'undefined') target.Buffer = BrowserBuffer;
+}
+
+async function prepareMotorImageForPdf(source?: string): Promise<string | undefined> {
+  if (!source || typeof document === 'undefined' || typeof window === 'undefined') return source;
+
+  try {
+    const response = await fetch(source);
+    if (!response.ok) throw new Error(`Motor image returned ${response.status}`);
+    const sourceBlob = await response.blob();
+    const objectUrl = URL.createObjectURL(sourceBlob);
+
+    try {
+      const image = new window.Image();
+      image.decoding = 'async';
+      image.src = objectUrl;
+      await new Promise<void>((resolve, reject) => {
+        image.onload = () => resolve();
+        image.onerror = () => reject(new Error('Motor image could not be decoded'));
+      });
+
+      const maxWidth = 360;
+      const maxHeight = 260;
+      const scale = Math.min(maxWidth / image.naturalWidth, maxHeight / image.naturalHeight, 1);
+      const width = Math.max(1, Math.round(image.naturalWidth * scale));
+      const height = Math.max(1, Math.round(image.naturalHeight * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Motor image canvas is unavailable');
+      context.fillStyle = '#FAF7F0';
+      context.fillRect(0, 0, width, height);
+      context.drawImage(image, 0, 0, width, height);
+      return canvas.toDataURL('image/jpeg', 0.82);
+    } finally {
+      URL.revokeObjectURL(objectUrl);
+    }
+  } catch (error) {
+    console.warn('Could not prepare the motor image for the quote PDF; using the Mercury fallback.', error);
+    return undefined;
+  }
+}
+
 async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
+  ensureReactPdfBrowserBuffer();
   quotePdfRendererPromise ??= Promise.all([
     import('@react-pdf/renderer'),
     import('@/components/quote-pdf/ProfessionalQuotePDF'),
@@ -88,40 +165,89 @@ async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
   return quotePdfRendererPromise;
 }
 
-function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
+function formatDate(value?: string): string {
+  const date = value ? new Date(value) : new Date();
+  return date.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
+  const snapshot = data.snapshot;
+  const motor = snapshot?.motor ?? data.motor ?? {};
+  const pricing = snapshot?.pricing ?? data.pricing ?? {};
+  const financing = snapshot?.financing ?? (data.monthlyPayment || data.financing?.monthlyPayment ? {
+    monthlyPayment: data.monthlyPayment ?? data.financing?.monthlyPayment,
+    amortizationMonths: data.financingTerm ?? data.financing?.term,
+    rate: data.financingRate ?? data.financing?.rate,
+    amountFinanced: data.financing?.amountFinanced,
+    dealerFee: data.financing?.dealerFee,
+    contractTermMonths: data.financing?.contractTermMonths,
+  } : undefined);
+  const productProtection = snapshot?.productProtection;
+  const promotion = snapshot?.promotion;
+  const selectedPaymentMethod = snapshot?.paymentMethod ?? data.selectedPaymentMethod;
+  const includedCoverageYears = snapshot?.includedCoverageYears
+    ?? data.selectedPackage?.coverageYears
+    ?? 3;
+
   return {
     quoteNumber: data.quoteNumber,
-    date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+    date: formatDate(data.quoteDate ?? snapshot?.createdAt),
+    validUntil: snapshot?.validUntil,
     customerName: data.customerName,
     customerEmail: data.customerEmail,
     customerPhone: data.customerPhone || '',
     customerId: '',
-    productName: data.motor?.model || '',
-    horsepower: `${data.motor?.hp || 0}HP`,
-    category: data.motor?.category || 'FourStroke',
-    modelYear: data.motor?.model_year || 2025,
-    msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    accessoryBreakdown: data.accessoryBreakdown || data.accessories,
-    tradeInValue: data.tradeInValue,
-    tradeInInfo: data.tradeInInfo,
-    selectedPackage: data.selectedPackage || undefined,
+    productName: motor.model || '',
+    horsepower: `${motor.hp || 0}HP`,
+    category: motor.category || 'FourStroke',
+    modelYear: motor.modelYear || motor.model_year || 2026,
+    motorImageUrl: resolveQuoteMotorImage(motor),
+    msrp: Number(pricing.msrp ?? motor.msrp ?? 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    dealerDiscount: Number(pricing.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    promoSavings: Number(pricing.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    motorSubtotal: Number(pricing.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    subtotal: Number(pricing.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    tax: Number(pricing.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    total: Number(pricing.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    totalSavings: Number(pricing.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    accessoryBreakdown: snapshot?.accessoryBreakdown ?? data.accessoryBreakdown ?? data.accessories,
+    tradeInValue: snapshot?.tradeInValue ?? data.tradeInValue,
+    tradeInInfo: snapshot?.tradeInInfo ?? data.tradeInInfo,
+    includedCoverageYears,
+    productProtection,
+    selectedPackage: data.selectedPackage || (snapshot ? {
+      id: 'configured',
+      label: 'Configured Quote',
+      coverageYears: productProtection?.totalCoverageYears ?? includedCoverageYears,
+      features: [],
+    } : undefined),
     warrantyTargets: [],
-    monthlyPayment: data.monthlyPayment,
-    financingTerm: data.financingTerm,
-    financingRate: data.financingRate,
-    financingQrCode: data.financingQrCode,
-    includesInstallation: data.includesInstallation,
-    selectedPromoOption: data.selectedPromoOption,
-    selectedPromoValue: data.selectedPromoValue,
-    pricing: data.pricing,
-    customerNotes: data.customerNotes,
+    monthlyPayment: financing?.monthlyPayment,
+    financingTerm: financing?.amortizationMonths,
+    financingRate: financing?.rate,
+    financingAmount: financing?.amountFinanced,
+    dealerFee: financing?.dealerFee,
+    financingContractTerm: financing ? resolveFinancingContractTermMonths({
+      paymentMethod: selectedPaymentMethod,
+      amortizationMonths: Number(financing.amortizationMonths),
+      contractTermMonths: financing.contractTermMonths,
+    }) : undefined,
+    savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
+    recommendedDepositAmount: data.recommendedDepositAmount
+      ?? getRecommendedDeposit(Number(motor.hp || 0)),
+    reservationRequiresConfirmation: data.reservationRequiresConfirmation,
+    promotionalFinancingAlternative: data.promotionalFinancingAlternative,
+    googleRating: data.googleRating,
+    googleReviewCount: data.googleReviewCount,
+    includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
+    selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
+    selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,
+    selectedPaymentMethod,
+    promotionName: promotion?.name ?? data.promotionName,
+    promotionCombinationMode: promotion?.combinationMode ?? data.promotionCombinationMode,
+    promoEndDate: promotion?.endDate ?? data.promoEndDate,
+    pricing,
+    customerNotes: snapshot?.customerNotes ?? data.customerNotes,
     depositInfo: data.depositInfo,
   };
 }
@@ -177,8 +303,15 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
 export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
   try {
     console.log('Generating PDF blob for:', data.quoteNumber);
+    if (data.snapshot) {
+      const validation = validateQuotePdfSnapshot(data.snapshot);
+      if (!validation.isValid) {
+        throw new Error(`Quote totals need to be refreshed before creating the PDF: ${validation.errors.join(' ')}`);
+      }
+    }
     const { pdf, ProfessionalQuotePDF } = await loadQuotePdfRenderer();
     const transformedData = buildProfessionalQuotePdfData(data);
+    transformedData.motorImageUrl = await prepareMotorImageForPdf(transformedData.motorImageUrl);
 
     return pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
   } catch (error) {
@@ -200,4 +333,5 @@ export function downloadPDF(url: string, filename: string): void {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+  window.setTimeout(() => URL.revokeObjectURL(url), 30_000);
 }

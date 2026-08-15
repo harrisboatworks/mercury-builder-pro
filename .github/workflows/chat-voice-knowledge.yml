@@ -1,0 +1,25 @@
+name: Chat and voice knowledge parity
+
+on:
+  deployment_status: {}
+  schedule:
+    - cron: '43 12 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  production-parity:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'deployment_status' && github.event.deployment.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify live chat, voice, and published facts
+        run: npm run check:chat-voice-knowledge-live

@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/twin-to-single-big-block
-last_updated: 2026-07-15
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS12
 slug: twin-to-single-big-block
 boat_type: "23-foot cabin / walkaround"
 region: "Rice Lake / Trent system"
+is_illustrative: true
 ---
 
 # Twin 115 to Single 300 V8 Consolidation
 
-Consolidate twin 115 HPs into a single 300 V8 on a 23-foot cabin boat for $35,000–$42,000 all-in at Harris Boat Works.
+An illustrative 23-foot cabin-boat scenario evaluating whether twin 115 HP outboards can be replaced with one 300 HP V8.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ Consolidate twin 115 HPs into a single 300 V8 on a 23-foot cabin boat for $35,00
 
 ## Recommendation
 
-Best for 22–25-foot inland cabin / walkaround boats running tired twin 115s where the owner doesn't need offshore redundancy and wants lower service and helm complexity.
+Consider only after the boat manufacturer or qualified technical review confirms single-engine rating, transom loading, balance, steering, controls, handling, and redundancy requirements.
 
-## Why it worked
+## Why this configuration may fit
 
-- One motor cuts annual service hours roughly in half
-- Modern V8 burns ~20–30% less fuel than two old 115s at cruise
-- Single throttle + DTS makes low-speed docking dramatically easier
+- One motor reduces the number of engine-specific service items
+- Fuel use must be measured on the actual hull and operating point
+- Single-engine controls are simpler, while twin-engine manoeuvring and get-home redundancy are lost
 
-## Customer quote
+## Planning takeaway
 
-> Half the service hours, better fuel at cruise, and one throttle to dock with.
+A twin-to-single conversion can reduce component count, but only if the hull, transom, balance, handling, and redundancy requirements support it.
 
 ## Quote a similar repower
 

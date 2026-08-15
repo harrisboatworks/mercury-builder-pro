@@ -20,14 +20,14 @@ import { ShareLinkButton } from './ShareLinkButton';
 import { AskQuestionButton } from './AskQuestionButton';
 import { VoiceChatButton } from './VoiceChatButton';
 
-export default function MotorCardPremium({ 
-  img, 
-  title, 
-  hp, 
-  msrp, 
-  price, 
-  promoText, 
-  selected, 
+export default function MotorCardPremium({
+  img,
+  title,
+  hp,
+  msrp,
+  price,
+  promoText,
+  selected,
   onSelect,
   // New specification props
   shaft,
@@ -68,7 +68,7 @@ export default function MotorCardPremium({
   // Get popularity type for this motor - prioritize "Special Price" if manual sale price is set
   const popularityType = motor?.hasManualSalePrice ? 'special-price' : (motor ? getMotorPopularity(motor) : null);
   const [scrollPosition, setScrollPosition] = useState(0);
-  
+
   // Get the best available image URL and count total images using priority logic
   const [imageInfo, setImageInfo] = useState<{ url: string; count: number; isInventory: boolean }>({
     url: img || '/lovable-uploads/speedboat-transparent.png',
@@ -92,12 +92,12 @@ export default function MotorCardPremium({
 
         const { url: primaryImageUrl, isInventory } = await getMotorImageByPriority(motor);
         const allImages = await getMotorImageGallery(motor);
-        
+
         // Use img prop as fallback if motor priority didn't find anything good
-        const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png' 
-          ? primaryImageUrl 
+        const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png'
+          ? primaryImageUrl
           : (img || '/lovable-uploads/speedboat-transparent.png');
-        
+
         setImageInfo({
           url: finalUrl,
           count: Math.max(allImages.length, img ? 1 : 0),
@@ -114,24 +114,24 @@ export default function MotorCardPremium({
   const imageUrl = imageInfo.url;
   const imageCount = imageInfo.count;
   const isInventoryImage = imageInfo.isInventory;
-  
+
   // Smart financing calculation
   const { promo } = useActiveFinancingPromo();
   const financingDisplay = price && price >= 5000
     ? getFinancingDisplay((price) * 1.13, promo?.rate || null)
     : null; // Hide financing for motors under $5k (FINANCING_MINIMUM)
-  
+
   // Popularity badge is now handled by getMotorPopularity (rule-based, no state needed)
-  
+
   // Check if device has fine pointer (mouse) for hover
   const hasHover = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
-  
+
   const handleCardClick = () => {
     if (motor?.id) {
       navigate(`/motors/${motor.id}`);
     }
   };
-  
+
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (motor?.id) {
@@ -149,46 +149,46 @@ export default function MotorCardPremium({
       });
     }, 10); // Small delay to ensure DOM updates
   };
-  
+
   const handleTooltipMouseEnter = () => {
     if (!isMobile) {
       setShowTooltip(true);
     }
   };
-  
+
   const handleTooltipMouseLeave = () => {
     setShowTooltip(false);
   };
-  
+
   // Simplified specs display - single clean line
   const getSimplifiedSpecs = () => {
     const specs = [];
     const modelName = title || motor?.model || '';
     const decodedFeatures = decodeModelName(modelName, hpNum);
-    
+
     // 1. Start type (Manual Start / Electric Start)
-    const startFeature = decodedFeatures.find(f => 
+    const startFeature = decodedFeatures.find(f =>
       f.meaning.includes('Manual Start') || f.meaning.includes('Electric Start')
     );
     if (startFeature) {
       specs.push(startFeature.meaning.includes('Electric') ? 'Electric Start' : 'Manual Start');
     }
-    
+
     // 2. Engine type (4-Stroke)
     if (hpNum && hpNum >= 2.5) specs.push("4-Stroke");
-    
+
     // 3. Tiller Handle (only show if present - most are remote control)
     const tillerFeature = decodedFeatures.find(f => f.meaning.includes('Tiller Handle'));
     if (tillerFeature) specs.push("Tiller Handle");
-    
+
     // 4. Power Trim (important feature to highlight)
-    const ptFeature = decodedFeatures.find(f => 
+    const ptFeature = decodedFeatures.find(f =>
       f.meaning.includes('Power Trim') || f.meaning.includes('Power Tilt')
     );
     if (ptFeature) specs.push("Power Trim");
-    
+
     // 5. Shaft designation with enhanced formatting
-    const shaftFeature = decodedFeatures.find(f => 
+    const shaftFeature = decodedFeatures.find(f =>
       f.meaning.includes('Shaft') && f.meaning.includes('"')
     );
     if (shaftFeature) {
@@ -197,7 +197,7 @@ export default function MotorCardPremium({
       else if (shaftFeature.meaning.includes('25"')) specs.push("Extra Long Shaft - 25\"");
       else if (shaftFeature.meaning.includes('30"')) specs.push("Ultra Long Shaft - 30\"");
     }
-    
+
     return specs.join(" • ");
   };
 
@@ -227,7 +227,7 @@ export default function MotorCardPremium({
 
   return (
     <>
-      <div 
+      <div
         className="group bg-white shadow-sm rounded-lg overflow-hidden card-hover cursor-pointer"
         onClick={handleCardClick}
       >
@@ -235,10 +235,10 @@ export default function MotorCardPremium({
           {/* Image Section */}
           {imageUrl && (
             <div className="relative p-4 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
-              <img 
-                src={imageUrl} 
-                alt={title} 
-                className="h-32 md:h-48 w-full object-contain aspect-[4/3] mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
+              <img
+                src={imageUrl}
+                alt={title}
+                className="h-32 md:h-48 w-full object-contain aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   if (!target.src.includes('speedboat-transparent.png')) {
@@ -246,22 +246,22 @@ export default function MotorCardPremium({
                   }
                 }}
               />
-              
+
               {/* Popularity Badge - Top Left */}
               {popularityType && (
                 <div className="absolute top-4 left-4">
                   <PopularityBadge type={popularityType} />
                 </div>
               )}
-              
+
               {/* HP Badge */}
               {hpNum && (
                 <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs font-light tracking-wider">
                   {hpNum} HP
                 </div>
               )}
-              
-              
+
+
               {/* Action Buttons - Bottom Left */}
               <div className="absolute bottom-4 left-4 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" style={{ opacity: isMobile ? 1 : undefined }}>
                 {motor && (
@@ -275,7 +275,7 @@ export default function MotorCardPremium({
 
               {/* Mercury Logo - Enhanced interaction */}
               <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
-                <img 
+                <img
                   src={mercuryLogo}
                   alt="Mercury Marine"
                   className="h-6 w-auto"
@@ -283,29 +283,29 @@ export default function MotorCardPremium({
               </div>
             </div>
           )}
-          
+
           {/* Mercury Brand Accent */}
           <div className="h-0.5 bg-gradient-to-r from-[#003F7F] to-transparent"></div>
-          
+
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-4 space-y-4">
             {/* Model Name - Prominent */}
             <h3 className="text-2xl font-light tracking-wide text-black">
               {title}
             </h3>
-            
+
             {/* Model Number - Subtle */}
             {motor?.model_number && (
               <p className="text-sm text-gray-500 mt-1">
                 Model: {motor.model_number}
               </p>
             )}
-            
+
             {/* Simplified Specs - Single Line */}
             <p className="text-sm text-gray-600 mt-4 tracking-wide">
               {getSimplifiedSpecs()}
             </p>
-            
+
             {/* Pricing - Clean & Direct */}
             <div className="mt-4">
               {(() => {
@@ -325,21 +325,21 @@ export default function MotorCardPremium({
                 </>;
               })()}
             </div>
-            
+
             {/* Delivery Status - Subtle with Icon */}
             <p className="mt-4 text-sm text-gray-600">
               {deliveryStatus.text}
             </p>
-            
+
             {/* Warranty - Clean Checkmark */}
             {warrantyText && (
               <p className="text-sm text-blue-600 mt-2">
                 {warrantyText}
               </p>
             )}
-            
+
             {/* Premium Black Button */}
-            <button 
+            <button
               className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors duration-200"
               onClick={handleMoreInfoClick}
             >
@@ -348,7 +348,7 @@ export default function MotorCardPremium({
           </div>
         </div>
       </div>
-      
+
       {/* Mobile/click details sheet - rendered via portal */}
       {showDetailsSheet && createPortal(
         <MotorDetailsSheet

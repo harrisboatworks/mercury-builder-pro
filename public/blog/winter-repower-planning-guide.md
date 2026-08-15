@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-04-27
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-04-27
+date_modified: 2026-08-08
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Winter Repower Planning: Get Ready for Spring
@@ -24,11 +25,13 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last updated:** 2026-04-27  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+
+[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
 
 ## Winter Repower Planning
 
@@ -50,7 +53,7 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 
 ### Planning Timeline
 
-> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens after we reopen in early April.
+> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens when we reopen in early April.
 
 **November**:
 - Assess current motor condition
@@ -70,37 +73,55 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - Adjustments and setup
 - Delivery before the season
 
-::cost-stack
-eyebrow: Spring repower budget (off-season ordering)
-heading: What an order-ahead spring repower actually costs
-subhead: Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
-item1Label: Motor (90 to 150 HP FourStroke)
-item1Value: $13,500 to $22,000
-item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
-item2Label: Install and rigging
-item2Value: $1,200 to $2,400
-item2Note: Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
-item3Label: Control conversion (if needed)
-item3Value: $800 to $2,000
-item3Note: Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
-item4Label: New propeller
-item4Value: $350 to $1,200
-item4Note: Sized after sea trial. Standard allowance applies on most installs.
-item5Label: First-year service
-item5Value: $200 to $350
-item5Note: 20-hour break-in service. Included on many repower packages at HBW.
-item6Label: Mercury Product Protection (optional)
-item6Value: $700 to $1,800
-item6Note: 8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
-item6Accent: true
-totalLabel: Typical out-the-door range
-totalValue: $16,000 to $28,000
-caveat: All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.
-::
+*Spring repower budget (off-season ordering)*
+
+### What an order-ahead spring repower actually costs
+
+Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+
+#### Motor (90 to 150 HP FourStroke)
+
+**$13,500 to $22,000**
+
+Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+
+#### Install and rigging
+
+**$1,200 to $2,400**
+
+Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+
+#### Control conversion (if needed)
+
+**$800 to $2,000**
+
+Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
+
+#### New propeller
+
+**$350 to $1,200**
+
+Sized after sea trial. Standard allowance applies on most installs.
+
+#### First-year service
+
+**$200 to $350**
+
+Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
+
+#### Mercury Product Protection (optional)
+
+**$700 to $1,800**
+
+8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+
+#### Typical out-the-door range
+
+**$16,000 to $28,000**
+
+*All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.*
 
 ### Assessment Checklist
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Evaluate Your Current Motor**:
 - Compression test results
@@ -146,8 +167,6 @@ If yes to most, repower makes sense.
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### How far in advance should I plan an order-ahead repower?
@@ -168,24 +187,23 @@ Clean out the boat, document any electrical issues, gather all paperwork, and en
 
 ## Related guides
 
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
+- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide), year-end timing and incentives
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-07-03
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them"
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-07-03
+date_modified: 2026-08-02
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
@@ -24,11 +25,9 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last updated:** 2026-07-03  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
-
-# The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
 
 > **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
 
@@ -59,7 +58,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.
@@ -139,7 +138,7 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## Bilge Pump Types: What's in Your Boat
 
-**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in GPH. Cannot run dry. Best for general bilge duty.
+**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Cannot run dry. Best for general bilge duty.
 
 **Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
 
@@ -149,23 +148,23 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## How to Size Your Bilge Pump
 
-Bilge pumps are rated in gallons per hour (GPH) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 1,000 GPH will actually move about 600 GPH once it's installed and working against real head pressure.
+Bilge pumps are rated in litres per hour (L/h, or gallons per hour) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 3,800 L/h (1,000 GPH) will actually move about 2,300 L/h (600 GPH) once it's installed and working against real head pressure.
 
 A practical sizing guide for Ontario recreational boats:
 
-![Bilge pump sizing chart by boat length in GPH](/lovable-uploads/bilge-pump-sizing-chart.png)
+![Bilge pump sizing chart by boat length in L/h (GPH)](/lovable-uploads/bilge-pump-sizing-chart.png)
 
 | Boat length | Recommended capacity | Typical setup |
 |---|---|---|
-| Under 16 ft | 500-800 GPH | 1 pump |
-| 17-20 ft | 800-1,500 GPH | 1 pump, consider 2 |
-| 21-26 ft | 1,500-2,500 GPH | 2 pumps |
-| 27-35 ft | 2,500-3,500 GPH | 2-3 pumps |
-| 36 ft+ | 3,500-6,000+ GPH | 3+ pumps |
+| Under 16 ft | 1,900-3,000 L/h (500-800 GPH) | 1 pump |
+| 17-20 ft | 3,000-5,700 L/h (800-1,500 GPH) | 1 pump, consider 2 |
+| 21-26 ft | 5,700-9,500 L/h (1,500-2,500 GPH) | 2 pumps |
+| 27-35 ft | 9,500-13,000 L/h (2,500-3,500 GPH) | 2-3 pumps |
+| 36 ft+ | 13,000-22,700+ L/h (3,500-6,000+ GPH) | 3+ pumps |
 
-When in doubt, size up. A 1,500 GPH pump on a 20-foot boat has real-world output around 900 GPH, which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
+When in doubt, size up. A 5,700 L/h (1,500 GPH) pump on a 20-foot boat has real-world output around 3,400 L/h (900 GPH), which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
 
-**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 500 and 800 GPH, which suits the 14-20 foot hull sizes those boats are built around.
+**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 1,900 and 3,000 L/h (500 and 800 GPH), which suits the 14-20 foot hull sizes those boats are built around.
 
 ---
 
@@ -179,11 +178,11 @@ Two brands dominate the recreational market in Canada: Rule and Attwood. A third
 
 **Seaflo:** a budget-priced alternative with a 4-year warranty, longer than either Rule or Attwood. Real-world results are mixed, adequate for nuisance water on sheltered-water boats, less proven for demanding duty cycles. A reasonable choice for a secondary or backup pump where price matters more than peak performance.
 
-| Brand | Key model | GPH range | Warranty | Best use |
+| Brand | Key model | Flow range | Warranty | Best use |
 |---|---|---|---|---|
-| Attwood | Tsunami Mk2, Sahara | 500-1,200 | 3 yr | Primary auto pump, Legend Boats' factory choice |
-| Rule | Gold Series | 500-3,700 | 3 yr | Manual/standard with a separate switch |
-| Seaflo | Various | 500-2,000 | 4 yr | Secondary/backup pump |
+| Attwood | Tsunami Mk2, Sahara | 1,900-4,500 L/h (500-1,200 GPH) | 3 yr | Primary auto pump, Legend Boats' factory choice |
+| Rule | Gold Series | 1,900-14,000 L/h (500-3,700 GPH) | 3 yr | Manual/standard with a separate switch |
+| Seaflo | Various | 1,900-7,600 L/h (500-2,000 GPH) | 4 yr | Secondary/backup pump |
 
 ---
 
@@ -309,7 +308,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 
@@ -348,12 +347,6 @@ If your bilge pump has already let you down once, or you just want to know it'll
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
 **Phone:** 905-342-2153
-
-**Related guides:**
-- [Boat Electrical Safety Checklist (Ontario Freshwater)](/blog/boat-electrical-safety-checklist-ontario-freshwater)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Motor Maintenance: Seasonal Tips](/blog/mercury-motor-maintenance-seasonal-tips)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
 
 ---
 
@@ -399,24 +392,35 @@ Start with the discharge hose: check for kinks, a partial disconnection, or a bl
 
 ### What size bilge pump do I need for my boat?
 
-As a starting point, 500-800 GPH under 16 feet, 800-1,500 GPH for 17-20 feet, and 1,500-2,500 GPH for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
+As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/h (800-1,500 GPH) for 17-20 feet, and 5,700-9,500 L/h (1,500-2,500 GPH) for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
 
 ### Does my Legend Boats warranty cover the bilge pump?
 
 Yes. Legend's 6-Year WOWranty covers most components, including factory-installed bilge pumps and related electrical parts, for six years from purchase. On the Q-Series LE and Q-Series pontoons, that stretches to ten years. Bring your Legend to HBW. We're an authorized dealer and can handle the warranty claim directly.
 
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,42 +1,43 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
-description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense."
+description: "Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)
 
-> We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.
+> Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs.
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
-# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
+## Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
-> **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
+> **Quick answer:** Mercury 75, 90 and 115 FourStroke models share a 2.1L block and Mercury-listed lightest dry weight. The right choice depends on the capacity plate, hull, normal passenger load, steering and gearcase configuration. The 90 is HBW's usual fit for many 16 to 18 ft aluminum console boats; confirm your boat before ordering.
 
-For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 suits lighter use; the 115 adds useful headroom for family loading and rougher water. The exact price gap changes with model, rigging, and current promotions. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers the rigging changes that go with each class. Compare current CAD pricing on the [Mercury pricing reference](/pricing-reference), then build the exact configuration on the [motor selection page](/quote/motor-selection).
 
-![Mercury 75 vs 90 vs 115 HP outboard comparison: best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 163 kg (359 lb) lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
 
-*Same 2.1L block. Same 359 lb. The difference is fit.*
+*Same block, three fits. The capacity plate sets the ceiling.*
 
 **Which one is right for you?**
 
@@ -47,18 +48,15 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
-For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
+For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. The exact speed gain depends on hull, load, prop, mounting height, and conditions, so we do not promise a fixed mph increase. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you are less likely to outgrow.
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
 ## Quick recommendation
 
-The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use. It is also the motor class that crosses our service bench most often: 526 winterize-and-service jobs on 75 to 115 HP FourStrokes in the last five years, more than any other HP band in the shop.
+The 90 HP FourStroke sits in the useful middle of this group. On many 16 to 18 ft aluminum console boats, it adds loaded planing and acceleration over the 75 without automatically moving the buyer into the price and weight of the 115. The capacity plate, hull, normal load, current rigging, and performance goal still decide whether that middle answer is the right one.
 
 When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
-
-![Comparison card: Mercury 75, 90, and 115 HP share the same 2.1L block and 359 lb dry weight. 75 HP for lighter use with the only tiller option; 90 HP the sweet spot for 16-18 ft aluminum boats; 115 HP for heavier loads with Command Thrust option for pontoons.](/lovable-uploads/mercury-75-90-115-decision-card-hbw.png)
-*Same block, three fits. The capacity plate sets the ceiling.*
 
 ## What changes the answer
 
@@ -86,12 +84,7 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
 
-slug: mercury-75-90-115-best-fit-matrix
-type: infographic
-aspect: 16:9
-description: Visual matrix showing which Mercury (75/90/115) fits which boat type and use case
-prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/mercury-75-90-115-best-fit-matrix.png
+![Visual matrix showing which Mercury (75/90/115) fits which boat type and use case](/lovable-uploads/mercury-75-90-115-best-fit-matrix.png)
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
@@ -107,7 +100,7 @@ You don't need to overthink this one. A 75 that felt fine when you bought it can
 - You're running near wide-open just to keep up
 
 **What a 90 buys you on the same hull:**
-- 5 to 10 mph more top end
+- Stronger acceleration and loaded planing
 - Planes with a load instead of plowing
 - Better resale when you eventually sell the boat
 
@@ -141,8 +134,6 @@ The 90 is the most-installed Mercury in this class for a reason. It performs wel
 
 For the typical 16 to 18 ft aluminum console at HBW, the all-in repower lands $17,000 to $22,000 CAD. [Live pricing here.](/quote/motor-selection)
 
-::walkaround-lead-capture
-
 ## Mercury 115 EXLPT FourStroke: when the step-up earns its price
 
 The 115 HP FourStroke is the right call when:
@@ -155,13 +146,11 @@ The 115 HP FourStroke is the right call when:
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
 
-::cta
-variant: inline
-heading: Narrowed it down? See what it actually costs.
-body: Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
-primaryLabel: See live Ontario pricing
-primaryHref: /pricing-reference
-::
+### Narrowed it down? See what it actually costs.
+
+Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
+
+[See live Ontario pricing](/pricing-reference)
 
 ## What HBW checks before recommending 75, 90, or 115
 
@@ -185,13 +174,13 @@ We see these every season:
 
 1. **Buying 75 to save $1,500 and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
 2. **Buying 115 when 90 was plenty.** A 115 on a 16 ft aluminum used solo for fishing is overkill. The motor outpowers the hull's typical load. The savings on the 90 buy electronics, props, or kicker upgrades that matter more.
-3. **Picking on top speed alone.** All three motors have similar top-speed numbers within 5 mph. The real difference is hole shot and load-handling. Top speed rarely matters in real-world use.
-4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection during sea-trial is critical. We test props on every repower.
+3. **Expecting a fixed mph gain.** Hull, load, prop, mounting height, and conditions can move the result by several mph. Compare loaded planing, acceleration, and cruise behaviour on your boat instead of treating a broad sea-trial range as a promise.
+4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection is critical, and the verification scope follows the motor, hull, rigging, work order, and safe seasonal testing conditions.
 5. **Skipping the kicker decision.** The 9.9 ProKicker question is separate from the 75/90/115 question. Most fishing customers want a kicker regardless of which main motor.
 
-## Mercury 75/90/115 Pro XS: when to step up the family
+## Mercury 115 Pro XS: when to step up the family
 
-All three HP classes have Pro XS variants. The Pro XS step-up over FourStroke at the same HP costs an extra $1,000 to $1,500 CAD and gives you faster acceleration and slightly higher top speed.
+In Mercury's current lineup, the Pro XS choice in this comparison begins at 115 HP. There is no current 75 or 90 Pro XS. The 115 Pro XS is tuned for stronger acceleration and a higher RPM range than the 115 FourStroke, so the family choice only enters once the hull is rated for 115 HP.
 
 Pro XS is the right call when:
 
@@ -232,15 +221,15 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-::cta
-variant: banner
-heading: Stop comparing. Start pricing.
-body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-phone: 905-342-2153
-footer: Repowering an older rig? Here's how the [repower process](/repower) works.
-::
+### Stop comparing. Start pricing.
+
+You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+
+[Build Your Quote](/quote/motor-selection)
+
+905-342-2153
+
+Repowering an older rig? Here's how the [repower process](/repower) works.
 
 ## FAQs
 
@@ -262,7 +251,7 @@ Yes. The current Mercury 75, 90, and 115 are all FourStroke (four-stroke) EFI mo
 
 ### How much does a new 90 HP Mercury motor cost installed in Ontario?
 
-Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. See our [current pricing](/pricing-reference) reference, or [see Ontario repower cost](/repower) for a full installed breakdown.
+Installed cost depends on the exact motor, shaft, controls, propeller, existing rigging, and the boat itself. Use the [current pricing reference](/pricing-reference) for the motor, then build the exact configuration on the [motor selection page](/quote/motor-selection). HBW confirms the final installed scope after reviewing the boat.
 
 ### How fast will a 75 HP push a 17-foot boat?
 
@@ -270,44 +259,43 @@ On a typical 17 ft aluminum boat with a normal load, a 75 HP Mercury will cruise
 
 ### Is the Mercury 90 HP worth the upgrade from 75 HP?
 
-The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want more than light fishing use. The 90 HP shares the same block and physical weight as the 75 HP, more power without added transom weight. The key tradeoff is that the 90 HP has no tiller option, whereas the 75 HP does. If tiller steering matters, stay with the 75. If you want remote steering and more power, the 90 is a solid step at typically a modest price difference.
+The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want stronger loaded performance. The 90 shares the same 2.1L block and Mercury-listed lightest dry weight as the 75. Mercury lists an advanced tiller as available for applicable 90 to 115 HP configurations, but exact model and market availability varies. Confirm the Canadian configuration before ordering.
 
 ### What is the fuel economy difference between Mercury 75, 90, and 115 HP?
 
-At typical cruising speeds, fuel economy differences between these three EFI FourStrokes are smaller than most people expect. Day-to-day on a 17 ft fishing boat, the difference in a full day's fuel cost between a 75 and 115 HP is approximately $5-$15 depending on how hard you run. The 115's efficiency advantage is that it's not being pushed as hard to maintain cruising speed, which offsets some of its larger displacement. Biggest differences appear at the extremes, low-speed and wide-open-throttle.
+At typical cruising speeds, fuel-economy differences between these three EFI FourStrokes are smaller than many people expect. They share the same 2.1L block, so hull, load, propeller, mounting height, and throttle setting matter more than a simple horsepower label. The 115 may hold a loaded cruise at less throttle, while the 75 generally burns less at wide-open throttle. Boat-specific setup decides the result.
 
 ### Which has better resale value: Mercury 75, 90, or 115 HP?
 
-The Mercury 115 HP FourStroke consistently holds the best resale value of the three because it covers more use cases and appeals to more buyers. The 90 HP falls in between. Motors with broader use-case appeal and stronger original MSRP hold value better. The 115 HP's Command Thrust option, strong torque, and versatility make it the most sought-after of the three on Ontario's used boat market.
+Resale depends on age, hours, condition, service history, rigging, and whether the motor is a good match for the hull. The 115 can appeal to a broad buyer pool on boats rated for it, but there is no universal resale winner. A clean, correctly matched 90 with documented service can be worth more to the right buyer than a poorly matched 115.
 
 ### What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?
 
-For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake's shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.
+For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. The 75 suits lighter solo or two-person use. The 90 provides better loaded performance at the same Mercury-listed lightest dry weight. Mercury lists an advanced tiller as available for applicable 90 to 115 HP configurations, but confirm the exact Canadian model before ordering. Consider the 115 only if the capacity plate and hull fit support it.
 
 ### Is it worth upgrading from a Mercury 75 to a 90 HP outboard?
 
-For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.
+For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. Exact speed gain depends on hull, load, prop, mounting height, and conditions, so use the current pricing reference and a boat-specific assessment rather than assuming a fixed mph increase.
 
 ## Related guides
 
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 - [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 - [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
 - [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

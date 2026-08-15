@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mercury 75, 90, and 115 HP FourStroke decision card</title>
+  <desc id="desc">The 75 suits lighter 14 to 16 foot boats. The 90 is the practical sweet spot for many 16 to 18 foot aluminum boats. The 115 suits heavier 17 to 19 foot boats. Advanced tiller and Command Thrust options are available on applicable 90 and 115 horsepower configurations.</desc>
+  <rect width="1600" height="900" fill="#f7f7f5"/>
+  <rect x="0" y="0" width="1600" height="16" fill="#c8102e"/>
+
+  <text x="92" y="92" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">Mercury 75 vs 90 vs 115: which one fits?</text>
+  <text x="92" y="144" fill="#4f5661" font-family="Arial, Helvetica, sans-serif" font-size="27">Same 2.1L four-cylinder block and 359 lb lightest dry weight. The difference is tune, load, and fit.</text>
+
+  <rect x="92" y="218" width="438" height="460" rx="24" fill="#ffffff" stroke="#c8cdd3" stroke-width="4"/>
+  <text x="311" y="304" text-anchor="middle" fill="#7b838d" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">75 HP</text>
+  <text x="311" y="393" text-anchor="middle" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Lighter use</text>
+  <text x="311" y="438" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">14 to 16 ft light aluminum</text>
+  <text x="311" y="476" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Solo or two-person fishing</text>
+  <text x="311" y="554" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">Good when the load stays light</text>
+  <text x="311" y="589" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">and the capacity plate fits.</text>
+
+  <rect x="581" y="218" width="438" height="460" rx="24" fill="#ffffff" stroke="#c8102e" stroke-width="5"/>
+  <text x="800" y="304" text-anchor="middle" fill="#c8102e" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">90 HP</text>
+  <text x="800" y="393" text-anchor="middle" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">The practical sweet spot</text>
+  <text x="800" y="438" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">16 to 18 ft aluminum consoles</text>
+  <text x="800" y="476" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Mixed fishing and family use</text>
+  <text x="800" y="554" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">Stronger loaded planing than 75</text>
+  <text x="800" y="589" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">without added listed dry weight.</text>
+
+  <rect x="1070" y="218" width="438" height="460" rx="24" fill="#ffffff" stroke="#c8cdd3" stroke-width="4"/>
+  <text x="1289" y="304" text-anchor="middle" fill="#7b838d" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">115 HP</text>
+  <text x="1289" y="393" text-anchor="middle" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Heavier loads</text>
+  <text x="1289" y="438" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">17 to 19 ft aluminum or light glass</text>
+  <text x="1289" y="476" text-anchor="middle" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Family loading and more headroom</text>
+  <text x="1289" y="554" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">Consider only when the capacity</text>
+  <text x="1289" y="589" text-anchor="middle" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">plate and hull fit support it.</text>
+
+  <rect x="92" y="720" width="1416" height="88" rx="20" fill="#171a1f"/>
+  <text x="800" y="758" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Mercury lists advanced tiller and Command Thrust options for applicable 90 and 115 HP configurations.</text>
+  <text x="800" y="790" text-anchor="middle" fill="#dfe2e5" font-family="Arial, Helvetica, sans-serif" font-size="21">Exact model, shaft, gearcase, and Canadian availability must be confirmed before ordering.</text>
+
+  <text x="92" y="858" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="22">Capacity plate sets the ceiling. Hull, load, prop, and conditions determine real-world performance.</text>
+  <text x="1508" y="858" text-anchor="end" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Harris Boat Works</text>
+</svg>

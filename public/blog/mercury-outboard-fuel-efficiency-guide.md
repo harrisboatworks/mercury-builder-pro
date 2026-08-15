@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
 description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Outboard Fuel Economy: How to Get Better MPG
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
@@ -66,7 +67,7 @@ A weedy or fouled hull adds drag. This matters more for boats that sit in slips 
 
 **4. Weight**
 
-Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+Every unnecessary 45 kg (100 lb) on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
 
 **5. Cruise speed selection**
 
@@ -86,27 +87,41 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 
 ---
 
-::cost-stack
-eyebrow: 2026 Ontario fuel cost ranges
-heading: What you'll actually spend on fuel per season
-subhead: Estimates based on Ontario marina gas pricing and realistic GPH for a properly propped Mercury FourStroke 90 to 150.
-item1Label: Weekend family cruiser (50 hrs/season)
-item1Value: $550 to $850
-item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
-item2Label: Heavy weekender (100 hrs/season)
-item2Value: $1,100 to $1,800
-item2Note: Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
-item3Label: Seasonal angler (75 hrs/season)
-item3Value: $700 to $1,100
-item3Note: Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
-item4Label: Lake Ontario offshore (150 hrs/season)
-item4Value: $2,200 to $3,400
-item4Note: Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
-item4Accent: true
-totalLabel: Biggest variable
-totalValue: Prop pitch, not horsepower
-caveat: A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.
-::
+*2026 Ontario fuel cost ranges*
+
+### What you'll actually spend on fuel per season
+
+Estimates based on Ontario marina gas pricing and realistic L/h (GPH) for a properly propped Mercury FourStroke 90 to 150.
+
+#### Weekend family cruiser (50 hrs/season)
+
+**$550 to $850**
+
+Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
+
+#### Heavy weekender (100 hrs/season)
+
+**$1,100 to $1,800**
+
+Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
+
+#### Seasonal angler (75 hrs/season)
+
+**$700 to $1,100**
+
+Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
+
+#### Lake Ontario offshore (150 hrs/season)
+
+**$2,200 to $3,400**
+
+Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
+
+#### Biggest variable
+
+**Prop pitch, not horsepower**
+
+*A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.*
 
 ## Practical Fuel Consumption Ranges
 
@@ -123,7 +138,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Mercury SmartCraft gauge showing 24.6 L/h (6.5 US gal/h) fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -149,13 +164,11 @@ A sudden change in fuel economy is worth investigating. Don't assume it's "just 
 
 ## Getting Your Prop Right at HBW
 
-We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30-45 minutes and tells you more about your setup than any spec sheet.
+HBW's standard repower handoff includes an on-water setup check on Rice Lake before pickup when safe seasonal conditions allow. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it is worth having the setup checked. Any alternate acceptance plan is documented with the customer.
 
 For engine repairs, we only service Mercury and Mercruiser.
 
 Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
-
----
 
 ---
 
@@ -186,26 +199,18 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 
 ---
 
-## Related reading
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
-
----
-
 **Ready to dial in your Mercury?** 
 Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
 
 ### What's normal fuel consumption for a 115HP outboard?
 
-At cruise (around 4,000 RPM), expect 6-8 GPH. At WOT, 10-12 GPH. Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
+At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
 
 ### How much does a dirty hull cost in fuel?
 
@@ -233,7 +238,7 @@ Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for
 
 ### How much fuel does a Mercury outboard use per hour?
 
-It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 1 gallon (about 3.8 litres) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.
+It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 3.8 litres (about 1 US gallon) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.
 
 ### Do 2-stroke or 4-stroke Mercury outboards burn less fuel?
 
@@ -246,23 +251,22 @@ In order of impact: get the prop right so the motor reaches the middle of its ra
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

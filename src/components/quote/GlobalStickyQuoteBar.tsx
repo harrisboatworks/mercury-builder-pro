@@ -16,7 +16,7 @@ export function GlobalStickyQuoteBar() {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
-  const { getRebateForHP, getSpecialFinancingRates, getChooseOneOptions } = useActivePromotions();
+  const { getRebateForHP, getSpecialFinancingRates, getPromotionOptions } = useActivePromotions();
 
   // Pages where bar should NOT show
   const hideOnPages = [
@@ -38,6 +38,9 @@ export function GlobalStickyQuoteBar() {
     '/staging',
     '/my-quotes',
     '/deposits',
+    '/payment-success',
+    '/payment-canceled',
+    '/motors/fourstroke-9-9hp-9-9mh-fourstroke',
     '/accessories',
     '/contact',
     '/calculator',
@@ -54,6 +57,7 @@ export function GlobalStickyQuoteBar() {
 
   // Calculate monthly payment - only for amounts >= $5,000
   const monthlyPayment = useMemo(() => {
+    if (state.selectedPaymentMethod === 'cash_purchase') return null;
     if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
 
     // Add Dealerplan fee
@@ -64,7 +68,7 @@ export function GlobalStickyQuoteBar() {
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
 
     return payment;
-  }, [runningTotal, promo]);
+  }, [runningTotal, promo, state.selectedPaymentMethod]);
 
   // Financing unavailable when total is valid but below threshold
   const financingUnavailable = useMemo(() => {
@@ -109,8 +113,8 @@ export function GlobalStickyQuoteBar() {
   }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
 
   // Determine promo-or-summary destination
-  const hasActiveChooseOne = getChooseOneOptions().length > 0;
-  const promoOrSummary = hasActiveChooseOne ? '/quote/promo-selection' : '/quote/summary';
+  const hasActivePromotionOptions = getPromotionOptions().length > 0;
+  const promoOrSummary = hasActivePromotionOptions ? '/quote/promo-selection' : '/quote/summary';
 
   // Per-step validation gate (disable Continue when required selection missing)
   const gate = getQuoteStepGate(location.pathname, state);

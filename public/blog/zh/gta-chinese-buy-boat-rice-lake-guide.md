@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-08-03
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # 多伦多华人在 Rice Lake 买船完整指南：从选型到交付
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**最后审核:** 2026-08-03  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
@@ -81,28 +82,31 @@ Rice Lake 几个对买家友好的特点：
 
 ---
 
-::decision-card
-eyebrow: 新船还是二手
-heading: GTA 华人买家该怎么选?
-subhead: 新船保修齐全, 但首付和贷款负担大。二手船省钱, 但需要懂行的人帮你看船。语言不通的时候, 经销商关系比省几千块更重要。
-leftLabel: 选新船
-leftCriteria:
-  - 第一次买船, 没有懂行的朋友帮忙
-  - 计划保留 5 年以上, 在意保修
-  - 贷款额度足够, 月供在预算内
-  - 希望省心, 不想处理潜在问题
-leftOutcome: 新 Mercury 含 3 年原厂保修
-leftVariant: recommended
-rightLabel: 选二手船
-rightCriteria:
-  - 预算紧张或希望快速上水
-  - 有懂行朋友或愿意付费请人检测
-  - 接受 1 至 2 年内可能的额外维修
-  - 计划 3 至 5 年换船
-rightOutcome: 5 至 10 年船龄 + HBW 验车
-rightVariant: alternative
-whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船买新的, 并找一家Premier 经销商。带会英语的亲友同来或用翻译软件沟通即可——出问题时, 经销商等级和保修响应比省 $3,000 重要得多。
-::
+*新船还是二手*
+
+### GTA 华人买家该怎么选?
+
+新船保修齐全, 但首付和贷款负担大。二手船省钱, 但需要懂行的人帮你看船。语言不通的时候, 经销商关系比省几千块更重要。
+
+#### 选新船
+
+- 第一次买船, 没有懂行的朋友帮忙
+- 计划保留 5 年以上, 在意保修
+- 贷款额度足够, 月供在预算内
+- 希望省心, 不想处理潜在问题
+
+**新 Mercury 含 3 年原厂保修**
+
+#### 选二手船
+
+- 预算紧张或希望快速上水
+- 有懂行朋友或愿意付费请人检测
+- 接受 1 至 2 年内可能的额外维修
+- 计划 3 至 5 年换船
+
+**5 至 10 年船龄 + HBW 验车**
+
+不会英文又不熟船的华人买家, 强烈建议第一艘船买新的, 并找一家Premier 经销商。带会英语的亲友同来或用翻译软件沟通即可——出问题时, 经销商等级和保修响应比省 $3,000 重要得多。
 
 ## 第二步：新船 vs 二手船
 
@@ -151,7 +155,7 @@ whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船�
 
 如果你想深入了解 Pro XS 和 FourStroke 的差别，我们有 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta) 可以参考。
 
-**Legend 浮筒船：** HBW 是安省 Legend 的合作伙伴，Legend 是加拿大本地制造的 pontoon 品牌，配 Mercury 原厂动力。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
+**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，船只为加拿大水域设计，并由美国合同制造商生产。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
 
 ---
 
@@ -190,7 +194,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 **几个常见方案：**
 
 - **HBW 季节性 slip：** 直接在我们码头租位，5 月到 10 月停在水里，开船就来、用完就走。最省心，适合每周末都来用的家庭。可以参考 [Kawartha Lakes 船只存储指南](/blog/boat-storage-kawartha-lakes)（英文）。
-- **HBW 冬季存储：** 10 月底拉上岸、清洗、换油、防冻、室内或室外存储到次年 4 月。Mercury 发动机的冬季保养我们直接做，不用拖回多伦多。
+- **HBW 冬季存储：** HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、收缩膜、室外存储和维修的具体范围以当前书面报价为准。客户自行送船和取船；HBW 不提供或安排取送、拖运或上门服务。
 - **自己拖船回家：** 如果你有 SUV 或 pickup truck（拖重达标），可以自己拖。但拖船需要练习，401 上拖一艘 22 尺 pontoon 不是新手友好的体验。
 - **多伦多附近室内存储：** 也有，但费用高，而且你每次用船还是要拖到 Rice Lake 下水。
 
@@ -232,10 +236,10 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
-3. **预约看船：** 中文邮件或电话联系我们，约一个不太忙的工作日下午来看实船，避开周末高峰。
+3. **预约看船：** 通过英文邮件或电话联系我们；欢迎带会英语的亲友同来或使用翻译软件。确认时间后再出发。
 4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
 
-我们家族在 Rice Lake 卖船快 80 年了。我们不是最大的经销商，但我们认识每一位客户。欢迎你带家人过来看看。
+Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -263,11 +267,11 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 ### HBW 能用中文沟通吗？
 
-我们专门为华人朋友准备了这些中文指南——因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务，不过别担心——欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ### 冬季船怎么存放？HBW 提供存储吗？
 
-提供。我们提供冬季存储服务，包括拉船上岸、清洗、换油、防冻处理、室内或室外存储到次年 4 月。Mercury 发动机的冬季保养我们直接做，不用拖回多伦多。
+HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、收缩膜、室外存储和维修以当前书面报价为准。客户自行送船和取船；请在计划送船前 1–2 周通过 hbw.wiki/service 提交请求。
 
 ### 提车后，发动机保养在哪里做？
 
@@ -275,16 +279,15 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Setup for Simcoe Walleye 2026"
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"
 date_published: 2026-04-21
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["best Mercury outboard for Lake Simcoe fishing","Lake Simcoe fishing guide 2026","Lake Simcoe walleye fishing","Lake Simcoe lake trout fishing","Lake Simcoe fishing regulations 2026"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Setup for Simcoe Walleye 2026
@@ -24,15 +25,9 @@ language: en-CA
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
-
-- Mercury Premier Dealer
-- Family-owned since 1947
-- Mercury dealer since 1965
-- Gores Landing, ON
-- Quote builder available
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -128,7 +123,7 @@ For specific pricing, [build a quote](https://mercuryrepower.ca).
 
 ## The HBW on-water test
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 - [Recommended Mercury Outboard for Rice Lake Fishing](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing) - Rice Lake-specific setup
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide) - kicker setup
@@ -196,24 +191,23 @@ GPS chartplotter, sonar capable of 80+ ft depths, side imaging useful for struct
 
 ## Related guides
 
-- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

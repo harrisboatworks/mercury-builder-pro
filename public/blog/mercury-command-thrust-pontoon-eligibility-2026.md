@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Is Your Pontoon Eligible for Mercury Command Thrust? (2026)"
 description: "Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-08-08
 keywords: ["mercury command thrust pontoon eligibility","command thrust for pontoon","is command thrust worth it pontoon","mercury command thrust compatibility","tritoon command thrust eligibility","command thrust gearcase pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Is Your Pontoon Eligible for Mercury Command Thrust? (2026)
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last reviewed:** 2026-08-08  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026
 
-> **Quick answer:** Mercury Command Thrust fits most pontoons over 20 feet, all tritoons, and any pontoon regularly run at heavy loads (8+ people, water sports, cottage hauling). It's overkill on light 16-18 ft two-tube pontoons used for casual cruising. Email your boat photo and current motor serial number to info@harrisboatworks.ca for a same-day yes or no.
+> **Quick answer:** Mercury Command Thrust fits most pontoons over 20 feet, all tritoons, and any pontoon regularly run at heavy loads (8+ people, water sports, cottage hauling). It's overkill on light 16-18 ft two-tube pontoons used for casual cruising. Email your boat photo and current motor serial number to info@harrisboatworks.ca for a fit check.
 
 Most pontoon owners ask the same question every spring: do I really need Command Thrust, or is the standard gearcase fine. The short version is above. The full version, including the cases where it makes a huge difference and the cases where it's wasted money, is below. We do Command Thrust repowers at HBW every spring on Rice Lake and the Kawarthas, and the eligibility patterns are clearer than most online forums make it sound.
 
@@ -69,14 +70,14 @@ What Command Thrust does NOT do:
 
 - It does not add horsepower. A 90 HP Command Thrust makes the same peak power as a 90 HP standard.
 - It does not increase top speed. Usually top speed drops 2 to 4 MPH on a typical pontoon because the bigger prop is geared for thrust.
-- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 1,500 lbs loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
+- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 680 kg (1,500 lb) loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
 - It does not retrofit easily onto a non-CT motor. Converting an existing standard gearcase to Command Thrust means swapping the entire lower unit, which is usually only economical when buying a new motor.
 
 That last point is the most common confusion at the shop. People with an existing motor often ask if we can "add Command Thrust." The honest answer is rarely yes.
 
 ## Which pontoons are eligible
 
-The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 3,000 lbs, Command Thrust earns its keep. If it's under 2,000 lbs loaded, save the money. The middle is where the use case decides.
+The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 1,361 kg (3,000 lb), Command Thrust earns its keep. If it's under 907 kg (2,000 lb) loaded, save the money. The middle is where the use case decides.
 
 The four eligibility scenarios worth knowing.
 
@@ -88,7 +89,7 @@ If you have or are buying a tritoon, plan for Command Thrust unless your dealer 
 
 ### 20-foot and larger twin tube pontoons
 
-Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 1,134 kg (2,500 lb) or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
 
 ### Pontoons used for water sports
 
@@ -128,13 +129,13 @@ Five things to confirm before you commit.
 4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
 5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
 
-Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll respond same-day with a yes, no, or specific recommendation.
+Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll review the fit and reply with a recommendation or any information still needed.
 
 For the long version of motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model decoding.
 
 ## HP class availability
 
-Mercury offers Command Thrust as an option on select FourStroke models in the 25 to 115 HP range. Specific HP and shaft length availability varies by model year, and Mercury updates the lineup periodically.
+As of August 8, 2026, current Canadian listings include 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
 
 Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
@@ -168,32 +169,33 @@ Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in
 
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
 
-::pull-quote
-quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
-attribution: Common shop-floor pattern after a Command Thrust repower at HBW
-::
+> Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
+>
+> Common shop-floor pattern after a Command Thrust repower at HBW
 
-::decision-card
-eyebrow: Command Thrust decision
-heading: Is Command Thrust right for your pontoon?
-leftLabel: Skip it
-leftCriteria:
-  - 16 to 18 ft light cruising pontoon
-  - Trolling-only fishing use
-  - Light loads (2 to 4 people)
-  - Already at capacity-plate maximum HP
-leftOutcome: Standard gearcase is the right call
-leftVariant: alternative
-rightLabel: Yes, strong fit
-rightCriteria:
-  - Tritoon of any size
-  - 20+ ft twin tube pontoon
-  - Heavy loads (8+ people) or water sports
-  - Cottage hauling or regular full-load use
-rightOutcome: Order Command Thrust with the repower
-rightVariant: recommended
-whenInDoubt: Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
-::
+*Command Thrust decision*
+
+### Is Command Thrust right for your pontoon?
+
+#### Skip it
+
+- 16 to 18 ft light cruising pontoon
+- Trolling-only fishing use
+- Light loads (2 to 4 people)
+- Already at capacity-plate maximum HP
+
+**Standard gearcase is the right call**
+
+#### Yes, strong fit
+
+- Tritoon of any size
+- 20+ ft twin tube pontoon
+- Heavy loads (8+ people) or water sports
+- Cottage hauling or regular full-load use
+
+**Order Command Thrust with the repower**
+
+Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
 
 ## Why this matters for Ontario pontoon boaters
 
@@ -210,7 +212,7 @@ A few things that make Command Thrust hit different in Ontario than in other mar
 ## Ready to confirm Command Thrust eligibility?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send pontoon length, tube count, and current motor cowl plate photo for a same-day yes/no)
+**Email:** info@harrisboatworks.ca (send pontoon length, tube count, and current motor cowl plate photo for a fit check)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -256,23 +258,22 @@ Yes. Command Thrust uses a different prop shaft and a larger prop diameter than 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-06-09
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-06-09
+date_modified: 2026-07-18
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Why Mercury Dealers Hide Prices (HBW Doesn't)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-07-18  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
@@ -83,8 +84,6 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 **It builds trust.** The price you see online is the price you pay. No surprises at the counter.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
 
 **It respects everyone's time.** Three generations of this family have answered "what does it cost?" more times than anyone can count. Online pricing means the team can focus on conversations that matter.
@@ -125,18 +124,10 @@ For about 95% of recreational customers, the motor selection page is the source 
 
 ---
 
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
-
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
 Questions after you see it? Call 905-342-2153. 
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
 ---
 
@@ -164,7 +155,7 @@ Active promotional rates and package incentives are reflected in the live quote 
 
 ### Can I trust online pricing if it's published?
 
-For HBW, yes. Pricing is verified annually after Mercury's July 1 model year change. The configurator pulls live data. We're a Mercury Premier dealer with 60 years of accountability, we don't bait-and-switch on published prices.
+For HBW, yes. Pricing is verified after Mercury's July 1 model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
 
 ### What about delivery, taxes, and trade-in?
 
@@ -174,34 +165,33 @@ Pricing on the configurator is in CAD before HST. HST (13%) is added at quote co
 
 You can ask. Many will give it over the phone. The cost is your time. Knowing what we know about how the industry works, we'd say: skip the dealers who insist on phone gatekeeping and shop the dealers who publish.
 
-### What if HBW's online price is higher than another dealer's verbal quote?
+### What if HBW's online price is higher than another dealer's quote?
 
-Tell us. We'll match or explain the difference. Our pricing is in line with the Mercury dealer network. If a verbal quote is meaningfully lower, it usually means the verbal quote is missing rigging, install, or a hidden cost that shows up later.
+Call us and send the complete written quote. We'll compare the motor, rigging, installation, promotions, and availability, then tell you whether we can improve our price. We'll try when the packages are genuinely comparable, but a match is not guaranteed.
 
 ### How do I tell if a dealer's quote is fair without published prices?
 
-Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can't beat or match a transparent quote are the ones who depend on you not knowing.
+Build a quote at HBW first and use it as a written reference. Compare the exact motor, included rigging, installation, prop, promotions, taxes, and timing, not just the headline number. If another dealer gives you a complete written quote, send it to us and we'll review it.
 
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

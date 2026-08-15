@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-05-04
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
 description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-05-04
+date_modified: 2026-08-08
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)
@@ -24,39 +25,42 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-04  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
-# Best Pontoon Boats for Rice Lake Cottage Use
+## Best Pontoon Boats for Rice Lake Cottage Use
 
 ## Quick answer
 For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 115 HP range (Command Thrust tops out at 115 HP; a 150 runs Mercury's big gearcase as standard). Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
 
-::decision-card
-eyebrow: Pick the right hull
-heading: Pontoon or V-hull? It depends what you actually do on the water.
-subhead: These two boats solve completely different problems. Buying the wrong one is the most expensive mistake we see at HBW. Here's how to think about it.
-leftLabel: Pontoon
-leftCriteria:
-  - You entertain 6 or more people regularly (family, grandkids, cottage guests)
-  - You want a flat, stable platform for kids, dogs, mobility-limited passengers
-  - Rice Lake or Trent-Severn calm-water cruising is your main use case
-  - You want a swim platform, table, full bench seating, and shade
-  - Top speed is not a priority; 30-35 mph at WOT is plenty
-leftOutcome: Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury, $55K-$85K.
-leftVariant: alternative
-rightLabel: V-hull / runabout
-rightCriteria:
-  - You fish, water-ski, wakeboard, or tube
-  - You launch into Lake Ontario, Georgian Bay, or open Trent-Severn sections with real chop
-  - You value speed, handling, and rough-water capability over deck space
-  - You're a 2 to 5 person group, not a big entertaining crowd
-  - You want better gas mileage and easier trailering than a pontoon
-rightOutcome: Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury, $50K-$75K.
-rightVariant: recommended
-whenInDoubt: Honest answer, 70% of our Rice Lake customers should be in a pontoon, 30% in a V-hull. We sell Legend in both shapes, so we have no incentive to push you the wrong way. Tell us how you'll use it and we'll point you at the right hull.
-::
+*Pick the right hull*
+
+### Pontoon or V-hull? It depends what you actually do on the water.
+
+These two boats solve completely different problems. Buying the wrong one is the most expensive mistake we see at HBW. Here's how to think about it.
+
+#### Pontoon
+
+- You entertain 6 or more people regularly (family, grandkids, cottage guests)
+- You want a flat, stable platform for kids, dogs, mobility-limited passengers
+- Rice Lake or Trent-Severn calm-water cruising is your main use case
+- You want a swim platform, table, full bench seating, and shade
+- Top speed is not a priority; 30-35 mph at WOT is plenty
+
+**Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury, $55K-$85K.**
+
+#### V-hull / runabout
+
+- You fish, water-ski, wakeboard, or tube
+- You launch into Lake Ontario, Georgian Bay, or open Trent-Severn sections with real chop
+- You value speed, handling, and rough-water capability over deck space
+- You're a 2 to 5 person group, not a big entertaining crowd
+- You want better gas mileage and easier trailering than a pontoon
+
+**Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury, $50K-$75K.**
+
+In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull. Tell us how you actually use the boat and we'll point you at the right hull.
 
 ## Why pontoons dominate Rice Lake cottages
 
@@ -110,8 +114,6 @@ This is not a sales pitch; it is just what we have seen on Rice Lake for years. 
 
 **Legend Boats.** We are a Legend dealer. Legend is a Canadian company, factory Mercury-rigged, and designed for Canadian lakes and weather. The supply chain integration matters for parts and service.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Princecraft.** Also a Canadian brand. Mercury-rigged from the factory as a standard option. Common on Ontario cottage lakes.
 
 **Manitou.** US-built, premium pontoon brand. Well-regarded for build quality and finish.
@@ -154,18 +156,6 @@ For new Legend Boats pontoon packages, call us at 905-342-2153 or visit HBW at 5
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\](/blog/best-boats-rice-lake-under-30000)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What size pontoon is best for Rice Lake cottage use?
@@ -207,23 +197,22 @@ Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are a
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
+- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust on pontoon boats
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

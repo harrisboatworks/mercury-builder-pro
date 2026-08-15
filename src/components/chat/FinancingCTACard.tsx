@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, ArrowRight } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { DEALERPLAN_FEE } from '@/lib/finance';
+import { getFinancingApplicationUrl } from '@/lib/financingApplicationLink';
 
 export interface FinancingCTAData {
   price: number;
@@ -17,18 +19,13 @@ interface FinancingCTACardProps {
 }
 
 export function FinancingCTACard({ data }: FinancingCTACardProps) {
-  const { price, monthly, term, rate, motorModel, motorId } = data;
+  const { price, monthly, term, rate, motorModel } = data;
   
   // Calculate total cost for display
-  const totalWithTax = Math.round(price * 1.13);
-  const dealerplanFee = 349;
-  const totalFinanced = totalWithTax + dealerplanFee;
+  const dealerplanFee = DEALERPLAN_FEE;
   
   // Build financing application URL with motor context
-  const financingParams = new URLSearchParams();
-  if (motorModel) financingParams.set('motor', motorModel);
-  if (price) financingParams.set('price', price.toString());
-  const financingUrl = `/financing-application${financingParams.toString() ? `?${financingParams.toString()}` : ''}`;
+  const financingUrl = getFinancingApplicationUrl(data, dealerplanFee);
   
   return (
     <motion.div

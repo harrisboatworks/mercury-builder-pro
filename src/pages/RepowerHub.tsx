@@ -55,7 +55,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Rigging, Controls & Fit',
     cards: [
       { title: 'Mercury DTS vs Mechanical Controls', description: 'When digital throttle and shift is worth the rigging cost.', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower' },
-      { title: 'Horsepower & Capacity Plate Guide', description: 'Reading the legal HP ceiling on your transom before you spec a motor.', to: '/blog/repower-horsepower-capacity-plate-guide' },
+      { title: 'Horsepower & Capacity Plate Guide', description: 'Use the hull manufacturer\'s maximum recommended safe power, then match the motor to the actual boat.', to: '/blog/repower-horsepower-capacity-plate-guide' },
       { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', description: 'How hull type changes HP, gearcase, and rigging choices.', to: '/blog/repower-pontoon-aluminum-v-hull-differences' },
     ],
   },
@@ -106,25 +106,19 @@ export default function RepowerHub() {
       directAnswer={
         <>
           <p className="mb-4">
-            If you are looking for a boat repower in Ontario, you have come to
-            the right place. Harris Boat Works has been a Mercury Premier
-            Dealer since 1965, family-owned since 1947. We handle every boat
-            engine repower from start to finish, right here at our marina on
-            Rice Lake. Bring your boat to Gores Landing and we will get you
-            back on the water with a new Mercury outboard.
+            Harris Boat Works is a <strong>Mercury Marine Premier dealer</strong> and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization. Bring your boat to Gores Landing and we will get you back on the water with a new Mercury outboard.
           </p>
           A boat repower means replacing your existing outboard with a new
           Mercury on your current boat. For most Ontario freshwater customers
           in 2026, a full boat engine repower lands between $11,000 and
           $40,000 CAD depending on HP class, hull, and rigging. The hull is
           the asset; the motor is the wear part. A repower on a solid hull
-          gives you 80% of the new-boat experience for half the money. Live
-          pricing on every Mercury we sell is at{' '}
+          gives you 80% of the new-boat experience for half the money. See{' '}
           <Link
             to="/quote/motor-selection"
             className="font-semibold text-repower-gold underline-offset-4 hover:underline"
           >
-            /quote/motor-selection
+            live pricing on every Mercury in the quote builder
           </Link>
           , or see the{' '}
           <Link
@@ -158,9 +152,9 @@ export default function RepowerHub() {
         ],
         footnote: (
           <>
-            Live pricing on every motor at{' '}
+            See{' '}
             <Link to="/quote/motor-selection" className="text-repower-gold hover:underline">
-              /quote/motor-selection
+              live pricing on every motor in the quote builder
             </Link>
             .
           </>
@@ -229,7 +223,7 @@ export default function RepowerHub() {
           <h3>Key facts</h3>
           <ul>
             <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
-            <li>Family-owned since 1947, Mercury dealer since 1965, current Premier tier</li>
+             <li>Family-owned since 1947, Mercury dealer since 1965, Premier tier today</li>
             <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
             <li>Your boat is with us: 2 to 5 days, drop-off to pickup. We don't take it in until your motor arrives.</li>
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>
@@ -289,7 +283,7 @@ export default function RepowerHub() {
 
           <h3>How much does a Mercury repower cost in Ontario?</h3>
           <p>The honest range for a full Mercury repower at Harris Boat Works is $11,000 to $40,000 CAD (2026). That covers the whole job: motor, rigging, controls and cables, propeller, fuel connection, old motor removal, and the water test on Rice Lake.</p>
-          <p>Where you land in that range depends on three things: horsepower, the Mercury family you pick, and what your boat needs to accept the new motor. A mid-range FourStroke 40 to 90 HP repower usually lands $11,000 to $18,000. A Pro XS 200 with the Boost upgrade and digital controls runs closer to $19,000 to $25,000. A 300 HP Pro XS on a fishing rig with new gauges and a new prop can push $30,000 to $40,000. Verado V8/V10 is special-order and starts north of $25,000 for the motor alone before rigging.</p>
+          <p>Where you land in that range depends on three things: horsepower, the Mercury family you pick, and what your boat needs to accept the new motor. A mid-range FourStroke 40 to 90 HP repower usually lands $11,000 to $18,000. Larger Pro XS repowers with digital controls, new gauges, and a new prop land higher in the range. Verado V8/V10 is special-order and starts north of $25,000 for the motor alone before rigging. Boost is quoted separately only after HBW confirms the exact engine serial number and current Canadian pricing.</p>
 
           <BlogInlineCTA
             variant="inline"

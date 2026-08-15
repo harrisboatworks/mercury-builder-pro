@@ -12,7 +12,9 @@ import { z } from 'zod';
 const depositInfoSchema = z.object({
   name: z.string().trim().min(2, 'Name is required').max(100),
   email: z.string().trim().email('Please enter a valid email').max(255),
-  phone: z.string().trim().min(7, 'Phone number is required').max(30),
+  phone: z.string().trim().min(7, 'Phone number is required').max(20)
+    .regex(/^[0-9+().\s-]+$/, 'Please enter a valid phone number')
+    .refine(value => value.replace(/\D/g, '').length >= 7, 'Phone number must include at least 7 digits'),
 });
 
 export interface DepositCustomerInfo {
@@ -66,13 +68,18 @@ export function DepositInfoDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Reserve Your Motor</DialogTitle>
+          <DialogTitle>Reserve this motor</DialogTitle>
           <DialogDescription>
-            Enter your details to proceed with the ${depositAmount} deposit.
+            Enter your details, then review the ${depositAmount} deposit in secure Stripe checkout.
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 py-2">
+          <p className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-3 text-sm leading-relaxed text-repower-navy-900/75">
+            {depositAmount === 100
+              ? 'Your $100 deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.'
+              : 'HBW confirms the exact motor and quote details with you before anything is ordered.'}
+          </p>
           <div className="space-y-1.5">
             <Label htmlFor="deposit-name">Full Name <RequiredMark /></Label>
             <Input
@@ -117,7 +124,7 @@ export function DepositInfoDialog({
             className="w-full"
             size="lg"
           >
-            {isProcessing ? 'Processing...' : `Continue to Payment`}
+            {isProcessing ? 'Preparing checkout…' : 'Review Secure Checkout'}
           </Button>
           <div className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
             <Shield className="h-3 w-3" />

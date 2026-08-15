@@ -5,17 +5,14 @@ const PDFDownloadLink = _PDFDownloadLink as unknown as ComponentType<any>;
 import { ProfessionalQuotePDF } from '@/components/quote-pdf/ProfessionalQuotePDF';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
-import QRCode from 'qrcode';
+import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 
 const TestPDFButton: React.FC = () => {
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | undefined>();
 
   useEffect(() => {
-    QRCode.toDataURL('https://www.mercuryrepower.ca/quote/test-123', {
-      width: 150,
-      margin: 1,
-      color: { dark: '#000000', light: '#ffffff' },
-    }).then(setQrCodeDataUrl);
+    generateSavedQuoteQrCode('https://www.mercuryrepower.ca/quote/test-123')
+      .then(setQrCodeDataUrl);
   }, []);
 
   const sampleQuoteData = {
@@ -53,7 +50,7 @@ const TestPDFButton: React.FC = () => {
       { name: 'Wiring Harness (20ft)', price: 185, description: 'SmartCraft harness' },
       { name: 'Gauge Kit', price: 420, description: 'VesselView 403 digital' },
     ],
-    financingQrCode: qrCodeDataUrl,
+    savedQuoteQrCode: qrCodeDataUrl,
     monthlyPayment: 165,
     financingTerm: 60,
     financingRate: 7.99,

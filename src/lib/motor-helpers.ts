@@ -401,15 +401,10 @@ export const includesFuelTank = (motor: Motor) => {
 
 export const includesPropeller = (motor: Motor) => {
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  const model = (motor.model_display || motor.model || '').toUpperCase();
-  
-  // Motors 20HP and under include propeller
-  if (hp <= 20) return true;
-  
-  // Tiller motors typically include propeller (backup check)
-  if (isTillerMotor(model)) return true;
-  
-  return false;
+
+  // Mercury outboards under 25 HP include a propeller. Motors 25 HP and up
+  // require a boat-matched propeller selected during water testing.
+  return hp < 25;
 };
 
 // Check if motor could benefit from external fuel tank option

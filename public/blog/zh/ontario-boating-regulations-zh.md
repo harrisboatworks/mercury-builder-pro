@@ -1,97 +1,80 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh.md
-last_updated: 2026-04-12
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)"
-description: "在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。"
+location: Gores Landing, ON, Canada
+title: "安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证"
+description: "分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。"
 category: "法规安全"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-03
 keywords: ["安大略省船只法规","加拿大快艇驾照","船只安全装备要求","Ontario boating regulations Chinese"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
-# 安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)
+# 安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证
 
-> 在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。
+> 分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。
 
 **Category:** 法规安全  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**最后审核:** 2026-08-03  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 
-> **简短答案：** 在安大略驾船需要 [Pleasure Craft Operator Card (PCOC)](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 船只操作员证 + [Pleasure Craft Licence (PCL)](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) 船只牌照 + 安大略钓鱼证 (如要钓鱼)。船上必须有救生衣、哨子、防水手电、浮力绳。莱斯湖钓鱼用安大略 Fishing Zone 17 (FMZ 17) 法规。HBW 不销售这些证件,需到 ServiceOntario 或网上自行申请。
+> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)。
 
 ## 三大必备证件
 
 ### 1. Pleasure Craft Operator Card (PCOC) 船只操作员证
 
-任何在加拿大水域使用带引擎船只的人都需要这张卡。一次性考试,加币 $50-80。网上在线考试可以做。终身有效,无需续期。加拿大全境通用。
-
-不持卡操作引擎船只罚款最高 $250。湖警 (OPP Marine) 经常在莱斯湖检查这张卡。
+任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/boating-safety-courses-across-canada)。
 
 ### 2. Pleasure Craft Licence (PCL) 船只牌照
 
-带 10 马力以上引擎的船只必须有 PCL 牌照。在线由 [Transport Canada](https://tc.canada.ca/en) 申请，**需要支付申请费**（2024 年规则调整后 PCL 不再免费；当前费用以 TC 官网为准）。1-2 周邮寄到家。**有效期 5 年**（2024 年起从 10 年改为 5 年），到期前续约。号码必须贴在船头两侧。
+主要在加拿大使用、一个或多个发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经在 Canadian Register of Vessels 注册。新办、续期、转让和补发需要当前服务费；资料更新或取消免费。新办或转让后的牌照有效 5 年，号码必须按规定显示在船头两侧，并把牌照文件放在船上。请使用 [Transport Canada 当前 PCL 页面](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。
 
-二手船过户后必须重新申请新 PCL ， 这是华人新车主最常忽略的一步。
+买二手船后，买家应在 30 天内申请把现有 PCL 转到自己名下。PCL 号码跟随船只，卖船时不要先取消牌照。
 
 ### 3. 安大略钓鱼证 (如要钓鱼)
 
-加拿大公民 + 永久居民 18 岁以上钓鱼必备。[Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 网上申请。一年期约 $25-35 (Outdoors Card 一次性 $9 另算)。短期 (1 天/3 天/8 天) 价格更低。必须随身携带,OPP / MNR 会查。
+是否需要购买 Outdoors Card 和 Fishing Licence 取决于年龄、居住身份和牌照类型。多数 18–64 岁的 Ontario／Canadian residents 需要两者；18 岁以下或 65 岁及以上的合资格居民通常可携带显示姓名和出生日期的政府身份证件。一日 Sport Fishing Licence 不需要 Outdoors Card。请看 [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 和 [2026 licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 **重要：** HBW 不销售钓鱼证。需要自己在 ontario.ca 网上申请。
 
 ## 船上必备装备清单
 
-Transport Canada 强制以下装备 (按船长不同有细微差别):
+最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-| 装备 | 中文 | 要求 |
-|---|---|---|
-| Lifejacket / PFD | 救生衣 | 每人一件,加拿大认证 |
-| Whistle | 哨子 | 一支,可作声光信号 |
-| Waterproof flashlight | 防水手电 | 一支 |
-| Buoyant heaving line | 浮力绳 | 15 米 |
-| Fire extinguisher | 灭火器 | 装机动力船必备 |
+最可靠做法是按自己船的类型和长度查看 [2026 Safe Boating Guide 的装备表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
-莱斯湖属于安大略 Fishing Zone 17 (FMZ 17)。常见鱼种限制:
+Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（梭鲈／玻璃眼）、bass、northern pike、muskellunge 和 panfish 各有自己的季节、Sport／Conservation 限额和可能的尺寸范围。不要把旧文章中的固定数字当作当年规则，也不要把 walleye 误认成 yellow perch（黄鲈）。
 
-- **Walleye 黄鲈:** 30-46 cm 不可保留,每天 4 条限额
-- **Bass 黑鲈:** 4 条限额,季节性限制
-- **Northern Pike 北方狗鱼:** 4 条限额
-- **Musky 真鲈:** 1 条限额,91 cm 以上才能保留
-
-法规每年都更新。出钓前查 [Ontario fishing regulations](https://www.ontario.ca/page/fishing-regulations) 最新版。
+出钓当天请查 [FMZ 17 当前规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) 和水域例外；拿不准鱼种或尺寸时就放生。
 
 ## 我们在 HBW 看到的常见问题
 
-每年开春第一波 GTA 华人船主来送春化或买二手船时,我们最常发现的合规问题:
+这些是容易混淆、而且可以在出发前解决的问题：
 
-1. **二手船没换 PCL** ， 上一任车主的牌照号还贴在船头。卖家应该取消,买家应该重新申请。两边都常忽略。
-2. **没带钓鱼证就钓鱼** ， 安大略 OPP 在莱斯湖夏季周末常做随机检查。罚款 $100 起。
-3. **救生衣过期或不合规** ， 加拿大认证标签必须完整。从中国带的救生衣不被加拿大法规承认。
+1. **二手船 PCL 没转名。** 买家应把现有牌照转入自己名下，并把文件放在船上。
+2. **把 PCOC、PCL 和钓鱼证当成同一张证。** 一个管操作员、一个识别船、一个管钓鱼资格。
+3. **只数救生衣，不检查尺寸、认可标签和状态。** 每个人都要有合身装备，且所有必备装备必须容易取用。
 
-## 常见问题
+## 官方来源
 
-**Q:PCOC 中文考试有吗?** 有。多家在线培训公司提供中文 PCOC 课程和考试。BOATERexam 是常见选择。
-
-**Q:HBW 可以代办 PCOC 吗?** 不行。PCOC 是 Transport Canada 颁发的个人证件,必须本人申请考试。
-
-**Q:船只 PCL 牌照能不能转给买家?** 不能。PCL 不可转让。买家需在购船后申请新 PCL。卖家应该取消旧 PCL。
-
-**Q:莱斯湖周边哪里能买钓鱼证?** ontario.ca 网上申请最快。Canadian Tire、Walmart 也有线下售点但效率低。
-
-**Q:船上没有 PCOC 罚款多少?** $250 起。如果违反多项 (无 PCOC + 无 PCL + 无救生衣),累加可达 $1000+。
+- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- [Ontario：Fishing licence 资格](https://www.ontario.ca/page/fishing-licence)
+- [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## 联系我们
 
@@ -107,7 +90,7 @@ Transport Canada 强制以下装备 (按船长不同有细微差别):
 
 ## 相关阅读
 
-本主题完整指南:**[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
+本主题完整指南：[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 
 同系列:
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
@@ -117,11 +100,11 @@ Transport Canada 强制以下装备 (按船长不同有细微差别):
 
 ### PCOC考试难吗？
 
-不难。在线学习材料很全面，考试是多选题形式。大多数人第一次就能通过。建议花几个小时学习后参加考试。
+认可课程会讲加拿大水上规则、安全装备和紧急处理。难度因人而异，应完成课程并理解内容，不要只为拿卡背答案。
 
-### 中国驾照在加拿大可以开船吗？
+### 中国汽车驾照在加拿大可以开船吗？
 
-不可以。中国没有与PCOC等同的证件。您需要在加拿大重新考取PCOC。好消息是考试很简单，在线即可完成。
+汽车驾照不是加拿大动力休闲船的操作能力证明。如果持有外国海事证书，请向 Transport Canada 确认是否属于合资格证明；否则通过认可提供商取得 PCOC。
 
 ### 如果安全装备不齐全会怎样？
 
@@ -129,20 +112,19 @@ Transport Canada 强制以下装备 (按船长不同有细微差别):
 
 ### 需要给船买保险吗？
 
-虽然法律不强制要求，但强烈建议购买。大多数码头要求有保险。责任保险可以保护您免受高额事故赔偿。
+保险、融资、码头和存放合同的要求会不同。出发前向保险经纪、贷款方和使用的码头确认所需责任范围与证明。
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

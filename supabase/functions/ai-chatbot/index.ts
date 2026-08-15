@@ -2,7 +2,34 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
-import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
+import {
+  formatLiveBlogTitleIndex,
+  searchLiveBlogKnowledge,
+} from "../_shared/format-kb-documents.ts";
+import {
+  buildPromotionCustomerAnswer,
+  formatPromotionContext,
+  isPromotionQuestion,
+} from "../_shared/promotion-context.ts";
+import {
+  buildBusinessCustomerAnswer,
+  buildCustomerKnowledgeSnapshot,
+  buildFinancingCustomerAnswer,
+  buildMotorCustomerAnswer,
+  formatCustomerKnowledgePrompt,
+  isBusinessInfoQuestion,
+  isFinancingQuestion,
+  isMotorPriceOrAvailabilityQuestion,
+  loadCustomerKnowledge,
+  resolveCustomerSellingPrice,
+  type CustomerKnowledge,
+} from "../_shared/customer-knowledge-context.ts";
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+} from "../_shared/verified-mercury-technical-facts.ts";
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from "../_shared/verified-hbw-authority-facts.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -13,50 +40,6 @@ const corsHeaders = {
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Helper function to get current motor inventory
-async function getCurrentMotorInventory() {
-  try {
-    const { data: motors, error } = await supabase
-      .from('motor_models')
-      .select('*')
-      .order('horsepower', { ascending: true });
-    
-    if (error) {
-      console.error('Error fetching motors:', error);
-      return [];
-    }
-    
-    return motors || [];
-  } catch (error) {
-    console.error('Error in getCurrentMotorInventory:', error);
-    return [];
-  }
-}
-
-// Helper function to get active promotions
-async function getActivePromotions() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data: promotions, error } = await supabase
-      .from('promotions')
-      .select('*')
-      .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
-      .order('priority', { ascending: false });
-    
-    if (error) {
-      console.error('Error fetching promotions:', error);
-      return [];
-    }
-    
-    return promotions || [];
-  } catch (error) {
-    console.error('Error in getActivePromotions:', error);
-    return [];
-  }
-}
 
 // Helper function to format motor data for AI
 function formatMotorData(motors: any[]) {
@@ -70,7 +53,7 @@ function formatMotorData(motors: any[]) {
     motorsByType[type].push({
       model: motor.model,
       hp: motor.horsepower,
-      price: motor.sale_price || motor.base_price,
+      price: resolveCustomerSellingPrice(motor),
       availability: motor.availability,
       year: motor.year
     });
@@ -90,82 +73,12 @@ function formatMotorData(motors: any[]) {
   return formatted;
 }
 
-// Helper function to format promotion data for AI
-function formatPromotionData(promotions: any[]) {
-  if (!promotions.length) return "";
-  
-  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
-  
-  promotions.slice(0, 5).forEach((promo: any) => {
-    formatted += `**${promo.name}**\n`;
-    
-    if (promo.discount_percentage > 0) {
-      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
-    }
-    if (promo.discount_fixed_amount > 0) {
-      formatted += `- $${promo.discount_fixed_amount} off qualifying motors\n`;
-    }
-    if (promo.bonus_title) {
-      formatted += `- Bonus: ${promo.bonus_title}\n`;
-    }
-    if (promo.bonus_description) {
-      formatted += `- ${promo.bonus_description}\n`;
-    }
-    if (promo.warranty_extra_years) {
-      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage\n`;
-    }
-    
-    // Handle "Choose One" promo_options (new Get 7 + Choose One structure)
-    // promo_options is an object with { type: "choose_one", options: [...] }
-    const promoOptions = promo.promo_options?.options;
-    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-      formatted += `- **Customer Chooses ONE of these bonus options:**\n`;
-      
-      promoOptions.forEach((option: any, idx: number) => {
-        formatted += `  ${idx + 1}. **${option.title || 'Option'}**`;
-        if (option.description) formatted += ` — ${option.description}`;
-        formatted += `\n`;
-        
-        // Special financing rates detail
-        if (option.rates && Array.isArray(option.rates)) {
-          formatted += `     Available rates:\n`;
-          option.rates.forEach((rate: any) => {
-            const minText = (rate.minAmount || rate.minimum_amount) 
-              ? ` (min $${(rate.minAmount || rate.minimum_amount).toLocaleString()})` 
-              : '';
-            formatted += `     - ${rate.months} months @ ${rate.rate}%${minText}\n`;
-          });
-        }
-        
-        // Rebate matrix detail - uses hp_min, hp_max, rebate fields
-        if (option.matrix && Array.isArray(option.matrix)) {
-          formatted += `     Rebate amounts by horsepower:\n`;
-          option.matrix.forEach((tier: any) => {
-            const hpRange = tier.hp_min === tier.hp_max 
-              ? `${tier.hp_min}HP` 
-              : `${tier.hp_min}-${tier.hp_max}HP`;
-            formatted += `     - ${hpRange}: $${tier.rebate} factory rebate\n`;
-          });
-        }
-      });
-    }
-    
-    if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
-      formatted += `- Valid until: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
-    }
-    formatted += "\n";
-  });
-  
-  return formatted;
-}
-
 // Build dynamic system prompt with real-time data
-async function buildSystemPrompt() {
-  const [motors, promotions] = await Promise.all([
-    getCurrentMotorInventory(),
-    getActivePromotions()
-  ]);
+async function buildSystemPrompt(knowledge?: CustomerKnowledge) {
+  const liveKnowledge = knowledge || await loadCustomerKnowledge(supabase);
+  const motors = liveKnowledge.motors;
+  const promotions = liveKnowledge.promotions;
+  const liveBlogTitleIndex = await formatLiveBlogTitleIndex();
   
   const basePrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
 
@@ -227,7 +140,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 
 ### Mercury Outboard Lineup:
 - Complete range from 2.5HP portable to 600HP+ high-performance
-- Verado supercharged technology for premium performance
+- Current Verado families use naturally aspirated V8, V10 or V12 power; older Verado generations included supercharged inline-six engines
 - SeaPro commercial-grade engines for heavy-duty applications
 - FourStroke technology for fuel efficiency and smooth operation
 
@@ -238,7 +151,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 - Water contamination signs: Creamy/white gear lube indicates water presence - requires dealer inspection
 
 ### Warranty & Product Protection:
-- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length. The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026 and is no longer running. Only state a warranty bonus if the live promotions data lists one, and read its years and end date verbatim from that data. Otherwise the warranty is the 3-year standard.
+- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length. Only state a warranty bonus if the live promotions data lists one, and read its years and end date from that data. Otherwise the warranty is the 3-year standard.
 - Mercury Product Protection Plans: Extend coverage up to 8 years total
 - Platinum Extended Warranty available through Harris Boat Works: Factory-backed parts & labor
 - Warranty registration required - engines must be registered with Mercury Marine
@@ -247,7 +160,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 ### Maintenance Best Practices:
 - Oil changes: Better to change at season end before storage (removes contaminants)
 - Gear lube inspection: Check for metal particles (normal) vs. chips (needs dealer attention)
-- Spark plugs: Replace every 300 hours or 3 years
+- Spark plugs: Use the exact model/year or serial-number manual; do not turn one family's interval into a universal schedule
 - Never run engine without water circulation - prevents pump damage and overheating
 - Anodes: Inspect regularly, don't paint them, use quality genuine Mercury anodes
 
@@ -464,7 +377,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 
   // Add real-time inventory data
   const motorData = formatMotorData(motors);
-  const promotionData = formatPromotionData(promotions);
+  const promotionData = formatPromotionContext(promotions);
   
   const dynamicPrompt = basePrompt + motorData + promotionData + `
 
@@ -634,17 +547,19 @@ Gores Landing, ON K0K 2E0
 - ALWAYS check the "CURRENT PROMOTIONS & SPECIAL OFFERS" section above — it contains LIVE data from the database
 - If a rebate matrix is listed, look up the customer's HP range to give the exact rebate amount
 - NEVER say "no rebates available" if the promotion data above shows an active promotion with a rebate matrix
-- The current active Mercury promotion applies to ALL Mercury outboards — check the live promotions data above for details and any rebate matrix.
+- Apply a promotion only when the motor and intended use meet the live eligibility and exclusion rules above. Never generalize it to all Mercury outboards.
 
 ### When Discussing the Current Mercury Promotion:
 - Use ONLY the active promotion data shown above (name, dates, bonus details). Do NOT reference retired promos by name.
 - If a rebate matrix is present, match the customer's HP to the exact amount listed.
+- If promotional financing is listed, quote its exact APR and term from the promotion data. A separate standard financing offer does not make it inactive.
+- Respect the offer structure: layered means the eligible rebate applies and financing is optional; choose-one means the customer must select one benefit.
 - Direct to /promotions for full details or the quote builder to see it applied.
 
 ### Rebate Questions:
 - Look up the HP in the rebate matrix from the promotion data above
 - Give the exact dollar amount: "The 9.9HP qualifies for a $[amount] factory rebate"
-- Mention it's one of three bonus choices they can pick from
+- Describe whether the rebate layers with financing or requires a choice exactly as the live promotion data states
 - NEVER say rebates don't exist if the matrix data is present above
 
 ### When No Promotions Are In Database:
@@ -706,17 +621,12 @@ Gores Landing, ON K0K 2E0
 - Both extremely reliable with proper maintenance
 
 ### Maintenance Quick Answers:
-- **Oil change**: Every 100 hours or annually (first change at 20 hours)
-- **No winterization**: Freeze damage to engine block, gummed fuel system, corrosion
-- **Water pump**: Replace every 300 hours or when telltale weak
-- **Spark plugs**: Every 100 hours or with annual service
-- **DIY-friendly**: Oil checks, prop inspection, battery maintenance
-- **Professional**: Water pump, lower unit service, annual inspections
+- Break-in, oil-change, spark-plug, water-pump and storage requirements vary by engine family, year and manual revision.
+- Use the exact manual-backed technical fact layer. Never invent a universal 20-hour service or a replacement list from horsepower alone.
+- General owner checks may be described as general, but they do not replace the serial-number manual.
 
 ### Seasonal Checklist Quick Reference:
-**Spring**: Check lower unit oil (milky = water), inspect prop, replace fuel filters, test kill switch
-**Summer (every 50-100hrs)**: Check oil, inspect plugs, clean fuel separator, lube fittings
-**Fall**: Stabilize fuel, fog engine, change lower unit oil, disconnect battery, store upright
+Use the applicable owner's manual and approved work scope. Do not turn a seasonal checklist into model-specific service instructions.
 
 ### Repower Quick Answers:
 - **Worth repowering if**: Hull solid, transom firm, interior functional
@@ -745,11 +655,10 @@ Gores Landing, ON K0K 2E0
 - **18-20ft Bass/Musky**: Mercury 115-150HP FourStroke
 - **Top Pick**: Mercury 60HP EFI Command Thrust - runs shallow, handles open crossings
 
-### New Motor Break-In (First 10 Hours):
-- Hour 1: Stay below 3000 RPM, vary speeds
-- Hours 2-3: Gradually to 3/4 throttle, brief full-throttle OK
-- Hours 4-10: Normal operation, vary throttle
-- **Critical**: First oil change at 20 hours to remove break-in particles
+### New Motor Break-In and First Service:
+- Procedures and intervals vary by engine family, model year, and official Mercury manual.
+- Never give a universal RPM/hour schedule or a universal 20-hour first oil change.
+- Use the exact motor context and official Mercury manual. If the exact manual-backed answer is unavailable, ask for the full model/year or serial range and direct the customer to Mercury's manual lookup or Harris Boat Works service.
 
 ## CONVERSATION RULES & ADVANCED KNOWLEDGE:
 
@@ -807,11 +716,11 @@ IMPORTANT INSTRUCTIONS:
 Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.
 
 ## BLOG ARTICLE INDEX (cite by /blog/<slug>)
-${formatBlogTitleIndex()}
+${liveBlogTitleIndex}
 
 When a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
-  return dynamicPrompt;
+  return `${dynamicPrompt}\n\n${formatCustomerKnowledgePrompt(liveKnowledge, true)}`;
 }
 
 serve(async (req) => {
@@ -828,10 +737,49 @@ serve(async (req) => {
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
-    const { message, conversationHistory = [] } = await req.json();
+    const { message, conversationHistory = [], context = {}, knowledgeProbe = false } = await req.json();
+    const knowledge = await loadCustomerKnowledge(supabase);
+
+    if (knowledgeProbe === true) {
+      const snapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+      return new Response(JSON.stringify({ surface: 'chat-legacy', ...snapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     if (!message) {
       throw new Error('Message is required');
+    }
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
+    if (verifiedAuthorityReply) {
+      return new Response(JSON.stringify({
+        reply: verifiedAuthorityReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: verifiedAuthorityReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+      message,
+      context?.currentMotor,
+    );
+    if (verifiedTechnicalReply) {
+      return new Response(JSON.stringify({
+        reply: verifiedTechnicalReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: verifiedTechnicalReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
@@ -839,8 +787,47 @@ serve(async (req) => {
       throw new Error('OpenAI API key not configured');
     }
 
+    if (isPromotionQuestion(message)) {
+      const reply = buildPromotionCustomerAnswer(knowledge.promotions, message, knowledge.financing[0] || null);
+      return new Response(JSON.stringify({
+        reply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: reply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    let deterministicReply: string | null = null;
+    if (isFinancingQuestion(message)) {
+      deterministicReply = buildFinancingCustomerAnswer(knowledge.financing, knowledge.promotions);
+    } else if (isBusinessInfoQuestion(message)) {
+      deterministicReply = buildBusinessCustomerAnswer(knowledge.business, message);
+    } else if (isMotorPriceOrAvailabilityQuestion(message)) {
+      deterministicReply = buildMotorCustomerAnswer(knowledge.motors, message);
+    }
+    if (deterministicReply) {
+      return new Response(JSON.stringify({
+        reply: deterministicReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: deterministicReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Build dynamic system prompt with real-time data
-    const systemPrompt = await buildSystemPrompt();
+    let systemPrompt = await buildSystemPrompt(knowledge);
+    const blogKnowledgeContext = await searchLiveBlogKnowledge(message);
+    if (blogKnowledgeContext) {
+      systemPrompt += `\n\n${blogKnowledgeContext}`;
+    }
 
     // Build conversation context
     const messages = [

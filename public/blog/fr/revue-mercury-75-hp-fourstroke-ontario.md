@@ -1,32 +1,33 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario.md
-last_updated: 2026-07-10
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)"
 description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-07-10
+date_modified: 2026-07-31
 keywords: ["revue Mercury 75 HP","Mercury 75 HP FourStroke","Mercury 75 vs 90","Mercury 75 ELPT Ontario","Mercury 90 mieux que 75"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)
 
 > Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury...
 
-**Category:** Avis produit  
-**Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
+**Catégorie :** Avis produit\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-07-31\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 
 ### Réponse rapide
 
@@ -38,7 +39,7 @@ Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2
 
 On nous pose régulièrement la question sur le Mercury 75 HP FourStroke. Habituellement la question ressemble à : "Le 75 est-il assez bon, ou devrais-je passer au 90?" Voici notre réponse honnête : le 90 est presque toujours le meilleur choix, et la raison pour laquelle nous ne tenons pas le 75 en stock, c'est que c'est le même moteur.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
 
 ---
 
@@ -104,27 +105,8 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
-- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 - [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
-
-## Questions fréquentes
-
-**Le Mercury 75 HP est-il un mauvais moteur?**
-Non. Ce n'est pas un mauvais moteur, c'est le même moteur que le 90 avec moins de marge dans la plage de RPM.
-
-**Pourquoi HBW ne tient pas le 75 en stock?**
-Parce que c'est le même moteur physique que le 90, même poids, différence de prix minimale, et le 90 a plus de marge et une meilleure valeur de revente.
-
-**Puis-je obtenir le 75 en version Command Thrust?**
-Oui, c'est disponible. Mais si vous avez besoin de Command Thrust pour un ponton, le 90 CT est un meilleur investissement.
-
-**Que se passe-t-il si ma coque se situe entre 60 et 75 HP sur la plaque de capacité?**
-Appelez-nous au 905-342-2153.
-
-**Le 75 HP est-il significativement moins cher que le 90?**
-Pas significativement. Les chiffres exacts varient avec la tarification de [Mercury Canada](https://www.mercurymarine.com/canada/en/).
-
----
 
 ## Bâtissez une soumission, sur le 90
 
@@ -164,18 +146,17 @@ Techniquement oui pour les plus petits pontons sous 20 pi avec des charges lég�
 
 Parfois, oui. Des 75 usagés se présentent sur le marché. Nous pouvons aider à évaluer l'état et décider si un 75 usagé a plus de sens qu'un 90 neuf pour votre situation.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

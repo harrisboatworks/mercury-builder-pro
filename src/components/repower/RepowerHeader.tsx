@@ -1,30 +1,25 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, ChevronRight } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { RepowerMobileMenu } from './RepowerMobileMenu';
 
-const NAV_LINKS = [
-  { to: '/quote/motor-selection', label: 'Engines' },
+const PRIMARY_NAV_LINKS = [
+  { to: '/quote/motor-selection', label: 'Outboards' },
+  { to: '/pricing-reference', label: 'Pricing' },
   { to: '/promotions', label: 'Promotions' },
-  { to: '/repower', label: 'Repower' },
-  { to: '/trade-in-value', label: 'Trade-In Value' },
-  { to: '/tools', label: 'Tools' },
   { to: '/finance-calculator', label: 'Financing' },
-  { to: '/about', label: 'About' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/trade-in-value', label: 'Trade-In', wideOnly: true },
 ];
 
 export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const { user, signOut } = useAuth();
+  const isQuoteFlow = location.pathname.startsWith('/quote');
 
   // Transparent-fade behavior is reserved for the home page (over the video hero).
   // Every other route renders a solid navy header from first paint.
@@ -68,21 +63,27 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden min-[1500px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
-            {NAV_LINKS.map((link) => {
+          {/* Desktop orientation links. Secondary pages stay under More. */}
+          <nav
+            aria-label="Primary navigation"
+            className="hidden lg:flex h-full flex-1 items-center justify-center gap-1 xl:gap-2 min-w-0"
+          >
+            {PRIMARY_NAV_LINKS.map((link) => {
               const active =
-                link.to === '/'
-                  ? location.pathname === '/'
+                link.to === '/quote/motor-selection'
+                  ? location.pathname.startsWith('/quote')
                   : location.pathname.startsWith(link.to);
               return (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-sans text-sm font-medium tracking-wide whitespace-nowrap transition-opacity duration-200 ${
+                  aria-current={active ? 'page' : undefined}
+                  className={`relative inline-flex h-full items-center px-2 xl:px-3 font-sans text-[11px] xl:text-xs font-semibold uppercase tracking-[0.12em] whitespace-nowrap transition-colors duration-200 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-[2px] after:bg-[#C9A24A] after:transition-transform after:duration-200 xl:after:left-3 xl:after:right-3 ${
+                    link.wideOnly ? 'hidden xl:inline-flex' : ''
+                  } ${
                     active
-                      ? 'text-[#F5F1EA] opacity-100'
-                      : 'text-[#F5F1EA]/85 hover:opacity-100'
+                      ? 'text-[#F5F1EA] after:scale-x-100'
+                      : 'text-[#F5F1EA]/70 hover:text-[#F5F1EA] after:scale-x-0 hover:after:scale-x-100'
                   }`}
                 >
                   {link.label}
@@ -93,33 +94,23 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
 
           {/* Right cluster */}
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
-            <Link
-              to="/quote/motor-selection"
-              className="hidden min-[1500px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
-            >
-              Build Quote
-              <ChevronRight className="w-3.5 h-3.5" />
-            </Link>
-            {!user && (
-              <button
-                onClick={() => navigate('/auth')}
-                className="hidden min-[1500px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+            {!isQuoteFlow && (
+              <Link
+                to="/quote/motor-selection"
+                className="hidden md:inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 xl:px-4 xl:py-2.5 rounded uppercase tracking-wider text-[11px] xl:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
               >
-                Sign In
-              </button>
+                Build Quote
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
             )}
-            <Link
-              to="/quote/motor-selection"
-              className="hidden md:inline-flex min-[1500px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
-            >
-              Quote
-              <ChevronRight className="w-3.5 h-3.5" />
-            </Link>
             <button
-              className="min-[1500px]:hidden p-2 text-[#F5F1EA]"
+              className="inline-flex items-center gap-2 p-2 text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
+              <span className="hidden lg:inline font-sans text-[11px] font-semibold uppercase tracking-[0.12em]">
+                More
+              </span>
               <Menu className="w-6 h-6" />
             </button>
           </div>

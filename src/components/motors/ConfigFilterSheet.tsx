@@ -194,9 +194,12 @@ export function ConfigFilterSheet({
         <Button 
           variant="outline" 
           size="icon"
-          className={cn("h-11 w-11 md:h-12 md:w-12 shrink-0", className)}
+          aria-label="Filter motors by configuration"
+          title="More motor filters"
+          className={cn("h-9 w-9 md:h-10 md:w-auto md:px-3 shrink-0 gap-2", className)}
         >
           <SlidersHorizontal className="h-4 w-4" />
+          <span className="hidden md:inline text-[11px] font-bold uppercase tracking-[0.10em]">Filters</span>
           {activeCount > 0 && (
             <Badge 
               variant="secondary" 

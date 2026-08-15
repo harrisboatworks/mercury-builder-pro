@@ -17,6 +17,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: '와 정직한 답변.',
   heroSubhead:
     'Rice Lake의 가족 운영 Mercury 딜러가 전하는 현장 조언. 엔진 교체, 문제 해결, 알맞은 선외기 선택까지—직접 장착하는 사람들이 씁니다.',
+  skipLinkLabel: '블로그 콘텐츠로 건너뛰기',
   searchLabel: '가이드 검색',
   searchPlaceholder: '가이드, 모델, 주제 검색…',
   trustItems: [],

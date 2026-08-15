@@ -4,9 +4,9 @@ last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario"
 description: "Mercury outboard motor di keemat Canada vich: HP class anusar price structure, repower cost te live quote tool. Punjabi guide, koi lukiyan hoiyan fees nahi."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
@@ -16,6 +16,7 @@ keywords: ["Mercury outboard motor di keemat Canada vich (Mercury outboard motor
 author: Harris Boat Works
 content_type: blog_article
 language: pa
+revenue_driver: repower
 ---
 
 # Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario
@@ -24,7 +25,7 @@ language: pa
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-07-10  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-07-10  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
 
@@ -68,29 +69,6 @@ Outboard ਖਰੀਦ ਦਾ ਕਦਮ ਫੂਕ-ਫੂਕ ਕੇ ਰੱਖਣ�
 
 Honestly, ਸਾਨੂੰ Punjabi ਵਿੱਚ ਗੱਲ ਕਰਨੀ ਨਹੀਂ ਆਉਂਦੀ। Harris Boat Works ਦੀ team English ਵਿੱਚ ਸੇਵਾ ਦਿੰਦੀ ਹੈ, parts counter, service desk, motor ਵੇਚਣ ਵਾਲਾ ਬੰਦਾ, ਸਭ English। ਕੋਈ ਅਜਿਹਾ staff member ਨਹੀਂ ਜੋ Punjabi ਬੋਲ ਸਕਦਾ। ਚਿੰਤਾ ਨਾ ਕਰੋ। ਸਾਡੀ team ਦਹਾਕਿਆਂ ਤੋਂ boat families ਦੀ ਮਦਦ ਕਰਦੀ ਆ ਰਹੀ ਹੈ, ਭਾਸ਼ਾ ਰੁਕਾਵਟ ਨਹੀਂ ਹੈ। ਜੇ ਤੁਹਾਨੂੰ ਲੱਗਦਾ ਹੈ ਕਿ ਭਾਸ਼ਾ ਦਾ ਪੜਦਾ ਹੋ ਸਕਦਾ ਹੈ, ਆਪਣੇ ਨਾਲ ਕੋਈ English ਜਾਣਦਾ ਦੋਸਤ, ਭਰਾ, ਭੈਣ, ਜਾਂ ਬੱਚਾ ਜ਼ਰੂਰ ਲੈ ਆਇਓ। ਨਹੀਂ ਤਾਂ ਆਪਣੇ smartphone ’ਤੇ Google Translate app ਖੋਲ੍ਹੋ, ਉਹਦੇ ਵਿੱਚ camera ਤੇ text translation ਦੋਵੇਂ ਹੁੰਦੇ ਨੇ। ਅਸੀਂ ਹੌਲੀ-ਹੌਲੀ ਬੋਲਾਂਗੇ, ਕੰਮ simple ਕਰਾਂਗੇ, ਤੇ ਲੋੜ ਪਈ ਤਾਂ ਲਿਖ ਕੇ ਸਮਝਾਵਾਂਗੇ। ਇੱਥੋਂ ਦੀ ਹਰ ਗੱਲ ਸਾਂਝੀ ਸਮਝ ਨਾਲ ਹੀ ਸੁਲਝੇਗੀ। ਤੁਸੀਂ welcome ਹੋ, ਚਾਹੇ ਕੋਈ ਵੀ ਭਾਸ਼ਾ ਬੋਲਦਾ ਹੋਵੇ।
 
-## Aksar puchhe jaande sawaal | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ
-
-**Q: Mercury 90hp outboard di Ontario vich keemat kitni hai? | ਮਰਕਰੀ 90hp ਆਊਟਬੋਰਡ ਦੀ Ontario ਵਿਚ ਕੀਮਤ ਕਿੰਨੀ ਹੈ?**
-A: ਕੋਈ ਇੱਕ number ਨਹੀਂ। ਹਰ boat ਲਈ installed price ਵੱਖਰੀ ਹੋਵੇਗੀ। Rigging, propeller, labour ਨਾਲ ਜੋੜ ਕੇ ਹੀ ਅਸਲ cost ਨਿਕਲਦੀ ਹੈ। ਤੁਸੀਂ ਸਾਡੇ pricing reference page (https://www.mercuryrepower.ca/pricing-reference) ’ਤੇ ਮਿਸਾਲ ਦੇ component ਦੇਖ ਸਕਦੇ ਹੋ। ਫੇਰ quote ਲਈ phone ਕਰੋ, ਅਸੀਂ ਤੁਹਾਡੀ specific boat ਲਈ ਬਣ ਕੇ ਦੱਸਾਂਗੇ।
-
-**Q: Ki Harris Boat Works te Punjabi vich service mildi hai? | ਕੀ Harris Boat Works ’ਤੇ ਪੰਜਾਬੀ ਵਿੱਚ service ਮਿਲਦੀ ਹੈ?**
-A: ਸਾਡੇ ਕੋਲ Punjabi ਬੋਲਣ ਵਾਲਾ ਕੋਈ staff ਨਹੀਂ ਹੈ। Harris Boat Works ਦੀ team English ਵਿੱਚ ਸੇਵਾ ਦਿੰਦੀ ਹੈ। ਪਰ ਤੁਸੀਂ ਆਪਣੇ ਨਾਲ ਕੋਈ English ਜਾਣਦਾ ਸਾਥੀ ਲੈ ਆ ਸਕਦੇ ਹੋ, ਜਾਂ phone ’ਤੇ translate app ਵਰਤੋ। ਸਾਡੇ ਕੋਲ ਬਹੁਤ ਲੋਕ ਇਸ ਤਰ੍ਹਾਂ ਆਉਂਦੇ ਨੇ, ਤੇ ਕੰਮ ਆਰਾਮ ਨਾਲ ਹੋ ਜਾਂਦਾ ਹੈ। ਕੋਈ ਪਰੇਸ਼ਾਨੀ ਨਹੀਂ ਹੋਵੇਗੀ।
-
-**Q: Nawa outboard motor khareedan layi kuch tips deyo Punjabi vich? | ਨਵਾਂ ਆਊਟਬੋਰਡ ਮੋਟਰ ਖਰੀਦਣ ਲਈ ਕੁਝ ਟਿਪਸ ਦਿਓ ਪੰਜਾਬੀ ਵਿਚ?**
-A: ਜ਼ਰੂਰ। (1) ਹਮੇਸ਼ਾ installed quote ਮਨਜ਼ੂਰ ਕਰੋ, ਸਿਰਫ਼ motor ਦਾ ਮੁੱਲ ਪੁੱਛ ਕੇ ਨਾ ਰੁਕੋ। (2) Boat ਦੀ horsepower rating plate ਵੇਖ ਕੇ ਆਪਣਾ HP range ਚੁਣੋ। (3) Mercury ਦੀ 3-year warranty ਬਾਰੇ ਪੁੱਛੋ, ਅਤੇ authorized installation ਦਾ proof ਰੱਖੋ। (4) ਨਵਾਂ control box, propeller, ਅਤੇ wiring update ਕਰਨ ਲਈ ready ਰਹੋ, ਜੇ ਪੁਰਾਣੀ motor 15 ਸਾਲ ਤੋਂ ਵੱਧ ਹੈ। (5) Financing ਦੀ ਪੂਰੀ ਜਾਣਕਾਰੀ ਸਾਡੀ [English financing guide](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026) ਵਿੱਚ ਹੈ।
-
-**Q: Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?**
-A: ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਸਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।
-
-**Q: Main bina dealer nu mile motor da quote labh sakda haan? | ਮੈਂ ਬਿਨਾਂ ਡੀਲਰ ਨੂੰ ਮਿਲੇ ਮੋਟਰ ਦਾ quote ਲੱਭ ਸਕਦਾ ਹਾਂ?**
-A: ਜੀ ਹਾਂ, ਸਾਡੇ motor selection tool (https://www.mercuryrepower.ca/quote/motor-selection) ’ਤੇ boat details ਪਾ ਕੇ, ਤੁਹਾਨੂੰ ਕੁਝ Mercury model ਦਿਖਾਏ ਜਾਣਗੇ। ਬਾਅਦ ਵਿੱਚ ਸਾਨੂੰ call ਕਰੋ ਤਾਂ installed quote ਦੇ ਸਕਦੇ ਹਾਂ। ਇਹਦੇ ਵਿੱਚ ਕੋਈ loading ਜਾਂ pressure ਨਹੀਂ।
-
-**Q: Main apni old motor nu trade-in de sakda haan? | ਮੈਂ ਆਪਣੀ ਪੁਰਾਣੀ ਮੋਟਰ ਨੂੰ trade-in ਦੇ ਸਕਦਾ ਹਾਂ?**
-A: ਕੁਝ ਹਾਲਤਾਂ ਵਿੱਚ ਹੋ ਸਕਦਾ ਹੈ, ਪਰ ਅਸੀਂ ਹਰ ਪੁਰਾਣੀ motor ਨਹੀਂ ਲੈ ਸਕਦੇ। ਪਹਿਲਾਂ photo ਭੇਜ ਕੇ ਪੁੱਛੋ। ਦੂਜੀ ਗੱਲ: trade value installed price ਵਿੱਚ adjust ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਜੇ motor ਦੀ condition ਚੰਗੀ ਹੋਵੇ। Phone ’ਤੇ ਇਸ ਲਈ ਸਾਨੂੰ English ਵਿੱਚ ਗੱਲ ਕਰਨੀ ਹੋਵੇਗੀ, ਉੱਤੇ ਦੱਸੇ ਅਨੁਸਾਰ ਦੋਸਤ ਨਾਲ ਆਓ ਜਾਂ translation app use ਕਰੋ।
-
-**Q: Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?**
-A: ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbw.wiki/service ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
-
 ## Apna quote le ke dekho | ਆਪਣਾ ਕੋਟ ਲੈ ਕੇ ਦੇਖੋ
 
 Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ ਨਵੀਂ ਜਾਨ ਪਾਓ, ਜਾਂ ਨਵੀਂ ਕਿਸ਼ਤੀ ਦਾ dream ਪੂਰਾ ਕਰੋ, ਤੁਸੀਂ ਹੁਣ ਅਸਲ ਕੀਮਤ ਸਮਝਣ ਲਈ ready ਹੋ। ਬਿਨਾਂ ਕਿਸੇ ਝਿਜਕ ਦੇ motor ਚੋਣ ਦੀ ਸ਼ੁਰੂਆਤ ਕਰੋ:
@@ -131,16 +109,15 @@ Phone ਕਰੋ (905) 342-2153, ਜੇ ਕੋਈ ਸਵਾਲ ਹੋਵੇ। �
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

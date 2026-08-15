@@ -37,6 +37,14 @@ export function VisualOptionCard({
     onViewDetails();
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.currentTarget !== event.target || disabled) return;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleSelect();
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -44,6 +52,12 @@ export function VisualOptionCard({
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       onClick={handleSelect}
+      onKeyDown={handleKeyDown}
+      role="checkbox"
+      aria-checked={isSelected}
+      aria-disabled={disabled}
+      aria-label={`${isSelected ? 'Remove' : 'Add'} ${option.name}`}
+      tabIndex={disabled ? -1 : 0}
       className={`
         relative rounded-lg overflow-hidden cursor-pointer transition-colors duration-200 bg-white
         ${isSelected
@@ -83,7 +97,7 @@ export function VisualOptionCard({
             ? 'bg-green-500 text-white' 
             : 'bg-background text-foreground border border-border'
         }`}>
-          {option.is_included ? 'Included' : `$${effectivePrice.toFixed(0)}`}
+          {option.is_included ? 'Included' : `$${effectivePrice.toFixed(2)}`}
         </div>
         
         {/* Selection dot (mercury-red) */}
@@ -95,7 +109,7 @@ export function VisualOptionCard({
         <button
           onClick={handleInfoClick}
           className="absolute bottom-2 left-2 z-10 bg-background/90 backdrop-blur-sm text-foreground rounded-full p-2 shadow-lg hover:bg-background transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-          aria-label="View details"
+          aria-label={`View details for ${option.name}`}
         >
           <Info className="w-4 h-4" />
         </button>

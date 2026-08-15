@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md
-last_updated: 2026-06-06
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Pontoon vs Aluminum vs V-Hull Repower"
 description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-06-06
+date_modified: 2026-08-02
 keywords: ["repower pontoon","repower aluminum fishing boat","repower v-hull","mercury repower hull types","rice lake repower"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Pontoon vs Aluminum vs V-Hull Repower
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-06  
+**Last reviewed:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
 
@@ -37,7 +38,7 @@ language: en-CA
 | Repower complexity | Medium (mounts vary) | Simplest | Most involved |
 | Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
 | Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
-| Transom check | Holds 180-250 lb motor; inspect | Inspect | Can fail internally with no visible signs |
+| Transom check | Holds 82-113 kg (180-250 lb) motor; inspect | Inspect | Can fail internally with no visible signs |
 | Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
 | Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
 
@@ -73,7 +74,7 @@ Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, 
 
 That said:
 
-**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 180–250 lbs is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
+**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 82-113 kg (180–250 lbs) is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
@@ -101,7 +102,7 @@ Fibreglass V-hull boats, bowriders, runabouts, and cuddy cabin boats, are typica
 
 ## One thing that applies to all three hull types
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 We're not putting a motor on a boat, handing you the keys, and finding out there's a handling issue when you launch. The test run is part of the job.
 
@@ -118,7 +119,7 @@ Pontoons are heavier and wider and ride on their tubes rather than planing like 
 
 ### Is an aluminum fishing boat easy to repower?
 
-Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 180–250 lb motor is a structural issue, quoted separately if work is needed.
+Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structural issue, quoted separately if work is needed.
 
 ### What should I watch for when repowering a fibreglass V-hull?
 
@@ -131,23 +132,22 @@ Yes. Pontoons typically need a long (20-inch) shaft, most aluminum fishing boats
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers), Pro XS repower for Kawartha anglers
+- [Mercury DTS vs Mechanical Ontario](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS vs mechanical controls on a repower
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

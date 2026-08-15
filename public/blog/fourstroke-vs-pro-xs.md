@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-07-06
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Pro XS vs Verado vs FourStroke Compared"
 description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-07-06
+date_modified: 2026-07-23
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Pro XS vs Verado vs FourStroke Compared
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-06  
+**Last reviewed:** 2026-07-23  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
@@ -32,7 +33,7 @@ language: en-CA
 
 For most boats on Rice Lake and the Kawarthas, the Mercury FourStroke is the right call: efficient, quiet, and fair-priced. Choose Pro XS for performance and hole shot on a bass or walleye rig. Verado is the big, quiet option for larger offshore and luxury boats. Same horsepower, three personalities. The boat decides. Build a quote at mercuryrepower.ca.
 
-# Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)
+## Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)
 
 We have this conversation at the counter every spring. Somebody walks in, leans on the parts desk, and says "okay, so what's the difference between a Pro XS and a regular one, and is it worth the extra money?" Fair question. It's also the question Mercury's own marketing tends to muddy, because all three families share horsepower numbers and a lot of the same DNA.
 
@@ -102,13 +103,11 @@ Walk it back to three honest questions:
 2. **Will you actually use the performance?** If "fast" genuinely matters to you, Pro XS. If you're nodding along but you really just want to get to the fishing hole and back, FourStroke.
 3. **How much does quiet and smooth matter?** On a big boat with people aboard all day, Verado's refinement is a real upgrade. On a 17-foot tinny, you won't notice it enough to justify the spend.
 
-::cta
-variant: inline
-heading: Found your family? Price it out.
-body: Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
-primaryLabel: See live pricing by family
-primaryHref: /pricing-reference
-::
+### Found your family? Price it out.
+
+Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
+
+[See live pricing by family](/pricing-reference)
 
 ## What we see at HBW
 
@@ -143,15 +142,15 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 - Mercury Marine, "How to Choose the Right Mercury Outboard for Your Boat."
 - Pro XS fuel and performance specs (87 octane, RPM range, Transient Spark): Mercury Marine product documentation.
 
-::cta
-variant: banner
-heading: The right family, the real price, no games.
-body: Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-phone: 905-342-2153
-footer: Not sure repower makes sense yet? Start with the [repower basics](/repower).
-::
+### The right family, the real price, no games.
+
+Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
+
+[Build Your Quote](/quote/motor-selection)
+
+905-342-2153
+
+Not sure repower makes sense yet? Start with the [repower basics](/repower).
 
 ## FAQs
 
@@ -198,23 +197,22 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 ## Related guides
 
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
-- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

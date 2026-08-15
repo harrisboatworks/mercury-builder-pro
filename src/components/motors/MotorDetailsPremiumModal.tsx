@@ -6,6 +6,7 @@ const RelatedPostsGrid = lazy(() =>
 );
 import { getDisplayPrices } from '@/lib/pricing';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { trackEvent } from '@/lib/analytics';
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,11 +25,11 @@ import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { MotorCompatibilityBadge } from './MotorCompatibilityBadge';
 import { useQuote } from "../../contexts/QuoteContext";
-import { 
-  decodeModelName, 
-  requiresMercuryControls, 
-  getIncludedAccessories, 
-  getAdditionalRequirements, 
+import {
+  decodeModelName,
+  requiresMercuryControls,
+  getIncludedAccessories,
+  getAdditionalRequirements,
   getRecommendedBoatSize,
   getEstimatedSpeed,
   getFuelConsumption,
@@ -38,7 +39,7 @@ import {
   getOilRequirement,
   getStartType,
   getMotorImageGallery,
-  type Motor 
+  type Motor
 } from "../../lib/motor-helpers";
 import {
   generateDisplacement,
@@ -81,6 +82,11 @@ interface MotorDetailsPremiumModalProps {
   openChat?: () => void; // Passed from parent to avoid context issues with portals
 }
 
+interface WarrantyPricing {
+  year_4_price: number;
+  year_5_price: number;
+}
+
 export default function MotorDetailsPremiumModal({
   open,
   onClose,
@@ -98,7 +104,7 @@ export default function MotorDetailsPremiumModal({
   openChat: openChatProp
 }: MotorDetailsPremiumModalProps) {
   const navigate = useNavigate();
-  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
+  const [warrantyPricing, setWarrantyPricing] = useState<WarrantyPricing | null>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
@@ -106,8 +112,12 @@ export default function MotorDetailsPremiumModal({
   const { setScrollLock } = useScrollCoordination();
   const { state } = useQuote();
   const { triggerHaptic } = useHapticFeedback();
-  
+
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const calculatorOpenRef = useRef(false);
   const [canScrollMore, setCanScrollMore] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
@@ -116,14 +126,15 @@ export default function MotorDetailsPremiumModal({
   const decoded = decodeModelName(motor?.model || title, hpValue);
   // Display-only: guarantees proper spacing, e.g. "9.9 MLH FourStroke" never "9.9MLH FourStroke"
   const displayTitle = formatMotorDisplayName(title);
+  const hasValidPrice = typeof price === 'number' && Number.isFinite(price) && price > 0;
 
 
   // Generate fallback description if missing or suspicious
   const displayDescription = useMemo(() => {
-    if (!motor?.description || isDescriptionSuspicious(motor.description, { 
-      hp: hpValue, 
-      family: motor.family || '', 
-      modelDisplay: motor.model_display || motor.model || title 
+    if (!motor?.description || isDescriptionSuspicious(motor.description, {
+      hp: hpValue,
+      family: motor.family || '',
+      modelDisplay: motor.model_display || motor.model || title
     })) {
       return generateMotorDescription({
         hp: hpValue,
@@ -149,28 +160,28 @@ export default function MotorDetailsPremiumModal({
       // Store current scroll position
       const scrollPosition = window.scrollY;
       setScrollLock(true, 'modal-opening');
-      
+
       document.body.setAttribute('data-scroll-y', scrollPosition.toString());
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollPosition}px`;
       document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
-      
+
       // Cleanup function - runs when modal closes OR component unmounts
       return () => {
         const storedScrollY = document.body.getAttribute('data-scroll-y') || '0';
         const targetScrollY = parseInt(storedScrollY, 10);
-        
+
         // Remove all body styles
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflow = '';
         document.body.removeAttribute('data-scroll-y');
-        
+
         // Restore scroll position immediately
         window.scrollTo(0, targetScrollY);
-        
+
         // Release scroll lock
         setScrollLock(false, 'modal-closed');
       };
@@ -180,24 +191,82 @@ export default function MotorDetailsPremiumModal({
   // Close on escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && open) onClose();
+      if (e.key === 'Escape' && open && !calculatorOpenRef.current) onClose();
     };
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [open, onClose]);
+
+  // Keep keyboard and assistive-technology focus inside the portaled dialog.
+  // The rest of the app is inert until the modal closes, then focus returns to
+  // the control that opened it.
+  useEffect(() => {
+    if (!open) return;
+
+    previouslyFocusedRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    const backgroundElements = Array.from(document.body.children)
+      .filter((element): element is HTMLElement => element instanceof HTMLElement && element !== overlayRef.current);
+    const priorInertState = backgroundElements.map((element) => ({
+      element,
+      wasInert: element.hasAttribute('inert'),
+    }));
+    backgroundElements.forEach((element) => element.setAttribute('inert', ''));
+
+    const getFocusable = () => Array.from(
+      modalRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      ) || []
+    ).filter((element) => element.getClientRects().length > 0);
+
+    const frame = window.requestAnimationFrame(() => {
+      const firstFocusable = getFocusable()[0];
+      (firstFocusable || modalRef.current)?.focus();
+    });
+
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab' || calculatorOpenRef.current) return;
+      const focusable = getFocusable();
+      if (focusable.length === 0) {
+        event.preventDefault();
+        modalRef.current?.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', trapFocus);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      document.removeEventListener('keydown', trapFocus);
+      priorInertState.forEach(({ element, wasInert }) => {
+        if (!wasInert) element.removeAttribute('inert');
+      });
+      previouslyFocusedRef.current?.focus();
+    };
+  }, [open]);
 
   // Browser history management - handle back button
   useEffect(() => {
     if (open) {
       // Push a history state so back button closes modal instead of navigating away
       window.history.pushState({ modalOpen: true }, '');
-      
+
       const handlePopState = () => {
         onClose();
       };
-      
+
       window.addEventListener('popstate', handlePopState);
-      
+
       return () => {
         window.removeEventListener('popstate', handlePopState);
       };
@@ -208,13 +277,13 @@ export default function MotorDetailsPremiumModal({
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container || !open) return;
-    
+
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = container;
       setHasScrolled(scrollTop > 20);
       setCanScrollMore(scrollTop + clientHeight < scrollHeight - 50);
     };
-    
+
     container.addEventListener('scroll', handleScroll);
     handleScroll(); // Check initial state
     return () => container.removeEventListener('scroll', handleScroll);
@@ -223,7 +292,7 @@ export default function MotorDetailsPremiumModal({
   // Fetch warranty pricing - deferred to not block initial render
   useEffect(() => {
     if (!motor?.id || !open) return;
-    
+
     // Defer fetch to let modal animation complete first
     const timeoutId = setTimeout(async () => {
       try {
@@ -241,14 +310,14 @@ export default function MotorDetailsPremiumModal({
         });
       }
     }, 150);
-    
+
     return () => clearTimeout(timeoutId);
   }, [hpValue, motor?.id, open]);
 
   // Fetch images from motor_media table directly
   const [loadedGalleryImages, setLoadedGalleryImages] = useState<string[]>([]);
   const [imagesLoading, setImagesLoading] = useState(true);
-  
+
   useEffect(() => {
     if (open && motor?.id) {
       setImagesLoading(true);
@@ -264,7 +333,7 @@ export default function MotorDetailsPremiumModal({
       setLoadedGalleryImages([]);
       setImagesLoading(true);
     }
-  }, [open, motor?.id]);
+  }, [open, motor]);
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
@@ -273,13 +342,17 @@ export default function MotorDetailsPremiumModal({
   const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
 
   useEffect(() => {
+    calculatorOpenRef.current = calculatorOpen;
+  }, [calculatorOpen]);
+
+  useEffect(() => {
     if (!motor) { setRelatedSlugs([]); return; }
     let cancelled = false;
     import('@/lib/motor-related-blog-posts')
       .then(({ getMotorRelatedBlogSlugs }) => {
         if (cancelled) return;
         try {
-          setRelatedSlugs(getMotorRelatedBlogSlugs(motor as any));
+          setRelatedSlugs(getMotorRelatedBlogSlugs(motor));
         } catch (err) {
           console.error('[Related Guides] compute failed:', err);
           setRelatedSlugs([]);
@@ -299,7 +372,7 @@ export default function MotorDetailsPremiumModal({
   const handleAskAI = () => {
     // Use lg breakpoint (1024px) to match when the right column with inline chat is visible
     const isDesktopWithInlineChat = window.innerWidth >= 1024;
-    
+
     if (isDesktopWithInlineChat) {
       // Desktop: open inline chat panel (visible in right column)
       setInlineChatOpen(true);
@@ -311,6 +384,10 @@ export default function MotorDetailsPremiumModal({
   };
 
   const handleSelectMotor = () => {
+    trackEvent('quote_motor_configure_clicked', {
+      motor_hp: hp ?? null,
+      motor_model: motor?.model || title,
+    });
     if (onSelect) onSelect();
     onClose();
   };
@@ -321,35 +398,50 @@ export default function MotorDetailsPremiumModal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] pointer-events-none">
+    <div ref={overlayRef} className="fixed inset-0 z-[60] pointer-events-none">
       {/* Click-blocker - starts below header so header remains clickable */}
       <div className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto" onClick={onClose} />
-      
+
       {/* Visible backdrop - navy tint + blur (reduced blur on mobile to save GPU) */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
         className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto backdrop-blur-[4px] sm:backdrop-blur-[8px]"
         style={{ backgroundColor: 'rgba(5, 14, 28, 0.65)', WebkitBackdropFilter: 'blur(4px)' }}
-        onClick={onClose} 
+        onClick={onClose}
       />
-      
+
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4 pointer-events-auto">
         <motion.div
+          ref={modalRef}
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.97 }}
           transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
           style={{ boxShadow: '0 30px 80px rgba(10, 22, 40, 0.25)' }}
-          className="relative bg-[#FAF8F4] sm:bg-[#F5F1EA] w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px] 
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${displayTitle} details`}
+          tabIndex={-1}
+          className="relative min-w-0 bg-[#F4F0E8] w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px]
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl lg:h-[90vh] lg:overflow-hidden
           flex flex-col">
-          
+
+          {/* One unambiguous desktop close control, above both content columns. */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute right-4 top-4 z-[70] hidden h-11 w-11 items-center justify-center rounded-full border border-repower-navy-900/10 bg-[#FFFDF8] text-repower-navy-900 shadow-[0_8px_24px_rgba(5,14,28,0.12)] transition-all hover:-translate-y-px hover:border-repower-navy-900/20 hover:bg-white lg:flex"
+            aria-label="Close motor details"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content lg:h-full">
+          <div ref={scrollContainerRef} className="modal-content min-w-0 flex-1 overflow-y-auto lg:h-full">
             <Tabs value={activeTab} className="w-full" onValueChange={(value) => {
               if (value === 'chat') {
                 handleAskAI();
@@ -360,20 +452,20 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
-              <div className="lg:hidden sticky top-0 z-40 bg-[#FAF8F4]">
+            <div className="lg:hidden sticky top-0 z-40 bg-[#F8F5EE]/95 backdrop-blur-md">
                 <div className="flex justify-between items-center p-4">
-                  <button 
-                    onClick={onClose} 
-                    className="inline-flex flex-row items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] px-2" 
+                  <button
+                    onClick={onClose}
+                    className="inline-flex flex-row items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] px-2"
                     aria-label="Go back"
                   >
                     <ChevronLeft className="w-6 h-6 flex-shrink-0" />
                     <span className="text-base font-medium">Back</span>
                   </button>
-                  
-                  <button 
-                    onClick={onClose} 
-                    className="p-2 text-muted-foreground hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100" 
+
+                  <button
+                    onClick={onClose}
+                    className="p-2 text-muted-foreground hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100"
                     aria-label="Close"
                   >
                     <X className="w-5 h-5" />
@@ -382,7 +474,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
-              <div className="lg:hidden bg-[#FAF8F4]" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
+              <div className="lg:hidden bg-[#F8F5EE]" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
@@ -393,55 +485,68 @@ export default function MotorDetailsPremiumModal({
                   )}
                   {motor && <StockStatusIndicator motor={motor} />}
                 </div>
-                
+
                 {/* Tabs - scrolls with content */}
-                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto">
-                  <TabsTrigger 
-                    value="overview" 
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
+                <TabsList className="flex w-full flex-nowrap justify-start overflow-x-auto border-b border-repower-navy-900/10 rounded-none bg-[#F1ECE2] p-0 h-auto scrollbar-hide">
+                  <TabsTrigger
+                    value="overview"
+                    className="shrink-0 text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Overview
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="specs"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
+                    className="shrink-0 text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Specs
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="included"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
+                    className="shrink-0 text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Included
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="resources"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
+                    className="shrink-0 text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Resources
                   </TabsTrigger>
-                  <TabsTrigger 
-                    value="chat"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
-                  >
-                    <MessageCircle className="w-3 h-3 inline mr-1" />
-                    Chat
-                  </TabsTrigger>
                 </TabsList>
+
+                {/* Price belongs in the first mobile viewport, not below the gallery. */}
+                <div className="flex items-end justify-between gap-4 border-b border-repower-navy-900/10 bg-repower-cream px-4 py-3">
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-repower-navy-900/50">Motor price</p>
+                    {(() => {
+                      const dp = getDisplayPrices(msrp, price);
+                      return (
+                        <div className="mt-1 flex items-baseline gap-2">
+                          <span className="font-display text-2xl font-bold text-repower-navy-900">
+                            {dp.callForPrice ? 'Call for price' : money(dp.displayPrice!)}
+                          </span>
+                          {dp.showMsrp && dp.displayMsrp && (
+                            <span className="text-xs text-repower-navy-900/45 line-through">{money(dp.displayMsrp)}</span>
+                          )}
+                        </div>
+                      );
+                    })()}
+                  </div>
+                  {hasValidPrice && (
+                    <button
+                      type="button"
+                      onClick={handleCalculatePayment}
+                      className="min-h-[44px] shrink-0 text-sm font-semibold text-repower-mercury-red underline underline-offset-4"
+                    >
+                      Payment estimate
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block sticky top-0 z-50 bg-[#F5F1EA]">
+            <div className="hidden lg:block sticky top-0 z-50 bg-[#F7F3EB]/95 backdrop-blur-md">
                 <div className="px-12 pt-12 pb-0">
-                  <button 
-                    onClick={onClose} 
-                    className="absolute top-6 right-6 w-10 h-10 p-2 flex items-center justify-center rounded-full text-[#050E1C]/60 hover:text-[#050E1C] hover:rotate-[5deg] transition-all duration-200"
-                    style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
-                    aria-label="Close"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                  
                   <div className="flex flex-col pr-12">
                     {/* Eyebrow: HP · FAMILY */}
                     <div className="flex items-center gap-3 mb-3">
@@ -450,7 +555,7 @@ export default function MotorDetailsPremiumModal({
                         {hp} HP{motor?.family ? ` · ${String(motor.family).toUpperCase()}` : ''}
                       </span>
                     </div>
-                    
+
                     {/* H1, motor name */}
                     <h2 className="font-display font-bold text-[32px] tracking-[-0.025em] leading-tight text-[#050E1C]">
                       {displayTitle}
@@ -458,42 +563,42 @@ export default function MotorDetailsPremiumModal({
                     {motor?.model_number && (
                       <p className="text-[13px] font-mono text-[#050E1C]/45 mt-2">{motor.model_number}</p>
                     )}
-                    
+
                     {/* Stock Status Indicator */}
                     {motor && <div className="mt-3"><StockStatusIndicator motor={motor} /></div>}
                   </div>
-                  
+
                   {/* Hairline divider */}
                   <div className="mt-8 border-t" style={{ borderColor: 'rgba(10, 22, 40, 0.08)' }} />
                 </div>
-                
+
                 {/* 3. Tabs - new line, clear separation */}
-                <TabsList className="w-full justify-start rounded-none bg-[#F5F1EA] p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
-                  <TabsTrigger 
-                    value="overview" 
+              <TabsList className="w-full justify-start rounded-none bg-[#F7F3EB]/95 p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
+                  <TabsTrigger
+                    value="overview"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Overview
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="specs"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Specs
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="included"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Included
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="resources"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Resources
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="chat"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
@@ -502,13 +607,13 @@ export default function MotorDetailsPremiumModal({
                   </TabsTrigger>
                 </TabsList>
               </div>
-              
+
               {/* Scrollable Tab Content */}
-              <div className="p-6 pt-4 pb-24 space-y-8">
+              <div className="min-h-full space-y-8 bg-[radial-gradient(circle_at_12%_0%,rgba(201,162,74,0.10),transparent_32%),linear-gradient(180deg,#F8F5EE_0%,#F1ECE3_100%)] p-4 pt-3 pb-28 sm:p-6 sm:pt-4 lg:pb-24">
                 <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
                     <div
-                      className="py-2 rounded-lg"
+                      className="rounded-lg py-2"
                       style={{ background: 'var(--gradient-image-bg)' }}
                     >
                       {imagesLoading ? (
@@ -516,14 +621,14 @@ export default function MotorDetailsPremiumModal({
                           <Loader2 className="w-8 h-8 animate-spin" style={{ color: 'rgba(5, 14, 28, 0.45)' }} />
                         </div>
                       ) : (
-                        <MotorImageGallery 
+                        <MotorImageGallery
                           images={loadedGalleryImages}
                           motorTitle={title}
                           enhanced={true}
                         />
                       )}
                     </div>
-                    
+
                     {/* Model Code Breakdown - Below Image */}
                     {decoded.length > 0 && (
                       <div className="flex flex-wrap gap-1.5">
@@ -550,7 +655,7 @@ export default function MotorDetailsPremiumModal({
                             return indexA - indexB;
                           });
                           return sortedDecoded.map((feature, idx) => (
-                            <span 
+                            <span
                               key={`${feature.code}-${idx}`}
                               className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
                             >
@@ -574,7 +679,7 @@ export default function MotorDetailsPremiumModal({
                         })()}
                       </div>
                     )}
-                    
+
                     {/* About This Motor - Description with fallback */}
                     {displayDescription && (
                       <div className="space-y-3">
@@ -603,7 +708,7 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       </div>
                     )}
-                    
+
                     {/* What's Included */}
                     {includedAccessories.length > 0 && (
                       <div className="space-y-3">
@@ -637,7 +742,7 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Customer Review */}
                     {smartReview && (
                       <div className="border-t border-gray-100 pt-6">
@@ -657,13 +762,13 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Controls Notice */}
                     {motor && (
                       requiresMercuryControls(motor) ? (
                         <div
-                          className="p-4 rounded-lg"
-                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                          className="p-4 rounded-lg bg-repower-cream"
+                          style={{ border: '1px solid rgba(10, 22, 40, 0.10)' }}
                         >
                           <div className="flex items-start gap-3">
                             <Wrench className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'rgba(5, 14, 28, 0.70)' }} />
@@ -677,8 +782,8 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       ) : (
                         <div
-                          className="p-4 rounded-lg"
-                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                          className="p-4 rounded-lg bg-repower-cream"
+                          style={{ border: '1px solid rgba(10, 22, 40, 0.10)' }}
                         >
                           <div className="flex items-start gap-3">
                             <CheckCircle className="w-5 h-5 text-[#C9A24A] flex-shrink-0 mt-0.5" />
@@ -693,7 +798,7 @@ export default function MotorDetailsPremiumModal({
                       )
                     )}
                   </TabsContent>
-                  
+
                   {/* SPECS TAB */}
                   <TabsContent value="specs" className="space-y-5 mt-0">
                     <div className="p-6 pt-8 pb-12 space-y-8">
@@ -797,7 +902,7 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </div>
                   </TabsContent>
-                  
+
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
@@ -813,7 +918,7 @@ export default function MotorDetailsPremiumModal({
                         ))}
                       </div>
                     </div>
-                    
+
                     {/* Warranty Info */}
                     <div className="border-t border-gray-100 pt-6">
                       <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
@@ -844,21 +949,28 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </div>
                   </TabsContent>
-                  
+
                   {/* RESOURCES TAB */}
-                  <TabsContent value="resources" className="space-y-5 mt-0">
-                    <div className="p-6 pt-8 pb-12 space-y-8">
+                  <TabsContent value="resources" className="mt-0 space-y-5">
+                    <div className="space-y-8 px-0 py-4 sm:p-6 sm:pt-7">
                       {/* Related Guides — first for buyer education. Lazy-loaded so blogArticles never enters the motor bundle */}
                       {relatedSlugs.length > 0 && (
-                        <div className="border-b border-gray-100 pb-6 mb-6">
-                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
-                            Related Guides
-                          </h3>
-                          <p className="text-sm text-[#050E1C]/70 mb-4">
-                            Hand-picked HBW articles for boaters considering this motor class.
-                          </p>
+                        <div className="rounded-xl border border-repower-navy-900/10 bg-[#EDE7DC]/70 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] sm:p-5">
+                          <div className="mb-5 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+                            <div>
+                              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
+                                Matched to this motor
+                              </p>
+                              <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#050E1C]">
+                                Related Guides
+                              </h3>
+                            </div>
+                            <p className="max-w-sm text-xs leading-relaxed text-[#050E1C]/62 sm:text-right">
+                              Ranked by horsepower, motor family and use case, with newly updated relevant guides included automatically.
+                            </p>
+                          </div>
                           <Suspense fallback={null}>
-                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader surface="motor-modal" />
                           </Suspense>
                         </div>
                       )}
@@ -869,13 +981,13 @@ export default function MotorDetailsPremiumModal({
                           <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                             Videos & Demonstrations
                           </h3>
-                          <MotorVideosSection 
-                            motorId={motor.id} 
-                            motorFamily={motor.family || motor.model} 
+                          <MotorVideosSection
+                            motorId={motor.id}
+                            motorFamily={motor.family || motor.model}
                           />
                         </div>
                       )}
-                      
+
                       {/* Documents Section */}
                       {motor?.id && (
                         <div className="border-t border-gray-100 pt-6">
@@ -893,10 +1005,10 @@ export default function MotorDetailsPremiumModal({
           </div>
 
           {/* RIGHT COLUMN: Sticky Pricing Card OR Inline Chat (Desktop Only) */}
-          <div className="hidden lg:block border-l border-gray-200">
+          <div className="hidden border-l border-repower-navy-900/10 bg-[radial-gradient(circle_at_100%_0%,rgba(201,162,74,0.16),transparent_38%),linear-gradient(180deg,#FBF8F1_0%,#F1ECE3_100%)] lg:block">
             <AnimatePresence mode="wait">
               {inlineChatOpen ? (
-                <motion.div 
+                <motion.div
                   key="chat"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -914,13 +1026,13 @@ export default function MotorDetailsPremiumModal({
                   />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="pricing"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto"
+                  className="sticky top-0 max-h-[90vh] space-y-6 overflow-y-auto p-6"
                 >
                   {/* Motor Name & Thumbnail */}
                   <div>
@@ -928,9 +1040,9 @@ export default function MotorDetailsPremiumModal({
                       {displayTitle}
                     </h3>
                   </div>
-                  
+
                   {/* Price Display */}
-                  <div className="border-t border-gray-100 pt-6">
+                  <div className="border-t border-repower-navy-900/10 pt-6">
                     <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-light mb-2">
                       from
                     </p>
@@ -965,18 +1077,18 @@ export default function MotorDetailsPremiumModal({
                       </>;
                     })()}
                   </div>
-                  
+
                   {/* Key Spec Badges - All Features */}
-                  <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
+                  <div className="flex flex-wrap gap-2 border-t border-repower-navy-900/10 pt-6">
                     {/* HP Badge - Always shown first */}
                     <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full">
                       {hp} HP
                     </span>
-                    
+
                     {/* All Decoded Features */}
                     {(() => {
                       const decoded = decodeModelName(title, typeof hp === 'string' ? parseFloat(hp) : hp);
-                      
+
                       // Helper to shorten badge text for compactness
                       const shortenMeaning = (meaning: string) => {
                         return meaning
@@ -996,9 +1108,9 @@ export default function MotorDetailsPremiumModal({
                           .replace('High Thrust', 'High Thrust')
                           .replace('4-Stroke', 'FourStroke');
                       };
-                      
+
                       return decoded.map((feature, idx) => (
-                        <span 
+                        <span
                           key={`${feature.code}-${idx}`}
                           className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full"
                         >
@@ -1007,10 +1119,10 @@ export default function MotorDetailsPremiumModal({
                       ));
                     })()}
                   </div>
-                  
+
                   {/* Trust Signals */}
                   <TrustSignals />
-                  
+
                   {/* ADD TO QUOTE Button, hero CTA spec */}
                   <button
                     onClick={() => {
@@ -1026,19 +1138,21 @@ export default function MotorDetailsPremiumModal({
                     <span>Configure This Motor</span>
                     <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </button>
-                  
+
                   {/* Calculate Payment Link */}
-                  <button
-                    onClick={handleCalculatePayment}
-                    className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 font-medium 
-                      transition-all duration-200 ease-out
-                      hover:text-black hover:scale-[1.02]
-                      active:scale-[0.98]"
-                  >
-                    <Calculator className="w-4 h-4" />
-                    Calculate Payment
-                  </button>
-                  
+                  {hasValidPrice && (
+                    <button
+                      onClick={handleCalculatePayment}
+                      className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 font-medium
+                        transition-all duration-200 ease-out
+                        hover:text-black hover:scale-[1.02]
+                        active:scale-[0.98]"
+                    >
+                      <Calculator className="w-4 h-4" />
+                      Calculate Payment
+                    </button>
+                  )}
+
                   {/* Notify Me of Sales Button */}
                   <button
                     onClick={() => setPromoReminderOpen(true)}
@@ -1047,16 +1161,16 @@ export default function MotorDetailsPremiumModal({
                     <Bell className="w-4 h-4" />
                     Notify me of sales
                   </button>
-                  
+
                   {/* Promo Badges */}
                   <div className="space-y-2 border-t border-gray-100 pt-6">
                     {(() => {
                       const warrantyPromo = activePromotions.find(p => p.warranty_extra_years && p.warranty_extra_years > 0);
                       if (!warrantyPromo) return null;
-                      
+
                       const standardWarranty = 3; // Mercury's base warranty
                       const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
-                      
+
                       return (
                         <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
                           <Gift className="w-4 h-4" />
@@ -1078,28 +1192,37 @@ export default function MotorDetailsPremiumModal({
 
           {/* Mobile sticky CTA */}
           <div
-            className="lg:hidden sticky bottom-0 left-0 right-0 bg-[#FAF8F4] px-4 py-3 z-40"
+            className="lg:hidden sticky bottom-0 left-0 right-0 bg-repower-paper px-4 py-3 z-40"
             style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)', paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
           >
-            <button
-              onClick={() => {
-                triggerHaptic('medium');
-                handleSelectMotor();
-              }}
-              style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
-              className="group w-full flex items-center justify-between bg-[#C8102E] text-white px-7 py-4 rounded-[4px] text-[13px] font-bold uppercase tracking-[0.06em]
-                transition-all duration-300 ease-out
-                hover:bg-[#9A0C24] active:translate-y-0"
-            >
-              <span>Configure This Motor</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </button>
+            <div className="flex items-center gap-3">
+              <div className="min-w-0 flex-1">
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/50">Motor price</span>
+                <span className="block truncate font-display text-xl font-bold text-repower-navy-900">
+                  {(() => {
+                    const dp = getDisplayPrices(msrp, price);
+                    return dp.callForPrice ? 'Call for price' : money(dp.displayPrice!);
+                  })()}
+                </span>
+              </div>
+              <button
+                onClick={() => {
+                  triggerHaptic('medium');
+                  handleSelectMotor();
+                }}
+                style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8,0.2, 1)' }}
+                className="group flex min-h-[48px] shrink-0 items-center justify-between gap-3 rounded-[4px] bg-[#C8102E] px-5 py-3 text-[12px] font-bold uppercase tracking-[0.06em] text-white transition-all duration-300 ease-out hover:bg-[#9A0C24] active:translate-y-0"
+              >
+                <span>Configure</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </button>
+            </div>
           </div>
 
           {/* Mobile scroll hint - fades out after scrolling */}
           <AnimatePresence>
             {canScrollMore && !hasScrolled && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
@@ -1113,17 +1236,19 @@ export default function MotorDetailsPremiumModal({
         </motion.div>
       </div>
 
-      <FinanceCalculatorDrawer
-        open={calculatorOpen}
-        onOpenChange={setCalculatorOpen}
-        motor={{
-          id: motor?.id || `${title}-${hp}`,
-          model: title,
-          year: new Date().getFullYear(),
-          price: price || 0,
-          hp: hpValue
-        }}
-      />
+      {hasValidPrice && (
+        <FinanceCalculatorDrawer
+          open={calculatorOpen}
+          onOpenChange={setCalculatorOpen}
+          motor={{
+            id: motor?.id || `${title}-${hp}`,
+            model: title,
+            year: new Date().getFullYear(),
+            price,
+            hp: hpValue
+          }}
+        />
+      )}
 
       {/* Promo Reminder Modal */}
       <PromoReminderModal

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-06-19
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-06-19
+date_modified: 2026-08-02
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Outboard Rigging Costs Explained (Ontario 2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-19  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -38,36 +39,59 @@ Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap
 
 ---
 
-::cost-stack
-eyebrow: Where the money goes
-heading: What's actually in a Mercury rigging quote?
-subhead: Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
-item1Label: Throttle and shift control (if replaced)
-item1Value: $400 - $900
-item1Note: Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
-item2Label: Steering (cable, kept or refreshed)
-item2Value: $200 - $600
-item2Note: Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
-item2Accent: true
-item3Label: Wiring harness and connectors
-item3Value: $150 - $400
-item3Note: Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
-item4Label: Gauges or SmartCraft display
-item4Value: $0 - $1,200
-item4Note: Compatible existing gauges stay for free. SmartCraft Connect Mobile adds several hundred to $1,200+.
-item5Label: Fuel hose, primer bulb, water-separator filter
-item5Value: $80 - $200
-item5Note: Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
-item6Label: Propeller (aluminum 3-blade, 90 to 115 HP)
-item6Value: $400 - $500
-item6Note: Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
-item7Label: Install labour (Mercury-to-Mercury, post-2010)
-item7Value: $700 - $1,400
-item7Note: Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
-totalLabel: Typical Mercury-to-Mercury 90-115 HP rigging total
-totalValue: $1,900 - $5,200 CAD
-caveat: Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.
-::
+*Where the money goes*
+
+### What's actually in a Mercury rigging quote?
+
+Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
+
+#### Throttle and shift control (if replaced)
+
+**$400 - $900**
+
+Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
+
+#### Steering (cable, kept or refreshed)
+
+**$200 - $600**
+
+Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
+
+#### Wiring harness and connectors
+
+**$150 - $400**
+
+Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
+
+#### Gauges or SmartCraft display
+
+**$0 - $1,200**
+
+Compatible existing gauges stay for free. SmartCraft Connect Mobile adds several hundred to $1,200+.
+
+#### Fuel hose, primer bulb, water-separator filter
+
+**$80 - $200**
+
+Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
+
+#### Propeller (aluminum 3-blade, 90 to 115 HP)
+
+**$400 - $500**
+
+Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
+
+#### Install labour (Mercury-to-Mercury, post-2010)
+
+**$700 - $1,400**
+
+Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
+
+#### Typical Mercury-to-Mercury 90-115 HP rigging total
+
+**$1,900 - $5,200 CAD**
+
+*Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.*
 
 ## Full Article
 
@@ -100,7 +124,7 @@ Heavier cable for higher-HP motors. Battery switch and dual-battery selectors re
 Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
 **Propeller** 
-Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
+Aluminum 3-blade props are a common starting point for many motors up to 115 HP. Stainless 3- or 4-blade options may suit some 150 HP and larger applications. Current prop pricing and fit depend on the exact model. When safe seasonal conditions allow, an on-water check can verify WOT RPM; any prop change still requires customer approval under the work order.
 
 ### 2026 Rigging Cost Ranges by Scenario
 
@@ -145,8 +169,6 @@ Five things move your quote up or down the range:
 | Propeller | New, sized for new motor | New, sized for new motor |
 | Total rigging premium | Baseline | +$1,500 to $3,000 CAD |
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### What We Inspect During the Rigging Assessment
 
 When we walk around a boat for a repower quote, we look at:
@@ -176,8 +198,6 @@ The walk-around is free. The findings determine where in the range your quote la
 
 ---
 
----
-
 ## What we see at HBW
 
 Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, rigging adds $400-800. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
@@ -186,18 +206,10 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 
 ---
 
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
-
----
-
 Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
 
 Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -236,7 +248,7 @@ Some service yes (oil changes, prop swaps, gauge cleaning). Throttle/shift integ
 
 ### How long does the rigging install take?
 
-For Mercury-to-Mercury repowers, rigging is part of the 2 to 4 day shop time. Brand conversions take longer (typically 4 to 6 days) because of the additional rigging work. Spring rush adds wait time before the shop starts.
+It depends on the approved rigging scope, parts availability, findings during removal, current shop capacity, and required testing. Brand conversions usually involve more components than a compatible Mercury-to-Mercury installation. HBW provides the applicable work plan for the specific boat.
 
 ### What rigging components fail most often?
 
@@ -245,23 +257,22 @@ In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 - [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -6,8 +6,10 @@ import { ArrowRight, RotateCcw } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
+import { useQuote } from '@/contexts/QuoteContext';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
+import { parseTradeInDraft, serializeTradeInDraft } from '@/lib/trade-in-state';
 
 const DRAFT_KEY = 'tradeInValuePage:draft';
 
@@ -23,18 +25,22 @@ const INITIAL_TRADE_IN: TradeInInfo = {
   confidenceLevel: 'medium' as const,
 };
 
+function hasTradeInDetails(info: Partial<TradeInInfo>): boolean {
+  return Boolean(
+    info.brand?.trim() || info.year || info.horsepower || info.model?.trim()
+  );
+}
+
 function loadDraft(): { data: TradeInInfo; restored: boolean } {
   if (typeof window === 'undefined') return { data: INITIAL_TRADE_IN, restored: false };
   try {
     const raw = localStorage.getItem(DRAFT_KEY);
     if (!raw) return { data: INITIAL_TRADE_IN, restored: false };
-    const parsed = JSON.parse(raw);
+    const parsed = parseTradeInDraft(raw);
     if (!parsed || typeof parsed !== 'object') return { data: INITIAL_TRADE_IN, restored: false };
     const merged = { ...INITIAL_TRADE_IN, ...parsed } as TradeInInfo;
     // Only count as "restored" if user actually entered something
-    const hasContent = Boolean(
-      merged.brand || merged.year || merged.horsepower || (merged.model && merged.model.trim())
-    );
+    const hasContent = hasTradeInDetails(merged);
     return { data: merged, restored: hasContent };
   } catch {
     return { data: INITIAL_TRADE_IN, restored: false };
@@ -46,6 +52,9 @@ export default function TradeInValuePage() {
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(initial.current.data);
   const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
+  const { dispatch } = useQuote();
+  const hasEstimate = tradeInInfo.estimatedValue > 0;
+  const canStartQuote = hasTradeInDetails(tradeInInfo);
 
   // Auto-hide restored banner
   useEffect(() => {
@@ -58,7 +67,7 @@ export default function TradeInValuePage() {
   useEffect(() => {
     const t = setTimeout(() => {
       try {
-        localStorage.setItem(DRAFT_KEY, JSON.stringify(tradeInInfo));
+        localStorage.setItem(DRAFT_KEY, serializeTradeInDraft(tradeInInfo));
       } catch (e) {
         console.error('Failed to autosave trade-in draft:', e);
       }
@@ -69,25 +78,22 @@ export default function TradeInValuePage() {
   const handleClearDraft = () => {
     try {
       localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    } catch {
+      // Storage can be unavailable in restricted browser contexts.
+    }
     setTradeInInfo(INITIAL_TRADE_IN);
     setShowRestored(false);
   };
 
   const handleStartQuote = () => {
-    // Store trade-in data so the quote builder can pick it up
-    try {
-      const stored = localStorage.getItem('quoteBuilder');
-      const parsed = stored ? JSON.parse(stored) : { state: {} };
-      parsed.state = { ...parsed.state, tradeInInfo, hasTradein: true };
-      localStorage.setItem('quoteBuilder', JSON.stringify(parsed));
-    } catch (e) {
-      console.error('Failed to persist trade-in to localStorage:', e);
-    }
-    // Clear the standalone draft, it has now been promoted into the quote flow
-    try {
-      localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    // Hand the trade-in to the quote builder through its own reducer.
+    // Writing localStorage['quoteBuilder'] directly does NOT work: QuoteProvider is
+    // mounted app-wide and already holds hydrated state in memory, so it overwrites
+    // any direct write on its next persist and the trade-in is silently lost.
+    const promoted: TradeInInfo = { ...tradeInInfo, hasTradeIn: true };
+    dispatch({ type: 'PROMOTE_TRADE_IN', payload: promoted });
+    // Keep the standalone draft. If the customer backs out of the quote flow, their
+    // entry is still here; handleClearDraft and the next valuation both replace it.
     navigate('/quote/motor-selection');
   };
 
@@ -164,20 +170,24 @@ export default function TradeInValuePage() {
             onAutoAdvance={handleStartQuote}
           />
 
-          {tradeInInfo.estimatedValue > 0 && (
+          {canStartQuote && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mt-8 rounded border border-repower-navy-900/10 bg-repower-cream p-8 text-center"
             >
               <p className="font-display text-[22px] text-repower-navy-900 mb-5">
-                Ready to see how much you'll save on a new Mercury?
+                {hasEstimate
+                  ? "Ready to see how much you'll save on a new Mercury?"
+                  : 'Ready to keep building your Mercury quote?'}
               </p>
               <button
                 onClick={handleStartQuote}
                 className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
               >
-                Start a Quote With This Trade-In
+                {hasEstimate
+                  ? 'Start a Quote With This Trade-In'
+                  : 'Start a Quote With These Trade-In Details'}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </motion.div>

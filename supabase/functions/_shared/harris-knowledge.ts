@@ -155,8 +155,8 @@ export const HARRIS_CONTACT = {
   email: "info@harrisboatworks.ca",
   address: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0",
   hours: {
-    season: "Mon-Sat 9am-5pm (Apr-Oct)",
-    offseason: "Mon-Fri 9am-4pm (Nov-Mar)"
+    season: "Mon-Sat 8am-5pm; Sun 9am-4pm (Apr 1-Nov 30)",
+    offseason: "Marina closed for winter (Dec 1-Apr 1)"
   },
   response_time: "Usually respond within a few hours during business hours"
 };
@@ -204,8 +204,8 @@ export const HARRIS_FACILITIES = {
     url: "https://www.harrisboatworks.ca/winter-storage"
   },
   on_water_service: {
-    available: true,
-    description: "We can service your boat right on the water"
+    available: false,
+    description: "Mercury service and installations are performed at our Gores Landing facility; we do not offer mobile or on-site service"
   },
   weather_resources: {
     weather_station: "https://tempestwx.com/station/107760",
@@ -325,10 +325,7 @@ export const HARRIS_PARTNERS = {
   boat_license: {
     provider: "MyBoatCard.com",
     url: "https://myboatcard.com/card/harrisboat",
-    discount_code: "HARRIS15",
-    discount_amount: "15% off",
-    expires: "Never expires",
-    description: "Get your Pleasure Craft Operator Card (PCOC) online - required for operating any powered watercraft in Canada"
+    description: "Get your Pleasure Craft Operator Card (PCOC) online. A completed Rental Boat Safety Checklist can satisfy the federal rule for that rental, but HBW requires every rental driver to show a valid PCOC and photo ID at check-in."
   },
   financing: {
     url: "/financing-application",

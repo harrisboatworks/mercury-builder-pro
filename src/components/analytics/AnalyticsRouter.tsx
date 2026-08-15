@@ -3,9 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { PageMeta } from '@/components/seo/PageMeta';
 import {
   ensureQuoteId,
+  getQuoteFunnelStep,
   getDeviceType,
   getPageCategory,
   getPageId,
+  trackClarityFunnelStep,
   trackEvent,
 } from '@/lib/analytics';
 
@@ -25,6 +27,11 @@ export function AnalyticsRouter() {
     const prev = previousPathRef.current;
     const pageId = getPageId(path);
     const pageCategory = getPageCategory(path);
+    const quoteStep = getQuoteFunnelStep(path);
+
+    if (quoteStep) {
+      trackClarityFunnelStep('quote', quoteStep);
+    }
 
     // quote_start: external referrer landing on motor-selection
     if (

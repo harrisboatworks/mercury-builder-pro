@@ -25,7 +25,9 @@ export interface ActivePromotion {
   bonus_description: string | null;
   end_date: string | null;
   promo_options?: {
-    type: 'choose_one';
+    type: 'choose_one' | 'layered';
+    combination_mode?: 'choose_one' | 'layered';
+    customer_choice_required?: boolean;
     options: PromoOption[];
   } | null;
 }
@@ -44,6 +46,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
   useEffect(() => {
     async function fetchPromotions() {
       try {
+        const today = new Date().toISOString().split('T')[0];
         // Check cache first (skipped when forceRefresh is true)
         const now = Date.now();
         if (!forceRefresh && cachedPromotions && (now - cacheTimestamp) < CACHE_DURATION) {
@@ -66,7 +69,8 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
             promo_options
           `)
           .eq('is_active', true)
-          .or('end_date.is.null,end_date.gte.now()')
+          .or(`start_date.is.null,start_date.lte.${today}`)
+          .or(`end_date.is.null,end_date.gte.${today}`)
           .order('priority', { ascending: false });
 
         if (error) {
@@ -127,6 +131,14 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     return chooseOnePromo?.promo_options?.options || [];
   };
 
+  // All options for the highest-priority active promotion. Layered offers use
+  // this path so their rebate and optional financing remain available without
+  // being mislabeled as a choose-one decision.
+  const getPromotionOptions = (): PromoOption[] => {
+    const promotion = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0);
+    return promotion?.promo_options?.options || [];
+  };
+
   // Helper function to get rebate amount for a given HP.
   // Only explicit matrix ranges are eligible; gaps/out-of-range values do not
   // inherit the nearest tier.
@@ -136,7 +148,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
 
   // Helper function to get special financing rates
   const getSpecialFinancingRates = () => {
-    const options = getChooseOneOptions();
+    const options = getPromotionOptions();
     const financingOption = options.find(o => o.id === 'special_financing');
     return financingOption?.rates || null;
   };
@@ -150,6 +162,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     getTotalPromotionalSavings,
     getPromotionSavingsForMotor,
     getChooseOneOptions,
+    getPromotionOptions,
     getRebateForHP,
     getSpecialFinancingRates,
   };

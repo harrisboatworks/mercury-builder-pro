@@ -1,4 +1,4 @@
-import ReactMarkdown, { Components } from 'react-markdown';
+import ReactMarkdown, { Components, defaultUrlTransform } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Phone, Calculator, MapPin, Wrench } from 'lucide-react';
 import {
@@ -18,12 +18,28 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import { filterToOneBlogCredibilityAnchor } from '@/lib/blogCredibilityAnchorPolicy';
+
+const PHONE_LINK_RE = /^(?:tel|sms):\+?[0-9().\s-]+$/i;
+
+function blogUrlTransform(url: string): string {
+  if (PHONE_LINK_RE.test(url)) return url;
+  return defaultUrlTransform(url);
+}
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
+import { MercuryCapacityLookup } from './MercuryCapacityLookup';
+import { BoatingCardHelp, type BoatingCardHelpProps } from './BoatingCardHelp';
+import {
+  detectH2Card,
+  normalizeSectionCardHeading,
+  type BlogSectionCardKind as CardKind,
+} from '@/lib/blogSectionCardHeadings';
+import { stripSuppressedBlogPullQuotes } from '@/lib/blogPullQuotePolicy.js';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -297,6 +313,19 @@ function rewriteWalkaroundLeadCapture(md: string): string {
   );
 }
 
+function rewriteBoatingCardHelp(md: string): string {
+  // Supports a compact bodiless marker and an optional `variant: full` body.
+  let out = md.replace(
+    /^::boat-card-help\s*\n([\s\S]*?)\n::\s*$/gm,
+    (_m, body) => `:::boat-card-help\n${body}\n:::`,
+  );
+  out = out.replace(
+    /^::boat-card-help\s*$/gm,
+    ':::boat-card-help\n\n:::',
+  );
+  return out;
+}
+
 function rewriteMercuryPriceTable(md: string): string {
   // Supports both bodied (`::mercury-price-table\nkey: value\n::`) and
   // bodiless (`::mercury-price-table`) forms. Bodiless => full list.
@@ -368,7 +397,7 @@ function rewriteYouTubeUrlParagraphs(md: string): string {
 function preprocessSpecialBlocks(md: string): string {
   return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeUrlParagraphs(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
-      rewriteWalkaroundLeadCapture(
+      rewriteBoatingCardHelp(rewriteWalkaroundLeadCapture(
         rewritePullQuote(
           rewriteBilingualTrust(
             rewriteCostStack(
@@ -378,7 +407,7 @@ function preprocessSpecialBlocks(md: string): string {
             ),
           ),
         ),
-      ),
+      )),
     ),
   ))))));
 }
@@ -414,7 +443,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'boat-card-help' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -429,10 +458,11 @@ interface RenderChunk {
   customerVoiceProps?: CustomerVoiceProps;
   mythbusterProps?: MythbusterProps;
   ctaProps?: BlogInlineCTAProps;
+  boatingCardProps?: BoatingCardHelpProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|boat-card-help|mercury-price-table|mercury-capacity-lookup|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -614,12 +644,15 @@ function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
     }
   }
   if (!flat.heading || !flat.headingTranslated) return null;
-  const items: BilingualTrustItem[] = Object.keys(itemMap)
-    .map(Number)
-    .sort((a, b) => a - b)
-    .map((i) => itemMap[i])
-    .filter((it) => it.en && it.zh)
-    .map((it) => ({ en: it.en!, zh: it.zh! }));
+  const items: BilingualTrustItem[] = filterToOneBlogCredibilityAnchor(
+    Object.keys(itemMap)
+      .map(Number)
+      .sort((a, b) => a - b)
+      .map((i) => itemMap[i])
+      .filter((it) => it.en && it.zh)
+      .map((it) => ({ en: it.en!, zh: it.zh! })),
+    (item) => `${item.en} ${item.zh}`,
+  );
   const cta = flat.ctaEn && flat.ctaZh && flat.ctaHref
     ? { en: flat.ctaEn, zh: flat.ctaZh, href: flat.ctaHref }
     : undefined;
@@ -834,6 +867,13 @@ function splitDirectives(md: string): RenderChunk[] {
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     } else if (name === 'walkaround-lead-capture') {
       chunks.push({ kind: 'walkaround-lead-capture', content: '' });
+    } else if (name === 'boat-card-help') {
+      const full = /^\s*variant\s*:\s*full\s*$/im.test(body);
+      chunks.push({
+        kind: 'boat-card-help',
+        content: '',
+        boatingCardProps: { variant: full ? 'full' : 'compact' },
+      });
     } else if (name === 'mercury-price-table') {
       const props: MercuryPriceTableProps = {};
       for (const raw of body.split('\n')) {
@@ -854,6 +894,8 @@ function splitDirectives(md: string): RenderChunk[] {
         }
       }
       chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
+    } else if (name === 'mercury-capacity-lookup') {
+      chunks.push({ kind: 'mercury-capacity-lookup', content: '' });
     } else if (name === 'youtube-embed') {
       const idMatch = /^\s*id\s*:\s*([A-Za-z0-9_-]{6,})\s*$/m.exec(body);
       const titleMatch = /^\s*title\s*:\s*(.+)$/m.exec(body);
@@ -924,15 +966,21 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'walkaround-lead-capture') {
       return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
     }
+    if (chunk.kind === 'boat-card-help') {
+      return <BoatingCardHelp key={`${keyPrefix}-bch-${i}`} {...(chunk.boatingCardProps || {})} />;
+    }
     if (chunk.kind === 'mercury-price-table') {
       return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
+    }
+    if (chunk.kind === 'mercury-capacity-lookup') {
+      return <MercuryCapacityLookup key={`${keyPrefix}-mcl-${i}`} />;
     }
     if (chunk.kind === 'youtube-embed' && chunk.youtubeProps) {
       return (
         <MercuryVideo
           key={`${keyPrefix}-yt-${i}`}
           videoId={chunk.youtubeProps.id}
-          title={chunk.youtubeProps.title || 'Mercury Marine video'}
+          title={chunk.youtubeProps.title || 'Embedded boating video'}
         />
       );
     }
@@ -951,6 +999,7 @@ function renderMarkdownWithDirectives(
         key={`${keyPrefix}-md-${i}`}
         remarkPlugins={[remarkGfm]}
         components={components}
+        urlTransform={blogUrlTransform}
       >
         {chunk.content}
       </ReactMarkdown>
@@ -1013,109 +1062,7 @@ function extractQuickAnswerChunks(md: string): QAChunk[] {
  * NOT modified — only its visual presentation.
  */
 
-type CardKind =
-  | 'short-answer'
-  | 'hbw-note'
-  | 'common-mistakes'
-  | 'sources'
-  | 'who-this-is-for'
-  | 'when-to-call'
-  | 'when-to-service'
-  | 'try-calculator'
-  | 'dealer-note'
-  | 'local-context'
-  | 'choose-card'
-  | null;
-
 type InlineCardKind = 'recommended-choice' | null;
-
-const norm = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/[^\w\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-function detectH2Card(headingText: string): CardKind {
-  const t = norm(headingText);
-  if (
-    t === 'quick recommendation' ||
-    t === 'quick answer' ||
-    t === 'short answer' ||
-    t === 'direct answer' ||
-    t === 'tldr' ||
-    t === 'tl dr' ||
-    t === 'bottom line' ||
-    t === 'quick verdict' ||
-    t === 'quick take' ||
-    t === 'quick fix'
-  )
-    return 'short-answer';
-  if (
-    t.startsWith('what hbw checks before') ||
-    t === 'what hbw does' ||
-    t === 'what we do at hbw' ||
-    t === 'what we actually see' ||
-    t === 'what we see at hbw' ||
-    t === 'hbw local note' ||
-    t === 'hbw shop note' ||
-    t === 'shop note' ||
-    t === 'from the shop'
-  )
-    return 'hbw-note';
-  if (
-    t === 'common mistakes' ||
-    t === 'mistakes to avoid' ||
-    t === 'what goes wrong' ||
-    t === 'common pitfalls' ||
-    t.startsWith('watch out for')
-  )
-    return 'common-mistakes';
-  if (
-    t === 'sources and review notes' ||
-    t === 'sources' ||
-    t === 'review notes' ||
-    t === 'verification'
-  )
-    return 'sources';
-  if (
-    t === 'who this guide is for' ||
-    t === 'who this is for' ||
-    t === 'who should read this'
-  )
-    return 'who-this-is-for';
-  if (t === 'when to call hbw' || t === 'when to call us') return 'when-to-call';
-  if (t === 'when to bring it in' || t.startsWith('when to bring it to hbw'))
-    return 'when-to-service';
-  if (
-    t === 'try the calculator' ||
-    t === 'run the numbers' ||
-    t === 'try the tool'
-  )
-    return 'try-calculator';
-  if (t === 'dealer note' || t === 'hbw dealer note') return 'dealer-note';
-  if (isLocalContextHeading(t)) return 'local-context';
-  if (CHOOSE_HEADING_RE.test(headingText)) return 'choose-card';
-  return null;
-}
-
-const CHOOSE_HEADING_RE = /^\s*Choose\s+.+\s+if\s*$/i;
-
-const LOCAL_CONTEXT_HEADINGS = new Set([
-  'rice lake note',
-  'kawarthas note',
-  'kawarthas fit',
-  'ontario context',
-  'ontario boating context',
-  'trent severn note',
-  'trent severn consideration',
-  'gta buyer note',
-  'local context',
-]);
-
-function isLocalContextHeading(normalized: string): boolean {
-  return LOCAL_CONTEXT_HEADINGS.has(normalized);
-}
 
 function extractChooseLabel(heading: string): string {
   const m = /^\s*Choose\s+(.+?)\s+if\s*$/i.exec(heading);
@@ -1123,7 +1070,7 @@ function extractChooseLabel(heading: string): string {
 }
 
 function detectInlineCard(headingText: string): InlineCardKind {
-  const t = norm(headingText);
+  const t = normalizeSectionCardHeading(headingText);
   if (
     t.startsWith('best fit') ||
     t.startsWith('recommended') ||
@@ -1305,11 +1252,12 @@ const cardConfig: Record<
 interface Props {
   content: string;
   markdownComponents: Components;
+  articleSlug?: string;
 }
 
-export function MarkdownSectionCards({ content, markdownComponents }: Props) {
+export function MarkdownSectionCards({ content, markdownComponents, articleSlug }: Props) {
   const { preamble, sections } = splitIntoH2Sections(
-    preprocessSpecialBlocks(content),
+    preprocessSpecialBlocks(stripSuppressedBlogPullQuotes(content, articleSlug)),
   );
 
   // Inline H3/H4 "Recommended Choice" wrapping is handled via component overrides

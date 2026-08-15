@@ -1,34 +1,35 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-05-27
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
-description: "Outboard shaft length guide: 15, 20, 25 inch. Match shaft to transom height to avoid cavitation and damage. Ontario dealer's practical advice for correct fit."
+description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-05-27
+date_modified: 2026-08-02
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
 
-> Outboard shaft length guide: 15, 20, 25 inch. Match shaft to transom height to avoid cavitation and damage. Ontario dealer's practical advice for correct fit.
+> Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-27  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
-# Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
+## Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
 ## Quick answer
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
@@ -86,8 +87,6 @@ You need a tape measure and five minutes:
 
 Between sizes? Round down, not up. A motor slightly longer than needed drags more than a motor slightly shorter, and slightly short usually means adjusting mounting height, which is easier than swapping a lower unit. Verify before committing.
 
-::walkaround-lead-capture
-
 ## Five things that change the answer
 
 1. **Hull design.** Deep-V hulls with steep transom angles sometimes need a 25-inch shaft even when the transom height measures 22 inches.
@@ -104,15 +103,13 @@ Between sizes? Round down, not up. A motor slightly longer than needed drags mor
 - Overheating, the cooling water intake can rise above the waterline
 - Cavitation plate is visibly above the water at cruising speed
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Shaft too long
 - Reduced top speed, the lower unit is dragging more water than it should
 - Worse fuel economy, same cause
 - Motor sounds "loaded" at cruise, working harder than the throttle position should require
 - Cavitation plate is well below the water surface at speed
 
-If you are seeing any of these symptoms, shaft length is a strong candidate. [We diagnose during sea-trial on every repower at HBW](/blog/what-happens-during-mercury-repower).
+If you are seeing any of these symptoms, shaft length is a strong candidate. [HBW's acceptance checks follow the specific motor, hull, rigging, work order, and safe seasonal conditions](/blog/what-happens-during-mercury-repower).
 
 ## Decoding Mercury shaft length codes
 
@@ -170,10 +167,6 @@ Always measure the transom from the top edge to the cavitation plate centerline 
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
----
-
 ## FAQs
 
 ### What shaft length do I need for a pontoon boat?
@@ -200,26 +193,41 @@ Round down to the shorter shaft in most cases. Adjusting mounting height on a sl
 
 Look at the model suffix. "L" means 20-inch (long), "XL" or "EXL" means 25-inch (extra long), no suffix or "S" means 15-inch (short). If you cannot find the model plate, call us and we can look it up by serial number.
 
+### What is the difference between a long shaft and a short shaft outboard?
+
+A short shaft is 15 inches (Mercury code S) and a long shaft is 20 inches (code L). The difference is how far the gearcase hangs below the mounting bracket, which sets how deep the propeller runs. Match the shaft to your measured transom height, not to the boat's overall size. Most Ontario aluminum fishing boats take the 20-inch long shaft; small tinnies with low transoms take the 15-inch. Not sure which you need? Call us at 905-342-2153.
+
+### What is the outboard shaft length chart for 15, 20, and 25 inch shafts?
+
+Measure your transom height, then match it: 15 to 16 inches takes a short shaft (code S, 15 inch), 19 to 21 inches takes a long shaft (code L, 20 inch), 24 to 26 inches takes an extra long shaft (code XL, 25 inch), and 29 to 31 inches takes an ultra long shaft (code XXL, 30 inch). If you land between sizes, round down and verify before rigging is finalized.
+
+### How do I measure transom height for outboard shaft length?
+
+Find the lowest point of the hull at the transom, where the water contacts the hull when the boat is running on plane. Measure straight up from that point to the top of the transom where the motor mounting bracket sits. That measurement is your transom height. It takes five minutes with a tape measure. Send a side-profile photo with the tape in place to 905-342-2153 and we will confirm the right shaft length.
+
+### What shaft length do I need for a 25 inch transom?
+
+A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we sea-trial borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca or call 905-342-2153.
+
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
-- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
+- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-07-07
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury SmartCraft Alarm Codes Ontario"
 description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-07-07
+date_modified: 2026-08-02
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury SmartCraft Alarm Codes Ontario
@@ -24,11 +25,13 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last updated:** 2026-07-07  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
 > **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
+
+If the display shows a complete number such as **621-5**, start with the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup). It keeps the modern engine-family table separate from the older single-number VesselView list.
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
@@ -120,7 +123,7 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 **Email:** info@harrisboatworks.ca  
 **Phone:** 905-342-2153
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, Mercury CDS equipped, with authorized Mercury service directly on Rice Lake.
 
 ## Sources
 
@@ -155,28 +158,31 @@ Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the tellta
 
 ### Are current Mercury Verado V8 and V10 outboards supercharged?
 
-No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+No. Current Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
+- [Mercury Won't Start After Sitting: Fixes](/blog/mercury-outboard-wont-start-after-sitting), won't-start after sitting fixes
+- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
+- [Mercury Overheating at Idle Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario), overheating at idle fixes
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

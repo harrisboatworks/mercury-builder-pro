@@ -4,9 +4,9 @@ last_updated: 2026-06-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado"
 description: "Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。"
 category: "Mercury 型号比较"
@@ -16,6 +16,7 @@ keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**Last updated:** 2026-06-26  
+**最后审核:** 2026-06-26  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 
@@ -77,28 +78,31 @@ GTA 华人 angler 中常见购买理由：
 - Bass boat 18-19 英尺 → Mercury 200 Pro XS
 - Multi-species fishing boat 20-22 英尺 → Mercury 250-300 Pro XS
 
-::decision-card
-eyebrow: FourStroke 还是 Pro XS
-heading: GTA 华人船主该怎么选?
-subhead: 大部分 GTA 华人家庭和钓鱼客户买 FourStroke 就够用。Pro XS 适合特定场景, 不要为了"看起来更好"多花钱。
-leftLabel: 钓鱼休闲: FourStroke
-leftCriteria:
-  - 莱斯湖, Kawarthas 周末钓鱼或家庭游
-  - 载人载货稳定, 不追求极速
-  - 在意油耗和保养间隔
-  - Pontoon 或铝制钓鱼船首选
-leftOutcome: Mercury FourStroke 90 至 200 HP
-leftVariant: recommended
-rightLabel: 速度滑水: Pro XS
-rightCriteria:
-  - Bass 锦标赛或专业竞速钓鱼
-  - 滑水, 拖管, 拉滑水板
-  - 经常满载且需要快速起步
-  - 玻璃钢运动艇首选
-rightOutcome: Mercury Pro XS 115 至 250 HP
-rightVariant: alternative
-whenInDoubt: 大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够用还省油。按用途选, 不要按品牌系列选。
-::
+*FourStroke 还是 Pro XS*
+
+### GTA 华人船主该怎么选?
+
+大部分 GTA 华人家庭和钓鱼客户买 FourStroke 就够用。Pro XS 适合特定场景, 不要为了"看起来更好"多花钱。
+
+#### 钓鱼休闲: FourStroke
+
+- 莱斯湖, Kawarthas 周末钓鱼或家庭游
+- 载人载货稳定, 不追求极速
+- 在意油耗和保养间隔
+- Pontoon 或铝制钓鱼船首选
+
+**Mercury FourStroke 90 至 200 HP**
+
+#### 速度滑水: Pro XS
+
+- Bass 锦标赛或专业竞速钓鱼
+- 滑水, 拖管, 拉滑水板
+- 经常满载且需要快速起步
+- 玻璃钢运动艇首选
+
+**Mercury Pro XS 115 至 250 HP**
+
+大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够用还省油。按用途选, 不要按品牌系列选。
 
 ## Verado V8/V10/V12：HBW 按需特别订货
 
@@ -132,16 +136,6 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 3. **大型船 + 双引擎 + 深海钓鱼？** → Verado
 
 如果不确定,我们建议邮件 info@harrisboatworks.ca 描述您的使用场景,我们给您配置建议。
-
-## 常见问题
-
-**Q：可以从 FourStroke 升级到 Pro XS 吗？** 不能直接"升级"。这是两个不同的引擎家族,需要换整台引擎 (repower)。HBW 提供 repower 服务,详见 [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)。
-
-**Q：FourStroke 跟 Yamaha F-series 差多少？** 两者都是优秀引擎。FourStroke 在 SmartCraft 集成和保修网络上略胜。Yamaha 在初始购买价上略低。HBW 卖 Mercury 因为我们是 [Premier dealer](https://www.mercurymarine.com/canada/en/)。
-
-**Q：Verado 是双引擎还是单引擎？** 两种都有。多数 V8/V10 Verado 用作单引擎 (200-300 HP)。双引擎用于大型 charter 或 deep sea (双 250-400)。
-
-**Q：Pro XS 油耗比 FourStroke 高多少？** 约 15-25%。Pro XS 高 RPM 调校在巡航速度时耗油更多。但起步加速更强。
 
 ## 联系我们
 
@@ -199,16 +193,15 @@ FourStroke 更偏安静、稳定、日常使用和家庭场景。Pro XS 更偏 p
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

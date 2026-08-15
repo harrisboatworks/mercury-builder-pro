@@ -24,6 +24,7 @@ interface QuoteRevealCinematicProps {
   selectedPromoValue?: string;
   // Pre-calculated monthly payment to ensure consistency with PDF/Summary
   monthlyPayment?: number;
+  showMonthlyPayment?: boolean;
   // Trade-in value for dynamic label display
   tradeInValue?: number;
 }
@@ -105,6 +106,7 @@ export function QuoteRevealCinematic({
   selectedPromoOption,
   selectedPromoValue,
   monthlyPayment: passedMonthlyPayment,
+  showMonthlyPayment = true,
   tradeInValue
 }: QuoteRevealCinematicProps) {
   const [stage, setStage] = useState<'spotlight' | 'motor' | 'msrp' | 'price' | 'savings' | 'details' | 'complete'>('spotlight');
@@ -573,15 +575,17 @@ export function QuoteRevealCinematic({
               </AnimatePresence>
 
               {/* Monthly payment teaser */}
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 0.7, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="mt-4 text-sm md:text-base font-display"
-                style={{ color: 'rgba(245, 241, 234, 0.65)', letterSpacing: '-0.01em' }}
-              >
-                Or just {money(monthlyPayment)}/mo
-              </motion.span>
+              {showMonthlyPayment && (
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 0.7, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="mt-4 text-sm md:text-base font-display"
+                  style={{ color: 'rgba(245, 241, 234, 0.65)', letterSpacing: '-0.01em' }}
+                >
+                  Or just {money(monthlyPayment)}/mo
+                </motion.span>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

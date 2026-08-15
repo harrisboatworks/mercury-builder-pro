@@ -4,9 +4,9 @@ last_updated: 2026-05-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat Insurance in Ontario: What You Actually Need (2026)"
 description: "Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide."
 category: "Boating"
@@ -16,6 +16,7 @@ keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","li
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Boat Insurance in Ontario: What You Actually Need (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Boating  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-14  
+**Last reviewed:** 2026-05-14  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
 
@@ -37,30 +38,47 @@ language: en-CA
 - **Most home policies do NOT cover boats over 16 ft or over 25 HP**: above that, you need a marine policy
 - **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
 
-::cost-stack
-heading: What boat insurance actually costs in Ontario in 2026
-eyebrow: Annual premium by boat type
-subhead: Boat insurance pricing varies wildly by hull type, motor size, declared value, and your home insurer's bundling discount. These are realistic 2026 Ontario annual premium ranges for liability + physical damage. Not quotes, frameworks.
-item1Label: Small fishing boat under 30 HP, hull value under $10K
-item1Value: $180 - $350 / year
-item1Note: 14 to 16 ft aluminum tin boats. Often bundled with home or cottage policy for an extra $150 to $250 a year. Cheapest insurance on the lake.
-item2Label: Mid-size fishing / runabout, 50 to 150 HP, value $15K to $35K
-item2Value: $450 - $900 / year
-item2Note: Most Rice Lake fishing boats and small runabouts. Cracked windshield or prop strike claim economics shift toward replacement at this tier.
-item3Label: Performance bass boat or wakeboard boat, 175 to 250 HP, value $40K to $80K
-item3Value: $900 - $1,800 / year
-item3Note: Higher premiums driven by speed, tournament use, and theft attractiveness. Lock your hubs.
-item3Accent: true
-item4Label: New Legend or similar package, 150 to 300 HP, value $50K to $120K
-item4Value: $1,200 - $2,400 / year
-item4Note: Most common bracket for HBW package customers. Often a financing-lender requirement during the loan term.
-item5Label: Pontoon, 90 to 250 HP, value $40K to $90K
-item5Value: $600 - $1,300 / year
-item5Note: Pontoons typically insure cheaper than equivalent-value V-hulls because of lower speeds and lower-collision-loss history. Worth quoting separately if switching from a runabout.
-totalLabel: Quick rule of thumb
-totalValue: Roughly 1.5 to 2.5% of declared hull value per year
-caveat: Premiums vary by insurer, boating experience, location, claim history, and whether you bundle with home or auto. These ranges assume Ontario residency, freshwater use, and no major prior claims. Get 3 quotes minimum.
-::
+*Annual premium by boat type*
+
+### What boat insurance actually costs in Ontario in 2026
+
+Boat insurance pricing varies wildly by hull type, motor size, declared value, and your home insurer's bundling discount. These are realistic 2026 Ontario annual premium ranges for liability + physical damage. Not quotes, frameworks.
+
+#### Small fishing boat under 30 HP, hull value under $10K
+
+**$180 - $350 / year**
+
+14 to 16 ft aluminum tin boats. Often bundled with home or cottage policy for an extra $150 to $250 a year. Cheapest insurance on the lake.
+
+#### Mid-size fishing / runabout, 50 to 150 HP, value $15K to $35K
+
+**$450 - $900 / year**
+
+Most Rice Lake fishing boats and small runabouts. Cracked windshield or prop strike claim economics shift toward replacement at this tier.
+
+#### Performance bass boat or wakeboard boat, 175 to 250 HP, value $40K to $80K
+
+**$900 - $1,800 / year**
+
+Higher premiums driven by speed, tournament use, and theft attractiveness. Lock your hubs.
+
+#### New Legend or similar package, 150 to 300 HP, value $50K to $120K
+
+**$1,200 - $2,400 / year**
+
+Most common bracket for HBW package customers. Often a financing-lender requirement during the loan term.
+
+#### Pontoon, 90 to 250 HP, value $40K to $90K
+
+**$600 - $1,300 / year**
+
+Pontoons typically insure cheaper than equivalent-value V-hulls because of lower speeds and lower-collision-loss history. Worth quoting separately if switching from a runabout.
+
+#### Quick rule of thumb
+
+**Roughly 1.5 to 2.5% of declared hull value per year**
+
+*Premiums vary by insurer, boating experience, location, claim history, and whether you bundle with home or auto. These ranges assume Ontario residency, freshwater use, and no major prior claims. Get 3 quotes minimum.*
 
 > **For Legend Boats customers:** If you bought a Legend through HBW, Legend Boats has a partner insurance page at [insurance.legendboats.com](https://insurance.legendboats.com) set up specifically for Legend customers. Worth a quote alongside your other 3.
 
@@ -110,8 +128,6 @@ Ranges based on typical 2026 Ontario quotes:
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Cost factors:
 
 - **Boat value**: bigger drives premium up
@@ -154,7 +170,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
 
 - **Hit a deadhead and damage your prop shaft?** Insurance.
-- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Premier, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **ECU dies at 4 years old, 200 hours?** Mercury Product Protection may apply if you bought an eligible Platinum plan and the failure is covered. See our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario).
 - **Boat stolen from your driveway?** Insurance.
 - **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
 
@@ -162,7 +178,6 @@ We recommend both for any motor worth $5,000+.
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
 
 ## FAQs
@@ -190,23 +205,22 @@ No. Insurance is sold by licensed brokers. We can recommend you find a marine sp
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 - [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

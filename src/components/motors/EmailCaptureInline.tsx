@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Check, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -92,12 +93,21 @@ export function EmailCaptureInline() {
               </div>
 
               <div className="flex gap-2">
+                <label htmlFor="pricing-updates-email" className="sr-only">
+                  Email address for pricing and deal updates
+                </label>
                 <input
+                  id="pricing-updates-email"
+                  name="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
+                  autoComplete="email"
+                  aria-required="true"
+                  aria-invalid={status === 'error'}
+                  aria-describedby={status === 'error' ? 'pricing-updates-error pricing-updates-privacy' : 'pricing-updates-privacy'}
                   className="flex-1 h-10 rounded-lg border border-gray-300 bg-white px-3 
                     text-sm placeholder:text-muted-foreground
                     focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent
@@ -121,13 +131,16 @@ export function EmailCaptureInline() {
               </div>
 
               {status === 'error' && (
-                <p className="text-xs text-destructive">
+                <p id="pricing-updates-error" role="alert" className="text-xs text-destructive">
                   Something went wrong. Please try again.
                 </p>
               )}
 
-              <p className="text-[11px] text-muted-foreground">
-                No spam. Unsubscribe anytime.
+              <p id="pricing-updates-privacy" className="text-[11px] text-muted-foreground">
+                Pricing and deal emails from Harris Boat Works. Unsubscribe anytime.{' '}
+                <Link to="/privacy" className="font-semibold text-foreground underline decoration-repower-gold/70 underline-offset-2 hover:decoration-repower-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/50">
+                  Privacy
+                </Link>
               </p>
             </motion.form>
           )}
@@ -138,7 +151,7 @@ export function EmailCaptureInline() {
       {status !== 'success' && (
         <button
           onClick={() => setDismissed(true)}
-          className="absolute top-2 right-6 text-muted-foreground hover:text-gray-500 text-xs p-1"
+          className="absolute top-2 right-6 text-muted-foreground hover:text-gray-500 text-xs p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/50"
           aria-label="Dismiss"
         >
           ✕

@@ -92,8 +92,37 @@ async function checkActivePromotion(page) {
   await page.getByText('Factory Rebate: $250 auto-applied', { exact: false }).waitFor();
   await page.getByText('Offer ends August 31, 2026', { exact: false }).waitFor();
 
-  // Exercise both branches, then opt into promo financing. The 24-month rate
-  // must persist even when the customer never clicks the rate tile itself.
+  // Exercise the cash branch first. The rebate must remain applied and no
+  // financing language should leak into the summary.
+  await page.getByRole('heading', { name: /^Cash Purchase$/i })
+    .locator('xpath=ancestor::button[1]')
+    .click();
+  const cashContinueButton = page.getByRole('button', { name: /Continue to Quote/i });
+  await cashContinueButton.click();
+  await page.waitForURL(/\/quote\/summary/);
+
+  const cashSkipIntro = page.getByRole('button', { name: /Skip intro/i });
+  if (await cashSkipIntro.isVisible().catch(() => false)) {
+    await cashSkipIntro.click();
+  }
+
+  await page.getByText('Cash purchase selected', { exact: true }).waitFor();
+  const cashPageText = await page.locator('body').innerText();
+  if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$250/.test(cashPageText)) {
+    throw new Error('Cash summary did not retain the $250 Mercury rebate line item');
+  }
+  if (/From \$[\d,]+\/(?:month|mo)/.test(cashPageText)) {
+    throw new Error('Cash summary still displayed a monthly financing payment');
+  }
+  if (await page.getByRole('button', { name: /Apply for Financing/i }).count()) {
+    throw new Error('Cash summary still displayed an Apply for Financing button');
+  }
+
+  await page.getByRole('button', { name: /^Promo$/i }).click();
+  await page.waitForURL(/\/quote\/promo-selection/);
+
+  // Then opt into promo financing. The 24-month rate must persist even when
+  // the customer never clicks the rate tile itself.
   await page.getByRole('heading', { name: /^Standard TD Financing$/i })
     .locator('xpath=ancestor::button[1]')
     .click();
@@ -101,11 +130,11 @@ async function checkActivePromotion(page) {
     .locator('xpath=ancestor::button[1]')
     .click();
 
-  const continueButton = page.getByRole('button', { name: /Apply Bonus & Continue/i });
+  const continueButton = page.getByRole('button', { name: /Continue to Quote/i });
   await continueButton.waitFor({ state: 'visible' });
-  if (await continueButton.isDisabled()) {
-    throw new Error('Promo Continue button stayed disabled after selecting promotional financing');
-  }
+  // Playwright's click waits for the React effect that persists the default
+  // 24-month rate and enables the button. An immediate isDisabled() check races
+  // that effect even though a real customer click succeeds a moment later.
   await continueButton.click();
   await page.waitForURL(/\/quote\/summary/);
 

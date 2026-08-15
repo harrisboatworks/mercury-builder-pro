@@ -25,6 +25,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: '与中肯解答。',
   heroSubhead:
     '来自 Rice Lake 一家家庭式 Mercury 经销商的实战建议。换装新机、故障排查、如何选对舷外机——由真正动手装机的人撰写。',
+  skipLinkLabel: '跳至博客内容',
   searchLabel: '搜索指南',
   searchPlaceholder: '搜索指南、型号或主题…',
   trustItems: [],
@@ -94,7 +95,6 @@ export default function BlogIndexZh() {
         />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
-        <link rel="alternate" hrefLang="zh-Hant" href={`${SITE_URL}/blog/zh-hant`} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content="Mercury 中文指南 — Harris Boat Works" />

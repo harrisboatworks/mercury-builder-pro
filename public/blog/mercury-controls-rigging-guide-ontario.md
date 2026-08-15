@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-07-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-07-09
+date_modified: 2026-08-08
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Controls Rigging Guide 2026
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
@@ -46,7 +47,7 @@ Three patterns come up most often at Harris Boat Works:
 
 **Reusing old controls that don't match the new motor.** A 1998 binnacle from a carbureted 90 HP does not always work cleanly on a 2026 Mercury 90 EFI. Corroded wiring and a worn kill switch can turn into a mid-season service call.
 
-**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected to old analog gauges gives up roughly 80% of what the motor knows about itself, fault codes, fuel economy data, engine hours, advance warning before something fails.
+**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected only to old analog gauges can hide much of the information the motor makes available, including fault codes, fuel economy data, engine hours and advance warnings.
 
 **Underspeccing steering on a V6.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is the standard recommendation for anything 115 HP and up.
 
@@ -105,28 +106,31 @@ Electric pump does most of the work. One-finger steering at any speed. Recommend
 
 ---
 
-::decision-card
-eyebrow: Controls upgrade decision
-heading: Is digital throttle worth the upgrade?
-subhead: DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
-leftLabel: Stick with mechanical cable controls
-leftCriteria:
-  - Motor is 90 HP or smaller
-  - Existing rigging is in good shape
-  - You're not planning to upgrade the boat soon
-  - Budget matters more than the smoother feel
-leftOutcome: Cable controls, $0 to $400 to refresh
-leftVariant: alternative
-rightLabel: Go to DTS digital controls
-rightCriteria:
-  - Motor is 100+ HP, new build or full repower
-  - You want smooth idle shifting and joystick-ready wiring
-  - You plan to keep the boat 7+ years
-  - You'd add VesselView or autopilot later
-rightOutcome: DTS controls, $1,500 to $3,000 extra
-rightVariant: recommended
-whenInDoubt: If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
-::
+*Controls upgrade decision*
+
+### Is digital throttle worth the upgrade?
+
+DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
+
+#### Stick with mechanical cable controls
+
+- Motor is 90 HP or smaller
+- Existing rigging is in good shape
+- You're not planning to upgrade the boat soon
+- Budget matters more than the smoother feel
+
+**Cable controls, $0 to $400 to refresh**
+
+#### Go to DTS digital controls
+
+- Motor is 100+ HP, new build or full repower
+- You want smooth idle shifting and joystick-ready wiring
+- You plan to keep the boat 7+ years
+- You'd add VesselView or autopilot later
+
+**DTS controls, $1,500 to $3,000 extra**
+
+If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
 
 ## Gauges: Analog, SmartCraft Connect, or VesselView
 
@@ -188,7 +192,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 ## What HBW Includes vs. Charges Separately
 
-**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, a review of the model-specific maintenance schedule, and [Mercury Canada](https://www.mercurymarine.com/ca/en/) warranty registration.
 
 **Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200 to $400).
 
@@ -210,21 +214,13 @@ The three big ones, reusing tired controls, skipping the gauge upgrade, and unde
 
 ## What we see at HBW
 
-The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
+The controls-and-rigging audit is the first thing we do on every repower quote. In our shop experience, many motors that look fine to keep the existing controls still need new cables, shift linkage or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
 
 The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
 It's also why we quote the installed number, not the box-only number. The price on a competitor's website is usually MSRP without HST, controls, rigging, install, or prop. Half our first conversations are clarifying what's actually included.
 
 ---
-
----
-
-## Related reading
-- Mercury SmartCraft Connect Guide Ontario
-- Mercury Outboard Financing Ontario
-- Mercury Repower Cost Ontario 2026
-- Mercury VesselView Guide
 
 ## About the author
 
@@ -239,8 +235,6 @@ Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 ---
 
 If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-complete-guide-2026) covers when CT makes sense.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
@@ -287,23 +281,22 @@ Yes. If your old Mercury is in workable condition we'll value it at trade-in tim
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
+- [Will SmartCraft Connect Work With My Mercury? Eligibility Check](/blog/mercury-smartcraft-connect-eligibility-2026), SmartCraft Connect eligibility
+- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
+- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

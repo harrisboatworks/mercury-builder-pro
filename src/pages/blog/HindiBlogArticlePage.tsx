@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -12,6 +14,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import {
   Accordion,
   AccordionContent,
@@ -240,7 +243,10 @@ export default function HindiBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/hi/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -292,8 +298,6 @@ export default function HindiBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="hi" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="hi_IN" />
@@ -302,6 +306,8 @@ export default function HindiBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogOgImageMeta image={article.socialImage || article.image} />
+      <BlogHreflangLinks locale="hi" slug={article.slug} />
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -341,7 +347,7 @@ export default function HindiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 से Mercury डीलर" />
+          <AuthorByline name="Jay Harris" title="Harris Boat Works के मालिक" />
         </div>
 
         {tocItems.length > 2 && (
@@ -351,7 +357,7 @@ export default function HindiBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (

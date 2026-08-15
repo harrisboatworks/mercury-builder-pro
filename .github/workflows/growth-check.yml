@@ -34,7 +34,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      # No npm install needed — script uses only Node built-ins (fetch, URL).
+          cache: 'npm'
+      - name: Install growth-check dependencies
+        run: npm ci --ignore-scripts
       - name: Run growth-agent live check
         run: node scripts/growth-agent-live-check.mjs
         env:

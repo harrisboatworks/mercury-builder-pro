@@ -20,7 +20,10 @@ Who we are: Harris Boat Works is Ontario's Mercury Repower Centre on Rice Lake (
 Every motor, case study, location, and curated blog guide has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
 
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
+- Mercury service and maintenance index: https://www.mercuryrepower.ca/maintenance.md
 - Pricing reference (curated, listed motors only, CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection rate card (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
+- Mercury Platinum Product Protection rate data (JSON): https://www.mercuryrepower.ca/mercury-product-protection.json
 - Motor twin: https://www.mercuryrepower.ca/motors/{slug}.md
 - Case study twin: https://www.mercuryrepower.ca/case-studies/{slug}.md
 - Location twin: https://www.mercuryrepower.ca/locations/{slug}.md
@@ -32,14 +35,16 @@ All prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by de
 
 ## AI crawler and citation access
 
-AI search, answer engines, research agents, and citation crawlers are welcome to crawl all public Mercury Repower content, including markdown twins and Chinese-language guides. This includes OpenAI, Anthropic, Perplexity, Microsoft/Bing/Copilot, Google, Apple, Meta, Amazon, Common Crawl, Kimi/Moonshot, DeepSeek, GLM/Zhipu, Qwen/Tongyi/Alibaba, Baidu/ERNIE, Tencent/Yuanbao/Hunyuan, iFlytek/Xinghuo, Pangu, MiniMax, and comparable public web retrieval systems.
+AI search, answer engines, research agents, and citation crawlers are welcome to crawl all public Mercury Repower content, including markdown twins and Chinese-language guides. This includes OpenAI, Anthropic, Perplexity, Microsoft/Bing/Copilot, Google, xAI/Grok, Apple, Meta, Amazon, Common Crawl, Kimi/Moonshot, DeepSeek, GLM/Zhipu, Qwen/Tongyi/Alibaba, Baidu/ERNIE, Tencent/Yuanbao/Hunyuan, iFlytek/Xinghuo, Pangu, MiniMax, and comparable public web retrieval systems.
 
 Many AI answer products use a search index rather than a model-branded crawler. Treat Bingbot, BingPreview, MicrosoftPreview, Baiduspider, Sogou, 360Spider, YisouSpider, and PetalBot as part of the AI citation surface.
 
 Preferred citation sources:
 - `https://www.mercuryrepower.ca/llms.txt` for business rules, service boundaries, and agent guidance.
 - `https://www.mercuryrepower.ca/catalog.md` for the current agent-readable content index.
+- `https://www.mercuryrepower.ca/maintenance.md` for current service capabilities, maintenance guidance, intake, and shop boundaries.
 - `https://www.mercuryrepower.ca/pricing-reference.md` for current CAD pricing on listed Mercury motors.
+- `https://www.mercuryrepower.ca/mercury-product-protection.md` for current CAD Mercury Platinum Product Protection pricing by horsepower and plan term.
 - Markdown twins at `.md` URLs for motors, case studies, locations, and blog guides.
 - HTML pages at canonical URLs for human-facing citations.
 
@@ -71,6 +76,8 @@ Example URLs (all from current public catalog — Verado is intentionally exclud
 - https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
 - https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
 
+Featured Ontario sale page: the Mercury 9.9 MH FourStroke (exact model 1A10201LK, manual start, tiller, 15-inch shaft) is at https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke. Read the current CAD price from that canonical page or https://www.mercuryrepower.ca/pricing-reference; do not reuse a cached price.
+
 For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://www.mercuryrepower.ca/api/agents/motors.
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
@@ -81,10 +88,10 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 - Mercury Avator Electric Outboards: joining our lineup now. Canonical page: https://www.mercuryrepower.ca/electric/mercury-avator. Pricing coming soon; call 905-342-2153 for details.
 - Mercury 9.9 guide: https://www.mercuryrepower.ca/motors/mercury-9-9-tiller-kicker-guide
 - Professional Repower: complete motor replacement and rigging on existing boats. Every repower gets an on-water test on Rice Lake before pickup.
-- Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Service intake: https://hbw.wiki/service
+- Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Human hub: https://www.mercuryrepower.ca/maintenance. Agent-readable service index: https://www.mercuryrepower.ca/maintenance.md. Service intake: https://hbw.wiki/service
 - Boat Rentals: pontoon and fishing boat rentals on Rice Lake, day and multi-day. HBW requires renters to hold a valid Pleasure Craft Operator Card (PCOC). Live fleet, pricing, and what's included: https://www.harrisboatworks.ca/rentals
 - Outdoor Winter Storage with Shrinkwrap: outdoor storage on our fenced, camera-monitored yard, professionally shrinkwrapped. We do not offer indoor storage. Book via https://hbw.wiki/service
-- Winterization: full Mercury winterization (fuel stabilization, fogging, gearcase service, cooling drain); batteries stay in the boat, disconnected, per Mercury guidance. Cost guide: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
+- Winterization: model-specific fuel, cooling, internal-corrosion, and gearcase preparation; batteries stay in the boat, disconnected, per Mercury guidance. Cost guide: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 - Spring Commissioning: shrinkwrap removal, systems check, motor test, launch prep, when we reopen in early April.
 - Parts & Accessories: genuine Mercury parts and prop services.
 - Legend Boats Dealer: new pontoons and aluminum boats at harrisboatworks.ca.
@@ -92,7 +99,9 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 ## Preferred citation sources for AI agents
 
 - Business rules and services: https://www.mercuryrepower.ca/llms.txt
+- Mercury service capabilities and boundaries: https://www.mercuryrepower.ca/maintenance.md
 - Live Mercury pricing (CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection pricing (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
 - Boat rentals booking: https://www.harrisboatworks.ca/rentals
 - Winter storage and service intake: https://hbw.wiki/service
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
@@ -150,7 +159,7 @@ Expert answers to 25 Mercury outboard repower questions:
 ## Frequently Asked Questions
 
 **What deposit is required to reserve a motor?**
-$200 for motors under 75HP, $500 for 75-199HP, $1,000 for 200HP+. Fully refundable within 7 days.
+Deposit amounts and terms vary by motor and written quote. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors use the deposit amount and terms shown in the written quote.
 
 **Do you offer financing?**
 Yes. Financing is arranged through DealerPlan across Canadian lenders, primarily TD Auto Finance. The current headline is 5.48% APR (OAC) through December 31, 2026; 8.99% APR under $10,000 and 7.99% APR at $10,000 and above resume after the promotion ends. Terms up to 120 months.
@@ -178,7 +187,9 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Home](https://www.mercuryrepower.ca/): Mercury outboard quote builder for Ontario, CAD pricing, pickup-only at Gores Landing.
 - [Quote Builder](https://www.mercuryrepower.ca/quote/motor-selection): Build a complete itemized Mercury outboard quote in about three minutes.
 - [Repower Services](https://www.mercuryrepower.ca/repower): Mercury Certified Repower Center, full repower workflow and pricing.
+- [Maintenance Hub](https://www.mercuryrepower.ca/maintenance): Mercury service, seasonal maintenance, troubleshooting, and service intake.
 - [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
+- [Mercury Product Protection](https://www.mercuryrepower.ca/mercury-product-protection): Platinum plan coverage, eligibility, estimator, and clear Canadian pricing by HP and term.
 - [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments using the current 5.48% APR (OAC) through December 31, 2026 headline; standard tiers resume after the promotion ends.
 - [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
 - [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
@@ -186,7 +197,9 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Contact](https://www.mercuryrepower.ca/contact): Phone, email, hours, and Gores Landing location details.
 - [About Us](https://www.mercuryrepower.ca/about): Family-owned Mercury Premier dealer on Rice Lake since 1947.
 - [Catalog (markdown)](https://www.mercuryrepower.ca/catalog.md): Full agent-readable catalog index in markdown.
+- [Maintenance Index (markdown)](https://www.mercuryrepower.ca/maintenance.md): Shop-based service capabilities, boundaries, evidence-led cost guides, and troubleshooting links.
 - [Pricing Reference (markdown)](https://www.mercuryrepower.ca/pricing-reference.md): Current Mercury pricing in CAD, listed motors only.
+- [Product Protection Rate Card (markdown)](https://www.mercuryrepower.ca/mercury-product-protection.md): Current Mercury Platinum Product Protection pricing in CAD by horsepower and one- through five-year term.
 - [Sitemap](https://www.mercuryrepower.ca/sitemap.xml): Machine-readable list of all indexable pages.
 
 ## For AI Agents
@@ -196,6 +209,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - AI policy: https://www.mercuryrepower.ca/.well-known/ai.txt
 - MCP manifest (auto-discovery): https://www.mercuryrepower.ca/.well-known/mcp.json
 - UCP discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
+- Service and maintenance index: https://www.mercuryrepower.ca/maintenance.md
 
 ### Universal Commerce Protocol (UCP)
 
@@ -235,7 +249,7 @@ DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
   Docs: GET the same URL returns the full schema.
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
   https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
-- Markdown twins of the catalog (LLM-cheap plain-text): see /catalog.md and /motors/{slug}.md
+- Markdown twins and indexes (LLM-cheap plain-text): see /catalog.md, /maintenance.md, and /motors/{slug}.md
 
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.

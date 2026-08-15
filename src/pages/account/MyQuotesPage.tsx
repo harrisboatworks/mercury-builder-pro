@@ -13,6 +13,7 @@ import { formatDistanceToNow } from "date-fns";
 import { useToast } from "@/hooks/use-toast";
 
 import { useNoIndex } from '@/hooks/useNoIndex';
+import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 interface SavedQuote {
   id: string;
   email: string;
@@ -87,6 +88,8 @@ export default function MyQuotesPage() {
   };
 
   const getQuoteTotal = (quoteState: any) => {
+    if (quoteState?.pdfSnapshot?.pricing?.totalCashPrice) return quoteState.pdfSnapshot.pricing.totalCashPrice;
+    if (quoteState?.frozenPricing?.total) return quoteState.frozenPricing.total;
     // Use pricing data if available (most accurate)
     if (quoteState?.pricing?.totalCashPrice) return quoteState.pricing.totalCashPrice;
     
@@ -110,30 +113,17 @@ export default function MyQuotesPage() {
         const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
         
         const qs = quote.quote_state;
-        const motor = qs?.motor || qs?.selectedMotor || {};
-        const pricing = qs?.pricing || {};
+        const snapshot = buildLegacyQuotePdfSnapshot(qs, quote.created_at);
+        if (!snapshot) {
+          throw new Error('This older quote does not contain an exact price snapshot. Reopen it to refresh pricing before creating a PDF.');
+        }
         
         const pdfData = {
           quoteNumber: `HBW-${quote.id.slice(0, 6).toUpperCase()}`,
           customerName: qs?.customerName || quote.email,
           customerEmail: quote.email,
           customerPhone: qs?.customerPhone || '',
-          motor: {
-            model: motor.model || 'Mercury Motor',
-            hp: motor.hp || motor.horsepower || 0,
-            msrp: motor.msrp || 0,
-            base_price: motor.base_price || motor.msrp || 0,
-            sale_price: motor.sale_price || motor.msrp || 0,
-            dealer_price: motor.dealer_price || motor.msrp || 0,
-            model_year: motor.year || motor.model_year || 2026,
-            category: motor.category || 'FourStroke',
-          },
-          selectedPackage: qs?.selectedPackage,
-          accessoryBreakdown: qs?.accessoryBreakdown || [],
-          pricing,
-          includesInstallation: qs?.purchasePath === 'installed',
-          selectedPromoOption: qs?.selectedPromoOption,
-          selectedPromoValue: qs?.selectedPromoValue,
+          snapshot,
           ...(quote.deposit_status === 'paid' && quote.deposit_amount ? {
             depositInfo: {
               amount: quote.deposit_amount,
@@ -150,7 +140,11 @@ export default function MyQuotesPage() {
         downloadPDF(pdfUrl, `Mercury-Quote-${pdfData.quoteNumber}.pdf`);
       } catch (err) {
         console.error('Error generating PDF:', err);
-        toast({ title: "Error", description: "Failed to generate PDF.", variant: "destructive" });
+        toast({
+          title: "PDF not available",
+          description: err instanceof Error ? err.message : "Failed to generate PDF.",
+          variant: "destructive",
+        });
       } finally {
         setDownloadingId(null);
       }

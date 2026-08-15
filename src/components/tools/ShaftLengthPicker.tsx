@@ -55,7 +55,7 @@ export function ShaftLengthPicker() {
 
   const colorBar =
     result?.shaftClass === 'edge'
-      ? 'bg-repower-red'
+      ? 'bg-repower-mercury-red'
       : 'bg-repower-navy-900';
 
   return (
@@ -140,7 +140,7 @@ export function ShaftLengthPicker() {
                 {result.queryParam ? (
                   <Button
                     asChild
-                    className="bg-repower-red hover:bg-repower-red/90 text-white"
+                    className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-white"
                   >
                     <Link to={`/quote/motor-selection?shaft=${result.queryParam}`}>
                       Build a Quote with the Right Shaft
@@ -149,7 +149,7 @@ export function ShaftLengthPicker() {
                 ) : (
                   <Button
                     asChild
-                    className="bg-repower-red hover:bg-repower-red/90 text-white"
+                    className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-white"
                   >
                     <a href="tel:9053422153">
                       <Phone className="h-4 w-4 mr-2" aria-hidden="true" />

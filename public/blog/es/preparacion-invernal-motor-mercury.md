@@ -4,9 +4,9 @@ last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Guía de preparación invernal para motores Mercury en Ontario"
 description: "Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging."
 category: "Mantenimiento"
@@ -16,6 +16,7 @@ keywords: ["preparar motor fuera de borda invierno Ontario","winterization motor
 author: Harris Boat Works
 content_type: blog_article
 language: es
+revenue_driver: service
 ---
 
 # Guía de preparación invernal para motores Mercury en Ontario
@@ -24,7 +25,7 @@ language: es
 
 **Category:** Mantenimiento  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Última revisión:** 2026-06-19  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
 
@@ -135,28 +136,6 @@ En Harris Boat Works realizamos más de 584 preparaciones invernales por tempora
 
 ---
 
-## Preguntas frecuentes
-
-**¿Puedo hacer la preparación invernal yo mismo?** 
-Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
-
-**¿Dónde puedo conseguir combustible sin etanol?** 
-Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
-
-**¿Cómo reservo la preparación invernal?** 
-La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
-
-**¿Los pasos son iguales para todos los motores Mercury?** 
-Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
-
-**¿Cuándo es el mejor momento para hacer la preparación invernal?** 
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
-
-**¿Cuánto tiempo tarda la preparación invernal?** 
-Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
-
----
-
 ## Contáctenos
 
 **Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
@@ -190,16 +169,15 @@ En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño i
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

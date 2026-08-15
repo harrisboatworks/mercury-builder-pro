@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface BlogHeroPictureProps {
   /** Hero source. When omitted, the component renders nothing (article displays with no hero). */
@@ -36,6 +37,7 @@ export function BlogHeroPicture({
   wrapperClassName = 'aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10',
   photoSlot,
 }: BlogHeroPictureProps) {
+  const [useOriginal, setUseOriginal] = useState(false);
   const [errored, setErrored] = useState(false);
 
   if (!image) return null;
@@ -50,11 +52,7 @@ export function BlogHeroPicture({
     </div>
   );
 
-  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
-  const base = isLocalRaster ? image.replace(/\.(png|jpe?g)$/i, '') : null;
-  const webpSrcSet = base
-    ? `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`
-    : null;
+  const webpSrcSet = getResponsiveWebpSrcSet(image);
 
   return (
     <div className={wrapperClassName} {...(photoSlot ? { 'data-photo-slot': photoSlot } : {})}>
@@ -62,18 +60,25 @@ export function BlogHeroPicture({
         fallback ?? defaultFallback
       ) : (
         <picture>
-          {webpSrcSet && (
+          {!useOriginal && webpSrcSet && (
             <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
           )}
           <img
-            src={optimizeImage(image, 1280)}
-            srcSet={buildSrcSet(image)}
+            src={useOriginal ? image : optimizeImage(image, 1280)}
+            srcSet={useOriginal ? undefined : buildSrcSet(image)}
             sizes={sizes}
             alt={alt}
             className={className}
             loading="eager"
             fetchPriority="high"
-            onError={() => setErrored(true)}
+            onError={() => {
+              if (!useOriginal && optimizeImage(image, 1280) !== image) {
+                setUseOriginal(true);
+                return;
+              }
+
+              setErrored(true);
+            }}
           />
         </picture>
       )}

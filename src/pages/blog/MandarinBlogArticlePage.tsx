@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -11,10 +13,10 @@ import {
   getMandarinArticleBySlug,
   mandarinBlogArticles,
 } from '@/data/mandarinBlogArticles';
-import { ZH_HANT_TO_HANS_SLUG } from '@/data/traditionalChineseBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
@@ -47,14 +49,10 @@ export default function MandarinBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/zh/${article.slug}`;
-  // If a zh-Hant pilot counterpart exists, expose it via hreflang. Pilot pages
-  // are noindex themselves but the bidirectional link still helps Google
-  // understand the relationship for any future indexable Traditional version.
-  const zhHantSlug = Object.keys(ZH_HANT_TO_HANS_SLUG).find(
-    (k) => ZH_HANT_TO_HANS_SLUG[k] === article.slug,
-  );
-  const zhHantUrl = zhHantSlug ? `${SITE_URL}/blog/zh-hant/${zhHantSlug}` : null;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = mandarinBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -109,10 +107,6 @@ export default function MandarinBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="zh-Hans" href={url} />
-        {zhHantUrl && <link rel="alternate" hrefLang="zh-Hant" href={zhHantUrl} />}
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <link rel="alternate" hrefLang="x-default" href={url} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="zh_CN" />
@@ -121,6 +115,8 @@ export default function MandarinBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogOgImageMeta image={article.socialImage || article.image} />
+      <BlogHreflangLinks locale="zh" slug={article.slug} />
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 
@@ -176,7 +172,7 @@ export default function MandarinBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="1965 年起 Mercury 经销商" />
+                <AuthorByline name="Jay Harris" title="Harris Boat Works 负责人" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -218,16 +214,8 @@ export default function MandarinBlogArticlePage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:常见问题|Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-                    '\n',
-                  );
-                }
-                return c;
-              })()}
+              articleSlug={article.slug}
+              content={cleanedContent.replace(/^\s*#\s+.+\n+/, '')}
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains
                 // the only h1 on the page (matches EN BlogArticle.tsx behavior).
@@ -261,13 +249,18 @@ export default function MandarinBlogArticlePage() {
                     containerClassName="my-6"
                   />
                 ),
+                table: ({ node, ...props }) => (
+                  <div className="my-6 w-full overflow-x-auto overscroll-x-contain">
+                    <table {...props} />
+                  </div>
+                ),
               }}
             />
           </div>
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Premier Dealer · Rice Lake, Ontario" />
+            <AuthorByline title="Harris Boat Works 负责人" />
           </div>
 
           {/* FAQ Section */}

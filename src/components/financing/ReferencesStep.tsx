@@ -12,6 +12,7 @@ import { AlertCircle, InfoIcon, UserCheck, Users } from 'lucide-react';
 import { MaskedInput } from './MaskedInput';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
+import { trackClarityValidationBlocked } from '@/lib/analytics';
 
 export function ReferencesStep() {
   const { state, dispatch } = useFinancing();
@@ -28,6 +29,10 @@ export function ReferencesStep() {
     dispatch({ type: 'SET_CURRENT_STEP', payload: 7 });
   };
 
+  const onInvalid = () => {
+    trackClarityValidationBlocked('financing', 'references_incomplete');
+  };
+
   const handleBack = () => {
     dispatch({ type: 'SET_CURRENT_STEP', payload: 5 });
   };
@@ -41,7 +46,7 @@ export function ReferencesStep() {
         </AlertDescription>
       </Alert>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit, onInvalid)} className="space-y-6">
         {/* Reference 1 */}
         <Card>
           <CardContent className="pt-6 space-y-4">
@@ -245,7 +250,7 @@ export function ReferencesStep() {
 
         <MobileFormNavigation
           onBack={handleBack}
-          onNext={handleSubmit(onSubmit)}
+          onNext={handleSubmit(onSubmit, onInvalid)}
           nextLabel="Continue to Review"
         />
       </form>

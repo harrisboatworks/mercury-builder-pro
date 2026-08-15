@@ -4,9 +4,9 @@ last_updated: 2026-07-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Lake Simcoe 华人钓友船外机指南"
 description: "针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。"
 category: "钓鱼指南"
@@ -16,6 +16,7 @@ keywords: ["Lake Simcoe 华人钓鱼 Mercury","Lake Simcoe Chinese anglers","Mer
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # Lake Simcoe 华人钓友船外机指南
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 钓鱼指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-04  
+**最后审核:** 2026-07-04  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 
@@ -143,16 +144,15 @@ Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

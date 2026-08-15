@@ -1,6 +1,10 @@
 // @vitest-environment happy-dom
 import { describe, it, expect } from 'vitest';
-import { calculateMonthlyPayment, getDefaultFinancingRate } from './finance';
+import {
+  calculateMonthlyPayment,
+  getDefaultFinancingRate,
+  getFinancingTermOptions,
+} from './finance';
 
 describe('calculateMonthlyPayment — promo financing selection', () => {
   it('uses the customer-selected promo rate and term when both are provided', () => {
@@ -37,5 +41,10 @@ describe('calculateMonthlyPayment — promo financing selection', () => {
     // The two paths must produce different numbers so we know the selection
     // actually affects the summary display.
     expect(standard.payment).not.toBe(opted.payment);
+  });
+
+  it('surfaces the full 240-month amortization only for qualifying higher-value amounts', () => {
+    expect(getFinancingTermOptions(99_999)).toEqual([84, 120, 180]);
+    expect(getFinancingTermOptions(100_000)).toEqual([120, 180, 240]);
   });
 });

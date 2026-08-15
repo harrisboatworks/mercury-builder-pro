@@ -88,10 +88,6 @@ export default function FrenchLanding() {
       <Helmet>
         <title>Concessionnaire Mercury Premier Ontario | Harris Boat Works</title>
         <meta name="description" content="Harris Boat Works, concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
-        <link rel="canonical" href={`${SITE_URL}/fr`} />
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Premier" />
         <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Premier en Ontario." />
         <meta property="og:url" content={`${SITE_URL}/fr`} />
@@ -143,7 +139,7 @@ export default function FrenchLanding() {
               { icon: Ship, title: "Vente et remotorisations", desc: "Gamme complète Mercury, de 2,5 HP aux séries Verado et V8 400R." },
               { icon: Wrench, title: "Entretien et réparations", desc: "Atelier de service complet pour moteurs Mercury et Mercruiser." },
               { icon: Warehouse, title: "Entreposage hivernal", desc: "Des centaines d'embarcations passent l'hiver avec nous chaque année." },
-              { icon: Anchor, title: "Location d'embarcations", desc: "Neuf embarcations disponibles sur le lac Rice." },
+              { icon: Anchor, title: "Location d'embarcations", desc: "Pontons et bateaux de pêche disponibles sur le lac Rice; consultez la flotte actuelle en ligne." },
               { icon: Fuel, title: "Carburant sans éthanol", desc: "Essence sans éthanol sur place, idéal pour les moteurs hors-bord." },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-3 p-4 rounded-lg bg-muted/30">
@@ -267,7 +263,7 @@ export default function FrenchLanding() {
         <nav className="mt-8 text-center space-y-2">
           <p className="text-sm font-medium text-foreground mb-3">📖 Articles en français</p>
           <div className="flex flex-col gap-1.5">
-            <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Premier en Ontario →</Link>
+            <Link to="/blog/fr/concessionnaire-mercury-premier-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Premier en Ontario →</Link>
             <Link to="/blog/fr/prix-remotorisation-mercury-ontario" className="text-primary hover:underline text-sm">Combien coûte une remotorisation Mercury? →</Link>
             <Link to="/blog/fr/mercury-115-vs-150-hp-comparaison" className="text-primary hover:underline text-sm">Mercury 115 vs 150 HP : Quel moteur choisir? →</Link>
             <Link to="/blog/fr/hivernisation-moteur-mercury-ontario" className="text-primary hover:underline text-sm">Guide d'hivernisation de votre moteur Mercury →</Link>

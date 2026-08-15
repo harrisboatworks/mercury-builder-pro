@@ -24,6 +24,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getDisplayPrices } from '@/lib/pricing';
 import { getFinancingTerm } from '@/lib/finance';
+import { trackEvent } from '@/lib/analytics';
 
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -224,12 +225,22 @@ function MotorCardPreviewInner({
   const hasValidImage = imageUrl && !imageError;
 
   const handleCardClick = () => {
+    trackEvent('quote_motor_preview_opened', {
+      motor_hp: hpNum ?? null,
+      motor_model: motor?.model || title,
+      source: 'motor_card',
+    });
     triggerHaptic('light');
     setShowDetailsSheet(true);
   };
 
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    trackEvent('quote_motor_preview_opened', {
+      motor_hp: hpNum ?? null,
+      motor_model: motor?.model || title,
+      source: 'build_and_price',
+    });
     triggerHaptic('motorSelected');
     setShowDetailsSheet(true);
   };
@@ -631,7 +642,7 @@ function MotorCardPreviewInner({
               onClick={(e) => e.stopPropagation()}
               className="block text-center text-xs text-repower-navy-900/55 hover:text-repower-navy-900 mt-3 underline-offset-2 hover:underline"
             >
-              Not sure? Call (905) 342-2153 and we'll match it.
+              Have a complete written quote? Call (905) 342-2153 and we'll see what we can do.
             </a>
 
             {/* Monthly payment estimate (kept, secondary) */}

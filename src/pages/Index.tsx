@@ -176,9 +176,7 @@ export default function Index() {
                 Three generations. <em className="not-italic italic text-[#C8102E]">One</em> Mercury dealer.
               </h2>
               <p className="font-sans font-light text-base md:text-lg text-repower-navy-900/75 leading-relaxed mb-6">
-                Jim Harris started rigging Mercurys in Gores Landing in the mid-1960s.
-                We've been a Mercury dealer ever since, same family, same lake, same
-                handshake. The motors got faster. The promise didn't.
+                Harris Boat Works is a <strong className="font-semibold text-repower-navy-900">Mercury Marine Premier dealer</strong> and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization. Jim Harris started rigging Mercurys here in the mid-1960s, and the shop has been doing it ever since. The motors got faster. The promise didn't.
               </p>
               <RepowerCta to="/about" variant="outline" size="md">
                 Read our story <ArrowRight className="h-4 w-4" />

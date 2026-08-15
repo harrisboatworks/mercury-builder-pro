@@ -98,7 +98,7 @@ export default function RepowerProcess() {
       whyHbwIntro="Same techs price the quote and rig the motor. About 85 repowers a year through the same bay."
       whyHbw={[
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'We stock the motors', description: 'No Mercury lead time to wait on for most builds.' },
-        { icon: <ListChecks className="h-5 w-5" aria-hidden="true" />, title: '~85 repowers a year', description: 'Same team, same process, same buyers.' },
+        { icon: <ListChecks className="h-5 w-5" aria-hidden="true" />, title: '~85 repowers a year', description: 'The bay runs the same repower workflow week after week, so the drill is familiar to us and predictable for you.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Same tech quotes and rigs', description: 'No handoffs, no re-explaining.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Water test on Rice Lake', description: 'Real freshwater run before pickup.' },
       ]}
@@ -182,7 +182,7 @@ export default function RepowerProcess() {
           <h2>Why It's Fast</h2>
           <ul>
             <li><strong>We stock the motors.</strong> Most Mercurys most customers ask for are already at Gores Landing. No Mercury lead time to wait on.</li>
-            <li><strong>We do about 85 repowers a year.</strong> Same team, same process, same buyers. Everyone knows the drill.</li>
+            <li><strong>We do about 85 repowers a year.</strong> The bay runs this workflow week after week, so nobody is figuring it out for the first time on your boat.</li>
             <li><strong>Same tech quotes and rigs.</strong> Whoever priced your quote is the one who rigs the motor. No handoffs, no re-explaining.</li>
             <li><strong>Water test on our home lake.</strong> Every motor gets a real Rice Lake run before it goes home.</li>
           </ul>

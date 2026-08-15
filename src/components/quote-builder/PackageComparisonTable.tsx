@@ -13,7 +13,10 @@ interface PackageComparisonTableProps {
   includesProp?: boolean;
   canAddFuelTank?: boolean;
   purchasePath?: 'installed' | 'loose';
+  availablePackageIds?: PackageId[];
 }
+
+type PackageId = 'good' | 'better' | 'best';
 
 interface ComparisonFeature {
   label: string;
@@ -28,8 +31,8 @@ const COMPARISON_FEATURES: ComparisonFeature[] = [
   { label: 'Standard controls & rigging', good: true, better: true, best: true },
   { label: 'Professional installation', good: true, better: true, best: true, conditional: 'isInstalled' },
   { label: 'Marine starting battery', good: false, better: true, best: true, conditional: 'isManualStart' },
-  { label: '7 years total warranty', good: false, better: true, best: true },
-  { label: '8 years total warranty', good: false, better: false, best: true },
+  { label: '7 years combined Mercury coverage', good: false, better: true, best: true },
+  { label: '8 years combined Mercury coverage', good: false, better: false, best: true },
   { label: 'Premium aluminum propeller', good: false, better: false, best: true, conditional: 'includesProp' },
   { label: 'External fuel tank & hose', good: false, better: false, best: true, conditional: 'canAddFuelTank' },
   { label: 'Priority scheduling', good: false, better: true, best: true, conditional: 'isInstalled' },
@@ -57,13 +60,25 @@ export function PackageComparisonTable({
   isManualStart,
   includesProp,
   canAddFuelTank,
-  purchasePath = 'installed'
+  purchasePath = 'installed',
+  availablePackageIds = ['good', 'better', 'best'],
 }: PackageComparisonTableProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic } = useHapticFeedback();
+  const packageIds = (['good', 'better', 'best'] as PackageId[]).filter((packageId) =>
+    availablePackageIds.includes(packageId)
+  );
+  const hasComplete = packageIds.includes('better');
+  const hasPremium = packageIds.includes('best');
+  const timelineMarkers = Array.from(new Set([
+    0,
+    currentCoverageYears,
+    ...(hasComplete ? [7] : []),
+    ...(hasPremium ? [8] : []),
+  ])).sort((a, b) => a - b);
 
   // Handle quick select from column header
   const handleColumnSelect = (packageId: string) => {
@@ -74,11 +89,12 @@ export function PackageComparisonTable({
   // Filter features based on conditions
   const isInstalled = purchasePath === 'installed';
   const filteredFeatures = COMPARISON_FEATURES.filter(feature => {
-    if (feature.conditional === 'isManualStart') return !isManualStart;
-    if (feature.conditional === 'includesProp') return !includesProp;
-    if (feature.conditional === 'canAddFuelTank') return canAddFuelTank;
-    if (feature.conditional === 'isInstalled') return isInstalled;
-    return true;
+    const conditionMatches = feature.conditional === 'isManualStart' ? !isManualStart
+      : feature.conditional === 'includesProp' ? !includesProp
+        : feature.conditional === 'canAddFuelTank' ? canAddFuelTank
+          : feature.conditional === 'isInstalled' ? isInstalled
+            : true;
+    return conditionMatches && packageIds.some((packageId) => feature[packageId]);
   });
 
   // Handle scroll to hide swipe hint
@@ -161,16 +177,14 @@ export function PackageComparisonTable({
                           <th className="sticky left-0 z-10 bg-muted/50 p-3 text-left text-sm font-medium text-muted-foreground min-w-[130px] shadow-[2px_0_4px_rgba(0,0,0,0.05)]">
                             Features
                           </th>
-                          {(['good', 'better', 'best'] as const).map((pkg) => (
+                          {packageIds.map((pkg) => (
                             <th 
                               key={pkg}
-                              onClick={() => handleColumnSelect(pkg)}
                               className={cn(
-                                "p-3 text-center text-sm font-semibold transition-all min-w-[80px] cursor-pointer relative",
-                                "hover:bg-primary/20 active:scale-95",
+                                "p-3 text-center text-sm font-semibold transition-all min-w-[80px] relative",
                                 selectedId && selectedId === pkg 
                                   ? "bg-primary/10 text-primary" 
-                                  : "text-foreground hover:text-primary"
+                                  : "text-foreground"
                               )}
                             >
                               {/* Selected column top indicator */}
@@ -181,8 +195,15 @@ export function PackageComparisonTable({
                                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                                 />
                               )}
-                              <span className="hidden sm:inline">{PACKAGE_LABELS[pkg]}</span>
-                              <span className="sm:hidden">{PACKAGE_LABELS_SHORT[pkg]}</span>
+                              <button
+                                type="button"
+                                onClick={() => handleColumnSelect(pkg)}
+                                className="w-full rounded px-1 py-1 transition-colors hover:bg-primary/20 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                                aria-label={`Select ${PACKAGE_LABELS[pkg]} package`}
+                              >
+                                <span className="hidden sm:inline">{PACKAGE_LABELS[pkg]}</span>
+                                <span className="sm:hidden">{PACKAGE_LABELS_SHORT[pkg]}</span>
+                              </button>
                             </th>
                           ))}
                         </tr>
@@ -204,13 +225,11 @@ export function PackageComparisonTable({
                             )}>
                               {feature.label}
                             </td>
-                            {(['good', 'better', 'best'] as const).map((pkg) => (
+                            {packageIds.map((pkg) => (
                               <td 
                                 key={pkg}
-                                onClick={() => handleColumnSelect(pkg)}
                                 className={cn(
-                                  "p-3 relative cursor-pointer transition-colors",
-                                  "hover:bg-primary/10",
+                                  "p-3 relative transition-colors",
                                   selectedId && selectedId === pkg && "bg-primary/5"
                                 )}
                               >
@@ -268,10 +287,10 @@ export function PackageComparisonTable({
                   />
                 </div>
 
-                {/* Warranty Timeline */}
+                {/* Combined coverage timeline */}
                 <div className="p-4 border-t border-border bg-muted/30">
                   <p className="text-xs text-muted-foreground mb-3 text-center font-medium uppercase tracking-wider">
-                    Warranty Timeline
+                    Coverage Timeline
                   </p>
                   <div className="relative h-8 bg-muted rounded-full overflow-hidden">
                     {/* Base coverage (Essential) */}
@@ -283,25 +302,29 @@ export function PackageComparisonTable({
                     />
                     
                     {/* Complete extension */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${((7 - currentCoverageYears) / 8) * 100}%` }}
-                      transition={{ delay: 0.4, duration: 0.5 }}
-                      className="absolute top-0 h-full bg-primary"
-                      style={{ left: `${(currentCoverageYears / 8) * 100}%` }}
-                    />
+                    {hasComplete && (
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(Math.max(0, 7 - currentCoverageYears) / 8) * 100}%` }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        className="absolute top-0 h-full bg-primary"
+                        style={{ left: `${(currentCoverageYears / 8) * 100}%` }}
+                      />
+                    )}
                     
                     {/* Premium extension */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(1 / 8) * 100}%` }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      className="absolute top-0 h-full bg-repower-cream0 rounded-r-full"
-                      style={{ left: `${(7 / 8) * 100}%` }}
-                    />
+                    {hasPremium && (
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(Math.max(0, 8 - Math.max(currentCoverageYears, hasComplete ? 7 : currentCoverageYears)) / 8) * 100}%` }}
+                        transition={{ delay: 0.6, duration: 0.5 }}
+                        className="absolute top-0 h-full bg-repower-cream0 rounded-r-full"
+                        style={{ left: `${(Math.max(currentCoverageYears, hasComplete ? 7 : currentCoverageYears) / 8) * 100}%` }}
+                      />
+                    )}
 
                     {/* Year markers */}
-                    {[0, 3, 5, 7, 8].map((year) => (
+                    {timelineMarkers.map((year) => (
                       <div
                         key={year}
                         className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center"
@@ -318,14 +341,18 @@ export function PackageComparisonTable({
                       <div className="w-3 h-3 rounded-full bg-repower-cream" />
                       <span className="text-muted-foreground">Essential ({currentCoverageYears}yr)</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-primary" />
-                      <span className="text-muted-foreground">Complete (7yr)</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-repower-cream0" />
-                      <span className="text-muted-foreground">Premium (8yr)</span>
-                    </div>
+                    {hasComplete && (
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-primary" />
+                        <span className="text-muted-foreground">Complete (7yr)</span>
+                      </div>
+                    )}
+                    {hasPremium && (
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-repower-cream0" />
+                        <span className="text-muted-foreground">Premium (8yr)</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

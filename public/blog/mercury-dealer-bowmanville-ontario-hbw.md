@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-08
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake
 
 > Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-08-08  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Bowmanville boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
 
-# Mercury Dealer for Bowmanville: You're Basically Our Neighbour
+## Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
 Let's be clear about the geography: Bowmanville is the closest significant town to us on the 401 corridor. At approximately 35 minutes north via Highway 115 and County Road 28, we're not a destination for you, we're a nearby option.
 
@@ -64,9 +65,9 @@ Most of what we do is repower, replacing aging motors on hulls that still have y
 
 The rigging conversation matters here: what HP, what controls, what prop for your hull and how you use it. We have that conversation before we order anything. The result is a motor that performs the way Mercury designed it to for your specific application.
 
-## Mercury Premier, Third Generation Since 1947
+## Why Bowmanville Boaters Make the Drive
 
-Top tier in Mercury's dealer program. Harris Boat Works has been on Rice Lake since 1947, three generations. Third-generation means the reputation that's built was started before Jay Harris was born, and he intends to keep it. The business depends on the next customer being the referral from the last one.
+Top tier in Mercury's dealer program. The business depends on the next customer being the referral from the last one, so the quote and rigging advice have to hold up after pickup.
 
 ---
 
@@ -82,7 +83,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 35 minutes, year-round storage here is one of the more practical arrangements for Bowmanville boat owners. Drop off in October, pick up in spring, done.
+Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.
@@ -90,8 +91,6 @@ Outdoor with shrinkwrap. No indoor. At 35 minutes, year-round storage here is on
 ---
 
 ## Getting to Harris Boat Works from Bowmanville
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Route:** Highway 401 east (briefly, if coming from west Bowmanville) or straight to Highway 115 north, then County Road 28 north to Gores Landing. From central or east Bowmanville, you're barely on the 401 before you're heading north on 115. Rural roads start almost immediately after you turn north.
 
@@ -124,7 +123,7 @@ This is what a dealer relationship is supposed to feel like.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -137,10 +136,8 @@ The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north
 Why Bowmanville boaters choose HBW:
 
 - **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
-- **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
+- **Seasonal convenience.** Many Bowmanville customers bring their boat to HBW for fall winterization and outdoor storage, then pick it up after we reopen in early April. One marina for the boating-season handoffs that matter.
 - **Mercury Premier depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -160,24 +157,23 @@ Yes. Clarington and Newcastle are within the same drive time. We have customers 
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer Brampton Ontario HBW](/blog/mercury-dealer-brampton-ontario-hbw), Mercury dealer for Brampton
+- [Mercury Dealer Burlington Ontario HBW](/blog/mercury-dealer-burlington-ontario-hbw), Mercury dealer for Burlington
+- [Mercury Dealer Markham Ontario HBW](/blog/mercury-dealer-markham-ontario-hbw), Mercury dealer for Markham
+- [Mercury Dealer Mississauga HBW](/blog/mercury-dealer-mississauga-ontario-hbw), Mercury dealer for Mississauga
+- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Cheapest Mercury Outboards in Canada (2026)"
 description: "The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Cheapest Mercury Outboards in Canada (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
@@ -37,30 +38,48 @@ language: en-CA
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 > **Quick estimate:** Try our [Repower Cost Estimator](/tools#repower-cost) for a CAD ballpark based on your boat size and current motor. Free, no email required.
-::cost-stack
-heading: What changes the real out-the-door price?
-eyebrow: Where the money goes
-subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
-item1Label: Motor (the big number)
-item1Value: $1,298 - $38,539 CAD
-item1Note: HBW dealer selling price, 2.5MH FourStroke to 300XL FourStroke DTS (canonical 2026-06-03).
-item1Accent: true
-item2Label: Rigging (steering, controls, gauges)
-item2Value: $1,500 - $4,500
-item2Note: Cables, controls, key switches, gauge cluster
-item3Label: Propeller
-item3Value: $300 - $1,200
-item3Note: Aluminum starts around $300, stainless 4-blade can hit $1,200
-item4Label: Labour (install + sea trial)
-item4Value: $1,800 - $3,500
-item4Note: Depends on hours and access, bracket installs add time
-item5Label: HST (13 percent)
-item5Value: $2,000 - $5,500
-item5Note: Applied on motor + parts + labour. Trade-in HST credit can offset this.
-totalLabel: All-in typical range
-totalValue: $17,600 - $49,700 CAD
-caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.
-::
+
+*Where the money goes*
+
+### What changes the real out-the-door price?
+
+A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
+
+#### Motor (the big number)
+
+**$1,298 - $39,402 CAD**
+
+HBW dealer selling price, 2.5MH FourStroke to 300EXLPT Pro XS DTS, as of August 8, 2026. See /pricing-reference for the live list.
+
+#### Rigging (steering, controls, gauges)
+
+**$1,500 - $4,500**
+
+Cables, controls, key switches, gauge cluster
+
+#### Propeller
+
+**$300 - $1,200**
+
+Aluminum starts around $300, stainless 4-blade can hit $1,200
+
+#### Labour (install + sea trial)
+
+**$1,800 - $3,500**
+
+Depends on hours and access, bracket installs add time
+
+#### HST (13 percent)
+
+**$2,000 - $5,500**
+
+Applied on motor + parts + labour. Trade-in HST credit can offset this.
+
+#### All-in typical range
+
+**$17,600 - $49,700 CAD**
+
+*Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.*
 
 ---
 
@@ -88,7 +107,7 @@ Tiller motors 20 HP and under are essentially drop-in installs. The motor is the
 
 Once you cross to 25 HP and up, you're into a full project: controls, cables, gauges, prop, and installation labour.
 
-For specific pricing on each model, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+For current pricing on each model, use the [live pricing reference](/pricing-reference) or [build a configured quote](/quote/motor-selection).
 
 ### What Changes the "Cheapest That Works" Answer
 
@@ -120,8 +139,6 @@ Six things determine where your real floor is:
 
 **Buy in winter.** November through March is our quietest shop period. We have first pick of motors before the spring rush. Lead times are shortest. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Trade in your old motor.** Even a dead motor has aluminum and parts value. Trade-in credit reduces the amount you're financing or paying outright.
 
 **Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500 to $1,000 CAD versus $2,000 to $3,000 for a brand conversion.
@@ -140,7 +157,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Heavy hull or fiberglass runabout.** Needs real power to plane.
 
-**Family use with passengers and gear.** Add 200-400 lbs of crew weight to whatever the dry boat needs.
+**Family use with passengers and gear.** Add 91-181 kg (200-400 lbs) of crew weight to whatever the dry boat needs.
 
 **Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
 
@@ -152,18 +169,10 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 ---
 
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-
----
-
 Ready to find the right motor for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, every model from the 2.5 portable through the 300 V8, live CAD pricing, no "call for price."
 
 Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you a motor that doesn't fit your hull.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -190,11 +199,11 @@ Only if it actually fits your boat and your use. Buying too small is the most co
 
 ### Can I finance a small Mercury outboard?
 
-Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms.
 
 ### How long does a small Mercury outboard last?
 
-Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.
+There is no reliable universal lifespan in hours or years. Maintenance, corrosion control, storage, operating load and parts availability all matter. A documented motor that follows its serial-number maintenance schedule is a better bet than one sold on a generic lifetime estimate.
 
 ### What is the cheapest Mercury that can pull a tube?
 
@@ -211,23 +220,22 @@ A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

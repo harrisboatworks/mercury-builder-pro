@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-08
 keywords: ["mercury dealer oshawa","mercury repower oshawa","mercury outboard oshawa ontario","boat motor service durham region oshawa"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer for Oshawa: 40 Minutes to Rice Lake
 
 > Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-08-08  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Oshawa boaters drive to Harris Boat Works: about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
 
-# Mercury Dealer for Oshawa: We're Basically Durham Region
+## Mercury Dealer for Oshawa: We're Basically Durham Region
 
 Oshawa is one of the closest major cities to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
 
@@ -58,7 +59,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 **Winterization:** October drop-off, November shrinkwrap, spring pickup. The whole fall routine makes sense at this distance.
 
-**Storage:** Year-round outdoor storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here is more convenient than hauling them back for the winter.
+**Storage:** Outdoor winter storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
 
 ## The Pricing Conversation Starts Before You Arrive
 
@@ -66,16 +67,16 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 
-## Mercury Premier, Third Generation Since 1947
+## Why Oshawa Boaters Make the Drive
 
-Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
+Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
 
 ---
 
 ## What Harris Boat Works Handles for Oshawa Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what fits your hull and application.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what fits your hull and application.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Oshawa customers, we can realistically handle your complete annual service cycle.
@@ -84,14 +85,12 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 40 minutes, year-round storage here makes solid logistical sense for most Oshawa boaters.
+Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you even pick up the phone.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Getting to Harris Boat Works from Oshawa
 
@@ -124,23 +123,21 @@ You're practically in our neighbourhood. Let's work together.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
-## Where Oshawa Boaters Launch and Why Many Are Repower Candidates
+## Where Oshawa Boaters Launch and When Repower Is Worth Assessing
 
 Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub, city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
 
 The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north, easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
 
-Why Oshawa is a particularly strong repower market:
+Why some Oshawa boaters consider HBW:
 
-- **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
+- **Older hulls can be worth assessing.** A 1990s or 2000s fiberglass hull may be a repower candidate if its transom and other systems are sound. The hull inspection and written scope determine whether repowering makes sense.
 - **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment, closer than driving back into central Toronto.
-- **Mercury Premier-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- **Mercury Premier-level support.** HBW offers Mercury-specific diagnostics, a documented rigging scope, current pricing, and continuity between installation and future service history. The motor, hull, maintenance, use, and conditions determine service life.
 
 ---
 
@@ -152,32 +149,30 @@ About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One 
 
 ### Can HBW be my primary Mercury dealer in Oshawa?
 
-Yes. 40 minutes is short enough to make us a real primary dealer - many Oshawa customers use us for spring commissioning, mid-season service, fall winterization, and storage.
+Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
 
 ### Do you serve north Oshawa and Courtice?
 
-Yes. Courtice and north Oshawa are within the same drive time. We have customers across all of Durham Region.
+Yes. Boat owners from Courtice and north Oshawa can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic.
 
 ## Related guides
 
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw), Mercury dealer for Pickering
+- [Mercury Dealer Richmond Hill HBW](/blog/mercury-dealer-richmond-hill-ontario-hbw), Mercury dealer for Richmond Hill
+- [Mercury Dealer Vaughan Ontario HBW](/blog/mercury-dealer-vaughan-ontario-hbw), Mercury dealer for Vaughan
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
 - [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

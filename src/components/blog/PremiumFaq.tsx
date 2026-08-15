@@ -1,4 +1,7 @@
 import { DollarSign, Calendar, Settings, HelpCircle, Phone } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
+import remarkGfm from 'remark-gfm';
 
 export interface PremiumFaqItem {
   question: string;
@@ -14,10 +17,56 @@ function pickIcon(question: string, answer: string) {
   const q = question.toLowerCase();
   const a = answer.toLowerCase();
   if (/905-?342-?2153/.test(answer)) return Phone;
-  if (/price|cost|financ|payment|\$|cad|deposit|rate|apr/.test(q)) return DollarSign;
+  if (/\$|\b(?:price|cost|finance|financing|payment|cad|deposit|rate|apr)\b/.test(q)) return DollarSign;
   if (/when|timing|season|how long|wait|time|schedule|spring|fall|winter|date/.test(q)) return Calendar;
   if (/service|maintenance|install|rig|repair|warranty|prop|setup|tune/.test(q) || /service|install|maintenance/.test(a)) return Settings;
   return HelpCircle;
+}
+
+function FaqAnswer({ answer }: { answer: string }) {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        p: ({ children }) => <p className="m-0">{children}</p>,
+        a: ({ href, children }) => {
+          if (!href) return <span>{children}</span>;
+          const isInternal =
+            href.startsWith('/') ||
+            href.startsWith('#') ||
+            /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(
+              href,
+            );
+          const className =
+            'font-semibold text-primary underline decoration-primary/35 underline-offset-2 hover:decoration-primary';
+
+          if (isInternal) {
+            const to = href.startsWith('#')
+              ? href
+              : href.replace(/^https?:\/\/[^/]+/, '') || '/';
+            return (
+              <Link to={to} className={className}>
+                {children}
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={className}
+            >
+              {children}
+            </a>
+          );
+        },
+      }}
+    >
+      {answer}
+    </ReactMarkdown>
+  );
 }
 
 export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: PremiumFaqProps) {
@@ -49,7 +98,7 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
           return (
             <li
               key={i}
-              className="group relative rounded-md border border-repower-navy-900/10 bg-repower-cream p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="relative rounded-md border border-repower-navy-900/10 bg-repower-cream p-6 md:p-8 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-3">
                 <span aria-hidden="true" className="h-px w-6 bg-repower-mercury-red" />
@@ -62,7 +111,7 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
                 size={20}
                 strokeWidth={1.75}
                 aria-hidden="true"
-                className="absolute top-6 right-6 md:top-8 md:right-8 text-repower-navy-900/30 group-hover:text-repower-navy-900/50 transition-colors"
+                className="absolute top-6 right-6 md:top-8 md:right-8 text-repower-navy-900/30"
               />
 
               <h3
@@ -72,9 +121,9 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
                 {faq.question}
               </h3>
 
-              <p className="font-sans text-repower-navy-900/80 text-[16px] leading-relaxed mt-3 mb-0 faq-answer">
-                {faq.answer}
-              </p>
+              <div className="font-sans text-repower-navy-900/80 text-[16px] leading-relaxed mt-3 mb-0 faq-answer">
+                <FaqAnswer answer={faq.answer} />
+              </div>
 
               <div aria-hidden="true" className="mt-5 pt-4 border-t border-repower-navy-900/10" />
             </li>

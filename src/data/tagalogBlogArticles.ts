@@ -24,7 +24,7 @@ export const tagalogBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['bangkang mura sa Ontario (cheap boat in Ontario)', 'paano bumili ng bangka sa Canada (how to buy a boat in Canada)', 'magkano ang bangka sa Toronto (how much is a boat in Toronto)', 'tips sa pagbili ng unang bangka (tips for buying first boat)', 'fishing license Ontario paano kumuha (fishing license Ontario how to get)', 'saan mangisda malapit sa Toronto (where to fish near Toronto)', 'Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)', 'panahon ng pangingisda sa Ontario (fishing season in Ontario)', 'magkano fishing license sa Ontario (how much fishing license in Ontario)', 'pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)'],
@@ -33,7 +33,7 @@ export const tagalogBlogArticles: Wave1Article[] = [
       { question: 'Magkano ang fishing license sa Ontario?', answer: 'Ang istruktura ng bayad ay: hiwalay ang bayad para sa Outdoors Card, at hiwalay ang bayad para sa fishing licence (conservation licence ay mas mura, sport licence mas mahal). Ang updated at eksaktong dollar amounts ay palaging nasa opisyal na website, kaya imbes na magbigay kami ng number na baka luma na, please check ang [Outdoors Card at licence summary](https://www.ontario.ca/page/get-outdoors-card-and-licence-summary) at ang [fishing licence page](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents).' },
       { question: 'Saan pwedeng mangisda malapit sa Toronto?', answer: 'Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, mga 90 minutos lang mula sa Mississauga, Scarborough, Brampton, o Markham. Hindi tulad ng malalim na Lake Ontario, mababaw at beginner-friendly ito, kaya safe para sa pamilya.' },
       { question: 'Ano ang mga fishing rules sa Ontario para sa Rice Lake?', answer: 'Ang Rice Lake ay bahagi ng FMZ 17. Ang bawat uri ng isda ay may sariling season, daily catch limit, at size restrictions. Halimbawa, magkaiba ang rules para sa panfish (crappie, bluegill) at sa walleye. Dahil taun-taon itong pwedeng magbago, kailangang i-check ninyo ang opisyal na [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) bago kayo mangisda. Iyan ang laging tama.' },
-      { question: 'Kailangan ko ba ng sariling bangka para mangisda sa Rice Lake?', answer: 'Hindi. May rental fleet ang Harris Boat Works na puwedeng gamitin kahit walang PCOC. Bibigyan namin kayo ng safety checklist at orientation, at may lifejackets para sa lahat, pati kids. Pumunta lang sa aming [rentals page](https://harrisboatworks.ca/rentals).' },
+      { question: 'Kailangan ko ba ng sariling bangka para mangisda sa Rice Lake?', answer: 'Hindi. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang driver sa check-in; hindi kailangan ng PCOC ang mga pasaherong hindi magmamaneho. Tingnan ang kasalukuyang availability at requirements sa aming [rentals page](https://harrisboatworks.ca/rentals).' },
       { question: 'Paano kung hindi ako marunong mag-drive ng bangka?', answer: 'Okay lang. Kasama sa rental ang basic orientation, kontrol sa throttle, steering, at safety. Ang mga bangka namin ay simple at stable, perpekto para sa first-timer. Tuturuan namin kayo hanggang maging komportable.' },
       { question: 'Bangkang mura sa Ontario o tips sa pagbili ng unang bangka?', answer: 'Para sa maraming pamilya, ang pag-rent muna ang pinakamadaling paraan para subukan kung bagay sa inyo ang frequent boating. Kung desidido na kayong bumili, ang Harris Boat Works ay Mercury dealer mula pa 1965 at nag-aalok ng mga bagong bangka. Ang Mercury motors ay may 3-year base warranty. Para sa pagpili ng tamang bangka, bisitahin kami o tawagan kami. Ang detalye tungkol sa financing ay nasa aming English guide: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026' },
       { question: 'Pwede ba akong makakuha ng serbisyo sa Tagalog sa Harris Boat Works?', answer: 'Sa totoo lang, English ang ginagamit ng team namin kapag nagse-serve. Ginawa namin ang guide na ito sa Tagalog para makatulong sa komunidad, pero sa marina mismo, English ang salita. Huwag mag-alala: magdala ng kaibigan o pamilya na marunong, o gumamit ng translation app. Magiging matiyaga kami at magkakaintindihan tayo.' }
@@ -74,7 +74,7 @@ Ang eksaktong bayarin (Outdoors Card plus licence, conservation o sport) ay naka
 
 ## Pangingisda kasama ang pamilya: walang experience? Okay lang!
 
-Hindi ninyo kailangan ng sariling bangka o kahit ng PCOC (Pleasure Craft Operator Card) para makapangisda sa Rice Lake. Sa Harris Boat Works, nagre-rent kami ng 9 na bangka na kumpleto sa safety gear at maaaring gamitin nang walang boat licence, ang kailangan lang ay pakinggan ang aming rental safety checklist at orientation bago kayo lumarga. Ibibigay namin ang lifejackets para sa lahat, kasama ang tamang sukat para sa mga bata. Walang experience sa pagmamando? Tuturuan namin kayo ng basic controls. Mas makakampante kayo.
+Hindi ninyo kailangan ng sariling bangka para makapangisda sa Rice Lake. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Ang mga pasaherong hindi magmamaneho ay hindi kailangan ng PCOC. Ibibigay namin ang lifejackets para sa lahat, kasama ang tamang sukat para sa mga bata. Walang experience sa pagmamando? Tuturuan namin kayo ng basic controls.
 
 Puwede ninyong i-book ang rental boat sa aming [rentals page](https://harrisboatworks.ca/rentals). Tandaan: sarado ang marina mula December 1 hanggang April 1, kaya planuhin ang trip sa pagitan ng tagsibol at taglagas.
 
@@ -103,7 +103,7 @@ Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, mga 90 minutos lang 
 Ang Rice Lake ay bahagi ng FMZ 17. Ang bawat uri ng isda ay may sariling season, daily catch limit, at size restrictions. Halimbawa, magkaiba ang rules para sa panfish (crappie, bluegill) at sa walleye. Dahil taun-taon itong pwedeng magbago, kailangang i-check ninyo ang opisyal na [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) bago kayo mangisda. Iyan ang laging tama.
 
 **Kailangan ko ba ng sariling bangka para mangisda sa Rice Lake?**
-Hindi. May rental fleet ang Harris Boat Works na puwedeng gamitin kahit walang PCOC. Bibigyan namin kayo ng safety checklist at orientation, at may lifejackets para sa lahat, pati kids. Pumunta lang sa aming [rentals page](https://harrisboatworks.ca/rentals).
+Hindi. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang driver sa check-in; hindi kailangan ng PCOC ang mga pasaherong hindi magmamaneho. Pumunta sa aming [rentals page](https://harrisboatworks.ca/rentals) para sa kasalukuyang requirements at availability.
 
 **Paano kung hindi ako marunong mag-drive ng bangka?**
 Okay lang. Kasama sa rental ang basic orientation, kontrol sa throttle, steering, at safety. Ang mga bangka namin ay simple at stable, perpekto para sa first-timer. Tuturuan namin kayo hanggang maging komportable.
@@ -134,28 +134,28 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)', 'kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)', 'boat operator card Ontario paano (boat operator card Ontario how)', 'online boat license Ontario Tagalog (online boat license Ontario Tagalog)', 'PCOC exam Tagalog (PCOC exam Tagalog)'],
     faqs: [
-      { question: 'Kailangan ba ng boat license sa Ontario para magmaneho ng bangka?', answer: 'Kung may sarili kang bangka na may motor, oo, kailangan ng Pleasure Craft Operator Card (PCOC). Pero kung magre-rent ka, hindi ito kailangan, ang rental boat safety checklist ang papalit, tulad ng ginagawa namin sa HBW.' },
+      { question: 'Kailangan ba ng boat license para magmaneho ng HBW rental boat?', answer: 'Oo. Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito kapalit ng licence ng driver. Ang mga pasaherong hindi magmamaneho ay hindi kailangan ng PCOC.' },
       { question: 'Paano kumuha ng boat license (PCOC) sa Ontario?', answer: 'Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Walang official na Tagalog version ang exam; nasa English o French lang ito.' },
       { question: 'May serbisyo ba kayo sa Tagalog sa Harris Boat Works?', answer: 'Sa totoo lang, ang team namin ay nagseserbisyo sa Ingles. Pero huwag mag-alala, magsama ng kaibigan o kapamilya na marunong mag-English, o magdala ng translation app. Magtutulungan tayo. (Basahin ang buong pahayag sa itaas.)' },
       { question: 'Mayroon bang PCOC exam na Tagalog?', answer: 'Wala pong opisyal na PCOC exam na Tagalog. Lahat ng accredited exams ay nasa English o French. May ilang community-made translation guides na makikita online, pero hindi ito official. Ang pinakamainam na gawin ay mag-aral gamit ang English study guide, at kung nahihirapan, magpatulong sa marunong mag-English. Kayang-kaya ito kapag pamilyar ka sa basic boat terms.' },
       { question: 'Ano ang mangyayari kapag nahuli akong may bukas na alak sa bangka?', answer: 'Malaking problema ito. Ang open alcohol sa recreational boat ay ilegal, at ang pagmamaneho habang nakainom ay criminal offense, pwedeng maaresto, mawalan ng lisensya, matiketan ng malaking multa, at ma-impound ang bangka. Huwag nang subukan. Gawin ang inuman sa pampang pagkatapos ng biyahe.' },
-      { question: 'Kailangan bang mag-lifejacket ang bata kahit marunong siyang lumangoy?', answer: 'Oo. Walang exception. Lahat ng bata ay dapat suot ang lifejacket na tamang sukat (may crotch strap para sa maliliit) habang umaandar ang bangka. Hindi sapat na marunong lumangoy, sa emergency, ang lifejacket ang sasagip ng buhay.' },
+      { question: 'Kailangan bang may lifejacket ang bata kahit marunong siyang lumangoy?', answer: 'Oo. Dapat may Canadian-approved lifejacket o PFD na tamang sukat para sa bawat tao sa bangka. Mariin naming inirerekomenda na isuot ito ng mga bata habang nasa tubig, hindi lang itago sa ilalim ng upuan.' },
       { question: 'Pwede bang mag-rent ng bangka kahit wala akong experience?', answer: 'Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gagabayan ka namin mula pagdating hanggang sa maging komportable ka. Pakiusap lang, maging tapat sa amin tungkol sa experience level mo para mas maayos ang briefing.' },
       { question: 'Gaano katagal ang biyahe mula Toronto papuntang Harris Boat Works?', answer: 'Mga 90 minuto mula sa Brampton, Mississauga, Scarborough, o Markham. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.' }
     ],
     nativeReview: 'pending',
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters'],
-    content: `Hindi kailangan ng PCOC para mag-rent ng boat sa Ontario, basta kukumpletuhin mo ang rental boat safety checklist kasama ang rental company. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+    content: `Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
 
-## Hindi mo kailangan ng PCOC para mag-rent ng bangka
+## Kailangan ng boat operator licence para sa HBW rental
 
-Diretso ang sagot: **hindi** kailangan ng Pleasure Craft Operator Card (PCOC), o boat license na karaniwang tawag, kapag nagre-rent ka ng bangka sa Ontario. Ang kailangan mo lang ay dumaan sa isang simpleng *rental boat safety checklist* kasama ang rental operator. Ibig sabihin, kahit unang beses mo, pwedeng pwede kang mag-boat. Walang exam, walang lisensya, basta handa kang makinig at sundin ang safety rules para sa pamilya mo.
+Diretso ang sagot: sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang *rental boat safety checklist* bilang safety briefing, ngunit hindi ito kapalit ng licence ng driver. Ang mga pasaherong hindi magmamaneho ay hindi kailangan ng PCOC. Puwedeng maging first-time renter, pero kumuha muna ng valid licence at maging handang makinig sa buong safety briefing.
 
 ## Ang rental boat safety checklist: Ano ito at paano gamitin
 
@@ -195,15 +195,15 @@ Kapag nirentahan mo ang bangka, ikaw ang may pananagutan sa pagbabalik nito sa o
 
 Tutulungan ka namin bago ka pumalaot, magtatanong kami, magpapaliwanag, at sisiguruhing confident kang magmaneho. Pero ang bottom line, ikaw ang driver, kaya maging responsable.
 
-## Ang HBW rental fleet
+## Ang HBW boat rentals
 
-Mayroon kaming 9-boat rental fleet. Sakto ito para sa pamilya: pwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax lang sa tahimik na bahagi ng Rice Lake. Ethanol-free ang gasolina namin on site.
+May pontoon at fishing boat rental options ang HBW. Puwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax sa tahimik na bahagi ng Rice Lake. Tingnan ang current listings para sa eksaktong capacity at availability. Ethanol-free ang gasolina namin on site.
 
 Hindi kami maglalagay ng presyo dito, ang lahat ng detalye tungkol sa rates at availability ay nandito sa aming rentals page: [https://harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Tumingin doon para makapag-plano ng trip ngayong season.
 
 ## Paano kumuha ng boat license (PCOC) kung gusto mo ng sariling bangka
 
-Gets namin, maraming nagtatanong tungkol sa boat license, kahit hindi kailangan sa rental, posibleng balang araw gusto mo nang bumili ng sariling bangka o mag-rent sa ibang lugar na walang safety checklist. Sa ganong pagkakataon, kailangan mo ng Pleasure Craft Operator Card (PCOC).
+Gets namin, maraming nagtatanong tungkol sa boat licence. Kailangan ito ng bawat HBW rental driver, at kakailanganin mo rin ng valid proof of competency kapag magpapatakbo ka ng sarili mong motorized recreational boat.
 
 Ang PCOC ay kinukuha sa pamamagitan ng pagpasa sa isang accredited online exam. Walang praktikal na driving test; puro multiple-choice questions lang tungkol sa boating safety, navigation rules, emergency procedures, at kung paano magbasa ng mga lawa at ilog. Bago mag-exam, mag-aral ka gamit ang study guide mula sa provider. Listahan ng mga accredited provider ay narito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). May bayad ang exam, pero ang card na makukuha mo ay panghabambuhay na, hindi na kailangan i-renew.
 
@@ -217,8 +217,8 @@ Pero maging tapat tayo: ang aming team ay nagseserbisyo sa Ingles. Huwag mag-ala
 
 ## FAQ: Mga Karaniwang Tanong
 
-**Kailangan ba ng boat license sa Ontario para magmaneho ng bangka?**  
-Kung may sarili kang bangka na may motor, oo, kailangan ng Pleasure Craft Operator Card (PCOC). Pero kung magre-rent ka, hindi ito kailangan, ang rental boat safety checklist ang papalit, tulad ng ginagawa namin sa HBW.
+**Kailangan ba ng boat license para magmaneho ng HBW rental boat?**
+Oo. Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito kapalit ng licence ng driver.
 
 **Paano kumuha ng boat license (PCOC) sa Ontario?**  
 Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Walang official na Tagalog version ang exam; nasa English o French lang ito.
@@ -232,8 +232,8 @@ Wala pong opisyal na PCOC exam na Tagalog. Lahat ng accredited exams ay nasa Eng
 **Ano ang mangyayari kapag nahuli akong may bukas na alak sa bangka?**  
 Malaking problema ito. Ang open alcohol sa recreational boat ay ilegal, at ang pagmamaneho habang nakainom ay criminal offense, pwedeng maaresto, mawalan ng lisensya, matiketan ng malaking multa, at ma-impound ang bangka. Huwag nang subukan. Gawin ang inuman sa pampang pagkatapos ng biyahe.
 
-**Kailangan bang mag-lifejacket ang bata kahit marunong siyang lumangoy?**  
-Oo. Walang exception. Lahat ng bata ay dapat suot ang lifejacket na tamang sukat (may crotch strap para sa maliliit) habang umaandar ang bangka. Hindi sapat na marunong lumangoy, sa emergency, ang lifejacket ang sasagip ng buhay.
+**Kailangan bang may lifejacket ang bata kahit marunong siyang lumangoy?**
+Oo. Dapat may Canadian-approved lifejacket o PFD na tamang sukat para sa bawat tao sa bangka. Mariin naming inirerekomenda na isuot ito ng mga bata habang nasa tubig, hindi lang itago sa ilalim ng upuan.
 
 **Pwede bang mag-rent ng bangka kahit wala akong experience?**  
 Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gagabayan ka namin mula pagdating hanggang sa maging komportable ka. Pakiusap lang, maging tapat sa amin tungkol sa experience level mo para mas maayos ang briefing.
@@ -260,7 +260,7 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['mekaniko ng bangka sa Toronto (boat mechanic in Toronto)', 'pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)', 'marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)', 'paano i-winterize ang bangka (how to winterize a boat)', 'paghahanda ng bangka sa taglamig (preparing boat for winter)', 'winter storage ng bangka Ontario (winter storage of boat Ontario)', 'winterization service bangka Toronto (winterization service boat Toronto)', 'paano ayusin ang Mercury outboard (how to fix Mercury outboard)'],
@@ -297,7 +297,7 @@ Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na
 - Pag-fogging ng cylinders, isang protective oil mist na pumoprotekta sa loob ng makina laban sa kalawang.
 - Pagpalit ng lower unit gear oil, at pag-inspect sa seals para walang tubig na pumasok.
 - Pag-check ng propeller, skeg, at anode, at pag-lubricate ng grease fittings.
-- Pag-alis ng battery at pag-store nito sa safe na lugar.
+- Idiskonekta ang battery at iwanan ito sa loob ng bangka sa ligtas na paraan.
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
@@ -337,7 +337,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 9-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
+Drop-off at pick-up ang service sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay para mag-ayos o kumuha ng bangka. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 

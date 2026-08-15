@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
@@ -19,13 +19,15 @@ import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { shouldUnwrapMarkdownImageParagraph } from '@/lib/markdown-paragraph';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
+import { BLOG_REVENUE_DRIVER, getBlogRevenueDriver } from '@/lib/blogRevenueDriver.js';
 import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
-import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
-import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -34,6 +36,7 @@ import { MercuryVideo } from '@/components/blog/MercuryVideo';
 import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 import { renderHbwVisual } from '@/components/blog/visuals';
+import { FaultCodeFinder } from '@/components/blog/FaultCodeFinder';
 
 
 import {
@@ -49,14 +52,37 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
-  
+
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
 
-  const relatedArticles = getRelatedArticles(article.slug, 3);
-  const tocItems = extractHeaders(article.content);
+  const relatedArticles = getRelatedArticles(article.slug, 4);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
+
+  // Terminal CTA placement: for these posts the closing CTA section must render
+  // AFTER the structured FAQ card (house pattern), not before it. The section is
+  // split out of the body markdown and re-rendered below the FAQ.
+  const TERMINAL_CTA_SPLIT_SLUGS = new Set<string>([
+    'new-vs-used-pontoon-boats-ontario',
+  ]);
+  const terminalCtaSplit = (() => {
+    if (!TERMINAL_CTA_SPLIT_SLUGS.has(article.slug)) {
+      return { body: cleanedContent, cta: '' };
+    }
+    const idx = cleanedContent.search(/\n##\s+Ready to Compare the Complete Package\?/);
+    if (idx === -1) return { body: cleanedContent, cta: '' };
+    return {
+      body: cleanedContent.slice(0, idx).replace(/\n*(?:---\s*)?$/, '\n'),
+      cta: cleanedContent.slice(idx + 1),
+    };
+  })();
   const cleanDescription = getCleanDescription(article);
+  const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
+  const revenueDriver = getBlogRevenueDriver(article.category, article.slug);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -108,13 +134,13 @@ export default function BlogArticle() {
             const linkIsInternal = linkHref.startsWith('/') || /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(linkHref);
             if (linkIsInternal) {
               parts.push(
-                <Link key={keyIndex++} to={linkHref.replace(/^https?:\/\/[^/]+/, '') || '/'} className="text-primary hover:underline">
+                <Link key={keyIndex++} to={linkHref.replace(/^https?:\/\/[^/]+/, '') || '/'} className="break-words text-primary hover:underline">
                   {match[1]}
                 </Link>
               );
             } else {
               parts.push(
-                <a key={keyIndex++} href={linkHref} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a key={keyIndex++} href={linkHref} target="_blank" rel="noopener noreferrer" className="break-words text-primary hover:underline">
                   {match[1]}
                 </a>
               );
@@ -170,7 +196,7 @@ export default function BlogArticle() {
           const imageMatch = line.match(/!\[(.*?)\]\((\S+?)(?:\s+"([^"]*)")?\)/);
           if (imageMatch) {
             return (
-              <ExpandableImage 
+              <ExpandableImage
                 key={index}
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
@@ -187,8 +213,8 @@ export default function BlogArticle() {
           const text = line.slice(3);
           const id = slugify(text);
           return (
-            <h2 
-              key={index} 
+            <h2
+              key={index}
               id={id}
               className="text-2xl font-semibold text-foreground mt-8 mb-4 scroll-mt-24"
             >
@@ -200,8 +226,8 @@ export default function BlogArticle() {
           const text = line.slice(4);
           const id = slugify(text);
           return (
-            <h3 
-              key={index} 
+            <h3
+              key={index}
               id={id}
               className="text-xl font-medium text-foreground mt-6 mb-3 scroll-mt-24"
             >
@@ -250,7 +276,7 @@ export default function BlogArticle() {
       {/* Floating share bar removed — byline BlogShareButtons covers all posts. */}
 
 
-      <main className="container mx-auto px-6 md:px-14 py-10 md:py-14">
+      <main className="container mx-auto px-5 md:px-14 py-6 md:py-12">
         {/* Breadcrumb */}
         <Breadcrumb className="mb-8 max-w-[880px] mx-auto">
           <BreadcrumbList>
@@ -265,8 +291,8 @@ export default function BlogArticle() {
                 <Link to="/blog" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Blog</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator className="text-repower-navy-900/40" />
-            <BreadcrumbItem>
+            <BreadcrumbSeparator className="hidden text-repower-navy-900/40 sm:block" />
+            <BreadcrumbItem className="hidden sm:flex">
               <BreadcrumbPage className="truncate max-w-[200px] text-repower-navy-900">{article.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -277,15 +303,6 @@ export default function BlogArticle() {
 
 
         <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
-          {/* Back Link */}
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
-
           {/* Header */}
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
@@ -301,21 +318,27 @@ export default function BlogArticle() {
             >
               {article.title}
             </h1>
+            <p className="font-sans text-sm italic text-repower-navy-900/70 -mt-2 mb-4">
+              Last reviewed:{' '}
+              {parseLocalDate(article.dateModified || article.datePublished).toLocaleDateString('en-CA', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+            </p>
             <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
               {cleanDescription}
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Mercury dealer since 1965" />
+                <AuthorByline name="Jay Harris" title="Owner, Harris Boat Works" />
                 {(() => {
                   const published = parseLocalDate(article.datePublished);
-                  const modified = article.dateModified ? parseLocalDate(article.dateModified) : null;
                   const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-                  const showUpdated = modified && modified.getTime() > published.getTime();
                   return (
                     <span className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4" />
-                      {showUpdated ? `Updated ${fmt(modified!)}` : fmt(published)}
+                      Published {fmt(published)}
                     </span>
                   );
                 })()}
@@ -328,15 +351,12 @@ export default function BlogArticle() {
                 url={articleUrl}
                 title={article.title}
                 description={cleanDescription}
-                image={article.image}
+                image={article.socialImage || article.image}
                 variant="inline"
                 articleSlug={article.slug}
                 location="header"
               />
             </div>
-            <p className="mt-3 text-xs text-repower-navy-900/50">
-              Last updated: {parseLocalDate(article.dateModified || article.datePublished).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </p>
           </header>
 
           {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}
@@ -346,7 +366,7 @@ export default function BlogArticle() {
           <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
 
           {/* Dealer credentials strip */}
-          <DealerConfidenceStrip />
+          <DealerConfidenceStrip showQuoteLink={revenueDriver === BLOG_REVENUE_DRIVER.REPOWER} />
 
           {/* Top contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="inline" />
@@ -356,11 +376,15 @@ export default function BlogArticle() {
             <TableOfContents items={tocItems} />
           )}
 
+          {article.slug === 'mercury-outboard-fault-codes-lookup' && (
+            <FaultCodeFinder content={article.content} />
+          )}
+
           {/* Optional Mercury Marine YouTube video reference */}
           {article.youtubeVideoId && (
             <MercuryVideo
               videoId={article.youtubeVideoId}
-              title={article.youtubeVideoTitle || 'Mercury Marine video'}
+              title={article.youtubeVideoTitle || 'Embedded boating video'}
             />
           )}
 
@@ -368,7 +392,7 @@ export default function BlogArticle() {
           {article.videoAssetUrl && (
             <MercuryVideoFile
               src={article.videoAssetUrl}
-              title={article.videoAssetTitle || 'Mercury Marine video'}
+              title={article.videoAssetTitle || 'Embedded boating video'}
               caption={article.videoAssetCaption}
             />
           )}
@@ -376,48 +400,19 @@ export default function BlogArticle() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
+              articleSlug={article.slug}
               content={(() => {
                 // Strip the first body H1 anywhere in the article (not just
                 // when it is the first line). Many posts open with a Quick
                 // Answer blockquote followed by `# Title`, which previously
                 // slipped past the leading-only regex and produced a duplicate
                 // title. The h1 -> h2 override below is a second safety net.
-                let c = article.content.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
+                let c = terminalCtaSplit.body.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
                 c = substituteLiveRateTokens(c);
-
-                // Strip standalone scaffold lines: "*Last updated: ...*",
-                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
-                // These conflict with the dateModified field shown in the byline.
-                c = c.replace(
-                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
-                  '',
-                );
-                // Strip standalone "Language: English" lines.
-                c = c.replace(
-                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
-                  '',
-                );
-                // Drop a literal "## CTA" heading line; keep its body content.
-                c = c.replace(/^##\s+CTA\s*$/gim, '');
-                // Rename "## Internal Links" → "## Related reading" (keep list).
-                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
-                // Suppress inline FAQ-style sections when faqs[] is populated —
-                // the accordion below replaces them. Uses the global flag so
-                // articles that (historically) duplicated their FAQ block get
-                // BOTH copies stripped, and matches common variants:
-                // "Frequently Asked Questions", "FAQ", "FAQs", "Common questions".
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
-                    '\n',
-                  );
-                }
-                // Collapse 3+ blank lines left by the strips above.
-                c = c.replace(/\n{3,}/g, '\n\n');
                 return c;
               })()}
               markdownComponents={{
@@ -442,14 +437,24 @@ export default function BlogArticle() {
                     href.startsWith('/') ||
                     href.startsWith('#') ||
                     /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(href);
+                  const isDownloadableAsset = /\.(?:pdf|docx?|xlsx?|zip)(?:[?#]|$)/i.test(href);
                   const isCta = title === 'cta';
                   const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
-                  const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
+                  const linkClass = isCta ? ctaClass : 'break-words text-primary hover:underline';
                   if (isInternal) {
                     const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
+                    // Static downloads must bypass React Router, which otherwise
+                    // treats the asset URL as an application route and shows the 404 page.
+                    if (isDownloadableAsset) {
+                      return <a href={to} download className={linkClass} {...props}>{children}</a>;
+                    }
                     return <Link to={to} className={linkClass}>{children}</Link>;
                   }
                   return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                },
+                p: ({ node, children, ...props }) => {
+                  if (shouldUnwrapMarkdownImageParagraph(node)) return <>{children}</>;
+                  return <p {...props}>{children}</p>;
                 },
                 img: ({ node, src, alt, title }) => (
                   <ExpandableImage
@@ -497,18 +502,12 @@ export default function BlogArticle() {
           </div>
 
           {/* Top-traffic blog conversion CTA: route readers into the quote funnel */}
-          {[
+          {!isDiagnostic && [
             'mercury-outboard-beeping-codes-guide',
             'mercury-75-vs-90-vs-115-comparison',
             'breaking-in-new-mercury-motor-guide',
             'fourstroke-vs-pro-xs',
           ].includes(article.slug) && <BuildYourQuoteCTA />}
-
-
-          {/* Author Byline (bottom) */}
-          <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Premier Dealer · Rice Lake, Ontario" />
-          </div>
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
@@ -520,22 +519,41 @@ export default function BlogArticle() {
             />
           )}
 
-          {/* Cluster-driven related guides (deduped against in-body links) */}
-          <RelatedGuides
-            currentSlug={article.slug}
-            max={5}
-            minLinks={2}
-            excludeSlugs={Array.from(
-              new Set(
-                Array.from(article.content.matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(
-                  (m) => m[1]
-                )
-              )
-            )}
-          />
+          {/* Terminal CTA section, rendered after the FAQ for house-pattern posts. */}
+          {terminalCtaSplit.cta && (
+            <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose mt-12">
+              <MarkdownSectionCards
+                articleSlug={article.slug}
+                content={substituteLiveRateTokens(terminalCtaSplit.cta)}
+                markdownComponents={{
+                  h2: ({ node, children, ...props }) => {
+                    const text = String(children);
+                    return <h2 id={slugify(text)} {...props}>{children}</h2>;
+                  },
+                  a: ({ node, href, children, ...props }) => {
+                    if (!href) return <a {...props}>{children}</a>;
+                    const isInternal =
+                      href.startsWith('/') ||
+                      href.startsWith('#') ||
+                      /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca)(\/|$)/i.test(href);
+                    const linkClass = 'break-words text-primary hover:underline';
+                    if (isInternal) {
+                      const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
+                      return <Link to={to} className={linkClass}>{children}</Link>;
+                    }
+                    return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                  },
+                }}
+              />
+            </div>
+          )}
 
 
 
+          {/* Diagnostic articles end the answer with one service-intake path. */}
+          {isDiagnostic && (
+            <BlogCTA category={article.category} slug={article.slug} variant="banner" />
+          )}
 
           {/* Share Section */}
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
@@ -543,7 +561,7 @@ export default function BlogArticle() {
               url={articleUrl}
               title={article.title}
               description={cleanDescription}
-              image={article.image}
+              image={article.socialImage || article.image}
               variant="full"
               articleSlug={article.slug}
               location="footer"
@@ -551,12 +569,10 @@ export default function BlogArticle() {
           </div>
 
           {/* Bottom contextual CTA */}
-          <BlogCTA category={article.category} slug={article.slug} variant="banner" />
-
-          {/* Auto category CTA — suppressed if article body contains its own CTA markers */}
-          {!shouldSuppressAutoCTA(article.content) && (
-            <CategoryCTA category={article.category} />
+          {!isDiagnostic && (
+            <BlogCTA category={article.category} slug={article.slug} variant="banner" />
           )}
+
         </article>
 
         {/* Related Articles */}
@@ -565,7 +581,7 @@ export default function BlogArticle() {
             <h2 className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-8 text-center" style={{ letterSpacing: '-0.02em' }}>
               Related Articles
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedArticles.map(related => (
                 <article key={related.slug}>
                   <BlogCard article={related} />

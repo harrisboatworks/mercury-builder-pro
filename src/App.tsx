@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
-import { SITE_URL } from "./lib/site";
 import { GlobalSEO } from "./components/seo/GlobalSEO";
+import { Canonical } from "./components/seo/Canonical";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,6 +30,7 @@ import { lazyWithRetry } from "@/lib/lazyWithRetry";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
 import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
+import { useQuoteActivityTracker } from "@/hooks/useQuoteActivityTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -41,13 +42,13 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Settings = lazy(() => import("./pages/Settings"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PricingReference = lazy(() => import("./pages/PricingReference"));
+const Resources = lazy(() => import("./pages/Resources"));
 
 // Quote builder pages
 const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
 const OptionsPage = lazy(() => import("@/pages/quote/OptionsPage"));
 const PurchasePathPage = lazy(() => import("@/pages/quote/PurchasePathPage"));
 const BoatInfoPage = lazy(() => import("@/pages/quote/BoatInfoPage"));
-const FuelTankPage = lazy(() => import("@/pages/quote/FuelTankPage"));
 const TradeInPage = lazy(() => import("@/pages/quote/TradeInPage"));
 const InstallationPage = lazy(() => import("@/pages/quote/InstallationPage"));
 const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
@@ -55,7 +56,6 @@ const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
-const PackageSelectionPage = lazy(() => import("@/pages/quote/PackageSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
 // Admin pages
@@ -106,6 +106,7 @@ const Accessories = lazy(() => import("./pages/Accessories"));
 const NewQuote = lazy(() => import("./pages/NewQuote"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
+const MercuryProductProtection = lazy(() => import("./pages/MercuryProductProtection"));
 const Repower = lazy(() => import("./pages/Repower"));
 const RepowerHub = lazy(() => import("./pages/RepowerHub"));
 const RepowerCost = lazy(() => import("./pages/RepowerCost"));
@@ -161,7 +162,6 @@ const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboa
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
-const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
@@ -195,25 +195,6 @@ const StagingImageSizingFinal = lazy(() => import("./pages/StagingImageSizingFin
 const VoiceTest = lazy(() => import("./pages/VoiceTest"));
 const AgentsHub = lazy(() => import("./pages/AgentsHub"));
 
-function Canonical() {
-  useEffect(() => {
-    // Only set a canonical if the prerendered HTML did NOT already provide one,
-    // and only if no per-page SEO component (with data-rh="true") owns it.
-    // This prevents the runtime override from clobbering page-specific canonicals
-    // (e.g. /mercury-pro-xs) with the generic origin+pathname value.
-    const existing = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (existing) {
-      // Respect prerendered or Helmet-managed canonicals.
-      return;
-    }
-    const link = document.createElement("link");
-    link.rel = "canonical";
-    link.href = `${SITE_URL}${window.location.pathname}`;
-    document.head.appendChild(link);
-  }, []);
-  return null;
-}
-
 function RootRedirect() {
   const params = new URLSearchParams(window.location.search);
   const hash = window.location.hash;
@@ -235,12 +216,29 @@ function RootRedirect() {
   return <Index />;
 }
 
+function QuoteActivityTracker() {
+  useQuoteActivityTracker();
+  return null;
+}
+
+/**
+ * Keep one tracker instance alive while the customer moves between keyed quote
+ * routes. Mounting it inside each QuoteLayout replays already-populated quote
+ * state whenever the route changes.
+ */
+function QuoteActivityTrackerMount() {
+  const location = useLocation();
+  const isQuoteRoute = location.pathname === "/quote" || location.pathname.startsWith("/quote/");
+  return isQuoteRoute ? <QuoteActivityTracker /> : null;
+}
+
 function AnimatedRoutes() {
   const location = useLocation();
   usePageViewTracker();
   
   return (
     <LazyRouteBoundary>
+      <QuoteActivityTrackerMount />
       <Suspense fallback={<RouteLoader />}>
         <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />
@@ -271,11 +269,11 @@ function AnimatedRoutes() {
         <Route path="/quote/options" element={<OptionsPage />} />
         <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
         <Route path="/quote/boat-info" element={<BoatInfoPage />} />
-        <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
+        <Route path="/quote/fuel-tank" element={<Navigate to="/quote/options" replace />} />
         <Route path="/quote/trade-in" element={<TradeInPage />} />
         <Route path="/quote/installation" element={<InstallationPage />} />
         <Route path="/quote/promo-selection" element={<PromoSelectionPage />} />
-        <Route path="/quote/package-selection" element={<PackageSelectionPage />} />
+        <Route path="/quote/package-selection" element={<Navigate to="/quote/summary" replace />} />
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />
@@ -556,6 +554,8 @@ function AnimatedRoutes() {
         
         {/* Promotions Page */}
         <Route path="/promotions" element={<Promotions />} />
+        <Route path="/mercury-product-protection" element={<MercuryProductProtection />} />
+        <Route path="/warranty" element={<Navigate to="/mercury-product-protection" replace />} />
         
         {/* Hub pages (top-level resource pages) */}
         <Route path="/repower" element={<RepowerHub />} />
@@ -600,10 +600,10 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
+        <Route path="/resources" element={<Resources />} />
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
         <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
-        <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh" element={<BlogIndexZh />} />

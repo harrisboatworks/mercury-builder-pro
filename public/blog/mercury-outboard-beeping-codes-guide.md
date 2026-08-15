@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-07-07
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Beep & Alarm Codes: What Each Means"
 description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-07
+date_modified: 2026-07-24
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Beep & Alarm Codes: What Each Means
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-07  
+**Last reviewed:** 2026-07-24  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
@@ -34,28 +35,45 @@ language: en-CA
 
 Mercury outboard beep patterns vary by model, year, and whether the boat has SmartCraft displays, so the exact meaning of any pattern requires confirming against your specific motor's manual. That said, the most common patterns correspond to temperature (overheat), oil level, water-in-fuel, or Guardian engine protection mode. Record the pattern exactly, number of beeps, timing, whether it correlates with RPM or load, and reference your manual or bring it to a dealer with that information.
 
+If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
+
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 
-::diagnostic-flow
-heading: What to do when your Mercury starts beeping
-eyebrow: Beep diagnostic flow
-subhead: Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
-step1Label: Stop and idle the motor down
-step1Question: Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.
-step1Tip: Continuous beep at idle means stop running it entirely. Tow in.
-step2Label: Identify the pattern
-step2Question: One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.
-step3Label: Check the telltale stream
-step3Question: If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.
-step3Tip: A strong telltale with continuous beep usually points to oil pressure, not overheat.
-step4Label: Check oil level (4-strokes)
-step4Question: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.
-step5Label: Pull codes with SmartCraft if equipped
-step5Question: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
-step5Tip: Take a photo of the code on the screen so you can text it to us.
-escalationLabel: Still beeping after all 5? Put in a service request at hbw.wiki/service.
-escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
-::
+*Beep diagnostic flow*
+
+### What to do when your Mercury starts beeping
+
+Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
+
+#### Stop and idle the motor down
+
+**Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.**
+
+Continuous beep at idle means stop running it entirely. Tow in.
+
+#### Identify the pattern
+
+**One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.**
+
+#### Check the telltale stream
+
+**If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.**
+
+A strong telltale with continuous beep usually points to oil pressure, not overheat.
+
+#### Check oil level (4-strokes)
+
+**Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.**
+
+#### Pull codes with SmartCraft if equipped
+
+**VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.**
+
+Take a photo of the code on the screen so you can text it to us.
+
+#### Still beeping after all 5? Put in a service request at hbw.wiki/service.
+
+Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
 
 ---
 
@@ -149,8 +167,6 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
-
 ## What to Do When the Alarm Sounds
 
 **Step 1: Don't panic, but don't ignore it.** Reduce throttle and assess.
@@ -189,31 +205,8 @@ This information cuts diagnostic time significantly.
 
 ---
 
----
-
-## Related at HBW
-
-The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
-
----
-
-## Related reading
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-
----
-
 **Alarm that came back, or one you can't explain?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
 ## FAQs
@@ -257,23 +250,26 @@ A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usuall
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
+- [Mercury Won't Start After Sitting: Fixes](/blog/mercury-outboard-wont-start-after-sitting), won't-start after sitting fixes
+- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
+- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

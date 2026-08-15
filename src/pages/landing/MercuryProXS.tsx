@@ -18,7 +18,7 @@ import { ChevronRight, Zap, Trophy, Gauge, Award } from 'lucide-react';
 interface ProXSVariant {
   hp: number;
   startingAt: number;
-  inStockCount: number;
+  inStockCount: number | null;
 }
 
 const HP_TIERS = [115, 150, 200, 250];
@@ -45,21 +45,18 @@ export default function MercuryProXS() {
       try {
         const { data, error } = await supabase
           .from('motor_models')
-          .select('horsepower, base_price, sale_price, dealer_price, in_stock, availability, family')
+          .select('horsepower, in_stock, availability, family')
           .eq('family', 'ProXS')
           .neq('availability', 'Exclude')
           .in('horsepower', HP_TIERS);
 
         if (error || !data) throw error;
 
-        const grouped = HP_TIERS.map(hp => {
+        const grouped = PRO_XS_STATIC_OFFERS.map(offer => {
+          const hp = offer.hp;
           const matches = data.filter(m => Number(m.horsepower) === hp);
-          const prices = matches
-            .map(m => Number(m.sale_price ?? m.base_price ?? m.dealer_price ?? 0))
-            .filter(p => p > 0);
-          const startingAt = prices.length ? Math.min(...prices) : 0;
           const inStockCount = matches.filter(m => m.in_stock).length;
-          return { hp, startingAt, inStockCount };
+          return { hp, startingAt: offer.startingAt, inStockCount };
         });
 
         if (!cancelled) {
@@ -73,7 +70,7 @@ export default function MercuryProXS() {
             PRO_XS_STATIC_OFFERS.map(o => ({
               hp: o.hp,
               startingAt: o.startingAt,
-              inStockCount: 0,
+              inStockCount: null,
             }))
           );
           setLoading(false);
@@ -112,7 +109,7 @@ export default function MercuryProXS() {
             Mercury Pro XS Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works, Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Tournament-grade performance from 115 to 250 HP. Current CAD bare-motor pricing and model-level availability from Harris Boat Works, Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -130,7 +127,7 @@ export default function MercuryProXS() {
           {[
             { icon: Zap, title: 'Hole-shot tuned', body: 'Aggressive calibration and performance gearcase for elite acceleration off the line.' },
             { icon: Gauge, title: 'Top-end speed', body: 'Tournament-grade engine timing and prop pitches built for maximum WOT.' },
-            { icon: Award, title: '3-year factory warranty', body: 'Standard Mercury Marine factory-backed coverage on every new Pro XS. Bonus extensions offered from time to time; see /promotions.' },
+            { icon: Award, title: '3-year factory warranty', body: 'Standard Mercury Marine factory-backed coverage on every new Pro XS. Check current promotions for any eligible bonus coverage.' },
           ].map(({ icon: Icon, title, body }) => (
             <Card key={title} className="p-6 text-center">
               <Icon className="h-8 w-8 text-primary mx-auto mb-3" />
@@ -146,7 +143,7 @@ export default function MercuryProXS() {
             Pro XS Lineup, Starting at (CAD)
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
-            Live pricing from Harris Boat Works inventory. Pickup only at Gores Landing, Rice Lake.
+            Current bare-motor pricing from the HBW pricing reference. Pickup only at Gores Landing, Rice Lake.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {(loading || !variants) &&
@@ -182,7 +179,9 @@ export default function MercuryProXS() {
                       </span>
                     </Link>
                     <div className="text-xs text-muted-foreground mb-4">
-                      {v.inStockCount > 0
+                      {v.inStockCount === null
+                        ? 'Check current availability'
+                        : v.inStockCount > 0
                         ? `${v.inStockCount} variant${v.inStockCount === 1 ? '' : 's'} in stock`
                         : 'Built to order'}
                     </div>
@@ -194,7 +193,7 @@ export default function MercuryProXS() {
               })}
           </div>
           <p className="text-xs text-muted-foreground text-center mt-4">
-            Prices in CAD, all-in (plus HST). Financing from $5,000.
+            Prices in CAD for the bare motor, before HST, controls, propeller, rigging, and installation. Financing is available on eligible purchases from $5,000.
           </p>
         </section>
 

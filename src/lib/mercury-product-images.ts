@@ -197,9 +197,9 @@ export const mercuryProductImages: Record<string, MercuryProductImages> = {
 
   // 250 HP FourStroke (V8)
   '250': {
-    heroImage: `${MERCURY_CDN}/images/outboards/v8/250hp-verado/en-us-canada/250hp-verado-gallery-1.jpg`,
+    heroImage: '/lovable-uploads/products/mercury-250-fourstroke-official.webp',
     galleryImages: [
-      `${MERCURY_CDN}/images/outboards/v8/250hp-verado/en-us-canada/250hp-verado-gallery-1.jpg`,
+      '/lovable-uploads/products/mercury-250-fourstroke-official.webp',
     ]
   },
 
@@ -284,6 +284,33 @@ export function getMotorImages(hp: number): MercuryProductImages | null {
 
   const closestKey = String(closest);
   return mercuryProductImages[closestKey] || null;
+}
+
+/**
+ * Get a verified local product image for catalog cards that have no assigned
+ * database media. Keep this deliberately narrow: most legacy entries in the
+ * generic HP map use rotating Mercury CDN paths and must not be catalog
+ * fallbacks.
+ */
+export function getMotorImagesForModel(
+  hp: number,
+  model: string | null | undefined,
+): MercuryProductImages | null {
+  const normalizedModel = model?.toLowerCase() || '';
+
+  if (hp === 250 && /\bpro\s*xs\b|\bproxs\b/.test(normalizedModel)) {
+    const heroImage = '/lovable-uploads/products/mercury-250-pro-xs-official.webp';
+    return {
+      heroImage,
+      galleryImages: [heroImage],
+    };
+  }
+
+  if (hp === 250 && /\bfour\s*stroke\b|\bfourstroke\b/.test(normalizedModel)) {
+    return mercuryProductImages['250'];
+  }
+
+  return null;
 }
 
 /**

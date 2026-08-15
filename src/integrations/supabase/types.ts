@@ -820,6 +820,212 @@ export type Database = {
         }
         Relationships: []
       }
+      diagnostic_brief_versions: {
+        Row: {
+          brief_json: Json
+          case_id: string
+          created_at: string
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          pdf_storage_path: string | null
+          schema_version: string
+          skill_version: string
+          source_snapshot: Json
+          validation_status: string
+          validator_version: string | null
+          version_no: number
+        }
+        Insert: {
+          brief_json: Json
+          case_id: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no: number
+        }
+        Update: {
+          brief_json?: Json
+          case_id?: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version?: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_brief_versions_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      diagnostic_cases: {
+        Row: {
+          case_status: string
+          closed_at: string | null
+          created_at: string
+          cust_id: number | null
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial?: string
+          opened_with_skill_version?: string
+          ro_header_id?: number
+          ro_job_id?: string
+          ro_no?: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      diagnostic_outcomes: {
+        Row: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on: string | null
+          comeback_30d: boolean | null
+          comeback_30d_checked_at: string | null
+          comeback_30d_ro_no: string | null
+          comeback_60_due_on: string | null
+          comeback_60d: boolean | null
+          comeback_60d_checked_at: string | null
+          comeback_60d_ro_no: string | null
+          comeback_90_due_on: string | null
+          comeback_90d: boolean | null
+          comeback_90d_checked_at: string | null
+          comeback_90d_ro_no: string | null
+          confirmed_at: string
+          confirmed_cause: string
+          created_at: string
+          followup_notes: Json
+          id: string
+          matched_hypothesis_id: string | null
+          parts_used: Json
+          repair_performed: string
+          technician: string
+          tests_run: Json
+          updated_at: string
+        }
+        Insert: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed: string
+          technician: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Update: {
+          brief_version_id?: string
+          case_id?: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause?: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed?: string
+          technician?: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_outcomes_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: true
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "diagnostic_outcomes_version_case_fk"
+            columns: ["brief_version_id", "case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_brief_versions"
+            referencedColumns: ["id", "case_id"]
+          },
+        ]
+      }
       dropbox_sync_config: {
         Row: {
           auto_categorize: boolean | null
@@ -1083,6 +1289,7 @@ export type Database = {
           co_applicant_data: Json | null
           co_applicant_sin_encrypted: string | null
           completed_steps: number[]
+          consent_data: Json
           created_at: string
           current_step: number
           deleted_at: string | null
@@ -1110,6 +1317,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null
@@ -1137,6 +1345,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null
@@ -1932,6 +2141,141 @@ export type Database = {
           name?: string | null
           part_number?: string
           source_url?: string | null
+        }
+        Relationships: []
+      }
+      mercury_post_sale_runs: {
+        Row: {
+          candidates: number
+          error_codes: Json
+          failed: number
+          finished_at: string | null
+          id: number
+          invocation: string
+          mpp_failed: number
+          mpp_updated: number
+          processed: number
+          skipped: number
+          started_at: string
+          status: string
+          svc_failed: number
+          svc_updated: number
+        }
+        Insert: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Update: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Relationships: []
+      }
+      mercury_post_sale_sends: {
+        Row: {
+          attempt_count: number
+          consent_basis: string
+          consent_expires_at: string | null
+          customer_email: string
+          deal_no: string | null
+          dealid: string
+          entry_method: string
+          last_attempt_at: string | null
+          last_error_code: string | null
+          mailchimp_status: string
+          motor: string | null
+          mpp_status: string
+          processed_at: string
+          sale_date: string | null
+          svc_status: string
+        }
+        Insert: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email: string
+          deal_no?: string | null
+          dealid: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Update: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email?: string
+          deal_no?: string | null
+          dealid?: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Relationships: []
+      }
+      mercury_post_sale_webhook_events: {
+        Row: {
+          error_code: string | null
+          finished_at: string | null
+          received_at: string
+          resend_email_id: string
+          stage: string
+          status: string
+          svix_id: string
+        }
+        Insert: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id: string
+          stage?: string
+          status?: string
+          svix_id: string
+        }
+        Update: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id?: string
+          stage?: string
+          status?: string
+          svix_id?: string
         }
         Relationships: []
       }
@@ -3724,6 +4068,54 @@ export type Database = {
         }
         Relationships: []
       }
+      site_documents: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          file_size_label: string | null
+          file_url: string
+          id: string
+          is_published: boolean
+          related_label: string | null
+          related_url: string | null
+          reviewed_on: string | null
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url: string
+          id?: string
+          is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url?: string
+          id?: string
+          is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sms_conversation_archive: {
         Row: {
           archived_at: string | null
@@ -4131,6 +4523,63 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      staff_device_link_requests: {
+        Row: {
+          approval_code_hash: string
+          approved_at: string | null
+          approved_by_display_name: string | null
+          approved_by_staff_key: string | null
+          approved_staff_identity: Json | null
+          claimed_at: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          metadata: Json
+          platform: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          approval_code_hash: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          approval_code_hash?: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash?: string
+          requested_display_name?: string
+          requester_key_hash?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       staff_device_tokens: {
         Row: {
@@ -5121,6 +5570,39 @@ export type Database = {
           trade_allowance: number | null
           unit_type: string | null
           vin: string | null
+        }
+        Relationships: []
+      }
+      diagnostic_case_source: {
+        Row: {
+          ambiguity_flags: string[] | null
+          boat_hin: string | null
+          boat_make: string | null
+          boat_model: string | null
+          boat_unit_count: number | null
+          boat_unit_ordinal: number | null
+          boat_year: string | null
+          complaint: string | null
+          cust_id: number | null
+          customer_approval: string | null
+          customer_name: string | null
+          date_in: string | null
+          described_motor_job_count: number | null
+          is_resolved: boolean | null
+          job_bearing_motor_count: number | null
+          job_ordinal: number | null
+          job_status: string | null
+          motor_make: string | null
+          motor_model: string | null
+          motor_serial: string | null
+          motor_unit_count: number | null
+          motor_unit_ordinal: number | null
+          motor_year: string | null
+          promised_date: string | null
+          ro_header_id: number | null
+          ro_job_id: string | null
+          ro_no: string | null
+          synced_at: string | null
         }
         Relationships: []
       }
@@ -6399,6 +6881,37 @@ export type Database = {
           _user_id: string
         }
         Returns: undefined
+      }
+      mercury_post_sale_candidates: {
+        Args: never
+        Returns: {
+          customer_email: string
+          deal_no: string
+          dealid: string
+          first_name: string
+          last_name: string
+          motor: string
+          motor_hp: number
+          mpp_purchased: boolean
+          sale_date: string
+          season: string
+        }[]
+      }
+      mercury_post_sale_mpp_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_mpp_status: string
+        }[]
+      }
+      mercury_post_sale_svc_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_svc_status: string
+        }[]
       }
       normalize_phone: { Args: { p: string }; Returns: string }
       open_ro_brief: {

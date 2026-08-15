@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-05-04
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"
 date_published: 2026-04-27
-date_modified: 2026-05-04
+date_modified: 2026-08-08
 keywords: ["portable outboard","small boat motor","dinghy motor","mercury portable","tender motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
-**Last updated:** 2026-05-04  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
 
@@ -74,28 +75,31 @@ Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice 
 
 *Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
 
-::decision-card
-eyebrow: Portable Mercury sizing
-heading: What are you actually pushing?
-subhead: The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
-leftLabel: Dinghy, canoe, or small jon boat
-leftCriteria:
-  - Tender for a larger boat at anchor
-  - Solo or two-person fishing on a small pond or river
-  - Boat under 12 feet, light aluminum or inflatable
-  - Want one-hand carry and easy stowage
-leftOutcome: Mercury 2.5 to 6 HP MH
-leftVariant: alternative
-rightLabel: Small fishing boat or backup kicker
-rightCriteria:
-  - 14 to 16 foot aluminum used regularly
-  - Trolling for walleye or bass on Kawartha lakes
-  - Backup or kicker for a larger main motor
-  - Need electric start and remote tiller options
-rightOutcome: Mercury 9.9 to 20 HP EH or ELH
-rightVariant: recommended
-whenInDoubt: A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
-::
+*Portable Mercury sizing*
+
+### What are you actually pushing?
+
+The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
+
+#### Dinghy, canoe, or small jon boat
+
+- Tender for a larger boat at anchor
+- Solo or two-person fishing on a small pond or river
+- Boat under 12 feet, light aluminum or inflatable
+- Want one-hand carry and easy stowage
+
+**Mercury 2.5 to 6 HP MH**
+
+#### Small fishing boat or backup kicker
+
+- 14 to 16 foot aluminum used regularly
+- Trolling for walleye or bass on Kawartha lakes
+- Backup or kicker for a larger main motor
+- Need electric start and remote tiller options
+
+**Mercury 9.9 to 20 HP EH or ELH**
+
+A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
 
 ### Mercury 15 MH and 15 EH (15 HP)
 14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.
@@ -125,8 +129,6 @@ For most small fishing applications, manual start (MH) is fine. For older operat
 ## Shaft length
 
 **Short shaft (15 inches):** Standard for most tin boats and small dinghies.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats.
 
@@ -163,14 +165,6 @@ Portable motors are designed for easy transport, but they need proper care:
 
 ---
 
-## Related posts
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-
----
-
 ## Ready to buy a portable Mercury?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
@@ -181,7 +175,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 
 ### What's the lightest outboard Mercury makes?
 
-The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
+The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
 
 ### Why is 9.9HP so popular?
 
@@ -189,7 +183,7 @@ Many lakes have horsepower restrictions of 10HP or less. The Mercury 9.9HP provi
 
 ### Can I really carry these by myself?
 
-Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
+Up to about 9.9HP (39 kg (85 lb)), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
 
 ### Do portable outboards need winterization?
 
@@ -197,24 +191,23 @@ Yes. Follow the same winterization procedures as larger motors: stabilize fuel, 
 
 ## Related guides
 
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
+- [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat), choosing between a Mercury 90 and 115
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
-- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

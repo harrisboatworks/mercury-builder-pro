@@ -1,32 +1,33 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator.md
-last_updated: 2026-06-08
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Avator électrique : prix et autonomie"
-description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Platine Mercury."
+description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-08-02
 keywords: ["Mercury Avator","moteur électrique hors-bord","Avator prix Canada","Avator autonomie"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Mercury Avator électrique : prix et autonomie
 
-> Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Platine Mercury.
+> Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier.
 
-**Category:** Guide d'achat  
-**Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-06-08\
+**Dernière révision :** 2026-08-02\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
 
 ## Moteurs hors-bord électriques Mercury Avator : ce qu'ils sont, ce qu'ils coûtent, et à qui ils conviennent
 
@@ -36,15 +37,15 @@ Les moteurs électriques, ce n'est plus de la musique d'avenir : c'est déjà l�
 
 Mercury nomme les modèles Avator par leur puissance en watts, ce qui mêle bien du monde. Voici la traduction :
 
-| Modèle | Puissance à l'hélice | Équivaut à (essence) | Pour quel bateau |
-|---|---|---|---|
-| Avator 7.5e | 750 W | ~3,5 ch | Annexes, canots, petites chaloupes, pêche à la traîne |
-| Avator 20e | 2,2 kW | ~5 ch | Chaloupes, petites embarcations |
-| Avator 35e | 3,7 kW | ~9,9 ch | Petites chaloupes de pêche, annexes |
-| Avator 75e | 7,5 kW | 10 ch (conversion à l'arbre d'hélice) | Petits pontons, embarcations plus grandes |
-| Avator 110e | 11 kW | 15 ch (conversion à l'arbre d'hélice) | Pontons, bateaux de promenade |
+| Modèle | Puissance à l'arbre d'hélice | Pour quel bateau |
+|---|---|---|
+| Avator 7.5e | 0,75 kW | Annexes, canots, petites chaloupes, pêche à la traîne |
+| Avator 20e | 2,2 kW | Chaloupes, petites embarcations |
+| Avator 35e | 3,7 kW | Petites chaloupes de pêche, annexes |
+| Avator 75e | 7,5 kW | Petits pontons, embarcations plus grandes |
+| Avator 110e | 11 kW | Pontons, bateaux de promenade |
 
-Une particularité à connaître : les trois premiers chiffres sont les équivalences essence publiées par Mercury, tandis que les chiffres des 75e et 110e sont des conversions directes de la puissance à l'arbre d'hélice (7 500 watts donnent 10 ch). Un moteur électrique livre tout son couple instantanément, alors un 75e tire un bateau bien plus fort que « 10 ch » le laisse croire. Voyez la colonne comme un repère, pas une spécification.
+Mercury publie la puissance de chaque Avator à l'arbre d'hélice. Nous ne convertissons pas ces valeurs en « HP essence », car une comparaison de puissance seule ne décrit pas l'autonomie, la poussée, le bateau, la charge ou les conditions. Le bon modèle se choisit à partir de l'embarcation et de l'usage réel.
 
 Quelques points à savoir : la batterie du 7.5e (1 kWh, environ 7,7 kg / 17 lb) se glisse sous le capot sans câbles, et vous pouvez en transporter une de rechange et la changer en quelques secondes. Les 75e et 110e utilisent un centre d'alimentation (Power Center) qui relie jusqu'à quatre batteries de 5 400 Wh, donc l'autonomie augmente selon le nombre de batteries achetées.
 
@@ -75,11 +76,11 @@ Soyez franc avec vous-même sur votre façon de naviguer.
 
 ### Et le prix ?
 
-Le prix de l'Avator varie beaucoup selon le modèle, le nombre de batteries et le chargeur, et c'est souvent la batterie qui coûte cher, pas la tête motrice. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. C'est donc la seule gamme Mercury qu'on chiffre par conversation plutôt que par le configurateur. Appelez-nous au 905-342-2153, décrivez le bateau et vos distances réelles, et on vous donnera le vrai prix actuel pour la configuration exacte. La même réponse franche, juste au téléphone.
+Le prix total de l'Avator dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. Les prix de Mercury Canada sont encore en cours de finalisation; nous ne publions donc pas un chiffre provisoire. Consultez notre [page Avator](/electric/mercury-avator) pour la disponibilité actuelle et le parcours de configuration.
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
 ## FAQs
 
@@ -87,9 +88,9 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
 
 Dans l'essai publié par Mercury du Avator 7.5e sur un bateau de 13 pieds (382 lb) avec une batterie de 1 kWh, le moteur a tenu environ 60 minutes ou 5 milles à plein régime, et jusqu'à 19 heures ou 34 milles à 25 % des gaz. L'autonomie réelle dépend de votre bateau, de la charge et des conditions.
 
-### À quelle puissance essence chaque Mercury Avator correspond-il ?
+### Quelle est la puissance de chaque Mercury Avator ?
 
-Mercury compare le 7.5e à environ 3,5 ch, le 20e à environ 5 ch et le 35e à environ 9,9 ch. Pour les 75e et 110e, Mercury publie la conversion directe de la puissance à l'arbre d'hélice : 7 500 watts donnent 10 ch et 11 000 watts donnent 15 ch. Le couple instantané fait qu'ils semblent plus forts au départ que ces chiffres le suggèrent.
+Mercury publie la puissance à l'arbre d'hélice : 0,75 kW pour le 7.5e, 2,2 kW pour le 20e, 3,7 kW pour le 35e, 7,5 kW pour le 75e et 11 kW pour le 110e. Nous ne les convertissons pas en HP essence; le bateau, la charge, l'autonomie et les conditions comptent dans le choix.
 
 ### Combien de temps faut-il pour recharger une batterie Mercury Avator ?
 
@@ -97,20 +98,19 @@ La batterie de 1 kWh du 7.5e prend environ 9 heures sur le chargeur de 110 W inc
 
 ### Combien coûte un Mercury Avator au Canada ?
 
-Ça dépend du modèle, du nombre de batteries et du chargeur, et les batteries représentent souvent la plus grosse part du prix. L'Avator est un produit sur commande chez Harris Boat Works : appelez le 905-342-2153 pour un prix exact et à jour selon votre bateau. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.
+Le total dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. Les prix de Mercury Canada sont encore en cours de finalisation; consultez la [page Avator](/electric/mercury-avator) pour la disponibilité actuelle. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)"
 description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
@@ -34,28 +35,31 @@ language: en-CA
 
 ---
 
-::decision-card
-eyebrow: Pontoon HP decision
-heading: How big is your pontoon and how do you load it?
-subhead: Tube count and use case matter more than the HP number alone.
-leftLabel: 16 to 18 ft two-tube, cruising and light fishing
-leftCriteria:
-  - 6 people maximum, no active water sports
-  - Sheltered Kawartha bays, short runs
-  - Fuel economy and quiet matter
-  - You want the more affordable setup
-leftOutcome: 90 HP Command Thrust FourStroke
-leftVariant: recommended
-rightLabel: 20 to 22+ ft tritoon, full crew with water sports
-rightCriteria:
-  - 8 to 10 passengers, tubing or skiing weekly
-  - Open water on Rice Lake or larger Kawartha lakes
-  - Fast hole shot with the boat loaded matters
-  - Long-term hold, you want the right motor once
-rightOutcome: 150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)
-rightVariant: alternative
-whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
-::
+*Pontoon HP decision*
+
+### How big is your pontoon and how do you load it?
+
+Tube count and use case matter more than the HP number alone.
+
+#### 16 to 18 ft two-tube, cruising and light fishing
+
+- 6 people maximum, no active water sports
+- Sheltered Kawartha bays, short runs
+- Fuel economy and quiet matter
+- You want the more affordable setup
+
+**90 HP Command Thrust FourStroke**
+
+#### 20 to 22+ ft tritoon, full crew with water sports
+
+- 8 to 10 passengers, tubing or skiing weekly
+- Open water on Rice Lake or larger Kawartha lakes
+- Fast hole shot with the boat loaded matters
+- Long-term hold, you want the right motor once
+
+**150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)**
+
+Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
 
 ## The gearcase is the part most people overlook
 
@@ -77,7 +81,7 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Where you boat.** Sheltered Kawartha bays vs. open water on a big lake vs. running the Trent-Severn system all change the practical HP minimum.
 
-**Capacity plate.** The plate sets the legal ceiling. Pontoons typically rate 90 to 150 HP, or 115 to 200 HP, depending on size and tube configuration. We work within it.
+**Compliance notice.** Use the manufacturer's maximum recommended safe power for the exact pontoon model, then check tube configuration, transom, steering, motor weight, and load. Similar-looking pontoons can carry different ratings.
 
 ---
 
@@ -106,19 +110,15 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Best fit: 150 HP and up (standard gearcase).** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP FourStroke (standard gearcase) is typical.
 
-::cta
-variant: inline
-heading: Know which one fits your pontoon? See the price.
-body: Live pricing on the pontoon-friendly motors is right here, in real CAD.
-primaryLabel: See live pontoon motor pricing
-primaryHref: /pricing-reference
-::
+### Know which one fits your pontoon? See the price.
+
+Live pricing on the pontoon-friendly motors is right here, in real CAD.
+
+[See live pontoon motor pricing](/pricing-reference)
 
 ---
 
 ## Why Command Thrust makes the difference on pontoons
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Pontoons are unique among recreational hulls:
 - Blunt-fronted, the noses push water rather than slice it
@@ -175,14 +175,6 @@ Mercury Boost is a software calibration that improves mid-range acceleration res
 **The honest pontoon-specific framing:** For a typical two-tube pontoon in the Kawarthas, the right answer is a 90 or 115 Command Thrust FourStroke. For a tritoon or a pontoon used for serious watersports, a 200-300 HP V8 Pro XS with factory Boost (or the dealer-installed Boost calibration on an eligible serial) is the upgrade path. Boost is not a substitute for the right base motor.
 
 For full Boost eligibility detail by motor family and serial range, see our [Mercury Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026).
-
----
-
-## Related posts
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
 
 ---
 
@@ -248,16 +240,15 @@ FourStroke is almost always the right answer for pontoons. Pro XS is built for t
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

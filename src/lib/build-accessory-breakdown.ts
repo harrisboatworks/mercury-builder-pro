@@ -4,20 +4,18 @@
  */
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { isSameHpMercuryTrade, resolvePropellerDecision } from '@/lib/propeller-selection';
 import { hasElectricStart } from '@/lib/motor-config-utils';
-
-// Package warranty year constants
-const COMPLETE_TARGET_YEARS = 7;
-const PREMIUM_TARGET_YEARS = 8;
 
 export interface AccessoryBreakdownItem {
   name: string;
   price: number;
   description?: string;
+  category?: 'equipment' | 'installation' | 'protection' | 'custom';
 }
 
 export interface BuildAccessoryBreakdownParams {
-  selectedOptions?: Array<{ name: string; price: number; isIncluded?: boolean }>;
+  selectedOptions?: Array<{ name: string; price: number; isIncluded?: boolean; category?: string }>;
   motor: any;
   boatInfo?: any;
   purchasePath?: 'loose' | 'installed' | null;
@@ -25,10 +23,8 @@ export interface BuildAccessoryBreakdownParams {
   looseMotorBattery?: { wantsBattery?: boolean; batteryCost?: number };
   selectedPackage?: string; // 'good' | 'better' | 'best'
   adminCustomItems?: Array<{ name: string; price: number }>;
-  completeWarrantyCost?: number;
-  premiumWarrantyCost?: number;
-  currentCoverageYears?: number;
-  tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
+  warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number } | null;
+  tradeInInfo?: { brand?: string; horsepower?: number | string; hasTradeIn?: boolean; estimatedValue?: number };
 }
 
 export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): AccessoryBreakdownItem[] {
@@ -41,9 +37,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     looseMotorBattery,
     selectedPackage = 'good',
     adminCustomItems = [],
-    completeWarrantyCost = 0,
-    premiumWarrantyCost = 0,
-    currentCoverageYears = 3,
+    warrantyConfig,
     tradeInInfo,
   } = params;
 
@@ -98,7 +92,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: option.name,
       price: option.price,
-      description: option.isIncluded ? 'Included with motor' : undefined
+      description: option.isIncluded ? 'Included with motor' : undefined,
+      category: option.category?.toLowerCase().includes('install') ? 'installation' : 'equipment',
     });
   });
 
@@ -108,13 +103,15 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: `${mountingType} Installation`,
       price: tillerInstallCost,
-      description: 'Professional mounting and setup'
+      description: 'Professional mounting and setup',
+      category: 'installation',
     });
   } else if (isManualTiller && tillerInstallCost === 0 && purchasePath === 'installed') {
     breakdown.push({
       name: 'Clamp-On Installation',
       price: 0,
-      description: 'DIY-friendly mounting system (no installation labor required)'
+      description: 'DIY-friendly mounting system (no installation labor required)',
+      category: 'installation',
     });
   }
 
@@ -127,7 +124,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     const controlsDesc = controlsOption === 'adapter'
       ? 'Adapter to connect your existing Mercury controls to the new motor'
       : 'New throttle/shift controls, cables, and installation hardware';
-    breakdown.push({ name: controlsName, price: controlsCost, description: controlsDesc });
+    breakdown.push({ name: controlsName, price: controlsCost, description: controlsDesc, category: 'installation' });
   }
 
   // Professional installation for remote motors (installed path only)
@@ -135,7 +132,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: 'Professional Installation',
       price: installationLaborCost,
-      description: 'Expert rigging, mounting, and commissioning by certified technicians'
+      description: 'Expert rigging, mounting, and commissioning by certified technicians',
+      category: 'installation',
     });
   }
 
@@ -144,33 +142,36 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: 'Marine Starting Battery',
       price: looseMotorBattery.batteryCost || 179.99,
-      description: 'Marine starting battery for electric start motor'
+      description: 'Marine starting battery for electric start motor',
+      category: 'equipment',
     });
   }
 
   // Propeller allowance (or customer prop opt-out / trade-in match)
-  const isMercuryTradeMatch = tradeInInfo?.hasTradeIn &&
-    tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
-    Number(tradeInInfo?.horsepower) === Number(hp);
+  const isMercuryTradeMatch = isSameHpMercuryTrade(tradeInInfo, hp);
+  const propellerDecision = resolvePropellerDecision({
+    hp,
+    installConfig,
+    boatInfo,
+    tradeInInfo,
+  });
 
   if (!includesProp && propAllowance) {
-    if (boatInfo?.hasCompatibleProp) {
+    if (propellerDecision === 'reuse_existing') {
       breakdown.push({
-        name: 'Use of Customer Propeller',
+        name: 'Propeller: Use Existing',
         price: 0,
-        description: 'If one is required, additional cost applies'
-      });
-    } else if (isMercuryTradeMatch) {
-      breakdown.push({
-        name: 'Propeller — Use Existing',
-        price: 0,
-        description: `Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed). Saving you $${propAllowance!.price.toLocaleString()}.`
+        description: isMercuryTradeMatch
+          ? 'Your current Mercury propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.'
+          : 'Your propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.',
+        category: 'equipment',
       });
     } else {
       breakdown.push({
         name: propAllowance.name,
         price: propAllowance.price,
-        description: propAllowance.description
+        description: propAllowance.description,
+        category: 'equipment',
       });
     }
   }
@@ -180,24 +181,21 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: '12L External Fuel Tank & Hose',
       price: 199,
-      description: 'Portable fuel tank for extended range'
+      description: 'Portable fuel tank for extended range',
+      category: 'equipment',
     });
   }
 
-  // Warranty extensions
-  if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
-    const extensionYears = COMPLETE_TARGET_YEARS - currentCoverageYears;
+  // Mercury Platinum Product Protection. Use the persisted quote state as the
+  // only source here so summary, saved quote, admin view and PDF cannot
+  // independently re-price or double-add the same plan.
+  if ((warrantyConfig?.extendedYears || 0) > 0 && (warrantyConfig?.warrantyPrice || 0) > 0) {
+    const extensionYears = warrantyConfig!.extendedYears!;
     breakdown.push({
-      name: `Complete Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-      price: completeWarrantyCost,
-      description: `Total coverage: ${COMPLETE_TARGET_YEARS} years`
-    });
-  } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
-    const extensionYears = PREMIUM_TARGET_YEARS - currentCoverageYears;
-    breakdown.push({
-      name: `Premium Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-      price: premiumWarrantyCost,
-      description: `Total coverage: ${PREMIUM_TARGET_YEARS} years`
+      name: `Mercury Platinum Product Protection (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+      price: warrantyConfig!.warrantyPrice!,
+      description: `Combined coverage: ${warrantyConfig!.totalYears || 'confirmed at registration'} years`,
+      category: 'protection',
     });
   }
 
@@ -206,7 +204,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: item.name,
       price: item.price,
-      description: 'Custom item'
+      description: 'Custom item',
+      category: 'custom',
     });
   });
 

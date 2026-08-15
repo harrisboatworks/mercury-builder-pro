@@ -33,9 +33,9 @@ export const HERO_VARIATIONS: HeroVariation[] = [
     ),
     subheading: 'New motor. Same boat. Way better mornings.',
     stats: [
-      { n: '70%', l: 'of the benefit' },
-      { n: '30%', l: 'of the cost' },
-      { n: '79', l: 'years on the water' },
+      { n: '70%', l: 'of the new-boat benefit' },
+      { n: '30%', l: 'of a comparable new boat' },
+      { n: '1947', l: 'family-owned since' },
     ],
     ctaLabel: 'Build My Quote',
   },
@@ -70,7 +70,7 @@ export const HERO_VARIATIONS: HeroVariation[] = [
       'Stop nursing an old engine through every launch. Get a real Mercury quote in three minutes.',
     stats: [
       { n: '1–3', l: 'day install' },
-      { n: '7-yr', l: 'warranty available' },
+      { n: '3-yr', l: 'standard factory warranty' },
       { n: '1947', l: 'on Rice Lake since' },
     ],
     ctaLabel: 'Get My Quote Before the Season Starts',

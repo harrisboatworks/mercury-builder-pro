@@ -16,6 +16,8 @@ export interface DecodeContext {
   year?: number;
 }
 
+export type DecodedTradeInEngineType = '4-stroke' | '2-stroke' | 'optimax' | undefined;
+
 const BRAND_FROM_PREFIX: Record<string, string> = {
   F: 'Yamaha',
   DF: 'Suzuki',
@@ -28,7 +30,7 @@ const BRAND_FROM_PREFIX: Record<string, string> = {
  * Pattern-based heuristics only (no DB lookup).
  */
 export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): DecodeResult {
-  const { brand, year } = ctx;
+  const { brand } = ctx;
   const result: DecodeResult = {
     hp: null,
     stroke: null,
@@ -44,12 +46,17 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   const upper = trimmed.toUpperCase();
 
   // ---- HP extraction ----
-  const strong = upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)/);
+  const leadingStrokeHp = upper.match(/^(?:2|4|TWO|FOUR)[\s-]?(?:S|STROKES?)\s+(\d{1,3}(?:\.\d)?)(?!\d)/);
+  const strong = leadingStrokeHp ? null : upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)(?!\d)/);
   const embedded = Array.from(upper.matchAll(/\b(\d{1,3}(?:\.\d)?)\b/g))
     .map((m) => parseFloat(m[1]))
     .filter((n) => n >= 2 && n <= 450 && !(n >= 1950 && n <= 2050));
 
-  if (strong) {
+  if (leadingStrokeHp) {
+    result.hp = parseFloat(leadingStrokeHp[1]);
+    result.hpConfidence = 'high';
+    result.hpReasons.push(`HP "${leadingStrokeHp[1]}" follows an explicit stroke marker`);
+  } else if (strong) {
     const n = parseFloat(strong[1]);
     if (n >= 2 && n <= 450) {
       result.hp = n;
@@ -87,10 +94,25 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   //   plus brand prefixes that imply 4-stroke (F<digit>, DF<digit>, BF<digit>).
   const fourStrokeHit = upper.match(/\b4[\s-]?S(?:TROKES?)?\b|\bFOUR[\s-]?STROKES?\b|^(?:DF|F|BF)\d/);
   const optiHit = upper.match(/OPTIMAX|OPTI\b/);
+  const proXsHit = upper.match(/\bPRO[\s-]*XS\b/);
   // "2S", "2-S", "2 STROKE", "2-STROKE", "2STROKE", "TWO STROKE", "TWOSTROKE", "TWO-STROKE", or DT<digit>.
   const twoStrokeHit = upper.match(/\b2[\s-]?S(?:TROKES?)?\b|\bTWO[\s-]?STROKES?\b|^DT\d/);
 
-  if (fourStrokeHit) {
+  // HBW intake rule: a Pro XS model name plus year is enough to determine the
+  // architecture. Pre-2018 resolves to OptiMax; 2018+ resolves to FourStroke.
+  // This keeps customers from having to know the combustion platform behind
+  // Mercury's product-line name.
+  if (proXsHit && ctx.year) {
+    const isOptiMax = ctx.year < 2018;
+    result.stroke = isOptiMax ? 'OptiMax' : '4-Stroke';
+    result.strokeConfidence = 'high';
+    result.strokeReasons.push(`${ctx.year} Pro XS automatically resolves to ${isOptiMax ? 'OptiMax' : 'FourStroke'}`);
+  } else if (proXsHit) {
+    result.stroke = null;
+    result.strokeConfidence = 'low';
+    result.strokeReasons.push('Pro XS architecture is determined by model year');
+    result.warnings.push('Enter the model year so Pro XS can resolve automatically to OptiMax or FourStroke');
+  } else if (fourStrokeHit) {
     result.stroke = '4-Stroke';
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${fourStrokeHit[0]}" in model text → 4-Stroke marker`);
@@ -103,21 +125,17 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${twoStrokeHit[0]}" → 2-Stroke marker`);
   } else if (/^\d/.test(upper) && result.hp) {
-    // Bare number, try to use year as a tiebreaker
-    if (year && year >= 2007) {
-      result.stroke = '4-Stroke';
-      result.strokeConfidence = 'medium';
-      result.strokeReasons.push(`Bare HP + year ${year} (≥ 2007) → likely 4-Stroke (modern Mercury era)`);
-    } else if (year && year < 2000) {
-      result.stroke = '2-Stroke';
-      result.strokeConfidence = 'medium';
-      result.strokeReasons.push(`Bare HP + year ${year} (< 2000) → likely 2-Stroke era`);
-    } else {
-      result.stroke = null;
-      result.strokeConfidence = 'low';
-      result.strokeReasons.push('Bare HP with no year, stroke ambiguous');
-      result.warnings.push("Stroke unclear from bare HP, enter year to refine, or add '4S' / '2S'");
-    }
+    // A year and HP are not enough to distinguish Mercury's overlapping
+    // two-stroke, OptiMax, and FourStroke lineups. Configuration suffixes such
+    // as ELPT describe rigging, not combustion architecture. Fail closed until
+    // the customer supplies an explicit marker or confirms the stroke picker.
+    const isMercury = brand?.trim().toLowerCase() === 'mercury';
+    result.stroke = null;
+    result.strokeConfidence = 'low';
+    result.strokeReasons.push(isMercury
+      ? 'Mercury HP/configuration text without an explicit architecture marker is ambiguous'
+      : 'Bare HP without a brand-specific model marker is ambiguous');
+    result.warnings.push("Stroke unclear; add '4S' / '2S' / 'OptiMax' or pick the stroke manually");
   }
 
   // ---- Unrecognized ----
@@ -149,4 +167,23 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   }
 
   return result;
+}
+
+export function decodeTradeInModelFields(raw: string, ctx: DecodeContext = {}): {
+  horsepower: number;
+  engineType: DecodedTradeInEngineType;
+} {
+  const decoded = decodeTradeInModel(raw, ctx);
+  const engineType = decoded.stroke === '4-Stroke'
+    ? '4-stroke'
+    : decoded.stroke === '2-Stroke'
+      ? '2-stroke'
+      : decoded.stroke === 'OptiMax'
+        ? 'optimax'
+        : undefined;
+
+  return {
+    horsepower: decoded.hp ?? 0,
+    engineType,
+  };
 }

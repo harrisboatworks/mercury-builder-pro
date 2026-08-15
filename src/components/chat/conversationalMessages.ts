@@ -470,13 +470,13 @@ export const PROMO_REACTION_MESSAGES: ConversationalNudge[] = [
 ];
 
 // Format promo end date nicely
-const formatPromoEndDate = (endDate: string | null | undefined): string => {
-  if (!endDate) return 'soon';
+const formatPromoEndDate = (endDate: string | null | undefined): string | null => {
+  if (!endDate) return null;
   try {
     const date = new Date(endDate);
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   } catch {
-    return 'soon';
+    return null;
   }
 };
 
@@ -485,8 +485,18 @@ export const formatPromoMessage = (
   message: string,
   promo: { warranty_extra_years?: number | null; end_date?: string | null; rate?: number | null }
 ): string => {
+  if (message.includes('{years}') && !promo.warranty_extra_years) {
+    return 'See the current promotion details before adding a warranty bonus';
+  }
+  if (message.includes('{rate}') && !promo.rate) {
+    return 'See the current financing details in the quote builder';
+  }
+
+  const endDate = formatPromoEndDate(promo.end_date);
   return message
-    .replace('{years}', String(promo.warranty_extra_years || 2))
-    .replace('{endDate}', formatPromoEndDate(promo.end_date))
-    .replace('{rate}', promo.rate ? promo.rate.toFixed(2) : '6.99');
+    .replace('{years}', String(promo.warranty_extra_years ?? ''))
+    .replace('till {endDate}', endDate ? `till ${endDate}` : 'while the current offer is active')
+    .replace('ends {endDate}', endDate ? `ends ${endDate}` : 'is available for a limited time')
+    .replace('{endDate}', endDate || 'for a limited time')
+    .replace('{rate}', promo.rate?.toFixed(2) ?? '');
 };

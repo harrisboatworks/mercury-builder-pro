@@ -14,7 +14,7 @@
         "@id": "https://www.mercuryrepower.ca/#organization"
       },
       "inLanguage": "en-CA",
-      "lastReviewed": "2026-07-15",
+      "lastReviewed": "2026-08-08",
       "mainEntity": {
         "@id": "https://www.mercuryrepower.ca/pricing-reference#pricelist"
       }
@@ -973,6 +973,74 @@
           "position": 15,
           "item": {
             "@type": "Product",
+            "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-exlpt-pk",
+            "name": "Mercury 9.9 EXLPT Command Thrust ProKicker EFI FourStroke",
+            "brand": {
+              "@type": "Brand",
+              "name": "Mercury Marine"
+            },
+            "category": "Outboard Motor",
+            "model": "9.9 EXLPT Command Thrust ProKicker EFI FourStroke",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Horsepower",
+                "value": "9.9",
+                "unitCode": "BHP"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Family",
+                "value": "FourStroke"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Shaft",
+                "value": "25\""
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Control",
+                "value": "Remote"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "ModelNumber",
+                "value": "1A10462LK"
+              }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "5082",
+              "priceCurrency": "CAD",
+              "availability": "https://schema.org/PreOrder",
+              "itemCondition": "https://schema.org/NewCondition",
+              "areaServed": {
+                "@type": "Country",
+                "name": "Canada"
+              },
+              "seller": {
+                "@id": "https://www.mercuryrepower.ca/#organization"
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "applicableCountry": "CA"
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "5415",
+                "priceCurrency": "CAD",
+                "description": "MSRP"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-eh",
             "name": "Mercury 9.9EH FourStroke",
             "brand": {
@@ -1038,7 +1106,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 16,
+          "position": 17,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-elh-ct",
@@ -1106,7 +1174,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 17,
+          "position": 18,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-elh",
@@ -1174,7 +1242,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 18,
+          "position": 19,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-elhpt-pk",
@@ -1242,7 +1310,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 19,
+          "position": 20,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-elpt-pk",
@@ -1310,7 +1378,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 20,
+          "position": 21,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-exlh-ct",
@@ -1378,7 +1446,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 21,
+          "position": 22,
           "item": {
             "@type": "Product",
             "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-exlhpt-pk",
@@ -1446,74 +1514,6 @@
         },
         {
           "@type": "ListItem",
-          "position": 22,
-          "item": {
-            "@type": "Product",
-            "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-9.9-exlpt-pk",
-            "name": "Mercury 9.9EXLPT Command Thrust ProKicker EFI FourStroke",
-            "brand": {
-              "@type": "Brand",
-              "name": "Mercury Marine"
-            },
-            "category": "Outboard Motor",
-            "model": "9.9EXLPT Command Thrust ProKicker EFI FourStroke",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Horsepower",
-                "value": "9.9",
-                "unitCode": "BHP"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Family",
-                "value": "FourStroke"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Shaft",
-                "value": "25\""
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Control",
-                "value": "Remote"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "ModelNumber",
-                "value": "1A10462LK"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "5082",
-              "priceCurrency": "CAD",
-              "availability": "https://schema.org/PreOrder",
-              "itemCondition": "https://schema.org/NewCondition",
-              "areaServed": {
-                "@type": "Country",
-                "name": "Canada"
-              },
-              "seller": {
-                "@id": "https://www.mercuryrepower.ca/#organization"
-              },
-              "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-                "applicableCountry": "CA"
-              },
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "price": "5415",
-                "priceCurrency": "CAD",
-                "description": "MSRP"
-              }
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
           "position": 23,
           "item": {
             "@type": "Product",
@@ -1557,7 +1557,7 @@
               "@type": "Offer",
               "price": "2999",
               "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock",
+              "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
               "areaServed": {
                 "@type": "Country",
@@ -1693,7 +1693,7 @@
               "@type": "Offer",
               "price": "2999",
               "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock",
+              "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
               "areaServed": {
                 "@type": "Country",
@@ -4345,7 +4345,7 @@
               "@type": "Offer",
               "price": "17083",
               "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock",
+              "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
               "areaServed": {
                 "@type": "Country",

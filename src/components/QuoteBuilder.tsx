@@ -19,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { BonusOffers } from './quote-builder/BonusOffers';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface Motor {
   id: string;
@@ -129,6 +130,8 @@ export interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
+
 export interface QuoteData {
   motor: Motor | null;
   boatInfo: BoatInfo | null;
@@ -159,7 +162,9 @@ export interface QuoteData {
   selectedPromoRate?: number | null;
   selectedPromoTerm?: number | null;
   selectedPromoValue?: string | null;
+  selectedPaymentMethod?: QuotePaymentMethod | null;
   looseMotorBattery?: { wantsBattery: boolean; batteryCost: number } | null;
+  pdfSnapshot?: QuotePdfSnapshot;
 }
 
 const QuoteBuilder = () => {

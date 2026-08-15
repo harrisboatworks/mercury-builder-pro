@@ -92,6 +92,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-main-and-trolling-motor",
       "portable-outboard-mercury-guide-2-20hp",
       "tiller-vs-remote-steering-outboard-guide",
+      "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat",
     ],
   },
   {
@@ -110,6 +111,7 @@ export const blogClusters: BlogCluster[] = [
       "new-vs-used-mercury-outboard-ontario",
       "bad-used-boats-to-avoid-ontario",
       "used-boat-walkaround-inspection-ontario",
+      "new-vs-used-pontoon-boats-ontario",
       "pontoon-vs-v-hull-comparison-ontario",
       "aluminum-vs-fiberglass-hull-ontario",
       "best-boats-rice-lake-under-30000",
@@ -118,6 +120,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-command-thrust-guide-pontoon-boats",
       "mercury-command-thrust-pontoon-eligibility-2026",
       "legend-boats-mercury-power-package-guide-ontario",
+      "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
     ],
   },
   {
@@ -150,12 +153,19 @@ export const blogClusters: BlogCluster[] = [
       "spring-outboard-commissioning-checklist",
       "mercury-outboard-spring-run-up-checklist-ontario",
       "breaking-in-new-mercury-motor-guide",
+      "new-mercury-outboard-first-season-guide-ontario",
+      "mercury-outboard-oil-capacity-chart",
+      "mercury-outboard-maintenance-parts-list",
       "boat-trailer-maintenance-guide-ontario",
       "boat-trailering-mistakes-ontario",
       "accidentally-increase-boat-service-bills-ontario",
       "walleye-opener-boat-prep",
       "late-season-boating-safety",
       "ontario-boating-season-tips",
+      "milky-gearcase-oil-meaning-cost-ontario",
+      "mercury-water-pump-replacement-cost-ontario",
+      "mercury-100-hour-service-cost-ontario",
+      "spring-commissioning-cost-ontario",
     ],
   },
   {
@@ -174,6 +184,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-vesselview-smartcraft-plain-english-guide",
       "mercury-smartcraft-alarm-codes-encyclopedia",
       "mercury-outboard-beeping-codes-guide",
+      "mercury-outboard-fault-codes-lookup",
       "mercury-outboard-wont-start-troubleshooting",
       "mercury-outboard-wont-start-after-sitting",
       "mercury-outboard-overheat-alarm-decoder",
@@ -187,6 +198,8 @@ export const blogClusters: BlogCluster[] = [
       "how-to-read-mercury-outboard-serial-number",
       "boat-motor-trade-in-guide",
       "outboard-trade-in-value-ontario-hbw",
+      "bilge-pump-troubleshooting-guide",
+      "mercury-outboard-repair-guide",
     ],
   },
   {
@@ -202,6 +215,7 @@ export const blogClusters: BlogCluster[] = [
       "harris-boat-works-since-1947-rice-lake-institution",
       "first-marine-dealer-ucp-agentic-commerce",
       "boat-rentals-shared-access-booming-2026",
+      "mercury-outboard-reliability-2026",
     ],
   },
   {
@@ -216,6 +230,9 @@ export const blogClusters: BlogCluster[] = [
       "mercury-90-hp-fourstroke-review-ontario",
       "mercury-75-hp-fourstroke-review-ontario",
       "mercury-9-9-efi-review-ontario",
+      "mercury-150-hp-fourstroke-pro-xs-review-ontario",
+      "mercury-200-hp-fourstroke-pro-xs-review-ontario",
+      "mercury-250-hp-fourstroke-pro-xs-review-ontario",
       "mercury-outboard-weight-chart",
       "mercury-outboard-lineup-ontario",
       "mercury-seapro-commercial-outboard-guide",
@@ -224,6 +241,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-avator-vs-torqeedo",
       "mercury-avator-charging-cottage-dock",
       "mercury-avator-range-rice-lake-cottage",
+      "electric-vs-gas-repower-guide-rice-lake",
     ],
   },
   {
@@ -233,6 +251,7 @@ export const blogClusters: BlogCluster[] = [
     spokes: [
       "mercury-warranty-after-repower-ontario",
       "mercury-extended-warranty-platinum-ontario",
+      "legend-boats-warranty-canada-wowranty-guide-2026",
     ],
   },
   {
@@ -274,9 +293,13 @@ export const blogClusters: BlogCluster[] = [
       "is-a-pontoon-right-for-your-family-rice-lake",
       "best-marina-rice-lake-ontario",
       "docking-boat-in-wind-rice-lake",
-      "boat-trim-explained-rice-lake-ontario",
       "trent-severn-waterway-boating-guide-2026",
       "trent-severn-mercury-dealer-survival-guide-2026",
+      "renting-vs-owning-boat-ontario-math",
+      "group-boat-rentals-rice-lake",
+      "first-time-boat-rental-rice-lake-guide",
+      "rice-lake-boat-rental-guide-2026",
+      "boat-rental-licence-ontario-guide",
     ],
   },
 ];
@@ -303,7 +326,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-pro-xs-repower-rice-lake-kawartha-anglers": "Pro XS repower for Kawartha anglers",
   "mercury-dts-vs-mechanical-controls-ontario-repower": "DTS vs mechanical controls on a repower",
   "ontario-cottage-boat-motor-repower-guide": "cottage-specific repower considerations",
-  "boat-hull-replacement-vs-repower-decision": "repower the motor or replace the boat?",
+  "boat-hull-replacement-vs-repower-decision": "is this hull structurally worth repowering?",
   "winter-repower-planning-guide": "why winter is the smart time to plan",
   "pleasure-craft-licence-update-repower-ontario": "updating your PCL after a repower",
   "mercury-ordering-process": "how Mercury motors are ordered and delivered",
@@ -332,7 +355,7 @@ export const blogClusterContexts: Record<string, string> = {
   "pontoon-hp-sizing-decision-tree-ontario": "pontoon HP sizing decision tree",
   "outboard-shaft-length-guide": "shaft length by transom height",
   "how-to-read-boat-capacity-plate-ontario": "how to read the capacity plate",
-  "repower-horsepower-capacity-plate-guide": "HP limits on the capacity plate for repowers",
+  "repower-horsepower-capacity-plate-guide": "choose repower HP from the hull rating",
   "mercury-main-and-trolling-motor": "main outboard plus trolling motor setups",
   "portable-outboard-mercury-guide-2-20hp": "portable 2–20 HP options",
   "tiller-vs-remote-steering-outboard-guide": "tiller vs remote steering",
@@ -349,6 +372,7 @@ export const blogClusterContexts: Record<string, string> = {
   "new-vs-used-mercury-outboard-ontario": "new vs used Mercury tradeoffs",
   "bad-used-boats-to-avoid-ontario": "used boats to avoid in Ontario",
   "used-boat-walkaround-inspection-ontario": "used-boat walkaround inspection",
+  "new-vs-used-pontoon-boats-ontario": "new vs used pontoon value comparison",
   "pontoon-vs-v-hull-comparison-ontario": "pontoon vs V-hull comparison",
   "aluminum-vs-fiberglass-hull-ontario": "aluminum vs fibreglass hulls",
   "best-boats-rice-lake-under-30000": "Rice Lake boats under $30K",
@@ -360,7 +384,7 @@ export const blogClusterContexts: Record<string, string> = {
   // Cluster 5 — Local Knowledge & Fishing
   "best-mercury-outboard-rice-lake-fishing": "best Mercury for Rice Lake fishing",
   "best-mercury-outboard-lake-simcoe-walleye-fishing": "Lake Simcoe walleye picks",
-  "best-mercury-outboard-lake-ontario-salmon-trout": "Lake Ontario salmon and trout setups",
+  "best-mercury-outboard-lake-ontario-salmon-trout": "best Mercury main outboard for Lake Ontario salmon",
   "lake-ontario-salmon-mercury-setup-guide-2026": "Lake Ontario salmon rigging setup",
   "musky-boat-motor-guide-kawarthas": "musky-boat motor guide",
   "mercury-prokicker-rice-lake-fishing-guide": "Pro Kicker on Rice Lake",
@@ -368,14 +392,15 @@ export const blogClusterContexts: Record<string, string> = {
   "2026-rice-lake-fishing-season-outlook": "2026 Rice Lake season outlook",
   "trailer-boat-toronto-to-rice-lake-guide": "trailering from Toronto to Rice Lake",
   // Cluster 6 — Maintenance, Service & Seasonal
-  "mercury-maintenance-intervals-20-100-300-rule": "the 20/100/300 maintenance rule",
+  "mercury-maintenance-intervals-20-100-300-rule": "the model-specific Mercury service schedule",
+  "mercury-outboard-maintenance-parts-list": "the full Mercury maintenance parts and part-number list",
   "mercury-motor-maintenance-seasonal-tips": "seasonal maintenance tips",
   "diy-mercury-outboard-winterization-guide": "DIY winterization steps",
   "boat-winterization-cost-ontario-2026": "boat winterization cost in Ontario",
   "winter-boat-storage-shrinkwrap-vs-indoor-ontario": "shrink-wrap vs indoor winter storage",
-  "outdoor-boat-storage-shrinkwrap-rice-lake": "outdoor shrink-wrap storage on Rice Lake",
+  "outdoor-boat-storage-shrinkwrap-rice-lake": "HBW outdoor winter storage and shrink-wrap scope",
   "winter-storage-near-toronto-hbw": "winter storage options near Toronto",
-  "boat-storage-kawartha-lakes": "boat storage in the Kawarthas",
+  "boat-storage-kawartha-lakes": "compare Kawartha Lakes boat storage options",
   "spring-outboard-commissioning-checklist": "spring commissioning checklist",
   "mercury-outboard-spring-run-up-checklist-ontario": "spring run-up checklist",
   "breaking-in-new-mercury-motor-guide": "breaking in a new Mercury",
@@ -441,7 +466,8 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-outboard-warranty-canada-2026": "Mercury warranty terms in Canada",
   "mercury-warranty-after-repower-ontario": "how warranty works after a repower",
   
-  "mercury-extended-warranty-platinum-ontario": "Product Protection Premier extended coverage",
+  "mercury-extended-warranty-platinum-ontario": "Product Protection Platinum extended coverage",
+  "legend-boats-warranty-canada-wowranty-guide-2026": "the Legend Boats WOWranty guide",
   // Cluster 11 — Dealer & Destination
   "best-mercury-dealer-ontario-hbw-difference": "what makes HBW different",
   "mercury-outboard-dealer-toronto-why-drive-to-hbw": "why Toronto buyers drive to HBW",
@@ -469,14 +495,28 @@ export const blogClusterContexts: Record<string, string> = {
   "rice-lake-boating-guide-2026": "the 2026 Rice Lake boating guide",
   "rice-lake-boat-launch-guide": "Rice Lake boat launch guide",
   "rice-lake-boat-rentals-from-toronto-gta": "boat rentals from the GTA to Rice Lake",
+  "rice-lake-boat-rental-guide-2026": "the 2026 Rice Lake boat rental guide",
+  "first-time-boat-rental-rice-lake-guide": "first-time renter's guide to Rice Lake",
   "canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend": "a local's Canada Day guide",
   "is-a-pontoon-right-for-your-family-rice-lake": "is a pontoon right for your family?",
   "best-marina-rice-lake-ontario": "marina options on Rice Lake",
   "docking-boat-in-wind-rice-lake": "docking in the wind on Rice Lake",
-  "boat-trim-explained-rice-lake-ontario": "boat trim explained",
   "trent-severn-waterway-boating-guide-2026": "boating the Trent-Severn Waterway",
   "trent-severn-mercury-dealer-survival-guide-2026": "Trent-Severn Mercury survival guide",
   "mercury-outboard-lineup-ontario": "Mercury outboard lineup for Ontario (2027 model year)",
+  // Cluster coverage additions (2026-07-29)
+  "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat": "choosing between a Mercury 90 and 115",
+  "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull": "straight talk on Command Thrust gearcases",
+  "milky-gearcase-oil-meaning-cost-ontario": "what milky gearcase oil means and costs",
+  "mercury-water-pump-replacement-cost-ontario": "water pump replacement timing and cost",
+  "mercury-100-hour-service-cost-ontario": "what the 100-hour service covers",
+  "spring-commissioning-cost-ontario": "spring commissioning costs in Ontario",
+  "bilge-pump-troubleshooting-guide": "diagnosing a bilge pump that won't run",
+  "mercury-outboard-repair-guide": "repair symptoms, triage, and service next steps",
+  "mercury-outboard-reliability-2026": "how Mercury reliability holds up in 2026",
+  "renting-vs-owning-boat-ontario-math": "the rent vs own math for Ontario boaters",
+  "group-boat-rentals-rice-lake": "renting for a group on Rice Lake",
+  "boat-rental-licence-ontario-guide": "licence rules for renting a boat in Ontario",
 };
 
 // Reverse lookup: slug -> cluster
@@ -493,18 +533,82 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
   return slugToClusterMap.get(slug);
 }
 
+/**
+ * Per-slug related-slug overrides. When a slug has an entry here, its
+ * "Related guides" list is these exact slugs in this exact order, bypassing
+ * cluster-based sibling resolution. Use sparingly for articles whose best
+ * neighbours live outside their primary cluster.
+ */
+export const relatedSlugsOverrides: Record<string, string[]> = {
+  "why-mercury-dominates-outboard-market": [
+    "mercury-vs-yamaha-outboards-ontario",
+    "mercury-vs-yamaha-vs-honda-reliability-2026",
+    "mercury-vs-suzuki-outboard-reliability-2026",
+    "why-harris-boat-works-mercury-dealer",
+    "harris-boat-works-since-1947-rice-lake-institution",
+  ],
+  "renting-vs-owning-boat-ontario-math": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "group-boat-rentals-rice-lake",
+    "boat-rental-licence-ontario-guide",
+    "total-cost-of-owning-a-boat-ontario-2026",
+  ],
+  "group-boat-rentals-rice-lake": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "boat-rental-licence-ontario-guide",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "first-time-boat-rental-rice-lake-guide": [
+    "rice-lake-boat-rental-guide-2026",
+    "boat-rental-licence-ontario-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "rice-lake-boat-rental-guide-2026": [
+    "first-time-boat-rental-rice-lake-guide",
+    "boat-rental-licence-ontario-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "boat-rental-licence-ontario-guide": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "boat-rentals-shared-access-booming-2026": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "total-cost-of-owning-a-boat-ontario-2026",
+    "is-a-pontoon-right-for-your-family-rice-lake",
+  ],
+};
+
 /** Pick up to N sibling slugs for the given article (pillar always first). */
 export function getRelatedSlugs(slug: string, max = 5): string[] {
+  const override = relatedSlugsOverrides[slug];
+  if (override) return override.slice(0, max);
   const cluster = getClusterForSlug(slug);
   if (!cluster) return [];
   const isPillar = cluster.pillar === slug;
-  const out: string[] = [];
-  if (!isPillar) out.push(cluster.pillar);
-  for (const s of cluster.spokes) {
-    if (s === slug) continue;
-    if (s === cluster.pillar) continue;
-    out.push(s);
-    if (out.length >= max) break;
+  const out: string[] = isPillar ? [] : [cluster.pillar];
+  const start = isPillar ? 0 : cluster.spokes.indexOf(slug) + 1;
+
+  // Walk the spokes as a ring. The previous first-N strategy sent every
+  // article to the same handful of early spokes, leaving later articles with
+  // no inbound link even though they belonged to a cluster. Spokes still lead
+  // with the pillar, then distribute their remaining links across neighbours.
+  for (let offset = 0; offset < cluster.spokes.length && out.length < max; offset++) {
+    const candidate = cluster.spokes[(start + offset) % cluster.spokes.length];
+    if (candidate === slug) continue;
+    out.push(candidate);
   }
   return out.slice(0, max);
 }

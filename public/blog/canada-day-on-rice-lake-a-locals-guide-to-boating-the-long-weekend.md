@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend.md
-last_updated: 2026-06-29
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"
 date_published: 2026-06-29
-date_modified: 2026-06-29
+date_modified: 2026-08-02
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Canada Day on Rice Lake: Boating Guide
@@ -24,11 +25,13 @@ language: en-CA
 
 **Category:** Local Guide  
 **Published:** 2026-06-29  
-**Last updated:** 2026-06-29  
+**Last reviewed:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
 
-If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. The Trent-Severn Waterway is fully open for navigation, the public launch at Gores Landing has reopened, and Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel right at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
+> **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
+
+If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. Check current Trent-Severn navigation notices and public-launch access before you leave; Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
 
 ## Boating on Rice Lake This Canada Day Weekend
 Rice Lake is one of the most accessible and family-friendly lakes in the Trent-Severn system. The long weekend from June 27 through July 1 consistently brings the busiest boat traffic of the early summer, but the lake's size and shape mean you can always find a quiet cove or a good fishing spot if you know where to look.
@@ -38,18 +41,18 @@ The Trent-Severn Waterway opened for full navigation on May 29, meaning all lock
 Early-morning boating tends to offer the calmest water and the least traffic, which is especially valuable if you're teaching new boaters or bringing young kids aboard. By mid-morning, the lake wakes up with skiers, tubers, and anglers sharing the water, so practicing good spatial awareness and keeping a respectful distance from anchored boats goes a long way toward a pleasant day.
 
 ### What's open and what to expect
-All public boat launches around the lake will be busy, but none are closed for construction or repairs. Marinas are fully staffed through the long weekend, though some have reduced hours on Canada Day itself. Harris Boat Works will be open with regular hours Saturday, Sunday, and Monday, but it's wise to top off fuel and grab any last-minute tackle or safety gear early, especially if you plan to be on the water past dinner.
+Public launches around the lake are busiest on holiday weekends. Check the [Township of Hamilton waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and any posted notices before towing to a public ramp. Marina hours can change on statutory holidays, so confirm current hours before making the drive.
 
 ## Launching Options for the Long Weekend
 Getting your boat in the water on a busy holiday weekend can be the most stressful part of the day, so knowing your options matters.
 
 ### Gores Landing public launch
-The public launch at Gores Landing has fully reopened after seasonal maintenance and is free to use. Be prepared to line up, especially between 9 a.m. and noon. Parking fills quickly, and the lot is not huge, so arriving before 8 a.m. is your best bet. If you have a helper who can park the truck and trailer while you idle offshore, the whole process moves faster for everyone.
+The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park, 5310 Plank Road. Check the [official waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) for current access, facilities, and posted notices before you tow there. Expect a holiday-weekend line and use a helper to clear the ramp promptly when practical.
 
 ### Harris Boat Works private launch ramp
 For $20, you can use the private launch ramp at Harris Boat Works, right in Gores Landing. The ramp is well-maintained concrete with a gentle slope, suitable for most trailerable fishing boats, runabouts, and pontoons. Pay at the marina office upon arrival. This is often a calmer, faster alternative when the public launch is jammed, and you get the added benefit of walking-distance access to ethanol-free 89-octane fuel, tackle, and cold drinks before you head out. We only have one ramp, so there can still be a short wait during peak times, but it's consistently smoother than the public alternative on Canada Day weekend.
 
-If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check availability and reserve ahead at harrisboatworks.ca/rentals. Rentals book up quickly for the long weekend, so calling early is the best move.
+If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check current availability and reserve online at harrisboatworks.ca/rentals.
 
 ## Where to Watch Fireworks from the Water
 Watching the Canada Day fireworks from a boat is the highlight of the weekend for many Rice Lake families. The biggest displays are visible from the main lake, but knowing where to anchor makes the difference between a perfect show and a frustrating night of boat wakes and repositioning.
@@ -69,7 +72,7 @@ Rice Lake is a legitimate multi-species fishery, and Canada Day weekend falls ri
 Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tick Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
 
 ### Largemouth and smallmouth bass
-Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. Remember that bass fishing on Rice Lake is catch-and-release only until the regular season opener, which is always the fourth Saturday in June, so the regular season is in effect by Canada Day weekend. Double-check the 2026 FMZ 17 rules for any changes.
+Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
 
 ### Muskie
 Rice Lake has a healthy muskie population, and the season opens on the first Saturday in June, so it's fully open for the long weekend. Muskies will be transitioning into their summer haunts, hanging around weed edges, rock points, and deeper transitions. Trolling large crankbaits or spinners in 10 to 18 feet of water or casting big rubber baits around any baitfish schools you mark on your electronics are standard approaches. Use heavy fluorocarbon or wire leaders and carry a large-mouth net and proper release tools. The muskie minimum size on Rice Lake is 44 inches in FMZ 17, so most fish you encounter will need to be released.
@@ -94,7 +97,7 @@ Finding ethanol-free fuel can be a challenge around Rice Lake, but Harris Boat W
 
 For engine repairs and routine maintenance, Harris Boat Works only services Mercury and Mercruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
 
-If you're considering repowering your boat with a new Mercury outboard, every repower sold by Harris Boat Works is followed by an on-water test on Rice Lake before you take delivery. No exceptions. You can explore outboard options and build a configuration at mercuryrepower.ca.
+If you're considering repowering your boat with a new Mercury outboard, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer. You can explore outboard options and build a configuration at mercuryrepower.ca.
 
 ## Make the Most of Your Weekend
 Rice Lake on Canada Day is about more than just boating. It's morning mist burning off while you set lines, the sound of the lock gates opening at Hastings, kids splashing off the swim platform at noon, and the collective awed silence when the first firework blooms over the water at dusk. A little planning lets you focus on all of that rather than sitting in line at the launch or scrambling for fuel at sunset.
@@ -102,6 +105,11 @@ Rice Lake on Canada Day is about more than just boating. It's morning mist burni
 If you're trailering from out of town, book your accommodations or camping early, because the provincial parks and private campgrounds around the lake fill up. If you're day-tripping, come early, fuel up, and give yourself plenty of time at the ramp. Above all, respect the water, the wildlife, and your fellow boaters, and you'll come away with a weekend worth repeating.
 
 We're a third-generation family marina, this business has been part of Rice Lake since 1947, and we want every family that launches here to have the same love for this lake that we do. Swing by the marina, grab some ethanol-free fuel, and enjoy the best weekend of the summer.
+
+## Official references
+
+- [Township of Hamilton waterfront parks and Gores Landing launch](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/)
+- [Ontario Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 - [Mercury 9.9 ProKicker: Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario)
@@ -114,9 +122,9 @@ We're a third-generation family marina, this business has been part of Rice Lake
 
 Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction.
 
-### Where is the best place to launch a boat on Rice Lake for the long weekend?
+### Where can I launch a boat near Gores Landing for the long weekend?
 
-The Gores Landing public launch is free and has reopened after maintenance. For a less crowded alternative, the Harris Boat Works private ramp is available for $20, with ethanol-free fuel and marina amenities right at the water.
+The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park. Check the Township waterfront-parks page for current public access and posted notices before you tow there. Harris Boat Works also has a private $20 launch ramp, with ethanol-free fuel and marina amenities at the water.
 
 ### Can I drink alcohol on my boat while watching fireworks on Rice Lake?
 
@@ -128,28 +136,27 @@ Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fue
 
 ### Does Harris Boat Works service all brands of outboards?
 
-For engine repairs, we only service Mercury and Mercruiser products. You can book service at hbw.wiki/service. For repower quotes, we specialize in Mercury outboards and provide an on-water test for every repower.
+For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbw.wiki/service. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.
 
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
-- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

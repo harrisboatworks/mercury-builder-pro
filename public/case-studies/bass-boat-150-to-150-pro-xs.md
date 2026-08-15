@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs
-last_updated: 2026-07-15
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS03
 slug: bass-boat-150-to-150-pro-xs
 boat_type: "Bass boat"
 region: "Ontario tournament / inland lakes"
+is_illustrative: true
 ---
 
 # Bass boat refresh: older 150 to Mercury 150 Pro XS
 
-A performance-focused replacement for anglers who care about response, tournament-style running, and Mercury-specific setup confidence.
+An illustrative same-horsepower comparison between an older 150-class setup and a current Mercury 150 Pro XS.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ A performance-focused replacement for anglers who care about response, tournamen
 
 ## Recommendation
 
-Best for bass-boat owners who already know they want Mercury Pro XS character and cleaner modern rigging.
+Consider for a properly rated bass hull after documenting the old setup, performance goals, controls, steering, transom, and complete operating load.
 
-## Why it worked
+## Why this configuration may fit
 
-- Performance-oriented Mercury Pro XS fit for bass hulls
-- Modern rigging and cleaner replacement package
-- Strong visual proof for bass-boat buying content
+- Pro XS is Mercury's performance-oriented 150 HP family
+- Current controls and rigging are matched to the selected motor
+- No acceleration or top-speed result is promised without an actual water test
 
-## Customer quote
+## Planning takeaway
 
-> The right bass-boat repower is not just about peak speed, it is about repeatable performance, setup confidence, and running hard all day.
+A same-horsepower Pro XS repower is a setup decision involving hull rating, engine height, propeller, controls, load, and measured WOT RPM.
 
 ## Quote a similar repower
 

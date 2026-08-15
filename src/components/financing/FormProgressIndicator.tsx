@@ -1,4 +1,3 @@
-import { Progress } from "@/components/ui/progress";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -15,73 +14,86 @@ export function FormProgressIndicator({
   stepTitles,
   completedSteps,
 }: FormProgressIndicatorProps) {
-  const progress = (completedSteps.length / totalSteps) * 100;
+  const progress = Math.max(
+    (completedSteps.length / totalSteps) * 100,
+    ((currentStep - 1) / totalSteps) * 100,
+  );
 
   return (
-    <div className="space-y-4 mb-8">
-      {/* Mobile and tablet compact progress */}
-      <div className="lg:hidden">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-foreground">
-            Step {currentStep} of {totalSteps}
-          </span>
-          <span className="text-xs text-muted-foreground">
-            {Math.round(progress)}% Complete
+    <>
+      <div className="rounded-sm border border-repower-navy-900/10 bg-white p-4 shadow-sm lg:hidden">
+        <div className="mb-3 flex items-start justify-between gap-4">
+          <div>
+            <span className="font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-repower-mercury-red">
+              Step {currentStep} of {totalSteps}
+            </span>
+            <p className="mt-1 font-display text-lg font-semibold text-repower-navy-900">
+              {stepTitles[currentStep]}
+            </p>
+          </div>
+          <span className="font-sans text-[11px] font-semibold text-repower-navy-900/50">
+            {Math.round(progress)}%
           </span>
         </div>
-        <Progress value={progress} className="h-2" />
-        <p className="text-xs text-muted-foreground mt-2">
-          {stepTitles[currentStep]}
-        </p>
+        <div className="h-1.5 overflow-hidden bg-repower-navy-900/10" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100}>
+          <div className="h-full bg-repower-gold transition-[width] duration-300" style={{ width: `${progress}%` }} />
+        </div>
       </div>
 
-      {/* Desktop full progress with all steps */}
-      <div className="hidden lg:block">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-bold text-foreground">Financing Application</h1>
-          <span className="text-sm text-muted-foreground">
-            {Math.round(progress)}% Complete
-          </span>
+      <aside className="sticky top-6 hidden overflow-hidden rounded-sm bg-repower-navy-900 text-white lg:block">
+        <div className="border-b border-white/10 px-6 py-6">
+          <p className="font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-repower-gold">
+            Your progress
+          </p>
+          <div className="mt-2 flex items-end justify-between">
+            <p className="font-display text-2xl font-semibold">Step {currentStep}</p>
+            <span className="font-sans text-[11px] text-white/55">{Math.round(progress)}%</span>
+          </div>
+          <div className="mt-4 h-1 overflow-hidden bg-white/10" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100}>
+            <div className="h-full bg-repower-gold transition-[width] duration-300" style={{ width: `${progress}%` }} />
+          </div>
         </div>
-        
-        <Progress value={progress} className="h-2 mb-4" />
-        
-        {/* Step indicators */}
-        <div className="grid grid-cols-7 gap-2 text-xs">
+
+        <ol className="px-4 py-4">
           {Array.from({ length: totalSteps }, (_, i) => i + 1).map((step) => {
             const isCompleted = completedSteps.includes(step);
             const isCurrent = step === currentStep;
             
             return (
-              <div
+              <li
                 key={step}
-                className={cn(
-                  "flex flex-col items-center gap-1 p-2 rounded-lg transition-all",
-                  isCurrent && "bg-primary/10 border border-primary/20",
-                  isCompleted && "opacity-70"
-                )}
+                className={`flex flex-row items-start gap-3 border-l-2 px-3 py-3 transition-colors ${
+                  isCurrent
+                    ? "border-repower-gold bg-white/[0.07]"
+                    : "border-transparent"
+                }`}
+                aria-current={isCurrent ? 'step' : undefined}
               >
                 <div
                   className={cn(
-                    "w-6 h-6 rounded-full flex items-center justify-center font-semibold transition-all",
-                    isCurrent && "bg-primary text-primary-foreground",
-                    isCompleted && "bg-green-500 text-white",
-                    !isCurrent && !isCompleted && "bg-muted text-muted-foreground"
+                    "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-sans text-[11px] font-bold",
+                    isCurrent && "border-repower-gold bg-repower-gold text-repower-navy-900",
+                    isCompleted && !isCurrent && "border-white/35 bg-white/10 text-white",
+                    !isCurrent && !isCompleted && "border-white/15 text-white/45",
                   )}
                 >
-                  {isCompleted ? <Check className="w-3 h-3" /> : step}
+                  {isCompleted && !isCurrent ? <Check className="h-3.5 w-3.5" /> : step}
                 </div>
                 <span className={cn(
-                  "text-center leading-tight",
-                  isCurrent ? "text-primary font-medium" : "text-muted-foreground"
+                  "font-sans text-[13px] leading-tight",
+                  isCurrent ? "font-semibold text-white" : "text-white/55",
                 )}>
                   {stepTitles[step]}
                 </span>
-              </div>
+              </li>
             );
           })}
+        </ol>
+
+        <div className="border-t border-white/10 px-6 py-5 font-sans text-[12px] leading-relaxed text-white/55">
+          Your application is reviewed by the Harris Boat Works financing team—not an automated approval screen.
         </div>
-      </div>
-    </div>
+      </aside>
+    </>
   );
 }

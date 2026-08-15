@@ -11,10 +11,11 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Info, Wrench, ChevronDown, ExternalLink, Pencil, HelpCircle } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { decodeTradeInModel, type Confidence, type DecodeResult } from './tradeInModelDecoder';
-import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
+import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type DecodeResult } from './tradeInModelDecoder';
+import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult, type HBWValuationFailure } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { clearTradeInValuation, isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 
 
 
@@ -37,6 +38,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [apiUnavailable, setApiUnavailable] = useState(false);
+  // 'rate_limited' means the visitor ran more estimates than the proxy allows,
+  // not that anything is broken — say so rather than claiming an outage.
+  const [failureReason, setFailureReason] = useState<HBWValuationFailure>('unavailable');
   const [showValidation, setShowValidation] = useState(false);
   const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -51,6 +55,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   }>({});
   const [hpOverrideInput, setHpOverrideInput] = useState<string>('');
 
+  const updateValuationInput = (changes: Partial<TradeInInfo>) => {
+    onTradeInChange(clearTradeInValuation(tradeInInfo, changes));
+  };
+
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
 
   // Shared writer for the model input + suggestion clicks.
@@ -59,11 +67,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride({}); // fresh model text → drop any prior overrides
     const trimmed = raw.trim();
-    const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
-    onTradeInChange({
-      ...tradeInInfo,
+    const decodedFields = decodeTradeInModelFields(trimmed, {
+      brand: tradeInInfo.brand,
+      year: tradeInInfo.year,
+    });
+    updateValuationInput({
       model: raw,
-      horsepower: numericOnly ? parseFloat(trimmed) : 0,
+      horsepower: decodedFields.horsepower,
+      engineType: decodedFields.engineType,
     });
   };
 
@@ -80,7 +91,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride((prev) => ({ ...prev, hp: n }));
     if (n !== null) {
-      onTradeInChange({ ...tradeInInfo, horsepower: n });
+      updateValuationInput({ horsepower: n });
     }
   };
 
@@ -89,7 +100,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride((prev) => ({ ...prev, stroke: s }));
     const et = strokeToEngineType(s);
-    onTradeInChange({ ...tradeInInfo, engineType: et });
+    updateValuationInput({ engineType: et });
   };
 
   const clearHpOverride = () => {
@@ -106,7 +117,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       const { stroke, ...rest } = prev;
       return rest;
     });
-    onTradeInChange({ ...tradeInInfo, engineType: undefined });
+    updateValuationInput({ engineType: undefined });
   };
 
 
@@ -127,11 +138,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const hasModelOrHp = Boolean((tradeInInfo.model && tradeInInfo.model.trim()) || tradeInInfo.horsepower);
 
   // Clear validation when all required fields are filled
+  const currentYear = new Date().getFullYear();
+  const hasValidYear = isSupportedTradeInYear(tradeInInfo.year, currentYear);
+
   useEffect(() => {
-    if (showValidation && tradeInInfo.brand && tradeInInfo.year && hasModelOrHp && tradeInInfo.condition) {
+    if (showValidation && tradeInInfo.brand && hasValidYear && hasModelOrHp && tradeInInfo.condition) {
       setShowValidation(false);
     }
-  }, [tradeInInfo.brand, tradeInInfo.year, hasModelOrHp, tradeInInfo.condition, showValidation]);
+  }, [tradeInInfo.brand, hasValidYear, hasModelOrHp, tradeInInfo.condition, showValidation]);
 
   // Reset estimate when fields change so button is shown again
   useEffect(() => {
@@ -139,24 +153,33 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       setEstimate(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition]);
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition, tradeInInfo.engineType, tradeInInfo.engineHours]);
 
 
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
-    year: !tradeInInfo.year,
+    year: !hasValidYear,
     horsepower: !hasModelOrHp,
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
+  const modelTextForDecoding = (
+    tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')
+  ).trim();
+  const currentDecodedModel = decodeTradeInModel(modelTextForDecoding, {
+    brand: tradeInInfo.brand,
+    year: tradeInInfo.year,
+  });
+  const effectiveDecodedStroke = decodeOverride.stroke !== undefined
+    ? decodeOverride.stroke
+    : currentDecodedModel.stroke as '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
+  const effectiveEngineType = strokeToEngineType(effectiveDecodedStroke);
+  const requiresStrokeConfirmation = hasModelOrHp && !effectiveEngineType;
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
   ];
-
-  const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 1989 }, (_, i) => currentYear - i);
 
   const conditionOptions = [
     { value: 'excellent', label: 'Excellent', description: 'Like new, 0–100 hours, no issues' },
@@ -168,7 +191,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !tradeInInfo.year || !hasModelOrHp || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || !effectiveEngineType) {
       console.log('Missing required fields');
       return;
     }
@@ -176,7 +199,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(true);
     setApiUnavailable(false);
 
-    // Stroke is always inferred by the HBW API from the model code.
+    // Send the decoded or manually confirmed architecture. Configuration
+    // suffixes such as ELPT and EFI do not reliably distinguish two-stroke
+    // from four-stroke motors, so the API must not silently choose for us.
     const hbwResult = await fetchHBWValuation({
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
@@ -184,19 +209,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       condition: tradeInInfo.condition,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
+      stroke: effectiveEngineType,
     });
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
-    if (hbwResult) {
-      console.log('✅ HBW API returned valuation:', hbwResult);
-      tradeEstimate = hbwResult;
+    if (hbwResult.ok === true) {
+      console.log('✅ HBW API returned valuation:', hbwResult.value);
+      tradeEstimate = hbwResult.value;
     } else {
       // Live valuation API unreachable. We deliberately do NOT fall back to the
       // local table — it drifts out of sync with the canonical HBW engine
       // (hbw-valuation on Vercel) and quietly shows customers numbers we never
       // quoted. Fail honestly: offer retry + a direct line instead.
-      console.warn('⚠️ HBW valuation API unavailable — showing retry/contact message (no local fallback)');
+      console.warn(`⚠️ HBW valuation unavailable (${hbwResult.reason}) — showing retry/contact message (no local fallback)`);
+      setFailureReason(hbwResult.reason);
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
@@ -206,8 +233,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setEstimate(tradeEstimate);
     
     // Update the trade-in info with the rounded median value ($25 increments)
-    const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
-    // Build report URL for persistence, let the API decode stroke from model.
+    const finalValue = hbwResult.value.average;
+    // Build the report URL with the same confirmed architecture used for the
+    // estimate so the detailed report cannot silently recalculate a new value.
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
       ? buildHBWReportUrl({
           brand: tradeInInfo.brand,
@@ -216,12 +244,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
-          name: customerName || undefined,
+          stroke: effectiveEngineType,
         })
       : undefined;
 
     onTradeInChange({
       ...tradeInInfo,
+      engineType: effectiveEngineType,
       estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
       rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
@@ -241,8 +270,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   };
 
   const medianValue = estimate 
-    ? medianRoundedTo25(estimate.low, estimate.high) 
+    ? estimate.average
     : 0;
+  const penaltyMessage = estimate
+    && 'penaltyMessage' in estimate
+    && typeof estimate.penaltyMessage === 'string'
+    ? estimate.penaltyMessage
+    : null;
 
   return (
     <motion.div
@@ -250,22 +284,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="p-8 border-repower-navy-900/10 bg-white">
+      <Card className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6 shadow-none md:p-8">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
-              <h2 className="text-3xl font-light tracking-wide text-repower-navy-900">
+              <h2 className="font-display text-3xl font-bold tracking-[-0.025em] text-repower-navy-900">
                 Trade-In Valuation
               </h2>
-              <p className="text-base font-normal text-repower-navy-900/75">
-                Get an instant estimate for your current motor
+              <p className="font-sans text-base text-repower-navy-900/65">
+                Get an instant estimate for your current motor.
               </p>
             </div>
           </div>
             
           {!standalone && (
           <div className="flex flex-col gap-4 mt-6">
-              <p className="text-lg font-light text-repower-navy-900">Do you have a motor to trade?</p>
+              <p className="font-display text-xl font-semibold tracking-[-0.01em] text-repower-navy-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* "No trade-in" card first */}
                 <motion.button
@@ -317,19 +351,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     console.log('🚀 onAutoAdvance called');
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
+                  className={`group premium-lift relative rounded-sm border bg-repower-paper p-6 text-left transition-all duration-300 ${
                     !tradeInInfo.hasTradeIn 
-                      ? 'border-repower-navy-900 shadow-xl premium-selected' 
-                      : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-xl'
+                      ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] premium-selected'
+                      : 'border-repower-navy-900/20 hover:border-repower-gold'
                   }`}
                   type="button"
                 >
                   <ArrowRight className={`w-6 h-6 mb-3 transition-transform ${
                     !tradeInInfo.hasTradeIn ? 'text-repower-navy-900' : 'text-repower-navy-900/40'
                   }`} />
-                  <div className="font-light text-lg text-repower-navy-900 tracking-wide">No trade-in</div>
-                  <div className="text-sm font-normal text-repower-navy-900/75 mt-1">Skip and continue</div>
-                  <div className="text-xs font-normal text-repower-navy-900/55 mt-2">Most customers skip this step</div>
+                  <div className="font-display text-lg font-semibold text-repower-navy-900">No trade-in</div>
+                  <div className="mt-1 font-sans text-sm text-repower-navy-900/70">Skip and continue.</div>
+                  <div className="mt-2 font-sans text-xs text-repower-navy-900/55">Most customers skip this step.</div>
                 </motion.button>
 
                 {/* "Yes" card second */}
@@ -341,30 +375,26 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     setEstimate(null);
                     autoEstimateTriggered.current = false;
                     onTradeInChange({
+                      ...tradeInInfo,
                       hasTradeIn: true,
-                      brand: '',
-                      year: 0,
-                      horsepower: 0,
-                      model: '',
-                      serialNumber: '',
-                      condition: 'good' as const,
+                      condition: tradeInInfo.condition || 'good',
                       estimatedValue: 0,
-                      confidenceLevel: 'medium' as const
+                      confidenceLevel: tradeInInfo.confidenceLevel || 'medium'
                     });
                   }}
                   aria-pressed={tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
+                  className={`group premium-lift relative rounded-sm border bg-repower-paper p-6 text-left transition-all duration-300 ${
                     tradeInInfo.hasTradeIn 
-                      ? 'border-repower-navy-900 shadow-xl premium-selected' 
-                      : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-xl'
+                      ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] premium-selected'
+                      : 'border-repower-navy-900/20 hover:border-repower-gold'
                   }`}
                   type="button"
                 >
                   <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
                     tradeInInfo.hasTradeIn ? 'text-repower-navy-900 animate-check-pop' : 'text-repower-navy-900/40'
                   }`} />
-                  <div className="font-light text-lg text-repower-navy-900 tracking-wide">Yes, I have a trade-in</div>
-                  <div className="text-sm font-normal text-repower-navy-900/75 mt-1">We'll estimate your value instantly</div>
+                  <div className="font-display text-lg font-semibold text-repower-navy-900">Yes, I have a trade-in</div>
+                  <div className="mt-1 font-sans text-sm text-repower-navy-900/70">We'll estimate your value instantly.</div>
                 </motion.button>
               </div>
             </div>
@@ -383,11 +413,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
             >
               
               {/* Pre-filled notice */}
-              {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && (
+              {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && Boolean(
+                tradeInInfo.brand || tradeInInfo.year || tradeInInfo.horsepower || tradeInInfo.model
+              ) && (
                 <div className="bg-repower-navy-900/[0.04] border border-repower-navy-900/10 rounded-sm p-4">
                   <div className="flex items-center gap-2 text-repower-navy-900">
                     <CheckCircle2 className="w-4 h-4" />
-                    <span className="text-sm font-light">Pre-filled from your current motor details</span>
+                    <span className="font-sans text-sm">Pre-filled from your current motor details</span>
                   </div>
                   <p className="text-xs font-normal text-repower-navy-900/65 mt-1">You can adjust any details below if needed.</p>
                 </div>
@@ -404,19 +436,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     onValueChange={(value) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, brand: value });
+                      setDecodeOverride({});
+                      updateValuationInput({ brand: value, engineType: undefined });
                     }}
                   >
-                    <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
+                    <SelectTrigger className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.brand 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
-                    <SelectContent>
+                    {/* Avoid the popper ResizeObserver loop reported by iOS Safari (#176). */}
+                    <SelectContent position="item-aligned">
                       {brandOptions.map(brand => (
-                        <SelectItem key={brand} value={brand} className="font-light">{brand}</SelectItem>
+                        <SelectItem key={brand} value={brand} className="font-sans">{brand}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -441,45 +475,49 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         </TooltipTrigger>
                         <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
                           <p className="font-medium mb-1">Why the year matters</p>
-                          <p className="font-light">
-                            When the model text is just an HP number (like "90"), the year decides
-                            whether it's likely a 2-Stroke or 4-Stroke:
+                          <p className="font-sans">
+                            Year and HP alone cannot distinguish overlapping two-stroke, OptiMax,
+                            and FourStroke lineups. Confirm the architecture before we calculate.
                           </p>
-                          <ul className="list-disc pl-4 mt-1 space-y-0.5 font-light">
-                            <li><span className="font-medium">2007 or newer</span> → 4-Stroke (medium confidence)</li>
-                            <li><span className="font-medium">Before 2000</span> → 2-Stroke (medium confidence)</li>
-                            <li><span className="font-medium">2000–2006</span> → ambiguous, please add "4S" or "2S"</li>
+                          <ul className="mt-1 list-disc space-y-0.5 pl-4 font-sans">
+                            <li><span className="font-medium">Explicit FourStroke, 4S, 2S, or OptiMax text</span> → use that architecture</li>
+                            <li><span className="font-medium">ELPT and EFI suffixes</span> → configuration clues, not stroke proof</li>
+                            <li><span className="font-medium">Any uncertainty</span> → pick the stroke under the model field</li>
                           </ul>
-                          <p className="font-light mt-1">
-                            Picking a year updates the "Based on" reasons under the model field automatically.
+                          <p className="mt-1 font-sans">
+                            We will not show a number until the stroke is confirmed.
                           </p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                   </Label>
-                  <Select 
-                    value={tradeInInfo.year?.toString() || ''} 
-                    onValueChange={(value) => {
+                  <Input
+                    id="trade-year"
+                    type="number"
+                    inputMode="numeric"
+                    min={TRADE_IN_MIN_YEAR}
+                    max={currentYear}
+                    value={tradeInInfo.year || ''}
+                    onChange={(event) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, year: parseInt(value) });
+                      setDecodeOverride({});
+                      const year = Number.parseInt(event.target.value, 10);
+                      updateValuationInput({
+                        year: Number.isFinite(year) ? year : 0,
+                        engineType: undefined,
+                      });
                     }}
-                  >
-                    <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
+                    placeholder="e.g. 2003"
+                    aria-describedby={showValidation && missingFields.year ? 'trade-year-error' : undefined}
+                    className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.year 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
-                    }`}>
-                      <SelectValue placeholder="Select year" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {years.map(year => (
-                        <SelectItem key={year} value={year.toString()} className="font-light">{year}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    }`}
+                  />
                   {showValidation && missingFields.year && (
-                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
+                    <p id="trade-year-error" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Enter a year from {TRADE_IN_MIN_YEAR} to {currentYear}</p>
                   )}
                 </div>
 
@@ -496,7 +534,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }}
                     placeholder="e.g. 150 ELPT, F115LB, or just 150"
                     maxLength={120}
-                    className={`min-h-[48px] rounded-sm font-light ${
+                    className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.horsepower 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
@@ -506,9 +544,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                   {(() => {
-                    const raw = (tradeInInfo.model || '').trim();
+                    const raw = modelTextForDecoding;
                     if (!raw) return null;
-                    const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
+                    const decoded = currentDecodedModel;
 
                     // Apply manual overrides
                     const hpOverridden = decodeOverride.hp !== undefined;
@@ -573,8 +611,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         .map((n) => Math.max(2, Math.min(450, Math.round(n))))
                     ));
 
+                    const showStrokePrompt = !stroke && strokeConfidence === 'low' && hp !== null;
+                    const visibleWarnings = showStrokePrompt
+                      ? warnings.filter((w) => !/stroke unclear/i.test(w))
+                      : warnings;
                     return (
                       <div className="mt-1.5 space-y-1.5">
+                        <div className="font-sans text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">
+                          Model read
+                        </div>
+
                         <div className="flex flex-wrap items-center gap-1.5">
                           {hp !== null && (
                             <span className="inline-flex items-center gap-1">
@@ -695,36 +741,39 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                             </span>
                           )}
                           {(hp !== null || stroke) && (
-                            <span className="text-xs text-muted-foreground font-light self-center">
+                            <span className="self-center font-sans text-xs text-repower-navy-900/55">
                               {(hpOverridden || strokeOverridden) ? '(manual override)' : '(auto-detected, click to edit)'}
                             </span>
                           )}
                         </div>
-                        {hasReasons && (
-                          <div className="flex items-start gap-1.5 text-xs text-muted-foreground font-light">
-                            <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
-                            <div className="space-y-0.5">
-                              <div>Based on:</div>
-                              <ul className="list-disc pl-4 space-y-0.5">
-                                {hpReasons.map((r, i) => (
-                                  <li key={`hp-${i}`}><span className="font-medium">HP:</span> {r}</li>
-                                ))}
-                                {strokeReasons.map((r, i) => (
-                                  <li key={`st-${i}`}><span className="font-medium">Stroke:</span> {r}</li>
-                                ))}
-                              </ul>
+                        {(hp !== null || stroke) && (() => {
+                          const parts: string[] = [];
+                          if (hp !== null) parts.push(`${hp} HP`);
+                          if (stroke) parts.push(stroke);
+                          if (tradeInInfo.brand) parts.push(tradeInInfo.brand);
+                          return (
+                            <div className="flex items-start gap-1.5 font-sans text-xs text-repower-navy-900/65">
+                              <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+                              <span>We read this as a {parts.join(' ')}.</span>
                             </div>
+                          );
+                        })()}
+                        {showStrokePrompt && (
+                          <div className="flex items-start gap-1.5 font-sans text-xs text-repower-navy-900/75">
+                            <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5 text-repower-gold" aria-hidden="true" />
+                            <span>Is this a 2-stroke or 4-stroke? Add it to the model number (like "4S") or pick one above.</span>
                           </div>
                         )}
-                        {warnings.map((w, i) => (
-                          <div key={i} className="flex items-start gap-1.5 text-xs text-repower-gold font-light">
+                        {visibleWarnings.map((w, i) => (
+                          <div key={i} className="flex items-start gap-1.5 font-sans text-xs text-repower-gold">
                             <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
                             <span>{w}</span>
                           </div>
                         ))}
+
                         {suggestions.length > 0 && (
                           <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span className="text-xs text-muted-foreground font-light">Did you mean:</span>
+                            <span className="font-sans text-xs text-repower-navy-900/55">Did you mean:</span>
                             {suggestions.map((s) => (
                               <button
                                 key={s}
@@ -756,19 +805,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       type="button"
                       key={option.value}
                       whileTap={{ scale: 0.98 }}
-                      className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
+                      className={`cursor-pointer rounded-sm border p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-navy-900/40 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-repower-navy-900 bg-repower-navy-900 text-white shadow-lg ring-2 ring-repower-navy-900 ring-offset-2' 
-                          : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-md'
+                          ? 'bg-repower-navy-900 border-repower-navy-900 text-white ring-2 ring-repower-navy-900/15 hover:bg-repower-navy-900'
+                          : 'bg-repower-paper border-repower-navy-900/20 hover:border-repower-gold hover:bg-repower-paper'
                       }`}
                       onClick={() => {
                         triggerHaptic('light');
                         setEstimate(null);
                         autoEstimateTriggered.current = false;
-                        onTradeInChange({ ...tradeInInfo, condition: option.value as any });
+                        updateValuationInput({ condition: option.value as TradeInInfo['condition'] });
                       }}
                     >
-                      <div className={`font-light text-lg ${tradeInInfo.condition === option.value ? 'text-white' : 'text-repower-navy-900'}`}>{option.label}</div>
+                      <div className={`font-display text-lg font-semibold ${tradeInInfo.condition === option.value ? 'text-white' : 'text-repower-navy-900'}`}>{option.label}</div>
                       <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-repower-cream/85' : 'text-repower-navy-900/65'}`}>{option.description}</div>
                     </motion.button>
                   ))}
@@ -780,7 +829,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Collapsible optional fields */}
               <Collapsible open={moreDetailsOpen} onOpenChange={setMoreDetailsOpen}>
-                <CollapsibleTrigger className="flex items-center gap-2 text-sm font-light text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors cursor-pointer">
+                <CollapsibleTrigger className="flex cursor-pointer items-center gap-2 font-sans text-sm font-semibold text-repower-navy-900/65 transition-colors hover:text-repower-navy-900">
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${moreDetailsOpen ? 'rotate-180' : ''}`} />
                   Add more details for a better estimate
                 </CollapsibleTrigger>
@@ -794,12 +843,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         value={tradeInInfo.startType || ''} 
                         onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
                       >
-                        <SelectTrigger className="min-h-[48px] rounded-sm font-light border-repower-navy-900/20">
+                        <SelectTrigger className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans">
                           <SelectValue placeholder="Manual (default)" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="manual" className="font-light">Manual (Pull Start)</SelectItem>
-                          <SelectItem value="electric" className="font-light">Electric Start</SelectItem>
+                          <SelectItem value="manual" className="font-sans">Manual (Pull Start)</SelectItem>
+                          <SelectItem value="electric" className="font-sans">Electric Start</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -812,13 +861,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         id="trade-hours"
                         type="number"
                         value={tradeInInfo.engineHours || ''}
-                        onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
+                        onChange={(e) => updateValuationInput({ engineHours: parseFloat(e.target.value) || undefined })}
                         placeholder="e.g., 250"
                         min="0"
                         max="20000"
-                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 font-light"
+                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans"
                       />
-                      <p className="text-xs text-repower-navy-900/40 font-light">Not sure? Leave blank, it's optional</p>
+                      <p className="font-sans text-xs text-repower-navy-900/40">Not sure? Leave blank—it's optional.</p>
                     </div>
 
                     <div className="space-y-2">
@@ -830,7 +879,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         value={tradeInInfo.serialNumber}
                         onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
                         placeholder="Motor serial number"
-                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 font-light"
+                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans"
                       />
                     </div>
                   </div>
@@ -838,11 +887,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               </Collapsible>
 
               {/* Get Estimate button */}
-              {!estimate && !isLoading && !hasMissingFields && (
+              {!estimate && !isLoading && !hasMissingFields && !requiresStrokeConfirmation && (
                 <Button
                   type="button"
                   onClick={handleGetEstimate}
-                  className="w-full min-h-[56px] text-lg font-light mt-2 bg-[hsl(var(--luxury-black))] text-white rounded-[10px] hover:opacity-90 active:scale-[0.97] transition-all duration-200 gap-2"
+                  className="mt-2 min-h-[52px] w-full gap-2 rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
                 >
                   <DollarSign className="w-5 h-5" />
                   Get My Estimate
@@ -853,7 +902,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               {isLoading && (
                 <div className="pt-4 flex items-center justify-center gap-3 text-repower-navy-900/65">
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  <span className="text-lg font-light">Calculating your estimate...</span>
+                  <span className="font-sans text-base">Calculating your estimate...</span>
                 </div>
               )}
 
@@ -863,11 +912,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <div className="flex items-start gap-3">
                     <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div className="space-y-2">
-                      <h3 className="text-lg font-light text-gray-900">Live estimate temporarily unavailable</h3>
-                      <p className="text-sm font-light text-gray-700 leading-relaxed">
-                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day.
+                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">
+                        {failureReason === 'rate_limited'
+                          ? "That's a few estimates in a row"
+                          : failureReason === 'input_rejected'
+                            ? 'Check the motor details'
+                            : 'Live estimate temporarily unavailable'}
+                      </h3>
+                      <p className="font-sans text-sm leading-relaxed text-repower-navy-900/70">
+                        {failureReason === 'rate_limited'
+                          ? "Nothing's broken — we just cap how many estimates run back to back. Wait up to 10 minutes and try again, or send us your motor details and we'll usually reply with a real number within one business day."
+                          : failureReason === 'input_rejected'
+                            ? 'One of the year, horsepower, condition, or stroke details was not accepted. Review those fields and try again.'
+                            : "We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day."}
                       </p>
-                      <p className="text-sm font-light text-gray-700">
+                      <p className="font-sans text-sm text-repower-navy-900/70">
                         Call <a href="tel:9053422153" className="underline font-medium">(905) 342-2153</a> or text <a href="sms:6479522153" className="underline font-medium">(647) 952-2153</a>
                       </p>
                     </div>
@@ -876,7 +935,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     type="button"
                     variant="outline"
                     onClick={handleGetEstimate}
-                    className="w-full min-h-[44px] font-light"
+                    className="min-h-[44px] w-full font-sans font-semibold"
                   >
                     Try again
                   </Button>
@@ -890,33 +949,33 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   animate={{ opacity: 1, y: 0 }}
                   className="space-y-4"
                 >
-                  <Card className="p-6 bg-repower-cream border-repower-gold/30">
+                  <Card className="rounded-sm border-repower-gold/30 bg-repower-paper p-6 shadow-none">
                     <div className="flex items-center gap-3 mb-4">
                       <CircleCheck className="w-6 h-6 text-repower-gold" />
-                      <h3 className="text-lg font-light text-repower-navy-900">Your Estimated Trade Value</h3>
+                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">Your estimated trade value</h3>
                       {/* Confidence badge */}
                       <span className={`ml-auto text-xs font-medium px-2 py-0.5 rounded-full ${
                         estimate.confidence === 'high' ? 'bg-repower-gold/15 text-repower-navy-900' :
                         estimate.confidence === 'medium' ? 'bg-repower-cream text-repower-gold' :
                         'bg-repower-navy-900/[0.08] text-repower-navy-900/65'
                       }`}>
-                        {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'} confidence
+                        Estimate confidence: {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'}
                       </span>
                     </div>
                     
                     <div className="text-center space-y-2">
-                      <div className="text-4xl font-light text-repower-navy-900">
+                      <div className="font-display text-4xl font-bold tracking-[-0.025em] text-repower-navy-900">
                         <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
                       <div className="text-sm font-normal text-repower-navy-900/75">
-                        Range: ${Math.round(estimate.low).toLocaleString()}, ${Math.round(estimate.high).toLocaleString()}
+                        Range: ${Math.round(estimate.low).toLocaleString()} – ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
 
                     {/* HBW-specific extras, corrected private sale framing */}
                     {(estimate as HBWValuationResult).fromHBW && (estimate as HBWValuationResult).hstSavings > 0 && (
                       <div className="mt-4 space-y-3">
-                        <div className="text-sm font-light text-repower-navy-900/75 bg-repower-paper border border-repower-navy-900/10 rounded-sm p-3 leading-relaxed">
+                        <div className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-3 font-sans text-sm leading-relaxed text-repower-navy-900/75">
                           {selectedMotorPrice ? (
                             <>
                               Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong>, but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
@@ -930,11 +989,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     )}
 
-                    {(estimate as any).penaltyMessage && (
+                    {penaltyMessage && (
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-repower-gold">{(estimate as any).penaltyMessage}</p>
+                          <p className="font-sans text-sm text-repower-gold">{penaltyMessage}</p>
                         </div>
                       </div>
                     )}
@@ -944,7 +1003,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-repower-gold">
+                          <p className="font-sans text-sm text-repower-gold">
                             Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price, no cash refunds on trade-ins.
                           </p>
                         </div>
@@ -953,21 +1012,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   </Card>
 
                   {/* View Full Report, subtle text link */}
-                  {(estimate as HBWValuationResult).fromHBW && (
+                  {(estimate as HBWValuationResult).fromHBW && tradeInInfo.valuationReportUrl && (
                     <div className="text-center">
                       <a
-                        href={tradeInInfo.valuationReportUrl || buildHBWReportUrl({
-                          brand: tradeInInfo.brand,
-                          year: tradeInInfo.year,
-                          hp: tradeInInfo.horsepower,
-                          condition: tradeInInfo.condition,
-                          hours: tradeInInfo.engineHours,
-                          model: tradeInInfo.model,
-                          name: customerName || undefined,
-                        })}
+                        href={tradeInInfo.valuationReportUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-light text-repower-navy-900/55 hover:text-repower-navy-900 underline underline-offset-2 transition-colors"
+                        className="inline-flex items-center gap-1.5 font-sans text-sm text-repower-navy-900/55 underline underline-offset-2 transition-colors hover:text-repower-navy-900"
                       >
                         View detailed valuation report
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -977,20 +1028,23 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
                   <Alert className="border-repower-navy-900/10 bg-repower-cream">
                     <Wrench className="w-4 h-4 text-repower-mercury-red" />
-                    <AlertDescription className="text-sm font-light text-repower-navy-900/75">
+                    <AlertDescription className="font-sans text-sm text-repower-navy-900/75">
                       Final trade value confirmed after in-person inspection. This estimate helps you plan your budget.
                     </AlertDescription>
                   </Alert>
 
-                  {/* Continue button */}
-                  <Button
-                    type="button"
-                    onClick={() => onAutoAdvance?.()}
-                    className="w-full min-h-[56px] text-lg font-light mt-4 bg-[hsl(var(--luxury-black))] text-white rounded-[10px] hover:opacity-90 active:scale-[0.97] transition-all duration-200"
-                  >
-                    Continue →
-                  </Button>
                 </motion.div>
+              )}
+
+              {!standalone && tradeInInfo.hasTradeIn && onAutoAdvance && (
+                <Button
+                  data-testid="trade-in-continue"
+                  type="button"
+                  onClick={onAutoAdvance}
+                  className="mt-4 min-h-[52px] w-full rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
+                >
+                  Continue →
+                </Button>
               )}
             </motion.div>
           )}

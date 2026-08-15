@@ -4,9 +4,9 @@ last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安省租船需要驾照吗？PCOC 与租船安全清单一次讲清"
 description: "安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。"
 category: "安省法规中文"
@@ -16,6 +16,7 @@ keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: rentals
 ---
 
 # 安省租船需要驾照吗？PCOC 与租船安全清单一次讲清
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 安省法规中文  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**最后审核:** 2026-05-11  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 
@@ -32,24 +33,15 @@ language: zh-CN
 
 在加拿大租船，**通常需要 PCOC（船只操作员卡）**。部分租船公司会在你前往时提供「临时免除 PCOC」的 Safety Briefing（限该次租用），但这不是法律默认。即使有临时免除，安全责任仍然在操作者身上。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 
@@ -217,32 +209,6 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ---
 
-## 常见问题
-
-**租船一定要 PCOC 吗？**
-通常需要。但部分租船公司会提供临时免除（Safety Briefing），允许该次租用无 PCOC 操作。确认时请致电该租船公司。
-
-**HBW 的租船需要 PCOC 吗？**
-通常需要，但部分情况下会提供临时免除。请致电 905-342-2153 确认当前政策。
-
-**租船保险谁负责？**
-租船公司会有他们的责任保险（涵盖船与第三方），但承租人通常负责船内个人物品和个人伤亡。详细责任分配请看租船合约。
-
-**如果租船时发生事故谁负责？**
-这需要看合约与情况。一般原则：
-- 操作者责任（如酒驾、超速、无视警告）
-- 设备故障（租船公司责任）
-- 天气不可抗力（双方分担）
-- 第三方故意行为（第三方责任）
-
-**租船需要押金吗？**
-是。租船公司通常要求预付押金（范围视船型而定），出船时刷信用卡作为押金，返船时释放。
-
-**如果我有 PCOC，租船会打折吗？**
-通常不会。但你可以省下 Safety Briefing 的时间，更早出船。
-
----
-
 ## 内部连结
 
 - [新移民安大略省买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
@@ -286,16 +252,15 @@ PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $5
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

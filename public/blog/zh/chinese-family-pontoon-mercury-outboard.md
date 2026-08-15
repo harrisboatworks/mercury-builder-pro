@@ -4,9 +4,9 @@ last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "华人家庭买 pontoon：Mercury 船外机怎么配才不后悔"
 description: "给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。"
 category: "家庭买船指南"
@@ -16,6 +16,7 @@ keywords: ["pontoon Mercury 中文","华人家庭 pontoon","安省 pontoon 船�
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # 华人家庭买 pontoon：Mercury 船外机怎么配才不后悔
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 家庭买船指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-06-19  
+**最后审核:** 2026-06-19  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
 
@@ -32,24 +33,15 @@ language: zh-CN
 
 Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展示厅的空船表现**。家庭聚会、父母访加、孩子暑假, Pontoon常常是真正满载使用的船型。马力太小让船起步慢、转向重、逆风费力；太小的马力也不一定更省油。对多数GTA华人家庭，正确的问题不是「最低可以配多少马力」，而是「我们平常怎么用这艘船」。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item4En: 60 to 90 minutes from GTA via 401 + 115
-item4Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item5En: Mercury dealer since 1965
-item5Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ## 关于语言的说明
 
@@ -134,22 +126,6 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 
 ---
 
-## 常见问题
-
-**Q：我的Pontoon最大马力标示是115HP，一定要配115吗？**
-A：不一定。最大马力是上限，不是建议值。你应该根据实际常载人数和使用方式选择合适的马力, 有时候低于上限的马力已经足够，但对Pontoon来说通常建议接近上限以确保余裕。请联络HBW确认你的具体情况。
-
-**Q：已有的Pontoon换Mercury需要什么？**
-A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbw.wiki/service 提交申请。
-
-**Q：Pontoon上装Verado（特殊订购，仅限服务）值得吗？**
-A：对绝大多数家庭 pontoon，FourStroke + Command Thrust 是更务实、更省钱的起点。Verado（特殊订购，仅限服务）在 pontoon 上属于小众选择 - 静音和精致感是真的，但价格溢价对一般家庭用途不划算。HBW 不会日常库存 Verado（特殊订购，仅限服务），可以按需特别订货。如果你的 pontoon 是高级型号、常在更大水域使用、或你对静音有特别要求，可以打电话直接聊。
-
-**Q：带小孩上Pontoon，安全吗？**
-A：Pontoon是最适合带小孩的船型之一, 平台式设计稳定，小孩可以走动，上下船比钓鱼船安全很多。确保每个小孩都有合适尺寸的救生衣是法律要求，也是基本责任。
-
----
-
 ## 内部连结
 
 - [6至8人租船指南：Pontoon还是钓鱼船更适合？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
@@ -186,16 +162,15 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

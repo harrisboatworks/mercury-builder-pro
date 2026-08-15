@@ -50,11 +50,11 @@ export function QuoteRadioTile({
         }
       }}
       className={cn(
-        'relative flex items-start gap-4 rounded-lg bg-white px-[22px] py-[18px] cursor-pointer transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40',
+        'relative flex items-start gap-4 rounded-sm bg-repower-cream px-[22px] py-[18px] cursor-pointer transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40',
         selected
           ? 'border-2 border-repower-navy-900 -m-px'
-          : 'border border-repower-navy-900/10 hover:bg-repower-cream',
-        disabled && 'opacity-50 cursor-not-allowed hover:bg-white',
+          : 'border border-repower-navy-900/10 hover:border-repower-gold/50 hover:bg-repower-gold/[0.06]',
+        disabled && 'opacity-50 cursor-not-allowed hover:bg-repower-cream',
         className
       )}
     >

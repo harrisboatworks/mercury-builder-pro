@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
-import { supabase } from '@/integrations/supabase/client';
 import { Card } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
+import { loadFinancingDraft } from '@/lib/financingApplicationApi';
 
 import { useNoIndex } from '@/hooks/useNoIndex';
 export default function FinancingResume() {
@@ -25,44 +25,16 @@ export default function FinancingResume() {
       }
 
       try {
-        const { data, error: fetchError } = await supabase
-          .from('financing_applications')
-          .select('*')
-          .eq('resume_token', token)
-          .is('deleted_at', null)
-          .single();
-
-        if (fetchError || !data) {
-          setError('Invalid or expired resume link. Please start a new application.');
-          setLoading(false);
-          return;
-        }
-
-        // Check if application was already submitted
-        if (data.status === 'submitted' || data.status === 'pending') {
-          setError('This application has already been submitted. Please start a new application if needed.');
-          setLoading(false);
-          return;
-        }
-
-        // Check if resume token is expired (30 days)
-        const expiresAt = new Date(data.resume_expires_at);
-        const now = new Date();
-        
-        if (now > expiresAt) {
-          setError('This resume link has expired (30 days). Please start a new application.');
-          setLoading(false);
-          return;
-        }
+        const { application } = await loadFinancingDraft(token);
         
         // Load application into context
-        dispatch({ type: 'LOAD_FROM_DATABASE', payload: data });
+        dispatch({ type: 'LOAD_FROM_DATABASE', payload: application });
         
         // Navigate to application page
-        navigate('/financing/apply', { replace: true });
+        navigate('/financing-application', { replace: true });
       } catch (err) {
         console.error('Failed to load application:', err);
-        setError('Failed to load your application. Please try again or contact support.');
+        setError('This private resume link is invalid, expired, or has already been submitted.');
         setLoading(false);
       }
     };
@@ -72,10 +44,11 @@ export default function FinancingResume() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center">
-        <Card className="p-8 text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-primary" />
-          <p className="text-muted-foreground">Loading your application...</p>
+      <div className="flex min-h-screen items-center justify-center bg-repower-paper px-4">
+        <Card className="w-full max-w-md rounded-sm border-repower-navy-900/10 bg-white p-8 text-center shadow-xl">
+          <Loader2 className="mx-auto mb-4 h-8 w-8 animate-spin text-repower-mercury-red" />
+          <p className="font-display text-xl font-semibold text-repower-navy-900">Loading your application</p>
+          <p className="mt-2 font-sans text-sm text-repower-navy-900/55">Checking your private resume link…</p>
         </Card>
       </div>
     );
@@ -83,16 +56,18 @@ export default function FinancingResume() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center px-4">
-        <Card className="p-8 text-center max-w-md">
-          <h2 className="text-xl font-bold text-foreground mb-2">Unable to Resume</h2>
-          <p className="text-muted-foreground mb-6">{error}</p>
+      <div className="flex min-h-screen items-center justify-center bg-repower-paper px-4">
+        <Card className="w-full max-w-md rounded-sm border-repower-navy-900/10 bg-white p-8 text-center shadow-xl">
+          <p className="mb-3 font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-repower-mercury-red">Private application link</p>
+          <h2 className="mb-3 font-display text-2xl font-bold text-repower-navy-900">Unable to resume</h2>
+          <p className="mb-6 font-sans text-sm leading-relaxed text-repower-navy-900/60">{error}</p>
           <button
-            onClick={() => navigate('/financing/apply')}
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
+            onClick={() => navigate('/financing-application')}
+            className="min-h-12 bg-repower-mercury-red px-6 py-3 font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-white hover:bg-repower-mercury-red-deep"
           >
-            Start New Application
+            Start new application
           </button>
+          <p className="mt-5 font-sans text-xs text-repower-navy-900/50">Need help? Call (905) 342-2153.</p>
         </Card>
       </div>
     );

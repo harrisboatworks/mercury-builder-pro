@@ -29,7 +29,7 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     id: 'CS01',
     slug: 'aluminum-fishing-60-to-90-fourstroke',
     title: '18-foot aluminum fishing boat: 60HP to 90HP FourStroke',
-    excerpt: 'A practical power jump for inland-lake anglers who needed better holeshot, load carrying, and open-water confidence.',
+    excerpt: 'An illustrative comparison of a 60 HP setup with a Mercury 90 HP FourStroke on a properly rated aluminum fishing boat.',
     scenario: 'Aluminum fishing repower',
     boatType: 'Aluminum fishing boat',
     region: 'Rice Lake / Kawarthas',
@@ -38,21 +38,21 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     hpJump: '60 → 90',
     heroImage: '/lovable-uploads/aluminum-fishing-hero-real.png',
     detailImage: '/lovable-uploads/aluminum-fishing-detail-real.png',
-    customerQuote: 'The boat feels more usable with a full fishing load and still stays easy to live with on smaller lakes.',
-    recommendation: 'Best for owners who fish with two to three people, carry gear, and want stronger mid-range without overbuilding the package.',
+    customerQuote: 'A 90 HP FourStroke may suit a properly rated aluminum fishing hull after the complete load and current setup are measured.',
+    recommendation: 'Consider only after confirming the capacity plate, transom, current motor, full fishing load, propeller, steering, and measured WOT RPM.',
     whyItWorked: [
-      'Improved load-carrying confidence in wind and chop',
-      'Better holeshot for getting on plane with gear aboard',
-      'Strong fit for 18–20 foot aluminum fishing layouts'
+      'Higher rated horsepower may help a heavier operating load when the hull permits it',
+      'Acceleration and speed must be measured on the actual boat',
+      'Propeller and engine height are selected against loaded WOT RPM'
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS01'
   },
   {
     id: 'CS02',
     slug: 'pontoon-family-40-to-115-command-thrust',
     title: 'Family pontoon: 40HP to 115HP Command Thrust',
-    excerpt: 'A meaningful pontoon upgrade focused on full-load performance, better tube pulling, and less regret from underpowering.',
+    excerpt: 'An illustrative comparison of an underpowered 40 HP pontoon setup with a properly rated 115 HP Command Thrust package.',
     scenario: 'Pontoon repower',
     boatType: 'Pontoon boat',
     region: 'Ontario cottage lakes',
@@ -60,21 +60,21 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     afterMotor: 'Mercury 115HP Command Thrust',
     hpJump: '40 → 115',
     heroImage: '/lovable-uploads/pontoon-115-ct-detail-real.png',
-    customerQuote: 'This is the kind of upgrade that turns a sluggish family pontoon into something people actually want to use all summer.',
-    recommendation: 'Best for 21–24 foot pontoons carrying family, coolers, and watersports loads where a small motor feels strained.',
+    customerQuote: 'A larger properly rated motor and Command Thrust gearcase may suit a heavier pontoon load, but the capacity plate and actual setup control.',
+    recommendation: 'Consider only after confirming tube count, capacity plate, transom, passenger and gear load, watersports use, steering, and propeller.',
     whyItWorked: [
-      'Command Thrust suits heavier pontoon loads',
-      'Much better acceleration with passengers aboard',
-      'A more realistic horsepower match for modern family pontoons'
+      'Command Thrust can turn a larger propeller for a heavier load',
+      'The final horsepower must stay within the pontoon manufacturer\'s rating',
+      'Acceleration and handling are verified on the actual loaded boat'
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS02'
   },
   {
     id: 'CS03',
     slug: 'bass-boat-150-to-150-pro-xs',
     title: 'Bass boat refresh: older 150 to Mercury 150 Pro XS',
-    excerpt: 'A performance-focused replacement for anglers who care about response, tournament-style running, and Mercury-specific setup confidence.',
+    excerpt: 'An illustrative same-horsepower comparison between an older 150-class setup and a current Mercury 150 Pro XS.',
     scenario: 'Bass boat repower',
     boatType: 'Bass boat',
     region: 'Ontario tournament / inland lakes',
@@ -83,14 +83,14 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     hpJump: '150 → 150 Pro XS',
     heroImage: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     detailImage: '/lovable-uploads/bass-boat-150-proxs-detail-real.png',
-    customerQuote: 'The right bass-boat repower is not just about peak speed, it is about repeatable performance, setup confidence, and running hard all day.',
-    recommendation: 'Best for bass-boat owners who already know they want Mercury Pro XS character and cleaner modern rigging.',
+    customerQuote: 'A same-horsepower Pro XS repower is a setup decision involving hull rating, engine height, propeller, controls, load, and measured WOT RPM.',
+    recommendation: 'Consider for a properly rated bass hull after documenting the old setup, performance goals, controls, steering, transom, and complete operating load.',
     whyItWorked: [
-      'Performance-oriented Mercury Pro XS fit for bass hulls',
-      'Modern rigging and cleaner replacement package',
-      'Strong visual proof for bass-boat buying content'
+      'Pro XS is Mercury\'s performance-oriented 150 HP family',
+      'Current controls and rigging are matched to the selected motor',
+      'No acceleration or top-speed result is promised without an actual water test'
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS03'
   },
   {
@@ -119,7 +119,7 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     id: 'CS05',
     slug: 'walkaround-cuddy-90-to-115-efi',
     title: 'Walkaround cuddy: 90HP to 115HP EFI',
-    excerpt: 'A smart mid-range upgrade for heavier small boats that need more confidence leaving the dock fully loaded.',
+    excerpt: 'An illustrative comparison of an older 90 HP setup with a Mercury 115 HP FourStroke on a properly rated small cuddy or walkaround.',
     scenario: 'Walkaround / cuddy repower',
     boatType: 'Walkaround cuddy',
     region: 'Rice Lake / Kawarthas',
@@ -128,14 +128,14 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     hpJump: '90 → 115',
     heroImage: '/lovable-uploads/cuddy-115-hero-real.png',
     detailImage: '/lovable-uploads/cuddy-115-detail-real.png',
-    customerQuote: 'The 115 class is often the sweet spot when a small cabin boat needs more push without jumping into a much heavier package.',
-    recommendation: 'Best for small cuddy and walkaround owners wanting a stronger all-around match for real Ontario use.',
+    customerQuote: 'A 115 HP FourStroke may suit a properly rated small cabin boat after its transom, load, balance, steering, controls, and current performance are checked.',
+    recommendation: 'Consider only after confirming the capacity plate or manufacturer rating, transom, weight and balance, full operating load, controls, and propeller.',
     whyItWorked: [
-      'Better fit for a heavier hull than a lower-output setup',
-      'Improved confidence with passengers and gear',
-      'Useful real-photo proof for 115-class buying decisions'
+      'Higher rated horsepower may help a heavier hull when the manufacturer permits it',
+      'Balance, steering, and loaded handling must be evaluated on the actual boat',
+      'The complete installed package requires a boat-specific quote'
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS05'
   }
 ];

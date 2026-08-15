@@ -8,10 +8,12 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { ArrowLeft } from 'lucide-react';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { computeDelta } from '@/lib/ui-delta';
+import { getQuoteStepNumber } from '@/components/quote-builder/quote-progress-steps';
 
 export default function InstallationPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible } = useQuote();
+  const stepNumber = getQuoteStepNumber(state, '/quote/installation') ?? 6;
   
   // Track previous totals for delta calculation
   const [prevTotal, setPrevTotal] = useState<number | null>(null);
@@ -120,9 +122,9 @@ export default function InstallationPage() {
           </button>
         </div>
         <QuotePageShell
-          eyebrow="Step 5 · Installation"
+          eyebrow={`Step ${stepNumber} · Installation`}
           title="Configure your installation"
-          subhead="Tell us how you'd like the motor rigged. We handle controls, steering, and dispose of your old one."
+          subhead="Confirm the propeller and mounting details. Final propeller size is verified during water testing."
           className="!py-6 md:!py-8"
         >
           <div className="mx-auto w-full max-w-[880px] mb-6 bg-repower-cream border border-repower-navy-900/10 p-5 rounded-sm">
@@ -136,6 +138,8 @@ export default function InstallationPage() {
           <InstallationConfig
             selectedMotor={state.motor}
             boatInfo={state.boatInfo}
+            initialConfig={state.installConfig}
+            tradeInInfo={state.tradeInInfo}
             onComplete={handleStepComplete}
           />
         </QuotePageShell>

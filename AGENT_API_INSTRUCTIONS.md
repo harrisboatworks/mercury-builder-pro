@@ -172,9 +172,9 @@ Estimates the value of a customer's existing motor for trade-in credit.
 
 ---
 
-### 2.4 `get_warranty_pricing` — Warranty Extension Costs
+### 2.4 `get_warranty_pricing` — Mercury Platinum Product Protection Pricing
 
-Returns warranty extension pricing for a given horsepower.
+Returns exact Canadian Platinum Product Protection plan pricing for a given horsepower, plus the cost to reach each combined coverage target after any active promotional warranty coverage is counted. Product Protection is an extended service contract, not an extension of the standard product warranty.
 
 **Request:**
 ```json
@@ -189,19 +189,32 @@ Returns warranty extension pricing for a given horsepower.
 {
   "ok": true,
   "warranty_pricing": {
-    "hp_range": "115-200",
+    "hp_range": "150-199.9",
     "base_warranty_years": 3,
+    "promotional_warranty_years": 0,
+    "included_coverage_years": 3,
     "extension_costs": {
-      "year_4": 350,
-      "year_5": 375,
-      "year_6": 400,
-      "year_7": 425,
-      "year_8": 450
+      "year_4": 753,
+      "year_5": 1357,
+      "year_6": 1921,
+      "year_7": 2442,
+      "year_8": 2900
     },
-    "note": "With the active Get 7 promotion, years 4-7 are included free. Only year 8 would be an additional cost."
+    "platinum_plan_prices": {
+      "one_year": 753,
+      "two_year": 1357,
+      "three_year": 1921,
+      "four_year": 2442,
+      "five_year": 2900
+    },
+    "currency": "CAD",
+    "prices_exclude_tax": true,
+    "note": "Each value is the cumulative price of the purchased 1-5 year Platinum plan. Base coverage is 3 years. Active promotional years are counted first and reduce the paid plan term; combined coverage cannot exceed 8 years."
   }
 }
 ```
+
+The example above assumes no active warranty-bonus promotion. Always use the response returned at quote time; do not sum the one- through five-year plan columns.
 
 ---
 
@@ -297,7 +310,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `promo_term` | number | No | Term in months for special_financing (default: 120) |
 | `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number?, override_value?, engine_type?, engine_hours? }` |
 | `trade_in.override_value` | number | No | Override the formula estimate with an exact trade-in dollar amount. The formula estimate is still calculated and stored for reference. |
-| `warranty_years` | number | No | Total warranty years desired (e.g. 7 or 8) |
+| `warranty_years` | number | No | Desired combined Mercury coverage years, from current included coverage up to 8. The API prices only the required 1-5 year Platinum Product Protection term. |
 | `package` | string | No | `"good"`, `"better"`, or `"best"` |
 | `admin_discount` | number | No | Dollar amount off final price |
 | `admin_notes` | string | No | Internal notes (not shown to customer) |
@@ -320,14 +333,14 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
   },
   "pricing": {
     "subtotal": 18150,
-    "warrantyCost": 450,
+    "warrantyCost": 753,
     "tradeInCredit": 4060,
     "rebateCredit": 500,
-    "adjustedSubtotal": 14040,
-    "hst": 1825.20,
-    "totalBeforeDiscount": 15865.20,
+    "adjustedSubtotal": 14343,
+    "hst": 1864.59,
+    "totalBeforeDiscount": 16207.59,
     "adminDiscount": 500,
-    "finalPrice": 15365.20
+    "finalPrice": 15707.59
   },
   "promo_applied": {
     "option": "cash_rebate",
@@ -341,7 +354,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
   },
   "warranty": {
     "total_years": 8,
-    "extra_cost": 450
+    "extra_cost": 753
   }
 }
 ```
@@ -452,7 +465,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 | No `trade_in` provided | No trade-in applied |
 | No `purchase_path` specified | Defaults to `"loose"` (motor only, no installation) |
 | No `lead_status` specified | Defaults to `"new"` (customer just asked for a quote) |
-| No `warranty_years` specified | Uses promotion-included warranty (e.g. 7 years with Get 7) |
+| No `warranty_years` specified | Uses the current included base plus any active promotional warranty coverage; no paid Product Protection term is added |
 | No `package` specified | Defaults to `"good"` (Essential package) |
 
 ---
@@ -485,11 +498,11 @@ The API applies intelligent defaults so agents don't need to specify every field
 3. `create_quote` with `promo_option: "special_financing"`, `promo_rate: 2.99`, `promo_term: 120`
 4. Response includes monthly payment calculation
 
-### Check warranty extension cost
+### Check Mercury Platinum Product Protection cost
 
 1. `get_warranty_pricing` with the motor's HP
-2. Note: With Get 7 promo, years 4-7 are free. Only year 8+ costs extra.
-3. Include `warranty_years: 8` in `create_quote` to add the extension
+2. Read `included_coverage_years` and the exact `extension_costs` returned for the active promotion state
+3. Include the customer's desired combined coverage total, such as `warranty_years: 8`, in `create_quote`; the API adds the correct Platinum plan price without summing cumulative columns
 
 ### Customer wants to add accessories to an existing quote
 

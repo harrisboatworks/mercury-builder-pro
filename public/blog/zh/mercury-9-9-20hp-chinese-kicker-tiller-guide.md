@@ -4,9 +4,9 @@ last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南"
 description: "Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。"
 category: "小马力指南"
@@ -16,6 +16,7 @@ keywords: ["Mercury 9.9 20HP 中文","Mercury kicker 中文","tiller 船外机�
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # 9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 小马力指南  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**最后审核:** 2026-05-10  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 
@@ -34,24 +35,15 @@ Mercury 9.9至20HP适合小铝船、轻载钓鱼、Kicker辅助机、Trolling，
 
 不要因为马力小就随便买。小马力选错，体验一样很差。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 
@@ -141,22 +133,6 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 
 ---
 
-## 常见问题
-
-**Q：我的12英尺铝船，Capacity Plate写最大10HP，可以装9.9HP吗？**
-A：是的，9.9HP在技术上属于10HP以下，通常符合10HP限制的规定。但具体要确认你的Capacity Plate标示, 如果写的是「最大10HP」或「不超过10HP」，语义可能略有不同。购买前让HBW确认。
-
-**Q：Mercury 9.9HP有ProKicker版本吗？**
-A：Mercury有ProKicker系列，专门为Kicker用途设计，具有特定的Trolling和低速控制功能。具体型号和可用配置请查Mercury当前产品资料，或联络HBW确认当前库存。
-
-**Q：9.9至20HP的服务保养，HBW可以做吗？**
-A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbw.wiki/service 提交服务申请。
-
-**Q：如果买了20HP发现不够用，可以换成更大的吗？**
-A：可以更换，但必须在船体Capacity Plate允许的范围内。建议一开始选择时就根据你的最大使用情境决定，避免二次更换的成本。
-
----
-
 ## 内部连结
 
 - [40至60马力Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
@@ -191,16 +167,15 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

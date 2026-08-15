@@ -12,7 +12,7 @@ interface QuotePageShellProps {
 export function QuotePageShell({ eyebrow, title, subhead, children, className }: QuotePageShellProps) {
   return (
     <div className="bg-repower-paper min-h-[60vh]">
-      <div className={cn('mx-auto w-full max-w-[880px] py-12 px-6 md:py-16 md:px-0', className)}>
+      <div className={cn('mx-auto w-full max-w-[880px] px-6 py-12 md:px-8 md:py-16 min-[960px]:px-0', className)}>
         {(eyebrow || title) && (
           <header className="mb-7">
             {eyebrow && (

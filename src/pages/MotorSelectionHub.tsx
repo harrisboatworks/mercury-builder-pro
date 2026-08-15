@@ -27,7 +27,7 @@ export default function MotorSelectionHub() {
           Going lower leaves you underpowered. Live pricing on every Mercury
           we sell is at{' '}
           <Link to="/quote/motor-selection" className="font-semibold text-repower-gold underline-offset-4 hover:underline">
-            /quote/motor-selection
+            build your Mercury quote
           </Link>
           .
         </>
@@ -100,7 +100,7 @@ export default function MotorSelectionHub() {
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Premier dealer access', description: 'Factory-direct support and current product knowledge.' },
       ]}
       faqs={[
-        { question: 'What HP do I need for my boat?', answer: "Aim for 70 to 90% of your boat's maximum rated HP for typical recreational use. Specific answer depends on hull length, type, and use case. See our HP guide or build a quote at /quote/motor-selection for your specific boat." },
+        { question: 'What HP do I need for my boat?', answer: "Aim for 70 to 90% of your boat's maximum rated HP for typical recreational use. Specific answer depends on hull length, type, and use case. See our HP guide or use the quote builder for recommendations based on your boat." },
         { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
         { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
         { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },

@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer Richmond Hill HBW"
 description: "Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-24
 keywords: ["mercury dealer richmond hill","mercury repower richmond hill","mercury outboard richmond hill ontario","boat motor dealer aurora newmarket","harris boat works richmond hill customers"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Richmond Hill HBW
 
 > Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-07-24  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Richmond Hill boaters drive to Harris Boat Works: about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
 
-# Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
+## Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
 
 There are Mercury dealers closer to Richmond Hill. We know the map. We're not trying to pretend otherwise.
 
@@ -56,7 +57,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 Richmond Hill has Mercury dealers. Not all of them are Premier. [Mercury's Premier tier is the top level of their dealer program](/blog/best-mercury-dealer-ontario-hbw-difference), it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
-On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
+On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, or warranty diagnosis on a new motor, technical depth starts to matter. Premier status does not change the warranty terms or guarantee priority approval; HBW's practical advantage is Mercury-specific training, tooling, parts depth, and familiarity with complex installations.
 
 ## Third-Generation Means Something Different
 
@@ -75,7 +76,7 @@ Richmond Hill has a sophisticated boating community, a lot of buyers who've done
 ## What Harris Boat Works Handles for Richmond Hill Customers
 
 **Mercury outboard sales**
-Full lineup from 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have an honest conversation about what makes sense for your specific hull, how you use it, and what you're willing to spend, not just push the highest-margin option.
+Full lineup from 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what makes sense for your specific hull, how you use it, and what you're willing to spend, not just push the highest-margin option.
 
 **Repower service**
 [We replace old motors on hulls you want to keep](/blog/mercury-repower-cost-ontario-2026-cad). Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
@@ -92,8 +93,6 @@ Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage 
 ---
 
 ## Getting to Harris Boat Works from Richmond Hill
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Route:** Highway 404 north to Highway 115 east, then exit to County Road 28 north into Gores Landing.
 
@@ -142,8 +141,6 @@ Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -166,24 +163,23 @@ Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD p
 
 ## Related guides
 
+- [Mercury Dealer Vaughan Ontario HBW](/blog/mercury-dealer-vaughan-ontario-hbw), Mercury dealer for Vaughan
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
 - [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

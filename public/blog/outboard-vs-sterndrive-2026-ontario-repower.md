@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
@@ -16,6 +16,7 @@ keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Outboard vs Sterndrive 2026 Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
-# Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
+## Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
 
 > **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
 
@@ -40,28 +41,31 @@ Here's the full picture, the good, the honest, and the stuff that will actually 
 
 ---
 
-::decision-card
-eyebrow: Repower platform decision
-heading: Outboard or sterndrive on your hull?
-subhead: For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
-leftLabel: Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
-leftCriteria:
-  - Ontario freshwater, mostly inland lakes
-  - Reliability and fuel economy matter
-  - You want shallow-water trim ability for Kawartha shoals
-  - Resale matters in 5 to 10 years
-leftOutcome: Go outboard. 2026 market has decisively moved.
-leftVariant: recommended
-rightLabel: Boat is 22+ ft with high-deadrise hull or dedicated tow boat
-rightCriteria:
-  - Big-water cruiser with cabin, indoor cockpit comfort matters
-  - Watersports inboard tow boat where wake shape is the whole point
-  - You want maximum cockpit space with no transom motor
-  - You'll keep the boat 10+ years and accept the service intervals
-rightOutcome: Sterndrive or inboard can still make sense
-rightVariant: alternative
-whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
-::
+*Repower platform decision*
+
+### Outboard or sterndrive on your hull?
+
+For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
+
+#### Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
+
+- Ontario freshwater, mostly inland lakes
+- Reliability and fuel economy matter
+- You want shallow-water trim ability for Kawartha shoals
+- Resale matters in 5 to 10 years
+
+**Go outboard. 2026 market has decisively moved.**
+
+#### Boat is 22+ ft with high-deadrise hull or dedicated tow boat
+
+- Big-water cruiser with cabin, indoor cockpit comfort matters
+- Watersports inboard tow boat where wake shape is the whole point
+- You want maximum cockpit space with no transom motor
+- You'll keep the boat 10+ years and accept the service intervals
+
+**Sterndrive or inboard can still make sense**
+
+Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
 
 ## Outboard vs sterndrive at a glance
 
@@ -155,8 +159,6 @@ This is the number that ends most debates. A late-model outboard repower dramati
 
 ### Cleaner Repower Process
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 A sterndrive-to-outboard conversion involves removing an outdrive, motor mounts, and associated systems and replacing them with a bracket and outboard package. It's real work, but it's not an engine bay rebuild. There's no cylinder head work, no manifold replacement, no exhaust riser risk assessment. The installation is purpose-built and clean.
 
 ---
@@ -206,15 +208,15 @@ For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://ww
 
 ---
 
-> ### Mercruiser Sterndrives We Still Service
->
-> If you have a sterndrive and you want to keep it, we support that decision.
->
-> Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
->
-> One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
->
-> Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+## From the Shop: Mercruiser Sterndrives We Still Service
+
+If you have a sterndrive and you want to keep it, we support that decision.
+
+Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
+
+One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
+
+Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
 
 ---
 
@@ -227,8 +229,6 @@ A few specific reasons we're confident in this recommendation for most Ontario o
 **Long-term Mercury parts support.** Mercury has committed its engineering investment to 4-stroke outboard development. Parts will be available, technicians will be trained, and the platform will be supported for the working life of any motor we install today.
 
 **We're a Mercury Premier Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
-
-**79 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
 
 We're not the biggest dealer in Ontario. But we're on the water, we know Rice Lake, and we tell people the truth, including when the truth is that their hull isn't worth a repower, or that keeping their existing engine makes more sense.
 
@@ -255,21 +255,9 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Premier Dealer.*
+*Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
 ---
-
-## Related at HBW
-
-The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
-- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
@@ -295,24 +283,23 @@ Modern 4-stroke outboards trim up in seconds, which lets you pick through shallo
 
 ## Related guides
 
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
+- [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers), Pro XS repower for Kawartha anglers
+- [Mercury DTS vs Mechanical Ontario](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS vs mechanical controls on a repower
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -202,6 +202,24 @@ export function FinancingApplicationDetailModal({
                     <div className="font-medium">{application.applicant_data?.dateOfBirth}</div>
                   </div>
                 </div>
+
+                <div className="border-t pt-4">
+                  <h3 className="font-semibold mb-2">Electronic Authorization</h3>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="text-muted-foreground">Credit Check:</div>
+                    <div className="font-medium">{application.consent_data?.creditCheckConsent ? 'Authorized' : 'Not recorded'}</div>
+                    <div className="text-muted-foreground">Terms:</div>
+                    <div className="font-medium">{application.consent_data?.termsAgreement ? 'Accepted' : 'Not recorded'}</div>
+                    <div className="text-muted-foreground">Signature:</div>
+                    <div className="font-medium">{application.consent_data?.signature || 'Not recorded'}</div>
+                    <div className="text-muted-foreground">Signed:</div>
+                    <div className="font-medium">
+                      {application.consent_data?.signatureDate
+                        ? new Date(application.consent_data.signatureDate).toLocaleString('en-CA')
+                        : 'Not recorded'}
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </TabsContent>

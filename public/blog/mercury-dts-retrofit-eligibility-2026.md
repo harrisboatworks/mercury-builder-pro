@@ -1,21 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-08-08
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury DTS Retrofit Eligibility 2026
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last reviewed:** 2026-08-08  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for a same-day yes or no.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for an eligibility check.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -47,7 +48,7 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
 
-If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll respond same-day with eligibility and an estimate.
+If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll review eligibility and explain what information is still needed for a written estimate.
 
 ![Side-by-side comparison: Mercury mechanical binnacle control with visible cables vs Mercury DTS control with sealed harness](/lovable-uploads/dts-vs-mechanical-control-inline.png)
 *Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness. The five-second visual check at the helm.*
@@ -129,14 +130,16 @@ For the official source, Mercury's product pages at [mercurymarine.com](https://
 
 Roughly half the customers who call us asking about DTS retrofit are actually asking about joystick piloting, even if they don't say it that way. They want the ability to slide the boat sideways at the dock or hold position with one hand.
 
-Joystick piloting (Mercury Joystick Piloting for Outboards) requires:
+Conventional Mercury Joystick Piloting for Outboards requires:
 
-- Two or more Mercury outboards (single-engine boats are not eligible, period)
+- Two or more Mercury outboards
 - All engines DTS-equipped
 - Specific helm hardware (joystick module, SmartCraft gateway, compatible VesselView display)
 - Proper boat geometry (motors must be far enough apart for vectoring to work)
 
-If you're calling about DTS retrofit and you have a single engine, joystick isn't on the table. Stop the retrofit math right there. DTS alone for single-engine boats rarely justifies the cost.
+That conventional package is not the whole lineup. Mercury also lists Joystick Steering for Single-Engine Vessels and [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html). The thruster package is limited to electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster.
+
+If you're calling about a DTS retrofit with one engine, do not assume DTS alone enables joystick. Most single-engine rigs do not qualify, and the package-specific exceptions require more than a control-box change. We confirm the exact engine, steering, controls, and thruster package before quoting.
 
 If you have twins or triples, joystick is the real eligibility question. DTS is just the prerequisite.
 
@@ -150,7 +153,7 @@ Five things to confirm before you commit money.
 4. **Multi-engine rig?** Single, twin, or triple. Joystick eligibility lives here.
 5. **Boat year and make.** Some older boats have helm/dash configurations that complicate DTS install. Worth flagging up front.
 
-Email a photo of the motor cowl plate plus the helm controls to info@harrisboatworks.ca. We'll respond same-day with eligibility and a configuration recommendation. If retrofit is the right answer, we'll quote it. If repower is the right answer, we'll be honest about that too.
+Email a photo of the motor cowl plate plus the helm controls to info@harrisboatworks.ca. We'll review eligibility and the configuration, then quote the appropriate path or ask for any missing information.
 
 ## What we see at HBW
 
@@ -164,32 +167,33 @@ The third pattern, specific to Ontario boating: late-season dock approaches in f
 
 Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
 
-::pull-quote
-quote: Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
-attribution: Most common DTS retrofit conversation at HBW
-::
+> Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
+>
+> Most common DTS retrofit conversation at HBW
 
-::decision-card
-eyebrow: DTS retrofit decision
-heading: Retrofit DTS or repower?
-leftLabel: Repower territory
-leftCriteria:
-  - Mechanical motor 5+ years old
-  - High hours on the existing engine
-  - You want joystick (requires DTS-equipped twins or more)
-  - Retrofit cost is close to a new motor
-leftOutcome: New DTS-equipped motor is the right answer
-leftVariant: alternative
-rightLabel: Retrofit makes sense
-rightCriteria:
-  - Your motor is already DTS-capable (some older Verado I6 models)
-  - You currently have mechanical controls at the helm
-  - The helm-side upgrade enables DTS without engine work
-  - Single-engine and you're not chasing joystick
-rightOutcome: Helm-side retrofit is the real upgrade
-rightVariant: recommended
-whenInDoubt: Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
-::
+*DTS retrofit decision*
+
+### Retrofit DTS or repower?
+
+#### Repower territory
+
+- Mechanical motor 5+ years old
+- High hours on the existing engine
+- You want conventional multi-engine joystick (requires DTS-equipped twins or more)
+- Retrofit cost is close to a new motor
+
+**New DTS-equipped motor is the right answer**
+
+#### Retrofit makes sense
+
+- Your motor is already DTS-capable (some older Verado I6 models)
+- You currently have mechanical controls at the helm
+- The helm-side upgrade enables DTS without engine work
+- Single-engine and you're not chasing joystick
+
+**Helm-side retrofit is the real upgrade**
+
+Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
 
 ## Why this matters for Ontario boaters
 
@@ -206,7 +210,7 @@ A few Ontario-specific notes that make DTS hit different here.
 ## Ready to confirm DTS eligibility?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send motor cowl plate photo + helm controls photo for a same-day yes/no)
+**Email:** info@harrisboatworks.ca (send motor cowl plate photo + helm controls photo for an eligibility check)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -215,7 +219,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 ### Does my motor already have DTS without me knowing?
 
-Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. Email a photo of your helm control to info@harrisboatworks.ca for a same-day confirmation.
+Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. Email a photo of your helm control to info@harrisboatworks.ca for confirmation.
 
 ### Can I really not bolt DTS onto my mechanical Mercury?
 
@@ -227,7 +231,7 @@ When your engine is already DTS-capable and you're upgrading just the helm side 
 
 ### Do I need DTS for Mercury joystick piloting?
 
-Yes. Mercury Joystick Piloting requires twin or more outboards, all DTS-equipped, plus the joystick module, SmartCraft gateway, and compatible VesselView display. Single-engine boats are not eligible for joystick, regardless of motor or HP. If joystick is your real goal, DTS is just the prerequisite.
+Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting.
 
 ### Will DTS make my boat faster or more fuel-efficient?
 
@@ -239,7 +243,7 @@ Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most curre
 
 ### How do I check if my exact motor supports DTS?
 
-Email the motor serial number from your cowl plate to info@harrisboatworks.ca. We'll cross-reference it against Mercury's records and confirm whether your specific motor is DTS-capable, already DTS-equipped, or not eligible. Same-day response in most cases.
+Email the motor serial number from your cowl plate to info@harrisboatworks.ca. We'll cross-reference it against Mercury's records and confirm whether your specific motor is DTS-capable, already DTS-equipped, or not eligible.
 
 ### Are current Verado motors supercharged like older Verados?
 
@@ -248,23 +252,22 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
+- [Will SmartCraft Connect Work With My Mercury? Eligibility Check](/blog/mercury-smartcraft-connect-eligibility-2026), SmartCraft Connect eligibility
+- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

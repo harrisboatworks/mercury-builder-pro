@@ -16,7 +16,7 @@
  */
 
 import { readdirSync, existsSync, statSync, readFileSync } from 'node:fs';
-import { join, dirname, basename, extname } from 'node:path';
+import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
@@ -38,7 +38,10 @@ const SCAN_DIRS = [
   join(ROOT, 'src', 'components'),
 ];
 
-const REF_RE = /\/lovable-uploads\/([A-Za-z0-9_\-.]+?\.(?:png|jpg|jpeg))/gi;
+// Capture both root-level uploads and nested folders such as
+// /lovable-uploads/blog-heroes-2026-07/batch-c/hero.jpg.
+const REF_RE =
+  /\/lovable-uploads\/([A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)*\.(?:png|jpg|jpeg))/gi;
 
 // Each format gets the same three widths.
 const WEBP_WIDTHS = [
@@ -96,7 +99,9 @@ for (const file of sources) {
     skipped++;
     continue;
   }
-  const base = basename(file, extname(file));
+  // Preserve the upload's relative directory. BlogHeroPicture requests
+  // variants beside the original image, not at the uploads root.
+  const base = file.slice(0, -extname(file).length);
   const missing = WIDTHS.filter(
     (v) => !existsSync(join(UPLOADS_DIR, base + v.suffix)),
   );
