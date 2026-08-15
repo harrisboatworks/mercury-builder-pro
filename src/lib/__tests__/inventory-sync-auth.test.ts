@@ -68,10 +68,7 @@ describe('sync-lightspeed-inventory authorization contract', () => {
     expect(source).toContain('x-internal-secret');
   });
 
-  it('does not execute a real Lightspeed inventory sync from tests', () => {
+  it('does not call an external Lightspeed HTTP API from this function', () => {
     expect(source).not.toContain('https://api.lightspeed');
-    expect(readFileSync('src/lib/__tests__/inventory-sync-auth.test.ts', 'utf8')).not.toContain(
-      "functions.invoke('sync-lightspeed-inventory')",
-    );
   });
 });
