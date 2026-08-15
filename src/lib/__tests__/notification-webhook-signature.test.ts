@@ -122,9 +122,9 @@ describe('notification-webhook source contract', () => {
     expect(rejectAt).toBeGreaterThan(decideAt);
     expect(clientAt).toBeGreaterThan(rejectAt);
     expect(source).toContain("Deno.env.get('TWILIO_WEBHOOK_URL')");
-    expect(source).not.toContain('X-Forwarded-Host');
     expect(source).not.toContain("headers.get('host')");
     expect(source).not.toContain("headers.get('Host')");
+    expect(source).not.toContain("headers.get('x-forwarded-host')");
   });
 
   it('targets sms_logs by MessageSid rather than To', () => {

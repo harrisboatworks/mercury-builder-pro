@@ -18,7 +18,7 @@ serve(async (req) => {
       signature: req.headers.get('X-Twilio-Signature'),
       rawBody,
       authToken: Deno.env.get('TWILIO_AUTH_TOKEN'),
-      // Canonical URL only. Do not derive this from Host or X-Forwarded-Host.
+      // Canonical URL only. Do not derive this from a spoofable request host.
       webhookUrl: Deno.env.get('TWILIO_WEBHOOK_URL'),
     })
 
