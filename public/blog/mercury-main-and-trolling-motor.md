@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor.md
-last_updated: 2026-08-14
+last_updated: 2026-08-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Main + Trolling Motor: How to Pair Them"
 description: "Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. What the bracket, tie bar, fuel routing, and wiring involve."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-08-14
+date_modified: 2026-08-15
 keywords: ["mercury kicker setup","mercury 9.9 prokicker","mercury avator kicker","main and kicker pairing","bow electric trolling motor","tie bar steering","kicker bracket installation"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last reviewed:** 2026-08-14
+**Last reviewed:** 2026-08-15  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
 
@@ -154,3 +154,4 @@ Yes. We install main and kicker, wire the tie-bar linkage for synchronized steer
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+
