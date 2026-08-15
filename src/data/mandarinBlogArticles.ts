@@ -342,7 +342,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier 认证船厂 | 自 1947 年`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商`,
     faqs: [
       { question: 'Rice Lake可以吃到的鱼安全吗？', answer: '食用建议取决于水域、鱼种、鱼体大小和食用者类别。留鱼和进食前请查 Ontario 的 Guide to Eating Ontario Fish，不要用“大部分都安全”代替当前建议。' },
       { question: '没有船可以钓鱼吗？', answer: '可以，但岸钓点的合法进入、停车和开放状态会变化。出发前请向当地政府或经营者确认，不要把私人岸线当作公共入口。' },
