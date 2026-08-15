@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible
 description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-08-15
 keywords: ["revue Mercury 115 HP","Mercury 115 HP FourStroke","Mercury 115 ELPT Ontario","Mercury 115 CT Command Thrust","115 HP ponton","Mercury 115 vs 150","Mercury 115 FourStroke vs Pro XS"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-08-15\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 
@@ -37,15 +37,15 @@ Le Mercury 115 HP FourStroke pèse 359 lb, ce qui en fait le hors-bord 115 HP le
 
 ### Revue du Mercury 115 HP FourStroke
 
-"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Une différence de poids de 80 à 100 lb par rapport aux vieux deux temps que ce moteur remplace couramment affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
+"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Dans l'exemple courant d'un ancien 115 OptiMax d'environ 425 lb, la réduction est d'environ 66 lb. Ce changement affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice depuis 1947, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
 
 ---
 
 ## Pourquoi "le 115 HP le plus léger" compte vraiment
 
-Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est 80 à 100 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
+Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est environ 66 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
 
 - La coque s'assoit plus haut au repos, améliorant l'économie de carburant avant même de tourner la clé.
 - Le bateau plane plus tôt avec la même charge.
@@ -76,7 +76,7 @@ Le 115 est la calibration la plus élevée de cette famille. Il monte à 6 000 R
 - **PT**, trim et inclinaison assistés depuis le poste de pilotage
 - **CT**, embase Command Thrust (embase plus grande, hélice plus grande, typiquement 14 ou 14,5 po au lieu de 13)
 
-Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**. Il existe aussi un 115 Pro XS (calibré performance, embase sport) et un 115 à contre-rotation (configurations jumelées).
+Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**. Il existe aussi un 115 Pro XS calibré pour la performance, offert dans plusieurs configurations d'embase, dont Command Thrust, ainsi qu'un 115 à contre-rotation pour les configurations jumelées.
 
 ---
 
@@ -96,7 +96,7 @@ Le CT vous donne plus de puissance de traction à bas régime et de hole-shot au
 
 ### Bateaux de pêche en aluminium de 17 à 20 pi avec charges plus lourdes
 
-Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est un Lund, Princecraft, Crestliner ou Legend de 17 à 20 pi avec quatre personnes, équipement complet, vivier, deux batteries et un moteur de pêche à la traîne à l'avant, le 115 est le bon choix. Croisière vers 30 à 35 mi/h, culmine vers 42 à 48 mi/h.
+Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est un Lund, Princecraft, Crestliner ou Legend de 17 à 20 pi avec quatre personnes, équipement complet, vivier, deux batteries et un moteur de pêche à la traîne à l'avant, le 115 est souvent le bon choix. La vitesse réelle dépend de la coque, de la charge, de l'hélice, de l'installation et des conditions.
 
 ### Pontons de taille moyenne à grande, 20 à 24 pi
 
@@ -108,7 +108,7 @@ Croisière, pêche, traction de chambre à air, sports nautiques occasionnels, l
 
 ### Remotorisations à partir de vieux deux temps
 
-Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les vieux 115 OptiMax, 115 à 150 OMC et 90 à 115 Yamaha deux temps. Résultat : le bateau se sent plus léger, fonctionne plus silencieusement, et utilise 25 à 35 % moins de carburant.
+Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les vieux 115 OptiMax, 115 à 150 OMC et 90 à 115 Yamaha deux temps. Le bateau peut se sentir plus léger et fonctionner plus silencieusement; l'économie de carburant réelle dépend de l'ancien moteur, de la coque, de la charge, de l'hélice et du régime de croisière.
 
 ---
 
@@ -116,7 +116,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **Hole-shot de bass boat.** Le 115 ELPT FourStroke est calibré pour l'économie, la croisière douce et la fiabilité.
 
-**Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 V6 ou plus.
+**Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 ou plus.
 
 **Coques cotées sous 90 HP.** La plaque de capacité est le plafond.
 
@@ -126,9 +126,9 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 ## Comment le 115 se compare au 90 et au 150
 
-| | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
+| | 90 ELPT | 115 ELPT | 150 ELPT |
 |---|---|---|---|
-| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L V4, famille différente |
+| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L 4 cyl. en ligne, famille différente |
 | Poids à sec | 359 lb | 359 lb (363 CT) | environ 455 lb |
 | RPM pleins gaz | 5 000 à 6 000 | 5 000 à 6 000 | 5 000 à 5 800 |
 | Plage idéale | 16 à 18 pi alu, pontons moyens | 17 à 20 pi alu, pontons moyens-grands | 19 à 22 pi, plateformes plus grandes |
@@ -136,7 +136,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **90 vs 115 :** Calibration, pas un moteur différent. Aucun changement de poids.
 
-**115 vs 150 :** Famille complètement différente. Le 150 est un V6, plus lourd d'environ 100 lb.
+**115 vs 150 :** Famille complètement différente. Le 150 FourStroke est un 4 cylindres en ligne de 3,0 L, plus lourd d'environ 100 lb.
 
 ---
 
@@ -159,11 +159,9 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+### Une note sur la langue
+
+Cet article est une traduction de courtoisie. Notre personnel communique et offre le service en anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais; vous pouvez utiliser une application de traduction ou demander l'aide d'un proche bilingue.
 
 ## Bâtissez une soumission
 
@@ -181,7 +179,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ### Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?
 
-Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime avec une embase sport. Le FourStroke standard est la calibration de tous les jours.
+Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime; Mercury l'offre dans plusieurs configurations d'embase, dont Command Thrust. Le FourStroke standard est la calibration de tous les jours.
 
 ### Le 115 est-il suffisant pour un bateau d'aluminium de 19 pi?
 
@@ -189,11 +187,11 @@ Pour la plupart des bateaux de pêche en aluminium de 19 pi avec des charges nor
 
 ### Un 115 fera-t-il planer mon ponton de 22 pi?
 
-Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150 V6.
+Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150.
 
 ### Quelle est la garantie?
 
-Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année, la portant à 6 ans au total.
+La couverture standard plaisance des hors-bord Mercury neufs admissibles au Canada comprend une garantie limitée de 3 ans et une garantie contre la corrosion de 3 ans distincte. Les deux périodes courent simultanément; ce ne sont pas six années cumulées. Une couverture promotionnelle additionnelle s'applique uniquement lorsque les conditions écrites en vigueur la prévoient. Vérifiez les conditions actuelles à mercuryrepower.ca/promotions.
 
 ### Le 115 est-il à injection de carburant?
 

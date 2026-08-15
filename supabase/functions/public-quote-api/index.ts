@@ -18,6 +18,14 @@ import {
   HbwValuationError,
   normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
+import {
+  fetchActiveFinancing,
+  fetchActivePromotions,
+} from "../_shared/customer-knowledge-context.ts";
+import {
+  buildPublicQuoteFinancing,
+  PUBLIC_QUOTE_FINANCING_POLICY_VERSION,
+} from "../_shared/public-quote-financing.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -37,10 +45,6 @@ const corsHeaders = {
 const SITE = "mercuryrepower.ca";
 const SITE_URL = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
 const HST_RATE = 0.13;
-const FINANCING_MINIMUM = 5000;
-const FIN_RATE_LOW = 0.0799; // $10k+
-const FIN_RATE_HIGH = 0.0899; // under $10k
-const DEFAULT_TERM = 144;
 const DISCLAIMER =
   "Estimate only. Final out-the-door price, install scheduling, and trade-in require confirmation by Harris Boat Works. CAD only. No Verado. Pickup at Gores Landing, ON.";
 
@@ -179,32 +183,6 @@ function resolveSellingPrice(motor: any): number | null {
 function slugify(modelKey?: string | null) {
   if (!modelKey) return "";
   return modelKey.toLowerCase().replace(/_/g, "-");
-}
-
-function financingTier(loanAmount: number) {
-  if (loanAmount < FINANCING_MINIMUM) {
-    return {
-      eligible: false,
-      reason: `Financing requires minimum $${FINANCING_MINIMUM} CAD`,
-    };
-  }
-  const rate = loanAmount >= 10000 ? FIN_RATE_LOW : FIN_RATE_HIGH;
-  const term = DEFAULT_TERM;
-  const monthly = monthlyPayment(loanAmount, rate, term);
-  return {
-    eligible: true,
-    apr: rate,
-    apr_label: `${(rate * 100).toFixed(2)}%`,
-    term_months: term,
-    monthly_payment: round2(monthly),
-    note: "Estimate via LightStream / Financeit. Final approval by lender.",
-  };
-}
-
-function monthlyPayment(principal: number, annualRate: number, months: number) {
-  const r = annualRate / 12;
-  if (r === 0) return principal / months;
-  return (principal * r) / (1 - Math.pow(1 + r, -months));
 }
 
 function round2(n: number) {
@@ -523,8 +501,28 @@ async function buildQuote(supabase: any, body: any) {
   const finalPrice = round2(adjustedSubtotal + hst);
   const deposit = depositForHp(motorHp);
 
-  // Financing tier
-  const financing = financingTier(finalPrice);
+  // Financing policy is loaded live. Pricing still returns if the lookup
+  // fails, but no stale hardcoded rate is substituted.
+  let activeFinancing: Awaited<ReturnType<typeof fetchActiveFinancing>> = [];
+  let activePromotions: Awaited<ReturnType<typeof fetchActivePromotions>> = [];
+  try {
+    [activeFinancing, activePromotions] = await Promise.all([
+      fetchActiveFinancing(supabase),
+      fetchActivePromotions(supabase),
+    ]);
+  } catch (error) {
+    console.error("public quote financing lookup failed:", error);
+  }
+  const financing = buildPublicQuoteFinancing({
+    beforeTaxSubtotal: adjustedSubtotal,
+    finalPriceWithTax: finalPrice,
+    financing: activeFinancing,
+    promotions: activePromotions,
+    motorInStock: Boolean(motor.in_stock),
+    selectedOfferId: typeof body?.financing_offer_id === "string"
+      ? body.financing_offer_id
+      : null,
+  });
 
   // Deep-link prefilled URL for the customer
   const slug = slugify(motor.model_key);
@@ -564,9 +562,9 @@ async function buildQuote(supabase: any, body: any) {
           base_price: motorPrice,
           deposit_amount: deposit,
           final_price: finalPrice,
-          loan_amount: financing.eligible ? finalPrice : 0,
+          loan_amount: financing.eligible ? financing.amount_financed : 0,
           monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
-          term_months: financing.eligible ? financing.term_months! : 0,
+          term_months: financing.eligible ? financing.amortization_months! : 0,
           total_cost: finalPrice,
           tradein_value_final: tradeInCredit || null,
           lead_source: "public-quote-api",
@@ -604,6 +602,8 @@ async function buildQuote(supabase: any, body: any) {
       hst: hst,
       final_price: finalPrice,
       deposit_required: deposit,
+      finance_fee: financing.eligible ? financing.finance_fee : 0,
+      amount_financed: financing.eligible ? financing.amount_financed : 0,
     },
     trade_in: tradeIn,
     financing,
@@ -658,6 +658,7 @@ function docs() {
           horsepower: 90,
           family: "FourStroke",
           purchase_path: "installed | loose",
+          financing_offer_id: "(optional) select an id returned in financing.available_offers; caller-supplied APR or term is ignored",
           customer_has_propeller: false,
           boat_info: { make: "Lund", model: "Pro-V" },
           trade_in: {
@@ -681,7 +682,10 @@ function docs() {
       "All pricing is CAD. Final price requires human confirmation.",
       "No Verado motors — Harris does not sell or service them.",
       "Pickup only at Gores Landing, ON. No delivery.",
-      "Financing minimum: $5,000 CAD. Tiered: 8.99% under $10k, 7.99% $10k+.",
+      "Financing is loaded from the active Canadian financing and promotion records; no stale rate fallback is used.",
+      "Financing eligibility is tested before tax; financed principal includes HST plus the $349 DealerPlan fee.",
+      "The standing offer is the default. Promotional financing is applied only when its returned offer id is explicitly selected and eligible.",
+      `Financing response policy: ${PUBLIC_QUOTE_FINANCING_POLICY_VERSION}.`,
       "Trade-in credits capped at subtotal.",
     ],
     lastUpdated: nowISO(),

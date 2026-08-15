@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-12T01:49:39.432Z",
-  "count": 424,
+  "generatedAt": "2026-08-15T10:33:48.146Z",
+  "count": 425,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -234,6 +234,7 @@
     "/lovable-uploads/hero-outboard-overheating",
     "/lovable-uploads/hero-outboard-vs-sterndrive",
     "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake",
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand",
     "/lovable-uploads/hero-pcl-repower-licence",
     "/lovable-uploads/hero-pontoon-aluminum-vhull",
     "/lovable-uploads/hero-pontoon-hp-sizing",
@@ -1584,6 +1585,11 @@
       1920
     ],
     "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand": [
       640,
       1024,
       1920

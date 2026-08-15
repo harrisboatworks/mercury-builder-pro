@@ -3620,7 +3620,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'Mercury DTS throttle and VesselView display on a boat helm, illustrating the digital controls discussed in the guide.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-08',
+    dateModified: '2026-08-14',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
@@ -4268,10 +4268,11 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     title: 'Mercury Overheat Alarm Decoder: Beep Meanings',
     seoTitle: 'Mercury Outboard Overheat Alarm Decoder (2026) | HBW',
     description: 'Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.',
-    image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
+    image: '/lovable-uploads/hero-overheat-alarm-telltale-hand.jpg',
+    imageAlt: 'A hand pointing at the water streaming from the telltale on a running Mercury 115 Pro XS.',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-15',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
@@ -4279,15 +4280,15 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     relatedSlugs: ['mercury-outboard-fault-codes-lookup', 'mercury-outboard-beeping-codes-guide', 'mercury-smartcraft-alarm-codes-encyclopedia', 'outboard-overheating-emergency-guide'],
     howToSteps: [
       { name: 'Reduce throttle immediately', text: 'Drop to idle or no-wake the moment the alarm sounds. Do not keep the motor under load with a warning alarm active.' },
-      { name: 'Check the tell-tale stream', text: 'Look at the cooling water stream from the back of the motor. Strong flow plus alarm often points to a sensor fault. Weak or stopped flow points to real heat.' },
+      { name: 'Check the tell-tale stream', text: 'Look at the cooling water stream from the back of the motor. Strong flow does not rule out overheating; weak or stopped flow is an immediate shutdown signal.' },
       { name: 'Check the display', text: 'If you have SmartCraft, VesselView, or any gauge with engine monitoring, note the exact message or fault code. Take a photo. This is the most useful information you can bring to a technician.' },
       { name: 'Note the alarm pattern', text: 'Continuous or intermittent? With or without power reduction? At idle, cruise, or WOT? Voice memo it into your phone now. You will forget the exact pattern by the time you reach the dock.' },
-      { name: 'Decide: shore or shut down', text: 'Strong tell-tale flow plus alarm: idle to shore. Weak or stopped flow: shut the motor down before doing more damage. A tow back to the dock costs much less than a new powerhead.' },
-      { name: 'Do not run hard to test it', text: 'If the alarm cleared after shutdown, it does not mean the problem is gone. The sensor probably dropped below threshold as the motor cooled. Investigate before the next run.' },
+      { name: 'Decide: shore or shut down', text: 'Weak or stopped flow is an immediate shutdown signal. Strong flow does not rule out overheating; follow the display and manual, and shut down if the overheat alarm persists. A tow costs much less than a powerhead.' },
+      { name: 'Do not run hard to test it', text: 'If the alarm cleared after shutdown, it does not mean the problem is gone. The triggering condition may have fallen below its threshold as the motor cooled. Investigate before the next run.' },
     ],
     faqs: [
-      { question: 'What does a continuous overheat alarm mean on a Mercury outboard?', answer: 'A continuous overheat alarm at cruise usually means real heat. The cylinder head temperature sensor has hit its protection threshold. Reduce throttle immediately, check the tell-tale stream for cooling water flow, and idle toward shore. If the tell-tale flow is weak or stopped, shut down the motor before further damage occurs.' },
-      { question: 'How do I know if my Mercury is in Guardian mode?', answer: 'Guardian mode pairs an alarm with a noticeable drop in RPM or throttle response. The ECM is deliberately limiting power to protect the engine. SmartCraft-equipped boats will show a Guardian message on the display. Do not attempt to override it. Reduce load, idle home, and diagnose on shore before running the motor hard again.' },
+      { question: 'What does a continuous overheat alarm mean on a Mercury outboard?', answer: 'A continuous overheat alarm at cruise can mean real heat. Reduce throttle immediately, read any display message, and check the tell-tale stream. Weak or stopped flow is an immediate shutdown signal; strong flow does not rule out overheating, so follow the operator manual and shut down if the overheat alarm persists.' },
+      { question: 'How do I know if my Mercury is in Guardian mode?', answer: 'Guardian mode pairs an alarm with a noticeable drop in RPM or throttle response. The ECM is deliberately limiting power to protect the engine. SmartCraft-equipped boats will show a Guardian message on the display. Do not attempt to override it; follow the display and operator manual, shut down if an overheat alarm persists, and diagnose the trigger before restarting.' },
       { question: 'My overheat alarm went off after I shut the motor down. Is something wrong?', answer: 'A one-time key-on alarm after a hot shutdown can be heat soak if it clears as the motor cools AND does not come back on the next run. If it returns, logs a fault, or happens under load, treat it as real and book a diagnostic.' },
       { question: 'My tell-tale stream is strong but the alarm is still sounding. What is wrong?', answer: 'A strong tell-tale only proves the indicator circuit has flow. Mercury\'s guidance is that an engine that keeps overheating with a steady tell-tale still needs service; compare live SmartCraft temperature and actual head temperature before calling it a sensor. Sensor faults are usually a straightforward fix at the dealer, but do not assume, circulation can still be blocked at the head while flowing fine at the tell-tale.' },
       { question: 'Can a clogged cooling intake cause a Mercury overheat alarm?', answer: 'Yes, and it is the most common cause we see at HBW. Weeds, sand, or debris caught in the cooling water intake on the lower unit will restrict water flow and trigger the alarm. This is especially common on Rice Lake and Kawarthas shallow bays. Lifting the motor and clearing the intake fixes it on the water. If the alarm returns, the impeller may also have been damaged.' },
@@ -4296,7 +4297,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     ],
     content: `## Quick answer
 
-A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
+A Mercury overheat alarm can reflect real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, note the display and pattern, and follow the operator manual. Strong flow does not rule out overheating; weak or no flow means shut down before more damage, and a persistent overheat alarm means shut down and arrange service.
 
 If SmartCraft or VesselView shows a number with the alarm, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for that complete number before interpreting the horn pattern.
 
@@ -4314,7 +4315,7 @@ There are four scenarios that produce alarm behaviour HBW customers call us abou
 1. **Real heat.** The motor is actually running hot. The cylinder head temperature is above the protection threshold. This needs immediate action.
 2. **Guardian mode.** The ECM has detected a condition that could damage the motor and is deliberately reducing power output. The alarm is paired with a noticeable drop in RPM or throttle response.
 3. **Heat soak.** A one-time key-on alarm after a hot shutdown can be heat soak if it clears as the motor cools AND does not come back; if it returns, logs a fault, or happens under load, treat it as real.
-4. **Sensor or wiring fault.** The temperature sensor or its wiring is reporting a heat condition that is not real. The alarm is lying.
+4. **Sensor or wiring fault.** A temperature sensor or its wiring can report incorrectly, but do not assume that from tell-tale flow alone. Confirm with the display, the operator manual, and proper diagnosis.
 
 All four sound the same to the operator. The distinction lives in the pattern, when it happens, and what the engine is doing at the time. That is what the rest of this page is about.
 
@@ -4324,23 +4325,19 @@ Work through this in order. Most alarms fall into one of these patterns:
 
 | Alarm pattern | When it happens | Likely cause | Urgency | First action |
 |---|---|---|---|---|
-| Continuous alarm at cruise | Underway, mid-RPM or higher | Real heat (overheat) | High | Reduce throttle, check tell-tale stream, head for shore at idle |
+| Continuous alarm at cruise | Underway, mid-RPM or higher | Possible real heat or other critical engine condition | High | Reduce throttle, read the display and manual, check flow, and shut down if the alarm persists |
 | Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for motor to cool, restart, confirm it clears |
-| Alarm + power reduction (Guardian mode) | Any RPM, sudden drop in power | ECM-detected protective shutdown | High | Do not override. Reduce load. Diagnose on shore before running hard again. |
+| Alarm + power reduction (Guardian mode) | Any RPM, sudden drop in power | ECM-detected protective action | High | Do not override. Follow the display and manual; shut down if overheat persists and diagnose before restarting. |
 | Alarm only at WOT | At wide-open throttle, clears at cruise RPM | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Medium | Check water pressure. Possible service issue. Schedule diagnostic. |
-| Intermittent / random alarm | No clear correlation with RPM or load | Sensor fault or wiring issue | Medium | Diagnostic needed. Note exact conditions before service. |
-| Alarm with no power reduction and tell-tale flowing strong | At cruise | Possible sensor fault (alarm lying) | Medium | Diagnose, do not assume. Real heat is still possible if sensor reads high but circulation has stopped at the head. |
+| Intermittent / random alarm | No clear correlation with RPM or load | Non-critical condition varies by model and year; sensor or wiring is one possibility | Medium | Read the display and manual. Note the exact pattern and conditions for service. |
+| Alarm with no power reduction and tell-tale flowing strong | At cruise | Cause not established; real heat remains possible | Medium | Follow the display and manual. Shut down if the alarm persists and arrange diagnosis. |
 | Alarm at idle only | Idle in shallow / weedy water | Cooling intake restriction | Medium | Lift motor, clear intake, restart |
 
 Important: alarm patterns and what they indicate vary by motor model, year, rigging, and whether the boat is SmartCraft-equipped. The patterns above describe what HBW techs see most often on Ontario Mercury motors from the EFI FourStroke and Verado families. Always confirm against your specific motor's operator's manual and any SmartCraft or VesselView display message.
 
-![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+![Mercury overheat alarm decision flow: check the telltale, then check for a power drop, leading to engine-protection guidance or a shutdown response.](/lovable-uploads/overheat-alarm-decision-flow-v2.svg)
 
-*Quick-reference card summarising the Mercury alarm patterns above: single beep at key-on (normal self-check), continuous alarm at cruise (overheat or overspeed), continuous alarm with power reduction (Guardian mode), repeating four-beep advisory (low oil, water in fuel, or other), intermittent beeping (sensor or wiring fault), alarm at wide-open throttle only (poppet valve or cooling restriction), and a brief alarm after shutdown (heat soak). Each row lists the likely meaning and the immediate action.*
-
-![Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions](/lovable-uploads/overheat-alarm-pattern-decoder.svg)
-
-*Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions.*
+*Work top to bottom. Every branch ends on an action card; a strong telltale does not rule out overheating.*
 
 ## The On-Water Emergency Protocol
 
@@ -4354,23 +4351,23 @@ If an alarm sounds while you are underway, work through these steps in order. Th
 
 **Step 4, Note the alarm pattern.** Is it continuous? Intermittent? Did power drop at the same time (Guardian mode)? Did it start at idle, at cruise, or at WOT? Write it down or speak it into your phone right then. You will forget the exact pattern by the time you reach the dock.
 
-**Step 5, Decide: shore or shut down.** If the tell-tale is flowing strong and the alarm pattern is consistent with a sensor fault, idle to shore. If the tell-tale is weak or stopped, shut down the motor before you do additional damage. The cost of a tow back to the dock is much less than the cost of a new powerhead.
+**Step 5, Decide: shore or shut down.** If the tell-tale is weak or stopped, shut down immediately. Strong flow does not rule out overheating; follow the display and operator manual, and shut down if the overheat alarm persists. The cost of a tow back to the dock is much less than the cost of a new powerhead.
 
 **Step 6, Do not restart and run hard to "test it."** If the alarm cleared after shutdown, it does not mean the problem went away. It usually means the motor cooled enough for the sensor to drop below threshold. Investigate before the next run.
 
 ## First Diagnostic: Is the Motor Actually Hot?
 
-If you have an infrared temperature gun, point it at the cylinder head shortly after the alarm sounds (engine still running or just shut down). You are looking for whether the head is actually at the protection threshold or whether the sensor is reporting a number the head is not actually at.
+If a qualified person has an infrared temperature gun, a reading taken at the specified location after shutdown can be one diagnostic clue. Surface readings vary by location, paint and instrument accuracy; the display, operator manual and service data remain the controlling evidence.
 
-If the head reads cool but the alarm is sounding: sensor fault, wiring issue, or sensor connector problem. Bring the motor in.
+If a reliable reading appears inconsistent with the alarm, a sensor, wiring or connector issue is one possibility. Bring the motor in rather than assuming the engine is safe to run.
 
 If the head reads hot: real heat. The problem is somewhere in the cooling system. The next section covers what that usually is.
 
-If you do not have an IR gun: the tell-tale stream is your best on-water proxy. Strong, steady flow at cruise RPM with no alarm before, then an alarm with no change in flow, leans sensor fault. Flow that weakened or stopped leans real heat. Confirm with live SmartCraft or CDS data; an IR reading on a painted head is a sanity check, not a diagnosis.
+If you do not have diagnostic tools, use the tell-tale only to identify weak or stopped flow as an immediate shutdown signal. Strong, steady flow does not rule out overheating. Confirm the cause with the display, the operator manual and service diagnostics; an IR reading on a painted head is a sanity check, not a diagnosis.
 
 ## The Four Most Common Causes of Real Overheating
 
-When the motor is genuinely running hot, the cause is almost always one of the first three below (the fourth means the alarm is lying, it is not a real-heat cause). Listed in order of how often we see them at HBW. Less common real causes include low water pressure at wide-open throttle, poppet or pressure-valve faults where fitted, plugged passages, and engine height or aerated water pickup.
+When the motor is genuinely running hot, the cause is often one of the first three below. The fourth is a diagnostic alternative only after real heat has been ruled out. Less common real causes include low water pressure at wide-open throttle, poppet or pressure-valve faults where fitted, plugged passages, and engine height or aerated water pickup.
 
 **1. Intake blockage.** Weeds, sand, a plastic bag, or debris caught in the cooling water intake screen on the lower unit. This is the most common cause on Rice Lake and the Kawarthas, especially in shallow weedy bays. Lifting the motor and clearing the intake fixes it on the water.
 
@@ -4378,13 +4375,13 @@ When the motor is genuinely running hot, the cause is almost always one of the f
 
 **3. Thermostat stuck closed.** Shows up as warm-up or idle overheating on thermostat-controlled systems, because thermostats control water flow at low rpm; cruise-only overheating points more toward water pressure, impeller, poppet valve, or intake problems (the poppet valve controls flow at higher rpm). Thermostats are tested in heated water and replaced if they fail to open at spec.
 
-**4. Temperature sensor fault.** The sensor reports a higher temperature than the head actually is. The motor is not in danger but the alarm is real. This is also a straightforward diagnostic and fix at the dealer.
+**4. Temperature sensor or circuit fault.** After service diagnostics rule out real heat, the sensor, connector, harness or ECM input may explain an incorrect reading. Do not make this call from tell-tale flow alone.
 
 The four above account for the majority of overheat alarms we see. Less common causes (head gasket, water pump housing, poppet valve, cracked exhaust passage) exist but are rare and almost always show up on diagnostic equipment in service, not as something the operator can identify on the water.
 
-## When the Alarm Is Lying
+## When a Sensor or Wiring Fault Is Suspected
 
-Sensor faults are the most frustrating type of overheat alarm because the motor is fine but the operator is told it is not. Signs that point toward a sensor or wiring issue rather than real heat:
+After real heat has been ruled out through the display, manual and proper diagnostics, these observations can support a sensor or wiring investigation:
 
 - Tell-tale stream is flowing strong and consistent.
 - Alarm comes on intermittently with no clear RPM or load correlation.
@@ -4392,7 +4389,7 @@ Sensor faults are the most frustrating type of overheat alarm because the motor 
 - Alarm starts immediately at key-on without the motor having run.
 - Alarm pattern changes day to day under identical conditions.
 
-This does not mean ignore the alarm. It means the diagnostic path is different. A real-heat problem points to the cooling system. A sensor-fault problem points to the sensor itself, the connector, the harness, or the ECM input.
+These observations do not prove a sensor fault and never justify ignoring an active alarm. A confirmed real-heat problem points to the cooling system; a confirmed circuit problem points to the sensor, connector, harness or ECM input.
 
 ## Freshwater vs. Saltwater Overheat Patterns
 
@@ -13029,7 +13026,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A crated new Mercury Pro XS outboard outside the Harris Boat Works shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-08-08',
+    dateModified: '2026-08-15',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -13037,7 +13034,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 *Last reviewed: 2026-05-19*
 
-> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposits are fully refundable on stocked, non-refundable on special order. Start at mercuryrepower.ca.
+> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposit and refund terms are set out in your written quote and sales agreement. Start at mercuryrepower.ca.
 
 ## The Mercury Ordering Process: A Complete Guide
 
@@ -13056,7 +13053,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 **What Happens**:
 - Determine horsepower needs
-- Choose motor family (FourStroke, Pro XS, Verado)
+- Choose motor family (FourStroke, Pro XS, or Verado, which is special order at HBW)
 - Select shaft length
 - Pick options (CT, DTS, color, etc.)
 
@@ -13067,6 +13064,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 - Set your budget range
 
 **Timeline**: Can be done in one visit or over several discussions
+**Start here:** [Build your quote](/quote/motor-selection)
 
 ### Step 2: Consultation
 
@@ -13091,7 +13089,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 ### Step 3: Deposit
 
-**Typical Deposit**: 25-50% depending on dealer and order type
+**Deposit at HBW**: a fixed amount based on the selected motor, not a percentage of the total. Your online quote shows the exact deposit, including any model-specific reservation offer. Deposit and refund terms are set out in your written quote and sales agreement.
 
 **What It Covers**:
 - Reserves your motor
@@ -13228,7 +13226,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What deposit is required?',
-        answer: 'Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary - ask for them in writing.'
+        answer: 'HBW uses a fixed deposit based on the selected motor, not a percentage of the repower total. The online quote shows the exact amount, including any model-specific reservation offer. Deposit and refund terms are set out in your written quote and sales agreement.'
       },
       {
         question: 'Can I install my own motor?',
@@ -36161,11 +36159,11 @@ The other common situation: cottagers who add Avator without consulting their co
     slug: 'two-stroke-vs-four-stroke-repower',
     seoTitle: '2-Stroke vs 4-Stroke Repower: What to Know | Mercuryrepower.ca',
     title: '2-Stroke vs 4-Stroke Repower: What to Know',
-    description: 'Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.',
+    description: 'Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing.',
     image: '/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-05-24',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-15',
     publishDate: '2026-05-24',
     category: 'Repower Guides',
     readTime: '11 min read',
@@ -36173,15 +36171,15 @@ The other common situation: cottagers who add Avator without consulting their co
     relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'what-happens-during-mercury-repower', 'evinrude-to-mercury-repower-ontario-guide'],
     faqs: [
       { question: 'Can I still buy a new 2-stroke Mercury outboard?', answer: 'Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. Repowers replace your old 2-stroke with a modern FourStroke.' },
-      { question: 'Is a FourStroke heavier than the 2-stroke it replaces?', answer: 'Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.' },
-      { question: 'Will my boat still perform well with a FourStroke?', answer: 'Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.' },
-      { question: 'Do I need new rigging when I repower from 2-stroke to 4-stroke?', answer: 'Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging.' },
+      { question: 'Is a FourStroke heavier than the 2-stroke it replaces?', answer: 'Often, but the difference depends on the exact old and new models, shaft length, gearcase, and rigging. Compare the published weights and confirm transom capacity and boat trim before selecting the replacement.' },
+      { question: 'Will my boat still perform well with a FourStroke?', answer: 'A correctly sized and propped FourStroke can improve noise, idle quality, and cruise efficiency, but speed and fuel use depend on the hull, load, rigging, propeller, and the exact motors being compared.' },
+      { question: 'Do I need new rigging when I repower from 2-stroke to 4-stroke?', answer: 'Often. Existing controls, cables, fuel lines, wiring, steering, gauges, and propeller all need to be checked against the selected motor. The written quote identifies what can stay and what must change.' },
       { question: 'Does Harris Boat Works take my old 2-stroke as trade-in?', answer: 'HBW evaluates Mercury and other-brand 2-strokes case by case for resale or wholesale. Submit the serial number, hours, condition, and photos. HBW will review the current market and respond when the appraisal is complete.' },
       { question: 'How much does a 2-stroke to 4-stroke repower cost?', answer: 'It depends on the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live Mercury pricing reference and quote builder for a current starting point, then rely on the written installed scope.' },
     ],
     content: `*Last reviewed: 2026-05-24*
 
-> **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You gain quieter running, a cleaner idle, and 25 to 40 percent better fuel economy at cruise. You also add 15 to 25 kg, so transom, trim, and rigging need a look. Expect $11,000 to $24,000 CAD installed for a typical repower. Build a quote at mercuryrepower.ca.
+> **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You can gain quieter running, a cleaner idle, and better cruise efficiency. Weight and performance differences depend on the exact old and new models, so transom capacity, trim, propeller, and rigging need a boat-specific review. Installed cost depends on the motor, controls, rigging, and what we find on your boat, so start from the live Mercury pricing reference and quote builder at mercuryrepower.ca.
 
 Your old 2-stroke still starts. That is exactly what makes this a hard call. It fires on the second pull, it gets the boat on plane, and a new FourStroke is real money out of pocket. So the honest question is not whether a 4-stroke is better. Everyone knows it is. The question is what changes on your boat the day you make the swap, and whether the math fits the way you actually use the water.
 
@@ -36216,7 +36214,7 @@ Three wins land the first morning you run it: the idle, the fuel gauge, and the 
 
 ## Does the weight difference cause any problems?
 
-It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 141 kg (310 lb). A modern 90 HP FourStroke is closer to 163 kg, about 163 kg (359 lb). On an 18-foot hull, that extra 23 kg (50 lb) disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
+It can, and the boats that get this wrong are the ones where nobody asked the question. The difference varies by the exact old and new models, shaft length, gearcase, and rigging. In one representative comparison, a vintage 90 HP 2-stroke near 141 kg (310 lb) and a modern 90 HP FourStroke near 163 kg (359 lb) differ by about 22 kg (49 lb). The effect on static trim and the splash well depends on the hull, so we compare the published weights and inspect the transom before selecting the replacement.
 
 Three things we check before any 2-stroke to 4-stroke repower:
 
@@ -36230,28 +36228,11 @@ Prop third. A FourStroke makes its torque differently than the 2-stroke did, so 
 
 You cannot unbolt the old motor, hang the new one, and plug it into the same dashboard. The wiring, the throttle cables, the gauge protocols: all of it moved on. Most 2-stroke repowers roll in with mechanical controls two decades old, and a new motor deserves better than a worn shift box.
 
-What we usually replace or add:
-
-- Control box and cables (mechanical): $500 to $900
-- Digital throttle and shift on 115-plus HP: $800 to $1,500
-- Fuel line and primer bulb: $50 to $120
-- Battery cables (modern motors pull more starting current): $80 to $200
-- Tach and gauge cluster if going digital: $300 to $1,200
-
-Budget $500 to $1,500 in rigging on top of the motor for a typical 2-stroke repower. That is already inside the installed prices we quote. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+What we usually check or replace includes the control box and cables, fuel line and primer bulb, battery cables, steering, gauges, and propeller. Digital controls or gauges may be part of the scope when the selected motor supports or requires them. The written quote identifies each retained and replacement component. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
 
 ## How much does it cost to repower a 2-stroke to a Mercury 4-stroke?
 
-Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:
-
-- 25 HP FourStroke: $4,800 to $6,000
-- 60 HP FourStroke: $9,500 to $12,000
-- 90 HP FourStroke: $13,000 to $16,000
-- 115 HP FourStroke: $16,000 to $19,000
-- 150 HP FourStroke: $18,000 to $21,000
-- 200 HP FourStroke or Pro XS: $21,000 to $28,000
+We do not publish a static installed price table, because it goes stale faster than motor pricing moves. Start with the live [Mercury pricing reference](/pricing-reference) for the current motor price, then build a quote so the rigging, controls, propeller, removal, and boat-specific findings are priced against your actual boat.
 
 Installed totals vary with the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live [Mercury pricing reference](/pricing-reference) and quote builder for a current starting point, then rely on the written installed scope. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer. Pickup only at Gores Landing. HBW does not ship motors or deliver.
 
@@ -36261,7 +36242,7 @@ HBW evaluates Mercury 2-stroke trade-ins and other brands case by case. Submit t
 
 Three signals, usually. The repair quote crosses the line where you are paying to own the past instead of the future. The boat is still worth keeping even though the motor is not. Or the way you use the water has outgrown the engine: more people aboard, longer runs, fishing that wants a quieter ride.
 
-Solid hull, boat still fits your life? Repower. You keep the boat you trust and replace the wear part. Tired hull, questionable transom, a layout that no longer matches your weekends? Then the honest conversation is about the boat, not just the motor. Either way, January through April is the planning window. Book the conversation before the spring calendar fills, because it does.
+Solid hull, boat still fits your life? Repower. You keep the boat you trust and replace the wear part. Tired hull, questionable transom, a layout that no longer matches your weekends? Then the honest conversation is about the boat, not just the motor. Either way, winter is the planning window. The marina is closed December 1 to April 1, so no service or install work happens in those months, but that is exactly when to have the conversation and hold a spot. The 2026 season opened April 6. Book before the spring calendar fills, because it does.
 
 ## What we see at HBW
 
@@ -36273,13 +36254,13 @@ The happiest repower customers walked in expecting the trade, not just the upgra
 Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. A repower replaces your old 2-stroke with a modern FourStroke.
 
 **Is a FourStroke heavier than the 2-stroke it replaces?**
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), against about 140 to 145 kg for an older 90 HP 2-stroke. That 15 to 25 kg matters for transom strength and how the boat trims.
+Often, but the difference depends on the exact old and new models, shaft length, gearcase, and rigging. Compare the published weights and confirm transom capacity and static trim before choosing the replacement.
 
 **Will my boat still perform well with a FourStroke?**
-Almost always, yes. FourStrokes bring more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed lands within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
+A correctly sized and propped FourStroke can improve noise, idle quality, and cruise efficiency, but speed and fuel use depend on the hull, load, rigging, propeller, and the exact motors being compared.
 
 **Do I need new rigging when I repower from 2-stroke to 4-stroke?**
-Usually yes. Old mechanical controls and cables rarely match a modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring. Add $500 to $1,500 CAD for rigging.
+Often. Existing controls, cables, fuel lines, wiring, steering, gauges, and propeller all need to be checked against the selected motor. The written quote identifies what can stay and what must change.
 
 **Does Harris Boat Works take my old 2-stroke as trade-in?**
 HBW evaluates Mercury 2-stroke trade-ins and other brands case by case for resale or wholesale. Submit the serial number, hours, condition, and photos so the current market can be assessed.
@@ -36713,12 +36694,12 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
     slug: 'mercury-main-and-trolling-motor',
     seoTitle: 'Mercury Main + Trolling Motor Setup | Mercuryrepower.ca',
     title: 'Mercury Main + Trolling Motor: How to Pair Them',
-    description: 'Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. Rigging from $1,500 CAD on top of your repower.',
+    description: 'Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. What the bracket, tie bar, fuel routing, and wiring involve.',
     image: '/lovable-uploads/hero-mercury-main-and-trolling-motor.png',
     imageAlt: 'Mercury 90 HP FourStroke main outboard paired with a 9.9 HP ProKicker on an aluminum fishing boat for trolling.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-05-25',
+    dateModified: '2026-08-15',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -36727,34 +36708,32 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
     faqs: [
       { question: 'Do I need both a main motor and a trolling motor?', answer: 'If you fish seriously you will want both. The main motor travels between fishing spots. The trolling motor (gasoline kicker or electric) lets you fish quietly without burning the main motor at idle for hours and without putting unnecessary hours on the big powerhead.' },
       { question: 'Should I pair my Mercury main with a bow electric trolling motor or a kicker?', answer: 'Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.' },
-      { question: 'Can the Mercury Avator 7.5e be used as a kicker?', answer: 'Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.' },
-      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today\'s total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the Avator page for current availability.' },
+      { question: 'Can the Mercury Avator 7.5e be used as a kicker?', answer: 'It may suit quiet, low-speed use on a compatible boat. HBW must confirm the mounting arrangement, displacement, load, route, required range, and battery reserve before treating it as a kicker.' },
+      { question: 'How much does it cost to add a kicker to my repower?', answer: 'A kicker package covers the motor plus boat-specific mounting, steering, fuel or charging, and wiring. Take the current motor price from the live Mercury pricing reference and ask HBW to quote the rigging against your boat; see the Avator page for current electric-outboard availability.' },
       { question: 'Does the kicker need its own fuel tank?', answer: 'Not usually. We plumb the kicker into the boat\'s main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.' },
       { question: 'Will Harris Boat Works rig both motors together?', answer: 'Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.' },
     ],
     content: `*Last reviewed: 2026-05-25*
 
-> **Quick answer:** Pairing a Mercury main outboard with a kicker or bow electric trolling motor gives you the best of both worlds: speed and range from the main motor, plus silent fishing finesse from the second motor. Common pairings: a Mercury 90 or 115 HP main with a 9.9 HP ProKicker, or a 150 HP main with an Avator 7.5e for silent trolling. Expect $1,500 to $7,500 CAD (2026 ranges) for the kicker plus bracket, tie-bar steering, and dual fuel routing, added to your main repower. Many serious anglers eventually want a bow electric plus a kicker. At Harris Boat Works we rig the combination on Rice Lake fishing boats. Pickup at Gores Landing.
+> **Quick answer:** Pairing a Mercury main outboard with a kicker or bow electric trolling motor can add low-speed fishing control and backup propulsion. A 9.9 HP ProKicker is a common gasoline option; an Avator may suit quiet, low-speed use when the boat, mounting, route, and battery reserve fit. The package must be quoted against the actual boat because mounting, steering, fuel or charging, wiring, transom capacity, and waterline all matter. Pickup is at Gores Landing.
 
 Most repower customers come in asking about the main motor. Serious fishing customers think about the pairing. Because the main motor and the actual fishing job are not the same task. This post walks through what we rig at HBW for Rice Lake and Kawartha anglers.
 
 ## Why pair a main motor with a second fishing drive system?
 
-Your main outboard is there to carry the boat, crew, fuel, and gear between spots, which on Rice Lake might be 5 to 10 miles. The main motor at idle is overkill for fishing: it burns more fuel than necessary, the prop wash spooks fish, and a 150 HP FourStroke is not designed to run at 1.5 mph for six hours straight. Running large outboards at minimum RPM constantly can also lead to carbon buildup.
+Your main outboard is there to carry the boat, crew, fuel, and gear between spots. At trolling speed it can use more fuel and add more prop wash than a properly sized kicker or bow electric. Long low-speed use also adds hours to the main powerhead, so the right second drive can be a better fit for the fishing job.
 
 A second drive system solves all three problems. It idles efficiently, runs quietly, and trolls cleanly. You travel on the main, switch to the kicker or electric when you arrive, and fish for hours on a fraction of the fuel, while keeping unnecessary hours off the big powerhead. Redundancy is the second benefit: if the main fails 10 miles from the dock, the kicker gets you home slowly but reliably.
 
 ## What are the kicker and trolling motor options for a Mercury main?
 
-Three options most Rice Lake customers consider. **All prices reflect 2026 model year installed at HBW.**
+Three options most Rice Lake customers consider.
 
-| Option | Power | Fuel | Noise | Endurance | Installed CAD (2026) | Best for |
+| Option | Power | Fuel | Noise | Endurance | Current price | Best for |
 |---|---|---|---|---|---|---|
-| Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
-| Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 0.75 kW prop-shaft output | 1 kWh battery | Near-silent | Hours at troll on one pack | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | Silent finesse fishing |
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+| Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | See the [Mercury pricing reference](/pricing-reference) | Most fishing boats, all-day trolling, big water |
+| Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | See the [Mercury pricing reference](/pricing-reference) | Smaller boats |
+| Mercury Avator 7.5e electric | 0.75 kW prop-shaft output | 1 kWh battery | Near-silent | Depends on boat, load, route, weather and throttle | See the [Avator page](/electric/mercury-avator) for current availability | Compatible boats needing quiet low-speed operation |
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
@@ -36774,25 +36753,25 @@ We do not sell bow-mounted electric trolling motors directly (Mercury does not m
 
 The kicker mounts on a separate bracket bolted through the transom alongside the main motor. The bracket gets the kicker far enough from the main that both motors can swing on their tilts and turn freely. Three rigging considerations matter most.
 
-**First, the bracket itself.** Aluminum brackets are common and rated by HP capacity. A 9.9 HP bracket runs $400 to $800 CAD (2026 ranges). Some brackets are adjustable for height, which matters if your transom is non-standard.
+**First, the bracket itself.** The bracket must be rated for the kicker and matched to the transom, waterline, shaft length, and required clearance. Some brackets are height-adjustable, which matters when the transom is non-standard. HBW quotes the current bracket and installation against the boat.
 
-**Second, steering.** If you want the kicker to steer with the main (so you turn the boat from the helm without leaving the wheel), you need a tie-bar linkage. This is a rigid bar that locks the two motors so they steer together. Adds $200 to $600 in parts and labour. Most serious anglers want this.
+**Second, steering.** If you want the kicker to steer with the main so you can turn from the helm, you need a compatible tie-bar or steering linkage. The exact hardware and labour depend on the two motors, spacing, and steering system.
 
-**Third, fuel and electrical.** We plumb the kicker into the boat's main fuel supply by routing the main fuel line through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red plastic tanks tripping you up in the cockpit. The kicker also needs its own starting battery connection. We add a switched bank with a battery selector so you can isolate the main and kicker batteries. Adds $150 to $400 in wiring. The Avator electric needs charging instead of fuel, typically from a 120V outlet at the dock or cottage.
+**Third, fuel and electrical.** A gasoline kicker may share the boat's fuel supply through a correctly sized water-separating filter and boat-specific routing, or use a separate approved tank. Electric start and charging need a reviewed battery and switching plan. An Avator needs a charging plan instead of a gasoline supply. HBW prices those items only after reviewing the boat.
 
 ## What main + kicker pairings work best on Rice Lake?
 
-A Mercury 150 HP FourStroke weighs about 206 kg (455 lb) on the transom. Adding a 9.9 ProKicker adds another 49 kg (108 lb) offset to one side, which is rarely an issue on a 20 foot fibreglass deep-V but can affect trim on a narrow 16 foot tinny. The Avator 7.5e is much lighter (about 20 kg (43 lb) without battery), often the better pick on smaller hulls. We check transom rating and waterline before rigging any second motor.
+A main-and-kicker package adds both total transom weight and an offset load to one side. Whether that works depends on the exact motor variants, bracket, battery location, hull, transom rating, and static waterline. We verify those details before rigging any second motor; an electric option is not automatically the lighter installed system once its battery and mounting are included.
 
 A few combinations we rig regularly at Harris Boat Works for Rice Lake and Kawartha fishing customers:
 
 - **16 to 17 ft aluminum:** Mercury 60 HP main + Mercury 9.9 ProKicker. Fast enough to cross the lake, quiet enough to fish for walleye.
 - **17 to 18 ft aluminum or fibreglass:** Mercury 90 HP main + Mercury 9.9 ProKicker. The most popular fishing setup we sell.
-- **18 to 19 ft deep-V aluminum:** Mercury 115 HP main + 9.9 ProKicker, or 90 HP main + Avator 7.5e for silent fishing.
+- **18 to 19 ft deep-V aluminum:** Mercury 115 HP main + 9.9 ProKicker; an electric alternative requires a boat, route, mounting and battery-range review.
 - **20 ft fibreglass bass boat:** Mercury Pro XS 175 to 200 main + bow-mounted electric (third party) + optional 9.9 kicker.
-- **22 ft pontoon used for fishing:** Mercury 115 HP Command Thrust main + Avator 7.5e as silent kicker.
+- **Fishing pontoon:** size the gasoline main to the capacity plate and load; any electric kicker requires a displacement, mounting, route and battery-range review.
 
-Most of these pairings come in around $14,000 to $22,000 CAD installed for the combination (2026 ranges). A full main + kicker + bow electric package can land around $20,000 to $30,000 depending on motor class. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks main motor pricing down by HP class, and our [9.9 ProKicker on Rice Lake guide](/blog/mercury-prokicker-rice-lake-fishing-guide) goes deeper on the most common kicker we install.
+Package totals depend on the main motor, the kicker, and the rigging your boat needs. Start with the current main-motor price in the quote builder, then ask HBW to quote the kicker and boat-specific rigging as one combined package. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks main motor pricing down by HP class, and our [9.9 ProKicker on Rice Lake guide](/blog/mercury-prokicker-rice-lake-fishing-guide) goes deeper on the most common kicker we install.
 
 ## What we see at HBW
 
@@ -36802,7 +36781,7 @@ Three patterns from rigging fishing boats every spring on Rice Lake.
 
 **The biggest fishing-rig mistake is skipping the tie-bar linkage.** Customers who skip it usually come back the next season to have it installed. Reaching back to the kicker tiller while running the main from the helm gets old fast.
 
-**The Avator on a fishing pontoon is one of our happiest customer rigs.** Quiet enough to drift up on walleye in 8 feet of water, light enough not to throw the trim off, charges off the cottage outlet overnight. For the right customer it is a real upgrade over a gas kicker.
+**An electric kicker can make sense when quiet low-speed operation matters.** The decision depends on the boat, displacement, mounting, route, required range, charging plan and battery reserve; HBW confirms those details before recommending an Avator.
 
 ## Frequently Asked Questions
 
@@ -36813,10 +36792,10 @@ If you fish seriously you will want both. The main motor travels between fishing
 Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.
 
 **Can the Mercury Avator 7.5e be used as a kicker?**
-Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.
+It may suit quiet, low-speed use on a compatible boat. HBW must confirm the mounting arrangement, displacement, load, route, required range and battery reserve before treating it as a kicker.
 
 **How much does it cost to add a kicker to my repower?**
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD as a 2026 planning range for a Mercury 9.9 ProKicker on top of your main repower; use the [live quote builder](/quote/motor-selection) for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the [Avator page](/electric/mercury-avator) for current availability.
+A kicker package covers the motor plus boat-specific mounting, steering, fuel or charging, and wiring. Take the current motor price from the live Mercury pricing reference and ask HBW to quote the rigging against your boat; we do not publish a static installed total. See the [Avator page](/electric/mercury-avator) for current electric-outboard availability.
 
 **Does the kicker need its own fuel tank?**
 Not usually. We plumb the kicker into the boat's main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.
@@ -36828,7 +36807,7 @@ Yes. We install main and kicker, wire the tie-bar linkage for synchronized steer
 
 ## Ready to rig your fishing boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. The quote, rigging and water test stay with the same shop.
+Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, then request a combined main-and-kicker quote for your boat. We are the repower side of the Harris Boat Works service team on Rice Lake. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

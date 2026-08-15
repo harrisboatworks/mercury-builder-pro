@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-08-02
+last_updated: 2026-08-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "2-Stroke vs 4-Stroke Repower: What to Know"
-description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing."
+description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing."
 category: "Repower Guides"
 date_published: 2026-05-24
-date_modified: 2026-08-02
+date_modified: 2026-08-14
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,15 +21,15 @@ revenue_driver: repower
 
 # 2-Stroke vs 4-Stroke Repower: What to Know
 
-> Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.
+> Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing.
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-14
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
-> **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You gain quieter running, a cleaner idle, and 25 to 40 percent better fuel economy at cruise. You also add 15 to 25 kg, so transom, trim, and rigging need a look. Expect $11,000 to $24,000 CAD installed for a typical repower. Build a quote at mercuryrepower.ca.
+> **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You can gain quieter running, a cleaner idle, and better cruise efficiency. Weight and performance differences depend on the exact old and new models, so transom capacity, trim, propeller, and rigging need a boat-specific review. Installed cost depends on the motor, controls, rigging, and what we find on your boat, so start from the live Mercury pricing reference and quote builder at mercuryrepower.ca.
 
 Your old 2-stroke still starts. That is exactly what makes this a hard call. It fires on the second pull, it gets the boat on plane, and a new FourStroke is real money out of pocket. So the honest question is not whether a 4-stroke is better. Everyone knows it is. The question is what changes on your boat the day you make the swap, and whether the math fits the way you actually use the water.
 
@@ -64,7 +64,7 @@ Three wins land the first morning you run it: the idle, the fuel gauge, and the 
 
 ## Does the weight difference cause any problems?
 
-It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 141 kg (310 lb). A modern 90 HP FourStroke is closer to 163 kg, about 163 kg (359 lb). On an 18-foot hull, that extra 23 kg (50 lb) disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
+It can, and the boats that get this wrong are the ones where nobody asked the question. The difference varies by the exact old and new models, shaft length, gearcase, and rigging. In one representative comparison, a vintage 90 HP 2-stroke near 141 kg (310 lb) and a modern 90 HP FourStroke near 163 kg (359 lb) differ by about 22 kg (49 lb). The effect on static trim and the splash well depends on the hull, so we compare the published weights and inspect the transom before selecting the replacement.
 
 Three things we check before any 2-stroke to 4-stroke repower:
 
@@ -78,28 +78,11 @@ Prop third. A FourStroke makes its torque differently than the 2-stroke did, so 
 
 You cannot unbolt the old motor, hang the new one, and plug it into the same dashboard. The wiring, the throttle cables, the gauge protocols: all of it moved on. Most 2-stroke repowers roll in with mechanical controls two decades old, and a new motor deserves better than a worn shift box.
 
-What we usually replace or add:
-
-- Control box and cables (mechanical): $500 to $900
-- Digital throttle and shift on 115-plus HP: $800 to $1,500
-- Fuel line and primer bulb: $50 to $120
-- Battery cables (modern motors pull more starting current): $80 to $200
-- Tach and gauge cluster if going digital: $300 to $1,200
-
-Budget $500 to $1,500 in rigging on top of the motor for a typical 2-stroke repower. That is already inside the installed prices we quote. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+What we usually check or replace includes the control box and cables, fuel line and primer bulb, battery cables, steering, gauges, and propeller. Digital controls or gauges may be part of the scope when the selected motor supports or requires them. The written quote identifies each retained and replacement component. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
 
 ## How much does it cost to repower a 2-stroke to a Mercury 4-stroke?
 
-Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:
-
-- 25 HP FourStroke: $4,800 to $6,000
-- 60 HP FourStroke: $9,500 to $12,000
-- 90 HP FourStroke: $13,000 to $16,000
-- 115 HP FourStroke: $16,000 to $19,000
-- 150 HP FourStroke: $18,000 to $21,000
-- 200 HP FourStroke or Pro XS: $21,000 to $28,000
+We do not publish a static installed price table, because it goes stale faster than motor pricing moves. Start with the live [Mercury pricing reference](/pricing-reference) for the current motor price, then build a quote so the rigging, controls, propeller, removal, and boat-specific findings are priced against your actual boat.
 
 Installed totals vary with the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live [Mercury pricing reference](/pricing-reference) and quote builder for a current starting point, then rely on the written installed scope. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer. Pickup only at Gores Landing. HBW does not ship motors or deliver.
 
@@ -109,7 +92,7 @@ HBW evaluates Mercury 2-stroke trade-ins and other brands case by case. Submit t
 
 Three signals, usually. The repair quote crosses the line where you are paying to own the past instead of the future. The boat is still worth keeping even though the motor is not. Or the way you use the water has outgrown the engine: more people aboard, longer runs, fishing that wants a quieter ride.
 
-Solid hull, boat still fits your life? Repower. You keep the boat you trust and replace the wear part. Tired hull, questionable transom, a layout that no longer matches your weekends? Then the honest conversation is about the boat, not just the motor. Either way, January through April is the planning window. Book the conversation before the spring calendar fills, because it does.
+Solid hull, boat still fits your life? Repower. You keep the boat you trust and replace the wear part. Tired hull, questionable transom, a layout that no longer matches your weekends? Then the honest conversation is about the boat, not just the motor. Either way, winter is the planning window. The marina is closed December 1 to April 1, so no service or install work happens in those months, but that is exactly when to have the conversation and hold a spot. The 2026 season opened April 6. Book before the spring calendar fills, because it does.
 
 ## What we see at HBW
 
@@ -137,15 +120,15 @@ Not in the recreational market. Mercury has shifted entirely to FourStroke and e
 
 ### Is a FourStroke heavier than the 2-stroke it replaces?
 
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.
+Often, but the difference depends on the exact old and new models, shaft length, gearcase, and rigging. Compare the published weights and confirm transom capacity and boat trim before selecting the replacement.
 
 ### Will my boat still perform well with a FourStroke?
 
-Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
+A correctly sized and propped FourStroke can improve noise, idle quality, and cruise efficiency, but speed and fuel use depend on the hull, load, rigging, propeller, and the exact motors being compared.
 
 ### Do I need new rigging when I repower from 2-stroke to 4-stroke?
 
-Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging.
+Often. Existing controls, cables, fuel lines, wiring, steering, gauges, and propeller all need to be checked against the selected motor. The written quote identifies what can stay and what must change.
 
 ### Does Harris Boat Works take my old 2-stroke as trade-in?
 
@@ -176,4 +159,3 @@ It depends on the exact motor, controls, steering, rigging, propeller, removal, 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

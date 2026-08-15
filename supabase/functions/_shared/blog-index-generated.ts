@@ -747,11 +747,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What does a continuous overheat alarm mean on a Mercury outboard?",
-        "a": "A continuous overheat alarm at cruise usually means real heat. The cylinder head temperature sensor has hit its protection threshold. Reduce throttle immediately, check the tell-tale stream for cooling water flow, and idle toward shore. If the tell-tale flow is weak or stopped, shut down the motor before further damag…"
+        "a": "A continuous overheat alarm at cruise can mean real heat. Reduce throttle immediately, read any display message, and check the tell-tale stream. Weak or stopped flow is an immediate shutdown signal; strong flow does not rule out overheating, so follow the operator manual and shut down if the overheat alarm persists."
       },
       {
         "q": "How do I know if my Mercury is in Guardian mode?",
-        "a": "Guardian mode pairs an alarm with a noticeable drop in RPM or throttle response. The ECM is deliberately limiting power to protect the engine. SmartCraft-equipped boats will show a Guardian message on the display. Do not attempt to override it. Reduce load, idle home, and diagnose on shore before running the motor har…"
+        "a": "Guardian mode pairs an alarm with a noticeable drop in RPM or throttle response. The ECM is deliberately limiting power to protect the engine. SmartCraft-equipped boats will show a Guardian message on the display. Do not attempt to override it; follow the display and operator manual, shut down if an overheat alarm per…"
       },
       {
         "q": "My overheat alarm went off after I shut the motor down. Is something wrong?",
@@ -2057,7 +2057,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What deposit is required?",
-        "a": "Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary - ask for them in writing."
+        "a": "HBW uses a fixed deposit based on the selected motor, not a percentage of the repower total. The online quote shows the exact amount, including any model-specific reservation offer. Deposit and refund terms are set out in your written quote and sales agreement."
       },
       {
         "q": "Can I install my own motor?",
@@ -5700,7 +5700,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "two-stroke-vs-four-stroke-repower",
     "title": "2-Stroke vs 4-Stroke Repower: What to Know",
-    "description": "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.",
+    "description": "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing.",
     "category": "Repower Guides",
     "publishDate": "2026-05-24",
     "keywords": [
@@ -5717,15 +5717,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is a FourStroke heavier than the 2-stroke it replaces?",
-        "a": "Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim."
+        "a": "Often, but the difference depends on the exact old and new models, shaft length, gearcase, and rigging. Compare the published weights and confirm transom capacity and boat trim before selecting the replacement."
       },
       {
         "q": "Will my boat still perform well with a FourStroke?",
-        "a": "Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient."
+        "a": "A correctly sized and propped FourStroke can improve noise, idle quality, and cruise efficiency, but speed and fuel use depend on the hull, load, rigging, propeller, and the exact motors being compared."
       },
       {
         "q": "Do I need new rigging when I repower from 2-stroke to 4-stroke?",
-        "a": "Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging."
+        "a": "Often. Existing controls, cables, fuel lines, wiring, steering, gauges, and propeller all need to be checked against the selected motor. The written quote identifies what can stay and what must change."
       }
     ]
   },
@@ -5833,7 +5833,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-main-and-trolling-motor",
     "title": "Mercury Main + Trolling Motor: How to Pair Them",
-    "description": "Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. Rigging from $1,500 CAD on top of your repower.",
+    "description": "Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. What the bracket, tie bar, fuel routing, and wiring involve.",
     "category": "Buying Guide",
     "publishDate": "2026-05-25",
     "keywords": [
@@ -5856,11 +5856,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can the Mercury Avator 7.5e be used as a kicker?",
-        "a": "Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack."
+        "a": "It may suit quiet, low-speed use on a compatible boat. HBW must confirm the mounting arrangement, displacement, load, route, required range, and battery reserve before treating it as a kicker."
       },
       {
         "q": "How much does it cost to add a kicker to my repower?",
-        "a": "Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being fina…"
+        "a": "A kicker package covers the motor plus boat-specific mounting, steering, fuel or charging, and wiring. Take the current motor price from the live Mercury pricing reference and ask HBW to quote the rigging against your boat; see the Avator page for current electric-outboard availability."
       }
     ]
   },

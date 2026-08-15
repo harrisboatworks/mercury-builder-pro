@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
-> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposits are fully refundable on stocked, non-refundable on special order. Start at mercuryrepower.ca.
+> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposit and refund terms are set out in your written quote and sales agreement. Start at mercuryrepower.ca.
 
 ## The Mercury Ordering Process: A Complete Guide
 
@@ -48,7 +48,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 **What Happens**:
 - Determine horsepower needs
-- Choose motor family (FourStroke, Pro XS, Verado)
+- Choose motor family (FourStroke, Pro XS, or Verado, which is special order at HBW)
 - Select shaft length
 - Pick options (CT, DTS, color, etc.)
 
@@ -59,6 +59,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 - Set your budget range
 
 **Timeline**: Can be done in one visit or over several discussions
+**Start here:** [Build your quote](/quote/motor-selection)
 
 ### Step 2: Consultation
 
@@ -83,7 +84,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 ### Step 3: Deposit
 
-**Typical Deposit**: 25-50% depending on dealer and order type
+**Deposit at HBW**: a fixed amount based on the selected motor, not a percentage of the total. Your online quote shows the exact deposit, including any model-specific reservation offer. Deposit and refund terms are set out in your written quote and sales agreement.
 
 **What It Covers**:
 - Reserves your motor
@@ -217,7 +218,7 @@ Timing depends on the exact motor and rigging availability, the approved work, f
 
 ### What deposit is required?
 
-Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary - ask for them in writing.
+HBW uses a fixed deposit based on the selected motor, not a percentage of the repower total. The online quote shows the exact amount, including any model-specific reservation offer. Deposit and refund terms are set out in your written quote and sales agreement.
 
 ### Can I install my own motor?
 
