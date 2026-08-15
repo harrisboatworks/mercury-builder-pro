@@ -1,10 +1,50 @@
 /**
- * Twilio request-signature helpers.
+ * Twilio request-signature and outbound Messages.json helpers.
  * Algorithm: https://www.twilio.com/docs/usage/webhooks/webhooks-security
  *
- * Do not build the signed URL from Host / X-Forwarded-Host. Callers must pass
- * the configured production webhook URL (TWILIO_WEBHOOK_URL).
+ * Do not build the signed URL or StatusCallback from a request Host /
+ * forwarded-host header. Callers must pass the configured production
+ * webhook URL (TWILIO_WEBHOOK_URL).
  */
+
+export type TwilioMessageFields = {
+  to: string;
+  from: string;
+  body: string;
+  statusCallbackUrl?: string | null;
+};
+
+export function resolveConfiguredTwilioWebhookUrl(
+  configuredUrl: string | null | undefined,
+): string | null {
+  const url = configuredUrl?.trim() || '';
+  if (!url) {
+    return null;
+  }
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'https:') {
+      return null;
+    }
+    return url;
+  } catch {
+    return null;
+  }
+}
+
+export function buildTwilioMessageForm(fields: TwilioMessageFields): URLSearchParams {
+  const form = new URLSearchParams();
+  form.set('To', fields.to);
+  form.set('From', fields.from);
+  form.set('Body', fields.body);
+
+  const statusCallback = resolveConfiguredTwilioWebhookUrl(fields.statusCallbackUrl);
+  if (statusCallback) {
+    form.set('StatusCallback', statusCallback);
+  }
+
+  return form;
+}
 
 export function parseTwilioFormBody(body: string): Record<string, string> {
   const params = new URLSearchParams(body);

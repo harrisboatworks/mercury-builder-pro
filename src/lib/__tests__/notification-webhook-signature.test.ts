@@ -1,8 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
+  buildTwilioMessageForm,
   computeTwilioSignature,
   decideNotificationWebhook,
+  resolveConfiguredTwilioWebhookUrl,
 } from '../../../supabase/functions/_shared/twilio-signature.ts';
 
 const AUTH_TOKEN = 'test-twilio-auth-token';
@@ -107,6 +109,71 @@ describe('notification-webhook Twilio signature', () => {
         webhookUrl: WEBHOOK_URL,
       }),
     ).resolves.toMatchObject({ ok: false, status: 403 });
+  });
+});
+
+describe('send-sms StatusCallback form construction', () => {
+  const configuredUrl = WEBHOOK_URL;
+
+  it('sets StatusCallback to the exact configured canonical URL', () => {
+    const form = buildTwilioMessageForm({
+      to: '+15555550100',
+      from: '+15555550199',
+      body: 'Quote ready',
+      statusCallbackUrl: configuredUrl,
+    });
+
+    expect(form.get('To')).toBe('+15555550100');
+    expect(form.get('From')).toBe('+15555550199');
+    expect(form.get('Body')).toBe('Quote ready');
+    expect(form.get('StatusCallback')).toBe(configuredUrl);
+    expect(form.get('StatusCallback')).toBe(
+      resolveConfiguredTwilioWebhookUrl(configuredUrl),
+    );
+  });
+
+  it('omits StatusCallback when tracking config is missing so the SMS still sends', () => {
+    const form = buildTwilioMessageForm({
+      to: '+15555550100',
+      from: '+15555550199',
+      body: 'Quote ready',
+      statusCallbackUrl: null,
+    });
+
+    expect(form.get('To')).toBe('+15555550100');
+    expect(form.has('StatusCallback')).toBe(false);
+    expect(resolveConfiguredTwilioWebhookUrl(null)).toBeNull();
+    expect(resolveConfiguredTwilioWebhookUrl('')).toBeNull();
+    expect(resolveConfiguredTwilioWebhookUrl('http://insecure.example/webhook')).toBeNull();
+  });
+
+  it('does not let a spoofable request host participate in StatusCallback', () => {
+    const requestHost = 'evil.example';
+    const forwardedHost = 'attacker.example';
+    const form = buildTwilioMessageForm({
+      to: '+15555550100',
+      from: '+15555550199',
+      body: 'Quote ready',
+      statusCallbackUrl: configuredUrl,
+    });
+
+    expect(form.get('StatusCallback')).toBe(configuredUrl);
+    expect(form.get('StatusCallback')).not.toContain(requestHost);
+    expect(form.get('StatusCallback')).not.toContain(forwardedHost);
+    expect(resolveConfiguredTwilioWebhookUrl(`https://${requestHost}/functions/v1/notification-webhook`)).not.toBe(
+      form.get('StatusCallback'),
+    );
+  });
+
+  it('wires send-sms to the configured env URL and not a request host', () => {
+    const source = readFileSync('supabase/functions/send-sms/index.ts', 'utf8');
+    expect(source).toContain('buildTwilioMessageForm');
+    expect(source).toContain("Deno.env.get('TWILIO_WEBHOOK_URL')");
+    expect(source).toContain('sending SMS without StatusCallback');
+    expect(source).not.toContain("headers.get('host')");
+    expect(source).not.toContain("headers.get('Host')");
+    expect(source).not.toContain("headers.get('x-forwarded-host')");
+    expect(source).not.toContain("headers.get('x-forwarded-proto')");
   });
 });
 

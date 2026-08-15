@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import { buildTwilioMessageForm, resolveConfiguredTwilioWebhookUrl } from "../_shared/twilio-signature.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -99,16 +100,31 @@ serve(async (req) => {
       formattedPhone = '+' + formattedPhone;
     }
 
-    // Create Twilio API request
+    // Create Twilio API request. StatusCallback comes only from the configured
+    // TWILIO_WEBHOOK_URL. Never derive it from Host or forwarded-host headers.
+    // Missing callback config does not block an otherwise valid SMS.
     const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
     const auth = btoa(`${accountSid}:${authToken}`);
-    
-    const formData = new URLSearchParams();
-    formData.append('To', formattedPhone);
-    formData.append('From', fromNumber);
-    formData.append('Body', smsData.message);
+    const statusCallbackUrl = resolveConfiguredTwilioWebhookUrl(
+      Deno.env.get('TWILIO_WEBHOOK_URL'),
+    );
+    if (!statusCallbackUrl) {
+      console.warn(
+        '[send-sms] TWILIO_WEBHOOK_URL is missing or not an https URL; sending SMS without StatusCallback. notification-webhook will not receive delivery updates for this message.',
+      );
+    }
+    const formData = buildTwilioMessageForm({
+      to: formattedPhone,
+      from: fromNumber,
+      body: smsData.message,
+      statusCallbackUrl,
+    });
 
-    console.log('Sending SMS via Twilio:', { to: formattedPhone, from: fromNumber });
+    console.log('Sending SMS via Twilio:', {
+      to: formattedPhone,
+      from: fromNumber,
+      statusCallbackConfigured: Boolean(statusCallbackUrl),
+    });
 
     const response = await fetch(twilioUrl, {
       method: 'POST',

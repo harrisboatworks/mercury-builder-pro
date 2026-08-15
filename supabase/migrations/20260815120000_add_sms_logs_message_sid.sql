@@ -1,4 +1,7 @@
--- DRAFT ONLY. Do not apply from this PR.
+-- This is a normal migration file. This agent did not apply it.
+-- Once this PR is merged, any database deployment pipeline may apply it.
+-- Required deploy order: this migration -> TWILIO_WEBHOOK_URL secret/config
+-- -> send-sms and notification-webhook together.
 -- notification-webhook targets sms_logs by Twilio MessageSid. The current
 -- schema only has to_phone, which can update the wrong newest row.
 
