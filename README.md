@@ -67,19 +67,11 @@ Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047
 # Manual Inventory Sync Trigger
 
 Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view).
-For a manual sync, use:
+Do **not** invoke `sync-lightspeed-inventory` from the public quote builder or with a pasted service-role key.
 
-```bash
-curl -X POST \
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/sync-lightspeed-inventory \
-  -H "Authorization: Bearer YOUR_SERVICE_ROLE_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"trigger":"manual"}'
-```
-
-**Note:** Service role key can be found in Supabase Dashboard → Settings → API → Service Role Key (secret)
+For a manual sync, use the authenticated admin Stock Sync / inventory dashboard. The Edge Function rejects missing, anon, and non-admin credentials before it creates a service-role client.
 
 ## Automated Sync
 
-Lightspeed sync runs automatically daily at 5:00 AM UTC via Supabase pg_cron, with SMS failure alerts to ADMIN_PHONE.
+Lightspeed sync is intended for an authenticated admin workflow or a verified internal scheduler (`x-internal-secret` or service-role bearer). The historical pg_cron job `lightspeed-motor-models-sync-daily` still embeds the public anon JWT — that contract must be rewritten before this function gate is deployed, or the nightly sync will 401. Never put an internal secret in frontend code.
 
