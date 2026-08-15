@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { getActiveWarrantyExtraYears, getWarrantyDisplay } from '@/lib/warranty-display';
+import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -46,7 +46,7 @@ export function PromoSelectionBadge({
 }: PromoSelectionBadgeProps) {
   const navigate = useNavigate();
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
-  const warranty = getWarrantyDisplay(getActiveWarrantyExtraYears(promotions));
+  const warranty = getWarrantyDisplayFromAppliedPromotion(getAppliedPromotion(promotions));
   
   // Get dynamic value based on selection
   const getSelectedValue = () => {

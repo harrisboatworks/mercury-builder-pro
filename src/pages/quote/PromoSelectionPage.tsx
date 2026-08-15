@@ -16,6 +16,7 @@ import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finan
 import { promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
+import { getAppliedPromotion } from '@/lib/warranty-display';
 
 type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
@@ -58,7 +59,7 @@ export default function PromoSelectionPage() {
   // Ref for auto-scrolling to rate selector
   const rateSelectorRef = useRef<HTMLDivElement>(null);
 
-  const activePromo = promotions.length > 0 ? promotions[0] : null;
+  const activePromo = getAppliedPromotion(promotions);
   const endDate = activePromo?.end_date ? promoEndOfDay(activePromo.end_date) : null;
 
   // Get dynamic values based on motor HP

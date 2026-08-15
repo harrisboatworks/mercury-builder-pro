@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, CalendarOff, Percent, Banknote, Check, ChevronRight, Clock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { getActiveWarrantyExtraYears, getWarrantyDisplay } from '@/lib/warranty-display';
+import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import type { PromoOptionType } from './PromoOptionSelector';
 
@@ -33,7 +33,7 @@ export function PromoSummaryCard({
   endDate,
 }: PromoSummaryCardProps) {
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
-  const warranty = getWarrantyDisplay(getActiveWarrantyExtraYears(promotions));
+  const warranty = getWarrantyDisplayFromAppliedPromotion(getAppliedPromotion(promotions));
   
   const promo = promotions?.[0];
   if (!promo) return null;

@@ -1,16 +1,16 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
-  getActiveWarrantyExtraYears,
+  getAppliedPromotion,
+  getAppliedWarrantyExtraYears,
   getWarrantyDisplay,
+  getWarrantyDisplayFromAppliedPromotion,
   STANDARD_WARRANTY_YEARS,
 } from '../warranty-display';
 import { generateSMSMessage } from '../smsTemplates';
 
-const now = new Date('2026-08-15T12:00:00Z');
-
 describe('getWarrantyDisplay', () => {
-  it('derives total years from an active extension', () => {
+  it('derives total years from an applied extension', () => {
     expect(getWarrantyDisplay(4)).toEqual({
       extraYears: 4,
       totalYears: 7,
@@ -35,32 +35,50 @@ describe('getWarrantyDisplay', () => {
   });
 });
 
-describe('getActiveWarrantyExtraYears', () => {
-  it('uses the active promotion extra years', () => {
-    expect(
-      getActiveWarrantyExtraYears(
-        [{ warranty_extra_years: 4, is_active: true, start_date: '2026-07-15', end_date: '2026-08-31' }],
-        now,
-      ),
-    ).toBe(4);
+describe('applied promotion warranty rule', () => {
+  it('shows 3 years when no promotion is applied', () => {
+    expect(getAppliedPromotion([])).toBeNull();
+    expect(getAppliedWarrantyExtraYears(null)).toBe(0);
+    expect(getWarrantyDisplayFromAppliedPromotion(null).totalYears).toBe(3);
   });
 
-  it('returns 0 when no promotion has extra years', () => {
-    expect(
-      getActiveWarrantyExtraYears(
-        [{ warranty_extra_years: 0, is_active: true, end_date: '2026-12-31' }],
-        now,
-      ),
-    ).toBe(0);
+  it('shows 7 years when the applied promotion adds 4', () => {
+    const applied = getAppliedPromotion([{ warranty_extra_years: 4 }]);
+    expect(getWarrantyDisplayFromAppliedPromotion(applied).totalYears).toBe(7);
   });
 
-  it('ignores an expired promotion', () => {
+  it('shows 5 years when the applied promotion adds 2', () => {
+    const applied = getAppliedPromotion([{ warranty_extra_years: 2 }]);
+    expect(getWarrantyDisplayFromAppliedPromotion(applied).totalYears).toBe(5);
+  });
+
+  it('ignores an unrelated later active promotion and uses only the applied row', () => {
+    const promotions = [
+      { id: 'applied', warranty_extra_years: 2 },
+      { id: 'unrelated-active', warranty_extra_years: 4 },
+    ];
+    const applied = getAppliedPromotion(promotions);
+
+    expect(applied).toEqual(promotions[0]);
+    expect(getWarrantyDisplayFromAppliedPromotion(applied).totalYears).toBe(5);
+    expect(getWarrantyDisplayFromAppliedPromotion(applied).totalYears).not.toBe(7);
+  });
+
+  it('shows 3 years when an inactive or expired promotion was not applied', () => {
+    // useActivePromotions already excludes inactive/expired rows. Those
+    // promotions never become promotions[0], so the display helper receives
+    // an empty applied list rather than re-parsing dates itself.
+    const applied = getAppliedPromotion([]);
+    expect(getWarrantyDisplayFromAppliedPromotion(applied).totalYears).toBe(3);
+  });
+
+  it('treats null or 0 extra years on the applied promotion as the standard 3 years', () => {
     expect(
-      getActiveWarrantyExtraYears(
-        [{ warranty_extra_years: 4, is_active: true, start_date: '2026-05-01', end_date: '2026-06-30' }],
-        now,
-      ),
-    ).toBe(0);
+      getWarrantyDisplayFromAppliedPromotion({ warranty_extra_years: null }).totalYears,
+    ).toBe(3);
+    expect(
+      getWarrantyDisplayFromAppliedPromotion({ warranty_extra_years: 0 }).totalYears,
+    ).toBe(3);
   });
 });
 
@@ -88,7 +106,7 @@ describe('legacy get7 SMS templates', () => {
     expect(reminder).not.toMatch(/7 years of factory coverage/);
   });
 
-  it('derives campaign copy from warrantyExtraYears when an extension is active', () => {
+  it('derives campaign copy from warrantyExtraYears when an extension is applied', () => {
     const campaign = generateSMSMessage('get7_campaign', { warrantyExtraYears: 4 });
     expect(campaign).toContain('7-Year Factory-Backed Warranty');
     expect(campaign).toContain('3 + 4 FREE years');
@@ -96,12 +114,18 @@ describe('legacy get7 SMS templates', () => {
 });
 
 describe('funnel warranty card source contract', () => {
-  it('removes hardcoded seven-year copy from the remaining funnel cards', () => {
+  it('uses the applied-promotion helper instead of max-active combining', () => {
+    const helper = readFileSync('src/lib/warranty-display.ts', 'utf8');
     const summary = readFileSync('src/components/quote-builder/PromoSummaryCard.tsx', 'utf8');
     const badge = readFileSync('src/components/quote-builder/PromoSelectionBadge.tsx', 'utf8');
 
-    expect(summary).toContain('getWarrantyDisplay');
-    expect(badge).toContain('getWarrantyDisplay');
+    expect(helper).toContain('getAppliedPromotion');
+    expect(helper).not.toContain('getActiveWarrantyExtraYears');
+    expect(helper).toContain('Do not Math.max or sum extra years across unrelated active rows');
+    expect(summary).toContain('getWarrantyDisplayFromAppliedPromotion');
+    expect(badge).toContain('getWarrantyDisplayFromAppliedPromotion');
+    expect(summary).not.toContain('getActiveWarrantyExtraYears');
+    expect(badge).not.toContain('getActiveWarrantyExtraYears');
     expect(summary).not.toContain('7-YEAR WARRANTY');
     expect(badge).not.toContain('7-YEAR WARRANTY');
     expect(summary).not.toContain('3 + 4 FREE years');
