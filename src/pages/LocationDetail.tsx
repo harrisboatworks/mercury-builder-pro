@@ -14,6 +14,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Anchor, Phone, Award, MapPin, Calendar, Wrench } from 'lucide-react';
+import {
+  renderInlineInternalLinks,
+  stripInlineInternalLinks,
+} from '@/components/location/InlineInternalLinks';
 
 const TRUST_ROW = [
   { icon: Award, label: 'Mercury Premier Dealer' },
@@ -219,7 +223,7 @@ export default function LocationDetail() {
         mainEntity: faqs.map((faq) => ({
           '@type': 'Question',
           name: faq.question,
-          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          acceptedAnswer: { '@type': 'Answer', text: stripInlineInternalLinks(faq.answer) },
         })),
       },
       ...(lf
@@ -448,7 +452,7 @@ export default function LocationDetail() {
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
-                    {faq.answer}
+                    {renderInlineInternalLinks(faq.answer)}
                   </AccordionContent>
                 </AccordionItem>
               ))}

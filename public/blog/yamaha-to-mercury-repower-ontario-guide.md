@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Yamaha to Mercury Repower: Ontario Guide
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
@@ -46,7 +47,7 @@ We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost alw
 
 The brand swap is not a casual decision. It costs more than a same-brand repower because the controls and rigging do not carry over. The customers who pull the trigger usually have one of four reasons. If you have not yet decided that repower is the right call at all, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) before pricing a brand switch.
 
-**HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on the lake.** If you live on Rice Lake or boat here regularly, a Yamaha-to-Mercury swap is also a swap to local service for the life of the motor. That changes the math.
+**HBW provides authorized Mercury sales and service directly on Rice Lake.** If you live on Rice Lake or boat here regularly, include that local access in the brand-swap decision. Check Yamaha's current dealer locator as well; the correct comparison is the actual service route from where the boat lives.
 
 **Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Premier dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
 
@@ -73,7 +74,7 @@ Engine, controls, gauges, prop. Of those four, the engine and prop are mandatory
 | Trim tabs, electronics, radio | Yes | All carry over. |
 | Capacity plate max HP | Yes | Manufacturer maximum is unchanged. |
 
-The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries the largest Mercury and Mercruiser parts inventory in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
+The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW confirms required rigging components and current availability in the written quote; do not assume every part is on the shelf.
 
 ## What does a Yamaha-to-Mercury swap actually cost in Ontario?
 
@@ -157,7 +158,7 @@ The brand-swap conversation goes wrong in predictable ways.
 
 ## The HBW on-water test
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ## Why this matters for Ontario boaters
 
@@ -180,12 +181,12 @@ A few notes specific to where we do business.
 ## Ready to talk Yamaha-to-Mercury repower?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a same-day side-by-side quote)
+**Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a side-by-side quote)
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 **Want the side-by-side math?** Build your Mercury quote with trade-in at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and compare it against staying with Yamaha.
 
@@ -193,7 +194,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
 
 ### How long does a Yamaha-to-Mercury swap take at HBW?
 
-Most brand-swap repowers in the 75-200 HP class take 3-5 working days once the motor and rigging parts are on site. That includes removal of the Yamaha, rigging of new throttle, harness, gauges, and prop, then water-test and break-in setup. Spring season (April-May) the queue runs longer because every Mercury repower booked over winter ships in the same window. Book early.
+A brand swap requires removal of the Yamaha controls, harness, gauges, and prop, then installation and testing of the approved Mercury package. HBW confirms the shop window after reviewing the boat, parts, current capacity, and safe test conditions.
 
 ### Will my Yamaha prop carry over to the new Mercury?
 
@@ -209,28 +210,27 @@ No. Yamaha Command Link gauges read Yamaha-specific data streams. They will not 
 
 ### What is the trade-in value of a clean Yamaha F90?
 
-Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will usually quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market.
+It depends on year, hours, condition, configuration, and the current Ontario market. Send the serial number, hour count, and clear condition photos so HBW can assess whether a trade fits the repower proposal.
 
 ## Related guides
 
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower), two-stroke to four-stroke repower notes
+- [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
+- [Mercruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
+- [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
+- [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

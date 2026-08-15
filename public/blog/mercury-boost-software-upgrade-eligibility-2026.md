@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Boost Software Eligibility 2026"
 description: "Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Boost Software Eligibility 2026
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
@@ -92,8 +93,6 @@ Practical tip: take a clear photo of the plate and save it on your phone. You wi
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## How to Get Boost Installed
 
 Boost can be purchased and unlocked through Mercury's supported app flow on some eligible single-engine boats or through an authorized Mercury dealer. App eligibility has configuration limitations, and some motors require a dealer software update.
@@ -123,8 +122,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
----
-
 ## What we see at HBW
 
 Boost is a software calibration that improves mid-range and zero-to-top-speed acceleration. It does not change rated horsepower, top speed, maximum RPM, or time to plane. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: standard outboards below 175 HP are outside the current Boost list, except the Mercury Racing 150R. If time to plane is the complaint, Boost is not the promised fix; start with correct horsepower, propeller, setup, and load.
@@ -135,20 +132,11 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 
 ---
 
-## Related reading
-- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
-- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury 115 vs 150 Comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury Outboard Motor Families Guide](/blog/mercury-outboard-lineup-ontario)
-
 **Check if your Mercury qualifies for Boost.** 
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
 HBW confirms eligibility, quotes the installation, and books the visit. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
 ---
 
@@ -172,7 +160,7 @@ The Mercury Marine App purchase and unlock path is currently limited to select s
 
 ### How much does Mercury Boost cost to install in Canada?
 
-HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### How do I find my Mercury outboard serial number?
 
@@ -197,23 +185,22 @@ Do not assume a standard reversal or refund path. Confirm the current purchase, 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

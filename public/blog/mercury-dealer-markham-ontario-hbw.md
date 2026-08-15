@@ -9,22 +9,23 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Markham Ontario HBW"
 description: "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-07-24
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Markham Ontario HBW
 
 > Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Markham boaters drive to Harris Boat Works: about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
 
-# Why Markham Customers Make the Drive to Rice Lake
+## Why Markham Customers Make the Drive to Rice Lake
 
 Markham has Mercury dealers closer to home. We know that. We're not pretending distance doesn't exist.
 
@@ -60,9 +61,9 @@ Mercury has a dealer tier program. Premier is the top level. It's not a marketin
 
 In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
-## We're Third-Generation, and That Changes Things
+## Why the Reputation Matters
 
-Harris Boat Works has been on Rice Lake since 1947. Jay Harris's grandfather started it, his father ran it, and Jay runs it now. When you're the third generation, the reputation you're managing was built before you were born. You don't blow that on a sale.
+This shop runs on repeat customers and referrals. The recommendation has to make sense after the invoice is paid and the boat is back on the water.
 
 We're not running a sales floor with monthly quotas. We're running a family marina where the next customer is often the neighbour of the last one. The conversation is different.
 
@@ -97,8 +98,6 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
@@ -129,12 +128,12 @@ No quote fog machine. No "call us and we'll work something up." No bait pricing.
 
 You see the installed price. We talk through the rigging. We do the job properly. You get back on the water.
 
-That's been the model since 1947. It still works.
+That's the model. It still works.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -152,8 +151,6 @@ Markham repower customers often:
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Is there a Mercury dealer in Markham?
@@ -166,7 +163,7 @@ Approximately 70 minutes via Highway 404 north and County Road 28. Distance is a
 
 ### Why drive to Rice Lake instead of a closer GTA dealer?
 
-Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).
+Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture.
 
 ### Does HBW serve Unionville and Stouffville too?
 
@@ -174,24 +171,23 @@ Yes. We serve a broad Markham-area customer base including Unionville, Stouffvil
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
+- [Mercury Dealer Mississauga HBW](/blog/mercury-dealer-mississauga-ontario-hbw), Mercury dealer for Mississauga
+- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw), Mercury dealer for Oshawa
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw), Mercury dealer for Pickering
+- [Mercury Dealer Richmond Hill HBW](/blog/mercury-dealer-richmond-hill-ontario-hbw), Mercury dealer for Richmond Hill
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

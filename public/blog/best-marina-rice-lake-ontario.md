@@ -16,6 +16,7 @@ keywords: ["best marina rice lake ontario","rice lake marina","harris boat works
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Rice Lake's Full-Service Marina Since 1947
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 
@@ -143,12 +144,10 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ---
 
-## Related Guides and Current Booking
+## Current Booking and Official Information
 
 - [HBW service intake](https://hbw.wiki/service), current repair scope and service request
 - [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
-- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
-- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
 Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
@@ -190,23 +189,22 @@ It varies with the starting point, traffic, weather, road work, and towing condi
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
-- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
-- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Five Boat Problems That Get Expensive When You Keep Running"
 description: "Five Mercury outboard warning signs Ontario boaters should not run through, plus the safe response and service details that support a sound diagnosis."
 category: "Service"
 date_published: 2026-06-10
-date_modified: 2026-07-30
+date_modified: 2026-08-02
 keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Five Boat Problems That Get Expensive When You Keep Running
@@ -24,11 +25,9 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-06-10  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
-
-# Five Boat Problems That Get Expensive When You Keep Running
 
 > **Quick answer:** Don't treat a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
 
@@ -113,7 +112,7 @@ Avoid a shopping list of parts based on forum guesses. “Replace the fuel pump�
 
 ## What We See at HBW
 
-Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+The useful pattern is not that every warning has one favourite cause. It is that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed, and when it started.
 
 Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
@@ -154,7 +153,6 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
 
 ## Sources
 
-- Harris Boat Works 2025 service records: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
@@ -189,23 +187,22 @@ With the boat stationary and safe, photograph the display message, engine serial
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
+- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

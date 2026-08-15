@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getKoreanArticleBySlug } from '@/data/koreanBlogArticles';
-import { KO_TO_EN_SLUG } from '@/data/koreanEnglishSlugMap';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -242,7 +244,10 @@ export default function KoreanBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/ko/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -294,13 +299,6 @@ export default function KoreanBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="ko" href={url} />
-        {KO_TO_EN_SLUG[article.slug] && (
-          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
-        )}
-        {KO_TO_EN_SLUG[article.slug] && (
-          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
-        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="ko_KR" />
@@ -309,6 +307,8 @@ export default function KoreanBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogOgImageMeta image={article.socialImage || article.image} />
+      <BlogHreflangLinks locale="ko" slug={article.slug} />
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -351,7 +351,7 @@ export default function KoreanBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965년부터 Mercury 딜러" />
+          <AuthorByline name="Jay Harris" title="Harris Boat Works 소유주" />
         </div>
 
         {/* Table of Contents */}
@@ -363,7 +363,7 @@ export default function KoreanBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {/* FAQ Section */}

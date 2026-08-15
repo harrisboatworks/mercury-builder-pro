@@ -16,6 +16,7 @@ keywords: ["mercury 90 hp review","mercury 90 hp fourstroke review","mercury 90 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 90 HP FourStroke Review: Standard vs Command Thrust
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-07-27  
 **Read time:** 17 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
 
@@ -155,7 +156,7 @@ These are exact examples, not speed promises.
 | [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 17.8 L/h (4.7 US gal/h) |
 | [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 15.5 L/h (4.1 US gal/h) |
 | [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 15.9 L/h (4.2 US gal/h) |
-| [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | Rigger considered trying 17 pitch after verifying rpm and handling |
+| [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | [Rigger considered trying 17 pitch after verifying rpm and handling](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) |
 
 Mercury's Crestliner test page labels that setup 2.08:1, while the current operation manual gives the standard production ratio as 2.07:1. The table keeps Mercury's test-page wording rather than silently changing it.
 
@@ -325,23 +326,22 @@ Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

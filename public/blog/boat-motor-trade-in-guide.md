@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide.md
-last_updated: 2026-03-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Boat Motor Trade-In Ontario Guide"
 description: "Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW."
 category: "Buying Guide"
 date_published: 2026-03-10
-date_modified: 2026-03-10
+date_modified: 2026-08-02
 keywords: ["boat motor trade in ontario","outboard trade in value","hst trade in boat motor","mercury trade in hbw","repower trade in"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Boat Motor Trade-In Ontario Guide
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-10  
-**Last updated:** 2026-03-10  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide
 
-# Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)
+## Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)
 
 > **Quick answer:** When you trade your old motor at an Ontario dealer, you only pay 13% HST on the difference between the new motor and the trade allowance, not on the full new motor price. On a $20,000 new motor with a $5,000 trade, that's $650 saved on tax. Get a free instant trade-in estimate at [mercuryrepower.ca/trade-in-value](/trade-in-value), then roll it straight into a full repower quote.
 
@@ -76,7 +77,7 @@ HBW handles all three paths. The right one depends on what you value more: dolla
 
 | Path | Typical net | Time to cash | Best for |
 |------|------------|--------------|----------|
-| Trade-in toward repower | Trade value + 13% HST savings on the difference | Same day | Most repower customers |
+| Trade-in toward repower | Trade value + 13% HST savings on the difference | Applied when the deal closes | Customers applying the old motor to a repower |
 | Consignment through HBW | Higher than trade, minus our commission | 3-12 weeks | Newer motors, no rush, want a stronger price |
 | Private sale | Highest potential, no commission | Days to months | Smaller motors, popular models, sellers with time |
 
@@ -134,7 +135,7 @@ Here's the actual process if you trade through us:
 2. **Live inspection.** Bring it in, or, for boat-and-motor packages on a trailer, we'll inspect on your trailer. Compression check, lower unit oil, run-up if it's runnable, cosmetics. Usually 30-60 minutes.
 3. **Firm trade offer in writing.** Tied to your new motor quote so you see the full deal: new motor price, rigging, trade allowance, HST on the difference, total out the door.
 4. **Decommission and swap.** We pull the old motor, transfer your old controls if compatible, install the new motor, rig and test. Old motor goes to our reconditioning bench or to the consignment line, depending on what makes sense.
-5. **You leave on the new rig.** Same-day swap is common for like-for-like HP. If we're upgrading HP or changing rigging type (mechanical to DTS, for example), it's typically a 1-3 day shop visit.
+5. **You leave on the new rig.** Completion timing depends on the inspection, motor availability, rigging changes, parts, and the current shop schedule. HBW confirms the expected handoff in the written work plan rather than promising a generic turnaround.
 
 Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. GTA and east Toronto customers trailer up routinely, and we have handled trades from as far as Ottawa and Niagara.
 
@@ -197,23 +198,22 @@ Depends on the motor. Newer, low-hour, popular HP class usually goes to our reco
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

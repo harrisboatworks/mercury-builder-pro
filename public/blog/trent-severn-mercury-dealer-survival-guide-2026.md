@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,31 +8,32 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Trent-Severn Mercury Dealer Guide"
-description: "Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through."
+description: "Trent-Severn transit guide: how to confirm Mercury or MerCruiser service, exact parts, fuel, water access, and breakdown options near Rice Lake."
 category: "Trent-Severn / Local"
 date_published: 2026-05-28
-date_modified: 2026-07-23
-keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","on-water boat towing Rice Lake","Canada Strong Pass 2026","Trent-Severn transit"]
+date_modified: 2026-08-02
+keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","Trent-Severn breakdown planning","Canada Strong Pass 2026","Trent-Severn transit"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Trent-Severn Mercury Dealer Guide
 
-> Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.
+> Trent-Severn transit guide: how to confirm Mercury or MerCruiser service, exact parts, fuel, water access, and breakdown options near Rice Lake.
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 
-> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury and Mercruiser parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
+> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, confirm service options before the trip. HBW is directly on Rice Lake and supports Mercury outboards and MerCruiser sterndrives by appointment. Call with the serial number or exact part number before diverting; this article does not guarantee parts, turnaround, or on-water assistance. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
-[The Trent-Severn Waterway is 386 km of locks, lakes, and rivers](/blog/trent-severn-waterway-boating-guide-2026) that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
+[The Trent-Severn Waterway is 386 km of locks, lakes, and rivers](/blog/trent-severn-waterway-boating-guide-2026). A mechanical issue during a long transit can be harder to resolve than the same issue close to home, so current service contacts, exact part numbers, and a safe backup plan matter.
 
-This guide is the dealer-side perspective on how to prepare for, and recover from, a Trent-Severn transit issue. It's written from HBW's position on Rice Lake, which sits in the middle of the TSW corridor and serves as the unplanned service stop for a meaningful number of transit boats every season.
+This guide is the dealer-side perspective on how to prepare for, and respond to, a Trent-Severn transit issue. It is written from HBW's position on Rice Lake in the TSW corridor.
 
 ## HBW's position on the Trent-Severn
 
@@ -40,16 +41,16 @@ We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice 
 
 HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
-- **The largest Mercury and Mercruiser parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
-- **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Premier dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
-- **On-water towing capability.** If you break down on Rice Lake or hit the Rice Lake Railroad submerged tracks (this happens to first-time visitors), we can come out and tow you in.
+- **Mercury- and MerCruiser-focused parts support.** HBW stocks common service parts, but exact availability must be confirmed by serial number or part number before travelling.
+- **Authorized Mercury service capability.** HBW has Mercury CDS (Computer Diagnostic System) and Premier dealer credentials. Diagnosis, parts, and completion timing are confirmed after the job is reviewed.
+- **On-water help must be confirmed at the time.** This article does not promise towing availability. For an emergency or immediate safety risk, use the appropriate emergency or local marine-rescue channel.
 - **Fuel dock with ethanol-free 89.** For boats that need clean fuel mid-transit, particularly older 2-stroke motors that don't tolerate E10 well.
 
-We do not provide service calls away from Rice Lake. Boats come to us. But if you're on Rice Lake, on the TSW corridor, and you need help, we're the closest full-service Mercury option.
+HBW does not provide service calls away from Rice Lake. Boats come to the Gores Landing shop. Call with the serial number, symptoms, and location before changing course so HBW can confirm whether the job, part, dock access, and current capacity fit.
 
 ## What we see breaking down on TSW transits
 
-Several years of seeing transit boats come to our dock for unscheduled service has surfaced a consistent pattern. The boats and the failures cluster.
+The following are practical examples to plan for, not failure-rate data or a promise that HBW can resolve every issue without diagnosis and the exact part.
 
 **Common transit-induced failures we see:**
 
@@ -57,33 +58,25 @@ Several years of seeing transit boats come to our dock for unscheduled service h
 - **Fuel system contamination.** Boats topping up at different marinas with variable fuel quality. Water in fuel, stale fuel from the trip start, or just contaminated tank. Spring-loaded into a transit, the boat fires Water in Fuel alarms and won't run cleanly.
 - **Battery issues.** Multi-day transit with electronics running, batteries drain, charging system can't keep up at idle through locks. Motor cranks slowly or not at all at lock-up.
 - **Prop strikes.** Submerged debris in the TSW, especially during high-water periods. Bent or damaged prop. Vibration alerts the owner to bring it in.
-- **Rice Lake Railroad bottom-out.** The historic submerged railroad tracks on Rice Lake catch first-time visitors who don't know the local navigation hazards. Lower unit damage or prop damage results. We tow these in.
+- **Submerged-hazard contact.** A propeller or lower unit can be damaged by shallow or submerged hazards. Follow current charts, markers, Parks Canada traveller updates, and local safety notices.
 
 ## Kawartha weed pressure: the underestimated TSW hazard
 
-Late June through July is peak weed density on Rice Lake and most of the Kawartha lakes. Seaweed, milfoil, and tape grass can foul props and clog water intakes in minutes if you cut through dense beds at speed.
+Aquatic vegetation changes through the season and varies by location. Dense weeds can foul a propeller or restrict a cooling-water intake.
 
-For TSW transit boats specifically: if you're crossing Rice Lake or Stoney Lake in mid-summer, stick to marked channels and known clear water. Cutting cross-lake at speed in July can cost you a prop, an impeller, or both. We see a steady flow of weed-related service tickets during peak summer.
-
-Weed pressure typically eases by mid-August as water temperatures slow growth.
+For a TSW transit, follow marked channels, current charts, Parks Canada traveller updates, and posted notices. If cooling flow changes or an over-temperature alarm sounds, stop and follow the exact engine's safety guidance rather than assuming the cause.
 
 ## Boat types we see most often on transit
 
-The mix of boats doing the full TSW transit is more varied than people expect.
+The TSW carries inboard, sterndrive, outboard, and auxiliary-powered boats. HBW's engine-repair scope is Mercury outboards and MerCruiser products. Other engine brands and full inboard installations need the appropriate current service route.
 
-**Most transient TSW boats:** Larger cruisers with full inboard engines (typically diesel or older gas inboards). HBW does not service most full inboards. For inboard transit boats, our role is parts availability for shared components (fuel filters, hoses, batteries) and the on-water tow if needed.
-
-**Sterndrive transit boats:** Mid-size cruisers with twin Mercruiser sterndrives are common. These we service directly. Most Mercruiser parts are on our shelf.
-
-**Outboard-powered transit boats:** Single or twin Mercury outboard powered cruisers, larger fishing boats, and pontoons. Full HBW service capability.
-
-**Kicker presence:** Roughly 10% of full TSW transit boats run with [a kicker motor for emergency backup](/blog/electric-trolling-motor-kicker-guide) or low-speed lock approach. For boats doing the full Trent-to-Severn run, having a kicker is genuinely smart insurance. Boats without a kicker that break down mid-transit are entirely dependent on tow services or sailing-on-anchor.
+A [kicker motor](/blog/electric-trolling-motor-kicker-guide) may be useful on some boats, but it is not a universal emergency solution. Capacity, mounting, steering, fuel, electrical integration, and the operator's ability to control the boat all matter.
 
 ## Parts inventory: what's on our shelf
 
-Specific competitive fact: **HBW has probably [the largest Mercury parts inventory in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference).** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
+HBW stocks common Mercury and MerCruiser service parts and can check the exact requirement from a serial number. Availability and repair timing depend on the part, diagnosis, and current shop schedule, so confirm before changing a transit plan.
 
-Common transit-related parts we stock:
+Transit-related categories to ask about include:
 
 - Mercury 10-micron water-separating fuel filters (multiple sizes)
 - Mercury OEM impellers across the FourStroke and Verado lineup
@@ -93,18 +86,18 @@ Common transit-related parts we stock:
 - Mercury batteries and battery cables
 - Mercury CDS diagnostic capability for fault code work
 
-If you're planning a TSW transit and want to know whether a specific Mercury part is on our shelf, call ahead. We can confirm in seconds.
+If you need a specific Mercury or MerCruiser part, call ahead with the serial number or exact part number. Rely on the current inventory confirmation, not this article.
 
 ## The 2026 TSW season
 
 Parks Canada's Trent-Severn season runs from May through October each year, with 2026 specifics:
 
-- **Full opening:** anticipated May 29, 2026
+- **Full opening:** Parks Canada confirmed the entire waterway opened to navigation on May 29, 2026
 - **Canada Strong Pass free lockage:** June 19 through September 7, 2026 (the 2026 promotion period)
 - **25% off camping and roofed accommodations** during the Canada Strong Pass window
 - **Major event:** Lock & Paddle at the Peterborough Lift Lock, July 18, 2026
 
-Confirm current dates and any policy changes with Parks Canada at [parks.canada.ca/lhn-nhs/on/trentsevern](https://parks.canada.ca/lhn-nhs/on/trentsevern) or 705-750-4900 before your transit.
+Confirm current conditions, hours, dates, and policy changes on the [Parks Canada Trent-Severn page](https://parks.canada.ca/lhn-nhs/on/trentsevern) before your transit.
 
 ## Pre-transit checklist (the mechanical preparation)
 
@@ -154,9 +147,9 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 ## Common mistakes
 
-- **I'll just buy the impeller in the next town.** Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
+- **I'll just buy the impeller in the next town.** Do not assume the exact part will be available at the next stop. Confirm the serial number, part number, supplier, and current stock before departure.
 - **It ran fine in the driveway.** Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
-- **I don't need a kicker, I'll just call for a tow.** Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
+- **I don't need a backup plan, I'll just call for a tow.** Do not assume help will be immediately available at every point on the route. Confirm current emergency and non-emergency contacts before departure. A kicker is useful only when the boat, installation, conditions, and operator can use it safely.
 - **I'll do my service in the spring, the TSW is the test.** A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
 
 ## Customer language we hear
@@ -165,7 +158,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - **"I broke down on Rice Lake, can you help?"** on-water towing question.
 - **"I think I hit the railroad"** confirmed, lower unit inspection priority.
 - **"My motor is overheating coming into the lock"** impeller, intake, or thermostat.
-- **"When can you get me in?"** priority for transit boats; we work them in as best we can. Call 905-342-2153.
+- **"When can you get me in?"** appointment capacity must be confirmed for the specific job. Call 905-342-2153.
 
 ## Ready for HBW to look at it before, during, or after your transit?
 
@@ -173,7 +166,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake. Call to confirm parts, appointment capacity, and any available on-water help.
 
 ---
 
@@ -181,7 +174,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 
 ### Does HBW provide on-water towing on Rice Lake?
 
-Yes. We provide on-water towing assistance for breakdowns on Rice Lake or for boats that have hit the Rice Lake Railroad submerged tracks. Call 905-342-2153 for tow dispatch. We do not provide tow service away from Rice Lake.
+Do not rely on this article as a towing promise. On-water help must be confirmed directly at the time. For an emergency, use 911 or the appropriate local marine-rescue channel.
 
 ### Is HBW directly on the Trent-Severn Waterway?
 
@@ -189,44 +182,43 @@ Yes. HBW is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of
 
 ### Does HBW have a fuel dock?
 
-Yes. We have a fuel dock with ethanol-free 89 octane available. For boats with older 2-stroke motors or owners who prefer non-ethanol fuel for storage and transit reliability, this is one of the few options on the Rice Lake portion of the TSW.
+HBW sells ethanol-free 89-octane fuel at the marina. Confirm current operating access and availability before changing a transit plan.
 
 ### What parts does HBW keep on the shelf for transit boats?
 
-We have the largest Mercury and Mercruiser parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone.
+HBW stocks common Mercury and MerCruiser service parts. The exact part depends on the engine serial number and current inventory, so confirm by phone before diverting or travelling.
 
 ### What's the 2026 Trent-Severn season and free lockage?
 
-2026 full opening is anticipated May 29. Canada Strong Pass free lockage runs June 19 through September 7, 2026. Confirm current dates with Parks Canada before your transit.
+Parks Canada confirmed that the entire waterway opened to navigation on May 29, 2026. Canada Strong Pass free lockage runs June 19 through September 7, 2026. Check current Parks Canada traveller updates and operating hours before your transit.
 
 ### Does HBW service non-Mercury outboards or inboards on transit boats?
 
-We service Mercury outboards and Mercruiser sterndrives exclusively. We do not service Yamaha, Honda, or other-brand outboards, or full inboard installations. For parts that cross brands (fuel filters, hoses, batteries), our shelf depth may still help.
+HBW's engine-repair scope is Mercury outboards and MerCruiser products. HBW does not service Yamaha, Honda, or other-brand outboards, or full inboard installations. Confirm any exact part need before travelling.
 
 ### Do I need a kicker for the full Trent-Severn transit?
 
-Not strictly required, but recommended for the full Trent-to-Severn transit. Roughly 10% of transit boats run with a kicker. For boats that break down mid-transit far from any service stop, a kicker is genuinely useful insurance.
+A kicker may be useful on some boats, but it is not a universal emergency solution. Capacity, mounting, steering, fuel, electrical integration, conditions, and the operator's ability to control the boat all matter.
 
 ## Related guides
 
-- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
-- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
-- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
-- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

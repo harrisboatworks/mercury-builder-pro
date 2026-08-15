@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 船外机故障排查中文指南"
 description: "Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-08-07
 keywords: ["Mercury 故障排查","outboard troubleshooting","船外机不启动","SmartCraft alarm","安省 Mercury service","HBW service"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: service
 ---
 
 # Mercury 船外机故障排查中文指南
@@ -24,11 +25,11 @@ language: zh-CN
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**最后审核:** 2026-08-07  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 
-# Mercury 船外机故障排查中文指南：先别一直拧钥匙
+## Mercury 船外机故障排查中文指南：先别一直拧钥匙
 
 ## 快速答案
 
@@ -111,7 +112,7 @@ HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使�
 
 这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 HBW service request。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbw.wiki/service)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
 ## FAQ
 
@@ -137,16 +138,15 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercur
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

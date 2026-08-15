@@ -16,6 +16,7 @@ keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Boost Canada 2026: Eligibility, Performance, and Pricing
@@ -24,17 +25,13 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-07-18  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
 
 > **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. Mercury describes it as improving mid-range acceleration and throttle response, and its five published tests show 5 to 21 percent quicker zero-to-top-speed acceleration depending on the complete boat-and-engine setup. It does not change horsepower, top speed, maximum RPM, or time to plane. Eligibility depends on the engine family, model code, and serial number. HBW confirms current Canadian pricing only after checking that exact motor.
 
-# Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
-
-**Published:** 2026-05-28 | **Updated:** 2026-07-18 (Mercury June 2026 documentation)
-**Author:** Jay Harris, Harris Boat Works
-**Reading time:** 10 minutes
+## Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
 > **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 
@@ -100,7 +97,7 @@ The serial-number window matters even when the family and horsepower appear on t
 
 There is no responsible way to turn a US or Australian dealer post into an HBW Canadian quote. Currency conversion does not account for the exact eligible product, Canadian program terms, dealer process, or any other work the visit requires.
 
-HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Call **905-342-2153** with a clear photo of the serial-number plate.
+HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 **Myth:** Mercury Boost adds horsepower.
 **Reality:** Boost does not add horsepower, top speed, or maximum RPM. It can improve mid-range and zero-to-top-speed acceleration on an eligible motor. Get the price for the exact serial number instead of relying on an online range.
@@ -192,7 +189,7 @@ No. Mercury's June 2026 documentation lists the Racing 150R but not the 200R, 25
 
 ### How much does Boost cost in Canada?
 
-HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### Did Mercury Boost win an award?
 
@@ -209,23 +206,22 @@ Buy the correctly rated motor for the boat today. Confirm factory-equipped statu
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-06-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-06-10
+date_modified: 2026-08-02
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last updated:** 2026-06-10  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -201,16 +202,6 @@ Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no s
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat)
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
-
----
-
 ## FAQs
 
 ### How do I know if my boat is worth repowering?
@@ -247,7 +238,7 @@ The best time to plan and order a repower is over the off-season (November throu
 
 ### Can I repower myself or do I need a certified dealer?
 
-You should not attempt a DIY repower if you want to maintain your Mercury warranty and ensure safety. Mercury requires installation by an authorized dealer for the warranty to be valid. Proper transom inspection, shaft length selection, safe rigging of fuel and electrical systems, break-in procedures, and propeller selection all require professional assessment. An improperly rigged motor can be unsafe and voids the warranty. The cost of professional installation is a small part of total repower cost and is worth it for warranty coverage and correct setup.
+A DIY repower carries safety and coverage risk because transom condition, shaft length, controls, steering, fuel, electrical, mounting, and propeller setup all have to match the boat and engine. Mercury warranty coverage is controlled by the current written Canadian terms; damage caused by improper installation or unauthorized modification may be excluded. Confirm the exact warranty and registration requirements before deciding who will install the motor.
 
 ### What's the repower vs. repair decision framework I should use?
 
@@ -256,22 +247,22 @@ The clearest framework compares the repair estimate to the motor's current marke
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 - [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

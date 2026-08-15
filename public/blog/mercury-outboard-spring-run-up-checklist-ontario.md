@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Spring Run-Up Checklist
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
-# Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
+## Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
 
 ## Quick answer
 
@@ -38,7 +39,7 @@ Before you launch your Mercury outboard for the first time after winter storage,
 
 A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. All three failure modes are predictable. All three are preventable.
 
-We see roughly 40 spring run-up issues in a typical April-May at our service shop. About 30 of those would have been avoided if the owner had spent 10 minutes on a structured run-up before launching.
+Every April and May, our service shop sees spring run-up problems that a short structured check before launch would likely have caught. The checklist below covers the patterns we see most often.
 
 ## The checklist
 
@@ -80,8 +81,6 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 **11. Test under light load.** Idle out from the dock at no-wake speed. Run for 2-3 minutes at idle to confirm everything is steady. Then bump up to 2,500-3,000 RPM for another 2-3 minutes. Watch the gauges (if you have SmartCraft, watch RPM, fuel flow, water temp). Listen for new sounds.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **12. Test under full load.** Once you've confirmed everything looks normal at low and medium RPM, run the boat through the full RPM range. Trim through the range. The motor should accelerate cleanly to its target WOT (wide-open throttle) RPM.
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
@@ -104,7 +103,7 @@ Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-
 
 ## What we see at HBW
 
-The single most common spring issue we diagnose is a weak or dead battery. Number two is a fuel-related issue (stale fuel, ethanol separation, or fuel line problems). Number three is impeller failure. Together those three account for roughly 80 percent of our April-May service calls. All three are 5-10 minute checks the owner can do themselves.
+The single most common spring issue we diagnose is a weak or dead battery. Fuel-related problems, including stale fuel, ethanol separation or damaged fuel lines, and impeller failures are also frequent. Together, those patterns make up a large share of the spring calls we receive, and each starts with a short owner-side check.
 
 If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
 
@@ -119,8 +118,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 ## About the author
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
@@ -151,23 +148,22 @@ A customer who didn't check anything, didn't watch for telltale water, and ran f
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
+- [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

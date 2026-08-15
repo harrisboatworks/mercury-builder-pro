@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-07-04
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-07-04
+date_modified: 2026-08-02
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury DTS vs Mechanical Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-04  
+**Last reviewed:** 2026-08-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
-# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
+## Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
 
 ## Quick answer
 
@@ -50,7 +51,7 @@ DTS is standard on all current Mercury Verado V8/V10/V12 (250-600 HP, naturally 
 
 For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check eligibility against the exact record.
 
 ### Mercury DTS compatibility by family and HP range
 
@@ -61,8 +62,9 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
-| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
-| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 | 350-425 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V12 | 600 HP | DTS standard | Joystick Piloting requires DTS. |
 | Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
 | SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
 
@@ -91,8 +93,6 @@ A mechanical control system is something any competent marine tech can service a
 DTS service requires Mercury diagnostic tools (CDS or G3) and trained service technicians. The system is reliable but when it does fail, the repair is dealer-level, not roadside. For a boater who keeps the boat at a remote cottage and likes to fix things themselves, mechanical has a real edge.
 
 This is one reason we recommend keeping rigging documentation in the boat. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers the spec sheets in detail.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## When mechanical is still the right answer
 
@@ -135,8 +135,6 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Can I retrofit DTS onto a boat that currently has mechanical controls?
@@ -166,23 +164,22 @@ Marginal in theory, irrelevant in practice. DTS allows slightly more precise thr
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

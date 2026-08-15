@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 40 vs 60 HP Ontario Guide
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
@@ -36,30 +37,33 @@ For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is e
 
 ---
 
-::decision-card
-heading: Should you choose Mercury 40 or 60 HP?
-eyebrow: Honest power pick
-subhead: For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate and load.
-leftLabel: Choose 40 HP if
-leftCriteria:
-  - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
-  - Capacity plate caps you at 40 HP
-  - Use is fishing, calm-water cruising, 2 to 3 people max
-  - You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
-  - Tiller is preferred and 40 HP tiller models suit your setup
-leftOutcome: Pick 40 HP FourStroke
-leftVariant: alternative
-rightLabel: Choose 60 HP if
-rightCriteria:
-  - Boat is 16 to 18 ft aluminum or fibreglass
-  - Capacity plate allows 60 HP or higher
-  - You carry 3 to 4 people, gear, or tow a small tube
-  - You want stronger hole shot with a loaded boat
-  - The boat will see bigger water (Trent-Severn, Kawarthas, Lake Simcoe)
-rightOutcome: Pick 60 HP FourStroke
-rightVariant: recommended
-whenInDoubt: 60 HP gives margin without much more fuel cost. 40 HP is the right call only when your capacity plate caps you there, or weight on the transom is critical.
-::
+*Honest power pick*
+
+### Should you choose Mercury 40 or 60 HP?
+
+For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate and load.
+
+#### Choose 40 HP if
+
+- Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
+- Capacity plate caps you at 40 HP
+- Use is fishing, calm-water cruising, 2 to 3 people max
+- You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
+- Tiller is preferred and 40 HP tiller models suit your setup
+
+**Pick 40 HP FourStroke**
+
+#### Choose 60 HP if
+
+- Boat is 16 to 18 ft aluminum or fibreglass
+- Capacity plate allows 60 HP or higher
+- You carry 3 to 4 people, gear, or tow a small tube
+- You want stronger hole shot with a loaded boat
+- The boat will see bigger water (Trent-Severn, Kawarthas, Lake Simcoe)
+
+**Pick 60 HP FourStroke**
+
+60 HP gives margin without much more fuel cost. 40 HP is the right call only when your capacity plate caps you there, or weight on the transom is critical.
 
 ---
 
@@ -105,8 +109,6 @@ The 60 weighs 10 kg (23 lb) more. On a light 15 ft aluminum with a transom alrea
 
 ---
 
-::walkaround-lead-capture
-
 ## Performance on Common Ontario Boats
 
 These are real-world figures from boats rigged by Harris Boat Works. Conditions, load, and hull cleanliness all affect the numbers. Treat them as ballparks.
@@ -134,13 +136,11 @@ The 60 CT is the minimum we recommend on a 20 ft pontoon with four people aboard
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## The Command Thrust Question
 
 Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
-The CT upgrade costs about $300 to $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
+The configured price difference for Command Thrust changes by model and propeller. On a pontoon repower, judge it by loaded hole shot, low-speed control, reverse authority, and the speed trade-off on the actual hull, not by a generic payback claim.
 
 If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, skip the CT and save the money.
 
@@ -191,8 +191,6 @@ Have a specific boat situation? Call us at 905-342-2153. Or submit a service req
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
 ## FAQs
 
@@ -231,23 +229,22 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
+- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

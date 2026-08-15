@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-05-14
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercruiser Sterndrive Ontario Guide"
 description: "Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works."
 category: "Service & Maintenance"
 date_published: 2026-05-14
-date_modified: 2026-05-14
+date_modified: 2026-08-08
 keywords: ["Mercruiser sterndrive Ontario","Mercruiser bellows replacement Ontario","sterndrive winterization Ontario","Mercruiser repower cost","sterndrive to outboard conversion","Mercruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercruiser Sterndrive Ontario Guide
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
-**Last updated:** 2026-05-14  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 
-# The Ontario Boater's Guide to Mercruiser Sterndrives. Maintenance, Repairs, and Repower
+## The Ontario Boater's Guide to Mercruiser Sterndrives. Maintenance, Repairs, and Repower
 
 > **Quick answer:** Mercruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
 
@@ -105,8 +106,6 @@ Same warning sign as an outboard, same severity. Gear lube should be amber. [Mil
 Mercruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
 
 **Replace every 2-3 years**, or when the engine starts running hotter than normal at cruise.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### 5. Engine block freeze damage
 
@@ -233,8 +232,6 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### How often do Mercruiser bellows really need to be changed?
@@ -264,23 +261,22 @@ Yes, though gas is more common in Ontario recreational boats. Bring the model an
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
+- [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers), Pro XS repower for Kawartha anglers
+- [Mercury DTS vs Mechanical Ontario](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS vs mechanical controls on a repower
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

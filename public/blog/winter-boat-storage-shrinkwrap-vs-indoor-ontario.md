@@ -16,6 +16,7 @@ keywords: ["shrinkwrap vs indoor boat storage Ontario","winter boat storage Rice
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Shrinkwrap vs Indoor Boat Storage Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 
-# Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
+## Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
 > **Quick answer:** HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage, and we don't provide pickup, delivery, hauling, mobile service, or transport referrals. Customers handle fall drop-off and spring pickup. The marina is closed December 1 through April 1. Compare storage quotes by written scope, not an old per-foot number.
 
@@ -174,12 +175,6 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Boat Winterization Cost in Ontario](/blog/boat-winterization-cost-ontario-2026)
-- [Spring Commissioning Cost in Ontario](/blog/spring-commissioning-cost-ontario)
-
 ## FAQs
 
 ### Does HBW offer indoor or heated boat storage?
@@ -213,23 +208,22 @@ It is included for HBW winter-storage customers. As of July 2026, the price for 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Boat Storage Rice Lake Kawarthas](/blog/boat-storage-kawartha-lakes), boat storage in the Kawarthas
+- [Kawartha Lakes Boat Storage: What to Compare Before Booking](/blog/boat-storage-kawartha-lakes), compare Kawartha Lakes boat storage options
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

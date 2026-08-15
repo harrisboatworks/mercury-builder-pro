@@ -23,6 +23,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { WARRANTY_AGENT_NOTE } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -65,6 +66,12 @@ function extractMsrp(body) {
   return m ? Number(m[1].replace(/,/g, '')) : null;
 }
 
+function extractQuickFact(body, label) {
+  const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = body.match(new RegExp(`^- \\*\\*${escaped}:\\*\\*\\s*(.+)$`, 'm'));
+  return match ? match[1].trim() : '';
+}
+
 // ---------- Template ----------
 
 const fmtMoney = (n) =>
@@ -76,7 +83,7 @@ function renderMotorMd(m) {
   const inStock = String(m.availability).toLowerCase() === 'in_stock';
   const availLabel = inStock
     ? 'In stock at Gores Landing'
-    : 'Special order â€” brought in for this build';
+    : 'Special order, contact dealer for ETA';
   const bestFit = m.best_fit || 'Confirm boat rating and rigging with the dealer.';
   const notIdeal = m.not_ideal || 'Match HP to transom rating, never exceed it.';
 
@@ -86,9 +93,9 @@ last_updated: ${m.last_updated}
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: ${m.motor_id}
 slug: ${m.slug}
 family: ${m.family}
@@ -109,7 +116,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury ${m.family}
 - **Horsepower:** ${m.horsepower} HP
 - **Model number:** ${m.model_number}
-
+${m.shaft ? `- **Shaft:** ${m.shaft}\n` : ''}${m.controlType ? `- **Control type:** ${m.controlType}\n` : ''}
 ## Pricing (CAD)
 
 - **Selling price:** $${price}
@@ -155,7 +162,7 @@ Programmatic quotes: \`POST ${PUBLIC_QUOTE_API}\`
 ## Notes
 
 - Financing is available on eligible totals over $5,000 CAD. Confirm the current rate and terms at https://www.mercuryrepower.ca/promotions.
-- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
+${WARRANTY_AGENT_NOTE}
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 - Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md
 `;
@@ -194,6 +201,8 @@ function main() {
       last_updated: data.last_updated || new Date().toISOString().slice(0, 10),
       title: extractH1(body),
       msrp: extractMsrp(body),
+      shaft: extractQuickFact(body, 'Shaft'),
+      controlType: extractQuickFact(body, 'Control type'),
       best_fit: extractSection(body, 'Best fit for'),
       not_ideal: extractSection(body, 'Not ideal for'),
     };

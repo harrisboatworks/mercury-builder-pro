@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Walleye Opener Boat Prep Checklist (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
@@ -64,7 +65,7 @@ Five factors affect how thorough your opener prep needs to be:
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
 - Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
 
 ### One Week Before Opener
 
@@ -77,28 +78,45 @@ Five factors affect how thorough your opener prep needs to be:
 - **Check all required safety gear:** a Transport Canada-approved PFD for every person on board, throwable cushion, anchor and rope, paddle, bailer, sound device, lights, fire extinguisher.
 - **Top off fuel with fresh gas.** If you treated your tank last fall with stabilizer and ran it through the system, you are in better shape. If not, fill with fresh and add stabilizer before any long storage.
 
-::diagnostic-flow
-eyebrow: Walleye opener checklist
-heading: Pre-opener prep in the order that matters
-subhead: Walleye opener morning is the worst time to find a problem. Run these five checks in this sequence the week before, not the morning of.
-step1Label: Battery and electrical
-step1Question: Does the main battery load test, and are all connections clean?
-step1Tip: Cold spring mornings expose weak batteries. Load-test it on the bench, don't trust a resting voltage reading. Wire-brush terminals and grease them.
-step2Label: Fuel system and filter
-step2Question: Is the fuel fresh, stabilized, and is the filter under a year old?
-step2Tip: Old fuel is the #1 spring no-start at our shop. Run the tank near empty in fall, top up with fresh in spring, and replace the water-separator filter while you're in there.
-step3Label: Motor flush and tell-tale
-step3Question: Will the motor start, idle smoothly on muffs, and produce a steady tell-tale stream?
-step3Tip: Steady tell-tale within 30 seconds of start means the impeller is good. Weak or absent stream means stop and replace before the lake.
-step4Label: Trailer bearings and tires
-step4Question: Do the trailer hubs run cool after a 20-minute test tow, and are tires at sidewall PSI?
-step4Tip: Cold-stored bearings dry out. Spin the wheels by hand listening for grinding, and check date code on tires. A blowout on opener weekend ends the trip.
-step5Label: Live well, nav lights, electronics
-step5Question: Does the live well fill and drain, and do nav lights work on both bow and stern?
-step5Tip: Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
-escalationLabel: Want HBW to do the opener prep?
-escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
-::
+*Walleye opener checklist*
+
+### Pre-opener prep in the order that matters
+
+Walleye opener morning is the worst time to find a problem. Run these five checks in this sequence the week before, not the morning of.
+
+#### Battery and electrical
+
+**Does the main battery load test, and are all connections clean?**
+
+Cold spring mornings expose weak batteries. Load-test it on the bench, don't trust a resting voltage reading. Wire-brush terminals and grease them.
+
+#### Fuel system and filter
+
+**Is the fuel fresh, stabilized, and is the filter under a year old?**
+
+Old fuel is the #1 spring no-start at our shop. Run the tank near empty in fall, top up with fresh in spring, and replace the water-separator filter while you're in there.
+
+#### Motor flush and tell-tale
+
+**Will the motor start, idle smoothly on muffs, and produce a steady tell-tale stream?**
+
+Steady tell-tale within 30 seconds of start means the impeller is good. Weak or absent stream means stop and replace before the lake.
+
+#### Trailer bearings and tires
+
+**Do the trailer hubs run cool after a 20-minute test tow, and are tires at sidewall PSI?**
+
+Cold-stored bearings dry out. Spin the wheels by hand listening for grinding, and check date code on tires. A blowout on opener weekend ends the trip.
+
+#### Live well, nav lights, electronics
+
+**Does the live well fill and drain, and do nav lights work on both bow and stern?**
+
+Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
+
+#### Want HBW to do the opener prep?
+
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -130,8 +148,6 @@ If you book opener prep at Harris Boat Works, the service includes:
 - Electronics power-up and basic function check
 - Service log entry with notes on anything found
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For engine repairs, we only service Mercury and Mercruiser.
@@ -140,7 +156,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## The Most Common Opener Morning Failures
 
-Dead battery accounts for roughly 40% of opener-morning failures. The battery sat all winter and was never put on a tender. Prevention: charge or replace one week before opener. If your battery is over four or five years old, replace it before opener.
+A weak or dead battery is one of the most common opener-morning failures we see. The battery sat all winter and was never maintained or tested. Prevention: charge and load-test it one week before opener, then replace it if it fails the test.
 
 **Kicker won't start** is the next most common. Fuel sat all winter without stabilizer, the carburetor gummed up. Prevention: run the kicker for five to ten minutes one week before opener.
 
@@ -164,12 +180,6 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 
 ---
 
-## Related reading
-- Spring Outboard Commissioning Checklist
-- Mercury 9.9 EFI Review, kicker options
-- Mercury Outboard Won't Start Troubleshooting
-- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
-
 ## Sources
 
 - [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.
@@ -180,7 +190,6 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -223,28 +232,27 @@ No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pi
 
 ### What's the most common opener morning failure?
 
-Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.
+A weak or dead battery is one of the most common opener-morning failures we see, followed by stale fuel and kicker problems. They're usually preventable with prep 1 to 2 weeks before opener.
 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
+- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -12,6 +12,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'और सीधी-सच्ची सलाह।',
   heroSubhead:
     'Rice Lake पर एक पारिवारिक Mercury डीलर की असली अनुभव से दी गई सलाह। रिपावर, ट्रबलशूटिंग और सही आउटबोर्ड चुनना — उन लोगों द्वारा लिखा गया जो खुद इन्हें लगाते हैं।',
+  skipLinkLabel: 'ब्लॉग सामग्री पर जाएं',
   searchLabel: 'गाइड खोजें',
   searchPlaceholder: 'गाइड, मॉडल, विषय खोजें…',
   trustItems: [],

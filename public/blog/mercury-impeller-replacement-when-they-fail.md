@@ -1,44 +1,46 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "When to Replace Your Mercury Impeller: What 766 Jobs Show"
-description: "More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs."
+title: "When to Replace a Mercury Impeller: 12 Years of Shop Data"
+description: "When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop."
 category: "Service & Troubleshooting"
 date_published: 2026-06-09
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
-# When to Replace Your Mercury Impeller: What 766 Jobs Show
+# When to Replace a Mercury Impeller: 12 Years of Shop Data
 
-> More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs.
+> When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-06-09  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
 
 ## Quick answer
 
-The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+Follow the maintenance schedule for your exact Mercury engine and serial number. Investigate sooner if the telltale changes, cooling-water pressure drops, or an overheat alarm sounds. Clear weeds or debris from the intake, but do not keep running an engine that still shows weak or absent water flow or an active overheat warning.
 
-Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
+A short spring idle test can confirm that water is moving. It cannot guarantee normal cooling during a long summer run under load. Warm water, weeds, silt, a blocked intake, a worn housing, or a marginal impeller can all change what happens when the engine works harder.
 
-We went through every impeller and water pump job in our service records since 2014. There are 766 of them. The busiest months are not April and May. They're June and July, by a wide margin. The impeller that passes a five-minute idle test at the dock in May is not always the impeller that survives a long, hot, weedy July afternoon pulling tubes.
+HBW's shop history adds a useful local pattern. The original June 2026 analysis counted **766 impeller and water-pump part lines** on completed repair orders from March 2014 through the first week of June 2026. It did not count 766 unique boats or 766 confirmed failures. That distinction matters, and it makes the data more useful rather than less.
 
-This post shows the curve, explains why midsummer is the killer on Rice Lake specifically, and gives you the warning signs in the order we actually see them.
+## What 12 Years of Shop Data Show
 
-## What the Numbers Say
-
-![Bar chart showing peak Mercury impeller failures on Rice Lake occur in June and July, based on 766 shop service records.](/lovable-uploads/impeller-failures-by-month-hbw.png)
-
-| Month | Impeller / water pump jobs (2014-2026) |
-|---|---|
+| Month | Impeller / water-pump part lines in the frozen 766-record snapshot |
+|---|---:|
 | March | 1 |
 | April | 84 |
 | May | 123 |
@@ -49,29 +51,29 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 | October | 36 |
 | November | 45 |
 
-Two things stand out. First, June and July together (287 jobs) beat April and May (207) by about 40 percent. Second, roughly two-thirds of a year's impeller work lands between May and August, when boats are working hardest. The jobs that bring them in are not labelled "routine check" either: the midsummer tickets read "overheating", "[alarm sounding](/blog/mercury-outboard-overheat-alarm-decoder)", and "not pumping water".
+June and July together account for 287 matching parts records, compared with 207 in April and May, about 39 percent more. The honest interpretation is not "impellers fail 39 percent more often in summer." These are parts records, and they include scheduled replacements during other work. They show that HBW's impeller and pump work has historically landed most heavily once boats are in regular summer use.
 
-One honest note on the data: these are part lines from our repair orders, so they include both impellers replaced because they failed and impellers replaced during other work. The shape of the curve is the point: if spring stiffness were the main killer, April would be the peak. It isn't. Counts are part lines from completed repair orders, January 2014 through the first week of June 2026. The 2026 season is still in progress, so this summer's months are still adding to their totals. Fall counts are small enough that month-to-month wiggle (November edging October, for example) is noise, not signal.
+An aggregate recheck on August 2, 2026 found **817 matching parts records across 792 distinct repair orders** through July 28, 2026. No customer information was used. The total grew as more jobs closed; the seasonal shape remained consistent with the original snapshot.
 
-## Why Midsummer Finishes Impellers
+## Why Problems Often Appear Under Summer Load
 
-An impeller is a rubber star spinning inside a metal housing, lubricated by the water it pumps. Three things age it: heat, load, and anything that interrupts water flow. All three peak in July.
+An impeller is a flexible rubber rotor spinning inside a housing and lubricated by the water it pumps. It needs an open intake, the correct housing clearances, and enough water flow for the engine's operating demand.
 
-A marginal impeller, one with a little set in the vanes or a few hairline cracks, can pass a spring start-up without complaint. Cold water, light load, short run. The same impeller two months later is pushing cooling water for a full afternoon at cruise, in the warmest water of the year, with the family aboard. That's when the weak vane lets go.
+A brief idle test is a light-duty check. A long run with people and gear aboard places more demand on the cooling system. Add warm shallow water, weeds around the intake, or abrasive silt and a marginal pump may show symptoms that were not obvious at the dock.
 
-## Why Rice Lake (and the Kawarthas Generally) Eats Impellers
+## Why Rice Lake Demands Intake Checks
 
-Rice Lake is shallow, warm, and famously weedy. That's why the fishing is good, and it's also why our impeller curve looks the way it does.
+Rice Lake is shallow, warm, and famously weedy. That's good habitat and a reason to pay attention to the cooling-water intake.
 
-Weeds wrap the lower unit and starve the water intake. A choked intake means the impeller runs partially dry, and a rubber impeller running dry destroys itself in seconds, not minutes. By midsummer the weed beds are at full height, exactly when the June-July spike hits. Late summer adds a second hazard: lower water means more sand and silt through the pump, which works like grinding paste on the housing and wear plate.
+Weeds can wrap the lower unit and restrict the intake. Sand and silt can also wear pump components. Mercury warns that operating without an adequate water supply, even briefly, can damage the impeller and overheat the engine.
 
-If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule calls for [water pump impeller replacement](/blog/mercury-water-pump-replacement-cost-ontario) every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure; on Rice Lake, treat that as an outer limit.
+Use the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) for your exact engine and serial number. Inspect sooner when overheating, reduced water pressure, or abnormal water flow appears.
 
 ## The Warning Signs, in the Order We See Them
 
-1. **The telltale stream weakens.** Still peeing, but lazier than usual. Most people notice and most people keep boating. This is the cheapest moment to act.
-2. **The overheat alarm sounds at high throttle.** The pump keeps up at idle but can't feed the motor under load. See our [beep and alarm codes guide](/blog/mercury-outboard-beeping-codes-guide) for what the patterns mean.
-3. **The alarm sounds at idle, or the stream stops.** The pump is done. Shut down, tilt the motor, check the intake for weeds, and call before running it again. If the motor has overheated badly, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
+1. **The telltale stream weakens.** The stream is only one indicator, but a clear change deserves attention rather than another weekend of hoping.
+2. **The overheat alarm sounds under load.** A cooling problem can appear at higher engine demand even when a brief idle check looked normal. See our [beep and alarm codes guide](/blog/mercury-outboard-beeping-codes-guide) for the safe first response.
+3. **The alarm sounds at idle, or the stream stops.** Shut down, check the intake for weeds or debris, and follow the owner's manual before restarting. If the engine has overheated, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
 
 Not every failure announces itself in this order; a telltale can keep flowing while water pressure is already down, which is why the alarm matters more than the stream. A weed-wrapped intake mimics a dead impeller. On Rice Lake, always clear the lower unit and re-check the stream before assuming the worst.
 
@@ -79,35 +81,33 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 
 1. Throttle back to idle immediately.
 2. Check the telltale stream.
-3. Tilt the motor and clear weeds or debris from the water intake.
-4. Re-check the stream. If it is strong again, weeds were likely the problem; head in at low rpm and monitor.
-5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
+3. When safe, tilt the motor and clear visible weeds or debris from the water intake.
+4. Follow the owner's manual before restarting. Do not treat a restored telltale alone as proof that the cooling system is healthy.
+5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What We See at HBW
 
-The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored, and the motor is usually back on the water the same day. We stock Mercury and Mercruiser water pump kits in depth, so summer failures rarely wait on parts.
+Cooling-system requests rarely arrive labelled with a confirmed part. Owners report symptoms such as overheating, an alarm, or weak water flow. The diagnosis may lead to an impeller, a complete pump kit when the housing or wear plate is scored, an obstruction, or another cooling-system component.
 
-The pattern we'd love to break: the boater who noticed a weak telltale in June and toughed it out until the alarm ended their August long weekend. The first visit is an hour of shop time. The second can be a powerhead.
+The pattern we'd love to break is the boater who notices a weak telltale, keeps running, and waits for the overheat alarm to settle the argument. Early inspection protects the engine and gives the shop a symptom to diagnose before more damage is added.
 
 ## Common Mistakes
 
 - **Trusting the pee stream alone.** A motor can show a stream and still be running hotter than it should. The stream is one signal, not a clean bill of health.
-- **Running the motor on the trailer without water.** A few dry seconds takes months off an impeller. Use muffs or a tank, every time.
+- **Running the motor without an approved water supply.** Even brief dry operation can damage the impeller. Follow the owner's manual for the correct flushing or test setup.
 - **Replacing the impeller but ignoring a scored housing.** A new impeller in a worn housing pumps poorly and fails early. If the housing or wear plate is scored, do the kit.
 - **Treating the spring check as a season-long guarantee.** It's a snapshot. Heat, weeds, and hours are what the season adds.
 
 ## Sources
 
-- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance documentation including water pump and impeller service intervals.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized service dealer network for impeller and lower-unit work.
+- HBW Lightspeed service-parts history: frozen 766-part-line publication snapshot; aggregate recheck August 2, 2026 (817 matching parts records across 792 distinct repair orders, March 17, 2014 to July 28, 2026; no customer data used)
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
+- [Mercury Marine: Preventing Corrosion](https://www.mercurymarine.com/sp/en/parts-and-service/maintenance/maintenance-made-easy/preventing-corrosion)
 
 ## Ready to Get Ahead of It?
 
-If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
-
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Phone:** 905-342-2153
+If water flow has changed, an overheat alarm has sounded, or you cannot identify the last pump service in the maintenance record, submit the serial number and symptoms for review.
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 
@@ -115,7 +115,7 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
 
 ### How often should a Mercury outboard impeller be replaced?
 
-Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On Rice Lake, treat that as an outer limit (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done.
+Follow the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but the interval varies by engine. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner.
 
 ### What are the signs of a failing impeller?
 
@@ -123,37 +123,43 @@ In the order we see them: a weaker-than-usual telltale stream, an overheat alarm
 
 ### Can I keep boating if the telltale stream is weak?
 
-We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not.
+Do not assume a weak stream is harmless. Stop, check the intake for weeds or debris, and follow the owner's manual. If water flow remains abnormal or an overheat alarm sounds, shut the engine down and have the cooling system inspected.
 
-### Why do more impellers fail in summer than in spring?
+### Why can impeller trouble appear in summer?
 
-In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes.
+A short spring idle check does not reproduce a long run under load. In HBW's frozen 766-part-line Lightspeed snapshot, June and July together had 287 matching parts records versus 207 in April and May. Those records include scheduled replacements as well as repairs, so they show when pump work reached the shop, not a failure rate.
 
 ### Does a spring start-up test catch a dying impeller?
 
-Only sometimes. A short idle test in cold water is the easiest exam an impeller will face all year. It catches a dead pump, but a marginal one with set or cracked vanes can pass in May and let go in July. That's exactly the pattern our 12 years of shop records show.
+Only sometimes. A short idle test can confirm that water is moving, but it cannot guarantee normal cooling under every speed and load. If water pressure drops, the telltale changes, or an overheat alarm sounds, stop and investigate.
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury and Mercruiser parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Book at hbw.wiki/service.
+HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbw.wiki/service.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

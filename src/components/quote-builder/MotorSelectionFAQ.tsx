@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'How do I lock in a Mercury quote price?',
     answer:
-      'Reserve your motor with a refundable deposit on the summary page, $200 for motors under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP and up. Deposits are fully refundable within 7 days, and the balance is paid at pickup at Gores Landing.',
+      'Reserve your motor with the deposit amount and terms shown on its summary page. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice. The balance is paid at pickup in Gores Landing.',
   },
   {
     question: 'Can I get a Mercury outboard quote online in Ontario?',
@@ -103,7 +103,7 @@ export function MotorSelectionFAQ() {
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Popular Mercury motors in Ontario:{' '}
-          <Link to="/motors/fourstroke-9-9hp-9-9elh-fourstroke" className="underline hover:text-primary">
+          <Link to="/motors/fourstroke-9-9hp-9-9mh-fourstroke" className="underline hover:text-primary">
             9.9 FourStroke
           </Link>
           {' · '}

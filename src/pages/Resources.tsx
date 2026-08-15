@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Download, Link2, FileText } from 'lucide-react';
-import { toast } from 'sonner';
-import { supabase } from '@/integrations/supabase/client';
-import { RepowerHeader } from '@/components/repower/RepowerHeader';
-import { SiteFooter } from '@/components/ui/site-footer';
-import { NoIndex } from '@/components/seo/NoIndex';
-import { Helmet } from '@/lib/helmet';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Download,
+  ExternalLink,
+  Link2,
+  FileText,
+} from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { RepowerHeader } from "@/components/repower/RepowerHeader";
+import { SiteFooter } from "@/components/ui/site-footer";
+import { NoIndex } from "@/components/seo/NoIndex";
+import { Helmet } from "@/lib/helmet";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { trackEvent } from "@/lib/analytics";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,7 +23,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from "@/components/ui/breadcrumb";
 
 interface SiteDocument {
   id: string;
@@ -26,20 +33,46 @@ interface SiteDocument {
   file_url: string;
   file_size_label: string | null;
   sort_order: number | null;
+  reviewed_on: string | null;
+  related_url: string | null;
+  related_label: string | null;
 }
 
 const PRIMARY_CATEGORIES: { name: string; anchor: string }[] = [
-  { name: 'New Owner Resources', anchor: 'new-owner' },
-  { name: 'Mercury Official Documents', anchor: 'mercury-official' },
-  { name: 'HBW Reference & Guides', anchor: 'hbw-reference' },
+  { name: "New Owner Resources", anchor: "new-owner" },
+  { name: "Mercury Official Documents", anchor: "mercury-official" },
+  { name: "HBW Reference & Guides", anchor: "hbw-reference" },
 ];
 
 function slugifyCategory(name: string): string {
   return name
     .toLowerCase()
-    .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function isPdfUrl(url: string): boolean {
+  return /\.pdf(?:[?#]|$)/i.test(url);
+}
+
+function formatReviewedDate(value: string | null): string | null {
+  if (!value) return null;
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return null;
+  return `Reviewed ${new Intl.DateTimeFormat("en-CA", {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date)}`;
+}
+
+function destinationDomain(url: string): string {
+  try {
+    return new URL(url, window.location.origin).hostname;
+  } catch {
+    return "unknown";
+  }
 }
 
 export default function Resources() {
@@ -50,14 +83,16 @@ export default function Resources() {
     let cancelled = false;
     (async () => {
       const { data, error } = await supabase
-        .from('site_documents')
-        .select('id, title, description, category, file_url, file_size_label, sort_order')
-        .eq('is_published', true)
-        .order('sort_order', { ascending: true, nullsFirst: false })
-        .order('title', { ascending: true });
+        .from("site_documents")
+        .select(
+          "id, title, description, category, file_url, file_size_label, sort_order, reviewed_on, related_url, related_label",
+        )
+        .eq("is_published", true)
+        .order("sort_order", { ascending: true, nullsFirst: false })
+        .order("title", { ascending: true });
       if (cancelled) return;
       if (error) {
-        console.error('[Resources] failed to load site_documents', error);
+        console.error("[Resources] failed to load site_documents", error);
         setDocuments([]);
       } else {
         setDocuments((data as SiteDocument[]) ?? []);
@@ -87,12 +122,19 @@ export default function Resources() {
     ...extraCategories.map((name) => ({ name, anchor: slugifyCategory(name) })),
   ];
 
-  const copyLink = async (url: string) => {
+  const copyLink = async (doc: SiteDocument) => {
     try {
-      await navigator.clipboard.writeText(url);
-      toast.success('Link copied to clipboard');
+      await navigator.clipboard.writeText(doc.file_url);
+      trackEvent("resource_link_copy", {
+        resource_id: doc.id,
+        resource_title: doc.title,
+        resource_category: doc.category,
+        destination_domain: destinationDomain(doc.file_url),
+        page_path: "/resources",
+      });
+      toast.success("Link copied to clipboard");
     } catch {
-      toast.error('Could not copy link');
+      toast.error("Could not copy link");
     }
   };
 
@@ -103,7 +145,7 @@ export default function Resources() {
         <title>Documents & Downloads | Harris Boat Works</title>
         <meta
           name="description"
-          content="Official Mercury documents, owner guides, and Harris Boat Works reference files — free to download and share."
+          content="Official Mercury documents, owner guides, and Harris Boat Works reference files. Free to open, download and share."
         />
       </Helmet>
       <RepowerHeader />
@@ -114,14 +156,19 @@ export default function Resources() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/" className="text-repower-navy-900/60 hover:text-repower-mercury-red">
+                  <Link
+                    to="/"
+                    className="text-repower-navy-900/60 hover:text-repower-mercury-red"
+                  >
                     Home
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-repower-navy-900/40" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-repower-navy-900">Documents & Downloads</BreadcrumbPage>
+                <BreadcrumbPage className="text-repower-navy-900">
+                  Documents & Downloads
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -132,8 +179,8 @@ export default function Resources() {
             Documents & Downloads
           </h1>
           <p className="text-repower-navy-900/70 text-base md:text-lg">
-            Official Mercury documents, owner guides, and Harris Boat Works reference files — free
-            to download and share.
+            Official Mercury documents, owner guides, and Harris Boat Works
+            reference files. Free to open, download and share.
           </p>
         </section>
 
@@ -154,51 +201,101 @@ export default function Resources() {
                     </p>
                   ) : (
                     <div className="space-y-3">
-                      {docs.map((doc) => (
-                        <Card key={doc.id} className="border-repower-navy-900/10">
-                          <CardContent className="p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4">
-                            <div className="flex items-start gap-3 flex-1 min-w-0">
-                              <FileText className="w-5 h-5 mt-0.5 text-repower-mercury-red shrink-0" />
-                              <div className="min-w-0">
-                                <h3 className="font-semibold text-repower-navy-900 leading-snug">
-                                  {doc.title}
-                                </h3>
-                                {doc.description && (
-                                  <p className="text-sm text-repower-navy-900/70 mt-1">
-                                    {doc.description}
-                                  </p>
-                                )}
-                                {doc.file_size_label && (
-                                  <p className="text-xs text-repower-navy-900/50 mt-1">
-                                    {doc.file_size_label}
-                                  </p>
-                                )}
+                      {docs.map((doc) => {
+                        const isPdf = isPdfUrl(doc.file_url);
+                        const reviewedLabel = formatReviewedDate(doc.reviewed_on);
+                        return (
+                          <Card
+                            key={doc.id}
+                            className="border-repower-navy-900/10"
+                          >
+                            <CardContent className="p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4">
+                              <div className="flex items-start gap-3 flex-1 min-w-0">
+                                <FileText className="w-5 h-5 mt-0.5 text-repower-mercury-red shrink-0" />
+                                <div className="min-w-0">
+                                  <h3 className="font-semibold text-repower-navy-900 leading-snug">
+                                    {doc.title}
+                                  </h3>
+                                  {doc.description && (
+                                    <p className="text-sm text-repower-navy-900/70 mt-1">
+                                      {doc.description}
+                                    </p>
+                                  )}
+                                  {(doc.file_size_label || reviewedLabel) && (
+                                    <p className="text-xs text-repower-navy-900/50 mt-1">
+                                      {doc.file_size_label}
+                                      {doc.file_size_label && reviewedLabel && " · "}
+                                      {reviewedLabel}
+                                    </p>
+                                  )}
+                                  {doc.related_url && doc.related_label && (
+                                    <Link
+                                      to={doc.related_url}
+                                      className="inline-flex items-center gap-1.5 text-sm font-medium text-repower-mercury-red hover:underline mt-2"
+                                      onClick={() =>
+                                        trackEvent("resource_related_guide_open", {
+                                          resource_id: doc.id,
+                                          resource_title: doc.title,
+                                          resource_category: doc.category,
+                                          related_path: doc.related_url,
+                                          page_path: "/resources",
+                                        })
+                                      }
+                                    >
+                                      {doc.related_label}
+                                      <ArrowRight className="w-3.5 h-3.5" />
+                                    </Link>
+                                  )}
+                                </div>
                               </div>
-                            </div>
-                            <div className="flex items-center gap-2 md:shrink-0">
-                              <Button asChild size="sm" className="gap-2">
-                                <a
-                                  href={doc.file_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                              <div className="flex items-center gap-2 md:shrink-0">
+                                <Button asChild size="sm" className="gap-2">
+                                  <a
+                                    href={doc.file_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() =>
+                                      trackEvent(
+                                        isPdf
+                                          ? "resource_download"
+                                          : "resource_official_open",
+                                        {
+                                          resource_id: doc.id,
+                                          resource_title: doc.title,
+                                          resource_category: doc.category,
+                                          resource_type: isPdf ? "pdf" : "web",
+                                          destination_domain: destinationDomain(
+                                            doc.file_url,
+                                          ),
+                                          page_path: "/resources",
+                                        },
+                                      )
+                                    }
+                                  >
+                                    {isPdf ? (
+                                      <Download className="w-4 h-4" />
+                                    ) : (
+                                      <ExternalLink className="w-4 h-4" />
+                                    )}
+                                    {isPdf
+                                      ? "Download PDF"
+                                      : "Open Official Resource"}
+                                  </a>
+                                </Button>
+                                <Button
+                                  type="button"
+                                  variant="outline"
+                                  size="icon"
+                                  aria-label="Copy link"
+                                  onClick={() => copyLink(doc)}
                                 >
-                                  <Download className="w-4 h-4" />
-                                  Download PDF
-                                </a>
-                              </Button>
-                              <Button
-                                type="button"
-                                variant="outline"
-                                size="icon"
-                                aria-label="Copy link"
-                                onClick={() => copyLink(doc.file_url)}
-                              >
-                                <Link2 className="w-4 h-4" />
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
+                                  <Link2 className="w-4 h-4" />
+                                </Button>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        );
+                      })}
                     </div>
                   )}
                 </section>

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion.md
-last_updated: 2026-06-19
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 115 vs 150 HP: Comparación completa para remotorización"
 description: "Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso."
 category: "Comparación de motores"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-08
 keywords: ["Mercury 115 vs 150","motor fuera de borda 115 o 150 HP","Mercury FourStroke comparación","remotorización Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: es
+revenue_driver: repower
 ---
 
 # Mercury 115 vs 150 HP: Comparación completa para remotorización
@@ -24,13 +25,13 @@ language: es
 
 **Category:** Comparación de motores  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Última revisión:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 
 ### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16, 19 pies con 2, 3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19, 22 pies con cargas de 4, 5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -55,8 +56,8 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Potencia | 115 HP | 150 HP |
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
-| RPM máximo (WOT) | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
-| Rango de botes | 16, 19 pies | 19, 22 pies |
+| RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
+| Rango de botes | 16–19 pies | 19–22 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -80,7 +81,7 @@ Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian 
 
 ### Consumo de combustible
 
-Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60, 70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
+Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
@@ -107,15 +108,15 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote es de 16, 19 pies
-- Sales típicamente con 2, 3 personas
+- Tu bote es de 16–19 pies
+- Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote es de 19, 22 pies
-- Sales regularmente con 4, 5 personas o carga completa
+- Tu bote es de 19–22 pies
+- Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
 - Planeas usar el bote para deportes acuáticos (esquí, wakeboard)
@@ -126,7 +127,7 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000, $5,000+ CAD dependiendo de la configuración.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000–$5,000+ CAD dependiendo de la configuración.
 
 ---
 
@@ -139,25 +140,6 @@ Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué fun
 Rice Lake es uno de los mejores lagos de walleye en Ontario. Nuestros clientes lo saben porque llevan generaciones lanzando aquí.
 
 Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y Mercruiser.
-
----
-
-## Preguntas frecuentes (FAQ)
-
-**¿El 150 HP garantiza más velocidad máxima que el 115 HP?** 
-Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
-
-**¿Puedo instalar un 150 en un bote que originalmente tenía un 115?** 
-Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
-
-**¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?** 
-Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000, 3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
-
-**¿Puedo financiar el motor?** 
-Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
-
-**¿El equipo de Harris Boat Works habla español?** 
-Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
 
 ---
 
@@ -191,16 +173,15 @@ Aproximadamente 44 kg (96 lbs) más. Verifique que su espejo de popa (transom) s
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

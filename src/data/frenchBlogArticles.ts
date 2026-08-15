@@ -2,6 +2,100 @@ import { BlogArticle } from './blogArticles';
 
 export const frenchBlogArticles: BlogArticle[] = [
   {
+    slug: 'concessionnaire-mercury-premier-ontario',
+    title: 'Concessionnaire Mercury Premier en Ontario',
+    seoTitle: 'Concessionnaire Mercury Premier en Ontario | HBW',
+    description: 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers de l\'Ontario.',
+    image: '/lovable-uploads/hero-best-mercury-dealer-ontario.webp',
+    socialImage: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
+    imageAlt: 'Harris Boat Works, concessionnaire Mercury Premier à Gores Landing en Ontario',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-12',
+    dateModified: '2026-08-02',
+    publishDate: '2026-04-12',
+    category: 'Concessionnaire Mercury',
+    readTime: '5 min',
+    keywords: [
+      'concessionnaire Mercury Premier Ontario',
+      'concessionnaire Mercury Gores Landing',
+      'moteur Mercury Ontario',
+      'remotorisation Mercury Ontario',
+      'prix Mercury CAD',
+    ],
+    content: `### Réponse rapide
+
+Harris Boat Works est un concessionnaire **Mercury Marine Premier** à Gores Landing, sur le lac Rice. L'entreprise familiale sert les plaisanciers depuis 1947 et travaille avec Mercury depuis 1965. Vous pouvez consulter les prix des moteurs inscrits en dollars canadiens, bâtir une soumission et faire vérifier la compatibilité avant le dépôt du bateau.
+
+---
+
+## Pourquoi les plaisanciers de la région choisissent HBW
+
+Un bon concessionnaire ne se résume pas à un badge. Il doit donner des réponses claires sur la puissance, le poids, l'arbre, les commandes, l'hélice et le coût du projet. La bonne puissance n'est pas celle qui gagne la discussion à la rampe; c'est celle qui convient à la coque et à son usage réel.
+
+- **Prix en CAD visibles en ligne.** Le configurateur affiche le prix des modèles Mercury inscrits et les options choisies. Les détails de gréage et d'installation sont confirmés selon le bateau.
+- **Spécialisation Mercury.** HBW vend les hors-bord Mercury et réalise des projets de remotorisation à son atelier de Gores Landing.
+- **Contexte local.** L'équipe travaille quotidiennement avec les bateaux utilisés sur le lac Rice, dans les Kawarthas, à Peterborough, dans Northumberland, Durham et la GTA.
+- **Une réponse honnête sur la langue.** Les guides sont offerts en français, mais l'équipe du magasin travaille principalement en anglais.
+
+## Ce que signifie le statut Mercury pour votre projet
+
+Mercury décrit ses concessionnaires autorisés comme la ressource locale pour l'achat de moteurs, les pièces, le soutien et le service. Harris Boat Works est actuellement un concessionnaire Mercury Marine Premier. Vous pouvez aussi consulter le [localisateur officiel de concessionnaires Mercury Canada](https://www.mercurymarine.com/ca/en/find-a-dealer).
+
+Le statut du concessionnaire ne remplace toutefois pas la vérification du bateau. Avant une remotorisation, il faut confirmer la plaque de capacité, le poids sur le tableau arrière, la longueur d'arbre, la direction, les commandes et l'état de la coque. C'est cette vérification qui transforme un moteur neuf en bon projet.
+
+## Comment obtenir un prix utile
+
+1. **Bâtissez une soumission.** Choisissez le moteur et les options dans le configurateur Mercury en ligne.
+2. **Décrivez le bateau.** La marque, le modèle, l'année, la plaque de capacité et des photos aident l'équipe à vérifier la compatibilité.
+3. **Faites confirmer le gréage.** Les commandes, la direction, les jauges, l'hélice et le travail requis peuvent changer le total final.
+4. **Planifiez le dépôt à Gores Landing.** Les moteurs et les projets sont ramassés sur place; HBW n'expédie pas et ne livre pas les moteurs.
+
+## Service, hivernisation et entreposage
+
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Pour l'hivernisation ou l'entreposage, il n'est pas nécessaire de réserver une place à la fin de l'été. La pratique recommandée est de remplir la [demande de service](https://hbw.wiki/service) une ou deux semaines avant le dépôt prévu. Harris Boat Works ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.
+
+## Garantie Mercury
+
+Les modalités dépendent du produit, de l'usage et de la date d'achat. Consultez la [garantie limitée Mercury Canada](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) et faites confirmer la couverture applicable à votre moteur. Les programmes promotionnels ou de protection prolongée ne doivent pas être présumés sans vérifier les conditions courantes.
+
+---
+
+**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+`,
+    faqs: [
+      {
+        question: 'Parlez-vous français chez Harris Boat Works?',
+        answer: "Notre équipe travaille principalement en anglais. Nous publions des guides en français pour rendre l'information plus accessible, mais les échanges de vente et de service se font en anglais. Vous pouvez soumettre un formulaire en français; notre réponse sera en anglais.",
+      },
+      {
+        question: 'Harris Boat Works est-il un concessionnaire Mercury autorisé?',
+        answer: 'Oui. Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing. Mercury recommande de passer par un concessionnaire autorisé pour les moteurs, les pièces, le soutien et le service.',
+      },
+      {
+        question: 'Puis-je faire entretenir mon Mercury chez vous si je ne l\'ai pas acheté chez HBW?',
+        answer: "Soumettez une demande de service avec le modèle, le numéro de série et les symptômes. L'équipe confirmera si le travail entre dans notre champ de service et la marche à suivre.",
+      },
+      {
+        question: 'Comment planifier une hivernisation ou un entreposage?',
+        answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Il n'est pas nécessaire de réserver une place des mois à l'avance. Remplissez la demande de service une ou deux semaines avant le dépôt prévu. L'entreprise ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.",
+      },
+      {
+        question: 'Expédiez-vous ou livrez-vous les moteurs?',
+        answer: "Non. Les achats et les projets de remotorisation sont ramassés à l'emplacement de Gores Landing. HBW n'expédie pas et ne livre pas les moteurs.",
+      },
+    ],
+    citations: [
+      {
+        name: 'Mercury Marine Canada : Trouver un concessionnaire',
+        url: 'https://www.mercurymarine.com/ca/en/find-a-dealer',
+      },
+      {
+        name: 'Mercury Marine Canada : Garantie limitée',
+        url: 'https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty',
+      },
+    ],
+  },
+  {
     slug: 'prix-remotorisation-mercury-ontario',
     title: 'Guide de remotorisation Mercury : prix, délais, rentabilité',
     description: 'Ce qu\'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d\'acheter neuf.',
@@ -184,7 +278,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-12',
     category: 'Comparaison',
     readTime: '7 min',
@@ -222,8 +316,8 @@ Le Mercury 150 FourStroke est une famille entièrement différente, un bloc 4 cy
 | Cylindrée | 2,1 L | 3,0 L |
 | Cylindres | 4 en ligne | 4 en ligne |
 | Poids (arbre 20") | ~163 kg (359 lb) | ~206 kg (455 lb) |
-| Plage de régime | 5 000, 6 000 tr/min | 5 000, 5 800 tr/min |
-| Embarcations idéales | 16, 19 pieds | 19, 22 pieds |
+| Plage de régime | 5 000–6 000 tr/min | 5 000–5 800 tr/min |
+| Embarcations idéales | 16–19 pieds | 19–22 pieds |
 
 ---
 
@@ -237,7 +331,7 @@ La différence se fait vraiment sentir à pleine charge : quatre adultes, une gl
 
 ### Consommation de carburant
 
-À vitesse de croisière normale, ce qui représente la plupart des journées sur les lacs des Kawartha ou le lac Rice, les deux moteurs peuvent être très proches en consommation. Un 150 utilisé à 60, 70 % de sa capacité sur une grosse embarcation peut être aussi efficace qu'un 115 poussé à fond sur une petite. L'hélice choisie a aussi un impact important sur la consommation réelle.
+À vitesse de croisière normale, ce qui représente la plupart des journées sur les lacs des Kawartha ou le lac Rice, les deux moteurs peuvent être très proches en consommation. Un 150 utilisé à 60–70 % de sa capacité sur une grosse embarcation peut être aussi efficace qu'un 115 poussé à fond sur une petite. L'hélice choisie a aussi un impact important sur la consommation réelle.
 
 ### Poids
 
@@ -294,10 +388,10 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 ## Foire aux questions
 
 **Le 115 HP suffit-il pour un ponton de 20 pieds ?** 
-Oui, pour un ponton de 20 pieds avec une charge normale (3, 4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
+Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
 
 **Le 150 consomme-t-il beaucoup plus que le 115 ?** 
-À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65, 70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
+À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65–70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
 
 **Dois-je prendre la version Command Thrust sur un ponton ?** 
 Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
@@ -602,14 +696,14 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-02',
     publishDate: '2026-04-12',
     category: 'Destination',
     readTime: '7 min',
     keywords: ['pêche lac Rice Ontario', 'pêche Kawarthas Ontario', 'meilleur lac pêche Ontario', 'Rice Lake fishing guide'],
     content: `### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947, avec une flotte de location de neuf embarcations.
+Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
@@ -677,7 +771,7 @@ Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêc
 
 ## Partir à la journée depuis Harris Boat Works
 
-Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent depuis des générations. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
+Notre marina loue des pontons et des bateaux de pêche directement sur le lac Rice. Consultez harrisboatworks.ca/rentals pour connaître les embarcations, les capacités, les tarifs et les disponibilités actuels. Vous n'avez pas besoin de transporter une embarcation depuis un autre lac.
 
 On vend aussi du carburant sans éthanol sur place, un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques lors des périodes d'entreposage.
 
@@ -713,7 +807,7 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pour l'année courante sur ontario.ca.
 
 **Peut-on louer un bateau à la journée à Harris Boat Works?** 
-Oui. Notre flotte de neuf embarcations est disponible à la location. Visitez [harrisboatworks.ca](https://harrisboatworks.ca) pour les détails et les réservations.
+Oui. Nous louons des pontons et des bateaux de pêche sur le lac Rice. Visitez [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) pour consulter la flotte actuelle, les tarifs, les disponibilités et réserver en ligne.
 
 **A-t-on besoin d'un permis de pêche pour le lac Rice?** 
 Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
@@ -743,7 +837,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
       },
       {
         question: 'Peut-on louer un bateau sur place?',
-        answer: 'Oui. Harris Boat Works a une flotte de 9 bateaux de location. Consultez harrisboatworks.ca.'
+        answer: 'Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; consultez harrisboatworks.ca/rentals pour les bateaux, la capacité, l’équipement, les tarifs et la disponibilité.'
       },
       {
         question: 'Quelles espèces vise-t-on?',
@@ -1179,7 +1273,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-13',
     category: 'Guide d\'achat',
     readTime: '12 min',
@@ -1236,7 +1330,7 @@ Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous cou
 - Planifier l'installation
 - Discuter de la logistique de transport (étape suivante)
 
-**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre), plus court hors saison. L'appel téléphonique réserve la place.
+**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre). L'atelier est fermé du 1er décembre au 1er avril. L'appel téléphonique réserve la place.
 
 ### Étape 3 : Transport du bateau jusqu'à Harris Boat Works (1 jour, varie selon l'approche)
 
@@ -1246,7 +1340,7 @@ Vous avez trois options pour amener le bateau à Gores Landing :
 
 **Option B. Engager un transporteur de bateaux.** Plusieurs services de transport de bateaux ontariens font la route GTA à Kawartha. Coût typique : 300 $ à 600 $ pour un aller pour un bateau typique de 18 à 22 pieds. Cherchez « boat transport Ontario » ou demandez-nous, nous connaissons les opérateurs. Utile si vous n'avez pas de véhicule de remorquage ou que vous ne voulez pas conduire une remorque.
 
-**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait hors saison sans coût de transport.
+**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait dès l'ouverture au printemps, sans coût de transport.
 
 La plupart des clients de la GTA choisissent l'option A. Le trajet 401 plus route régionale 18 est simple.
 
@@ -1336,7 +1430,7 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 La saison de navigation en Ontario est courte. Le moment de réservation compte :
 
-- **Hiver (décembre à mars)** : idéal. Nous avons du temps en atelier, des pièces disponibles, parfois des prix d'hiver, moteur prêt pour le printemps.
+- **Hiver (décembre à mars)** : idéal pour réserver, pas pour installer. L'atelier est fermé du 1er décembre au 1er avril et aucun travail de service ou de remotorisation n'y est effectué. Réservez en novembre ou tôt au printemps, et le travail commence dès l'ouverture en avril.
 - **Début du printemps (avril)** : encore bon. L'horaire se remplit d'ici la fin avril.
 - **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d'attente. Possible de mettre à l'eau avec le nouveau moteur en plein été.
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.
@@ -1411,7 +1505,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '7 min',
@@ -1435,7 +1529,7 @@ Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2
 
 On nous pose régulièrement la question sur le Mercury 75 HP FourStroke. Habituellement la question ressemble à : "Le 75 est-il assez bon, ou devrais-je passer au 90?" Voici notre réponse honnête : le 90 est presque toujours le meilleur choix, et la raison pour laquelle nous ne tenons pas le 75 en stock, c'est que c'est le même moteur.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
 
 ---
 
@@ -1541,7 +1635,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     image: '/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '9 min',
@@ -1565,13 +1659,13 @@ Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux
 
 Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
 
 ---
 
 ## Ce que la famille 90 HP partage réellement
 
-Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. Mercury a effectué 17 000 heures d'essais en usine sur cette génération avant la mise en marché.
+Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. 
 
 Les différences entre les 90, 100 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux 359 lb.
 
@@ -1604,7 +1698,7 @@ Croisière, traction d'une chambre à air, baignade, pêche occasionnelle, le 90
 
 ### Remotorisations remplaçant des deux temps de 70 à 90 HP
 
-Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et 20 à 30 % plus efficace en carburant.
+Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et nettement plus économique en carburant.
 
 ---
 
@@ -1673,7 +1767,7 @@ Non. Le Pro XS est une calibration différente, plafond de RPM plus haut, embase
 Oui, ce n'est pas optionnel.
 
 **Combien le 90 HP économise-t-il en carburant par rapport à un vieux deux temps?**
-Typiquement 20 à 30 % moins de carburant pour la même journée sur l'eau.
+L'économie est réelle et marquée, mais elle varie selon la coque, l'hélice et votre usage. Apportez vos chiffres et nous ferons l'estimation avec vous.
 
 **Le 90 CT est-il le même moteur que le 90 standard?**
 Même tête motrice. Embase différente.
@@ -1702,17 +1796,17 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-15',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '10 min',
     keywords: ['revue Mercury 115 HP', 'Mercury 115 HP FourStroke', 'Mercury 115 ELPT Ontario', 'Mercury 115 CT Command Thrust', '115 HP ponton', 'Mercury 115 vs 150', 'Mercury 115 FourStroke vs Pro XS'],
     faqs: [
       { question: "Combien pèse le Mercury 115 HP FourStroke?", answer: "359 lb à sec pour le ELPT standard. 363 lb pour la version Command Thrust. Mercury affirme que c'est le hors-bord 115 HP le plus léger disponible." },
-      { question: "Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?", answer: "Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime avec une embase sport. Le FourStroke standard est la calibration de tous les jours." },
+      { question: "Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?", answer: "Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime; Mercury l'offre dans plusieurs configurations d'embase, dont Command Thrust. Le FourStroke standard est la calibration de tous les jours." },
       { question: "Le 115 est-il suffisant pour un bateau d'aluminium de 19 pi?", answer: "Pour la plupart des bateaux de pêche en aluminium de 19 pi avec des charges normales, oui. Si vous transportez régulièrement lourd, le 115 est à la limite de ce qu'il peut faire confortablement." },
-      { question: "Un 115 fera-t-il planer mon ponton de 22 pi?", answer: "Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150 V6." },
-      { question: "Quelle est la garantie?", answer: "Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année, la portant à 6 ans au total." },
+      { question: "Un 115 fera-t-il planer mon ponton de 22 pi?", answer: "Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150." },
+      { question: "Quelle est la garantie?", answer: "La couverture standard plaisance des hors-bord Mercury neufs admissibles au Canada comprend une garantie limitée de 3 ans et une garantie contre la corrosion de 3 ans distincte. Les deux périodes courent simultanément; ce ne sont pas six années cumulées. Une couverture promotionnelle additionnelle s'applique uniquement lorsque les conditions écrites en vigueur la prévoient. Vérifiez les conditions actuelles à mercuryrepower.ca/promotions." },
       { question: "Le 115 est-il à injection de carburant?", answer: "Oui. Tous les Mercury 115 HP FourStroke utilisent l'EFI." },
       { question: "Le 115 fonctionne-t-il avec les jauges SmartCraft?", answer: "Oui. Intégration SmartCraft disponible, notamment NMEA 2000, SmartCraft Connect Mobile (anciennement VesselView Mobile) et Active Trim. La compatibilité exacte dépend du moteur et de l'installation." },
       { question: "Puis-je obtenir un 115 HP en contre-rotation?", answer: "Oui. Mercury fabrique un 115 CXL pour configurations à deux moteurs. Moins courant chez HBW parce que les 115 jumelés sont inhabituels sur les bateaux du lac Rice, mais disponibles pour la bonne application." },
@@ -1725,15 +1819,15 @@ Le Mercury 115 HP FourStroke pèse 359 lb, ce qui en fait le hors-bord 115 HP le
 
 ### Revue du Mercury 115 HP FourStroke
 
-"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Une différence de poids de 80 à 100 lb par rapport aux vieux deux temps que ce moteur remplace couramment affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
+"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Dans l'exemple courant d'un ancien 115 OptiMax d'environ 425 lb, la réduction est d'environ 66 lb. Ce changement affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice depuis 1947, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
 
 ---
 
 ## Pourquoi "le 115 HP le plus léger" compte vraiment
 
-Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est 80 à 100 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
+Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est environ 66 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
 
 - La coque s'assoit plus haut au repos, améliorant l'économie de carburant avant même de tourner la clé.
 - Le bateau plane plus tôt avec la même charge.
@@ -1764,7 +1858,7 @@ Le 115 est la calibration la plus élevée de cette famille. Il monte à 6 000 R
 - **PT**, trim et inclinaison assistés depuis le poste de pilotage
 - **CT**, embase Command Thrust (embase plus grande, hélice plus grande, typiquement 14 ou 14,5 po au lieu de 13)
 
-Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**. Il existe aussi un 115 Pro XS (calibré performance, embase sport) et un 115 à contre-rotation (configurations jumelées).
+Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**. Il existe aussi un 115 Pro XS calibré pour la performance, offert dans plusieurs configurations d'embase, dont Command Thrust, ainsi qu'un 115 à contre-rotation pour les configurations jumelées.
 
 ---
 
@@ -1784,7 +1878,7 @@ Le CT vous donne plus de puissance de traction à bas régime et de hole-shot au
 
 ### Bateaux de pêche en aluminium de 17 à 20 pi avec charges plus lourdes
 
-Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est un Lund, Princecraft, Crestliner ou Legend de 17 à 20 pi avec quatre personnes, équipement complet, vivier, deux batteries et un moteur de pêche à la traîne à l'avant, le 115 est le bon choix. Croisière vers 30 à 35 mi/h, culmine vers 42 à 48 mi/h.
+Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est un Lund, Princecraft, Crestliner ou Legend de 17 à 20 pi avec quatre personnes, équipement complet, vivier, deux batteries et un moteur de pêche à la traîne à l'avant, le 115 est souvent le bon choix. La vitesse réelle dépend de la coque, de la charge, de l'hélice, de l'installation et des conditions.
 
 ### Pontons de taille moyenne à grande, 20 à 24 pi
 
@@ -1796,7 +1890,7 @@ Croisière, pêche, traction de chambre à air, sports nautiques occasionnels, l
 
 ### Remotorisations à partir de vieux deux temps
 
-Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les vieux 115 OptiMax, 115 à 150 OMC et 90 à 115 Yamaha deux temps. Résultat : le bateau se sent plus léger, fonctionne plus silencieusement, et utilise 25 à 35 % moins de carburant.
+Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les vieux 115 OptiMax, 115 à 150 OMC et 90 à 115 Yamaha deux temps. Le bateau peut se sentir plus léger et fonctionner plus silencieusement; l'économie de carburant réelle dépend de l'ancien moteur, de la coque, de la charge, de l'hélice et du régime de croisière.
 
 ---
 
@@ -1804,7 +1898,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **Hole-shot de bass boat.** Le 115 ELPT FourStroke est calibré pour l'économie, la croisière douce et la fiabilité.
 
-**Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 V6 ou plus.
+**Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 ou plus.
 
 **Coques cotées sous 90 HP.** La plaque de capacité est le plafond.
 
@@ -1814,9 +1908,9 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 ## Comment le 115 se compare au 90 et au 150
 
-| | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
+| | 90 ELPT | 115 ELPT | 150 ELPT |
 |---|---|---|---|
-| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L V4, famille différente |
+| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L 4 cyl. en ligne, famille différente |
 | Poids à sec | 359 lb | 359 lb (363 CT) | environ 455 lb |
 | RPM pleins gaz | 5 000 à 6 000 | 5 000 à 6 000 | 5 000 à 5 800 |
 | Plage idéale | 16 à 18 pi alu, pontons moyens | 17 à 20 pi alu, pontons moyens-grands | 19 à 22 pi, plateformes plus grandes |
@@ -1824,7 +1918,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **90 vs 115 :** Calibration, pas un moteur différent. Aucun changement de poids.
 
-**115 vs 150 :** Famille complètement différente. Le 150 est un V6, plus lourd d'environ 100 lb.
+**115 vs 150 :** Famille complètement différente. Le 150 FourStroke est un 4 cylindres en ligne de 3,0 L, plus lourd d'environ 100 lb.
 
 ---
 
@@ -1847,6 +1941,10 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
+### Une note sur la langue
+
+Cet article est une traduction de courtoisie. Notre personnel communique et offre le service en anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais; vous pouvez utiliser une application de traduction ou demander l'aide d'un proche bilingue.
+
 ## Questions fréquentes
 
 **Le 115 FourStroke est-il vraiment le 115 HP le plus léger disponible?**
@@ -1862,10 +1960,10 @@ Non. Famille différente, bloc différent, classe de poids différente (environ 
 Quand le ponton fait 20 à 24 pi, quand vous transportez régulièrement 5 à 6 personnes, ou quand c'est un tritoon.
 
 **Quelles économies de carburant puis-je m'attendre en remotorisant à partir d'un vieux deux temps?**
-Typiquement 25 à 35 % moins de carburant.
+Une remotorisation moderne peut réduire la consommation, mais le résultat dépend de l'ancien moteur, de la coque, de la charge, de l'hélice et du régime de croisière.
 
 **Le 115 Pro XS existe-t-il en Command Thrust?**
-Non, le Pro XS utilise une embase sport conçue pour les applications de performance.
+Oui. Mercury offre le 115 Pro XS dans plusieurs configurations, dont une version Command Thrust. La bonne embase dépend de la coque, de la charge et de l'usage.
 
 ---
 
@@ -1886,7 +1984,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     image: '/lovable-uploads/hero-outboard-overheating.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Dépannage',
     readTime: '9 min',
@@ -2038,6 +2136,12 @@ Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ## Appel à l'action
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
@@ -2063,7 +2167,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Entretien',
     readTime: '10 min',
@@ -2196,11 +2300,17 @@ Les cadres de remorque sont soudables. Tasseaux, rouleaux, lumières et freins s
 
 Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 pi coûte 3 000 $ à 5 000 $ CAD en Ontario. Un rafraîchissement complet (tasseaux, roulements, freins, lumières, pneus) sur un cadre solide coûte habituellement 800 $ à 1 500 $.
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ---
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
@@ -2226,7 +2336,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
@@ -2345,9 +2455,15 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
@@ -2372,7 +2488,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-18',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: 'Garantie',
     readTime: '9 min',
@@ -2464,6 +2580,12 @@ Pour une réclamation, apportez le produit à un concessionnaire Mercury autoris
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ## Comment obtenir une soumission
 
 Commencez avec la page des [prix Mercury Product Protection](/mercury-product-protection), puis communiquez avec HBW au 905-342-2153 avec le modèle, le numéro de série, les heures et la durée souhaitée. Nous confirmons l'admissibilité, la couverture incluse et le prix final avant l'enregistrement.
@@ -2475,7 +2597,7 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 
 *Dernière révision : 2026-07-18*
 
-Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
@@ -2501,7 +2623,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina 
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-08',
     publishDate: '2026-05-13',
     category: "Guide d'achat",
     readTime: '10 min',
@@ -2578,6 +2700,12 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 
 Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 *Dernière révision : 2026-05-13.*
 
 ## Guides connexes
@@ -2600,11 +2728,11 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
   {
     slug: 'moteur-hors-bord-electrique-mercury-avator',
     title: 'Mercury Avator électrique : prix et autonomie',
-    description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Platine Mercury.',
+    description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Mercury Premier.',
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '8 min',
@@ -2617,15 +2745,15 @@ Les moteurs électriques, ce n'est plus de la musique d'avenir : c'est déjà l�
 
 Mercury nomme les modèles Avator par leur puissance en watts, ce qui mêle bien du monde. Voici la traduction :
 
-| Modèle | Puissance à l'hélice | Équivaut à (essence) | Pour quel bateau |
-|---|---|---|---|
-| Avator 7.5e | 750 W | ~3,5 ch | Annexes, canots, petites chaloupes, pêche à la traîne |
-| Avator 20e | 2,2 kW | ~5 ch | Chaloupes, petites embarcations |
-| Avator 35e | 3,7 kW | ~9,9 ch | Petites chaloupes de pêche, annexes |
-| Avator 75e | 7,5 kW | 10 ch (conversion à l'arbre d'hélice) | Petits pontons, embarcations plus grandes |
-| Avator 110e | 11 kW | 15 ch (conversion à l'arbre d'hélice) | Pontons, bateaux de promenade |
+| Modèle | Puissance à l'arbre d'hélice | Pour quel bateau |
+|---|---|---|
+| Avator 7.5e | 0,75 kW | Annexes, canots, petites chaloupes, pêche à la traîne |
+| Avator 20e | 2,2 kW | Chaloupes, petites embarcations |
+| Avator 35e | 3,7 kW | Petites chaloupes de pêche, annexes |
+| Avator 75e | 7,5 kW | Petits pontons, embarcations plus grandes |
+| Avator 110e | 11 kW | Pontons, bateaux de promenade |
 
-Une particularité à connaître : les trois premiers chiffres sont les équivalences essence publiées par Mercury, tandis que les chiffres des 75e et 110e sont des conversions directes de la puissance à l'arbre d'hélice (7 500 watts donnent 10 ch). Un moteur électrique livre tout son couple instantanément, alors un 75e tire un bateau bien plus fort que « 10 ch » le laisse croire. Voyez la colonne comme un repère, pas une spécification.
+Mercury publie la puissance de chaque Avator à l'arbre d'hélice. Nous ne convertissons pas ces valeurs en « HP essence », car une comparaison de puissance seule ne décrit pas l'autonomie, la poussée, le bateau, la charge ou les conditions. Le bon modèle se choisit à partir de l'embarcation et de l'usage réel.
 
 Quelques points à savoir : la batterie du 7.5e (1 kWh, environ 7,7 kg / 17 lb) se glisse sous le capot sans câbles, et vous pouvez en transporter une de rechange et la changer en quelques secondes. Les 75e et 110e utilisent un centre d'alimentation (Power Center) qui relie jusqu'à quatre batteries de 5 400 Wh, donc l'autonomie augmente selon le nombre de batteries achetées.
 
@@ -2656,16 +2784,16 @@ Soyez franc avec vous-même sur votre façon de naviguer.
 
 ### Et le prix ?
 
-Le prix de l'Avator varie beaucoup selon le modèle, le nombre de batteries et le chargeur, et c'est souvent la batterie qui coûte cher, pas la tête motrice. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. C'est donc la seule gamme Mercury qu'on chiffre par conversation plutôt que par le configurateur. Appelez-nous au 905-342-2153, décrivez le bateau et vos distances réelles, et on vous donnera le vrai prix actuel pour la configuration exacte. La même réponse franche, juste au téléphone.
+Le prix total de l'Avator dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. Les prix de Mercury Canada sont encore en cours de finalisation; nous ne publions donc pas un chiffre provisoire. Consultez notre [page Avator](/electric/mercury-avator) pour la disponibilité actuelle et le parcours de configuration.
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Quelle est l\'autonomie d\'un moteur électrique Mercury Avator ?', answer: 'Dans l\'essai publié par Mercury du Avator 7.5e sur un bateau de 13 pieds (382 lb) avec une batterie de 1 kWh, le moteur a tenu environ 60 minutes ou 5 milles à plein régime, et jusqu\'à 19 heures ou 34 milles à 25 % des gaz. L\'autonomie réelle dépend de votre bateau, de la charge et des conditions.' },
-      { question: 'À quelle puissance essence chaque Mercury Avator correspond-il ?', answer: 'Mercury compare le 7.5e à environ 3,5 ch, le 20e à environ 5 ch et le 35e à environ 9,9 ch. Pour les 75e et 110e, Mercury publie la conversion directe de la puissance à l\'arbre d\'hélice : 7 500 watts donnent 10 ch et 11 000 watts donnent 15 ch. Le couple instantané fait qu\'ils semblent plus forts au départ que ces chiffres le suggèrent.' },
+      { question: 'Quelle est la puissance de chaque Mercury Avator ?', answer: 'Mercury publie la puissance à l\'arbre d\'hélice : 0,75 kW pour le 7.5e, 2,2 kW pour le 20e, 3,7 kW pour le 35e, 7,5 kW pour le 75e et 11 kW pour le 110e. Nous ne les convertissons pas en HP essence; le bateau, la charge, l\'autonomie et les conditions comptent dans le choix.' },
       { question: 'Combien de temps faut-il pour recharger une batterie Mercury Avator ?', answer: 'La batterie de 1 kWh du 7.5e prend environ 9 heures sur le chargeur de 110 W inclus, ou environ 2 heures sur le chargeur optionnel de 520 W. Les blocs de 5 400 Wh des 75e et 110e prennent environ 20 heures pour deux batteries sur le chargeur portatif de 520 W; le chargeur de 1 050 W réduit ce temps de plus de moitié.' },
-      { question: 'Combien coûte un Mercury Avator au Canada ?', answer: 'Ça dépend du modèle, du nombre de batteries et du chargeur, et les batteries représentent souvent la plus grosse part du prix. L\'Avator est un produit sur commande chez Harris Boat Works : appelez le 905-342-2153 pour un prix exact et à jour selon votre bateau. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.' }
+      { question: 'Combien coûte un Mercury Avator au Canada ?', answer: 'Le total dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l\'installation. Les prix de Mercury Canada sont encore en cours de finalisation; consultez la [page Avator](/electric/mercury-avator) pour la disponibilité actuelle. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.' }
     ]
   },
   {
@@ -2675,7 +2803,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -2727,7 +2855,7 @@ On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. 
 
 **Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Est-ce que le Mercury Pro XS est un quatre-temps ?', answer: 'Oui. La gamme Mercury Pro XS actuelle est entièrement quatre-temps, tout comme les familles FourStroke et Verado. Les anciens Pro XS étaient des deux-temps OptiMax, d\'où la confusion, mais le Pro XS qu\'on peut acheter aujourd\'hui est un quatre-temps réglé pour l\'accélération au départ et la vitesse de pointe.' },
       { question: 'Quelle est la différence entre le Mercury 115 et le 115 Pro XS ?', answer: 'Les deux partagent la même base quatre-temps de 2,1 L, et Mercury publie le même poids sec le plus léger pour les deux : 163 kg (359 lb). Le Pro XS a une calibration de performance pour une accélération plus vive et plus de vitesse de pointe, avec des options de boîtier d\'engrenage de performance. Pour un ponton ou une chaloupe de pêche, le 115 FourStroke standard est habituellement le choix le plus intelligent; pour une coque de performance plus légère, le Pro XS vaut la différence.' },
@@ -2741,7 +2869,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '6 min',
@@ -2798,7 +2926,7 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 **Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Combien pèse un Mercury 115 quatre-temps ?', answer: 'Mercury publie 163 kg (359 lb) de poids sec pour le modèle le plus léger du 115 FourStroke; la version Command Thrust fait 165 kg (363 lb). Le 115 Pro XS pèse aussi 163 kg. Les arbres plus longs ajoutent du poids.' },
       { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },

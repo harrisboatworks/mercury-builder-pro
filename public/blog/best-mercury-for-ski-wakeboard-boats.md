@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-05-03
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Best Mercury for Ski Boats 2026"
 description: "Best Mercury outboard for ski and wakeboard boats. Covers hole shot, Pro XS vs FourStroke, and correct HP for desired wake. Ontario dealer's real-world picks."
 category: "Buying Guide"
 date_published: 2026-05-03
-date_modified: 2026-05-03
+date_modified: 2026-08-08
 keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for watersports","best outboard for skiing","wakesurf outboard motor","best Mercury for ski wakeboard boats","Mercury Pro XS tow boat","Mercury V8 wakeboard","hole shot tow boat"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury for Ski Boats 2026
@@ -24,34 +25,37 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-03  
-**Last updated:** 2026-05-03  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
 
-::decision-card
-eyebrow: Wake profile decision
-heading: Wakeboarding or skiing? Different wake, different motor.
-subhead: Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
-leftLabel: Skiing is the focus
-leftCriteria:
-  - Slalom or course skiing most of the time
-  - You want a flat, clean, low wake
-  - Hole shot for getting the skier up matters most
-  - Lighter boat, minimal ballast
-leftOutcome: 175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop
-leftVariant: recommended
-rightLabel: Wakeboarding is the focus
-rightCriteria:
-  - You want a big, lipped, firm wake to ride
-  - You run real ballast (454 kg (1,000 lb) or more)
-  - Boat is 20 ft or larger with a tow tower
-  - Sustained mid-range torque matters more than top end
-rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
-rightVariant: alternative
-whenInDoubt: If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
-::
+*Wake profile decision*
+
+### Wakeboarding or skiing? Different wake, different motor.
+
+Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
+
+#### Skiing is the focus
+
+- Slalom or course skiing most of the time
+- You want a flat, clean, low wake
+- Hole shot for getting the skier up matters most
+- Lighter boat, minimal ballast
+
+**175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop**
+
+#### Wakeboarding is the focus
+
+- You want a big, lipped, firm wake to ride
+- You run real ballast (454 kg (1,000 lb) or more)
+- Boat is 20 ft or larger with a tow tower
+- Sustained mid-range torque matters more than top end
+
+**225 to 300 HP V6 or V8, more weight, more sustained pull**
+
+If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
 
 For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 
@@ -95,8 +99,6 @@ For outboard tow boats specifically:
 
 **Wakeboarding**, wake should be mid-size, firm, and curl over (a "lipped" wake). Needs more boat weight + more sustained power. **200-225 HP minimum on a tow-spec hull.** Add ballast to get the wake bigger.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (680-1,361 kg (1,500-3,000 lbs) of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
 If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
@@ -134,7 +136,7 @@ The V8 also has DTS standard, which on a tow boat is genuinely worth having, smo
 
 Mercury Verado (V8/V10 naturally aspirated) is the **premium quiet option**. For tow boats specifically, Verado matters because **a quieter motor at the dock means happier neighbours at the dock**, and the tow community spends a lot of time idling at the dock between runs.
 
-A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise, has integrated power steering as standard, and supports single-engine joystick steering (since Mercury added that capability in 2024-2025).
+A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise and has integrated power steering as standard. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) is a package for electric-steering Verado and SeaPro V8, V10, and V12 models from 250 to 600 HP, paired with a compatible CAN-based variable-speed thruster. That package is not a fit recommendation for the ski and wake hulls discussed here, so we confirm the exact hull, steering, controls, and thruster package with Mercury before quoting.
 
 The trade-off: Verados are special-order and significantly more expensive. We don't keep them in stock; we order to spec. For a custom tow boat build, ask us, we can quote.
 
@@ -150,8 +152,6 @@ We rig outboard tow boats every spring. Specifically:
 Tow boats run hard. We'll talk through your annual hours and use case before quoting, sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
 
 Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
@@ -186,23 +186,22 @@ It'll work, the question is whether the hole shot is good enough for your skier.
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

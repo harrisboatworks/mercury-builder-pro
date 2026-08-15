@@ -131,6 +131,109 @@ describe('quoteReducer SET_MOTOR', () => {
   });
 });
 
+describe('quoteReducer START_MOTOR_ONLY_QUOTE', () => {
+  it('creates a clean cash pickup summary without stale quote options', () => {
+    const selectedMotor = { ...motor('motor-a', '9.9 MH', 2999), hp: 9.9 };
+    const staleState: QuoteState = {
+      ...initialState,
+      motor: motor('motor-b', '115 ELPT', 15000),
+      purchasePath: 'installed',
+      boatInfo: { type: 'pontoon' } as QuoteState['boatInfo'],
+      tradeInInfo: { hasTradeIn: true, estimatedValue: 4000 },
+      fuelTankConfig: { size: 25 },
+      installConfig: { installationCost: 450 },
+      looseMotorBattery: { wantsBattery: true, batteryCost: 179.99 },
+      warrantyConfig: { extendedYears: 3, warrantyPrice: 600, totalYears: 6 },
+      hasTradein: true,
+      selectedOptions: [{
+        optionId: 'controls',
+        name: 'Controls',
+        price: 500,
+        category: 'rigging',
+        assignmentType: 'available',
+        isIncluded: false,
+      }],
+      selectedPromoOption: 'cash_rebate',
+      selectedPaymentMethod: 'standard_financing',
+      adminDiscount: 500,
+      customerName: 'Previous Customer',
+      customerEmail: 'previous@example.com',
+      customerPhone: '905-555-0100',
+      uiFlags: { staleModal: true },
+    };
+
+    const result = quoteReducer(staleState, {
+      type: 'START_MOTOR_ONLY_QUOTE',
+      payload: selectedMotor,
+    });
+
+    expect(result.motor).toEqual(selectedMotor);
+    expect(result.purchasePath).toBe('loose');
+    expect(result.selectedPaymentMethod).toBe('cash_purchase');
+    expect(result.selectedPackage).toEqual({
+      id: 'good',
+      label: 'Motor-only pickup',
+      priceBeforeTax: 0,
+    });
+    expect(result.boatInfo).toBeNull();
+    expect(result.tradeInInfo).toBeNull();
+    expect(result.fuelTankConfig).toBeNull();
+    expect(result.installConfig).toBeNull();
+    expect(result.looseMotorBattery).toBeNull();
+    expect(result.warrantyConfig).toBeNull();
+    expect(result.hasTradein).toBe(false);
+    expect(result.selectedOptions).toEqual([]);
+    expect(result.selectedPromoOption).toBeNull();
+    expect(result.adminDiscount).toBe(0);
+    expect(result.customerName).toBe('');
+    expect(result.customerEmail).toBe('');
+    expect(result.customerPhone).toBe('');
+    expect(result.completedSteps).toEqual([1, 2, 3, 4, 5]);
+    expect(result.currentStep).toBe(6);
+    expect(result.isLoading).toBe(false);
+    expect(result.uiFlags).toEqual({
+      motorOnlyExpress: true,
+      suppressAdditionalPromoSavings: true,
+    });
+  });
+});
+
+describe('quoteReducer PROMOTE_TRADE_IN', () => {
+  it('atomically carries the standalone estimate without replacing unrelated quote state', () => {
+    const existingMotor = motor('motor-a', '90 ELPT', 12000);
+    const state: QuoteState = {
+      ...initialState,
+      motor: existingMotor,
+      customerName: 'Taylor Customer',
+      selectedOptions: [{
+        optionId: 'battery',
+        name: 'Starting battery',
+        price: 250,
+        category: 'electrical',
+        assignmentType: 'available',
+        isIncluded: false,
+      }],
+    };
+    const trade = {
+      hasTradeIn: false,
+      brand: 'Mercury',
+      year: 1998,
+      horsepower: 115,
+      model: '115 ELPT',
+      condition: 'good',
+      estimatedValue: 1600,
+    };
+
+    const promoted = quoteReducer(state, { type: 'PROMOTE_TRADE_IN', payload: trade });
+
+    expect(promoted.tradeInInfo).toEqual({ ...trade, hasTradeIn: true });
+    expect(promoted.hasTradein).toBe(true);
+    expect(promoted.motor).toEqual(existingMotor);
+    expect(promoted.customerName).toBe('Taylor Customer');
+    expect(promoted.selectedOptions).toEqual(state.selectedOptions);
+  });
+});
+
 describe('quoteReducer RESTORE_QUOTE', () => {
   it('restores the authoritative QR/PDF state in one action', () => {
     const savedMotor = motor('motor-a', '90 ELPT', 12000);

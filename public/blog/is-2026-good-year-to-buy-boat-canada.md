@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-07-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Is 2026 a Good Year to Buy a Boat in Canada?"
 description: "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative."
 category: "Buying Guide"
 date_published: 2026-04-28
-date_modified: 2026-07-09
+date_modified: 2026-08-08
 keywords: ["buy boat canada 2026","boat market canada","best time to buy boat"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Is 2026 a Good Year to Buy a Boat in Canada?
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-28  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada
 
@@ -40,7 +41,7 @@ language: en-CA
 
 Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have dealt with in the last decade.
 
-Here is an honest read on the market from a third-generation family marina that has been selling and servicing Mercury motors on Rice Lake since 1947. We are not going to tell you it is a great time to buy if we do not believe that.
+Here is an honest read on the market from a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. We are not going to tell you it is a great time to buy if we do not believe that.
 
 ---
 
@@ -92,36 +93,37 @@ Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 enviro
 
 **You are buying out of fear, not need.** "Prices might go up" is not a purchasing strategy on its own. If you are not ready, do not know exactly what you want, and have not done the research, buying in a hurry causes regret.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **You want a premium or specialty boat.** The higher the price point, the more price discovery questions exist in 2026. A $35,000 aluminum boat is a different market than a $150,000+ cabin cruiser.
 
 **The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before going to a showroom.
 
 ---
 
-::decision-card
-eyebrow: 2026 timing decision
-heading: Buy this season, or wait for fall pricing?
-subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
-leftLabel: You need a boat for this season
-leftCriteria:
-  - You sold or lost your previous boat and want water time in 2026
-  - You have a family vacation or cottage booked that needs the boat
-  - Current inventory has something close to what you want
-  - You can pay or finance now without stretching
-leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
-leftVariant: recommended
-rightLabel: You can wait until late fall
-rightCriteria:
-  - You have a working boat that will get through 2026
-  - You want a specific model or HP not currently in stock
-  - You want to negotiate from a position of patience
-  - October to December dealer flexibility matters to you
-rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
-rightVariant: alternative
-whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
-::
+*2026 timing decision*
+
+### Buy this season, or wait for fall pricing?
+
+The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+
+#### You need a boat for this season
+
+- You sold or lost your previous boat and want water time in 2026
+- You have a family vacation or cottage booked that needs the boat
+- Current inventory has something close to what you want
+- You can pay or finance now without stretching
+
+**Buy now, the market is what it is. Lose a season chasing a discount.**
+
+#### You can wait until late fall
+
+- You have a working boat that will get through 2026
+- You want a specific model or HP not currently in stock
+- You want to negotiate from a position of patience
+- October to December dealer flexibility matters to you
+
+**Wait. Off-season pricing and trade-in flexibility are real.**
+
+A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
 
 ---
 
@@ -143,7 +145,7 @@ We sell boats and motors. We are transparent about that.
 
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent for a season first](/blog/renting-vs-owning-boat-ontario-math), HBW has nine boats available on Rice Lake.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent first](/blog/renting-vs-owning-boat-ontario-math); HBW's current pontoon and fishing-boat lineup is listed at harrisboatworks.ca/rentals.
 
 ---
 
@@ -155,18 +157,9 @@ The fourth most common: corroded battery terminals from a boat that sat outside 
 
 ---
 
-## Related reading
-- Mercury Repower Cost Ontario (CAD)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [Mercury Outboard Financing Ontario](/blog/mercury-outboard-financing-ontario-2026)
-- [Boat Rentals on Rice Lake](/blog/rice-lake-boat-rental-guide-2026)
-
 **See real prices. No games.** 
-Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
+Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required.
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
 ---
 
@@ -186,7 +179,7 @@ Most major outboard motors and many boat brands sold in Canada have significant 
 
 ### Is it better to buy a new boat or repower an old one in 2026?
 
-For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you're paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As a reference point, a 2026 Mercury 115 ELPT starts at $19,220 MSRP at HBW, that's the motor only, but it's real inventory at a published price you can act on. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.
+For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you're paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As of August 8, 2026, the [live pricing reference](/pricing-reference) lists the 115 ELPT FourStroke at a $17,083 HBW selling price and $19,030 MSRP, motor only. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.
 
 ### What is a realistic budget for a boat in Canada in 2026?
 
@@ -194,7 +187,7 @@ Based on what's actually on HBW's lot right now: entry-level new aluminum boats 
 
 ### Should I buy a boat or just rent in 2026?
 
-If you're uncertain whether you'll use a boat enough to justify ownership costs, renting for a season first is a legitimate and increasingly practical option. At Harris Boat Works, we ran 346 rentals in 2025, that demand is real and growing. The math generally favours ownership at roughly 30+ days of use per year, below that threshold, renting typically costs less than ownership when you factor in storage, maintenance, insurance, and depreciation. A first-time buyer who rents for one season before purchasing typically makes a better buying decision.
+If you're uncertain whether you'll use a boat enough to justify ownership costs, renting first is a practical way to test the type of boat and access pattern that fit you. There is no universal day-count threshold: compare the live rental rate for your realistic number of days against your own storage, maintenance, insurance, winterizing, depreciation, and financing costs.
 
 ### How do boat financing rates in Canada compare in 2026 vs recent years?
 
@@ -215,23 +208,22 @@ Used boats offer a price break in 2026, but the gap has narrowed compared to pre
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

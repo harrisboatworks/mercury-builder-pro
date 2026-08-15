@@ -16,17 +16,18 @@ keywords: ["hivernisation moteur Mercury Ontario","entretien moteur hors-bord hi
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: service
 ---
 
 # Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario
 
 > Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne.
 
-**Category:** Entretien  
-**Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
+**Catégorie :** Entretien\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-06-19\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 
 ### Réponse rapide
 
@@ -109,25 +110,6 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
-## Questions fréquentes
-
-**Quand dois-je hiverniser mon moteur Mercury en Ontario?** 
-Entre la mi-octobre et la fin novembre pour la plupart des régions. N'attendez pas la première gelée sévère, les places se remplissent en octobre.
-
-**Puis-je hiverniser moi-même mon moteur Mercury?** 
-Oui, si vous avez l'expérience et les bons produits. Les étapes les plus souvent omises par les propriétaires DIY : le fogging et la vidange d'huile d'engrenage. Ne les sautez pas.
-
-**Pourquoi l'éthanol est-il problématique pour les moteurs marins?** 
-L'éthanol absorbe l'humidité et se sépare du carburant lors d'un stockage prolongé. Ce mélange eau-éthanol peut colmater les injecteurs ou le carburateur et causer de la corrosion interne. Carburant sans éthanol ou stabilisant de qualité, ou idéalement les deux.
-
-**Est-ce que Harris Boat Works offre le service d'hivernisation?** 
-Oui. Nous effectuons 584 hivernisations par année à Gores Landing. Réservez à [hbw.wiki/service](https://hbw.wiki/service) le plus tôt possible, les places se remplissent en octobre.
-
-**Est-ce que je dois enlever ma batterie pour l'hiver?** 
-Absolument. Une batterie marine laissée dans le bateau par temps de gel se décharge et peut subir des dommages permanents. Retirez-la, entreposez-la hors gel, et idéalement mettez-la sur un chargeur de maintien.
-
----
-
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Permis de conduire une embarcation au Canada
@@ -162,18 +144,17 @@ Idéalement en septembre ou début octobre. Les places se remplissent vite aprè
 
 Oui. Nous gérons 311 contrats d'entreposage par année , intérieur et extérieur.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

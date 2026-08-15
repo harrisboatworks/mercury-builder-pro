@@ -159,7 +159,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'What is Mercury\'s warranty on new outboards?',
-        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Bonus warranty coverage applies only while an eligible promotion is active. Check <a href="https://www.mercuryrepower.ca/promotions" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">the current promotions page</a> or contact us for the live terms.'
+        answer: 'Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. Both periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check <a href="https://www.mercuryrepower.ca/promotions" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">the current promotions page</a> for live terms.'
       },
       {
         question: 'Where are Mercury outboards made?',

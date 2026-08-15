@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-05-13
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,24 +11,25 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-31
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)
 
 > Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport.
 
-**Category:** Guide d'achat  
-**Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
-**Read time:** 12 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-07-31\
+**Temps de lecture :** 12 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
-# Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
+## Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
 
 *Dernière révision : 2026-05-13*
 
@@ -80,7 +81,7 @@ Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous cou
 - Planifier l'installation
 - Discuter de la logistique de transport (étape suivante)
 
-**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre), plus court hors saison. L'appel téléphonique réserve la place.
+**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre). L'atelier est fermé du 1er décembre au 1er avril. L'appel téléphonique réserve la place.
 
 ### Étape 3 : Transport du bateau jusqu'à Harris Boat Works (1 jour, varie selon l'approche)
 
@@ -90,7 +91,7 @@ Vous avez trois options pour amener le bateau à Gores Landing :
 
 **Option B. Engager un transporteur de bateaux.** Plusieurs services de transport de bateaux ontariens font la route GTA à Kawartha. Coût typique : 300 $ à 600 $ pour un aller pour un bateau typique de 18 à 22 pieds. Cherchez « boat transport Ontario » ou demandez-nous, nous connaissons les opérateurs. Utile si vous n'avez pas de véhicule de remorquage ou que vous ne voulez pas conduire une remorque.
 
-**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait hors saison sans coût de transport.
+**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait dès l'ouverture au printemps, sans coût de transport.
 
 La plupart des clients de la GTA choisissent l'option A. Le trajet 401 plus route régionale 18 est simple.
 
@@ -180,7 +181,7 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 La saison de navigation en Ontario est courte. Le moment de réservation compte :
 
-- **Hiver (décembre à mars)** : idéal. Nous avons du temps en atelier, des pièces disponibles, parfois des prix d'hiver, moteur prêt pour le printemps.
+- **Hiver (décembre à mars)** : idéal pour réserver, pas pour installer. L'atelier est fermé du 1er décembre au 1er avril et aucun travail de service ou de remotorisation n'y est effectué. Réservez en novembre ou tôt au printemps, et le travail commence dès l'ouverture en avril.
 - **Début du printemps (avril)** : encore bon. L'horaire se remplit d'ici la fin avril.
 - **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d'attente. Possible de mettre à l'eau avec le nouveau moteur en plein été.
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.
@@ -271,18 +272,17 @@ Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass b
 
 Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

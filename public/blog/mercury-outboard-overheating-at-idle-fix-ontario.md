@@ -1,6 +1,11 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
 last_updated: 2026-07-23
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
@@ -11,6 +16,7 @@ keywords: ["mercury outboard overheating","mercury overheating at idle","mercury
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Overheating at Idle Fix
@@ -19,7 +25,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -111,8 +117,6 @@ In some cases, the overheat alarm is triggered by a faulty temperature sensor ra
 - The motor doesn't feel or sound like it's struggling
 - The alarm is intermittent and doesn't correlate with observable symptoms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Sensor diagnosis requires dealer tools to read temperature sensor values against actual powerhead temperature. If you suspect a sensor issue, this is a professional diagnostic.
 
 ---
@@ -152,31 +156,8 @@ The actual fix at the shop, after the impeller test, is usually a five-minute ho
 
 ---
 
----
-
-## Related at HBW
-
-The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
-- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
-
----
-
-## Related reading
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-
----
-
 **Overheating at idle needs to be looked at before your next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
 ## FAQs
@@ -204,20 +185,26 @@ Depends on duration and how you responded. If you got the alarm, throttled to id
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
+- [When to Replace a Mercury Impeller: 12 Years of Shop Data](/blog/mercury-impeller-replacement-when-they-fail), when impellers fail and how to replace
+- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

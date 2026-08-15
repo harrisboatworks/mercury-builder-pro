@@ -16,6 +16,7 @@ keywords: ["اونٹاریو میں مچھلی پکڑنے کا لائسنس (Fis
 author: Harris Boat Works
 content_type: blog_article
 language: ur
+revenue_driver: repower
 ---
 
 # Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ
@@ -24,7 +25,7 @@ language: ur
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**آخری جائزہ:** 2026-06-12  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
 
@@ -62,29 +63,6 @@ Rice Lake کی طرف نکلنے سے پہلے یہ یقینی بنائیں:
 یہ گائیڈ ہم نے اردو میں اس لیے تیار کی ہے کیونکہ ہم مخلصی سے چاہتے ہیں کہ اردو بولنے والے کمیونٹی کے لوگ، ان کے خاندان اور دوست بغیر کسی ڈر کے Rice Lake کی خوبصورتی اور ماہی گیری سے لطف اندوز ہوں۔ اس طرح کی معلومات فراہم کرنا بہت کم لوگوں نے سوچا ہے۔
 
 ایمانداری کی بات یہ ہے کہ Harris Boat Works میں ہماری ٹیم کی سروس کی زبان انگریزی ہے۔ لیکن پریشان مت ہوں: اگر آپ انگریزی میں بات کرنے میں ہچکچاہٹ محسوس کرتے ہیں تو اپنے ساتھ کوئی ایسا رشتہ دار یا دوست لائیں جو انگریزی بولتا ہو، یا اپنے فون پر ترجمے کی ایپ استعمال کریں۔ ہم پورے صبر اور خوش دلی سے آپ کے ساتھ معاملہ طے کریں گے۔
-
-## اکثر پوچھے جانے والے سوالات | FAQ
-
-**کیا میں ہیرس بوٹ ورکس میں اردو میں سروس لے سکتا ہوں؟**  
-ایمانداری سے، ہماری ٹیم انگریزی میں کام کرتی ہے، لیکن ہم نے یہ گائیڈ آپ کی سہولت کے لیے اردو میں لکھی۔ آپ کوئی ایسا ساتھی ساتھ لائیں جو انگریزی بولتا ہو، یا ترجمے کی ایپ استعمال کریں، ہم انتظار کریں گے اور مل کر کام کر لیں گے۔
-
-**اونٹاریو میں مچھلی پکڑنے کا لائسنس کیسے حاصل کروں؟**  
-پہلے Outdoors Card بنوائیں، پھر fishing licence خریدیں۔ Conservation یا Sport میں سے کسی ایک کا انتخاب کریں۔ دونوں آن لائن یا سروس اونٹاریو سے ملتے ہیں۔ تمام لنک اوپر دیے گئے ہیں۔
-
-**ٹورنٹو کے قریب مچھلی پکڑنے کی بہترین جگہیں کون سی ہیں؟**  
-Rice Lake آپ کے لیے Mississauga، Brampton اور Scarborough سے صرف 90 منٹ کی دوری پر ایک پرسکون جھیل ہے۔ یہاں سے کشتی رینٹل لے کر آپ فیملی کے ساتھ بہترین وقت گزار سکتے ہیں۔
-
-**کیا پاکستانیوں یا نئے آنے والوں کے لیے الگ فشنگ رولز ہیں؟**  
-بالکل نہیں۔ Ontario کے قوانین ہر کینیڈین رہائشی کے لیے یکساں ہیں۔ چاہے آپ پاکستان سے ہوں یا کہیں سے، آپ کو وہی Outdoors Card اور لائسنس درکار ہے۔ کوئی خاص چھوٹ نہیں۔
-
-**میں مچھلی کے موسم کا کیلنڈر کہاں دیکھ سکتا ہوں؟**  
-FMZ 17 کے تحت ہر مچھلی کا الگ موسم اور حدود ہیں۔ سرکاری ریگولیشنز سمری ہمیشہ تازہ ترین معلومات فراہم کرتی ہے، اسے چیک کریں: https://www.ontario.ca/document/ontario-fishing-regulations-summary
-
-**فیملی کے ساتھ پہلی بار مچھلی پکڑنے جاؤں تو کون سا پروگرام بہتر ہے؟**  
-مفت Learn to Fish پروگرام بہت مفید ہے، یا کسی Family Fishing Weekend پر بغیر لائسنس کے مفت میں شروع کریں۔
-
-**رائس لیک میں کون سی مچھلیاں ملتی ہیں؟**  
-یہاں walleye، bass، crappie، perch اور muskie عام ہیں، لیکن پکڑنے کی اجازت ہر وقت نہیں ہوتی، اس لیے جا کر دیکھیں کہ سیزن کھلا ہے یا نہیں۔
 
 ## پہلا قدم | آج ہی پلان بنائیں
 
@@ -128,16 +106,15 @@ FMZ 17 کے تحت ہر مچھلی کا الگ موسم اور حدود ہیں۔
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

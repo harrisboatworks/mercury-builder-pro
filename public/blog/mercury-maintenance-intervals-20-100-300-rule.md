@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-07-24
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Outboard Maintenance: 100 and 300 Hours"
 description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean."
 category: "Service & Maintenance"
 date_published: 2026-05-12
-date_modified: 2026-07-24
+date_modified: 2026-08-07
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Maintenance: 100 and 300 Hours
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-07  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
@@ -34,9 +35,7 @@ There are three separate timelines that often get blended together: break-in, an
 
 Here is the clean version.
 
-![Mercury outboard maintenance timeline separating model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.](/lovable-uploads/mercury-maintenance-schedule-100-300-hbw.svg)
-
-## There Is No Universal 20/100/300 Rule
+## Does Mercury Require a 20-Hour Service?
 
 Mercury's current new-owner guidance says a dealer may recommend a quick checkup a few weeks after purchase. For most boaters, the first scheduled service is annual maintenance completed at 100 engine hours or before seasonal storage.
 
@@ -58,7 +57,7 @@ Mercury's public parts guidance describes a 100-hour service at least once a yea
 
 ## Download the Free HBW Maintenance Planner
 
-We turned the useful owner-planning material into an original two-page checklist and service record. It is free, opens directly, and does not ask for an email address.
+We turned the useful owner-planning material into an original two-page checklist and service record. It's free, opens directly, and doesn't ask for an email address.
 
 [Download the Mercury Outboard Maintenance Planner PDF](/downloads/mercury-outboard-maintenance-planner-hbw.pdf "cta")
 
@@ -66,7 +65,7 @@ The first page separates before-every-outing checks, in-season care, annual or 1
 
 The planner deliberately does not flatten every Mercury into one schedule. Keep the engine serial number on the page and use the exact operation and maintenance manual to decide the final task list.
 
-Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy) through a form on its website. HBW does not rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
+Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/whats-in-it-for-you.html). HBW doesn't rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
 
 ## What a 100-Hour or Annual Service Commonly Covers
 
@@ -119,7 +118,7 @@ At HBW:
 
 - Submit fall service before the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
-- Spring service resumes after the April 1 reopening.
+- Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.
 
 Low hours do not automatically erase a calendar interval. The exact manual still decides what is due.
@@ -136,17 +135,11 @@ No service history? Start with an inspection and establish a new baseline. Do no
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Canada, Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
-- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy)
+- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/whats-in-it-for-you.html)
 
 ## Ready to Book the Right Service?
 
-Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We will build the job from the correct Mercury schedule and the boat's actual history.
-
-**Related guides:**
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
 
 ## FAQs
 
@@ -173,23 +166,22 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 ## Related guides
 
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

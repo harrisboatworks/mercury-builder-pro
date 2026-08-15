@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-05-21
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Legend Boats Mercury Packages Ontario"
 description: "Legend Boats with Mercury power: 2026 lineup, pairings, all-in pricing, and hull recommendations from an Ontario Legend dealer."
 category: "Buying Guide"
 date_published: 2026-05-21
-date_modified: 2026-05-21
+date_modified: 2026-08-08
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Legend Boats Mercury Packages Ontario
@@ -24,13 +25,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-21  
-**Last updated:** 2026-05-21  
+**Last reviewed:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 
-# Legend Boats + Mercury Power Packages. Ontario Buyer's Guide (2026)
+## Legend Boats + Mercury Power Packages. Ontario Buyer's Guide (2026)
 
-> **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+> **Quick answer:** Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury, and its boats are designed by Canadians for Canadian water. Legend pairs its boats with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
 
 For pricing on the engines included in Legend power packages, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what's included in a typical rigging package, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains the factory coverage.
 
@@ -109,8 +110,6 @@ Three series across three positioning bands:
 
 ### LE Series, entry-level pontoons, 15-21 ft
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25 ELPT / 40 ELPT Command Thrust (CT on the 40; there is no 25 CT)** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
@@ -131,11 +130,9 @@ The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360Â
 
 ---
 
-::pull-quote
-quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that came up on cruise clean with seven adults on it.** That was the test that ended my shopping.
-attribution: Karen L.
-source: Kawarthas cottage
-::
+> Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that came up on cruise clean with seven adults on it.** That was the test that ended my shopping.
+>
+> Karen L., Kawarthas cottage
 
 ---
 
@@ -203,8 +200,6 @@ A few things that aren't on the Legend website:
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Where are Legend boats designed?
@@ -241,16 +236,15 @@ Mercury Repower Center financing is available through HBW for the engine portion
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON Â· 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

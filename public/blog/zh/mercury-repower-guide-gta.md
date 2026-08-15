@@ -16,6 +16,7 @@ keywords: ["mercury repower gta","gta 华人 mercury","mercury 换机 安省","g
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # 安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 成本分析  
 **Published:** 2026-05-12  
-**Last updated:** 2026-05-12  
+**最后审核:** 2026-05-12  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
@@ -36,24 +37,15 @@ language: zh-CN
 
 Harris Boat Works 是安大略省 Rice Lake 的 [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 授权经销商，1947 年创办至今第三代经营。你可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 查看透明的加元报价，不需要打电话，不需要谈判。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: Mercury Marine Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- Mercury Marine Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 
@@ -160,8 +152,6 @@ HBW 的做法不同：[mercuryrepower.ca](https://www.mercuryrepower.ca) 是一�
 
 ---
 
----
-
 ## 相关阅读
 
 本主题完整指南：**[GTA 华人 Rice Lake 一日游完整行程规划：从多伦多出发到玩一天](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
@@ -233,16 +223,15 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

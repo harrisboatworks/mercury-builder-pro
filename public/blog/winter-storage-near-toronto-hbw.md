@@ -16,6 +16,7 @@ keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boa
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Winter Boat Storage Near Toronto HBW
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
-# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
+## Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
 > **Quick answer:** HBW offers outdoor shrinkwrap storage only. Customers arrange their own fall drop-off and spring pickup at Gores Landing; HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. Request the current storage scope and price at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -103,8 +104,6 @@ As of July 2026, HBW spring commissioning is included for winter-storage custome
 
 Honest cases where local GTA storage makes more sense:
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 - **Boat is owned by a Lake Ontario marina dweller.** If your boat lives in a Toronto-area slip and you boat exclusively on Lake Ontario, the round-trip storage transport doesn't pencil out vs. local options.
 - **You're renting a slip in the GTA somewhere that includes winter storage.** Some marina contracts bundle slip + storage; you're already paying for it.
 - **Boat is over 30 ft.** Transport costs scale with boat size; over 30 ft, transport may exceed any savings.
@@ -165,8 +164,6 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruis
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### How much does winter boat storage cost at HBW?
@@ -208,23 +205,22 @@ Your existing boat insurance typically covers winter storage; some policies requ
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
+- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

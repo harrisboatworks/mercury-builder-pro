@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-07-24
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-07-24
+date_modified: 2026-08-08
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Ontario Cottage Boat Motor Repower Guide (2026)
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
-# Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
+## Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
 
 ## Quick answer
 Start with the boat's compliance notice or capacity label and the manufacturer's rating, not a horsepower-by-length chart. For an outboard boat 6 metres or shorter, [Transport Canada says the capacity label shows the maximum safe motor size](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft). HBW then matches a Mercury within that limit to the hull, load, controls, shaft length, and use. For a real number on your boat, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -74,8 +75,6 @@ An 18 to 22 ft pontoon used for cruising, fishing with the kids, and the occasio
 
 ### The tin boat
 A 14 to 16 ft tiller boat used for solo fishing and quick runs. The motor has been getting harder to start and parts for it have been getting harder to find. These are simple repowers, smaller motor, less rigging, lower cost.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## When should you repower a cottage boat?
 
@@ -131,8 +130,6 @@ HBW is drop-off only for repower projects. Bring the boat to our Gores Landing s
 
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -155,7 +152,7 @@ Most of the time, yes. Evinrude stopped making outboards in 2020 and parts suppo
 
 ### Can I get financing for a cottage repower?
 
-Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms.
 
 ### When is the best time to repower a cottage boat?
 
@@ -176,23 +173,22 @@ HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

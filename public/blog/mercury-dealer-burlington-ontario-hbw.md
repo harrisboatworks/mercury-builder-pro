@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -9,22 +9,23 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-02
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Burlington Ontario HBW
 
 > Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last reviewed:** 2026-08-02  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Burlington boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
-# Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
+## Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 
 Burlington has marine options closer to home. There are dealers in the Hamilton area, including one that carries Mercury. So why do some Burlington customers make the longer drive to Gores Landing?
 
@@ -87,8 +88,6 @@ Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake 
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Getting to Harris Boat Works from Burlington
 
 **Route:** QEW east to Highway 401 east through Toronto, then Highway 115 east (Peterborough direction), then County Road 28 north into Gores Landing.
@@ -133,11 +132,9 @@ The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, 
 
 Why Burlington boaters still drive to HBW:
 
-- **Same-day round-trips work.** Drop the boat off in the morning, head home; we'll call when it's ready.
-- **Annual repower or winterization trip.** Many Burlington customers trailer their boat to HBW once or twice a year for repower work or winterization + storage, then back to a Burlington-area marina for the season.
-- **Mercury Premier-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- **Plan drop-off and pickup as separate trips.** HBW confirms completion timing after the boat and work scope are reviewed.
+- **Annual repower or winterization trip.** Burlington owners can trailer their boat to HBW for booked repower work or winterization and storage, then return it to their local marina for the season.
+- **Mercury Premier-level support.** The practical reasons to make the drive are Mercury-specific diagnostics, a documented rigging scope, current pricing, and one shop accountable for the installation and future service history.
 
 ---
 
@@ -149,7 +146,7 @@ About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on you
 
 ### Is there a closer Mercury dealer to Burlington?
 
-Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.
+Yes. Burlington-area boaters have closer authorized Mercury options in the Hamilton area. HBW is the Rice Lake option for customers who value Premier-tier Mercury support, an accountable repower process, and transparent online CAD pricing.
 
 ### Can I quote and order remotely?
 
@@ -157,24 +154,23 @@ Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then 
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer Markham Ontario HBW](/blog/mercury-dealer-markham-ontario-hbw), Mercury dealer for Markham
+- [Mercury Dealer Mississauga HBW](/blog/mercury-dealer-mississauga-ontario-hbw), Mercury dealer for Mississauga
+- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw), Mercury dealer for Oshawa
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw), Mercury dealer for Pickering
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

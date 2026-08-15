@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Bad Used Boats to Avoid Ontario"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji."
 category: "Buying Guide"
 date_published: 2026-02-17
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Bad Used Boats to Avoid Ontario
@@ -24,38 +25,41 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
-# Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
+## Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
 
 > **Quick answer:** Some used boats are worth buying; many will drain your bank account. The worst offenders we see in Ontario: hulls with structural rot, sterndrives facing imminent rebuild, brand-orphaned motors with no parts pipeline, and wet-floor pontoons hiding deck damage. Inspect transom flex, lower-unit oil colour, and fuel system condition before any private-sale used purchase. The cheap boat is rarely the cheap boat.
 
-::decision-card
-heading: New Mercury outboard, or solid used?
-eyebrow: The real trade-off
-subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
-leftLabel: New Mercury
-leftCriteria:
-  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
-  - You finance and need lender-approved collateral
-  - You will own the boat 7+ years and amortize the cost
-  - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
-  - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
-leftVariant: recommended
-rightLabel: Used Mercury
-rightCriteria:
-  - Cash budget is tight or you want to spend the difference on a better boat
-  - You have a mechanic, or you're handy with a wrench
-  - You only need the motor for 3-5 years
-  - You're willing to accept some service history unknowns
-  - You found a low-hour motor from a trusted source (like HBW certified used)
-rightOutcome: Lower upfront cost, higher risk on repairs after year 2 if the warranty is gone. Buy from a dealer who services Mercury and stand behind it.
-rightVariant: alternative
-whenInDoubt: Bring us the boat. We'll quote both a new motor and a comparable used motor from our inventory so you can see the real per-month cost difference. No pressure either way, we sell both.
-::
+*The real trade-off*
+
+### New Mercury outboard, or solid used?
+
+Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
+
+#### New Mercury
+
+- You want Mercury's 3-year factory warranty, with optional Mercury Product Protection available for up to eight total years
+- You finance and need lender-approved collateral
+- You will own the boat 7+ years and amortize the cost
+- You want the latest tech (SmartCraft, joystick, V8/V10 power options)
+- Resale value matters to you down the line
+
+**Higher upfront cost, but lower per-hour cost of ownership over a long run. Factory coverage plus optional Mercury Product Protection can extend protection to eight total years; the written terms and exclusions control.**
+
+#### Used Mercury
+
+- Cash budget is tight or you want to spend the difference on a better boat
+- You have a mechanic, or you're handy with a wrench
+- You only need the motor for 3-5 years
+- You're willing to accept some service history unknowns
+- You found a low-hour motor from a trusted source (like HBW certified used)
+
+**Lower upfront cost, higher risk on repairs after year 2 if the warranty is gone. Buy from a dealer who services Mercury and stand behind it.**
+
+Bring us the boat. We'll quote both a new motor and a comparable used motor from our inventory so you can see the real per-month cost difference. No pressure either way, we sell both.
 
 ## The Used Boat Market Is Full of Money Pits
 
@@ -134,8 +138,6 @@ Repair costs for serious stringer or transom work often exceed the value of the 
 A freshly painted lower unit on an older motor is not a sign of good maintenance. It's a red flag.
 
 Fresh paint on a lower unit is one of the oldest tricks for hiding corrosion, impact damage, or prop strikes that have never been properly assessed. A well-maintained motor has a lower unit that looks its age, with honest wear and the original finish, not a fresh coat of black slapped on before listing.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 If you see it, ask why it was painted. If the answer is vague, factor in the cost of a full lower unit inspection before you commit.
 
@@ -232,8 +234,6 @@ Or call us at 905-342-2153. We're at Rice Lake, Ontario (in the Kawarthas), Gore
 
 *Harris Boat Works. Mercury Premier Dealer. Gores Landing, ON*
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What used boats should I avoid in Ontario?
@@ -259,23 +259,22 @@ Mercury 4-stroke outboards from 2010 onward with documented service, well-mainta
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario), used-boat walkaround inspection
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario), pontoon vs V-hull comparison
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

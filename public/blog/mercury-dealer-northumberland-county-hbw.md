@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,29 +8,30 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Northumberland HBW"
-description: "Harris Boat Works is Mercury Premier dealer for Northumberland County since 1947. Serves Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system."
+description: "Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-07-24
+date_modified: 2026-08-08
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Northumberland HBW
 
-> Harris Boat Works is Mercury Premier dealer for Northumberland County since 1947. Serves Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system.
+> Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-08  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 
 ## Quick Answer
 
-Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
+Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -38,7 +39,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities, Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
 
-For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
+For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW provides Mercury sales and service right on Rice Lake at Gores Landing.
 
 If you live anywhere in Northumberland County, HBW is your [local Mercury Premier dealer](/blog/best-mercury-dealer-ontario-hbw-difference).
 
@@ -73,7 +74,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [year-round storage](/blog/boat-storage-kawartha-lakes) means the spring launch is already at the lake.
+Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/boat-storage-kawartha-lakes) leaves it close to Rice Lake when we reopen in early April.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -96,7 +97,7 @@ This range is why HBW carries the full Mercury lineup and full SmartCraft diagno
 
 In some markets, "local" is just a 5-kilometer marketing claim. In Northumberland, "local" is functional. The Northumberland boating community is small enough that a bad service experience travels by word of mouth fast. HBW is the dealer that picks up the phone when a Cobourg customer's neighbour calls because the original customer recommended us.
 
-Three generations of HBW have been on Rice Lake. That's longer than most boats in the county have been on the water.
+HBW is on Rice Lake inside Northumberland County. The shop's reputation depends on returning customers and referrals from local boaters.
 
 ## What we see at HBW
 
@@ -118,7 +119,7 @@ For a motor purchase or [repower conversation](/blog/mercury-repower-cost-ontari
 
 ### Who is the Mercury dealer for Northumberland County?
 
-Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.
+Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.
 
 ### How far is HBW from each Northumberland community?
 
@@ -138,24 +139,23 @@ Yes. The Mercury Canada warranty network honours coverage at any authorized Merc
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw), Mercury dealer for Ajax
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
+- [Mercury Dealer Brampton Ontario HBW](/blog/mercury-dealer-brampton-ontario-hbw), Mercury dealer for Brampton
+- [Mercury Dealer Burlington Ontario HBW](/blog/mercury-dealer-burlington-ontario-hbw), Mercury dealer for Burlington
+- [Mercury Dealer Markham Ontario HBW](/blog/mercury-dealer-markham-ontario-hbw), Mercury dealer for Markham
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury SmartCraft Connect Guide 2026"
-description: "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows."
+title: "Mercury SmartCraft Connect: Features, App & Installation"
+description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
-# Mercury SmartCraft Connect Guide 2026
+# Mercury SmartCraft Connect: Features, App & Installation
 
-> Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows.
+> See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -72,7 +73,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
 
 ---
 
@@ -87,28 +88,31 @@ The module is purchased separately from the motor. Pricing is set by Mercury Can
 
 ---
 
-::decision-card
-eyebrow: SmartCraft tier decision
-heading: How seriously do you actually use the boat?
-subhead: SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
-leftLabel: Basic SmartCraft Link is enough
-leftCriteria:
-  - You boat a handful of times per season
-  - You already have working analog gauges
-  - You don't track maintenance digitally
-  - Single user, simple use case
-leftOutcome: Stock gauges, no upgrade
-leftVariant: alternative
-rightLabel: SmartCraft Connect pays back season one
-rightCriteria:
-  - 30+ hours per season on the water
-  - You share the boat with family or partners
-  - You want service intervals tracked automatically
-  - You'd benefit from fuel-burn and route history
-rightOutcome: SmartCraft Connect + Mercury app
-rightVariant: recommended
-whenInDoubt: If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
-::
+*SmartCraft tier decision*
+
+### How seriously do you actually use the boat?
+
+SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
+
+#### Basic SmartCraft Link is enough
+
+- You boat a handful of times per season
+- You already have working analog gauges
+- You don't track maintenance digitally
+- Single user, simple use case
+
+**Stock gauges, no upgrade**
+
+#### SmartCraft Connect pays back season one
+
+- 30+ hours per season on the water
+- You share the boat with family or partners
+- You want service intervals tracked automatically
+- You'd benefit from fuel-burn and route history
+
+**SmartCraft Connect + Mercury app**
+
+If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
 
 ## How It Compares to VesselView Mobile and SmartCraft Gauges
 
@@ -139,8 +143,6 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 ## Install: DIY vs. HBW
 
 The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **DIY works if:** You have done basic electrical work on your boat, you are comfortable removing the cowl, and you know which connector on the motor's harness is the SmartCraft service port.
 
@@ -182,12 +184,6 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ---
 
-## Related reading
-- Mercury Controls & Rigging Guide Ontario
-- Mercury Boost Software Upgrade Eligibility 2026
-- Mercury 9.9 EFI Review Ontario
-- Mercury Outboard Motor Families Guide
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
@@ -196,8 +192,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 [mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -239,23 +233,22 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
+- [Mercury Won't Start After Sitting: Fixes](/blog/mercury-outboard-wont-start-after-sitting), won't-start after sitting fixes
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

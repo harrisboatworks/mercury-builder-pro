@@ -1,0 +1,150 @@
+name: Blog content integrity
+
+on:
+  pull_request:
+    paths:
+      - 'src/data/**'
+      - 'src/components/blog/**'
+      - 'public/blog/**'
+      - 'public/locations/**'
+      - 'public/case-studies/**'
+      - 'public/pricing-reference.md'
+      - 'scripts/**'
+      - 'src/test/blogLiveReadback.test.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/blog-content-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/**'
+      - 'src/components/blog/**'
+      - 'public/blog/**'
+      - 'public/locations/**'
+      - 'public/case-studies/**'
+      - 'public/pricing-reference.md'
+      - 'scripts/**'
+      - 'src/test/blogLiveReadback.test.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/blog-content-integrity.yml'
+  workflow_dispatch:
+  schedule:
+    # Mondays 11:00 UTC (07:00 EDT / 06:00 EST) surfaces date drift early in the week.
+    - cron: '0 11 * * 1'
+
+concurrency:
+  group: blog-content-integrity-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      # Generated prerequisites. These artifacts stay in the runner workspace only;
+      # nothing is committed back, so generated drift never lands on a branch.
+      - name: Generate prerequisites
+        run: |
+          npm run generate:canonical-pricing
+          npm run generate:blog-index
+          npm run generate:product-protection-reference
+
+      - name: Blog leaks
+        run: npm run check:blog-leaks
+        env:
+          STRICT_STALE_YEARS: '1'
+      - name: Blog article schema
+        run: npm run check:blog-articles
+      - name: Output hygiene
+        run: npm run check:blog-output-hygiene
+      - name: Hreflang registry
+        run: npm run check:blog-hreflang-registry
+      - name: Section cards
+        run: npm run check:blog-section-cards
+      - name: Range integrity
+        run: npm run check:blog-range-integrity
+      - name: Internal link graph
+        run: npm run check:blog-internal-links
+      - name: Mandarin Markdown structure
+        run: npm run check:blog-zh-markdown-structure
+      - name: Mandarin code-mix
+        run: npm run check:blog-zh-code-mix
+      - name: Timeline facts
+        run: npm run check:blog-timeline-facts
+      - name: Credibility anchors
+        run: npm run check:blog-credibility-anchors
+      - name: Maintenance agent surface
+        run: npm run check:maintenance-surface
+      - name: Blog asset existence
+        run: npm run check:blog-assets
+      - name: Pricing reference copy
+        run: npm run check:pricing-reference-copy
+      - name: Pricing drift
+        run: npm run check:pricing-drift
+
+      # The two date-maintenance reports must always be produced, even when the
+      # checkers fail, so the summary/artifact steps below can consume them.
+      - name: Blog price hygiene (writes reports/blog-price-hygiene.json)
+        id: price_hygiene
+        if: always()
+        continue-on-error: true
+        run: npm run check:blog-price-hygiene
+      - name: Publishing integrity (writes reports/blog-regulatory-review.json)
+        id: publishing_integrity
+        if: always()
+        continue-on-error: true
+        run: npm run check:publishing-integrity
+
+      - name: Confirm no generated drift was introduced
+        run: |
+          git diff --quiet -- . ':(exclude)reports' || {
+            echo "Generated prerequisites produced uncommitted drift:";
+            git --no-pager diff --stat -- . ':(exclude)reports';
+            exit 1;
+          }
+
+      - name: Upload date-maintenance reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-maintenance-reports-${{ github.run_id }}
+          path: |
+            reports/blog-price-hygiene.json
+            reports/blog-regulatory-review.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      # Scheduled and manual runs treat an overdue review as a failing check.
+      # Pull requests report the same table but only fail on real errors.
+      - name: Summarize date-maintenance reports
+        if: always()
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/summarize-blog-maintenance-reports.mjs --strict
+          else
+            node scripts/summarize-blog-maintenance-reports.mjs
+          fi
+
+      - name: Fail if a maintenance checker failed
+        if: always()
+        run: |
+          if [ "${{ steps.price_hygiene.outcome }}" != "success" ] || [ "${{ steps.publishing_integrity.outcome }}" != "success" ]; then
+            echo "price hygiene: ${{ steps.price_hygiene.outcome }}, publishing integrity: ${{ steps.publishing_integrity.outcome }}"
+            exit 1
+          fi
+
+      - name: Live readback parser tests
+        if: always()
+        run: npx vitest run src/test/blogLiveReadback.test.ts

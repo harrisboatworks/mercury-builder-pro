@@ -16,6 +16,7 @@ keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum wa
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: product-protection
 ---
 
 # Mercury Extended Warranty Ontario
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-17  
+**Last reviewed:** 2026-07-17  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 
@@ -39,30 +40,47 @@ language: en-CA
 
 [See current Canadian pricing](/mercury-product-protection), with the full rate card by horsepower and plan term.
 
-::cost-stack
-heading: What an extended Mercury warranty actually costs
-eyebrow: The math at a glance
-subhead: Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
-item1Label: Small portable (2.5 to 39.9 HP), 2-year plan
-item1Value: $137 - $319
-item1Note: Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
-item2Label: Mid-range (40 to 74.9 HP), 3-year plan
-item2Value: $904
-item2Note: Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
-item3Label: High-HP (75 to 199.9 HP), 3-year plan
-item3Value: $1,376 - $1,921
-item3Note: Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
-item3Accent: true
-item4Label: Big block (200 to 399.9 HP), 3-year plan
-item4Value: $4,612 - $6,579
-item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
-item5Label: Current Canadian deductible
-item5Value: $50 per claim
-item5Note: Paid directly to the authorized servicing dealer. The complete Canadian Platinum contract terms govern.
-totalLabel: Reality check
-totalValue: Coverage costs less than one bad day
-caveat: Pricing is before HST and subject to current Mercury eligibility and contract terms. HBW confirms the motor's serial record, manufacture date, hours, current coverage and final price before registration.
-::
+*The math at a glance*
+
+### What an extended Mercury warranty actually costs
+
+Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
+
+#### Small portable (2.5 to 39.9 HP), 2-year plan
+
+**$137 - $319**
+
+Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
+
+#### Mid-range (40 to 74.9 HP), 3-year plan
+
+**$904**
+
+Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
+
+#### High-HP (75 to 199.9 HP), 3-year plan
+
+**$1,376 - $1,921**
+
+Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
+
+#### Big block (200 to 399.9 HP), 3-year plan
+
+**$4,612 - $6,579**
+
+V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
+
+#### Current Canadian deductible
+
+**$50 per claim**
+
+Paid directly to the authorized servicing dealer. The complete Canadian Platinum contract terms govern.
+
+#### Reality check
+
+**Coverage costs less than one bad day**
+
+*Pricing is before HST and subject to current Mercury eligibility and contract terms. HBW confirms the motor's serial record, manufacture date, hours, current coverage and final price before registration.*
 
 ## What Mercury Product Protection Is
 
@@ -138,8 +156,6 @@ To enroll in Mercury Product Protection:
 4. **Recreational use only.** Charter, commercial fishing, government, or work-related use is excluded.
 5. **The Canadian contract and registration rules must apply.** HBW confirms the original sale and serial record before quoting coverage.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 We verify eligibility using your engine model and serial number. Start with the [Mercury Product Protection pricing page](/mercury-product-protection), then contact HBW for confirmation before you commit.
 
 ## Real CAD Pricing (HBW)
@@ -178,7 +194,7 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce the financial shock of an eligible major component failure during the coverage period. Compare the exact plan price with the covered components, exclusions and your ownership horizon instead of assuming every repair will be covered or that the plan is guaranteed to pay for itself.
 
 ## Transferability and Resale Value
 
@@ -204,7 +220,6 @@ Visit the [Mercury Product Protection page](/mercury-product-protection), choose
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
 
 ## FAQs
@@ -235,21 +250,20 @@ Use the Mercury Product Protection page at /mercury-product-protection for the m
 
 ## Related guides
 
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 - [Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)](/blog/legend-boats-warranty-canada-wowranty-guide-2026), the Legend Boats WOWranty guide
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Review the current Mercury Product Protection rate card: https://www.mercuryrepower.ca/mercury-product-protection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- Keep the commercial next step focused on the Product Protection rate card.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

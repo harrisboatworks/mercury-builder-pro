@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Outboard Octane and Ethanol Guide for Ontario"
 description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-07-30
+date_modified: 2026-07-31
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Octane and Ethanol Guide for Ontario
@@ -24,12 +25,9 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last updated:** 2026-07-30  
-**Read time:** ~12 min read
-
+**Last reviewed:** 2026-07-31  
+**Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
-
-# Mercury Outboard Octane and Ethanol Guide for Ontario
 
 > **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
 
@@ -39,6 +37,8 @@ Here's the safe choice. Make two independent checks:
 
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
+
+[Download the Marine Fuel & Storage Quick Guide](/downloads/marine-fuel-storage-quick-guide-hbw.pdf) for the pump and storage checklist in one page.
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 
@@ -166,7 +166,7 @@ Send the serial number and the exact fuel label with your service request. We'll
 ## Sources
 
 - Harris Boat Works fuel-dock product specification: ethanol-free, 89 octane
-- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
+- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
 - [Mercury Marine, How to Stabilize the Fuel in Your Boat](https://www.mercurymarine.com/ca/en/lifestyle/dockline/quick-tip--how-to-stabilize-the-fuel-in-your-boat)
 - [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
 - [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
@@ -209,22 +209,22 @@ Record the engine serial number, fuel grade, ethanol label, purchase date and lo
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

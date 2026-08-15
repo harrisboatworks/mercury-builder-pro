@@ -111,6 +111,7 @@ export const blogClusters: BlogCluster[] = [
       "new-vs-used-mercury-outboard-ontario",
       "bad-used-boats-to-avoid-ontario",
       "used-boat-walkaround-inspection-ontario",
+      "new-vs-used-pontoon-boats-ontario",
       "pontoon-vs-v-hull-comparison-ontario",
       "aluminum-vs-fiberglass-hull-ontario",
       "best-boats-rice-lake-under-30000",
@@ -154,6 +155,7 @@ export const blogClusters: BlogCluster[] = [
       "breaking-in-new-mercury-motor-guide",
       "new-mercury-outboard-first-season-guide-ontario",
       "mercury-outboard-oil-capacity-chart",
+      "mercury-outboard-maintenance-parts-list",
       "boat-trailer-maintenance-guide-ontario",
       "boat-trailering-mistakes-ontario",
       "accidentally-increase-boat-service-bills-ontario",
@@ -197,6 +199,7 @@ export const blogClusters: BlogCluster[] = [
       "boat-motor-trade-in-guide",
       "outboard-trade-in-value-ontario-hbw",
       "bilge-pump-troubleshooting-guide",
+      "mercury-outboard-repair-guide",
     ],
   },
   {
@@ -323,7 +326,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-pro-xs-repower-rice-lake-kawartha-anglers": "Pro XS repower for Kawartha anglers",
   "mercury-dts-vs-mechanical-controls-ontario-repower": "DTS vs mechanical controls on a repower",
   "ontario-cottage-boat-motor-repower-guide": "cottage-specific repower considerations",
-  "boat-hull-replacement-vs-repower-decision": "repower the motor or replace the boat?",
+  "boat-hull-replacement-vs-repower-decision": "is this hull structurally worth repowering?",
   "winter-repower-planning-guide": "why winter is the smart time to plan",
   "pleasure-craft-licence-update-repower-ontario": "updating your PCL after a repower",
   "mercury-ordering-process": "how Mercury motors are ordered and delivered",
@@ -352,7 +355,7 @@ export const blogClusterContexts: Record<string, string> = {
   "pontoon-hp-sizing-decision-tree-ontario": "pontoon HP sizing decision tree",
   "outboard-shaft-length-guide": "shaft length by transom height",
   "how-to-read-boat-capacity-plate-ontario": "how to read the capacity plate",
-  "repower-horsepower-capacity-plate-guide": "HP limits on the capacity plate for repowers",
+  "repower-horsepower-capacity-plate-guide": "choose repower HP from the hull rating",
   "mercury-main-and-trolling-motor": "main outboard plus trolling motor setups",
   "portable-outboard-mercury-guide-2-20hp": "portable 2–20 HP options",
   "tiller-vs-remote-steering-outboard-guide": "tiller vs remote steering",
@@ -369,6 +372,7 @@ export const blogClusterContexts: Record<string, string> = {
   "new-vs-used-mercury-outboard-ontario": "new vs used Mercury tradeoffs",
   "bad-used-boats-to-avoid-ontario": "used boats to avoid in Ontario",
   "used-boat-walkaround-inspection-ontario": "used-boat walkaround inspection",
+  "new-vs-used-pontoon-boats-ontario": "new vs used pontoon value comparison",
   "pontoon-vs-v-hull-comparison-ontario": "pontoon vs V-hull comparison",
   "aluminum-vs-fiberglass-hull-ontario": "aluminum vs fibreglass hulls",
   "best-boats-rice-lake-under-30000": "Rice Lake boats under $30K",
@@ -380,7 +384,7 @@ export const blogClusterContexts: Record<string, string> = {
   // Cluster 5 — Local Knowledge & Fishing
   "best-mercury-outboard-rice-lake-fishing": "best Mercury for Rice Lake fishing",
   "best-mercury-outboard-lake-simcoe-walleye-fishing": "Lake Simcoe walleye picks",
-  "best-mercury-outboard-lake-ontario-salmon-trout": "Lake Ontario salmon and trout setups",
+  "best-mercury-outboard-lake-ontario-salmon-trout": "best Mercury main outboard for Lake Ontario salmon",
   "lake-ontario-salmon-mercury-setup-guide-2026": "Lake Ontario salmon rigging setup",
   "musky-boat-motor-guide-kawarthas": "musky-boat motor guide",
   "mercury-prokicker-rice-lake-fishing-guide": "Pro Kicker on Rice Lake",
@@ -389,13 +393,14 @@ export const blogClusterContexts: Record<string, string> = {
   "trailer-boat-toronto-to-rice-lake-guide": "trailering from Toronto to Rice Lake",
   // Cluster 6 — Maintenance, Service & Seasonal
   "mercury-maintenance-intervals-20-100-300-rule": "the model-specific Mercury service schedule",
+  "mercury-outboard-maintenance-parts-list": "the full Mercury maintenance parts and part-number list",
   "mercury-motor-maintenance-seasonal-tips": "seasonal maintenance tips",
   "diy-mercury-outboard-winterization-guide": "DIY winterization steps",
   "boat-winterization-cost-ontario-2026": "boat winterization cost in Ontario",
   "winter-boat-storage-shrinkwrap-vs-indoor-ontario": "shrink-wrap vs indoor winter storage",
-  "outdoor-boat-storage-shrinkwrap-rice-lake": "outdoor shrink-wrap storage on Rice Lake",
+  "outdoor-boat-storage-shrinkwrap-rice-lake": "HBW outdoor winter storage and shrink-wrap scope",
   "winter-storage-near-toronto-hbw": "winter storage options near Toronto",
-  "boat-storage-kawartha-lakes": "boat storage in the Kawarthas",
+  "boat-storage-kawartha-lakes": "compare Kawartha Lakes boat storage options",
   "spring-outboard-commissioning-checklist": "spring commissioning checklist",
   "mercury-outboard-spring-run-up-checklist-ontario": "spring run-up checklist",
   "breaking-in-new-mercury-motor-guide": "breaking in a new Mercury",
@@ -507,6 +512,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-100-hour-service-cost-ontario": "what the 100-hour service covers",
   "spring-commissioning-cost-ontario": "spring commissioning costs in Ontario",
   "bilge-pump-troubleshooting-guide": "diagnosing a bilge pump that won't run",
+  "mercury-outboard-repair-guide": "repair symptoms, triage, and service next steps",
   "mercury-outboard-reliability-2026": "how Mercury reliability holds up in 2026",
   "renting-vs-owning-boat-ontario-math": "the rent vs own math for Ontario boaters",
   "group-boat-rentals-rice-lake": "renting for a group on Rice Lake",
@@ -534,6 +540,13 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
  * neighbours live outside their primary cluster.
  */
 export const relatedSlugsOverrides: Record<string, string[]> = {
+  "why-mercury-dominates-outboard-market": [
+    "mercury-vs-yamaha-outboards-ontario",
+    "mercury-vs-yamaha-vs-honda-reliability-2026",
+    "mercury-vs-suzuki-outboard-reliability-2026",
+    "why-harris-boat-works-mercury-dealer",
+    "harris-boat-works-since-1947-rice-lake-institution",
+  ],
   "renting-vs-owning-boat-ontario-math": [
     "rice-lake-boat-rental-guide-2026",
     "first-time-boat-rental-rice-lake-guide",
@@ -585,13 +598,17 @@ export function getRelatedSlugs(slug: string, max = 5): string[] {
   const cluster = getClusterForSlug(slug);
   if (!cluster) return [];
   const isPillar = cluster.pillar === slug;
-  const out: string[] = [];
-  if (!isPillar) out.push(cluster.pillar);
-  for (const s of cluster.spokes) {
-    if (s === slug) continue;
-    if (s === cluster.pillar) continue;
-    out.push(s);
-    if (out.length >= max) break;
+  const out: string[] = isPillar ? [] : [cluster.pillar];
+  const start = isPillar ? 0 : cluster.spokes.indexOf(slug) + 1;
+
+  // Walk the spokes as a ring. The previous first-N strategy sent every
+  // article to the same handful of early spokes, leaving later articles with
+  // no inbound link even though they belonged to a cluster. Spokes still lead
+  // with the pillar, then distribute their remaining links across neighbours.
+  for (let offset = 0; offset < cluster.spokes.length && out.length < max; offset++) {
+    const candidate = cluster.spokes[(start + offset) % cluster.spokes.length];
+    if (candidate === slug) continue;
+    out.push(candidate);
   }
   return out.slice(0, max);
 }

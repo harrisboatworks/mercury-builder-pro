@@ -8,14 +8,14 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-15',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
     content: `### Respuesta rápida
 
-Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24.41 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de $24.41 CAD y puede ajustarse anualmente. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
 
@@ -39,7 +39,7 @@ La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/mari
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
 - Duración: **vitalicia**, se obtiene una sola vez
 - Formato: examen en línea, aprobación con 75% o más
-- Costo: aproximadamente **$40, 50 CAD** según el proveedor acreditado
+- Costo: aproximadamente **$40–$50 CAD** según el proveedor acreditado
 - Debes llevar el original físico en el bote, no se aceptan copias ni fotos
 - Multa por no tenerla: desde **$250 CAD**
 
@@ -49,7 +49,7 @@ El examen está disponible en inglés y francés en el sitio de Transporte Canad
 
 Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
 
-- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24.41 CAD**
+- Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente
 - Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
 - La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
 
@@ -75,10 +75,10 @@ El límite legal de alcohol en sangre al operar una embarcación es **0.08**, ig
 
 | Tipo | Tamaño típico | Motor típico | Mejor para |
 |------|--------------|-------------|-----------|
-| Aluminio de pesca | 14, 18 pies | 25, 90 HP (según placa de capacidad) | Pesca, lagos interiores, fácil mantenimiento |
-| Pontón | 18, 24 pies | 60, 150 HP | Familia, crucero, aguas tranquilas |
-| Bowrider / Runabout | 16, 22 pies | 90, 150+ HP | Deportes acuáticos, esquí, wakeboard |
-| Centro de consola | 18, 24 pies | 115, 200+ HP | Pesca, versatilidad, viento y oleaje |
+| Aluminio de pesca | 14–18 pies | 25–90 HP (según placa de capacidad) | Pesca, lagos interiores, fácil mantenimiento |
+| Pontón | 18–24 pies | 60–150 HP | Familia, crucero, aguas tranquilas |
+| Bowrider / Runabout | 16–22 pies | 90–150+ HP | Deportes acuáticos, esquí, wakeboard |
+| Centro de consola | 18–24 pies | 115–200+ HP | Pesca, versatilidad, viento y oleaje |
 
 **Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca es la opción más práctica, económica de mantener y fácil de trailerar. Como guía según la placa de capacidad: 14 pies suele permitir 25 a 30 HP; 15 pies, 30 a 40 HP; 16 pies, 40 a 60 HP; 17 a 18 pies, 60 a 90 HP. Confirme siempre la placa de capacidad del bote antes de elegir la potencia.
 
@@ -118,17 +118,17 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 
 | Concepto | Rango estimado anual |
 |----------|---------------------|
-| Almacenamiento de invierno | $800, $2,500 CAD |
-| Invernización (winterization) | $200, $500 CAD |
-| Puesta en marcha primavera | $200, $400 CAD |
-| Combustible (temporada) | $500, $2,000 CAD |
-| Seguro | $300, $800 CAD |
-| Mantenimiento / servicio | $200, $600 CAD |
-| Slip de marina / amarre | $1,000, $3,000+ CAD |
+| Almacenamiento de invierno | $800–$2,500 CAD |
+| Invernización (winterization) | $200–$500 CAD |
+| Puesta en marcha primavera | $200–$400 CAD |
+| Combustible (temporada) | $500–$2,000 CAD |
+| Seguro | $300–$800 CAD |
+| Mantenimiento / servicio | $200–$600 CAD |
+| Slip de marina / amarre | $1,000–$3,000+ CAD |
 
 Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
-**Consejo práctico:** Si usas el bote menos de 30 días al año, la renta puede ser más económica que la propiedad. Nuestras 9 embarcaciones de renta en Harris Boat Works generaron 346 rentals en 2025. Llama o consulta en harrisboatworks.ca para disponibilidad y tarifas.
+**Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
 ---
 
@@ -197,7 +197,7 @@ harrisboatworks.ca
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-12',
     category: 'Pesca',
     readTime: '12 min',
@@ -236,10 +236,10 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye (lucioperca / doré) | 2.º sábado de mayo , 15 noviembre | 4 |
-| Bass de boca grande (largemouth) | 3.er sábado de junio , 15 diciembre | 6 |
-| Bass de boca pequeña (smallmouth) | 3.er sábado de junio , 15 diciembre | 6 |
-| Muskie (lucio almizclero) | 1.er sábado de junio , 15 diciembre | 1 |
+| Walleye (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre | 4 |
+| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
+| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
+| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
 | Perca amarilla (yellow perch) | Todo el año | 50 |
 | Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
 
@@ -252,13 +252,13 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 El walleye (en inglés: walleye; en francés: doré) es la especie estrella de Rice Lake. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
 
 **Por qué Rice Lake produce walleye consistentemente:**
-- Profundidad moderada con áreas de 3, 8 metros ideales para walleye
+- Profundidad moderada con áreas de 3–8 metros ideales para walleye
 - Vegetación acuática (cabeza de flecha, nenúfar) que crea cover natural
 - El sistema Trent-Severn mantiene corrientes que el walleye prefiere para desovar
 
 **Técnicas básicas:**
-- **Jigging vertical** en 8, 15 pies con jig de 1/4, 1/2 oz en colores chartreuse, blanco o naranja
-- **Arrastre lento (trolling)** a 1.3, 1.8 mph con señuelos de buceo o cucharas articuladas
+- **Jigging vertical** en 8–15 pies con jig de 1/4–1/2 oz en colores chartreuse, blanco o naranja
+- **Arrastre lento (trolling)** a 1.3–1.8 mph con señuelos de buceo o cucharas articuladas
 - La hora dorada es al amanecer y al atardecer, el walleye es especialmente activo con poca luz
 
 ---
@@ -283,8 +283,8 @@ La perca es la opción más accesible, disponible todo el año, con un límite g
 
 Para pescar en Ontario se requiere:
 
-1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9, 11 CAD, válida 3 años
-2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25, 30 CAD anuales (varía según categoría)
+1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9–$11 CAD, válida 3 años
+2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25–$30 CAD anuales (varía según categoría)
 
 Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
 
@@ -296,9 +296,7 @@ Las licencias se compran en línea (ontario.ca), en tiendas de artículos deport
 
 ## Renta de botes en Harris Boat Works
 
-Si no tienes embarcación propia, Harris Boat Works renta botes por día en Rice Lake. Nuestra flota incluye **9 embarcaciones** (pontones de 20, 24 pies, V-hulls de 16 pies), todas equipadas y listas para salir.
-
-En 2025 realizamos **346 rentas** con ingresos brutos de $119,000 CAD, hay demanda real, y en temporada alta los fines de semana se reservan con anticipación.
+Si no tienes embarcación propia, Harris Boat Works renta botes en Rice Lake. La lista actual en línea incluye 20 Transporter, 23 Cruise, 24 Transporter, el pontón Halo y botes 16 ProSport. La disponibilidad, la capacidad, el equipo y las tarifas cambian según el bote y la fecha; consulta y reserva en harrisboatworks.ca/rentals.
 
 También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol (E10) del combustible de gasolinera puede causar separación de fases en sistemas de combustible marinos, nuestro combustible evita ese problema. No enviamos a nuestros clientes a otro lugar por combustible sin etanol.
 
@@ -321,11 +319,11 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 **5:30 AM**, Salida de Toronto por 401E 
 **7:00 AM**, Llegada a Gores Landing, Harris Boat Works 
 **7:15 AM**, Salida al lago (equipo propio o renta) 
-**7:30, 11:00 AM**, Pesca matutina (mejor hora para walleye) 
+**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye) 
 **11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra 
-**1:00, 5:00 PM**, Tarde: bass o perca 
+**1:00–5:00 PM**, Tarde: bass o perca 
 **5:30 PM**, Regreso a HBW, combustible 
-**6:00, 7:00 PM**, Regreso a Toronto
+**6:00–7:00 PM**, Regreso a Toronto
 
 ---
 
@@ -538,14 +536,14 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-08',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
     keywords: ['Mercury 115 vs 150', 'motor fuera de borda 115 o 150 HP', 'Mercury FourStroke comparación', 'remotorización Mercury Ontario'],
     content: `### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16, 19 pies con 2, 3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19, 22 pies con cargas de 4, 5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -570,8 +568,8 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Potencia | 115 HP | 150 HP |
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
-| RPM máximo (WOT) | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
-| Rango de botes | 16, 19 pies | 19, 22 pies |
+| RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
+| Rango de botes | 16–19 pies | 19–22 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -595,7 +593,7 @@ Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian 
 
 ### Consumo de combustible
 
-Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60, 70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
+Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
@@ -622,15 +620,15 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote es de 16, 19 pies
-- Sales típicamente con 2, 3 personas
+- Tu bote es de 16–19 pies
+- Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote es de 19, 22 pies
-- Sales regularmente con 4, 5 personas o carga completa
+- Tu bote es de 19–22 pies
+- Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
 - Planeas usar el bote para deportes acuáticos (esquí, wakeboard)
@@ -641,7 +639,7 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000, $5,000+ CAD dependiendo de la configuración.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000–$5,000+ CAD dependiendo de la configuración.
 
 ---
 
@@ -666,7 +664,7 @@ Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede
 Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
 
 **¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?** 
-Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000, 3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
+Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000–3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
 
 **¿Puedo financiar el motor?** 
 Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
@@ -861,18 +859,22 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-15',
     publishDate: '2026-04-12',
     category: 'Regulaciones',
     readTime: '12 min',
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24.41 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
-### Artículo completo
+## Una nota sobre el idioma
+
+Este artículo está disponible en español porque queremos que la información sobre navegación en Ontario llegue a más clientes. Es una traducción de cortesía.
+
+Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o llamas, te responderemos en inglés. Puedes pedirle ayuda a un familiar o a un amigo que hable inglés, o usar una aplicación de traducción. Con gusto te atenderemos.
 
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
@@ -892,7 +894,7 @@ La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licenci
 | Cobertura | Todo Canadá |
 | Requisito | Examen con 75% mínimo de aprobación |
 | Modalidad | En línea, con proveedor acreditado por Transporte Canadá |
-| Costo típico | $40, 50 CAD |
+| Costo | Varía según el proveedor acreditado |
 | Documento requerido | Original físico en la embarcación, no copias, no fotos |
 | Multa sin ella | Desde $250 CAD |
 
@@ -913,9 +915,9 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 **Aplica si el motor es de 10 HP (7.5 kW) o más.**
 
-### Cambio reciente (diciembre 2025):
+### Vigencia y tarifa actuales
 
-Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24.41 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
+Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. La tarifa federal actual para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** y puede ajustarse anualmente. Las licencias antiguas sin fecha de vencimiento se están incorporando gradualmente al nuevo esquema; verifica el vencimiento de la tuya en tc.gc.ca.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 
@@ -923,7 +925,7 @@ La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más
 
 ## Restricciones para menores de edad
 
-Ontario tiene reglas específicas sobre quién puede operar una embarcación según la edad:
+Ontario tiene reglas específicas para menores que operan una embarcación **sin supervisión directa de una persona de 16 años o más**:
 
 | Edad | Restricción |
 |------|------------|
@@ -948,7 +950,7 @@ Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mí
 | Línea de rescate flotante | 15 metros mínimo |
 | Propulsión alternativa o ancla | Uno de los dos |
 | Luces de navegación | Obligatorias si navegas de noche o con visibilidad reducida |
-| Extintor de incendios | Si la embarcación tiene cabina o motor fuera de borda cerrado |
+| Extintor de incendios | Si tiene motor intraborda, tanque de combustible fijo o aparato de cocina, calefacción o refrigeración que quema combustible |
 
 **Importante:** Este equipo debe estar en condiciones de uso, no solo a bordo. Los chalecos deteriorados o con hongos pueden no ser considerados válidos en una inspección.
 
@@ -964,15 +966,16 @@ Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mí
 
 Las reglas básicas de paso en embarcaciones siguen convenciones similares al tráfico vehicular pero con particularidades náuticas. Las principales:
 
-- Las embarcaciones de vela tienen prioridad sobre las de motor en la mayoría de situaciones
-- Las embarcaciones más pequeñas y maniobrables deben ceder paso a las de mayor calado o menor maniobrabilidad
-- En un canal, las embarcaciones que viajan por babor (izquierda) de otro deben ceder
+- Entre dos embarcaciones de motor que se aproximan de frente, ambas alteran el rumbo hacia estribor
+- En un cruce entre embarcaciones de motor, la que ve a la otra por estribor debe mantenerse apartada
+- La embarcación que adelanta debe mantenerse apartada; en canales angostos, no se debe impedir el paso de una embarcación que solo puede navegar con seguridad dentro del canal
+- Las embarcaciones de vela suelen tener prioridad sobre las de motor, pero existen excepciones; confirma la regla aplicable antes de maniobrar
 
 Para reglas completas, consulta el Reglamento de Colisión (COLREGs) y las guías de Transporte Canadá.
 
 ### Alcohol al timón
 
-El límite de alcohol en sangre (BAC) es **0.08**, igual que al conducir un auto. Las consecuencias incluyen cargos criminales bajo el Código Criminal de Canadá. La Policía Provincial de Ontario (OPP) realiza patrullajes náuticos especialmente durante fines de semana largos.
+Un BAC de **0.08 o más** puede resultar en cargos criminales, pero en Ontario las consecuencias administrativas comienzan en el rango de advertencia de **0.05 a 0.079**. La opción segura es no consumir alcohol al operar una embarcación. La Policía Provincial de Ontario (OPP) realiza patrullajes náuticos especialmente durante fines de semana largos.
 
 ---
 
@@ -983,7 +986,7 @@ Muchas personas confunden las dos. Son requisitos completamente separados:
 - La **PCOC** te permite operar la embarcación
 - La **licencia de pesca** te permite pescar en Ontario
 
-Para pescar en Ontario necesitas una **Outdoors Card** (~$9, 11 CAD, válida 3 años) más una **licencia deportiva de pesca** (~$25, 30 CAD anual para residentes). Las personas de **18 a 64 años** necesitan licencia. Verifica en ontario.ca/fishing las reglas actuales para cada categoría de edad y residencia.
+Para pescar en Ontario necesitas una **Outdoors Card** (~$9 a $11 CAD, válida 3 años) más una **licencia deportiva de pesca** (~$25 a $30 CAD anual para residentes). Las personas de **18 a 64 años** necesitan licencia. Verifica en ontario.ca/fishing las reglas actuales para cada categoría de edad y residencia.
 
 ---
 
@@ -996,7 +999,7 @@ Si remolcas tu bote en un trailer por las carreteras de Ontario:
 - Hay restricciones de ancho total, la mayoría de botes recreativos cumplen sin problema
 - El trailer puede requerir su propio registro de placa dependiendo del peso total
 
-Para botes de más de 21 pies o pesos combinados superiores, verifica los requisitos de licencia comercial de conductor en ontario.ca.
+Los requisitos de remolque dependen del peso combinado, las dimensiones, los frenos, el vehículo tractor y la clase de licencia. Verifica la configuración específica en ontario.ca antes de remolcar.
 
 ---
 
@@ -1040,7 +1043,7 @@ Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en or
 
 Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
 
-¿Preguntas? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
 
 Harris Boat Works 
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
@@ -1049,7 +1052,7 @@ harrisboatworks.ca
     faqs: [
       { question: '¿Mi licencia de conducir de vehículo reemplaza la PCOC?', answer: 'No. Son dos certificaciones distintas. Su licencia de conducir no tiene validez en el agua.' },
       { question: '¿La PCOC es válida en otras provincias?', answer: 'Sí. Es una certificación federal, válida en todo Canadá.' },
-      { question: '¿Necesito la PCOC si alquilo un bote?', answer: 'Sí. Si usted opera el motor, necesita la PCOC, incluso si la embarcación es alquilada. Harris Boat Works pide ver su tarjeta antes de entregar las llaves.' },
+      { question: '¿Necesito la PCOC si alquilo un bote?', answer: 'La normativa federal permite ciertas pruebas alternativas de competencia durante un alquiler, incluida una lista de seguridad completada con la empresa de alquiler. Harris Boat Works aplica su propia regla más estricta y exige una PCOC válida a cada conductor antes de entregar el bote.' },
       { question: '¿Se necesita la PCOC para un kayak o canoa?', answer: 'No. Solo para embarcaciones motorizadas. Kayaks, canoas y tablas de paddle (SUP) no están incluidos.' },
       { question: '¿La PCOC es lo mismo que el PCL?', answer: 'No. La PCOC es la competencia del operador. El PCL es el registro de la embarcación.' },
     ],

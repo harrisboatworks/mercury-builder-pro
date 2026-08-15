@@ -16,6 +16,7 @@ keywords: ["how to trim a boat","Mercury outboard trim","trim in vs trim out","b
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge
@@ -24,11 +25,9 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-02-22  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-07-30  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
-
-# How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge
 
 > **Quick answer:** Tuck the outboard in before accelerating onto plane. Once the boat settles, trim out in short taps while holding steady throttle. Stop when speed quits improving, RPM rises without matching speed, steering gets loose, the bow starts bouncing, or the prop ventilates. Load, speed and water conditions change the right setting, so read the boat rather than memorizing a gauge number.
 
@@ -160,11 +159,6 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON  
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-**Related guides:**
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide)
-- [Mercury VesselView and SmartCraft Guide](/blog/mercury-vesselview-smartcraft-plain-english-guide)
-
 ## FAQs
 
 ### Should I trim all the way down before accelerating?
@@ -197,24 +191,23 @@ No. A gauge helps you repeat a known setting, but it cannot tell you whether tod
 
 ## Related guides
 
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
+- [Boat Motor Trade-In Ontario Guide](/blog/boat-motor-trade-in-guide), trade-in valuation guide
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

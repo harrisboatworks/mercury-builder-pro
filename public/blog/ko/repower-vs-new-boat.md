@@ -16,6 +16,7 @@ keywords: ["선외기 교체 vs 새 보트","repower 가성비","온타리오 �
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # 선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 엔진 교체  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
 
@@ -126,31 +127,6 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 ---
 
-## 자주 묻는 질문
-
-**엔진 교체 비용은 얼마나 드나요?** 
-보트 종류와 원하는 마력에 따라 크게 다릅니다. 정확한 비용은 mercuryrepower.ca에서 실시간으로 확인하세요. 숨겨진 항목 없이, 실제 비용을 CAD로 보여드립니다.
-
-**선체 상태를 어떻게 확인할 수 있나요?** 
-트랜섬(선미판)과 바닥을 눌러보세요. 물렁한 느낌이 나면 구조 문제가 있을 수 있습니다. 확실하지 않다면 보트를 가져오세요, 저희가 직접 살펴보고 솔직하게 말씀드리겠습니다.
-
-**영어로만 소통해야 하나요?** 
-온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbw.wiki/service)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
-
-**Gores Landing까지 얼마나 걸리나요?** 
-GTA에서 차로 약 1시간 30분 거리입니다. Rice Lake와 Kawartha Lakes 지역에서는 더 가깝습니다.
-
-**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?** 
-엔진 수리 및 설치는 Mercury와 Mercruiser만 취급합니다.
-
-**새 Legend 보트는 어떻게 볼 수 있나요?** 
-harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
-
----
-
-*관련 자료 (영어): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
----
-
 ## FAQs
 
 ### 선체 상태를 어떻게 판단하나요?
@@ -175,16 +151,15 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

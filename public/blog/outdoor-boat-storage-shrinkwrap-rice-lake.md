@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Outdoor Boat Storage Rice Lake"
+title: "HBW Outdoor Winter Boat Storage & Shrinkwrap"
 description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
-# Outdoor Boat Storage Rice Lake
+# HBW Outdoor Winter Boat Storage & Shrinkwrap
 
 > Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
@@ -164,14 +165,6 @@ Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not 
 
 ---
 
-## Related Guides
-
-- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
-- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
-- [Boat Storage in the Kawartha Lakes](/blog/boat-storage-kawartha-lakes)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
-
 ## Sources and Scope
 
 - [HBW service request](https://hbw.wiki/service), current drop-off workflow and Mercury/MerCruiser repair boundary
@@ -226,22 +219,23 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Related guides
 
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Kawartha Lakes Boat Storage: What to Compare Before Booking](/blog/boat-storage-kawartha-lakes), compare Kawartha Lakes boat storage options
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

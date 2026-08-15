@@ -16,6 +16,7 @@ keywords: ["mercury propeller","mercury prop selection","wot rpm test","command 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Propeller Selection Guide 2026
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Technical Reference  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last reviewed:** 2026-05-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 
@@ -94,12 +95,7 @@ The big-picture matching table. Specific pitch depends on horsepower and how the
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-slug: prop-selection-by-hull-matrix
-type: infographic
-aspect: 16:9
-description: Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family
-prompt: HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/prop-selection-by-hull-matrix.svg
+![Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family](/lovable-uploads/prop-selection-by-hull-matrix.svg)
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 
@@ -150,21 +146,11 @@ Things we see customers do that we wish they would not:
 
 **Trying to fix a prop problem when the actual issue is hull or load.** Boats that ride heavy, take on water, or have a layout that pushes weight backward will under-perform with any prop until the underlying issue is addressed.
 
-## Related at HBW
-
-Other technical reference content in the same cluster:
-
-- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), measure transom height and decode Mercury shaft codes
-- [Breaking In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), break-in protocol before WOT testing
-- [Mercury 90 HP FourStroke Review (Ontario)](/blog/mercury-90-hp-fourstroke-review-ontario), sample hull-to-motor matching
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), motor selection that drives prop selection
-- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), if you are considering Boost, prop selection may need to be re-confirmed after
-
 Quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) includes a prop selection step. Live CAD pricing, hull matching, and prop family recommendation in under 5 minutes.
 
 If you have a current Mercury setup and the prop is wrong (over-pitched, under-pitched, wrong family for the hull), bring it in for a service visit. We will run the WOT test and recommend the right replacement.
 
-Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: (905) 342-2153
 Text: (647) 952-2153
@@ -202,23 +188,22 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 ## Related guides
 
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,23 +8,24 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
-description: "Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when."
+description: "Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["mercury command thrust","command thrust pontoon","mercury gearcase","pontoon repower","mercury fourstroke pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?
 
-> Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when.
+> Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
 
@@ -96,15 +97,13 @@ We make this call per boat at HBW. The right answer depends on the specific hull
 
 A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props won't fit or perform correctly.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Command Thrust props typically:
 - Run larger diameter than standard (specific size depends on motor HP)
 - Use a lower pitch range, optimized for hole shot and load handling rather than top speed
 - Use 4-blade designs more often, better hole shot and smoother trolling
 - Come in aluminum or stainless depending on HP class and use
 
-For pontoons, 4-blade aluminum is the most common Command Thrust prop. We test props during the sea trial of every Command Thrust install at HBW.
+For pontoons, 4-blade aluminum is a common Command Thrust starting point. Final prop selection depends on the hull, load, motor, and safe seasonal testing conditions.
 
 ---
 
@@ -132,14 +131,6 @@ We quote both paths (retrofit vs new motor) at HBW. Call 905-342-2153 if you wan
 
 ---
 
-## Related posts
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-
----
-
 ## Ready to repower with Command Thrust?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Or call **905-342-2153**, we rig Command Thrust setups every week and can give you the honest answer for your hull.
@@ -162,7 +153,7 @@ For pontoons 18 ft and up, yes. Command Thrust gives meaningful hole shot, load-
 
 ### How much does Command Thrust cost over the standard gearcase?
 
-Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.
+Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup.
 
 ### Will my standard prop fit on a Command Thrust gearcase?
 
@@ -195,23 +186,22 @@ Properly maintained, the same lifespan as the motor itself (1,500 to 2,000+ hour
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
+- [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), straight talk on Command Thrust gearcases
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

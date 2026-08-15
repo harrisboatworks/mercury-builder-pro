@@ -1,0 +1,56 @@
+name: Blog live readback
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 12:15 UTC (08:15 EDT / 07:15 EST), after overnight deploys settle.
+    - cron: '15 12 * * *'
+
+concurrency:
+  group: blog-live-readback
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  readback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Parser tests run first so a live FAIL can be attributed to production
+      # content rather than to a broken checker.
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Readback parser tests (offline, fixture-driven)
+        run: npx vitest run src/test/blogLiveReadback.test.ts
+
+      - name: Cache-busted production Markdown readback
+        id: readback
+        continue-on-error: true
+        run: node scripts/blog-live-readback.mjs
+        env:
+          BLOG_READBACK_TIMEOUT_MS: '20000'
+
+      - name: Upload readback report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-live-readback-${{ github.run_id }}
+          path: reports/blog-live-readback.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Fail on readback failures
+        if: always()
+        run: |
+          if [ "${{ steps.readback.outcome }}" != "success" ]; then
+            echo "Production readback reported failures. See the job summary and reports/blog-live-readback.json artifact."
+            exit 1
+          fi

@@ -459,8 +459,11 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
               <strong>Financing rates:</strong> {FINANCING_RATES_BULLET}
             </li>
             <li>
-              <strong>Deposits:</strong> $200 under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP+. Refundable
-              within 7 days for in-stock motors. Special-order deposits are non-refundable.
+              <strong>Deposits:</strong> Standard amounts are $200 under 75 HP, $500 for 75–199 HP, and $1,000
+              for 200 HP+. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. It is
+              fully refundable until HBW confirms the exact motor, price, availability and ETA, and the customer
+              approves the order in writing. After written approval, it becomes non-refundable and is credited to
+              the final invoice. Other motors follow the terms shown in the written quote.
             </li>
             <li>
               <strong>Warranty:</strong> Standard 3-year Mercury warranty. Promotional bonus years apply only

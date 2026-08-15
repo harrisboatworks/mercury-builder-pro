@@ -16,6 +16,7 @@ keywords: ["boat service near Toronto","Mercury service Oakville","outboard repa
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Boat Service Near Toronto HBW Reach
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
-# Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
+## Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
 > **Quick answer:** HBW is a Mercury-only, customer drop-off and pickup shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. It may not make sense for a simple local job or a boat you cannot bring to us. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 
@@ -165,12 +166,6 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
-
 ## FAQs
 
 ### Does HBW pick up or deliver GTA boats?
@@ -211,16 +206,15 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -16,6 +16,7 @@ keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboar
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Common Pontoon Problems on Rice Lake
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
-# Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
+## Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
 > **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 
@@ -96,25 +97,39 @@ If you're buying a used pontoon, press down on the deck with your foot in a few 
 
 ---
 
-::diagnostic-flow
-heading: Pontoon acting up? Run this check before calling
-eyebrow: Pontoon diagnostic flow
-subhead: Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
-step1Label: Weeds in the prop
-step1Question: Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?
-step1Tip: Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
-step2Label: Corroded fittings at the helm
-step2Question: Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?
-step2Tip: Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
-step3Label: Soft spots in the deck
-step3Question: Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?
-step3Tip: A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
-step4Label: Tube damage from grounding
-step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
-step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
-escalationLabel: Found something or unsure?
-escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
-::
+*Pontoon diagnostic flow*
+
+### Pontoon acting up? Run this check before calling
+
+Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
+
+#### Weeds in the prop
+
+**Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?**
+
+Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
+
+#### Corroded fittings at the helm
+
+**Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?**
+
+Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
+
+#### Soft spots in the deck
+
+**Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?**
+
+A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
+
+#### Tube damage from grounding
+
+**With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.**
+
+Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
+
+#### Found something or unsure?
+
+Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
 
 ---
 
@@ -131,8 +146,6 @@ What we see most: corroded wiring harnesses at the helm, green and brittle conne
 - Accessories that stop functioning mid-season
 
 Wiring work is time-consuming to fix right. Keeping up with it (cleaning and protecting connections with dielectric grease, replacing any corroded terminal ends before they fail) is far cheaper than rewiring a console.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -221,18 +234,6 @@ Call us at 905-342-2153 or request service online. We'll give you a straight ans
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\](/blog/best-boats-rice-lake-under-30000)
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What is the most common problem with pontoon boats on Rice Lake?
@@ -258,23 +259,22 @@ For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture,
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
+- [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), straight talk on Command Thrust gearcases
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

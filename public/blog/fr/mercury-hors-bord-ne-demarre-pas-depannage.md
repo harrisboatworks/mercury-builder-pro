@@ -16,17 +16,18 @@ keywords: ["Mercury hors-bord ne démarre pas","dépannage hors-bord Mercury","p
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: service
 ---
 
 # Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)
 
 > La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète.
 
-**Category:** Dépannage  
-**Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
-**Read time:** 12 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
+**Catégorie :** Dépannage\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-05-13\
+**Temps de lecture :** 12 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
 
 **Langue :** Français (Québec)
 
@@ -247,18 +248,17 @@ Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) 
 
 Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

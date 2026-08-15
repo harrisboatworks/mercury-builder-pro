@@ -16,6 +16,7 @@ keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Warranty Canada 2026
@@ -24,13 +25,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
-# Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
+## Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
+> **Quick answer:** Eligible new Mercury FourStroke outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -50,7 +51,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Bonus warranty promotions sometimes extend that base for eligible purchases, but those offers are time-limited. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
+That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
 
 ---
 
@@ -84,28 +85,31 @@ The phrase "improper installation" matters. Mercury can exclude damage caused by
 
 ---
 
-::decision-card
-eyebrow: Extended warranty decision
-heading: Should you buy Mercury Product Protection?
-subhead: Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
-leftLabel: Take MPP extended coverage
-leftCriteria:
-  - You're financing the motor over 5+ years
-  - You plan to keep the boat 7+ years
-  - You run meaningful seasonal hours or tow regularly
-  - Peace of mind matters more than the upfront cost
-leftOutcome: Price the eligible Platinum term
-leftVariant: recommended
-rightLabel: Factory coverage is enough
-rightCriteria:
-  - You're paying cash
-  - You typically flip boats every 3 to 5 years
-  - You run a modest seasonal schedule
-  - You service religiously and keep records
-rightOutcome: Stick with the 3-year factory
-rightVariant: alternative
-whenInDoubt: Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
-::
+*Extended warranty decision*
+
+### Should you buy Mercury Product Protection?
+
+Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
+
+#### Take MPP extended coverage
+
+- You're financing the motor over 5+ years
+- You plan to keep the boat 7+ years
+- You run meaningful seasonal hours or tow regularly
+- Peace of mind matters more than the upfront cost
+
+**Price the eligible Platinum term**
+
+#### Factory coverage is enough
+
+- You're paying cash
+- You typically flip boats every 3 to 5 years
+- You run a modest seasonal schedule
+- You service religiously and keep records
+
+**Stick with the 3-year factory**
+
+Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
 
 ## Mercury Product Protection Platinum. The Extended Service Contract
 
@@ -129,8 +133,6 @@ We confirm the available term against the serial record and any applicable promo
 Transferability can also be useful at resale, but it is a documented process, not an automatic promise of a higher selling price.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
@@ -206,8 +208,6 @@ An authorized dealer can verify registration, document the work it performs, and
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Sources
 
 - [Mercury Marine Canada Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) - Official maintenance, exclusion, claim and transfer terms.
@@ -246,16 +246,15 @@ No. Mercury's current guidance permits gasoline containing up to 10% ethanol. Fu
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

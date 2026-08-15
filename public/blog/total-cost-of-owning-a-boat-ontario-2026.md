@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Cost of Owning a Boat Ontario 2026
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-08  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
-# What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
+## What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -113,8 +114,6 @@ In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-l
 
 ---
 
-::walkaround-lead-capture
-
 ## 4. Fuel
 
 The biggest variable on the list, since it depends on how much you actually use the boat.
@@ -141,8 +140,6 @@ The biggest variable on the list, since it depends on how much you actually use 
 - **90 HP 4-stroke, 75 hours, ethanol-free:** ~$1,800-$2,200
 - **150 HP 4-stroke, 75 hours, ethanol-free:** ~$2,400-$3,200
 - **200 HP V6, 75 hours, ethanol-free:** ~$3,000-$4,200
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 For most recreational owners, **fuel is $1,500-$3,500 a year**.
 
@@ -171,7 +168,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 ## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
 
-[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
 [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
@@ -222,9 +219,9 @@ That's why people repower. [A $20,000 Mercury repower on a 15-year-old hull](/bl
 
 A few places HBW's pricing differs from what you'd find elsewhere:
 
-**Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200-$500/year in service work alone.
+**Ethanol-free fuel.** It can reduce some storage and fuel-system concerns, but the financial result depends on usage, storage, fuel turnover, maintenance, and the motor's approved fuel specification. Do not assume a universal annual saving or longer engine life.
 
-**Transparent quote configurator.** [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
+**Transparent quote configurator.** [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you a current Canadian pricing starting point without waiting for a callback. The boat-specific written quote controls the final motor, rigging, labour, tax, trade-in, and financing figures.
 
 **Bundled storage + service.** Drop off in fall for shrinkwrap + winterization, optionally add spring commissioning. One trip, one invoice, no chasing two different vendors for the engine work and the storage.
 
@@ -238,11 +235,10 @@ Boats are not cheap. They are also worth it for the right reasons.
 
 If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. HBW's current Rice Lake lineup includes pontoon and fishing-boat options, with live rates and rental periods shown online. [Book and check availability at harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
----
 ---
 
 ## What we see at HBW
@@ -253,8 +249,6 @@ Year two through five averages out lower if winterization and 100-hour service a
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### Is boat insurance really required if it's not legally required?
@@ -263,7 +257,7 @@ Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Mos
 
 ### Why does HBW charge for the launch ramp when others are free?
 
-Two-lane concrete vs. single-lane gravel. 24/7 access vs. dawn-to-dusk. Extended deep ramp usable at low water. Parking, washrooms, fuel, ice, snacks. Courtesy docks. Shelter from prevailing winds. Whether $20/day is worth it depends on how much you value your Saturday morning. The $200 season pass pays for itself by trip 11.
+Compare the current day rate, season-pass price, launch hours, ramp condition, parking, washrooms, fuel, courtesy docks, and wind exposure. Divide the current pass price by the current day rate to find your break-even trip count; confirm both prices with the launch operator before relying on the result.
 
 ### Can I save money by winterizing my boat myself?
 
@@ -284,23 +278,22 @@ Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized,
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

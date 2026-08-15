@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-06-09
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Best Mercury for Lake Ontario Salmon"
-description: "Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells."
+title: "Best Mercury Outboard for Lake Ontario Salmon & Trout"
+description: "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-06-09
+date_modified: 2026-08-08
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
-# Best Mercury for Lake Ontario Salmon
+# Best Mercury Outboard for Lake Ontario Salmon & Trout
 
-> Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells.
+> Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions.
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-08  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
@@ -76,7 +77,7 @@ Tournament use rewards the Pro XS for faster acceleration and more water covered
 
 ### Charter Fishing Operations
 
-**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP 300-350 HP Pro XS V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
+**Recommended:** 26–30+ ft deep-V + Mercury 300 HP Pro XS V8 or 300–350 HP SeaPro commercial-duty variant + 15 HP ProKicker.
 
 Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and Mercruiser.
 
@@ -88,32 +89,33 @@ The same boat handles salmon trolling offshore, walleye fishing on Bay of Quinte
 
 ---
 
-::decision-card
-eyebrow: Lake Ontario HP decision
-heading: How far offshore do you actually run for salmon?
-subhead: Lake Ontario is two different fisheries. Be honest about the one you fish most.
-leftLabel: Near-shore and calm bays
-leftCriteria:
-  - Most days you stay within sight of the marina
-  - You troll in protected water and only leave on calm forecasts
-  - Fuel economy matters more than top end
-  - Boat is 17 to 19 ft with a single main
-leftOutcome: Mercury 115 to 150 FourStroke, no kicker required
-leftVariant: alternative
-rightLabel: 20+ miles for offshore salmon
-rightCriteria:
-  - You run east-west to find temperature breaks
-  - You fish 3 to 6 ft chop regularly, not just on calm days
-  - A 9.9 ProKicker for slow trolling is non-negotiable
-  - Boat is 21 ft or bigger with offshore-rated hull
-rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 9.9 ProKicker
-rightVariant: recommended
-whenInDoubt: If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
-::
+*Lake Ontario HP decision*
+
+### How far offshore do you actually run for salmon?
+
+Lake Ontario is two different fisheries. Be honest about the one you fish most.
+
+#### Near-shore and calm bays
+
+- Most days you stay within sight of the marina
+- You troll in protected water and only leave on calm forecasts
+- Fuel economy matters more than top end
+- Boat is 17 to 19 ft with a single main
+
+**Mercury 115 to 150 FourStroke, no kicker required**
+
+#### 20+ miles for offshore salmon
+
+- You run east-west to find temperature breaks
+- You fish 3 to 6 ft chop regularly, not just on calm days
+- A 15 HP ProKicker for slow trolling is non-negotiable
+- Boat is 21 ft or bigger with offshore-rated hull
+
+**Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker**
+
+If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Mercury Pro XS V8 vs FourStroke V8, Which One for Lake Ontario?
 
@@ -143,21 +145,12 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 
 ---
 
-## Related reading
-- [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-
----
-
 ## Build Your Lake Ontario Setup
 
 Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, no games.
 
 Questions before you configure? Call **905-342-2153**.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON
 
 ## FAQs
@@ -184,7 +177,7 @@ Deep-V or modified-V hulls handle Lake Ontario chop best. Center consoles, walka
 
 ### How much HP do I need for a 24-foot Lake Ontario salmon boat?
 
-For typical recreational trolling, 250 to 300 HP V8. For tournament fishing, 300 HP Pro XS V8 or twin engines. Capacity plate sets the legal ceiling.
+The right motor depends on the exact hull rating, loaded weight, configuration, intended use, and whether the boat is designed for singles or twins. Start with the manufacturer documentation and assess the actual boat rather than selecting horsepower from length alone.
 
 ### Should I run twin engines for Lake Ontario?
 
@@ -196,7 +189,7 @@ For specific applications (charter, tournament, very high HP single setups), yes
 
 ### What's the cost of a typical Lake Ontario salmon repower?
 
-For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,000 to $50,000+ CAD all-in at HBW. Includes rigging, prop, and install. [Live pricing here.](/quote/motor-selection)
+As of August 8, 2026, the lowest listed 250 to 300 HP V8 main-motor price plus a remote 15 HP ProKicker totals $40,348 CAD before rigging, prop, and installation. That is the listed 250ELPT ProXS at $34,848 plus the 15ELPT ProKicker FourStroke at $5,500. Check the [live pricing reference](/pricing-reference), then build a configured quote for the actual 22 to 25 ft setup.
 
 ### Should I consider a sport fisher hull for Lake Ontario?
 
@@ -204,24 +197,22 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 
 ## Related guides
 
-- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

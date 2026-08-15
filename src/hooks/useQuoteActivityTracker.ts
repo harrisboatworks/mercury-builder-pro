@@ -89,6 +89,7 @@ export function useQuoteActivityTracker() {
 
   const sessionId = useRef(getOrCreateSessionId());
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingEvents = useRef<PendingEvent[]>([]);
   const flushing = useRef(false);
 
   // Track previous values to detect meaningful changes
@@ -106,10 +107,40 @@ export function useQuoteActivityTracker() {
   const hasActiveQuote = useRef(false);
 
   const utmParams = useRef(captureUtmParams());
+  const isBlankQuote = !state.isLoading
+    && !state.motor
+    && state.selectedOptions.length === 0
+    && !state.purchasePath
+    && !state.boatInfo
+    && !state.tradeInInfo
+    && !state.installConfig
+    && !state.selectedPromoOption
+    && !state.selectedPackage
+    && state.completedSteps.length === 0
+    && state.currentStep === 1;
 
-  const flush = useCallback(async (event: PendingEvent) => {
-    if (flushing.current) return;
-    flushing.current = true;
+  // The tracker stays mounted across quote routes, so its deduplication refs
+  // must be reset when QuoteContext returns to its blank-journey shape. The
+  // full shape avoids treating a transient missing motor as a new journey.
+  // Keep the session, attribution, and queued writes intact across the reset.
+  useEffect(() => {
+    if (!isBlankQuote || !hasActiveQuote.current) return;
+
+    prevMotorId.current = null;
+    prevOptionsCount.current = 0;
+    prevPurchasePath.current = null;
+    prevHasTradeIn.current = false;
+    prevFinancingTerm.current = 0;
+    prevHasBoatInfo.current = false;
+    prevHasInstallConfig.current = false;
+    prevPromoOption.current = null;
+    prevPackageId.current = null;
+    prevSummaryPath.current = false;
+    submittedTracked.current = false;
+    hasActiveQuote.current = false;
+  }, [isBlankQuote]);
+
+  const insertEvent = useCallback(async (event: PendingEvent) => {
     try {
       const utm = utmParams.current;
       await (supabase as any).from('quote_activity_events').insert({
@@ -130,15 +161,40 @@ export function useQuoteActivityTracker() {
       });
     } catch {
       // Silently fail — analytics should never break the app
-    } finally {
-      flushing.current = false;
     }
   }, [user?.id]);
 
+  // Keep events in order. The previous single-slot debounce could overwrite
+  // motor/options/path events, and the in-flight guard could drop the final
+  // submission event entirely during a fast route transition.
+  const drainQueue = useCallback(async () => {
+    if (flushing.current) return;
+    flushing.current = true;
+    try {
+      while (pendingEvents.current.length > 0) {
+        const event = pendingEvents.current.shift();
+        if (event) await insertEvent(event);
+      }
+    } finally {
+      flushing.current = false;
+    }
+  }, [insertEvent]);
+
+  // Immediate callers (the confirmed submission) enqueue before draining;
+  // callers cannot lose an event just because another insert is in flight.
+  const flush = useCallback((event?: PendingEvent) => {
+    if (event) pendingEvents.current.push(event);
+    return drainQueue();
+  }, [drainQueue]);
+
   const scheduleFlush = useCallback((event: PendingEvent) => {
+    pendingEvents.current.push(event);
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => flush(event), DEBOUNCE_MS);
-  }, [flush]);
+    debounceRef.current = setTimeout(() => {
+      debounceRef.current = null;
+      void drainQueue();
+    }, DEBOUNCE_MS);
+  }, [drainQueue]);
 
   // Helper to get current motor info
   const getMotorInfo = useCallback(() => {

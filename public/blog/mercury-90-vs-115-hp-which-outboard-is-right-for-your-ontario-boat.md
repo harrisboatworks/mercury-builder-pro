@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md
-last_updated: 2026-07-29
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?"
 description: "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value."
 category: "Repower"
 date_published: 2026-07-06
-date_modified: 2026-07-29
+date_modified: 2026-08-07
 keywords: ["Mercury 90","Mercury 115","Ontario boating","repower","aluminum boat","Mercury FourStroke","Outboard Comparison"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-07-06  
-**Last updated:** 2026-07-29  
+**Last reviewed:** 2026-08-07  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat
 
@@ -56,11 +57,11 @@ Because the two engines share the same displacement, their fuel consumption at t
 
 The real-world fuel cost difference over a season of weekend boating on Ontario lakes is modest. The 115's ability to plane at lower RPM can actually improve cruise economy when loaded heavily, because you are not forcing the engine to labour at high throttle openings just to stay on plane. That nuance is exactly why we encourage boaters to consider their typical load, not just the engine spec sheet, when comparing fuel use.
 
-## Command Thrust: Why It Matters for Heavy Loads
+## Command Thrust: Who It's Actually For
 
-Both the 90 and 115 are available with Mercury's Command Thrust (CT) gearcase. A CT gearcase uses a larger-diameter gearcase housing and propeller, which bites more water and generates additional stern lift. For aluminum boats that run heavy, carry multiple passengers, or frequently operate at cottage-settlement loading, Command Thrust can dramatically improve hole shot, handling, and ability to stay on plane at lower speeds.
+Both the 90 and 115 are available with Mercury's Command Thrust (CT) gearcase, but CT is not a general heavy-load upgrade. Its larger gearcase and propeller trade top-end efficiency for low-speed push, which is useful on pontoons and specific workboats.
 
-Choosing a CT model does not change the horsepower rating but can make a 90 feel closer to a standard 115 in terms of load handling, and a 115 CT feels even more authoritative. If your boat is near the maximum recommended weight for its horsepower, opting for the CT gearcase on either the 90 or 115 is a sensible upgrade that we routinely recommend for Ontario cottage and fishing boats.
+The standard gearcase is the right choice for a planing aluminum or fibreglass V-hull. In one HBW back-to-back comparison of two 4.9 m (16 ft) Legend boats with 60 hp, the standard-gearcase boat was faster at the top end. That shop result is boat-specific, but it illustrates the trade-off. If a V-hull struggles under its normal load, check the capacity plate, horsepower, propeller, engine height, and actual load instead of using CT to mask the mismatch. A 9.9 or 15 HP ProKicker with Command Thrust is a different application because the kicker is built for slow trolling. See the [full Command Thrust V-hull and pontoon guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull).
 
 ## Price Difference in Canada (CAD)
 
@@ -78,31 +79,23 @@ A well-maintained 115 will typically fetch a higher resale value and sell more q
 
 Instead of choosing solely by horsepower number, think about the total weight you regularly put on the water. A simple framework is:
 
-- Light loads (under 998 kg (2,200 lb) total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
+- Light loads (under 998 kg (2,200 lb) total on-plane weight): A standard-gearcase 90 hp FourStroke is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
 - Medium loads (998 to 1,270 kg (2,200 to 2,800 lbs)): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
-- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
+- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the standard-gearcase 115 is the clear choice. If the boat still struggles under its normal load, reassess the propeller, rigging, load, and hull instead of adding Command Thrust.
 
 Run through your typical crew, fuel, batteries, and tackle. Multiply by real weights, and you will quickly see whether the 90 or 115 deserves the nod.
 
 ## Repowering at Harris Boat Works: On-Water Test Included
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions. This test verifies that the engine, propeller, and hull are perfectly matched for how you actually use the boat, not just a generic spec-sheet setup. We adjust engine height, propeller choice, and trim until we see the performance and RPM you need.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test checks the engine, propeller, hull, rigging, and RPM together under the agreed load. Results guide any available engine-height, propeller, or trim adjustment; they do not promise a universal speed or performance outcome.
 
 As a third-generation family marina on Rice Lake, our family has been serving Ontario boaters since 1947. We are a Mercury Premier Dealer and a Legend Boats dealer, and we understand the specific demands of Ontario cottage and fishing boat setups. For engine repairs, we only service Mercury and Mercruiser. Our service intake is always open at hbw.wiki/service. Whether you are still deciding between a 90 and a 115 or are ready to build your new engine, our team can walk you through the options and get you on the water with confidence.
-
-## Related Guides
-
-- [Mercury 75 vs 90 vs 115: The Full Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury Command Thrust: Complete Guide 2026](/blog/mercury-command-thrust-complete-guide-2026)
-- [Mercury 90 HP FourStroke Review, Ontario](/blog/mercury-90-hp-fourstroke-review-ontario)
-- [Mercury 115 HP FourStroke Review, Ontario](/blog/mercury-115-hp-fourstroke-review-ontario)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
 
 ## FAQs
 
 ### Can I put a 115 hp engine on a boat rated for 90 hp?
 
-No. Never exceed the maximum horsepower rating on your boat's capacity plate. Doing so is illegal under Canadian regulations, voids your insurance, and creates a serious safety risk. If your boat is rated for a 90 hp maximum, you must choose a 90 hp outboard.
+Treat 90 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. Do not use an oversized existing setup as approval. A 115 HP setup can create serious safety, insurance, warranty, liability, financing, and resale problems.
 
 ### Is the Mercury 115 FourStroke just a tuned 90?
 
@@ -114,7 +107,7 @@ At typical cruising speeds the difference is minor, often within half a litre pe
 
 ### Do both engines come with Command Thrust?
 
-Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine.
+Both the Mercury 90 hp and 115 hp FourStroke have Command Thrust configurations, but availability does not make CT the right choice for a planing aluminum V-hull. Command Thrust is for pontoons and specific workboats. Use the standard gearcase on a 17- to 19-ft aluminum V-hull, then match the propeller to the loaded boat. A ProKicker with Command Thrust is a separate, legitimate trolling application.
 
 ### Should I repower with a 90 or 115 if I plan to sell the boat in a few years?
 
@@ -125,21 +118,20 @@ For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard gener
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

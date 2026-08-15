@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Best Pontoon Outboard 2026: Mercury Buyer's Guide"
 description: "Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["best pontoon outboard mercury","mercury pontoon motor","pontoon repower mercury","command thrust pontoon","mercury 90 hp pontoon","mercury 115 hp pontoon","mercury 150 hp pontoon","pro xs pontoon boost"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Pontoon Outboard 2026: Mercury Buyer's Guide
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
 
@@ -95,9 +96,9 @@ The complete price depends on the exact motor, controls, steering, propeller, tr
 
 ## What about the Mercury Avator on a pontoon?
 
-The Avator 7.5e is a small electric outboard. Useful as a silent kicker on small fishing pontoons for trolling, but not a main motor. Pontoon main propulsion needs sustained torque at 3,500 to 4,500 RPM and the Avator 7.5e is sized for slow-trolling applications.
+The Avator 7.5e is a small electric outboard with 0.75 kW of prop-shaft output. It is intended for compatible small boats, tenders and quiet low-speed use, not as the main motor on a family pontoon. A pontoon setup needs a boat-specific review of displacement, load, speed, route and battery reserve.
 
-Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly 3.5 HP equivalent" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop.
+Mercury rates Avator by prop-shaft output, not by a direct gasoline horsepower figure. The technical specification for the 7.5e is 0.75 kW at the propeller.
 
 If you are building a pontoon repower and you want quiet trolling for walleye or bass, talk to us about pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
 
@@ -109,7 +110,7 @@ The 115 HP Command Thrust on a 22-foot two-tube pontoon is our most common ponto
 
 The single biggest mistake we see is owners stretching too hard on a two-tube pontoon. A 200 HP Pro XS on a basic two-tube pontoon will not transform it. The hull design caps performance regardless of horsepower. If you want significantly faster, the question is "should I go tritoon?" not "can I add 50 HP?"
 
-The Command Thrust upgrade pays for itself in customer satisfaction. We have never had a pontoon customer regret choosing CT. We have had multiple wish they'd added it the first time.
+On a correctly matched pontoon, Command Thrust can materially improve loaded hole shot, low-speed control, and reverse authority. On a light hull that prioritizes top speed, it can add drag and cost without solving a real problem. Match it to the boat instead of relying on a customer-regret claim.
 
 ## Ready to repower your pontoon?
 
@@ -150,23 +151,22 @@ The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quie
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 
