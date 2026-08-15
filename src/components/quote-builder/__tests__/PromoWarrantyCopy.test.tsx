@@ -14,7 +14,7 @@ vi.mock('@/components/ui/countdown-timer', () => ({
 
 vi.mock('@/assets/mercury-logo.png', () => ({ default: 'mercury-logo.png' }));
 
-let currentPromotions: any[] = [];
+let currentPromotions: Array<Record<string, unknown>> = [];
 vi.mock('@/hooks/useActivePromotions', () => ({
   useActivePromotions: () => ({
     promotions: currentPromotions,
