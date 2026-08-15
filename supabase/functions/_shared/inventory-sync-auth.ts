@@ -103,7 +103,7 @@ export async function runPrivilegedInventorySync<T>(
   status?: number;
   error?: string;
 }> {
-  if (!decision.ok) {
+  if (decision.ok === false) {
     return {
       reachedPrivilegedCallback: false,
       status: decision.status,
