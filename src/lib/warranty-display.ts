@@ -37,6 +37,17 @@ export function isWarrantyPromotionActive(
   return true;
 }
 
+/**
+ * Extra years from currently active promotions only (`is_active !== false`
+ * and inside the start/end window).
+ *
+ * When more than one active promo has extra years, this helper uses
+ * Math.max. That is not a proven stacking rule: `useActivePromotions`
+ * `getTotalWarrantyBonusYears` and `agent-quote-api` sum extra years,
+ * while `PromoSelectionPage` / `Promotions.tsx` use a single promo's
+ * `warranty_extra_years`. `promotions.stackable` is applied to discounts
+ * in MotorSelection, not to warranty years.
+ */
 export function getActiveWarrantyExtraYears(
   promotions: WarrantyPromotionInput[],
   now: Date = new Date(),
