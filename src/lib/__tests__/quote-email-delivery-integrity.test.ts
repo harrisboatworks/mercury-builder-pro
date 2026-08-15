@@ -150,14 +150,37 @@ describe("Resend result verification", () => {
 });
 
 describe("idempotency", () => {
-  it("prefers a caller-supplied key", async () => {
-    const key = await deriveIdempotencyKey({
+  it("namespaces and hashes a caller-supplied key rather than trusting it raw", async () => {
+    const base = {
       suppliedKey: "quote-delivery:abc",
       emailType: "quote_delivery",
       quoteNumber: "Q1",
       recipient: "a@b.ca",
+    };
+    const key = await deriveIdempotencyKey(base);
+
+    // Opaque: the raw caller string never becomes the key.
+    expect(key).toMatch(/^supplied:[0-9a-f]{64}$/);
+    expect(key).not.toContain("quote-delivery:abc");
+    // Deterministic for the same message identity.
+    expect(await deriveIdempotencyKey(base)).toBe(key);
+  });
+
+  it("cannot be squatted: the same supplied key for another recipient differs", async () => {
+    const supplied = "quote-delivery:11111111-1111-4111-8111-111111111111";
+    const legitimate = await deriveIdempotencyKey({
+      suppliedKey: supplied,
+      emailType: "quote_delivery",
+      quoteNumber: "Q1",
+      recipient: "buyer@example.ca",
     });
-    expect(key).toBe("supplied:quote-delivery:abc");
+    const attacker = await deriveIdempotencyKey({
+      suppliedKey: supplied,
+      emailType: "quote_delivery",
+      quoteNumber: "Q1",
+      recipient: "attacker@evil.example",
+    });
+    expect(attacker).not.toBe(legitimate);
   });
 
   it("derives the same key for an immediate retry", async () => {

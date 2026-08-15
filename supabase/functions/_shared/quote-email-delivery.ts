@@ -77,8 +77,21 @@ export async function deriveIdempotencyKey(input: {
   now?: number;
   bucketMs?: number;
 }): Promise<string> {
+  // Caller-supplied keys are namespaced and hashed server-side. A raw caller
+  // string was previously used verbatim, so anyone who learned a quote UUID
+  // could squat `quote-delivery:<id>` and suppress the legitimate send. The
+  // hash below plus the recipient/type/quote comparison in
+  // claim_quote_email_delivery_v1 close that off.
   if (input.suppliedKey && input.suppliedKey.trim() !== "") {
-    return "supplied:" + input.suppliedKey.trim();
+    const namespaced = [
+      "hbw-quote-email-v1",
+      input.emailType,
+      input.quoteNumber,
+      input.quoteId || "",
+      normalizeRecipient(input.recipient),
+      input.suppliedKey.trim(),
+    ].join("|");
+    return "supplied:" + (await sha256Hex(namespaced));
   }
 
   const bucketMs = input.bucketMs ?? 10 * 60 * 1000;
@@ -105,7 +118,8 @@ export async function sha256Hex(value: string): Promise<string> {
 export type ClaimVerdict =
   | { status: "claimed"; deliveryId: string }
   | { status: "duplicate"; deliveryId: string; messageId: string | null }
-  | { status: "in_flight"; deliveryId: string };
+  | { status: "in_flight"; deliveryId: string }
+  | { status: "mismatch"; deliveryId: string };
 
 interface RpcClient {
   rpc: (
@@ -158,12 +172,21 @@ export async function claimQuoteEmailDelivery(
       };
     case "in_flight":
       return { status: "in_flight", deliveryId: verdict.delivery_id };
+    case "mismatch":
+      return { status: "mismatch", deliveryId: verdict.delivery_id };
     default:
       throw new Error("unknown delivery claim status: " + verdict.status);
   }
 }
 
-/** Record the outcome of a claimed delivery. Never throws - audit must not break delivery. */
+/**
+ * Record the outcome of a claimed delivery.
+ *
+ * Returns false instead of throwing, so a failed audit cannot break a delivery
+ * that already happened - but the caller MUST surface that false. A failed
+ * completion leaves the row in 'sending', and by design a 'sending' row is not
+ * auto-retaken, so the message will not be silently re-sent.
+ */
 export async function completeQuoteEmailDelivery(
   client: RpcClient,
   params: {
@@ -173,7 +196,7 @@ export async function completeQuoteEmailDelivery(
     errorDetail?: string | null;
     attachmentStatus: string;
   },
-): Promise<void> {
+): Promise<boolean> {
   try {
     const { error } = await client.rpc("complete_quote_email_delivery_v1", {
       _delivery_id: params.deliveryId,
@@ -182,8 +205,13 @@ export async function completeQuoteEmailDelivery(
       _error_detail: params.errorDetail ?? null,
       _attachment_status: params.attachmentStatus,
     });
-    if (error) console.error("delivery audit write failed:", error.message || "unknown");
+    if (error) {
+      console.error("ALERT delivery audit write failed:", error.message || "unknown");
+      return false;
+    }
+    return true;
   } catch (auditError) {
-    console.error("delivery audit write threw:", auditError);
+    console.error("ALERT delivery audit write threw:", auditError);
+    return false;
   }
 }

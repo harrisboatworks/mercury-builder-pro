@@ -13,6 +13,8 @@ interface Props {
   totalPrice: number;
 }
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
 const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, totalPrice }: Props) => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -52,7 +54,12 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
           emailType: 'quote_delivery',
           // Stable for the duration of this click so a transport-level retry
           // cannot produce a second customer email.
-          idempotencyKey: `admin-resend:${quoteId}:${sendKeyRef.current}`,
+          // Only namespace by quote when it is a real uuid; otherwise fall
+          // back to the per-click key alone so a malformed id cannot collide
+          // with, or squat, another quote's delivery key.
+          idempotencyKey: UUID_RE.test(quoteId)
+            ? `admin-resend:${quoteId}:${sendKeyRef.current}`
+            : `admin-resend:${sendKeyRef.current}`,
           leadData: {
             quoteId,
           },

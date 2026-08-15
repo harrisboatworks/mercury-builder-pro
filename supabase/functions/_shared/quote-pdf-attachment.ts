@@ -36,8 +36,14 @@ const ALLOWED_PDF_PATH_PREFIXES = [
 
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 
-/** 25 MB hard ceiling; Resend rejects far smaller, but this bounds memory. */
-export const MAX_PDF_BYTES = 25 * 1024 * 1024;
+/**
+ * 10 MB ceiling. Lowered from 25 MB: Resend's own attachment limit is well
+ * under this, and the previous code read the whole body into memory before
+ * checking any size at all. The reader below stops at this bound.
+ */
+export const MAX_PDF_BYTES = 10 * 1024 * 1024;
+/** Whole-fetch budget, so a slow or stalled origin cannot pin the function. */
+export const PDF_FETCH_TIMEOUT_MS = 15_000;
 /** A valid quote PDF is never this small; catches error pages served as PDF. */
 export const MIN_PDF_BYTES = 512;
 
@@ -120,7 +126,10 @@ export async function fetchQuotePdfAttachment(
   let currentUrl: URL = resolved.url;
 
   for (let hop = 0; hop <= maxRedirects; hop += 1) {
-    const response = await fetchImpl(currentUrl.toString(), { redirect: "manual" });
+    const response = await fetchImpl(currentUrl.toString(), {
+      redirect: "manual",
+      signal: AbortSignal.timeout(PDF_FETCH_TIMEOUT_MS),
+    });
 
     if (REDIRECT_STATUSES.has(response.status)) {
       if (hop === maxRedirects) throw new QuotePdfRejected("redirect-limit-exceeded");
@@ -137,11 +146,12 @@ export async function fetchQuotePdfAttachment(
     const contentType = response.headers.get("content-type");
     if (!isPdfContentType(contentType)) throw new QuotePdfRejected("content-type-not-pdf");
 
+    // content-length is optional and untrusted; treat it only as an early out.
     const declaredLength = Number(response.headers.get("content-length") || "0");
     if (declaredLength > MAX_PDF_BYTES) throw new QuotePdfRejected("declared-size-too-large");
 
-    const bytes = new Uint8Array(await response.arrayBuffer());
-    if (bytes.byteLength > MAX_PDF_BYTES) throw new QuotePdfRejected("size-too-large");
+    // Read with a hard bound rather than buffering an unbounded body first.
+    const bytes = await readBounded(response, MAX_PDF_BYTES);
     if (bytes.byteLength < MIN_PDF_BYTES) throw new QuotePdfRejected("size-too-small");
     if (!hasPdfSignature(bytes)) throw new QuotePdfRejected("missing-pdf-signature");
 
@@ -153,6 +163,47 @@ export async function fetchQuotePdfAttachment(
   }
 
   throw new QuotePdfRejected("redirect-limit-exceeded");
+}
+
+/**
+ * Read a response body, aborting as soon as it exceeds `limit`. Falls back to
+ * arrayBuffer() only when the body is not streamable (test doubles), and
+ * re-checks the bound afterwards either way.
+ */
+async function readBounded(response: Response, limit: number): Promise<Uint8Array> {
+  const body = response.body;
+  if (!body || typeof body.getReader !== "function") {
+    const buffered = new Uint8Array(await response.arrayBuffer());
+    if (buffered.byteLength > limit) throw new QuotePdfRejected("size-too-large");
+    return buffered;
+  }
+
+  const reader = body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value) continue;
+      total += value.byteLength;
+      if (total > limit) {
+        await reader.cancel("size-limit-exceeded").catch(() => {});
+        throw new QuotePdfRejected("size-too-large");
+      }
+      chunks.push(value);
+    }
+  } finally {
+    reader.releaseLock?.();
+  }
+
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return out;
 }
 
 /** Chunked base64 so a multi-MB PDF does not blow the call stack. */

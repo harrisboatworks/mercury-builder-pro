@@ -1,4 +1,7 @@
--- Durable, append-only audit for quote email delivery, plus idempotency.
+-- Durable delivery audit for quote email, plus idempotency.
+--
+-- Not append-only: claim completion updates the row it claimed. Rows are
+-- insert-then-complete, and only service_role can do either.
 --
 -- Replaces the previous pattern in send-quote-email, which did:
 --   customer_quotes.update({notes}).eq('quote_number', <caller supplied>)
@@ -82,6 +85,16 @@ BEGIN
   FROM public.quote_email_deliveries
   WHERE idempotency_key = _idempotency_key;
 
+  -- Key squatting guard. A caller who learns a quote id must not be able to
+  -- reuse its key with a different recipient, email type or quote and thereby
+  -- suppress the legitimate send. Any identity mismatch is refused outright.
+  IF existing.recipient_sha256 IS DISTINCT FROM _recipient_sha256
+     OR existing.email_type IS DISTINCT FROM _email_type
+     OR existing.quote_number IS DISTINCT FROM _quote_number
+     OR existing.quote_id IS DISTINCT FROM _quote_id THEN
+    RETURN jsonb_build_object('status', 'mismatch', 'delivery_id', existing.id);
+  END IF;
+
   IF existing.status = 'sent' THEN
     RETURN jsonb_build_object(
       'status', 'duplicate',
@@ -90,9 +103,13 @@ BEGIN
     );
   END IF;
 
-  -- A prior attempt failed, or crashed mid-flight: allow exactly one retake.
-  IF existing.status = 'failed'
-     OR (existing.status = 'sending' AND existing.created_at < now() - interval '5 minutes') THEN
+  -- Only a row we KNOW the provider rejected may be retried. A row still in
+  -- 'sending' is never auto-retaken: the provider may have accepted the message
+  -- before the function crashed or before the audit write landed, and the
+  -- pinned Resend SDK is not confirmed to honour an Idempotency-Key header, so
+  -- a retake could duplicate a real customer email. Such rows require a
+  -- deliberate operator decision. See LIMITATIONS in the rollout packet.
+  IF existing.status = 'failed' THEN
     UPDATE public.quote_email_deliveries
     SET status = 'sending', created_at = now(), completed_at = NULL, error_detail = NULL
     WHERE id = existing.id;
@@ -120,13 +137,21 @@ BEGIN
     RAISE EXCEPTION 'invalid delivery status: %', _status;
   END IF;
 
+  -- Complete only from 'sending'. Without this, a late or duplicated
+  -- completion could flip an already-'sent' row back through a state that
+  -- makes it eligible for another send.
   UPDATE public.quote_email_deliveries
   SET status = _status,
       provider_message_id = COALESCE(_message_id, provider_message_id),
       error_detail = left(_error_detail, 500),
       attachment_status = _attachment_status,
       completed_at = now()
-  WHERE id = _delivery_id;
+  WHERE id = _delivery_id
+    AND status = 'sending';
+
+  IF NOT FOUND THEN
+    RAISE WARNING 'delivery % was not in sending state; completion ignored', _delivery_id;
+  END IF;
 END;
 $function$;
 

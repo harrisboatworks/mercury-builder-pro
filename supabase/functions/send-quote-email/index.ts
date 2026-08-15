@@ -4,14 +4,12 @@ import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { encodeBase64 } from "../_shared/quote-pdf-attachment.ts";
 import {
-  fetchQuotePdfAttachment,
-  encodeBase64,
-  QuotePdfRejected,
-} from "../_shared/quote-pdf-attachment.ts";
+  executeQuoteEmailFlow,
+  type QuoteEmailPayload,
+} from "../_shared/quote-email-flow.ts";
 import {
-  verifyResendResult,
-  EmailSendFailed,
   deriveIdempotencyKey,
   sha256Hex,
   normalizeRecipient,
@@ -52,13 +50,31 @@ type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 
-// Replace template variables with actual data
+/**
+ * Substitute into an active database-managed template.
+ *
+ * These values are request-controlled on a public (verify_jwt = false)
+ * function and were previously injected raw into template HTML, so a crafted
+ * customerName/quoteNumber/motorModel could inject markup into a real customer
+ * email. buildEmail escapes its own preheader/heading, but the DB template body
+ * never passed through it. Every substitution is escaped here.
+ */
 function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
-  return template
-    .replace(/{{customerName}}/g, data.customerName)
-    .replace(/{{quoteNumber}}/g, data.quoteNumber)
-    .replace(/{{motorModel}}/g, data.motorModel)
-    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
+  const values: Record<string, string> = {
+    customerName: data.customerName,
+    quoteNumber: data.quoteNumber,
+    motorModel: data.motorModel,
+    totalPrice: data.totalPrice.toLocaleString(),
+  };
+  return template.replace(
+    /{{(customerName|quoteNumber|motorModel|totalPrice)}}/g,
+    (_match, key: string) => esc(values[key] ?? ""),
+  );
+}
+
+/** Strip CRLF so a DB-managed subject cannot inject mail headers. */
+function sanitizeEmailSubject(subject: string): string {
+  return subject.replace(/[\r\n]+/g, " ").trim();
 }
 
 function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
@@ -197,10 +213,10 @@ serve(async (req) => {
     
     console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
 
-    // Try to get template from database first
-    let subject: string;
-    let htmlContent: string;
-    
+    // Fetch the active DB template ONCE. Fetching is safe here; RENDERING is
+    // deferred into renderEmail below so nothing is composed until the payload
+    // has had an unusable pdfUrl stripped.
+    let dbTemplate: { subject: string; html_content: string } | null = null;
     try {
       const { data: template, error: templateError } = await supabase
         .from('email_templates')
@@ -208,161 +224,86 @@ serve(async (req) => {
         .eq('type', emailData.emailType)
         .eq('is_active', true)
         .single();
-
       if (template && !templateError) {
-        // Use database template
-        subject = replaceTemplateVariables(template.subject, emailData);
-        htmlContent = replaceTemplateVariables(template.html_content, emailData);
+        dbTemplate = template;
         console.log('Using database template for:', emailData.emailType);
-      } else {
-        throw new Error('Template not found, using fallback');
       }
-    } catch (templateError) {
+    } catch (_templateError) {
       console.log('No database template found, using fallback for:', emailData.emailType);
-      
-      // Fallback to hardcoded templates
-      switch (emailData.emailType) {
-        case 'quote_delivery':
-          subject = `Your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber} | Harris Boat Works`;
-          htmlContent = generateQuoteDeliveryEmail(emailData);
-          break;
+    }
+
+    function renderEmailFor(effective: QuoteEmailRequest): { subject: string; html: string } {
+      if (dbTemplate) {
+        return {
+          subject: sanitizeEmailSubject(
+            dbTemplate.subject
+              .replace(/{{customerName}}/g, effective.customerName)
+              .replace(/{{quoteNumber}}/g, effective.quoteNumber)
+              .replace(/{{motorModel}}/g, effective.motorModel)
+              .replace(/{{totalPrice}}/g, effective.totalPrice.toLocaleString()),
+          ),
+          html: replaceTemplateVariables(dbTemplate.html_content, effective),
+        };
+      }
+
+      switch (effective.emailType) {
         case 'follow_up':
         case 'reminder':
-          subject = `Following up on your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber}`;
-          htmlContent = generateFollowUpEmail(emailData);
-          break;
+          return {
+            subject: sanitizeEmailSubject(`Following up on your Mercury ${effective.motorModel} quote, ref ${effective.quoteNumber}`),
+            html: generateFollowUpEmail(effective),
+          };
         case 'admin_quote_notification':
-          subject = `[QUOTE] ${emailData.leadData?.customerName || "Lead"} - ${emailData.motorModel} - $${emailData.totalPrice?.toLocaleString()}`;
-          htmlContent = generateAdminNotificationEmail(emailData);
-          break;
+          return {
+            subject: sanitizeEmailSubject(`[QUOTE] ${effective.leadData?.customerName || "Lead"} - ${effective.motorModel} - $${effective.totalPrice?.toLocaleString()}`),
+            html: generateAdminNotificationEmail(effective),
+          };
         default:
-          subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
-          htmlContent = generateQuoteDeliveryEmail(emailData);
+          return {
+            subject: sanitizeEmailSubject(`Your Mercury ${effective.motorModel} quote, ref ${effective.quoteNumber} | Harris Boat Works`),
+            html: generateQuoteDeliveryEmail(effective),
+          };
       }
     }
 
-    // Prepare email options
-    const emailOptions: {
-      from: string;
-      to: string[];
-      replyTo: string;
-      subject: string;
-      html: string;
-      attachments?: Array<{ filename: string; content: string }>;
-    } = {
-      from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-      to: [emailData.customerEmail],
-      replyTo: 'info@harrisboatworks.ca',
-      subject: subject,
-      html: htmlContent,
-    };
-
-    // Attach the quote PDF only when it is a genuine, generated PDF artifact.
-    // Anything else (notably an HTML page mislabelled .pdf) is refused and the
-    // email goes out without an attachment rather than with a broken one.
-    let attachmentStatus = 'none';
-    if (emailData.pdfUrl) {
-      try {
-        const pdf = await fetchQuotePdfAttachment(emailData.pdfUrl);
-        emailOptions.attachments = [{
-          filename: `Quote-${emailData.quoteNumber}.pdf`,
-          content: encodeBase64(pdf.bytes),
-        }];
-        attachmentStatus = `attached:${pdf.byteLength}`;
-        console.log('PDF attachment validated, size:', pdf.byteLength, 'bytes');
-      } catch (pdfError) {
-        attachmentStatus = pdfError instanceof QuotePdfRejected
-          ? `rejected:${pdfError.reason}`
-          : 'rejected:fetch-error';
-        console.error('PDF attachment refused:', attachmentStatus);
-        // Deliberate: deliver the quote email without the attachment.
-      }
-    }
-
-    // Claim the send before dispatching so a retry cannot duplicate a customer
-    // email. Callers may pass a stable idempotencyKey; otherwise one is derived.
-    const recipientHash = await sha256Hex(normalizeRecipient(emailData.customerEmail));
-    const idempotencyKey = await deriveIdempotencyKey({
-      suppliedKey: emailData.idempotencyKey,
-      emailType: emailData.emailType,
-      quoteNumber: emailData.quoteNumber,
-      quoteId: emailData.leadData?.quoteId,
-      recipient: emailData.customerEmail,
-    });
-
-    const claim = await claimQuoteEmailDelivery(supabase, {
-      idempotencyKey,
-      emailType: emailData.emailType,
-      quoteNumber: emailData.quoteNumber,
-      quoteId: emailData.leadData?.quoteId,
-      recipientHash,
-      initiator: emailData.emailType === 'admin_quote_notification' ? 'admin' : 'customer',
-    });
-
-    if (claim.status === 'duplicate') {
-      console.log('Duplicate suppressed for delivery', claim.deliveryId);
-      return new Response(
-        JSON.stringify({
-          success: true,
-          duplicate: true,
-          messageId: claim.messageId,
+    // Control flow lives in _shared/quote-email-flow.ts so every branch is
+    // reachable from vitest. Critically, the attachment is resolved and fetched
+    // BEFORE any HTML is rendered: an earlier draft rendered the body (with a
+    // CTA whose href was the caller-supplied pdfUrl) and validated afterwards,
+    // so a rejected URL still shipped a customer-facing link to attacker input.
+    const flowResult = await executeQuoteEmailFlow(emailData as QuoteEmailPayload, {
+      renderEmail: (payload) => renderEmailFor(payload as unknown as QuoteEmailRequest),
+      claim: async ({ idempotencyKey, recipientHash }) =>
+        await claimQuoteEmailDelivery(supabase, {
+          idempotencyKey,
           emailType: emailData.emailType,
+          quoteNumber: emailData.quoteNumber,
+          quoteId: emailData.leadData?.quoteId,
+          recipientHash,
+          initiator: emailData.emailType === 'admin_quote_notification' ? 'admin' : 'customer',
         }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    if (claim.status === 'in_flight') {
-      return new Response(
-        JSON.stringify({ success: false, error: 'A send for this quote is already in progress' }),
-        { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Send, then verify. Resend resolves with {data,error} rather than throwing,
-    // so an unchecked result previously reported success on a rejected send.
-    let verified;
-    try {
-      const emailResponse = await resend.emails.send(emailOptions);
-      verified = verifyResendResult(emailResponse);
-    } catch (sendError) {
-      const detail = sendError instanceof EmailSendFailed
-        ? sendError.detail
-        : sendError instanceof Error ? sendError.message : 'unknown send error';
-      console.error('Quote email send failed:', detail);
-      await completeQuoteEmailDelivery(supabase, {
-        deliveryId: claim.deliveryId,
-        status: 'failed',
-        errorDetail: detail,
-        attachmentStatus,
-      });
-      return new Response(
-        JSON.stringify({ success: false, error: 'Email delivery failed', detail }),
-        { status: 502, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    console.log('Email accepted by provider, id:', verified.messageId);
-
-    // Durable audit for BOTH customer- and admin-initiated sends. Written only
-    // after a verified send, into an append-only table that anonymous callers
-    // cannot address or mutate.
-    await completeQuoteEmailDelivery(supabase, {
-      deliveryId: claim.deliveryId,
-      status: 'sent',
-      messageId: verified.messageId,
-      attachmentStatus,
+      complete: async (input) => await completeQuoteEmailDelivery(supabase, input),
+      sendEmail: async (options) => await resend.emails.send({
+        from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
+        replyTo: 'info@harrisboatworks.ca',
+        ...options,
+      }) as unknown as Awaited<ReturnType<typeof resend.emails.send>>,
+      buildIdempotencyKey: (payload) => deriveIdempotencyKey({
+        suppliedKey: payload.idempotencyKey,
+        emailType: payload.emailType,
+        quoteNumber: payload.quoteNumber,
+        quoteId: payload.leadData?.quoteId,
+        recipient: payload.customerEmail,
+      }),
+      hashRecipient: (email) => sha256Hex(normalizeRecipient(email)),
+      encodeAttachment: encodeBase64,
+      log: (message, detail) => console.log(`[send-quote-email] ${message}`, detail ?? ''),
     });
 
-    return new Response(
-      JSON.stringify({ 
-        success: true, 
-        messageId: verified.messageId,
-        attachmentStatus,
-        emailType: emailData.emailType 
-      }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify(flowResult.body), {
+      status: flowResult.status,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
 
   } catch (error) {
     console.error('Error in send-quote-email function:', error);
