@@ -135,6 +135,7 @@ serve(async (req) => {
         to_phone: formattedPhone,
         message: smsData.message,
         status: 'sent',
+        message_sid: responseData.sid ?? null,
       });
 
     if (logError) {

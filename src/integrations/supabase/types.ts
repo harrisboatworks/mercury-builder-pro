@@ -4241,6 +4241,7 @@ export type Database = {
           error: string | null
           id: string
           message: string
+          message_sid: string | null
           notification_id: string | null
           status: string | null
           to_phone: string
@@ -4250,6 +4251,7 @@ export type Database = {
           error?: string | null
           id?: string
           message: string
+          message_sid?: string | null
           notification_id?: string | null
           status?: string | null
           to_phone: string
@@ -4259,6 +4261,7 @@ export type Database = {
           error?: string | null
           id?: string
           message?: string
+          message_sid?: string | null
           notification_id?: string | null
           status?: string | null
           to_phone?: string
