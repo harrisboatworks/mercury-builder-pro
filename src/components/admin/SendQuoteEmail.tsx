@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -18,24 +18,52 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
   const [sent, setSent] = useState(false);
   const { toast } = useToast();
 
+  const sendKeyRef = useRef<string>('');
+
   const handleSend = async () => {
     setSending(true);
+    sendKeyRef.current = crypto.randomUUID();
     try {
-      const { error } = await supabase.functions.invoke('send-quote-email', {
+      // Only attach a real generated PDF artifact. Previously this passed
+      // `${SITE_URL}/quote/saved/<id>` — an HTML page — which the edge function
+      // fetched and attached as `Quote-*.pdf`, so customers received a broken
+      // attachment. Look for an actual stored PDF instead; if there is none,
+      // send without an attachment rather than mislabelling a web page.
+      let pdfUrl: string | undefined;
+      const { data: storedFiles } = await supabase.storage
+        .from('spec-sheets')
+        .list(quoteId, { limit: 100, sortBy: { column: 'created_at', order: 'desc' } });
+      const newestPdf = storedFiles?.find((file) => file.name.toLowerCase().endsWith('.pdf'));
+      if (newestPdf) {
+        const { data: publicUrlData } = supabase.storage
+          .from('spec-sheets')
+          .getPublicUrl(`${quoteId}/${newestPdf.name}`);
+        pdfUrl = publicUrlData?.publicUrl;
+      }
+
+      const { data, error } = await supabase.functions.invoke('send-quote-email', {
         body: {
           customerEmail,
           customerName,
           quoteNumber: quoteId.slice(0, 8).toUpperCase(),
           motorModel,
           totalPrice,
-          pdfUrl: `${SITE_URL}/quote/saved/${quoteId}`,
+          ...(pdfUrl ? { pdfUrl } : {}),
           emailType: 'quote_delivery',
+          // Stable for the duration of this click so a transport-level retry
+          // cannot produce a second customer email.
+          idempotencyKey: `admin-resend:${quoteId}:${sendKeyRef.current}`,
           leadData: {
             quoteId,
           },
         },
       });
       if (error) throw error;
+      // A 2xx body can still report failure; never show "Email Sent" unless the
+      // provider actually accepted the message.
+      if (!data?.success) {
+        throw new Error(data?.error || 'Email delivery was not confirmed');
+      }
       setSent(true);
       toast({ title: 'Email Sent', description: `Quote emailed to ${customerEmail}` });
       setTimeout(() => setSent(false), 5000);

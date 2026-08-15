@@ -392,7 +392,17 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
           pdfUrl: pdfUrl,
-          emailType: 'quote_delivery'
+          emailType: 'quote_delivery',
+          // quoteId was previously omitted here, so customer-initiated sends
+          // could not be tied back to a quote in the delivery audit.
+          idempotencyKey: `quote-delivery:${quoteId}`,
+          leadData: {
+            customerName: sanitizedContactInfo.name,
+            customerEmail: sanitizedContactInfo.email,
+            customerPhone: sanitizedContactInfo.phone,
+            contactMethod: sanitizedContactInfo.contactMethod,
+            quoteId: quoteId,
+          }
         };
         console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);
         console.log('🔍 [NOTIFICATIONS] Invoking send-quote-email edge function...');
@@ -455,6 +465,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           totalPrice: Math.round(totalCashPrice),
           pdfUrl: pdfUrl,
           emailType: 'admin_quote_notification',
+          idempotencyKey: `admin-quote:${quoteId}`,
           leadData: {
             customerName: sanitizedContactInfo.name,
             customerEmail: sanitizedContactInfo.email,

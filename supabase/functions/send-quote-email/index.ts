@@ -4,6 +4,20 @@ import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import {
+  fetchQuotePdfAttachment,
+  encodeBase64,
+  QuotePdfRejected,
+} from "../_shared/quote-pdf-attachment.ts";
+import {
+  verifyResendResult,
+  EmailSendFailed,
+  deriveIdempotencyKey,
+  sha256Hex,
+  normalizeRecipient,
+  claimQuoteEmailDelivery,
+  completeQuoteEmailDelivery,
+} from "../_shared/quote-email-delivery.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -31,6 +45,7 @@ const quoteEmailSchema = z.object({
   pdfUrl: z.string().url().max(2000).optional(),
   emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
   leadData: leadDataSchema,
+  idempotencyKey: z.string().trim().min(8).max(200).optional(),
 });
 
 type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
@@ -242,50 +257,108 @@ serve(async (req) => {
       html: htmlContent,
     };
 
-    // If PDF URL is provided, fetch and attach it
+    // Attach the quote PDF only when it is a genuine, generated PDF artifact.
+    // Anything else (notably an HTML page mislabelled .pdf) is refused and the
+    // email goes out without an attachment rather than with a broken one.
+    let attachmentStatus = 'none';
     if (emailData.pdfUrl) {
       try {
-        console.log('Fetching PDF from:', emailData.pdfUrl);
-        const pdfResponse = await fetch(emailData.pdfUrl);
-        
-        if (!pdfResponse.ok) {
-          throw new Error(`Failed to fetch PDF: ${pdfResponse.statusText}`);
-        }
-        
-        const pdfBuffer = await pdfResponse.arrayBuffer();
-        const pdfBase64 = btoa(
-          new Uint8Array(pdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
-        );
-        
+        const pdf = await fetchQuotePdfAttachment(emailData.pdfUrl);
         emailOptions.attachments = [{
           filename: `Quote-${emailData.quoteNumber}.pdf`,
-          content: pdfBase64,
+          content: encodeBase64(pdf.bytes),
         }];
-        
-        console.log('PDF attachment prepared, size:', pdfBuffer.byteLength, 'bytes');
+        attachmentStatus = `attached:${pdf.byteLength}`;
+        console.log('PDF attachment validated, size:', pdf.byteLength, 'bytes');
       } catch (pdfError) {
-        console.error('Error fetching/attaching PDF:', pdfError);
-        // Continue sending email without attachment
+        attachmentStatus = pdfError instanceof QuotePdfRejected
+          ? `rejected:${pdfError.reason}`
+          : 'rejected:fetch-error';
+        console.error('PDF attachment refused:', attachmentStatus);
+        // Deliberate: deliver the quote email without the attachment.
       }
     }
 
-    // Send email via Resend
-    const emailResponse = await resend.emails.send(emailOptions);
+    // Claim the send before dispatching so a retry cannot duplicate a customer
+    // email. Callers may pass a stable idempotencyKey; otherwise one is derived.
+    const recipientHash = await sha256Hex(normalizeRecipient(emailData.customerEmail));
+    const idempotencyKey = await deriveIdempotencyKey({
+      suppliedKey: emailData.idempotencyKey,
+      emailType: emailData.emailType,
+      quoteNumber: emailData.quoteNumber,
+      quoteId: emailData.leadData?.quoteId,
+      recipient: emailData.customerEmail,
+    });
 
-    console.log('Email sent successfully:', emailResponse);
+    const claim = await claimQuoteEmailDelivery(supabase, {
+      idempotencyKey,
+      emailType: emailData.emailType,
+      quoteNumber: emailData.quoteNumber,
+      quoteId: emailData.leadData?.quoteId,
+      recipientHash,
+      initiator: emailData.emailType === 'admin_quote_notification' ? 'admin' : 'customer',
+    });
 
-    // Log the email activity
-    await supabase
-      .from('customer_quotes')
-      .update({
-        notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
-      })
-      .eq('quote_number', emailData.quoteNumber);
+    if (claim.status === 'duplicate') {
+      console.log('Duplicate suppressed for delivery', claim.deliveryId);
+      return new Response(
+        JSON.stringify({
+          success: true,
+          duplicate: true,
+          messageId: claim.messageId,
+          emailType: emailData.emailType,
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (claim.status === 'in_flight') {
+      return new Response(
+        JSON.stringify({ success: false, error: 'A send for this quote is already in progress' }),
+        { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Send, then verify. Resend resolves with {data,error} rather than throwing,
+    // so an unchecked result previously reported success on a rejected send.
+    let verified;
+    try {
+      const emailResponse = await resend.emails.send(emailOptions);
+      verified = verifyResendResult(emailResponse);
+    } catch (sendError) {
+      const detail = sendError instanceof EmailSendFailed
+        ? sendError.detail
+        : sendError instanceof Error ? sendError.message : 'unknown send error';
+      console.error('Quote email send failed:', detail);
+      await completeQuoteEmailDelivery(supabase, {
+        deliveryId: claim.deliveryId,
+        status: 'failed',
+        errorDetail: detail,
+        attachmentStatus,
+      });
+      return new Response(
+        JSON.stringify({ success: false, error: 'Email delivery failed', detail }),
+        { status: 502, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log('Email accepted by provider, id:', verified.messageId);
+
+    // Durable audit for BOTH customer- and admin-initiated sends. Written only
+    // after a verified send, into an append-only table that anonymous callers
+    // cannot address or mutate.
+    await completeQuoteEmailDelivery(supabase, {
+      deliveryId: claim.deliveryId,
+      status: 'sent',
+      messageId: verified.messageId,
+      attachmentStatus,
+    });
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        messageId: emailResponse.data?.id,
+        messageId: verified.messageId,
+        attachmentStatus,
         emailType: emailData.emailType 
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
