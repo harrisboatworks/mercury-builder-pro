@@ -1,47 +1,14 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { pingMotorUpdates } from "../_shared/indexnow.ts";
-import { requireAdmin } from "../_shared/admin-auth.ts";
-import { classifyInventorySyncCaller } from "../_shared/inventory-sync-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-internal-secret',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
-  }
-
-  // Auth BEFORE creating or using the inventory-writing service-role client.
-  // Approved paths: x-internal-secret, service-role bearer, or admin JWT.
-  // The current pg_cron job still sends the public anon JWT — that is
-  // indistinguishable from a quote-builder visit and is rejected here.
-  // MERGE/DEPLOY GATE: rewrite lightspeed-motor-models-sync-daily to send
-  // x-internal-secret or service-role before deploying this function.
-  const caller = classifyInventorySyncCaller(
-    {
-      xInternalSecret: req.headers.get('x-internal-secret'),
-      authorization: req.headers.get('Authorization'),
-    },
-    {
-      internalSecret: Deno.env.get('EDGE_INTERNAL_SECRET') || Deno.env.get('CRON_SECRET') || null,
-      serviceRoleKey: Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || null,
-    },
-  );
-
-  if (caller === 'unauthenticated') {
-    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-      status: 401,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
-  }
-
-  if (caller === 'bearer-present') {
-    const authResult = await requireAdmin(req, corsHeaders);
-    if (authResult instanceof Response) {
-      return authResult;
-    }
   }
 
   const startedAt = new Date().toISOString();

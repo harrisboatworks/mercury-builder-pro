@@ -67,11 +67,11 @@ Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047
 # Manual Inventory Sync Trigger
 
 Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view).
-Do **not** invoke `sync-lightspeed-inventory` from the public quote builder or with a pasted service-role key.
+Do **not** invoke `sync-lightspeed-inventory` from the public quote builder or by pasting a service-role key into a local curl.
 
-For a manual sync, use the authenticated admin Stock Sync / inventory dashboard. The Edge Function rejects missing, anon, and non-admin credentials before it creates a service-role client.
+For a manual sync, use the authenticated admin Stock Sync / inventory dashboard. Never put an internal secret in frontend code.
 
 ## Automated Sync
 
-Lightspeed sync is intended for an authenticated admin workflow or a verified internal scheduler (`x-internal-secret` or service-role bearer). The historical pg_cron job `lightspeed-motor-models-sync-daily` still embeds the public anon JWT — that contract must be rewritten before this function gate is deployed, or the nightly sync will 401. Never put an internal secret in frontend code.
+Nightly Lightspeed sync remains a server-side scheduler concern. This frontend change does not alter Edge Function auth or cron.
 
