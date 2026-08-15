@@ -204,7 +204,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier 认证船厂 | 自 1947 年
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商
 
 ## FAQs
 
