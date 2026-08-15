@@ -306,6 +306,54 @@ Do **not** write exploit PoCs. Do **not** log real SINs.
 
 **Action:** If touching payments, keep the express-motor binding and origin allowlist tests green. Do not accept arbitrary dollar amounts from the client.
 
+#### P0-8. Unauthenticated Edge Functions can mutate inventory, send SMS, and expose Dropbox metadata
+
+Deep-dive confirmed these use the service role and accept unauthenticated POSTs with CORS `*`. Confirm each before changing — some may already have a cron secret that the index file does not check.
+
+| Function | File | Why it matters |
+| --- | --- | --- |
+| `send-notification` | `supabase/functions/send-notification/index.ts` | Can insert in-app notifications and send Twilio SMS for a `user_id` |
+| `get-dropbox-config` | `supabase/functions/get-dropbox-config/index.ts` | Returns Dropbox `appKey` + OAuth URL to any caller |
+| `dropbox-oauth` | `supabase/functions/dropbox-oauth/index.ts` | Exchanges auth codes with no admin/session check |
+| `sync-lightspeed-inventory` | `supabase/functions/sync-lightspeed-inventory/index.ts` | Rewrites `motor_models` |
+| `sync-inventory-api` | `supabase/functions/sync-inventory-api/index.ts` | External inventory rewrite |
+| `mark-out-of-stock` | `supabase/functions/mark-out-of-stock/index.ts` | Availability mutation |
+| `scrape-mercury-portal` | `supabase/functions/scrape-mercury-portal/index.ts` | Expensive scrape + image upload |
+| `migrate-motor-images` | `supabase/functions/migrate-motor-images/index.ts` | Bulk image rewrite |
+| `motor-health-monitor` | `supabase/functions/motor-health-monitor/index.ts` | Automated motor data fixes |
+| `notification-webhook` | `supabase/functions/notification-webhook/index.ts` | Updates `sms_logs` with **no** `X-Twilio-Signature` check (Stripe webhook *does* verify) |
+
+**Action:** Require admin JWT **or** `x-internal-secret` / cron secret on every write function. Add Twilio signature verification to `notification-webhook`. Do not leave “public CORS + service role + no auth” on anything that writes.
+
+#### P0-9. Quote motor-selection auto-invokes Lightspeed sync from the browser
+
+**Evidence:** `src/components/quote-builder/MotorSelection.tsx` (~342–365, ~660–666) calls `supabase.functions.invoke('sync-lightspeed-inventory')` on load when stale, on an hourly interval, and via `?runScrape=1`.
+
+**Action:** Remove the customer-facing trigger. Inventory sync belongs to cron + admin only. Pair with P0-8 so the function cannot be invoked anonymously.
+
+#### P0-10. Shared-quote and financing resume are capability URLs for PII
+
+**Evidence:**
+
+- `get-shared-quote` — no auth, no origin check, no rate limit; service role returns `customer_name`, `customer_notes`, and full `quote_data` for any valid UUID.
+- `financing-application-api` `load` — 30-day `resumeToken` in email URLs returns employment/financial/applicant data (SIN stripped). Jan 2025 audits claimed 7-day expiry; code is 30 days.
+
+**Action:** Rate-limit `get-shared-quote`. Consider a second unguessable share secret, not just the row UUID. Shorten financing resume TTL. Do not put tokens in referrer-leaking query strings if a POST/fragment option exists.
+
+#### P0-11. `encrypt_sin` is executable by `anon`
+
+**Evidence:** `supabase/migrations/20260514171742_88ee4320-42c3-4abc-9301-fddac5420d3e.sql` grants `EXECUTE` on `encrypt_sin(text)` to `anon` and `authenticated`. Decrypt is admin-gated inside the function.
+
+**Action:** Revoke anon execute. Encryption should happen only inside `financing-application-api`.
+
+#### P0-12. Quote-funnel warranty badges still hardcode “7-YEAR WARRANTY”
+
+Homepage copy was fixed (May audit #9). The funnel was not.
+
+**Evidence:** `src/components/quote-builder/PromoSummaryCard.tsx` and `PromoSelectionBadge.tsx` render “7-YEAR WARRANTY” / “3 + 4 FREE years”. `src/lib/smsTemplates.ts` has the same claim. `/promotions` correctly gates FAQs on `warranty_extra_years`.
+
+**Action:** Bind badges and SMS copy to `useActivePromotions()` / `warranty_extra_years`. When the bonus is off, do not show 7 years. This is a trust/legal issue, not a design tweak.
+
 ---
 
 ### P1 — Conversion, SEO, live data, buyer trust
@@ -509,7 +557,7 @@ Admin-only, but it is a live page that exercises decrypt + audit log. Move behin
 | 6 | Stale `ai.txt` date | **Fixed** (Lightspeed line present) |
 | 7 | `motorCount = 128` | **Fixed** |
 | 8 | Provenance footnote on motor pages | **Unknown / likely open** — confirm on a live `/motors/{slug}` |
-| 9 | "7-year warranty available" on homepage | **Fixed** (3-year + extended) |
+| 9 | "7-year warranty available" on homepage | **Homepage fixed; funnel still hardcodes 7-year** (P0-12) |
 | 10 | Missing tools / Legend / agents | **Partial** (`/tools`, `/agents` exist; no `/legend-boats`; no serial decoder) |
 
 ### Semrush plan — 2026-06-29
@@ -529,12 +577,16 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 ### Band A — close the obvious holes (low design risk)
 
 1. P0-1 admin blog `requireAdmin`
-2. P0-4 README service-role curl
-3. Add `.env` to `.gitignore` (keep a committed `.env.example` with empty values; do not rewrite history unless Jay asks)
-4. P1-12 www URLs in public motors/quote APIs
-5. P1-3 absolutize image URLs + pass through shaft/control already in the query
-6. P1-5 hours from one source
-7. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
+2. P0-8 auth-gate write Edge Functions + Twilio signature on `notification-webhook`
+3. P0-9 remove browser Lightspeed sync from `MotorSelection.tsx`
+4. P0-11 revoke anon `encrypt_sin`
+5. P0-12 bind funnel warranty badges to live promo data
+6. P0-4 README service-role curl
+7. Add `.env` to `.gitignore` (keep a committed `.env.example` with empty values; do not rewrite history unless Jay asks)
+8. P1-12 www URLs in public motors/quote APIs
+9. P1-3 absolutize image URLs + pass through shaft/control already in the query
+10. P1-5 hours from one source
+11. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
 
 ### Band B — needs a 10-minute Jay copy/business nod
 
@@ -551,8 +603,10 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 3. HP hub pages for missing classes
 4. Cannibalization 301 map (`/mercury-outboards-ontario` vs `/` vs `/quote/motor-selection` vs `mercuryoutboards.ca`)
 5. Quote page split / LazyRouteBoundary investigation
-6. SIN / RLS re-audit
-7. Edge Function inventory
+6. Unify quote step IDs (UI stepper 1–10 vs reducer guards 1–7 in `QuoteContext` / `quote-progress-steps.ts`)
+7. SIN / RLS re-audit
+8. Edge Function inventory
+9. Rate-limit + harden `get-shared-quote` (P0-10)
 
 ---
 
@@ -655,15 +709,30 @@ The site is a real production system: live CAD quotes, Stripe deposits, financin
 
 What is still hurting:
 
-1. **Auth hole** on `/admin/blog` (any logged-in user).
-2. **Homepage still ranks for a phrase nobody searches**; H1 rotates after hydration.
-3. **101-motor public feed** is image-poor, shaft-blind, and uses apex URLs.
-4. **Promotions** can say 5.48% and 2.99%+$700 in the same response.
-5. **Security headers** exist in a file and not on the site; the file's CSP would break payments/voice if applied raw.
-6. The **quote page is oversized** and showed a lazy-load error boundary to a headless client — needs a real-browser confirm.
-7. **Build/content** is held together by a very large `blogArticles.ts` and a long prebuild gauntlet. That is a feature until someone bypasses it.
+1. **Unauthenticated write Edge Functions** (inventory sync, SMS notify, Dropbox config/OAuth) plus a **browser-triggered Lightspeed sync** on motor-selection.
+2. **Auth hole** on `/admin/blog` (any logged-in user).
+3. **Quote funnel still hardcodes 7-year warranty** even though the homepage was fixed.
+4. **Homepage still ranks for a phrase nobody searches**; H1 rotates after hydration.
+5. **101-motor public feed** is image-poor, shaft-blind, and uses apex URLs.
+6. **Promotions** can say 5.48% and 2.99%+$700 in the same response.
+7. **Security headers** exist in a file and not on the site; the file's CSP would break payments/voice if applied raw.
+8. Shared-quote UUIDs and 30-day financing resume tokens are **capability URLs for PII**.
+9. The **quote page is oversized** and showed a lazy-load error boundary to a headless client — needs a real-browser confirm.
+10. **Build/content** is held together by a very large `blogArticles.ts` and a long prebuild gauntlet. That is a feature until someone bypasses it.
 
 Codex should start at Band A, then pause for copy/business calls on Band B.
+
+---
+
+## 13. Deep-dive addenda (2026-08-15)
+
+Three parallel read-only passes (architecture/funnel, security/privacy, SEO/UX) confirmed the findings above and added P0-8 through P0-12. Extra notes that did not need their own P0:
+
+- **Dual quote step numbering:** UI stepper IDs in `src/components/quote-builder/quote-progress-steps.ts` (1–10) do not match `isStepAccessible` / `COMPLETE_STEP` in `QuoteContext.tsx` (1–7). Unify before adding funnel analytics.
+- **`/motor-selection` hub** (`MotorSelectionHub.tsx`) still targets “Mercury Boats Canada” and canonicalizes to `/quote/motor-selection` — leftover cannibalization from Semrush Move 8.
+- **Legacy IndexNow key files** still sit in `public/` (`49bc7cd00f19df4a2f94c8d0b3d227a9.txt`, `6d0483cd20672e0e2b1cebf7f74c5a8f.txt`). Active key is `03999430e4bae3d7d7be108f62646dbf`.
+- **FAQ pages** (`FAQ.tsx` is DOMPurify’d; `MercuryRepowerFAQ.tsx` / `RepowerFAQ.tsx` are not) use `dangerouslySetInnerHTML` on static `faqData`. Fine until that data is CMS-editable.
+- January 2025 security reports are **stale**: they claim 7-day resume tokens (now 30), `ProtectedRoute` on all admin (now mixed), and “no client-side role checks” (false). Archive or stamp them historical.
 
 ---
 
