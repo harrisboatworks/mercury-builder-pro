@@ -13,6 +13,7 @@ import { Separator } from '@/components/ui/separator';
 import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail, Download, FileText } from 'lucide-react';
 import { toast } from 'sonner';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -26,14 +27,14 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = useQuote();
-  const { promotions, getTotalWarrantyBonusYears, getRebateForHP } = useActivePromotions();
+  const { promotions, getRebateForHP } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
   const { triggerHaptic } = useHapticFeedback();
 
   const isSummaryPage = location.pathname === '/quote/summary';
   
-  // Calculate default warranty with active promo bonus
-  const promoWarrantyBonus = getTotalWarrantyBonusYears?.() ?? 0;
+  // Calculate default warranty from the one promotion applied by the quote flow.
+  const promoWarrantyBonus = getAppliedWarrantyExtraYears(getAppliedPromotion(promotions));
   const defaultWarrantyYears = BASE_WARRANTY_YEARS + promoWarrantyBonus;
 
   // Use preview motor if available, otherwise selected motor (matches UnifiedMobileBar behavior)

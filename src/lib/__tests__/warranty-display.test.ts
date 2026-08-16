@@ -130,4 +130,25 @@ describe('funnel warranty card source contract', () => {
     expect(badge).not.toContain('7-YEAR WARRANTY');
     expect(summary).not.toContain('3 + 4 FREE years');
   });
+
+  it('keeps every quote-funnel warranty surface on the applied-promotion contract', () => {
+    const funnelSurfaces = [
+      'src/pages/quote/PromoSelectionPage.tsx',
+      'src/pages/quote/PackageSelectionPage.tsx',
+      'src/pages/quote/QuoteSummaryPage.tsx',
+      'src/components/quote-builder/WarrantySelector.tsx',
+      'src/components/quote-builder/MobileQuoteDrawer.tsx',
+      'src/components/quote-builder/PromoPanel.tsx',
+      'src/components/quote-builder/CoverageComparisonTooltip.tsx',
+      'src/components/quote-builder/QuoteDisplay.tsx',
+    ];
+
+    for (const file of funnelSurfaces) {
+      const source = readFileSync(file, 'utf8');
+      expect(source, file).toContain('getAppliedPromotion');
+      expect(source, file).toContain('getAppliedWarrantyExtraYears');
+      expect(source, file).not.toContain('getTotalWarrantyBonusYears');
+      expect(source, file).not.toContain('getWarrantyPromotions');
+    }
+  });
 });
