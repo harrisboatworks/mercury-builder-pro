@@ -241,7 +241,20 @@ export const calculateMonthly = (amount: number, rate?: number, termMonths = 60)
 
 export const daysUntil = (iso: string | Date) => {
   const now = new Date();
-  const end = new Date(iso);
+  const dateOnly = typeof iso === 'string'
+    ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
+    : null;
+  const end = dateOnly
+    ? new Date(
+        Number(dateOnly[1]),
+        Number(dateOnly[2]) - 1,
+        Number(dateOnly[3]),
+        23,
+        59,
+        59,
+        999,
+      )
+    : new Date(iso);
   return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
 };
 
