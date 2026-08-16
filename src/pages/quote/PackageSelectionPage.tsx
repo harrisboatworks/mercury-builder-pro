@@ -23,6 +23,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { resolvePropellerDecision } from '@/lib/propeller-selection';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Package warranty year constants
@@ -58,7 +59,6 @@ export default function PackageSelectionPage() {
     promotions,
     loading: promotionsLoading,
     error: promotionsError,
-    getTotalWarrantyBonusYears,
     getPromotionSavingsForMotor,
     getSpecialFinancingRates,
   } = useActivePromotions();
@@ -178,7 +178,9 @@ export default function PackageSelectionPage() {
 
   // Coverage years
   const baseYears = 3;
-  const promoYears = promotionsReady ? (getTotalWarrantyBonusYears?.() ?? 0) : 0;
+  const promoYears = promotionsReady
+    ? getAppliedWarrantyExtraYears(getAppliedPromotion(promotions))
+    : 0;
   const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
   const productProtectionPrices = useMemo(
     () => getProductProtectionPackagePrices(motorHP, currentCoverageYears, promotionsReady),

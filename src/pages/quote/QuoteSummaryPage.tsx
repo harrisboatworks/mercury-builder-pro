@@ -49,6 +49,7 @@ import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
@@ -89,13 +90,13 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
-  const promoYears = suppressAdditionalPromoSavings
-    ? 0
-    : (getTotalWarrantyBonusYears?.() ?? 0);
+  const currentPromotion = getAppliedPromotion(promotions);
+  const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
+  const promoYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const currentCoverageYears = useMemo(
     () => Math.min(baseCoverageYears + promoYears, 8),
     [promoYears],
@@ -538,8 +539,6 @@ export default function QuoteSummaryPage() {
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
     state.selectedPromoTerm != null;
-  const currentPromotion = promotions[0] ?? null;
-  const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (promo?.rate || null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
