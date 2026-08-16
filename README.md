@@ -67,19 +67,11 @@ Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047
 # Manual Inventory Sync Trigger
 
 Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view).
-For a manual sync, use:
+Do **not** invoke `sync-lightspeed-inventory` from the public quote builder or by pasting a service-role key into a local curl.
 
-```bash
-curl -X POST \
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/sync-lightspeed-inventory \
-  -H "Authorization: Bearer YOUR_SERVICE_ROLE_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"trigger":"manual"}'
-```
-
-**Note:** Service role key can be found in Supabase Dashboard → Settings → API → Service Role Key (secret)
+For a manual sync, use the authenticated admin Stock Sync / inventory dashboard. Never put an internal secret in frontend code.
 
 ## Automated Sync
 
-Lightspeed sync runs automatically daily at 5:00 AM UTC via Supabase pg_cron, with SMS failure alerts to ADMIN_PHONE.
+Nightly Lightspeed sync remains a server-side scheduler concern. This frontend change does not alter Edge Function auth or cron.
 
