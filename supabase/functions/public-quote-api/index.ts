@@ -26,6 +26,11 @@ import {
   buildPublicQuoteFinancing,
   PUBLIC_QUOTE_FINANCING_POLICY_VERSION,
 } from "../_shared/public-quote-financing.ts";
+import { motorSlug } from "../_shared/motor-slug.ts";
+import {
+  PUBLIC_SITE_URL,
+  toPublicImageUrl,
+} from "../_shared/public-motor-contract.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -43,7 +48,7 @@ const corsHeaders = {
 };
 
 const SITE = "mercuryrepower.ca";
-const SITE_URL = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+const SITE_URL = PUBLIC_SITE_URL;
 const HST_RATE = 0.13;
 const DISCLAIMER =
   "Estimate only. Final out-the-door price, install scheduling, and trade-in require confirmation by Harris Boat Works. CAD only. No Verado. Pickup at Gores Landing, ON.";
@@ -131,7 +136,7 @@ Deno.serve(async (req) => {
           error: err.message,
           code: err.code,
           notes: [
-            "Please retry, or refer the customer to https://mercuryrepower.ca/trade-in-value",
+            `Please retry, or refer the customer to ${SITE_URL}/trade-in-value`,
           ],
         },
         err.status,
@@ -178,11 +183,6 @@ function resolveSellingPrice(motor: any): number | null {
   ];
   for (const v of candidates) if (Number.isFinite(v) && v > 0) return v;
   return null;
-}
-
-function slugify(modelKey?: string | null) {
-  if (!modelKey) return "";
-  return modelKey.toLowerCase().replace(/_/g, "-");
 }
 
 function round2(n: number) {
@@ -262,7 +262,7 @@ async function listMotors(supabase: any, body: any) {
     .filter((m: any) => !isVerado(m.family, m.model_display))
     .map((m: any) => {
       const price = resolveSellingPrice(m);
-      const slug = slugify(m.model_key);
+      const slug = motorSlug(m);
       return {
         id: m.id,
         slug,
@@ -273,7 +273,7 @@ async function listMotors(supabase: any, body: any) {
         sellingPrice: price,
         msrp: Number(m.msrp) || null,
         availability: m.in_stock ? "In Stock" : "Available to Order",
-        imageUrl: m.hero_image_url || m.image_url || null,
+        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
         url: slug ? `${SITE_URL}/motors/${slug}` : null,
         quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
       };
@@ -349,7 +349,7 @@ async function estimateTradeIn(_supabase: any, body: any) {
     source: "HBW Motor Valuation API (canonical)",
     notes: [
       "Trade-in estimate from HBW canonical valuation engine. Final value requires in-person inspection at Gores Landing, ON.",
-      "Customer can get a detailed report at https://mercuryrepower.ca/trade-in-value",
+      `Customer can get a detailed report at ${SITE_URL}/trade-in-value`,
     ],
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
@@ -367,7 +367,7 @@ async function buildQuote(supabase: any, body: any) {
     return json(
       {
         error:
-          "Required: motor_id, OR (horsepower + family). Optional: shaft, controls, trade_in, contact, customer_has_propeller",
+          "Required: motor_id, OR (horsepower + family). Optional: trade_in, contact, customer_has_propeller",
       },
       400,
     );
@@ -525,7 +525,7 @@ async function buildQuote(supabase: any, body: any) {
   });
 
   // Deep-link prefilled URL for the customer
-  const slug = slugify(motor.model_key);
+  const slug = motorSlug(motor);
   const deepLink = quoteUrl(motor.id, {
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
@@ -590,7 +590,7 @@ async function buildQuote(supabase: any, body: any) {
       family: motor.family,
       horsepower: motorHp,
       url: slug ? `${SITE_URL}/motors/${slug}` : null,
-      imageUrl: motor.hero_image_url || motor.image_url || null,
+      imageUrl: toPublicImageUrl(motor.hero_image_url || motor.image_url),
     },
     purchase_path: purchasePath,
     line_items: items,
