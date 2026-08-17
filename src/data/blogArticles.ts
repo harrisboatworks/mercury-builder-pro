@@ -22718,11 +22718,11 @@ That photo does a lot of quiet work. 1965 was the year my grandfather George sig
 
 People ask why they should trust us with a $25,000 repower or a season of storage. The honest answer isn't a slogan. It's three men, one dock, and 79 years. This is the story we'd tell you if you walked in and asked.
 
-![George Harris (right), his son Jim (centre), and grandson Jay heading out fishing from the Gores Landing docks, early 1990s. The motor on the transom is a Mercury 80.](/lovable-uploads/three-generations-harris-fishing-rice-lake.jpg)
+![George Harris (right), his son Jim (centre), and grandson Jay heading out from the Harris Boat Works docks, 1988. The motor on the transom is a Mercury 80.](/lovable-uploads/three-generations-harris-fishing-rice-lake.jpg)
 
-*George Harris (right), his son Jim at the wheel, and grandson Jay, fishing off the Gores Landing docks in the early 1990s.*
+*George Harris (right), his son Jim at the wheel, and grandson Jay, heading out from the HBW docks in 1988.*
 
-That's the three of us above, heading out fishing in the early 1990s. My grandfather George on the right, my dad Jim at the wheel, and me in the very good hat. Three generations in one boat, with a Mercury on the back, at the marina one of them built and the other two would spend their lives running. Nobody was thinking about marketing that morning. We were thinking about fish.
+That's the three of us above, heading out from the docks in 1988. My grandfather George on the right, my dad Jim at the wheel, and me in the very good hat. Three generations in one boat, with a Mercury on the back, at the marina one of them built and the other two would spend their lives running. Nobody was thinking about marketing that morning. We were thinking about fish.
 
 ---
 
