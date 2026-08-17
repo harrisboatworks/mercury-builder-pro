@@ -20266,7 +20266,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-08-07',
+    dateModified: '2026-08-17',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',
@@ -20373,7 +20373,7 @@ We ask for the engine serial number, current hours, last documented service, war
 
 No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
 
-## Sources
+---
 
 - [Mercury Marine, Welcome Aboard: A New Owner's Guide to Mercury Outboards](https://www.mercurymarine.com/us/en/lifestyle/dockline/welcome-aboard--a-new-owner-s-guide-to-mercury-outboards)
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)

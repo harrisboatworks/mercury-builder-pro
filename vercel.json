@@ -54,6 +54,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-repower-cost-ontario",
+      "destination": "/repower/cost",
+      "statusCode": 301
+    },
+    {
       "source": "/REPOWER",
       "destination": "/repower",
       "statusCode": 301

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、11
 description: "多伦多和安省华人船主如何选择 Mercury 船外机马力？从 9.9、20、60、115、150HP 到 Pro XS，按船型、用途、10HP 门槛和莱斯湖使用场景解释。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-17
 keywords: ["Mercury 马力选择","outboard horsepower guide","9.9 vs 60 vs 115","GTA 华人选 Mercury","Rice Lake outboard","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-08-17  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese
 
@@ -79,7 +79,7 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 
 ## 下一步
 
-想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 https://hbw.wiki/service。
+想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbw.wiki/service](https://hbw.wiki/service)。
 
 ## 常见问题
 
