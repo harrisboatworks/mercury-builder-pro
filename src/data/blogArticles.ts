@@ -22699,227 +22699,170 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: 'Harris Boat Works: On Rice Lake Since 1947',
     seoTitle: "Harris Boat Works Since 1947: Rice Lake Institution",
-    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what staying on the same dock means for the customers who've returned.",
+    description: "The real story of Harris Boat Works. George Harris opened the shop in 1947, Jim ran it for 37 years, and Jay runs it today. Three generations on the same Rice Lake dock.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-17',
     publishDate: "2026-05-18",
     category: "About HBW",
-    readTime: '12 min read',
-    keywords: ["Harris Boat Works since 1947", "third generation marina Ontario", "historic Rice Lake marina", "trusted boat dealer Ontario", "family marina since 1947", "Mercury dealer history Canada"],
-    content: `## Quick answer
+    readTime: '9 min read',
+    keywords: ["Harris Boat Works history", "family marina Rice Lake", "Mercury dealer since 1965", "Gores Landing marina", "three generation family business Ontario", "Rice Lake boat dealer"],
+    content: `*Last reviewed: 2026-08-17*
 
-Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and are a current Mercury Premier Dealer. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
+> **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim took over in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
 
-# Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
+There's a black and white photo on our homepage of a teenager working on a Mercury outboard. That's my dad, Jim Harris, in 1965. He was 18.
 
-*Last reviewed: 2026-08-02*
+That photo does a lot of quiet work. 1965 was the year my grandfather George signed on as a Mercury dealer, so the motor under Dad's hands was one of the first Mercurys this shop ever sold. And Dad himself was born in October 1947, the same year Grandpa opened the doors. The business and the man who'd spend his whole life running it arrived together.
 
-The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer.
+People ask why they should trust us with a $25,000 repower or a season of storage. The honest answer isn't a slogan. It's three men, one dock, and 79 years. This is the story we'd tell you if you walked in and asked.
 
-We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
+![George Harris (right), his son Jim (centre), and grandson Jay heading out fishing from the Gores Landing docks, early 1990s. The motor on the transom is a Mercury 80.](/lovable-uploads/three-generations-harris-fishing-rice-lake.jpg)
 
-This is the version of the HBW story we'd tell if you walked in and asked. It's not a sales pitch. It's an explanation.
+*George Harris (right), his son Jim at the wheel, and grandson Jay, fishing off the Gores Landing docks in the early 1990s.*
 
----
-
-## How a Marina Survives Almost Eight Decades on the Same Dock
-
-Marinas don't usually last that long. Ontario marina history has more closed locations than open ones, flooded out, divorced out, bankrupted, sold to condos, lost to insurance fights, lost when the original family decided to retire and no one wanted the work.
-
-What keeps a marina at the same dock since 1947:
-
-**1. Generational hand-off that actually works.** Founder runs it. Sons or daughters come up working the docks at 12 years old. Take over at 35. Their kids do the same. Each generation makes choices that protect the business through their watch. The hand-offs that go badly often go badly because the receiving generation didn't actually want the work.
-
-**2. The right partnership.** We became a Mercury dealer in 1965. We've been Premier tier, the top of Mercury's certification, for most of the modern era. **Other dealer relationships exist briefly; we've built a long-term, multi-decade alignment with a brand that's still selling well today.**
-
-**3. Family-business focus over short-term margin.** A multi-generational family marina makes different decisions than a corporate-owned one. We don't have a quarterly earnings call. We have a March family conversation about whether we'll have enough boats for spring. The pressure is different; the time horizon is different.
-
-**4. Surviving the bad years.** 1981 interest rates. 1991 recession. 2008. COVID. Bad weather seasons. New competition opening up the road. **Every long-running family business has stories of years where they barely made it.** The fact we're here means somebody decided to keep going during the hardest years. That decision happened more than once.
-
-**5. Keeping the trust.** Customers come back. Generations of customers come back. We have customers who bought their first Mercury from my grandfather in the late 1960s; my father sold them their second motor in the 1990s; I'm now selling their kids' first boats. That's not a sales achievement, that's a trust relationship that takes decades to build and minutes to lose.
+That's the three of us above, heading out fishing in the early 1990s. My grandfather George on the right, my dad Jim at the wheel, and me in the very good hat. Three generations in one boat, with a Mercury on the back, at the marina one of them built and the other two would spend their lives running. Nobody was thinking about marketing that morning. We were thinking about fish.
 
 ---
 
-## The 1947 Beginning
+## George's Shop: 1947 to 1978
 
-Harris Boat Works was founded in 1947 on the south shore of Rice Lake. The lake had been a boating destination for Toronto-area visitors since the late 1800s. The family had worked the area for generations before going into boats specifically.
+My grandfather George Harris opened the shop in 1947 on the south shore of Rice Lake. Toronto families had been coming to this lake since the late 1800s, and somebody had to launch their boats, fix their engines, build their docks, and patch their canvas. George did all of it.
 
-In 1947, marina work meant launching wooden boats, fixing inboard engines, building docks, repairing canvas covers, doing whatever the lake needed. Outboards were a smaller part of the business, most boats had inboards or were rowed.
+He was a builder before he was a dealer. Wooden boats, docks, whatever the season called for. One winter in the 1950s he built the neighbourhood kids a sled with its own makeshift steering, loaded them on, and sent them down the hill. Not everything a craftsman makes ends up with a price tag. That's the kind of shop it was. There's even an old 1950s postcard floating around that calls the place the "Harris Boat Works Snack Bar Marina," which tells you the business plan was roughly "whatever Rice Lake needs."
 
-Through the 1950s and early 1960s, outboards started taking over. Light, easier to maintain, easier to swap, easier to upgrade. The marine industry shifted. Harris Boat Works shifted with it.
+Through the 1950s and 60s, outboards took over from inboards and oars. Lighter, easier to service, easier to upgrade. George watched the industry shift and shifted with it. In 1965 he made the single biggest business decision in this company's history: he became a Mercury dealer.
 
----
+## 1965: The Mercury Handshake
 
-## Becoming a Mercury Dealer, 1965
+In 1965, Mercury was the rising power in outboards. Carl Kiekhaefer's company was building motors lighter and stronger than the competition, and George bet the shop's future on them. Sixty-one years later, that bet is still paying out. We've sold Mercury ever since, and today we hold Premier status, the top tier of Mercury's dealer program, re-earned every year on service scores.
 
-In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company was growing fast, building motors that were lighter and more reliable than the competition. That was the year Harris Boat Works became a Mercury dealer.
+![Jim Harris, 18, working on a Mercury outboard in 1965](/lovable-uploads/jim-harris-mercury-1965.jpg)
 
-**Why Mercury, then and now:**
+*Jim Harris, 18, working on a Mercury in 1965, the year Harris Boat Works became a Mercury dealer.*
 
-- Mercury's R&D investment kept producing better motors decade after decade. The 4-stroke revolution. SmartCraft. EFI. DTS. The V12 Verado. Each generation made the previous tier obsolete in performance.
-- Mercury's dealer network was, and is, built around long-term partnerships, not quarterly volume metrics. The dealer-tier system rewards consistency over time.
-- Mercury's warranty support, parts availability, and service relationship has been reliable across multiple economic cycles.
+That's also the year of the homepage photo. Dad, 18 years old, sleeves rolled, learning the product line that would define his working life. He never really stopped standing at that bench.
 
-We've [stayed Mercury-only as a deliberate choice](/blog/why-harris-boat-works-mercury-dealer). We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
+We've stayed Mercury-only on purpose. No Yamaha, no Honda, no Suzuki. One brand, learned three generations deep. When a dealership and a manufacturer stay together this long, the customer gets the benefit: parts on the shelf, techs who've seen every generation of the product, and warranty support that doesn't require explaining who you are.
 
-We're proud to be **a Mercury dealer since 1965**. That's a multi-generational relationship most other industries can't match.
+## Jim's Shop: 1978 to 2015
 
----
+Dad took over from George in 1978. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
 
-## Third Generation. Why Family Matters Here
+![Jim Harris at his desk with a young Jay, around 1990. Paper work orders, a calculator, and a Mercury Racing t-shirt. The filing system was three tabs: current, charged, paid.](/lovable-uploads/jim-and-jay-harris-office-1990.jpg)
 
-The current generation running HBW is the third in family hands. Each generation has overlapped with the next: my grandfather worked alongside my father; my father worked alongside me. **The institutional knowledge transfers in ways that contracts and training documents can't capture.**
+*Jim Harris at his desk with a young Jay, around 1990.*
 
-Specific things a multi-generational family marina knows:
+That's Dad's office around 1990, with me attached to his shoulder. Look at the desk. Paper work orders, carbon copies, a calculator, and file tabs on the cabinet reading "CURRENT," "CHARGED," and "PAID." That was the entire management system, and it ran a marina for decades. The Mercury Racing shirt wasn't a costume either. He wore the brand because he believed in it.
 
-- **Where the underwater hazards are.** The sunken railway across Rice Lake, we know exactly where it sits, which boats run aground there in which conditions, which hulls handle the channel. We've seen generations of grounding stories.
-- **Which mistakes new boaters make.** First-time pontoon owners typically over-trim or under-trim depending on conditions. We see it every season. We can teach the corrections in 30 seconds.
-- **What the lake does in different weather.** Ice-out timing varies. Wind builds chop differently in spring vs. fall. Spring weed growth peaks at certain weeks. We know when to launch, when to wait, when to call ahead.
-- **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds relationships across generations.
+Jim ran this place for 37 years. He steered it through 20% interest rates in 1981, the early-90s recession, 2008, and every cold spring and weedy August in between. Every long-running family business has years where somebody had to decide to keep going. Dad made that call more than once, and he made it quietly, at that desk, with the calculator.
 
-These aren't things a new dealer can fake. They take time. We have time on Rice Lake.
+He passed away in December 2015. The obituary said "Owner of Harris Boat Works, proud father of Jay." Both things were true in that order his whole life, though he'd have argued the order.
 
----
+## Jay's Shop: 2016 to Now
 
-::pull-quote
-quote: My grandfather bought his first boat from George Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
-attribution: Mike S.
-source: Third-generation Rice Lake cottager
-::
+I took over that winter. Third generation, and like Dad I didn't exactly apply for the job. I grew up on these docks, got told to stop running on them, and now I'm the one telling kids to stop running on them.
 
----
+Each generation here overlapped the next. George worked alongside Dad; Dad worked alongside me. That's how the things that matter actually transfer, because they're not in any manual:
 
-## The Rice Lake Lens. Why Location Matters
+- **Where the sunken railway sits.** Rice Lake has an old submerged rail causeway, and we know exactly which line to hold and which boats find it the hard way. We've heard every grounding story since 1947.
+- **What the lake does in each season.** When ice-out lands, which weeks the weeds peak, how the wind builds chop differently in May than in October.
+- **Which mistakes new boaters make.** First-time pontoon owners trim wrong in predictable ways. We can teach the fix in 30 seconds because we've watched it for decades.
+- **What customers will actually use.** The family convinced they need the 22-footer often fits the 20 better. Selling the right boat instead of the bigger invoice is why customers come back for 40 years.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+The tools changed under me. Dad's paper tabs became Lightspeed. The handshake quote became a public configurator at mercuryrepower.ca where you can see real motor prices without phoning anyone. In 2026 we became what we believe is the first marine dealer live on the Universal Commerce Protocol, which means even AI shopping assistants can read our pricing. Grandpa put a snack bar in his marina because that's what the moment called for. Publishing prices on the internet is the same instinct, 75 years later: meet the customer where they are, and don't make them beg for a number.
 
-A dealer in Toronto sells Mercurys. We sell Mercurys *to people who'll use them on Rice Lake, the Kawarthas, and the Trent-Severn.* Different application.
+What didn't change is the part customers actually feel. A boat comes in tired, it leaves running, and before it goes home somebody who's done this a few thousand times takes it out on Rice Lake and runs it through the gears. Nobody wrote that down as policy. It's just the only way that's ever felt right here.
 
-Specific reasons our advice diverges from urban-dealer advice:
+## The Customers Come in Generations Too
 
-- **Freshwater boating.** Rice Lake has no salt, but it has weeds, algae blooms in late summer, weed-mat issues. Different motor wear pattern.
-- **Shallow-water boating.** Rice Lake's average depth is 6-10 feet; the channel is shallower. Prop selection matters.
-- **The sunken railway hazard.** Specific to this lake. Specific to our local knowledge. Most marina operators in southern Ontario don't deal with it; we've worked around it since 1947.
-- **The seasonal launch math.** Specific to this lake, when ice goes out, when bass season opens, when walleye opens, when winter storage starts.
-- **The Trent-Severn context.** Rice Lake is part of the Trent-Severn navigation system. Our customers often boat the wider system. Our advice reflects that.
+There are boats in our files whose first owners are gone, handed down to sons and daughters who grew up riding in them. They bring the boat back to the same shop because that's simply where it has always gone.
 
-For a customer in Toronto who'll boat Lake Ontario, much of this is irrelevant. For a customer in the Kawarthas, the GTA, or anywhere from Cobourg to Peterborough, **a marina that's known this water since 1947 has perspective that newer entrants can't match.**
+Some of our customers bought their first Mercury from George. Their kids dealt with Jim. Their grandkids deal with me. That's not a sales achievement. It's a trust relationship that took three lifetimes to build and would take about one bad season to lose, which is exactly why we don't have bad seasons on purpose.
 
----
+When customers say they trust HBW, they mean specific things. They trust the diagnosis, because we've been right for a long time. They trust the price, because it's published where anyone can check the math. They trust that when we say "you don't need the bigger motor," we just talked ourselves out of money. And they trust that we'll still be here, because a business that survived 1981 interest rates on paper invoices is not going to be scared off by a slow July.
 
-## What "Trust" Means in a Marine Dealer Relationship
+## Why the Location Matters as Much as the Years
 
-Customers say "I trust HBW" in different ways:
+A Toronto dealer sells Mercurys. We sell Mercurys to people who'll run them on Rice Lake, the Kawarthas, and the Trent-Severn. Different job.
 
-- **"I trust the diagnosis."** When we say a motor needs major work, the customer believes us. Decades of accurate diagnostics earn that trust.
-- **"I trust the price."** Our pricing is published in the configurator. Customers can verify the math. There are no shell-game add-ons at delivery.
-- **"I trust the post-sale service."** When something fails after the sale, we handle it. Mercury warranty work, MPP claims, out-of-warranty diagnoses, they all happen at the same shop where you bought the motor.
-- **"I trust the recommendation."** When we say "actually, you don't need the upgrade," we mean it. We've sold smaller motors than customers were planning to buy because the smaller motor was right.
-- **"I trust the heritage."** When a marina has been at the same dock since 1947, customers feel the implied "we'll be here for the next 10 years too." That confidence has real economic value.
-
-The 1947 date isn't a marketing claim. It's a calibration on every other claim we make.
-
----
-
-## What We've Seen Change (and What's Stayed the Same)
-
-Things that have changed since 1947:
-- Motors have changed completely, from 2-strokes through to V12 Verado
-- Boats have changed completely, from wooden launches to aluminum and fibreglass and pontoons
-- The customer base has changed, from local cottagers to GTA day-trippers
-- The cottage real estate market has changed, from accessible to nearly luxury
-- Technology has transformed every aspect, diagnostic tools, GPS, fish finders, configurator pricing
-
-Things that have stayed the same:
-- Boating is still a relaxing escape that families want
-- Customers still want a real person to talk to about a real motor
-- Trust is still the most important thing a marina can offer
-- The lake still freezes in November and thaws in March
-- Walleye still bite in May; bass still bite in June
-
-The **technology side has changed dramatically; the human side has not.** Our job is to bridge the two, keep current on every Mercury innovation, but apply it through the same trust relationships we've held for three generations.
-
----
+Rice Lake averages 6 to 10 feet deep, grows serious weed by late summer, and hides that sunken railway. Prop choice matters here. Trim habits matter here. Knowing when the walleye open in May and when the first fall haul-out gets booked matters here. A dealer who's watched this specific lake since 1947 gives different advice than a showroom off the 401, because we're not guessing what the water will do to your motor. We've already seen it.
 
 ## What HBW Is Today
 
-In 2026, HBW operates:
+In 2026, the shop George opened runs as:
 
-- **Mercury Marine Premier Dealer**, with Mercury FourStroke and Pro XS in stock; Verado, SeaPro, and Avator available by special order
-- **Mercury Certified Repower Centre**, [full-service repower facility for boat owners across Ontario](/blog/mercury-repower-cost-ontario-2026-cad)
-- **Legend Boats Dealer**, selling [Canadian-designed aluminum and pontoon boats](/blog/legend-boats-mercury-power-package-guide-ontario) (designed in Whitefish, Ontario)
-- **Marina Slips**, 49 seasonal slip rentals on Rice Lake
-- **Boat Rentals**, current pontoon and fishing-boat lineup for [Rice Lake rentals](/blog/rice-lake-boat-rental-guide-2026)
-- **Winter Storage**, 311+ stored boats per year
-- **Service & Repair**, diagnostic, warranty, repair, and pre-purchase inspections
-- **Boat Launch**, public-paid launch ramp ($20/day, $200/season) used by hundreds of boaters annually
-- **Ethanol-Free 89 Marine Gas**, at the dock for transient and resident boaters
+- **Mercury Marine Premier Dealer**, FourStroke and Pro XS in stock; Verado, SeaPro, and Avator by special order
+- **Mercury Certified Repower Centre**, serving boat owners across Ontario
+- **Legend Boats dealer**, Canadian company, designed for Canadian water
+- **49 seasonal marina slips** on Rice Lake
+- **Rental fleet** of pontoons and fishing boats
+- **Winter storage**, 311+ boats shrink-wrapped and stored each year
+- **Service and repair**, from diagnostics to full warranty work
+- **Public launch ramp and ethanol-free 89 marine gas** at the dock
 
-A working family marina, peak season fully staffed for the May-October rush. Most customers are repeat customers; many are second- or third-generation, families whose grandparents bought from ours in the 1960s or 1970s.
+Most of our customers are repeat customers. Many are second and third generation, which around here is just called "customers."
 
----
+## The Fourth Generation
 
-## What HBW Will Be Tomorrow
+Our kids work the docks in the summers, the same way Dad did in the 1950s and I did in the 1980s. Whether one of them takes over someday is their call to make, not ours to force. George didn't pressure Jim, and Jim didn't pressure me; the job has a way of choosing you around here anyway.
 
-The fourth generation is in early-career. Our kids work the docks summers; we'll see if any choose to take over. We're not pressuring anyone, the family-business hand-off should happen because someone wants it, not out of obligation.
-
-If the fourth generation takes over, HBW continues. If they don't, we'll find a path that keeps the relationship with our customers intact. **Either way, we're not going anywhere soon.** A dealer choice today is a 10-15 year commitment to a service relationship; we want to be [the dealer worth choosing](/blog/best-mercury-dealer-ontario-hbw-difference) for that long.
+Either way, we're not going anywhere. A motor purchase is a 10-15 year service relationship, and we plan on being on this dock for all of it.
 
 ---
 
 ## Frequently Asked Questions
 
-**How long has Harris Boat Works been in business?**
-Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer.
+**Who founded Harris Boat Works?**
+George Harris opened the shop in 1947 on the south shore of Rice Lake in Gores Landing, Ontario. He ran it for 31 years, took on the Mercury dealership in 1965, and handed the business to his son Jim in 1978.
 
-**Is HBW family-owned?**
-Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
+**Who runs Harris Boat Works now?**
+Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015.
 
-**Is HBW a Mercury Premier dealer?**
-Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
+**How long has HBW been a Mercury dealer?**
+Since 1965, when George Harris signed on with Mercury Marine. HBW currently holds Mercury Premier Dealer status, the top tier of Mercury's program, which requires factory-trained techs, full diagnostic capability, stocked parts, and sustained top-tier customer satisfaction scores.
+
+**Why does the federal registry show HBW incorporated in 1978?**
+The 1978 incorporation marks the generational handoff, when Jim Harris formally took over from his father George. The business itself has operated continuously on the same Rice Lake property since 1947.
 
 **Where is HBW located?**
-5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic.
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. Yes, the road is named after the shop; the township named it once it was clear we weren't going anywhere. Roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 **What does HBW sell and service?**
-Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude. Mercury-only.
+Mercury outboards (sales, repower, service, and warranty), Legend Boats, marine accessories, rentals, slips, and winter storage. We repair Mercury and MerCruiser only, though we can winterize and store boats with any engine brand. We don't sell Yamaha, Honda, Suzuki, or Tohatsu. Mercury-only, since 1965.
 
-**How big is HBW?**
-A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system.
+**Is HBW still family-owned?**
+Yes. It has never been anything else. Three generations of the Harris family have owned and run it since 1947, and the fourth generation currently works the docks in the summers.
 
-**Why has HBW been in business so long?**
-Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year.
-
-**Is HBW still growing?**
-Yes, our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character.
-
-**Do you have CSI awards or other certifications?**
-HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Premier, Mercury Certified Repower Center, and Legend Boats authorized dealer.
-
-**Can I visit HBW even if I don't need to buy anything?**
-Yes, we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after, it's a complete day on Rice Lake without a sales requirement.
+**Can I visit without buying anything?**
+Yes. We're a working marina. Walk the docks, fuel up, look at the water. The snack bar from the 1950s postcard is long gone, but the view it advertised is the same one.
 
 ---
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-**Marina + Rentals:** [harrisboatworks.ca](https://harrisboatworks.ca)
-**Repower Quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## Ready to Become a Customer Story We Tell in 2047?
+
+If your boat needs a motor, put together a real quote with real prices at mercuryrepower.ca. If it needs work, skip the phone tree we don't have and put in a service request.
+
+**Phone:** 905-342-2153
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Related guides:**
+- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market)
+- [First Marine Dealer on UCP Agentic Commerce](/blog/first-marine-dealer-ucp-agentic-commerce)
+- [Mercury Outboard Reliability in 2026](/blog/mercury-outboard-reliability-2026)
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer." },
-      { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
-      { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
-      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic." },
-      { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude: Mercury-only." },
-      { question: "How big is HBW?", answer: "A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system." },
-      { question: "Why has HBW been in business so long?", answer: "Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year." },
-      { question: "Is HBW still growing?", answer: "Yes, our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character." },
-      { question: "Do you have CSI awards or other certifications?", answer: "HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Premier, Mercury Certified Repower Center, and Legend Boats authorized dealer." },
-      { question: "Can I visit HBW even if I don't need to buy anything?", answer: "Yes, we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after, it's a complete day on Rice Lake without a sales requirement." },
+      { question: "Who founded Harris Boat Works?", answer: "George Harris opened the shop in 1947 on the south shore of Rice Lake in Gores Landing, Ontario. He ran it for 31 years, took on the Mercury dealership in 1965, and handed the business to his son Jim in 1978." },
+      { question: "Who runs Harris Boat Works now?", answer: "Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015." },
+      { question: "How long has HBW been a Mercury dealer?", answer: "Since 1965, when George Harris signed on with Mercury Marine. HBW currently holds Mercury Premier Dealer status, the top tier of Mercury's program, which requires factory-trained techs, full diagnostic capability, stocked parts, and sustained top-tier customer satisfaction scores." },
+      { question: "Why does the federal registry show HBW incorporated in 1978?", answer: "The 1978 incorporation marks the generational handoff, when Jim Harris formally took over from his father George. The business itself has operated continuously on the same Rice Lake property since 1947." },
+      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. Yes, the road is named after the shop; the township named it once it was clear we weren't going anywhere. Roughly 1 hour 45 minutes from central Toronto in light traffic." },
+      { question: "What does HBW sell and service?", answer: "Mercury outboards (sales, repower, service, and warranty), Legend Boats, marine accessories, rentals, slips, and winter storage. We repair Mercury and MerCruiser only, though we can winterize and store boats with any engine brand. We don't sell Yamaha, Honda, Suzuki, or Tohatsu. Mercury-only, since 1965." },
+      { question: "Is HBW still family-owned?", answer: "Yes. It has never been anything else. Three generations of the Harris family have owned and run it since 1947, and the fourth generation currently works the docks in the summers." },
+      { question: "Can I visit without buying anything?", answer: "Yes. We're a working marina. Walk the docks, fuel up, look at the water. The snack bar from the 1950s postcard is long gone, but the view it advertised is the same one." },
     ],
   },
   {
