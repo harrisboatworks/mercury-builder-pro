@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-4hp-4mlh-fourstroke
-last_updated: 2026-08-15
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: e0cc59de-322d-49bd-9003-309af39a4808
 slug: fourstroke-4hp-4mlh-fourstroke
 family: FourStroke

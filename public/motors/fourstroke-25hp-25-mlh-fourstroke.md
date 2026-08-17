@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-mlh-fourstroke
-last_updated: 2026-08-15
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 5149f934-6988-4af0-8ae3-441b1f908615
 slug: fourstroke-25hp-25-mlh-fourstroke
 family: FourStroke

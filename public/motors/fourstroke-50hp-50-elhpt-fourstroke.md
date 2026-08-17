@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-50hp-50-elhpt-fourstroke
-last_updated: 2026-08-15
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: bf09e400-9e56-4d1c-9f6b-d4fdbdbfdaec
 slug: fourstroke-50hp-50-elhpt-fourstroke
 family: FourStroke

@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-300hp-300-exlpt-pro-xs-dts
-last_updated: 2026-08-15
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 37c8135a-587a-4879-8a05-c40ad93aa068
 slug: proxs-300hp-300-exlpt-pro-xs-dts
 family: ProXS
