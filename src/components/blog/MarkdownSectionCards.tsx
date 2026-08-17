@@ -249,7 +249,9 @@ function rewriteCostStack(md: string): string {
 }
 
 function rewriteBilingualTrust(md: string): string {
-  const re = /^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm;
+  // Accept the original authoring name and the explicit `-card` alias used by
+  // older multilingual articles. Both map to the same rendered component.
+  const re = /^::bilingual-trust(?:-card)?\s*\n([\s\S]*?)\n::\s*$/gm;
   return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
 }
 

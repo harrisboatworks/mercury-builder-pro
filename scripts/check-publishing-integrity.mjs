@@ -35,6 +35,9 @@ const caseStudyGenerator = read('scripts/generate-markdown-twins.mjs');
 const boostChecker = read('src/components/tools/BoostEligibilityChecker.tsx');
 const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
+const luxuryHeader = read('src/components/ui/luxury-header.tsx');
+const spanishArticlePage = read('src/pages/blog/SpanishBlogArticlePage.tsx');
+const spanishBlogArticles = read('src/data/spanishBlogArticles.ts');
 const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
 const appSource = read('src/App.tsx');
@@ -49,6 +52,8 @@ const parsedVercelConfig = JSON.parse(vercelConfig);
 const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
 const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
 const mandarinServiceSurface = `${mandarinServiceGuide}\n${mandarinServiceTwin}`;
+const mandarinHorsepowerTwin = read('public/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese.md');
+const maintenanceTwin = read('public/blog/mercury-maintenance-intervals-20-100-300-rule.md');
 const warrantyCopySource = read('scripts/lib/warranty-copy.mjs');
 const faqDataSource = read('src/data/faqData.ts');
 const warrantySources = [
@@ -117,6 +122,30 @@ check(
   /淡水环境通常使用镁阳极；咸水环境使用锌阳极/.test(mandarinServiceSurface) &&
     /\| 操作员卡 \/ 钓鱼证 \| 不适用 \| 不销售；请到 ontario\.ca 办理 \|/.test(mandarinServiceSurface),
   'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
+);
+check(
+  !/https:\/\/hbw\.wiki\/service。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
+    /\[hbw\.wiki\/service\]\(https:\/\/hbw\.wiki\/service\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
+  'Mandarin service links must keep Chinese punctuation outside the explicit hbw.wiki/service anchor.',
+);
+check(
+  !maintenanceTwin.includes('\n## Sources\n') &&
+    maintenanceTwin.includes('Mercury Marine Canada, Limited Warranty'),
+  'The maintenance twin must retain citations without exposing a customer-facing Sources heading.',
+);
+check(
+  !luxuryHeader.includes('Award-Winning Service Team') &&
+    luxuryHeader.includes('Family-owned since 1947 • Mercury dealer since 1965 • Mercury Premier Dealer'),
+  'The shared utility header must use the verified 1947/1965/Premier heritage anchor.',
+);
+check(
+  /TableOfContents/.test(spanishArticlePage) && /tocItems\.length > 2/.test(spanishArticlePage) &&
+    /## Una nota sobre el idioma/.test(spanishBlogArticles),
+  'Spanish articles must render a table of contents that includes the language note heading.',
+);
+check(
+  prerenderScript.includes('^::bilingual-trust(?:-card)?'),
+  'Static prerendering must expand both canonical and legacy bilingual trust directives.',
 );
 
 check(
@@ -385,6 +414,14 @@ check(
     redirect.source === '/REPOWER' && redirect.destination === '/repower' && redirect.statusCode === 301
   ),
   'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
+);
+check(
+  parsedVercelConfig.redirects?.some((redirect) =>
+    redirect.source === '/blog/mercury-repower-cost-ontario' &&
+    redirect.destination === '/repower/cost' &&
+    redirect.statusCode === 301
+  ),
+  'vercel.json must permanently redirect the retired bare repower-cost blog slug to /repower/cost.',
 );
 for (const [source, destination] of [
   [
