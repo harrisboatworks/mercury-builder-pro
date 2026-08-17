@@ -22714,7 +22714,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 There's a black and white photo on our homepage of a teenager working on a Mercury outboard. That's my dad, Jim Harris, in 1965. He was 18.
 
-That photo does a lot of quiet work. 1965 was the year my grandfather George signed on as a Mercury dealer, so the motor under Dad's hands was one of the first Mercurys this shop ever sold. And Dad himself was born in October 1947, the same year Grandpa opened the doors. The business and the man who'd spend his whole life running it arrived together.
+That photo does a lot of quiet work. 1965 was the year my grandfather George signed on as a Mercury dealer, so the motor under Dad's hands was one of the first Mercurys this shop ever sold. And Dad himself was born in October 1947, the same year Grandpa opened the doors. The business and the man who'd spend his whole life in it arrived together.
 
 People ask why they should trust us with a $25,000 repower or a season of storage. The honest answer isn't a slogan. It's three men, one dock, and 79 years. This is the story we'd tell you if you walked in and asked.
 
@@ -22758,7 +22758,7 @@ That's Dad's office around 1990, with me attached to his shoulder. Look at the d
 
 Jim ran this place for 37 years. He steered it through 20% interest rates in 1981, the early-90s recession, 2008, and every cold spring and weedy August in between. Every long-running family business has years where somebody had to decide to keep going. Dad made that call more than once, and he made it quietly, at that desk, with the calculator.
 
-He passed away in December 2015. The obituary said "Owner of Harris Boat Works, proud father of Jay." Both things were true in that order his whole life, though he'd have argued the order.
+He passed away in December 2015. The obituary said "Owner of Harris Boat Works, proud father of Jay." Both things were true, though he'd have argued the order.
 
 ## Jay's Shop: 2016 to Now
 
