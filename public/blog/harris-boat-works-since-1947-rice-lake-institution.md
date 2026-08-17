@@ -29,7 +29,7 @@ revenue_driver: none
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
-> **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim took over in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
+> **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim stepped into the owner's chair in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
 
 There's a black and white photo on our homepage of a teenager working on a Mercury outboard. That's my dad, Jim Harris, in 1965. He was 18.
 
@@ -67,7 +67,7 @@ We've stayed Mercury-only on purpose. No Yamaha, no Honda, no Suzuki. One brand,
 
 ## Jim's Shop: 1978 to 2015
 
-Dad took over from George in 1978. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
+Dad stepped into the owner's chair in 1978, with George handing him the shop. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
 
 ![Jim Harris at his desk with a young Jay, around 1990. Paper work orders, a calculator, and a Mercury Racing t-shirt. The filing system was three tabs: current, charged, paid.](/lovable-uploads/jim-and-jay-harris-office-1990.jpg)
 
@@ -147,7 +147,7 @@ George Harris opened the shop in 1947 on the south shore of Rice Lake in Gores L
 
 ### Who runs Harris Boat Works now?
 
-Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015.
+Jay Harris, George's grandson and the third generation of the family. Jay stepped into the role after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015.
 
 ### How long has HBW been a Mercury dealer?
 

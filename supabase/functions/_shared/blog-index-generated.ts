@@ -3628,7 +3628,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Who runs Harris Boat Works now?",
-        "a": "Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015."
+        "a": "Jay Harris, George's grandson and the third generation of the family. Jay stepped into the role after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015."
       },
       {
         "q": "How long has HBW been a Mercury dealer?",

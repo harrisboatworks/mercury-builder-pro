@@ -22710,7 +22710,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["Harris Boat Works history", "family marina Rice Lake", "Mercury dealer since 1965", "Gores Landing marina", "three generation family business Ontario", "Rice Lake boat dealer"],
     content: `*Last reviewed: 2026-08-17*
 
-> **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim took over in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
+> **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim stepped into the owner's chair in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
 
 There's a black and white photo on our homepage of a teenager working on a Mercury outboard. That's my dad, Jim Harris, in 1965. He was 18.
 
@@ -22748,7 +22748,7 @@ We've stayed Mercury-only on purpose. No Yamaha, no Honda, no Suzuki. One brand,
 
 ## Jim's Shop: 1978 to 2015
 
-Dad took over from George in 1978. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
+Dad stepped into the owner's chair in 1978, with George handing him the shop. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
 
 ![Jim Harris at his desk with a young Jay, around 1990. Paper work orders, a calculator, and a Mercury Racing t-shirt. The filing system was three tabs: current, charged, paid.](/lovable-uploads/jim-and-jay-harris-office-1990.jpg)
 
@@ -22818,7 +22818,7 @@ Either way, we're not going anywhere. A motor purchase is a 10-15 year service r
 George Harris opened the shop in 1947 on the south shore of Rice Lake in Gores Landing, Ontario. He ran it for 31 years, took on the Mercury dealership in 1965, and handed the business to his son Jim in 1978.
 
 **Who runs Harris Boat Works now?**
-Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015.
+Jay Harris, George's grandson and the third generation of the family. Jay stepped into the role after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015.
 
 **How long has HBW been a Mercury dealer?**
 Since 1965, when George Harris signed on with Mercury Marine. HBW currently holds Mercury Premier Dealer status, the top tier of Mercury's program, which requires factory-trained techs, full diagnostic capability, stocked parts, and sustained top-tier customer satisfaction scores.
@@ -22856,7 +22856,7 @@ If your boat needs a motor, put together a real quote with real prices at mercur
 `,
     faqs: [
       { question: "Who founded Harris Boat Works?", answer: "George Harris opened the shop in 1947 on the south shore of Rice Lake in Gores Landing, Ontario. He ran it for 31 years, took on the Mercury dealership in 1965, and handed the business to his son Jim in 1978." },
-      { question: "Who runs Harris Boat Works now?", answer: "Jay Harris, George's grandson and the third generation of the family. Jay took over after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015." },
+      { question: "Who runs Harris Boat Works now?", answer: "Jay Harris, George's grandson and the third generation of the family. Jay stepped into the role after his father Jim passed away in December 2015. Jim had run the shop for 37 years, from 1978 to 2015." },
       { question: "How long has HBW been a Mercury dealer?", answer: "Since 1965, when George Harris signed on with Mercury Marine. HBW currently holds Mercury Premier Dealer status, the top tier of Mercury's program, which requires factory-trained techs, full diagnostic capability, stocked parts, and sustained top-tier customer satisfaction scores." },
       { question: "Why does the federal registry show HBW incorporated in 1978?", answer: "The 1978 incorporation marks the generational handoff, when Jim Harris formally took over from his father George. The business itself has operated continuously on the same Rice Lake property since 1947." },
       { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. Yes, the road is named after the shop; the township named it once it was clear we weren't going anywhere. Roughly 1 hour 45 minutes from central Toronto in light traffic." },

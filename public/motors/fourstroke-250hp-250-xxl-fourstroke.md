@@ -4,9 +4,9 @@ last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: ea3d52b3-ce98-4187-83b8-438f9ecd42d5
 slug: fourstroke-250hp-250-xxl-fourstroke
 family: FourStroke
@@ -73,7 +73,7 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ## Notes
 
-- Financing is available on eligible totals over $5,000 CAD. Confirm the current rate and terms at https://www.mercuryrepower.ca/promotions.
+- Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 - Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

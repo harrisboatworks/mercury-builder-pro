@@ -4,9 +4,9 @@ last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 index_type: agent_catalog
 ---
 
@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
 
 ## Business rules (apply to every entry)
 
@@ -62,6 +62,99 @@ See any motor twin for an example body.
 
 ## Motors
 
+- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
+- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
+- [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
+- [3.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-3.5-mh.md)
+- [3.5MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-3.5-mlh.md)
+- [4MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-4-mlh.md)
+- [4MH FourStroke](https://www.mercuryrepower.ca/motors/fs-4-mh.md)
+- [5MXLH FourStroke](https://www.mercuryrepower.ca/motors/fs-5-mxlh.md)
+- [5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-5-mh.md)
+- [5MLHA Sail Power FourStroke](https://www.mercuryrepower.ca/motors/fs-5-mlha.md)
+- [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
+- [6MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mlh.md)
+- [8MH FourStroke](https://www.mercuryrepower.ca/motors/fs-8-mh.md)
+- [8ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-8-elh.md)
+- [8EH FourStroke](https://www.mercuryrepower.ca/motors/fs-8-eh.md)
+- [8MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-8-mlh.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
+- [9.9EXLH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-exlh-ct.md)
+- [9.9 EXLPT Command Thrust ProKicker EFI FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-exlpt-pk.md)
+- [9.9ELH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh-ct.md)
+- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh.md)
+- [9.9EXLHPT Command Thrust ProKicker EFI FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-exlhpt-pk.md)
+- [9.9MLH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh-ct.md)
+- [9.9ELPT Command Thrust ProKicker EFI FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elpt-pk.md)
+- [9.9EH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-eh.md)
+- [9.9ELHPT Command Thrust ProKicker EFI FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elhpt-pk.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
+- [15 MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-15-mlh.md)
+- [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fs-15-mh.md)
+- [15ELHPT ProKicker FourStroke](https://www.mercuryrepower.ca/motors/fs-15-elhpt-pk.md)
+- [15 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-15-elh.md)
+- [15 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-15-eh.md)
+- [15EXLHPT ProKicker FourStroke](https://www.mercuryrepower.ca/motors/fs-15-exlhpt-pk.md)
+- [15EXLPT ProKicker FourStroke](https://www.mercuryrepower.ca/motors/fs-15-exlpt-pk.md)
+- [15ELPT ProKicker FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-elpt-prokicker.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
+- [20 MH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-mh.md)
+- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
+- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
+- [20 MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-mlh.md)
+- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-25-elhpt.md)
+- [25 MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-25-mlh.md)
+- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-25-elpt.md)
+- [30 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-30-elhpt.md)
+- [30 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-30-elpt.md)
+- [40 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-40-elhpt-t.md)
+- [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-40-elpt-ct.md)
+- [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-40-elpt.md)
+- [50 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-50-elhpt-ct-t.md)
+- [50 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-50-elpt-ct.md)
+- [50 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-50-elpt.md)
+- [60 EXLPT FourStroke](https://www.mercuryrepower.ca/motors/fs-60-exlpt-ct.md)
+- [60 ELHPT FourStroke Tiller](https://www.mercuryrepower.ca/motors/fs-60-elhpt-t.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
+- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
+- [60 ELHPT Command Thrust FourStroke Tiller](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-ct-tiller-elhpt.md)
+- [75 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-75-elpt.md)
+- [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
+- [90 EXLPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-exlpt-ct.md)
+- [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt-ct.md)
+- [115 EXLPT Pro XS Command Thrust](https://www.mercuryrepower.ca/motors/pxs-115-exlpt-ct.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
+- [115EXLPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-115-exlpt-ct.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
+- [115 ELPT Pro XS Command Thrust](https://www.mercuryrepower.ca/motors/pxs-115-elpt-ct.md)
+- [115ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-115-elpt-ct.md)
+- [150 L FourStroke](https://www.mercuryrepower.ca/motors/fs-150-l.md)
+- [150 XL FourStroke](https://www.mercuryrepower.ca/motors/fs-150-xl.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-xl.md)
+- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-l.md)
+- [175 L FourStroke](https://www.mercuryrepower.ca/motors/fs-175-l-dts.md)
+- [175 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-175-xl.md)
+- [175 XL FourStroke](https://www.mercuryrepower.ca/motors/fs-175-xl-dts.md)
+- [175 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-175-l.md)
+- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-200-l.md)
+- [200 EXLPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-xl-dts.md)
+- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm.md)
+- [200 XL FourStroke](https://www.mercuryrepower.ca/motors/fs-200-xl.md)
+- [200 L FourStroke](https://www.mercuryrepower.ca/motors/fs-200-l-dts.md)
+- [225 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-225-xl-dts.md)
+- [225 XXL FourStroke](https://www.mercuryrepower.ca/motors/fs-225-xxl-dts.md)
+- [225CXXL FourStroke](https://www.mercuryrepower.ca/motors/fs-225-cxxl-dts.md)
+- [225 L FourStroke](https://www.mercuryrepower.ca/motors/fs-225-l.md)
+- [225 XL FourStroke](https://www.mercuryrepower.ca/motors/fs-225-xl-dts.md)
+- [225 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-225-l-tm.md)
+- [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm.md)
+- [250 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-250-xl.md)
+- [250 EXLPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-250-xl-dts.md)
+- [250CXXL FourStroke](https://www.mercuryrepower.ca/motors/fs-250-cxxl.md)
+- [250 XXL FourStroke](https://www.mercuryrepower.ca/motors/fs-250-xxl-dts.md)
+- [250 XL FourStroke](https://www.mercuryrepower.ca/motors/fs-250-xl-dts.md)
+- [250 L FourStroke](https://www.mercuryrepower.ca/motors/fs-250-l-dts.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [3.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-3-5hp-3-5mh-fourstroke.md)
 - [3.5MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-3-5hp-3-5mlh-fourstroke.md)
@@ -84,7 +177,6 @@ See any motor twin for an example body.
 - [9.9ELH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-command-thrust-fourstroke.md)
 - [9.9EXLH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9exlh-command-thrust-fourstroke.md)
 - [9.9MLH Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-command-thrust-fourstroke.md)
-- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [9.9ELPT Command Thrust ProKicker EFI FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elpt-command-thrust-prokicker-efi-fourstroke.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [15EXLHPT ProKicker FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15exlhpt-prokicker-fourstroke.md)
@@ -100,9 +192,7 @@ See any motor twin for an example body.
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-mlh-fourstroke.md)
 - [20 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-mh-fourstroke.md)
-- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [25 MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-mlh-fourstroke.md)
-- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [30 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-30hp-30-elhpt-fourstroke.md)
 - [30 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-30hp-30-elpt-fourstroke.md)
 - [40 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elhpt-fourstroke.md)
@@ -206,7 +296,7 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario.md)
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide.md)
