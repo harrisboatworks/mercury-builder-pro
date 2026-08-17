@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/ajax-mercury-dealer
-last_updated: 2026-08-15
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
