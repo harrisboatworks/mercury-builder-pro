@@ -1259,6 +1259,7 @@ function blogTwinLabels(language) {
       lastReviewed: 'Dernière révision',
       readTime: 'Temps de lecture',
       canonical: 'URL canonique (HTML pour les lecteurs)',
+      faqs: 'Foire aux questions',
       nextSteps: 'Prochaines étapes',
       pickupContact: 'Lieu de ramassage et coordonnées',
     };
@@ -1270,6 +1271,7 @@ function blogTwinLabels(language) {
     lastReviewed: lastReviewedLabel(language),
     readTime: 'Read time',
     canonical: 'Canonical (HTML for humans)',
+    faqs: 'FAQs',
     nextSteps: 'Next steps',
     pickupContact: 'Pickup location & contact',
   };
@@ -1415,9 +1417,10 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     `language: ${language}`,
     `revenue_driver: ${revenueDriver}`,
   ];
+  const labels = blogTwinLabels(language);
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
-    ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
+    ? [`## ${labels.faqs}`, '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
   const cleanedContent = normalizeBlogTwinStructure(
     cleanBlogContent(article.content, faqs.length > 0, {
@@ -1431,7 +1434,6 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
-  const labels = blogTwinLabels(language);
   const labelSeparator = language === 'fr-CA' ? ' :' : ':';
   const metadataLineBreak = language === 'fr-CA' ? '\\' : '  ';
   const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language);
@@ -1930,6 +1932,7 @@ const frenchForbidden = [
   '**Published:**',
   '**Read time:**',
   '**Canonical (HTML for humans):**',
+  '## FAQs',
   '## Next steps',
   '- Pickup location & contact:',
   'Build your own Mercury quote',

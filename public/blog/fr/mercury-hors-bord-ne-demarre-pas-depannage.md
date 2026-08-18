@@ -164,31 +164,6 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## Foire aux questions
-
-**Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?**
-Un technicien avec les bons outils peut généralement identifier la cause en 30 à 90 minutes. Le dépannage par le propriétaire à la maison peut prendre plus de temps sans équipement de test spécialisé. Nous n'estimons pas de délais précis pour des diagnostics à distance.
-
-**Est-ce que je peux endommager le moteur en le lançant à répétition ?**
-Oui, de plusieurs façons : faire tourner à sec (sans eau de refroidissement) endommage la turbine de la pompe à eau en quelques secondes; noyer les cylindres peut pousser du carburant au-delà des segments dans l'huile; et surcharger une batterie marginale à répétition peut accélérer sa défaillance. Faites le dépannage de façon systématique plutôt que de lancer à répétition en espérant que ça parte.
-
-**Le moteur démarre mais s'éteint immédiatement. Qu'est-ce que ça veut dire ?**
-Habituellement un problème d'alimentation en carburant : le moteur démarre sur le carburant déjà dans le système mais ne peut pas maintenir le débit. Vérifiez la poire d'amorçage, le filtre à carburant et les raccords des conduites. Cela peut aussi être le mélange au ralenti sur un moteur à carburateur.
-
-**Devrais-je utiliser un additif pour nettoyer les injecteurs ?**
-Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d'un nettoyage physique ou d'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.
-
-**Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu'est-ce qui a changé ?**
-Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l'interne, ou un système de carburant marginal. Cela peut aussi être le début d'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.
-
----
-
-## Liens internes
-
-- [Hivernisation du moteur Mercury en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario)
-
----
-
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
@@ -206,7 +181,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 ---
 
-## FAQs
+## Foire aux questions
 
 ### Pourquoi mon Mercury hors-bord ne démarre pas après l'hiver ?
 
@@ -238,7 +213,7 @@ Si un Mercury a déclenché un arrêt sur l'eau à cause d'une surchauffe, d'une
 
 ### Est-ce mauvais de lancer le démarreur d'un moteur qui ne part pas, à répétition ?
 
-Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s'il y a de l'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.
+Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s'il y a de l'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Ne faites jamais tourner le moteur à sec, sans alimentation en eau de refroidissement, car la turbine de la pompe à eau peut être endommagée en quelques secondes. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.
 
 ### C'est quoi le cordon du coupe-circuit Mercury et où s'attache-t-il ?
 
@@ -247,6 +222,18 @@ Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) 
 ### Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?
 
 Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
+
+### Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?
+
+Un technicien avec les bons outils peut généralement identifier la cause en 30 à 90 minutes. Le dépannage par le propriétaire à la maison peut prendre plus de temps sans équipement de test spécialisé. Nous n'estimons pas de délais précis pour des diagnostics à distance.
+
+### Devrais-je utiliser un additif pour nettoyer les injecteurs ?
+
+Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d'un nettoyage physique ou d'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.
+
+### Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu'est-ce qui a changé ?
+
+Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l'interne, ou un système de carburant marginal. Cela peut aussi être le début d'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.
 
 ## Prochaines étapes
 

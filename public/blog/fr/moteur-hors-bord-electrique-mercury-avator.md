@@ -82,7 +82,7 @@ Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[o
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
-## FAQs
+## Foire aux questions
 
 ### Quelle est l'autonomie d'un moteur électrique Mercury Avator ?
 

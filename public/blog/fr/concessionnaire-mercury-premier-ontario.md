@@ -69,7 +69,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 **Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
 
-## FAQs
+## Foire aux questions
 
 ### Parlez-vous français chez Harris Boat Works?
 

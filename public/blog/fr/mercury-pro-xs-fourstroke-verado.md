@@ -78,7 +78,7 @@ On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. 
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
-## FAQs
+## Foire aux questions
 
 ### Est-ce que le Mercury Pro XS est un quatre-temps ?
 

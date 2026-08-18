@@ -143,7 +143,7 @@ Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-## FAQs
+## Foire aux questions
 
 ### Combien pèse le Mercury 90 HP FourStroke?
 
