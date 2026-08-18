@@ -174,22 +174,27 @@ async function searchMotors(supabase: any, args: any) {
     .filter((m: any) =>
       wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
-    .map((m: any) => ({
-      id: m.id,
-      modelDisplay: m.model_display || m.model,
-      family: m.family || "FourStroke",
-      horsepower: m.horsepower,
-      shaftLength: m.shaft_code,
-      sellingPrice:
-        m.manual_overrides?.sale_price ??
-        m.sale_price ??
-        m.dealer_price ??
-        m.msrp,
-      currency: "CAD",
-      availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
-      imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
-      url: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-    }));
+    .map((m: any) => {
+      const slug = motorSlug(m);
+      return {
+        id: m.id,
+        slug,
+        modelDisplay: m.model_display || m.model,
+        family: m.family || "FourStroke",
+        horsepower: m.horsepower,
+        shaftLength: m.shaft_code,
+        sellingPrice:
+          m.manual_overrides?.sale_price ??
+          m.sale_price ??
+          m.dealer_price ??
+          m.msrp,
+        currency: "CAD",
+        availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
+        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
+        url: slug ? `${SITE_URL}/motors/${slug}` : null,
+        quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
+      };
+    });
 }
 
 async function getMotor(supabase: any, args: any) {
@@ -214,8 +219,10 @@ async function getMotor(supabase: any, args: any) {
   }
   if (!m) return null;
 
+  const slug = motorSlug(m);
   return {
     id: m.id,
+    slug,
     modelDisplay: m.model_display || m.model,
     family: m.family || "FourStroke",
     horsepower: m.horsepower,
@@ -232,6 +239,7 @@ async function getMotor(supabase: any, args: any) {
     imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
     description: m.description,
     features: m.features,
+    url: slug ? `${SITE_URL}/motors/${slug}` : null,
     quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
   };
 }

@@ -65,6 +65,11 @@ describe("public motor agent contract", () => {
     expect(motorsApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(motor);");
+    expect(mcpServer).toContain("const slug = motorSlug(m);");
+    expect(mcpServer).toContain("${SITE_URL}/motors/${slug}");
+    expect(mcpServer).not.toContain(
+      "url: `${SITE_URL}/quote/motor-selection?motor=${m.id}`",
+    );
     expect(motorsApi).not.toContain("function slugify");
     expect(quoteApi).not.toContain("function slugify");
 
