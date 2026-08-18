@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import { motorSlug } from "../../../supabase/functions/_shared/motor-slug.ts";
@@ -47,9 +47,51 @@ describe("public motor agent contract", () => {
       },
       slug: "proxs-115hp-115-elpt-pro-xs-command-thrust",
     },
+    {
+      row: {
+        family: "FourStroke",
+        horsepower: 60,
+        model_display: "60 ELPT Command Thrust FourStroke",
+      },
+      slug: "fourstroke-60hp-60-elpt-command-thrust-fourstroke",
+    },
   ])("derives the checked-in catalog route $slug", ({ row, slug }) => {
     expect(motorSlug(row)).toBe(slug);
     expect(existsSync(`public/motors/${slug}.md`)).toBe(true);
+  });
+
+  it("does not 301 a checked-in motor twin onto a different motor", () => {
+    const commandThrustTwin = source(
+      "public/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md",
+    );
+    const standardTwin = source(
+      "public/motors/fourstroke-60hp-60-elpt-fourstroke.md",
+    );
+
+    expect(commandThrustTwin).toContain(
+      "motor_id: 8f7b62e5-e3d4-41d5-8489-9aa50c476d46",
+    );
+    expect(commandThrustTwin).toContain("model_number: 1F60453GZ");
+    expect(standardTwin).toContain(
+      "motor_id: 5744e979-5c77-4550-a955-d9e83ecdb26c",
+    );
+    expect(standardTwin).toContain("model_number: 1F60413GZ");
+
+    const vercel = JSON.parse(source("vercel.json")) as {
+      redirects?: Array<{ source: string; destination: string }>;
+    };
+    const motorHtmlRoutes = new Set(
+      readdirSync("public/motors")
+        .filter((name) => name.endsWith(".md"))
+        .map((name) => `/motors/${name.slice(0, -3)}`),
+    );
+    const colliding = (vercel.redirects ?? []).filter(
+      (redirect) =>
+        motorHtmlRoutes.has(redirect.source) &&
+        redirect.destination !== redirect.source,
+    );
+
+    expect(colliding).toEqual([]);
   });
 
   it("routes every public motor surface through the shared contract", () => {
