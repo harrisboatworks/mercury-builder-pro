@@ -12,6 +12,10 @@ describe('verified K3 leftover UX contract', () => {
     expect(menu).toContain('aria-modal="true"');
     expect(menu).toContain('aria-label="Site menu"');
     expect(menu).toContain("event.key === 'Escape'");
+    expect(menu).toContain('onCloseRef.current()');
+    expect(menu).toContain('onCloseRef.current = onClose');
+    expect(menu).toMatch(/}, \[isOpen\]\);/);
+    expect(menu).not.toMatch(/\[isOpen,\s*onClose\]/);
     expect(menu).toContain("document.body.style.overflow = 'hidden'");
     expect(menu).toContain('previouslyFocused?.focus()');
     expect(menu).toContain("event.key !== 'Tab'");
@@ -30,6 +34,8 @@ describe('verified K3 leftover UX contract', () => {
     expect(toc).toContain('aria-controls={panelId}');
     expect(toc).toContain('href={`#${group.h2.id}`}');
     expect(toc).toContain('href={`#${h3.id}`}');
+    expect(toc).toMatch(/href=\{`#\$\{group\.h2\.id\}`\}[\s\S]*?"block w-full text-left/);
+    expect(toc).toMatch(/href=\{`#\$\{h3\.id\}`\}[\s\S]*?"block w-full text-left/);
     expect(toc).toContain("aria-current={activeId === group.h2.id ? 'location' : undefined}");
     expect(toc).toContain("matchMedia('(prefers-reduced-motion: reduce)')");
     expect(toc).toContain("scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })");

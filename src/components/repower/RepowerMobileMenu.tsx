@@ -33,6 +33,8 @@ const NAV_LINKS = [
 export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
   const isActive = (to: string) =>
     to === '/' ? location.pathname === '/' : location.pathname === to || location.pathname.startsWith(to + '/');
 
@@ -50,7 +52,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (event.key !== 'Tab') return;
@@ -79,7 +81,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
       document.body.style.overflow = previousOverflow;
       previouslyFocused?.focus();
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

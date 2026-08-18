@@ -123,7 +123,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                 onClick={() => handleItemClick(group.h2.id)}
                 aria-current={activeId === group.h2.id ? 'location' : undefined}
                 className={cn(
-                  "w-full text-left py-1.5 px-3 rounded-md text-sm transition-colors",
+                  "block w-full text-left py-1.5 px-3 rounded-md text-sm transition-colors",
                   "hover:bg-muted hover:text-foreground",
                   activeId === group.h2.id
                     ? "bg-primary/10 text-primary font-medium"
@@ -142,7 +142,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                         onClick={() => handleItemClick(h3.id)}
                         aria-current={activeId === h3.id ? 'location' : undefined}
                         className={cn(
-                          "w-full text-left py-1 px-3 rounded-md text-sm transition-colors",
+                          "block w-full text-left py-1 px-3 rounded-md text-sm transition-colors",
                           "hover:bg-muted hover:text-foreground",
                           activeId === h3.id
                             ? "text-primary font-medium"
