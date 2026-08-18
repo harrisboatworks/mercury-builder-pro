@@ -423,6 +423,17 @@ check(
   ),
   'vercel.json must permanently redirect the retired bare repower-cost blog slug to /repower/cost.',
 );
+const motorHtmlRoutes = new Set(
+  readdirSync('public/motors')
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => `/motors/${name.slice(0, -3)}`),
+);
+for (const redirect of parsedVercelConfig.redirects ?? []) {
+  check(
+    !motorHtmlRoutes.has(redirect.source) || redirect.destination === redirect.source,
+    `vercel.json must not 301 checked-in motor route ${redirect.source} onto ${redirect.destination}.`,
+  );
+}
 for (const [source, destination] of [
   [
     '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario',
