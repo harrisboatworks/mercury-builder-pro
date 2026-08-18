@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-08-17
+last_updated: 2026-08-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The real story of Harris Boat Works. George Harris opened the shop in 1947, Jim ran it for 37 years, and Jay runs it today. Three generations on the same Rice Lake dock."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-08-17
+date_modified: 2026-08-30
 keywords: ["Harris Boat Works history","family marina Rice Lake","Mercury dealer since 1965","Gores Landing marina","three generation family business Ontario","Rice Lake boat dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,8 +25,8 @@ revenue_driver: none
 
 **Category:** About HBW  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-08-17  
-**Read time:** 9 min read  
+**Last reviewed:** 2026-08-30  
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
 > **Quick answer:** George Harris opened Harris Boat Works on Rice Lake in 1947 and ran it for 31 years. His son Jim stepped into the owner's chair in 1978 and ran it for 37 more. Jim's son Jay runs it today. The shop became a Mercury dealer in 1965 and is a current Mercury Premier Dealer, still on the same Gores Landing dock.
@@ -49,6 +49,8 @@ That's the three of us above, heading out from the docks in 1988. My grandfather
 
 My grandfather George Harris opened the shop in 1947 on the south shore of Rice Lake. Toronto families had been coming to this lake since the late 1800s, and somebody had to launch their boats, fix their engines, build their docks, and patch their canvas. George did all of it.
 
+George had already spent nearly two decades learning the trade. He began apprenticing at Rice Lake Boat Works in 1928 under owner Wally Pratt, building cedar-strip canoes, boats, and paddles. By the spring of 1947, opening his own shoreline shop was less a leap into a new business than the next step in a craft he'd practised since he was 20.
+
 He was a builder before he was a dealer. Wooden boats, docks, whatever the season called for. One winter in the 1950s he built the neighbourhood kids a sled with its own makeshift steering, loaded them on, and sent them down the hill. Not everything a craftsman makes ends up with a price tag. That's the kind of shop it was. There's even an old 1950s postcard floating around that calls the place the "Harris Boat Works Snack Bar Marina," which tells you the business plan was roughly "whatever Rice Lake needs."
 
 Through the 1950s and 60s, outboards took over from inboards and oars. Lighter, easier to service, easier to upgrade. George watched the industry shift and shifted with it. In 1965 he made the single biggest business decision in this company's history: he became a Mercury dealer.
@@ -68,6 +70,8 @@ We've stayed Mercury-only on purpose. No Yamaha, no Honda, no Suzuki. One brand,
 ## Jim's Shop: 1978 to 2015
 
 Dad stepped into the owner's chair in 1978, with George handing him the shop. If you go digging in the federal registry you'll find Harris Boat Works incorporated in February 1978, and that date confuses people who know we started in 1947. The paperwork simply marks the handoff: the year the second generation formally took the wheel.
+
+The handoff changed ownership, not George's connection to the craft. When the original workshop burned in 1980, he continued building to order from the basement of his home in semi-retirement until his death in November 1988. The last cedar-strip canoe he built still hangs in the main HBW building, one of the few surviving examples of his work. The longer builder's story is preserved on the official [George Harris history page](https://www.harrisboatworks.ca/george-harris).
 
 ![Jim Harris at his desk with a young Jay, around 1990. Paper work orders, a calculator, and a Mercury Racing t-shirt. The filing system was three tabs: current, charged, paid.](/lovable-uploads/jim-and-jay-harris-office-1990.jpg)
 
@@ -193,4 +197,3 @@ Yes. We're a working marina. Walk the docks, fuel up, look at the water. The sna
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
