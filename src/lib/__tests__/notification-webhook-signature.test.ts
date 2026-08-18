@@ -15,6 +15,22 @@ function formBody(params: Record<string, string>): string {
 }
 
 describe('notification-webhook Twilio signature', () => {
+  it('matches Twilio\'s published HMAC-SHA1 signature vector', async () => {
+    const signature = await computeTwilioSignature(
+      '12345',
+      'https://example.com/myapp.php?foo=1&bar=2',
+      {
+        Digits: '1234',
+        To: '+18005551212',
+        From: '+14158675310',
+        Caller: '+14158675310',
+        CallSid: 'CA1234567890ABCDE',
+      },
+    );
+
+    expect(signature).toBe('L/OH5YylLD5NRKLltdqwSvS0BnU=');
+  });
+
   it('accepts a valid signature and authorizes a MessageSid update', async () => {
     const params = {
       MessageSid: 'SM1234567890abcdef1234567890abcdef',
