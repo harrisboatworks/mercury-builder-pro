@@ -176,6 +176,61 @@ const sourceArticleSection = (slug) => {
   return blogArticles.slice(start, end);
 };
 
+const officialVideoEmbedContracts = [
+  {
+    slug: 'mercury-outboard-reliability-2026',
+    id: 'ydFfxwUz5yc',
+    title: 'Engine Care Basics for New Owners (Mercury Marine)',
+  },
+  {
+    slug: 'milky-gearcase-oil-meaning-cost-ontario',
+    id: 'BBbQVH5j0W0',
+    title: 'Changing Gear Lube on a Mercury 40-300 HP FourStroke',
+  },
+  {
+    slug: 'diy-mercury-outboard-winterization-guide',
+    id: 'YGuQjF6vuao',
+    title: 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)',
+  },
+  {
+    slug: 'mercury-smartcraft-connect-guide-ontario',
+    id: 'lEa_MVfOs7M',
+    title: 'SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)',
+  },
+  {
+    slug: 'mercury-115-hp-fourstroke-review-ontario',
+    id: 'HblsKMvjxCU',
+    title: 'Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers',
+    occurrences: 2,
+  },
+];
+
+for (const { slug, id, title, occurrences = 1 } of officialVideoEmbedContracts) {
+  const source = sourceArticleSection(slug);
+  const twin = read(`public/blog/${slug}.md`);
+  const directive = `:::youtube-embed\nid: ${id}\ntitle: ${title}\n:::`;
+  const twinLink = `[${title}](https://www.youtube.com/watch?v=${id})`;
+
+  check(source.includes(directive), `${slug} must keep its official video as an explicit body directive.`);
+  check((source.match(new RegExp(id, 'g')) ?? []).length === occurrences, `${slug} must reference video ${id} exactly ${occurrences} time(s) in source.`);
+  check(!/youtubeVideoId\s*:/.test(source), `${slug} must not add a duplicate top-of-article video field.`);
+  check(twin.includes(`${twinLink}\n\n`), `${slug} Markdown twin must preserve video ${id} as a standalone usable link.`);
+  check((twin.match(new RegExp(id, 'g')) ?? []).length === occurrences, `${slug} must reference video ${id} exactly ${occurrences} time(s) in its twin.`);
+}
+
+const rejectedVideoPlacements = [
+  ['mercury-maintenance-intervals-20-100-300-rule', ['BBbQVH5j0W0']],
+  ['mercury-outboard-oil-capacity-chart', ['ABeIIfXeB0Q', '7DlXFotIfLo']],
+  ['breaking-in-new-mercury-motor-guide', ['FfMtJ7Yn5Fs']],
+];
+
+for (const [slug, rejectedIds] of rejectedVideoPlacements) {
+  const surface = `${sourceArticleSection(slug)}\n${read(`public/blog/${slug}.md`)}`;
+  for (const id of rejectedIds) {
+    check(!surface.includes(id), `${slug} contains rejected or owner-blocked video ${id}.`);
+  }
+}
+
 const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
 const quickAnswerIntroCount = (surface) => (
   (surface.match(/^> \*\*Quick answer:\*\*/gmi) ?? []).length

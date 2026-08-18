@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "DIY Mercury Outboard Winterization"
 description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-07-31
+date_modified: 2026-08-09
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -38,14 +38,6 @@ You can winterize your own Mercury outboard only after identifying the exact sto
 [Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
-
-**Watch Mercury's official winterization checklist first:**
-
-https://www.youtube.com/watch?v=YGuQjF6vuao
-
-*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
-
----
 
 *Safe fall checklist*
 
@@ -139,6 +131,10 @@ If the procedure requires the engine to run, use the water-supply method and flo
 ---
 
 ## The Winterization Sequence
+
+**Watch Mercury's official winterization checklist:**
+
+[How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)](https://www.youtube.com/watch?v=YGuQjF6vuao)
 
 Do these in order. Don't skip steps. If you're not sure what you're looking at at any point, stop and bring the motor in.
 

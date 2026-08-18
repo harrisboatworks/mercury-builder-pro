@@ -118,6 +118,7 @@ Real maintenance, no upsell:
 **Watch Mercury's own walkthrough of the basics:**
 
 [Engine Care Basics for New Owners (Mercury Marine)](https://www.youtube.com/watch?v=ydFfxwUz5yc)
+
 *Video: Engine Care Basics for New Owners (Mercury Marine official channel).*
 
 If you're thinking about a new Mercury rather than servicing your current one: [mercuryrepower.ca](https://www.mercuryrepower.ca) has current information on repowering programs.

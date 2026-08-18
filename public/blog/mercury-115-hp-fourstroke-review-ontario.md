@@ -183,6 +183,7 @@ A 2023 115 Pro XS owner tested 19, 20 and 21-pitch props on a 2012 Glastron GT-1
 The 20-pitch prop was fastest. The 21 pulled the engine down and lost speed. The 19 kept the engine closer to the upper part of its range and could still be the better all-around choice once people and gear go aboard.
 
 [Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers](https://www.youtube.com/watch?v=HblsKMvjxCU)
+
 *A current-generation 115 Pro XS owner tests three prop pitches on the same Glastron.*
 
 ### Same pontoon, large pitch correction

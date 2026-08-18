@@ -15750,7 +15750,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-07-31',
+    dateModified: '2026-08-09',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -15770,14 +15770,6 @@ You can winterize your own Mercury outboard only after identifying the exact sto
 [Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
-
-**Watch Mercury's official winterization checklist first:**
-
-https://www.youtube.com/watch?v=YGuQjF6vuao
-
-*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
-
----
 
 ::diagnostic-flow
 heading: Winterizing your Mercury? Start with the exact manual
@@ -15854,6 +15846,13 @@ If the procedure requires the engine to run, use the water-supply method and flo
 ---
 
 ## The Winterization Sequence
+
+**Watch Mercury's official winterization checklist:**
+
+:::youtube-embed
+id: YGuQjF6vuao
+title: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)
+:::
 
 Do these in order. Don't skip steps. If you're not sure what you're looking at at any point, stop and bring the motor in.
 
@@ -26139,7 +26138,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Smartphone showing Mercury Marine app engine data with a white Mercury outboard motor at a dock in the background.',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-09',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~11 min read',
@@ -26263,6 +26262,13 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 ![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
 
 ## Install: DIY vs. HBW
+
+Mercury's official walkthrough shows the single-engine under-cowl 8M0173128 installation. Multi-engine setups with one to four engines use the under-helm 8M0173129 kit. Confirm compatibility and follow the current instructions for the exact boat.
+
+:::youtube-embed
+id: lEa_MVfOs7M
+title: SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)
+:::
 
 The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
 
