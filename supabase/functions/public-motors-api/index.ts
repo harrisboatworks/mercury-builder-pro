@@ -2,6 +2,8 @@
 // CORS-open, no-auth. Cached 5 minutes at the edge.
 // Pricing hierarchy: manual_overrides.sale → manual_overrides.base → sale_price → dealer_price → msrp → base_price
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+import { detectFamily, motorSlug } from '../_shared/motor-slug.ts';
+import { PUBLIC_SITE_URL, toPublicImageUrl } from '../_shared/public-motor-contract.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,24 +11,7 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
 };
 
-const SITE_URL = 'https://mercuryrepower.ca';
-
-function slugify(s: string): string {
-  return (s || '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
-function detectFamily(model: string, motorType: string, family: string | null): string {
-  if (family) return family;
-  const m = (model || '').toLowerCase();
-  if (m.includes('proxs') || m.includes('pro xs')) return 'Pro XS';
-  if (m.includes('seapro') || m.includes('sea pro')) return 'SeaPro';
-  if (m.includes('racing')) return 'Racing';
-  if (m.includes('verado')) return 'Verado';
-  return 'FourStroke';
-}
+const SITE_URL = PUBLIC_SITE_URL;
 
 function resolveSellingPrice(motor: any): number | null {
   const overrides = motor.manual_overrides || {};
@@ -96,7 +81,7 @@ Deno.serve(async (req) => {
       .map((m) => {
         const family = detectFamily(m.model_display || m.model, m.motor_type, m.family);
         const sellingPrice = resolveSellingPrice(m);
-        const slug = slugify(`${family}-${m.horsepower}hp-${m.model_display || m.model}`);
+        const slug = motorSlug(m);
         const quantity = m.stock_quantity == null ? null : Math.max(0, Number(m.stock_quantity) || 0);
         const inStock = quantity == null
           ? !!m.in_stock || (m.availability || '').trim().toLowerCase() === 'in stock'
@@ -117,7 +102,7 @@ Deno.serve(async (req) => {
           availability: m.availability || (inStock ? 'In Stock' : 'Special Order'),
           inStock,
           stockQuantity: quantity,
-          imageUrl: m.hero_image_url || m.image_url || null,
+          imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
           url: `${SITE_URL}/motors/${slug}`,
         };
       });
