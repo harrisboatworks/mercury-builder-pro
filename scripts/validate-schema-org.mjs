@@ -103,8 +103,9 @@ function pickFiles() {
 
 const files = pickFiles();
 if (!files.length) {
-  console.log('[validate-schema-org] No HTML files found in dist/. Skipping.');
-  process.exit(0);
+  console.error('[validate-schema-org] ❌ No HTML files were available in dist/ for remote validation.');
+  console.error('Build blocked because schema.org validation had no input. Set SKIP_SCHEMA_ORG_VALIDATOR=1 only for an explicit outage bypass.');
+  process.exit(1);
 }
 
 const errors = [];
