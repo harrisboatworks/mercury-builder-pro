@@ -16,11 +16,11 @@ const PONTOON_FAQ = [
   },
   {
     question: "Will a Mercury Command Thrust fit my Legend, Princecraft, or Sylvan pontoon?",
-    answer: "Yes, Mercury Command Thrust 40–150 HP is a common factory option on Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons. Harris Boat Works is an authorized Legend Boats dealer, so we know those rigging packages well. For other brands, we'll confirm bolt pattern, controls, and harness compatibility when you build your quote."
+    answer: "Yes, Mercury Command Thrust 40–115 HP is a common factory option on Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons. Harris Boat Works is an authorized Legend Boats dealer, so we know those rigging packages well. For other brands, we'll confirm bolt pattern, controls, and harness compatibility when you build your quote."
   },
   {
     question: "How much does a pontoon repower cost in Ontario?",
-    answer: "Most pontoon repowers run $9,000 to $18,000 CAD installed, depending on horsepower (90–150 HP Command Thrust is the typical range), controls (mechanical vs digital), and rigging. That's motor + new controls/cables + propeller + install + lake test + warranty registration. Build a quote at mercuryrepower.ca for live CAD pricing. Pickup only at Gores Landing on Rice Lake."
+    answer: "Most pontoon repowers run $9,000 to $18,000 CAD installed, depending on horsepower (90–115 HP Command Thrust is the typical range), controls (mechanical vs digital), and rigging. That's motor + new controls/cables + propeller + install + lake test + warranty registration. Build a quote at mercuryrepower.ca for live CAD pricing. Pickup only at Gores Landing on Rice Lake."
   }
 ];
 
@@ -33,7 +33,7 @@ export function MercuryPontoonOutboardsSEO() {
         "@id": `${SITE_URL}/mercury-pontoon-outboards#webpage`,
         "url": `${SITE_URL}/mercury-pontoon-outboards`,
         "name": "Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
-        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
+        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 115 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -52,7 +52,7 @@ export function MercuryPontoonOutboardsSEO() {
         "@type": "Service",
         "@id": `${SITE_URL}/mercury-pontoon-outboards#service`,
         "name": "Mercury Pontoon Outboard Sales & Repower",
-        "description": "Mercury Command Thrust outboards (40–150 HP) and high-thrust repower service for pontoon boats. Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington compatible.",
+        "description": "Mercury Command Thrust outboards (40–115 HP) and high-thrust repower service for pontoon boats. Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington compatible.",
         "provider": { "@id": `${SITE_URL}/#organization` },
         "areaServed": [
           { "@type": "Place", "name": "Rice Lake, Ontario" },

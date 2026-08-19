@@ -79,7 +79,7 @@ Hull rating is the hard limit. After that, fishing style decides.
 
 **Best for light, tight-water bass rigs**
 
-#### 175–225 Pro XS V6
+#### 175–225 Pro XS
 
 - 18–20 ft aluminum or fiberglass angler hulls
 - Multi-lake days across Rice, Pigeon, Stoney
@@ -88,7 +88,7 @@ Hull rating is the hard limit. After that, fishing style decides.
 
 **Sweet spot for most Kawartha anglers**
 
-Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
+Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V8 with the standard gearcase.
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
 
@@ -144,7 +144,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS V6 build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 

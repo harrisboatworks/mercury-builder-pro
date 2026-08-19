@@ -67,7 +67,7 @@ The module lives under the cowl on a single-engine boat, or under the helm on a 
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, 2-strokes, and Optimax engines are NOT compatible. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
 
 For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
 

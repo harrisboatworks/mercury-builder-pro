@@ -4094,7 +4094,7 @@ The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-
 | Mercury 9.9, 15, 20 HP small portables | **No** | Not SmartCraft-equipped by design |
 | Pre-2004 Mercury 4-strokes | **No** | SmartCraft network was not yet on these motors |
 | Mercury 2-strokes (any year) | **No** | Different protocol, no Connect path |
-| Mercury Optimax (any year) | **No** | Different protocol, no Connect path |
+| Mercury Optimax (2004 and newer) | Generally yes, confirm serial | SmartCraft-capable; Mercury lists 2004+ engines 40 HP and up as Connect-compatible |
 
 If your motor isn't on this table, send the serial number and we'll check.
 
@@ -11132,7 +11132,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Tips',
     readTime: '8 min read',
     keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
-    content: `> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is typically the Saturday closest to May 15, confirm the exact date each year from the OMNR Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+    content: `> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
 
 ---
 
@@ -11215,7 +11215,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 - Pre-launch checks: safety gear in the boat, drain plug installed, lights working.
 - Launch and run the motor briefly before going far from the dock.
 - Verify fish finder and GPS are on and reading before you reach your zone.
-- Confirm the legal start time, walleye season on Zone 17 typically opens at sunrise. Verify the current year's regulations from the OMNR before opener day.
+- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNRF before opener day.
 
 ---
 
@@ -11250,7 +11250,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 
 **Missing safety gear** turns an opener into an OPP stop. Marine patrols are active on opener weekend.
 
-**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current OMNR regulations before opener.
+**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNRF regulations before opener.
 
 ---
 
@@ -11269,7 +11269,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 ## FAQs
 
 **When is the Ontario walleye opener for Zone 17?** 
-Typically the Saturday closest to May 15. Confirm the exact date each year from the OMNR Fishing Regulations Summary. Do not assume it is the same date as last year.
+The second Saturday of May. Confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. Do not assume it is the same date as last year.
 
 **What should I do two weeks before walleye opener?** 
 Confirm spring commissioning is done, schedule any final service, and check your fishing licence and PCL. Two weeks gives you time to fix anything that comes up.
@@ -11322,14 +11322,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { name: 'Inspect fishing gear and stock essentials', text: 'Check rods, reels, lines, lures, and terminal tackle. Stock licences, current-standard PFDs, throwable cushion, anchor and rope, paddle, first aid kit, fire extinguisher, and emergency radio.' },
       { name: 'Top off fresh fuel', text: 'Top off the tank with fresh gas. Avoid running the tank to empty. If you skipped fall stabilizer, run a dose now to treat residual old gas as you transition to fresh fuel.' },
       { name: 'Verify weather and pre-rig', text: 'Three days before opener, verify the weather forecast for opener morning. Pre-tie leaders and rig rods. Charge electronics, phones, and batteries. Confirm partners and meet point.' },
-      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify legal walleye opener start time (usually sunrise; confirm current OMNR regulations).' },
+      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify the opener date and current rules for your zone (confirm the current MNRF regulations).' },
     ],
     howToTotalTime: 'PT60M',
     howToTools: ['Battery charger', 'Fresh fuel', 'Fuel stabilizer', 'PFDs (Transport Canada-approved)', 'Throwable cushion', 'Fire extinguisher'],
     faqs: [
       {
         question: 'When is the Ontario walleye opener?',
-        answer: 'Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from the OMNR Fishing Regulations Summary.'
+        answer: 'The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary.'
       },
       {
         question: 'What should I do 2 weeks before walleye opener?',
@@ -25959,7 +25959,7 @@ The module lives under the cowl on a single-engine boat, or under the helm on a 
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, 2-strokes, and Optimax engines are NOT compatible. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
 
 For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
 
@@ -29133,7 +29133,7 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 ## Getting to Harris Boat Works from Markham
 
-**Route:** Highway 404 north to Highway 115 east, then County Road 28 north into Gores Landing.
+**Route:** Highway 407 east to Highway 115 north, then County Road 28 south and County Road 18 east into Gores Landing.
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
@@ -29218,7 +29218,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program." },
-      { question: 'How far is Harris Boat Works from Markham?', answer: 'Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.' },
+      { question: 'How far is Harris Boat Works from Markham?', answer: 'Approximately 70 minutes via Highway 407 east and Highway 115 north, then County Road 28. Distance is about 110 km depending on your part of Markham.' },
       { question: 'Why drive to Rice Lake instead of a closer GTA dealer?', answer: 'Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture.' },
       { question: 'Does HBW serve Unionville and Stouffville too?', answer: 'Yes. We serve a broad Markham-area customer base including Unionville, Stouffville, and the surrounding York Region communities.' },
     ],
@@ -29305,7 +29305,7 @@ Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage 
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Route:** Highway 404 north to Highway 115 east, then exit to County Road 28 north into Gores Landing.
+**Route:** Highway 407 east to Highway 115 north, then exit to County Road 28 south and follow County Road 18 east into Gores Landing.
 
 **Approximate drive time:** Around 75 minutes in normal traffic. The route on 404 north is familiar to any Richmond Hill resident who's driven to cottage country. The last 30 minutes is rural, county roads, farmland, and then Rice Lake in the distance.
 
@@ -32953,7 +32953,7 @@ leftCriteria:
   - 150 Pro XS = inline-4, lighter rigged package
 leftOutcome: Best for light, tight-water bass rigs
 leftVariant: standard
-rightLabel: 175–225 Pro XS V6
+rightLabel: 175–225 Pro XS
 rightCriteria:
   - 18–20 ft aluminum or fiberglass angler hulls
   - Multi-lake days across Rice, Pigeon, Stoney
@@ -32961,7 +32961,7 @@ rightCriteria:
   - Top end varies by hull, load, and setup; ask us for real-world numbers on your rig
 rightOutcome: Sweet spot for most Kawartha anglers
 rightVariant: recommended
-whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
+whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V8 with the standard gearcase.
 ::
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
@@ -33020,7 +33020,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS V6 build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 
@@ -35307,14 +35307,15 @@ Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Sam
 
 Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (the flagship V8/V10/V12 line, naturally aspirated, special-order territory). SeaPro is the commercial-grade variant.
 
-Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175-250 Pro XS uses Mercury's 3.4L V6 not available in the same HP class FourStroke).
+Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175 Pro XS uses Mercury's 3.4L V6, and the 200-300 Pro XS run the 4.6L V8, a bigger block than the same-HP FourStroke).
 
 The Pro XS lineup as of 2026:
 
 | HP Range | Configuration | Typical Application |
 |---|---|---|
 | 115 - 150 | 2.1L inline-4 (115) or 3.0L inline-4 (150) | Bass boats, performance fishing, pontoon performance setups |
-| 175 - 200 - 225 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 175 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 200 - 225 | 4.6L V8 | Tournament bass boats, performance fibreglass, larger pontoons |
 | 250 - 300 | 4.6L V8 | Offshore fishing, performance cruisers, large performance pontoons |
 
 The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 and above are V6/V8 architectures that aren't available in FourStroke trim, these are Pro XS-exclusive engine families.
@@ -35399,8 +35400,8 @@ The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,50
 | 115 Pro XS | $17,000 - $21,500 |
 | 150 Pro XS | $20,500 - $26,500 |
 | 175 Pro XS V6 | $25,500 - $32,000 |
-| 200 Pro XS V6 | $27,500 - $34,500 |
-| 225 Pro XS V6 | $30,000 - $37,500 |
+| 200 Pro XS V8 | $27,500 - $34,500 |
+| 225 Pro XS V8 | $30,000 - $37,500 |
 | 250 Pro XS V8 | $33,000 - $41,000 |
 | 300 Pro XS V8 | $37,500 - $46,500 |
 

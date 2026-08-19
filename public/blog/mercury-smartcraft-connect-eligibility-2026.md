@@ -50,7 +50,7 @@ The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-
 | Mercury 9.9, 15, 20 HP small portables | **No** | Not SmartCraft-equipped by design |
 | Pre-2004 Mercury 4-strokes | **No** | SmartCraft network was not yet on these motors |
 | Mercury 2-strokes (any year) | **No** | Different protocol, no Connect path |
-| Mercury Optimax (any year) | **No** | Different protocol, no Connect path |
+| Mercury Optimax (2004 and newer) | Generally yes, confirm serial | SmartCraft-capable; Mercury lists 2004+ engines 40 HP and up as Connect-compatible |
 
 If your motor isn't on this table, send the serial number and we'll check.
 

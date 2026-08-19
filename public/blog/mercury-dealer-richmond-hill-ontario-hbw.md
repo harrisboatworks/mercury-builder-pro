@@ -94,7 +94,7 @@ Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage 
 
 ## Getting to Harris Boat Works from Richmond Hill
 
-**Route:** Highway 404 north to Highway 115 east, then exit to County Road 28 north into Gores Landing.
+**Route:** Highway 407 east to Highway 115 north, then exit to County Road 28 south and follow County Road 18 east into Gores Landing.
 
 **Approximate drive time:** Around 75 minutes in normal traffic. The route on 404 north is familiar to any Richmond Hill resident who's driven to cottage country. The last 30 minutes is rural, county roads, farmland, and then Rice Lake in the distance.
 
