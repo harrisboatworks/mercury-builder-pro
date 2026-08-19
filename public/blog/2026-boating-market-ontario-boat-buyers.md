@@ -149,7 +149,7 @@ A season on the water is worth more than 5 percent off a motor. If a missed summ
 - Financing is improving.
 - The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
-We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). HBW is a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

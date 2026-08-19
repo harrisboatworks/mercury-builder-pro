@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-08-01
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-01
+date_modified: 2026-08-19
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-01  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 

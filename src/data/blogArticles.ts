@@ -3958,7 +3958,7 @@ For the long version of motor serial number decoding, our [Mercury Outboard Seri
 
 ## HP class availability
 
-At last check, Canadian listings included 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
+As of August 8, 2026, current Canadian listings include 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
 
 Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
@@ -13325,7 +13325,7 @@ whenInDoubt: A season on the water is worth more than 5 percent off a motor. If 
 - Financing is improving.
 - The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
-We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). HBW is a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

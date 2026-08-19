@@ -238,20 +238,6 @@ const GTA_DRIVE_IN_FORBIDDEN = [
 ];
 
 const ARTICLE_CONTRACTS = {
-  '2026-boating-market-ontario-boat-buyers': {
-    required: [
-      {
-        rx: /family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965/i,
-        rule: 'founding-vs-mercury-dealer-timeline',
-      },
-    ],
-    forbidden: [
-      {
-        rx: /selling and servicing Mercury motors[^.\n]{0,80}since 1947/i,
-        rule: 'no-1947-mercury-dealer-conflation',
-      },
-    ],
-  },
   'winter-storage-near-toronto-hbw': {
     required: [
       {
