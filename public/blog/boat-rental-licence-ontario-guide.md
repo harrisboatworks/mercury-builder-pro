@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Do You Need a Licence to Rent a Boat in Ontario? (2026)"
 description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["licence to rent a boat ontario","boat rental licence ontario","pcoc for rental boat","boating licence rice lake","temporary boat licence ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
 
 > **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A completed rental safety checklist can satisfy that rule for some rentals, but Harris Boat Works has a stricter policy: every person who may drive an HBW rental must show a valid Pleasure Craft Operator Card and photo ID. Passengers do not need one.
 
-The easiest rental check-in is the one where the driver arrives with the required proof of competency already complete.
+Getting the PCOC sorted before your rental date keeps check-in to a couple of minutes.
 
 Yes. And it's genuinely not a big deal if you handle it the night before instead of at our counter.
 

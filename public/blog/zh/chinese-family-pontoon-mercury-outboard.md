@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard.md
-last_updated: 2026-06-19
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "华人家庭买 pontoon：Mercury 船外机怎么配才不后悔"
 description: "给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。"
 category: "家庭买船指南"
 date_published: 2026-05-10
-date_modified: 2026-06-19
+date_modified: 2026-08-19
 keywords: ["pontoon Mercury 中文","华人家庭 pontoon","安省 pontoon 船外机","Mercury Command Thrust 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 家庭买船指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-06-19  
+**最后审核:** 2026-08-19  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
 
@@ -45,7 +45,7 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 ## 关于语言的说明
 
-关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意——Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
+关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意：Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
 
 ---
 

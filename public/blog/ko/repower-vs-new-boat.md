@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오�
 description: "보트 엔진이 낡았을 때, 엔진만 교체하는 게 나을까 아니면 새 보트를 사는 게 나을까? 비용, 선체 상태, 타이밍 등 현실적인 판단 기준을 정리했습니다."
 category: "엔진 교체"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["선외기 교체 vs 새 보트","repower 가성비","온타리오 보트 엔진 교체","repower vs new boat Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 엔진 교체  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
 
@@ -36,7 +36,7 @@ revenue_driver: repower
 - **선체 수명**: 양질의 알루미늄 hull은 30-40년, 적절히 관리한 fiberglass도 25-30년
 - **Repower 적합**: 선체 양호, 현 보트 크기·용도 만족, 짧은 대기 시간
 - **새 보트 적합**: 선체 균열/부식, 다른 종류 보트 필요, 단일 대출 선호
-- **HBW**: Mercury Premier + Legend Boats 딜러 — 양쪽 옵션을 정직하게 안내
+- **HBW**: Mercury Premier + Legend Boats 딜러, 양쪽 옵션을 정직하게 안내
 
 ---
 

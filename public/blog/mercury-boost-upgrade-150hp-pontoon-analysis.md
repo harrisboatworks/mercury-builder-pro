@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
-> **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's published dealer-installed list starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
+> **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's dealer-installed list as of our last review starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -132,7 +132,7 @@ Wondering if Boost makes sense for your specific pontoon? We'll tell you straigh
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
-> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
 
 ### Worth it? Run your own numbers.
 
@@ -209,3 +209,4 @@ Boost is available for eligible motors through Mercury's supported app flow on s
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

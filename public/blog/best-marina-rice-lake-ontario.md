@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Rice Lake's Full-Service Marina Since 1947"
-description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals."
+description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals when in season."
 category: "Rice Lake & Local"
 date_published: 2026-05-16
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["best marina rice lake ontario","rice lake marina","harris boat works","gores landing marina","mercury dealer rice lake","rice lake boat slips","rice lake boat launch","rice lake winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Rice Lake's Full-Service Marina Since 1947
 
-> The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals.
+> The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals when in season.
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 

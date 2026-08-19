@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,17 +25,17 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
-> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed December 1 through April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February to be first in line when install work resumes in April. Build yours at mercuryrepower.ca.
 
 [Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
 
 ## Winter Repower Planning
 
-Winter is the perfect time to plan and order a repower. Your boat sits anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
+Winter is when the smart repowers get ordered. The boat is doing nothing anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
 
 ### Why Plan a Repower Over Winter?
 
@@ -46,9 +46,9 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - No mid-season scramble if your old motor fails
 
 **Potential Savings**:
-- Off-season Mercury promotions
+- Any current Mercury promotions (the promotions page has the live list)
 - Finance promotions often available
-- Lock in current pricing before any spring increases
+- Lock in the pricing set out in your written quote
 - Bundle the order with your fall winterization conversation
 
 ### Planning Timeline
@@ -71,7 +71,7 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - Installation performed
 - Lake test when conditions allow
 - Adjustments and setup
-- Delivery before the season
+- Ready for pickup before the season
 
 *Spring repower budget (off-season ordering)*
 
@@ -83,13 +83,13 @@ Locking your order in over winter gets you first pick of motors and an early-spr
 
 **$13,500 to $22,000**
 
-Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+Range covers Mercury 90 ELPT through 150 ELPT. Pro XS carries a premium over a FourStroke at the same HP; the configurator shows the current delta for your exact motor.
 
 #### Install and rigging
 
 **$1,200 to $2,400**
 
-Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+Mounting, hardware, alignment, Lake Test. Higher end if the transom needs reinforcement.
 
 #### Control conversion (if needed)
 
@@ -101,7 +101,7 @@ Cable to digital, or tiller to side mount. Often required when stepping up from 
 
 **$350 to $1,200**
 
-Sized after sea trial. Standard allowance applies on most installs.
+Sized after lake test. Standard allowance applies on most installs.
 
 #### First-year service
 
@@ -113,7 +113,7 @@ Model-specific break-in guidance and maintenance-schedule review. HBW may recomm
 
 **$700 to $1,800**
 
-8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+Up to 8 years of combined factory-plus-MPP coverage on eligible plans; current terms are quoted at purchase. Best value if you finance or plan to keep the boat past year 5.
 
 #### Typical out-the-door range
 
@@ -138,7 +138,7 @@ Model-specific break-in guidance and maintenance-schedule review. HBW may recomm
 ### Decision Points
 
 **Repair vs Repower**:
-- Repair cost exceeding $3,000?
+- Repair estimate rivalling a meaningful share of a new motor's cost?
 - Motor over 15 years old?
 - Parts becoming scarce?
 - Want current technology?
@@ -171,15 +171,15 @@ If yes to most, repower makes sense.
 
 ### How far in advance should I plan an order-ahead repower?
 
-Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter.
+Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed December 1 through April 1, but we take orders by phone and email all winter.
 
 ### Will my boat be ready for the May long weekend?
 
-If you lock your order in by January or February, yes. We start install work as soon as we reopen in early April, and customers who ordered over winter are at the front of the spring queue.
+Early orders have the best shot. Lock in by January or February and you are at the front of the spring queue when we reopen in early April. Exact timing still depends on the motor, parts, and weather, so treat your written quote as the real date.
 
 ### What about lake testing in winter?
 
-Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed roughly December 1 to April 1, so no on-water work happens in winter.
+Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed December 1 through April 1, so no on-water work happens in winter.
 
 ### Can I do anything to prepare my boat for repower?
 

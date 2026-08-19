@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-08-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-03
+date_modified: 2026-08-19
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-08-19  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
@@ -106,7 +106,7 @@ Rice Lake 几个对买家友好的特点：
 
 **5 至 10 年船龄 + HBW 验车**
 
-不会英文又不熟船的华人买家, 强烈建议第一艘船买新的, 并找一家Premier 经销商。带会英语的亲友同来或用翻译软件沟通即可——出问题时, 经销商等级和保修响应比省 $3,000 重要得多。
+不会英文又不熟船的华人买家, 强烈建议第一艘船买新的, 并找一家Premier 经销商。带会英语的亲友同来或用翻译软件沟通即可。出问题时, 经销商等级和保修响应比省 $3,000 重要得多。
 
 ## 第二步：新船 vs 二手船
 
@@ -163,9 +163,9 @@ Rice Lake 几个对买家友好的特点：
 
 实话实说：HBW 是一家 Harris 家族经营的 Rice Lake 船厂，**团队使用英语服务，没有中文母语的销售或翻译**。但我们这几年接待了越来越多的 GTA 华人家庭，常用做法是：
 
-- **欢迎带会英语的亲友同来**，或使用手机翻译软件——我们会耐心沟通、尽力配合。
+- **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合。
 - **报价用 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在线生成：** 可以在家里慢慢看、和家人商量、发给懂行的朋友评估，不会有现场销售的压力。
-- **看船预约：** 周末高峰期建议提前预约，避免你开了 90 分钟过来没人接待。
+- **来店看船：** 周末高峰期可能较忙，建议先发英文邮件确认当天开放情况，避免开了 90 分钟过来没人接待。
 - **交付前讲解：** 第一次买船的家庭，我们会在交付时安排基础操作讲解，包括启动、靠泊、加油、保养注意事项。
 - **我们不能承诺中文服务，也没有专职翻译。**
 
@@ -236,7 +236,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
-3. **预约看船：** 通过英文邮件或电话联系我们；欢迎带会英语的亲友同来或使用翻译软件。确认时间后再出发。
+3. **来店看船：** 通过英文邮件联系我们确认营业时间；欢迎带会英语的亲友同来或使用翻译软件。确认营业时间后再出发。
 4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
 
 Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
@@ -275,7 +275,7 @@ HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、�
 
 ### 提车后，发动机保养在哪里做？
 
-可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务都可以预约，请通过 https://hbw.wiki/service 提交请求。
+可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbw.wiki/service 提交请求。
 
 ## Next steps
 

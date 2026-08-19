@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
 > **Quick answer:** In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
 
 ---
-
-### Full Article
 
 The shoulder seasons on Ontario lakes have a lot going for them, fewer boats, calmer water in the mornings, better walleye and bass fishing. What they also have is cold water, changing weather, and a margin for error that shrinks fast.
 
@@ -112,7 +110,7 @@ A running motor gets you home. A failed motor in October on a cold lake is not t
 
 Cold starts are harder than warm-weather starts. Allow proper warm-up time. Check fuel lines for stiffness. Carry spare spark plugs.
 
-If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and Mercruiser.
+If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -51,13 +51,13 @@ A 15-year-old aluminum fishing boat with a solid transom and a sound hull is not
 
 **Repower.** Put a new Mercury on the hull you already know. You keep the layout that works, the fit-out you have customized, and a boat that has earned your trust. It costs a fraction of new, the warranty resets to a fresh 3-year term, fuel economy improves over an older motor, and the noise drops noticeably.
 
-Most Kawartha boaters who run the numbers land on the repower. As of 2026, a repower typically costs around half of a comparable new package, often less. For the full line-by-line cost picture in current dollars, see our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad). This guide focuses on the process.
+Most Kawartha boaters who run the numbers land on the repower. A repower typically costs well under a comparable new package. For the full line-by-line cost picture in current dollars, see our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad). This guide focuses on the process.
 
 The boaters who regret a repower are almost always the ones who put a new motor on a hull with a soft transom. That is why the transom check comes first, and why we do one before quoting anything.
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial.](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to lake test.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -108,7 +108,7 @@ The **FourStroke** is the everyday motor: quiet, fuel-efficient, and built for r
 
 ## Step 3: What Else Goes on the Bill, Beyond the Motor
 
-The motor is roughly two-thirds of a repower's total cost. The other third is what the motor needs to actually run on your boat, and it is where budgets get surprised. You do not need exact prices to plan, you need to know what drives them.
+The motor is typically the single largest share of a repower's total cost. The other third is what the motor needs to actually run on your boat, and it is where budgets get surprised. You do not need exact prices to plan, you need to know what drives them.
 
 | Item | What it covers | What drives the cost |
 |---|---|---|
@@ -209,7 +209,7 @@ So we lead with the walk-around, and we tell you what we find even when the find
 
 Not every repower guide is written for this water. A few things specific to where we are:
 
-**Wind.** Rice Lake, the Trent-Severn connecting lakes, and the wider Kawarthas all carry open-water exposure. Rice Lake's 32 km east-west fetch builds real chop in an afternoon west wind. Adequate horsepower is not about ego or top speed. It is about running home safely in conditions that develop faster than they looked at 8 AM.
+**Wind.** Rice Lake, the Trent-Severn connecting lakes, and the wider Kawarthas all carry open-water exposure. Rice Lake's long east-west fetch builds real chop in an afternoon west wind. Adequate horsepower is not about ego or top speed. It is about running home safely in conditions that develop faster than they looked at 8 AM.
 
 **Shallow water and weeds.** Most Kawartha fishing happens in 8 to 17 feet with heavy summer weed growth. Modern Mercury FourStrokes run cleaner in weedy water than older carbureted two-strokes.
 
@@ -253,7 +253,7 @@ Or call **905-342-2153**. We will start with the hull walk-around, work through 
 - Mercury Marine, owner's resources and maintenance schedules: mercurymarine.com/us/en/service-and-support/owners-resources
 - Parks Canada, Trent-Severn Waterway operating season: parks.canada.ca/lhn-nhs/on/trentsevern
 
-*Process details and recommendations are current as of May 2026. Pricing changes through the year, so build a current quote at mercuryrepower.ca and confirm the details for your boat with HBW.*
+*Process details and recommendations are current as of August 2026. Pricing changes through the year, so build a current quote at mercuryrepower.ca and confirm the details for your boat with HBW.*
 
 ---
 
@@ -267,7 +267,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ### What is a boat repower?
 
-Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
+Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a lake-test. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
 
 ### Is repowering worth it on an older boat?
 
@@ -299,7 +299,7 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 
 ### When is the best time to book a repower?
 
-October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed December 1 through April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ## Related guides
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Won't Start After Sitting: Fixes"
 description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["mercury outboard wont start after sitting","mercury outboard stale fuel","mercury outboard spring no start","outboard wont start after winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 
@@ -35,7 +35,7 @@ revenue_driver: service
 
 A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold [winter storage](/blog/boat-storage-kawartha-lakes), stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
 
-For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -77,7 +77,7 @@ Cranking but no fire usually points to spark or fuel delivery. Pull a plug to ch
 
 #### Tried everything?
 
-After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
+After storage, the most common no-start fixes we see are carb cleaning, fuel system flush, and battery replacement, all priced at our current published rates. Book at hbw.wiki/service.
 
 ---
 
@@ -187,14 +187,14 @@ DIY troubleshooting makes sense when you can identify and fix the problem. It st
 - You suspect a fuel system issue beyond stale gas (carburettor or injector blockage that needs cleaning)
 - The motor makes unusual noises during cranking
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consistent volume of spring diagnostic work every May, the sooner you book, the sooner you're on the water.
 
 ---
 
 **Can't find the problem?** 
-Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: 905-342-2153
 

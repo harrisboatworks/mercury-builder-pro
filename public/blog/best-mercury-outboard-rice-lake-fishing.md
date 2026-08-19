@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard Setup for Rice Lake Fishing"
 description: "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -220,7 +220,7 @@ Generic outboard advice does not apply here. These are the specific conditions t
 
 **Trent-Severn access.** The east end of Rice Lake connects to 386 km of the [Trent-Severn Waterway](/blog/trent-severn-waterway-boating-guide-2026). Boats that run the system need consistent mid-range cruise performance for lock-to-lock days.
 
-**The ramp.** Most public launches on Rice Lake are adequate. The Harris Boat Works two-lane concrete ramp at Gores Landing is the only 24/7 full-service option on the lake: open 365 days, marine fuel, parking for oversized trailers, $20 per day or a season pass.
+**The ramp.** Most public launches on Rice Lake are adequate. The Harris Boat Works two-lane concrete ramp at Gores Landing is the best-equipped option on the lake: marine fuel and oversized-trailer parking in season, $20 per day or a season pass.
 
 ---
 

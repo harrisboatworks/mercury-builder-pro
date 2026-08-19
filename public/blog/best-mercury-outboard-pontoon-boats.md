@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)"
 description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
@@ -196,7 +196,7 @@ For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Comm
 
 ### What is the best Mercury outboard for an 18-foot pontoon?
 
-For cruising and fishing without water sports, the 90 HP Command Thrust FourStroke is plenty. For occasional water sports with kids, step up to 115 HP Command Thrust. The all-in repower for 90 to 115 HP CT lands $17,000 to $22,000 CAD at HBW.
+For cruising and fishing without water sports, the 90 HP Command Thrust FourStroke is plenty. For occasional water sports with kids, step up to 115 HP Command Thrust. For a current all-in price on a 90 to 115 HP CT repower, run your boat through the configurator at mercuryrepower.ca.
 
 ### What is the best Mercury for a 20-foot pontoon?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-08-01
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Waterway 2026 Guide"
 description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-08-01
+date_modified: 2026-08-19
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-01  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -36,8 +36,6 @@ The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
 ---
-
-### Full Article
 
 The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
@@ -207,7 +205,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minut
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
 | Rentals | Current pontoon and fishing-boat lineup for Rice Lake trips |
-| Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
+| Mercury service | Premier dealer; for engine repairs, we only service Mercury and MerCruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -225,7 +223,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 ### Do I need a special licence to lock through the Trent-Severn?
 
-No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at $24, so check yours before you go.
+No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours before you go.
 
 ### How long does it take to lock through?
 

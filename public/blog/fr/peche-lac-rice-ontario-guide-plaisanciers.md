@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Destination\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-02\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
@@ -118,7 +118,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via notre outil de réservation en ligne sur **mercuryrepower.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offrir du contenu francophone sur la pêche et la navigation.
 

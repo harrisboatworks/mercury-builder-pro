@@ -116,7 +116,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-19',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)', 'سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)', 'پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)', 'استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)', 'اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)'],
@@ -209,7 +209,7 @@ GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہ�
 
 ## اب آگے کیا کرنا ہے
 
-اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے کی بکنگ یا سوال کے لیے https://hbw.wiki/service پر جائیں۔
+اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
 اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
 
@@ -225,7 +225,7 @@ Harris Boat Works
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-19',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['boat winterization Toronto Urdu', 'کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)', 'boat storage Mississauga ke qareeb (boat storage near Mississauga)', 'kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)'],
@@ -235,7 +235,7 @@ Harris Boat Works
       { question: 'اگر کشتی winterize نہ کروائی تو کیا ہوگا؟', answer: 'انجن بلاک یا دوسرے حصوں میں پانی جمنے سے شگاف پڑ سکتا ہے، جس کی مرمت بہت مہنگی پڑتی ہے۔ بعض اوقات پورا انجن ہی بدلنا پڑتا ہے۔' },
       { question: 'Toronto یا Mississauga کے قریب boat storage کہاں دستیاب ہے؟', answer: 'Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اسے پورے سردیوں کے لیے اپنے پاس رکھ سکتا ہے۔ یہ Mississauga اور Scarborough سے تقریباً 90 منٹ کی دوری پر ہے، لیکن ذہنی سکون اس سفر سے کہیں زیادہ قیمتی ہے۔' },
       { question: 'کیا میں سردیوں میں کبھی بھی اپنی کشتی اٹھا سکتا ہوں؟', answer: 'نہیں۔ Harris Boat Works 1 دسمبر سے 1 اپریل تک بند رہتا ہے اور اس دوران کوئی بھی کشتی pickup نہیں دی جاتی۔ لہٰذا اگر آپ کو سردیوں میں کشتی نکالنی ہے تو یہ بندش شروع ہونے سے پہلے کر لی جائے۔' },
-      { question: 'سروس کی بکنگ کیسے کروں؟', answer: 'ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے appointment لے سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔' },
+      { question: 'سروس کی بکنگ کیسے کروں؟', answer: 'ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے سروس کی درخواست جمع کر سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔' },
       { question: 'کیا میں Harris Boat Works میں اردو میں سروس لے سکتا ہوں؟', answer: 'ہم نے یہ گائیڈ اردو میں لکھی ہے کیونکہ ہم چاہتے ہیں کہ اردو بولنے والے کشتی ران اور ان کے خاندان بغیر خوف کے Rice Lake سے لطف اٹھائیں۔ لیکن ایمانداری کی بات یہ ہے کہ ہماری ٹیم انگریزی میں سروس فراہم کرتی ہے۔ گھبرائیں نہیں، کوئی دوست یا رشتہ دار جو تھوڑی بہت انگریزی بولتا ہے ساتھ لائیں، یا فون پر ترجمے کی app استعمال کریں۔ ہم صبر سے بات سمجھیں گے اور مل کر نتیجہ نکالیں گے۔' }
     ],
     nativeReview: 'pending',
@@ -303,7 +303,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 نہیں۔ Harris Boat Works 1 دسمبر سے 1 اپریل تک بند رہتا ہے اور اس دوران کوئی بھی کشتی pickup نہیں دی جاتی۔ لہٰذا اگر آپ کو سردیوں میں کشتی نکالنی ہے تو یہ بندش شروع ہونے سے پہلے کر لی جائے۔
 
 **سروس کی بکنگ کیسے کروں؟**  
-ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے appointment لے سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
+ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے سروس کی درخواست جمع کر سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
 
 **کیا میں Harris Boat Works میں اردو میں سروس لے سکتا ہوں؟**  
 ہم نے یہ گائیڈ اردو میں لکھی ہے کیونکہ ہم چاہتے ہیں کہ اردو بولنے والے کشتی ران اور ان کے خاندان بغیر خوف کے Rice Lake سے لطف اٹھائیں۔ لیکن ایمانداری کی بات یہ ہے کہ ہماری ٹیم انگریزی میں سروس فراہم کرتی ہے۔ گھبرائیں نہیں، کوئی دوست یا رشتہ دار جو تھوڑی بہت انگریزی بولتا ہے ساتھ لائیں، یا فون پر ترجمے کی app استعمال کریں۔ ہم صبر سے بات سمجھیں گے اور مل کر نتیجہ نکالیں گے۔
@@ -312,7 +312,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 
 سردیوں کا موسم قریب آنے سے پہلے بہترین وقت ہے کہ آپ اپنی کشتی کی winterization کا بندوبست کر لیں۔ Harris Boat Works میں جگہ محدود ہو جاتی ہے، کیونکہ ہر سال سینکڑوں لوگ ہم پر بھروسہ کرتے ہیں۔
 
-اپنی بکنگ کے لیے تشریف لائیں [https://hbw.wiki/service](https://hbw.wiki/service)  
+سروس کی درخواست کے لیے تشریف لائیں [https://hbw.wiki/service](https://hbw.wiki/service)  
 فون: (905) 342-2153  
 ٹیکسٹ: (647) 952-2153  
 پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0`

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-07-17
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Extended Warranty Ontario"
 description: "Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term."
 category: "Warranty & Protection"
 date_published: 2026-05-13
-date_modified: 2026-07-17
+date_modified: 2026-08-19
 keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: product-protection
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-07-17  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 
@@ -136,7 +136,7 @@ The actual Canadian Platinum contract controls what is covered or excluded. We v
 - $200 per claim on-water tow allowance
 - $200 per claim hoist/haul-out allowance (boats 26 ft or larger)
 - $50 deductible per claim
-- 30-day satisfaction guarantee from purchase
+- satisfaction guarantee from purchase (see current Mercury Product Protection terms for the window)
 
 **What is NOT covered:**
 - Propellers (wear item)

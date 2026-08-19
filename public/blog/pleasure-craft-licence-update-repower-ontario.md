@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
 description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge."
 category: "Canadian Boating Regulations"
 date_published: 2026-04-15
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
@@ -102,7 +102,7 @@ After the repower at HBW: your invoice includes the motor make, model, year, HP,
 PCL paperwork is not the exciting part of a repower. But it matters, so we make it easy:
 
 1. We document the new motor on your invoice: make, model, year, HP, serial number.
-2. We walk you through the update at delivery if you want, or provide the data and let you complete it on your own time.
+2. We walk you through the update at pickup if you want, or provide the data and let you complete it on your own time.
 3. We answer questions afterward. If Transport Canada comes back with a question, call us.
 
 The update itself is yours to submit. Transport Canada requires the boat owner to authorize it. But we do not hand you a new motor and wish you luck on the paperwork.

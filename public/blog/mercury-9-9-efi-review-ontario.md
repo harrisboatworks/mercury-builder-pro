@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-08-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-03
+date_modified: 2026-08-19
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-03  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -36,8 +36,6 @@ For the full 9.9 lineup, tiller, electric start, Command Thrust, and ProKicker v
 The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
 
 ---
-
-### Full Article
 
 Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
@@ -114,7 +112,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 ## Our Honest Take
 
-If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and Mercruiser.
+If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and MerCruiser.
 
 The 9.9 MH EFI solves the problem most small-boat owners on Rice Lake and the Kawarthas actually have: a simple portable motor that starts reliably, runs clean on EFI, and does not require a battery project to operate. The carburetor drama that shows up on older small outboards after six months of storage is the problem this motor is designed to avoid.
 

@@ -188,7 +188,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -199,7 +199,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch — walleye 시즌은 5월 둘째 토요일 개막
+- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch, walleye 시즌은 5월 둘째 토요일 개막
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 
@@ -346,7 +346,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
     image: '/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '정비 가이드',
     readTime: '9 분',
@@ -357,7 +357,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 **온타리오 겨울(-20~-30°C)에서 선외기를 보관하려면 6단계 정비가 필수. 건너뛰면 봄에 엔진 블록 균열이나 카뷰레터 막힘으로 수천 달러 수리비가 발생할 수 있습니다.**
 
 - **6단계 순서**: 연료 안정화 → 실린더 포깅 → 기어 오일 교환 → 배터리 분리 → 윤활 → 커버 보관
-- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함 — HBW는 에탄올 무첨가 휘발유 판매
+- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
 - **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
 
@@ -460,7 +460,7 @@ HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 �
     image: '/lovable-uploads/ko-mercury-115-vs-150-comparison-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '엔진 비교',
     readTime: '8 분',
@@ -472,7 +472,7 @@ HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 �
 
 - **115 HP**: 2.1L 4기통, 약 163kg, 16-19피트 알루미늄/폰툰, 2-3인 탑승
 - **150 HP**: 3.0L 4기통, 약 206kg, 19-22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
-- **무게 차이**: 약 43kg — 보트 트랜섬 무게 제한 반드시 확인
+- **무게 차이**: 약 43kg, 보트 트랜섬 무게 제한 반드시 확인
 - **가격**: [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 투명한 CAD 가격 확인 가능
 
 ---
@@ -602,7 +602,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
     image: '/lovable-uploads/ko-repower-vs-new-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '엔진 교체',
     readTime: '9 분',
@@ -615,7 +615,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 - **선체 수명**: 양질의 알루미늄 hull은 30-40년, 적절히 관리한 fiberglass도 25-30년
 - **Repower 적합**: 선체 양호, 현 보트 크기·용도 만족, 짧은 대기 시간
 - **새 보트 적합**: 선체 균열/부식, 다른 종류 보트 필요, 단일 대출 선호
-- **HBW**: Mercury Premier + Legend Boats 딜러 — 양쪽 옵션을 정직하게 안내
+- **HBW**: Mercury Premier + Legend Boats 딜러, 양쪽 옵션을 정직하게 안내
 
 ---
 
@@ -745,7 +745,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
     image: '/lovable-uploads/ko-ontario-boating-licence-regulations-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '규정 가이드',
     readTime: '11 분',
@@ -758,7 +758,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 - **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
 - **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
-- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요 — HBW가 repower 시 함께 안내
+- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요, HBW가 repower 시 함께 안내
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison.md
-last_updated: 2026-06-26
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado"
 description: "Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。"
 category: "Mercury 型号比较"
 date_published: 2026-05-10
-date_modified: 2026-06-26
+date_modified: 2026-08-19
 keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","Pro XS 中文","Verado 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**最后审核:** 2026-06-26  
+**最后审核:** 2026-08-19  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ## 关于语言的说明
 
-关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意——Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
+关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意：Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
 
 ## FourStroke 家庭船 + Pontoon 第一选择
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md
-last_updated: 2026-06-19
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario"
 description: "Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne."
 category: "Entretien"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-19
 keywords: ["hivernisation moteur Mercury Ontario","entretien moteur hors-bord hiver","préparation hivernale bateau Ontario","winterization Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-06-19\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 
@@ -117,7 +117,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 ## Appel à l'action
 
 **N'attendez pas la dernière minute.** Les places pour l'hivernisation se remplissent en octobre. 
-Réservez en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
+Soumettez votre demande de service en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -125,7 +125,7 @@ Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
 ## Portée de service
 
-Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+Si vous soumettez une demande de service chez HBW, voici la limite importante à connaître :
 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 ---
@@ -136,7 +136,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 Le prix varie selon le moteur et les services requis. Contactez-nous à hbw.wiki/service pour une estimation.
 
-### Quand devrais-je prendre rendez-vous?
+### Quand devrais-je demander mon hivernisation?
 
 Idéalement en septembre ou début octobre. Les places se remplissent vite après l'Action de grâces.
 

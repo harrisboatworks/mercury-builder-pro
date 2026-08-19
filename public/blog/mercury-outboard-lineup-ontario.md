@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)"
 description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes."
 category: "Buying Guide"
 date_published: 2026-07-09
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["mercury outboard lineup","mercury 2027 outboards","mercury outboard models ontario","mercury fourstroke vs pro xs","mercury dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-07-09  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
 
@@ -35,7 +35,7 @@ Mercury's model year rolled over to 2027 on July 1, 2026. If that sentence makes
 
 What the flip does change is the conversation. The spec sheet you're shopping is now the 2027 lineup, official 2027 announcements are trickling out from Mercury through the summer, and pricing is in transition. This guide covers both halves: which Mercury family actually fits your boat, and how to handle the model year change without overthinking it.
 
-We've been selling Mercury since 1965 from our Rice Lake dock. Here's the honest version.
+We've been selling Mercury since 1965 from our Rice Lake dock. Here's our take.
 
 ## The Mercury Families, Explained
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It"
 description: "What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Premier dealer on Rice Lake."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["Mercury repower cost Ontario","Mercury repower cost Canada 2026","Mercury outboard price CAD","boat repower cost Ontario","Mercury engine price Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-04-17  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 

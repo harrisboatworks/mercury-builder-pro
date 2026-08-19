@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: service
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
 > **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is typically the Saturday closest to May 15, confirm the exact date each year from the OMNR Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
 
 ---
-
-### Full Article
 
 Opener morning on Rice Lake waits for nobody. The public ramps at Bewdley, Hastings, and Roseneath fill up before sunrise, and the boats that fail there, battery won't crank, kicker won't start, electronics showing nothing, failed because someone skipped prep they meant to do.
 
@@ -116,7 +114,7 @@ Walleye opener often means early starts and late returns in low light. Nav light
 
 #### Want HBW to do the opener prep?
 
-We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at /service or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -150,7 +148,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 
 Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 

@@ -158,7 +158,6 @@
       "destination": "/blog/mercury-outboard-lineup-ontario.md",
       "statusCode": 301
     },
-
     {
       "source": "/warranty",
       "destination": "/mercury-product-protection",
@@ -507,6 +506,16 @@
     {
       "source": "/blog/zh/ontario-first-time-boat-rental-safety-checklist",
       "destination": "/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada.md",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers.md",
       "statusCode": 301
     }
   ],
@@ -863,7 +872,6 @@
       "source": "/pricing-reference",
       "destination": "/pricing-reference/index.html"
     },
-
     {
       "source": "/pricing-reference.md",
       "destination": "/pricing-reference.md"

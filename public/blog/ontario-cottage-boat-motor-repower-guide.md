@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
@@ -156,7 +156,7 @@ Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto 
 
 ### When is the best time to repower a cottage boat?
 
-Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.
+Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed December 1 through April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.
 
 ### Do I need to update my Pleasure Craft Licence after a repower?
 

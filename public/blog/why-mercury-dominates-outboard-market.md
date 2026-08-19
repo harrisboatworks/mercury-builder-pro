@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Dominates the Outboard Market in 2026"
 description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
 category: "Buying Guide"
 date_published: 2026-02-06
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury marine market share","best outboard brand","mercury vs yamaha","mercury verado v12","mercury innovation","mercury prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
 
@@ -50,7 +50,7 @@ When your motor needs a water pump impeller on a Thursday in August, that means 
 Mercury has a [broad Ontario dealer network](/blog/best-mercury-dealer-ontario-hbw-difference) for outboards. Parts availability, technician depth and travel coverage vary by location, so confirm the closest qualified shop before choosing a brand.
 
 ### 2. Factory relationships with Canadian boat builders
-Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [$2,000 to $3,000 CAD brand-conversion cost](/blog/mercury-repower-cost-ontario-2026-cad).
+Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [brand-conversion cost that can run into the thousands](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ### 3. Full lineup coverage for every Ontario use case
 [Mercury FourStroke covers 2.5 HP through 300 HP](/blog/mercury-outboard-lineup-ontario). Pro XS handles performance fishing. SeaPro covers commercial-duty. Verado covers premium high-horsepower applications (special-order at HBW).
@@ -132,3 +132,4 @@ Yes. Most cottage boats in this region came from the factory or previous owners 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+
