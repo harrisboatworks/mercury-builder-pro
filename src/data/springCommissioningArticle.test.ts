@@ -15,7 +15,7 @@ describe('spring commissioning cost article facts', () => {
   });
 
   it('keeps current HBW pricing and service-intake policy explicit', () => {
-    expect(article?.dateModified).toBe('2026-08-02');
+    expect(article?.dateModified).toBe('2026-08-19');
     expect(article?.content).toContain('free for our winter-storage customers');
     expect(article?.content).toContain('$99 labour before HST for everyone else');
     expect(article?.content).toContain('about one to two weeks before your intended drop-off');
