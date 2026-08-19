@@ -4233,7 +4233,7 @@ const HUB_DEFS = [
       { heading: 'Boat-type matching', cards: [
         { title: 'Best Mercury Outboard for Aluminum Fishing Boats', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
         { title: 'Best Mercury Outboard for Pontoon Boats', to: '/blog/best-mercury-outboard-pontoon-boats' },
-        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-complete-guide-2026' },
       ]},
       { heading: 'Configuration', cards: [
         { title: 'Mercury Propeller Selection Guide', to: '/blog/mercury-propeller-selection-guide' },

@@ -8,7 +8,6 @@ const AUGUST_STORAGE_SLUGS = [
   'winter-boat-storage-shrinkwrap-vs-indoor-ontario',
   'outdoor-boat-storage-shrinkwrap-rice-lake',
   'winter-storage-near-toronto-hbw',
-  'boat-storage-kawartha-lakes',
 ];
 
 describe('Ontario seasonal blog visibility', () => {

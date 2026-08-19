@@ -67,9 +67,33 @@ The module lives under the cowl on a single-engine boat, or under the helm on a 
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit.
 
-For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
+## Eligibility Edge Cases
+
+**Mercury 25 and 30 HP.** These got SmartCraft in 2022. A 2021 or earlier 25 or 30 has no Connect path; 2022 and newer does. This is the only class where the model-year cutoff is that recent.
+
+**Mercury Avator electric.** The Avator outboards connect to the Mercury Marine app but use a different module than the gas SmartCraft path. Same end-user experience, different install part number. If you have an Avator, ask us for the Avator path specifically.
+
+**Joystick Piloting, Active Trim, or Skyhook boats.** These boats are already deeply SmartCraft-integrated, so the Connect module just joins the existing network. Installs here are usually 30 minutes because the wiring is already in place.
+
+**Twin and triple setups.** SmartCraft Connect handles up to four engines, each reporting independently in the app. For a triple or quad, ask before assuming, because gateway hardware can carry an engine-count limit depending on the year.
+
+**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
+
+## Motors With No Connect Path
+
+**9.9, 15, and 20 HP portables.** Designed as basic, lightweight outboards with no SmartCraft network bus. There is no retrofit path. On a kicker setup, the main engine is the one that connects, not the kicker.
+
+**Pre-2004 Mercury 4-strokes.** SmartCraft rolled out across the lineup around 2004. Earlier 4-strokes use a simpler harness without the data bus, and no retrofit kit makes them compatible.
+
+**Carbureted and EFI 2-strokes.** The classic 2-strokes, including the high-output 200 EFI, 225 EFI, and 250 EFI, use a different engine management protocol. Connect cannot read them and there is no software workaround.
+
+**If your motor has no path** and you want connectivity specifically, [the answer is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Customers who repower from a pre-2004 motor to a current FourStroke pick up SmartCraft Connect on the new motor day one.
+
+## Find Your Serial to Confirm
+
+Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. Once you have it, email info@harrisboatworks.ca and we will check eligibility against the exact motor record. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
 
 To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
 

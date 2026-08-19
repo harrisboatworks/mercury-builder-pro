@@ -208,7 +208,7 @@ For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT 
 
 ### Do I need Mercury Command Thrust on a pontoon?
 
-Yes for most pontoons 18 ft and up. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium over standard is worth it. See our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+Yes for most pontoons 18 ft and up. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium over standard is worth it. See our [Command Thrust guide](/blog/mercury-command-thrust-complete-guide-2026).
 
 ### What's the cost of a typical pontoon repower in Ontario?
 

@@ -183,7 +183,7 @@ Some findings are negotiating points. These are not.
 
 **Soft transom.** Pulling the motor, removing hardware, cutting out the core, laminating new marine plywood or composite, and glassing it back in. On most production boats, this is a major repair, thousands in labour alone.
 
-**Cracked block or blown head gasket.** A motor that's overheated has potentially warped heads, scored cylinders, or a cracked block. In many cases, a repower is more cost-effective than rebuilding an old motor with unknown history. More on that in our [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide).
+**Cracked block or blown head gasket.** A motor that's overheated has potentially warped heads, scored cylinders, or a cracked block. In many cases, a repower is more cost-effective than rebuilding an old motor with unknown history. More on that in our [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw).
 
 **Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a full restoration project.
 

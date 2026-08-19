@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ---
 
-> **Quick answer:** Start with the manufacturer's maximum recommended safe power for the exact hull, then match the motor to hull condition, exact motor weight, normal load, steering, rigging, use, and water. Do not turn the printed maximum or a boat-length chart into an automatic recommendation.
+> **Quick answer:** There is no single formula that spits out the right HP. Work the sizing in order: read the compliance-plate maximum for your exact hull, weigh your normal load honestly, check the transom's motor-weight limit, then pick the HP that planes that load without running wide open all day. The walkthrough below does each step with real numbers.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---

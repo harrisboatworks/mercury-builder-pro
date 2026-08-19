@@ -65,7 +65,7 @@ Mercury Marine's own gearcase comparison demo shows the size difference clearly.
 **What it does NOT do:**
 - Does not add horsepower. A 90 HP Command Thrust makes the same peak HP as a 90 HP standard.
 - Does not increase top speed. On most boats, you give up 2 to 4 MPH at WOT because the prop is geared for thrust, not speed.
-- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, [the standard gearcase usually outperforms CT](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) in top end and fuel.
+- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, the standard gearcase usually outperforms CT in top end and fuel.
 - Does not retrofit easily. The gearcase, driveshaft, water pump, and prop are all different parts. Converting a non-CT motor to CT means swapping the entire lower unit, which is usually within striking distance of [trading the entire motor](/blog/mercury-repower-cost-ontario-2026-cad).
 
 That last point is the most common misconception at the shop. People with an existing standard-gearcase motor often ask if we can "add Command Thrust." The honest answer is rarely yes. For the full retrofit decision, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026).
@@ -88,6 +88,12 @@ Different hulls, different answers. The honest matrix:
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
 
 If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a fit assessment.
+
+## The BigFoot Story
+
+Back in the 1990s, pontoon boats were taking off, and they created a problem the outboard industry had not fully solved. A pontoon sits high on the water, does not plane like a V-hull, and carries big loads at modest speeds. A standard mid-range gearcase spinning a small prop just was not moving that kind of boat well.
+
+Mercury's answer was BigFoot: take a 40-60 HP powerhead and hang it over a much bigger gearcase, with a larger driveshaft and a propshaft closer to what a 90 HP class motor carries. The bigger case swings a bigger, deeper prop through a taller gear ratio (2.33:1 vs 1.83:1 on the 60). The result is push power, the ability to move a heavy, high-sitting boat with authority at the speeds it actually runs. Mercury's own literature at the time called BigFoot "the industry's only outboard engine made specifically for pontoons." Around 2014, Mercury quietly renamed BigFoot to Command Thrust. New name, same idea.
 
 ## The full Mercury Command Thrust lineup
 
@@ -121,13 +127,13 @@ For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/
 
 ### Pontoons (the biggest CT use case)
 
-[Pontoons are where Command Thrust earns its reputation](/blog/mercury-command-thrust-guide-pontoon-boats). The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
+Pontoons are where Command Thrust earns its reputation. The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
 
 - **20+ ft twin tube pontoon:** plan on CT unless the boat is rarely loaded.
 - **Tritoon any HP:** plan on CT. The third tube means more drag and CT's thrust overcomes it cleanly.
 - **16-18 ft cruising pontoon:** standard gearcase usually wins. CT gives up top speed without the load benefit kicking in.
 
-For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026) and the [Mercury Command Thrust pontoon canonical guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026).
 
 ### Aluminum deep-V fishing boats
 
@@ -152,6 +158,18 @@ Common pairings:
 ### Commercial / SeaPro applications
 
 Charter fishing boats, water taxis, marine police, and government workboats running daily hours. SeaPro CT is engineered for the duty cycle. If you are running 1,000+ hours a year, the SeaPro premium pays back in maintenance interval and longevity. Not a recreational decision.
+
+## The V-Hull Test: The 6 MPH Nobody Mentions
+
+A planing V-hull plays a completely different game from a pontoon. It climbs on top of the water and slices; past hole-shot, what it wants is low drag and efficient shaft speed. Put a CT gearcase on that boat and you are dragging a case nearly three-quarters of an inch fatter and several inches deeper through the water at 30+ mph, swinging a prop tuned for push instead of speed.
+
+We tested it. Two 16-foot Legend hulls on Rice Lake, one with a standard-gearcase Mercury 60, one with a Command Thrust 60. The CT boat gave up 6 mph on top speed. Same hull, same HP, and the only difference in the water was the gearcase. On a 16-footer that tops out in the mid-30s, that is roughly a sixth of your top speed handed to a gearcase the boat never asked for, at extra cost.
+
+The honest engineering summary: CT trades top-end efficiency for low-speed push. Pontoons live where the push matters. V-hulls live where the efficiency matters. That is the whole decision, and the GPS does not care what the brochure said. If a salesperson specs CT on your planing V-hull, ask them what your top speed will be against the standard gearcase.
+
+## Command Thrust Prop Selection
+
+A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props will not fit or perform correctly. CT props typically run larger diameter than standard, use a lower pitch range optimized for hole shot and load handling, lean on 4-blade designs for hole shot and smoother trolling, and come in aluminum or stainless depending on HP class and use. For pontoons, a 4-blade aluminum is the common starting point. Final prop selection depends on the hull, load, motor, and safe seasonal testing.
 
 ## How to know if Command Thrust is right for YOUR boat
 

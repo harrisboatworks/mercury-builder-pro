@@ -253,9 +253,9 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
-- [Will SmartCraft Connect Work With My Mercury? Eligibility Check](/blog/mercury-smartcraft-connect-eligibility-2026), SmartCraft Connect eligibility
 - [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
+- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
 
 ## Next steps
 

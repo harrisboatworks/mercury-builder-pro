@@ -2911,7 +2911,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 **几个常见方案：**
 
-- **HBW 季节性 slip：** 直接在我们码头租位，5 月到 10 月停在水里，开船就来、用完就走。最省心，适合每周末都来用的家庭。可以参考 [Kawartha Lakes 船只存储指南](/blog/boat-storage-kawartha-lakes)（英文）。
+- **HBW 季节性 slip：** 直接在我们码头租位，5 月到 10 月停在水里，开船就来、用完就走。最省心，适合每周末都来用的家庭。可以参考 [Kawartha Lakes 船只存储指南](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)（英文）。
 - **HBW 冬季存储：** HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、收缩膜、室外存储和维修的具体范围以当前书面报价为准。客户自行送船和取船；HBW 不提供或安排取送、拖运或上门服务。
 - **自己拖船回家：** 如果你有 SUV 或 pickup truck（拖重达标），可以自己拖。但拖船需要练习，401 上拖一艘 22 尺 pontoon 不是新手友好的体验。
 - **多伦多附近室内存储：** 也有，但费用高，而且你每次用船还是要拖到 Rice Lake 下水。

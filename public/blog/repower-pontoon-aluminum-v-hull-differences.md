@@ -54,7 +54,7 @@ Here's what's different, and what to watch for, across the three most common hul
 
 ### What makes a pontoon repower different
 
-Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about [having enough torque to get that weight moving](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), especially with a full load.
+Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about [having enough torque to get that weight moving](/blog/mercury-command-thrust-complete-guide-2026), especially with a full load.
 
 For the 22 to 24 ft pontoons we see most, carrying 4 to 6 people, [the 90 to 115hp range is the typical recommendation](/blog/pontoon-hp-sizing-decision-tree-ontario). Heavier loads and tritoons push higher. Your capacity plate and how you actually load the boat make the final call.
 

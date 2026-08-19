@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "HBW Outdoor Winter Boat Storage & Shrinkwrap"
 description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
@@ -146,6 +146,23 @@ HBW confirms when the boat is ready and provides the pickup window. Customers re
 
 ---
 
+## What to Compare in Any Storage Quote
+
+Storage quotes are only comparable when the scopes match.
+
+| Question | Why it matters |
+|---|---|
+| Outdoor, indoor unheated, or heated? | These are different products. HBW offers outdoor shrinkwrap storage only. |
+| Is shrinkwrap included? | A storage space and a fitted seasonal cover are separate scopes. |
+| Is engine winterization included? | Shrinkwrap does not prepare an engine or onboard system for freezing temperatures. |
+| Which onboard systems are included? | Livewells, freshwater systems, heads, and other installed systems need boat-specific review. |
+| What is the battery plan? | A healthy battery may remain disconnected; removal is not a universal requirement. |
+| Is spring commissioning included? | It is included for HBW winter-storage customers; as of July 2026 it is $99 for non-storage customers. |
+| What are the access dates? | HBW has no customer access during the December 1 to April 1 closure. |
+| What needs separate approval? | Repairs and conditions outside the approved scope require customer authorization. |
+
+Do not budget from an old planning range or an assumed bundle discount. Use the current written quote.
+
 ## Pricing: Use the Current Written Quote
 
 HBW does not publish a timeless per-foot storage, shrinkwrap, winterization, or transport price in this guide.
@@ -221,9 +238,9 @@ List the concern in the service request. Repairs require assessment and approval
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Kawartha Lakes Boat Storage: What to Compare Before Booking](/blog/boat-storage-kawartha-lakes), compare Kawartha Lakes boat storage options
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 - [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
+- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 
 ## Next steps
 

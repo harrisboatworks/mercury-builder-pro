@@ -226,7 +226,7 @@ What we handle:
 - Engine diagnostics and repairs (gas MerCruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
