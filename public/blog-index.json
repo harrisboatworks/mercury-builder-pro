@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sourceVersion": "c39ad4e8ad320c4ee7e7",
-  "count": 203,
+  "sourceVersion": "34bb2d07dd2c8c2a04fa",
+  "count": 196,
   "articles": [
     {
       "slug": "new-vs-used-pontoon-boats-ontario",
@@ -195,38 +195,6 @@
         {
           "q": "Is the new V10 Verado reliable yet?",
           "a": "Early indicators are encouraging, but long-term reliability gets established over seasons of real-world use. The V10 is built on a naturally aspirated 5.7L platform with sound engineering fundamentals, and it is not a gamble on exotic technology. Calling it proven at 15 seasons would be premature; it hasn't had 15 sea…"
-        }
-      ]
-    },
-    {
-      "slug": "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
-      "title": "Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)",
-      "description": "Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT.",
-      "category": "Mercury Outboards",
-      "publishDate": "2026-07-12",
-      "keywords": [
-        "mercury command thrust vs standard",
-        "mercury bigfoot outboard",
-        "command thrust pontoon",
-        "command thrust on v hull",
-        "mercury command thrust gear ratio"
-      ],
-      "faqs": [
-        {
-          "q": "Is Command Thrust the same thing as BigFoot?",
-          "a": "Yes. BigFoot was the 1990s name for Mercury's big-gearcase pontoon and workboat option. Mercury renamed it Command Thrust around 2014. Same concept: bigger gearcase, taller gear ratio, bigger prop, more push power at low speed."
-        },
-        {
-          "q": "Does Command Thrust make the same horsepower?",
-          "a": "Yes. A 60 CT and a standard 60 have identical powerheads. CT changes the gearcase, gear ratio, and prop, which changes how the power reaches the water, not how much power there is."
-        },
-        {
-          "q": "Should I get Command Thrust on my pontoon?",
-          "a": "Almost certainly yes if you're 90 HP and up on a 20+ ft pontoon, and it's worth a conversation on smaller setups. CT is the standard pontoon choice at HBW. See the pontoon eligibility guide for size-by-size calls."
-        },
-        {
-          "q": "Should I get Command Thrust on my fishing boat?",
-          "a": "Almost certainly no. On a planing aluminum or fibreglass V-hull, CT adds drag and costs top speed with no meaningful benefit. Standard gearcase with the right prop is the better setup. The exception is workboat duty or a ProKicker for trolling."
         }
       ]
     },
@@ -686,39 +654,6 @@
       ]
     },
     {
-      "slug": "mercury-smartcraft-connect-eligibility-2026",
-      "title": "Will SmartCraft Connect Work With My Mercury? Eligibility Check",
-      "description": "Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check.",
-      "category": "Mercury Technology",
-      "publishDate": "2026-05-27",
-      "keywords": [
-        "mercury smartcraft connect eligibility",
-        "smartcraft connect compatibility",
-        "is my mercury smartcraft compatible",
-        "mercury connect mobile eligibility",
-        "smartcraft connect motor requirements",
-        "smartcraft compatible mercury models"
-      ],
-      "faqs": [
-        {
-          "q": "Does SmartCraft Connect cost anything monthly?",
-          "a": "No subscription for the base features. The gateway module is a one-time hardware cost, the app is free, and the data sync runs over your existing phone data plan. There's an optional Mercury Premium tier with advanced analytics, but it's not required for any of the core features (live data, trip logs, service reminder…"
-        },
-        {
-          "q": "Can I use SmartCraft Connect with a kicker motor?",
-          "a": "Not directly. Kickers (9.9 or 15 HP portables) are not SmartCraft-equipped. Your main engine connects, and the kicker just runs separately. There's no eligibility on the kicker side."
-        },
-        {
-          "q": "Does it work with twin or triple engines?",
-          "a": "Yes for twins, almost always for triples, ask first for quads. One gateway module handles up to four engines depending on the year of the module hardware. Each engine reports independently in the app."
-        },
-        {
-          "q": "Will SmartCraft Connect affect my warranty?",
-          "a": "No. It's a Mercury-made module installed on a Mercury motor. Mercury treats the install as part of the standard product line. Your factory warranty applies the same way whether you have Connect or not."
-        }
-      ]
-    },
-    {
       "slug": "mercury-outboard-overheat-alarm-decoder",
       "title": "Mercury Overheat Alarm Decoder: Beep Meanings",
       "description": "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.",
@@ -1140,38 +1075,6 @@
         {
           "q": "What is the best Mercury for a 22-foot pontoon?",
           "a": "For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT tops out at 115). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-command-thrust-guide-pontoon-boats",
-      "title": "Mercury Command Thrust on a Pontoon: Worth the Money?",
-      "description": "Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not.",
-      "category": "Buying Guide",
-      "publishDate": "2026-05-04",
-      "keywords": [
-        "mercury command thrust",
-        "command thrust pontoon",
-        "mercury gearcase",
-        "pontoon repower",
-        "mercury fourstroke pontoon"
-      ],
-      "faqs": [
-        {
-          "q": "What is Mercury Command Thrust?",
-          "a": "Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke models from 40 to 115 HP (plus 9.9/15 ProKicker and the 115 Pro XS). CT tops out at 115 HP. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull…"
-        },
-        {
-          "q": "Do I need Command Thrust on a pontoon?",
-          "a": "For pontoons 18 ft and up, yes. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium is worth it."
-        },
-        {
-          "q": "How much does Command Thrust cost over the standard gearcase?",
-          "a": "Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup."
-        },
-        {
-          "q": "Will my standard prop fit on a Command Thrust gearcase?",
-          "a": "No. Command Thrust gearcases require Command Thrust props. The larger diameter, different geometry, and different hub design are not compatible with standard props."
         }
       ]
     },
@@ -1633,38 +1536,6 @@
       ]
     },
     {
-      "slug": "boat-motor-trade-in-guide",
-      "title": "Boat Motor Trade-In Ontario Guide",
-      "description": "Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW.",
-      "category": "Buying Guide",
-      "publishDate": "2026-03-10",
-      "keywords": [
-        "boat motor trade in ontario",
-        "outboard trade in value",
-        "hst trade in boat motor",
-        "mercury trade in hbw",
-        "repower trade in"
-      ],
-      "faqs": [
-        {
-          "q": "How much does the HST savings actually work out to?",
-          "a": "On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that's $650 you wouldn't get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers,…"
-        },
-        {
-          "q": "Is my old 2-stroke worth anything?",
-          "a": "Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close…"
-        },
-        {
-          "q": "Do I need to service the motor before trade-in?",
-          "a": "No. Basic cleaning and documentation are worth the effort. Major service usually isn't, you won't recoup the full cost. Wipe down the cowl, change the lower unit oil if it's overdue, gather your records, and either run the trade-in estimator at /trade-in-value or bring the motor in. We'll handle the rest."
-        },
-        {
-          "q": "What if my motor has a known issue?",
-          "a": "Tell us up front. A disclosed issue gets factored into the offer at fair shop cost. A surprise issue kills the price, sometimes the deal. We'd rather adjust the number once than chase the trust back after we found something you didn't mention."
-        }
-      ]
-    },
-    {
       "slug": "musky-boat-motor-guide-kawarthas",
       "title": "Best Motors for Kawartha Musky Fishing",
       "description": "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers.",
@@ -2090,38 +1961,6 @@
         {
           "q": "Why are new boat sales down if people are still boating?",
           "a": "New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own."
-        }
-      ]
-    },
-    {
-      "slug": "boat-rentals-shared-access-booming-2026",
-      "title": "Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You",
-      "description": "Rent or buy a boat in Ontario? Compare pay-per-use rentals, boat clubs, and ownership, then use a Rice Lake rental to learn what fits before you buy.",
-      "category": "Lifestyle",
-      "publishDate": "2026-02-06",
-      "keywords": [
-        "rent or buy a boat",
-        "boat rentals Rice Lake",
-        "boat rental vs ownership Ontario",
-        "boat club vs boat rental",
-        "is renting a boat worth it"
-      ],
-      "faqs": [
-        {
-          "q": "Is it cheaper to rent or buy a boat in Ontario?",
-          "a": "There is no universal cutoff. Add up the current rental rate and expected fuel for your realistic number of days, then compare that with insurance, storage, winterizing, maintenance, depreciation, and any payment in our ownership cost guide."
-        },
-        {
-          "q": "How many days a year should I boat to justify buying?",
-          "a": "Use your own costs and calendar. The more genuine boating days you expect, the more ownership's fixed costs are spread out; occasional users may find pay-per-use rentals easier to justify."
-        },
-        {
-          "q": "Do I need a licence to rent a boat on Rice Lake?",
-          "a": "Yes. Whoever drives needs a boat operator's licence, and you can get one online before your rental day. See our Ontario rental licence guide for the details."
-        },
-        {
-          "q": "What boats can you rent at Harris Boat Works?",
-          "a": "The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Check harrisboatworks.ca/rentals for live availability, capacity, equipment, and rates."
         }
       ]
     },
@@ -4951,41 +4790,6 @@
       ]
     },
     {
-      "slug": "boat-storage-kawartha-lakes",
-      "title": "Kawartha Lakes Boat Storage: What to Compare Before Booking",
-      "description": "Compare outdoor, indoor, shrinkwrap, winterization, access, spring scope, and transport terms before choosing Kawartha boat storage.",
-      "category": "Service & Maintenance",
-      "publishDate": "2026-05-15",
-      "keywords": [
-        "boat storage Kawartha Lakes",
-        "winter boat storage Rice Lake",
-        "boat storage Gores Landing",
-        "shrinkwrap storage Kawarthas",
-        "boat winterization Ontario",
-        "spring commissioning Rice Lake",
-        "Harris Boat Works storage",
-        "outdoor boat storage Ontario"
-      ],
-      "faqs": [
-        {
-          "q": "Does HBW offer indoor or summer boat storage?",
-          "a": "No. HBW offers outdoor winter storage with shrinkwrap only. We do not offer indoor, heated, climate-controlled, summer, or year-round storage."
-        },
-        {
-          "q": "Does HBW pick up boats from Kawartha lakes?",
-          "a": "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
-        },
-        {
-          "q": "Can I access my boat during winter?",
-          "a": "No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period."
-        },
-        {
-          "q": "How much does Kawartha boat storage cost?",
-          "a": "Request a current written quote. Pricing depends on the boat, trailer, cover, winterization, installed systems, approved work, spring scope, HST, and stated exclusions. This guide does not publish an unsupported range."
-        }
-      ]
-    },
-    {
       "slug": "toronto-to-rice-lake-drive-in-process",
       "title": "Toronto to Rice Lake: How HBW Drive-In Service Works",
       "description": "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
@@ -6416,40 +6220,6 @@
         {
           "q": "Is it safe to run my bilge pump dry to see if it works?",
           "a": "No. Bilge pumps are built to move water, and running one dry can damage the impeller or motor within seconds. Test with the float arm and a small amount of water, not a dry run."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat",
-      "title": "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?",
-      "description": "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value.",
-      "category": "Repower",
-      "publishDate": "2026-07-06",
-      "keywords": [
-        "Mercury 90",
-        "Mercury 115",
-        "Ontario boating",
-        "repower",
-        "aluminum boat",
-        "Mercury FourStroke",
-        "Outboard Comparison"
-      ],
-      "faqs": [
-        {
-          "q": "Can I put a 115 hp engine on a boat rated for 90 hp?",
-          "a": "Treat 90 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. Do not use an oversized existing setup as approval. A 115 HP setup can create serious safety, insurance, warranty, liability, financing, and resale problems."
-        },
-        {
-          "q": "Is the Mercury 115 FourStroke just a tuned 90?",
-          "a": "Essentially, yes. The 90 hp and 115 hp FourStroke share the same 2.1L block and many internal components. Differences in ECM tuning, camshaft design, and throttle-body size allow the 115 to deliver more power, but the core engine is nearly identical in weight and dimensions."
-        },
-        {
-          "q": "How much fuel will I save by choosing the 90 hp over the 115?",
-          "a": "At typical cruising speeds the difference is minor, often within half a litre per hour. Both motors are efficient four-strokes. The 115 may use slightly more fuel at wide-open throttle, but its ability to plane at lower RPM with heavy loads can offset that in real-world use."
-        },
-        {
-          "q": "Do both engines come with Command Thrust?",
-          "a": "Both the Mercury 90 hp and 115 hp FourStroke have Command Thrust configurations, but availability does not make CT the right choice for a planing aluminum V-hull. Command Thrust is for pontoons and specific workboats. Use the standard gearcase on a 17- to 19-ft aluminum V-hull, then match the propeller to the loaded b…"
         }
       ]
     },

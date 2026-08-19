@@ -216,7 +216,7 @@ This list isn't meant to scare you out of the used market entirely. There are ge
 
 **Boats where you can verify the story.** One owner, local use, freshwater only, receipts from a recognizable marine shop, a motor that starts and runs cleanly. These exist. They're worth waiting for.
 
-For a deeper look at what to evaluate when buying used, our [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario) covers the pre-purchase inspection process in detail. And if you're weighing a used boat that needs a motor against starting fresh with a repower, the [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide) can help you figure out which direction makes more financial sense.
+For a deeper look at what to evaluate when buying used, our [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario) covers the pre-purchase inspection process in detail. And if you're weighing a used boat that needs a motor against starting fresh with a repower, the [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw) can help you figure out which direction makes more financial sense.
 
 ---
 

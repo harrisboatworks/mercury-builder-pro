@@ -80,7 +80,7 @@ export default function MotorSelectionHub() {
           cards: [
             { title: 'Best Mercury Outboard for Aluminum Fishing Boats', description: 'Aluminum console pairing.', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
             { title: 'Best Mercury Outboard for Pontoon Boats', description: 'Pontoon-specific Mercury picks.', to: '/blog/best-mercury-outboard-pontoon-boats' },
-            { title: 'Mercury Command Thrust Guide for Pontoons', description: 'When you need the big gearcase.', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+            { title: 'Mercury Command Thrust: The Complete Guide', description: 'When you need the big gearcase.', to: '/blog/mercury-command-thrust-complete-guide-2026' },
           ],
         },
         {

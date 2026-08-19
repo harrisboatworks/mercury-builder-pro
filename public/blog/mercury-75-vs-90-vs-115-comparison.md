@@ -152,6 +152,10 @@ Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call
 
 [See live Ontario pricing](/pricing-reference)
 
+## Resale: the 115 carries a premium
+
+When it comes time to sell, the transom horsepower plate shapes buyer interest. Boats hanging a 115 generally attract more attention than the same hull with a 90, especially in the popular 17-to-19-foot family-fish segment, and a well-maintained 115 typically fetches more and sells faster. If you plan to keep the boat for many years, the upfront savings on a 90 might outweigh the future resale difference. If you trade every five to seven years, the extra $1,500 to $2,500 spent today often comes back at resale, and you enjoy the performance in the meantime.
+
 ## What HBW checks before recommending 75, 90, or 115
 
 When customers come in deciding between these three motors, we want to know:

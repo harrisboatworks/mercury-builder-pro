@@ -113,7 +113,7 @@ The amortization is the basis used to CALCULATE your monthly payment. It is NOT 
 | Mercury 115 Pro XS | Bare motor + HST + $349 fee | $20,113 | ~$138 | ~$16,927 |
 | Mercury 150 Pro XS | Bare motor + HST + $349 fee | $27,863 | ~$191 | ~$23,450 |
 
-At month 60, any remaining balance must be handled under the agreement, for example by payment or approved refinancing. A future [trade-in](/blog/boat-motor-trade-in-guide) is not guaranteed and should not be treated as the repayment plan.
+At month 60, any remaining balance must be handled under the agreement, for example by payment or approved refinancing. A future [trade-in](/blog/outboard-trade-in-value-ontario-hbw) is not guaranteed and should not be treated as the repayment plan.
 
 If the balance at year five would be uncomfortable, ask for a shorter amortization basis. The monthly payment will be higher, but more principal is repaid during the contract.
 

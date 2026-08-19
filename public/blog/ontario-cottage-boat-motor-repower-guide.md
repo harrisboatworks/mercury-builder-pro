@@ -71,7 +71,7 @@ Changing HP is considered only within the limit on the boat's compliance notice,
 ### The cottage pontoon
 An 18 to 22 ft pontoon used for cruising, fishing with the kids, and the occasional tube ride. The motor is usually original from when the pontoon was bought.
 
-[Mercury Command Thrust matters on pontoons](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull). Pontoon hulls are heavy and blunt-fronted; they need pulling power more than top speed.
+[Mercury Command Thrust matters on pontoons](/blog/mercury-command-thrust-complete-guide-2026). Pontoon hulls are heavy and blunt-fronted; they need pulling power more than top speed.
 
 ### The tin boat
 A 14 to 16 ft tiller boat used for solo fishing and quick runs. The motor has been getting harder to start and parts for it have been getting harder to find. These are simple repowers, smaller motor, less rigging, lower cost.

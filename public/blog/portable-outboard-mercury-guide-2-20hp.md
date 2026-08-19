@@ -193,9 +193,9 @@ Yes. Follow the same winterization procedures as larger motors: stabilize fuel, 
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
-- [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat), choosing between a Mercury 90 and 115
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 
 ## Next steps
 
