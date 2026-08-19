@@ -76,11 +76,13 @@ for (const group of BLOG_TRANSLATION_GROUPS) {
 
     const english = alternates.find((alternate) => alternate.hrefLang === 'en-CA');
     const xDefault = alternates.find((alternate) => alternate.hrefLang === 'x-default');
-    if (!english || !xDefault || english.path !== xDefault.path) {
+    if (!xDefault) {
+      failures.push(`${routeKey}: missing x-default`);
+    } else if (english && english.path !== xDefault.path) {
       failures.push(`${routeKey}: x-default must equal the English route`);
     }
     const self = alternates.find((alternate) => alternate.hrefLang === BLOG_LOCALES[locale].hrefLang);
-    if (locale !== 'en' && self && xDefault?.path === self.path) {
+    if (english && locale !== 'en' && self && xDefault?.path === self.path) {
       failures.push(`${routeKey}: localized route must not be its own x-default`);
     }
 
