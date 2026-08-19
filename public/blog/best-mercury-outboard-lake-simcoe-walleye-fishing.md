@@ -145,7 +145,7 @@ If you want to talk through your specific Simcoe fishing setup, call **905-342-2
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer.
 
-Pricing ranges in this article are HBW's working 2026 estimates, verified June 2026. The actual price for your specific motor and configuration is on the motor selection page. Mercury model-year and pricing updates can change seasonally, and we refresh article ranges annually.
+Pricing ranges in this article are HBW's working 2026 estimates, verified June 2026, and may have shifted since. The actual price for your specific motor and configuration is on the motor selection page. Mercury model-year and pricing updates can change seasonally, and we refresh article ranges annually.
 
 ## FAQs
 
@@ -179,7 +179,7 @@ Sometimes, with caution. A 16 to 18 ft aluminum console with 90 HP can handle Si
 
 ### What's the cost of a Simcoe walleye repower?
 
-For a 17 to 19 ft setup with 115 to 150 HP main and 9.9 ProKicker, $20,000 to $32,000 CAD all-in at HBW. Live pricing at mercuryrepower.ca.
+For a 17 to 19 ft setup with 115 to 150 HP main and 9.9 ProKicker, the all-in cost at HBW varies with rigging and current pricing. Live pricing at mercuryrepower.ca.
 
 ### Should I get a tritoon for Lake Simcoe?
 

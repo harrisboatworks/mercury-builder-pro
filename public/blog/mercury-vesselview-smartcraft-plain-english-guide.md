@@ -66,7 +66,7 @@ What you need to know:
 - **Cost to transition:** zero, same hardware, new software.
 - **Multi-engine boats** now use the **SmartCraft Connect Mobile multi-engine module (part 8M0173129)**, which mounts under the helm and supports up to 4 engines.
 
-If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module runs $225-$275 USD plus installation. We'll spec the right one and install it.
+If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module is a Mercury part priced in USD plus installation, and we'll confirm the current price when we spec yours. We'll spec the right one and install it.
 
 ---
 

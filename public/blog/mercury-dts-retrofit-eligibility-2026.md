@@ -159,9 +159,9 @@ Email a photo of the motor cowl plate plus the helm controls to info@harrisboatw
 
 A few patterns from our DTS conversations every spring on Rice Lake and the Kawarthas.
 
-The first pattern: more customers already have DTS than realize it. A guy calls asking about retrofitting his "newer Mercury" with DTS, we ask for the serial, look it up, and 9 times out of 10 his 2022 FourStroke 250 already has it. The conversation switches from "can I add it" to "how do I use what I have." Five-minute conversation instead of a $4,000 quote.
+The first pattern: more customers already have DTS than realize it. A guy calls asking about retrofitting his "newer Mercury" with DTS, we ask for the serial, look it up, and more often than not the motor already has it. The conversation switches from "can I add it" to "how do I use what I have." Five-minute conversation instead of a $4,000 quote.
 
-The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labor. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
+The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job, with current figures on our /pricing-reference page. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
 
 The third pattern, specific to Ontario boating: late-season dock approaches in fall winds at Rice Lake or in tight cottage dock spaces in the Kawarthas. Joystick piloting earns its keep in those moments. Customers who switch from twin mechanical to twin DTS with joystick almost never go back. The ability to crab sideways into a dock in a cross-wind without a second person on the bow is the kind of thing you don't appreciate until you have it.
 

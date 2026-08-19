@@ -61,7 +61,7 @@ Real trade values move with three things: the motor itself (brand, model, HP, ag
 
 We published a full reference table broken down by HP class and age in our [Outboard Trade-In Value Ontario 2026 guide](/blog/outboard-trade-in-value-ontario-hbw). Short version:
 
-- **9.9-15 HP kicker, working condition, under 10 years:** $800-$1,800
+- **9.9-15 HP kicker, working condition, under 10 years:** see the current value table in our trade-in guide
 - **25-50 HP, 0-5 years, documented:** $2,500-$5,500
 - **60-90 HP, 0-5 years:** $4,500-$8,500
 - **115-150 HP FourStroke, 0-5 years:** $7,000-$13,000
@@ -141,7 +141,7 @@ Service is drop-off: you bring the boat to us at Gores Landing, we do not pick u
 
 ## When to Use the Estimator vs Call Us
 
-The fast path: get an instant estimate at [mercuryrepower.ca/trade-in-value](/trade-in-value). It covers all common Mercury, Yamaha, Honda, and Suzuki outboards from the last 20 years and gives you a real number in seconds.
+The fast path: get an instant estimate at [mercuryrepower.ca/trade-in-value](/trade-in-value). It covers most common Mercury, Yamaha, Honda, and Suzuki outboards from recent model years and gives you an estimate in seconds.
 
 Call us if:
 

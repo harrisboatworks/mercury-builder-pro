@@ -77,7 +77,7 @@ Cranking but no fire usually points to spark or fuel delivery. Pull a plug to ch
 
 #### Tried everything?
 
-After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
+After storage, the most common no-start fixes we see are carb cleaning, fuel system flush, and battery replacement, all priced at our current published rates. Book at hbw.wiki/service.
 
 ---
 

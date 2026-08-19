@@ -36,7 +36,7 @@ revenue_driver: repower
 - **선체 수명**: 양질의 알루미늄 hull은 30-40년, 적절히 관리한 fiberglass도 25-30년
 - **Repower 적합**: 선체 양호, 현 보트 크기·용도 만족, 짧은 대기 시간
 - **새 보트 적합**: 선체 균열/부식, 다른 종류 보트 필요, 단일 대출 선호
-- **HBW**: Mercury Premier + Legend Boats 딜러 — 양쪽 옵션을 정직하게 안내
+- **HBW**: Mercury Premier + Legend Boats 딜러, 양쪽 옵션을 정직하게 안내
 
 ---
 

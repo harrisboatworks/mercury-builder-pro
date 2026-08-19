@@ -86,7 +86,7 @@ HBW stocks common Mercury and MerCruiser service parts. Exact availability chang
 
 In 2026, both Mercury and Honda offer extended warranty programs that can reach 8 years total coverage.
 
-**Honda warranty stack (2026):** 5 years standard recreational + 3 years HondaCare extended = 8 years maximum.
+**Honda warranty stack (2026):** standard recreational coverage plus HondaCare extended can reach 8 years maximum; confirm current terms, as program details change.
 
 **Mercury warranty stack (2026):** 3 years standard limited (with 3 years corrosion concurrent) + up to 5 years Mercury Product Protection (MPP) extended = up to 8 years total coverage. MPP is a separate extended-coverage purchase, not part of the standard warranty.
 

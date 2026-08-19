@@ -298,7 +298,7 @@ If your boat sits in the water unattended for any stretch of time, this is worth
 
 Freshwater is less corrosive than saltwater. There's no marine growth and no salt accelerating oxidation on every fitting. That doesn't mean your bilge is a gentle environment for electrical connections, though.
 
-[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw from November through April. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
+[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw through the winter storage season. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
 
 That's how a float switch ends up corroded without anyone noticing, until the boat's sitting low at the dock in July.
 
@@ -308,7 +308,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed; confirm current WOWranty component coverage with Legend before you buy, one of the most comprehensive component warranties in the recreational boat industry.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 

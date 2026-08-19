@@ -140,13 +140,13 @@ La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanci
 
 Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
 
-- **Regraissage annuel des roulements**, le service le plus rapide, habituellement fait pendant que vous attendez
+- **Regraissage annuel des roulements**, le service le plus rapide, habituellement complété rapidement
 - **Conversion ou amélioration des freins**, à inertie vers électrique
 - **Réparation de cadre**, soudure de membrures fissurées
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 
-Réservez à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
+Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
 
 ---
 

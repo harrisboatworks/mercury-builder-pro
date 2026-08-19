@@ -145,7 +145,7 @@ Depends on local dealer access, hull condition, and ownership plan. If your Yama
 
 ### How much does it cost to switch from Yamaha to Mercury?
 
-The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
+The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
 
 ### Is Yamaha more reliable than Mercury?
 

@@ -178,7 +178,7 @@ Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Hig
 
 ### Does Pro XS warranty match FourStroke?
 
-The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can bring combined coverage to a maximum of 8 years, subject to serial-record eligibility.
+The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can extend combined coverage for several years; the maximum combined term depends on Mercury's current program rules, and HBW confirms it against the serial record before registration.
 
 ### Can I repower from a FourStroke to a Pro XS?
 

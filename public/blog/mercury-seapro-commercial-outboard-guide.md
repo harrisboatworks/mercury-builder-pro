@@ -35,7 +35,7 @@ revenue_driver: commercial
 
 ---
 
-## Who actually needs SeaPro
+## When SeaPro makes sense
 
 If your boat earns money, fishing guide service, rental fleet, charter trips, government work, your motor's downtime is your downtime. A Saturday breakdown in walleye season isn't an inconvenience; it's a cancelled day of revenue and a damaged reputation.
 

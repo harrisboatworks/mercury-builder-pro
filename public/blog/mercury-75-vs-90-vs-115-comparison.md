@@ -130,9 +130,9 @@ The 90 HP FourStroke is the right call when:
 - **Capacity plate rating is 90 to 115 HP** (very common range on this boat size).
 - **You want headroom without paying for HP you do not need.**
 
-The 90 is the most-installed Mercury in this class for a reason. It performs well across the most common use cases, it qualifies for similar promotional pricing as the 75, and the long-term ownership math (fuel economy, parts, resale) is favorable. The Mercury 90 EXLPT is the workhorse of the Canadian recreational fleet.
+The 90 is the most-installed Mercury in this class for a reason. It performs well across the most common use cases, promotional pricing shifts through the year so check our /promotions page, and the long-term ownership math (fuel economy, parts, resale) is favorable. The Mercury 90 EXLPT is the workhorse of the Canadian recreational fleet.
 
-For the typical 16 to 18 ft aluminum console at HBW, the all-in repower lands $17,000 to $22,000 CAD. [Live pricing here.](/quote/motor-selection)
+For the typical 16 to 18 ft aluminum console at HBW, the all-in repower cost changes with rigging and current Mercury pricing. [Live pricing here.](/quote/motor-selection)
 
 ## Mercury 115 EXLPT FourStroke: when the step-up earns its price
 
@@ -172,7 +172,7 @@ The answer comes out of these. Most customers fall into "90 is the right call." 
 
 We see these every season:
 
-1. **Buying 75 to save $1,500 and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
+1. **Buying 75 to trim the price and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
 2. **Buying 115 when 90 was plenty.** A 115 on a 16 ft aluminum used solo for fishing is overkill. The motor outpowers the hull's typical load. The savings on the 90 buy electronics, props, or kicker upgrades that matter more.
 3. **Expecting a fixed mph gain.** Hull, load, prop, mounting height, and conditions can move the result by several mph. Compare loaded planing, acceleration, and cruise behaviour on your boat instead of treating a broad lake-test range as a promise.
 4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection is critical, and the verification scope follows the motor, hull, rigging, work order, and safe seasonal testing conditions.

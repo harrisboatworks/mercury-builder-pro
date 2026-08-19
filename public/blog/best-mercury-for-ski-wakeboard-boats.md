@@ -73,7 +73,7 @@ This is the version of "what should I put on my tow boat?" we'd give if you walk
 | **Slalom water-skiing serious** | 18-20 ft | **175 HP Pro XS** or 200 HP V6 |
 | **Wakeboarding** | 19-21 ft | **200 HP Pro XS** or 225 HP V6 |
 | **Wakesurfing** | 21-23 ft | **250-300 HP V8** + ballast system |
-| **Big-wake everything (multi-sport)** | 22-24 ft | **300-350 HP V10 Verado** |
+| **Big-wake everything (multi-sport)** | 22-24 ft | **300-350 HP V10 Verado** (special-order at HBW) |
 
 If you're running a dedicated inboard tow boat, this guide doesn't directly apply, you're locked into the manufacturer's engine choice. But a growing group of tow-boat builders now offers outboard models specifically powered by Mercury V8s and V10s.
 
@@ -85,7 +85,7 @@ The Pro XS is Mercury's performance variant. For most use cases (family cruise, 
 
 **Mid-range punch.** The Pro XS has more torque in the 3,000-5,000 RPM range, which is exactly where you live when pulling skiers, wakeboarders, and tubers. Sustained power right where you need it.
 
-**Top-end RPM.** Pro XS revs higher (~6,000 RPM ceiling vs 5,800 on FourStroke). Means the prop selection has more headroom for prop pitch tuning to fit your specific boat and rider.
+**Top-end RPM.** Pro XS revs higher (a few hundred RPM more ceiling than the FourStroke). Means the prop selection has more headroom for prop pitch tuning to fit your specific boat and rider.
 
 **The trade-off:** Pro XS uses a bit more fuel at any given speed. It's a touch louder. It costs slightly more upfront. For pure cruising you don't need it. For watersports you do.
 

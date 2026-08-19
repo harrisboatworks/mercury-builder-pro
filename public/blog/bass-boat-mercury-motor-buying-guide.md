@@ -152,7 +152,7 @@ Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with ac
 
 Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
 
-The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
+The Verado V8 conversation comes up for the biggest boats (heavy multi-species and big-water Great Lakes rigs). Those are the customers running Champion 220 or Skeeter ZX series.
 
 ---
 

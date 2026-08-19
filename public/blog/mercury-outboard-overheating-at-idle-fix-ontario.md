@@ -168,7 +168,7 @@ Almost always a partially-blocked or worn water pump impeller. At cruise RPM, en
 
 ### How often should I replace the impeller?
 
-Every 3 years or 300 hours, whichever comes first (Mercury official interval). Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
+Every 3 years or 300 hours is the common Mercury guidance; your model's manual has the exact interval. Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
 
 ### My tell-tale is weak, can I still run it?
 

@@ -167,7 +167,7 @@ At comparable battery capacities, the brands are similar. Range is more about bo
 
 ### Is Torqeedo cheaper than Avator?
 
-Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
+Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can work out cheaper than Avator 7.5e setups, and mid-size and larger setups often land close together, though relative pricing moves; see our /pricing-reference page for what we can currently verify. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
 
 ### Can I service a Torqeedo at HBW?
 

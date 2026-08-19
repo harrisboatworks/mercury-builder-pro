@@ -77,7 +77,7 @@ The corrosion warranty covers **structural corrosion** that wasn't caused by ext
 - Wear items (impellers, anodes, spark plugs, propellers, fuel filters, oil)
 - Damage from collision, grounding, or operator error
 - Damage caused by improper installation or setup
-- Damage caused by contaminated fuel or fuel outside Mercury's published specification; current Mercury guidance permits gasoline containing up to 10% ethanol
+- Damage caused by contaminated fuel or fuel outside Mercury's published specification; Mercury's recent guidance has permitted gasoline with up to 10% ethanol, but confirm the current published spec
 - Damage from running the wrong oil grade or skipping break-in
 - Modifications, racing use, or commercial use on a recreational-spec motor
 

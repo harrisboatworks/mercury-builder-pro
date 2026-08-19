@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
-> **Quick answer:** Controls, steering, gauges, wiring, and prop add roughly $2,000 to $6,000+ to a Mercury repower, depending on HP class. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect; 150 to 225 HP V6s add power-assist steering, VesselView, and dual batteries. Build a configured quote at mercuryrepower.ca.
+> **Quick answer:** Controls, steering, gauges, wiring, and prop can add a significant amount to a Mercury repower, depending on HP class. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect; 150 to 225 HP V6s add power-assist steering, VesselView, and dual batteries. Build a configured quote at mercuryrepower.ca.
 
 ### Quick Answer
 
@@ -84,7 +84,7 @@ Mounts on the side of the helm console or a pedestal. Same function as a binnacl
 
 ### DTS (Digital Throttle & Shift)
 
-Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Mandatory on all Mercury V8 and V12 motors. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
+Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Standard on Mercury's V8 and V12 motors, but confirm the requirement for your specific model. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
 
 ---
 

@@ -53,7 +53,7 @@ It depends on the model and how many battery packs you run. [A Mercury Avator 7.
 Range on an electric outboard depends on:
 
 1. **Battery capacity** (kWh)
-2. **Throttle setting** (full throttle drains 4-6x faster than quarter-throttle)
+2. **Throttle setting** (full throttle drains the battery much faster than quarter-throttle)
 3. **Boat weight + passengers + gear**
 4. **Hull efficiency** (a flat-bottom aluminum is more efficient than a heavy V-hull)
 5. **Water and weather conditions** (chop and wind reduce range significantly)
@@ -175,7 +175,7 @@ It depends on the specific water. The federal 7.5 kW electric allowance applies 
 
 ### Does Avator work in cold weather?
 
-Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions.
+Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for noticeably less range than summer numbers in October/November conditions.
 
 ### What does an Avator setup cost installed?
 

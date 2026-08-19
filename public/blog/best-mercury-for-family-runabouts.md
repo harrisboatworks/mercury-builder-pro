@@ -200,7 +200,7 @@ Significantly. Modern Mercury 4-strokes are conversation-quiet at cruise; old 2-
 
 ### How much should fuel cost on a typical family Saturday?
 
-$80-$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
+It varies a lot depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
 
 ## Related guides
 

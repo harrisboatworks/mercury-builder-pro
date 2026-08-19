@@ -90,7 +90,7 @@ If you need a specific Mercury or MerCruiser part, call ahead with the serial nu
 
 ## The 2026 TSW season
 
-Parks Canada's Trent-Severn season runs from May through October each year, with 2026 specifics:
+Parks Canada's Trent-Severn season typically runs May through October, with 2026 specifics:
 
 - **Full opening:** Parks Canada confirmed the entire waterway opened to navigation on May 29, 2026
 - **Canada Strong Pass free lockage:** June 19 through September 7, 2026 (the 2026 promotion period)

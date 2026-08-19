@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Mississauga HBW"
-description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake."
+description: "What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake."
 category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-08-19
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury Dealer Mississauga HBW
 
-> What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.
+> What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  

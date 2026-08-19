@@ -34,7 +34,7 @@ revenue_driver: repower
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch — walleye 시즌은 5월 둘째 토요일 개막
+- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch, walleye 시즌은 5월 둘째 토요일 개막
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 

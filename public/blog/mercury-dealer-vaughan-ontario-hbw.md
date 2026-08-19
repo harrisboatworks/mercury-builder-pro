@@ -127,7 +127,7 @@ The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → High
 
 Why [Vaughan boaters drive to HBW](/blog/mercury-repower-gta-toronto-destination) for repower:
 
-- **Mercury Premier-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For [a $15,000-$25,000 repower](/blog/mercury-repower-cost-ontario-2026-cad), the drive is justified.
+- **Mercury Premier-level service.** We won't speak for closer dealers; the rigging depth on a full repower is what Vaughan boaters come to us for. For [a $15,000-$25,000 repower](/blog/mercury-repower-cost-ontario-2026-cad), the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 

@@ -218,7 +218,7 @@ A heavily fouled hull can reduce efficiency 20-30%. Keep your hull clean and ant
 
 ### Does ethanol-free fuel improve outboard fuel efficiency?
 
-Ethanol-free fuel produces slightly better fuel economy than E10 (10% ethanol), typically a 3-5% improvement, because ethanol contains less energy per litre than gasoline. In Ontario, ethanol-free marine fuel is available at many marinas. Beyond efficiency, ethanol-free fuel is better for older fuel systems, ethanol absorbs water, can damage rubber components in older carburettors, and promotes fuel degradation during long storage. For modern EFI Mercury outboards, E10 is approved and works fine; ethanol-free is still preferable if available.
+Ethanol-free fuel typically produces slightly better fuel economy than E10 (10% ethanol), because ethanol contains less energy per litre than gasoline; the size of the improvement varies by motor and conditions. In Ontario, ethanol-free marine fuel is available at many marinas. Beyond efficiency, ethanol-free fuel is better for older fuel systems, ethanol absorbs water, can damage rubber components in older carburettors, and promotes fuel degradation during long storage. For modern EFI Mercury outboards, E10 is approved and works fine; ethanol-free is still preferable if available.
 
 ### What is the best cruising speed for fuel economy on Rice Lake?
 

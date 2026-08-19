@@ -112,7 +112,7 @@ Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraul
 Hydraulic steering conversion costs $1,650 to $3,500 CAD depending on motor HP and helm complexity.
 
 **Wiring harness** 
-Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
+Connects motor to controls, gauges, and battery. In our shop experience, Mercury has used common harness connectors across motor families for a number of years, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
 **Gauges and displays** 
 Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft Connect Mobile adds several hundred dollars depending on screen size.

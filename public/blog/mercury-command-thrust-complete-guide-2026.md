@@ -173,7 +173,7 @@ We have quoted hundreds of Command Thrust repowers since the option came on the 
 
 The first pattern: customers who try Command Thrust on a heavy pontoon almost never go back to standard. The hole shot improvement under load is not subtle. You feel it the first time you punch the throttle with the family aboard. Standard gearcase customers on the same pontoon do not have a frame of reference, so they assume the boat is just slow. CT customers know.
 
-The second pattern: the regret stories are almost always light pontoons or small aluminums where the owner insisted on CT despite our pushback. We see them three years later trading down to standard gearcase, complaining about top speed. The honest conversation at the shop on the front end saves four grand and a year of frustration.
+The second pattern: the regret stories are almost always light pontoons or small aluminums where the owner insisted on CT despite our pushback. We see them three years later trading down to standard gearcase, complaining about top speed. The honest conversation at the shop on the front end can save real money and a year of frustration.
 
 The third pattern, specific to Rice Lake and the Kawartha Lakes: late-season shallow water. The back bays of Rice Lake and the lakes around Bobcaygeon and Lakefield drop several inches in August and September. Pontoons that floated fine in June can be touching bottom on the way out of the cottage in September. CT's stronger reverse thrust pays off here. Customers who learned the hard way by dragging tubes through soft mud are some of our most loyal CT advocates.
 

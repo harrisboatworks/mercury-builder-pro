@@ -149,7 +149,7 @@ New unit sales dropped as the post-COVID surge corrected, but overall boating ex
 
 ### Is Mercury allocation healthy for 2026?
 
-From our position as a Mercury Premier dealer, new motor allocation is healthy.
+From our position as a Mercury Premier dealer, allocation has looked healthy on our recent orders, though it shifts by model and season, so confirm current availability when you call.
 
 ## Related guides
 

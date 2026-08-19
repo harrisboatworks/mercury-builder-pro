@@ -38,7 +38,7 @@ revenue_driver: repower
 | 中文名 | 船隻操作員卡 | 船隻牌照 | 釣魚證 |
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
 | 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
-| 是關於甚麼 | **人**——會不會安全開船 | **船**——船身的註冊號 | **行為**——允不允許釣魚 |
+| 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
 | 費用 | 由 Transport Canada 認可提供商決定 | **按 Transport Canada 當前服務費** | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
 | 中文支援 | 視提供商而定（建議查運輸部認可名單） | 英 / 法文 | **有官方繁體中文摘要** |
@@ -48,7 +48,7 @@ revenue_driver: repower
 
 - **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人。
 - **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
-- **中文考試是否提供：** 視提供商而定，**不能保證所有提供商都有中文版**——請直接聯繫認可名單上的提供商確認。
+- **中文考試是否提供：** 視提供商而定，**不能保證所有提供商都有中文版**，請直接聯繫認可名單上的提供商確認。
 - **有效期：** 終身。
 
 ## PCL：船隻牌照（船身註冊號）

@@ -48,7 +48,7 @@ These two boats solve completely different problems. Buying the wrong one is the
 - You want a swim platform, table, full bench seating, and shade
 - Top speed is not a priority; 30-35 mph at WOT is plenty
 
-**Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury, $55K-$85K.**
+**Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury; see current package pricing on our /pricing-reference page.**
 
 #### V-hull / runabout
 
@@ -58,7 +58,7 @@ These two boats solve completely different problems. Buying the wrong one is the
 - You're a 2 to 5 person group, not a big entertaining crowd
 - You want better gas mileage and easier trailering than a pontoon
 
-**Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury, $50K-$75K.**
+**Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury; see current package pricing on our /pricing-reference page.**
 
 In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull. Tell us how you actually use the boat and we'll point you at the right hull.
 

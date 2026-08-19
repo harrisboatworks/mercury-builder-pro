@@ -107,7 +107,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **Combined weight over 3,400 kg (7,500 lbs):** A full-size truck or HD truck is typically required. Verify against the tow vehicle's gross combined weight rating (GCWR).
 
-When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the $15.
+When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the scale fee.
 
 ---
 

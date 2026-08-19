@@ -36,7 +36,7 @@ revenue_driver: repower
 - **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
 - **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
-- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요 — HBW가 repower 시 함께 안내
+- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요, HBW가 repower 시 함께 안내
 
 ---
 

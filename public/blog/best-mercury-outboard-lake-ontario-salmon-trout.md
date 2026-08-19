@@ -141,7 +141,7 @@ We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryre
 
 Harris Boat Works is on Rice Lake in Gores Landing, we're not a Port Credit or Whitby harbour marina. But we do quote, sell, and install Mercury motors for Lake Ontario anglers, and we service Mercury and MerCruiser motors regardless of where the boat fishes. For engine repairs, we only service Mercury and MerCruiser.
 
-If your boat is slip-stored in a Lake Ontario marina and you need engine service there, they'll have their own shop. For motor purchases, repower quotes, and service on boats that come to us, we're the answer.
+If your boat is slip-stored in a Lake Ontario marina and you need engine service there, they'll have their own shop. For motor purchases, repower quotes, and service on boats that come to us, we're the shop to call.
 
 ---
 

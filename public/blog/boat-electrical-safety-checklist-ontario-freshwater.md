@@ -87,7 +87,7 @@ The bilge pump is the most under-tested piece of safety equipment on most boats.
 - Pump discharge hose is clear and properly routed to the through-hull fitting
 - The pump runs smoothly when activated, no unusual noise
 
-**Fix:** if the float switch is stuck or the pump doesn't run when the float is raised, replace it. A bilge pump kit is typically $80-$150 in parts.
+**Fix:** if the float switch is stuck or the pump doesn't run when the float is raised, replace it. A bilge pump kit is a fairly modest parts cost; check current pricing at your marine supplier.
 
 This is a safety item, not a maintenance item. A failed bilge pump is how boats sink at the dock during heavy rain.
 
@@ -102,7 +102,7 @@ Visually inspect any wiring you can see, especially around connections to the he
 - Automotive-grade plastic crimp connectors (NOT marine-grade, will corrode)
 - Routing through areas where the wire can chafe or be pinched
 
-**Fix:** replace any connection that uses automotive-grade terminals with marine-grade tinned-copper terminals and adhesive-lined heat-shrink butt connectors. The right tool for the job costs $5-$10 more per connection and lasts 10+ years.
+**Fix:** replace any connection that uses automotive-grade terminals with marine-grade tinned-copper terminals and adhesive-lined heat-shrink butt connectors. The right tool for the job costs only a few dollars more per connection and holds up for years.
 
 This is the single most common pattern we see when diagnosing intermittent electrical issues at our service shop. Amateur wiring with the wrong terminals creates resistance, the resistance creates voltage drops, and the voltage drops create faults that look mysterious until you trace them back to a corroded crimp.
 
@@ -154,7 +154,7 @@ If you have shore power and aren't 100 percent sure your boat's setup is complia
 
 The single most common electrical pattern we diagnose is intermittent SmartCraft faults that trace back to a corroded amateur wiring connection somewhere in the boat. Customer brings in a Mercury that "keeps throwing different alarms," we hook up the diagnostic, the faults are real but they come and go. Tracing them back, the issue is usually a $5 crimp connector behind the console, installed by a previous owner, that has corroded enough to create a voltage drop.
 
-The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: $150-$200. Compared to what owners spend chasing the gremlins, this is cheap and final.
+The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: quoted at our current shop rate; see /pricing-reference. Compared to what owners spend chasing the gremlins, this is cheap and final.
 
 For a structured electrical inspection or to fix a known issue, our service intake is at hbw.wiki/service.
 

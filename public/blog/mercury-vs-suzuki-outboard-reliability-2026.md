@@ -130,7 +130,7 @@ Outboard weight varies more by model and configuration (shaft length, steering, 
 
 If you currently run Mercury and you are considering Suzuki (or vice versa), the cost of switching is not just the motor. The [full repower cost](/blog/mercury-repower-cost-ontario-2026-cad) typically includes the motor itself, replacement rigging, controls, gauges, harnesses where they are brand-specific, adapter or replacement steering link where required, and labour for the rigging conversion.
 
-The rigging conversion alone on an Ontario repower typically runs $2,000 to $3,000 CAD on top of the new motor purchase. That number is consistent across Ontario dealers and matches what we quote on Mercury-to-other-brand and other-brand-to-Mercury switches. It does not always show up on a comparison shopper's spreadsheet, but it should.
+The rigging conversion alone adds a real line on top of the new motor purchase, and the exact CAD figure varies by rigging, so price it in a live quote at mercuryrepower.ca. Brand-switch rigging costs real money in both directions, Mercury-to-other-brand and other-brand-to-Mercury, and it's worth pricing before you commit. It does not always show up on a comparison shopper's spreadsheet, but it should.
 
 If you are coming from a Mercury and you are happy with the current motor's running performance and dealer support, the rigging switch cost is usually the line item that tips the decision toward staying. If you are coming from a Suzuki and your nearest Suzuki dealer is 90 minutes away, the rigging switch cost is the line item that justifies the change.
 

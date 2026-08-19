@@ -141,7 +141,7 @@ Compatibility is step one. Three other things are required to actually run Smart
 2. **The Mercury Marine app.** Free, iOS and Android. Search "Mercury Marine" on the App Store or Play Store. Active App Store / Play account required.
 3. **A phone with active data when away from your dock Wi-Fi.** Live data syncs to the cloud when the phone has connectivity. Without that, it caches and uploads next time it's online.
 
-The base SmartCraft Connect features are included free with the gateway hardware. No monthly subscription required for live engine data, trip logs, service reminders, or fault codes. There's an optional Mercury Premium tier that adds advanced analytics, but most boaters never need it. Download the Mercury Marine app on [iOS](https://apps.apple.com/app/mercury-marine/id1483614099) or [Android](https://play.google.com/store/apps/details?id=com.mercurymarine.outboard).
+As of our last check, the base SmartCraft Connect features were included with the gateway hardware, with no monthly subscription for live engine data, trip logs, service reminders, or fault codes. Mercury's app listing has the current terms. There's an optional Mercury Premium tier that adds advanced analytics, but most boaters never need it. Download the Mercury Marine app on [iOS](https://apps.apple.com/app/mercury-marine/id1483614099) or [Android](https://play.google.com/store/apps/details?id=com.mercurymarine.outboard).
 
 ## How to get SmartCraft Connect installed
 

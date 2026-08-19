@@ -117,7 +117,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 ## Appel à l'action
 
 **N'attendez pas la dernière minute.** Les places pour l'hivernisation se remplissent en octobre. 
-Réservez en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
+Soumettez votre demande de service en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -125,7 +125,7 @@ Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
 ## Portée de service
 
-Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+Si vous soumettez une demande de service chez HBW, voici la limite importante à connaître :
 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 ---
@@ -136,7 +136,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 Le prix varie selon le moteur et les services requis. Contactez-nous à hbw.wiki/service pour une estimation.
 
-### Quand devrais-je prendre rendez-vous?
+### Quand devrais-je demander mon hivernisation?
 
 Idéalement en septembre ou début octobre. Les places se remplissent vite après l'Action de grâces.
 
