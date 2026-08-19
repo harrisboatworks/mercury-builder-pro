@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison.md
-last_updated: 2026-06-26
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado"
 description: "Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。"
 category: "Mercury 型号比较"
 date_published: 2026-05-10
-date_modified: 2026-06-26
+date_modified: 2026-08-19
 keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","Pro XS 中文","Verado 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**最后审核:** 2026-06-26  
+**最后审核:** 2026-08-19  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 

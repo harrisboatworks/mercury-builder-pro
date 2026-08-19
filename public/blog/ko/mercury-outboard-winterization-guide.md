@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를
 description: "온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지."
 category: "정비 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["선외기 겨울 보관","Mercury 겨울 정비","온타리오 보트 윈터라이제이션","Mercury winterization guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** 정비 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 

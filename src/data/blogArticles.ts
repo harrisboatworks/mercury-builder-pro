@@ -2420,7 +2420,7 @@ If you are bringing us a boat, submit the service form about one to two weeks be
     image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-19",
 
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
@@ -2431,7 +2431,7 @@ If you are bringing us a boat, submit the service form about one to two weeks be
       { question: "How many times a year should I boat before buying makes sense?", answer: "There's no magic number, because it depends on the boat and your costs. The principle: renting wins at low usage, owning wins at high usage, and the crossover sits where YOUR ownership buckets divided by YOUR honest days beats a rental day. In between, decide on lifestyle: spontaneity favours owning; flexibility and zero hassle favour renting." },
       { question: "What ownership costs do first-time buyers forget?", answer: "Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges." },
       { question: "Can renting help me decide what boat to buy?", answer: "Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase." },
-      { question: "If I decide to buy, when's the smart time to do it?", answer: "Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side." },
+      { question: "If I decide to buy, when's the smart time to do it?", answer: "Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side." },
       { question: "How do I price a Rice Lake rental day?", answer: "Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs." },
     ],
     content: `# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
@@ -2539,7 +2539,7 @@ Winterization, storage, spring commissioning, and depreciation. The purchase pri
 Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase.
 
 **If I decide to buy, when's the smart time to do it?**
-Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
+Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
 
 **How do I price a Rice Lake rental day?**
 Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs.
@@ -2558,7 +2558,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 **Related guides:**
 - [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada)
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers)
 - [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
 - [First-Time Boat Rental on Rice Lake](/blog/first-time-boat-rental-rice-lake-guide)
 - [Group Boat Rentals on Rice Lake](/blog/group-boat-rentals-rice-lake)
@@ -13222,7 +13222,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '10 min read',
-    keywords: ['2026 boating market', 'ontario boat buying', 'boat market forecast', 'luxury tax boats canada', 'boat dealer inventory', 'used boat market'],
+    keywords: ['2026 boating market', 'buy boat canada 2026', 'best time to buy boat', 'ontario boat buying', 'boat market forecast', 'luxury tax boats canada', 'boat dealer inventory', 'used boat market'],
     content: `# What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
@@ -13287,9 +13287,36 @@ The Bank of Canada policy rate eased through a series of cuts in 2025. Those cut
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
+## Tariffs and the exchange rate
+
+Most major outboard brands, Mercury included, assemble or source components in the United States, and most aluminum boat brands carry significant U.S. content. That means two things for Canadian buyers: a weaker Canadian dollar puts upward pressure on next-model-year pricing, and any escalation in Canada-U.S. trade tensions tends to raise boat prices over the following 12 to 24 months, not lower them. Waiting for a tariff resolution as a price-drop strategy is a bet on a political outcome nobody can promise. For clarity: every price on [mercuryrepower.ca](https://www.mercuryrepower.ca) is in Canadian dollars, HST extra.
+
 ## The case for 2026 pre-owned
 
 Pre-owned boats typically account for about 80% of all boat transactions in a given year. With prices 5 to 10% below pandemic highs, the 2026 used market is worth a serious look. Every used boat at HBW gets inspected before it goes up for sale. Current inventory at [harrisboatworks.ca](https://harrisboatworks.ca).
+
+::decision-card
+eyebrow: 2026 timing decision
+heading: Buy this season, or wait for fall pricing?
+subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+leftLabel: You need a boat for this season
+leftCriteria:
+  - You sold or lost your previous boat and want water time in 2026
+  - You have a family vacation or cottage booked that needs the boat
+  - Current inventory has something close to what you want
+  - You can pay or finance now without stretching
+leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
+leftVariant: recommended
+rightLabel: You can wait until late fall
+rightCriteria:
+  - You have a working boat that will get through 2026
+  - You want a specific model or HP not currently in stock
+  - You want to negotiate from a position of patience
+  - Fall and year-end dealer flexibility matters to you
+rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
+rightVariant: alternative
+whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
+::
 
 ## What this means for HBW customers
 
@@ -13298,7 +13325,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Financing is improving.
 - The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
-We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We watch the market from [our shop on Rice Lake](/blog/best-marina-rice-lake-ontario). HBW is a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -13317,6 +13344,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Did Canada really repeal the luxury tax on boats?', answer: 'Yes. Canada Revenue Agency Luxury Tax Notice LTN5 confirms that the luxury tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026.' },
       { question: 'Are used boat prices coming down in Ontario?', answer: 'Used boat prices have softened an estimated 5 to 10% from 2021 to 2022 highs. Prices are still above pre-pandemic levels in many categories, but the correction has happened.' },
       { question: 'Why are new boat sales down if people are still boating?', answer: 'New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.' },
+      { question: 'What is the best time of year to buy a boat in Canada?', answer: 'Fall (September to November) typically offers the best new-boat opportunities: dealers are clearing model-year inventory and are more open to negotiating on leftover stock. Winter boat shows (January and February) bring promotional financing programs. Spring has the widest selection but also peak demand, so dealers are less motivated to discount.' },
+      { question: 'How do tariffs affect boat prices in Canada in 2026?', answer: 'Most outboards and many boat brands sold in Canada carry significant U.S.-manufactured content, so tariff costs on U.S.-origin goods are typically passed through to buyers within one to two model cycles. Any escalation in Canada-U.S. trade tensions tends to raise boat prices over the following 12 to 24 months. Waiting for a tariff resolution as a price-drop strategy assumes a political outcome that is uncertain.' },
+      { question: 'Are the prices on mercuryrepower.ca in Canadian dollars?', answer: 'Yes. Every price on mercuryrepower.ca is in Canadian dollars, with HST extra. The configurator shows live CAD pricing for the full Mercury lineup, no phone call required.' },
       { question: 'Is Mercury allocation healthy for 2026?', answer: 'From our position as a Mercury Premier dealer, allocation has looked healthy on our recent orders, though it shifts by model and season, so confirm current availability when you call.' },
     ]
   },
@@ -17080,211 +17110,6 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
         answer: 'There is no universal winner. HBW\'s 537-job-row Lightspeed snapshot confirms the shop sees this symptom often, but the historical cause buckets overlapped and do not prove one universal cause. Start with the kill switch, neutral-safety position, battery switch, battery condition and connections, then move to fuel and ignition.'
-      }
-    ]
-  },
-  {
-    slug: 'is-2026-good-year-to-buy-boat-canada',
-    title: 'Is 2026 a Good Year to Buy a Boat in Canada?',
-    description: 'Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative.',
-    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.jpg',
-    imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
-    author: 'Harris Boat Works',
-    datePublished: '2026-04-28',
-    dateModified: '2026-08-19',
-    publishDate: '2026-04-28',
-    category: 'Buying Guide',
-    readTime: '12 min read',
-    keywords: ['buy boat canada 2026', 'boat market canada', 'best time to buy boat'],
-    content: `*Last reviewed: 2026-08-08*
-
-> **Quick answer:** 2026 is a functional year to buy a boat in Canada, not a deal year. Inventory has recovered, lead times are normal, and prices sit above 2019 levels with little sign of dropping. If your hull is sound, a Mercury repower is often better value than buying new. Build a repower quote at mercuryrepower.ca.
-
-Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have dealt with in the last decade.
-
-Here is an honest read on the market from a third-generation family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965. We are not going to tell you it is a great time to buy if we do not believe that.
-
----
-
-## What the 2026 Boat Market Actually Looks Like
-
-**Inventory:** Significantly better than 2021, 2023. During the pandemic boom, buyers waited 18 months or more for popular models. That situation is largely resolved. Dealers have boats. Lead times are back to something normal. You can comparison shop again.
-
-**New boat prices:** Up compared to 2019. Not dropping significantly in 2026. Supply chain disruptions, currency movement, and material cost increases created a new pricing floor over the past four years. If you are expecting 2019 prices, they are not coming back.
-
-**Used boat market:** More inventory than 2022, 2023, but prices remain elevated relative to pre-pandemic levels. Used boats are not being discounted aggressively. Buyers who purchased at the 2021, 2022 peak are still holding asset value.
-
-**Short version:** You will not get a pandemic deal. You also will not face pandemic-era wait times or limited selection. It is a functional market.
-
----
-
-## The Tariff and Exchange Rate Reality
-
-This is the factor most buyers underestimate. Most major outboard manufacturers, Mercury, Yamaha, Suzuki, assemble or source components in the United States. Most aluminum fishing boat brands have North American manufacturing with significant U.S. content. Even boats assembled in Canada use U.S.-sourced components.
-
-When the Canadian dollar weakens against the U.S. dollar, boat prices in Canada rise, not immediately, but within one to two model cycles. The 2024-2025 dollar movements have already been reflected in 2026 pricing for most dealers.
-
-Trade tariff changes between Canada and the U.S. add another variable. The details of what applies to marine goods in 2026 are evolving. The practical takeaway: if tariff exposure increases further, 2026 prices are a floor, not a peak. Waiting for prices to drop on the assumption of tariff resolution assumes a political outcome that is not certain.
-
----
-
-## Financing in 2026
-
-As of mid-2026, interest rates in Canada have moderated from the 2023 peak. The Bank of Canada has made multiple cuts. Marine lending has followed partially, boat financing typically tracks prime with a premium.
-
-Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 environment. Monthly payments on a typical boat purchase are lower than they were at peak, but the boat itself costs more than it did in 2020.
-
-**What to factor into total cost:** financing, insurance, storage, maintenance, and fuel, not just the purchase price.
-
----
-
-## Who Should Buy in 2026, and Who Should Wait
-
-### Buy now if:
-
-**You are replacing a motor, not buying a whole new boat.** A Mercury repower on a sound hull is often meaningfully better value than a new boat purchase at 2026 prices. You get upgraded technology, improved fuel economy, warranty coverage, and you are not paying for a new hull you do not need. Motor stock moves week to week; the configurator shows what is orderable right now. Build a transparent, no-games quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-**You have been in the market for 12 to 18 months and the boat you want is available.** Waiting for a correction that may not come costs you a season.
-
-**Your current boat is costing more in repairs than it is worth.** If you are spending heavily on repairs to a boat worth $8,000, the math is a warning.
-
-**You are a first-time buyer with a clear, modest budget.** The entry-level aluminum fishing boat and small pontoon market is reasonable in 2026. Real inventory, real prices. Check [harrisboatworks.ca](https://harrisboatworks.ca) for what is on the lot.
-
-### Consider waiting if:
-
-**You are buying out of fear, not need.** "Prices might go up" is not a purchasing strategy on its own. If you are not ready, do not know exactly what you want, and have not done the research, buying in a hurry causes regret.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-**You want a premium or specialty boat.** The higher the price point, the more price discovery questions exist in 2026. A $35,000 aluminum boat is a different market than a $150,000+ cabin cruiser.
-
-**The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before going to a showroom.
-
----
-
-::decision-card
-eyebrow: 2026 timing decision
-heading: Buy this season, or wait for fall pricing?
-subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
-leftLabel: You need a boat for this season
-leftCriteria:
-  - You sold or lost your previous boat and want water time in 2026
-  - You have a family vacation or cottage booked that needs the boat
-  - Current inventory has something close to what you want
-  - You can pay or finance now without stretching
-leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
-leftVariant: recommended
-rightLabel: You can wait until late fall
-rightCriteria:
-  - You have a working boat that will get through 2026
-  - You want a specific model or HP not currently in stock
-  - You want to negotiate from a position of patience
-  - Fall and year-end dealer flexibility matters to you
-rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
-rightVariant: alternative
-whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
-::
-
----
-
-## The Repower Option: Better Value in 2026 Than It's Been in Years
-
-This deserves its own section. The economics of repowering a sound used hull instead of buying new have shifted meaningfully in 2026.
-
-New boat prices are elevated. Mercury's current FourStroke lineup is genuinely excellent. The repower cost is predictable. A new boat carries financing costs, depreciation on a new hull, and a motor you may not need.
-
-For a hull that is structurally sound, under 25 years old, with an aging or unreliable motor, [a repower is worth pricing out](/blog/mercury-repower-cost-ontario-2026-cad) before setting foot in a showroom. Build a specific, configured quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). No phone calls, no games, no "we'll give you a price when you come in."
-
-For engine repairs, we only service Mercury and MerCruiser.
-
----
-
-## HBW's Honest Advice
-
-We sell boats and motors. We are transparent about that.
-
-We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
-
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent first](/blog/renting-vs-owning-boat-ontario-math); HBW's current pontoon and fishing-boat lineup is listed at harrisboatworks.ca/rentals.
-
----
-
-## FAQs
-
-**Is 2026 a good year to buy a boat in Canada?** 
-It is a functional but not exceptional year. Inventory is normalized. Prices are higher than 2019 and are unlikely to drop meaningfully. For ready buyers with clear goals and financing in place, 2026 offers reasonable selection. For those hoping for a price correction, limited evidence one is coming.
-
-**Are boat prices going down in Canada in 2026?** 
-Prices are largely holding or seeing minor softening at the new-end compared to the 2021, 2022 peak. They have not returned to pre-pandemic levels.
-
-**Is it better to buy a new boat or repower in 2026?** 
-For many Ontario boaters with a sound hull, repowering is better value. A Mercury repower delivers upgraded technology, warranty coverage, and improved fuel economy at a fraction of a new-boat cost. Use [mercuryrepower.ca](https://www.mercuryrepower.ca) to compare.
-
-**What is the best time of year to buy a boat in Canada?** 
-Fall (September, November) for new boats, dealers are clearing model-year inventory. Winter boat shows (January, February) for promotional financing programs. Spring offers the widest selection but also peak demand and less dealer motivation to negotiate.
-
-**Should I buy or rent in 2026?** 
-There is no universal day-count threshold. Compare the live rental rate for the boat you would use across your realistic number of days with your own annual ownership costs. Renting before purchasing can help you evaluate layout and use without promising a financial outcome.
-
----
-
-## Related Guides
-- [Mercury Repower Cost Ontario (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [Mercury Outboard Financing Ontario](/blog/mercury-outboard-financing-ontario-2026)
-- [Boat Rentals on Rice Lake](/blog/rice-lake-boat-rental-guide-2026)
-
-## See Real Prices, No Games
-
-**Ready when you are.** 
-Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required.
-Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
----
-`,
-    faqs: [
-      {
-        question: 'Is 2026 a good year to buy a boat in Canada?',
-        answer: '2026 is a functional but not exceptional year to buy a boat in Canada. Inventory has normalized after the post-pandemic shortage, and lead times are back to reasonable levels. However, prices are significantly higher than 2019 levels and are not expected to drop meaningfully in the near term, currency pressures and potential tariff impacts create more upside price risk than downside. For buyers who are ready, have their financing in order, and know what they want, 2026 offers reasonable selection. For buyers hoping for a price correction, there\'s limited evidence that one is coming.'
-      },
-      {
-        question: 'Are boat prices going down in Canada in 2026?',
-        answer: 'Boat prices in Canada are largely holding steady or have minor softening at the new-end in 2026, compared to the peak of 2021-2022, but they haven\'t returned to pre-pandemic levels. Used boat prices have slightly more flexibility as inventory increases, but the elevation from the pandemic price floor has been mostly maintained. Canadian buyers face the additional pressure of USD/CAD exchange rate dynamics, as most major outboard and boat brands are priced in or relative to U.S. dollars. A significant price drop in 2026 would require a combination of weak demand and strong Canadian dollar, neither is reliably expected.'
-      },
-      {
-        question: 'How do tariffs affect boat prices in Canada in 2026?',
-        answer: 'Most major outboard motors and many boat brands sold in Canada have significant U.S.-manufactured content. When tariffs are applied to U.S.-origin goods entering Canada, those costs are typically passed through to consumers via dealer pricing adjustments within one to two model cycles. The specific tariff situation for marine goods in 2026 is evolving, buyers should assume that any escalation in Canada-U.S. trade tensions will increase, not decrease, boat prices over the following 12-24 months. Waiting for tariff resolution as a price-drop strategy assumes a political outcome that is uncertain.'
-      },
-      {
-        question: 'Is it better to buy a new boat or repower an old one in 2026?',
-        answer: 'For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you\'re paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manufacturer warranty, and improved fuel economy at a fraction of the cost of a new rig. As of August 8, 2026, the [live pricing reference](/pricing-reference) lists the 115 ELPT FourStroke at a $17,083 HBW selling price and $19,030 MSRP, motor only. The repower math is most compelling when your hull is in good structural condition, under 25 years old, and your main issue is an aging or unreliable motor. Use mercuryrepower.ca for a configured quote.'
-      },
-      {
-        question: 'What is a realistic budget for a boat in Canada in 2026?',
-        answer: 'Based on what\'s actually on HBW\'s lot right now: entry-level new aluminum boats with small motors start at $6,999 (2024 Legend 14 Widebody). A more capable 16-foot package with a 25 HP runs $24,499. Mid-range family boats in the 17-19 foot range start around $39,999. The 2025 Legend HALO 21 is $47,999. Premium fiberglass tops out at $79,999. These are real published prices; our used listings at harrisboatworks.ca show current asking prices across a much wider range. Industry-wide, expect to add 13% HST, plus rigging, prop, and controls for any motor purchase.'
-      },
-      {
-        question: 'Should I buy a boat or just rent in 2026?',
-        answer: 'If you\'re uncertain whether you\'ll use a boat enough to justify ownership costs, renting first is a practical way to test the type of boat and access pattern that fit you. There is no universal day-count threshold: compare the live rental rate for your realistic number of days against your own storage, maintenance, insurance, winterizing, depreciation, and financing costs.'
-      },
-      {
-        question: 'How do boat financing rates in Canada compare in 2026 vs recent years?',
-        answer: 'Boat financing rates in Canada have improved from the peak of 2023 as the Bank of Canada has cut its policy rate. However, recreational marine lending carries a premium over prime, so rates for boat loans in 2026 are meaningfully higher than the near-zero rate environment of 2020-2021 that fuelled the pandemic buying boom. A buyer who bought a similarly-priced boat in 2020 would have had a lower monthly payment despite lower prices today. Factor total carrying cost, principal, interest, insurance, storage, maintenance, and fuel, not just purchase price when evaluating affordability.'
-      },
-      {
-        question: 'What\'s the best time of year to buy a boat in Canada?',
-        answer: 'Fall (September-November) typically offers the best new boat purchase opportunities in Canada. Dealers are clearing model-year inventory and are more willing to negotiate on leftover stock. Winter boat shows (January-February) can offer promotional pricing with manufacturer incentive programs. Spring (March-May) offers the widest selection but also peak demand, dealers are less motivated to discount. If you\'re buying used, fall sellers are motivated (they don\'t want to pay for winter storage. HBW\'s published storage rates start at $33/ft for a trailered boat up to 21 ft) but selection is higher in spring when people list before the season starts.'
-      },
-      {
-        question: 'Does it make sense to buy a boat if I only use it 10-15 days per year?',
-        answer: 'At 10-15 days of use per year, the per-use cost of ownership is high. For a $40,000 rig, factor in: annual winterization and storage at our current published rates, plus insurance and financing. That adds up to meaningful per-day cost at low usage. That doesn\'t mean ownership is wrong at that usage level, but buyers should go in with clear eyes about the economics. If the boat enables more consistent family time or access to specific water you\'d otherwise miss, the value calculation has dimensions beyond pure cost-per-day.'
-      },
-      {
-        question: 'Is buying a used boat in 2026 a better deal than buying new?',
-        answer: 'Used boats offer a price break in 2026, but the gap has narrowed compared to pre-pandemic norms. Used prices remain elevated because buyers who purchased at peak values aren\'t selling at a loss, and general boat demand in Ontario stays strong. The best used boat deals are typically 5-10 year old boats with a recent motor replacement or repower, you get a hull that\'s depreciated but mechanically current. A used boat with an old, high-hour motor requires careful assessment: the motor\'s remaining life and replacement cost need to factor into your offer price. Our current used listings at harrisboatworks.ca give you a real-market reference point.'
       }
     ]
   },

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人第一次租船钓鱼：证件、安全和当天流程"
 description: "多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Rice Lake 租船","中文 多伦多","第一次 租船 钓鱼","安省 钓鱼证","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-08-02  
+**最后审核:** 2026-08-19  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 

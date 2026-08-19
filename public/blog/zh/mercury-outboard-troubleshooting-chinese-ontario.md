@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario.md
-last_updated: 2026-08-07
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 船外机故障排查中文指南"
 description: "Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-07
+date_modified: 2026-08-19
 keywords: ["Mercury 故障排查","outboard troubleshooting","船外机不启动","SmartCraft alarm","安省 Mercury service","HBW service"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-07  
+**最后审核:** 2026-08-19  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 

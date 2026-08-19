@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage.md
-last_updated: 2026-05-13
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)"
 description: "La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-08-19
 keywords: ["Mercury hors-bord ne démarre pas","dépannage hors-bord Mercury","problème démarrage Mercury","moteur bateau ne part pas printemps","hors-bord Mercury Québec"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-05-13\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
 

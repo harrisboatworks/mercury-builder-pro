@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트�
 description: "Mercury 115 FourStroke와 150 FourStroke의 실질적 차이를 비교합니다. 배기량, 무게, 연비, 적합 보트 크기까지, 한국어로 쉽게 설명합니다."
 category: "엔진 비교"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["Mercury 115 vs 150 비교","Mercury 선외기 선택","Mercury 마력 비교","Mercury 115 vs 150 Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 엔진 비교  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison
 

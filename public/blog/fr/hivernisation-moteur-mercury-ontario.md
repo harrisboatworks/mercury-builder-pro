@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md
-last_updated: 2026-06-19
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario"
 description: "Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne."
 category: "Entretien"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-19
 keywords: ["hivernisation moteur Mercury Ontario","entretien moteur hors-bord hiver","préparation hivernale bateau Ontario","winterization Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-06-19\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 

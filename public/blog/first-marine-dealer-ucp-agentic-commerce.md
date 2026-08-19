@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Quote via AI at Harris Boat Works"
 description: "Harris Boat Works is a live Universal Commerce Protocol merchant. AI assistants can now build a real CAD Mercury outboard quote."
 category: "Mercury Technology"
 date_published: 2026-06-11
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["universal commerce protocol","UCP marine dealer","AI agent Mercury quote","agentic commerce Ontario","ChatGPT buy outboard","Shopify ucp-cli","Harris Boat Works UCP"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-06-11  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce
 

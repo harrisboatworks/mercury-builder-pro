@@ -86,11 +86,6 @@ const contracts = [
     required: [fmt(localFacts.proXs250Min), fmt(localFacts.proXs250Max), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],
   },
   {
-    slug: 'is-2026-good-year-to-buy-boat-canada',
-    stale: ['$19,220 MSRP'],
-    required: [fmt(localFacts.mercury115Elpt.dealer), fmt(localFacts.mercury115Elpt.msrp), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],
-  },
-  {
     slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
     stale: ['$35,000 to $50,000+'],
     required: [fmt(localFacts.salmonPairFloor), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],

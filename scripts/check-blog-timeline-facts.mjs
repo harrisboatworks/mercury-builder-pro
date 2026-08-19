@@ -238,7 +238,7 @@ const GTA_DRIVE_IN_FORBIDDEN = [
 ];
 
 const ARTICLE_CONTRACTS = {
-  'is-2026-good-year-to-buy-boat-canada': {
+  '2026-boating-market-ontario-boat-buyers': {
     required: [
       {
         rx: /family marina founded on Rice Lake in 1947 and a Mercury dealer since 1965/i,

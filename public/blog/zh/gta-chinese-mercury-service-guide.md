@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 发动机维修保养完整指南：从机油到
 description: "多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-08-19  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 

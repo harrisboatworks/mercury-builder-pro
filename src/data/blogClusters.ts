@@ -70,7 +70,6 @@ export const blogClusters: BlogCluster[] = [
       "why-mercury-dealers-hide-prices-online",
       "boat-insurance-ontario-guide-2026",
       "mercury-outboard-rigging-costs-ontario",
-      "is-2026-good-year-to-buy-boat-canada",
       "2026-boating-market-ontario-boat-buyers",
     ],
   },
@@ -342,7 +341,6 @@ export const blogClusterContexts: Record<string, string> = {
   "why-mercury-dealers-hide-prices-online": "why most Mercury dealers hide prices online",
   "boat-insurance-ontario-guide-2026": "boat insurance basics for Ontario owners",
   "mercury-outboard-rigging-costs-ontario": "rigging and install cost breakdown",
-  "is-2026-good-year-to-buy-boat-canada": "is 2026 the right year to buy?",
   "2026-boating-market-ontario-boat-buyers": "what 2026 looks like for Ontario buyers",
   // Cluster 3 — Buying — Motor Sizing & Selection
   "how-to-choose-right-horsepower-boat": "matching HP to boat size and use",

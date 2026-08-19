@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹ�
 description: "Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["boat winterization Toronto Urdu","کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)","boat storage Mississauga ke qareeb (boat storage near Mississauga)","kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-08-02  
+**آخری جائزہ:** 2026-08-19  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 

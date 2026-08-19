@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-07-27
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
 description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-07-27
+date_modified: 2026-08-19
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 

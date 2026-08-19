@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 �
 description: "PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다."
 category: "규정 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC 한국어","Ontario boating regulations Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 규정 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 11 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 

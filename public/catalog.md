@@ -293,7 +293,6 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md)
 - [Trailering a Boat: Toronto to Rice Lake](https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md)
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md)
-- [Is 2026 a Good Year to Buy a Boat in Canada?](https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md)
 - [Is Your Boat Hull Worth Repowering? A Structural Checklist](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md)
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md)
 - [Why Mercury Dealers Hide Prices (HBW Doesn't)](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md)
