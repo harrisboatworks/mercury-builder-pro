@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake"
 description: "Mercury Premier dealer for Ajax: Harris Boat Works on Rice Lake, 45 minutes via 401 and 115. Repower, sales, parts, winter storage for Durham Region boat owners."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer ajax","mercury repower ajax","mercury outboard ajax ontario","boat motor service durham region ajax"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -74,10 +74,10 @@ The model here runs on repeat customers and referrals, not a sales floor quota. 
 Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what fits your hull and your use case.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging conversation shapes how the motor performs, we don't skip it.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. The rigging conversation shapes how the motor performs, we don't skip it.
 
 **Mercury parts and service**
-HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and Mercruiser.
+HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.

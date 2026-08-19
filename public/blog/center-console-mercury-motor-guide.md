@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury for Center Console Boats Ontario"
 description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"
 date_published: 2026-03-23
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
@@ -183,7 +183,7 @@ We have been a Mercury dealer on Rice Lake for decades. Center-console repowers 
 
 We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. We recommend Verado when the premium is actually justified by how the boat is being used.
 
-Pickup is at Gores Landing. That is not a downside, it means your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
+Pickup is at Gores Landing, and your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
 
 ---
 

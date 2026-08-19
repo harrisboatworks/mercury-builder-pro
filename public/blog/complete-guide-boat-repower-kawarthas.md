@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -57,7 +57,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial.](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to lake test.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -267,7 +267,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ### What is a boat repower?
 
-Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
+Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a lake-test. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
 
 ### Is repowering worth it on an older boat?
 
@@ -299,7 +299,7 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 
 ### When is the best time to book a repower?
 
-October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed December 1 through April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ## Related guides
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-07-30
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
-date_modified: 2026-07-30
+date_modified: 2026-08-19
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-07-30  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 
@@ -176,7 +176,7 @@ The best overheating prevention is straightforward:
 
 After any overheating event, even one that resolved itself on the water, have the motor checked. Overheating can cause invisible damage, head gaskets, warped components, and thermostat failure are not always obvious from the outside.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 If you suspect a cooling system problem, book before your next run: [hbw.wiki/service](https://hbw.wiki/service).
 

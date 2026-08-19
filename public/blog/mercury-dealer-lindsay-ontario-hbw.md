@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Lindsay Ontario HBW"
 description: "Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer lindsay","kawartha lakes mercury","lindsay mercury premier","sturgeon lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw
 
@@ -83,10 +83,10 @@ Motor pricing: mercuryrepower.ca
 Full lineup: 2.5 HP through 600 HP. For Kawartha cottagers, FourStroke 90/115/150 covers most setups. For Sturgeon Lake muskie/walleye anglers, Pro XS 115-200 is the common spec. ProKicker 9.9 trolling motors install on most Lindsay-area fishing rigs.
 
 **Repower service**
-[Full repower including motor, rigging, controls](/blog/mercury-repower-cost-ontario-2026-cad), throttle and shift cables, prop matching, install, sea trial on Rice Lake. Lindsay customers can drop off, get the work done, and pick up commissioned and water-tested.
+[Full repower including motor, rigging, controls](/blog/mercury-repower-cost-ontario-2026-cad), throttle and shift cables, prop matching, install, lake test on Rice Lake. Lindsay customers can drop off, get the work done, and pick up commissioned and water-tested.
 
 **MerCruiser sterndrive service**
-For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
+For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and MerCruiser.
 
 **Mercury parts and service**
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
@@ -128,7 +128,7 @@ For routine oil changes and basic seasonal work, maybe not. For a major repower,
 
 ### Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?
 
-Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist.
+Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and MerCruiser; for other brands we will point you to the right specialist.
 
 ### Can I store my boat at HBW through the winter if I am based in Lindsay?
 

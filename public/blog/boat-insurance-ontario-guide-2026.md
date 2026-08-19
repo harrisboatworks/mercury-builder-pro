@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md
-last_updated: 2026-05-14
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Insurance in Ontario: What You Actually Need (2026)"
 description: "Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide."
 category: "Boating"
 date_published: 2026-05-13
-date_modified: 2026-05-14
+date_modified: 2026-08-19
 keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","liability coverage boats","agreed value boat insurance","Ontario boat liability","pleasure craft insurance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Boating  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-05-14  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
 
 ## Quick Answer
 
-**Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Expect to pay $200-$600/year for a typical 16-22 ft Ontario boat with Mercury power.**
+**Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Premiums vary widely by boat, value, and coverage; the ranges in the table below show what 2026 Ontario policies realistically run.**
 
 - **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
 - **Hull / agreed-value**: replacement cost minus depreciation, with motor and trailer riders

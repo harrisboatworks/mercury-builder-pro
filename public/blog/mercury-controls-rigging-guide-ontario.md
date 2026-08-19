@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
@@ -36,8 +36,6 @@ revenue_driver: repower
 A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40-115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150-225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40-225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
-
-### Full Article
 
 The motor is the headline. The rigging is the line item most buyers underestimate.
 
@@ -192,13 +190,13 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 ## What HBW Includes vs. Charges Separately
 
-**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, a review of the model-specific maintenance schedule, and [Mercury Canada](https://www.mercurymarine.com/ca/en/) warranty registration.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), lake test, break-in instructions, a review of the model-specific maintenance schedule, and [Mercury Canada](https://www.mercurymarine.com/ca/en/) warranty registration.
 
 **Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200 to $400).
 
 **Not part of a standard quote:** Trolling motors, fishfinders, stereos, trailer work, cosmetic restoration.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -206,7 +204,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 The three big ones, reusing tired controls, skipping the gauge upgrade, and underspeccing steering on a V6, are covered at the top of this guide. Two more we see every season:
 
-**Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow. Sea trial it.
+**Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow. Lake test it.
 
 **Single battery on a boat full of electronics.** A single battery running the chartplotter, fishfinder, stereo, and starter can leave you stranded. See the wiring section above for when dual-battery makes sense.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Software Eligibility 2026"
 description: "Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
@@ -33,8 +33,6 @@ revenue_driver: repower
 
 > **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
 ---
-
-### Full Article
 
 Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
@@ -118,7 +116,7 @@ Mercury's published 5 to 21% figures are zero-to-top-speed test results, not a p
 
 Ontario's boating season is short. If your eligible motor qualifies for Boost, getting it done before spring launch is worth a conversation with us.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 

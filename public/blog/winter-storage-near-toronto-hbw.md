@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Boat Storage Near Toronto HBW"
 description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land."
 category: "Winterization"
 date_published: 2026-05-17
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
@@ -131,7 +131,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **Early April onward.** Physical spring commissioning and any separately authorized work begin after the marina reopens.
 
-**Mid-late May**. You drive up. Boat is ready, run, sea-trialed, launching at our slip. Pick up keys, take boat. **Second trip of the year.**
+**Mid-late May**. You drive up. Boat is ready, run, lake-tested, launching at our slip. Pick up keys, take boat. **Second trip of the year.**
 
 **Customer transport:** one fall drop-off and one spring pickup. HBW does not provide or arrange either trip.
 
@@ -149,7 +149,7 @@ As of July 2026, spring commissioning is included for HBW winter-storage custome
 
 ## Reviewed by
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 ## Sources and Review Notes
 

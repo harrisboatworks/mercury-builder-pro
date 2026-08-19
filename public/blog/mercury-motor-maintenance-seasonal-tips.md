@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Motor Seasonal Care Ontario"
 description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work."
 category: "Maintenance"
 date_published: 2024-05-20
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["mercury motor maintenance","outboard winterization","boat motor service","mercury service schedule","outboard maintenance tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2024-05-20  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 
@@ -102,7 +102,7 @@ If winterization is done correctly, the motor mostly takes care of itself over w
 
 - Battery: it can remain in the boat if disconnected and maintained according to the battery maker's instructions
 - Storage cover: snow load can damage seats, electronics, and canvas
-- Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
+- Mid-winter check (for boats stored at home): a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
 We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
 
@@ -204,7 +204,7 @@ For most current recreational Mercury FourStrokes, change engine oil at 100 hour
 
 ### Can I do my own Mercury outboard maintenance?
 
-You can handle several tasks yourself: checking and changing oil, replacing fuel filters, inspecting and replacing spark plugs, lubricating grease fittings, checking and replacing anodes, and inspecting the propeller. What you should leave to a certified technician: water pump impeller replacement, throttle and shift cable adjustment, ignition timing diagnostics, and any electronic system work on SmartCraft or digital throttle systems. For engine repairs at Harris Boat Works, we only service Mercury and Mercruiser.
+You can handle several tasks yourself: checking and changing oil, replacing fuel filters, inspecting and replacing spark plugs, lubricating grease fittings, checking and replacing anodes, and inspecting the propeller. What you should leave to a certified technician: water pump impeller replacement, throttle and shift cable adjustment, ignition timing diagnostics, and any electronic system work on SmartCraft or digital throttle systems. For engine repairs at Harris Boat Works, we only service Mercury and MerCruiser.
 
 ### When should I winterize my outboard in Ontario?
 

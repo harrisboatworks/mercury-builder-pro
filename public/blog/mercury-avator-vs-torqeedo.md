@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator vs Torqeedo Ontario"
 description: "Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury avator vs torqeedo","electric outboard comparison ontario","avator torqeedo","electric outboard dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
 
@@ -111,7 +111,7 @@ For Ontario cottage applications, standard 110V outlet charging handles most use
 - Parts on local dealer shelves
 - Warranty work at any authorized Mercury dealer in Canada
 - SmartCraft diagnostic capability at Mercury Premier dealers
-- For engine repairs, HBW services Mercury and Mercruiser only
+- For engine repairs, HBW services Mercury and MerCruiser only
 
 **Torqeedo service:**
 - Service through Torqeedo authorized dealers (smaller network in Ontario)
@@ -171,7 +171,7 @@ Pricing depends on the specific model and battery configuration. Entry-level Tor
 
 ### Can I service a Torqeedo at HBW?
 
-No. HBW is a Mercury Marine Premier Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
+No. HBW is a Mercury Marine Premier Dealer. For engine repairs, we only service Mercury and MerCruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
 
 ### Does Mercury Avator come with a warranty?
 

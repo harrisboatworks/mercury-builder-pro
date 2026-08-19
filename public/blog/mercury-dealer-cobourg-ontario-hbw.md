@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer cobourg","cobourg mercury outboard","northumberland mercury dealer","rice lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw
 
@@ -84,10 +84,10 @@ Motor pricing: mercuryrepower.ca
 Full Mercury lineup: 2.5 HP through 600 HP Verado. FourStroke for most Cobourg boats (cruising, fishing, family use). Pro XS for performance applications. Verado is special-order territory and rarely the right answer for a Lake Ontario or Rice Lake boat under 21 feet.
 
 **Repower service**
-Full job: motor, rigging, controls, prop selection, installation, sea trial on Rice Lake. For Cobourg customers, the convenience of having the install done where the boat will spend most of its season is meaningful.
+Full job: motor, rigging, controls, prop selection, installation, lake test on Rice Lake. For Cobourg customers, the convenience of having the install done where the boat will spend most of its season is meaningful.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Cobourg customers whose boat lives on Rice Lake during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
@@ -129,7 +129,7 @@ About 25 minutes outside rush hour, straight up County Road 18 into Gores Landin
 
 ### Does HBW service boats that live on Lake Ontario, not Rice Lake?
 
-Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and Mercruiser.
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and MerCruiser.
 
 ### Does HBW offer pickup or delivery for Cobourg customers?
 

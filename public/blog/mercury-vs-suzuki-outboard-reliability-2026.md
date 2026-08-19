@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -35,7 +35,7 @@ Both Mercury and Suzuki make mechanically reliable four-stroke outboards in 2026
 
 ## Conflict-of-interest disclosure
 
-Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and MerCruiser.
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
@@ -178,7 +178,7 @@ Suzuki markets their lean-burn EFI system as a fuel-economy advantage in cruise 
 
 ### Why does Harris Boat Works only service Mercury?
 
-We are a Mercury Marine Premier dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and Mercruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
+We are a Mercury Marine Premier dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and MerCruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
 
 ### Is Suzuki good for commercial or high-hour use?
 

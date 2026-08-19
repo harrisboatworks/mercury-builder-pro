@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Northumberland HBW"
 description: "Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 
@@ -68,7 +68,7 @@ Full Mercury lineup: 2.5 HP portables through 600 HP Verado. For Northumberland'
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Northumberland customers can drop off, get the work done, and pick up commissioned.
 
 **MerCruiser sterndrive service**
-For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
+For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and MerCruiser.
 
 **Mercury parts and service**
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
@@ -127,7 +127,7 @@ Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes vi
 
 ### Does HBW service Bay of Quinte boats from Brighton?
 
-Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser.
+Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and MerCruiser.
 
 ### Does HBW sell new boats in addition to Mercury motors?
 

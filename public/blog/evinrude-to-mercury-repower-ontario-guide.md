@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Evinrude to Mercury Repower: The Ontario Guide (2026)"
 description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch."
 category: "Repower Guides"
 date_published: 2026-04-16
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Evinrude to Mercury repower","Evinrude to Mercury conversion","replace Evinrude outboard Ontario","Evinrude discontinued repower","Evinrude E-TEC repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
@@ -35,7 +35,7 @@ Evinrude stopped building outboards in 2020, and six years on, parts and service
 
 Evinrude stopped making outboards in May 2020. It has been six years. Parts are getting harder to find, the technicians who know these motors are aging out, and resale value is sliding. The Evinrude owners who switched in 2022 and 2023 got ahead of the problem. The owners switching now are still making the right call. They are just doing it a little later.
 
-This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions every month, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
+This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions all season long, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
 
 If you are already decided, build a quote at **mercuryrepower.ca**, configured for your hull in a few minutes. Still weighing options? Start with our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) first.
 
@@ -201,7 +201,7 @@ Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so
 
 ### Can I keep my Evinrude prop?
 
-Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the sea-trial.
+Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the lake-test.
 
 ### How long does the conversion take?
 
@@ -221,7 +221,7 @@ The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanica
 
 ### Are Evinrude and Johnson outboards still made?
 
-No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and Mercruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
+No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and MerCruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
 
 ## Related guides
 

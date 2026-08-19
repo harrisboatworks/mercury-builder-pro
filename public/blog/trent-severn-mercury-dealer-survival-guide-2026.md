@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Mercury Dealer Guide"
 description: "Trent-Severn transit guide: how to confirm Mercury or MerCruiser service, exact parts, fuel, water access, and breakdown options near Rice Lake."
 category: "Trent-Severn / Local"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","Trent-Severn breakdown planning","Canada Strong Pass 2026","Trent-Severn transit"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 
@@ -81,7 +81,7 @@ Transit-related categories to ask about include:
 - Mercury 10-micron water-separating fuel filters (multiple sizes)
 - Mercury OEM impellers across the FourStroke and Verado lineup
 - Mercury spark plugs across the common FourStroke and Pro XS family
-- Mercruiser stern drive service parts (gimbal bellows, bellows clamps, raw water pumps)
+- MerCruiser stern drive service parts (gimbal bellows, bellows clamps, raw water pumps)
 - Mercury OEM propellers in common diameters and pitches
 - Mercury batteries and battery cables
 - Mercury CDS diagnostic capability for fault code work

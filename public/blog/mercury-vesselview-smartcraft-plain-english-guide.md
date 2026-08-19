@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-07-13
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury VesselView vs SmartCraft Explained (Ontario)"
 description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
-date_modified: 2026-07-13
+date_modified: 2026-08-19
 keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraft Connect installation","Active Trim Mercury","Digital Throttle and Shift","VesselView Mobile replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-07-13  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
@@ -156,7 +156,7 @@ Honest take, customer-by-customer:
 
 We install SmartCraft Connect modules, configure the Mercury Marine App, set up multi-function display integration with Simrad/Garmin/Raymarine over NMEA 2000, and service every SmartCraft-capable Mercury.
 
-Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
+Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit or as a standalone service request.
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 

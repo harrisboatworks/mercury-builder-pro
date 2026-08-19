@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Oakville Ontario HBW"
 description: "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-19
 keywords: ["mercury dealer oakville","mercury repower oakville","mercury outboard oakville ontario","boat motor service oakville"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-05-11  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -75,10 +75,10 @@ The business runs on repeat customers and referrals. The model depends on doing 
 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a straight conversation about what fits your specific hull and how you use it.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
@@ -152,7 +152,7 @@ Oakville customers cite three reasons: transparent online CAD pricing, Mercury P
 
 ### Can I do most of the buying process remotely?
 
-Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.
+Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.
 
 ## Related guides
 

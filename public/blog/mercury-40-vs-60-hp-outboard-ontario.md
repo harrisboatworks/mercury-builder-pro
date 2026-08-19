@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 

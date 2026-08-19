@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-07-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-07-02
+date_modified: 2026-08-19
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-07-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -94,8 +94,8 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 **Winter (December-February)**:
 - Strongest negotiation position
 - Lowest demand = best deals
-- Spring delivery available
-- Ideal for repower projects
+- Ready for pickup at spring launch
+- Ideal for planning a spring repower
 
 *All-in ballparks*
 
@@ -131,7 +131,7 @@ Cables, controls, gauges, prop swap. Brand conversions add $1,500 to $3,000.
 
 **$400 - $700**
 
-Oil, gear lube, plugs, water pump check. Required for warranty.
+Oil, gear lube, plugs, water pump check. Keep the records; documented service protects you if a warranty question ever comes up.
 
 #### Typical all-in range
 
@@ -147,7 +147,7 @@ Oil, gear lube, plugs, water pump check. Required for warranty.
 - Dealers have time to negotiate
 - Inventory from fall remains
 - No urgency from other buyers
-- Shop service slots available
+- First pick of install slots for spring reopening
 - Early spring installation
 
 **What You Might Get**:
@@ -163,7 +163,7 @@ Oil, gear lube, plugs, water pump check. Required for warranty.
 
 ### Dealer Promotional Programs
 
-Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
+Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions.
 
 **Current warranty position (verified July 2026)**:
 - Mercury's standard Canadian limited factory warranty is 3 years
@@ -173,7 +173,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
 - Multiple term options
-- Pre-approval available
+- Ask about pre-approval
 
 ### Financing Your Mercury
 
@@ -187,7 +187,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 - 12-84 month terms
 - Rates vary by credit and promotion
 - May require minimum purchase
-- Quick approval process
+- Approval times vary by lender
 
 **Alternative Financing**:
 - Bank/credit union loans

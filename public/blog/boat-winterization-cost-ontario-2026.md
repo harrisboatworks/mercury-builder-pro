@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
@@ -138,7 +138,7 @@ HBW is closed December 1 through April 1:
 - No winter pickup or drop-off
 - No spring commissioning during the closure
 
-Remote planning and approvals can continue. Physical work resumes after reopening. Confirm the appointment and drop-off window before towing; do not rely on a generic month or an assumed slot.
+Remote planning and approvals can continue. Physical work resumes after reopening. Confirm your drop-off window before towing; do not rely on a generic month or an assumed slot.
 
 ## Spring Commissioning Is a Separate Acceptance Step
 

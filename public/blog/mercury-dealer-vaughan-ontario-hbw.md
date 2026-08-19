@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Vaughan Ontario HBW"
 description: "Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["mercury dealer vaughan","mercury repower vaughan","mercury outboard vaughan ontario","boat motor dealer vaughan woodbridge maple"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 80 minutes north of Vaughan via Highway 400 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 80 minutes north of Vaughan via Highway 400 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -71,10 +71,10 @@ That means the conversation about which motor to buy, and whether to repower at 
 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have a straight conversation about what works for your specific hull and use case.
 
 **Repower service**
-Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
+Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, lake test. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
 
 **Mercury parts and service**
-Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 [Outdoor with shrinkwrap](/blog/winter-storage-near-toronto-hbw). No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.

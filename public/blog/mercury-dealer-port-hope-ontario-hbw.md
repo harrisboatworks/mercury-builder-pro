@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury premier"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw
 
@@ -88,7 +88,7 @@ Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke 
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
 
 **Mercury parts and service**
-Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
@@ -134,7 +134,7 @@ Yes, we install a lot of them, especially for Port Hope and Cobourg anglers runn
 
 ### Will HBW service my Lake Ontario boat without me storing it on Rice Lake?
 
-Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser.
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and MerCruiser.
 
 ### Does HBW offer pickup or delivery for Port Hope boats?
 

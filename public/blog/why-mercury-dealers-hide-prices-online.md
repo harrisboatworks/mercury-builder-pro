@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-07-18
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-07-18
+date_modified: 2026-08-19
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-07-18  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
@@ -34,8 +34,6 @@ revenue_driver: repower
 Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
-
-### Full Article
 
 You found the motor you want. You went to the dealer's website. You clicked the page. You saw "Call for Pricing."
 

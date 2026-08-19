@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -132,9 +132,9 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
 
 ## What we do on new motor delivery at HBW
 
-When a customer takes delivery of a new Mercury from us:
+When a customer picks up a new Mercury from us:
 
-- We run a brief initial sea trial to verify cooling, charging, and basic operation
+- We run a brief initial lake test to verify cooling, charging, and basic operation
 - We walk through the break-in protocol for the specific motor model
 - We explain Mercury's 100-hour or annual schedule and HBW's optional early check
 - We complete Mercury warranty registration with serial number and customer info
@@ -216,8 +216,8 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 - [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
 
 ## Next steps
 

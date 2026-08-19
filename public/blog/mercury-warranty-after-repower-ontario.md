@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How Your Mercury Warranty Works After a Repower"
 description: "What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains."
 category: "Warranty & Protection"
 date_published: 2026-06-06
-date_modified: 2026-06-06
+date_modified: 2026-08-19
 keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Warranty & Protection  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-06-06  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
 
@@ -83,7 +83,7 @@ Extended warranty coverage is easiest to add at the time of the repower, before 
 
 Mercury FourStroke outboards have [a break-in period](/blog/breaking-in-new-mercury-motor-guide), a set of operating hours during which you avoid running the motor at wide-open throttle continuously.
 
-The exact procedure is in your owner's manual and varies by model, but the shape is consistent: vary your throttle and avoid sustained wide-open throttle through the first 10 hours, with the gentlest treatment in the first hour. We walk you through your motor's specific procedure at pickup.
+The exact procedure is in your owner's manual and varies by model, but the shape is consistent: vary your throttle and avoid sustained wide-open throttle through the first 10 hours, with the gentlest treatment in the first hour.
 
 The break-in period is not a formality. Running a new motor hard before the internal components have seated properly can cause wear patterns that affect performance and, in some cases, can affect how Mercury handles a claim related to those components.
 

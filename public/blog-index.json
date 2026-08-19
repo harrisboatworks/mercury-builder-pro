@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "93928b54eca4d868ec58",
+  "sourceVersion": "c135d9ec965331f0b3b7",
   "count": 204,
   "articles": [
     {
@@ -1080,7 +1080,7 @@
     {
       "slug": "best-mercury-outboard-aluminum-fishing-boats",
       "title": "Best Mercury for Aluminum Boats 2026",
-      "description": "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide.",
+      "description": "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide.",
       "category": "Buying Guide",
       "publishDate": "2026-01-12",
       "keywords": [
@@ -1101,7 +1101,7 @@
         },
         {
           "q": "Should I get Command Thrust on my Mercury outboard?",
-          "a": "On an aluminum V-hull fishing boat, no. Command Thrust is a pontoon and workboat gearcase; on a planing V-hull it just adds drag and costs top-end speed with no meaningful benefit, even in weedy shallow water. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. I…"
+          "a": "Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more…"
         },
         {
           "q": "What shaft length do I need for an aluminum fishing boat?",
@@ -1322,7 +1322,7 @@
       "faqs": [
         {
           "q": "What is a boat repower?",
-          "a": "Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging."
+          "a": "Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a lake-test. What it costs depends on horsepower class, motor family, and the condition of your existing rigging."
         },
         {
           "q": "Is repowering worth it on an older boat?",
@@ -1684,7 +1684,7 @@
         },
         {
           "q": "What about running rivers for musky?",
-          "a": "Rivers require adequate power to handle current. We recommend at least 115HP for the Trent system. More power provides safety margin when water is high."
+          "a": "Rivers require adequate power to handle current. On the Trent system we usually set boats up with 115 HP or more. More power provides safety margin when water is high."
         },
         {
           "q": "Tiller or remote for musky fishing?",
@@ -1692,14 +1692,14 @@
         },
         {
           "q": "How important is Command Thrust for musky?",
-          "a": "Not recommended on a planing musky V-hull. Command Thrust is a pontoon and workboat gearcase, not for standard V-hulls: on a planing V-hull it adds drag and costs top speed. Stay with the standard gearcase for a musky boat; CT belongs on pontoons and workboats."
+          "a": "Command Thrust fit is model- and application-specific. On a typical planing musky V-hull the standard gearcase is usually the right call: CT's taller gear ratio and larger gearcase are built for heavy, slow-planing loads like pontoons and workboats, and on a fast V-hull they add drag and cost top speed. If your rig is…"
         }
       ]
     },
     {
       "slug": "best-motor-small-lakes-ontario",
       "title": "Best Outboards for Ontario Small Lakes",
-      "description": "Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario.",
+      "description": "Match the motor to the lake's rules: electric-only, 10 HP, 20 HP, or open water. Cottage-lake recommendations from the shop that rigs them.",
       "category": "Buying Guide",
       "publishDate": "2026-04-17",
       "keywords": [
@@ -1841,15 +1841,15 @@
       "faqs": [
         {
           "q": "How far in advance should I plan an order-ahead repower?",
-          "a": "Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter."
+          "a": "Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed December 1 through April 1, but we take orders by phone and email all winter."
         },
         {
           "q": "Will my boat be ready for the May long weekend?",
-          "a": "If you lock your order in by January or February, yes. We start install work as soon as we reopen in early April, and customers who ordered over winter are at the front of the spring queue."
+          "a": "Early orders have the best shot. Lock in by January or February and you are at the front of the spring queue when we reopen in early April. Exact timing still depends on the motor, parts, and weather, so treat your written quote as the real date."
         },
         {
           "q": "What about lake testing in winter?",
-          "a": "Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed roughly December 1 to April 1, so no on-water work happens in winter."
+          "a": "Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed December 1 through April 1, so no on-water work happens in winter."
         },
         {
           "q": "Can I do anything to prepare my boat for repower?",
@@ -1947,7 +1947,7 @@
         },
         {
           "q": "Why is Pro XS preferred for skiing over FourStroke?",
-          "a": "Hole shot is the answer. The sport-tuned gearcase and higher RPM ceiling get a skier up faster, typically 2-3 seconds vs 5-6 on equivalent-HP FourStroke. Over hundreds of pulls in a season, that's a meaningfully better skier experience."
+          "a": "Hole shot is the answer. The sport-tuned gearcase and higher RPM ceiling get a skier up faster, noticeably quicker than an equivalent-HP FourStroke. Over hundreds of pulls in a season, that's a meaningfully better skier experience."
         },
         {
           "q": "Can I wakesurf behind an outboard?",
@@ -2937,7 +2937,7 @@
           "a": "We contact you with options: fix transom now and proceed with repower, fix transom and delay repower until done, or step back and reconsider whether the hull is worth keeping. Most transoms are solid; this is a small percentage of cases."
         },
         {
-          "q": "What if my Mercury can't reach rated RPM during sea-trial?",
+          "q": "What if my Mercury can't reach rated RPM during the Lake Test?",
           "a": "The result is assessed against the motor's rated operating range, hull, load, rigging, and prop. If a prop change is recommended, HBW documents it and gets customer approval before changing the work-order scope. Any on-water re-check depends on safe seasonal conditions and the documented acceptance plan. See our [prop…"
         }
       ]
@@ -3107,21 +3107,21 @@
     },
     {
       "slug": "mercruiser-sterndrive-guide-ontario",
-      "title": "Mercruiser Sterndrive Ontario Guide",
-      "description": "Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works.",
+      "title": "MerCruiser Sterndrive Ontario Guide",
+      "description": "Ontario guide to MerCruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works.",
       "category": "Service & Maintenance",
       "publishDate": "2026-05-14",
       "keywords": [
-        "Mercruiser sterndrive Ontario",
-        "Mercruiser bellows replacement Ontario",
+        "MerCruiser sterndrive Ontario",
+        "MerCruiser bellows replacement Ontario",
         "sterndrive winterization Ontario",
-        "Mercruiser repower cost",
+        "MerCruiser repower cost",
         "sterndrive to outboard conversion",
-        "Mercruiser Alpha Bravo maintenance"
+        "MerCruiser Alpha Bravo maintenance"
       ],
       "faqs": [
         {
-          "q": "How often do Mercruiser bellows really need to be changed?",
+          "q": "How often do MerCruiser bellows really need to be changed?",
           "a": "Every 5–7 years, regardless of how much you used the boat. Rubber dries and cracks with age, not just hours. A boat sitting outside through 6 Ontario winters is harder on bellows than 200 hours of use."
         },
         {
@@ -3133,8 +3133,8 @@
           "a": "Alpha is the lighter-duty, smaller-gearcase drive, best behind 4.3L V6 and 5.0L V8. Bravo is heavier-duty with a bigger gearcase, designed for higher torque, big-block engines, and heavier hulls. Bravos cost more to service, but they're built to handle the load."
         },
         {
-          "q": "Can I keep running my old Mercruiser indefinitely if I service it religiously?",
-          "a": "Within reason, yes. We see well-maintained 25-year-old Mercruisers that run perfectly. The limiting factor is usually parts availability for cosmetic and electrical components, not the engine itself. Mercury still supports a wide range of older engines."
+          "q": "Can I keep running my old MerCruiser indefinitely if I service it religiously?",
+          "a": "Within reason, yes. We see well-maintained 25-year-old MerCruisers that run perfectly. The limiting factor is usually parts availability for cosmetic and electrical components, not the engine itself. Mercury still supports a wide range of older engines."
         }
       ]
     },
@@ -3784,8 +3784,8 @@
           "a": "We don't publish a flat price because it would not be honest. The scope typically includes an outboard bracket, motor and outdrive removal, new Mercury Digital Throttle and Shift controls, wiring harness, gauges, VesselView integration, fuel system updates, exhaust decommissioning, transom work if needed, and a proper…"
         },
         {
-          "q": "Does HBW still service Mercruiser sterndrives?",
-          "a": "Yes. If you have a sterndrive and you want to keep it, we support that decision. Harris Boat Works continues to maintain and service Mercruiser sterndrives, and our team is Mercury-trained. One scope note: for engine repairs, we only service Mercury and Mercruiser. If you have a Volvo Penta or other brand we will poin…"
+          "q": "Does HBW still service MerCruiser sterndrives?",
+          "a": "Yes. If you have a sterndrive and you want to keep it, we support that decision. Harris Boat Works continues to maintain and service MerCruiser sterndrives, and our team is Mercury-trained. One scope note: for engine repairs, we only service Mercury and MerCruiser. If you have a Volvo Penta or other brand we will poin…"
         }
       ]
     },
@@ -4505,7 +4505,7 @@
         },
         {
           "q": "Can I get a quote and place a Mercury order without visiting?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home."
+          "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and the Lake Test, then trailer it home."
         }
       ]
     },
@@ -4586,7 +4586,7 @@
         },
         {
           "q": "Can I do most of the buying process remotely?",
-          "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely."
+          "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely."
         }
       ]
     },
@@ -4613,7 +4613,7 @@
         },
         {
           "q": "Can I quote and order remotely?",
-          "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling."
+          "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test. Service is drop-off, we do not pick up, deliver, or arrange hauling."
         }
       ]
     },
@@ -4672,7 +4672,7 @@
         },
         {
           "q": "Can I quote and order remotely?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install/delivery from there."
+          "a": "Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install and pickup timing from there."
         }
       ]
     },
@@ -4695,7 +4695,7 @@
         },
         {
           "q": "Can HBW be my primary Mercury dealer if I live in Whitby?",
-          "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
+          "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
         },
         {
           "q": "Do you serve Brooklin and north Whitby?",
@@ -4749,7 +4749,7 @@
         },
         {
           "q": "Can HBW be my primary Mercury dealer in Oshawa?",
-          "a": "Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
+          "a": "Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
         },
         {
           "q": "Do you serve north Oshawa and Courtice?",
@@ -5430,7 +5430,7 @@
         },
         {
           "q": "Does HBW service boats that live on Lake Ontario, not Rice Lake?",
-          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and Mercruiser."
+          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and MerCruiser."
         },
         {
           "q": "Does HBW offer pickup or delivery for Cobourg customers?",
@@ -5465,7 +5465,7 @@
         },
         {
           "q": "Will HBW service my Lake Ontario boat without me storing it on Rice Lake?",
-          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser."
+          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and MerCruiser."
         }
       ]
     },
@@ -5492,7 +5492,7 @@
         },
         {
           "q": "Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?",
-          "a": "Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist."
+          "a": "Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and MerCruiser; for other brands we will point you to the right specialist."
         },
         {
           "q": "Can I store my boat at HBW through the winter if I am based in Lindsay?",
@@ -5523,7 +5523,7 @@
         },
         {
           "q": "Does HBW service Bay of Quinte boats from Brighton?",
-          "a": "Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser."
+          "a": "Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and MerCruiser."
         },
         {
           "q": "Does HBW sell new boats in addition to Mercury motors?",
@@ -5647,7 +5647,7 @@
         },
         {
           "q": "Can I service a Torqeedo at HBW?",
-          "a": "No. HBW is a Mercury Marine Premier Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer."
+          "a": "No. HBW is a Mercury Marine Premier Dealer. For engine repairs, we only service Mercury and MerCruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer."
         },
         {
           "q": "Does Mercury Avator come with a warranty?",
@@ -6367,7 +6367,7 @@
       "faqs": [
         {
           "q": "Is the Trent-Severn Waterway fully open for Canada Day weekend?",
-          "a": "Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction."
+          "a": "In a normal season, yes: the full waterway from Trenton to Georgian Bay opens well before the long weekend. Check current Parks Canada notices before planning a lock-through. Rice Lake boaters can lock through in either direction."
         },
         {
           "q": "Where can I launch a boat near Gores Landing for the long weekend?",

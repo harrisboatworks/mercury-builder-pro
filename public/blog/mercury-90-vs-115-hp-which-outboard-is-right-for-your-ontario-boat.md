@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md
-last_updated: 2026-08-07
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?"
 description: "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value."
 category: "Repower"
 date_published: 2026-07-06
-date_modified: 2026-08-07
+date_modified: 2026-08-19
 keywords: ["Mercury 90","Mercury 115","Ontario boating","repower","aluminum boat","Mercury FourStroke","Outboard Comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-07-06  
-**Last reviewed:** 2026-08-07  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat
 
@@ -89,7 +89,7 @@ Run through your typical crew, fuel, batteries, and tackle. Multiply by real wei
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test checks the engine, propeller, hull, rigging, and RPM together under the agreed load. Results guide any available engine-height, propeller, or trim adjustment; they do not promise a universal speed or performance outcome.
 
-As a third-generation family marina on Rice Lake, our family has been serving Ontario boaters since 1947. We are a Mercury Premier Dealer and a Legend Boats dealer, and we understand the specific demands of Ontario cottage and fishing boat setups. For engine repairs, we only service Mercury and Mercruiser. Our service intake is always open at hbw.wiki/service. Whether you are still deciding between a 90 and a 115 or are ready to build your new engine, our team can walk you through the options and get you on the water with confidence.
+As a third-generation family marina on Rice Lake, our family has been serving Ontario boaters since 1947. We are a Mercury Premier Dealer and a Legend Boats dealer, and we understand the specific demands of Ontario cottage and fishing boat setups. For engine repairs, we only service Mercury and MerCruiser. Our service intake is always open at hbw.wiki/service. Whether you are still deciding between a 90 and a 115 or are ready to build your new engine, our team can walk you through the options and get you on the water with confidence.
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -75,10 +75,10 @@ Harris Boat Works isn't trying to be a high-volume GTA dealer. We're a third-gen
 FourStroke and Pro XS. Verado and SeaPro available by special order. We'll have a straight conversation about what makes sense for your application, not just what's in stock.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.
@@ -150,7 +150,7 @@ Yes. Burlington-area boaters have closer authorized Mercury options in the Hamil
 
 ### Can I quote and order remotely?
 
-Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.
+Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test. Service is drop-off, we do not pick up, deliver, or arrange hauling.
 
 ## Related guides
 

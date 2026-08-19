@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
 description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers
 
@@ -141,7 +141,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Prop (stainless for performance hulls)
 - Steering (hydraulic on most Pro XS V6 installs)
 - Install labour
-- Sea trial and tuning
+- Lake test and tuning
 - Taxes
 
 As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS V6 build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
@@ -158,10 +158,10 @@ The practical walk-through:
 2. **Quote.** We build a real CAD quote with motor, rigging, prop, steering, install, and taxes. Financing options laid out if you want them.
 3. **Order.** Motor goes on order with Mercury. Lead time depends on HP, shaft length, and current allocation.
 4. **Install.** Two to four working days in the shop once motor and parts are in hand. Rigging done clean, not over the top of the old harness.
-5. **Sea trial.** We run the boat on Rice Lake, set throttle and shift, confirm WOT RPM is in spec, and prop accordingly.
+5. **Lake test.** We run the boat on Rice Lake, set throttle and shift, confirm WOT RPM is in spec, and prop accordingly.
 6. **Handoff.** Walk-through on the new motor, paperwork, warranty registration, and how to use SmartCraft features if you're new to them.
 
-Most anglers schedule repowers between October and April so the boat is ready for opening day. The shop is calmer, lead times are shorter, and you're not losing fishing days.
+Most anglers plan repowers over the winter so the boat is ready for opening day. We take orders all winter (the shop itself is closed December 1 through April 1), lead times are shorter, and you're not losing fishing days.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"
 date_published: 2026-06-29
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,18 +25,18 @@ revenue_driver: repower
 
 **Category:** Local Guide  
 **Published:** 2026-06-29  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
 
 > **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
 
-If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. Check current Trent-Severn navigation notices and public-launch access before you leave; Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
+If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. Check current Trent-Severn navigation notices and public-launch access before you leave; Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel at the marina. A little preparation goes a long way on the busiest weekend of early summer. This guide covers launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
 
 ## Boating on Rice Lake This Canada Day Weekend
-Rice Lake is one of the most accessible and family-friendly lakes in the Trent-Severn system. The long weekend from June 27 through July 1 consistently brings the busiest boat traffic of the early summer, but the lake's size and shape mean you can always find a quiet cove or a good fishing spot if you know where to look.
+Rice Lake is one of the most accessible and family-friendly lakes in the Trent-Severn system. The Canada Day long weekend consistently brings the busiest boat traffic of the early summer, but the lake's size and shape mean you can always find a quiet cove or a good fishing spot if you know where to look.
 
-The Trent-Severn Waterway opened for full navigation on May 29, meaning all locks, channels, and navigational aids are operational. For boaters looking to make a multi-day trip, you can lock through from Hastings to Healey Falls or simply run the length of Rice Lake from Bewdley to the Otonabee River. Water levels are normal for this time of year, but as always, watch for floating debris after any heavy rain. Shallow bays like the ones around Cow Island and the north shore east of Gores Landing can sneak up on you if you're unfamiliar, so keep an eye on your chartplotter or depth sounder.
+The Trent-Severn Waterway is normally fully open well before Canada Day (Parks Canada posts each season's dates), meaning all locks, channels, and navigational aids are operational. For boaters looking to make a multi-day trip, you can lock through from Hastings to Healey Falls or simply run the length of Rice Lake from Bewdley to the Otonabee River. Water levels are normal for this time of year, but as always, watch for floating debris after any heavy rain. Shallow bays like the ones around Cow Island and the north shore east of Gores Landing can sneak up on you if you're unfamiliar, so keep an eye on your chartplotter or depth sounder.
 
 Early-morning boating tends to offer the calmest water and the least traffic, which is especially valuable if you're teaching new boaters or bringing young kids aboard. By mid-morning, the lake wakes up with skiers, tubers, and anglers sharing the water, so practicing good spatial awareness and keeping a respectful distance from anchored boats goes a long way toward a pleasant day.
 
@@ -75,7 +75,7 @@ Walleye fishing is typically strong through late June and early July, especially
 Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
 
 ### Muskie
-Rice Lake has a healthy muskie population, and the season opens on the first Saturday in June, so it's fully open for the long weekend. Muskies will be transitioning into their summer haunts, hanging around weed edges, rock points, and deeper transitions. Trolling large crankbaits or spinners in 10 to 18 feet of water or casting big rubber baits around any baitfish schools you mark on your electronics are standard approaches. Use heavy fluorocarbon or wire leaders and carry a large-mouth net and proper release tools. The muskie minimum size on Rice Lake is 44 inches in FMZ 17, so most fish you encounter will need to be released.
+Rice Lake has a healthy muskie population, and the season opens on the first Saturday in June, so it's fully open for the long weekend. Muskies will be transitioning into their summer haunts, hanging around weed edges, rock points, and deeper transitions. Trolling large crankbaits or spinners in 10 to 18 feet of water or casting big rubber baits around any baitfish schools you mark on your electronics are standard approaches. Use heavy fluorocarbon or wire leaders and carry a large-mouth net and proper release tools. FMZ 17 sets a large minimum size for muskie on Rice Lake (44 inches at last check; confirm in the current Ontario Fishing Regulations Summary), so most fish you encounter will need to be released.
 
 ## Safety Reminders from Local Authorities
 Boat traffic peaks on Canada Day weekend, and a few simple safety habits make a big difference.
@@ -95,7 +95,7 @@ If you're on the water after sunset, your navigation lights must be on and funct
 ## Ethanol-Free Fuel and Marina Amenities
 Finding ethanol-free fuel can be a challenge around Rice Lake, but Harris Boat Works stocks 89-octane ethanol-free gasoline at the marina fuel dock. Ethanol-free fuel is easier on older engines, resists phase separation, and reduces the need for frequent fuel-system maintenance, which is a real advantage when you're running your boat hard over a long weekend.
 
-For engine repairs and routine maintenance, Harris Boat Works only services Mercury and Mercruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
+For engine repairs and routine maintenance, Harris Boat Works only services Mercury and MerCruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
 
 If you're considering repowering your boat with a new Mercury outboard, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer. You can explore outboard options and build a configuration at mercuryrepower.ca.
 
@@ -120,7 +120,7 @@ We're a third-generation family marina, this business has been part of Rice Lake
 
 ### Is the Trent-Severn Waterway fully open for Canada Day weekend?
 
-Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction.
+In a normal season, yes: the full waterway from Trenton to Georgian Bay opens well before the long weekend. Check current Parks Canada notices before planning a lock-through. Rice Lake boaters can lock through in either direction.
 
 ### Where can I launch a boat near Gores Landing for the long weekend?
 

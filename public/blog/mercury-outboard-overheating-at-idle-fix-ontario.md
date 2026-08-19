@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -37,7 +37,7 @@ revenue_driver: service
 
 A Mercury that overheats at idle but runs fine at speed is a classic symptom of a worn water pump impeller. The impeller can generate enough vacuum at high RPM to move cooling water adequately, but loses suction at low RPM. It needs replacement, and the longer you wait, the more likely you are to turn a routine impeller job into a powerhead job. Other causes: blocked cooling intake, thermostat issue, or a sensor fault. Check the tell-tale first.
 
-For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -142,7 +142,7 @@ If the overheat alarm sounds at idle:
 
 After any overheating event, have the motor inspected before the next run. Heat cycling can cause damage that isn't visible externally.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service).
 

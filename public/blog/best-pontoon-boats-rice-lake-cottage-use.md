@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
 description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
@@ -114,13 +114,7 @@ This is not a sales pitch; it is just what we have seen on Rice Lake for years. 
 
 **Legend Boats.** We are a Legend dealer. Legend is a Canadian company, factory Mercury-rigged, and designed for Canadian lakes and weather. The supply chain integration matters for parts and service.
 
-**Princecraft.** Also a Canadian brand. Mercury-rigged from the factory as a standard option. Common on Ontario cottage lakes.
-
-**Manitou.** US-built, premium pontoon brand. Well-regarded for build quality and finish.
-
-**Avalon.** US-built, premium category. Strong construction and layout options.
-
-**Bennington.** US-built, premium pontoon brand. Popular and well-supported.
+Other brands cross our lot regularly as trades and service jobs, and plenty of them are well-built boats. The one we can stand behind end to end is the one we sell, rig, and service ourselves.
 
 For Rice Lake cottage use, brand matters less than configuration. The right length, layout, tube setup, and motor will serve you better than the wrong spec from the most prestigious brand.
 
@@ -192,7 +186,7 @@ Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Fu
 
 ### Does HBW handle pontoon service and storage?
 
-Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
+Yes. Service, repower, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
 
 ## Related guides
 
