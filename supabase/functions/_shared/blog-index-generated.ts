@@ -1755,7 +1755,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "When is the Ontario walleye opener?",
-        "a": "Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from the OMNR Fishing Regulations Summary."
+        "a": "The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary."
       },
       {
         "q": "What should I do 2 weeks before walleye opener?",
@@ -4416,7 +4416,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How far is Harris Boat Works from Markham?",
-        "a": "Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham."
+        "a": "Approximately 70 minutes via Highway 407 east and Highway 115 north, then County Road 28. Distance is about 110 km depending on your part of Markham."
       },
       {
         "q": "Why drive to Rice Lake instead of a closer GTA dealer?",

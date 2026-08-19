@@ -37,14 +37,15 @@ Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Sam
 
 Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (the flagship V8/V10/V12 line, naturally aspirated, special-order territory). SeaPro is the commercial-grade variant.
 
-Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175-250 Pro XS uses Mercury's 3.4L V6 not available in the same HP class FourStroke).
+Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175 Pro XS uses Mercury's 3.4L V6, and the 200-300 Pro XS run the 4.6L V8, a bigger block than the same-HP FourStroke).
 
 The Pro XS lineup as of 2026:
 
 | HP Range | Configuration | Typical Application |
 |---|---|---|
 | 115 - 150 | 2.1L inline-4 (115) or 3.0L inline-4 (150) | Bass boats, performance fishing, pontoon performance setups |
-| 175 - 200 - 225 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 175 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 200 - 225 | 4.6L V8 | Tournament bass boats, performance fibreglass, larger pontoons |
 | 250 - 300 | 4.6L V8 | Offshore fishing, performance cruisers, large performance pontoons |
 
 The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 and above are V6/V8 architectures that aren't available in FourStroke trim, these are Pro XS-exclusive engine families.
@@ -129,8 +130,8 @@ The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,50
 | 115 Pro XS | $17,000 - $21,500 |
 | 150 Pro XS | $20,500 - $26,500 |
 | 175 Pro XS V6 | $25,500 - $32,000 |
-| 200 Pro XS V6 | $27,500 - $34,500 |
-| 225 Pro XS V6 | $30,000 - $37,500 |
+| 200 Pro XS V8 | $27,500 - $34,500 |
+| 225 Pro XS V8 | $30,000 - $37,500 |
 | 250 Pro XS V8 | $33,000 - $41,000 |
 | 300 Pro XS V8 | $37,500 - $46,500 |
 

@@ -1135,10 +1135,28 @@ function substituteLiveRateTokens(text) {
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
 }
 
+// Markdown twins are read raw (AI crawlers, .md URLs), so render ::cta
+// directive blocks as plain markdown instead of shipping raw template syntax.
+function renderCtaBlocks(text) {
+  if (!text) return text;
+  return String(text).replace(/^::cta\s*\n([\s\S]*?)\n::\s*$/gm, (_m, body) => {
+    const fields = {};
+    for (const line of body.split('\n')) {
+      const m = line.match(/^(\w+):\s*(.*)$/);
+      if (m) fields[m[1]] = m[2].trim();
+    }
+    const parts = [];
+    if (fields.heading) parts.push(`**${fields.heading}**`);
+    if (fields.body) parts.push(fields.body);
+    if (fields.primaryLabel && fields.primaryHref) parts.push(`[${fields.primaryLabel}](${fields.primaryHref})`);
+    return parts.length ? `> ${parts.join(' ')}` : '';
+  });
+}
+
 function writePublicMd(relPath, content) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, substituteLiveRateTokens(content), 'utf8');
+  writeFileSync(outFile, renderCtaBlocks(substituteLiveRateTokens(content)), 'utf8');
 }
 
 

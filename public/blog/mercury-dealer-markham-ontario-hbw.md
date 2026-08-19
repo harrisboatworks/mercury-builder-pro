@@ -94,7 +94,7 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 ## Getting to Harris Boat Works from Markham
 
-**Route:** Highway 404 north to Highway 115 east, then County Road 28 north into Gores Landing.
+**Route:** Highway 407 east to Highway 115 north, then County Road 28 south and County Road 18 east into Gores Landing.
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
@@ -159,7 +159,7 @@ There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake
 
 ### How far is Harris Boat Works from Markham?
 
-Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.
+Approximately 70 minutes via Highway 407 east and Highway 115 north, then County Road 28. Distance is about 110 km depending on your part of Markham.
 
 ### Why drive to Rice Lake instead of a closer GTA dealer?
 
