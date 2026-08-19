@@ -66,7 +66,6 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [8, 9, 10, 11, 12, 1, 2, 3],
   'outdoor-boat-storage-shrinkwrap-rice-lake':        [8, 9, 10, 11, 12, 1, 2, 3],
   'winter-storage-near-toronto-hbw':                  [8, 9, 10, 11, 12, 1, 2, 3],
-  'outdoor-boat-storage-shrinkwrap-rice-lake':                      [8, 9, 10, 11, 12, 1, 2, 3],
   // Spring commissioning & opener (Mar–May)
   'spring-outboard-commissioning-checklist': [3, 4, 5],
   'walleye-opener-boat-prep':                [3, 4, 5],
