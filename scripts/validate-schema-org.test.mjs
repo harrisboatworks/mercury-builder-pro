@@ -9,13 +9,15 @@ import test from 'node:test';
 const validatorScript = fileURLToPath(new URL('./validate-schema-org.mjs', import.meta.url));
 const fixtureHtml = `<!doctype html><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Harris Boat Works"}</script>`;
 
-async function runWithFetchStub(stubSource) {
+async function runWithFetchStub(stubSource, { html = fixtureHtml } = {}) {
   const fixtureRoot = await mkdtemp(join(tmpdir(), 'schema-validator-test-'));
   try {
     const distDir = join(fixtureRoot, 'dist');
     const preload = join(fixtureRoot, 'fetch-stub.mjs');
     await mkdir(distDir);
-    await writeFile(join(distDir, 'index.html'), fixtureHtml);
+    if (html !== null) {
+      await writeFile(join(distDir, 'index.html'), html);
+    }
     await writeFile(preload, stubSource);
 
     return spawnSync(process.execPath, ['--import', preload, validatorScript], {
@@ -30,6 +32,17 @@ async function runWithFetchStub(stubSource) {
     await rm(fixtureRoot, { recursive: true, force: true });
   }
 }
+
+test('fails closed when dist contains no HTML input', async () => {
+  const result = await runWithFetchStub(
+    `globalThis.fetch = async () => { throw new Error('fetch should not be called'); };`,
+    { html: null },
+  );
+
+  assert.equal(result.status, 1, `${result.stdout}\n${result.stderr}`);
+  assert.match(result.stderr, /No HTML files were available/);
+  assert.doesNotMatch(result.stdout, /validated by schema\.org/);
+});
 
 test('fails closed when the remote validator cannot be reached', async () => {
   const result = await runWithFetchStub(
