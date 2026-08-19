@@ -1,5 +1,9 @@
 import { BlogArticle } from './blogArticles';
 
+/** Language-support note reused from existing article copy. Service is English-only. */
+export const KO_LANGUAGE_NOTE =
+  'HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.';
+
 export const koreanBlogArticles: BlogArticle[] = [
   {
     slug: 'ontario-boat-buying-guide',
@@ -140,16 +144,16 @@ HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지
 
 ## 자주 묻는 질문
 
-**PCOC는 어떻게 취득하나요?** 
+**PCOC는 어떻게 취득하나요?**
 Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비용은 약 $40~$50이며, 한 번 취득하면 평생 유효합니다.
 
-**새 보트와 엔진 교체 중 어느 쪽이 나을까요?** 
+**새 보트와 엔진 교체 중 어느 쪽이 나을까요?**
 선체 상태가 좋다면 엔진 교체가 훨씬 경제적입니다. [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 견적을 먼저 확인해보세요.
 
-**HBW에서 한국어로 서비스를 받을 수 있나요?** 
+**HBW에서 한국어로 서비스를 받을 수 있나요?**
 한국어 서비스는 제공하지 않습니다. 온라인 견적 도구를 이용하시거나, 이메일에 번역을 함께 보내주시면 최선을 다해 도와드립니다.
 
-**겨울에 보트를 어떻게 보관하나요?** 
+**겨울에 보트를 어떻게 보관하나요?**
 온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbw.wiki/service](https://hbw.wiki/service)에서 예약할 수 있습니다.
 
 ---
@@ -161,17 +165,17 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 
 ## 다음 단계 / CTA
 
-**엔진 가격을 먼저 확인하고 싶다면:** 
+**엔진 가격을 먼저 확인하고 싶다면:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격, 전화 불필요.
 
-**보트 재고 확인 또는 렌탈 체험:** 
+**보트 재고 확인 또는 렌탈 체험:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**서비스 예약:** 
+**서비스 예약:**
 [hbw.wiki/service](https://hbw.wiki/service)
 
-**전화:** 905-342-2153 
-**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+**전화:** 905-342-2153
+**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 ---`,
     faqs: [
@@ -304,13 +308,13 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 자주 묻는 질문
 
-**Rice Lake에서 walleye 낚시 최적 시기는?** 
+**Rice Lake에서 walleye 낚시 최적 시기는?**
 5월 둘째 토요일 개장 직후 봄철이 가장 활발합니다. 해 뜨기 전후 2시간이 황금 시간대입니다.
 
-**HBW에서 낚시 장비도 빌릴 수 있나요?** 
+**HBW에서 낚시 장비도 빌릴 수 있나요?**
 보트만 대여합니다. 낚시 장비는 별도로 준비해오세요.
 
-**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?** 
+**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?**
 용도에 따라 다릅니다. Walleye를 목표로 한다면 Rice Lake가 더 특화되어 있습니다. Lake Simcoe는 Lake trout와 perch로 더 잘 알려져 있습니다.
 
 ---
@@ -322,13 +326,13 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## CTA
 
-**렌탈 보트 예약 및 보트 재고 확인:** 
+**렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**엔진 견적:** 
+**엔진 견적:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-**전화:** 905-342-2153 
+**전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
@@ -565,13 +569,13 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ## 자주 묻는 질문
 
-**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?** 
+**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?**
 보트 크기와 용도에 따라 다릅니다. 정확한 견적과 추천을 위해 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 사양을 입력해보세요.
 
-**두 엔진의 가격 차이는 얼마나 되나요?** 
+**두 엔진의 가격 차이는 얼마나 되나요?**
 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 실시간으로 두 엔진을 나란히 비교할 수 있습니다.
 
-**Pro XS 버전은 얼마나 더 비싼가요?** 
+**Pro XS 버전은 얼마나 더 비싼가요?**
 Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가격은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 확인하세요.
 
 ---
@@ -583,9 +587,9 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 
 ## CTA
 
-**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격 
-**전화:** 905-342-2153 
-**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service) 
+**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격
+**전화:** 905-342-2153
+**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service)
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
@@ -667,16 +671,16 @@ Mercury Premier 딜러로서 Harris Boat Works는 FourStroke 표준과 낚시 �
 
 ## 새 보트 구매를 추천하는 경우
 
-**선체가 손상되거나 심하게 부식된 경우.** 
+**선체가 손상되거나 심하게 부식된 경우.**
 알루미늄 선체에 균열, 심한 부식, 구조 변형이 있다면 아무리 좋은 엔진을 달아도 근본적인 문제는 해결되지 않습니다. 선체가 문제라면, 새 보트가 답입니다.
 
-**완전히 다른 종류의 보트가 필요한 경우.** 
+**완전히 다른 종류의 보트가 필요한 경우.**
 오픈형 낚시 보트를 타다가 캐빈이 있는 가족용 보트로 바꾸고 싶다면, 엔진 교체로는 해결되지 않습니다. 보트의 형태 자체를 바꾸려면 새 보트가 필요합니다.
 
-**통합 대출이 재정 관리에 더 유리한 경우.** 
+**통합 대출이 재정 관리에 더 유리한 경우.**
 보트와 엔진을 함께 새로 구매하면 하나의 대출로 월 납입을 관리할 수 있어, 일부 구매자에게는 더 간편하거나 접근하기 쉬운 방식일 수 있습니다.
 
-**보트가 이미 수명을 다한 경우.** 
+**보트가 이미 수명을 다한 경우.**
 나이, 마모, 미뤄진 유지보수가 쌓이면 선체 자체가 한계에 달하는 시점이 옵니다. 겉으로 큰 결함이 없어 보여도, 전반적인 상태가 이미 끝에 가까울 수 있습니다.
 
 ---
@@ -691,13 +695,13 @@ Mercury Premier 딜러로서 Harris Boat Works는 FourStroke 표준과 낚시 �
 
 ## 다음 단계
 
-**엔진 교체를 고려 중이라면:** 
+**엔진 교체를 고려 중이라면:**
 mercuryrepower.ca에서 실시간 견적을 확인하세요. 몇 분이면 캐나다 달러 기준 가격을 확인할 수 있습니다.
 
-**새 보트를 고려 중이라면:** 
+**새 보트를 고려 중이라면:**
 harrisboatworks.ca에서 현재 재고를 확인하세요.
 
-**서비스 요청:** 
+**서비스 요청:**
 hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 **전화:** 905-342-2153
@@ -708,22 +712,22 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 ## 자주 묻는 질문
 
-**엔진 교체 비용은 얼마나 드나요?** 
+**엔진 교체 비용은 얼마나 드나요?**
 보트 종류와 원하는 마력에 따라 크게 다릅니다. 정확한 비용은 mercuryrepower.ca에서 실시간으로 확인하세요. 숨겨진 항목 없이, 실제 비용을 CAD로 보여드립니다.
 
-**선체 상태를 어떻게 확인할 수 있나요?** 
+**선체 상태를 어떻게 확인할 수 있나요?**
 트랜섬(선미판)과 바닥을 눌러보세요. 물렁한 느낌이 나면 구조 문제가 있을 수 있습니다. 확실하지 않다면 보트를 가져오세요, 저희가 직접 살펴보고 솔직하게 말씀드리겠습니다.
 
-**영어로만 소통해야 하나요?** 
+**영어로만 소통해야 하나요?**
 온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbw.wiki/service)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
 
-**Gores Landing까지 얼마나 걸리나요?** 
+**Gores Landing까지 얼마나 걸리나요?**
 GTA에서 차로 약 1시간 30분 거리입니다. Rice Lake와 Kawartha Lakes 지역에서는 더 가깝습니다.
 
-**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?** 
+**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?**
 엔진 수리 및 설치는 Mercury와 Mercruiser만 취급합니다.
 
-**새 Legend 보트는 어떻게 볼 수 있나요?** 
+**새 Legend 보트는 어떻게 볼 수 있나요?**
 harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 
 ---
@@ -883,16 +887,16 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 
 ## 자주 묻는 질문
 
-**PCOC 시험은 어디서 볼 수 있나요?** 
+**PCOC 시험은 어디서 볼 수 있나요?**
 Transport Canada 공인 기관에서 온라인으로 응시할 수 있습니다. "pleasure craft operator card test"로 검색하면 여러 공인 기관을 찾을 수 있습니다.
 
-**PCL이 없으면 어떻게 되나요?** 
+**PCL이 없으면 어떻게 되나요?**
 OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작합니다.
 
-**중고 보트를 살 때 PCL이 이전되나요?** 
+**중고 보트를 살 때 PCL이 이전되나요?**
 보트 소유권이 이전되면 새 소유자 이름으로 PCL을 새로 신청해야 합니다.
 
-**HBW에서 보트 서비스를 예약하려면?** 
+**HBW에서 보트 서비스를 예약하려면?**
 [hbw.wiki/service](https://hbw.wiki/service)에서 온라인 양식을 작성하세요.
 
 ---

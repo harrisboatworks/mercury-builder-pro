@@ -162,6 +162,7 @@ const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboa
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
+const LocaleHubLanding = lazy(() => import("./pages/LocaleHubLanding"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
@@ -596,6 +597,11 @@ function AnimatedRoutes() {
         {/* Multilingual Landing Pages */}
         <Route path="/fr" element={<FrenchLanding />} />
         <Route path="/zh" element={<MandarinLanding />} />
+        <Route path="/ko" element={<LocaleHubLanding />} />
+        <Route path="/es" element={<LocaleHubLanding />} />
+        <Route path="/pa" element={<LocaleHubLanding />} />
+        <Route path="/ur" element={<LocaleHubLanding />} />
+        <Route path="/tl" element={<LocaleHubLanding />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
