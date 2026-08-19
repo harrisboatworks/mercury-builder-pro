@@ -626,7 +626,7 @@ function AnimatedRoutes() {
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
-        <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
+        <Route path="/admin/blog" element={<SecureRoute requireAdmin={true}><AdminBlog /></SecureRoute>} />
 
         {/* Case Studies */}
         <Route path="/case-studies" element={<CaseStudies />} />
