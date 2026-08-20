@@ -4,12 +4,6 @@ import { RepowerHeader } from "@/components/repower/RepowerHeader";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { Helmet } from "@/lib/helmet";
 
-declare global {
-  interface Window {
-    gtag?: (command: 'event', eventName: string, params?: Record<string, any>) => void;
-  }
-}
-
 const QUICK_LINKS: Array<{ label: string; to: string; sublabel: string; external?: boolean }> = [
   { label: "Build a Mercury quote", to: "/quote/motor-selection", sublabel: "Live CAD pricing, no forms" },
   { label: "Mercury pricing reference", to: "/pricing-reference", sublabel: "Every model, every HP class" },
