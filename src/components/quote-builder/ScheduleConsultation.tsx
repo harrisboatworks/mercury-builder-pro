@@ -286,6 +286,16 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       console.log('🔍 [NOTIFICATIONS] Starting notification process... quoteId:', quoteId);
 
+      // submit-quote-lead's honeypot deliberately returns success with
+      // quoteId: null. Without this gate the flow continued into notifications
+      // and produced idempotency keys ending in ":null", which would collide
+      // across every honeypot submission and could suppress a later genuine
+      // send. No persisted quote means no notifications.
+      if (!quoteId) {
+        console.warn('⚠️ [NOTIFICATIONS] No quote id was created; skipping all notifications.');
+        return;
+      }
+
       // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
       console.log('🔍 [NOTIFICATIONS] Step 1: Triggering hot lead webhooks...');
       try {
@@ -391,8 +401,22 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           quoteNumber: quoteNumber,
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
-          emailType: 'quote_delivery'
+          // pdfUrl is omitted entirely when generation failed. It was
+          // previously sent as null, which the edge schema (optional string,
+          // not nullable) rejected with a 400 - so a PDF failure silently cost
+          // the customer their entire quote email.
+          ...(pdfUrl ? { pdfUrl } : {}),
+          emailType: 'quote_delivery',
+          // quoteId was previously omitted here, so customer-initiated sends
+          // could not be tied back to a quote in the delivery audit.
+          idempotencyKey: `quote-delivery:${quoteId}`,
+          leadData: {
+            customerName: sanitizedContactInfo.name,
+            customerEmail: sanitizedContactInfo.email,
+            customerPhone: sanitizedContactInfo.phone,
+            contactMethod: sanitizedContactInfo.contactMethod,
+            quoteId: quoteId,
+          }
         };
         console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);
         console.log('🔍 [NOTIFICATIONS] Invoking send-quote-email edge function...');
@@ -453,8 +477,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           quoteNumber: quoteNumber,
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
+          ...(pdfUrl ? { pdfUrl } : {}),
           emailType: 'admin_quote_notification',
+          idempotencyKey: `admin-quote:${quoteId}`,
           leadData: {
             customerName: sanitizedContactInfo.name,
             customerEmail: sanitizedContactInfo.email,
