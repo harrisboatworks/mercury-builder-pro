@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "34bb2d07dd2c8c2a04fa",
+  "sourceVersion": "101289ec9e79063a1289",
   "count": 196,
   "articles": [
     {
@@ -6050,16 +6050,16 @@
           "a": "Mercury's factory warranty covers defects in materials and workmanship on the outboard, the engine internals, powerhead, fuel system, and factory-installed parts. It does not cover normal wear items, damage from running out of water or overheating, improper operation, non-recommended fuel or oil, or installation not d…"
         },
         {
+          "q": "Does the Mercury warranty cover corrosion?",
+          "a": "Yes, under a separate 3-year corrosion warranty for recreational use. It is not part of the 3-year limited warranty and it does not extend it; the two run at the same time. Ask us to confirm the exact terms for your model and serial number."
+        },
+        {
           "q": "Does who installs the motor affect my Mercury warranty?",
           "a": "Yes. Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer using approved rigging standards, the warranty is registered correctly with no gaps. Harris Boat Works is a Mercury Premier dealer and registers every motor it rigs under your name with Mercury Marine from day…"
         },
         {
           "q": "Why does a new motor have a break-in period?",
           "a": "Mercury FourStroke outboards have a break-in period during which you avoid running at continuous wide-open throttle so the internal components seat properly. Running a new motor hard too early can cause wear that affects performance and, in some cases, how a related warranty claim is handled. Harris Boat Works walks e…"
-        },
-        {
-          "q": "If I sell my boat, does the Mercury warranty transfer?",
-          "a": "Mercury warranty is tied to the motor's serial number, not the dealership where it was sold, so it follows the motor if you move or sell the boat. Any authorized Mercury dealer can perform warranty work."
         }
       ]
     },
