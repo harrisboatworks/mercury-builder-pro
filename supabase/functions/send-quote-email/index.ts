@@ -7,6 +7,9 @@ import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-chec
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
+const GROK_BOT_QUOTE_INBOX = 'hbwbot@agentmail.to';
+const GROK_BOT_QUOTE_SENDER = 'Grok Bot - Mercury Repower <grokbot@mercuryrepower.ca>';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -180,7 +183,10 @@ serve(async (req) => {
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
     
-    console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
+    const isAdminNotification = emailData.emailType === 'admin_quote_notification';
+    const recipientEmail = isAdminNotification ? GROK_BOT_QUOTE_INBOX : emailData.customerEmail;
+
+    console.log('Sending email:', emailData.emailType, 'to:', recipientEmail);
 
     // Try to get template from database first
     let subject: string;
@@ -226,6 +232,8 @@ serve(async (req) => {
       }
     }
 
+    // Keep customer delivery branded as HBW. Internal quote alerts go to the
+    // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
     // Prepare email options
     const emailOptions: {
       from: string;
@@ -235,8 +243,10 @@ serve(async (req) => {
       html: string;
       attachments?: Array<{ filename: string; content: string }>;
     } = {
-      from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-      to: [emailData.customerEmail],
+      from: isAdminNotification
+        ? GROK_BOT_QUOTE_SENDER
+        : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
+      to: [recipientEmail],
       replyTo: 'info@harrisboatworks.ca',
       subject: subject,
       html: htmlContent,
