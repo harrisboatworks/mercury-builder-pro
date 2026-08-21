@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -272,7 +273,7 @@ serve(async (req) => {
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
-        bcc: ["info@harrisboatworks.ca"],
+        bcc: ["info@harrisboatworks.ca", GROK_BOT_AGENTMAIL],
         ...(attachments.length > 0 ? { attachments } : {}),
       });
       if (emailResponse.error) {
@@ -294,6 +295,7 @@ serve(async (req) => {
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: ADMIN_EMAILS,
+        bcc: [GROK_BOT_AGENTMAIL],
         subject: adminSubject,
         html: adminHtml,
         ...(attachments.length > 0 ? { attachments } : {}),
