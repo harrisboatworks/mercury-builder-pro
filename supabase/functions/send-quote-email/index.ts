@@ -8,6 +8,7 @@ import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-chec
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
 const GROK_BOT_QUOTE_INBOX = 'hbwbot@agentmail.to';
+const HBW_ADMIN_QUOTE_INBOX = 'info@harrisboatworks.ca';
 const GROK_BOT_QUOTE_SENDER = 'Grok Bot - Mercury Repower <grokbot@mercuryrepower.ca>';
 
 const corsHeaders = {
@@ -182,11 +183,13 @@ serve(async (req) => {
       windowMinutes: 60,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
-    
-    const isAdminNotification = emailData.emailType === 'admin_quote_notification';
-    const recipientEmail = isAdminNotification ? GROK_BOT_QUOTE_INBOX : emailData.customerEmail;
 
-    console.log('Sending email:', emailData.emailType, 'to:', recipientEmail);
+    const isAdminNotification = emailData.emailType === 'admin_quote_notification';
+    const recipientEmails = isAdminNotification
+      ? [GROK_BOT_QUOTE_INBOX, HBW_ADMIN_QUOTE_INBOX]
+      : [emailData.customerEmail];
+
+    console.log('Sending email:', emailData.emailType, 'to:', recipientEmails);
 
     // Try to get template from database first
     let subject: string;
@@ -246,7 +249,7 @@ serve(async (req) => {
       from: isAdminNotification
         ? GROK_BOT_QUOTE_SENDER
         : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-      to: [recipientEmail],
+      to: recipientEmails,
       replyTo: 'info@harrisboatworks.ca',
       subject: subject,
       html: htmlContent,
