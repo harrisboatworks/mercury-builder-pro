@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh.md
-last_updated: 2026-08-02
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南"
 description: "莱斯湖 GTA 华人家庭船型选择：pontoon 平台船 vs 钓鱼船。稳定性、人数、油耗和配置对比。HBW 提供 Legend 船型选择。"
 category: "租船与钓鱼"
 date_published: 2026-05-11
-date_modified: 2026-08-02
+date_modified: 2026-08-21
 keywords: ["pontoon vs fishing boat 中文","6-8 人租船 中文","大家庭租船 安省","Rice Lake pontoon 租船","团体租船 多伦多"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** 租船与钓鱼  
 **Published:** 2026-05-11  
-**最后审核:** 2026-08-02  
+**最后审核:** 2026-08-21  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh
 
