@@ -4,8 +4,12 @@ import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
+
+const HBW_ADMIN_QUOTE_INBOX = 'info@harrisboatworks.ca';
+const GROK_BOT_QUOTE_SENDER = 'Grok Bot - Mercury Repower <grokbot@mercuryrepower.ca>';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -179,8 +183,13 @@ serve(async (req) => {
       windowMinutes: 60,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
-    
-    console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
+
+    const isAdminNotification = emailData.emailType === 'admin_quote_notification';
+    const recipientEmails = isAdminNotification
+      ? [GROK_BOT_AGENTMAIL, HBW_ADMIN_QUOTE_INBOX]
+      : [emailData.customerEmail];
+
+    console.log('Sending email:', emailData.emailType, 'to:', recipientEmails);
 
     // Try to get template from database first
     let subject: string;
@@ -226,18 +235,24 @@ serve(async (req) => {
       }
     }
 
+    // Keep customer delivery branded as HBW. Internal quote alerts go to the
+    // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
     // Prepare email options
     const emailOptions: {
       from: string;
       to: string[];
       replyTo: string;
+      bcc?: string[];
       subject: string;
       html: string;
       attachments?: Array<{ filename: string; content: string }>;
     } = {
-      from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-      to: [emailData.customerEmail],
+      from: isAdminNotification
+        ? GROK_BOT_QUOTE_SENDER
+        : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
+      to: recipientEmails,
       replyTo: 'info@harrisboatworks.ca',
+      bcc: isAdminNotification ? undefined : [GROK_BOT_AGENTMAIL],
       subject: subject,
       html: htmlContent,
     };
