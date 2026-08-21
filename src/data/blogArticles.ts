@@ -37072,13 +37072,14 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     image: '/lovable-uploads/hero-mercury-warranty-after-repower.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-21",
     publishDate: "2026-06-06",
     category: "Warranty & Protection",
     readTime: "4 min read",
     keywords: ["mercury warranty repower", "mercury premier dealer warranty", "mercury factory warranty", "mercury extended warranty", "mercury break-in period"],
     faqs: [
       { question: "What does a Mercury outboard warranty cover after a repower?", answer: "Mercury's factory warranty covers defects in materials and workmanship on the outboard, the engine internals, powerhead, fuel system, and factory-installed parts. It does not cover normal wear items, damage from running out of water or overheating, improper operation, non-recommended fuel or oil, or installation not done to Mercury's specifications." },
+      { question: "Does the Mercury warranty cover corrosion?", answer: "Yes, under a separate 3-year corrosion warranty for recreational use. It is not part of the 3-year limited warranty and it does not extend it; the two run at the same time. Ask us to confirm the exact terms for your model and serial number." },
       { question: "Does who installs the motor affect my Mercury warranty?", answer: "Yes. Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer using approved rigging standards, the warranty is registered correctly with no gaps. Harris Boat Works is a Mercury Premier dealer and registers every motor it rigs under your name with Mercury Marine from day one." },
       { question: "Why does a new motor have a break-in period?", answer: "Mercury FourStroke outboards have a break-in period during which you avoid running at continuous wide-open throttle so the internal components seat properly. Running a new motor hard too early can cause wear that affects performance and, in some cases, how a related warranty claim is handled. Harris Boat Works walks every customer through the break-in procedure at pickup." },
       { question: "If I sell my boat, does the Mercury warranty transfer?", answer: "Mercury warranty is tied to the motor's serial number, not the dealership where it was sold, so it follows the motor if you move or sell the boat. Any authorized Mercury dealer can perform warranty work." },
@@ -37086,7 +37087,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     ],
     content: `*Last reviewed: 2026-06-06*
 
-> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Premier dealer, so the warranty is registered correctly and claims are handled in-house.
+> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use, plus a separate 3-year corrosion warranty that runs concurrently, not stacked on the end. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Premier dealer, so the warranty is registered correctly and claims are handled in-house.
 
 ## Your Mercury warranty starts the day the motor is rigged and registered, here's what it covers.
 
@@ -37102,10 +37103,13 @@ Mercury's warranty covers defects in materials and workmanship on the outboard m
 
 Current Mercury FourStroke outboards carry a [3-year factory limited warranty](/blog/mercury-outboard-warranty-canada-2026) for recreational use. Current promotions can extend total factory-backed coverage on top of that base; see [current offers](/promotions) for what is active right now. Straight Mercury coverage, no third-party contract.
 
+Recreational Mercury outboards also carry a separate 3-year corrosion warranty. It is its own coverage category and it runs at the same time as the 3-year limited warranty, so the two do not add up to six years of coverage. FourStroke, Pro XS and Verado models are all covered on this pattern. Confirm the exact terms for your model and serial number with us before you rely on them.
+
 The warranty covers:
 
 - The engine itself, internal components, powerhead, fuel system
 - Factory-installed parts
+- Corrosion, under the separate 3-year corrosion warranty that runs alongside the limited warranty
 
 The warranty does **not** cover:
 
@@ -37169,6 +37173,8 @@ Mercury warranty is tied to the motor's serial number, not to the dealership whe
 
 **Questions about warranty coverage on a specific motor?**
 Call us at 905-342-2153 or build your repower quote, warranty terms are listed with each motor, at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 `
   },

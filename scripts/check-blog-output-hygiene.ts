@@ -291,7 +291,13 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   'why-chinese-boaters-choose-harris-boat-works': [
     /不公布未经核实的族群占比/i,
     /1965 年[\s\S]{0,80}George Harris/i,
-    /由美国合同制造商生产/i,
+    // 2026-08-21: the previous expectation locked in an unverified
+    // country-of-manufacture claim. Legend's own public material says only that
+    // its models are "designed by, and built for, Canadians", so the guard now
+    // asserts that official wording instead. Do not reintroduce a
+    // manufacturing-location claim, in either direction, without Legend
+    // first-party evidence.
+    /由加拿大人设计，为加拿大人打造/i,
   ],
   'gta-chinese-rice-lake-day-trip-plan': [
     /harrisboatworks\.ca\/rentals/i,
