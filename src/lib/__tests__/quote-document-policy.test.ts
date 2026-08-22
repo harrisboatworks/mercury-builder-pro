@@ -89,6 +89,11 @@ describe('private quote document policy', () => {
       row: savedQuote(),
       savedQuoteId: OTHER_QUOTE_ID,
       resumeToken: RESUME_TOKEN,
+    })).toThrow(QuoteDocumentUnavailableError);
+    expect(() => authorizeQuoteDocumentUpload({
+      row: savedQuote(),
+      savedQuoteId: 'deposit-quotes/other-object.pdf',
+      resumeToken: RESUME_TOKEN,
     })).toThrow(QuoteDocumentRequestError);
   });
 
@@ -238,7 +243,14 @@ describe('private quote document policy', () => {
     await expect(readLimitedStream(stream)).rejects.toBeInstanceOf(QuoteDocumentRequestError);
 
     const valid = pdfBytes('stream');
-    await expect(readLimitedStream(new Blob([valid]).stream())).resolves.toEqual(valid);
+    const validStream = new ReadableStream<Uint8Array>({
+      start(controller) {
+        controller.enqueue(valid);
+        controller.close();
+      },
+    });
+    const streamed = await readLimitedStream(validStream);
+    expect(Array.from(streamed)).toEqual(Array.from(valid));
   });
 
   it('fails closed on missing objects, digest mismatch, and wrong MIME at payment time', async () => {

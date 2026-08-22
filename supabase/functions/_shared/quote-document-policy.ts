@@ -107,7 +107,7 @@ function normalizedEmail(value: unknown): string | null {
   return email ? email.toLowerCase() : null;
 }
 
-type QuoteDocumentAvailability = Pick<
+export type QuoteDocumentAvailability = Pick<
   QuoteDocumentSavedQuote,
   'id' | 'expires_at' | 'is_soft_lead' | 'deposit_status' | 'quote_state'
 >;
@@ -235,7 +235,8 @@ export function validateQuotePdf(bytes: Uint8Array, contentType?: string | null)
 }
 
 export async function sha256Hex(bytes: Uint8Array): Promise<string> {
-  const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+  const source = new Uint8Array(bytes);
+  const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', source));
   return Array.from(digest, (byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
@@ -274,7 +275,7 @@ export async function readLimitedStream(
 }
 
 export async function assertCanonicalQuoteDocumentReady(options: {
-  row: QuoteDocumentSavedQuote;
+  row: QuoteDocumentAvailability & Pick<QuoteDocumentSavedQuote, 'quote_pdf_path' | 'quote_pdf_sha256'>;
   savedQuoteId: string;
   object: { bytes: Uint8Array; contentType?: string | null } | null;
   now?: Date;
