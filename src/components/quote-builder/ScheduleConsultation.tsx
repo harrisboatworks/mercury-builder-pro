@@ -18,6 +18,7 @@ import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { useQuote } from '@/contexts/QuoteContext';
+import { uploadConsultationDocument } from '@/lib/consultation-document-client';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -197,8 +198,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     setIsSubmitting(true);
 
     // Declare variables that need to be accessible throughout the function
-    let quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-    let pdfUrl: string | null = null;
+    const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
     let quoteId: string | undefined;
 
     try {
@@ -241,6 +241,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         // Authenticated path: unchanged direct insert under user's RLS.
         const { data: inserted, error } = await supabase
           .from('customer_quotes')
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- pre-existing customer_quotes insert cast
           .insert({ user_id: user.id, ...insertPayload } as any)
           .select('id')
           .single();
@@ -330,86 +331,29 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
       }
 
-      // 2. Send quote email to customer
-      console.log('🔍 [NOTIFICATIONS] Step 2: Preparing quote email...');
+      // 2. Deliver the private consultation document and quote email.
       try {
-        console.log('🔍 [NOTIFICATIONS] Quote number:', quoteNumber);
-        
-        // 2.1. Generate and upload PDF before sending email
-        console.log('🔍 [PDF] Generating PDF quote...');
-        try {
-          // Import PDF generation utilities
-          const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-          
-          const pdfQuoteData = buildPdfData(quoteNumber, {
-            name: sanitizedContactInfo.name,
-            email: sanitizedContactInfo.email,
-            phone: sanitizedContactInfo.phone,
-          });
-          
-          console.log('🔍 [PDF] Generating PDF blob...');
-          const pdfBlob = await generatePDFBlob(pdfQuoteData);
-          console.log('✅ [PDF] PDF generated, size:', pdfBlob.size, 'bytes');
-          
-          // Upload to Supabase Storage
-          const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-          const filePath = `${quoteId}/${fileName}`;
-          
-          console.log('🔍 [PDF] Uploading to Supabase Storage:', filePath);
-          const { data: uploadData, error: uploadError } = await supabase.storage
-            .from('spec-sheets')
-            .upload(filePath, pdfBlob, {
-              contentType: 'application/pdf',
-              upsert: false
-            });
-          
-          if (uploadError) {
-            console.error('❌ [PDF] Upload error:', uploadError);
-            throw uploadError;
-          }
-          
-          // Get public URL
-          const { data: { publicUrl } } = supabase.storage
-            .from('spec-sheets')
-            .getPublicUrl(filePath);
-          
-          console.log('✅ [PDF] PDF uploaded successfully. Public URL:', publicUrl);
-          pdfUrl = publicUrl;
-          
-        } catch (pdfError) {
-          console.error('❌ [PDF] PDF generation/upload error:', pdfError);
-          console.error('❌ [PDF] Error stack:', pdfError instanceof Error ? pdfError.stack : 'No stack trace');
-          // Don't fail the submission if PDF fails, but log it
-          pdfUrl = null;
+        if (!quoteId) {
+          throw new Error('Customer quote is required');
         }
-        
-        // 2.2. Send email with PDF attachment
-        console.log('🔍 [NOTIFICATIONS] Sending quote email with PDF...');
-        const emailPayload = {
-          customerEmail: sanitizedContactInfo.email,
+        const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+        const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
+          name: sanitizedContactInfo.name,
+          email: sanitizedContactInfo.email,
+          phone: sanitizedContactInfo.phone,
+        }));
+        await uploadConsultationDocument({
+          flow: 'submit',
+          quoteNumber,
           customerName: sanitizedContactInfo.name,
-          quoteNumber: quoteNumber,
+          customerEmail: sanitizedContactInfo.email,
+          customerPhone: sanitizedContactInfo.phone,
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
-          emailType: 'quote_delivery'
-        };
-        console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);
-        console.log('🔍 [NOTIFICATIONS] Invoking send-quote-email edge function...');
-        
-        const { data: emailData, error: emailError } = await supabase.functions.invoke('send-quote-email', {
-          body: emailPayload
-        });
-        
-        if (emailError) {
-          console.error('❌ [NOTIFICATIONS] Email error object:', emailError);
-          throw emailError;
-        }
-        console.log('✅ [NOTIFICATIONS] Quote email sent successfully. Response:', emailData);
+          customerQuoteId: quoteId,
+        }, pdfBlob);
       } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Quote email error:', error);
-        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
+        console.error('Consultation document delivery failed', error instanceof Error ? error.name : 'unknown');
       }
 
       // 3. Send SMS confirmation to customer (if they selected text as contact method)
@@ -453,7 +397,6 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           quoteNumber: quoteNumber,
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
           emailType: 'admin_quote_notification',
           leadData: {
             customerName: sanitizedContactInfo.name,
@@ -583,53 +526,34 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       });
       return;
     }
+    const cleanPhone = contactInfo.phone.replace(/\D/g, '');
+    if (cleanPhone.length !== 10) {
+      toast({
+        title: "Invalid Phone",
+        description: "Please enter a valid 10-digit phone number",
+        variant: "destructive"
+      });
+      return;
+    }
 
     setIsSendingEmail(true);
     try {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      
-      // Generate PDF first
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = buildPdfData(quoteNumber, {
+      const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
         name: contactInfo.name || 'Customer',
         email: contactInfo.email,
         phone: contactInfo.phone,
-      });
-      
-      const pdfBlob = await generatePDFBlob(pdfQuoteData);
-      
-      // Upload to Supabase Storage
-      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-      const filePath = `temp/${fileName}`;
-      
-      const { error: uploadError } = await supabase.storage
-        .from('spec-sheets')
-        .upload(filePath, pdfBlob, {
-          contentType: 'application/pdf',
-          upsert: false
-        });
-      
-      if (uploadError) throw uploadError;
-      
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('spec-sheets')
-        .getPublicUrl(filePath);
-      
-      // Send email
-      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-        body: {
-          customerEmail: contactInfo.email,
-          customerName: contactInfo.name || 'Customer',
-          quoteNumber,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          pdfUrl: publicUrl,
-          emailType: 'quote_delivery'
-        }
-      });
-      
-      if (emailError) throw emailError;
+      }));
+      await uploadConsultationDocument({
+        flow: 'send_email',
+        quoteNumber,
+        customerName: contactInfo.name || 'Customer',
+        customerEmail: contactInfo.email,
+        customerPhone: `+1${cleanPhone}`,
+        motorModel: quoteData.motor?.model || 'Mercury Motor',
+        totalPrice: Math.round(totalCashPrice),
+      }, pdfBlob);
       
       toast({
         title: "Quote Sent!",
@@ -648,6 +572,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const handleSendByText = async () => {
+    if (!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive"
+      });
+      return;
+    }
     const cleanPhone = contactInfo.phone.replace(/\D/g, '');
     if (cleanPhone.length !== 10) {
       toast({
@@ -662,47 +594,21 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     try {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       const formattedPhone = `+1${cleanPhone}`;
-      
-      // Generate PDF first
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = buildPdfData(quoteNumber, {
+      const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
         name: contactInfo.name || 'Customer',
         email: contactInfo.email,
         phone: contactInfo.phone,
-      });
-      
-      const pdfBlob = await generatePDFBlob(pdfQuoteData);
-      
-      // Upload to Supabase Storage
-      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-      const filePath = `temp/${fileName}`;
-      
-      const { error: uploadError } = await supabase.storage
-        .from('spec-sheets')
-        .upload(filePath, pdfBlob, {
-          contentType: 'application/pdf',
-          upsert: false
-        });
-      
-      if (uploadError) throw uploadError;
-      
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('spec-sheets')
-        .getPublicUrl(filePath);
-      
-      // Send SMS with link
-      const message = `Hi${contactInfo.name ? ` ${contactInfo.name}` : ''}! Here's your Mercury motor quote for ${quoteData.motor?.model || 'your motor'}: ${publicUrl} - Harris Boat Works`;
-      
-      const { error: smsError } = await supabase.functions.invoke('send-sms', {
-        body: {
-          to: formattedPhone,
-          message,
-          messageType: 'quote_confirmation'
-        }
-      });
-      
-      if (smsError) throw smsError;
+      }));
+      await uploadConsultationDocument({
+        flow: 'send_sms',
+        quoteNumber,
+        customerName: contactInfo.name || 'Customer',
+        customerEmail: contactInfo.email,
+        customerPhone: formattedPhone,
+        motorModel: quoteData.motor?.model || 'Mercury Motor',
+        totalPrice: Math.round(totalCashPrice),
+      }, pdfBlob);
       
       toast({
         title: "Quote Sent!",

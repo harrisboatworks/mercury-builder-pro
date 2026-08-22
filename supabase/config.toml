@@ -233,3 +233,6 @@ verify_jwt = false
 
 [functions.quote-document-api]
 verify_jwt = true
+
+[functions.consultation-document-api]
+verify_jwt = false

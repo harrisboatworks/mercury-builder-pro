@@ -2,10 +2,15 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import {
+  assertTokenSafeSmsLog,
+  isTokenBearingSmsMessage,
+} from "../_shared/consultation-sms-policy.ts";
+import { ConsultationDocumentRequestError } from "../_shared/consultation-document-policy.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-internal-secret',
 };
 
 interface SMSRequest {
@@ -15,6 +20,7 @@ interface SMSRequest {
   customerName?: string;
   leadScore?: number;
   quoteAmount?: number;
+  auditMessage?: string;
 }
 
 serve(async (req) => {
@@ -46,11 +52,29 @@ serve(async (req) => {
     }
 
     const smsData: SMSRequest = await req.json();
-    
-    console.log('SMS request:', smsData);
+    const tokenBearing = isTokenBearingSmsMessage(smsData.message);
+    if (!tokenBearing) {
+      console.log('SMS request accepted', { messageType: smsData.messageType });
+    }
 
     if (!smsData.message || smsData.message.length > 1500) {
       return new Response(JSON.stringify({ success: false, error: 'Invalid SMS message length' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    let logMessage: string;
+    try {
+      logMessage = assertTokenSafeSmsLog({
+        message: smsData.message,
+        auditMessage: smsData.auditMessage,
+      });
+    } catch (auditError) {
+      const message = auditError instanceof ConsultationDocumentRequestError
+        ? auditError.message
+        : 'SMS audit message is required';
+      return new Response(JSON.stringify({ success: false, error: message }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
@@ -108,7 +132,9 @@ serve(async (req) => {
     formData.append('From', fromNumber);
     formData.append('Body', smsData.message);
 
-    console.log('Sending SMS via Twilio:', { to: formattedPhone, from: fromNumber });
+    if (!tokenBearing) {
+      console.log('Sending SMS via Twilio:', { to: formattedPhone, from: fromNumber });
+    }
 
     const response = await fetch(twilioUrl, {
       method: 'POST',
@@ -126,14 +152,17 @@ serve(async (req) => {
       throw new Error(`Twilio API error: ${responseData.message || 'Unknown error'}`);
     }
 
-    console.log('SMS sent successfully:', responseData.sid);
+    if (!tokenBearing) {
+      console.log('SMS sent successfully:', responseData.sid);
+    }
 
-    // Log SMS activity in database
+    // Log SMS activity in database. Token-bearing sends store only the
+    // redacted audit text, never the Twilio body.
     const { error: logError } = await supabase
       .from('sms_logs')
       .insert({
         to_phone: formattedPhone,
-        message: smsData.message,
+        message: logMessage,
         status: 'sent',
       });
 
@@ -153,26 +182,7 @@ serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('Error in send-sms function:', error);
-
-    // Log failed SMS attempt
-    try {
-      const supabase = createClient(
-        Deno.env.get('SUPABASE_URL')!,
-        Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-      );
-      
-      await supabase
-        .from('sms_logs')
-        .insert({
-          to_phone: (await req.json().catch(() => ({})))?.to || 'unknown',
-          message: (await req.json().catch(() => ({})))?.message || 'failed',
-          status: 'failed',
-          error: error instanceof Error ? error.message : 'Unknown error',
-        });
-    } catch (logError) {
-      console.error('Error logging failed SMS:', logError);
-    }
+    console.error('Error in send-sms function:', error instanceof Error ? error.name : 'unknown');
 
     return new Response(
       JSON.stringify({ 
