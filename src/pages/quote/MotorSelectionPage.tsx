@@ -14,7 +14,14 @@ import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { daysUntil } from '@/lib/finance';
+import {
+  daysUntil,
+  DEALERPLAN_FEE,
+  FINANCING_CONTRACT_TERM_MONTHS,
+  FINANCING_MAXIMUM_AMORTIZATION_MONTHS,
+  isMercuryPromoActive,
+  MERCURY_PROMO_APR,
+} from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
 // useScrollDirection removed - search bar scrolls naturally now
@@ -478,11 +485,18 @@ function MotorSelectionContent() {
   const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
   const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
   const { promotions: activePromotionsForCards } = useActivePromotions();
+  const { promo: financingPromo } = useActiveFinancingPromo();
+  const financingRateLabel = financingPromo
+    ? `${financingPromo.rate}% APR`
+    : isMercuryPromoActive()
+      ? `${MERCURY_PROMO_APR}% APR`
+      : 'the applicable tiered APR';
   const [showComparison, setShowComparison] = useState(false);
 
   // Shared data object for motor cards, avoids per-card hook instantiation
   const sharedCardData: SharedCardData = useMemo(() => ({
     promotions: activePromotionsForCards,
+    financingRate: financingPromo?.rate,
     toggleComparison,
     isInComparison,
     comparisonCount,
@@ -490,7 +504,7 @@ function MotorSelectionContent() {
     hasSeenVoiceCoachMark,
     markVoiceCoachMarkSeen,
     addToRecentlyViewed,
-  }), [activePromotionsForCards, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
+  }), [activePromotionsForCards, financingPromo?.rate, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
@@ -950,32 +964,6 @@ if (event.type === 'filter_motors') {
       return convertedMotor;
     });
   }, [motors, promotions, promotionRules]);
-
-  // Calculate monthly payments for each motor
-  
-  // Get active financing promo for dynamic rate
-  const { promo: financingPromo } = useActiveFinancingPromo();
-  const currentFinancingRate = financingPromo?.rate ?? 7.99;
-  
-  const monthlyPayments = useMemo(() => {
-    const payments: Record<string, number | null> = {};
-    
-    processedMotors.forEach(motor => {
-      // Simple calculation without hook - matches useMotorMonthlyPayment logic
-      if (motor.price > 5000) {
-        const annualRate = currentFinancingRate; // Dynamic rate from promo
-        const monthlyRate = annualRate / 100 / 12;
-        const termMonths = 60;
-        const priceWithHST = motor.price * 1.13;
-        const monthlyAmount = priceWithHST * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
-        payments[motor.id] = Math.round(monthlyAmount);
-      } else {
-        payments[motor.id] = null;
-      }
-    });
-    
-    return payments;
-  }, [processedMotors, currentFinancingRate]);
 
   // Filter motors with intelligent search + fuzzy matching
   const filteredMotors = useMemo(() => {
@@ -1683,8 +1671,9 @@ if (event.type === 'filter_motors') {
           {finalFilteredMotors.length > 0 && (
             <div className="mt-12 pt-8 border-t border-repower-navy-900/10">
               <p className="text-xs font-light text-repower-navy-900/400 text-center max-w-3xl mx-auto">
-                * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
-                including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
+                * Monthly payment estimates use the recommended amortization at {financingRateLabel} with $0 down,
+                including 13% HST and the ${DEALERPLAN_FEE} DealerPlan fee. Contract term up to {FINANCING_CONTRACT_TERM_MONTHS} months;
+                amortization up to {FINANCING_MAXIMUM_AMORTIZATION_MONTHS} months may leave a balance due at maturity. Terms vary by purchase amount. OAC.
                 {financingPromo?.promo_end_date && (
                   <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
                     <Clock className="h-3 w-3" />
