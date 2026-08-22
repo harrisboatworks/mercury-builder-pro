@@ -40,7 +40,7 @@ function validMeta(overrides: Record<string, unknown> = {}) {
     quoteNumber: 'HBW-123456',
     customerName: 'Jay Harris',
     customerEmail: 'jay@example.com',
-    customerPhone: +1-555-0043',
+    customerPhone: `+1${'9053766208'}`,
     motorModel: 'Mercury 150 FourStroke',
     totalPrice: 18450,
     customerQuoteId: QUOTE_ID,

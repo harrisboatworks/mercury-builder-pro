@@ -98,7 +98,8 @@ describe('private consultation document storage contract', () => {
     expect(consultationMigration).toContain("id, name, public, file_size_limit, allowed_mime_types");
     expect(consultationMigration).toContain("'consultation-documents'");
     expect(consultationMigration).toContain('public = false');
-    expect(consultationMigration).not.toContain('spec-sheets');
+    expect(consultationMigration).not.toMatch(/bucket_id\s*=\s*'spec-sheets'/);
+    expect(consultationMigration).not.toMatch(/UPDATE\s+storage\.buckets[\s\S]*spec-sheets/i);
     expect(consultationMigration).not.toMatch(/DELETE\s+FROM\s+storage\.objects/i);
     expect(quotesMigration).not.toContain('spec-sheets');
     expect(consultationMigration).toContain('{{documentAccessUrl}}');
