@@ -4,6 +4,7 @@ export const INVALID_DEPOSIT_SAVED_QUOTE = "Invalid saved quote for deposit";
 
 export type DepositPaymentGuardInput = {
   action?: unknown;
+  sessionId?: unknown;
   paymentType?: unknown;
   depositAmount?: unknown;
   savedQuoteId?: unknown;

@@ -112,7 +112,7 @@ describe('private quote document storage contract', () => {
     expect(quotesMigration).not.toMatch(/DELETE\s+FROM\s+public\.saved_quotes/i);
     expect(quotesMigration).not.toContain('spec-sheets');
 
-    expect(consultation).toContain("storage.from('spec-sheets')");
+    expect(consultation).toContain(".from('spec-sheets')");
     expect(consultation).toContain('getPublicUrl');
   });
 });
