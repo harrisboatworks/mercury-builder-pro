@@ -29,6 +29,7 @@ export interface RateLimitOptions {
   action: string;            // short action key, e.g. "ai_chat"
   maxAttempts: number;
   windowMinutes: number;
+  failClosed?: boolean;      // default remains fail-open unless callers opt in
 }
 
 /**
@@ -39,8 +40,9 @@ export async function checkRateLimit(
   req: Request,
   opts: RateLimitOptions,
 ): Promise<boolean> {
+  const failClosed = opts.failClosed === true;
   const client = getClient();
-  if (!client) return true;
+  if (!client) return !failClosed;
   const identifier = (opts.identifier && opts.identifier.length > 0)
     ? opts.identifier
     : getClientIdentifier(req);
@@ -52,13 +54,13 @@ export async function checkRateLimit(
       _window_minutes: opts.windowMinutes,
     });
     if (error) {
-      console.warn(`[rate-limit] RPC error for ${opts.action}:`, error.message);
-      return true;
+      console.warn(`[rate-limit] RPC error for ${opts.action}`);
+      return failClosed ? false : true;
     }
     return data !== false;
-  } catch (e) {
-    console.warn(`[rate-limit] exception for ${opts.action}:`, (e as Error).message);
-    return true;
+  } catch {
+    console.warn(`[rate-limit] exception for ${opts.action}`);
+    return failClosed ? false : true;
   }
 }
 
