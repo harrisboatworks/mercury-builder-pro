@@ -1,14 +1,48 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { pingMotorUpdates } from "../_shared/indexnow.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import { authorizeInventorySyncRequest } from "../_shared/inventory-sync-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-internal-secret',
 };
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Auth BEFORE creating or using the inventory-writing service-role client.
+  // BLOCKED on verified production cron/secret readiness. Current jobid 19
+  // still sends the public anon JWT, which this gate rejects.
+  const decision = await authorizeInventorySyncRequest(
+    {
+      xInternalSecret: req.headers.get('x-internal-secret'),
+      authorization: req.headers.get('Authorization'),
+    },
+    {
+      internalSecret: Deno.env.get('EDGE_INTERNAL_SECRET') || Deno.env.get('CRON_SECRET') || null,
+      serviceRoleKey: Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || null,
+    },
+    async (token) => {
+      const probe = new Request(req.url, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const authResult = await requireAdmin(probe, corsHeaders);
+      if (!(authResult instanceof Response)) {
+        return 'admin';
+      }
+      return authResult.status === 403 ? 'non-admin' : 'invalid';
+    },
+  );
+
+  if (!decision.ok) {
+    return new Response(JSON.stringify({ error: decision.error }), {
+      status: decision.status,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
 
   const startedAt = new Date().toISOString();
