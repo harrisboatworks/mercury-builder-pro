@@ -129,7 +129,7 @@ Rice Lake has rock shelves. A hard grounding can crack a weld without obvious le
 
 #### Found something or unsure?
 
-Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
+Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbw.wiki/service or call (905) 342-2153.
 
 ---
 
