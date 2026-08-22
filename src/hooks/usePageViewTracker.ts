@@ -2,24 +2,9 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateQuoteSessionId } from '@/lib/quote-session-id';
 
-const SESSION_KEY = 'quote_activity_session_id';
 const UTM_KEY = 'quote_activity_utm';
-
-function getOrCreateSessionId(): string {
-  try {
-    let id = localStorage.getItem(SESSION_KEY);
-    if (!id) {
-      const arr = new Uint8Array(12);
-      crypto.getRandomValues(arr);
-      id = `qa_${Array.from(arr, b => b.toString(16).padStart(2, '0')).join('')}`;
-      localStorage.setItem(SESSION_KEY, id);
-    }
-    return id;
-  } catch {
-    return `qa_fallback_${Date.now()}`;
-  }
-}
 
 function getUtmParams() {
   try {
@@ -81,7 +66,7 @@ function getPageTitle(path: string): string {
 export function usePageViewTracker() {
   const location = useLocation();
   const { user } = useAuth();
-  const sessionId = useRef(getOrCreateSessionId());
+  const sessionId = useRef(getOrCreateQuoteSessionId());
   const pageEnteredAt = useRef<number>(Date.now());
   const lastPath = useRef<string | null>(null);
 
