@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 
 import { useNoIndex } from '@/hooks/useNoIndex';
 import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { loadOwnedSavedQuotes } from '@/lib/saved-quote-account';
 interface SavedQuote {
   id: string;
   email: string;
@@ -58,11 +59,7 @@ export default function MyQuotesPage() {
     
     setLoading(true);
     try {
-      const { data, error } = await supabase
-        .from("saved_quotes")
-        .select("*")
-        .eq("user_id", user.id)
-        .order("created_at", { ascending: false });
+      const { data, error } = await loadOwnedSavedQuotes(user.id);
 
       if (error) {
         console.error("Error loading quotes:", error);
