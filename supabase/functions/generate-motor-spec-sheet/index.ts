@@ -33,12 +33,12 @@ serve(async (req) => {
     ] = await Promise.all([
       supabase
         .from('motor_models')
-        .select('*')
+        .select('model, model_year, horsepower, msrp, specifications')
         .eq('id', motorId)
         .single(),
       supabase
         .from('promotions')
-        .select('*')
+        .select('name, bonus_description, description')
         .eq('is_active', true)
         .or('end_date.is.null,end_date.gte.now()')
         .order('priority', { ascending: false })
@@ -67,8 +67,6 @@ serve(async (req) => {
       JSON.stringify({
         motorModel: motor.model || 'Motor Specifications',
         htmlContent,
-        motor,
-        promotions: promotions || [],
       }),
       { 
         headers: { 
@@ -230,10 +228,10 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
   <div class="motor-title">${motor.model || 'Motor'}</div>
   <div class="motor-subtitle">${motor.model_year || 2026} Mercury Marine • ${motor.horsepower || ''}HP</div>
 
-  ${motor.dealer_price || motor.msrp ? `
+  ${motor.msrp ? `
   <div class="price-box">
     <div class="price-label">MSRP</div>
-    <div class="price-value">$${(motor.msrp || motor.dealer_price || 0).toLocaleString()}</div>
+    <div class="price-value">$${motor.msrp.toLocaleString()}</div>
   </div>
   ` : ''}
 

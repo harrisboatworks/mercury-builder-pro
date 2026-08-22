@@ -2,7 +2,7 @@
 // scripts/validate-schema-org.mjs
 //
 // Posts every JSON-LD block in dist/*.html to validator.schema.org and
-// fails the build on error-severity issues. Warnings are logged only.
+// fails the build on error-severity issues or an unverified validator result.
 //
 // Skip with SKIP_SCHEMA_ORG_VALIDATOR=1 (offline dev, or to triage a
 // validator outage without blocking a release).
@@ -103,12 +103,14 @@ function pickFiles() {
 
 const files = pickFiles();
 if (!files.length) {
-  console.log('[validate-schema-org] No HTML files found in dist/. Skipping.');
-  process.exit(0);
+  console.error('[validate-schema-org] ❌ No HTML files were available in dist/ for remote validation.');
+  console.error('Build blocked because schema.org validation had no input. Set SKIP_SCHEMA_ORG_VALIDATOR=1 only for an explicit outage bypass.');
+  process.exit(1);
 }
 
 const errors = [];
 const warnings = [];
+const validatorFailures = [];
 let blocksChecked = 0;
 
 for (const file of files) {
@@ -118,7 +120,7 @@ for (const file of files) {
     try {
       const result = await validate(blocks[i]);
       if (result?._parseError) {
-        warnings.push(`${file} block[${i}]: validator returned non-JSON response (${result.raw})`);
+        validatorFailures.push(`${file} block[${i}]: validator returned non-JSON response (${result.raw})`);
         await new Promise((r) => setTimeout(r, THROTTLE_MS));
         continue;
       }
@@ -131,7 +133,7 @@ for (const file of files) {
         else errors.push(msg);
       }
     } catch (err) {
-      warnings.push(`${file} block[${i}]: validator network error — ${err.message}`);
+      validatorFailures.push(`${file} block[${i}]: validator network error — ${err.message}`);
     }
     await new Promise((r) => setTimeout(r, THROTTLE_MS));
   }
@@ -141,6 +143,21 @@ if (warnings.length) {
   console.warn(`\n[validate-schema-org] ${warnings.length} warning(s):`);
   warnings.slice(0, 20).forEach((w) => console.warn('  ⚠ ' + w));
   if (warnings.length > 20) console.warn(`  …and ${warnings.length - 20} more`);
+}
+
+if (blocksChecked === 0) {
+  console.error('[validate-schema-org] ❌ No JSON-LD blocks were available for remote validation.');
+  process.exit(1);
+}
+
+if (validatorFailures.length) {
+  console.error(`\n[validate-schema-org] ❌ ${validatorFailures.length} block(s) could not be verified:\n`);
+  validatorFailures.slice(0, 20).forEach((failure) => console.error('  ✗ ' + failure));
+  if (validatorFailures.length > 20) {
+    console.error(`  …and ${validatorFailures.length - 20} more`);
+  }
+  console.error('\nBuild blocked because schema.org validation was incomplete. Set SKIP_SCHEMA_ORG_VALIDATOR=1 only for an explicit outage bypass.');
+  process.exit(1);
 }
 
 if (errors.length) {
