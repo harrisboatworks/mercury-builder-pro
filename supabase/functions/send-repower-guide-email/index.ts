@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -151,6 +152,7 @@ serve(async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works <noreply@mercuryrepower.ca>",
       to: [email],
+      bcc: [GROK_BOT_AGENTMAIL],
       reply_to: "info@harrisboatworks.ca",
       subject: "Your Repower Guide is ready | Harris Boat Works",
       html: emailHtml,

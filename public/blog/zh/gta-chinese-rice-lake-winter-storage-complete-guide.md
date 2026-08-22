@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide.md
-last_updated: 2026-08-03
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、�
 description: "多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-05-16
-date_modified: 2026-08-03
+date_modified: 2026-08-21
 keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-16  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-08-21  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 
@@ -100,7 +100,7 @@ HBW 的 Lightspeed 记录显示，2025 年 8 月至 11 月完成了 **584 次冬
 
 实体船厂重新开放后，HBW 按批准的工单和先到先办顺序完成春季工作。
 
-春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。额外维修仍需另行检查和批准。
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修仍需另行检查和批准。
 
 不要根据日历自行安排下水。HBW 确认批准的工作完成并提供取船时间后，再安排拖船或下水行程。
 
@@ -142,7 +142,7 @@ HBW 的 Lightspeed 记录显示，2025 年 8 月至 11 月完成了 **584 次冬
 
 ### 春季检查是否包含在冬储里？
 
-春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。额外维修需另行批准。
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修需另行批准。
 
 ## Next steps
 

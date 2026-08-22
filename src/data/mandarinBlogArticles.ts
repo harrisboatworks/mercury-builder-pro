@@ -22,7 +22,7 @@ const allMandarinBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-gta-chinese-winter-storage.png',
     author: 'Jay Harris',
     datePublished: '2026-05-16',
-    dateModified: '2026-08-03',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-16',
     category: 'mandarin',
     readTime: '8 分钟',
@@ -98,7 +98,7 @@ HBW 的 Lightspeed 记录显示，2025 年 8 月至 11 月完成了 **584 次冬
 
 实体船厂重新开放后，HBW 按批准的工单和先到先办顺序完成春季工作。
 
-春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。额外维修仍需另行检查和批准。
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修仍需另行检查和批准。
 
 不要根据日历自行安排下水。HBW 确认批准的工作完成并提供取船时间后，再安排拖船或下水行程。
 
@@ -119,7 +119,7 @@ ${ZH_LANGUAGE_NOTE}
       { question: 'HBW 可以从 GTA 取船或送船吗？', answer: '不可以。客户自行安排秋季送船和春季取船。HBW 不提供或安排取送、拖运、上门服务或运输介绍。' },
       { question: '冬储价格是多少？', answer: '当前书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。请通过 hbw.wiki/service 提交资料。' },
       { question: '关闭期间可以取船或做维修吗？', answer: '不可以。实体船厂 12 月 1 日至 4 月 1 日关闭，期间没有现场服务、维修、安装、检查、客户进入或取船。' },
-      { question: '春季检查是否包含在冬储里？', answer: '春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。额外维修需另行批准。' },
+      { question: '春季检查是否包含在冬储里？', answer: '春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修需另行批准。' },
     ],
   },
 
@@ -1403,7 +1403,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     image: '/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-10',
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
@@ -1478,8 +1478,8 @@ HBW 团队使用英语服务，没有中文母语的销售或翻译。但我们�
 
 HBW 能为您做：
 
-- Mercury 引擎 (FourStroke / Pro XS / Verado) 销售、维修、保修
-- Legend 船只销售。Legend 是总部位于安大略省 Whitefish 的加拿大公司，船只由美国合同制造商生产
+- Mercury 引擎销售、维修、保修：FourStroke、Pro XS，以及 Verado（HBW 特殊订购）
+- Legend 船只销售。Legend 是总部位于安大略省 Whitefish 的加拿大公司，其官方说法是船只「由加拿大人设计，为加拿大人打造」
 - Mercruiser sterndrive 引擎服务
 - 室外收缩膜冬储 (10 月-11 月送,4 月取)
 - Pre-purchase inspection
@@ -1774,7 +1774,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier 认证船厂 | 自 1947 年`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商`,
     faqs: [
       { question: '在安省租船一定要有 PCOC 吗？', answer: '不一定。Transport Canada 允许租船操作者完成 Rental Boat Safety Checklist 作为 proof of competency。这个简介通常由租船公司在租船前提供，免费，约 30 分钟。' },
       { question: 'Rental Boat Safety Checklist 跟 PCOC 有什么不同？', answer: 'PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $50。Rental Boat Safety Checklist 仅当次租船有效、免费、现场完成。两者法律效力在租船场景下相同。' },
@@ -1791,7 +1791,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     image: '/lovable-uploads/zh-pontoon-vs-fishing-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-11',
     category: '租船与钓鱼',
     readTime: '6 分钟',
@@ -1897,7 +1897,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 **Q：Pontoon 船能不能去其他湖？** 能,但 trailerability (拖船能力) 比钓鱼船差。Pontoon 拖船需要更宽的 trailer 和更结实的 hitch。
 
-**Q：Legend 是加拿大制造吗？** Legend 是一家总部位于安大略省 Whitefish 的加拿大公司。其船只为加拿大水域设计，由美国合同制造商生产。选船时应比较具体型号、结构、保固和用途，而不是把品牌所在地当成制造地。
+**Q：Legend 是加拿大制造吗？** Legend 是一家总部位于安大略省 Whitefish 的加拿大公司。其官方说法是船只「由加拿大人设计，为加拿大人打造」。选船时应比较具体型号、结构、保固和用途，而不是把品牌所在地当成制造地。
 
 **相关文章**
 
@@ -2156,7 +2156,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     image: '/lovable-uploads/hero-mandarin-mercury-service.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -2300,7 +2300,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 春季开机 / Spring Commissioning
 
-春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。具体检查和额外维修以批准的工单为准。
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价执行。具体检查和额外维修以批准的工单为准。
 
 船厂 12 月 1 日至 4 月 1 日关闭，关闭期间不进行现场开机、维修或取船。实体工作在 4 月 1 日后恢复，并按先到先办处理；只有收到 HBW 的完工和取船确认后，才安排下水或拖船行程。
 
@@ -2737,7 +2737,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     image: '/lovable-uploads/hero-mandarin-buying-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -2873,7 +2873,7 @@ whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船�
 
 如果你想深入了解 Pro XS 和 FourStroke 的差别，我们有 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta) 可以参考。
 
-**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，船只为加拿大水域设计，并由美国合同制造商生产。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
+**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，其官方说法是船只「由加拿大人设计，为加拿大人打造」。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
 
 ---
 
@@ -3895,7 +3895,7 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '9 分钟',
@@ -3953,7 +3953,7 @@ HBW 不提供室内冬储。需要室内的客户请联系 GTA 地区的恒温�
 - 地点：Gores Landing, Ontario（莱斯湖南岸）
 - 自送自取（HBW 不提供取送）
 - 服务范围：冬化、收缩膜、室外存储和维修是不同工单项目，以当前书面报价为准
-- 春季检查：HBW 冬储客户包含春季检查；截至 2026 年 7 月，非冬储客户为 $99 加 HST
+- 春季检查：HBW 冬储客户包含春季检查；非冬储客户按书面报价和已批准的工单执行
 - 办理方式：在计划送船前 1–2 周通过 [hbw.wiki/service](https://hbw.wiki/service) 提交完整请求
 
 ### 来自 HBW 工单的数据

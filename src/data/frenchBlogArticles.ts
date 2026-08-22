@@ -102,7 +102,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -125,7 +125,7 @@ Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
-Harris Boat Works est une marina familiale de troisième génération sur le lac Rice, en activité depuis 1947. Nous sommes concessionnaire Mercury Marine Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/), et nous réalisons des dizaines de remotoriations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
 ---
 
@@ -163,9 +163,9 @@ L'installation par des techniciens certifiés Mercury prend du temps et requiert
 
 ---
 
-## Fourchettes de prix par catégorie de puissance
+## Catégories de puissance et facteurs de coût
 
-Ces fourchettes couvrent le moteur, le câblage, les commandes, l'hélice et la main-d'œuvre, l'ensemble du projet de remotorisation, avant les taxes. Vérifiez les prix actuels en dollars canadiens sur mercuryrepower.ca.
+Voici ce que chaque catégorie de puissance représente et ce qui fait varier le coût. Un projet de remotorisation comprend le moteur, le câblage, les commandes, l'hélice et la main-d'œuvre, avant les taxes. Nous ne publions pas de totaux installés fixes ici, parce qu'ils dépendent de votre embarcation et de son état. Pour un prix réel en dollars canadiens, utilisez le configurateur sur mercuryrepower.ca.
 
 ### Petits moteurs : 9,9 à 20 HP
 
@@ -173,7 +173,7 @@ La catégorie la plus accessible. Chaloupes, embarcations à fond plat, dinghies
 
 ### Moteurs de milieu de gamme : 40 à 60 HP
 
-Très populaires. Embarcations familiales de 14 à 17 pieds, chaloupes en aluminium, petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une grande part des remotoriations que nous réalisons chaque saison.
+Très populaires. Embarcations familiales de 14 à 17 pieds, chaloupes en aluminium, petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une grande part des remotorisations que nous réalisons chaque saison.
 
 ### Moteurs performants : 90 à 115 HP
 
@@ -211,28 +211,6 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
-## Foire aux questions
-
-**Est-ce que ça vaut vraiment la peine de remplacer un vieux moteur ?** 
-Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
-
-**Comment savoir si ma coque est en bon état ?** 
-Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
-
-**Est-ce que je peux obtenir un prix sans parler à quelqu'un ?** 
-Oui. L'outil de configuration sur mercuryrepower.ca vous donne un vrai prix en dollars canadiens, sans avoir besoin de parler à l'équipe. Entrez les informations sur votre embarcation et choisissez la puissance.
-
-**L'équipe peut-elle communiquer en français ?** 
-L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
-
-**Faut-il amener le bateau sur place pour obtenir un devis ?** 
-Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
-
-**Est-ce que vous installez des moteurs d'autres marques ?** 
-Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.
-
----
-
 ## Comment obtenir votre prix
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
@@ -262,11 +240,27 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
       },
       {
         question: 'Une remotorisation coûte-t-elle moins cher qu\'un bateau neuf?',
-        answer: 'Dans la plupart des cas, oui , si la coque est saine.'
+        answer: 'Dans la plupart des cas, oui, si la coque est saine. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d\'un nouveau bateau équivalent.'
       },
       {
         question: 'Puis-je obtenir un prix sans appeler?',
         answer: 'Oui. mercuryrepower.ca affiche un prix en ligne, en dollars canadiens.'
+      },
+      {
+        question: 'Comment savoir si ma coque est en bon état?',
+        answer: 'Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.'
+      },
+      {
+        question: 'L\'équipe peut-elle communiquer en français?',
+        answer: 'L\'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
+      },
+      {
+        question: 'Faut-il amener le bateau sur place pour obtenir un devis?',
+        answer: 'Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut aider à évaluer l\'état de la coque et le câblage existant.'
+      },
+      {
+        question: 'Est-ce que vous installez des moteurs d\'autres marques?',
+        answer: 'Non. Pour les réparations et les installations, nous travaillons exclusivement avec Mercury et Mercruiser.'
       }
     ]
   },
@@ -1984,7 +1978,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     image: '/lovable-uploads/hero-outboard-overheating.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-21',
     publishDate: '2026-05-13',
     category: 'Dépannage',
     readTime: '9 min',
@@ -2068,7 +2062,7 @@ La turbine est une roue à pales en caoutchouc dans l'embase qui pousse l'eau de
 
 **Symptômes :** Jet témoin faible au ralenti qui s'améliore à régime plus élevé, alarme intermittente.
 
-**Intervalle d'entretien :** Mercury recommande de remplacer la turbine de la pompe à eau tous les 2 à 3 ans ou 200 heures, selon la première éventualité.
+**Intervalle d'entretien :** Suivez le manuel d'utilisation et d'entretien de votre moteur, pour votre numéro de série exact. Les intervalles varient d'un modèle à l'autre, alors ne vous fiez pas à une règle universelle. Faites inspecter le circuit de refroidissement après une surchauffe, si le jet témoin faiblit, après une utilisation en eau chargée de sédiments, ou si l'historique d'entretien est incertain.
 
 ### 3. Défaillance du thermostat
 
