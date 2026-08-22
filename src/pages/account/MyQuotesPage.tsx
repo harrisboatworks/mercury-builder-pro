@@ -21,8 +21,6 @@ interface SavedQuote {
   created_at: string;
   expires_at: string;
   is_completed: boolean;
-  quote_pdf_path?: string | null;
-  deposit_pdf_path?: string | null;
   deposit_status?: string | null;
   deposit_amount?: number | null;
   deposit_paid_at?: string | null;
@@ -101,73 +99,73 @@ export default function MyQuotesPage() {
   };
 
   const handleDownloadPDF = async (quote: SavedQuote) => {
-    // Use deposit PDF if deposit is paid, otherwise clean quote PDF
-    const pdfPath = (quote.deposit_status === 'paid' && quote.deposit_pdf_path) 
-      ? quote.deposit_pdf_path 
-      : quote.quote_pdf_path;
-    
-    if (!pdfPath) {
-      // No stored PDF, regenerate on-the-fly
-      try {
-        setDownloadingId(quote.id);
-        const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
-        
-        const qs = quote.quote_state;
-        const snapshot = buildLegacyQuotePdfSnapshot(qs, quote.created_at);
-        if (!snapshot) {
-          throw new Error('This older quote does not contain an exact price snapshot. Reopen it to refresh pricing before creating a PDF.');
-        }
-        
-        const pdfData = {
-          quoteNumber: `HBW-${quote.id.slice(0, 6).toUpperCase()}`,
-          customerName: qs?.customerName || quote.email,
-          customerEmail: quote.email,
-          customerPhone: qs?.customerPhone || '',
-          snapshot,
-          ...(quote.deposit_status === 'paid' && quote.deposit_amount ? {
-            depositInfo: {
-              amount: quote.deposit_amount,
-              referenceNumber: `HBW-DEP-${quote.id.slice(0, 6).toUpperCase()}`,
-              paymentDate: quote.deposit_paid_at 
-                ? new Date(quote.deposit_paid_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-                : new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-              status: 'Confirmed',
-            },
-          } : {}),
-        };
-
-        const pdfUrl = await generateQuotePDF(pdfData);
-        downloadPDF(pdfUrl, `Mercury-Quote-${pdfData.quoteNumber}.pdf`);
-      } catch (err) {
-        console.error('Error generating PDF:', err);
-        toast({
-          title: "PDF not available",
-          description: err instanceof Error ? err.message : "Failed to generate PDF.",
-          variant: "destructive",
-        });
-      } finally {
-        setDownloadingId(null);
-      }
-      return;
-    }
-
-    // Download from storage
     try {
       setDownloadingId(quote.id);
-      const { data, error } = await supabase.storage.from('quotes').download(pdfPath);
-      if (error || !data) throw error || new Error('No data');
-      
-      const url = URL.createObjectURL(data);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `Mercury-Quote-${quote.id.slice(0, 8)}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+
+      try {
+        const { data, error } = await supabase.functions.invoke('quote-document-api', {
+          body: { action: 'download', savedQuoteId: quote.id },
+        });
+        if (error || typeof data?.signedUrl !== 'string') {
+          throw error || new Error('Stored quote document is unavailable');
+        }
+
+        const response = await fetch(data.signedUrl);
+        if (!response.ok) {
+          throw new Error('Stored quote document download failed');
+        }
+
+        const url = URL.createObjectURL(await response.blob());
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `Mercury-Quote-${quote.id.slice(0, 8)}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        return;
+      } catch (remoteError) {
+        console.warn('Stored quote document unavailable; regenerating a local snapshot:', remoteError);
+        toast({
+          title: "Stored quote unavailable",
+          description: "Generating a local snapshot from this quote. This is not a stored reservation document.",
+        });
+      }
+
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
+      const qs = quote.quote_state;
+      const snapshot = buildLegacyQuotePdfSnapshot(qs, quote.created_at);
+      if (!snapshot) {
+        throw new Error('This older quote does not contain an exact price snapshot. Reopen it to refresh pricing before creating a PDF.');
+      }
+
+      const pdfData = {
+        quoteNumber: `HBW-${quote.id.slice(0, 6).toUpperCase()}`,
+        customerName: qs?.customerName || quote.email,
+        customerEmail: quote.email,
+        customerPhone: qs?.customerPhone || '',
+        snapshot,
+        ...(quote.deposit_status === 'paid' && quote.deposit_amount ? {
+          depositInfo: {
+            amount: quote.deposit_amount,
+            referenceNumber: `HBW-DEP-${quote.id.slice(0, 6).toUpperCase()}`,
+            paymentDate: quote.deposit_paid_at
+              ? new Date(quote.deposit_paid_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+              : new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+            status: 'Confirmed',
+          },
+        } : {}),
+      };
+
+      const pdfUrl = await generateQuotePDF(pdfData);
+      downloadPDF(pdfUrl, `Mercury-Quote-${pdfData.quoteNumber}.pdf`);
     } catch (err) {
-      console.error('Error downloading PDF:', err);
-      toast({ title: "Error", description: "Failed to download PDF.", variant: "destructive" });
+      console.error('Error generating quote PDF:', err);
+      toast({
+        title: "PDF not available",
+        description: err instanceof Error ? err.message : "Failed to generate PDF.",
+        variant: "destructive",
+      });
     } finally {
       setDownloadingId(null);
     }
@@ -305,7 +303,7 @@ export default function MyQuotesPage() {
                           disabled={downloadingId === quote.id}
                         >
                           <Download className="h-4 w-4 mr-1.5" />
-                          {downloadingId === quote.id ? 'Generating...' : 'PDF'}
+                          {downloadingId === quote.id ? 'Preparing...' : 'PDF'}
                         </Button>
                         
                         {!expired && (

@@ -886,8 +886,13 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const savedQuoteId = crypto.randomUUID();
+      const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
+      const resumeToken = `dep_${Array.from(
+        resumeTokenEntropy,
+        (byte) => byte.toString(16).padStart(2, '0'),
+      ).join('')}`;
       
       const basePdfData = {
         quoteNumber,
@@ -899,48 +904,45 @@ export default function QuoteSummaryPage() {
         reservationRequiresConfirmation: isMotorOnlyExpress,
       };
 
-      // Generate the quote before checkout. Payment confirmation is created
-      // only after Stripe's signed webhook reports a completed session.
-      let quotePdfPath: string | undefined;
-      
-      try {
-        const cleanBlob = await generatePDFBlob(basePdfData);
-        const cleanFileName = `deposit-quotes/${quoteNumber}-${Date.now()}.pdf`;
-        const { error: cleanErr } = await supabase.storage
-          .from('quotes')
-          .upload(cleanFileName, cleanBlob, { contentType: 'application/pdf' });
-        if (!cleanErr) {
-          quotePdfPath = cleanFileName;
-          console.log('Clean quote PDF uploaded:', cleanFileName);
-        }
-      } catch (pdfErr) {
-        console.warn('Could not generate quote PDFs for deposit:', pdfErr);
+      // A motor reservation must have its durable quote binding before a
+      // customer can be sent to Stripe. Generate the ID client-side so an
+      // anonymous insert does not depend on SELECT permission to return it.
+      const { error: sqError } = await supabase
+        .from('saved_quotes')
+        .insert({
+          id: savedQuoteId,
+          email: customerInfo.email,
+          resume_token: resumeToken,
+          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          user_id: user?.id || null,
+          expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+          quote_pdf_path: null,
+          deposit_pdf_path: null,
+          deposit_status: 'pending',
+          deposit_amount: depositAmount,
+        } as any);
+      if (sqError) {
+        throw new Error('Could not prepare this motor reservation. Please try again.');
       }
+      console.log('Saved quote created for deposit tracking:', savedQuoteId);
 
-      // Save/update saved_quotes record with PDF paths
-      let savedQuoteId: string | undefined;
-      try {
-        const { data: savedQuote, error: sqError } = await supabase
-          .from('saved_quotes')
-          .insert({
-            email: customerInfo.email,
-            resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
-            user_id: user?.id || null,
-            expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
-            quote_pdf_path: quotePdfPath || null,
-            deposit_pdf_path: null,
-            deposit_status: 'pending',
-            deposit_amount: depositAmount,
-          } as any)
-          .select('id')
-          .single();
-        if (!sqError && savedQuote) {
-          savedQuoteId = savedQuote.id;
-          console.log('Saved quote created for deposit tracking:', savedQuoteId);
-        }
-      } catch (sqErr) {
-        console.warn('Could not create saved_quotes record:', sqErr);
+      // Store the customer document through the server-authorized private
+      // document boundary before creating a usable Stripe checkout.
+      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+      const quotePdf = await generatePDFBlob(basePdfData);
+      const { data: quoteDocument, error: quoteDocumentError } = await supabase.functions.invoke(
+        'quote-document-api',
+        {
+          body: quotePdf,
+          headers: {
+            'Content-Type': 'application/pdf',
+            'x-saved-quote-id': savedQuoteId,
+            'x-resume-token': resumeToken,
+          },
+        },
+      );
+      if (quoteDocumentError || quoteDocument?.success !== true) {
+        throw new Error('Could not securely store this quote. Please try again.');
       }
 
       // Build full quote snapshot for persistence
@@ -995,7 +997,6 @@ export default function QuoteSummaryPage() {
             model: motorName,
             hp: hp,
           },
-          quotePdfPath,
           savedQuoteId,
           quoteSnapshot,
         }
