@@ -79,6 +79,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado.md",
+      "destination": "/blog/fourstroke-vs-pro-xs.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-command-thrust-vs-standard-gearcase",
       "destination": "/blog/mercury-command-thrust-complete-guide-2026",
       "statusCode": 301
@@ -345,7 +350,7 @@
     },
     {
       "source": "/blog/mercury-fourstroke-vs-verado-comparison",
-      "destination": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado",
+      "destination": "/blog/fourstroke-vs-pro-xs",
       "statusCode": 301
     },
     {
