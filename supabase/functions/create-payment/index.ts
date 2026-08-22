@@ -4,6 +4,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
+import { assertDepositRequestHasSavedQuoteId } from "../_shared/deposit-payment-guard.ts";
 import {
   assertCanonicalQuoteDocumentReady,
   canonicalQuoteDocumentPath,
@@ -118,7 +119,6 @@ serve(async (req) => {
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
     logStep("Stripe key verified");
-    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
     // Create Supabase client using the anon key for user authentication
     const supabaseClient = createClient(
@@ -126,9 +126,30 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_ANON_KEY") ?? ""
     );
 
-    // Parse and validate request body
+    // Parse and fail-closed on deposit identity before any Stripe client or API call.
     const rawBody = await req.json();
     const verificationResult = verificationRequestSchema.safeParse(rawBody);
+    const validationResult = paymentRequestSchema.safeParse(rawBody);
+
+    let depositSavedQuoteId: string | null = null;
+    if (!verificationResult.success) {
+      if (!validationResult.success) {
+        logStep("Validation failed", validationResult.error.errors);
+        return new Response(JSON.stringify({
+          error: "Invalid input data",
+          details: validationResult.error.errors.map(e => ({
+            field: e.path.join('.'),
+            message: e.message
+          }))
+        }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      depositSavedQuoteId = assertDepositRequestHasSavedQuoteId(validationResult.data);
+    }
+
+    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
     if (verificationResult.success) {
       const session = await stripe.checkout.sessions.retrieve(
@@ -171,8 +192,6 @@ serve(async (req) => {
       });
     }
 
-    const validationResult = paymentRequestSchema.safeParse(rawBody);
-    
     if (!validationResult.success) {
       logStep("Validation failed", validationResult.error.errors);
       return new Response(JSON.stringify({
@@ -193,7 +212,6 @@ serve(async (req) => {
       customerInfo,
       paymentType,
       motorInfo: requestedMotorInfo,
-      savedQuoteId: requestedSavedQuoteId,
       quoteSnapshot,
     } = validationResult.data;
 
@@ -299,53 +317,54 @@ serve(async (req) => {
       const customerName = customerInfo!.name!;
       const customerPhone = customerInfo!.phone!;
 
-      // A supplied saved quote is the only document identifier. The object key
-      // is derived server-side and revalidated immediately before Stripe.
-      let savedQuoteId = "";
-      if (requestedSavedQuoteId) {
-        const { data: savedQuote, error: savedQuoteError } = await supabaseService
-          .from("saved_quotes")
-          .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256, quote_state")
-          .eq("id", requestedSavedQuoteId)
-          .maybeSingle();
-
-        const savedMotorId = (savedQuote?.quote_state as Record<string, any> | null)?.motor?.id;
-        if (
-          savedQuoteError
-          || !savedQuote
-          || savedQuote.email?.trim().toLowerCase() !== customerInfo!.email!.trim().toLowerCase()
-          || savedQuote.deposit_status !== "pending"
-          || Number(savedQuote.deposit_amount) !== Number(depositAmount)
-          || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
-        ) {
-          throw new Error("Invalid saved quote for deposit");
-        }
-
-        const { data: quoteDocument, error: quoteDocumentError } = await supabaseService
-          .storage
-          .from("quotes")
-          .download(canonicalQuoteDocumentPath(savedQuote.id));
-
-        try {
-          await assertCanonicalQuoteDocumentReady({
-            row: savedQuote,
-            savedQuoteId: savedQuote.id,
-            object: quoteDocumentError || !quoteDocument
-              ? null
-              : {
-                  bytes: new Uint8Array(await quoteDocument.arrayBuffer()),
-                  contentType: quoteDocument.type || "application/pdf",
-                },
-          });
-        } catch (error) {
-          if (error instanceof QuoteDocumentUnavailableError) {
-            throw new Error("Invalid saved quote document for deposit");
-          }
-          throw error;
-        }
-
-        savedQuoteId = savedQuote.id;
+      // A saved quote is required for every deposit. The object key is derived
+      // server-side and revalidated immediately before Stripe checkout.
+      if (!depositSavedQuoteId) {
+        throw new Error("Invalid saved quote for deposit");
       }
+
+      const { data: savedQuote, error: savedQuoteError } = await supabaseService
+        .from("saved_quotes")
+        .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256, quote_state")
+        .eq("id", depositSavedQuoteId)
+        .maybeSingle();
+
+      const savedMotorId = (savedQuote?.quote_state as Record<string, any> | null)?.motor?.id;
+      if (
+        savedQuoteError
+        || !savedQuote
+        || savedQuote.email?.trim().toLowerCase() !== customerInfo!.email!.trim().toLowerCase()
+        || savedQuote.deposit_status !== "pending"
+        || Number(savedQuote.deposit_amount) !== Number(depositAmount)
+        || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
+      ) {
+        throw new Error("Invalid saved quote for deposit");
+      }
+
+      const { data: quoteDocument, error: quoteDocumentError } = await supabaseService
+        .storage
+        .from("quotes")
+        .download(canonicalQuoteDocumentPath(savedQuote.id));
+
+      try {
+        await assertCanonicalQuoteDocumentReady({
+          row: savedQuote,
+          savedQuoteId: savedQuote.id,
+          object: quoteDocumentError || !quoteDocument
+            ? null
+            : {
+                bytes: new Uint8Array(await quoteDocument.arrayBuffer()),
+                contentType: quoteDocument.type || "application/pdf",
+              },
+        });
+      } catch (error) {
+        if (error instanceof QuoteDocumentUnavailableError) {
+          throw new Error("Invalid saved quote document for deposit");
+        }
+        throw error;
+      }
+
+      const savedQuoteId = savedQuote.id;
       
       const depositLineItem: Stripe.Checkout.SessionCreateParams.LineItem = priceId
         ? { price: priceId, quantity: 1 }

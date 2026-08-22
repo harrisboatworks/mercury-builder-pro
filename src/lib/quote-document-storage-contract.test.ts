@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 const read = (path: string) => readFileSync(path, 'utf8');
@@ -29,15 +29,25 @@ describe('private quote document storage contract', () => {
     expect(myQuotes).toContain("body: { action: 'download', savedQuoteId: quote.id }");
     expect(myQuotes).toContain('buildLegacyQuotePdfSnapshot');
     expect(myQuotes).toContain('This is not a stored reservation document.');
+    expect(myQuotes).toContain('.from("saved_quotes")');
+    expect(myQuotes).toContain('.select("*")');
+    expect(myQuotes).not.toMatch(/\.eq\(\s*["']user_id["']/);
     expect(myQuotes).not.toContain('quote_pdf_path');
     expect(myQuotes).not.toContain('deposit_pdf_path');
     expect(myQuotes).not.toContain("storage.from('quotes')");
 
+    const depositGuard = payment.indexOf('assertDepositRequestHasSavedQuoteId');
+    const stripeConstruct = payment.indexOf('new Stripe(');
     const documentCheck = payment.indexOf('assertCanonicalQuoteDocumentReady({');
     const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData)');
+    expect(payment).toContain('assertDepositRequestHasSavedQuoteId(validationResult.data)');
+    expect(payment).toContain('if (!depositSavedQuoteId)');
     expect(payment).toContain('assertCanonicalQuoteDocumentReady({');
     expect(payment).toContain('canonicalQuoteDocumentPath(savedQuote.id)');
     expect(payment).toContain('email, expires_at, is_soft_lead, deposit_status');
+    expect(depositGuard).toBeGreaterThan(-1);
+    expect(stripeConstruct).toBeGreaterThan(depositGuard);
+    expect(payment.indexOf('new Stripe(', stripeConstruct + 1)).toBe(-1);
     expect(documentCheck).toBeGreaterThan(-1);
     expect(stripeCreate).toBeGreaterThan(documentCheck);
     expect(payment).not.toContain('quotePdfPath');
@@ -78,13 +88,15 @@ describe('private quote document storage contract', () => {
     expect(edge).not.toMatch(/jsonResponse\(req,\s*\{[^}]*canonicalPath/s);
   });
 
-  it('locks storage and saved-quote bindings without deleting legacy objects', () => {
+  it('locks saved-quote storage without deleting legacy objects or privatizing spec-sheets', () => {
     const quotesMigration = read(
       'supabase/migrations/20260822184600_enforce_quote_document_authority.sql',
     );
-    const specSheetsMigration = read(
+    const consultation = read('src/components/quote-builder/ScheduleConsultation.tsx');
+
+    expect(existsSync(
       'supabase/migrations/20260822184500_make_customer_quote_documents_private.sql',
-    );
+    )).toBe(false);
 
     expect(quotesMigration).toContain('ADD COLUMN IF NOT EXISTS quote_pdf_sha256 text');
     expect(quotesMigration).toContain('public = false');
@@ -98,12 +110,9 @@ describe('private quote document storage contract', () => {
     expect(quotesMigration).toContain('BEFORE UPDATE OF quote_pdf_path, quote_pdf_sha256, deposit_pdf_path');
     expect(quotesMigration).not.toMatch(/DELETE\s+FROM\s+storage\.objects/i);
     expect(quotesMigration).not.toMatch(/DELETE\s+FROM\s+public\.saved_quotes/i);
+    expect(quotesMigration).not.toContain('spec-sheets');
 
-    expect(specSheetsMigration).toContain('DROP POLICY IF EXISTS "Spec sheets are publicly accessible" ON storage.objects');
-    expect(specSheetsMigration).toContain('DROP POLICY IF EXISTS "Public can view spec sheets" ON storage.objects');
-    expect(specSheetsMigration).toMatch(/UPDATE\s+storage\.buckets/i);
-    expect(specSheetsMigration).toMatch(/SET\s+public\s*=\s*false/i);
-    expect(specSheetsMigration).toMatch(/WHERE\s+id\s*=\s*'spec-sheets'/i);
-    expect(specSheetsMigration).not.toMatch(/DELETE\s+FROM\s+storage\.(objects|buckets)/i);
+    expect(consultation).toContain("storage.from('spec-sheets')");
+    expect(consultation).toContain('getPublicUrl');
   });
 });
