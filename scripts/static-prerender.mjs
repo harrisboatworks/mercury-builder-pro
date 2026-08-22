@@ -862,17 +862,26 @@ async function loadMotors() {
     console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with API plus canonical-route fallbacks`);
   }
 
-  // Merge: canonical routes preserve known public URL contracts when an upstream
-  // feed temporarily omits an orderable motor. Supabase and API records still
-  // win when they carry the same model_key.
-  const byKey = new Map();
+  // Merge by stable motor identity, not URL slug. The public SEO feed and
+  // Supabase can describe the same physical motor with different slugs; merging
+  // by model_key would publish duplicate pages and duplicate sitemap entries.
+  // Source priority is canonical fallback < Supabase < public API, while the
+  // explicit required-route map remains authoritative for known URL contracts.
+  const byIdentity = new Map();
+  const motorIdentity = (m) => {
+    const partNo = String(m.model_number || m.mercury_model_no || '').trim().toUpperCase();
+    if (partNo) return `part:${partNo}`;
+    if (m.id) return `id:${String(m.id).toLowerCase()}`;
+    return `key:${String(m.model_key || '').toLowerCase()}`;
+  };
   const supabaseByPartNo = new Map(
     (sb.ok ? sb.data : [])
       .filter((m) => m.model_number || m.mercury_model_no)
-      .map((m) => [m.model_number || m.mercury_model_no, m]),
+      .map((m) => [String(m.model_number || m.mercury_model_no).trim().toUpperCase(), m]),
   );
   for (const m of canonicalMotors) {
-    const source = supabaseByPartNo.get(m.model_number || m.mercury_model_no);
+    const partNo = String(m.model_number || m.mercury_model_no || '').trim().toUpperCase();
+    const source = supabaseByPartNo.get(partNo);
     const enriched = source
       ? {
           ...m,
@@ -884,15 +893,19 @@ async function loadMotors() {
           control_type: m.control_type || source.control_type || null,
         }
       : m;
-    if (enriched.model_key) byKey.set(String(enriched.model_key).toLowerCase(), enriched);
+    if (enriched.model_key) byIdentity.set(motorIdentity(enriched), enriched);
   }
   for (const m of sb.ok ? sb.data : []) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+    if (m.model_key) byIdentity.set(motorIdentity(m), m);
   }
   for (const m of apiMotors) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+    if (m.model_key) byIdentity.set(motorIdentity(m), m);
   }
-  const merged = Array.from(byKey.values());
+  const merged = Array.from(byIdentity.values()).map((m) => {
+    const partNo = String(m.model_number || m.mercury_model_no || '').trim().toUpperCase();
+    const requiredSlug = REQUIRED_CANONICAL_MOTOR_ROUTES.get(partNo);
+    return requiredSlug ? { ...m, model_key: requiredSlug } : m;
+  });
   console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.ok ? sb.data.length : 0}, canonical fallbacks: ${canonicalMotors.length})`);
   return merged;
 }
