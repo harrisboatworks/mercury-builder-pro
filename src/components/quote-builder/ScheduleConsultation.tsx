@@ -198,7 +198,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     setIsSubmitting(true);
 
     // Declare variables that need to be accessible throughout the function
-    let quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+    const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
     let quoteId: string | undefined;
 
     try {
@@ -241,6 +241,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         // Authenticated path: unchanged direct insert under user's RLS.
         const { data: inserted, error } = await supabase
           .from('customer_quotes')
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- pre-existing customer_quotes insert cast
           .insert({ user_id: user.id, ...insertPayload } as any)
           .select('id')
           .single();
