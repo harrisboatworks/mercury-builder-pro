@@ -10382,7 +10382,7 @@ step5Label: Live well, nav lights, electronics
 step5Question: Does the live well fill and drain, and do nav lights work on both bow and stern?
 step5Tip: Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
 escalationLabel: Want HBW to do the opener prep?
-escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at /service or call (905) 342-2153.
+escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
 ::
 
 ### Three Days Before Opener
@@ -21777,7 +21777,7 @@ step4Label: Tube damage from grounding
 step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
 step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
 escalationLabel: Found something or unsure?
-escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
+escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbw.wiki/service or call (905) 342-2153.
 ::
 
 ---
@@ -23291,7 +23291,7 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits between 1,800 and 1,588 kg (3,500 lb) dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 2,268 kg (5,000 lb). You're pushing a lot of mass.
+**Weight.** A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 2,268 kg (5,000 lb). You're pushing a lot of mass.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
