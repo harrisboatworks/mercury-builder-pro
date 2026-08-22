@@ -1,5 +1,9 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
+import {
+  buildPublicQuoteResponse,
+  isSavedQuotePubliclyReadable,
+} from "./public-quote.ts";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -42,31 +46,37 @@ Deno.serve(async (req) => {
     // First try saved_quotes table (used by "Save Quote" email links)
     const { data: savedQuote, error: savedError } = await supabase
       .from("saved_quotes")
-      .select("id, quote_state, email, user_id, deposit_status, deposit_amount, quote_pdf_path, deposit_pdf_path")
+      .select("id, quote_state, expires_at, is_soft_lead")
       .eq("id", quoteId)
-      .single();
+      .maybeSingle();
 
-    if (savedQuote && !savedError) {
-      // Update access tracking
-      await supabase
-        .from("saved_quotes")
-        .update({ 
-          access_count: ((savedQuote as any).access_count || 0) + 1,
-          last_accessed: new Date().toISOString()
-        })
-        .eq("id", quoteId);
+    // A read failure cannot be treated as "not found" or an expired dual-write
+    // could incorrectly fall through to its customer_quotes copy.
+    if (savedError) throw savedError;
 
-      // Strip admin-only fields from public-facing quote_state before returning.
-      const rawQuote = savedQuote.quote_state ?? {};
-      const { adminNotes: _adminNotes, adminDiscount: _adminDiscount, ...safeQuoteData } = rawQuote as Record<string, unknown>;
+    if (savedQuote) {
+      // A UUID is a bearer capability only for an intentional, unexpired save.
+      // Soft leads are analytics state and are never customer share links.
+      if (!isSavedQuotePubliclyReadable(savedQuote)) {
+        return new Response(
+          JSON.stringify({ error: "Quote not found" }),
+          { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      // Keep access telemetry atomic without exposing the row to public roles.
+      const { error: accessError } = await supabase.rpc("increment_saved_quote_access", {
+        p_quote_id: quoteId,
+      });
+      if (accessError) {
+        console.warn("Could not update shared quote access telemetry:", accessError.message);
+      }
+
       return new Response(
-        JSON.stringify({
+        JSON.stringify(buildPublicQuoteResponse({
           id: savedQuote.id,
-          quote_data: safeQuoteData,
-          customer_name: (rawQuote as any)?.customerName ?? "",
-          is_admin_quote: (rawQuote as any)?.isAdminQuote ?? false,
-          customer_notes: (rawQuote as any)?.customerNotes ?? "",
-        }),
+          quoteData: savedQuote.quote_state,
+        })),
         { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -75,7 +85,7 @@ Deno.serve(async (req) => {
     // Do NOT select admin_notes / admin_discount — these are internal-only.
     const { data: quote, error } = await supabase
       .from("customer_quotes")
-      .select("id, quote_data, customer_name, is_admin_quote, customer_notes")
+      .select("id, quote_data, customer_name, customer_notes")
       .eq("id", quoteId)
       .single();
 
@@ -86,18 +96,13 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Strip any admin-only fields that may live inside quote_data JSON.
-    const rawQuoteData = (quote.quote_data ?? {}) as Record<string, unknown>;
-    const { adminNotes: _adminNotes2, adminDiscount: _adminDiscount2, ...safeQuoteData } = rawQuoteData;
-
     return new Response(
-      JSON.stringify({
+      JSON.stringify(buildPublicQuoteResponse({
         id: quote.id,
-        quote_data: safeQuoteData,
-        customer_name: quote.customer_name ?? "",
-        is_admin_quote: quote.is_admin_quote,
-        customer_notes: quote.customer_notes,
-      }),
+        quoteData: quote.quote_data,
+        customerName: quote.customer_name,
+        customerNotes: quote.customer_notes,
+      })),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
