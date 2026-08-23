@@ -26,6 +26,7 @@ import {
   buildStripeDepositMetadata,
   classifyDepositPersistOutcome,
   classifyExistingDepositCheckoutSession,
+  classifyOpenCheckoutPolicyUpgrade,
   classifyOptimisticRecoveryWrite,
   depositPricingFromBoundSnapshot,
   planVerifiedStripeRecovery,
@@ -641,6 +642,54 @@ serve(async (req) => {
         );
         const existingSessionDisposition = classifyExistingDepositCheckoutSession(existingSession);
         if (existingSessionDisposition === "reuse_open") {
+          if (!existingDeposit.id || !depositPolicy || !existingSession.url) {
+            throw new Error("Unable to prepare reservation checkout");
+          }
+          const reuseDepositRow = buildDepositCustomerQuoteRow({
+            identity: storedIdentity,
+            savedQuoteId,
+            userId: user?.id || null,
+            sessionId: existingSession.id,
+            depositAmount: parseInt(depositAmount, 10),
+            motorInfo: verifiedMotorInfo,
+            quoteSnapshot,
+            quoteState: savedQuote.quote_state,
+            pricing: depositPricingFromBoundSnapshot(savedQuote.quote_state, quoteSnapshot),
+            depositPolicy,
+          });
+          const { data: upgradedDeposit, error: upgradeError } = await supabaseService
+            .from("customer_quotes")
+            .update(reuseDepositRow)
+            .eq("id", existingDeposit.id)
+            .or("payment_status.is.null,payment_status.eq.pending")
+            .eq("stripe_checkout_session_id", existingSession.id)
+            .select("id, payment_status, stripe_checkout_session_id, quote_data")
+            .maybeSingle();
+          const { data: upgradedReadback, error: upgradeReadError } = await supabaseService
+            .from("customer_quotes")
+            .select("id, payment_status, stripe_checkout_session_id, quote_data")
+            .eq("id", existingDeposit.id)
+            .eq("lead_source", "deposit")
+            .maybeSingle();
+          const upgradeOutcome = classifyOpenCheckoutPolicyUpgrade({
+            expectedSessionId: existingSession.id,
+            expectedPolicy: depositPolicy,
+            existing: existingDeposit,
+            wrote: upgradedDeposit,
+            writeError: upgradeError,
+            reread: upgradeReadError ? null : upgradedReadback,
+          });
+          if (upgradeOutcome === "already_paid") {
+            logStep("Deposit already paid during open checkout reuse", { savedQuoteId });
+            throw new Error("Invalid saved quote for deposit");
+          }
+          if (upgradeOutcome !== "upgraded") {
+            logStep("ERROR: Failed to persist deposit policy on open checkout reuse", {
+              savedQuoteId,
+              reason: upgradeOutcome,
+            });
+            throw new Error("Unable to prepare reservation checkout");
+          }
           logStep("Reusing open deposit checkout session", { sessionId: existingSession.id });
           return new Response(JSON.stringify({ url: existingSession.url, sessionId: existingSession.id }), {
             headers: { ...corsHeaders, "Content-Type": "application/json" },

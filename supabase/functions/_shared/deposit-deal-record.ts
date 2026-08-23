@@ -8,6 +8,8 @@ import {
 } from "./deposit-email-deliveries.ts";
 import {
   DEPOSIT_POLICY_QUOTE_DATA_KEY,
+  depositPolicySnapshotsMatch,
+  readPersistedDepositPolicy,
   type DepositPolicySnapshot,
 } from "./deposit-policy.ts";
 
@@ -418,6 +420,56 @@ export function pendingDepositRebindAllowed(row: {
 }, expectedSessionId: string | null): boolean {
   const pending = row.payment_status == null || row.payment_status === "pending";
   return pending && (row.stripe_checkout_session_id ?? null) === (expectedSessionId ?? null);
+}
+
+export function storedDepositPolicyMatches(
+  quoteData: unknown,
+  expected: DepositPolicySnapshot,
+): boolean {
+  const persisted = readPersistedDepositPolicy(quoteData);
+  return Boolean(persisted && depositPolicySnapshotsMatch(expected, persisted));
+}
+
+export function classifyOpenCheckoutPolicyUpgrade(options: {
+  expectedSessionId: string;
+  expectedPolicy: DepositPolicySnapshot;
+  existing: {
+    payment_status?: string | null;
+    stripe_checkout_session_id?: string | null;
+  };
+  wrote?: {
+    id?: string | null;
+    payment_status?: string | null;
+    stripe_checkout_session_id?: string | null;
+    quote_data?: unknown;
+  } | null;
+  writeError?: unknown;
+  reread?: {
+    payment_status?: string | null;
+    stripe_checkout_session_id?: string | null;
+    quote_data?: unknown;
+  } | null;
+}): "upgraded" | "already_paid" | "upgrade_failed" {
+  if (
+    options.existing.payment_status === "paid"
+    || options.wrote?.payment_status === "paid"
+    || options.reread?.payment_status === "paid"
+  ) {
+    return "already_paid";
+  }
+  if (!pendingDepositRebindAllowed(options.existing, options.expectedSessionId)) {
+    return "upgrade_failed";
+  }
+  if (!options.reread) {
+    return "upgrade_failed";
+  }
+  if (!pendingDepositRebindAllowed(options.reread, options.expectedSessionId)) {
+    return "upgrade_failed";
+  }
+  if (!storedDepositPolicyMatches(options.reread.quote_data, options.expectedPolicy)) {
+    return "upgrade_failed";
+  }
+  return "upgraded";
 }
 
 export function classifyDepositPersistOutcome(options: {

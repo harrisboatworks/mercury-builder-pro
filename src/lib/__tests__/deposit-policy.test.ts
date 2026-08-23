@@ -29,7 +29,11 @@ import {
   grokDepositStructuredSummary,
   hbwDepositEmailSubject,
 } from '../../../supabase/functions/_shared/deposit-email-templates.ts';
-import { buildDepositCustomerQuoteRow } from '../../../supabase/functions/_shared/deposit-deal-record.ts';
+import {
+  buildDepositCustomerQuoteRow,
+  classifyOpenCheckoutPolicyUpgrade,
+  storedDepositPolicyMatches,
+} from '../../../supabase/functions/_shared/deposit-deal-record.ts';
 
 const MOTOR_ID = 'aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa';
 const SAVED_QUOTE_ID = 'bbbbbbbb-2222-4222-8222-bbbbbbbbbbbb';
@@ -161,6 +165,72 @@ describe('checkout snapshot match and historical protection', () => {
     const historicalPaid = { payment_status: 'paid', quote_data: { deposit_amount: '500' } };
     expect(readPersistedDepositPolicy(historicalPaid.quote_data)).toBeNull();
     expect(parseDepositPolicySnapshot({ schema: 'old', policyCode: 'in_stock_refundable' })).toBeNull();
+  });
+
+  it('upgrades a legacy pending open-session row before reuse and fails closed on a conflicting write', () => {
+    const snapshot = inStockSnapshot();
+    const sessionId = 'cs_test_open_reuse';
+    const legacyQuoteData = { deposit_amount: '500', stripe_session_id: sessionId };
+    const upgradedRow = buildDepositCustomerQuoteRow({
+      identity: IDENTITY,
+      savedQuoteId: SAVED_QUOTE_ID,
+      sessionId,
+      depositAmount: 500,
+      motorInfo: { model: '9.9 MH' },
+      pricing: {
+        motor_model_id: MOTOR_ID,
+        base_price: 2999,
+        final_price: 3388,
+        total_cost: 3388,
+        tradein_value_pre_penalty: null,
+        tradein_value_final: null,
+        monthly_payment: 0,
+        term_months: 0,
+        loan_amount: 0,
+      },
+      depositPolicy: snapshot,
+    });
+
+    expect(storedDepositPolicyMatches(legacyQuoteData, snapshot)).toBe(false);
+    expect(storedDepositPolicyMatches(upgradedRow.quote_data, snapshot)).toBe(true);
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: sessionId,
+      expectedPolicy: snapshot,
+      existing: { payment_status: 'pending', stripe_checkout_session_id: sessionId },
+      wrote: {
+        id: CUSTOMER_QUOTE_ID,
+        payment_status: 'pending',
+        stripe_checkout_session_id: sessionId,
+        quote_data: upgradedRow.quote_data,
+      },
+      reread: {
+        payment_status: 'pending',
+        stripe_checkout_session_id: sessionId,
+        quote_data: upgradedRow.quote_data,
+      },
+    })).toBe('upgraded');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: sessionId,
+      expectedPolicy: snapshot,
+      existing: { payment_status: 'pending', stripe_checkout_session_id: sessionId },
+      wrote: null,
+      writeError: new Error('row changed'),
+      reread: {
+        payment_status: 'pending',
+        stripe_checkout_session_id: sessionId,
+        quote_data: legacyQuoteData,
+      },
+    })).toBe('upgrade_failed');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: sessionId,
+      expectedPolicy: snapshot,
+      existing: { payment_status: 'paid', stripe_checkout_session_id: sessionId },
+      reread: {
+        payment_status: 'paid',
+        stripe_checkout_session_id: sessionId,
+        quote_data: upgradedRow.quote_data,
+      },
+    })).toBe('already_paid');
   });
 
   it('keeps webhook replay from re-querying stock and does not rewrite paid policy', () => {

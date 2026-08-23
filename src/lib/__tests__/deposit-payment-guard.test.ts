@@ -328,6 +328,33 @@ describe('deposit create-payment savedQuoteId guard', () => {
       .toBeGreaterThan(source.indexOf('stripe.checkout.sessions.create(sessionData'));
   });
 
+  it('upgrades a legacy pending open checkout with deposit_policy before returning the URL', () => {
+    const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const reuseIdx = source.indexOf('existingSessionDisposition === "reuse_open"');
+    const buildIdx = source.indexOf('const reuseDepositRow = buildDepositCustomerQuoteRow({', reuseIdx);
+    const updateIdx = source.indexOf('.update(reuseDepositRow)', reuseIdx);
+    const pendingIdx = source.indexOf('.or("payment_status.is.null,payment_status.eq.pending")', updateIdx);
+    const sessionIdx = source.indexOf('.eq("stripe_checkout_session_id", existingSession.id)', reuseIdx);
+    const classifyIdx = source.indexOf('classifyOpenCheckoutPolicyUpgrade({', reuseIdx);
+    const failIdx = source.indexOf('upgradeOutcome !== "upgraded"', reuseIdx);
+    const returnLogIdx = source.indexOf('Reusing open deposit checkout session', reuseIdx);
+    const createIdx = source.indexOf('stripe.checkout.sessions.create(sessionData');
+
+    expect(reuseIdx).toBeGreaterThan(-1);
+    expect(buildIdx).toBeGreaterThan(reuseIdx);
+    expect(updateIdx).toBeGreaterThan(buildIdx);
+    expect(pendingIdx).toBeGreaterThan(updateIdx);
+    expect(sessionIdx).toBeGreaterThan(updateIdx);
+    expect(classifyIdx).toBeGreaterThan(sessionIdx);
+    expect(failIdx).toBeGreaterThan(classifyIdx);
+    expect(returnLogIdx).toBeGreaterThan(failIdx);
+    expect(createIdx).toBeGreaterThan(returnLogIdx);
+    expect(source.slice(reuseIdx, returnLogIdx)).toContain('Unable to prepare reservation checkout');
+    expect(source.slice(reuseIdx, returnLogIdx)).toContain('Deposit already paid during open checkout reuse');
+    expect(source.slice(reuseIdx, returnLogIdx)).not.toContain('return new Response');
+    expect(source).toContain('depositPolicy');
+  });
+
   it('rejects a complete existing Checkout Session before creating a replacement', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     const retrieveIdx = source.indexOf('const existingSession = await stripe.checkout.sessions.retrieve');

@@ -8,6 +8,8 @@ import {
   buildStripeDepositMetadata,
   classifyDepositPersistOutcome,
   classifyExistingDepositCheckoutSession,
+  classifyOpenCheckoutPolicyUpgrade,
+  storedDepositPolicyMatches,
   classifyNotificationOutcomeWrite,
   classifyOptimisticRecoveryWrite,
   depositNotificationOutcomeGuard,
@@ -544,6 +546,84 @@ describe('deposit webhook deal-packet idempotency', () => {
       createdSessionId: SESSION_ID,
       reread: { payment_status: 'pending', stripe_checkout_session_id: SESSION_ID },
     })).toBe('reused_same_session');
+  });
+
+  it('upgrades a legacy pending open-session row only when readback proves deposit_policy', () => {
+    const policy = {
+      schema: 'deposit-policy/v1' as const,
+      motorId: 'aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa',
+      stockClassification: 'in_stock' as const,
+      policyCode: 'in_stock_refundable' as const,
+      stockQuantity: 2,
+      inStock: true,
+      availability: 'In Stock',
+      purchasePath: 'motor_only' as const,
+    };
+    const existing = {
+      payment_status: 'pending' as const,
+      stripe_checkout_session_id: SESSION_ID,
+    };
+    const upgradedQuoteData = { deposit_policy: policy, stripe_session_id: SESSION_ID };
+
+    expect(storedDepositPolicyMatches({ deposit_amount: '500' }, policy)).toBe(false);
+    expect(storedDepositPolicyMatches(upgradedQuoteData, policy)).toBe(true);
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: { id: DEAL_ID, payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+      reread: { payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+    })).toBe('upgraded');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: null,
+      writeError: { code: '400' },
+      reread: { payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+    })).toBe('upgraded');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: null,
+      writeError: { code: '400' },
+      reread: { payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: { deposit_amount: '500' } },
+    })).toBe('upgrade_failed');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: { id: DEAL_ID, payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+      reread: { payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: { deposit_policy: { ...policy, policyCode: 'special_order_until_written_approval' } } },
+    })).toBe('upgrade_failed');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: null,
+      reread: { payment_status: 'paid', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+    })).toBe('already_paid');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing: { payment_status: 'paid', stripe_checkout_session_id: SESSION_ID },
+      reread: { payment_status: 'paid', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+    })).toBe('already_paid');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: null,
+      reread: { payment_status: 'pending', stripe_checkout_session_id: 'cs_test_other', quote_data: upgradedQuoteData },
+    })).toBe('upgrade_failed');
+    expect(classifyOpenCheckoutPolicyUpgrade({
+      expectedSessionId: SESSION_ID,
+      expectedPolicy: policy,
+      existing,
+      wrote: { id: DEAL_ID, payment_status: 'pending', stripe_checkout_session_id: SESSION_ID, quote_data: upgradedQuoteData },
+      reread: null,
+    })).toBe('upgrade_failed');
   });
 
   it('prefers the Stripe PaymentIntent created time and classifies optimistic recovery races', () => {
