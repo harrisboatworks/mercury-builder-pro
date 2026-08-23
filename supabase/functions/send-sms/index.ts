@@ -84,6 +84,7 @@ serve(async (req) => {
       action: 'send_sms_ip',
       maxAttempts: 60,
       windowMinutes: 60,
+      failClosed: tokenBearing,
     });
     if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
 
@@ -92,6 +93,7 @@ serve(async (req) => {
       action: 'send_sms_recipient',
       maxAttempts: 6,
       windowMinutes: 60,
+      failClosed: tokenBearing,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 

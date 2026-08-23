@@ -261,6 +261,7 @@ serve(async (req) => {
         action: "consultation_document_upload_ip",
         maxAttempts: 20,
         windowMinutes: 15,
+        failClosed: true,
       });
       if (!uploadAllowed) return rateLimitedResponse(headers, 60);
 

@@ -263,6 +263,7 @@ serve(async (req) => {
       action: 'send_quote_email_ip',
       maxAttempts: 30,
       windowMinutes: 60,
+      failClosed: isConsultationPath,
     });
     if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
 
@@ -271,6 +272,7 @@ serve(async (req) => {
       action: 'send_quote_email_recipient',
       maxAttempts: 8,
       windowMinutes: 60,
+      failClosed: isConsultationPath,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 

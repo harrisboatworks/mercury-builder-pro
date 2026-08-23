@@ -64,6 +64,7 @@ describe('private consultation document storage contract', () => {
     const access = read('src/lib/consultation-document-access.ts');
     const api = read('supabase/functions/consultation-document-api/index.ts');
     const rateLimit = read('supabase/functions/_shared/rate-limit.ts');
+    const rateLimitProbe = read('supabase/functions/_shared/rate-limit-probe.ts');
     const app = read('src/App.tsx');
 
     expect(app).toContain('path="/quote/document"');
@@ -76,8 +77,8 @@ describe('private consultation document storage contract', () => {
     expect(api).toContain('consultation_document_redeem_token');
     expect(api).toContain('if (req.method !== "POST")');
     expect(rateLimit).toContain('failClosed?: boolean');
-    expect(rateLimit).toContain('return failClosed ? false : true');
-    expect(rateLimit).toContain('if (!client) return !failClosed');
+    expect(rateLimitProbe).toContain('return failClosed ? false : true');
+    expect(rateLimitProbe).toContain('if (!client) return !failClosed');
   });
 
   it('keeps historical public spec-sheets links untouched', () => {

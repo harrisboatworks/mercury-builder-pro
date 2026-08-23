@@ -3,6 +3,7 @@
 // Fail-open on errors so a transient DB issue never breaks public buyer flows.
 
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
+import { probeRateLimit } from "./rate-limit-probe.ts";
 
 export function getClientIdentifier(req: Request): string {
   const xff = req.headers.get("x-forwarded-for");
@@ -40,28 +41,17 @@ export async function checkRateLimit(
   req: Request,
   opts: RateLimitOptions,
 ): Promise<boolean> {
-  const failClosed = opts.failClosed === true;
   const client = getClient();
-  if (!client) return !failClosed;
   const identifier = (opts.identifier && opts.identifier.length > 0)
     ? opts.identifier
     : getClientIdentifier(req);
-  try {
-    const { data, error } = await client.rpc("check_rate_limit", {
-      _identifier: identifier,
-      _action: opts.action,
-      _max_attempts: opts.maxAttempts,
-      _window_minutes: opts.windowMinutes,
-    });
-    if (error) {
-      console.warn(`[rate-limit] RPC error for ${opts.action}`);
-      return failClosed ? false : true;
-    }
-    return data !== false;
-  } catch {
-    console.warn(`[rate-limit] exception for ${opts.action}`);
-    return failClosed ? false : true;
-  }
+  return await probeRateLimit(client, {
+    identifier,
+    action: opts.action,
+    maxAttempts: opts.maxAttempts,
+    windowMinutes: opts.windowMinutes,
+    failClosed: opts.failClosed,
+  });
 }
 
 export function rateLimitedResponse(
