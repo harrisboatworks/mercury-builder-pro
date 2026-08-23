@@ -7,7 +7,10 @@ import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import { createPaymentCustomerInfoSchema } from "../_shared/create-payment-request.ts";
 import {
+  assertQuoteCheckoutAuthenticated,
   decideCreatePaymentStripeAccess,
+  isJsonRequestSyntaxError,
+  mapCreatePaymentCaughtError,
   readRequiredStripeSecret,
 } from "../_shared/deposit-payment-guard.ts";
 import {
@@ -105,7 +108,6 @@ async function recoverHistoricalStripeBilling(options: {
   body: { action: "recover_stripe_billing"; savedQuoteId: string };
   rawBody: Record<string, unknown>;
   corsHeaders: Record<string, string>;
-  stripeKey: string;
 }): Promise<Response> {
   const jsonHeaders = { ...options.corsHeaders, "Content-Type": "application/json" };
   const reject = (status: number, error: string) => new Response(
@@ -122,6 +124,8 @@ async function recoverHistoricalStripeBilling(options: {
 
   const auth = await requireAdmin(options.req, options.corsHeaders);
   if (auth instanceof Response) return auth;
+
+  const stripeKey = readRequiredStripeSecret(Deno.env);
 
   const supabaseAdmin = createClient(
     Deno.env.get("SUPABASE_URL") ?? "",
@@ -168,7 +172,7 @@ async function recoverHistoricalStripeBilling(options: {
     return reject(409, "No bound checkout session");
   }
 
-  const stripe = new Stripe(options.stripeKey, { apiVersion: "2025-08-27.basil" });
+  const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
   const session = await stripe.checkout.sessions.retrieve(boundSessionId, {
     expand: ["payment_intent"],
   });
@@ -323,8 +327,19 @@ serve(async (req) => {
 
     // Parse and fail-closed on deposit identity/savedQuoteId before Stripe
     // secret, Stripe client, Supabase client, or any Stripe/Supabase network.
-    const rawBody = await req.json();
-    if (rawBody && typeof rawBody === "object" && rawBody.action === "recover_stripe_billing") {
+    let rawBody: unknown;
+    try {
+      rawBody = await req.json();
+    } catch (error) {
+      if (isJsonRequestSyntaxError(error)) {
+        return new Response(JSON.stringify({ error: "Invalid input data" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      throw error;
+    }
+    if (rawBody && typeof rawBody === "object" && (rawBody as { action?: unknown }).action === "recover_stripe_billing") {
       const recoverResult = recoverStripeBillingSchema.safeParse(rawBody);
       if (!recoverResult.success) {
         return new Response(JSON.stringify({ error: "Invalid recovery request" }), {
@@ -332,13 +347,11 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      const stripeKey = readRequiredStripeSecret(Deno.env);
       return await recoverHistoricalStripeBilling({
         req,
         body: recoverResult.data,
         rawBody: rawBody as Record<string, unknown>,
         corsHeaders,
-        stripeKey,
       });
     }
     const verificationResult = verificationRequestSchema.safeParse(rawBody);
@@ -370,14 +383,34 @@ serve(async (req) => {
       depositSavedQuoteId = stripeAccess.savedQuoteId;
     }
 
-    const stripeKey = readRequiredStripeSecret(Deno.env);
-    logStep("Stripe key verified");
-
-    // Create Supabase client using the anon key for user authentication
+    // Create the anon client before the Stripe secret so omitted-paymentType
+    // quote checkout can require a signed-in user without a secret-presence oracle.
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_ANON_KEY") ?? ""
     );
+
+    let user = null;
+    const authHeader = req.headers.get("Authorization");
+    if (authHeader) {
+      try {
+        const token = authHeader.replace("Bearer ", "");
+        const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
+        if (!userError && userData.user?.email) {
+          user = userData.user;
+          logStep("User authenticated", { userId: user.id });
+        }
+      } catch (error) {
+        logStep("Auth failed, proceeding as guest", { error: error instanceof Error ? error.message : "Unknown" });
+      }
+    }
+
+    if (!verificationResult.success && validationResult.success) {
+      assertQuoteCheckoutAuthenticated(validationResult.data, user);
+    }
+
+    const stripeKey = readRequiredStripeSecret(Deno.env);
+    logStep("Stripe key verified");
 
     if (verificationResult.success) {
       const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
@@ -454,30 +487,9 @@ serve(async (req) => {
     
     logStep("Request validated", { paymentType: paymentType || "quote", depositAmount });
 
-    // Handle authentication - required for quote payments, optional for deposits
     const isDepositRequest = paymentType === "deposit" || Boolean(depositAmount);
-    let user = null;
     let userEmail = submittedIdentity?.email || customerInfo?.email;
-    
-    const authHeader = req.headers.get("Authorization");
-    if (authHeader) {
-      try {
-        const token = authHeader.replace("Bearer ", "");
-        const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-        if (!userError && userData.user?.email) {
-          user = userData.user;
-          if (!isDepositRequest) userEmail = user.email;
-          logStep("User authenticated", { userId: user.id });
-        }
-      } catch (error) {
-        logStep("Auth failed, proceeding as guest", { error: error instanceof Error ? error.message : 'Unknown' });
-      }
-    }
-
-    // For quote payments, require authentication
-    if (paymentType === "quote" && !user) {
-      throw new Error("Authentication required for quote payments");
-    }
+    if (user && !isDepositRequest) userEmail = user.email;
     // Initialize service role client early (needed for both deposit and quote paths)
     const supabaseService = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
@@ -921,36 +933,10 @@ serve(async (req) => {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in create-payment", { message: errorMessage });
-    
-    // Return safe error messages to clients — never expose raw internal details.
-    // Buyer/request errors should not be reported as server failures.
-    const isAuthError = errorMessage.includes("Authentication required");
-    const isClientError = errorMessage.includes("Invalid deposit amount")
-      || errorMessage.includes("Customer identity and address are required")
-      || errorMessage.includes("Customer information required")
-      || errorMessage.includes("Invalid saved quote")
-      || errorMessage.includes("Invalid saved quote document")
-      || errorMessage.includes("Invalid quote snapshot")
-      || errorMessage.includes("Price validation failed")
-      || errorMessage.includes("Quote data is required")
-      || errorMessage.includes("Unexpected end of JSON input");
-
-    const safeMessage = isAuthError ? "Authentication required"
-      : errorMessage.includes("Invalid deposit amount") ? "Invalid deposit amount"
-      : errorMessage.includes("Customer identity and address are required")
-        || errorMessage.includes("Customer information required")
-        ? "Full name, email, phone, and complete address are required for a deposit"
-      : errorMessage.includes("Invalid saved quote document") ? "The saved quote document could not be verified. Please refresh and try again."
-      : errorMessage.includes("Invalid saved quote") ? "The saved quote could not be verified. Please refresh and try again."
-      : errorMessage.includes("Invalid quote snapshot") ? "Invalid quote data"
-      : errorMessage.includes("Price validation failed") ? "Price validation failed. Please refresh and try again."
-      : errorMessage.includes("Quote data is required") ? "Quote data is required"
-      : errorMessage.includes("Unexpected end of JSON input") ? "Invalid input data"
-      : "An error occurred processing your payment. Please try again.";
-    
-    return new Response(JSON.stringify({ error: safeMessage }), {
+    const mapped = mapCreatePaymentCaughtError(error);
+    return new Response(JSON.stringify({ error: mapped.error }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
-      status: isAuthError ? 401 : isClientError ? 400 : 500,
+      status: mapped.status,
     });
   }
 });

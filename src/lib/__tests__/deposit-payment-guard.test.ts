@@ -6,11 +6,16 @@ import { createPaymentCustomerInfoSchema } from '../../../supabase/functions/_sh
 import {
   INVALID_DEPOSIT_IDENTITY,
   INVALID_DEPOSIT_SAVED_QUOTE,
+  QUOTE_CHECKOUT_AUTH_REQUIRED,
   assertDepositRequestHasSavedQuoteId,
   assertDepositRequestReadyForStripe,
+  assertQuoteCheckoutAuthenticated,
   createPaymentMayInvokeStripe,
   decideCreatePaymentStripeAccess,
   isDepositPaymentRequest,
+  isJsonRequestSyntaxError,
+  mapCreatePaymentCaughtError,
+  quoteCheckoutRequiresAuthentication,
   readRequiredStripeSecret,
   type CreatePaymentStripeAccessDecision,
 } from '../../../supabase/functions/_shared/deposit-payment-guard.ts';
@@ -53,6 +58,49 @@ function simulateCreatePaymentBeforeStripe(
     return {
       status: stripeAccess.status,
       error: stripeAccess.error,
+      readStripeSecret: false,
+      createdStripeClient: false,
+    };
+  }
+  try {
+    readRequiredStripeSecret(env);
+  } catch {
+    return {
+      status: 500,
+      error: 'An error occurred processing your payment. Please try again.',
+      readStripeSecret: true,
+      createdStripeClient: false,
+    };
+  }
+  return {
+    status: 'continue' as const,
+    error: null,
+    readStripeSecret: true,
+    createdStripeClient: true,
+  };
+}
+
+function simulateCheckoutAuthThenStripe(
+  body: Parameters<typeof decideCreatePaymentStripeAccess>[0],
+  user: { id: string } | null,
+  env: Record<string, string | undefined>,
+) {
+  const stripeAccess: CreatePaymentStripeAccessDecision = decideCreatePaymentStripeAccess(body);
+  if (stripeAccess.allowStripeAccess === false) {
+    return {
+      status: stripeAccess.status,
+      error: stripeAccess.error,
+      readStripeSecret: false,
+      createdStripeClient: false,
+    };
+  }
+  try {
+    assertQuoteCheckoutAuthenticated(body, user);
+  } catch (error) {
+    const mapped = mapCreatePaymentCaughtError(error);
+    return {
+      status: mapped.status,
+      error: mapped.error,
       readStripeSecret: false,
       createdStripeClient: false,
     };
@@ -194,8 +242,9 @@ describe('deposit create-payment savedQuoteId guard', () => {
   it('constructs the deposit Stripe client only after identity, saved-quote, and bound document checks', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     const identityGuardIdx = source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)');
-    const stripeSecretIdx = source.indexOf('readRequiredStripeSecret(Deno.env)', identityGuardIdx);
-    const supabaseClientIdx = source.indexOf('const supabaseClient = createClient(', stripeSecretIdx);
+    const quoteAuthIdx = source.indexOf('assertQuoteCheckoutAuthenticated(validationResult.data, user)');
+    const stripeSecretIdx = source.indexOf('readRequiredStripeSecret(Deno.env)', quoteAuthIdx);
+    const supabaseClientIdx = source.indexOf('const supabaseClient = createClient(', identityGuardIdx);
     const documentCheck = source.indexOf('assertCanonicalQuoteDocumentReady({');
     const depositStripeIdx = source.indexOf('const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });', documentCheck);
     const customersListIdx = source.indexOf('stripe.customers.list', documentCheck);
@@ -204,8 +253,9 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(identityGuardIdx).toBeGreaterThan(-1);
     expect(source.slice(identityGuardIdx, stripeSecretIdx)).toContain('allowStripeAccess');
     expect(source.slice(identityGuardIdx, stripeSecretIdx)).toContain('status: stripeAccess.status');
-    expect(stripeSecretIdx).toBeGreaterThan(identityGuardIdx);
-    expect(supabaseClientIdx).toBeGreaterThan(stripeSecretIdx);
+    expect(supabaseClientIdx).toBeGreaterThan(identityGuardIdx);
+    expect(quoteAuthIdx).toBeGreaterThan(supabaseClientIdx);
+    expect(stripeSecretIdx).toBeGreaterThan(quoteAuthIdx);
     expect(documentCheck).toBeGreaterThan(identityGuardIdx);
     expect(depositStripeIdx).toBeGreaterThan(documentCheck);
     expect(customersListIdx).toBeGreaterThan(depositStripeIdx);
@@ -220,12 +270,23 @@ describe('deposit create-payment savedQuoteId guard', () => {
 
   it('recovers historical Stripe billing through an admin-only bound-session path before checkout', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
-    expect(source.indexOf('rawBody.action === "recover_stripe_billing"')).toBeGreaterThan(-1);
-    expect(source.indexOf('rawBody.action === "recover_stripe_billing"'))
+    expect(source.indexOf('.action === "recover_stripe_billing"')).toBeGreaterThan(-1);
+    expect(source.indexOf('.action === "recover_stripe_billing"'))
       .toBeLessThan(source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)'));
     expect(source.indexOf('requireAdmin(options.req, options.corsHeaders)')).toBeGreaterThan(-1);
     expect(source.indexOf('requireAdmin(options.req, options.corsHeaders)'))
       .toBeLessThan(source.indexOf('stripe.checkout.sessions.retrieve(boundSessionId,'));
+    const recoverFn = source.indexOf('async function recoverHistoricalStripeBilling');
+    const recoverAdmin = source.indexOf('requireAdmin(options.req, options.corsHeaders)', recoverFn);
+    const recoverSecret = source.indexOf('readRequiredStripeSecret(Deno.env)', recoverAdmin);
+    const recoverStripe = source.indexOf('new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });', recoverSecret);
+    const recoverBranch = source.indexOf('.action === "recover_stripe_billing"');
+    const recoverCall = source.indexOf('return await recoverHistoricalStripeBilling(', recoverBranch);
+    expect(recoverAdmin).toBeGreaterThan(recoverFn);
+    expect(recoverSecret).toBeGreaterThan(recoverAdmin);
+    expect(recoverStripe).toBeGreaterThan(recoverSecret);
+    expect(source.slice(recoverBranch, recoverCall)).not.toContain('readRequiredStripeSecret');
+    expect(source).not.toContain('stripeKey: string');
     expect(source).toContain('assertNoCallerDocumentPath(options.rawBody)');
     expect(source).toContain('assertRecoverStripeBillingRequest(options.rawBody)');
     expect(source).toContain('planVerifiedStripeRecovery');
@@ -343,7 +404,7 @@ describe('deposit create-payment savedQuoteId guard', () => {
 
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     const serveIdx = source.indexOf('serve(async (req) => {');
-    const parseIdx = source.indexOf('const rawBody = await req.json();', serveIdx);
+    const parseIdx = source.indexOf('rawBody = await req.json();', serveIdx);
     const decideIdx = source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)', parseIdx);
     const rejectIdx = source.indexOf('if (!stripeAccess.allowStripeAccess)', decideIdx);
     const paymentSecretIdx = source.indexOf('const stripeKey = readRequiredStripeSecret(Deno.env);', rejectIdx);
@@ -353,6 +414,130 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(rejectIdx).toBeGreaterThan(decideIdx);
     expect(paymentSecretIdx).toBeGreaterThan(rejectIdx);
     expect(source.slice(rejectIdx, paymentSecretIdx)).toContain('status: stripeAccess.status');
+    expect(source.slice(rejectIdx, paymentSecretIdx)).toContain('assertQuoteCheckoutAuthenticated');
     expect(firstEnvGet).toBe(-1);
+  });
+
+  it('requires authentication for omitted-paymentType and explicit quote checkout, not deposit/verify/recover', () => {
+    const legacyOmittedQuote = {
+      quoteData: {
+        motorId: 'e920cfdf-223a-408a-850b-6f112e15c4d7',
+        motorModel: 'Mercury Motor',
+        motorPrice: 12000,
+        totalPrice: 12000,
+      },
+    };
+    const explicitQuote = { paymentType: 'quote' as const, quoteData: legacyOmittedQuote.quoteData };
+    const signedIn = { id: 'user-legacy' };
+
+    expect(quoteCheckoutRequiresAuthentication(legacyOmittedQuote)).toBe(true);
+    expect(quoteCheckoutRequiresAuthentication(explicitQuote)).toBe(true);
+    expect(quoteCheckoutRequiresAuthentication({ paymentType: 'deposit', depositAmount: '500' })).toBe(false);
+    expect(quoteCheckoutRequiresAuthentication({ depositAmount: '500' })).toBe(false);
+    expect(quoteCheckoutRequiresAuthentication({ action: 'verify', sessionId: 'cs_test_abc' })).toBe(false);
+    expect(quoteCheckoutRequiresAuthentication({
+      action: 'recover_stripe_billing',
+      savedQuoteId: '31313131-3131-4131-8131-313131313131',
+    })).toBe(false);
+
+    expect(() => assertQuoteCheckoutAuthenticated(legacyOmittedQuote, null))
+      .toThrow(QUOTE_CHECKOUT_AUTH_REQUIRED);
+    expect(() => assertQuoteCheckoutAuthenticated(explicitQuote, null))
+      .toThrow(QUOTE_CHECKOUT_AUTH_REQUIRED);
+    expect(() => assertQuoteCheckoutAuthenticated(legacyOmittedQuote, signedIn)).not.toThrow();
+    expect(() => assertQuoteCheckoutAuthenticated(explicitQuote, signedIn)).not.toThrow();
+    expect(() => assertQuoteCheckoutAuthenticated({ paymentType: 'deposit', depositAmount: '500' }, null)).not.toThrow();
+    expect(() => assertQuoteCheckoutAuthenticated({ action: 'verify', sessionId: 'cs_test_abc' }, null)).not.toThrow();
+    expect(() => assertQuoteCheckoutAuthenticated({
+      action: 'recover_stripe_billing',
+      savedQuoteId: '31313131-3131-4131-8131-313131313131',
+    }, null)).not.toThrow();
+
+    expect(simulateCheckoutAuthThenStripe(legacyOmittedQuote, null, {})).toEqual({
+      status: 401,
+      error: 'Authentication required',
+      readStripeSecret: false,
+      createdStripeClient: false,
+    });
+    expect(simulateCheckoutAuthThenStripe(explicitQuote, null, { STRIPE_SECRET_KEY: 'sk_test_unused' })).toEqual({
+      status: 401,
+      error: 'Authentication required',
+      readStripeSecret: false,
+      createdStripeClient: false,
+    });
+    expect(simulateCheckoutAuthThenStripe(legacyOmittedQuote, signedIn, { STRIPE_SECRET_KEY: 'sk_test_legacy' })).toEqual({
+      status: 'continue',
+      error: null,
+      readStripeSecret: true,
+      createdStripeClient: true,
+    });
+    expect(simulateCheckoutAuthThenStripe({ paymentType: 'deposit', depositAmount: '500', savedQuoteId: QUOTE_ID, customerInfo: validIdentity }, null, { STRIPE_SECRET_KEY: 'sk_test_deposit' }).readStripeSecret).toBe(true);
+    expect(simulateCheckoutAuthThenStripe({ action: 'verify', sessionId: 'cs_test_abc' }, null, { STRIPE_SECRET_KEY: 'sk_test_verify' }).readStripeSecret).toBe(true);
+    expect(simulateCheckoutAuthThenStripe({
+      action: 'recover_stripe_billing',
+      savedQuoteId: '31313131-3131-4131-8131-313131313131',
+    }, null, { STRIPE_SECRET_KEY: 'sk_test_recover' }).readStripeSecret).toBe(true);
+
+    const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const button = readFileSync('src/components/quote-builder/StripePaymentButton.tsx', 'utf8');
+    expect(button).toContain('body: { quoteData: stripeQuoteData }');
+    expect(button).not.toContain('paymentType:');
+    expect(payment).toContain('assertQuoteCheckoutAuthenticated(validationResult.data, user)');
+    expect(payment).not.toContain('if (paymentType === "quote" && !user)');
+    const quoteAuthIdx = payment.indexOf('assertQuoteCheckoutAuthenticated(validationResult.data, user)');
+    expect(quoteAuthIdx).toBeGreaterThan(-1);
+    expect(payment.indexOf('const stripeKey = readRequiredStripeSecret(Deno.env);', quoteAuthIdx))
+      .toBeGreaterThan(quoteAuthIdx);
+  });
+
+  it('maps any JSON SyntaxError to 400 Invalid input data and keeps other failures generic 500', () => {
+    const unexpectedToken = new SyntaxError('Unexpected token o in JSON at position 1');
+    const unexpectedEnd = new SyntaxError('Unexpected end of JSON input');
+    const namedSyntax = Object.assign(new Error('is not valid JSON at line 1'), { name: 'SyntaxError' });
+
+    expect(isJsonRequestSyntaxError(unexpectedToken)).toBe(true);
+    expect(isJsonRequestSyntaxError(unexpectedEnd)).toBe(true);
+    expect(isJsonRequestSyntaxError(namedSyntax)).toBe(true);
+    expect(isJsonRequestSyntaxError(new Error('Unexpected end of JSON input'))).toBe(false);
+    expect(isJsonRequestSyntaxError(new TypeError('fetch failed'))).toBe(false);
+
+    expect(mapCreatePaymentCaughtError(unexpectedToken)).toEqual({
+      status: 400,
+      error: 'Invalid input data',
+    });
+    expect(mapCreatePaymentCaughtError(unexpectedEnd)).toEqual({
+      status: 400,
+      error: 'Invalid input data',
+    });
+    expect(mapCreatePaymentCaughtError(namedSyntax)).toEqual({
+      status: 400,
+      error: 'Invalid input data',
+    });
+    expect(mapCreatePaymentCaughtError(new Error('Unexpected end of JSON input'))).toEqual({
+      status: 500,
+      error: 'An error occurred processing your payment. Please try again.',
+    });
+    expect(mapCreatePaymentCaughtError(new Error('STRIPE_SECRET_KEY is not set'))).toEqual({
+      status: 500,
+      error: 'An error occurred processing your payment. Please try again.',
+    });
+    expect(mapCreatePaymentCaughtError(new TypeError('network down'))).toEqual({
+      status: 500,
+      error: 'An error occurred processing your payment. Please try again.',
+    });
+    expect(mapCreatePaymentCaughtError(new Error(QUOTE_CHECKOUT_AUTH_REQUIRED))).toEqual({
+      status: 401,
+      error: 'Authentication required',
+    });
+
+    const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const jsonTry = source.indexOf('rawBody = await req.json();');
+    const syntaxReturn = source.indexOf('isJsonRequestSyntaxError(error)', jsonTry);
+    const mappedCatch = source.indexOf('mapCreatePaymentCaughtError(error)');
+    expect(jsonTry).toBeGreaterThan(-1);
+    expect(syntaxReturn).toBeGreaterThan(jsonTry);
+    expect(source.slice(jsonTry, syntaxReturn + 220)).toContain('Invalid input data');
+    expect(mappedCatch).toBeGreaterThan(syntaxReturn);
+    expect(source).not.toContain('errorMessage.includes("Unexpected end of JSON input")');
   });
 });

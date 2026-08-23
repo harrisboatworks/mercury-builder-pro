@@ -62,7 +62,8 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('if (depositAmount === "100")');
     expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
     expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
-    expect(paymentSource).toContain('Customer identity and address are required');
+    expect(paymentSource).toContain('mapCreatePaymentCaughtError');
+    expect(read('supabase/functions/_shared/deposit-payment-guard.ts')).toContain('Customer identity and address are required');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
     expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
