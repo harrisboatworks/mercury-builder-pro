@@ -181,7 +181,7 @@ Customers can reserve with a refundable deposit:
 
 Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A quick deposit locks it in - you can even use Apple Pay."
 
-Deposits are fully refundable. Balance due at pickup.
+Deposit refunds follow stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. HBW does not pick up or deliver customer boats. Balance due at pickup.
 
 FINANCING:
 Use only the live financing facts below. Do not calculate a monthly payment in voice; the quote builder is authoritative for the selected rate, term, fees, and amount financed.

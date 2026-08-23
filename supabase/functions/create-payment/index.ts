@@ -32,6 +32,10 @@ import {
   stripeCheckoutIdempotencyKey,
   stripeDerivedPaidAt,
 } from "../_shared/deposit-deal-record.ts";
+import {
+  assertDepositPolicyReadyForCheckout,
+  type DepositPolicySnapshot,
+} from "../_shared/deposit-policy.ts";
 import { assertNoCallerDocumentPath } from "../_shared/deposit-email-deliveries.ts";
 import {
   assertCanonicalQuoteDocumentReady,
@@ -510,36 +514,7 @@ serve(async (req) => {
       }, DEPOSIT_PRICES);
 
       let verifiedMotorInfo = requestedMotorInfo || null;
-
-      // This express offer is intentionally bound to the exact 9.9 MH sale
-      // model. Resolve identity from the authoritative row rather than
-      // trusting client-supplied model or horsepower values.
-      if (depositAmount === "100") {
-        if (quoteData?.motorId !== EXPRESS_MOTOR_ID) {
-          throw new Error("Invalid deposit amount for selected motor");
-        }
-
-        const { data: reservationMotor, error: reservationMotorError } = await supabaseService
-          .from("motor_models")
-          .select("model, model_display, horsepower, mercury_model_no, model_number")
-          .eq("id", quoteData.motorId)
-          .single();
-
-        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
-        if (
-          reservationMotorError
-          || !reservationMotor
-          || reservationMotor.horsepower == null
-          || resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER
-        ) {
-          throw new Error("Invalid deposit amount for selected motor");
-        }
-
-        verifiedMotorInfo = {
-          model: reservationMotor.model_display || reservationMotor.model,
-          hp: Number(reservationMotor.horsepower),
-        };
-      }
+      let depositPolicy: DepositPolicySnapshot | null = null;
 
       logStep("Processing deposit payment", { depositAmount, priceId });
 
@@ -570,10 +545,45 @@ serve(async (req) => {
         || !depositIdentitiesMatch(submittedIdentity, storedIdentity)
         || savedQuote.deposit_status !== "pending"
         || Number(savedQuote.deposit_amount) !== Number(depositAmount)
+        || !savedMotorId
         || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
       ) {
         throw new Error("Invalid saved quote for deposit");
       }
+
+      const { data: reservationMotor, error: reservationMotorError } = await supabaseService
+        .from("motor_models")
+        .select("id, model, model_display, horsepower, mercury_model_no, model_number, stock_quantity, in_stock, availability")
+        .eq("id", savedMotorId)
+        .maybeSingle();
+
+      if (depositAmount === "100") {
+        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
+        if (
+          quoteData?.motorId !== EXPRESS_MOTOR_ID
+          || savedMotorId !== EXPRESS_MOTOR_ID
+          || reservationMotorError
+          || !reservationMotor
+          || reservationMotor.horsepower == null
+          || resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER
+        ) {
+          throw new Error("Invalid deposit amount for selected motor");
+        }
+      }
+
+      if (reservationMotorError || !reservationMotor) {
+        throw new Error("Deposit policy cannot be resolved");
+      }
+
+      depositPolicy = assertDepositPolicyReadyForCheckout({
+        savedMotorId,
+        motorRow: reservationMotor,
+        quoteState: savedQuote.quote_state,
+      });
+      verifiedMotorInfo = {
+        model: reservationMotor.model_display || reservationMotor.model,
+        hp: reservationMotor.horsepower == null ? undefined : Number(reservationMotor.horsepower),
+      };
 
       const { data: quoteDocument, error: quoteDocumentError } = await supabaseService
         .storage
@@ -697,6 +707,7 @@ serve(async (req) => {
         quoteSnapshot,
         quoteState: savedQuote.quote_state,
         pricing: depositPricingFromBoundSnapshot(savedQuote.quote_state, quoteSnapshot),
+        depositPolicy,
       });
 
       const persistSelect = "id, payment_status, stripe_checkout_session_id";

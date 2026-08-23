@@ -9,6 +9,7 @@ import confetti from "canvas-confetti";
 import { COMPANY_INFO } from "@/lib/companyInfo";
 
 import { useNoIndex } from '@/hooks/useNoIndex';
+import { DEPOSIT_POLICY_PUBLIC_SUMMARY } from '../../supabase/functions/_shared/deposit-policy';
 interface PaymentVerification {
   verified: boolean;
   paymentStatus: string;
@@ -189,7 +190,6 @@ export default function PaymentSuccess() {
   }
 
   const isDeposit = verification.paymentType === 'motor_deposit';
-  const isMercury99MhReservation = isDeposit && verification.amountPaid === 100;
   const timelineSteps = [
     { icon: CheckCircle, label: "Payment Confirmed", description: isDeposit ? "Your reservation deposit has been processed successfully" : "Your payment has been processed successfully", complete: true },
     isDeposit
@@ -245,9 +245,9 @@ export default function PaymentSuccess() {
             </div>
           </div>
 
-          {isMercury99MhReservation && (
+          {isDeposit && (
             <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 text-sm leading-relaxed text-foreground">
-              <strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
+              {DEPOSIT_POLICY_PUBLIC_SUMMARY}
             </div>
           )}
 

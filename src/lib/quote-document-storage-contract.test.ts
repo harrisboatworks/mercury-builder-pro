@@ -61,7 +61,8 @@ describe('private quote document storage contract', () => {
     expect(mailer).toContain('deriveDepositMailAttachmentKey(savedQuote.id)');
     expect(mailer).toContain('.download(canonicalPath)');
     expect(mailer).toContain('attachments: pdfAttachment');
-    expect(mailer).toContain('Your reservation document is attached to this email as a PDF.');
+    expect(mailer).toContain('createDepositConfirmationEmailHtml');
+    expect(read('supabase/functions/_shared/deposit-email-templates.ts')).toContain('Your reservation document is attached to this email as a PDF.');
     expect(mailer).not.toContain('quoteData.quote_pdf_path');
     expect(mailer).not.toContain('getPublicUrl');
     expect(mailer).not.toContain('This email does not attach a quote PDF.');

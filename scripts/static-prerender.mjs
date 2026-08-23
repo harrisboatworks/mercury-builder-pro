@@ -1733,7 +1733,7 @@ const HOWTO_FAQ_PRERENDER = [
   },
   {
     question: "How do I pay the deposit and final balance?",
-    answer: "Deposit is paid online when you build the quote, between $200 and $1,000 depending on motor HP, fully refundable on stock motors. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
+    answer: "Deposit is paid online when you build the quote, between $200 and $1,000 depending on motor HP, or $100 for the model-specific 9.9 MH offer. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. The deposit does not start a factory order. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
   }
 ];
 
@@ -1780,7 +1780,7 @@ function howToRepowerSchema() {
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Build Your Quote Online", "text": "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly, no forms, no waiting.", "url": `${SITE_URL}/quote/motor-selection` },
           { "@type": "HowToStep", "position": 2, "name": "Confirm Motor & Shaft Fit", "text": "Tell us your boat's make, model, transom height, and capacity plate HP rating. We'll confirm the right Mercury HP, shaft length (15\", 20\", or 25\"), and whether you need Command Thrust for a pontoon or heavy hull." },
-          { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock." },
+          { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Pay the deposit shown on your quote online. The deposit holds the quoted price. It does not start a factory order. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice." },
           { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
           { "@type": "HowToStep", "position": 5, "name": "Professional Install & Rigging", "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons." },
           { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "Every repower is lake-tested on Rice Lake before pickup. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill." },
@@ -3426,7 +3426,7 @@ function mercury99MhSaleFaqs(price, availability) {
     },
     {
       question: 'Is the $100 reservation deposit refundable?',
-      answer: 'Yes. The $100 deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.',
+      answer: 'The $100 reservation changes the deposit amount only. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once Harris Boat Works places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.',
     },
     {
       question: 'Is the Mercury 9.9 MH in stock?',
@@ -4630,7 +4630,7 @@ const REPOWER_PROCESS_FAQS = [
   { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
   { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
-  { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
+  { q: 'How much deposit do you need?', a: 'Standard amounts are $200 portable, $500 mid-range, and $1,000 big-block / Pro XS / Verado. Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.' },
   { q: 'Do you handle the warranty paperwork?', a: 'Yes. We register the Mercury warranty in your name at install, including any active promotional bonus years, and you get the registration confirmation with your pickup paperwork.' },
 ];
 const REPOWER_PROCESS_EXTRA = () => commercialBodyHtml({
@@ -6456,7 +6456,7 @@ function motorMarkdown(m) {
       `- **Quote builder with this motor selected:** ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
       '- **Phone:** +1-905-342-2153',
       '',
-      'The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. The deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, the deposit becomes non-refundable and is credited to the final invoice.',
+      'The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. That offer changes the deposit amount only. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. Once Harris Boat Works places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.',
       '',
       '## Frequently asked questions',
       '',

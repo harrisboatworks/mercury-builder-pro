@@ -540,6 +540,10 @@ describe('deposit create-payment savedQuoteId guard', () => {
       status: 500,
       error: 'Missing or invalid STRIPE_DEPOSIT_PRICE_500',
     });
+    expect(mapCreatePaymentCaughtError(new Error('Deposit policy snapshot is stale'))).toEqual({
+      status: 400,
+      error: 'The reservation terms could not be verified. Please refresh and try again.',
+    });
 
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     const jsonTry = source.indexOf('rawBody = await req.json();');

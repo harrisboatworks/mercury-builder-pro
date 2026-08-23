@@ -1,8 +1,15 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import {
+  createDepositConfirmationEmailHtml,
+  createGrokDealEmailHtml,
+  createInternalDealEmailHtml,
+  customerDepositEmailSubject,
+  hbwDepositEmailSubject,
+} from "../_shared/deposit-email-templates.ts";
+import { readPersistedDepositPolicy } from "../_shared/deposit-policy.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import { authenticatedBrowserCors, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import {
@@ -13,7 +20,6 @@ import {
 } from "../_shared/deposit-identity.ts";
 import { boundSavedQuoteIdFromDeposit } from "../_shared/deposit-deal-record.ts";
 import {
-  adminDealPacketPath,
   assertDeliveryOutboxReady,
   assertNoCallerDocumentPath,
   assertResendApiKeyConfigured,
@@ -22,8 +28,6 @@ import {
   DepositEmailOutboxError,
   deliveriesIndicateFailure,
   deriveDepositMailAttachmentKey,
-  formatStableDepositEmailDate,
-  formatStableDepositEmailTime,
   generateDepositReference,
   reportableDeliveryStatus,
   resendFailureCode,
@@ -101,96 +105,6 @@ function bytesToBase64(bytes: Uint8Array): string {
   return btoa(binary);
 }
 
-function createDepositConfirmationEmail(
-  customerName: string,
-  depositAmount: string,
-  referenceNumber: string,
-  motorLabel: string,
-  paymentId: string,
-  paidAt: string,
-): string {
-  const dateStr = formatStableDepositEmailDate(paidAt);
-
-  const rows: Array<{ label: string; value: string }> = [];
-  if (motorLabel) rows.push({ label: "Motor", value: esc(motorLabel) });
-  rows.push({ label: "Deposit", value: `$${esc(depositAmount)} CAD` });
-  rows.push({ label: "Reference", value: esc(referenceNumber) });
-  if (paymentId && paymentId !== "TEMPLATE-PREVIEW") {
-    rows.push({ label: "Payment ID", value: `<span style="font-family:monospace;font-size:12px;font-weight:500;">${esc(paymentId)}</span>` });
-  }
-  rows.push({ label: "Date", value: esc(dateStr) });
-
-  const motorPhrase = motorLabel ? ` for your ${esc(motorLabel)}` : "";
-  const reservationPolicy = Number(depositAmount) === 100
-    ? `<div style="margin:18px 0 0 0;padding:14px 16px;border:1px solid #d7dee8;background:#f7f4ee;border-radius:6px;color:#1f2430;font-size:14px;line-height:1.55;"><strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.</div>`
-    : "";
-
-  const body = `
-    <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
-    <p style="margin:0 0 14px 0;">We received your reservation deposit${motorPhrase}. Harris Boat Works will confirm availability and ETA with you before any motor is ordered.</p>
-    ${detailsCard(rows)}
-    ${reservationPolicy}
-    <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What happens next</h2>
-    <ol style="margin:0;padding-left:20px;color:#1f2430;">
-      <li style="margin:0 0 8px 0;">We call you within one business day to confirm the exact motor, availability, ETA, and any fit questions.</li>
-      <li style="margin:0 0 8px 0;">After those details are confirmed, we arrange the next step with you.</li>
-      <li style="margin:0 0 8px 0;">Pickup is at our shop in Gores Landing. Please come in person and bring valid government-issued photo ID.</li>
-    </ol>
-    <p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">Your reservation document is attached to this email as a PDF.</p>
-    <p style="margin:22px 0 0 0;">Questions? Reply to this email or call us at <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
-    <p style="margin:16px 0 0 0;">Thanks for choosing Harris Boat Works.</p>
-  `;
-
-  return buildEmail({
-    preheader: `Reservation deposit received. HBW will confirm ${motorLabel || "the motor"} and ETA.`,
-    heading: "Your reservation deposit is confirmed",
-    bodyHtml: body,
-    footerNote: "Pickup is in person at our Gores Landing shop. Please bring valid photo ID.",
-  });
-}
-
-function createInternalDealEmail(
-  customerName: string,
-  customerEmail: string,
-  customerPhone: string,
-  customerAddress: string,
-  depositAmount: string,
-  referenceNumber: string,
-  paymentId: string,
-  sessionId: string,
-  savedQuoteId: string,
-  motorInfo?: { model?: string; hp?: number; year?: number },
-  paidAt?: string,
-): string {
-  const now = formatStableDepositEmailTime(paidAt || "1970-01-01T00:00:00.000Z");
-  const motorLine = getMotorLabel(motorInfo) || "Not specified";
-  const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
-  const adminPath = adminDealPacketPath(savedQuoteId);
-
-  const body = `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
-      <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Customer</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(customerName)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${esc(customerEmail)}" style="color:#0f2a43;">${esc(customerEmail || "Not provided")}</a></td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Phone</td><td style="padding:6px 0;">${customerPhone ? `<a href="tel:${esc(customerPhone)}" style="color:#0f2a43;">${esc(customerPhone)}</a>` : "Not provided"}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;vertical-align:top;">Address</td><td style="padding:6px 0;color:#1f2430;white-space:pre-line;">${esc(customerAddress || "Not provided")}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(motorLine)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Deposit</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${esc(depositAmount)} CAD</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Reference</td><td style="padding:6px 0;color:#1f2430;">${esc(referenceNumber)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Stripe</td><td style="padding:6px 0;font-family:monospace;font-size:12px;color:#1f2430;">${esc(paymentId || sessionId || "N/A")}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Time</td><td style="padding:6px 0;color:#1f2430;">${esc(now)} ET</td></tr>
-    </table>
-    <p style="margin:14px 0 0 0;font-size:13px;color:#1f2430;">Action: contact customer within 24 hours to confirm rigging and schedule pickup or install.</p>
-    <p style="margin:10px 0 0 0;font-size:12px;color:#6b7280;">Open this exact deal: <a href="${appUrl}${adminPath}" style="color:#0f2a43;">${appUrl}${adminPath}</a></p>
-  `;
-
-  return buildAdminEmail({
-    preheader: `${customerName} - ${motorLine} - $${depositAmount}`,
-    heading: `${customerName} - ${motorLine} - $${depositAmount}`,
-    bodyHtml: body,
-    tag: "Deposit",
-  });
-}
-
 async function authorizeMailer(
   req: Request,
   corsHeaders: Record<string, string>,
@@ -258,18 +172,24 @@ serve(async (req) => {
       if (!customerName || !depositAmount) {
         throw new Error("Incomplete payment notification data");
       }
-      const adminHtml = createInternalDealEmail(
+      const adminHtml = createInternalDealEmailHtml({
         customerName,
-        "",
-        typeof requestBody.customerPhone === "string" ? requestBody.customerPhone : "",
-        "",
+        customerEmail: "",
+        customerPhone: typeof requestBody.customerPhone === "string" ? requestBody.customerPhone : "",
+        customerAddress: "",
         depositAmount,
-        generateReferenceNumber(paymentId),
+        quoteTotal: null,
+        remainingBalance: null,
+        referenceNumber: generateReferenceNumber(paymentId),
         paymentId,
-        "",
-        "",
-        motorInfo,
-      );
+        sessionId: "",
+        savedQuoteId: "",
+        customerQuoteId: "",
+        motorLabel: getMotorLabel(motorInfo),
+        paidAt: "1970-01-01T00:00:00.000Z",
+        policy: null,
+        appUrl: Deno.env.get("APP_URL") || "https://mercuryrepower.ca",
+      });
       const adminRecipients = resolveDepositAudienceRecipients({
         customerEmail: "",
         adminEmails: ADMIN_EMAILS,
@@ -279,7 +199,7 @@ serve(async (req) => {
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: adminRecipients.hbw,
-        subject: `[DEPOSIT] ${customerName} - ${getMotorLabel(motorInfo) || "motor"} - $${depositAmount}`,
+        subject: hbwDepositEmailSubject(customerName, getMotorLabel(motorInfo), depositAmount),
         html: adminHtml,
       });
       if (adminResponse.error) {
@@ -534,32 +454,45 @@ serve(async (req) => {
       env: stagingMailerEnv(),
     });
 
-    const customerHtml = createDepositConfirmationEmail(
-      customerName, depositAmount, referenceNumber, motorLabel, paymentId || "", paidAt,
-    );
-    const internalHtml = createInternalDealEmail(
+    const depositPolicy = readPersistedDepositPolicy(quoteData);
+    const quoteTotal = depositRecord.final_price ?? depositRecord.total_cost ?? null;
+    const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+    const customerHtml = createDepositConfirmationEmailHtml({
+      customerName,
+      depositAmount,
+      referenceNumber,
+      motorLabel,
+      paidAt,
+      policy: depositPolicy,
+    });
+    const internalInput = {
       customerName,
       customerEmail,
       customerPhone,
       customerAddress,
       depositAmount,
+      quoteTotal,
+      remainingBalance: null,
       referenceNumber,
-      paymentId || "",
+      paymentId: paymentId || "",
       sessionId,
-      savedQuote.id,
-      motorInfo,
+      savedQuoteId: savedQuote.id,
+      customerQuoteId: depositRecord.id,
+      motorLabel,
       paidAt,
-    );
-    const internalSubject = `[DEPOSIT] ${customerName} - ${motorLabel || "motor"} - $${depositAmount}`;
+      policy: depositPolicy,
+      appUrl,
+    };
+    const internalHtml = createInternalDealEmailHtml(internalInput);
+    const grokHtml = createGrokDealEmailHtml(internalInput);
+    const internalSubject = hbwDepositEmailSubject(customerName, motorLabel, depositAmount);
 
     if (pendingAudiences.includes("customer") && audienceRecipients.customer[0]) {
       await sendAudience("customer", {
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
         reply_to: audienceRecipients.replyTo,
         to: audienceRecipients.customer,
-        subject: motorLabel
-          ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
-          : `Reservation deposit received | Harris Boat Works`,
+        subject: customerDepositEmailSubject(motorLabel),
         html: customerHtml,
         attachments: pdfAttachment,
       });
@@ -580,7 +513,7 @@ serve(async (req) => {
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: audienceRecipients.grok_bot,
         subject: internalSubject,
-        html: internalHtml,
+        html: grokHtml,
         attachments: pdfAttachment,
       });
     }

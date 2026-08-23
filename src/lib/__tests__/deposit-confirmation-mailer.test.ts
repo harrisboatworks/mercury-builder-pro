@@ -163,10 +163,13 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).toContain('resolveDepositAudienceRecipients');
     expect(mailer).toContain('SUPABASE_URL: Deno.env.get("SUPABASE_URL")');
     expect(mailer).toContain('GROK_BOT_AGENTMAIL');
-    expect(mailer).toContain('adminDealPacketPath(savedQuoteId)');
+    expect(mailer).toContain('createInternalDealEmailHtml');
+    expect(mailer).toContain('createGrokDealEmailHtml');
+    expect(mailer).toContain('customerDepositEmailSubject');
+    expect(readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8')).toContain('adminDealPacketPath(savedQuoteId)');
     expect(mailer).toContain('isAuthorizedInternalRequest(req)');
     expect(mailer).toContain('requireAdmin(req, corsHeaders)');
-    expect(mailer).toContain('Your reservation document is attached to this email as a PDF.');
+    expect(readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8')).toContain('Your reservation document is attached to this email as a PDF.');
     expect(mailer).toContain('throw new DepositEmailOutboxError()');
     expect(mailer).toContain('assertDeliveryOutboxReady(deliveryRows)');
     expect(mailer).toContain('claim_deposit_email_delivery');
@@ -183,13 +186,15 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).not.toContain('bcc:');
     expect(mailer).not.toContain('This email does not attach a quote PDF.');
     const customerQuestions = 'Questions? Reply to this email or call us';
-    const customerTemplate = mailer.slice(
-      mailer.indexOf('function createDepositConfirmationEmail'),
-      mailer.indexOf('function createInternalDealEmail'),
+    const templates = readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8');
+    const customerTemplate = templates.slice(
+      templates.indexOf('export function createDepositConfirmationEmailHtml'),
+      templates.indexOf('export function createInternalDealEmailHtml'),
     );
     expect(customerTemplate.split(customerQuestions)).toHaveLength(2);
-    expect(mailer.split(customerQuestions)).toHaveLength(2);
-    expect(mailer.slice(mailer.indexOf('function createInternalDealEmail'))).not.toContain(customerQuestions);
+    expect(templates.split(customerQuestions)).toHaveLength(2);
+    expect(templates.slice(templates.indexOf('export function createInternalDealEmailHtml'))).not.toContain(customerQuestions);
+    expect(mailer).not.toContain(customerQuestions);
     expect(sendBody.indexOf('reportableDeliveryStatus({ completed, persistError: completeError })'))
       .toBeLessThan(sendBody.indexOf('results[audience] = "sent"'));
     expect(mailer).toContain('resolveDepositMailContact');

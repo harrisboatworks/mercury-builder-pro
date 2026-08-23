@@ -8,6 +8,7 @@ import {
   type QuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
 import { getRecommendedDeposit } from '@/lib/deposit';
+import type { DepositPolicySnapshot } from '../../supabase/functions/_shared/deposit-policy';
 import { Buffer as BrowserBuffer } from 'buffer';
 
 export interface ReactPdfQuoteData {
@@ -68,6 +69,7 @@ export interface ReactPdfQuoteData {
   financingRate?: number;
   savedQuoteQrCode?: string;
   recommendedDepositAmount?: number;
+  depositPolicySnapshot?: DepositPolicySnapshot | null;
   reservationRequiresConfirmation?: boolean;
   promotionalFinancingAlternative?: {
     rate: number;
@@ -237,7 +239,9 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
     recommendedDepositAmount: data.recommendedDepositAmount
       ?? getRecommendedDeposit(Number(motor.hp || 0)),
-    reservationRequiresConfirmation: data.reservationRequiresConfirmation,
+    depositPolicySnapshot: data.depositPolicySnapshot ?? null,
+    reservationRequiresConfirmation: data.reservationRequiresConfirmation
+      ?? data.depositPolicySnapshot?.policyCode === 'special_order_until_written_approval',
     promotionalFinancingAlternative: data.promotionalFinancingAlternative,
     googleRating: data.googleRating,
     googleReviewCount: data.googleReviewCount,

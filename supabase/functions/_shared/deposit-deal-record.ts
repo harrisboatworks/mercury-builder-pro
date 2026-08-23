@@ -6,6 +6,10 @@ import {
   DEPOSIT_OUTBOX_SCHEMA_KEY,
   DEPOSIT_OUTBOX_SCHEMA_VERSION,
 } from "./deposit-email-deliveries.ts";
+import {
+  DEPOSIT_POLICY_QUOTE_DATA_KEY,
+  type DepositPolicySnapshot,
+} from "./deposit-policy.ts";
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -167,6 +171,7 @@ export function buildDepositCustomerQuoteRow(options: {
   quoteSnapshot?: unknown;
   quoteState?: unknown;
   pricing: DepositPricingFields;
+  depositPolicy?: DepositPolicySnapshot | null;
 }): Record<string, unknown> {
   return {
     ...customerQuoteIdentityColumns(options.identity),
@@ -189,6 +194,7 @@ export function buildDepositCustomerQuoteRow(options: {
       saved_quote_id: options.savedQuoteId,
       motor_info: options.motorInfo || null,
       ...(options.quoteSnapshot ? { quote_snapshot: options.quoteSnapshot } : {}),
+      ...(options.depositPolicy ? { [DEPOSIT_POLICY_QUOTE_DATA_KEY]: options.depositPolicy } : {}),
     },
   };
 }

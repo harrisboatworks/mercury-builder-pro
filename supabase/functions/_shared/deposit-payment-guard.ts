@@ -135,6 +135,9 @@ export function mapCreatePaymentCaughtError(error: unknown): { status: number; e
   if (errorMessage.includes("Invalid saved quote")) {
     return { status: 400, error: "The saved quote could not be verified. Please refresh and try again." };
   }
+  if (errorMessage.includes("Deposit policy")) {
+    return { status: 400, error: "The reservation terms could not be verified. Please refresh and try again." };
+  }
   if (errorMessage.includes("Invalid quote snapshot")) {
     return { status: 400, error: "Invalid quote data" };
   }

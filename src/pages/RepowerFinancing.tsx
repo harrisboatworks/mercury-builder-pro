@@ -37,7 +37,7 @@ export default function RepowerFinancing() {
         ],
         footnote: (
           <>
-            For model 1A10201LK, the $100 deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors follow the terms shown in the written quote.
+            Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. The $100 9.9 MH offer changes the deposit amount only.
           </>
         ),
       }}
@@ -68,7 +68,7 @@ export default function RepowerFinancing() {
         {
           question: 'What deposit do I need?',
           answer:
-            'Standard deposits are tiered by horsepower: $200 for portable motors (2.5 to 6 HP), $500 for mid-range HP (9.9 to 115 HP), and $1,000 for big-block, Pro XS, or Verado (115 HP and up). The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. It is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors follow the terms shown in the written quote.',
+            'Standard deposits are tiered by horsepower: $200 for portable motors (2.5 to 6 HP), $500 for mid-range HP (9.9 to 115 HP), and $1,000 for big-block, Pro XS, or Verado (115 HP and up). The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.',
         },
         {
           question: 'Will financing affect my Mercury warranty?',
@@ -113,7 +113,7 @@ export default function RepowerFinancing() {
           <p><em>Illustrative only.</em> A $15,000 repower financed over 60 months at current tier-1 rates lands in the mid-$200s to low-$300s per month, depending on exact rate and any optional add-ons. For your real number, build the quote. OAC disclaimer: rates and terms are illustrative; actual rate, term, and approval depend on lender review.</p>
 
           <h3>What deposit do I need?</h3>
-          <p>Standard deposits are tiered by horsepower: $200 portable (2.5 to 6 HP), $500 mid-range (9.9 to 115 HP), and $1,000 big-block / Pro XS / Verado (115 HP and up). The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. It is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors follow the terms shown in the written quote.</p>
+          <p>Standard deposits are tiered by horsepower: $200 portable (2.5 to 6 HP), $500 mid-range (9.9 to 115 HP), and $1,000 big-block / Pro XS / Verado (115 HP and up). The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.</p>
 
           <h3>How long are typical loan terms?</h3>
           <p>36 to 48 months for smaller jobs and quick payoff. 60 months is the sweet spot for most mid-HP and Pro XS jobs. 72 to 84 months for big-block and Pro XS where the customer wants to keep cash free.</p>

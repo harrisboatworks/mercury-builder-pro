@@ -460,8 +460,11 @@ Customers can secure their motor with a refundable deposit:
 - Standard credit/debit card
 
 ### Reservation Policies:
-- Deposit is fully refundable
-- Holds the motor and locks current pricing
+- Refundability follows stock status, not the deposit amount
+- If the motor is in stock, the deposit is refundable
+- If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice
+- Nothing is ordered before that confirmation and written approval
+- HBW does not pick up or deliver customer boats
 - Balance due at in-person pickup
 - Confirmation email sent immediately
 

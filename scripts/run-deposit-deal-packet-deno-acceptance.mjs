@@ -16,6 +16,8 @@ const files = [
   "supabase/functions/_shared/deposit-identity.ts",
   "supabase/functions/_shared/deposit-payment-guard.ts",
   "supabase/functions/_shared/deposit-staging-guard.ts",
+  "supabase/functions/_shared/deposit-policy.ts",
+  "supabase/functions/_shared/deposit-email-templates.ts",
 ];
 
 const result = spawnSync("npx", [

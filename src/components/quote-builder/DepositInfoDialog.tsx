@@ -12,6 +12,7 @@ import {
   safeParseDepositIdentity,
   type DepositIdentity,
 } from '@/lib/deposit-identity';
+import { DEPOSIT_POLICY_PUBLIC_SUMMARY } from '../../../supabase/functions/_shared/deposit-policy';
 
 export interface DepositCustomerInfo {
   name: string;
@@ -30,6 +31,7 @@ interface DepositInfoDialogProps {
   onOpenChange: (open: boolean) => void;
   onSubmit: (info: DepositCustomerInfo) => void;
   depositAmount: number;
+  policyText?: string;
   defaultValues?: Partial<DepositCustomerInfo>;
   isProcessing?: boolean;
 }
@@ -49,7 +51,7 @@ function toCustomerInfo(identity: DepositIdentity): DepositCustomerInfo {
 }
 
 export function DepositInfoDialog({
-  open, onOpenChange, onSubmit, depositAmount, defaultValues, isProcessing
+  open, onOpenChange, onSubmit, depositAmount, policyText, defaultValues, isProcessing
 }: DepositInfoDialogProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -120,9 +122,7 @@ export function DepositInfoDialog({
 
         <div className="space-y-4 py-2">
           <p className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-3 text-sm leading-relaxed text-repower-navy-900/75">
-            {depositAmount === 100
-              ? 'Your $100 deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.'
-              : 'HBW confirms the exact motor and quote details with you before anything is ordered.'}
+            {policyText || DEPOSIT_POLICY_PUBLIC_SUMMARY} HBW confirms the exact motor and quote details with you before anything is ordered.
           </p>
           <div className="space-y-1.5">
             <Label htmlFor="deposit-name">Full name <RequiredMark /></Label>

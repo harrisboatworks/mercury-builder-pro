@@ -12,6 +12,7 @@ export interface BuildEmailOptions {
   ctaUrl?: string;
   footerNote?: string;
   unsubscribeUrl?: string;
+  transactionalFooter?: boolean;
 }
 
 const NAVY = "#0f2a43";
@@ -79,6 +80,18 @@ export function buildEmail(opts: BuildEmailOptions): string {
   const footerNote = opts.footerNote
     ? `<p style="margin:0 0 18px 0;font-family:${SANS};font-size:13px;line-height:1.65;color:#cbd5e1;text-align:center;">${esc(opts.footerNote)}</p>`
     : "";
+  const marketingNav = opts.transactionalFooter
+    ? `<p style="margin:0 0 14px 0;font-family:${SANS};font-size:11px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;color:#94a3b8;text-align:center;">
+          <a href="https://www.mercuryrepower.ca/contact" style="color:#cbd5e1;text-decoration:none;">Contact</a>
+        </p>`
+    : `<p style="margin:0 0 14px 0;font-family:${SANS};font-size:11px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;color:#94a3b8;text-align:center;">
+          <a href="https://www.mercuryrepower.ca/quote-builder" style="color:#cbd5e1;text-decoration:none;">Build a Quote</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.mercuryrepower.ca/pricing-reference" style="color:#cbd5e1;text-decoration:none;">Pricing</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.mercuryrepower.ca/contact" style="color:#cbd5e1;text-decoration:none;">Contact</a>
+        </p>
+        <p style="margin:14px 0 0 0;font-family:${SERIF};font-style:italic;font-size:12px;line-height:1.5;color:#94a3b8;text-align:center;">Family-owned on Rice Lake since 1947. Mercury dealer since 1965.</p>`;
   const cta = opts.ctaText && opts.ctaUrl ? ctaButton(opts.ctaUrl, opts.ctaText) : "";
   const unsubscribe = opts.unsubscribeUrl
     ? `<p style="margin:16px 0 0 0;font-family:${SANS};font-size:11px;line-height:1.5;color:#94a3b8;text-align:center;"><a href="${esc(opts.unsubscribeUrl)}" style="color:#94a3b8;text-decoration:underline;">Unsubscribe</a></p>`
@@ -138,14 +151,7 @@ export function buildEmail(opts: BuildEmailOptions): string {
           &nbsp;&middot;&nbsp;
           <a href="mailto:info@harrisboatworks.ca" style="color:#cbd5e1;text-decoration:none;">info@harrisboatworks.ca</a>
         </p>
-        <p style="margin:0 0 14px 0;font-family:${SANS};font-size:11px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;color:#94a3b8;text-align:center;">
-          <a href="https://www.mercuryrepower.ca/quote-builder" style="color:#cbd5e1;text-decoration:none;">Build a Quote</a>
-          &nbsp;&middot;&nbsp;
-          <a href="https://www.mercuryrepower.ca/pricing-reference" style="color:#cbd5e1;text-decoration:none;">Pricing</a>
-          &nbsp;&middot;&nbsp;
-          <a href="https://www.mercuryrepower.ca/contact" style="color:#cbd5e1;text-decoration:none;">Contact</a>
-        </p>
-        <p style="margin:14px 0 0 0;font-family:${SERIF};font-style:italic;font-size:12px;line-height:1.5;color:#94a3b8;text-align:center;">Family-owned on Rice Lake since 1947. Mercury dealer since 1965.</p>
+        ${marketingNav}
         ${unsubscribe}
       </td></tr>
     </table>
