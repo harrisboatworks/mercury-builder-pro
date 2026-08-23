@@ -115,7 +115,7 @@ BEGIN
   IF p_claim_token IS NULL THEN
     RAISE EXCEPTION 'claim token is required';
   END IF;
-  lease_seconds := pg_catalog.greatest(pg_catalog.coalesce(p_lease_seconds, 120), 15);
+  lease_seconds := GREATEST(COALESCE(p_lease_seconds, 120), 15);
 
   UPDATE public.deposit_email_deliveries AS d
   SET
@@ -157,7 +157,7 @@ BEGIN
   UPDATE public.deposit_email_deliveries AS d
   SET
     status = 'sent',
-    provider_id = pg_catalog.nullif(p_provider_id, ''),
+    provider_id = NULLIF(p_provider_id, ''),
     last_error = NULL,
     sent_at = pg_catalog.now(),
     claim_token = NULL,
@@ -190,7 +190,7 @@ BEGIN
   UPDATE public.deposit_email_deliveries AS d
   SET
     status = 'failed',
-    last_error = pg_catalog.left(pg_catalog.coalesce(pg_catalog.nullif(p_last_error, ''), 'delivery_failed'), 180),
+    last_error = pg_catalog.left(COALESCE(NULLIF(p_last_error, ''), 'delivery_failed'), 180),
     sent_at = NULL,
     claim_token = NULL,
     claim_expires_at = NULL,

@@ -21,7 +21,7 @@ import {
   seedOutbox,
   simulateConcurrentClaims,
   triggerHelperExecuteAllows,
-} from '@/lib/deposit-deal-packet-acceptance';
+} from './helpers/deposit-deal-packet-acceptance';
 import { deriveDepositMailAttachmentKey } from '../../../supabase/functions/_shared/deposit-email-deliveries.ts';
 
 const migration = readFileSync('supabase/migrations/20260823120000_deposit_deal_packet.sql', 'utf8');

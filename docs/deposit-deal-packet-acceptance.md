@@ -2,77 +2,79 @@
 
 PR 371, isolated worktree `mercury-deposit-recovery-main-5406efd`, branch `cursor/deposit-deal-packet-20260823`.
 
-Feature HEAD before this harness: `0696eb91f650382290bcc48fa63d69189fd36efd` (`feat: complete deposit deal packets`). This document is the acceptance artifact for the harness added on top of that commit.
+Feature HEAD: `0696eb91f650382290bcc48fa63d69189fd36efd`. First harness commit: `b90f6e6818d5a7da2635d2a4f27bd0ba1aeb2863`. This document is the acceptance artifact after closing the local PostgreSQL and Deno gates.
 
-Live I/O: none. Synthetic fixtures only (`ada@example.com`, quote `11111111-1111-4111-8111-111111111111`, deal `22222222-2222-4222-8222-222222222222`). No Stripe sessions, Resend sends, SMS, or remote Supabase mutations.
+Live I/O: none. Synthetic fixtures only (`ada@example.com`, quote `11111111-1111-4111-8111-111111111111`, deal `22222222-2222-4222-8222-222222222222`). No Stripe sessions, Resend sends, SMS, or remote Supabase mutations. The PostgreSQL cluster is created under `.tmp/deposit-deal-packet-pg`, listens on `127.0.0.1:55432`, and is deleted on exit. Homebrew's default datadir is never started.
 
 ## How to reproduce
 
 ```bash
+npm run test:deposit-acceptance:all
+# equivalent:
 node scripts/run-deposit-deal-packet-acceptance.mjs
-# same focused suite:
+
+# individual gates
 npm run test:deposit-acceptance
+npm run test:deposit-acceptance:pg
+npm run test:deposit-acceptance:deno
 npx tsc -p tsconfig.app.json --noEmit
 npm run build:dev
 git diff --check
 npm test
+cmp -s src/lib/deposit-identity.ts supabase/functions/_shared/deposit-identity.ts
+node scripts/scan-deposit-deal-packet-secrets.mjs
 ```
 
-`npm run test:deposit-acceptance` runs these 12 files:
+`npm run test:deposit-acceptance` runs the same 12 Vitest files as before. The large helper now lives at `src/lib/__tests__/helpers/deposit-deal-packet-acceptance.ts` and is not imported by production app code.
 
-- `src/lib/__tests__/deposit-deal-packet-acceptance.test.ts`
-- `src/lib/__tests__/deposit-deal-packet-migration.test.ts`
-- `src/lib/__tests__/deposit-authority-plan.test.ts`
-- `src/lib/__tests__/deposit-webhook-deal-packet.test.ts`
-- `src/lib/__tests__/deposit-payment-guard.test.ts`
-- `src/lib/__tests__/deposit-confirmation-mailer.test.ts`
-- `src/lib/__tests__/admin-deal-packet.test.ts`
-- `src/lib/__tests__/deposit-identity.test.ts`
-- `src/lib/__tests__/deposit-historical-backfill.test.ts`
-- `src/lib/quote-document-storage-contract.test.ts`
-- `src/lib/__tests__/quote-document-policy.test.ts`
-- `src/pages/quote/__tests__/quote-funnel-ux-contract.test.ts`
-
-Local Postgres, Docker, Supabase CLI, and Deno are absent on this machine. The suite therefore executes production helpers plus in-memory fakes (`src/lib/deposit-deal-packet-acceptance.ts`) and pins Edge Function / migration source contracts. It does not start a database or Deno runtime.
+The PostgreSQL harness bootstraps only the required roles, `auth` stubs, `app_role` / `has_role`, and pre-migration `saved_quotes` / `customer_quotes` columns, then applies `supabase/migrations/20260823120000_deposit_deal_packet.sql` unmodified.
 
 ## What ran (executable proof)
-
-Recorded on this worktree after the harness landed. All commands used committed/local files only.
 
 | Command | Result |
 | --- | --- |
 | `npx vitest run src/lib/__tests__/deposit-deal-packet-acceptance.test.ts` | **1/1 files, 9/9 tests passed** |
 | `npm run test:deposit-acceptance` | **12/12 files, 105/105 tests passed** |
+| `npm run test:deposit-acceptance:pg` | **47/47 SQL+concurrency assertions passed**, cluster cleaned up |
+| `npm run test:deposit-acceptance:deno` | **exit 0** (Deno 2.9.5 `check` of 3 functions + 4 shared modules) |
+| `node scripts/run-deposit-deal-packet-acceptance.mjs` | **exit 0** |
 | `npm test` | **115 passed + 1 skipped files; 644 passed + 1 skipped tests** |
 | `npx tsc -p tsconfig.app.json --noEmit` | **exit 0** |
 | `npm run build:dev` | **exit 0** |
 | `git diff --check` | **exit 0** |
-| `cmp src/lib/deposit-identity.ts supabase/functions/_shared/deposit-identity.ts` | **IDENTICAL** (`a4762e98608f0e78a1b8735023b51fc98b6f8c39171c7b3f96f8a17b7ce67832`) |
-| `shasum -a 256 package-lock.json` | `ca455d6283a1267fa1a41332bf45d6742da9a25025c40be3479db5640c1d050c` |
+| identity twin | **IDENTICAL** (`a4762e98608f0e78a1b8735023b51fc98b6f8c39171c7b3f96f8a17b7ce67832`) |
+| `node scripts/scan-deposit-deal-packet-secrets.mjs` | **exit 0** |
+| `package-lock.json` SHA-256 | `ca455d6283a1267fa1a41332bf45d6742da9a25025c40be3479db5640c1d050c` |
 
-The one skipped full-suite file/test is pre-existing and unrelated to this feature.
+The skipped full-suite file/test is pre-existing and unrelated.
 
-## Direct evidence (what the suite proves)
+## Passed runtime gates
 
-1. **Customer / HBW / Grok are three separate sends with the same bound attachment.** Fresh-packet stage: three Resend fakes, audiences `customer`, `hbw`, `grok_bot`; three distinct idempotency keys; one `sha256` and one `saved-quotes/{quoteId}/quote.pdf` path; customer `ada@example.com`; HBW `jayharris97@gmail.com` + `info@harrisboatworks.ca`; Grok `hbwbot@agentmail.to`. Mailer source has `attachments: pdfAttachment` and no `bcc:`.
-2. **Idempotency and claim races.** Concurrent claim helper: one winner. Second `service_role` claim on the same audience returns null. Anon/authenticated claim RPC denied.
-3. **Role ACL negative controls.** Anon cannot SELECT deliveries. Non-admin authenticated cannot SELECT. Admin SELECT only. Authenticated cannot INSERT. `service_role` cannot DELETE. Claim RPCs granted only to `service_role`. Nested trigger helpers `deposit_authority_caller` / `deposit_quote_data_authority_changed` are executable by DML roles; `enforce_*` is not GRANTed.
-4. **Non-authority poisoning prevention.** Anon INSERT that sets `payment_status` rejected. Authenticated UPDATE that sets `saved_quote_id` rejected. Authenticated DELETE of a deposit row rejected. `service_role` INSERT of a pending deposit allowed. Admin DELETE allowed.
-5. **No historical auto-send.** Paid row with no `deposit_outbox_schema` marker plans `{ seed: false, invoke: false }`. Historical backfill does not seed deliveries or promote `payment_status` / `deposit_status` from JSON. Migration source has no `INSERT INTO deposit_email_deliveries` and no `SET deposit_status = 'paid'`.
-6. **Explicit recovery validation.** Bound session recovery uses PI `created` (`1755964900`) and writes `payment_status: paid` only for the bound session id. A lost optimistic write against an already-paid reread classifies `already_completed`. Create-payment source uses `stripeDerivedPaidAt` and `classifyOptimisticRecoveryWrite`. Webhook source gates the final notification write with `depositNotificationOutcomeGuard(event.id)`.
-7. **Admin route details.** Packet path is `/admin/quotes/{saved_quotes.id}`. Operational id is the joined `customer_quotes.id`. Paid deposits hide generic quote email (`canRetry` false when all three are `sent`). `AdminQuoteDetail` pins `data-section="email-deliveries"` and the retry copy, and does not write `saved_quotes.quote_data`.
+1. Focused Vitest suite, including three-audience synthetic attachments, in-memory claim races, recovery planner, and historical non-send.
+2. **Local PostgreSQL 17.11** on `127.0.0.1:55432`:
+   - Historical 9.9-style JSON promoted join/session/PI IDs and did **not** promote `payment_status`, `payment_paid_at`, billing, or `deposit_status`.
+   - Migration seeded **zero** `deposit_email_deliveries` rows. An orphan saved-quote UUID was not written to `saved_quote_id`.
+   - Nested helpers `deposit_authority_caller` / `deposit_quote_data_authority_changed` are executable by `anon`, `authenticated`, and `service_role`. Direct EXECUTE on `enforce_*` and claim RPCs is denied to `anon` / `authenticated` / admin JWT.
+   - Real trigger errors: anon INSERT `payment_status`, authenticated deposit INSERT, saved_quote_id UPDATE, quote_data authority UPDATE, and buyer DELETE all raised `42501` with the business messages, not missing-EXECUTE failures.
+   - Delivery table: anon SELECT denied; non-admin SELECT is empty RLS; admin SELECT allowed; authenticated INSERT denied; `service_role` DELETE denied.
+   - Claim RPC: first token wins; second token denied while leased; wrong token cannot complete or fail; correct token marks `sent`; sent rows cannot be reclaimed.
+   - Two concurrent `service_role` sessions: exactly one winner.
+3. **Deno check** of `create-payment`, `stripe-webhook`, `send-deposit-confirmation-email`, `deposit-deal-record.ts`, `deposit-email-deliveries.ts`, `deposit-identity.ts`, and `deposit-payment-guard.ts`.
+4. Identity twin and secret scan of the acceptance surface.
 
-## What could not run (remaining runtime gates)
+## Production fix required by the PostgreSQL gate
 
-Do not treat these as passed. They need a live isolated environment; this worktree must not touch one.
+`claim_deposit_email_delivery` / `complete_deposit_email_delivery` / `fail_deposit_email_delivery` use `SET search_path = pg_catalog`. `COALESCE`, `NULLIF`, and `GREATEST` are SQL constructs, not `pg_catalog.*` functions. Qualified calls aborted the claim RPC at runtime. The migration now uses the keywords. Source tests forbid `pg_catalog.coalesce`, `pg_catalog.nullif`, and `pg_catalog.greatest`.
 
-- Live Postgres trigger / RLS execution (no Docker, psql, or Supabase CLI).
-- Deno Edge Function typecheck (no Deno binary). Do not claim Deno typecheck.
+## Remaining live-provider / authenticated-preview gates
+
+Do not treat these as passed. This worktree must not touch them.
+
 - Signed Stripe webhook against a real endpoint.
 - Live Resend delivery and Grok AgentMail inbox.
 - Live SMS.
-- Authenticated admin browser session against a deployed app.
+- Authenticated admin browser session against a deployed or preview app.
 
 ## Scope and stopping condition
 
-Production code was not changed in this acceptance pass. The only TypeScript fixes were test-harness type errors (`deliveryTableAllows` exhaustiveness and the slim `assertCanonicalPaidQuoteDocument` row). No live environment, customer data, secrets, deploy, merge, or PR-ready state change.
+No live Supabase, Stripe, Resend, SMS, customer data, deploy, push, merge, or PR-ready state change. The Homebrew `postgresql@17` default datadir was not started. No secrets were added.

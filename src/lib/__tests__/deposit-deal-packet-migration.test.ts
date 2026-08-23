@@ -48,6 +48,10 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain('SET search_path = pg_catalog');
     expect(migration).toContain('REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) TO service_role');
+    expect(migration).not.toContain('pg_catalog.coalesce');
+    expect(migration).not.toContain('pg_catalog.nullif');
+    expect(migration).toContain('lease_seconds := GREATEST(COALESCE(p_lease_seconds, 120), 15);');
+    expect(migration).not.toContain('pg_catalog.greatest');
     expect(migration).not.toMatch(/FOR INSERT/);
     expect(migration).not.toMatch(/FOR UPDATE/);
     expect(migration).not.toMatch(/GRANT .* ON TABLE public\.deposit_email_deliveries TO anon/);

@@ -1,3 +1,4 @@
+/** Test-only acceptance world. Not imported by production app code. */
 import {
   adminDealPacketPath,
   canRetryDepositDeliveries,
@@ -21,7 +22,7 @@ import {
   resolveDepositWebhookSmsGate,
   shouldSendFirstClaimSms,
   stripeDerivedPaidAt,
-} from "../../supabase/functions/_shared/deposit-deal-record.ts";
+} from "../../../../supabase/functions/_shared/deposit-deal-record.ts";
 import {
   DEPOSIT_EMAIL_AUDIENCES,
   DEPOSIT_EMAIL_CLAIM_LEASE_SECONDS,
@@ -39,13 +40,13 @@ import {
   simulateConcurrentClaims,
   type DepositEmailAudience,
   type DepositEmailDeliveryRow,
-} from "../../supabase/functions/_shared/deposit-email-deliveries.ts";
-import { GROK_BOT_AGENTMAIL } from "../../supabase/functions/_shared/grok-email-routing.ts";
+} from "../../../../supabase/functions/_shared/deposit-email-deliveries.ts";
+import { GROK_BOT_AGENTMAIL } from "../../../../supabase/functions/_shared/grok-email-routing.ts";
 import {
   assertCanonicalPaidQuoteDocument,
   canonicalQuoteDocumentPath,
   sha256Hex,
-} from "../../supabase/functions/_shared/quote-document-policy.ts";
+} from "../../../../supabase/functions/_shared/quote-document-policy.ts";
 
 export const ACCEPTANCE_QUOTE_ID = "11111111-1111-4111-8111-111111111111";
 export const ACCEPTANCE_DEAL_ID = "22222222-2222-4222-8222-222222222222";
