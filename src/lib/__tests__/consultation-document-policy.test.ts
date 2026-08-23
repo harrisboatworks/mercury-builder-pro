@@ -17,6 +17,9 @@ import {
   parseConsultationUploadMeta,
   parseDurableDocumentAccessUrl,
   parseFragmentToken,
+  CONSULTATION_UPLOAD_UNAVAILABLE_ERROR,
+  CONSULTATION_UPLOAD_UNAVAILABLE_STATUS,
+  consultationMultipartUploadRejection,
 } from '../../../supabase/functions/_shared/consultation-document-policy.ts';
 import {
   CONSULTATION_ATTACHMENT_STATEMENT,
@@ -78,6 +81,26 @@ function multipartBody(parts: Array<{ name: string; type?: string; value: string
 }
 
 describe('consultation document policy', () => {
+  it('fails closed on every multipart upload content type before any persistence', () => {
+    expect(consultationMultipartUploadRejection('multipart/form-data; boundary=abc')).toEqual({
+      status: CONSULTATION_UPLOAD_UNAVAILABLE_STATUS,
+      body: { error: CONSULTATION_UPLOAD_UNAVAILABLE_ERROR },
+    });
+    expect(consultationMultipartUploadRejection('Multipart/Form-Data')).toEqual({
+      status: 403,
+      body: { error: 'Consultation document upload is unavailable' },
+    });
+    expect(consultationMultipartUploadRejection('multipart/mixed')).toEqual({
+      status: 403,
+      body: { error: CONSULTATION_UPLOAD_UNAVAILABLE_ERROR },
+    });
+    expect(consultationMultipartUploadRejection('application/json')).toBeNull();
+    expect(consultationMultipartUploadRejection('application/json; charset=utf-8')).toBeNull();
+    expect(consultationMultipartUploadRejection(null)).toBeNull();
+    expect(consultationMultipartUploadRejection(undefined)).toBeNull();
+    expect(CONSULTATION_UPLOAD_UNAVAILABLE_STATUS).toBe(403);
+  });
+
   it('derives only the canonical server key', () => {
     expect(canonicalConsultationDocumentPath(DOCUMENT_ID)).toBe(`consultation/${DOCUMENT_ID}/quote.pdf`);
     expect(() => canonicalConsultationDocumentPath('../victim/quote.pdf')).toThrow(ConsultationDocumentRequestError);

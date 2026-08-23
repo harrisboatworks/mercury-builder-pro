@@ -12,13 +12,12 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
-import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { useQuote } from '@/contexts/QuoteContext';
-import { uploadConsultationDocument } from '@/lib/consultation-document-client';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -40,8 +39,6 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSendingEmail, setIsSendingEmail] = useState(false);
-  const [isSendingText, setIsSendingText] = useState(false);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
   const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
 
@@ -331,64 +328,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
       }
 
-      // 2. Deliver the private consultation document and quote email.
-      try {
-        if (!quoteId) {
-          throw new Error('Customer quote is required');
-        }
-        const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-        const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
-          name: sanitizedContactInfo.name,
-          email: sanitizedContactInfo.email,
-          phone: sanitizedContactInfo.phone,
-        }));
-        await uploadConsultationDocument({
-          flow: 'submit',
-          quoteNumber,
-          customerName: sanitizedContactInfo.name,
-          customerEmail: sanitizedContactInfo.email,
-          customerPhone: sanitizedContactInfo.phone,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          customerQuoteId: quoteId,
-        }, pdfBlob);
-      } catch (error) {
-        console.error('Consultation document delivery failed', error instanceof Error ? error.name : 'unknown');
-      }
-
-      // 3. Send SMS confirmation to customer (if they selected text as contact method)
-      console.log('🔍 [NOTIFICATIONS] Step 3: Checking SMS confirmation...');
-      console.log('🔍 [NOTIFICATIONS] Contact method:', sanitizedContactInfo.contactMethod);
-      if (sanitizedContactInfo.contactMethod === 'text') {
-        console.log('🔍 [NOTIFICATIONS] Sending SMS to customer...');
-        try {
-          const smsPayload = {
-            to: sanitizedContactInfo.phone,
-            message: `Hi ${sanitizedContactInfo.name}! Thank you for requesting a Mercury motor quote. We've received your information and will contact you soon to discuss your ${quoteData.motor?.model} quote. - Harris Boat Works`,
-            messageType: 'quote_confirmation'
-          };
-          console.log('🔍 [NOTIFICATIONS] SMS payload:', smsPayload);
-          console.log('🔍 [NOTIFICATIONS] Invoking send-sms edge function...');
-          
-          const { data: smsData, error: smsError } = await supabase.functions.invoke('send-sms', {
-            body: smsPayload
-          });
-          
-          if (smsError) {
-            console.error('❌ [NOTIFICATIONS] SMS error object:', smsError);
-            throw smsError;
-          }
-          console.log('✅ [NOTIFICATIONS] SMS confirmation sent to customer. Response:', smsData);
-        } catch (error) {
-          console.error('❌ [NOTIFICATIONS] Customer SMS error:', error);
-          console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-          console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
-        }
-      } else {
-        console.log('ℹ️ [NOTIFICATIONS] Skipping customer SMS - contact method is not text');
-      }
-
-      // 4. Send admin notification email
+      // 2. Send admin notification email
       console.log('🔍 [NOTIFICATIONS] Step 4: Sending admin notification email...');
       try {
         const adminEmailPayload = {
@@ -423,7 +363,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         console.error('❌ [NOTIFICATIONS] Admin email failed:', error);
       }
 
-      // 5. Send admin SMS notification
+      // 3. Send admin SMS notification
       console.log('🔍 [NOTIFICATIONS] Step 5: Sending admin SMS notification...');
       try {
         const adminSmsPayload = {
@@ -517,116 +457,6 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     }
   };
 
-  const handleSendByEmail = async () => {
-    if (!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address",
-        variant: "destructive"
-      });
-      return;
-    }
-    const cleanPhone = contactInfo.phone.replace(/\D/g, '');
-    if (cleanPhone.length !== 10) {
-      toast({
-        title: "Invalid Phone",
-        description: "Please enter a valid 10-digit phone number",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsSendingEmail(true);
-    try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
-        name: contactInfo.name || 'Customer',
-        email: contactInfo.email,
-        phone: contactInfo.phone,
-      }));
-      await uploadConsultationDocument({
-        flow: 'send_email',
-        quoteNumber,
-        customerName: contactInfo.name || 'Customer',
-        customerEmail: contactInfo.email,
-        customerPhone: `+1${cleanPhone}`,
-        motorModel: quoteData.motor?.model || 'Mercury Motor',
-        totalPrice: Math.round(totalCashPrice),
-      }, pdfBlob);
-      
-      toast({
-        title: "Quote Sent!",
-        description: `Quote sent to ${contactInfo.email}`
-      });
-    } catch (error) {
-      console.error('Send by email error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send quote. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSendingEmail(false);
-    }
-  };
-
-  const handleSendByText = async () => {
-    if (!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address",
-        variant: "destructive"
-      });
-      return;
-    }
-    const cleanPhone = contactInfo.phone.replace(/\D/g, '');
-    if (cleanPhone.length !== 10) {
-      toast({
-        title: "Invalid Phone",
-        description: "Please enter a valid 10-digit phone number",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsSendingText(true);
-    try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const formattedPhone = `+1${cleanPhone}`;
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfBlob = await generatePDFBlob(buildPdfData(quoteNumber, {
-        name: contactInfo.name || 'Customer',
-        email: contactInfo.email,
-        phone: contactInfo.phone,
-      }));
-      await uploadConsultationDocument({
-        flow: 'send_sms',
-        quoteNumber,
-        customerName: contactInfo.name || 'Customer',
-        customerEmail: contactInfo.email,
-        customerPhone: formattedPhone,
-        motorModel: quoteData.motor?.model || 'Mercury Motor',
-        totalPrice: Math.round(totalCashPrice),
-      }, pdfBlob);
-      
-      toast({
-        title: "Quote Sent!",
-        description: `Quote sent to ${contactInfo.phone}`
-      });
-    } catch (error) {
-      console.error('Send by text error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send quote. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSendingText(false);
-    }
-  };
-
-
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="max-w-2xl mx-auto">
@@ -698,7 +528,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <div className="space-y-2">
               <Label htmlFor="contactMethod" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Preferred Contact Method</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger id="contactMethod" className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
+                <SelectTrigger id="contactMethod" aria-describedby="contact-method-help" className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -707,6 +537,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                   <SelectItem value="text">Text Message</SelectItem>
                 </SelectContent>
               </Select>
+              <p id="contact-method-help" className="text-xs text-muted-foreground font-light">
+                This tells our team how to follow up. Choosing text asks for a later message from a person, not an automated SMS.
+              </p>
             </div>
 
             <div className="space-y-2">
@@ -744,31 +577,16 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
             <details className="border-t border-repower-navy-900/10 pt-5">
               <summary className="cursor-pointer font-sans text-[13px] font-semibold text-repower-navy-900/70 hover:text-repower-navy-900">
-                Want a copy before you submit? <span className="font-normal text-repower-navy-900/50">(optional)</span>
+                Want a PDF on this device? <span className="font-normal text-repower-navy-900/50">(optional)</span>
               </summary>
               <div className="mt-4 space-y-3">
-                <button
-                  type="button"
-                  onClick={handleSendByEmail}
-                  disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <Mail className="w-4 h-4" />
-                  {isSendingEmail ? 'Sending…' : 'Email Me a Copy'}
-                </button>
-                <button
-                  type="button"
-                  onClick={handleSendByText}
-                  disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  {isSendingText ? 'Sending…' : 'Text Me a Copy'}
-                </button>
+                <p className="font-sans text-[13px] leading-relaxed text-repower-navy-900/65">
+                  Download a local copy of this quote. This does not email, text, or store the PDF on Harris Boat Works systems.
+                </p>
                 <button
                   type="button"
                   onClick={generatePDF}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
+                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold"
                 >
                   <Download className="w-4 h-4" />
                   Download PDF

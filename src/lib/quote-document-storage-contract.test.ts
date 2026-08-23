@@ -114,6 +114,6 @@ describe('private quote document storage contract', () => {
 
     expect(consultation).not.toContain(".from('spec-sheets')");
     expect(consultation).not.toContain('getPublicUrl');
-    expect(consultation).toContain("uploadConsultationDocument");
+    expect(consultation).not.toContain("uploadConsultationDocument");
   });
 });

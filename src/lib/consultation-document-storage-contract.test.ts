@@ -4,26 +4,25 @@ import { describe, expect, it } from 'vitest';
 const read = (path: string) => readFileSync(path, 'utf8');
 
 describe('private consultation document storage contract', () => {
-  it('keeps all three consultation flows on the canonical server key', () => {
+  it('closes browser consultation uploads while keeping fragment redemption on the canonical key', () => {
     const consultation = read('src/components/quote-builder/ScheduleConsultation.tsx');
     const client = read('src/lib/consultation-document-client.ts');
     const api = read('supabase/functions/consultation-document-api/index.ts');
     const policy = read('supabase/functions/_shared/consultation-document-policy.ts');
 
-    expect(consultation).toContain("flow: 'submit'");
-    expect(consultation).toContain("flow: 'send_email'");
-    expect(consultation).toContain("flow: 'send_sms'");
-    expect(consultation).toContain('uploadConsultationDocument');
-    expect(consultation).toContain('customerQuoteId: quoteId');
-    expect(client).toContain("form.append('meta'");
-    expect(client).toContain("form.append('pdf'");
+    expect(consultation).not.toContain('uploadConsultationDocument');
+    expect(consultation).not.toContain("flow: 'submit'");
+    expect(consultation).not.toContain("flow: 'send_email'");
+    expect(consultation).not.toContain("flow: 'send_sms'");
+    expect(consultation).not.toContain('customerQuoteId: quoteId');
+    expect(client).not.toContain("form.append('meta'");
+    expect(client).not.toContain("form.append('pdf'");
+    expect(client).not.toContain('uploadConsultationDocument');
     expect(client).toContain("'consultation-document-api'");
-    expect(client).toContain('data?.success !== true');
-    expect(client).toContain("typeof data?.documentId !== 'string'");
     expect(client).toContain("action: 'redeem'");
-    expect(api).toContain("canonicalConsultationDocumentPath(documentId)");
+    expect(api).toContain('consultationMultipartUploadRejection');
     expect(api).toContain("CONSULTATION_DOCUMENTS_BUCKET");
-    expect(api).toContain("{ success: true, documentId }");
+    expect(api).not.toContain("{ success: true, documentId }");
     expect(policy).toContain('consultation/${parseConsultationDocumentId(documentId)}/quote.pdf');
     expect(api).not.toMatch(/jsonResponse\(req,\s*\{[^}]*token/s);
     expect(api).not.toMatch(/jsonResponse\(req,\s*\{[^}]*storage_key/s);
@@ -51,12 +50,11 @@ describe('private consultation document storage contract', () => {
     expect(sms).toContain('assertTokenSafeSmsLog');
     expect(sms).toContain('message: logMessage');
     expect(sms).not.toContain("console.log('SMS request:', smsData)");
-    expect(consultation.match(/invoke\('send-sms'/g)?.length ?? 0).toBe(2);
-
-    const sendByText = consultation.slice(consultation.indexOf('const handleSendByText'));
-    expect(sendByText).toContain("flow: 'send_sms'");
-    expect(sendByText).not.toContain("invoke('send-sms'");
-    expect(sendByText).not.toContain('publicUrl');
+    expect(consultation.match(/invoke\('send-sms'/g)?.length ?? 0).toBe(1);
+    expect(consultation).toContain("to: '+19053766208'");
+    expect(consultation).not.toContain("messageType: 'quote_confirmation'");
+    expect(consultation).not.toContain('handleSendByText');
+    expect(consultation).not.toContain("flow: 'send_sms'");
   });
 
   it('redeems fragment tokens by POST only and fail-closes rate-limit outages', () => {

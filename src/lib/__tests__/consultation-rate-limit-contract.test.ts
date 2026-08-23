@@ -65,7 +65,6 @@ describe('consultation rate-limit call-site contract', () => {
     const sms = read('supabase/functions/send-sms/index.ts');
     const rateLimit = read('supabase/functions/_shared/rate-limit.ts');
 
-    const upload = extractCheck(api, 'consultation_document_upload_ip');
     const redeemIp = extractCheck(api, 'consultation_document_redeem_ip');
     const redeemToken = extractCheck(api, 'consultation_document_redeem_token');
     const emailIp = extractCheck(mailer, 'send_quote_email_ip');
@@ -73,7 +72,6 @@ describe('consultation rate-limit call-site contract', () => {
     const smsIp = extractCheck(sms, 'send_sms_ip');
     const smsRecipient = extractCheck(sms, 'send_sms_recipient');
 
-    expect(upload).toContain('failClosed: true');
     expect(redeemIp).toContain('failClosed: true');
     expect(redeemToken).toContain('failClosed: true');
     expect(emailIp).toContain('failClosed: isConsultationPath');
@@ -86,13 +84,16 @@ describe('consultation rate-limit call-site contract', () => {
     expect(rateLimit).toContain('failClosed?: boolean');
     expect(rateLimit).toContain('default remains fail-open unless callers opt in');
 
-    const uploadCheck = api.indexOf('consultation_document_upload_ip');
-    const persistCall = api.indexOf('await persistConsultationDocument');
-    expect(uploadCheck).toBeGreaterThan(-1);
-    expect(persistCall).toBeGreaterThan(uploadCheck);
-    expect(api).toContain('.from("consultation_documents").insert');
-    expect(api).toContain('.upload(storageKey, pdfBytes');
-    expect(api.split('await persistConsultationDocument').length).toBe(2);
+    const uploadClosed = api.indexOf('consultationMultipartUploadRejection');
+    const createClientAt = api.indexOf('createClient(supabaseUrl, serviceRoleKey');
+    const redeemParse = api.indexOf('const { token } = parseConsultationRedeemRequest(body);');
+    expect(uploadClosed).toBeGreaterThan(-1);
+    expect(createClientAt).toBeGreaterThan(uploadClosed);
+    expect(redeemParse).toBeGreaterThan(createClientAt);
+    expect(api).not.toContain('consultation_document_upload_ip');
+    expect(api).not.toContain('persistConsultationDocument');
+    expect(api).not.toContain('.from("consultation_documents").insert');
+    expect(api).not.toContain('.upload(storageKey, pdfBytes');
 
     const emailIpAt = mailer.indexOf("action: 'send_quote_email_ip'");
     const emailRecipientAt = mailer.indexOf("action: 'send_quote_email_recipient'");

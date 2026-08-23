@@ -25,6 +25,20 @@ export const CONSULTATION_META_MAX_BYTES = 4 * 1024;
 export const CONSULTATION_MULTIPART_OVERHEAD_BYTES = 8 * 1024;
 export const CONSULTATION_DOCUMENT_ACCESS_ORIGIN = "https://www.mercuryrepower.ca";
 export const CONSULTATION_DOCUMENT_PATH = "/quote/document";
+export const CONSULTATION_UPLOAD_UNAVAILABLE_STATUS = 403;
+export const CONSULTATION_UPLOAD_UNAVAILABLE_ERROR = "Consultation document upload is unavailable";
+
+export function consultationMultipartUploadRejection(
+  contentType: string | null | undefined,
+): { status: number; body: { error: string } } | null {
+  if ((contentType || "").toLowerCase().startsWith("multipart/")) {
+    return {
+      status: CONSULTATION_UPLOAD_UNAVAILABLE_STATUS,
+      body: { error: CONSULTATION_UPLOAD_UNAVAILABLE_ERROR },
+    };
+  }
+  return null;
+}
 
 export const CONSULTATION_FLOWS = ["submit", "send_email", "send_sms"] as const;
 export type ConsultationFlow = (typeof CONSULTATION_FLOWS)[number];

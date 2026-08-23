@@ -213,6 +213,20 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('Installation is booked only after you approve the quote');
   });
 
+  it('offers only a local PDF download before submit and treats text as later human follow-up', () => {
+    const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
+
+    expect(scheduleSource).toContain('Want a PDF on this device?');
+    expect(scheduleSource).toContain('Download a local copy of this quote. This does not email, text, or store the PDF on Harris Boat Works systems.');
+    expect(scheduleSource).toContain('onClick={generatePDF}');
+    expect(scheduleSource).toContain('downloadPDF');
+    expect(scheduleSource).toContain('Preferred Contact Method');
+    expect(scheduleSource).toContain('<SelectItem value="text">Text Message</SelectItem>');
+    expect(scheduleSource).toContain('Choosing text asks for a later message from a person, not an automated SMS.');
+    expect(scheduleSource).not.toContain('Email Me a Copy');
+    expect(scheduleSource).not.toContain('Text Me a Copy');
+  });
+
   it('explains data use and exposes required quote fields to assistive technology', () => {
     const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
     const reminderSource = read('src/components/quote-builder/PromoReminderModal.tsx');
