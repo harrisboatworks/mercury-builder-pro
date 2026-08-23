@@ -256,8 +256,11 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(supabaseClientIdx).toBeGreaterThan(identityGuardIdx);
     expect(quoteAuthIdx).toBeGreaterThan(supabaseClientIdx);
     expect(stripeSecretIdx).toBeGreaterThan(quoteAuthIdx);
+    const stagingPriceIdx = source.indexOf('resolveDepositStripePriceId(depositAmount,');
     expect(documentCheck).toBeGreaterThan(identityGuardIdx);
+    expect(stagingPriceIdx).toBeGreaterThan(identityGuardIdx);
     expect(depositStripeIdx).toBeGreaterThan(documentCheck);
+    expect(depositStripeIdx).toBeGreaterThan(stagingPriceIdx);
     expect(customersListIdx).toBeGreaterThan(depositStripeIdx);
     expect(checkoutCreateIdx).toBeGreaterThan(customersListIdx);
     expect(source).toContain('if (!depositSavedQuoteId || !submittedIdentity)');
@@ -528,6 +531,14 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(mapCreatePaymentCaughtError(new Error(QUOTE_CHECKOUT_AUTH_REQUIRED))).toEqual({
       status: 401,
       error: 'Authentication required',
+    });
+    expect(mapCreatePaymentCaughtError(new Error('Unsafe deposit staging runtime: runtime_supabase_url_not_production'))).toEqual({
+      status: 500,
+      error: 'Unsafe deposit staging runtime',
+    });
+    expect(mapCreatePaymentCaughtError(new Error('Missing or invalid STRIPE_DEPOSIT_PRICE_500'))).toEqual({
+      status: 500,
+      error: 'Missing or invalid STRIPE_DEPOSIT_PRICE_500',
     });
 
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');

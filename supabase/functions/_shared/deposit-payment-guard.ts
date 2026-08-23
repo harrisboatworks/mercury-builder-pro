@@ -144,5 +144,11 @@ export function mapCreatePaymentCaughtError(error: unknown): { status: number; e
   if (errorMessage.includes("Quote data is required")) {
     return { status: 400, error: "Quote data is required" };
   }
+  if (errorMessage.includes("Unsafe deposit staging runtime")) {
+    return { status: 500, error: "Unsafe deposit staging runtime" };
+  }
+  if (errorMessage.includes("STRIPE_DEPOSIT_PRICE_500")) {
+    return { status: 500, error: "Missing or invalid STRIPE_DEPOSIT_PRICE_500" };
+  }
   return { status: 500, error: "An error occurred processing your payment. Please try again." };
 }

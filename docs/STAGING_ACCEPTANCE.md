@@ -145,7 +145,7 @@ node scripts/run-deposit-deal-packet-staging.mjs --live
 
 ### 1. Isolated project secrets
 
-On the isolated project only: deploy this branch's Edge functions (`create-payment`, `stripe-webhook`, `send-deposit-confirmation-email`, `quote-document-api`). Set `DEPOSIT_STAGING_MODE=1` and the three recipient overrides. Set Stripe **test** secret and webhook secret. Set Resend. Confirm `STRIPE_SECRET_KEY` kind is test. Confirm the project's URL host is not `eutsoqdpjurknjsshxes.supabase.co`.
+On the isolated project only: deploy this branch's Edge functions (`create-payment`, `stripe-webhook`, `send-deposit-confirmation-email`, `quote-document-api`). Set `DEPOSIT_STAGING_MODE=1` and the three recipient overrides. Set Stripe **test** secret and webhook secret. Set Resend. Set `STRIPE_DEPOSIT_PRICE_500` to the isolated test-mode $500 Price ID (name only here; do not commit the value). Confirm `STRIPE_SECRET_KEY` kind is test. Confirm the project's URL host is not `eutsoqdpjurknjsshxes.supabase.co`. Do not set `STRIPE_DEPOSIT_PRICE_500` or `DEPOSIT_STAGING_MODE` on production.
 
 Do **not** replay the repository historical migration chain on a data-less branch. The first historical file (`20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`) alters `public.customer_quotes` before any repository migration creates that table.
 
@@ -256,7 +256,7 @@ Expect `403` `Forbidden origin`.
 
 ### 5. Stripe test-mode deposit
 
-`create-payment` for `$500` uses committed Price `price_1SocofHhVKClVQCpsdCfdG7e`. Before checkout, retrieve that Price with the **test** secret. If it is missing on the test account, stop. Do not create paid live products. Do not use a live secret. The `$100` path is out of scope (requires the express motor catalog).
+Production `create-payment` for `$500` keeps committed Price `price_1SocofHhVKClVQCpsdCfdG7e` and ignores `STRIPE_DEPOSIT_PRICE_500` unless `DEPOSIT_STAGING_MODE` is exactly `1`. Isolated staging with `DEPOSIT_STAGING_MODE=1` first asserts `SUPABASE_URL` is not production, then requires a syntactically valid `STRIPE_DEPOSIT_PRICE_500` for the $500 path only. Other deposit amounts stay on the committed mappings. Missing/invalid override or a production `SUPABASE_URL` fails before Stripe network access. Do not create paid live products. Do not use a live secret. The `$100` path is out of scope (requires the express motor catalog).
 
 ```bash
 curl -sS -D - -o /tmp/deposit-checkout.json \
@@ -371,5 +371,6 @@ Write a machine-readable file (default `.tmp/deposit-deal-packet-staging-evidenc
 | Generated preview Origin on `create-payment` | `403` |
 | Historical paid row without outbox schema | no seed, no mailer |
 | `DEPOSIT_STAGING_MODE` unset | production recipients and SMS unchanged; isolation assertion is inert |
-| `DEPOSIT_STAGING_MODE=1` on production `SUPABASE_URL` | Edge throws `Unsafe deposit staging runtime` before rewrite or SMS skip |
+| `DEPOSIT_STAGING_MODE=1` on production `SUPABASE_URL` | Edge throws `Unsafe deposit staging runtime` before rewrite, SMS skip, or $500 price override |
+| Isolated `STRIPE_DEPOSIT_PRICE_500` | required only when `DEPOSIT_STAGING_MODE=1` for the $500 deposit; ignored in production |
 | Seed against a populated `saved_quotes` / `customer_quotes` | SQLSTATE P0001, zero fixture inserts |

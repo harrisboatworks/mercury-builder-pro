@@ -13,6 +13,7 @@ import {
   mapCreatePaymentCaughtError,
   readRequiredStripeSecret,
 } from "../_shared/deposit-payment-guard.ts";
+import { resolveDepositStripePriceId } from "../_shared/deposit-staging-guard.ts";
 import {
   depositIdentitiesMatch,
   parseDepositIdentity,
@@ -502,6 +503,11 @@ serve(async (req) => {
       if (!depositAmount || !(depositAmount in DEPOSIT_PRICES)) {
         throw new Error(`Invalid deposit amount. Available: ${Object.keys(DEPOSIT_PRICES).join(", ")}`);
       }
+      const priceId = resolveDepositStripePriceId(depositAmount, {
+        DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+        SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+        STRIPE_DEPOSIT_PRICE_500: Deno.env.get("STRIPE_DEPOSIT_PRICE_500"),
+      }, DEPOSIT_PRICES);
 
       let verifiedMotorInfo = requestedMotorInfo || null;
 
@@ -535,7 +541,6 @@ serve(async (req) => {
         };
       }
 
-      const priceId = DEPOSIT_PRICES[depositAmount];
       logStep("Processing deposit payment", { depositAmount, priceId });
 
       const origin = paymentOrigin;

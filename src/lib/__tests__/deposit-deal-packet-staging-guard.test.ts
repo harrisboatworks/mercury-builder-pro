@@ -13,6 +13,9 @@ import {
   assessStagingSafety,
   assertRuntimeStagingIsolation,
   depositStagingModeEnabled,
+  INVALID_STAGING_DEPOSIT_PRICE_500,
+  resolveDepositStripePriceId,
+  STRIPE_DEPOSIT_PRICE_500_KEY,
   shouldSuppressDepositStagingSms,
   isAllowedStagingRecipient,
   isOfficialResendTestAddress,
@@ -375,6 +378,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).not.toContain('If the session can determine project ref');
     expect(runbook).toContain('Follow-up reminder');
     expect(runbook).toContain('ccozickwrpautlxknsjk');
+    expect(runbook).toContain('STRIPE_DEPOSIT_PRICE_500');
+    expect(runbook).toContain('price_1SocofHhVKClVQCpsdCfdG7e');
+    expect(runbook).not.toContain('price_1U7jab');
 
     const live = runDepositStagingAcceptance({
       live: true,
@@ -399,5 +405,78 @@ describe('deposit deal-packet staging guard', () => {
     expect(spawned.stdout).toContain('verdict: PASS');
     expect(spawned.stdout).toContain('runnerCapability: guard_only_no_clients');
     expect(spawned.stdout).not.toContain('networkCalls');
+  });
+
+  it('overrides only the staging $500 deposit price after runtime isolation', () => {
+    const productionCatalog = {
+      '100': null,
+      '200': 'price_1Sspb6HhVKClVQCpaUhCXRnm',
+      '500': 'price_1SocofHhVKClVQCpsdCfdG7e',
+      '1000': 'price_1SocogHhVKClVQCpEDslYPR3',
+      '2500': 'price_1SocoiHhVKClVQCptRAWryya',
+    };
+    const syntheticOverride = 'price_1SyntheticStaging500aa';
+    const productionUrl = `https://${PRODUCTION_SUPABASE_HOSTS[0]}`;
+    const ignoredOverrideEnv = {
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+      SUPABASE_URL: productionUrl,
+    };
+
+    expect(resolveDepositStripePriceId('500', {}, productionCatalog)).toBe(productionCatalog['500']);
+    expect(resolveDepositStripePriceId('500', ignoredOverrideEnv, productionCatalog)).toBe(productionCatalog['500']);
+    expect(resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: 'true',
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+      SUPABASE_URL: isolatedSupabaseUrl,
+    }, productionCatalog)).toBe(productionCatalog['500']);
+    expect(resolveDepositStripePriceId('200', {
+      DEPOSIT_STAGING_MODE: '1',
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+      SUPABASE_URL: isolatedSupabaseUrl,
+    }, productionCatalog)).toBe(productionCatalog['200']);
+    expect(resolveDepositStripePriceId('100', {
+      DEPOSIT_STAGING_MODE: '1',
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+      SUPABASE_URL: isolatedSupabaseUrl,
+    }, productionCatalog)).toBeNull();
+
+    expect(resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: '1',
+      SUPABASE_URL: isolatedSupabaseUrl,
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+    }, productionCatalog)).toBe(syntheticOverride);
+
+    expect(() => resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: '1',
+      SUPABASE_URL: productionUrl,
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: syntheticOverride,
+    }, productionCatalog)).toThrow('Unsafe deposit staging runtime');
+    expect(() => resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: '1',
+      SUPABASE_URL: isolatedSupabaseUrl,
+    }, productionCatalog)).toThrow(INVALID_STAGING_DEPOSIT_PRICE_500);
+    expect(() => resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: '1',
+      SUPABASE_URL: isolatedSupabaseUrl,
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: 'not-a-price',
+    }, productionCatalog)).toThrow(INVALID_STAGING_DEPOSIT_PRICE_500);
+    expect(() => resolveDepositStripePriceId('500', {
+      DEPOSIT_STAGING_MODE: '1',
+      SUPABASE_URL: isolatedSupabaseUrl,
+      [STRIPE_DEPOSIT_PRICE_500_KEY]: 'price_short',
+    }, productionCatalog)).toThrow(INVALID_STAGING_DEPOSIT_PRICE_500);
+
+    const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const envExample = readFileSync('scripts/deposit-deal-packet-staging/env.example', 'utf8');
+    const resolveIdx = payment.indexOf('resolveDepositStripePriceId(depositAmount,');
+    const depositStripeIdx = payment.indexOf('const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });', payment.indexOf('assertCanonicalQuoteDocumentReady({'));
+    expect(payment).toContain('"500": "price_1SocofHhVKClVQCpsdCfdG7e"');
+    expect(resolveIdx).toBeGreaterThan(-1);
+    expect(depositStripeIdx).toBeGreaterThan(resolveIdx);
+    expect(payment.slice(resolveIdx, depositStripeIdx)).toContain('STRIPE_DEPOSIT_PRICE_500');
+    expect(payment.slice(resolveIdx, depositStripeIdx)).not.toContain('stripe.checkout.sessions.create');
+    expect(payment).not.toContain('price_1U7jab');
+    expect(envExample).toContain('# STRIPE_DEPOSIT_PRICE_500=');
+    expect(envExample).not.toContain('price_1U7jab');
   });
 });

@@ -396,3 +396,28 @@ export function assertStagingSafety(env: StagingEnv, inherited: StagingEnv = {})
     throw new Error(`Unsafe staging configuration: ${failed.join(",")}`);
   }
 }
+
+export const STRIPE_DEPOSIT_PRICE_500_KEY = "STRIPE_DEPOSIT_PRICE_500";
+export const INVALID_STAGING_DEPOSIT_PRICE_500 = "Missing or invalid STRIPE_DEPOSIT_PRICE_500";
+
+const STRIPE_PRICE_ID_RE = /^price_[A-Za-z0-9]{14,}$/;
+
+export function isSyntacticallyValidStripePriceId(value: string): boolean {
+  return STRIPE_PRICE_ID_RE.test(value);
+}
+
+export function resolveDepositStripePriceId(
+  depositAmount: string,
+  env: StagingEnv,
+  catalog: Record<string, string | null>,
+): string | null {
+  if (!depositStagingModeEnabled(env) || depositAmount !== "500") {
+    return depositAmount in catalog ? catalog[depositAmount] : null;
+  }
+  assertRuntimeStagingIsolation(env);
+  const override = read(env, STRIPE_DEPOSIT_PRICE_500_KEY);
+  if (!isSyntacticallyValidStripePriceId(override)) {
+    throw new Error(INVALID_STAGING_DEPOSIT_PRICE_500);
+  }
+  return override;
+}
