@@ -61,15 +61,19 @@ Isolated Supabase function secrets (same recipient names plus the project's own 
 
 Vercel **Preview** env, scoped to git branch `cursor/deposit-deal-packet-20260823` only:
 
-- `VITE_SUPABASE_URL` = isolated project URL
-- `VITE_SUPABASE_PUBLISHABLE_KEY` = isolated anon/publishable key
+- `VITE_SUPABASE_URL` = isolated project URL (runtime browser bundle)
+- `VITE_SUPABASE_PUBLISHABLE_KEY` = isolated anon/publishable key (runtime)
+- `BUILD_CONTENT_SUPABASE_URL` = production public catalog URL `https://eutsoqdpjurknjsshxes.supabase.co` (build scripts only)
+- `BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY` = production publishable/anon key (build scripts only; not a service-role key)
 
-Do not change Production or Development Vercel env. Do not point Preview at `eutsoqdpjurknjsshxes`.
+`BUILD_CONTENT_*` must be set together as a matching pair. They are read-only public catalog credentials used by `generate-markdown-twins.mjs`, `static-prerender.mjs`, and `fetch-google-places-data.mjs`. The isolated Preview project has no `motor_models`.
+
+Do not change Production or Development Vercel env. Do not point Preview `VITE_*` at `eutsoqdpjurknjsshxes`.
 
 ## How the existing Vercel PR preview is pointed at the isolated project
 
 1. Create or obtain a **data-less isolated Supabase project** (operator action; this packet does not create it).
-2. In Vercel → mercury-builder-pro → Settings → Environment Variables, add Preview-only `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for this git branch.
+2. In Vercel → mercury-builder-pro → Settings → Environment Variables, add Preview-only `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for this git branch (isolated runtime). Also add Preview-only `BUILD_CONTENT_SUPABASE_URL` and `BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY` as the matching production public catalog pair so build-time `motor_models` reads do not hit the empty isolated schema.
 3. Redeploy the existing PR preview so the browser bundle embeds the isolated URL.
 4. Confirm the preview document is not a production host. Allowed example: `https://mercury-builder-pro-git-cursor-deposit-deal-packet-20260823-hbw.vercel.app`.
 5. Isolated function secret `APP_URL` may be that preview URL. It must not be `https://www.mercuryrepower.ca`.
