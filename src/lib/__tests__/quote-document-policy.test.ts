@@ -5,6 +5,7 @@ import {
   QuoteDocumentConflictError,
   QuoteDocumentRequestError,
   QuoteDocumentUnavailableError,
+  assertCanonicalPaidQuoteDocument,
   assertCanonicalQuoteDocumentReady,
   assertQuoteDocumentPaymentAvailable,
   authorizeQuoteDocumentDownload,
@@ -287,5 +288,29 @@ describe('private quote document policy', () => {
       savedQuoteId: QUOTE_ID,
       object: { bytes, contentType: 'application/octet-stream' },
     })).rejects.toBeInstanceOf(QuoteDocumentUnavailableError);
+  });
+
+  it('reads a paid bound document without weakening the pending-only checkout check', async () => {
+    const bytes = pdfBytes('paid-bound');
+    const sha256 = await sha256Hex(bytes);
+    const paidRow = savedQuote({
+      deposit_status: 'paid',
+      quote_pdf_path: canonicalQuoteDocumentPath(QUOTE_ID),
+      quote_pdf_sha256: sha256,
+    });
+
+    await expect(assertCanonicalPaidQuoteDocument({
+      row: paidRow,
+      savedQuoteId: QUOTE_ID,
+      object: { bytes, contentType: 'application/pdf' },
+    })).resolves.toEqual({
+      path: canonicalQuoteDocumentPath(QUOTE_ID),
+      sha256,
+    });
+
+    expect(() => assertQuoteDocumentPaymentAvailable({
+      row: paidRow,
+      savedQuoteId: QUOTE_ID,
+    })).toThrow(QuoteDocumentUnavailableError);
   });
 });

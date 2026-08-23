@@ -7,13 +7,14 @@ import { SITE_URL } from '@/lib/site';
 
 interface Props {
   quoteId: string;
+  savedQuoteId?: string | null;
   customerName: string;
   customerEmail: string;
   motorModel: string;
   totalPrice: number;
 }
 
-const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, totalPrice }: Props) => {
+const SendQuoteEmail = ({ quoteId, savedQuoteId, customerName, customerEmail, motorModel, totalPrice }: Props) => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const { toast } = useToast();
@@ -28,7 +29,7 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
           quoteNumber: quoteId.slice(0, 8).toUpperCase(),
           motorModel,
           totalPrice,
-          pdfUrl: `${SITE_URL}/quote/saved/${quoteId}`,
+          pdfUrl: `${SITE_URL}/quote/saved/${savedQuoteId || quoteId}`,
           emailType: 'quote_delivery',
           leadData: {
             quoteId,

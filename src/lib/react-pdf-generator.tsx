@@ -16,6 +16,7 @@ export interface ReactPdfQuoteData {
   customerName: string;
   customerEmail: string;
   customerPhone?: string;
+  customerAddress?: string;
   motor?: any;
   package?: {
     name?: string;
@@ -196,6 +197,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     customerName: data.customerName,
     customerEmail: data.customerEmail,
     customerPhone: data.customerPhone || '',
+    customerAddress: data.customerAddress || '',
     customerId: '',
     productName: motor.model || '',
     horsepower: `${motor.hp || 0}HP`,

@@ -271,6 +271,7 @@ export interface QuotePDFProps {
     customerName: string;
     customerEmail: string;
     customerPhone: string;
+    customerAddress?: string;
     productName: string;
     horsepower: string;
     category: string;
@@ -631,6 +632,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Customer</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerName}</Text></View>
               {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Email</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerEmail}</Text></View> : null}
               {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Phone</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerPhone}</Text></View> : null}
+              {quoteData.customerAddress ? quoteData.customerAddress.split('\n').map((line, index) => (
+                <View key={`address-${index}`} style={styles.infoRow}>
+                  <Text style={firstPageInfoLabelStyle}>{index === 0 ? 'Address' : ' '}</Text>
+                  <Text style={firstPageInfoValueStyle}>{line}</Text>
+                </View>
+              )) : null}
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Quote #</Text><Text style={firstPageInfoValueStyle}>{quoteData.quoteNumber}</Text></View>
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Issued</Text><Text style={firstPageInfoValueStyle}>{quoteData.date}</Text></View>
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Valid until</Text><Text style={[...firstPageInfoValueStyle, { fontWeight: 'bold' }]}>{expiry}</Text></View>

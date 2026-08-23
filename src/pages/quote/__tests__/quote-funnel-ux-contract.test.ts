@@ -62,13 +62,13 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('if (depositAmount === "100")');
     expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
     expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
-    expect(paymentSource).toContain('Customer information required for deposit');
+    expect(paymentSource).toContain('Customer identity and address are required');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
     expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
     expect(paymentSource).toContain('const origin = paymentOrigin');
     expect(paymentSource).toContain('action: z.literal("verify")');
-    expect(paymentSource).toContain('phone: z.string().trim().min(7)');
+    expect(paymentSource).toContain('phone: z.string().trim().min(10)');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
     expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
@@ -234,5 +234,8 @@ describe('quote funnel UX contract', () => {
 
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
+    expect(depositSource).toContain('aria-invalid={Boolean(errors.name)}');
+    expect(depositSource).toContain("aria-describedby={errors.addressLine1 ? 'deposit-address-line1-error' : undefined}");
+    expect((depositSource.match(/aria-invalid=\{Boolean\(errors\.\w+\)\}/g) || []).length).toBe(9);
   });
 });

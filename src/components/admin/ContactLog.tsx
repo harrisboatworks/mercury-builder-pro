@@ -50,16 +50,16 @@ const ContactLog = ({ quoteId, customerEmail }: Props) => {
   const handleAdd = async () => {
     if (!newNotes.trim() || !user?.id) return;
     setSaving(true);
-    const { error } = await supabase.from('quote_contact_log').insert({
+    const { data, error } = await supabase.from('quote_contact_log').insert({
       quote_id: quoteId,
       customer_email: customerEmail,
       contact_type: newType,
       notes: newNotes.trim(),
       contacted_by: user.id,
-    } as any);
+    } as any).select('id').maybeSingle();
     
-    if (error) {
-      toast({ title: 'Error', description: 'Failed to save log entry.', variant: 'destructive' });
+    if (error || !data) {
+      toast({ title: 'Error', description: error?.message || 'No contact log row was saved.', variant: 'destructive' });
     } else {
       // Also increment contact_attempts on the quote
       try { await supabase.rpc('increment_contact_attempts' as any, { quote_id: quoteId } as any); } catch {}

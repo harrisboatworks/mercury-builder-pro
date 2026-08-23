@@ -10,6 +10,12 @@ import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySke
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
 import { getExpressReservationDeposit, getRecommendedDeposit } from '@/lib/deposit';
+import {
+  formatDepositAddress,
+  parseDepositIdentity,
+  quoteStateCustomerPatch,
+  savedQuoteIdentityColumns,
+} from '@/lib/deposit-identity';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
@@ -886,6 +892,8 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
+      const identity = parseDepositIdentity(customerInfo);
+      const customerPatch = quoteStateCustomerPatch(identity);
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       const savedQuoteId = crypto.randomUUID();
       const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
@@ -893,38 +901,43 @@ export default function QuoteSummaryPage() {
         resumeTokenEntropy,
         (byte) => byte.toString(16).padStart(2, '0'),
       ).join('')}`;
+      const quoteStateSnapshot = {
+        ...state,
+        ...customerPatch,
+        frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
+        pdfSnapshot,
+      };
       
       const basePdfData = {
         quoteNumber,
-        customerName: customerInfo.name,
-        customerEmail: customerInfo.email,
-        customerPhone: customerInfo.phone,
+        customerName: identity.fullName,
+        customerEmail: identity.email,
+        customerPhone: identity.phone,
+        customerAddress: formatDepositAddress(identity.address),
         snapshot: pdfSnapshot,
         recommendedDepositAmount: depositAmount,
         reservationRequiresConfirmation: isMotorOnlyExpress,
       };
 
-      // A motor reservation must have its durable quote binding before a
-      // customer can be sent to Stripe. Generate the ID client-side so an
-      // anonymous insert does not depend on SELECT permission to return it.
+      // Persist identity/address before the immutable PDF is bound.
       const { error: sqError } = await supabase
         .from('saved_quotes')
         .insert({
           id: savedQuoteId,
-          email: customerInfo.email,
+          email: identity.email,
           resume_token: resumeToken,
-          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          quote_state: quoteStateSnapshot as any,
           user_id: user?.id || null,
           expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
           quote_pdf_path: null,
           deposit_pdf_path: null,
           deposit_status: 'pending',
           deposit_amount: depositAmount,
+          ...savedQuoteIdentityColumns(identity),
         } as any);
       if (sqError) {
         throw new Error('Could not prepare this motor reservation. Please try again.');
       }
-      console.log('Saved quote created for deposit tracking:', savedQuoteId);
 
       // Store the customer document through the server-authorized private
       // document boundary before creating a usable Stripe checkout.
@@ -982,9 +995,15 @@ export default function QuoteSummaryPage() {
           paymentType: 'deposit',
           depositAmount: String(depositAmount),
           customerInfo: {
-            name: customerInfo.name,
-            email: customerInfo.email,
-            phone: customerInfo.phone,
+            name: identity.fullName,
+            email: identity.email,
+            phone: identity.phone,
+            addressLine1: identity.address.addressLine1,
+            addressLine2: identity.address.addressLine2 || '',
+            city: identity.address.city,
+            region: identity.address.region,
+            postalCode: identity.address.postalCode,
+            country: identity.address.country,
           },
           quoteData: {
             motorId: state.motor?.id,
@@ -1012,11 +1031,11 @@ export default function QuoteSummaryPage() {
         return;
       }
       throw new Error('Secure checkout did not return a payment link.');
-    } catch (error: any) {
-      console.error('Deposit error:', error);
+    } catch (error: unknown) {
+      console.error('Deposit error');
       toast({
         title: 'Payment Error',
-        description: error.message || 'Failed to initiate deposit. Please try again.',
+        description: error instanceof Error ? error.message : 'Failed to initiate deposit. Please try again.',
         variant: 'destructive'
       });
     } finally {
