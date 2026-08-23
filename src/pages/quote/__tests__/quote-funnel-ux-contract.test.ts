@@ -68,7 +68,8 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
     expect(paymentSource).toContain('const origin = paymentOrigin');
     expect(paymentSource).toContain('action: z.literal("verify")');
-    expect(paymentSource).toContain('phone: z.string().trim().min(10)');
+    expect(paymentSource).toContain('createPaymentCustomerInfoSchema(z)');
+    expect(paymentSource).toContain('assertDepositRequestReadyForStripe');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
     expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');

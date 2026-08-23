@@ -2,6 +2,10 @@ import {
   customerQuoteIdentityColumns,
   type DepositIdentity,
 } from "./deposit-identity.ts";
+import {
+  DEPOSIT_OUTBOX_SCHEMA_KEY,
+  DEPOSIT_OUTBOX_SCHEMA_VERSION,
+} from "./deposit-email-deliveries.ts";
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -275,6 +279,28 @@ export function depositNotificationOutcomeGuard(eventId: string): {
     notification_status: "processing",
     notification_event_id: eventId,
   };
+}
+
+export function shouldClaimDepositReplayOwnership(options: {
+  alreadyPaid: boolean;
+  hasOutboxSchema: boolean;
+}): boolean {
+  return options.alreadyPaid && options.hasOutboxSchema;
+}
+
+export function depositReplayOwnershipClaimFilter(): Record<string, number> {
+  return {
+    [DEPOSIT_OUTBOX_SCHEMA_KEY]: DEPOSIT_OUTBOX_SCHEMA_VERSION,
+  };
+}
+
+export function depositReplayOwnershipMatches(
+  quoteData: Record<string, unknown> | null | undefined,
+  eventId: string,
+): boolean {
+  const guard = depositNotificationOutcomeGuard(eventId);
+  return quoteData?.notification_status === guard.notification_status
+    && quoteData?.notification_event_id === guard.notification_event_id;
 }
 
 export function classifyNotificationOutcomeWrite(options: {

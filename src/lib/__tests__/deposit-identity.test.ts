@@ -86,6 +86,7 @@ describe('deposit identity contract', () => {
   it('keeps the dialog and create-payment on the same required fields', () => {
     const dialog = readFileSync('src/components/quote-builder/DepositInfoDialog.tsx', 'utf8');
     const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const identity = readFileSync('src/lib/deposit-identity.ts', 'utf8');
     const summary = readFileSync('src/pages/quote/QuoteSummaryPage.tsx', 'utf8');
 
     expect(dialog).toContain('safeParseDepositIdentity');
@@ -107,8 +108,10 @@ describe('deposit identity contract', () => {
     expect((dialog.match(/aria-invalid=\{Boolean\(errors\.\w+\)\}/g) || []).length).toBe(9);
     expect((dialog.match(/aria-describedby=\{errors\.\w+ \? '/g) || []).length).toBe(9);
     expect(payment).toContain('parseDepositIdentity(customerInfo)');
-    expect(payment).toContain('addressLine1: z.string().trim().min(1).max(120)');
-    expect(payment).toContain('digits.length >= 10 && digits.length <= 15');
+    expect(payment).toContain('createPaymentCustomerInfoSchema(z)');
+    expect(payment).toContain('assertDepositRequestReadyForStripe');
+    expect(identity).toContain('MIN_DEPOSIT_PHONE_DIGITS');
+    expect(identity).toContain('MAX_DEPOSIT_PHONE_DIGITS');
     expect(summary).toContain('savedQuoteIdentityColumns(identity)');
     expect(summary).toContain('customerAddress: formatDepositAddress(identity.address)');
     expect(summary.indexOf('savedQuoteIdentityColumns(identity)')).toBeLessThan(summary.indexOf("'quote-document-api'"));

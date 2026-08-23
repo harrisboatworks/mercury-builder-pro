@@ -555,5 +555,106 @@ SELECT public.accept_record(
   ''
 );
 RESET ROLE;
+
+SET ROLE service_role;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'service_role', false);
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status,
+  quote_pdf_path, quote_pdf_sha256,
+  customer_full_name, customer_phone, customer_address_line1,
+  customer_city, customer_region, customer_postal_code, customer_country
+) VALUES (
+  'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee',
+  'ada@example.com',
+  'dep_accept_nonden_001',
+  '{"motor":{"id":"motor-quote"}}'::jsonb,
+  NULL,
+  'saved-quotes/eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee/quote.pdf',
+  repeat('a', 64),
+  'Ada Lovelace',
+  '9055550100',
+  '5369 Harris Boat Works Rd',
+  'Gores Landing',
+  'ON',
+  'K0K 2E0',
+  'Canada'
+);
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status,
+  quote_pdf_path, quote_pdf_sha256,
+  customer_full_name, customer_phone, customer_address_line1,
+  customer_city, customer_region, customer_postal_code, customer_country
+) VALUES (
+  'ffffffff-ffff-4fff-8fff-ffffffffffff',
+  'ada@example.com',
+  'dep_accept_bounddep_001',
+  '{"motor":{"id":"motor-deposit"}}'::jsonb,
+  'pending',
+  'saved-quotes/ffffffff-ffff-4fff-8fff-ffffffffffff/quote.pdf',
+  repeat('b', 64),
+  'Ada Lovelace',
+  '9055550100',
+  '5369 Harris Boat Works Rd',
+  'Gores Landing',
+  'ON',
+  'K0K 2E0',
+  'Canada'
+);
+RESET ROLE;
+
+SET ROLE authenticated;
+SELECT set_config('accept.uid', '44444444-4444-4444-8444-444444444444', false);
+SELECT set_config('accept.role', 'authenticated', false);
+UPDATE public.saved_quotes
+SET quote_state = '{"motor":{"id":"motor-quote-edit"}}'::jsonb,
+    customer_full_name = 'Ada Lovelace Edited'
+WHERE id = 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee';
+SELECT public.accept_record(
+  'authenticated_non_deposit_bound_quote_update_allowed',
+  COALESCE((
+    SELECT customer_full_name = 'Ada Lovelace Edited'
+      AND quote_state->'motor'->>'id' = 'motor-quote-edit'
+    FROM public.saved_quotes
+    WHERE id = 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee'
+  ), false),
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_deposit_bound_quote_update_rejected',
+  '42501',
+  $sql$
+    UPDATE public.saved_quotes
+    SET customer_full_name = 'Should Not Persist'
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  $sql$
+);
+SELECT public.accept_record(
+  'authenticated_deposit_bound_quote_unchanged',
+  COALESCE((
+    SELECT customer_full_name = 'Ada Lovelace'
+    FROM public.saved_quotes
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  ), false),
+  ''
+);
+RESET ROLE;
+
+SET ROLE service_role;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'service_role', false);
+UPDATE public.saved_quotes
+SET customer_full_name = 'Service Ada'
+WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff';
+SELECT public.accept_record(
+  'service_role_deposit_bound_quote_update_allowed',
+  COALESCE((
+    SELECT customer_full_name = 'Service Ada'
+    FROM public.saved_quotes
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  ), false),
+  ''
+);
+RESET ROLE;
 SELECT set_config('accept.uid', '', false);
 SELECT set_config('accept.role', '', false);

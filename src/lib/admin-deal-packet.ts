@@ -22,12 +22,24 @@ export type AdminQuoteListRow = {
   quote_data?: { saved_quote_id?: string | null } | null;
 };
 
-export function resolveAdminDealPacketId(row: AdminQuoteListRow): string {
-  const joinedId = row.saved_quote_id
-    || row.quote_data?.saved_quote_id
-    || null;
+function knownSavedQuoteIdSet(
+  knownSavedQuoteIds?: Iterable<string> | null,
+): Set<string> | null {
+  if (!knownSavedQuoteIds) return null;
+  return knownSavedQuoteIds instanceof Set
+    ? knownSavedQuoteIds
+    : new Set(knownSavedQuoteIds);
+}
+
+export function resolveAdminDealPacketId(
+  row: AdminQuoteListRow,
+  knownSavedQuoteIds?: Iterable<string> | null,
+): string {
   if (row._source === "saved_quotes") return row.id;
-  if (joinedId) return joinedId;
+  if (row.saved_quote_id) return row.saved_quote_id;
+  const legacyId = row.quote_data?.saved_quote_id || null;
+  const known = knownSavedQuoteIdSet(knownSavedQuoteIds);
+  if (legacyId && known?.has(legacyId)) return legacyId;
   return row.id;
 }
 
@@ -37,7 +49,7 @@ export function dedupeAdminDealPacketRows<C extends AdminQuoteListRow, S extends
 ): Array<C | S> {
   const savedIds = new Set(savedQuotes.map((row) => row.id));
   const joinedCustomerQuotes = customerQuotes.filter((row) => {
-    const packetId = resolveAdminDealPacketId({ ...row, _source: "customer_quotes" });
+    const packetId = resolveAdminDealPacketId({ ...row, _source: "customer_quotes" }, savedIds);
     const isJoinedDeposit = Boolean(
       packetId
       && savedIds.has(packetId)

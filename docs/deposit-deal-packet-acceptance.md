@@ -2,7 +2,7 @@
 
 PR 371, isolated worktree `mercury-deposit-recovery-main-5406efd`, branch `cursor/deposit-deal-packet-20260823`.
 
-Feature HEAD: `0696eb91f650382290bcc48fa63d69189fd36efd`. Prior harness commits: `b90f6e68`, `c2a3c22b`. This document is the acceptance artifact after Unix-socket harness hardening and the `CURRENT_USER` authority review.
+Feature HEAD: `0696eb91f650382290bcc48fa63d69189fd36efd`. Prior harness commits: `b90f6e68`, `c2a3c22b`, `674915a3`. This document is the acceptance artifact after the Kimi K3 follow-up: quote `customerInfo` compatibility, orphan admin routing, already-paid outbox replay ownership, and deposit-only bound-identity scope.
 
 Live I/O: none. Synthetic fixtures only (`ada@example.com`, quote `11111111-1111-4111-8111-111111111111`, deal `22222222-2222-4222-8222-222222222222`). No Stripe, Resend, SMS, or remote Supabase. Homebrew's default datadir is never started.
 
@@ -31,11 +31,11 @@ The PostgreSQL harness creates one unique directory under ignored `.tmp/ddp-XXXX
 
 | Command | Result |
 | --- | --- |
-| `npm run test:deposit-acceptance` | **12/12 files, 105/105 tests passed** |
-| `npm run test:deposit-acceptance:pg` | **51/51 assertions passed**, unique dirs removed, no TCP |
+| `npm run test:deposit-acceptance` | **12/12 files, 111/111 tests passed** |
+| `npm run test:deposit-acceptance:pg` | **55/55 assertions passed**, unique dirs removed, no TCP |
 | `npm run test:deposit-acceptance:deno` | **exit 0** (Deno 2.9.5) |
 | `node scripts/run-deposit-deal-packet-acceptance.mjs` | **exit 0** |
-| `npm test` | **115 passed + 1 skipped files; 644 passed + 1 skipped tests** |
+| `npm test` | **115 passed + 1 skipped files; 650 passed + 1 skipped tests** |
 | `npx tsc -p tsconfig.app.json --noEmit` | **exit 0** |
 | `npm run build:dev` | **exit 0** |
 | `git diff --check` | **exit 0** |
@@ -53,6 +53,7 @@ The PostgreSQL harness creates one unique directory under ignored `.tmp/ddp-XXXX
    - Delivery RLS/grants, claim token guard, two concurrent `service_role` sessions with exactly one winner.
    - Fail-closed: `listen_addresses` empty, no `host` pg_hba lines, log has Unix listen and no IPv listen, `psql -h 127.0.0.1/localhost/::1` fails, `lsof` shows no TCP LISTEN on the chosen port.
    - JWT spoof as `anon` with `accept.role=service_role` cannot pass `deposit_authority_caller` or write payment columns. `service_role` still passes when the JWT stub says `anon`.
+   - Non-deposit bound quote (`deposit_status` null + PDF) can be updated as authenticated; pending/paid deposit bound quotes raise `42501`; `service_role` remains allowed.
 3. Deno check of the three Edge Functions and changed shared modules.
 4. Identity twin and secret scan.
 

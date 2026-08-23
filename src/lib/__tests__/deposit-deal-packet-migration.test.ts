@@ -88,6 +88,8 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain('deposit payment fields are service-managed');
     expect(migration).toContain('saved quote deposit fields are service-managed');
     expect(migration).toContain('bound saved quote identity is immutable');
+    expect(migration).toContain('IF OLD.deposit_status IS NULL THEN');
+    expect(migration).not.toContain('IF OLD.quote_pdf_path IS NULL AND OLD.quote_pdf_sha256 IS NULL THEN');
     expect(migration).toContain("NEW.deposit_status IS DISTINCT FROM 'pending'");
     expect(migration).toContain('BEFORE INSERT OR UPDATE ON public.customer_quotes');
     expect(migration).toContain('NEW.saved_quote_id IS NOT NULL');

@@ -5,6 +5,7 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import { createPaymentCustomerInfoSchema } from "../_shared/create-payment-request.ts";
 import { assertDepositRequestReadyForStripe } from "../_shared/deposit-payment-guard.ts";
 import {
   depositIdentitiesMatch,
@@ -52,22 +53,9 @@ const DEPOSIT_PRICES: Record<string, string | null> = {
 const EXPRESS_MOTOR_ID = "e920cfdf-223a-408a-850b-6f112e15c4d7";
 const EXPRESS_MOTOR_MODEL_NUMBER = "1A10201LK";
 
-// Input validation schemas
-const customerInfoSchema = z.object({
-  name: z.string().trim().min(2).max(100),
-  email: z.string().trim().email().max(255),
-  phone: z.string().trim().min(10).max(25).regex(/^\+?[0-9().\s-]+$/)
-    .refine((value) => {
-      const digits = value.replace(/\D/g, "");
-      return digits.length >= 10 && digits.length <= 15;
-    }, "Phone number must include 10 to 15 digits"),
-  addressLine1: z.string().trim().min(1).max(120),
-  addressLine2: z.string().trim().max(120).optional().or(z.literal('')),
-  city: z.string().trim().min(1).max(80),
-  region: z.string().trim().min(1).max(80),
-  postalCode: z.string().trim().min(2).max(16),
-  country: z.string().trim().min(2).max(80),
-}).optional();
+// Base customerInfo stays backward-compatible for quote payments.
+// Deposit identity is enforced later by assertDepositRequestReadyForStripe.
+const customerInfoSchema = createPaymentCustomerInfoSchema(z);
 
 const quoteDataSchema = z.object({
   motorId: z.string().uuid().optional(),

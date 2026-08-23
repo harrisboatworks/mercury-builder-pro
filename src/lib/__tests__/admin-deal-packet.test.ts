@@ -43,6 +43,43 @@ describe('admin deal packet', () => {
     ]);
   });
 
+  it('joins a legacy quote_data.saved_quote_id only when that saved quote was fetched', () => {
+    const missingSavedId = '66666666-6666-4666-8666-666666666666';
+    const legacyJoined = {
+      id: DEAL_ID,
+      saved_quote_id: null,
+      lead_source: 'deposit' as const,
+      quote_data: { saved_quote_id: SAVED_ID },
+      _source: 'customer_quotes' as const,
+    };
+    const orphanLegacy = {
+      id: DEAL_ID,
+      saved_quote_id: null,
+      lead_source: 'deposit' as const,
+      quote_data: { saved_quote_id: missingSavedId },
+      _source: 'customer_quotes' as const,
+    };
+
+    expect(resolveAdminDealPacketId(legacyJoined, [SAVED_ID])).toBe(SAVED_ID);
+    expect(resolveAdminDealPacketId(orphanLegacy, [SAVED_ID])).toBe(DEAL_ID);
+    expect(resolveAdminDealPacketId({
+      id: DEAL_ID,
+      saved_quote_id: SAVED_ID,
+      lead_source: 'deposit',
+      _source: 'customer_quotes',
+    }, [])).toBe(SAVED_ID);
+
+    const joinedRows = dedupeAdminDealPacketRows([legacyJoined], [
+      { id: SAVED_ID, _source: 'saved_quotes' },
+    ]);
+    expect(joinedRows.map((row) => row.id)).toEqual([SAVED_ID]);
+
+    const orphanRows = dedupeAdminDealPacketRows([orphanLegacy], [
+      { id: SAVED_ID, _source: 'saved_quotes' },
+    ]);
+    expect(orphanRows.map((row) => row.id)).toEqual([SAVED_ID, DEAL_ID]);
+  });
+
   it('does not present a regenerated PDF as the canonical bound document', () => {
     expect(shouldOfferCanonicalDocumentDownload({
       quotePdfPath: `saved-quotes/${SAVED_ID}/quote.pdf`,
@@ -57,6 +94,9 @@ describe('admin deal packet', () => {
     const list = readFileSync('src/pages/AdminQuotes.tsx', 'utf8');
     const detail = readFileSync('src/pages/AdminQuoteDetail.tsx', 'utf8');
     expect(list).toContain('dedupeAdminDealPacketRows');
+    expect(list).toContain('knownSavedQuoteIds');
+    expect(list).toContain('resolveAdminDealPacketId({');
+    expect(list).toContain('saved_quote_id: r.saved_quote_id || null');
     expect(list).toContain('navigate(`/admin/quotes/${r._deal_packet_id || r.id}`)');
     expect(list).not.toContain('r.payment_status || r.quote_data?.payment_status');
     expect(detail).toContain('data-section="customer-identity"');

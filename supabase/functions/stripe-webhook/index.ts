@@ -6,8 +6,10 @@ import {
   boundSavedQuoteIdFromDeposit,
   classifyNotificationOutcomeWrite,
   depositNotificationOutcomeGuard,
+  depositReplayOwnershipClaimFilter,
   lookupDepositBySession,
   resolveDepositWebhookSmsGate,
+  shouldClaimDepositReplayOwnership,
   shouldSendFirstClaimSms,
   stripeBillingAddressFromCheckout,
 } from "../_shared/deposit-deal-record.ts";
@@ -183,7 +185,7 @@ serve(async (req) => {
           payment_status: "paid",
           motor_info: motorInfo,
           ...(billingAddress ? { payment_billing_address: billingAddress } : {}),
-          notification_status: alreadyPaid ? (boundQuoteData.notification_status || "processing") : "processing",
+          notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: alreadyPaid ? boundQuoteData.notification_lease_expires_at : notificationLeaseExpiresAt(),
           ...(alreadyPaid ? {} : { [DEPOSIT_OUTBOX_SCHEMA_KEY]: DEPOSIT_OUTBOX_SCHEMA_VERSION }),
@@ -248,6 +250,32 @@ serve(async (req) => {
             sessionId: session.id,
             quoteId: existingDeposit.id,
           });
+          if (shouldClaimDepositReplayOwnership({
+            alreadyPaid,
+            hasOutboxSchema: hasDepositOutboxSchema(boundQuoteData),
+          })) {
+            const { data: replayClaimed, error: replayClaimError } = await supabase
+              .from("customer_quotes")
+              .update({ quote_data: paidQuoteData })
+              .eq("id", existingDeposit.id)
+              .contains("quote_data", depositReplayOwnershipClaimFilter())
+              .select("*")
+              .maybeSingle();
+            const replayClaimOutcome = classifyNotificationOutcomeWrite({
+              written: replayClaimed,
+              writeError: replayClaimError,
+            });
+            if (replayClaimOutcome === "written") {
+              claimedDeposit = replayClaimed;
+              claimWon = true;
+            } else {
+              claimWon = false;
+              logStep("WARNING: replay ownership claim did not persist; leaving existing notification state", {
+                sessionId: session.id,
+                quoteId: existingDeposit.id,
+              });
+            }
+          }
         }
 
         // Update saved_quotes record with deposit confirmation
@@ -418,35 +446,42 @@ serve(async (req) => {
           : (typeof boundQuoteData.notification_status === "string"
             ? boundQuoteData.notification_status
             : "not_sent");
-        const { data: notificationWrite, error: notificationWriteError } = await supabase
-          .from("customer_quotes")
-          .update({
-            quote_data: {
-              ...paidQuoteData,
-              notification_status: notificationStatus,
-              notification_completed_at: new Date().toISOString(),
-              notification_lease_expires_at: null,
-              sms_notification_status: sendSms ? "sent" : (smsGate.smsStatus || "skipped"),
-            },
-          })
-          .eq("id", claimedDeposit.id)
-          .contains("quote_data", depositNotificationOutcomeGuard(event.id))
-          .select("id")
-          .maybeSingle();
-        const notificationWriteOutcome = classifyNotificationOutcomeWrite({
-          written: notificationWrite,
-          writeError: notificationWriteError,
-        });
-        if (notificationWriteOutcome === "lost_ownership") {
-          logStep("WARNING: notification outcome ownership lost; leaving existing state", {
-            sessionId: session.id,
-            quoteId: claimedDeposit.id,
+        const mayWriteLegacyNotification = !alreadyPaid
+          || shouldClaimDepositReplayOwnership({
+            alreadyPaid,
+            hasOutboxSchema: hasDepositOutboxSchema(boundQuoteData),
           });
-        } else if (notificationWriteOutcome !== "written") {
-          logStep("WARNING: notification status write failed", {
-            sessionId: session.id,
-            quoteId: claimedDeposit.id,
+        if (mayWriteLegacyNotification) {
+          const { data: notificationWrite, error: notificationWriteError } = await supabase
+            .from("customer_quotes")
+            .update({
+              quote_data: {
+                ...paidQuoteData,
+                notification_status: notificationStatus,
+                notification_completed_at: new Date().toISOString(),
+                notification_lease_expires_at: null,
+                sms_notification_status: sendSms ? "sent" : (smsGate.smsStatus || "skipped"),
+              },
+            })
+            .eq("id", claimedDeposit.id)
+            .contains("quote_data", depositNotificationOutcomeGuard(event.id))
+            .select("id")
+            .maybeSingle();
+          const notificationWriteOutcome = classifyNotificationOutcomeWrite({
+            written: notificationWrite,
+            writeError: notificationWriteError,
           });
+          if (notificationWriteOutcome === "lost_ownership") {
+            logStep("WARNING: notification outcome ownership lost; leaving existing state", {
+              sessionId: session.id,
+              quoteId: claimedDeposit.id,
+            });
+          } else if (notificationWriteOutcome !== "written") {
+            logStep("WARNING: notification status write failed", {
+              sessionId: session.id,
+              quoteId: claimedDeposit.id,
+            });
+          }
         }
         } catch (notificationError: unknown) {
           logStep("WARNING: notification pipeline failed after payment reconciliation", {

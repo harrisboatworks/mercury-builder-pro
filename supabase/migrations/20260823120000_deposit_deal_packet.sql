@@ -421,7 +421,7 @@ BEGIN
   IF public.deposit_authority_caller() THEN
     RETURN NEW;
   END IF;
-  IF OLD.quote_pdf_path IS NULL AND OLD.quote_pdf_sha256 IS NULL THEN
+  IF OLD.deposit_status IS NULL THEN
     RETURN NEW;
   END IF;
   IF NEW.quote_state IS DISTINCT FROM OLD.quote_state

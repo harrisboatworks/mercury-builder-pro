@@ -11,7 +11,10 @@ import {
   classifyNotificationOutcomeWrite,
   classifyOptimisticRecoveryWrite,
   depositNotificationOutcomeGuard,
+  depositReplayOwnershipClaimFilter,
+  depositReplayOwnershipMatches,
   lookupDepositBySession,
+  shouldClaimDepositReplayOwnership,
   resolveDepositWebhookSmsGate,
   pendingDepositRebindAllowed,
   planVerifiedStripeRecovery,
@@ -202,6 +205,101 @@ describe('deposit webhook deal-packet idempotency', () => {
     expect(terminalIdx).toBeGreaterThan(notificationCatchIdx);
     expect((webhook.match(/let paymentReconciled = false/g) || []).length).toBe(1);
     expect((webhook.match(/paymentReconciled = true/g) || []).length).toBe(1);
+  });
+
+  it('claims already-paid outbox replay ownership so a failed audience can update legacy notification JSON', () => {
+    const previous = {
+      payment_status: 'paid',
+      notification_status: 'manual_follow_up',
+      notification_event_id: 'evt_test_deposit001',
+      deposit_outbox_schema: 1,
+    };
+    const retryEventId = 'evt_test_deposit_retry';
+    const claimed = {
+      ...previous,
+      ...depositNotificationOutcomeGuard(retryEventId),
+    };
+
+    expect(hasDepositOutboxSchema(previous)).toBe(true);
+    expect(shouldClaimDepositReplayOwnership({
+      alreadyPaid: true,
+      hasOutboxSchema: hasDepositOutboxSchema(previous),
+    })).toBe(true);
+    expect(depositReplayOwnershipClaimFilter()).toEqual({ deposit_outbox_schema: 1 });
+    expect(planDepositWebhookMailer({
+      alreadyPaid: true,
+      hasOutboxSchema: true,
+      deliveryRows: [
+        { audience: 'customer', status: 'sent' },
+        { audience: 'hbw', status: 'failed' },
+        { audience: 'grok_bot', status: 'sent' },
+      ],
+    })).toEqual({ seed: false, invoke: true });
+    expect(audiencesNeedingDelivery([
+      { audience: 'customer', status: 'sent' },
+      { audience: 'hbw', status: 'failed' },
+      { audience: 'grok_bot', status: 'sent' },
+    ])).toEqual(['hbw']);
+    expect(depositReplayOwnershipMatches(previous, retryEventId)).toBe(false);
+    expect(depositReplayOwnershipMatches(claimed, retryEventId)).toBe(true);
+    expect(classifyNotificationOutcomeWrite({
+      written: { id: DEAL_ID },
+    })).toBe('written');
+
+    const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
+    expect(webhook).toContain('shouldClaimDepositReplayOwnership');
+    expect(webhook).toContain('depositReplayOwnershipClaimFilter()');
+    expect(webhook).toContain('notification_status: "processing"');
+    expect(webhook.indexOf('shouldClaimDepositReplayOwnership'))
+      .toBeLessThan(webhook.indexOf('depositNotificationOutcomeGuard(event.id)'));
+  });
+
+  it('lets only the current event write the final legacy notification after a concurrent replay race', () => {
+    const eventA = 'evt_test_replay_a';
+    const eventB = 'evt_test_replay_b';
+    const afterB = {
+      payment_status: 'paid',
+      deposit_outbox_schema: 1,
+      ...depositNotificationOutcomeGuard(eventB),
+    };
+
+    expect(shouldClaimDepositReplayOwnership({
+      alreadyPaid: true,
+      hasOutboxSchema: true,
+    })).toBe(true);
+    expect(depositReplayOwnershipMatches(afterB, eventA)).toBe(false);
+    expect(depositReplayOwnershipMatches(afterB, eventB)).toBe(true);
+    expect(classifyNotificationOutcomeWrite({ written: null })).toBe('lost_ownership');
+    expect(depositNotificationOutcomeGuard(eventA)).toEqual({
+      notification_status: 'processing',
+      notification_event_id: eventA,
+    });
+
+    const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
+    expect(webhook).toContain('replay ownership claim did not persist; leaving existing notification state');
+    expect(webhook).toContain('contains("quote_data", depositNotificationOutcomeGuard(event.id))');
+  });
+
+  it('does not claim, seed, or invoke a historical paid row with no outbox marker', () => {
+    const historical = {
+      payment_status: 'paid',
+      notification_event_id: 'evt_historical',
+    };
+    expect(hasDepositOutboxSchema(historical)).toBe(false);
+    expect(shouldClaimDepositReplayOwnership({
+      alreadyPaid: true,
+      hasOutboxSchema: hasDepositOutboxSchema(historical),
+    })).toBe(false);
+    expect(planDepositWebhookMailer({
+      alreadyPaid: true,
+      hasOutboxSchema: false,
+      deliveryRows: [],
+    })).toEqual({ seed: false, invoke: false });
+
+    const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
+    expect(webhook).toContain('hasDepositOutboxSchema(boundQuoteData)');
+    expect(webhook).toContain('Historical paid deposit has no email outbox');
+    expect(webhook).toContain('mayWriteLegacyNotification');
   });
 
   it('does not seed or mail a historical paid deposit with an empty outbox', () => {

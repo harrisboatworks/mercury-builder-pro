@@ -193,9 +193,12 @@ const AdminQuotes = () => {
       toast({ title: 'Error', description: 'Failed to load customer quotes', variant: 'destructive' });
     }
 
+    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
+    const knownSavedQuoteIds = new Set(sqRows.map((row) => row.id));
+
     const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
       ...r,
-      saved_quote_id: r.saved_quote_id || r.quote_data?.saved_quote_id || null,
+      saved_quote_id: r.saved_quote_id || null,
       payment_status: r.payment_status || null,
       stripe_checkout_session_id: r.stripe_checkout_session_id || r.quote_data?.stripe_session_id || null,
       _source: 'customer_quotes' as const,
@@ -206,14 +209,12 @@ const AdminQuotes = () => {
       _reference_number: null,
       _deal_packet_id: resolveAdminDealPacketId({
         id: r.id,
-        saved_quote_id: r.saved_quote_id || r.quote_data?.saved_quote_id || null,
+        saved_quote_id: r.saved_quote_id || null,
         lead_source: r.lead_source,
         quote_data: r.quote_data,
         _source: 'customer_quotes',
-      }),
+      }, knownSavedQuoteIds),
     }));
-
-    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
 
     setCustomerQuoteRows(cqRows);
     setSavedQuoteRows(sqRows);

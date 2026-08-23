@@ -10,6 +10,7 @@ const files = [
   "supabase/functions/create-payment/index.ts",
   "supabase/functions/stripe-webhook/index.ts",
   "supabase/functions/send-deposit-confirmation-email/index.ts",
+  "supabase/functions/_shared/create-payment-request.ts",
   "supabase/functions/_shared/deposit-deal-record.ts",
   "supabase/functions/_shared/deposit-email-deliveries.ts",
   "supabase/functions/_shared/deposit-identity.ts",

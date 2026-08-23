@@ -1,6 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { z } from 'zod';
 
+import { createPaymentCustomerInfoSchema } from '../../../supabase/functions/_shared/create-payment-request.ts';
 import {
   INVALID_DEPOSIT_IDENTITY,
   INVALID_DEPOSIT_SAVED_QUOTE,
@@ -9,6 +11,13 @@ import {
   createPaymentMayInvokeStripe,
   isDepositPaymentRequest,
 } from '../../../supabase/functions/_shared/deposit-payment-guard.ts';
+
+const compatiblePaymentRequestSchema = z.object({
+  depositAmount: z.enum(['100', '200', '500', '1000', '2500']).optional(),
+  customerInfo: createPaymentCustomerInfoSchema(z),
+  paymentType: z.enum(['deposit', 'quote']).optional(),
+  savedQuoteId: z.string().uuid().optional(),
+});
 
 const QUOTE_ID = '11111111-1111-4111-8111-111111111111';
 
@@ -56,6 +65,57 @@ describe('deposit create-payment savedQuoteId guard', () => {
     for (const field of missingFields) {
       const customerInfo = { ...validIdentity, [field]: '' };
       const body = { paymentType: 'deposit', savedQuoteId: QUOTE_ID, customerInfo };
+      expect(createPaymentMayInvokeStripe(body)).toBe(false);
+      expect(() => assertDepositRequestReadyForStripe(body)).toThrow(INVALID_DEPOSIT_IDENTITY);
+      expect(wouldInvokeStripe(body)).toBe(false);
+    }
+  });
+
+  it('accepts a quote payload with absent or partial customerInfo', () => {
+    const absent = compatiblePaymentRequestSchema.safeParse({ paymentType: 'quote' });
+    const nameOnly = compatiblePaymentRequestSchema.safeParse({
+      paymentType: 'quote',
+      customerInfo: { name: 'Ada Lovelace' },
+    });
+    const priorOptionalShape = compatiblePaymentRequestSchema.safeParse({
+      paymentType: 'quote',
+      customerInfo: {
+        name: 'Ada Lovelace',
+        email: 'ada@example.com',
+        phone: '905-555-0100',
+      },
+    });
+    const emptyEmail = compatiblePaymentRequestSchema.safeParse({
+      paymentType: 'quote',
+      customerInfo: { email: '' },
+    });
+
+    expect(absent.success).toBe(true);
+    expect(nameOnly.success).toBe(true);
+    expect(priorOptionalShape.success).toBe(true);
+    expect(emptyEmail.success).toBe(true);
+    expect(createPaymentMayInvokeStripe({ paymentType: 'quote', customerInfo: { name: 'Ada' } })).toBe(true);
+
+    const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    expect(payment).toContain('createPaymentCustomerInfoSchema(z)');
+    expect(payment).toContain('assertDepositRequestReadyForStripe');
+    expect(payment).not.toContain('addressLine1: z.string().trim().min(1).max(120)');
+  });
+
+  it('rejects incomplete deposit identity after compatible schema parse and before Stripe', () => {
+    const incompleteBodies = [
+      { paymentType: 'deposit' as const, savedQuoteId: QUOTE_ID },
+      { paymentType: 'deposit' as const, savedQuoteId: QUOTE_ID, customerInfo: { name: 'Ada Lovelace' } },
+      {
+        paymentType: 'deposit' as const,
+        savedQuoteId: QUOTE_ID,
+        customerInfo: { name: 'Ada Lovelace', email: 'ada@example.com', phone: '905-555-0100' },
+      },
+    ];
+
+    for (const body of incompleteBodies) {
+      expect(compatiblePaymentRequestSchema.safeParse(body).success).toBe(true);
+      expect(isDepositPaymentRequest(body)).toBe(true);
       expect(createPaymentMayInvokeStripe(body)).toBe(false);
       expect(() => assertDepositRequestReadyForStripe(body)).toThrow(INVALID_DEPOSIT_IDENTITY);
       expect(wouldInvokeStripe(body)).toBe(false);
