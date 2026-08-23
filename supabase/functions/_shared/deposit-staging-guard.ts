@@ -40,13 +40,8 @@ export const STAGING_PACKET_SUCCESS_RECIPIENTS = {
   grok: "delivered+deposit-grok@resend.dev",
 } as const;
 
-export const STAGING_PACKET_FAILURE_RECIPIENTS = [
-  "bounced+deposit-retry@resend.dev",
-] as const;
-
 const STAGING_PACKET_ALLOWLIST = new Set<string>([
   ...Object.values(STAGING_PACKET_SUCCESS_RECIPIENTS),
-  ...STAGING_PACKET_FAILURE_RECIPIENTS,
 ]);
 
 const RESEND_TEST_MAILBOXES = ["delivered", "bounced", "complained", "suppressed"] as const;
@@ -126,7 +121,6 @@ export function assessStagingRecipientSet(
   const values = [customer, hbw, grok].map((value) => value.trim().toLowerCase());
   const parsed = values.map(parseOfficialResendTestAddress);
   const delivered = parsed.filter((item) => item?.mailbox === "delivered").length;
-  const failure = parsed.filter((item) => item !== null && item.mailbox !== "delivered").length;
   return [
     {
       id: "recipients_are_official_resend_test",
@@ -136,7 +130,7 @@ export function assessStagingRecipientSet(
     {
       id: "recipients_are_packet_allowlist",
       result: values.every((value) => STAGING_PACKET_ALLOWLIST.has(value)) ? "PASS" : "FAIL",
-      detail: "overrides must be the documented delivered+ or bounced+deposit-retry addresses",
+      detail: "overrides must be the three documented delivered+ addresses",
     },
     {
       id: "recipients_are_distinct",
@@ -144,9 +138,9 @@ export function assessStagingRecipientSet(
       detail: "customer/hbw/grok overrides must be three distinct addresses",
     },
     {
-      id: "recipients_combo_delivered_or_one_failure",
-      result: delivered === 3 || (delivered === 2 && failure === 1) ? "PASS" : "FAIL",
-      detail: "success path uses three delivered+ aliases; failure/retry may replace one with bounced+deposit-retry",
+      id: "recipients_are_three_delivered",
+      result: delivered === 3 && values.every((value) => STAGING_PACKET_ALLOWLIST.has(value)) ? "PASS" : "FAIL",
+      detail: "staging keeps the three delivered+ aliases; recipient switching is not a retry path",
     },
     {
       id: "recipients_not_production",

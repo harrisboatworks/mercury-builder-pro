@@ -6,7 +6,6 @@ import {
   PRODUCTION_DEPOSIT_RECIPIENTS,
   PRODUCTION_SUPABASE_HOSTS,
   PRODUCTION_WEB_HOSTS,
-  STAGING_PACKET_FAILURE_RECIPIENTS,
   STAGING_PACKET_SUCCESS_RECIPIENTS,
   assessInheritedNameCollision,
   assessRuntimeStagingIsolation,
@@ -31,6 +30,7 @@ const fixtures = JSON.parse(
 );
 
 const isolatedSupabaseUrl = 'https://staging-deposit-packet.supabase.co';
+const bouncedRetryAlias = 'bounced+deposit-retry@resend.dev';
 
 const safeEnv = {
   STAGING_SUPABASE_URL: isolatedSupabaseUrl,
@@ -87,7 +87,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(isOfficialResendTestAddress('tester@resend.dev')).toBe(false);
     expect(isOfficialResendTestAddress('ada@example.invalid')).toBe(false);
     expect(isAllowedStagingRecipient(STAGING_PACKET_SUCCESS_RECIPIENTS.customer)).toBe(true);
-    expect(isAllowedStagingRecipient(STAGING_PACKET_FAILURE_RECIPIENTS[0])).toBe(true);
+    expect(isAllowedStagingRecipient(STAGING_PACKET_SUCCESS_RECIPIENTS.hbw)).toBe(true);
+    expect(isAllowedStagingRecipient(STAGING_PACKET_SUCCESS_RECIPIENTS.grok)).toBe(true);
+    expect(isAllowedStagingRecipient(bouncedRetryAlias)).toBe(false);
     expect(isAllowedStagingRecipient('delivered@resend.dev')).toBe(false);
     expect(isAllowedStagingRecipient('delivered+unlisted@resend.dev')).toBe(false);
     expect(isAllowedStagingRecipient('tester@resend.dev')).toBe(false);
@@ -104,13 +106,22 @@ describe('deposit deal-packet staging guard', () => {
     }).ok).toBe(false);
     expect(assessStagingSafety({
       ...safeEnv,
-      DEPOSIT_STAGING_CUSTOMER_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
-    }).ok).toBe(true);
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: bouncedRetryAlias,
+    }).ok).toBe(false);
     expect(assessStagingSafety({
       ...safeEnv,
-      DEPOSIT_STAGING_CUSTOMER_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
-      DEPOSIT_STAGING_HBW_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: bouncedRetryAlias,
+      DEPOSIT_STAGING_HBW_EMAIL: bouncedRetryAlias,
     }).ok).toBe(false);
+    expect(() => resolveDepositAudienceRecipients({
+      customerEmail: 'buyer@example.com',
+      adminEmails: ['jayharris97@gmail.com'],
+      grokEmail: 'hbwbot@agentmail.to',
+      env: {
+        ...safeEnv,
+        DEPOSIT_STAGING_CUSTOMER_EMAIL: bouncedRetryAlias,
+      },
+    })).toThrow('Unsafe deposit staging recipients');
   });
 
   it('keeps production recipients when staging mode is unset and rewrites only in staging mode', () => {
@@ -181,7 +192,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(isReservedInvalidEmail(fixtures.customer.email)).toBe(true);
     expect(isReservedInvalidEmail(fixtures.historical.email)).toBe(true);
     expect(Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))).toBe(true);
-    expect(isAllowedStagingRecipient(fixtures.failureRecipients.retry)).toBe(true);
+    expect(isAllowedStagingRecipient(fixtures.failureRecipients.retry)).toBe(false);
     expect(fixtures.customer.email).not.toContain('harrisboatworks');
     expect(fixtures.customer.email).not.toContain('agentmail.to');
     expect(fixtures.recipients.customer).not.toContain('example.invalid');
@@ -384,6 +395,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('rehydrate the same `provider_id`');
     expect(runbook).toContain('never accepted');
     expect(runbook).not.toContain('receives a new simulated `provider_id`');
+    expect(runbook).toContain('Force one audience row to `failed`');
+    expect(runbook).not.toContain('bounced+deposit-retry@resend.dev');
+    expect(runbook).not.toContain('Replace **exactly one** override');
 
     const live = runDepositStagingAcceptance({
       live: true,

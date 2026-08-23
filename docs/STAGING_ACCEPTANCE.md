@@ -22,7 +22,7 @@ Isolated branch project `ccozickwrpautlxknsjk` exists and is data-less: historic
 | --- | --- |
 | `STAGING_SUPABASE_URL` | Required HTTPS. Host must not be `eutsoqdpjurknjsshxes.supabase.co`. |
 | `STAGING_STRIPE_SECRET_KEY` | Must be test-mode (`sk` + `test`). Live (`sk`/`rk` + `live`) is rejected. |
-| Recipients | All three overrides required. Each must be an official Resend test-address form on the packet allowlist (`delivered+deposit-customer@resend.dev`, `delivered+deposit-hbw@resend.dev`, `delivered+deposit-grok@resend.dev`, or one documented failure alias `bounced+deposit-retry@resend.dev`). `example.invalid`, arbitrary `resend.dev` mailboxes, and production HBW/Grok/admin inboxes are rejected. |
+| Recipients | All three overrides required. Each must be one of the packet allowlist addresses (`delivered+deposit-customer@resend.dev`, `delivered+deposit-hbw@resend.dev`, `delivered+deposit-grok@resend.dev`), and the three must be distinct. `bounced+`, `example.invalid`, arbitrary `resend.dev` mailboxes, and production HBW/Grok/admin inboxes are rejected. |
 | `DEPOSIT_STAGING_MODE` | Must be `1` on the isolated project and in the runner env. |
 | `VERCEL_PREVIEW_URL` | Optional. Production web/Vercel aliases (`mercuryrepower.ca`, `mercury-builder-pro.vercel.app`, `…-git-main-hbw.vercel.app`, …) are rejected. |
 | `STAGING_DATABASE_URL` | Optional. Rejected if the value mentions the production project host/ref. |
@@ -291,17 +291,16 @@ Resend the same `checkout.session.completed` event. Expected: no fourth delivery
 
 ### 8. Failure / retry
 
-Two documented options; both stay on the packet allowlist:
+Keep the three `delivered+` overrides. Force one audience row to `failed` (null `provider_id`) and re-invoke the mailer. Only that audience is reclaimed.
 
-1. Force one audience row to `failed` (null `provider_id`), keep the three `delivered+` overrides, and re-invoke the mailer. Only that audience is reclaimed.
-2. Replace **exactly one** override with `bounced+deposit-retry@resend.dev` (official Resend bounce test address, labelled). Re-invoke. Then restore that audience to its `delivered+` alias and retry so it can obtain a delivered `provider_id` if the earlier request was never accepted.
+Do not switch a recipient to `bounced+`, `complained@`, `suppressed@`, an unlisted `resend.dev` mailbox, or any real inbox. Changing `to` after Resend accepted the first send fights the stable per-audience idempotency key (`deposit-email:{customer_quote_id}:{audience}`) and is a payload mismatch, not recovery.
 
-Distinguish stable accepted-send replay from a genuinely unaccepted failure. The mailer retries with the same Resend idempotency key per audience (`deposit-email:{customer_quote_id}:{audience}`):
+Distinguish stable accepted-send replay from a genuinely unaccepted failure:
 
 - If a previously accepted send is manually reset, retry may rehydrate the same `provider_id` and must not create a duplicate.
 - A new `provider_id` is only expected when the earlier provider request was never accepted.
 
-Do not use `complained@`, `suppressed@`, unlisted `resend.dev` mailboxes, or any real inbox. Admin retry from the generated preview Origin is expected to `403`; use service-role or localhost. Expected: other audiences' `provider_id`s unchanged. Attempt count may increment on the reset row only.
+Admin retry from the generated preview Origin is expected to `403`; use service-role or localhost. Expected: other audiences' `provider_id`s unchanged. Attempt count may increment on the reset row only.
 
 ### 9. Authenticated admin packet
 
