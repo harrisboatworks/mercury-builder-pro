@@ -28,6 +28,7 @@ const stagingCleanupPath = path.join(repoRoot, "scripts/deposit-deal-packet-stag
 const hostedBootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql");
 const hostedVerifyPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql");
 const hostedShapePath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-shape-local.sql");
+const hostedOlderAclPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-acl-older-form.sql");
 const hostedNonce = "deposit-deal-packet-staging/ccozickwrpautlxknsjk";
 const hostedRunnerRole = "deposit_hosted_runner";
 const stagingSeedIds = {
@@ -422,6 +423,8 @@ function hostedVerifyPassed(databaseName, sessionSets = []) {
     "marker_rls_enabled",
     "marker_privileges_locked",
     "marker_applying_role_can_select",
+    "public_table_acls_exact",
+    "public_function_acls_exact",
   ];
   const byId = new Map(rows.map((row) => [row.id, row.passed]));
   return {
@@ -739,6 +742,57 @@ function recordHostedShapeBootstrapProofs() {
     'hosted_bootstrap_hosted_shape_feature_migration_and_edge_columns',
     ${featureOk ? "true" : "false"},
     ${psqlLiteral(`migration=${feature.status} ${verify.detail} ${(feature.stderr || "").slice(0, 120)}`)}
+  );`);
+  const exactAcls = /public_table_acls_exact=t/.test(verify.detail)
+    && /public_function_acls_exact=t/.test(verify.detail);
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_exact_acls',
+    ${exactAcls ? "true" : "false"},
+    ${psqlLiteral(verify.detail)}
+  );`);
+
+  applySqlFile(hostedOlderAclPath, shapeDb);
+  const olderLeaks = psqlValue(shapeDb, `
+    SELECT
+      has_table_privilege('anon', 'public.saved_quotes', 'SELECT')
+      AND has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'INSERT')
+      AND has_table_privilege('service_role', 'public.deposit_email_deliveries', 'DELETE')
+      AND has_table_privilege('service_role', 'public.deposit_staging_marker', 'INSERT')
+  `);
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_older_form_leaks',
+    ${olderLeaks === "t" ? "true" : "false"},
+    ${psqlLiteral(`older_form_leaks=${olderLeaks}`)}
+  );`);
+
+  const recoverBoot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const recoverFeature = applySqlFileWithSets(migrationPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+  ], { allowFailure: true });
+  const recoverVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const narrowed = recoverBoot.status === 0 && recoverFeature.status === 0 && recoverVerify.ok;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_narrows_older_form_acls',
+    ${narrowed ? "true" : "false"},
+    ${psqlLiteral(`boot=${recoverBoot.status} migration=${recoverFeature.status} ${recoverVerify.detail}`)}
+  );`);
+
+  const againBoot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const againFeature = applySqlFileWithSets(migrationPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+  ], { allowFailure: true });
+  const againVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const idempotent = againBoot.status === 0 && againFeature.status === 0 && againVerify.ok;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_acl_reapply_idempotent',
+    ${idempotent ? "true" : "false"},
+    ${psqlLiteral(`boot=${againBoot.status} migration=${againFeature.status} ${againVerify.detail}`)}
   );`);
 
   const firstSeed = applySqlFileWithSets(stagingSeedPath, shapeDb, [

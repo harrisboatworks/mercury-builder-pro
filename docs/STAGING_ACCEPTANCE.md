@@ -175,6 +175,8 @@ Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-
 
 `public.deposit_staging_marker` has RLS enabled. `PUBLIC`, `anon`, and `authenticated` have no table privileges. `service_role` has `SELECT` only. The applying role can still `SELECT` for verification. `public.has_role(uuid, public.app_role)` `EXECUTE` is `authenticated` and `service_role` only.
 
+Hosted `ALTER DEFAULT PRIVILEGES` grants `ALL` on new public tables/functions to `anon`/`authenticated`/`service_role`. Bootstrap and the feature migration `REVOKE ALL` from `PUBLIC`, `anon`, `authenticated`, and `service_role` before the intended `GRANT`s so a reapply narrows leftover hosted ACLs. Intended table sets: `user_roles` SELECT for authenticated+service_role; `saved_quotes`/`customer_quotes` CRUD for authenticated+service_role; marker SELECT for service_role; `deposit_email_deliveries` SELECT for authenticated and SELECT/INSERT/UPDATE for service_role.
+
 Hosted `auth` and `storage` stay on their system owners. Isolated-branch `postgres` has `USAGE` and table DML including `REFERENCES`, not schema `CREATE`. `CREATE TABLE IF NOT EXISTS` still requires schema `CREATE` and is therefore never issued against existing `auth.users`, `storage.buckets`, or `storage.objects`. The bootstrap skips `CREATE SCHEMA`, `GRANT USAGE`, `ALTER`, `DROP POLICY`, and `CREATE POLICY` on those schemas unless the applying role owns the stub it just created (bare-PostgreSQL local path only). On hosted, existing `auth.uid()` / `auth.role()` / storage plus `service_role` `BYPASSRLS` are sufficient. The quotes bucket upsert is DML only. Live isolated-branch readback: `postgres` and `service_role` are `rolsuper=false`, `rolbypassrls=true`.
 
 ### 2. Storage

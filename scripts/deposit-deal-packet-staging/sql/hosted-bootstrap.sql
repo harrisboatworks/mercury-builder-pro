@@ -23,6 +23,9 @@
 -- ALTER / POLICY on auth or storage unless the current role owns the
 -- schema or table (the bare-PostgreSQL stub path). Hosted keeps the existing
 -- system objects and service_role BYPASSRLS. Quotes bucket upsert is DML only.
+-- Hosted default privileges grant ALL on new public tables/functions to
+-- anon/authenticated/service_role. Every public table/function ACL is
+-- REVOKEd from those roles plus PUBLIC, then GRANTed only the intended set.
 --
 -- Session GUC required in the same psql session, before this file:
 --   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'
@@ -337,15 +340,14 @@ CREATE POLICY "Authenticated users can read their own quotes"
   TO authenticated
   USING (user_id = auth.uid());
 
-REVOKE ALL ON TABLE public.saved_quotes FROM PUBLIC;
-REVOKE ALL ON TABLE public.customer_quotes FROM PUBLIC;
-REVOKE ALL ON TABLE public.user_roles FROM PUBLIC;
-
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
+REVOKE ALL ON TABLE public.user_roles FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON TABLE public.saved_quotes FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON TABLE public.customer_quotes FROM PUBLIC, anon, authenticated, service_role;
 GRANT SELECT ON TABLE public.user_roles TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.saved_quotes TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.customer_quotes TO authenticated, service_role;
-REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon;
+REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated, service_role;
 
 DO $$
@@ -468,7 +470,7 @@ SET
   applied_at = now();
 
 ALTER TABLE public.deposit_staging_marker ENABLE ROW LEVEL SECURITY;
-REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated, service_role;
 GRANT SELECT ON TABLE public.deposit_staging_marker TO service_role;
 
 COMMENT ON TABLE public.deposit_staging_marker IS

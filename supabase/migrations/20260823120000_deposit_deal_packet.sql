@@ -1,6 +1,8 @@
 -- Deposit deal packet: promote customer identity/address and Stripe join
 -- columns, and track per-audience confirmation email deliveries. Historical
 -- rows stay nullable; completeness is enforced at the application boundary.
+-- Hosted default privileges grant ALL on new public tables/functions. REVOKE
+-- ALL from PUBLIC/anon/authenticated/service_role before intended GRANTs.
 
 ALTER TABLE public.saved_quotes
   ADD COLUMN IF NOT EXISTS customer_full_name text,
@@ -78,7 +80,7 @@ CREATE INDEX IF NOT EXISTS deposit_email_deliveries_saved_quote_id_idx
 
 ALTER TABLE public.deposit_email_deliveries ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon;
+REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon, authenticated, service_role;
 GRANT SELECT ON TABLE public.deposit_email_deliveries TO authenticated;
 GRANT SELECT, INSERT, UPDATE ON TABLE public.deposit_email_deliveries TO service_role;
 
@@ -205,9 +207,9 @@ BEGIN
 END;
 $$;
 
-REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.complete_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.fail_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.complete_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.fail_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) TO service_role;
 GRANT EXECUTE ON FUNCTION public.complete_deposit_email_delivery(uuid, text, uuid, text) TO service_role;
 GRANT EXECUTE ON FUNCTION public.fail_deposit_email_delivery(uuid, text, uuid, text) TO service_role;
@@ -444,10 +446,10 @@ $$;
 
 REVOKE ALL ON FUNCTION public.deposit_authority_caller() FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON FUNCTION public.deposit_quote_data_authority_changed(jsonb, jsonb) FROM PUBLIC, anon, authenticated, service_role;
-REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_authority() FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_delete() FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.enforce_saved_quotes_deposit_authority() FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.enforce_saved_quote_bound_identity() FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_authority() FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_delete() FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.enforce_saved_quotes_deposit_authority() FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.enforce_saved_quote_bound_identity() FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.deposit_authority_caller() TO anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.deposit_quote_data_authority_changed(jsonb, jsonb) TO anon, authenticated, service_role;
 

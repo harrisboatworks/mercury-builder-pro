@@ -36,7 +36,7 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain('claim_expires_at timestamptz');
     expect(migration).toContain('UNIQUE (customer_quote_id, audience)');
     expect(migration).toContain('ALTER TABLE public.deposit_email_deliveries ENABLE ROW LEVEL SECURITY');
-    expect(migration).toContain('REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon');
+    expect(migration).toContain('REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('GRANT SELECT ON TABLE public.deposit_email_deliveries TO authenticated');
     expect(migration).toContain('GRANT SELECT, INSERT, UPDATE ON TABLE public.deposit_email_deliveries TO service_role');
     expect(migration).toContain('CREATE POLICY "Admins can read deposit email deliveries"');
@@ -46,7 +46,7 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain('CREATE OR REPLACE FUNCTION public.fail_deposit_email_delivery');
     expect(migration).toContain('SECURITY DEFINER');
     expect(migration).toContain('SET search_path = pg_catalog');
-    expect(migration).toContain('REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated');
+    expect(migration).toContain('REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) TO service_role');
     expect(migration).not.toContain('pg_catalog.coalesce');
     expect(migration).not.toContain('pg_catalog.nullif');
@@ -110,10 +110,10 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain('REVOKE ALL ON FUNCTION public.deposit_quote_data_authority_changed(jsonb, jsonb) FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.deposit_authority_caller() TO anon, authenticated, service_role');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.deposit_quote_data_authority_changed(jsonb, jsonb) TO anon, authenticated, service_role');
-    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_authority() FROM PUBLIC, anon, authenticated');
-    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_delete() FROM PUBLIC, anon, authenticated');
-    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_saved_quotes_deposit_authority() FROM PUBLIC, anon, authenticated');
-    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_saved_quote_bound_identity() FROM PUBLIC, anon, authenticated');
+    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_authority() FROM PUBLIC, anon, authenticated, service_role');
+    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_customer_quotes_deposit_delete() FROM PUBLIC, anon, authenticated, service_role');
+    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_saved_quotes_deposit_authority() FROM PUBLIC, anon, authenticated, service_role');
+    expect(migration).toContain('REVOKE ALL ON FUNCTION public.enforce_saved_quote_bound_identity() FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).not.toMatch(/FUNCTION public\.enforce_customer_quotes_deposit_authority\(\)\s+RETURNS trigger\s+LANGUAGE plpgsql\s+SECURITY DEFINER/);
     expect(migration).not.toMatch(/FUNCTION public\.enforce_customer_quotes_deposit_delete\(\)\s+RETURNS trigger\s+LANGUAGE plpgsql\s+SECURITY DEFINER/);
     expect(migration).not.toMatch(/FUNCTION public\.enforce_saved_quotes_deposit_authority\(\)\s+RETURNS trigger\s+LANGUAGE plpgsql\s+SECURITY DEFINER/);

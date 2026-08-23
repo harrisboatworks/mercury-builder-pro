@@ -98,3 +98,9 @@ GRANT EXECUTE ON FUNCTION auth.role() TO deposit_hosted_runner, anon, authentica
 ALTER SCHEMA public OWNER TO deposit_hosted_runner;
 GRANT USAGE, CREATE ON SCHEMA public TO deposit_hosted_runner;
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
+
+-- Hosted Supabase grants ALL on new public tables/functions to these roles.
+ALTER DEFAULT PRIVILEGES FOR ROLE deposit_hosted_runner IN SCHEMA public
+  GRANT ALL ON TABLES TO anon, authenticated, service_role;
+ALTER DEFAULT PRIVILEGES FOR ROLE deposit_hosted_runner IN SCHEMA public
+  GRANT ALL ON FUNCTIONS TO anon, authenticated, service_role;

@@ -149,12 +149,22 @@ SELECT public.accept_record(
 );
 SELECT public.accept_record(
   'service_role_no_delete_grant_on_deliveries',
-  NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'DELETE'),
+  has_table_privilege('service_role', 'public.deposit_email_deliveries', 'SELECT')
+    AND has_table_privilege('service_role', 'public.deposit_email_deliveries', 'INSERT')
+    AND has_table_privilege('service_role', 'public.deposit_email_deliveries', 'UPDATE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'DELETE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'TRUNCATE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'REFERENCES')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'TRIGGER')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'MAINTAIN'),
   ''
 );
 SELECT public.accept_record(
   'anon_no_select_grant_on_deliveries',
-  NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'SELECT'),
+  NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'SELECT')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'INSERT')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'UPDATE')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'DELETE'),
   ''
 );
 SELECT public.accept_record(
@@ -162,7 +172,11 @@ SELECT public.accept_record(
   has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'SELECT')
     AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'INSERT')
     AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'UPDATE')
-    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'DELETE'),
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'DELETE')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'TRUNCATE')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'REFERENCES')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'TRIGGER')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'MAINTAIN'),
   ''
 );
 

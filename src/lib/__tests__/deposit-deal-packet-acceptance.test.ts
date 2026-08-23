@@ -32,7 +32,7 @@ const adminDetail = readFileSync('src/pages/AdminQuoteDetail.tsx', 'utf8');
 
 describe('deposit deal-packet staged acceptance', () => {
   it('stage 1: pins migration role ACLs and nested helper EXECUTE', () => {
-    expect(migration).toContain('REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon');
+    expect(migration).toContain('REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('GRANT SELECT ON TABLE public.deposit_email_deliveries TO authenticated');
     expect(migration).toContain('GRANT SELECT, INSERT, UPDATE ON TABLE public.deposit_email_deliveries TO service_role');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) TO service_role');
