@@ -235,4 +235,15 @@ describe('quote funnel UX contract', () => {
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
   });
+
+  it('gives the motor-search input a persistent accessible name', () => {
+    const searchSource = read('src/components/motors/HybridMotorSearch.tsx');
+    const inputMarkup = searchSource.match(/<input\b[\s\S]*?placeholder=""[\s\S]*?\/>/)?.[0];
+
+    expect(inputMarkup).toBeTruthy();
+    expect(inputMarkup).toContain('placeholder=""');
+
+    const accessibleName = inputMarkup?.match(/\baria-label="([^"]*)"/)?.[1]?.trim();
+    expect(accessibleName).toBeTruthy();
+  });
 });

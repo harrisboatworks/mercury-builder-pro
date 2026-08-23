@@ -475,6 +475,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           ref={inputRef}
           type="text"
           placeholder=""
+          aria-label="Find a motor"
           value={query}
           onChange={(e) => {
             onQueryChange(e.target.value);
