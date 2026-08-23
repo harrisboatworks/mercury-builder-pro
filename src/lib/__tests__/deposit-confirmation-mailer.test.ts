@@ -182,6 +182,14 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).not.toContain('getPublicUrl');
     expect(mailer).not.toContain('bcc:');
     expect(mailer).not.toContain('This email does not attach a quote PDF.');
+    const customerQuestions = 'Questions? Reply to this email or call us';
+    const customerTemplate = mailer.slice(
+      mailer.indexOf('function createDepositConfirmationEmail'),
+      mailer.indexOf('function createInternalDealEmail'),
+    );
+    expect(customerTemplate.split(customerQuestions)).toHaveLength(2);
+    expect(mailer.split(customerQuestions)).toHaveLength(2);
+    expect(mailer.slice(mailer.indexOf('function createInternalDealEmail'))).not.toContain(customerQuestions);
     expect(sendBody.indexOf('reportableDeliveryStatus({ completed, persistError: completeError })'))
       .toBeLessThan(sendBody.indexOf('results[audience] = "sent"'));
     expect(mailer).toContain('resolveDepositMailContact');
@@ -262,6 +270,80 @@ describe('deposit confirmation mailer contract', () => {
       },
     })).toEqual({ kind: 'network' });
     expect(reportableDeliveryStatus({ completed: { status: 'sent' }, persistError: new Error('db') })).toBe('failed');
+  });
+
+  it('rehydrates a previously accepted provider id on forced retry and only mints a new id when never accepted', async () => {
+    const acceptedHbwId = 're_hbw_accepted';
+    const key = resendIdempotencyKey(DEAL_ID, 'hbw');
+    expect(key).toBe(`deposit-email:${DEAL_ID}:hbw`);
+    expect(key).not.toMatch(/attempt/);
+
+    const payload = {
+      from: 'Harris Boat Works <deposits@example.com>',
+      to: ['ops@example.com'],
+      subject: 'stable',
+      html: '<p>stable</p>',
+    };
+    const fetchImpl = async (_url: string | URL | Request, init?: RequestInit) => {
+      expect((init?.headers as Record<string, string>)['Idempotency-Key']).toBe(key);
+      return {
+        status: 200,
+        json: async () => ({ id: acceptedHbwId }),
+      } as Response;
+    };
+    const first = await sendResendEmailWithIdempotency({
+      apiKey: 're_test',
+      idempotencyKey: key,
+      payload,
+      fetchImpl,
+    });
+    const retried = await sendResendEmailWithIdempotency({
+      apiKey: 're_test',
+      idempotencyKey: key,
+      payload,
+      fetchImpl,
+    });
+    expect(first).toEqual({ kind: 'sent', id: acceptedHbwId });
+    expect(retried).toEqual(first);
+    expect(parseResendIdempotentResponse({
+      status: 200,
+      body: { id: acceptedHbwId },
+    })).toEqual(first);
+
+    const neverAccepted = parseResendIdempotentResponse({
+      status: 500,
+      body: { message: 'provider never accepted' },
+    });
+    expect(neverAccepted.kind).toBe('error');
+    expect(parseResendIdempotentResponse({
+      status: 200,
+      body: { id: 're_hbw_first_accept' },
+    })).toEqual({ kind: 'sent', id: 're_hbw_first_accept' });
+
+    expect(audiencesNeedingDelivery([
+      { audience: 'customer', status: 'sent' },
+      { audience: 'hbw', status: 'sent' },
+      { audience: 'grok_bot', status: 'sent' },
+    ])).toEqual([]);
+    expect(audiencesNeedingDelivery([
+      { audience: 'customer', status: 'sent' },
+      { audience: 'hbw', status: 'failed' },
+      { audience: 'grok_bot', status: 'sent' },
+    ])).toEqual(['hbw']);
+    expect(claimDeliveryRow({
+      audience: 'customer',
+      status: 'sent',
+      provider_id: 're_customer_accepted',
+    }, 'token-reset')).toBeNull();
+
+    const mailer = readFileSync('supabase/functions/send-deposit-confirmation-email/index.ts', 'utf8');
+    const helper = readFileSync('supabase/functions/_shared/deposit-email-deliveries.ts', 'utf8');
+    expect(mailer).toContain('idempotencyKey: resendIdempotencyKey(depositRecord.id, audience)');
+    const keyFn = helper.slice(
+      helper.indexOf('export function resendIdempotencyKey'),
+      helper.indexOf('export function generateDepositReference'),
+    );
+    expect(keyFn).not.toContain('attempt');
   });
 });
 

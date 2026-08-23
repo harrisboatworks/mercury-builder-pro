@@ -381,6 +381,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('STRIPE_DEPOSIT_PRICE_500');
     expect(runbook).toContain('price_1SocofHhVKClVQCpsdCfdG7e');
     expect(runbook).not.toContain('price_1U7jab');
+    expect(runbook).toContain('rehydrate the same `provider_id`');
+    expect(runbook).toContain('never accepted');
+    expect(runbook).not.toContain('receives a new simulated `provider_id`');
 
     const live = runDepositStagingAcceptance({
       live: true,
