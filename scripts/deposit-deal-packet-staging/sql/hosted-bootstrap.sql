@@ -9,10 +9,17 @@
 -- Marker: deposit-deal-packet-staging/hosted-bootstrap/v1
 -- Surface: deposit-deal-packet-hosted-bootstrap/v1
 --
--- Session GUCs (set in the same psql session, before this file):
---   deposit_staging.project_ref  = detected or operator-supplied project ref
---   deposit_staging.allow_nonce  = deposit-deal-packet-staging/ccozickwrpautlxknsjk
--- The nonce is required only when the project ref cannot be determined.
+-- This SQL cannot independently identify the hosted branch. The committed
+-- nonce is only operator intent acknowledgement. Actual project identity is
+-- enforced externally by the Supabase connector/CLI target
+-- project_id ccozickwrpautlxknsjk plus the staging guards.
+-- deposit_staging.* GUCs are excluded from the pg_settings ref scan so the
+-- nonce cannot self-identify as the branch.
+--
+-- Session GUC required in the same psql session, before this file:
+--   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'
+-- Optional:
+--   SET deposit_staging.project_ref TO '<ref>'  -- production/unexpected refs still fail
 
 BEGIN;
 
@@ -43,18 +50,17 @@ BEGIN
   FOR rec IN
     SELECT setting
     FROM pg_catalog.pg_settings
-    WHERE setting ILIKE '%' || production_ref || '%'
-       OR setting ILIKE '%' || staging_ref || '%'
+    WHERE name NOT LIKE 'deposit_staging.%'
+      AND (
+        setting ILIKE '%' || production_ref || '%'
+        OR setting ILIKE '%' || staging_ref || '%'
+      )
   LOOP
     blob := blob || ' ' || coalesce(rec.setting, '');
   END LOOP;
 
-  IF detected IS NULL THEN
-    IF blob ILIKE '%' || production_ref || '%' THEN
-      detected := production_ref;
-    ELSIF blob ILIKE '%' || staging_ref || '%' THEN
-      detected := staging_ref;
-    END IF;
+  IF detected IS NULL AND blob ILIKE '%' || production_ref || '%' THEN
+    detected := production_ref;
   END IF;
 
   IF detected IS NOT NULL AND detected ILIKE '%' || production_ref || '%' THEN
@@ -70,12 +76,12 @@ BEGIN
       USING ERRCODE = 'P0001';
   END IF;
 
-  IF detected IS NULL AND nonce IS DISTINCT FROM nonce_expected THEN
+  IF nonce IS DISTINCT FROM nonce_expected THEN
     RAISE EXCEPTION
-      'hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' when the project ref cannot be determined'
+      'hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' as operator intent acknowledgement'
       USING ERRCODE = 'P0001';
   END IF;
-END
+END;
 $$;
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
@@ -91,10 +97,19 @@ BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'service_role') THEN
     CREATE ROLE service_role NOLOGIN NOSUPERUSER BYPASSRLS INHERIT;
   END IF;
-END
+END;
 $$;
 
-GRANT anon, authenticated, service_role TO CURRENT_USER;
+DO $$
+BEGIN
+  EXECUTE format('GRANT anon, authenticated, service_role TO %I', current_user);
+EXCEPTION
+  WHEN insufficient_privilege THEN
+    RAISE NOTICE
+      'hosted staging bootstrap skipped GRANT of anon/authenticated/service_role to %; hosted membership is assumed',
+      current_user;
+END;
+$$;
 
 CREATE SCHEMA IF NOT EXISTS auth;
 
@@ -126,7 +141,7 @@ BEGIN
       $body$
     $fn$;
   END IF;
-END
+END;
 $$;
 
 GRANT USAGE ON SCHEMA auth TO anon, authenticated, service_role;
@@ -136,7 +151,7 @@ BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'app_role' AND typnamespace = 'public'::regnamespace) THEN
     CREATE TYPE public.app_role AS ENUM ('admin', 'moderator', 'user');
   END IF;
-END
+END;
 $$;
 
 CREATE TABLE IF NOT EXISTS public.user_roles (
@@ -264,7 +279,8 @@ GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
 GRANT SELECT ON TABLE public.user_roles TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.saved_quotes TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.customer_quotes TO authenticated, service_role;
-GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated, service_role;
 
 CREATE SCHEMA IF NOT EXISTS storage;
 
@@ -329,7 +345,11 @@ SET
   target_project_ref = EXCLUDED.target_project_ref,
   applied_at = now();
 
+ALTER TABLE public.deposit_staging_marker ENABLE ROW LEVEL SECURITY;
+REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated;
+GRANT SELECT ON TABLE public.deposit_staging_marker TO service_role;
+
 COMMENT ON TABLE public.deposit_staging_marker IS
-  'Self-identifying hosted-staging marker. Never apply this bootstrap to eutsoqdpjurknjsshxes.';
+  'Hosted-staging schema-surface marker. Not proof of the connected project. Never apply this bootstrap to eutsoqdpjurknjsshxes.';
 
 COMMIT;

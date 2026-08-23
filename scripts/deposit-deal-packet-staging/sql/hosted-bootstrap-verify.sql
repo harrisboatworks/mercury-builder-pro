@@ -67,3 +67,57 @@ SELECT 'deposit_email_deliveries_exists' AS check_id,
 
 SELECT 'has_role_exists' AS check_id,
        to_regprocedure('public.has_role(uuid, public.app_role)') IS NOT NULL AS passed;
+
+SELECT 'has_role_execute_not_anon' AS check_id,
+       (
+         NOT has_function_privilege('anon', 'public.has_role(uuid, public.app_role)', 'EXECUTE')
+         AND has_function_privilege('authenticated', 'public.has_role(uuid, public.app_role)', 'EXECUTE')
+         AND has_function_privilege('service_role', 'public.has_role(uuid, public.app_role)', 'EXECUTE')
+       ) AS passed;
+
+SELECT 'marker_rls_enabled' AS check_id,
+       EXISTS (
+         SELECT 1
+         FROM pg_class c
+         JOIN pg_namespace n ON n.oid = c.relnamespace
+         WHERE n.nspname = 'public'
+           AND c.relname = 'deposit_staging_marker'
+           AND c.relrowsecurity
+       ) AS passed;
+
+SELECT 'marker_privileges_locked' AS check_id,
+       (
+         SELECT
+           NOT EXISTS (
+             SELECT 1
+             FROM aclexplode(COALESCE(c.relacl, acldefault('r'::"char", c.relowner))) acl
+             WHERE acl.grantee = 0
+                OR EXISTS (
+                  SELECT 1
+                  FROM pg_roles r
+                  WHERE r.oid = acl.grantee
+                    AND r.rolname IN ('anon', 'authenticated')
+                )
+           )
+           AND EXISTS (
+             SELECT 1
+             FROM aclexplode(COALESCE(c.relacl, acldefault('r'::"char", c.relowner))) acl
+             JOIN pg_roles r ON r.oid = acl.grantee
+             WHERE r.rolname = 'service_role'
+               AND acl.privilege_type = 'SELECT'
+           )
+           AND NOT EXISTS (
+             SELECT 1
+             FROM aclexplode(COALESCE(c.relacl, acldefault('r'::"char", c.relowner))) acl
+             JOIN pg_roles r ON r.oid = acl.grantee
+             WHERE r.rolname = 'service_role'
+               AND acl.privilege_type IN ('INSERT', 'UPDATE', 'DELETE', 'TRUNCATE')
+           )
+         FROM pg_class c
+         JOIN pg_namespace n ON n.oid = c.relnamespace
+         WHERE n.nspname = 'public'
+           AND c.relname = 'deposit_staging_marker'
+       ) AS passed;
+
+SELECT 'marker_applying_role_can_select' AS check_id,
+       has_table_privilege(current_user, 'public.deposit_staging_marker', 'SELECT') AS passed;

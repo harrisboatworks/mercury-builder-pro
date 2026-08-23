@@ -268,7 +268,22 @@ describe('deposit deal-packet staging guard', () => {
     expect(bootstrap).toContain('deposit-deal-packet-staging/hosted-bootstrap/v1');
     expect(bootstrap).toContain('deposit-deal-packet-hosted-bootstrap/v1');
     expect(bootstrap).toContain('hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes');
-    expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' when the project ref cannot be determined");
+    expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' as operator intent acknowledgement");
+    expect(bootstrap).toContain('This SQL cannot independently identify the hosted branch');
+    expect(bootstrap).toContain("name NOT LIKE 'deposit_staging.%'");
+    expect(bootstrap).toContain('REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon');
+    expect(bootstrap).toContain('GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated, service_role');
+    expect(bootstrap).not.toContain('GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO anon');
+    expect(bootstrap).toContain('WHEN insufficient_privilege THEN');
+    expect(bootstrap).toContain('ALTER TABLE public.deposit_staging_marker ENABLE ROW LEVEL SECURITY');
+    expect(bootstrap).toContain('REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated');
+    expect(bootstrap).toContain('GRANT SELECT ON TABLE public.deposit_staging_marker TO service_role');
+    const doBodies = [...bootstrap.matchAll(/DO\s+\$\$[\s\S]*?\$\$;/g)];
+    expect(doBodies).toHaveLength(5);
+    for (const block of doBodies) {
+      expect(block[0]).toMatch(/END;\s*\$\$;$/);
+    }
+    expect(bootstrap).not.toMatch(/END\s+\$\$;/);
     expect(bootstrap).toContain('ccozickwrpautlxknsjk');
     expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
     expect(bootstrap).not.toContain('mercury_parts');
@@ -276,6 +291,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(firstHistorical).toContain('ALTER TABLE public.customer_quotes');
     expect(verify).toContain('saved_quotes_edge_columns');
     expect(verify).toContain('customer_quotes_edge_columns');
+    expect(verify).toContain('marker_privileges_locked');
+    expect(verify).toContain('has_role_execute_not_anon');
     expect(verify).toContain("id = 'quotes'");
   });
 
@@ -311,6 +328,12 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('hosted-bootstrap.sql');
     expect(runbook).toContain('deposit-deal-packet-hosted-bootstrap/v1');
     expect(runbook).toContain('deposit-deal-packet-staging/ccozickwrpautlxknsjk');
+    expect(runbook).toContain('This SQL cannot independently identify branch ccozickwrpautlxknsjk');
+    expect(runbook).toContain('operator intent acknowledgement only');
+    expect(runbook).toContain('nonce cannot self-identify');
+    expect(runbook).toContain('schema-surface marker, not proof of the connected project');
+    expect(runbook).not.toContain('nonce may be omitted');
+    expect(runbook).not.toContain('If the session can determine project ref');
     expect(runbook).toContain('Follow-up reminder');
     expect(runbook).toContain('ccozickwrpautlxknsjk');
 

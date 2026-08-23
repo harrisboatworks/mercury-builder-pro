@@ -153,13 +153,17 @@ Apply this exact order against branch project `ccozickwrpautlxknsjk` only:
 4. `scripts/deposit-deal-packet-staging/sql/seed.sql`
 
 ```bash
-# Same psql session. Nonce is required when the database cannot report the project ref.
+# Same psql session. The nonce is operator intent acknowledgement only.
+# This SQL cannot independently identify branch ccozickwrpautlxknsjk.
+# Actual project identity is the Supabase connector/CLI target project_id
+# plus the staging URL/key guards. deposit_staging.* GUCs are excluded from
+# the in-database ref scan so the nonce cannot self-identify.
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -c "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'" \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql
 
-# If the session can determine project ref ccozickwrpautlxknsjk, the nonce may be omitted.
-# SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes' must fail before DDL.
+# SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes' must fail before DDL,
+# even when the nonce is also set.
 
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f supabase/migrations/20260823120000_deposit_deal_packet.sql
@@ -167,7 +171,9 @@ psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql
 ```
 
-Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-staging/hosted-bootstrap/v1` / surface `deposit-deal-packet-hosted-bootstrap/v1`.
+Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-staging/hosted-bootstrap/v1` / surface `deposit-deal-packet-hosted-bootstrap/v1`. That row is a schema-surface marker, not proof of the connected project.
+
+`public.deposit_staging_marker` has RLS enabled. `PUBLIC`, `anon`, and `authenticated` have no table privileges. `service_role` has `SELECT` only. The applying role can still `SELECT` for verification. `public.has_role(uuid, public.app_role)` `EXECUTE` is `authenticated` and `service_role` only.
 
 ### 2. Storage
 

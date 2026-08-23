@@ -398,8 +398,21 @@ function hostedVerifyPassed(databaseName) {
       const [id, passed] = line.split("\t");
       return { id, passed: passed === "t" };
     });
+  const required = [
+    "marker_is_hosted_staging_v1",
+    "quotes_bucket_is_private_pdf",
+    "saved_quotes_edge_columns",
+    "customer_quotes_edge_columns",
+    "deposit_email_deliveries_exists",
+    "has_role_exists",
+    "has_role_execute_not_anon",
+    "marker_rls_enabled",
+    "marker_privileges_locked",
+    "marker_applying_role_can_select",
+  ];
+  const byId = new Map(rows.map((row) => [row.id, row.passed]));
   return {
-    ok: result.status === 0 && rows.length >= 6 && rows.every((row) => row.passed),
+    ok: result.status === 0 && required.every((id) => byId.get(id) === true),
     detail: rows.map((row) => `${row.id}=${row.passed ? "t" : "f"}`).join(",") || (result.stderr || "").slice(0, 180),
   };
 }
@@ -498,6 +511,32 @@ function recordHostedBootstrapProofs() {
     ${psqlLiteral(`status=${missingNonce.status} tables=${countPublicPacketTables(hostedDb)} ${missingOutput.slice(0, 180)}`)}
   );`);
 
+  const leakedNonce = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+    "SET deposit_staging.allow_nonce TO 'ccozickwrpautlxknsjk'",
+  ], { allowFailure: true });
+  const leakedOutput = `${leakedNonce.stderr || ""}${leakedNonce.stdout || ""}`;
+  const leakedRejected = leakedNonce.status !== 0
+    && /operator intent acknowledgement/i.test(leakedOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_nonce_cannot_self_identify',
+    ${leakedRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${leakedNonce.status} tables=${countPublicPacketTables(hostedDb)} ${leakedOutput.slice(0, 180)}`)}
+  );`);
+
+  const stagingRefOnly = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+    "SET deposit_staging.project_ref TO 'ccozickwrpautlxknsjk'",
+  ], { allowFailure: true });
+  const stagingRefOutput = `${stagingRefOnly.stderr || ""}${stagingRefOnly.stdout || ""}`;
+  const stagingRefRejected = stagingRefOnly.status !== 0
+    && /operator intent acknowledgement/i.test(stagingRefOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_staging_ref_still_requires_nonce',
+    ${stagingRefRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${stagingRefOnly.status} tables=${countPublicPacketTables(hostedDb)} ${stagingRefOutput.slice(0, 180)}`)}
+  );`);
+
   const productionApply = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     "SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes'",
     `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
@@ -532,6 +571,15 @@ function recordHostedBootstrapProofs() {
     'hosted_bootstrap_feature_migration_and_edge_columns',
     ${featureOk ? "true" : "false"},
     ${psqlLiteral(`migration=${feature.status} ${verify.detail} ${(feature.stderr || "").slice(0, 120)}`)}
+  );`);
+  const markerLocked = /marker_rls_enabled=t/.test(verify.detail)
+    && /marker_privileges_locked=t/.test(verify.detail)
+    && /marker_applying_role_can_select=t/.test(verify.detail)
+    && /has_role_execute_not_anon=t/.test(verify.detail);
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_marker_privileges_and_rls',
+    ${markerLocked ? "true" : "false"},
+    ${psqlLiteral(verify.detail)}
   );`);
 
   const firstSeed = applySqlFile(stagingSeedPath, hostedDb, { allowFailure: true });
