@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest run",
+    "test:deposit-acceptance": "vitest run src/lib/__tests__/deposit-deal-packet-acceptance.test.ts src/lib/__tests__/deposit-deal-packet-migration.test.ts src/lib/__tests__/deposit-authority-plan.test.ts src/lib/__tests__/deposit-webhook-deal-packet.test.ts src/lib/__tests__/deposit-payment-guard.test.ts src/lib/__tests__/deposit-confirmation-mailer.test.ts src/lib/__tests__/admin-deal-packet.test.ts src/lib/__tests__/deposit-identity.test.ts src/lib/__tests__/deposit-historical-backfill.test.ts src/lib/quote-document-storage-contract.test.ts src/lib/__tests__/quote-document-policy.test.ts src/pages/quote/__tests__/quote-funnel-ux-contract.test.ts",
     "build": "node scripts/generate-markdown-twins.mjs && node scripts/check-publishing-integrity.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && npm run check:blog-og-images:dist && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
