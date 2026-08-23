@@ -16,6 +16,14 @@
 -- deposit_staging.* GUCs are excluded from the pg_settings ref scan so the
 -- nonce cannot self-identify as the branch.
 --
+-- Hosted auth/storage are owned by supabase_admin / supabase_auth_admin /
+-- supabase_storage_admin. postgres has USAGE and table DML, not schema CREATE
+-- and not ownership. CREATE TABLE IF NOT EXISTS still requires schema CREATE,
+-- so this file never issues CREATE TABLE / CREATE SCHEMA / GRANT USAGE /
+-- ALTER / POLICY on auth or storage unless the current role owns the
+-- schema or table (the bare-PostgreSQL stub path). Hosted keeps the existing
+-- system objects and service_role BYPASSRLS. Quotes bucket upsert is DML only.
+--
 -- Session GUC required in the same psql session, before this file:
 --   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'
 -- Optional:
@@ -111,40 +119,78 @@ EXCEPTION
 END;
 $$;
 
-CREATE SCHEMA IF NOT EXISTS auth;
-
-CREATE TABLE IF NOT EXISTS auth.users (
-  id uuid PRIMARY KEY
-);
-
 DO $$
 BEGIN
-  IF to_regprocedure('auth.uid()') IS NULL THEN
-    EXECUTE $fn$
-      CREATE FUNCTION auth.uid()
-      RETURNS uuid
-      LANGUAGE sql
-      STABLE
-      AS $body$
-        SELECT NULLIF(current_setting('request.jwt.claim.sub', true), '')::uuid;
-      $body$
-    $fn$;
+  IF to_regnamespace('auth') IS NULL THEN
+    EXECUTE 'CREATE SCHEMA auth';
   END IF;
+
+  IF to_regclass('auth.users') IS NULL THEN
+    IF has_schema_privilege(current_user, 'auth', 'CREATE') THEN
+      EXECUTE $ddl$
+        CREATE TABLE auth.users (
+          id uuid PRIMARY KEY
+        )
+      $ddl$;
+    ELSE
+      RAISE EXCEPTION
+        'hosted staging bootstrap requires existing auth.users; current role % cannot CREATE in schema auth',
+        current_user
+        USING ERRCODE = '42501';
+    END IF;
+  ELSE
+    RAISE NOTICE 'hosted staging bootstrap skipped CREATE for auth.users; object exists';
+  END IF;
+
+  IF to_regprocedure('auth.uid()') IS NULL THEN
+    IF has_schema_privilege(current_user, 'auth', 'CREATE') THEN
+      EXECUTE $fn$
+        CREATE FUNCTION auth.uid()
+        RETURNS uuid
+        LANGUAGE sql
+        STABLE
+        AS $body$
+          SELECT NULLIF(current_setting('request.jwt.claim.sub', true), '')::uuid;
+        $body$
+      $fn$;
+    ELSE
+      RAISE EXCEPTION
+        'hosted staging bootstrap requires existing auth.uid(); current role % cannot CREATE in schema auth',
+        current_user
+        USING ERRCODE = '42501';
+    END IF;
+  END IF;
+
   IF to_regprocedure('auth.role()') IS NULL THEN
-    EXECUTE $fn$
-      CREATE FUNCTION auth.role()
-      RETURNS text
-      LANGUAGE sql
-      STABLE
-      AS $body$
-        SELECT NULLIF(current_setting('request.jwt.claim.role', true), '');
-      $body$
-    $fn$;
+    IF has_schema_privilege(current_user, 'auth', 'CREATE') THEN
+      EXECUTE $fn$
+        CREATE FUNCTION auth.role()
+        RETURNS text
+        LANGUAGE sql
+        STABLE
+        AS $body$
+          SELECT NULLIF(current_setting('request.jwt.claim.role', true), '');
+        $body$
+      $fn$;
+    ELSE
+      RAISE EXCEPTION
+        'hosted staging bootstrap requires existing auth.role(); current role % cannot CREATE in schema auth',
+        current_user
+        USING ERRCODE = '42501';
+    END IF;
+  END IF;
+
+  IF EXISTS (
+    SELECT 1
+    FROM pg_namespace n
+    JOIN pg_roles r ON r.oid = n.nspowner
+    WHERE n.nspname = 'auth'
+      AND r.rolname = current_user
+  ) THEN
+    EXECUTE 'GRANT USAGE ON SCHEMA auth TO anon, authenticated, service_role';
   END IF;
 END;
 $$;
-
-GRANT USAGE ON SCHEMA auth TO anon, authenticated, service_role;
 
 DO $$
 BEGIN
@@ -156,11 +202,31 @@ $$;
 
 CREATE TABLE IF NOT EXISTS public.user_roles (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  user_id uuid NOT NULL,
   role public.app_role NOT NULL,
   created_at timestamptz NOT NULL DEFAULT now(),
   UNIQUE (user_id, role)
 );
+
+DO $$
+BEGIN
+  IF has_table_privilege(current_user, 'auth.users', 'REFERENCES')
+     AND NOT EXISTS (
+       SELECT 1
+       FROM pg_constraint c
+       JOIN pg_class t ON t.oid = c.conrelid
+       JOIN pg_namespace n ON n.oid = t.relnamespace
+       WHERE n.nspname = 'public'
+         AND t.relname = 'user_roles'
+         AND c.conname = 'user_roles_user_id_fkey'
+     )
+  THEN
+    ALTER TABLE public.user_roles
+      ADD CONSTRAINT user_roles_user_id_fkey
+      FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
+  END IF;
+END;
+$$;
 
 ALTER TABLE public.user_roles ENABLE ROW LEVEL SECURITY;
 
@@ -282,24 +348,88 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.customer_quotes TO authenti
 REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated, service_role;
 
-CREATE SCHEMA IF NOT EXISTS storage;
+DO $$
+BEGIN
+  IF to_regnamespace('storage') IS NULL THEN
+    EXECUTE 'CREATE SCHEMA storage';
+  END IF;
 
-CREATE TABLE IF NOT EXISTS storage.buckets (
-  id text PRIMARY KEY,
-  name text NOT NULL,
-  public boolean NOT NULL DEFAULT false,
-  file_size_limit bigint,
-  allowed_mime_types text[]
-);
+  IF to_regclass('storage.buckets') IS NULL THEN
+    IF has_schema_privilege(current_user, 'storage', 'CREATE') THEN
+      EXECUTE $ddl$
+        CREATE TABLE storage.buckets (
+          id text PRIMARY KEY,
+          name text NOT NULL,
+          public boolean NOT NULL DEFAULT false,
+          file_size_limit bigint,
+          allowed_mime_types text[]
+        )
+      $ddl$;
+    ELSE
+      RAISE EXCEPTION
+        'hosted staging bootstrap requires existing storage.buckets; current role % cannot CREATE in schema storage',
+        current_user
+        USING ERRCODE = '42501';
+    END IF;
+  ELSE
+    RAISE NOTICE 'hosted staging bootstrap skipped CREATE for storage.buckets; object exists';
+  END IF;
 
-CREATE TABLE IF NOT EXISTS storage.objects (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  bucket_id text NOT NULL,
-  name text NOT NULL,
-  UNIQUE (bucket_id, name)
-);
+  IF to_regclass('storage.objects') IS NULL THEN
+    IF has_schema_privilege(current_user, 'storage', 'CREATE') THEN
+      EXECUTE $ddl$
+        CREATE TABLE storage.objects (
+          id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+          bucket_id text NOT NULL,
+          name text NOT NULL,
+          UNIQUE (bucket_id, name)
+        )
+      $ddl$;
+    ELSE
+      RAISE EXCEPTION
+        'hosted staging bootstrap requires existing storage.objects; current role % cannot CREATE in schema storage',
+        current_user
+        USING ERRCODE = '42501';
+    END IF;
+  ELSE
+    RAISE NOTICE 'hosted staging bootstrap skipped CREATE for storage.objects; object exists';
+  END IF;
 
-ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
+  IF EXISTS (
+    SELECT 1
+    FROM pg_class c
+    JOIN pg_namespace n ON n.oid = c.relnamespace
+    JOIN pg_roles r ON r.oid = c.relowner
+    WHERE n.nspname = 'storage'
+      AND c.relname = 'objects'
+      AND r.rolname = current_user
+  ) THEN
+    EXECUTE 'ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY';
+    EXECUTE 'DROP POLICY IF EXISTS "Service role manages private quote documents" ON storage.objects';
+    EXECUTE $pol$
+      CREATE POLICY "Service role manages private quote documents"
+        ON storage.objects
+        FOR ALL
+        TO service_role
+        USING (bucket_id = 'quotes')
+        WITH CHECK (bucket_id = 'quotes')
+    $pol$;
+  ELSE
+    RAISE NOTICE
+      'hosted staging bootstrap skipped owner DDL on storage.objects; existing storage system and service_role BYPASSRLS are sufficient';
+  END IF;
+
+  IF EXISTS (
+    SELECT 1
+    FROM pg_namespace n
+    JOIN pg_roles r ON r.oid = n.nspowner
+    WHERE n.nspname = 'storage'
+      AND r.rolname = current_user
+  ) THEN
+    EXECUTE 'GRANT USAGE ON SCHEMA storage TO anon, authenticated, service_role';
+  END IF;
+END;
+$$;
 
 INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 VALUES (
@@ -314,14 +444,6 @@ SET
   public = EXCLUDED.public,
   file_size_limit = EXCLUDED.file_size_limit,
   allowed_mime_types = EXCLUDED.allowed_mime_types;
-
-DROP POLICY IF EXISTS "Service role manages private quote documents" ON storage.objects;
-CREATE POLICY "Service role manages private quote documents"
-  ON storage.objects
-  FOR ALL
-  TO service_role
-  USING (bucket_id = 'quotes')
-  WITH CHECK (bucket_id = 'quotes');
 
 CREATE TABLE IF NOT EXISTS public.deposit_staging_marker (
   id text PRIMARY KEY,

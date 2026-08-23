@@ -278,12 +278,31 @@ describe('deposit deal-packet staging guard', () => {
     expect(bootstrap).toContain('ALTER TABLE public.deposit_staging_marker ENABLE ROW LEVEL SECURITY');
     expect(bootstrap).toContain('REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated');
     expect(bootstrap).toContain('GRANT SELECT ON TABLE public.deposit_staging_marker TO service_role');
+    expect(bootstrap).toContain("to_regclass('auth.users')");
+    expect(bootstrap).toContain("to_regclass('storage.buckets')");
+    expect(bootstrap).toContain("to_regclass('storage.objects')");
+    expect(bootstrap).toContain("to_regnamespace('auth')");
+    expect(bootstrap).toContain("to_regnamespace('storage')");
+    expect(bootstrap).toContain('cannot CREATE in schema auth');
+    expect(bootstrap).toContain('skipped owner DDL on storage.objects');
+    expect(bootstrap).not.toMatch(/CREATE TABLE IF NOT EXISTS\s+auth\./);
+    expect(bootstrap).not.toMatch(/CREATE TABLE IF NOT EXISTS\s+storage\./);
+    expect(bootstrap).not.toMatch(/CREATE SCHEMA IF NOT EXISTS\s+(auth|storage)\b/);
+    expect(bootstrap).not.toMatch(/^GRANT USAGE ON SCHEMA (auth|storage)/m);
+    expect(bootstrap).not.toMatch(/CREATE TABLE IF NOT EXISTS public\.user_roles\s*\([^;]*REFERENCES auth\.users/);
     const doBodies = [...bootstrap.matchAll(/DO\s+\$\$[\s\S]*?\$\$;/g)];
-    expect(doBodies).toHaveLength(5);
+    expect(doBodies).toHaveLength(7);
     for (const block of doBodies) {
       expect(block[0]).toMatch(/END;\s*\$\$;$/);
     }
     expect(bootstrap).not.toMatch(/END\s+\$\$;/);
+    const hostedShape = readFileSync('scripts/deposit-deal-packet-staging/sql/hosted-shape-local.sql', 'utf8');
+    expect(hostedShape).toContain('deposit_hosted_runner');
+    expect(hostedShape).toContain('supabase_auth_admin');
+    expect(hostedShape).toContain('supabase_storage_admin');
+    expect(hostedShape).toContain('REVOKE CREATE ON SCHEMA auth FROM deposit_hosted_runner');
+    expect(hostedShape).toContain('REVOKE CREATE ON SCHEMA storage FROM deposit_hosted_runner');
+    expect(hostedShape).toContain('Not applied to any remote Supabase project');
     expect(bootstrap).toContain('ccozickwrpautlxknsjk');
     expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
     expect(bootstrap).not.toContain('mercury_parts');
@@ -332,6 +351,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('operator intent acknowledgement only');
     expect(runbook).toContain('nonce cannot self-identify');
     expect(runbook).toContain('schema-surface marker, not proof of the connected project');
+    expect(runbook).toContain('`CREATE TABLE IF NOT EXISTS` still requires schema `CREATE`');
+    expect(runbook).toContain('quotes bucket upsert is DML only');
     expect(runbook).not.toContain('nonce may be omitted');
     expect(runbook).not.toContain('If the session can determine project ref');
     expect(runbook).toContain('Follow-up reminder');

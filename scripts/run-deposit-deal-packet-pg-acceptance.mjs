@@ -27,7 +27,9 @@ const stagingSeedPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging
 const stagingCleanupPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/cleanup.sql");
 const hostedBootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql");
 const hostedVerifyPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql");
+const hostedShapePath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-shape-local.sql");
 const hostedNonce = "deposit-deal-packet-staging/ccozickwrpautlxknsjk";
+const hostedRunnerRole = "deposit_hosted_runner";
 const stagingSeedIds = {
   saved: [
     "31313131-3131-4131-8131-313131313131",
@@ -312,6 +314,7 @@ logging_collector = off
 
   recordStagingSeedProofs();
   recordHostedBootstrapProofs();
+  recordHostedShapeBootstrapProofs();
 
   const copy = psql("COPY (SELECT name, passed, coalesce(detail, '') FROM public.accept_results ORDER BY ordinal) TO STDOUT");
   const results = parseResults(copy.stdout || "");
@@ -385,15 +388,25 @@ function countPublicPacketTables(databaseName) {
   return Number((result.stdout || "").trim());
 }
 
-function hostedVerifyPassed(databaseName) {
-  const result = run(bin("psql"), ["-X", "-t", "-A", "-F", "\t", "-d", databaseName, "-f", hostedVerifyPath], {
+function psqlValue(databaseName, sql) {
+  const result = run(bin("psql"), ["-X", "-t", "-A", "-d", databaseName, "-c", sql], {
+    env: { ...envForSocket(), PGDATABASE: databaseName },
+  });
+  return (result.stdout || "").trim();
+}
+
+function hostedVerifyPassed(databaseName, sessionSets = []) {
+  const args = ["-X", "-t", "-A", "-F", "\t", "-d", databaseName];
+  for (const sql of sessionSets) args.push("-c", sql);
+  args.push("-f", hostedVerifyPath);
+  const result = run(bin("psql"), args, {
     env: { ...envForSocket(), PGDATABASE: databaseName },
     allowFailure: true,
   });
   const rows = (result.stdout || "")
     .split("\n")
     .map((line) => line.trim())
-    .filter(Boolean)
+    .filter((line) => line && !/^SET\b/.test(line))
     .map((line) => {
       const [id, passed] = line.split("\t");
       return { id, passed: passed === "t" };
@@ -598,6 +611,136 @@ function recordHostedBootstrapProofs() {
   );`);
 
   run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", hostedDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
+}
+
+function recordHostedShapeBootstrapProofs() {
+  const shapeDb = "deposit_deal_packet_hosted_shape";
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", shapeDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
+  run(bin("createdb"), ["-h", socketDir, "-p", String(port), shapeDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+  });
+  applySqlFile(hostedShapePath, shapeDb);
+
+  const denied = run(bin("psql"), [
+    "-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", shapeDb,
+    "-c", `SET ROLE ${hostedRunnerRole}`,
+    "-c", "CREATE TABLE IF NOT EXISTS auth.users (id uuid PRIMARY KEY)",
+  ], {
+    env: { ...envForSocket(), PGDATABASE: shapeDb },
+    allowFailure: true,
+  });
+  const deniedOutput = `${denied.stderr || ""}${denied.stdout || ""}`;
+  const denied42501 = denied.status !== 0
+    && /permission denied for schema auth/i.test(deniedOutput)
+    && countPublicPacketTables(shapeDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_if_not_exists_auth_users_is_42501',
+    ${denied42501 ? "true" : "false"},
+    ${psqlLiteral(`status=${denied.status} tables=${countPublicPacketTables(shapeDb)} ${deniedOutput.slice(0, 180)}`)}
+  );`);
+
+  const boot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const bootAgain = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const bootOutput = `${boot.stderr || ""}${boot.stdout || ""}`;
+  const bootOk = boot.status === 0
+    && bootAgain.status === 0
+    && countPublicPacketTables(shapeDb) === 4
+    && !/permission denied for schema (auth|storage)/i.test(bootOutput);
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_succeeds',
+    ${bootOk ? "true" : "false"},
+    ${psqlLiteral(`status=${boot.status}/${bootAgain.status} tables=${countPublicPacketTables(shapeDb)} ${bootOutput.slice(0, 180)}`)}
+  );`);
+
+  const authUsersOwner = psqlValue(shapeDb, `
+    SELECT r.rolname
+    FROM pg_class c
+    JOIN pg_namespace n ON n.oid = c.relnamespace
+    JOIN pg_roles r ON r.oid = c.relowner
+    WHERE n.nspname = 'auth' AND c.relname = 'users'
+  `);
+  const bucketsOwner = psqlValue(shapeDb, `
+    SELECT r.rolname
+    FROM pg_class c
+    JOIN pg_namespace n ON n.oid = c.relnamespace
+    JOIN pg_roles r ON r.oid = c.relowner
+    WHERE n.nspname = 'storage' AND c.relname = 'buckets'
+  `);
+  const objectsOwner = psqlValue(shapeDb, `
+    SELECT r.rolname
+    FROM pg_class c
+    JOIN pg_namespace n ON n.oid = c.relnamespace
+    JOIN pg_roles r ON r.oid = c.relowner
+    WHERE n.nspname = 'storage' AND c.relname = 'objects'
+  `);
+  const runnerCreateAuth = psqlValue(shapeDb, `SELECT has_schema_privilege('${hostedRunnerRole}', 'auth', 'CREATE')`);
+  const runnerCreateStorage = psqlValue(shapeDb, `SELECT has_schema_privilege('${hostedRunnerRole}', 'storage', 'CREATE')`);
+  const runnerMemberAdmin = psqlValue(shapeDb, `SELECT pg_has_role('${hostedRunnerRole}', 'supabase_admin', 'MEMBER')`);
+  const storagePolicy = psqlValue(shapeDb, `
+    SELECT EXISTS (
+      SELECT 1
+      FROM pg_policies
+      WHERE schemaname = 'storage'
+        AND tablename = 'objects'
+        AND policyname = 'Service role manages private quote documents'
+    )
+  `);
+  const ownersLocked = authUsersOwner === "supabase_auth_admin"
+    && bucketsOwner === "supabase_storage_admin"
+    && objectsOwner === "supabase_storage_admin"
+    && runnerCreateAuth === "f"
+    && runnerCreateStorage === "f"
+    && runnerMemberAdmin === "f"
+    && storagePolicy === "f";
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_skips_system_schema_owner_ddl',
+    ${ownersLocked ? "true" : "false"},
+    ${psqlLiteral(`auth.users=${authUsersOwner} buckets=${bucketsOwner} objects=${objectsOwner} create_auth=${runnerCreateAuth} create_storage=${runnerCreateStorage} member_admin=${runnerMemberAdmin} storage_policy=${storagePolicy}`)}
+  );`);
+
+  const feature = applySqlFileWithSets(migrationPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+  ], { allowFailure: true });
+  const verify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const featureOk = feature.status === 0 && verify.ok;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_feature_migration_and_edge_columns',
+    ${featureOk ? "true" : "false"},
+    ${psqlLiteral(`migration=${feature.status} ${verify.detail} ${(feature.stderr || "").slice(0, 120)}`)}
+  );`);
+
+  const firstSeed = applySqlFileWithSets(stagingSeedPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+  ], { allowFailure: true });
+  const firstCount = firstSeed.status === 0 ? countStagingFixtureRows(shapeDb) : -1;
+  const secondSeed = applySqlFileWithSets(stagingSeedPath, shapeDb, [
+    `SET ROLE ${hostedRunnerRole}`,
+  ], { allowFailure: true });
+  const secondOutput = `${secondSeed.stderr || ""}${secondSeed.stdout || ""}`;
+  const seedOk = firstSeed.status === 0
+    && firstCount === 3
+    && secondSeed.status !== 0
+    && /deposit staging seed refuses a populated database/i.test(secondOutput)
+    && countStagingFixtureRows(shapeDb) === 3;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_seed_empty_only',
+    ${seedOk ? "true" : "false"},
+    ${psqlLiteral(`first=${firstSeed.status}:${firstCount} second=${secondSeed.status}:${countStagingFixtureRows(shapeDb)}`)}
+  );`);
+
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", shapeDb], {
     env: { ...envForSocket(), PGDATABASE: "postgres" },
     allowFailure: true,
   });

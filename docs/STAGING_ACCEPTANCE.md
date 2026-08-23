@@ -175,6 +175,8 @@ Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-
 
 `public.deposit_staging_marker` has RLS enabled. `PUBLIC`, `anon`, and `authenticated` have no table privileges. `service_role` has `SELECT` only. The applying role can still `SELECT` for verification. `public.has_role(uuid, public.app_role)` `EXECUTE` is `authenticated` and `service_role` only.
 
+Hosted `auth` and `storage` stay on their system owners. Isolated-branch `postgres` has `USAGE` and table DML, not schema `CREATE`. `CREATE TABLE IF NOT EXISTS` still requires schema `CREATE` and is therefore never issued against existing `auth.users`, `storage.buckets`, or `storage.objects`. The bootstrap skips `CREATE SCHEMA`, `GRANT USAGE`, `ALTER`, `DROP POLICY`, and `CREATE POLICY` on those schemas unless the applying role owns the stub it just created (bare-PostgreSQL local path only). On hosted, existing `auth.uid()` / `auth.role()` / storage plus `service_role` `BYPASSRLS` are sufficient. The quotes bucket upsert is DML only.
+
 ### 2. Storage
 
 Create private bucket `quotes` if the isolated project has none. Upload fixture bytes:
