@@ -6,10 +6,10 @@ Live I/O from this repository: **none** until an operator supplies a non-product
 
 ## Cloud limitation (stop here if no isolated project)
 
-There is no isolated data-less Supabase branch. Evidence:
+Isolated branch project `ccozickwrpautlxknsjk` exists and is data-less: historical migrations failed on an empty public schema (`customer_quotes` missing at `20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`). Do not replay that chain. Use `hosted-bootstrap.sql` instead.
 
-- `supabase/config.toml` `project_id` is `eutsoqdpjurknjsshxes` (production).
-- This packet must not `supabase link`, `db push`, or deploy functions to that ref.
+- `supabase/config.toml` `project_id` is still `eutsoqdpjurknjsshxes` (production).
+- This packet must not `supabase link`, `db push`, or deploy functions to that production ref.
 - `npm run test:deposit-staging:dry-run` and `--live` without a safe `STAGING_*` bag do not construct a client. The runner reports `runnerCapability: guard_only_no_clients` and does not pretend to count sockets it does not instrument.
 
 `--live` re-runs the operator-env guards and exits. It does not construct a Supabase, Stripe, or Resend client. After an isolated project exists, follow the numbered sequence below by hand (or a later runner) using only `STAGING_*` names.
@@ -143,7 +143,31 @@ node scripts/run-deposit-deal-packet-staging.mjs --live
 
 On the isolated project only: deploy this branch's Edge functions (`create-payment`, `stripe-webhook`, `send-deposit-confirmation-email`, `quote-document-api`). Set `DEPOSIT_STAGING_MODE=1` and the three recipient overrides. Set Stripe **test** secret and webhook secret. Set Resend. Confirm `STRIPE_SECRET_KEY` kind is test. Confirm the project's URL host is not `eutsoqdpjurknjsshxes.supabase.co`.
 
-Apply `supabase/migrations/20260823120000_deposit_deal_packet.sql` (and prior migrations) to the isolated database. Target the isolated project ref explicitly. Refuse `eutsoqdpjurknjsshxes`.
+Do **not** replay the repository historical migration chain on a data-less branch. The first historical file (`20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`) alters `public.customer_quotes` before any repository migration creates that table.
+
+Apply this exact order against branch project `ccozickwrpautlxknsjk` only:
+
+1. `scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql`
+2. `supabase/migrations/20260823120000_deposit_deal_packet.sql` (unmodified)
+3. `scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql`
+4. `scripts/deposit-deal-packet-staging/sql/seed.sql`
+
+```bash
+# Same psql session. Nonce is required when the database cannot report the project ref.
+psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -c "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'" \
+  -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql
+
+# If the session can determine project ref ccozickwrpautlxknsjk, the nonce may be omitted.
+# SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes' must fail before DDL.
+
+psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -f supabase/migrations/20260823120000_deposit_deal_packet.sql
+psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql
+```
+
+Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-staging/hosted-bootstrap/v1` / surface `deposit-deal-packet-hosted-bootstrap/v1`.
 
 ### 2. Storage
 
@@ -266,7 +290,22 @@ Sign in as an isolated-project admin (`STAGING_ADMIN_ACCESS_TOKEN`). Open:
 
 `{VERCEL_PREVIEW_URL}/admin/quotes/31313131-3131-4131-8131-313131313131`
 
-Visible sections: `customer-identity` (name, `ada@example.invalid`, phone, full address), `motor-configuration`, `payment-status`, `boat-trade-financing`, `canonical-document` (bound SHA-256), `email-deliveries` (three audiences). `provider_id` is authoritative on `deposit_email_deliveries` (SQL/API). Canonical download must return the fixture PDF bytes and the same hash.
+Visible packet sections that this hosted bootstrap can fully verify after seed + paid webhook:
+
+- `customer-identity` — name, `ada@example.invalid`, phone, submitted address
+- `motor-configuration` — from `saved_quotes.quote_state`
+- `payment-status` — deposit/payment columns and Stripe join IDs
+- `boat-trade-financing` — reads quote_state; fixture has no boat/trade/financing payload, so those lines stay `-`
+- `canonical-document` — bound SHA-256; download through `quote-document-api` after the private `quotes` object exists
+- `email-deliveries` — three audiences after the mailer/outbox seed
+
+Optional admin panels that will show empty or not available on this surface (not cloned):
+
+- Follow-up reminder (`follow_up_date` is absent)
+- Admin controls persist (`admin_notes`, `admin_discount`, `customer_notes` are absent)
+- Applied promotion, quote history, contact logs, inventory, and other site tables
+
+`provider_id` is authoritative on `deposit_email_deliveries` (SQL/API). Canonical download must return the fixture PDF bytes and the same hash.
 
 ### 10. Historical rows unchanged
 

@@ -25,6 +25,9 @@ const fixturesPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/histori
 const checksPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/checks.sql");
 const stagingSeedPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/seed.sql");
 const stagingCleanupPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/cleanup.sql");
+const hostedBootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql");
+const hostedVerifyPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql");
+const hostedNonce = "deposit-deal-packet-staging/ccozickwrpautlxknsjk";
 const stagingSeedIds = {
   saved: [
     "31313131-3131-4131-8131-313131313131",
@@ -308,6 +311,7 @@ logging_collector = off
   );`);
 
   recordStagingSeedProofs();
+  recordHostedBootstrapProofs();
 
   const copy = psql("COPY (SELECT name, passed, coalesce(detail, '') FROM public.accept_results ORDER BY ordinal) TO STDOUT");
   const results = parseResults(copy.stdout || "");
@@ -355,10 +359,49 @@ function countStagingFixtureRows(databaseName) {
 }
 
 function applySqlFile(filePath, databaseName, { allowFailure = false } = {}) {
-  return run(bin("psql"), ["-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", databaseName, "-f", filePath], {
+  return applySqlFileWithSets(filePath, databaseName, [], { allowFailure });
+}
+
+function applySqlFileWithSets(filePath, databaseName, sessionSets = [], { allowFailure = false } = {}) {
+  const args = ["-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", databaseName];
+  for (const sql of sessionSets) args.push("-c", sql);
+  args.push("-f", filePath);
+  return run(bin("psql"), args, {
     env: { ...envForSocket(), PGDATABASE: databaseName },
     allowFailure,
   });
+}
+
+function countPublicPacketTables(databaseName) {
+  const sql = `
+    SELECT count(*)
+    FROM information_schema.tables
+    WHERE table_schema = 'public'
+      AND table_name IN ('saved_quotes', 'customer_quotes', 'user_roles', 'deposit_staging_marker')
+  `;
+  const result = run(bin("psql"), ["-X", "-t", "-A", "-d", databaseName, "-c", sql], {
+    env: { ...envForSocket(), PGDATABASE: databaseName },
+  });
+  return Number((result.stdout || "").trim());
+}
+
+function hostedVerifyPassed(databaseName) {
+  const result = run(bin("psql"), ["-X", "-t", "-A", "-F", "\t", "-d", databaseName, "-f", hostedVerifyPath], {
+    env: { ...envForSocket(), PGDATABASE: databaseName },
+    allowFailure: true,
+  });
+  const rows = (result.stdout || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [id, passed] = line.split("\t");
+      return { id, passed: passed === "t" };
+    });
+  return {
+    ok: result.status === 0 && rows.length >= 6 && rows.every((row) => row.passed),
+    detail: rows.map((row) => `${row.id}=${row.passed ? "t" : "f"}`).join(",") || (result.stderr || "").slice(0, 180),
+  };
 }
 
 function recordStagingSeedProofs() {
@@ -429,6 +472,84 @@ function recordStagingSeedProofs() {
   );`);
 
   run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", emptyDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
+}
+
+function recordHostedBootstrapProofs() {
+  const hostedDb = "deposit_deal_packet_hosted_bootstrap";
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", hostedDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
+  run(bin("createdb"), ["-h", socketDir, "-p", String(port), hostedDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+  });
+
+  const missingNonce = applySqlFile(hostedBootstrapPath, hostedDb, { allowFailure: true });
+  const missingOutput = `${missingNonce.stderr || ""}${missingNonce.stdout || ""}`;
+  const missingRejected = missingNonce.status !== 0
+    && /hosted staging bootstrap requires SET deposit_staging.allow_nonce/i.test(missingOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_missing_nonce_fails_before_ddl',
+    ${missingRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${missingNonce.status} tables=${countPublicPacketTables(hostedDb)} ${missingOutput.slice(0, 180)}`)}
+  );`);
+
+  const productionApply = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+    "SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes'",
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const productionOutput = `${productionApply.stderr || ""}${productionApply.stdout || ""}`;
+  const productionRejected = productionApply.status !== 0
+    && /hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes/i.test(productionOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_production_ref_fails_before_ddl',
+    ${productionRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${productionApply.status} tables=${countPublicPacketTables(hostedDb)} ${productionOutput.slice(0, 180)}`)}
+  );`);
+
+  const boot = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const bootAgain = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+  ], { allowFailure: true });
+  const bootOk = boot.status === 0 && bootAgain.status === 0 && countPublicPacketTables(hostedDb) === 4;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_succeeds_with_nonce',
+    ${bootOk ? "true" : "false"},
+    ${psqlLiteral(`status=${boot.status}/${bootAgain.status} tables=${countPublicPacketTables(hostedDb)} ${(boot.stderr || "").slice(0, 160)}`)}
+  );`);
+
+  const feature = applySqlFile(migrationPath, hostedDb, { allowFailure: true });
+  const verify = hostedVerifyPassed(hostedDb);
+  const featureOk = feature.status === 0 && verify.ok;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_feature_migration_and_edge_columns',
+    ${featureOk ? "true" : "false"},
+    ${psqlLiteral(`migration=${feature.status} ${verify.detail} ${(feature.stderr || "").slice(0, 120)}`)}
+  );`);
+
+  const firstSeed = applySqlFile(stagingSeedPath, hostedDb, { allowFailure: true });
+  const firstCount = firstSeed.status === 0 ? countStagingFixtureRows(hostedDb) : -1;
+  const secondSeed = applySqlFile(stagingSeedPath, hostedDb, { allowFailure: true });
+  const secondOutput = `${secondSeed.stderr || ""}${secondSeed.stdout || ""}`;
+  const seedOk = firstSeed.status === 0
+    && firstCount === 3
+    && secondSeed.status !== 0
+    && /deposit staging seed refuses a populated database/i.test(secondOutput)
+    && countStagingFixtureRows(hostedDb) === 3;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_seed_empty_only',
+    ${seedOk ? "true" : "false"},
+    ${psqlLiteral(`first=${firstSeed.status}:${firstCount} second=${secondSeed.status}:${countStagingFixtureRows(hostedDb)}`)}
+  );`);
+
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", hostedDb], {
     env: { ...envForSocket(), PGDATABASE: "postgres" },
     allowFailure: true,
   });

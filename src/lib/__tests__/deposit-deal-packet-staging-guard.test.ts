@@ -258,6 +258,27 @@ describe('deposit deal-packet staging guard', () => {
     expect(runner).not.toContain('networkCalls');
   });
 
+  it('keeps the hosted bootstrap off the historical migration chain and fail-closed', () => {
+    const bootstrap = readFileSync('scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql', 'utf8');
+    const verify = readFileSync('scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql', 'utf8');
+    const firstHistorical = readFileSync(
+      'supabase/migrations/20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql',
+      'utf8',
+    );
+    expect(bootstrap).toContain('deposit-deal-packet-staging/hosted-bootstrap/v1');
+    expect(bootstrap).toContain('deposit-deal-packet-hosted-bootstrap/v1');
+    expect(bootstrap).toContain('hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes');
+    expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' when the project ref cannot be determined");
+    expect(bootstrap).toContain('ccozickwrpautlxknsjk');
+    expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
+    expect(bootstrap).not.toContain('mercury_parts');
+    expect(bootstrap).not.toContain('CREATE TABLE public.quotes');
+    expect(firstHistorical).toContain('ALTER TABLE public.customer_quotes');
+    expect(verify).toContain('saved_quotes_edge_columns');
+    expect(verify).toContain('customer_quotes_edge_columns');
+    expect(verify).toContain("id = 'quotes'");
+  });
+
   it('wires mailer and webhook isolation before rewrite or SMS suppression', () => {
     const mailer = readFileSync('supabase/functions/send-deposit-confirmation-email/index.ts', 'utf8');
     const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
@@ -287,6 +308,11 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).not.toContain('networkCalls');
     expect(runbook).toContain('Forbidden origin');
     expect(runbook).toContain('/admin/quotes/31313131-3131-4131-8131-313131313131');
+    expect(runbook).toContain('hosted-bootstrap.sql');
+    expect(runbook).toContain('deposit-deal-packet-hosted-bootstrap/v1');
+    expect(runbook).toContain('deposit-deal-packet-staging/ccozickwrpautlxknsjk');
+    expect(runbook).toContain('Follow-up reminder');
+    expect(runbook).toContain('ccozickwrpautlxknsjk');
 
     const live = runDepositStagingAcceptance({
       live: true,
