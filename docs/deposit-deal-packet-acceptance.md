@@ -75,7 +75,7 @@ The migration therefore uses `CURRENT_USER IS NOT DISTINCT FROM 'service_role' O
 Those gates are specified in `docs/STAGING_ACCEPTANCE.md`. This worktree has no isolated Supabase project; the staging runner fail-closes before any network call.
 
 - Isolated-project Stripe test-mode checkout + signed webhook
-- Isolated-project Resend to `@example.invalid` only
+- Isolated-project Resend to official `delivered+…@resend.dev` test aliases only
 - SMS must stay off (`DEPOSIT_STAGING_MODE=1`)
 - Authenticated admin browser on the PR preview pointed at the isolated project
 

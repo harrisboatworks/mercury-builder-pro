@@ -6,10 +6,15 @@ import {
   PRODUCTION_DEPOSIT_RECIPIENTS,
   PRODUCTION_SUPABASE_HOSTS,
   PRODUCTION_WEB_HOSTS,
+  STAGING_PACKET_FAILURE_RECIPIENTS,
+  STAGING_PACKET_SUCCESS_RECIPIENTS,
   assessInheritedNameCollision,
   assessStagingSafety,
   depositStagingModeEnabled,
+  isAllowedStagingRecipient,
+  isOfficialResendTestAddress,
   isReservedInvalidEmail,
+  parseOfficialResendTestAddress,
   resolveDepositAudienceRecipients,
   stripeSecretKind,
 } from '../../../supabase/functions/_shared/deposit-staging-guard.ts';
@@ -23,9 +28,9 @@ const safeEnv = {
   STAGING_SUPABASE_URL: 'https://staging-deposit-packet.supabase.co',
   STAGING_STRIPE_SECRET_KEY: ['sk', 'test', 'synthetic'].join('_'),
   DEPOSIT_STAGING_MODE: '1',
-  DEPOSIT_STAGING_CUSTOMER_EMAIL: 'ada@example.invalid',
-  DEPOSIT_STAGING_HBW_EMAIL: 'hbw@example.invalid',
-  DEPOSIT_STAGING_GROK_EMAIL: 'grok@example.invalid',
+  DEPOSIT_STAGING_CUSTOMER_EMAIL: STAGING_PACKET_SUCCESS_RECIPIENTS.customer,
+  DEPOSIT_STAGING_HBW_EMAIL: STAGING_PACKET_SUCCESS_RECIPIENTS.hbw,
+  DEPOSIT_STAGING_GROK_EMAIL: STAGING_PACKET_SUCCESS_RECIPIENTS.grok,
 };
 
 describe('deposit deal-packet staging guard', () => {
@@ -60,6 +65,45 @@ describe('deposit deal-packet staging guard', () => {
     expect(assessStagingSafety(safeEnv, {}).ok).toBe(true);
   });
 
+  it('allows only official Resend test-address forms on the packet allowlist', () => {
+    expect(parseOfficialResendTestAddress('delivered+deposit-customer@resend.dev')).toEqual({
+      mailbox: 'delivered',
+      label: 'deposit-customer',
+    });
+    expect(isOfficialResendTestAddress('delivered@resend.dev')).toBe(true);
+    expect(isOfficialResendTestAddress('bounced@resend.dev')).toBe(true);
+    expect(isOfficialResendTestAddress('complained@resend.dev')).toBe(true);
+    expect(isOfficialResendTestAddress('suppressed@resend.dev')).toBe(true);
+    expect(isOfficialResendTestAddress('suppressed+label@resend.dev')).toBe(false);
+    expect(isOfficialResendTestAddress('tester@resend.dev')).toBe(false);
+    expect(isOfficialResendTestAddress('ada@example.invalid')).toBe(false);
+    expect(isAllowedStagingRecipient(STAGING_PACKET_SUCCESS_RECIPIENTS.customer)).toBe(true);
+    expect(isAllowedStagingRecipient(STAGING_PACKET_FAILURE_RECIPIENTS[0])).toBe(true);
+    expect(isAllowedStagingRecipient('delivered@resend.dev')).toBe(false);
+    expect(isAllowedStagingRecipient('delivered+unlisted@resend.dev')).toBe(false);
+    expect(isAllowedStagingRecipient('tester@resend.dev')).toBe(false);
+    expect(isAllowedStagingRecipient('ada@example.invalid')).toBe(false);
+    expect(isAllowedStagingRecipient(PRODUCTION_DEPOSIT_RECIPIENTS[0])).toBe(false);
+
+    expect(assessStagingSafety({
+      ...safeEnv,
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: 'tester@resend.dev',
+    }).ok).toBe(false);
+    expect(assessStagingSafety({
+      ...safeEnv,
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: 'ada@example.invalid',
+    }).ok).toBe(false);
+    expect(assessStagingSafety({
+      ...safeEnv,
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
+    }).ok).toBe(true);
+    expect(assessStagingSafety({
+      ...safeEnv,
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
+      DEPOSIT_STAGING_HBW_EMAIL: STAGING_PACKET_FAILURE_RECIPIENTS[0],
+    }).ok).toBe(false);
+  });
+
   it('keeps production recipients when staging mode is unset and rewrites only in staging mode', () => {
     expect(depositStagingModeEnabled({})).toBe(false);
     const production = resolveDepositAudienceRecipients({
@@ -68,11 +112,13 @@ describe('deposit deal-packet staging guard', () => {
       grokEmail: 'hbwbot@agentmail.to',
     });
     expect(production.staging).toBe(false);
+    expect(production.customer).toEqual(['buyer@example.com']);
     expect(production.hbw).toEqual([
       'jayharris97@gmail.com',
       'info@harrisboatworks.ca',
     ]);
     expect(production.grok_bot).toEqual(['hbwbot@agentmail.to']);
+    expect(production.replyTo).toBe('info@harrisboatworks.ca');
 
     expect(() => resolveDepositAudienceRecipients({
       customerEmail: 'buyer@example.com',
@@ -88,18 +134,21 @@ describe('deposit deal-packet staging guard', () => {
       env: safeEnv,
     });
     expect(staging.staging).toBe(true);
-    expect(staging.customer).toEqual(['ada@example.invalid']);
-    expect(staging.hbw).toEqual(['hbw@example.invalid']);
-    expect(staging.grok_bot).toEqual(['grok@example.invalid']);
+    expect(staging.customer).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.customer]);
+    expect(staging.hbw).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.hbw]);
+    expect(staging.grok_bot).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.grok]);
+    expect(staging.replyTo).toBe(STAGING_PACKET_SUCCESS_RECIPIENTS.hbw);
   });
 
-  it('commits only example.invalid fixture identities', async () => {
+  it('commits example.invalid identities and Resend test send recipients', async () => {
     const { sha256Hex } = await import('../../../supabase/functions/_shared/quote-document-policy.ts');
     expect(isReservedInvalidEmail(fixtures.customer.email)).toBe(true);
     expect(isReservedInvalidEmail(fixtures.historical.email)).toBe(true);
-    expect(Object.values(fixtures.recipients).every((value) => isReservedInvalidEmail(String(value)))).toBe(true);
+    expect(Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))).toBe(true);
+    expect(isAllowedStagingRecipient(fixtures.failureRecipients.retry)).toBe(true);
     expect(fixtures.customer.email).not.toContain('harrisboatworks');
     expect(fixtures.customer.email).not.toContain('agentmail.to');
+    expect(fixtures.recipients.customer).not.toContain('example.invalid');
     expect(await sha256Hex(new TextEncoder().encode(fixtures.canonicalPdfUtf8)))
       .toBe(fixtures.staging.quotePdfSha256);
     expect(await sha256Hex(new TextEncoder().encode(fixtures.historicalPdfUtf8)))
@@ -118,8 +167,12 @@ describe('deposit deal-packet staging guard', () => {
     expect(evidence.checks.find((check) => check.id === 'tripwire_production_supabase')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'tripwire_live_stripe')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'tripwire_production_recipient')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_example_invalid_recipient')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_arbitrary_resend_dev')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'tripwire_production_preview')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'tripwire_production_database')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'staging_mode_overrides_to_resend_test_addresses')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'staging_mode_disables_sms')?.result).toBe('PASS');
   });
 
   it('wires mailer and webhook to the staging guard and refuses --live without an isolated project', () => {
@@ -132,6 +185,8 @@ describe('deposit deal-packet staging guard', () => {
     const runbook = readFileSync('docs/STAGING_ACCEPTANCE.md', 'utf8');
     expect(runbook).toContain('deposit-deal-packet-staging-evidence/v1');
     expect(runbook).toContain('eutsoqdpjurknjsshxes.supabase.co');
+    expect(runbook).toContain('delivered+deposit-customer@resend.dev');
+    expect(runbook).toContain('simulated-delivery');
     expect(runbook).toContain('example.invalid');
     expect(runbook).toContain('networkCalls');
     expect(runbook).toContain('Forbidden origin');

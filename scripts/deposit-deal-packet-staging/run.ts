@@ -15,7 +15,9 @@ import {
   assessStagingSafety,
   assertStagingSafety,
   depositStagingModeEnabled,
+  isAllowedStagingRecipient,
   isBlockedRecipient,
+  isOfficialResendTestAddress,
   isProductionSupabaseUrl,
   isReservedInvalidEmail,
   resolveDepositAudienceRecipients,
@@ -160,6 +162,26 @@ function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
   try {
     assertStagingSafety({
       ...safeSyntheticEnv(),
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: "ada@example.invalid",
+    });
+    record(checks, "tripwire_example_invalid_recipient", false, "example.invalid send recipient was accepted");
+  } catch {
+    record(checks, "tripwire_example_invalid_recipient", true, "example.invalid send recipient rejected before network");
+  }
+
+  try {
+    assertStagingSafety({
+      ...safeSyntheticEnv(),
+      DEPOSIT_STAGING_CUSTOMER_EMAIL: "tester@resend.dev",
+    });
+    record(checks, "tripwire_arbitrary_resend_dev", false, "arbitrary resend.dev mailbox was accepted");
+  } catch {
+    record(checks, "tripwire_arbitrary_resend_dev", true, "arbitrary resend.dev mailbox rejected before network");
+  }
+
+  try {
+    assertStagingSafety({
+      ...safeSyntheticEnv(),
       VERCEL_PREVIEW_URL: `https://${PRODUCTION_WEB_HOSTS[0]}`,
     });
     record(checks, "tripwire_production_preview", false, "production web host was accepted");
@@ -214,13 +236,19 @@ function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
   });
   record(
     checks,
-    "staging_mode_overrides_to_example_invalid",
+    "staging_mode_overrides_to_resend_test_addresses",
     stagingRecipients.staging
-      && stagingRecipients.customer.every(isReservedInvalidEmail)
-      && stagingRecipients.hbw.every(isReservedInvalidEmail)
-      && stagingRecipients.grok_bot.every(isReservedInvalidEmail)
+      && stagingRecipients.customer.every(isAllowedStagingRecipient)
+      && stagingRecipients.hbw.every(isAllowedStagingRecipient)
+      && stagingRecipients.grok_bot.every(isAllowedStagingRecipient)
+      && stagingRecipients.customer.every((value) => value.startsWith("delivered+"))
+      && new Set([
+        ...stagingRecipients.customer,
+        ...stagingRecipients.hbw,
+        ...stagingRecipients.grok_bot,
+      ]).size === 3
       && !stagingRecipients.hbw.some(isBlockedRecipient),
-    "staging mode rewrites all three audiences to example.invalid",
+    "staging mode rewrites all three audiences to distinct delivered+ resend.dev aliases",
   );
 
   record(
@@ -233,9 +261,19 @@ function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
 
   record(
     checks,
-    "fixture_emails_are_example_invalid",
-    Object.values(fixtures.recipients).every((value) => isReservedInvalidEmail(String(value))),
-    "committed fixtures use example.invalid only",
+    "fixture_identities_are_example_invalid",
+    isReservedInvalidEmail(String(fixtures.customer.email))
+      && isReservedInvalidEmail(String(fixtures.historical.email)),
+    "committed identity fixtures stay on example.invalid",
+  );
+
+  record(
+    checks,
+    "fixture_recipients_are_resend_test",
+    Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))
+      && isAllowedStagingRecipient(String(fixtures.failureRecipients.retry))
+      && Object.values(fixtures.recipients).every((value) => isOfficialResendTestAddress(String(value))),
+    "committed send recipients are official Resend test aliases only",
   );
 
   record(checks, "no_network_during_tripwires", networkCalls.count === 0, `networkCalls=${networkCalls.count}`);

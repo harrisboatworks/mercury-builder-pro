@@ -18,7 +18,7 @@ const passedRuntimeGates = [
 
 const remainingRuntimeGates = [
   "Isolated-project Stripe test-mode checkout and signed webhook (see docs/STAGING_ACCEPTANCE.md)",
-  "Isolated-project Resend to example.invalid only",
+  "Isolated-project Resend to official delivered+ resend.dev test aliases only",
   "SMS remains off under DEPOSIT_STAGING_MODE=1",
   "Authenticated admin browser on the PR preview pointed at an isolated project",
 ];

@@ -29,7 +29,31 @@ export const PRODUCTION_DEPOSIT_RECIPIENTS = [
   "grokbot@mercuryrepower.ca",
 ] as const;
 
-export const STAGING_RECIPIENT_DOMAIN = "example.invalid";
+export const STAGING_IDENTITY_DOMAIN = "example.invalid";
+export const STAGING_RESEND_TEST_DOMAIN = "resend.dev";
+
+export const STAGING_PACKET_SUCCESS_RECIPIENTS = {
+  customer: "delivered+deposit-customer@resend.dev",
+  hbw: "delivered+deposit-hbw@resend.dev",
+  grok: "delivered+deposit-grok@resend.dev",
+} as const;
+
+export const STAGING_PACKET_FAILURE_RECIPIENTS = [
+  "bounced+deposit-retry@resend.dev",
+] as const;
+
+const STAGING_PACKET_ALLOWLIST = new Set<string>([
+  ...Object.values(STAGING_PACKET_SUCCESS_RECIPIENTS),
+  ...STAGING_PACKET_FAILURE_RECIPIENTS,
+]);
+
+const RESEND_TEST_MAILBOXES = ["delivered", "bounced", "complained", "suppressed"] as const;
+type ResendTestMailbox = (typeof RESEND_TEST_MAILBOXES)[number];
+
+export type OfficialResendTestAddress = {
+  mailbox: ResendTestMailbox;
+  label: string | null;
+};
 
 export const STAGING_ENV_NAMES = [
   "STAGING_SUPABASE_URL",
@@ -65,6 +89,69 @@ export function depositStagingModeEnabled(env: StagingEnv): boolean {
 
 export function isReservedInvalidEmail(value: string): boolean {
   return /^[a-z0-9._%+-]+@example\.invalid$/i.test(value.trim());
+}
+
+export function parseOfficialResendTestAddress(value: string): OfficialResendTestAddress | null {
+  const trimmed = value.trim().toLowerCase();
+  const match = trimmed.match(
+    /^([a-z]+)(?:\+([a-z0-9]+(?:[._-][a-z0-9]+)*))?@resend\.dev$/,
+  );
+  if (!match) return null;
+  const mailbox = match[1];
+  const label = match[2] || null;
+  if (!(RESEND_TEST_MAILBOXES as readonly string[]).includes(mailbox)) return null;
+  if (mailbox === "suppressed" && label) return null;
+  if (label && label.length > 48) return null;
+  return { mailbox: mailbox as ResendTestMailbox, label };
+}
+
+export function isOfficialResendTestAddress(value: string): boolean {
+  return parseOfficialResendTestAddress(value) !== null;
+}
+
+export function isAllowedStagingRecipient(value: string): boolean {
+  const normalized = value.trim().toLowerCase();
+  if (!normalized || isBlockedRecipient(normalized)) return false;
+  if (!isOfficialResendTestAddress(normalized)) return false;
+  return STAGING_PACKET_ALLOWLIST.has(normalized);
+}
+
+export function assessStagingRecipientSet(
+  customer: string,
+  hbw: string,
+  grok: string,
+): StagingCheck[] {
+  const values = [customer, hbw, grok].map((value) => value.trim().toLowerCase());
+  const parsed = values.map(parseOfficialResendTestAddress);
+  const delivered = parsed.filter((item) => item?.mailbox === "delivered").length;
+  const failure = parsed.filter((item) => item !== null && item.mailbox !== "delivered").length;
+  return [
+    {
+      id: "recipients_are_official_resend_test",
+      result: parsed.every(Boolean) ? "PASS" : "FAIL",
+      detail: "overrides must be official Resend test-address forms",
+    },
+    {
+      id: "recipients_are_packet_allowlist",
+      result: values.every((value) => STAGING_PACKET_ALLOWLIST.has(value)) ? "PASS" : "FAIL",
+      detail: "overrides must be the documented delivered+ or bounced+deposit-retry addresses",
+    },
+    {
+      id: "recipients_are_distinct",
+      result: new Set(values.filter(Boolean)).size === 3 ? "PASS" : "FAIL",
+      detail: "customer/hbw/grok overrides must be three distinct addresses",
+    },
+    {
+      id: "recipients_combo_delivered_or_one_failure",
+      result: delivered === 3 || (delivered === 2 && failure === 1) ? "PASS" : "FAIL",
+      detail: "success path uses three delivered+ aliases; failure/retry may replace one with bounced+deposit-retry",
+    },
+    {
+      id: "recipients_not_production",
+      result: !values.some(isBlockedRecipient) ? "PASS" : "FAIL",
+      detail: "production inboxes are rejected",
+    },
+  ];
 }
 
 export function hostFromUrl(value: string): string {
@@ -135,11 +222,14 @@ export function resolveDepositAudienceRecipients(options: {
   if (!customer || !hbw || !grok) {
     throw new Error("Incomplete deposit staging recipient override");
   }
-  if (![customer, hbw, grok].every(isReservedInvalidEmail)) {
-    throw new Error("Deposit staging recipients must use the example.invalid domain");
-  }
-  if ([customer, hbw, grok].some(isBlockedRecipient)) {
-    throw new Error("Deposit staging recipients include a production inbox");
+  const recipientChecks = assessStagingRecipientSet(customer, hbw, grok);
+  if (recipientChecks.some((check) => check.result === "FAIL")) {
+    throw new Error(
+      `Unsafe deposit staging recipients: ${recipientChecks
+        .filter((check) => check.result === "FAIL")
+        .map((check) => check.id)
+        .join(",")}`,
+    );
   }
 
   return {
@@ -219,16 +309,9 @@ export function assessStagingSafety(
     mode === "1",
     "DEPOSIT_STAGING_MODE must be 1 on the isolated project and in the runner env",
   );
-  add(
-    "recipients_are_example_invalid",
-    [customer, hbw, grok].every(isReservedInvalidEmail),
-    "customer/hbw/grok overrides must be @example.invalid",
-  );
-  add(
-    "recipients_not_production",
-    ![customer, hbw, grok].some(isBlockedRecipient),
-    "production inboxes are rejected",
-  );
+  for (const check of assessStagingRecipientSet(customer, hbw, grok)) {
+    checks.push(check);
+  }
   add(
     "preview_not_production",
     !previewUrl || !isProductionWebUrl(previewUrl),

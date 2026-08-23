@@ -11,9 +11,12 @@
     "country": "Canada"
   },
   "recipients": {
-    "customer": "ada@example.invalid",
-    "hbw": "hbw@example.invalid",
-    "grok": "grok@example.invalid"
+    "customer": "delivered+deposit-customer@resend.dev",
+    "hbw": "delivered+deposit-hbw@resend.dev",
+    "grok": "delivered+deposit-grok@resend.dev"
+  },
+  "failureRecipients": {
+    "retry": "bounced+deposit-retry@resend.dev"
   },
   "ids": {
     "stagingSavedQuoteId": "31313131-3131-4131-8131-313131313131",

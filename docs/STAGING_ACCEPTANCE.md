@@ -22,7 +22,7 @@ There is no isolated data-less Supabase branch. Evidence:
 | --- | --- |
 | `STAGING_SUPABASE_URL` | Required HTTPS. Host must not be `eutsoqdpjurknjsshxes.supabase.co`. |
 | `STAGING_STRIPE_SECRET_KEY` | Must be test-mode (`sk` + `test`). Live (`sk`/`rk` + `live`) is rejected. |
-| Recipients | All three overrides required and must be `@example.invalid`. Production HBW/Grok/admin inboxes are rejected. |
+| Recipients | All three overrides required. Each must be an official Resend test-address form on the packet allowlist (`delivered+deposit-customer@resend.dev`, `delivered+deposit-hbw@resend.dev`, `delivered+deposit-grok@resend.dev`, or one documented failure alias `bounced+deposit-retry@resend.dev`). `example.invalid`, arbitrary `resend.dev` mailboxes, and production HBW/Grok/admin inboxes are rejected. |
 | `DEPOSIT_STAGING_MODE` | Must be `1` on the isolated project and in the runner env. |
 | `VERCEL_PREVIEW_URL` | Optional. Production web/Vercel aliases (`mercuryrepower.ca`, `mercury-builder-pro.vercel.app`, `…-git-main-hbw.vercel.app`, …) are rejected. |
 | `STAGING_DATABASE_URL` | Optional. Rejected if the value mentions the production project host/ref. |
@@ -30,7 +30,7 @@ There is no isolated data-less Supabase branch. Evidence:
 
 `DEPOSIT_STAGING_MODE=1` on the isolated Edge secrets also:
 
-- Rewrites customer / HBW / Grok recipients to the three `@example.invalid` overrides.
+- Rewrites customer / HBW / Grok recipients to the three distinct `delivered+…@resend.dev` overrides. These are Resend **simulated-delivery** addresses, not real inbox receipt.
 - Disables every `send-sms` path in `stripe-webhook` (deposit and quote-payment).
 - Leaves production recipients unchanged when the flag is unset.
 
@@ -51,9 +51,9 @@ Runner / operator shell (do not export production names):
 - `STAGING_ADMIN_ACCESS_TOKEN`
 - `VERCEL_PREVIEW_URL`
 - `DEPOSIT_STAGING_MODE=1`
-- `DEPOSIT_STAGING_CUSTOMER_EMAIL=ada@example.invalid`
-- `DEPOSIT_STAGING_HBW_EMAIL=hbw@example.invalid`
-- `DEPOSIT_STAGING_GROK_EMAIL=grok@example.invalid`
+- `DEPOSIT_STAGING_CUSTOMER_EMAIL=delivered+deposit-customer@resend.dev`
+- `DEPOSIT_STAGING_HBW_EMAIL=delivered+deposit-hbw@resend.dev`
+- `DEPOSIT_STAGING_GROK_EMAIL=delivered+deposit-grok@resend.dev`
 
 Isolated Supabase function secrets (same recipient names plus the project's own `SUPABASE_URL` / test Stripe / Resend). Isolated `SUPABASE_URL` is injected by that project and must not be the production host.
 
@@ -85,7 +85,7 @@ Repository contract: `resolveAllowedBrowserOrigin` allows only stable aliases an
 | Historical saved quote | `34343434-3434-4343-8343-343434343434` | `historical@example.invalid` |
 | Historical customer quote | `35353535-3535-4353-8353-353535353535` | `historical@example.invalid` |
 
-Canonical PDF bytes and SHA-256 are in the fixture file. Recipients are only `@example.invalid`.
+Canonical PDF bytes and SHA-256 are in the fixture file. Row identities stay on `@example.invalid`. Send-time recipients are the three distinct `delivered+deposit-{customer,hbw,grok}@resend.dev` aliases. Resend documents these as simulated-delivery test addresses (`delivered@`, `bounced@`, `complained@`, `suppressed@`, with labels on delivered/bounced/complained). Fake domains such as `example.invalid` return HTTP 422 and cannot produce `provider_id`s.
 
 ## Local proof (this commit)
 
@@ -114,13 +114,13 @@ node scripts/run-deposit-deal-packet-staging.mjs --live
 STAGING_SUPABASE_URL=https://eutsoqdpjurknjsshxes.supabase.co \
 STAGING_STRIPE_SECRET_KEY=sk_test_synthetic \
 DEPOSIT_STAGING_MODE=1 \
-DEPOSIT_STAGING_CUSTOMER_EMAIL=ada@example.invalid \
-DEPOSIT_STAGING_HBW_EMAIL=hbw@example.invalid \
-DEPOSIT_STAGING_GROK_EMAIL=grok@example.invalid \
+DEPOSIT_STAGING_CUSTOMER_EMAIL=delivered+deposit-customer@resend.dev \
+DEPOSIT_STAGING_HBW_EMAIL=delivered+deposit-hbw@resend.dev \
+DEPOSIT_STAGING_GROK_EMAIL=delivered+deposit-grok@resend.dev \
 node scripts/run-deposit-deal-packet-staging.mjs --live
 ```
 
-The second command is a production-URL tripwire. It must exit 1 with `live_env_safe_before_network` FAIL and `networkCalls: 0`.
+The second command is a production-URL tripwire. It must exit 1 with `live_env_safe_before_network` FAIL and `networkCalls: 0`. A recipient of `ada@example.invalid` or `tester@resend.dev` must fail the same way (`recipients_are_official_resend_test` / `recipients_are_packet_allowlist`).
 
 ## Operator sequence (only after an isolated project exists)
 
@@ -234,8 +234,8 @@ Forward the test webhook to the isolated `stripe-webhook` (Stripe CLI or a test 
 - `saved_quotes.quote_pdf_sha256 = e7914d99efa8418be53d3f8acd8809c6cc87f221bd097358ada61c79e747cadc`
 - `customer_quotes.payment_status = paid` and a `pi_…` / `cs_test_…`
 - exactly three `deposit_email_deliveries` rows (`customer`, `hbw`, `grok_bot`)
-- each row `status = sent` **or** `failed` if Resend refuses `example.invalid` (do not change recipients)
-- each `sent` row has a non-null `provider_id`
+- each row `status = sent` with a distinct non-null Resend `provider_id`
+- those IDs are from Resend **simulated delivery** to `delivered+deposit-customer@resend.dev`, `delivered+deposit-hbw@resend.dev`, and `delivered+deposit-grok@resend.dev`. They are not proof of a real inbox
 - `quote_data.sms_notification_status` is not `sent` (skipped / staging)
 - no `send-sms` invoke in webhook logs
 
@@ -247,7 +247,12 @@ Resend the same `checkout.session.completed` event. Expected: no fourth delivery
 
 ### 8. Failure / retry
 
-Force one audience to `failed` (null `provider_id`). Invoke isolated `send-deposit-confirmation-email` with service-role and `{ "stripeSessionId": "$STAGING_PAID_SESSION_ID" }` (no Origin). Expected: only the failed audience is reclaimed; other `provider_id`s unchanged. Admin retry from the generated preview Origin is expected to `403`; use service-role or localhost.
+Two documented options; both stay on the packet allowlist:
+
+1. Force one audience row to `failed` (null `provider_id`), keep the three `delivered+` overrides, and re-invoke the mailer. Only that audience is reclaimed and receives a new simulated `provider_id`.
+2. Replace **exactly one** override with `bounced+deposit-retry@resend.dev` (official Resend bounce test address, labelled). Re-invoke. Then restore that audience to its `delivered+` alias and retry so it can obtain a delivered `provider_id`.
+
+Do not use `complained@`, `suppressed@`, unlisted `resend.dev` mailboxes, or any real inbox. Admin retry from the generated preview Origin is expected to `403`; use service-role or localhost. Expected: other audiences' `provider_id`s unchanged.
 
 ### 9. Authenticated admin packet
 
@@ -289,8 +294,8 @@ Values of secrets are never written. `envNamesPresent` is boolean presence only.
 
 - Stripe secret kind is test. Checkout session IDs start with `cs_test_`.
 - No live Stripe, live Resend production audience, SMS, or production Supabase host appears in evidence.
-- Recipients on the three delivery sends are exactly the fixture `@example.invalid` addresses.
-- Historical control email stays `historical@example.invalid` and is never mailed.
+- Recipients on the three delivery sends are the three distinct `delivered+deposit-{customer,hbw,grok}@resend.dev` aliases. `provider_id`s prove Resend accepted simulated delivery, not a human inbox.
+- Historical control email stays `historical@example.invalid` (data only) and is never mailed.
 
 ## Negative controls (summary)
 
@@ -299,6 +304,8 @@ Values of secrets are never written. `envNamesPresent` is boolean presence only.
 | Production Supabase URL | rejected before network |
 | Live Stripe prefix | rejected before network |
 | Production inbox | rejected before network |
+| `example.invalid` send recipient | rejected before network (Resend 422; identities may still use it) |
+| Arbitrary `resend.dev` mailbox | rejected before network |
 | Production Vercel/web host as preview | rejected before network |
 | Inherited `SUPABASE_URL` / `STRIPE_SECRET_KEY` | rejected |
 | Incomplete identity / missing `savedQuoteId` | `400`, no Stripe session |
