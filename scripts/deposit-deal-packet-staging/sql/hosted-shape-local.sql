@@ -4,8 +4,8 @@
 --   auth/storage owned by supabase_admin
 --   auth.users owned by supabase_auth_admin
 --   storage.buckets / storage.objects owned by supabase_storage_admin
---   deposit_hosted_runner has USAGE and table DML, not schema CREATE,
---   and is not a member of those owner roles.
+--   deposit_hosted_runner has USAGE and SELECT/INSERT/UPDATE/REFERENCES,
+--   not schema CREATE, and is not a member of those owner roles.
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
@@ -89,9 +89,9 @@ REVOKE CREATE ON SCHEMA storage FROM deposit_hosted_runner, anon, authenticated,
 GRANT USAGE ON SCHEMA auth TO deposit_hosted_runner, anon, authenticated, service_role;
 GRANT USAGE ON SCHEMA storage TO deposit_hosted_runner, anon, authenticated, service_role;
 
-GRANT SELECT, INSERT, UPDATE ON TABLE auth.users TO deposit_hosted_runner;
-GRANT SELECT, INSERT, UPDATE ON TABLE storage.buckets TO deposit_hosted_runner;
-GRANT SELECT, INSERT, UPDATE ON TABLE storage.objects TO deposit_hosted_runner;
+GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE auth.users TO deposit_hosted_runner;
+GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE storage.buckets TO deposit_hosted_runner;
+GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE storage.objects TO deposit_hosted_runner;
 GRANT EXECUTE ON FUNCTION auth.uid() TO deposit_hosted_runner, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION auth.role() TO deposit_hosted_runner, anon, authenticated, service_role;
 

@@ -302,6 +302,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(hostedShape).toContain('supabase_storage_admin');
     expect(hostedShape).toContain('REVOKE CREATE ON SCHEMA auth FROM deposit_hosted_runner');
     expect(hostedShape).toContain('REVOKE CREATE ON SCHEMA storage FROM deposit_hosted_runner');
+    expect(hostedShape).toContain('GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE auth.users TO deposit_hosted_runner');
+    expect(hostedShape).toContain('GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE storage.buckets TO deposit_hosted_runner');
+    expect(hostedShape).toContain('GRANT SELECT, INSERT, UPDATE, REFERENCES ON TABLE storage.objects TO deposit_hosted_runner');
     expect(hostedShape).toContain('Not applied to any remote Supabase project');
     expect(bootstrap).toContain('ccozickwrpautlxknsjk');
     expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
@@ -353,6 +356,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('schema-surface marker, not proof of the connected project');
     expect(runbook).toContain('`CREATE TABLE IF NOT EXISTS` still requires schema `CREATE`');
     expect(runbook).toContain('quotes bucket upsert is DML only');
+    expect(runbook).toContain('rolsuper=false');
+    expect(runbook).toContain('rolbypassrls=true');
     expect(runbook).not.toContain('nonce may be omitted');
     expect(runbook).not.toContain('If the session can determine project ref');
     expect(runbook).toContain('Follow-up reminder');

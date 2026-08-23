@@ -664,6 +664,26 @@ function recordHostedShapeBootstrapProofs() {
     ${psqlLiteral(`status=${boot.status}/${bootAgain.status} tables=${countPublicPacketTables(shapeDb)} ${bootOutput.slice(0, 180)}`)}
   );`);
 
+  const runnerReferences = psqlValue(shapeDb, `SELECT has_table_privilege('${hostedRunnerRole}', 'auth.users', 'REFERENCES')`);
+  const userRolesFk = psqlValue(shapeDb, `
+    SELECT EXISTS (
+      SELECT 1
+      FROM pg_constraint c
+      JOIN pg_class t ON t.oid = c.conrelid
+      JOIN pg_namespace n ON n.oid = t.relnamespace
+      WHERE n.nspname = 'public'
+        AND t.relname = 'user_roles'
+        AND c.conname = 'user_roles_user_id_fkey'
+        AND c.contype = 'f'
+    )
+  `);
+  const userRolesFkOk = runnerReferences === "t" && userRolesFk === "t";
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_hosted_shape_user_roles_fk',
+    ${userRolesFkOk ? "true" : "false"},
+    ${psqlLiteral(`runner_references=${runnerReferences} user_roles_user_id_fkey=${userRolesFk}`)}
+  );`);
+
   const authUsersOwner = psqlValue(shapeDb, `
     SELECT r.rolname
     FROM pg_class c
