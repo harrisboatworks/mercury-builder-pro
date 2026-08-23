@@ -168,6 +168,7 @@ describe('deposit webhook deal-packet idempotency', () => {
     expect(webhook).toContain('seedDepositEmailDeliveryRows');
     expect(webhook).toContain('body: { stripeSessionId: session.id }');
     expect(webhook).toContain('shouldSendFirstClaimSms');
+    expect(webhook).toContain('depositStagingModeEnabled');
     expect(webhook).toContain('deliveriesIndicateFailure');
     expect(webhook).toContain('stripe_billing_address: billingAddress');
     expect(webhook).not.toContain('customerEmail: session.customer_email');

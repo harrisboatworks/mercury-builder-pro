@@ -72,9 +72,11 @@ The migration therefore uses `CURRENT_USER IS NOT DISTINCT FROM 'service_role' O
 
 ## Remaining live-provider / authenticated-preview gates
 
-- Signed Stripe webhook against a real endpoint
-- Live Resend / Grok AgentMail
-- Live SMS
-- Authenticated admin browser against a deployed or preview app
+Those gates are specified in `docs/STAGING_ACCEPTANCE.md`. This worktree has no isolated Supabase project; the staging runner fail-closes before any network call.
+
+- Isolated-project Stripe test-mode checkout + signed webhook
+- Isolated-project Resend to `@example.invalid` only
+- SMS must stay off (`DEPOSIT_STAGING_MODE=1`)
+- Authenticated admin browser on the PR preview pointed at the isolated project
 
 No live Supabase, Stripe, Resend, SMS, customer data, deploy, push, merge, or PR-ready state change.

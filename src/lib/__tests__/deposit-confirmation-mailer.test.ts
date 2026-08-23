@@ -160,7 +160,7 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).toContain('.download(canonicalPath)');
     expect(mailer).toContain('attachments: pdfAttachment');
     expect(mailer).toContain('audiencesNeedingDelivery');
-    expect(mailer).toContain('hbwDepositRecipients(ADMIN_EMAILS)');
+    expect(mailer).toContain('resolveDepositAudienceRecipients');
     expect(mailer).toContain('GROK_BOT_AGENTMAIL');
     expect(mailer).toContain('adminDealPacketPath(savedQuoteId)');
     expect(mailer).toContain('isAuthorizedInternalRequest(req)');

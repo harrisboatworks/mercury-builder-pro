@@ -23,6 +23,7 @@ import {
   seedDepositEmailDeliveryRows,
   stripeWebhookStatusAfterHandler,
 } from "../_shared/deposit-email-deliveries.ts";
+import { depositStagingModeEnabled } from "../_shared/deposit-staging-guard.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -392,7 +393,10 @@ serve(async (req) => {
           claimWon,
           concurrent: concurrentPaidDeposit,
         });
-        const sendSms = shouldSendFirstClaimSms(smsGate);
+        const sendSms = shouldSendFirstClaimSms(smsGate)
+          && !depositStagingModeEnabled({
+            DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+          });
 
         if (sendSms && emailFailed) {
           try {
@@ -564,20 +568,28 @@ serve(async (req) => {
         const motorLabel = quoteRow.motor_model || "Mercury motor";
         logStep("Quote marked paid", { quoteId: quoteRow.id, customerEmail, amountTotal });
 
-        // Admin SMS
+        // Admin SMS. Staging mode is a hard kill switch for every SMS path.
         let quoteSmsFailed = false;
-        try {
-          const { error: quoteSmsError } = await supabase.functions.invoke("send-sms", {
-            body: {
-              to: "admin",
-              message: `Quote payment received: ${customerName}, ${motorLabel}, $${amountTotal}`,
-              messageType: "hot_lead",
-            },
+        if (depositStagingModeEnabled({
+          DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+        })) {
+          logStep("Quote-payment SMS skipped; deposit staging mode is enabled", {
+            sessionId: session.id,
           });
-          if (quoteSmsError) throw quoteSmsError;
-        } catch (e: any) {
-          quoteSmsFailed = true;
-          logStep("WARNING: Admin quote-payment SMS failed", { error: e?.message });
+        } else {
+          try {
+            const { error: quoteSmsError } = await supabase.functions.invoke("send-sms", {
+              body: {
+                to: "admin",
+                message: `Quote payment received: ${customerName}, ${motorLabel}, $${amountTotal}`,
+                messageType: "hot_lead",
+              },
+            });
+            if (quoteSmsError) throw quoteSmsError;
+          } catch (e: any) {
+            quoteSmsFailed = true;
+            logStep("WARNING: Admin quote-payment SMS failed", { error: e?.message });
+          }
         }
 
         // Admin email notification (reuse deposit confirmation function in adminOnly mode)

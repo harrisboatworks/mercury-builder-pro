@@ -1,0 +1,44 @@
+{
+  "schema": "deposit-deal-packet-staging-fixtures/v1",
+  "customer": {
+    "name": "Staging Lovelace",
+    "email": "ada@example.invalid",
+    "phone": "5555550100",
+    "addressLine1": "1 Example Invalid Road",
+    "city": "Exampleville",
+    "region": "ON",
+    "postalCode": "K0K 0A0",
+    "country": "Canada"
+  },
+  "recipients": {
+    "customer": "ada@example.invalid",
+    "hbw": "hbw@example.invalid",
+    "grok": "grok@example.invalid"
+  },
+  "ids": {
+    "stagingSavedQuoteId": "31313131-3131-4131-8131-313131313131",
+    "stagingCustomerQuoteId": "32323232-3232-4232-8222-323232323232",
+    "historicalSavedQuoteId": "34343434-3434-4343-8343-343434343434",
+    "historicalCustomerQuoteId": "35353535-3535-4353-8353-353535353535",
+    "fixtureMotorId": "36363636-3636-4636-8636-363636363636"
+  },
+  "historical": {
+    "name": "Historical Control",
+    "email": "historical@example.invalid",
+    "phone": "5555550199",
+    "fingerprint": "deposit-deal-packet-staging/v1",
+    "checkoutSessionId": "cs_test_historical_control_35353535",
+    "resumeToken": "dep_343434343434343434343434",
+    "quotePdfSha256": "1a43268bacbf0a74d6f3c8816c3e0d826f1582944278bc3a2cdbf776ee989adb"
+  },
+  "staging": {
+    "resumeToken": "dep_313131313131313131313131",
+    "depositAmount": "500",
+    "quotePdfSha256": "e7914d99efa8418be53d3f8acd8809c6cc87f221bd097358ada61c79e747cadc"
+  },
+  "depositAmount": "500",
+  "canonicalPdfPathPrefix": "saved-quotes",
+  "canonicalPdfUtf8": "%PDF-1.7\nstaging-canonical\n",
+  "historicalPdfUtf8": "%PDF-1.7\nhistorical-control\n",
+  "stripeTestPriceId500": "price_1SocofHhVKClVQCpsdCfdG7e"
+}

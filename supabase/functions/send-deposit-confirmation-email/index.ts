@@ -25,7 +25,6 @@ import {
   formatStableDepositEmailDate,
   formatStableDepositEmailTime,
   generateDepositReference,
-  hbwDepositRecipients,
   reportableDeliveryStatus,
   resendFailureCode,
   resendIdempotencyKey,
@@ -36,6 +35,7 @@ import {
   type DepositEmailAudience,
   type DepositEmailStatus,
 } from "../_shared/deposit-email-deliveries.ts";
+import { resolveDepositAudienceRecipients } from "../_shared/deposit-staging-guard.ts";
 import {
   assertCanonicalPaidQuoteDocument,
   QuoteDocumentUnavailableError,
@@ -69,6 +69,15 @@ function isAuthorizedInternalRequest(req: Request): boolean {
   if (!supabaseServiceKey) return false;
   const authorization = req.headers.get("authorization") || "";
   return constantTimeEqual(authorization, `Bearer ${supabaseServiceKey}`);
+}
+
+function stagingMailerEnv() {
+  return {
+    DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+    DEPOSIT_STAGING_CUSTOMER_EMAIL: Deno.env.get("DEPOSIT_STAGING_CUSTOMER_EMAIL"),
+    DEPOSIT_STAGING_HBW_EMAIL: Deno.env.get("DEPOSIT_STAGING_HBW_EMAIL"),
+    DEPOSIT_STAGING_GROK_EMAIL: Deno.env.get("DEPOSIT_STAGING_GROK_EMAIL"),
+  };
 }
 
 function generateReferenceNumber(paymentId?: string, savedQuoteId = ""): string {
@@ -260,9 +269,15 @@ serve(async (req) => {
         "",
         motorInfo,
       );
+      const adminRecipients = resolveDepositAudienceRecipients({
+        customerEmail: "",
+        adminEmails: ADMIN_EMAILS,
+        grokEmail: GROK_BOT_AGENTMAIL,
+        env: stagingMailerEnv(),
+      });
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
-        to: hbwDepositRecipients(ADMIN_EMAILS),
+        to: adminRecipients.hbw,
         subject: `[DEPOSIT] ${customerName} - ${getMotorLabel(motorInfo) || "motor"} - $${depositAmount}`,
         html: adminHtml,
       });
@@ -511,6 +526,13 @@ serve(async (req) => {
       }
     };
 
+    const audienceRecipients = resolveDepositAudienceRecipients({
+      customerEmail,
+      adminEmails: ADMIN_EMAILS,
+      grokEmail: GROK_BOT_AGENTMAIL,
+      env: stagingMailerEnv(),
+    });
+
     const customerHtml = createDepositConfirmationEmail(
       customerName, depositAmount, referenceNumber, motorLabel, paymentId || "", paidAt,
     );
@@ -529,11 +551,11 @@ serve(async (req) => {
     );
     const internalSubject = `[DEPOSIT] ${customerName} - ${motorLabel || "motor"} - $${depositAmount}`;
 
-    if (pendingAudiences.includes("customer") && customerEmail) {
+    if (pendingAudiences.includes("customer") && audienceRecipients.customer[0]) {
       await sendAudience("customer", {
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
-        reply_to: "info@harrisboatworks.ca",
-        to: [customerEmail],
+        reply_to: audienceRecipients.replyTo,
+        to: audienceRecipients.customer,
         subject: motorLabel
           ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
           : `Reservation deposit received | Harris Boat Works`,
@@ -545,7 +567,7 @@ serve(async (req) => {
     if (pendingAudiences.includes("hbw")) {
       await sendAudience("hbw", {
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
-        to: hbwDepositRecipients(ADMIN_EMAILS),
+        to: audienceRecipients.hbw,
         subject: internalSubject,
         html: internalHtml,
         attachments: pdfAttachment,
@@ -555,7 +577,7 @@ serve(async (req) => {
     if (pendingAudiences.includes("grok_bot")) {
       await sendAudience("grok_bot", {
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
-        to: [GROK_BOT_AGENTMAIL],
+        to: audienceRecipients.grok_bot,
         subject: internalSubject,
         html: internalHtml,
         attachments: pdfAttachment,

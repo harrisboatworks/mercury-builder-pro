@@ -8,7 +8,8 @@ import { existsSync } from "node:fs";
 import process from "node:process";
 
 const passedRuntimeGates = [
-  "Focused Vitest suite (helpers, migration source, admin packet, mailer planner)",
+  "Focused Vitest suite (helpers, migration source, admin packet, mailer planner, staging guard)",
+  "Staging dry-run tripwires (production URL/key/recipient rejected, networkCalls=0)",
   "Local PostgreSQL runtime: unmodified migration, triggers, RLS, grants, claim RPC race",
   "Deno check of create-payment, stripe-webhook, send-deposit-confirmation-email, and changed shared modules",
   "Identity twin (src/lib/deposit-identity.ts === supabase/functions/_shared/deposit-identity.ts)",
@@ -16,10 +17,10 @@ const passedRuntimeGates = [
 ];
 
 const remainingRuntimeGates = [
-  "Signed Stripe webhook delivery against a real endpoint",
-  "Live Resend provider delivery and Grok AgentMail inbox",
-  "Live SMS",
-  "Authenticated admin browser session against a deployed or preview app",
+  "Isolated-project Stripe test-mode checkout and signed webhook (see docs/STAGING_ACCEPTANCE.md)",
+  "Isolated-project Resend to example.invalid only",
+  "SMS remains off under DEPOSIT_STAGING_MODE=1",
+  "Authenticated admin browser on the PR preview pointed at an isolated project",
 ];
 
 const head = spawnSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).stdout.trim();
@@ -50,6 +51,7 @@ run("identity twin", "cmp", [
   "supabase/functions/_shared/deposit-identity.ts",
 ]);
 run("secret scan", "node", ["scripts/scan-deposit-deal-packet-secrets.mjs"]);
+run("staging dry-run tripwires", "node", ["scripts/run-deposit-deal-packet-staging.mjs", "--dry-run"]);
 run("focused vitest", "npm", ["run", "test:deposit-acceptance"]);
 run("postgresql runtime", "node", ["scripts/run-deposit-deal-packet-pg-acceptance.mjs"]);
 run("deno check", "node", ["scripts/run-deposit-deal-packet-deno-acceptance.mjs"]);

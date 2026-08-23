@@ -22,11 +22,14 @@ const files = execFileSync("git", ["ls-files", "-c", "-o", "--exclude-standard",
   .filter(Boolean)
   .filter((file) => (
     file.startsWith("scripts/deposit-deal-packet-pg/")
+    || file.startsWith("scripts/deposit-deal-packet-staging/")
     || file.startsWith("scripts/run-deposit-deal-packet")
     || file.startsWith("scripts/scan-deposit-deal-packet")
     || file.startsWith("src/lib/__tests__/")
     || file === "docs/deposit-deal-packet-acceptance.md"
+    || file === "docs/STAGING_ACCEPTANCE.md"
     || file === "supabase/migrations/20260823120000_deposit_deal_packet.sql"
+    || file === "supabase/functions/_shared/deposit-staging-guard.ts"
   ));
 
 const findings = [];
