@@ -109,7 +109,7 @@ describe('deposit identity contract', () => {
     expect((dialog.match(/aria-describedby=\{errors\.\w+ \? '/g) || []).length).toBe(9);
     expect(payment).toContain('parseDepositIdentity(customerInfo)');
     expect(payment).toContain('createPaymentCustomerInfoSchema(z)');
-    expect(payment).toContain('assertDepositRequestReadyForStripe');
+    expect(payment).toContain('decideCreatePaymentStripeAccess');
     expect(identity).toContain('MIN_DEPOSIT_PHONE_DIGITS');
     expect(identity).toContain('MAX_DEPOSIT_PHONE_DIGITS');
     expect(summary).toContain('savedQuoteIdentityColumns(identity)');

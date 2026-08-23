@@ -36,10 +36,10 @@ describe('private quote document storage contract', () => {
     expect(myQuotes).not.toContain('deposit_pdf_path');
     expect(myQuotes).not.toContain("storage.from('quotes')");
 
-    const depositGuard = payment.indexOf('assertDepositRequestReadyForStripe');
+    const depositGuard = payment.indexOf('decideCreatePaymentStripeAccess(validationResult.data)');
     const documentCheck = payment.indexOf('assertCanonicalQuoteDocumentReady({');
     const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData');
-    expect(payment).toContain('assertDepositRequestReadyForStripe(validationResult.data)');
+    expect(payment).toContain('decideCreatePaymentStripeAccess(validationResult.data)');
     expect(payment).toContain('if (!depositSavedQuoteId || !submittedIdentity)');
     expect(payment).toContain('assertCanonicalQuoteDocumentReady({');
     expect(payment).toContain('canonicalQuoteDocumentPath(savedQuote.id)');

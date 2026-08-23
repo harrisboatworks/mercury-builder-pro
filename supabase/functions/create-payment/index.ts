@@ -6,7 +6,10 @@ import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import { createPaymentCustomerInfoSchema } from "../_shared/create-payment-request.ts";
-import { assertDepositRequestReadyForStripe } from "../_shared/deposit-payment-guard.ts";
+import {
+  decideCreatePaymentStripeAccess,
+  readRequiredStripeSecret,
+} from "../_shared/deposit-payment-guard.ts";
 import {
   depositIdentitiesMatch,
   parseDepositIdentity,
@@ -54,7 +57,7 @@ const EXPRESS_MOTOR_ID = "e920cfdf-223a-408a-850b-6f112e15c4d7";
 const EXPRESS_MOTOR_MODEL_NUMBER = "1A10201LK";
 
 // Base customerInfo stays backward-compatible for quote payments.
-// Deposit identity is enforced later by assertDepositRequestReadyForStripe.
+// Deposit identity is enforced later by decideCreatePaymentStripeAccess.
 const customerInfoSchema = createPaymentCustomerInfoSchema(z);
 
 const quoteDataSchema = z.object({
@@ -318,17 +321,8 @@ serve(async (req) => {
 
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
-    logStep("Stripe key verified");
-
-    // Create Supabase client using the anon key for user authentication
-    const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
-    );
-
-    // Parse and fail-closed on deposit identity before any Stripe client or API call.
+    // Parse and fail-closed on deposit identity/savedQuoteId before Stripe
+    // secret, Stripe client, Supabase client, or any Stripe/Supabase network.
     const rawBody = await req.json();
     if (rawBody && typeof rawBody === "object" && rawBody.action === "recover_stripe_billing") {
       const recoverResult = recoverStripeBillingSchema.safeParse(rawBody);
@@ -338,6 +332,7 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
+      const stripeKey = readRequiredStripeSecret(Deno.env);
       return await recoverHistoricalStripeBilling({
         req,
         body: recoverResult.data,
@@ -364,8 +359,25 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      depositSavedQuoteId = assertDepositRequestReadyForStripe(validationResult.data);
+      const stripeAccess = decideCreatePaymentStripeAccess(validationResult.data);
+      if (!stripeAccess.allowStripeAccess) {
+        logStep("Deposit rejected before Stripe access", { error: stripeAccess.error });
+        return new Response(JSON.stringify({ error: stripeAccess.error }), {
+          status: stripeAccess.status,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      depositSavedQuoteId = stripeAccess.savedQuoteId;
     }
+
+    const stripeKey = readRequiredStripeSecret(Deno.env);
+    logStep("Stripe key verified");
+
+    // Create Supabase client using the anon key for user authentication
+    const supabaseClient = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
+    );
 
     if (verificationResult.success) {
       const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });

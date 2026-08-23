@@ -50,11 +50,41 @@ export function assertDepositRequestReadyForStripe(
 }
 
 export function createPaymentMayInvokeStripe(body: DepositPaymentGuardInput): boolean {
-  if (body.action === "verify") return true;
-  try {
-    assertDepositRequestReadyForStripe(body);
-    return true;
-  } catch {
-    return false;
+  return decideCreatePaymentStripeAccess(body).allowStripeAccess;
+}
+
+export type CreatePaymentStripeAccessDecision =
+  | { allowStripeAccess: false; status: 400; error: string; savedQuoteId: null }
+  | { allowStripeAccess: true; savedQuoteId: string | null };
+
+export function decideCreatePaymentStripeAccess(
+  body: DepositPaymentGuardInput,
+): CreatePaymentStripeAccessDecision {
+  if (body.action === "verify" || body.action === "recover_stripe_billing") {
+    return { allowStripeAccess: true, savedQuoteId: null };
   }
+  try {
+    return {
+      allowStripeAccess: true,
+      savedQuoteId: assertDepositRequestReadyForStripe(body),
+    };
+  } catch (error) {
+    return {
+      allowStripeAccess: false,
+      status: 400,
+      error: error instanceof Error ? error.message : INVALID_DEPOSIT_IDENTITY,
+      savedQuoteId: null,
+    };
+  }
+}
+
+export function readRequiredStripeSecret(
+  env: { get(name: string): string | undefined } | Record<string, string | undefined>,
+): string {
+  const value = typeof (env as { get?: unknown }).get === "function"
+    ? (env as { get(name: string): string | undefined }).get("STRIPE_SECRET_KEY")
+    : (env as Record<string, string | undefined>).STRIPE_SECRET_KEY;
+  const trimmed = typeof value === "string" ? value.trim() : "";
+  if (!trimmed) throw new Error("STRIPE_SECRET_KEY is not set");
+  return trimmed;
 }

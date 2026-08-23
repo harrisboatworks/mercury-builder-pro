@@ -9,7 +9,10 @@ import {
   assertDepositRequestHasSavedQuoteId,
   assertDepositRequestReadyForStripe,
   createPaymentMayInvokeStripe,
+  decideCreatePaymentStripeAccess,
   isDepositPaymentRequest,
+  readRequiredStripeSecret,
+  type CreatePaymentStripeAccessDecision,
 } from '../../../supabase/functions/_shared/deposit-payment-guard.ts';
 
 const compatiblePaymentRequestSchema = z.object({
@@ -39,6 +42,37 @@ function wouldInvokeStripe(body: Parameters<typeof createPaymentMayInvokeStripe>
   }
   stripe.invoked = true;
   return stripe.invoked;
+}
+
+function simulateCreatePaymentBeforeStripe(
+  body: Parameters<typeof decideCreatePaymentStripeAccess>[0],
+  env: Record<string, string | undefined>,
+) {
+  const stripeAccess: CreatePaymentStripeAccessDecision = decideCreatePaymentStripeAccess(body);
+  if (stripeAccess.allowStripeAccess === false) {
+    return {
+      status: stripeAccess.status,
+      error: stripeAccess.error,
+      readStripeSecret: false,
+      createdStripeClient: false,
+    };
+  }
+  try {
+    readRequiredStripeSecret(env);
+  } catch {
+    return {
+      status: 500,
+      error: 'An error occurred processing your payment. Please try again.',
+      readStripeSecret: true,
+      createdStripeClient: false,
+    };
+  }
+  return {
+    status: 'continue' as const,
+    error: null,
+    readStripeSecret: true,
+    createdStripeClient: true,
+  };
 }
 
 describe('deposit create-payment savedQuoteId guard', () => {
@@ -98,7 +132,7 @@ describe('deposit create-payment savedQuoteId guard', () => {
 
     const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     expect(payment).toContain('createPaymentCustomerInfoSchema(z)');
-    expect(payment).toContain('assertDepositRequestReadyForStripe');
+    expect(payment).toContain('decideCreatePaymentStripeAccess');
     expect(payment).not.toContain('addressLine1: z.string().trim().min(1).max(120)');
   });
 
@@ -159,13 +193,19 @@ describe('deposit create-payment savedQuoteId guard', () => {
 
   it('constructs the deposit Stripe client only after identity, saved-quote, and bound document checks', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
-    const identityGuardIdx = source.indexOf('assertDepositRequestReadyForStripe');
+    const identityGuardIdx = source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)');
+    const stripeSecretIdx = source.indexOf('readRequiredStripeSecret(Deno.env)', identityGuardIdx);
+    const supabaseClientIdx = source.indexOf('const supabaseClient = createClient(', stripeSecretIdx);
     const documentCheck = source.indexOf('assertCanonicalQuoteDocumentReady({');
     const depositStripeIdx = source.indexOf('const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });', documentCheck);
     const customersListIdx = source.indexOf('stripe.customers.list', documentCheck);
     const checkoutCreateIdx = source.indexOf('stripe.checkout.sessions.create(sessionData');
 
     expect(identityGuardIdx).toBeGreaterThan(-1);
+    expect(source.slice(identityGuardIdx, stripeSecretIdx)).toContain('allowStripeAccess');
+    expect(source.slice(identityGuardIdx, stripeSecretIdx)).toContain('status: stripeAccess.status');
+    expect(stripeSecretIdx).toBeGreaterThan(identityGuardIdx);
+    expect(supabaseClientIdx).toBeGreaterThan(stripeSecretIdx);
     expect(documentCheck).toBeGreaterThan(identityGuardIdx);
     expect(depositStripeIdx).toBeGreaterThan(documentCheck);
     expect(customersListIdx).toBeGreaterThan(depositStripeIdx);
@@ -182,7 +222,7 @@ describe('deposit create-payment savedQuoteId guard', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     expect(source.indexOf('rawBody.action === "recover_stripe_billing"')).toBeGreaterThan(-1);
     expect(source.indexOf('rawBody.action === "recover_stripe_billing"'))
-      .toBeLessThan(source.indexOf('depositSavedQuoteId = assertDepositRequestReadyForStripe'));
+      .toBeLessThan(source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)'));
     expect(source.indexOf('requireAdmin(options.req, options.corsHeaders)')).toBeGreaterThan(-1);
     expect(source.indexOf('requireAdmin(options.req, options.corsHeaders)'))
       .toBeLessThan(source.indexOf('stripe.checkout.sessions.retrieve(boundSessionId,'));
@@ -249,5 +289,70 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(source).toContain('.eq("stripe_checkout_session_id", expectedCheckoutSessionId)');
     expect(source).toContain('.eq("deposit_status", expectedSavedDepositStatus)');
     expect(source).not.toContain('paidAt: new Date().toISOString()');
+  });
+
+  it('returns 400 for the hosted no-Stripe-secret malformed deposits before reading the secret', () => {
+    const hostedMissingAddress = {
+      paymentType: 'deposit' as const,
+      depositAmount: '500' as const,
+      savedQuoteId: '31313131-3131-4131-8131-313131313131',
+      customerInfo: {
+        name: 'Staging Lovelace',
+        email: 'ada@example.invalid',
+        phone: '5555550100',
+      },
+    };
+    const hostedMissingSavedQuoteId = {
+      paymentType: 'deposit' as const,
+      depositAmount: '500' as const,
+      customerInfo: {
+        name: 'Staging Lovelace',
+        email: 'ada@example.invalid',
+        phone: '5555550100',
+        addressLine1: '1 Example Invalid Road',
+        city: 'Exampleville',
+        region: 'ON',
+        postalCode: 'K0K 0A0',
+        country: 'Canada',
+      },
+    };
+
+    expect(compatiblePaymentRequestSchema.safeParse(hostedMissingAddress).success).toBe(true);
+    expect(compatiblePaymentRequestSchema.safeParse(hostedMissingSavedQuoteId).success).toBe(true);
+
+    const missingAddress = simulateCreatePaymentBeforeStripe(hostedMissingAddress, {});
+    expect(missingAddress).toEqual({
+      status: 400,
+      error: INVALID_DEPOSIT_IDENTITY,
+      readStripeSecret: false,
+      createdStripeClient: false,
+    });
+    expect(missingAddress.error).toBe('Customer identity and address are required for a deposit');
+
+    const missingQuote = simulateCreatePaymentBeforeStripe(hostedMissingSavedQuoteId, {});
+    expect(missingQuote).toEqual({
+      status: 400,
+      error: INVALID_DEPOSIT_SAVED_QUOTE,
+      readStripeSecret: false,
+      createdStripeClient: false,
+    });
+    expect(missingQuote.error).toBe('Invalid saved quote for deposit');
+
+    expect(() => readRequiredStripeSecret({})).toThrow('STRIPE_SECRET_KEY is not set');
+    expect(() => readRequiredStripeSecret({ get: () => undefined })).toThrow('STRIPE_SECRET_KEY is not set');
+
+    const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+    const serveIdx = source.indexOf('serve(async (req) => {');
+    const parseIdx = source.indexOf('const rawBody = await req.json();', serveIdx);
+    const decideIdx = source.indexOf('decideCreatePaymentStripeAccess(validationResult.data)', parseIdx);
+    const rejectIdx = source.indexOf('if (!stripeAccess.allowStripeAccess)', decideIdx);
+    const paymentSecretIdx = source.indexOf('const stripeKey = readRequiredStripeSecret(Deno.env);', rejectIdx);
+    const firstEnvGet = source.indexOf('Deno.env.get("STRIPE_SECRET_KEY")', serveIdx);
+    expect(parseIdx).toBeGreaterThan(serveIdx);
+    expect(decideIdx).toBeGreaterThan(parseIdx);
+    expect(rejectIdx).toBeGreaterThan(decideIdx);
+    expect(paymentSecretIdx).toBeGreaterThan(rejectIdx);
+    expect(source.slice(rejectIdx, paymentSecretIdx)).toContain('status: stripeAccess.status');
+    expect(firstEnvGet).toBe(-1);
   });
 });
