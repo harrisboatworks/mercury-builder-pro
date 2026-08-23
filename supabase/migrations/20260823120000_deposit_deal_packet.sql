@@ -277,7 +277,7 @@ STABLE
 SET search_path = pg_catalog
 AS $$
   SELECT
-    auth.role() IS NOT DISTINCT FROM 'service_role'
+    CURRENT_USER IS NOT DISTINCT FROM 'service_role'
     OR public.has_role(auth.uid(), 'admin'::public.app_role);
 $$;
 

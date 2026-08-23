@@ -77,7 +77,8 @@ describe('deposit deal-packet migration', () => {
 
   it('rejects owner updates to deposit authority and bound identity with least-privilege triggers', () => {
     expect(migration).toContain('CREATE OR REPLACE FUNCTION public.deposit_authority_caller()');
-    expect(migration).toContain("auth.role() IS NOT DISTINCT FROM 'service_role'");
+    expect(migration).toContain("CURRENT_USER IS NOT DISTINCT FROM 'service_role'");
+    expect(migration).not.toContain("auth.role() IS NOT DISTINCT FROM 'service_role'");
     expect(migration).toContain("public.has_role(auth.uid(), 'admin'::public.app_role)");
     expect(migration).toContain('CREATE OR REPLACE FUNCTION public.enforce_customer_quotes_deposit_authority()');
     expect(migration).toContain('CREATE OR REPLACE FUNCTION public.enforce_saved_quotes_deposit_authority()');

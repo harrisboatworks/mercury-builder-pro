@@ -203,6 +203,28 @@ SELECT public.accept_expect_sqlstate(
     )
   $sql$
 );
+SELECT set_config('accept.role', 'service_role', false);
+SELECT public.accept_record(
+  'anon_cannot_spoof_service_role_via_jwt',
+  NOT public.deposit_authority_caller(),
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'anon_spoofed_jwt_insert_rejected',
+  '42501',
+  $sql$
+    INSERT INTO public.customer_quotes (
+      id, customer_name, customer_email, lead_source, payment_status, quote_data
+    ) VALUES (
+      'adadadad-adad-4dad-8dad-adadadadadad',
+      'Ada Lovelace',
+      'ada@example.com',
+      'website',
+      'paid',
+      '{}'::jsonb
+    )
+  $sql$
+);
 RESET ROLE;
 
 SET ROLE authenticated;
@@ -228,6 +250,12 @@ RESET ROLE;
 
 SET ROLE service_role;
 SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'anon', false);
+SELECT public.accept_record(
+  'service_role_not_blocked_by_jwt_claim',
+  public.deposit_authority_caller(),
+  ''
+);
 SELECT set_config('accept.role', 'service_role', false);
 SELECT public.accept_record('service_role_authority_caller_true', public.deposit_authority_caller(), '');
 
