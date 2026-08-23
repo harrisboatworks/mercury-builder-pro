@@ -272,7 +272,7 @@ function runTripwires(): StagingCheck[] {
     checks,
     "fixture_recipients_are_resend_test",
     Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))
-      && !isAllowedStagingRecipient(String(fixtures.failureRecipients.retry))
+      && !isAllowedStagingRecipient("bounced+deposit-retry@resend.dev")
       && Object.values(fixtures.recipients).every((value) => isOfficialResendTestAddress(String(value))),
     "committed send recipients are the three delivered+ aliases; bounced retry alias is rejected",
   );

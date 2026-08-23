@@ -192,7 +192,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(isReservedInvalidEmail(fixtures.customer.email)).toBe(true);
     expect(isReservedInvalidEmail(fixtures.historical.email)).toBe(true);
     expect(Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))).toBe(true);
-    expect(isAllowedStagingRecipient(fixtures.failureRecipients.retry)).toBe(false);
+    expect(fixtures).not.toHaveProperty('failureRecipients');
+    expect(isAllowedStagingRecipient(bouncedRetryAlias)).toBe(false);
     expect(fixtures.customer.email).not.toContain('harrisboatworks');
     expect(fixtures.customer.email).not.toContain('agentmail.to');
     expect(fixtures.recipients.customer).not.toContain('example.invalid');

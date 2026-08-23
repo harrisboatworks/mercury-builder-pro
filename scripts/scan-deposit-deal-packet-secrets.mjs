@@ -45,7 +45,6 @@ const packetAllowlist = new Set([
   "delivered+deposit-customer@resend.dev",
   "delivered+deposit-hbw@resend.dev",
   "delivered+deposit-grok@resend.dev",
-  "bounced+deposit-retry@resend.dev",
 ]);
 const fixtures = JSON.parse(
   readFileSync(path.join(process.cwd(), "scripts/deposit-deal-packet-staging/fixtures.json"), "utf8"),
@@ -54,9 +53,6 @@ for (const [role, value] of Object.entries(fixtures.recipients || {})) {
   if (!officialResendTest.test(String(value)) || !packetAllowlist.has(String(value))) {
     findings.push(`scripts/deposit-deal-packet-staging/fixtures.json: recipient_${role}_not_resend_test`);
   }
-}
-if (!packetAllowlist.has(String(fixtures.failureRecipients?.retry || ""))) {
-  findings.push("scripts/deposit-deal-packet-staging/fixtures.json: failure_recipient_not_allowlisted");
 }
 if (!/@example\.invalid$/i.test(String(fixtures.customer?.email || ""))) {
   findings.push("scripts/deposit-deal-packet-staging/fixtures.json: identity_not_example_invalid");
