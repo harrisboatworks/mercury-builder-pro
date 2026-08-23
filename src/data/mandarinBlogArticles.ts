@@ -1774,7 +1774,13 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     faqs: [
       { question: '在安省租船一定要有 PCOC 吗？', answer: '不一定。Transport Canada 允许租船操作者完成 Rental Boat Safety Checklist 作为 proof of competency。这个简介通常由租船公司在租船前提供，免费，约 30 分钟。' },
       { question: 'Rental Boat Safety Checklist 跟 PCOC 有什么不同？', answer: 'PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $50。Rental Boat Safety Checklist 仅当次租船有效、免费、现场完成。两者法律效力在租船场景下相同。' },

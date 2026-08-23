@@ -226,7 +226,13 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
 ## FAQs
 
