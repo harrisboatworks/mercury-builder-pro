@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  CONSULTATION_DOCUMENT_ACCESS_ORIGIN,
   CONSULTATION_META_MAX_BYTES,
   ConsultationDocumentRequestError,
   ConsultationDocumentUnavailableError,
@@ -21,6 +22,7 @@ import {
   CONSULTATION_ATTACHMENT_STATEMENT,
   assertConsultationAccessUrl,
   assertResolvedConsultationTemplate,
+  buildQuoteEmailDestinations,
   rejectConsultationCallerPdfUrl,
   replaceConsultationTemplateVariables,
 } from '../../../supabase/functions/_shared/consultation-quote-email.ts';
@@ -217,6 +219,104 @@ describe('consultation email safety', () => {
     expect(() => assertResolvedConsultationTemplate(html, accessUrl)).not.toThrow();
     expect(() => assertResolvedConsultationTemplate('<p>attached</p><a href="{{documentAccessUrl}}">Open</a>', accessUrl)).toThrow(/unresolved/);
     expect(() => assertResolvedConsultationTemplate('<p>No file.</p>', accessUrl)).toThrow();
+  });
+
+  it('delivers consultation mail only to the customer with no CC or BCC', () => {
+    const customerEmail = 'customer@example.com';
+    const destinations = buildQuoteEmailDestinations({
+      isConsultationPath: true,
+      isAdminNotification: false,
+      customerEmail,
+      adminRecipients: ['grokbot@mercuryrepower.ca', 'info@harrisboatworks.ca'],
+      auditBccRecipient: 'grokbot@mercuryrepower.ca',
+    });
+
+    expect(destinations).toEqual({ to: [customerEmail] });
+    expect(destinations).not.toHaveProperty('cc');
+    expect(destinations).not.toHaveProperty('bcc');
+    expect(Object.keys(destinations)).toEqual(['to']);
+    expect(destinations.to).toHaveLength(1);
+    expect(destinations.to[0]).toBe(customerEmail);
+    expect(buildQuoteEmailDestinations({
+      isConsultationPath: true,
+      isAdminNotification: true,
+      customerEmail,
+      adminRecipients: ['grokbot@mercuryrepower.ca', 'info@harrisboatworks.ca'],
+      auditBccRecipient: 'grokbot@mercuryrepower.ca',
+    })).toEqual({ to: [customerEmail] });
+
+    expect(buildQuoteEmailDestinations({
+      isConsultationPath: false,
+      isAdminNotification: false,
+      customerEmail,
+      adminRecipients: ['grokbot@mercuryrepower.ca', 'info@harrisboatworks.ca'],
+      auditBccRecipient: 'grokbot@mercuryrepower.ca',
+    })).toEqual({ to: [customerEmail], bcc: ['grokbot@mercuryrepower.ca'] });
+
+    expect(buildQuoteEmailDestinations({
+      isConsultationPath: false,
+      isAdminNotification: true,
+      customerEmail,
+      adminRecipients: ['grokbot@mercuryrepower.ca', 'info@harrisboatworks.ca'],
+      auditBccRecipient: 'grokbot@mercuryrepower.ca',
+    })).toEqual({ to: ['grokbot@mercuryrepower.ca', 'info@harrisboatworks.ca'] });
+  });
+
+  it('HTML-escapes adversarial template values and keeps the durable fragment href exact', () => {
+    const html = replaceConsultationTemplateVariables(
+      `<p>Hi {{customerName}}</p>
+       <p>{{quoteNumber}} / {{motorModel}} / {{totalPrice}}</p>
+       <p>${CONSULTATION_ATTACHMENT_STATEMENT}</p>
+       <a href="{{documentAccessUrl}}">Open</a>`,
+      {
+        customerName: `Jay <script>alert(1)</script> & "Pat" '{{documentAccessUrl}}' <a href="https://evil.example/phish">link</a> <img src="https://evil.example/x.png" onerror="alert(1)"> &lt;already-encoded&gt;`,
+        quoteNumber: 'HBW-"123"&<tag>',
+        motorModel: `Mercury <img src=x onerror=alert(1)> & Co's "Pro"`,
+        totalPrice: 18450,
+        documentAccessUrl: accessUrl,
+      },
+    );
+
+    expect(html).not.toContain('<script>');
+    expect(html).not.toContain('<img');
+    expect(html).not.toContain('<a href="https://evil.example/phish">');
+    expect(html).not.toMatch(/<[^>]*onerror=/i);
+    expect(html).toContain('&lt;script&gt;');
+    expect(html).toContain('&lt;img');
+    expect(html).toContain('onerror=&quot;alert(1)&quot;');
+    expect(html).toContain('&lt;a href=&quot;https://evil.example/phish&quot;&gt;');
+    expect(html).toContain('&amp;');
+    expect(html).toContain('&quot;');
+    expect(html).toContain('&#39;');
+    expect(html).toContain('&amp;lt;');
+    expect(html).not.toContain("{{documentAccessUrl}}");
+    expect(html).toContain('&#123;&#123;documentAccessUrl&#125;&#125;');
+    expect(html).toContain(`href="${accessUrl}"`);
+    expect(html.includes(accessUrl)).toBe(true);
+    expect(html.includes(`${CONSULTATION_DOCUMENT_ACCESS_ORIGIN}/quote/document#cd_`)).toBe(true);
+    expect(html.split(accessUrl)).toHaveLength(2);
+    expect(() => assertResolvedConsultationTemplate(html, accessUrl)).not.toThrow();
+
+    expect(() => replaceConsultationTemplateVariables(
+      `<p>${CONSULTATION_ATTACHMENT_STATEMENT}</p><a href="{{documentAccessUrl}}">Open</a>`,
+      {
+        customerName: 'Jay',
+        quoteNumber: 'HBW-123456',
+        motorModel: 'Mercury 150',
+        totalPrice: 1000,
+        documentAccessUrl: 'javascript:alert(1)',
+      },
+    )).toThrow();
+    expect(() => replaceConsultationTemplateVariables(
+      `<p>${CONSULTATION_ATTACHMENT_STATEMENT}</p><a href="{{documentAccessUrl}}">Open</a>`,
+      {
+        customerName: 'Jay',
+        quoteNumber: 'HBW-123456',
+        motorModel: 'Mercury 150',
+        totalPrice: 1000,
+        documentAccessUrl: 'https://evil.example/" onclick="alert(1)',
+      },
+    )).toThrow();
   });
 });
 

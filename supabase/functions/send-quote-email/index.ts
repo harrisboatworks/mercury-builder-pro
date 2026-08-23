@@ -21,6 +21,7 @@ import {
   assertConsultationAccessUrl,
   assertConsultationDocumentId,
   assertResolvedConsultationTemplate,
+  buildQuoteEmailDestinations,
   rejectConsultationCallerPdfUrl,
   replaceConsultationTemplateVariables,
 } from "../_shared/consultation-quote-email.ts";
@@ -274,9 +275,13 @@ serve(async (req) => {
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
     const isAdminNotification = emailData.emailType === 'admin_quote_notification';
-    const recipientEmails = isAdminNotification
-      ? [GROK_BOT_AGENTMAIL, HBW_ADMIN_QUOTE_INBOX]
-      : [emailData.customerEmail];
+    const destinations = buildQuoteEmailDestinations({
+      isConsultationPath,
+      isAdminNotification,
+      customerEmail: emailData.customerEmail,
+      adminRecipients: [GROK_BOT_AGENTMAIL, HBW_ADMIN_QUOTE_INBOX],
+      auditBccRecipient: GROK_BOT_AGENTMAIL,
+    });
 
     console.log('Sending email:', emailData.emailType);
 
@@ -301,7 +306,7 @@ serve(async (req) => {
             motorModel: emailData.motorModel,
             totalPrice: emailData.totalPrice,
             documentAccessUrl,
-          });
+          }, { html: false });
           htmlContent = replaceConsultationTemplateVariables(template.html_content, {
             customerName: emailData.customerName,
             quoteNumber: emailData.quoteNumber,
@@ -369,12 +374,14 @@ serve(async (req) => {
       from: isAdminNotification
         ? GROK_BOT_QUOTE_SENDER
         : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-      to: recipientEmails,
+      to: destinations.to,
       replyTo: 'info@harrisboatworks.ca',
-      bcc: isAdminNotification ? undefined : [GROK_BOT_AGENTMAIL],
       subject: subject,
       html: htmlContent,
     };
+    if (destinations.bcc) {
+      emailOptions.bcc = destinations.bcc;
+    }
 
     if (isConsultationPath) {
       const documentId = assertConsultationDocumentId(emailData.documentId);

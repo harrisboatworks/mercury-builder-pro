@@ -11,6 +11,8 @@ export const CONSULTATION_ATTACHMENT_STATEMENT =
 export const CONSULTATION_CTA_LABEL = "Open your private quote";
 
 const UNRESOLVED_TEMPLATE_PATTERN = /\{\{[^}]+\}\}/;
+const TEMPLATE_VARIABLE_PATTERN =
+  /\{\{(customerName|quoteNumber|motorModel|totalPrice|documentAccessUrl)\}\}/g;
 
 export interface ConsultationEmailTemplateData {
   customerName: string;
@@ -18,6 +20,15 @@ export interface ConsultationEmailTemplateData {
   motorModel: string;
   totalPrice: number;
   documentAccessUrl: string;
+}
+
+export interface QuoteEmailDestinations {
+  to: string[];
+  bcc?: string[];
+}
+
+export interface ReplaceConsultationTemplateOptions {
+  html?: boolean;
 }
 
 export function assertConsultationDocumentId(value: unknown): string {
@@ -36,16 +47,65 @@ export function rejectConsultationCallerPdfUrl(value: unknown): void {
   throw new ConsultationDocumentRequestError("Consultation email cannot accept a caller PDF URL");
 }
 
+export function buildQuoteEmailDestinations(input: {
+  isConsultationPath: boolean;
+  isAdminNotification: boolean;
+  customerEmail: string;
+  adminRecipients: string[];
+  auditBccRecipient?: string;
+}): QuoteEmailDestinations {
+  if (input.isConsultationPath) {
+    return { to: [input.customerEmail] };
+  }
+  if (input.isAdminNotification) {
+    return { to: [...input.adminRecipients] };
+  }
+  if (input.auditBccRecipient) {
+    return { to: [input.customerEmail], bcc: [input.auditBccRecipient] };
+  }
+  return { to: [input.customerEmail] };
+}
+
+function escapeHtmlText(value: string): string {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+    .replace(/\{/g, "&#123;")
+    .replace(/\}/g, "&#125;");
+}
+
+function encodeHrefAttribute(url: string): string {
+  return url
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 export function replaceConsultationTemplateVariables(
   template: string,
   data: ConsultationEmailTemplateData,
+  options: ReplaceConsultationTemplateOptions = {},
 ): string {
-  return template
-    .replace(/{{customerName}}/g, data.customerName)
-    .replace(/{{quoteNumber}}/g, data.quoteNumber)
-    .replace(/{{motorModel}}/g, data.motorModel)
-    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString())
-    .replace(/{{documentAccessUrl}}/g, data.documentAccessUrl);
+  const html = options.html !== false;
+  const documentAccessUrl = assertConsultationAccessUrl(data.documentAccessUrl);
+  const values: Record<string, string> = {
+    customerName: html ? escapeHtmlText(data.customerName) : data.customerName,
+    quoteNumber: html ? escapeHtmlText(data.quoteNumber) : data.quoteNumber,
+    motorModel: html ? escapeHtmlText(data.motorModel) : data.motorModel,
+    totalPrice: html
+      ? escapeHtmlText(data.totalPrice.toLocaleString())
+      : data.totalPrice.toLocaleString(),
+    documentAccessUrl: html ? encodeHrefAttribute(documentAccessUrl) : documentAccessUrl,
+  };
+  return template.replace(
+    TEMPLATE_VARIABLE_PATTERN,
+    (_match, key: keyof typeof values) => values[key],
+  );
 }
 
 export function assertResolvedConsultationTemplate(html: string, documentAccessUrl: string): void {
