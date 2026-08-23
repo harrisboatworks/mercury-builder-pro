@@ -6,8 +6,10 @@ export const DEPOSIT_STAGING_CUSTOMER_EMAIL_KEY = "DEPOSIT_STAGING_CUSTOMER_EMAI
 export const DEPOSIT_STAGING_HBW_EMAIL_KEY = "DEPOSIT_STAGING_HBW_EMAIL";
 export const DEPOSIT_STAGING_GROK_EMAIL_KEY = "DEPOSIT_STAGING_GROK_EMAIL";
 
+export const PRODUCTION_SUPABASE_PROJECT_REF = "eutsoqdpjurknjsshxes";
+
 export const PRODUCTION_SUPABASE_HOSTS = [
-  "eutsoqdpjurknjsshxes.supabase.co",
+  `${PRODUCTION_SUPABASE_PROJECT_REF}.supabase.co`,
 ] as const;
 
 export const PRODUCTION_WEB_HOSTS = [
@@ -167,6 +169,57 @@ export function isProductionSupabaseUrl(value: string): boolean {
   return (PRODUCTION_SUPABASE_HOSTS as readonly string[]).includes(host);
 }
 
+export function isProductionSupabaseTarget(value: string): boolean {
+  return isProductionSupabaseUrl(value) || isProductionDatabaseTarget(value);
+}
+
+export function assessRuntimeStagingIsolation(env: StagingEnv): StagingCheck[] {
+  if (!depositStagingModeEnabled(env)) {
+    return [{
+      id: "runtime_staging_isolation_inert",
+      result: "PASS",
+      detail: "DEPOSIT_STAGING_MODE unset; Edge isolation assertion is inert",
+    }];
+  }
+
+  const supabaseUrl = read(env, "SUPABASE_URL");
+  const host = hostFromUrl(supabaseUrl);
+  const httpsOk = Boolean(supabaseUrl) && supabaseUrl.startsWith("https://") && Boolean(host);
+  const isolated = Boolean(supabaseUrl) && !isProductionSupabaseTarget(supabaseUrl);
+  return [
+    {
+      id: "runtime_supabase_url_present",
+      result: supabaseUrl ? "PASS" : "FAIL",
+      detail: supabaseUrl ? "SUPABASE_URL present" : "SUPABASE_URL missing while DEPOSIT_STAGING_MODE=1",
+    },
+    {
+      id: "runtime_supabase_url_https",
+      result: httpsOk ? "PASS" : "FAIL",
+      detail: "Edge SUPABASE_URL must be https when staging mode is on",
+    },
+    {
+      id: "runtime_supabase_url_not_production",
+      result: isolated ? "PASS" : "FAIL",
+      detail: "Edge SUPABASE_URL must not be the production project host or ref",
+    },
+  ];
+}
+
+export function assertRuntimeStagingIsolation(env: StagingEnv): void {
+  const failed = assessRuntimeStagingIsolation(env)
+    .filter((check) => check.result === "FAIL")
+    .map((check) => check.id);
+  if (failed.length > 0) {
+    throw new Error(`Unsafe deposit staging runtime: ${failed.join(",")}`);
+  }
+}
+
+export function shouldSuppressDepositStagingSms(env: StagingEnv): boolean {
+  if (!depositStagingModeEnabled(env)) return false;
+  assertRuntimeStagingIsolation(env);
+  return true;
+}
+
 export function isProductionWebUrl(value: string): boolean {
   const host = hostFromUrl(value);
   return (PRODUCTION_WEB_HOSTS as readonly string[]).includes(host);
@@ -215,6 +268,8 @@ export function resolveDepositAudienceRecipients(options: {
       staging: false,
     };
   }
+
+  assertRuntimeStagingIsolation(env);
 
   const customer = read(env, DEPOSIT_STAGING_CUSTOMER_EMAIL_KEY);
   const hbw = read(env, DEPOSIT_STAGING_HBW_EMAIL_KEY);

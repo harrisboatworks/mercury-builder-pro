@@ -23,7 +23,7 @@ import {
   seedDepositEmailDeliveryRows,
   stripeWebhookStatusAfterHandler,
 } from "../_shared/deposit-email-deliveries.ts";
-import { depositStagingModeEnabled } from "../_shared/deposit-staging-guard.ts";
+import { shouldSuppressDepositStagingSms } from "../_shared/deposit-staging-guard.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -32,6 +32,13 @@ const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+function stagingRuntimeEnv() {
+  return {
+    DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+    SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+  };
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -394,9 +401,7 @@ serve(async (req) => {
           concurrent: concurrentPaidDeposit,
         });
         const sendSms = shouldSendFirstClaimSms(smsGate)
-          && !depositStagingModeEnabled({
-            DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
-          });
+          && !shouldSuppressDepositStagingSms(stagingRuntimeEnv());
 
         if (sendSms && emailFailed) {
           try {
@@ -570,9 +575,7 @@ serve(async (req) => {
 
         // Admin SMS. Staging mode is a hard kill switch for every SMS path.
         let quoteSmsFailed = false;
-        if (depositStagingModeEnabled({
-          DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
-        })) {
+        if (shouldSuppressDepositStagingSms(stagingRuntimeEnv())) {
           logStep("Quote-payment SMS skipped; deposit staging mode is enabled", {
             sessionId: session.id,
           });

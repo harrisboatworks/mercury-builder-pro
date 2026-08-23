@@ -9,7 +9,7 @@ import process from "node:process";
 
 const passedRuntimeGates = [
   "Focused Vitest suite (helpers, migration source, admin packet, mailer planner, staging guard)",
-  "Staging dry-run tripwires (production URL/key/recipient rejected, networkCalls=0)",
+  "Staging dry-run tripwires (production URL/key/recipient rejected, runnerCapability=guard_only_no_clients)",
   "Local PostgreSQL runtime: unmodified migration, triggers, RLS, grants, claim RPC race",
   "Deno check of create-payment, stripe-webhook, send-deposit-confirmation-email, and changed shared modules",
   "Identity twin (src/lib/deposit-identity.ts === supabase/functions/_shared/deposit-identity.ts)",
@@ -19,7 +19,7 @@ const passedRuntimeGates = [
 const remainingRuntimeGates = [
   "Isolated-project Stripe test-mode checkout and signed webhook (see docs/STAGING_ACCEPTANCE.md)",
   "Isolated-project Resend to official delivered+ resend.dev test aliases only",
-  "SMS remains off under DEPOSIT_STAGING_MODE=1",
+  "SMS remains off under DEPOSIT_STAGING_MODE=1 only after the Edge isolation assertion",
   "Authenticated admin browser on the PR preview pointed at an isolated project",
 ];
 

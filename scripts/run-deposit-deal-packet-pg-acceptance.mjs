@@ -23,6 +23,18 @@ const migrationPath = path.join(repoRoot, migrationRel);
 const bootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/bootstrap.sql");
 const fixturesPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/historical-fixtures.sql");
 const checksPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/checks.sql");
+const stagingSeedPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/seed.sql");
+const stagingCleanupPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/cleanup.sql");
+const stagingSeedIds = {
+  saved: [
+    "31313131-3131-4131-8131-313131313131",
+    "34343434-3434-4343-8343-343434343434",
+  ],
+  customer: [
+    "32323232-3232-4232-8222-323232323232",
+    "35353535-3535-4353-8353-353535353535",
+  ],
+};
 const ignoredTmpRoot = path.join(repoRoot, ".tmp");
 const database = "deposit_deal_packet_accept";
 const concurrentDeal = "cccccccc-cccc-4ccc-8ccc-cccccccccccc";
@@ -295,6 +307,8 @@ logging_collector = off
     ${psqlLiteral(`socket=${socketDir} listen_addresses= empty port=${port}`)}
   );`);
 
+  recordStagingSeedProofs();
+
   const copy = psql("COPY (SELECT name, passed, coalesce(detail, '') FROM public.accept_results ORDER BY ordinal) TO STDOUT");
   const results = parseResults(copy.stdout || "");
   const failed = results.filter((row) => !row.passed);
@@ -323,4 +337,99 @@ logging_collector = off
 
 function psqlLiteral(value) {
   return `'${String(value).replaceAll("'", "''")}'`;
+}
+
+function countStagingFixtureRows(databaseName) {
+  const sql = `
+    SELECT
+      (SELECT count(*) FROM public.saved_quotes
+        WHERE id IN ('${stagingSeedIds.saved.join("','")}'))
+      +
+      (SELECT count(*) FROM public.customer_quotes
+        WHERE id IN ('${stagingSeedIds.customer.join("','")}'))
+  `;
+  const result = run(bin("psql"), ["-X", "-t", "-A", "-d", databaseName, "-c", sql], {
+    env: { ...envForSocket(), PGDATABASE: databaseName },
+  });
+  return Number((result.stdout || "").trim());
+}
+
+function applySqlFile(filePath, databaseName, { allowFailure = false } = {}) {
+  return run(bin("psql"), ["-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", databaseName, "-f", filePath], {
+    env: { ...envForSocket(), PGDATABASE: databaseName },
+    allowFailure,
+  });
+}
+
+function recordStagingSeedProofs() {
+  const populatedSeed = applySqlFile(stagingSeedPath, database, { allowFailure: true });
+  const populatedOutput = `${populatedSeed.stderr || ""}${populatedSeed.stdout || ""}`;
+  const populatedRejected = populatedSeed.status !== 0
+    && /deposit staging seed refuses a populated database/i.test(populatedOutput);
+  const populatedZero = countStagingFixtureRows(database) === 0;
+  psql(`SELECT public.accept_record(
+    'staging_seed_rejects_populated_database',
+    ${populatedRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${populatedSeed.status} ${populatedOutput.slice(0, 180)}`)}
+  );`);
+  psql(`SELECT public.accept_record(
+    'staging_seed_populated_leaves_zero_fixtures',
+    ${populatedZero ? "true" : "false"},
+    ${psqlLiteral(`staging_fixture_rows=${countStagingFixtureRows(database)}`)}
+  );`);
+
+  const emptyDb = "deposit_deal_packet_staging_seed";
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", emptyDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
+  run(bin("createdb"), ["-h", socketDir, "-p", String(port), emptyDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+  });
+  applySqlFile(bootstrapPath, emptyDb);
+  applySqlFile(migrationPath, emptyDb);
+  applySqlFile(path.join(repoRoot, "scripts/deposit-deal-packet-pg/staging-seed-local-columns.sql"), emptyDb);
+  const emptySeed = applySqlFile(stagingSeedPath, emptyDb, { allowFailure: true });
+  const emptySeedCount = emptySeed.status === 0 ? countStagingFixtureRows(emptyDb) : -1;
+  const emptySeedOk = emptySeed.status === 0 && emptySeedCount === 3;
+  psql(`SELECT public.accept_record(
+    'staging_seed_empty_database_succeeds',
+    ${emptySeedOk ? "true" : "false"},
+    ${psqlLiteral(`status=${emptySeed.status} staging_fixture_rows=${emptySeedCount} ${(emptySeed.stderr || "").slice(0, 280)}`)}
+  );`);
+
+  const emptyCleanup = applySqlFile(stagingCleanupPath, emptyDb, { allowFailure: true });
+  const afterCleanup = emptyCleanup.status === 0 && countStagingFixtureRows(emptyDb) === 0;
+  psql(`SELECT public.accept_record(
+    'staging_cleanup_empty_database_zero_fixtures',
+    ${afterCleanup ? "true" : "false"},
+    ${psqlLiteral(`status=${emptyCleanup.status} staging_fixture_rows=${countStagingFixtureRows(emptyDb)}`)}
+  );`);
+
+  run(bin("psql"), [
+    "-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", emptyDb, "-c",
+    `INSERT INTO public.saved_quotes (id, email, resume_token, quote_state)
+     VALUES (
+       '31313131-3131-4131-8131-313131313131',
+       'ada@example.com',
+       'decoy_313131313131313131313131',
+       '{}'::jsonb
+     );`,
+  ], {
+    env: { ...envForSocket(), PGDATABASE: emptyDb },
+    allowFailure: true,
+  });
+  const decoyCleanup = applySqlFile(stagingCleanupPath, emptyDb, { allowFailure: true });
+  const decoyCount = countStagingFixtureRows(emptyDb);
+  const decoySurvived = decoyCleanup.status === 0 && decoyCount === 1;
+  psql(`SELECT public.accept_record(
+    'staging_cleanup_requires_identity_match',
+    ${decoySurvived ? "true" : "false"},
+    ${psqlLiteral(`status=${decoyCleanup.status} remaining_fixture_uuids=${decoyCount}`)}
+  );`);
+
+  run(bin("dropdb"), ["-h", socketDir, "-p", String(port), "--if-exists", emptyDb], {
+    env: { ...envForSocket(), PGDATABASE: "postgres" },
+    allowFailure: true,
+  });
 }

@@ -10,7 +10,7 @@ There is no isolated data-less Supabase branch. Evidence:
 
 - `supabase/config.toml` `project_id` is `eutsoqdpjurknjsshxes` (production).
 - This packet must not `supabase link`, `db push`, or deploy functions to that ref.
-- `npm run test:deposit-staging:dry-run` and `--live` without a safe `STAGING_*` bag open **zero** sockets.
+- `npm run test:deposit-staging:dry-run` and `--live` without a safe `STAGING_*` bag do not construct a client. The runner reports `runnerCapability: guard_only_no_clients` and does not pretend to count sockets it does not instrument.
 
 `--live` re-runs the operator-env guards and exits. It does not construct a Supabase, Stripe, or Resend client. After an isolated project exists, follow the numbered sequence below by hand (or a later runner) using only `STAGING_*` names.
 
@@ -27,14 +27,16 @@ There is no isolated data-less Supabase branch. Evidence:
 | `VERCEL_PREVIEW_URL` | Optional. Production web/Vercel aliases (`mercuryrepower.ca`, `mercury-builder-pro.vercel.app`, `…-git-main-hbw.vercel.app`, …) are rejected. |
 | `STAGING_DATABASE_URL` | Optional. Rejected if the value mentions the production project host/ref. |
 | Inherited names | Process env must not define `SUPABASE_URL` or `STRIPE_SECRET_KEY`. Use `STAGING_*` only. Refuse rather than guess. |
+| Edge runtime isolation | Inert while `DEPOSIT_STAGING_MODE` is unset. When the flag is `1`, `assertRuntimeStagingIsolation` requires `SUPABASE_URL` present, `https://`, and not the production host/ref. Wired before every recipient rewrite and SMS suppression. |
 
 `DEPOSIT_STAGING_MODE=1` on the isolated Edge secrets also:
 
+- Calls `assertRuntimeStagingIsolation` first. A production `SUPABASE_URL` throws `Unsafe deposit staging runtime` before any rewrite or SMS skip.
 - Rewrites customer / HBW / Grok recipients to the three distinct `delivered+…@resend.dev` overrides. These are Resend **simulated-delivery** addresses, not real inbox receipt.
-- Disables every `send-sms` path in `stripe-webhook` (deposit and quote-payment).
-- Leaves production recipients unchanged when the flag is unset.
+- Disables every `send-sms` path in `stripe-webhook` (deposit and quote-payment) only after that isolation assertion succeeds.
+- Leaves production recipients and SMS unchanged when the flag is unset, even if `SUPABASE_URL` is production.
 
-Never set `DEPOSIT_STAGING_MODE` on project `eutsoqdpjurknjsshxes`.
+Never set `DEPOSIT_STAGING_MODE` on project `eutsoqdpjurknjsshxes`. If that flag is accidentally set there, Edge send/suppress paths fail visibly instead of rewriting recipients or silencing SMS.
 
 ## Required environment variable names
 
@@ -92,7 +94,8 @@ Canonical PDF bytes and SHA-256 are in the fixture file. Row identities stay on 
 ```bash
 npm run test:deposit-staging:dry-run
 # writes .tmp/deposit-deal-packet-staging-evidence.json
-# schema: deposit-deal-packet-staging-evidence/v1
+# schema: deposit-deal-packet-staging-evidence/v2
+# runnerCapability: guard_only_no_clients
 
 npm run test:deposit-acceptance
 npm run test:deposit-acceptance:pg
@@ -105,7 +108,7 @@ cmp -s src/lib/deposit-identity.ts supabase/functions/_shared/deposit-identity.t
 node scripts/scan-deposit-deal-packet-secrets.mjs
 ```
 
-Unsafe `--live` (must FAIL before any client is constructed; `networkCalls` stays `0`):
+Unsafe `--live` (must FAIL with `live_operator_env_safe` and `runnerCapability: guard_only_no_clients`; the runner still constructs no client):
 
 ```bash
 # no STAGING_* set
@@ -120,7 +123,7 @@ DEPOSIT_STAGING_GROK_EMAIL=delivered+deposit-grok@resend.dev \
 node scripts/run-deposit-deal-packet-staging.mjs --live
 ```
 
-The second command is a production-URL tripwire. It must exit 1 with `live_env_safe_before_network` FAIL and `networkCalls: 0`. A recipient of `ada@example.invalid` or `tester@resend.dev` must fail the same way (`recipients_are_official_resend_test` / `recipients_are_packet_allowlist`).
+The second command is a production-URL tripwire. It must exit 1 with `live_operator_env_safe` FAIL. A recipient of `ada@example.invalid` or `tester@resend.dev` must fail the same way (`recipients_are_official_resend_test` / `recipients_are_packet_allowlist`).
 
 ## Operator sequence (only after an isolated project exists)
 
@@ -160,12 +163,15 @@ writeFileSync(".tmp/historical-control.pdf", "%PDF-1.7\nhistorical-control\n");
 ### 3. Seed / cleanup
 
 ```bash
-# After guards: apply seed to the isolated DB only
+# After guards: apply seed to the isolated DB only.
+# seed.sql SET LOCAL ROLE service_role, then raises before any insert if
+# saved_quotes or customer_quotes already contains a row:
+#   deposit staging seed refuses a populated database; saved_quotes and customer_quotes must both be empty
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f scripts/deposit-deal-packet-staging/sql/seed.sql
 ```
 
-`$STAGING_DATABASE_URL` is an operator name, not a committed value. It must not be a `db.eutsoqdpjurknjsshxes` host. Cleanup after the run:
+`$STAGING_DATABASE_URL` is an operator name, not a committed value. It must not be a `db.eutsoqdpjurknjsshxes` host. Cleanup after the run deletes only fixture UUID plus the expected `example.invalid` identity:
 
 ```bash
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
@@ -278,17 +284,17 @@ Write a machine-readable file (default `.tmp/deposit-deal-packet-staging-evidenc
 
 ```json
 {
-  "schema": "deposit-deal-packet-staging-evidence/v1",
+  "schema": "deposit-deal-packet-staging-evidence/v2",
+  "runnerCapability": "guard_only_no_clients",
   "head": "<git rev-parse HEAD>",
   "mode": "dry-run | live",
-  "networkCalls": 0,
   "verdict": "PASS | FAIL",
   "envNamesPresent": { "STAGING_SUPABASE_URL": true },
-  "checks": [{ "id": "tripwire_production_supabase", "result": "PASS", "beforeNetwork": true }]
+  "checks": [{ "id": "tripwire_production_supabase", "result": "PASS" }]
 }
 ```
 
-Values of secrets are never written. `envNamesPresent` is boolean presence only. An operator live run may append readback IDs, delivery `provider_id`s, and SHA-256 hex to a separate untracked file. Do not commit it.
+`runnerCapability: guard_only_no_clients` is the honest claim: this runner has no fetch/http/net/client construction. It does not count sockets. Values of secrets are never written. `envNamesPresent` is boolean presence only. An operator live run may append readback IDs, delivery `provider_id`s, and SHA-256 hex to a separate untracked file. Do not commit it.
 
 ## Test-mode assertions
 
@@ -311,4 +317,6 @@ Values of secrets are never written. `envNamesPresent` is boolean presence only.
 | Incomplete identity / missing `savedQuoteId` | `400`, no Stripe session |
 | Generated preview Origin on `create-payment` | `403` |
 | Historical paid row without outbox schema | no seed, no mailer |
-| `DEPOSIT_STAGING_MODE` unset | production recipients (do not test this on the isolated project) |
+| `DEPOSIT_STAGING_MODE` unset | production recipients and SMS unchanged; isolation assertion is inert |
+| `DEPOSIT_STAGING_MODE=1` on production `SUPABASE_URL` | Edge throws `Unsafe deposit staging runtime` before rewrite or SMS skip |
+| Seed against a populated `saved_quotes` / `customer_quotes` | SQLSTATE P0001, zero fixture inserts |

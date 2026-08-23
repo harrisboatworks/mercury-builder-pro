@@ -161,6 +161,7 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).toContain('attachments: pdfAttachment');
     expect(mailer).toContain('audiencesNeedingDelivery');
     expect(mailer).toContain('resolveDepositAudienceRecipients');
+    expect(mailer).toContain('SUPABASE_URL: Deno.env.get("SUPABASE_URL")');
     expect(mailer).toContain('GROK_BOT_AGENTMAIL');
     expect(mailer).toContain('adminDealPacketPath(savedQuoteId)');
     expect(mailer).toContain('isAuthorizedInternalRequest(req)');

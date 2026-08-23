@@ -12,9 +12,10 @@ import {
   PRODUCTION_SUPABASE_HOSTS,
   PRODUCTION_WEB_HOSTS,
   assessInheritedNameCollision,
+  assessRuntimeStagingIsolation,
   assessStagingSafety,
   assertStagingSafety,
-  depositStagingModeEnabled,
+  shouldSuppressDepositStagingSms,
   isAllowedStagingRecipient,
   isBlockedRecipient,
   isOfficialResendTestAddress,
@@ -31,18 +32,18 @@ const fixtures = JSON.parse(
   readFileSync(path.join(repoRoot, "scripts/deposit-deal-packet-staging/fixtures.json"), "utf8"),
 );
 
-type EvidenceCheck = StagingCheck & { beforeNetwork: true };
+export const STAGING_RUNNER_CAPABILITY = "guard_only_no_clients" as const;
 
 type Evidence = {
-  schema: "deposit-deal-packet-staging-evidence/v1";
+  schema: "deposit-deal-packet-staging-evidence/v2";
+  runnerCapability: typeof STAGING_RUNNER_CAPABILITY;
   head: string;
   mode: "dry-run" | "live";
-  networkCalls: number;
   verdict: "PASS" | "FAIL";
   envNamesPresent: Record<string, boolean>;
   stripeKeyKind?: string;
   supabaseHostClass?: string;
-  checks: EvidenceCheck[];
+  checks: StagingCheck[];
   limitations: string[];
 };
 
@@ -102,11 +103,12 @@ function safeSyntheticEnv(): StagingEnv {
     DEPOSIT_STAGING_HBW_EMAIL: fixtures.recipients.hbw,
     DEPOSIT_STAGING_GROK_EMAIL: fixtures.recipients.grok,
     VERCEL_PREVIEW_URL: "https://mercury-builder-pro-git-cursor-deposit-deal-packet-20260823-hbw.vercel.app",
+    SUPABASE_URL: "https://staging-deposit-packet.supabase.co",
   };
 }
 
 function record(
-  checks: EvidenceCheck[],
+  checks: StagingCheck[],
   id: string,
   pass: boolean,
   detail: string,
@@ -115,12 +117,11 @@ function record(
     id,
     result: pass ? "PASS" : "FAIL",
     detail,
-    beforeNetwork: true,
   });
 }
 
-function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
-  const checks: EvidenceCheck[] = [];
+function runTripwires(): StagingCheck[] {
+  const checks: StagingCheck[] = [];
   const productionHost = PRODUCTION_SUPABASE_HOSTS[0];
   const livePrefix = ["sk", "live"].join("_") + "_";
   const testPrefix = ["sk", "test"].join("_") + "_";
@@ -254,9 +255,9 @@ function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
   record(
     checks,
     "staging_mode_disables_sms",
-    depositStagingModeEnabled(safeSyntheticEnv()) === true
-      && depositStagingModeEnabled({}) === false,
-    "DEPOSIT_STAGING_MODE=1 is the SMS kill switch; unset keeps production SMS",
+    shouldSuppressDepositStagingSms(safeSyntheticEnv()) === true
+      && shouldSuppressDepositStagingSms({}) === false,
+    "DEPOSIT_STAGING_MODE=1 suppresses SMS only after the runtime isolation assertion",
   );
 
   record(
@@ -276,7 +277,45 @@ function runTripwires(networkCalls: { count: number }): EvidenceCheck[] {
     "committed send recipients are official Resend test aliases only",
   );
 
-  record(checks, "no_network_during_tripwires", networkCalls.count === 0, `networkCalls=${networkCalls.count}`);
+  try {
+    resolveDepositAudienceRecipients({
+      customerEmail: "buyer@example.com",
+      adminEmails: ["jayharris97@gmail.com"],
+      grokEmail: "hbwbot@agentmail.to",
+      env: {
+        ...safeSyntheticEnv(),
+        SUPABASE_URL: `https://${productionHost}`,
+      },
+    });
+    record(checks, "tripwire_runtime_production_supabase", false, "staging rewrite accepted production SUPABASE_URL");
+  } catch {
+    record(
+      checks,
+      "tripwire_runtime_production_supabase",
+      true,
+      "staging rewrite refused production SUPABASE_URL before any send",
+    );
+  }
+
+  const inert = assessRuntimeStagingIsolation({
+    SUPABASE_URL: `https://${productionHost}`,
+  });
+  record(
+    checks,
+    "tripwire_runtime_isolation_inert_when_unset",
+    inert.length === 1
+      && inert[0]?.id === "runtime_staging_isolation_inert"
+      && inert.every((check) => check.result === "PASS"),
+    "Edge isolation assertion is inert when DEPOSIT_STAGING_MODE is unset",
+  );
+
+  record(
+    checks,
+    "runner_is_guard_only",
+    true,
+    `runnerCapability=${STAGING_RUNNER_CAPABILITY}`,
+  );
+
   return checks;
 }
 
@@ -294,9 +333,8 @@ export function runDepositStagingAcceptance(options: {
   out?: string;
   processEnv?: StagingEnv;
 }): Evidence {
-  const networkCalls = { count: 0 };
   const processEnv = options.processEnv || {};
-  const checks = runTripwires(networkCalls);
+  const checks = runTripwires();
   const limitations = [
     "No isolated data-less Supabase branch exists in this worktree; this runner cannot create one.",
     "Stripe Checkout cannot be completed from the API; --live stops before hosted payment unless STAGING_PAID_SESSION_ID is supplied later.",
@@ -308,13 +346,12 @@ export function runDepositStagingAcceptance(options: {
     const operator = assessStagingSafety(pickStagingEnv(processEnv), processEnv);
     record(
       checks,
-      "live_env_safe_before_network",
+      "live_operator_env_safe",
       operator.ok,
       operator.ok
         ? "operator STAGING_* env passed fail-closed guards"
-        : `refused before network: ${operator.checks.filter((check) => check.result === "FAIL").map((check) => check.id).join(",")}`,
+        : `refused: ${operator.checks.filter((check) => check.result === "FAIL").map((check) => check.id).join(",")}`,
     );
-    record(checks, "live_no_network", networkCalls.count === 0, "live guard ran without constructing a client");
   } else {
     const inherited = assessInheritedNameCollision(processEnv);
     record(
@@ -329,10 +366,10 @@ export function runDepositStagingAcceptance(options: {
 
   const verdict = checks.every((check) => check.result === "PASS") ? "PASS" : "FAIL";
   return {
-    schema: "deposit-deal-packet-staging-evidence/v1",
+    schema: "deposit-deal-packet-staging-evidence/v2",
+    runnerCapability: STAGING_RUNNER_CAPABILITY,
     head: gitHead(),
     mode: options.live ? "live" : "dry-run",
-    networkCalls: networkCalls.count,
     verdict,
     envNamesPresent: envNamesPresent(processEnv),
     stripeKeyKind: stripeSecretKind(String(processEnv.STAGING_STRIPE_SECRET_KEY || "")),
@@ -355,7 +392,7 @@ function main(): void {
   writeFileSync(args.out, `${JSON.stringify(evidence, null, 2)}\n`);
   console.log(`Deposit deal-packet staging ${evidence.mode}`);
   console.log(`HEAD: ${evidence.head}`);
-  console.log(`networkCalls: ${evidence.networkCalls}`);
+  console.log(`runnerCapability: ${evidence.runnerCapability}`);
   console.log(`verdict: ${evidence.verdict}`);
   console.log(`evidence: ${args.out}`);
   for (const check of evidence.checks) {

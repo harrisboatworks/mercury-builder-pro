@@ -3,6 +3,19 @@
 -- Do not run against eutsoqdpjurknjsshxes.
 
 BEGIN;
+SET LOCAL ROLE service_role;
+
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM public.saved_quotes)
+     OR EXISTS (SELECT 1 FROM public.customer_quotes)
+  THEN
+    RAISE EXCEPTION
+      'deposit staging seed refuses a populated database; saved_quotes and customer_quotes must both be empty'
+      USING ERRCODE = 'P0001';
+  END IF;
+END
+$$;
 
 INSERT INTO public.saved_quotes (
   id,

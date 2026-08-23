@@ -76,7 +76,7 @@ Those gates are specified in `docs/STAGING_ACCEPTANCE.md`. This worktree has no 
 
 - Isolated-project Stripe test-mode checkout + signed webhook
 - Isolated-project Resend to official `delivered+…@resend.dev` test aliases only
-- SMS must stay off (`DEPOSIT_STAGING_MODE=1`)
+- SMS must stay off (`DEPOSIT_STAGING_MODE=1`) only after the Edge isolation assertion succeeds
 - Authenticated admin browser on the PR preview pointed at the isolated project
 
 No live Supabase, Stripe, Resend, SMS, customer data, deploy, push, merge, or PR-ready state change.
