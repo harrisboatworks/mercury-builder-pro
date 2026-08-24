@@ -207,12 +207,119 @@ BEGIN
 END;
 $$;
 
+CREATE OR REPLACE FUNCTION public.reconcile_deposit_notification_status(
+  p_customer_quote_id uuid
+)
+RETURNS text
+LANGUAGE plpgsql
+SET search_path = pg_catalog
+AS $$
+DECLARE
+  current_data jsonb;
+  current_status text;
+  next_status text;
+  has_outbox boolean;
+  all_required_sent boolean;
+  completed_at text;
+BEGIN
+  IF p_customer_quote_id IS NULL THEN
+    RETURN NULL;
+  END IF;
+
+  -- INVOKER on purpose so the deposit-authority trigger sees the calling
+  -- service_role writer. GRANT EXECUTE plus CURRENT_USER fail closed.
+  IF CURRENT_USER IS DISTINCT FROM 'service_role' THEN
+    RAISE EXCEPTION 'permission denied'
+      USING ERRCODE = '42501';
+  END IF;
+
+  SELECT cq.quote_data
+  INTO current_data
+  FROM public.customer_quotes AS cq
+  WHERE cq.id = p_customer_quote_id
+    AND cq.lead_source = 'deposit'
+  FOR UPDATE;
+
+  IF NOT FOUND THEN
+    RETURN NULL;
+  END IF;
+
+  PERFORM 1
+  FROM public.deposit_email_deliveries AS d
+  WHERE d.customer_quote_id = p_customer_quote_id
+  ORDER BY d.audience
+  FOR UPDATE;
+
+  SELECT
+    COUNT(*) FILTER (WHERE d.audience = 'customer') = 1
+    AND COUNT(*) FILTER (WHERE d.audience = 'hbw') = 1
+    AND COUNT(*) FILTER (WHERE d.audience = 'grok_bot') = 1
+  INTO has_outbox
+  FROM public.deposit_email_deliveries AS d
+  WHERE d.customer_quote_id = p_customer_quote_id
+    AND d.audience IN ('customer', 'hbw', 'grok_bot');
+
+  SELECT
+    COUNT(*) FILTER (WHERE d.audience = 'customer' AND d.status = 'sent') = 1
+    AND COUNT(*) FILTER (WHERE d.audience = 'hbw' AND d.status = 'sent') = 1
+    AND COUNT(*) FILTER (WHERE d.audience = 'grok_bot' AND d.status = 'sent') = 1
+  INTO all_required_sent
+  FROM public.deposit_email_deliveries AS d
+  WHERE d.customer_quote_id = p_customer_quote_id
+    AND d.audience IN ('customer', 'hbw', 'grok_bot');
+
+  current_status := current_data->>'notification_status';
+
+  IF all_required_sent THEN
+    next_status := 'delivered';
+  ELSIF current_status = 'delivered' THEN
+    RETURN 'delivered';
+  ELSIF NOT has_outbox THEN
+    RETURN current_status;
+  ELSE
+    next_status := 'manual_follow_up';
+  END IF;
+
+  IF current_status IS NOT DISTINCT FROM next_status THEN
+    RETURN next_status;
+  END IF;
+
+  -- Timestamp of this automatic attempt reaching an outcome, including
+  -- manual_follow_up. It is not proof that every required email was sent.
+  completed_at := to_char(timezone('UTC', pg_catalog.now()), 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"');
+
+  UPDATE public.customer_quotes AS cq
+  SET quote_data = jsonb_set(
+    jsonb_set(
+      jsonb_set(
+        COALESCE(cq.quote_data, '{}'::jsonb),
+        '{notification_status}',
+        to_jsonb(next_status),
+        true
+      ),
+      '{notification_completed_at}',
+      to_jsonb(completed_at),
+      true
+    ),
+    '{notification_lease_expires_at}',
+    'null'::jsonb,
+    true
+  )
+  WHERE cq.id = p_customer_quote_id
+    AND cq.lead_source = 'deposit';
+
+  RETURN next_status;
+END;
+$$;
+
 REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON FUNCTION public.complete_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON FUNCTION public.fail_deposit_email_delivery(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON FUNCTION public.reconcile_deposit_notification_status(uuid) FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.claim_deposit_email_delivery(uuid, text, uuid, integer) TO service_role;
 GRANT EXECUTE ON FUNCTION public.complete_deposit_email_delivery(uuid, text, uuid, text) TO service_role;
 GRANT EXECUTE ON FUNCTION public.fail_deposit_email_delivery(uuid, text, uuid, text) TO service_role;
+GRANT EXECUTE ON FUNCTION public.reconcile_deposit_notification_status(uuid) TO service_role;
 
 -- Promote unambiguous historical deposit joins/Stripe IDs from quote_data.
 -- Never guess billing addresses, never overwrite conflicting columns, never

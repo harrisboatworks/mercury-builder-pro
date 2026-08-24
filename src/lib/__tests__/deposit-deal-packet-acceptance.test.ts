@@ -8,6 +8,7 @@ import {
   ACCEPTANCE_SESSION_COMPLETE,
   claimOutbox,
   claimRpcAllows,
+  reconcileNotificationRpcAllows,
   classifyCreatePaymentExistingSession,
   createAcceptanceWorld,
   deliveryTableAllows,
@@ -51,6 +52,13 @@ describe('deposit deal-packet staged acceptance', () => {
     expect(claimRpcAllows('authenticated')).toBe(false);
     expect(claimRpcAllows('admin')).toBe(false);
     expect(claimRpcAllows('service_role')).toBe(true);
+    expect(reconcileNotificationRpcAllows('anon')).toBe(false);
+    expect(reconcileNotificationRpcAllows('authenticated')).toBe(false);
+    expect(reconcileNotificationRpcAllows('admin')).toBe(false);
+    expect(reconcileNotificationRpcAllows('service_role')).toBe(true);
+    expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.reconcile_deposit_notification_status(uuid) TO service_role');
+    expect(migration).not.toMatch(/GRANT EXECUTE ON FUNCTION public\.reconcile_deposit_notification_status\(uuid\) TO anon/);
+    expect(migration).not.toMatch(/GRANT EXECUTE ON FUNCTION public\.reconcile_deposit_notification_status\(uuid\) TO authenticated/);
     expect(triggerHelperExecuteAllows('deposit_authority_caller')).toBe(true);
     expect(triggerHelperExecuteAllows('enforce_customer_quotes_deposit_authority')).toBe(false);
   });
@@ -139,6 +147,10 @@ describe('deposit deal-packet staged acceptance', () => {
     expect(mailer).toContain('await sendAudience("grok_bot"');
     expect(mailer).not.toContain('bcc:');
     expect([...result.world.deliveries.values()].every((row) => row.status === 'sent')).toBe(true);
+    expect(
+      (result.world.customerQuotes.get(ACCEPTANCE_DEAL_ID)?.quote_data as { notification_status?: string })
+        ?.notification_status,
+    ).toBe('delivered');
   });
 
   it('stage 4: admin deal packet uses saved_quotes.id and hides generic quote email when paid', async () => {
@@ -151,6 +163,9 @@ describe('deposit deal-packet staged acceptance', () => {
     expect(result.packet.canonicalDownload).toBe(true);
     expect(result.packet.canRetry).toBe(false);
     expect(adminDetail).toContain('data-section="email-deliveries"');
+    expect(adminDetail).toContain('quoteNotificationDisplayStatus');
+    expect(adminDetail).toContain('data-section="financial-summary"');
+    expect(adminDetail).toContain('formatPaidDepositFinancialSummary');
     expect(adminDetail).toContain('Use Email deliveries to retry missing or failed sends');
     expect(adminDetail).not.toContain("from('saved_quotes').update({ quote_data: updatedQuoteData })");
   });
@@ -195,5 +210,8 @@ describe('deposit deal-packet staged acceptance', () => {
     expect(webhook).toContain('depositNotificationOutcomeGuard(event.id)');
     expect(mailer).toContain('claim_deposit_email_delivery');
     expect(mailer).toContain('sendResendEmailWithIdempotency');
+    expect(mailer).toContain('reconcile_deposit_notification_status');
+    expect(mailer).toContain('notification_reconciled');
+    expect(mailer).not.toContain('.update({ quote_data:');
   });
 });

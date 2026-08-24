@@ -8,9 +8,15 @@ import {
   dealPacketSavedQuoteId,
   dedupeAdminDealPacketRows,
   deliveryRowDisplayStatus,
+  formatPaidDepositFinancialSummary,
+  formatPaidDepositPacketDeposit,
+  formatPaidDepositPacketMoney,
+  formatPaidDepositPacketTerm,
+  isAdminDepositDealPacket,
   isAuthoritativeDepositPaid,
   legacyJsonPaymentStatusLabel,
   operationalCustomerQuoteId,
+  quoteNotificationDisplayStatus,
   resolveAdminDealPacketId,
   shouldOfferCanonicalDocumentDownload,
   summarizeDeliveryRetry,
@@ -152,6 +158,8 @@ describe('admin deal packet', () => {
     expect(detail).not.toContain('cq.payment_status || cq.quote_data?.payment_status');
     expect(detail).toContain('Use Email deliveries to retry missing or failed sends');
     expect(detail).toContain('tracked three-audience confirmation');
+    expect(detail).toContain('quoteNotificationDisplayStatus');
+    expect(detail).toContain('Quote notification');
     expect(detail).not.toContain("from('saved_quotes').update({ quote_data: updatedQuoteData })");
   });
 
@@ -174,6 +182,116 @@ describe('admin deal packet', () => {
       now,
     })).toBe(true);
     expect(summarizeDeliveryRetry([], now)).toContain('missing / not yet sent');
+  });
+
+  it('derives quote notification from required email deliveries, not stale JSON or skipped SMS', () => {
+    const allSent = [
+      { audience: 'customer', status: 'sent' },
+      { audience: 'hbw', status: 'sent' },
+      { audience: 'grok_bot', status: 'sent' },
+    ];
+    expect(quoteNotificationDisplayStatus({
+      rows: allSent,
+      legacyQuoteStatus: 'manual_follow_up',
+      smsStatus: 'skipped',
+    })).toBe('delivered');
+    expect(quoteNotificationDisplayStatus({
+      rows: [
+        { audience: 'customer', status: 'sent' },
+        { audience: 'hbw', status: 'failed' },
+        { audience: 'grok_bot', status: 'sent' },
+      ],
+      legacyQuoteStatus: 'manual_follow_up',
+      smsStatus: 'skipped',
+    })).toBe('manual_follow_up');
+    expect(quoteNotificationDisplayStatus({
+      rows: allSent,
+      legacyQuoteStatus: 'manual_follow_up',
+    })).not.toMatch(/manual/);
+    expect(quoteNotificationDisplayStatus({
+      rows: [],
+      legacyQuoteStatus: 'delivered',
+      smsStatus: 'skipped',
+    })).toBe('delivered');
+    expect(quoteNotificationDisplayStatus({
+      rows: [
+        { audience: 'customer', status: 'sent' },
+        { audience: 'hbw', status: 'failed' },
+        { audience: 'grok_bot', status: 'sent' },
+      ],
+      legacyQuoteStatus: 'delivered',
+    })).toBe('manual_follow_up');
+    expect(readFileSync('src/pages/AdminQuoteDetail.tsx', 'utf8')).toContain('quoteNotificationDisplayStatus');
+  });
+
+  it('preserves historical delivered status when the delivery ledger has zero rows', () => {
+    expect(quoteNotificationDisplayStatus({
+      rows: [],
+      legacyQuoteStatus: 'delivered',
+    })).toBe('delivered');
+    expect(quoteNotificationDisplayStatus({
+      rows: null,
+      legacyQuoteStatus: 'delivered',
+      smsStatus: 'skipped',
+    })).toBe('delivered');
+    expect(quoteNotificationDisplayStatus({
+      rows: [],
+      legacyQuoteStatus: 'not_sent',
+    })).toBe('not_sent');
+  });
+
+  it('shows Not available for non-authoritative zero deposit-packet financials and keeps a real deposit', () => {
+    expect(isAdminDepositDealPacket({ lead_source: 'deposit' })).toBe(true);
+    expect(isAdminDepositDealPacket({ lead_status: 'deposit_paid' })).toBe(true);
+    expect(isAdminDepositDealPacket({ _joined_customer_quote_id: DEAL_ID })).toBe(true);
+    expect(isAdminDepositDealPacket({ lead_source: 'website' })).toBe(false);
+    expect(formatPaidDepositPacketMoney('0')).toBe('Not available');
+    expect(formatPaidDepositPacketMoney(0)).toBe('Not available');
+    expect(formatPaidDepositPacketMoney(null)).toBe('Not available');
+    expect(formatPaidDepositPacketMoney(12000)).toBe('$12,000');
+    expect(formatPaidDepositPacketTerm(0)).toBe('Not available');
+    expect(formatPaidDepositPacketTerm(60)).toBe('60');
+    expect(formatPaidDepositPacketDeposit(500)).toBe('$500');
+    expect(formatPaidDepositPacketDeposit(0)).toBe('$0');
+    expect(formatPaidDepositFinancialSummary({
+      basePrice: 0,
+      finalPrice: 0,
+      depositAmount: 500,
+      loanAmount: 0,
+      monthlyPayment: 0,
+      termMonths: 0,
+      totalCost: 0,
+    })).toEqual({
+      basePrice: 'Not available',
+      finalPrice: 'Not available',
+      depositAmount: '$500',
+      loanAmount: 'Not available',
+      monthlyPayment: 'Not available',
+      termMonths: 'Not available',
+      totalCost: 'Not available',
+    });
+    expect(formatPaidDepositFinancialSummary({
+      basePrice: 12500,
+      finalPrice: 12000,
+      depositAmount: 500,
+      loanAmount: 11500,
+      monthlyPayment: 220,
+      termMonths: 60,
+      totalCost: 13200,
+    })).toEqual({
+      basePrice: '$12,500',
+      finalPrice: '$12,000',
+      depositAmount: '$500',
+      loanAmount: '$11,500',
+      monthlyPayment: '$220',
+      termMonths: '60',
+      totalCost: '$13,200',
+    });
+    const detail = readFileSync('src/pages/AdminQuoteDetail.tsx', 'utf8');
+    expect(detail).toContain('data-section="financial-summary"');
+    expect(detail).toContain('isAdminDepositDealPacket');
+    expect(detail).toContain('formatPaidDepositFinancialSummary');
+    expect(detail).toContain('fmt(q.final_price)');
   });
 
   it('does not treat customer-editable JSON as Stripe payment proof', () => {

@@ -8,6 +8,8 @@ import {
   stockStatusLabel,
   unavailableField,
   formatDealMoney,
+  formatGrokQuoteMoney,
+  grokRemainingBalance,
   type DepositPolicySnapshot,
 } from "./deposit-policy.ts";
 
@@ -183,8 +185,8 @@ export function grokDepositStructuredSummary(input: DepositInternalEmailInput): 
     `customer_phone: ${unavailableField(input.customerPhone)}`,
     `customer_address: ${unavailableField(input.customerAddress).replace(/\n/g, ", ")}`,
     `motor: ${unavailableField(input.motorLabel)}`,
-    `quote_total: ${formatDealMoney(input.quoteTotal)}`,
-    `remaining_balance: ${remainingBalance(input.quoteTotal, input.depositAmount)}`,
+    `quote_total: ${formatGrokQuoteMoney(input.quoteTotal)}`,
+    `remaining_balance: ${grokRemainingBalance(input.quoteTotal, input.depositAmount)}`,
     `stock_label: ${summary.stock}`,
     `next_action: contact_within_one_business_day`,
     `admin_url: ${input.savedQuoteId ? dealPacketUrl(input.appUrl, input.savedQuoteId) : "Not available"}`,

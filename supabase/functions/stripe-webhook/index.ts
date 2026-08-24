@@ -461,6 +461,9 @@ serve(async (req) => {
             hasOutboxSchema: hasDepositOutboxSchema(boundQuoteData),
           });
         if (mayWriteLegacyNotification) {
+          // Mailer already ran and its RPC patches notification_status off
+          // processing. This event-scoped contains-guard then loses ownership
+          // instead of overwriting the RPC.
           const { data: notificationWrite, error: notificationWriteError } = await supabase
             .from("customer_quotes")
             .update({

@@ -9,7 +9,7 @@ import {
   customerDepositEmailSubject,
   hbwDepositEmailSubject,
 } from "../_shared/deposit-email-templates.ts";
-import { readPersistedDepositPolicy } from "../_shared/deposit-policy.ts";
+import { authoritativeQuoteTotal, readPersistedDepositPolicy } from "../_shared/deposit-policy.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import { authenticatedBrowserCors, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import {
@@ -29,6 +29,7 @@ import {
   deliveriesIndicateFailure,
   deriveDepositMailAttachmentKey,
   generateDepositReference,
+  mailerNotificationReconcileResult,
   reportableDeliveryStatus,
   resendFailureCode,
   resendIdempotencyKey,
@@ -457,7 +458,9 @@ serve(async (req) => {
       env: stagingMailerEnv(),
     });
 
-    const quoteTotal = depositRecord.final_price ?? depositRecord.total_cost ?? null;
+    const quoteTotal = authoritativeQuoteTotal(depositRecord.final_price)
+      ?? authoritativeQuoteTotal(depositRecord.total_cost)
+      ?? null;
     const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
     const customerHtml = createDepositConfirmationEmailHtml({
       customerName,
@@ -520,11 +523,27 @@ serve(async (req) => {
       });
     }
 
+    const { data: notificationStatus, error: reconcileError } = await supabase.rpc(
+      "reconcile_deposit_notification_status",
+      { p_customer_quote_id: depositRecord.id },
+    );
+    if (reconcileError) {
+      logStep("WARNING: quote notification reconciliation failed", {
+        savedQuoteId: savedQuote.id,
+      });
+    }
+    const notificationReconcile = mailerNotificationReconcileResult({
+      status: typeof notificationStatus === "string" ? notificationStatus : null,
+      error: reconcileError,
+    });
+
     return new Response(JSON.stringify({
       success: !deliveriesIndicateFailure(results),
       referenceNumber,
       savedQuoteId: savedQuote.id,
       deliveries: results,
+      notification_status: notificationReconcile.notification_status,
+      notification_reconciled: notificationReconcile.notification_reconciled,
     }), {
       status: 200,
       headers: responseHeaders,

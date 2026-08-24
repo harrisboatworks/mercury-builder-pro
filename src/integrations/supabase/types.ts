@@ -7288,6 +7288,10 @@ export type Database = {
           total_qty: number
         }[]
       }
+      reconcile_deposit_notification_status: {
+        Args: { p_customer_quote_id: string }
+        Returns: string
+      }
       reconcile_hbw_call_transcription_links: {
         Args: { p_gateway_secret: string; p_limit?: number }
         Returns: {

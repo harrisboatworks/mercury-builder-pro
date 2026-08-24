@@ -19,6 +19,10 @@ import {
   policyCodeFromStock,
   readPersistedDepositPolicy,
   remainingBalance,
+  authoritativeQuoteTotal,
+  formatDealMoney,
+  formatGrokQuoteMoney,
+  grokRemainingBalance,
   tryBuildDepositPolicySnapshot,
 } from '../../../supabase/functions/_shared/deposit-policy.ts';
 import {
@@ -344,6 +348,8 @@ describe('deposit email policy copy', () => {
     });
     expect(missing).toContain('Not available');
     expect(missing).toContain('Deal packet URL: Not available');
+    expect(missing).not.toContain('$0 CAD');
+    expect(missing).not.toContain('$-');
     expect(remainingBalance(null, '500')).toBe('Not available');
 
     const missingPaidAt = createInternalDealEmailHtml({
@@ -398,9 +404,127 @@ describe('deposit email policy copy', () => {
     expect(structured).toContain('payment_status: paid');
     expect(structured).toContain('next_action: contact_within_one_business_day');
     expect(structured).toContain(`/admin/quotes/${SAVED_QUOTE_ID}`);
+    expect(structured).toContain('quote_total: $12000 CAD');
+    expect(structured).toContain('remaining_balance: $11500 CAD');
     expect(structured).not.toMatch(/sk_|rk_|token|secret/i);
     expect(createGrokDealEmailHtml(input)).toContain(structured);
     expect(createGrokDealEmailHtml(input)).not.toContain('hbwsales.ca');
+  });
+});
+
+describe('authoritative quote totals for internal deposit emails', () => {
+  const paidAt = '2026-08-23T15:00:00.000Z';
+  const inStock = inStockSnapshot();
+
+  function internalInput(quoteTotal: unknown) {
+    return {
+      customerName: 'Ada Customer',
+      customerEmail: 'ada@example.com',
+      customerPhone: '9053422153',
+      customerAddress: '5369 Harris Boat Works Rd',
+      depositAmount: '500',
+      quoteTotal,
+      remainingBalance: null,
+      referenceNumber: 'HBW-12345678',
+      paymentId: 'pi_test_123',
+      sessionId: 'cs_test_456',
+      savedQuoteId: SAVED_QUOTE_ID,
+      customerQuoteId: CUSTOMER_QUOTE_ID,
+      motorLabel: 'Mercury 9.9 MH',
+      paidAt,
+      policy: inStock,
+      appUrl: 'https://mercuryrepower.ca',
+    };
+  }
+
+  it('treats a zero/default database total as unavailable and never invents a negative balance', () => {
+    expect(authoritativeQuoteTotal(0)).toBeNull();
+    expect(authoritativeQuoteTotal('0')).toBeNull();
+    expect(authoritativeQuoteTotal('0.00')).toBeNull();
+    expect(formatDealMoney(0)).toBe('Not available');
+    expect(remainingBalance(0, '500')).toBe('Not available');
+    expect(formatGrokQuoteMoney(0)).toBe('null');
+    expect(grokRemainingBalance(0, '500')).toBe('null');
+
+    const html = createInternalDealEmailHtml(internalInput(0));
+    const structured = grokDepositStructuredSummary(internalInput(0));
+    expect(html).toContain('Quote total');
+    expect(html).toContain('Not available');
+    expect(html).not.toContain('$0 CAD');
+    expect(html).not.toContain('$-500');
+    expect(html).not.toContain('$-');
+    expect(html).toContain(DEPOSIT_POLICY_IN_STOCK_TEXT);
+    expect(structured).toContain('quote_total: null');
+    expect(structured).toContain('remaining_balance: null');
+    expect(structured).not.toContain('$0');
+    expect(structured).not.toContain('$-');
+  });
+
+  it('treats a missing or invalid total as unavailable', () => {
+    expect(authoritativeQuoteTotal(null)).toBeNull();
+    expect(authoritativeQuoteTotal(undefined)).toBeNull();
+    expect(authoritativeQuoteTotal('')).toBeNull();
+    expect(authoritativeQuoteTotal('not-a-price')).toBeNull();
+    expect(authoritativeQuoteTotal(-12000)).toBeNull();
+    expect(formatDealMoney(null)).toBe('Not available');
+    expect(remainingBalance(undefined, '500')).toBe('Not available');
+    expect(formatGrokQuoteMoney(null)).toBe('null');
+    expect(grokRemainingBalance(null, '500')).toBe('null');
+
+    const html = createInternalDealEmailHtml(internalInput(null));
+    const structured = grokDepositStructuredSummary(internalInput(undefined));
+    expect(html).toContain('Not available');
+    expect(html).not.toContain('$0 CAD');
+    expect(html).not.toContain('$-500');
+    expect(structured).toContain('quote_total: null');
+    expect(structured).toContain('remaining_balance: null');
+    expect(structured).not.toContain('$0 CAD');
+  });
+
+  it('preserves a valid positive total and computes remaining only then', () => {
+    expect(authoritativeQuoteTotal(12000)).toBe(12000);
+    expect(authoritativeQuoteTotal('12000')).toBe(12000);
+    expect(formatDealMoney(12000)).toBe('$12000 CAD');
+    expect(remainingBalance(12000, '500')).toBe('$11500 CAD');
+    expect(formatGrokQuoteMoney(12000)).toBe('$12000 CAD');
+    expect(grokRemainingBalance(12000, '500')).toBe('$11500 CAD');
+
+    const html = createInternalDealEmailHtml(internalInput(12000));
+    const structured = grokDepositStructuredSummary(internalInput(12000));
+    expect(html).toContain('$12000 CAD');
+    expect(html).toContain('$11500 CAD');
+    expect(structured).toContain('quote_total: $12000 CAD');
+    expect(structured).toContain('remaining_balance: $11500 CAD');
+  });
+
+  it('never emits a negative remaining balance when deposit exceeds a non-authoritative or smaller total', () => {
+    expect(remainingBalance(400, '500')).toBe('Not available');
+    expect(remainingBalance(0, 500)).toBe('Not available');
+    expect(grokRemainingBalance(400, '500')).toBe('null');
+    expect(createInternalDealEmailHtml(internalInput(400))).not.toContain('$-');
+    expect(grokDepositStructuredSummary(internalInput(400))).not.toContain('$-');
+  });
+
+  it('leaves customer email wording, in-stock policy, identifiers, and PDF attachment copy unchanged', () => {
+    const customerHtml = createDepositConfirmationEmailHtml({
+      customerName: 'Ada Customer',
+      depositAmount: '500',
+      referenceNumber: 'HBW-12345678',
+      motorLabel: 'Mercury 9.9 MH',
+      paidAt,
+      policy: inStock,
+    });
+    expect(customerHtml).toContain('We received your deposit');
+    expect(customerHtml).toContain(DEPOSIT_POLICY_IN_STOCK_TEXT);
+    expect(customerHtml).toContain('Your PDF quote is attached to this email.');
+    expect(customerHtml).toContain('HBW-12345678');
+    expect(customerHtml).not.toContain('Quote total');
+    expect(customerHtml).not.toContain('Remaining');
+    expect(customerHtml).not.toContain('$0 CAD');
+    expect(customerHtml).not.toContain('$-500');
+    expect(customerDepositEmailSubject('Mercury 9.9 MH')).toBe(
+      'Deposit received: Mercury 9.9 MH | Harris Boat Works',
+    );
   });
 });
 

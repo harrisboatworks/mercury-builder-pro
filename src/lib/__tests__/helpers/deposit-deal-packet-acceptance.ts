@@ -115,6 +115,10 @@ export function claimRpcAllows(role: AcceptanceRole): boolean {
   return role === "service_role";
 }
 
+export function reconcileNotificationRpcAllows(role: AcceptanceRole): boolean {
+  return role === "service_role";
+}
+
 export function triggerHelperExecuteAllows(fn: "deposit_authority_caller" | "deposit_quote_data_authority_changed" | "enforce_customer_quotes_deposit_authority" | "enforce_customer_quotes_deposit_delete"): boolean {
   return fn === "deposit_authority_caller" || fn === "deposit_quote_data_authority_changed";
 }
@@ -317,6 +321,19 @@ export async function runFreshPaidDepositPacket(world: AcceptanceWorld = createA
       ? { id: customerQuoteId }
       : null,
   });
+  const durableRows = [...world.deliveries.values()].filter((row) => row.customer_quote_id === customerQuoteId);
+  if (DEPOSIT_EMAIL_AUDIENCES.every((audience) => (
+    durableRows.some((row) => row.audience === audience && row.status === "sent")
+  ))) {
+    world.customerQuotes.set(customerQuoteId, {
+      ...world.customerQuotes.get(customerQuoteId)!,
+      quote_data: {
+        ...quoteData,
+        notification_status: "delivered",
+        notification_lease_expires_at: null,
+      },
+    });
+  }
 
   const adminRows = dedupeAdminDealPacketRows(
     [{

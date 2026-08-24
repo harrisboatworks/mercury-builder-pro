@@ -180,6 +180,19 @@ export function resendIdempotencyKey(customerQuoteId: string, audience: DepositE
   return `deposit-email:${customerQuoteId}:${audience}`;
 }
 
+export function mailerNotificationReconcileResult(options: {
+  status?: string | null;
+  error?: unknown;
+}): { notification_status: string | null; notification_reconciled: boolean } {
+  if (options.error) {
+    return { notification_status: null, notification_reconciled: false };
+  }
+  return {
+    notification_status: options.status ?? null,
+    notification_reconciled: true,
+  };
+}
+
 export function generateDepositReference(options: {
   paymentIntentId?: string | null;
   savedQuoteId: string;

@@ -185,12 +185,42 @@ describe('deposit webhook deal-packet idempotency', () => {
     expect(webhook).toContain('DEPOSIT_OUTBOX_SCHEMA_KEY');
     expect(webhook).toContain('alreadyPaid ? {}');
     expect(webhook).toContain('legacyNotificationStatusFromAudienceResults');
+    expect(webhook).toContain('legacyNotificationStatusFromAudienceResults(mailerDeliveries');
+    expect(webhook).not.toContain('applyQuoteNotificationReconciliation');
+    expect(webhook).not.toContain('reconcile_deposit_notification_status');
     expect(webhook).toContain('.select("id")');
     expect(webhook).toContain('maybeSingle()');
     expect(webhook).toContain('paymentReconciled = true');
     expect(webhook).toContain('notification pipeline failed after payment reconciliation');
     expect(webhook).toContain('stripeWebhookStatusAfterHandler');
     expect(webhook).not.toContain('throw new Error("Deposit notification delivery is already in progress")');
+  });
+
+  it('lets the mailer RPC leave processing so the later webhook contains-guard loses ownership', () => {
+    const eventId = 'evt_test_mailer_rpc_first';
+    expect(depositReplayOwnershipMatches({
+      notification_status: 'delivered',
+      notification_event_id: eventId,
+    }, eventId)).toBe(false);
+    expect(depositReplayOwnershipMatches({
+      notification_status: 'manual_follow_up',
+      notification_event_id: eventId,
+    }, eventId)).toBe(false);
+    expect(depositReplayOwnershipMatches({
+      notification_status: 'processing',
+      notification_event_id: eventId,
+    }, eventId)).toBe(true);
+    expect(classifyNotificationOutcomeWrite({ written: null })).toBe('lost_ownership');
+
+    const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
+    const depositPath = webhook.slice(
+      webhook.indexOf('planDepositWebhookMailer'),
+      webhook.indexOf('Admin email notification'),
+    );
+    expect(depositPath.indexOf('send-deposit-confirmation-email'))
+      .toBeLessThan(depositPath.indexOf('depositNotificationOutcomeGuard(event.id)'));
+    expect(depositPath).toContain('instead of overwriting the RPC');
+    expect(webhook).not.toContain('reconcile_deposit_notification_status');
   });
 
   it('returns 200 after durable payment reconciliation and 500 only before that boundary', () => {

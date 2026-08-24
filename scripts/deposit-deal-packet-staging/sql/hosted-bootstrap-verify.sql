@@ -208,6 +208,7 @@ WITH watched(oid) AS (
   UNION ALL SELECT to_regprocedure('public.claim_deposit_email_delivery(uuid, text, uuid, integer)')
   UNION ALL SELECT to_regprocedure('public.complete_deposit_email_delivery(uuid, text, uuid, text)')
   UNION ALL SELECT to_regprocedure('public.fail_deposit_email_delivery(uuid, text, uuid, text)')
+  UNION ALL SELECT to_regprocedure('public.reconcile_deposit_notification_status(uuid)')
   UNION ALL SELECT to_regprocedure('public.deposit_authority_caller()')
   UNION ALL SELECT to_regprocedure('public.deposit_quote_data_authority_changed(jsonb, jsonb)')
   UNION ALL SELECT to_regprocedure('public.enforce_customer_quotes_deposit_authority()')
@@ -221,6 +222,7 @@ wanted(oid, rol, privs) AS (
   UNION ALL SELECT to_regprocedure('public.claim_deposit_email_delivery(uuid, text, uuid, integer)'), 'service_role', ARRAY['EXECUTE']::text[]
   UNION ALL SELECT to_regprocedure('public.complete_deposit_email_delivery(uuid, text, uuid, text)'), 'service_role', ARRAY['EXECUTE']::text[]
   UNION ALL SELECT to_regprocedure('public.fail_deposit_email_delivery(uuid, text, uuid, text)'), 'service_role', ARRAY['EXECUTE']::text[]
+  UNION ALL SELECT to_regprocedure('public.reconcile_deposit_notification_status(uuid)'), 'service_role', ARRAY['EXECUTE']::text[]
   UNION ALL SELECT to_regprocedure('public.deposit_authority_caller()'), 'anon', ARRAY['EXECUTE']::text[]
   UNION ALL SELECT to_regprocedure('public.deposit_authority_caller()'), 'authenticated', ARRAY['EXECUTE']::text[]
   UNION ALL SELECT to_regprocedure('public.deposit_authority_caller()'), 'service_role', ARRAY['EXECUTE']::text[]

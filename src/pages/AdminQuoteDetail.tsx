@@ -35,11 +35,14 @@ import {
   dealPacketSavedQuoteId,
   depositDeliveryInProgress,
   deliveryRowDisplayStatus,
+  formatPaidDepositFinancialSummary,
   historicalCanonicalPdfNote,
   authoritativeDepositPaymentStatus,
   isAuthoritativeDepositPaid,
+  isAdminDepositDealPacket,
   legacyJsonPaymentStatusLabel,
   operationalCustomerQuoteId,
+  quoteNotificationDisplayStatus,
   shouldOfferCanonicalDocumentDownload,
   shouldOfferStripeBillingRecovery,
   summarizeDeliveryRetry,
@@ -317,6 +320,17 @@ const AdminQuoteDetail = () => {
   }, [id, reloadNonce]);
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
+  const depositMoney = q && isAdminDepositDealPacket(q)
+    ? formatPaidDepositFinancialSummary({
+      basePrice: q.base_price,
+      finalPrice: q.final_price,
+      depositAmount: q.deposit_amount,
+      loanAmount: q.loan_amount,
+      monthlyPayment: q.monthly_payment,
+      termMonths: q.term_months,
+      totalCost: q.total_cost,
+    })
+    : null;
   const customerQuoteId = q ? operationalCustomerQuoteId(q) : null;
   const savedQuoteDealId = q ? dealPacketSavedQuoteId(q) : null;
   const hasCanonicalDocument = Boolean(q && shouldOfferCanonicalDocumentDownload({
@@ -1021,19 +1035,19 @@ const AdminQuoteDetail = () => {
           </Card>
 
           {/* Financial Summary */}
-          <Card className="p-4">
+          <Card className="p-4" data-section="financial-summary">
             <h2 className="font-semibold mb-2">Financial Summary</h2>
-            <div>Base price: {fmt(q.base_price)}</div>
+            <div>Base price: {depositMoney ? depositMoney.basePrice : fmt(q.base_price)}</div>
             {(q.admin_discount || 0) > 0 && (
               <div className="text-green-600">Admin discount: -{fmt(q.admin_discount)}</div>
             )}
-            <div className="font-medium">Final price: {fmt(q.final_price)}</div>
+            <div className="font-medium">Final price: {depositMoney ? depositMoney.finalPrice : fmt(q.final_price)}</div>
             <div className="border-t mt-2 pt-2">
-              <div>Deposit amount: {fmt(q.deposit_amount)}</div>
-              <div>Loan amount: {fmt(q.loan_amount)}</div>
-              <div>Monthly payment: {fmt(q.monthly_payment)}</div>
-              <div>Term months: {q.term_months}</div>
-              <div>Total cost: {fmt(q.total_cost)}</div>
+              <div>Deposit amount: {depositMoney ? depositMoney.depositAmount : fmt(q.deposit_amount)}</div>
+              <div>Loan amount: {depositMoney ? depositMoney.loanAmount : fmt(q.loan_amount)}</div>
+              <div>Monthly payment: {depositMoney ? depositMoney.monthlyPayment : fmt(q.monthly_payment)}</div>
+              <div>Term months: {depositMoney ? depositMoney.termMonths : q.term_months}</div>
+              <div>Total cost: {depositMoney ? depositMoney.totalCost : fmt(q.total_cost)}</div>
             </div>
           </Card>
           
@@ -1190,17 +1204,31 @@ const AdminQuoteDetail = () => {
             {deliveryLoadError ? (
               <p className="text-sm text-destructive">{deliveryLoadError}</p>
             ) : (
-              ['customer', 'hbw', 'grok_bot'].map((audience) => {
-                const row = (q.email_deliveries || []).find((item) => item.audience === audience);
-                return (
-                  <div key={audience} className="text-sm py-1">
-                    <strong>{audience}</strong>: {deliveryRowDisplayStatus(row)}
-                    {row?.attempt_count != null ? ` · attempts ${row.attempt_count}` : ''}
-                    {row?.sent_at ? ` · sent ${new Date(row.sent_at).toLocaleString()}` : ''}
-                    {row?.last_attempted_at ? ` · last ${new Date(row.last_attempted_at).toLocaleString()}` : ''}
-                  </div>
-                );
-              })
+              <>
+                <div className="text-sm py-1">
+                  <strong>Quote notification</strong>:{' '}
+                  {quoteNotificationDisplayStatus({
+                    rows: q.email_deliveries,
+                    legacyQuoteStatus: typeof q.quote_data?.notification_status === 'string'
+                      ? q.quote_data.notification_status
+                      : null,
+                    smsStatus: typeof q.quote_data?.sms_notification_status === 'string'
+                      ? q.quote_data.sms_notification_status
+                      : null,
+                  })}
+                </div>
+                {['customer', 'hbw', 'grok_bot'].map((audience) => {
+                  const row = (q.email_deliveries || []).find((item) => item.audience === audience);
+                  return (
+                    <div key={audience} className="text-sm py-1">
+                      <strong>{audience}</strong>: {deliveryRowDisplayStatus(row)}
+                      {row?.attempt_count != null ? ` · attempts ${row.attempt_count}` : ''}
+                      {row?.sent_at ? ` · sent ${new Date(row.sent_at).toLocaleString()}` : ''}
+                      {row?.last_attempted_at ? ` · last ${new Date(row.last_attempted_at).toLocaleString()}` : ''}
+                    </div>
+                  );
+                })}
+              </>
             )}
             <Button
               className="mt-3"

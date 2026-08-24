@@ -12,6 +12,7 @@ import {
   formatStableDepositEmailDate,
   generateDepositReference,
   hbwDepositRecipients,
+  mailerNotificationReconcileResult,
   parseResendIdempotentResponse,
   reportableDeliveryStatus,
   resendFailureCode,
@@ -214,6 +215,18 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).toContain('resolveDealAddress');
     expect(mailer).toContain('depositRecordIsPaid');
     expect(mailer).toContain('formatDealAddressForEmail');
+    expect(mailer).toContain('authoritativeQuoteTotal(depositRecord.final_price)');
+    expect(mailer).toContain('authoritativeQuoteTotal(depositRecord.total_cost)');
+    expect(mailer).not.toContain('depositRecord.final_price ?? depositRecord.total_cost');
+    expect(mailer).toContain('reconcile_deposit_notification_status');
+    expect(mailer).toContain('p_customer_quote_id: depositRecord.id');
+    expect(sendBody.indexOf('await sendAudience("grok_bot"')).toBeLessThan(
+      sendBody.indexOf('reconcile_deposit_notification_status'),
+    );
+    expect(mailer).not.toContain('applyQuoteNotificationReconciliation');
+    expect(mailer).not.toContain('simulateConcurrentNotificationReconcile');
+    expect(mailer).not.toContain('.update({ quote_data:');
+    expect(mailer).not.toContain('sms_notification_status === "sent"');
     expect(mailer).not.toContain('parseSavedQuoteIdentity(savedQuote)');
     expect(mailer).toContain("contains(\"quote_data\", { saved_quote_id: savedQuoteDealId })");
     expect(mailer).toContain('authenticatedBrowserCors(req)');
@@ -387,6 +400,60 @@ describe('deposit confirmation mailer contract', () => {
       helper.indexOf('export function generateDepositReference'),
     );
     expect(keyFn).not.toContain('attempt');
+  });
+});
+
+describe('quote-level notification retry reconciliation', () => {
+  it('defers retry reconciliation to the service_role Postgres RPC instead of a quote_data blob merge', () => {
+    const mailer = readFileSync('supabase/functions/send-deposit-confirmation-email/index.ts', 'utf8');
+    const helper = readFileSync('supabase/functions/_shared/deposit-email-deliveries.ts', 'utf8');
+    const migration = readFileSync('supabase/migrations/20260823120000_deposit_deal_packet.sql', 'utf8');
+    expect(mailer).toContain('reconcile_deposit_notification_status');
+    expect(mailer).toContain('p_customer_quote_id: depositRecord.id');
+    expect(mailer).not.toContain('applyQuoteNotificationReconciliation');
+    expect(mailer).not.toContain('simulateConcurrentNotificationReconcile');
+    expect(mailer).not.toContain('.update({ quote_data:');
+    expect(helper).not.toContain('export function applyQuoteNotificationReconciliation');
+    expect(helper).not.toContain('export function simulateConcurrentNotificationReconcile');
+    expect(migration).toContain('CREATE OR REPLACE FUNCTION public.reconcile_deposit_notification_status');
+    expect(migration).toContain('FOR UPDATE');
+    expect(migration).toContain('jsonb_set(');
+    expect(migration).toContain("audience = 'customer' AND d.status = 'sent'");
+    expect(migration).toContain("audience = 'hbw' AND d.status = 'sent'");
+    expect(migration).toContain("audience = 'grok_bot' AND d.status = 'sent'");
+    expect(migration).toContain("next_status := 'delivered'");
+    expect(migration).toContain("next_status := 'manual_follow_up'");
+    expect(migration).toContain("ELSIF current_status = 'delivered' THEN");
+    expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.reconcile_deposit_notification_status(uuid) TO service_role');
+    expect(migration).not.toMatch(/GRANT EXECUTE ON FUNCTION public\.reconcile_deposit_notification_status\(uuid\) TO anon/);
+    expect(migration).not.toMatch(/GRANT EXECUTE ON FUNCTION public\.reconcile_deposit_notification_status\(uuid\) TO authenticated/);
+    const rpc = migration.slice(
+      migration.indexOf('CREATE OR REPLACE FUNCTION public.reconcile_deposit_notification_status'),
+      migration.indexOf('REVOKE ALL ON FUNCTION public.claim_deposit_email_delivery'),
+    );
+    expect(rpc).toContain("IF CURRENT_USER IS DISTINCT FROM 'service_role' THEN");
+    expect(rpc).toContain('quote_data = jsonb_set(');
+    expect(rpc.split('AS $$')[0]).not.toContain('SECURITY DEFINER');
+    expect(rpc).not.toContain('SET LOCAL ROLE');
+    expect(rpc).not.toContain('sms_notification_status');
+    expect(rpc).toContain('It is not proof that every required email was sent.');
+    expect(mailer).toContain('notification_reconciled');
+    expect(mailer).toContain('mailerNotificationReconcileResult');
+    expect(mailerNotificationReconcileResult({
+      status: null,
+    })).toEqual({
+      notification_status: null,
+      notification_reconciled: true,
+    });
+    expect(mailerNotificationReconcileResult({
+      status: 'delivered',
+      error: { message: 'rpc failed' },
+    })).toEqual({
+      notification_status: null,
+      notification_reconciled: false,
+    });
+    expect(mailer.indexOf('success: !deliveriesIndicateFailure(results)'))
+      .toBeLessThan(mailer.indexOf('notification_reconciled'));
   });
 });
 

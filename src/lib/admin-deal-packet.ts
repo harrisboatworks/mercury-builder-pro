@@ -182,6 +182,37 @@ export function summarizeDeliveryRetryFromMailer(deliveries?: Record<string, str
     .join("; ");
 }
 
+export function requiredEmailAudiencesAreSent(
+  rows: AdminDeliveryRow[] | null | undefined,
+): boolean {
+  const deliveries = rows || [];
+  return DEAL_PACKET_AUDIENCES.every((audience) => (
+    deliveries.some((row) => row.audience === audience && row.status === "sent")
+  ));
+}
+
+/**
+ * `notification_completed_at` records the automatic attempt outcome, including
+ * `manual_follow_up`. It is not delivery proof. Ledger rows determine current
+ * delivery truth.
+ */
+export function quoteNotificationDisplayStatus(options: {
+  rows?: AdminDeliveryRow[] | null;
+  legacyQuoteStatus?: string | null;
+  smsStatus?: string | null;
+}): "delivered" | "manual_follow_up" | "processing" | "not_sent" | string {
+  void options.smsStatus;
+  const rows = options.rows || [];
+  const legacy = typeof options.legacyQuoteStatus === "string" ? options.legacyQuoteStatus : null;
+  if (rows.length === 0) {
+    return legacy || "not_sent";
+  }
+  if (requiredEmailAudiencesAreSent(rows)) return "delivered";
+  if (rows.some((row) => row.status === "failed")) return "manual_follow_up";
+  if (rows.some((row) => row.status === "sending" || row.status === "pending")) return "processing";
+  return "manual_follow_up";
+}
+
 export function historicalCanonicalPdfNote(options: {
   hasCanonical: boolean;
   addressSource: "saved_quote_submitted" | "customer_quote_submitted" | "stripe_billing" | "missing";
@@ -225,6 +256,70 @@ export function legacyJsonPaymentStatusLabel(status: unknown): string | null {
     return null;
   }
   return `Legacy quote_data.payment_status=${status} is not Stripe payment proof`;
+}
+
+export function isAdminDepositDealPacket(quote: {
+  lead_source?: string | null;
+  lead_status?: string | null;
+  _joined_customer_quote_id?: string | null;
+}): boolean {
+  return quote.lead_source === "deposit"
+    || quote.lead_status === "deposit_paid"
+    || Boolean(quote._joined_customer_quote_id);
+}
+
+function parseFinitePositiveNumber(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") return null;
+  const parsed = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(parsed) || parsed <= 0) return null;
+  return parsed;
+}
+
+export function formatPaidDepositPacketMoney(value: unknown): string {
+  const parsed = parseFinitePositiveNumber(value);
+  if (parsed === null) return "Not available";
+  return `$${Math.round(parsed).toLocaleString("en-US")}`;
+}
+
+export function formatPaidDepositPacketTerm(value: unknown): string {
+  const parsed = parseFinitePositiveNumber(value);
+  if (parsed === null) return "Not available";
+  return String(Math.round(parsed));
+}
+
+export function formatPaidDepositPacketDeposit(value: unknown): string {
+  if (value === null || value === undefined || value === "") return "-";
+  const parsed = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(parsed)) return "-";
+  return `$${Math.round(parsed).toLocaleString("en-US")}`;
+}
+
+export function formatPaidDepositFinancialSummary(fields: {
+  basePrice?: unknown;
+  finalPrice?: unknown;
+  depositAmount?: unknown;
+  loanAmount?: unknown;
+  monthlyPayment?: unknown;
+  termMonths?: unknown;
+  totalCost?: unknown;
+}): {
+  basePrice: string;
+  finalPrice: string;
+  depositAmount: string;
+  loanAmount: string;
+  monthlyPayment: string;
+  termMonths: string;
+  totalCost: string;
+} {
+  return {
+    basePrice: formatPaidDepositPacketMoney(fields.basePrice),
+    finalPrice: formatPaidDepositPacketMoney(fields.finalPrice),
+    depositAmount: formatPaidDepositPacketDeposit(fields.depositAmount),
+    loanAmount: formatPaidDepositPacketMoney(fields.loanAmount),
+    monthlyPayment: formatPaidDepositPacketMoney(fields.monthlyPayment),
+    termMonths: formatPaidDepositPacketTerm(fields.termMonths),
+    totalCost: formatPaidDepositPacketMoney(fields.totalCost),
+  };
 }
 
 export function summarizeStripeRecovery(promoted?: {

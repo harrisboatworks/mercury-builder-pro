@@ -54,6 +54,10 @@ const stagingSeedIds = {
 const ignoredTmpRoot = path.join(repoRoot, ".tmp");
 const database = "deposit_deal_packet_accept";
 const concurrentDeal = "cccccccc-cccc-4ccc-8ccc-cccccccccccc";
+const reconcileDeal = "17171717-1717-4171-8171-171717171717";
+const heldClaimDeal = "19191919-1919-4191-8191-191919191919";
+const heldClaimToken = "0c0c0c0c-0c0c-4c0c-8c0c-0c0c0c0c0c0c";
+const heldClaimAdvisoryKey = 19191919;
 const tokenX = "0a0a0a0a-0a0a-4a0a-8a0a-0a0a0a0a0a0a";
 const tokenY = "0b0b0b0b-0b0b-4b0b-8b0b-0b0b0b0b0b0b";
 const unixPathLimit = process.platform === "darwin" ? 103 : 107;
@@ -165,6 +169,101 @@ function claimSql(token) {
       120
     );
   `;
+}
+
+function reconcileSql(dealId = reconcileDeal, sleepSeconds = 0.25) {
+  return `
+    SET statement_timeout = '8s';
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT pg_sleep(${sleepSeconds});
+    SELECT public.reconcile_deposit_notification_status('${dealId}'::uuid);
+  `;
+}
+
+function spawnInteractivePsql() {
+  const child = spawn(bin("psql"), ["-v", "ON_ERROR_STOP=1", "-X", "-t", "-A", "-d", database], {
+    env: envForSocket(),
+    cwd: repoRoot,
+  });
+  let stdout = "";
+  let stderr = "";
+  const waiters = [];
+  child.stdout.on("data", (chunk) => {
+    stdout += String(chunk);
+    for (const waiter of waiters) waiter();
+  });
+  child.stderr.on("data", (chunk) => {
+    stderr += String(chunk);
+    for (const waiter of waiters) waiter();
+  });
+  const finished = new Promise((resolve) => {
+    child.on("close", (status) => {
+      resolve({ status, stdout: stdout.trim(), stderr: stderr.trim() });
+    });
+  });
+  return {
+    write(sql) {
+      child.stdin.write(sql);
+    },
+    waitUntil(predicate, timeoutMs) {
+      return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error("timed out waiting for holder")), timeoutMs);
+        const check = () => {
+          if (predicate(stdout, stderr)) {
+            clearTimeout(timer);
+            resolve(stdout);
+          }
+        };
+        waiters.push(check);
+        check();
+      });
+    },
+    finished,
+  };
+}
+
+function spawnSqlSession(sql) {
+  const child = spawn(bin("psql"), ["-v", "ON_ERROR_STOP=1", "-X", "-t", "-A", "-d", database, "-c", sql], {
+    env: envForSocket(),
+    cwd: repoRoot,
+  });
+  let stdout = "";
+  let stderr = "";
+  const waiters = [];
+  child.stdout.on("data", (chunk) => {
+    stdout += String(chunk);
+    for (const waiter of waiters) waiter();
+  });
+  child.stderr.on("data", (chunk) => {
+    stderr += String(chunk);
+    for (const waiter of waiters) waiter();
+  });
+  const finished = new Promise((resolve) => {
+    child.on("close", (status) => {
+      resolve({ status, stdout: stdout.trim(), stderr: stderr.trim() });
+    });
+  });
+  return {
+    waitUntil(predicate, timeoutMs) {
+      return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error(`timed out waiting for ${predicate}`)), timeoutMs);
+        const check = () => {
+          if (predicate(stdout, stderr)) {
+            clearTimeout(timer);
+            resolve(stdout);
+          }
+        };
+        waiters.push(check);
+        check();
+      });
+    },
+    finished,
+  };
+}
+
+function spawnReconcile(dealId = reconcileDeal, sleepSeconds = 0.25) {
+  return spawnSqlSession(reconcileSql(dealId, sleepSeconds)).finished;
 }
 
 function spawnClaim(token) {
@@ -316,6 +415,101 @@ logging_collector = off
     'concurrent_claim_exactly_one_winner',
     ${concurrentPassed ? "true" : "false"},
     ${psqlLiteral(concurrentDetail)}
+  );`);
+
+  const reconcileRaced = await Promise.all([spawnReconcile(), spawnReconcile()]);
+  const reconcileDelivered = reconcileRaced.filter((result) => (
+    result.status === 0 && /\bdelivered\b/.test(result.stdout)
+  ));
+  const reconcileFailedLaunch = reconcileRaced.filter((result) => result.status !== 0);
+  const reconcileConcurrentPassed = reconcileDelivered.length === 2 && reconcileFailedLaunch.length === 0;
+  const keysPreserved = psqlValue(database, `
+    SELECT
+      quote_data->>'notification_status' = 'delivered'
+      AND quote_data->>'sms_notification_status' = 'skipped'
+      AND quote_data->>'probe_key' = 'reconcile-race'
+      AND quote_data->>'deposit_outbox_schema' = '1'
+    FROM public.customer_quotes
+    WHERE id = '${reconcileDeal}'
+  `) === "t";
+  const reconcileDetail = [
+    ...reconcileRaced.map((result, index) => (
+      `session${index + 1} status=${result.status} out=${JSON.stringify(result.stdout)} err=${JSON.stringify(result.stderr)}`
+    )),
+    `keys_preserved=${keysPreserved}`,
+  ].join("; ");
+  psql(`SELECT public.accept_record(
+    'concurrent_reconcile_all_sent_promotes_delivered',
+    ${reconcileConcurrentPassed && keysPreserved ? "true" : "false"},
+    ${psqlLiteral(reconcileDetail)}
+  );`);
+
+  const heldClaim = spawnInteractivePsql();
+  heldClaim.write(`
+    SET statement_timeout = '8s';
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    BEGIN;
+    SELECT status
+    FROM public.claim_deposit_email_delivery(
+      '${heldClaimDeal}'::uuid,
+      'hbw',
+      '${heldClaimToken}'::uuid,
+      120
+    );
+  `);
+  let claimAcquired = false;
+  try {
+    await heldClaim.waitUntil((stdout) => /\bsending\b/.test(stdout), 4000);
+    claimAcquired = true;
+  } catch {
+    claimAcquired = false;
+    heldClaim.write("ROLLBACK;\n\\quit\n");
+  }
+  const reconcileWhileHeldStarted = Date.now();
+  const reconcilePromise = claimAcquired
+    ? spawnReconcile(heldClaimDeal, 0)
+    : Promise.resolve({ status: 1, stdout: "", stderr: "claim never acquired" });
+  await new Promise((resolve) => setTimeout(resolve, 800));
+  if (claimAcquired) {
+    heldClaim.write("COMMIT;\n\\quit\n");
+  }
+  const [reconcileWhileHeld, heldClaimResult] = await Promise.all([
+    reconcilePromise,
+    heldClaim.finished,
+  ]);
+  const reconcileWhileHeldMs = Date.now() - reconcileWhileHeldStarted;
+  const noDeadlock = !/40P01|deadlock detected/i.test(`${heldClaimResult.stderr}\n${reconcileWhileHeld.stderr}`);
+  const holdWaited = claimAcquired && reconcileWhileHeldMs >= 400;
+  const holdKeysPreserved = psqlValue(database, `
+    SELECT
+      quote_data->>'notification_status' = 'manual_follow_up'
+      AND quote_data->>'sms_notification_status' = 'skipped'
+      AND quote_data->>'probe_key' = 'reconcile-hold'
+      AND quote_data->>'deposit_outbox_schema' = '1'
+      AND quote_data ? 'notification_completed_at'
+    FROM public.customer_quotes
+    WHERE id = '${heldClaimDeal}'
+  `) === "t";
+  const holdPassed = heldClaimResult.status === 0
+    && reconcileWhileHeld.status === 0
+    && /\bmanual_follow_up\b/.test(reconcileWhileHeld.stdout)
+    && noDeadlock
+    && holdWaited
+    && holdKeysPreserved;
+  psql(`SELECT public.accept_record(
+    'concurrent_reconcile_waits_on_claimed_delivery_without_deadlock',
+    ${holdPassed ? "true" : "false"},
+    ${psqlLiteral([
+      `claim_status=${heldClaimResult.status}`,
+      `claim_out=${JSON.stringify(heldClaimResult.stdout)}`,
+      `reconcile_status=${reconcileWhileHeld.status}`,
+      `reconcile_out=${JSON.stringify(reconcileWhileHeld.stdout)}`,
+      `reconcile_ms=${reconcileWhileHeldMs}`,
+      `waited=${holdWaited}`,
+      `deadlock=${!noDeadlock}`,
+      `keys_preserved=${holdKeysPreserved}`,
+    ].join("; "))}
   );`);
   psql(`SELECT public.accept_record(
     'unix_socket_only_no_tcp',

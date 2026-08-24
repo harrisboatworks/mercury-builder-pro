@@ -284,17 +284,34 @@ function parseDealAmount(value: unknown): number | null {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-export function formatDealMoney(value: unknown): string {
+export function authoritativeQuoteTotal(value: unknown): number | null {
   const parsed = parseDealAmount(value);
+  if (parsed === null || parsed <= 0) return null;
+  return parsed;
+}
+
+export function formatDealMoney(value: unknown): string {
+  const parsed = authoritativeQuoteTotal(value);
   if (parsed === null) return "Not available";
   return `$${parsed} CAD`;
 }
 
+export function formatGrokQuoteMoney(value: unknown): string {
+  return authoritativeQuoteTotal(value) === null ? "null" : formatDealMoney(value);
+}
+
 export function remainingBalance(total: unknown, deposit: unknown): string {
-  const totalAmount = parseDealAmount(total);
+  const totalAmount = authoritativeQuoteTotal(total);
   const depositAmount = parseDealAmount(deposit);
   if (totalAmount === null || depositAmount === null) return "Not available";
-  return `$${totalAmount - depositAmount} CAD`;
+  const remaining = totalAmount - depositAmount;
+  if (!Number.isFinite(remaining) || remaining < 0) return "Not available";
+  return `$${remaining} CAD`;
+}
+
+export function grokRemainingBalance(total: unknown, deposit: unknown): string {
+  const formatted = remainingBalance(total, deposit);
+  return formatted === "Not available" ? "null" : formatted;
 }
 
 export function unavailableField(value: unknown): string {
