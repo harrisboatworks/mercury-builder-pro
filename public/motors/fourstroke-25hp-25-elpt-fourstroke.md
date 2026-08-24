@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 70870b08-2d14-42d2-93db-974b93c6557f
 slug: fourstroke-25hp-25-elpt-fourstroke
 family: FourStroke

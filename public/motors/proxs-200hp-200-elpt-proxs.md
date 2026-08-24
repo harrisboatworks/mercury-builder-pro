@@ -1,15 +1,15 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 9e7a8b58-bc3f-401e-b24e-25b2b102d0fd
 slug: proxs-200hp-200-elpt-proxs
-family: ProXS
+family: Pro XS
 horsepower: 200
 model_number: 12000039A
 availability: in_stock
@@ -18,13 +18,13 @@ price_cad: 28122
 
 # 200 ELPT ProXS
 
-Mercury ProXS 200 HP outboard motor (model 12000039A).
+Mercury Pro XS 200 HP outboard motor (model 12000039A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 200 ELPT ProXS
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 200 HP
 - **Model number:** 12000039A
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer �
 
 ## Best fit for
 
-Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 

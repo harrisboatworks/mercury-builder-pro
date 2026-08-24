@@ -1,15 +1,15 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-300hp-300-exlpt-pro-xs-dts
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 37c8135a-587a-4879-8a05-c40ad93aa068
 slug: proxs-300hp-300-exlpt-pro-xs-dts
-family: ProXS
+family: Pro XS
 horsepower: 300
 model_number: 13000179A
 availability: special_order
@@ -18,13 +18,13 @@ price_cad: 39402
 
 # 300 EXLPT Pro XS DTS
 
-Mercury ProXS 300 HP outboard motor (model 13000179A).
+Mercury Pro XS 300 HP outboard motor (model 13000179A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â· Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 300 EXLPT Pro XS DTS
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 300 HP
 - **Model number:** 13000179A
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Best fit for
 
-Larger offshore and high-performance hulls. Confirm transom rating and rigging with dealer.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 

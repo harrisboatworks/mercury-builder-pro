@@ -1,15 +1,15 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-225hp-225-elpt-proxs
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 37f35f6f-d8fe-4ab1-9df2-b5ac5f81fe09
 slug: proxs-225hp-225-elpt-proxs
-family: ProXS
+family: Pro XS
 horsepower: 225
 model_number: 12250033A
 availability: special_order
@@ -18,13 +18,13 @@ price_cad: 34029
 
 # 225 ELPT ProXS
 
-Mercury ProXS 225 HP outboard motor (model 12250033A).
+Mercury Pro XS 225 HP outboard motor (model 12250033A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â· Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 225 ELPT ProXS
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 225 HP
 - **Model number:** 12250033A
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Best fit for
 
-Larger offshore and high-performance hulls. Confirm transom rating and rigging with dealer.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 

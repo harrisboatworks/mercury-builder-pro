@@ -1,15 +1,15 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-300hp-300-elpt-pro-xs-torquemaster
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 228d7f7b-8e8e-453d-9fc8-1469436bc03a
 slug: proxs-300hp-300-elpt-pro-xs-torquemaster
-family: ProXS
+family: Pro XS
 horsepower: 300
 model_number: 13000022A
 availability: special_order
@@ -18,13 +18,13 @@ price_cad: 36542
 
 # 300 ELPT Pro XS TorqueMaster
 
-Mercury ProXS 300 HP outboard motor (model 13000022A).
+Mercury Pro XS 300 HP outboard motor (model 13000022A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â· Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 300 ELPT Pro XS TorqueMaster
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 300 HP
 - **Model number:** 13000022A
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Best fit for
 
-Larger offshore and high-performance hulls. Confirm transom rating and rigging with dealer.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 
