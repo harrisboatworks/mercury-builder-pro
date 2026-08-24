@@ -3742,7 +3742,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
     "title": "Mercury Outboard Octane and Ethanol Guide for Ontario",
-    "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+    "description": "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.",
     "category": "Service",
     "publishDate": "2026-04-11",
     "keywords": [
