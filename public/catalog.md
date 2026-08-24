@@ -468,6 +468,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [GTA 华人从租船到买船路线图 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap.md)
 - [安省船主冬化与室外冬储清单：什么时候送、要做什么 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese.md)
 - [多伦多华人第一次租船钓鱼：证件、安全和当天流程 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md)
 - [安省船主冬季保養和冬儲清單：第一次過冬怎麼做 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/ontario-boat-winterization-guide-chinese.md)
 - [多倫多華人第一次租船釣魚：證件、安全和當天流程 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide.md)
 - [PCOC、PCL、釣魚證區別：安省新手別搞混 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md)
