@@ -3,19 +3,57 @@
 -- Do not run against eutsoqdpjurknjsshxes.
 
 BEGIN;
+
+CREATE TABLE IF NOT EXISTS public.motor_models (
+  id uuid PRIMARY KEY,
+  model text NOT NULL,
+  model_display text,
+  horsepower numeric,
+  mercury_model_no text,
+  model_number text,
+  stock_quantity numeric,
+  in_stock boolean,
+  availability text
+);
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.motor_models TO service_role;
+
 SET LOCAL ROLE service_role;
 
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM public.saved_quotes)
      OR EXISTS (SELECT 1 FROM public.customer_quotes)
+     OR EXISTS (SELECT 1 FROM public.motor_models)
   THEN
     RAISE EXCEPTION
-      'deposit staging seed refuses a populated database; saved_quotes and customer_quotes must both be empty'
+      'deposit staging seed refuses a populated database; saved_quotes, customer_quotes, and motor_models must all be empty'
       USING ERRCODE = 'P0001';
   END IF;
 END
 $$;
+
+INSERT INTO public.motor_models (
+  id,
+  model,
+  model_display,
+  horsepower,
+  mercury_model_no,
+  model_number,
+  stock_quantity,
+  in_stock,
+  availability
+) VALUES (
+  '36363636-3636-4636-8636-363636363636',
+  'Staging Lovelace 90',
+  'Staging Lovelace 90',
+  90,
+  'STG90LOVELACE',
+  'STG90LOVELACE',
+  1,
+  true,
+  'In Stock'
+);
 
 INSERT INTO public.saved_quotes (
   id,
@@ -130,7 +168,7 @@ INSERT INTO public.saved_quotes (
   'ada@example.invalid',
   '2099-01-01T00:00:00Z',
   'dep_313131313131313131313131',
-  '{"motor":{"id":"36363636-3636-4636-8636-363636363636","model":"Staging Lovelace 90"}}'::jsonb,
+  '{"motor":{"id":"36363636-3636-4636-8636-363636363636","model":"Staging Lovelace 90"},"purchasePath":"motor_only","depositPolicySnapshot":{"schema":"deposit-policy/v1","motorId":"36363636-3636-4636-8636-363636363636","stockClassification":"in_stock","policyCode":"in_stock_refundable","stockQuantity":1,"inStock":true,"availability":"In Stock","purchasePath":"motor_only"}}'::jsonb,
   false,
   'Staging Lovelace',
   '5555550100',

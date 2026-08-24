@@ -197,6 +197,6 @@ describe('build-content wiring stays build-only', () => {
     expect(stagingDoc).toContain('BUILD_CONTENT_SUPABASE_URL');
     expect(stagingDoc).toContain('BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY');
     expect(stagingDoc).toContain('Do not point Preview `VITE_*` at `eutsoqdpjurknjsshxes`');
-    expect(stagingDoc).toContain('has no `motor_models`');
+    expect(stagingDoc).toContain('minimal deposit-path `motor_models` fixture');
   });
 });

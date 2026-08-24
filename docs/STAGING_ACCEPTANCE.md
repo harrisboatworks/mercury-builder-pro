@@ -6,7 +6,7 @@ Live I/O from this repository: **none** until an operator supplies a non-product
 
 ## Cloud limitation (stop here if no isolated project)
 
-Isolated branch project `ccozickwrpautlxknsjk` exists and is data-less: historical migrations failed on an empty public schema (`customer_quotes` missing at `20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`). Do not replay that chain. Use `hosted-bootstrap.sql` instead.
+Create a fresh data-less isolated Supabase project. Historical migrations fail on an empty public schema (`customer_quotes` missing at `20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`). Do not replay that chain. Use `hosted-bootstrap.sql` instead. A previous isolated branch ref is not reusable; supply the new 20-character lowercase project ref at apply time.
 
 - `supabase/config.toml` `project_id` is still `eutsoqdpjurknjsshxes` (production).
 - This packet must not `supabase link`, `db push`, or deploy functions to that production ref.
@@ -66,14 +66,14 @@ Vercel **Preview** env, scoped to git branch `cursor/deposit-deal-packet-2026082
 - `BUILD_CONTENT_SUPABASE_URL` = production public catalog URL `https://eutsoqdpjurknjsshxes.supabase.co` (build scripts only)
 - `BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY` = production publishable/anon key (build scripts only; not a service-role key)
 
-`BUILD_CONTENT_*` must be set together as a matching pair. They are read-only public catalog credentials used by `generate-markdown-twins.mjs`, `static-prerender.mjs`, and `fetch-google-places-data.mjs`. The isolated Preview project has no `motor_models`.
+`BUILD_CONTENT_*` must be set together as a matching pair. They are read-only public catalog credentials used by `generate-markdown-twins.mjs`, `static-prerender.mjs`, and `fetch-google-places-data.mjs`. The isolated Preview project has only a minimal deposit-path `motor_models` fixture, not the public catalog.
 
 Do not change Production or Development Vercel env. Do not point Preview `VITE_*` at `eutsoqdpjurknjsshxes`.
 
 ## How the existing Vercel PR preview is pointed at the isolated project
 
 1. Create or obtain a **data-less isolated Supabase project** (operator action; this packet does not create it).
-2. In Vercel → mercury-builder-pro → Settings → Environment Variables, add Preview-only `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for this git branch (isolated runtime). Also add Preview-only `BUILD_CONTENT_SUPABASE_URL` and `BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY` as the matching production public catalog pair so build-time `motor_models` reads do not hit the empty isolated schema.
+2. In Vercel → mercury-builder-pro → Settings → Environment Variables, add Preview-only `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for this git branch (isolated runtime). Also add Preview-only `BUILD_CONTENT_SUPABASE_URL` and `BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY` as the matching production public catalog pair so build-time catalog `motor_models` reads do not hit the isolated deposit-path fixture.
 3. Redeploy the existing PR preview so the browser bundle embeds the isolated URL.
 4. Confirm the preview document is not a production host. Allowed example: `https://mercury-builder-pro-git-cursor-deposit-deal-packet-20260823-hbw.vercel.app`.
 5. Isolated function secret `APP_URL` may be that preview URL. It must not be `https://www.mercuryrepower.ca`.
@@ -149,7 +149,7 @@ On the isolated project only: deploy this branch's Edge functions (`create-payme
 
 Do **not** replay the repository historical migration chain on a data-less branch. The first historical file (`20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql`) alters `public.customer_quotes` before any repository migration creates that table.
 
-Apply this exact order against branch project `ccozickwrpautlxknsjk` only:
+Apply this exact order against an operator-supplied isolated non-production project only:
 
 1. `scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql`
 2. `supabase/migrations/20260823120000_deposit_deal_packet.sql` (unmodified)
@@ -157,17 +157,20 @@ Apply this exact order against branch project `ccozickwrpautlxknsjk` only:
 4. `scripts/deposit-deal-packet-staging/sql/seed.sql`
 
 ```bash
-# Same psql session. The nonce is operator intent acknowledgement only.
-# This SQL cannot independently identify branch ccozickwrpautlxknsjk.
+# Same psql session. Both GUCs are operator intent acknowledgement only.
+# This SQL cannot independently identify the connected project.
 # Actual project identity is the Supabase connector/CLI target project_id
 # plus the staging URL/key guards. deposit_staging.* GUCs are excluded from
 # the in-database ref scan so the nonce cannot self-identify.
+# Replace <isolated-20-char-ref> with the exact non-production project ref.
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
-  -c "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'" \
+  -c "SET deposit_staging.project_ref TO '<isolated-20-char-ref>'" \
+  -c "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<isolated-20-char-ref>'" \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql
 
+# Missing or malformed project_ref fails before DDL.
 # SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes' must fail before DDL,
-# even when the nonce is also set.
+# even when a matching nonce is also set.
 
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f supabase/migrations/20260823120000_deposit_deal_packet.sql
@@ -175,11 +178,11 @@ psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql
 ```
 
-Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-staging/hosted-bootstrap/v1` / surface `deposit-deal-packet-hosted-bootstrap/v1`. That row is a schema-surface marker, not proof of the connected project.
+Refuse `eutsoqdpjurknjsshxes`. The bootstrap writes marker `deposit-deal-packet-staging/hosted-bootstrap/v1` / surface `deposit-deal-packet-hosted-bootstrap/v1` and stores the operator-supplied ref. That row is a schema-surface marker, not proof of the connected project. Verification requires a syntactically valid non-production 20-character lowercase `target_project_ref`, not a hard-coded branch.
 
 `public.deposit_staging_marker` has RLS enabled. `PUBLIC`, `anon`, and `authenticated` have no table privileges. `service_role` has `SELECT` only. The applying role can still `SELECT` for verification. `public.has_role(uuid, public.app_role)` `EXECUTE` is `authenticated` and `service_role` only.
 
-Hosted `ALTER DEFAULT PRIVILEGES` grants `ALL` on new public tables/functions to `anon`/`authenticated`/`service_role`. Bootstrap and the feature migration `REVOKE ALL` from `PUBLIC`, `anon`, `authenticated`, and `service_role` before the intended `GRANT`s so a reapply narrows leftover hosted ACLs. Intended table sets: `user_roles` SELECT for authenticated+service_role; `saved_quotes`/`customer_quotes` CRUD for authenticated+service_role; marker SELECT for service_role; `deposit_email_deliveries` SELECT for authenticated and SELECT/INSERT/UPDATE for service_role.
+Hosted `ALTER DEFAULT PRIVILEGES` grants `ALL` on new public tables/functions to `anon`/`authenticated`/`service_role`. Bootstrap and the feature migration `REVOKE ALL` from `PUBLIC`, `anon`, `authenticated`, and `service_role` before the intended `GRANT`s so a reapply narrows leftover hosted ACLs. Intended table sets: `user_roles` SELECT for authenticated+service_role; `saved_quotes`/`customer_quotes` CRUD for authenticated+service_role; `motor_models` SELECT for authenticated and SELECT/INSERT/UPDATE/DELETE for service_role; marker SELECT for service_role; `deposit_email_deliveries` SELECT for authenticated and SELECT/INSERT/UPDATE for service_role. `motor_models` RLS allows authenticated admin reads only. The seed fixture is `36363636-3636-4636-8636-363636363636` (`Staging Lovelace 90`, 90 HP, `STG90LOVELACE`, in stock). The staging saved-quote `quote_state` includes `purchasePath=motor_only` and a matching `deposit-policy/v1` snapshot. The historical control quote_state stays motor-only.
 
 Hosted `auth` and `storage` stay on their system owners. Isolated-branch `postgres` has `USAGE` and table DML including `REFERENCES`, not schema `CREATE`. `CREATE TABLE IF NOT EXISTS` still requires schema `CREATE` and is therefore never issued against existing `auth.users`, `storage.buckets`, or `storage.objects`. The bootstrap skips `CREATE SCHEMA`, `GRANT USAGE`, `ALTER`, `DROP POLICY`, and `CREATE POLICY` on those schemas unless the applying role owns the stub it just created (bare-PostgreSQL local path only). On hosted, existing `auth.uid()` / `auth.role()` / storage plus `service_role` `BYPASSRLS` are sufficient. The quotes bucket upsert is DML only. Live isolated-branch readback: `postgres` and `service_role` are `rolsuper=false`, `rolbypassrls=true`.
 
@@ -204,7 +207,7 @@ writeFileSync(".tmp/historical-control.pdf", "%PDF-1.7\nhistorical-control\n");
 # After guards: apply seed to the isolated DB only.
 # seed.sql SET LOCAL ROLE service_role, then raises before any insert if
 # saved_quotes or customer_quotes already contains a row:
-#   deposit staging seed refuses a populated database; saved_quotes and customer_quotes must both be empty
+#   deposit staging seed refuses a populated database; saved_quotes, customer_quotes, and motor_models must all be empty
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f scripts/deposit-deal-packet-staging/sql/seed.sql
 ```

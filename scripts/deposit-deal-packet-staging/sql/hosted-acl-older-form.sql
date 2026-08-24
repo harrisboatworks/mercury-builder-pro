@@ -4,12 +4,14 @@
 GRANT ALL ON TABLE public.user_roles TO anon, authenticated, service_role;
 GRANT ALL ON TABLE public.saved_quotes TO anon, authenticated, service_role;
 GRANT ALL ON TABLE public.customer_quotes TO anon, authenticated, service_role;
+GRANT ALL ON TABLE public.motor_models TO anon, authenticated, service_role;
 GRANT ALL ON TABLE public.deposit_staging_marker TO anon, authenticated, service_role;
 GRANT ALL ON TABLE public.deposit_email_deliveries TO anon, authenticated, service_role;
 
 REVOKE ALL ON TABLE public.user_roles FROM PUBLIC;
 REVOKE ALL ON TABLE public.saved_quotes FROM PUBLIC;
 REVOKE ALL ON TABLE public.customer_quotes FROM PUBLIC;
+REVOKE ALL ON TABLE public.motor_models FROM PUBLIC, anon;
 REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon;
 

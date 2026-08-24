@@ -1,5 +1,10 @@
 -- Expected readbacks after a staging deposit. Fixture IDs only.
 
+SELECT id, model, model_display, horsepower, mercury_model_no, model_number,
+       stock_quantity, in_stock, availability
+FROM public.motor_models
+WHERE id = '36363636-3636-4636-8636-363636363636';
+
 SELECT id, email, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256,
        customer_full_name, customer_phone, customer_address_line1, customer_city,
        customer_region, customer_postal_code, customer_country

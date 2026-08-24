@@ -23,6 +23,7 @@ import {
   resolveDepositAudienceRecipients,
   stripeSecretKind,
 } from '../../../supabase/functions/_shared/deposit-staging-guard.ts';
+import { assertDepositPolicyReadyForCheckout } from '../../../supabase/functions/_shared/deposit-policy.ts';
 import { runDepositStagingAcceptance } from '../../../scripts/deposit-deal-packet-staging/run.ts';
 
 const fixtures = JSON.parse(
@@ -315,7 +316,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(bootstrap).toContain('deposit-deal-packet-staging/hosted-bootstrap/v1');
     expect(bootstrap).toContain('deposit-deal-packet-hosted-bootstrap/v1');
     expect(bootstrap).toContain('hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes');
-    expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' as operator intent acknowledgement");
+    expect(bootstrap).toContain('hosted staging bootstrap requires SET deposit_staging.project_ref TO a non-production 20-character lowercase project ref before DDL');
+    expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/<project_ref>'' as operator intent acknowledgement matching deposit_staging.project_ref");
+    expect(bootstrap).toContain('^[a-z0-9]{20}$');
     expect(bootstrap).toContain('This SQL cannot independently identify the hosted branch');
     expect(bootstrap).toContain("name NOT LIKE 'deposit_staging.%'");
     expect(bootstrap).toContain('REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon, authenticated, service_role');
@@ -326,8 +329,15 @@ describe('deposit deal-packet staging guard', () => {
     expect(bootstrap).toContain('REVOKE ALL ON TABLE public.user_roles FROM PUBLIC, anon, authenticated, service_role');
     expect(bootstrap).toContain('REVOKE ALL ON TABLE public.saved_quotes FROM PUBLIC, anon, authenticated, service_role');
     expect(bootstrap).toContain('REVOKE ALL ON TABLE public.customer_quotes FROM PUBLIC, anon, authenticated, service_role');
+    expect(bootstrap).toContain('REVOKE ALL ON TABLE public.motor_models FROM PUBLIC, anon, authenticated, service_role');
     expect(bootstrap).toContain('REVOKE ALL ON TABLE public.deposit_staging_marker FROM PUBLIC, anon, authenticated, service_role');
+    expect(bootstrap).toContain('GRANT SELECT ON TABLE public.motor_models TO authenticated');
+    expect(bootstrap).toContain('GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.motor_models TO service_role');
     expect(bootstrap).toContain('GRANT SELECT ON TABLE public.deposit_staging_marker TO service_role');
+    expect(bootstrap).toContain('CREATE TABLE IF NOT EXISTS public.motor_models');
+    expect(bootstrap).toContain('ALTER TABLE public.motor_models ENABLE ROW LEVEL SECURITY');
+    expect(bootstrap).toContain('Admins can read motor_models');
+    expect(bootstrap).toContain("btrim(current_setting('deposit_staging.project_ref', false))");
     expect(bootstrap).toContain("to_regclass('auth.users')");
     expect(bootstrap).toContain("to_regclass('storage.buckets')");
     expect(bootstrap).toContain("to_regclass('storage.objects')");
@@ -364,7 +374,13 @@ describe('deposit deal-packet staging guard', () => {
     const olderAcl = readFileSync('scripts/deposit-deal-packet-staging/sql/hosted-acl-older-form.sql', 'utf8');
     expect(olderAcl).toContain('GRANT ALL ON TABLE public.deposit_email_deliveries TO anon, authenticated, service_role');
     expect(olderAcl).toContain('REVOKE ALL ON TABLE public.deposit_email_deliveries FROM PUBLIC, anon');
-    expect(bootstrap).toContain('ccozickwrpautlxknsjk');
+    expect(olderAcl).toContain('GRANT ALL ON TABLE public.motor_models TO anon, authenticated, service_role');
+    expect(bootstrap).not.toContain('ccozickwrpautlxknsjk');
+    expect(verify).not.toContain('ccozickwrpautlxknsjk');
+    expect(verify).toContain("target_project_ref ~ '^[a-z0-9]{20}$'");
+    expect(verify).toContain("target_project_ref IS DISTINCT FROM 'eutsoqdpjurknjsshxes'");
+    expect(verify).toContain('motor_models_deposit_columns');
+    expect(verify).toContain('motor_models_rls_enabled');
     expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
     expect(bootstrap).not.toContain('mercury_parts');
     expect(bootstrap).not.toContain('CREATE TABLE public.quotes');
@@ -389,10 +405,46 @@ describe('deposit deal-packet staging guard', () => {
     expect(webhook).not.toMatch(/depositStagingModeEnabled\(/);
     expect(seedSql).toContain('SET LOCAL ROLE service_role');
     expect(cleanupSql).toContain('SET LOCAL ROLE service_role');
-    expect(seedSql).toContain('deposit staging seed refuses a populated database; saved_quotes and customer_quotes must both be empty');
+    expect(seedSql).toContain('deposit staging seed refuses a populated database; saved_quotes, customer_quotes, and motor_models must all be empty');
+    expect(seedSql).toContain('CREATE TABLE IF NOT EXISTS public.motor_models');
+    expect(seedSql).toContain("'36363636-3636-4636-8636-363636363636'");
+    expect(seedSql).toContain("'STG90LOVELACE'");
+    expect(seedSql).toContain('"purchasePath":"motor_only"');
+    expect(seedSql).toContain('"schema":"deposit-policy/v1"');
+    expect(seedSql).toContain("'{\"motor\":{\"id\":\"36363636-3636-4636-8636-363636363636\",\"model\":\"Staging Historical 90\"}}'::jsonb");
     expect(cleanupSql).toContain("id = '31313131-3131-4131-8131-313131313131'");
     expect(cleanupSql).toContain("email = 'ada@example.invalid'");
     expect(cleanupSql).toContain("customer_email = 'historical@example.invalid'");
+    expect(cleanupSql).toContain("id = '36363636-3636-4636-8636-363636363636'");
+    expect(cleanupSql).toContain("model_number = 'STG90LOVELACE'");
+
+    const fixtureMotorRow = {
+      id: fixtures.ids.fixtureMotorId,
+      model: fixtures.motor.model,
+      model_display: fixtures.motor.modelDisplay,
+      horsepower: fixtures.motor.horsepower,
+      mercury_model_no: fixtures.motor.mercuryModelNo,
+      model_number: fixtures.motor.modelNumber,
+      stock_quantity: fixtures.motor.stockQuantity,
+      in_stock: fixtures.motor.inStock,
+      availability: fixtures.motor.availability,
+    };
+    expect(assertDepositPolicyReadyForCheckout({
+      savedMotorId: fixtures.ids.fixtureMotorId,
+      motorRow: fixtureMotorRow,
+      quoteState: {
+        motor: { id: fixtures.ids.fixtureMotorId, model: fixtures.motor.model },
+        purchasePath: 'motor_only',
+        depositPolicySnapshot: fixtures.motor.depositPolicySnapshot,
+      },
+    })).toEqual(fixtures.motor.depositPolicySnapshot);
+    expect(() => assertDepositPolicyReadyForCheckout({
+      savedMotorId: fixtures.ids.fixtureMotorId,
+      motorRow: fixtureMotorRow,
+      quoteState: {
+        motor: { id: fixtures.ids.fixtureMotorId, model: 'Staging Historical 90' },
+      },
+    })).toThrow('Purchase path cannot be resolved');
 
     const runbook = readFileSync('docs/STAGING_ACCEPTANCE.md', 'utf8');
     expect(runbook).toContain('deposit-deal-packet-staging-evidence/v2');
@@ -407,11 +459,15 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('/admin/quotes/31313131-3131-4131-8131-313131313131');
     expect(runbook).toContain('hosted-bootstrap.sql');
     expect(runbook).toContain('deposit-deal-packet-hosted-bootstrap/v1');
-    expect(runbook).toContain('deposit-deal-packet-staging/ccozickwrpautlxknsjk');
-    expect(runbook).toContain('This SQL cannot independently identify branch ccozickwrpautlxknsjk');
+    expect(runbook).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-ref>'");
+    expect(runbook).toContain("SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<isolated-20-char-ref>'");
+    expect(runbook).toContain('This SQL cannot independently identify the connected project');
     expect(runbook).toContain('operator intent acknowledgement only');
     expect(runbook).toContain('nonce cannot self-identify');
     expect(runbook).toContain('schema-surface marker, not proof of the connected project');
+    expect(runbook).toContain('minimal deposit-path `motor_models` fixture');
+    expect(runbook).toContain('purchasePath=motor_only');
+    expect(runbook).toContain('deposit-policy/v1');
     expect(runbook).toContain('`CREATE TABLE IF NOT EXISTS` still requires schema `CREATE`');
     expect(runbook).toContain('quotes bucket upsert is DML only');
     expect(runbook).toContain('ALTER DEFAULT PRIVILEGES');
@@ -421,7 +477,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).not.toContain('nonce may be omitted');
     expect(runbook).not.toContain('If the session can determine project ref');
     expect(runbook).toContain('Follow-up reminder');
-    expect(runbook).toContain('ccozickwrpautlxknsjk');
+    expect(runbook).not.toContain('ccozickwrpautlxknsjk');
     expect(runbook).toContain('STRIPE_DEPOSIT_PRICE_500');
     expect(runbook).toContain('price_1SocofHhVKClVQCpsdCfdG7e');
     expect(runbook).not.toContain('price_1U7jab');
@@ -528,5 +584,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(payment).not.toContain('price_1U7jab');
     expect(envExample).toContain('# STRIPE_DEPOSIT_PRICE_500=');
     expect(envExample).not.toContain('price_1U7jab');
+    expect(envExample).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-lowercase-ref>'");
+    expect(envExample).toContain("SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<that-exact-ref>'");
+    expect(envExample).not.toContain('ccozickwrpautlxknsjk');
   });
 });

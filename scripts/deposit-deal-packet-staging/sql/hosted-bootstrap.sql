@@ -2,19 +2,20 @@
 -- Not a migration. Do not place this under supabase/migrations.
 -- Do not run against eutsoqdpjurknjsshxes.
 --
--- Apply only against isolated branch project ccozickwrpautlxknsjk after
+-- Apply only against an operator-supplied isolated non-production project after
 -- STAGING_ACCEPTANCE.md fail-closed guards pass. Creates the baseline public
 -- surface required BEFORE supabase/migrations/20260823120000_deposit_deal_packet.sql.
 --
 -- Marker: deposit-deal-packet-staging/hosted-bootstrap/v1
 -- Surface: deposit-deal-packet-hosted-bootstrap/v1
 --
--- This SQL cannot independently identify the hosted branch. The committed
--- nonce is only operator intent acknowledgement. Actual project identity is
--- enforced externally by the Supabase connector/CLI target
--- project_id ccozickwrpautlxknsjk plus the staging guards.
+-- This SQL cannot independently identify the hosted branch. The operator must
+-- supply deposit_staging.project_ref (a non-production 20-character lowercase
+-- project ref) plus a matching nonce. The nonce is only operator intent
+-- acknowledgement. Actual project identity is enforced externally by the
+-- Supabase connector/CLI target plus the staging guards.
 -- deposit_staging.* GUCs are excluded from the pg_settings ref scan so the
--- nonce cannot self-identify as the branch.
+-- nonce cannot self-identify as the connected project.
 --
 -- Hosted auth/storage are owned by supabase_admin / supabase_auth_admin /
 -- supabase_storage_admin. postgres has USAGE and table DML, not schema CREATE
@@ -27,18 +28,16 @@
 -- anon/authenticated/service_role. Every public table/function ACL is
 -- REVOKEd from those roles plus PUBLIC, then GRANTed only the intended set.
 --
--- Session GUC required in the same psql session, before this file:
---   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/ccozickwrpautlxknsjk'
--- Optional:
---   SET deposit_staging.project_ref TO '<ref>'  -- production/unexpected refs still fail
+-- Session GUCs required in the same psql session, before this file:
+--   SET deposit_staging.project_ref TO '<isolated-20-char-lowercase-ref>'
+--   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<that-exact-ref>'
+-- Missing, malformed, or production refs fail before DDL.
 
 BEGIN;
 
 DO $$
 DECLARE
   production_ref text := 'eutsoqdpjurknjsshxes';
-  staging_ref text := 'ccozickwrpautlxknsjk';
-  nonce_expected text := 'deposit-deal-packet-staging/ccozickwrpautlxknsjk';
   detected text := nullif(btrim(current_setting('deposit_staging.project_ref', true)), '');
   nonce text := nullif(btrim(current_setting('deposit_staging.allow_nonce', true)), '');
   blob text := '';
@@ -62,10 +61,7 @@ BEGIN
     SELECT setting
     FROM pg_catalog.pg_settings
     WHERE name NOT LIKE 'deposit_staging.%'
-      AND (
-        setting ILIKE '%' || production_ref || '%'
-        OR setting ILIKE '%' || staging_ref || '%'
-      )
+      AND setting ILIKE '%' || production_ref || '%'
   LOOP
     blob := blob || ' ' || coalesce(rec.setting, '');
   END LOOP;
@@ -74,22 +70,27 @@ BEGIN
     detected := production_ref;
   END IF;
 
-  IF detected IS NOT NULL AND detected ILIKE '%' || production_ref || '%' THEN
+  IF detected IS NOT NULL AND lower(detected) = production_ref THEN
     RAISE EXCEPTION
       'hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes'
       USING ERRCODE = 'P0001';
   END IF;
 
-  IF detected IS NOT NULL AND detected IS DISTINCT FROM staging_ref THEN
+  IF blob ILIKE '%' || production_ref || '%' THEN
     RAISE EXCEPTION
-      'hosted staging bootstrap refuses unexpected project ref %',
-      detected
+      'hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes'
       USING ERRCODE = 'P0001';
   END IF;
 
-  IF nonce IS DISTINCT FROM nonce_expected THEN
+  IF detected IS NULL OR detected !~ '^[a-z0-9]{20}$' THEN
     RAISE EXCEPTION
-      'hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/ccozickwrpautlxknsjk'' as operator intent acknowledgement'
+      'hosted staging bootstrap requires SET deposit_staging.project_ref TO a non-production 20-character lowercase project ref before DDL'
+      USING ERRCODE = 'P0001';
+  END IF;
+
+  IF nonce IS DISTINCT FROM ('deposit-deal-packet-staging/' || detected) THEN
+    RAISE EXCEPTION
+      'hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/<project_ref>'' as operator intent acknowledgement matching deposit_staging.project_ref'
       USING ERRCODE = 'P0001';
   END IF;
 END;
@@ -340,13 +341,40 @@ CREATE POLICY "Authenticated users can read their own quotes"
   TO authenticated
   USING (user_id = auth.uid());
 
+-- Minimal deposit-path catalog only. Columns match create-payment's
+-- motor_models select: id, model, model_display, horsepower,
+-- mercury_model_no, model_number, stock_quantity, in_stock, availability.
+CREATE TABLE IF NOT EXISTS public.motor_models (
+  id uuid PRIMARY KEY,
+  model text NOT NULL,
+  model_display text,
+  horsepower numeric,
+  mercury_model_no text,
+  model_number text,
+  stock_quantity numeric,
+  in_stock boolean,
+  availability text
+);
+
+ALTER TABLE public.motor_models ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Admins can read motor_models" ON public.motor_models;
+CREATE POLICY "Admins can read motor_models"
+  ON public.motor_models
+  FOR SELECT
+  TO authenticated
+  USING (public.has_role(auth.uid(), 'admin'::public.app_role));
+
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
 REVOKE ALL ON TABLE public.user_roles FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON TABLE public.saved_quotes FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON TABLE public.customer_quotes FROM PUBLIC, anon, authenticated, service_role;
+REVOKE ALL ON TABLE public.motor_models FROM PUBLIC, anon, authenticated, service_role;
 GRANT SELECT ON TABLE public.user_roles TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.saved_quotes TO authenticated, service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.customer_quotes TO authenticated, service_role;
+GRANT SELECT ON TABLE public.motor_models TO authenticated;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.motor_models TO service_role;
 REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated, service_role;
 
@@ -461,7 +489,7 @@ INSERT INTO public.deposit_staging_marker (
 ) VALUES (
   'deposit-deal-packet-staging/hosted-bootstrap/v1',
   'deposit-deal-packet-hosted-bootstrap/v1',
-  'ccozickwrpautlxknsjk'
+  btrim(current_setting('deposit_staging.project_ref', false))
 )
 ON CONFLICT (id) DO UPDATE
 SET

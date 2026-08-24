@@ -32,4 +32,10 @@ WHERE (
   AND email = 'historical@example.invalid'
 );
 
+DELETE FROM public.motor_models
+WHERE id = '36363636-3636-4636-8636-363636363636'
+  AND model = 'Staging Lovelace 90'
+  AND model_number = 'STG90LOVELACE'
+  AND mercury_model_no = 'STG90LOVELACE';
+
 COMMIT;

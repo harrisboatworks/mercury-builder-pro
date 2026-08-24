@@ -8,7 +8,8 @@ SELECT 'marker_is_hosted_staging_v1' AS check_id,
          FROM public.deposit_staging_marker
          WHERE id = 'deposit-deal-packet-staging/hosted-bootstrap/v1'
            AND schema_surface = 'deposit-deal-packet-hosted-bootstrap/v1'
-           AND target_project_ref = 'ccozickwrpautlxknsjk'
+           AND target_project_ref ~ '^[a-z0-9]{20}$'
+           AND target_project_ref IS DISTINCT FROM 'eutsoqdpjurknjsshxes'
        ) AS passed;
 
 SELECT 'quotes_bucket_is_private_pdf' AS check_id,
@@ -64,6 +65,29 @@ SELECT 'customer_quotes_edge_columns' AS check_id,
 
 SELECT 'deposit_email_deliveries_exists' AS check_id,
        to_regclass('public.deposit_email_deliveries') IS NOT NULL AS passed;
+
+SELECT 'motor_models_deposit_columns' AS check_id,
+       (
+         SELECT count(*) = 9
+         FROM information_schema.columns
+         WHERE table_schema = 'public'
+           AND table_name = 'motor_models'
+           AND column_name IN (
+             'id', 'model', 'model_display', 'horsepower',
+             'mercury_model_no', 'model_number', 'stock_quantity',
+             'in_stock', 'availability'
+           )
+       ) AS passed;
+
+SELECT 'motor_models_rls_enabled' AS check_id,
+       EXISTS (
+         SELECT 1
+         FROM pg_class c
+         JOIN pg_namespace n ON n.oid = c.relnamespace
+         WHERE n.nspname = 'public'
+           AND c.relname = 'motor_models'
+           AND c.relrowsecurity
+       ) AS passed;
 
 SELECT 'has_role_exists' AS check_id,
        to_regprocedure('public.has_role(uuid, public.app_role)') IS NOT NULL AS passed;
@@ -130,6 +154,8 @@ WITH wanted(rel, rol, privs) AS (
     ('saved_quotes', 'service_role', ARRAY['DELETE', 'INSERT', 'SELECT', 'UPDATE']::text[]),
     ('customer_quotes', 'authenticated', ARRAY['DELETE', 'INSERT', 'SELECT', 'UPDATE']::text[]),
     ('customer_quotes', 'service_role', ARRAY['DELETE', 'INSERT', 'SELECT', 'UPDATE']::text[]),
+    ('motor_models', 'authenticated', ARRAY['SELECT']::text[]),
+    ('motor_models', 'service_role', ARRAY['DELETE', 'INSERT', 'SELECT', 'UPDATE']::text[]),
     ('deposit_staging_marker', 'service_role', ARRAY['SELECT']::text[]),
     ('deposit_email_deliveries', 'authenticated', ARRAY['SELECT']::text[]),
     ('deposit_email_deliveries', 'service_role', ARRAY['INSERT', 'SELECT', 'UPDATE']::text[])
@@ -145,7 +171,7 @@ actual AS (
   LEFT JOIN pg_roles r ON r.oid = acl.grantee
   WHERE n.nspname = 'public'
     AND c.relname IN (
-      'user_roles', 'saved_quotes', 'customer_quotes',
+      'user_roles', 'saved_quotes', 'customer_quotes', 'motor_models',
       'deposit_staging_marker', 'deposit_email_deliveries'
     )
     AND (acl.grantee = 0 OR r.rolname IN ('anon', 'authenticated', 'service_role'))

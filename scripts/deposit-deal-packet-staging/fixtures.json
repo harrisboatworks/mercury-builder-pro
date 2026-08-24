@@ -22,6 +22,28 @@
     "historicalCustomerQuoteId": "35353535-3535-4353-8353-353535353535",
     "fixtureMotorId": "36363636-3636-4636-8636-363636363636"
   },
+  "motor": {
+    "id": "36363636-3636-4636-8636-363636363636",
+    "model": "Staging Lovelace 90",
+    "modelDisplay": "Staging Lovelace 90",
+    "horsepower": 90,
+    "mercuryModelNo": "STG90LOVELACE",
+    "modelNumber": "STG90LOVELACE",
+    "stockQuantity": 1,
+    "inStock": true,
+    "availability": "In Stock",
+    "purchasePath": "motor_only",
+    "depositPolicySnapshot": {
+      "schema": "deposit-policy/v1",
+      "motorId": "36363636-3636-4636-8636-363636363636",
+      "stockClassification": "in_stock",
+      "policyCode": "in_stock_refundable",
+      "stockQuantity": 1,
+      "inStock": true,
+      "availability": "In Stock",
+      "purchasePath": "motor_only"
+    }
+  },
   "historical": {
     "name": "Historical Control",
     "email": "historical@example.invalid",
