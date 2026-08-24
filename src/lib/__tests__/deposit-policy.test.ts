@@ -645,10 +645,16 @@ describe('live deposit copy drift tripwires', () => {
   it('binds policy from motor_models before Stripe and never infers it from $100', () => {
     const payment = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     expect(payment).toContain('assertDepositPolicyReadyForCheckout');
+    expect(payment).toContain('assertAuthoritativeDepositTier');
     expect(payment).toContain('.from("motor_models")');
     expect(payment).toContain('stock_quantity, in_stock, availability');
     expect(payment).toContain('if (depositAmount === "100")');
     expect(payment).not.toContain('depositAmount === "100" ? "in_stock_refundable"');
     expect(payment).not.toContain('Number(depositAmount) === 100');
+    const motorLoad = payment.indexOf('.from("motor_models")');
+    const tierAssert = payment.indexOf('assertAuthoritativeDepositTier({');
+    const sessionCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData');
+    expect(tierAssert).toBeGreaterThan(motorLoad);
+    expect(sessionCreate).toBeGreaterThan(tierAssert);
   });
 });

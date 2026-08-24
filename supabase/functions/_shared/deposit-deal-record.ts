@@ -401,6 +401,37 @@ export function assertStripeDepositChargeMatches(options: {
   return expected;
 }
 
+export function assertReusableDepositCheckoutAmount(options: {
+  session: {
+    amount_total?: number | null;
+    currency?: string | null;
+    metadata?: Record<string, string | null> | null;
+  };
+  depositAmount: number;
+  savedQuoteId: string;
+}): number {
+  const matched = assertStripeDepositChargeMatches({
+    amountTotal: options.session.amount_total,
+    currency: options.session.currency,
+    depositAmount: options.depositAmount,
+  });
+  const metadata = options.session.metadata || {};
+  const metadataAmount = normalizeDepositAmount(metadata.deposit_amount);
+  if (metadataAmount == null) {
+    throw new Error("Deposit amount is missing");
+  }
+  if (metadataAmount !== options.depositAmount) {
+    throw new Error("Invalid deposit amount for selected motor");
+  }
+  if (metadata.payment_type !== "motor_deposit") {
+    throw new Error("Session is not a motor deposit");
+  }
+  if (!metadata.saved_quote_id || metadata.saved_quote_id !== options.savedQuoteId) {
+    throw new Error("Session metadata does not match saved quote");
+  }
+  return matched;
+}
+
 export function stripeDerivedPaidAt(session: {
   created?: number | null;
   payment_intent?: unknown;

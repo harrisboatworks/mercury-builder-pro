@@ -13,7 +13,10 @@ import {
   mapCreatePaymentCaughtError,
   readRequiredStripeSecret,
 } from "../_shared/deposit-payment-guard.ts";
-import { resolveDepositStripePriceId } from "../_shared/deposit-staging-guard.ts";
+import {
+  depositStagingModeEnabled,
+  resolveDepositStripePriceId,
+} from "../_shared/deposit-staging-guard.ts";
 import {
   depositIdentitiesMatch,
   parseDepositIdentity,
@@ -28,12 +31,14 @@ import {
   classifyExistingDepositCheckoutSession,
   classifyOpenCheckoutPolicyUpgrade,
   classifyOptimisticRecoveryWrite,
+  assertReusableDepositCheckoutAmount,
   depositPricingFromBoundSnapshot,
   planVerifiedStripeRecovery,
   stripeCheckoutIdempotencyKey,
   stripeDerivedPaidAt,
 } from "../_shared/deposit-deal-record.ts";
 import {
+  assertAuthoritativeDepositTier,
   assertDepositPolicyReadyForCheckout,
   type DepositPolicySnapshot,
 } from "../_shared/deposit-policy.ts";
@@ -558,8 +563,8 @@ serve(async (req) => {
         .eq("id", savedMotorId)
         .maybeSingle();
 
+      const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
       if (depositAmount === "100") {
-        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
         if (
           quoteData?.motorId !== EXPRESS_MOTOR_ID
           || savedMotorId !== EXPRESS_MOTOR_ID
@@ -612,7 +617,7 @@ serve(async (req) => {
       const savedQuoteId = savedQuote.id;
       const { data: existingDeposit, error: existingDepositError } = await supabaseService
         .from("customer_quotes")
-        .select("id, stripe_checkout_session_id, payment_status")
+        .select("id, stripe_checkout_session_id, payment_status, deposit_amount")
         .eq("saved_quote_id", savedQuoteId)
         .eq("lead_source", "deposit")
         .maybeSingle();
@@ -624,6 +629,26 @@ serve(async (req) => {
       if (existingDeposit?.payment_status === "paid") {
         throw new Error("Invalid saved quote for deposit");
       }
+
+      const authoritativeDepositAmount = assertAuthoritativeDepositTier({
+        requestedAmount: depositAmount,
+        savedQuoteAmount: savedQuote.deposit_amount,
+        existingDepositAmount: existingDeposit ? existingDeposit.deposit_amount : undefined,
+        horsepower: reservationMotor.horsepower,
+        expressMotor: {
+          quoteMotorId: quoteData?.motorId,
+          savedMotorId,
+          modelNumber: resolvedModelNumber,
+          motorRowPresent: true,
+          expressMotorId: EXPRESS_MOTOR_ID,
+          expressModelNumber: EXPRESS_MOTOR_MODEL_NUMBER,
+        },
+        priceId,
+        catalog: DEPOSIT_PRICES,
+        stagingPriceOverride: depositStagingModeEnabled({
+          DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+        }) && depositAmount === "500",
+      });
 
       const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
@@ -641,6 +666,13 @@ serve(async (req) => {
           existingDeposit.stripe_checkout_session_id,
         );
         const existingSessionDisposition = classifyExistingDepositCheckoutSession(existingSession);
+        if (existingSessionDisposition === "reuse_open" || existingSessionDisposition === "renew_expired") {
+          assertReusableDepositCheckoutAmount({
+            session: existingSession,
+            depositAmount: authoritativeDepositAmount,
+            savedQuoteId,
+          });
+        }
         if (existingSessionDisposition === "reuse_open") {
           if (!existingDeposit.id || !depositPolicy || !existingSession.url) {
             throw new Error("Unable to prepare reservation checkout");
@@ -650,7 +682,7 @@ serve(async (req) => {
             savedQuoteId,
             userId: user?.id || null,
             sessionId: existingSession.id,
-            depositAmount: parseInt(depositAmount, 10),
+            depositAmount: authoritativeDepositAmount,
             motorInfo: verifiedMotorInfo,
             quoteSnapshot,
             quoteState: savedQuote.quote_state,
@@ -715,7 +747,7 @@ serve(async (req) => {
                 name: "Mercury motor reservation deposit",
                 description: "Reservation deposit pending Harris Boat Works confirmation",
               },
-              unit_amount: Number(depositAmount) * 100,
+              unit_amount: authoritativeDepositAmount * 100,
             },
             quantity: 1,
           };
@@ -727,7 +759,7 @@ serve(async (req) => {
         success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${origin}/payment-canceled`,
         metadata: buildStripeDepositMetadata({
-          depositAmount,
+          depositAmount: String(authoritativeDepositAmount),
           savedQuoteId,
         }),
       };
@@ -751,7 +783,7 @@ serve(async (req) => {
         savedQuoteId,
         userId: user?.id || null,
         sessionId: session.id,
-        depositAmount: parseInt(depositAmount, 10),
+        depositAmount: authoritativeDepositAmount,
         motorInfo: verifiedMotorInfo,
         quoteSnapshot,
         quoteState: savedQuote.quote_state,

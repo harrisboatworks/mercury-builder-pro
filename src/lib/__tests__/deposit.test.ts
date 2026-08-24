@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getExpressReservationDeposit, getRecommendedDeposit } from '@/lib/deposit';
+import { recommendedStandardDeposit } from '../../../supabase/functions/_shared/deposit-policy.ts';
 
 describe('recommended quote deposit', () => {
   it('keeps the established horsepower tiers consistent across web and PDF', () => {
@@ -19,6 +20,9 @@ describe('recommended quote deposit', () => {
     expect(getRecommendedDeposit(115)).toBe(500);
     expect(getRecommendedDeposit(116)).toBe(1000);
     expect(getRecommendedDeposit(200)).toBe(1000);
+    for (const hp of [25, 26, 115, 116]) {
+      expect(recommendedStandardDeposit(hp)).toBe(getRecommendedDeposit(hp));
+    }
   });
 });
 

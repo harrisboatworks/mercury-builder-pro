@@ -300,6 +300,129 @@ export function formatGrokQuoteMoney(value: unknown): string {
   return authoritativeQuoteTotal(value) === null ? "null" : formatDealMoney(value);
 }
 
+export const STANDARD_DEPOSIT_AMOUNTS = [200, 500, 1000] as const;
+export const EXPRESS_RESERVATION_DEPOSIT_AMOUNT = 100;
+
+export function parseExactDepositAmount(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") return null;
+  if (typeof value === "number") {
+    return Number.isFinite(value) && Number.isInteger(value) ? value : null;
+  }
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (!trimmed || /e/i.test(trimmed) || !/^-?\d+(?:\.0+)?$/.test(trimmed)) return null;
+  const parsed = Number(trimmed);
+  return Number.isFinite(parsed) && Number.isInteger(parsed) ? parsed : null;
+}
+
+const PLAIN_DECIMAL_HP_RE = /^\d+(?:\.\d+)?$/;
+
+export function parseAuthoritativeHorsepower(value: unknown): number {
+  if (value === null || value === undefined || value === "") {
+    throw new Error("Invalid deposit amount for selected motor");
+  }
+  if (typeof value === "number") {
+    if (!Number.isFinite(value) || value <= 0 || value > 1000) {
+      throw new Error("Invalid deposit amount for selected motor");
+    }
+    return value;
+  }
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (PLAIN_DECIMAL_HP_RE.test(trimmed)) {
+      const parsed = Number(trimmed);
+      if (Number.isFinite(parsed) && parsed > 0 && parsed <= 1000) return parsed;
+    }
+  }
+  throw new Error("Invalid deposit amount for selected motor");
+}
+
+export function recommendedStandardDeposit(horsepower: unknown): 200 | 500 | 1000 {
+  const hp = parseAuthoritativeHorsepower(horsepower);
+  if (hp <= 25) return 200;
+  if (hp <= 115) return 500;
+  return 1000;
+}
+
+export function isExpressReservationMotor(options: {
+  quoteMotorId?: string | null;
+  savedMotorId?: string | null;
+  modelNumber?: string | null;
+  motorRowPresent?: boolean;
+  expressMotorId: string;
+  expressModelNumber: string;
+}): boolean {
+  const quoteMotorId = typeof options.quoteMotorId === "string" ? options.quoteMotorId : "";
+  const savedMotorId = typeof options.savedMotorId === "string" ? options.savedMotorId : "";
+  const modelNumber = typeof options.modelNumber === "string" ? options.modelNumber : "";
+  return options.motorRowPresent === true
+    && quoteMotorId === options.expressMotorId
+    && savedMotorId === options.expressMotorId
+    && modelNumber === options.expressModelNumber;
+}
+
+export function assertAuthoritativeDepositTier(options: {
+  requestedAmount: unknown;
+  savedQuoteAmount: unknown;
+  existingDepositAmount?: unknown;
+  horsepower: unknown;
+  expressMotor: {
+    quoteMotorId?: string | null;
+    savedMotorId?: string | null;
+    modelNumber?: string | null;
+    motorRowPresent: boolean;
+    expressMotorId: string;
+    expressModelNumber: string;
+  };
+  priceId: string | null;
+  catalog: Record<string, string | null>;
+  stagingPriceOverride?: boolean;
+}): number {
+  const requested = parseExactDepositAmount(options.requestedAmount);
+  const saved = parseExactDepositAmount(options.savedQuoteAmount);
+  if (requested == null || saved == null || requested !== saved) {
+    throw new Error("Invalid saved quote for deposit");
+  }
+  if (
+    requested !== EXPRESS_RESERVATION_DEPOSIT_AMOUNT
+    && !(STANDARD_DEPOSIT_AMOUNTS as readonly number[]).includes(requested)
+  ) {
+    throw new Error("Invalid deposit amount for selected motor");
+  }
+
+  const recommended = recommendedStandardDeposit(parseAuthoritativeHorsepower(options.horsepower));
+  const expressOk = isExpressReservationMotor(options.expressMotor);
+  if (requested === EXPRESS_RESERVATION_DEPOSIT_AMOUNT) {
+    if (!expressOk || recommended !== 200) {
+      throw new Error("Invalid deposit amount for selected motor");
+    }
+  } else if (requested !== recommended) {
+    throw new Error("Invalid deposit amount for selected motor");
+  }
+
+  if (options.existingDepositAmount !== undefined) {
+    const existing = parseExactDepositAmount(options.existingDepositAmount);
+    if (existing == null || existing !== requested) {
+      throw new Error("Invalid deposit amount for selected motor");
+    }
+  }
+
+  const amountKey = String(requested);
+  if (requested === EXPRESS_RESERVATION_DEPOSIT_AMOUNT) {
+    if (options.priceId != null) {
+      throw new Error("Invalid deposit amount for selected motor");
+    }
+  } else if (options.stagingPriceOverride && requested === 500) {
+    if (!options.priceId) {
+      throw new Error("Invalid deposit amount for selected motor");
+    }
+  } else if (options.priceId !== (options.catalog[amountKey] ?? null)) {
+    throw new Error("Invalid deposit amount for selected motor");
+  }
+
+  return requested;
+}
+
 export function remainingBalance(total: unknown, deposit: unknown): string {
   const totalAmount = authoritativeQuoteTotal(total);
   const depositAmount = parseDealAmount(deposit);
