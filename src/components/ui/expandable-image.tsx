@@ -1,4 +1,5 @@
-import React, { useEffect, useId, useRef, useState } from 'react';
+import React, { useId, useState } from 'react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, Expand } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
@@ -20,40 +21,8 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const dialogId = useId();
   const instructionsId = useId();
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isExpanded) {
-        setIsExpanded(false);
-      }
-    };
-
-    if (isExpanded) {
-      const previousOverflow = document.body.style.overflow;
-      const trigger = triggerRef.current;
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-      closeButtonRef.current?.focus();
-
-      return () => {
-        document.removeEventListener('keydown', handleEscape);
-        document.body.style.overflow = previousOverflow;
-        trigger?.focus();
-      };
-    }
-  }, [isExpanded]);
-
-  const handleImageClick = () => {
-    setIsExpanded(true);
-  };
-
-  const handleCloseClick = () => {
-    setIsExpanded(false);
-  };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -62,19 +31,16 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   };
 
   return (
-    <>
+    <DialogPrimitive.Root open={isExpanded} onOpenChange={setIsExpanded}>
       {/* Main Image */}
       <figure className={cn("relative", containerClassName)}>
-        <button
-          ref={triggerRef}
-          type="button"
-          className="relative group block w-full cursor-zoom-in rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          aria-label={`Expand image: ${alt}`}
-          aria-haspopup="dialog"
-          aria-expanded={isExpanded}
-          aria-controls={dialogId}
-          onClick={handleImageClick}
-        >
+        <DialogPrimitive.Trigger asChild>
+          <button
+            type="button"
+            className="relative group block w-full cursor-zoom-in rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label={`Expand image: ${alt}`}
+            aria-controls={dialogId}
+          >
           {(() => {
             const srcSet = getResponsiveWebpSrcSet(src);
             const imgEl = (
@@ -110,7 +76,8 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
           <span className="absolute top-2 right-2 md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-sm" aria-hidden="true">
             <Expand className="w-3 h-3 text-gray-600" aria-hidden="true" />
           </span>
-        </button>
+          </button>
+        </DialogPrimitive.Trigger>
         
         {/* Caption */}
         {caption && (
@@ -121,26 +88,29 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       </figure>
 
       {/* Lightbox Modal */}
-      {isExpanded && (
-        <div 
+      <DialogPrimitive.Portal>
+        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/90" />
+        <DialogPrimitive.Content
           id={dialogId}
-          role="dialog"
-          aria-modal="true"
           aria-label={`Expanded image: ${alt}`}
           aria-describedby={instructionsId}
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center focus:outline-none"
           onClick={handleOverlayClick}
         >
+          <DialogPrimitive.Title className="sr-only">
+            Expanded image: {alt}
+          </DialogPrimitive.Title>
+
           {/* Close Button */}
-          <button
-            ref={closeButtonRef}
-            type="button"
-            onClick={handleCloseClick}
-            className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200"
-            aria-label="Close expanded image"
-          >
-            <X className="w-5 h-5 text-gray-700" />
-          </button>
+          <DialogPrimitive.Close asChild>
+            <button
+              type="button"
+              className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200"
+              aria-label="Close expanded image"
+            >
+              <X className="w-5 h-5 text-gray-700" />
+            </button>
+          </DialogPrimitive.Close>
 
           {/* Expanded Image - with pinch-to-zoom support on mobile */}
           <div 
@@ -163,12 +133,14 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
           </div>
 
           {/* Instructions - different for mobile vs desktop */}
-          <div id={instructionsId} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-            <span className="hidden md:inline">Click outside or press ESC to close</span>
-            <span className="md:hidden">Pinch to zoom • Tap outside to close</span>
-          </div>
-        </div>
-      )}
-    </>
+          <DialogPrimitive.Description asChild>
+            <div id={instructionsId} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+              <span className="hidden md:inline">Click outside or press ESC to close</span>
+              <span className="md:hidden">Pinch to zoom • Tap outside to close</span>
+            </div>
+          </DialogPrimitive.Description>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
+    </DialogPrimitive.Root>
   );
 };

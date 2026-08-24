@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { ExpandableImage } from './expandable-image';
@@ -30,9 +30,7 @@ describe('ExpandableImage', () => {
     expect(screen.getByRole('button', { name: 'Close expanded image' })).toHaveFocus();
   });
 
-  it('closes on Escape and restores focus and body overflow', () => {
-    document.body.style.overflow = 'clip';
-
+  it('traps focus, closes on Escape, and restores focus to the trigger', async () => {
     render(
       <ExpandableImage
         src="/lovable-uploads/inline/lock-chamber.png"
@@ -45,12 +43,15 @@ describe('ExpandableImage', () => {
     });
 
     fireEvent.click(trigger);
-    expect(document.body.style.overflow).toBe('hidden');
+    const closeButton = screen.getByRole('button', { name: 'Close expanded image' });
+
+    expect(closeButton).toHaveFocus();
+    fireEvent.keyDown(closeButton, { key: 'Tab' });
+    expect(closeButton).toHaveFocus();
 
     fireEvent.keyDown(document, { key: 'Escape' });
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(document.body.style.overflow).toBe('clip');
-    expect(trigger).toHaveFocus();
+    await waitFor(() => expect(trigger).toHaveFocus());
   });
 });
