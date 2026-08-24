@@ -427,6 +427,7 @@ describe('live deposit copy drift tripwires', () => {
     'supabase/functions/_shared/format-kb-documents.ts',
     'src/pages/RepowerProcess.tsx',
     'scripts/static-prerender.mjs',
+    'AI-Chatbot-Knowledge-Base.md',
   ];
 
   it('keeps confirmed live surfaces on the stock-based policy and mercuryrepower.ca', () => {
@@ -447,6 +448,24 @@ describe('live deposit copy drift tripwires', () => {
     expect(emailTemplates).not.toContain('\u2014');
     expect(emailTemplates).toContain('schema: ${GROK_SUMMARY_SCHEMA}');
     expect(DEPOSIT_POLICY_SCHEMA).toBe('deposit-policy/v1');
+
+    const knowledgeBase = readFileSync('AI-Chatbot-Knowledge-Base.md', 'utf8');
+    const depositSection = knowledgeBase.slice(
+      knowledgeBase.indexOf('## Reservation & Deposit System'),
+      knowledgeBase.indexOf('## NO DELIVERY POLICY'),
+    );
+    expect(depositSection).toContain('$200 deposit for portable motors (2.5 to 6 HP)');
+    expect(depositSection).toContain('$500 deposit for mid-range motors (9.9 to 115 HP)');
+    expect(depositSection).toContain('$1,000 deposit for big-block, Pro XS, or Verado (115 HP and up)');
+    expect(depositSection).toContain('model 1A10201LK');
+    expect(depositSection).toContain('That amount does not change the refund rule.');
+    expect(depositSection).toContain('Refundability follows stock status, not the deposit amount.');
+    expect(depositSection).toContain('It does not itself start a factory order.');
+    expect(depositSection).toContain('HBW does not pick up or deliver customer boats.');
+    expect(depositSection).not.toContain('0-25HP');
+    expect(depositSection).not.toContain('30-115HP');
+    expect(depositSection).not.toContain('150HP+');
+    expect(depositSection).not.toContain('Deposit is fully refundable');
   });
 
   it('binds policy from motor_models before Stripe and never infers it from $100', () => {
