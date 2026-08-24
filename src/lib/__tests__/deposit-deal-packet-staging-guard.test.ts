@@ -227,6 +227,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(Object.values(fixtures.recipients).every((value) => isAllowedStagingRecipient(String(value)))).toBe(true);
     expect(fixtures).not.toHaveProperty('failureRecipients');
     expect(isAllowedStagingRecipient(bouncedRetryAlias)).toBe(false);
+    expect(fixtures.ids.retiredStagingSavedQuoteId).toBe('31313131-3131-4131-8131-313131313131');
+    expect(fixtures.ids.localAcceptanceSavedQuoteId).toBe('37373737-3737-4737-8737-373737373737');
+    expect(fixtures.ids).not.toHaveProperty('stagingSavedQuoteId');
     expect(fixtures.customer.email).not.toContain('harrisboatworks');
     expect(fixtures.customer.email).not.toContain('agentmail.to');
     expect(fixtures.recipients.customer).not.toContain('example.invalid');
@@ -282,12 +285,21 @@ describe('deposit deal-packet staging guard', () => {
     expect(evidence.checks.find((check) => check.id === 'runner_is_guard_only')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'staging_mode_overrides_to_resend_test_addresses')?.result).toBe('PASS');
     expect(evidence.checks.find((check) => check.id === 'staging_mode_disables_sms')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_missing_run_saved_quote_id')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_malformed_run_saved_quote_id')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_retired_run_saved_quote_id')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_reserved_run_saved_quote_id')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_local_acceptance_id_not_isolated')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_reused_run_saved_quote_id')?.result).toBe('PASS');
+    expect(evidence.checks.find((check) => check.id === 'tripwire_fresh_isolated_run_saved_quote_id')?.result).toBe('PASS');
   });
 
   it('proves the runner source cannot construct a network client', () => {
     const runner = readFileSync('scripts/deposit-deal-packet-staging/run.ts', 'utf8');
     const wrapper = readFileSync('scripts/run-deposit-deal-packet-staging.mjs', 'utf8');
-    const stripped = `${runner}\n${wrapper}`
+    const runFixture = readFileSync('scripts/deposit-deal-packet-staging/run-fixture.ts', 'utf8');
+    const materialize = readFileSync('scripts/materialize-deposit-deal-packet-staging-run.mjs', 'utf8');
+    const stripped = `${runner}\n${wrapper}\n${runFixture}\n${materialize}`
       .replace(/\/\*[\s\S]*?\*\//g, '')
       .replace(/\/\/.*$/gm, '')
       .replace(/(['"`])(?:\\.|(?!\1)[\s\S])*\1/g, '""');
@@ -412,11 +424,19 @@ describe('deposit deal-packet staging guard', () => {
     expect(seedSql).toContain('"purchasePath":"motor_only"');
     expect(seedSql).toContain('"schema":"deposit-policy/v1"');
     expect(seedSql).toContain("'{\"motor\":{\"id\":\"36363636-3636-4636-8636-363636363636\",\"model\":\"Staging Historical 90\"}}'::jsonb");
-    expect(cleanupSql).toContain("id = '31313131-3131-4131-8131-313131313131'");
+    expect(seedSql).toContain('\\ir require-run-saved-quote-id.sql');
+    expect(cleanupSql).toContain('\\ir require-run-saved-quote-id.sql');
+    expect(seedSql).toContain("current_setting('deposit_staging.saved_quote_id', false)");
+    expect(cleanupSql).toContain("current_setting('deposit_staging.saved_quote_id', false)");
+    expect(cleanupSql).not.toContain("id = '31313131-3131-4131-8131-313131313131'");
     expect(cleanupSql).toContain("email = 'ada@example.invalid'");
     expect(cleanupSql).toContain("customer_email = 'historical@example.invalid'");
     expect(cleanupSql).toContain("id = '36363636-3636-4636-8636-363636363636'");
     expect(cleanupSql).toContain("model_number = 'STG90LOVELACE'");
+    expect(readFileSync('scripts/deposit-deal-packet-staging/sql/require-run-saved-quote-id.sql', 'utf8'))
+      .toContain('deposit staging run refuses retired savedQuoteId 31313131-3131-4131-8131-313131313131');
+    expect(readFileSync('scripts/deposit-deal-packet-staging/sql/readback.sql', 'utf8'))
+      .toContain('\\ir require-run-saved-quote-id.sql');
 
     const fixtureMotorRow = {
       id: fixtures.ids.fixtureMotorId,
@@ -456,7 +476,13 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('example.invalid');
     expect(runbook).not.toContain('networkCalls');
     expect(runbook).toContain('Forbidden origin');
-    expect(runbook).toContain('/admin/quotes/31313131-3131-4131-8131-313131313131');
+    expect(runbook).toContain('/admin/quotes/$DEPOSIT_STAGING_SAVED_QUOTE_ID');
+    expect(runbook).not.toContain('/admin/quotes/31313131-3131-4131-8131-313131313131');
+    expect(runbook).toContain('DEPOSIT_STAGING_SAVED_QUOTE_ID');
+    expect(runbook).toContain('retired');
+    expect(runbook).toContain('motor-deposit:<savedQuoteId>');
+    expect(runbook).toContain('deposit-deal-packet-staging/run/');
+    expect(runbook).toContain('31313131-3131-4131-8131-313131313131');
     expect(runbook).toContain('hosted-bootstrap.sql');
     expect(runbook).toContain('deposit-deal-packet-hosted-bootstrap/v1');
     expect(runbook).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-ref>'");
@@ -496,6 +522,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(live.runnerCapability).toBe('guard_only_no_clients');
     expect(live).not.toHaveProperty('networkCalls');
     expect(live.checks.find((check) => check.id === 'live_operator_env_safe')?.result).toBe('FAIL');
+    expect(live.checks.find((check) => check.id === 'live_operator_run_saved_quote_id')?.result).toBe('FAIL');
     expect(live.verdict).toBe('FAIL');
 
     const spawned = spawnSync(process.execPath, [
@@ -586,6 +613,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(envExample).not.toContain('price_1U7jab');
     expect(envExample).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-lowercase-ref>'");
     expect(envExample).toContain("SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<that-exact-ref>'");
+    expect(envExample).toContain('# DEPOSIT_STAGING_SAVED_QUOTE_ID=');
+    expect(envExample).toContain('31313131-3131-4131-8131-313131313131');
+    expect(envExample).toContain('materialize-deposit-deal-packet-staging-run.mjs');
     expect(envExample).not.toContain('ccozickwrpautlxknsjk');
   });
 });

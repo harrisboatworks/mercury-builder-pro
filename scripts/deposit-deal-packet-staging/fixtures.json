@@ -16,7 +16,8 @@
     "grok": "delivered+deposit-grok@resend.dev"
   },
   "ids": {
-    "stagingSavedQuoteId": "31313131-3131-4131-8131-313131313131",
+    "retiredStagingSavedQuoteId": "31313131-3131-4131-8131-313131313131",
+    "localAcceptanceSavedQuoteId": "37373737-3737-4737-8737-373737373737",
     "stagingCustomerQuoteId": "32323232-3232-4232-8222-323232323232",
     "historicalSavedQuoteId": "34343434-3434-4343-8343-343434343434",
     "historicalCustomerQuoteId": "35353535-3535-4353-8353-353535353535",
@@ -54,7 +55,7 @@
     "quotePdfSha256": "1a43268bacbf0a74d6f3c8816c3e0d826f1582944278bc3a2cdbf776ee989adb"
   },
   "staging": {
-    "resumeToken": "dep_313131313131313131313131",
+    "resumeToken": "dep_373737373737473787373737",
     "depositAmount": "500",
     "quotePdfSha256": "e7914d99efa8418be53d3f8acd8809c6cc87f221bd097358ada61c79e747cadc"
   },

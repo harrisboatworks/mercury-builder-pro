@@ -1,4 +1,6 @@
--- Expected readbacks after a staging deposit. Fixture IDs only.
+-- Expected readbacks after a staging deposit. Current-run staging ID + historical controls.
+
+\ir require-run-saved-quote-id.sql
 
 SELECT id, model, model_display, horsepower, mercury_model_no, model_number,
        stock_quantity, in_stock, availability
@@ -10,7 +12,7 @@ SELECT id, email, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha2
        customer_region, customer_postal_code, customer_country
 FROM public.saved_quotes
 WHERE id IN (
-  '31313131-3131-4131-8131-313131313131',
+  lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid,
   '34343434-3434-4343-8343-343434343434'
 )
 ORDER BY id;
@@ -24,7 +26,7 @@ WHERE id IN (
   '35353535-3535-4353-8353-353535353535'
 )
    OR saved_quote_id IN (
-  '31313131-3131-4131-8131-313131313131',
+  lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid,
   '34343434-3434-4343-8343-343434343434'
 )
 ORDER BY id;
@@ -33,7 +35,7 @@ SELECT customer_quote_id, saved_quote_id, audience, status, provider_id,
        attempt_count, last_error, sent_at
 FROM public.deposit_email_deliveries
 WHERE saved_quote_id IN (
-  '31313131-3131-4131-8131-313131313131',
+  lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid,
   '34343434-3434-4343-8343-343434343434'
 )
 ORDER BY saved_quote_id, audience;

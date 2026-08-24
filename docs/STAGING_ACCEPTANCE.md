@@ -28,6 +28,7 @@ Create a fresh data-less isolated Supabase project. Historical migrations fail o
 | `STAGING_DATABASE_URL` | Optional. Rejected if the value mentions the production project host/ref. |
 | Inherited names | Process env must not define `SUPABASE_URL` or `STRIPE_SECRET_KEY`. Use `STAGING_*` only. Refuse rather than guess. |
 | Edge runtime isolation | Inert while `DEPOSIT_STAGING_MODE` is unset. When the flag is `1`, `assertRuntimeStagingIsolation` requires `SUPABASE_URL` present, `https://`, and not the production host/ref. Wired before every recipient rewrite and SMS suppression. |
+| `DEPOSIT_STAGING_SAVED_QUOTE_ID` | Required for isolated Stripe materialize and `--live`. Must be a fresh UUID. Missing, malformed, retired (`31313131-3131-4131-8131-313131313131`), reserved fixture, local-acceptance, and previously materialized IDs fail closed. Production idempotency stays `motor-deposit:<savedQuoteId>`. |
 
 `DEPOSIT_STAGING_MODE=1` on the isolated Edge secrets also:
 
@@ -56,6 +57,7 @@ Runner / operator shell (do not export production names):
 - `DEPOSIT_STAGING_CUSTOMER_EMAIL=delivered+deposit-customer@resend.dev`
 - `DEPOSIT_STAGING_HBW_EMAIL=delivered+deposit-hbw@resend.dev`
 - `DEPOSIT_STAGING_GROK_EMAIL=delivered+deposit-grok@resend.dev`
+- `DEPOSIT_STAGING_SAVED_QUOTE_ID` (fresh UUID per isolated Stripe run; never the retired or local-acceptance IDs)
 
 Isolated Supabase function secrets (same recipient names plus the project's own `SUPABASE_URL` / test Stripe / Resend). Isolated `SUPABASE_URL` is injected by that project and must not be the production host.
 
@@ -82,11 +84,22 @@ Repository contract: `resolveAllowedBrowserOrigin` allows only stable aliases an
 
 ## Fixtures
 
-`scripts/deposit-deal-packet-staging/fixtures.json`:
+`scripts/deposit-deal-packet-staging/fixtures.json` keeps committed reserved IDs only. Isolated Stripe acceptance materializes a fresh per-run saved quote:
+
+```bash
+export DEPOSIT_STAGING_SAVED_QUOTE_ID="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+node scripts/materialize-deposit-deal-packet-staging-run.mjs
+# writes .tmp/deposit-deal-packet-staging-run.json
+# and records the id in .tmp/deposit-deal-packet-staging-used-saved-quote-ids.json
+```
+
+Use that materialized `savedQuoteId` for the DB row, `saved-quotes/<id>/quote.pdf`, the `create-payment` body, `/admin/quotes/<id>`, readback, and cleanup. Production `create-payment` still sends Stripe idempotency key `motor-deposit:<savedQuoteId>` unchanged. A prior isolated run in the same Stripe test account used retired `31313131-3131-4131-8131-313131313131` with an old temporary price; reusing that ID (or any previously materialized ID) after a price change hits Stripe `idempotency_error` inside the 24-hour cache window. Documented cleanup does not clear Stripe's cache. Supply a new UUID for every isolated rerun.
 
 | Role | ID | Email |
 | --- | --- | --- |
-| Staging saved quote | `31313131-3131-4131-8131-313131313131` | `ada@example.invalid` |
+| Isolated staging saved quote | operator `DEPOSIT_STAGING_SAVED_QUOTE_ID` from the materialized run fixture | `ada@example.invalid` |
+| Local PostgreSQL acceptance saved quote | `37373737-3737-4737-8737-373737373737` | `ada@example.invalid` |
+| Retired / contaminated saved quote | `31313131-3131-4131-8131-313131313131` (never operational) | n/a |
 | Staging customer quote | created at checkout (or `32323232-3232-4232-8222-323232323232` if you pin it) | `ada@example.invalid` |
 | Historical saved quote | `34343434-3434-4343-8343-343434343434` | `historical@example.invalid` |
 | Historical customer quote | `35353535-3535-4353-8353-353535353535` | `historical@example.invalid` |
@@ -137,8 +150,10 @@ Stop if any guard fails. Do not fall back to production.
 
 ```bash
 npm run test:deposit-staging:dry-run
-# then, with a filled untracked env file that uses STAGING_* names only:
+# then, with a filled untracked env file that uses STAGING_* names only
+# plus a fresh DEPOSIT_STAGING_SAVED_QUOTE_ID:
 set -a && source /path/to/untracked-staging.env && set +a
+node scripts/materialize-deposit-deal-packet-staging-run.mjs
 node scripts/run-deposit-deal-packet-staging.mjs --live
 # PASS here means env is safe. It still makes no network call.
 ```
@@ -196,28 +211,35 @@ import { writeFileSync } from "node:fs";
 writeFileSync(".tmp/staging-canonical.pdf", "%PDF-1.7\nstaging-canonical\n");
 writeFileSync(".tmp/historical-control.pdf", "%PDF-1.7\nhistorical-control\n");
 '
-# PUT object saved-quotes/31313131-3131-4131-8131-313131313131/quote.pdf
+# PUT object saved-quotes/$DEPOSIT_STAGING_SAVED_QUOTE_ID/quote.pdf
 # PUT object saved-quotes/34343434-3434-4343-8343-343434343434/quote.pdf
-# hashes must match fixtures.json
+# hashes must match fixtures.json; staging path must match the materialized run fixture
 ```
 
 ### 3. Seed / cleanup
 
 ```bash
 # After guards: apply seed to the isolated DB only.
+# Same psql session must SET the materialized run id + isolated nonce.
+# Missing, malformed, retired, reserved, or mismatched nonce fails before insert.
 # seed.sql SET LOCAL ROLE service_role, then raises before any insert if
 # saved_quotes or customer_quotes already contains a row:
 #   deposit staging seed refuses a populated database; saved_quotes, customer_quotes, and motor_models must all be empty
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -c "SET deposit_staging.saved_quote_id TO '$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
+  -c "SET deposit_staging.run_nonce TO 'deposit-deal-packet-staging/run/$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
   -f scripts/deposit-deal-packet-staging/sql/seed.sql
 ```
 
-`$STAGING_DATABASE_URL` is an operator name, not a committed value. It must not be a `db.eutsoqdpjurknjsshxes` host. Cleanup after the run deletes only fixture UUID plus the expected `example.invalid` identity:
+`$STAGING_DATABASE_URL` is an operator name, not a committed value. It must not be a `db.eutsoqdpjurknjsshxes` host. Cleanup after the run deletes only the current-run staging UUID plus the expected `example.invalid` identity, and the committed historical/motor fixtures. The same SET pair is required; without it cleanup/readback fail closed instead of guessing the retired ID:
 
 ```bash
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -c "SET deposit_staging.saved_quote_id TO '$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
+  -c "SET deposit_staging.run_nonce TO 'deposit-deal-packet-staging/run/$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
   -f scripts/deposit-deal-packet-staging/sql/cleanup.sql
-# also delete the two storage objects above
+# also delete saved-quotes/$DEPOSIT_STAGING_SAVED_QUOTE_ID/quote.pdf
+# and saved-quotes/34343434-3434-4343-8343-343434343434/quote.pdf
 ```
 
 ### 4. Identity / address gating (negative, before Stripe)
@@ -231,7 +253,7 @@ curl -sS -D - -o /tmp/deposit-neg-identity.json \
   -H "apikey: $STAGING_SUPABASE_ANON_KEY" \
   -H "Origin: http://localhost:5173" \
   -H "Content-Type: application/json" \
-  -d '{"paymentType":"deposit","depositAmount":"500","savedQuoteId":"31313131-3131-4131-8131-313131313131","customerInfo":{"name":"Staging Lovelace","email":"ada@example.invalid","phone":"5555550100"}}'
+  -d "{\"paymentType\":\"deposit\",\"depositAmount\":\"500\",\"savedQuoteId\":\"$DEPOSIT_STAGING_SAVED_QUOTE_ID\",\"customerInfo\":{\"name\":\"Staging Lovelace\",\"email\":\"ada@example.invalid\",\"phone\":\"5555550100\"}}"
 
 # missing savedQuoteId
 curl -sS -D - -o /tmp/deposit-neg-quote.json \
@@ -252,7 +274,7 @@ curl -sS -D - -o /tmp/deposit-neg-cors.json \
   -H "apikey: $STAGING_SUPABASE_ANON_KEY" \
   -H "Origin: $VERCEL_PREVIEW_URL" \
   -H "Content-Type: application/json" \
-  -d '{"paymentType":"deposit","depositAmount":"500","savedQuoteId":"31313131-3131-4131-8131-313131313131"}'
+  -d "{\"paymentType\":\"deposit\",\"depositAmount\":\"500\",\"savedQuoteId\":\"$DEPOSIT_STAGING_SAVED_QUOTE_ID\"}"
 ```
 
 Expect `403` `Forbidden origin`.
@@ -261,13 +283,15 @@ Expect `403` `Forbidden origin`.
 
 Production `create-payment` for `$500` keeps committed Price `price_1SocofHhVKClVQCpsdCfdG7e` and ignores `STRIPE_DEPOSIT_PRICE_500` unless `DEPOSIT_STAGING_MODE` is exactly `1`. Isolated staging with `DEPOSIT_STAGING_MODE=1` first asserts `SUPABASE_URL` is not production, then requires a syntactically valid `STRIPE_DEPOSIT_PRICE_500` for the $500 path only. Other deposit amounts stay on the committed mappings. Missing/invalid override or a production `SUPABASE_URL` fails before Stripe network access. Do not create paid live products. Do not use a live secret. The `$100` path is out of scope (requires the express motor catalog).
 
+Use the materialized `DEPOSIT_STAGING_SAVED_QUOTE_ID` in the request body. Production idempotency remains `motor-deposit:<savedQuoteId>`. Do not reuse the retired ID or a previous run's UUID after changing `STRIPE_DEPOSIT_PRICE_500`.
+
 ```bash
 curl -sS -D - -o /tmp/deposit-checkout.json \
   -X POST "$STAGING_SUPABASE_URL/functions/v1/create-payment" \
   -H "apikey: $STAGING_SUPABASE_ANON_KEY" \
   -H "Origin: http://localhost:5173" \
   -H "Content-Type: application/json" \
-  -d '{"paymentType":"deposit","depositAmount":"500","savedQuoteId":"31313131-3131-4131-8131-313131313131","customerInfo":{"name":"Staging Lovelace","email":"ada@example.invalid","phone":"5555550100","addressLine1":"1 Example Invalid Road","city":"Exampleville","region":"ON","postalCode":"K0K 0A0","country":"Canada"}}'
+  -d "{\"paymentType\":\"deposit\",\"depositAmount\":\"500\",\"savedQuoteId\":\"$DEPOSIT_STAGING_SAVED_QUOTE_ID\",\"customerInfo\":{\"name\":\"Staging Lovelace\",\"email\":\"ada@example.invalid\",\"phone\":\"5555550100\",\"addressLine1\":\"1 Example Invalid Road\",\"city\":\"Exampleville\",\"region\":\"ON\",\"postalCode\":\"K0K 0A0\",\"country\":\"Canada\"}}"
 ```
 
 Pay the hosted Checkout URL with test card `4242424242424242`. Stripe Checkout cannot be completed from the API. Record `cs_test_…` as `STAGING_PAID_SESSION_ID`.
@@ -277,7 +301,7 @@ Pay the hosted Checkout URL with test card `4242424242424242`. Stripe Checkout c
 Forward the test webhook to the isolated `stripe-webhook` (Stripe CLI or a test endpoint). Expected after `checkout.session.completed`:
 
 - `saved_quotes.deposit_status = paid`
-- `saved_quotes.quote_pdf_path = saved-quotes/31313131-3131-4131-8131-313131313131/quote.pdf`
+- `saved_quotes.quote_pdf_path = saved-quotes/$DEPOSIT_STAGING_SAVED_QUOTE_ID/quote.pdf`
 - `saved_quotes.quote_pdf_sha256 = e7914d99efa8418be53d3f8acd8809c6cc87f221bd097358ada61c79e747cadc`
 - `customer_quotes.payment_status = paid` and a `pi_…` / `cs_test_…`
 - exactly three `deposit_email_deliveries` rows (`customer`, `hbw`, `grok_bot`)
@@ -286,7 +310,14 @@ Forward the test webhook to the isolated `stripe-webhook` (Stripe CLI or a test 
 - `quote_data.sms_notification_status` is not `sent` (skipped / staging)
 - no `send-sms` invoke in webhook logs
 
-Run `scripts/deposit-deal-packet-staging/sql/readback.sql`.
+Run `scripts/deposit-deal-packet-staging/sql/readback.sql` in the same session as:
+
+```bash
+psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -c "SET deposit_staging.saved_quote_id TO '$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
+  -c "SET deposit_staging.run_nonce TO 'deposit-deal-packet-staging/run/$DEPOSIT_STAGING_SAVED_QUOTE_ID'" \
+  -f scripts/deposit-deal-packet-staging/sql/readback.sql
+```
 
 ### 7. Replay / idempotency
 
@@ -309,7 +340,7 @@ Admin retry from the generated preview Origin is expected to `403`; use service-
 
 Sign in as an isolated-project admin (`STAGING_ADMIN_ACCESS_TOKEN`). Open:
 
-`{VERCEL_PREVIEW_URL}/admin/quotes/31313131-3131-4131-8131-313131313131`
+`{VERCEL_PREVIEW_URL}/admin/quotes/$DEPOSIT_STAGING_SAVED_QUOTE_ID`
 
 Visible packet sections that this hosted bootstrap can fully verify after seed + paid webhook:
 
@@ -381,3 +412,6 @@ Write a machine-readable file (default `.tmp/deposit-deal-packet-staging-evidenc
 | `DEPOSIT_STAGING_MODE=1` on production `SUPABASE_URL` | Edge throws `Unsafe deposit staging runtime` before rewrite, SMS skip, or $500 price override |
 | Isolated `STRIPE_DEPOSIT_PRICE_500` | required only when `DEPOSIT_STAGING_MODE=1` for the $500 deposit; ignored in production |
 | Seed against a populated `saved_quotes` / `customer_quotes` | SQLSTATE P0001, zero fixture inserts |
+| Missing/malformed `DEPOSIT_STAGING_SAVED_QUOTE_ID` | materialize and `--live` fail; seed/cleanup/readback fail before DML |
+| Retired `31313131-3131-4131-8131-313131313131` or reserved fixture UUID as run id | refused; never seeded as the operational staging quote |
+| Reuse of a previously materialized isolated savedQuoteId | materialize fails closed; do not fight Stripe's 24-hour idempotency cache |

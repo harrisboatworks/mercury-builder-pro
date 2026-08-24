@@ -1,8 +1,10 @@
 -- Synthetic staging + historical-control rows only.
 -- Apply only after STAGING_ACCEPTANCE.md fail-closed guards pass.
 -- Do not run against eutsoqdpjurknjsshxes.
+-- Operational staging savedQuoteId is session-supplied; see require-run-saved-quote-id.sql.
 
 BEGIN;
+\ir require-run-saved-quote-id.sql
 
 CREATE TABLE IF NOT EXISTS public.motor_models (
   id uuid PRIMARY KEY,
@@ -164,10 +166,10 @@ INSERT INTO public.saved_quotes (
   quote_pdf_path,
   quote_pdf_sha256
 ) VALUES (
-  '31313131-3131-4131-8131-313131313131',
+  lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid,
   'ada@example.invalid',
   '2099-01-01T00:00:00Z',
-  'dep_313131313131313131313131',
+  'dep_' || substr(replace(lower(btrim(current_setting('deposit_staging.saved_quote_id', false))), '-', ''), 1, 24),
   '{"motor":{"id":"36363636-3636-4636-8636-363636363636","model":"Staging Lovelace 90"},"purchasePath":"motor_only","depositPolicySnapshot":{"schema":"deposit-policy/v1","motorId":"36363636-3636-4636-8636-363636363636","stockClassification":"in_stock","policyCode":"in_stock_refundable","stockQuantity":1,"inStock":true,"availability":"In Stock","purchasePath":"motor_only"}}'::jsonb,
   false,
   'Staging Lovelace',
@@ -179,7 +181,7 @@ INSERT INTO public.saved_quotes (
   'Canada',
   'pending',
   500,
-  'saved-quotes/31313131-3131-4131-8131-313131313131/quote.pdf',
+  'saved-quotes/' || lower(btrim(current_setting('deposit_staging.saved_quote_id', false))) || '/quote.pdf',
   'e7914d99efa8418be53d3f8acd8809c6cc87f221bd097358ada61c79e747cadc'
 );
 

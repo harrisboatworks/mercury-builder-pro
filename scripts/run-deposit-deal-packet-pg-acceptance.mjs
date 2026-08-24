@@ -23,8 +23,16 @@ const migrationPath = path.join(repoRoot, migrationRel);
 const bootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/bootstrap.sql");
 const fixturesPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/historical-fixtures.sql");
 const checksPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/checks.sql");
+const stagingFixtures = JSON.parse(
+  readFileSync(path.join(repoRoot, "scripts/deposit-deal-packet-staging/fixtures.json"), "utf8"),
+);
 const stagingSeedPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/seed.sql");
 const stagingCleanupPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/cleanup.sql");
+const stagingReadbackPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/readback.sql");
+const localStagingSavedQuoteId = stagingFixtures.ids.localAcceptanceSavedQuoteId;
+const retiredStagingSavedQuoteId = stagingFixtures.ids.retiredStagingSavedQuoteId;
+const historicalSavedQuoteId = stagingFixtures.ids.historicalSavedQuoteId;
+const isolatedExampleSavedQuoteId = "38383838-3838-4838-8838-383838383838";
 const hostedBootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql");
 const hostedVerifyPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql");
 const hostedShapePath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-shape-local.sql");
@@ -35,8 +43,8 @@ const fixtureMotorId = "36363636-3636-4636-8636-363636363636";
 const hostedRunnerRole = "deposit_hosted_runner";
 const stagingSeedIds = {
   saved: [
-    "31313131-3131-4131-8131-313131313131",
-    "34343434-3434-4343-8343-343434343434",
+    localStagingSavedQuoteId,
+    historicalSavedQuoteId,
   ],
   customer: [
     "32323232-3232-4232-8222-323232323232",
@@ -372,6 +380,23 @@ function applySqlFile(filePath, databaseName, { allowFailure = false } = {}) {
   return applySqlFileWithSets(filePath, databaseName, [], { allowFailure });
 }
 
+function stagingRunSets(savedQuoteId, kind) {
+  return [
+    `SET deposit_staging.saved_quote_id TO '${savedQuoteId}'`,
+    `SET deposit_staging.run_nonce TO 'deposit-deal-packet-staging/${kind}/${savedQuoteId}'`,
+  ];
+}
+
+function localStagingRunSets() {
+  return stagingRunSets(localStagingSavedQuoteId, "local");
+}
+
+function applyStagingSql(filePath, databaseName, extraSets = [], { allowFailure = false } = {}) {
+  return applySqlFileWithSets(filePath, databaseName, [...extraSets, ...localStagingRunSets()], {
+    allowFailure,
+  });
+}
+
 function applySqlFileWithSets(filePath, databaseName, sessionSets = [], { allowFailure = false } = {}) {
   const args = ["-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", databaseName];
   for (const sql of sessionSets) args.push("-c", sql);
@@ -441,8 +466,22 @@ function hostedVerifyPassed(databaseName, sessionSets = []) {
   };
 }
 
+function recordStagingRunIdRejection(emptyDb, name, sessionSets, expectedMessage) {
+  const before = countStagingFixtureRows(emptyDb);
+  const applied = applySqlFileWithSets(stagingSeedPath, emptyDb, sessionSets, { allowFailure: true });
+  const output = `${applied.stderr || ""}${applied.stdout || ""}`;
+  const rejected = applied.status !== 0
+    && expectedMessage.test(output)
+    && countStagingFixtureRows(emptyDb) === before;
+  psql(`SELECT public.accept_record(
+    '${name}',
+    ${rejected ? "true" : "false"},
+    ${psqlLiteral(`status=${applied.status} rows=${countStagingFixtureRows(emptyDb)} ${output.slice(0, 180)}`)}
+  );`);
+}
+
 function recordStagingSeedProofs() {
-  const populatedSeed = applySqlFile(stagingSeedPath, database, { allowFailure: true });
+  const populatedSeed = applyStagingSql(stagingSeedPath, database, [], { allowFailure: true });
   const populatedOutput = `${populatedSeed.stderr || ""}${populatedSeed.stdout || ""}`;
   const populatedRejected = populatedSeed.status !== 0
     && /deposit staging seed refuses a populated database/i.test(populatedOutput);
@@ -469,16 +508,93 @@ function recordStagingSeedProofs() {
   applySqlFile(bootstrapPath, emptyDb);
   applySqlFile(migrationPath, emptyDb);
   applySqlFile(path.join(repoRoot, "scripts/deposit-deal-packet-pg/staging-seed-local-columns.sql"), emptyDb);
-  const emptySeed = applySqlFile(stagingSeedPath, emptyDb, { allowFailure: true });
+
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_missing_run_id_fails_before_insert",
+    [],
+    /deposit staging run requires SET deposit_staging.saved_quote_id TO a UUID before seed, cleanup, or readback/i,
+  );
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_malformed_run_id_fails_before_insert",
+    stagingRunSets("not-a-uuid", "run"),
+    /deposit staging run saved_quote_id is malformed/i,
+  );
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_retired_run_id_fails_before_insert",
+    stagingRunSets(retiredStagingSavedQuoteId, "run"),
+    /deposit staging run refuses retired savedQuoteId 31313131-3131-4131-8131-313131313131/i,
+  );
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_reserved_historical_run_id_fails_before_insert",
+    stagingRunSets(historicalSavedQuoteId, "run"),
+    /deposit staging run refuses reserved fixture UUID/i,
+  );
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_isolated_nonce_rejects_local_id",
+    stagingRunSets(localStagingSavedQuoteId, "run"),
+    /deposit staging run isolated nonce refuses the local-acceptance savedQuoteId/i,
+  );
+  recordStagingRunIdRejection(
+    emptyDb,
+    "staging_seed_local_nonce_rejects_fresh_id",
+    stagingRunSets(isolatedExampleSavedQuoteId, "local"),
+    /deposit staging run local nonce requires the local-acceptance savedQuoteId/i,
+  );
+
+  const emptySeed = applyStagingSql(stagingSeedPath, emptyDb, [], { allowFailure: true });
   const emptySeedCount = emptySeed.status === 0 ? countStagingFixtureRows(emptyDb) : -1;
-  const emptySeedOk = emptySeed.status === 0 && emptySeedCount === 4;
+  const seededPdfPath = emptySeed.status === 0
+    ? psqlValue(emptyDb, `
+        SELECT quote_pdf_path
+        FROM public.saved_quotes
+        WHERE id = '${localStagingSavedQuoteId}'
+      `)
+    : "";
+  const emptySeedOk = emptySeed.status === 0
+    && emptySeedCount === 4
+    && seededPdfPath === `saved-quotes/${localStagingSavedQuoteId}/quote.pdf`;
   psql(`SELECT public.accept_record(
     'staging_seed_empty_database_succeeds',
     ${emptySeedOk ? "true" : "false"},
-    ${psqlLiteral(`status=${emptySeed.status} staging_fixture_rows=${emptySeedCount} ${(emptySeed.stderr || "").slice(0, 280)}`)}
+    ${psqlLiteral(`status=${emptySeed.status} staging_fixture_rows=${emptySeedCount} pdf=${seededPdfPath} ${(emptySeed.stderr || "").slice(0, 280)}`)}
   );`);
 
-  const emptyCleanup = applySqlFile(stagingCleanupPath, emptyDb, { allowFailure: true });
+  const missingCleanup = applySqlFile(stagingCleanupPath, emptyDb, { allowFailure: true });
+  const missingCleanupOutput = `${missingCleanup.stderr || ""}${missingCleanup.stdout || ""}`;
+  const missingCleanupRejected = missingCleanup.status !== 0
+    && /deposit staging run requires SET deposit_staging.saved_quote_id TO a UUID before seed, cleanup, or readback/i.test(missingCleanupOutput)
+    && countStagingFixtureRows(emptyDb) === 4;
+  psql(`SELECT public.accept_record(
+    'staging_cleanup_missing_run_id_fails',
+    ${missingCleanupRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${missingCleanup.status} staging_fixture_rows=${countStagingFixtureRows(emptyDb)}`)}
+  );`);
+
+  const missingReadback = applySqlFile(stagingReadbackPath, emptyDb, { allowFailure: true });
+  const missingReadbackOutput = `${missingReadback.stderr || ""}${missingReadback.stdout || ""}`;
+  const missingReadbackRejected = missingReadback.status !== 0
+    && /deposit staging run requires SET deposit_staging.saved_quote_id TO a UUID before seed, cleanup, or readback/i.test(missingReadbackOutput);
+  psql(`SELECT public.accept_record(
+    'staging_readback_missing_run_id_fails',
+    ${missingReadbackRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${missingReadback.status} ${missingReadbackOutput.slice(0, 160)}`)}
+  );`);
+
+  const exactReadback = applyStagingSql(stagingReadbackPath, emptyDb, [], { allowFailure: true });
+  const exactReadbackOk = exactReadback.status === 0
+    && new RegExp(localStagingSavedQuoteId, "i").test(`${exactReadback.stdout || ""}`);
+  psql(`SELECT public.accept_record(
+    'staging_readback_uses_current_run_id',
+    ${exactReadbackOk ? "true" : "false"},
+    ${psqlLiteral(`status=${exactReadback.status}`)}
+  );`);
+
+  const emptyCleanup = applyStagingSql(stagingCleanupPath, emptyDb, [], { allowFailure: true });
   const afterCleanup = emptyCleanup.status === 0 && countStagingFixtureRows(emptyDb) === 0;
   psql(`SELECT public.accept_record(
     'staging_cleanup_empty_database_zero_fixtures',
@@ -490,16 +606,16 @@ function recordStagingSeedProofs() {
     "-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", emptyDb, "-c",
     `INSERT INTO public.saved_quotes (id, email, resume_token, quote_state)
      VALUES (
-       '31313131-3131-4131-8131-313131313131',
+       '${localStagingSavedQuoteId}',
        'ada@example.com',
-       'decoy_313131313131313131313131',
+       'decoy_373737373737373737373737',
        '{}'::jsonb
      );`,
   ], {
     env: { ...envForSocket(), PGDATABASE: emptyDb },
     allowFailure: true,
   });
-  const decoyCleanup = applySqlFile(stagingCleanupPath, emptyDb, { allowFailure: true });
+  const decoyCleanup = applyStagingSql(stagingCleanupPath, emptyDb, [], { allowFailure: true });
   const decoyCount = countStagingFixtureRows(emptyDb);
   const decoySurvived = decoyCleanup.status === 0 && decoyCount === 1;
   psql(`SELECT public.accept_record(
@@ -636,9 +752,9 @@ function recordHostedBootstrapProofs() {
     ${psqlLiteral(verify.detail)}
   );`);
 
-  const firstSeed = applySqlFile(stagingSeedPath, hostedDb, { allowFailure: true });
+  const firstSeed = applyStagingSql(stagingSeedPath, hostedDb, [], { allowFailure: true });
   const firstCount = firstSeed.status === 0 ? countStagingFixtureRows(hostedDb) : -1;
-  const secondSeed = applySqlFile(stagingSeedPath, hostedDb, { allowFailure: true });
+  const secondSeed = applyStagingSql(stagingSeedPath, hostedDb, [], { allowFailure: true });
   const secondOutput = `${secondSeed.stderr || ""}${secondSeed.stdout || ""}`;
   const seedOk = firstSeed.status === 0
     && firstCount === 4
@@ -674,7 +790,7 @@ function recordHostedBootstrapProofs() {
       AND quote_state->'depositPolicySnapshot'->>'policyCode' = 'in_stock_refundable'
       AND quote_state->'depositPolicySnapshot'->>'purchasePath' = 'motor_only'
     FROM public.saved_quotes
-    WHERE id = '31313131-3131-4131-8131-313131313131'
+    WHERE id = '${localStagingSavedQuoteId}'
   `);
   const historicalIntact = psqlValue(hostedDb, `
     SELECT
@@ -882,11 +998,11 @@ function recordHostedShapeBootstrapProofs() {
     ${psqlLiteral(`boot=${againBoot.status} migration=${againFeature.status} ${againVerify.detail}`)}
   );`);
 
-  const firstSeed = applySqlFileWithSets(stagingSeedPath, shapeDb, [
+  const firstSeed = applyStagingSql(stagingSeedPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
   ], { allowFailure: true });
   const firstCount = firstSeed.status === 0 ? countStagingFixtureRows(shapeDb) : -1;
-  const secondSeed = applySqlFileWithSets(stagingSeedPath, shapeDb, [
+  const secondSeed = applyStagingSql(stagingSeedPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
   ], { allowFailure: true });
   const secondOutput = `${secondSeed.stderr || ""}${secondSeed.stdout || ""}`;

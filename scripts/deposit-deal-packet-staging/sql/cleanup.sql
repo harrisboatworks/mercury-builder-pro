@@ -1,7 +1,9 @@
--- Deletes only fixture UUID + expected example.invalid identity pairs.
+-- Deletes only the current-run staging UUID + expected example.invalid pairs,
+-- plus the committed historical-control and motor fixtures.
 -- Apply only against the isolated project after STAGING_ACCEPTANCE.md guards pass.
 
 BEGIN;
+\ir require-run-saved-quote-id.sql
 SET LOCAL ROLE service_role;
 
 DELETE FROM public.customer_quotes
@@ -14,7 +16,7 @@ WHERE (
   AND customer_email = 'historical@example.invalid'
 )
    OR (
-  saved_quote_id = '31313131-3131-4131-8131-313131313131'
+  saved_quote_id = lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid
   AND customer_email = 'ada@example.invalid'
 )
    OR (
@@ -24,7 +26,7 @@ WHERE (
 
 DELETE FROM public.saved_quotes
 WHERE (
-  id = '31313131-3131-4131-8131-313131313131'
+  id = lower(btrim(current_setting('deposit_staging.saved_quote_id', false)))::uuid
   AND email = 'ada@example.invalid'
 )
    OR (

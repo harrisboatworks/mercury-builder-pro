@@ -26,6 +26,18 @@ import {
   type StagingCheck,
   type StagingEnv,
 } from "../../supabase/functions/_shared/deposit-staging-guard.ts";
+import {
+  DEPOSIT_STAGING_SAVED_QUOTE_ID_KEY,
+  LOCAL_ID_NOT_ISOLATED_RUN,
+  MALFORMED_STAGING_RUN_SAVED_QUOTE_ID,
+  MISSING_STAGING_RUN_SAVED_QUOTE_ID,
+  RESERVED_STAGING_RUN_SAVED_QUOTE_ID,
+  RETIRED_STAGING_RUN_SAVED_QUOTE_ID,
+  REUSED_STAGING_RUN_SAVED_QUOTE_ID,
+  assertOperatorStagingRunSavedQuoteId,
+  localAcceptanceSavedQuoteId,
+  retiredStagingSavedQuoteId,
+} from "./run-fixture.ts";
 
 const repoRoot = process.cwd();
 const fixtures = JSON.parse(
@@ -84,6 +96,7 @@ function envNamesPresent(source: StagingEnv): Record<string, boolean> {
     "DEPOSIT_STAGING_CUSTOMER_EMAIL",
     "DEPOSIT_STAGING_HBW_EMAIL",
     "DEPOSIT_STAGING_GROK_EMAIL",
+    DEPOSIT_STAGING_SAVED_QUOTE_ID_KEY,
     "SUPABASE_URL",
     "STRIPE_SECRET_KEY",
   ];
@@ -316,6 +329,94 @@ function runTripwires(): StagingCheck[] {
     `runnerCapability=${STAGING_RUNNER_CAPABILITY}`,
   );
 
+  const retiredId = retiredStagingSavedQuoteId();
+  const localId = localAcceptanceSavedQuoteId();
+  const isolatedExample = "38383838-3838-4838-8838-383838383838";
+
+  const missingRunId = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId("");
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === MISSING_STAGING_RUN_SAVED_QUOTE_ID;
+    }
+  })();
+  record(checks, "tripwire_missing_run_saved_quote_id", missingRunId, "missing per-run savedQuoteId is refused");
+
+  const malformedRunId = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId("not-a-uuid");
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === MALFORMED_STAGING_RUN_SAVED_QUOTE_ID;
+    }
+  })();
+  record(checks, "tripwire_malformed_run_saved_quote_id", malformedRunId, "malformed per-run savedQuoteId is refused");
+
+  const retiredRunId = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId(retiredId);
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === RETIRED_STAGING_RUN_SAVED_QUOTE_ID;
+    }
+  })();
+  record(
+    checks,
+    "tripwire_retired_run_saved_quote_id",
+    retiredRunId,
+    "retired Stripe-contaminated savedQuoteId is refused",
+  );
+
+  const reservedRunId = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId(String(fixtures.ids.historicalSavedQuoteId));
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === RESERVED_STAGING_RUN_SAVED_QUOTE_ID;
+    }
+  })();
+  record(checks, "tripwire_reserved_run_saved_quote_id", reservedRunId, "historical/motor fixture UUIDs cannot be the run id");
+
+  const localAsIsolated = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId(localId);
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === LOCAL_ID_NOT_ISOLATED_RUN;
+    }
+  })();
+  record(
+    checks,
+    "tripwire_local_acceptance_id_not_isolated",
+    localAsIsolated,
+    "local-acceptance savedQuoteId cannot be an isolated Stripe run id",
+  );
+
+  const reusedRunId = (() => {
+    try {
+      assertOperatorStagingRunSavedQuoteId(isolatedExample, { usedIds: [isolatedExample] });
+      return false;
+    } catch (error) {
+      return error instanceof Error && error.message === REUSED_STAGING_RUN_SAVED_QUOTE_ID;
+    }
+  })();
+  record(checks, "tripwire_reused_run_saved_quote_id", reusedRunId, "previously materialized run savedQuoteId is refused");
+
+  const acceptedRunId = (() => {
+    try {
+      return assertOperatorStagingRunSavedQuoteId(isolatedExample) === isolatedExample;
+    } catch {
+      return false;
+    }
+  })();
+  record(
+    checks,
+    "tripwire_fresh_isolated_run_saved_quote_id",
+    acceptedRunId,
+    "a fresh operator UUID is accepted for isolated materialize",
+  );
+
   return checks;
 }
 
@@ -352,6 +453,22 @@ export function runDepositStagingAcceptance(options: {
         ? "operator STAGING_* env passed fail-closed guards"
         : `refused: ${operator.checks.filter((check) => check.result === "FAIL").map((check) => check.id).join(",")}`,
     );
+    try {
+      assertOperatorStagingRunSavedQuoteId(processEnv[DEPOSIT_STAGING_SAVED_QUOTE_ID_KEY]);
+      record(
+        checks,
+        "live_operator_run_saved_quote_id",
+        true,
+        "operator DEPOSIT_STAGING_SAVED_QUOTE_ID is a fresh isolated UUID",
+      );
+    } catch (error) {
+      record(
+        checks,
+        "live_operator_run_saved_quote_id",
+        false,
+        error instanceof Error ? error.message : "invalid per-run savedQuoteId",
+      );
+    }
   } else {
     const inherited = assessInheritedNameCollision(processEnv);
     record(

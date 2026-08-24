@@ -24,6 +24,7 @@ const files = execFileSync("git", ["ls-files", "-c", "-o", "--exclude-standard",
     file.startsWith("scripts/deposit-deal-packet-pg/")
     || file.startsWith("scripts/deposit-deal-packet-staging/")
     || file.startsWith("scripts/run-deposit-deal-packet")
+    || file.startsWith("scripts/materialize-deposit-deal-packet")
     || file.startsWith("scripts/scan-deposit-deal-packet")
     || file.startsWith("src/lib/__tests__/")
     || file === "docs/deposit-deal-packet-acceptance.md"
