@@ -23835,7 +23835,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: "What octane does my Mercury outboard require?", answer: "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don’t generalize that to every Mercury." },
       { question: "Can a current Mercury run E10?", answer: "Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit." },
-      { question: "Is premium gasoline ethanol-free in Ontario?", answer: "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump." },
+      { question: "Is premium gasoline ethanol-free in Ontario?", answer: "No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock." },
       { question: "Does Harris Boat Works sell ethanol-free marine gas?", answer: "Yes. During the marina season, HBW sells ethanol-free 89-octane gasoline at our Gores Landing fuel dock, commonly called marine gas. That doesn’t mean every mid-grade or 89-octane product is ethanol-free, so read the label at any other pump." },
       { question: "Does higher octane give a Mercury more power?", answer: "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
       { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
@@ -23848,7 +23848,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: July 30, 2026*
 
-> **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
+> **Quick answer:** Octane and ethanol answer different questions, and only one of them is really a decision. Meet the octane minimum in your engine's manual and then stop thinking about octane. Ethanol is the part that decides how long your fuel system lasts. Mercury allows a maximum of E10, but fresh ethanol-free gasoline is the better fuel for a marine engine, which is what ethanol-free marine gas is for. Premium does not mean ethanol-free, and in Ontario it no longer reliably is.
 
 At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.
 
@@ -23938,9 +23938,17 @@ Premium names an octane grade. Ethanol-free names a blend. A retailer may sell p
 
 The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser doesn't clearly identify ethanol content, ask the retailer. Don't infer it from the colour of the nozzle, price, brand or octane number.
 
-This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it can meet Mercury's published fuel specifications for a current engine.
+This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it meets Mercury's published fuel specifications for a current engine.
 
-But “permitted” and “preferred” aren't the same thing. Mercury recommends buying ethanol-free gasoline when possible. If fresh ethanol-free fuel meets your engine's octane requirement, it's the better choice for a marine fuel system.
+But “meets the specification” and “good for the engine” are not the same sentence. **On a marine fuel system, ethanol is the variable that actually causes trouble, not octane.** Ethanol attracts water. A portable tank sitting half full for three weeks between trips is close to the worst case for it, and phase separation causes far more of the fuel problems we see than anti-knock rating ever has.
+
+So the honest order of preference:
+
+1. **Fresh ethanol-free gasoline that meets your octane minimum.** The best fuel you can put in a marine engine.
+2. **Fresh E10 from a busy station, bought in small amounts and used up.** Fine, as long as it doesn't sit.
+3. **Anything that has been sitting in the tank for weeks.** This is where the repair bills come from, whatever the grade.
+
+And higher octane does not buy you lower ethanol reliably enough to be a strategy. If ethanol is what you are trying to avoid, buy fuel that is actually labelled ethanol-free.
 
 ## If the Pump Won't Tell You, Test It
 
@@ -23952,11 +23960,28 @@ So the advice "read the label" needs a fail-safe behind it:
 
 If you want certainty rather than a label, Mercury sells a tool for exactly this: the Quicksilver Fuel Tester (part number 91-879172T28) measures the ethanol percentage in a fuel sample. For anyone running a portable tank filled at varying road stations, it removes the guesswork permanently.
 
-## What Ontario's Fuel Rules Do and Do Not Prove
+## Why Ethanol-Free Marine Gas Exists, and Why Premium Stopped Being the Workaround
 
-Ontario's cleaner-transportation-fuels regulation sets renewable-content requirements across a fuel supplier's gasoline pool. Pool-wide compliance can be achieved through a mix of products and credits.
+This is the part most fuel advice skips, and it explains the whole situation.
 
-That policy doesn't let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
+Ontario's Cleaner Transportation Fuels regulation (O. Reg. 663/20) requires fuel suppliers to put renewable content into the gasoline they place in the Ontario market. That requirement keeps climbing: 10 percent from 2020, **11 percent now**, 13 percent in 2028, and 15 percent in 2030.
+
+But the regulation lets a supplier **deduct** certain volumes from the total it has to blend into. Section 9(3) lists them, and two matter to boaters:
+
+- gasoline the supplier reasonably expects is for **“marine vessels or marine equipment”**
+- gasoline with **“an antiknock index of 89 or greater”**
+
+That is the legal reason ethanol-free marine gas can exist at a fuel dock, and it is why premium grades were historically where you went to avoid ethanol.
+
+Note the word “may.” The deduction is permitted, not required. It removes the regulatory pressure to blend into those grades; it does not oblige anyone to keep them ethanol-free. As the provincial requirement climbs, suppliers have been blending into more of the pool, not less.
+
+That is exactly what happened to premium. Ontario stations used to sticker their 91 pumps ethanol-free. Around 2022 those stickers came off, and retailers including Shell and Canadian Tire relabelled 91 as “up to 10% ethanol,” pointing at the regulation when customers asked.
+
+The practical translation for 2026:
+
+- **Assume every grade at a road station contains ethanol.** 91 and 93 often carry less than 87 or 89, but less is not none, and you cannot verify it at the pump.
+- **If you want ethanol-free, buy fuel sold as ethanol-free.** In Ontario that mostly means a marina fuel dock.
+- **Ours is one of them.** HBW sells ethanol-free 89 at the Gores Landing dock during the marina season, which is that deduction in physical form.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
 
@@ -24036,7 +24061,7 @@ Yes. Mercury says current gasoline engines are designed for fuel containing no m
 
 ### Is premium gasoline ethanol-free in Ontario?
 
-Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump.
+No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
 
 ### Does Harris Boat Works sell ethanol-free marine gas?
 
