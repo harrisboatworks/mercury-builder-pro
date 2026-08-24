@@ -25,7 +25,18 @@ const CATALOG = {
   '2500': 'price_2500',
 } as const;
 
-function standardExpress(hp: unknown, amount: unknown, extras: Record<string, unknown> = {}) {
+type TierTestOverrides = {
+  savedQuoteAmount?: unknown;
+  existingDepositAmount?: unknown;
+  quoteMotorId?: string | null;
+  savedMotorId?: string | null;
+  modelNumber?: string | null;
+  motorRowPresent?: boolean;
+  priceId?: string | null;
+  stagingPriceOverride?: boolean;
+};
+
+function standardExpress(hp: unknown, amount: unknown, extras: TierTestOverrides = {}) {
   return {
     requestedAmount: amount,
     savedQuoteAmount: extras.savedQuoteAmount ?? amount,
