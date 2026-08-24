@@ -23,6 +23,8 @@ export const DEPOSIT_QUOTE_DATA_AUTHORITY_KEYS = [
   "notification_lease_expires_at",
   "notification_completed_at",
   "sms_notification_status",
+  "deposit_policy",
+  "payment_billing_address",
 ] as const;
 
 export type DepositAuthorityCaller = "anon" | "authenticated" | "admin" | "service_role";

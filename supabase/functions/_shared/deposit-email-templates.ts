@@ -36,10 +36,17 @@ export type DepositInternalEmailInput = {
   savedQuoteId: string;
   customerQuoteId: string;
   motorLabel: string;
-  paidAt: string;
+  paidAt?: string | null;
   policy: DepositPolicySnapshot | null;
   appUrl: string;
 };
+
+function formatInternalDealPaidTime(paidAt: unknown): string {
+  if (typeof paidAt !== "string" || !paidAt.trim() || !Number.isFinite(Date.parse(paidAt))) {
+    return "Not available";
+  }
+  return `${formatStableDepositEmailTime(paidAt)} ET`;
+}
 
 export function customerDepositEmailSubject(motorLabel: string): string {
   return motorLabel
@@ -79,7 +86,7 @@ export function createDepositConfirmationEmailHtml(input: DepositCustomerEmailIn
   const rows: Array<{ label: string; value: string }> = [];
   if (input.motorLabel) rows.push({ label: "Motor", value: esc(input.motorLabel) });
   rows.push({ label: "Deposit", value: `$${esc(input.depositAmount)} CAD` });
-  rows.push({ label: "Reference", value: esc(input.referenceNumber) });
+  rows.push({ label: "Deposit reference", value: esc(input.referenceNumber) });
   rows.push({ label: "Stock", value: esc(summary.stock) });
   rows.push({ label: "Date", value: esc(dateStr) });
 
@@ -93,7 +100,7 @@ export function createDepositConfirmationEmailHtml(input: DepositCustomerEmailIn
       <li style="margin:0 0 8px 0;">We call you within one business day to confirm the exact motor, availability, ETA, and any fit questions.</li>
       <li style="margin:0 0 8px 0;">${esc(summary.next)}</li>
     </ol>
-    <p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">Your reservation document is attached to this email as a PDF.</p>
+    <p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">Your PDF quote is attached to this email.</p>
     <p style="margin:22px 0 0 0;">Questions? Reply to this email or call us at <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
     <p style="margin:16px 0 0 0;">Thanks for choosing Harris Boat Works.</p>
   `;
@@ -112,7 +119,7 @@ function dealPacketUrl(appUrl: string, savedQuoteId: string): string {
 }
 
 export function createInternalDealEmailHtml(input: DepositInternalEmailInput): string {
-  const now = formatStableDepositEmailTime(input.paidAt || "1970-01-01T00:00:00.000Z");
+  const paidTime = formatInternalDealPaidTime(input.paidAt);
   const summary = policySummary(input.policy);
   const packetUrl = input.savedQuoteId ? dealPacketUrl(input.appUrl, input.savedQuoteId) : "";
   const quoteTotal = formatDealMoney(input.quoteTotal);
@@ -133,10 +140,10 @@ export function createInternalDealEmailHtml(input: DepositInternalEmailInput): s
       ${row("Quote total", esc(quoteTotal))}
       ${row("Deposit", `$${esc(input.depositAmount)} CAD`, "font-weight:700;")}
       ${row("Remaining", esc(balance))}
-      ${row("Reference", esc(unavailableField(input.referenceNumber)))}
+      ${row("Deposit reference", esc(unavailableField(input.referenceNumber)))}
       ${row("Stripe PI", `<span style="font-family:monospace;font-size:12px;">${esc(unavailableField(input.paymentId))}</span>`)}
       ${row("Stripe session", `<span style="font-family:monospace;font-size:12px;">${esc(unavailableField(input.sessionId))}</span>`)}
-      ${row("Time", `${esc(now)} ET`)}
+      ${row("Time", esc(paidTime))}
     </table>
     <p style="margin:14px 0 0 0;font-size:13px;color:#1f2430;">Follow up within one business day. The admin deal packet is the source of truth. Do not invent missing totals.</p>
     ${packetUrl ? `

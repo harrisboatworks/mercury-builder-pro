@@ -186,7 +186,6 @@ serve(async (req) => {
         savedQuoteId: "",
         customerQuoteId: "",
         motorLabel: getMotorLabel(motorInfo),
-        paidAt: "1970-01-01T00:00:00.000Z",
         policy: null,
         appUrl: Deno.env.get("APP_URL") || "https://mercuryrepower.ca",
       });
@@ -273,6 +272,10 @@ serve(async (req) => {
     if (!contact) {
       throw new Error("Paid deposit contact is incomplete");
     }
+    const depositPolicy = readPersistedDepositPolicy(quoteData);
+    if (!depositPolicy) {
+      throw new Error("Deposit policy snapshot is missing");
+    }
     const resolvedAddress = resolveDealAddress({
       savedQuote,
       customerQuote: depositRecord,
@@ -305,7 +308,7 @@ serve(async (req) => {
     }
 
     const attachment = {
-      filename: `HBW-reservation-${savedQuote.id.slice(0, 8)}.pdf`,
+      filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`,
       content: bytesToBase64(attachmentBytes),
     };
 
@@ -454,7 +457,6 @@ serve(async (req) => {
       env: stagingMailerEnv(),
     });
 
-    const depositPolicy = readPersistedDepositPolicy(quoteData);
     const quoteTotal = depositRecord.final_price ?? depositRecord.total_cost ?? null;
     const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
     const customerHtml = createDepositConfirmationEmailHtml({
@@ -548,6 +550,7 @@ serve(async (req) => {
       || error.message === "Public document URLs are not accepted"
       || error.message === "Canonical reservation document is unavailable"
       || error.message === "Paid deposit contact is incomplete"
+      || error.message === "Deposit policy snapshot is missing"
     ) ? error.message : "Unable to send deposit confirmation";
     return new Response(JSON.stringify({ error: message }), {
       status: message === "Unable to send deposit confirmation" ? 500 : 400,

@@ -433,6 +433,7 @@ export function recoveryPlanForBoundSession() {
       id: ACCEPTANCE_SESSION_COMPLETE,
       payment_status: "paid",
       amount_total: 50000,
+      currency: "cad",
       payment_intent: { id: "pi_test_accept001", created: 1755964900 },
       metadata: {
         payment_type: "motor_deposit",

@@ -169,7 +169,20 @@ describe('deposit confirmation mailer contract', () => {
     expect(readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8')).toContain('adminDealPacketPath(savedQuoteId)');
     expect(mailer).toContain('isAuthorizedInternalRequest(req)');
     expect(mailer).toContain('requireAdmin(req, corsHeaders)');
-    expect(readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8')).toContain('Your reservation document is attached to this email as a PDF.');
+    expect(readFileSync('supabase/functions/_shared/deposit-email-templates.ts', 'utf8')).toContain('Your PDF quote is attached to this email.');
+    expect(mailer).toContain('filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`');
+    expect(mailer).not.toContain('HBW-reservation-');
+    expect(mailer).toContain('throw new Error("Deposit policy snapshot is missing")');
+    const adminOnlyFallback = mailer.slice(
+      mailer.indexOf('const adminOnly = requestBody.adminOnly === true'),
+      mailer.indexOf('let depositQuery = supabase'),
+    );
+    expect(adminOnlyFallback).toContain('createInternalDealEmailHtml');
+    expect(adminOnlyFallback).not.toContain('paidAt');
+    expect(adminOnlyFallback).not.toContain('1970-01-01');
+    expect(adminOnlyFallback).not.toContain('seedDepositEmailDeliveryRows');
+    expect(adminOnlyFallback).not.toContain('readPersistedDepositPolicy');
+    expect(mailer).toContain('error.message === "Deposit policy snapshot is missing"');
     expect(mailer).toContain('throw new DepositEmailOutboxError()');
     expect(mailer).toContain('assertDeliveryOutboxReady(deliveryRows)');
     expect(mailer).toContain('claim_deposit_email_delivery');
@@ -210,6 +223,31 @@ describe('deposit confirmation mailer contract', () => {
     expect(mailer).toContain('catch (providerError)');
     expect(mailer).not.toContain('Access-Control-Allow-Origin": "*"');
     expect(mailer).not.toContain("Access-Control-Allow-Origin': '*'");
+  });
+
+  it('fails closed on a missing bound deposit_policy before seeding mail and keeps adminOnly internal-only', () => {
+    const mailer = readFileSync('supabase/functions/send-deposit-confirmation-email/index.ts', 'utf8');
+    const boundPathStart = mailer.indexOf('let depositQuery = supabase');
+    const boundPath = mailer.slice(boundPathStart);
+    expect(boundPathStart).toBeGreaterThan(mailer.indexOf('const adminOnly = requestBody.adminOnly === true'));
+    expect(boundPath.indexOf('readPersistedDepositPolicy(quoteData)')).toBeGreaterThan(-1);
+    expect(boundPath.indexOf('throw new Error("Deposit policy snapshot is missing")'))
+      .toBeLessThan(boundPath.indexOf('seedDepositEmailDeliveryRows'));
+    expect(boundPath.indexOf('readPersistedDepositPolicy(quoteData)'))
+      .toBeLessThan(boundPath.indexOf('seedDepositEmailDeliveryRows'));
+    expect(boundPath.indexOf('throw new Error("Deposit policy snapshot is missing")'))
+      .toBeLessThan(boundPath.indexOf('await sendAudience'));
+    const adminOnlyFallback = mailer.slice(
+      mailer.indexOf('const adminOnly = requestBody.adminOnly === true'),
+      boundPathStart,
+    );
+    expect(adminOnlyFallback).toContain('createInternalDealEmailHtml');
+    expect(adminOnlyFallback).toContain('policy: null');
+    expect(adminOnlyFallback).not.toContain('paidAt');
+    expect(adminOnlyFallback).not.toContain('1970-01-01T00:00:00.000Z');
+    expect(adminOnlyFallback).not.toContain('seedDepositEmailDeliveryRows');
+    expect(adminOnlyFallback).not.toContain('createDepositConfirmationEmailHtml');
+    expect(adminOnlyFallback).not.toContain('createGrokDealEmailHtml');
   });
 
   it('uses origin-safe CORS for admin browser calls and keeps service-to-service requests without a wildcard', () => {

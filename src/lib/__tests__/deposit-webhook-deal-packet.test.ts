@@ -410,6 +410,7 @@ describe('deposit webhook deal-packet idempotency', () => {
       id: SESSION_ID,
       payment_status: 'paid',
       amount_total: 50000,
+      currency: 'cad',
       payment_intent: 'pi_test_dealpacket001',
       metadata: { payment_type: 'motor_deposit', saved_quote_id: QUOTE_ID, deposit_amount: '500' },
     };
@@ -467,6 +468,7 @@ describe('deposit webhook deal-packet idempotency', () => {
         id: SESSION_ID,
         payment_status: 'paid',
         amount_total: 50000,
+        currency: 'cad',
         payment_intent: 'pi_test_dealpacket001',
         customer_details: {
           address: { line1: '1 Market St', city: 'San Francisco', state: 'CA', postal_code: '94105', country: 'US' },
@@ -517,6 +519,48 @@ describe('deposit webhook deal-packet idempotency', () => {
       currency: 'cad',
       depositAmount: '500',
     })).toThrow('Stripe deposit amount does not match');
+  });
+
+  it('rejects a non-CAD bound checkout session inside recovery, not only charge-match', () => {
+    const deposit = {
+      lead_source: 'deposit',
+      saved_quote_id: QUOTE_ID,
+      stripe_checkout_session_id: SESSION_ID,
+      deposit_amount: 500,
+      quote_data: { saved_quote_id: QUOTE_ID, stripe_session_id: SESSION_ID, deposit_amount: '500' },
+    };
+    const savedQuote = { id: QUOTE_ID, deposit_amount: 500, deposit_status: 'pending' as const };
+    const usdSession = {
+      id: SESSION_ID,
+      payment_status: 'paid',
+      amount_total: 50000,
+      currency: 'usd',
+      payment_intent: 'pi_test_dealpacket001',
+      metadata: { payment_type: 'motor_deposit', saved_quote_id: QUOTE_ID, deposit_amount: '500' },
+    };
+    expect(() => assertBoundCheckoutMatchesRecovery({
+      savedQuoteId: QUOTE_ID,
+      deposit,
+      savedQuote,
+      session: usdSession,
+    })).toThrow('Stripe deposit currency is not CAD');
+    expect(() => planVerifiedStripeRecovery({
+      savedQuoteId: QUOTE_ID,
+      deposit,
+      savedQuote,
+      session: usdSession,
+      paidAt: '2026-08-23T16:00:00.000Z',
+    })).toThrow('Stripe deposit currency is not CAD');
+    expect(assertBoundCheckoutMatchesRecovery({
+      savedQuoteId: QUOTE_ID,
+      deposit,
+      savedQuote,
+      session: { ...usdSession, currency: 'CAD' },
+    })).toEqual({
+      sessionId: SESSION_ID,
+      depositAmount: 500,
+      paymentIntentId: 'pi_test_dealpacket001',
+    });
   });
 
   it('classifies a two-tab create-payment rebind against a just-paid row as already paid', () => {

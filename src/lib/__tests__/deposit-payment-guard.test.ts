@@ -293,6 +293,16 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(source).toContain('assertNoCallerDocumentPath(options.rawBody)');
     expect(source).toContain('assertRecoverStripeBillingRequest(options.rawBody)');
     expect(source).toContain('planVerifiedStripeRecovery');
+    expect(source).toContain('const session = await stripe.checkout.sessions.retrieve(boundSessionId,');
+    expect(source.indexOf('const session = await stripe.checkout.sessions.retrieve(boundSessionId,'))
+      .toBeLessThan(source.indexOf('plan = planVerifiedStripeRecovery({'));
+    expect(source).toContain(`plan = planVerifiedStripeRecovery({
+      savedQuoteId: options.body.savedQuoteId,
+      deposit,
+      savedQuote,
+      session,
+      paidAt,
+    })`);
     expect(source).toContain('boundCheckoutSessionIdFromDeposit(deposit)');
     expect(source).toContain('promotedCustomerQuoteFields');
     expect(source).toContain('savedQuoteDepositStatus');

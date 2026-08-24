@@ -106,6 +106,8 @@ describe('deposit deal-packet migration', () => {
     expect(migration).toContain("old_data->>'deposit_outbox_schema'");
     expect(migration).toContain("old_data->'motor_info'");
     expect(migration).toContain("old_data->'quote_snapshot'");
+    expect(migration).toContain("old_data->'deposit_policy' IS DISTINCT FROM new_data->'deposit_policy'");
+    expect(migration).toContain("old_data->'payment_billing_address' IS DISTINCT FROM new_data->'payment_billing_address'");
     expect(migration).toContain('REVOKE ALL ON FUNCTION public.deposit_authority_caller() FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('REVOKE ALL ON FUNCTION public.deposit_quote_data_authority_changed(jsonb, jsonb) FROM PUBLIC, anon, authenticated, service_role');
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.deposit_authority_caller() TO anon, authenticated, service_role');

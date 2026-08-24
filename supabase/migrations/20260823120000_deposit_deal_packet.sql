@@ -299,6 +299,8 @@ AS $$
     OR COALESCE(old_data->>'deposit_amount', '') IS DISTINCT FROM COALESCE(new_data->>'deposit_amount', '')
     OR old_data->'motor_info' IS DISTINCT FROM new_data->'motor_info'
     OR old_data->'quote_snapshot' IS DISTINCT FROM new_data->'quote_snapshot'
+    OR old_data->'deposit_policy' IS DISTINCT FROM new_data->'deposit_policy'
+    OR old_data->'payment_billing_address' IS DISTINCT FROM new_data->'payment_billing_address'
     OR COALESCE(old_data->>'deposit_outbox_schema', '') IS DISTINCT FROM COALESCE(new_data->>'deposit_outbox_schema', '')
     OR COALESCE(old_data->>'notification_status', '') IS DISTINCT FROM COALESCE(new_data->>'notification_status', '')
     OR COALESCE(old_data->>'notification_event_id', '') IS DISTINCT FROM COALESCE(new_data->>'notification_event_id', '')

@@ -98,6 +98,11 @@ describe('quote funnel UX contract', () => {
     expect(successSource).not.toContain('quote PDF attached');
     expect(pdfSource).toContain('depositPolicySnapshot');
     expect(pdfSource).toContain('customerPolicyText');
+    expect(pdfSource).toContain('Reservation details');
+    expect(pdfSource).not.toContain('Ready to lock this in?');
+    expect(emailSource).toContain('filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`');
+    expect(emailSource).not.toContain('HBW-reservation-');
+    expect(emailSource).toContain('throw new Error("Deposit policy snapshot is missing")');
     expect(emailSource).toContain('createDepositConfirmationEmailHtml');
     expect(emailSource).toContain('createGrokDealEmailHtml');
     expect(emailSource).toContain('readPersistedDepositPolicy');

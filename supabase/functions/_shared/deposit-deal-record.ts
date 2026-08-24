@@ -561,6 +561,7 @@ export function assertBoundCheckoutMatchesRecovery(options: {
     id: string;
     payment_status?: string | null;
     amount_total?: number | null;
+    currency?: string | null;
     payment_intent?: unknown;
     metadata?: Record<string, string> | null;
   };
@@ -577,6 +578,9 @@ export function assertBoundCheckoutMatchesRecovery(options: {
   }
   if (options.session.payment_status !== "paid") {
     throw new Error("Checkout session is not paid");
+  }
+  if (String(options.session.currency || "").toLowerCase() !== "cad") {
+    throw new Error("Stripe deposit currency is not CAD");
   }
   const boundQuoteId = boundSavedQuoteIdFromDeposit(options.deposit);
   if (!boundQuoteId || boundQuoteId !== options.savedQuoteId.toLowerCase()) {
@@ -640,6 +644,7 @@ export function planVerifiedStripeRecovery(options: {
     id: string;
     payment_status?: string | null;
     amount_total?: number | null;
+    currency?: string | null;
     payment_intent?: unknown;
     customer_details?: unknown;
     metadata?: Record<string, string> | null;

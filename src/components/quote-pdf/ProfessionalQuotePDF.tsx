@@ -664,7 +664,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {!quoteData.depositInfo ? (
               <View style={styles.card}>
-                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Ready to lock this in?</Text>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Reservation details</Text>
                 <View style={styles.qrRow}>
                   {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
                   <View style={styles.qrCopy}>

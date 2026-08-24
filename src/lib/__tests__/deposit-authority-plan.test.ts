@@ -103,4 +103,60 @@ describe('customer quote deposit authority plan', () => {
       },
     })).toBe(false);
   });
+
+  it('rejects authenticated mutation of service-owned deposit_policy and payment_billing_address', () => {
+    const depositRow = {
+      lead_source: 'deposit',
+      quote_data: {
+        deposit_policy: { schema: 'deposit-policy/v1', policyCode: 'in_stock_refundable' },
+        payment_billing_address: { line1: '1 Market St', city: 'Gores Landing' },
+        customer_notes: 'keep',
+      },
+    };
+    expect(customerQuoteMutationRejected({
+      op: 'UPDATE',
+      caller: 'authenticated',
+      oldRow: depositRow,
+      newRow: {
+        ...depositRow,
+        quote_data: {
+          ...depositRow.quote_data,
+          deposit_policy: { schema: 'deposit-policy/v1', policyCode: 'tampered' },
+        },
+      },
+    })).toBe(true);
+    expect(customerQuoteMutationRejected({
+      op: 'UPDATE',
+      caller: 'authenticated',
+      oldRow: depositRow,
+      newRow: {
+        ...depositRow,
+        quote_data: {
+          ...depositRow.quote_data,
+          payment_billing_address: { line1: 'tampered' },
+        },
+      },
+    })).toBe(true);
+    expect(customerQuoteMutationRejected({
+      op: 'UPDATE',
+      caller: 'authenticated',
+      oldRow: depositRow,
+      newRow: {
+        ...depositRow,
+        quote_data: { ...depositRow.quote_data, customer_notes: 'follow up' },
+      },
+    })).toBe(false);
+    expect(customerQuoteMutationRejected({
+      op: 'UPDATE',
+      caller: 'service_role',
+      oldRow: depositRow,
+      newRow: {
+        ...depositRow,
+        quote_data: {
+          ...depositRow.quote_data,
+          deposit_policy: { schema: 'deposit-policy/v1', policyCode: 'special_order_until_written_approval' },
+        },
+      },
+    })).toBe(false);
+  });
 });

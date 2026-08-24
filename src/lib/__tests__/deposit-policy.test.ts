@@ -34,6 +34,7 @@ import {
   classifyOpenCheckoutPolicyUpgrade,
   storedDepositPolicyMatches,
 } from '../../../supabase/functions/_shared/deposit-deal-record.ts';
+import { formatStableDepositEmailTime } from '../../../supabase/functions/_shared/deposit-email-deliveries.ts';
 
 const MOTOR_ID = 'aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa';
 const SAVED_QUOTE_ID = 'bbbbbbbb-2222-4222-8222-bbbbbbbbbbbb';
@@ -263,6 +264,9 @@ describe('deposit email policy copy', () => {
       policy: inStock,
     });
     expect(inStockHtml).toContain('We received your deposit');
+    expect(inStockHtml).toContain('Deposit reference');
+    expect(inStockHtml).toContain('Your PDF quote is attached to this email.');
+    expect(inStockHtml).not.toContain('reservation document');
     expect(inStockHtml).toContain(DEPOSIT_POLICY_IN_STOCK_TEXT);
     expect(inStockHtml).toContain(DEPOSIT_FULFILMENT_MOTOR_ONLY);
     expect(inStockHtml).not.toContain('pi_');
@@ -318,6 +322,7 @@ describe('deposit email policy copy', () => {
     expect(html).toContain('pi_test_123');
     expect(html).toContain('cs_test_456');
     expect(html).toContain(DEPOSIT_POLICY_SPECIAL_ORDER_TEXT);
+    expect(html).toContain('Deposit reference');
 
     const missing = createInternalDealEmailHtml({
       customerName: 'Ada Customer',
@@ -340,6 +345,28 @@ describe('deposit email policy copy', () => {
     expect(missing).toContain('Not available');
     expect(missing).toContain('Deal packet URL: Not available');
     expect(remainingBalance(null, '500')).toBe('Not available');
+
+    const missingPaidAt = createInternalDealEmailHtml({
+      customerName: 'Ada Customer',
+      customerEmail: '',
+      customerPhone: '',
+      customerAddress: '',
+      depositAmount: '500',
+      quoteTotal: null,
+      remainingBalance: null,
+      referenceNumber: 'HBW-12345678',
+      paymentId: '',
+      sessionId: '',
+      savedQuoteId: '',
+      customerQuoteId: '',
+      motorLabel: '',
+      policy: null,
+      appUrl: 'https://mercuryrepower.ca',
+    });
+    expect(missingPaidAt).toContain('Not available');
+    expect(missingPaidAt).not.toContain(formatStableDepositEmailTime('1970-01-01T00:00:00.000Z'));
+    expect(missingPaidAt).not.toContain('1970-01-01');
+    expect(missingPaidAt).not.toContain('1969-12-31');
   });
 
   it('gives Grok a deterministic structured block without secrets', () => {
