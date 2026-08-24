@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15elpt-prokicker-fourstroke
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 72c70f60-9795-449d-8b08-a1e1e9dcd0ca
 slug: fourstroke-15hp-15elpt-prokicker-fourstroke
 family: FourStroke

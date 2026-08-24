@@ -1,15 +1,15 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: e5317ef2-8420-494f-8d84-a6abef00e5d8
 slug: proxs-150hp-150-elpt-proxs
-family: ProXS
+family: Pro XS
 horsepower: 150
 model_number: 1152F131D
 availability: in_stock
@@ -18,13 +18,13 @@ price_cad: 24349
 
 # 150 ELPT ProXS
 
-Mercury ProXS 150 HP outboard motor (model 1152F131D).
+Mercury Pro XS 150 HP outboard motor (model 1152F131D).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 150 ELPT ProXS
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 150 HP
 - **Model number:** 1152F131D
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer �
 
 ## Best fit for
 
-Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 
