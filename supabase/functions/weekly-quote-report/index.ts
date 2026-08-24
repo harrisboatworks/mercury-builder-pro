@@ -2,13 +2,25 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import {
+  WEEKLY_REPORT_CC,
+  WEEKLY_REPORT_GROK_TO,
+  WEEKLY_REPORT_TO,
+  buildPaidReservationAiContext,
+  buildSanitizedWeeklyReportEmail,
+  buildWeeklyReportAiSystemPrompt,
+  buildWeeklyReportSubject,
+  escapeHtml,
+  extractQuotedMotorModel,
+  formatPaidReservationSmsLines,
+  summarizePaidReservations,
+} from "../_shared/weekly-report-metrics.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const ADMIN_EMAIL = "info@harrisboatworks.ca";
 const APP_URL = "https://mercuryrepower.ca";
 
 serve(async (req) => {
@@ -41,7 +53,7 @@ serve(async (req) => {
     // Fetch all data in parallel
     const [quotesRes, prevQuotesRes, eventsRes] = await Promise.all([
       supabase.from('customer_quotes').select('*').gte('created_at', weekAgo.toISOString()).lte('created_at', now.toISOString()),
-      supabase.from('customer_quotes').select('id, final_price').gte('created_at', twoWeeksAgo.toISOString()).lt('created_at', weekAgo.toISOString()),
+      supabase.from('customer_quotes').select('*').gte('created_at', twoWeeksAgo.toISOString()).lt('created_at', weekAgo.toISOString()),
       supabase.from('quote_activity_events').select('*').gte('created_at', weekAgo.toISOString()).lte('created_at', now.toISOString()).order('created_at', { ascending: true }),
     ]);
 
@@ -200,11 +212,18 @@ serve(async (req) => {
     const prevTotalValue = prevQuotes.reduce((sum, q) => sum + (q.final_price || 0), 0);
     const avgValue = totalQuotes > 0 ? totalValue / totalQuotes : 0;
     const hotLeads = quotes.filter(q => (q.lead_score || 0) >= 70);
+    const paidReservationMetrics = summarizePaidReservations(quotes);
+    const prevPaidReservationMetrics = summarizePaidReservations(prevQuotes);
+    const { paidReservations, depositsCollected, reservedMotorValue } = paidReservationMetrics;
+    const {
+      paidReservations: prevPaidReservations,
+      depositsCollected: prevDepositsCollected,
+      reservedMotorValue: prevReservedMotorValue,
+    } = prevPaidReservationMetrics;
 
     const modelCounts: Record<string, number> = {};
     for (const q of quotes) {
-      const qd = q.quote_data as any;
-      const model = qd?.motorModel || qd?.motor_model || qd?.model || 'Unknown';
+      const model = extractQuotedMotorModel(q);
       modelCounts[model] = (modelCounts[model] || 0) + 1;
     }
     const topModels = Object.entries(modelCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
@@ -213,6 +232,9 @@ serve(async (req) => {
     const valueTrend = totalValue >= prevTotalValue ? '↑' : '↓';
     const quoteDiff = totalQuotes - prevTotalQuotes;
     const valueDiff = totalValue - prevTotalValue;
+    const paidReservationDiff = paidReservations - prevPaidReservations;
+    const depositsCollectedDiff = depositsCollected - prevDepositsCollected;
+    const reservedMotorValueDiff = reservedMotorValue - prevReservedMotorValue;
     const conversionRate = uniqueSessions > 0 ? ((totalQuotes / uniqueSessions) * 100).toFixed(1) : '0';
 
     // ============ AI SUMMARY ============
@@ -245,8 +267,10 @@ serve(async (req) => {
 
         const metricsSummary = [
           `This week: ${uniqueSessions} visitors, ${totalQuotes} quotes saved (${conversionRate}% conversion).`,
-          `Last week: ${prevTotalQuotes} quotes, ${fmt(prevTotalValue)} value. Change: ${quoteDiff >= 0 ? '+' : ''}${quoteDiff} quotes, ${valueDiff >= 0 ? '+' : ''}${fmt(valueDiff)} value.`,
+          `Last week: ${prevTotalQuotes} quotes, ${fmt(prevTotalValue)} quoted value. Change: ${quoteDiff >= 0 ? '+' : ''}${quoteDiff} quotes, ${valueDiff >= 0 ? '+' : ''}${fmt(valueDiff)} quoted value.`,
           `Average quote value: ${fmt(avgValue)}. Hot leads (score 70+): ${hotLeads.length}.`,
+          buildPaidReservationAiContext(paidReservationMetrics, fmt),
+          `Last week paid reservations: ${prevPaidReservations}. Deposits collected: ${fmt(prevDepositsCollected)}. Reserved motor value: ${fmt(prevReservedMotorValue)}.`,
           `Biggest funnel drop-off: ${worstDrop.pct}% lost between ${worstDrop.from} → ${worstDrop.to}.`,
           `Top viewed motors: ${topViewedMotors.slice(0, 3).map(([m, d]) => `${m} (${d.count} views)`).join(', ') || 'none'}.`,
           `Top abandoned motors: ${topAbandonedMotors.slice(0, 3).map(([m, d]) => `${m} (${d.count}x abandoned, avg ${fmt(d.avgValue)})`).join(', ') || 'none'}.`,
@@ -267,10 +291,7 @@ serve(async (req) => {
             messages: [
               {
                 role: 'system',
-                content: `You're a blunt, experienced marine dealership employee giving your boss the weekly website report. Be direct, conversational, no corporate speak. No bullet points or headers — just talk naturally like you're sitting across the desk. Point out problems honestly. Give actionable suggestions. Keep it under 200 words total. Structure your response as:
-1) A 3-4 sentence plain-English summary of what happened this week
-2) 2-3 blunt observations about what's working and what isn't
-3) 2-3 specific, actionable improvement suggestions`
+                content: buildWeeklyReportAiSystemPrompt()
               },
               {
                 role: 'user',
@@ -286,7 +307,7 @@ serve(async (req) => {
           if (aiText) {
             console.log('[WEEKLY-REPORT] AI summary generated successfully');
             // Email version - styled box
-            const escapedText = aiText.replace(/\n/g, '<br>');
+            const escapedText = escapeHtml(aiText).replace(/\n/g, '<br>');
             aiSummaryHtml = `
               <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:2px solid #eab308;border-radius:12px;padding:20px 24px;margin-bottom:28px;">
                 <h2 style="margin:0 0 12px;font-size:16px;color:#854d0e;">🧠 AI Weekly Debrief</h2>
@@ -320,7 +341,8 @@ serve(async (req) => {
       ``,
       `📈 QUOTES:`,
       `• ${totalQuotes} new quotes ${quoteTrend} (${quoteDiff >= 0 ? '+' : ''}${quoteDiff} vs last wk)`,
-      `• Total: ${fmt(totalValue)} | Avg: ${fmt(avgValue)}`,
+      `• Quoted value: ${fmt(totalValue)} | Avg: ${fmt(avgValue)}`,
+      ...formatPaidReservationSmsLines(paidReservationMetrics, fmt),
       `• ${hotLeads.length} hot leads (score 70+)`,
     );
 
@@ -430,11 +452,25 @@ serve(async (req) => {
         </div>
         <div style="flex:1;min-width:120px;background:#fef3c7;border-radius:8px;padding:16px;text-align:center;">
           <div style="font-size:28px;font-weight:700;color:#d97706;">${fmt(totalValue)}</div>
-          <div style="font-size:12px;color:#6b7280;">Total Value ${valueTrend}</div>
+          <div style="font-size:12px;color:#6b7280;">Quoted Value ${valueTrend}</div>
         </div>
         <div style="flex:1;min-width:120px;background:#fef2f2;border-radius:8px;padding:16px;text-align:center;">
           <div style="font-size:28px;font-weight:700;color:#dc2626;">${hotLeads.length}</div>
           <div style="font-size:12px;color:#6b7280;">Hot Leads (70+)</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+        <div style="flex:1;min-width:120px;background:#ecfdf5;border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#047857;">${paidReservations}</div>
+          <div style="font-size:12px;color:#6b7280;">Paid Reservations</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#e0f2fe;border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#0369a1;">${fmt(depositsCollected)}</div>
+          <div style="font-size:12px;color:#6b7280;">Deposits Collected</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#f5f3ff;border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#6d28d9;">${fmt(reservedMotorValue)}</div>
+          <div style="font-size:12px;color:#6b7280;">Reserved Motor Value</div>
         </div>
       </div>
 
@@ -690,7 +726,10 @@ serve(async (req) => {
         <h3 style="margin:0 0 8px;font-size:14px;color:#374151;">📈 Week-over-Week</h3>
         <p style="margin:4px 0;font-size:13px;color:#6b7280;">
           Quotes: ${prevTotalQuotes} → ${totalQuotes} (${quoteDiff >= 0 ? '+' : ''}${quoteDiff})<br>
-          Value: ${fmt(prevTotalValue)} → ${fmt(totalValue)} (${valueDiff >= 0 ? '+' : ''}${fmt(valueDiff)})
+          Quoted value: ${fmt(prevTotalValue)} → ${fmt(totalValue)} (${valueDiff >= 0 ? '+' : ''}${fmt(valueDiff)})<br>
+          Paid reservations: ${prevPaidReservations} → ${paidReservations} (${paidReservationDiff >= 0 ? '+' : ''}${paidReservationDiff})<br>
+          Deposits collected: ${fmt(prevDepositsCollected)} → ${fmt(depositsCollected)} (${depositsCollectedDiff >= 0 ? '+' : ''}${fmt(depositsCollectedDiff)})<br>
+          Reserved motor value: ${fmt(prevReservedMotorValue)} → ${fmt(reservedMotorValue)} (${reservedMotorValueDiff >= 0 ? '+' : ''}${fmt(reservedMotorValueDiff)})
         </p>
       </div>
 
@@ -710,15 +749,102 @@ serve(async (req) => {
 </body>
 </html>`;
 
-    const emailResponse = await resend.emails.send({
-      from: "Mercury Quotes <noreply@mercuryrepower.ca>",
-      to: [ADMIN_EMAIL],
-      cc: ["hbwbot00@gmail.com", "harrisboatworks2153@manus.bot"],
-      subject: `📊 Weekly Report: ${uniqueSessions} visitors, ${totalQuotes} quotes, ${fmt(totalValue)} (${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)})`,
-      html: emailHtml,
+    const sanitizedWeeklyReport = buildSanitizedWeeklyReportEmail({
+      periodLabel: `${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)}`,
+      visitors: uniqueSessions,
+      totalQuotes,
+      quotedValueLabel: fmt(totalValue),
+      paidReservations,
+      depositsCollectedLabel: fmt(depositsCollected),
+      reservedMotorValueLabel: fmt(reservedMotorValue),
+      conversionRateLabel: `${conversionRate}%`,
+      hotLeadCount: hotLeads.length,
+      topModels: topModels.map(([name, count]) => ({ name, count })),
+      topViewedMotors: topViewedMotors.map(([name, data]) => ({ name, count: data.count })),
+      funnel: [
+        { name: "Site Visitors", count: uniqueSessions },
+        { name: "Selected Motor", count: sessionsWithMotor },
+        { name: "Added Options", count: sessionsWithOptions },
+        { name: "Chose Purchase Path", count: sessionsWithPurchasePath },
+        { name: "Entered Boat Info", count: sessionsWithBoatInfo },
+        { name: "Trade-In", count: sessionsWithTradeIn },
+        { name: "Installation Config", count: sessionsWithInstall },
+        { name: "Promo Selected", count: sessionsWithPromo },
+        { name: "Package Selected", count: sessionsWithPackage },
+        { name: "Viewed Summary", count: sessionsWithSummary },
+        { name: "Submitted Quote", count: sessionsWithSubmit },
+      ],
+      weekOverWeek: {
+        previousQuotes: prevTotalQuotes,
+        currentQuotes: totalQuotes,
+        quoteDiff,
+        previousQuotedValueLabel: fmt(prevTotalValue),
+        currentQuotedValueLabel: fmt(totalValue),
+        quotedValueDiffLabel: `${valueDiff >= 0 ? "+" : ""}${fmt(valueDiff)}`,
+        previousPaidReservations: prevPaidReservations,
+        currentPaidReservations: paidReservations,
+        paidReservationDiff,
+        previousDepositsCollectedLabel: fmt(prevDepositsCollected),
+        currentDepositsCollectedLabel: fmt(depositsCollected),
+        depositsCollectedDiffLabel: `${depositsCollectedDiff >= 0 ? "+" : ""}${fmt(depositsCollectedDiff)}`,
+        previousReservedMotorValueLabel: fmt(prevReservedMotorValue),
+        currentReservedMotorValueLabel: fmt(reservedMotorValue),
+        reservedMotorValueDiffLabel: `${reservedMotorValueDiff >= 0 ? "+" : ""}${fmt(reservedMotorValueDiff)}`,
+      },
     });
 
-    console.log('[WEEKLY-REPORT] Email sent:', emailResponse);
+    const sendWeeklyReportEmail = async (payload: {
+      from: string;
+      to: string[];
+      cc?: string[];
+      subject: string;
+      html: string;
+    }) => {
+      try {
+        const result = await resend.emails.send(payload);
+        return { error: result.error ?? null };
+      } catch {
+        return { error: { message: "send_failed" } };
+      }
+    };
+
+    const [internalEmailResult, grokEmailResult] = await Promise.all([
+      sendWeeklyReportEmail({
+        from: "Mercury Quotes <noreply@mercuryrepower.ca>",
+        to: [...WEEKLY_REPORT_TO],
+        cc: [...WEEKLY_REPORT_CC],
+        subject: buildWeeklyReportSubject({
+          visitors: uniqueSessions,
+          totalQuotes,
+          quotedValueLabel: fmt(totalValue),
+          paidReservations,
+          depositsCollectedLabel: fmt(depositsCollected),
+          dateRange: `${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)}`,
+        }),
+        html: emailHtml,
+      }),
+      sendWeeklyReportEmail({
+        from: "Mercury Quotes <noreply@mercuryrepower.ca>",
+        to: [...WEEKLY_REPORT_GROK_TO],
+        subject: sanitizedWeeklyReport.subject,
+        html: sanitizedWeeklyReport.html,
+      }),
+    ]);
+
+    const emailSent = !internalEmailResult.error;
+    const grokEmailSent = !grokEmailResult.error;
+
+    if (emailSent) {
+      console.log("[WEEKLY-REPORT] Internal email delivery succeeded");
+    } else {
+      console.error("[WEEKLY-REPORT] Internal email delivery failed");
+    }
+
+    if (grokEmailSent) {
+      console.log("[WEEKLY-REPORT] Grok email delivery succeeded");
+    } else {
+      console.error("[WEEKLY-REPORT] Grok email delivery failed");
+    }
 
     return new Response(
       JSON.stringify({
@@ -729,12 +855,16 @@ serve(async (req) => {
           totalQuotes,
           totalValue,
           avgValue,
+          paidReservations,
+          depositsCollected,
+          reservedMotorValue,
           hotLeads: hotLeads.length,
           topViewedMotors: topViewedMotors.slice(0, 5),
           topExitPages: topExitPages.slice(0, 5),
           deviceBreakdown: deviceCounts,
           smsSent: !!adminPhone,
-          emailSent: true,
+          emailSent,
+          grokEmailSent,
         },
       }),
       { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
