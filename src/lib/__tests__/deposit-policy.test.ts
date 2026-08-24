@@ -428,6 +428,12 @@ describe('live deposit copy drift tripwires', () => {
     'src/pages/RepowerProcess.tsx',
     'scripts/static-prerender.mjs',
     'AI-Chatbot-Knowledge-Base.md',
+    'src/pages/RepowerCost.tsx',
+    'src/pages/Deposits.tsx',
+    'src/App.tsx',
+    'public/.well-known/ai.txt',
+    'supabase/functions/motors-md/index.ts',
+    'supabase/functions/agent-mcp-server/index.ts',
   ];
 
   it('keeps confirmed live surfaces on the stock-based policy and mercuryrepower.ca', () => {
@@ -454,18 +460,62 @@ describe('live deposit copy drift tripwires', () => {
       knowledgeBase.indexOf('## Reservation & Deposit System'),
       knowledgeBase.indexOf('## NO DELIVERY POLICY'),
     );
-    expect(depositSection).toContain('$200 deposit for portable motors (2.5 to 6 HP)');
-    expect(depositSection).toContain('$500 deposit for mid-range motors (9.9 to 115 HP)');
-    expect(depositSection).toContain('$1,000 deposit for big-block, Pro XS, or Verado (115 HP and up)');
+    expect(depositSection).toContain('$200 deposit up to 25 HP');
+    expect(depositSection).toContain('$500 deposit over 25 through 115 HP');
+    expect(depositSection).toContain('$1,000 deposit over 115 HP');
     expect(depositSection).toContain('model 1A10201LK');
     expect(depositSection).toContain('That amount does not change the refund rule.');
     expect(depositSection).toContain('Refundability follows stock status, not the deposit amount.');
     expect(depositSection).toContain('It does not itself start a factory order.');
     expect(depositSection).toContain('HBW does not pick up or deliver customer boats.');
+    expect(depositSection).not.toContain('2.5 to 6 HP');
+    expect(depositSection).not.toContain('9.9 to 115 HP');
     expect(depositSection).not.toContain('0-25HP');
     expect(depositSection).not.toContain('30-115HP');
     expect(depositSection).not.toContain('150HP+');
     expect(depositSection).not.toContain('Deposit is fully refundable');
+  });
+
+  it('keeps named live deposit-tier surfaces on the canonical HP boundaries and redirects /deposits', () => {
+    const namedTierSurfaces = [
+      'AI-Chatbot-Knowledge-Base.md',
+      'src/pages/RepowerFinancing.tsx',
+      'src/pages/AgentsHub.tsx',
+      'src/pages/RepowerProcess.tsx',
+      'src/pages/Deposits.tsx',
+      'src/App.tsx',
+      'supabase/functions/realtime-session/index.ts',
+      'supabase/functions/ai-chatbot/index.ts',
+      'supabase/functions/_shared/format-kb-documents.ts',
+      'supabase/functions/motors-md/index.ts',
+      'supabase/functions/agent-mcp-server/index.ts',
+      'public/.well-known/ai.txt',
+    ];
+    const combined = namedTierSurfaces.map((path) => readFileSync(path, 'utf8')).join('\n');
+    expect(combined).toContain('up to 25 HP');
+    expect(combined).toContain('over 25 through 115 HP');
+    expect(combined).toContain('over 115 HP');
+    expect(combined).toContain('1A10201LK');
+    expect(combined).not.toContain('2.5 to 6 HP');
+    expect(combined).not.toContain('9.9 to 115 HP');
+    expect(combined).not.toContain('under 75 HP');
+    expect(combined).not.toContain('75–199');
+    expect(combined).not.toContain('75-199');
+    expect(combined).not.toContain('under_75hp');
+    expect(combined).not.toContain('200hp_plus');
+    expect(combined).not.toContain('30-115HP');
+    expect(combined).not.toContain('30-115 HP');
+    expect(combined).not.toContain('0-25HP');
+    expect(combined).not.toContain('115 HP and up');
+    expect(combined).not.toContain('amount: "2500"');
+    expect(combined).not.toContain('<DepositPayment');
+
+    const app = readFileSync('src/App.tsx', 'utf8');
+    const deposits = readFileSync('src/pages/Deposits.tsx', 'utf8');
+    expect(app).toContain('<Route path="/deposits" element={<Navigate to="/quote" replace />} />');
+    expect(deposits).toContain('<Navigate to="/quote" replace />');
+    expect(deposits).not.toContain('DepositPayment');
+    expect(app).not.toContain('from "./pages/Deposits"');
   });
 
   it('binds policy from motor_models before Stripe and never infers it from $100', () => {

@@ -100,6 +100,9 @@ describe('quote funnel UX contract', () => {
     expect(pdfSource).toContain('customerPolicyText');
     expect(pdfSource).toContain('Reservation details');
     expect(pdfSource).not.toContain('Ready to lock this in?');
+    expect(read('src/App.tsx')).toContain('<Route path="/deposits" element={<Navigate to="/quote" replace />} />');
+    expect(read('src/pages/Deposits.tsx')).toContain('<Navigate to="/quote" replace />');
+    expect(read('src/pages/Deposits.tsx')).not.toContain('DepositPayment');
     expect(emailSource).toContain('filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`');
     expect(emailSource).not.toContain('HBW-reservation-');
     expect(emailSource).toContain('throw new Error("Deposit policy snapshot is missing")');

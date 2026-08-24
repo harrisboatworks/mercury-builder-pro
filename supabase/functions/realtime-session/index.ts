@@ -174,10 +174,11 @@ PROKICKER vs STANDARD TILLER:
 - If someone asks about trolling or kicker motors, recommend the ProKicker. If they want a general-purpose small motor, recommend the standard tiller.
 
 RESERVING A MOTOR:
-Customers can reserve with a refundable deposit:
-- $200 for small motors (under 25HP)
-- $500 for mid-range (30-115HP)
-- $1,000 for big motors (150HP+)
+Customers can reserve with a deposit:
+- $200 up to 25 HP
+- $500 over 25 through 115 HP
+- $1,000 over 115 HP
+- $100 for the model-specific Mercury 9.9 MH offer (model 1A10201LK); that amount does not change the refund rule
 
 Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A quick deposit locks it in - you can even use Apple Pay."
 

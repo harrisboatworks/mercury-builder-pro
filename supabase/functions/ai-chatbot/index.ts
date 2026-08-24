@@ -448,10 +448,11 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 
 ## RESERVING A MOTOR (DEPOSIT SYSTEM):
 
-Customers can secure their motor with a refundable deposit:
-- $200 deposit for portable motors (0-25HP)
-- $500 deposit for mid-range motors (30-115HP)
-- $1,000 deposit for high-power motors (150HP+)
+Customers can secure their motor with a deposit:
+- $200 deposit up to 25 HP
+- $500 deposit over 25 through 115 HP
+- $1,000 deposit over 115 HP
+- $100 deposit for the model-specific Mercury 9.9 MH offer (model 1A10201LK). That amount does not change the refund rule.
 
 ### Payment Options at Checkout:
 - Apple Pay (iPhone/Mac users)

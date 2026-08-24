@@ -9,6 +9,17 @@ describe('recommended quote deposit', () => {
     expect(getRecommendedDeposit(115)).toBe(500);
     expect(getRecommendedDeposit(150)).toBe(1000);
   });
+
+  it('uses exact unambiguous HP boundaries: 200 up to 25, 500 over 25 through 115, 1000 over 115', () => {
+    expect(getRecommendedDeposit(2.5)).toBe(200);
+    expect(getRecommendedDeposit(6)).toBe(200);
+    expect(getRecommendedDeposit(25)).toBe(200);
+    expect(getRecommendedDeposit(26)).toBe(500);
+    expect(getRecommendedDeposit(9.9)).toBe(200);
+    expect(getRecommendedDeposit(115)).toBe(500);
+    expect(getRecommendedDeposit(116)).toBe(1000);
+    expect(getRecommendedDeposit(200)).toBe(1000);
+  });
 });
 
 describe('getExpressReservationDeposit', () => {

@@ -335,9 +335,9 @@ When customers ask about specific motor features (electric start, tiller, shaft 
 ## Reservation & Deposit System
 
 ### Deposit Tiers:
-- $200 deposit for portable motors (2.5 to 6 HP)
-- $500 deposit for mid-range motors (9.9 to 115 HP)
-- $1,000 deposit for big-block, Pro XS, or Verado (115 HP and up)
+- $200 deposit up to 25 HP
+- $500 deposit over 25 through 115 HP
+- $1,000 deposit over 115 HP
 - $100 deposit for the model-specific Mercury 9.9 MH offer (model 1A10201LK). That amount does not change the refund rule.
 
 ### Payment Options at Checkout:

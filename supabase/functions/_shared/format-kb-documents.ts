@@ -753,13 +753,14 @@ Updated: ${now}
 
 ## Deposit Tiers
 
-Secure your motor with a refundable deposit based on horsepower:
+Secure your motor with a deposit based on horsepower. Refundability follows stock status, not the deposit amount.
 
 | Motor Size | HP Range | Deposit Amount |
 |------------|----------|----------------|
-| Portable | 0-25 HP | $200 |
-| Mid-Range | 30-115 HP | $500 |
-| High-Power | 150+ HP | $1,000 |
+| Standard | up to 25 HP | $200 |
+| Standard | over 25 through 115 HP | $500 |
+| Standard | over 115 HP | $1,000 |
+| 9.9 MH express | model 1A10201LK | $100 |
 
 ## Payment Methods
 
