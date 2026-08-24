@@ -230,6 +230,7 @@ export function isProductionDatabaseTarget(value: string): boolean {
 export function stripeSecretKind(value: string): "test" | "live" | "missing" | "other" {
   if (!value) return "missing";
   if (value.startsWith(["sk", "test"].join("_") + "_")) return "test";
+  if (value.startsWith(["rk", "test"].join("_") + "_")) return "test";
   if (value.startsWith(["sk", "live"].join("_") + "_")) return "live";
   if (value.startsWith(["rk", "live"].join("_") + "_")) return "live";
   return "other";

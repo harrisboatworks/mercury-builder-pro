@@ -21,7 +21,7 @@ Isolated branch project `ccozickwrpautlxknsjk` exists and is data-less: historic
 | Check | Rule |
 | --- | --- |
 | `STAGING_SUPABASE_URL` | Required HTTPS. Host must not be `eutsoqdpjurknjsshxes.supabase.co`. |
-| `STAGING_STRIPE_SECRET_KEY` | Must be test-mode (`sk` + `test`). Live (`sk`/`rk` + `live`) is rejected. |
+| `STAGING_STRIPE_SECRET_KEY` | Must be a test-mode secret or restricted key (`sk`/`rk` + `test`). Live (`sk`/`rk` + `live`) is rejected. |
 | Recipients | All three overrides required. Each must be one of the packet allowlist addresses (`delivered+deposit-customer@resend.dev`, `delivered+deposit-hbw@resend.dev`, `delivered+deposit-grok@resend.dev`), and the three must be distinct. `bounced+`, `example.invalid`, arbitrary `resend.dev` mailboxes, and production HBW/Grok/admin inboxes are rejected. |
 | `DEPOSIT_STAGING_MODE` | Must be `1` on the isolated project and in the runner env. |
 | `VERCEL_PREVIEW_URL` | Optional. Production web/Vercel aliases (`mercuryrepower.ca`, `mercury-builder-pro.vercel.app`, `…-git-main-hbw.vercel.app`, …) are rejected. |

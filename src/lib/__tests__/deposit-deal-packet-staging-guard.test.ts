@@ -60,9 +60,14 @@ describe('deposit deal-packet staging guard', () => {
       STAGING_DATABASE_URL: `https://${PRODUCTION_SUPABASE_HOSTS[0]}`,
     }).ok).toBe(false);
     expect(stripeSecretKind(['sk', 'live', 'x'].join('_'))).toBe('live');
+    expect(stripeSecretKind(['rk', 'live', 'x'].join('_'))).toBe('live');
     expect(assessStagingSafety({
       ...safeEnv,
       STAGING_STRIPE_SECRET_KEY: ['sk', 'live', 'x'].join('_'),
+    }).ok).toBe(false);
+    expect(assessStagingSafety({
+      ...safeEnv,
+      STAGING_STRIPE_SECRET_KEY: ['rk', 'live', 'x'].join('_'),
     }).ok).toBe(false);
     expect(assessStagingSafety({
       ...safeEnv,
@@ -72,6 +77,33 @@ describe('deposit deal-packet staging guard', () => {
       SUPABASE_URL: `https://${PRODUCTION_SUPABASE_HOSTS[0]}`,
     }).result).toBe('FAIL');
     expect(assessStagingSafety(safeEnv, {}).ok).toBe(true);
+  });
+
+  it('accepts restricted test Stripe keys and still rejects restricted live keys', () => {
+    const restrictedTest = ['rk', 'test', 'synthetic'].join('_');
+    const restrictedLive = ['rk', 'live', 'x'].join('_');
+    expect(stripeSecretKind(restrictedTest)).toBe('test');
+    expect(stripeSecretKind(restrictedLive)).toBe('live');
+    expect(stripeSecretKind(['sk', 'test', 'synthetic'].join('_'))).toBe('test');
+    expect(stripeSecretKind(['sk', 'live', 'x'].join('_'))).toBe('live');
+
+    const accepted = assessStagingSafety({
+      ...safeEnv,
+      STAGING_STRIPE_SECRET_KEY: restrictedTest,
+    });
+    expect(accepted.ok).toBe(true);
+    expect(accepted.stripeKeyKind).toBe('test');
+    expect(accepted.checks.find((check) => check.id === 'stripe_key_is_test')?.result).toBe('PASS');
+    expect(accepted.checks.find((check) => check.id === 'stripe_key_not_live')?.result).toBe('PASS');
+
+    const rejected = assessStagingSafety({
+      ...safeEnv,
+      STAGING_STRIPE_SECRET_KEY: restrictedLive,
+    });
+    expect(rejected.ok).toBe(false);
+    expect(rejected.stripeKeyKind).toBe('live');
+    expect(rejected.checks.find((check) => check.id === 'stripe_key_is_test')?.result).toBe('FAIL');
+    expect(rejected.checks.find((check) => check.id === 'stripe_key_not_live')?.result).toBe('FAIL');
   });
 
   it('allows only official Resend test-address forms on the packet allowlist', () => {
