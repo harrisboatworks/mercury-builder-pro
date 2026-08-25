@@ -63,6 +63,7 @@ describe('consultation rate-limit call-site contract', () => {
     const api = read('supabase/functions/consultation-document-api/index.ts');
     const mailer = read('supabase/functions/send-quote-email/index.ts');
     const sms = read('supabase/functions/send-sms/index.ts');
+    const submit = read('supabase/functions/submit-quote-lead/index.ts');
     const rateLimit = read('supabase/functions/_shared/rate-limit.ts');
 
     const redeemIp = extractCheck(api, 'consultation_document_redeem_ip');
@@ -71,6 +72,8 @@ describe('consultation rate-limit call-site contract', () => {
     const emailRecipient = extractCheck(mailer, 'send_quote_email_recipient');
     const smsIp = extractCheck(sms, 'send_sms_ip');
     const smsRecipient = extractCheck(sms, 'send_sms_recipient');
+    const submitIp = extractCheck(submit, 'submit_quote_lead_ip');
+    const submitEmail = extractCheck(submit, 'submit_quote_lead_email');
 
     expect(redeemIp).toContain('failClosed: true');
     expect(redeemToken).toContain('failClosed: true');
@@ -78,6 +81,8 @@ describe('consultation rate-limit call-site contract', () => {
     expect(emailRecipient).toContain('failClosed: isConsultationPath');
     expect(smsIp).toContain('failClosed: tokenBearing');
     expect(smsRecipient).toContain('failClosed: tokenBearing');
+    expect(submitIp).toContain('failClosed: true');
+    expect(submitEmail).toContain('failClosed: true');
 
     expect(mailer.match(/failClosed:\s*isConsultationPath/g)?.length).toBe(2);
     expect(sms.match(/failClosed:\s*tokenBearing/g)?.length).toBe(2);
@@ -104,5 +109,17 @@ describe('consultation rate-limit call-site contract', () => {
     const smsRecipientAt = sms.indexOf("action: 'send_sms_recipient'");
     expect(smsRecipientAt).toBeGreaterThan(smsIpAt);
     expect(sms.indexOf('api.twilio.com')).toBeGreaterThan(smsRecipientAt);
+
+    const turnstileAt = submit.indexOf('verifyTurnstileToken');
+    const insertAt = submit.indexOf('.from("customer_quotes")');
+    const resendAt = submit.indexOf('resend.emails.send');
+    const submitIpAt = submit.indexOf('submit_quote_lead_ip');
+    expect(turnstileAt).toBeGreaterThan(-1);
+    expect(submitIpAt).toBeGreaterThan(turnstileAt);
+    expect(insertAt).toBeGreaterThan(submitIpAt);
+    expect(resendAt).toBeGreaterThan(insertAt);
+    expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
+    expect(submit).not.toContain('attachments');
+    expect(submit).not.toContain('documentId');
   });
 });

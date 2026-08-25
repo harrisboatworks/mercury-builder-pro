@@ -34,7 +34,7 @@ describe('consultation delivery safety phase 1', () => {
     expect(client).not.toContain('FormData');
   });
 
-  it('removes automated customer SMS while keeping the contact-method selector and admin alerts', () => {
+  it('removes browser email/SMS relays and keeps text as later human follow-up', () => {
     const consultation = read('src/components/quote-builder/ScheduleConsultation.tsx');
 
     expect(consultation).toContain('Preferred Contact Method');
@@ -45,14 +45,14 @@ describe('consultation delivery safety phase 1', () => {
     expect(consultation).not.toContain("contactMethod === 'text'");
     expect(consultation).not.toContain("messageType: 'quote_confirmation'");
     expect(consultation).not.toContain('Thank you for requesting a Mercury motor quote');
-    expect(consultation.match(/invoke\('send-sms'/g)?.length ?? 0).toBe(1);
-    expect(consultation).toContain("to: '+19053766208'");
-    expect(consultation).toContain("messageType: 'hot_lead'");
-    expect(consultation).toContain("emailType: 'admin_quote_notification'");
-    expect(consultation).toContain("customerEmail: 'info@harrisboatworks.ca'");
     expect(consultation).toContain('submit-quote-lead');
     expect(consultation).toContain('triggerHotLeadWebhooks');
-    expect(consultation).toContain('triggerHotLeadSMS');
+    expect(consultation).not.toContain('triggerHotLeadSMS');
+    expect(consultation).not.toContain("invoke('send-sms'");
+    expect(consultation).not.toContain("invoke('send-quote-email'");
+    expect(consultation).not.toContain('.from(\'customer_quotes\')');
+    expect(consultation).toContain('turnstileToken');
+    expect(consultation).toContain('data-testid="consultation-turnstile"');
   });
 
   it('rejects multipart consultation uploads before persistence or provider calls', () => {

@@ -1,5 +1,5 @@
 import { RequiredMark } from "@/components/ui/required-mark";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -18,6 +18,7 @@ import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { useQuote } from '@/contexts/QuoteContext';
+import { getTurnstileSiteKey, loadTurnstileScript } from '@/lib/turnstile-client';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -39,8 +40,34 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
   const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
+  const turnstileSiteKey = getTurnstileSiteKey();
+
+  useEffect(() => {
+    if (!turnstileSiteKey || !turnstileHostRef.current) return;
+    let cancelled = false;
+    let widgetId: string | undefined;
+    loadTurnstileScript()
+      .then(() => {
+        if (cancelled || !turnstileHostRef.current || !window.turnstile) return;
+        widgetId = window.turnstile.render(turnstileHostRef.current, {
+          sitekey: turnstileSiteKey,
+          callback: (token: string) => setTurnstileToken(token),
+          'expired-callback': () => setTurnstileToken(''),
+          'error-callback': () => setTurnstileToken(''),
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setTurnstileToken('');
+      });
+    return () => {
+      cancelled = true;
+      if (widgetId && window.turnstile) window.turnstile.reset(widgetId);
+    };
+  }, [turnstileSiteKey]);
 
   const buildPdfData = (quoteNumber: string, customer: { name: string; email: string; phone?: string }) => {
     if (!pdfSnapshot) {
@@ -191,12 +218,15 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     // Anonymous users MUST be able to submit — the lead-capture step happens
     // BEFORE any account is created (the success page offers account creation).
     if (!quoteData.motor) return;
+    if (!turnstileToken) {
+      setErrors((prev) => ({ ...prev, turnstile: 'Please complete the verification check.' }));
+      return;
+    }
 
     setIsSubmitting(true);
 
-    // Declare variables that need to be accessible throughout the function
-    const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
     let quoteId: string | undefined;
+    let quoteNumber = '';
 
     try {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
@@ -234,65 +264,46 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         discount_amount: 0,
       };
 
-      if (user) {
-        // Authenticated path: unchanged direct insert under user's RLS.
-        const { data: inserted, error } = await supabase
-          .from('customer_quotes')
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- pre-existing customer_quotes insert cast
-          .insert({ user_id: user.id, ...insertPayload } as any)
-          .select('id')
-          .single();
-        if (error) throw error;
-        quoteId = inserted?.id;
-      } else {
-        // Anonymous path: route through service-role edge function so we don't
-        // silently no-op when nobody is logged in (the original bug). The
-        // function returns the new row id directly.
-        const { data: fnData, error: fnError } = await supabase.functions.invoke('submit-quote-lead', {
-          body: {
-            user_id: null,
-            customer_name: sanitizedContactInfo.name,
-            customer_email: sanitizedContactInfo.email,
-            customer_phone: sanitizedContactInfo.phone,
-            contact_method: sanitizedContactInfo.contactMethod,
-            notes: sanitizedContactInfo.notes,
-            motor_model: quoteData.motor?.model || null,
-            base_price: insertPayload.base_price,
-            final_price: insertPayload.final_price,
-            deposit_amount: insertPayload.deposit_amount,
-            loan_amount: insertPayload.loan_amount,
-            monthly_payment: insertPayload.monthly_payment,
-            term_months: insertPayload.term_months,
-            total_cost: insertPayload.total_cost,
-            tradein_value_pre_penalty: insertPayload.tradein_value_pre_penalty,
-            tradein_value_final: insertPayload.tradein_value_final,
-            penalty_applied: insertPayload.penalty_applied,
-            penalty_factor: insertPayload.penalty_factor,
-            penalty_reason: insertPayload.penalty_reason,
-          },
-        });
-        if (fnError) throw fnError;
-        if (fnData && fnData.success === false) {
-          throw new Error(fnData.error || 'Failed to submit quote');
-        }
-        quoteId = fnData?.quoteId;
+      const { data: fnData, error: fnError } = await supabase.functions.invoke('submit-quote-lead', {
+        body: {
+          customer_name: sanitizedContactInfo.name,
+          customer_email: sanitizedContactInfo.email,
+          customer_phone: sanitizedContactInfo.phone,
+          contact_method: sanitizedContactInfo.contactMethod,
+          notes: sanitizedContactInfo.notes,
+          motor_model: quoteData.motor?.model || null,
+          base_price: insertPayload.base_price,
+          final_price: insertPayload.final_price,
+          deposit_amount: insertPayload.deposit_amount,
+          loan_amount: insertPayload.loan_amount,
+          monthly_payment: insertPayload.monthly_payment,
+          term_months: insertPayload.term_months,
+          total_cost: insertPayload.total_cost,
+          tradein_value_pre_penalty: insertPayload.tradein_value_pre_penalty,
+          tradein_value_final: insertPayload.tradein_value_final,
+          penalty_applied: insertPayload.penalty_applied,
+          penalty_factor: insertPayload.penalty_factor,
+          penalty_reason: insertPayload.penalty_reason,
+          turnstileToken,
+        },
+      });
+      if (fnError) throw fnError;
+      if (fnData && fnData.success === false) {
+        throw new Error(fnData.error || 'Failed to submit quote');
+      }
+      quoteId = fnData?.quoteId;
+      quoteNumber = typeof fnData?.quoteNumber === 'string' ? fnData.quoteNumber : '';
+      if (!quoteId || !quoteNumber) {
+        throw new Error('Failed to submit quote');
       }
 
       // Mark the final step only after the lead record has been persisted.
       // useQuoteActivityTracker converts this confirmed state change into quote_submitted.
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
 
-      console.log('🔍 [NOTIFICATIONS] Starting notification process... quoteId:', quoteId);
-
-      // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
-      console.log('🔍 [NOTIFICATIONS] Step 1: Triggering hot lead webhooks...');
       try {
-        console.log('🔍 [NOTIFICATIONS] Importing webhook functions...');
         const { triggerHotLeadWebhooks } = await import('@/lib/webhooks');
-        const { triggerHotLeadSMS } = await import('@/lib/leadCapture');
-        console.log('✅ [NOTIFICATIONS] Webhook functions imported successfully');
-        
-        const leadWebhookData = {
+        await triggerHotLeadWebhooks({
           id: quoteId,
           customer_name: sanitizedContactInfo.name,
           customer_email: sanitizedContactInfo.email,
@@ -303,93 +314,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           created_at: new Date().toISOString(),
           lead_source: 'consultation',
           lead_status: 'scheduled'
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Lead webhook data:', leadWebhookData);
-        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadWebhooks...');
-        const webhookResult = await triggerHotLeadWebhooks(leadWebhookData);
-        console.log('✅ [NOTIFICATIONS] Hot lead webhooks triggered. Result:', webhookResult);
-        
-        // Send SMS to admin about hot lead
-        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadSMS...');
-        const smsData = {
-          customerName: sanitizedContactInfo.name,
-          leadScore: 75,
-          finalPrice: Math.round(totalCashPrice),
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          phoneNumber: sanitizedContactInfo.phone,
-        };
-        console.log('🔍 [NOTIFICATIONS] SMS data:', smsData);
-        const smsResult = await triggerHotLeadSMS(smsData);
-        console.log('✅ [NOTIFICATIONS] Hot lead SMS sent to admin. Result:', smsResult);
-      } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Hot lead notification error:', error);
-        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
-      }
-
-      // 2. Send admin notification email
-      console.log('🔍 [NOTIFICATIONS] Step 4: Sending admin notification email...');
-      try {
-        const adminEmailPayload = {
-          customerEmail: 'info@harrisboatworks.ca',
-          customerName: 'Harris Boat Works Admin',
-          quoteNumber: quoteNumber,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          emailType: 'admin_quote_notification',
-          leadData: {
-            customerName: sanitizedContactInfo.name,
-            customerEmail: sanitizedContactInfo.email,
-            customerPhone: sanitizedContactInfo.phone,
-            contactMethod: sanitizedContactInfo.contactMethod,
-            leadScore: 75,
-            quoteId: quoteId
-          }
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Admin email payload:', adminEmailPayload);
-        
-        const { data: adminEmailData, error: adminEmailError } = await supabase.functions.invoke('send-quote-email', {
-          body: adminEmailPayload
         });
-        
-        if (adminEmailError) {
-          console.error('❌ [NOTIFICATIONS] Admin email error:', adminEmailError);
-          throw adminEmailError;
-        }
-        console.log('✅ [NOTIFICATIONS] Admin email sent successfully. Response:', adminEmailData);
       } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Admin email failed:', error);
+        console.error('Hot lead webhook error:', error);
       }
 
-      // 3. Send admin SMS notification
-      console.log('🔍 [NOTIFICATIONS] Step 5: Sending admin SMS notification...');
-      try {
-        const adminSmsPayload = {
-          to: '+19053766208',
-          message: `🔥 NEW QUOTE SUBMITTED!\n\nCustomer: ${sanitizedContactInfo.name}\nMotor: ${quoteData.motor?.model || 'Mercury Motor'}\nQuote: $${Math.round(totalCashPrice).toLocaleString()}\nContact: ${sanitizedContactInfo.contactMethod}\n\nView: mercuryrepower.ca/admin/quotes\n\n- Harris Boat Works`,
-          messageType: 'hot_lead'
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Admin SMS payload:', adminSmsPayload);
-        
-        const { data: adminSmsData, error: adminSmsError } = await supabase.functions.invoke('send-sms', {
-          body: adminSmsPayload
-        });
-        
-        if (adminSmsError) {
-          console.error('❌ [NOTIFICATIONS] Admin SMS error:', adminSmsError);
-          throw adminSmsError;
-        }
-        console.log('✅ [NOTIFICATIONS] Admin SMS sent successfully. Response:', adminSmsData);
-      } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Admin SMS failed:', error);
-      }
-
-      console.log('✅ [NOTIFICATIONS] Notification process complete');
-
-      // Navigate to quote success page with reference number and contact info for account creation
       navigate(`/quote/success?ref=${quoteNumber}`, {
         state: {
           contactInfo: {
@@ -558,6 +487,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
             <div className="mt-2 mb-4 bg-repower-cream border border-repower-navy-900/10 p-4 rounded-sm text-[13px] text-repower-navy-900/80 leading-relaxed">
               A real person at Harris Boat Works reviews every request. This does not place an order or take payment. We usually confirm everything within 1 business day.
+            </div>
+            <div className="space-y-2">
+              <div ref={turnstileHostRef} data-testid="consultation-turnstile" />
+              {errors.turnstile && (
+                <p role="alert" className="text-sm text-destructive font-light">{errors.turnstile}</p>
+              )}
             </div>
             <button
               type="submit"

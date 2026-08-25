@@ -50,8 +50,8 @@ describe('private consultation document storage contract', () => {
     expect(sms).toContain('assertTokenSafeSmsLog');
     expect(sms).toContain('message: logMessage');
     expect(sms).not.toContain("console.log('SMS request:', smsData)");
-    expect(consultation.match(/invoke\('send-sms'/g)?.length ?? 0).toBe(1);
-    expect(consultation).toContain("to: '+19053766208'");
+    expect(consultation).not.toContain("invoke('send-sms'");
+    expect(consultation).not.toContain("to: '+19053766208'");
     expect(consultation).not.toContain("messageType: 'quote_confirmation'");
     expect(consultation).not.toContain('handleSendByText');
     expect(consultation).not.toContain("flow: 'send_sms'");
