@@ -3,6 +3,8 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import {
+  PUBLIC_CONSULTATION_SMS_UNAVAILABLE,
+  assertPublicConsultationSmsAllowed,
   assertTokenSafeSmsLog,
   isTokenBearingSmsMessage,
 } from "../_shared/consultation-sms-policy.ts";
@@ -97,15 +99,8 @@ serve(async (req) => {
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
-    // Resolve 'admin' to ADMIN_PHONE env var
+    const adminPhone = Deno.env.get('ADMIN_PHONE') || '+19053766208';
     if (smsData.to === 'admin') {
-      const adminPhone = Deno.env.get('ADMIN_PHONE');
-      if (!adminPhone) {
-        console.log('No ADMIN_PHONE configured, skipping admin SMS');
-        return new Response(JSON.stringify({ success: true, skipped: true, reason: 'no_admin_phone' }), {
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
       smsData.to = adminPhone;
     }
 
@@ -123,6 +118,36 @@ serve(async (req) => {
       formattedPhone = '+' + formattedPhone;
     } else if (!formattedPhone.startsWith('+')) {
       formattedPhone = '+' + formattedPhone;
+    }
+
+    try {
+      assertPublicConsultationSmsAllowed({
+        to: formattedPhone,
+        message: smsData.message,
+        adminPhone,
+      });
+    } catch (smsPolicyError) {
+      const message = smsPolicyError instanceof Error ? smsPolicyError.message : PUBLIC_CONSULTATION_SMS_UNAVAILABLE;
+      return new Response(JSON.stringify({ success: false, error: message }), {
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const { data: outbox, error: outboxError } = await supabase
+      .from('sms_logs')
+      .insert({
+        to_phone: formattedPhone,
+        message: logMessage,
+        status: 'pending',
+      })
+      .select('id')
+      .single();
+    if (tokenBearing && (outboxError || !outbox?.id)) {
+      return new Response(JSON.stringify({ success: false, error: 'SMS outbox unavailable' }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     // Create Twilio API request
@@ -151,6 +176,12 @@ serve(async (req) => {
 
     if (!response.ok) {
       console.error('Twilio error:', responseData);
+      if (outbox?.id) {
+        await supabase.from('sms_logs').update({
+          status: 'failed',
+          error: 'provider_error',
+        }).eq('id', outbox.id);
+      }
       throw new Error(`Twilio API error: ${responseData.message || 'Unknown error'}`);
     }
 
@@ -158,19 +189,14 @@ serve(async (req) => {
       console.log('SMS sent successfully:', responseData.sid);
     }
 
-    // Log SMS activity in database. Token-bearing sends store only the
-    // redacted audit text, never the Twilio body.
-    const { error: logError } = await supabase
-      .from('sms_logs')
-      .insert({
-        to_phone: formattedPhone,
-        message: logMessage,
-        status: 'sent',
-      });
-
-    if (logError) {
-      console.error('Error logging SMS:', logError);
-      // Don't fail the SMS if logging fails
+    if (outbox?.id) {
+      const { error: logError } = await supabase
+        .from('sms_logs')
+        .update({ status: 'sent' })
+        .eq('id', outbox.id);
+      if (logError) {
+        console.error('Error logging SMS:', logError instanceof Error ? logError.name : 'unknown');
+      }
     }
 
     return new Response(

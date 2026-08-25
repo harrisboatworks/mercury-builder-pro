@@ -30,6 +30,8 @@ import {
   replaceConsultationTemplateVariables,
 } from '../../../supabase/functions/_shared/consultation-quote-email.ts';
 import {
+  PUBLIC_CONSULTATION_SMS_UNAVAILABLE,
+  assertPublicConsultationSmsAllowed,
   assertTokenSafeSmsLog,
   isTokenBearingSmsMessage,
 } from '../../../supabase/functions/_shared/consultation-sms-policy.ts';
@@ -359,5 +361,24 @@ describe('consultation SMS safety', () => {
     expect(assertTokenSafeSmsLog({
       message: 'Thanks, we received your quote request.',
     })).toBe('Thanks, we received your quote request.');
+  });
+
+  it('keeps token-bearing SMS off public recipients until OTP exists', () => {
+    const message = `Open your quote ${consultationDocumentAccessUrl(TOKEN)}`;
+    expect(() => assertPublicConsultationSmsAllowed({
+      to: '+14165551234',
+      message,
+      adminPhone: '+19053766208',
+    })).toThrow(PUBLIC_CONSULTATION_SMS_UNAVAILABLE);
+    expect(() => assertPublicConsultationSmsAllowed({
+      to: '+19053766208',
+      message,
+      adminPhone: '+19053766208',
+    })).not.toThrow();
+    expect(() => assertPublicConsultationSmsAllowed({
+      to: '+14165551234',
+      message: 'NEW QUOTE SUBMITTED',
+      adminPhone: '+19053766208',
+    })).not.toThrow();
   });
 });

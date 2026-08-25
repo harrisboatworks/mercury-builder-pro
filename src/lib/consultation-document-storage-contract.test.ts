@@ -48,6 +48,9 @@ describe('private consultation document storage contract', () => {
     expect(api).toContain("console.error(\"consultation-document-api failed\", error instanceof Error ? error.name : \"unknown\")");
     expect(api).not.toContain('console.log');
     expect(sms).toContain('assertTokenSafeSmsLog');
+    expect(sms).toContain('assertPublicConsultationSmsAllowed');
+    expect(sms).toContain("status: 'pending'");
+    expect(sms.indexOf("status: 'pending'")).toBeLessThan(sms.indexOf('api.twilio.com'));
     expect(sms).toContain('message: logMessage');
     expect(sms).not.toContain("console.log('SMS request:', smsData)");
     expect(consultation).not.toContain("invoke('send-sms'");

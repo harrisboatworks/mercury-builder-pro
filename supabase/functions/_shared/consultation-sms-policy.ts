@@ -38,3 +38,28 @@ export function assertTokenSafeSmsLog(options: {
   }
   return parseSmsAuditMessage(options.auditMessage);
 }
+
+export const PUBLIC_CONSULTATION_SMS_UNAVAILABLE = "Public consultation SMS is unavailable";
+
+function digitsOnly(value: string): string {
+  return value.replace(/\D/g, "");
+}
+
+export function consultationSmsPhonesMatch(left: string, right: string): boolean {
+  const a = digitsOnly(left);
+  const b = digitsOnly(right);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  return a.length === 10 && b === `1${a}` || b.length === 10 && a === `1${b}`;
+}
+
+export function assertPublicConsultationSmsAllowed(options: {
+  to: string;
+  message: string;
+  adminPhone: string;
+}): void {
+  if (!isTokenBearingSmsMessage(options.message)) return;
+  if (!consultationSmsPhonesMatch(options.to, options.adminPhone)) {
+    throw new ConsultationDocumentRequestError(PUBLIC_CONSULTATION_SMS_UNAVAILABLE);
+  }
+}

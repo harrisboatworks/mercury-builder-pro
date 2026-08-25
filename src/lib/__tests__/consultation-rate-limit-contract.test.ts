@@ -110,8 +110,11 @@ describe('consultation rate-limit call-site contract', () => {
 
     const smsIpAt = sms.indexOf("action: 'send_sms_ip'");
     const smsRecipientAt = sms.indexOf("action: 'send_sms_recipient'");
+    const smsOutboxAt = sms.indexOf("status: 'pending'");
     expect(smsRecipientAt).toBeGreaterThan(smsIpAt);
-    expect(sms.indexOf('api.twilio.com')).toBeGreaterThan(smsRecipientAt);
+    expect(smsOutboxAt).toBeGreaterThan(smsRecipientAt);
+    expect(sms.indexOf('api.twilio.com')).toBeGreaterThan(smsOutboxAt);
+    expect(sms).toContain('assertPublicConsultationSmsAllowed');
 
     const turnstileAt = submit.indexOf('verifyTurnstileToken');
     const insertAt = submit.indexOf('.from("customer_quotes")');
@@ -121,7 +124,10 @@ describe('consultation rate-limit call-site contract', () => {
     expect(turnstileAt).toBeGreaterThan(-1);
     expect(submitIpAt).toBeGreaterThan(turnstileAt);
     expect(insertAt).toBeGreaterThan(submitIpAt);
+    const savedAt = submit.indexOf('.from("saved_quotes")');
     expect(mintAt).toBeGreaterThan(insertAt);
+    expect(savedAt).toBeGreaterThan(insertAt);
+    expect(mintAt).toBeGreaterThan(savedAt);
     expect(resendAt).toBeGreaterThan(mintAt);
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
     expect(submit).toContain('consultationPdfBase64(minted.pdfBytes)');

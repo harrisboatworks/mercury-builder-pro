@@ -18,6 +18,12 @@ import {
   markConsultationDocumentJobEmailed,
   mintConsultationDocument,
 } from "../_shared/consultation-document-mint.ts";
+import {
+  buildConsultationSavedQuoteState,
+  consultationSavedQuoteExpiry,
+  consultationSnapshotFromAuthoritativeQuote,
+  createConsultationResumeToken,
+} from "../_shared/consultation-authoritative-quote.ts";
 import { consultationSubmitDeliverySnapshot } from "../_shared/consultation-document-policy.ts";
 import {
   assertNoCallerDocumentDelivery,
@@ -206,19 +212,61 @@ serve(async (req) => {
     const destinations = consultationSubmitCustomerDestinations(String(data.customer_email));
     const persistedName = String(data.customer_name || p.customer_name);
     const persistedTotal = Number(data.final_price);
+    const draftSnapshot = consultationSubmitDeliverySnapshot({
+      customerName: persistedName,
+      customerEmail: data.customer_email,
+      customerPhone: data.customer_phone,
+      motorModel,
+      totalPrice: persistedTotal,
+    });
+    const quoteState = buildConsultationSavedQuoteState({
+      quoteNumber,
+      quoteId: String(data.id),
+      snapshot: draftSnapshot,
+    });
+    await supabase
+      .from("customer_quotes")
+      .update({ quote_data: quoteState })
+      .eq("id", data.id);
+
+    let savedQuoteState: unknown = quoteState;
+    const { data: savedQuote, error: savedQuoteError } = await supabase
+      .from("saved_quotes")
+      .insert({
+        email: String(data.customer_email),
+        resume_token: createConsultationResumeToken(),
+        quote_state: quoteState,
+        user_id: userId,
+        session_id: sessionId,
+        is_soft_lead: false,
+        is_completed: true,
+        reference_number: quoteNumber,
+        expires_at: consultationSavedQuoteExpiry(),
+      })
+      .select("id, email, quote_state")
+      .single();
+    if (!savedQuoteError && savedQuote?.quote_state) {
+      savedQuoteState = savedQuote.quote_state;
+    } else if (savedQuoteError) {
+      console.error("[submit-quote-lead] saved quote persist failed", savedQuoteError instanceof Error ? savedQuoteError.name : "unknown");
+    }
+
+    const snapshot = consultationSnapshotFromAuthoritativeQuote({
+      persistedName,
+      persistedEmail: data.customer_email,
+      persistedPhone: data.customer_phone,
+      quoteState: savedQuoteState,
+      fallbackMotor: motorModel,
+      fallbackTotal: persistedTotal,
+    });
+
     const writer = createSupabaseConsultationDocumentWriter(supabase);
     let minted: Awaited<ReturnType<typeof mintConsultationDocument>> | null = null;
     try {
       minted = await mintConsultationDocument({
         quoteId: String(data.id),
         quoteNumber,
-        snapshot: consultationSubmitDeliverySnapshot({
-          customerName: persistedName,
-          customerEmail: data.customer_email,
-          customerPhone: data.customer_phone,
-          motorModel,
-          totalPrice: persistedTotal,
-        }),
+        snapshot,
         writer,
       });
     } catch (mintError) {
@@ -234,10 +282,10 @@ serve(async (req) => {
           reply_to: HBW_ADMIN_QUOTE_INBOX,
           subject: `Your Mercury ${motorModel} quote, ref ${quoteNumber} | Harris Boat Works`,
           html: buildConsultationQuoteMintedEmail({
-            customerName: persistedName,
+            customerName: snapshot.customerName,
             quoteNumber,
-            motorModel,
-            totalPrice: persistedTotal,
+            motorModel: snapshot.motorModel,
+            totalPrice: snapshot.totalPrice,
             documentAccessUrl: minted.documentAccessUrl,
           }),
           attachments: [{
@@ -256,10 +304,10 @@ serve(async (req) => {
         reply_to: HBW_ADMIN_QUOTE_INBOX,
         subject: `We received your Mercury quote request (${quoteNumber})`,
         html: buildConsultationRequestReceivedEmail({
-          customerName: persistedName,
+          customerName: snapshot.customerName,
           quoteNumber,
-          motorModel,
-          totalPrice: persistedTotal,
+          motorModel: snapshot.motorModel,
+          totalPrice: snapshot.totalPrice,
         }),
       });
     }

@@ -85,6 +85,8 @@ describe('submit-bound consultation customer email', () => {
     expect(sendAt).toBeGreaterThan(mintAt);
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
     expect(submit).toContain('consultationSubmitDeliverySnapshot');
+    expect(submit).toContain('consultationSnapshotFromAuthoritativeQuote');
+    expect(submit).toContain('.from("saved_quotes")');
     expect(submit).toContain('buildConsultationQuoteMintedEmail');
     expect(submit).toContain('markConsultationDocumentJobEmailed');
     expect(submit).toContain('failClosed: true');
