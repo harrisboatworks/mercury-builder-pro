@@ -3695,7 +3695,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is 90 HP enough for a 22 ft pontoon?",
-        "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase sw…"
+        "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pull…"
       },
       {
         "q": "Why do pontoons need more HP than runabouts?",
