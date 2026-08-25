@@ -15,6 +15,9 @@ import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { usePrefetchedInsights } from '@/hooks/usePrefetchedInsights';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { FinancingCTACard } from './FinancingCTACard';
+import { TradeInCTACard } from './TradeInCTACard';
+import { ServiceCTACard } from './ServiceCTACard';
+import { RepowerCTACard } from './RepowerCTACard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
@@ -48,6 +51,9 @@ interface Message {
   };
   activityData?: VoiceActivityEvent;
   financingCTA?: import('./FinancingCTACard').FinancingCTAData;
+  tradeInCTA?: import('./TradeInCTACard').TradeInCTAData;
+  serviceCTA?: import('./ServiceCTACard').ServiceCTAData;
+  repowerCTA?: import('./RepowerCTACard').RepowerCTAData;
   pendingWrite?: ChatPendingWrite;
   writeStatus?: ChatWriteStatus;
 }
@@ -546,7 +552,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             scrollToBottom();
           },
           onDone: async (finalResponse) => {
-            const { displayText, financingCTA, pendingWrite } = parseAssistantCommandMarkers(finalResponse, {
+            const {
+              displayText,
+              financingCTA,
+              tradeInCTA,
+              serviceCTA,
+              repowerCTA,
+              pendingWrite,
+            } = parseAssistantCommandMarkers(finalResponse, {
               currentPage: location.pathname,
               motor: activeMotor,
               conversationHistory,
@@ -559,6 +572,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                     text: displayText,
                     isStreaming: false,
                     financingCTA,
+                    tradeInCTA,
+                    serviceCTA,
+                    repowerCTA,
                     pendingWrite,
                     writeStatus: pendingWrite ? 'needs_consent' : undefined,
                   }
@@ -755,6 +771,15 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                                 {/* Financing CTA Card */}
                                 {!message.isUser && message.financingCTA && (
                                   <FinancingCTACard data={message.financingCTA} />
+                                )}
+                                {!message.isUser && message.tradeInCTA && (
+                                  <TradeInCTACard data={message.tradeInCTA} />
+                                )}
+                                {!message.isUser && message.serviceCTA && (
+                                  <ServiceCTACard data={message.serviceCTA} />
+                                )}
+                                {!message.isUser && message.repowerCTA && (
+                                  <RepowerCTACard data={message.repowerCTA} />
                                 )}
                                 {!message.isUser && message.pendingWrite && message.writeStatus && (
                                   <ChatWriteConsentCard

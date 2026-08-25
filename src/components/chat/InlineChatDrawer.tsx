@@ -15,6 +15,9 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { FinancingCTACard } from './FinancingCTACard';
+import { TradeInCTACard } from './TradeInCTACard';
+import { ServiceCTACard } from './ServiceCTACard';
+import { RepowerCTACard } from './RepowerCTACard';
 import { ChatWriteConsentCard } from './ChatWriteConsentCard';
 import {
   CHAT_ERROR_TEXT,
@@ -51,6 +54,9 @@ interface Message {
   };
   activityData?: VoiceActivityEvent;
   financingCTA?: import('./FinancingCTACard').FinancingCTAData;
+  tradeInCTA?: import('./TradeInCTACard').TradeInCTAData;
+  serviceCTA?: import('./ServiceCTACard').ServiceCTAData;
+  repowerCTA?: import('./RepowerCTACard').RepowerCTAData;
   pendingWrite?: ChatPendingWrite;
   writeStatus?: ChatWriteStatus;
 }
@@ -635,7 +641,14 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           scrollToBottom();
         },
         onDone: async (finalResponse) => {
-          const { displayText, financingCTA, pendingWrite } = parseAssistantCommandMarkers(finalResponse, {
+          const {
+            displayText,
+            financingCTA,
+            tradeInCTA,
+            serviceCTA,
+            repowerCTA,
+            pendingWrite,
+          } = parseAssistantCommandMarkers(finalResponse, {
             currentPage: location.pathname,
             motor: activeMotor,
             conversationHistory,
@@ -648,6 +661,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                   text: displayText,
                   isStreaming: false,
                   financingCTA,
+                  tradeInCTA,
+                  serviceCTA,
+                  repowerCTA,
                   pendingWrite,
                   writeStatus: pendingWrite ? 'needs_consent' : undefined,
                 }
@@ -908,6 +924,21 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                           {!message.isUser && message.financingCTA && (
                             <div className="mt-2 max-w-[85%]">
                               <FinancingCTACard data={message.financingCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.tradeInCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <TradeInCTACard data={message.tradeInCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.serviceCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <ServiceCTACard data={message.serviceCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.repowerCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <RepowerCTACard data={message.repowerCTA} />
                             </div>
                           )}
                           {!message.isUser && message.pendingWrite && message.writeStatus && (

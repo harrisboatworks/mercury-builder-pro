@@ -888,7 +888,7 @@ Professional install at Harris Boat Works. Typical single-engine jobs are a half
   } else if (context?.currentPage?.includes('/quote/promo-selection')) {
     pageContext = `
 ## CURRENT PAGE: PROMOTION CHOICE
-Use ONLY the live promotion records in this prompt. If the promotion list is empty, say you'll confirm current offers with the team — do not invent a rebate dollar amount.
+Use ONLY the live promotion records in this prompt. If the promotion list is empty, say current offer data is unavailable in this chat and point to /promotions. Do not invent a rebate amount or date, and do not claim there is no active offer.
 `;
   } else if (context?.currentPage?.includes('/quote/summary')) {
     pageContext = `
@@ -1574,18 +1574,19 @@ ${motorSummary || 'Contact us for inventory'}
 ${promotionContext}
 
 **CRITICAL PROMOTION RULES:**
-- You have COMPLETE, ACCURATE promo data above - use it confidently!
+- When the PROMOTIONS block lists an active offer, that data is COMPLETE and ACCURATE for the offer - use it confidently.
+- When the PROMOTIONS block is empty, treat the data as unavailable, not as proof that no offer exists. Do not quote a rebate or date and do not claim there is no active promotion; point to [our promotions page](/promotions).
 - NEVER say "check Mercury's website" or "varies by region/dealer" - WE ARE THE DEALER
-- NEVER suggest calling for promo details - you have all the info
+- When live promotion records are present, NEVER suggest calling for promo details - you have all the info
 - ALWAYS link to [our promotions page](/promotions) - it has full details
 - Mention the end date to create urgency
 - If they're viewing an eligible motor, tell them the EXACT rebate amount for that HP and respect every listed exclusion
 
 **Example responses (use the PROMO DATA above for names, end dates, and bonus amounts — never invent dates):**
 - If the PROMOTIONS data block lists an active offer, describe it from that data, then say [check out all the options](/promotions).
-- If the PROMOTIONS block is empty, tell the customer there is no active promotion right now and point them to [our promotions page](/promotions) for the latest.
+- If the PROMOTIONS block is empty, say current promotion data is unavailable in this chat and point them to [our promotions page](/promotions) for the latest. Do not infer that no offer is active.
 
-DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
+When live records are present, do not hedge or add disclaimers about contacting Mercury. When records are absent, fail closed without asserting that no offer exists. Our /promotions page is the source of truth for this dealership.
 NEVER state a promo end date that isn't in the PROMO DATA block above.
 
 ## REPOWER BENEFITS (If relevant)

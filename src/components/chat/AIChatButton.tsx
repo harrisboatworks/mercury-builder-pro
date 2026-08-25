@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, Sparkles } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
 import { getMobileLauncherBottom } from './chatLayout';
@@ -13,7 +13,7 @@ interface AIChatButtonProps {
 
 export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }) => {
   const location = useLocation();
-  const isPhone = useIsMobile();
+  const isSmallScreen = useIsMobileOrTablet();
   const { unreadCount, isLoading } = useAIChat();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
@@ -34,8 +34,8 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
 
   if (isOpen) return null;
 
-  const positionClass = isPhone ? 'left-4' : 'right-4';
-  const bottom = isPhone
+  const positionClass = isSmallScreen ? 'left-4' : 'right-4';
+  const bottom = isSmallScreen
     ? getMobileLauncherBottom(location.pathname)
     : '1rem';
 

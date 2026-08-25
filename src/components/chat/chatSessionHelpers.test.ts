@@ -172,6 +172,22 @@ describe('parseAssistantCommandMarkers', () => {
     expect(parsed.pendingWrite?.payload.conversationContext).toBe('Price drop alert for 20HP motor');
     expect(invoke).not.toHaveBeenCalled();
   });
+
+  it('parses and preserves every non-writing CTA card', () => {
+    const parsed = parseAssistantCommandMarkers(
+      'Here are the next steps. ' +
+        '[TRADEIN_CTA: {"action":"quote","currentMotor":"90HP"}] ' +
+        '[SERVICE_CTA: {"issue":"rough idle","urgency":"normal"}] ' +
+        '[REPOWER_CTA: {"targetHP":115,"hasGuide":true}]',
+      { currentPage: '/quote/motor-selection' },
+    );
+
+    expect(parsed.displayText).toBe('Here are the next steps.');
+    expect(parsed.tradeInCTA).toEqual({ action: 'quote', currentMotor: '90HP' });
+    expect(parsed.serviceCTA).toEqual({ issue: 'rough idle', urgency: 'normal' });
+    expect(parsed.repowerCTA).toEqual({ targetHP: 115, hasGuide: true });
+    expect(invoke).not.toHaveBeenCalled();
+  });
 });
 
 describe('executeConfirmedChatWrite', () => {

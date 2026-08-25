@@ -140,7 +140,7 @@ export function buildPromotionCustomerAnswer(
 ): string {
   const active = filterPromotionsForCountry(promotions, country);
   if (!active.length) {
-    return 'I do not have an active promotion loaded right now, so I will not quote a rebate dollar amount. I will confirm current offers with the team — or see [current promotions](/promotions).';
+    return 'Current promotion data is unavailable in this chat, so I will not quote a rebate dollar amount or claim that no offer is active. See [current promotions](/promotions) for the latest dealership offers.';
   }
 
   const primary = active.find((promotion) =>
@@ -347,7 +347,7 @@ function formatPromotion(promotion: PromotionRecord): string {
 export function formatPromotionContext(promotions: PromotionRecord[]): string {
   const active = filterPromotionsForCountry(promotions);
   if (!active.length) {
-    return '## CURRENT PROMOTIONS & SPECIAL OFFERS\nNo active promotion is loaded. Do not quote a rebate dollar amount, name an expired offer, or invent a deal. Tell the customer you will confirm current offers with the team and point them to /promotions.';
+    return '## CURRENT PROMOTIONS & SPECIAL OFFERS\nCurrent promotion data is unavailable in this chat. This is not evidence that no offer is active. Do not quote a rebate dollar amount, name an expired offer, invent a deal, or claim that no promotion exists. Point the customer to /promotions for the latest dealership offers.';
   }
 
   return [
