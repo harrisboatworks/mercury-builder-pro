@@ -98,7 +98,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ---
 
-![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 250–300 HP (24–26 ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 300–400+ HP (26+ ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 
@@ -132,7 +132,7 @@ For anything in this category, the [Mercury 60 FourStroke is the right call](htt
 
 This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
 
-If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
+If you're running 6-8 people and pulling a tube occasionally, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** If tube pulling is a regular part of how you use the boat rather than an occasional thing, skip ahead to the watersports section and size up. The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
 
 See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026), if your boat is over 20 feet and you're running a four-stroke at 115 HP or below, Command Thrust is not optional (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard).
 
@@ -181,7 +181,7 @@ At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor
 > - **7 HP/ft**, tube pulling (4-6 people on board, pulling a tube)
 > - **10+ HP/ft**, watersports (wakeboarding, wakesurfing, real performance)
 >
-> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable tube pulling. A 115 HP doesn't make that cut.
+> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable, repeated tube pulling. A 115 HP will get a tube up occasionally. It doesn't make that cut as a regular job.
 
 ---
 
@@ -212,7 +212,7 @@ Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed
 There's a lot of wishful thinking around pontoon watersports. Here's what the real numbers look like:
 
 **Tube pulling (4-6 people on deck, pulling one tube):**
-Minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
+If tube pulling is a regular priority rather than occasional, minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
 
 **Wakeboarding or wake surfing:**
 You need a tritoon, and you need 250+ HP. The third tube adds stability and wake shape; the extra horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding. A tritoon at 200 HP starts to get there. At 250-300 HP, you have a genuinely capable platform.
@@ -280,7 +280,7 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 
 ---
 
-*Harris Boat Works. Mercury Marine Premier Dealer. Gores Landing, ON, est. 1947*
+*Harris Boat Works. Family-owned since 1947. Mercury dealer since 1965. Mercury Marine Premier Dealer. Gores Landing, ON*
 
 ---
 
@@ -292,7 +292,7 @@ It depends on tube count, hull length, load, and use case. As a starting framewo
 
 ### Is 90 HP enough for a 22 ft pontoon?
 
-Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.
+Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pulling is a regular priority. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.
 
 ### Why do pontoons need more HP than runabouts?
 
@@ -304,7 +304,7 @@ Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range
 
 ### How much horsepower do I need to pull a tube or wakeboard from a pontoon?
 
-For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.
+For regular tube pulling rather than the occasional run, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.
 
 ## Related guides
 
@@ -327,4 +327,3 @@ For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-fo
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
