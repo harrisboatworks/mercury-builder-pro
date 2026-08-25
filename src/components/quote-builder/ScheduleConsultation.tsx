@@ -218,7 +218,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     // Anonymous users MUST be able to submit — the lead-capture step happens
     // BEFORE any account is created (the success page offers account creation).
     if (!quoteData.motor) return;
-    if (!turnstileToken) {
+    if (turnstileSiteKey && !turnstileToken) {
       setErrors((prev) => ({ ...prev, turnstile: 'Please complete the verification check.' }));
       return;
     }
@@ -284,7 +284,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           penalty_applied: insertPayload.penalty_applied,
           penalty_factor: insertPayload.penalty_factor,
           penalty_reason: insertPayload.penalty_reason,
-          turnstileToken,
+          ...(turnstileToken ? { turnstileToken } : {}),
         },
       });
       if (fnError) throw fnError;

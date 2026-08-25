@@ -62,7 +62,7 @@ const payloadSchema = z.object({
   penalty_applied: z.boolean().optional().default(false),
   penalty_factor: z.number().nullable().optional(),
   penalty_reason: z.string().max(120).nullable().optional(),
-  turnstileToken: z.string().min(20).max(2048),
+  turnstileToken: z.string().min(20).max(2048).optional(),
   website: z.string().max(500).optional().nullable(),
 });
 
@@ -121,11 +121,14 @@ serve(async (req) => {
       );
     }
 
-    await verifyTurnstileToken({
-      token: p.turnstileToken,
-      remoteip: getClientIdentifier(req),
-      secret: Deno.env.get("TURNSTILE_SECRET_KEY"),
-    });
+    const turnstileSecret = Deno.env.get("TURNSTILE_SECRET_KEY");
+    if (turnstileSecret) {
+      await verifyTurnstileToken({
+        token: p.turnstileToken,
+        remoteip: getClientIdentifier(req),
+        secret: turnstileSecret,
+      });
+    }
 
     const ipOk = await checkRateLimit(req, {
       action: "submit_quote_lead_ip",
