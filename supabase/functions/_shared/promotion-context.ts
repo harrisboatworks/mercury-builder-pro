@@ -129,7 +129,7 @@ export function filterPromotionsForCountry(
 }
 
 export function isPromotionQuestion(question: string): boolean {
-  return /\b(promo(?:tion)?s?|rebates?|summer savings|special offer|current (?:deal|offer)|2\.99|combine\b[^.?!]{0,40}\bfinanc)\b/i.test(question);
+  return /\b(promo(?:tion)?s?|rebates?|summer savings|special offer|current (?:deal|offer)|2\.99|combine\b[^.?!]{0,40}\bfinanc|cash back|how much (?:do i |will i )?save|factory (?:rebate|credit)|you save)\b/i.test(question);
 }
 
 export function buildPromotionCustomerAnswer(
@@ -140,7 +140,7 @@ export function buildPromotionCustomerAnswer(
 ): string {
   const active = filterPromotionsForCountry(promotions, country);
   if (!active.length) {
-    return 'There is no active promotion loaded right now. See [current promotions](/promotions) for the latest dealership offers.';
+    return 'I do not have an active promotion loaded right now, so I will not quote a rebate dollar amount. I will confirm current offers with the team — or see [current promotions](/promotions).';
   }
 
   const primary = active.find((promotion) =>
@@ -347,7 +347,7 @@ function formatPromotion(promotion: PromotionRecord): string {
 export function formatPromotionContext(promotions: PromotionRecord[]): string {
   const active = filterPromotionsForCountry(promotions);
   if (!active.length) {
-    return '## CURRENT PROMOTIONS & SPECIAL OFFERS\nNo active promotion is loaded. Do not quote or name an expired offer.';
+    return '## CURRENT PROMOTIONS & SPECIAL OFFERS\nNo active promotion is loaded. Do not quote a rebate dollar amount, name an expired offer, or invent a deal. Tell the customer you will confirm current offers with the team and point them to /promotions.';
   }
 
   return [

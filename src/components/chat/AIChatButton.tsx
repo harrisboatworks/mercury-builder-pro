@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, Sparkles } from 'lucide-react';
-import { useIsMobileOrTablet } from '@/hooks/use-mobile';
+import { useLocation } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
+import { getMobileLauncherBottom } from './chatLayout';
 
 interface AIChatButtonProps {
   onOpenChat: () => void;
@@ -10,7 +12,8 @@ interface AIChatButtonProps {
 }
 
 export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }) => {
-  const isMobileOrTablet = useIsMobileOrTablet();
+  const location = useLocation();
+  const isPhone = useIsMobile();
   const { unreadCount, isLoading } = useAIChat();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
@@ -29,8 +32,12 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     onOpenChat();
   };
 
-  // Hide on mobile/tablet (handled by UnifiedMobileBar) or when chat is open
-  if (isMobileOrTablet || isOpen) return null;
+  if (isOpen) return null;
+
+  const positionClass = isPhone ? 'left-4' : 'right-4';
+  const bottom = isPhone
+    ? getMobileLauncherBottom(location.pathname)
+    : '1rem';
 
   return (
     <motion.button
@@ -39,8 +46,9 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
       onClick={handleClick}
-      className="fixed bottom-4 right-4 z-40 flex items-center justify-center h-12 w-12 bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group"
-      aria-label="Open AI Chat Assistant"
+      style={{ bottom }}
+      className={`fixed ${positionClass} z-40 flex items-center justify-center h-12 w-12 bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group`}
+      aria-label="Open Mercury Expert chat"
     >
       {showPulse && (
         <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />

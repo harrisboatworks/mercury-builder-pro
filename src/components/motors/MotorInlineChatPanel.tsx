@@ -4,10 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat } from '@/lib/streamParser';
 import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
-import { FinancingCTACard, parseFinancingCTA } from '../chat/FinancingCTACard';
-import { TradeInCTACard, parseTradeInCTA } from '../chat/TradeInCTACard';
-import { ServiceCTACard, parseServiceCTA } from '../chat/ServiceCTACard';
-import { RepowerCTACard, parseRepowerCTA } from '../chat/RepowerCTACard';
+import { FinancingCTACard } from '../chat/FinancingCTACard';
+import { TradeInCTACard } from '../chat/TradeInCTACard';
+import { ServiceCTACard } from '../chat/ServiceCTACard';
+import { RepowerCTACard } from '../chat/RepowerCTACard';
+import { ChatWriteConsentCard } from '../chat/ChatWriteConsentCard';
+import {
+  CHAT_ERROR_TEXT,
+  buildChatQuoteProgress,
+  parseAssistantCommandMarkers,
+  stripStreamingCommandMarkers,
+  type ChatPendingWrite,
+  type ChatWriteStatus,
+} from '../chat/chatSessionHelpers';
 
 import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
@@ -27,6 +36,8 @@ interface Message {
   tradeInCTA?: import('../chat/TradeInCTACard').TradeInCTAData | null;
   serviceCTA?: import('../chat/ServiceCTACard').ServiceCTAData | null;
   repowerCTA?: import('../chat/RepowerCTACard').RepowerCTAData | null;
+  pendingWrite?: ChatPendingWrite;
+  writeStatus?: ChatWriteStatus;
 }
 
 interface MotorInlineChatPanelProps {
@@ -160,6 +171,7 @@ export function MotorInlineChatPanel({
   const [isLoading, setIsLoading] = useState(false);
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const [hasInitialized, setHasInitialized] = useState(false);
+  const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -239,6 +251,7 @@ export function MotorInlineChatPanel({
 
   const handleSend = async (text: string = inputText) => {
     if (!text.trim() || isLoading) return;
+    setLastFailedMessage(null);
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -281,10 +294,11 @@ export function MotorInlineChatPanel({
           },
           currentPage: location.pathname,
           boatInfo: state.boatInfo,
+          quoteProgress: buildChatQuoteProgress(location.pathname, state),
         },
         onDelta: (chunk) => {
           fullResponse += chunk;
-          const displayText = fullResponse.replace(/\[LEAD_CAPTURE:.*$/s, '').trim();
+          const displayText = stripStreamingCommandMarkers(fullResponse);
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
               ? { ...msg, text: displayText, isStreaming: true }
@@ -293,49 +307,71 @@ export function MotorInlineChatPanel({
           scrollToBottom();
         },
         onDone: async (finalResponse) => {
-          // Parse lead capture marker
-          let displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
-          
-          // Parse all CTA types
-          const { displayText: afterFinancing, ctaData: financingCTA } = parseFinancingCTA(displayResponse);
-          const { displayText: afterTradeIn, ctaData: tradeInCTA } = parseTradeInCTA(afterFinancing);
-          const { displayText: afterService, ctaData: serviceCTA } = parseServiceCTA(afterTradeIn);
-          const { displayText: afterRepower, ctaData: repowerCTA } = parseRepowerCTA(afterService);
-          displayResponse = afterRepower;
+          const parsed = parseAssistantCommandMarkers(finalResponse, {
+            currentPage: location.pathname,
+            motor: {
+              id: motor.id,
+              model: motorTitle,
+              hp,
+              price,
+              family: motor.family,
+              description: motor.description,
+              features: motor.features,
+            },
+            conversationHistory,
+          });
           
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA, tradeInCTA, serviceCTA, repowerCTA }
+              ? {
+                  ...msg,
+                  text: parsed.displayText,
+                  isStreaming: false,
+                  financingCTA: parsed.financingCTA,
+                  tradeInCTA: parsed.tradeInCTA,
+                  serviceCTA: parsed.serviceCTA,
+                  repowerCTA: parsed.repowerCTA,
+                  pendingWrite: parsed.pendingWrite,
+                  writeStatus: parsed.pendingWrite ? 'needs_consent' : undefined,
+                }
               : msg
           ));
           
-          const assistantDbId = await saveMessage(displayResponse, 'assistant');
+          const assistantDbId = await saveMessage(parsed.displayText, 'assistant');
           if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
           
           setConversationHistory(prev => [
             ...prev,
             { role: 'user', content: text.trim() },
-            { role: 'assistant', content: displayResponse }
+            { role: 'assistant', content: parsed.displayText }
           ]);
           
           setIsLoading(false);
         },
         onError: (error) => {
           console.error('Inline chat error:', error);
-          const errorText = "Sorry, I'm having trouble. Try again or call us at 905-342-2153.";
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: errorText, isStreaming: false }
+              ? { ...msg, text: CHAT_ERROR_TEXT, isStreaming: false }
               : msg
           ));
+          setLastFailedMessage(text.trim());
           setIsLoading(false);
         }
       });
 
     } catch (error) {
       console.error('Chat error:', error);
+      setLastFailedMessage(text.trim());
       setIsLoading(false);
     }
+  };
+
+  const handleRetry = () => {
+    if (!lastFailedMessage) return;
+    const retryText = lastFailedMessage;
+    setLastFailedMessage(null);
+    handleSend(retryText);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -369,6 +405,7 @@ export function MotorInlineChatPanel({
         <button
           onClick={handleStartFresh}
           className="rounded-full border border-transparent p-2 text-repower-navy-900/45 transition-colors hover:border-repower-navy-900/10 hover:bg-[#FFFDF8] hover:text-repower-navy-900"
+          aria-label="Start fresh conversation"
           title="Start fresh conversation"
         >
           <RefreshCw className="w-4 h-4" />
@@ -436,6 +473,17 @@ export function MotorInlineChatPanel({
               {!msg.isUser && msg.repowerCTA && (
                 <RepowerCTACard data={msg.repowerCTA} />
               )}
+              {!msg.isUser && msg.pendingWrite && msg.writeStatus && (
+                <ChatWriteConsentCard
+                  write={msg.pendingWrite}
+                  status={msg.writeStatus}
+                  onStatusChange={(status) => {
+                    setMessages((prev) => prev.map((item) =>
+                      item.id === msg.id ? { ...item, writeStatus: status } : item
+                    ));
+                  }}
+                />
+              )}
             </div>
           </div>
         ))}
@@ -453,9 +501,20 @@ export function MotorInlineChatPanel({
 
       {/* Input Area */}
       <div className="shrink-0 border-t border-repower-navy-900/10 bg-[#F8F5EE]/95 px-4 py-3 backdrop-blur-md">
+        {lastFailedMessage && !isLoading && (
+          <button
+            type="button"
+            onClick={handleRetry}
+            aria-label="Retry last message"
+            className="mb-2 rounded-full border border-repower-navy-900/10 bg-[#FFFDF8] px-3 py-1 text-xs text-repower-navy-900/72"
+          >
+            Retry
+          </button>
+        )}
         <div className="flex items-center gap-2">
           <button
             onClick={handleVoiceStart}
+            aria-label="Start voice chat"
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-repower-navy-900/10 bg-[#FFFDF8] text-repower-navy-900/58 shadow-sm transition-colors hover:border-repower-navy-900/20 hover:text-repower-navy-900"
             title="Voice chat"
           >
@@ -469,11 +528,13 @@ export function MotorInlineChatPanel({
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask anything about this motor..."
+              aria-label="Ask the Mercury Expert"
               className="w-full rounded-full border border-repower-navy-900/12 bg-[#FFFDF8] py-2.5 pl-4 pr-12 text-sm text-repower-navy-900 shadow-[inset_0_1px_2px_rgba(5,14,28,0.04)] placeholder:text-repower-navy-900/38 focus:border-repower-navy-900/25 focus:outline-none focus:ring-2 focus:ring-[#C9A24A]/20"
               disabled={isLoading}
             />
             <button
               onClick={() => handleSend()}
+              aria-label="Send message"
               disabled={!inputText.trim() || isLoading}
               className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-repower-mercury-red transition-colors hover:text-[#9A0C24] disabled:cursor-not-allowed disabled:opacity-35"
             >

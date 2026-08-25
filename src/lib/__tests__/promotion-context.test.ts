@@ -110,6 +110,9 @@ describe('promotion context', () => {
 
   it('never resurrects an expired offer when no active rows are supplied', () => {
     expect(formatPromotionContext([])).toContain('No active promotion is loaded');
-    expect(formatPromotionContext([])).toContain('Do not quote or name an expired offer');
+    expect(formatPromotionContext([])).toContain('Do not quote a rebate dollar amount');
+    expect(formatPromotionContext([])).toContain('name an expired offer');
+    expect(buildPromotionCustomerAnswer([])).toContain('will not quote a rebate dollar amount');
+    expect(buildPromotionCustomerAnswer([])).not.toMatch(/\$\d/);
   });
 });
