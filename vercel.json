@@ -939,6 +939,10 @@
       "destination": "/about/index.html"
     },
     {
+      "source": "/harris-boat-works",
+      "destination": "/harris-boat-works/index.html"
+    },
+    {
       "source": "/contact",
       "destination": "/contact/index.html"
     },

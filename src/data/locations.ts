@@ -86,6 +86,7 @@ export const locations: LocationPageData[] = [
     whyChooseUs: TRUST_FACTS,
     recommendedLinks: [
       QUOTE_LINK,
+      { label: 'Harris Boat Works in Gores Landing', href: '/harris-boat-works' },
       { label: 'Bass boat repower case study (150 → 150 Pro XS)', href: '/case-studies/bass-boat-150-to-150-pro-xs' },
       { label: 'Walkaround cuddy repower (90 → 115 EFI)', href: '/case-studies/walkaround-cuddy-90-to-115-efi' },
       REPOWER_LINK,
