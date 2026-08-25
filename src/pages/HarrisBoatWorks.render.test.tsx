@@ -11,7 +11,11 @@ vi.mock('@/components/ui/site-footer', () => ({
   SiteFooter: () => <footer>SiteFooter</footer>,
 }));
 vi.mock('@/components/maps/GoogleMapEmbed', () => ({
-  GoogleMapEmbed: () => <div>Map</div>,
+  GoogleMapEmbed: ({ center }: { center?: { latitude: number; longitude: number } }) => (
+    <div data-latitude={center?.latitude} data-longitude={center?.longitude}>
+      Map
+    </div>
+  ),
 }));
 
 describe('Harris Boat Works brand page render', () => {
@@ -37,6 +41,8 @@ describe('Harris Boat Works brand page render', () => {
     expect(html).toContain('not the family history');
     expect(html).toContain('December 1');
     expect(html).toContain('Who is Harris Boat Works?');
+    expect(html).toContain('data-latitude="44.121684"');
+    expect(html).toContain('data-longitude="-78.241502"');
     expect(html).not.toContain('\u2014');
     expect(html).not.toMatch(/Platinum/);
   });

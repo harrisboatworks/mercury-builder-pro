@@ -11,7 +11,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { HarrisBoatWorksBrandPageSEO } from '@/components/seo/HarrisBoatWorksBrandPageSEO';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
-import { COMPANY_INFO } from '@/lib/companyInfo';
+import { BUSINESS_GEO, COMPANY_INFO } from '@/lib/companyInfo';
 import {
   HARRIS_BOAT_WORKS_BRAND_FAQS,
   HARRIS_BOAT_WORKS_BRAND_H1,
@@ -210,7 +210,11 @@ export default function HarrisBoatWorks() {
           </div>
 
           <div>
-            <GoogleMapEmbed className="min-h-[280px] md:min-h-[360px]" height="100%" />
+            <GoogleMapEmbed
+              center={BUSINESS_GEO}
+              className="min-h-[280px] md:min-h-[360px]"
+              height="100%"
+            />
             <p className="mt-3 font-sans text-sm text-repower-navy-900/60">
               <a
                 href={HARRIS_BOAT_WORKS_DIRECTIONS_HREF}
