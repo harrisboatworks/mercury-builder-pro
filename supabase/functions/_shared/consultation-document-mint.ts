@@ -33,12 +33,37 @@ export interface ConsultationCapabilityInsert {
   expires_at: string;
 }
 
+export const CONSULTATION_DOCUMENT_JOB_STATUSES = [
+  "started",
+  "persisted",
+  "emailed",
+  "failed",
+  "cleaned",
+] as const;
+export type ConsultationDocumentJobStatus = (typeof CONSULTATION_DOCUMENT_JOB_STATUSES)[number];
+
+export interface ConsultationDocumentJobInsert {
+  id: string;
+  quote_id: string;
+  document_id: string;
+  storage_key: string;
+  quote_number: string;
+  sha256: string;
+  status: ConsultationDocumentJobStatus;
+  error_name: string | null;
+}
+
 export interface ConsultationDocumentWriter {
   insertDocument(row: ConsultationDocumentInsert): Promise<{ id: string }>;
   uploadPdf(path: string, bytes: Uint8Array): Promise<void>;
   insertCapability(row: ConsultationCapabilityInsert): Promise<void>;
   deleteDocument(id: string): Promise<void>;
   removePdf(path: string): Promise<void>;
+  insertJob?(row: ConsultationDocumentJobInsert): Promise<{ id: string } | null>;
+  updateJob?(
+    id: string,
+    patch: { status: ConsultationDocumentJobStatus; error_name?: string | null },
+  ): Promise<void>;
 }
 
 export interface MintConsultationDocumentResult {
@@ -46,13 +71,65 @@ export interface MintConsultationDocumentResult {
   documentAccessUrl: string;
   sha256: string;
   pdfBytes: Uint8Array;
+  jobId: string | null;
 }
 
-async function ignoreCleanup(task: () => Promise<void>): Promise<void> {
+function jobErrorName(error: unknown): string {
+  if (error instanceof Error && error.name && error.name !== "Error") return error.name;
+  if (error instanceof Error && error.message) {
+    const firstWord = error.message.split(/[\s:]+/)[0];
+    return firstWord.slice(0, 64) || "Error";
+  }
+  return "Error";
+}
+
+async function recordJob(
+  writer: ConsultationDocumentWriter,
+  row: ConsultationDocumentJobInsert,
+): Promise<string | null> {
+  if (!writer.insertJob) return null;
   try {
-    await task();
+    const recorded = await writer.insertJob(row);
+    return recorded?.id || null;
   } catch {
-    // Compensating cleanup is best-effort. Retention still owns orphans.
+    return null;
+  }
+}
+
+async function markJob(
+  writer: ConsultationDocumentWriter,
+  jobId: string | null,
+  status: ConsultationDocumentJobStatus,
+  error?: unknown,
+): Promise<void> {
+  if (!jobId || !writer.updateJob) return;
+  try {
+    await writer.updateJob(jobId, {
+      status,
+      error_name: error ? jobErrorName(error) : null,
+    });
+  } catch {
+    // Retention still owns jobs that cannot be marked.
+  }
+}
+
+export async function markConsultationDocumentJobEmailed(
+  writer: ConsultationDocumentWriter,
+  jobId: string | null,
+): Promise<void> {
+  await markJob(writer, jobId, "emailed");
+}
+
+async function compensateMintFailure(
+  writer: ConsultationDocumentWriter,
+  options: { documentId: string; storageKey: string; uploaded: boolean },
+): Promise<boolean> {
+  try {
+    if (options.uploaded) await writer.removePdf(options.storageKey);
+    await writer.deleteDocument(options.documentId);
+    return true;
+  } catch {
+    return false;
   }
 }
 
@@ -62,6 +139,9 @@ export function createSupabaseConsultationDocumentWriter(supabase: {
       select: (columns: string) => {
         single: () => Promise<{ data: { id?: string } | null; error: unknown }>;
       };
+    };
+    update: (row: Record<string, unknown>) => {
+      eq: (column: string, value: string) => Promise<{ error: unknown }>;
     };
     delete: () => {
       eq: (column: string, value: string) => Promise<{ error: unknown }>;
@@ -110,10 +190,38 @@ export function createSupabaseConsultationDocumentWriter(supabase: {
       }
     },
     async deleteDocument(id) {
-      await supabase.from("consultation_documents").delete().eq("id", id);
+      const { error } = await supabase.from("consultation_documents").delete().eq("id", id);
+      if (error) {
+        throw new ConsultationDocumentRequestError("Consultation document cleanup failed");
+      }
     },
     async removePdf(path) {
-      await supabase.storage.from(CONSULTATION_DOCUMENTS_BUCKET).remove([path]);
+      const { error } = await supabase.storage.from(CONSULTATION_DOCUMENTS_BUCKET).remove([path]);
+      if (error) {
+        throw new ConsultationDocumentRequestError("Consultation document cleanup failed");
+      }
+    },
+    async insertJob(row) {
+      const { data, error } = await supabase
+        .from("consultation_document_jobs")
+        .insert(row)
+        .select("id")
+        .single();
+      if (error || !data?.id) return null;
+      return { id: parseConsultationDocumentId(data.id) };
+    },
+    async updateJob(id, patch) {
+      const { error } = await supabase
+        .from("consultation_document_jobs")
+        .update({
+          status: patch.status,
+          error_name: patch.error_name ?? null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", id);
+      if (error) {
+        throw new ConsultationDocumentRequestError("Consultation document job update failed");
+      }
     },
   };
 }
@@ -161,11 +269,26 @@ export async function mintConsultationDocument(options: {
   };
 
   await options.writer.insertDocument(documentRow);
+  const jobId = await recordJob(options.writer, {
+    id: parseConsultationDocumentId(crypto.randomUUID()),
+    quote_id: quoteId,
+    document_id: documentId,
+    storage_key: storageKey,
+    quote_number: quoteNumber,
+    sha256,
+    status: "started",
+    error_name: null,
+  });
 
   try {
     await options.writer.uploadPdf(storageKey, pdfBytes);
   } catch (error) {
-    await ignoreCleanup(() => options.writer.deleteDocument(documentId));
+    const cleaned = await compensateMintFailure(options.writer, {
+      documentId,
+      storageKey,
+      uploaded: false,
+    });
+    await markJob(options.writer, jobId, cleaned ? "cleaned" : "failed", error);
     throw error;
   }
 
@@ -179,16 +302,23 @@ export async function mintConsultationDocument(options: {
       expires_at: consultationCapabilityExpiry(options.now),
     });
   } catch (error) {
-    await ignoreCleanup(() => options.writer.removePdf(storageKey));
-    await ignoreCleanup(() => options.writer.deleteDocument(documentId));
+    const cleaned = await compensateMintFailure(options.writer, {
+      documentId,
+      storageKey,
+      uploaded: true,
+    });
+    await markJob(options.writer, jobId, cleaned ? "cleaned" : "failed", error);
     throw error;
   }
+
+  await markJob(options.writer, jobId, "persisted");
 
   return {
     documentId,
     documentAccessUrl: consultationDocumentAccessUrl(access.token),
     sha256,
     pdfBytes,
+    jobId,
   };
 }
 

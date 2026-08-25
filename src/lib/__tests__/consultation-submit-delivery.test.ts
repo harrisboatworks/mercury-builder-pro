@@ -86,6 +86,7 @@ describe('submit-bound consultation customer email', () => {
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
     expect(submit).toContain('consultationSubmitDeliverySnapshot');
     expect(submit).toContain('buildConsultationQuoteMintedEmail');
+    expect(submit).toContain('markConsultationDocumentJobEmailed');
     expect(submit).toContain('failClosed: true');
     expect(submit).not.toContain('user_id: p.user_id');
     expect(submit).toContain('supabase.auth.getUser');

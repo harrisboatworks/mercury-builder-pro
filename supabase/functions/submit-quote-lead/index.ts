@@ -15,6 +15,7 @@ import { MISSING_TURNSTILE, verifyTurnstileToken } from "../_shared/turnstile.ts
 import {
   createSupabaseConsultationDocumentWriter,
   consultationPdfBase64,
+  markConsultationDocumentJobEmailed,
   mintConsultationDocument,
 } from "../_shared/consultation-document-mint.ts";
 import { consultationSubmitDeliverySnapshot } from "../_shared/consultation-document-policy.ts";
@@ -205,6 +206,7 @@ serve(async (req) => {
     const destinations = consultationSubmitCustomerDestinations(String(data.customer_email));
     const persistedName = String(data.customer_name || p.customer_name);
     const persistedTotal = Number(data.final_price);
+    const writer = createSupabaseConsultationDocumentWriter(supabase);
     let minted: Awaited<ReturnType<typeof mintConsultationDocument>> | null = null;
     try {
       minted = await mintConsultationDocument({
@@ -217,7 +219,7 @@ serve(async (req) => {
           motorModel,
           totalPrice: persistedTotal,
         }),
-        writer: createSupabaseConsultationDocumentWriter(supabase),
+        writer,
       });
     } catch (mintError) {
       console.error("[submit-quote-lead] document mint failed", mintError instanceof Error ? mintError.name : "unknown");
@@ -225,23 +227,28 @@ serve(async (req) => {
 
     const resend = new Resend(resendKey);
     if (minted) {
-      await resend.emails.send({
-        from: CUSTOMER_QUOTE_SENDER,
-        to: destinations.to,
-        reply_to: HBW_ADMIN_QUOTE_INBOX,
-        subject: `Your Mercury ${motorModel} quote, ref ${quoteNumber} | Harris Boat Works`,
-        html: buildConsultationQuoteMintedEmail({
-          customerName: persistedName,
-          quoteNumber,
-          motorModel,
-          totalPrice: persistedTotal,
-          documentAccessUrl: minted.documentAccessUrl,
-        }),
-        attachments: [{
-          filename: `Quote-${quoteNumber}.pdf`,
-          content: consultationPdfBase64(minted.pdfBytes),
-        }],
-      });
+      try {
+        await resend.emails.send({
+          from: CUSTOMER_QUOTE_SENDER,
+          to: destinations.to,
+          reply_to: HBW_ADMIN_QUOTE_INBOX,
+          subject: `Your Mercury ${motorModel} quote, ref ${quoteNumber} | Harris Boat Works`,
+          html: buildConsultationQuoteMintedEmail({
+            customerName: persistedName,
+            quoteNumber,
+            motorModel,
+            totalPrice: persistedTotal,
+            documentAccessUrl: minted.documentAccessUrl,
+          }),
+          attachments: [{
+            filename: `Quote-${quoteNumber}.pdf`,
+            content: consultationPdfBase64(minted.pdfBytes),
+          }],
+        });
+        await markConsultationDocumentJobEmailed(writer, minted.jobId);
+      } catch (emailError) {
+        console.error("[submit-quote-lead] customer email failed", emailError instanceof Error ? emailError.name : "unknown");
+      }
     } else {
       await resend.emails.send({
         from: CUSTOMER_QUOTE_SENDER,

@@ -83,6 +83,9 @@ describe('private consultation document storage contract', () => {
     const consultationMigration = read(
       'supabase/migrations/20260822234500_create_consultation_documents.sql',
     );
+    const retentionMigration = read(
+      'supabase/migrations/20260825010000_consultation_document_jobs_and_retention.sql',
+    );
     const quotesMigration = read(
       'supabase/migrations/20260822184600_enforce_quote_document_authority.sql',
     );
@@ -100,6 +103,10 @@ describe('private consultation document storage contract', () => {
     expect(consultationMigration).not.toMatch(/bucket_id\s*=\s*'spec-sheets'/);
     expect(consultationMigration).not.toMatch(/UPDATE\s+storage\.buckets[\s\S]*spec-sheets/i);
     expect(consultationMigration).not.toMatch(/DELETE\s+FROM\s+storage\.objects/i);
+    expect(retentionMigration).not.toMatch(/bucket_id\s*=\s*'spec-sheets'/);
+    expect(retentionMigration).not.toMatch(/UPDATE\s+storage\.buckets/i);
+    expect(retentionMigration).not.toMatch(/DELETE\s+FROM\s+storage\.objects/i);
+    expect(retentionMigration).not.toContain('cron.schedule');
     expect(quotesMigration).not.toContain('spec-sheets');
     expect(consultationMigration).toContain('{{documentAccessUrl}}');
     expect(consultationMigration).toContain('A PDF copy of your full quote is attached to this email.');

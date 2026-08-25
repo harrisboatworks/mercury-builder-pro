@@ -64,6 +64,7 @@ describe('consultation rate-limit call-site contract', () => {
     const mailer = read('supabase/functions/send-quote-email/index.ts');
     const sms = read('supabase/functions/send-sms/index.ts');
     const submit = read('supabase/functions/submit-quote-lead/index.ts');
+    const retention = read('supabase/functions/consultation-document-retention/index.ts');
     const rateLimit = read('supabase/functions/_shared/rate-limit.ts');
 
     const redeemIp = extractCheck(api, 'consultation_document_redeem_ip');
@@ -74,6 +75,7 @@ describe('consultation rate-limit call-site contract', () => {
     const smsRecipient = extractCheck(sms, 'send_sms_recipient');
     const submitIp = extractCheck(submit, 'submit_quote_lead_ip');
     const submitEmail = extractCheck(submit, 'submit_quote_lead_email');
+    const retentionIp = extractCheck(retention, 'consultation_document_retention_ip');
 
     expect(redeemIp).toContain('failClosed: true');
     expect(redeemToken).toContain('failClosed: true');
@@ -83,6 +85,7 @@ describe('consultation rate-limit call-site contract', () => {
     expect(smsRecipient).toContain('failClosed: tokenBearing');
     expect(submitIp).toContain('failClosed: true');
     expect(submitEmail).toContain('failClosed: true');
+    expect(retentionIp).toContain('failClosed: true');
 
     expect(mailer.match(/failClosed:\s*isConsultationPath/g)?.length).toBe(2);
     expect(sms.match(/failClosed:\s*tokenBearing/g)?.length).toBe(2);

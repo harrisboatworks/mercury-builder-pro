@@ -239,3 +239,6 @@ verify_jwt = false
 
 [functions.submit-quote-lead]
 verify_jwt = false
+
+[functions.consultation-document-retention]
+verify_jwt = false

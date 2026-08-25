@@ -11,6 +11,7 @@ import { renderConsultationQuotePdf } from '../../../supabase/functions/_shared/
 import {
   type ConsultationCapabilityInsert,
   type ConsultationDocumentInsert,
+  type ConsultationDocumentJobInsert,
   type ConsultationDocumentWriter,
   mintConsultationDocument,
 } from '../../../supabase/functions/_shared/consultation-document-mint.ts';
@@ -29,10 +30,13 @@ const SNAPSHOT = consultationSubmitDeliverySnapshot({
 function memoryWriter(options: {
   failUpload?: boolean;
   failCapability?: boolean;
+  failCleanup?: boolean;
 } = {}) {
   const documents: ConsultationDocumentInsert[] = [];
   const uploads: Array<{ path: string; bytes: Uint8Array }> = [];
   const capabilities: ConsultationCapabilityInsert[] = [];
+  const jobs: ConsultationDocumentJobInsert[] = [];
+  const jobUpdates: Array<{ id: string; status: string; error_name?: string | null }> = [];
   const deleted: string[] = [];
   const removed: string[] = [];
   const writer: ConsultationDocumentWriter = {
@@ -49,13 +53,22 @@ function memoryWriter(options: {
       capabilities.push(row);
     },
     async deleteDocument(id) {
+      if (options.failCleanup) throw new Error('cleanup failed');
       deleted.push(id);
     },
     async removePdf(path) {
+      if (options.failCleanup) throw new Error('cleanup failed');
       removed.push(path);
     },
+    async insertJob(row) {
+      jobs.push(row);
+      return { id: row.id };
+    },
+    async updateJob(id, patch) {
+      jobUpdates.push({ id, ...patch });
+    },
   };
-  return { writer, documents, uploads, capabilities, deleted, removed };
+  return { writer, documents, uploads, capabilities, jobs, jobUpdates, deleted, removed };
 }
 
 describe('consultation document mint', () => {
@@ -103,9 +116,15 @@ describe('consultation document mint', () => {
     expect(store.capabilities[0]?.purpose).toBe('submit');
     expect(store.capabilities[0]?.token_hash).toBe(await hashConsultationToken(access.token));
     expect(store.capabilities[0]?.bound_email).toBe('jay@example.com');
+    expect(minted.jobId).toBe(store.jobs[0]?.id);
+    expect(store.jobs[0]?.status).toBe('started');
+    expect(store.jobUpdates.at(-1)?.status).toBe('persisted');
     expect(JSON.stringify(store.documents)).not.toContain(access.token);
     expect(JSON.stringify(store.capabilities)).not.toContain(access.token);
     expect(JSON.stringify(store.capabilities)).not.toContain('cd_');
+    expect(JSON.stringify(store.jobs)).not.toContain(access.token);
+    expect(JSON.stringify(store.jobs)).not.toContain('cd_');
+    expect(JSON.stringify(store.jobUpdates)).not.toContain(access.token);
   });
 
   it('deletes the document row when storage upload fails', async () => {
@@ -119,6 +138,7 @@ describe('consultation document mint', () => {
     })).rejects.toThrow(/upload failed/);
     expect(store.deleted).toEqual([DOCUMENT_ID]);
     expect(store.capabilities).toHaveLength(0);
+    expect(store.jobUpdates.at(-1)?.status).toBe('cleaned');
   });
 
   it('removes the object and document when capability persist fails', async () => {
@@ -132,5 +152,19 @@ describe('consultation document mint', () => {
     })).rejects.toThrow(/capability failed/);
     expect(store.removed).toEqual([`consultation/${DOCUMENT_ID}/quote.pdf`]);
     expect(store.deleted).toEqual([DOCUMENT_ID]);
+    expect(store.jobUpdates.at(-1)?.status).toBe('cleaned');
+  });
+
+  it('marks the mint job failed when compensating cleanup cannot finish', async () => {
+    const store = memoryWriter({ failCapability: true, failCleanup: true });
+    await expect(mintConsultationDocument({
+      quoteId: QUOTE_ID,
+      quoteNumber: 'HBW-123456',
+      snapshot: SNAPSHOT,
+      writer: store.writer,
+      documentId: DOCUMENT_ID,
+    })).rejects.toThrow(/capability failed/);
+    expect(store.jobUpdates.at(-1)?.status).toBe('failed');
+    expect(store.deleted).toHaveLength(0);
   });
 });
