@@ -154,6 +154,39 @@ export function parseConsultationPhone(value: unknown): string {
   return phone;
 }
 
+export function normalizeConsultationPhone(value: unknown): string {
+  if (typeof value === "string") {
+    try {
+      return parseConsultationPhone(value);
+    } catch {
+      const digits = value.replace(/\D/g, "");
+      if (digits.length === 11 && digits.startsWith("1")) {
+        return parseConsultationPhone(`+${digits}`);
+      }
+      if (digits.length === 10) {
+        return parseConsultationPhone(`+1${digits}`);
+      }
+    }
+  }
+  throw new ConsultationDocumentRequestError("Customer phone is invalid");
+}
+
+export function consultationSubmitDeliverySnapshot(input: {
+  customerName: unknown;
+  customerEmail: unknown;
+  customerPhone: unknown;
+  motorModel: unknown;
+  totalPrice: unknown;
+}): ConsultationDeliverySnapshot {
+  return {
+    customerName: parseConsultationName(input.customerName),
+    customerEmail: parseConsultationEmail(input.customerEmail),
+    customerPhone: normalizeConsultationPhone(input.customerPhone),
+    motorModel: parseConsultationMotorModel(input.motorModel),
+    totalPrice: parseConsultationTotalPrice(input.totalPrice),
+  };
+}
+
 export function parseConsultationName(value: unknown): string {
   const name = boundedString(value, 100);
   if (!name) throw new ConsultationDocumentRequestError("Customer name is invalid");

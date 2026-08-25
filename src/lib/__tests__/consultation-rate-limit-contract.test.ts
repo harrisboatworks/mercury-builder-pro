@@ -112,14 +112,16 @@ describe('consultation rate-limit call-site contract', () => {
 
     const turnstileAt = submit.indexOf('verifyTurnstileToken');
     const insertAt = submit.indexOf('.from("customer_quotes")');
+    const mintAt = submit.indexOf('await mintConsultationDocument');
     const resendAt = submit.indexOf('resend.emails.send');
     const submitIpAt = submit.indexOf('submit_quote_lead_ip');
     expect(turnstileAt).toBeGreaterThan(-1);
     expect(submitIpAt).toBeGreaterThan(turnstileAt);
     expect(insertAt).toBeGreaterThan(submitIpAt);
-    expect(resendAt).toBeGreaterThan(insertAt);
+    expect(mintAt).toBeGreaterThan(insertAt);
+    expect(resendAt).toBeGreaterThan(mintAt);
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
-    expect(submit).not.toContain('attachments');
+    expect(submit).toContain('consultationPdfBase64(minted.pdfBytes)');
     expect(submit).not.toContain('documentId');
   });
 });

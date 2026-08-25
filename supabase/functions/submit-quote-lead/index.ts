@@ -13,7 +13,14 @@ import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-chec
 import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
 import { MISSING_TURNSTILE, verifyTurnstileToken } from "../_shared/turnstile.ts";
 import {
+  createSupabaseConsultationDocumentWriter,
+  consultationPdfBase64,
+  mintConsultationDocument,
+} from "../_shared/consultation-document-mint.ts";
+import { consultationSubmitDeliverySnapshot } from "../_shared/consultation-document-policy.ts";
+import {
   assertNoCallerDocumentDelivery,
+  buildConsultationQuoteMintedEmail,
   buildConsultationRequestReceivedEmail,
   consultationSubmitCustomerDestinations,
 } from "../_shared/consultation-submit-delivery.ts";
@@ -26,7 +33,7 @@ const baseCorsHeaders = {
 
 const HBW_ADMIN_QUOTE_INBOX = "info@harrisboatworks.ca";
 const HBW_ADMIN_SMS = "+19053766208";
-const GROK_BOT_QUOTE_SENDER = "Grok Bot - Mercury Repower <grokbot@mercuryrepower.ca>";
+const CUSTOMER_QUOTE_SENDER = "Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>";
 
 const payloadSchema = z.object({
   anonymous_session_id: z.string().min(8).max(128).nullable().optional(),
@@ -184,7 +191,7 @@ serve(async (req) => {
     const { data, error } = await supabase
       .from("customer_quotes")
       .insert(insertRow as Record<string, unknown>)
-      .select("id, customer_email, customer_name, final_price")
+      .select("id, customer_email, customer_name, customer_phone, final_price")
       .single();
 
     if (error || !data?.id || !data.customer_email) {
@@ -196,19 +203,59 @@ serve(async (req) => {
     }
 
     const destinations = consultationSubmitCustomerDestinations(String(data.customer_email));
-    const resend = new Resend(resendKey);
-    await resend.emails.send({
-      from: GROK_BOT_QUOTE_SENDER,
-      to: destinations.to,
-      reply_to: HBW_ADMIN_QUOTE_INBOX,
-      subject: `We received your Mercury quote request (${quoteNumber})`,
-      html: buildConsultationRequestReceivedEmail({
-        customerName: String(data.customer_name || p.customer_name),
+    const persistedName = String(data.customer_name || p.customer_name);
+    const persistedTotal = Number(data.final_price);
+    let minted: Awaited<ReturnType<typeof mintConsultationDocument>> | null = null;
+    try {
+      minted = await mintConsultationDocument({
+        quoteId: String(data.id),
         quoteNumber,
-        motorModel,
-        totalPrice: Number(data.final_price),
-      }),
-    });
+        snapshot: consultationSubmitDeliverySnapshot({
+          customerName: persistedName,
+          customerEmail: data.customer_email,
+          customerPhone: data.customer_phone,
+          motorModel,
+          totalPrice: persistedTotal,
+        }),
+        writer: createSupabaseConsultationDocumentWriter(supabase),
+      });
+    } catch (mintError) {
+      console.error("[submit-quote-lead] document mint failed", mintError instanceof Error ? mintError.name : "unknown");
+    }
+
+    const resend = new Resend(resendKey);
+    if (minted) {
+      await resend.emails.send({
+        from: CUSTOMER_QUOTE_SENDER,
+        to: destinations.to,
+        reply_to: HBW_ADMIN_QUOTE_INBOX,
+        subject: `Your Mercury ${motorModel} quote, ref ${quoteNumber} | Harris Boat Works`,
+        html: buildConsultationQuoteMintedEmail({
+          customerName: persistedName,
+          quoteNumber,
+          motorModel,
+          totalPrice: persistedTotal,
+          documentAccessUrl: minted.documentAccessUrl,
+        }),
+        attachments: [{
+          filename: `Quote-${quoteNumber}.pdf`,
+          content: consultationPdfBase64(minted.pdfBytes),
+        }],
+      });
+    } else {
+      await resend.emails.send({
+        from: CUSTOMER_QUOTE_SENDER,
+        to: destinations.to,
+        reply_to: HBW_ADMIN_QUOTE_INBOX,
+        subject: `We received your Mercury quote request (${quoteNumber})`,
+        html: buildConsultationRequestReceivedEmail({
+          customerName: persistedName,
+          quoteNumber,
+          motorModel,
+          totalPrice: persistedTotal,
+        }),
+      });
+    }
 
     try {
       await fetch(`${supabaseUrl}/functions/v1/send-quote-email`, {
