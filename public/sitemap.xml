@@ -1558,13 +1558,16 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp</image:loc>
       <image:title><![CDATA[Mercury Outboard Octane and Ethanol Guide for Ontario]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide</loc>
@@ -2843,9 +2846,9 @@
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide</loc>
