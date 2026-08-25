@@ -3,6 +3,7 @@
 // Fail-open on errors so a transient DB issue never breaks public buyer flows.
 
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
+import { probeRateLimit } from "./rate-limit-probe.ts";
 
 export function getClientIdentifier(req: Request): string {
   const xff = req.headers.get("x-forwarded-for");
@@ -29,6 +30,7 @@ export interface RateLimitOptions {
   action: string;            // short action key, e.g. "ai_chat"
   maxAttempts: number;
   windowMinutes: number;
+  failClosed?: boolean;      // default remains fail-open unless callers opt in
 }
 
 /**
@@ -40,26 +42,16 @@ export async function checkRateLimit(
   opts: RateLimitOptions,
 ): Promise<boolean> {
   const client = getClient();
-  if (!client) return true;
   const identifier = (opts.identifier && opts.identifier.length > 0)
     ? opts.identifier
     : getClientIdentifier(req);
-  try {
-    const { data, error } = await client.rpc("check_rate_limit", {
-      _identifier: identifier,
-      _action: opts.action,
-      _max_attempts: opts.maxAttempts,
-      _window_minutes: opts.windowMinutes,
-    });
-    if (error) {
-      console.warn(`[rate-limit] RPC error for ${opts.action}:`, error.message);
-      return true;
-    }
-    return data !== false;
-  } catch (e) {
-    console.warn(`[rate-limit] exception for ${opts.action}:`, (e as Error).message);
-    return true;
-  }
+  return await probeRateLimit(client, {
+    identifier,
+    action: opts.action,
+    maxAttempts: opts.maxAttempts,
+    windowMinutes: opts.windowMinutes,
+    failClosed: opts.failClosed,
+  });
 }
 
 export function rateLimitedResponse(

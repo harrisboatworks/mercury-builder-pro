@@ -1,5 +1,5 @@
 import { RequiredMark } from "@/components/ui/required-mark";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -12,12 +12,13 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
-import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { useQuote } from '@/contexts/QuoteContext';
+import { getTurnstileSiteKey, loadTurnstileScript } from '@/lib/turnstile-client';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -39,10 +40,34 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSendingEmail, setIsSendingEmail] = useState(false);
-  const [isSendingText, setIsSendingText] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
   const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
+  const turnstileSiteKey = getTurnstileSiteKey();
+
+  useEffect(() => {
+    if (!turnstileSiteKey || !turnstileHostRef.current) return;
+    let cancelled = false;
+    let widgetId: string | undefined;
+    loadTurnstileScript()
+      .then(() => {
+        if (cancelled || !turnstileHostRef.current || !window.turnstile) return;
+        widgetId = window.turnstile.render(turnstileHostRef.current, {
+          sitekey: turnstileSiteKey,
+          callback: (token: string) => setTurnstileToken(token),
+          'expired-callback': () => setTurnstileToken(''),
+          'error-callback': () => setTurnstileToken(''),
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setTurnstileToken('');
+      });
+    return () => {
+      cancelled = true;
+      if (widgetId && window.turnstile) window.turnstile.reset(widgetId);
+    };
+  }, [turnstileSiteKey]);
 
   const buildPdfData = (quoteNumber: string, customer: { name: string; email: string; phone?: string }) => {
     if (!pdfSnapshot) {
@@ -193,13 +218,15 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     // Anonymous users MUST be able to submit — the lead-capture step happens
     // BEFORE any account is created (the success page offers account creation).
     if (!quoteData.motor) return;
+    if (turnstileSiteKey && !turnstileToken) {
+      setErrors((prev) => ({ ...prev, turnstile: 'Please complete the verification check.' }));
+      return;
+    }
 
     setIsSubmitting(true);
 
-    // Declare variables that need to be accessible throughout the function
-    let quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-    let pdfUrl: string | null = null;
     let quoteId: string | undefined;
+    let quoteNumber = '';
 
     try {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
@@ -237,64 +264,46 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         discount_amount: 0,
       };
 
-      if (user) {
-        // Authenticated path: unchanged direct insert under user's RLS.
-        const { data: inserted, error } = await supabase
-          .from('customer_quotes')
-          .insert({ user_id: user.id, ...insertPayload } as any)
-          .select('id')
-          .single();
-        if (error) throw error;
-        quoteId = inserted?.id;
-      } else {
-        // Anonymous path: route through service-role edge function so we don't
-        // silently no-op when nobody is logged in (the original bug). The
-        // function returns the new row id directly.
-        const { data: fnData, error: fnError } = await supabase.functions.invoke('submit-quote-lead', {
-          body: {
-            user_id: null,
-            customer_name: sanitizedContactInfo.name,
-            customer_email: sanitizedContactInfo.email,
-            customer_phone: sanitizedContactInfo.phone,
-            contact_method: sanitizedContactInfo.contactMethod,
-            notes: sanitizedContactInfo.notes,
-            motor_model: quoteData.motor?.model || null,
-            base_price: insertPayload.base_price,
-            final_price: insertPayload.final_price,
-            deposit_amount: insertPayload.deposit_amount,
-            loan_amount: insertPayload.loan_amount,
-            monthly_payment: insertPayload.monthly_payment,
-            term_months: insertPayload.term_months,
-            total_cost: insertPayload.total_cost,
-            tradein_value_pre_penalty: insertPayload.tradein_value_pre_penalty,
-            tradein_value_final: insertPayload.tradein_value_final,
-            penalty_applied: insertPayload.penalty_applied,
-            penalty_factor: insertPayload.penalty_factor,
-            penalty_reason: insertPayload.penalty_reason,
-          },
-        });
-        if (fnError) throw fnError;
-        if (fnData && fnData.success === false) {
-          throw new Error(fnData.error || 'Failed to submit quote');
-        }
-        quoteId = fnData?.quoteId;
+      const { data: fnData, error: fnError } = await supabase.functions.invoke('submit-quote-lead', {
+        body: {
+          customer_name: sanitizedContactInfo.name,
+          customer_email: sanitizedContactInfo.email,
+          customer_phone: sanitizedContactInfo.phone,
+          contact_method: sanitizedContactInfo.contactMethod,
+          notes: sanitizedContactInfo.notes,
+          motor_model: quoteData.motor?.model || null,
+          base_price: insertPayload.base_price,
+          final_price: insertPayload.final_price,
+          deposit_amount: insertPayload.deposit_amount,
+          loan_amount: insertPayload.loan_amount,
+          monthly_payment: insertPayload.monthly_payment,
+          term_months: insertPayload.term_months,
+          total_cost: insertPayload.total_cost,
+          tradein_value_pre_penalty: insertPayload.tradein_value_pre_penalty,
+          tradein_value_final: insertPayload.tradein_value_final,
+          penalty_applied: insertPayload.penalty_applied,
+          penalty_factor: insertPayload.penalty_factor,
+          penalty_reason: insertPayload.penalty_reason,
+          ...(turnstileToken ? { turnstileToken } : {}),
+        },
+      });
+      if (fnError) throw fnError;
+      if (fnData && fnData.success === false) {
+        throw new Error(fnData.error || 'Failed to submit quote');
+      }
+      quoteId = fnData?.quoteId;
+      quoteNumber = typeof fnData?.quoteNumber === 'string' ? fnData.quoteNumber : '';
+      if (!quoteId || !quoteNumber) {
+        throw new Error('Failed to submit quote');
       }
 
       // Mark the final step only after the lead record has been persisted.
       // useQuoteActivityTracker converts this confirmed state change into quote_submitted.
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
 
-      console.log('🔍 [NOTIFICATIONS] Starting notification process... quoteId:', quoteId);
-
-      // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
-      console.log('🔍 [NOTIFICATIONS] Step 1: Triggering hot lead webhooks...');
       try {
-        console.log('🔍 [NOTIFICATIONS] Importing webhook functions...');
         const { triggerHotLeadWebhooks } = await import('@/lib/webhooks');
-        const { triggerHotLeadSMS } = await import('@/lib/leadCapture');
-        console.log('✅ [NOTIFICATIONS] Webhook functions imported successfully');
-        
-        const leadWebhookData = {
+        await triggerHotLeadWebhooks({
           id: quoteId,
           customer_name: sanitizedContactInfo.name,
           customer_email: sanitizedContactInfo.email,
@@ -305,208 +314,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           created_at: new Date().toISOString(),
           lead_source: 'consultation',
           lead_status: 'scheduled'
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Lead webhook data:', leadWebhookData);
-        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadWebhooks...');
-        const webhookResult = await triggerHotLeadWebhooks(leadWebhookData);
-        console.log('✅ [NOTIFICATIONS] Hot lead webhooks triggered. Result:', webhookResult);
-        
-        // Send SMS to admin about hot lead
-        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadSMS...');
-        const smsData = {
-          customerName: sanitizedContactInfo.name,
-          leadScore: 75,
-          finalPrice: Math.round(totalCashPrice),
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          phoneNumber: sanitizedContactInfo.phone,
-        };
-        console.log('🔍 [NOTIFICATIONS] SMS data:', smsData);
-        const smsResult = await triggerHotLeadSMS(smsData);
-        console.log('✅ [NOTIFICATIONS] Hot lead SMS sent to admin. Result:', smsResult);
-      } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Hot lead notification error:', error);
-        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
-      }
-
-      // 2. Send quote email to customer
-      console.log('🔍 [NOTIFICATIONS] Step 2: Preparing quote email...');
-      try {
-        console.log('🔍 [NOTIFICATIONS] Quote number:', quoteNumber);
-        
-        // 2.1. Generate and upload PDF before sending email
-        console.log('🔍 [PDF] Generating PDF quote...');
-        try {
-          // Import PDF generation utilities
-          const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-          
-          const pdfQuoteData = buildPdfData(quoteNumber, {
-            name: sanitizedContactInfo.name,
-            email: sanitizedContactInfo.email,
-            phone: sanitizedContactInfo.phone,
-          });
-          
-          console.log('🔍 [PDF] Generating PDF blob...');
-          const pdfBlob = await generatePDFBlob(pdfQuoteData);
-          console.log('✅ [PDF] PDF generated, size:', pdfBlob.size, 'bytes');
-          
-          // Upload to Supabase Storage
-          const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-          const filePath = `${quoteId}/${fileName}`;
-          
-          console.log('🔍 [PDF] Uploading to Supabase Storage:', filePath);
-          const { data: uploadData, error: uploadError } = await supabase.storage
-            .from('spec-sheets')
-            .upload(filePath, pdfBlob, {
-              contentType: 'application/pdf',
-              upsert: false
-            });
-          
-          if (uploadError) {
-            console.error('❌ [PDF] Upload error:', uploadError);
-            throw uploadError;
-          }
-          
-          // Get public URL
-          const { data: { publicUrl } } = supabase.storage
-            .from('spec-sheets')
-            .getPublicUrl(filePath);
-          
-          console.log('✅ [PDF] PDF uploaded successfully. Public URL:', publicUrl);
-          pdfUrl = publicUrl;
-          
-        } catch (pdfError) {
-          console.error('❌ [PDF] PDF generation/upload error:', pdfError);
-          console.error('❌ [PDF] Error stack:', pdfError instanceof Error ? pdfError.stack : 'No stack trace');
-          // Don't fail the submission if PDF fails, but log it
-          pdfUrl = null;
-        }
-        
-        // 2.2. Send email with PDF attachment
-        console.log('🔍 [NOTIFICATIONS] Sending quote email with PDF...');
-        const emailPayload = {
-          customerEmail: sanitizedContactInfo.email,
-          customerName: sanitizedContactInfo.name,
-          quoteNumber: quoteNumber,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
-          emailType: 'quote_delivery'
-        };
-        console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);
-        console.log('🔍 [NOTIFICATIONS] Invoking send-quote-email edge function...');
-        
-        const { data: emailData, error: emailError } = await supabase.functions.invoke('send-quote-email', {
-          body: emailPayload
         });
-        
-        if (emailError) {
-          console.error('❌ [NOTIFICATIONS] Email error object:', emailError);
-          throw emailError;
-        }
-        console.log('✅ [NOTIFICATIONS] Quote email sent successfully. Response:', emailData);
       } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Quote email error:', error);
-        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
+        console.error('Hot lead webhook error:', error);
       }
 
-      // 3. Send SMS confirmation to customer (if they selected text as contact method)
-      console.log('🔍 [NOTIFICATIONS] Step 3: Checking SMS confirmation...');
-      console.log('🔍 [NOTIFICATIONS] Contact method:', sanitizedContactInfo.contactMethod);
-      if (sanitizedContactInfo.contactMethod === 'text') {
-        console.log('🔍 [NOTIFICATIONS] Sending SMS to customer...');
-        try {
-          const smsPayload = {
-            to: sanitizedContactInfo.phone,
-            message: `Hi ${sanitizedContactInfo.name}! Thank you for requesting a Mercury motor quote. We've received your information and will contact you soon to discuss your ${quoteData.motor?.model} quote. - Harris Boat Works`,
-            messageType: 'quote_confirmation'
-          };
-          console.log('🔍 [NOTIFICATIONS] SMS payload:', smsPayload);
-          console.log('🔍 [NOTIFICATIONS] Invoking send-sms edge function...');
-          
-          const { data: smsData, error: smsError } = await supabase.functions.invoke('send-sms', {
-            body: smsPayload
-          });
-          
-          if (smsError) {
-            console.error('❌ [NOTIFICATIONS] SMS error object:', smsError);
-            throw smsError;
-          }
-          console.log('✅ [NOTIFICATIONS] SMS confirmation sent to customer. Response:', smsData);
-        } catch (error) {
-          console.error('❌ [NOTIFICATIONS] Customer SMS error:', error);
-          console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
-          console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
-        }
-      } else {
-        console.log('ℹ️ [NOTIFICATIONS] Skipping customer SMS - contact method is not text');
-      }
-
-      // 4. Send admin notification email
-      console.log('🔍 [NOTIFICATIONS] Step 4: Sending admin notification email...');
-      try {
-        const adminEmailPayload = {
-          customerEmail: 'info@harrisboatworks.ca',
-          customerName: 'Harris Boat Works Admin',
-          quoteNumber: quoteNumber,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          pdfUrl: pdfUrl,
-          emailType: 'admin_quote_notification',
-          leadData: {
-            customerName: sanitizedContactInfo.name,
-            customerEmail: sanitizedContactInfo.email,
-            customerPhone: sanitizedContactInfo.phone,
-            contactMethod: sanitizedContactInfo.contactMethod,
-            leadScore: 75,
-            quoteId: quoteId
-          }
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Admin email payload:', adminEmailPayload);
-        
-        const { data: adminEmailData, error: adminEmailError } = await supabase.functions.invoke('send-quote-email', {
-          body: adminEmailPayload
-        });
-        
-        if (adminEmailError) {
-          console.error('❌ [NOTIFICATIONS] Admin email error:', adminEmailError);
-          throw adminEmailError;
-        }
-        console.log('✅ [NOTIFICATIONS] Admin email sent successfully. Response:', adminEmailData);
-      } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Admin email failed:', error);
-      }
-
-      // 5. Send admin SMS notification
-      console.log('🔍 [NOTIFICATIONS] Step 5: Sending admin SMS notification...');
-      try {
-        const adminSmsPayload = {
-          to: '+19053766208',
-          message: `🔥 NEW QUOTE SUBMITTED!\n\nCustomer: ${sanitizedContactInfo.name}\nMotor: ${quoteData.motor?.model || 'Mercury Motor'}\nQuote: $${Math.round(totalCashPrice).toLocaleString()}\nContact: ${sanitizedContactInfo.contactMethod}\n\nView: mercuryrepower.ca/admin/quotes\n\n- Harris Boat Works`,
-          messageType: 'hot_lead'
-        };
-        
-        console.log('🔍 [NOTIFICATIONS] Admin SMS payload:', adminSmsPayload);
-        
-        const { data: adminSmsData, error: adminSmsError } = await supabase.functions.invoke('send-sms', {
-          body: adminSmsPayload
-        });
-        
-        if (adminSmsError) {
-          console.error('❌ [NOTIFICATIONS] Admin SMS error:', adminSmsError);
-          throw adminSmsError;
-        }
-        console.log('✅ [NOTIFICATIONS] Admin SMS sent successfully. Response:', adminSmsData);
-      } catch (error) {
-        console.error('❌ [NOTIFICATIONS] Admin SMS failed:', error);
-      }
-
-      console.log('✅ [NOTIFICATIONS] Notification process complete');
-
-      // Navigate to quote success page with reference number and contact info for account creation
       navigate(`/quote/success?ref=${quoteNumber}`, {
         state: {
           contactInfo: {
@@ -573,153 +385,6 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       });
     }
   };
-
-  const handleSendByEmail = async () => {
-    if (!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsSendingEmail(true);
-    try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      
-      // Generate PDF first
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = buildPdfData(quoteNumber, {
-        name: contactInfo.name || 'Customer',
-        email: contactInfo.email,
-        phone: contactInfo.phone,
-      });
-      
-      const pdfBlob = await generatePDFBlob(pdfQuoteData);
-      
-      // Upload to Supabase Storage
-      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-      const filePath = `temp/${fileName}`;
-      
-      const { error: uploadError } = await supabase.storage
-        .from('spec-sheets')
-        .upload(filePath, pdfBlob, {
-          contentType: 'application/pdf',
-          upsert: false
-        });
-      
-      if (uploadError) throw uploadError;
-      
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('spec-sheets')
-        .getPublicUrl(filePath);
-      
-      // Send email
-      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-        body: {
-          customerEmail: contactInfo.email,
-          customerName: contactInfo.name || 'Customer',
-          quoteNumber,
-          motorModel: quoteData.motor?.model || 'Mercury Motor',
-          totalPrice: Math.round(totalCashPrice),
-          pdfUrl: publicUrl,
-          emailType: 'quote_delivery'
-        }
-      });
-      
-      if (emailError) throw emailError;
-      
-      toast({
-        title: "Quote Sent!",
-        description: `Quote sent to ${contactInfo.email}`
-      });
-    } catch (error) {
-      console.error('Send by email error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send quote. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSendingEmail(false);
-    }
-  };
-
-  const handleSendByText = async () => {
-    const cleanPhone = contactInfo.phone.replace(/\D/g, '');
-    if (cleanPhone.length !== 10) {
-      toast({
-        title: "Invalid Phone",
-        description: "Please enter a valid 10-digit phone number",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsSendingText(true);
-    try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const formattedPhone = `+1${cleanPhone}`;
-      
-      // Generate PDF first
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = buildPdfData(quoteNumber, {
-        name: contactInfo.name || 'Customer',
-        email: contactInfo.email,
-        phone: contactInfo.phone,
-      });
-      
-      const pdfBlob = await generatePDFBlob(pdfQuoteData);
-      
-      // Upload to Supabase Storage
-      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
-      const filePath = `temp/${fileName}`;
-      
-      const { error: uploadError } = await supabase.storage
-        .from('spec-sheets')
-        .upload(filePath, pdfBlob, {
-          contentType: 'application/pdf',
-          upsert: false
-        });
-      
-      if (uploadError) throw uploadError;
-      
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('spec-sheets')
-        .getPublicUrl(filePath);
-      
-      // Send SMS with link
-      const message = `Hi${contactInfo.name ? ` ${contactInfo.name}` : ''}! Here's your Mercury motor quote for ${quoteData.motor?.model || 'your motor'}: ${publicUrl} - Harris Boat Works`;
-      
-      const { error: smsError } = await supabase.functions.invoke('send-sms', {
-        body: {
-          to: formattedPhone,
-          message,
-          messageType: 'quote_confirmation'
-        }
-      });
-      
-      if (smsError) throw smsError;
-      
-      toast({
-        title: "Quote Sent!",
-        description: `Quote sent to ${contactInfo.phone}`
-      });
-    } catch (error) {
-      console.error('Send by text error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send quote. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSendingText(false);
-    }
-  };
-
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
@@ -792,7 +457,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <div className="space-y-2">
               <Label htmlFor="contactMethod" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Preferred Contact Method</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger id="contactMethod" className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
+                <SelectTrigger id="contactMethod" aria-describedby="contact-method-help" className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -801,6 +466,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                   <SelectItem value="text">Text Message</SelectItem>
                 </SelectContent>
               </Select>
+              <p id="contact-method-help" className="text-xs text-muted-foreground font-light">
+                This tells our team how to follow up. Choosing text asks for a later message from a person, not an automated SMS.
+              </p>
             </div>
 
             <div className="space-y-2">
@@ -820,6 +488,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <div className="mt-2 mb-4 bg-repower-cream border border-repower-navy-900/10 p-4 rounded-sm text-[13px] text-repower-navy-900/80 leading-relaxed">
               A real person at Harris Boat Works reviews every request. This does not place an order or take payment. We usually confirm everything within 1 business day.
             </div>
+            <div className="space-y-2">
+              <div ref={turnstileHostRef} data-testid="consultation-turnstile" />
+              {errors.turnstile && (
+                <p role="alert" className="text-sm text-destructive font-light">{errors.turnstile}</p>
+              )}
+            </div>
             <button
               type="submit"
               disabled={isSubmitting}
@@ -838,31 +512,16 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
             <details className="border-t border-repower-navy-900/10 pt-5">
               <summary className="cursor-pointer font-sans text-[13px] font-semibold text-repower-navy-900/70 hover:text-repower-navy-900">
-                Want a copy before you submit? <span className="font-normal text-repower-navy-900/50">(optional)</span>
+                Want a PDF on this device? <span className="font-normal text-repower-navy-900/50">(optional)</span>
               </summary>
               <div className="mt-4 space-y-3">
-                <button
-                  type="button"
-                  onClick={handleSendByEmail}
-                  disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <Mail className="w-4 h-4" />
-                  {isSendingEmail ? 'Sending…' : 'Email Me a Copy'}
-                </button>
-                <button
-                  type="button"
-                  onClick={handleSendByText}
-                  disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  {isSendingText ? 'Sending…' : 'Text Me a Copy'}
-                </button>
+                <p className="font-sans text-[13px] leading-relaxed text-repower-navy-900/65">
+                  Download a local copy of this quote. This does not email, text, or store the PDF on Harris Boat Works systems.
+                </p>
                 <button
                   type="button"
                   onClick={generatePDF}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
+                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold"
                 >
                   <Download className="w-4 h-4" />
                   Download PDF
