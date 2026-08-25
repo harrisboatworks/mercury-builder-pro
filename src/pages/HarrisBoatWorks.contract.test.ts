@@ -64,6 +64,17 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(prerender).toContain(`loc: '${ROUTE}'`);
   });
 
+  it('serves the prerendered page on direct Vercel requests', () => {
+    const vercel = JSON.parse(read('vercel.json')) as {
+      rewrites?: Array<{ source?: string; destination?: string }>;
+    };
+
+    expect(vercel.rewrites).toContainEqual({
+      source: ROUTE,
+      destination: `${ROUTE}/index.html`,
+    });
+  });
+
   it('has a full static-prerender definition with matching crawlable fields', () => {
     const prerender = read('scripts/static-prerender.mjs');
     const data = read('src/data/harrisBoatWorksBrandPage.js');
@@ -96,6 +107,21 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(brand).toContain(`"brandPage": "${CANONICAL}"`);
     expect(brand).not.toContain('Heritage, short version');
     expect(llms).not.toContain('Heritage, short version');
+  });
+
+  it('keeps the static noscript contact fallback aligned with shared company info', () => {
+    const companyInfo = read('src/lib/companyInfo.ts');
+    const data = read('src/data/harrisBoatWorksBrandPage.js');
+    const phone = companyInfo.match(/phone: "([^"]+)"/)?.[1];
+    const sms = companyInfo.match(/sms: "([^"]+)"/)?.[1];
+    const email = companyInfo.match(/email: "([^"]+)"/)?.[1];
+
+    expect(phone).toBeDefined();
+    expect(sms).toBeDefined();
+    expect(email).toBeDefined();
+    expect(data).toContain(`tel:+1${phone!.replace(/\D/g, '')}`);
+    expect(data).toContain(`sms:+1${sms!.replace(/\D/g, '')}`);
+    expect(data).toContain(`mailto:${email}`);
   });
 
   it('adds one internal link from the two intended location surfaces only', () => {
