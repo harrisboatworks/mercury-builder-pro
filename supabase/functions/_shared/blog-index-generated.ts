@@ -3742,7 +3742,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
     "title": "Mercury Outboard Octane and Ethanol Guide for Ontario",
-    "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+    "description": "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.",
     "category": "Service",
     "publishDate": "2026-04-11",
     "keywords": [
@@ -3764,7 +3764,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is premium gasoline ethanol-free in Ontario?",
-        "a": "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump."
+        "a": "No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but ass…"
       },
       {
         "q": "Does Harris Boat Works sell ethanol-free marine gas?",
