@@ -121,6 +121,7 @@ const AvatorLanding = lazy(() => import("./pages/AvatorLanding"));
 const Mercury99KickerGuide = lazy(() => import("./pages/Mercury99KickerGuide"));
 const About = lazy(() => import("./pages/About"));
 const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
+const HarrisBoatWorks = lazy(() => import("./pages/HarrisBoatWorks"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
@@ -585,6 +586,7 @@ function AnimatedRoutes() {
         {/* About Page */}
         <Route path="/about" element={<About />} />
         <Route path="/about/jay-harris" element={<AboutJayHarris />} />
+        <Route path="/harris-boat-works" element={<HarrisBoatWorks />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
