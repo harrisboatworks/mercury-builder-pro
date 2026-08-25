@@ -35,6 +35,28 @@ const registered = new Set<string>();
 const redirectSources = new Set(
   (vercelConfig.redirects || []).map((redirect) => redirect.source.replace(/\.md$/, '')),
 );
+const sitemapXml = fs.readFileSync('public/sitemap.xml', 'utf8');
+const sitemapEntries = new Map<
+  string,
+  { lastmod: string | null; alternates: Array<{ hrefLang: string; path: string }> }
+>();
+
+for (const match of sitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const block = match[1];
+  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  if (!loc) continue;
+
+  const alternates = [...block.matchAll(
+    /<xhtml:link\b[^>]*hreflang="([^"]+)"[^>]*href="([^"]+)"[^>]*\/>/g,
+  )].map((alternate) => ({
+    hrefLang: alternate[1],
+    path: new URL(alternate[2]).pathname,
+  }));
+  sitemapEntries.set(new URL(loc).pathname, {
+    lastmod: block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || null,
+    alternates,
+  });
+}
 
 const localizedPageFiles = [
   'FrenchBlogArticlePage.tsx',
@@ -99,6 +121,50 @@ for (const [locale, slugs] of Object.entries(routeSets)) {
   if (locale === 'en') continue;
   for (const slug of slugs) {
     if (!registered.has(`${locale}:${slug}`)) failures.push(`${locale}:${slug}: missing from registry`);
+  }
+}
+
+const sitemapRegistryLocks = [
+  {
+    locale: 'en',
+    slug: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
+    article: blogArticles.find(
+      (article) => article.slug === 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
+    ),
+  },
+  {
+    locale: 'zh',
+    slug: 'mercury-fuel-octane-ethanol-chinese-guide',
+    article: mandarinBlogArticles.find(
+      (article) => article.slug === 'mercury-fuel-octane-ethanol-chinese-guide',
+    ),
+  },
+];
+
+for (const { locale, slug, article } of sitemapRegistryLocks) {
+  const routeKey = `${locale}:${slug}`;
+  const routePath = `${BLOG_LOCALES[locale].prefix}/${slug}`;
+  const expectedAlternates = getBlogHreflangAlternates(locale, slug);
+  const expectedLastmod = article?.dateModified || article?.datePublished;
+  const sitemapEntry = sitemapEntries.get(routePath);
+  if (!expectedLastmod) {
+    failures.push(`${routeKey}: source article is missing a sitemap lastmod date`);
+    continue;
+  }
+  if (!sitemapEntry) {
+    failures.push(`${routeKey}: route is missing from public/sitemap.xml`);
+    continue;
+  }
+  if (sitemapEntry.lastmod !== expectedLastmod) {
+    failures.push(
+      `${routeKey}: sitemap lastmod must be ${expectedLastmod}, got ${sitemapEntry.lastmod}`,
+    );
+  }
+  if (JSON.stringify(sitemapEntry.alternates) !== JSON.stringify(expectedAlternates)) {
+    failures.push(
+      `${routeKey}: sitemap alternates do not match the registry ` +
+        `(expected ${JSON.stringify(expectedAlternates)}, got ${JSON.stringify(sitemapEntry.alternates)})`,
+    );
   }
 }
 
