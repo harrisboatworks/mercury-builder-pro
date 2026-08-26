@@ -207,4 +207,28 @@ describe('consultation document retention', () => {
     expect(migration).not.toContain('cron.schedule');
     expect(config).toContain('[functions.consultation-document-retention]');
   });
+
+  it('schedules the retention worker with the existing service-role cron pattern', () => {
+    const scheduler = read('supabase/migrations/20260826010000_schedule_consultation_document_retention.sql');
+    const prior = read('supabase/migrations/20260825010000_consultation_document_jobs_and_retention.sql');
+
+    expect(prior).not.toContain('cron.schedule');
+    expect(scheduler).toContain("cron.schedule(\n    'consultation-document-retention-daily'");
+    expect(scheduler).toContain('/functions/v1/consultation-document-retention');
+    expect(scheduler).toContain("jobname = 'mercury-catalog-data-refresh'");
+    expect(scheduler).toContain("name = 'service_role_key'");
+    expect(scheduler).toContain('vault.decrypted_secrets');
+    expect(scheduler).toContain("cron.unschedule('consultation-document-retention-daily')");
+    expect(scheduler).toContain('Authorization');
+    expect(scheduler).toContain('Bearer %s');
+    expect(scheduler).not.toMatch(/eyJ[A-Za-z0-9_-]{10,}/);
+    expect(scheduler).toContain("WHEN 'consultation_documents' THEN");
+    expect(scheduler).toContain("WHEN 'consultation_document_jobs' THEN");
+    expect(scheduler).toContain('handled := false');
+    expect(scheduler).toContain('after 20260825010000');
+    expect(scheduler).toContain("cron.unschedule('consultation-document-retention-daily')");
+    expect(scheduler).toContain('REVOKE EXECUTE ON FUNCTION public.cleanup_old_data() FROM PUBLIC, anon, authenticated');
+    expect(scheduler).toContain('Keep this cleanup_old_data() replacement');
+    expect(scheduler).not.toContain('Restore public.cleanup_old_data() from 20251111000954');
+  });
 });

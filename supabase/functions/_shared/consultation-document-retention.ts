@@ -234,15 +234,15 @@ export async function applyConsultationRetention(
 export function createSupabaseConsultationRetentionStore(supabase: {
   from: (table: string) => {
     update: (row: Record<string, unknown>) => {
-      eq: (column: string, value: string) => Promise<{ error: unknown }>;
+      eq: (column: string, value: string) => PromiseLike<{ error: unknown }>;
     };
     delete: () => {
-      eq: (column: string, value: string) => Promise<{ error: unknown }>;
+      eq: (column: string, value: string) => PromiseLike<{ error: unknown }>;
     };
   };
   storage: {
     from: (bucket: string) => {
-      remove: (paths: string[]) => Promise<{ error: unknown }>;
+      remove: (paths: string[]) => PromiseLike<{ error: unknown }>;
     };
   };
 }): ConsultationRetentionStore {

@@ -4,7 +4,9 @@ import { describe, expect, it } from 'vitest';
 import { CONSULTATION_ATTACHMENT_STATEMENT } from '../../../supabase/functions/_shared/consultation-quote-email.ts';
 import {
   CONSULTATION_REQUEST_RECEIVED_STATEMENT,
+  ConsultationDeliveryError,
   assertNoCallerDocumentDelivery,
+  assertResendAccepted,
   buildConsultationQuoteMintedEmail,
   buildConsultationRequestReceivedEmail,
   consultationSubmitCustomerDestinations,
@@ -76,11 +78,13 @@ describe('submit-bound consultation customer email', () => {
     const schedule = read('src/components/quote-builder/ScheduleConsultation.tsx');
 
     const turnstileAt = submit.indexOf('verifyTurnstileToken');
+    const snapshotAt = submit.indexOf('parseConsultationCallerQuoteSnapshot');
     const insertAt = submit.indexOf('.from("customer_quotes")');
     const mintAt = submit.indexOf('await mintConsultationDocument');
     const sendAt = submit.indexOf('resend.emails.send');
     expect(turnstileAt).toBeGreaterThan(-1);
-    expect(insertAt).toBeGreaterThan(turnstileAt);
+    expect(snapshotAt).toBeGreaterThan(turnstileAt);
+    expect(insertAt).toBeGreaterThan(snapshotAt);
     expect(mintAt).toBeGreaterThan(insertAt);
     expect(sendAt).toBeGreaterThan(mintAt);
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
@@ -89,6 +93,10 @@ describe('submit-bound consultation customer email', () => {
     expect(submit).toContain('.from("saved_quotes")');
     expect(submit).toContain('buildConsultationQuoteMintedEmail');
     expect(submit).toContain('markConsultationDocumentJobEmailed');
+    expect(submit).toContain('assertResendAccepted');
+    expect(submit).toContain('markConsultationDocumentJobDeliveryFailed');
+    expect(submit.indexOf('assertResendAccepted(mintedSend)')).toBeGreaterThan(submit.indexOf('resend.emails.send'));
+    expect(submit.indexOf('await markConsultationDocumentJobEmailed')).toBeGreaterThan(submit.indexOf('assertResendAccepted(mintedSend)'));
     expect(submit).toContain('failClosed: true');
     expect(submit).not.toContain('user_id: p.user_id');
     expect(submit).toContain('supabase.auth.getUser');
@@ -100,5 +108,24 @@ describe('submit-bound consultation customer email', () => {
     expect(schedule).toContain('turnstileToken');
     expect(schedule).not.toContain("invoke('send-quote-email'");
     expect(schedule).not.toContain("invoke('send-sms'");
+    expect(schedule).toContain('quote_snapshot: pdfSnapshot');
+    expect(schedule).toContain('if (!pdfSnapshot)');
+    expect(submit).toContain('let hasAuthoritativeQuoteSnapshot = false');
+    expect(submit).toContain('.select("quote_data")');
+    const completeSnapshotGate = submit.indexOf('if (canMintConsultationDocumentFromPersistedQuote(');
+    expect(completeSnapshotGate).toBeGreaterThan(-1);
+    expect(submit.indexOf('minted = await mintConsultationDocument')).toBeGreaterThan(completeSnapshotGate);
+    expect(submit).toContain('never mint a\n    // partial PDF');
+  });
+
+  it('treats a Resend { error } or missing id as delivery failure before any emailed mark', () => {
+    expect(assertResendAccepted({ data: { id: 're_123' }, error: null })).toEqual({ id: 're_123' });
+    expect(() => assertResendAccepted({
+      data: { id: 're_ignored' },
+      error: { name: 'validation_error', message: 'invalid to' },
+    })).toThrow(ConsultationDeliveryError);
+    expect(() => assertResendAccepted({ data: { id: null }, error: null })).toThrow(ConsultationDeliveryError);
+    expect(() => assertResendAccepted({ data: null, error: null })).toThrow(ConsultationDeliveryError);
+    expect(() => assertResendAccepted(undefined)).toThrow(ConsultationDeliveryError);
   });
 });

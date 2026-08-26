@@ -79,12 +79,100 @@ export class ConsultationDocumentUnavailableError extends QuoteDocumentUnavailab
   }
 }
 
+export type ConsultationQuoteAccessoryCategory =
+  | "equipment"
+  | "installation"
+  | "protection"
+  | "custom";
+
+export type ConsultationQuotePaymentMethod =
+  | "cash_purchase"
+  | "standard_financing"
+  | "special_financing";
+
+export type ConsultationQuotePromoOption = "no_payments" | "special_financing" | "cash_rebate";
+
+export interface ConsultationQuoteAccessory {
+  name: string;
+  price: number;
+  description?: string;
+  category?: ConsultationQuoteAccessoryCategory;
+}
+
+export interface ConsultationQuotePriceBreakdown {
+  msrp?: number;
+  discount?: number;
+  adminDiscount?: number;
+  promoValue?: number;
+  promoName?: string;
+  motorSubtotal?: number;
+  subtotal?: number;
+  hst?: number;
+  savings?: number;
+  purchasePath?: "loose" | "installed";
+}
+
+export interface ConsultationQuoteMotorDetails {
+  model: string;
+  hp?: number;
+  modelYear?: number;
+  category?: string;
+}
+
+export interface ConsultationQuoteTradeIn {
+  value: number;
+  brand?: string;
+  year?: number;
+  horsepower?: number;
+  model?: string;
+}
+
+export interface ConsultationQuoteFinancing {
+  monthlyPayment: number;
+  rate?: number;
+  amortizationMonths: number;
+  contractTermMonths?: number;
+  amountFinanced?: number;
+  dealerFee?: number;
+  downPayment?: number;
+  paymentMethod?: ConsultationQuotePaymentMethod;
+}
+
+export interface ConsultationQuoteProductProtection {
+  planYears: number;
+  totalCoverageYears?: number;
+  priceBeforeTax: number;
+  monthlyDelta?: number;
+}
+
+export interface ConsultationQuotePromotion {
+  name?: string;
+  endDate?: string;
+  combinationMode?: "layered" | "choose_one";
+  selectedOption?: ConsultationQuotePromoOption | null;
+  selectedValue?: string | null;
+}
+
 export interface ConsultationDeliverySnapshot {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
   motorModel: string;
   totalPrice: number;
+  createdAt?: string;
+  validUntil?: string;
+  motorDetails?: ConsultationQuoteMotorDetails;
+  priceBreakdown?: ConsultationQuotePriceBreakdown;
+  accessories?: ConsultationQuoteAccessory[];
+  purchasePath?: "loose" | "installed";
+  tradeIn?: ConsultationQuoteTradeIn | null;
+  includedCoverageYears?: number;
+  financing?: ConsultationQuoteFinancing | null;
+  paymentMethod?: ConsultationQuotePaymentMethod | null;
+  promotion?: ConsultationQuotePromotion;
+  customerNotes?: string;
+  depositAmount?: number;
+  productProtection?: ConsultationQuoteProductProtection;
 }
 
 export interface ConsultationUploadMeta {

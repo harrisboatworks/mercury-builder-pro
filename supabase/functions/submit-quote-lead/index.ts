@@ -15,18 +15,27 @@ import { MISSING_TURNSTILE, verifyTurnstileToken } from "../_shared/turnstile.ts
 import {
   createSupabaseConsultationDocumentWriter,
   consultationPdfBase64,
+  markConsultationDocumentJobDeliveryFailed,
   markConsultationDocumentJobEmailed,
   mintConsultationDocument,
 } from "../_shared/consultation-document-mint.ts";
 import {
   buildConsultationSavedQuoteState,
+  canMintConsultationDocumentFromPersistedQuote,
+  consultationDetailsFromLeadPayload,
   consultationSavedQuoteExpiry,
   consultationSnapshotFromAuthoritativeQuote,
   createConsultationResumeToken,
+  mergeConsultationDeliverySnapshot,
+  parseConsultationCallerQuoteSnapshot,
 } from "../_shared/consultation-authoritative-quote.ts";
-import { consultationSubmitDeliverySnapshot } from "../_shared/consultation-document-policy.ts";
+import {
+  ConsultationDocumentRequestError,
+  consultationSubmitDeliverySnapshot,
+} from "../_shared/consultation-document-policy.ts";
 import {
   assertNoCallerDocumentDelivery,
+  assertResendAccepted,
   buildConsultationQuoteMintedEmail,
   buildConsultationRequestReceivedEmail,
   consultationSubmitCustomerDestinations,
@@ -62,6 +71,7 @@ const payloadSchema = z.object({
   penalty_applied: z.boolean().optional().default(false),
   penalty_factor: z.number().nullable().optional(),
   penalty_reason: z.string().max(120).nullable().optional(),
+  quote_snapshot: z.unknown().optional(),
   turnstileToken: z.string().min(20).max(2048).optional(),
   website: z.string().max(500).optional().nullable(),
 });
@@ -170,6 +180,36 @@ serve(async (req) => {
     const sessionId = userId ? null : (p.anonymous_session_id || newSessionId());
     const quoteNumber = newQuoteNumber();
     const motorModel = p.motor_model?.trim() || "Mercury Motor";
+    let quoteDetails = consultationDetailsFromLeadPayload({
+      basePrice: p.base_price,
+      finalPrice: p.final_price,
+      depositAmount: p.deposit_amount,
+      loanAmount: p.loan_amount,
+      monthlyPayment: p.monthly_payment,
+      termMonths: p.term_months,
+      tradeInFinal: p.tradein_value_final,
+    });
+    let hasAuthoritativeQuoteSnapshot = false;
+    if (p.quote_snapshot !== undefined) {
+      try {
+        quoteDetails = {
+          ...quoteDetails,
+          ...parseConsultationCallerQuoteSnapshot(p.quote_snapshot, {
+            total: p.final_price,
+            motorModel,
+          }),
+        };
+        hasAuthoritativeQuoteSnapshot = true;
+      } catch (snapshotError) {
+        const message = snapshotError instanceof ConsultationDocumentRequestError
+          ? snapshotError.message
+          : "Quote snapshot is invalid";
+        return new Response(JSON.stringify({ success: false, error: message }), {
+          status: 400,
+          headers: corsHeaders,
+        });
+      }
+    }
 
     const insertRow = {
       user_id: userId,
@@ -215,24 +255,33 @@ serve(async (req) => {
     const destinations = consultationSubmitCustomerDestinations(String(data.customer_email));
     const persistedName = String(data.customer_name || p.customer_name);
     const persistedTotal = Number(data.final_price);
-    const draftSnapshot = consultationSubmitDeliverySnapshot({
+    const identitySnapshot = consultationSubmitDeliverySnapshot({
       customerName: persistedName,
       customerEmail: data.customer_email,
       customerPhone: data.customer_phone,
       motorModel,
       totalPrice: persistedTotal,
     });
+    const draftSnapshot = mergeConsultationDeliverySnapshot(identitySnapshot, quoteDetails);
     const quoteState = buildConsultationSavedQuoteState({
       quoteNumber,
       quoteId: String(data.id),
       snapshot: draftSnapshot,
     });
-    await supabase
+    const { data: persistedCustomerQuote, error: quoteStateError } = await supabase
       .from("customer_quotes")
       .update({ quote_data: quoteState })
-      .eq("id", data.id);
+      .eq("id", data.id)
+      .select("quote_data")
+      .single();
+    if (quoteStateError) {
+      console.error(
+        "[submit-quote-lead] customer quote state persist failed",
+        quoteStateError instanceof Error ? quoteStateError.name : "unknown",
+      );
+    }
 
-    let savedQuoteState: unknown = quoteState;
+    let persistedQuoteState: unknown = persistedCustomerQuote?.quote_data ?? null;
     const { data: savedQuote, error: savedQuoteError } = await supabase
       .from("saved_quotes")
       .insert({
@@ -249,7 +298,7 @@ serve(async (req) => {
       .select("id, email, quote_state")
       .single();
     if (!savedQuoteError && savedQuote?.quote_state) {
-      savedQuoteState = savedQuote.quote_state;
+      persistedQuoteState = savedQuote.quote_state;
     } else if (savedQuoteError) {
       console.error("[submit-quote-lead] saved quote persist failed", savedQuoteError instanceof Error ? savedQuoteError.name : "unknown");
     }
@@ -258,28 +307,36 @@ serve(async (req) => {
       persistedName,
       persistedEmail: data.customer_email,
       persistedPhone: data.customer_phone,
-      quoteState: savedQuoteState,
+      quoteState: persistedQuoteState ?? quoteState,
       fallbackMotor: motorModel,
       fallbackTotal: persistedTotal,
     });
 
     const writer = createSupabaseConsultationDocumentWriter(supabase);
     let minted: Awaited<ReturnType<typeof mintConsultationDocument>> | null = null;
-    try {
-      minted = await mintConsultationDocument({
-        quoteId: String(data.id),
-        quoteNumber,
-        snapshot,
-        writer,
-      });
-    } catch (mintError) {
-      console.error("[submit-quote-lead] document mint failed", mintError instanceof Error ? mintError.name : "unknown");
+    // Mixed-version clients may omit quote_snapshot during rollout or rollback.
+    // Preserve their lead and send the no-attachment receipt, but never mint a
+    // partial PDF from the lossy legacy payload.
+    if (canMintConsultationDocumentFromPersistedQuote(
+      hasAuthoritativeQuoteSnapshot,
+      persistedQuoteState,
+    )) {
+      try {
+        minted = await mintConsultationDocument({
+          quoteId: String(data.id),
+          quoteNumber,
+          snapshot,
+          writer,
+        });
+      } catch (mintError) {
+        console.error("[submit-quote-lead] document mint failed", mintError instanceof Error ? mintError.name : "unknown");
+      }
     }
 
     const resend = new Resend(resendKey);
-    if (minted) {
-      try {
-        await resend.emails.send({
+    try {
+      if (minted) {
+        const mintedSend = await resend.emails.send({
           from: CUSTOMER_QUOTE_SENDER,
           to: destinations.to,
           reply_to: HBW_ADMIN_QUOTE_INBOX,
@@ -296,23 +353,42 @@ serve(async (req) => {
             content: consultationPdfBase64(minted.pdfBytes),
           }],
         });
-        await markConsultationDocumentJobEmailed(writer, minted.jobId);
-      } catch (emailError) {
-        console.error("[submit-quote-lead] customer email failed", emailError instanceof Error ? emailError.name : "unknown");
+        assertResendAccepted(mintedSend);
+        try {
+          await markConsultationDocumentJobEmailed(writer, minted.jobId);
+        } catch (jobError) {
+          console.error(
+            "[submit-quote-lead] delivery accepted but job mark failed",
+            jobError instanceof Error ? jobError.name : "unknown",
+          );
+        }
+      } else {
+        const receiptSend = await resend.emails.send({
+          from: CUSTOMER_QUOTE_SENDER,
+          to: destinations.to,
+          reply_to: HBW_ADMIN_QUOTE_INBOX,
+          subject: `We received your Mercury quote request (${quoteNumber})`,
+          html: buildConsultationRequestReceivedEmail({
+            customerName: snapshot.customerName,
+            quoteNumber,
+            motorModel: snapshot.motorModel,
+            totalPrice: snapshot.totalPrice,
+          }),
+        });
+        assertResendAccepted(receiptSend);
       }
-    } else {
-      await resend.emails.send({
-        from: CUSTOMER_QUOTE_SENDER,
-        to: destinations.to,
-        reply_to: HBW_ADMIN_QUOTE_INBOX,
-        subject: `We received your Mercury quote request (${quoteNumber})`,
-        html: buildConsultationRequestReceivedEmail({
-          customerName: snapshot.customerName,
-          quoteNumber,
-          motorModel: snapshot.motorModel,
-          totalPrice: snapshot.totalPrice,
-        }),
-      });
+    } catch (emailError) {
+      if (minted) {
+        try {
+          await markConsultationDocumentJobDeliveryFailed(writer, minted.jobId, emailError);
+        } catch (jobError) {
+          console.error(
+            "[submit-quote-lead] delivery failed and job mark failed",
+            jobError instanceof Error ? jobError.name : "unknown",
+          );
+        }
+      }
+      console.error("[submit-quote-lead] customer email failed", emailError instanceof Error ? emailError.name : "unknown");
     }
 
     try {
