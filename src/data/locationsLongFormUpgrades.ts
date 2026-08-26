@@ -120,7 +120,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How does pickup work for a Kawartha boater?',
         paragraphs: [
-          "You drive to Gores Landing. We don't ship Mercury motors and we don't deliver to cottages, that's true for every repower we do, Kawartha included. The motor is installed on your boat at our shop, water-tested on Rice Lake, and ready for you to pick up. Bring the trailer, bring the boat, or drop the boat with us during quoting. Either way the boat leaves Gores Landing on its own wheels, with a Mercury that's been run through a full sea trial on the south shore.",
+          "You drive to Gores Landing. We don't ship Mercury motors and we don't deliver to cottages, that's true for every repower we do, Kawartha included. The motor is installed on your boat at our shop, water-tested on Rice Lake, and ready for you to pick up. Bring the trailer, bring the boat, or drop the boat with us during quoting. Either way the boat leaves Gores Landing on its own wheels, with a Mercury that's been run through a full Lake Test on the south shore.",
           "For trade-ins, fill the form and we usually send a CAD figure within one business day. If you'd rather start with cost, the Mercury repower cost guide has ranges by HP and rigging scope.",
         ],
       },
@@ -188,7 +188,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
 
         heading: 'Why Peterborough boaters make the drive',
         paragraphs: [
-          '- Mercury Premier Dealer: factory-trained techs, parts depth, warranty authorization\n- Real prices online: the full Mercury lineup priced in CAD, motor plus rigging plus install, before you ever call. See live numbers in the [quote builder](/quote/motor-selection) or the [pricing reference](/pricing-reference).\n- Water tested: every repower gets a sea trial on Rice Lake before it leaves\n- Volume you can trust: roughly 1,700 work orders a year through the service department\n- Family-owned since 1947, Mercury dealer since 1965',
+          '- Mercury Premier Dealer: factory-trained techs, parts depth, warranty authorization\n- Real prices online: the full Mercury lineup priced in CAD, motor plus rigging plus install, before you ever call. See live numbers in the [quote builder](/quote/motor-selection) or the [pricing reference](/pricing-reference).\n- Water tested: every repower gets a Lake Test on Rice Lake before it leaves\n- Volume you can trust: roughly 1,700 work orders a year through the service department\n- Family-owned since 1947, Mercury dealer since 1965',
         ],
       },
       {
@@ -207,7 +207,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How does drop-off work for Peterborough customers?',
         paragraphs: [
-          "We're drop-off only at Gores Landing. We don't ship Mercury motors and we don't pick up boats from Peterborough. Most customers drop the boat with us at quote time, then drive south a second time to pick it up once the rigging and water test are complete. Most pair the drop-off with errands in the area or a morning on Rice Lake.",
+          "We can generally arrange boat pickup. Ask us about availability for your boat and location. We don't ship Mercury motors and we don't deliver boats. Most customers still drop the boat with us at quote time, then drive south a second time to collect it once the rigging and water test are complete. Most pair the drop-off with errands in the area or a morning on Rice Lake.",
         ],
       },
     ],
@@ -216,9 +216,9 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     faqs: [
       { question: 'Who is the best Mercury dealer near Peterborough, Ontario?', answer: 'Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works, about 35 minutes south of Peterborough on Rice Lake, is a Mercury Premier Dealer that publishes real installed prices online, water tests every repower on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965.' },
       { question: 'How far is Harris Boat Works from Peterborough?', answer: "About 35 minutes by car via Highway 28 South, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore." },
-      { question: 'Do you water test repowers before delivery?', answer: "Yes. Every repower install gets a sea trial on Rice Lake before pickup. We don't hand over a motor we haven't run on the water." },
+      { question: 'Do you water test repowers before delivery?', answer: "Yes. Every repower install gets a Lake Test on Rice Lake before pickup. We don't hand over a motor we haven't run on the water." },
       { question: 'What does a Mercury repower cost near Peterborough?', answer: 'Most repowers in our area land in the $13,000 to $25,000 range including HST, depending on horsepower and rigging. The quote builder at mercuryrepower.ca shows a real installed CAD number for your exact boat and motor in about three minutes.' },
-      { question: 'Do you pick up boats from Peterborough?', answer: "No. We're drop-off only at Gores Landing, about 35 minutes from Peterborough. Most customers pair drop-off with errands in the area or a morning on Rice Lake." },
+      { question: 'Do you pick up boats from Peterborough?', answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. Gores Landing is about 35 minutes from Peterborough. Most customers still pair drop-off with errands in the area or a morning on Rice Lake." },
       { question: 'What Mercury motors do you have in stock?', answer: 'We stock the most popular Mercury FourStroke and Pro XS models. Verado is available by special order. Live stock and pricing for every model is in the quote tool at mercuryrepower.ca.' },
       { question: 'What warranty comes with a new Mercury outboard?', answer: 'Every new Mercury comes with a 3-year factory warranty. Any bonus coverage beyond that comes from Mercury promotions, which change; current offers are always at mercuryrepower.ca/promotions.' },
       { question: 'Can I use Harris Boat Works as my regular Mercury service shop?', answer: 'Yes, many Peterborough customers do exactly that: spring commissioning, mid-season service, fall winterization and storage. For engine repairs we service Mercury and MerCruiser only. Requests go through hbw.wiki/service.' },
