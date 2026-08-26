@@ -2289,7 +2289,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the current financing rate?",
-        "a": "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms."
+        "a": "The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
       },
       {
         "q": "What's the difference between the standing rate and a \"promo rate\"?",
@@ -5659,7 +5659,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the current promotional APR through HBW?",
-        "a": "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
+        "a": "The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
       },
       {
         "q": "Does HBW require a down payment to finance a Mercury repower?",

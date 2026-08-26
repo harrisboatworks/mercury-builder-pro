@@ -1,5 +1,6 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
 import { canonicalBlogFinancingCopy, canonicalBlogFinancingFaqCopy } from './blogFinancingCopy';
+import { getFinancingHeadlineFaqAnswer } from '../lib/finance';
 
 export interface HowToStep {
   name: string;
@@ -11305,11 +11306,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -14195,7 +14192,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
 `,
     faqs: [
       { question: 'Can I finance a Mercury outboard in Ontario?', answer: 'Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approval and final terms come from the lender.' },
-      { question: "What's the current financing rate?", answer: "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms." },
+      { question: "What's the current financing rate?", answer: getFinancingHeadlineFaqAnswer() },
       { question: 'What\'s the difference between the standing rate and a "promo rate"?', answer: 'A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article.' },
       { question: 'Is there a down payment?', answer: 'Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed.' },
       { question: 'Are there any fees?', answer: "The current HBW financed quote includes a $349 DealerPlan fee after HST. The written quote and lender disclosure show the fee and any contract-specific charges or prepayment terms." },
@@ -15100,11 +15097,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['cheapest mercury outboard canada', 'mercury 2.5hp price', 'small mercury outboard cad'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -16168,8 +16161,6 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 > **Quick answer:** Repower when the hull is structurally sound, the boat still suits how you use it, and the motor is the main problem. Replace or repair the hull first when the transom, floor, stringers, or impact areas show structural concerns. A photo can help with triage, but the final recommendation requires an in-person boat-specific assessment.
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
-
 ---
 
 ![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)
@@ -16345,8 +16336,6 @@ If the hull appears suitable, build the motor configuration at [mercuryrepower.c
     content: `*Last reviewed: 2026-07-18*
 
 > **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's dealer-installed list as of our last review starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
 ---
 
@@ -16742,11 +16731,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Repower',
     readTime: '10 min read',
     keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -17001,9 +16986,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['mercury repower process', 'what happens during repower', 'boat repower steps', 'mercury install process', 'repower timeline ontario'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
-
-*Last reviewed: 2026-07-24*
+    content: `*Last reviewed: 2026-07-24*
 
 ---
 
@@ -35527,7 +35510,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
 
 `,
     faqs: [
-      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms." },
+      { question: "What is the current promotional APR through HBW?", answer: getFinancingHeadlineFaqAnswer() },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
       { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
@@ -35535,7 +35518,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
       { question: "What fee is added to a financed purchase?", answer: "A mandatory DealerPlan documentation fee is added after HST to every financed purchase; the current amount appears on your mercuryrepower.ca quote. The payment example must include it." },
-      { question: "Where do I find the current promotional financing rate?", answer: "The current headline rate is {{LIVE_RATE}} through December 31, 2026 on eligible purchases (OAC), with a contract up to 60 months and amortization up to 240 months. A balance may remain due at maturity. Check mercuryrepower.ca/promotions and the signed lender disclosure." }
+      { question: "Where do I find the current promotional financing rate?", answer: `${getFinancingHeadlineFaqAnswer()} The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.` }
     ]
   },
   {
