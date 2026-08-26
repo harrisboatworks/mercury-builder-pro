@@ -1,8 +1,19 @@
 // @vitest-environment node
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { formatFinancingRate } from '@/lib/finance';
+import {
+  formatFinancingRate,
+  getDefaultFinancingRate,
+  getFinancingHeadlineFaqAnswer,
+  isMercuryPromoActive,
+  MERCURY_PROMO_APR,
+  MERCURY_PROMO_END_ISO,
+} from '@/lib/finance';
 import { getArticleBySlug } from './blogArticles';
+import {
+  buildCanonicalBlogFinancingCopy,
+  buildCanonicalBlogFinancingFaqCopy,
+} from './blogFinancingCopy';
 import { getCaseStudyBySlug } from './caseStudies';
 import { spanishBlogArticles } from './spanishBlogArticles';
 
@@ -84,5 +95,48 @@ describe('public artifact regression', () => {
       (article) => article.slug === 'mercury-outboard-monthly-payment-ontario-2026',
     );
     expect(paymentGuide?.faqs[0]?.a).toContain(formatFinancingRate());
+  });
+
+  it('switches generated financing copy to both standard tiers after promo expiry', () => {
+    const activeCopy = getFinancingHeadlineFaqAnswer(
+      new Date('2026-12-31T12:00:00-05:00'),
+    );
+    expect(activeCopy).toContain(formatFinancingRate(MERCURY_PROMO_APR));
+    expect(activeCopy).toContain('through December 31, 2026');
+
+    const expiredCopy = getFinancingHeadlineFaqAnswer(
+      new Date('2027-01-01T12:00:00-05:00'),
+    );
+    expect(expiredCopy).toContain(formatFinancingRate(getDefaultFinancingRate(5_000)));
+    expect(expiredCopy).toContain(formatFinancingRate(getDefaultFinancingRate(10_000)));
+    expect(expiredCopy).not.toContain('December 31, 2026');
+    expect(expiredCopy).not.toContain(formatFinancingRate(MERCURY_PROMO_APR));
+
+    for (const canonicalCopy of [
+      buildCanonicalBlogFinancingCopy(new Date('2027-01-01T12:00:00-05:00')),
+      buildCanonicalBlogFinancingFaqCopy(new Date('2027-01-01T12:00:00-05:00')),
+    ]) {
+      expect(canonicalCopy).toContain(
+        formatFinancingRate(getDefaultFinancingRate(5_000)),
+      );
+      expect(canonicalCopy).toContain(
+        formatFinancingRate(getDefaultFinancingRate(10_000)),
+      );
+      expect(canonicalCopy).not.toContain('December 31, 2026');
+      expect(canonicalCopy).not.toContain(formatFinancingRate(MERCURY_PROMO_APR));
+    }
+  });
+
+  it('uses the Ontario promo cutoff exactly and keeps indexed FAQs expiry-aware', () => {
+    const promoEnd = new Date(MERCURY_PROMO_END_ISO).getTime();
+    expect(MERCURY_PROMO_END_ISO).toMatch(/-05:00$/);
+    expect(new Date(promoEnd).toISOString()).toBe('2027-01-01T04:59:59.000Z');
+    expect(isMercuryPromoActive(promoEnd)).toBe(true);
+    expect(isMercuryPromoActive(promoEnd + 1)).toBe(false);
+
+    const source = readFileSync('src/data/blogArticles.ts', 'utf8');
+    expect(source).not.toMatch(
+      /answer:\s*["'`][^\n]*\{\{LIVE_RATE\}\}[^\n]*(?:Dec(?:ember)? 31, 2026)/,
+    );
   });
 });

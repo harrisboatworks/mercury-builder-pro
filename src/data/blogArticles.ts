@@ -1,5 +1,6 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
 import { canonicalBlogFinancingCopy, canonicalBlogFinancingFaqCopy } from './blogFinancingCopy';
+import { getFinancingHeadlineFaqAnswer } from '../lib/finance';
 
 export interface HowToStep {
   name: string;
@@ -14191,7 +14192,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
 `,
     faqs: [
       { question: 'Can I finance a Mercury outboard in Ontario?', answer: 'Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approval and final terms come from the lender.' },
-      { question: "What's the current financing rate?", answer: "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms." },
+      { question: "What's the current financing rate?", answer: getFinancingHeadlineFaqAnswer() },
       { question: 'What\'s the difference between the standing rate and a "promo rate"?', answer: 'A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article.' },
       { question: 'Is there a down payment?', answer: 'Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed.' },
       { question: 'Are there any fees?', answer: "The current HBW financed quote includes a $349 DealerPlan fee after HST. The written quote and lender disclosure show the fee and any contract-specific charges or prepayment terms." },
@@ -35509,7 +35510,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
 
 `,
     faqs: [
-      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms." },
+      { question: "What is the current promotional APR through HBW?", answer: getFinancingHeadlineFaqAnswer() },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
       { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
@@ -35517,7 +35518,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
       { question: "What fee is added to a financed purchase?", answer: "A mandatory DealerPlan documentation fee is added after HST to every financed purchase; the current amount appears on your mercuryrepower.ca quote. The payment example must include it." },
-      { question: "Where do I find the current promotional financing rate?", answer: "The current headline rate is {{LIVE_RATE}} through December 31, 2026 on eligible purchases (OAC), with a contract up to 60 months and amortization up to 240 months. A balance may remain due at maturity. Check mercuryrepower.ca/promotions and the signed lender disclosure." }
+      { question: "Where do I find the current promotional financing rate?", answer: `${getFinancingHeadlineFaqAnswer()} The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.` }
     ]
   },
   {
