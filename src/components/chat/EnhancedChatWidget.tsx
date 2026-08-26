@@ -36,6 +36,7 @@ import {
   type ChatPendingWrite,
   type ChatWriteStatus,
 } from './chatSessionHelpers';
+import { getChatPageCategory } from './chatLayout';
 
 interface Message {
   id: string;
@@ -111,7 +112,21 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const sendInFlightRef = useRef(false);
     const messageIdMap = useRef<Map<string, string>>(new Map()); // local id -> db id
+
+    useEffect(() => {
+      if (!isOpen) return;
+      const onKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
+          onClose();
+        }
+      };
+      document.addEventListener('keydown', onKeyDown);
+      return () => document.removeEventListener('keydown', onKeyDown);
+    }, [isOpen, onClose]);
     
     const location = useLocation();
     const { state } = useQuote();
@@ -234,21 +249,11 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       });
     }, []);
 
-    // Get page category for context-aware chat reset
-    const getPageCategory = (pathname: string): string => {
-      if (pathname.includes('/repower')) return 'repower';
-      if (pathname.includes('/quote/')) return 'quote';
-      if (pathname.includes('/financing')) return 'financing';
-      if (pathname.includes('/promotions')) return 'promotions';
-      if (pathname.includes('/contact')) return 'contact';
-      return 'general';
-    };
-
     // Reset initialization when page category changes (so chat restarts fresh on new context)
     const currentCategoryRef = useRef<string | null>(null);
     
     useEffect(() => {
-      const newCategory = getPageCategory(location.pathname);
+      const newCategory = getChatPageCategory(location.pathname);
       
       // If category changed since last check, reset initialization
       if (currentCategoryRef.current !== null && currentCategoryRef.current !== newCategory) {
@@ -271,7 +276,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           console.log('[Chat] Voice context loaded:', voiceCtx);
         }
         
-        const currentCategory = getPageCategory(location.pathname);
+        const currentCategory = getChatPageCategory(location.pathname);
         const storedCategory = localStorage.getItem('chat_page_category');
         
         // Check if page context changed significantly (different category)
@@ -485,7 +490,8 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     }, [clearConversation, saveMessage]);
 
     const handleSend = async (text: string = inputText) => {
-      if (!text.trim() || isLoading) return;
+      if (!text.trim() || isLoading || sendInFlightRef.current) return;
+      sendInFlightRef.current = true;
       setLastFailedMessage(null);
 
       const userMessage: Message = {
@@ -590,6 +596,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
               { role: 'assistant', content: displayText }
             ]);
             
+            sendInFlightRef.current = false;
             setIsLoading(false);
             onAIResponse?.();
           },
@@ -602,6 +609,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             ));
             saveMessage(CHAT_ERROR_TEXT, 'assistant');
             setLastFailedMessage(text.trim());
+            sendInFlightRef.current = false;
             setIsLoading(false);
           }
         });
@@ -614,6 +622,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             : msg
         ));
         setLastFailedMessage(text.trim());
+        sendInFlightRef.current = false;
         setIsLoading(false);
       }
     };

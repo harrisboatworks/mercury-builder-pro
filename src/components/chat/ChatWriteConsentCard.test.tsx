@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ChatWriteConsentCard } from './ChatWriteConsentCard';
 import type { ChatPendingWrite } from './chatSessionHelpers';
 
@@ -26,6 +26,10 @@ const write: ChatPendingWrite = {
 };
 
 describe('ChatWriteConsentCard', () => {
+  beforeEach(() => {
+    executeConfirmedChatWrite.mockReset();
+  });
+
   it('does not write on render or after the customer cancels', () => {
     const onStatusChange = vi.fn();
     executeConfirmedChatWrite.mockResolvedValue(undefined);
@@ -66,5 +70,23 @@ describe('ChatWriteConsentCard', () => {
     await waitFor(() => {
       expect(onStatusChange).toHaveBeenCalledWith('sent');
     });
+  });
+
+  it('unlocks the same consent card after a rejected write so the customer can retry', async () => {
+    const onStatusChange = vi.fn();
+    executeConfirmedChatWrite.mockRejectedValueOnce(new Error('network'));
+
+    const { rerender } = render(
+      <ChatWriteConsentCard write={write} status="needs_consent" onStatusChange={onStatusChange} />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Confirm callback request' }));
+    await waitFor(() => expect(onStatusChange).toHaveBeenCalledWith('error'));
+
+    rerender(<ChatWriteConsentCard write={write} status="error" onStatusChange={onStatusChange} />);
+    executeConfirmedChatWrite.mockResolvedValueOnce(undefined);
+    fireEvent.click(screen.getByRole('button', { name: 'Confirm callback request' }));
+
+    await waitFor(() => expect(onStatusChange).toHaveBeenCalledWith('sent'));
+    expect(executeConfirmedChatWrite).toHaveBeenCalledTimes(2);
   });
 });

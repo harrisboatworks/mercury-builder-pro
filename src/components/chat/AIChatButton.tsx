@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Sparkles } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
@@ -17,6 +17,8 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
   const { unreadCount, isLoading } = useAIChat();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(isOpen);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPulse(false), 10000);
@@ -26,6 +28,14 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
   useEffect(() => {
     if (hasInteracted) setShowPulse(false);
   }, [hasInteracted]);
+
+  useEffect(() => {
+    const wasOpen = wasOpenRef.current;
+    wasOpenRef.current = isOpen;
+    if (!wasOpen || isOpen) return;
+    const frame = requestAnimationFrame(() => buttonRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [isOpen]);
 
   const handleClick = () => {
     setHasInteracted(true);
@@ -41,6 +51,7 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
 
   return (
     <motion.button
+      ref={buttonRef}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}

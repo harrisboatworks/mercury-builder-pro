@@ -175,6 +175,7 @@ export function MotorInlineChatPanel({
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const sendInFlightRef = useRef(false);
   const messageIdMap = useRef<Map<string, string>>(new Map());
   const initialSentRef = useRef(false);
   
@@ -250,7 +251,8 @@ export function MotorInlineChatPanel({
   }, [clearConversation, motorTitle, saveMessage]);
 
   const handleSend = async (text: string = inputText) => {
-    if (!text.trim() || isLoading) return;
+    if (!text.trim() || isLoading || sendInFlightRef.current) return;
+    sendInFlightRef.current = true;
     setLastFailedMessage(null);
 
     const userMessage: Message = {
@@ -346,6 +348,7 @@ export function MotorInlineChatPanel({
             { role: 'assistant', content: parsed.displayText }
           ]);
           
+          sendInFlightRef.current = false;
           setIsLoading(false);
         },
         onError: (error) => {
@@ -356,6 +359,7 @@ export function MotorInlineChatPanel({
               : msg
           ));
           setLastFailedMessage(text.trim());
+          sendInFlightRef.current = false;
           setIsLoading(false);
         }
       });
@@ -363,6 +367,7 @@ export function MotorInlineChatPanel({
     } catch (error) {
       console.error('Chat error:', error);
       setLastFailedMessage(text.trim());
+      sendInFlightRef.current = false;
       setIsLoading(false);
     }
   };

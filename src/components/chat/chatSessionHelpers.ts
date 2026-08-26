@@ -60,6 +60,12 @@ const DISPLAY_MARKERS = [
 export type ChatWriteKind = 'lead' | 'sms' | 'price_alert';
 export type ChatWriteStatus = 'needs_consent' | 'sending' | 'sent' | 'declined' | 'error';
 
+export function getChatWriteSuccessCopy(kind: ChatWriteKind): string {
+  if (kind === 'sms') return 'Confirmed. The text was sent.';
+  if (kind === 'price_alert') return 'Confirmed. The team has your price-alert request.';
+  return 'Confirmed. The team has your callback request.';
+}
+
 export interface ChatPendingWrite {
   kind: ChatWriteKind;
   title: string;
@@ -83,6 +89,18 @@ export function formatSelectedQuoteLabel(
   return formatAccessoryCount(count);
 }
 
+function quoteProgressPath(pathname: string): string {
+  return pathname === '/quote' || pathname === '/quote/' ? '/quote/motor-selection' : pathname;
+}
+
+function customerFacingPrice(motor: ChatMotorLike): number | undefined {
+  if (typeof motor.price === 'number') return motor.price;
+  if (typeof motor.salePrice === 'number') return motor.salePrice;
+  if (typeof motor.sale_price === 'number') return motor.sale_price;
+  if (typeof motor.msrp === 'number') return motor.msrp;
+  return undefined;
+}
+
 export function buildChatQuoteProgress(
   pathname: string,
   state: ChatQuoteProgressInput,
@@ -93,7 +111,7 @@ export function buildChatQuoteProgress(
     hasTradein: state.hasTradein,
   };
   const visible = getVisibleQuoteSteps(progressState);
-  const step = getQuoteStepNumber(progressState, pathname);
+  const step = getQuoteStepNumber(progressState, quoteProgressPath(pathname));
 
   return {
     step: step ?? 1,
@@ -109,7 +127,7 @@ export function buildChatMotorContext(motor: ChatMotorLike | null | undefined): 
     id: motor.id,
     model: motor.model_display || motor.model || '',
     hp: motor.hp || motor.horsepower || 0,
-    price: motor.msrp || motor.price || motor.sale_price || motor.salePrice,
+    price: customerFacingPrice(motor),
     family: motor.family,
     description: motor.description,
     features: motor.features,
@@ -183,8 +201,21 @@ function stripMarkedObject(text: string, label: string): string {
   return `${text.slice(0, start)}${text.slice(end)}`.replace(/\s+\n/g, '\n').trim();
 }
 
+function stripAllMarkedObjects(text: string, label: string): string {
+  let current = text;
+  while (current.includes(`[${label}:`)) {
+    const next = stripMarkedObject(current, label);
+    if (next === current) break;
+    current = next;
+  }
+  return current;
+}
+
 export function stripStreamingCommandMarkers(text: string): string {
-  return DISPLAY_MARKERS.reduce((current, label) => stripMarkedObject(current, label), text).trim();
+  return DISPLAY_MARKERS
+    .reduce((current, label) => stripAllMarkedObjects(current, label), text)
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
 }
 
 function asTrimmedString(value: unknown): string | null {
@@ -199,7 +230,7 @@ function asValidPhone(value: unknown): string | null {
   const phone = asTrimmedString(value);
   if (!phone) return null;
   const digits = phone.replace(/\D/g, '');
-  if (digits.length < 7 || digits.length > 15) return null;
+  if (digits.length < 10 || digits.length > 15) return null;
   return phone;
 }
 
@@ -235,7 +266,7 @@ function motorPayload(motor?: ChatMotorLike | null) {
   return {
     model: motor.model_display || motor.model,
     hp: motor.hp || motor.horsepower,
-    price: motor.msrp || motor.price || motor.sale_price,
+    price: customerFacingPrice(motor),
   };
 }
 
@@ -325,19 +356,19 @@ export function parseAssistantCommandMarkers(
 
   const leadData = extractMarkedObject('LEAD_CAPTURE', rawResponse);
   if (leadData) {
-    displayText = stripMarkedObject(displayText, 'LEAD_CAPTURE');
+    displayText = stripAllMarkedObjects(displayText, 'LEAD_CAPTURE');
     pendingWrite = pendingWrite || buildLeadWrite(leadData, options, 'lead') || undefined;
   }
 
   const smsData = extractMarkedObject('SEND_SMS', rawResponse);
   if (smsData) {
-    displayText = stripMarkedObject(displayText, 'SEND_SMS');
+    displayText = stripAllMarkedObjects(displayText, 'SEND_SMS');
     pendingWrite = pendingWrite || buildSmsWrite(smsData, options) || undefined;
   }
 
   const alertData = extractMarkedObject('PRICE_ALERT', rawResponse);
   if (alertData) {
-    displayText = stripMarkedObject(displayText, 'PRICE_ALERT');
+    displayText = stripAllMarkedObjects(displayText, 'PRICE_ALERT');
     pendingWrite = pendingWrite || buildLeadWrite(alertData, options, 'price_alert') || undefined;
   }
 
@@ -356,7 +387,7 @@ export function parseAssistantCommandMarkers(
   if (repower.ctaData) displayText = repower.displayText;
 
   return {
-    displayText: displayText.trim(),
+    displayText: stripStreamingCommandMarkers(displayText).trim(),
     financingCTA,
     tradeInCTA: tradeIn.ctaData || undefined,
     serviceCTA: service.ctaData || undefined,
@@ -399,8 +430,8 @@ export async function executeConfirmedChatWrite(write: ChatPendingWrite): Promis
   });
   if (error) throw error;
   toast.success(write.kind === 'price_alert'
-    ? "Got it! We'll text you if pricing changes."
-    : "We've got your info! Someone will call you soon.");
+    ? 'Price-alert request saved.'
+    : 'Callback request sent to the team.');
 }
 
 export const CHAT_ERROR_TEXT =

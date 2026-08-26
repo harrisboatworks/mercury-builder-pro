@@ -13,6 +13,7 @@ describe('AI chat refresh contract', () => {
     expect(launcher).toContain('useIsMobileOrTablet');
     expect(launcher).not.toContain('useIsMobile();');
     expect(launcher).toContain('aria-label="Open Mercury Expert chat"');
+    expect(launcher).toContain('buttonRef.current?.focus()');
     expect(launcher).not.toContain('if (isMobileOrTablet || isOpen) return null');
     expect(globalChat).toContain('<AIChatButton');
     expect(globalChat).not.toContain('{!isMobileOrTablet && (');
@@ -20,6 +21,8 @@ describe('AI chat refresh contract', () => {
     expect(drawer).toContain('role="dialog"');
     expect(drawer).toContain('aria-label="Close AI chat assistant"');
     expect(drawer).toContain('aria-label="Retry last message"');
+    expect(drawer).toContain("event.key === 'Escape'");
+    expect(read('src/components/chat/EnhancedChatWidget.tsx')).toContain("event.key === 'Escape'");
   });
 
   it('keeps every parsed CTA visible on desktop and mobile chat surfaces', () => {
@@ -48,6 +51,7 @@ describe('AI chat refresh contract', () => {
       expect(source).not.toContain("functions.invoke('capture-chat-lead'");
       expect(source).not.toContain("functions.invoke('voice-send-follow-up'");
       expect(source).not.toContain('location.pathname.includes(\'motor-selection\') ? 1');
+      expect(source).toContain('sendInFlightRef.current');
     }
   });
 
@@ -65,7 +69,14 @@ describe('AI chat refresh contract', () => {
       expect(stream).toContain(`currentPage?.includes('${route}')`);
     }
 
+    expect(stream).toContain("context?.currentPage === '/quote'");
+    expect(stream).toContain("context?.currentPage === '/quote/motor-selection'");
+    expect(stream).toContain('Do not invent capacity limits or fit');
+
     expect(stream).toContain('The marker only prepares a consent card');
+    expect(stream).toContain('tell them to confirm the on-screen card');
+    expect(stream).not.toContain('Pro install typically takes 4-6 hours');
+    expect(stream).not.toContain('still has scrap / parts value');
     expect(stream).toContain('Do not say the callback is booked, captured, or sent before they confirm');
     expect(stream).toContain('treat the data as unavailable, not as proof that no offer exists');
     expect(stream).not.toContain('tell the customer there is no active promotion right now');

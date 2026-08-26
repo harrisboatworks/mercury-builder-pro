@@ -126,7 +126,7 @@ export function getContextualPrompts(
   }
 
   // Motor selection page
-  if (currentPage === '/' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) {
+  if (currentPage === '/' || currentPage === '/quote' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) {
     if (!motor) {
       return [
         "Help me pick the right motor",
@@ -356,7 +356,7 @@ export function getPageWelcomeMessage(
   }
 
   // Motor selection with motor context
-  if ((currentPage === '/' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) && motor && hp > 0) {
+  if ((currentPage === '/' || currentPage === '/quote' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) && motor && hp > 0) {
     return `Hey! Checking out the ${hp}HP ${family}? Solid choice, what do you want to know about it?`;
   }
 
@@ -405,6 +405,7 @@ export function getBoatTypeLabel(typeId: string): string {
 // Helper to check if current page is motor-focused (where motor prompts should take priority)
 export function isMotorFocusedPage(pathname: string): boolean {
   return pathname === '/'
+    || pathname === '/quote'
     || pathname === '/quote/motor-selection'
     || pathname.startsWith('/quote/motor-selection/')
     || pathname.startsWith('/repower')

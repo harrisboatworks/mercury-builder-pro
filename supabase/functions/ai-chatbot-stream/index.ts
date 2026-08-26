@@ -826,7 +826,12 @@ PROACTIVE KNOWLEDGE RULES:
 
   // Build page-specific context to guide AI responses
   let pageContext = '';
-  if (context?.currentPage?.includes('/quote/options')) {
+  if (context?.currentPage === '/quote' || context?.currentPage === '/quote/motor-selection') {
+    pageContext = `
+## CURRENT PAGE: MOTOR SELECTION
+The customer is choosing a motor. Help narrow horsepower and configuration from the boat details they provide. Do not invent capacity limits or fit; ask for boat type, length, current HP, and capacity-plate information when needed.
+`;
+  } else if (context?.currentPage?.includes('/quote/options')) {
     pageContext = `
 ## CURRENT PAGE: MOTOR OPTIONS & ACCESSORIES
 The customer is viewing compatible add-ons for their selected motor. This is Step 2 of the quote process.
@@ -852,11 +857,11 @@ The customer is choosing HOW they want to get the motor - this is NOT about till
 
 Two options:
 1. **Loose Motor** - They pick up the motor and install it themselves (or have another shop do it)
-2. **Professional Installation** - Harris installs it on their boat with full rigging, controls, and lake test
+2. **Professional Installation** - Harris installs it on their boat and confirms the final rigging, controls, and Lake Test scope
 
 If they ask about installation, explain:
-- Pro install includes: full rigging, controls hookup, fuel line, lake test
-- Pro install typically takes 4-6 hours for single engines
+- Describe only the scope shown in the customer's quote; Harris confirms boat-specific rigging and controls
+- Do not promise timing. Harris confirms installation timing and Lake Test arrangements for the specific job
 - Loose motors are great for DIYers or if they have their own mechanic
 - Tiller vs remote is ALREADY decided by their motor selection - don't bring this up!
 `;
@@ -876,14 +881,14 @@ Help with:
 They can continue without an estimate. Ballpark values only — never promise a locked price.
 
 Help with:
-- Running vs non-running still has scrap / parts value
+- Condition affects the estimate; do not promise that every motor has trade-in value
 - Boat trades are a separate conversation with the sales team
 - If they skip, the quote still works
 `;
   } else if (context?.currentPage?.includes('/quote/installation')) {
     pageContext = `
 ## CURRENT PAGE: INSTALLATION
-Professional install at Harris Boat Works. Typical single-engine jobs are a half day plus a lake test when conditions allow.
+Professional install at Harris Boat Works. Do not promise timing; Harris confirms the scope and Lake Test arrangements for the specific boat.
 `;
   } else if (context?.currentPage?.includes('/quote/promo-selection')) {
     pageContext = `
@@ -1042,7 +1047,7 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 
 **CRITICAL RULES:**
 - Offer ONCE per conversation, max. Don't ask again if they ignore it.
-- If they give their number, use the [SEND_SMS] or [PRICE_ALERT] format
+- If they give their number, use the [SEND_SMS] or [PRICE_ALERT] format, then tell them to confirm the on-screen card
 - The marker only prepares a consent card. NEVER say a text or alert was sent or scheduled until the customer explicitly confirms it.
 - If they don't bite, just keep helping — the goal is to be useful, not to capture leads
 

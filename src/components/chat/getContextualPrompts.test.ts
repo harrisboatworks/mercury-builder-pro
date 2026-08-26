@@ -13,6 +13,12 @@ describe('getContextualPrompts', () => {
     expect(new Set(prompts).size).toBe(prompts.length);
   });
 
+  it('treats bare /quote as motor selection', () => {
+    expect(getContextualPrompts(null, null, '/quote')).toEqual(
+      getContextualPrompts(null, null, '/quote/motor-selection'),
+    );
+  });
+
   it('does not repeat the fishing prompt on motor selection', () => {
     const prompts = getContextualPrompts(null, null, '/quote/motor-selection');
     expect(prompts.filter((prompt) => prompt === "What's a good motor for fishing?")).toHaveLength(1);
@@ -36,6 +42,7 @@ describe('getPageWelcomeMessage', () => {
 describe('isMotorFocusedPage', () => {
   it('treats the live motor-selection route as motor-focused', () => {
     expect(isMotorFocusedPage('/quote/motor-selection')).toBe(true);
+    expect(isMotorFocusedPage('/quote')).toBe(true);
     expect(isMotorFocusedPage('/quote/options')).toBe(false);
     expect(isMotorFocusedPage('/repower')).toBe(true);
   });

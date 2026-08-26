@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Phone, ShieldCheck } from 'lucide-react';
 import {
   executeConfirmedChatWrite,
+  getChatWriteSuccessCopy,
   type ChatPendingWrite,
   type ChatWriteStatus,
 } from './chatSessionHelpers';
@@ -93,7 +94,7 @@ export function ChatWriteConsentCard({ write, status, onStatusChange }: ChatWrit
         <p className="mt-2 text-xs text-gray-500">Sending…</p>
       ) : null}
       {status === 'sent' ? (
-        <p className="mt-2 text-xs text-emerald-700">Confirmed. The team has this.</p>
+        <p className="mt-2 text-xs text-emerald-700">{getChatWriteSuccessCopy(write.kind)}</p>
       ) : null}
       {status === 'declined' ? (
         <p className="mt-2 text-xs text-gray-500">No problem — nothing was sent.</p>

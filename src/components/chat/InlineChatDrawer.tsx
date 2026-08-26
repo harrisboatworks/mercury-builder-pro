@@ -28,7 +28,7 @@ import {
   type ChatPendingWrite,
   type ChatWriteStatus,
 } from './chatSessionHelpers';
-import { getMobileDrawerBottom } from './chatLayout';
+import { getChatPageCategory, getMobileDrawerBottom } from './chatLayout';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
@@ -101,6 +101,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
   const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
+  const sendInFlightRef = useRef(false);
   
   // Track which motor the user has already interacted with (asked questions about)
   const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
@@ -121,6 +122,19 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const [showHistoryBanner, setShowHistoryBanner] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
 
   // Keyboard-aware positioning for iOS
   useEffect(() => {
@@ -306,21 +320,11 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     });
   }, []);
 
-  // Get page category for context-aware chat reset
-  const getPageCategory = (pathname: string): string => {
-    if (pathname.includes('/repower')) return 'repower';
-    if (pathname.includes('/quote/')) return 'quote';
-    if (pathname.includes('/financing')) return 'financing';
-    if (pathname.includes('/promotions')) return 'promotions';
-    if (pathname.includes('/contact')) return 'contact';
-    return 'general';
-  };
-
   // Reset initialization when page category changes (so chat restarts fresh on new context)
   const currentCategoryRef = useRef<string | null>(null);
   
   useEffect(() => {
-    const newCategory = getPageCategory(location.pathname);
+    const newCategory = getChatPageCategory(location.pathname);
     
     // If category changed since last check, reset initialization
     if (currentCategoryRef.current !== null && currentCategoryRef.current !== newCategory) {
@@ -339,7 +343,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     const initChat = async () => {
       if (!isOpen || hasInitialized || isPersistenceLoading) return;
       
-      const currentCategory = getPageCategory(location.pathname);
+      const currentCategory = getChatPageCategory(location.pathname);
       const storedCategory = localStorage.getItem('chat_page_category');
       
       // Check if page context changed significantly (different category)
@@ -564,7 +568,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   }, [clearConversation, saveMessage]);
 
   const handleSend = async (text: string = inputText) => {
-    if (!text.trim() || isLoading) return;
+    if (!text.trim() || isLoading || sendInFlightRef.current) return;
+    sendInFlightRef.current = true;
 
     setLastFailedMessage(null);
     setSendState('sending');
@@ -681,6 +686,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             { role: 'assistant', content: displayText }
           ]);
           
+          sendInFlightRef.current = false;
           setIsLoading(false);
           onAIResponse?.();
         },
@@ -693,6 +699,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               : msg
           ));
           saveMessage(CHAT_ERROR_TEXT, 'assistant');
+          sendInFlightRef.current = false;
           setIsLoading(false);
           setLastFailedMessage(text.trim());
         }
@@ -708,6 +715,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       ));
       saveMessage(CHAT_ERROR_TEXT, 'assistant');
       setLastFailedMessage(text.trim());
+      sendInFlightRef.current = false;
       setIsLoading(false);
     }
   };

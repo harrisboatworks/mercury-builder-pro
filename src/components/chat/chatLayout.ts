@@ -7,7 +7,17 @@
  */
 
 export function isPhoneQuoteNavPath(pathname: string): boolean {
-  return pathname.startsWith('/quote/') || pathname === '/promotions';
+  return pathname === '/quote' || pathname.startsWith('/quote/') || pathname === '/promotions';
+}
+
+/** Stable page bucket used to decide when persisted chat context must reset. */
+export function getChatPageCategory(pathname: string): string {
+  if (pathname.startsWith('/repower')) return 'repower';
+  if (pathname === '/quote' || pathname.startsWith('/quote/')) return 'quote';
+  if (pathname.startsWith('/financing')) return 'financing';
+  if (pathname.startsWith('/promotions')) return 'promotions';
+  if (pathname.startsWith('/contact')) return 'contact';
+  return 'general';
 }
 
 /** CSS bottom offset for the floating launcher on phones. */
