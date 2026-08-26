@@ -120,6 +120,15 @@ export async function markConsultationDocumentJobEmailed(
   await markJob(writer, jobId, "emailed");
 }
 
+export async function markConsultationDocumentJobDeliveryFailed(
+  writer: ConsultationDocumentWriter,
+  jobId: string | null,
+  error?: unknown,
+): Promise<void> {
+  // Keep persisted so retention does not delete a minted PDF that still needs retry.
+  await markJob(writer, jobId, "persisted", error || new Error("ResendError"));
+}
+
 async function compensateMintFailure(
   writer: ConsultationDocumentWriter,
   options: { documentId: string; storageKey: string; uploaded: boolean },
@@ -137,14 +146,14 @@ export function createSupabaseConsultationDocumentWriter(supabase: {
   from: (table: string) => {
     insert: (row: object) => {
       select: (columns: string) => {
-        single: () => Promise<{ data: { id?: string } | null; error: unknown }>;
+        single: () => PromiseLike<{ data: { id?: string } | null; error: unknown }>;
       };
     };
     update: (row: Record<string, unknown>) => {
-      eq: (column: string, value: string) => Promise<{ error: unknown }>;
+      eq: (column: string, value: string) => PromiseLike<{ error: unknown }>;
     };
     delete: () => {
-      eq: (column: string, value: string) => Promise<{ error: unknown }>;
+      eq: (column: string, value: string) => PromiseLike<{ error: unknown }>;
     };
   };
   storage: {
@@ -153,8 +162,8 @@ export function createSupabaseConsultationDocumentWriter(supabase: {
         path: string,
         body: Uint8Array,
         options: Record<string, unknown>,
-      ) => Promise<{ error: unknown }>;
-      remove: (paths: string[]) => Promise<{ error: unknown }>;
+      ) => PromiseLike<{ error: unknown }>;
+      remove: (paths: string[]) => PromiseLike<{ error: unknown }>;
     };
   };
 }): ConsultationDocumentWriter {

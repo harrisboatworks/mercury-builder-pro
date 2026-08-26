@@ -131,6 +131,8 @@ describe('consultation rate-limit call-site contract', () => {
     expect(resendAt).toBeGreaterThan(mintAt);
     expect(submit).toContain('consultationSubmitCustomerDestinations(String(data.customer_email))');
     expect(submit).toContain('consultationPdfBase64(minted.pdfBytes)');
+    expect(submit).toContain('assertResendAccepted');
+    expect(submit).toContain('parseConsultationCallerQuoteSnapshot');
     expect(submit).not.toContain('documentId');
   });
 });

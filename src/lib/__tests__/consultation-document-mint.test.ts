@@ -14,8 +14,10 @@ import {
   type ConsultationDocumentInsert,
   type ConsultationDocumentJobInsert,
   type ConsultationDocumentWriter,
+  markConsultationDocumentJobDeliveryFailed,
   mintConsultationDocument,
 } from '../../../supabase/functions/_shared/consultation-document-mint.ts';
+import { mergeConsultationDeliverySnapshot } from '../../../supabase/functions/_shared/consultation-authoritative-quote.ts';
 
 const QUOTE_ID = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
 const DOCUMENT_ID = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
@@ -163,6 +165,54 @@ describe('consultation document mint', () => {
     expect(store.removed).toEqual([`consultation/${DOCUMENT_ID}/quote.pdf`]);
     expect(store.deleted).toEqual([DOCUMENT_ID]);
     expect(store.jobUpdates.at(-1)?.status).toBe('cleaned');
+  });
+
+  it('keeps a minted job persisted with an error name when email delivery fails', async () => {
+    const store = memoryWriter();
+    const minted = await mintConsultationDocument({
+      quoteId: QUOTE_ID,
+      quoteNumber: 'HBW-123456',
+      snapshot: SNAPSHOT,
+      writer: store.writer,
+      documentId: DOCUMENT_ID,
+    });
+    await markConsultationDocumentJobDeliveryFailed(
+      store.writer,
+      minted.jobId,
+      Object.assign(new Error('provider rejected'), { name: 'ResendError' }),
+    );
+    expect(store.jobUpdates.at(-1)).toMatchObject({
+      id: minted.jobId,
+      status: 'persisted',
+      error_name: 'ResendError',
+    });
+    expect(store.deleted).toHaveLength(0);
+    expect(store.removed).toHaveLength(0);
+  });
+
+  it('stores the complete delivery snapshot used to render the PDF', async () => {
+    const complete = mergeConsultationDeliverySnapshot(SNAPSHOT, {
+      accessories: [{ name: 'Professional Installation', price: 450 }],
+      tradeIn: { value: 790, brand: 'Mercury' },
+      priceBreakdown: { subtotal: 16335, hst: 2123.55 },
+      financing: { monthlyPayment: 336, amortizationMonths: 60, rate: 5.48 },
+    });
+    const store = memoryWriter();
+    await mintConsultationDocument({
+      quoteId: QUOTE_ID,
+      quoteNumber: 'HBW-123456',
+      snapshot: complete,
+      writer: store.writer,
+      documentId: DOCUMENT_ID,
+    });
+    expect(store.documents[0]?.delivery_snapshot.accessories).toEqual([
+      { name: 'Professional Installation', price: 450 },
+    ]);
+    expect(store.documents[0]?.delivery_snapshot.tradeIn?.value).toBe(790);
+    const pdfText = new TextDecoder().decode(store.uploads[0]?.bytes || new Uint8Array());
+    expect(pdfText).toContain('Professional Installation');
+    expect(pdfText).toContain('Estimated trade-in value');
+    expect(pdfText).toContain('HST \\(13%\\)');
   });
 
   it('marks the mint job failed when compensating cleanup cannot finish', async () => {

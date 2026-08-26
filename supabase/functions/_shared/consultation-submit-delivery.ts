@@ -57,6 +57,29 @@ export function consultationSubmitCustomerDestinations(customerEmail: string): {
   return { to: [customerEmail] };
 }
 
+export class ConsultationDeliveryError extends Error {
+  constructor(message = "Consultation email delivery failed") {
+    super(message);
+    this.name = "ConsultationDeliveryError";
+  }
+}
+
+export interface ResendSendResult {
+  data?: { id?: string | null } | null;
+  error?: { name?: string | null; message?: string | null } | null;
+}
+
+export function assertResendAccepted(result: ResendSendResult | null | undefined): { id: string } {
+  const providerError = result?.error;
+  const id = result?.data?.id;
+  if (providerError || typeof id !== "string" || !id.trim()) {
+    throw new ConsultationDeliveryError(
+      providerError?.name || "ResendError",
+    );
+  }
+  return { id };
+}
+
 export function buildConsultationQuoteMintedEmail(data: {
   customerName: string;
   quoteNumber: string;
