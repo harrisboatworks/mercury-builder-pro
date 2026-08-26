@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon HP Sizing Ontario Guide"
 description: "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-26  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
@@ -98,7 +98,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ---
 
-![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 300–400+ HP (26+ ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 250–300 HP (24–26 ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 
@@ -327,3 +327,4 @@ For regular tube pulling rather than the occasional run, plan on a minimum 150 H
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+
