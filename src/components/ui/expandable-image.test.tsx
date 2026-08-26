@@ -30,6 +30,34 @@ describe('ExpandableImage', () => {
     expect(screen.getByRole('button', { name: 'Close expanded image' })).toHaveFocus();
   });
 
+  it('points the dialog aria-describedby at the rendered instruction description', () => {
+    render(
+      <ExpandableImage
+        src="/lovable-uploads/inline/lock-chamber.png"
+        alt="Pleasure boat in a lock chamber"
+      />,
+    );
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Expand image: Pleasure boat in a lock chamber',
+      }),
+    );
+
+    const dialog = screen.getByRole('dialog', {
+      name: 'Expanded image: Pleasure boat in a lock chamber',
+    });
+    const describedBy = dialog.getAttribute('aria-describedby');
+
+    expect(describedBy).toBeTruthy();
+
+    const description = document.getElementById(describedBy!);
+
+    expect(description).toBeTruthy();
+    expect(description).toHaveTextContent('Click outside or press ESC to close');
+    expect(description).toHaveTextContent('Pinch to zoom • Tap outside to close');
+  });
+
   it('traps focus, closes on Escape, and restores focus to the trigger', async () => {
     render(
       <ExpandableImage
