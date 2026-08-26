@@ -135,7 +135,7 @@ async function compensateMintFailure(
 
 export function createSupabaseConsultationDocumentWriter(supabase: {
   from: (table: string) => {
-    insert: (row: Record<string, unknown>) => {
+    insert: (row: object) => {
       select: (columns: string) => {
         single: () => Promise<{ data: { id?: string } | null; error: unknown }>;
       };
