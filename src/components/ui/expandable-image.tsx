@@ -22,7 +22,6 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const dialogId = useId();
-  const instructionsId = useId();
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -93,7 +92,6 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
         <DialogPrimitive.Content
           id={dialogId}
           aria-label={`Expanded image: ${alt}`}
-          aria-describedby={instructionsId}
           className="fixed inset-0 z-50 flex items-center justify-center focus:outline-none"
           onClick={handleOverlayClick}
         >
@@ -134,7 +132,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
 
           {/* Instructions - different for mobile vs desktop */}
           <DialogPrimitive.Description asChild>
-            <div id={instructionsId} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
               <span className="hidden md:inline">Click outside or press ESC to close</span>
               <span className="md:hidden">Pinch to zoom • Tap outside to close</span>
             </div>
