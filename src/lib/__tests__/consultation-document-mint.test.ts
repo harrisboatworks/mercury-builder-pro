@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, expectTypeOf, it } from 'vitest';
 
 import {
   createConsultationAccessToken,
@@ -9,6 +9,7 @@ import {
 } from '../../../supabase/functions/_shared/consultation-document-policy.ts';
 import { renderConsultationQuotePdf } from '../../../supabase/functions/_shared/consultation-document-pdf.ts';
 import {
+  createSupabaseConsultationDocumentWriter,
   type ConsultationCapabilityInsert,
   type ConsultationDocumentInsert,
   type ConsultationDocumentJobInsert,
@@ -72,6 +73,15 @@ function memoryWriter(options: {
 }
 
 describe('consultation document mint', () => {
+  it('accepts all three typed insert rows without index signatures', () => {
+    type SupabaseWriterInput = Parameters<typeof createSupabaseConsultationDocumentWriter>[0];
+    type SupabaseInsertRow = Parameters<ReturnType<SupabaseWriterInput['from']>['insert']>[0];
+
+    expectTypeOf<ConsultationDocumentInsert>().toMatchTypeOf<SupabaseInsertRow>();
+    expectTypeOf<ConsultationCapabilityInsert>().toMatchTypeOf<SupabaseInsertRow>();
+    expectTypeOf<ConsultationDocumentJobInsert>().toMatchTypeOf<SupabaseInsertRow>();
+  });
+
   it('renders a valid server PDF from the persisted delivery snapshot', () => {
     const pdf = renderConsultationQuotePdf({
       quoteNumber: 'HBW-123456',
