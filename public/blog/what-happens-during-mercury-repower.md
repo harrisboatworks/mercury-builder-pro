@@ -29,8 +29,6 @@ revenue_driver: repower
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
-
 ---
 
 ![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water lake test, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
