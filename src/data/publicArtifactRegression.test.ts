@@ -94,7 +94,9 @@ describe('public artifact regression', () => {
     const paymentGuide = index.articles.find(
       (article) => article.slug === 'mercury-outboard-monthly-payment-ontario-2026',
     );
-    expect(paymentGuide?.faqs[0]?.a).toContain(formatFinancingRate());
+    expect(paymentGuide?.faqs[0]?.a).toContain(
+      formatFinancingRate(MERCURY_PROMO_APR),
+    );
   });
 
   it('switches generated financing copy to both standard tiers after promo expiry', () => {
