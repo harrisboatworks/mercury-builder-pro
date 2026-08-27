@@ -22752,7 +22752,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-27',
     publishDate: '2026-03-16',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -22939,14 +22939,14 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-*Harris Boat Works, est. 1947. Mercury Marine Premier Dealer. Gores Landing, Ontario.*
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 *905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
 
 ---
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW has been a Mercury dealer since 1965 and is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Get the printable guide
 
@@ -35239,7 +35239,7 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
     imageAlt: 'Mercury 90 HP FourStroke main outboard paired with a 9.9 HP ProKicker on an aluminum fishing boat for trolling.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-08-15',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -35352,6 +35352,8 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ---
 `,

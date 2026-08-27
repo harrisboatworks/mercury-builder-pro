@@ -192,7 +192,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-27',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -258,14 +258,16 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 어종별 시즌 (FMZ 17 기준)
 
-| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) |
-|---|---|---|---|
-| Walleye(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 |
-| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 |
-| Muskie(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 |
-| Yellow Perch(옐로 퍼치) | 연중 개방 |, | 50마리 |
+이 표는 Sport(S) licence 기준입니다.
 
-**반드시 매년 온타리오 정부 사이트에서 최신 시즌 날짜와 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
+| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) | 소지 크기 |
+|---|---|---|---|---|
+| Walleye/Sauger(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 | 35~50 cm만 |
+| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 | 제한 없음 |
+| Muskellunge(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 | 112 cm 초과 |
+| Yellow Perch(옐로 퍼치) | 연중 개방 | 없음 | 50마리 | 제한 없음 |
+
+**반드시 매년 온타리오 공식 [FMZ 17 규정](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)에서 최신 시즌 날짜, 소지 크기, 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
 
 ---
 
@@ -283,7 +285,15 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 **HBW 렌탈 보트:** Rice Lake에서 폰툰과 낚시 보트를 대여합니다. 현재 보트 종류, 정원, 요금, 예약 가능 날짜는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 확인하고 온라인으로 예약하세요. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다.
 
-**언어 안내:** HBW 직원들은 영어로 소통합니다. 한국어 서비스는 없지만 한인 낚시객을 환영하며 최선을 다해 도와드립니다.
+---
+
+## 언어 안내
+
+이 한국어 가이드는 토론토와 GTA 한인 낚시객이 Rice Lake 가는 길, 낚시 면허, FMZ 17 시즌과 어획 한도를 한국어로 먼저 파악할 수 있도록 만든 것입니다.
+
+HBW 직원의 상담과 서비스는 영어로 진행됩니다. 방문 시 영어가 가능한 가족이나 친구와 함께 오시거나, 휴대폰 번역 앱을 사용하시면 현장에서 소통이 수월합니다.
+
+한국어 서비스는 제공하지 않습니다. 한인 방문객이 오시면 천천히 맞춰 도와드리겠습니다.
 
 ---
 
