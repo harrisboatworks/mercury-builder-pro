@@ -139,7 +139,7 @@ const unsupportedOperationalClaims = [
   {
     label: 'incorrect Mandarin winterization or storage reservation pressure',
     pattern:
-      /(?:(?:9 月中旬|9 月底之前)[^\n。]{0,30}(?:预订|预约)|(?:场地|位置)[^\n。]{0,30}(?:几乎满|订满)|锁定冬储位置|早鸟折扣)/i,
+      /(?:(?:9 月中旬|9 月底之前)[^\n。]{0,30}(?:预订|预约)|(?:场地|位置)[^\n。]{0,30}(?:几乎满|订满)|锁定冬储位置|早鸟折扣|不需要提前数月预留位置|不需要在夏末抢位置)/i,
   },
   {
     label: 'false Mandarin-language staff claim',
@@ -276,7 +276,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /not accurate to describe every pleasure-craft case as an automatic blanket warranty void/i,
   ],
   'gta-chinese-rice-lake-winter-storage-complete-guide': [
-    /不需要提前数月预留位置/i,
+    /HBW 当前 2026[–-]27 冬储价格表/i,
     /然后随时送船，包括下班后/i,
     /2025 年 8 月至 11 月完成的 584 条冬化记录/i,
     /提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务/i,

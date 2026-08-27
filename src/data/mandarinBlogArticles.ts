@@ -22,12 +22,12 @@ const allMandarinBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-gta-chinese-winter-storage.png',
     author: 'Jay Harris',
     datePublished: '2026-05-16',
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-16',
     category: 'mandarin',
     readTime: '8 分钟',
     keywords: ['冬储', '莱斯湖', 'GTA 华人', '收缩膜', 'Mercury', 'Harris Boat Works'],
-    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 不需要提前数月预留位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。 船厂 12 月 1 日至 4 月 1 日关闭。
+    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 先确认 HBW 是否适合您的船
 
@@ -50,7 +50,7 @@ HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，�
 
 ## 从服务请求到送船
 
-不需要在夏末抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
 
 正常流程很简单：
 
@@ -64,6 +64,8 @@ HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，�
 ## 当前价格如何确认
 
 不要使用这篇文章里的旧价格范围来预算。冬化、收缩膜和存储价格会因船长、船型、发动机、拖车、船上系统和批准的工作而不同。
+
+请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。
 
 书面报价应清楚列出：
 
@@ -114,10 +116,10 @@ ${ZH_LANGUAGE_NOTE}
 `,
     faqs: [
       { question: 'HBW 提供室内冬储吗？', answer: '不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 也不提供恒温、全年或夏季存储。' },
-      { question: '需要提前预留冬储位置吗？', answer: '不需要。先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
+      { question: '如何开始冬储流程？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
       { question: '秋季最晚什么时候送船？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: 'HBW 可以从 GTA 取船或送船吗？', answer: '我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。' },
-      { question: '冬储价格是多少？', answer: '当前书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。请通过 hbw.wiki/service 提交资料。' },
+      { question: '冬储价格是多少？', answer: '请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。船只专属书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。' },
       { question: '关闭期间可以取船或做维修吗？', answer: '不可以。实体船厂 12 月 1 日至 4 月 1 日关闭，期间没有现场服务、维修、安装、检查、客户进入或取船。' },
       { question: '春季检查是否包含在冬储里？', answer: '春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修需另行批准。' },
     ],

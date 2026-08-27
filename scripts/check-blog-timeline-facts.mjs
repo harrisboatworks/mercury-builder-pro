@@ -525,8 +525,8 @@ const ARTICLE_CONTRACTS = {
   'boat-winterization-cost-ontario-2026': {
     required: [
       {
-        rx: /does not publish a one-price-fits-all winterization range/i,
-        rule: 'no-unapproved-winterization-pricing',
+        rx: /publishes its current 2026[–-]27 winterization and storage rates/i,
+        rule: 'canonical-winterization-pricing',
       },
       {
         rx: /spring commissioning is included for HBW winter-storage customers and is \$99 for non-storage customers/i,
