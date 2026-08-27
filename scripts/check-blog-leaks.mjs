@@ -122,7 +122,7 @@ const STALE_YEAR_RX = /\b(2024|2025)\b/g;
 // 1) Preceded by a historical/connector word in EN, ES, FR.
 const HISTORICAL_WORD_RX = /\b(?:since|in|during|from|by|of|before|after|early|late|mid|through|throughout|until|acquired|founded|established|spring|summer|fall|winter|season|desde|depuis|del|en|le|du|de)\s*$/i;
 // 2) Preceded by a month-day phrase (e.g. "December 31, ", "31 de diciembre de ").
-const MONTH_NAMES = '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|fevrier|f\u00e9vrier|mars|avril|mai|juin|juillet|aout|ao\u00fbt|septembre|octobre|novembre|decembre|d\u00e9cembre)';
+const MONTH_NAMES = '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|fevrier|f\u00e9vrier|mars|avril|mai|juin|juillet|aout|ao\u00fbt|septembre|octobre|novembre|decembre|d\u00e9cembre|nobyembre|اگست|نومبر)';
 const MONTH_DAY_PREFIX_RX = new RegExp(`(?:${MONTH_NAMES})\\.?\\s+(?:\\d{1,2}(?:st|nd|rd|th)?,?\\s*)?$|\\d{1,2}\\s+de\\s+\\w+\\s+de\\s*$`, 'i');
 const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPro|Avator|lineup|model|models|season|release|launch|recall|shift-?shaft|rebrand|spring|summer|fall|winter|or\s+(?:newer|later|earlier|older))\b/i;
 // 4) CJK year suffix immediately after the year (Korean 년 / Chinese-Japanese 年)
