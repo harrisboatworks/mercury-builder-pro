@@ -135,7 +135,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         question: 'Where can I get a Mercury outboard serviced in the Kawarthas?',
         answer:
-          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All the work happens in our shop, so you arrange transport to us and pick the boat or motor back up when it's done. We don't offer mobile, dockside, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
+          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All service work happens in our shop. We can generally arrange boat pickup; ask us about availability for your boat and location. You can also bring the boat or motor to Gores Landing and collect it when the work is done. We don't offer delivery or mobile, dockside, driveway, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
       },
     ],
     visit: VISIT,
