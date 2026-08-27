@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "d9fe43e9d3a05c0571de",
+  "sourceVersion": "835e9d0a39ed8664073c",
   "count": 196,
   "articles": [
     {
@@ -4792,7 +4792,7 @@
     {
       "slug": "toronto-to-rice-lake-drive-in-process",
       "title": "Toronto to Rice Lake: How HBW Drive-In Service Works",
-      "description": "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
+      "description": "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.",
       "category": "Service & Maintenance",
       "publishDate": "2026-05-15",
       "keywords": [
@@ -4812,7 +4812,7 @@
         },
         {
           "q": "Is drop-off and pickup one trip?",
-          "a": "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
+          "a": "If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service."
         },
         {
           "q": "Does HBW pick up or deliver boats?",

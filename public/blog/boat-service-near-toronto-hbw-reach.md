@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-07-24
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Service Near Toronto HBW Reach"
 description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't."
 category: "Service"
 date_published: 2026-05-15
-date_modified: 2026-07-24
+date_modified: 2026-08-27
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
 ## Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-> **Quick answer:** HBW is a Mercury-only, customer drop-off and pickup shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. It may not make sense for a simple local job or a boat you cannot bring to us. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 "Near Toronto" is not one service model. A mobile technician, a multi-brand marina, and an authorized Mercury dealer can all be useful, but they solve different problems.
 
@@ -83,9 +83,9 @@ Use the [quote builder](/quote/motor-selection) for a starting number and [hbw.w
 
 ### Winter storage and spring commissioning
 
-HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage.
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 
 ---
 
@@ -110,20 +110,9 @@ HBW confirms the current price for the actual job. For motor pricing, the canoni
 
 ## From the Shop: The Drive-In Service Model
 
-HBW is drop-off and pickup only.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
-You bring the boat, motor, or approved service item to Gores Landing at the scheduled time. HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
-
-HBW does not provide:
-
-- Pickup or delivery
-- Boat hauling
-- Mobile or dockside service
-- Transport coordination
-- Transport referrals
-- Transport-price estimates
-
-Do not book on the assumption that HBW will move the boat from a GTA home, marina, or cottage.
+HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
 
 Turnaround depends on diagnosis, authorization, parts, current workload, and whether an on-water test is required. HBW will give the applicable update for the specific work order. A generic one-day or one-week promise is not reliable.
 
@@ -148,7 +137,7 @@ If the boat is stored with HBW, remove anything you will need before December 1.
 
 Use a closer provider when:
 
-- The boat cannot be safely brought to Gores Landing
+- HBW cannot arrange pickup for your boat and location, and you cannot safely bring it to Gores Landing
 - You need emergency help at the boat's current location
 - The motor is not a Mercury
 - The job is simple and travel is the deciding factor
@@ -160,7 +149,7 @@ The right shop is the one that can perform the required work safely and accurate
 
 ## Send the Motor Details Before Driving
 
-Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you can bring it to Gores Landing.
+Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you need HBW to confirm pickup availability or can bring it to Gores Landing.
 
 **Service request:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -170,7 +159,7 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
 
 ### Does HBW pick up or deliver GTA boats?
 
-No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### How long does Mercury service take at HBW?
 
@@ -190,7 +179,7 @@ No. HBW is Mercury-only. Use a properly authorized dealer for the motor's brand.
 
 ### Is spring commissioning included with HBW storage?
 
-Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 ### Can HBW work on my boat during winter storage?
 

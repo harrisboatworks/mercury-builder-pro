@@ -6,6 +6,7 @@ import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { buildMandarinFaqSchema } from '@/lib/mandarinFaqSchema';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -23,6 +24,7 @@ import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { MandarinFaqAnswer } from '@/components/blog/MandarinFaqAnswer';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import {
   Accordion,
@@ -90,14 +92,7 @@ export default function MandarinBlogArticlePage() {
       ...(article.faqs ? [{
         "@type": "FAQPage" as const,
         "@id": `${url}#faq`,
-        "mainEntity": article.faqs.map(faq => ({
-          "@type": "Question" as const,
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer" as const,
-            "text": faq.answer
-          }
-        }))
+        "mainEntity": buildMandarinFaqSchema(article.faqs)
       }] : [])
     ]
   };
@@ -274,7 +269,7 @@ export default function MandarinBlogArticlePage() {
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
+                      <MandarinFaqAnswer answer={faq.answer} />
                     </AccordionContent>
                   </AccordionItem>
                 ))}

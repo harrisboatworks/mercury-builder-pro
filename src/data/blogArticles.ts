@@ -20850,7 +20850,7 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
     image: '/lovable-uploads/hero-boat-service-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-15",
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-15",
     category: "Service",
     readTime: '12 min read',
@@ -20859,7 +20859,7 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
     content: `
 # Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
 > **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
@@ -20967,7 +20967,7 @@ If the boat is stored with HBW, remove anything you will need before December 1.
 
 Use a closer provider when:
 
-- The boat cannot be safely brought to Gores Landing
+- HBW cannot arrange pickup for your boat and location, and you cannot safely bring it to Gores Landing
 - You need emergency help at the boat's current location
 - The motor is not a Mercury
 - The job is simple and travel is the deciding factor
@@ -21004,7 +21004,7 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ## Send the Motor Details Before Driving
 
-Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you can bring it to Gores Landing.
+Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you need HBW to confirm pickup availability or can bring it to Gores Landing.
 
 **Service request:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -31443,11 +31443,11 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     slug: "toronto-to-rice-lake-drive-in-process",
     title: "Toronto to Rice Lake: How HBW Drive-In Service Works",
     seoTitle: "Toronto to Rice Lake: How HBW Drive-In Service Works",
-    description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
+    description: "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.",
     image: "/lovable-uploads/hero-toronto-to-rice-lake-drive-in.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-08-26",
+    dateModified: "2026-08-27",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -31469,7 +31469,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
       },
       {
         question: "Is drop-off and pickup one trip?",
-        answer: "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
+        answer: "If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service."
       },
       {
         question: "Does HBW pick up or deliver boats?",
@@ -31495,13 +31495,13 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     content: `
 # Toronto to Rice Lake: How HBW Drive-In Service Works
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
 > **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup. Ask us about availability for your boat and location. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
-The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot do that, do not assume HBW will solve the transport.
+The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot bring the boat, ask whether pickup is available for your boat and location before scheduling; do not assume an arrangement is confirmed until HBW says so.
 
 ---
 
@@ -31551,7 +31551,7 @@ Before leaving:
 - Remove valuables and personal items
 - Confirm the trailer plate and vehicle insurance documents
 
-If the trailer is unsafe, repair it before the trip. HBW does not provide roadside towing or trailer transport.
+If the trailer is unsafe, do not tow it to HBW. HBW does not provide roadside towing. For a planned inbound boat pickup, ask whether HBW can arrange pickup for your boat and location.
 
 ---
 
@@ -31565,7 +31565,7 @@ At the confirmed time, HBW will:
 4. Confirm contact and approval instructions
 5. Confirm whether the trailer remains with the boat
 
-The final scope comes from the work order. Do not leave expecting unapproved repairs, transport, launch work, or storage to be added automatically.
+The final scope comes from the work order. Do not leave expecting unapproved repairs, delivery, launch work, or storage to be added automatically.
 
 After sign-in, you leave the boat and return home. HBW contacts you if the diagnosis changes the scope or approval is required.
 
@@ -31587,9 +31587,9 @@ HBW will provide the update for the specific work order.
 
 ---
 
-## Step 6: Return for Pickup
+## Step 6: Collect the Boat
 
-Pickup is a separate trip from drop-off.
+HBW does not deliver finished boats. If you brought the boat to Gores Landing, collection is a separate trip from drop-off. If HBW arranged inbound boat pickup, you are still responsible for collecting the boat after service.
 
 Wait until HBW confirms:
 
@@ -31605,19 +31605,19 @@ For a repower, HBW's standard handoff includes an on-water test on Rice Lake bef
 
 ---
 
-## Transport Rules
+## Boat Pickup and Transport Rules
 
-HBW does not provide:
+HBW can generally arrange inbound boat pickup. Ask about availability for your boat and location, and wait for confirmation before relying on that option.
 
-- Pickup from a home, cottage, or marina
-- Delivery after service
-- Boat hauling
-- Mobile or dockside service
-- Transport coordination
-- Towing-company or carrier referrals
-- Transport-price estimates
+HBW does not:
 
-Customers are responsible for both drop-off and pickup. HBW will not promise a third-party solution.
+- Deliver boats after service
+- Ship motors
+- Offer mobile, dockside, or on-site service
+- Recommend transport providers
+- Quote third-party transport
+
+Customers can also bring the boat to Gores Landing. After service, customers are responsible for collecting the boat because HBW does not deliver it.
 
 ---
 
@@ -31637,7 +31637,7 @@ Spring commissioning is included for HBW winter-storage customers. As of Septemb
 
 Put safety first. Stop operating if the alarm, overheating, steering, fuel, electrical, or mechanical condition makes continued use unsafe.
 
-HBW can discuss whether a future shop booking is appropriate, but we do not provide house calls, on-water rescue, roadside towing, or transport arrangements. Use the appropriate local emergency or on-water assistance available where the boat is located.
+HBW can discuss whether a future shop booking and planned inbound boat pickup are available, but we do not provide house calls, on-water rescue, roadside towing, boat delivery, transport-provider recommendations, or third-party transport quotes. Use the appropriate local emergency or on-water assistance available where the boat is located.
 
 Do not attempt a "limp home" procedure based on generic advice when the cause is unknown.
 
@@ -31649,7 +31649,7 @@ Do not attempt a "limp home" procedure based on generic advice when the cause is
 Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement.
 
 **Is drop-off and pickup one trip?**
-No. They are separate trips unless you independently make another arrangement that does not involve HBW transport.
+If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service.
 
 **Does HBW pick up or deliver boats?**
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
