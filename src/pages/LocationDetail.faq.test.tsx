@@ -14,6 +14,9 @@ describe('Kawartha service-geography FAQ', () => {
 
     expect(canonicalFaq).toBeDefined();
     expect(hydratedFaq).toEqual(canonicalFaq);
+    expect(canonicalFaq?.answer).toContain('We can generally arrange boat pickup');
+    expect(canonicalFaq?.answer).toContain("We don't offer delivery or mobile, dockside, driveway, or marina service");
+    expect(canonicalFaq?.answer).not.toContain('you arrange transport to us');
   });
 
   it('renders the approved maintenance link while keeping schema text markup-free', () => {
@@ -29,5 +32,13 @@ describe('Kawartha service-geography FAQ', () => {
     );
     expect(html).toContain('href="/maintenance"');
     expect(html).toContain('maintenance and service page');
+  });
+
+  it('keeps the location service boundary aligned with the canonical pickup policy', () => {
+    const serviceBoundary = getLocationBySlug('kawartha-lakes-mercury-outboards')?.serviceBoundary;
+
+    expect(serviceBoundary).toContain('We can generally arrange boat pickup');
+    expect(serviceBoundary).toContain('Service work remains at our Gores Landing shop');
+    expect(serviceBoundary).toContain('does not perform mobile service');
   });
 });
