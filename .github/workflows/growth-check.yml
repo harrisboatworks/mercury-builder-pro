@@ -16,6 +16,7 @@ on:
       - 'public/robots.txt'
       - 'public/llms.txt'
       - 'public/catalog.md'
+      - 'public/maintenance.md'
       - 'public/.well-known/**'
       - 'public/pricing-reference.md'
       - '.github/workflows/growth-check.yml'
