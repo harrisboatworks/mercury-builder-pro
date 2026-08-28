@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi
-last_updated: 2026-04-25
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS05
 slug: walkaround-cuddy-90-to-115-efi
 boat_type: "Walkaround cuddy"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
 # Walkaround cuddy: 90HP to 115HP EFI
 
-A smart mid-range upgrade for heavier small boats that need more confidence leaving the dock fully loaded.
+An illustrative comparison of an older 90 HP setup with a Mercury 115 HP FourStroke on a properly rated small cuddy or walkaround.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ A smart mid-range upgrade for heavier small boats that need more confidence leav
 
 ## Recommendation
 
-Best for small cuddy and walkaround owners wanting a stronger all-around match for real Ontario use.
+Consider only after confirming the capacity plate or manufacturer rating, transom, weight and balance, full operating load, controls, and propeller.
 
-## Why it worked
+## Why this configuration may fit
 
-- Better fit for a heavier hull than a lower-output setup
-- Improved confidence with passengers and gear
-- Useful real-photo proof for 115-class buying decisions
+- Higher rated horsepower may help a heavier hull when the manufacturer permits it
+- Balance, steering, and loaded handling must be evaluated on the actual boat
+- The complete installed package requires a boat-specific quote
 
-## Customer quote
+## Planning takeaway
 
-> The 115 class is often the sweet spot when a small cabin boat needs more push without jumping into a much heavier package.
+A 115 HP FourStroke may suit a properly rated small cabin boat after its transom, load, balance, steering, controls, and current performance are checked.
 
 ## Quote a similar repower
 
@@ -50,7 +53,7 @@ Best for small cuddy and walkaround owners wanting a stronger all-around match f
 
 ## Notes
 
-- All pricing in CAD. Pickup only at Gores Landing, ON.
+- All pricing in CAD. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. No couriers or third parties.
 - Final motor recommendation confirmed by Harris Boat Works staff.
 - Verado not used in default repower recommendations (special-order only).
 

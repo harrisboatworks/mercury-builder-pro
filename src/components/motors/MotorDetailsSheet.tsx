@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef, useMemo, lazy, Suspense } from "react";
+
+// Lazy-loaded — keeps the 22k-line blogArticles import OUT of the motor bundle
+const RelatedPostsGrid = lazy(() =>
+  import('../blog/RelatedPostsGrid').then(m => ({ default: m.RelatedPostsGrid }))
+);
 import { getDisplayPrices } from '@/lib/pricing';
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon, ChevronLeft } from "lucide-react";
@@ -83,6 +88,26 @@ export default function MotorDetailsSheet({
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs(motor as any));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
@@ -888,6 +913,22 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
 
+
+              {/* Related Guides — first for buyer education. Lazy-loaded so blogArticles never enters the motor bundle */}
+              {relatedSlugs.length > 0 && (
+                <div className="border-b border-gray-100 pb-6 mb-6">
+                  <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
+                    Related Guides
+                  </h3>
+                  <p className="text-sm text-[#050E1C]/70 mb-4">
+                    Hand-picked HBW articles for boaters considering this motor class.
+                  </p>
+                  <Suspense fallback={null}>
+                    <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                  </Suspense>
+                </div>
+              )}
+
               {/* Videos Section */}
               {motor?.id && (
                 <div className="space-y-6">
@@ -922,7 +963,7 @@ export default function MotorDetailsSheet({
                         "{smartReview.comment}"
                       </p>
                       <footer className="text-xs text-muted-foreground mt-2">
-                        — {smartReview.reviewer}, {smartReview.location}
+                       , {smartReview.reviewer}, {smartReview.location}
                       </footer>
                     </blockquote>
                   </div>

@@ -39,7 +39,7 @@ export function PhoneCapture({ open, onOpenChange, savedQuoteId }: PhoneCaptureP
           .update({ quote_state: supabase.rpc ? undefined : undefined })
           .eq('id', savedQuoteId);
         
-        // Actually update via raw — just store phone in the quote_state jsonb
+        // Actually update via raw, just store phone in the quote_state jsonb
         const { data: existing } = await (supabase as any)
           .from('saved_quotes')
           .select('quote_state')
@@ -89,7 +89,7 @@ export function PhoneCapture({ open, onOpenChange, savedQuoteId }: PhoneCaptureP
     <div className="space-y-4 px-1">
       <div className="flex items-center gap-3 text-muted-foreground">
         <Phone className="w-5 h-5 text-primary" />
-        <p className="text-sm">We'll only text you about this quote — no spam.</p>
+        <p className="text-sm">We'll only text you about this quote, no spam.</p>
       </div>
       <div className="space-y-2">
         <Label htmlFor="phone-capture">Phone number</Label>

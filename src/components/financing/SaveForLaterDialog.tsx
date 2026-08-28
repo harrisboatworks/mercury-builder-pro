@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useFinancing } from '@/contexts/FinancingContext';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import {
   Dialog,
@@ -35,6 +34,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
   const [email, setEmail] = useState(state.applicant?.email || '');
   const [isSending, setIsSending] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [emailDelivered, setEmailDelivered] = useState(false);
   const [resumeUrl, setResumeUrl] = useState('');
 
   const handleSendEmail = async () => {
@@ -63,97 +63,23 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
     try {
       console.log('📧 [SaveForLater] Starting save and email process...');
       
-      // Save to database and get IDs directly (avoids race condition)
-      let savedData = await saveToDatabase();
+      // The server stores the draft and sends the private resume link in one
+      // operation, so anonymous applicants never need direct database access.
+      const savedData = await saveToDatabase(email);
       console.log('📧 [SaveForLater] saveToDatabase returned:', savedData);
-      
-      // Fallback: If savedData is undefined, try to fetch the most recent application
-      if (!savedData?.applicationId || !savedData?.resumeToken) {
-        console.log('⚠️ [SaveForLater] savedData is incomplete, attempting fallback query...');
-        
-        const { data: { user } } = await supabase.auth.getUser();
-        if (user) {
-          const { data: recentApp, error: fetchError } = await supabase
-            .from('financing_applications')
-            .select('id, resume_token')
-            .eq('user_id', user.id)
-            .eq('status', 'draft')
-            .order('created_at', { ascending: false })
-            .limit(1)
-            .single();
-          
-          if (!fetchError && recentApp) {
-            console.log('✅ [SaveForLater] Fallback successful, found application:', recentApp.id);
-            savedData = {
-              applicationId: recentApp.id,
-              resumeToken: recentApp.resume_token
-            };
-          } else {
-            console.error('❌ [SaveForLater] Fallback failed:', fetchError);
-          }
-        }
-      }
-      
-      // Final check - if still no data, show error
-      if (!savedData?.applicationId || !savedData?.resumeToken) {
-        console.error('❌ [SaveForLater] Unable to retrieve application data after save and fallback');
-        toast({
-          title: "Error",
-          description: "Failed to save application. Please try again.",
-          variant: "destructive",
-        });
-        setIsSending(false);
-        return;
-      }
 
-      // Generate resume URL using returned values
-      const resumeLink = `${window.location.origin}/financing/resume?token=${savedData.resumeToken}`;
-      setResumeUrl(resumeLink);
-      console.log('📧 [SaveForLater] Resume link generated:', resumeLink);
-      
-      // Send the resume email with proper error handling
-      console.log('📧 [SaveForLater] Invoking send-financing-resume-email edge function...');
-      const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-financing-resume-email', {
-        body: {
-          applicationId: savedData.applicationId,
-          email: email,
-          applicantName: state.applicant 
-            ? `${state.applicant.firstName} ${state.applicant.lastName}`
-            : undefined,
-          completedSteps: state.completedSteps.length,
-        }
-      });
-
-      console.log('📧 [SaveForLater] Edge function response:', { emailResponse, emailError });
-
-      // Check if email sending failed
-      if (emailError) {
-        console.error('❌ [SaveForLater] Email send failed:', emailError);
-        toast({
-          title: "Application Saved",
-          description: "Application saved, but email failed to send. Please copy the link below.",
-          variant: "destructive",
-        });
-        setEmailSent(true); // Still show the link so user can copy it
-        return;
-      }
-
-      // Check for edge function errors in the response
-      if (emailResponse?.error) {
-        console.error('❌ [SaveForLater] Email delivery error:', emailResponse.error);
-        toast({
-          title: "Application Saved",
-          description: "Application saved, but email failed to send. Please copy the link below.",
-          variant: "destructive",
-        });
-        setEmailSent(true); // Still show the link so user can copy it
-        return;
-      }
-
-      // Success - email was sent
-      console.log('✅ [SaveForLater] Email sent successfully');
+      setResumeUrl(savedData.resumeUrl);
       setEmailSent(true);
-      
+      setEmailDelivered(savedData.emailSent);
+      if (!savedData.emailSent) {
+        toast({
+          title: "Application Saved",
+          description: "Application saved, but email failed to send. Please copy the link below.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Application saved!",
         description: "Check your email for the resume link, or copy it below.",
@@ -182,6 +108,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
 
   const handleClose = () => {
     setEmailSent(false);
+    setEmailDelivered(false);
     setResumeUrl('');
     onOpenChange(false);
   };
@@ -192,8 +119,8 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
       <div className="flex items-center gap-2">
         {emailSent ? (
           <>
-            <Check className="h-5 w-5 text-green-500" />
-            Email Sent!
+            <Check className="h-5 w-5 text-repower-gold" />
+            {emailDelivered ? 'Link emailed' : 'Application saved'}
           </>
         ) : (
           <>
@@ -205,15 +132,17 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
     </>
   );
 
-  const headerDescription = emailSent 
-    ? "We've sent you an email with a link to resume your application."
+  const headerDescription = emailSent
+    ? emailDelivered
+      ? "Your private resume link is on its way."
+      : "Copy the private link below so you can return later."
     : "Enter your email to receive a link to continue this application later.";
 
   // Shared form content
   const formContent = (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">Email Address</Label>
+        <Label htmlFor="email" className="font-sans text-repower-navy-900">Email Address</Label>
         <Input
           id="email"
           type="email"
@@ -221,12 +150,13 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isSending}
+          className="h-12 rounded-sm border-repower-navy-900/15 focus-visible:ring-repower-gold"
         />
       </div>
 
-      <div className="bg-muted/50 rounded-lg p-3 text-sm text-muted-foreground">
-        <p><strong>Progress saved:</strong> {state.completedSteps.length} of 7 steps</p>
-        <p className="mt-1">Your link will be valid for 30 days.</p>
+      <div className="rounded-sm border border-repower-gold/35 bg-repower-cream p-4 font-sans text-[13px] text-repower-navy-900/70">
+        <p><strong className="text-repower-navy-900">Progress saved:</strong> {state.completedSteps.length} of 7 steps</p>
+        <p className="mt-1">The link is valid for 30 days. Your SIN is excluded from the saved draft.</p>
       </div>
     </div>
   );
@@ -234,26 +164,21 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
   // Shared success content
   const successContent = (
     <div className="space-y-4">
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-sm">
-        <p className="text-green-800">
-          {email === 'harrisboatworks@hotmail.com' ? (
-            <>We've sent a resume link to <strong>{email}</strong>.</>
-          ) : (
-            <>
-              We've sent a <strong>test email</strong> to{' '}
-              <strong>harrisboatworks@hotmail.com</strong> (intended for: {email})
-            </>
-          )}
+      <div className="rounded-sm border border-repower-gold/35 bg-repower-cream p-4 font-sans text-[13px]">
+        <p className="text-repower-navy-900/75">
+          {emailDelivered
+            ? <>A private resume link was sent to <strong className="text-repower-navy-900">{email}</strong>.</>
+            : <>Email delivery did not complete, but your application is saved. Copy the private link below.</>}
         </p>
       </div>
 
       <div className="space-y-2">
-        <Label>Or copy the link directly:</Label>
+        <Label className="font-sans text-repower-navy-900">Private resume link</Label>
         <div className="flex gap-2">
           <Input
             value={resumeUrl}
             readOnly
-            className="text-sm"
+            className="h-11 rounded-sm border-repower-navy-900/15 text-sm"
           />
           <Button
             variant="outline"
@@ -274,14 +199,14 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
         variant="outline"
         onClick={handleClose}
         disabled={isSending}
-        className="flex-1"
+        className="h-12 flex-1 rounded-none border-repower-navy-900/20 bg-white font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-repower-navy-900"
       >
         Cancel
       </Button>
       <Button
         onClick={handleSendEmail}
         disabled={isSending || !email}
-        className="flex-1"
+        className="h-12 flex-1 rounded-none bg-repower-mercury-red font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-white hover:bg-repower-mercury-red-deep"
       >
         {isSending ? (
           <>
@@ -302,7 +227,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
   if (isMobile) {
     return (
       <Drawer open={open} onOpenChange={handleClose}>
-        <DrawerContent className="px-4 pb-8">
+        <DrawerContent className="border-repower-navy-900/10 bg-repower-paper px-4 pb-8 text-repower-navy-900">
           <DrawerHeader className="text-left">
             <DrawerTitle>{headerContent}</DrawerTitle>
             <DrawerDescription>{headerDescription}</DrawerDescription>
@@ -316,7 +241,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
             {!emailSent ? (
               formButtons
             ) : (
-              <Button onClick={handleClose} className="w-full">
+              <Button onClick={handleClose} className="h-12 w-full rounded-none bg-repower-navy-900 font-bold uppercase tracking-[0.1em] text-white">
                 Close
               </Button>
             )}
@@ -329,7 +254,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
   // Desktop: Centered dialog
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="rounded-sm border-repower-navy-900/10 bg-repower-paper p-6 text-repower-navy-900 shadow-2xl sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{headerContent}</DialogTitle>
           <DialogDescription>{headerDescription}</DialogDescription>
@@ -343,7 +268,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
         ) : (
           <div className="space-y-4">
             {successContent}
-            <Button onClick={handleClose} className="w-full">
+            <Button onClick={handleClose} className="h-12 w-full rounded-none bg-repower-navy-900 font-bold uppercase tracking-[0.1em] text-white">
               Close
             </Button>
           </div>

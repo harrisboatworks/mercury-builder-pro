@@ -7,16 +7,23 @@ export function BlogIndexSEO() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CollectionPage",
-        "@id": `${SITE_URL}/blog#webpage`,
-        "name": "Mercury Motor Guides & Boating Tips | Harris Boat Works Blog",
-        "description": "Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters.",
+        "@type": "Blog",
+        "@id": `${SITE_URL}/blog#blog`,
+        "name": "Mercury Motor Guides & Boating Tips | Harris Boat Works",
+        "description": "Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Family marina on Rice Lake since 1947, helping Ontario boaters.",
         "url": `${SITE_URL}/blog`,
+        "inLanguage": "en-CA",
         "isPartOf": {
           "@id": `${SITE_URL}/#website`
         },
         "about": {
           "@id": `${SITE_URL}/#organization`
+        },
+        "publisher": {
+          "@id": `${SITE_URL}/#organization`
+        },
+        "mainEntity": {
+          "@id": `${SITE_URL}/blog#itemlist`
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -38,6 +45,8 @@ export function BlogIndexSEO() {
       },
       {
         "@type": "ItemList",
+        "@id": `${SITE_URL}/blog#itemlist`,
+        "numberOfItems": blogArticles.length,
         "itemListElement": blogArticles.map((article, index) => ({
           "@type": "ListItem",
           "position": index + 1,
@@ -50,21 +59,19 @@ export function BlogIndexSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Motor Guides & Boating Tips | Harris Boat Works Blog</title>
-      <meta name="description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions." />
+      <title>Mercury Motor Guides & Boating Tips | Harris Boat Works</title>
+      <meta name="description" content="Mercury outboard guides, maintenance tips, and repower advice from a family Mercury dealer on Rice Lake, Ontario since 1947. Straight answers." />
       <meta name="keywords" content="mercury outboard tips, boat motor guide, outboard maintenance, mercury dealer blog, boat buying guide ontario" />
-      <link rel="canonical" href={`${SITE_URL}/blog`} />
       
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Motor Guides & Boating Tips | Harris Boat Works Blog" />
+      <meta property="og:title" content="Mercury Motor Guides & Boating Tips | Harris Boat Works" />
       <meta property="og:description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides." />
-      <meta property="og:url" content={`${SITE_URL}/blog`} />
       <meta property="og:type" content="website" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Mercury Motor Guides & Boating Tips" />
-      <meta name="twitter:description" content="Expert advice from Ontario's trusted Mercury dealer since 1965." />
+      <meta name="twitter:description" content="Expert advice from Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947." />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

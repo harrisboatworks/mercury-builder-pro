@@ -8,10 +8,10 @@ import { Download, FileText, Calendar, DollarSign, Settings, Trash2 } from 'luci
 import { listQuotes } from '@/lib/quotesApi';
 import { toast } from '@/hooks/use-toast';
 import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
-import { generateQuotePDF } from '@/lib/react-pdf-generator';
 import { format } from 'date-fns';
 import { Skeleton } from '@/components/ui/skeleton';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 interface SavedQuote {
   id: string;
   customer_name?: string;
@@ -22,6 +22,7 @@ interface SavedQuote {
 }
 
 export default function MyQuotes() {
+  useNoIndex();
   const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [quotes, setQuotes] = useState<SavedQuote[]>([]);
@@ -80,6 +81,7 @@ export default function MyQuotes() {
         return;
       }
 
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       const pdfUrl = await generateQuotePDF({
         quoteNumber: quote.id.slice(0, 8).toUpperCase(),
         customerName: quote.customer_name || 'Valued Customer',
@@ -125,8 +127,6 @@ export default function MyQuotes() {
         console.error('Failed to save lead interaction:', leadError);
       }
 
-      // Download the PDF
-      const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${quote.id.slice(0, 8)}.pdf`);
       
       toast({

@@ -1,0 +1,75 @@
+// Lightweight rate-limit helper for public Edge Functions.
+// Wraps the existing public.check_rate_limit(_identifier, _action, _max_attempts, _window_minutes) RPC.
+// Fail-open on errors so a transient DB issue never breaks public buyer flows.
+
+import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
+import { probeRateLimit } from "./rate-limit-probe.ts";
+
+export function getClientIdentifier(req: Request): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  return (
+    req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
+let _cached: SupabaseClient | null = null;
+function getClient(): SupabaseClient | null {
+  if (_cached) return _cached;
+  const url = Deno.env.get("SUPABASE_URL");
+  const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!url || !key) return null;
+  _cached = createClient(url, key, { auth: { persistSession: false } });
+  return _cached;
+}
+
+export interface RateLimitOptions {
+  identifier?: string;       // explicit id (e.g. session id). Falls back to IP.
+  action: string;            // short action key, e.g. "ai_chat"
+  maxAttempts: number;
+  windowMinutes: number;
+  failClosed?: boolean;      // default remains fail-open unless callers opt in
+}
+
+/**
+ * Returns true when the request is allowed; false when rate-limited.
+ * Fail-open: returns true on any RPC error so we never block legitimate buyers.
+ */
+export async function checkRateLimit(
+  req: Request,
+  opts: RateLimitOptions,
+): Promise<boolean> {
+  const client = getClient();
+  const identifier = (opts.identifier && opts.identifier.length > 0)
+    ? opts.identifier
+    : getClientIdentifier(req);
+  return await probeRateLimit(client, {
+    identifier,
+    action: opts.action,
+    maxAttempts: opts.maxAttempts,
+    windowMinutes: opts.windowMinutes,
+    failClosed: opts.failClosed,
+  });
+}
+
+export function rateLimitedResponse(
+  corsHeaders: Record<string, string>,
+  retryAfterSeconds = 60,
+): Response {
+  return new Response(
+    JSON.stringify({
+      error: "Too many requests. Please try again in a moment.",
+      code: "rate_limited",
+    }),
+    {
+      status: 429,
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json",
+        "Retry-After": String(retryAfterSeconds),
+      },
+    },
+  );
+}

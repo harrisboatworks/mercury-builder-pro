@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -11,19 +12,25 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { encryptSIN } from '@/lib/sinEncryption';
+import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId, type SinEncryptionError } from '@/lib/sinEncryption';
+import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
 import { useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { trackClaritySubmission } from '@/lib/analytics';
+import { submitFinancingApplication } from '@/lib/financingApplicationApi';
 
 export function ReviewSubmitStep() {
-  const { state, dispatch } = useFinancing();
+  const { state, dispatch, clearStoredData } = useFinancing();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const { getChooseOneOptions } = useActivePromotions({ forceRefresh: true });
+  const activeNoPaymentsOption = getChooseOneOptions().find((option) => option.id === 'no_payments');
 
   const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<Consent>({
     resolver: zodResolver(consentSchema),
@@ -35,8 +42,9 @@ export function ReviewSubmitStep() {
   const accuracyConfirmation = watch('accuracyConfirmation');
   const termsAndPrivacy = watch('termsAgreement');
   const signature = watch('signature');
+  const noPaymentsSummary = activeNoPaymentsOption?.title || 'No-Payments Promotion';
 
-  const applicantFullName = state.applicant 
+  const applicantFullName = state.applicant
     ? [
         state.applicant.firstName,
         state.applicant.middleName,
@@ -51,7 +59,12 @@ export function ReviewSubmitStep() {
 
   const onSubmit = async (data: Consent) => {
     setIsSubmitting(true);
+    const correlationId = generateSubmissionCorrelationId();
+    // Hoisted so the outer catch can attribute logs to the current user and
+    // satisfy the financing_submission_logs RLS policy (user_id = auth.uid()).
+    let outerUserId: string | null = null;
     try {
+
       // Set consent data
       dispatch({ type: 'SET_CONSENT', payload: data });
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
@@ -72,36 +85,122 @@ export function ReviewSubmitStep() {
 
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
+      const userId = user?.id ?? null;
+      outerUserId = userId;
 
-      // Save to database
-      const { data: application, error } = await supabase
-        .from('financing_applications')
-        .upsert({
-          id: state.applicationId || undefined,
-          user_id: user?.id,
-          quote_id: state.quoteId,
-          purchase_data: validated.purchaseDetails,
-          applicant_data: validated.applicant,
-          employment_data: validated.employment,
-          financial_data: validated.financial,
-          co_applicant_data: validated.coApplicant,
-          references_data: validated.references,
-          status: 'pending',
-          current_step: 7,
-          completed_steps: [1, 2, 3, 4, 5, 6, 7],
-          applicant_sin_encrypted: await encryptSIN(validated.applicant.sin),
-          co_applicant_sin_encrypted: validated.coApplicant?.sin 
-            ? await encryptSIN(validated.coApplicant.sin)
-            : null,
-        })
-        .select()
-        .single();
 
-      // CRITICAL: Check DB error before continuing
-      if (error || !application) {
-        console.error('Financing application DB write failed:', error);
-        throw new Error(error?.message || 'Failed to save application');
+
+      // Encrypt SINs first so we can surface specific errors before the DB upsert
+      let applicantSinEncrypted: string;
+      try {
+        applicantSinEncrypted = await encryptSIN(validated.applicant.sin);
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'success',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+        });
+      } catch (e) {
+        const sinErr = e as SinEncryptionError;
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'failure',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+          errorCode: sinErr.code || 'unknown',
+          errorMessage: sinErr.message,
+          metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+        });
+        const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
+        toast({ title: friendly.title, description: friendly.description, variant: 'destructive' });
+        setIsSubmitting(false);
+        return;
       }
+
+      let coApplicantSinEncrypted: string | null = null;
+      if (validated.coApplicant?.sin) {
+        try {
+          coApplicantSinEncrypted = await encryptSIN(validated.coApplicant.sin);
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'success',
+            correlationId,
+            applicationId: state.applicationId,
+            userId,
+          });
+        } catch (e) {
+          const sinErr = e as SinEncryptionError;
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'failure',
+            correlationId,
+            applicationId: state.applicationId,
+            userId,
+            errorCode: sinErr.code || 'unknown',
+            errorMessage: sinErr.message,
+            metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+          });
+          const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
+          toast({
+            title: `Co-applicant: ${friendly.title}`,
+            description: friendly.description,
+            variant: 'destructive',
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
+      let application: { id: string } | null = null;
+      try {
+        const result = await submitFinancingApplication({
+          applicationId: state.applicationId,
+          resumeToken: state.resumeToken,
+          applicantSinEncrypted,
+          coApplicantSinEncrypted,
+          application: {
+            purchaseDetails: validated.purchaseDetails,
+            applicant: validated.applicant,
+            employment: validated.employment,
+            financial: validated.financial,
+            coApplicant: validated.coApplicant,
+            hasCoApplicant: state.hasCoApplicant,
+            references: validated.references,
+            consent: validated.consent,
+            quoteId: state.quoteId,
+          },
+        });
+        application = { id: result.applicationId };
+      } catch (error) {
+        console.error('Financing application secure write failed:', error);
+        const secureWriteError = error as { code?: string; message?: string };
+        await logFinancingSubmission({
+          stage: 'db_upsert',
+          outcome: 'failure',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+          errorCode: secureWriteError.code || 'unknown',
+          errorMessage: secureWriteError.message || 'No application returned',
+        });
+        toast({
+          title: 'Could not save application',
+          description: `We could not securely save your application. Please try again, or call us at (905) 342-2153. Reference: ${correlationId}.`,
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      await logFinancingSubmission({
+        stage: 'db_upsert',
+        outcome: 'success',
+        correlationId,
+        applicationId: application.id,
+        userId,
+      });
 
       // Send confirmation emails (non-blocking - don't fail submission if email fails)
       // Field names MUST match the Zod schema in supabase/functions/send-financing-confirmation-email/index.ts
@@ -129,8 +228,8 @@ export function ReviewSubmitStep() {
         // Don't show error to user - submission was successful
       }
 
-      // Clear localStorage
-      localStorage.removeItem('financing_application');
+      // Clear all current and legacy local draft keys.
+      clearStoredData();
 
       // Trigger success confetti
       setShowConfetti(true);
@@ -138,8 +237,18 @@ export function ReviewSubmitStep() {
       // Show success message
       toast({
         title: "Application Submitted!",
-        description: "Your financing application has been submitted successfully.",
+        description: `Your financing application has been submitted successfully. Reference: ${correlationId}.`,
       });
+
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'success',
+        correlationId,
+        applicationId: application.id,
+        userId,
+      });
+
+      trackClaritySubmission('financing');
 
       // Redirect to success page after a brief delay to show confetti
       setTimeout(() => {
@@ -148,9 +257,20 @@ export function ReviewSubmitStep() {
 
     } catch (error) {
       console.error('Submission error:', error);
+      const err = error as { code?: string; message?: string };
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'failure',
+        correlationId,
+        applicationId: state.applicationId,
+        userId: outerUserId,
+        errorCode: err?.code || 'unexpected',
+        errorMessage: err?.message || String(error),
+      });
+
       toast({
         title: "Submission Failed",
-        description: "Please check your information and try again.",
+        description: `Please check your information and try again. Reference: ${correlationId}.`,
         variant: "destructive",
       });
     } finally {
@@ -161,7 +281,7 @@ export function ReviewSubmitStep() {
   return (
     <div className="space-y-6">
       {showConfetti && <SuccessConfetti />}
-      
+
       <Alert role="status">
         <ShieldCheck className="h-4 w-4" aria-hidden="true" />
         <AlertDescription>
@@ -173,7 +293,7 @@ export function ReviewSubmitStep() {
       <Card>
         <CardContent className="pt-6">
           <h3 className="text-lg font-semibold mb-4">Application Summary</h3>
-          
+
           <Accordion type="multiple" defaultValue={['purchase']} className="w-full">
             {/* Purchase Details */}
             <AccordionItem value="purchase">
@@ -197,13 +317,16 @@ export function ReviewSubmitStep() {
                     <span className="font-medium">${state.purchaseDetails?.amountToFinance?.toLocaleString() || 'N/A'}</span>
                   </div>
                   {state.purchaseDetails?.promoOption && (
-                    <div className="flex justify-between">
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">Promotion:</span>
-                      <span className="font-medium text-green-600">
-                        {state.purchaseDetails.promoOption === 'no_payments' && '6 Mo No Payments'}
-                        {state.purchaseDetails.promoOption === 'special_financing' && 
+                      <span className="font-medium text-green-600 text-right">
+                        {state.purchaseDetails.promoName && <>{state.purchaseDetails.promoName}<br /></>}
+                        {(state.purchaseDetails.promoSavings || 0) > 0 &&
+                          <>${state.purchaseDetails.promoSavings?.toLocaleString('en-CA')} CAD factory rebate<br /></>}
+                        {state.purchaseDetails.promoOption === 'no_payments' && noPaymentsSummary}
+                        {state.purchaseDetails.promoOption === 'special_financing' &&
                           `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}
-                        {state.purchaseDetails.promoOption === 'cash_rebate' && 
+                        {state.purchaseDetails.promoOption === 'cash_rebate' &&
                           `${state.purchaseDetails.promoValue}`}
                       </span>
                     </div>
@@ -481,7 +604,7 @@ export function ReviewSubmitStep() {
             </Alert>
 
             <div className="space-y-2">
-              <Label htmlFor="signature">Full Name (as signature) *</Label>
+              <Label htmlFor="signature">Full Name (as signature) <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="signature"

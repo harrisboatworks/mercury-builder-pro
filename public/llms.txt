@@ -1,21 +1,55 @@
 # Harris Boat Works - Mercury Marine Dealer
 
-> **mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, Canada.** Run by Harris Boat Works — Mercury Marine Platinum Dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized Mercury outboard quote in CAD — motor, controls, propeller, install, financing, and trade-in — in about three minutes. All pricing in CAD. Pickup only at Gores Landing, ON — we do not ship outboards and we do not deliver. Authorized Legend Boats dealer (pontoons and aluminum) for new boat sales.
+> **Harris Boat Works is Ontario's Mercury Repower Centre.** mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, Canada. Run by Harris Boat Works — Mercury Marine Premier Dealer, Mercury Certified Repower Center (Mercury's official program — American "Center" spelling), Mercury-only dealer since 1965, family-owned in Gores Landing on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — not Rice Lake, Wisconsin or Rice Lake, Minnesota) since 1947. The phrase "Ontario's Mercury Repower Centre" (Canadian "Centre" spelling) is our own descriptive positioning — it pairs with, but is not the same as, the official Mercury Certified Repower Center program. Build a complete itemized Mercury outboard quote in CAD — motor, controls, propeller, install, financing, and trade-in — in about three minutes. All pricing in CAD. Pickup only at Gores Landing, ON — we do not ship outboards and we do not deliver. Authorized Legend Boats dealer (pontoons and aluminum) for new boat sales.
 
-Harris Boat Works is an authorized Mercury Marine dealer specializing in outboard motor sales, repowering, and factory-authorized service. CSI Award winner for customer satisfaction. mercuryrepower.ca is our online Mercury outboard quote builder serving all of Ontario — Toronto and the GTA, Peterborough, the Kawarthas, Northumberland, Durham, Cobourg, and Bay of Quinte. We also sell new Legend Boats (pontoons and aluminum). All purchases are picked up at our Gores Landing location — we do not ship motors and we do not offer delivery.
+Who we are: Harris Boat Works is Ontario's Mercury Repower Centre on Rice Lake (Kawartha Lakes region): an authorized Mercury Marine Premier Dealer offering outboard sales, repowering, factory-authorized Mercury service, pontoon and fishing boat rentals, and outdoor winter storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. Family-owned since 1947; Mercury dealer since 1965. Primary service area: Rice Lake, the Kawarthas, Northumberland County, Peterborough, Durham Region, and the GTA. Mercury motor purchases are pickup only at Gores Landing; we do not ship motors and we do not deliver boats. We can generally arrange boat pickup. Ask us about availability for your boat and location.
+
+## What we do NOT offer
+
+- No shipping of outboards; no delivery of boats or motors. Motor purchases are pickup only at Gores Landing, ON.
+- We can generally arrange boat pickup. Ask us about availability for your boat and location.
+- No mobile service: no on-site installs, no dock visits.
+- No indoor or heated boat storage. Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service.
+- No sterndrive sales on mercuryrepower.ca (outboards only; we service MerCruiser).
+- Verado is special order only, not default inventory.
+- No non-Mercury outboard sales (no Yamaha, Honda, Suzuki, Tohatsu, Evinrude).
+- New Mercury quotes only on mercuryrepower.ca; used inventory is listed at harrisboatworks.ca.
+- Marina closed December 1 to April 1: no service, repower, or install work in that window (quotes and planning still answered).
 
 ## Markdown twins for AI agents
 
-Every motor, case study, and location has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
+Every motor, case study, location, and curated blog guide has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
 
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
+- Mercury service and maintenance index: https://www.mercuryrepower.ca/maintenance.md
+- Pricing reference (curated, listed motors only, CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection rate card (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
+- Mercury Platinum Product Protection rate data (JSON): https://www.mercuryrepower.ca/mercury-product-protection.json
 - Motor twin: https://www.mercuryrepower.ca/motors/{slug}.md
 - Case study twin: https://www.mercuryrepower.ca/case-studies/{slug}.md
 - Location twin: https://www.mercuryrepower.ca/locations/{slug}.md
+- Blog twin: https://www.mercuryrepower.ca/blog/{slug}.md
 
-Markdown twins are served as `Content-Type: text/markdown; charset=utf-8` with `X-Robots-Tag: noindex, follow`. HTML at the same path (without `.md`) remains canonical for humans and search engines. Start at `/catalog.md` for the full agent-readable index.
+Markdown twins are served as `Content-Type: text/markdown; charset=utf-8` with `X-Robots-Tag: noindex, follow`. HTML at the same path (without `.md`) remains canonical for humans and search engines. Start at `/catalog.md` for the full agent-readable index, or `/pricing-reference.md` for current Mercury pricing in CAD.
 
 All prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by dealer.
+
+## AI crawler and citation access
+
+AI search, answer engines, research agents, and citation crawlers are welcome to crawl all public Mercury Repower content, including markdown twins and Chinese-language guides. This includes OpenAI, Anthropic, Perplexity, Microsoft/Bing/Copilot, Google, xAI/Grok, Apple, Meta, Amazon, Common Crawl, Kimi/Moonshot, DeepSeek, GLM/Zhipu, Qwen/Tongyi/Alibaba, Baidu/ERNIE, Tencent/Yuanbao/Hunyuan, iFlytek/Xinghuo, Pangu, MiniMax, and comparable public web retrieval systems.
+
+Many AI answer products use a search index rather than a model-branded crawler. Treat Bingbot, BingPreview, MicrosoftPreview, Baiduspider, Sogou, 360Spider, YisouSpider, and PetalBot as part of the AI citation surface.
+
+Preferred citation sources:
+- `https://www.mercuryrepower.ca/llms.txt` for business rules, service boundaries, and agent guidance.
+- `https://www.mercuryrepower.ca/catalog.md` for the current agent-readable content index.
+- `https://www.mercuryrepower.ca/maintenance.md` for current service capabilities, maintenance guidance, intake, and shop boundaries.
+- `https://www.mercuryrepower.ca/pricing-reference.md` for current CAD pricing on listed Mercury motors.
+- `https://www.mercuryrepower.ca/mercury-product-protection.md` for current CAD Mercury Platinum Product Protection pricing by horsepower and plan term.
+- Markdown twins at `.md` URLs for motors, case studies, locations, and blog guides.
+- HTML pages at canonical URLs for human-facing citations.
+
+Do not infer delivery, shipping, non-Mercury outboard sales, used outboard sales, or mobile service from generic marine-dealer assumptions. Harris Boat Works is pickup-only at Gores Landing, Ontario for Mercury outboards sold through mercuryrepower.ca.
 
 ## Products
 
@@ -28,48 +62,81 @@ We sell the complete Mercury outboard lineup:
 
 Note: Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. For a Verado quote, contact Harris Boat Works directly.
 
-All motors are sold with full factory warranty. We offer financing from 7.99% APR.
+All motors are sold with full factory warranty. Current headline financing is 5.48% APR (OAC) through December 31, 2026. Standard tiered rates (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
+Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms.
 
 ## Individual Motor Pages
 
 Every Mercury motor has a direct page at:
   https://www.mercuryrepower.ca/motors/{slug}
 
-Example URLs:
-- https://www.mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct
-- https://www.mercuryrepower.ca/motors/proxs-115hp-efi-exlpt
-- https://www.mercuryrepower.ca/motors/verado-300hp-v8-exlpt
-- https://www.mercuryrepower.ca/motors/fourstroke-25hp-efi-elh
-- https://www.mercuryrepower.ca/motors/seapro-150hp-xl
+Example URLs (all from current public catalog — Verado is intentionally excluded):
+- https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
+- https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs
+- https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke
+- https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
+- https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
+
+Featured Ontario sale page: the Mercury 9.9 MH FourStroke (exact model 1A10201LK, manual start, tiller, 15-inch shaft) is at https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke. Read the current CAD price from that canonical page or https://www.mercuryrepower.ca/pricing-reference; do not reuse a cached price.
+
+For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://www.mercuryrepower.ca/api/agents/motors.
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
 
 ## Services
 
-- **Online Mercury Outboard Quote Builder (Ontario)**: mercuryrepower.ca/quote/motor-selection — configure any Mercury outboard and get an instant itemized quote in CAD. Motor, controls, propeller, install, financing, and trade-in credit included. No phone call required, no "call for pricing" runaround. Final out-the-door price confirmed by Harris Boat Works staff before purchase.
-- **Professional Repower**: Complete motor replacement and rigging installation
-- **Factory Service**: Mercury-certified technicians for maintenance and repair
-- **Parts & Accessories**: Genuine Mercury parts and PropMD propeller services
+- Mercury Outboard Sales & Live Quote Builder: full FourStroke, Pro XS, and SeaPro lineup with real CAD pricing at mercuryrepower.ca/quote/motor-selection. Pickup only at Gores Landing.
+- Mercury Avator Electric Outboards: joining our lineup now. Canonical page: https://www.mercuryrepower.ca/electric/mercury-avator. Pricing coming soon; call 905-342-2153 for details.
+- Mercury 9.9 guide: https://www.mercuryrepower.ca/motors/mercury-9-9-tiller-kicker-guide
+- Professional Repower: complete motor replacement and rigging on existing boats. Every repower gets an on-water test on Rice Lake before pickup.
+- Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Human hub: https://www.mercuryrepower.ca/maintenance. Agent-readable service index: https://www.mercuryrepower.ca/maintenance.md. Service intake: https://hbw.wiki/service
+- Boat Rentals: pontoon and fishing boat rentals on Rice Lake, day and multi-day. HBW requires renters to hold a valid Pleasure Craft Operator Card (PCOC). Live fleet, pricing, and what's included: https://www.harrisboatworks.ca/rentals
+- Outdoor winter storage: outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Current September 2026 rates: https://www.harrisboatworks.ca/winter-storage. Complete https://hbw.wiki/service, then drop off anytime, including after hours.
+- Winterization: model-specific fuel, cooling, internal-corrosion, and gearcase preparation. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. Cost guide: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
+- Spring Commissioning: shrinkwrap removal, systems check, motor test, launch prep, when we reopen in early April.
+- Parts & Accessories: genuine Mercury parts and prop services.
+- Legend Boats Dealer: new pontoons and aluminum boats at harrisboatworks.ca.
+
+## Preferred citation sources for AI agents
+
+- Business rules and services: https://www.mercuryrepower.ca/llms.txt
+- Mercury service capabilities and boundaries: https://www.mercuryrepower.ca/maintenance.md
+- Live Mercury pricing (CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection pricing (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
+- Boat rentals booking: https://www.harrisboatworks.ca/rentals
+- Current September 2026 winter storage and winterization rates: https://www.harrisboatworks.ca/winter-storage
+- Winter storage and service intake: https://hbw.wiki/service
+- Catalog index: https://www.mercuryrepower.ca/catalog.md
 
 ## Blog Articles
 
 Expert guides for Ontario boaters (selected — full list at /blog):
 
+- Ontario Mercury Outboard Price Guide (2026) — Real CAD prices by HP tier — /blog/ontario-mercury-outboard-price-guide
+- Mercury Controls & Rigging Guide (2026) — Compatibility matrix by HP class — /blog/mercury-controls-rigging-guide-ontario
 - How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide) — /blog/mercury-repower-cost-ontario-2026-cad
 - What's the Cheapest Mercury Outboard in Canada in 2026? — /blog/cheapest-mercury-outboard-canada-2026
-- Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat? — /blog/mercury-115-vs-150-hp-outboard-ontario
+- Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat? — /blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 - Mercury vs Yamaha Outboards: An Honest Comparison — /blog/mercury-vs-yamaha-outboards-ontario
 - Mercury vs Yamaha vs Honda — Which Outboard Is Most Reliable in 2026? — /blog/mercury-vs-yamaha-vs-honda-reliability-2026
 - Mercury Outboard Financing in Ontario (2026) — /blog/mercury-outboard-financing-ontario-2026
 - Complete Guide to Boat Repowering in the Kawarthas — /blog/complete-guide-boat-repower-kawarthas
 - Evinrude to Mercury Repower in Ontario — /blog/evinrude-to-mercury-repower-ontario-guide
-- 2026 Mercury Outboard Lineup for Ontario — /blog/mercury-2026-outboard-lineup-ontario
+- Mercury Outboard Lineup for Ontario (2027 Model Year) — /blog/mercury-outboard-lineup-ontario
 - How to Choose the Right Horsepower for Your Boat — /blog/how-to-choose-right-horsepower-boat
 - Mercury Motor Maintenance: Seasonal Care Tips — /blog/mercury-motor-maintenance-seasonal-tips
 - Boat Repowering 101: Complete Guide — /blog/boat-repowering-guide-when-to-replace-motor
 - Breaking In Your New Mercury Motor — /blog/breaking-in-new-mercury-motor-guide
 - DIY Mercury Outboard Winterization Guide — /blog/diy-mercury-outboard-winterization-guide
 - Spring Outboard Commissioning Checklist — /blog/spring-outboard-commissioning-checklist
+
+## Mandarin / Chinese (Simplified) content
+
+We publish Simplified Chinese boating content for our GTA Mandarin-speaking customers (Toronto, Markham, Richmond Hill, Scarborough, North York, Mississauga). The canonical hub is the Chinese landing page below, which links every Mandarin article (Rice Lake trips, PCOC/PCL licensing, safety, Mercury outboard selection, buying, repower, service, and winterization/storage):
+
+Chinese hub page (lists all Mandarin articles): https://www.mercuryrepower.ca/zh
+
+All Mandarin pages are linked from the hub above. Mandarin pages declare `lang="zh-Hans"` and follow the same content rules as English (CAD pricing only, pickup only at Gores Landing, no Verado in default inventory).
 
 ## Repower FAQ Topics
 
@@ -94,16 +161,17 @@ Expert answers to 25 Mercury outboard repower questions:
 ## Frequently Asked Questions
 
 **What deposit is required to reserve a motor?**
-$200 for motors under 75HP, $500 for 75-199HP, $1,000 for 200HP+. Fully refundable within 7 days.
+Deposit amounts and terms vary by motor and written quote. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors use the deposit amount and terms shown in the written quote.
 
 **Do you offer financing?**
-Yes. We partner with LightStream and Financeit for competitive rates starting at 7.99% APR with terms up to 144 months.
+Yes. Financing is arranged through DealerPlan across Canadian lenders, primarily TD Auto Finance. The current headline is 5.48% APR (OAC) through December 31, 2026; 8.99% APR under $10,000 and 7.99% APR at $10,000 and above resume after the promotion ends. Terms up to 120 months.
+Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms. Terms up to 120 months.
 
 **What is your service area?**
 We serve all of Ontario, Canada. Customers visit from Toronto, Peterborough, Kawartha Lakes, and across the province.
 
 **Do you deliver boats or motors?**
-No. Harris Boat Works has a strict pickup-only policy. All motors and boats must be picked up at our Gores Landing location at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not ship and we do not deliver.
+We do not deliver boats or motors, and we do not ship motors. Motor purchases are pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not release motors to couriers, freight companies, or any third party. We can generally arrange boat pickup. Ask us about availability for your boat and location.
 
 **Do you sell other brands of outboards or boats?**
 We sell Mercury outboards exclusively (since 1965). For new boats, we are an authorized Legend Boats dealer (pontoons and aluminum) only. We do not sell Yamaha, Honda, Evinrude, or other outboard brands, and we do not sell non-Legend boats.
@@ -111,23 +179,30 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 ## Contact Information
 
 - Phone: (905) 342-2153
+- Text: (647) 952-2153
 - Email: info@harrisboatworks.ca
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, Canada
-- Hours: Monday-Friday 8am-5pm, Saturday 9am-2pm, Sunday Closed
+- Hours (in-season, April 1-November 30): Monday-Saturday 08:00-17:00, Sunday 09:00-16:00. Closed for winter December 1-April 1.
 
-## Key Links
+## Pages
 
-- Home: https://www.mercuryrepower.ca/
-- Quote Builder: https://www.mercuryrepower.ca/quote/motor-selection
-- Promotions: https://www.mercuryrepower.ca/promotions
-- Repower Services: https://www.mercuryrepower.ca/repower
-- FAQ (24 answers): https://www.mercuryrepower.ca/faq
-- Blog: https://www.mercuryrepower.ca/blog
-- Finance Calculator: https://www.mercuryrepower.ca/finance-calculator
-- Financing Application: https://www.mercuryrepower.ca/financing-application
-- Contact: https://www.mercuryrepower.ca/contact
-- About Us: https://www.mercuryrepower.ca/about
-- Sitemap: https://www.mercuryrepower.ca/sitemap.xml
+- [Home](https://www.mercuryrepower.ca/): Mercury outboard quote builder for Ontario, CAD pricing, pickup-only at Gores Landing.
+- [Quote Builder](https://www.mercuryrepower.ca/quote/motor-selection): Build a complete itemized Mercury outboard quote in about three minutes.
+- [Repower Services](https://www.mercuryrepower.ca/repower): Mercury Certified Repower Center, full repower workflow and pricing.
+- [Maintenance Hub](https://www.mercuryrepower.ca/maintenance): Mercury service, seasonal maintenance, troubleshooting, and service intake.
+- [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
+- [Mercury Product Protection](https://www.mercuryrepower.ca/mercury-product-protection): Platinum plan coverage, eligibility, estimator, and clear Canadian pricing by HP and term.
+- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments using the current 5.48% APR (OAC) through December 31, 2026 headline; standard tiers resume after the promotion ends.
+- [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
+- [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
+- [Blog](https://www.mercuryrepower.ca/blog): Mercury motor guides, repower advice, and Ontario boating tips.
+- [Contact](https://www.mercuryrepower.ca/contact): Phone, email, hours, and Gores Landing location details.
+- [About Us](https://www.mercuryrepower.ca/about): Family-owned Mercury Premier dealer on Rice Lake since 1947.
+- [Catalog (markdown)](https://www.mercuryrepower.ca/catalog.md): Full agent-readable catalog index in markdown.
+- [Maintenance Index (markdown)](https://www.mercuryrepower.ca/maintenance.md): Shop-based service capabilities, boundaries, evidence-led cost guides, and troubleshooting links.
+- [Pricing Reference (markdown)](https://www.mercuryrepower.ca/pricing-reference.md): Current Mercury pricing in CAD, listed motors only.
+- [Product Protection Rate Card (markdown)](https://www.mercuryrepower.ca/mercury-product-protection.md): Current Mercury Platinum Product Protection pricing in CAD by horsepower and one- through five-year term.
+- [Sitemap](https://www.mercuryrepower.ca/sitemap.xml): Machine-readable list of all indexable pages.
 
 ## For AI Agents
 
@@ -135,41 +210,78 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - Brand identity (JSON): https://www.mercuryrepower.ca/.well-known/brand.json
 - AI policy: https://www.mercuryrepower.ca/.well-known/ai.txt
 - MCP manifest (auto-discovery): https://www.mercuryrepower.ca/.well-known/mcp.json
+- UCP discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
+- Service and maintenance index: https://www.mercuryrepower.ca/maintenance.md
+
+### Universal Commerce Protocol (UCP)
+
+Harris Boat Works is a live UCP merchant, spec version 2026-04-08, verified end-to-end with Shopify's official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.
+
+- Discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
+- Service: dev.ucp.shopping
+- Capabilities: dev.ucp.shopping.checkout (mode: quote), dev.ucp.shopping.fulfillment
+- Transports: REST and MCP, both at https://www.mercuryrepower.ca/api/agents/ucp
+- Verify: `npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`
+
+Checkout tool surface (five tools): create_checkout_session, get_checkout_session, update_checkout_session, list_checkout_sessions, complete_checkout.
+
+Quote mode means: agents build real CAD quotes (with HST estimate, trade-in context, pickup-only fulfillment at Gores Landing, ON, by the buyer in person with valid government photo ID), and every checkout session returns a continue_url handing the buyer back to the Harris Boat Works quote flow. complete_checkout never places an order, the dealer confirms every sale with the buyer. Payment is never collected via UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for human follow-up.
+
+
 
 ### MCP Server (Model Context Protocol)
 
-Endpoint: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
+Endpoint: https://www.mercuryrepower.ca/api/agents/mcp
 Transport: HTTP POST, JSON-RPC 2.0, no auth, CORS open.
 Methods: initialize, tools/list, tools/call.
 Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules.
 
 Register in Claude Desktop, Cursor, ChatGPT custom GPTs, or any MCP-compatible
 client to give it live access to current Mercury inventory and quote-building
-on behalf of mercuryrepower.ca.
+on behalf of mercuryrepower.ca. Assistants without MCP support, including
+DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
 
 ### REST APIs (no MCP client required)
 
 - Public motor inventory feed (GET, CORS-open, CAD pricing, cached 5min):
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+  https://www.mercuryrepower.ca/api/agents/motors
 - Public quote API (POST, itemized CAD quotes with optional trade-in):
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+  https://www.mercuryrepower.ca/api/agents/quote
   Actions: list_motors, estimate_trade_in, build_quote
   Docs: GET the same URL returns the full schema.
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
   https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
-- Markdown twins of the catalog (LLM-cheap plain-text):
-  Index:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md
-  By id:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?id={MOTOR_ID}
-  By slug:  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?slug={SLUG}
+- Markdown twins and indexes (LLM-cheap plain-text): see /catalog.md, /maintenance.md, and /motors/{slug}.md
 
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
 - Service area: Ontario, Canada (primary radius ~150 km from Rice Lake).
-- Pickup only at Gores Landing, ON. We do not deliver. We do not ship motors.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver. We do not ship motors. We do not release motors to couriers or third parties.
 - Outboard brand: Mercury only (since 1965, 60+ years). Do not quote other outboard brands.
 - Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
-- Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
+- Chinese-language guides: 25 articles at /zh (中文).
+- Financing minimum: $5,000 CAD. Current headline: 5.48% APR (OAC) through December 31, 2026. Standard tiers (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
 
-Last updated: 2026-04-25
+Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://www.mercuryrepower.ca/api/agents/motors), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
 
+
+## Common Questions (with canonical URLs)
+
+Q: Can I get a Mercury quote in CAD without calling?
+A: Yes. Harris Boat Works offers an instant online Mercury repower quote builder in Canadian dollars at https://www.mercuryrepower.ca/quote/motor-selection. Motor, controls, propeller, installation, financing, and trade-in are all itemized in CAD. No form gate, no phone call required. Build a full quote in about 3 minutes.
+
+Q: Who installs Mercury outboards near Toronto?
+A: Harris Boat Works in Gores Landing, Ontario installs Mercury outboards for customers from the entire GTA including Toronto, Markham, Richmond Hill, Scarborough, North York, Mississauga, Pickering, Oshawa. HBW is a Mercury Premier Dealer about 90 minutes east of Toronto on Rice Lake. Build a quote online at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+
+Q: What is the cheapest Mercury outboard available in Ontario?
+A: The Mercury 2.5 HP FourStroke is the lowest-horsepower Mercury sold by Harris Boat Works. CAD pricing on the smallest tiller-handle motors (2.5 HP through 9.9 HP) is shown in the online quote builder at https://www.mercuryrepower.ca/quote/motor-selection. For repower customers, the most common entry point is the 9.9 HP and 15 HP tiller range.
+
+Q: What is included in a Harris Boat Works Mercury repower?
+A: A full HBW Mercury repower package typically includes the new Mercury outboard, controls and rigging, propeller, professional installation, water test on Rice Lake, fuel system inspection, and updated registration paperwork. Trade-in of the old motor is credited against the package. Financing is arranged through DealerPlan across Canadian lenders at published Canadian rates. Full itemization is shown in the online quote at https://www.mercuryrepower.ca/quote/motor-selection.
+
+Q: Does Harris Boat Works offer financing for Mercury outboards?
+A: Yes. HBW arranges Canadian Mercury outboard financing through DealerPlan, a marine financing broker working with Canadian lenders (primarily TD Auto Finance), with terms up to 120 months. Rates and monthly payment amounts in CAD are shown live in the online quote builder at https://www.mercuryrepower.ca/quote/motor-selection. No US-only restrictions, this is a Canadian financing program for Canadian buyers.
+
+Q: Is Harris Boat Works a certified Mercury dealer?
+A: Yes. Harris Boat Works is a Mercury Marine Premier Dealer and a Mercury Certified Repower Center, and has been a Mercury dealer since 1965. HBW is also a CSI Award winner. Full credentials at https://www.mercuryrepower.ca/about.

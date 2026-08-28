@@ -1,5 +1,16 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  buildPromotionCustomerAnswer,
+  formatPromotionContext,
+} from "../_shared/promotion-context.ts";
+import {
+  buildCustomerKnowledgeSnapshot,
+  formatCustomerKnowledgePrompt,
+  loadCustomerKnowledge,
+  type CustomerKnowledge,
+} from "../_shared/customer-knowledge-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -25,30 +36,6 @@ const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Fetch active promotions only - no full inventory (agent uses tools for real-time lookups)
-async function getActivePromotions() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data: promotions, error } = await supabase
-      .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, warranty_extra_years, end_date, promo_options')
-      .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
-      .order('priority', { ascending: false })
-      .limit(3);
-    
-    if (error) {
-      console.error('Error fetching promotions:', error);
-      return [];
-    }
-    return promotions || [];
-  } catch (error) {
-    console.error('Error in getActivePromotions:', error);
-    return [];
-  }
-}
 
 // Model suffix decoder - kept compact for quick reference
 const MODEL_SUFFIX_GUIDE = `
@@ -114,91 +101,6 @@ Shaft length MUST match the boat's transom height - this isn't optional or a pre
 - Direct them to the Transom Height Calculator on the website
 - This isn't preference - it's a specification. Getting it wrong hurts performance every trip.
 `;
-
-// Format promotion data with full "Choose One" details - FULLY DYNAMIC
-function formatPromotionData(promotions: any[]) {
-  if (!promotions.length) return "";
-  
-  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
-  let hasChooseOneOptions = false; // Track if any promo has choose-one options
-  
-  promotions.forEach(promo => {
-    formatted += `**${promo.name}**\n`;
-    
-    if (promo.discount_percentage > 0) {
-      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
-    }
-    if (promo.discount_fixed_amount > 0) {
-      formatted += `- $${promo.discount_fixed_amount} instant discount\n`;
-    }
-    if (promo.bonus_title) {
-      formatted += `- Bonus: ${promo.bonus_title}\n`;
-    }
-    if (promo.bonus_description) {
-      formatted += `- ${promo.bonus_description}\n`;
-    }
-    if (promo.warranty_extra_years) {
-      const baseWarranty = 3; // Mercury standard warranty
-      const totalYears = baseWarranty + promo.warranty_extra_years;
-      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years FREE (${totalYears} years total!)\n`;
-    }
-    
-    // Handle "Choose One" promo_options (Get 7 + Choose One structure)
-    // promo_options is an object with an "options" array, not an array itself
-    const promoOptions = promo.promo_options?.options;
-    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-      hasChooseOneOptions = true;
-      formatted += `\n**CUSTOMER CHOOSES ONE BONUS (explain these options when asked):**\n`;
-      
-      promoOptions.forEach((option: any, idx: number) => {
-        formatted += `\n${idx + 1}. **${option.title || 'Option'}**`;
-        if (option.description) formatted += ` — ${option.description}`;
-        formatted += `\n`;
-        
-        // Special financing rates detail
-        if (option.rates && Array.isArray(option.rates)) {
-          formatted += `   FINANCING RATES:\n`;
-          option.rates.forEach((rate: any) => {
-            const minText = rate.minAmount ? ` (min finance amount $${rate.minAmount.toLocaleString()})` : '';
-            formatted += `   - ${rate.months} months at ${rate.rate}% APR${minText}\n`;
-          });
-        }
-        
-        // Rebate matrix detail - uses hp_min, hp_max, rebate fields from database
-        if (option.matrix && Array.isArray(option.matrix)) {
-          formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
-          option.matrix.forEach((tier: any) => {
-            const hpRange = tier.hp_min === tier.hp_max 
-              ? `${tier.hp_min}HP` 
-              : `${tier.hp_min}-${tier.hp_max}HP`;
-            formatted += `   - ${hpRange}: $${tier.rebate} cash back\n`;
-          });
-        }
-      });
-    }
-    
-    if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
-      formatted += `\n⏰ PROMOTION ENDS: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
-    }
-    formatted += "\n";
-  });
-  
-  // Only add explanation guide if there were promo options (fully dynamic)
-  if (hasChooseOneOptions) {
-    formatted += `
-**HOW TO HELP CUSTOMERS CHOOSE:**
-When customer asks "which option should I choose?" → Ask about their situation:
-- Want to defer payments? → No-payment options work best
-- Financing a large amount? → Lower interest rates save money over time
-- Paying mostly cash? → Rebates give instant savings
-
-Use the specific option details listed above to explain what's available.
-`;
-  }
-  
-  return formatted;
-}
 
 // Map page paths to human-readable descriptions
 function getPageDescription(currentPage: string): string {
@@ -297,11 +199,18 @@ async function buildSystemPrompt(
   motorContext?: { model: string; hp: number; price?: number } | null,
   currentPage?: string | null,
   quoteContext?: any,
-  previousSessionContext?: any
+  previousSessionContext?: any,
+  knowledge?: CustomerKnowledge,
 ) {
-  // Only fetch promotions - inventory is accessed via tools
-  const promotions = await getActivePromotions();
-  const promotionData = formatPromotionData(promotions);
+  const liveKnowledge = knowledge || await loadCustomerKnowledge(supabase);
+  const promotions = liveKnowledge.promotions;
+  const financingPromo = liveKnowledge.financing[0] || null;
+  const promotionData = formatPromotionContext(promotions);
+  const promotionAnswer = buildPromotionCustomerAnswer(promotions);
+  const financingCanon = financingPromo
+    ? `\n## STANDARD / ALTERNATE FINANCING (from financing_options table):\n- **${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** through TD Auto Finance via Dealerplan Peterborough\n- Default term: ${financingPromo.term_months || 60} months. Minimum financed: $${(financingPromo.min_amount || 5000).toLocaleString()}.\n- Runs through: ${financingPromo.promo_end_date || 'see /financing'}\n- ${financingPromo.promo_text || ''}\n- $349 DealerPlan fee added post-tax to every financed deal.\n- This standard offer does NOT cancel or supersede financing listed in CURRENT PROMOTIONS. If the customer asks about an active promotion rate, quote that exact APR and term and explain whether it layers with the rebate. Use the standard offer when the promotion does not apply or the customer wants another term.\n- NEVER quote a rate from memory. If a customer asks for exact monthly payment, route them to the configurator or /financing-application; do NOT calculate amortization by voice.\n`
+    : `\n## CURRENT FINANCING:\nNo active financing promo loaded. Direct customers to /financing-application or have them call for the current rate. Do NOT quote a rate from memory.\n`;
+
   
   // Current motor context if viewing one
   let currentMotorContext = "";
@@ -436,6 +345,9 @@ ${currentMotorContext}
 ${MODEL_SUFFIX_GUIDE}
 ${SHAFT_LENGTH_CRITICAL}
 ${promotionData}
+## VOICE-SAFE CURRENT PROMOTION SUMMARY
+${promotionAnswer}
+${financingCanon}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
 
@@ -458,22 +370,23 @@ Keep it genuine and conversational - don't list bullet points, just speak natura
 ## FINANCING MINIMUM THRESHOLD:
 **CRITICAL: Financing is ONLY available for purchases of $5,000 or more (before tax).**
 If someone asks about financing for a small motor (under $5k), say something like:
-"Financing kicks in at five grand - for smaller motors like this, the cash rebate is usually the way to go. You pocket the savings right away."
-Do NOT offer financing calculations or the "6 Months No Payments" promo for sub-$5k motors - recommend the factory rebate instead.
+"Financing kicks in at five grand, for smaller motors like this give us a call and we'll figure out the best option for you."
+Do NOT offer financing for sub-$5k motors, suggest they call us about the best option for a smaller motor.
 
 ## NAVIGATION TOOLS - USE PROACTIVELY:
 **CRITICAL: These tools control the customer's screen. Use them when appropriate:**
 
 - **navigate_to_motors** - Filter and show motors by HP/config. Use when customer asks about motors by horsepower.
-- **navigate_to_promotions** - Open the promotions page. Use when customer asks about deals, specials, promotions, or says "tell me about the Get 7".
+- **navigate_to_promotions** - Open the promotions page. Use when customer asks about deals, specials, promotions, or says "tell me about the current deal".
 - **navigate_to_contact** - Open the contact form. Use for complex inquiries or when customer prefers written communication.
 - **show_motor** - Open detail modal for a specific motor. Use when customer selects a specific variant like "show me the 9.9ELH".
 - **go_to_quote_step** - Navigate to a quote step. Use when customer says "show me my quote", "go to summary", "back to motor selection".
 
 **WHEN CUSTOMER ASKS ABOUT DEALS:**
-1. Briefly explain the current promo verbally (7 year warranty + Choose One)
-2. Call navigate_to_promotions to SHOW them the page
-3. "Check out the details on your screen - you can see all three bonus options there"
+1. You MUST call check_current_deals before answering any promotion, rebate, deal, or promotional-financing question. Read its returned facts faithfully; never answer from memory or pretrained knowledge.
+2. Briefly describe ONLY the promotion returned by that tool and shown in the CURRENT PROMOTIONS block above. Respect its exact layered or choose-one structure. Do not invent options or name an expired or US-only promo. If the block says no promotion is active, say that plainly.
+3. Call navigate_to_promotions to SHOW them the page
+4. "I've pulled up the current details on your screen."
 
 ## SCREEN CONTROL - NAVIGATE FIRST, THEN READ SCREEN (SIMPLIFIED):
 You control the customer's browser. When they ask about motors, SHOW them visually while talking.
@@ -626,8 +539,8 @@ PROACTIVELY OFFER these at the right moments:
 "I can text you the details if you want to show someone else — just need your cell."
 
 **When discussing the current promotion:**
-"By the way, this qualifies for our Get 7 promo — want me to show you the bonus options on screen?"
-→ Then use navigate_to_promotions
+"If we have a current promotion running, I can pull it up on your screen so you can see the details. Want me to show you?"
+→ Then use navigate_to_promotions. Only describe specifics that appear in the CURRENT PROMOTIONS block.
 
 **When customer has lots of questions or seems overwhelmed:**
 "Happy to keep going, but if you'd rather chat with someone directly, I can have one of our guys call you back. What works better?"
@@ -695,8 +608,8 @@ STEP 5 - TRADE-IN:
 → If they're trading a Mercury of the SAME horsepower, mention: "Good news — your current Mercury prop should fit the new motor, so that saves you the propeller charge right there."
 
 STEP 6 - PROMO:
-"For the bonus, you can choose the cash rebate, special financing, or 6 months no payments. Which sounds best?"
-→ Use go_to_quote_step('promo') to show options
+"Let me pull up the current promotion details for you."
+→ Use go_to_quote_step('promo') to show the offer. Read the rebate, financing, eligibility, exclusions, dates, and whether benefits layer or require a choice only from the CURRENT PROMOTIONS data.
 
 STEP 7 - SUMMARY:
 "Here's your quote - [read the totals]. Ready to lock it in with a deposit, or want me to send this to your phone?"
@@ -729,7 +642,7 @@ During guided quote building, YOU are their helper. Stay engaged until they're d
 ${pageContext}- All prices in CAD. No delivery - in-person pickup only at Gores Landing, ON.
 - Guide customers to quote builder for exact pricing.`;
 
-  return systemPrompt;
+  return `${systemPrompt}\n\n${formatCustomerKnowledgePrompt(liveKnowledge, false)}`;
 }
 
 serve(async (req) => {
@@ -755,7 +668,23 @@ serve(async (req) => {
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
-    
+
+    const knowledge = await loadCustomerKnowledge(supabase);
+    const knowledgeSnapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+    if (body?.knowledgeProbe === true) {
+      return new Response(JSON.stringify({ surface: 'voice', ...knowledgeSnapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    // Cap real ElevenLabs token requests: 15 / 10 minutes per IP (warmups skipped above)
+    const allowed = await checkRateLimit(req, {
+      action: 'voice_token',
+      maxAttempts: 15,
+      windowMinutes: 10,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
     const ELEVENLABS_API_KEY = Deno.env.get('ELEVENLABS_API_KEY');
     if (!ELEVENLABS_API_KEY) {
       console.error('ELEVENLABS_API_KEY is not set');
@@ -771,7 +700,7 @@ serve(async (req) => {
     console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext, hasReturningContext: !!previousSessionContext });
     
     // Build the system prompt with real inventory data, page context, quote context, and returning customer context
-    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext, previousSessionContext);
+    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext, previousSessionContext, knowledge);
     console.log('System prompt built, length:', systemPrompt.length);
 
     console.log('Requesting conversation token for agent:', ELEVENLABS_AGENT_ID);
@@ -800,6 +729,7 @@ serve(async (req) => {
     return new Response(JSON.stringify({ 
       token: data.token,
       systemPrompt: systemPrompt,
+      knowledgeVersion: knowledgeSnapshot.sourceVersion,
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

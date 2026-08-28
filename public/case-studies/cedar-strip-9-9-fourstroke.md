@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 case_study_id: CS04
 slug: cedar-strip-9-9-fourstroke
 boat_type: "Small utility / cedar-strip boat"
 region: "Ontario cottage country"
+is_illustrative: true
 ---
 
 # Cedar-strip utility setup: small 9.9HP FourStroke
 
-A lightweight small-horsepower package for cottage and protected-water use. Real photography still pending.
+A lightweight small-horsepower package for cottage and protected-water use.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -33,15 +36,15 @@ A lightweight small-horsepower package for cottage and protected-water use. Real
 
 Best for small-boat owners prioritizing portability, cottage reliability, and protected-water use.
 
-## Why it worked
+## Why this configuration may fit
 
 - Right-sized for small transoms and light-duty use
 - Portable FourStroke practicality
 - Will stay clearly marked as illustrative until real photos arrive
 
-## Customer quote
+## Planning takeaway
 
-> For this type of boat, simple reliability, quiet running, and manageable weight matter more than headline horsepower.
+For this type of boat, simple reliability, quiet running, and manageable weight matter more than headline horsepower.
 
 ## Quote a similar repower
 
@@ -50,7 +53,7 @@ Best for small-boat owners prioritizing portability, cottage reliability, and pr
 
 ## Notes
 
-- All pricing in CAD. Pickup only at Gores Landing, ON.
+- All pricing in CAD. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. No couriers or third parties.
 - Final motor recommendation confirmed by Harris Boat Works staff.
 - Verado not used in default repower recommendations (special-order only).
 

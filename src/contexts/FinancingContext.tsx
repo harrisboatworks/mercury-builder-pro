@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import {
+  clearFinancingStorage,
+  saveFinancingDraft,
+  stripLocalSensitiveFields,
+  type FinancingApiSaveResult,
+} from '@/lib/financingApplicationApi';
 import type { 
   PurchaseDetails, 
   Applicant, 
@@ -134,7 +139,7 @@ function financingReducer(state: FinancingState, action: FinancingAction): Finan
 interface FinancingContextType {
   state: FinancingState;
   dispatch: React.Dispatch<FinancingAction>;
-  saveToDatabase: () => Promise<{ applicationId: string; resumeToken: string } | undefined>;
+  saveToDatabase: (email: string) => Promise<FinancingApiSaveResult>;
   isStepComplete: (step: number) => boolean;
   canAccessStep: (step: number) => boolean;
   clearStoredData: () => void;
@@ -150,7 +155,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
   // Clear localStorage helper
   const clearStoredData = useCallback(() => {
-    localStorage.removeItem('financingApplication');
+    clearFinancingStorage();
     console.log('🧹 Cleared financing application from localStorage');
   }, []);
 
@@ -210,15 +215,6 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     saveTimeoutRef.current = setTimeout(() => {
       resetInactivityTimer(); // Reset timer on save activity
       
-      // Strip sensitive PII (SIN, DOB) before persisting to localStorage
-      const stripSensitiveFields = (obj: Record<string, any> | null | undefined) => {
-        if (!obj) return obj;
-        const cleaned = { ...obj };
-        delete cleaned.sin;
-        delete cleaned.dateOfBirth;
-        return cleaned;
-      };
-
       const dataToSave = {
         state: {
           applicationId: state.applicationId,
@@ -226,10 +222,10 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           currentStep: state.currentStep,
           completedSteps: state.completedSteps,
           purchaseDetails: state.purchaseDetails,
-          applicant: stripSensitiveFields(state.applicant as Record<string, any> | null),
+          applicant: stripLocalSensitiveFields(state.applicant as Record<string, unknown> | null),
           employment: state.employment,
           financial: state.financial,
-          coApplicant: stripSensitiveFields(state.coApplicant as Record<string, any> | null),
+          coApplicant: stripLocalSensitiveFields(state.coApplicant as Record<string, unknown> | null),
           hasCoApplicant: state.hasCoApplicant,
           references: state.references,
           quoteId: state.quoteId,
@@ -245,111 +241,39 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         clearTimeout(saveTimeoutRef.current);
       }
     };
-  }, [state]);
+  }, [state, resetInactivityTimer]);
   
-  // Auto-save to database (debounced 2 seconds to reduce writes)
-  useEffect(() => {
-    if (state.isLoading || !state.applicationId) return;
-    
-    const dbSaveTimeout = setTimeout(async () => {
-      try {
-        await supabase
-          .from('financing_applications')
-          .update({
-            current_step: state.currentStep,
-            completed_steps: state.completedSteps,
-            purchase_data: state.purchaseDetails || {},
-            applicant_data: state.applicant || {},
-            employment_data: state.employment || {},
-            financial_data: state.financial || {},
-            co_applicant_data: state.coApplicant || null,
-            references_data: state.references || {},
-            updated_at: new Date().toISOString(),
-          })
-          .eq('id', state.applicationId);
-      } catch (error) {
-        console.error('Auto-save to database failed:', error);
-      }
-    }, 2000); // Debounce 2 seconds
-    
-    return () => clearTimeout(dbSaveTimeout);
-  }, [state, state.applicationId]);
-
   // Save to database
-  const saveToDatabase = useCallback(async () => {
+  const saveToDatabase = useCallback(async (email: string) => {
     console.log('💾 [saveToDatabase] Starting save operation...');
     dispatch({ type: 'SET_SAVING', payload: true });
     
     try {
-      const applicationData = {
-        purchase_data: state.purchaseDetails || {},
-        applicant_data: state.applicant || {},
-        employment_data: state.employment || {},
-        financial_data: state.financial || {},
-        co_applicant_data: state.coApplicant || null,
-        references_data: state.references || {},
-        current_step: state.currentStep,
-        completed_steps: state.completedSteps,
-        quote_id: state.quoteId,
-        status: 'draft' as const,
-      };
+      const result = await saveFinancingDraft({
+        email,
+        applicantName: state.applicant
+          ? [state.applicant.firstName, state.applicant.lastName].filter(Boolean).join(' ')
+          : undefined,
+        applicationId: state.applicationId,
+        resumeToken: state.resumeToken,
+        draft: {
+          purchaseDetails: state.purchaseDetails as Record<string, unknown> | null,
+          applicant: state.applicant as Record<string, unknown> | null,
+          employment: state.employment as Record<string, unknown> | null,
+          financial: state.financial as Record<string, unknown> | null,
+          coApplicant: state.coApplicant as Record<string, unknown> | null,
+          hasCoApplicant: state.hasCoApplicant,
+          references: state.references as Record<string, unknown> | null,
+          quoteId: state.quoteId,
+          currentStep: state.currentStep,
+          completedSteps: state.completedSteps,
+        },
+      });
 
-      if (state.applicationId) {
-        // Update existing application
-        console.log('💾 [saveToDatabase] Updating existing application:', state.applicationId);
-        const { error } = await supabase
-          .from('financing_applications')
-          .update(applicationData)
-          .eq('id', state.applicationId);
-
-        if (error) {
-          console.error('❌ [saveToDatabase] Update failed:', error);
-          throw error;
-        }
-        
-        console.log('✅ [saveToDatabase] Update successful');
-        // Return existing IDs
-        return {
-          applicationId: state.applicationId,
-          resumeToken: state.resumeToken!
-        };
-      } else {
-        // Create new application
-        console.log('💾 [saveToDatabase] Creating new application...');
-        const { data: { user } } = await supabase.auth.getUser();
-        
-        const { data, error } = await supabase
-          .from('financing_applications')
-          .insert({
-            ...applicationData,
-            user_id: user?.id || null,
-            resume_token: crypto.randomUUID(),
-            resume_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-          })
-          .select()
-          .single();
-
-        if (error) {
-          console.error('❌ [saveToDatabase] Insert failed:', error);
-          throw error;
-        }
-        
-        if (data) {
-          console.log('✅ [saveToDatabase] Insert successful:', data.id);
-          dispatch({ type: 'SET_APPLICATION_ID', payload: data.id });
-          dispatch({ type: 'SET_RESUME_TOKEN', payload: data.resume_token });
-          
-          // Return new IDs
-          return {
-            applicationId: data.id,
-            resumeToken: data.resume_token
-          };
-        } else {
-          // Edge case: No error but also no data returned
-          console.error('⚠️ [saveToDatabase] No data returned after insert (unexpected)');
-          return undefined;
-        }
-      }
+      dispatch({ type: 'SET_APPLICATION_ID', payload: result.applicationId });
+      dispatch({ type: 'SET_RESUME_TOKEN', payload: result.resumeToken });
+      console.log('✅ [saveToDatabase] Secure save successful');
+      return result;
     } catch (error) {
       console.error('❌ [saveToDatabase] Save operation failed:', error);
       throw error;

@@ -1,14 +1,22 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
+import { getBlogOgImagePath } from '@/lib/blogOgImage.js';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { AuthorByline } from '@/components/blog/AuthorByline';
+import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import {
   Accordion,
   AccordionContent,
@@ -255,7 +263,15 @@ export default function FrenchBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/fr/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
+  const shareImage = getBlogOgImagePath(article.socialImage || article.image);
+  const absoluteShareImage = shareImage
+    ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+    : undefined;
+  const hasGeneratedShareImage = shareImage?.startsWith('/generated-og/');
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -263,7 +279,7 @@ export default function FrenchBlogArticlePage() {
       {
         "@type": "Article",
         "@id": `${url}#article`,
-        "headline": article.title,
+        "headline": article.seoTitle ?? article.title,
         "description": article.description,
         "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
@@ -271,7 +287,15 @@ export default function FrenchBlogArticlePage() {
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
         "inLanguage": "fr-CA",
-        "isAccessibleForFree": true
+        "isAccessibleForFree": true,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
+        ...(article.citations?.length ? {
+          "citation": article.citations.map((citation) => ({
+            "@type": "CreativeWork",
+            "name": citation.name,
+            "url": citation.url,
+          })),
+        } : {})
       },
       {
         "@type": "WebPage",
@@ -306,20 +330,23 @@ export default function FrenchBlogArticlePage() {
   return (
     <div className="min-h-screen bg-background" lang="fr">
       <Helmet>
-        <title>{article.title} | Harris Boat Works</title>
+        <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={url} />
-        <link rel="alternate" hrefLang="fr-CA" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <meta property="og:title" content={article.title} />
+        <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
+        {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
+        {hasGeneratedShareImage && <meta property="og:image:width" content="1200" />}
+        {hasGeneratedShareImage && <meta property="og:image:height" content="630" />}
+        {hasGeneratedShareImage && <meta property="og:image:type" content="image/webp" />}
+        <meta name="twitter:card" content="summary_large_image" />
+        {absoluteShareImage && <meta name="twitter:image" content={absoluteShareImage} />}
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogHreflangLinks locale="fr" slug={article.slug} />
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -331,17 +358,17 @@ export default function FrenchBlogArticlePage() {
           </Link>
         </nav>
 
-        {/* Hero image */}
-        {article.image && !heroImgError && (
-          <div className="mb-8 rounded-xl overflow-hidden">
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full h-64 md:h-80 object-cover"
-              onError={() => setHeroImgError(true)}
-            />
-          </div>
+        {/* Hero image — shared <picture> component */}
+        {article.image && (
+          <BlogHeroPicture
+            image={article.image}
+            alt={article.imageAlt ?? article.title}
+            wrapperClassName="mb-8 rounded-xl overflow-hidden"
+            className="w-full h-64 md:h-80 object-cover"
+          />
         )}
+
+        <LanguageSwitcher currentLang="fr" currentSlug={article.slug} />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
@@ -361,6 +388,17 @@ export default function FrenchBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <p className="text-sm text-muted-foreground mb-4">
+          <strong>Dernière révision :</strong>{' '}
+          {new Date(`${article.dateModified || article.datePublished}T12:00:00Z`).toLocaleDateString('fr-CA', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
+        <div className="mb-8 pb-4 border-b border-border">
+          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" />
+        </div>
 
         {/* Table of Contents */}
         {tocItems.length > 2 && (
@@ -371,8 +409,12 @@ export default function FrenchBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
+
+        {!shouldSuppressAutoCTA(article.content) && (
+          <CategoryCTA category={article.category} />
+        )}
 
         {/* FAQ Section */}
         {article.faqs && article.faqs.length > 0 && (

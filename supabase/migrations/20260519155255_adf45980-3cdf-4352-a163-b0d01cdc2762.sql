@@ -1,0 +1,1 @@
+UPDATE public.motor_options SET base_price = 199, msrp = 199 WHERE id = '3cccfa90-2f7c-4f1d-96f9-8e73c83db8c4';

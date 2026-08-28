@@ -150,12 +150,12 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
     add('L', 'Long Shaft (20")', 'For 20" transom boats');
   }
   if (upper.includes('MLH')) {
-    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('M', 'Manual Start', 'Pull cord, simple and reliable');
     add('L', 'Long Shaft (20")', 'For 20" transom boats');
     add('H', 'Tiller Handle', 'Steer directly from motor');
   }
   if (upper.includes('MH')) {
-    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('M', 'Manual Start', 'Pull cord, simple and reliable');
     add('H', 'Tiller Handle', 'Steer directly from motor');
   }
   if (upper.includes('EH')) {
@@ -200,7 +200,7 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
 
   // Single flags
   if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
-  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
+  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord, simple and reliable');
   if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
   
   // Cache the result before returning
@@ -401,15 +401,10 @@ export const includesFuelTank = (motor: Motor) => {
 
 export const includesPropeller = (motor: Motor) => {
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  const model = (motor.model_display || motor.model || '').toUpperCase();
-  
-  // Motors 20HP and under include propeller
-  if (hp <= 20) return true;
-  
-  // Tiller motors typically include propeller (backup check)
-  if (isTillerMotor(model)) return true;
-  
-  return false;
+
+  // Mercury outboards under 25 HP include a propeller. Motors 25 HP and up
+  // require a boat-matched propeller selected during water testing.
+  return hp < 25;
 };
 
 // Check if motor could benefit from external fuel tank option
@@ -463,23 +458,16 @@ export const isTillerMotor = (model: string) => {
     return true;
   }
   
-  // Tiller patterns - H suffix indicates tiller handle
-  const tillerPatterns = [
-    /\b(\d+\.?\d*)\s*MLH\b/i,    // MLH = Manual + Long + Handle
-    /\b(\d+\.?\d*)\s*ELH\b/i,    // ELH = Electric + Long + Handle
-    /\b(\d+\.?\d*)\s*EXLH\b/i,   // EXLH = Electric + XL + Handle
-    /\b(\d+\.?\d*)\s*ELHPT\b/i,  // ELHPT = Electric + Long + Handle + Power Tilt
-    /\b(\d+\.?\d*)\s*EXLHPT\b/i, // EXLHPT = Electric + XL + Handle + Power Tilt
-    /\b(\d+\.?\d*)\s*MH(?!\w)/i, // MH = Manual + Handle
-    /\b(\d+\.?\d*)\s*EH(?!\w)/i, // EH = Electric + Handle
-    /\b(\d+\.?\d*)\s*H(?!\w|P)/i // Standalone H (avoid HP, FH)
-  ];
-  
-  for (const pattern of tillerPatterns) {
-    if (pattern.test(upperModel)) {
-      tillerCache.set(model, true);
-      return true;
-    }
+  // Tiller pattern - matches Mercury handle suffix codes:
+  //   [E|M] + optional shaft (L, XL, XXL) + H + optional PT + optional alpha suffix
+  // Examples: MH, MLH, MXLH, MXXLH, EH, ELH, EXLH, EXXLH,
+  //           EHPT, ELHPT, EXLHPT, MLHA (Sail Power),
+  //           MHGA / MLHGA / ELHGA (30hp GA variants), MLHPT, etc.
+  // Will NOT match: ELPT, EXLPT, EPT, EL, MRC, HP (no H in handle position).
+  const tillerPattern = /\b(\d+\.?\d*)?\s*[ME]X{0,2}L?H(?:PT)?[A-Z]*\b/i;
+  if (tillerPattern.test(upperModel)) {
+    tillerCache.set(model, true);
+    return true;
   }
   
   tillerCache.set(model, false);

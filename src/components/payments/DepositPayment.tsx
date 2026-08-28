@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -151,7 +152,7 @@ export const DepositPayment = () => {
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="customerName">Full Name *</Label>
+              <Label htmlFor="customerName">Full Name <RequiredMark /></Label>
               <Input
                 id="customerName"
                 placeholder="John Doe"
@@ -161,7 +162,7 @@ export const DepositPayment = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="customerEmail">Email Address *</Label>
+              <Label htmlFor="customerEmail">Email Address <RequiredMark /></Label>
               <Input
                 id="customerEmail"
                 type="email"
@@ -173,7 +174,7 @@ export const DepositPayment = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="customerPhone">Phone Number *</Label>
+            <Label htmlFor="customerPhone">Phone Number <RequiredMark /></Label>
             <Input
               id="customerPhone"
               type="tel"

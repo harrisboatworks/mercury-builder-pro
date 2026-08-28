@@ -77,9 +77,9 @@ Or call **(905) 342-2153**.
 
 - All pricing is **CAD**. Never quote USD.
 - Final out-the-door price requires confirmation by Harris Boat Works.
-- Financing minimum **CA$5,000**. Tiered: 7.99% APR over $10k, 8.99% under $10k. Max 144 months.
+- Current headline financing is **5.48% APR (OAC) through December 31, 2026**. After the program ends, standard tiers resume: 7.99% APR over $10k and 8.99% under $10k. Financing minimum **CA$5,000**. Max 144 months.
 - Deposits: $200 under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP+.
-- We do **not** sell or service Mercury Verado.
+- Mercury Verado is **special-order only** and is not part of default inventory. Route Verado inquiries to Harris Boat Works.
 
 ---
 Source: ${SITE_URL}/motors/${slug}
@@ -95,7 +95,7 @@ function indexMarkdown(motors: any[]): string {
     `# Mercury Outboard Catalog — Harris Boat Works`,
     ``,
     `Mercury repower specialist on Rice Lake, Ontario. Family-owned since 1947.`,
-    `All prices in CAD. Pickup only at Gores Landing. We do not sell Verado.`,
+    `All prices in CAD. Pickup only at Gores Landing. Verado is special-order only and is not part of default inventory.`,
     ``,
     `**Updated:** ${now}`,
     `**Total motors:** ${motors.length}`,

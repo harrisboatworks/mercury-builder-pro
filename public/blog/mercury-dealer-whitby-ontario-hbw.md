@@ -1,0 +1,173 @@
+---
+canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
+title: "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake"
+description: "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region."
+category: "Dealer Locations"
+date_published: 2026-05-11
+date_modified: 2026-08-19
+keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
+author: Harris Boat Works
+content_type: blog_article
+language: en-CA
+revenue_driver: repower
+---
+
+# Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake
+
+> Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.
+
+**Category:** Dealer Locations  
+**Published:** 2026-05-11  
+**Last reviewed:** 2026-08-19  
+**Read time:** 4 min  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
+
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
+
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
+---
+
+![Why Whitby boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
+
+## Mercury Dealer for Whitby: Short Drive, Long Relationship
+
+Whitby sits in that Durham Region sweet spot, far enough east to have cleared most of the GTA congestion, close enough to Rice Lake that a trip up here isn't a production.
+
+At approximately 45 minutes via the 401 and Highway 115, we're within range of being your regular dealer, not just the place you went once for a big purchase.
+
+We're not in Whitby. Harris Boat Works is in Gores Landing on Rice Lake, about 45 minutes northeast via the 401 and 115. Here's why Whitby boaters make the drive.
+
+## Why "Regular Dealer" Matters at 45 Minutes
+
+Most GTA boaters treat their dealer relationship as transactional. Buy the motor, maybe get it serviced once, otherwise figure it out yourself.
+
+What we see from Whitby customers who've made the trip a habit: they come up for spring commissioning, get a service issue sorted in June, do winterization in October, and store with us over winter. The boat is here most of the time, ready when they are. The relationship replaces a lot of the friction that comes from trying to coordinate service across multiple shops.
+
+At 45 minutes, that's a realistic model. You're not driving 90 minutes each way to drop off the boat for an oil change. You're making a run that fits into a Saturday morning.
+
+## The GTA's Pricing Problem, and What We Do Instead
+
+The call-for-quote model is standard across GTA marine dealers. You look up a motor online, find no price, call, and start a conversation you didn't fully want yet. The price emerges through the interaction, not before it.
+
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works the other way. Installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes, before you talk to anyone. See the number. Decide if it makes sense. Engage us when you're ready. For [Mercury pricing for every model](/pricing-reference) on one page, see our published price reference.
+
+Whitby customers who've used this tell us the thing they value most is making the trip knowing exactly what they're coming to spend, not hoping the price turns out to be reasonable.
+
+## Mercury Premier + Three Generations
+
+Mercury Premier is the top dealer tier, parts depth, warranty authorization, technical training. We've held it for years. Harris Boat Works has been on Rice Lake since 1947, third generation. We're not running a high-volume sales floor. The model here depends on doing right by people, and Whitby's close enough that our mistakes would find their way back to us fast.
+
+---
+
+## What Harris Boat Works Handles for Whitby Customers
+
+**Mercury outboard sales**
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what works for your hull and how you use it.
+
+**Repower service**
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
+
+**Mercury parts and service**
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
+
+**Winter storage**
+Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes when we reopen in early April.
+
+**Installed pricing online**
+[mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Whitby.
+
+---
+
+## Getting to Harris Boat Works from Whitby
+
+**Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Mostly highway, the transition from 401 to 115 is clean, and the last stretch on County Road 28 is rural driving through cottage country.
+
+**Approximate drive time:** Around 45 minutes outside rush hour. From north Whitby toward Brooklin, you may get there even a bit faster. From Whitby south near the 401, it's a very manageable drive.
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+**Phone:** 905-342-2153
+**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
+
+---
+
+## How to Start
+
+1. **Build a quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the real installed price before you leave.
+2. **Consider whether you want an ongoing service relationship, not just a purchase.** At 45 minutes, the math on using us for commissioning, service, and winterization works.
+3. **Submit a service request** at [hbw.wiki/service](https://hbw.wiki/service) if you're starting with a service job rather than a purchase.
+4. **Call or text ahead:** 905-342-2153. We'll have someone ready for you.
+
+---
+
+## The HBW Promise
+
+Transparent installed pricing before you leave Whitby. A service relationship that makes sense at 45 minutes. No phone-tag, no call-for-quote, no runaround.
+
+That's the deal. Has been since 1947.
+
+**Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
+**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Call or text:** 905-342-2153
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Whitby Boaters Launch and Why HBW Sees Steady Volume from the Area
+
+Whitby has a strong boating community built around **Whitby Harbour Marina**, city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
+
+The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Clear midweek, weekend cottage traffic is the only friction. Tuesday-Thursday mornings are ideal for service trips.
+
+Why some Whitby boaters consider HBW:
+
+- **Mature local boating community.** Owners assessing an older Mercury or another-brand motor can use our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) to compare repair, repower, and replacement without assuming the answer in advance.
+- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
+- **Mercury Premier-level support.** HBW offers Mercury-specific diagnostics, a documented rigging scope, current pricing, and continuity between installation and future service history. No dealer can promise a trouble-free lifespan or a particular warranty outcome.
+
+---
+
+## FAQs
+
+### How far is HBW from Whitby?
+
+About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.
+
+### Can HBW be my primary Mercury dealer if I live in Whitby?
+
+Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
+
+### Do you serve Brooklin and north Whitby?
+
+Yes. Boat owners from Brooklin and north Whitby can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic.
+
+## Related guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+
+## Next steps
+
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- The only commercial next step for this article is the Mercury quote configurator.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

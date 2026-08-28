@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
-import { pingIndexNow, KEY_URLS } from "../_shared/indexnow.ts";
+import { pingIndexNow } from "../_shared/indexnow.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -91,34 +91,33 @@ const handler = async (req: Request): Promise<Response> => {
           try {
             const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscriber.unsubscribe_token}`;
             
+            const { buildEmail } = await import("../_shared/email-layout.ts");
+            const safeTitle = String(articleTitle).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const safeDesc = String(articleDescription || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const imageBlock = articleImage
+              ? `<p style="margin:0 0 18px 0;text-align:center;"><img src="${articleImage}" alt="${safeTitle}" style="max-width:100%;height:auto;border-radius:4px;border:1px solid #e5e7eb;" /></p>`
+              : "";
+            const body = `
+              ${imageBlock}
+              <h2 style="margin:0 0 12px 0;font-size:18px;font-weight:700;color:#1f2430;">${safeTitle}</h2>
+              <p style="margin:0 0 14px 0;color:#1f2430;">${safeDesc}</p>
+              <p style="margin:18px 0 0 0;color:#6b7280;font-size:13px;">From Harris Boat Works, your Mercury repower team on Rice Lake.</p>
+            `;
+            const html = buildEmail({
+              preheader: safeDesc.slice(0, 140),
+              heading: "New from the Harris Boat Works journal",
+              bodyHtml: body,
+              ctaText: "Read the full article",
+              ctaUrl: articleUrl,
+              unsubscribeUrl,
+            });
+
             await resend.emails.send({
-              from: "Harris Boat Works <updates@hbwsales.ca>",
+              from: "Harris Boat Works <updates@mercuryrepower.ca>",
+              replyTo: "info@harrisboatworks.ca",
               to: [subscriber.email],
-              subject: `New Post: ${articleTitle}`,
-              html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                  <h1 style="color: #1a365d; font-size: 24px;">New Blog Post</h1>
-                  
-                  ${articleImage ? `<img src="${articleImage}" alt="${articleTitle}" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">` : ''}
-                  
-                  <h2 style="color: #333; font-size: 20px; margin-bottom: 10px;">
-                    <a href="${articleUrl}" style="color: #2563eb; text-decoration: none;">${articleTitle}</a>
-                  </h2>
-                  
-                  <p style="color: #666; line-height: 1.6;">${articleDescription}</p>
-                  
-                  <a href="${articleUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 20px;">
-                    Read Full Article →
-                  </a>
-                  
-                  <hr style="border: none; border-top: 1px solid #eee; margin: 40px 0 20px;">
-                  
-                  <p style="color: #999; font-size: 12px;">
-                    You're receiving this because you subscribed to blog updates from Harris Boat Works.<br>
-                    <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a>
-                  </p>
-                </div>
-              `,
+              subject: `New from Harris Boat Works: ${articleTitle}`,
+              html,
             });
             successCount++;
           } catch (emailError) {
@@ -136,14 +135,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`[send-blog-notification] Complete: ${successCount} sent, ${errorCount} failed`);
 
-    // Fire-and-forget IndexNow ping for the new article + key landing pages
-    // so search engines/AI crawlers re-index quickly. Excludes .md twins.
+    // Fire-and-forget IndexNow ping: ONLY the new article + the blog index.
+    // (We intentionally do NOT blast KEY_URLS here — a new blog post does
+    // not change the homepage / promotions / case-studies content.)
     pingIndexNow(
-      [
-        articleUrl,
-        ...KEY_URLS.map((p) => `https://www.mercuryrepower.ca${p}`),
-        'https://www.mercuryrepower.ca/blog',
-      ],
+      [articleUrl, 'https://www.mercuryrepower.ca/blog'],
       'blog-notification',
     );
 

@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { includesPropeller } from '@/lib/motor-helpers';
+import { resolvePropellerDecision } from '@/lib/propeller-selection';
 
 export interface LineItem {
   label: string;
@@ -37,7 +40,7 @@ export function calculateRunningTotal(
     adminDiscount?: number;
     selectedPromoOption?: string | null;
     getRebateForHP?: (hp: number) => number | null;
-    hasCompatibleProp?: boolean;
+    propellerAllowance?: { name: string; price: number } | null;
   } = {}
 ): RunningTotalResult {
   if (!motor) return { subtotal: 0, hst: 0, total: 0, lineItems: [] };
@@ -89,6 +92,16 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Mounting Hardware', value: opts.installationCost });
   }
 
+  // Propellers are included below 25 HP. Callers pass the appropriate
+  // allowance only when a 25 HP+ quote is not reusing an existing propeller.
+  if (opts.propellerAllowance?.price) {
+    subtotal += opts.propellerAllowance.price;
+    lineItems.push({
+      label: opts.propellerAllowance.name,
+      value: opts.propellerAllowance.price,
+    });
+  }
+
   // Fuel tank
   if (opts.tankCost && opts.tankSize) {
     subtotal += opts.tankCost;
@@ -125,8 +138,12 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Discount', value: opts.adminDiscount, isCredit: true });
   }
 
-  // Cash rebate
-  if (opts.selectedPromoOption === 'cash_rebate' && motor.hp && opts.getRebateForHP) {
+  // Cash rebate — HP matrix is the sole source of truth. Applied whenever a
+  // rebate is available for this motor's HP, regardless of whether the
+  // customer selected "cash_rebate" or "special_financing" (Summer Savings
+  // is a layered offer: rebate + optional promo financing). Legacy paths
+  // that pass selectedPromoOption === 'cash_rebate' still get the rebate.
+  if (motor.hp && opts.getRebateForHP && opts.selectedPromoOption !== 'no_payments') {
     const rebate = opts.getRebateForHP(motor.hp);
     if (rebate && rebate > 0) {
       subtotal -= rebate;
@@ -153,6 +170,17 @@ export function useQuoteRunningTotal(
   const motor = motorOverride !== undefined ? motorOverride : state.motor;
 
   return useMemo(() => {
+    const hp = Number(motor?.hp || 0);
+    const allowance = motor && !includesPropeller(motor as Parameters<typeof includesPropeller>[0])
+      ? getPropellerAllowance(hp)
+      : null;
+    const propellerDecision = resolvePropellerDecision({
+      hp,
+      installConfig: state.installConfig,
+      boatInfo: state.boatInfo,
+      tradeInInfo: state.tradeInInfo,
+    });
+
     return calculateRunningTotal(motor, {
       selectedOptions: state.selectedOptions,
       controlsOption: state.boatInfo?.controlsOption,
@@ -169,25 +197,24 @@ export function useQuoteRunningTotal(
       adminDiscount: state.adminDiscount,
       selectedPromoOption: state.selectedPromoOption,
       getRebateForHP,
-      hasCompatibleProp: state.boatInfo?.hasCompatibleProp,
+      propellerAllowance: propellerDecision === 'include_allowance' ? allowance : null,
     });
   }, [
     motor,
     state.selectedOptions,
-    state.boatInfo?.controlsOption,
+    state.boatInfo,
     state.purchasePath,
-    state.installConfig?.installationCost,
+    state.installConfig,
     state.fuelTankConfig?.tankSize,
     state.fuelTankConfig?.tankCost,
     state.looseMotorBattery?.wantsBattery,
     state.looseMotorBattery?.batteryCost,
     state.warrantyConfig?.warrantyPrice,
     state.warrantyConfig?.totalYears,
-    state.tradeInInfo?.estimatedValue,
+    state.tradeInInfo,
     state.adminCustomItems,
     state.adminDiscount,
     state.selectedPromoOption,
-    state.boatInfo?.hasCompatibleProp,
     getRebateForHP,
   ]);
 }

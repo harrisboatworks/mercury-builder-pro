@@ -1,13 +1,8 @@
 "use client";
-import { useCallback, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { money } from "@/lib/money";
-import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
-import { Button } from "@/components/ui/button";
-import { Download, CreditCard, ArrowUp, Sparkles, Bookmark, Mail } from "lucide-react";
-import confetti from 'canvas-confetti';
+import { Download, CreditCard, Bookmark } from "lucide-react";
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
-import { useSound } from '@/contexts/SoundContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 
 type StickySummaryProps = {
@@ -18,20 +13,14 @@ type StickySummaryProps = {
   monthly?: number;
   bullets?: string[];
   onReserve: () => void;
+  onReview?: () => void;
   depositAmount?: number;
   coverageYears?: number;
-  monthlyDelta?: number;
   promoWarrantyYears?: number;
   onDownloadPDF?: () => void;
   onSaveForLater?: () => void;
   onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
-  // Upgrade prompt props
-  showUpgradePrompt?: boolean;
-  upgradeToLabel?: string;
-  upgradeCostDelta?: number;
-  upgradeCoverageGain?: number;
-  onUpgradeClick?: () => void;
   // Payment processing prop
   isProcessingPayment?: boolean;
   // Quote expiry
@@ -46,26 +35,19 @@ export default function StickySummary({
   monthly,
   bullets = [],
   onReserve,
+  onReview,
   depositAmount = 200,
   coverageYears,
-  monthlyDelta,
   promoWarrantyYears,
   onDownloadPDF,
   onSaveForLater,
   onApplyForFinancing,
   isGeneratingPDF = false,
-  // Upgrade prompt props
-  showUpgradePrompt = false,
-  upgradeToLabel,
-  upgradeCostDelta,
-  upgradeCoverageGain,
-  onUpgradeClick,
   // Payment processing prop
   isProcessingPayment = false,
   // Quote expiry
   quoteValidUntil,
 }: StickySummaryProps) {
-  const { playCelebration } = useSound();
   const { user } = useAuth();
   const [showPulse, setShowPulse] = useState(false);
 
@@ -75,65 +57,46 @@ export default function StickySummary({
     return () => clearTimeout(timer);
   }, []);
 
-  const handleReserveClick = useCallback(() => {
-    // Trigger celebration confetti burst
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#3B82F6', '#60A5FA', '#93C5FD', '#DBEAFE', '#1D4ED8'],
-    });
-    
-    // Play celebration sound
-    playCelebration();
-    
-    // Call original handler
-    onReserve();
-  }, [onReserve, playCelebration]);
-
   return (
     <>
-      {/* Desktop sticky card - Premium glassmorphism */}
+      {/* Desktop sticky card */}
       <aside
         aria-label="Summary"
-        className="sticky top-28 hidden h-fit max-w-sm rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover ml-auto"
+        className="sticky top-24 hidden h-fit rounded-[12px] border border-repower-navy-900/10 bg-[#F5F1EA] p-8 lg:block"
       >
-        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          {packageLabel}
-        </div>
-        
-        <div className="mt-1">
-          <CoverageComparisonTooltip />
+        <div className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-mercury-red">
+          TOTAL
         </div>
 
-        <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+        <div className="mt-3 font-display font-bold text-repower-navy-900 leading-none tracking-[-0.03em]" style={{ fontSize: '48px' }}>
           {money(totalWithTax ?? yourPriceBeforeTax)}
         </div>
         {totalWithTax != null && (
-          <div className="mt-0.5 text-xs text-muted-foreground">
+          <div className="mt-2 font-sans text-[13px] text-repower-navy-900/55">
             Before tax: {money(yourPriceBeforeTax)}
           </div>
         )}
 
-        <div className="mt-1 text-sm text-muted-foreground">
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
+
+        <div className="font-sans text-[14px] text-repower-navy-900/70">
           {monthly != null && (
-            <>From <span className="font-semibold text-foreground">{money(Math.round(monthly))}/mo</span> • </>
+            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{money(Math.round(monthly))}/mo</span> · </>
           )}
-          You save <span className="font-semibold text-foreground">{money(totalSavings)}</span>
+          You save <span className="font-display font-semibold text-repower-navy-900 tabular-nums">{money(totalSavings)}</span>
+        </div>
+
+        <div className="mt-2 font-sans text-[12px] uppercase tracking-[0.12em] text-repower-navy-900/55">
+          {packageLabel}
         </div>
 
         {typeof coverageYears === "number" && (
-          <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Coverage: <span className="font-medium">{coverageYears} years total</span>
-          </div>
-        )}
-        {typeof monthlyDelta === "number" && monthlyDelta > 0 && (
-          <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
-            +{money(Math.round(monthlyDelta))}/mo for Extended Warranty
+          <div className="mt-2 font-sans text-[14px] text-repower-navy-900/70">
+            Mercury coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years total</span>
           </div>
         )}
         {promoWarrantyYears ? (
-          <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+          <div className="mt-1 font-sans text-[12px] text-repower-mercury-red">
             Includes +{promoWarrantyYears} yrs promo warranty
           </div>
         ) : null}
@@ -145,110 +108,92 @@ export default function StickySummary({
               const diffDays = Math.ceil((quoteValidUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
               const formatted = quoteValidUntil.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
               if (diffDays <= 0) return <span className="text-destructive font-medium">Quote pricing has expired</span>;
-              if (diffDays <= 7) return <span className="text-amber-600 dark:text-amber-400 font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''} — {formatted}</span>;
+              if (diffDays <= 7) return <span className="text-repower-mercury-red font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''}, {formatted}</span>;
               return <>Pricing valid until {formatted}</>;
             })()}
           </div>
         )}
 
-        {/* Upgrade prompt - shown when on Essential */}
-        <AnimatePresence>
-          {showUpgradePrompt && upgradeToLabel && upgradeCostDelta != null && onUpgradeClick && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="mt-3 overflow-hidden"
-            >
-              <button
-                onClick={onUpgradeClick}
-                className="w-full rounded-lg border border-blue-200 bg-blue-50/50 p-3 text-left transition hover:bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 dark:hover:bg-blue-950/50"
-              >
-                <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  <span>Want more coverage?</span>
-                </div>
-                <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
-                  Upgrade to <span className="font-semibold">{upgradeToLabel}</span> for just{' '}
-                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                    +{money(Math.round(upgradeCostDelta))}/mo
-                  </span>
-                </div>
-                {upgradeCoverageGain != null && upgradeCoverageGain > 0 && (
-                  <div className="mt-0.5 flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400">
-                    <ArrowUp className="h-3 w-3" />
-                    <span>+{upgradeCoverageGain} years extra protection</span>
-                  </div>
-                )}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <ul className="mt-3 space-y-0.5 lg:space-y-1 text-sm text-slate-700 dark:text-slate-300">
+        <ul className="mt-4 space-y-1.5 font-sans text-[14px] text-repower-navy-900/70">
           {bullets.slice(0, 3).map((b, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span aria-hidden className="mt-0.5 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500 flex-shrink-0" />
+              <span aria-hidden className="mt-1.5 h-1 w-1 rounded-full bg-repower-navy-900/40 flex-shrink-0" />
               <span>{b}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-4 space-y-2">
-          {onSaveForLater && (
-            <Button
-              onClick={onSaveForLater}
-              variant="outline"
-              className="w-full"
-            >
-              {user ? (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save Quote
-                </>
-              ) : (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save My Quote
-                </>
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
+
+        <div className="space-y-3">
+          <button
+            onClick={onReserve}
+            disabled={isProcessingPayment}
+            className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+          >
+            <span className="inline-flex items-center justify-center gap-2">
+              {isProcessingPayment
+                ? 'Processing...'
+                : `Reserve with ${money(depositAmount)} deposit`
+              }
+              {!isProcessingPayment && (
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               )}
-            </Button>
-          )}
-          
-          {onDownloadPDF && (
-            <Button
-              onClick={onDownloadPDF}
-              variant="outline"
-              className="w-full"
-              disabled={isGeneratingPDF}
+            </span>
+          </button>
+          <p className="px-1 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+            Secure Stripe checkout. HBW confirms details before ordering.
+          </p>
+
+          {onReview && (
+            <button
+              onClick={onReview}
+              className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
             >
-              <Download className="w-4 h-4 mr-2" />
-              {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
-            </Button>
+              <span className="inline-flex items-center justify-center gap-2">
+                Have HBW Review My Quote
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </span>
+            </button>
           )}
 
           {onApplyForFinancing && (
-            <Button
+            <button
               onClick={onApplyForFinancing}
-              variant="default"
-              className="w-full"
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
             >
-              <CreditCard className="w-4 h-4 mr-2" />
-              Apply for Financing
-            </Button>
+              <span className="inline-flex items-center justify-center gap-2">
+                <CreditCard className="w-4 h-4" />
+                Apply for Financing
+              </span>
+            </button>
           )}
 
-          <button
-            onClick={handleReserveClick}
-            disabled={isProcessingPayment}
-            className={`w-full rounded-xl bg-primary px-4 py-3 text-center text-primary-foreground shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
-          >
-            {isProcessingPayment 
-              ? 'Processing...' 
-              : `Reserve with ${money(depositAmount)} deposit`
-            }
-          </button>
+          {onDownloadPDF && (
+            <button
+              onClick={onDownloadPDF}
+              disabled={isGeneratingPDF}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:opacity-50"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Download className="w-4 h-4" />
+                {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
+              </span>
+            </button>
+          )}
+
+          {onSaveForLater && (
+            <button
+              onClick={onSaveForLater}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Bookmark className="w-4 h-4" />
+                {user ? 'Save Quote' : 'Save My Quote'}
+              </span>
+            </button>
+          )}
+
           <PaymentMethodBadges className="mt-2" />
         </div>
       </aside>

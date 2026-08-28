@@ -1,431 +1,281 @@
 import React from 'react';
 import {
   Document as _Document,
+  Font,
+  Image as _Image,
   Page as _Page,
+  StyleSheet,
   Text as _Text,
   View as _View,
-  StyleSheet,
-  Image as _Image,
 } from '@react-pdf/renderer';
 import type { ComponentType } from 'react';
+import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { getRecommendedDeposit } from '@/lib/deposit';
+import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
+import harrisLogoBlack from '@/assets/harris-logo.png?inline';
+import mercuryLogoBlack from '@/assets/mercury-logo.png';
+
 const Document = _Document as unknown as ComponentType<any>;
 const Page = _Page as unknown as ComponentType<any>;
 const Text = _Text as unknown as ComponentType<any>;
 const View = _View as unknown as ComponentType<any>;
 const Image = _Image as unknown as ComponentType<any>;
-import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "";
-  const { brand, year, horsepower, model } = tradeInInfo;
-  const parts = [year.toString(), brand, `${horsepower} HP`];
-  if (model) parts.push(model);
-  return parts.join(' ');
-}
+// Keep product names and technical terms intact. React PDF otherwise creates
+// distracting breaks such as "Elec-tro" in narrow columns.
+Font.registerHyphenationCallback((word) => [word]);
 
-// Import logos
-import harrisLogo from '@/assets/harris-logo.png';
-import mercuryLogo from '@/assets/mercury-logo.png';
-
-// Print-optimized professional color scheme
 const colors = {
-  text: '#111827',           // Black text
-  lightText: '#6b7280',      // Gray secondary text  
-  discount: '#059669',       // GREEN for discounts (prints well in B&W)
-  border: '#cccccc',         // Lighter gray borders (20%)
-  tableBg: '#f3f4f6',        // 10% gray backgrounds
-  infoBg: '#e5e7eb',         // 15% gray for customer info box
-  white: '#ffffff'
+  ink: '#0D1526',
+  ink2: '#141E33',
+  red: '#C8102E',
+  gold: '#B98D36',
+  cream: '#FAF7F0',
+  line: '#E3E0D8',
+  white: '#FFFFFF',
+};
+
+const money = (value: unknown): string => {
+  const amount = typeof value === 'number' ? value : Number(value);
+  return Number.isFinite(amount)
+    ? amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    : '0.00';
 };
 
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 10,
+    color: colors.ink,
     fontFamily: 'Helvetica',
-    fontSize: 10,
+    fontSize: 9,
   },
-  
-  // Header with logos
-  header: {
+  pageTwo: {
+    backgroundColor: colors.white,
+    color: colors.ink,
+    fontFamily: 'Helvetica',
+    fontSize: 9,
+    paddingTop: 25,
+    paddingHorizontal: 34,
+    paddingBottom: 38,
+  },
+  hero: {
+    backgroundColor: colors.white,
+    color: colors.ink,
+    paddingTop: 21,
+    paddingHorizontal: 34,
+    paddingBottom: 20,
+    borderBottom: `1 solid ${colors.line}`,
+  },
+  heroTop: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 6,
-    paddingBottom: 6,
-    borderBottom: `1.5 solid ${colors.border}`,
+    marginBottom: 17,
   },
-  
-  logoContainer: {
+  brandPlate: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 15,
+    gap: 8,
   },
-  
-  headerRight: {
-    alignItems: 'flex-end',
-  },
-  
-  quoteTitle: {
-    fontSize: 14,
-    color: colors.text,
-    marginBottom: 1,
-  },
-  
-  dealerText: {
-    fontSize: 9,
-    color: colors.lightText,
-  },
-  
-  // Main content in two columns
-  mainContent: {
-    flexDirection: 'row',
-    gap: 18,
-  },
-  
-  leftColumn: {
-    flex: 1.2,
-  },
-  
-  rightColumn: {
-    flex: 1,
-  },
-  
-  // Product section
-  productSection: {
-    marginBottom: 4,
-  },
-  
-  productName: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 8,
-  },
-  
-  productDetails: {
-    fontSize: 9,
-    color: colors.lightText,
-    marginBottom: 2,
-  },
-  
-  // Hero pricing callout box
-  heroBox: {
-    border: `2 solid ${colors.discount}`,
-    padding: 12,
-    marginBottom: 18,
-    backgroundColor: 'transparent',
-  },
-  
-  heroSavings: {
-    fontSize: 14,
-    color: colors.discount,
-    marginBottom: 4,
-  },
-  
-  heroPrice: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 2,
-  },
-  
-  heroMonthly: {
-    fontSize: 12,
-    color: colors.lightText,
-  },
-  
-  // Pricing table
-  pricingTableContainer: {
-    border: `1 solid ${colors.border}`,
-    padding: 8,
-    marginBottom: 4,
-  },
-  
-  pricingSection: {
-    marginBottom: 18,
-  },
-  
-  sectionTitle: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 4,
-  },
-  
-  pricingHeader: {
-    backgroundColor: colors.tableBg,
+  harrisLogo: { width: 62, height: 32, objectFit: 'contain' },
+  brandDivider: { width: 1, height: 25, backgroundColor: colors.ink },
+  mercuryLogo: { width: 90, height: 18, objectFit: 'contain' },
+  documentLabel: { color: colors.ink, fontSize: 10, fontWeight: 'bold', textAlign: 'right', letterSpacing: 0.5 },
+  documentKicker: { color: colors.ink2, fontSize: 6.7, textAlign: 'right', letterSpacing: 1.2, marginTop: 3 },
+  heroMain: { paddingTop: 3 },
+  heroCopy: { width: '100%' },
+  heroEyebrow: { color: colors.red, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 2, marginBottom: 6 },
+  heroProduct: { color: colors.ink, fontSize: 27, lineHeight: 1.02, fontWeight: 'bold', letterSpacing: -0.6 },
+  heroMeta: { color: colors.ink2, fontSize: 8.5, lineHeight: 1.35, marginTop: 7 },
+  priceBand: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 4,
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    borderTop: `3 solid ${colors.red}`,
+    borderBottom: `3 solid ${colors.red}`,
+    paddingVertical: 11,
+    paddingHorizontal: 34,
+  },
+  priceEyebrow: { color: colors.ink2, fontSize: 7.3, fontWeight: 'bold', letterSpacing: 1.7, marginBottom: 3 },
+  priceAmount: { color: colors.ink, fontSize: 25, lineHeight: 1, fontWeight: 'bold' },
+  savingsPill: { backgroundColor: colors.red, borderRadius: 99, paddingVertical: 6, paddingHorizontal: 11 },
+  savingsPillText: { color: colors.white, fontSize: 8.4, fontWeight: 'bold' },
+  pageOneBody: { flex: 1, flexDirection: 'row', gap: 18, paddingTop: 15, paddingHorizontal: 34, paddingBottom: 32 },
+  pageOneBodySpacious: { paddingBottom: 67 },
+  breakdownColumn: { flex: 1.62 },
+  sidebar: { flex: 0.98 },
+  sidebarSpacious: { justifyContent: 'space-between' },
+  sectionHeader: {
+    color: colors.red,
+    fontSize: 8.2,
+    fontWeight: 'bold',
+    letterSpacing: 1.65,
+    borderBottom: `1.5 solid ${colors.ink}`,
+    paddingBottom: 5,
     marginBottom: 4,
   },
-  
-  pricingHeaderText: {
-    fontSize: 9,
-    fontWeight: 'bold',
-    color: colors.text,
-  },
-  
-  pricingRow: {
+  sectionHeaderSpacious: { fontSize: 9.2, paddingBottom: 6, marginBottom: 5 },
+  table: { width: '100%' },
+  row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 2,
-    borderBottom: `0.5 solid ${colors.border}`,
+    gap: 8,
+    paddingVertical: 4.3,
+    borderBottom: `0.5 solid ${colors.line}`,
   },
-  
-  pricingLabel: {
-    fontSize: 9,
-    color: colors.text,
+  rowCompact: { paddingVertical: 3.2 },
+  rowSpacious: { paddingVertical: 5.1 },
+  rowText: { flex: 1 },
+  rowPrimary: { color: colors.ink2, fontSize: 7.9, lineHeight: 1.2 },
+  rowPrimarySpacious: { fontSize: 9.1, lineHeight: 1.25 },
+  rowDescription: { color: colors.ink2, fontSize: 6.25, lineHeight: 1.3, marginTop: 2 },
+  rowDescriptionSpacious: { fontSize: 7.25, lineHeight: 1.35, marginTop: 2.4 },
+  rowValue: { width: 78, color: colors.ink2, textAlign: 'right', fontSize: 7.9, lineHeight: 1.2, fontWeight: 'bold' },
+  rowValueSpacious: { width: 82, fontSize: 9.1, lineHeight: 1.25 },
+  discount: { color: colors.red },
+  groupLabel: {
+    color: colors.ink2,
+    fontSize: 6.8,
+    fontWeight: 'bold',
+    letterSpacing: 1.25,
+    textTransform: 'uppercase',
+    borderBottom: `0.75 solid ${colors.ink}`,
+    paddingTop: 6,
+    paddingBottom: 3,
   },
-  
-  pricingValue: {
-    fontSize: 9,
-    color: colors.text,
-  },
-  
-  strikethrough: {
-    textDecoration: 'line-through',
-  },
-  
-  discountValue: {
-    color: colors.discount,
-  },
-  
+  groupLabelSpacious: { fontSize: 7.6, paddingTop: 7, paddingBottom: 4 },
   totalRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 6,
-    marginTop: 4,
-    borderTop: `2 solid ${colors.text}`,
-  },
-  
-  totalLabel: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: colors.text,
-  },
-  
-  totalValue: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: colors.text,
-  },
-  
-  // Customer info box
-  infoBox: {
-    backgroundColor: colors.infoBg,
-    border: `1 solid ${colors.border}`,
-    padding: 6,
-    marginBottom: 8,
-  },
-  
-  infoRow: {
-    flexDirection: 'row',
-    marginBottom: 3,
-  },
-  
-  infoLabel: {
-    fontSize: 9,
-    color: colors.lightText,
-    width: 80,
-  },
-  
-  infoValue: {
-    fontSize: 9,
-    color: colors.text,
-    flex: 1,
-  },
-  
-  // Summary box in right column
-  summaryBox: {
-    padding: 8,
-    border: `1 solid ${colors.border}`,
-    backgroundColor: 'transparent',
-    marginBottom: 6,
-  },
-  
-  // Financing callout box (outline style)
-  financingBox: {
-    padding: 8,
-    border: `1 solid ${colors.border}`,
-    backgroundColor: 'transparent',
-    marginBottom: 8,
-  },
-
-  // Large savings callout box (right column top)
-  savingsCalloutBox: {
-    border: `2 solid ${colors.border}`,
-    padding: 6,
-    backgroundColor: 'transparent',
-    marginBottom: 4,
-    textAlign: 'center',
-  },
-
-  savingsCalloutSavings: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: colors.discount,
-    marginBottom: 4,
-  },
-
-  savingsCalloutLabel: {
-    fontSize: 11,
-    color: colors.lightText,
-    marginBottom: 4,
-  },
-
-  savingsCalloutPrice: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 4,
-  },
-
-  savingsCalloutMonthly: {
-    fontSize: 18,
-    color: colors.text,
-    fontWeight: 'bold',
-  },
-
-  coverageTitle: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 8,
-    letterSpacing: 0.5,
-  },
-
-  promoUrgency: {
-    fontSize: 9,
-    color: colors.lightText,
-    fontStyle: 'italic',
-    marginTop: 2,
-  },
-  
-  summaryTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 6,
-  },
-  
-  summaryItem: {
-    fontSize: 9,
-    color: colors.text,
-    marginBottom: 2,
-  },
-  
-  savingsText: {
-    fontSize: 12,
-    color: colors.discount,
-    fontWeight: 'bold',
+    gap: 8,
+    backgroundColor: colors.white,
+    borderTop: `2 solid ${colors.ink}`,
+    paddingVertical: 8,
     marginTop: 6,
   },
-  
-  // Extended warranty section (not currently used)
-  warrantySection: {
-    marginTop: 10,
-    padding: 8,
-    backgroundColor: colors.tableBg,
-    borderRadius: 4,
-  },
-  
-  warrantyTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 4,
-  },
-  
-  warrantyOption: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 3,
-  },
-  
-  warrantyText: {
-    fontSize: 9,
-    color: colors.text,
-  },
-  
-  warrantyPrice: {
-    fontSize: 9,
-    color: colors.text,
-    fontWeight: 'bold',
-  },
-  
-  // Motor code breakdown info box
-  motorCodeBox: {
-    backgroundColor: colors.tableBg,
-    border: `1 solid ${colors.border}`,
-    padding: 6,
-    marginTop: 4,
-    marginBottom: 4,
-  },
-
-  motorCodeTitle: {
-    fontSize: 9,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 4,
-  },
-
-  motorCodeContent: {
-    fontSize: 8,
-    color: colors.lightText,
-    lineHeight: 1.4,
-  },
-
-  motorCodeItem: {
-    fontSize: 8,
-    color: colors.lightText,
-    marginBottom: 1,
-  },
-  
-  // Terms section
-  termsSection: {
-    marginTop: 2,
-    marginBottom: 4,
-    paddingTop: 4,
-    borderTop: `1 solid ${colors.border}`,
-  },
-  
-  termsText: {
-    fontSize: 8,
-    color: colors.lightText,
-    marginBottom: 2,
-  },
-  
-  // Footer - absolute positioning to stick to bottom
-  footer: {
-    position: 'absolute',
-    bottom: 10,
-    left: 10,
-    right: 10,
-    paddingTop: 4,
-    borderTop: `1 solid ${colors.border}`,
-    textAlign: 'center',
-  },
-  
-  footerText: {
-    fontSize: 8,
-    color: colors.lightText,
-  },
+  totalRowSpacious: { paddingVertical: 9 },
+  totalRowText: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold' },
+  totalRowTextSpacious: { fontSize: 10.7 },
+  card: { backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderRadius: 6, padding: 10, marginBottom: 9 },
+  cardTitle: { color: colors.ink, fontSize: 8.8, fontWeight: 'bold', marginBottom: 6 },
+  cardTitleSpacious: { fontSize: 9.7, marginBottom: 7 },
+  infoRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, marginBottom: 3 },
+  infoLabel: { color: colors.ink2, fontSize: 7.1 },
+  infoLabelSpacious: { fontSize: 7.8 },
+  infoValue: { flex: 1, color: colors.ink2, fontSize: 7.2, textAlign: 'right' },
+  infoValueSpacious: { fontSize: 8 },
+  codeCard: { backgroundColor: colors.cream, borderLeft: `3 solid ${colors.red}`, paddingVertical: 8, paddingHorizontal: 10, marginBottom: 9 },
+  codeTitle: { color: colors.ink, fontSize: 8, fontWeight: 'bold', marginBottom: 4 },
+  codeTitleSpacious: { fontSize: 8.8 },
+  codeText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.45, marginBottom: 2 },
+  codeTextSpacious: { fontSize: 7.2 },
+  qrRow: { flexDirection: 'row', alignItems: 'center', gap: 9 },
+  qr: { width: 57, height: 57, backgroundColor: colors.white, padding: 3 },
+  qrSpacious: { width: 78, height: 78, padding: 4 },
+  qrCopy: { flex: 1 },
+  qrTitle: { color: colors.ink, fontSize: 7.9, fontWeight: 'bold', lineHeight: 1.2, marginBottom: 3 },
+  qrTitleSpacious: { fontSize: 8.7 },
+  qrDeposit: { color: colors.ink, fontSize: 7.2, fontWeight: 'bold', lineHeight: 1.3, marginBottom: 3 },
+  qrDepositSpacious: { fontSize: 7.9 },
+  qrText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.35 },
+  qrTextSpacious: { fontSize: 7.2 },
+  reserve: { backgroundColor: colors.cream, color: colors.ink, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, borderRadius: 6, padding: 11 },
+  reserveSpacious: { padding: 13 },
+  reserveTitle: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
+  reserveTitleSpacious: { fontSize: 10.4 },
+  reserveText: { color: colors.ink2, fontSize: 6.9, lineHeight: 1.42 },
+  reserveTextSpacious: { fontSize: 7.5 },
+  reserveChip: { alignSelf: 'flex-start', backgroundColor: colors.red, borderRadius: 4, marginTop: 7, paddingVertical: 5, paddingHorizontal: 8 },
+  reserveChipText: { color: colors.white, fontSize: 7.2, fontWeight: 'bold' },
+  reserveChipTextSpacious: { fontSize: 7.8 },
+  reservePolicy: { color: colors.ink2, fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
+  reservePolicySpacious: { fontSize: 6.2 },
+  pageTwoTitle: { color: colors.ink, fontSize: 21, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 9, marginBottom: 17 },
+  pageTwoTitleSpacious: { fontSize: 22, paddingBottom: 9, marginBottom: 16 },
+  twoUp: { flexDirection: 'row', gap: 12, marginBottom: 19 },
+  twoUpSpacious: { marginBottom: 18 },
+  featureCard: { flex: 1, border: `1 solid ${colors.line}`, borderTop: `4 solid ${colors.ink}`, borderRadius: 6, padding: 14, minHeight: 182 },
+  featureCardSpacious: { minHeight: 184, padding: 16 },
+  featureCardRed: { borderTop: `4 solid ${colors.red}` },
+  cardEyebrow: { color: colors.ink2, fontSize: 7.4, fontWeight: 'bold', letterSpacing: 1.4, marginBottom: 6 },
+  cardEyebrowSpacious: { fontSize: 8.2, marginBottom: 7 },
+  cardLead: { color: colors.ink, fontSize: 22, fontWeight: 'bold', lineHeight: 1.05, marginBottom: 7 },
+  cardLeadSpacious: { fontSize: 24, marginBottom: 9 },
+  cardBody: { color: colors.ink2, fontSize: 7.6, lineHeight: 1.45, marginBottom: 3 },
+  cardBodySpacious: { fontSize: 8.4, lineHeight: 1.48, marginBottom: 4 },
+  promoFinance: { color: colors.red, fontSize: 7.7, fontWeight: 'bold', lineHeight: 1.35, marginTop: 5 },
+  promoFinanceSpacious: { fontSize: 8.4, marginTop: 6 },
+  stepsHeader: { color: colors.red, fontSize: 8.6, fontWeight: 'bold', letterSpacing: 1.65, marginBottom: 10 },
+  stepsHeaderSpacious: { fontSize: 9.4, marginBottom: 10 },
+  steps: { flexDirection: 'row', gap: 10, marginBottom: 19 },
+  stepsSpacious: { marginBottom: 18 },
+  step: { flex: 1, backgroundColor: colors.cream, borderRadius: 6, padding: 12, minHeight: 116 },
+  stepSpacious: { minHeight: 122, padding: 14 },
+  stepNumber: { width: 22, height: 22, borderRadius: 11, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
+  stepNumberSpacious: { width: 25, height: 25, borderRadius: 12.5, marginBottom: 10 },
+  stepNumberText: { color: colors.white, fontSize: 8, fontWeight: 'bold' },
+  stepNumberTextSpacious: { fontSize: 9 },
+  stepTitle: { color: colors.ink, fontSize: 9.3, fontWeight: 'bold', marginBottom: 5 },
+  stepTitleSpacious: { fontSize: 10.3, marginBottom: 6 },
+  stepBody: { color: colors.ink2, fontSize: 7.4, lineHeight: 1.45 },
+  stepBodySpacious: { fontSize: 8.35, lineHeight: 1.48 },
+  trust: { flexDirection: 'row', alignItems: 'stretch', backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderRadius: 6, paddingVertical: 15, paddingHorizontal: 9, marginBottom: 15 },
+  trustSpacious: { paddingVertical: 14, marginBottom: 14 },
+  trustItem: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  trustItemBorder: { borderLeft: `0.5 solid ${colors.ink}` },
+  trustLead: { color: colors.ink, fontSize: 13, fontWeight: 'bold', textAlign: 'center', marginBottom: 4 },
+  trustLeadSpacious: { fontSize: 14.2, marginBottom: 5 },
+  trustLabel: { color: colors.ink2, fontSize: 6.1, lineHeight: 1.35, letterSpacing: 0.6, textAlign: 'center' },
+  trustLabelSpacious: { fontSize: 6.7 },
+  reviewQuote: { borderLeft: `3 solid ${colors.gold}`, paddingVertical: 10, paddingLeft: 12, paddingRight: 8, marginBottom: 13 },
+  reviewQuoteSpacious: { paddingVertical: 10, marginBottom: 12 },
+  reviewText: { color: colors.ink2, fontSize: 8.7, lineHeight: 1.45, fontStyle: 'italic' },
+  reviewTextSpacious: { fontSize: 9.5, lineHeight: 1.5 },
+  reviewAttribution: { color: colors.ink2, fontSize: 7, marginTop: 5 },
+  reviewAttributionSpacious: { fontSize: 7.5, marginTop: 6 },
+  closeout: { borderLeft: `3 solid ${colors.gold}`, backgroundColor: colors.cream, paddingVertical: 11, paddingHorizontal: 12 },
+  closeoutWithFollowingContent: { marginBottom: 12 },
+  closeoutSpacious: { paddingVertical: 10, paddingHorizontal: 14 },
+  closeoutTitle: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold', marginBottom: 4 },
+  closeoutTitleSpacious: { fontSize: 10.5, marginBottom: 5 },
+  closeoutText: { color: colors.ink2, fontSize: 7.5, lineHeight: 1.45 },
+  closeoutTextSpacious: { fontSize: 8.35, lineHeight: 1.48 },
+  closeoutCaveat: { color: colors.ink2, fontSize: 7.4, lineHeight: 1.4, fontWeight: 'bold', marginTop: 5 },
+  closeoutCaveatSpacious: { fontSize: 8.2, lineHeight: 1.45, marginTop: 6 },
+  noteBox: { border: `1 solid ${colors.line}`, borderLeft: `3 solid ${colors.red}`, paddingVertical: 8, paddingHorizontal: 10, marginBottom: 10 },
+  noteTitle: { color: colors.ink, fontSize: 8.3, fontWeight: 'bold', marginBottom: 3 },
+  noteText: { color: colors.ink2, fontSize: 7, lineHeight: 1.4 },
+  depositBox: { backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, padding: 10, marginBottom: 10 },
+  waterTestBand: { position: 'absolute', left: 34, right: 34, bottom: 38, backgroundColor: colors.cream, borderLeft: `3 solid ${colors.gold}`, paddingVertical: 7, paddingHorizontal: 10 },
+  waterTestBandText: { color: colors.ink2, fontSize: 7.3, lineHeight: 1.35, fontWeight: 'bold', textAlign: 'center' },
+  footerRule: { position: 'absolute', left: 34, right: 34, bottom: 25, borderTop: `1 solid ${colors.line}` },
+  footerText: { position: 'absolute', left: 34, bottom: 15, color: colors.ink2, fontSize: 5.9 },
+  footerPage: { position: 'absolute', right: 34, bottom: 15, color: colors.ink2, fontSize: 5.9, textAlign: 'right' },
+  pageTwoFooterText: { position: 'absolute', left: 68, bottom: 15, color: colors.ink2, fontSize: 5.9 },
+  pageTwoFooterPage: { position: 'absolute', right: 68, bottom: 15, color: colors.ink2, fontSize: 5.9, textAlign: 'right' },
 });
+
+type LineItem = {
+  name: string;
+  price: number;
+  description?: string;
+  category?: 'equipment' | 'installation' | 'protection' | 'custom';
+};
 
 export interface QuotePDFProps {
   quoteData: {
     quoteNumber: string | number;
     date: string;
+    validUntil?: string;
     customerName: string;
     customerEmail: string;
     customerPhone: string;
-    customerId?: string;
     productName: string;
     horsepower: string;
     category: string;
     modelYear: string | number;
+    motorImageUrl?: string;
     msrp: string;
     dealerDiscount: string;
     promoSavings: string;
@@ -434,608 +284,506 @@ export interface QuotePDFProps {
     tax: string;
     total: string;
     totalSavings: string;
-    accessoryBreakdown?: Array<{
-      name: string;
-      price: number;
-      description?: string;
-    }>;
+    accessoryBreakdown?: LineItem[];
     tradeInValue?: number;
-    tradeInInfo?: {
-      brand: string;
-      year: number;
-      horsepower: number;
-      model?: string;
-    };
+    tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string };
     customerNotes?: string;
-    promoEndDate?: string; // ISO date of active promotion end
-    selectedPackage?: {
-      id: string;
-      label: string;
-      coverageYears: number;
-      features: string[];
-    };
-    warrantyTargets?: Array<{
-      targetYears: number;
-      oneTimePrice: number;
-      monthlyDelta: number;
-      label?: string;
-    }>;
+    promoEndDate?: string;
+    includedCoverageYears?: number;
+    productProtection?: { planYears: number; totalCoverageYears: number; priceBeforeTax: number; monthlyDelta?: number };
+    selectedPackage?: { id: string; label: string; coverageYears: number; features: string[] };
     monthlyPayment?: number;
     financingTerm?: number;
     financingRate?: number;
+    financingAmount?: number;
+    dealerFee?: number;
+    financingContractTerm?: number;
+    savedQuoteQrCode?: string;
+    recommendedDepositAmount?: number;
+    reservationRequiresConfirmation?: boolean;
+    promotionalFinancingAlternative?: { rate: number; termMonths: number };
+    /** @deprecated Use savedQuoteQrCode. */
     financingQrCode?: string;
     includesInstallation?: boolean;
-    // Selected promo option from "Choose One"
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
-    selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
-    // Deposit/payment confirmation
-    depositInfo?: {
-      amount: number;
-      referenceNumber: string;
-      paymentDate: string;
-      paymentMethod?: string;
-      paymentId?: string;
-      status?: string;
-    };
-    // Pricing breakdown with admin discount
-    pricing?: {
-      msrp: number;
-      discount: number;
-      adminDiscount?: number;
-      promoValue: number;
-      motorSubtotal: number;
-      subtotal: number;
-      hst: number;
-      totalCashPrice: number;
-      savings: number;
-    };
+    selectedPromoValue?: string | null;
+    selectedPaymentMethod?: 'cash_purchase' | 'standard_financing' | 'special_financing' | null;
+    promotionName?: string;
+    promotionCombinationMode?: 'layered' | 'choose_one';
+    googleRating?: number;
+    googleReviewCount?: number;
+    depositInfo?: { amount: number; referenceNumber: string; paymentDate: string; paymentMethod?: string; paymentId?: string; status?: string };
+    pricing?: { msrp: number; discount: number; adminDiscount?: number; promoValue: number; motorSubtotal: number; subtotal: number; hst: number; totalCashPrice: number; savings: number };
   };
 }
 
-export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
-  // Calculate valid until date — use promoEndDate if earlier than 30 days
-  const thirtyDaysOut = new Date();
-  thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
-  const promoEnd = quoteData.promoEndDate ? new Date(quoteData.promoEndDate) : null;
-  const validUntil = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
-  const validUntilString = validUntil.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
+function dateAtEndOfDay(value: string): Date {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T23:59:59`) : new Date(value);
+}
 
-  // Generate motor code breakdown - decode each letter/number in the model code
-  const generateMotorCodeBreakdown = (productName: string): Array<{ code: string; meaning: string }> => {
-    const breakdown: Array<{ code: string; meaning: string }> = [];
-    const upperName = productName.toUpperCase();
-    
-    // Extract the model code part (before family name like FourStroke, SeaPro, etc.)
-    // Handle both "60ELPT" and "60 ELPT" formats with optional space
-    const codeMatch = productName.match(/^([\d.]+)\s*([A-Z]+)?/i);
-    const modelCode = codeMatch ? (codeMatch[1] + (codeMatch[2] || '')).toUpperCase() : '';
-    
-    // 1. Extract HP from the number at the start
-    const hpMatch = productName.match(/^(\d+\.?\d*)/);
-    if (hpMatch) {
-      breakdown.push({ code: hpMatch[1], meaning: `${hpMatch[1]} Horsepower` });
-    }
-    
-    // Parse rigging codes for shaft inference
-    const rigAttrs = parseMercuryRigCodes(productName);
-    
-    // 2. Manual vs Electric start (M or E)
-    if (modelCode.includes('M')) {
-      breakdown.push({ code: 'M', meaning: 'Manual start' });
-    } else if (modelCode.includes('E')) {
-      breakdown.push({ code: 'E', meaning: 'Electric start' });
-    }
-    
-    // 3. Control type - H (Tiller) or R (Remote)
-    if (modelCode.includes('H')) {
-      breakdown.push({ code: 'H', meaning: 'Tiller handle' });
-    } else if (modelCode.includes('R')) {
-      breakdown.push({ code: 'R', meaning: 'Remote control' });
-    }
-    
-    // 4. Shaft length codes (L, XL, XXL)
-    if (modelCode.includes('XXL')) {
-      breakdown.push({ code: 'XXL', meaning: 'Extra extra long shaft (30")' });
-    } else if (modelCode.includes('XL')) {
-      breakdown.push({ code: 'XL', meaning: 'Extra long shaft (25")' });
-    } else if (modelCode.includes('L') && !modelCode.includes('XL')) {
-      breakdown.push({ code: 'L', meaning: 'Long shaft (20")' });
-    } else {
-      // No L in code = standard shaft
-      breakdown.push({ code: '', meaning: `Standard ${rigAttrs.shaft_inches}" shaft` });
-    }
-    
-    // 5. Power Trim (PT)
-    if (modelCode.includes('PT') || upperName.includes('PT')) {
-      breakdown.push({ code: 'PT', meaning: 'Power Trim & Tilt' });
-    }
-    
-    // 6. Command Thrust (CT)
-    if (modelCode.includes('CT') || upperName.includes('CT')) {
-      breakdown.push({ code: 'CT', meaning: 'Command Thrust gearcase' });
-    }
-    
-    // 7. EFI (Electronic Fuel Injection)
-    if (upperName.includes('EFI')) {
-      breakdown.push({ code: 'EFI', meaning: 'Electronic Fuel Injection' });
-    }
-    
-    return breakdown;
-  };
+function formattedDate(value: string): string {
+  return dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function validUntilText(quoteDate: string, validUntil?: string, promoEndDate?: string): string {
+  if (validUntil) return formattedDate(validUntil);
+  const issued = new Date(quoteDate);
+  const thirtyDays = new Date(issued);
+  thirtyDays.setDate(thirtyDays.getDate() + 30);
+  const promoEnd = promoEndDate ? dateAtEndOfDay(promoEndDate) : null;
+  const expiry = promoEnd && promoEnd < thirtyDays ? promoEnd : thirtyDays;
+  return expiry.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function motorCodeBreakdown(productName: string): string[] {
+  const codeMatch = productName.match(/^([\d.]+)\s*([A-Z]+)?/i);
+  const modelCode = codeMatch ? `${codeMatch[1]}${codeMatch[2] || ''}`.toUpperCase() : '';
+  const upper = productName.toUpperCase();
+  const rig = parseMercuryRigCodes(productName);
+  const items: string[] = [];
+  if (codeMatch?.[1]) items.push(`${codeMatch[1]} = horsepower`);
+  if (modelCode.includes('M')) items.push('M = manual start');
+  else if (modelCode.includes('E')) items.push('E = electric start');
+  if (modelCode.includes('H')) items.push('H = tiller handle');
+  else if (modelCode.includes('R')) items.push('R = remote control');
+  if (modelCode.includes('XXL')) items.push('XXL = 30-inch shaft');
+  else if (modelCode.includes('XL')) items.push('XL = 25-inch shaft');
+  else if (modelCode.includes('L')) items.push('L = 20-inch shaft');
+  else items.push(`Standard ${rig.shaft_inches}-inch shaft`);
+  if (modelCode.includes('PT')) items.push('PT = Power Trim and Tilt');
+  if (modelCode.includes('CT')) items.push('CT = Command Thrust gearcase');
+  if (upper.includes('EFI')) items.push('EFI = Electronic Fuel Injection');
+  return items;
+}
+
+export function mercuryFamilyLabel(productName: string, horsepower: string | number, rawCategory?: string): string {
+  const product = productName.toUpperCase();
+  const hp = Number.parseFloat(String(horsepower));
+
+  if (product.includes('SEA PRO') || product.includes('SEAPRO')) return 'commercial';
+  if (product.includes('VERADO')) return 'premium';
+  if (product.includes('PRO XS')) return 'high-performance';
+  if (product.includes('PROKICKER')) return 'trolling';
+  if (product.includes('FOURSTROKE')) {
+    if (Number.isFinite(hp) && hp <= 20) return 'portable';
+    if (Number.isFinite(hp) && hp <= 150) return 'mid-range';
+    return 'high-horsepower';
+  }
+
+  return rawCategory?.trim().toLowerCase().replace(/_/g, '-') || 'recreational';
+}
+
+export function motorMetaLine(quoteData: QuotePDFProps['quoteData'], codeItems: string[]): string {
+  const decoded = codeItems
+    .filter((item) => !item.endsWith('= horsepower'))
+    .slice(0, 3)
+    .map((item) => item.split(' = ')[1] || item)
+    .join(' | ');
+  return [
+    `Mercury ${mercuryFamilyLabel(quoteData.productName, quoteData.horsepower, quoteData.category)}`,
+    quoteData.horsepower,
+    decoded,
+  ].filter(Boolean).join(' | ');
+}
+
+export function financingTermsLine(
+  rate: number,
+  contractTerm: number,
+  amortizationTerm: number,
+  contractTermIsOfferSpecific = false,
+): string {
+  const contractCopy = `${contractTermIsOfferSpecific ? '' : 'up to '}${contractTerm}-month contract`;
+  if (contractTerm === amortizationTerm) {
+    return `${rate}% APR | ${contractCopy} and amortization`;
+  }
+  return `${rate}% APR | ${contractCopy} | payment based on ${amortizationTerm}-month amortization`;
+}
+
+export const FINANCING_ESTIMATE_DISCLAIMER = 'Payment figures are estimates and may change with the final financed amount, rate, term or lender approval.';
+
+export function quoteInspectionCaveat(quoteData: Pick<QuotePDFProps['quoteData'], 'accessoryBreakdown' | 'tradeInValue'>): string | null {
+  const hasTradeIn = Number(quoteData.tradeInValue || 0) > 0;
+  const hasPropeller = Boolean(
+    quoteData.accessoryBreakdown?.some((item) => item.name.toLowerCase().includes('propeller')),
+  );
+
+  if (hasTradeIn && hasPropeller) {
+    return 'Final trade-in value and propeller fit remain subject to final inspection and water testing.';
+  }
+  if (hasTradeIn) {
+    return 'Final trade-in value remains subject to final inspection and verification.';
+  }
+  if (hasPropeller) {
+    return 'Propeller fit remains subject to final inspection and water testing.';
+  }
+  return null;
+}
+
+function tradeDescription(info?: QuotePDFProps['quoteData']['tradeInInfo']): string {
+  if (!info) return '';
+  return [info.year, info.brand, `${info.horsepower} HP`, info.model].filter(Boolean).join(' ');
+}
+
+function LineItemRow({ item, compact }: { item: LineItem; compact: boolean }) {
+  return (
+    <View style={[styles.row, compact ? styles.rowCompact : styles.rowSpacious]} wrap={false}>
+      <View style={styles.rowText}>
+        <Text style={[styles.rowPrimary, compact ? {} : styles.rowPrimarySpacious]}>{item.name}</Text>
+        {item.description ? <Text style={[styles.rowDescription, compact ? {} : styles.rowDescriptionSpacious]}>{item.description}</Text> : null}
+      </View>
+      <Text style={[styles.rowValue, compact ? {} : styles.rowValueSpacious]}>${money(item.price)}</Text>
+    </View>
+  );
+}
+
+function StepCard({ number, title, children, spacious = false }: { number: string; title: string; children: React.ReactNode; spacious?: boolean }) {
+  return (
+    <View style={[styles.step, spacious ? styles.stepSpacious : {}]}>
+      <View style={[styles.stepNumber, spacious ? styles.stepNumberSpacious : {}]}><Text style={[styles.stepNumberText, spacious ? styles.stepNumberTextSpacious : {}]}>{number}</Text></View>
+      <Text style={[styles.stepTitle, spacious ? styles.stepTitleSpacious : {}]}>{title}</Text>
+      <Text style={[styles.stepBody, spacious ? styles.stepBodySpacious : {}]}>{children}</Text>
+    </View>
+  );
+}
+
+function TrustItem({ lead, label, bordered = false, spacious = false }: { lead: string; label: string; bordered?: boolean; spacious?: boolean }) {
+  return (
+    <View style={[styles.trustItem, bordered ? styles.trustItemBorder : {}]}>
+      <Text style={[styles.trustLead, spacious ? styles.trustLeadSpacious : {}]}>{lead}</Text>
+      <Text style={[styles.trustLabel, spacious ? styles.trustLabelSpacious : {}]}>{label}</Text>
+    </View>
+  );
+}
+
+export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
+  const savedQuoteQrCode = quoteData.savedQuoteQrCode ?? quoteData.financingQrCode;
+  const expiry = validUntilText(quoteData.date, quoteData.validUntil, quoteData.promoEndDate);
+  const items = quoteData.accessoryBreakdown || [];
+  const groups = [
+    { key: 'equipment', title: 'Equipment and Rigging', items: items.filter((item) => !item.category || item.category === 'equipment') },
+    { key: 'installation', title: 'Installation and Setup', items: items.filter((item) => item.category === 'installation') },
+    { key: 'protection', title: 'Mercury Product Protection', items: items.filter((item) => item.category === 'protection') },
+    { key: 'custom', title: 'Additional Items', items: items.filter((item) => item.category === 'custom') },
+  ].filter((group) => group.items.length > 0);
+  const includedCoverage = quoteData.includedCoverageYears ?? 3;
+  const coverageTotal = quoteData.productProtection?.totalCoverageYears ?? includedCoverage;
+  const hasFinancing = quoteData.selectedPaymentMethod !== 'cash_purchase'
+    && Boolean(quoteData.monthlyPayment && quoteData.financingTerm && quoteData.financingRate != null);
+  const alternatePromotion = quoteData.promotionalFinancingAlternative;
+  const recommendedDeposit = quoteData.recommendedDepositAmount
+    ?? getRecommendedDeposit(Number.parseFloat(quoteData.horsepower) || 0);
+  const showAlternatePromotion = Boolean(
+    alternatePromotion
+      && (!hasFinancing
+        || alternatePromotion.rate !== quoteData.financingRate
+        || alternatePromotion.termMonths !== quoteData.financingTerm),
+  );
+  const compactRows = items.length >= 7
+    || Boolean(quoteData.tradeInValue)
+    || Boolean(quoteData.customerNotes)
+    || Boolean(quoteData.depositInfo);
+  const spaciousLayout = !compactRows;
+  const firstPageRowStyle = [styles.row, compactRows ? styles.rowCompact : styles.rowSpacious];
+  const firstPagePrimaryStyle = [styles.rowPrimary, spaciousLayout ? styles.rowPrimarySpacious : {}];
+  const firstPageDescriptionStyle = [styles.rowDescription, spaciousLayout ? styles.rowDescriptionSpacious : {}];
+  const firstPageValueStyle = [styles.rowValue, spaciousLayout ? styles.rowValueSpacious : {}];
+  const firstPageInfoLabelStyle = [styles.infoLabel, spaciousLayout ? styles.infoLabelSpacious : {}];
+  const firstPageInfoValueStyle = [styles.infoValue, spaciousLayout ? styles.infoValueSpacious : {}];
+  const codeItems = motorCodeBreakdown(quoteData.productName);
+  const firstCodeLine = codeItems.slice(0, 3).join(' | ');
+  const secondCodeLine = codeItems.slice(3).join(' | ');
+  const savingsNumber = Number(String(quoteData.totalSavings).replace(/,/g, ''));
+  const promoEndCopy = quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : '';
+  const footerAddress = 'Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0';
+  const financingContractTerm = resolveFinancingContractTermMonths({
+    paymentMethod: quoteData.selectedPaymentMethod,
+    amortizationMonths: Number(quoteData.financingTerm),
+    contractTermMonths: quoteData.financingContractTerm,
+  });
+  const financingContractTermIsOfferSpecific = quoteData.selectedPaymentMethod === 'special_financing';
+  const inspectionCaveat = quoteInspectionCaveat(quoteData);
+  const hasFollowingPageTwoContent = Boolean(quoteData.customerNotes || quoteData.depositInfo);
 
   return (
     <Document>
       <Page size="LETTER" style={styles.page}>
-        {/* Header */}
-        <View style={styles.header}>
-          <View style={styles.logoContainer}>
-            <Image 
-              src={harrisLogo} 
-              style={{ 
-                width: 80, 
-                height: 40, 
-                objectFit: 'contain', 
-                objectPosition: 'center' 
-              }} 
-            />
-            <Image 
-              src={mercuryLogo} 
-              style={{ 
-                width: 100, 
-                height: 35, 
-                objectFit: 'contain', 
-                objectPosition: 'center' 
-              }} 
-            />
+        <View style={styles.hero}>
+          <View style={styles.heroTop}>
+            <View style={styles.brandPlate}>
+              <Image src={harrisLogoBlack} style={styles.harrisLogo} />
+              <View style={styles.brandDivider} />
+              <Image src={mercuryLogoBlack} style={styles.mercuryLogo} />
+            </View>
+            <View>
+              <Text style={styles.documentLabel}>MERCURY OUTBOARD QUOTE</Text>
+              <Text style={styles.documentKicker}>MERCURY MARINE PREMIER DEALER</Text>
+            </View>
           </View>
-          <View style={styles.headerRight}>
-            <Text style={styles.quoteTitle}>Your Mercury Motor Quote</Text>
-            <Text style={styles.dealerText}>Mercury Marine Premier Dealer</Text>
+
+          <View style={styles.heroMain}>
+            <View style={styles.heroCopy}>
+              <Text style={styles.heroEyebrow}>CONFIGURED FOR YOU</Text>
+              <Text style={styles.heroProduct}>{quoteData.productName}</Text>
+              <Text style={styles.heroMeta}>{motorMetaLine(quoteData, codeItems)}</Text>
+            </View>
           </View>
         </View>
 
-        {/* Main Content - Two Columns */}
-        <View style={styles.mainContent}>
-          {/* Left Column */}
-          <View style={styles.leftColumn}>
-            {/* Product Information */}
-            <View style={styles.productSection}>
-              <Text style={styles.productName}>{quoteData.productName}</Text>
-            </View>
+        <View style={styles.priceBand}>
+          <View>
+            <Text style={styles.priceEyebrow}>TOTAL CASH PRICE | HST INCLUDED</Text>
+            <Text style={styles.priceAmount}>${quoteData.total}</Text>
+          </View>
+          <View style={styles.savingsPill}>
+            <Text style={styles.savingsPillText}>{savingsNumber > 0 ? `You save $${quoteData.totalSavings} vs MSRP` : 'Clear Canadian pricing'}</Text>
+          </View>
+        </View>
 
-            {/* Motor Code Breakdown Box */}
-            <View style={styles.motorCodeBox}>
-              <Text style={styles.motorCodeTitle}>Motor Code Breakdown</Text>
-              <Text style={styles.motorCodeContent}>
-                {quoteData.productName}:
-              </Text>
-              {generateMotorCodeBreakdown(quoteData.productName).map((item, idx) => (
-                <Text key={idx} style={styles.motorCodeItem}>
-                  {item.code ? `• ${item.code} = ${item.meaning}` : `• ${item.meaning}`}
-                </Text>
+        <View style={[styles.pageOneBody, spaciousLayout ? styles.pageOneBodySpacious : {}]}>
+          <View style={styles.breakdownColumn}>
+            <Text style={[styles.sectionHeader, spaciousLayout ? styles.sectionHeaderSpacious : {}]}>TRANSPARENT PRICE BREAKDOWN</Text>
+            <View style={styles.table}>
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>Mercury outboard MSRP</Text>
+                <Text style={[...firstPageValueStyle, { color: colors.ink2, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
+              </View>
+              {Number(String(quoteData.dealerDiscount).replace(/,/g, '')) > 0 ? (
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>HBW dealer discount</Text>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${quoteData.dealerDiscount}</Text>
+                </View>
+              ) : null}
+              {(quoteData.pricing?.adminDiscount || 0) > 0 ? (
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>Additional quote discount</Text>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${money(quoteData.pricing?.adminDiscount)}</Text>
+                </View>
+              ) : null}
+              {Number(String(quoteData.promoSavings).replace(/,/g, '')) > 0 ? (
+                <View style={firstPageRowStyle} wrap={false}>
+                  <View style={styles.rowText}>
+                    <Text style={firstPagePrimaryStyle}>{quoteData.promotionName || 'Mercury Canada promotion'}</Text>
+                    <Text style={firstPageDescriptionStyle}>Factory promotional savings applied{promoEndCopy}</Text>
+                  </View>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${quoteData.promoSavings}</Text>
+                </View>
+              ) : null}
+              <View style={firstPageRowStyle}>
+                <Text style={[...firstPagePrimaryStyle, { fontWeight: 'bold' }]}>Motor price after discounts</Text>
+                <Text style={firstPageValueStyle}>${quoteData.motorSubtotal}</Text>
+              </View>
+              {!quoteData.includesInstallation ? (
+                <View style={firstPageRowStyle} wrap={false}>
+                  <View style={styles.rowText}>
+                    <Text style={firstPagePrimaryStyle}>Loose motor configuration</Text>
+                    <Text style={firstPageDescriptionStyle}>Installation is not included</Text>
+                  </View>
+                </View>
+              ) : null}
+              {groups.map((group) => (
+                <View key={group.key}>
+                  <View wrap={false}>
+                    <Text style={[styles.groupLabel, spaciousLayout ? styles.groupLabelSpacious : {}]}>{group.title}</Text>
+                    <LineItemRow item={group.items[0]} compact={compactRows} />
+                  </View>
+                  {group.items.slice(1).map((item, index) => <LineItemRow key={`${group.key}-${index + 1}-${item.name}`} item={item} compact={compactRows} />)}
+                </View>
               ))}
-            </View>
-
-            {/* Pricing Breakdown */}
-            <View style={styles.pricingTableContainer}>
-              <Text style={styles.sectionTitle}>Pricing Breakdown</Text>
-              
-              <View style={styles.pricingHeader}>
-                <Text style={styles.pricingHeaderText}>Item</Text>
-                <Text style={styles.pricingHeaderText}>Price</Text>
-              </View>
-              
-              {/* Motor Pricing */}
-              <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>MSRP</Text>
-                <Text style={[styles.pricingValue, styles.strikethrough]}>${quoteData.msrp}</Text>
-              </View>
-              
-              <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>Your Discount</Text>
-                <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
-              </View>
-              
-              {quoteData.pricing?.adminDiscount && quoteData.pricing.adminDiscount > 0 && (
-                <View style={styles.pricingRow}>
-                  <Text style={styles.pricingLabel}>Special Discount</Text>
-                  <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${quoteData.pricing.adminDiscount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                  </Text>
+              {groups.length === 0 && quoteData.includesInstallation ? (
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>Configured installation and setup</Text>
+                  <Text style={firstPageValueStyle}>As shown</Text>
                 </View>
-              )}
-              
-              {parseFloat(quoteData.promoSavings) > 0 && (
-                <View style={styles.pricingRow}>
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.pricingLabel}>
-                      {quoteData.selectedPromoOption === 'no_payments'
-                        ? '7-Year Warranty + No Payments'
-                        : quoteData.selectedPromoOption === 'special_financing'
-                        ? `7-Year Warranty + ${quoteData.selectedPromoValue || '2.99%'} APR`
-                        : quoteData.selectedPromoOption === 'cash_rebate'
-                        ? `7-Year Warranty + ${quoteData.selectedPromoValue} Rebate`
-                        : 'Promotional Savings'}
-                    </Text>
-                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                      Harris Boat Works 7-Year Warranty
-                    </Text>
-                  </View>
-                  <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
-                </View>
-              )}
-              
-              {/* Motor Subtotal */}
-              <View style={styles.pricingRow}>
-                <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>Motor Price</Text>
-                <Text style={[styles.pricingValue, { fontWeight: 'bold' }]}>${quoteData.motorSubtotal}</Text>
-              </View>
-              
-              {/* Accessories Section */}
-              {quoteData.accessoryBreakdown && quoteData.accessoryBreakdown.length > 0 ? (
+              ) : null}
+              {quoteData.tradeInValue && quoteData.tradeInValue > 0 ? (
                 <>
-                  <View style={{ marginTop: 8, marginBottom: 4 }}>
-                    <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>
-                      Required Rigging & Installation
-                    </Text>
-                  </View>
-                  {quoteData.accessoryBreakdown.map((item, idx) => (
-                    <View key={idx} style={styles.pricingRow}>
-                      <View style={{ flex: 1 }}>
-                        <Text style={styles.pricingLabel}>{item.name}</Text>
-                        {item.description && (
-                          <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                            {item.description}
-                          </Text>
-                        )}
-                      </View>
-                      <Text style={styles.pricingValue}>
-                        ${item.price.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                      </Text>
+                  <View style={firstPageRowStyle} wrap={false}>
+                    <View style={styles.rowText}>
+                      <Text style={firstPagePrimaryStyle}>Estimated trade-in value</Text>
+                      <Text style={firstPageDescriptionStyle}>{tradeDescription(quoteData.tradeInInfo)}</Text>
                     </View>
-                  ))}
+                    <Text style={[...firstPageValueStyle, styles.discount]}>-${money(quoteData.tradeInValue)}</Text>
+                  </View>
+                  <View style={firstPageRowStyle} wrap={false}>
+                    <View style={styles.rowText}>
+                      <Text style={firstPagePrimaryStyle}>HST savings from trade-in</Text>
+                      <Text style={firstPageDescriptionStyle}>HST is not charged on the eligible trade-in portion</Text>
+                    </View>
+                    <Text style={firstPageValueStyle}>${money(quoteData.tradeInValue * 0.13)} saved</Text>
+                  </View>
                 </>
-              ) : (
-                (!quoteData.accessoryBreakdown || quoteData.accessoryBreakdown.length === 0) && (
-                  <View style={{ marginTop: 8, marginBottom: 4 }}>
-                    <Text style={{ fontSize: 7, color: colors.lightText, fontStyle: 'italic' }}>
-                      Controls & setup costs calculated at time of order
-                    </Text>
-                  </View>
-                )
-              )}
-              
-              {/* Estimated Trade Value */}
-              {quoteData.tradeInInfo 
-                && quoteData.tradeInValue 
-                && quoteData.tradeInValue > 0 
-                && quoteData.tradeInInfo.brand
-                && quoteData.tradeInInfo.year > 0 && (
-                <View style={styles.pricingRow}>
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.pricingLabel}>Estimated Trade Value</Text>
-                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                      {formatTradeInDescription(quoteData.tradeInInfo)}
-                    </Text>
-                  </View>
-                  <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                  </Text>
-                </View>
-              )}
-              
-              {/* Tax Savings from Trade-In */}
-              {quoteData.tradeInInfo 
-                && quoteData.tradeInValue 
-                && quoteData.tradeInValue > 0 
-                && quoteData.tradeInInfo.brand
-                && quoteData.tradeInInfo.year > 0 && (
-                <View style={[styles.pricingRow, { backgroundColor: '#f0fdf4' }]}>
-                  <View style={{ flex: 1 }}>
-                    <Text style={[styles.pricingLabel, { color: colors.discount, fontWeight: 'bold' }]}>Tax Savings from Trade-In</Text>
-                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                      HST not charged on trade-in portion
-                    </Text>
-                  </View>
-                  <Text style={[styles.pricingValue, styles.discountValue, { fontWeight: 'bold' }]}>
-                    You save ${(quoteData.tradeInValue * 0.13).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                  </Text>
-                </View>
-              )}
-              
-              {/* Subtotal */}
-              <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>Subtotal</Text>
-                <Text style={styles.pricingValue}>${quoteData.subtotal}</Text>
+              ) : null}
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>Subtotal</Text><Text style={firstPageValueStyle}>${quoteData.subtotal}</Text>
               </View>
-              
-              {/* HST */}
-              <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>HST (13%)</Text>
-                <Text style={styles.pricingValue}>${quoteData.tax}</Text>
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>HST (13%)</Text><Text style={firstPageValueStyle}>${quoteData.tax}</Text>
               </View>
-              
-              {/* Total */}
-              <View style={styles.totalRow}>
-                <Text style={styles.totalLabel}>Total Price</Text>
-                <Text style={styles.totalValue}>${quoteData.total}</Text>
+              <View style={[styles.totalRow, spaciousLayout ? styles.totalRowSpacious : {}]}>
+                <Text style={[styles.totalRowText, spaciousLayout ? styles.totalRowTextSpacious : {}]}>TOTAL CASH PRICE</Text><Text style={[styles.totalRowText, spaciousLayout ? styles.totalRowTextSpacious : {}]}>${quoteData.total} CAD</Text>
               </View>
             </View>
+          </View>
 
-            {/* Total Savings Below Table */}
-            <Text style={styles.savingsText}>
-              {quoteData.tradeInValue && quoteData.tradeInValue > 0
-                ? `Dealer + Promo Savings of $${quoteData.totalSavings} vs MSRP`
-                : `Total savings of $${quoteData.totalSavings} vs MSRP`}
-            </Text>
-            {parseFloat(quoteData.promoSavings || '0') > 0 && (
-              <Text style={styles.promoUrgency}>
-                Limited time offer - expires {validUntilString}
-              </Text>
-            )}
-            
-            {/* Unified CTA + QR Section */}
-            {!quoteData.depositInfo && quoteData.financingQrCode && (
-              <View wrap={false} style={{ marginTop: 4, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                {/* Left: CTA Text */}
-                <View style={{ flex: 1, paddingRight: 12 }}>
-                  <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
-                    Ready to Proceed?
-                  </Text>
-                   <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
-                     1. Scan QR to view your quote online
-                   </Text>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
-                    2. Call or text: (905) 342-2153
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
-                    3. Reply to this email
-                  </Text>
-                  {quoteData.monthlyPayment && quoteData.financingTerm && (
-                    <View style={{ marginTop: 6, paddingTop: 6, borderTop: `1 solid ${colors.border}` }}>
-                      <Text style={{ fontSize: 10, color: colors.text, fontWeight: 'bold' }}>
-                        From ${quoteData.monthlyPayment}/mo over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
-                      </Text>
-                      <Text style={{ fontSize: 7, color: colors.lightText, fontStyle: 'italic', marginTop: 2 }}>
-                        *Based on approved credit and standard financing terms
-                      </Text>
-                    </View>
-                  )}
+          <View style={[styles.sidebar, spaciousLayout ? styles.sidebarSpacious : {}]}>
+            <View style={styles.card}>
+              <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Quote Details</Text>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Customer</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerName}</Text></View>
+              {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Email</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerEmail}</Text></View> : null}
+              {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Phone</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerPhone}</Text></View> : null}
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Quote #</Text><Text style={firstPageInfoValueStyle}>{quoteData.quoteNumber}</Text></View>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Issued</Text><Text style={firstPageInfoValueStyle}>{quoteData.date}</Text></View>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Valid until</Text><Text style={[...firstPageInfoValueStyle, { fontWeight: 'bold' }]}>{expiry}</Text></View>
+            </View>
+
+            <View style={styles.codeCard}>
+              <Text style={[styles.codeTitle, spaciousLayout ? styles.codeTitleSpacious : {}]}>Understanding your motor code</Text>
+              <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{firstCodeLine}</Text>
+              {secondCodeLine ? <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{secondCodeLine}</Text> : null}
+            </View>
+
+            {!quoteData.depositInfo ? (
+              <View style={styles.card}>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Ready to lock this in?</Text>
+                <View style={styles.qrRow}>
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
+                  <View style={styles.qrCopy}>
+                    {savedQuoteQrCode ? <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this exact quote</Text> : null}
+                    <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>{quoteData.reservationRequiresConfirmation
+                      ? 'Fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing.'
+                      : 'The deposit holds the motor and applies to your final invoice.'}</Text>
+                  </View>
                 </View>
-                
-                {/* Right: QR Code */}
-                <View style={{ width: 75, alignItems: 'center' }}>
-                  <Image
-                    src={quoteData.financingQrCode}
-                    style={{ width: 70, height: 70 }}
-                  />
-                  <Text style={{ fontSize: 6, color: colors.lightText, marginTop: 2, textAlign: 'center' }}>
-                    Scan to view your quote
-                  </Text>
-                </View>
+                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>{quoteData.reservationRequiresConfirmation
+                  ? 'After written approval, the deposit becomes non-refundable and is credited to your final invoice.'
+                  : 'Refundability depends on stock or special-order status and when the order is committed.'}</Text>
               </View>
-            )}
-            
-            {/* Fallback CTA without QR */}
-            {!quoteData.depositInfo && !quoteData.financingQrCode && (
-              <View wrap={false} style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-                <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                  Ready to Proceed?
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                  1. Place a $500 deposit to lock in this price
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                  2. Call or text: (905) 342-2153
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.text }}>
-                  3. Reply to this email
-                </Text>
+            ) : (
+              <View style={styles.card}>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Deposit received</Text>
+                <View style={styles.qrRow}>
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
+                  <View style={styles.qrCopy}>
+                    <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>${money(quoteData.depositInfo.amount)} CAD received</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>Reference {quoteData.depositInfo.referenceNumber}.{savedQuoteQrCode ? ' Scan to reopen this exact quote anytime.' : ''}</Text>
+                  </View>
+                </View>
               </View>
             )}
           </View>
+        </View>
 
-          {/* Right Column */}
-          <View style={styles.rightColumn}>
-            {/* SAVINGS CALLOUT BOX - TOP */}
-            <View style={styles.savingsCalloutBox}>
-              <Text style={styles.savingsCalloutSavings}>
-                YOU SAVE ${quoteData.totalSavings}
-              </Text>
-              <Text style={styles.savingsCalloutLabel}>Total Price</Text>
-              <Text style={styles.savingsCalloutPrice}>
-                ${quoteData.total}
-              </Text>
-              {quoteData.monthlyPayment && (
-                <Text style={styles.savingsCalloutMonthly}>
-                  or ${quoteData.monthlyPayment}/month*
-                </Text>
-              )}
-            </View>
+        {spaciousLayout ? (
+          <View style={styles.waterTestBand}>
+            <Text style={styles.waterTestBandText}>{quoteData.includesInstallation
+              ? 'Every installed repower is water-tested on Rice Lake before pickup.'
+              : 'Every loose motor is prepared, test-run and commissioned before pickup.'}</Text>
+          </View>
+        ) : null}
 
-            {/* CUSTOMER INFO BOX */}
-            <View style={styles.infoBox}>
-              <Text style={styles.summaryTitle}>Customer Information</Text>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Name:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerName}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Email:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerEmail}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Phone:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerPhone}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Quote #:</Text>
-                <Text style={styles.infoValue}>{quoteData.quoteNumber}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Date:</Text>
-                <Text style={styles.infoValue}>{quoteData.date}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Valid Until:</Text>
-                <Text style={styles.infoValue}>{validUntilString}</Text>
-              </View>
-            </View>
+        <View style={styles.footerRule} />
+        <Text style={styles.footerText}>{footerAddress}</Text>
+        <Text style={styles.footerPage}>Page 1 of 2</Text>
+      </Page>
 
-          {/* Personal Note */}
-          {quoteData.customerNotes && (
-            <View style={{ marginTop: 6, paddingLeft: 4, paddingRight: 4 }}>
-              <Text style={{ fontSize: 9.5, fontStyle: 'italic', color: colors.text, lineHeight: 1.5 }}>
-                {quoteData.customerNotes}
-              </Text>
-            </View>
-          )}
+      <Page size="LETTER" style={styles.pageTwo}>
+        <Text style={[styles.pageTwoTitle, spaciousLayout ? styles.pageTwoTitleSpacious : {}]}>Coverage, Payment &amp; Next Steps</Text>
 
-          {/* COVERAGE BOX */}
-          <View style={styles.summaryBox}>
-            <Text style={styles.coverageTitle}>
-              {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
-            </Text>
-            <Text style={styles.summaryItem}>
-              Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
-            </Text>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
-                What's Included:
-              </Text>
+        <View style={[styles.twoUp, spaciousLayout ? styles.twoUpSpacious : {}]}>
+          <View style={[styles.featureCard, spaciousLayout ? styles.featureCardSpacious : {}]}>
+            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>MERCURY COVERAGE</Text>
+            <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{coverageTotal} years total</Text>
+            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
+            {quoteData.productProtection ? (
               <>
-                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty</Text>
-                <Text style={styles.summaryItem}>• Motor, controls & installation included</Text>
-                <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { color: colors.ink, fontWeight: 'bold', marginTop: 3 }]}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
+                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
               </>
-              
-              {/* MERCHANDISE BONUS - based on package tier */}
-              {quoteData.selectedPackage?.id && quoteData.selectedPackage.id !== 'good' && (
-                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                    PACKAGE BONUS:
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
-                    {quoteData.selectedPackage.id === 'better' && '✓ FREE Mercury Hat ($35 value)'}
-                    {quoteData.selectedPackage.id === 'best' && '✓ FREE Mercury Hat + Shirt ($75 value)'}
-                  </Text>
-                </View>
-              )}
-              
-            {/* YOUR SELECTED BONUS (Choose One promo) */}
-            {quoteData.selectedPromoOption && (
-              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                  YOUR SELECTED BONUS:
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
-                  {quoteData.selectedPromoOption === 'no_payments' && `✓ 6 Months No Payments${quoteData.selectedPromoValue ? ` (${quoteData.selectedPromoValue})` : ''}`}
-                  {quoteData.selectedPromoOption === 'special_financing' && `✓ Special Financing: ${quoteData.selectedPromoValue || '2.99%'} APR`}
-                  {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory Cash Rebate: ${quoteData.selectedPromoValue || ''}`}
-                </Text>
-              </View>
+            ) : <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>No additional paid Product Protection plan selected.</Text>}
+            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>Final eligibility and coverage dates are confirmed using the engine serial number.</Text>
+          </View>
+
+          <View style={[styles.featureCard, styles.featureCardRed, spaciousLayout ? styles.featureCardSpacious : {}]}>
+            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
+            {hasFinancing ? (
+              <>
+                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(
+                  quoteData.financingRate!,
+                  financingContractTerm,
+                  quoteData.financingTerm!,
+                  financingContractTermIsOfferSpecific,
+                )}</Text>
+                {quoteData.financingAmount ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
+                {quoteData.dealerFee ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{(quoteData.financingTerm || 0) > financingContractTerm
+                  ? 'A balance may remain at contract end and may need to be paid or refinanced. On approved credit.'
+                  : 'On approved credit.'}</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>{FINANCING_ESTIMATE_DISCLAIMER}</Text>
+              </>
+            ) : (
+              <>
+                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or monthly-payment estimate is included in this quote.' : 'Ask us for current Canadian marine financing options if you would like a payment estimate.'}</Text>
+              </>
             )}
-              
-            {/* BONUS OFFER (7-Year Warranty) */}
-            {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears >= 7 && (
-              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  7-YEAR FACTORY-BACKED WARRANTY
-                </Text>
-                  <Text style={{ fontSize: 9, color: colors.text }}>
-                    {quoteData.selectedPackage.coverageYears} Years Factory Warranty Included
-                  </Text>
-                  <Text style={{ fontSize: 8, color: colors.lightText }}>
-                    (Limited time offer - 3 base + {quoteData.selectedPackage.coverageYears - 3} bonus)
-                  </Text>
-                </View>
-              )}
-            </View>
-
+            {showAlternatePromotion && alternatePromotion ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
           </View>
         </View>
 
-
-        {/* Deposit Payment Confirmation */}
-        {quoteData.depositInfo && (
-          <View style={{ marginTop: 8, marginBottom: 4, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-              <Text style={{ fontSize: 12, fontWeight: 'bold', color: colors.text }}>
-                ✓ DEPOSIT PAYMENT CONFIRMED
-              </Text>
-              <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
-                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
-              </Text>
-            </View>
-            <View style={{ flexDirection: 'row', gap: 20 }}>
-              <View style={{ flex: 1 }}>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Reference #:</Text>
-                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>{quoteData.depositInfo.referenceNumber}</Text>
-                </View>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Payment Date:</Text>
-                  <Text style={styles.infoValue}>{quoteData.depositInfo.paymentDate}</Text>
-                </View>
-                {quoteData.depositInfo.paymentMethod && (
-                  <View style={styles.infoRow}>
-                    <Text style={[styles.infoLabel, { width: 90 }]}>Method:</Text>
-                    <Text style={styles.infoValue}>{quoteData.depositInfo.paymentMethod}</Text>
-                  </View>
-                )}
-                {quoteData.depositInfo.paymentId && (
-                  <View style={styles.infoRow}>
-                    <Text style={[styles.infoLabel, { width: 90 }]}>Transaction:</Text>
-                    <Text style={{ fontSize: 8, color: colors.lightText, flex: 1 }}>{quoteData.depositInfo.paymentId}</Text>
-                  </View>
-                )}
-              </View>
-              <View style={{ flex: 1 }}>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Status:</Text>
-                  <Text style={[styles.infoValue, { color: colors.discount, fontWeight: 'bold' }]}>
-                    {quoteData.depositInfo.status || 'Confirmed'}
-                  </Text>
-                </View>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
-                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
-                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6, fontStyle: 'italic' }}>
-              Deposit is fully refundable before delivery. Remaining balance due upon pickup or delivery.
-            </Text>
-          </View>
-        )}
-
-        {/* Terms — wrapped with CTA to prevent page break */}
-        <View wrap={false}>
-          {/* Terms */}
-          <View style={styles.termsSection}>
-            <Text style={styles.termsText}>
-              • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
-            </Text>
-            <Text style={styles.termsText}>
-              • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
-            </Text>
-            <Text style={styles.termsText}>
-              • Financing options available subject to credit approval • Ask your sales representative for details
-            </Text>
-          </View>
+        <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
+        <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
+          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{quoteData.reservationRequiresConfirmation
+            ? `Your $${money(recommendedDeposit).replace('.00', '')} deposit is refundable while HBW confirms the exact motor, price, availability and ETA. It becomes non-refundable and is credited to your final invoice only after you approve the order in writing.`
+            : `A $${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.`}</StepCard>
+          {quoteData.includesInstallation ? (
+            <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
+          ) : (
+            <StepCard number="2" title="We prep and test-run" spacious={spaciousLayout}>Your motor is prepared, test-run, and commissioned before pickup.</StepCard>
+          )}
+          <StepCard number="3" title={quoteData.includesInstallation ? 'Pick up and go boating' : 'Pick up your motor'} spacious={spaciousLayout}>{quoteData.includesInstallation ? 'Get a complete walkthrough of your new Mercury at our Gores Landing shop, about 90 minutes from Toronto.' : 'Review the motor, included equipment, and commissioning details with our team before leaving.'}</StepCard>
         </View>
 
-        {/* Footer */}
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            Harris Boat Works • 5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0 • (905) 342-2153 • mercuryrepower.ca
-          </Text>
+        <View style={[styles.trust, spaciousLayout ? styles.trustSpacious : {}]}>
+          <TrustItem lead="1947" label="FAMILY-OWNED SINCE" spacious={spaciousLayout} />
+          <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered spacious={spaciousLayout} />
+          <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered spacious={spaciousLayout} />
+          <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered spacious={spaciousLayout} />
+          <TrustItem lead="300+" label="GOOGLE REVIEWS" bordered spacious={spaciousLayout} />
         </View>
+
+        <View style={[styles.reviewQuote, spaciousLayout ? styles.reviewQuoteSpacious : {}]}>
+          <Text style={[styles.reviewText, spaciousLayout ? styles.reviewTextSpacious : {}]}>"Great service. Great price on a new outboard. Called from out of town and organized purchase and pickup, very easy. Had all the new features explained to me when I picked it up."</Text>
+          <Text style={[styles.reviewAttribution, spaciousLayout ? styles.reviewAttributionSpacious : {}]}>- Erik F. | Google review</Text>
+        </View>
+
+        <View style={[styles.closeout, spaciousLayout ? styles.closeoutSpacious : {}, hasFollowingPageTwoContent ? styles.closeoutWithFollowingContent : {}]}>
+          <Text style={[styles.closeoutTitle, spaciousLayout ? styles.closeoutTitleSpacious : {}]}>Straight answers, complete pricing</Text>
+          <Text style={[styles.closeoutText, spaciousLayout ? styles.closeoutTextSpacious : {}]}>This quote is built from the motor, equipment, promotion, trade-in and installation choices shown here. If anything about your boat changes, call or text us and we will update the configuration before you commit.</Text>
+          {inspectionCaveat ? <Text style={[styles.closeoutCaveat, spaciousLayout ? styles.closeoutCaveatSpacious : {}]}>{inspectionCaveat}</Text> : null}
+        </View>
+
+        {quoteData.customerNotes ? (
+          <View style={styles.noteBox}>
+            <Text style={styles.noteTitle}>A note from Harris Boat Works</Text>
+            <Text style={styles.noteText}>{quoteData.customerNotes}</Text>
+          </View>
+        ) : null}
+
+        {quoteData.depositInfo ? (
+          <View style={styles.depositBox}>
+            <Text style={styles.noteTitle}>Deposit Payment Confirmed - ${money(quoteData.depositInfo.amount)} CAD</Text>
+            <Text style={styles.noteText}>Reference: {quoteData.depositInfo.referenceNumber} | Date: {quoteData.depositInfo.paymentDate}</Text>
+            {quoteData.depositInfo.paymentMethod ? <Text style={styles.noteText}>Method: {quoteData.depositInfo.paymentMethod}</Text> : null}
+            <Text style={styles.noteText}>Balance due: ${money((quoteData.pricing?.totalCashPrice || Number(String(quoteData.total).replace(/,/g, ''))) - quoteData.depositInfo.amount)} CAD</Text>
+          </View>
+        ) : null}
+
+        <View style={styles.footerRule} />
+        <Text style={styles.pageTwoFooterText}>Harris Boat Works | Call 905-342-2153 | Text 647-952-2153 | mercuryrepower.ca</Text>
+        <Text style={styles.pageTwoFooterPage}>Page 2 of 2</Text>
       </Page>
     </Document>
   );

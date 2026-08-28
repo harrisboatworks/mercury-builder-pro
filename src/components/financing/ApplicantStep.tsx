@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { applicantSchema, type Applicant } from '@/lib/financingValidation';
@@ -39,8 +40,12 @@ export function ApplicantStep() {
   const housingStatus = watch('housingStatus');
   const dateOfBirth = watch('dateOfBirth');
 
-  // Calculate age from date of birth
-  const age = dateOfBirth ? Math.floor((new Date().getTime() - new Date(dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365)) : null;
+  // Calculate age only from a real date. React Hook Form's valueAsDate can
+  // otherwise turn an empty native date input into Invalid Date/NaN.
+  const dateOfBirthTime = dateOfBirth instanceof Date ? dateOfBirth.getTime() : NaN;
+  const age = Number.isFinite(dateOfBirthTime)
+    ? Math.floor((Date.now() - dateOfBirthTime) / (1000 * 60 * 60 * 24 * 365.2425))
+    : null;
 
   // Show previous address if less than 3 years at current address
   const showPreviousAddress = timeAtAddress && ['<1', '1-2', '2-3'].includes(timeAtAddress);
@@ -144,15 +149,32 @@ export function ApplicantStep() {
           Date of Birth *
           <FieldValidationIndicator isValid={isFieldValid('dateOfBirth')} isTouched={!!touchedFields.dateOfBirth} />
         </Label>
-        <Input
-          id="dateOfBirth"
-          type="date"
-          autoComplete="bday"
-          {...register('dateOfBirth', { valueAsDate: true })}
-          max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
-          className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
+        <Controller
+          name="dateOfBirth"
+          control={control}
+          render={({ field }) => (
+            <Input
+              id="dateOfBirth"
+              type="date"
+              autoComplete="bday"
+              name={field.name}
+              ref={field.ref}
+              onBlur={field.onBlur}
+              value={
+                field.value instanceof Date && Number.isFinite(field.value.getTime())
+                  ? field.value.toISOString().slice(0, 10)
+                  : ''
+              }
+              onChange={(event) => {
+                const value = event.target.value;
+                field.onChange(value ? new Date(`${value}T12:00:00`) : undefined);
+              }}
+              max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
+              className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
+            />
+          )}
         />
-        {age && age >= 18 && (
+        {age !== null && age >= 18 && (
           <p className="text-sm text-green-500 font-normal">Age: {age} years old ✓</p>
         )}
         {errors.dateOfBirth && (
@@ -183,7 +205,9 @@ export function ApplicantStep() {
             <MaskedInput
               id="sin"
               maskType="sin"
+              sensitive
               inputMode="numeric"
+              autoComplete="off"
               value={field.value}
               onChange={field.onChange}
               onBlur={field.onBlur}
@@ -195,6 +219,9 @@ export function ApplicantStep() {
         {errors.sin && (
           <p className="text-sm text-destructive font-normal">{errors.sin.message}</p>
         )}
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          Encrypted before storage. Your SIN is excluded from saved drafts and is never emailed.
+        </p>
       </div>
 
       {/* Contact Information */}
@@ -283,7 +310,7 @@ export function ApplicantStep() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="province">Province *</Label>
+            <Label htmlFor="province">Province <RequiredMark /></Label>
             <Select onValueChange={(value) => setValue('currentAddress.province', value, { shouldValidate: true })}>
               <SelectTrigger>
                 <SelectValue placeholder="Select province" />
@@ -324,7 +351,7 @@ export function ApplicantStep() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="timeAtAddress">Time at Address *</Label>
+          <Label htmlFor="timeAtAddress">Time at Address <RequiredMark /></Label>
           <Select onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any, { shouldValidate: true })}>
             <SelectTrigger>
               <SelectValue placeholder="Select duration" />
@@ -342,7 +369,7 @@ export function ApplicantStep() {
 
       {/* Housing Status */}
       <div className="space-y-3 pt-4">
-        <Label>Housing Status *</Label>
+        <Label>Housing Status <RequiredMark /></Label>
         <RadioGroup onValueChange={(value) => setValue('housingStatus', value as any, { shouldValidate: true })}>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="own" id="own" />

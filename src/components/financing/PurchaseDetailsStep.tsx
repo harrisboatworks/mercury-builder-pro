@@ -6,19 +6,25 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
+import { Check, Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
-import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
+import {
+  calculateMonthlyPayment,
+  calculateMonthly,
+  getFinancingTermOptions,
+  getMotorCalculatorApr,
+  FINANCING_MINIMUM,
+} from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
-  const [isEditingMotor, setIsEditingMotor] = useState(false);
+  const [isEditingMotor, setIsEditingMotor] = useState(!state.purchaseDetails?.motorModel);
   const [selectedTerm, setSelectedTerm] = useState<string>('48');
-  
+
   const {
     register,
     handleSubmit,
@@ -30,36 +36,57 @@ export function PurchaseDetailsStep() {
     mode: 'onChange',
     defaultValues: {
       motorModel: state.purchaseDetails?.motorModel || '',
-      motorPrice: state.purchaseDetails?.motorPrice ? Number(state.purchaseDetails.motorPrice.toFixed(2)) : 0,
+      motorPrice: state.purchaseDetails?.motorPrice
+        ? Number(state.purchaseDetails.motorPrice.toFixed(2))
+        : undefined,
       downPayment: state.purchaseDetails?.downPayment || 0,
       tradeInValue: state.purchaseDetails?.tradeInValue || 0,
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
-      preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180',
+      preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240',
       promoOption: state.purchaseDetails?.promoOption || null,
       promoRate: state.purchaseDetails?.promoRate || null,
       promoTerm: state.purchaseDetails?.promoTerm || null,
       promoValue: state.purchaseDetails?.promoValue || null,
+      promoName: state.purchaseDetails?.promoName || null,
+      promoSavings: state.purchaseDetails?.promoSavings ?? null,
+      promoCombinationMode: state.purchaseDetails?.promoCombinationMode || null,
     },
   });
 
-  const motorPrice = watch('motorPrice');
+  const watchedMotorPrice = watch('motorPrice');
+  const motorPrice = Number.isFinite(watchedMotorPrice) ? watchedMotorPrice : 0;
   const downPayment = watch('downPayment');
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
   const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+
+  // Keep the derived amount inside react-hook-form as well as on screen.
+  // Without this synchronization the schema continues validating the initial
+  // zero value and leaves Continue disabled even after valid pricing is entered.
+  useEffect(() => {
+    setValue('amountToFinance', amountToFinance, {
+      shouldValidate: true,
+      shouldDirty: false,
+    });
+  }, [amountToFinance, setValue]);
 
   // Get promo details from state
   const promoOption = state.purchaseDetails?.promoOption;
   const promoRate = state.purchaseDetails?.promoRate;
   const promoTerm = state.purchaseDetails?.promoTerm;
   const promoValue = state.purchaseDetails?.promoValue;
+  const promoName = state.purchaseDetails?.promoName;
+  const promoSavings = state.purchaseDetails?.promoSavings || 0;
+  const promoCombinationMode = state.purchaseDetails?.promoCombinationMode;
 
   // Validate promo against currently-active promotions (prevents stale/expired promos
-  // from saved or restored quotes from showing — e.g., March factory rebate after expiry).
+  // from saved or restored quotes from showing, e.g., March factory rebate after expiry).
   // forceRefresh ensures we always pull the latest promotions on financing-app entry,
   // bypassing the in-memory 5-minute cache.
-  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
-  const activeOptionIds = getChooseOneOptions().map((o) => o.id);
+  const { getPromotionOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
+  const activeOptions = getPromotionOptions();
+  const activeOptionIds = activeOptions.map((o) => o.id);
+  const activeNoPaymentsOption = activeOptions.find((option) => option.id === 'no_payments');
   const isPromoStillActive =
     !promoOption || (activeOptionIds.length > 0 && activeOptionIds.includes(promoOption));
 
@@ -85,6 +112,9 @@ export function PurchaseDetailsStep() {
           promoRate: null,
           promoTerm: null,
           promoValue: null,
+          promoName: null,
+          promoSavings: null,
+          promoCombinationMode: null,
         },
       });
     }
@@ -110,14 +140,17 @@ export function PurchaseDetailsStep() {
   const onSubmit = (data: PurchaseDetails) => {
     dispatch({
       type: 'SET_PURCHASE_DETAILS',
-      payload: { 
-        ...data, 
+      payload: {
+        ...data,
         amountToFinance,
         // Preserve promo details
         promoOption,
         promoRate,
         promoTerm,
         promoValue,
+        promoName,
+        promoSavings,
+        promoCombinationMode,
       },
     });
     dispatch({ type: 'COMPLETE_STEP', payload: 1 });
@@ -127,30 +160,41 @@ export function PurchaseDetailsStep() {
   const maxDownPayment = Math.floor(motorPrice * 0.5);
   const downPaymentPercentage = motorPrice > 0 ? Math.round((downPayment / motorPrice) * 100) : 0;
 
-  // Get dynamic term options based on motor price and promo
+  // Get dynamic amortization options based on motor price and promo.
+  // If a customer arrives from the calculator with a valid longer amortization,
+  // keep it visible instead of retaining a hidden selection that does not match
+  // any of the three cards below.
   const standardTermOptions = getFinancingTermOptions(motorPrice);
-  
-  // If special financing, use promo terms (24, 36, 48, 60)
-  const termOptions = hasSpecialFinancing ? [24, 36, 48, 60] : standardTermOptions;
-  const [shortTerm, midTerm, longTerm] = termOptions.length >= 3 
-    ? [termOptions[0], termOptions[1], termOptions[2]] 
+  const restoredAmortization = Number(preferredTerm);
+  const hasRestoredStandardAmortization =
+    !hasSpecialFinancing &&
+    Number.isFinite(restoredAmortization) &&
+    !standardTermOptions.includes(restoredAmortization);
+
+  // Special promotions retain their own permitted terms. Standard TD estimates
+  // surface a calculator selection such as 240 months in the third card.
+  const termOptions = hasSpecialFinancing
+    ? [24, 36, 48, 60]
+    : hasRestoredStandardAmortization
+      ? [...standardTermOptions.slice(0, 2), restoredAmortization].sort((a, b) => a - b)
+      : standardTermOptions;
+  const [shortTerm, midTerm, longTerm] = termOptions.length >= 3
+    ? [termOptions[0], termOptions[1], termOptions[2]]
     : [termOptions[0], termOptions[0], termOptions[0]];
 
-  // Use promo rate if available, otherwise use tiered default
-  const defaultRate = amountToFinance >= 10000 ? 7.99 : 8.99;
-  const activeRate = (hasSpecialFinancing && isEligibleForSpecialFinancing) ? promoRate : defaultRate;
+  // An explicitly selected eligible promotion takes precedence. Otherwise use
+  // the same current standing Canadian financing rate as the motor calculator.
+  const selectedPromoRate =
+    hasSpecialFinancing && isEligibleForSpecialFinancing ? Number(promoRate) : null;
+  const activeRate = getMotorCalculatorApr(amountToFinance, selectedPromoRate);
 
   // Calculate payments for each dynamic term
   const paymentShort = calculateMonthly(amountToFinance, activeRate, shortTerm);
   const paymentMid = calculateMonthly(amountToFinance, activeRate, midTerm);
   const paymentLong = calculateMonthly(amountToFinance, activeRate, longTerm);
 
-  // Helper to format term display
+  // Keep the unit explicit because amortization and contract term are different.
   const formatTermDisplay = (months: number) => {
-    if (months >= 12) {
-      const years = months / 12;
-      return `${years} ${years === 1 ? 'year' : 'years'}`;
-    }
     return `${months} months`;
   };
 
@@ -161,7 +205,13 @@ export function PurchaseDetailsStep() {
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
 
-      {/* Expired Promo Notice — shown when a stale promotion was removed from a saved/restored quote */}
+      {motorPrice <= 0 && (
+        <div className="rounded-sm border border-repower-gold/35 bg-repower-cream p-4 text-sm leading-relaxed text-repower-navy-900/70">
+          Start from your quote, or enter the motor and all-in purchase total below. Nothing is submitted until your final review.
+        </div>
+      )}
+
+      {/* Expired Promo Notice, shown when a stale promotion was removed from a saved/restored quote */}
       {expiredPromoNotice && !noticeDismissed && (
         <div
           role="status"
@@ -172,7 +222,7 @@ export function PurchaseDetailsStep() {
             <p className="text-sm font-semibold text-foreground">
               {expiredPromoNotice.option === 'cash_rebate' && 'Factory rebate has expired'}
               {expiredPromoNotice.option === 'special_financing' && 'Special financing offer has expired'}
-              {expiredPromoNotice.option === 'no_payments' && '6 months no payments offer has expired'}
+              {expiredPromoNotice.option === 'no_payments' && 'No-payments offer has expired'}
               {!['cash_rebate', 'special_financing', 'no_payments'].includes(expiredPromoNotice.option) &&
                 'A promotion on your quote has expired'}
             </p>
@@ -196,8 +246,8 @@ export function PurchaseDetailsStep() {
       {/* Promo Status Banners */}
       {isPromoStillActive && promoOption === 'special_financing' && promoRate && (
         <div className={`rounded-lg p-4 flex items-start gap-3 ${
-          isEligibleForSpecialFinancing 
-            ? 'bg-green-50 border border-green-200' 
+          isEligibleForSpecialFinancing
+            ? 'bg-green-50 border border-green-200'
             : 'bg-amber-50 border border-amber-200'
         }`}>
           <Percent className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
@@ -220,12 +270,26 @@ export function PurchaseDetailsStep() {
                   Eligibility Warning
                 </p>
                 <p className="text-xs text-amber-700 mt-0.5">
-                  Special financing requires minimum ${FINANCING_MINIMUM.toLocaleString()}. 
-                  Current amount: {money(amountToFinance)}. 
+                  Special financing requires minimum ${FINANCING_MINIMUM.toLocaleString()}.
+                  Current amount: {money(amountToFinance)}.
                   Consider reducing your down payment to qualify.
                 </p>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {isPromoStillActive && promoSavings > 0 && (
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <Banknote className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-amber-800">
+              {promoName || 'Mercury promotion'} factory rebate: ${promoSavings.toLocaleString('en-CA')} CAD
+            </p>
+            <p className="text-xs text-amber-700 mt-0.5">
+              Already applied to the purchase amount{promoCombinationMode === 'layered' ? '; promotional financing is an additional optional benefit' : ''}.
+            </p>
           </div>
         </div>
       )}
@@ -235,10 +299,11 @@ export function PurchaseDetailsStep() {
           <CalendarOff className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
           <div>
             <p className="text-sm font-semibold text-blue-800">
-              6 Months No Payments
+              {activeNoPaymentsOption?.title || 'No-Payments Promotion'}
             </p>
             <p className="text-xs text-blue-700 mt-0.5">
-              Your first payment will be deferred for 6 months from your Mercury promotion
+              {activeNoPaymentsOption?.description ||
+                'Your first payment will be deferred under the active Mercury promotion. Final timing is subject to the current offer terms.'}
             </p>
           </div>
         </div>
@@ -270,7 +335,7 @@ export function PurchaseDetailsStep() {
               autoComplete="off"
               className={`${!isEditingMotor ? 'bg-muted' : ''} pr-10`}
             />
-            <FieldValidationIndicator 
+            <FieldValidationIndicator
               isValid={!errors.motorModel && !!watch('motorModel')}
               isTouched={touchedFields.motorModel}
               className="absolute right-3 top-1/2 -translate-y-1/2"
@@ -282,8 +347,9 @@ export function PurchaseDetailsStep() {
             size="icon"
             onClick={() => setIsEditingMotor(!isEditingMotor)}
             className="min-h-[44px] min-w-[44px]"
+            aria-label={isEditingMotor ? 'Finish editing motor model' : 'Edit motor model'}
           >
-            <Pencil className="w-4 h-4" />
+            {isEditingMotor ? <Check className="w-4 h-4" /> : <Pencil className="w-4 h-4" />}
           </Button>
         </div>
         <FormErrorMessage error={errors.motorModel?.message} field="Motor model" />
@@ -291,14 +357,14 @@ export function PurchaseDetailsStep() {
 
       {/* Motor Price */}
       <div className="space-y-2">
-        <Label htmlFor="motorPrice">Total Purchase Price</Label>
+        <Label htmlFor="motorPrice">All-in Purchase Total</Label>
         <div className="relative">
           <Input
             id="motorPrice"
             type="number"
             inputMode="decimal"
             step="1"
-            {...register('motorPrice', { 
+            {...register('motorPrice', {
               valueAsNumber: true,
               setValueAs: (v) => Number(Number(v).toFixed(2))
             })}
@@ -311,22 +377,24 @@ export function PurchaseDetailsStep() {
               }
             }}
           />
-          <FieldValidationIndicator 
+          <FieldValidationIndicator
             isValid={!errors.motorPrice && motorPrice > 0}
             isTouched={touchedFields.motorPrice}
             className="absolute right-3 top-1/2 -translate-y-1/2"
           />
         </div>
-        <FormErrorMessage error={errors.motorPrice?.message} field="Total purchase price" />
+        <FormErrorMessage error={errors.motorPrice?.message} field="All-in purchase total" />
         <p className="text-sm text-muted-foreground font-light">
-          {money(motorPrice)} (includes HST and $299 processing fee)
+          {motorPrice > 0
+            ? `${money(motorPrice)} total — 13% HST and the $349 DealerPlan fee are already included.`
+            : 'Use the total from your quote, including 13% HST and the $349 DealerPlan fee. This form does not add them again.'}
         </p>
       </div>
 
       {/* Down Payment Slider */}
-      <div className="space-y-4">
+      {motorPrice > 0 && <div className="space-y-4">
         <Label>Down Payment</Label>
-        
+
         <div className="space-y-2">
           <Slider
             value={[downPayment]}
@@ -354,14 +422,14 @@ export function PurchaseDetailsStep() {
             autoComplete="off"
             className="pr-10"
           />
-          <FieldValidationIndicator 
+          <FieldValidationIndicator
             isValid={!errors.downPayment && downPayment >= 0}
             isTouched={true}
             className="absolute right-3 top-1/2 -translate-y-1/2"
           />
         </div>
         <FormErrorMessage error={errors.downPayment?.message} field="Down payment" />
-      </div>
+      </div>}
 
       {/* Trade-In Value */}
       {tradeInValue > 0 && (
@@ -377,7 +445,7 @@ export function PurchaseDetailsStep() {
               autoComplete="off"
               className="pr-10"
             />
-            <FieldValidationIndicator 
+            <FieldValidationIndicator
               isValid={!errors.tradeInValue && tradeInValue > 0}
               isTouched={touchedFields.tradeInValue}
               className="absolute right-3 top-1/2 -translate-y-1/2"
@@ -390,7 +458,7 @@ export function PurchaseDetailsStep() {
         </div>
       )}
 
-      <div className="rounded-lg border border-border bg-muted/50 p-4 space-y-2">
+      {motorPrice > 0 && <div className="rounded-lg border border-border bg-muted/50 p-4 space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-sm font-medium text-muted-foreground">Amount to Finance</span>
           <span className="text-2xl font-bold text-foreground">
@@ -398,19 +466,19 @@ export function PurchaseDetailsStep() {
           </span>
         </div>
         <p className="text-xs text-muted-foreground font-light">
-          Includes 13% HST and $299 Dealerplan processing fee
+          Includes 13% HST and $349 Dealerplan processing fee
         </p>
         {hasSpecialFinancing && isEligibleForSpecialFinancing && (
           <p className="text-xs text-green-600 font-medium">
             ✓ Qualifies for {promoRate}% APR special financing
           </p>
         )}
-      </div>
+      </div>}
 
-      {/* Preferred Term Selection */}
+      {/* Preferred Amortization Selection */}
       {amountToFinance > 0 && (
         <div className="space-y-3 animate-fade-in">
-          <Label className="text-sm font-medium">Choose Your Preferred Term</Label>
+          <Label className="text-sm font-medium">Choose Your Preferred Amortization</Label>
           {hasSpecialFinancing && isEligibleForSpecialFinancing && (
             <p className="text-xs text-green-600">
               Using promotional rate of {promoRate}% APR
@@ -422,8 +490,9 @@ export function PurchaseDetailsStep() {
               type="button"
               onClick={() => {
                 setSelectedTerm(String(shortTerm));
-                setValue('preferredTerm', String(shortTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(shortTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240', { shouldValidate: true });
               }}
+              aria-pressed={selectedTerm === String(shortTerm)}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
                 selectedTerm === String(shortTerm)
                   ? 'border-2 border-primary bg-primary/5'
@@ -444,8 +513,9 @@ export function PurchaseDetailsStep() {
               type="button"
               onClick={() => {
                 setSelectedTerm(String(midTerm));
-                setValue('preferredTerm', String(midTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(midTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240', { shouldValidate: true });
               }}
+              aria-pressed={selectedTerm === String(midTerm)}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md relative ${
                 selectedTerm === String(midTerm)
                   ? 'border-2 border-primary bg-primary/5'
@@ -469,8 +539,9 @@ export function PurchaseDetailsStep() {
               type="button"
               onClick={() => {
                 setSelectedTerm(String(longTerm));
-                setValue('preferredTerm', String(longTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(longTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240', { shouldValidate: true });
               }}
+              aria-pressed={selectedTerm === String(longTerm)}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
                 selectedTerm === String(longTerm)
                   ? 'border-2 border-primary bg-primary/5'
@@ -491,8 +562,8 @@ export function PurchaseDetailsStep() {
           </div>
           <p className="text-xs text-muted-foreground font-light text-center">
             {hasSpecialFinancing && isEligibleForSpecialFinancing
-              ? `Promotional ${promoRate}% APR applied. Your broker will confirm final terms.`
-              : 'Terms are tailored to your purchase amount. Your broker will confirm the best rate and final term.'}
+              ? `Promotional ${promoRate}% APR applied. Your lender will confirm final terms.`
+              : 'Payment estimates use the selected amortization. Options shown are based on the amount; longer amortization up to 240 months may be available on qualifying higher-value applications. TD contract terms are up to 60 months, and any remaining balance is due at maturity.'}
           </p>
         </div>
       )}

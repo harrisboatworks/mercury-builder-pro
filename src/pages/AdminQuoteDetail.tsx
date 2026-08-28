@@ -12,13 +12,11 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import AdminNav from '@/components/admin/AdminNav';
-import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
-import { DEALERPLAN_FEE } from '@/lib/finance';
-import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
+import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
-import QRCode from 'qrcode';
+import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
@@ -51,6 +49,7 @@ interface QuoteDetail {
   lead_status?: string;
   lead_source?: string;
   follow_up_date?: string | null;
+  _source?: 'customer_quotes' | 'saved_quotes';
 }
 
 const AdminQuoteDetail = () => {
@@ -62,6 +61,7 @@ const AdminQuoteDetail = () => {
   const [changeLogKey, setChangeLogKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
+  const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound'>('loading');
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
@@ -82,20 +82,75 @@ const AdminQuoteDetail = () => {
 
   useEffect(() => {
     document.title = 'Quote Detail | Admin';
+    const initTradeInOverride = (ti: any) => {
+      if (ti?.overrideValue) {
+        setTradeInOverride(String(ti.overrideValue));
+      } else if (ti?.estimatedValue) {
+        setTradeInOverride(String(ti.estimatedValue));
+      }
+    };
     const fetchOne = async () => {
-      const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).single();
-      if (!error && data) {
-        setQ(data as any);
-        setAdminDiscount(data.admin_discount || 0);
-        setAdminNotes(data.admin_notes || '');
-        setCustomerNotes(data.customer_notes || '');
-        // Initialize trade-in override from existing data
-        const ti = (data as any).quote_data?.tradeInInfo;
-        if (ti?.overrideValue) {
-          setTradeInOverride(String(ti.overrideValue));
-        } else if (ti?.estimatedValue) {
-          setTradeInOverride(String(ti.estimatedValue));
+      setLoadState('loading');
+      try {
+        // Try customer_quotes first (primary lead table)
+        const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).maybeSingle();
+        if (!error && data) {
+          setQ({ ...(data as any), _source: 'customer_quotes' });
+          setAdminDiscount(data.admin_discount || 0);
+          setAdminNotes(data.admin_notes || '');
+          setCustomerNotes(data.customer_notes || '');
+          initTradeInOverride((data as any).quote_data?.tradeInInfo);
+          setLoadState('loaded');
+          return;
         }
+
+        // Fall back to saved_quotes (anonymous browsing leads, saved/deposit quotes)
+        const { data: sq, error: sqError } = await (supabase as any)
+          .from('saved_quotes')
+          .select('*')
+          .eq('id', id)
+          .maybeSingle();
+        if (!sqError && sq) {
+          const qs = sq.quote_state || {};
+          const motor = qs.motor || {};
+          const isAnonymous = sq.email === 'anonymous@soft-lead.local' || sq.email === 'pdf-download@placeholder.com';
+          const isSoftLead = sq.is_soft_lead === true;
+          const finalPrice = qs.finalPrice || qs.frozenPricing?.total || 0;
+          const mapped: QuoteDetail = {
+            id: sq.id,
+            created_at: sq.created_at,
+            customer_name: qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
+            customer_email: isAnonymous ? '' : (sq.email || ''),
+            customer_phone: qs.customerPhone || null,
+            base_price: qs.basePrice || motor.price || 0,
+            final_price: finalPrice,
+            deposit_amount: sq.deposit_amount || 0,
+            loan_amount: 0,
+            monthly_payment: 0,
+            term_months: 0,
+            total_cost: finalPrice,
+            tradein_value_pre_penalty: qs.tradeInInfo?.estimatedValue || null,
+            tradein_value_final: qs.tradeInInfo?.finalValue || null,
+            penalty_applied: false,
+            customer_notes: qs.customerNotes || null,
+            is_admin_quote: qs.isAdminQuote || false,
+            quote_data: qs,
+            lead_status: sq.deposit_status === 'paid' ? 'deposit_paid' : (isSoftLead || isAnonymous ? 'browsing' : 'saved'),
+            lead_source: sq.email === 'pdf-download@placeholder.com' ? 'pdf_download' : 'website',
+            follow_up_date: null,
+            _source: 'saved_quotes',
+          };
+          setQ(mapped);
+          setCustomerNotes(qs.customerNotes || '');
+          initTradeInOverride(qs.tradeInInfo);
+          setLoadState('loaded');
+          return;
+        }
+
+        // Not found in either table
+        setLoadState('notfound');
+      } catch {
+        setLoadState('notfound');
       }
     };
     fetchOne();
@@ -326,6 +381,9 @@ const AdminQuoteDetail = () => {
       case 'scheduled': return <Badge variant="default">Scheduled</Badge>;
       case 'contacted': return <Badge variant="outline">Contacted</Badge>;
       case 'closed': return <Badge variant="destructive">Closed</Badge>;
+      case 'deposit_paid': return <Badge variant="default">Deposit Paid</Badge>;
+      case 'browsing': return <Badge variant="secondary">Browsing</Badge>;
+      case 'saved': return <Badge variant="outline">Saved</Badge>;
       default: return <Badge variant="secondary">Unknown</Badge>;
     }
   };
@@ -361,79 +419,21 @@ const AdminQuoteDetail = () => {
     setIsGeneratingPDF(true);
     try {
       const qd = q.quote_data;
-      const motor = qd.motor || {};
-      
-      // Motor pricing - use motor's built-in savings as dealer discount
-      const motorMSRP = motor.msrp || motor.originalPrice || q.base_price || 0;
-      const motorSavings = motor.savings || 0;  // Built-in dealer discount
-      const adminDiscountValue = q.admin_discount || qd.adminDiscount || 0;  // Admin's special discount
-      
-      // Promo rebate - parse the selectedPromoValue (e.g., "$250 rebate" -> 250)
-      const promoValueStr = qd.selectedPromoValue || '';
-      const promoValue = qd.selectedPromoOption === 'cash_rebate' 
-        ? (parseInt(promoValueStr.replace(/[^0-9]/g, '')) || 0) 
-        : 0;
-      
-      // Motor subtotal after all discounts
-      const motorSubtotal = motorMSRP - motorSavings - adminDiscountValue - promoValue;
-      
-      // Accessories - use persisted breakdown, or recompute for legacy quotes
-      let accessoryBreakdown = qd.accessoryBreakdown;
-      
-      if (!accessoryBreakdown || accessoryBreakdown.length === 0) {
-        // Legacy quote: recompute from saved quote data
-        accessoryBreakdown = buildAccessoryBreakdown({
-          selectedOptions: qd.selectedOptions || [],
-          motor: qd.motor || {},
-          boatInfo: qd.boatInfo,
-          purchasePath: qd.purchasePath,
-          installConfig: qd.installConfig,
-          looseMotorBattery: qd.looseMotorBattery,
-          selectedPackage: qd.selectedPackage?.id || 'good',
-          adminCustomItems: qd.adminCustomItems || [],
-          tradeInInfo: qd.tradeInInfo,
-        });
+      const snapshot = buildLegacyQuotePdfSnapshot(qd, q.created_at || undefined);
+      if (!snapshot) {
+        throw new Error('This older record has no exact PDF price snapshot. Open it in Edit Quote and refresh the summary before generating a customer PDF.');
+      }
+      const snapshotAdminDiscount = snapshot.pricing.adminDiscount || 0;
+      if (Math.abs(snapshotAdminDiscount - (q.admin_discount || 0)) > 0.01) {
+        throw new Error('The admin discount changed after this PDF snapshot. Open Edit Quote and refresh the summary so totals, tax and payment stay exact.');
       }
       
-      // For loose motor path with no items, add clamp-on placeholder
-      if (qd.purchasePath === 'loose' && accessoryBreakdown.length === 0) {
-        accessoryBreakdown = [{
-          name: 'Clamp-On Installation',
-          price: 0,
-          description: 'DIY-friendly mounting system (no installation labor required)'
-        }];
-      }
-      
-      // Calculate totals
-      console.log('[Admin PDF] accessoryBreakdown items:', accessoryBreakdown.length, JSON.stringify(accessoryBreakdown));
-      const accessoriesTotal = accessoryBreakdown.reduce((sum: number, a: any) => sum + (a.price || 0), 0);
-      const tradeInValue = qd.tradeInInfo?.hasTradeIn 
-        ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) 
-        : 0;
-      const subtotalBeforeTax = motorSubtotal + accessoriesTotal - tradeInValue;
-      const taxAmount = subtotalBeforeTax * 0.13;
-      const totalPrice = subtotalBeforeTax + taxAmount;
-      
-      // Financing info - extract from qd.financing object
-      const financing = qd.financing || {};
-      const financingTerm = financing.term || q.term_months || 48;
-      const financingRate = financing.rate || 7.99;
-      const monthlyPayment = q.monthly_payment || qd.monthlyPayment || Math.round(totalPrice / financingTerm);
-      
-      // Get selected package info
-      const selectedPackage = qd.selectedPackage || null;
-      
-      // Generate QR code — always, for both cash and financing buyers
-      // Points to financing app with prefilled params for all quotes
-      // QR always points to the saved quote page (works for both cash & financing)
+      // Both saved_quotes and customer_quotes IDs are supported by the shared
+      // quote loader, so this link can honestly reopen either record type.
       const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
-      let financingQrCode = '';
+      let savedQuoteQrCode: string | undefined;
       try {
-        financingQrCode = await QRCode.toDataURL(qrTargetUrl, {
-          width: 200,
-          margin: 1,
-          color: { dark: '#111827', light: '#ffffff' }
-        });
+        savedQuoteQrCode = await generateSavedQuoteQrCode(qrTargetUrl);
       } catch (error) {
         console.error('QR code generation failed:', error);
       }
@@ -444,54 +444,11 @@ const AdminQuoteDetail = () => {
         customerName: q.customer_name || 'Valued Customer',
         customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',
-        motor: {
-          model: motor.model || motor.display_name || 'Motor',
-          hp: motor.horsepower || motor.hp || 0,
-          msrp: motorMSRP,
-          base_price: motorMSRP - motorSavings,
-          sale_price: motorSubtotal,
-          dealer_price: motorMSRP - motorSavings,
-          savings: motorSavings,
-          model_year: motor.year || motor.model_year || new Date().getFullYear(),
-          category: motor.category || motor.motor_type || 'FourStroke',
-          imageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url
-        },
-        selectedPackage: selectedPackage ? {
-          id: selectedPackage.id || 'essential',
-          label: selectedPackage.label || 'Essential',
-          coverageYears: qd.warrantyConfig?.totalYears || selectedPackage.coverageYears || 7,
-          features: selectedPackage.features || []
-        } : undefined,
-        accessoryBreakdown,
-        ...(qd.tradeInInfo?.hasTradeIn && tradeInValue > 0 ? {
-          tradeInValue: tradeInValue,
-          tradeInInfo: {
-            brand: qd.tradeInInfo.brand,
-            year: qd.tradeInInfo.year,
-            horsepower: qd.tradeInInfo.horsepower,
-            model: qd.tradeInInfo.model
-          }
-        } : {}),
-        includesInstallation: qd.purchasePath === 'installed',
-        pricing: {
-          msrp: motorMSRP,
-          discount: motorSavings,  // Dealer discount from motor
-          adminDiscount: adminDiscountValue,  // Admin's special discount
-          promoValue: promoValue,
-          motorSubtotal: motorSubtotal,
-          subtotal: subtotalBeforeTax,
-          hst: taxAmount,
-          totalCashPrice: totalPrice,
-          savings: motorSavings + adminDiscountValue + promoValue
-        },
-        monthlyPayment: monthlyPayment,
-        financingTerm: financingTerm,
-        financingRate: financingRate,
-        financingQrCode,
-        selectedPromoOption: qd.selectedPromoOption,
-        selectedPromoValue: qd.selectedPromoValue
+        snapshot,
+        savedQuoteQrCode,
       };
       
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       const pdfUrl = await generateQuotePDF(pdfData);
       downloadPDF(pdfUrl, `Quote-${q.customer_name.replace(/\s+/g, '-')}.pdf`);
       toast({ title: 'PDF Downloaded', description: 'Quote PDF generated successfully.' });
@@ -509,8 +466,9 @@ const AdminQuoteDetail = () => {
     const selectedOption = q.quote_data.selectedPromoOption;
     const selectedValue = q.quote_data.selectedPromoValue;
     
-    // Get active promotion for expiry date (check for promo_options with choose_one type)
-    const activePromo = promotions.find(p => p.promo_options?.type === 'choose_one' || p.warranty_extra_years);
+    // Get active promotion for expiry date, regardless of whether its benefits
+    // are layered or require a customer choice.
+    const activePromo = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0 || p.warranty_extra_years);
     const expiryDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
     const warrantyYears = activePromo?.warranty_extra_years || 0;
     
@@ -535,6 +493,9 @@ const AdminQuoteDetail = () => {
             <Badge variant="outline" className="border-yellow-500 text-yellow-700 dark:text-yellow-300">
               Admin Created
             </Badge>
+          )}
+          {q?._source === 'saved_quotes' && (
+            <Badge variant="outline">Saved Quote</Badge>
           )}
         </div>
         <div className="flex gap-2">
@@ -567,9 +528,16 @@ const AdminQuoteDetail = () => {
         </div>
       </div>
       
-      {!q ? (
+      {loadState === 'loading' ? (
         <div className="flex items-center justify-center h-64">
           <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
+      ) : !q ? (
+        <div className="flex flex-col items-center justify-center h-64 gap-3 text-center">
+          <AlertTriangle className="w-8 h-8 text-muted-foreground" />
+          <p className="font-medium">Quote not found</p>
+          <p className="text-sm text-muted-foreground">This quote does not exist in customer quotes or saved quotes. It may have been deleted.</p>
+          <Button variant="secondary" onClick={() => navigate('/admin/quotes')}>Back to quotes</Button>
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
@@ -781,18 +749,22 @@ const AdminQuoteDetail = () => {
                 </h2>
                 <div className="space-y-2 text-sm">
                   <div className="font-medium text-emerald-700 dark:text-emerald-300">
-                    7-Year Factory-Backed Warranty
+                    {promo.warrantyYears > 0
+                      ? `${promo.totalWarranty}-Year Factory-Backed Warranty`
+                      : 'Current Mercury Promotion'}
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-600" />
                     <span>{promo.label}</span>
                     {promo.value && <Badge variant="secondary">{promo.value}</Badge>}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600" />
-                    <span>{promo.totalWarranty}-Year Factory Warranty</span>
-                    <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
-                  </div>
+                  {promo.warrantyYears > 0 && (
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      <span>{promo.totalWarranty}-Year Factory Warranty</span>
+                      <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
+                    </div>
+                  )}
                   {promo.expiryDate && (
                     <div className="flex items-center gap-2 text-muted-foreground pt-1 border-t mt-2">
                       <Calendar className="w-4 h-4" />

@@ -19,7 +19,7 @@ export function StatusIndicator() {
       if (error) throw error;
       setLastUpdate(data?.updated_at ? new Date(data.updated_at as unknown as string) : null);
     } catch (e) {
-      // fail silent – indicator is non-critical
+      // fail silent, indicator is non-critical
     } finally {
       setLoading(false);
     }

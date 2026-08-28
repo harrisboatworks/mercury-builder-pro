@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, ArrowRight } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { DEALERPLAN_FEE } from '@/lib/finance';
+import { getFinancingApplicationUrl } from '@/lib/financingApplicationLink';
 
 export interface FinancingCTAData {
   price: number;
@@ -17,18 +19,13 @@ interface FinancingCTACardProps {
 }
 
 export function FinancingCTACard({ data }: FinancingCTACardProps) {
-  const { price, monthly, term, rate, motorModel, motorId } = data;
+  const { price, monthly, term, rate, motorModel } = data;
   
   // Calculate total cost for display
-  const totalWithTax = Math.round(price * 1.13);
-  const dealerplanFee = 299;
-  const totalFinanced = totalWithTax + dealerplanFee;
+  const dealerplanFee = DEALERPLAN_FEE;
   
   // Build financing application URL with motor context
-  const financingParams = new URLSearchParams();
-  if (motorModel) financingParams.set('motor', motorModel);
-  if (price) financingParams.set('price', price.toString());
-  const financingUrl = `/financing-application${financingParams.toString() ? `?${financingParams.toString()}` : ''}`;
+  const financingUrl = getFinancingApplicationUrl(data, dealerplanFee);
   
   return (
     <motion.div
@@ -40,9 +37,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
       {/* Header */}
       <div className="px-4 py-3 border-b border-gray-100 bg-white/50">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center">
-            <Calculator className="w-3.5 h-3.5 text-blue-600" />
-          </div>
+          <Calculator className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.75} />
           <span className="text-sm font-medium text-gray-800">
             {motorModel ? `Financing for ${motorModel}` : 'Financing Estimate'}
           </span>
@@ -60,8 +55,8 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
           </div>
         </div>
         
-        <div className="text-xs text-gray-400 text-center border-t border-gray-100 pt-3 mb-4">
-          Based on ${price.toLocaleString()} + 13% HST + $299 fee
+        <div className="text-xs text-muted-foreground text-center border-t border-gray-100 pt-3 mb-4">
+          Based on ${price.toLocaleString()} + 13% HST + $349 fee
         </div>
         
         {/* Action Buttons */}

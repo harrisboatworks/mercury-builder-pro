@@ -22,7 +22,7 @@ export const QuoteStatusHeader = () => {
     return {
       motorInfo: `${motor.year} Mercury ${motor.hp}HP ${motor.model}`,
       pathBadge: path === 'installed' ? 'Installed' : 'Loose Motor',
-      pathColor: path === 'installed' ? 'bg-blue-500' : 'bg-green-500'
+      pathColor: path === 'installed' ? 'bg-repower-cream0' : 'bg-repower-cream0'
     };
   };
 

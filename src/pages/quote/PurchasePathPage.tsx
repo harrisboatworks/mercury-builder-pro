@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import PurchasePath from '@/components/quote-builder/PurchasePath';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -13,7 +14,7 @@ export default function PurchasePathPage() {
 
   useEffect(() => {
     document.title = 'Choose Installation Option | Harris Boat Works';
-    
+
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) {
       desc = document.createElement('meta');
@@ -31,12 +32,13 @@ export default function PurchasePathPage() {
     import('@/pages/quote/BoatInfoPage');
   }, []);
 
-  // Separate effect for access control check - only runs on mount
+  // Re-check once persisted quote state finishes loading so a direct URL cannot
+  // bypass the normal motor/options prerequisites.
   useEffect(() => {
     if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
       navigate('/quote/motor-selection');
     }
-  }, []);
+  }, [isNavigationBlocked, isStepAccessible, navigate, state.isLoading]);
 
   // Navigate after purchase path is set (state has been committed)
   useEffect(() => {
@@ -47,26 +49,9 @@ export default function PurchasePathPage() {
 
     // Small delay to ensure state is fully committed and navigation isn't blocked
     const navigationTimer = setTimeout(() => {
-      if (state.purchasePath === 'installed') {
-        // Check if it's a tiller motor
-        const model = (state.motor?.model || '').toUpperCase();
-        const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
-        const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
-        
-        if (isTiller) {
-          navigate('/quote/trade-in');
-        } else {
-          navigate('/quote/boat-info');
-        }
-      } else {
-        // For loose path
-        const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
-        if (isSmallTillerMotor) {
-          navigate('/quote/fuel-tank');
-        } else {
-          navigate('/quote/trade-in');
-        }
-      }
+      // Fuel-tank choices already live on Options. Keep both customer paths
+      // short and consistent instead of reintroducing a duplicate fuel step.
+      navigate(state.purchasePath === 'installed' ? '/quote/boat-info' : '/quote/trade-in');
     }, 150);
 
     return () => clearTimeout(navigationTimer);
@@ -75,12 +60,12 @@ export default function PurchasePathPage() {
   const handleStepComplete = (path: 'loose' | 'installed') => {
     pathSelectedOnThisPage.current = true;
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
-    
+
     // Clear installation config when selecting loose motor (no installation)
     if (path === 'loose') {
       dispatch({ type: 'SET_INSTALL_CONFIG', payload: null });
     }
-    
+
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     // Navigation handled by useEffect above
   };
@@ -92,22 +77,28 @@ export default function PurchasePathPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-        <div className="space-y-3 sm:space-y-6">
-          {/* Premium Back Button */}
-          <button 
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
             onClick={handleBack}
-            className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
             aria-label="Back to options"
           >
-            <ChevronLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back</span>
+            <ChevronLeft className="h-4 w-4" />
+            Back
           </button>
-          
+        </div>
+        <QuotePageShell
+          eyebrow="Step 3 · Purchase path"
+          title="Loose motor or professional install?"
+          subhead="Choose how you want to receive it. Your selection is confirmed before you move on, and you can change it later."
+          className="!py-6 md:!py-8"
+        >
           <PurchasePath
             selectedMotor={state.motor!}
+            selectedPath={state.purchasePath}
             onSelectPath={handleStepComplete}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );

@@ -1,0 +1,837 @@
+#!/usr/bin/env node
+/**
+ * Blog Timeline / Factual Validator
+ * ---------------------------------
+ * Hard-enforces known timeline facts about Harris Boat Works inside every
+ * blog article's prose (content + description). Fails the build if any
+ * article disagrees with the source-of-truth values below.
+ *
+ *   Owner takeover year ........ 2016  (Jay Harris took over)
+ *   Founder year ............... 1947  (grandfather George founded)
+ *   Current calendar year ...... 2026  (present-tense references)
+ *   Dealership age ............. CURRENT_YEAR - 1947
+ *
+ * Run: `npm run check:blog-timeline-facts` (also wired into prebuild).
+ */
+import { readFileSync, readdirSync } from 'node:fs';
+
+const OWNER_TAKEOVER_YEAR = 2016;
+const FOUNDER_YEAR = 1947;
+const CURRENT_YEAR = 2026;
+const EXPECTED_AGE = CURRENT_YEAR - FOUNDER_YEAR; // 79
+
+const BLOG_LANG_RX = /^(mandarin|korean|french|spanish|hindi|punjabi|tagalog|urdu|traditionalChinese)BlogArticles\.ts$/;
+const BLOG_FILES = readdirSync('src/data')
+  .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
+  .map((f) => `src/data/${f}`);
+const BLOG_TWIN_FILES = readdirSync('public/blog', { recursive: true })
+  .filter((f) => String(f).endsWith('.md'))
+  .map((f) => `public/blog/${f}`);
+
+// Extract every { slug: '...', ..., content: `...`, ..., description: '...' }
+// chunk. We keep this regex-based (no TS parse) because the file is a flat
+// array literal and the fields use predictable quoting.
+function extractArticles(src) {
+  const articles = [];
+  const slugRx = /slug:\s*['"]([^'"]+)['"]/g;
+  let m;
+  const positions = [];
+  while ((m = slugRx.exec(src)) !== null) positions.push({ slug: m[1], start: m.index });
+  positions.push({ slug: null, start: src.length });
+  for (let i = 0; i < positions.length - 1; i++) {
+    const block = src.slice(positions[i].start, positions[i + 1].start);
+    const content = readTemplate(block, 'content');
+    const description = readQuoted(block, 'description');
+    articles.push({ slug: positions[i].slug, content, description, raw: block, blockStart: positions[i].start });
+  }
+  return articles;
+}
+
+function readTemplate(block, field) {
+  const rx = new RegExp(`${field}:\\s*\``);
+  const m = block.match(rx);
+  if (!m) return '';
+  const start = m.index + m[0].length;
+  let i = start;
+  while (i < block.length) {
+    if (block[i] === '\\') { i += 2; continue; }
+    if (block[i] === '`') return block.slice(start, i);
+    i++;
+  }
+  return block.slice(start);
+}
+
+function readQuoted(block, field) {
+  const rx = new RegExp(`${field}:\\s*(['"])((?:\\\\.|(?!\\1).)*)\\1`, 's');
+  const m = block.match(rx);
+  return m ? m[2] : '';
+}
+
+const errors = [];
+const push = (file, slug, rule, snippet) =>
+  errors.push({ file, slug, rule, snippet: snippet.trim().slice(0, 160) });
+
+// Sentence-ish window helper for context-sensitive rules.
+function* sentences(text) {
+  const parts = text.split(/(?<=[.!?])\s+|\n+/);
+  for (const p of parts) if (p && p.trim()) yield p;
+}
+
+// ----- Rules -----------------------------------------------------------------
+
+// R1: owner takeover year
+const TOOK_OVER_RX = /\btook\s+over\b[^.\n]{0,80}?\b(19|20)\d{2}\b/gi;
+const TOOK_OVER_YEAR_RX = /\btook\s+over\b[^.\n]{0,80}?\b((?:19|20)\d{2})\b/i;
+function checkTakeover(text, push) {
+  const matches = text.match(TOOK_OVER_RX) || [];
+  for (const m of matches) {
+    const y = Number(m.match(TOOK_OVER_YEAR_RX)?.[1]);
+    if (y && y !== OWNER_TAKEOVER_YEAR) push('takeover-year', `${m} (expected ${OWNER_TAKEOVER_YEAR})`);
+  }
+}
+
+// R2: founder year (in same sentence as a founder cue word)
+const FOUNDER_CUE_RX = /\b(George|grandfather|founded|founding)\b/i;
+const FOUNDED_YEAR_RX = /\b(founded|started|opened|established)\b[^.\n]{0,80}?\b((?:19|20)\d{2})\b/i;
+function checkFounder(text, push) {
+  for (const s of sentences(text)) {
+    if (!FOUNDER_CUE_RX.test(s)) continue;
+    const fm = s.match(FOUNDED_YEAR_RX);
+    if (fm) {
+      const y = Number(fm[2]);
+      if (y !== FOUNDER_YEAR) push('founder-year', `${s} (expected ${FOUNDER_YEAR})`);
+    }
+  }
+}
+
+// R3: dealership age
+const AGE_RX = /\b(\d{1,3})\s*(?:\+)?\s*[-\u2013]?\s*years?\s+(?:in\s+business|of\s+business|operating|serving|in\s+operation|of\s+service|family[\s-](?:owned|run))/gi;
+function checkAge(text, push) {
+  const matches = text.match(AGE_RX) || [];
+  for (const m of matches) {
+    const n = Number(m.match(/\d{1,3}/)[0]);
+    // Allow +/- 1 because "almost 80" / "80 years" rounding is fine.
+    if (Math.abs(n - EXPECTED_AGE) > 1) push('dealership-age', `${m} (expected ~${EXPECTED_AGE} years since ${FOUNDER_YEAR})`);
+  }
+  // "since YYYY" only when the surrounding clause ties the year to the
+  // FOUNDING / family ownership of the business. "Mercury dealer since 1965"
+  // is a separate, legitimate milestone (year HBW became a Mercury dealer)
+  // and must not trip this rule.
+  const SINCE_RX = /\b(?:family[\s-](?:owned|run|operated)|in\s+business|in\s+operation|business\s+founded|operating|serving\s+Ontario)[^.\n]{0,40}?\bsince\s+((?:19|20)\d{2})\b/gi;
+  let sm;
+  while ((sm = SINCE_RX.exec(text)) !== null) {
+    const y = Number(sm[1]);
+    if (y !== FOUNDER_YEAR) {
+      push('since-year', `${sm[0]} (family-ownership claim must be since ${FOUNDER_YEAR})`);
+    }
+  }
+
+}
+
+// R4: present-tense "this year/season" claims must agree with CURRENT_YEAR.
+// We intentionally exclude "as of <Month> <day>, YYYY" because that is a
+// regulatory effective-date construction (the year is just the date suffix,
+// not a "this year" claim).
+const PRESENT_RX = /\b(?:this\s+(?:year|season|spring|summer|fall|winter)|currently|right\s+now)\b[^.\n]{0,40}?\b((?:19|20)\d{2})\b/gi;
+function checkPresent(text, push) {
+  let m;
+  while ((m = PRESENT_RX.exec(text)) !== null) {
+    const y = Number(m[1]);
+    if (y !== CURRENT_YEAR) push('present-year', `${m[0]} (expected ${CURRENT_YEAR})`);
+  }
+}
+
+// R5: dealer pages must not imply that storage, service, installations, or
+// customer access operate year-round. Negative statements such as "we don't
+// offer year-round storage" remain allowed because they state the boundary.
+const DEALER_PAGE_SLUG_RX = /^mercury-dealer-/;
+const SEASONAL_STORAGE_DEALER_SLUGS = new Set([
+  'mercury-dealer-ajax-ontario-hbw',
+  'mercury-dealer-bowmanville-ontario-hbw',
+  'mercury-dealer-cobourg-ontario-hbw',
+  'mercury-dealer-lindsay-ontario-hbw',
+  'mercury-dealer-northumberland-county-hbw',
+  'mercury-dealer-oshawa-ontario-hbw',
+  'mercury-dealer-peterborough-ontario-hbw',
+  'mercury-dealer-port-hope-ontario-hbw',
+  'mercury-dealer-whitby-ontario-hbw',
+]);
+const UNSCOPED_SEASONAL_CLAIMS = [
+  {
+    rx: /\byear-round\b[^.\n]{0,60}\bstorage\b/i,
+    rule: 'no-year-round-storage-claim',
+    allow: /\b(?:no|not|never)\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b|\bdo(?:es)?n['’]t\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b|\bdo(?:es)? not\b[^.\n]{0,80}\byear-round\b[^.\n]{0,60}\bstorage\b/i,
+  },
+  {
+    rx: /\byear-round (?:service|installations?|customer access|operations?|option)\b|\bopen 365\b|\bone marina, all season\b/i,
+    rule: 'no-year-round-operations-claim',
+  },
+  {
+    rx: /\b(?:offers?|provides?|has) (?:indoor|heated|climate-controlled) storage\b/i,
+    rule: 'outdoor-storage-only',
+  },
+  {
+    rx: /\b(?:service|installations?|repairs?) (?:continues?|runs?|is available) (?:through|all) winter\b/i,
+    rule: 'no-winter-shop-work',
+  },
+];
+function checkDealerSeasonalClaims(slug, text, push) {
+  if (!DEALER_PAGE_SLUG_RX.test(slug)) return;
+  const yearRoundStorageCheck = UNSCOPED_SEASONAL_CLAIMS[0];
+  for (const sentence of sentences(text)) {
+    const match = sentence.match(yearRoundStorageCheck.rx);
+    if (match && !yearRoundStorageCheck.allow.test(sentence)) {
+      push(yearRoundStorageCheck.rule, sentence);
+    }
+  }
+  for (const check of UNSCOPED_SEASONAL_CLAIMS.slice(1)) {
+    const match = text.match(check.rx);
+    if (match) push(check.rule, match[0]);
+  }
+  if (SEASONAL_STORAGE_DEALER_SLUGS.has(slug)) {
+    if (
+      !/don['’]t offer indoor, heated, climate-controlled, summer, or year-round storage/i.test(text) &&
+      !/do not offer indoor or heated boat storage[\s\S]{0,160}don['’]t offer climate-controlled, summer, or year-round storage/i.test(text) &&
+      !/do not offer indoor or heated boat storage[\s\S]{0,160}do not offer climate-controlled, summer, or year-round storage/i.test(text)
+    ) {
+      push('storage-denial-required', 'Missing the approved outdoor-winter-storage boundary.');
+    }
+    if (!/when we reopen in early April/i.test(text)) {
+      push('seasonal-reopen-wording', 'Missing the approved early-April reopening wording.');
+    }
+    const hardDateReopen = text.match(/(?:when|after) we reopen April 1/i);
+    if (hardDateReopen) push('no-hard-reopen-date', hardDateReopen[0]);
+  }
+}
+
+// R6: article-specific operating contracts that previously drifted back into
+// customer-facing copy. Keep these semantic and narrow: they protect durable
+// HBW business rules without turning ordinary wording changes into failures.
+const GTA_DRIVE_IN_REQUIRED = [
+  {
+    rx: /closed December 1 through April 1/i,
+    rule: 'winter-closure',
+  },
+  {
+    rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+    rule: 'conditional-boat-pickup',
+  },
+  {
+    rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+    rule: 'no-delivery-or-mobile',
+  },
+];
+
+const GTA_DRIVE_IN_FORBIDDEN = [
+  {
+    rx: /does not pick up, deliver, haul/i,
+    rule: 'no-stale-hard-no-pickup',
+  },
+  {
+    rx: /commercial boat transport services|work with several Ontario marine transport services/i,
+    rule: 'no-third-party-transport',
+  },
+  {
+    rx: /\$(?:300-\$500|300-\$600) each way/i,
+    rule: 'no-third-party-transport-pricing',
+  },
+  {
+    rx: /we can refer|recommend local towing services/i,
+    rule: 'no-transport-referrals',
+  },
+  {
+    rx: /maintenance during the off-season|everything happens while the boat is stored/i,
+    rule: 'no-winter-shop-work',
+  },
+  {
+    rx: /off-season weekend hours are reduced/i,
+    rule: 'winter-closure',
+  },
+];
+
+const ARTICLE_CONTRACTS = {
+  'winter-storage-near-toronto-hbw': {
+    required: [
+      {
+        rx: /offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /indoor unheated \(limited availability/i,
+        rule: 'no-indoor-storage',
+      },
+      {
+        rx: /battery removal\s*\+\s*indoor trickle charge/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /shop bandwidth November-March/i,
+        rule: 'no-winter-shop-work',
+      },
+      {
+        rx: /let you in for inspection/i,
+        rule: 'no-winter-customer-access',
+      },
+      {
+        rx: /commercial boat transport \(\$\d/i,
+        rule: 'no-third-party-transport-pricing',
+      },
+      {
+        rx: /\$(?:33|35)\/ft/i,
+        rule: 'no-stale-fixed-storage-rate',
+      },
+      {
+        rx: /spring commissioning add-on[^\n]*\$300-\$500/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /attribution:\s*Ken F\./i,
+        rule: 'no-fabricated-testimonial',
+      },
+      {
+        rx: /we periodically inspect storage areas/i,
+        rule: 'no-winter-yard-inspections',
+      },
+    ],
+  },
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': {
+    required: [
+      {
+        rx: /HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /do not offer indoor or heated boat storage[\s\S]{0,80}don't offer climate-controlled or year-round storage/i,
+        rule: 'no-indoor-or-year-round-storage',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /we do both/i,
+        rule: 'no-indoor-storage',
+      },
+      {
+        rx: /mobile shrinkwrap service/i,
+        rule: 'no-mobile-service',
+      },
+      {
+        rx: /HBW pricing 2025-2026/i,
+        rule: 'no-stale-storage-pricing',
+      },
+      {
+        rx: /\$(?:33|35)\/ft/i,
+        rule: 'no-stale-fixed-storage-rate',
+      },
+      {
+        rx: /we can refer you to dealers/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /access the boat through winter/i,
+        rule: 'no-winter-customer-access',
+      },
+      {
+        rx: /deliver to your slip/i,
+        rule: 'no-delivery',
+      },
+      {
+        rx: /311\+ storage contracts|300-400 boats/i,
+        rule: 'no-unverified-storage-volume',
+      },
+      {
+        rx: /spring commissioning add-on/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+  },
+  'outdoor-boat-storage-shrinkwrap-rice-lake': {
+    required: [
+      {
+        rx: /offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled or year-round storage/i,
+        rule: 'no-indoor-or-year-round-storage',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan/,
+        rule: 'battery-disconnect-not-removal',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /fenced, monitored lot|Fenced, with cameras|on-site daily through the off-season|staffed daily through the off-season/i,
+        rule: 'no-winter-staffing-or-security-promise',
+      },
+      {
+        rx: /We patch it|check the lot after big storms/i,
+        rule: 'no-winter-yard-inspections',
+      },
+      {
+        rx: /point you to other shops/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /2–3× outdoor storage|small discount over booking them separately/i,
+        rule: 'no-unsupported-storage-pricing',
+      },
+      {
+        rx: /Spring commissioning \(separate service|Spring commissioning is priced by/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /30 feet\. We're not taking|Anything over 28 ft/i,
+        rule: 'no-fixed-storage-size-limit',
+      },
+      {
+        rx: /Battery removal \(or trickle-charge setup\)|Fog the engine cylinders|¾ to full tank/i,
+        rule: 'no-universal-winterization-shortcuts',
+      },
+      {
+        rx: /we charge for the re-wrap/i,
+        rule: 'no-unverified-rewrap-charge',
+      },
+    ],
+  },
+  'best-marina-rice-lake-ontario': {
+    required: [
+      {
+        rx: /has operated in Gores Landing since 1947[\s\S]{0,100}Mercury Marine Premier dealer/i,
+        rule: 'history-and-dealer-status',
+      },
+      {
+        rx: /engine repairs are limited to Mercury and MerCruiser/i,
+        rule: 'mercury-service-only',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled, summer, or year-round storage/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan/,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /Plan pickup only after HBW confirms the approved work is complete/i,
+        rule: 'no-ready-to-run-promise',
+      },
+      {
+        rx: /Travel time depends on the starting point, traffic, weather, road work, and whether you are towing/i,
+        rule: 'no-fixed-drive-time',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /oldest marina on Rice Lake|oldest continuously operating Mercury dealer|only Premier dealer|closest full-service Mercury marina/i,
+        rule: 'no-unsupported-superlative',
+      },
+      {
+        rx: /65 seasonal slips|About 35-90 minutes|Downtown Toronto \| ~90 minutes|Markham \| ~75 minutes|Mississauga \| ~110 minutes/i,
+        rule: 'no-unverified-capacity-or-drive-times',
+      },
+      {
+        rx: /available by phone, text, or email anytime|season opens early April|earliest spring install slots/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /bad coil pack on Friday afternoon doesn't kill your long weekend|Friday-afternoon problem does not eat a long weekend/i,
+        rule: 'no-turnaround-promise',
+      },
+      {
+        rx: /Most common service items are in the building|Less common parts ship in one to two business days|source bizarre 1990s Mercruiser parts in a day or two/i,
+        rule: 'no-parts-availability-promise',
+      },
+      {
+        rx: /Factory-trained technicians[\s\S]{0,240}Training is renewed annually/i,
+        rule: 'no-unsupported-certification-detail',
+      },
+      {
+        rx: /typically bundle winterization[\s\S]{0,180}ready to launch|pick it up ready to run|plan the timeline so you only need to drive out once or twice/i,
+        rule: 'no-ready-to-run-or-trip-count-promise',
+      },
+      {
+        rx: /point you to other shops|recommend a qualified mechanic/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /every service a Mercury-powered boat needs|nothing gets handed off to a third shop/i,
+        rule: 'no-universal-service-scope',
+      },
+    ],
+  },
+  'boat-winterization-cost-ontario-2026': {
+    required: [
+      {
+        rx: /publishes its current 2026[–-]27 winterization and storage rates/i,
+        rule: 'canonical-winterization-pricing',
+      },
+      {
+        rx: /spring commissioning is included for HBW winter-storage customers and is \$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled, summer, or year-round storage/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan[\s\S]{0,80}Removal is not a universal HBW requirement/,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /can winterize other engine brands[\s\S]{0,120}Engine repairs are limited to Mercury and MerCruiser/i,
+        rule: 'winterization-versus-repair-scope',
+      },
+      {
+        rx: /584 completed winterization records from August through November 2025/,
+        rule: 'verified-winterization-volume',
+      },
+      {
+        rx: /Plan pickup or launch only after HBW confirms the authorized work is complete/i,
+        rule: 'no-ready-to-launch-promise',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /\$250\s*(?:to|[-–])\s*\$400|\$30\s*(?:to|[-–])\s*\$50|\$50\s*(?:to|[-–])\s*\$80|\$50\s*(?:to|[-–])\s*\$90|\$40\s*(?:to|[-–])\s*\$70|\$25\s*(?:to|[-–])\s*\$50/i,
+        rule: 'no-rejected-winterization-ranges',
+      },
+      {
+        rx: /\$549 winterization|\$2,000\s*(?:to|[-–])\s*\$5,000|\$1,500\s*(?:to|[-–])\s*\$4,500/i,
+        rule: 'no-unsupported-repair-pricing',
+      },
+      {
+        rx: /9\.9 HP tiller is a 90-minute job|250 HP V8 Verado is a 3-hour job/i,
+        rule: 'no-unsupported-labour-times',
+      },
+      {
+        rx: /available by phone, text, or email anytime|pickups resume in early April/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /point you to the right options|worth the premium at another shop/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /In-shop wrap costs less|Outdoor wrap costs slightly more|priced per foot/i,
+        rule: 'no-unapproved-shrinkwrap-pricing',
+      },
+      {
+        rx: /your slot is already locked|locks in your spring launch slot|booking early gets you the better slot|smarter and cheaper choice/i,
+        rule: 'no-slot-or-savings-promise',
+      },
+      {
+        rx: /under 60 HP|90 HP and up/i,
+        rule: 'no-generic-diy-horsepower-threshold',
+      },
+      {
+        rx: /Quickstor added to the fuel and run through the entire fuel system|Water pump inspection[\s\S]{0,100}Impeller condition checked/i,
+        rule: 'no-universal-winterization-procedure',
+      },
+    ],
+  },
+  'mercury-repower-cost-ontario-2026-cad': {
+    required: [
+      {
+        rx: /There is no dependable one-price-fits-all installed range for a Mercury repower/i,
+        rule: 'no-generic-installed-range',
+      },
+      {
+        rx: /These are \*\*not installed totals\*\*[\s\S]{0,240}before HST, trade-in, installation, controls, propeller, and rigging/i,
+        rule: 'bare-price-disclaimer',
+      },
+      {
+        rx: /compliance notice for an outboard-powered vessel 6 metres or shorter includes weight and horsepower limits/i,
+        rule: 'capacity-plate-first',
+      },
+      {
+        rx: /HBW does not promise a universal number of days/i,
+        rule: 'no-universal-repower-timeline',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /HBW does not buy used motors outright/i,
+        rule: 'trade-in-only',
+      },
+      {
+        rx: /no trade value[\s\S]{0,120}no-charge certified recycling/i,
+        rule: 'no-value-motor-recycling',
+      },
+      {
+        rx: /HBW arranges financing through Canadian marine lenders; it is not a Mercury-branded loan/i,
+        rule: 'financing-provider-scope',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /\$4,500-\$9,000|\$11,000-\$15,000|\$17,000-\$22,000|\$23,000-\$30,000|\$35,000-\$40,000/i,
+        rule: 'no-stale-installed-price-ranges',
+      },
+      {
+        rx: /\$2,000-\$4,500|\$250-\$900/i,
+        rule: 'no-unsupported-rigging-or-prop-range',
+      },
+      {
+        rx: /\b(?:1-2|2 to 5) days\b|install within days|ship immediately/i,
+        rule: 'no-fixed-repower-timeline',
+      },
+      {
+        rx: /Mercury-to-Mercury (?:usually keeps|repowers usually keep)|brand conversions[^.\n]{0,80}need new everything/i,
+        rule: 'no-blanket-rigging-compatibility',
+      },
+      {
+        rx: /Every HBW repower gets[\s\S]{0,120}(?:load-tested|on-water test)|Every repower gets an on-water test|No exceptions/i,
+        rule: 'no-universal-water-test-claim',
+      },
+      {
+        rx: /80% of the new-boat feeling|a third of the money|burns 25-35% less fuel/i,
+        rule: 'no-unsupported-value-or-fuel-claim',
+      },
+      {
+        rx: /old motor is worth money, even seized|trade-in credit, even on non-running motors|instant (?:number|trade-in)/i,
+        rule: 'no-guaranteed-trade-value',
+      },
+      {
+        rx: /No hidden fees/i,
+        rule: 'no-blanket-fee-claim',
+      },
+    ],
+  },
+  'mercury-outboard-dealer-toronto-why-drive-to-hbw': {
+    required: GTA_DRIVE_IN_REQUIRED,
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /\$1,500-\$3,000 less/i,
+        rule: 'no-unsupported-savings-range',
+      },
+    ],
+  },
+  'mercury-repower-gta-toronto-destination': {
+    required: GTA_DRIVE_IN_REQUIRED,
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /GTA boaters drive past three or four|labour rate[^.\n]*\$40-60/i,
+        rule: 'no-unsupported-competitor-statistics',
+      },
+      {
+        rx: /Typical ranges:\s*90 HP install|\$15,500-\$18,500|\$23,000-\$30,000|\$28,000-\$35,000/i,
+        rule: 'no-stale-repower-price-ranges',
+      },
+    ],
+  },
+  'boat-service-near-toronto-hbw-reach': {
+    required: [
+      ...GTA_DRIVE_IN_REQUIRED,
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /attribution:\s*Marco S\./i,
+        rule: 'no-fabricated-testimonial',
+      },
+      {
+        rx: /Spring commissioning[^\n]*\$300-\$500|Diagnostic fee \$80-\$120|\$200-\$400|\$500-\$700 all-in/i,
+        rule: 'no-unsupported-service-price-ranges',
+      },
+    ],
+  },
+  'toronto-to-rice-lake-drive-in-process': {
+    required: [
+      ...GTA_DRIVE_IN_REQUIRED,
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /safe limp-home or temporary fix/i,
+        rule: 'no-unsafe-generic-recovery',
+      },
+      {
+        rx: /one drive[\s\S]{0,80}(?:pickup|stored|storage)/i,
+        rule: 'dropoff-and-pickup-are-two-trips',
+      },
+    ],
+  },
+};
+
+function checkArticleContract(slug, text, push) {
+  const contract = ARTICLE_CONTRACTS[slug];
+  if (!contract) return;
+  for (const check of contract.required) {
+    if (!check.rx.test(text)) push(check.rule, `Required operating rule is missing from ${slug}`);
+  }
+  for (const check of contract.forbidden) {
+    const match = text.match(check.rx);
+    if (match) push(check.rule, match[0]);
+  }
+}
+
+// Keep in sync with scripts/check-blog-output-hygiene.ts.
+// Retired global denials that HBW never picks up boats. Motor pickup-only,
+// customer collection, no-delivery / no-mobile boundaries, and the Dec 1-Apr 1
+// closure remain allowed.
+const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
+  /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
+
+function checkStaleBoatPickupPolicy(text, push) {
+  const match = text.match(STALE_HBW_BOAT_PICKUP_DENIAL_RX);
+  if (match) push('stale-hard-no-boat-pickup', match[0]);
+}
+
+
+// ----- Drive ----------------------------------------------------------------
+
+for (const file of BLOG_FILES) {
+  const src = readFileSync(file, 'utf8');
+  const articles = extractArticles(src);
+  for (const a of articles) {
+    const text = `${a.description}\n${a.content}`;
+    const localPush = (rule, snippet) => push(file, a.slug, rule, snippet);
+    checkTakeover(text, localPush);
+    checkFounder(text, localPush);
+    checkAge(text, localPush);
+    checkPresent(text, localPush);
+    // Dealer-page policy also appears in the structured `faqs` array, which is
+    // customer-facing via FAQ schema. Scan the full article block so a corrected
+    // body answer cannot leave a contradictory structured answer behind.
+    checkDealerSeasonalClaims(a.slug, a.raw, localPush);
+    checkArticleContract(a.slug, text, localPush);
+    checkStaleBoatPickupPolicy(a.raw, localPush);
+  }
+}
+
+// Generated Markdown twins are public content surfaces too. Scan every twin
+// so a stale or hand-edited page cannot bypass the canonical source checks,
+// including dealer seasonal claims and the boat-pickup policy.
+for (const file of BLOG_TWIN_FILES) {
+  const slug = file.slice('public/blog/'.length, -'.md'.length);
+  const text = readFileSync(file, 'utf8');
+  const localPush = (rule, snippet) => push(file, slug, rule, snippet);
+  checkDealerSeasonalClaims(slug, text, localPush);
+  checkStaleBoatPickupPolicy(text, localPush);
+}
+
+const categoryCtaFile = 'src/components/blog/CategoryCTA.tsx';
+const categoryCtaSource = readFileSync(categoryCtaFile, 'utf8');
+if (!/HBW confirms the final installed total in a written quote/i.test(categoryCtaSource)) {
+  push(categoryCtaFile, 'shared-repower-cta', 'written-quote-boundary', 'Shared repower CTA must defer the final installed total to a written quote');
+}
+for (const staleClaim of [
+  /Two minutes from now you can have a real number for your boat/i,
+  /Instant trade estimate/i,
+]) {
+  const match = categoryCtaSource.match(staleClaim);
+  if (match) push(categoryCtaFile, 'shared-repower-cta', 'no-instant-price-or-trade-promise', match[0]);
+}
+
+if (errors.length) {
+  console.error(`\nBlog timeline-fact validation FAILED - ${errors.length} issue(s):\n`);
+  const byFile = new Map();
+  for (const e of errors) {
+    const key = `${e.file} :: ${e.slug}`;
+    if (!byFile.has(key)) byFile.set(key, []);
+    byFile.get(key).push(e);
+  }
+  for (const [k, list] of byFile) {
+    console.error(`  [${k}]`);
+    for (const e of list) console.error(`    - ${e.rule}: ${e.snippet}`);
+  }
+  console.error(`\nSource of truth: owner took over ${OWNER_TAKEOVER_YEAR}, founded ${FOUNDER_YEAR}, current year ${CURRENT_YEAR}.\n`);
+  process.exit(1);
+} else {
+  console.log(`Blog timeline-fact validation PASSED - ${BLOG_FILES.length} source file(s) and ${BLOG_TWIN_FILES.length} Markdown twin(s) checked.`);
+}

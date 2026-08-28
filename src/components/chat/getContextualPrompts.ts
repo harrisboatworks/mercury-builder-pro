@@ -29,16 +29,6 @@ export function getContextualPrompts(
   currentPage: string
 ): string[] {
   // ============== QUOTE BUILDER PAGES ==============
-  
-  // Package Selection page - warranty and coverage focus
-  if (currentPage.includes('/quote/package-selection')) {
-    return [
-      "What's the difference between packages?",
-      "Is the 7-year warranty worth it?",
-      "What's covered under Complete?",
-      "What does Premium add?"
-    ];
-  }
 
   // Promo Selection page - deal comparison focus (only relevant when promos exist)
   if (currentPage.includes('/quote/promo-selection')) {
@@ -50,13 +40,13 @@ export function getContextualPrompts(
     ];
   }
 
-  // Options page
-  if (currentPage.includes('/quote/options')) {
+  // Options / retired fuel-tank redirect — accessories, not warranty packages
+  if (currentPage.includes('/quote/options') || currentPage.includes('/quote/fuel-tank')) {
     return [
-      "What's in the Complete package?",
-      "Is the warranty worth it?",
-      "Help me pick a package",
-      "What's covered by Mercury?"
+      "Do I need a new fuel tank?",
+      "What does SmartCraft Connect do?",
+      "Is a service kit worth adding?",
+      "What's already included with this motor?"
     ];
   }
 
@@ -67,16 +57,6 @@ export function getContextualPrompts(
       "How long does installation take?",
       "Can I pick it up instead?",
       "Do you install at my dock?"
-    ];
-  }
-
-  // Fuel tank page
-  if (currentPage.includes('/quote/fuel-tank')) {
-    return [
-      "Do I need a new fuel tank?",
-      "What size tank should I get?",
-      "Can I use my existing tank?",
-      "What about fuel line compatibility?"
     ];
   }
 
@@ -146,13 +126,13 @@ export function getContextualPrompts(
   }
 
   // Motor selection page
-  if (currentPage === '/' || currentPage.includes('/quote/motor')) {
+  if (currentPage === '/' || currentPage === '/quote' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) {
     if (!motor) {
       return [
         "Help me pick the right motor",
         "What size do I need for my boat?",
         "What's a good motor for fishing?",
-        "What's a good motor for fishing?"
+        "What's a good motor for a pontoon?"
       ];
     }
   }
@@ -250,7 +230,7 @@ export function getContextualPrompts(
     return [
       `Is ${hp}HP enough for me?`,
       "What warranty comes with it?",
-      `${hp} vs ${hp + 25}HP — which one?`,
+      `${hp} vs ${hp + 25}HP, which one?`,
       "Good for pontoons?"
     ];
   }
@@ -280,7 +260,8 @@ export function getContextualPromptsWithPromo(
       return basePrompts;
     }
     
-    const promoQuestion = "Tell me about the 7-year warranty";
+    const totalCoverageYears = 3 + activePromo.warranty_extra_years;
+    const promoQuestion = `Tell me about the ${totalCoverageYears}-year warranty`;
     // Insert promo question at position 2 (after first two page-specific questions)
     return [
       ...basePrompts.slice(0, 2),
@@ -306,8 +287,7 @@ export function getContextualPromptsWithPerplexity(
   // If we have Perplexity-backed questions, blend one in
   if (perplexityQuestions && perplexityQuestions.length > 0) {
     // Skip pages that already have comprehensive prompts
-    if (currentPage.includes('/quote/package-selection') || 
-        currentPage.includes('/quote/promo-selection')) {
+    if (currentPage.includes('/quote/promo-selection')) {
       // These pages already have good coverage - just add one Perplexity question
       const perplexityQ = perplexityQuestions[0];
       // Only add if not already present
@@ -343,24 +323,16 @@ export function getPageWelcomeMessage(
 
   // ============== QUOTE BUILDER PAGES ==============
   
-  if (currentPage.includes('/quote/package-selection')) {
-    return "Comparing coverage packages? I can help you decide which one fits your needs.";
-  }
-  
   if (currentPage.includes('/quote/promo-selection')) {
     return "Ready to pick your bonus? I can explain each option and help you choose the best one.";
   }
   
-  if (currentPage.includes('/quote/options')) {
-    return "Hey! Need help picking a package? I can break down what's in each one.";
+  if (currentPage.includes('/quote/options') || currentPage.includes('/quote/fuel-tank')) {
+    return "Hey! Need help with tanks, batteries, or add-ons? I can tell you what's included versus optional.";
   }
   
   if (currentPage.includes('/quote/installation')) {
     return "Thinking about installation options? I can walk you through what's included.";
-  }
-  
-  if (currentPage.includes('/quote/fuel-tank')) {
-    return "Got questions about fuel tanks? I can help you figure out what you need.";
   }
   
   if (currentPage.includes('/quote/purchase-path')) {
@@ -384,8 +356,8 @@ export function getPageWelcomeMessage(
   }
 
   // Motor selection with motor context
-  if ((currentPage === '/' || currentPage.includes('/quote/motor')) && motor && hp > 0) {
-    return `Hey! Checking out the ${hp}HP ${family}? Solid choice — what do you want to know about it?`;
+  if ((currentPage === '/' || currentPage === '/quote' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) && motor && hp > 0) {
+    return `Hey! Checking out the ${hp}HP ${family}? Solid choice, what do you want to know about it?`;
   }
 
   // ============== OTHER PAGES ==============
@@ -395,14 +367,14 @@ export function getPageWelcomeMessage(
   }
   
   if (currentPage.includes('/promotions')) {
-    const promoMsg = activePromo?.warranty_extra_years && activePromo.warranty_extra_years >= 4
-      ? " The 7-year warranty deal is on right now!"
+    const promoMsg = activePromo?.warranty_extra_years && activePromo.warranty_extra_years > 0
+      ? ` A ${3 + activePromo.warranty_extra_years}-year warranty offer is active right now!`
       : "";
     return `Hey! Looking at the current deals?${promoMsg} I can help you find the best one.`;
   }
   
   if (currentPage.includes('/repower')) {
-    return "Thinking about repowering? Tell me about your boat — I'll help you figure out if it makes sense.";
+    return "Thinking about repowering? Tell me about your boat, I'll help you figure out if it makes sense.";
   }
   
   if (currentPage.includes('/contact')) {
@@ -432,6 +404,10 @@ export function getBoatTypeLabel(typeId: string): string {
 
 // Helper to check if current page is motor-focused (where motor prompts should take priority)
 export function isMotorFocusedPage(pathname: string): boolean {
-  const motorPages = ['/', '/quote/motor', '/repower', '/motors'];
-  return motorPages.some(p => pathname === p || pathname.startsWith(p + '/'));
+  return pathname === '/'
+    || pathname === '/quote'
+    || pathname === '/quote/motor-selection'
+    || pathname.startsWith('/quote/motor-selection/')
+    || pathname.startsWith('/repower')
+    || pathname.startsWith('/motors');
 }

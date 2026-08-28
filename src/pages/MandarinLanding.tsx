@@ -4,8 +4,12 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { Phone, Mail, Globe, MapPin, Wrench, Anchor, Ship, Warehouse, Navigation } from 'lucide-react';
+import { getPublishedMandarinArticles } from '@/data/mandarinBlogArticles';
 
 export default function MandarinLanding() {
+  const mandarinArticles = [...getPublishedMandarinArticles()].sort(
+    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
+  );
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -13,8 +17,8 @@ export default function MandarinLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/zh#webpage`,
         "url": `${SITE_URL}/zh`,
-        "name": "欢迎来到Harris Boat Works — 安大略省Mercury白金级授权经销商",
-        "description": "Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
+        "name": "欢迎来到Harris Boat Works, 安大略省Mercury Premier 授权经销商",
+        "description": "Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
         "inLanguage": "zh-Hans",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -79,14 +83,9 @@ export default function MandarinLanding() {
     <div className="min-h-screen bg-background" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
-        <meta name="description" content="Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
-        <link rel="canonical" href={`${SITE_URL}/zh`} />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
-        <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <meta property="og:title" content="欢迎来到Harris Boat Works — Mercury白金级授权经销商" />
-        <meta property="og:description" content="安大略省Mercury Marine白金级授权经销商。在线透明报价。" />
-        <meta property="og:url" content={`${SITE_URL}/zh`} />
+        <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
+        <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury Premier 授权经销商" />
+        <meta property="og:description" content="安大略省Mercury Marine Premier 授权经销商。在线透明报价。" />
         <meta property="og:locale" content="zh_CN" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
@@ -100,7 +99,7 @@ export default function MandarinLanding() {
             欢迎来到Harris Boat Works
           </h1>
           <p className="text-lg text-primary font-medium mb-2">
-            安大略省Mercury白金级授权经销商
+            安大略省Mercury Premier 授权经销商
           </p>
           <p className="text-sm text-muted-foreground">
             Harris Boat Works · 1947年创立 · Rice Lake, Gores Landing, ON · 905-342-2153
@@ -131,7 +130,7 @@ export default function MandarinLanding() {
               Harris Boat Works 于1947年创立，至今已有三代家族经营，是安大略省历史最悠久的独立船坞之一。我们位于Rice Lake湖畔的Gores Landing小镇，距多伦多市中心约1.5小时车程。
             </p>
             <p>
-              我们是 <strong>Mercury Marine 白金级授权经销商</strong>——这是Mercury厂家授予经销商的最高级别认证，代表最全面的零件库存、最高标准的技术培训，以及完整的厂家质保支持。
+              我们是 <strong>Mercury Marine Premier 授权经销商</strong>——这是Mercury厂家授予经销商的最高级别认证，代表最全面的零件库存、最高标准的技术培训，以及完整的厂家质保支持。
             </p>
           </div>
         </section>
@@ -165,7 +164,7 @@ export default function MandarinLanding() {
               许多顾客在购买船用发动机时，最担心的一件事就是：价格不透明，需要打电话"谈价格"，而且全程要用英语进行。
             </p>
             <p>
-              我们建立了 <a href="https://mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
+              我们建立了 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
             </p>
             <ul className="list-disc list-inside space-y-1 text-muted-foreground">
               <li>自行选择发动机型号、功率和配置</li>
@@ -194,7 +193,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">🌐 在线报价工具</h3>
                 <p className="text-muted-foreground text-sm">
-                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
+                  <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
                 </p>
               </div>
             </div>
@@ -212,7 +211,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">📞 电话</h3>
                 <p className="text-muted-foreground text-sm">
-                  905-342-2153 — 我们会尽量放慢语速，耐心沟通。
+                  905-342-2153, 我们会尽量放慢语速，耐心沟通。
                 </p>
               </div>
             </div>
@@ -224,7 +223,7 @@ export default function MandarinLanding() {
           <h2 className="text-2xl font-light text-foreground mb-4">为什么选择Harris Boat Works</h2>
           <div className="space-y-3 text-foreground text-sm">
             <p><strong>透明定价，没有套路。</strong> mercuryrepower.ca 上显示的价格，就是真实价格。所有顾客看到的完全一样。</p>
-            <p><strong>Mercury白金级经销商。</strong> Mercury厂家的最高级别认证。</p>
+            <p><strong>Mercury Premier 经销商。</strong> Mercury厂家的最高级别认证。</p>
             <p><strong>78年家族信任。</strong> 自1947年起，三代家族经营。</p>
             <p><strong>Rice Lake本地专家。</strong> 了解安大略省内陆湖区的水上条件和使用环境。</p>
           </div>
@@ -304,28 +303,23 @@ export default function MandarinLanding() {
 
         {/* Blog links */}
         <nav className="mt-4 space-y-2 text-center">
-          <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
-          <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
-            舷外机换新指南 →
-          </Link>
-          <Link to="/blog/zh/new-immigrant-ontario-boat-buying-guide" className="block text-primary hover:underline text-sm">
-            新移民购船指南 →
-          </Link>
-          <Link to="/blog/zh/rice-lake-fishing-guide-toronto-chinese" className="block text-primary hover:underline text-sm">
-            Rice Lake钓鱼攻略 →
-          </Link>
-          <Link to="/blog/zh/winterization-mercury-guide-zh" className="block text-primary hover:underline text-sm">
-            冬季保养指南 →
-          </Link>
-          <Link to="/blog/zh/mercury-115-vs-150-comparison-zh" className="block text-primary hover:underline text-sm">
-            Mercury 115 vs 150马力对比 →
-          </Link>
-          <Link to="/blog/zh/repower-vs-new-boat-zh" className="block text-primary hover:underline text-sm">
-            换发动机还是买新船？ →
-          </Link>
-          <Link to="/blog/zh/ontario-boating-regulations-zh" className="block text-primary hover:underline text-sm">
-            安大略省船只法规 →
-          </Link>
+          <p className="text-sm font-medium text-foreground mb-3">中文文章 ({mandarinArticles.length})</p>
+          <div className="flex flex-col gap-1.5">
+            {mandarinArticles.map((article) => (
+              <Link
+                key={article.slug}
+                to={`/blog/zh/${article.slug}`}
+                className="text-primary hover:underline text-sm"
+              >
+                {article.title}
+              </Link>
+            ))}
+          </div>
+          <p className="pt-4 text-sm text-muted-foreground">
+            <Link to="/" className="text-primary hover:underline">
+              English
+            </Link>
+          </p>
         </nav>
       </main>
 

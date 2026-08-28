@@ -17,11 +17,11 @@ export function classifyMotorFamily(
   const featureText = (features || []).join(' ').toUpperCase();
   
   // ProKicker - dedicated trolling motors (check first, most specific)
+  // Family-level feature copy can mention that ProKicker variants exist, so
+  // only the exact model name is authoritative for this classification.
   if (model.includes('PROKICKER') || 
       model.includes('PRO KICKER') ||
-      model.includes('PRO-KICKER') ||
-      featureText.includes('PROKICKER') ||
-      featureText.includes('PRO KICKER')) {
+      model.includes('PRO-KICKER')) {
     return 'ProKicker';
   }
   

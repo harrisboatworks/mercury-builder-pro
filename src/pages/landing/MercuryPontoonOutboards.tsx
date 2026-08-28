@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryPontoonOutboardsSEO, PONTOON_FAQ } from '@/components/seo/MercuryPontoonOutboardsSEO';
 import { ChevronRight, Anchor, Gauge, Ruler, Wrench } from 'lucide-react';
 
@@ -21,15 +22,16 @@ const sizingGuide = [
   { size: '14–16 ft single-tube', hp: '25–40 HP', note: 'Tiller or remote, light load' },
   { size: '16–18 ft single-tube', hp: '40–60 HP CT', note: 'Family cruising, calm water' },
   { size: '18–20 ft two-tube', hp: '60–90 HP CT', note: 'Cottage runabout, moderate load' },
-  { size: '20–22 ft two-tube', hp: '90–115 HP CT', note: 'Most popular range — versatile' },
+  { size: '20–22 ft two-tube', hp: '90–115 HP CT', note: 'Most popular range, versatile' },
   { size: '22–25 ft tri-toon', hp: '150 HP CT or larger', note: 'Watersports, heavy load, big water' }
 ];
 
 export default function MercuryPontoonOutboards() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryPontoonOutboardsSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
@@ -42,10 +44,10 @@ export default function MercuryPontoonOutboards() {
 
         <header className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-semibold text-foreground mb-4">
-            Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options (Rice Lake & Kawarthas)
+            Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options (Rice Lake & Kawarthas)
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pontoons are heavier than they look. The right Mercury for a pontoon isn't just a number on a sticker — it's a Command Thrust gearcase, the right shaft length, and a high-thrust prop. We've been rigging pontoons on Rice Lake since 1965.
+            Pontoons are heavier than they look. The right Mercury for a pontoon isn't just a number on a sticker, it's a Command Thrust gearcase, the right shaft length, and a high-thrust prop. We've been rigging pontoons on Rice Lake since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -73,9 +75,9 @@ export default function MercuryPontoonOutboards() {
             Command Thrust (CT) is Mercury's name for an engine paired with a larger gearcase, a lower gear ratio (more reduction), and a bigger high-thrust propeller. The same powerhead pushes more water at lower RPM. For a pontoon, that translates to:
           </p>
           <ul className="text-muted-foreground leading-relaxed mt-2 list-disc pl-6 space-y-1">
-            <li><strong>Better hole shot</strong> with a full load — the boat climbs onto plane instead of plowing.</li>
-            <li><strong>More pushing power at slow speeds</strong> — useful in wind, current, or trolling.</li>
-            <li><strong>Cleaner reverse</strong> — the bigger prop bites in reverse, helpful at the dock.</li>
+            <li><strong>Better hole shot</strong> with a full load, the boat climbs onto plane instead of plowing.</li>
+            <li><strong>More pushing power at slow speeds</strong>, useful in wind, current, or trolling.</li>
+            <li><strong>Cleaner reverse</strong>, the bigger prop bites in reverse, helpful at the dock.</li>
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-4">
             For a pontoon repower, Command Thrust is almost always the right call over the standard gearcase. The price difference is small. The handling difference is not.
@@ -110,7 +112,7 @@ export default function MercuryPontoonOutboards() {
         </section>
 
         <section className="mb-12 prose prose-neutral max-w-none dark:prose-invert">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Shaft length — long (20 in) vs extra-long (25 in)</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-4">Shaft length, long (20 in) vs extra-long (25 in)</h2>
           <p className="text-muted-foreground leading-relaxed">
             Pontoon transoms sit higher than a typical aluminum tin boat because the engine bolts to the back log, not a low transom. Most pontoons take a <strong>long shaft (20 in / "L")</strong>. Larger tri-toons with a raised transom platform sometimes take an <strong>extra-long shaft (25 in / "XL")</strong>.
           </p>
@@ -125,9 +127,9 @@ export default function MercuryPontoonOutboards() {
             Harris Boat Works is an authorized Legend Boats dealer, so we know the Legend pontoon rigging packages cold. We also rig Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons regularly. Common pairings we see:
           </p>
           <ul className="text-muted-foreground leading-relaxed mt-2 list-disc pl-6 space-y-1">
-            <li><strong>Legend Splash</strong> — Mercury 40–60 HP Command Thrust</li>
-            <li><strong>Legend Enjoy / Princecraft Sportfisher</strong> — Mercury 90–115 HP Command Thrust</li>
-            <li><strong>Legend Q-Series tri-toon / Sylvan Mirage</strong> — Mercury 150 HP Command Thrust or larger</li>
+            <li><strong>Legend Splash</strong>, Mercury 40–60 HP Command Thrust</li>
+            <li><strong>Legend Enjoy / Princecraft Sportfisher</strong>, Mercury 90–115 HP Command Thrust</li>
+            <li><strong>Legend Q-Series tri-toon / Sylvan Mirage</strong>, Mercury 150 HP Command Thrust or larger</li>
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-4">
             For other brands, we confirm bolt pattern, controls, and harness compatibility before quoting so there are no surprises at install.
@@ -157,7 +159,7 @@ export default function MercuryPontoonOutboards() {
             Ready to repower your pontoon?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Build a Mercury Command Thrust quote with real CAD pricing in 3 minutes — or call us at (905) 342-2153.
+            Build a Mercury Command Thrust quote with real CAD pricing in 3 minutes, or call us at (905) 342-2153.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
@@ -172,6 +174,7 @@ export default function MercuryPontoonOutboards() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

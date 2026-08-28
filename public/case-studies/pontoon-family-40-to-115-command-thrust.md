@@ -1,21 +1,24 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust
-last_updated: 2026-04-25
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS02
 slug: pontoon-family-40-to-115-command-thrust
 boat_type: "Pontoon boat"
 region: "Ontario cottage lakes"
+is_illustrative: true
 ---
 
 # Family pontoon: 40HP to 115HP Command Thrust
 
-A meaningful pontoon upgrade focused on full-load performance, better tube pulling, and less regret from underpowering.
+An illustrative comparison of an underpowered 40 HP pontoon setup with a properly rated 115 HP Command Thrust package.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ A meaningful pontoon upgrade focused on full-load performance, better tube pulli
 
 ## Recommendation
 
-Best for 21–24 foot pontoons carrying family, coolers, and watersports loads where a small motor feels strained.
+Consider only after confirming tube count, capacity plate, transom, passenger and gear load, watersports use, steering, and propeller.
 
-## Why it worked
+## Why this configuration may fit
 
-- Command Thrust suits heavier pontoon loads
-- Much better acceleration with passengers aboard
-- A more realistic horsepower match for modern family pontoons
+- Command Thrust can turn a larger propeller for a heavier load
+- The final horsepower must stay within the pontoon manufacturer's rating
+- Acceleration and handling are verified on the actual loaded boat
 
-## Customer quote
+## Planning takeaway
 
-> This is the kind of upgrade that turns a sluggish family pontoon into something people actually want to use all summer.
+A larger properly rated motor and Command Thrust gearcase may suit a heavier pontoon load, but the capacity plate and actual setup control.
 
 ## Quote a similar repower
 
@@ -50,7 +53,7 @@ Best for 21–24 foot pontoons carrying family, coolers, and watersports loads w
 
 ## Notes
 
-- All pricing in CAD. Pickup only at Gores Landing, ON.
+- All pricing in CAD. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. No couriers or third parties.
 - Final motor recommendation confirmed by Harris Boat Works staff.
 - Verado not used in default repower recommendations (special-order only).
 

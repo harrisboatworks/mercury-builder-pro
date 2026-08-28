@@ -34,6 +34,8 @@ export function lazyWithRetry<T extends ComponentType<any>>(
         return mod;
       } catch (err) {
         lastError = err;
+        const msg = String((err as { message?: string })?.message ?? err ?? '');
+        console.warn(`[lazyWithRetry] "${key}" attempt ${i + 1}/${retries + 1} failed:`, msg);
         // Brief backoff before retrying.
         await new Promise((r) => setTimeout(r, 200 * (i + 1)));
       }
@@ -43,7 +45,7 @@ export function lazyWithRetry<T extends ComponentType<any>>(
     // haven't already attempted a reload this session, do one hard reload.
     const message = String((lastError as { message?: string })?.message ?? lastError ?? '');
     const looksLikeChunkError =
-      /Loading chunk|Failed to fetch dynamically imported module|Importing a module script failed|ChunkLoadError/i.test(
+      /Loading chunk|Failed to fetch dynamically imported module|Importing a module script failed|ChunkLoadError|error loading dynamically imported module|Unable to preload CSS|Failed to fetch|NetworkError when attempting to fetch resource/i.test(
         message
       );
 
@@ -53,6 +55,7 @@ export function lazyWithRetry<T extends ComponentType<any>>(
     } catch {}
 
     if (looksLikeChunkError && !alreadyReloaded && typeof window !== 'undefined') {
+      console.warn(`[lazyWithRetry] "${key}" looks like stale chunk — hard reloading once.`);
       try {
         sessionStorage.setItem(RELOAD_FLAG, '1');
       } catch {}
@@ -62,6 +65,7 @@ export function lazyWithRetry<T extends ComponentType<any>>(
       return new Promise<{ default: T }>(() => {});
     }
 
+    console.error(`[lazyWithRetry] FATAL "${key}":`, lastError);
     throw lastError;
   });
 }

@@ -1,0 +1,164 @@
+---
+canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md
+last_updated: 2026-08-27
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
+title: "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake"
+description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18."
+category: "Dealer Locations"
+date_published: 2026-05-17
+date_modified: 2026-08-27
+keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury premier"]
+author: Harris Boat Works
+content_type: blog_article
+language: en-CA
+revenue_driver: repower
+---
+
+# Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake
+
+> Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
+
+**Category:** Dealer Locations  
+**Published:** 2026-05-17  
+**Last reviewed:** 2026-08-27  
+**Read time:** 6 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw
+
+## Quick Answer
+
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca.
+
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
+![Why Port Hope boaters drive to Harris Boat Works: about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
+
+## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
+
+Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north, Rice Lake, the Trent system, the Kawarthas.
+
+That's why Port Hope Mercury customers tend to end up at HBW. The boat is going north anyway, and the Mercury dealer being north makes the math work.
+
+## What Port Hope boaters typically use HBW for
+
+The Port Hope customer pattern looks like Cobourg's, with more weight toward the cottage owner profile:
+
+**The cottage owner**, has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
+
+**The salmon fisherman**, Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. [Mercury 9.9 ProKickers are common in this crowd](/blog/mercury-prokicker-rice-lake-fishing-guide).
+
+**The town-based boater**, keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
+
+For all three groups, the pattern is:
+- Spring commissioning
+- Mid-season service (impellers, fuel system, SmartCraft work)
+- [Repower decisions when the old motor is past mid-life](/blog/mercury-repower-cost-ontario-2026-cad)
+- Fall winterization + storage
+- Trade-in valuations when upgrading
+
+## The Mercury Premier factor
+
+Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Premier dealer.
+
+[Premier is Mercury's top dealer tier](/blog/best-mercury-dealer-ontario-hbw-difference), parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+
+For Port Hope customers with newer Mercury outboards under warranty, the closer Premier dealer typically wins the long-term service relationship.
+
+## Getting to Harris Boat Works from Port Hope
+
+Route: County Road 28 north from Port Hope through Garden Hill, then County Road 18 east to Gores Landing. Mostly rural county road. Last 15 minutes is scenic Rice Lake country.
+
+Approximate drive time: 30 minutes outside rush hour. From the Port Hope waterfront, allow 30 minutes. From the Highway 401 area of Port Hope, slightly shorter.
+
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Phone: 905-342-2153
+Service requests: hbw.wiki/service
+Motor pricing: mercuryrepower.ca
+
+## What HBW handles for Port Hope customers
+
+**Mercury outboard sales**
+Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite, common on Lake Ontario salmon rigs and on Kawartha bass boats.
+
+**Repower service**
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
+
+**Mercury parts and service**
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and MerCruiser.
+
+**Winter storage**
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+
+**Trailer-in for Lake Ontario boats**
+Port Hope customers with Lake Ontario boats can trailer up for major service. Half-hour drive each way works fine for routine maintenance.
+
+## What Port Hope buyers typically ask first
+
+The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost, motor, rigging, controls, prop, install labour, HST, at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
+
+That transparency is what most Port Hope informed buyers respond to. The drive becomes worth it when the dealer treats the buyer like an adult who can read a number.
+
+## What we see at HBW
+
+The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake, when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
+
+The other thing we see consistently: the Mercury 9.9 ProKicker installs are disproportionate from Port Hope addresses. Salmon fishermen and Kawartha anglers in Port Hope tend to know exactly what they want and just need a dealer that can install it cleanly.
+
+## How to start
+
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes. For [real Mercury prices in Canadian dollars](/pricing-reference) on every model, see our published price list.
+
+If you have a service issue, submit a request at hbw.wiki/service.
+
+For a motor purchase conversation, call: 905-342-2153.
+
+**Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
+
+## FAQs
+
+### Is there a Mercury Premier dealer in Port Hope?
+
+Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction.
+
+### How long is the drive from Port Hope to HBW?
+
+About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.
+
+### Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?
+
+Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup.
+
+### Will HBW service my Lake Ontario boat without me storing it on Rice Lake?
+
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and MerCruiser.
+
+### Does HBW offer pickup or delivery for Port Hope boats?
+
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Trailer parking is available on site for drop-offs.
+
+## Related guides
+
+- [Mercury Dealer Lindsay Ontario HBW](/blog/mercury-dealer-lindsay-ontario-hbw), Mercury dealer for Lindsay
+- [Mercury Dealer Northumberland HBW](/blog/mercury-dealer-northumberland-county-hbw), Mercury dealer for Northumberland County
+- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw), Mercury dealer for Ajax
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
+- [Mercury Dealer Brampton Ontario HBW](/blog/mercury-dealer-brampton-ontario-hbw), Mercury dealer for Brampton
+
+## Next steps
+
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- The only commercial next step for this article is the Mercury quote configurator.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

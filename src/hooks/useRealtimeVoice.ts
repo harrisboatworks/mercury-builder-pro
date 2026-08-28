@@ -96,7 +96,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     if (connected) {
       toast({
         title: "Voice chat connected",
-        description: "Harris is here — say something!",
+        description: "Harris is here. Say something!",
       });
     }
   }, [toast]);

@@ -57,10 +57,22 @@ serve(async (req) => {
       throw new Error('model_keys must be provided as an array');
     }
 
+    // Snapshot: which of these are currently in stock? Only those actually
+    // flip state — the rest are already out of stock and don't need an
+    // IndexNow ping (their public page is unchanged).
+    const { data: currentlyInStock } = await supabase
+      .from('motor_models')
+      .select('model_key')
+      .in('model_key', model_keys)
+      .eq('in_stock', true);
+    const flippedKeys = (currentlyInStock || [])
+      .map((m: any) => m.model_key)
+      .filter(Boolean);
+
     // Mark specific models as out of stock by model_key
     const { data, error } = await supabase
       .from('motor_models')
-      .update({ 
+      .update({
         in_stock: false,
         availability: 'Out of Stock',
         last_scraped: new Date().toISOString()
@@ -69,10 +81,12 @@ serve(async (req) => {
 
     if (error) throw error;
 
-    console.log(`Marked ${model_keys.length} models as out of stock:`, model_keys);
+    console.log(
+      `Marked ${model_keys.length} models as out of stock; ${flippedKeys.length} actually flipped from in_stock=true`,
+    );
 
-    // Fire-and-forget IndexNow ping so search engines re-crawl these motor pages
-    pingMotorUpdates(model_keys, 'mark-out-of-stock');
+    // Fire-and-forget IndexNow ping ONLY for motors that actually flipped.
+    pingMotorUpdates(flippedKeys, 'mark-out-of-stock');
 
     return new Response(JSON.stringify({
       success: true,

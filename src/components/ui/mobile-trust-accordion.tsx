@@ -27,7 +27,7 @@ const trustModals: Record<string, TrustModal> = {
     ]
   },
   platinum: {
-    title: "Platinum Mercury Dealer",
+    title: "Premier Mercury Dealer",
     description: "Family owned since 1947, serving Rice Lake area",
     details: [
       "Over 75 years serving Ontario boaters",
@@ -100,7 +100,7 @@ export const MobileTrustAccordion = () => {
                     alt="Harris Boat Works" 
                     className="h-8 w-auto"
                   />
-                  <span className="text-sm font-medium text-gray-900">Platinum Mercury Dealer</span>
+                  <span className="text-sm font-medium text-gray-900">Premier Mercury Dealer</span>
                 </button>
               </li>
             </ul>

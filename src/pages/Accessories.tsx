@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { AccessoryCard } from '@/components/accessories/AccessoryCard';
 import { ACCESSORIES_DATA, ACCESSORY_CATEGORIES } from '@/lib/accessories-data';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
@@ -15,8 +16,9 @@ export default function Accessories() {
     : ACCESSORIES_DATA.filter(acc => acc.category === selectedCategory);
 
   return (
-    <>
-      <LuxuryHeader />
+    <div className="min-h-screen bg-repower-paper">
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
       
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-4 pt-6 pb-2">
@@ -105,6 +107,7 @@ export default function Accessories() {
           </Link>
         </div>
       </main>
-    </>
+      <SiteFooter />
+    </div>
   );
 }

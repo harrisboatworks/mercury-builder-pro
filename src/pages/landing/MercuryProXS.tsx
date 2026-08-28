@@ -10,14 +10,15 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryProXSSEO, PRO_XS_FAQ, PRO_XS_STATIC_OFFERS } from '@/components/seo/MercuryProXSSEO';
 import { ChevronRight, Zap, Trophy, Gauge, Award } from 'lucide-react';
 
 interface ProXSVariant {
   hp: number;
   startingAt: number;
-  inStockCount: number;
+  inStockCount: number | null;
 }
 
 const HP_TIERS = [115, 150, 200, 250];
@@ -30,6 +31,10 @@ function formatCAD(n: number): string {
   }).format(n);
 }
 
+export function getProXsQuotePath(hp: number): string {
+  return `/quote/motor-selection?model=${hp}-pro-xs`;
+}
+
 export default function MercuryProXS() {
   const [variants, setVariants] = useState<ProXSVariant[] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -40,21 +45,18 @@ export default function MercuryProXS() {
       try {
         const { data, error } = await supabase
           .from('motor_models')
-          .select('horsepower, base_price, sale_price, dealer_price, in_stock, availability, family')
+          .select('horsepower, in_stock, availability, family')
           .eq('family', 'ProXS')
           .neq('availability', 'Exclude')
           .in('horsepower', HP_TIERS);
 
         if (error || !data) throw error;
 
-        const grouped = HP_TIERS.map(hp => {
+        const grouped = PRO_XS_STATIC_OFFERS.map(offer => {
+          const hp = offer.hp;
           const matches = data.filter(m => Number(m.horsepower) === hp);
-          const prices = matches
-            .map(m => Number(m.sale_price ?? m.base_price ?? m.dealer_price ?? 0))
-            .filter(p => p > 0);
-          const startingAt = prices.length ? Math.min(...prices) : 0;
           const inStockCount = matches.filter(m => m.in_stock).length;
-          return { hp, startingAt, inStockCount };
+          return { hp, startingAt: offer.startingAt, inStockCount };
         });
 
         if (!cancelled) {
@@ -68,7 +70,7 @@ export default function MercuryProXS() {
             PRO_XS_STATIC_OFFERS.map(o => ({
               hp: o.hp,
               startingAt: o.startingAt,
-              inStockCount: 0,
+              inStockCount: null,
             }))
           );
           setLoading(false);
@@ -82,9 +84,10 @@ export default function MercuryProXS() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryProXSSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         {/* Breadcrumb */}
@@ -106,7 +109,7 @@ export default function MercuryProXS() {
             Mercury Pro XS Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Tournament-grade performance from 115 to 250 HP. Current CAD bare-motor pricing and model-level availability from Harris Boat Works, Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -124,7 +127,7 @@ export default function MercuryProXS() {
           {[
             { icon: Zap, title: 'Hole-shot tuned', body: 'Aggressive calibration and performance gearcase for elite acceleration off the line.' },
             { icon: Gauge, title: 'Top-end speed', body: 'Tournament-grade engine timing and prop pitches built for maximum WOT.' },
-            { icon: Award, title: '7-year warranty', body: 'Full Mercury factory-backed coverage at pickup — direct from Mercury, no third-party.' },
+            { icon: Award, title: '3-year factory warranty', body: 'Standard Mercury Marine factory-backed coverage on every new Pro XS. Check current promotions for any eligible bonus coverage.' },
           ].map(({ icon: Icon, title, body }) => (
             <Card key={title} className="p-6 text-center">
               <Icon className="h-8 w-8 text-primary mx-auto mb-3" />
@@ -137,10 +140,10 @@ export default function MercuryProXS() {
         {/* HP tier pricing grid */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
-            Pro XS Lineup — Starting at (CAD)
+            Pro XS Lineup, Starting at (CAD)
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
-            Live pricing from Harris Boat Works inventory. Pickup only at Gores Landing, Rice Lake.
+            Current bare-motor pricing from the HBW pricing reference. Pickup only at Gores Landing, Rice Lake.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {(loading || !variants) &&
@@ -153,27 +156,44 @@ export default function MercuryProXS() {
               ))}
 
             {!loading && variants &&
-              variants.map(v => (
-                <Card key={v.hp} className="p-5 flex flex-col">
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                    {v.hp} HP Pro XS
-                  </div>
-                  <div className="text-2xl font-semibold text-foreground mb-1">
-                    {v.startingAt > 0 ? `from ${formatCAD(v.startingAt)}` : '—'}
-                  </div>
-                  <div className="text-xs text-muted-foreground mb-4">
-                    {v.inStockCount > 0
-                      ? `${v.inStockCount} variant${v.inStockCount === 1 ? '' : 's'} in stock`
-                      : 'Built to order'}
-                  </div>
-                  <Button asChild size="sm" variant="outline" className="mt-auto">
-                    <Link to="/quote/motor-selection">Configure</Link>
-                  </Button>
-                </Card>
-              ))}
+              variants.map(v => {
+                const quotePath = getProXsQuotePath(v.hp);
+                const priceLabel = v.startingAt > 0 ? `from ${formatCAD(v.startingAt)}` : 'View options';
+
+                return (
+                  <Card key={v.hp} className="p-5 flex flex-col">
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+                      {v.hp} HP Pro XS
+                    </div>
+                    <Link
+                      to={quotePath}
+                      aria-label={`View ${v.hp} HP Pro XS motors${v.startingAt > 0 ? ` starting at ${formatCAD(v.startingAt)}` : ''}`}
+                      className="group/price -mx-1 rounded px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <span className="block text-2xl font-semibold text-foreground underline-offset-4 group-hover/price:text-primary group-hover/price:underline">
+                        {priceLabel}
+                      </span>
+                      <span className="inline-flex items-center text-xs font-medium text-primary">
+                        Select this horsepower
+                        <ChevronRight className="ml-0.5 h-3.5 w-3.5 transition-transform group-hover/price:translate-x-0.5" />
+                      </span>
+                    </Link>
+                    <div className="text-xs text-muted-foreground mb-4">
+                      {v.inStockCount === null
+                        ? 'Check current availability'
+                        : v.inStockCount > 0
+                        ? `${v.inStockCount} variant${v.inStockCount === 1 ? '' : 's'} in stock`
+                        : 'Built to order'}
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="mt-auto">
+                      <Link to={quotePath}>Configure</Link>
+                    </Button>
+                  </Card>
+                );
+              })}
           </div>
           <p className="text-xs text-muted-foreground text-center mt-4">
-            Prices in CAD, all-in (plus HST). Financing from $5,000.
+            Prices in CAD for the bare motor, before HST, controls, propeller, rigging, and installation. Financing is available on eligible purchases from $5,000.
           </p>
         </section>
 
@@ -218,6 +238,7 @@ export default function MercuryProXS() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

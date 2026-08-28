@@ -37,7 +37,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Fuel Tank Configuration</h1>
-          <p className="text-gray-600">
+          <p className="text-repower-navy-900/65">
             {isInternalOnlyTiller && `Your ${selectedMotor?.horsepower}HP tiller motor has a built-in internal fuel system - no external connection available`}
             {isSmallTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`}
             {isMediumTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`}
@@ -56,38 +56,38 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
             <div className="space-y-3">
               {(isInternalOnlyTiller || isSmallTiller) && (
                 <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-600" />
+                  <Check className="w-5 h-5 text-repower-gold" />
                   <span>
                     {isInternalOnlyTiller ? "Built-in internal fuel system" : "Internal fuel tank"}
                   </span>
                 </div>
               )}
               <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-600" />
+                <Check className="w-5 h-5 text-repower-gold" />
                 <span>Propeller included</span>
                 {isMediumTiller && <Badge variant="secondary">$300 value</Badge>}
               </div>
               {isMediumTiller && (
                 <>
                   <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
+                    <Check className="w-5 h-5 text-repower-gold" />
                     <span>12L External Fuel Tank & Hose included</span>
                     <Badge variant="secondary">$199 value</Badge>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
+                    <Check className="w-5 h-5 text-repower-gold" />
                     <span>Free preparation service</span>
                     <Badge variant="secondary">$99 value</Badge>
                   </div>
                 </>
               )}
               <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-600" />
+                <Check className="w-5 h-5 text-repower-gold" />
                 <span>Ready for customer pickup - no installation required</span>
               </div>
               {isInternalOnlyTiller && (
-                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
-                  <p className="text-sm text-blue-800">
+                <div className="mt-4 p-3 bg-repower-cream border border-repower-navy-900/20 rounded-md">
+                  <p className="text-sm text-repower-navy-900">
                     <strong>Note:</strong> This motor is designed with a built-in fuel system and does not have 
                     an external fuel connection port. The internal tank provides reliable fuel supply for typical use.
                   </p>
@@ -119,7 +119,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
                       <span className="font-medium">12L External Fuel Tank & Hose</span>
                       <Badge variant="secondary">+$199</Badge>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-repower-navy-900/65">
                       Essential for extended operation. Tank connects to your motor's fuel inlet for reliable fuel supply.
                     </p>
                   </label>
@@ -137,19 +137,19 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         )}
 
         {isMediumTiller && (
-          <Card className="mb-8 bg-green-50 border-green-200">
+          <Card className="mb-8 bg-repower-cream border-repower-gold/30">
             <CardHeader>
-              <CardTitle className="text-green-800">All Extras Included!</CardTitle>
-              <CardDescription className="text-green-700">
+              <CardTitle className="text-repower-gold">All Extras Included!</CardTitle>
+              <CardDescription className="text-repower-gold">
                 Your 9.9-20HP tiller motor comes with everything you need - no additional purchases required
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-800 mb-2">
+                <div className="text-2xl font-bold text-repower-gold mb-2">
                   Total Value: $598 in FREE extras
                 </div>
-                <p className="text-green-700">
+                <p className="text-repower-gold">
                   Propeller, fuel tank system, and preparation service all included
                 </p>
               </div>

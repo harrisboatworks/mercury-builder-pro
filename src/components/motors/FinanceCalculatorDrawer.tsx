@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useCallback, useMemo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -18,7 +18,12 @@ import {
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuote } from '@/contexts/QuoteContext';
-import { calculatePaymentWithFrequency, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
+import {
+  calculatePaymentWithFrequency,
+  DEALERPLAN_FEE,
+  getMotorCalculatorApr,
+  type PaymentFrequency,
+} from '@/lib/finance';
 import { DollarSign, Calculator, Sparkles } from 'lucide-react';
 
 interface FinanceCalculatorDrawerProps {
@@ -39,19 +44,23 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(8.99);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
-  
+
   // Use Quote context and Active Promotions for correct promo data
   const { state } = useQuote();
   const { getSpecialFinancingRates, promotions } = useActivePromotions();
-  
+
   // Get effective promo rate based on user's selection
   const effectivePromoRate = useMemo(() => {
     if (state.selectedPromoOption === 'special_financing') {
       const rates = getSpecialFinancingRates();
       return rates?.[0]?.rate || null;
     }
-    return null; // Use tiered default
+    return null; // Use the current standing Mercury rate below
   }, [state.selectedPromoOption, getSpecialFinancingRates]);
+
+  const getCalculatorApr = useCallback((amount: number) => {
+    return getMotorCalculatorApr(amount, effectivePromoRate);
+  }, [effectivePromoRate]);
 
   const handleApplyForFinancing = () => {
     navigate('/financing-application', {
@@ -75,48 +84,39 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
   useEffect(() => {
     if (open && motor.price) {
       const motorPrice = Math.round(motor.price);
-      const totalWithFees = motorPrice * 1.13 + 299;
+      const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
       setTotalFinanced(Math.round(totalWithFees));
       setDown(0);
-      
-      // Set correct APR based on user's promo selection or tiered default
-      const tieredRate = getDefaultFinancingRate(Math.round(totalWithFees));
-      if (effectivePromoRate && effectivePromoRate < tieredRate) {
-        setApr(effectivePromoRate);
-      } else {
-        setApr(tieredRate);
-      }
+
+      // An explicitly selected special offer wins; otherwise use the current
+      // standing Mercury rate until it expires, then fall back to the tier.
+      setApr(getCalculatorApr(Math.round(totalWithFees)));
     }
-  }, [open, motor.price, effectivePromoRate]);
+  }, [open, motor.price, getCalculatorApr]);
 
   // Update APR when total financed changes
   useEffect(() => {
     if (totalFinanced > 0) {
-      const tieredRate = getDefaultFinancingRate(totalFinanced);
-      if (effectivePromoRate && effectivePromoRate < tieredRate) {
-        setApr(effectivePromoRate);
-      } else {
-        setApr(tieredRate);
-      }
+      setApr(getCalculatorApr(totalFinanced));
     }
-  }, [totalFinanced, effectivePromoRate]);
+  }, [totalFinanced, getCalculatorApr]);
 
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
-    
+
     if (!principal || principal <= 0) return { amount: 0, frequency, termPeriods: 0 };
-    
+
     const result = calculatePaymentWithFrequency(principal, frequency, apr);
     return { amount: result.payment, frequency, termPeriods: result.termPeriods };
   }, [totalFinanced, down, apr, frequency]);
 
   const breakdown = useMemo(() => {
-    const motorPrice = Math.round((totalFinanced - 299) / 1.13);
+    const motorPrice = Math.max(0, Math.round((totalFinanced - DEALERPLAN_FEE) / 1.13));
     const hst = Math.round(motorPrice * 0.13);
     return {
       motorPrice,
       hst,
-      financeFee: 299,
+      financeFee: DEALERPLAN_FEE,
       total: totalFinanced
     };
   }, [totalFinanced]);
@@ -150,7 +150,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   </div>
                   <div>
                     <div className="text-muted-foreground">Finance Fee</div>
-                    <div className="font-medium">$299</div>
+                    <div className="font-medium">${breakdown.financeFee.toLocaleString()}</div>
                   </div>
                   <div>
                     <div className="text-muted-foreground">Total Financed</div>
@@ -164,27 +164,27 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="totalFinanced">Total Financed</Label>
-                <Input 
-                  id="totalFinanced" 
-                  type="text" 
+                <Input
+                  id="totalFinanced"
+                  type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
-                  value={totalFinanced} 
+                  value={totalFinanced}
                   onChange={(e) => {
                     const value = e.target.value.replace(/[^0-9]/g, '');
                     setTotalFinanced(Number(value || 0));
-                  }} 
+                  }}
                   className="mt-1.5"
                 />
               </div>
               <div>
                 <Label htmlFor="down">Down Payment</Label>
-                <Input 
-                  id="down" 
-                  type="text" 
+                <Input
+                  id="down"
+                  type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
-                  value={down} 
+                  value={down}
                   onChange={(e) => {
                     const value = e.target.value.replace(/[^0-9]/g, '');
                     setDown(Number(value || 0));
@@ -194,12 +194,12 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
               </div>
               <div>
                 <Label htmlFor="apr">APR (%)</Label>
-                <Input 
-                  id="apr" 
-                  type="number" 
-                  step="0.01" 
-                  inputMode="decimal" 
-                  value={apr} 
+                <Input
+                  id="apr"
+                  type="number"
+                  step="0.01"
+                  inputMode="decimal"
+                  value={apr}
                   onChange={(e) => setApr(Number(e.target.value || 0))}
                   className="mt-1.5"
                 />
@@ -220,12 +220,12 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   { value: 'weekly' as PaymentFrequency, label: 'Weekly', id: 'weekly-drawer' }
                 ].map(({ value, label, id }) => (
                   <div key={value} className="relative">
-                    <RadioGroupItem 
-                      value={value} 
+                    <RadioGroupItem
+                      value={value}
                       id={id}
                       className="peer sr-only"
                     />
-                    <Label 
+                    <Label
                       htmlFor={id}
                       className="flex items-center justify-center px-3 py-2.5 text-sm border-2 border-border rounded-md cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-accent"
                     >
@@ -290,7 +290,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   </div>
                 )}
                 <div className="mt-3 text-xs text-muted-foreground">
-                  * Includes 13% HST and $299 finance fee. Estimates only, not a credit offer.
+                  * Includes 13% HST and ${DEALERPLAN_FEE} finance fee. Estimates only, not a credit offer.
                 </div>
               </CardContent>
             </Card>
@@ -298,7 +298,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
         </ScrollArea>
 
         <DrawerFooter className="gap-2">
-          <Button 
+          <Button
             onClick={handleApplyForFinancing}
             className="w-full"
             disabled={!motor.id || paymentCalculation.amount === 0}

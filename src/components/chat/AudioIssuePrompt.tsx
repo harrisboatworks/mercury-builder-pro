@@ -33,8 +33,8 @@ export const AudioIssuePrompt: React.FC<AudioIssuePromptProps> = ({
           </button>
           
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-              <VolumeX className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <VolumeX className="w-7 h-7 text-repower-mercury-red" strokeWidth={1.5} />
             </div>
             
             <div className="flex-1 min-w-0">

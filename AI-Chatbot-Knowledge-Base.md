@@ -177,7 +177,7 @@ When customers ask about specific motor features (electric start, tiller, shaft 
 ## Financing Details
 
 ### Mandatory Fee:
-- $299 Dealerplan processing fee on ALL financed purchases
+- $349 Dealerplan processing fee on ALL financed purchases
 - This is standard across all financing applications
 - Included in the quote builder calculations
 

@@ -1,3 +1,5 @@
+import { getWarrantyDisplay } from './warranty-display';
+
 export interface SMSTemplate {
   type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription' | 'chat_lead' | 'get7_campaign' | 'get7_reminder';
   generateMessage: (data: any) => string;
@@ -85,13 +87,20 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
   get7_campaign: {
     type: 'get7_campaign' as const,
     generateMessage: (data) => {
-      const { customerName, expiresIn, promoUrl } = data;
+      const { customerName, expiresIn, promoUrl, warrantyExtraYears } = data;
+      const warranty = getWarrantyDisplay(Number(warrantyExtraYears) || 0);
       const nameGreeting = customerName ? `Hi ${customerName}! ` : '';
-      return `🎉 ${nameGreeting}7-Year Factory-Backed Warranty on every new Mercury!
+      const coverageLine = warranty.hasExtension
+        ? `${warranty.totalYears}-Year Factory-Backed Warranty on every new Mercury!`
+        : `${warranty.detail} on every new Mercury.`;
+      const bodyLine = warranty.hasExtension
+        ? `Buy any new Mercury outboard from Harris Boat Works and get ${warranty.totalYears} full years of factory-backed warranty coverage (${warranty.detail}). No third-party insurance. Straight Mercury protection.`
+        : `Buy any new Mercury outboard from Harris Boat Works and get the standard ${warranty.detail}. No third-party insurance. Straight Mercury protection.`;
+      return `🎉 ${nameGreeting}${coverageLine}
 
-Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection.
+${bodyLine}
 
-Ends ${expiresIn || 'Dec 31, 2025'}!
+Ends ${expiresIn || 'soon'}!
 Build your quote: ${promoUrl || 'mercuryrepower.ca'}
 
 - Harris Boat Works
@@ -102,13 +111,20 @@ Reply STOP to unsubscribe`;
   get7_reminder: {
     type: 'get7_reminder' as const,
     generateMessage: (data) => {
-      const { customerName, daysLeft, motorModel } = data;
+      const { customerName, daysLeft, motorModel, warrantyExtraYears } = data;
+      const warranty = getWarrantyDisplay(Number(warrantyExtraYears) || 0);
       const nameGreeting = customerName ? `${customerName}, ` : '';
       const motorLine = motorModel ? `\nMotor: ${motorModel}` : '';
+      const headline = warranty.hasExtension
+        ? `${warranty.totalYears}-Year Factory-Backed Warranty ends soon:`
+        : 'Current factory-backed warranty offer:';
+      const coverageBullet = warranty.hasExtension
+        ? `✓ ${warranty.totalYears} years of factory coverage on every new Mercury`
+        : `✓ ${warranty.detail} on every new Mercury`;
       return `⏰ ${nameGreeting}Only ${daysLeft} days left!
 
-7-Year Factory-Backed Warranty ends soon:
-✓ 7 years of factory coverage on every new Mercury
+${headline}
+${coverageBullet}
 ✓ No third-party insurance${motorLine}
 
 Don't miss out: mercuryrepower.ca/promotions

@@ -16,7 +16,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   const [imageLoaded, setImageLoaded] = useState(false);
   const { triggerHaptic } = useHapticFeedback();
-  
+
   // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
     minExpectedDimension: 300,
@@ -29,21 +29,21 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     handleImageLoad(e);
     setImageLoaded(true);
   };
-  
+
   const handleCardClick = () => {
     triggerHaptic('light');
     onConfigure(group);
   };
-  
+
   const handleConfigureClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     triggerHaptic('motorSelected');
     onConfigure(group);
   };
-  
+
   // Check if Pro XS variants are available
   const hasProXS = families.includes('Pro XS');
-  
+
   // Get description based on HP
   const getHPDescription = (hp: number): string => {
     if (hp <= 6) return "Perfect for tenders & small inflatables";
@@ -54,7 +54,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     if (hp <= 200) return "High performance for serious boating";
     return "Maximum power for offshore adventures";
   };
-  
+
   // Format feature pills
   const featurePills: string[] = [];
   // Only show start type for smaller motors where it's a differentiator
@@ -67,76 +67,85 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       featurePills.push('Manual Start');
     }
   }
-  
+
   if (features.shaftLengths.length > 1) {
     featurePills.push(`${features.shaftLengths.join(', ')} Shaft Options`);
   } else if (features.shaftLengths.length === 1) {
     featurePills.push(`${features.shaftLengths[0]} Shaft`);
   }
-  
+
   if (features.hasTiller && features.hasRemote) {
     featurePills.push('Tiller or Remote Control');
   } else if (features.hasTiller) {
     featurePills.push('Tiller Control');
   }
-  
+
   if (features.hasCommandThrust) {
     featurePills.push('Command Thrust Available');
   }
-  
+
   // Add Pro XS as first feature pill when available
   if (hasProXS) {
     featurePills.unshift('Pro XS Available');
   }
-  
+
+  const familiesAttr = families.join(',').toLowerCase();
+
   return (
-    <div 
-      className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95"
+    <div
+      data-hp={hp}
+      data-families={familiesAttr}
+      data-motor-card="true"
+      className="group bg-white shadow-sm rounded-lg border border-repower-navy-900/10 overflow-hidden card-hover cursor-pointer active:scale-[0.98] active:opacity-95 [&.motor-card-highlight]:ring-4 [&.motor-card-highlight]:ring-repower-gold [&.motor-card-highlight]:ring-offset-2 transition-all relative"
       onClick={handleCardClick}
     >
+      {/* "Selected from your search" badge injected by deep-link param (Task 5) */}
+      <div data-search-badge-slot="true" className="hidden absolute top-2 left-2 z-30 bg-repower-gold text-repower-navy-900 text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded-full shadow">
+        Selected from your search
+      </div>
       {/* Image Section */}
-      <div className="relative bg-white p-6 overflow-hidden">
+      <div className="relative p-6 overflow-hidden bg-white">
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-white animate-shimmer z-10" />
+          <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'var(--gradient-image-bg)' }} />
         )}
-        <img 
-          src={heroImage} 
+        <img
+          src={heroImage}
           alt={`${hp} HP Mercury Outboard`}
           className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}
         />
-        
-        
+
+
         {/* Pro XS Badge */}
         {hasProXS && (
           <div className="absolute top-4 right-20">
-            <img 
-              src={proXSLogo} 
-              alt="Pro XS Available" 
+            <img
+              src={proXSLogo}
+              alt="Pro XS Available"
               className="h-8 w-auto drop-shadow-md"
             />
           </div>
         )}
-        
+
         {/* HP Badge */}
         <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-medium uppercase">
           {hp} HP
         </div>
-        
+
         {/* Variant Count */}
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700">
           {variants.length} Configuration{variants.length !== 1 ? 's' : ''}
         </div>
-        
+
         {/* Mercury Logo */}
         <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity">
           <img src={mercuryLogo} alt="Mercury Marine" className="h-6 w-auto" />
         </div>
       </div>
-      
+
       {/* Content */}
       <div className="border-t border-gray-200"></div>
       <div className="p-8 space-y-4">
@@ -144,16 +153,16 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         <h3 className="text-xl font-semibold tracking-wide text-gray-900">
           {hp} HP {families.length === 1 ? families[0] : 'Mercury'}
         </h3>
-        
+
         {/* Description */}
         <p className="text-sm font-normal text-gray-500">
           {getHPDescription(hp)}
         </p>
-        
+
         {/* Features */}
         <div className="flex flex-wrap gap-2 mt-4">
           {featurePills.slice(0, 3).map((pill, i) => (
-            <span 
+            <span
               key={i}
               className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
             >
@@ -161,38 +170,39 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
             </span>
           ))}
         </div>
-        
+
         {/* Price Range */}
         <div className="mt-6">
-          <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-medium">
+          <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
             from
           </p>
           <p className="text-2xl font-bold tracking-tight text-gray-900 mt-1">
             ${priceRange.min.toLocaleString()}
             {priceRange.max > priceRange.min && (
-              <span className="text-base font-normal text-gray-400">
+              <span className="text-base font-normal text-muted-foreground">
                 {' '}– ${priceRange.max.toLocaleString()}
               </span>
             )}
           </p>
         </div>
-        
-        {/* Stock Status */}
-        <p className="text-sm font-normal text-gray-600 mt-2">
-          {inStockCount > 0 ? (
-            <>🟢 {inStockCount} in stock today</>
-          ) : (
-            <>○ Available to order</>
-          )}
-        </p>
-        
+
+        {/* Stock status removed from browse cards */}
+
         {/* CTA Button */}
-        <button 
+        <button
           className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-6"
           onClick={handleConfigureClick}
         >
           Configure Your Motor
         </button>
+
+        <a
+          href="tel:9053422153"
+          onClick={(e) => e.stopPropagation()}
+          className="block text-center text-xs text-gray-500 hover:text-gray-900 mt-3 underline-offset-2 hover:underline"
+        >
+          Have a complete written quote? Call (905) 342-2153 and we'll see what we can do.
+        </a>
       </div>
     </div>
   );

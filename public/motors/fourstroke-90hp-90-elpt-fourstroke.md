@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: b16ac296-e506-4357-ad69-18a0aa347cbf
 slug: fourstroke-90hp-90-elpt-fourstroke
 family: FourStroke
 horsepower: 90
 model_number: 1F904132D
 availability: in_stock
-price_cad: 14812
+price_cad: 14960
 ---
 
 # 90 ELPT FourStroke
 
 Mercury FourStroke 90 HP outboard motor (model 1F904132D).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,15 +30,15 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $14,812
-- **MSRP:** $16,830
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $14,960
+- **MSRP:** $16,665
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
 
 - **Status:** In stock at Gores Landing
-- **Pickup:** Required at Gores Landing, ON. We do not ship and we do not deliver.
+- **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for
 
@@ -53,20 +53,27 @@ Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports l
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=b16ac296-e506-4357-ad69-18a0aa347cbf
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "b16ac296-e506-4357-ad69-18a0aa347cbf",
   "trade_in": null,
   "contact": null
 }
 ```
 
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
+
 ## Notes
 
-- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).
-- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.
+- Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
+- Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

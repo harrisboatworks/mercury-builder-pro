@@ -1,5 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  buildPromotionCustomerAnswer,
+} from "../_shared/promotion-context.ts";
+import {
+  buildBusinessCustomerAnswer,
+  buildFinancingCustomerAnswer,
+  fetchActiveFinancing,
+  fetchActivePromotions,
+  fetchPublishedBusinessProfile,
+  isDefaultQuotedMotor,
+  resolveCustomerSellingPrice,
+} from "../_shared/customer-knowledge-context.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -13,15 +25,7 @@ const corsHeaders = {
  * Note: base_price is dealer cost on many entries, so msrp must come before it
  */
 function getSellingPrice(m: Record<string, unknown>): number | null {
-  const msrp = m.msrp as number | null;
-  const salePrice = m.sale_price as number | null;
-  const dealerPrice = m.dealer_price as number | null;
-  const basePrice = m.base_price as number | null;
-
-  if (salePrice) return salePrice;
-  if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
-  if (msrp) return msrp;
-  return basePrice;
+  return resolveCustomerSellingPrice(m);
 }
 
 /** Format a resolved selling price for display */
@@ -254,7 +258,7 @@ WRONG - NEVER DO THIS:
           enum: ["FourStroke", "ProXS", "SeaPro", "Verado"],
           description: "Motor product line. ONLY use when user specifically asks for a family by name. Do NOT put HP numbers here!" 
         },
-        in_stock_only: { type: "boolean", description: "Only show motors in stock (default true)" }
+        in_stock_only: { type: "boolean", description: "Only show motors physically in stock (default false; orderable motors are valid customer options)" }
       }
     }
   },
@@ -292,7 +296,7 @@ WRONG - NEVER DO THIS:
   },
   {
     name: "get_warranty_pricing",
-    description: "Get extended warranty pricing for a motor. Use when customers ask about warranty costs, coverage, or extended protection.",
+    description: "Get Mercury Platinum Product Protection pricing for a motor. Use when customers ask about warranty costs, coverage, or an extended service contract.",
     inputSchema: {
       type: "object",
       properties: {
@@ -300,7 +304,7 @@ WRONG - NEVER DO THIS:
         years: { 
           type: "number", 
           enum: [1, 2, 3, 4, 5],
-          description: "Number of additional warranty years" 
+          description: "Purchased Product Protection plan term in years"
         }
       },
       required: ["horsepower"]
@@ -370,46 +374,6 @@ WRONG - NEVER DO THIS:
   }
 ];
 
-// Service estimate data
-const SERVICE_ESTIMATES: Record<string, Record<string, { low: number; high: number; includes: string[] }>> = {
-  "100-hour": {
-    small: { low: 350, high: 500, includes: ["Oil change", "Gear lube", "Filter replacement", "Inspection"] },
-    medium: { low: 450, high: 700, includes: ["Oil change", "Gear lube", "Fuel filter", "Spark plugs", "Inspection"] },
-    large: { low: 600, high: 1000, includes: ["Oil change", "Gear lube", "All filters", "Spark plugs", "Anodes", "Inspection"] }
-  },
-  "winterization": {
-    small: { low: 200, high: 350, includes: ["Fuel stabilizer", "Fog engine", "Drain cooling system"] },
-    medium: { low: 300, high: 500, includes: ["Fuel stabilizer", "Fog engine", "Drain systems", "Battery service"] },
-    large: { low: 400, high: 700, includes: ["Full winterization", "Battery storage", "Shrink wrap available"] }
-  },
-  "spring-commissioning": {
-    small: { low: 250, high: 400, includes: ["Battery install", "Fluid check", "Test run"] },
-    medium: { low: 350, high: 550, includes: ["Battery install", "All fluids", "Systems check", "Test run"] },
-    large: { low: 450, high: 750, includes: ["Complete de-winterization", "Full systems test", "Sea trial"] }
-  },
-  "oil-change": {
-    small: { low: 100, high: 175, includes: ["Oil", "Filter", "Disposal"] },
-    medium: { low: 150, high: 250, includes: ["Synthetic oil", "Filter", "Disposal"] },
-    large: { low: 200, high: 350, includes: ["Full synthetic", "Filter", "Inspection"] }
-  },
-  "lower-unit": {
-    small: { low: 150, high: 250, includes: ["Gear lube change", "Seal inspection"] },
-    medium: { low: 200, high: 350, includes: ["Gear lube", "Seal check", "Water pump inspection"] },
-    large: { low: 300, high: 500, includes: ["Gear lube", "Full lower unit inspection"] }
-  },
-  "tune-up": {
-    small: { low: 200, high: 350, includes: ["Spark plugs", "Timing check", "Carb adjustment"] },
-    medium: { low: 300, high: 500, includes: ["Plugs", "Timing", "Fuel system service"] },
-    large: { low: 400, high: 700, includes: ["Complete tune-up", "Computer diagnostics"] }
-  }
-};
-
-function getHpCategory(hp: number): "small" | "medium" | "large" {
-  if (hp <= 40) return "small";
-  if (hp <= 150) return "medium";
-  return "large";
-}
-
 // Initialize Supabase
 function getSupabase() {
   const url = Deno.env.get("SUPABASE_URL")!;
@@ -455,16 +419,9 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
     }
     
     case "estimate_service_cost": {
-      const serviceType = (args.service_type as string || "").toLowerCase().replace(/\s+/g, "-");
       const hp = args.horsepower as number || 100;
-      const category = getHpCategory(hp);
-      const estimate = SERVICE_ESTIMATES[serviceType]?.[category];
-      
-      if (!estimate) {
-        return { content: [{ type: "text", text: `Service estimates for ${args.service_type} on a ${hp}HP motor: Please call us for a custom quote at (905) 342-9980.` }] };
-      }
-      
-      const text = `${args.service_type} service for a ${hp}HP motor: $${estimate.low} - $${estimate.high} CAD. Includes: ${estimate.includes.join(", ")}. Final price depends on parts needed.`;
+      const serviceType = args.service_type as string || "that service";
+      const text = `I don't have a live verified price or confirmed parts list for ${serviceType} on a ${hp}HP motor, so I won't invent one. Exact work depends on the model and serial number, engine hours, service history, the applicable Mercury manual, and inspection. Harris Boat Works can confirm the scope and quote at Gores Landing; call (905) 342-2153.`;
       return { content: [{ type: "text", text }] };
     }
     
@@ -498,7 +455,7 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
         content: [{ 
           type: "text", 
           text: `Estimated trade-in value for your ${year} ${args.brand} ${hp}HP (${condition} condition): $${lowEstimate} - $${highEstimate} CAD. This is a rough estimate - the final value depends on an in-person inspection. Mercury motors typically hold value better.` 
-        }] 
+        }]
       };
     }
     
@@ -654,113 +611,84 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         };
       }
       
-      // Build email HTML with motor details
+      // Build email using the shared layout
       const emailPrice = getSellingPrice(motor);
-      const priceSection = includePricing && emailPrice 
-        ? `<p><strong>Price:</strong> $${emailPrice.toLocaleString()} CAD</p>` 
-        : '';
-      
-      const emailHtml = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #1e3a5f; color: white; padding: 20px; text-align: center; }
-            .content { padding: 20px; }
-            .motor-card { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 20px 0; }
-            .cta { background: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>Mercury ${motor.model_display || motor.model}</h1>
-              <p>Harris Boat Works</p>
-            </div>
-            <div class="content">
-              <p>Hi ${customerName},</p>
-              <p>Here's the motor info you asked about!</p>
-              
-              <div class="motor-card">
-                <h2>${motor.model_display || motor.model}</h2>
-                <p><strong>Horsepower:</strong> ${motor.horsepower} HP</p>
-                <p><strong>Family:</strong> ${motor.family || 'FourStroke'}</p>
-                <p><strong>Shaft Length:</strong> ${motor.shaft || 'Standard'}</p>
-                <p><strong>Availability:</strong> ${motor.in_stock ? 'In Stock' : 'Available to Order (7-14 days)'}</p>
-                ${priceSection}
-              </div>
-              
-              <p>Want a detailed quote with options and promotions?</p>
-              <p style="text-align: center; margin: 24px 0;">
-                <a href="https://mercuryrepower.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
-              </p>
-              
-              <p>Questions? Just reply to this email or call us at (905) 342-2153.</p>
-              
-              <p>Thanks,<br>Harris Boat Works</p>
-            </div>
-          </div>
-        </body>
-        </html>
+      const priceLine = includePricing && emailPrice
+        ? `$${emailPrice.toLocaleString()} CAD`
+        : null;
+
+      const { buildEmail, detailsCard, esc } = await import("../_shared/email-layout.ts");
+      const modelLabel = motor.model_display || motor.model;
+
+      const rows = [
+        { label: "Motor", value: esc(modelLabel) },
+        { label: "Horsepower", value: `${motor.horsepower} HP` },
+        { label: "Family", value: esc(motor.family || "FourStroke") },
+        { label: "Shaft length", value: esc(motor.shaft || "Standard") },
+        { label: "Availability", value: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
+      ];
+      if (priceLine) rows.push({ label: "Price", value: priceLine });
+
+      const body = `
+        <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
+        <p style="margin:0 0 14px 0;">Here is the motor info you asked about on the call.</p>
+        ${detailsCard(rows)}
+        <p style="margin:22px 0 0 0;">Want a full quote with options, promotions, and trade-in? Use the link below or reply to this email.</p>
       `;
-      
+
+      const emailHtml = buildEmail({
+        preheader: `Details on the Mercury ${modelLabel}.`,
+        eyebrow: "From your call",
+        heading: `Mercury ${modelLabel}`,
+        bodyHtml: body,
+        ctaText: "Build your full quote",
+        ctaUrl: `https://www.mercuryrepower.ca/quote?motor=${motor.id}`,
+      });
+
       try {
         const { Resend } = await import("npm:resend@2.0.0");
         const resend = new Resend(RESEND_API_KEY);
-        
+
         await resend.emails.send({
-          from: "Harris Boat Works <quotes@hbwsales.ca>",
+          from: "Harris Boat Works <quotes@mercuryrepower.ca>",
           to: [customerEmail],
-          reply_to: "info@harrisboatworks.ca",
-          subject: `Mercury ${motor.model_display || motor.model} - Motor Details`,
-          html: emailHtml
+          replyTo: "info@harrisboatworks.ca",
+          subject: `Mercury ${modelLabel} details`,
+          html: emailHtml,
         });
-        
-        return { 
-          content: [{ 
-            type: "text", 
-            text: `Done! I've sent the ${motor.model_display || motor.model} details to ${customerEmail}. It'll be in your inbox in just a minute. Anything else you'd like to know?` 
-          }] 
+
+        return {
+          content: [{
+            type: "text",
+            text: `Done! I've sent the ${modelLabel} details to ${customerEmail}. It'll be in your inbox in just a minute. Anything else you'd like to know?`,
+          }],
         };
       } catch (error) {
         console.error("[MCP] Email send error:", error);
-        return { 
-          content: [{ 
-            type: "text", 
-            text: `I had trouble sending that email. Could you double-check your email address, or I can have someone from our team follow up with you?` 
-          }] 
+        return {
+          content: [{
+            type: "text",
+            text: `I had trouble sending that email. Could you double-check your email address, or I can have someone from our team follow up with you?`,
+          }],
         };
       }
     }
+
     
     case "check_current_deals": {
-      const { data: promos } = await supabase
-        .from("promotions")
-        .select("name, discount_percentage, discount_fixed_amount, bonus_title, end_date")
-        .eq("is_active", true)
-        .order("priority", { ascending: false })
-        .limit(5);
-      
-      if (!promos?.length) {
-        return { content: [{ type: "text", text: "We don't have any special promotions running right now, but I can help you get the best price on any motor. What are you looking for?" }] };
-      }
-      
-      const promoList = promos.map(p => {
-        let deal = p.name;
-        if (p.discount_percentage) deal += ` - ${p.discount_percentage}% off`;
-        if (p.discount_fixed_amount) deal += ` - $${p.discount_fixed_amount} off`;
-        if (p.bonus_title) deal += ` + ${p.bonus_title}`;
-        if (p.end_date) deal += ` (ends ${new Date(p.end_date).toLocaleDateString()})`;
-        return deal;
-      }).join("\n");
-      
+      const [promos, financing] = await Promise.all([
+        fetchActivePromotions(supabase),
+        fetchActiveFinancing(supabase),
+      ]);
+
       return { 
         content: [{ 
           type: "text", 
-          text: `Here are our current promotions:\n\n${promoList}\n\nWant details on any of these?` 
+          text: buildPromotionCustomerAnswer(
+            promos,
+            `${args.horsepower_range || ''} ${args.motor_family || ''}`.trim(),
+            financing[0] || null,
+          ),
         }] 
       };
     }
@@ -815,10 +743,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     // ===== NEW TOOL HANDLERS =====
     
     case "check_inventory": {
-      const inStockOnly = args.in_stock_only !== false; // Default to true
+      if (`${args.family || ''}`.toLowerCase().includes('verado')) {
+        return { content: [{ type: "text", text: "Mercury Verado is available by special order only and is not part of our default online inventory. Call (905) 342-2153 or email info@harrisboatworks.ca for a current configuration and price." }] };
+      }
+      const inStockOnly = args.in_stock_only === true;
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, sale_price, dealer_price, base_price, family, in_stock, stock_quantity, shaft, control_type")
+        .select("model_display, model, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, family, in_stock, stock_quantity, shaft, control_type")
         .order("in_stock", { ascending: false })  // In-stock first!
         .order("horsepower");
       
@@ -834,7 +765,8 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       
       const { data: motors, error } = await query.limit(10);
       
-      if (error || !motors?.length) {
+      const visibleMotors = (motors || []).filter(isDefaultQuotedMotor);
+      if (error || !visibleMotors.length) {
         return { 
           content: [{ 
             type: "text", 
@@ -845,7 +777,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         };
       }
       
-      const motorList = motors.map(m => {
+      const motorList = visibleMotors.map(m => {
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
         const qty = m.stock_quantity || 0;
         const stock = m.in_stock 
@@ -854,14 +786,14 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return `• ${name}: ${formatPrice(m)} (${stock})`;
       }).join("\n");
       
-      const totalInStock = motors
+      const totalInStock = visibleMotors
         .filter(m => m.in_stock)
         .reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
       
       return { 
         content: [{ 
           type: "text", 
-          text: `Found ${motors.length} motors${args.family ? ` in the ${args.family} family` : ''}${args.horsepower ? ` at ${args.horsepower}HP` : ''}:\n\n${motorList}\n\n${totalInStock} units in stock and ready. Want details on any of these?` 
+          text: `Found ${visibleMotors.length} motors${args.family ? ` in the ${args.family} family` : ''}${args.horsepower ? ` at ${args.horsepower}HP` : ''}:\n\n${motorList}\n\n${totalInStock} units in stock; the other listed configurations are available to order. Want details on any of these?`
         }] 
       };
     }
@@ -869,17 +801,21 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     case "get_motor_price": {
       const searchModel = args.model as string;
       const hp = args.horsepower as number | undefined;
+      if (`${searchModel || ''}`.toLowerCase().includes('verado')) {
+        return { content: [{ type: "text", text: "Mercury Verado is available by special order only and is not part of our default online inventory. Call (905) 342-2153 or email info@harrisboatworks.ca for a current configuration and price." }] };
+      }
       
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, family, in_stock")
+        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, family, in_stock")
         .or(`model_display.ilike.%${searchModel}%,model.ilike.%${searchModel}%,family.ilike.%${searchModel}%`);
       
       if (hp) query = query.eq("horsepower", hp);
       
       const { data: motors } = await query.limit(5);
       
-      if (!motors?.length) {
+      const visibleMotors = (motors || []).filter(isDefaultQuotedMotor);
+      if (!visibleMotors.length) {
         return { 
           content: [{ 
             type: "text", 
@@ -888,8 +824,8 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         };
       }
       
-      if (motors.length === 1) {
-        const m = motors[0];
+      if (visibleMotors.length === 1) {
+        const m = visibleMotors[0];
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
         const sellingPrice = getSellingPrice(m);
         const hasDiscount = sellingPrice && m.msrp && sellingPrice < m.msrp;
@@ -902,13 +838,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return { 
           content: [{ 
             type: "text", 
-            text: `The ${name} is ${priceText}. ${m.in_stock ? "It's in stock and ready!" : "We can order this for you."} Would you like a full quote with financing options?` 
+            text: `The ${name} is ${priceText}. ${m.in_stock && (m.stock_quantity || 0) > 0 ? "It's in stock and ready!" : "We can order this for you."} Would you like a full quote with financing options?`
           }] 
         };
       }
       
       // Multiple matches
-      const priceList = motors.map(m => {
+      const priceList = visibleMotors.map(m => {
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
         return `• ${name}: ${formatPrice(m)}`;
       }).join("\n");
@@ -944,7 +880,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return { 
           content: [{ 
             type: "text", 
-            text: "I had trouble scheduling that appointment. Please call us directly at (905) 342-9980 to book your service." 
+            text: "I had trouble scheduling that appointment. Please call us directly at (905) 342-2153 to book your service."
           }] 
         };
       }
@@ -972,19 +908,23 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const hp = args.horsepower as number;
       const years = args.years as number || null;
       
-      const { data: pricing } = await supabase
+      const { data: pricing, error: pricingError } = await supabase
         .from("warranty_pricing")
         .select("*")
         .lte("hp_min", hp)
         .gte("hp_max", hp)
         .limit(1)
         .single();
+
+      if (pricingError && pricingError.code !== "PGRST116") {
+        console.error("[MCP] Product Protection pricing lookup failed:", pricingError);
+      }
       
       if (!pricing) {
         return { 
           content: [{ 
             type: "text", 
-            text: `For extended warranty on a ${hp}HP motor, I'd recommend speaking with our team for accurate pricing. Call us at (905) 342-9980 or I can have someone call you back.` 
+            text: `I couldn't verify a Platinum Product Protection rate for a ${hp}HP motor, so I won't guess. See mercuryrepower.ca/mercury-product-protection or call (905) 342-2153 for a serial-number-confirmed price.`
           }] 
         };
       }
@@ -997,7 +937,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           return { 
             content: [{ 
               type: "text", 
-              text: `A ${years}-year extended warranty for your ${hp}HP motor is $${price.toLocaleString()} CAD. This covers parts and labor beyond the factory warranty. Want me to include this in your quote?` 
+              text: `A ${years}-year Mercury Platinum Product Protection plan for your ${hp}HP motor is $${price.toLocaleString()} CAD before HST. Product Protection is an extended service contract, not an extension of the standard product warranty. Final eligibility and price are confirmed by serial number. Want me to include it in your quote?`
             }] 
           };
         }
@@ -1013,78 +953,40 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `Extended warranty options for your ${hp}HP motor:\n\n${allPricing}\n\nWhich coverage period works best for you?` 
-        }] 
+          text: `Mercury Platinum Product Protection plan prices for your ${hp}HP motor, in CAD before HST:\n\n${allPricing}\n\nEach figure is the purchased plan term. Final eligibility and price are confirmed by serial number. Which term would you like to review?`
+        }]
       };
     }
     
     case "check_financing_options": {
-      const amount = args.purchase_amount as number | undefined;
-      
-      // Get finance settings
-      const { data: settings } = await supabase
-        .from("finance_settings")
-        .select("*")
-        .limit(1)
-        .single();
-      
-      const interestRate = settings?.interest_rate || 7.5;
-      const depositPct = settings?.deposit_percentage || 20;
-      const maxTerm = settings?.max_term_months || 60;
-      
-      if (!amount) {
-        return { 
-          content: [{ 
-            type: "text", 
-            text: `Yes, we offer financing! With as little as ${depositPct}% down, you can finance your motor purchase over up to ${maxTerm} months. Current rates start at ${interestRate}% APR. Tell me which motor you're looking at and I can calculate your monthly payment.` 
-          }] 
-        };
-      }
-      
-      // Calculate estimated monthly payment
-      const deposit = amount * (depositPct / 100);
-      const financed = amount - deposit;
-      const monthlyRate = interestRate / 100 / 12;
-      const months = maxTerm;
-      const monthly = financed * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
-      
+      const [financing, promotions] = await Promise.all([
+        fetchActiveFinancing(supabase),
+        fetchActivePromotions(supabase),
+      ]);
       return { 
         content: [{ 
           type: "text", 
-          text: `For a $${amount.toLocaleString()} purchase:\n\n• Down payment (${depositPct}%): $${deposit.toLocaleString()}\n• Financed amount: $${financed.toLocaleString()}\n• Estimated monthly payment: $${Math.round(monthly)}/month over ${months} months\n• Rate: ${interestRate}% APR\n\nThis is an estimate - final terms depend on credit approval. Want me to help you start a quote?` 
-          }] 
+          text: buildFinancingCustomerAnswer(financing, promotions),
+        }]
       };
     }
     
     case "get_store_hours": {
-      // Harris Boat Works store hours
-      const hours = {
-        monday: "8:00 AM - 5:00 PM",
-        tuesday: "8:00 AM - 5:00 PM",
-        wednesday: "8:00 AM - 5:00 PM",
-        thursday: "8:00 AM - 5:00 PM",
-        friday: "8:00 AM - 5:00 PM",
-        saturday: "9:00 AM - 3:00 PM",
-        sunday: "Closed"
-      };
-      
-      const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-      const today = days[new Date().getDay()];
-      const todayHours = hours[today as keyof typeof hours];
-      
+      const { profile } = await fetchPublishedBusinessProfile();
       return { 
         content: [{ 
           type: "text", 
-          text: `We're open ${todayHours === "Closed" ? "closed today" : `today until ${todayHours.split(" - ")[1]}`}.\n\nOur hours are:\nMonday-Friday: 8 AM - 5 PM\nSaturday: 9 AM - 3 PM\nSunday: Closed\n\nWant to schedule a visit or have someone call you?` 
+          text: buildBusinessCustomerAnswer(profile, "What are your current store hours?"),
         }] 
       };
     }
     
     case "get_directions": {
+      const { profile } = await fetchPublishedBusinessProfile();
       return { 
         content: [{ 
           type: "text", 
-          text: `Harris Boat Works is located at:\n\n📍 5369 Harris Boat Works Rd\nGores Landing, Ontario K0K 2E0\n\nWe're right on Rice Lake, about 30 minutes from Peterborough and easy to reach from Cobourg and Port Hope. Look for the Mercury Marine sign!\n\n📞 Phone: (905) 342-2153\n\nWant me to text you the Google Maps link?` 
+          text: buildBusinessCustomerAnswer(profile, "Where are you located and how do I get directions?"),
         }] 
       };
     }
@@ -1206,7 +1108,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return { 
           content: [{ 
             type: "text", 
-            text: `I had trouble looking up that part. Please call us at (905) 342-9980 and our parts department can help you with part number ${partNumber}.` 
+            text: `I had trouble looking up that part. Please call us at (905) 342-2153 and our parts department can help you with part number ${partNumber}.`
           }] 
         };
       }
@@ -1346,4 +1248,3 @@ serve(async (req) => {
     );
   }
 });
-

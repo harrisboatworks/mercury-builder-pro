@@ -21,8 +21,8 @@ export const CurrentStepIndicator = ({
             </div>
             {stepTitle && (
               <>
-            <div className="text-gray-500">•</div>
-                <div className="text-sm text-gray-700 hidden sm:block">
+            <div className="text-repower-navy-900/400">•</div>
+                <div className="text-sm text-repower-navy-900 hidden sm:block">
                   {stepTitle}
                 </div>
               </>
@@ -30,7 +30,7 @@ export const CurrentStepIndicator = ({
           </div>
           
           <div className="flex items-center space-x-2">
-            <div className="text-xs text-gray-700">
+            <div className="text-xs text-repower-navy-900">
               {Math.round(progressPercentage)}% Complete
             </div>
           </div>

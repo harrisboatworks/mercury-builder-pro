@@ -321,7 +321,7 @@ export async function generateExecutivePDF(quoteData: PDFExecutiveQuoteData) {
   doc.setFillColor(...colors.navy);
   doc.roundedRect(20, 195, 170, 45, 3, 3, "F");
 
-  const qrCodeUrl = `https://mercuryrepower.ca/quote/${quoteData.quoteNumber || ""}`;
+  const qrCodeUrl = `https://www.mercuryrepower.ca/quote/${quoteData.quoteNumber || ""}`;
   const qrCodeDataUrl = await QRCode.toDataURL(qrCodeUrl, {
     width: 120,
     margin: 1,

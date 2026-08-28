@@ -72,37 +72,37 @@ export const MobileFilterSheet = ({ filters, onFiltersChange }: MobileFilterShee
           )}
         </button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="bg-[#050E1C] text-[#F5F1EA] border-t border-[#F5F1EA]/10 [&>div:first-child]:bg-[#F5F1EA]/25">
         <DrawerHeader className="text-left">
-          <DrawerTitle>Filter Motors</DrawerTitle>
+          <DrawerTitle className="text-[#F5F1EA] tracking-tight">Filter Motors</DrawerTitle>
         </DrawerHeader>
         <div className="p-4 space-y-4">
           {/* In Stock Toggle */}
           <div>
-            <label className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+            <label className="flex items-center gap-3 p-3 bg-[#F5F1EA]/[0.06] rounded-lg">
               <input
                 type="checkbox"
                 checked={tempFilters.inStockOnly}
                 onChange={(e) => setTempFilters({ ...tempFilters, inStockOnly: e.target.checked })}
-                className="w-4 h-4 rounded text-green-600"
+                className="w-4 h-4 rounded accent-[#C9A24A]"
               />
               <div>
-                <span className="text-sm font-medium">In Stock Only</span>
-                <p className="text-xs text-gray-500">Show available motors only</p>
+                <span className="text-sm font-medium text-[#F5F1EA]">In Stock Only</span>
+                <p className="text-xs text-[#F5F1EA]/55">Show available motors only</p>
               </div>
             </label>
           </div>
 
           {/* HP Range */}
           <div>
-            <label className="block text-sm font-medium mb-2">Horsepower Range</label>
+            <label className="block text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Horsepower Range</label>
             <select
               value={tempFilters.hpRange}
               onChange={(e) => setTempFilters({ ...tempFilters, hpRange: e.target.value })}
-              className="w-full px-3 py-2 bg-gray-50 rounded-lg text-sm border-0 focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-[#F5F1EA]/[0.08] text-[#F5F1EA] rounded-lg text-sm border-0 focus:ring-2 focus:ring-[#C9A24A]"
             >
               {hpRanges.map((range) => (
-                <option key={range.value} value={range.value}>
+                <option key={range.value} value={range.value} className="bg-[#050E1C] text-[#F5F1EA]">
                   {range.label}
                 </option>
               ))}
@@ -111,14 +111,14 @@ export const MobileFilterSheet = ({ filters, onFiltersChange }: MobileFilterShee
 
           {/* Engine Type */}
           <div>
-            <label className="block text-sm font-medium mb-2">Engine Type</label>
+            <label className="block text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Engine Type</label>
             <select
               value={tempFilters.engineType}
               onChange={(e) => setTempFilters({ ...tempFilters, engineType: e.target.value })}
-              className="w-full px-3 py-2 bg-gray-50 rounded-lg text-sm border-0 focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-[#F5F1EA]/[0.08] text-[#F5F1EA] rounded-lg text-sm border-0 focus:ring-2 focus:ring-[#C9A24A]"
             >
               {engineTypes.map((type) => (
-                <option key={type.value} value={type.value}>
+                <option key={type.value} value={type.value} className="bg-[#050E1C] text-[#F5F1EA]">
                   {type.label}
                 </option>
               ))}
@@ -127,10 +127,10 @@ export const MobileFilterSheet = ({ filters, onFiltersChange }: MobileFilterShee
 
           {/* Clear/Apply Buttons */}
           <div className="flex gap-2 pt-4">
-            <Button variant="outline" className="flex-1" onClick={handleClearFilters}>
+            <Button variant="outline" className="flex-1 border-[#F5F1EA]/25 text-[#F5F1EA] bg-transparent hover:bg-[#F5F1EA]/[0.08] hover:text-[#F5F1EA]" onClick={handleClearFilters}>
               Clear
             </Button>
-            <Button className="flex-1 bg-blue-600 hover:opacity-90" onClick={handleApplyFilters}>
+            <Button className="flex-1 bg-[#C9A24A] text-[#050E1C] hover:bg-[#D9B868]" onClick={handleApplyFilters}>
               Apply
             </Button>
           </div>

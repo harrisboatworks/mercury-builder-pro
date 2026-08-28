@@ -33,7 +33,7 @@ export const MOTOR_SELECTION_FAQS = [
 export const MAINTENANCE_FAQS = [
   {
     question: "How often should I change the oil in my Mercury 4-stroke?",
-    answer: "Change oil every 100 hours of operation or annually, whichever comes first. For new motors, the first oil change should be at 20 hours to remove break-in contaminants."
+    answer: "Use the maintenance schedule in the owner's manual for the exact engine family, model year and serial range. Many current FourStroke manuals schedule oil and filter service at 100 hours or yearly, but there is no universal first oil change at 20 hours."
   },
   {
     question: "What happens if I don't winterize my outboard?",
@@ -45,15 +45,15 @@ export const MAINTENANCE_FAQS = [
   },
   {
     question: "How do I know if my water pump needs replacing?",
-    answer: "Watch for weak or inconsistent water stream from the telltale, overheating warnings, or if it's been more than 300 hours since last replacement. When in doubt, have it inspected."
+    answer: "A weak telltale or overheating warning needs inspection, but it does not prove the impeller is the cause. Replacement intervals vary by manual; many current Mercury schedules list the seawater-pump impeller at 300 hours or 3 years."
   },
   {
     question: "When should I replace spark plugs?",
-    answer: "Every 100 hours or as part of annual service. Sooner if experiencing starting issues or rough running. Use only Mercury-approved plugs."
+    answer: "Follow the exact engine's manual. Many current Mercury schedules list spark-plug replacement at 300 hours or 3 years, while condition or a diagnosed running issue can require earlier service."
   },
   {
     question: "What oil should I use?",
-    answer: "Mercury 4-Stroke Marine Oil (10W-30 for most applications). Mercury Full Synthetic for high-performance or Verado. Never use automotive oil."
+    answer: "Oil viscosity and formulation vary by engine family, temperature guidance and manual revision. Match the exact model and serial-number manual; do not choose oil from horsepower alone."
   }
 ];
 
@@ -85,7 +85,7 @@ export const REPOWER_FAQS = [
   },
   {
     question: "How long does a repower take?",
-    answer: "Typically 3-5 days for a straightforward repower. Winter scheduling often allows faster turnaround than busy summer months."
+    answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Winter scheduling often means priority in the spring queue."
   }
 ];
 
@@ -117,15 +117,15 @@ export const COMPARISON_FAQS = [
 export const NEW_OWNER_TIPS = [
   {
     topic: "Break-In Procedure",
-    tip: "The first 10 hours are critical. First hour: stay below 3000 RPM with varying speeds. Hours 2-3: gradually increase to 3/4 throttle. Hours 4-10: normal operation with varied speeds. Never hold steady throttle for extended periods during break-in."
+    tip: "Break-in procedures vary by engine family and manual revision. Use the exact serial-number owner's manual and the handoff provided at delivery; do not substitute a universal RPM-and-hour recipe."
   },
   {
     topic: "First Oil Change",
-    tip: "Schedule your first oil change at 20 hours—this is critical. The oil captures metal particles from the break-in process that need to be removed before they cause wear."
+    tip: "Break-in and scheduled oil service are separate timelines. There is no universal Mercury 20-hour oil-change requirement; follow the maintenance table in the exact engine manual."
   },
   {
     topic: "Break-In Don'ts",
-    tip: "Don't run at constant speed for extended periods, don't immediately run at full throttle, don't let the engine overheat, don't skip the first oil change, and don't use non-marine oil."
+    tip: "Do not improvise break-in limits or keep running after an overheat warning. Follow the exact manual's throttle, cooling-water and lubricant instructions."
   }
 ];
 

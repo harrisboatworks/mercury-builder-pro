@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import { listQuotes, seedQuote } from '../lib/quotesApi';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function Dev() {
+  useNoIndex();
   const [quotes, setQuotes] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);

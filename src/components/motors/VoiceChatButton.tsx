@@ -81,7 +81,7 @@ export function VoiceChatButton({
     if (isConnected) {
       return 'bg-blue-50 text-blue-600 border-blue-200';
     }
-    return 'bg-white/90 backdrop-blur-sm text-gray-600 hover:bg-gray-100 border border-gray-200 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30';
+    return 'bg-repower-cream/95 backdrop-blur-sm text-repower-navy-900 hover:bg-repower-paper border border-repower-navy-900/15 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30';
   };
 
   const getTooltipText = () => {

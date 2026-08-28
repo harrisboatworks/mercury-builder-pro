@@ -15,6 +15,7 @@
 // so external agents have one canonical MCP endpoint.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -23,7 +24,13 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, mcp-session-id",
 };
 
-const SITE_URL = "https://mercuryrepower.ca";
+import { familyKey, motorSlug } from "../_shared/motor-slug.ts";
+import {
+  PUBLIC_SITE_URL,
+  toPublicImageUrl,
+} from "../_shared/public-motor-contract.ts";
+
+const SITE_URL = PUBLIC_SITE_URL;
 const QUOTE_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-quote-api`;
 const MOTORS_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-motors-api`;
 
@@ -161,27 +168,33 @@ async function searchMotors(supabase: any, args: any) {
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
+  const wantFamilyKey = args.family ? familyKey(args.family) : null;
   return (data || [])
     .filter((m: any) => !(m.model_display || "").toLowerCase().includes("verado"))
     .filter((m: any) =>
-      args.family ? (m.family || "").toLowerCase() === args.family.toLowerCase() : true
+      wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
-    .map((m: any) => ({
-      id: m.id,
-      modelDisplay: m.model_display || m.model,
-      family: m.family || "FourStroke",
-      horsepower: m.horsepower,
-      shaftLength: m.shaft_code,
-      sellingPrice:
-        m.manual_overrides?.sale_price ??
-        m.sale_price ??
-        m.dealer_price ??
-        m.msrp,
-      currency: "CAD",
-      availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
-      imageUrl: m.hero_image_url || m.image_url,
-      url: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-    }));
+    .map((m: any) => {
+      const slug = motorSlug(m);
+      return {
+        id: m.id,
+        slug,
+        modelDisplay: m.model_display || m.model,
+        family: m.family || "FourStroke",
+        horsepower: m.horsepower,
+        shaftLength: m.shaft_code,
+        sellingPrice:
+          m.manual_overrides?.sale_price ??
+          m.sale_price ??
+          m.dealer_price ??
+          m.msrp,
+        currency: "CAD",
+        availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
+        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
+        url: slug ? `${SITE_URL}/motors/${slug}` : null,
+        quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
+      };
+    });
 }
 
 async function getMotor(supabase: any, args: any) {
@@ -189,17 +202,27 @@ async function getMotor(supabase: any, args: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
+      "id, model, model_display, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
     )
-    .neq("availability", "Exclude")
-    .limit(1);
-  if (args.id) q = q.eq("id", args.id);
+    .neq("availability", "Exclude");
+  if (args.id) q = q.eq("id", args.id).limit(1);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
-  const m = data?.[0];
+  let m: any = null;
+  if (args.id) {
+    m = data?.[0] ?? null;
+  } else if (args.slug) {
+    const wanted = String(args.slug).toLowerCase();
+    m = (data || [])
+      .filter((r: any) => !(r.model_display || "").toLowerCase().includes("verado"))
+      .find((r: any) => motorSlug(r) === wanted) ?? null;
+  }
   if (!m) return null;
+
+  const slug = motorSlug(m);
   return {
     id: m.id,
+    slug,
     modelDisplay: m.model_display || m.model,
     family: m.family || "FourStroke",
     horsepower: m.horsepower,
@@ -213,9 +236,10 @@ async function getMotor(supabase: any, args: any) {
     msrp: m.msrp,
     currency: "CAD",
     availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
-    imageUrl: m.hero_image_url || m.image_url,
+    imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
     description: m.description,
     features: m.features,
+    url: slug ? `${SITE_URL}/motors/${slug}` : null,
     quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
   };
 }
@@ -231,6 +255,8 @@ function brandRules() {
     geography: "Ontario, primary radius ~150km from Rice Lake",
     pickup_only: true,
     delivery: false,
+    pickup_policy:
+      "Motor purchases are pickup only at Gores Landing, Ontario. The buyer must pick up in person with valid government photo ID. We cannot release a motor to a courier, shipping company, or any other third party.",
     no_verado: true,
     financing_minimum_cad: 5000,
     financing_rates: {
@@ -329,6 +355,21 @@ Deno.serve(async (req) => {
   }
 
   const { id = null, method, params = {} } = payload;
+
+  const methodKey = typeof method === "string" ? method.replace(/[^a-z0-9_/-]/gi, "_") : "unknown";
+  const toolName = method === "tools/call" && typeof params?.name === "string"
+    ? params.name.replace(/[^a-z0-9_-]/gi, "_")
+    : null;
+  const limit =
+    toolName === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
+    method === "tools/call" ? { maxAttempts: 80, windowMinutes: 10 } :
+    { maxAttempts: 180, windowMinutes: 10 };
+  const allowed = await checkRateLimit(req, {
+    action: `agent_mcp_${toolName || methodKey}`.slice(0, 128),
+    ...limit,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!

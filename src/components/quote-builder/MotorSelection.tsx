@@ -27,7 +27,7 @@ import harrisLogo from '@/assets/harris-logo.png';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
-import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
+// MobileStickyCTA removed from this page (was colliding with global chat bubble)
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
 // HP Category Selector
 import { HPCategorySelector, HP_CATEGORIES, HPCategory } from './HPCategorySelector';
@@ -67,6 +67,8 @@ interface DbMotor {
   hero_image_url?: string | null;
   availability?: string | null;
   stock_number?: string | null;
+  stock_quantity?: number | null;
+  in_stock?: boolean | null;
   year: number;
   make: string;
   family?: string | null;
@@ -219,7 +221,6 @@ export const MotorSelection = ({
   const [motors, setMotors] = useState<Motor[]>([]);
   const { notifications: socialProofNotifications, trackInteraction } = useSocialProofNotifications(motors);
   const [loading, setLoading] = useState(true);
-  const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
 
   // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
@@ -316,52 +317,6 @@ export const MotorSelection = ({
   };
 
 
-  // Automatic inventory refresh state
-  const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
-  const needsInventoryUpdate = () => {
-    if (!lastInventoryUpdate) return true;
-    const last = new Date(lastInventoryUpdate);
-    const now = new Date();
-    const hours = (now.getTime() - last.getTime()) / (1000 * 60 * 60);
-    return hours >= 24;
-  };
-  const formatRelativeTime = (timestamp: string) => {
-    const date = new Date(timestamp);
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const hours = Math.floor(diffMs / (1000 * 60 * 60));
-    if (hours < 1) return 'Just now';
-    if (hours === 1) return '1 hour ago';
-    if (hours < 24) return `${hours} hours ago`;
-    if (hours < 48) return 'Yesterday';
-    return `${Math.floor(hours / 24)} days ago`;
-  };
-
-  // Auto-update on load and check hourly
-  useEffect(() => {
-    const checkAndUpdateInventory = async () => {
-      try {
-        if (needsInventoryUpdate()) {
-          await updateInventory();
-        }
-      } catch (e) {
-        console.warn('Auto inventory update skipped:', e);
-      }
-    };
-    checkAndUpdateInventory();
-    const interval = setInterval(checkAndUpdateInventory, 60 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // One-off manual scrape trigger via query param
-  useEffect(() => {
-    const run = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('runScrape') === '1';
-    if (run) {
-      console.log('[inventory] Manual scrape requested via ?runScrape=1');
-      updateInventory();
-    }
-  }, []);
-
   // Load motors from database
   useEffect(() => {
     // Clear any sticky bar state on component mount
@@ -408,7 +363,7 @@ export const MotorSelection = ({
         // Optimized query: only select fields needed for motor cards display
         supabase.from('motor_models').select(`
           id, model, model_display, model_key, horsepower, base_price, sale_price, msrp, dealer_price,
-          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, year, make,
+          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, stock_quantity, in_stock, year, make,
           description, features, specifications, detail_url, family, shaft
         `).order('horsepower'), 
         supabase.from('promotions').select('*'), 
@@ -466,6 +421,9 @@ export const MotorSelection = ({
                       m.availability === 'Sold' ? 'Sold' :
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
           stockNumber: m.stock_number,
+          in_stock: m.in_stock ?? undefined,
+          stock_quantity: m.stock_quantity ?? undefined,
+          availability: m.availability ?? undefined,
           category: categorizeMotor(Number(m.horsepower)),
           type: getMotorFamilyDisplay(classifyMotorFamily(Number(m.horsepower), m.model_display || m.model, m.features)),
           specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model_display || m.model}`.trim(),
@@ -652,33 +610,6 @@ export const MotorSelection = ({
       bonusOffers
     };
   };
-  const updateInventory = async () => {
-    setUpdating(true);
-    try {
-      const {
-        data,
-        error
-      } = await supabase.functions.invoke('sync-lightspeed-inventory');
-      if (error) throw error;
-
-      // Reload motors after update
-      await loadMotors();
-
-      // Save last update timestamp
-      const nowIso = new Date().toISOString();
-      setLastInventoryUpdate(nowIso);
-      // Silent success - inventory updated
-    } catch (error) {
-      // Log error silently and use cached data
-      console.log('Inventory sync issue - using cached data:', error);
-      
-      // Still reload motors (will use existing cached data)
-      await loadMotors();
-      // Silent fallback to cached data
-    } finally {
-      setUpdating(false);
-    }
-  };
   const categories = [{
     key: 'all',
     label: 'All Motors',
@@ -857,7 +788,7 @@ export const MotorSelection = ({
   };
 
   // Quick View no longer fetches enrichment from a scraper.
-  // Motor descriptions/features/specs now come from the DB (sync-lightspeed-inventory + motor_models).
+  // Motor descriptions/features/specs now come from the DB (Lightspeed inventory + motor_models).
   useEffect(() => {
     if (quickViewMotor) {
       setQuickViewLoading(false);
@@ -918,7 +849,7 @@ export const MotorSelection = ({
     setCelebrationParticles(particles);
     toast({
       title: pick(canadianEncouragement.motorSelected),
-      description: `${motor.model} selected — let's continue, eh!`,
+      description: `${motor.model} selected, let's continue, eh!`,
       duration: 2200
     });
 
@@ -998,7 +929,7 @@ export const MotorSelection = ({
       )}
       {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
       <div className="sticky top-0 z-30 bg-white border-b shadow-sm lg:hidden">
-        <div className="p-3">
+        <div className="px-3 py-2">
           {/* Single Row: Search + Stock Toggle + Filter Button */}
           <div className="flex items-center gap-2 h-11">
             {/* Search Input - Full Width with iOS zoom prevention */}
@@ -1019,7 +950,7 @@ export const MotorSelection = ({
                 className="w-full pl-8 pr-3 py-2 border rounded-lg text-[16px] focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                 style={{ fontSize: '16px' }} // iOS zoom prevention
               />
-              <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-repower-navy-900/55" />
             </div>
             
             {/* Compact Icon Buttons */}
@@ -1028,8 +959,8 @@ export const MotorSelection = ({
               <button
                 className={`p-2 rounded-lg border transition-colors flex items-center justify-center min-w-[44px] h-[44px] ${
                   inStockOnly 
-                    ? 'bg-green-50 border-green-200 text-green-700' 
-                    : 'bg-white border-gray-200 text-gray-600'
+                    ? 'bg-repower-cream border-repower-gold/30 text-repower-gold' 
+                    : 'bg-white border-repower-navy-900/10 text-repower-navy-900/65'
                 }`}
                 onClick={() => {
                   setInStockOnly(!inStockOnly);
@@ -1142,7 +1073,7 @@ export const MotorSelection = ({
       </div>
 
       {/* Results Count - Outside and Below Search Bar */}
-      <div className="px-4 py-2 bg-gray-50/50 border-b lg:hidden">
+      <div className="px-4 py-2 bg-repower-paper/50 border-b lg:hidden">
         <p className="text-sm text-muted-foreground">
           Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
         </p>
@@ -1238,7 +1169,7 @@ export const MotorSelection = ({
             {/* In Stock Only Toggle */}
             <label className={`flex items-center gap-2 px-3 py-2 rounded-full cursor-pointer transition-colors ${
               inStockOnly 
-                ? 'bg-green-100 text-green-700 border border-green-200' 
+                ? 'bg-repower-cream text-repower-gold border border-repower-gold/30' 
                 : 'bg-muted text-muted-foreground border border-border'
             }`}>
               <input 
@@ -1289,7 +1220,7 @@ export const MotorSelection = ({
               {/* Customer Reviews Section */}
               <div className="mt-6">
                 <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <Star className="w-4 h-4 text-yellow-500" />
+                  <Star className="w-4 h-4 text-repower-gold0" />
                   Customer Reviews (4.6/5 ⭐)
                 </h4>
                 <TestimonialCarousel />
@@ -1354,23 +1285,23 @@ export const MotorSelection = ({
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Repower Center */}
+            {/* Mercury Certified Repower Center (official badge) + Ontario positioning */}
             <div className="credential-group flex items-center gap-3">
               <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
               <div className="text-left">
-                <p className="font-semibold text-foreground">Certified Repower Center</p>
-                <p className="text-sm text-muted-foreground">Expert Repower Consultation</p>
+                <p className="font-semibold text-foreground">Mercury Certified Repower Center</p>
+                <p className="text-sm text-muted-foreground">Ontario's Mercury Repower Centre · Lake-tested on Rice Lake</p>
               </div>
             </div>
 
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Platinum Dealer Heritage */}
+            {/* Premier Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
               <img src={harrisLogo} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
               <div className="text-left">
-                <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
+                <p className="font-semibold text-foreground">Premier Mercury Dealer</p>
                 <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
               </div>
             </div>
@@ -1420,7 +1351,7 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-repower-navy-900/10 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-2 ring-repower-gold/30 shadow-xl scale-[1.02] motor-selected border-repower-gold/40' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
                    {/* Image Section - Moved to top for better layout consistency */}
                    {motor.image && motor.image !== '/placeholder.svg' && (
@@ -1434,35 +1365,12 @@ export const MotorSelection = ({
 
                        {/* HP Badge - Top left */}
                        <div className="absolute top-3 left-3 z-20">
-                         <div className="px-2 py-1 rounded-md bg-gray-900/90 text-white text-xs font-medium">
+                         <div className="px-2 py-1 rounded-md bg-repower-navy-900/90 text-white text-xs font-medium">
                            {motor.hp} HP
                          </div>
                        </div>
 
-                       {/* Stock Badge - Top right, aligned with HP badge */}
-                       <div className="absolute top-3 right-3 z-20">
-                         {motor.stockStatus === 'In Stock' && (
-                           <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                             IN STOCK
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Order Now' && (
-                           <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
-                             ORDER NOW
-                           </span>
-                         )}
-                         {motor.stockStatus === 'On Order' && (
-                           <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
-                             ON ORDER
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Sold' && (
-                           <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
-                             SOLD
-                           </span>
-                         )}
-                       </div>
-
+                       {/* Stock badges removed from browse cards, real stock surfaces later in the flow */}
                       {/* Urgency: low stock */}
                       {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
                         <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ marginTop: '2.5rem' }}>
@@ -1501,7 +1409,7 @@ export const MotorSelection = ({
                       {/* Selection overlay */}
                       {selectedMotor?.id === motor.id && (
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
-                          <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
+                          <Check className="w-20 h-20 text-repower-gold drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
                         </div>
                       )}
                     </div>
@@ -1510,7 +1418,7 @@ export const MotorSelection = ({
                   {/* Card Info Section */}
                   <div className="p-3 space-y-2 flex-1">
                     {/* Model Name - Clamped to 2 lines for consistency */}
-                    <div className="motor-model text-xl font-bold text-gray-900 leading-tight line-clamp-2">
+                    <div className="motor-model text-xl font-bold text-repower-navy-900 leading-tight line-clamp-2">
                       {(() => {
                         // Display in harrisboatworks.ca format: "2025 FourStroke 25HP EFI ELHPT"
                         // Remove any "Mercury" prefix and use clean title
@@ -1523,7 +1431,7 @@ export const MotorSelection = ({
                     {/* HP-based descriptor and popularity indicators */}
                     <div className="mt-1 space-y-1">
                       {/* HP-based descriptor - always show */}
-                      <p className="text-xs text-gray-600">
+                      <p className="text-xs text-repower-navy-900/65">
                         {getHPDescriptor(motor.hp)}
                       </p>
                       
@@ -1548,11 +1456,11 @@ export const MotorSelection = ({
                           <div className="text-sm text-muted-foreground line-through">
                             MSRP ${displayMSRP?.toLocaleString()}
                           </div>
-                          <div className="text-lg font-bold text-red-600">
+                          <div className="text-lg font-bold text-repower-mercury-red">
                             Our Price ${displaySalePrice?.toLocaleString()}
                           </div>
                           {hasSaleDisplay && (
-                            <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
+                            <div className="inline-flex items-center px-2 py-1 rounded-md bg-repower-cream  text-repower-gold  text-xs font-medium">
                               SAVE ${savingsAmount.toLocaleString()}
                             </div>
                           )}
@@ -1567,17 +1475,17 @@ export const MotorSelection = ({
                     {/* Badges */}
                     <div className="flex gap-1 flex-wrap">
                       {showWarrantyBadge && (
-                        <span className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded">
+                        <span className="px-2 py-0.5 bg-repower-mercury-red/5 text-repower-mercury-red text-xs font-medium rounded">
                           {warrantyBonus?.shortBadge || '5 Year Warranty'}
                         </span>
                       )}
                       {hasRepower && (
-                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+                        <span className="px-2 py-0.5 bg-repower-cream text-repower-navy-900 text-xs font-medium rounded">
                           Repower Rebate
                         </span>
                       )}
                       {otherPromoNames.slice(0, 1).map((name, idx) => (
-                        <span key={idx} className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded">
+                        <span key={idx} className="px-2 py-0.5 bg-repower-cream text-repower-navy-900 text-xs font-medium rounded">
                           {name}
                         </span>
                       ))}
@@ -1590,7 +1498,7 @@ export const MotorSelection = ({
           </Card>;
         })}
         </div>}
-                                <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
+                                <p>Mercury’s Repower Rebate Program, trade in or repower for potential savings. See details.</p>
 
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
@@ -1602,12 +1510,12 @@ export const MotorSelection = ({
       </div>
 
       {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
-          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
+          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-repower-gold/300 shadow-2xl">
             <div className="container mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  <div className="bg-repower-cream  p-2 rounded-full">
+                    <Check className="w-5 h-5 text-repower-gold " />
                   </div>
                   <div>
                     <p className="font-bold text-lg">
@@ -1634,7 +1542,7 @@ export const MotorSelection = ({
                   </Button>
                   <Button onClick={() => onStepComplete(selectedMotor)} 
                     disabled={(selectedMotor as any).stockStatus === 'Sold'}
-                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 animate-pulse-green'}`}>
+                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-repower-cream cursor-not-allowed' : 'bg-repower-gold hover:bg-repower-gold animate-pulse-green'}`}>
                     {(selectedMotor as any).stockStatus === 'Sold' ? 'Motor Sold' : 'Continue to Boat Info'}
                     <Zap className="w-5 h-5 ml-2" />
                   </Button>
@@ -1645,7 +1553,7 @@ export const MotorSelection = ({
         </div>}
 
       {showStickyBar && selectedMotor && isMobile && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
-          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
+          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-repower-gold hover:bg-repower-gold animate-bounce">
             <Check className="w-6 h-6" />
           </Button>
         </div>}
@@ -1659,7 +1567,7 @@ export const MotorSelection = ({
         </div>)}
 
       {showCelebration && selectedMotor && <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+          <div className="bg-gradient-to-r from-repower-cream0 to-repower-cream text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
             <Sparkles className="w-5 h-5" />
             <span className="font-bold">Great Choice!</span>
             <Star className="w-5 h-5" />
@@ -1702,7 +1610,7 @@ export const MotorSelection = ({
                     <div className="text-2xl font-bold">
                       ${(quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString()}
                     </div>
-                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
+                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus === 'In Stock' && (quickViewMotor as any).stock_quantity > 1 ? `In Stock · ${(quickViewMotor as any).stock_quantity} available` : quickViewMotor.stockStatus}</Badge>
                   </div>
                 </div>
 
@@ -1889,7 +1797,7 @@ export const MotorSelection = ({
                             <h4 className="font-semibold mb-2">Key Features:</h4>
                             <ul className="text-sm space-y-1">
                               {displayFeatures.map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
-                                  <span className="text-green-500 mr-2">✓</span>
+                                  <span className="text-repower-gold0 mr-2">✓</span>
                                   {feature}
                                 </li>)}
                             </ul>
@@ -1925,7 +1833,7 @@ export const MotorSelection = ({
                     <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
                   </div>}
                 {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                    <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
+                    <strong>Manual Start:</strong> No battery needed, ideal for occasional use or as a backup motor. Very reliable.
                   </div>}
               </div>
 
@@ -2056,17 +1964,10 @@ export const MotorSelection = ({
         </DialogContent>
       </Dialog>
 
-      {/* Mobile Sticky CTA */}
-      <MobileStickyCTA onQuoteClick={() => {
-        // Fire analytics event
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'cta_quote_open', {
-            source: 'sticky_mobile_cta'
-          });
-        }
-        setQuoteFormModel(''); // Clear any previous selection
-        setShowQuoteForm(true);
-      }} />
+      {/* NOTE: MobileStickyCTA removed on this page, it collided with the
+          global chat bubble and the contextual price bar below. Each motor
+          card already exposes its own quote action, and the bottom price bar
+          appears the moment a motor is selected. */}
 
       {/* Mobile Quote Form */}
       <MobileQuoteForm 
@@ -2080,7 +1981,9 @@ export const MotorSelection = ({
 
       {/* Sticky Bottom Price Bar - Mobile Only */}
       {selectedMotor && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-primary/20 shadow-2xl p-4 z-40 lg:hidden backdrop-blur-sm">
+        <div
+          className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-primary/20 shadow-2xl px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-40 lg:hidden backdrop-blur-sm"
+        >
           <div className="flex items-center justify-between gap-4">
             {/* Price Display */}
             <div className="flex-shrink-0">
@@ -2100,8 +2003,8 @@ export const MotorSelection = ({
         </div>
       )}
 
-      {/* Mobile spacer to prevent sticky CTA from covering content */}
-      <div className="mobile-cta-spacer lg:hidden" />
+      {/* Mobile spacer, only reserves space when the bottom price bar is shown */}
+      {selectedMotor && <div className="mobile-cta-spacer lg:hidden" />}
 
     </div>
   </div>;

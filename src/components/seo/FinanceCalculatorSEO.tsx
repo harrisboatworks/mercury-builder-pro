@@ -1,7 +1,9 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { getCurrentMercuryFinancingRate, getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export function FinanceCalculatorSEO() {
+  const CURRENT_RATE = getCurrentMercuryFinancingRate();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -38,16 +40,16 @@ export function FinanceCalculatorSEO() {
       {
         "@type": "FinancialProduct",
         "name": "Mercury Outboard Motor Financing",
-        "description": "Flexible financing for Mercury outboard motor purchases and repowers. Calculate monthly payments with different terms and rates.",
+        "description": "Flexible financing for Mercury outboard purchases and repowers. The active TD program uses a contract term of up to 60 months; payment estimates may use amortization up to 240 months and a remaining balance may be due at maturity. OAC.",
         "provider": {
           "@type": "Organization",
           "name": "Harris Boat Works",
           "@id": `${SITE_URL}/#organization`
         },
-        "feesAndCommissionsSpecification": "No early payoff penalties. $299 finance administration fee included.",
+        "feesAndCommissionsSpecification": "No early payoff penalties. $349 finance administration fee included.",
         "interestRate": {
           "@type": "QuantitativeValue",
-          "minValue": 7.99,
+          "minValue": CURRENT_RATE.ratePercent,
           "unitText": "% APR"
         },
         "amount": {
@@ -64,7 +66,7 @@ export function FinanceCalculatorSEO() {
             "name": "What are the current financing rates for Mercury outboards?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Standard rates start at 7.99% APR for purchases $10,000 and up, and 8.99% APR for purchases under $10,000. Promotional rates may be available — check the calculator for current offers."
+              "text": getMercuryFinancingFaqAnswer()
             }
           },
           {
@@ -90,16 +92,14 @@ export function FinanceCalculatorSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Financing Calculator | Monthly Payment Estimator | Harris Boat Works</title>
-      <meta name="description" content="Estimate monthly payments on a Mercury outboard repower. Flexible financing from 7.99% APR, terms from 36–180 months. No early payoff penalties. Harris Boat Works, Ontario Mercury dealer since 1947." />
+      <title>Mercury Outboard Financing Calculator - Ontario | HBW</title>
+      <meta name="description" content={`Estimate monthly payments on a Mercury outboard repower. ${CURRENT_RATE.programLabel}. Contract up to 60 months; amortization up to 240 months, OAC. Harris Boat Works, Ontario Mercury dealer since 1947.`} />
       <meta name="keywords" content="Mercury financing calculator, outboard motor financing, boat motor payment estimator, Mercury repower financing, marine financing Ontario" />
-      <link rel="canonical" href={`${SITE_URL}/finance-calculator`} />
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Repower Financing Calculator | Harris Boat Works" />
-      <meta property="og:description" content="Estimate monthly payments on a Mercury outboard. Flexible terms from 36–180 months." />
+      <meta property="og:description" content="Estimate Mercury outboard payments. Contract up to 60 months with amortization up to 240 months, OAC." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/finance-calculator`} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 
       {/* Twitter */}

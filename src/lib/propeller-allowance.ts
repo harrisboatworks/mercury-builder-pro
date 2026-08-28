@@ -14,13 +14,13 @@ export function getPropellerAllowance(hp: number): {
     return {
       price: 350,
       name: 'Propeller Allowance (Aluminum)',
-      description: 'Standard aluminum propeller — final selection after water test',
+      description: 'Standard aluminum propeller, final selection after water test',
     };
   }
   // 150 HP+
   return {
     price: 1200,
     name: 'Propeller Allowance (Stainless Steel)',
-    description: 'Stainless steel propeller — final selection after water test',
+    description: 'Stainless steel propeller, final selection after water test',
   };
 }

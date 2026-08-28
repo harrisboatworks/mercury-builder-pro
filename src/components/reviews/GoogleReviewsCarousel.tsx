@@ -3,9 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 
 export function GoogleReviewsCarousel() {
   const { data: placeData, isLoading, error } = useGooglePlaceData();
+  // Rating/total share the same source of truth as GoogleRatingBadge (live with fallback)
+  const { rating, totalReviews } = useGoogleReviewStats();
 
   if (isLoading) {
     return (
@@ -33,7 +36,7 @@ export function GoogleReviewsCarousel() {
     return null;
   }
 
-  const { rating, totalReviews, reviews } = placeData;
+  const { reviews } = placeData;
 
   return (
     <div className="space-y-6">

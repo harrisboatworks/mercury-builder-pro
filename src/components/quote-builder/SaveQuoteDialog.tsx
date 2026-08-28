@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
@@ -235,8 +236,8 @@ export function SaveQuoteDialog({
   // Shared success content
   const successContent = (
     <div className="flex flex-col items-center text-center py-6 space-y-4">
-      <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-        <CheckCircle className="h-8 w-8 text-green-600" />
+      <div className="flex items-center justify-center">
+        <CheckCircle className="h-12 w-12 text-repower-gold" strokeWidth={1.5} />
       </div>
       <div className="text-xl font-semibold">Quote Saved!</div>
       <div className="space-y-3 text-muted-foreground">
@@ -266,7 +267,7 @@ export function SaveQuoteDialog({
     <div className="grid gap-4 py-4">
       
       <div className="grid gap-2">
-        <Label htmlFor="name">Name *</Label>
+        <Label htmlFor="name">Name <RequiredMark /></Label>
         <Input
           id="name"
           type="text"
@@ -285,7 +286,7 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">Email <RequiredMark /></Label>
         <Input
           id="email"
           type="email"
@@ -304,7 +305,7 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="phone">Phone *</Label>
+        <Label htmlFor="phone">Phone <RequiredMark /></Label>
         <Input
           id="phone"
           type="tel"

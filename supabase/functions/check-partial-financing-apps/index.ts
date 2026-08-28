@@ -7,6 +7,7 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
 import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import { requireAdmin } from '../_shared/admin-auth.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -20,6 +21,9 @@ serve(async (req: Request): Promise<Response> => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -140,11 +144,12 @@ serve(async (req: Request): Promise<Response> => {
 
     const html = createBrandedEmailTemplate(
       adminContent,
-      `${fresh.length} stalled financing application${fresh.length === 1 ? '' : 's'} need follow-up`
+      `${fresh.length} stalled financing application${fresh.length === 1 ? '' : 's'} need follow-up`,
+      'You received this email because you started a financing application with Harris Boat Works.'
     );
 
     const emailResp = await resend.emails.send({
-      from: 'Harris Boat Works System <noreply@hbwsales.ca>',
+      from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
       reply_to: ['info@harrisboatworks.ca'],
       to: [adminEmail],
       subject: `${fresh.length} stalled financing app${fresh.length === 1 ? '' : 's'} — needs follow-up`,

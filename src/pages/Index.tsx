@@ -1,3 +1,4 @@
+// build-sync 2026-06-10: re-push after GitHub reconnect
 import { useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -6,8 +7,14 @@ import {
 } from 'lucide-react';
 
 import { HomepageSEO } from '@/components/seo/HomepageSEO';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
+import { HeroRepower } from '@/components/repower/HeroRepower';
+import { ObjectionStrip } from '@/components/repower/ObjectionStrip';
+import { RepowerCta } from '@/components/repower/RepowerCta';
+import { TrustStrip } from '@/components/repower/TrustStrip';
+
+import { HowItWorksCard, HowItWorksGrid } from '@/components/repower/HowItWorksCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,55 +24,67 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
 import heroImage from '@/assets/hero-proxs-sunset.jpg';
-import shopImage from '@/assets/landing-repower-shop.jpg';
-import stepPickImage from '@/assets/landing-step-pick.png';
-import stepConfigureImage from '@/assets/landing-step-configure.jpg';
-import stepPickupImage from '@/assets/landing-step-pickup.jpg';
+import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
+import { useGooglePlaceData, type GoogleReview } from '@/hooks/useGooglePlaceData';
 
 const HOW_IT_WORKS = [
   {
     icon: Wrench,
-    image: stepPickImage,
+    image: '/lovable-uploads/home-step1-mercury-proxs-lineup.jpg',
+    alt: 'Row of new Mercury Pro XS outboards on display',
+    priority: true, // confirmed mobile LCP element
     title: 'Pick your Mercury',
     body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
   },
   {
     icon: RotateCcw,
-    image: stepConfigureImage,
+    image: '/lovable-uploads/home-step2-real-quote-builder.jpg',
+    alt: 'The mercuryrepower.ca quote builder showing live Mercury prices in CAD',
+    framed: true, // raw screenshot, render inside a browser-window frame
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
   {
     icon: Shield,
-    image: stepPickupImage,
-    title: 'Lock it with a refundable deposit',
-    body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
+    image: '/lovable-uploads/home-step3-rice-lake-water-test.jpg',
+    alt: 'Aluminum fishing boat with Mercury outboard on a water test at sunset on Rice Lake',
+    title: 'Water-tested on Rice Lake before pickup',
+    body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: 'Mike R.',
-    location: 'Peterborough, ON',
-    quote: 'Quoted my repower online in 5 minutes. The price I saw was the price I paid — exactly. Repower was done in two days.',
-  },
-  {
-    name: 'Sandra L.',
-    location: 'Toronto, ON',
-    quote: 'I had been calling dealers for weeks. Harris was the only one who showed me real prices upfront. Easy decision.',
-  },
-  {
-    name: 'Dave K.',
-    location: 'Cobourg, ON',
-    quote: 'Family-run, fair prices, and they actually know Mercury motors. Best repower experience I\'ve had in 30 years of boating.',
-  },
-];
+// Live Google review selection: 5-star only, substantial text, prefer repower/Mercury/motor/service mentions.
+const REVIEW_KEYWORDS = /repower|mercury|motor|service/i;
+
+function formatReviewerName(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return 'Google user';
+  if (parts.length === 1) return parts[0];
+  return `${parts[0]} ${parts[parts.length - 1].charAt(0).toUpperCase()}.`;
+}
+
+function selectFeaturedReviews(reviews: GoogleReview[] | undefined): GoogleReview[] {
+  if (!reviews || reviews.length === 0) return [];
+  const eligible = reviews.filter(
+    r => r.rating === 5 && (r.text?.trim().length ?? 0) >= 100
+  );
+  const preferred = eligible.filter(r => REVIEW_KEYWORDS.test(r.text));
+  const rest = eligible.filter(r => !REVIEW_KEYWORDS.test(r.text));
+  return [...preferred, ...rest].slice(0, 3);
+}
 
 export default function Index() {
   const navigate = useNavigate();
   const { state, getQuoteCompletionStatus } = useQuote();
   const { user } = useAuth();
+
+  // Live Google reviews (24h-cached via the google-places edge function).
+  const { data: placeData } = useGooglePlaceData();
+  const liveReviews = useMemo(
+    () => selectFeaturedReviews(placeData?.reviews),
+    [placeData?.reviews]
+  );
 
   const hasInProgressQuote = useMemo(() => {
     if (!state?.motor) return false;
@@ -90,9 +109,8 @@ export default function Index() {
   const goBuild = () => navigate('/quote/motor-selection');
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <RepowerLayout>
       <HomepageSEO />
-      <LuxuryHeader />
 
       {/* Resume-quote banner */}
       {hasInProgressQuote && (
@@ -101,7 +119,7 @@ export default function Index() {
             <div className="flex items-center gap-2 text-foreground">
               <Clock className="h-4 w-4 text-primary" />
               <span>
-                Resume your quote — <span className="font-medium">{completionPercent}% complete</span>
+                Resume your quote, <span className="font-medium">{completionPercent}% complete</span>
               </span>
             </div>
             <Button size="sm" variant="default" onClick={goBuild} className="gap-1.5">
@@ -112,198 +130,154 @@ export default function Index() {
       )}
 
       <main className="flex-1">
-        {/* HERO */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background pointer-events-none" />
-          <div className="container mx-auto px-4 py-12 md:py-20 relative">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-              {/* Copy column */}
-              <div className="text-center lg:text-left">
-                <Badge variant="secondary" className="mb-5 inline-flex items-center gap-1.5 px-3 py-1">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  Mercury Platinum Repower Center · Rice Lake, Ontario
-                </Badge>
+        <HeroRepower />
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 leading-tight">
-                  Real Mercury Repower Prices.
-                  <br />
-                  <span className="text-primary">No Forms. No Games.</span>
-                </h1>
+        {/* OBJECTION STRIP: three scannable cards directly below hero */}
+        <ObjectionStrip />
 
-                <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-                  Build your live Mercury outboard quote in under 3 minutes.
-                  Family-owned since 1947. Authorized Mercury dealer since 1965. Serving Toronto,
-                  Peterborough &amp; the Kawarthas.
-                </p>
 
-                <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 mb-8">
-                  <Button
-                    size="lg"
-                    onClick={goBuild}
-                    className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-                  >
-                    Build Your Quote <ArrowRight className="h-5 w-5" />
-                  </Button>
-                  {user && (
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      asChild
-                      className="text-base px-8 h-12 w-full sm:w-auto"
-                    >
-                      <Link to="/my-quotes">See Saved Quotes</Link>
-                    </Button>
-                  )}
-                  {!user && (
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      asChild
-                      className="text-base px-8 h-12 w-full sm:w-auto"
-                    >
-                      <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                        <Phone className="h-4 w-4" /> (905) 342-2153
-                      </a>
-                    </Button>
-                  )}
-                </div>
 
-                {/* Trust row */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-sm text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> Mercury Platinum Dealer
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> 7-year warranty available
-                  </span>
-                  <GoogleRatingBadge variant="compact" />
-                </div>
+        {/* PICKUP-BY-DESIGN BAND */}
+        <section className="bg-repower-cream border-y border-repower-navy-900/10">
+          <div className="container mx-auto px-4 py-4 md:py-5 text-center">
+            <p className="font-sans text-sm md:text-base text-repower-navy-900/85 leading-relaxed max-w-3xl mx-auto">
+              <span className="font-semibold text-repower-navy-900">Pickup at Gores Landing, by design.</span>{' '}
+              Every motor we install gets water-tested on Rice Lake first, so you drive home with a Mercury that has been run, not just bolted on. About 90 minutes from Toronto. Worth the drive.
+            </p>
+          </div>
+        </section>
+
+        <TrustStrip />
+
+        {/* HERITAGE BAND */}
+        <section className="py-16 md:py-28 px-4 sm:px-6 md:px-14 bg-repower-cream">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <figure className="m-0">
+              <div className="rounded-md overflow-hidden border border-repower-navy-900/15 shadow-xl bg-white">
+                <img
+                  src={jimHarrisHeritage}
+                  alt="Jim Harris working on a Mercury outboard at Harris Boat Works, mid-1960s"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
               </div>
-
-              {/* Hero image column */}
-              <div className="relative order-first lg:order-last">
-                <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[4/3] lg:aspect-[5/4] bg-muted">
-                  <img
-                    src={heroImage}
-                    alt="Mercury Pro XS outboard motor running on an Ontario lake at sunset"
-                    width={1920}
-                    height={1280}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    fetchPriority="high"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
-                </div>
-              </div>
+              <figcaption className="mt-3 text-xs italic text-repower-navy-900/60 text-center md:text-left">
+                Jim Harris, Gores Landing, c.1965
+              </figcaption>
+            </figure>
+            <div>
+              <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-4">
+                Since 1947
+              </p>
+              <h2
+                className="font-display font-bold text-[clamp(28px,6vw,52px)] tracking-tight leading-[1.05] text-repower-navy-900 mb-5"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                Three generations. <em className="not-italic italic text-[#C8102E]">One</em> Mercury dealer.
+              </h2>
+              <p className="font-sans font-light text-base md:text-lg text-repower-navy-900/75 leading-relaxed mb-6">
+                Harris Boat Works is a <strong className="font-semibold text-repower-navy-900">Mercury Marine Premier dealer</strong> and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization. Jim Harris started rigging Mercurys here in the mid-1960s, and the shop has been doing it ever since. The motors got faster. The promise didn't.
+              </p>
+              <RepowerCta to="/about" variant="outline" size="md">
+                Read our story <ArrowRight className="h-4 w-4" />
+              </RepowerCta>
             </div>
           </div>
         </section>
 
+        
         {/* HOW IT WORKS */}
-        <section className="py-12 md:py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10 md:mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-                How it works
+        <section className="py-16 md:py-32 px-4 sm:px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-10 md:mb-16">
+              <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.24em] text-[#C9A24A] mb-4 md:mb-6">
+                The Process
+              </p>
+              <h2
+                className="font-display font-bold text-[clamp(28px,8vw,64px)] tracking-tight leading-[1.1] md:leading-[1.05] mb-4 md:mb-6"
+                style={{ letterSpacing: '-0.03em', textWrap: 'balance' }}
+              >
+                See your real price. <em className="not-italic italic text-[#C8102E]">Lock it.</em> Pick it up.
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Three steps. Real prices the whole way through.
+              <p className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed px-2">
+                No phone tag. No fine print. No surprises.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-              {HOW_IT_WORKS.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <Card key={step.title} className="border-border/60 overflow-hidden flex flex-col">
-                    <div className="aspect-[4/3] bg-muted overflow-hidden">
-                      <img
-                        src={step.image}
-                        alt={step.title}
-                        loading="lazy"
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    </div>
-                    <CardContent className="p-6 flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                          <Icon className="h-4.5 w-4.5" />
-                        </div>
-                        <span className="text-sm font-medium text-muted-foreground">
-                          Step {i + 1}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">{step.body}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
+            <HowItWorksGrid>
+              {HOW_IT_WORKS.map((step, i) => (
+                <HowItWorksCard
+                  key={step.title}
+                  icon={step.icon}
+                  image={step.image}
+                  alt={step.alt}
+                  priority={step.priority}
+                  framed={step.framed}
+                  title={step.title}
+                  body={step.body}
+                  stepNumber={i + 1}
+                />
+              ))}
+            </HowItWorksGrid>
 
-            <div className="text-center mt-10">
-              <Button size="lg" onClick={goBuild} className="gap-2">
-                Start Building <ArrowRight className="h-4 w-4" />
-              </Button>
+            <div className="text-center">
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg">
+                Build Your Quote <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </RepowerCta>
             </div>
           </div>
         </section>
 
         {/* WHY REPOWER */}
-        <section className="py-12 md:py-20">
+        <section className="py-10 md:py-24 bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                  Why repower
+                </p>
+                <h2 className="font-display font-bold tracking-tight text-2xl md:text-5xl text-repower-cream mb-3 md:mb-5 leading-[1.1]" style={{ letterSpacing: '-0.02em', textWrap: 'balance' }}>
                   Why repower beats buying a new boat
                 </h2>
-                <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                  A new Mercury costs a fraction of a new boat — and you keep the hull
+                <p className="font-sans font-light text-repower-cream/75 text-sm md:text-lg mb-4 md:mb-7 leading-relaxed">
+                  A new Mercury costs a fraction of a new boat, and you keep the hull
                   you already know and love. Most repowers are completed in one to three
                   days at our Gores Landing shop.
                 </p>
-                <ul className="space-y-3 mb-6">
+                <ul className="flex flex-col gap-4 mb-5 md:mb-8">
                   {[
-                    'Pay only for the motor — not a whole new boat',
-                    'Modern Mercury fuel economy &amp; quiet running',
-                    'Coverage up to 7 years with current promotions',
-                    'Mercury-Certified technicians — we sell what we service',
+                    'Pay only for the motor, not a whole new boat.',
+                    'Modern Mercury fuel economy and quiet running.',
+                    'Every new Mercury includes 3 years of factory-backed warranty, with extended coverage available. Current promotions at mercuryrepower.ca/promotions.',
+                    'Mercury-Certified technicians who sell what they service.',
                   ].map(line => (
-                    <li key={line} className="flex items-start gap-2.5 text-foreground">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                      <span dangerouslySetInnerHTML={{ __html: line }} />
+                    <li key={line} className="flex flex-row items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">
+                      <CheckCircle2 className="w-5 h-5 text-repower-gold flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="flex-1 min-w-0">{line}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild variant="default" className="gap-1.5">
-                    <Link to="/quote/motor-selection">
-                      Build a Mercury outboard quote (Ontario, CAD) <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="gap-1.5">
-                    <Link to="/locations/rice-lake-mercury-repower">
-                      Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="gap-1.5">
-                    <Link to="/faq">
-                      Repower FAQ <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
+                <p className="text-repower-cream/85 text-sm md:text-base leading-relaxed mb-3 max-w-[65ch]">
+                  Get an <Link to="/quote/motor-selection" className="underline hover:text-repower-gold">online Mercury outboard quote</Link> for your boat. We provide live CAD pricing on motors and installation at our Gores Landing marina. No obligation.
+                </p>
+                <div className="flex flex-wrap gap-2 md:gap-3">
+                  <RepowerCta to="/quote/motor-selection" variant="primary" size="md">
+                    Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />
+                  </RepowerCta>
+                  <RepowerCta to="/locations/rice-lake-mercury-repower" variant="outline" size="md">
+                    Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
+                  </RepowerCta>
+                  <RepowerCta to="/faq" variant="outline" size="md">
+                    Repower FAQ <ChevronRight className="h-4 w-4" />
+                  </RepowerCta>
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-border bg-card shadow-lg">
+              <div className="rounded-xl overflow-hidden border border-repower-cream/10 bg-repower-navy-900/40 shadow-2xl">
                 <img
-                  src={shopImage}
-                  alt="Mercury-Certified technician installing a new outboard at the Harris Boat Works repower shop"
+                  src="/lovable-uploads/hero-mercury-90-shop-shot.png"
+                  data-photo-slot="hbw-real-shop-photo"
+                  alt="A new Mercury 90 FourStroke on the floor of the Harris Boat Works repower shop in Gores Landing"
                   loading="lazy"
                   width={1600}
                   height={1200}
@@ -314,40 +288,49 @@ export default function Index() {
           </div>
         </section>
 
-        {/* TESTIMONIALS */}
-        <section className="py-12 md:py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-                What customers say
-              </h2>
-              <div className="flex items-center justify-center">
-                <GoogleRatingBadge variant="full" />
+        {/* TESTIMONIALS, live Google reviews. Hidden entirely if the API has no usable reviews. */}
+        {liveReviews.length > 0 && (
+          <section className="py-12 md:py-20 bg-repower-navy-800 border-t border-repower-cream/10">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-10">
+                <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                  Customers
+                </p>
+                <h2
+                  className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-4 leading-[1.1]"
+                  style={{ letterSpacing: '-0.02em', textWrap: 'balance' }}
+                >
+                  What customers say
+                </h2>
+                <div className="flex items-center justify-center">
+                  <GoogleRatingBadge variant="full" tone="dark" />
+                </div>
               </div>
-            </div>
 
-            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-              {TESTIMONIALS.map(t => (
-                <Card key={t.name} className="border-border/60">
-                  <CardContent className="p-6">
-                    <div className="flex gap-0.5 text-yellow-400 mb-3" aria-label="5 stars">
+              <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                {liveReviews.map(review => (
+                  <div
+                    key={`${review.authorName}-${review.time}`}
+                    className="rounded-xl bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm p-6 flex flex-col"
+                  >
+                    <div className="flex gap-0.5 text-repower-gold mb-3" aria-label="5 stars">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <span key={i}>★</span>
                       ))}
                     </div>
-                    <p className="text-foreground leading-relaxed mb-4 italic">
-                      &ldquo;{t.quote}&rdquo;
+                    <p className="text-repower-cream/90 leading-relaxed mb-4 italic line-clamp-6">
+                      &ldquo;{review.text.trim()}&rdquo;
                     </p>
-                    <div className="text-sm">
-                      <div className="font-medium text-foreground">{t.name}</div>
-                      <div className="text-muted-foreground">{t.location}</div>
+                    <div className="text-sm mt-auto">
+                      <div className="font-medium text-repower-cream">{formatReviewerName(review.authorName)}</div>
+                      <div className="text-repower-cream/60">{review.relativeTime} · Google review</div>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* FINAL CTA BAND */}
         <section className="relative py-14 md:py-24 text-primary-foreground overflow-hidden">
@@ -368,30 +351,18 @@ export default function Index() {
               Build a live quote in 3 minutes. No commitments, no sales calls until you're ready.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button
-                size="lg"
-                variant="secondary"
-                onClick={goBuild}
-                className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-              >
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg" className="w-full sm:w-auto">
                 <DollarSign className="h-5 w-5" /> Build Your Quote
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground hover:text-primary text-base px-8 h-12 w-full sm:w-auto"
-              >
-                <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                  <Phone className="h-4 w-4" /> Call (905) 342-2153
-                </a>
-              </Button>
+              </RepowerCta>
+              <RepowerCta href="tel:+19053422153" variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Phone className="h-4 w-4" /> Call (905) 342-2153
+              </RepowerCta>
             </div>
           </div>
         </section>
       </main>
 
       <SiteFooter />
-    </div>
+    </RepowerLayout>
   );
 }

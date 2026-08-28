@@ -1,10 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { corsHeaders } from "../_shared/cors.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -186,6 +183,14 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Limit Perplexity calls: 20 / 10 minutes per IP (cache covers most repeats)
+  const allowed = await checkRateLimit(req, {
+    action: 'perplexity_prefetch',
+    maxAttempts: 20,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
     const { motor } = await req.json();

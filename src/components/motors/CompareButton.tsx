@@ -52,7 +52,7 @@ export function CompareButton({
               'focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2',
               isInComparison 
                 ? 'bg-primary text-primary-foreground shadow-md' 
-                : 'bg-white/90 backdrop-blur-sm text-gray-600 hover:bg-gray-100 border border-gray-200 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30',
+                : 'bg-repower-cream/95 backdrop-blur-sm text-repower-navy-900 hover:bg-repower-paper border border-repower-navy-900/15 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30',
               disabled && 'opacity-50 cursor-not-allowed',
               className
             )}

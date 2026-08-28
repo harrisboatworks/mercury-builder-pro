@@ -28,7 +28,7 @@ INSERT INTO public.promotions (
   '2025-04-10',
   '2025-12-31',
   'Get 7 Years of Zero-Worry Boating',
-  'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965.',
+  'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection from a Premier Dealer since 1965.',
   '7-Year Warranty',
   '{"type": "warranty_extension", "source": "dealer", "covers": "all_new_mercury", "base_years": 3, "bonus_years": 4, "total_years": 7, "includes_rebate": false, "tagline": "Turn the key. It starts. Every time."}'::jsonb
 );

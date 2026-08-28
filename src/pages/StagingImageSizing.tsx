@@ -12,11 +12,6 @@ const StagingImageSizing = () => {
     robots.setAttribute('name', 'robots');
     robots.setAttribute('content', 'noindex, nofollow');
     document.head.appendChild(robots);
-    const existingCanonical = document.querySelector('link[rel="canonical"]');
-    const canonical = existingCanonical || document.createElement('link');
-    canonical.setAttribute('rel', 'canonical');
-    canonical.setAttribute('href', window.location.href);
-    if (!existingCanonical) document.head.appendChild(canonical);
   }, []);
 
   const handleNoop = () => {};

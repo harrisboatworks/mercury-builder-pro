@@ -27,11 +27,14 @@ export const MobileStickyCTA = ({ onQuoteClick, className = "" }: MobileStickyCT
     <div className={`fixed bottom-4 right-4 z-50 sm:hidden ${className}`}>
       <Button 
         onClick={handleClick}
+        data-cta="quote-start"
+        data-cta-location="sticky_mobile"
         className="bg-red-600 hover:bg-red-700 text-white shadow-lg active:scale-95 active:shadow-md transition-all duration-150 rounded-full w-14 h-14 p-0 flex items-center justify-center"
         aria-label="Get a Quote"
       >
         <MessageCircle className="w-6 h-6" />
       </Button>
+
     </div>
   );
 };

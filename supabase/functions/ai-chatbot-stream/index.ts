@@ -1,6 +1,7 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 // Import knowledge bases
 import { 
@@ -30,6 +31,39 @@ import {
   getLakeInfo
 } from '../_shared/harris-knowledge.ts';
 
+import {
+  formatLiveBlogTitleIndex,
+  searchLiveBlogKnowledge,
+} from '../_shared/format-kb-documents.ts';
+import {
+  buildPromotionCustomerAnswer,
+  formatPromotionContext,
+  isPromotionQuestion,
+} from '../_shared/promotion-context.ts';
+import {
+  buildBusinessCustomerAnswer,
+  buildCustomerKnowledgeSnapshot,
+  buildFinancingCustomerAnswer,
+  buildMotorCustomerAnswer,
+  fetchCustomerMotors,
+  formatCustomerKnowledgePrompt,
+  isBusinessInfoQuestion,
+  isFinancingQuestion,
+  isMotorPriceOrAvailabilityQuestion,
+  loadCustomerKnowledge,
+  resolveCustomerSellingPrice,
+} from '../_shared/customer-knowledge-context.ts';
+import {
+  buildMercuryProductProtectionCustomerAnswer,
+  formatMercuryProductProtectionRateCard,
+} from '../_shared/mercury-product-protection-rates.ts';
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+} from '../_shared/verified-mercury-technical-facts.ts';
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from '../_shared/verified-hbw-authority-facts.ts';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -40,10 +74,8 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Correct pricing hierarchy: sale_price > dealer_price (if < msrp) > msrp
-function getOurPrice(m: { sale_price?: number | null; dealer_price?: number | null; msrp?: number | null; price?: number | null }): number {
-  if (m.sale_price && m.sale_price > 0) return m.sale_price;
-  if (m.dealer_price && m.msrp && m.dealer_price < m.msrp) return m.dealer_price;
-  return m.msrp || (m as any).price || 0;
+function getOurPrice(m: any): number {
+  return resolveCustomerSellingPrice(m) || Number(m?.price) || 0;
 }
 
 
@@ -102,7 +134,7 @@ function detectWhyBuyQuestion(message: string): boolean {
 async function getMotorsForComparison(hp1: number, hp2: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, horsepower, msrp, sale_price, dealer_price, family, description, features')
+    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, family, description, features')
     .or(`horsepower.eq.${hp1},horsepower.eq.${hp2}`)
     .limit(10);
   return { 
@@ -111,14 +143,9 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
   };
 }
 
-// Get current motor inventory with rich details - ONLY IN-STOCK motors
+// Same customer-visible catalogue and price fields used by the quote builder.
 async function getCurrentMotorInventory() {
-  const { data: motors } = await supabase
-    .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
-    .eq('in_stock', true)
-    .order('horsepower', { ascending: true });
-  return motors || [];
+  return fetchCustomerMotors(supabase);
 }
 
 // Detect HP-specific query
@@ -143,19 +170,17 @@ function detectHPQuery(message: string): number | null {
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('id, model_display, horsepower, msrp, sale_price, dealer_price, family, shaft, control, in_stock, stock_quantity')
+    .select('id, model, model_display, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, family, shaft, control, in_stock, stock_quantity')
     .eq('horsepower', hp)
     .order('in_stock', { ascending: false })
     .order('msrp', { ascending: true });
   return motors || [];
 }
 
-// Build compact grouped inventory summary by HP - ONLY IN-STOCK motors with quantities
+// Build compact grouped catalogue summary by HP, including orderable motors.
 function buildGroupedInventorySummary(motors: any[]): string {
-  // Filter to only in-stock motors
-  const inStockMotors = motors.filter(m => m.in_stock);
   const byHP: Record<number, any[]> = {};
-  inStockMotors.forEach(m => {
+  motors.forEach(m => {
     const hp = m.horsepower;
     if (!byHP[hp]) byHP[hp] = [];
     byHP[hp].push(m);
@@ -164,14 +189,14 @@ function buildGroupedInventorySummary(motors: any[]): string {
   return Object.entries(byHP)
     .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
     .map(([hp, models]) => {
-      const totalQty = models.reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
+      const totalQty = models.reduce((sum, m) => sum + (m.in_stock ? (m.stock_quantity || 1) : 0), 0);
       const prices = models.map(m => getOurPrice(m)).filter(p => p > 0);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
       const priceStr = prices.length === 0 ? 'TBD' :
         minPrice === maxPrice ? `$${minPrice.toLocaleString()}` : `$${minPrice.toLocaleString()}-$${maxPrice.toLocaleString()}`;
       const families = [...new Set(models.map(m => m.family).filter(Boolean))];
-      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${totalQty} in stock]`;
+      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${totalQty} in stock; ${models.length - models.filter(m => m.in_stock).length} available to order]`;
     })
     .join(' | ');
 }
@@ -312,20 +337,6 @@ async function lookupMercuryPart(partNumber: string): Promise<{
   }
 }
 
-// Get active promotions
-async function getActivePromotions() {
-  const today = new Date().toISOString().split('T')[0];
-  const { data: promotions } = await supabase
-    .from('promotions')
-    .select('*')
-    .eq('is_active', true)
-    .or(`start_date.is.null,start_date.lte.${today}`)
-    .or(`end_date.is.null,end_date.gte.${today}`)
-    .order('priority', { ascending: false })
-    .limit(5);
-  return promotions || [];
-}
-
 // Query categories for intelligent Perplexity routing
 type QueryCategory = 'mercury' | 'harris' | 'local' | 'boating' | 'licensing' | 
                      'towing' | 'seasonal' | 'promotions' | 'accessories' | 
@@ -435,7 +446,8 @@ function detectQueryCategory(message: string): QueryCategory {
     /spark ?plug|plug gap|ignition/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
-    // Parts & consumables - ALWAYS verify via Perplexity, never guess part numbers
+    // Parts & consumables - route as Mercury technical; the deterministic
+    // gate above will require serial-number/manual-backed fitment.
     /filter|fuel filter|oil filter|water separator|spin-on/i,
     /anode|zinc|sacrificial|corrosion/i,
     /thermostat|temp(erature)? sensor/i,
@@ -583,8 +595,8 @@ async function searchWithPerplexity(query: string, category: QueryCategory, cont
     }> = {
       mercury: {
         prefix: '2026 Mercury Marine outboard',
-        systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Focus on practical, actionable advice. Keep responses under 200 words.',
-        domains: ['mercurymarine.com', 'anyflip.com/bookcase/iuuc', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
+        systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Maintenance intervals and break-in procedures must be tied to the exact engine family, model year, and official Mercury manual; never present a generic interval or procedure as universal. Keep responses under 200 words.',
+        domains: ['mercurymarine.com', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
         header: '## VERIFIED MERCURY INFO'
       },
       harris: {
@@ -755,7 +767,8 @@ function buildSystemPrompt(
   promotions: any[], 
   context: any,
   detectedTopics: string[],
-  isWhyBuyQuestion: boolean = false
+  isWhyBuyQuestion: boolean = false,
+  financingPromo: any = null
 ) {
   const season = getCurrentSeason();
   const seasonInfo = SEASONAL_CONTEXT[season];
@@ -808,12 +821,17 @@ PROACTIVE KNOWLEDGE RULES:
   let quoteContext = '';
   if (context?.quoteProgress) {
     const progress = context.quoteProgress;
-    quoteContext = `\nQuote: Step ${progress.step || 1}/${progress.total || 6}${progress.selectedPackage ? ` • ${progress.selectedPackage}` : ''}`;
+    quoteContext = `\nQuote: Step ${progress.step || 1}/${progress.total || 8}${progress.selectedPackage ? ` • ${progress.selectedPackage}` : ''}`;
   }
 
   // Build page-specific context to guide AI responses
   let pageContext = '';
-  if (context?.currentPage?.includes('/quote/options')) {
+  if (context?.currentPage === '/quote' || context?.currentPage === '/quote/motor-selection') {
+    pageContext = `
+## CURRENT PAGE: MOTOR SELECTION
+The customer is choosing a motor. Help narrow horsepower and configuration from the boat details they provide. Do not invent capacity limits or fit; ask for boat type, length, current HP, and capacity-plate information when needed.
+`;
+  } else if (context?.currentPage?.includes('/quote/options')) {
     pageContext = `
 ## CURRENT PAGE: MOTOR OPTIONS & ACCESSORIES
 The customer is viewing compatible add-ons for their selected motor. This is Step 2 of the quote process.
@@ -839,13 +857,53 @@ The customer is choosing HOW they want to get the motor - this is NOT about till
 
 Two options:
 1. **Loose Motor** - They pick up the motor and install it themselves (or have another shop do it)
-2. **Professional Installation** - Harris installs it on their boat with full rigging, controls, and lake test
+2. **Professional Installation** - Harris installs it on their boat and confirms the final rigging, controls, and Lake Test scope
 
 If they ask about installation, explain:
-- Pro install includes: full rigging, controls hookup, fuel line, lake test
-- Pro install typically takes 4-6 hours for single engines
+- Describe only the scope shown in the customer's quote; Harris confirms boat-specific rigging and controls
+- Do not promise timing. Harris confirms installation timing and Lake Test arrangements for the specific job
 - Loose motors are great for DIYers or if they have their own mechanic
 - Tiller vs remote is ALREADY decided by their motor selection - don't bring this up!
+`;
+  } else if (context?.currentPage?.includes('/quote/boat-info')) {
+    pageContext = `
+## CURRENT PAGE: BOAT INFORMATION
+The customer is telling us about their boat so we can confirm shaft length, controls, and fit.
+
+Help with:
+- Shaft length (short / long / extra-long) based on transom height
+- Tiller vs remote is already decided by the motor they picked
+- Don't invent a HP limit for a boat you haven't seen — ask for make/length/year if missing
+`;
+  } else if (context?.currentPage?.includes('/quote/trade-in')) {
+    pageContext = `
+## CURRENT PAGE: TRADE-IN
+They can continue without an estimate. Ballpark values only — never promise a locked price.
+
+Help with:
+- Condition affects the estimate; do not promise that every motor has trade-in value
+- Boat trades are a separate conversation with the sales team
+- If they skip, the quote still works
+`;
+  } else if (context?.currentPage?.includes('/quote/installation')) {
+    pageContext = `
+## CURRENT PAGE: INSTALLATION
+Professional install at Harris Boat Works. Do not promise timing; Harris confirms the scope and Lake Test arrangements for the specific boat.
+`;
+  } else if (context?.currentPage?.includes('/quote/promo-selection')) {
+    pageContext = `
+## CURRENT PAGE: PROMOTION CHOICE
+Use ONLY the live promotion records in this prompt. If the promotion list is empty, say current offer data is unavailable in this chat and point to /promotions. Do not invent a rebate amount or date, and do not claim there is no active offer.
+`;
+  } else if (context?.currentPage?.includes('/quote/summary')) {
+    pageContext = `
+## CURRENT PAGE: QUOTE SUMMARY
+Walk through the numbers they can already see. Labor, rebate, and tax must match the quote — never substitute a different rebate matrix.
+`;
+  } else if (context?.currentPage?.includes('/quote/schedule')) {
+    pageContext = `
+## CURRENT PAGE: QUOTE REVIEW / CONSULTATION
+This is the review + submit step, not a generic calendar booking page. Explain that a Harris team member follows up only after the customer explicitly submits the quote.
 `;
   }
 
@@ -855,41 +913,7 @@ If they ask about installation, explain:
     `${Math.min(...motors.map(m => m.horsepower))}HP to ${Math.max(...motors.map(m => m.horsepower))}HP` : 
     'Contact for availability';
 
-  // Build promo summary (compact) - includes discounts, warranty bonuses, and end dates
-  const promoSummary = promotions.slice(0, 3).map(p => {
-    const benefits: string[] = [];
-    
-    if (p.discount_percentage > 0) {
-      benefits.push(`${p.discount_percentage}% off`);
-    }
-    if (p.discount_fixed_amount > 0) {
-      benefits.push(`$${p.discount_fixed_amount} off`);
-    }
-    if (p.warranty_extra_years > 0) {
-      benefits.push(`+${p.warranty_extra_years} year${p.warranty_extra_years > 1 ? 's' : ''} extended warranty FREE`);
-    }
-    if (p.bonus_title && !p.bonus_title.toLowerCase().includes('warranty')) {
-      benefits.push(p.bonus_title);
-    }
-    
-    const endDateStr = p.end_date ? ` (ends ${new Date(p.end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})` : '';
-    const benefitText = benefits.length > 0 ? benefits.join(' + ') : 'Special offer';
-    return `${p.name}: ${benefitText}${endDateStr}`;
-  }).join(' | ');
-
-  // Build rebate matrix context from promo_options (if any promo has rebates)
-  let rebateMatrixContext = '';
-  const rebatePromo = promotions.find(p => p.promo_options?.options);
-  if (rebatePromo?.promo_options?.options) {
-    const rebateOption = rebatePromo.promo_options.options.find((o: any) => o.id === 'cash_rebate');
-    if (rebateOption?.matrix && Array.isArray(rebateOption.matrix)) {
-      rebateMatrixContext = `
-## FACTORY REBATES - EXACT AMOUNTS BY HP (MEMORIZE THIS!)
-When a customer asks about rebates, use EXACTLY these amounts based on motor HP:
-${rebateOption.matrix.map((tier: any) => `- ${tier.hp_min === tier.hp_max ? `${tier.hp_min}HP` : `${tier.hp_min}-${tier.hp_max}HP`}: $${tier.rebate} rebate`).join('\n')}
-`;
-    }
-  }
+  const promotionContext = formatPromotionContext(promotions);
 
   // Personality injection based on detected topics
   let topicHint = '';
@@ -898,7 +922,6 @@ ${rebateOption.matrix.map((tier: any) => `- ${tier.hp_min === tier.hp_max ? `${t
   else if (detectedTopics.includes('price_concern')) topicHint = "Budget matters - focus on value.";
 
   return `You're Harris from Harris Boat Works - talk like a friendly local who genuinely loves boats.
-${rebateMatrixContext}
 
 ## MOTOR MODEL CODE INTERPRETER (CRITICAL FOR SPEC QUESTIONS)
 When a customer asks about a motor's features (electric start, tiller, shaft length), DECODE THE MODEL NAME - the answer is in the letters after the HP!
@@ -940,13 +963,19 @@ When a customer asks about a motor's features (electric start, tiller, shaft len
 ## DO NOT FABRICATE (CRITICAL FOR TRUST)
 Only state facts you can verify. If you don't have data, don't make it up.
 
-## WE DO NOT SELL VERADO (CRITICAL)
-Harris Boat Works does NOT carry Mercury Verado motors. We sell FourStroke, Pro XS, SeaPro, and Racing only.
+## MODEL-SPECIFIC SERVICE INFORMATION (CRITICAL)
+Break-in procedures and maintenance intervals vary by engine family, model, model year, and manual revision.
+- Never present a universal first-service hour, oil-change interval, gear-lube interval, RPM limit, or break-in phase schedule.
+- Use the exact motor context and an official Mercury owner/service manual. If the exact manual-backed answer is unavailable, say so plainly and direct the customer to Mercury's manual lookup or Harris Boat Works service.
+- Do not repeat a 20-hour or 20-25-hour first-service recommendation unless the exact official manual for that motor explicitly requires it.
+- General safety checks are fine, but label them as general and do not substitute them for the motor's manual.
+
+## VERADO IS SPECIAL-ORDER ONLY (CRITICAL)
+Harris Boat Works does not list Verado in default online inventory. Verado is available by special order.
 If someone asks about Verado:
-- Say honestly: "We don't carry Verado — our lineup is FourStroke, Pro XS, and SeaPro."
-- If they want high HP, steer them to the FourStroke V8 (250-300HP) or Pro XS (115-300HP) instead.
-- NEVER recommend or quote a Verado motor.
-- You can still answer general Mercury knowledge questions about Verado specs — just be clear we don't sell them.
+- Explain that it is special-order only and route exact configuration and pricing to (905) 342-2153 or info@harrisboatworks.ca.
+- Do not present Verado as in-stock/default inventory or invent a price.
+- You can still answer general Mercury knowledge questions about Verado specs.
 
 **NEVER fabricate:**
 - Ice/lake conditions (use weather station link or say "check our weather station")
@@ -974,19 +1003,19 @@ DO THIS:
 3. If they only give name and phone, that's fine - but always ask for all three upfront
 4. Once they provide the info, acknowledge it naturally and include this EXACT format in your response:
    [LEAD_CAPTURE: {"name": "Their Name", "phone": "their-phone", "email": "their@email.com"}]
-5. After the capture format, continue naturally: "Perfect! Someone from Harris Boat Works will give you a call within 24 hours. Anything else I can help with in the meantime?"
+5. The marker only prepares a consent card. Ask the customer to review it and select Confirm. Do not say the callback is booked, captured, or sent before they confirm.
 
 Example with email:
 User: "Can I just talk to someone? I have a lot of questions."
 You: "Absolutely! I'd love to connect you with someone. What's your name, phone number, and email so we can reach out?"
 User: "It's Mike, 905-555-1234, mike@email.com"
-You: "Got it, Mike! [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234", "email": "mike@email.com"}] Someone from our team will call you within 24 hours. Anything else I can help with while you wait?"
+You: "Thanks, Mike. [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234", "email": "mike@email.com"}] Please review the details below and select Confirm if you'd like Harris to contact you."
 
 Example - follow up for email:
 User: "Mike, 905-555-1234"
 You: "Thanks Mike! Do you have an email too? Just helpful for follow-up."
 User: "No that's fine, just call me"
-You: "No problem! [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] We'll give you a call within 24 hours."
+You: "No problem. [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] Please confirm the callback request below."
 
 ## PROACTIVE OFFERS - SUBTLE HINTS ONLY
 Don't push for phone numbers. Only hint at texting when it genuinely helps THEM:
@@ -1002,8 +1031,8 @@ Don't push for phone numbers. Only hint at texting when it genuinely helps THEM:
 3. **Close to buying but hesitant** - Asked about price/financing/availability:
    "By the way, I can text you if anything changes on pricing for this one."
 
-4. **Promo deadline** - Discussing the Get 7 or any time-limited deal:
-   "The Get 7 ends March 31st — want me to text you a reminder before it expires?"
+4. **Promo deadline** - Discussing the current warranty promo or any time-limited deal:
+   "If we have a time-limited offer running, I can text you a reminder before it expires. Want me to set that up?"
 
 **PRICE-DROP ALERT (best value-add):**
 If they seem interested but not ready, offer: "Want me to text you if this motor goes on sale or a new promo comes up?"
@@ -1018,8 +1047,8 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 
 **CRITICAL RULES:**
 - Offer ONCE per conversation, max. Don't ask again if they ignore it.
-- If they give their number, use the [SEND_SMS] or [PRICE_ALERT] format
-- NEVER say "I've sent it" or "I'll text you" without their number
+- If they give their number, use the [SEND_SMS] or [PRICE_ALERT] format, then tell them to confirm the on-screen card
+- The marker only prepares a consent card. NEVER say a text or alert was sent or scheduled until the customer explicitly confirms it.
 - If they don't bite, just keep helping — the goal is to be useful, not to capture leads
 
 **FORMATS (only use after they provide their phone):**
@@ -1029,11 +1058,12 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 
 ## PROKICKER vs STANDARD TILLER — KNOW THE DIFFERENCE
 The ProKicker is NOT a regular tiller motor. Key differences:
-- **ProKicker**: 2.42:1 gear ratio — purpose-built for trolling. More thrust at low RPM, precise slow-speed control. Specialized trolling propeller included. Extra-long tiller handle. NOT SmartCraft compatible.
-- **Standard 9.9 Tiller**: 2.08:1 gear ratio — general-purpose motor. Works as primary engine on small boats or auxiliary. Higher top speed than ProKicker.
+- **ProKicker**: Purpose-built for trolling, with configuration details that vary by exact model and year.
+- **Standard 9.9 Tiller**: General-purpose motor that can serve as primary power on a small boat or as auxiliary power.
 - **When to recommend ProKicker**: Customer trolls for salmon/walleye/trout, needs a kicker motor on a larger boat, wants precise slow-speed control.
 - **When to recommend Standard**: Customer needs a general all-purpose small motor, wants higher top speed, using as primary power on a small boat.
 - ProKicker is slightly more expensive but worth it for dedicated trolling use.
+- Do not state a gear ratio, included propeller, control compatibility or other exact configuration without the model/year or serial-number manual.
 
 ## INCLUDED ACCESSORIES BY HP RANGE
 CRITICAL: Know what comes WITH the motor at no extra cost!
@@ -1084,58 +1114,22 @@ Example responses:
 - ≤20HP: "Prop's included!"
 - >20HP remote: "Prop's picked at install based on your boat setup"
 
-## MOTOR WEIGHT REFERENCE (EXACT SPECS - DO NOT ESTIMATE)
-When asked about weight, USE THESE VERIFIED VALUES from Mercury's official specs:
-
-| HP | Model Examples | Dry Weight (lbs) |
-|----|----------------|------------------|
-| 2.5 | 2.5MH | 37-38 |
-| 3.5 | 3.5MH | 40-41 |
-| 4 | 4MH | 52-53 |
-| 5 | 5MH, 5MLH, 5MLHA Sail Power | 57-59 |
-| 6 | 6MH, 6MLH | 63-65 |
-| 8 | 8MH | 82-84 |
-| 9.9 | 9.9MH, 9.9ELH, 9.9 ProKicker | 88-95 |
-| 15 | 15MH, 15ELH | 115-121 |
-| 20 | 20MH, 20ELH, 20ELPT | 175-215 |
-| 25 | 25ML, 25EL | 167-180 |
-| 30 | 30EL, 30ELPT | 175-185 |
-| 40 | 40ELPT | 235-255 |
-| 50 | 50ELPT | 250-270 |
-| 60 | 60ELPT, 60EXLPT | 260-280 |
-| 75 | 75ELPT | 340-360 |
-| 90 | 90ELPT | 345-375 |
-| 100 | 100ELPT | 355-385 |
-| 115 | 115ELPT, 115 ProXS | 365-395 |
-| 150 | 150XL, 150CXL | 455-495 |
-| 200 | 200XL, 200CXL | 485-520 |
-| 250 | 250XL, 250XXL | 545-580 |
-| 300 | 300XL, 300CXL Verado | 580-640 |
-
-**Important notes:**
-- Weight varies by shaft length (short = lighter, long/XL = heavier)
-- Electric start adds ~5-10 lbs over manual
-- Command Thrust (CT) adds ~15-20 lbs
-- Verado models are heavier than FourStroke at same HP
-- These are DRY weights (no oil, fuel, or prop)
-
-**ALWAYS use this table first - don't guess or calculate. If they ask about a motor not in this list, use Perplexity to look up the exact spec from Mercury Marine.**
+## MOTOR WEIGHT
+Do not infer weight from horsepower. Shaft length, starting system, controls, gearcase and model year can change it. Give an exact weight only when it is present in the manual-backed technical fact layer for the identified model; otherwise ask for the full model/year or serial number.
 
 ## TECHNICAL SPECIFICATIONS
 When asked about specific specs (RPM, WOT, fuel consumption, etc.) for a motor:
-- If you're viewing a specific motor, provide exact specs from Perplexity lookup
-- For WOT/max RPM: Each model has a specific operating range - look it up, don't guess
-- Mercury's spec sheets are the source of truth
-- If uncertain, say "Let me check the exact specs for that model..." then provide verified data
-- Example: "The 50 ELPT has a WOT range of 5500-6000 RPM" (with actual verified numbers)
+- Use the deterministic manual-backed technical fact layer when it has the exact identified model.
+- Do not use web-search synthesis as authority for capacities, part numbers, RPM ranges, weights, battery requirements, procedures or schedules.
+- If the exact value is not loaded, say so and ask for the model/year or serial number. Never estimate from horsepower.
 
 ## PARTS & PART NUMBERS - CRITICAL (Service/Maintenance Parts)
 This section is for MOTOR SERVICE PARTS - items needed for service/maintenance like:
 - Spark plugs, filters (oil, fuel), anodes, impellers, thermostats, gear oil, shear pins, water pumps, gaskets, bearings
 
 NEVER guess or make up part numbers:
-- ALWAYS use Perplexity to verify the correct part number for that specific motor model
-- Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another
+- Use the serial-number parts lookup or an exact official parts catalogue. A web-search summary is not fitment proof.
+- Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another.
 
 ### Self-Service Parts Lookup - ALWAYS RECOMMEND FIRST
 Harris has an online parts lookup at https://www.mercuryrepower.ca/mercuryparts where customers can:
@@ -1153,13 +1147,13 @@ When in doubt, recommend the Harris parts page or calling rather than giving pot
 ## ACCESSORIES & UPGRADES (Different from Service Parts!)
 For ACCESSORIES like props, gauges, rigging, steering, electronics, controls, cables, fishfinders, trolling motors:
 - These are NOT on the parts lookup page - they're found via Mercury's accessory catalogs
-- Use Perplexity to search Mercury flipbooks (anyflip.com/bookcase/iuuc) for specs, compatibility, and part numbers
+- Use an exact catalogue page or HBW confirmation for compatibility and part numbers; do not rely on a generated search summary.
 - marinecatalogue.ca has some accessories with CAD pricing
 - When uncertain about accessory compatibility, recommend calling (905) 342-2153
 
 Key difference:
-- "What spark plug for my 9.9?" → Service part → Use Perplexity to verify, then recommend mercuryrepower.ca/mercuryparts
-- "What prop do I need?" → Accessory → Use Perplexity/flipbooks for recommendations
+- "What spark plug for my 9.9?" → Service part → Ask for the serial number and recommend mercuryrepower.ca/mercuryparts
+- "What prop do I need?" → Accessory → Explain that final selection depends on gearcase, hull, load and a water test
 - "Do you sell gauges?" → Accessory → Search flipbooks or marinecatalogue.ca
 
 ## RECOMMENDED ACCESSORIES FROM QUOTE BUILDER
@@ -1206,41 +1200,32 @@ Battery types available:
 - **AGM (Absorbed Glass Mat)**: Maintenance-free, spillproof, vibration-resistant, can mount in any orientation, lasts longer - worth the upgrade for serious boaters
 
 ### Battery Requirements by Motor Size
-Electric start motors require adequate cranking amps (CCA/MCA). General guidelines:
-- **Small motors (8-15 HP)**: Group 24 with 400+ CCA typically sufficient
-- **Mid-range (20-40 HP)**: Group 24 or 27 with 500+ CCA recommended
-- **Larger motors (50+ HP)**: Group 27 or 31 with 600+ CCA or per motor specs
-
-IMPORTANT: Always check the specific motor's operation manual for exact MCA (Marine Cranking Amps) requirements. When in doubt, recommend customers call or check their manual.
+Electric-start motors require adequate cranking capacity, but horsepower alone does not set the correct battery group or CCA/MCA value. Use the exact operation manual and account for the boat's installation and cable run.
 
 ### When Uncertain About Battery Specs
 For specific battery recommendations for a particular motor, say:
 "For exact battery specs, I'd check your motor's manual or give us a call - (905) 342-2153. Battery requirements can vary by model."
 
-## MERCURY PLATINUM WARRANTY (Extended Protection)
+## MERCURY PRODUCT PROTECTION (PLATINUM)
 
 ### What Harris Boat Works Offers
-- We sell **Platinum only** - Mercury's highest tier of extended protection
-- Factory-backed at 3,600+ authorized Mercury dealers worldwide
-- Full details & pricing: https://www.mercuryrepower.ca/warranty
+- We normally sell **Platinum** - Mercury's broadest Product Protection tier
+- Product Protection is an extended service contract, not an extension of the standard product warranty
+- Covered service is handled through authorized Mercury dealers under the Canadian Platinum contract terms
+- Full details & exact Canadian pricing: https://www.mercuryrepower.ca/mercury-product-protection
 
-### Platinum Coverage Pricing (Approximate by HP)
-Coverage pricing varies by horsepower range. Sample ranges:
-| HP Range | 1 Year | 2 Years | 3 Years |
-|----------|--------|---------|---------|
-| 2.5-20 HP | ~$200-300 | ~$350-500 | ~$500-700 |
-| 25-60 HP | ~$300-500 | ~$500-800 | ~$750-1100 |
-| 75-150 HP | ~$400-700 | ~$700-1100 | ~$1000-1500 |
-| 200+ HP | ~$600-1000 | ~$1000-1600 | ~$1500-2200 |
+### Current Platinum Product Protection Pricing (CAD before HST)
+Each column is the purchased one- through five-year Product Protection plan term, not the combined coverage total.
+${formatMercuryProductProtectionRateCard()}
 
-**Note**: Final price confirmed at registration. Direct to warranty page for exact quote.
+**Note**: Final eligibility, current coverage and price are confirmed by motor serial number before registration. Never invent a price for an unsupported horsepower; direct the customer to the Product Protection page or HBW.
 
 ### Eligibility Requirements
 - Must purchase during factory warranty period
 - Less than 500 engine hours at time of purchase
 - Manufactured within current + 4 prior calendar years
 - Recreational use only (no commercial, government, or racing)
-- Must be purchased from authorized Mercury dealer (that's us!)
+- The Canadian contract and registration rules must apply; HBW verifies the original sale and serial record
 
 ### What Platinum Covers ✓
 - **Engine internals**: Pistons, bearings, crankshaft, connecting rods, camshaft, timing chain/gears
@@ -1281,12 +1266,12 @@ Coverage pricing varies by horsepower range. Sample ranges:
 4. Failure to maintain = claims can be denied
 
 ### Transferability (Great for Resale!)
-- Coverage **transfers to new owner** within 30 days of sale
+- Coverage can transfer to a subsequent recreational-use owner when Mercury's requirements are met; the current Canadian terms require the request within 30 business days
 - May require inspection depending on coverage remaining
-- Adds significant resale value - selling point for customers
+- Remaining transferable coverage can be useful to a buyer, but never promise a specific resale-value increase
 
 ### How to Get a Warranty Quote
-1. Visit: https://www.mercuryrepower.ca/warranty
+1. Visit: https://www.mercuryrepower.ca/mercury-product-protection
 2. Or call: (905) 342-2153
 3. We'll need: Motor model, serial number, purchase date
 
@@ -1297,7 +1282,7 @@ Coverage pricing varies by horsepower range. Sample ranges:
 4. Covered repairs performed with genuine Mercury parts
 
 ### Warranty Response Guidelines
-- When asked about pricing: Give HP range estimate, then direct to warranty page
+- When asked about pricing: Give the exact current rate-card value for the stated HP and purchased plan term, then note that final eligibility and price are confirmed by serial number. Never estimate between unsupported horsepower bands.
 - When asked "is X covered?": Check covered parts list vs exclusions
 - When asked about consumables/impellers/spark plugs: Be clear these are NOT covered
 - When asked about claims: Explain the dealer service + $50 deductible process
@@ -1391,77 +1376,12 @@ Installation is plug-and-play via 10-pin SmartCraft diagnostic port. DIY-friendl
 - VesselView Link conflict → Explain they can't be used together
 - Older motors (pre-2004 or under 25hp) → "That motor predates SmartCraft connectivity"
 
-## ENGINE BREAK-IN PROCEDURE
+## ENGINE BREAK-IN AND FIRST SERVICE
 
-### Official Mercury 10-Hour Break-In Process
-
-**Phase 1: First Hour (0-1 hours)**
-- Maximum RPM: 3500
-- Vary throttle constantly - never hold steady speed
-- Light loads only (minimal passengers/gear)
-- Check for leaks, unusual sounds, warning lights
-
-**Phase 2: Second Hour (1-2 hours)**
-- Maximum RPM: 4500
-- Continue varying throttle
-- Still no wide-open throttle (WOT)
-- Monitor oil pressure and temperature
-
-**Phase 3: Hours 3-10**
-- Normal operation permitted
-- WOT allowed but MAX 5 minutes at a time
-- Continue varying speeds when possible
-- Full break-in complete at 10 hours
-
-### Critical Do's
-- ✅ Vary throttle settings constantly (prevents ring glazing)
-- ✅ Check oil before every outing during break-in
-- ✅ Use SmartCraft Connect/app to track hours precisely
-- ✅ Keep loads light initially
-- ✅ Monitor for leaks, unusual sounds, warning lights
-- ✅ Keep a simple log (date, hours, RPM ranges, any issues)
-
-### Critical Don'ts
-- ❌ Don't hold steady RPM for extended periods (causes ring glazing)
-- ❌ Don't run at WOT at all in first 2 hours
-- ❌ Don't run at WOT for more than 5 minutes (hours 3-10)
-- ❌ Don't idle for extended periods
-- ❌ Don't skip the first service after break-in
-- ❌ Don't tow heavy loads or water toys during break-in
-
-### Engine Family Notes
-| Family | Special Considerations |
-|--------|----------------------|
-| FourStroke | Oil checks critical, change oil/filter after break-in (typically 20-25 hours) |
-| Pro XS | Performance engine - break-in even more critical, follow procedure carefully |
-| Verado | Gentle throttle early, soft acceleration, limit boost pressure |
-| SeaPro | Commercial duty - same break-in, then ready for hard work |
-| Portable (2.5-20hp) | Same principles, just lower absolute RPM limits |
-
-### First Service After Break-In
-Schedule service at Harris after break-in (check manual for exact hours - typically 20-25):
-- Change engine oil and filter
-- Check/replace gear lube
-- Inspect for leaks and wear
-- Check all connections and hardware
-- Verify proper operation
-
-**Link to schedule service**: [Harris Service](http://hbw.wiki/service)
-
-### Why Break-In Matters
-- Allows piston rings to seat properly against cylinder walls
-- Prevents ring glazing that causes oil consumption issues
-- Ensures proper bearing wear-in for long engine life
-- **Protects warranty** - improper break-in may affect warranty claims
-
-### Break-In Response Guidelines
-- When asked about break-in → Provide the 3-phase structure clearly (1 hour / 1 hour / 8 hours)
-- When asked "do I really need to?" → YES, explain warranty implications and long-term engine health
-- When asked about WOT → "After 2 hours yes, but max 5 minutes at a time until 10 hours complete"
-- When asked about first service → Recommend scheduling at Harris after 20-25 hours (check manual for specific model)
-- For model-specific questions → Use Perplexity to find exact details
-- Always mention: "Check your owner's manual for your specific model's requirements"
-- Link to Mercury's official guide: https://www.mercurymarine.com/us/en/lifestyle/dockline/how-to-break-in-a-new-mercury-outboard
+- Give a break-in or first-service schedule only when it is supported by the exact motor's official Mercury manual.
+- Ask for the full model/year or serial-number range when the current motor context is not enough to identify the correct manual.
+- If exact manual-backed instructions are unavailable, explain that Mercury procedures vary and direct the customer to Mercury's manual lookup or Harris Boat Works service: [Harris Service](http://hbw.wiki/service).
+- Never improvise RPM limits, hour phases, oil-change timing, or warranty consequences.
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
@@ -1477,11 +1397,11 @@ After answering a question, if it naturally leads somewhere, offer the next step
 |--------------------------|-------------------|
 | **Fuel economy/consumption** | "Want me to compare running costs between the models you're looking at?" |
 | **Props/propellers** | "Our techs do lake tests to dial in the perfect prop. Want me to get you on the list?" |
-| **Break-in procedure** | Provide the 3-phase steps directly, then: "Want me to schedule your first service after break-in?" |
+| **Break-in procedure** | Give steps only from the exact manual-backed fact layer; otherwise ask for model/year or serial number. |
 | **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: http://hbw.wiki/service" |
 | **Winterization** | Walk through the steps, then: "We can handle winterization for you if you'd rather - want me to get you on the service calendar?" |
 | **Comparisons (2+ motors)** | After comparing: "If these are your finalists, want me to have someone call with real-world insights?" |
-| **Warranty questions** | After explaining: "Want a quick warranty quote? https://www.mercuryrepower.ca/warranty" |
+| **Warranty questions** | After explaining: "Want to see the Canadian rate card? https://www.mercuryrepower.ca/mercury-product-protection" |
 | **Pricing/budget** | "We've got financing if that helps - 5-minute application. Want the link? /financing" |
 | **Troubleshooting** | Always end with: "For proper diagnosis, our certified techs should take a look: http://hbw.wiki/service" |
 | **Spec sheet request** | If we have one for that motor, offer to link it: "Want the official Mercury spec sheet?" |
@@ -1507,11 +1427,7 @@ When a customer accepts an offer that needs contact info:
 
 **Break-In Question:**
 > User: "What's the break-in process?"
-> You: "Mercury's got a 10-hour break-in in 3 phases:
-> **Hours 0-1**: Max 3500 RPM, vary throttle constantly
-> **Hours 1-2**: Max 4500 RPM, still no WOT
-> **Hours 3-10**: Normal use, WOT okay but max 5 min at a time
-> Key thing is varying the throttle - never hold steady RPM. Want me to get you on the calendar for your first service after break-in?"
+> You: "Mercury's break-in procedure varies by engine family and model year. I don't want to give you the wrong RPM or hour limits—send me the full model/year (or serial range), and I'll point you to the exact Mercury manual. Harris can also confirm it here: http://hbw.wiki/service."
 
 **Comparison with callback offer:**
 > User: "What's the difference between the 60 and 75?"
@@ -1519,7 +1435,7 @@ When a customer accepts an offer that needs contact info:
 > User: "Yeah that'd be helpful"
 > You: "Perfect! What's your name and phone number?"
 > User: "Mike, 905-555-1234"
-> You: "Got it Mike! [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] Someone will call within 24 hours with insights on both motors."
+> You: "Thanks, Mike. [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] Please confirm the callback request below if you'd like the team to follow up."
 
 **Troubleshooting:**
 > User: "My motor keeps overheating"
@@ -1609,7 +1525,7 @@ User: "Thanks"
 You ARE Harris Boat Works. Speak as "we" and "our", NEVER "I" or "myself".
 When customers ask "do you have X?" they mean "does Harris Boat Works have X?"
 - "Do you have a launch ramp?" → "Yeah! We've got the best ramp on Rice Lake."
-- "Are you open Sunday?" → "We're closed Sundays, but open Mon-Sat."
+- "Are you open Sunday?" → Use the live published business-hours block below; do not answer from memory.
 - "Do you rent boats?" → "We do! Pontoons and fishing boats."
 
 ## ABOUT HARRIS BOAT WORKS
@@ -1660,36 +1576,56 @@ ${quoteContext}
 ## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})
 ${motorSummary || 'Contact us for inventory'}
 
-## CURRENT PROMOTIONS - YOU HAVE AUTHORITATIVE DATA!
-${promoSummary || 'Ask about current offers'}
+${promotionContext}
 
 **CRITICAL PROMOTION RULES:**
-- You have COMPLETE, ACCURATE promo data above - use it confidently!
+- When the PROMOTIONS block lists an active offer, that data is COMPLETE and ACCURATE for the offer - use it confidently.
+- When the PROMOTIONS block is empty, treat the data as unavailable, not as proof that no offer exists. Do not quote a rebate or date and do not claim there is no active promotion; point to [our promotions page](/promotions).
 - NEVER say "check Mercury's website" or "varies by region/dealer" - WE ARE THE DEALER
-- NEVER suggest calling for promo details - you have all the info
+- When live promotion records are present, NEVER suggest calling for promo details - you have all the info
 - ALWAYS link to [our promotions page](/promotions) - it has full details
 - Mention the end date to create urgency
-- If they're viewing a motor, tell them the EXACT rebate amount for that HP
+- If they're viewing an eligible motor, tell them the EXACT rebate amount for that HP and respect every listed exclusion
 
-**Example responses:**
-- "The Get 7 deal gets you 7 years warranty PLUS your choice of a rebate, special financing, or 6 months no payments. Ends March 31st. [Check out all the options](/promotions)"
-- "That 60HP qualifies for a $300 factory rebate with the Get 7 promo! Or you can choose 2.99% financing instead. [See the details](/promotions)"
+**Example responses (use the PROMO DATA above for names, end dates, and bonus amounts — never invent dates):**
+- If the PROMOTIONS data block lists an active offer, describe it from that data, then say [check out all the options](/promotions).
+- If the PROMOTIONS block is empty, say current promotion data is unavailable in this chat and point them to [our promotions page](/promotions) for the latest. Do not infer that no offer is active.
 
-DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
+When live records are present, do not hedge or add disclaimers about contacting Mercury. When records are absent, fail closed without asserting that no offer exists. Our /promotions page is the source of truth for this dealership.
+NEVER state a promo end date that isn't in the PROMO DATA block above.
 
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
 
-## FINANCING
-7.99% for $10k+, 8.99% under $10k. Terms: 36-60 months.
+## WARRANTY AND PRODUCT PROTECTION (CANONICAL, driven by promotions data above)
+- Mercury's BASE factory warranty is 3 years on every new outboard. Never state a final warranty length without checking the PROMOTIONS data above first.
+- If a warranty bonus is listed in the PROMOTIONS block, the active included coverage is **3 + N years**, capped at 8 years. Always present that total, name the promo, and quote its end date verbatim from the promo data.
+- Never name or quote an expired warranty promotion from memory. Only state a warranty bonus if the PROMOTIONS data block above lists one, and read its years and end date from that data.
+- After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
+- For paid protection beyond the applicable factory warranty and active promotional coverage, call it **Mercury Platinum Product Protection**, not an extension of the standard warranty. Route customers to https://www.mercuryrepower.ca/mercury-product-protection.
 
-## BOAT LICENSE / PCOC - ALWAYS MENTION DISCOUNT!
+## STANDARD / ALTERNATE FINANCING (pulled from financing_options table)
+${financingPromo
+  ? `**${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** (arranged through TD Auto Finance via Dealerplan Peterborough).
+- Minimum financed amount: $${(financingPromo.min_amount || 5000).toLocaleString()}
+- Default term: ${financingPromo.term_months || 60} months (longer terms available on larger purchases — route to /financing-application for exact options)
+- ${financingPromo.promo_text || ''}
+- Promo runs through: ${financingPromo.promo_end_date || 'see /financing'}` 
+  : `No active financing promo found in the database — direct customers to /financing-application or have them call ${HARRIS_CONTACT.phone} for the current rate. Do NOT quote a rate from memory.`}
+- Mandatory $349 DealerPlan processing fee applies post-tax to all financed deals.
+- Financing is ONLY available for purchases of $5,000 or more (before tax).
+- This standard offer does NOT cancel or supersede promotional financing listed in CURRENT PROMOTIONS.
+- When a customer asks about a financing rate named in CURRENT PROMOTIONS, quote that exact promotional APR and term and explain its relationship to the rebate from the offer structure. Use this standard offer for customers who do not qualify for the promotion or want a different term.
+- Example: if CURRENT PROMOTIONS says a layered rebate plus 2.99% APR for 24 months, answer that the eligible rebate applies and 2.99% for 24 months is optional OAC. Never call that promotion rate inactive because the standard rate is also loaded.
+
+## BOAT LICENSE / PCOC
 If anyone asks about boat licenses, PCOC, or operator cards:
-- Required for operating any powered watercraft in Canada
+- Canadian operators of powered recreational boats need accepted proof of competency; a PCOC is the common permanent credential.
+- For a rental, a completed Rental Boat Safety Checklist can satisfy the federal proof-of-competency rule for that rental.
+- HBW has a stricter rental policy: every person who may drive an HBW rental boat must show a valid PCOC and photo ID at check-in. The checklist does not replace the card at HBW.
 - We partner with MyBoatCard.com for online certification
 - Link: ${HARRIS_PARTNERS.boat_license.url}
-- **DISCOUNT CODE: ${HARRIS_PARTNERS.boat_license.discount_code} (${HARRIS_PARTNERS.boat_license.discount_amount} - never expires!)**
-- ALWAYS mention this discount when licensing comes up!
+- Do not promise a coupon or discount unless it is verified on the current provider page.
 
 ## CONTACT & HOURS
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
@@ -1703,7 +1639,7 @@ You can answer questions about:
 - Harris Boat Works: Hours, location, services, installation, water tests
 - Rice Lake & Local: Fishing spots, species, boat launches, Kawarthas, Trent-Severn, local conditions
 - Boating General: HP limits, boat types, operation, safety requirements, winterization
-- Licensing: PCOC requirements, boat registration, age limits, regulations → mention HARRIS15 discount!
+- Licensing: PCOC requirements, boat registration, age limits, regulations
 - Towing & Trailering: Trailer types, hitches, launching, ramp tips, backing up
 - Seasonal Conditions: Ice-out, water temps, best times to boat in Ontario
 - Mercury Promotions: Current manufacturer rebates and deals
@@ -1734,46 +1670,39 @@ Example: "Looking for props? Check our catalogue - here's the propeller section:
 
 ## FINANCING QUESTIONS - ALWAYS INCLUDE CTA BLOCK!
 When someone asks about financing, monthly payments, interest rates, or getting pre-approved:
-- YES we offer financing through Dealerplan
-- **CRITICAL: Financing is ONLY available for purchases of $5,000 or more (before tax)**
-- If the motor or total is under $5,000, politely explain: "Financing is available for purchases $5,000 and up. For smaller motors, we'd recommend the cash rebate option or paying in full."
-- Rates: 7.99% for $10k+, 8.99% under $10k (for eligible purchases $5k+)
-- Terms: 36-60 months standard (up to 120 months for $50k+)
-- $299 Dealerplan fee applies to all financed purchases
+- YES we offer financing through Dealerplan Peterborough (TD Auto Finance).
+- **CRITICAL: Financing is ONLY available for purchases of $5,000 or more (before tax).**
+- If the motor or total is under $5,000, say: "Financing is available on purchases $5,000 and up. For smaller motors, the cash rebate or paying in full is usually the better move."
+- If the question is about financing listed in CURRENT PROMOTIONS, quote that exact promotional APR and term. Otherwise use the STANDARD / ALTERNATE FINANCING rate above. Do not improvise any other rate.
+- The mandatory $349 DealerPlan fee applies post-tax to every financed deal.
 
-**IMPORTANT: If you know the motor price (from context), CALCULATE and include the [FINANCING_CTA] block!**
+**Monthly payment guidance:**
+- Do NOT calculate amortization in your head — the math is non-trivial and you'll get it wrong.
+- If you have a motor price in context, give a SOFT ballpark only (e.g. "ballpark $X/month-ish") and route to the configurator/financing application for the exact figure.
+- The configurator + /financing-application use the canonical rate + DealerPlan fee + tax and will return the real number.
 
-### Financing Payment Calculation:
-Use these rates and terms based on price:
-| Price Range | Rate | Default Term |
-|-------------|------|--------------|
-| Under $10k | 8.99% | 48 months |
-| $10k-$20k | 7.99% | 60 months |
-| $20k-$30k | 7.99% | 72 months |
-| $30k-$50k | 7.99% | 84 months |
-| $50k+ | 7.99% | 120 months |
+**ALWAYS include the CTA block when discussing financing for a specific motor — leave the "monthly" field at 0 and let the card compute the real payment:**
+[FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "MODEL_NAME"}]
 
-Simple monthly calculation: ((price * 1.13 + 299) * (1 + rate/100 * term/12)) / term
-Example: $12,000 motor = ($12,000 * 1.13 + $299) = $13,859 financed at 7.99% for 60 months = ~$280/month
+If the customer is asking about promotional financing in CURRENT PROMOTIONS, the CTA term and rate MUST use the exact promotional months and APR from that block instead of the standard values shown in the generic template above.
 
-### ALWAYS include this block when discussing financing for a specific motor:
-[FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": CALCULATED_PAYMENT, "term": TERM_MONTHS, "rate": RATE, "motorModel": "MODEL_NAME"}]
-
-The CTA block appears as an interactive card with Calculator and Apply buttons - much better than just text!
+The CTA block renders an interactive card with Calculator and Apply buttons — much better than a typed-out estimate.
 
 ### Response format for financing questions:
-1. Answer conversationally with the estimated monthly payment
-2. Include the [FINANCING_CTA] block with calculated values
-3. The CTA card renders automatically with action buttons
+1. Answer conversationally, using the promotion rate and term when the customer asks about an active promotion; otherwise use the standard financing rate above.
+2. Include the [FINANCING_CTA] block so the customer sees the live calculator.
+3. Do NOT bake any rate other than one loaded from CURRENT PROMOTIONS or STANDARD / ALTERNATE FINANCING into the response.
 
-Example response when motor is in context (e.g., viewing a 60HP at $12,161):
-"Yeah, financing's super easy! That 60HP would run you around $280/month over 5 years at 7.99%. Takes about 5 minutes to apply.
-[FINANCING_CTA: {"price": 12161, "monthly": 280, "term": 60, "rate": 7.99, "motorModel": "60 ELPT FourStroke"}]"
+Example with motor in context (assume canonical rate ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '%' : 'TBD'}):
+"Yeah, financing's super easy on that one — ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '% APR through TD Auto Finance via Dealerplan' : 'see the calculator for the current rate'}. Tap the calculator below for the exact monthly, or apply in about 5 minutes.
+[FINANCING_CTA: {"price": 12161, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "60 ELPT FourStroke"}]"
 
 Example without motor context:
-"We've got financing through Dealerplan! Rates are 7.99% for purchases over $10k, 8.99% under. You can get pre-approved first, or pick your motor then apply - totally up to you. Application takes about 5 minutes: /financing-application"
+"We've got financing through Dealerplan Peterborough — ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '% APR OAC right now through ' + (financingPromo.promo_end_date || 'the current promo period') : 'current rates on the financing page'}, minimum $5k purchase, $349 DealerPlan fee added at the end. Apply in 5 minutes: /financing-application"
 
-For complex rate/term questions, they can also call ${HARRIS_CONTACT.phone}
+For complex rate/term questions or non-standard situations, route to ${HARRIS_CONTACT.phone}.
+
+
 
 ## TRADE-IN & RESALE VALUES
 When someone asks about trade-in value, what their motor is worth, or selling their current motor:
@@ -1943,17 +1872,73 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  try {
-    const { message, conversationHistory = [], context = {}, stream = false } = await req.json();
-    if (!message) throw new Error('Message is required');
+  // Lightweight abuse protection: 30 streamed AI chats / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'ai_chat_stream',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
-    const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
-    if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
+  try {
+    const { message, conversationHistory = [], context = {}, stream = false, knowledgeProbe = false } = await req.json();
+    const knowledge = await loadCustomerKnowledge(supabase);
+    if (knowledgeProbe === true) {
+      const snapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+      return new Response(JSON.stringify({ surface: 'chat', ...snapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+    if (!message) throw new Error('Message is required');
 
     // Detect tool-intent up front. When matched we force the non-streaming path
     // so we can run the function-calling loop reliably.
     const hasQuoteIntent = detectQuoteIntent(message);
     const useStreaming = stream && !hasQuoteIntent;
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
+    if (verifiedAuthorityReply) {
+      console.log('Returning deterministic HBW dealer-authority answer');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: verifiedAuthorityReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: verifiedAuthorityReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+      message,
+      context?.currentMotor,
+    );
+    if (verifiedTechnicalReply) {
+      console.log('Returning deterministic manual-backed Mercury technical answer');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: verifiedTechnicalReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: verifiedTechnicalReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
+    if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
 
     // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
@@ -2017,11 +2002,15 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
-    // Fetch Perplexity context based on query category
-    let perplexityContext = '';
-    if (queryCategory !== 'none') {
-      perplexityContext = await searchWithPerplexity(message, queryCategory, context) || '';
-    }
+    // Retrieve current first-party article content alongside any external
+    // research. Exact technical questions have already been short-circuited
+    // through the manual-backed fact contract above.
+    const [blogKnowledgeContext, perplexityContext] = await Promise.all([
+      searchLiveBlogKnowledge(message),
+      queryCategory !== 'none'
+        ? searchWithPerplexity(message, queryCategory, context).then((value) => value || '')
+        : Promise.resolve(''),
+    ]);
 
     // Detect and lookup Mercury part numbers
     let partsContext = '';
@@ -2057,18 +2046,70 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
-    // Get inventory and promotions
-    const [motors, promotions] = await Promise.all([
-      getCurrentMotorInventory(), 
-      getActivePromotions()
-    ]);
+    // Get inventory, promotions, and current financing canon
+    const motors = knowledge.motors;
+    const promotions = knowledge.promotions;
+    const financingPromo = knowledge.financing[0] || null;
+
+    if (isPromotionQuestion(message)) {
+      const reply = buildPromotionCustomerAnswer(promotions, message, financingPromo);
+      console.log('Returning deterministic promotion answer from live database rows');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: reply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    let deterministicReply: string | null = buildMercuryProductProtectionCustomerAnswer(message);
+    if (deterministicReply) {
+      console.log('Returning deterministic Product Protection answer from the exact Canadian rate card');
+    } else if (isFinancingQuestion(message)) {
+      deterministicReply = buildFinancingCustomerAnswer(knowledge.financing, promotions);
+    } else if (isBusinessInfoQuestion(message)) {
+      deterministicReply = buildBusinessCustomerAnswer(knowledge.business, message);
+    } else if (isMotorPriceOrAvailabilityQuestion(message)) {
+      deterministicReply = buildMotorCustomerAnswer(motors, message);
+    }
+    if (deterministicReply) {
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: deterministicReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: deterministicReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     
     // Build the rich system prompt
-    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion);
+    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion, financingPromo);
+    systemPrompt += `\n\n${formatCustomerKnowledgePrompt(knowledge, true)}`;
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
+    if (blogKnowledgeContext) systemPrompt += `\n\n${blogKnowledgeContext}`;
     if (perplexityContext) systemPrompt += perplexityContext;
     if (partsContext) systemPrompt += partsContext;
+
+    // Blog article reference index — gives the model awareness of every
+    // published post on /blog so it can cite or link articles by slug.
+    const liveBlogTitleIndex = await formatLiveBlogTitleIndex();
+    systemPrompt += `\n\n## BLOG ARTICLE INDEX (cite by /blog/<slug>)\n${liveBlogTitleIndex}\n\nWhen a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
     // When the user is asking us to create a quote, give the model crisp instructions
     // for collecting just the missing fields and then calling create_quote.

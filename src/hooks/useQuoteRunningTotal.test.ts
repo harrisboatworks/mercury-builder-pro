@@ -49,6 +49,17 @@ describe('calculateRunningTotal', () => {
     expect(r.lineItems.find(l => l.label === 'Installation Labor')?.value).toBe(450);
   });
 
+  it('adds a supplied propeller allowance to the running total', () => {
+    const r = calculateRunningTotal(motor(), {
+      propellerAllowance: { name: 'Propeller Allowance (Aluminum)', price: 350 },
+    });
+    expect(r.subtotal).toBe(10350);
+    expect(r.lineItems).toContainEqual({
+      label: 'Propeller Allowance (Aluminum)',
+      value: 350,
+    });
+  });
+
   it('skips installation labor for tiller (TLR) motor', () => {
     const r = calculateRunningTotal(motor({ model: 'F25TLR' }), { purchasePath: 'installed' });
     expect(r.subtotal).toBe(10000);
@@ -124,14 +135,15 @@ describe('calculateRunningTotal', () => {
     expect(r.lineItems.find(l => l.label === 'Mercury Rebate')?.isCredit).toBe(true);
   });
 
-  it('skips rebate when promo option is not cash_rebate', () => {
-    const getRebateForHP = vi.fn().mockReturnValue(750);
+  it('applies matrix rebate even when promo option is special_financing (layered offer)', () => {
+    const getRebateForHP = vi.fn().mockReturnValue(250);
     const r = calculateRunningTotal(motor(), {
       selectedPromoOption: 'special_financing',
       getRebateForHP,
     });
-    expect(getRebateForHP).not.toHaveBeenCalled();
-    expect(r.subtotal).toBe(10000);
+    expect(getRebateForHP).toHaveBeenCalledWith(115);
+    expect(r.subtotal).toBe(9750);
+    expect(r.lineItems.find(l => l.label === 'Mercury Rebate')?.value).toBe(250);
   });
 
   it('kitchen sink: all options combined', () => {

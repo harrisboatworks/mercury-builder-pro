@@ -1,0 +1,2558 @@
+{
+  "generatedAt": "2026-08-15T10:33:48.146Z",
+  "count": 425,
+  "bases": [
+    "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
+    "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
+    "/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image",
+    "/lovable-uploads/2027_Mercury_Preview",
+    "/lovable-uploads/359dcfb9-5466-47ba-a79e-cde787caea6e",
+    "/lovable-uploads/3c356039-87bb-4280-8f5d-555aa777d1ff",
+    "/lovable-uploads/53e1d043-6967-4a0b-9766-61574518f6dd",
+    "/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845",
+    "/lovable-uploads/78ce4cb2-311a-44f3-88d3-36903efc2e7e",
+    "/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17",
+    "/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats",
+    "/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing",
+    "/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero",
+    "/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero",
+    "/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero",
+    "/lovable-uploads/Boat_Repowering_101_Hero",
+    "/lovable-uploads/Boat_Repowering_In_Progress",
+    "/lovable-uploads/Break_In_Infographic",
+    "/lovable-uploads/Breaking_In_New_Mercury_Hero",
+    "/lovable-uploads/Comparing_Motor_Families",
+    "/lovable-uploads/Financing_A_New_Boat_Motor_Hero",
+    "/lovable-uploads/Guy_talking_to_salesperson_Mercury",
+    "/lovable-uploads/How_to_Choose_HP",
+    "/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat",
+    "/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image",
+    "/lovable-uploads/Late_Season_Boating_Safety_Fall",
+    "/lovable-uploads/Late_Season_Boating_Safety_Hero",
+    "/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero",
+    "/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image",
+    "/lovable-uploads/Mercury_Maintenance_Schedule",
+    "/lovable-uploads/Mercury_Pontoon_Buyers_Guide",
+    "/lovable-uploads/Mercury_Portable_Outboards",
+    "/lovable-uploads/Mercury_SeaPro",
+    "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide",
+    "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Hero",
+    "/lovable-uploads/Ontario_Short_Boating_Season_Fall",
+    "/lovable-uploads/Ontario_Short_Boating_Season_Hero",
+    "/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing",
+    "/lovable-uploads/Ontario_Small_Lakes_Cottage_Hero",
+    "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2",
+    "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_Hero",
+    "/lovable-uploads/ProKicker_Rice_Lake_Hero",
+    "/lovable-uploads/Repowering_Boat_Kawarthas_Hero",
+    "/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero",
+    "/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image",
+    "/lovable-uploads/Tiller_vs_Remote_Steering_Hero",
+    "/lovable-uploads/Trading_In_Your_Boat_Motor_Hero",
+    "/lovable-uploads/Walleye_Opener_Catch",
+    "/lovable-uploads/Walleye_Opener_Ready_Hero",
+    "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero",
+    "/lovable-uploads/What_the_boating_market_means_blog_hero_image",
+    "/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image",
+    "/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image",
+    "/lovable-uploads/Year_End_Deals",
+    "/lovable-uploads/aluminum-fishing-detail-real",
+    "/lovable-uploads/aluminum-fishing-hero-real",
+    "/lovable-uploads/aluminum-vs-fiberglass-hull-decision-tree",
+    "/lovable-uploads/annual-mercury-service-cycle",
+    "/lovable-uploads/avator-7-5e-hero-real",
+    "/lovable-uploads/bass-boat-150-proxs-detail-real",
+    "/lovable-uploads/bass-boat-150-proxs-hero-real",
+    "/lovable-uploads/bc00ebae-067a-49d1-be75-82e023004a92",
+    "/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23",
+    "/lovable-uploads/bilge-pump-sizing-chart",
+    "/lovable-uploads/bilge-pump-system-diagram",
+    "/lovable-uploads/bilge-pump-troubleshooting-flowchart",
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08",
+    "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
+    "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08",
+    "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08",
+    "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
+    "/lovable-uploads/boat-winterization-cost-drivers-ontario",
+    "/lovable-uploads/bolt-on-motor-installation",
+    "/lovable-uploads/canadian-capacity-plate-compliance-notice",
+    "/lovable-uploads/case-study-90-to-115-pro-xs-fish-boat-hero",
+    "/lovable-uploads/case-study-avator-electric-kicker-trolling-hero-v3",
+    "/lovable-uploads/case-study-command-thrust-heavy-aluminum-hero-v3",
+    "/lovable-uploads/case-study-pontoon-boost-retrofit-hero-v3",
+    "/lovable-uploads/case-study-twin-to-single-big-block-hero-v3",
+    "/lovable-uploads/case-study-two-stroke-to-fourstroke-modernization-hero-v3",
+    "/lovable-uploads/case-study-verado-v8-special-order-repower-hero-v3",
+    "/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e",
+    "/lovable-uploads/center-console-mercury-hero",
+    "/lovable-uploads/chinese-gta-to-rice-lake-day-trip",
+    "/lovable-uploads/chinese-mercury-service-repower-pathway",
+    "/lovable-uploads/chinese-pcoc-licence-safety-checklist",
+    "/lovable-uploads/chinese-pontoon-vs-fishing-boat-decision",
+    "/lovable-uploads/clamp-on-motor-installation",
+    "/lovable-uploads/command-thrust-complete-guide-hero",
+    "/lovable-uploads/command-thrust-gearcase-comparison-inline",
+    "/lovable-uploads/command-thrust-pontoon-eligibility-hero",
+    "/lovable-uploads/cuddy-115-detail-real",
+    "/lovable-uploads/cuddy-115-hero-real",
+    "/lovable-uploads/diagram-hbw-service-area-map",
+    "/lovable-uploads/diagram-hull-vs-repower",
+    "/lovable-uploads/diagram-mercury-maintenance-timeline",
+    "/lovable-uploads/diagram-mercury-model-number-decoder",
+    "/lovable-uploads/diagram-mercury-motor-families",
+    "/lovable-uploads/diagram-overheating-troubleshooting",
+    "/lovable-uploads/diagram-pcl-2026-changes",
+    "/lovable-uploads/diagram-repower-process-timeline",
+    "/lovable-uploads/diagram-trim-angles",
+    "/lovable-uploads/diy-mercury-winterization-hero",
+    "/lovable-uploads/dts-retrofit-eligibility-hero",
+    "/lovable-uploads/dts-vs-mechanical-control-inline",
+    "/lovable-uploads/es-guia-comprar-bote-ontario-hero",
+    "/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero",
+    "/lovable-uploads/es-licencia-navegacion-ontario-regulaciones-hero",
+    "/lovable-uploads/es-mercury-115-vs-150-comparacion-hero",
+    "/lovable-uploads/es-preparacion-invernal-motor-mercury-hero",
+    "/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero",
+    "/lovable-uploads/hbw-full-service-marina-wheel",
+    "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario",
+    "/lovable-uploads/hero-avator-charging-cottage",
+    "/lovable-uploads/hero-avator-range-rice-lake",
+    "/lovable-uploads/hero-avator-vs-torqeedo",
+    "/lovable-uploads/hero-bad-used-boats-ontario",
+    "/lovable-uploads/hero-best-marina-rice-lake-ontario",
+    "/lovable-uploads/hero-best-mercury-dealer-ontario",
+    "/lovable-uploads/hero-best-mercury-lake-ontario",
+    "/lovable-uploads/hero-best-mercury-pontoon",
+    "/lovable-uploads/hero-best-mercury-rice-lake",
+    "/lovable-uploads/hero-best-pontoon-outboard-2026-mercury",
+    "/lovable-uploads/hero-bilge-pump-troubleshooting-guide",
+    "/lovable-uploads/hero-boat-electrical-safety-checklist",
+    "/lovable-uploads/hero-boat-insurance-ontario-guide-2026",
+    "/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor",
+    "/lovable-uploads/hero-boat-service-near-toronto",
+    "/lovable-uploads/hero-boat-storage-kawartha-lakes",
+    "/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario",
+    "/lovable-uploads/hero-boat-trim-rice-lake",
+    "/lovable-uploads/hero-boating-safety-gear-es-2026",
+    "/lovable-uploads/hero-boost-software-upgrade",
+    "/lovable-uploads/hero-capacity-plate-decoder-ontario",
+    "/lovable-uploads/hero-cheapest-mercury-canada",
+    "/lovable-uploads/hero-cheapest-mercury-canada-lineup",
+    "/lovable-uploads/hero-chinese-buyers-rice-lake-marina",
+    "/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard",
+    "/lovable-uploads/hero-complete-guide-repower-kawarthas",
+    "/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench",
+    "/lovable-uploads/hero-docking-in-wind-rice-lake",
+    "/lovable-uploads/hero-dts-vs-mechanical-controls",
+    "/lovable-uploads/hero-gta-brampton-showroom",
+    "/lovable-uploads/hero-gta-burlington-aerial-marina",
+    "/lovable-uploads/hero-gta-chinese-winter-storage",
+    "/lovable-uploads/hero-gta-markham-family-delivery",
+    "/lovable-uploads/hero-gta-mississauga-service-counter",
+    "/lovable-uploads/hero-gta-oakville-sea-trial",
+    "/lovable-uploads/hero-gta-richmond-hill-pickup-motor",
+    "/lovable-uploads/hero-gta-vaughan-tech-install",
+    "/lovable-uploads/hero-harris-boat-works-since-1947",
+    "/lovable-uploads/hero-how-to-choose-horsepower",
+    "/lovable-uploads/hero-how-to-trim-mercury",
+    "/lovable-uploads/hero-hull-vs-repower",
+    "/lovable-uploads/hero-legend-boats-mercury-package",
+    "/lovable-uploads/hero-mandarin-buying-guide",
+    "/lovable-uploads/hero-mandarin-day-trip",
+    "/lovable-uploads/hero-mandarin-gta-rice-lake-family",
+    "/lovable-uploads/hero-mandarin-mercury-service",
+    "/lovable-uploads/hero-mandarin-pcl-licence",
+    "/lovable-uploads/hero-mercruiser-sterndrive-guide",
+    "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising",
+    "/lovable-uploads/hero-mercury-115-vs-150-comparison",
+    "/lovable-uploads/hero-mercury-115-vs-150-comparison-zh",
+    "/lovable-uploads/hero-mercury-40-vs-60-hp-comparison",
+    "/lovable-uploads/hero-mercury-7-year-warranty-hbw-exclusive-explained",
+    "/lovable-uploads/hero-mercury-75-fourstroke",
+    "/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4",
+    "/lovable-uploads/hero-mercury-90-shop-shot",
+    "/lovable-uploads/hero-mercury-battery-guide",
+    "/lovable-uploads/hero-mercury-beeping-codes",
+    "/lovable-uploads/hero-mercury-boost-calibration-2026",
+    "/lovable-uploads/hero-mercury-boost-console",
+    "/lovable-uploads/hero-mercury-command-thrust-vs-standard",
+    "/lovable-uploads/hero-mercury-controls-rigging-guide",
+    "/lovable-uploads/hero-mercury-dealer-ajax",
+    "/lovable-uploads/hero-mercury-dealer-bowmanville",
+    "/lovable-uploads/hero-mercury-dealer-cobourg",
+    "/lovable-uploads/hero-mercury-dealer-lindsay",
+    "/lovable-uploads/hero-mercury-dealer-northumberland",
+    "/lovable-uploads/hero-mercury-dealer-oshawa",
+    "/lovable-uploads/hero-mercury-dealer-peterborough",
+    "/lovable-uploads/hero-mercury-dealer-pickering",
+    "/lovable-uploads/hero-mercury-dealer-port-hope",
+    "/lovable-uploads/hero-mercury-dealer-whitby",
+    "/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario",
+    "/lovable-uploads/hero-mercury-financing-ontario",
+    "/lovable-uploads/hero-mercury-fourstroke-buyer-guide",
+    "/lovable-uploads/hero-mercury-fuel-octane-ethanol",
+    "/lovable-uploads/hero-mercury-kicker-transom",
+    "/lovable-uploads/hero-mercury-main-and-trolling-motor",
+    "/lovable-uploads/hero-mercury-maintenance-20-100-300",
+    "/lovable-uploads/hero-mercury-monthly-payment",
+    "/lovable-uploads/hero-mercury-motor-families",
+    "/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips",
+    "/lovable-uploads/hero-mercury-outboard-dealer-toronto",
+    "/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder",
+    "/lovable-uploads/hero-mercury-overheat-high-speed",
+    "/lovable-uploads/hero-mercury-overheating-at-idle",
+    "/lovable-uploads/hero-mercury-overheating-dockside",
+    "/lovable-uploads/hero-mercury-price-guide-counter",
+    "/lovable-uploads/hero-mercury-pro-xs-buyer-guide",
+    "/lovable-uploads/hero-mercury-pro-xs-repower-anglers",
+    "/lovable-uploads/hero-mercury-propeller-selection-guide",
+    "/lovable-uploads/hero-mercury-repower-cost-ontario",
+    "/lovable-uploads/hero-mercury-repower-eligibility-guide",
+    "/lovable-uploads/hero-mercury-repower-gta",
+    "/lovable-uploads/hero-mercury-rigging-costs",
+    "/lovable-uploads/hero-mercury-salmon-lake-ontario-2026",
+    "/lovable-uploads/hero-mercury-serial-number-decoder",
+    "/lovable-uploads/hero-mercury-smartcraft-alarm-codes",
+    "/lovable-uploads/hero-mercury-suzuki-ontario-2026",
+    "/lovable-uploads/hero-mercury-vs-yamaha",
+    "/lovable-uploads/hero-mercury-vs-yamaha-honda",
+    "/lovable-uploads/hero-mercury-walleye-simcoe-2026",
+    "/lovable-uploads/hero-mercury-warranty-after-repower",
+    "/lovable-uploads/hero-mercury-warranty-canada",
+    "/lovable-uploads/hero-mercury-warranty-shop-2026",
+    "/lovable-uploads/hero-mercury-weight-hoist",
+    "/lovable-uploads/hero-mercury-winterization-service-cost",
+    "/lovable-uploads/hero-mercury-wont-start-after-sitting",
+    "/lovable-uploads/hero-mercury-wont-start-dockside",
+    "/lovable-uploads/hero-mercury-wont-start-troubleshooting",
+    "/lovable-uploads/hero-new-immigrant-boat-buying-checklist",
+    "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario",
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario",
+    "/lovable-uploads/hero-on-water-load-test",
+    "/lovable-uploads/hero-ontario-boating-regulations-zh",
+    "/lovable-uploads/hero-ontario-mercury-price-guide",
+    "/lovable-uploads/hero-outboard-overheating",
+    "/lovable-uploads/hero-outboard-vs-sterndrive",
+    "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake",
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand",
+    "/lovable-uploads/hero-pcl-repower-licence",
+    "/lovable-uploads/hero-pontoon-aluminum-vhull",
+    "/lovable-uploads/hero-pontoon-hp-sizing",
+    "/lovable-uploads/hero-pontoon-problems-rice-lake",
+    "/lovable-uploads/hero-proxs-outside-hbw-shop",
+    "/lovable-uploads/hero-replace-evinrude",
+    "/lovable-uploads/hero-repower-vs-new-boat",
+    "/lovable-uploads/hero-repower-vs-new-boat-zh",
+    "/lovable-uploads/hero-repower-vs-new-split",
+    "/lovable-uploads/hero-rice-lake-boat-launch-ramp",
+    "/lovable-uploads/hero-rice-lake-boat-rentals-toronto",
+    "/lovable-uploads/hero-rice-lake-boating-guide",
+    "/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese",
+    "/lovable-uploads/hero-rice-lake-fishing-morning",
+    "/lovable-uploads/hero-service-bills-prevention",
+    "/lovable-uploads/hero-shaft-length-guide",
+    "/lovable-uploads/hero-smartcraft-connect-app",
+    "/lovable-uploads/hero-spring-commissioning-checklist",
+    "/lovable-uploads/hero-toronto-to-rice-lake-drive-in",
+    "/lovable-uploads/hero-total-cost-of-ownership",
+    "/lovable-uploads/hero-trade-in-value-service-bay",
+    "/lovable-uploads/hero-trailer-boat-toronto",
+    "/lovable-uploads/hero-trailering-mistakes-ontario",
+    "/lovable-uploads/hero-trent-severn-waterway-2026",
+    "/lovable-uploads/hero-ucp-agentic-commerce",
+    "/lovable-uploads/hero-used-boat-walkaround",
+    "/lovable-uploads/hero-used-outboard-buying-guide",
+    "/lovable-uploads/hero-vesselview-smartcraft",
+    "/lovable-uploads/hero-what-happens-during-repower",
+    "/lovable-uploads/hero-why-dealers-hide-prices",
+    "/lovable-uploads/hero-winter-storage-near-toronto",
+    "/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor",
+    "/lovable-uploads/hero-winterization-mercury-guide-zh",
+    "/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese",
+    "/lovable-uploads/hero-zh-boat-repower-vs-new-boat-chinese-ontario",
+    "/lovable-uploads/hero-zh-fishing-boat-vs-pontoon-chinese-ontario",
+    "/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap",
+    "/lovable-uploads/hero-zh-mercury-fourstroke-vs-pro-xs-chinese",
+    "/lovable-uploads/hero-zh-mercury-outboard-horsepower-guide-toronto-chinese",
+    "/lovable-uploads/hero-zh-mercury-outboard-price-dealer-guide-toronto-chinese",
+    "/lovable-uploads/hero-zh-mercury-outboard-service-repair-toronto-ontario",
+    "/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario",
+    "/lovable-uploads/hero-zh-ontario-boat-winterization-chinese-guide",
+    "/lovable-uploads/hero-zh-ontario-boating-guide-toronto-chinese",
+    "/lovable-uploads/hero-zh-ontario-first-time-boat-rental-safety-checklist",
+    "/lovable-uploads/hero-zh-ontario-free-family-fishing-rice-lake-chinese-guide",
+    "/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese",
+    "/lovable-uploads/hero-zh-pontoon-boat-buying-guide-toronto-chinese-rice-lake",
+    "/lovable-uploads/hero-zh-rice-lake-boat-rental-fishing-day-trip-toronto",
+    "/lovable-uploads/hero-zh-rice-lake-fishing-season-guide-chinese",
+    "/lovable-uploads/hero-zh-toronto-chinese-boat-buying-guide-ontario",
+    "/lovable-uploads/hero-zh-toronto-chinese-buying-first-boat-rent-or-buy",
+    "/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas",
+    "/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese",
+    "/lovable-uploads/home-step1-mercury-proxs-lineup",
+    "/lovable-uploads/home-step2-real-quote-builder",
+    "/lovable-uploads/home-step3-rice-lake-water-test",
+    "/lovable-uploads/hull-vs-repower-decision-tree",
+    "/lovable-uploads/impeller-failures-by-month-hbw",
+    "/lovable-uploads/inline-command-thrust-gearcase",
+    "/lovable-uploads/inline-fourstroke-hp-lineup",
+    "/lovable-uploads/inline-pro-xs-bass-boat-action",
+    "/lovable-uploads/inline-pro-xs-rigging-detail",
+    "/lovable-uploads/inline/inline-401-east-trailering",
+    "/lovable-uploads/inline/inline-affordable-rice-lake-boat",
+    "/lovable-uploads/inline/inline-avator-electric-dock",
+    "/lovable-uploads/inline/inline-bass-tournament",
+    "/lovable-uploads/inline/inline-boost-150hp-pontoon",
+    "/lovable-uploads/inline/inline-capacity-plate-macro",
+    "/lovable-uploads/inline/inline-center-console-twin-verados",
+    "/lovable-uploads/inline/inline-compression-test",
+    "/lovable-uploads/inline/inline-corroded-battery-terminal",
+    "/lovable-uploads/inline/inline-dts-throttle-control",
+    "/lovable-uploads/inline/inline-evinrude-to-mercury-swap",
+    "/lovable-uploads/inline/inline-horsepower-selection",
+    "/lovable-uploads/inline/inline-hull-surface-comparison",
+    "/lovable-uploads/inline/inline-legend-pontoon-cruising",
+    "/lovable-uploads/inline/inline-legend-pontoon-lifetime-structure",
+    "/lovable-uploads/inline/inline-legend-pontoon-tech-warranty",
+    "/lovable-uploads/inline/inline-marine-vs-automotive-wiring",
+    "/lovable-uploads/inline/inline-mechanical-controls-cables",
+    "/lovable-uploads/inline/inline-mercury-9-9-prokicker",
+    "/lovable-uploads/inline/inline-mercury-break-in",
+    "/lovable-uploads/inline/inline-mercury-rigging-install",
+    "/lovable-uploads/inline/inline-mercury-seapro-commercial",
+    "/lovable-uploads/inline/inline-mercury-serial-tag-location",
+    "/lovable-uploads/inline/inline-mercury-telltale-water-stream",
+    "/lovable-uploads/inline/inline-new-vs-used-powerheads",
+    "/lovable-uploads/inline/inline-overheating-diagnostic",
+    "/lovable-uploads/inline/inline-portable-mercury-dinghy",
+    "/lovable-uploads/inline/inline-pro-xs-action",
+    "/lovable-uploads/inline/inline-prokicker-trolling-setup",
+    "/lovable-uploads/inline/inline-repower-shop",
+    "/lovable-uploads/inline/inline-shrinkwrap-process",
+    "/lovable-uploads/inline/inline-smartcraft-connect-dashboard",
+    "/lovable-uploads/inline/inline-smartcraft-fuel-gauge",
+    "/lovable-uploads/inline/inline-trent-severn-lock-chamber",
+    "/lovable-uploads/inline/inline-v-hull-action-chop",
+    "/lovable-uploads/inline/inline-walleye-opener-dawn",
+    "/lovable-uploads/inline/inline-warranty-documents",
+    "/lovable-uploads/inline/inline-winter-storage-yard",
+    "/lovable-uploads/inline/inline-wrong-trim-porpoising",
+    "/lovable-uploads/inline/mercury-90-fourstroke-official-studio",
+    "/lovable-uploads/kawartha-boat-storage-decision-map",
+    "/lovable-uploads/ko-mercury-115-vs-150-comparison-hero",
+    "/lovable-uploads/ko-mercury-outboard-winterization-guide-hero",
+    "/lovable-uploads/ko-ontario-boat-buying-guide-hero",
+    "/lovable-uploads/ko-ontario-boating-licence-regulations-hero",
+    "/lovable-uploads/ko-repower-vs-new-boat-hero",
+    "/lovable-uploads/ko-rice-lake-fishing-guide-hero",
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8",
+    "/lovable-uploads/locations-bewdley-hero",
+    "/lovable-uploads/locations-bobcaygeon-hero",
+    "/lovable-uploads/locations-bridgenorth-hero",
+    "/lovable-uploads/locations-buckhorn-hero",
+    "/lovable-uploads/locations-cobourg-northumberland-mercury-hero",
+    "/lovable-uploads/locations-gores-landing-hero",
+    "/lovable-uploads/locations-hastings-hero",
+    "/lovable-uploads/locations-kawartha-lakes-mercury-outboards-hero",
+    "/lovable-uploads/locations-lakefield-hero",
+    "/lovable-uploads/locations-lindsay-hero",
+    "/lovable-uploads/locations-northumberland-county-hero",
+    "/lovable-uploads/locations-peterborough-mercury-dealer-hero",
+    "/lovable-uploads/locations-port-hope-hero",
+    "/lovable-uploads/locations-rice-lake-mercury-repower-hero",
+    "/lovable-uploads/locations-roseneath-hero",
+    "/lovable-uploads/mercruiser-sterndrive-ontario-failure-points",
+    "/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero",
+    "/lovable-uploads/mercury-115-vs-150-decision-matrix-ontario",
+    "/lovable-uploads/mercury-20-100-300-service-interval-timeline",
+    "/lovable-uploads/mercury-75-90-115-best-fit-matrix",
+    "/lovable-uploads/mercury-75-90-115-decision-card-hbw",
+    "/lovable-uploads/mercury-9-9-efi-tiller",
+    "/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card",
+    "/lovable-uploads/mercury-break-in-timeline-hbw",
+    "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison",
+    "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero",
+    "/lovable-uploads/mercury-maintenance-parts-hero",
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social",
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social",
+    "/lovable-uploads/mercury-outboard-beep-codes-action-card",
+    "/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree",
+    "/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart",
+    "/lovable-uploads/mercury-propeller-selection-tradeoff-wheel",
+    "/lovable-uploads/mercury-repower-cost-breakdown-ontario",
+    "/lovable-uploads/mercury-rigging-cost-stack",
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-banner-1920x675",
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-mobile-414x736",
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1",
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360",
+    "/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem",
+    "/lovable-uploads/mercury-vs-honda-hero-2026",
+    "/lovable-uploads/official-mercury-75-fourstroke",
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp",
+    "/lovable-uploads/official-mercury-seapro-350-v10",
+    "/lovable-uploads/ontario-mercury-outboard-price-tier-chart",
+    "/lovable-uploads/outboard-shaft-length-transom-measurement-diagram",
+    "/lovable-uploads/pontoon-115-ct-detail-real",
+    "/lovable-uploads/pontoon-family-rice-lake-hero",
+    "/lovable-uploads/pontoon-family-tubing",
+    "/lovable-uploads/pontoon-hp-by-length-and-use",
+    "/lovable-uploads/repower-cost-stack-by-hp-class",
+    "/lovable-uploads/repower-eligibility-5-check-card",
+    "/lovable-uploads/repower-hero",
+    "/lovable-uploads/repower-old-new-motor-hero",
+    "/lovable-uploads/repower-process-timeline",
+    "/lovable-uploads/repower-vs-new-boat-decision-matrix-ontario",
+    "/lovable-uploads/rice-lake-map-illustrated",
+    "/lovable-uploads/rice-lake-practical-boating-map",
+    "/lovable-uploads/rice-lake-storage-timeline",
+    "/lovable-uploads/shaft-length-vs-transom-diagram",
+    "/lovable-uploads/smartcraft-connect-eligibility-hero",
+    "/lovable-uploads/smartcraft-connect-gateway-inline",
+    "/lovable-uploads/spring-commissioning-checklist-card",
+    "/lovable-uploads/spring-no-start-flowchart",
+    "/lovable-uploads/td-financing-2026-rate-card",
+    "/lovable-uploads/toronto-chinese-rice-lake-rental-checklist",
+    "/lovable-uploads/wont-start-causes-hbw",
+    "/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero",
+    "/lovable-uploads/zh-chinese-anglers-rice-lake-kawarthas-hero",
+    "/lovable-uploads/zh-chinese-boat-repower-vs-new-hero",
+    "/lovable-uploads/zh-chinese-mercury-outboard-guide-toronto-hero",
+    "/lovable-uploads/zh-first-time-renter-walkthrough-hero",
+    "/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero",
+    "/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero",
+    "/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero",
+    "/lovable-uploads/zh-mercury-repower-guide-gta-hero",
+    "/lovable-uploads/zh-ontario-chinese-boating-license-hero",
+    "/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero",
+    "/lovable-uploads/zh-pontoon-vs-fishing-boat-hero",
+    "/lovable-uploads/zh-rice-lake-fish-species-seasons-hero",
+    "/lovable-uploads/zh-toronto-rice-lake-one-day-trip-hero"
+  ],
+  "widths": {
+    "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/2027_Mercury_Preview": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/359dcfb9-5466-47ba-a79e-cde787caea6e": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/3c356039-87bb-4280-8f5d-555aa777d1ff": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/53e1d043-6967-4a0b-9766-61574518f6dd": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/78ce4cb2-311a-44f3-88d3-36903efc2e7e": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Boat_Repowering_101_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Boat_Repowering_In_Progress": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Break_In_Infographic": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Breaking_In_New_Mercury_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Comparing_Motor_Families": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Financing_A_New_Boat_Motor_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Guy_talking_to_salesperson_Mercury": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/How_to_Choose_HP": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Late_Season_Boating_Safety_Fall": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Late_Season_Boating_Safety_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_Maintenance_Schedule": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_Pontoon_Buyers_Guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_Portable_Outboards": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Mercury_SeaPro": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ontario_Short_Boating_Season_Fall": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ontario_Short_Boating_Season_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ontario_Small_Lakes_Cottage_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ProKicker_Rice_Lake_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Repowering_Boat_Kawarthas_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Tiller_vs_Remote_Steering_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Trading_In_Your_Boat_Motor_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Walleye_Opener_Catch": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Walleye_Opener_Ready_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/What_the_boating_market_means_blog_hero_image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/Year_End_Deals": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/aluminum-fishing-detail-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/aluminum-fishing-hero-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/aluminum-vs-fiberglass-hull-decision-tree": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/annual-mercury-service-cycle": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/avator-7-5e-hero-real": [
+      640,
+      900,
+      900
+    ],
+    "/lovable-uploads/bass-boat-150-proxs-detail-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/bass-boat-150-proxs-hero-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/bc00ebae-067a-49d1-be75-82e023004a92": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/bilge-pump-sizing-chart": [
+      640,
+      1024,
+      1536
+    ],
+    "/lovable-uploads/bilge-pump-system-diagram": [
+      640,
+      1024,
+      1536
+    ],
+    "/lovable-uploads/bilge-pump-troubleshooting-flowchart": [
+      640,
+      1024,
+      1536
+    ],
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/boat-winterization-cost-drivers-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/bolt-on-motor-installation": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/canadian-capacity-plate-compliance-notice": [
+      640,
+      1024,
+      1280
+    ],
+    "/lovable-uploads/case-study-90-to-115-pro-xs-fish-boat-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-avator-electric-kicker-trolling-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-command-thrust-heavy-aluminum-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-pontoon-boost-retrofit-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-twin-to-single-big-block-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-two-stroke-to-fourstroke-modernization-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/case-study-verado-v8-special-order-repower-hero-v3": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/center-console-mercury-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/chinese-gta-to-rice-lake-day-trip": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/chinese-mercury-service-repower-pathway": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/chinese-pcoc-licence-safety-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/chinese-pontoon-vs-fishing-boat-decision": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/clamp-on-motor-installation": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/command-thrust-complete-guide-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/command-thrust-gearcase-comparison-inline": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/command-thrust-pontoon-eligibility-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/cuddy-115-detail-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/cuddy-115-hero-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-hbw-service-area-map": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-hull-vs-repower": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-mercury-maintenance-timeline": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-mercury-model-number-decoder": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-mercury-motor-families": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-overheating-troubleshooting": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-pcl-2026-changes": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-repower-process-timeline": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diagram-trim-angles": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/diy-mercury-winterization-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/dts-retrofit-eligibility-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/dts-vs-mechanical-control-inline": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/es-guia-comprar-bote-ontario-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/es-licencia-navegacion-ontario-regulaciones-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/es-mercury-115-vs-150-comparacion-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/es-preparacion-invernal-motor-mercury-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hbw-full-service-marina-wheel": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-avator-charging-cottage": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-avator-range-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-avator-vs-torqeedo": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-bad-used-boats-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-marina-rice-lake-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-mercury-dealer-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-mercury-lake-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-mercury-pontoon": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-mercury-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-best-pontoon-outboard-2026-mercury": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-bilge-pump-troubleshooting-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-electrical-safety-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-insurance-ontario-guide-2026": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-service-near-toronto": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-storage-kawartha-lakes": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boat-trim-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-boating-safety-gear-es-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-boost-software-upgrade": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-capacity-plate-decoder-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-cheapest-mercury-canada": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-cheapest-mercury-canada-lineup": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-chinese-buyers-rice-lake-marina": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-complete-guide-repower-kawarthas": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-docking-in-wind-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-dts-vs-mechanical-controls": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-brampton-showroom": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-burlington-aerial-marina": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-chinese-winter-storage": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-markham-family-delivery": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-mississauga-service-counter": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-oakville-sea-trial": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-richmond-hill-pickup-motor": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-gta-vaughan-tech-install": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-harris-boat-works-since-1947": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-how-to-choose-horsepower": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-how-to-trim-mercury": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-hull-vs-repower": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-legend-boats-mercury-package": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mandarin-buying-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mandarin-day-trip": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mandarin-gta-rice-lake-family": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mandarin-mercury-service": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mandarin-pcl-licence": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercruiser-sterndrive-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-115-vs-150-comparison": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-115-vs-150-comparison-zh": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-40-vs-60-hp-comparison": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-7-year-warranty-hbw-exclusive-explained": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-75-fourstroke": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-90-shop-shot": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-battery-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-beeping-codes": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-boost-calibration-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-boost-console": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-command-thrust-vs-standard": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-controls-rigging-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-ajax": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-bowmanville": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-cobourg": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-lindsay": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-northumberland": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-oshawa": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-peterborough": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-pickering": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-port-hope": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-dealer-whitby": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-financing-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-fourstroke-buyer-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-fuel-octane-ethanol": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-kicker-transom": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-main-and-trolling-motor": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-maintenance-20-100-300": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-monthly-payment": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-motor-families": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-outboard-dealer-toronto": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-overheat-high-speed": [
+      640,
+      1024,
+      1408
+    ],
+    "/lovable-uploads/hero-mercury-overheating-at-idle": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-overheating-dockside": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-price-guide-counter": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-pro-xs-buyer-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-pro-xs-repower-anglers": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-propeller-selection-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-repower-cost-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-repower-eligibility-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-repower-gta": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-rigging-costs": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-salmon-lake-ontario-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-serial-number-decoder": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-smartcraft-alarm-codes": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-suzuki-ontario-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-vs-yamaha": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-vs-yamaha-honda": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-walleye-simcoe-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-warranty-after-repower": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-warranty-canada": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-warranty-shop-2026": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-weight-hoist": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-mercury-winterization-service-cost": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-wont-start-after-sitting": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-wont-start-dockside": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-mercury-wont-start-troubleshooting": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-new-immigrant-boat-buying-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-on-water-load-test": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-ontario-boating-regulations-zh": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-ontario-mercury-price-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-outboard-overheating": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-outboard-vs-sterndrive": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-pcl-repower-licence": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-pontoon-aluminum-vhull": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-pontoon-hp-sizing": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-pontoon-problems-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-proxs-outside-hbw-shop": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-replace-evinrude": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-repower-vs-new-boat": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-repower-vs-new-boat-zh": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-repower-vs-new-split": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-rice-lake-boat-launch-ramp": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-rice-lake-boat-rentals-toronto": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-rice-lake-boating-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-rice-lake-fishing-morning": [
+      640,
+      1024,
+      1676
+    ],
+    "/lovable-uploads/hero-service-bills-prevention": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-shaft-length-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-smartcraft-connect-app": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-spring-commissioning-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-toronto-to-rice-lake-drive-in": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-total-cost-of-ownership": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-trade-in-value-service-bay": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-trailer-boat-toronto": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-trailering-mistakes-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-trent-severn-waterway-2026": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-ucp-agentic-commerce": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/hero-used-boat-walkaround": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-used-outboard-buying-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-vesselview-smartcraft": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-what-happens-during-repower": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-why-dealers-hide-prices": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-winter-storage-near-toronto": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-winterization-mercury-guide-zh": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-boat-repower-vs-new-boat-chinese-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-fishing-boat-vs-pontoon-chinese-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-mercury-fourstroke-vs-pro-xs-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-mercury-outboard-horsepower-guide-toronto-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-mercury-outboard-price-dealer-guide-toronto-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-mercury-outboard-service-repair-toronto-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-ontario-boat-winterization-chinese-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-ontario-boating-guide-toronto-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-ontario-first-time-boat-rental-safety-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-ontario-free-family-fishing-rice-lake-chinese-guide": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-pontoon-boat-buying-guide-toronto-chinese-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-rice-lake-boat-rental-fishing-day-trip-toronto": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-rice-lake-fishing-season-guide-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-toronto-chinese-boat-buying-guide-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-toronto-chinese-buying-first-boat-rent-or-buy": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/home-step1-mercury-proxs-lineup": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/home-step2-real-quote-builder": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/home-step3-rice-lake-water-test": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/hull-vs-repower-decision-tree": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/impeller-failures-by-month-hbw": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/inline-command-thrust-gearcase": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/inline-fourstroke-hp-lineup": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/inline-pro-xs-bass-boat-action": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/inline-pro-xs-rigging-detail": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/inline/inline-401-east-trailering": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-affordable-rice-lake-boat": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-avator-electric-dock": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-bass-tournament": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-boost-150hp-pontoon": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-capacity-plate-macro": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-center-console-twin-verados": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-compression-test": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-corroded-battery-terminal": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-dts-throttle-control": [
+      640,
+      976,
+      976
+    ],
+    "/lovable-uploads/inline/inline-evinrude-to-mercury-swap": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-horsepower-selection": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-hull-surface-comparison": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-legend-pontoon-cruising": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-legend-pontoon-lifetime-structure": [
+      562,
+      562,
+      562
+    ],
+    "/lovable-uploads/inline/inline-legend-pontoon-tech-warranty": [
+      564,
+      564,
+      564
+    ],
+    "/lovable-uploads/inline/inline-marine-vs-automotive-wiring": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-mechanical-controls-cables": [
+      640,
+      800,
+      800
+    ],
+    "/lovable-uploads/inline/inline-mercury-9-9-prokicker": [
+      640,
+      1024,
+      1280
+    ],
+    "/lovable-uploads/inline/inline-mercury-break-in": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-mercury-rigging-install": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-mercury-seapro-commercial": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-mercury-serial-tag-location": [
+      480,
+      480,
+      480
+    ],
+    "/lovable-uploads/inline/inline-mercury-telltale-water-stream": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-new-vs-used-powerheads": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-overheating-diagnostic": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-portable-mercury-dinghy": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-pro-xs-action": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-prokicker-trolling-setup": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-repower-shop": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-shrinkwrap-process": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-smartcraft-connect-dashboard": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-smartcraft-fuel-gauge": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-trent-severn-lock-chamber": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-v-hull-action-chop": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-walleye-opener-dawn": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-warranty-documents": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-winter-storage-yard": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/inline-wrong-trim-porpoising": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/inline/mercury-90-fourstroke-official-studio": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/kawartha-boat-storage-decision-map": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-mercury-115-vs-150-comparison-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-mercury-outboard-winterization-guide-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-ontario-boat-buying-guide-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-ontario-boating-licence-regulations-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-repower-vs-new-boat-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/ko-rice-lake-fishing-guide-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/locations-bewdley-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-bobcaygeon-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-bridgenorth-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-buckhorn-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-cobourg-northumberland-mercury-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-gores-landing-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-hastings-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-kawartha-lakes-mercury-outboards-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-lakefield-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-lindsay-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-northumberland-county-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-peterborough-mercury-dealer-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-port-hope-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-rice-lake-mercury-repower-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/locations-roseneath-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/mercruiser-sterndrive-ontario-failure-points": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-115-vs-150-decision-matrix-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-20-100-300-service-interval-timeline": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-75-90-115-best-fit-matrix": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-75-90-115-decision-card-hbw": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/mercury-9-9-efi-tiller": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-break-in-timeline-hbw": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-maintenance-parts-hero": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/mercury-outboard-beep-codes-action-card": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-propeller-selection-tradeoff-wheel": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-repower-cost-breakdown-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-rigging-cost-stack": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-banner-1920x675": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-mobile-414x736": [
+      414,
+      414,
+      414
+    ],
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1": [
+      640,
+      700,
+      700
+    ],
+    "/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/mercury-vs-honda-hero-2026": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/official-mercury-75-fourstroke": [
+      640,
+      1024,
+      1050
+    ],
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp": [
+      640,
+      696,
+      696
+    ],
+    "/lovable-uploads/official-mercury-seapro-350-v10": [
+      514,
+      514,
+      514
+    ],
+    "/lovable-uploads/ontario-mercury-outboard-price-tier-chart": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/outboard-shaft-length-transom-measurement-diagram": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/pontoon-115-ct-detail-real": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/pontoon-family-rice-lake-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/pontoon-family-tubing": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/pontoon-hp-by-length-and-use": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-cost-stack-by-hp-class": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-eligibility-5-check-card": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-old-new-motor-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-process-timeline": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/repower-vs-new-boat-decision-matrix-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/rice-lake-map-illustrated": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/rice-lake-practical-boating-map": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/rice-lake-storage-timeline": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/shaft-length-vs-transom-diagram": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/smartcraft-connect-eligibility-hero": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/smartcraft-connect-gateway-inline": [
+      640,
+      1024,
+      1376
+    ],
+    "/lovable-uploads/spring-commissioning-checklist-card": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/spring-no-start-flowchart": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/td-financing-2026-rate-card": [
+      640,
+      1024,
+      1024
+    ],
+    "/lovable-uploads/toronto-chinese-rice-lake-rental-checklist": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/wont-start-causes-hbw": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-chinese-anglers-rice-lake-kawarthas-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-chinese-boat-repower-vs-new-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-chinese-mercury-outboard-guide-toronto-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-first-time-renter-walkthrough-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-mercury-repower-guide-gta-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-ontario-chinese-boating-license-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-pontoon-vs-fishing-boat-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-rice-lake-fish-species-seasons-hero": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/zh-toronto-rice-lake-one-day-trip-hero": [
+      640,
+      1024,
+      1920
+    ]
+  }
+}

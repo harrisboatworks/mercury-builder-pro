@@ -1,8 +1,10 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
-import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
+import type { Motor, BoatInfo, QuoteData, QuotePaymentMethod } from '@/components/QuoteBuilder';
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
+import { trackEvent } from '@/lib/analytics';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
-interface WarrantyConfig {
+export interface WarrantyConfig {
   extendedYears: number;
   warrantyPrice: number;
   totalYears: number;
@@ -45,15 +47,33 @@ export interface FrozenPricing {
   total: number;
   savings: number;
   quoteExpiryDate?: string; // ISO date — earliest of 30 days or promo end
+  promotionName?: string;
+  promotionEndDate?: string;
+  promotionCombinationMode?: 'layered' | 'choose_one';
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoValue?: string | null;
+  selectedPaymentMethod?: QuotePaymentMethod | null;
+  financingRate?: number;
+  financingAmortizationMonths?: number;
+  financingContractTermMonths?: number;
+  dealerFee?: number;
+  amountFinanced?: number;
 }
 
 // Battery option for loose electric start motors
 interface LooseMotorBattery {
   wantsBattery: boolean;
   batteryCost: number;
+  decision?: 'add' | 'own' | 'later';
 }
 
-interface QuoteState {
+interface QuoteUiFlags {
+  [key: string]: unknown;
+  motorOnlyExpress?: boolean;
+  suppressAdditionalPromoSavings?: boolean;
+}
+
+export interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
   motorSpecs: MercuryMotor | null; // Full specs available for AI assistant
@@ -78,12 +98,11 @@ interface QuoteState {
   selectedPromoRate: number | null;      // e.g., 2.99, 3.99, 4.49, 5.49 for special financing
   selectedPromoTerm: number | null;      // e.g., 24, 36, 48, 60 months for special financing
   selectedPromoValue: string | null;     // Display value (e.g., "$500", "3.99% for 36mo")
+  selectedPaymentMethod: QuotePaymentMethod | null; // Separate from the promotion benefit so cash still keeps a layered rebate
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
-  uiFlags: {
-    // Can add other UI flags here if needed in the future
-  };
+  uiFlags: QuoteUiFlags;
   // Admin quote fields
   isAdminQuote: boolean;
   editingQuoteId: string | null;
@@ -95,9 +114,11 @@ interface QuoteState {
   customerPhone: string;
   adminCustomItems: Array<{ name: string; price: number }>;
   frozenPricing?: FrozenPricing;
+  pdfSnapshot?: QuotePdfSnapshot;
 }
 
-type QuoteAction = 
+export type QuoteAction =
+  | { type: 'START_MOTOR_ONLY_QUOTE'; payload: Motor }
   | { type: 'SET_MOTOR'; payload: Motor }
   | { type: 'SET_PREVIEW_MOTOR'; payload: Motor | null }
   | { type: 'SET_CONFIGURATOR_STEP'; payload: string | null }
@@ -105,6 +126,7 @@ type QuoteAction =
   | { type: 'SET_PURCHASE_PATH'; payload: 'loose' | 'installed' }
   | { type: 'SET_BOAT_INFO'; payload: BoatInfo }
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
+  | { type: 'PROMOTE_TRADE_IN'; payload: any }
   | { type: 'SET_FUEL_TANK_CONFIG'; payload: any }
   | { type: 'SET_INSTALL_CONFIG'; payload: any }
   | { type: 'SET_LOOSE_MOTOR_BATTERY'; payload: LooseMotorBattery | null }
@@ -120,6 +142,7 @@ type QuoteAction =
       term?: number | null;
       value?: string | null;
     }}
+  | { type: 'SET_PAYMENT_METHOD'; payload: QuotePaymentMethod | null }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -131,9 +154,10 @@ type QuoteAction =
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
   | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } }
-  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing };
+  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing | undefined }
+  | { type: 'SET_PDF_SNAPSHOT'; payload: QuotePdfSnapshot | undefined };
 
-const initialState: QuoteState = {
+export const initialState: QuoteState = {
   motor: null,
   previewMotor: null,
   motorSpecs: null,
@@ -158,6 +182,7 @@ const initialState: QuoteState = {
   selectedPromoRate: null,
   selectedPromoTerm: null,
   selectedPromoValue: null,
+  selectedPaymentMethod: null,
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -192,11 +217,95 @@ const QuoteContext = createContext<{
   };
 } | null>(null);
 
-function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
+const getMotorIdentity = (motor: Motor | null): string | null => {
+  if (!motor) return null;
+  return motor.id || `${motor.model}:${motor.hp}`;
+};
+
+export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
-    case 'SET_MOTOR':
+    case 'START_MOTOR_ONLY_QUOTE': {
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
-      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null, configuratorOptions: null, selectedOptions: [] };
+
+      // This is an express purchase path, not a merge with a saved configurator.
+      // Reset every boat-, install-, trade-, accessory-, warranty-, promotion-,
+      // customer-, and admin-specific field so the summary contains the motor only.
+      return {
+        ...initialState,
+        motor: action.payload,
+        motorSpecs,
+        purchasePath: 'loose',
+        selectedPackage: {
+          id: 'good',
+          label: 'Motor-only pickup',
+          priceBeforeTax: 0,
+        },
+        selectedPaymentMethod: 'cash_purchase',
+        completedSteps: [1, 2, 3, 4, 5],
+        currentStep: 6,
+        isLoading: false,
+        uiFlags: {
+          motorOnlyExpress: true,
+          // This express path reserves the published sale price. Any
+          // time-limited factory rebate is confirmed separately after HBW
+          // verifies ETA and delivery eligibility.
+          suppressAdditionalPromoSavings: true,
+        },
+      };
+    }
+    case 'SET_MOTOR': {
+      const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
+
+      const currentMotorIdentity = getMotorIdentity(state.motor);
+      const nextMotorIdentity = getMotorIdentity(action.payload);
+      const motorChanged = currentMotorIdentity !== null && currentMotorIdentity !== nextMotorIdentity;
+
+      // Re-selecting the same motor may refresh its price or inventory data, but
+      // it must not destroy work the customer already completed for that motor.
+      if (!motorChanged) {
+        return {
+          ...state,
+          motor: action.payload,
+          motorSpecs,
+          previewMotor: null,
+          configuratorStep: null,
+          configuratorOptions: null,
+        };
+      }
+
+      // A different motor invalidates motor-priced selections and snapshots.
+      // Boat, trade-in, notes, and customer-entered custom items are facts the
+      // customer may have spent time entering, so preserve them. The one boat
+      // answer that is motor-relative (compatible propeller) is reset.
+      return {
+        ...state,
+        motor: action.payload,
+        motorSpecs,
+        previewMotor: null,
+        configuratorStep: null,
+        configuratorOptions: null,
+        boatInfo: state.boatInfo
+          ? { ...state.boatInfo, hasCompatibleProp: false }
+          : null,
+        fuelTankConfig: null,
+        installConfig: null,
+        looseMotorBattery: null,
+        financing: { ...initialState.financing },
+        selectedOptions: [],
+        warrantyConfig: null,
+        selectedPackage: null,
+        selectedPromoOption: null,
+        selectedPromoRate: null,
+        selectedPromoTerm: null,
+        selectedPromoValue: null,
+        completedSteps: [],
+        currentStep: 1,
+        uiFlags: {},
+        adminDiscount: 0,
+        frozenPricing: undefined,
+        pdfSnapshot: undefined,
+      };
+    }
     case 'SET_PREVIEW_MOTOR':
       return { ...state, previewMotor: action.payload };
     case 'SET_CONFIGURATOR_STEP':
@@ -209,6 +318,15 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, boatInfo: action.payload };
     case 'SET_TRADE_IN_INFO':
       return { ...state, tradeInInfo: action.payload };
+    case 'PROMOTE_TRADE_IN':
+      // The standalone estimator hands off both pieces of quote state as one
+      // reducer transition. Persistence can never observe a trade payload
+      // while hasTradein is still false.
+      return {
+        ...state,
+        tradeInInfo: { ...action.payload, hasTradeIn: true },
+        hasTradein: true,
+      };
     case 'SET_FUEL_TANK_CONFIG':
       return { ...state, fuelTankConfig: action.payload };
     case 'SET_INSTALL_CONFIG':
@@ -235,11 +353,33 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoTerm: action.payload.term ?? null,
         selectedPromoValue: action.payload.value ?? null,
       };
-    case 'COMPLETE_STEP':
+    case 'SET_PAYMENT_METHOD':
+      return { ...state, selectedPaymentMethod: action.payload };
+    case 'COMPLETE_STEP': {
+      // Analytics: fire quote_step_complete on advance (not back-nav). Each step fires once per session.
+      try {
+        if (typeof window !== 'undefined' && !state.completedSteps.includes(action.payload)) {
+          const stepNames = ['', 'motor_selection', 'boat_details', 'boat_details', 'customer_info', 'customer_info', 'review', 'review'];
+          const startKey = `mr_step_start_${action.payload}`;
+          const startTs = Number(sessionStorage.getItem(startKey) || 0);
+          const nowMs = Date.now();
+          const durationS = startTs ? Math.round((nowMs - startTs) / 1000) : 0;
+          sessionStorage.setItem(`mr_step_start_${action.payload + 1}`, String(nowMs));
+          const qid = sessionStorage.getItem('mr_quote_id');
+          trackEvent('quote_step_complete', {
+            step_number: action.payload,
+            step_name: stepNames[action.payload] || `step_${action.payload}`,
+            step_duration_seconds: durationS,
+            motor_model: state.motor?.model || '',
+            quote_id: qid,
+          });
+        }
+      } catch { /* analytics must never break the reducer */ }
       return { 
         ...state, 
         completedSteps: [...state.completedSteps.filter(s => s !== action.payload), action.payload]
       };
+    }
     case 'SET_CURRENT_STEP':
       return { ...state, currentStep: action.payload };
     case 'LOAD_FROM_STORAGE':
@@ -294,29 +434,54 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       };
     case 'SET_FROZEN_PRICING':
       return { ...state, frozenPricing: action.payload };
-    case 'RESTORE_QUOTE':
-      // Restore quote from saved data (used for admin editing)
+    case 'SET_PDF_SNAPSHOT':
+      return { ...state, pdfSnapshot: action.payload };
+    case 'RESTORE_QUOTE': {
+      // Restore a full saved/QR quote atomically so reducer resets cannot erase
+      // fields between a sequence of partial restoration actions.
       const restored = action.payload;
+      const restoredMotor = restored.motor || restored.selectedMotor || null;
       return {
-        ...state,
-        motor: restored.motor || null,
-        purchasePath: restored.purchasePath || null,
-        boatInfo: restored.boatInfo || null,
-        tradeInInfo: restored.tradeInInfo || null,
-        fuelTankConfig: restored.fuelTankConfig || null,
-        installConfig: restored.installConfig || null,
-        looseMotorBattery: restored.looseMotorBattery || null,
-        warrantyConfig: restored.warrantyConfig || null,
-        hasTradein: restored.hasTradein || false,
-        selectedOptions: restored.selectedOptions || [],
-        selectedPackage: restored.selectedPackage || null,
-        selectedPromoOption: restored.selectedPromoOption || null,
-        selectedPromoRate: restored.selectedPromoRate || null,
-        selectedPromoTerm: restored.selectedPromoTerm || null,
-        selectedPromoValue: restored.selectedPromoValue || null,
-        adminCustomItems: restored.adminCustomItems || [],
+        // A shared/admin quote is a complete replacement, not a merge with
+        // whatever another customer happened to leave in local state.
+        ...initialState,
+        motor: restoredMotor,
+        motorSpecs: restoredMotor ? findMotorSpecs(restoredMotor.hp, restoredMotor.model) : null,
+        previewMotor: null,
+        configuratorStep: null,
+        configuratorOptions: null,
+        purchasePath: restored.purchasePath ?? null,
+        boatInfo: restored.boatInfo ?? null,
+        tradeInInfo: restored.tradeInInfo ?? null,
+        fuelTankConfig: restored.fuelTankConfig ?? null,
+        installConfig: restored.installConfig ?? null,
+        looseMotorBattery: restored.looseMotorBattery ?? null,
+        financing: restored.financing ?? initialState.financing,
+        warrantyConfig: restored.warrantyConfig ?? null,
+        hasTradein: restored.hasTradein ?? restored.tradeInInfo?.hasTradeIn ?? false,
+        selectedOptions: restored.selectedOptions ?? [],
+        selectedPackage: restored.selectedPackage ?? null,
+        selectedPromoOption: restored.selectedPromoOption ?? null,
+        selectedPromoRate: restored.selectedPromoRate ?? null,
+        selectedPromoTerm: restored.selectedPromoTerm ?? null,
+        selectedPromoValue: restored.selectedPromoValue ?? null,
+        selectedPaymentMethod: restored.selectedPaymentMethod ?? null,
+        completedSteps: restored.completedSteps ?? [],
+        currentStep: restored.currentStep ?? 1,
+        isAdminQuote: restored.isAdminQuote ?? false,
+        editingQuoteId: restored.editingQuoteId ?? null,
+        adminDiscount: restored.adminDiscount ?? 0,
+        adminNotes: restored.adminNotes ?? '',
+        customerNotes: restored.customerNotes ?? '',
+        customerName: restored.customerName ?? '',
+        customerEmail: restored.customerEmail ?? '',
+        customerPhone: restored.customerPhone ?? '',
+        adminCustomItems: restored.adminCustomItems ?? [],
+        frozenPricing: restored.frozenPricing,
+        pdfSnapshot: restored.pdfSnapshot,
         isLoading: false
       };
+    }
     default:
       return state;
   }
@@ -602,7 +767,9 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     selectedPromoRate: state.selectedPromoRate,
     selectedPromoTerm: state.selectedPromoTerm,
     selectedPromoValue: state.selectedPromoValue,
-    looseMotorBattery: state.looseMotorBattery
+    selectedPaymentMethod: state.selectedPaymentMethod,
+    looseMotorBattery: state.looseMotorBattery,
+    pdfSnapshot: state.pdfSnapshot,
   });
 
   const clearQuote = () => {

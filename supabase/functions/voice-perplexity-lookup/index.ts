@@ -1,4 +1,12 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+} from "../_shared/verified-mercury-technical-facts.ts";
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from "../_shared/verified-hbw-authority-facts.ts";
+import { searchLiveBlogKnowledge } from "../_shared/format-kb-documents.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -85,6 +93,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cap voice Perplexity queries: 30 / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'voice_perplexity',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { query, category: providedCategory, motor_context } = await req.json();
     
@@ -92,6 +108,43 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ success: false, error: 'Query is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(
+      query,
+      { voice: true, includeLinks: false },
+    );
+    if (verifiedAuthorityReply) {
+      return new Response(
+        JSON.stringify({
+          success: true,
+          answer: verifiedAuthorityReply,
+          sources: [],
+          confidence: 'high',
+          category: providedCategory || detectCategory(query),
+          source: 'verified-hbw-authority-facts',
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+      );
+    }
+
+    const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+      query,
+      motor_context,
+      { voice: true, includeLinks: false },
+    );
+    if (verifiedTechnicalReply) {
+      return new Response(
+        JSON.stringify({
+          success: true,
+          answer: verifiedTechnicalReply,
+          sources: [],
+          confidence: 'high',
+          category: providedCategory || detectCategory(query),
+          source: 'verified-mercury-technical-facts',
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
@@ -112,8 +165,14 @@ serve(async (req) => {
     const category = providedCategory || detectCategory(query);
     console.log(`[voice-perplexity] Query: "${query}", Category: ${category}, Motor: ${motor_context || 'none'}`);
 
-    // Build optimized prompt
-    const prompt = buildPrompt(query, category, motor_context);
+    // Build the prompt with current first-party article excerpts. This lets a
+    // normal site/blog deploy refresh voice knowledge without a function
+    // redeploy. The technical fact gate above remains authoritative.
+    const blogKnowledgeContext = await searchLiveBlogKnowledge(query);
+    const prompt = [
+      buildPrompt(query, category, motor_context),
+      blogKnowledgeContext,
+    ].filter(Boolean).join("\n\n");
 
     // Determine search domains based on category
     const searchDomains = category === 'accessories' 

@@ -129,13 +129,13 @@ export const RotatingTestimonials: React.FC = () => {
         <div key={index} className="bg-card border rounded-lg p-3">
           <div className="flex items-center gap-1 mb-2">
             {[1,2,3,4,5].map(i => (
-              <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
+              <Star key={i} className="w-3 h-3 fill-repower-gold0 text-repower-gold0" />
             ))}
           </div>
           <p className="text-xs text-muted-foreground mb-2">
             "{testimonial.text}"
           </p>
-          <p className="text-xs font-medium">— {testimonial.author}, {testimonial.source}</p>
+          <p className="text-xs font-medium">{testimonial.author}, {testimonial.source}</p>
         </div>
       ))}
     </div>

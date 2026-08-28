@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 
 export interface PersistedMessage {
   id: string;
@@ -24,6 +23,7 @@ interface ChatHistoryResponse {
     last_message_at: string;
   } | null;
   messages: PersistedMessage[];
+  message_id?: string;
 }
 
 const SESSION_KEY = 'chat_session_id';
@@ -52,24 +52,30 @@ function isValidSessionIdFormat(sessionId: string): boolean {
 }
 
 // Fetch chat history via secure Edge Function
-async function fetchChatHistoryFromEdge(sessionId: string): Promise<ChatHistoryResponse> {
+async function callChatPersistenceEdge(
+  sessionId: string,
+  payload: Record<string, unknown> = {},
+  throwOnError = false,
+): Promise<ChatHistoryResponse> {
   try {
     const response = await fetch(`${SUPABASE_URL}/functions/v1/chat-history`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ session_id: sessionId }),
+      body: JSON.stringify({ session_id: sessionId, ...payload }),
     });
 
     if (!response.ok) {
       console.error('Chat history fetch failed:', response.status);
+      if (throwOnError) throw new Error(`Chat persistence request failed (${response.status})`);
       return { conversation: null, messages: [] };
     }
 
     return await response.json();
   } catch (error) {
     console.error('Failed to fetch chat history:', error);
+    if (throwOnError) throw error;
     return { conversation: null, messages: [] };
   }
 }
@@ -84,30 +90,20 @@ export function useChatPersistence() {
   // Initialize conversation - only creates new if none exists for this session
   const initializeConversation = useCallback(async (context?: ChatContext) => {
     try {
-      // Use Edge Function to securely fetch existing conversation
-      const { conversation } = await fetchChatHistoryFromEdge(sessionId);
+      // The Edge Function owns both creation and lookup so anonymous clients
+      // never need a SELECT permission that would expose other sessions.
+      const { conversation, messages } = await callChatPersistenceEdge(sessionId, {
+        action: 'ensure',
+        context: context || {},
+      });
 
       if (conversation) {
         setConversationId(conversation.id);
-        setHasHistory(true);
+        setHasHistory(messages.length > 0);
         return conversation.id;
       }
 
-      // No existing conversation - create a new one
-      const { data: newConvo, error: createError } = await supabase
-        .from('chat_conversations')
-        .insert({
-          session_id: sessionId,
-          context: context || {},
-        })
-        .select('id')
-        .single();
-
-      if (createError) throw createError;
-      
-      setConversationId(newConvo.id);
-      setHasHistory(false);
-      return newConvo.id;
+      return null;
     } catch (error: any) {
       // RLS-blocked inserts for anonymous users are expected — silently skip persistence
       const code = error?.code || error?.status;
@@ -124,7 +120,7 @@ export function useChatPersistence() {
   // Load messages using Edge Function (secure)
   const loadMessages = useCallback(async (): Promise<PersistedMessage[]> => {
     try {
-      const { conversation, messages } = await fetchChatHistoryFromEdge(sessionId);
+      const { conversation, messages } = await callChatPersistenceEdge(sessionId);
       
       if (conversation) {
         setConversationId(conversation.id);
@@ -151,6 +147,10 @@ export function useChatPersistence() {
     role: 'user' | 'assistant',
     metadata?: Record<string, any>
   ): Promise<string | null> => {
+    // Do not create a database conversation just to store the local welcome
+    // message. Persistence begins with the visitor's first actual message.
+    if (!conversationId && role === 'assistant') return null;
+
     let convoId = conversationId;
     
     if (!convoId) {
@@ -159,26 +159,14 @@ export function useChatPersistence() {
     }
 
     try {
-      const { data, error } = await supabase
-        .from('chat_messages')
-        .insert({
-          conversation_id: convoId,
-          content,
-          role,
-          metadata: metadata || {},
-        })
-        .select('id')
-        .single();
-
-      if (error) throw error;
-
-      // Update conversation last_message_at
-      await supabase
-        .from('chat_conversations')
-        .update({ last_message_at: new Date().toISOString(), updated_at: new Date().toISOString() })
-        .eq('id', convoId);
-
-      return data.id;
+      const result = await callChatPersistenceEdge(sessionId, {
+        action: 'save_message',
+        conversation_id: convoId,
+        content,
+        role,
+        metadata: metadata || {},
+      }, true);
+      return result.message_id || null;
     } catch (error) {
       console.error('Failed to save message:', error);
       return null;
@@ -191,32 +179,27 @@ export function useChatPersistence() {
     reaction: 'thumbs_up' | 'thumbs_down' | null
   ): Promise<boolean> => {
     try {
-      const { error } = await supabase
-        .from('chat_messages')
-        .update({
-          reaction,
-          reaction_at: reaction ? new Date().toISOString() : null,
-        })
-        .eq('id', messageId);
-
-      if (error) throw error;
+      await callChatPersistenceEdge(sessionId, {
+        action: 'reaction',
+        message_id: messageId,
+        reaction,
+      }, true);
       return true;
     } catch (error) {
       console.error('Failed to update reaction:', error);
       return false;
     }
-  }, []);
+  }, [sessionId]);
 
   // Clear conversation and start fresh
   const clearConversation = useCallback(async (): Promise<boolean> => {
     if (!conversationId) return true;
 
     try {
-      // Mark current conversation as inactive
-      await supabase
-        .from('chat_conversations')
-        .update({ is_active: false })
-        .eq('id', conversationId);
+      await callChatPersistenceEdge(sessionId, {
+        action: 'clear',
+        conversation_id: conversationId,
+      }, true);
 
       // Generate new session ID for fresh start
       const newSessionId = generateSecureSessionId();
@@ -229,17 +212,13 @@ export function useChatPersistence() {
       console.error('Failed to clear conversation:', error);
       return false;
     }
-  }, [conversationId]);
+  }, [conversationId, sessionId]);
 
-  // Initialize on mount
+  // Conversations are loaded when a chat surface opens and created only when
+  // the visitor sends a message. This avoids a database write on every page view.
   useEffect(() => {
-    const init = async () => {
-      setIsLoading(true);
-      await initializeConversation();
-      setIsLoading(false);
-    };
-    init();
-  }, [initializeConversation]);
+    setIsLoading(false);
+  }, []);
 
   return {
     conversationId,

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CalendarOff, Percent, Banknote, Check, type LucideIcon } from 'lucide-react';
+import { CalendarOff, Percent, Banknote, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -35,48 +35,39 @@ export function ChooseOneCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
       className={cn(
-        'relative bg-white rounded-xl border-2 p-6 transition-all duration-200',
-        onClick && 'cursor-pointer hover:shadow-lg',
-        isSelected 
-          ? 'border-primary shadow-lg ring-2 ring-primary/20' 
-          : 'border-border hover:border-primary/50',
-        className
+        'relative bg-white border border-repower-navy-900/10 p-7 md:p-8 transition-colors duration-200 h-full flex flex-col',
+        onClick && 'cursor-pointer hover:border-repower-navy-900',
+        isSelected && 'border-repower-navy-900',
+        className,
       )}
     >
-      {/* Selected indicator */}
-      {isSelected && (
-        <div className="absolute -top-3 -right-3 w-7 h-7 bg-primary rounded-full flex items-center justify-center shadow-md">
-          <Check className="w-4 h-4 text-white" />
-        </div>
-      )}
-
-      {/* Icon */}
-      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-        <IconComponent className="w-7 h-7 text-primary" />
-      </div>
+      {/* Icon — monochrome, no colored circle */}
+      <IconComponent className="w-6 h-6 text-repower-mercury-red mb-5" strokeWidth={1.75} />
 
       {/* Title */}
-      <h3 className="text-xl font-semibold text-foreground mb-2">{title}</h3>
+      <h3 className="font-display font-semibold text-[20px] text-repower-navy-900 mb-2 tracking-tight">
+        {title}
+      </h3>
 
-      {/* Highlight badge */}
+      {/* Highlight value */}
       {highlight && (
-        <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-3">
+        <p className="font-display font-bold text-[18px] text-repower-mercury-red mb-3 tracking-tight">
           {highlight}
-        </span>
+        </p>
       )}
 
       {/* Description */}
-      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+      <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed mb-4">
         {description}
       </p>
 
-      {/* Additional content (rates, matrix, etc.) */}
-      {children}
+      {/* Additional content */}
+      <div className="mt-auto">{children}</div>
     </motion.div>
   );
 }

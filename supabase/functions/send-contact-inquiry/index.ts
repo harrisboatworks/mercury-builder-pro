@@ -3,6 +3,8 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
 import { z } from "npm:zod@3.22.4";
+import { buildEmail, buildAdminEmail, detailsCard, esc as escLayout } from "../_shared/email-layout.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -72,6 +74,27 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const inquiryData = validationResult.data;
+
+    // HTML-escape user-supplied strings before embedding in email bodies
+    const escHtml = (s: unknown): string =>
+      String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    // Sanitize free-text for SMS bodies (strip URLs, phone numbers, restrict chars)
+    const sanitizeForSms = (val: unknown, max = 200): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
     
     console.log('Processing contact inquiry:', { 
       name: inquiryData.name, 
@@ -104,107 +127,77 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log('Inquiry saved with ID:', inquiry.id);
 
-    // Send confirmation email to customer
-    const customerEmailResponse = await resend.emails.send({
-      from: "Harris Boat Works <info@hbwsales.ca>",
-      to: [inquiryData.email],
-      subject: "We received your inquiry - Harris Boat Works",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: linear-gradient(135deg, #007DC5, #1e40af); color: white; padding: 30px; text-align: center;">
-            <h1 style="margin: 0; font-size: 28px;">Thank You for Contacting Us!</h1>
-            <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Your inquiry has been received</p>
-          </div>
-          
-          <div style="padding: 30px; background: #f8fafc;">
-            <p style="font-size: 16px; color: #334155; margin: 0 0 20px 0;">
-              Hi ${inquiryData.name},
-            </p>
-            
-            <p style="font-size: 16px; color: #334155; line-height: 1.6;">
-              Thank you for reaching out to Harris Boat Works. We've received your <strong>${inquiryData.inquiry_type}</strong> inquiry and will get back to you as soon as possible.
-            </p>
-            
-            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0;">
-              <h3 style="color: #007DC5; margin: 0 0 15px 0;">Your Inquiry Details:</h3>
-              <p style="margin: 5px 0; color: #64748b;"><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
-              <p style="margin: 5px 0; color: #64748b;"><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
-              <p style="margin: 5px 0; color: #64748b;"><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
-              <p style="margin: 15px 0 5px 0; color: #64748b;"><strong>Message:</strong></p>
-              <p style="margin: 0; color: #475569; font-style: italic;">"${inquiryData.message}"</p>
-            </div>
-            
-            <div style="background: #007DC5; color: white; border-radius: 8px; padding: 20px; margin: 20px 0;">
-              <h3 style="margin: 0 0 10px 0;">What's Next?</h3>
-              <p style="margin: 0; line-height: 1.6;">
-                ${inquiryData.urgency_level === 'urgent' 
-                  ? 'We understand this is urgent and will respond within 2-4 hours during business hours.' 
-                  : 'We typically respond to inquiries within 24 hours during business hours.'
-                }
-              </p>
-            </div>
-            
-            <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 30px;">
-              <h3 style="color: #334155; margin: 0 0 15px 0;">Contact Information</h3>
-              <p style="margin: 5px 0; color: #64748b;">📞 <strong>(905) 342-2153</strong></p>
-              <p style="margin: 5px 0; color: #64748b;">📧 <strong>info@harrisboatworks.ca</strong></p>
-              <p style="margin: 5px 0; color: #64748b;">📍 <strong>5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</strong></p>
-            </div>
-          </div>
-          
-          <div style="background: #334155; color: white; padding: 20px; text-align: center;">
-            <p style="margin: 0; font-size: 14px; opacity: 0.8;">
-              Harris Boat Works - Go Boldly - Authorized Mercury Marine Dealer
-            </p>
-          </div>
-        </div>
-      `,
+    // --- Customer acknowledgement email ---
+    const responseTime = inquiryData.urgency_level === 'urgent'
+      ? "We understand this is urgent and will respond within 2 to 4 hours during business hours."
+      : "We typically respond within one business day.";
+
+    const customerBody = `
+      <p style="margin:0 0 14px 0;">Hi ${escHtml(inquiryData.name)},</p>
+      <p style="margin:0 0 14px 0;">Thanks for reaching out. We received your ${escHtml(inquiryData.inquiry_type)} inquiry and will be in touch.</p>
+      ${detailsCard([
+        { label: "Type", value: escLayout(inquiryData.inquiry_type) },
+        { label: "Priority", value: escLayout(inquiryData.urgency_level) },
+        { label: "Preferred", value: escLayout(inquiryData.preferred_contact_method) },
+      ])}
+      <p style="margin:18px 0 14px 0;font-weight:600;color:#1f2430;">Your message</p>
+      <div style="background:#f8fafb;border-left:3px solid #0f2a43;padding:14px 16px;border-radius:4px;color:#1f2430;white-space:pre-wrap;">${escHtml(inquiryData.message)}</div>
+      <p style="margin:22px 0 0 0;">${responseTime}</p>
+      <p style="margin:14px 0 0 0;">Need to reach us sooner? Call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
+    `;
+
+    const customerHtml = buildEmail({
+      preheader: `We received your ${inquiryData.inquiry_type} inquiry.`,
+      heading: "We received your inquiry",
+      bodyHtml: customerBody,
     });
 
-    // Send notification to admin
-    const adminSubject = `New ${inquiryData.inquiry_type} Inquiry${inquiryData.urgency_level === 'urgent' ? ' - URGENT' : ''}`;
+    const customerEmailResponse = await resend.emails.send({
+      from: "Harris Boat Works <info@mercuryrepower.ca>",
+      replyTo: "info@harrisboatworks.ca",
+      to: [inquiryData.email],
+      bcc: [GROK_BOT_AGENTMAIL],
+      subject: "We received your inquiry | Harris Boat Works",
+      html: customerHtml,
+    });
+
+    // --- Admin notification ---
+    const adminBody = `
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
+        <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Name</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${escHtml(inquiryData.name)}</td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${escHtml(inquiryData.email)}" style="color:#0f2a43;">${escHtml(inquiryData.email)}</a></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Phone</td><td style="padding:6px 0;">${inquiryData.phone ? `<a href="tel:${escHtml(inquiryData.phone)}" style="color:#0f2a43;">${escHtml(inquiryData.phone)}</a>` : 'Not provided'}</td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Preferred</td><td style="padding:6px 0;color:#1f2430;">${escHtml(inquiryData.preferred_contact_method)}</td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Type</td><td style="padding:6px 0;color:#1f2430;">${escHtml(inquiryData.inquiry_type)}</td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Priority</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${escHtml(inquiryData.urgency_level)}</td></tr>
+      </table>
+      <p style="margin:8px 0 6px 0;font-weight:600;color:#1f2430;">Message</p>
+      <div style="background:#f8fafb;border-left:3px solid #0f2a43;padding:12px 14px;border-radius:4px;color:#1f2430;white-space:pre-wrap;">${escHtml(inquiryData.message)}</div>
+      <p style="margin:12px 0 0 0;font-size:12px;color:#6b7280;">Inquiry ID ${inquiry.id} | ${new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' })} ET</p>
+    `;
+    const adminSubject = inquiryData.urgency_level === 'urgent'
+      ? `[URGENT] ${inquiryData.name} - ${inquiryData.inquiry_type}`
+      : `[CONTACT] ${inquiryData.name} - ${inquiryData.inquiry_type}`;
+
     const adminEmailResponse = await resend.emails.send({
-      from: "Harris Boat Works <info@hbwsales.ca>",
+      from: "Harris Boat Works <info@mercuryrepower.ca>",
       to: ["info@harrisboatworks.ca"],
+      bcc: [GROK_BOT_AGENTMAIL],
       subject: adminSubject,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: ${inquiryData.urgency_level === 'urgent' ? '#dc2626' : '#007DC5'}; color: white; padding: 20px;">
-            <h1 style="margin: 0; font-size: 24px;">New Contact Inquiry</h1>
-            ${inquiryData.urgency_level === 'urgent' 
-              ? '<p style="margin: 10px 0 0 0; font-weight: bold; background: rgba(255,255,255,0.2); padding: 8px; border-radius: 4px;">⚠️ URGENT INQUIRY</p>' 
-              : ''
-            }
-          </div>
-          
-          <div style="padding: 20px; background: #f8fafc;">
-            <h2 style="color: #334155; margin: 0 0 15px 0;">Customer Details</h2>
-            <p><strong>Name:</strong> ${inquiryData.name}</p>
-            <p><strong>Email:</strong> ${inquiryData.email}</p>
-            <p><strong>Phone:</strong> ${inquiryData.phone || 'Not provided'}</p>
-            <p><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
-            
-            <h2 style="color: #334155; margin: 20px 0 15px 0;">Inquiry Details</h2>
-            <p><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
-            <p><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
-            <p><strong>Message:</strong></p>
-            <div style="background: white; border-left: 4px solid #007DC5; padding: 15px; margin: 10px 0;">
-              ${inquiryData.message}
-            </div>
-            
-            <p style="margin-top: 20px; color: #64748b; font-size: 14px;">
-              Inquiry ID: ${inquiry.id}<br>
-              Received: ${new Date().toLocaleString()}
-            </p>
-          </div>
-        </div>
-      `,
+      html: buildAdminEmail({
+        preheader: `${inquiryData.name} - ${inquiryData.inquiry_type}`,
+        heading: `${inquiryData.name} - ${inquiryData.inquiry_type}`,
+        bodyHtml: adminBody,
+        tag: inquiryData.urgency_level === 'urgent' ? "Urgent" : "Contact",
+      }),
     });
 
     // Send SMS notification for urgent inquiries or if preferred contact method is SMS
     if (inquiryData.urgency_level === 'urgent' || inquiryData.preferred_contact_method === 'sms') {
       try {
-        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${inquiryData.name} (${inquiryData.email}). Type: ${inquiryData.inquiry_type}. Message: ${inquiryData.message.substring(0, 200)}${inquiryData.message.length > 200 ? '...' : ''}`;
+        const safeName = sanitizeForSms(inquiryData.name, 60);
+        const safeMessage = sanitizeForSms(inquiryData.message, 200);
+        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${safeName}. Type: ${inquiryData.inquiry_type}. Message: ${safeMessage}`;
         
         const smsResponse = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${twilioAccountSid}/Messages.json`, {
           method: 'POST',

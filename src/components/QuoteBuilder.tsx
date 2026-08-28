@@ -19,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { BonusOffers } from './quote-builder/BonusOffers';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface Motor {
   id: string;
@@ -129,6 +130,8 @@ export interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
+
 export interface QuoteData {
   motor: Motor | null;
   boatInfo: BoatInfo | null;
@@ -159,7 +162,9 @@ export interface QuoteData {
   selectedPromoRate?: number | null;
   selectedPromoTerm?: number | null;
   selectedPromoValue?: string | null;
+  selectedPaymentMethod?: QuotePaymentMethod | null;
   looseMotorBattery?: { wantsBattery: boolean; batteryCost: number } | null;
+  pdfSnapshot?: QuotePdfSnapshot;
 }
 
 const QuoteBuilder = () => {
@@ -189,13 +194,8 @@ const QuoteBuilder = () => {
     }
     desc.content = 'Build your Mercury outboard quote with live pricing, sale deals, and promotions.';
 
-    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = window.location.origin + '/';
+    // Canonical is owned by the prerendered HTML and/or the SEO component
+    // for this route; do not mutate it at runtime.
   }, []);
 
   const handleStepComplete = (stepData: any) => {

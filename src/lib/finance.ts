@@ -1,12 +1,14 @@
+import financePolicy from '@/data/finance-policy.json';
+
 /**
  * Minimum amount eligible for financing
  */
-export const FINANCING_MINIMUM = 5000;
+export const FINANCING_MINIMUM = financePolicy.minimumCad;
 
 /**
  * Dealerplan processing fee (mandatory for all financed purchases)
  */
-export const DEALERPLAN_FEE = 299;
+export const DEALERPLAN_FEE = financePolicy.dealerplanFeeCad;
 
 /**
  * Get default financing rate based on price tier
@@ -14,8 +16,125 @@ export const DEALERPLAN_FEE = 299;
  * $10,000 and up: 7.99% APR
  */
 export const getDefaultFinancingRate = (price: number): number => {
-  return price < 10000 ? 8.99 : 7.99;
+  return price < 10000
+    ? financePolicy.standardApr.under10000
+    : financePolicy.standardApr.atLeast10000;
 };
+
+/**
+ * Mercury Canada TD "Always On" promotional financing rate (APR, % units).
+ * Headline rate quoted across the site. Update here to update everywhere.
+ */
+export const MERCURY_PROMO_APR = financePolicy.mercuryPromo.apr;
+
+/**
+ * Promo end date, including the Ontario UTC offset. After this instant,
+ * helpers below revert to the standard tier rate. Update on renewal.
+ */
+export const MERCURY_PROMO_END_ISO = financePolicy.mercuryPromo.endsAt;
+
+const toTimestamp = (value: number | Date): number =>
+  value instanceof Date ? value.getTime() : value;
+
+/**
+ * Whether the standing Mercury promotion is still active at a given instant.
+ * The optional instant keeps expiry behavior deterministic in tests and build
+ * tooling without duplicating the policy deadline.
+ */
+export const isMercuryPromoActive = (
+  now: number | Date = Date.now(),
+): boolean => toTimestamp(now) <= new Date(MERCURY_PROMO_END_ISO).getTime();
+
+/**
+ * Current standing Mercury financing rate (APR, % units).
+ * Single source of truth for content surfaces (blog tokens, marketing copy)
+ * that need ONE headline rate, separate from per-quote promo lookup.
+ * Returns the active promo while live, otherwise the post-promo standard rate.
+ */
+export const getCurrentMercuryFinancingRate = (): number => {
+  return isMercuryPromoActive()
+    ? MERCURY_PROMO_APR
+    : financePolicy.standardApr.atLeast10000;
+};
+
+/**
+ * Build the financing FAQ answer used by compact knowledge indexes. After the
+ * promotion expires, describe both standard tiers instead of inserting one
+ * fallback APR into dated promotional copy.
+ */
+export const getFinancingHeadlineFaqAnswer = (
+  now: number | Date = Date.now(),
+): string => {
+  const lenderDisclosure =
+    'HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms.';
+
+  if (isMercuryPromoActive(now)) {
+    const promoEnd = new Intl.DateTimeFormat('en-CA', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'America/Toronto',
+    }).format(new Date(MERCURY_PROMO_END_ISO));
+    return `The current headline rate is ${formatFinancingRate(MERCURY_PROMO_APR)} through ${promoEnd} on eligible purchases (OAC). ${lenderDisclosure}`;
+  }
+
+  return `Standard financing rates are tiered by amount: ${formatFinancingRate(financePolicy.standardApr.under10000)} below $10,000 and ${formatFinancingRate(financePolicy.standardApr.atLeast10000)} at $10,000 or more (OAC). ${lenderDisclosure}`;
+};
+
+/**
+ * Resolve the APR shown by the motor-detail calculator. A financing option the
+ * customer explicitly selected takes precedence; otherwise the current
+ * standing Mercury offer is used until expiry, with the normal price tier as
+ * the ceiling and post-promo fallback.
+ */
+export const getMotorCalculatorApr = (
+  amount: number,
+  selectedPromoRate: number | null = null,
+): number => {
+  const tieredRate = getDefaultFinancingRate(amount);
+  if (selectedPromoRate !== null && selectedPromoRate < tieredRate) {
+    return selectedPromoRate;
+  }
+  return isMercuryPromoActive()
+    ? Math.min(getCurrentMercuryFinancingRate(), tieredRate)
+    : tieredRate;
+};
+
+/**
+ * Format a financing rate for display, e.g. "5.48% APR".
+ * Defaults to getCurrentMercuryFinancingRate().
+ */
+export const formatFinancingRate = (rate?: number): string => {
+  const r = rate ?? getCurrentMercuryFinancingRate();
+  return `${r.toFixed(2)}% APR`;
+};
+
+/**
+ * Format a financing rate as just a percentage, e.g. "5.48%".
+ * Defaults to getCurrentMercuryFinancingRate().
+ */
+export const formatFinancingRatePercent = (rate?: number): string => {
+  const r = rate ?? getCurrentMercuryFinancingRate();
+  return `${r.toFixed(2)}%`;
+};
+
+/**
+ * Substitute live-rate tokens in arbitrary text. Single chokepoint that
+ * any rendering surface (markdown content, plain-text descriptions, FAQ
+ * answers) can call to inject the current Mercury financing rate.
+ *
+ *   {{LIVE_RATE}}      -> "5.48% APR"
+ *   {{LIVE_RATE_PCT}}  -> "5.48%"
+ */
+export const substituteLiveRateTokens = (text: string): string => {
+  if (!text) return text;
+  return text
+    .replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate())
+    .replace(/\{\{LIVE_RATE_PCT\}\}/g, formatFinancingRatePercent());
+};
+
+
+
 
 /**
  * Get smart financing term based on price
@@ -44,8 +163,10 @@ export const getFinancingTermOptions = (price: number): number[] => {
     return [60, 72, 84];  // 5, 6, 7 years
   } else if (price < 50000) {
     return [72, 84, 120]; // 6, 7, 10 years
-  } else {
+  } else if (price < 100000) {
     return [84, 120, 180]; // 7, 10, 15 years
+  } else {
+    return [120, 180, 240]; // 10, 15, 20 years
   }
 };
 
@@ -98,10 +219,17 @@ export const calculatePaymentWithFrequency = (
 };
 
 /**
- * Calculate monthly payment with smart term selection (backward compatibility)
+ * Calculate monthly payment with smart term selection (backward compatibility).
+ * Accepts an optional term override so a customer-selected promo term
+ * (e.g. 2.99% for 24 months) drives the payment math instead of the
+ * price-tier default.
  */
-export const calculateMonthlyPayment = (price: number, promoRate: number | null = null) => {
-  return calculatePaymentWithFrequency(price, 'monthly', promoRate);
+export const calculateMonthlyPayment = (
+  price: number,
+  promoRate: number | null = null,
+  termMonthsOverride: number | null = null,
+) => {
+  return calculatePaymentWithFrequency(price, 'monthly', promoRate, termMonthsOverride);
 };
 
 /**

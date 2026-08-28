@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import InstallationConfig from '@/components/quote-builder/InstallationConfig';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { computeDelta } from '@/lib/ui-delta';
+import { getQuoteStepNumber } from '@/components/quote-builder/quote-progress-steps';
 
 export default function InstallationPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible } = useQuote();
+  const stepNumber = getQuoteStepNumber(state, '/quote/installation') ?? 6;
   
   // Track previous totals for delta calculation
   const [prevTotal, setPrevTotal] = useState<number | null>(null);
@@ -110,20 +112,37 @@ export default function InstallationPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-          <div className="space-y-3 sm:space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300 hover:border-gray-900 font-light">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Trade-In
-            </Button>
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Trade-In
+          </button>
+        </div>
+        <QuotePageShell
+          eyebrow={`Step ${stepNumber} · Installation`}
+          title="Configure your installation"
+          subhead="Confirm the propeller and mounting details. Final propeller size is verified during water testing."
+          className="!py-6 md:!py-8"
+        >
+          <div className="mx-auto w-full max-w-[880px] mb-6 bg-repower-cream border border-repower-navy-900/10 p-5 rounded-sm">
+            <p className="font-display font-semibold text-[16px] text-repower-navy-900 mb-1">
+              Pickup only at Gores Landing
+            </p>
+            <p className="font-sans text-[14px] text-repower-navy-900/70 leading-relaxed">
+              Every motor is rigged, water-tested on Rice Lake, and ready when you arrive. Pickup is at our shop in Gores Landing, about 90 minutes from downtown Toronto.
+            </p>
           </div>
-          
-          <InstallationConfig 
+          <InstallationConfig
             selectedMotor={state.motor}
             boatInfo={state.boatInfo}
+            initialConfig={state.installConfig}
+            tradeInInfo={state.tradeInInfo}
             onComplete={handleStepComplete}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );

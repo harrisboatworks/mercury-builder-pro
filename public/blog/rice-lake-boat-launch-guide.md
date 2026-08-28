@@ -1,0 +1,251 @@
+---
+canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
+title: "Where to Launch Boat on Rice Lake"
+description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp."
+category: "Local Guides"
+date_published: 2026-05-10
+date_modified: 2026-08-19
+keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
+author: Harris Boat Works
+content_type: blog_article
+language: en-CA
+revenue_driver: rentals
+---
+
+# Where to Launch Boat on Rice Lake
+
+> A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp.
+
+**Category:** Local Guides  
+**Published:** 2026-05-10  
+**Last reviewed:** 2026-08-19  
+**Read time:** 8 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
+
+## Quick Answer
+
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) are required for powered boats.
+
+---
+
+## What Each Public Launch Offers
+
+**Bewdley (west end of Rice Lake)**
+- 1-lane concrete ramp
+- Public parking lot
+- Closest to Highway 28
+- Often busy on weekends
+- No fuel on-site
+
+**Roseneath (south shore, middle of lake)**
+- 1-lane ramp, asphalt and concrete
+- Limited parking
+- Quieter than Bewdley most days
+- No services
+
+**Gores Landing (HBW, south shore)**
+- 2-lane concrete ramp
+- Parking lot (fills up on weekends)
+- Washrooms, snacks, fuel at HBW
+- Day fee applies (see signage at ramp)
+- Direct access to mid-lake and the Trent-Severn east
+
+**Hastings (east end)**
+- 1-lane ramp
+- Public parking
+- At the entrance to the Trent-Severn east
+- Good if you're locking through to the Trent-Severn system
+
+---
+
+## How to Choose the Right Launch
+
+Pick by where you're going:
+
+**West-end fishing or Bewdley-area cottage access:** Bewdley.
+
+**Middle of the lake (most common for general boating, walleye trolling, or visiting Gores Landing/Roseneath area):** [Gores Landing](/blog/best-marina-rice-lake-ontario) or Roseneath. Gores Landing has better facilities; Roseneath has less of a crowd.
+
+**East-end fishing or starting a Trent-Severn trip:** Hastings.
+
+**Need fuel, washrooms, or first-time launch help:** Gores Landing (HBW). Our staff are there during business hours.
+
+For most Toronto-area or GTA visitors, Gores Landing is the most accessible choice: 2-lane concrete, parking, services, and the most consistent ramp surface.
+
+---
+
+*Which Rice Lake ramp makes sense*
+
+### Pick the launch that matches your boat and schedule
+
+Not all ramps handle all boats the same way. Match the ramp to your hull size and how busy you want your Saturday morning to be.
+
+#### If you are launching a small fishing boat or pontoon
+
+- Boat under 18 feet, light aluminum or pontoon
+- Comfortable with a shallow, easy-access ramp
+- Do not mind a busy summer Saturday
+- Prefer proximity to mid-lake fishing and the Trent-Severn east
+
+**Gores Landing public ramp**
+
+#### If you are launching a bigger boat or trailering on weekends
+
+- Boat 20 to 24 feet, deeper draft, or heavier rig
+- Want deeper water and more parking on peak days
+- Prefer less congestion while you rig the boat
+- Need a ramp that handles larger trailers reliably
+
+**Provincial park ramps east on the lake**
+
+Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
+
+## Step-by-Step: Launching at Gores Landing (Or Anywhere)
+
+If you're new to launching, this is the basic flow. Most people do it efficiently after a few times.
+
+**1. Pull into the staging area** (the parking spot before the actual ramp, not on the ramp itself). Do your prep here:
+- Remove trailer straps
+- Install drain plug
+- Lower the motor
+- Make sure ignition is set up and battery is connected
+
+**2. Back the trailer down the ramp** at a slow, controlled speed. Keep the boat straight on the trailer. Stop when the boat is mostly floating, not when it's still mostly on the trailer.
+
+**3. Have someone walk the boat** off the trailer to a temporary tie-up on the dock or pull it to a holding area. If you're solo, tie a line to the boat before you back in, you'll need to retrieve it from the dock.
+
+**4. Pull the trailer up the ramp** and park in the designated lot. Drive forward, not in reverse, to clear the ramp.
+
+**5. Boat in water, trailer parked.** You're launched. The whole process takes 5–10 minutes once you've done it a few times.
+
+**Do not block the ramp doing prep work.** It's a constant frustration at public launches. Use the staging area, then move quickly through the actual ramp.
+
+---
+
+## What You Need to Have on the Boat (Required by Law)
+
+For any powered boat in Ontario waters:
+
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada's current guidance is not to accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
+
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
+
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
+
+---
+
+## Trent-Severn Free Lockage 2026
+
+If you're launching to lock through the Trent-Severn, here's the current Parks Canada offer: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
+
+This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
+
+---
+
+## Common Mistakes at Public Launches
+
+**Forgetting the drain plug.** The boat fills with water as you launch. Every Saturday at every busy ramp.
+
+**Trying to launch from the staging area.** The staging area is for prep, not launching. Use the actual ramp.
+
+**Doing prep on the ramp.** Pull off, prep, then back in. Don't tie up the ramp for 10 minutes while you load coolers.
+
+**Wrong shaft length on a small boat.** A short-shaft outboard on a deep-V hull cavitates immediately at launch. Make sure your motor matches your boat before you launch.
+
+**Backing in too fast.** Slow, controlled, watch your mirrors. Don't dunk the trailer below the wheel wells.
+
+**Pulling the trailer up too fast with water still draining.** Let the boat clear the trailer fully before you drive up. Water in the trailer bearings is a common cause of bearing failure.
+
+---
+
+## Fishing Regulations and Licences
+
+You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) to fish on Rice Lake or anywhere else in Ontario:
+
+- Outdoor Card (one-time purchase)
+- Fishing licence (annual or short-term)
+
+HBW does not sell fishing licences. Get yours online at ontario.ca/fishing or at a local licence vendor before you leave.
+
+Rice Lake is in Ontario MNR's Fisheries Management Zone 17 (FMZ 17). FMZ 17 rules apply, including size limits, bag limits, and season dates. Walleye, bass, and muskie all have specific rules. Check the current Ontario Fishing Regulations Summary before you keep fish.
+
+---
+
+## Ready to Launch?
+
+If you need a Mercury motor before your next launch, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
+For service, parts, fuel, or to ask about our ramp at Gores Landing, call **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier Dealer | Since 1947
+
+---
+
+> Related guide: [Boat trim for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
+
+## Sources
+
+- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+
+## FAQs
+
+### Is the HBW ramp really open 24 hours?
+
+Yes. 24/7, 365 days a year. The honour box handles after-hours payment.
+
+### How deep is the water at the end of the ramp?
+
+Deep enough to launch most boats safely even in low-water years. We don't get the prop-strike calls common at shallow public ramps.
+
+### Can I pay for the launch by e-transfer?
+
+Yes. Cash, debit, credit, e-transfer, or Bitcoin during business hours. After hours, use the honour-box or e-transfer.
+
+### Is the HBW ramp in good shape?
+
+Two lanes of concrete, lit, with security cameras. Maintained. It has to be, we use it ourselves daily.
+
+### Can I get a discount on a season pass?
+
+$200 flat. If you launch 10+ times per year it's already cheaper than daily. We don't run launch promos. The pricing is what it is.
+
+### Can I launch late at night?
+
+Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark.
+
+### Can I stay overnight on the boat?
+
+The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+
+## Next steps
+
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

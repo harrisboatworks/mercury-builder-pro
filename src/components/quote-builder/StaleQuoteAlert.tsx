@@ -117,8 +117,8 @@ export function StaleQuoteAlert({
 
   const IconForChange = ({ type }: { type: 'up' | 'down' | 'expired' }) => {
     if (type === 'up') return <TrendingUp className="h-4 w-4 text-destructive" />;
-    if (type === 'down') return <TrendingDown className="h-4 w-4 text-green-500" />;
-    return <Clock className="h-4 w-4 text-amber-500" />;
+    if (type === 'down') return <TrendingDown className="h-4 w-4 text-repower-gold0" />;
+    return <Clock className="h-4 w-4 text-repower-gold0" />;
   };
 
   return (
@@ -126,7 +126,7 @@ export function StaleQuoteAlert({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle className="flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5 text-amber-500" />
+            <AlertTriangle className="h-5 w-5 text-repower-gold0" />
             This quote's pricing may have changed
           </AlertDialogTitle>
           <AlertDialogDescription asChild>
@@ -140,7 +140,7 @@ export function StaleQuoteAlert({
                     <IconForChange type={change.icon} />
                     <div>
                       <span className="font-medium text-foreground">{change.label}</span>
-                      <span className="text-muted-foreground"> — {change.detail}</span>
+                      <span className="text-muted-foreground">, {change.detail}</span>
                     </div>
                   </li>
                 ))}

@@ -11,8 +11,8 @@ export function FAQPageSEO() {
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/faq#faqpage`,
-        "name": "Mercury Outboard Repower FAQ — Harris Boat Works",
-        "description": "Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing — expert advice from Ontario's Mercury Marine Platinum Dealer.",
+        "name": "Mercury Outboard Repower FAQ, Harris Boat Works",
+        "description": "Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario's Mercury Marine Premier Dealer.",
         "url": `${SITE_URL}/faq`,
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -34,7 +34,7 @@ export function FAQPageSEO() {
         "@id": `${SITE_URL}/faq#webpage`,
         "url": `${SITE_URL}/faq`,
         "name": "Mercury Outboard Repower FAQ | Harris Boat Works",
-        "description": "Answers to 24 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
+        "description": "Answers to 24 common Mercury outboard repower questions, from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "breadcrumb": {
@@ -64,28 +64,26 @@ export function FAQPageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Repower FAQ — Harris Boat Works | mercuryrepower.ca</title>
+      <title>Mercury Outboard Repower FAQ | Harris Boat Works</title>
       <meta
         name="description"
-        content="Get expert answers to 24 Mercury outboard repower questions. Choosing the right HP, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization — from Ontario's Mercury Marine Platinum Dealer since 1947."
+        content="24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965."
       />
       <meta
         name="keywords"
         content="Mercury repower FAQ, Mercury outboard repower, boat repower Ontario, Mercury repower cost, Mercury outboard financing, Mercury dealer FAQ, repower vs new boat, Mercury Command Thrust, Mercury ProKicker, Harris Boat Works"
       />
-      <link rel="canonical" href={`${SITE_URL}/faq`} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
-      <meta property="og:url" content={`${SITE_URL}/faq`} />
+      <meta property="og:title" content="Mercury Outboard Repower FAQ, Harris Boat Works" />
+      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Premier Dealer since 1947." />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta name="twitter:description" content="24 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
+      <meta name="twitter:title" content="Mercury Outboard Repower FAQ, Harris Boat Works" />
+      <meta name="twitter:description" content="24 expert answers about Mercury outboard repowers, choosing, buying, financing, and installing." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">

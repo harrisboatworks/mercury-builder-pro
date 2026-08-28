@@ -1,0 +1,200 @@
+---
+canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
+title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
+description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
+category: "Mercury Buying Guides"
+date_published: 2026-05-10
+date_modified: 2026-08-19
+keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
+author: Harris Boat Works
+content_type: blog_article
+language: en-CA
+revenue_driver: repower
+---
+
+# Mercury 75 HP FourStroke: Buy the 90 Instead?
+
+> Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor.
+
+**Category:** Mercury Buying Guides  
+**Published:** 2026-05-10  
+**Last reviewed:** 2026-08-19  
+**Read time:** 7 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
+
+### Quick Answer
+
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
+
+---
+
+*Why HBW doesn't stock 75*
+
+### 75 HP or 90 HP? The honest answer
+
+We will order 75 HP, but here is why almost every buyer ends up with the 90.
+
+#### Choose 90 HP if
+
+- You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+- You want stronger hole shot and a bit more top end
+- The price difference vs 75 HP is typically under $1,500 in 2026
+- Resale value holds better (more buyer demand for 90 HP)
+- You want flexibility to add a kicker without underpowering the main
+
+**Pick 90 HP FourStroke**
+
+#### Choose 75 HP if
+
+- Your boat is rated max 75 HP on the capacity plate
+- You specifically want the lightest powerhead in this range
+- The budget gap matters more than 15 HP of headroom
+- You are not towing or carrying full passenger loads
+
+**Pick 75 HP FourStroke**
+
+We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
+
+---
+
+### Mercury 75 HP FourStroke: Why We Don't Stock It
+
+We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
+
+We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and services these motors on Rice Lake. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+
+---
+
+## What the Mercury 75 HP Actually Is
+
+The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and 115](/blog/mercury-75-vs-90-vs-115-comparison). All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
+
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards, all sharing the same 2.1L block; see mercuryrepower.ca for current pricing.](/lovable-uploads/inline/75-90-115-hp.svg)
+
+| Specification | Mercury 75 ELPT | Mercury 90 ELPT |
+|---|---|---|
+| Block | 2.1L inline-4 | 2.1L inline-4 |
+| Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
+| Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
+| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
+| Fuel system | EFI | EFI |
+| SmartCraft compatible | Yes | Yes |
+| Warranty | 3-year standard | 3-year standard |
+
+The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500-5,500 RPM. The 90 runs to 5,000-6,000. No weight change. A very small price difference.
+
+The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
+
+---
+
+## Why HBW Doesn't Stock the Mercury 75
+
+Three reasons:
+
+1. **It's the same motor as the 90.** Same block, same weight, same maintenance requirements.
+2. **The price difference is minimal.** We don't publish exact figures because Mercury pricing and dealer pricing vary, but it's not enough to justify the headroom you give up.
+3. **The 90 holds resale value better.** The 75 sits in a gap between motors people actually want: the 60 below it and the 90 above it.
+
+For 95% of customers, the 75 is the wrong motor to buy when the 90 exists at nearly the same price and weight.
+
+---
+
+## When the 75 Might Actually Make Sense
+
+There are three real scenarios where the 75 is the right call:
+
+**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+
+**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
+
+**A used 75 with low hours is priced low enough to matter.** If a used 75 with 200 hours is available for significantly less than a new 90, the math might work out. We can help you assess the used motor honestly and tell you if it's worth it.
+
+---
+
+## What We'd Put on Your Boat Instead
+
+| Boat Type | Our Recommendation |
+|---|---|
+| 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
+| Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-complete-guide-2026) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
+| Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
+| Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
+
+If your hull is rated for 60 HP maximum, you're in [the Mercury 60 ELPT FourStroke conversation](/blog/mercury-40-vs-60-hp-outboard-ontario), not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
+
+If your hull is rated for 90 HP or higher, [skip directly to the 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) or go build a quote.
+
+---
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+
+## Build a Quote, on the 90
+
+If you came here looking at the 75 and this confirmed what you suspected, go build a quote on the 90 at mercuryrepower.ca. Real CAD prices, real configurations.
+
+If you have a capacity plate situation or a used motor question, call us at 905-342-2153. We'll help you work through it honestly.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+
+---
+
+## FAQs
+
+### Why doesn't HBW stock the Mercury 75 HP FourStroke?
+
+Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90.
+
+### Can HBW order a Mercury 75 if I really want one?
+
+Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75.
+
+### What's the actual difference between a 75 and a 90 Mercury FourStroke?
+
+Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor.
+
+### Is the Mercury 90 worth the upcharge over the 75?
+
+For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out.
+
+### My compliance notice says 75 HP max. Can I put a 90 on it?
+
+Do not use an oversized existing setup or an internet example as approval. Treat 75 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. A 90 HP setup can create safety, insurance, warranty, liability, financing, and resale problems.
+
+### Will a Mercury 75 work on a pontoon?
+
+Technically yes for smaller pontoons under 20 ft with light loads. We don't recommend it. Pontoons want torque and load-carrying ability, which is what the 90 ELPT Command Thrust delivers.
+
+### Can I get a 75 Mercury used?
+
+Sometimes, yes. Used 75s come through the market. We can help assess condition and decide if a used 75 makes more sense than a new 90 for your situation.
+
+## Related guides
+
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
+
+## Next steps
+
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- The only commercial next step for this article is the Mercury quote configurator.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -38,6 +38,14 @@ import {
   SHAFT_LENGTH_GUIDE,
 } from "./mercury-knowledge.ts";
 
+import { BLOG_INDEX, type BlogIndexEntry } from "./blog-index-generated.ts";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  filterPromotionsForCountry,
+  formatPromotionContext,
+} from "./promotion-context.ts";
+import { formatHbwAuthorityKnowledge } from "./verified-hbw-authority-facts.ts";
+
 // ========== HARRIS BOAT WORKS GUIDE ==========
 export function formatHarrisGuide(): string {
   const now = new Date().toISOString().split('T')[0];
@@ -55,6 +63,8 @@ ${HARRIS_HISTORY.story}
 - **Location:** ${HARRIS_HISTORY.location}
 - **Family Ownership:** ${HARRIS_HISTORY.generations}
 - **Service Area:** ${HARRIS_HISTORY.service_area}
+
+${formatHbwAuthorityKnowledge()}
 
 ### Company Milestones
 ${HARRIS_HISTORY.milestones.map(m => `- **${m.year}:** ${m.event}`).join('\n')}
@@ -146,7 +156,6 @@ ${SEASONAL_CONTEXT.fall.tips.map(t => `- ${t}`).join('\n')}
 ### Boat License (PCOC)
 Get your Pleasure Craft Operator Card through our partner:
 - **Provider:** ${HARRIS_PARTNERS.boat_license.provider}
-- **Discount:** ${HARRIS_PARTNERS.boat_license.discount_amount} with code ${HARRIS_PARTNERS.boat_license.discount_code}
 - **Link:** ${HARRIS_PARTNERS.boat_license.url}
 
 ### Marine Parts Catalogue
@@ -402,32 +411,25 @@ Pricing varies by motor size. Contact us for a quote. The cost is minor compared
 ## Maintenance Intervals
 
 ### Break-In Period (New Motors)
-- **First 20 hours:** Vary RPM, avoid sustained full throttle
-- **20-hour service:** Change oil and filter, inspection (usually included with purchase)
+- Break-in RPM and hour phases are model-specific. Use the exact serial-number owner's manual.
+- An optional dealer check is not the same thing as a scheduled oil service. Do not state a universal 20-hour oil change.
 
-### 100-Hour Service
-- Oil and filter change
-- Gearcase oil change
-- Inspect and replace spark plugs if needed
-- Fuel filter replacement
-- Inspect water pump
-- Check and adjust valves (if applicable)
-- Full systems inspection
+### Scheduled Service
+- Build the scope from the exact manual, engine hours, elapsed time, serial number and condition.
+- Do not promise one universal replacement list for every Mercury outboard.
+- Many current manuals use 100-hour/yearly and 300-hour/3-year tables, but the applicable manual controls.
 
 ### Annual Service (Even if under 100 hours)
-- Same as 100-hour service
-- Recommended even with low hours due to time-based wear
-- Schedule before the boating season begins
+- Follow every time-based item in the exact manual even when engine hours are low.
+- The annual scope may differ from the hour-based scope.
 
 ### Water Pump Replacement
-- **Every 300 hours or 3 years** (whichever comes first)
-- Critical for cooling system health
-- Don't skip this - overheating damage is expensive
+- Many current Mercury manuals list the seawater-pump impeller at **300 hours or 3 years**.
+- Confirm the exact engine schedule and inspect sooner when symptoms or operating conditions justify it.
 
 ### Gearcase Service
-- Change gearcase oil every **100 hours or annually**
-- Inspect for water intrusion (milky oil = problem)
-- Replace seals as needed
+- Use the exact manual's interval and fill procedure.
+- Milky lubricant or significant metal requires inspection; do not diagnose the failed component from appearance alone.
 
 ## Warranty Information
 
@@ -488,14 +490,12 @@ We recommend using our rigging packages for warranty and compatibility reasons. 
 ## Common Service Questions
 
 ### How often should I change the oil?
-- Every **100 hours** or **annually** (whichever comes first)
-- More frequently for commercial use
-- Always use Mercury-approved marine oil
+- Use the exact engine's maintenance table. Many current FourStroke manuals list **100 hours or yearly**, but the model/year/serial manual controls.
+- There is no universal Mercury 20-hour oil-change rule.
 
 ### What oil should I use?
-- Mercury 4-Stroke Marine Oil (10W-30 for most applications)
-- Mercury Full Synthetic for high-performance or Verado
-- Never use automotive oil
+- Use the viscosity and formulation in the exact serial-number owner's manual.
+- Mercury oil requirements vary by engine family and operating-temperature guidance.
 
 ### How do I know if my prop is right?
 - At wide-open throttle, your RPM should be within the recommended range (usually 5000-6000 RPM)
@@ -517,9 +517,8 @@ We recommend using our rigging packages for warranty and compatibility reasons. 
 4. Essential after every saltwater trip
 
 ### When should I replace my spark plugs?
-- Every **100 hours** or as part of annual service
-- Sooner if experiencing starting issues or rough running
-- Use only Mercury-approved plugs
+- Use the exact engine schedule and specified plug.
+- Many current Mercury schedules list replacement at **300 hours or 3 years**, with earlier inspection when a diagnosed issue requires it.
 
 ## Scheduling Service
 
@@ -837,17 +836,12 @@ planning trips, and catching problems early.
 We stock genuine Mercury service kits matched to specific HP ranges:
 
 ### 100-Hour Service Kits ($85-175)
-Contains everything for the 100-hour service interval:
-- Engine oil and filter
-- Gearcase oil
-- Spark plugs
-- Fuel filter
+Kit contents are grouped for shopping convenience and do not prove every item is due. Confirm the serial-number schedule and kit compatibility before purchase.
 
 Available for: Under 25HP, 40-60HP, 75-115HP, 150HP, 175-300HP
 
 ### 300-Hour Service Kits ($150-350)
-Same as 100-hour PLUS water pump impeller and gaskets.
-Recommended every 300 hours or 3 years.
+Expanded kits may include water-pump parts. Confirm exact contents, compatibility and the applicable manual interval by serial number.
 
 ### Oil Change Kits ($45-95)
 Quick DIY oil changes between full services.
@@ -871,8 +865,350 @@ When a customer asks about accessories, suggest:
 `;
 }
 
+// ========== BLOG ARTICLE INDEX (full + compact) ==========
+
+// Group helper
+function groupByCategory(entries: BlogIndexEntry[]): Record<string, BlogIndexEntry[]> {
+  return entries.reduce((acc, e) => {
+    const k = e.category || "Uncategorized";
+    (acc[k] ||= []).push(e);
+    return acc;
+  }, {} as Record<string, BlogIndexEntry[]>);
+}
+
+/**
+ * Full blog index — every published article on harrisboatworks.ca with
+ * description, keywords, and top FAQs. Used as a standalone KB document
+ * for the ElevenLabs voice agent. URL pattern: /blog/<slug>.
+ */
+export function formatBlogIndex(): string {
+  const now = new Date().toISOString().split("T")[0];
+  const grouped = groupByCategory(BLOG_INDEX);
+  const categories = Object.keys(grouped).sort();
+
+  const sections = categories.map((cat) => {
+    const items = grouped[cat]
+      .slice()
+      .sort((a, b) => (b.publishDate || "").localeCompare(a.publishDate || ""))
+      .map((e) => {
+        const url = `/blog/${e.slug}`;
+        const faqs = e.faqs.length
+          ? `\n  **Top FAQs:**\n${e.faqs.map((f) => `  - Q: ${f.q}\n    A: ${f.a}`).join("\n")}`
+          : "";
+        const kw = e.keywords.length ? `\n  **Keywords:** ${e.keywords.join(", ")}` : "";
+        return `### ${e.title}
+- **URL:** ${url}
+- **Published:** ${e.publishDate}
+- **Summary:** ${e.description}${kw}${faqs}`;
+      })
+      .join("\n\n");
+    return `## ${cat}\n\n${items}`;
+  });
+
+  return `# Harris Boat Works Blog — Article Reference
+Updated: ${now}
+Total articles: ${BLOG_INDEX.length}
+
+This is the full reference index of every blog post on harrisboatworks.ca.
+Every article URL follows the pattern: \`/blog/<slug>\`.
+
+When a customer asks a question that maps to one of these articles, you may:
+- Pull the answer directly from the summary or FAQ shown below
+- Mention the article by name and link the customer to it (e.g. "We have a full guide at /blog/<slug>")
+- Cite a stat or quote and attribute it to the post
+
+Do not invent URLs or fabricate article content that is not listed here.
+
+${sections.join("\n\n")}
+`;
+}
+
+/**
+ * Compact blog index — title + slug + 1-line summary, grouped by category.
+ * Designed to fit inside the AI chat / voice realtime system prompt
+ * without bloating tokens. Lets the model know which articles exist so
+ * it can reference them by URL (/blog/<slug>).
+ */
+export function formatBlogTitleIndex(entries: BlogIndexEntry[] = BLOG_INDEX): string {
+  const grouped = groupByCategory(entries);
+  const categories = Object.keys(grouped).sort();
+  const sections = categories.map((cat) => {
+    const items = grouped[cat]
+      .slice()
+      .sort((a, b) => (b.publishDate || "").localeCompare(a.publishDate || ""))
+      .map((e) => `- /blog/${e.slug} — ${e.title}`)
+      .join("\n");
+    return `**${cat}:**\n${items}`;
+  });
+  return `# Blog Article Index (${entries.length} posts on mercuryrepower.ca)
+Every URL is /blog/<slug>. Reference these when a customer's question maps to a post — link them to the article and pull from its summary/FAQ in the full Blog Article Reference document. Do NOT invent URLs.
+
+${sections.join("\n\n")}`;
+}
+
+const LIVE_BLOG_INDEX_URL = "https://www.mercuryrepower.ca/blog-index.json";
+const LIVE_BLOG_BASE_URL = "https://www.mercuryrepower.ca/blog";
+const LIVE_BLOG_INDEX_CACHE_MS = 5 * 60 * 1000;
+let liveBlogIndexCache: {
+  context: string;
+  entries: BlogIndexEntry[];
+  expiresAt: number;
+} | null = null;
+
+function isBlogIndexEntry(value: unknown): value is BlogIndexEntry {
+  if (!value || typeof value !== "object") return false;
+  const entry = value as Record<string, unknown>;
+  return typeof entry.slug === "string" &&
+    typeof entry.title === "string" &&
+    typeof entry.category === "string";
+}
+
+function hydrateLiveBlogEntries(entries: BlogIndexEntry[]): BlogIndexEntry[] {
+  const bundledBySlug = new Map(BLOG_INDEX.map((entry) => [entry.slug, entry]));
+  return entries.map((entry) => ({
+    ...bundledBySlug.get(entry.slug),
+    ...entry,
+    description: entry.description || bundledBySlug.get(entry.slug)?.description || "",
+    keywords: Array.isArray(entry.keywords)
+      ? entry.keywords
+      : bundledBySlug.get(entry.slug)?.keywords || [],
+    faqs: Array.isArray(entry.faqs)
+      ? entry.faqs
+      : bundledBySlug.get(entry.slug)?.faqs || [],
+  }));
+}
+
+async function loadLiveBlogIndex(): Promise<{
+  context: string;
+  entries: BlogIndexEntry[];
+}> {
+  if (liveBlogIndexCache && liveBlogIndexCache.expiresAt > Date.now()) {
+    return liveBlogIndexCache;
+  }
+
+  const response = await fetch(LIVE_BLOG_INDEX_URL, {
+    headers: { Accept: "application/json" },
+    signal: AbortSignal.timeout(5_000),
+  });
+  if (!response.ok) throw new Error(`blog index returned ${response.status}`);
+  const payload = await response.json() as { articles?: unknown[]; count?: unknown };
+  const rawEntries = Array.isArray(payload.articles)
+    ? payload.articles.filter(isBlogIndexEntry)
+    : [];
+  if (!rawEntries.length) throw new Error("blog index contained no valid articles");
+  if (typeof payload.count !== "number" || payload.count !== rawEntries.length) {
+    throw new Error("blog index count did not match its valid entries");
+  }
+
+  const entries = hydrateLiveBlogEntries(rawEntries);
+  const context = formatBlogTitleIndex(entries);
+  liveBlogIndexCache = {
+    context,
+    entries,
+    expiresAt: Date.now() + LIVE_BLOG_INDEX_CACHE_MS,
+  };
+  return { context, entries };
+}
+
+/**
+ * Read the deploy-generated public index so the customer chat sees newly
+ * published articles after a normal site deploy, without waiting for a
+ * separate Edge Function or voice-KB redeploy.
+ */
+export async function formatLiveBlogTitleIndex(): Promise<string> {
+  try {
+    return (await loadLiveBlogIndex()).context;
+  } catch (error) {
+    console.warn("[blog-index] Live index unavailable; using bundled fallback", error);
+    return formatBlogTitleIndex();
+  }
+}
+
+const BLOG_SEARCH_STOP_WORDS = new Set([
+  "about", "after", "again", "also", "does", "engine", "engines", "from",
+  "have", "horsepower", "into", "mercury", "motor", "motors", "outboard",
+  "outboards", "should", "that", "their", "there", "these", "they", "this",
+  "what", "when", "where", "which", "with", "would", "your",
+]);
+
+function blogSearchTokens(query: string): string[] {
+  return [...new Set(
+    query
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .split(/\s+/)
+      .filter((token) => token.length >= 3 && !BLOG_SEARCH_STOP_WORDS.has(token)),
+  )];
+}
+
+function scoreBlogEntry(entry: BlogIndexEntry, tokens: string[]): number {
+  const title = (entry.title || "").toLowerCase();
+  const description = (entry.description || "").toLowerCase();
+  const keywords = (entry.keywords || []).join(" ").toLowerCase();
+  const faqs = (entry.faqs || []).map((faq) => `${faq.q} ${faq.a}`).join(" ").toLowerCase();
+  const slug = entry.slug.toLowerCase();
+
+  return tokens.reduce((score, token) => {
+    if (title.includes(token)) score += 8;
+    if (keywords.includes(token)) score += 5;
+    if (description.includes(token)) score += 3;
+    if (faqs.includes(token)) score += 2;
+    if (slug.includes(token)) score += 2;
+    return score;
+  }, 0);
+}
+
+function excerptBlogMarkdown(markdown: string, tokens: string[], maxChars = 9_000): string {
+  const lines = markdown.split("\n");
+  const selected = new Set<number>();
+
+  for (let index = 0; index < Math.min(lines.length, 28); index += 1) {
+    selected.add(index);
+  }
+
+  const scored = lines
+    .map((line, index) => ({
+      index,
+      score: tokens.reduce(
+        (score, token) => score + (line.toLowerCase().includes(token) ? 1 : 0),
+        0,
+      ),
+    }))
+    .filter((line) => line.score > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, 8);
+
+  for (const match of scored) {
+    const start = Math.max(0, match.index - 7);
+    const end = Math.min(lines.length, match.index + 12);
+    for (let index = start; index < end; index += 1) selected.add(index);
+  }
+
+  const ordered = [...selected].sort((a, b) => a - b);
+  const excerpts: string[] = [];
+  let previous = -2;
+  for (const index of ordered) {
+    if (index > previous + 1 && excerpts.length) excerpts.push("\n[…]\n");
+    excerpts.push(lines[index]);
+    previous = index;
+    if (excerpts.join("\n").length >= maxChars) break;
+  }
+
+  return excerpts.join("\n").slice(0, maxChars);
+}
+
+/**
+ * Retrieve the most relevant first-party article text for the current question.
+ * The site's deploy-generated Markdown twins are fetched at request time, so
+ * published article corrections reach chat without a separate function deploy.
+ */
+export async function searchLiveBlogKnowledge(
+  query: string,
+  limit = 2,
+): Promise<string> {
+  const tokens = blogSearchTokens(query);
+  if (!tokens.length) return "";
+
+  let entries = BLOG_INDEX;
+  try {
+    entries = (await loadLiveBlogIndex()).entries;
+  } catch (error) {
+    console.warn("[blog-knowledge] Live index unavailable; using bundled index", error);
+  }
+
+  const matches = entries
+    .map((entry) => ({ entry, score: scoreBlogEntry(entry, tokens) }))
+    .filter((match) => match.score >= 6)
+    .sort((a, b) => b.score - a.score || (b.entry.publishDate || "").localeCompare(a.entry.publishDate || ""))
+    .slice(0, Math.max(1, Math.min(limit, 3)));
+
+  if (!matches.length) return "";
+
+  const sections = await Promise.all(matches.map(async ({ entry }) => {
+    const sourceUrl = `${LIVE_BLOG_BASE_URL}/${entry.slug}`;
+    try {
+      const response = await fetch(`${sourceUrl}.md`, {
+        headers: { Accept: "text/markdown,text/plain" },
+        signal: AbortSignal.timeout(5_000),
+      });
+      if (!response.ok) throw new Error(`article returned ${response.status}`);
+      const markdown = await response.text();
+      return `### ${entry.title}\nSource: ${sourceUrl}\n${excerptBlogMarkdown(markdown, tokens)}`;
+    } catch (error) {
+      console.warn(`[blog-knowledge] Could not fetch ${entry.slug}.md`, error);
+      const faqText = (entry.faqs || [])
+        .map((faq) => `Q: ${faq.q}\nA: ${faq.a}`)
+        .join("\n");
+      return `### ${entry.title}\nSource: ${sourceUrl}\n${entry.description || ""}\n${faqText}`;
+    }
+  }));
+
+  return `# Relevant first-party HBW article knowledge
+Use this published site content for explanations and article links. For model-specific capacities, part numbers, procedures, RPM limits or schedules, the exact official Mercury manual and deterministic technical-fact layer override any broader article wording. Never turn a family-level article statement into a universal specification.
+
+${sections.join("\n\n")}`;
+}
+
+// ========== ACTIVE PROMOTIONS (LIVE FROM DB) ==========
+
+/**
+ * Generates the live active-promotions KB document by querying the
+ * `promotions` table. Async — pass in a Supabase service-role client.
+ * Voice/chat surfaces sync this so the ElevenLabs agent's reference
+ * stays in lockstep with whatever's currently active in the database.
+ */
+export async function formatActivePromotions(
+  supabase: { from: (t: string) => any }
+): Promise<string> {
+  const today = new Date().toISOString().split("T")[0];
+  const { data, error } = await supabase
+    .from("promotions")
+    .select(ACTIVE_PROMOTION_SELECT)
+    .eq("is_active", true)
+    .or(`start_date.is.null,start_date.lte.${today}`)
+    .or(`end_date.is.null,end_date.gte.${today}`)
+    .order("priority", { ascending: false });
+
+  const promos = filterPromotionsForCountry(error ? [] : (data || []), "CA");
+  const now = new Date().toISOString();
+
+  const header = `# Active Mercury Promotions at Harris Boat Works
+Updated: ${now}
+Source: live query of the \`promotions\` table (auto-refreshes on KB sync).
+
+## Rules for the Agent
+- These are the ONLY promotions to quote. Never invent rebates, cash-back, financing offers, or bonus warranties that aren't listed below.
+- All prices and discounts are in **Canadian Dollars (CAD)**.
+- Bonus warranties **revert to the standard 3-year coverage** the day after \`Ends\`.
+- If a customer asks about a promo not on this list, say "I'm not seeing that one on our current list — let me grab the latest from the team" and offer to text/email the active promo list at /promotions.
+- For exact stacking, eligibility, and final pricing, always send them to the quote builder.
+
+## Currently Active Promotions (${promos.length})
+`;
+
+  if (promos.length === 0) {
+    return `${header}
+_No active promotions right now. Direct customers to /promotions and the quote builder for current pricing and any factory bonuses that come up._
+`;
+  }
+
+  return `${header}
+${formatPromotionContext(promos)}
+`;
+}
+
+// Generator shape used by sync-elevenlabs-kb / sync-elevenlabs-static-kb.
+// `generator` may be sync OR async. The `requiresSupabase` flag tells the
+// sync function to pass a service-role Supabase client.
+export interface KbDocConfig {
+  name: string;
+  generator: (() => string) | (() => Promise<string>) | ((supabase: any) => Promise<string>);
+  description: string;
+  requiresSupabase?: boolean;
+}
+
 // Export all document generators
-export const KB_DOCUMENTS = {
+export const KB_DOCUMENTS: Record<string, KbDocConfig> = {
   harris_guide: {
     name: "Harris Boat Works Complete Guide",
     generator: formatHarrisGuide,
@@ -884,7 +1220,7 @@ export const KB_DOCUMENTS = {
     description: "Motor families, technologies, size recommendations, comparisons"
   },
   repower_guide: {
-    name: "Mercury Repower Guide", 
+    name: "Mercury Repower Guide",
     generator: formatRepowerGuide,
     description: "Repower benefits, pricing, customer stories, selling points"
   },
@@ -912,5 +1248,16 @@ export const KB_DOCUMENTS = {
     name: "Accessories & Maintenance Guide",
     generator: formatAccessoriesGuide,
     description: "SmartCraft Connect, service kits, motor covers, fuel tanks, and accessory recommendations"
-  }
+  },
+  blog_article_reference: {
+    name: "Blog Article Reference (Full Index)",
+    generator: formatBlogIndex,
+    description: "Reference index of every blog post on harrisboatworks.ca with summary, keywords, and top FAQs. Lets the agent cite or link articles by /blog/<slug>."
+  },
+  active_promotions: {
+    name: "Active Mercury Promotions (Live)",
+    generator: formatActivePromotions as any,
+    description: "Live snapshot of currently-active promotions from the database. Synced on every KB run so the voice agent always quotes real offers.",
+    requiresSupabase: true,
+  },
 };

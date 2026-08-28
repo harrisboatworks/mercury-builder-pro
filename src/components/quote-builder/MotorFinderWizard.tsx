@@ -239,7 +239,7 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
                 </div>
               </div>
 
-              {/* Live match count — validated against cached inventory */}
+              {/* Live match count, validated against cached inventory */}
               <div
                 className={`mb-3 rounded-md border px-3 py-2 text-center text-sm font-medium tabular-nums transition-colors ${
                   liveMatchCount > 0
@@ -251,7 +251,7 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
               >
                 {liveMatchCount > 0
                   ? `${liveMatchCount} ${liveMatchCount === 1 ? "motor matches" : "motors match"}`
-                  : "No motors match — try widening your filters"}
+                  : "No motors match, try widening your filters"}
               </div>
 
               {/* Smart recommendation */}

@@ -2,13 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from '@/lib/helmet';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, DollarSign, RotateCcw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { ArrowRight, RotateCcw } from 'lucide-react';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
+import { useQuote } from '@/contexts/QuoteContext';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
+import { parseTradeInDraft, serializeTradeInDraft } from '@/lib/trade-in-state';
 
 const DRAFT_KEY = 'tradeInValuePage:draft';
 
@@ -24,18 +25,22 @@ const INITIAL_TRADE_IN: TradeInInfo = {
   confidenceLevel: 'medium' as const,
 };
 
+function hasTradeInDetails(info: Partial<TradeInInfo>): boolean {
+  return Boolean(
+    info.brand?.trim() || info.year || info.horsepower || info.model?.trim()
+  );
+}
+
 function loadDraft(): { data: TradeInInfo; restored: boolean } {
   if (typeof window === 'undefined') return { data: INITIAL_TRADE_IN, restored: false };
   try {
     const raw = localStorage.getItem(DRAFT_KEY);
     if (!raw) return { data: INITIAL_TRADE_IN, restored: false };
-    const parsed = JSON.parse(raw);
+    const parsed = parseTradeInDraft(raw);
     if (!parsed || typeof parsed !== 'object') return { data: INITIAL_TRADE_IN, restored: false };
     const merged = { ...INITIAL_TRADE_IN, ...parsed } as TradeInInfo;
     // Only count as "restored" if user actually entered something
-    const hasContent = Boolean(
-      merged.brand || merged.year || merged.horsepower || (merged.model && merged.model.trim())
-    );
+    const hasContent = hasTradeInDetails(merged);
     return { data: merged, restored: hasContent };
   } catch {
     return { data: INITIAL_TRADE_IN, restored: false };
@@ -47,6 +52,9 @@ export default function TradeInValuePage() {
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(initial.current.data);
   const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
+  const { dispatch } = useQuote();
+  const hasEstimate = tradeInInfo.estimatedValue > 0;
+  const canStartQuote = hasTradeInDetails(tradeInInfo);
 
   // Auto-hide restored banner
   useEffect(() => {
@@ -59,7 +67,7 @@ export default function TradeInValuePage() {
   useEffect(() => {
     const t = setTimeout(() => {
       try {
-        localStorage.setItem(DRAFT_KEY, JSON.stringify(tradeInInfo));
+        localStorage.setItem(DRAFT_KEY, serializeTradeInDraft(tradeInInfo));
       } catch (e) {
         console.error('Failed to autosave trade-in draft:', e);
       }
@@ -70,25 +78,22 @@ export default function TradeInValuePage() {
   const handleClearDraft = () => {
     try {
       localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    } catch {
+      // Storage can be unavailable in restricted browser contexts.
+    }
     setTradeInInfo(INITIAL_TRADE_IN);
     setShowRestored(false);
   };
 
   const handleStartQuote = () => {
-    // Store trade-in data so the quote builder can pick it up
-    try {
-      const stored = localStorage.getItem('quoteBuilder');
-      const parsed = stored ? JSON.parse(stored) : { state: {} };
-      parsed.state = { ...parsed.state, tradeInInfo, hasTradein: true };
-      localStorage.setItem('quoteBuilder', JSON.stringify(parsed));
-    } catch (e) {
-      console.error('Failed to persist trade-in to localStorage:', e);
-    }
-    // Clear the standalone draft — it has now been promoted into the quote flow
-    try {
-      localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    // Hand the trade-in to the quote builder through its own reducer.
+    // Writing localStorage['quoteBuilder'] directly does NOT work: QuoteProvider is
+    // mounted app-wide and already holds hydrated state in memory, so it overwrites
+    // any direct write on its next persist and the trade-in is silently lost.
+    const promoted: TradeInInfo = { ...tradeInInfo, hasTradeIn: true };
+    dispatch({ type: 'PROMOTE_TRADE_IN', payload: promoted });
+    // Keep the standalone draft. If the customer backs out of the quote flow, their
+    // entry is still here; handleClearDraft and the next valuation both replace it.
     navigate('/quote/motor-selection');
   };
 
@@ -104,56 +109,53 @@ export default function TradeInValuePage() {
   return (
     <>
       <Helmet>
-        <title>What's Your Outboard Worth? | Free Trade-In Estimator | Harris Boat Works</title>
+        <title>Outboard Trade-In Value Estimator (CAD) | HBW</title>
         <meta
           name="description"
-          content="Get a free instant estimate for your outboard motor trade-in value. Mercury, Yamaha, Honda, Suzuki and more — check what your motor is worth in seconds."
+          content="Estimate what your outboard is worth toward a Mercury repower. Mercury and other brands, real Ontario numbers. Harris Boat Works, Gores Landing."
         />
-        <link rel="canonical" href={`${SITE_URL}/trade-in-value`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main className="min-h-screen bg-background">
-        {/* Hero */}
-        <section className="bg-gradient-to-b from-muted/60 to-background py-12 md:py-16">
-          <div className="max-w-3xl mx-auto px-4 text-center space-y-4">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-                <DollarSign className="w-4 h-4" />
+      <main className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-14 py-14 md:py-20">
+          {/* Heading zone */}
+          <div className="text-center mb-10 md:mb-14">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
                 Free Instant Estimate
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground">
-                What's Your Outboard Worth?
-              </h1>
-              <p className="text-lg text-muted-foreground font-light mt-3 max-w-xl mx-auto">
-                Find out your motor's trade-in value in seconds — no account needed. 
-                When you're ready, roll it right into a full quote.
               </p>
-            </motion.div>
+              <span className="h-px w-8 bg-repower-mercury-red" />
+            </div>
+            <h1
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
+              What's Your Outboard Worth?
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto">
+              Find out your motor's trade-in value in seconds, no account needed.
+              When you're ready, roll it right into a full quote.
+            </p>
+            <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
-        </section>
 
-        {/* Form */}
-        <section className="max-w-3xl mx-auto px-4 -mt-4 pb-16">
           {showRestored && (
             <motion.div
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-4 flex items-center justify-between gap-3 rounded-md border border-border bg-muted/40 px-4 py-2.5 text-sm"
+              className="mb-6 flex items-center justify-between gap-3 rounded border border-repower-navy-900/10 bg-white px-4 py-2.5 text-sm"
             >
-              <span className="text-muted-foreground">
+              <span className="font-sans text-repower-navy-900/65">
                 Restored your previous entries.
               </span>
               <button
                 type="button"
                 onClick={handleClearDraft}
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 font-sans text-[13px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Start over
@@ -168,30 +170,31 @@ export default function TradeInValuePage() {
             onAutoAdvance={handleStartQuote}
           />
 
-          {/* CTA below estimate */}
-          {tradeInInfo.estimatedValue > 0 && (
+          {canStartQuote && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6"
+              className="mt-8 rounded border border-repower-navy-900/10 bg-repower-cream p-8 text-center"
             >
-              <Card className="p-6 border-border bg-muted/30 text-center space-y-4">
-                <p className="text-lg font-light text-foreground">
-                  Ready to see how much you'll save on a new Mercury?
-                </p>
-                <Button
-                  size="lg"
-                  onClick={handleStartQuote}
-                  className="min-h-[52px] text-base gap-2"
-                >
-                  Start a Quote With This Trade-In
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Card>
+              <p className="font-display text-[22px] text-repower-navy-900 mb-5">
+                {hasEstimate
+                  ? "Ready to see how much you'll save on a new Mercury?"
+                  : 'Ready to keep building your Mercury quote?'}
+              </p>
+              <button
+                onClick={handleStartQuote}
+                className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              >
+                {hasEstimate
+                  ? 'Start a Quote With This Trade-In'
+                  : 'Start a Quote With These Trade-In Details'}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
             </motion.div>
           )}
-        </section>
+        </div>
       </main>
+      <SiteFooter />
     </>
   );
 }

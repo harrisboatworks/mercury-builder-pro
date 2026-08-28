@@ -26,12 +26,15 @@ export const purchaseDetailsSchema = z.object({
   downPayment: z.number().min(0, 'Down payment cannot be negative'),
   tradeInValue: z.number().min(0, 'Trade-in value cannot be negative').optional(),
   amountToFinance: z.number().min(1, 'Amount to finance must be at least $1'),
-  preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180']).optional(),
+  preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180', '240']).optional(),
   // Promo fields for active promotion
   promoOption: z.enum(['no_payments', 'special_financing', 'cash_rebate']).nullable().optional(),
   promoRate: z.number().nullable().optional(),
   promoTerm: z.number().nullable().optional(),
   promoValue: z.string().nullable().optional(),
+  promoName: z.string().nullable().optional(),
+  promoSavings: z.number().min(0).nullable().optional(),
+  promoCombinationMode: z.enum(['layered', 'choose_one']).nullable().optional(),
 });
 
 // Step 2: Primary Applicant
@@ -196,6 +199,7 @@ export const referencesSchema = z.object({
   return data.reference1.phone !== data.reference2.phone;
 }, {
   message: 'References must be different people',
+  path: ['reference2', 'phone'],
 });
 
 // Step 7: Review & Consent

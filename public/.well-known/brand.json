@@ -4,12 +4,48 @@
   "site": "mercuryrepower.ca",
   "url": "https://www.mercuryrepower.ca",
   "legalName": "Harris Boat Works Ltd.",
-  "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
-  "description": "Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years) specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
+  "tagline": "Ontario's Mercury Repower Centre on Rice Lake — Family-owned since 1947",
+  "positioning": {
+    "phrase": "Ontario's Mercury Repower Centre",
+    "spelling_note": "Canadian 'Centre' spelling is intentional for our positioning copy. Mercury Marine's own badge uses American 'Center' — keep that spelling whenever referring to the official Mercury asset.",
+    "note": "'Ontario's Mercury Repower Centre' is our own descriptive positioning (geographic + specialty). It is NOT the same thing as a Mercury-issued certification. Harris Boat Works does, however, hold two real Mercury credentials that pair with this positioning: (1) Mercury Marine Premier Dealer, and (2) Mercury Certified Repower Center (American spelling — Mercury's official program badge).",
+    "officialMercuryCredentials": [
+      "Mercury Marine Premier Dealer",
+      "Mercury Certified Repower Center"
+    ],
+    "pairWith": [
+      "Mercury Marine Premier Dealer",
+      "Mercury Certified Repower Center",
+      "Mercury-only dealer since 1965",
+      "Family-owned since 1947",
+      "Transparent CAD pricing",
+      "Pickup at Gores Landing",
+      "Every install lake-tested on Rice Lake"
+    ]
+  },
+  "standards": [
+    "Model Context Protocol (MCP) - implemented",
+    "Universal Commerce Protocol (UCP) 2026-04-08 - implemented for quote-mode checkout and pickup fulfillment"
+  ],
+  "description": "Family-owned full-service marina and Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965. Mercury outboard sales and repowers with live CAD pricing, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, and spring commissioning. Serving Rice Lake, the Kawarthas, Peterborough, Northumberland, Durham Region, and the GTA.",
+  "services": [
+    "Mercury outboard sales",
+    "Mercury repower",
+    "Mercury Avator electric outboards (pricing coming soon)",
+    "Boat rentals (pontoon and fishing boats)",
+    "Outdoor winter boat storage with shrinkwrap",
+    "Boat winterization",
+    "Spring commissioning",
+    "Mercury factory service and repairs",
+    "Legend Boats dealer",
+    "Marine parts and accessories"
+  ],
+  "rentalsUrl": "https://www.harrisboatworks.ca/rentals",
+  "storageBookingUrl": "https://hbw.wiki/service",
   "founded": 1947,
   "mercuryDealerSince": 1965,
   "logo": {
-    "url": "https://www.mercuryrepower.ca/logo.png",
+    "url": "https://www.mercuryrepower.ca/email-assets/harris-logo.png",
     "alt": "Harris Boat Works"
   },
   "colors": {
@@ -31,7 +67,11 @@
       "outboard (not 'boat motor' generically)",
       "lake-tested (we test every install on Rice Lake)",
       "Mercury-certified technicians",
-      "pickup at our Gores Landing location (we do not deliver)"
+      "pickup at our Gores Landing location (we do not deliver)",
+      "repower (not engine swap)",
+      "on-water test on Rice Lake (every repower, no exceptions)",
+      "outdoor winter storage with shrinkwrap (no indoor storage)",
+      "renters need a valid PCOC"
     ],
     "avoid": [
       "Hype language ('amazing', 'incredible', 'mind-blowing')",
@@ -54,7 +94,7 @@
     },
     "delivery": {
       "policy": "pickup_only",
-      "reason": "Strict pickup-only policy at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not ship motors and we do not deliver. All transactions are completed in person at our Rice Lake location."
+      "reason": "Strict pickup-only policy at 5369 Harris Boat Works Rd, Gores Landing, ON. Motor purchases are pickup only at Gores Landing, Ontario. The buyer must pick up in person with valid government photo ID. We cannot release a motor to a courier, shipping company, or any other third party. We do not ship motors and we do not deliver. All transactions are completed in person at our Rice Lake location."
     }
   },
   "geography": {
@@ -65,20 +105,27 @@
       "region": "ON",
       "postalCode": "K0K 2E0",
       "country": "CA",
-      "lat": 44.1147,
-      "lng": -78.2564
+      "lat": 44.121684,
+      "lng": -78.241502
     },
     "primaryRadiusKm": 150,
-    "commonOriginCities": ["Toronto", "Peterborough", "Kawartha Lakes", "Oshawa", "Whitby", "Cobourg"]
+    "commonOriginCities": [
+      "Toronto",
+      "Peterborough",
+      "Kawartha Lakes",
+      "Oshawa",
+      "Whitby",
+      "Cobourg"
+    ]
   },
   "contact": {
     "phone": "+1-905-342-2153",
     "phoneDisplay": "(905) 342-2153",
     "email": "info@harrisboatworks.ca",
     "hours": {
-      "monFri": "08:00-17:00",
-      "sat": "09:00-14:00",
-      "sun": "Closed"
+      "note": "In-season (April 1 - November 30). Marina closed for winter December 1 - April 1.",
+      "monSat": "08:00-17:00",
+      "sun": "09:00-16:00"
     }
   },
   "currency": "CAD",
@@ -92,7 +139,10 @@
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml",
     "rss": "https://www.mercuryrepower.ca/rss.xml",
-    "publicMotorsApi": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
+    "publicMotorsApi": "https://www.mercuryrepower.ca/api/agents/motors",
+    "publicQuoteApi": "https://www.mercuryrepower.ca/api/agents/quote",
+    "mcpServer": "https://www.mercuryrepower.ca/api/agents/mcp",
+    "ucpCheckout": "https://www.mercuryrepower.ca/api/agents/ucp"
   },
-  "lastUpdated": "2026-04-25"
+  "lastUpdated": "2026-08-04"
 }

@@ -1,21 +1,39 @@
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { Helmet } from '@/lib/helmet';
+import { SITE_URL } from '@/lib/site';
 
 export default function Terms() {
+  const title = 'Terms & Conditions | Harris Boat Works';
+  const description = 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.';
+  const url = `${SITE_URL}/terms`;
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Helmet>
       <LuxuryHeader />
       <main className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-20">
           <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
             Terms &amp; Conditions
           </h1>
-          <p className="text-sm text-muted-foreground mb-10">Last updated February 12, 2026</p>
+          <p className="text-sm text-muted-foreground mb-10">Last updated August 3, 2026</p>
 
           <div className="prose prose-sm md:prose-base max-w-none text-foreground prose-headings:text-foreground prose-h2:text-2xl prose-h2:font-light prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-lg prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-hr:border-border">
 
             {/* ===== PART A ===== */}
-            <h2>Part A — Service, Repair &amp; Storage Terms</h2>
+            <h2>Part A, Service, Repair &amp; Storage Terms</h2>
 
             <h3>1. Application</h3>
             <p>
@@ -81,7 +99,7 @@ export default function Terms() {
             </p>
 
             {/* ===== PART B ===== */}
-            <h2 className="!mt-16">Part B — Website Use Terms</h2>
+            <h2 className="!mt-16">Part B, Website Use Terms</h2>
             <p>
               The following terms govern use of the <strong>{COMPANY_INFO.name}</strong> quote tool website (mercuryrepower.ca). These cover website browsing, e-commerce, and online content.
             </p>
@@ -167,6 +185,12 @@ export default function Terms() {
             <h3>Acceptance of Orders</h3>
             <p>
               The receipt of an e-mail order confirmation or reservation of a part, accessory, or unit does not constitute the acceptance of an order or a confirmation of an offer to sell. {COMPANY_INFO.name} reserves the right, without prior notification, to limit the order quantity on any item and/or refuse service to any customer. {COMPANY_INFO.name} may cancel an order at any time before pickup for any reason, including pricing errors or stock availability issues.
+            </p>
+            <hr />
+
+            <h3>Model-Specific Mercury 9.9 MH Reservation Deposit</h3>
+            <p>
+              The $100 CAD reservation offer applies only to the Mercury 9.9 MH, model 1A10201LK. The deposit is fully refundable until {COMPANY_INFO.name} confirms the exact motor, price, availability and estimated arrival time, and you approve the order in writing. After your written approval, the deposit becomes non-refundable and is credited to your final invoice. Other motor deposits are governed by the amount and terms shown in the applicable written quote or order.
             </p>
             <hr />
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mercury outboard break-in and service timelines</title>
+  <desc id="desc">A model-specific break-in generally runs through 10 hours. Harris Boat Works offers an optional early check around 20 hours. Mercury's first scheduled service for most current FourStrokes is at 100 hours or annually.</desc>
+  <rect width="1600" height="900" fill="#f7f7f5"/>
+  <rect x="0" y="0" width="1600" height="16" fill="#c8102e"/>
+
+  <text x="92" y="92" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Break-in and service are separate timelines</text>
+  <text x="92" y="144" fill="#4f5661" font-family="Arial, Helvetica, sans-serif" font-size="27">Your owner's manual controls. This is the practical overview for most current Mercury FourStrokes.</text>
+
+  <rect x="92" y="208" width="1416" height="226" rx="24" fill="#ffffff" stroke="#d7dbe0" stroke-width="3"/>
+  <rect x="92" y="208" width="22" height="226" rx="11" fill="#c8102e"/>
+  <text x="146" y="267" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">MERCURY BREAK-IN</text>
+  <text x="146" y="312" fill="#c8102e" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">0 to roughly 10 hours</text>
+  <text x="146" y="351" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Vary throttle and avoid long steady-RPM runs.</text>
+  <text x="146" y="387" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Limit sustained wide-open throttle as the manual directs.</text>
+  <text x="146" y="422" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="22">After the model-specific break-in is complete, operate normally within Mercury's rated RPM band.</text>
+
+  <rect x="92" y="474" width="686" height="248" rx="24" fill="#ffffff" stroke="#d7dbe0" stroke-width="3"/>
+  <rect x="92" y="474" width="22" height="248" rx="11" fill="#8e969f"/>
+  <text x="146" y="535" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">HBW OPTIONAL EARLY CHECK</text>
+  <text x="146" y="581" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">Around 20 hours</text>
+  <text x="146" y="629" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Dealer best practice for owners who want</text>
+  <text x="146" y="665" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">an early oil-and-filter change and check-in.</text>
+  <text x="146" y="702" fill="#c8102e" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Not a Mercury warranty requirement.</text>
+
+  <rect x="822" y="474" width="686" height="248" rx="24" fill="#ffffff" stroke="#d7dbe0" stroke-width="3"/>
+  <rect x="822" y="474" width="22" height="248" rx="11" fill="#171a1f"/>
+  <text x="876" y="535" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">MERCURY SCHEDULED SERVICE</text>
+  <text x="876" y="581" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">100 hours or annually</text>
+  <text x="876" y="629" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">Mercury's published first scheduled service</text>
+  <text x="876" y="665" fill="#303640" font-family="Arial, Helvetica, sans-serif" font-size="25">for most current FourStrokes.</text>
+  <text x="876" y="702" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">Confirm the exact interval in the owner's manual.</text>
+
+  <line x1="92" y1="785" x2="1508" y2="785" stroke="#d7dbe0" stroke-width="2"/>
+  <text x="92" y="835" fill="#5b626c" font-family="Arial, Helvetica, sans-serif" font-size="23">Sources: Mercury Marine break-in guide and new-owner maintenance guidance, reviewed July 23, 2026.</text>
+  <text x="1508" y="835" text-anchor="end" fill="#171a1f" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Harris Boat Works</text>
+</svg>

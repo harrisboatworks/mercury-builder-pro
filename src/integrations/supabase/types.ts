@@ -32,6 +32,30 @@ export type Database = {
         }
         Relationships: []
       }
+      agent_artifact_rebuild_state: {
+        Row: {
+          last_dispatched_at: string | null
+          last_request_id: number | null
+          requested_at: string | null
+          singleton: boolean
+          updated_at: string
+        }
+        Insert: {
+          last_dispatched_at?: string | null
+          last_request_id?: number | null
+          requested_at?: string | null
+          singleton?: boolean
+          updated_at?: string
+        }
+        Update: {
+          last_dispatched_at?: string | null
+          last_request_id?: number | null
+          requested_at?: string | null
+          singleton?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
       agent_events: {
         Row: {
           created_at: string
@@ -107,6 +131,96 @@ export type Database = {
           subscribed_at?: string
           unsubscribe_token?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      board_customer_comms: {
+        Row: {
+          awaiting_customer: boolean
+          callback_due_at: string | null
+          channels_seen: string[]
+          comm_key: string
+          customer_id: number
+          customer_phone: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_summary: string | null
+          recording_url: string | null
+          ro_no: string | null
+          updated_at: string
+        }
+        Insert: {
+          awaiting_customer?: boolean
+          callback_due_at?: string | null
+          channels_seen?: string[]
+          comm_key: string
+          customer_id: number
+          customer_phone?: string | null
+          last_channel?: string | null
+          last_contact_at?: string | null
+          last_direction?: string | null
+          last_summary?: string | null
+          recording_url?: string | null
+          ro_no?: string | null
+          updated_at?: string
+        }
+        Update: {
+          awaiting_customer?: boolean
+          callback_due_at?: string | null
+          channels_seen?: string[]
+          comm_key?: string
+          customer_id?: number
+          customer_phone?: string | null
+          last_channel?: string | null
+          last_contact_at?: string | null
+          last_direction?: string | null
+          last_summary?: string | null
+          recording_url?: string | null
+          ro_no?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      board_snapshots: {
+        Row: {
+          captured_at: string
+          customer_id: number | null
+          date_in: string | null
+          days_in_shop: number | null
+          lane: string
+          last_modified_at: string | null
+          promised_date: string | null
+          ro_no: string
+          snapshot_date: string
+          status: string | null
+          synced_at: string | null
+        }
+        Insert: {
+          captured_at?: string
+          customer_id?: number | null
+          date_in?: string | null
+          days_in_shop?: number | null
+          lane: string
+          last_modified_at?: string | null
+          promised_date?: string | null
+          ro_no: string
+          snapshot_date: string
+          status?: string | null
+          synced_at?: string | null
+        }
+        Update: {
+          captured_at?: string
+          customer_id?: number | null
+          date_in?: string | null
+          days_in_shop?: number | null
+          lane?: string
+          last_modified_at?: string | null
+          promised_date?: string | null
+          ro_no?: string
+          snapshot_date?: string
+          status?: string | null
+          synced_at?: string | null
         }
         Relationships: []
       }
@@ -286,6 +400,156 @@ export type Database = {
           result?: Json | null
           started_at?: string
           status?: string
+        }
+        Relationships: []
+      }
+      customer_comms_events: {
+        Row: {
+          board_summary: string | null
+          body_preview: string | null
+          channel: string
+          created_at: string
+          customer_email: string | null
+          customer_id: number | null
+          customer_phone: string | null
+          direction: string
+          event_key: string
+          id: string
+          match_method: string | null
+          match_status: string
+          occurred_at: string
+          provider: string | null
+          provider_ids: Json
+          provider_message_id: string | null
+          provider_status: string | null
+          provider_thread_id: string | null
+          raw_payload: Json
+          response_required: boolean
+          response_required_reason: string | null
+          ro_no: string | null
+          source: string | null
+          status: string | null
+          subject: string | null
+          template_type: string | null
+          updated_at: string
+        }
+        Insert: {
+          board_summary?: string | null
+          body_preview?: string | null
+          channel: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: number | null
+          customer_phone?: string | null
+          direction: string
+          event_key: string
+          id?: string
+          match_method?: string | null
+          match_status?: string
+          occurred_at: string
+          provider?: string | null
+          provider_ids?: Json
+          provider_message_id?: string | null
+          provider_status?: string | null
+          provider_thread_id?: string | null
+          raw_payload?: Json
+          response_required?: boolean
+          response_required_reason?: string | null
+          ro_no?: string | null
+          source?: string | null
+          status?: string | null
+          subject?: string | null
+          template_type?: string | null
+          updated_at?: string
+        }
+        Update: {
+          board_summary?: string | null
+          body_preview?: string | null
+          channel?: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: number | null
+          customer_phone?: string | null
+          direction?: string
+          event_key?: string
+          id?: string
+          match_method?: string | null
+          match_status?: string
+          occurred_at?: string
+          provider?: string | null
+          provider_ids?: Json
+          provider_message_id?: string | null
+          provider_status?: string | null
+          provider_thread_id?: string | null
+          raw_payload?: Json
+          response_required?: boolean
+          response_required_reason?: string | null
+          ro_no?: string | null
+          source?: string | null
+          status?: string | null
+          subject?: string | null
+          template_type?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      customer_contact_overrides: {
+        Row: {
+          active: boolean
+          cell_phone: string | null
+          city: string | null
+          company_name: string | null
+          created_at: string
+          customer_name: string
+          customer_type: string
+          email: string | null
+          home_phone: string | null
+          loyalty_customer: boolean
+          override_id: number
+          phone: string | null
+          province: string | null
+          source: string
+          source_id: string | null
+          source_note: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          created_at?: string
+          customer_name: string
+          customer_type?: string
+          email?: string | null
+          home_phone?: string | null
+          loyalty_customer?: boolean
+          override_id?: number
+          phone?: string | null
+          province?: string | null
+          source?: string
+          source_id?: string | null
+          source_note?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          created_at?: string
+          customer_name?: string
+          customer_type?: string
+          email?: string | null
+          home_phone?: string | null
+          loyalty_customer?: boolean
+          override_id?: number
+          phone?: string | null
+          province?: string | null
+          source?: string
+          source_id?: string | null
+          source_note?: string | null
+          updated_at?: string
         }
         Relationships: []
       }
@@ -556,6 +820,212 @@ export type Database = {
         }
         Relationships: []
       }
+      diagnostic_brief_versions: {
+        Row: {
+          brief_json: Json
+          case_id: string
+          created_at: string
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          pdf_storage_path: string | null
+          schema_version: string
+          skill_version: string
+          source_snapshot: Json
+          validation_status: string
+          validator_version: string | null
+          version_no: number
+        }
+        Insert: {
+          brief_json: Json
+          case_id: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no: number
+        }
+        Update: {
+          brief_json?: Json
+          case_id?: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version?: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_brief_versions_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      diagnostic_cases: {
+        Row: {
+          case_status: string
+          closed_at: string | null
+          created_at: string
+          cust_id: number | null
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial?: string
+          opened_with_skill_version?: string
+          ro_header_id?: number
+          ro_job_id?: string
+          ro_no?: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      diagnostic_outcomes: {
+        Row: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on: string | null
+          comeback_30d: boolean | null
+          comeback_30d_checked_at: string | null
+          comeback_30d_ro_no: string | null
+          comeback_60_due_on: string | null
+          comeback_60d: boolean | null
+          comeback_60d_checked_at: string | null
+          comeback_60d_ro_no: string | null
+          comeback_90_due_on: string | null
+          comeback_90d: boolean | null
+          comeback_90d_checked_at: string | null
+          comeback_90d_ro_no: string | null
+          confirmed_at: string
+          confirmed_cause: string
+          created_at: string
+          followup_notes: Json
+          id: string
+          matched_hypothesis_id: string | null
+          parts_used: Json
+          repair_performed: string
+          technician: string
+          tests_run: Json
+          updated_at: string
+        }
+        Insert: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed: string
+          technician: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Update: {
+          brief_version_id?: string
+          case_id?: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause?: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed?: string
+          technician?: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_outcomes_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: true
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "diagnostic_outcomes_version_case_fk"
+            columns: ["brief_version_id", "case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_brief_versions"
+            referencedColumns: ["id", "case_id"]
+          },
+        ]
+      }
       dropbox_sync_config: {
         Row: {
           auto_categorize: boolean | null
@@ -819,6 +1289,7 @@ export type Database = {
           co_applicant_data: Json | null
           co_applicant_sin_encrypted: string | null
           completed_steps: number[]
+          consent_data: Json
           created_at: string
           current_step: number
           deleted_at: string | null
@@ -846,6 +1317,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null
@@ -873,6 +1345,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null
@@ -955,6 +1428,45 @@ export type Database = {
         }
         Relationships: []
       }
+      financing_submission_logs: {
+        Row: {
+          application_id: string | null
+          correlation_id: string | null
+          created_at: string
+          error_code: string | null
+          error_message: string | null
+          id: string
+          metadata: Json
+          outcome: string
+          stage: string
+          user_id: string | null
+        }
+        Insert: {
+          application_id?: string | null
+          correlation_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          outcome: string
+          stage: string
+          user_id?: string | null
+        }
+        Update: {
+          application_id?: string | null
+          correlation_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          outcome?: string
+          stage?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       google_places_cache: {
         Row: {
           cached_at: string
@@ -1015,6 +1527,125 @@ export type Database = {
           sheet_url?: string
           sync_frequency?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      growth_agent_audit_runs: {
+        Row: {
+          completed_at: string | null
+          created_by: string | null
+          id: string
+          scores: Json
+          site_url: string
+          source: string
+          started_at: string
+          status: string
+          summary: Json
+        }
+        Insert: {
+          completed_at?: string | null
+          created_by?: string | null
+          id?: string
+          scores?: Json
+          site_url?: string
+          source?: string
+          started_at?: string
+          status?: string
+          summary?: Json
+        }
+        Update: {
+          completed_at?: string | null
+          created_by?: string | null
+          id?: string
+          scores?: Json
+          site_url?: string
+          source?: string
+          started_at?: string
+          status?: string
+          summary?: Json
+        }
+        Relationships: []
+      }
+      growth_agent_findings: {
+        Row: {
+          category: string
+          created_at: string
+          details: string
+          evidence: Json
+          fix_payload: Json
+          id: string
+          owner_lane: string
+          page_url: string
+          recommendation: string
+          run_id: string | null
+          severity: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          details: string
+          evidence?: Json
+          fix_payload?: Json
+          id?: string
+          owner_lane?: string
+          page_url: string
+          recommendation: string
+          run_id?: string | null
+          severity: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          details?: string
+          evidence?: Json
+          fix_payload?: Json
+          id?: string
+          owner_lane?: string
+          page_url?: string
+          recommendation?: string
+          run_id?: string | null
+          severity?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "growth_agent_findings_run_id_fkey"
+            columns: ["run_id"]
+            isOneToOne: false
+            referencedRelation: "growth_agent_audit_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gsc_oauth: {
+        Row: {
+          client_secret: string | null
+          id: string
+          refresh_token: string | null
+          state: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          client_secret?: string | null
+          id?: string
+          refresh_token?: string | null
+          state?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          client_secret?: string | null
+          id?: string
+          refresh_token?: string | null
+          state?: string | null
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -1105,6 +1736,225 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_bot_feedback: {
+        Row: {
+          candidate_customers: Json
+          category: string
+          channel_id: string | null
+          command: string | null
+          corrected_query: string | null
+          created_at: string
+          event_type: string
+          id: string
+          intent_type: string | null
+          matched_customer_id: string | null
+          matched_customer_name: string | null
+          message_ts: string | null
+          metadata: Json
+          normalized_query: string | null
+          raw_query: string | null
+          slack_event_id: string | null
+          thread_ts: string | null
+        }
+        Insert: {
+          candidate_customers?: Json
+          category?: string
+          channel_id?: string | null
+          command?: string | null
+          corrected_query?: string | null
+          created_at?: string
+          event_type: string
+          id?: string
+          intent_type?: string | null
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          normalized_query?: string | null
+          raw_query?: string | null
+          slack_event_id?: string | null
+          thread_ts?: string | null
+        }
+        Update: {
+          candidate_customers?: Json
+          category?: string
+          channel_id?: string | null
+          command?: string | null
+          corrected_query?: string | null
+          created_at?: string
+          event_type?: string
+          id?: string
+          intent_type?: string | null
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          normalized_query?: string | null
+          raw_query?: string | null
+          slack_event_id?: string | null
+          thread_ts?: string | null
+        }
+        Relationships: []
+      }
+      hbw_bot_reminders: {
+        Row: {
+          attempts: number
+          available_at: string
+          claimed_at: string | null
+          created_at: string
+          created_by: string | null
+          due_at: string
+          id: string
+          last_error: string | null
+          max_attempts: number
+          metadata: Json
+          platform: string
+          reminder_text: string
+          sent_at: string | null
+          source_command: string | null
+          source_event_id: string | null
+          source_message_ts: string | null
+          status: string
+          target: Json
+          target_key: string | null
+          updated_at: string
+          username: string | null
+        }
+        Insert: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          created_at?: string
+          created_by?: string | null
+          due_at: string
+          id?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          platform: string
+          reminder_text: string
+          sent_at?: string | null
+          source_command?: string | null
+          source_event_id?: string | null
+          source_message_ts?: string | null
+          status?: string
+          target: Json
+          target_key?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Update: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          created_at?: string
+          created_by?: string | null
+          due_at?: string
+          id?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          platform?: string
+          reminder_text?: string
+          sent_at?: string | null
+          source_command?: string | null
+          source_event_id?: string | null
+          source_message_ts?: string | null
+          status?: string
+          target?: Json
+          target_key?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
+      hbw_call_transcriptions: {
+        Row: {
+          archived_at: string | null
+          call_started_at: string | null
+          conversation_id: string | null
+          direction: string | null
+          external_message_id: string
+          extracted_phones: string[]
+          folder_name: string
+          from_address: string | null
+          id: string
+          ingested_at: string
+          internet_message_id: string | null
+          match_candidates: Json
+          match_method: string | null
+          match_status: string
+          matched_customer_id: string | null
+          matched_customer_name: string | null
+          normalized_phones: string[]
+          raw_payload: Json
+          received_at: string | null
+          recording_url: string | null
+          search_vector: unknown
+          source: string
+          subject: string | null
+          summary: string | null
+          transcript: string | null
+          updated_at: string
+        }
+        Insert: {
+          archived_at?: string | null
+          call_started_at?: string | null
+          conversation_id?: string | null
+          direction?: string | null
+          external_message_id: string
+          extracted_phones?: string[]
+          folder_name?: string
+          from_address?: string | null
+          id?: string
+          ingested_at?: string
+          internet_message_id?: string | null
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          normalized_phones?: string[]
+          raw_payload?: Json
+          received_at?: string | null
+          recording_url?: string | null
+          search_vector?: unknown
+          source?: string
+          subject?: string | null
+          summary?: string | null
+          transcript?: string | null
+          updated_at?: string
+        }
+        Update: {
+          archived_at?: string | null
+          call_started_at?: string | null
+          conversation_id?: string | null
+          direction?: string | null
+          external_message_id?: string
+          extracted_phones?: string[]
+          folder_name?: string
+          from_address?: string | null
+          id?: string
+          ingested_at?: string
+          internet_message_id?: string | null
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          normalized_phones?: string[]
+          raw_payload?: Json
+          received_at?: string | null
+          recording_url?: string | null
+          search_vector?: unknown
+          source?: string
+          subject?: string | null
+          summary?: string | null
+          transcript?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       hbw_knowledge: {
         Row: {
           active: boolean | null
@@ -1156,6 +2006,27 @@ export type Database = {
         Update: {
           created_at?: string
           id?: string
+        }
+        Relationships: []
+      }
+      indexnow_submissions: {
+        Row: {
+          last_reason: string | null
+          last_submitted_at: string
+          submission_count: number
+          url: string
+        }
+        Insert: {
+          last_reason?: string | null
+          last_submitted_at?: string
+          submission_count?: number
+          url: string
+        }
+        Update: {
+          last_reason?: string | null
+          last_submitted_at?: string
+          submission_count?: number
+          url?: string
         }
         Relationships: []
       }
@@ -1270,6 +2141,141 @@ export type Database = {
           name?: string | null
           part_number?: string
           source_url?: string | null
+        }
+        Relationships: []
+      }
+      mercury_post_sale_runs: {
+        Row: {
+          candidates: number
+          error_codes: Json
+          failed: number
+          finished_at: string | null
+          id: number
+          invocation: string
+          mpp_failed: number
+          mpp_updated: number
+          processed: number
+          skipped: number
+          started_at: string
+          status: string
+          svc_failed: number
+          svc_updated: number
+        }
+        Insert: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Update: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Relationships: []
+      }
+      mercury_post_sale_sends: {
+        Row: {
+          attempt_count: number
+          consent_basis: string
+          consent_expires_at: string | null
+          customer_email: string
+          deal_no: string | null
+          dealid: string
+          entry_method: string
+          last_attempt_at: string | null
+          last_error_code: string | null
+          mailchimp_status: string
+          motor: string | null
+          mpp_status: string
+          processed_at: string
+          sale_date: string | null
+          svc_status: string
+        }
+        Insert: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email: string
+          deal_no?: string | null
+          dealid: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Update: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email?: string
+          deal_no?: string | null
+          dealid?: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Relationships: []
+      }
+      mercury_post_sale_webhook_events: {
+        Row: {
+          error_code: string | null
+          finished_at: string | null
+          received_at: string
+          resend_email_id: string
+          stage: string
+          status: string
+          svix_id: string
+        }
+        Insert: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id: string
+          stage?: string
+          status?: string
+          svix_id: string
+        }
+        Update: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id?: string
+          stage?: string
+          status?: string
+          svix_id?: string
         }
         Relationships: []
       }
@@ -1770,6 +2776,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      motor_models_price_backup_20260603: {
+        Row: {
+          backed_up_at: string | null
+          dealer_price: number | null
+          dealer_price_live: number | null
+          family: string | null
+          id: string | null
+          in_stock: boolean | null
+          mercury_model_no: string | null
+          model_number: string | null
+          msrp: number | null
+          sale_price: number | null
+        }
+        Insert: {
+          backed_up_at?: string | null
+          dealer_price?: number | null
+          dealer_price_live?: number | null
+          family?: string | null
+          id?: string | null
+          in_stock?: boolean | null
+          mercury_model_no?: string | null
+          model_number?: string | null
+          msrp?: number | null
+          sale_price?: number | null
+        }
+        Update: {
+          backed_up_at?: string | null
+          dealer_price?: number | null
+          dealer_price_live?: number | null
+          family?: string | null
+          id?: string | null
+          in_stock?: boolean | null
+          mercury_model_no?: string | null
+          model_number?: string | null
+          msrp?: number | null
+          sale_price?: number | null
+        }
+        Relationships: []
       }
       motor_option_assignments: {
         Row: {
@@ -2761,6 +3806,7 @@ export type Database = {
           is_soft_lead: boolean | null
           last_accessed: string | null
           quote_pdf_path: string | null
+          quote_pdf_sha256: string | null
           quote_state: Json
           reference_number: string | null
           resume_token: string
@@ -2783,6 +3829,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state: Json
           reference_number?: string | null
           resume_token: string
@@ -2805,6 +3852,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state?: Json
           reference_number?: string | null
           resume_token?: string
@@ -2957,6 +4005,42 @@ export type Database = {
         }
         Relationships: []
       }
+      shop_notes: {
+        Row: {
+          author: string
+          created_at: string
+          id: string
+          job_ref: number | null
+          note_text: string
+          ro_no: string
+          void_reason: string | null
+          voided_at: string | null
+          voided_by: string | null
+        }
+        Insert: {
+          author: string
+          created_at?: string
+          id?: string
+          job_ref?: number | null
+          note_text: string
+          ro_no: string
+          void_reason?: string | null
+          voided_at?: string | null
+          voided_by?: string | null
+        }
+        Update: {
+          author?: string
+          created_at?: string
+          id?: string
+          job_ref?: number | null
+          note_text?: string
+          ro_no?: string
+          void_reason?: string | null
+          voided_at?: string | null
+          voided_by?: string | null
+        }
+        Relationships: []
+      }
       sin_audit_log: {
         Row: {
           action: string
@@ -2984,6 +4068,54 @@ export type Database = {
           ip_address?: unknown
           user_agent?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      site_documents: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          file_size_label: string | null
+          file_url: string
+          id: string
+          is_published: boolean
+          related_label: string | null
+          related_url: string | null
+          reviewed_on: string | null
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url: string
+          id?: string
+          is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url?: string
+          id?: string
+          is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
+          sort_order?: number
+          title?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -3186,6 +4318,311 @@ export type Database = {
         }
         Relationships: []
       }
+      staff_customer_messages: {
+        Row: {
+          author_type: string
+          body: string | null
+          body_preview: string | null
+          classification: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          direction: string
+          hbw_number_last4: string | null
+          id: string
+          metadata: Json
+          status: string | null
+          task_id: string | null
+          thread_id: string | null
+          twilio_sid_tail: string | null
+          twilio_status: string | null
+        }
+        Insert: {
+          author_type: string
+          body?: string | null
+          body_preview?: string | null
+          classification?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          direction: string
+          hbw_number_last4?: string | null
+          id?: string
+          metadata?: Json
+          status?: string | null
+          task_id?: string | null
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+        }
+        Update: {
+          author_type?: string
+          body?: string | null
+          body_preview?: string | null
+          classification?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          direction?: string
+          hbw_number_last4?: string | null
+          id?: string
+          metadata?: Json
+          status?: string | null
+          task_id?: string | null
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_customer_messages_task_id_fkey"
+            columns: ["task_id"]
+            isOneToOne: false
+            referencedRelation: "staff_delegated_tasks"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "staff_customer_messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "staff_customer_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      staff_customer_threads: {
+        Row: {
+          assigned_staff_display_name: string | null
+          assigned_staff_key: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          customer_id: string | null
+          customer_name: string
+          hbw_number_last4: string
+          id: string
+          metadata: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name: string
+          hbw_number_last4?: string
+          id?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string
+          hbw_number_last4?: string
+          id?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      staff_delegated_tasks: {
+        Row: {
+          action_options: Json
+          assigned_staff_display_name: string | null
+          assigned_staff_key: string | null
+          boundaries: Json
+          completed_at: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          customer_id: string | null
+          customer_name: string | null
+          customer_present: boolean
+          decision_reason: string | null
+          hbw_number_last4: string
+          id: string
+          manual_note_required: boolean
+          metadata: Json
+          outbound_body: string | null
+          public_summary: string | null
+          reply_summary: string | null
+          requested_message: string | null
+          sent_at: string | null
+          staff_request: string | null
+          status: string
+          task_type: string
+          thread_id: string | null
+          twilio_sid_tail: string | null
+          twilio_status: string | null
+          updated_at: string
+        }
+        Insert: {
+          action_options?: Json
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          boundaries?: Json
+          completed_at?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_present?: boolean
+          decision_reason?: string | null
+          hbw_number_last4?: string
+          id?: string
+          manual_note_required?: boolean
+          metadata?: Json
+          outbound_body?: string | null
+          public_summary?: string | null
+          reply_summary?: string | null
+          requested_message?: string | null
+          sent_at?: string | null
+          staff_request?: string | null
+          status?: string
+          task_type?: string
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          action_options?: Json
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          boundaries?: Json
+          completed_at?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_present?: boolean
+          decision_reason?: string | null
+          hbw_number_last4?: string
+          id?: string
+          manual_note_required?: boolean
+          metadata?: Json
+          outbound_body?: string | null
+          public_summary?: string | null
+          reply_summary?: string | null
+          requested_message?: string | null
+          sent_at?: string | null
+          staff_request?: string | null
+          status?: string
+          task_type?: string
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_delegated_tasks_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "staff_customer_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      staff_device_link_requests: {
+        Row: {
+          approval_code_hash: string
+          approved_at: string | null
+          approved_by_display_name: string | null
+          approved_by_staff_key: string | null
+          approved_staff_identity: Json | null
+          claimed_at: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          metadata: Json
+          platform: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          approval_code_hash: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          approval_code_hash?: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash?: string
+          requested_display_name?: string
+          requester_key_hash?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      staff_device_tokens: {
+        Row: {
+          active: boolean
+          created_at: string
+          id: string
+          metadata: Json
+          platform: string
+          staff_display_name: string | null
+          staff_key: string
+          token_encrypted: string | null
+          token_hash: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          staff_display_name?: string | null
+          staff_key: string
+          token_encrypted?: string | null
+          token_hash: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          staff_display_name?: string | null
+          staff_key?: string
+          token_encrypted?: string | null
+          token_hash?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sync_logs: {
         Row: {
           completed_at: string | null
@@ -3315,6 +4752,207 @@ export type Database = {
           key?: string
           updated_at?: string
           value?: Json
+        }
+        Relationships: []
+      }
+      trade_valuation_leads: {
+        Row: {
+          asset_summary: string | null
+          condition: string | null
+          confidence: string | null
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          drive_folder_url: string | null
+          drive_report_url: string | null
+          hours: number | null
+          id: string
+          mode: string | null
+          motor_brand: string | null
+          motor_hp: number | null
+          motor_model: string | null
+          motor_stroke: string | null
+          motor_year: number | null
+          notes: string | null
+          online_url: string | null
+          preferred_contact: string | null
+          private_sale_value: number | null
+          raw_payload: Json
+          report_audience: string
+          source: string
+          status: string
+          wholesale_value: number | null
+        }
+        Insert: {
+          asset_summary?: string | null
+          condition?: string | null
+          confidence?: string | null
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          drive_folder_url?: string | null
+          drive_report_url?: string | null
+          hours?: number | null
+          id?: string
+          mode?: string | null
+          motor_brand?: string | null
+          motor_hp?: number | null
+          motor_model?: string | null
+          motor_stroke?: string | null
+          motor_year?: number | null
+          notes?: string | null
+          online_url?: string | null
+          preferred_contact?: string | null
+          private_sale_value?: number | null
+          raw_payload?: Json
+          report_audience?: string
+          source?: string
+          status?: string
+          wholesale_value?: number | null
+        }
+        Update: {
+          asset_summary?: string | null
+          condition?: string | null
+          confidence?: string | null
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          drive_folder_url?: string | null
+          drive_report_url?: string | null
+          hours?: number | null
+          id?: string
+          mode?: string | null
+          motor_brand?: string | null
+          motor_hp?: number | null
+          motor_model?: string | null
+          motor_stroke?: string | null
+          motor_year?: number | null
+          notes?: string | null
+          online_url?: string | null
+          preferred_contact?: string | null
+          private_sale_value?: number | null
+          raw_payload?: Json
+          report_audience?: string
+          source?: string
+          status?: string
+          wholesale_value?: number | null
+        }
+        Relationships: []
+      }
+      twilio_messages: {
+        Row: {
+          account_sid_tail: string | null
+          body: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_phone: string | null
+          date_created: string | null
+          date_sent: string | null
+          date_updated: string | null
+          direction: string
+          error_code: string | null
+          from_number: string | null
+          hbw_number: string
+          match_candidates: Json
+          match_method: string | null
+          match_status: string
+          message_sid: string
+          num_media: number
+          num_segments: number | null
+          raw_payload: Json
+          ro_link_method: string | null
+          ro_no: string | null
+          status: string | null
+          synced_at: string
+          to_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          account_sid_tail?: string | null
+          body?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          date_created?: string | null
+          date_sent?: string | null
+          date_updated?: string | null
+          direction: string
+          error_code?: string | null
+          from_number?: string | null
+          hbw_number: string
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          message_sid: string
+          num_media?: number
+          num_segments?: number | null
+          raw_payload?: Json
+          ro_link_method?: string | null
+          ro_no?: string | null
+          status?: string | null
+          synced_at?: string
+          to_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          account_sid_tail?: string | null
+          body?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          date_created?: string | null
+          date_sent?: string | null
+          date_updated?: string | null
+          direction?: string
+          error_code?: string | null
+          from_number?: string | null
+          hbw_number?: string
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          message_sid?: string
+          num_media?: number
+          num_segments?: number | null
+          raw_payload?: Json
+          ro_link_method?: string | null
+          ro_no?: string | null
+          status?: string | null
+          synced_at?: string
+          to_number?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      ucp_checkout_sessions: {
+        Row: {
+          agent_profile_url: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          payload: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          agent_profile_url?: string | null
+          created_at?: string
+          expires_at?: string
+          id: string
+          payload: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          agent_profile_url?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          payload?: Json
+          status?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -3690,6 +5328,71 @@ export type Database = {
       }
     }
     Views: {
+      board_customer_comms_effective: {
+        Row: {
+          awaiting_customer: boolean | null
+          callback_due_at: string | null
+          channels_seen: string[] | null
+          comm_key: string | null
+          comm_ro_no: string | null
+          customer_id: number | null
+          customer_phone: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_summary: string | null
+          ro_no: string | null
+          updated_at: string | null
+          used_customer_fallback: boolean | null
+        }
+        Relationships: []
+      }
+      board_ro_aging: {
+        Row: {
+          customer_id: number | null
+          date_in: string | null
+          days_in_lane: number | null
+          days_in_shop: number | null
+          first_lane_date: string | null
+          lane: string | null
+          ro_no: string | null
+          snapshot_date: string | null
+          stalled: boolean | null
+          stalled_days: number | null
+          status: string | null
+        }
+        Relationships: []
+      }
+      board_service_status: {
+        Row: {
+          awaiting_customer: boolean | null
+          callback_due_at: string | null
+          cashout_ready: boolean | null
+          cashout_reason: string | null
+          channels_seen: string[] | null
+          customer_id: number | null
+          customer_name: string | null
+          date_in: string | null
+          days_in_lane: number | null
+          days_in_shop: number | null
+          dead_reason: string | null
+          first_lane_date: string | null
+          lane: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_modified_date: string | null
+          last_summary: string | null
+          likely_dead: boolean | null
+          promised_date: string | null
+          ro_no: string | null
+          stalled: boolean | null
+          stalled_days: number | null
+          status: string | null
+          used_customer_fallback: boolean | null
+        }
+        Relationships: []
+      }
       counter_sales: {
         Row: {
           cashier_name: string | null
@@ -3848,6 +5551,8 @@ export type Database = {
           cost: number | null
           cust_id: string | null
           customer_name: string | null
+          date_received: string | null
+          days_in_store: number | null
           deal_no: string | null
           deal_unit_id: number | null
           dealid: string | null
@@ -3856,14 +5561,51 @@ export type Database = {
           major_unit_header_id: number | null
           make: string | null
           model: string | null
-          model_year: string | null
+          model_name_full: string | null
+          model_year: number | null
+          new_used: string | null
           raw: Json | null
           sale_price: number | null
+          sales_category: string | null
           salesman_name: string | null
           stock_number: string | null
           synced_at: string | null
           trade_allowance: number | null
+          unit_type: string | null
           vin: string | null
+        }
+        Relationships: []
+      }
+      diagnostic_case_source: {
+        Row: {
+          ambiguity_flags: string[] | null
+          boat_hin: string | null
+          boat_make: string | null
+          boat_model: string | null
+          boat_unit_count: number | null
+          boat_unit_ordinal: number | null
+          boat_year: string | null
+          complaint: string | null
+          cust_id: number | null
+          customer_approval: string | null
+          customer_name: string | null
+          date_in: string | null
+          described_motor_job_count: number | null
+          is_resolved: boolean | null
+          job_bearing_motor_count: number | null
+          job_ordinal: number | null
+          job_status: string | null
+          motor_make: string | null
+          motor_model: string | null
+          motor_serial: string | null
+          motor_unit_count: number | null
+          motor_unit_ordinal: number | null
+          motor_year: string | null
+          promised_date: string | null
+          ro_header_id: number | null
+          ro_job_id: string | null
+          ro_no: string | null
+          synced_at: string | null
         }
         Relationships: []
       }
@@ -4207,6 +5949,41 @@ export type Database = {
         }
         Relationships: []
       }
+      service_status_board_v2: {
+        Row: {
+          awaiting_reply: boolean | null
+          awaiting_reply_channel: string | null
+          awaiting_reply_reason: string | null
+          awaiting_reply_since: string | null
+          board_summary: string | null
+          boat_motor: string | null
+          comm_at: string | null
+          comm_channel: string | null
+          comm_direction: string | null
+          customer_name: string | null
+          date_in: string | null
+          days_in_shop: number | null
+          jobs: string | null
+          lane: string | null
+          lane_order: number | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          latest_shop_note_at: string | null
+          latest_shop_note_author: string | null
+          latest_shop_note_job_ref: number | null
+          latest_shop_note_text: string | null
+          notified: boolean | null
+          notify_at: string | null
+          notify_channels: string | null
+          ro_no: string | null
+          source_synced_at: string | null
+          stage_label: string | null
+          status: string | null
+          summary_raw: string | null
+        }
+        Relationships: []
+      }
       unit_inventory: {
         Row: {
           beam: number | null
@@ -4372,9 +6149,42 @@ export type Database = {
           table_name: string
         }[]
       }
+      board_service_lane: { Args: { p_status: string }; Returns: string }
       bulk_upsert_deals: { Args: { payload: Json }; Returns: number }
       bulk_upsert_open_ros: { Args: { payload: Json }; Returns: number }
       bulk_upsert_parts_invoices: { Args: { payload: Json }; Returns: number }
+      call_transcription_context: {
+        Args: {
+          p_customer_query?: string
+          p_issue_query?: string
+          p_limit?: number
+          p_phone?: string
+        }
+        Returns: {
+          call_started_at: string
+          direction: string
+          id: string
+          issue_match: boolean
+          match_candidates: Json
+          match_method: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          normalized_phones: string[]
+          received_at: string
+          recording_url: string
+          subject: string
+          summary: string
+          transcript_excerpt: string
+        }[]
+      }
+      capture_board_snapshot: {
+        Args: { p_snapshot_date?: string }
+        Returns: {
+          inserted_count: number
+          snapshot_date: string
+        }[]
+      }
       check_rate_limit: {
         Args: {
           _action: string
@@ -4383,6 +6193,22 @@ export type Database = {
           _window_minutes?: number
         }
         Returns: boolean
+      }
+      claim_due_hbw_bot_reminders: {
+        Args: {
+          p_gateway_secret: string
+          p_limit?: number
+          p_now?: string
+          p_stale_after_seconds?: number
+        }
+        Returns: {
+          created_at: string
+          due_at: string
+          id: string
+          platform: string
+          reminder_text: string
+          target: Json
+        }[]
       }
       claim_openclaw_slack_fallback_jobs: {
         Args: {
@@ -4425,6 +6251,10 @@ export type Database = {
           deleted_succeeded: number
         }[]
       }
+      complete_hbw_bot_reminder: {
+        Args: { p_gateway_secret: string; p_id: string }
+        Returns: undefined
+      }
       complete_openclaw_slack_fallback_job: {
         Args: {
           p_id: string
@@ -4432,6 +6262,30 @@ export type Database = {
           p_worker_secret: string
         }
         Returns: undefined
+      }
+      create_hbw_bot_reminder: {
+        Args: {
+          p_created_by?: string
+          p_due_at: string
+          p_gateway_secret: string
+          p_metadata?: Json
+          p_platform: string
+          p_reminder_text: string
+          p_source_command?: string
+          p_source_event_id?: string
+          p_source_message_ts?: string
+          p_target: Json
+          p_username?: string
+        }
+        Returns: {
+          created_at: string
+          due_at: string
+          id: string
+          platform: string
+          reminder_text: string
+          status: string
+          target: Json
+        }[]
       }
       customer_brief: {
         Args: { p_limit?: number; p_query: string }
@@ -4503,6 +6357,30 @@ export type Database = {
           lifetime_revenue: number
           loyalty_customer: boolean
           match_rank: number
+          phone: string
+          province: string
+          total_repair_orders: number
+          total_ros: number
+          total_spend: number
+        }[]
+      }
+      customer_match_candidates: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          customer_type: string
+          email: string
+          first_service_date: string
+          home_phone: string
+          last_service_date: string
+          lifetime_revenue: number
+          loyalty_customer: boolean
+          match_rank: number
+          match_score: number
           phone: string
           province: string
           total_repair_orders: number
@@ -4655,7 +6533,65 @@ export type Database = {
           vin: string
         }[]
       }
+      customer_spend_summary: {
+        Args: {
+          p_candidate_limit?: number
+          p_customer_queries?: string[]
+          p_customer_query?: string
+          p_end_date?: string
+          p_highlight_limit?: number
+          p_include_quotes?: boolean
+          p_start_date?: string
+        }
+        Returns: {
+          candidate_count: number
+          candidate_customers: Json
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          deal_count: number
+          deal_total: number
+          highlights: Json
+          match_rank: number
+          match_score: number
+          match_status: string
+          parts_invoice_count: number
+          parts_line_count: number
+          parts_total: number
+          period_end: string
+          period_start: string
+          province: string
+          query_text: string
+          row_type: string
+          service_ro_count: number
+          service_total: number
+          source_breakdown: Json
+          total_amount: number
+        }[]
+      }
+      customer_units_summary: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          deal_units: Json
+          email: string
+          home_phone: string
+          match_rank: number
+          open_ro_count: number
+          open_units: Json
+          phone: string
+          province: string
+          service_units: Json
+          work_phone: string
+        }[]
+      }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
+      dispatch_agent_artifact_rebuild: { Args: never; Returns: boolean }
       encrypt_sin: { Args: { sin_plaintext: string }; Returns: string }
       enqueue_openclaw_slack_fallback_job: {
         Args: {
@@ -4670,6 +6606,15 @@ export type Database = {
           id: string
           status: string
         }[]
+      }
+      fail_hbw_bot_reminder: {
+        Args: {
+          p_error: string
+          p_gateway_secret: string
+          p_id: string
+          p_retry_after_seconds?: number
+        }
+        Returns: undefined
       }
       fail_openclaw_slack_fallback_job: {
         Args: {
@@ -4743,10 +6688,16 @@ export type Database = {
       hbw_bot_admin_status: {
         Args: never
         Returns: {
+          auth_failures_24h: number
+          customer_ambiguous_7d: number
+          customer_corrections_7d: number
+          customer_no_match_7d: number
           dead_jobs: number
           errors_1h: number
           errors_24h: number
           failed_jobs: number
+          fallbacks_24h: number
+          feed_failures_24h: number
           generated_at: string
           last_brief_at: string
           last_brief_channel_id: string
@@ -4757,9 +6708,31 @@ export type Database = {
           last_worker_seen_at: string
           pending_jobs: number
           processing_jobs: number
+          stale_feed_count: number
+          stale_feeds: Json
           stale_pending_jobs: number
           stale_processing_jobs: number
           worker_status: string
+        }[]
+      }
+      hbw_bot_feedback_summary: {
+        Args: { p_days?: number }
+        Returns: {
+          auth_failure_count: number
+          customer_ambiguous_count: number
+          customer_correction_count: number
+          customer_no_match_count: number
+          fallback_count: number
+          feed_failure_count: number
+          queue_dead_jobs: number
+          queue_failed_jobs: number
+          queue_stale_jobs: number
+          recent_corrections: Json
+          stale_feed_count: number
+          stale_feeds: Json
+          top_ambiguous_queries: Json
+          top_no_match_queries: Json
+          window_days: number
         }[]
       }
       hbw_bot_recent_errors: {
@@ -4774,6 +6747,110 @@ export type Database = {
           severity: string
           status: string
         }[]
+      }
+      hbw_bot_thread_context: {
+        Args: { p_channel_id: string; p_thread_ts: string }
+        Returns: {
+          command: string
+          created_at: string
+          intent_type: string
+          metadata: Json
+          rpc: string
+        }[]
+      }
+      hbw_call_board_summary: { Args: { p_summary: string }; Returns: string }
+      hbw_call_transcription_phone_candidates: {
+        Args: { p_phones: string[] }
+        Returns: {
+          city: string
+          customer_id: string
+          customer_name: string
+          match_rank: number
+          matched_phone: string
+          phone_last4: string
+          province: string
+        }[]
+      }
+      hbw_comms_clean_text: {
+        Args: { p_max?: number; p_value: string }
+        Returns: string
+      }
+      hbw_comms_infer_ro_no: {
+        Args: { p_body: string; p_subject: string }
+        Returns: string
+      }
+      hbw_customer_comms_board_summary: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+          p_template_type: string
+        }
+        Returns: string
+      }
+      hbw_customer_comms_is_ro_complete_template: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+        }
+        Returns: boolean
+      }
+      hbw_customer_comms_pick_customer_for_email: {
+        Args: { p_email: string }
+        Returns: number
+      }
+      hbw_customer_comms_pick_customer_for_ro: {
+        Args: { p_ro_no: string }
+        Returns: number
+      }
+      hbw_customer_comms_pick_ro_for_customer: {
+        Args: { p_customer_id: number; p_occurred_at: string }
+        Returns: string
+      }
+      hbw_customer_comms_response_required_reason: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+          p_template_type: string
+        }
+        Returns: string
+      }
+      hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
+      hbw_phone_digits_match: {
+        Args: { p_phone: string; p_query_digits: string }
+        Returns: boolean
+      }
+      hbw_twilio_board_awaiting_customer: {
+        Args: { p_body: string; p_direction: string }
+        Returns: boolean
+      }
+      hbw_twilio_board_summary:
+        | { Args: { p_direction: string }; Returns: string }
+        | { Args: { p_body: string; p_direction: string }; Returns: string }
+      hbw_twilio_customer_candidates: {
+        Args: { p_customer_phone: string }
+        Returns: {
+          cell_phone: string
+          customer_id: number
+          customer_name: string
+        }[]
+      }
+      hbw_twilio_pick_open_ro: {
+        Args: { p_body: string; p_customer_id: number; p_date_sent: string }
+        Returns: {
+          link_method: string
+          ro_no: string
+        }[]
+      }
+      hbw_twilio_sms_body_clean: { Args: { p_body: string }; Returns: string }
+      hbw_twilio_sms_is_low_value_notice: {
+        Args: { p_body: string; p_direction: string }
+        Returns: boolean
       }
       is_admin: { Args: never; Returns: boolean }
       last_service_summary: {
@@ -4807,6 +6884,37 @@ export type Database = {
           _user_id: string
         }
         Returns: undefined
+      }
+      mercury_post_sale_candidates: {
+        Args: never
+        Returns: {
+          customer_email: string
+          deal_no: string
+          dealid: string
+          first_name: string
+          last_name: string
+          motor: string
+          motor_hp: number
+          mpp_purchased: boolean
+          sale_date: string
+          season: string
+        }[]
+      }
+      mercury_post_sale_mpp_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_mpp_status: string
+        }[]
+      }
+      mercury_post_sale_svc_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_svc_status: string
+        }[]
       }
       normalize_phone: { Args: { p: string }; Returns: string }
       open_ro_brief: {
@@ -4975,6 +7083,18 @@ export type Database = {
           total_qty: number
         }[]
       }
+      reconcile_hbw_call_transcription_links: {
+        Args: { p_gateway_secret: string; p_limit?: number }
+        Returns: {
+          candidate_count: number
+          external_message_id: string
+          id: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          previous_status: string
+        }[]
+      }
       record_hbw_bot_brief_receipt: {
         Args: {
           p_brief_type?: string
@@ -5003,6 +7123,27 @@ export type Database = {
           p_severity?: string
           p_slack_event_id?: string
           p_status?: string
+        }
+        Returns: string
+      }
+      record_hbw_bot_feedback: {
+        Args: {
+          p_candidate_customers?: Json
+          p_category?: string
+          p_channel_id?: string
+          p_command?: string
+          p_corrected_query?: string
+          p_event_type?: string
+          p_gateway_secret: string
+          p_intent_type?: string
+          p_matched_customer_id?: string
+          p_matched_customer_name?: string
+          p_message_ts?: string
+          p_metadata?: Json
+          p_normalized_query?: string
+          p_raw_query?: string
+          p_slack_event_id?: string
+          p_thread_ts?: string
         }
         Returns: string
       }
@@ -5113,6 +7254,103 @@ export type Database = {
       update_brochure_models_bulk_v2: {
         Args: { p_rows: Json }
         Returns: number
+      }
+      upsert_customer_comms_event: {
+        Args: {
+          p_body_preview?: string
+          p_channel?: string
+          p_customer_email?: string
+          p_customer_id?: number
+          p_customer_phone?: string
+          p_direction?: string
+          p_event_key?: string
+          p_gateway_secret: string
+          p_match_method?: string
+          p_match_status?: string
+          p_occurred_at?: string
+          p_provider?: string
+          p_provider_ids?: Json
+          p_provider_message_id?: string
+          p_provider_status?: string
+          p_provider_thread_id?: string
+          p_raw_payload?: Json
+          p_ro_no?: string
+          p_source?: string
+          p_status?: string
+          p_subject?: string
+          p_template_type?: string
+        }
+        Returns: {
+          board_published: boolean
+          channel: string
+          customer_id: number
+          direction: string
+          event_key: string
+          id: string
+          match_status: string
+          occurred_at: string
+          ro_no: string
+        }[]
+      }
+      upsert_hbw_call_transcription: {
+        Args: {
+          p_call_started_at?: string
+          p_conversation_id?: string
+          p_direction?: string
+          p_external_message_id: string
+          p_extracted_phones?: string[]
+          p_folder_name: string
+          p_from_address?: string
+          p_gateway_secret: string
+          p_internet_message_id?: string
+          p_raw_payload?: Json
+          p_received_at?: string
+          p_recording_url?: string
+          p_source: string
+          p_subject?: string
+          p_summary?: string
+          p_transcript?: string
+        }
+        Returns: {
+          external_message_id: string
+          id: string
+          inserted: boolean
+          match_candidates: Json
+          match_method: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          normalized_phones: string[]
+          received_at: string
+        }[]
+      }
+      upsert_hbw_twilio_message: {
+        Args: {
+          p_account_sid?: string
+          p_body?: string
+          p_date_created?: string
+          p_date_sent?: string
+          p_date_updated?: string
+          p_direction?: string
+          p_error_code?: string
+          p_from_number?: string
+          p_gateway_secret: string
+          p_message_sid: string
+          p_num_media?: number
+          p_num_segments?: number
+          p_raw_payload?: Json
+          p_status?: string
+          p_to_number?: string
+        }
+        Returns: {
+          board_published: boolean
+          customer_id: number
+          customer_name: string
+          inserted: boolean
+          match_status: string
+          message_sid: string
+          ro_no: string
+        }[]
       }
       validate_customer_data_ownership: {
         Args: { record_user_id: string; table_name: string }

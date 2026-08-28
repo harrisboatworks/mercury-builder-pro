@@ -2,8 +2,18 @@
 import { createClient } from '@supabase/supabase-js';
 
 
-const SUPABASE_URL = "https://eutsoqdpjurknjsshxes.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU";
+const runtimeEnv = (import.meta as any).env ?? {};
+const nodeEnv = typeof process !== 'undefined' ? process.env : {};
+
+const SUPABASE_URL =
+  runtimeEnv.VITE_SUPABASE_URL ||
+  nodeEnv.VITE_SUPABASE_URL ||
+  "https://eutsoqdpjurknjsshxes.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY =
+  runtimeEnv.VITE_SUPABASE_PUBLISHABLE_KEY ||
+  nodeEnv.VITE_SUPABASE_PUBLISHABLE_KEY ||
+  nodeEnv.SUPABASE_PUBLISHABLE_KEY ||
+  "";
 
 // In-memory storage fallback
 const __memoryStore: Record<string, string> = {};

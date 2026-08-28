@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -279,7 +280,7 @@ export default function MotorOptionRules() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2 col-span-2">
-                <Label htmlFor="rule_name">Rule Name *</Label>
+                <Label htmlFor="rule_name">Rule Name <RequiredMark /></Label>
                 <Input id="rule_name" name="rule_name" defaultValue={editingRule?.rule_name} required />
               </div>
 
@@ -294,7 +295,7 @@ export default function MotorOptionRules() {
               </div>
 
               <div className="space-y-2 col-span-2">
-                <Label htmlFor="option_id">Option *</Label>
+                <Label htmlFor="option_id">Option <RequiredMark /></Label>
                 <Select name="option_id" defaultValue={editingRule?.option_id} required>
                   <SelectTrigger>
                     <SelectValue placeholder="Select option" />
@@ -394,7 +395,7 @@ export default function MotorOptionRules() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="assignment_type">Assignment Type *</Label>
+                <Label htmlFor="assignment_type">Assignment Type <RequiredMark /></Label>
                 <Select name="assignment_type" defaultValue={editingRule?.assignment_type || 'available'}>
                   <SelectTrigger>
                     <SelectValue />

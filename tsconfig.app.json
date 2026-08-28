@@ -21,7 +21,9 @@
         "./src/*"
       ]
     },
+    "resolveJsonModule": true,
     "skipLibCheck": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "strict": false,
     "target": "ES2020",
     "useDefineForClassFields": true

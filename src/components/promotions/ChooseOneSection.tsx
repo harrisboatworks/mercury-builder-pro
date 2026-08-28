@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { ChooseOneCard } from './ChooseOneCard';
 import { RebateMatrix } from './RebateMatrix';
 import { FinancingRatesCard } from './FinancingRatesCard';
-import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 interface PromoOption {
@@ -28,38 +27,47 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
   const noPaymentsOption = options.find(o => o.id === 'no_payments');
   const financingOption = options.find(o => o.id === 'special_financing');
   const rebateOption = options.find(o => o.id === 'cash_rebate');
+  const lowestFinancingRate = financingOption?.rates?.length
+    ? Math.min(...financingOption.rates.map((rate) => rate.rate))
+    : null;
+  const maximumRebate = rebateOption?.matrix?.length
+    ? Math.max(...rebateOption.matrix.map((row) => row.rebate))
+    : null;
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16">
-      {/* Section header */}
-      <div className="text-center mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4"
-        >
-          Choose Your Bonus
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-foreground mb-4"
-        >
-          Pick One of These Exclusive Benefits
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-2xl mx-auto"
-        >
-          In addition to 7 years of factory coverage, choose the bonus that works best for you.
-        </motion.p>
-      </div>
+    <section id="offer-details" className="scroll-mt-24 bg-repower-paper text-repower-navy-900 py-20 md:py-28 px-6 md:px-14">
+      <div className="max-w-6xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-5 inline-flex items-center gap-3"
+          >
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
+            Choose Your Bonus
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="font-display font-bold text-repower-navy-900 mb-5"
+            style={{ fontSize: 'clamp(32px, 4vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
+            Pick One of These Exclusive Benefits
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-sans text-[17px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed"
+          >
+            Choose the current Mercury benefit that works best for you. Standard factory warranty applies to every new motor; promotion eligibility is confirmed on your quote.
+          </motion.p>
+        </div>
 
       {/* Three option cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -76,14 +84,7 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
               title={noPaymentsOption.title}
               description={noPaymentsOption.description}
               icon={noPaymentsOption.icon}
-              highlight="Buy Now, Pay Later"
-            >
-              <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-                <p className="text-sm text-muted-foreground">
-                  Perfect for buyers who want to enjoy their new motor now and start payments in 6 months.
-                </p>
-              </div>
-            </ChooseOneCard>
+            />
           </motion.div>
         )}
 
@@ -95,8 +96,8 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <Collapsible 
-              open={expandedOption === 'special_financing'} 
+            <Collapsible
+              open={expandedOption === 'special_financing'}
               onOpenChange={(open) => setExpandedOption(open ? 'special_financing' : null)}
             >
               <ChooseOneCard
@@ -104,10 +105,10 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
                 title={financingOption.title}
                 description={financingOption.description}
                 icon={financingOption.icon}
-                highlight="As Low As 2.99% APR"
+                highlight={lowestFinancingRate !== null ? `As Low As ${lowestFinancingRate}% APR` : 'Review Current Rates'}
               >
                 <CollapsibleTrigger asChild>
-                  <button className="w-full flex items-center justify-center gap-2 text-sm text-primary font-medium mt-2 py-2 hover:underline">
+                  <button className="w-full inline-flex items-center justify-center gap-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-mercury-red mt-3 py-2 border-t border-repower-navy-900/10 hover:text-repower-mercury-red-deep transition-colors">
                     {expandedOption === 'special_financing' ? (
                       <>Hide Rates <ChevronUp className="w-4 h-4" /></>
                     ) : (
@@ -118,8 +119,8 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
                 <CollapsibleContent>
                   <div className="mt-4">
                     {financingOption.rates && (
-                      <FinancingRatesCard 
-                        rates={financingOption.rates} 
+                      <FinancingRatesCard
+                        rates={financingOption.rates}
                         minimumAmount={financingOption.minimum_amount}
                         compact
                       />
@@ -139,8 +140,8 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Collapsible 
-              open={expandedOption === 'cash_rebate'} 
+            <Collapsible
+              open={expandedOption === 'cash_rebate'}
               onOpenChange={(open) => setExpandedOption(open ? 'cash_rebate' : null)}
             >
               <ChooseOneCard
@@ -148,10 +149,10 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
                 title={rebateOption.title}
                 description={rebateOption.description}
                 icon={rebateOption.icon}
-                highlight="Up To $1,000 Back"
+                highlight={maximumRebate !== null ? `Up To $${maximumRebate.toLocaleString('en-CA')} Back` : 'Review Current Rebates'}
               >
                 <CollapsibleTrigger asChild>
-                  <button className="w-full flex items-center justify-center gap-2 text-sm text-primary font-medium mt-2 py-2 hover:underline">
+                  <button className="w-full inline-flex items-center justify-center gap-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-mercury-red mt-3 py-2 border-t border-repower-navy-900/10 hover:text-repower-mercury-red-deep transition-colors">
                     {expandedOption === 'cash_rebate' ? (
                       <>Hide Rebate Chart <ChevronUp className="w-4 h-4" /></>
                     ) : (
@@ -172,23 +173,24 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
         )}
       </div>
 
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <Link to="/">
-          <Button size="lg" className="gap-2">
-            Build Your Quote & Choose Your Bonus
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </Link>
-        <p className="text-sm text-muted-foreground mt-3">
-          Your selected bonus will be applied when you finalize your purchase
-        </p>
-      </motion.div>
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Link to="/quote/motor-selection">
+            <button className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors">
+              Build Your Quote & Choose Your Bonus
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.75} />
+            </button>
+          </Link>
+          <p className="font-sans text-[13px] text-repower-navy-900/55 mt-4">
+            One benefit per eligible motor purchase. Eligibility and final terms are confirmed before purchase.
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 }

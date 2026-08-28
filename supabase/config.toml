@@ -54,9 +54,6 @@ verify_jwt = false
 [functions.send-saved-quote-email]
 verify_jwt = false
 
-[functions.sync-google-sheets-inventory]
-verify_jwt = false
-
 [functions.trigger-zapier-webhooks]
 verify_jwt = false
 
@@ -64,6 +61,9 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.send-financing-confirmation-email]
+verify_jwt = false
+
+[functions.financing-application-api]
 verify_jwt = false
 
 [functions.subscribe-promo-reminder]
@@ -144,6 +144,11 @@ verify_jwt = false
 [functions.sync-elevenlabs-kb]
 verify_jwt = false
 
+[functions.sync-elevenlabs-static-kb]
+# This function enforces requireAdmin() itself so the pg_cron
+# x-internal-secret request can reach the function-level auth gate.
+verify_jwt = false
+
 [functions.voice-inventory-lookup]
 verify_jwt = false
 
@@ -172,7 +177,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.send-deposit-confirmation-email]
-verify_jwt = false
+verify_jwt = true
 
 [functions.send-get7-campaign]
 verify_jwt = true
@@ -222,3 +227,18 @@ verify_jwt = false
 [functions.motors-md]
 verify_jwt = false
 
+
+[functions.subscribe-walkaround]
+verify_jwt = false
+
+[functions.quote-document-api]
+verify_jwt = true
+
+[functions.consultation-document-api]
+verify_jwt = false
+
+[functions.submit-quote-lead]
+verify_jwt = false
+
+[functions.consultation-document-retention]
+verify_jwt = false

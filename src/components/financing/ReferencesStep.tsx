@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -7,15 +8,16 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { InfoIcon, UserCheck, Users } from 'lucide-react';
+import { AlertCircle, InfoIcon, UserCheck, Users } from 'lucide-react';
 import { MaskedInput } from './MaskedInput';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
+import { trackClarityValidationBlocked } from '@/lib/analytics';
 
 export function ReferencesStep() {
   const { state, dispatch } = useFinancing();
 
-  const { register, handleSubmit, watch, setValue, control, formState: { errors, isValid, touchedFields } } = useForm<References>({
+  const { register, handleSubmit, watch, setValue, control, formState: { errors, isValid, touchedFields, submitCount } } = useForm<References>({
     resolver: zodResolver(referencesSchema),
     mode: 'onChange',
     defaultValues: state.references || {},
@@ -27,12 +29,13 @@ export function ReferencesStep() {
     dispatch({ type: 'SET_CURRENT_STEP', payload: 7 });
   };
 
+  const onInvalid = () => {
+    trackClarityValidationBlocked('financing', 'references_incomplete');
+  };
+
   const handleBack = () => {
     dispatch({ type: 'SET_CURRENT_STEP', payload: 5 });
   };
-
-  const reference1Phone = watch('reference1.phone');
-  const reference2Phone = watch('reference2.phone');
 
   return (
     <div className="space-y-6">
@@ -43,7 +46,7 @@ export function ReferencesStep() {
         </AlertDescription>
       </Alert>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit, onInvalid)} className="space-y-6">
         {/* Reference 1 */}
         <Card>
           <CardContent className="pt-6 space-y-4">
@@ -53,7 +56,7 @@ export function ReferencesStep() {
             </h3>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-fullName">Full Name *</Label>
+              <Label htmlFor="ref1-fullName">Full Name <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="ref1-fullName"
@@ -71,7 +74,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-relationship">Relationship *</Label>
+              <Label htmlFor="ref1-relationship">Relationship <RequiredMark /></Label>
               <Select
                 value={watch('reference1.relationship')}
                 onValueChange={(value) => setValue('reference1.relationship', value, { shouldValidate: true })}
@@ -91,7 +94,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-phone">Phone Number *</Label>
+              <Label htmlFor="ref1-phone">Phone Number <RequiredMark /></Label>
               <div className="relative">
                 <Controller
                   name="reference1.phone"
@@ -120,7 +123,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-howLongKnown">How long have you known them? *</Label>
+              <Label htmlFor="ref1-howLongKnown">How long have you known them? <RequiredMark /></Label>
               <Select
                 value={watch('reference1.howLongKnown')}
                 onValueChange={(value) => setValue('reference1.howLongKnown', value as any, { shouldValidate: true })}
@@ -149,7 +152,7 @@ export function ReferencesStep() {
             </h3>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-fullName">Full Name *</Label>
+              <Label htmlFor="ref2-fullName">Full Name <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="ref2-fullName"
@@ -167,7 +170,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-relationship">Relationship *</Label>
+              <Label htmlFor="ref2-relationship">Relationship <RequiredMark /></Label>
               <Select
                 value={watch('reference2.relationship')}
                 onValueChange={(value) => setValue('reference2.relationship', value, { shouldValidate: true })}
@@ -187,7 +190,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-phone">Phone Number *</Label>
+              <Label htmlFor="ref2-phone">Phone Number <RequiredMark /></Label>
               <div className="relative">
                 <Controller
                   name="reference2.phone"
@@ -213,13 +216,10 @@ export function ReferencesStep() {
                 />
               </div>
               <FormErrorMessage error={errors.reference2?.phone?.message} field="Phone number" />
-              {reference1Phone && reference2Phone && reference1Phone === reference2Phone && (
-                <FormErrorMessage error="References must be different people" />
-              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-howLongKnown">How long have you known them? *</Label>
+              <Label htmlFor="ref2-howLongKnown">How long have you known them? <RequiredMark /></Label>
               <Select
                 value={watch('reference2.howLongKnown')}
                 onValueChange={(value) => setValue('reference2.howLongKnown', value as any, { shouldValidate: true })}
@@ -239,11 +239,19 @@ export function ReferencesStep() {
           </CardContent>
         </Card>
 
+        {submitCount > 0 && !isValid && (
+          <Alert variant="destructive" aria-live="assertive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>
+              Please complete the highlighted reference fields before continuing.
+            </AlertDescription>
+          </Alert>
+        )}
+
         <MobileFormNavigation
           onBack={handleBack}
-          onNext={handleSubmit(onSubmit)}
+          onNext={handleSubmit(onSubmit, onInvalid)}
           nextLabel="Continue to Review"
-          isNextDisabled={!isValid}
         />
       </form>
     </div>

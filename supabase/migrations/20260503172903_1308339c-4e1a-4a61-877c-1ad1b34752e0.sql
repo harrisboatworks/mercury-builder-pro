@@ -1,0 +1,1 @@
+UPDATE motor_option_rules SET conditions = jsonb_set(conditions, '{hp_min}', '25'::jsonb) WHERE id = '76fc15d9-d5a2-4032-9732-2c271671def0';

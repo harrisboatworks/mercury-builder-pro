@@ -93,11 +93,22 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
     return <Mic className={iconSizes[size]} />;
   };
 
+  const getAriaLabel = () => {
+    if (textOnlyMode) return 'Retry voice chat';
+    if (isConnecting) return 'Connecting voice chat';
+    if (isSpeaking) return 'End voice chat, assistant speaking';
+    if (isListening) return 'End voice chat, listening';
+    if (isConnected) return 'End voice chat';
+    return 'Start voice chat';
+  };
+
   return (
     <motion.button
+      type="button"
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       disabled={isConnecting}
+      aria-label={getAriaLabel()}
       className={cn(
         'relative rounded-full flex items-center justify-center transition-colors',
         sizeClasses[size],
@@ -178,7 +189,7 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
   };
 
   const getLabel = () => {
-    if (textOnlyMode) return 'Voice unavailable – tap to retry';
+    if (textOnlyMode) return 'Voice unavailable, tap to retry';
     if (isConnecting) return 'Connecting...';
     if (isSpeaking) return 'Harris is speaking...';
     if (isListening) return 'Listening...';
@@ -195,6 +206,7 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
 
   return (
     <motion.button
+      type="button"
       onClick={handleClick}
       disabled={isConnecting}
       className={cn(

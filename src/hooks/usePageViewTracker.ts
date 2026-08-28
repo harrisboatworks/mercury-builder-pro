@@ -154,8 +154,13 @@ export function usePageViewTracker() {
       } catch { /* best effort */ }
     };
 
-    window.addEventListener('beforeunload', handleUnload);
-    return () => window.removeEventListener('beforeunload', handleUnload);
+    // Use `pagehide` instead of `beforeunload` so Chromium/Comet can keep
+    // the page in bfcache. A `beforeunload` listener disables bfcache, which
+    // forces a full reload on back-navigation — for large pages (e.g. blog
+    // posts backed by the 32k-line blogArticles module) the reload can be
+    // slow enough that the browser shows "Couldn't load this page".
+    window.addEventListener('pagehide', handleUnload);
+    return () => window.removeEventListener('pagehide', handleUnload);
   }, [user?.id]);
 
   function sendEvent(eventType: string, path: string, title: string, timeOnPage: number | null) {

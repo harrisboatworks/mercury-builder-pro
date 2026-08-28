@@ -1,11 +1,40 @@
-# Harris Boat Works - Mercury Outboard Quote Builder
+# Harris Boat Works - Mercury Outboard Repower
 # https://www.mercuryrepower.ca
+# Last updated: 2026-07-15
 
-# Standard Search Engine Crawlers
+# Default: open access for everyone, including AI crawlers we want
+User-agent: *
+Allow: /
+Disallow: /admin
+Allow: /api/agents/
+Disallow: /api/
+
+# Standard search crawlers
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: MSNBot
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Twitterbot
@@ -14,49 +43,177 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# AI Search Engine Crawlers - Explicitly Allowed
+User-agent: LinkedInBot
+Allow: /
+
+# AI search and grounding crawlers - explicitly allowed
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: Claude-Web
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: cohere-ai
+User-agent: CCBot
 Allow: /
 
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Meta-ExternalAgent
+User-agent: Bytespider
 Allow: /
 
 User-agent: Amazonbot
 Allow: /
 
-# IndexNow key (for Bing & IndexNow-compatible engines)
-# Key file: https://www.mercuryrepower.ca/03999430e4bae3d7d7be108f62646dbf.txt
-
-# General allowance for all other crawlers
-User-agent: *
+User-agent: meta-externalagent
 Allow: /
 
-# Sitemap location
+User-agent: Diffbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Cohere-Web
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: PhindBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# Chinese and Asia search/AI ecosystem - explicitly welcome
+User-agent: Baiduspider
+Allow: /
+
+User-agent: BaiduAI
+Allow: /
+
+User-agent: Baidu-YiYan
+Allow: /
+
+User-agent: ERNIEBot
+Allow: /
+
+User-agent: ERNIE-Bot
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+# Moonshot Kimi crawlers - explicitly allowed
+# Policy: https://kimi.com/policies/kimi-crawlers
+User-agent: KimiBot
+Allow: /
+
+User-agent: Kimi-User
+Allow: /
+
+User-agent: Kimi-SearchBot
+Allow: /
+
+# DeepSeek (unverified, third-party-documented) - allowed pending official policy
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: DeepSeek-Crawler
+Allow: /
+
+User-agent: DeepSeek
+Allow: /
+
+# GLM / Zhipu
+User-agent: ChatGLM-Spider
+Allow: /
+
+User-agent: ZhipuBot
+Allow: /
+
+# Qwen / Tongyi / Alibaba
+User-agent: Qwen
+Allow: /
+
+User-agent: Tongyi
+Allow: /
+
+User-agent: AliyunBot
+Allow: /
+
+User-agent: AliyunCrawler
+Allow: /
+
+User-agent: AlibabaCloud
+Allow: /
+
+# Tencent / Yuanbao / Hunyuan
+User-agent: TencentBot
+Allow: /
+
+User-agent: YuanbaoBot
+Allow: /
+
+User-agent: HunyuanAide
+Allow: /
+
+# iFlytek / Spark
+User-agent: iFlytekBot
+Allow: /
+
+User-agent: Xinghuo
+Allow: /
+
+# Other Asia AI/search crawlers and retrieval agents
+User-agent: PanguBot
+Allow: /
+
+User-agent: MiniMaxBot
+Allow: /
+
+User-agent: MoonshotAI
+Allow: /
+
+User-agent: MoonshotBot
+Allow: /
+
+User-agent: Wenxiaobai
+Allow: /
+
+# Sitemap
 Sitemap: https://www.mercuryrepower.ca/sitemap.xml

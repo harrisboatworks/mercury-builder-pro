@@ -1,5 +1,5 @@
 // Security middleware for API requests and session management
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '../integrations/supabase/client.js';
 
 export interface SecurityContext {
   userId: string;
@@ -75,7 +75,7 @@ export class SecurityManager {
     action: string,
     tableName: string,
     recordId?: string,
-    metadata?: Record<string, any>
+    metadata?: Record<string, unknown>
   ): Promise<void> {
     try {
       // Validate inputs
@@ -179,7 +179,7 @@ export class SecurityManager {
 
   // Focused input sanitization - removes actual security threats without breaking valid input
   // Note: This is a client-side defense layer; server-side validation via Zod + RLS is the primary protection
-  static sanitizeInput(input: any): any {
+  static sanitizeInput(input: unknown): unknown {
     if (typeof input === 'string') {
       return input
         // Remove script tags and dangerous protocols (actual XSS vectors)
@@ -193,7 +193,12 @@ export class SecurityManager {
         .replace(/formaction\s*=/gi, '')
         // Remove null bytes and control characters (can break parsing)
         .replace(/\0/g, '')
-        .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
+        .split('')
+        .filter((char) => {
+          const code = char.charCodeAt(0);
+          return code > 31 && code !== 127;
+        })
+        .join('')
         .trim()
         .slice(0, 10000); // Generous length limit for descriptions
     }
@@ -203,7 +208,7 @@ export class SecurityManager {
     }
     
     if (typeof input === 'object' && input !== null) {
-      const sanitized: any = {};
+      const sanitized: Record<string, unknown> = {};
       let count = 0;
       for (const [key, value] of Object.entries(input)) {
         if (count >= 100) break;
@@ -323,7 +328,8 @@ export const validatePasswordStrength = (password: string): { isValid: boolean; 
     errors.push('Password must contain at least one number');
   }
   
-  if (!/[!@#$%^&*(),.?":{}|<>_+=\-\[\]\\;'/~`]/.test(password)) {
+  const specialChars = new Set(`!@#$%^&*(),.?":{}|<>_+=-[]\\;'/~\``);
+  if (!Array.from(password).some((char) => specialChars.has(char))) {
     errors.push('Password must contain at least one special character');
   }
   

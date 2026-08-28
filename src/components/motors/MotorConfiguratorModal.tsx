@@ -594,7 +594,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
                           </div>
                           <span className="font-semibold text-foreground block">Manual Start</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
-                            Pull cord — simple & reliable
+                            Pull cord, simple & reliable
                           </span>
                         </button>
                       )}
