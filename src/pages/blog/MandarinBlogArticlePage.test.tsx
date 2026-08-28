@@ -64,4 +64,16 @@ describe('MandarinBlogArticlePage FAQ handling', () => {
     expect(screen.queryByRole('link', { name: '不安全链接' })).toBeNull();
     expect(screen.getByText('不安全链接')).toBeInTheDocument();
   });
+
+  it('keeps same-site absolute FAQ links as in-app routes', () => {
+    render(
+      <MemoryRouter>
+        <MandarinFaqAnswer answer="详见 [Mercury 加元定价参考](https://www.mercuryrepower.ca/pricing-reference)" />
+      </MemoryRouter>,
+    );
+
+    const link = screen.getByRole('link', { name: 'Mercury 加元定价参考' });
+    expect(link).toHaveAttribute('href', '/pricing-reference');
+    expect(link).not.toHaveAttribute('target');
+  });
 });

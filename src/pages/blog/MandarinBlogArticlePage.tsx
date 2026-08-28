@@ -25,6 +25,7 @@ import { AuthorByline } from '@/components/blog/AuthorByline';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { MandarinFaqAnswer } from '@/components/blog/MandarinFaqAnswer';
+import { MandarinMarkdownLink } from '@/components/blog/MandarinMarkdownLink';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import {
   Accordion,
@@ -226,15 +227,11 @@ export default function MandarinBlogArticlePage() {
                   const text = String(children);
                   return <h3 id={slugify(text)} {...props}>{children}</h3>;
                 },
-                a: ({ node, href, children, ...props }) => {
-                  if (!href) return <a {...props}>{children}</a>;
-                  const stripped = href.replace(/^https?:\/\/[^/]+/, '');
-                  const isInternal = href.startsWith('/') || href.includes('harrisboatworks') || href.includes('mercuryquote') || href.includes('mercuryrepower');
-                  if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
-                    return <Link to={stripped.startsWith('/') ? stripped : href} className="text-primary hover:underline">{children}</Link>;
-                  }
-                  return <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" {...props}>{children}</a>;
-                },
+                a: ({ href, children }) => (
+                  <MandarinMarkdownLink href={href} className="text-primary hover:underline">
+                    {children}
+                  </MandarinMarkdownLink>
+                ),
                 img: ({ node, src, alt, title }) => (
                   <ExpandableImage
                     src={src || ''}
