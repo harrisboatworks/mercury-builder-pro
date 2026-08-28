@@ -5323,7 +5323,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-28',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
@@ -5343,7 +5343,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are dated planning figures, not a live quote. For current Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Quick recommendation
 
@@ -5555,7 +5555,7 @@ There are two clocks: motor and rigging availability, then the scheduled shop wo
 
 **By Jay Harris**
 3rd-Generation Owner, Harris Boat Works
-Mercury Premier Dealer · Rice Lake, Ontario
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
     faqs: [
@@ -8980,7 +8980,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-28',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9004,7 +9004,7 @@ leftCriteria:
   - You like having open deck space in the front of the boat
   - You don't need bilge gauges, fancy electronics, or a wheel
   - 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
-leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
+leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller. Motor price is only the starting point; controls, rigging, and labour are quoted separately.
 leftVariant: alternative
 rightLabel: Remote helm
 rightCriteria:
@@ -9013,7 +9013,7 @@ rightCriteria:
   - You go further from the launch and value sitting forward at speed
   - You want power steering, hydraulic trim, SmartCraft displays
   - 60 HP and up, especially 90 HP+
-rightOutcome: More comfortable, more capable, more expensive. Mercury 90 HP remote with mechanical controls, $14K-$17K installed. Add $2-4K for full SmartCraft / hydraulic upgrade.
+rightOutcome: More comfortable, more capable, more expensive. Mercury 90 HP remote with mechanical controls. Motor price is only the starting point; controls, rigging, and labour are quoted separately, and a full SmartCraft or hydraulic package adds more.
 rightVariant: recommended
 whenInDoubt: If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
 ::
@@ -9024,7 +9024,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 |---|---|---|
 | Best hull length | 14-18 ft aluminum | 16-22 ft+ |
 | HP range | 20-60 HP sweet spot; Advanced Tiller available up to 115 HP | 60 HP+, especially 90 HP+ |
-| Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
+| Price (Mercury) | Bare motor from the [live pricing reference](/pricing-reference); controls, rigging, and labour quoted separately | Bare motor from the [live pricing reference](/pricing-reference); controls, rigging, labour, and any SmartCraft or hydraulic package quoted separately |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
@@ -11913,7 +11913,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-28',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -11952,14 +11952,14 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 | Motor Category | MSRP Range (CAD) |
 |----------------|------------|
 | 2.5-20hp portable / tiller | $1,385-$6,085 |
-| 25-60hp FourStroke | $5,860-$14,545 |
+| 25-60hp FourStroke | $5,425-$14,545 |
 | 75-115hp FourStroke | $16,125-$19,930 |
 | 115hp Pro XS | $19,485-$20,385 |
 | 150hp FourStroke / Pro XS | $24,780-$27,265 |
 | 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
 | 300hp FourStroke | $40,575-$42,935 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are dated planning figures, not a live quote. For current Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 *The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
@@ -12040,7 +12040,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ### Dealer Promotional Programs
 
-Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions.
+Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 **Current warranty position (verified July 2026)**:
 - Mercury's standard Canadian limited factory warranty is 3 years
@@ -12054,7 +12054,7 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 ### Financing Your Mercury
 
-**Current promotional financing (as of September 2026)**:
+**Current promotional financing**:
 - TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
 - Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
 - Financing minimum $5,000 before tax
@@ -22491,7 +22491,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
     author: 'Jay Harris',
     datePublished: '2026-03-05',
-    dateModified: '2026-08-26',
+    dateModified: '2026-08-28',
     publishDate: '2026-03-05',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -22507,7 +22507,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-06-09*
 
-> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
+> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards now account for the clear majority of new recreational marine engines sold, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
 
 We sell both. We service both. We have no axe to grind.
 
@@ -22544,7 +22544,7 @@ whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft
 
 | Factor | Outboard | Sterndrive (I/O) |
 |---|---|---|
-| 2026 new-boat share | Above 80% | Declining (was ~50% in 2010) |
+| 2026 new-boat share | Clear majority and still growing | Declining |
 | Failure points | No coolant system, bellows, or gimbal bearing | Bellows / gimbal / water-intrusion risk |
 | Fuel economy | Modern V6/V8 FourStroke more efficient | Older I/O less efficient |
 | Shallow water | Trims up in seconds (Kawartha shoals) | Limited |
@@ -22557,7 +22557,7 @@ whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft
 
 This isn't opinion. It's sales data.
 
-In 2010, outboards represented roughly 50% of the recreational marine engine market. By 2026, that number is above 80%. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
+Outboards have taken a steadily larger share of the recreational marine engine market since 2010, and by 2026 they are the clear majority of new installations. We are not going to put a precise share figure on that without a dated primary source that defines the market and the geography it measures. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
 
 Meanwhile, sterndrive R&D has slowed. MerCruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
 
@@ -22730,7 +22730,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
+*Harris Boat Works. Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.*
 
 ---
 
