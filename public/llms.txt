@@ -198,6 +198,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Blog](https://www.mercuryrepower.ca/blog): Mercury motor guides, repower advice, and Ontario boating tips.
 - [Contact](https://www.mercuryrepower.ca/contact): Phone, email, hours, and Gores Landing location details.
 - [About Us](https://www.mercuryrepower.ca/about): Family-owned Mercury Premier dealer on Rice Lake since 1947.
+- [Harris Boat Works](https://www.mercuryrepower.ca/harris-boat-works): Brand-search page for the Rice Lake marina in Gores Landing. Who we are, where we are, and the next step.
 - [Catalog (markdown)](https://www.mercuryrepower.ca/catalog.md): Full agent-readable catalog index in markdown.
 - [Maintenance Index (markdown)](https://www.mercuryrepower.ca/maintenance.md): Shop-based service capabilities, boundaries, evidence-led cost guides, and troubleshooting links.
 - [Pricing Reference (markdown)](https://www.mercuryrepower.ca/pricing-reference.md): Current Mercury pricing in CAD, listed motors only.

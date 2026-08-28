@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
@@ -5066,6 +5067,7 @@ const routes = [
     schemas: [aboutPageSchema()],
     extraNoscript: ABOUT_EXTRA
   },
+  getHarrisBoatWorksBrandPagePrerender(),
   {
     path: '/about/jay-harris',
     title: 'Jay Harris, Owner of Harris Boat Works (3rd Generation)',
@@ -5884,6 +5886,28 @@ function computePageId(pathname) {
 
 function stamp(route) {
   let html = shell;
+  if (route.stripInheritedShellSeo) {
+    html = html.replace(
+      /(<script\b[^>]*\bdata-rh=["']true["'][^>]*\btype=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,
+      (match, openTag, json, closeTag) => {
+        try {
+          const parsed = JSON.parse(json);
+          if (!Array.isArray(parsed?.['@graph'])) return match;
+          const inheritedHomepageIds = new Set([
+            `${SITE_URL}/#webpage`,
+            `${SITE_URL}/#breadcrumb`,
+          ]);
+          const graph = parsed['@graph'].filter(
+            (node) => !inheritedHomepageIds.has(node?.['@id'])
+          );
+          return `${openTag}${JSON.stringify({ ...parsed, '@graph': graph })}${closeTag}`;
+        } catch {
+          return match;
+        }
+      }
+    );
+    html = html.replace(/\s*<noscript>[\s\S]*?<\/noscript>/gi, '');
+  }
   const langCode = detectLang(route.path);
   const dirAttr = route.path === '/blog/ur' || route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
@@ -5990,6 +6014,12 @@ function stamp(route) {
       { re: /<meta\s+property=["']og:image:height["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:height" content="630" />' },
       { re: /<meta\s+property=["']og:image:type["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:type" content="image/webp" />' },
     );
+  }
+  if (route.ogImageAlt) {
+    socialReplacements.push({
+      re: /<meta\s+property=["']og:image:alt["'][^>]*>/gi,
+      tag: `<meta data-rh="true" property="og:image:alt" content="${escapeHtml(route.ogImageAlt)}" />`,
+    });
   }
   for (const { re, tag } of socialReplacements) {
     if (re.test(html)) {
@@ -6098,6 +6128,7 @@ const staticSitemapEntries = [
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
   { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },

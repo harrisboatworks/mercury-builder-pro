@@ -305,6 +305,7 @@ const SPECS: SpecInput[] = [
       { label: 'Pricing Reference', href: '/pricing-reference' },
       { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
       { label: 'Bewdley', href: '/locations/bewdley' },
+      { label: 'Harris Boat Works brand page', href: '/harris-boat-works' },
       { label: 'Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965', href: 'https://www.harrisboatworks.ca' },
     ],
   },
