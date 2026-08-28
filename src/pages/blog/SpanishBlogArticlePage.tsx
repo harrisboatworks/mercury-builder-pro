@@ -315,8 +315,8 @@ export default function SpanishBlogArticlePage() {
         {/* Back nav */}
         <nav className="mb-8">
           <Link to="/blog" className="text-primary hover:underline text-sm flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" />
-            ← Volver al blog
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            Volver al blog
           </Link>
         </nav>
 

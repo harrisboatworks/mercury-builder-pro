@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-07-31
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-07-31
+date_modified: 2026-08-27
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,15 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
-> **Quick answer:** Harris Boat Works does not publish a one-price-fits-all winterization range. The current quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit those details at [hbw.wiki/service](https://hbw.wiki/service) before the December 1 closure.
+> **Quick answer:** Harris Boat Works publishes its current 2026–27 winterization and storage rates on the [HBW rate card](https://www.harrisboatworks.ca/winter-storage). The boat-specific quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service).
 
-The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, customer access, or pickup during that period. Customers arrange their own fall drop-off and spring pickup.
+The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
 
-*HBW operating scope and pricing references verified July 24, 2026. All amounts are CAD before HST unless stated otherwise.*
+*HBW operating scope and pricing references verified August 27, 2026. All amounts are CAD before HST unless stated otherwise.*
 
 ## What Does Boat Winterization Cost in Ontario?
 
@@ -51,7 +51,7 @@ Instead, ask whether the quote identifies each cost driver:
 | Boat systems | Livewell, washdown, potable-water, head, bilge, pumps, and other systems that can retain water |
 | Storage preparation | Engine storage procedure, battery plan, drainage, moisture control, and approved cover or shrinkwrap scope |
 | Hull and trailer work | Shrinkwrap, outdoor storage, trailer service, and repairs listed separately when requested |
-| Spring work | Spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers as of July 2026 |
+| Spring work | Spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers as of September 2026 |
 
 A useful quote states what is included, what is excluded, what requires approval if discovered, and when the work can be considered complete.
 
@@ -89,7 +89,7 @@ A professional scope may address:
 - **Storage position:** the position specified for the engine so water can drain as designed
 - **Battery plan:** charge and condition check, then disconnect to prevent parasitic draw
 
-A healthy battery may remain in the boat when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. Mercury's battery guidance likewise starts with fully charging the battery and disconnecting the terminals; removal depends on whether suitable maintenance charging is available.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. Removal is not a universal HBW requirement.
 
 ## Winterization and Annual Service Are Related, Not Identical
 
@@ -105,9 +105,9 @@ The two scopes often overlap, but one does not automatically prove the other was
 
 The invoice and work order should show what was actually completed.
 
-## From the Shop: 584 Winterizations in One Fall
+## From the Shop: 584 Winterization Records in One Fall
 
-HBW recorded **584 winterizations from August through November 2025**. That number is useful because it shows how varied the work really is: portable outboards, fishing boats, pontoons, larger Mercury engines, MerCruiser packages, and boats with very different onboard systems do not belong under one generic price.
+HBW recorded **584 completed winterization records from August through November 2025**. That number is useful because it shows how varied the work really is: portable outboards, fishing boats, pontoons, larger Mercury engines, MerCruiser packages, and boats with very different onboard systems do not belong under one generic price.
 
 The repeat findings are practical:
 
@@ -121,15 +121,15 @@ That is why the service request asks for the actual boat and engine details befo
 
 ## Shrinkwrap and Outdoor Winter Storage at HBW
 
-HBW offers **outdoor winter storage with shrinkwrap only**. We do not offer indoor, heated, climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
 Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount, a per-foot rate, or a service is included unless it is written on the current quote.
 
-Customers arrange their own transportation to and from Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-## Timing: Finish the Physical Work Before December 1
+## How to Start
 
-Fall winterization and storage intake must be completed before the physical marina closes on December 1.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 HBW is closed December 1 through April 1:
 
@@ -138,11 +138,11 @@ HBW is closed December 1 through April 1:
 - No winter pickup or drop-off
 - No spring commissioning during the closure
 
-Remote planning and approvals can continue. Physical work resumes after reopening. Confirm the appointment and drop-off window before towing; do not rely on a generic month or an assumed slot.
+Remote planning and approvals can continue. Physical work resumes after reopening.
 
 ## Spring Commissioning Is a Separate Acceptance Step
 
-As of July 2026, spring commissioning is:
+As of September 2026, spring commissioning is:
 
 - **Included for HBW winter-storage customers**
 - **$99 for non-storage customers**, before HST
@@ -179,7 +179,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
 
 ### What does boat winterization cost at Harris Boat Works?
 
-HBW does not publish a generic winterization range. The current quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.
+HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.
 
 ### What does a proper Mercury winterization include?
 
@@ -191,7 +191,7 @@ Yes, when the work is within your ability and you follow the exact serial-number
 
 ### Can the battery stay in the boat over winter?
 
-A healthy battery may remain when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. The battery must not be left connected where parasitic loads can discharge it.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The battery must not be left connected where parasitic loads can discharge it.
 
 ### When must HBW winterization be completed?
 
@@ -207,11 +207,11 @@ Do not assume it is included. Winterization, shrinkwrap, outdoor storage, traile
 
 ### What storage does HBW offer?
 
-Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
 ### What does spring commissioning cost?
 
-As of July 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers, before HST. Plan pickup or launch only after HBW confirms the approved work is complete.
+As of September 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers, before HST. Plan pickup or launch only after HBW confirms the approved work is complete.
 
 ## Related guides
 
@@ -219,7 +219,7 @@ As of July 2026, spring commissioning is included for HBW winter-storage custome
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 - [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Kawartha Lakes Boat Storage: What to Compare Before Booking](/blog/boat-storage-kawartha-lakes), compare Kawartha Lakes boat storage options
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 
 ## Next steps
 

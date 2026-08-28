@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -73,10 +73,10 @@ Mercury Premier is the top dealer tier, parts depth, warranty authorization, tec
 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what works for your hull and how you use it.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes when we reopen in early April.
@@ -143,7 +143,7 @@ About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One 
 
 ### Can HBW be my primary Mercury dealer if I live in Whitby?
 
-Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
+Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
 
 ### Do you serve Brooklin and north Whitby?
 

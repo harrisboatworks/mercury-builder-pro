@@ -49,7 +49,7 @@ Boats are big, light, high-surface objects. Wind has an outsized effect on them.
 
 More specifically: **your bow is lighter and higher than your stern.** On most single-outboard boats, the engine weight keeps the stern somewhat planted. The bow is a big empty fiberglass scoop up in the air, wind grabs it like a sail and pushes it downwind, fast.
 
-On a pontoon, this effect is amplified. [Pontoon boats have enormous lateral surface area](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), the tubes, decking, furniture, all of it acts like a billboard in crosswind. A 24-foot pontoon can drift sideways at a surprising rate in a modest 10-knot breeze. The boat doesn't feel like it's moving until suddenly it is.
+On a pontoon, this effect is amplified. [Pontoon boats have enormous lateral surface area](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026), the tubes, decking, furniture, all of it acts like a billboard in crosswind. A 24-foot pontoon can drift sideways at a surprising rate in a modest 10-knot breeze. The boat doesn't feel like it's moving until suddenly it is.
 
 Understanding this physics is step one. The wind isn't attacking you, it's just doing what wind does. Your job is to use it, not fight it.
 
@@ -143,7 +143,7 @@ Pontoons need **more throttle into the wind** than people expect. All that winda
 
 The fix: carry a bit more speed, maintain steerage until you're closer, then cut to neutral and use a short reverse burst just before the dock. The same wind drag that fought you at speed now helps you stop.
 
-A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats) helps significantly here. The larger prop diameter gives better thrust at low RPM, so you can hold steerage without revving as high. If you're babysitting throttle inputs on every docking, this is worth a look.
+A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) helps significantly here. The larger prop diameter gives better thrust at low RPM, so you can hold steerage without revving as high. If you're babysitting throttle inputs on every docking, this is worth a look.
 
 ---
 

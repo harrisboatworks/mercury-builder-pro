@@ -31,8 +31,6 @@ revenue_driver: repower
 
 > **Quick answer:** Repower when the hull is structurally sound, the boat still suits how you use it, and the motor is the main problem. Replace or repair the hull first when the transom, floor, stringers, or impact areas show structural concerns. A photo can help with triage, but the final recommendation requires an in-person boat-specific assessment.
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
-
 ---
 
 ![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)

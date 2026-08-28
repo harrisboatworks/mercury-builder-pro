@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works Mercury Dealer Ontario"
 description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service."
 category: "About Us"
 date_published: 2026-05-04
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** About Us  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
@@ -78,7 +78,7 @@ Because HBW provides Mercury sales, rigging, storage, water testing, and service
 We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and connected waters.
 
 - Boat-to-motor matching specific to Ontario hulls and use cases
-- Prop selection based on real sea-trial data from local lakes
+- Prop selection based on real lake-test data from local lakes
 - Service patterns matched to Ontario seasonal cycles
 - A customer base that overlaps with yours
 - Reputation accountability in a small market where quality gets noticed
@@ -96,7 +96,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Honest hull walk-around to confirm the boat is repower-worthy
 - Use-case-driven motor selection matched to the specific boat and use
 - Live pricing transparency on the motor selection page
-- Prop selection during the sea-trial to confirm performance
+- Prop selection during the lake-test to confirm performance
 - PCL update as part of the project
 - Service log entry for warranty support and resale value
 - Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
@@ -145,7 +145,7 @@ Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated stora
 
 ### Can I bring a non-Mercury motor to Harris Boat Works for service?
 
-Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.
+Some non-Mercury service we handle, but our engine repair depth is Mercury and MerCruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.
 
 ### What if I bought my boat or motor somewhere else?
 
@@ -164,8 +164,8 @@ Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
+- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Pontoon Eligible for Mercury Command Thrust? (2026)"
 description: "Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury command thrust pontoon eligibility","command thrust for pontoon","is command thrust worth it pontoon","mercury command thrust compatibility","tritoon command thrust eligibility","command thrust gearcase pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026
 
@@ -57,7 +57,7 @@ If your boat doesn't fit one of these neatly, send us details and we'll work thr
 
 ## What Command Thrust actually does (and what it doesn't)
 
-Before checking eligibility it helps to know what you're buying. [Command Thrust is a Mercury gearcase option, not a separate motor](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull). The same Mercury FourStroke powerhead bolts on top, but the lower unit is taller, the gears are heavier, and the prop diameter is roughly one inch bigger.
+Before checking eligibility it helps to know what you're buying. [Command Thrust is a Mercury gearcase option, not a separate motor](/blog/mercury-command-thrust-complete-guide-2026). The same Mercury FourStroke powerhead bolts on top, but the lower unit is taller, the gears are heavier, and the prop diameter is roughly one inch bigger.
 
 The bigger prop and lower gear ratio convert horsepower into pushing force rather than top-end speed. On a heavy pontoon, this means:
 

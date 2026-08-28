@@ -14,18 +14,29 @@ import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecifi
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { usePrefetchedInsights } from '@/hooks/usePrefetchedInsights';
 import { MotorComparisonCard } from './MotorComparisonCard';
-import { FinancingCTACard, parseFinancingCTA } from './FinancingCTACard';
-import { FINANCING_MINIMUM } from '@/lib/finance';
+import { FinancingCTACard } from './FinancingCTACard';
+import { TradeInCTACard } from './TradeInCTACard';
+import { ServiceCTACard } from './ServiceCTACard';
+import { RepowerCTACard } from './RepowerCTACard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
 import { VoiceButton } from './VoiceButton';
 import { VoiceHeaderButton } from './VoiceHeaderButton';
 import { useVoice } from '@/contexts/VoiceContext';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from 'sonner';
 import { VoiceActivityCard } from './VoiceActivityCard';
 import { VOICE_ACTIVITY_EVENT, type VoiceActivityEvent } from '@/lib/voiceActivityFeed';
+import { ChatWriteConsentCard } from './ChatWriteConsentCard';
+import {
+  CHAT_ERROR_TEXT,
+  buildChatMotorContext,
+  buildChatQuoteProgress,
+  parseAssistantCommandMarkers,
+  stripStreamingCommandMarkers,
+  type ChatPendingWrite,
+  type ChatWriteStatus,
+} from './chatSessionHelpers';
+import { getChatPageCategory } from './chatLayout';
 
 interface Message {
   id: string;
@@ -41,6 +52,11 @@ interface Message {
   };
   activityData?: VoiceActivityEvent;
   financingCTA?: import('./FinancingCTACard').FinancingCTAData;
+  tradeInCTA?: import('./TradeInCTACard').TradeInCTAData;
+  serviceCTA?: import('./ServiceCTACard').ServiceCTAData;
+  repowerCTA?: import('./RepowerCTACard').RepowerCTAData;
+  pendingWrite?: ChatPendingWrite;
+  writeStatus?: ChatWriteStatus;
 }
 
 export interface EnhancedChatWidgetHandle {
@@ -92,10 +108,25 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     const [conversationHistory, setConversationHistory] = useState<any[]>([]);
     const [showHistoryBanner, setShowHistoryBanner] = useState(false);
     const [hasInitialized, setHasInitialized] = useState(false);
+    const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
     
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const sendInFlightRef = useRef(false);
     const messageIdMap = useRef<Map<string, string>>(new Map()); // local id -> db id
+
+    useEffect(() => {
+      if (!isOpen) return;
+      const onKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
+          onClose();
+        }
+      };
+      document.addEventListener('keydown', onKeyDown);
+      return () => document.removeEventListener('keydown', onKeyDown);
+    }, [isOpen, onClose]);
     
     const location = useLocation();
     const { state } = useQuote();
@@ -218,21 +249,11 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       });
     }, []);
 
-    // Get page category for context-aware chat reset
-    const getPageCategory = (pathname: string): string => {
-      if (pathname.includes('/repower')) return 'repower';
-      if (pathname.includes('/quote/')) return 'quote';
-      if (pathname.includes('/financing')) return 'financing';
-      if (pathname.includes('/promotions')) return 'promotions';
-      if (pathname.includes('/contact')) return 'contact';
-      return 'general';
-    };
-
     // Reset initialization when page category changes (so chat restarts fresh on new context)
     const currentCategoryRef = useRef<string | null>(null);
     
     useEffect(() => {
-      const newCategory = getPageCategory(location.pathname);
+      const newCategory = getChatPageCategory(location.pathname);
       
       // If category changed since last check, reset initialization
       if (currentCategoryRef.current !== null && currentCategoryRef.current !== newCategory) {
@@ -255,7 +276,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           console.log('[Chat] Voice context loaded:', voiceCtx);
         }
         
-        const currentCategory = getPageCategory(location.pathname);
+        const currentCategory = getChatPageCategory(location.pathname);
         const storedCategory = localStorage.getItem('chat_page_category');
         
         // Check if page context changed significantly (different category)
@@ -469,7 +490,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     }, [clearConversation, saveMessage]);
 
     const handleSend = async (text: string = inputText) => {
-      if (!text.trim() || isLoading) return;
+      if (!text.trim() || isLoading || sendInFlightRef.current) return;
+      sendInFlightRef.current = true;
+      setLastFailedMessage(null);
 
       const userMessage: Message = {
         id: Date.now().toString(),
@@ -503,33 +526,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       try {
         let fullResponse = '';
         
-        // Build rich context for AI including motor details, quote progress, trade-in
         const activeMotor = state.previewMotor || state.motor;
-        const quoteProgress = {
-          step: location.pathname.includes('motor-selection') ? 1 :
-                location.pathname.includes('options') ? 2 :
-                location.pathname.includes('purchase-path') ? 3 :
-                location.pathname.includes('trade-in') ? 4 :
-                location.pathname.includes('schedule') ? 5 :
-                location.pathname.includes('summary') ? 6 : 1,
-          total: 6,
-          selectedPackage: state.selectedOptions?.length > 0 ? 'Complete Package' : null,
-          tradeInValue: state.tradeInInfo?.estimatedValue || null
-        };
+        const quoteProgress = buildChatQuoteProgress(location.pathname, state);
         
         await streamChat({
           message: text.trim(),
           conversationHistory,
           context: {
-            currentMotor: activeMotor ? {
-              id: (activeMotor as any).id,
-              model: activeMotor.model || (activeMotor as any).model_display || '',
-              hp: activeMotor.hp || (activeMotor as any).horsepower || 0,
-              price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price || activeMotor.salePrice,
-              family: (activeMotor as any).family,
-              description: (activeMotor as any).description,
-              features: (activeMotor as any).features
-            } : null,
+            currentMotor: buildChatMotorContext(activeMotor),
             currentPage: location.pathname,
             boatInfo: state.boatInfo,
             quoteProgress,
@@ -545,13 +549,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           },
           onDelta: (chunk) => {
             fullResponse += chunk;
-            // Strip all command markers during streaming to hide them from user
-            const displayText = fullResponse
-              .replace(/\[LEAD_CAPTURE:.*$/s, '')
-              .replace(/\[SEND_SMS:.*$/s, '')
-              .replace(/\[PRICE_ALERT:.*$/s, '')
-              .replace(/\[FINANCING_CTA:.*$/s, '')
-              .trim();
+            const displayText = stripStreamingCommandMarkers(fullResponse);
             setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
                 ? { ...msg, text: displayText, isStreaming: true }
@@ -560,182 +558,80 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             scrollToBottom();
           },
           onDone: async (finalResponse) => {
-            // Check for lead capture pattern and process it
-            let displayResponse = finalResponse;
-            const leadMatch = finalResponse.match(/\[LEAD_CAPTURE:\s*(\{[^}]+\})\]/);
-            
-            if (leadMatch) {
-              try {
-                const leadData = JSON.parse(leadMatch[1]);
-                console.log('[Chat] Lead capture detected:', leadData);
-                
-                // Remove the marker from the displayed message
-                displayResponse = displayResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
-                
-                // Get conversation context (last few exchanges)
-                const recentContext = conversationHistory.slice(-4).map(h => 
-                  `${h.role}: ${h.content.substring(0, 100)}`
-                ).join(' | ');
-                
-                // Get motor context
-                const activeMotor = state.previewMotor || state.motor;
-                
-                // Submit lead to edge function
-                const { error: leadError } = await supabase.functions.invoke('capture-chat-lead', {
-                  body: {
-                    name: leadData.name,
-                    phone: leadData.phone,
-                    email: leadData.email,
-                    conversationContext: recentContext || 'Customer requested callback',
-                    currentPage: location.pathname,
-                    motorContext: activeMotor ? {
-                      model: activeMotor.model || (activeMotor as any).model_display,
-                      hp: activeMotor.hp || (activeMotor as any).horsepower,
-                      price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price
-                    } : undefined
-                  }
-                });
-                
-                if (leadError) {
-                  console.error('[Chat] Failed to capture lead:', leadError);
-                } else {
-                  console.log('[Chat] Lead captured successfully');
-                  toast.success("We've got your info! Someone will call you soon.");
-                }
-              } catch (parseError) {
-                console.error('[Chat] Failed to parse lead capture:', parseError);
-              }
-            }
-            
-            // Check for SMS send pattern
-            const smsMatch = finalResponse.match(/\[SEND_SMS:\s*(\{[^}]+\})\]/);
-            if (smsMatch) {
-              try {
-                const smsData = JSON.parse(smsMatch[1]);
-                console.log('[Chat] SMS send detected:', smsData);
-                
-                // Remove the marker from displayed message
-                displayResponse = displayResponse.replace(/\[SEND_SMS:\s*\{[^}]+\}\]/, '').trim();
-                
-                // Determine message type and motor context
-                const activeMotor = state.previewMotor || state.motor;
-                
-                const { error: smsError } = await supabase.functions.invoke('voice-send-follow-up', {
-                  body: {
-                    customer_name: smsData.name || 'Friend',
-                    customer_phone: smsData.phone,
-                    message_type: smsData.content === 'comparison' ? 'comparison' : 
-                                  smsData.content === 'promo_reminder' ? 'promo_reminder' : 'quote_interest',
-                    motor_model: activeMotor?.model || smsData.motors?.join(' vs '),
-                    motor_id: activeMotor?.id,
-                    custom_note: smsData.content === 'comparison' 
-                      ? `Comparing: ${smsData.motors?.join(' vs ')}`
-                      : undefined
-                  }
-                });
-                
-                if (smsError) {
-                  console.error('[Chat] Failed to send SMS:', smsError);
-                } else {
-                  console.log('[Chat] SMS sent successfully');
-                  toast.success("Text sent! Check your phone.");
-                }
-              } catch (parseError) {
-                console.error('[Chat] Failed to parse SMS command:', parseError);
-              }
-            }
-            
-            // Check for price alert pattern
-            const priceAlertMatch = finalResponse.match(/\[PRICE_ALERT:\s*(\{[^}]+\})\]/);
-            if (priceAlertMatch) {
-              try {
-                const alertData = JSON.parse(priceAlertMatch[1]);
-                console.log('[Chat] Price alert detected:', alertData);
-                
-                // Remove the marker from displayed message
-                displayResponse = displayResponse.replace(/\[PRICE_ALERT:\s*\{[^}]+\}\]/, '').trim();
-                
-                // Get motor context for lead capture
-                const activeMotor = state.previewMotor || state.motor;
-                
-                // Capture as lead with price alert context
-                await supabase.functions.invoke('capture-chat-lead', {
-                  body: {
-                    name: alertData.name || 'Price Alert Subscriber',
-                    phone: alertData.phone,
-                    conversationContext: `Price drop alert for ${alertData.motor_hp || activeMotor?.hp || 'unknown'}HP motor`,
-                    currentPage: location.pathname,
-                    motorContext: activeMotor ? {
-                      model: activeMotor.model || (activeMotor as any).model_display,
-                      hp: activeMotor.hp || (activeMotor as any).horsepower,
-                      price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price
-                    } : undefined
-                  }
-                });
-                
-                console.log('[Chat] Price alert lead captured');
-                toast.success("Got it! We'll text you if pricing changes.");
-              } catch (parseError) {
-                console.error('[Chat] Failed to parse price alert:', parseError);
-              }
-            }
-            
-            // Parse financing CTA - only show if price meets minimum threshold
-            let financingCTA: import('./FinancingCTACard').FinancingCTAData | undefined;
-            const { displayText: afterFinancing, ctaData } = parseFinancingCTA(displayResponse);
-            if (ctaData) {
-              displayResponse = afterFinancing;
-              // Only show CTA if motor price meets minimum financing threshold
-              if (ctaData.price >= FINANCING_MINIMUM) {
-                financingCTA = ctaData;
-                console.log('[Chat] Financing CTA parsed:', ctaData);
-              } else {
-                console.log('[Chat] Financing CTA ignored - price below minimum:', ctaData.price);
-              }
-            }
+            const {
+              displayText,
+              financingCTA,
+              tradeInCTA,
+              serviceCTA,
+              repowerCTA,
+              pendingWrite,
+            } = parseAssistantCommandMarkers(finalResponse, {
+              currentPage: location.pathname,
+              motor: activeMotor,
+              conversationHistory,
+            });
             
             setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
-                ? { ...msg, text: displayResponse, isStreaming: false, financingCTA }
+                ? {
+                    ...msg,
+                    text: displayText,
+                    isStreaming: false,
+                    financingCTA,
+                    tradeInCTA,
+                    serviceCTA,
+                    repowerCTA,
+                    pendingWrite,
+                    writeStatus: pendingWrite ? 'needs_consent' : undefined,
+                  }
                 : msg
             ));
             
-            // Save assistant message to DB (without markers)
-            const assistantDbId = await saveMessage(displayResponse, 'assistant');
+            const assistantDbId = await saveMessage(displayText, 'assistant');
             if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
             
             setConversationHistory(prev => [
               ...prev,
               { role: 'user', content: text.trim() },
-              { role: 'assistant', content: displayResponse }
+              { role: 'assistant', content: displayText }
             ]);
             
+            sendInFlightRef.current = false;
             setIsLoading(false);
-            onAIResponse?.(); // Notify parent that AI responded
+            onAIResponse?.();
           },
           onError: (error) => {
             console.error('Stream error:', error);
-            const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
-                ? { ...msg, text: errorText, isStreaming: false }
+                ? { ...msg, text: CHAT_ERROR_TEXT, isStreaming: false }
                 : msg
             ));
-            saveMessage(errorText, 'assistant');
+            saveMessage(CHAT_ERROR_TEXT, 'assistant');
+            setLastFailedMessage(text.trim());
+            sendInFlightRef.current = false;
             setIsLoading(false);
           }
         });
 
       } catch (error) {
         console.error('Chat error:', error);
-        const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
         setMessages(prev => prev.map(msg => 
           msg.id === streamingId 
-            ? { ...msg, text: errorText, isStreaming: false }
+            ? { ...msg, text: CHAT_ERROR_TEXT, isStreaming: false }
             : msg
         ));
+        setLastFailedMessage(text.trim());
+        sendInFlightRef.current = false;
         setIsLoading(false);
       }
+    };
+
+    const handleRetry = () => {
+      if (!lastFailedMessage) return;
+      const retryText = lastFailedMessage;
+      setLastFailedMessage(null);
+      handleSend(retryText);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -769,6 +665,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             damping: 28,
             mass: 0.8
           }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mercury Expert chat"
           className="fixed bottom-20 right-4 left-4 sm:bottom-4 sm:left-auto sm:w-[380px] z-[70]"
         >
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_8px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/50 overflow-hidden">
@@ -801,6 +700,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   variant="ghost"
                   size="sm"
                   onClick={onClose}
+                  aria-label="Close AI chat assistant"
                   className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
                 >
                   <X className="w-5 h-5" />
@@ -881,6 +781,26 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                                 {!message.isUser && message.financingCTA && (
                                   <FinancingCTACard data={message.financingCTA} />
                                 )}
+                                {!message.isUser && message.tradeInCTA && (
+                                  <TradeInCTACard data={message.tradeInCTA} />
+                                )}
+                                {!message.isUser && message.serviceCTA && (
+                                  <ServiceCTACard data={message.serviceCTA} />
+                                )}
+                                {!message.isUser && message.repowerCTA && (
+                                  <RepowerCTACard data={message.repowerCTA} />
+                                )}
+                                {!message.isUser && message.pendingWrite && message.writeStatus && (
+                                  <ChatWriteConsentCard
+                                    write={message.pendingWrite}
+                                    status={message.writeStatus}
+                                    onStatusChange={(status) => {
+                                      setMessages((prev) => prev.map((item) =>
+                                        item.id === message.id ? { ...item, writeStatus: status } : item
+                                      ));
+                                    }}
+                                  />
+                                )}
                               </>
                             )}
                           </div>
@@ -942,6 +862,16 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
 
                 {/* Input Area - Compact */}
                 <div className="px-3 py-2 bg-white border-t border-gray-100">
+                  {lastFailedMessage && !isLoading && (
+                    <button
+                      type="button"
+                      onClick={handleRetry}
+                      aria-label="Retry last message"
+                      className="mb-2 text-xs text-muted-foreground hover:text-gray-700"
+                    >
+                      Retry
+                    </button>
+                  )}
                   <div className="flex items-center gap-2 bg-gray-50 rounded-full px-3 h-11 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
                     <VoiceButton
                       isConnected={voice.isConnected}
@@ -959,12 +889,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                       onChange={(e) => setInputText(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
+                      aria-label="Ask the Mercury Expert"
                       className="flex-1 px-1 py-0 h-full bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-muted-foreground font-light"
                       disabled={isLoading || voice.isConnected}
                     />
                     <Button
                       onClick={() => handleSend()}
                       disabled={!inputText.trim() || isLoading || voice.isConnected}
+                      aria-label="Send message"
                       className="h-8 w-8 p-0 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 disabled:opacity-40 disabled:bg-gray-300"
                     >
                       <Send className="w-3.5 h-3.5" />

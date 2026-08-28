@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Time to Buy Boat Motor Ontario"
 description: "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
 ## When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
 
-> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed roughly December 1 to April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed December 1 through April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 Conventional wisdom says winter is deal time. Half right. The honest answer is more useful: pricing flexibility is one piece of the timing puzzle, and it's rarely the biggest piece. Install slots, trade values, and Mercury's model year cycle all move with the calendar too.
 
@@ -61,7 +61,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Mercury's model year cycle.** Mercury flips model years July 1. The August window is when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
-**Off-season dealer economics.** Our shop is closed roughly December 1 to April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
+**Off-season dealer economics.** Our shop is closed December 1 through April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
 
 **Spring install crunch.** From early April through opener, every boat that has been sitting in storage wants to be on the water yesterday. We are rigging, swapping, and water-testing as fast as we can. There is less flexibility on pricing in spring because there is less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
 
@@ -71,7 +71,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 ## What Year-End Specifically Looks Like at HBW
 
-The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens when we reopen in early April. Here is what actually happens:
+The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed December 1 through April 1, so install work itself happens when we reopen in early April. Here is what actually happens:
 
 **November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 
@@ -155,7 +155,7 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 
 ### How does HBW handle install scheduling for spring delivery?
 
-We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
+We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed December 1 through April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
 ### Does additional promotional coverage depend on when I buy?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Legend Boats Mercury Packages Ontario"
 description: "Legend Boats with Mercury power: 2026 lineup, pairings, all-in pricing, and hull recommendations from an Ontario Legend dealer."
 category: "Buying Guide"
 date_published: 2026-05-21
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-21  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 
@@ -48,7 +48,7 @@ A few facts that matter:
 - **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
 - **Sells exclusively in Canada.** Legend isn't trying to be a global brand, every model is sized, equipped, and warrantied for Canadian buyers.
 - **[Mercury Marine](https://www.mercurymarine.com/canada/en/) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
-- **6-Year WOWranty** on Legend boat components, **Leakproof for Life** hull warranty (transferable up to 10 years), and a **Lifetime Floor Warranty.**
+- Legend's warranty coverage on components, hull, and floor differs by model line; check the current warranty terms for the boat you're looking at.
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
 We've been a Mercury dealer since 1965 and a Legend dealer for years. The combination is genuinely the most popular new-boat package on Rice Lake and through the Kawarthas.
@@ -152,11 +152,11 @@ The standard motor on each Legend hull is sized for the typical use case, but th
 | **Q 21-23** | Mercury 60 ELPT CT | Mercury 150-250 | Watersports, larger passenger loads |
 | **Halo 19-23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
 
-**[Command Thrust (CT)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) matters on pontoons.** It's a larger gearcase that turns a bigger prop more slowly, way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
+**[Command Thrust (CT)](/blog/mercury-command-thrust-complete-guide-2026) matters on pontoons.** It's a larger gearcase that turns a bigger prop more slowly, way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
 
 **Pro XS** matters on the XT 18 and up. [Performance-tuned variants of the FourStroke](/blog/fourstroke-vs-pro-xs) with sport gearcases and higher RPM ceilings. Adds 3-5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
 
-**Verado** is the premium option on bigger Halo and Q Series pontoons, naturally aspirated V8/V10s, the smoothest and quietest Mercury platform. Significant cost step; for higher-end boats only.
+**Verado** is the premium option on bigger Halo and Q Series pontoons, naturally aspirated V8/V10s, the smoothest and quietest Mercury platform, though at HBW it's special-order only rather than stock. Significant cost step; for higher-end boats only.
 
 ---
 
@@ -178,7 +178,7 @@ Legend's "All-In Pricing" model means the price you see on the website includes:
 - Extended warranty (Mercury Product Protection, well worth considering)
 - Accessories (anchors, life jackets beyond minimum, fishing electronics beyond standard)
 
-Plan on **5-8% on top of the listed price** for HST and reasonable optional equipment. Bigger optional packages can push higher.
+Plan on **13% HST on top of the listed price**, plus whatever you add in reasonable optional equipment. Bigger optional packages can push higher.
 
 ---
 
@@ -194,7 +194,7 @@ A few things that aren't on the Legend website:
 
 **On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Drop it at our slip, pick it up running.
 
-**Trade-in math.** [We take Legend trade-ins](/blog/boat-motor-trade-in-guide) (and most other brands). Single-transaction trade saves the Kijiji hassle and gives you tax-on-difference savings on the new boat (you only pay HST on the price difference between trade and new, not the full new price).
+**Trade-in math.** [We take Legend trade-ins](/blog/outboard-trade-in-value-ontario-hbw) (and most other brands). Single-transaction trade saves the Kijiji hassle and gives you tax-on-difference savings on the new boat (you only pay HST on the price difference between trade and new, not the full new price).
 
 **Real conversations.** We're not the biggest Legend dealer in Ontario. We're not trying to be. What we are is a third-generation family business that's been on this lake since 1947 and that has time to actually walk you through which hull is right for the way you'll use the boat.
 
@@ -224,7 +224,7 @@ Yes, we can order any 2026 Legend hull and option package. Some popular models w
 
 ### Does Legend offer financing?
 
-Mercury Repower Center financing is available through HBW for the engine portion. Boat financing varies by lender and credit profile, we have relationships with marine financing providers and can walk you through options when we sit down to spec a boat.
+Engine financing options and terms change often; we'll walk you through what's currently available through HBW for the engine portion when we sit down to spec a boat. Boat financing varies by lender and credit profile, we have relationships with marine financing providers and can walk you through options when we sit down to spec a boat.
 
 ## Related guides
 

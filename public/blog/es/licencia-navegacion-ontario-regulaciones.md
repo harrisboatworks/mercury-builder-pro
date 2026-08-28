@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones.md
-last_updated: 2026-08-14
+last_updated: 2026-08-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Licencia de navegación y regulaciones de seguridad en Ontario"
 description: "Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario."
 category: "Regulaciones"
 date_published: 2026-04-12
-date_modified: 2026-08-14
+date_modified: 2026-08-15
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-14
+**Última revisión:** 2026-08-15  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 
@@ -228,3 +228,4 @@ No. La PCOC es la competencia del operador. El PCL es el registro de la embarcac
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

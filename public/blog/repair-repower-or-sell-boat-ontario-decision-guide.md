@@ -135,7 +135,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
 
-**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect. One number private sellers miss: when you trade in through an Ontario dealer, HST applies only to the difference between the new purchase and your trade value, not the full price. On a larger purchase that tax savings can close most of the gap between trade value and private-sale value.
+**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/outboard-trade-in-value-ontario-hbw) covers what to expect. One number private sellers miss: when you trade in through an Ontario dealer, HST applies only to the difference between the new purchase and your trade value, not the full price. On a larger purchase that tax savings can close most of the gap between trade value and private-sale value.
 
 ![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 

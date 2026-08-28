@@ -4233,7 +4233,7 @@ const HUB_DEFS = [
       { heading: 'Boat-type matching', cards: [
         { title: 'Best Mercury Outboard for Aluminum Fishing Boats', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
         { title: 'Best Mercury Outboard for Pontoon Boats', to: '/blog/best-mercury-outboard-pontoon-boats' },
-        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-complete-guide-2026' },
       ]},
       { heading: 'Configuration', cards: [
         { title: 'Mercury Propeller Selection Guide', to: '/blog/mercury-propeller-selection-guide' },
@@ -4309,7 +4309,7 @@ const HUB_DEFS = [
       { question: 'How long does a Mercury last with proper maintenance?', answer: 'There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim.' },
       { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
       { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-      { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+      { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
       { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service.' },
     ],
   },
@@ -4630,7 +4630,7 @@ const REPOWER_COST_EXTRA = () => commercialBodyHtml({
 
 const REPOWER_PROCESS_FAQS = [
   { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
-  { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
+  { q: 'Do I need to bring my boat to Rice Lake?', a: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to 5369 Harris Boat Works Rd, Gores Landing. HBW does not deliver boats, ship motors, or offer mobile, dockside, or on-site service.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
   { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
   { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
@@ -4935,6 +4935,80 @@ const routes = [
       return linksHtml + articlesSection;
     }
   },
+  ...[
+    {
+      lang: 'ko',
+      articles: koreanBlogArticles,
+      htmlLang: 'ko',
+      title: 'Mercury 한국어 가이드 | Harris Boat Works',
+      h1: 'Mercury 한국어 가이드',
+      intro: '온타리오 보터를 위한 Mercury 한국어 가이드: 선외기, 엔진 교체, 정비, 안전 및 Rice Lake 낚시 정보.',
+      postsHeading: '전체 가이드',
+      disclaimer: 'HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.',
+    },
+    {
+      lang: 'es',
+      articles: spanishBlogArticles,
+      htmlLang: 'es',
+      title: 'Guías Mercury en español | Harris Boat Works',
+      h1: 'Guías Mercury en español',
+      intro: 'Guías Mercury y consejos náuticos en español para Ontario: motores, remotorización, mantenimiento, seguridad y pesca en Rice Lake.',
+      postsHeading: 'Todas las guías',
+      disclaimer: 'Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.',
+    },
+    {
+      lang: 'pa',
+      articles: punjabiBlogArticles,
+      htmlLang: 'pa',
+      title: 'Mercury ਪੰਜਾਬੀ ਗਾਈਡ | Harris Boat Works',
+      h1: 'Mercury ਪੰਜਾਬੀ ਗਾਈਡ',
+      intro: 'Ontario ਦੇ ਬੋਟਰਾਂ ਲਈ Mercury ਪੰਜਾਬੀ ਗਾਈਡ: ਆਊਟਬੋਰਡ, ਰਿਪਾਵਰ, ਮੇਨਟੀਨੈਂਸ, ਸੁਰੱਖਿਆ ਅਤੇ Rice Lake ਸਲਾਹ।',
+      postsHeading: 'ਸਾਰੀਆਂ ਗਾਈਡਾਂ',
+      disclaimer: 'honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।',
+    },
+    {
+      lang: 'ur',
+      articles: urduBlogArticles,
+      htmlLang: 'ur',
+      title: 'Mercury اردو گائیڈ | Harris Boat Works',
+      h1: 'Mercury اردو گائیڈ',
+      intro: 'Ontario کے بوٹرز کے لیے Mercury اردو گائیڈ: آؤٹ بورڈ، ری پاور، دیکھ بھال، حفاظت اور Rice Lake مشورہ۔',
+      postsHeading: 'تمام گائیڈز',
+      disclaimer: 'ایمانداری سے، ہماری ٹیم انگریزی میں کام کرتی ہے، لیکن ہم نے یہ گائیڈ آپ کی سہولت کے لیے اردو میں لکھی۔ آپ کوئی ایسا ساتھی ساتھ لائیں جو انگریزی بولتا ہو، یا ترجمے کی ایپ استعمال کریں، ہم انتظار کریں گے اور مل کر کام کر لیں گے۔',
+    },
+    {
+      lang: 'tl',
+      articles: tagalogBlogArticles,
+      htmlLang: 'tl',
+      title: 'Mga gabay sa Mercury sa Tagalog | Harris Boat Works',
+      h1: 'Mga gabay sa Mercury sa Tagalog',
+      intro: 'Mga Mercury Tagalog na gabay para sa mga boater ng Ontario: outboard, repower, pag-mantine, kaligtasan at payo sa Rice Lake.',
+      postsHeading: 'Lahat ng gabay',
+      disclaimer: 'Sa totoo lang, English ang ginagamit ng team namin kapag nagse-serve. Ginawa namin ang guide na ito sa Tagalog para makatulong sa komunidad, pero sa marina mismo, English ang salita. Huwag mag-alala: magdala ng kaibigan o pamilya na marunong, o gumamit ng translation app. Magiging matiyaga kami at magkakaintindihan tayo.',
+    },
+  ].map(({ lang, articles, htmlLang, title, h1, intro, postsHeading, disclaimer }) => ({
+    path: `/${lang}`,
+    title,
+    description: intro,
+    h1,
+    intro,
+    htmlLang,
+    schemas: [genericPageSchema(`/${lang}`, h1, intro)],
+    extraNoscript: () => {
+      const visible = (articles || []).filter(a => a.isPublished !== false);
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      const cardsHtml = sorted.length
+        ? `<ul>${sorted.map(a => `<li><a href="/blog/${lang}/${a.slug}"><strong>${escapeHtml(a.title || a.slug)}</strong></a></li>`).join('')}</ul>`
+        : '';
+      const articlesSection = cardsHtml
+        ? `<section><h2>${escapeHtml(postsHeading)} (${sorted.length})</h2>${cardsHtml}</section>`
+        : '';
+      const body = `<section><p>${escapeHtml(disclaimer)}</p></section>${articlesSection}<p><a href="/">English</a></p>`;
+      return lang === 'ur' ? `<div dir="rtl">${body}</div>` : body;
+    }
+  })),
   {
     path: '/repower/cost',
     title: 'Mercury Repower Cost in Ontario (2026 CAD) | HBW',
@@ -5757,10 +5831,10 @@ function detectLang(path) {
   if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh-Hans';
   if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko';
   if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es';
-  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa';
-  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur';
-  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl';
-  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa' || path === '/pa') return 'pa';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur' || path === '/ur') return 'ur';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl' || path === '/tl') return 'tl';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi' || path === '/hi') return 'hi';
   return 'en';
 }
 
@@ -5770,10 +5844,10 @@ function detectOgLocale(path) {
   if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh_CN';
   if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko_KR';
   if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es_ES';
-  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa_IN';
-  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur_PK';
-  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl_PH';
-  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi_IN';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa' || path === '/pa') return 'pa_IN';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur' || path === '/ur') return 'ur_PK';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl' || path === '/tl') return 'tl_PH';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi' || path === '/hi') return 'hi_IN';
   return 'en_CA';
 }
 
@@ -5811,7 +5885,7 @@ function computePageId(pathname) {
 function stamp(route) {
   let html = shell;
   const langCode = detectLang(route.path);
-  const dirAttr = route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
+  const dirAttr = route.path === '/blog/ur' || route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
     /<html lang="en">/i,
     `<html lang="${langCode}"${dirAttr}>`
@@ -5933,10 +6007,11 @@ function stamp(route) {
 
   // <noscript> semantic fallback inside <div id="root">
   const extra = route.extraNoscript ? route.extraNoscript() : '';
+  const contentDir = route.path === '/ur' ? ' dir="rtl"' : '';
   const noscript =
     `<noscript>` +
       `<header><h1>${escapeHtml(route.h1)}</h1></header>` +
-      `<main><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
+      `<main${contentDir}><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
       `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p>` +
       `<p>See all <a href="/pricing-reference">Mercury outboard prices (CAD)</a> · <a href="/repower">Repower guide</a> · <a href="/faq">FAQ</a></p></footer>` +
     `</noscript>`;
@@ -6039,10 +6114,14 @@ const staticSitemapEntries = [
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
   { loc: '/electric/mercury-avator', priority: 0.8, changefreq: 'weekly' },
   { loc: '/motors/mercury-9-9-tiller-kicker-guide', priority: 0.85, changefreq: 'weekly' },
-  // Language hub pages (only /zh and /fr exist as routes; Korean and
-  // Spanish articles live under /blog/ko and /blog/es without a hub).
+  // Language hub pages
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },
   { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/ko', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/es', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/pa', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/ur', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/tl', priority: 0.7, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
@@ -6163,7 +6242,15 @@ const multilingualBlogSitemapEntries = [
 // hardcoded list caused duplicate <url> entries in sitemap.xml.
 const hardcodedMultilingualPages = [];
 
-const allSitemapEntries = [
+function dedupeSitemapEntries(entries) {
+  const seen = new Map();
+  for (const entry of entries) {
+    if (!seen.has(entry.loc)) seen.set(entry.loc, entry);
+  }
+  return [...seen.values()];
+}
+
+const allSitemapEntries = dedupeSitemapEntries([
   ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
   ...blogSitemapEntries,
   ...multilingualBlogSitemapEntries,
@@ -6171,13 +6258,14 @@ const allSitemapEntries = [
   ...motorSitemapEntries,
   ...caseStudySitemapEntries,
   ...locationSitemapEntries,
-];
+]);
 
 function sitemapHreflangBlock(loc) {
   const localized = loc.match(/^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/);
   const english = loc.match(/^\/blog\/([^/]+)$/);
-  const locale = localized?.[1] || (english ? 'en' : null);
-  const slug = localized?.[2] || english?.[1];
+  const blogIndexSlugs = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);
+  const locale = localized?.[1] || (english && !blogIndexSlugs.has(english[1]) ? 'en' : null);
+  const slug = localized?.[2] || (locale === 'en' ? english?.[1] : undefined);
   if (!locale || !slug) return '';
 
   const links = getBlogHreflangAlternates(locale, slug).map(({ hrefLang, path }) =>
@@ -7107,7 +7195,7 @@ verifyMd({
   label: 'Mercury service and maintenance index',
   requireSubstrings: [
     'content_type: service_index',
-    'service_dropoff_only: true',
+    'boat_pickup_available: generally',
     'mobile_service: false',
     'Mercury and MerCruiser',
     '100-hour',

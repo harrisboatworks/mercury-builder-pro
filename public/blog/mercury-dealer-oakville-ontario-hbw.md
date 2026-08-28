@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Oakville Ontario HBW"
 description: "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-26
 keywords: ["mercury dealer oakville","mercury repower oakville","mercury outboard oakville ontario","boat motor service oakville"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-05-11  
+**Last reviewed:** 2026-08-26  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -75,13 +75,13 @@ The business runs on repeat customers and referrals. The model depends on doing 
 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a straight conversation about what fits your specific hull and how you use it.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you drive.
@@ -92,7 +92,7 @@ Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage w
 
 **Route:** QEW east to Highway 401 east through Toronto, then exit Highway 115 east (Peterborough direction), then County Road 28 north into Gores Landing.
 
-**Approximate drive time:** Around 110 minutes outside rush hour. The 401 through Toronto is variable. Saturday mornings early, before the cottage crowds, are the best window from Oakville. Come back before 3 p.m. or wait for late evening; the 401 west into Toronto on a summer Saturday afternoon is not forgiving.
+**Approximate drive time:** Around 110 minutes outside rush hour. The 401 through Toronto is variable. Saturday mornings early, before the cottage crowds, are the best window from Oakville. In our experience the 401 west into Toronto on a summer Saturday afternoon is often slow; check current traffic and time your return accordingly.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
@@ -134,7 +134,7 @@ The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east
 
 Why Oakville boaters drive to HBW for repower:
 
-- **Mercury Premier-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
+- **Mercury Premier-level rigging.** For a repower investment in the range you'll see when you build a quote at mercuryrepower.ca, the drive is justified when local dealers can't match the install depth.
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
 - **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
@@ -152,7 +152,7 @@ Oakville customers cite three reasons: transparent online CAD pricing, Mercury P
 
 ### Can I do most of the buying process remotely?
 
-Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.
+Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Most Oakville customers do 90% remotely.
 
 ## Related guides
 

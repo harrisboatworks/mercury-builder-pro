@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
 description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 
@@ -76,7 +76,7 @@ We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and service
 
 The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and 115](/blog/mercury-75-vs-90-vs-115-comparison). All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards, all sharing the same 2.1L block; see mercuryrepower.ca for current pricing.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
@@ -124,7 +124,7 @@ There are three real scenarios where the 75 is the right call:
 | Boat Type | Our Recommendation |
 |---|---|
 | 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
-| Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
+| Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-complete-guide-2026) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
 | Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
 | Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
 

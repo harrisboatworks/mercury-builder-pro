@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-08-08
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-08-08
+date_modified: 2026-08-26
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: service
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
-> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is typically the Saturday closest to May 15, confirm the exact date each year from the OMNR Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
 
 ---
-
-### Full Article
 
 Opener morning on Rice Lake waits for nobody. The public ramps at Bewdley, Hastings, and Roseneath fill up before sunrise, and the boats that fail there, battery won't crank, kicker won't start, electronics showing nothing, failed because someone skipped prep they meant to do.
 
@@ -116,7 +114,7 @@ Walleye opener often means early starts and late returns in low light. Nav light
 
 #### Want HBW to do the opener prep?
 
-We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -131,7 +129,7 @@ We run a pre-opener service every spring, typically $200 to $350 depending on mo
 - Pre-launch checks: safety gear in the boat, drain plug installed, lights working.
 - Launch and run the motor briefly before going far from the dock.
 - Verify fish finder and GPS are on and reading before you reach your zone.
-- Confirm the legal start time, walleye season on Zone 17 typically opens at sunrise. Verify the current year's regulations from the OMNR before opener day.
+- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNRF before opener day.
 
 ---
 
@@ -150,7 +148,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 
 Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -164,7 +162,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 
 **Missing safety gear** turns an opener into an OPP stop. Marine patrols are active on opener weekend.
 
-**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current OMNR regulations before opener.
+**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNRF regulations before opener.
 
 ---
 
@@ -196,7 +194,7 @@ Mercury Premier dealer. Est. 1947.
 
 ### When is the Ontario walleye opener?
 
-Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from the OMNR Fishing Regulations Summary.
+The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary.
 
 ### What should I do 2 weeks before walleye opener?
 
@@ -228,7 +226,7 @@ Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blo
 
 ### Can HBW pick up my boat for opener prep?
 
-No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. [Contact us](/contact) to book a service slot.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
 
 ### What's the most common opener morning failure?
 

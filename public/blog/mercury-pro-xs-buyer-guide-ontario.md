@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario.md
-last_updated: 2026-07-18
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS Buyer Guide for Ontario (2026)"
 description: "The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-07-18
+date_modified: 2026-08-19
 keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-07-18  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
 
@@ -37,14 +37,15 @@ Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Sam
 
 Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (the flagship V8/V10/V12 line, naturally aspirated, special-order territory). SeaPro is the commercial-grade variant.
 
-Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175-250 Pro XS uses Mercury's 3.4L V6 not available in the same HP class FourStroke).
+Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175 Pro XS uses Mercury's 3.4L V6, and the 200-300 Pro XS run the 4.6L V8, a bigger block than the same-HP FourStroke).
 
 The Pro XS lineup as of 2026:
 
 | HP Range | Configuration | Typical Application |
 |---|---|---|
 | 115 - 150 | 2.1L inline-4 (115) or 3.0L inline-4 (150) | Bass boats, performance fishing, pontoon performance setups |
-| 175 - 200 - 225 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 175 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 200 - 225 | 4.6L V8 | Tournament bass boats, performance fibreglass, larger pontoons |
 | 250 - 300 | 4.6L V8 | Offshore fishing, performance cruisers, large performance pontoons |
 
 The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 and above are V6/V8 architectures that aren't available in FourStroke trim, these are Pro XS-exclusive engine families.
@@ -76,7 +77,7 @@ The 115 Pro XS is the entry into the Pro XS family. It uses the same 2.1L powerh
 - RPM limit higher than FourStroke 115
 - Slightly different sound (more "boat sport" character)
 
-The 115 Pro XS is [available with Command Thrust gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), which is the right choice for performance pontoon setups in this HP range.
+The 115 Pro XS is [available with Command Thrust gearcase](/blog/mercury-command-thrust-complete-guide-2026), which is the right choice for performance pontoon setups in this HP range.
 
 The honest take: most 16-19 ft Ontario boats don't need the Pro XS premium over a 115 FourStroke. The buyers who do benefit are those running serious fishing tournaments or performance pontoons in the 115 HP class. For everyone else, the 115 FourStroke is the smarter spend.
 
@@ -129,8 +130,8 @@ The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,50
 | 115 Pro XS | $17,000 - $21,500 |
 | 150 Pro XS | $20,500 - $26,500 |
 | 175 Pro XS V6 | $25,500 - $32,000 |
-| 200 Pro XS V6 | $27,500 - $34,500 |
-| 225 Pro XS V6 | $30,000 - $37,500 |
+| 200 Pro XS V8 | $27,500 - $34,500 |
+| 225 Pro XS V8 | $30,000 - $37,500 |
 | 250 Pro XS V8 | $33,000 - $41,000 |
 | 300 Pro XS V8 | $37,500 - $46,500 |
 
@@ -178,7 +179,7 @@ Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Hig
 
 ### Does Pro XS warranty match FourStroke?
 
-The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can bring combined coverage to a maximum of 8 years, subject to serial-record eligibility.
+The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can extend combined coverage for several years; the maximum combined term depends on Mercury's current program rules, and HBW confirms it against the serial record before registration.
 
 ### Can I repower from a FourStroke to a Pro XS?
 
@@ -194,11 +195,11 @@ Pro XS resale stays strong. A used Pro XS in good condition from a known service
 
 ## Related guides
 
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 

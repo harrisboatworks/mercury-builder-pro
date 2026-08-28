@@ -89,7 +89,7 @@ If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoo
 
 ## How much horsepower on Rice Lake
 
-For most family pontoons in the 18 to 22 foot range we rig [Mercury FourStroke power](/blog/best-mercury-outboard-pontoon-boats) in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. [Command Thrust](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust belongs on pontoons and heavy work boats, not on standard V-hulls. Some dealers mis-rig it onto V-hulls claiming more torque. That is the wrong application, and it is the kind of thing we will steer you away from.)
+For most family pontoons in the 18 to 22 foot range we rig [Mercury FourStroke power](/blog/best-mercury-outboard-pontoon-boats) in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. [Command Thrust](/blog/mercury-command-thrust-complete-guide-2026) is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust belongs on pontoons and heavy work boats, not on standard V-hulls. Some dealers mis-rig it onto V-hulls claiming more torque. That is the wrong application, and it is the kind of thing we will steer you away from.)
 
 | Your family's main use | Boat | Mercury power |
 |---|---|---|

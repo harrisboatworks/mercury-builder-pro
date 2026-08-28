@@ -3806,6 +3806,7 @@ export type Database = {
           is_soft_lead: boolean | null
           last_accessed: string | null
           quote_pdf_path: string | null
+          quote_pdf_sha256: string | null
           quote_state: Json
           reference_number: string | null
           resume_token: string
@@ -3828,6 +3829,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state: Json
           reference_number?: string | null
           resume_token: string
@@ -3850,6 +3852,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state?: Json
           reference_number?: string | null
           resume_token?: string

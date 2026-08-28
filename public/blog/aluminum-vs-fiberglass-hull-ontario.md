@@ -154,7 +154,7 @@ Marginally yes, because aluminum hides fewer structural problems and the failure
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000), Rice Lake boats under $30K
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
-- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust on pontoon boats
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
 
 ## Next steps
 

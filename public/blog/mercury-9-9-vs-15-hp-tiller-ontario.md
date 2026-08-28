@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -102,7 +102,7 @@ For the 9.9 vs 15 conversation, the capacity plate matters when:
 - **Your boat is plated at 15 HP.** Many 14 foot jon boats and 12-14 foot utility hulls cap here. The 15 is the right choice. The 9.9 will feel underpowered, especially loaded with two adults, gear, and a full fuel tank.
 - **Your boat is plated higher than 15 HP.** This guide isn't really for you. A 16 foot hull plated at 25 or 40 HP wants a 25 or 40 HP motor, not a 9.9. Check the [FourStroke buyer guide](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario) for that range.
 
-Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Insurance carriers void coverage for over-powering. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
+Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Over-powering can put insurance coverage at risk, so confirm with your carrier. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
 
 ## What HBW Checks Before Quoting a 9.9 or 15
 
@@ -136,7 +136,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Weight matters more, aft.** Sailboats are sensitive to transom weight. The 7 kg (15 lb) penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
-**Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
+**Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-complete-guide-2026) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
 ## Fuel Economy: The Difference Is Smaller Than You'd Expect
 
@@ -164,7 +164,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Give us a call for current availability on both motors. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 

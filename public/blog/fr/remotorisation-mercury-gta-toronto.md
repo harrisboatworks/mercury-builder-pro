@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-07-31\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -204,7 +204,7 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.
 
 **Combien de temps prend une remotorisation chez Harris Boat Works ?**
-Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
+Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury ; nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
 
 **Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?**
 Oui. 401 vers l'est jusqu'à Cobourg, vers le nord sur la route régionale 18 jusqu'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.
@@ -242,7 +242,7 @@ Cela dépend de la puissance et du bateau actuel. Plages typiques : installation
 
 ### Combien de temps prend une remotorisation chez Harris Boat Works ?
 
-Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
+Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury ; nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
 
 ### Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?
 

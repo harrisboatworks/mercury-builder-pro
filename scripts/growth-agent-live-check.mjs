@@ -88,7 +88,7 @@ const CHECKS = [
   { path: "/agents", required: true, signals: ["agent", "MCP", "public-motors-api", "build_quote", "pickup", ["install", "installation"]] },
   { path: "/llms.txt", required: true, signals: ["Ontario", "CAD", "pickup", "Gores Landing"] },
   { path: "/catalog.md", required: true, signals: ["CAD", "pickup", "Gores Landing", ["public-motors-api", "build_quote"]] },
-  { path: "/maintenance.md", required: true, signals: ["Mercury", "MerCruiser", "service_dropoff_only", "mobile_service", "Gores Landing", "hbw.wiki/service"] },
+  { path: "/maintenance.md", required: true, signals: ["Mercury", "MerCruiser", "boat_pickup_available: generally", "delivery_offered: false", "mobile_service: false", "Gores Landing", "hbw.wiki/service"] },
   { path: "/.well-known/mcp.json", required: true, signals: ["build_quote"] },
   { path: "/.well-known/brand.json", required: true, signals: ["Harris Boat Works"] },
   { path: "/.well-known/ucp", required: true, signals: ["dev.ucp.shopping.checkout", "quote"] },

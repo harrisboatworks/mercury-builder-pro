@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha Outboards: Honest Comparison"
 description: "Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["Mercury vs Yamaha outboard","Mercury vs Yamaha Ontario","Mercury or Yamaha which is better","Yamaha to Mercury repower","best outboard motor Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 
@@ -145,7 +145,7 @@ Depends on local dealer access, hull condition, and ownership plan. If your Yama
 
 ### How much does it cost to switch from Yamaha to Mercury?
 
-The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
+The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
 
 ### Is Yamaha more reliable than Mercury?
 

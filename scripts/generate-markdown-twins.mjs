@@ -1135,10 +1135,28 @@ function substituteLiveRateTokens(text) {
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
 }
 
+// Markdown twins are read raw (AI crawlers, .md URLs), so render ::cta
+// directive blocks as plain markdown instead of shipping raw template syntax.
+function renderCtaBlocks(text) {
+  if (!text) return text;
+  return String(text).replace(/^::cta\s*\n([\s\S]*?)\n::\s*$/gm, (_m, body) => {
+    const fields = {};
+    for (const line of body.split('\n')) {
+      const m = line.match(/^(\w+):\s*(.*)$/);
+      if (m) fields[m[1]] = m[2].trim();
+    }
+    const parts = [];
+    if (fields.heading) parts.push(`**${fields.heading}**`);
+    if (fields.body) parts.push(fields.body);
+    if (fields.primaryLabel && fields.primaryHref) parts.push(`[${fields.primaryLabel}](${fields.primaryHref})`);
+    return parts.length ? `> ${parts.join(' ')}` : '';
+  });
+}
+
 function writePublicMd(relPath, content) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, substituteLiveRateTokens(content), 'utf8');
+  writeFileSync(outFile, renderCtaBlocks(substituteLiveRateTokens(content)), 'utf8');
 }
 
 
@@ -1821,7 +1839,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
 }
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Service and maintenance', 'maintenance.md', '## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'service_dropoff_only: true', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage', 'reopens in early April', 'hbw.wiki/service']);
+verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'boat_pickup_available: generally', 'delivery_offered: false', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service', 'effective September 2026', 'reopens in early April', 'hbw.wiki/service']);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection

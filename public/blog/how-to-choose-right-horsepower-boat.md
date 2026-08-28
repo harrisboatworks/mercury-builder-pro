@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 

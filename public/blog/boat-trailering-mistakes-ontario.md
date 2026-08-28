@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Trailering Mistakes to Avoid, Ontario"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-28  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 
@@ -212,7 +212,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 **Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lb) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
 
-**Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are now 110 km/h for passenger vehicles). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
+**Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are posted at 110 km/h for passenger vehicles, but check signage as limits change). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
 
 ---
 

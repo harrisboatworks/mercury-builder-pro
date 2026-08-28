@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "DIY Mercury Outboard Winterization"
 description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -37,7 +37,7 @@ You can winterize your own Mercury outboard only after identifying the exact sto
 
 [Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
 
-For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
+For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
 
 **Watch Mercury's official winterization checklist first:**
 
@@ -117,7 +117,7 @@ Late-season winterizations, from August through November, are one of the busiest
 - You're rushed and likely to skip or hurry steps
 - The motor is stored somewhere you can't access it easily for prep
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -232,7 +232,7 @@ If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/serv
 
 ## Reviewed by
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 **Want it done right without the Saturday morning?** 
 Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
@@ -288,8 +288,8 @@ Fuel preparation, internal engine protection, oil service, flushing, and storage
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 
 ## Next steps
 

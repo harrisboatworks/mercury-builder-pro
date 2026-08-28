@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese.md
-last_updated: 2026-08-03
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省船主冬化与室外冬储清单：什么时候送、要做什么
 description: "安省船主冬化与室外冬储中文指南：分清发动机冬化和存船，按机型确认项目，并了解 HBW 先到先办、送船前 1 - 2 周提交请求和 11 月中旬最后接收时间。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-03
+date_modified: 2026-08-21
 keywords: ["冬季保养","冬储","安省","中文","winterization","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-08-21  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 
@@ -73,7 +73,7 @@ HBW **12 月 1 日至 4 月 1 日关闭**，期间不接收船只，也不进行
 | 防漆面氧化 | 收缩膜下温差大，但日晒最少 | 最好 |
 | 防鼠 | 室外鼠害低于无遮蔽 | 视设施而定 |
 | 价格 | 较低 | 高 30-100% |
-| HBW 提供吗 | **是（标准服务）** | **否——HBW 只做室外收缩膜** |
+| HBW 提供吗 | **是（标准服务）** | **否：HBW 只做室外收缩膜** |
 
 HBW 不提供室内冬储。需要室内的客户请联系 GTA 地区的恒温存储设施。
 
@@ -82,7 +82,7 @@ HBW 不提供室内冬储。需要室内的客户请联系 GTA 地区的恒温�
 - 地点：Gores Landing, Ontario（莱斯湖南岸）
 - 自送自取（HBW 不提供取送）
 - 服务范围：冬化、收缩膜、室外存储和维修是不同工单项目，以当前书面报价为准
-- 春季检查：HBW 冬储客户包含春季检查；截至 2026 年 7 月，非冬储客户为 $99 加 HST
+- 春季检查：HBW 冬储客户包含春季检查；非冬储客户按书面报价和已批准的工单执行
 - 办理方式：在计划送船前 1–2 周通过 [hbw.wiki/service](https://hbw.wiki/service) 提交完整请求
 
 ### 来自 HBW 工单的数据

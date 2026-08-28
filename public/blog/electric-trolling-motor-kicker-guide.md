@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-07
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"
 date_published: 2026-05-04
-date_modified: 2026-05-07
+date_modified: 2026-08-19
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-05-07  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
@@ -131,7 +131,7 @@ Mercury makes both [a standard 9.9 FourStroke](/blog/mercury-9-9-efi-review-onta
 - Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
 
-Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Approximate installed cost (CAD) varies with options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why most serious anglers end up running both
 
@@ -170,7 +170,7 @@ We rig both setups regularly:
 - Lithium battery upgrades for boaters running heavy draw on the bow electric
 - Annual kicker service (oil, impeller, plugs) and battery health checks on the electric side
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

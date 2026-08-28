@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu.md
-last_updated: 2026-06-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada mein purani kashti kharidne ki checklist | استعمال شدہ 
 description: "Canada mein purani kashti kharidne ki checklist: motor، transom، storage aur repower جانچ اردو میں۔ Rice Lake کے تجربہ کار marina کی طرف سے مکمل رہنمائی۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-19
 keywords: ["یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)","سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)","پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)","استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)","اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-06-12  
+**آخری جائزہ:** 2026-08-19  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
 
@@ -83,7 +83,7 @@ Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licenc
 
 ## اب آگے کیا کرنا ہے
 
-اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے کی بکنگ یا سوال کے لیے https://hbw.wiki/service پر جائیں۔
+اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
 اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
 

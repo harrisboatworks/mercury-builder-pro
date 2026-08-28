@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026.md
-last_updated: 2026-07-28
+last_updated: 2026-08-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026
 description: "Legend Boats warranty explained: 6-year WOWranty, Leakproof for Life, pontoon 5 | 10 | Lifetime, plus motor, trailer and electronics coverage."
 category: "Buying Guide"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-08-11
 keywords: ["Legend Boats warranty Canada","Legend WOWranty","Legend pontoon warranty","Leakproof for Life warranty","Legend boat warranty transfer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-08-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
 

@@ -55,6 +55,7 @@ const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
 const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
+const QuoteConsultationDocumentPage = lazy(() => import("@/pages/quote/QuoteConsultationDocumentPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
@@ -162,6 +163,7 @@ const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboa
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
+const LocaleHubLanding = lazy(() => import("./pages/LocaleHubLanding"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
@@ -277,6 +279,7 @@ function AnimatedRoutes() {
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />
+        <Route path="/quote/document" element={<QuoteConsultationDocumentPage />} />
         <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
         
         {/* User Account Routes */}
@@ -596,6 +599,11 @@ function AnimatedRoutes() {
         {/* Multilingual Landing Pages */}
         <Route path="/fr" element={<FrenchLanding />} />
         <Route path="/zh" element={<MandarinLanding />} />
+        <Route path="/ko" element={<LocaleHubLanding />} />
+        <Route path="/es" element={<LocaleHubLanding />} />
+        <Route path="/pa" element={<LocaleHubLanding />} />
+        <Route path="/ur" element={<LocaleHubLanding />} />
+        <Route path="/tl" element={<LocaleHubLanding />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />

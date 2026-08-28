@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Peterborough HBW"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury premier dealer ontario","kawartha mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw
 
@@ -87,7 +87,7 @@ Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-o
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, and documented acceptance checks before pickup. When safe seasonal conditions allow, the work order can include an on-water check on Rice Lake; otherwise, HBW documents the alternate acceptance plan with the customer. HBW is pickup-only and does not deliver boats or motors.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.

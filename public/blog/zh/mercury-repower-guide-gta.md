@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta.md
-last_updated: 2026-05-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安大略省 Mercury 换新船外机完整指南：GTA 华人船主必�
 description: "你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。"
 category: "成本分析"
 date_published: 2026-05-12
-date_modified: 2026-05-12
+date_modified: 2026-08-19
 keywords: ["mercury repower gta","gta 华人 mercury","mercury 换机 安省","gta chinese boater mercury","rice lake mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 成本分析  
 **Published:** 2026-05-12  
-**最后审核:** 2026-05-12  
+**最后审核:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
@@ -128,11 +128,11 @@ HBW 的做法不同：[mercuryrepower.ca](https://www.mercuryrepower.ca) 是一�
 **第二步：联系 HBW 确认细节**
 告知你的船型、目前的机器情况和你的使用需求。确认轴长（Shaft Length）、控制系统、螺旋桨和安装细节。
 
-**第三步：预约送船**
+**第三步：送船到店**
 将船送到我们位于 Gores Landing 的 marina（地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0）。
 
 **第四步：安装与调试**
-技师完成安装后，在 Rice Lake 进行海试确认。
+技师完成安装后，在 Rice Lake 进行湖测确认。
 
 **第五步：交付与说明**
 说明新机的操作要点、保养周期和保固条款，让你带著清楚的认识离开。
@@ -165,7 +165,7 @@ HBW 的做法不同：[mercuryrepower.ca](https://www.mercuryrepower.ca) 是一�
 ## 常见问题（FAQ）
 
 **Q：我需要把整艘船开到 Gores Landing 吗？**
-A：是的，安装和海试都在 HBW 进行。大多数客户用拖车自行拖来，也可以委托拖运服务。
+A：是的，安装和湖测都在 HBW 进行。大多数客户用拖车自行拖来，也可以委托拖运服务。
 
 **Q：我可以把旧机留著做备机吗？**
 A：可以询问，旧机的处理方式可以在确认换机后和 HBW 讨论。
@@ -215,7 +215,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 
 ### 换机需要多久？
 
-一般 3-7 个工作日，视库存和安装排程而定。旺季（春季）等待时间可能较长，建议提早预约。
+视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbw.wiki/service 提交服务请求。
 
 ### 换机之后需要换螺旋桨吗？
 

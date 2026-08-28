@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -56,7 +56,7 @@ Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V
 **V10 Verado (350-400 HP), $46,000-$54,000+**
 Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
 
-**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and sea trial. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
+**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and lake test. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
 
 Getting a straight answer on Mercury outboard prices in Ontario used to mean calling four dealers, waiting on hold, and getting four different numbers, none of which told you what was actually included.
 
@@ -64,7 +64,7 @@ We got tired of that. So did our customers.
 
 Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
-Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
+Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and lake test. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
 
 ## How Mercury outboard pricing actually works in Canada
 
@@ -85,7 +85,7 @@ Every Mercury model name is a code. Here's how to decode it:
 - **L**, Long shaft (20")
 - **XL**, Extra long shaft (25")
 - **PT**, Power trim and tilt
-- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
+- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-complete-guide-2026)
 
 **Example:** A "9.9 ELHPT Command Thrust ProKicker EFI FourStroke" means: 9.9 HP, electric start, long shaft, tiller handle, power trim, Command Thrust gearcase, set up as a ProKicker trolling motor, with EFI and four-stroke architecture.
 
@@ -174,7 +174,7 @@ MSRP is Mercury Canada's suggested retail. Dealer price is what we actually sell
 
 ### Does the motor price include installation?
 
-No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
+No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and lake test are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
 
 ### Can I buy Mercury cheaper in the US?
 

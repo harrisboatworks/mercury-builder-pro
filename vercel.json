@@ -80,7 +80,7 @@
     },
     {
       "source": "/blog/mercury-command-thrust-vs-standard-gearcase",
-      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
       "statusCode": 301
     },
     {
@@ -158,7 +158,6 @@
       "destination": "/blog/mercury-outboard-lineup-ontario.md",
       "statusCode": 301
     },
-
     {
       "source": "/warranty",
       "destination": "/mercury-product-protection",
@@ -508,6 +507,86 @@
       "source": "/blog/zh/ontario-first-time-boat-rental-safety-checklist",
       "destination": "/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada.md",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat",
+      "destination": "/blog/mercury-75-vs-90-vs-115-comparison",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md",
+      "destination": "/blog/mercury-75-vs-90-vs-115-comparison.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-rentals-shared-access-booming-2026",
+      "destination": "/blog/renting-vs-owning-boat-ontario-math",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-rentals-shared-access-booming-2026.md",
+      "destination": "/blog/renting-vs-owning-boat-ontario-math.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-storage-kawartha-lakes",
+      "destination": "/blog/outdoor-boat-storage-shrinkwrap-rice-lake",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-storage-kawartha-lakes.md",
+      "destination": "/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-motor-trade-in-guide",
+      "destination": "/blog/outboard-trade-in-value-ontario-hbw",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-motor-trade-in-guide.md",
+      "destination": "/blog/outboard-trade-in-value-ontario-hbw.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-smartcraft-connect-eligibility-2026",
+      "destination": "/blog/mercury-smartcraft-connect-guide-ontario",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-smartcraft-connect-eligibility-2026.md",
+      "destination": "/blog/mercury-smartcraft-connect-guide-ontario.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-guide-pontoon-boats.md",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
     }
   ],
   "rewrites": [
@@ -728,6 +807,26 @@
       "destination": "/index.html"
     },
     {
+      "source": "/ko",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pa",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ur",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tl",
+      "destination": "/index.html"
+    },
+    {
       "source": "/blog/fr",
       "destination": "/blog/fr/index.html"
     },
@@ -762,6 +861,14 @@
     {
       "source": "/blog/pa",
       "destination": "/blog/pa/index.html"
+    },
+    {
+      "source": "/blog/ur",
+      "destination": "/blog/ur/index.html"
+    },
+    {
+      "source": "/blog/tl",
+      "destination": "/blog/tl/index.html"
     },
     {
       "source": "/blog/fr/:slug",
@@ -863,7 +970,6 @@
       "source": "/pricing-reference",
       "destination": "/pricing-reference/index.html"
     },
-
     {
       "source": "/pricing-reference.md",
       "destination": "/pricing-reference.md"

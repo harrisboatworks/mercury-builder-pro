@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-08-14
+last_updated: 2026-08-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2-Stroke vs 4-Stroke Repower: What to Know"
 description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing."
 category: "Repower Guides"
 date_published: 2026-05-24
-date_modified: 2026-08-14
+date_modified: 2026-08-15
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-08-14
+**Last reviewed:** 2026-08-15  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
@@ -142,7 +142,7 @@ It depends on the exact motor, controls, steering, rigging, propeller, removal, 
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
-- [Mercruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
+- [MerCruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
 - [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
 - [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
 
@@ -159,3 +159,4 @@ It depends on the exact motor, controls, steering, rigging, propeller, removal, 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-07-27
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
 description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-07-27
+date_modified: 2026-08-19
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 
@@ -73,7 +73,7 @@ We're not going to invent statistics. What we can tell you is what we actually s
 
 Mercury is a Brunswick Corporation brand, built in Fond du Lac, Wisconsin. Mercury continues to develop new outboard platforms, and recent industry coverage has highlighted multiple programs in the pipeline, including the V10 Verado family.
 
-The V10 Verado lineup (350-425hp) represents Mercury's high-performance answer to a market pushing for lighter, more powerful motors. In its July 22, 2025 launch release, Mercury says the 425hp V10 Verado is 115 kg (254 lb) lighter than a 450hp competitor when both are 25-inch XL models. Mercury does not identify that competitor, so we do not turn the result into a Yamaha-specific claim. The [official Mercury release](https://www.mercurymarine.com/us/en/about-us/news/425hp-v10-expansion-and-enhanced-350hp-launch) documents the comparison and test condition. The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
+The V10 Verado lineup (350-425hp) is Mercury's high-performance answer to a market pushing for lighter, more powerful motors, though at HBW these are special-order rather than stock. In its July 22, 2025 launch release, Mercury says the 425hp V10 Verado is 115 kg (254 lb) lighter than a 450hp competitor when both are 25-inch XL models. Mercury does not identify that competitor, so we do not turn the result into a Yamaha-specific claim. The [official Mercury release](https://www.mercurymarine.com/us/en/about-us/news/425hp-v10-expansion-and-enhanced-350hp-launch) documents the comparison and test condition. The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
 
 For the 60-150hp range that most Ontario boaters actually buy, Mercury's FourStroke lineup has been a mature, stable platform for years. Mature doesn't mean exciting. It means the engineering team has had time to find the gremlins, fix them, and optimize. That's a good thing when you're 45 minutes from shore on a Saturday afternoon.
 

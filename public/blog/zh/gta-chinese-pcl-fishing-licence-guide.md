@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md
-last_updated: 2026-08-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南"
 description: "分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-03
+date_modified: 2026-08-19
 keywords: ["PCOC 操作员卡","PCL 船只牌照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-08-19  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
@@ -197,8 +197,8 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 我们不销售任何证照，但作为 GTA 华人客户最常去的 Rice Lake marina：
 
 - **租船时的 PCOC 检查**：HBW 要求每位驾驶员在 check-in 时出示有效的 boat operator licence / PCOC。安全清单仍会作为 briefing 完成，但不替代 HBW 的驾驶员牌照要求。
-- **语言说明**：团队使用英语服务。欢迎带会英语的亲友同来或使用手机翻译软件——如果你不确定哪种钓鱼证适合自己，可以问我们，我们会指向 Ontario.ca 的对应页面。
-- **我们不能承诺中文服务，也没有专职翻译**——但会耐心沟通、尽力配合。
+- **语言说明**：团队使用英语服务。欢迎带会英语的亲友同来或使用手机翻译软件。如果你不确定哪种钓鱼证适合自己，可以问我们，我们会指向 Ontario.ca 的对应页面。
+- **我们不能承诺中文服务，也没有专职翻译**，但会耐心沟通、尽力配合。
 
 如果你刚开始考虑买船，可以先看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 和 [买船指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)。如果你已经有船想做发动机升级或换装，请到 [mercuryrepower.ca](https://www.mercuryrepower.ca) 生成报价，或参考 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta)。
 

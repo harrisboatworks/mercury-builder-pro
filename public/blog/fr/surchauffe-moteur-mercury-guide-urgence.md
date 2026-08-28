@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence.md
-last_updated: 2026-08-08
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-08-21
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-08-21\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
@@ -90,7 +90,7 @@ La turbine est une roue à pales en caoutchouc dans l'embase qui pousse l'eau de
 
 **Symptômes :** Jet témoin faible au ralenti qui s'améliore à régime plus élevé, alarme intermittente.
 
-**Intervalle d'entretien :** Mercury recommande de remplacer la turbine de la pompe à eau tous les 2 à 3 ans ou 200 heures, selon la première éventualité.
+**Intervalle d'entretien :** Suivez le manuel d'utilisation et d'entretien de votre moteur, pour votre numéro de série exact. Les intervalles varient d'un modèle à l'autre, alors ne vous fiez pas à une règle universelle. Faites inspecter le circuit de refroidissement après une surchauffe, si le jet témoin faiblit, après une utilisation en eau chargée de sédiments, ou si l'historique d'entretien est incertain.
 
 ### 3. Défaillance du thermostat
 
@@ -118,13 +118,13 @@ Sur les moteurs plus vieux ou ceux fonctionnant en eau dure, le tartre et les d�
 
 ---
 
-## Quand prendre rendez-vous pour le service
+## Quand demander du service
 
 Après tout événement de surchauffe, même un qui s'est résolu sur l'eau, faites vérifier le moteur.
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Si vous soupçonnez un problème du système de refroidissement, prenez rendez-vous avant votre prochaine sortie : [hbw.wiki/service](https://hbw.wiki/service).
+Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbw.wiki/service avant votre prochaine sortie.
 
 ---
 
@@ -148,7 +148,7 @@ Si vous soupçonnez un problème du système de refroidissement, prenez rendez-v
 ## Appel à l'action
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -156,7 +156,7 @@ Téléphone : 905-342-2153
 
 ## Portée de service
 
-Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+Si vous soumettez une demande de service chez HBW, voici la limite importante à connaître :
 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 

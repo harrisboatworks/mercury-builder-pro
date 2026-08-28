@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
 description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
@@ -48,7 +48,7 @@ These two boats solve completely different problems. Buying the wrong one is the
 - You want a swim platform, table, full bench seating, and shade
 - Top speed is not a priority; 30-35 mph at WOT is plenty
 
-**Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury, $55K-$85K.**
+**Best people-mover on the lake. Triple-tube pontoons can handle some chop, but 4 ft Lake Ontario waves are not their world. New 22-24 ft pontoon with 150-200 HP Mercury; see current package pricing on our /pricing-reference page.**
 
 #### V-hull / runabout
 
@@ -58,7 +58,7 @@ These two boats solve completely different problems. Buying the wrong one is the
 - You're a 2 to 5 person group, not a big entertaining crowd
 - You want better gas mileage and easier trailering than a pontoon
 
-**Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury, $50K-$75K.**
+**Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury; see current package pricing on our /pricing-reference page.**
 
 In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull. Tell us how you actually use the boat and we'll point you at the right hull.
 
@@ -114,13 +114,7 @@ This is not a sales pitch; it is just what we have seen on Rice Lake for years. 
 
 **Legend Boats.** We are a Legend dealer. Legend is a Canadian company, factory Mercury-rigged, and designed for Canadian lakes and weather. The supply chain integration matters for parts and service.
 
-**Princecraft.** Also a Canadian brand. Mercury-rigged from the factory as a standard option. Common on Ontario cottage lakes.
-
-**Manitou.** US-built, premium pontoon brand. Well-regarded for build quality and finish.
-
-**Avalon.** US-built, premium category. Strong construction and layout options.
-
-**Bennington.** US-built, premium pontoon brand. Popular and well-supported.
+Other brands cross our lot regularly as trades and service jobs, and plenty of them are well-built boats. The one we can stand behind end to end is the one we sell, rig, and service ourselves.
 
 For Rice Lake cottage use, brand matters less than configuration. The right length, layout, tube setup, and motor will serve you better than the wrong spec from the most prestigious brand.
 
@@ -192,15 +186,15 @@ Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Fu
 
 ### Does HBW handle pontoon service and storage?
 
-Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
+Yes. Service, repower, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
-- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust on pontoon boats
 - [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
 - [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 
 ## Next steps
 

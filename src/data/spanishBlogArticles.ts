@@ -1,5 +1,9 @@
 import { BlogArticle } from './blogArticles';
 
+/** Language-support note reused from existing article copy. Service is English-only. */
+export const ES_LANGUAGE_NOTE =
+  'Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.';
+
 export const spanishBlogArticles: BlogArticle[] = [
   {
     slug: 'guia-comprar-bote-ontario',
@@ -8,7 +12,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-15',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
@@ -90,14 +94,14 @@ El pontón es excelente para familias que buscan comodidad y espacio. No es el m
 
 ### Opción 1: Bote nuevo
 
-**Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida 
+**Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida
 **Desventajas:** costo inicial más alto, depreciación en los primeros años
 
 En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
 
-**Ventajas:** precio menor, la depreciación inicial ya ocurrió 
+**Ventajas:** precio menor, la depreciación inicial ya ocurrió
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
 Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
@@ -126,7 +130,7 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 | Mantenimiento / servicio | $200–$600 CAD |
 | Slip de marina / amarre | $1,000–$3,000+ CAD |
 
-Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+Harris Boat Works tiene **584 registros de preparación invernal completados entre agosto y noviembre de 2025**, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
 **Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
@@ -151,35 +155,35 @@ Si tienes preguntas específicas, puedes escribir en español en el formulario d
 
 ## Preguntas frecuentes (FAQ)
 
-**¿Necesito licencia de conducir para manejar un bote en Ontario?** 
+**¿Necesito licencia de conducir para manejar un bote en Ontario?**
 No una de auto, pero sí necesitas la PCOC (Carta de Operador de Embarcaciones de Placer). Se obtiene en línea y es válida de por vida.
 
-**¿Es obligatorio el seguro para embarcaciones en Ontario?** 
+**¿Es obligatorio el seguro para embarcaciones en Ontario?**
 No es legalmente obligatorio como en los autos, pero es altamente recomendable. Un accidente sin seguro puede resultar en responsabilidad civil significativa.
 
-**¿Puedo comprar un bote en Ontario si soy residente permanente pero no ciudadano?** 
+**¿Puedo comprar un bote en Ontario si soy residente permanente pero no ciudadano?**
 Sí. La PCOC y la PCL están disponibles para residentes de Canadá independientemente del estatus migratorio.
 
-**¿Puedo remolcar mi bote en un trailer por las carreteras de Ontario?** 
+**¿Puedo remolcar mi bote en un trailer por las carreteras de Ontario?**
 Sí, con las restricciones de ancho y peso correspondientes. Para la mayoría de las embarcaciones hasta ~21 pies no hay requerimientos especiales más allá de luces de trailer funcionales.
 
-**¿Qué pasa si compro un bote usado con un motor que no es Mercury?** 
+**¿Qué pasa si compro un bote usado con un motor que no es Mercury?**
 Harris Boat Works solo da servicio a motores Mercury y Mercruiser. Si el motor es de otra marca, deberás encontrar un taller de servicio autorizado para esa marca.
 
-**¿Puedo hacer la cotización en línea antes de llamar?** 
+**¿Puedo hacer la cotización en línea antes de llamar?**
 Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presupuesto de repotenciación en 3 minutos, sin dar tu teléfono primero.
 
 ---
 
 ## CTA, Próximos pasos
 
-**¿Listo para configurar tu motor o explorar opciones?** 
+**¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
 ¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---`,
     faqs: [
@@ -316,48 +320,48 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 
 ## Itinerario de un día desde Toronto
 
-**5:30 AM**, Salida de Toronto por 401E 
-**7:00 AM**, Llegada a Gores Landing, Harris Boat Works 
-**7:15 AM**, Salida al lago (equipo propio o renta) 
-**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye) 
-**11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra 
-**1:00–5:00 PM**, Tarde: bass o perca 
-**5:30 PM**, Regreso a HBW, combustible 
+**5:30 AM**, Salida de Toronto por 401E
+**7:00 AM**, Llegada a Gores Landing, Harris Boat Works
+**7:15 AM**, Salida al lago (equipo propio o renta)
+**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye)
+**11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra
+**1:00–5:00 PM**, Tarde: bass o perca
+**5:30 PM**, Regreso a HBW, combustible
 **6:00–7:00 PM**, Regreso a Toronto
 
 ---
 
 ## Preguntas frecuentes (FAQ)
 
-**¿Puedo comprar la licencia de pesca en Harris Boat Works?** 
+**¿Puedo comprar la licencia de pesca en Harris Boat Works?**
 Actualmente no, las licencias se compran en ontario.ca o tiendas de artículos deportivos como Canadian Tire. Confirma disponibilidad local antes de venir.
 
-**¿Hay guías de pesca en español disponibles en Rice Lake?** 
+**¿Hay guías de pesca en español disponibles en Rice Lake?**
 No manejamos guías de pesca en Harris Boat Works. Para servicios de guía, consulta operadores locales en Bewdley o Hastings. HBW es la marina de servicio y renta.
 
-**¿Puedo pescar walleye durante todo el año?** 
+**¿Puedo pescar walleye durante todo el año?**
 No. La temporada cierra el 15 de noviembre y reabre el segundo sábado de mayo. Durante el cierre la pesca de walleye está prohibida. Siempre verifica las fechas actuales antes de salir.
 
-**¿Qué equipo básico necesito para walleye en Rice Lake?** 
+**¿Qué equipo básico necesito para walleye en Rice Lake?**
 Caña de 6, 7 pies de acción media, carrete de spinning o baitcasting, línea de 8, 12 lbs, variedad de jigs de 1/4, 3/8 oz y señuelos de buceo tipo crankbait. El equipo específico depende de tus preferencias, consulta una tienda de artículos deportivos local para recomendaciones actualizadas.
 
-**¿Harris Boat Works tiene personal que hable español?** 
+**¿Harris Boat Works tiene personal que hable español?**
 Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbw.wiki/service y haremos lo posible por ser útiles.
 
 ---
 
 ## CTA, Reserva tu bote o configura tu próximo motor
 
-**¿Quieres pescar Rice Lake este verano?** 
+**¿Quieres pescar Rice Lake este verano?**
 Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
 
-**¿Buscas un motor para tu propio bote?** 
+**¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
 ¿Preguntas? Escríbenos en hbw.wiki/service (se aceptan mensajes en español).
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca | 905-342-2153
 ---`,
     faqs: [
@@ -375,14 +379,14 @@ harrisboatworks.ca | 905-342-2153
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Mantenimiento',
     readTime: '11 min',
     keywords: ['preparar motor fuera de borda invierno Ontario', 'winterization motor Mercury', 'preparación invernal bote Ontario'],
     content: `### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario cubre seis pasos esenciales: estabilizar el combustible, hacer el fogging (lubricación interna), drenar el aceite de engranajes (gear lube), retirar y almacenar la batería, engrasar las conexiones y puntos de articulación, y hacer un enjuague con agua dulce. Omitir cualquiera de estos pasos puede resultar en una reparación costosa en primavera. Para reservar su preparación invernal, visite hbw.wiki/service.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -390,7 +394,7 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
 
 ---
 
@@ -438,11 +442,11 @@ Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltra
 
 **¿Qué pasa si lo omite?** Carcasa agrietada por congelación, reparación mayor.
 
-### 4. Batería: retiro y almacenamiento
+### 4. Batería: plan aprobado
 
-No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daño permanente. Retírela, limpie los terminales, y guárdela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (*trickle charger*). Una batería bien almacenada dura dos a tres veces más.
+Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. El retiro no es un requisito universal de HBW.
 
-**¿Qué pasa si lo omite?** Batería muerta o dañada permanentemente, reemplazo costoso.
+**¿Qué pasa si la deja conectada?** Las cargas parásitas pueden descargarla.
 
 ### 5. Engrase de conexiones y puntos de articulación
 
@@ -465,7 +469,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
 | Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
-| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo necesario |
+| Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
 | Enjuague con agua dulce | Elimina depósitos minerales | Corrosión acelerada del sistema de enfriamiento |
 
@@ -475,7 +479,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-No espere demasiado: los talleres se llenan rápido al inicio y al final de la temporada.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -483,28 +487,28 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
 
 ---
 
 ## Preguntas frecuentes
 
-**¿Puedo hacer la preparación invernal yo mismo?** 
+**¿Puedo hacer la preparación invernal yo mismo?**
 Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
 
-**¿Dónde puedo conseguir combustible sin etanol?** 
+**¿Dónde puedo conseguir combustible sin etanol?**
 Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
 
-**¿Cómo reservo la preparación invernal?** 
+**¿Cómo reservo la preparación invernal?**
 La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
 
-**¿Los pasos son iguales para todos los motores Mercury?** 
+**¿Los pasos son iguales para todos los motores Mercury?**
 Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
 
-**¿Cuándo es el mejor momento para hacer la preparación invernal?** 
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
+**¿Cuándo es el mejor momento para hacer la preparación invernal?**
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
-**¿Cuánto tiempo tarda la preparación invernal?** 
+**¿Cuánto tiempo tarda la preparación invernal?**
 Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 
 ---
@@ -523,8 +527,8 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
-      { question: '¿Cuándo debo reservar?', answer: 'Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido después de Thanksgiving.' },
-      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. Manejamos 311 contratos de almacenamiento por año, interior y exterior.' },
+      { question: '¿Cuándo debo reservar?', answer: 'Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
+      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.' },
       { question: '¿Qué pasa si no hago la preparación invernal?', answer: 'En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño interno severo por corrosión o agua congelada, reparaciones que pueden costar miles de dólares.' },
     ],
   },
@@ -551,11 +555,9 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 Este artículo te da las especificaciones reales, la diferencia práctica en el agua, y una forma de decidir sin necesidad de memorizar hojas de datos técnicos.
 
@@ -657,19 +659,19 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 
 ## Preguntas frecuentes (FAQ)
 
-**¿El 150 HP garantiza más velocidad máxima que el 115 HP?** 
+**¿El 150 HP garantiza más velocidad máxima que el 115 HP?**
 Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
 
-**¿Puedo instalar un 150 en un bote que originalmente tenía un 115?** 
+**¿Puedo instalar un 150 en un bote que originalmente tenía un 115?**
 Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
 
-**¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?** 
+**¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?**
 Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000–3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
 
-**¿Puedo financiar el motor?** 
+**¿Puedo financiar el motor?**
 Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
 
-**¿El equipo de Harris Boat Works habla español?** 
+**¿El equipo de Harris Boat Works habla español?**
 Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
 
 ---
@@ -680,7 +682,7 @@ Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 1
 
 ¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
 
-Harris Boat Works, Gores Landing, Ontario 
+Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
 ---`,
     faqs: [
@@ -756,32 +758,32 @@ Con una remotorización, conserva su embarcación y su matrícula, y vuelve al a
 
 ## Cuándo tiene sentido comprar un bote nuevo
 
-**El casco está dañado o estructuralmente comprometido.** 
+**El casco está dañado o estructuralmente comprometido.**
 Delaminación avanzada, reparaciones múltiples, integridad estructural dudosa. Instalar un motor nuevo sobre un casco comprometido no resuelve el problema de fondo.
 
-**Necesita un tipo de embarcación completamente diferente.** 
+**Necesita un tipo de embarcación completamente diferente.**
 La remotorización no cambia la forma del bote. Si quiere pasar de un bote de pesca abierto a uno familiar con cabina, o de un bote a motor a un pontón, necesita un bote nuevo.
 
-**El financiamiento integrado es más accesible para usted.** 
+**El financiamiento integrado es más accesible para usted.**
 Para algunos compradores, financiar un bote nuevo con motor en un solo préstamo es más simple o más accesible. Es una consideración práctica válida.
 
-**La embarcación ya cumplió su vida útil.** 
+**La embarcación ya cumplió su vida útil.**
 Edad, desgaste acumulado y mantenimiento diferido hacen que, en algún punto, un casco haya llegado al final de su vida útil, aunque no tenga un defecto obvio y visible.
 
 ---
 
 ## Cómo tomar la decisión
 
-**Paso 1: Evalúe el casco.** 
+**Paso 1: Evalúe el casco.**
 Haga revisar la estructura por un técnico con experiencia antes de decidir. En Harris Boat Works, evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos, incluso si eso significa perder una venta.
 
-**Paso 2: Obtenga un precio real de remotorización.** 
+**Paso 2: Obtenga un precio real de remotorización.**
 Vaya a mercuryrepower.ca. En unos minutos tiene un precio en dólares canadienses, con todas las opciones desglosadas y sin compromisos.
 
-**Paso 3: Compare con el costo de un bote nuevo equivalente.** 
+**Paso 3: Compare con el costo de un bote nuevo equivalente.**
 Consulte el inventario en harrisboatworks.ca para ver los botes nuevos disponibles. Compare ambos caminos con números reales.
 
-**Paso 4: Pregúntese honestamente si le gusta su embarcación actual.** 
+**Paso 4: Pregúntese honestamente si le gusta su embarcación actual.**
 Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemente es la decisión correcta. Si la respuesta es no, si el formato ya no le conviene, si necesita más espacio, si quiere algo diferente, entonces puede ser el momento de cambiar.
 
 ---
@@ -802,22 +804,22 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 
 ## Preguntas frecuentes
 
-**¿Cuánto cuesta una remotorización Mercury en Ontario?** 
+**¿Cuánto cuesta una remotorización Mercury en Ontario?**
 El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, y muestra los precios claramente en dólares canadienses.
 
-**¿Cómo sé si mi casco vale la pena remotorizar?** 
+**¿Cómo sé si mi casco vale la pena remotorizar?**
 Haga revisar el casco por un técnico con experiencia. En Harris Boat Works evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos.
 
-**¿Puedo ver botes nuevos en Harris Boat Works?** 
+**¿Puedo ver botes nuevos en Harris Boat Works?**
 Sí. Somos concesionarios de Legend Boats. Consulte el inventario en harrisboatworks.ca.
 
-**¿Puedo escribir en español?** 
+**¿Puedo escribir en español?**
 Nuestro personal responde en inglés. Puede enviarnos su pregunta y le responderemos en inglés; si lo prefiere, use Google Translate o pídale ayuda a un familiar bilingüe. El configurador de precios en mercuryrepower.ca funciona en cualquier idioma.
 
-**¿Cuánto tiempo tarda una remotorización?** 
+**¿Cuánto tiempo tarda una remotorización?**
 Depende de la disponibilidad del motor y el programa del taller. Una remotorización bien planificada puede realizarse en semanas. La temporada en Ontario es corta, planifique con anticipación.
 
-**¿Trabajan con otros motores además de Mercury?** 
+**¿Trabajan con otros motores además de Mercury?**
 Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Mercury y Mercruiser.
 
 ---
@@ -837,12 +839,6 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-*End of file, 12 posts total*
-
-
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.' },
@@ -1017,22 +1013,22 @@ Los requisitos de remolque dependen del peso combinado, las dimensiones, los fre
 
 ## Preguntas frecuentes (FAQ)
 
-**¿La PCOC que obtuve en Quebec sirve para navegar en Ontario?** 
+**¿La PCOC que obtuve en Quebec sirve para navegar en Ontario?**
 Sí. La PCOC es federal y válida en toda Canada.
 
-**¿Puedo mostrar mi PCOC en el teléfono?** 
+**¿Puedo mostrar mi PCOC en el teléfono?**
 No. La regulación requiere el original físico. Una foto o copia no es aceptada durante una inspección.
 
-**¿Cuánto tiempo tarda obtener la PCOC?** 
+**¿Cuánto tiempo tarda obtener la PCOC?**
 El examen en línea toma aproximadamente 1, 2 horas de preparación. Si lo apruebas, recibes una tarjeta provisional inmediata y la tarjeta física por correo en semanas. Verifica tiempos actuales con el proveedor.
 
-**¿Qué es el Boating Safety Course que vi en algunas páginas?** 
+**¿Qué es el Boating Safety Course que vi en algunas páginas?**
 Es otro nombre para el mismo proceso, un curso y examen acreditado por Transporte Canadá que resulta en la PCOC. No hay diferencia funcional.
 
-**¿Harris Boat Works puede ayudarme con el proceso de licencia?** 
+**¿Harris Boat Works puede ayudarme con el proceso de licencia?**
 No procesamos licencias directamente, pero podemos orientarte hacia los recursos correctos. Nuestro equipo opera en inglés; te recomendamos tc.gc.ca para la guía oficial.
 
-**¿Puedo usar mi bote en EE. UU. con la PCOC canadiense?** 
+**¿Puedo usar mi bote en EE. UU. con la PCOC canadiense?**
 La PCOC no equivale a una licencia en otros países. Cada estado tiene sus propios requisitos, verifica las regulaciones del estado específico antes de cruzar la frontera.
 
 ---
@@ -1045,8 +1041,8 @@ Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el co
 
 ¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---`,
     faqs: [

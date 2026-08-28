@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Pickering: 50 Minutes from Rice Lake"
 description: "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury dealer pickering","mercury repower pickering","mercury outboard pickering ontario","boat motor dealer pickering"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -71,10 +71,10 @@ Mercury Premier is the top tier in their dealer program. Harris Boat Works has h
 Full lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll talk through what makes sense for your specific hull and use case.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find it more convenient to store with us than to search for storage locally, especially if the boat is already being serviced here.
@@ -145,7 +145,7 @@ Closer than you might think (similar to a typical Toronto commute), Mercury Prem
 
 ### Can I quote and order remotely?
 
-Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install/delivery from there.
+Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install and pickup timing from there.
 
 ## Related guides
 

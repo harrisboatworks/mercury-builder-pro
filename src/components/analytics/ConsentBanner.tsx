@@ -52,7 +52,7 @@ export function ConsentBanner() {
             Privacy
           </a>
         </p>
-        <div className="flex shrink-0 gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
             onClick={() => choose('denied')}
@@ -66,6 +66,14 @@ export function ConsentBanner() {
             className="rounded-md bg-[#20384d] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#2a4660]"
           >
             Accept
+          </button>
+          <button
+            type="button"
+            aria-label="Dismiss cookie banner (declines analytics cookies)"
+            onClick={() => choose('denied')}
+            className="ml-1 rounded-md p-2 text-lg leading-none text-[#20384d]/60 transition-colors hover:bg-[#20384d]/5 hover:text-[#20384d]"
+          >
+            &times;
           </button>
         </div>
       </div>

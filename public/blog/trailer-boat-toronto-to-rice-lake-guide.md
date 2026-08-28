@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trailering a Boat: Toronto to Rice Lake"
 description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** How To  
 **Published:** 2026-04-26  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 
@@ -107,7 +107,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **Combined weight over 3,400 kg (7,500 lbs):** A full-size truck or HD truck is typically required. Verify against the tow vehicle's gross combined weight rating (GCWR).
 
-When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the $15.
+When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the scale fee.
 
 ---
 

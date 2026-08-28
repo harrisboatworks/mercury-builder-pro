@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const clearConsent = () => {
   document.cookie = 'mr_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+  try { localStorage.removeItem('mr_consent'); } catch { /* noop */ }
   document.querySelectorAll('script[data-clarity-project-id]').forEach((script) => script.remove());
   delete window.clarity;
   window.dataLayer = [];

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
@@ -107,7 +107,7 @@ The single most common spring issue we diagnose is a weak or dead battery. Fuel-
 
 If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ## Sources
 
@@ -117,7 +117,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## About the author
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 ## FAQs
 
@@ -151,7 +151,7 @@ A customer who didn't check anything, didn't watch for telltale water, and ran f
 - [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
-- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 
 ## Next steps
 

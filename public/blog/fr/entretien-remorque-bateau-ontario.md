@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
@@ -140,13 +140,13 @@ La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanci
 
 Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
 
-- **Regraissage annuel des roulements**, le service le plus rapide, habituellement fait pendant que vous attendez
+- **Regraissage annuel des roulements**, le service le plus rapide, habituellement complété rapidement
 - **Conversion ou amélioration des freins**, à inertie vers électrique
 - **Réparation de cadre**, soudure de membrures fissurées
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 
-Réservez à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
+Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
 
 ---
 

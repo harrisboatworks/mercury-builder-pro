@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -76,7 +76,7 @@ When you're staring at a shiny new motor, it's easy to forget that some things h
 | First weeks (break-in period) | Follow the break-in routine in your owner's manual and our break-in guide. Check for unusual noise, vibration, or warning signals after each outing. |
 | Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it online at hbw.wiki/service if you go this route. |
 | 100 hours or end of season (whichever comes first) | Change engine oil and filter, inspect anodes, check propeller condition, and give the motor a thorough once-over. Mercury's published schedule calls for this at 100 hours or annually. Do not let this slide past the season end. |
-| Every 300 hours or 3 years (Mercury schedule) | Water pump impeller replacement. Around Rice Lake, many boats get the impeller replaced every two to three seasons because of the weedy water; that cadence is local practice, not a Mercury interval. |
+| Roughly every 300 hours or 3 years (per Mercury's current published schedule; confirm in your owner's manual) | Water pump impeller replacement. Around Rice Lake, many boats get the impeller replaced every two to three seasons because of the weedy water; that cadence is local practice, not a Mercury interval. |
 
 If you're running in salt water or in stained, gritty shallows frequently, adjust accordingly. But for most Ontario freshwater boaters, this timeline keeps a new motor healthy without over-servicing.
 
@@ -173,9 +173,9 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 - [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 - [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
-- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
 
 ## Next steps
 

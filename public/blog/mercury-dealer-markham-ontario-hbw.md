@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Markham Ontario HBW"
 description: "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 70 minutes north of Markham via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is available in minutes at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 70 minutes north of Markham via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is available in minutes at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -79,10 +79,10 @@ Markham sits at the edge of cottage country. A lot of Markham residents have con
 Full Mercury lineup: 2.5 HP kickers through 600 HP Verado. FourStroke, Pro XS, Verado, SeaPro. Verado models are special order rather than stocked inventory; we quote them with current factory lead times. We'll talk through what actually makes sense for your hull and how you use it, not push you toward the highest margin option.
 
 **Repower service**
-Most of what we do is repower, replacing an older motor on a hull you want to keep. We handle the full job: motor, rigging, controls, throttle and shift cables, prop selection, and sea trial. A repower done right means the new motor performs the way Mercury designed it to, not just "runs."
+Most of what we do is repower, replacing an older motor on a hull you want to keep. We handle the full job: motor, rigging, controls, throttle and shift cables, prop selection, and lake test. A repower done right means the new motor performs the way Mercury designed it to, not just "runs."
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. We don't run indoor storage. If you need climate-controlled indoor, that's not us.
@@ -94,7 +94,7 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 ## Getting to Harris Boat Works from Markham
 
-**Route:** Highway 404 north to Highway 115 east, then County Road 28 north into Gores Landing.
+**Route:** Highway 407 east to Highway 115 north, then County Road 28 south and County Road 18 east into Gores Landing.
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
@@ -159,7 +159,7 @@ There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake
 
 ### How far is Harris Boat Works from Markham?
 
-Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.
+Approximately 70 minutes via Highway 407 east and Highway 115 north, then County Road 28. Distance is about 110 km depending on your part of Markham.
 
 ### Why drive to Rice Lake instead of a closer GTA dealer?
 

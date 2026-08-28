@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cheapest Mercury Outboards in Canada (2026)"
 description: "The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,9 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
----
 
 ## Quick Answer
 
@@ -63,7 +59,7 @@ Cables, controls, key switches, gauge cluster
 
 Aluminum starts around $300, stainless 4-blade can hit $1,200
 
-#### Labour (install + sea trial)
+#### Labour (install + lake test)
 
 **$1,800 - $3,500**
 
@@ -137,11 +133,11 @@ Six things determine where your real floor is:
 
 ### Cheap That Is Actually Cheap
 
-**Buy in winter.** November through March is our quietest shop period. We have first pick of motors before the spring rush. Lead times are shortest. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
+**Buy in winter.** The shop closes December 1 through April 1, but we quote and take orders all winter. Order early and you get first pick of motors before the spring rush, with the shortest lead times. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
 
 **Trade in your old motor.** Even a dead motor has aluminum and parts value. Trade-in credit reduces the amount you're financing or paying outright.
 
-**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500 to $1,000 CAD versus $2,000 to $3,000 for a brand conversion.
+**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging costs less than a brand conversion; check current figures on our /pricing-reference page.
 
 **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop works fine for most boaters and costs considerably less than stainless.
 

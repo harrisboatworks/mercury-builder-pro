@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-08
+date_modified: 2026-08-27
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-27  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
@@ -43,7 +43,7 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800-$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
 
 For a 22-foot pontoon at $55,000, scale that up to roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
@@ -91,24 +91,29 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 ## 3. Winter Storage and Winterization
 
-In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-lakes). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+In Ontario, you don't get to skip [winter storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
-**HBW pricing 2026:**
+### Effective September 2026
 
-- **Outdoor + shrinkwrap, up to 21 ft:** $33/ft → $693 for 21-ft boat
-- **Outdoor + shrinkwrap, 22 ft+:** $35/ft → $770 for 22-ft pontoon
-- **Outdoor with trailer, no shrinkwrap, up to 21 ft:** $36/ft (storage only)
+The current [HBW 2026–27 winter-storage rate card](https://www.harrisboatworks.ca/winter-storage) lists these trailered-boat rates before HST, shop supplies, and miscellaneous charges:
 
-**Winterization (separate scope, fall):**
-- **40-60 HP 4-stroke:** $337.84
-- **75-115 HP 4-stroke:** $425.71
-- Larger engines, sterndrives, twin setups: $500-$900+
+- **Storage with shrink wrap, up to 21 ft:** $36/ft
+- **Storage with shrink wrap, 22–28 ft:** $38/ft
+- **Outdoor uncovered storage, up to 21 ft:** $28/ft
+- **Outdoor uncovered storage, 22–28 ft:** $30/ft
+- **40-60 HP FourStroke winterization:** $355.94
+- **75-115 HP FourStroke winterization:** $444.49
+- **20 ft storage with shrink wrap:** $720.00
+- **21 ft storage with shrink wrap:** $756.00
+- **21 ft trailered wrapped storage plus 75-115 HP FourStroke winterization:** $1,200.49
+
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **Indoor storage** (we don't offer; some Ontario competitors do):
 - Indoor unheated: $40-$60/ft (~$840-$1,260 for 21-ft boat)
 - Indoor heated: $60-$90/ft (~$1,260-$1,890 for 21-ft boat)
 
-**Annual budget for 21-ft outdoor + winterized:** ~$1,000-$1,200 all-in at HBW.
+**Annual budget for 21-ft outdoor + winterized:** $1,200.49 before HST, shop supplies, and miscellaneous charges.
 
 **The "what if I skip it" cost:** [A cracked engine block from a missed winterization](/blog/boat-winterization-cost-ontario-2026) runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
@@ -182,14 +187,16 @@ This category used to be near-zero. It's still essentially negligible.
 |-----------|-------------|
 | Marina slip (HBW seasonal, 20 ft) | $960 |
 | Insurance (1.5% of $40K) | $600 |
-| Winter storage + shrinkwrap (HBW) | $700 |
-| Winterization (90 HP 4-stroke) | $425 |
+| Winter storage + shrinkwrap (HBW, 20 ft trailered wrapped) | $720.00 |
+| Winterization (90 HP FourStroke) | $444.49 |
 | Annual service (100-hour) | $550 |
 | Fuel (75 hrs, ethanol-free) | $2,000 |
 | Maintenance reserve (props, batteries, wear items) | $400 |
 | Trailer maintenance | $200 |
 | PCL amortized | $5 |
-| **Total cash-bought** | **~$5,840** |
+| **Total cash-bought** | **$5,879.49** |
+
+That exact sample is approximately **$5,880**.
 
 **Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
 
@@ -280,8 +287,8 @@ Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized,
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
 - [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 
 ## Next steps
 

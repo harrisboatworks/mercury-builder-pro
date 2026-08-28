@@ -83,7 +83,7 @@ Oil part numbers: 10W-30 is 8M0142141 per quart; 25W-40 is 8M0078629. That holds
 
 ## 40 to 60 HP: The Cottage Workhorses
 
-Two versions here, and the gearcase is the difference. Command Thrust runs a bigger gearcase with more than double the lube capacity, a different impeller, and different kits. Check your model code before ordering. Our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats) explains what the gearcase actually does.
+Two versions here, and the gearcase is the difference. Command Thrust runs a bigger gearcase with more than double the lube capacity, a different impeller, and different kits. Check your model code before ordering. Our [Command Thrust guide](/blog/mercury-command-thrust-complete-guide-2026) explains what the gearcase actually does.
 
 | Part | 40/50/60 Command Thrust | 40/50/60 Standard Gearcase |
 |---|---|---|
