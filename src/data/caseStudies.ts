@@ -97,7 +97,7 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     id: 'CS04',
     slug: 'cedar-strip-9-9-fourstroke',
     title: 'Cedar-strip utility setup: small 9.9HP FourStroke',
-    excerpt: 'A lightweight small-horsepower package for cottage and protected-water use. Real photography still pending.',
+    excerpt: 'A lightweight small-horsepower package for cottage and protected-water use.',
     scenario: 'Small utility / cedar-strip setup',
     boatType: 'Small utility / cedar-strip boat',
     region: 'Ontario cottage country',

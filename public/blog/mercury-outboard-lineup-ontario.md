@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)"
 description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes."
 category: "Buying Guide"
 date_published: 2026-07-09
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury outboard lineup","mercury 2027 outboards","mercury outboard models ontario","mercury fourstroke vs pro xs","mercury dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-07-09  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
 
@@ -90,13 +90,13 @@ The July 1 flip is a calendar event, not a redesign event. Here's the honest bre
 
 Mercury hasn't released the complete 2027 spec detail as of this writing (July 2026). Where 2027 specifics are unconfirmed, we're saying so plainly rather than guessing. If Mercury announces something that changes this picture, we'll update this post and call out the change.
 
-## Pricing: Where Things Stand as of July 2026
+## Pricing: Where Things Stand as of September 2026
 
-Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of July 2026.
+Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of September 2026.
 
 What that means for you:
 
-- Quotes built today are real, honest numbers on in-stock and orderable motors, as of July 2026.
+- Quotes built today are real, honest numbers on in-stock and orderable motors, as of September 2026.
 - When the 2027 pricelist arrives, prices may move. Sometimes flat, sometimes a modest increase. We don't know yet and we won't pretend to.
 - The quote builder at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) always reflects our current live pricing, whichever pricelist is in effect. That's the source of truth, not this post.
 
@@ -107,7 +107,7 @@ If a closeout incentive shows up on remaining 2026-built inventory late this sum
 | Factor | Buy now | Wait |
 |---|---|---|
 | Install timing | You want the boat ready for spring 2027 | You're 12+ months out |
-| Pricing | Lock a quote on current (2026-MY) pricing, as of July 2026 | Wait for Mercury's 2027 pricing release |
+| Pricing | Lock a quote on current (2026-MY) pricing, as of September 2026 | Wait for Mercury's 2027 pricing release |
 | Tech | The current spec sheet meets your needs | You're chasing a specific previewed feature (e.g., a larger Avator) |
 | Resale | Keeping the boat 5+ years | Selling within 2 years |
 
@@ -119,7 +119,7 @@ One more timing reality: we close for the season roughly December 1 to April 1, 
 
 We've watched a lot of model year flips since 1965, and the pattern barely changes. June brings a surge of customers who want "this year's motor" before the calendar turns. July is quiet while Mercury rolls out announcements and dealer training. September through November is when spring install slots actually get booked, and that's the deadline that matters, not July 1.
 
-The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: we're a drop-off only shop, so plan to bring the boat to us in Gores Landing rather than waiting on a mobile service call.
+The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## Common mistakes
 
@@ -154,7 +154,7 @@ Yes. It's mechanically identical to early 2027 stock, carries the same 3-year fa
 
 ### When will 2027 Mercury pricing be available?
 
-Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
+Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
 
 ### What's the best Mercury for a fishing boat on Rice Lake?
 

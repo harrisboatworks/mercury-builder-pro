@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-ordering-process.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
@@ -114,7 +114,7 @@ One seasonal note up front: our shop is closed December 1 through April 1. We qu
 - Prepare installation materials
 
 **Your Preparation**:
-- Drop the boat off at our Gores Landing shop (customer drop-off; we don't pick up or deliver boats)
+- Drop the boat off at our Gores Landing shop. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - Old motor removal can be part of the job; ask when quoting
 - Address any transom issues we flagged
 - Clear the boat for work

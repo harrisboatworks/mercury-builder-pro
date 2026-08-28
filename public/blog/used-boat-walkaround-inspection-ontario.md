@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Used Boat Walkaround Ontario Guide"
 description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"
 date_published: 2026-03-16
-date_modified: 2026-08-02
+date_modified: 2026-08-27
 keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Buying Guide  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-27  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 
@@ -205,14 +205,14 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-*Harris Boat Works, est. 1947. Mercury Marine Premier Dealer. Gores Landing, Ontario.*
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 *905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
 
 ---
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW has been a Mercury dealer since 1965 and is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Get the printable guide
 

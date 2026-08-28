@@ -1,3 +1,4 @@
+import { readdirSync, readFileSync } from 'node:fs';
 import { blogArticles } from '../src/data/blogArticles';
 import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
@@ -18,6 +19,17 @@ const diagnosticSlugs = [
 ];
 
 const failures: string[] = [];
+
+// Keep in sync with scripts/check-blog-timeline-facts.mjs.
+// Flags retired global "HBW never picks up boats" copy. Motor pickup-only,
+// customer collection, no-delivery / no-mobile boundaries, and the Dec 1-Apr 1
+// closure remain allowed.
+const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
+  /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
+
+const generatedBlogTwins = readdirSync('public/blog', { recursive: true })
+  .filter((file) => String(file).endsWith('.md'))
+  .map((file) => `public/blog/${file}`);
 
 const unsupportedOperationalClaims = [
   {
@@ -124,12 +136,21 @@ const unsupportedOperationalClaims = [
   {
     label: 'incorrect HBW winterization or storage reservation pressure',
     pattern:
-      /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot))\b/i,
+      /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot)|mid-November (?:is )?(?:the )?(?:actual )?(?:fall )?(?:last|final) (?:receiving|intake|call)|(?:winterization|storage) slots fill in October|Submit a request at [^\n]{0,80} in September or early October|one to two weeks before (?:your )?(?:planned |intended )?drop-off|book fall lay-up or winterization in October|book before the December 1 closure)\b/i,
+  },
+  {
+    label: 'hard-no HBW boat pickup policy',
+    pattern: STALE_HBW_BOAT_PICKUP_DENIAL_RX,
+  },
+  {
+    label: 'winter-storage capacity or scarcity language',
+    pattern:
+      /(?:maximum boat size HBW can store|winterization|winter storage)[^\n.]{0,220}\b(?:current capacity|capacity is limited|space is limited|availability disappears)\b/i,
   },
   {
     label: 'incorrect Mandarin winterization or storage reservation pressure',
     pattern:
-      /(?:(?:9 月中旬|9 月底之前)[^\n。]{0,30}(?:预订|预约)|(?:场地|位置)[^\n。]{0,30}(?:几乎满|订满)|锁定冬储位置|早鸟折扣)/i,
+      /(?:(?:9 月中旬|9 月底之前)[^\n。]{0,30}(?:预订|预约)|(?:场地|位置)[^\n。]{0,30}(?:几乎满|订满)|锁定冬储位置|早鸟折扣|不需要提前数月预留位置|不需要在夏末抢位置)/i,
   },
   {
     label: 'false Mandarin-language staff claim',
@@ -266,17 +287,16 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /not accurate to describe every pleasure-craft case as an automatic blanket warranty void/i,
   ],
   'gta-chinese-rice-lake-winter-storage-complete-guide': [
-    /有空间，不需要提前数月预留位置/i,
-    /计划送船前 1–2 周/i,
-    /11 月中旬是实际的秋季最后接收时间/i,
-    /Lightspeed 记录[\s\S]{0,80}584 次冬化/i,
-    /只提供室外收缩膜冬储/i,
+    /HBW 当前 2026[–-]27 冬储价格表/i,
+    /然后随时送船，包括下班后/i,
+    /2025 年 8 月至 11 月完成的 584 条冬化记录/i,
+    /提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务/i,
   ],
   'gta-chinese-mercury-service-guide': [
     /没有中文母语的销售或翻译/i,
     /按先到先办处理/i,
-    /计划送船前 1–2 周/i,
-    /只提供(?:\*\*)?室外收缩膜冬储(?:\*\*)?/i,
+    /然后随时送船，包括下班后/i,
+    /提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务/i,
   ],
   'gta-chinese-pcl-fishing-licence-guide': [
     /PCOC（Pleasure Craft Operator Card）/i,
@@ -285,7 +305,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /18 岁以下或 65 岁及以上/i,
   ],
   'gta-chinese-buy-boat-rice-lake-guide': [
-    /HBW 只提供室外收缩膜冬储/i,
+    /提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务/i,
     /Harris Boat Works 自 1947 年起一直由 Harris 家族/i,
   ],
   'why-chinese-boaters-choose-harris-boat-works': [
@@ -320,9 +340,8 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /不要把 walleye 误认成 yellow perch（黄鲈）/i,
   ],
   'ontario-boating-season-tips': [
-    /battery stays in the boat, disconnected and maintained over winter/i,
-    /leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions/i,
-    /parasitic draw, not cold, is the usual problem/i,
+    /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan/i,
+    /The model\/serial manual and approved storage plan control/i,
   ],
 };
 
@@ -390,6 +409,13 @@ for (const article of contentArticles) {
     }
   }
 
+}
+
+for (const file of generatedBlogTwins) {
+  const twinSource = readFileSync(file, 'utf8');
+  if (STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
+    failures.push(`${file}: hard-no HBW boat pickup policy`);
+  }
 }
 
 for (const slug of diagnosticSlugs) {
@@ -497,5 +523,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
+  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${generatedBlogTwins.length} Markdown twin(s), ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
 );

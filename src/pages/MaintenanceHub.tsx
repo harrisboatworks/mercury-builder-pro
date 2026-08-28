@@ -44,7 +44,7 @@ export default function MaintenanceHub() {
           { season: 'Fall (Oct-Nov)', service: 'Winterization: treat fuel, change gearcase lubricant, follow the model-specific storage procedure', crit: 'Critical' },
           { season: 'Winter', service: 'Storage: visual checks and battery care for your setup', crit: 'Light' },
         ],
-        footnote: <>Service slots fill up in March (spring) and October (fall). Book early.</>,
+        footnote: <>Complete the service request, then drop the boat off anytime, including after hours.</>,
       }}
       coveredIntro="The Maintenance Hub bundles seasonal cycles, troubleshooting, break-in for new motors, and DIY guides."
       articleGroups={[
@@ -92,7 +92,7 @@ export default function MaintenanceHub() {
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Premier dealer technicians', description: 'Mercury-certified, factory-trained.' },
         { icon: <Users className="h-5 w-5" aria-hidden="true" />, title: '60 years of service experience', description: 'Three generations of HBW techs.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Computer diagnostic for modern Mercurys', description: 'Fault code reading on post-2010 EFI motors.' },
-        { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Shop and marina support', description: 'Outdoor storage, parts, and electronics integration during our open season.' },
+        { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Shop and marina support', description: 'Outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; parts and electronics integration during our open season. No indoor or heated boat storage.' },
       ]}
       faqs={[
         { question: 'How often should I service my Mercury?', answer: "Follow the maintenance schedule for your exact engine model and serial number. For most recreational Mercury outboards, schedule service at 100 hours or at least annually, whichever comes first, plus proper storage preparation before freezing weather. High-hour and commercial use may require more frequent service." },
@@ -102,7 +102,7 @@ export default function MaintenanceHub() {
         { question: 'How long does a Mercury last with proper maintenance?', answer: "There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim." },
         { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
         { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-        { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+        { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
         { question: 'Do you repair Mercury outboards?', answer: "Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service." },
       ]}
       secondaryCTA={{

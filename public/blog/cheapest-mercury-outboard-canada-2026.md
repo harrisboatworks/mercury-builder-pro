@@ -29,10 +29,6 @@ revenue_driver: repower
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
----
-
 ## Quick Answer
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.

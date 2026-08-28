@@ -1,5 +1,6 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
 import { canonicalBlogFinancingCopy, canonicalBlogFinancingFaqCopy } from './blogFinancingCopy';
+import { getFinancingHeadlineFaqAnswer } from '../lib/finance';
 
 export interface HowToStep {
   name: string;
@@ -57,8 +58,8 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   'winter-repower-planning-guide':        [11, 12, 1, 2],
   'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
   'mercury-outboard-lineup-ontario':       [10, 11, 12, 1, 2, 6, 7, 8],
-  // Winterization (Aug–Dec). Customers commonly begin planning in August;
-  // HBW accepts work first come, first served through the mid-November last call.
+  // Winterization (Aug–Dec). Customers commonly begin planning in August.
+  // After the service request, boats may be dropped off anytime, including after hours.
   'boat-winterization-cost-ontario-2026':                [8, 9, 10, 11, 12],
   'diy-mercury-outboard-winterization-guide':            [8, 9, 10, 11, 12],
 
@@ -1905,20 +1906,20 @@ Tell us the motor, the hours, and the last time anyone was in there.
     image: "/lovable-uploads/hero-100-hour-service-cost.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-26",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~8 min read",
     keywords: ["mercury 100 hour service cost", "outboard annual service cost ontario", "mercury service cost", "100 hour service what's included", "boat motor service cost ontario"],
     faqs: [
-      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can scope the right work." },
+      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours." },
       { question: "Is the 100-hour service the same as winterization?", answer: "No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine." },
       { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone." },
       { question: "What parts get replaced at a typical annual service?", answer: "There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number." },
       { question: "Can I skip a year to save money?", answer: "Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed, but the correct interval and parts list come from the Mercury schedule for your motor." },
-      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is handled first come, first served; there is no need to reserve winterization or storage capacity. Submit hbw.wiki/service about one to two weeks before drop-off, with mid-November as the practical last call before the December 1 closure." }
+      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbw.wiki/service, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1." }
     ],
-    content: `> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. At HBW, fall work is first come, first served and there is no need to reserve winterization or storage capacity. Submit the [service request](https://hbw.wiki/service) about one to two weeks before your planned drop-off. Mid-November is the practical last call because the marina closes December 1.
+    content: `> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
@@ -2003,18 +2004,14 @@ Every winterize-and-service at our shop ends with the tech recording recommendat
 
 ## When Should You Submit an HBW Service Request?
 
-You do not need to reserve a winterization slot or storage space months ahead. HBW has capacity, and fall work is handled first come, first served.
-
-The common practice among our customers, and what we recommend, is to complete the [service request](https://hbw.wiki/service) about **one to two weeks before your planned drop-off**. That gives the team the motor details and requested work before the boat arrives without forcing you to predict your last boating day in August.
-
-HBW is closed December 1 to April 1, so **mid-November is the practical last call** for fall winterization and storage intake.
+Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 ---
 
 ## Frequently Asked Questions
 
 **How much does a Mercury 100-hour service cost in Ontario?**
-There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before your planned drop-off so HBW can scope the right work.
+There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime you want, including after hours.
 
 **Is the 100-hour service the same as winterization?**
 They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. Doing both in one fall appointment can avoid duplicate work.
@@ -2029,13 +2026,13 @@ There is no one replacement list. Engine oil and filter, gearcase lubricant, fue
 Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed.
 
 **Do you service motors bought somewhere else?**
-Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is first come, first served, and there is no need to reserve winterization or storage capacity. Submit [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before drop-off.
+Yes. HBW services Mercury outboards regardless of where they were purchased. Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 ---
 
 ## Ready to Book Your Service?
 
-Tell us the motor, its hours, and the work you want covered. Submit the request one to two weeks before your planned drop-off; for fall work, mid-November is the practical last call.
+Tell us the motor, its hours, and the work you want covered. Complete hbw.wiki/service, then drop off anytime, including after hours.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -2064,7 +2061,7 @@ Tell us the motor, its hours, and the work you want covered. Submit the request 
     imageAlt: "A technician checking a Mercury 90 outboard beside covered boats in spring",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
@@ -2074,7 +2071,7 @@ Tell us the motor, its hours, and the work you want covered. Submit the request 
       { question: "What's included in a spring startup?", answer: "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check." },
       { question: "Do I need spring commissioning if I winterized properly?", answer: "The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem." },
       { question: "Can I do spring commissioning myself?", answer: "Most of it, yes; our spring checklist walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes." },
-      { question: "When should I submit a spring service request?", answer: "HBW reopens in early April and handles service first-come, first-served. If you are bringing us a boat, complete hbw.wiki/service about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so earlier spring drop-offs leave more time if the check uncovers a repair." },
+      { question: "When should I submit a spring service request?", answer: "Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April." },
       { question: "Why is my neighbour's spring bill higher than mine?", answer: "The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the winterization cost guide explains that side of the cycle." }
     ],
     content: `# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
@@ -2172,7 +2169,7 @@ The fall work is what makes spring cheap, but the startup still matters: batteri
 Most of it, yes; our [spring checklist](/blog/spring-outboard-commissioning-checklist) walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes.
 
 **When should I submit a spring service request?**
-HBW reopens in early April and handles service first-come, first-served. If you are bringing us a boat, complete [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so an earlier spring drop-off leaves more time if the check uncovers a repair.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
 
 **Why is my neighbour's spring bill higher than mine?**
 The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) explains that side of the cycle.
@@ -2181,7 +2178,7 @@ The standard check is the small part. The total rises when the startup also need
 
 ## Ready for Launch Day?
 
-If you are bringing us a boat, submit the service form about one to two weeks before your intended drop-off. Work is handled first-come, first-served. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -4862,11 +4859,11 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
-    content: `> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, submit hbw.wiki/service about one to two weeks before your planned drop-off; mid-November is the practical last call.
+    content: `> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, complete hbw.wiki/service, then drop off anytime, including after hours.
 
 Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
 
@@ -4886,7 +4883,7 @@ Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
 - **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
-- **[Storage conditions](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).** A dry, secure cover and correct engine position matter. HBW offers outdoor shrinkwrapped storage only.
+- **[Storage conditions](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).** A dry, secure cover and correct engine position matter. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 - **Motor family and age.** Current FourStrokes, older two-strokes, SeaPro, ProKicker, and Verado models do not all share one checklist. The serial-number manual decides the cadence.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
@@ -4939,11 +4936,11 @@ For pricing context, see the [boat winterization cost guide](/blog/boat-winteriz
 
 If winterization is done correctly, the motor mostly takes care of itself over winter. A few things to do or avoid:
 
-- Battery: it can remain in the boat if disconnected and maintained according to the battery maker's instructions
+- Battery: a healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 - Storage cover: snow load can damage seats, electronics, and canvas
 - Mid-winter check (for boats stored at home): a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
-We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For current rates, see [the winter-storage rate page](https://www.harrisboatworks.ca/winter-storage).
 
 ## Common maintenance mistakes
 
@@ -5003,7 +5000,7 @@ For exact intervals on your specific motor model, the Mercury owner's manual is 
 
 ## Ready to request service?
 
-HBW handles fall winterization and outdoor storage first come, first served. You do not need to reserve capacity. Submit the service request about one to two weeks before your planned drop-off; mid-November is the practical last call because HBW closes December 1.
+HBW handles fall winterization and outdoor storage first come, first served. Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
 [**Request Service**](https://hbw.wiki/service)
 
@@ -5326,7 +5323,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
@@ -5346,7 +5343,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Quick recommendation
 
@@ -6160,7 +6157,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     imageAlt: 'Aerial view of Harris Boat Works marina and shop on Rice Lake in Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
@@ -6223,7 +6220,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Mercury sales and service (the core business)
 - Legend Boats sales
 - Haul-out and launch services at the marina
-- Outdoor winter storage with shrinkwrap (we do not offer indoor heated storage)
+- HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 - Winterization and spring commissioning services
 - Used boat sales and trade-ins
 - Pleasure Craft Licence (PCL) administration for repower customers
@@ -6235,7 +6232,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Prop selection during the lake-test to confirm performance
 - PCL update as part of the project
 - Service log entry for warranty support and resale value
-- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
+- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of September 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
 - Trade-in evaluation for old motors
 
 We don't push repowers that aren't needed. Sometimes a customer comes in with a motor that has seasons of life left. We tell them that, and they go fish.
@@ -6281,8 +6278,8 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the current top tier in Mercury\'s dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, parts support, and access to Mercury technical resources. It does not change a customer\'s factory warranty rights or guarantee faster claim approval.' },
       { question: 'Why does Harris Boat Works only sell Mercury?', answer: 'Depth over breadth. Three generations of expertise, parts support, and tooling are Mercury-specific, and HBW can rig, water-test, service, and store a Mercury boat directly on Rice Lake.' },
       { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
-      { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
-      { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
+      { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of September 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
+      { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Pricing varies by boat size. See https://www.harrisboatworks.ca/winter-storage.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and MerCruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
       { question: 'Who runs Harris Boat Works now?', answer: 'Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.' },
@@ -6778,7 +6775,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
     imageAlt: 'Family cruising a pontoon boat powered by a Mercury outboard past Rice Lake cottages at golden hour',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -6893,7 +6890,7 @@ For Rice Lake cottage use, brand matters less than configuration. The right leng
 
 We recommend lift storage where the cottage allows it.
 
-For HBW winter storage, we offer outdoor storage with shrinkwrap (no indoor heated storage). Call 905-342-2153 for current rates.
+For HBW winter storage, we offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. See [the winter-storage rate page](https://www.harrisboatworks.ca/winter-storage) or call 905-342-2153.
 
 ## Ready for your Rice Lake pontoon?
 
@@ -6926,7 +6923,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Should I get a boat lift for my pontoon?', answer: 'If your cottage configuration allows it, yes. Lift storage is the best thing you can do for hull and motor longevity.' },
       { question: 'Can I tube and ski with a Rice Lake pontoon?', answer: 'Tubing: yes, with 115 HP CT or more. Skiing: more reliably with a 150 HP (standard gearcase) and up, especially a tritoon; Command Thrust tops out at 115. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.' },
       { question: 'How long does a pontoon last with proper maintenance?', answer: 'Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Furniture and electronics may need updating in the 10 to 15 year range, but the basic hull structure is durable.' },
-      { question: 'Does HBW handle pontoon service and storage?', answer: 'Yes. Service, repower, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.' },
+      { question: 'Does HBW handle pontoon service and storage?', answer: 'Yes. HBW handles pontoon service and repower work, plus outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Call 905-342-2153 for specifics.' },
     ],
   },
 
@@ -7220,7 +7217,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
@@ -7324,7 +7321,7 @@ We look at trailers as part of cottage repower projects.
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starting point on motor and rigging costs. If you want to talk through your specific hull before you build, call us at 905-342-2153.
 
-HBW is drop-off only for repower projects. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also bring the boat to our Gores Landing shop.
 
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
@@ -7344,7 +7341,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'When is the best time to repower a cottage boat?', answer: 'Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed December 1 through April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.' },
       { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes, if the motor horsepower, brand, or model changes. The update is free online and takes fifteen minutes. We help HBW customers through it.' },
       { question: 'Should I keep my old motor as a backup?', answer: 'Usually no. Old Evinrudes and older Mercurys have limited practical value as backups and the storage hassle is real. We give fair-market trade-in value during a repower.' },
-      { question: 'How do I get my cottage boat to HBW for a repower?', answer: 'HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.' },
+      { question: 'How do I get my cottage boat to HBW for a repower?', answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also bring the boat to our Gores Landing shop.' },
     ]
   },
 
@@ -7358,7 +7355,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -7522,13 +7519,13 @@ Walleye return to accessible depths as the water drops below 16°C (60°F). The 
 
 Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with a tube or swimbait, can produce the biggest fish of the year. Bass season does not close until December 15.
 
-**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Book fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026) in October, before availability disappears.
+**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Complete the [service request](https://hbw.wiki/service), then drop the boat off anytime, including after hours, for fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026).
 
 ### December to Ice-Up: Season Close and Winterization
 
 Bass and muskie close December 15. Walleye closed November 15. Crappie, perch, sunfish, and pike stay open all year.
 
-Now is the time to prepare your Mercury for storage. FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. HBW handles winterization for Mercury and MerCruiser. Book before the December 1 closure.
+Now is the time to prepare your Mercury for storage. FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. HBW handles winterization for Mercury and MerCruiser. Complete the service request, then drop off anytime, including after hours. The physical marina is closed December 1 through April 1.
 
 ---
 
@@ -8983,7 +8980,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-07-09',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9033,7 +9030,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The simple version
 
@@ -9644,7 +9641,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury FourStroke kicker and main outboard mounted on a boat transom for Rice Lake trolling and big water navigation.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-04',
     category: 'Comparison',
     readTime: '9 min read',
@@ -9707,7 +9704,7 @@ These are not competing tools. They are complementary. But they cost real money,
 | Upfront cost (CAD, approx.) | $500 to $3,500 (before batteries) | $4,000 to $7,500 installed |
 | Emergency backup propulsion | Limited (battery-dependent) | Full backup |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## When an electric trolling motor wins
 
@@ -10310,7 +10307,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Angler netting a walleye from a Mercury-powered boat at sunrise for Ontario walleye opener preparation.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-01',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-01',
     category: 'Tips',
     readTime: '8 min read',
@@ -10544,7 +10541,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can HBW pick up my boat for opener prep?',
-        answer: 'No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. [Contact us](/contact) to book a service slot.'
+        answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.'
       },
       {
         question: 'What\'s the most common opener morning failure?',
@@ -10562,7 +10559,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Two people in life jackets and winter gear operating a Mercury-powered boat on a foggy Ontario lake for fall safety.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-05',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-05',
     category: 'Tips',
     readTime: '9 min read',
@@ -10680,9 +10677,9 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 - You cannot dress appropriately for the conditions
 - The motor is unreliable in cold
 
-When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. The battery may remain in the boat if disconnected and maintained according to its maker's instructions.
+When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
-Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
 
 ---
 
@@ -10701,10 +10698,10 @@ Yes. The time to put on a PFD is before you need it. In cold water, there is no 
 Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
 **When should I book fall winterization?** 
-As early as possible. Service slots fill in October. If you wait until the first cold night, you may be waiting for a slot that does not exist.
+Complete hbw.wiki/service, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
 **Does HBW pick up boats for winterization?** 
-For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ---
 
@@ -10759,7 +10756,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Couple cruising in a Mercury boat on an Ontario lake during fall to illustrate extending the boating season.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-08-08',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-22',
     category: 'Boating Lifestyle',
     readTime: '~8 min read',
@@ -10777,7 +10774,7 @@ This post is the HBW seasonal hub. Three phases of the year, what HBW handles, w
 
 ## Quick recommendation
 
-If you want one rule that solves most seasonal headaches: book your spring commissioning and your fall winterization in the same conversation, in October. Lock both at the same time and you skip the spring crunch (everyone wants their boat ready for opener) and the fall rush (everyone wants their boat winterized before the freeze). Both at hbw.wiki/service.
+If you want one rule that solves most seasonal headaches: complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
 
 ## Spring (March to Early May): Commissioning
 
@@ -10786,7 +10783,7 @@ Spring is the high-stakes phase. The first run of the year reveals every shortcu
 **What HBW commissioning covers:**
 
 - Pull the cover, inspect for winter damage
-- Battery reconnect and load test (the battery stays in the boat, disconnected and maintained over winter)
+- Battery reconnect and load test (a healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan)
 - Fuel system inspection, fresh fuel, ethanol treatment
 - Lower unit oil change and seal inspection
 - Cooling system check, impeller inspection (replace at the 3-year mark or sooner)
@@ -10832,8 +10829,8 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 - Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
-- Battery prep: leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions
-- Cover or shrinkwrap (we offer outdoor shrinkwrap, indoor heated isn't our setup)
+- Battery prep: a healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
+- Cover or shrinkwrap (HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.)
 - Note any spring service that should be queued
 
 Full cost breakdown for Ontario: [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026). DIY guide if you're handling it yourself: [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide).
@@ -10858,22 +10855,19 @@ A few things don't follow the seasons.
 
 - **Skipping winterization to save $300.** The cracked-block math always wins this argument. Winterize.
 - **DIY impeller jobs without the right tools.** The gearcase has to come off, the housing has to be inspected, the wear plate matters. Most DIY impellers we see come back as full lower-unit rebuilds. $40 part, $4,500 risk.
-- **Leaving the battery connected over winter.** Parasitic draw, not cold, is the usual problem. Leave the battery in the boat, disconnect it, and maintain it according to the battery maker's instructions.
+- **Leaving the battery connected over winter.** A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 - **Running on last year's fuel after a long winter.** Ethanol absorbs moisture. Drain, treat, or replace.
 - **Pushing the season too far in November.** Cold-water survival is short. A motor stall on a 45-degree morning is a different problem than a stall on a July afternoon.
-- **Booking spring commissioning in March.** Booking in March means you're competing with every other procrastinator for an April-mid slot. Book in October when you book winterization.
+- **Waiting until launch day to mention additional repairs.** List any extra concerns in the service request so they can be added to the repair order before the standard spring check begins.
 
 ## How to Time Your Service Calls
 
 The cleanest seasonal flow we see at HBW:
 
-- **October:** Book winterization AND next spring's commissioning together. Lock both slots.
-- **November-December:** Boat goes into winter storage with full winterization done.
-- **March-April:** Boat comes out for commissioning. First water test before opener.
-- **May-September:** Use the boat. Plan one mid-season check if you're hard on it.
-- **October:** Back to step 1.
-
-If you do this loop, you skip the spring crunch entirely and your boat is ready when you want it.
+- **Fall:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours, for the approved winterization and storage plan.
+- **Winter:** Follow the approved storage plan. The physical marina is closed December 1 through April 1.
+- **Spring:** Complete the standard commissioning check and list any additional concerns on the service request.
+- **Boating season:** Use the boat and follow the maintenance schedule for the exact engine and serial number.
 
 ## Frequently Asked Questions
 
@@ -10886,7 +10880,7 @@ The previous October, ideally. We book spring slots from October onward and the 
 **Do I really need winterization every year?**
 Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Is fall service cheaper than spring service?**
 Slightly, on labour rates. The bigger advantage of fall service is that any problems get caught with time to source parts and book the repair before next opener. Spring service that uncovers a problem in mid-April means you're missing opener while we wait for parts.
@@ -11300,16 +11294,12 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -11428,7 +11418,7 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 | 175 HP V6 FourStroke | $26,000 to $32,500 |
 | 200 HP V6 FourStroke | $28,000 to $35,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 "All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
@@ -11533,7 +11523,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 175 Pro XS outboard on a tow boat pulling a wakeboarder at golden hour on an Ontario lake',
     author: 'Harris Boat Works',
     datePublished: '2026-05-03',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-03',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11624,7 +11614,7 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 | 250 HP V8 Pro XS | $36,500-$40,500 |
 | 300 HP V8 Pro XS | $39,500-$44,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
 
@@ -11923,7 +11913,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -11969,7 +11959,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 | 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
 | 300hp FourStroke | $40,575-$42,935 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 *The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
@@ -12064,7 +12054,7 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 ### Financing Your Mercury
 
-**Current promotional financing (as of July 2026)**:
+**Current promotional financing (as of September 2026)**:
 - TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
 - Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
 - Financing minimum $5,000 before tax
@@ -12168,7 +12158,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A crated new Mercury Pro XS outboard outside the Harris Boat Works shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -12262,7 +12252,7 @@ One seasonal note up front: our shop is closed December 1 through April 1. We qu
 - Prepare installation materials
 
 **Your Preparation**:
-- Drop the boat off at our Gores Landing shop (customer drop-off; we don't pick up or deliver boats)
+- Drop the boat off at our Gores Landing shop. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - Old motor removal can be part of the job; ask when quoting
 - Address any transom issues we flagged
 - Clear the boat for work
@@ -12401,7 +12391,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man in Legend XT 18 boat with Mercury outboard; infographic summarizing 2026 Ontario boat market trends and dealer advice.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '10 min read',
@@ -12468,7 +12458,7 @@ If you are shopping for a vessel above the threshold, the tax no longer applies 
 
 The Bank of Canada policy rate eased through a series of cuts in 2025. Those cuts are filtering through to marine lending. On a typical $60,000 boat package, even a 1% rate reduction can take $30 to 40 per month off a five-year loan.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Tariffs and the exchange rate
 
@@ -12628,7 +12618,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard motors on a Harris Boat Works dock representing the 2027 model year lineup for Ontario boaters.',
     author: 'Jay Harris',
     datePublished: '2026-07-09',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-07-09',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -12636,7 +12626,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What Mercury outboards does Harris Boat Works stock for the 2027 model year?', answer: 'We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.' },
       { question: 'Is a 2026-built Mercury still worth buying after the July 1 flip?', answer: "Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The \"previous gen\" label matters slightly for resale framing years from now, not for how the motor runs." },
-      { question: 'When will 2027 Mercury pricing be available?', answer: 'Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.' },
+      { question: 'When will 2027 Mercury pricing be available?', answer: 'Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.' },
       { question: "What's the best Mercury for a fishing boat on Rice Lake?", answer: "For most 14 to 18 ft fishing boats, a FourStroke in the 40 to 115 hp range. A popular setup adds a 9.9 hp ProKicker for dedicated trolling. If you fish tournaments and run hard, that's where Pro XS starts to earn its price." },
       { question: "What's the difference between FourStroke and Pro XS?", answer: 'FourStroke is tuned for efficiency, smooth cruise, and versatility. Pro XS is tuned for performance: faster hole shot, higher top-end RPM, stronger acceleration. For most cottage and casual fishing use, FourStroke is the better all-around fit.' },
       { question: 'Do I need a Verado on an Ontario inland lake?', answer: 'Almost certainly not. Verado is engineered for large offshore applications and multi-engine installs. For Rice Lake, the Kawarthas, or Lake Simcoe, a FourStroke up to 300 hp covers the territory. We quote Verado individually as a special order.' },
@@ -12708,13 +12698,13 @@ The July 1 flip is a calendar event, not a redesign event. Here's the honest bre
 
 Mercury hasn't released the complete 2027 spec detail as of this writing (July 2026). Where 2027 specifics are unconfirmed, we're saying so plainly rather than guessing. If Mercury announces something that changes this picture, we'll update this post and call out the change.
 
-## Pricing: Where Things Stand as of July 2026
+## Pricing: Where Things Stand as of September 2026
 
-Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of July 2026.
+Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of September 2026.
 
 What that means for you:
 
-- Quotes built today are real, honest numbers on in-stock and orderable motors, as of July 2026.
+- Quotes built today are real, honest numbers on in-stock and orderable motors, as of September 2026.
 - When the 2027 pricelist arrives, prices may move. Sometimes flat, sometimes a modest increase. We don't know yet and we won't pretend to.
 - The quote builder at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) always reflects our current live pricing, whichever pricelist is in effect. That's the source of truth, not this post.
 
@@ -12725,7 +12715,7 @@ If a closeout incentive shows up on remaining 2026-built inventory late this sum
 | Factor | Buy now | Wait |
 |---|---|---|
 | Install timing | You want the boat ready for spring 2027 | You're 12+ months out |
-| Pricing | Lock a quote on current (2026-MY) pricing, as of July 2026 | Wait for Mercury's 2027 pricing release |
+| Pricing | Lock a quote on current (2026-MY) pricing, as of September 2026 | Wait for Mercury's 2027 pricing release |
 | Tech | The current spec sheet meets your needs | You're chasing a specific previewed feature (e.g., a larger Avator) |
 | Resale | Keeping the boat 5+ years | Selling within 2 years |
 
@@ -12737,7 +12727,7 @@ One more timing reality: we close for the season roughly December 1 to April 1, 
 
 We've watched a lot of model year flips since 1965, and the pattern barely changes. June brings a surge of customers who want "this year's motor" before the calendar turns. July is quiet while Mercury rolls out announcements and dealer training. September through November is when spring install slots actually get booked, and that's the deadline that matters, not July 1.
 
-The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: we're a drop-off only shop, so plan to bring the boat to us in Gores Landing rather than waiting on a mobile service call.
+The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## Common mistakes
 
@@ -12759,7 +12749,7 @@ We stock and order the full FourStroke range and Pro XS performance motors. SeaP
 Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The "previous gen" label matters slightly for resale framing years from now, not for how the motor runs.
 
 **When will 2027 Mercury pricing be available?**
-Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
+Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
 
 **What's the best Mercury for a fishing boat on Rice Lake?**
 For most 14 to 18 ft fishing boats, a FourStroke in the 40 to 115 hp range. A popular setup adds a 9.9 hp ProKicker for dedicated trolling. If you fish tournaments and run hard, that's where Pro XS starts to earn its price.
@@ -13745,7 +13735,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     imageAlt: 'Official Mercury Marine freshwater photograph of a 90 HP Command Thrust FourStroke powering a pontoon.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     category: 'Repower Cost & Pricing',
     readTime: '12 min read',
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
@@ -13840,7 +13830,7 @@ There are two separate clocks:
 
 HBW does not promise a universal number of days in an article. The confirmed quote and schedule are the authority for both clocks.
 
-The physical marina is closed December 1 through April 1. No physical repower, installation, inspection, customer drop-off, or pickup happens during that closure. Customers arrange their own transport to and from Gores Landing when the job is scheduled. HBW does not provide boat pickup, hauling, delivery, or mobile repower service.
+The physical marina is closed December 1 through April 1. No physical repower, installation, inspection, or customer access happens during that closure. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## The HBW Repower Process
 
@@ -13917,7 +13907,7 @@ Start with the exact motor in the [Mercury repower configurator](/quote/motor-se
       },
       {
         question: 'Does HBW pick up or deliver the boat?',
-        answer: 'No. Customers arrange their own transport to and from HBW in Gores Landing for the confirmed drop-off and pickup dates. HBW does not provide boat pickup, hauling, delivery, or mobile repower service.',
+        answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.',
       },
       {
         question: 'Do you finance repowers?',
@@ -13938,7 +13928,7 @@ Start with the exact motor in the [Mercury repower configurator](/quote/motor-se
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     category: 'Buying Guide',
     readTime: '13 min read',
     keywords: ['Mercury vs Yamaha outboard', 'Mercury vs Yamaha Ontario', 'Mercury or Yamaha which is better', 'Yamaha to Mercury repower', 'best outboard motor Ontario'],
@@ -13963,7 +13953,7 @@ A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hund
 | Resale value | Strong | Holds value comparably |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The Rice Lake service-network reality
 
@@ -14069,7 +14059,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: 'Person reviewing a Mercury outboard financing summary at an Ontario marina office.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
-    dateModified: "2026-08-07",
+    dateModified: "2026-08-26",
     category: 'Financing & Value',
     readTime: '12 min read',
     keywords: ['mercury outboard financing Ontario', 'boat repower financing Ontario', 'finance boat motor Ontario', 'mercury financing rate 2026', 'mercury outboard monthly payment'],
@@ -14083,9 +14073,9 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 
 ## Who this is for
 
-Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers are willing to trailer to us at Gores Landing (service is drop-off only).
+Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers can trailer to us at Gores Landing, or ask about boat pickup.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## How HBW financing actually works
 
@@ -14195,7 +14185,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
 `,
     faqs: [
       { question: 'Can I finance a Mercury outboard in Ontario?', answer: 'Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approval and final terms come from the lender.' },
-      { question: "What's the current financing rate?", answer: "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms." },
+      { question: "What's the current financing rate?", answer: getFinancingHeadlineFaqAnswer() },
       { question: 'What\'s the difference between the standing rate and a "promo rate"?', answer: 'A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article.' },
       { question: 'Is there a down payment?', answer: 'Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed.' },
       { question: 'Are there any fees?', answer: "The current HBW financed quote includes a $349 DealerPlan fee after HST. The written quote and lender disclosure show the fee and any contract-specific charges or prepayment terms." },
@@ -14570,7 +14560,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     imageAlt: 'Two boaters on an Ontario lake during the fall-colour season before winter storage.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-27',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14585,11 +14575,11 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
         url: 'https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics',
       },
     ],
-    content: `> **Quick answer:** Harris Boat Works does not publish a one-price-fits-all winterization range. The current quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit those details at [hbw.wiki/service](https://hbw.wiki/service) before the December 1 closure.
+    content: `> **Quick answer:** Harris Boat Works publishes its current 2026–27 winterization and storage rates on the [HBW rate card](https://www.harrisboatworks.ca/winter-storage). The boat-specific quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service).
 
-The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, customer access, or pickup during that period. Customers arrange their own fall drop-off and spring pickup.
+The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
 
-*HBW operating scope and pricing references verified July 24, 2026. All amounts are CAD before HST unless stated otherwise.*
+*HBW operating scope and pricing references verified August 27, 2026. All amounts are CAD before HST unless stated otherwise.*
 
 ## What Does Boat Winterization Cost in Ontario?
 
@@ -14607,7 +14597,7 @@ Instead, ask whether the quote identifies each cost driver:
 | Boat systems | Livewell, washdown, potable-water, head, bilge, pumps, and other systems that can retain water |
 | Storage preparation | Engine storage procedure, battery plan, drainage, moisture control, and approved cover or shrinkwrap scope |
 | Hull and trailer work | Shrinkwrap, outdoor storage, trailer service, and repairs listed separately when requested |
-| Spring work | Spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers as of July 2026 |
+| Spring work | Spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers as of September 2026 |
 
 A useful quote states what is included, what is excluded, what requires approval if discovered, and when the work can be considered complete.
 
@@ -14645,7 +14635,7 @@ A professional scope may address:
 - **Storage position:** the position specified for the engine so water can drain as designed
 - **Battery plan:** charge and condition check, then disconnect to prevent parasitic draw
 
-A healthy battery may remain in the boat when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. Mercury's battery guidance likewise starts with fully charging the battery and disconnecting the terminals; removal depends on whether suitable maintenance charging is available.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. Removal is not a universal HBW requirement.
 
 ## Winterization and Annual Service Are Related, Not Identical
 
@@ -14661,9 +14651,9 @@ The two scopes often overlap, but one does not automatically prove the other was
 
 The invoice and work order should show what was actually completed.
 
-## From the Shop: 584 Winterizations in One Fall
+## From the Shop: 584 Winterization Records in One Fall
 
-HBW recorded **584 winterizations from August through November 2025**. That number is useful because it shows how varied the work really is: portable outboards, fishing boats, pontoons, larger Mercury engines, MerCruiser packages, and boats with very different onboard systems do not belong under one generic price.
+HBW recorded **584 completed winterization records from August through November 2025**. That number is useful because it shows how varied the work really is: portable outboards, fishing boats, pontoons, larger Mercury engines, MerCruiser packages, and boats with very different onboard systems do not belong under one generic price.
 
 The repeat findings are practical:
 
@@ -14677,15 +14667,15 @@ That is why the service request asks for the actual boat and engine details befo
 
 ## Shrinkwrap and Outdoor Winter Storage at HBW
 
-HBW offers **outdoor winter storage with shrinkwrap only**. We do not offer indoor, heated, climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
 Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount, a per-foot rate, or a service is included unless it is written on the current quote.
 
-Customers arrange their own transportation to and from Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-## Timing: Finish the Physical Work Before December 1
+## How to Start
 
-Fall winterization and storage intake must be completed before the physical marina closes on December 1.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 HBW is closed December 1 through April 1:
 
@@ -14694,11 +14684,11 @@ HBW is closed December 1 through April 1:
 - No winter pickup or drop-off
 - No spring commissioning during the closure
 
-Remote planning and approvals can continue. Physical work resumes after reopening. Confirm your drop-off window before towing; do not rely on a generic month or an assumed slot.
+Remote planning and approvals can continue. Physical work resumes after reopening.
 
 ## Spring Commissioning Is a Separate Acceptance Step
 
-As of July 2026, spring commissioning is:
+As of September 2026, spring commissioning is:
 
 - **Included for HBW winter-storage customers**
 - **$99 for non-storage customers**, before HST
@@ -14734,7 +14724,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     faqs: [
       {
         question: 'What does boat winterization cost at Harris Boat Works?',
-        answer: 'HBW does not publish a generic winterization range. The current quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.',
+        answer: 'HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.',
       },
       {
         question: 'What does a proper Mercury winterization include?',
@@ -14746,7 +14736,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
       },
       {
         question: 'Can the battery stay in the boat over winter?',
-        answer: 'A healthy battery may remain when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. The battery must not be left connected where parasitic loads can discharge it.',
+        answer: 'A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The battery must not be left connected where parasitic loads can discharge it.',
       },
       {
         question: 'When must HBW winterization be completed?',
@@ -14762,11 +14752,11 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
       },
       {
         question: 'What storage does HBW offer?',
-        answer: 'Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.',
+        answer: 'HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.',
       },
       {
         question: 'What does spring commissioning cost?',
-        answer: 'As of July 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers, before HST. Plan pickup or launch only after HBW confirms the approved work is complete.',
+        answer: 'As of September 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers, before HST. Plan pickup or launch only after HBW confirms the approved work is complete.',
       },
     ]
   },
@@ -14780,7 +14770,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14827,7 +14817,7 @@ step4Question: Are you following the exact internal-protection and flushing meth
 step4Tip: Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
 step5Label: Battery and position
 step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
-step5Tip: The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+step5Tip: A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The exact engine position must allow proper drainage.
 escalationLabel: Need the model-specific scope?
 escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
 ::
@@ -15038,7 +15028,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { name: 'Follow the internal-protection procedure', text: 'Use only the product, access point, engine state, and sequence listed for the engine. Do not assume every FourStroke should be fogged through the air intake. Keep cooling water supplied whenever the engine runs.' },
       { name: 'Service and inspect the gearcase when due', text: 'Use the lubricant, fill method, quantity, torque, and seal-replacement instructions in the manual. Milky lubricant, metal, or damaged seals are reasons to stop and request professional inspection.' },
       { name: 'Inspect corrosion protection and controls', text: 'Inspect the anodes and replace them according to the manual, commonly when about half consumed. Lubricate only the points shown in the manual with the specified marine lubricant.' },
-      { name: 'Disconnect and maintain the battery', text: 'The battery may remain in the boat if disconnected and maintained according to its manufacturer\'s instructions. Clean and protect the terminals and load-test the battery before launch.' },
+      { name: 'Disconnect and maintain the battery', text: 'A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. Clean and protect the terminals and load-test the battery before launch.' },
       { name: 'Store the outboard in the specified position', text: 'Use the storage position in the exact engine manual so water can drain. Confirm the cover, drainage openings, and surrounding area will not trap water or create corrosion.' },
     ],
     howToTotalTime: 'PT2H',
@@ -15100,11 +15090,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['cheapest mercury outboard canada', 'mercury 2.5hp price', 'small mercury outboard cad'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -15289,7 +15275,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-24',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-24',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -15317,7 +15303,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Rigging cost if switching brand | n/a (already on brand) | $2,000 to $3,000 CAD | $2,000 to $3,000 CAD |
 | Resale in Ontario | Strong | Strong | Strong, smaller buyer pool |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Conflict-of-interest reminder:** HBW is a Mercury Premier dealer. We don't sell Yamaha or Honda and we don't service them. This table reflects our honest read of the Ontario market, but the Mercury column is the brand we know best by a wide margin.
 
@@ -15471,7 +15457,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     imageAlt: 'Lund boat with Mercury outboard docked on an Ontario lake, illustrating local reliability for the brand comparison guide.',
     author: 'Jay Harris',
     datePublished: '2026-06-06',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     category: 'Brand Comparison',
     readTime: '8 min',
     keywords: ['mercury vs suzuki', 'suzuki outboard reliability', 'ontario outboard comparison', 'mercury suzuki repower'],
@@ -15557,7 +15543,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Common matchups people cross-shop
 
@@ -16168,8 +16154,6 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 > **Quick answer:** Repower when the hull is structurally sound, the boat still suits how you use it, and the motor is the main problem. Replace or repair the hull first when the transom, floor, stringers, or impact areas show structural concerns. A photo can help with triage, but the final recommendation requires an in-person boat-specific assessment.
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
-
 ---
 
 ![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)
@@ -16345,8 +16329,6 @@ If the hull appears suitable, build the motor configuration at [mercuryrepower.c
     content: `*Last reviewed: 2026-07-18*
 
 > **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's dealer-installed list as of our last review starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
 ---
 
@@ -16737,16 +16719,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Technician installing wiring on a Mercury FourStroke outboard motor during a professional rigging service.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '10 min read',
     keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
----
-
-## Quick Answer
+    content: `## Quick Answer
 
 Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
@@ -16826,7 +16804,7 @@ Aluminum 3-blade props are a common starting point for many motors up to 115 HP.
 | Cable to hydraulic steering upgrade | Add $1,650 to $3,500 |
 | Full new re-rig (everything new) | $2,500 to $6,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
@@ -16996,14 +16974,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A Harris Boat Works technician working beside an uncowled Mercury outboard during service',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['mercury repower process', 'what happens during repower', 'boat repower steps', 'mercury install process', 'repower timeline ontario'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
-
-*Last reviewed: 2026-07-24*
+    content: `*Last reviewed: 2026-07-24*
 
 ---
 
@@ -17045,7 +17021,7 @@ Customer brings the boat to HBW in Gores Landing for the physical walk-around. D
 - Fuel system condition
 - Customer use case
 
-We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. Harris Boat Works is drop-off only and does not provide boat pickup, hauling, delivery, or mobile service.
+We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 #### Step 2: Motor Selection and Written Quote
 
@@ -17218,7 +17194,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Do I need to bring my boat to HBW for the walk-around?',
-        answer: 'Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first, but customers arrange transport to and from the shop. HBW does not provide boat pickup, hauling, delivery, or mobile service.'
+        answer: 'Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.'
       },
       {
         question: 'What happens if my transom has soft spots?',
@@ -18361,7 +18337,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Annotated MerCruiser sterndrive diagram showing common Ontario maintenance and failure points',
     author: 'Harris Boat Works',
     datePublished: '2026-05-14',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-14',
     category: 'Service & Maintenance',
     readTime: '12 min read',
@@ -18433,7 +18409,7 @@ The **gimbal bearing** is the support bearing that lets the drive pivot for stee
 
 Replacement is straightforward when the drive is already off the boat for bellows work, that's why we do them together. As a standalone job, $500-$800 in parts plus labour. Catching it early is cheap; ignoring it eats the U-joint, then the bellows, then the engine coupler, then the engine itself.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ### 3. Milky gear lube (water in the drive)
 
@@ -18568,7 +18544,7 @@ What we handle:
 - Engine diagnostics and repairs (gas MerCruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
@@ -19221,7 +19197,7 @@ Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with th
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-13',
     category: 'Service & Maintenance',
     readTime: '10 min read',
@@ -19230,13 +19206,13 @@ Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with th
     content: `
 # Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage, and we don't provide pickup, delivery, hauling, mobile service, or transport referrals. Customers handle fall drop-off and spring pickup. The marina is closed December 1 through April 1. Compare storage quotes by written scope, not an old per-foot number.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number.
 
 The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
-HBW has one storage model: outdoor storage with shrinkwrap at Gores Landing. If indoor storage is non-negotiable, HBW isn't the right storage provider for that boat.
+HBW storage is outdoor: professional shrink wrap, uncovered, or shrink-wrap-only at Gores Landing. If indoor or heated storage is non-negotiable, HBW isn't the right storage provider for that boat.
 
 This guide explains the tradeoffs without pretending every Ontario facility sells the same package.
 
@@ -19252,7 +19228,7 @@ This guide explains the tradeoffs without pretending every Ontario facility sell
 
 No storage label replaces the engine owner's manual. A heated building also doesn't give you permission to ignore fuel, battery, lubrication, corrosion, or manufacturer storage instructions.
 
-HBW provides the first option only. We don't have indoor or heated storage on site.
+HBW provides outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We don't have indoor or heated storage on site.
 
 ---
 
@@ -19270,7 +19246,7 @@ A written winterization scope should address the items that apply to that engine
 - Battery condition and storage arrangement
 - Documentation of the work completed
 
-The battery does not automatically need to be removed. At HBW it may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
 Ask what the provider will actually do. "Stored indoors" and "professionally winterized" are different promises.
 
@@ -19290,7 +19266,7 @@ Don't use an old blog rate as a budget.
 
 ## What HBW's Outdoor Storage Model Means
 
-HBW offers outdoor shrinkwrap storage only. The shrinkwrap portion uses a fitted film, support frame, vents, and strapping appropriate to the boat and approved scope.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. The shrinkwrap portion uses a fitted film, support frame, vents, and strapping appropriate to the boat and approved scope.
 
 Engine work is separate from the word "storage." The work order confirms whether winterization, gearcase service, battery handling, spring commissioning, or another item is included.
 
@@ -19299,19 +19275,20 @@ HBW does not offer:
 - Indoor or heated storage
 - Climate-controlled storage
 - Year-round storage
-- Pickup or delivery
-- Boat hauling
-- Mobile service
+- Boat delivery
+- Motor shipping
+- Mobile, dockside, or on-site service
 - Transport referrals
+- Third-party transport quotes
 - Winter customer access
 
-Customers bring the boat to Gores Landing in the fall and pick it up in the spring. If that logistics model doesn't fit, choose a provider whose service model does.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 ---
 
 ## Access, Transport, and the Winter Closure
 
-HBW is a customer drop-off and pickup operation. We don't move boats from GTA homes, cottage properties, or other marinas, and we don't arrange third-party transport.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 The marina is closed December 1 through April 1. During that period:
 
@@ -19353,7 +19330,7 @@ HBW does not offer either indoor tier. We also don't promise referrals, availabi
 
 ## Spring Commissioning
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
 
 Physical commissioning begins after the marina reopens. A spring work order may still need separate authorization for repairs, parts, or model-specific service beyond the commissioning scope.
 
@@ -19362,7 +19339,7 @@ Physical commissioning begins after the marina reopens. A spring work order may 
 ## Frequently Asked Questions
 
 **Does HBW offer indoor or heated boat storage?**
-No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage.
 
 **Can I access my boat at HBW during winter?**
 No. The marina is closed December 1 through April 1, and customers cannot access stored boats during that period. Remove anything you will need before the closure.
@@ -19371,22 +19348,22 @@ No. The marina is closed December 1 through April 1, and customers cannot access
 No. Shrinkwrap protects the boat from weather. Engine storage procedures follow the exact owner's manual or authorized service literature for that engine.
 
 **Does HBW remove every battery for storage?**
-No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
+No. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
 **Does HBW pick up, deliver, haul, or service boats at my location?**
-No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **How much does HBW outdoor winter storage cost?**
 The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
 
 **Is spring commissioning included?**
-It is included for HBW winter-storage customers. As of July 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
+It is included for HBW winter-storage customers. As of September 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
 
 ---
 
 ## Sources and Review Notes
 
-- HBW operating rules reviewed July 24, 2026: outdoor shrinkwrap storage only; customer drop-off and pickup; no indoor, heated, climate-controlled, or year-round storage
+- HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW winter closure: December 1 through April 1, with no physical work or customer access
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
 - Mercury storage procedures vary by engine. Follow the exact owner's manual and authorized service literature.
@@ -19411,7 +19388,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     faqs: [
       {
         question: "Does HBW offer indoor or heated boat storage?",
-        answer: "No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage."
+        answer: "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage."
       },
       {
         question: "Can I access my boat at HBW during winter?",
@@ -19423,11 +19400,11 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
       },
       {
         question: "Does HBW remove every battery for storage?",
-        answer: "No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions."
+        answer: "No. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control."
       },
       {
         question: "Does HBW pick up, deliver, haul, or service boats at my location?",
-        answer: "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "How much does HBW outdoor winter storage cost?",
@@ -19435,7 +19412,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
       },
       {
         question: "Is spring commissioning included?",
-        answer: "It is included for HBW winter-storage customers. As of July 2026, the price for non-storage customers is $99. Confirm the current scope when booking."
+        answer: "It is included for HBW winter-storage customers. As of September 2026, the price for non-storage customers is $99. Confirm the current scope when booking."
       }
     ],
   },
@@ -19448,7 +19425,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     imageAlt: 'Man sitting on a dock at Harris Boat Works in Gores Landing, illustrating the local lifestyle of Ontario boat ownership.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-08-08',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -19456,7 +19433,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     content: `
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-*Last reviewed: 2026-08-08*
+*Last reviewed: 2026-08-27*
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -19470,7 +19447,7 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800-$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
 
 For a 22-foot pontoon at $55,000, scale that up to roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
@@ -19520,22 +19497,27 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 In Ontario, you don't get to skip [winter storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
-**HBW pricing 2026:**
+### Effective September 2026
 
-- **Outdoor + shrinkwrap, up to 21 ft:** $33/ft → $693 for 21-ft boat
-- **Outdoor + shrinkwrap, 22 ft+:** $35/ft → $770 for 22-ft pontoon
-- **Outdoor with trailer, no shrinkwrap, up to 21 ft:** $36/ft (storage only)
+The current [HBW 2026–27 winter-storage rate card](https://www.harrisboatworks.ca/winter-storage) lists these trailered-boat rates before HST, shop supplies, and miscellaneous charges:
 
-**Winterization (separate scope, fall):**
-- **40-60 HP 4-stroke:** $337.84
-- **75-115 HP 4-stroke:** $425.71
-- Larger engines, sterndrives, twin setups: $500-$900+
+- **Storage with shrink wrap, up to 21 ft:** $36/ft
+- **Storage with shrink wrap, 22–28 ft:** $38/ft
+- **Outdoor uncovered storage, up to 21 ft:** $28/ft
+- **Outdoor uncovered storage, 22–28 ft:** $30/ft
+- **40-60 HP FourStroke winterization:** $355.94
+- **75-115 HP FourStroke winterization:** $444.49
+- **20 ft storage with shrink wrap:** $720.00
+- **21 ft storage with shrink wrap:** $756.00
+- **21 ft trailered wrapped storage plus 75-115 HP FourStroke winterization:** $1,200.49
+
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **Indoor storage** (we don't offer; some Ontario competitors do):
 - Indoor unheated: $40-$60/ft (~$840-$1,260 for 21-ft boat)
 - Indoor heated: $60-$90/ft (~$1,260-$1,890 for 21-ft boat)
 
-**Annual budget for 21-ft outdoor + winterized:** ~$1,000-$1,200 all-in at HBW.
+**Annual budget for 21-ft outdoor + winterized:** $1,200.49 before HST, shop supplies, and miscellaneous charges.
 
 **The "what if I skip it" cost:** [A cracked engine block from a missed winterization](/blog/boat-winterization-cost-ontario-2026) runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
@@ -19613,14 +19595,16 @@ This category used to be near-zero. It's still essentially negligible.
 |-----------|-------------|
 | Marina slip (HBW seasonal, 20 ft) | $960 |
 | Insurance (1.5% of $40K) | $600 |
-| Winter storage + shrinkwrap (HBW) | $700 |
-| Winterization (90 HP 4-stroke) | $425 |
+| Winter storage + shrinkwrap (HBW, 20 ft trailered wrapped) | $720.00 |
+| Winterization (90 HP FourStroke) | $444.49 |
 | Annual service (100-hour) | $550 |
 | Fuel (75 hrs, ethanol-free) | $2,000 |
 | Maintenance reserve (props, batteries, wear items) | $400 |
 | Trailer maintenance | $200 |
 | PCL amortized | $5 |
-| **Total cash-bought** | **~$5,840** |
+| **Total cash-bought** | **$5,879.49** |
+
+That exact sample is approximately **$5,880**.
 
 **Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
 
@@ -19720,7 +19704,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Legend XT18 aluminum boat with a Mercury 115 Pro XS outboard motor docked at an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-21',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-21',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -19770,7 +19754,7 @@ The R Series is **riveted aluminum**, not welded, the entry price comes from the
 
 Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000-$22,000** all-in.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Best for:** Budget-conscious anglers, kicker / second-boat buyers, light-duty utility.
 
@@ -20307,7 +20291,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: "Three Mercury outboards on a dock at Harris Boat Works on Rice Lake, showcasing the dealership's scenic Ontario location.",
     author: 'Jay Harris',
     datePublished: "2026-05-12",
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-12",
     category: "Mercury Outboards",
     readTime: '12 min read',
@@ -20316,9 +20300,9 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     content: `
 # Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW is not in Toronto. We are a Mercury Marine Premier dealer in Gores Landing on Rice Lake. The drive can make sense when you want a written installed quote, Mercury-specific rigging, and an on-water test before pickup. It does not make sense if you cannot bring the boat to us and return for pickup. HBW does not ship, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** HBW is not in Toronto. We are a Mercury Marine Premier dealer in Gores Landing on Rice Lake. The drive can make sense when you want a written installed quote, Mercury-specific rigging, and an on-water test before pickup. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 Choosing a dealer by distance alone is easy. Choosing by the complete job takes a little more work.
 
@@ -20363,21 +20347,17 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 
 ## From the Shop: The Logistics
 
-HBW is a customer drop-off and pickup operation.
-
-For a repower, you bring the boat and trailer to Gores Landing, leave them for the scheduled work, and return after the installation and water test are complete. Routine service also requires a drop-off and a later pickup unless the approved work order says otherwise.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat and trailer to Gores Landing and return after the installation and water test are complete.
 
 HBW does not provide:
 
-- Pickup or delivery
-- Boat hauling
+- Boat delivery
 - Mobile service
 - Shipping of outboards
 - Courier or third-party release
-- Transport coordination
 - Transport referrals or transport-price estimates
 
-If you cannot move the boat yourself, arrange your own solution before booking. Do not assume HBW will find a carrier.
+Pickup is subject to availability for the boat and location. HBW does not recommend third-party carriers.
 
 For a motor-only purchase, pickup is in person at Gores Landing after HBW confirms the exact release requirements and safe loading plan. A mounted repower is the better fit when the boat needs rigging, setup, and an on-water test.
 
@@ -20391,11 +20371,11 @@ The drive is worth considering when:
 - You want the boat water-tested before handoff
 - Your project includes controls, gauges, steering, or substantial rigging
 - You want current Mercury pricing before the first visit
-- You are prepared to handle both drop-off and pickup
+- You can bring the boat or HBW confirms pickup availability for your boat and location
 
 The closest dealer may be the better answer when:
 
-- You cannot tow or otherwise move the boat yourself
+- You cannot move the boat and HBW cannot confirm pickup availability for your boat and location
 - The boat needs emergency service at its current marina
 - The job is simple routine work and distance is the deciding factor
 - You need another outboard brand serviced
@@ -20410,7 +20390,7 @@ The marina is closed December 1 through April 1. No service, repower, installati
 
 Planning can continue remotely. You can use the pricing tools, submit boat details, review a proposed configuration, and approve a spring work order while the physical shop is closed. The boat work begins after reopening.
 
-If your boat is stored at HBW, it remains inaccessible during the closure. HBW offers outdoor shrinkwrap storage only, not indoor, heated, climate-controlled, or year-round storage.
+If your boat is stored at HBW, it remains inaccessible during the closure. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage.
 
 ---
 
@@ -20437,7 +20417,7 @@ HBW can then tell you whether the job fits our shop and what must be confirmed i
 No. HBW is in Gores Landing, Ontario, on the south shore of Rice Lake. Check current traffic and towing directions before leaving.
 
 **Does HBW pick up or deliver boats in the GTA?**
-No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **Does HBW ship Mercury outboards?**
 No. Outboards are picked up in person at Gores Landing under HBW's release and loading requirements. Repower boats are collected after installation and water testing.
@@ -20476,7 +20456,7 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
       },
       {
         question: "Does HBW pick up or deliver boats in the GTA?",
-        answer: "No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "Does HBW ship Mercury outboards?",
@@ -20504,7 +20484,7 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
     imageAlt: 'Aerial view of Harris Boat Works marina and service facilities on Rice Lake in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '9 min read',
@@ -20600,11 +20580,11 @@ HBW is usually a strong fit for:
 - Ontario boaters planning a Mercury repower
 - Customers who want one shop to know their boat over time
 - Owners who value a complete written scope and visible pricing
-- Rice Lake, Kawartha, Northumberland, Durham, and GTA boaters willing to bring the boat to Gores Landing
+- Rice Lake, Kawartha, Northumberland, Durham, and GTA boaters who can bring the boat or have HBW confirm pickup availability
 - Customers who want the finished repower tested on the water
 - Mercury owners who need parts, maintenance, diagnostics, or warranty support
 
-If you are near Peterborough, Oshawa, Whitby, Pickering, or Cobourg, our local dealer guides explain the drive and service model honestly. HBW does not provide pickup, delivery, hauling, or mobile service. Customers bring the boat to Gores Landing.
+If you are near Peterborough, Oshawa, Whitby, Pickering, or Cobourg, our local dealer guides explain the drive and service model honestly. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## When Another Dealer May Be Better
 
@@ -20614,7 +20594,7 @@ Another dealer may make more sense if:
 - You need a shop within a few minutes for a small portable-motor purchase
 - You want a high-end showroom experience rather than a working family marina
 - You need a specialty we do not handle, such as personal watercraft or inboard tow boats
-- You cannot bring the boat to Gores Landing
+- You cannot bring the boat and HBW cannot confirm pickup availability for your boat and location
 
 The best dealer is not automatically the closest, oldest, biggest, or highest-tier shop. It is the dealer whose capabilities and way of working fit the relationship you want.
 
@@ -20663,7 +20643,7 @@ Ready to price it out? Build a current CAD quote online at the [Mercury Repower 
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Jay Harris',
     datePublished: "2026-05-19",
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-19",
     category: "Mercury Outboards",
     readTime: '12 min read',
@@ -20672,9 +20652,9 @@ Ready to price it out? Build a current CAD quote online at the [Mercury Repower 
     content: `
 # Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** A GTA repower at HBW is a customer drop-off and pickup job. Start with the boat's capacity label, build a current quote, send the hull and rigging details, then bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** A GTA repower at HBW starts with the boat's capacity label, a current quote, and the hull and rigging details. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 There are two timelines in every repower:
 
@@ -20743,16 +20723,9 @@ The marina is closed December 1 through April 1. During that closure, planning a
 
 Bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing at the confirmed time.
 
-HBW is drop-off and pickup only. We do not provide:
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-- Pickup or delivery
-- Boat hauling
-- Mobile service
-- Transport coordination
-- Transport referrals
-- Transport-price estimates
-
-Customers are responsible for getting the boat to HBW and taking it home. If you cannot move the boat, solve that independently before reserving the installation slot.
+You can also bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing.
 
 At drop-off, HBW confirms the boat, motor, controls, keys, visible hull condition, and approved work order.
 
@@ -20813,7 +20786,7 @@ It depends on the exact motor and boat-specific rigging. Use the current [Mercur
 HBW confirms the applicable shop window after reviewing the boat, required work, parts, current capacity, and testing needs. Hidden conditions, complex systems, twins, or parts delays can change that plan.
 
 **Does HBW arrange transport from Toronto or the GTA?**
-No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **Can I plan a repower while HBW is closed?**
 Yes. Remote planning and approvals can continue. The physical marina is closed December 1 through April 1, with no on-site work or customer access.
@@ -20853,7 +20826,7 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
       },
       {
         question: "Does HBW arrange transport from Toronto or the GTA?",
-        answer: "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "Can I plan a repower while HBW is closed?",
@@ -20877,7 +20850,7 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
     image: '/lovable-uploads/hero-boat-service-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-15",
-    dateModified: '2026-07-24',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-15",
     category: "Service",
     readTime: '12 min read',
@@ -20886,9 +20859,9 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
     content: `
 # Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW is a Mercury-only, customer drop-off and pickup shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. It may not make sense for a simple local job or a boat you cannot bring to us. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 "Near Toronto" is not one service model. A mobile technician, a multi-brand marina, and an authorized Mercury dealer can all be useful, but they solve different problems.
 
@@ -20940,9 +20913,9 @@ Use the [quote builder](/quote/motor-selection) for a starting number and [hbw.w
 
 ### Winter storage and spring commissioning
 
-HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage.
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 
 ---
 
@@ -20967,20 +20940,9 @@ HBW confirms the current price for the actual job. For motor pricing, the canoni
 
 ## From the Shop: The Drive-In Service Model
 
-HBW is drop-off and pickup only.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
-You bring the boat, motor, or approved service item to Gores Landing at the scheduled time. HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
-
-HBW does not provide:
-
-- Pickup or delivery
-- Boat hauling
-- Mobile or dockside service
-- Transport coordination
-- Transport referrals
-- Transport-price estimates
-
-Do not book on the assumption that HBW will move the boat from a GTA home, marina, or cottage.
+HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
 
 Turnaround depends on diagnosis, authorization, parts, current workload, and whether an on-water test is required. HBW will give the applicable update for the specific work order. A generic one-day or one-week promise is not reliable.
 
@@ -21005,7 +20967,7 @@ If the boat is stored with HBW, remove anything you will need before December 1.
 
 Use a closer provider when:
 
-- The boat cannot be safely brought to Gores Landing
+- HBW cannot arrange pickup for your boat and location, and you cannot safely bring it to Gores Landing
 - You need emergency help at the boat's current location
 - The motor is not a Mercury
 - The job is simple and travel is the deciding factor
@@ -21018,7 +20980,7 @@ The right shop is the one that can perform the required work safely and accurate
 ## Frequently Asked Questions
 
 **Does HBW pick up or deliver GTA boats?**
-No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **How long does Mercury service take at HBW?**
 It depends on diagnosis, authorization, parts, workload, and testing. HBW confirms the applicable schedule for the specific work order.
@@ -21033,7 +20995,7 @@ Yes, HBW can assess the service or warranty request. Scheduling, coverage, and t
 No. HBW is Mercury-only. Use a properly authorized dealer for the motor's brand.
 
 **Is spring commissioning included with HBW storage?**
-Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 **Can HBW work on my boat during winter storage?**
 Not during the physical closure. The marina is closed December 1 through April 1, with no on-site service, installation, inspection, or customer access.
@@ -21042,7 +21004,7 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ## Send the Motor Details Before Driving
 
-Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you can bring it to Gores Landing.
+Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you need HBW to confirm pickup availability or can bring it to Gores Landing.
 
 **Service request:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -21058,7 +21020,7 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
     faqs: [
       {
         question: "Does HBW pick up or deliver GTA boats?",
-        answer: "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "How long does Mercury service take at HBW?",
@@ -21078,7 +21040,7 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
       },
       {
         question: "Is spring commissioning included with HBW storage?",
-        answer: "Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers."
+        answer: "Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers."
       },
       {
         question: "Can HBW work on my boat during winter storage?",
@@ -21311,20 +21273,20 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-winter-storage-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-17",
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-27',
     publishDate: "2026-05-17",
     category: "Winterization",
     readTime: '12 min read',
     keywords: ["winter boat storage near Toronto", "boat storage Toronto", "winter boat storage Ontario", "shrinkwrap GTA", "boat winterization Mississauga", "off-season boat storage Kawarthas"],
     content: `# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW offers outdoor shrinkwrap storage only. Customers arrange their own fall drop-off and spring pickup at Gores Landing; HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. Request the current storage scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific scope at [hbw.wiki/service](https://hbw.wiki/service).
 
 Every fall, GTA boaters face the same decision: [where do I store the boat for winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)? The useful comparison is not a generic per-foot number. It is whether the quoted package includes outdoor storage, shrinkwrap, engine winterization, spring commissioning, trailer handling, and any model-specific work your boat actually needs.
 
-HBW is a fit when you can trailer the boat to Gores Landing yourself and want the same Mercury dealer handling the fall work, storage record, and spring return-to-service. It is not a fit when you need indoor storage, heated storage, pickup, delivery, mobile service, or arranged transportation.
+HBW is a fit when you want outdoor storage at Gores Landing and the same Mercury dealer handling the fall work, storage record, and spring return-to-service. It is not a fit when you need indoor storage, heated storage, delivery, mobile service, or a third-party transport quote.
 
 ---
 
@@ -21335,7 +21297,7 @@ HBW is a fit when you can trailer the boat to Gores Landing yourself and want th
 | **Outdoor storage with shrinkwrap** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. This is HBW's storage model.** |
 | **Indoor unheated storage** | A roof and enclosure, but freezing temperatures may still occur | **No. HBW does not offer indoor storage.** |
 | **Indoor heated storage** | Heated indoor space with different layup requirements | **No. HBW does not offer heated storage.** |
-| **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **No. HBW is customer drop-off and pickup only.** |
+| **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.** |
 
 Ask every provider for a written scope. A low storage number is not comparable to a package that also includes shrinkwrap, engine winterization, or spring commissioning. HBW confirms the current scope and price on the service work order; use [hbw.wiki/service](https://hbw.wiki/service) rather than an old blog figure.
 
@@ -21363,13 +21325,13 @@ Do not assume every storage contract includes every item. HBW records the approv
 
 ## The Transport Reality
 
-HBW does not operate or arrange boat transport. Customers are responsible for getting their own boat to and from Gores Landing.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-- Trailer the boat to HBW for the fall drop-off.
+- Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours, or ask about boat pickup.
 - Leave it on the approved trailer or follow the handling instructions on the work order.
-- Pick it up after the marina reopens and the authorized spring work is complete.
+- Collect it after the marina reopens and the authorized spring work is complete.
 
-If you cannot arrange your own transport, choose a storage provider whose logistics model fits your situation. HBW does not quote third-party hauling prices or promise referrals.
+HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## The Real Differences That Justify Driving
 
@@ -21385,7 +21347,7 @@ When a GTA customer's boat lives at HBW year-round (slip in summer, storage in w
 
 ### 3. Spring commissioning is planned before pickup
 
-As of July 2026, HBW spring commissioning is included for winter-storage customers; the current price for non-storage customers is $99. Confirm the current scope when booking at [hbw.wiki/service](https://hbw.wiki/service). Physical commissioning begins only after the marina reopens in early April.
+As of September 2026, HBW spring commissioning is included for winter-storage customers; the current price for non-storage customers is $99. Confirm the current scope when booking at [hbw.wiki/service](https://hbw.wiki/service). Physical commissioning begins only after the marina reopens in early April.
 
 ---
 
@@ -21408,33 +21370,27 @@ For everyone else, particularly GTA boaters who travel to Rice Lake or the Kawar
 
 Walking through the actual timeline for a GTA boater wintering with us:
 
-**Mid-September**. Decide whether HBW's outdoor-shrinkwrap model fits. Submit the service request at [hbw.wiki/service](https://hbw.wiki/service) and confirm the approved scope, price, and drop-off date.
+**Fall drop-off.** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours, or ask about boat pickup. HBW confirms the approved scope and price.
 
-**October 1-31**. Drive boat to HBW. Drop off, sign service work order, hand keys, drive home. **One trip.**
-
-**Early November**. We complete the exact engine's fuel, internal-protection, gearcase, battery, drainage, and storage-position steps. Documentation stays in your file.
-
-**Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
+**Approved fall work.** HBW completes the model-specific winterization and storage work on the repair order. Documentation stays in your file.
 
 **December 1-April 1.** The marina is closed. No inspection, service, repower, install work, or customer access happens during this period. The documented battery arrangement remains in place; batteries left in the boat are disconnected to prevent parasitic drain.
 
 **Over winter:** Discuss and approve any spring work by phone or email so it can be scheduled after reopening.
 
-**Early April onward.** Physical spring commissioning and any separately authorized work begin after the marina reopens.
+**After reopening.** Physical spring commissioning and any separately authorized work begin after the marina reopens. Plan pickup or launch only after HBW confirms the work is complete.
 
-**Mid-late May**. You drive up. Boat is ready, run, lake-tested, launching at our slip. Pick up keys, take boat. **Second trip of the year.**
-
-**Customer transport:** one fall drop-off and one spring pickup. HBW does not provide or arrange either trip.
+**Customer transport:** We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ---
 
 ## How to Get the Current HBW Price
 
-HBW does not offer indoor or heated storage. The current outdoor-storage quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized fall work.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. The current outdoor-storage quote depends on the boat, trailer, length, cover requirements, engine configuration, and authorized fall work.
 
 Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price. Do not budget from an old per-foot rate or a generic Ontario range.
 
-As of July 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers. Confirm that this remains current when booking.
+As of September 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers. Confirm that this remains current when booking.
 
 ---
 
@@ -21445,13 +21401,13 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruis
 ## Frequently Asked Questions
 
 **How much does winter boat storage cost at HBW?**
-The current price depends on boat length, trailer and shrinkwrap requirements, engine configuration, and the approved winterization scope. HBW offers outdoor shrinkwrap storage only. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
 
 **How do I get my boat from the GTA to HBW for storage?**
-Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, transport referrals, or third-party transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **Does HBW offer indoor or heated winter storage?**
-No. HBW offers outdoor shrinkwrap storage only.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **Do I need to do anything if my boat is shrinkwrapped + winterized?**
 Follow the approved work order and keep your contact information current. The marina is closed December 1 through April 1; no physical service or customer access happens during that period.
@@ -21463,7 +21419,7 @@ No customer access is available while the marina is closed from December 1 throu
 Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April.
 
 **When should I book winter storage?**
-Submit the service request before the fall rush and confirm current availability. HBW does not guarantee space or hold an old blog price.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
 **What's the difference between HBW shrinkwrap and a tarp?**
 Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage.
@@ -21476,8 +21432,8 @@ Your existing boat insurance typically covers winter storage; some policies requ
 ## Sources and Review Notes
 
 - HBW service intake and current work-order scope: [hbw.wiki/service](https://hbw.wiki/service)
-- HBW operating rule verified July 24, 2026: outdoor shrinkwrap storage only; customer-arranged drop-off and pickup; marina closed December 1 through April 1
-- Spring commissioning price verified July 2026: included for HBW winter-storage customers; $99 for non-storage customers
+- HBW operating rule verified August 26, 2026: outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service; no indoor or heated boat storage; boat pickup can generally be arranged; marina closed December 1 through April 1
+- Spring commissioning price verified September 2026: included for HBW winter-storage customers; $99 for non-storage customers
 - Mercury winterization procedures vary by engine. Follow the exact owner's manual and authorized service literature.
 
 ---
@@ -21489,13 +21445,13 @@ Your existing boat insurance typically covers winter storage; some policies requ
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How much does winter boat storage cost at HBW?", answer: "The current price depends on boat length, trailer and shrinkwrap requirements, engine configuration, and the approved winterization scope. HBW offers outdoor shrinkwrap storage only. Request the current written scope and price at hbw.wiki/service." },
-      { question: "How do I get my boat from the GTA to HBW for storage?", answer: "Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, transport referrals, or third-party transport prices." },
-      { question: "Does HBW offer indoor or heated winter storage?", answer: "No. HBW offers outdoor shrinkwrap storage only." },
+      { question: "How much does winter boat storage cost at HBW?", answer: "The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at hbw.wiki/service." },
+      { question: "How do I get my boat from the GTA to HBW for storage?", answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport." },
+      { question: "Does HBW offer indoor or heated winter storage?", answer: "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage." },
       { question: "Do I need to do anything if my boat is shrinkwrapped and winterized?", answer: "Follow the approved work order and keep your contact information current. The marina is closed December 1 through April 1; no physical service or customer access happens during that period." },
       { question: "Can I access my boat during winter for any reason?", answer: "No customer access is available while the marina is closed from December 1 through April 1. Remove anything you will need before the closure." },
       { question: "What if I want to upgrade or repair the boat during winter?", answer: "Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April." },
-      { question: "When should I book winter storage?", answer: "Submit the service request before the fall rush and confirm current availability. HBW does not guarantee space or hold an old blog price." },
+      { question: "When should I book winter storage?", answer: "Complete hbw.wiki/service, then drop off anytime, including after hours. The marina is closed December 1 through April 1." },
       { question: "What's the difference between HBW shrinkwrap and a tarp?", answer: "Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage." },
       { question: "Is the boat insured during winter storage?", answer: "Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs." },
     ],
@@ -21508,7 +21464,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
-    dateModified: '2026-08-17',
+    dateModified: '2026-08-26',
     publishDate: "2026-05-18",
     category: "About HBW",
     readTime: '9 min read',
@@ -21603,7 +21559,7 @@ In 2026, the shop George opened runs as:
 - **Legend Boats dealer**, Canadian company, designed for Canadian water
 - **49 seasonal marina slips** on Rice Lake
 - **Rental fleet** of pontoons and fishing boats
-- **Winter storage**, 311+ boats shrink-wrapped and stored each year
+- **Winter storage**, outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service
 - **Service and repair**, from diagnostics to full warranty work
 - **Public launch ramp and ethanol-free 89 marine gas** at the dock
 
@@ -22535,7 +22491,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
     author: 'Jay Harris',
     datePublished: '2026-03-05',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-03-05',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -22698,7 +22654,7 @@ This is the critical check. Outboard brackets mount to the transom. If the trans
 **When the boat is worth it.**
 A repower should make economic sense for the hull you have. Don't spend $35,000-$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **When you plan to keep the boat.**
 Repowers are long-term plays. If you're keeping the boat for another 10-15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.
@@ -22799,7 +22755,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-27',
     publishDate: '2026-03-16',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -22986,14 +22942,14 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-*Harris Boat Works, est. 1947. Mercury Marine Premier Dealer. Gores Landing, Ontario.*
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 *905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
 
 ---
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW has been a Mercury dealer since 1965 and is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Get the printable guide
 
@@ -23246,17 +23202,17 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-26',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
     keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"],
     faqs: [
       { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull\'s max HP rating, not the minimum.' },
-      { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.' },
+      { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pulling is a regular priority. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.' },
       { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
       { question: 'When does Command Thrust matter on a pontoon?', answer: 'Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury\'s big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.' },
-      { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.' },
+      { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For regular tube pulling rather than the occasional run, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.' },
     ],
     content: `# Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
 
@@ -23364,7 +23320,7 @@ For anything in this category, the [Mercury 60 FourStroke is the right call](htt
 
 This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
 
-If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
+If you're running 6-8 people and pulling a tube occasionally, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** If tube pulling is a regular part of how you use the boat rather than an occasional thing, skip ahead to the watersports section and size up. The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
 
 See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026), if your boat is over 20 feet and you're running a four-stroke at 115 HP or below, Command Thrust is not optional (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard).
 
@@ -23415,7 +23371,7 @@ At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor
 > - **7 HP/ft**, tube pulling (4-6 people on board, pulling a tube)
 > - **10+ HP/ft**, watersports (wakeboarding, wakesurfing, real performance)
 >
-> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable tube pulling. A 115 HP doesn't make that cut.
+> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable, repeated tube pulling. A 115 HP will get a tube up occasionally. It doesn't make that cut as a regular job.
 
 ---
 
@@ -23446,7 +23402,7 @@ Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed
 There's a lot of wishful thinking around pontoon watersports. Here's what the real numbers look like:
 
 **Tube pulling (4-6 people on deck, pulling one tube):**
-Minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
+If tube pulling is a regular priority rather than occasional, minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
 
 **Wakeboarding or wake surfing:**
 You need a tritoon, and you need 250+ HP. The third tube adds stability and wake shape; the extra horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding. A tritoon at 200 HP starts to get there. At 250-300 HP, you have a genuinely capable platform.
@@ -23514,7 +23470,7 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 
 ---
 
-*Harris Boat Works. Mercury Marine Premier Dealer. Gores Landing, ON, est. 1947*
+*Harris Boat Works. Family-owned since 1947. Mercury dealer since 1965. Mercury Marine Premier Dealer. Gores Landing, ON*
 
 ---
 
@@ -23821,32 +23777,34 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "ethanol-octane-mercury-outboard-fuel-guide-ontario",
     title: "Mercury Outboard Octane and Ethanol Guide for Ontario",
     seoTitle: "Mercury Outboard Octane and Ethanol Guide for Ontario",
-    description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+    description: "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.",
     image: "/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp",
     imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
     author: "Jay Harris",
     datePublished: "2026-04-11",
-    dateModified: '2026-07-31',
+    dateModified: '2026-08-24',
     publishDate: "2026-04-11",
     category: "Service",
     readTime: "~12 min read",
     keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"],
-    relatedSlugs: ['mercury-outboard-fuel-efficiency-guide', 'mercury-outboard-wont-start-troubleshooting', 'spring-outboard-commissioning-checklist', 'mercury-maintenance-intervals-20-100-300-rule'],
+    relatedSlugs: ["mercury-outboard-fuel-efficiency-guide","mercury-outboard-wont-start-troubleshooting","spring-outboard-commissioning-checklist","mercury-maintenance-intervals-20-100-300-rule"],
     faqs: [
       { question: "What octane does my Mercury outboard require?", answer: "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don’t generalize that to every Mercury." },
       { question: "Can a current Mercury run E10?", answer: "Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit." },
-      { question: "Is premium gasoline ethanol-free in Ontario?", answer: "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump." },
+      { question: "Is premium gasoline ethanol-free in Ontario?", answer: "No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock." },
       { question: "Does Harris Boat Works sell ethanol-free marine gas?", answer: "Yes. During the marina season, HBW sells ethanol-free 89-octane gasoline at our Gores Landing fuel dock, commonly called marine gas. That doesn’t mean every mid-grade or 89-octane product is ethanol-free, so read the label at any other pump." },
       { question: "Does higher octane give a Mercury more power?", answer: "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
       { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
       { question: "How long can gasoline sit in a boat tank?", answer: "There isn’t one safe shelf-life promise. Mercury says fuel components can begin oxidizing in as little as two weeks. Use fresh fuel, turn it over regularly and stabilize it before the boat sits. Ethanol-free fuel avoids ethanol-related problems, but it can still oxidize and form gum or varnish." },
-      { question: "How can I confirm a fuel problem for service?", answer: "Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can." },
+      { question: "My Mercury manual says 91 octane. Do I need premium in Canada?", answer: "Probably not. Check which scale it uses. Canada and the US label pumps by AKI, shown as (R+M)/2, in grades 87, 89, 91 and 94. Much of the rest of the world labels by RON, in grades 92, 95 and 98. Mercury often publishes both, for example 87 octane minimum (R+M/2) or 91 RON. A 91 RON requirement is met by regular 87 at a Canadian pump. Confirm against the manual for your serial number, or send us the serial number and we'll confirm it." },
+      { question: "Is E15 sold in Ontario, and can I use it?", answer: "Yes it is now sold at select Ontario locations including Costco and Valero sites, and no you should not use it. Mercury designs current gasoline engines for a maximum of 10 percent ethanol, and states that engine and fuel-system components are not built to tolerate blends above that. Check the pump before filling portable tanks at road stations, because a grade that was E10 last season can be E15 now." },
+      { question: "What octane does a Mercury 9.9 need?", answer: "Regular 87 at a Canadian pump meets the requirement for current Mercury 9.9 portables, with ethanol at E10 or lower. Higher octane doesn't add power or cleanliness on an engine built for 87. If your literature quotes 91, check whether that figure is RON rather than the AKI number on Canadian pumps." },
     ],
     content: `# Mercury Outboard Octane and Ethanol Guide for Ontario
 
 *Last reviewed: July 30, 2026*
 
-> **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
+> **Quick answer:** Octane and ethanol answer different questions, and only one of them is really a decision. Meet the octane minimum in your engine's manual and then stop thinking about octane. Ethanol is the part that decides how long your fuel system lasts. Mercury allows a maximum of E10, but fresh ethanol-free gasoline is the better fuel for a marine engine, which is what ethanol-free marine gas is for. Premium does not mean ethanol-free, and in Ontario it no longer reliably is.
 
 At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.
 
@@ -23878,9 +23836,34 @@ Read the complete pump label, then compare both answers with the exact engine ma
 
 The owner's manual and cowl label for the exact engine are the authority. Don't rely on a broad rule such as “all Verados need mid-grade.”
 
-A useful current example is Mercury's naturally aspirated 5.7-litre V10 Verado family. Mercury's published specifications for the 350, 400 and 425 hp models list **87 octane minimum (R+M)/2**. That directly disproves the blanket advice that every Verado requires 89.
+A useful current example is Mercury's naturally aspirated 5.7-litre V10 Verado family. Mercury's published specifications for the 350, 400 and 425 hp models list **87 octane minimum (R+M)/2**. That is worth knowing, because "Verado" has covered two very different engines, and the older one has a higher requirement.
+
+| Engine | Octane minimum |
+|---|---|
+| Current V10 Verado (350, 400, 425 hp, naturally aspirated 5.7L) | 87 AKI |
+| Earlier supercharged inline-six Verado 350 | 89 AKI minimum, 91 recommended for full performance |
+| Every other Mercury | Check the manual matched to your serial number |
+
+So the folklore that "every Verado needs 89" is wrong for the current V10, and right for the engine it came from. Match the fuel to your exact engine, not to the family name.
 
 Other engine families, model years and calibrations can have different requirements. Meet the published minimum. Buying higher octane is not a substitute for correct fuel quality, propeller load, maintenance or diagnosis.
+
+## "My Manual Says 91" - RON vs AKI
+
+This one catches people out, especially boaters who learned to drive somewhere other than North America.
+
+There are two different octane scales:
+
+| Scale | Where it's used | Typical pump grades |
+|---|---|---|
+| AKI, shown as (R+M)/2 | Canada and the United States | 87, 89, 91, 94 |
+| RON | China, Europe, Australia and much of the world | 92, 95, 98 |
+
+They are not the same number for the same fuel. Mercury's own specifications often state both, for example "87 Octane Minimum (R+M/2) or 91 RON."
+
+That means a manual or engine decal reading **91 RON is asking for regular 87 at a Canadian pump**, not premium 91. Roughly, 87 AKI is about 91 to 92 RON, and Canadian 91 premium is about 95 RON.
+
+If you have just moved to Ontario and your engine literature quotes a 91 or 92 figure, check which scale it uses before paying premium prices every fill. For most current Mercury outboards, including the 9.9 and other portables, regular 87 at a Canadian pump meets the requirement.
 
 ## Mercury's Ethanol Limit
 
@@ -23890,21 +23873,71 @@ This matters even when the octane number looks suitable. An E15 product with an 
 
 For an older Mercury, a portable, or an engine with an uncertain fuel-system history, identify the serial number and consult its manual. Do not assume the current-engine statement answers every legacy application.
 
+## E15 Has Arrived in Ontario
+
+For years E15 was a thing Ontario boaters read about but rarely met. That changed.
+
+As of August 2026, E15 is being sold at select Ontario retail locations, including Costco and Valero sites, with further rollout expected as Canada moves toward a 15 percent blending target for 2030. The stations selling it are ordinary road stations, which is exactly where many boaters fill portable tanks and jerry cans.
+
+Mercury's position hasn't changed: all current Mercury gasoline engines are designed to operate on a maximum of 10 percent ethanol. Mercury states that the metal, rubber and plastic components in the engine and fuel system are not designed to tolerate the corrosive effects of an ethanol blend higher than 10 percent.
+
+Two practical consequences:
+
+1. **The grade you always bought may not be the blend you always got.** A pump that sold you E10 regular last season can be dispensing E15 this season under the same octane number.
+2. **Damage from fuel outside the published specification is your problem, not a warranty matter.** Check current coverage terms before assuming otherwise.
+
+If you fill portable tanks at a road station, this is the single most important change to your routine this year.
+
 ## Why “Premium” Does Not Mean “Ethanol-Free”
 
 Premium names an octane grade. Ethanol-free names a blend. A retailer may sell premium that contains ethanol, premium that does not, or different blends by location and season.
 
 The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser doesn't clearly identify ethanol content, ask the retailer. Don't infer it from the colour of the nozzle, price, brand or octane number.
 
-This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it can meet Mercury's published fuel specifications for a current engine.
+This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it meets Mercury's published fuel specifications for a current engine.
 
-But “permitted” and “preferred” aren't the same thing. Mercury recommends buying ethanol-free gasoline when possible. If fresh ethanol-free fuel meets your engine's octane requirement, it's the better choice for a marine fuel system.
+But “meets the specification” and “good for the engine” are not the same sentence. **On a marine fuel system, ethanol is the variable that actually causes trouble, not octane.** Ethanol attracts water. A portable tank sitting half full for three weeks between trips is close to the worst case for it, and phase separation causes far more of the fuel problems we see than anti-knock rating ever has.
 
-## What Ontario's Fuel Rules Do and Do Not Prove
+So the honest order of preference:
 
-Ontario's cleaner-transportation-fuels regulation sets renewable-content requirements across a fuel supplier's gasoline pool. Pool-wide compliance can be achieved through a mix of products and credits.
+1. **Fresh ethanol-free gasoline that meets your octane minimum.** The best fuel you can put in a marine engine.
+2. **Fresh E10 from a busy station, bought in small amounts and used up.** Fine, as long as it doesn't sit.
+3. **Anything that has been sitting in the tank for weeks.** This is where the repair bills come from, whatever the grade.
 
-That policy doesn't let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
+And higher octane does not buy you lower ethanol reliably enough to be a strategy. If ethanol is what you are trying to avoid, buy fuel that is actually labelled ethanol-free.
+
+## If the Pump Won't Tell You, Test It
+
+There is no rule that forces a pump to state its exact ethanol percentage, and many labels only say "may contain up to 10% ethanol." That is a ceiling, not a measurement.
+
+So the advice "read the label" needs a fail-safe behind it:
+
+**If you cannot confirm the fuel is E10 or lower, don't put it in the engine.** Choose a different pump, or a different grade you can verify.
+
+If you want certainty rather than a label, Mercury sells a tool for exactly this: the Quicksilver Fuel Tester (part number 91-879172T28) measures the ethanol percentage in a fuel sample. For anyone running a portable tank filled at varying road stations, it removes the guesswork permanently.
+
+## Why Ethanol-Free Marine Gas Exists, and Why Premium Stopped Being the Workaround
+
+This is the part most fuel advice skips, and it explains the whole situation.
+
+Ontario's Cleaner Transportation Fuels regulation (O. Reg. 663/20) requires fuel suppliers to put renewable content into the gasoline they place in the Ontario market. That requirement keeps climbing: 10 percent from 2020, **11 percent now**, 13 percent in 2028, and 15 percent in 2030.
+
+But the regulation lets a supplier **deduct** certain volumes from the total it has to blend into. Section 9(3) lists them, and two matter to boaters:
+
+- gasoline the supplier reasonably expects is for **“marine vessels or marine equipment”**
+- gasoline with **“an antiknock index of 89 or greater”**
+
+That is the legal reason ethanol-free marine gas can exist at a fuel dock, and it is why premium grades were historically where you went to avoid ethanol.
+
+Note the word “may.” The deduction is permitted, not required. It removes the regulatory pressure to blend into those grades; it does not oblige anyone to keep them ethanol-free. As the provincial requirement climbs, suppliers have been blending into more of the pool, not less.
+
+That is exactly what happened to premium. Ontario stations used to sticker their 91 pumps ethanol-free. Around 2022 those stickers came off, and retailers including Shell and Canadian Tire relabelled 91 as “up to 10% ethanol,” pointing at the regulation when customers asked.
+
+The practical translation for 2026:
+
+- **Assume every grade at a road station contains ethanol.** 91 and 93 often carry less than 87 or 89, but less is not none, and you cannot verify it at the pump.
+- **If you want ethanol-free, buy fuel sold as ethanol-free.** In Ontario that mostly means a marina fuel dock.
+- **Ours is one of them.** HBW sells ethanol-free 89 at the Gores Landing dock during the marina season, which is that deduction in physical form.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
 
@@ -23921,13 +23954,15 @@ Mercury's owner guidance emphasizes:
 - avoid storing untreated fuel beyond the guidance for the system and product
 - follow the exact manual when preparing the engine for storage
 
-Mercury says fuel components can begin oxidizing in as little as two weeks, forming gum-like material in fuel lines, tanks, carburetors and injectors. That doesn't mean every two-week-old tank is unusable. It means a shelf-life estimate isn't a guarantee.
+Mercury's own fuel guidance is blunt about this: in as little as two weeks, fuel components can begin to oxidize, forming a gum-like substance that settles in fuel lines, tanks, carburetors and injectors. That doesn't mean every two-week-old tank is unusable. It means a shelf-life estimate isn't a guarantee.
 
 Ethanol-free fuel avoids ethanol-related moisture absorption and phase separation, but it can still oxidize, collect water or become contaminated. Use the boat and turn the fuel over. If it may sit for more than a couple of weeks, treat fresh fuel with a marine-rated stabilizer and run the engine long enough to circulate the treated fuel through the system, following Mercury's instructions.
 
 There's no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Topping old fuel with fresh fuel doesn't remove water or reverse separation.
 
 If contamination is suspected, stop experimenting. Safe disposal and diagnosis are better than repeatedly sending questionable fuel through injectors or carburetors.
+
+Mercury's own fuel care line covers the three jobs separately: Quickare for routine treatment at fill-up, Quickleen as a periodic deep-clean during the season, and Quickstor before the boat sits or goes into storage. Call ahead to confirm what we have on the shelf.
 
 ## A Simple Pump-Side Decision
 
@@ -23982,7 +24017,7 @@ Yes. Mercury says current gasoline engines are designed for fuel containing no m
 
 ### Is premium gasoline ethanol-free in Ontario?
 
-Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump.
+No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
 
 ### Does Harris Boat Works sell ethanol-free marine gas?
 
@@ -24000,10 +24035,6 @@ No. Stabilizer is preventive when used with suitable fresh fuel according to its
 
 There isn't one safe shelf-life promise. Mercury says fuel components can begin oxidizing in as little as two weeks. Use fresh fuel, turn it over regularly and stabilize it before the boat sits. Ethanol-free fuel avoids ethanol-related problems, but it can still oxidize and form gum or varnish.
 
-### How can I confirm a fuel problem for service?
-
-Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can.
-
 ## Unsure What Your Engine Requires?
 
 Send the serial number and the exact fuel label with your service request. We'll identify the Mercury application and start with the right specification instead of a pump-grade guess.
@@ -24015,9 +24046,11 @@ Send the serial number and the exact fuel label with your service request. We'll
 - Harris Boat Works fuel-dock product specification: ethanol-free, 89 octane
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
 - [Mercury Marine, How to Stabilize the Fuel in Your Boat](https://www.mercurymarine.com/ca/en/lifestyle/dockline/quick-tip--how-to-stabilize-the-fuel-in-your-boat)
-- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
+- [Mercury Marine, Verado 350-425hp V10 specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
 - [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
 - [Ontario Regulation 663/20, Cleaner Transportation Fuels](https://www.ontario.ca/laws/regulation/200663)
+- [U.S. Grains & BioProducts Council, E15 retail availability in Canada (August 2026)](https://grains.org/success_story/councils-regulatory-engagement-advances-e15-adoption-in-canada-ahead-of-2030-target/)
+- [Mercury Racing 400R specifications, showing octane stated as both (R+M)/2 and RON](https://www.mercuryracing.com/engines/r-series/400.html)
 `,
   },
   {
@@ -24213,7 +24246,7 @@ Three patterns come up most often at Harris Boat Works:
 | 175-200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
 | 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
@@ -24398,7 +24431,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -25202,29 +25235,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-27",
     publishDate: "2026-05-10",
     category: "Service & Maintenance",
     readTime: "9 min read",
     keywords: ["outdoor boat storage rice lake", "boat shrinkwrap kawarthas", "gores landing winter storage", "harris boat works winter storage", "boat winterization rice lake", "kawartha shrinkwrap"],
     relatedSlugs: ['winter-boat-storage-shrinkwrap-vs-indoor-ontario', 'winter-storage-near-toronto-hbw', 'spring-outboard-commissioning-checklist'],
     faqs: [
-      { question: "Does HBW offer indoor or heated boat storage?", answer: "No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage." },
-      { question: "Does HBW pick up or deliver boats for storage?", answer: "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices." },
+      { question: "Does HBW offer indoor or heated boat storage?", answer: "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage." },
+      { question: "Does HBW pick up or deliver boats for storage?", answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport." },
       { question: "Can I access my stored boat during winter?", answer: "No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period." },
       { question: "Is winterization included with shrinkwrap?", answer: "Not automatically. Storage, shrinkwrap, winterization, and spring commissioning are separate scopes. The written quote and work order state what is included." },
-      { question: "Can the battery stay in the boat?", answer: "Yes, if the battery is healthy, disconnected, and the approved storage plan allows it. Battery removal is not a universal requirement." },
-      { question: "Is spring commissioning included?", answer: "It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking." },
-      { question: "What is the maximum boat size HBW can store?", answer: "Submit the boat and trailer dimensions before drop-off. HBW confirms current capacity and whether the boat fits the available storage and handling scope; this guide does not promise a fixed size limit." },
+      { question: "Can the battery stay in the boat?", answer: "A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control." },
+      { question: "Is spring commissioning included?", answer: "It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking." },
+      { question: "What is the maximum boat size HBW can store?", answer: "Submit the boat and trailer dimensions before drop-off so HBW can confirm the boat fits its storage and handling scope. This guide does not promise a fixed size limit." },
       { question: "What if the boat needs repairs before storage?", answer: "List the concern in the service request. Repairs require assessment and approval separate from the storage contract. HBW repairs Mercury outboards and MerCruiser products." },
     ],
     content: `## Quick Answer
 
-Harris Boat Works offers outdoor winter boat storage with shrinkwrap at our Gores Landing marina. We do not offer indoor, heated, climate-controlled, or year-round storage. Customers arrange their own fall drop-off and spring pickup; HBW does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices.
+Harris Boat Works offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 The physical marina is closed December 1 through April 1. There is no service, installation, inspection, or customer access during that period. Planning and approvals can continue remotely, and physical spring work begins after the marina reopens.
 
-Request the current written storage scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific storage scope at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -25239,7 +25272,7 @@ The words *storage*, *shrinkwrap*, *winterization*, and *spring commissioning* d
 | Outdoor storage | The boat is stored outdoors on HBW property for the contracted period | Outdoor only; no indoor, heated, climate-controlled, or year-round storage |
 | Shrinkwrap | A fitted seasonal cover and the agreed supporting/venting scope | Confirm the exact cover scope in the written quote |
 | Winterization | Engine and onboard-system preparation for storage | The procedure must match the exact engine, serial number, and installed systems |
-| Spring commissioning | The approved return-to-service checks after reopening | Included for HBW winter-storage customers; $99 for non-storage customers as of July 2026 |
+| Spring commissioning | The approved return-to-service checks after reopening | Included for HBW winter-storage customers; $99 for non-storage customers as of September 2026 |
 
 Storage does not automatically include every service item. The work order is the source of truth.
 
@@ -25247,7 +25280,7 @@ Storage does not automatically include every service item. The work order is the
 
 ## Outdoor Shrinkwrap or Indoor Storage?
 
-HBW provides outdoor shrinkwrap storage only.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 Outdoor storage may fit when the boat can be prepared correctly for freezing temperatures, the cover scope is appropriate, and the owner does not need winter access. Indoor or heated storage may fit a different boat or owner, but HBW does not provide those options and does not promise a referral.
 
@@ -25268,7 +25301,7 @@ Do not compare two storage prices until the scopes match.
 
 ## From the Shop: The Fall Drop-Off
 
-Book and receive drop-off instructions before towing the boat to Gores Landing.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Or ask about boat pickup.
 
 Bring or submit:
 
@@ -25300,7 +25333,7 @@ Avoid universal shortcuts:
 - Do not turn an annual interval into a rule for every model and serial number
 - Do not assume the battery must be removed
 
-A healthy battery may remain in the boat if it is disconnected and the approved storage plan allows it. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The written work order should state what HBW will do.
 
 For engine-specific requirements, use the owner’s manual for the exact serial number and the approved work order.
 
@@ -25327,11 +25360,11 @@ Take anything you may need out of the boat before the closure. Do not rely on a 
 
 Physical spring commissioning begins after the marina reopens.
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, the current price for a non-storage customer is $99. The exact checks and any additional repair still depend on the approved scope.
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, the current price for a non-storage customer is $99. The exact checks and any additional repair still depend on the approved scope.
 
 If a spring check finds a fault, leak, damaged component, failed battery, or other condition outside the approved scope, HBW contacts the customer before additional work.
 
-HBW confirms when the boat is ready and provides the pickup window. Customers return to Gores Landing for pickup. Fall drop-off and spring pickup are two separate customer trips.
+HBW confirms when the boat is ready and provides the pickup window. Customers who dropped off their own boat return to Gores Landing for pickup; inbound boat pickup availability is confirmed separately for the boat and location.
 
 ---
 
@@ -25341,12 +25374,12 @@ Storage quotes are only comparable when the scopes match.
 
 | Question | Why it matters |
 |---|---|
-| Outdoor, indoor unheated, or heated? | These are different products. HBW offers outdoor shrinkwrap storage only. |
+| Outdoor, indoor unheated, or heated? | These are different products. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. |
 | Is shrinkwrap included? | A storage space and a fitted seasonal cover are separate scopes. |
 | Is engine winterization included? | Shrinkwrap does not prepare an engine or onboard system for freezing temperatures. |
 | Which onboard systems are included? | Livewells, freshwater systems, heads, and other installed systems need boat-specific review. |
-| What is the battery plan? | A healthy battery may remain disconnected; removal is not a universal requirement. |
-| Is spring commissioning included? | It is included for HBW winter-storage customers; as of July 2026 it is $99 for non-storage customers. |
+| What is the battery plan? | A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. |
+| Is spring commissioning included? | It is included for HBW winter-storage customers; as of September 2026 it is $99 for non-storage customers. |
 | What are the access dates? | HBW has no customer access during the December 1 to April 1 closure. |
 | What needs separate approval? | Repairs and conditions outside the approved scope require customer authorization. |
 
@@ -25382,11 +25415,11 @@ Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not 
 
 **Does HBW offer indoor or heated boat storage?**
 
-No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage.
 
 **Does HBW pick up or deliver boats for storage?**
 
-No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **Can I access my stored boat during winter?**
 
@@ -25398,15 +25431,15 @@ Not automatically. Storage, shrinkwrap, winterization, and spring commissioning 
 
 **Can the battery stay in the boat?**
 
-Yes, if the battery is healthy, disconnected, and the approved storage plan allows it. Battery removal is not a universal requirement.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
 **Is spring commissioning included?**
 
-It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 
 **What is the maximum boat size HBW can store?**
 
-Submit the boat and trailer dimensions before drop-off. HBW confirms current capacity and whether the boat fits the available storage and handling scope; this guide does not promise a fixed size limit.
+Submit the boat and trailer dimensions before drop-off so HBW can confirm the boat fits its storage and handling scope. This guide does not promise a fixed size limit.
 
 **What if the boat needs repairs before storage?**
 
@@ -25417,7 +25450,7 @@ List the concern in the service request. Repairs require assessment and approval
 ## Sources and Scope
 
 - [HBW service request](https://hbw.wiki/service), current drop-off workflow and Mercury/MerCruiser repair boundary
-- HBW operating rules reviewed July 24, 2026: outdoor shrinkwrap storage only; customer drop-off and pickup; no transport services or referrals
+- HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW seasonal closure reviewed July 24, 2026: physical marina closed December 1 through April 1
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
 - [Mercury owner resources](https://www.mercurymarine.com/us/en/owners/manuals), engine-specific manuals and maintenance scope
@@ -25661,7 +25694,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Mercury 9.9 EFI outboard on a tiller-steered boat, demonstrating the portable motor's performance on the water.",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
@@ -25757,7 +25790,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
@@ -28151,7 +28184,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '5 min',
@@ -28213,7 +28246,7 @@ Most of what we do is repower, replacing an older motor on a hull you want to ke
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. We don't run indoor storage. If you need climate-controlled indoor, that's not us.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If you need climate-controlled indoor, that's not us.
 
 **Installed pricing online**
 Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD pricing, no games.
@@ -28321,7 +28354,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography showing 75, 90 and 115 HP FourStroke outboards',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '5 min',
@@ -28383,7 +28416,7 @@ Full lineup from 2.5 HP through 600 HP. Our standard repower lineup is FourStrok
 Premier-tier warranty authorization and parts access. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage is essential, that's not us.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If climate-controlled indoor storage is essential, that's not us.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD pricing before you make any commitments.
@@ -28483,7 +28516,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '5 min',
@@ -28543,7 +28576,7 @@ Full repower: motor, rigging, controls, throttle and shift cables, prop selectio
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number you see is real.
@@ -28636,7 +28669,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Premier-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
       { question: 'How long is the drive from Mississauga to Harris Boat Works?', answer: 'About 90 minutes outside rush hour, longer in traffic. The route is Highway 401 east to Highway 115 east, then County Road 28 north into Gores Landing.' },
       { question: 'Why drive that far for a Mercury dealer?', answer: 'Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Premier-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience.' },
-      { question: 'Can I get a quote and place a Mercury order without visiting?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and the Lake Test, then trailer it home.' },
+      { question: 'Can I get a quote and place a Mercury order without visiting?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also trailer the boat to us for install and the Lake Test.' },
     ],
   },
 
@@ -28649,7 +28682,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Exposed Mercury outboard powerhead during a real Harris Boat Works repower installation',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -28703,7 +28736,7 @@ Full repower: motor, rigging, controls, throttle and shift, prop selection, inst
 Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-[Outdoor with shrinkwrap](/blog/winter-storage-near-toronto-hbw). No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.
+[HBW outdoor storage](/blog/winter-storage-near-toronto-hbw): outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If your boat is already in the Kawarthas area, this may make more sense than you'd think.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), real numbers before any conversation starts.
@@ -28797,7 +28830,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -28853,7 +28886,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. For most Brampton customers, local storage probably makes more logistical sense unless you're planning to use the boat regularly on Rice Lake or the Kawarthas.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For most Brampton customers, local storage probably makes more logistical sense unless you're planning to use the boat regularly on Rice Lake or the Kawarthas.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD pricing, no games.
@@ -28947,7 +28980,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-gta-oakville-sea-trial.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29005,7 +29038,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you drive.
@@ -29090,7 +29123,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
       { question: 'Is the drive worth it for a Mercury dealer?', answer: 'Oakville customers cite three reasons: transparent online CAD pricing, Mercury Premier-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities.' },
-      { question: 'Can I do most of the buying process remotely?', answer: 'Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.' },
+      { question: 'Can I do most of the buying process remotely?', answer: 'Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Most Oakville customers do 90% remotely.' },
     ],
   },
   {
@@ -29101,7 +29134,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-gta-burlington-aerial-marina.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29159,7 +29192,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before any conversation starts.
@@ -29242,7 +29275,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
       { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes. Burlington-area boaters have closer authorized Mercury options in the Hamilton area. HBW is the Rice Lake option for customers who value Premier-tier Mercury support, an accountable repower process, and transparent online CAD pricing." },
-      { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test. Service is drop-off, we do not pick up, deliver, or arrange hauling.' },
+      { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.' },
     ],
   },
 
@@ -29450,7 +29483,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29504,7 +29537,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find it more convenient to store with us than to search for storage locally, especially if the boat is already being serviced here.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. At 50 minutes, some Pickering customers find it more convenient to store with us than to search for storage locally, especially if the boat is already being serviced here.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), real numbers before any conversation.
@@ -29597,7 +29630,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29653,7 +29686,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Whitby.
@@ -29696,7 +29729,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. No c
 No. For engine repairs, we only service Mercury and MerCruiser. We can't help with Yamaha, Honda, or Suzuki.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **What's the best time to drive up?**
 Weekend mornings before 10 a.m. are reliably smooth from Whitby. Weekday mornings work too. Avoid driving back Saturday or Sunday afternoon during peak summer if you can, the 401 west can back up even from Bowmanville and Oshawa.
@@ -29747,7 +29780,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-ajax.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29804,7 +29837,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Ajax.
@@ -29896,7 +29929,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography of a 115 HP FourStroke on a family pontoon',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -29932,7 +29965,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 **Winterization:** October drop-off, November shrinkwrap, spring pickup. The whole fall routine makes sense at this distance.
 
-**Storage:** Outdoor winter storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
+**Storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
 
 ## The Pricing Conversation Starts Before You Arrive
 
@@ -29958,7 +29991,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you even pick up the phone.
@@ -30001,7 +30034,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Thre
 No. For engine repairs, we only service Mercury and MerCruiser. Yamaha, Honda, and Suzuki are outside our scope.
 
 **I want to winterize and store my boat here, how do I get started?**
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service) in September or early October. We'll get you scheduled. Storage with shrinkwrap is outdoor; no indoor option.
+Complete the [service request](https://hbw.wiki/service), then drop the boat off anytime you want, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service; we do not offer indoor or heated boat storage.
 
 **What if I'm in a hurry and need a part quickly?**
 Parts can be ordered through [marinecatalogue.ca](https://www.marinecatalogue.ca) or by calling us at 905-342-2153. If you need something urgently, call, we'll tell you what we have in stock and what the timeline looks like.
@@ -30053,7 +30086,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-bowmanville.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -30113,7 +30146,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.
@@ -30158,7 +30191,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Thre
 No. For engine repairs, we only service Mercury and MerCruiser. Yamaha, Honda, and Suzuki are outside our scope. If you're running something else and want to discuss switching to Mercury on a repower, that's a conversation we're happy to have.
 
 **I want to winterize and store here, what's the process?**
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service) in September or early October. We'll get you scheduled for winterization and storage. Outdoor with shrinkwrap, no indoor option.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **What if I just need a part?**
 For parts, start at [marinecatalogue.ca](https://www.marinecatalogue.ca) or call us at 905-342-2153. If we have it in stock, you could be here and back in under an hour.
@@ -30834,7 +30867,7 @@ If a trailer concern appears while you're preparing the boat for Mercury service
     imageAlt: 'Bowrider with a Mercury outboard and lifejackets aboard tied at a private dock on a calm Ontario lake',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-13',
     category: 'Boating',
     readTime: '~9 min read',
@@ -30920,7 +30953,7 @@ Ranges based on typical 2026 Ontario quotes:
 | 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
 | 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -31202,7 +31235,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-27",
     publishDate: "2026-05-16",
     category: "Rice Lake & Local",
     readTime: "10 min read",
@@ -31223,11 +31256,11 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
       },
       {
         question: "Does HBW pick up or deliver boats?",
-        answer: "No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "What storage does HBW offer?",
-        answer: "Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage."
+        answer: "HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage."
       },
       {
         question: "Can I access my boat during winter?",
@@ -31242,7 +31275,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
         answer: "It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving."
       },
     ],
-    content: `> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). Customers bring and collect their own boats. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+    content: `> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 The physical marina is closed December 1 through April 1. There is no on-site service, installation, inspection, commissioning, or customer access during that period. Remote planning and approvals can continue, and physical work begins after reopening.
 
@@ -31271,9 +31304,9 @@ HBW's Mercury-facing services on this site are deliberately specific:
 
 - **Mercury repower and motor selection:** build a current CAD configuration in the [Mercury quote builder](/quote/motor-selection). The final installed scope depends on the exact engine, controls, steering, propeller, removal, rigging, boat condition, HST, and approved work.
 - **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service).
-- **Outdoor winter storage:** HBW offers outdoor winter storage with shrinkwrap. It does not offer indoor, heated, climate-controlled, summer, or year-round storage.
-- **Spring commissioning:** it is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
-- **Customer transport:** customers arrange fall drop-off, service drop-off, and pickup at Gores Landing. HBW does not provide or arrange transport.
+- **Outdoor winter storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage).
+- **Spring commissioning:** it is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+- **Customer transport:** We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - **Winter closure:** the physical marina is closed December 1 through April 1, with no customer access or on-site work during that period.
 
 Other marina offerings, including seasonal dockage, launch access, fuel, parts-counter service, and rentals, can change with the season and availability. Confirm the current offering before planning a trip.
@@ -31310,7 +31343,7 @@ HBW may be a practical fit when:
 HBW is not the right fit when:
 
 - You need engine repair for another brand
-- You need pickup, delivery, hauling, mobile service, or a transport referral
+- You need boat delivery, motor shipping, mobile service, or a transport referral
 - You need indoor, heated, climate-controlled, summer, or year-round storage
 - You need access to the boat between December 1 and April 1
 - You need a guaranteed turnaround before HBW has inspected and accepted the job
@@ -31344,13 +31377,13 @@ Gores Landing, ON K0K 2E0
 
 ## Winter Storage at HBW
 
-HBW's storage product is outdoor winter storage with shrinkwrap.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
-- Customers arrange their own fall drop-off and spring pickup
+- We can generally arrange boat pickup. Ask us about availability for your boat and location.
 - The physical marina is closed December 1 through April 1
 - There is no winter customer access, inspection service, or on-site repair work during the closure
 - Shrinkwrap, engine winterization, onboard-system winterization, storage, repairs, and spring commissioning should be identified clearly in the written scope
-- A healthy battery may remain in place when disconnected and permitted by the approved storage plan; removal is not a universal requirement
+- A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control
 - Engine repairs are limited to Mercury and MerCruiser
 
 Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) before requesting a quote.
@@ -31373,11 +31406,11 @@ HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial numb
 
 ### Does HBW pick up or deliver boats?
 
-No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### What storage does HBW offer?
 
-Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
 ### Can I access my boat during winter?
 
@@ -31410,11 +31443,11 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     slug: "toronto-to-rice-lake-drive-in-process",
     title: "Toronto to Rice Lake: How HBW Drive-In Service Works",
     seoTitle: "Toronto to Rice Lake: How HBW Drive-In Service Works",
-    description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
+    description: "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.",
     image: "/lovable-uploads/hero-toronto-to-rice-lake-drive-in.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-27",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -31436,11 +31469,11 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
       },
       {
         question: "Is drop-off and pickup one trip?",
-        answer: "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
+        answer: "If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service."
       },
       {
         question: "Does HBW pick up or deliver boats?",
-        answer: "No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         question: "How long will HBW keep the boat?",
@@ -31452,23 +31485,23 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
       },
       {
         question: "Does HBW offer indoor storage?",
-        answer: "No. HBW offers outdoor shrinkwrap storage only."
+        answer: "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage."
       },
       {
         question: "Is spring commissioning included with storage?",
-        answer: "Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers."
+        answer: "Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers."
       },
     ],
     content: `
 # Toronto to Rice Lake: How HBW Drive-In Service Works
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: 2026-08-27*
 
-> **Quick answer:** Book first, confirm that the job fits HBW, then bring the boat and trailer to Gores Landing at the approved drop-off time. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. Drop-off and pickup are two separate trips. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup. Ask us about availability for your boat and location. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
-The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot do that, do not assume HBW will solve the transport.
+The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot bring the boat, ask whether pickup is available for your boat and location before scheduling; do not assume an arrangement is confirmed until HBW says so.
 
 ---
 
@@ -31518,7 +31551,7 @@ Before leaving:
 - Remove valuables and personal items
 - Confirm the trailer plate and vehicle insurance documents
 
-If the trailer is unsafe, repair it before the trip. HBW does not provide roadside towing or trailer transport.
+If the trailer is unsafe, do not tow it to HBW. HBW does not provide roadside towing. For a planned inbound boat pickup, ask whether HBW can arrange pickup for your boat and location.
 
 ---
 
@@ -31532,7 +31565,7 @@ At the confirmed time, HBW will:
 4. Confirm contact and approval instructions
 5. Confirm whether the trailer remains with the boat
 
-The final scope comes from the work order. Do not leave expecting unapproved repairs, transport, launch work, or storage to be added automatically.
+The final scope comes from the work order. Do not leave expecting unapproved repairs, delivery, launch work, or storage to be added automatically.
 
 After sign-in, you leave the boat and return home. HBW contacts you if the diagnosis changes the scope or approval is required.
 
@@ -31554,9 +31587,9 @@ HBW will provide the update for the specific work order.
 
 ---
 
-## Step 6: Return for Pickup
+## Step 6: Collect the Boat
 
-Pickup is a separate trip from drop-off.
+HBW does not deliver finished boats. If you brought the boat to Gores Landing, collection is a separate trip from drop-off. If HBW arranged inbound boat pickup, you are still responsible for collecting the boat after service.
 
 Wait until HBW confirms:
 
@@ -31572,31 +31605,31 @@ For a repower, HBW's standard handoff includes an on-water test on Rice Lake bef
 
 ---
 
-## Transport Rules
+## Boat Pickup and Transport Rules
 
-HBW does not provide:
+HBW can generally arrange inbound boat pickup. Ask about availability for your boat and location, and wait for confirmation before relying on that option.
 
-- Pickup from a home, cottage, or marina
-- Delivery after service
-- Boat hauling
-- Mobile or dockside service
-- Transport coordination
-- Towing-company or carrier referrals
-- Transport-price estimates
+HBW does not:
 
-Customers are responsible for both drop-off and pickup. HBW will not promise a third-party solution.
+- Deliver boats after service
+- Ship motors
+- Offer mobile, dockside, or on-site service
+- Recommend transport providers
+- Quote third-party transport
+
+Customers can also bring the boat to Gores Landing. After service, customers are responsible for collecting the boat because HBW does not deliver it.
 
 ---
 
 ## Winter Storage Does Not Create Winter Access
 
-HBW offers outdoor shrinkwrap storage only.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 The marina is closed December 1 through April 1. During that period there is no service, repower, installation, inspection, or customer access on site. Planning and approvals may continue remotely.
 
 Do not plan on HBW performing maintenance while the shop is closed. Physical work and spring commissioning begin after reopening.
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 ---
 
@@ -31604,7 +31637,7 @@ Spring commissioning is included for HBW winter-storage customers. As of July 20
 
 Put safety first. Stop operating if the alarm, overheating, steering, fuel, electrical, or mechanical condition makes continued use unsafe.
 
-HBW can discuss whether a future shop booking is appropriate, but we do not provide house calls, on-water rescue, roadside towing, or transport arrangements. Use the appropriate local emergency or on-water assistance available where the boat is located.
+HBW can discuss whether a future shop booking and planned inbound boat pickup are available, but we do not provide house calls, on-water rescue, roadside towing, boat delivery, transport-provider recommendations, or third-party transport quotes. Use the appropriate local emergency or on-water assistance available where the boat is located.
 
 Do not attempt a "limp home" procedure based on generic advice when the cause is unknown.
 
@@ -31616,10 +31649,10 @@ Do not attempt a "limp home" procedure based on generic advice when the cause is
 Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement.
 
 **Is drop-off and pickup one trip?**
-No. They are separate trips unless you independently make another arrangement that does not involve HBW transport.
+If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service.
 
 **Does HBW pick up or deliver boats?**
-No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **How long will HBW keep the boat?**
 It depends on diagnosis, approval, parts, current shop capacity, and required testing. HBW provides the applicable update for the specific work order rather than a generic turnaround promise.
@@ -31628,10 +31661,10 @@ It depends on diagnosis, approval, parts, current shop capacity, and required te
 Not during the physical closure. The marina is closed December 1 through April 1, with no on-site work or customer access.
 
 **Does HBW offer indoor storage?**
-No. HBW offers outdoor shrinkwrap storage only.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **Is spring commissioning included with storage?**
-Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 ---
 
@@ -31897,7 +31930,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -31971,7 +32004,7 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 
@@ -32305,7 +32338,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-08-26",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -32347,7 +32380,7 @@ For Ontario boaters who trailer regularly between lakes, this is a real ongoing 
 
 A new 18-foot aluminum fishing boat from Legend Boats with a Mercury 90 will land in the $30,000-$40,000 CAD range fully rigged in 2026. A comparable 18-foot fiberglass V-hull from a quality builder will land $50,000-$70,000.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **However**: over 10 years, the gap narrows. Fiberglass hulls hold their resale value better if the gelcoat is maintained. Aluminum hulls depreciate more on purchase but bottom out faster (a well-kept 10-year-old aluminum boat sells for 50-60% of new; the same fiberglass boat might sell for 60-70%). The actual dollar gap over a 10-year ownership window is typically less than the purchase-price gap suggests.
 
@@ -32448,7 +32481,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-dts-vs-mechanical-controls.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '7 min read',
@@ -32468,7 +32501,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother, looks cleaner at the helm, and is required on most Mercury V8 and V10 outboards (150 HP and up depending on model). Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP, and they cost roughly $400-$800 less than the DTS equivalent fully installed. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. For a repower into a Mercury Pro XS 175+ or a Verado, you don't have a choice. We install both at Harris Boat Works, and the right call usually depends on motor size and what the helm looks like today.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## What you're actually choosing between
 
@@ -32582,7 +32615,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Harris Boat Works technician servicing a Mercury outboard during installation',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
@@ -32641,7 +32674,7 @@ A healthy motor should start within 3-5 seconds of cranking. If it cranks but wo
 
 A weak or intermittent water stream means the water pump impeller needs replacement, which is a routine $200-$400 service item we do dozens of times every spring.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **10. Idle check.** Let the motor idle for 2-3 minutes at the dock. Listen for unusual sounds (knocking, hissing, irregular firing) and watch for smoke beyond the normal first-start exhaust. Brief blue or white smoke at first start is normal as oil burns off. Continuous heavy smoke means something is wrong.
 
@@ -32882,7 +32915,7 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
     imageAlt: 'Older Mercury outboard and worn transom beside a new Mercury repower installation at Harris Boat Works',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
@@ -32936,7 +32969,7 @@ Get a written estimate from a Mercury dealer or qualified service shop. Then loo
 
 The 30 percent threshold is a useful rule of thumb. A $1,500 repair on a $6,000 motor is a 25 percent ratio: easy repair decision. A $4,500 repair on a $6,000 motor is a 75 percent ratio: hard to justify when a new Mercury comes with a [3-year factory warranty](/blog/mercury-outboard-warranty-canada-2026), often extended by current promotions ([see what's active](/promotions)), and 15-20 years of expected service life.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Question 2: the boat itself
 
@@ -33226,7 +33259,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Man steering a Mercury outboard on a calm Ontario lake during fall, highlighting Harris Boat Works' local service area.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -33293,7 +33326,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 **Live installed pricing online**
 mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.
@@ -33335,7 +33368,7 @@ For most Peterborough addresses, yes, Toronto is roughly 90-120 minutes through 
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **Do you sell new boats too?**
 Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons primarily, all Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -33358,7 +33391,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
     image: '/lovable-uploads/hero-mercury-dealer-cobourg.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -33367,7 +33400,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
       { question: 'Is there a Mercury dealer in Cobourg?', answer: 'Not within town limits at the Premier tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'How long is the drive from Cobourg to HBW?', answer: 'About 25 minutes outside rush hour, straight up County Road 18 into Gores Landing. From the Cobourg harbour or downtown, allow 25 to 30 minutes. From north Cobourg it is closer to 20 minutes. About as simple a route as gets, one road for most of the trip.' },
       { question: 'Does HBW service boats that live on Lake Ontario, not Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and MerCruiser.' },
-      { question: 'Does HBW offer pickup or delivery for Cobourg customers?', answer: 'No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.' },
+      { question: 'Does HBW offer pickup or delivery for Cobourg customers?', answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Trailer parking is available on site for drop-offs.' },
       { question: 'Will HBW honour my Mercury warranty if I bought the motor elsewhere?', answer: 'Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork and we register the work in Mercury\'s central system.' },
     ],
     content: `## Quick Answer
@@ -33432,7 +33465,7 @@ Full job: motor, rigging, controls, prop selection, installation, lake test on R
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Cobourg customers whose boat lives on Rice Lake during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Cobourg customers whose boat lives on Rice Lake during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 **Trailer-in service for Lake Ontario boats**
 Cobourg customers whose boat lives on Lake Ontario can trailer up for major service. The route makes drop-off practical, but routine work still requires an appointment and a confirmed completion plan.
@@ -33468,13 +33501,13 @@ For most Cobourg addresses, yes, we're 25 minutes north via County Road 18. Clos
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer-in for service all season. For engine repairs, we only service Mercury and MerCruiser.
 
 **Can I get the boat picked up and dropped off?**
-HBW does NOT offer pickup or delivery, customers bring the boat to us. We have trailer parking on site for drop-offs.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats. Customers may also bring the boat to us, and we have trailer parking on site for drop-offs.
 
 **What's the typical repower cost from a Cobourg perspective?**
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **Do you do warranty work on a Mercury I bought elsewhere?**
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork; we register the work in Mercury's central system.
@@ -33495,7 +33528,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -33505,7 +33538,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
       { question: 'How long is the drive from Port Hope to HBW?', answer: 'About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.' },
       { question: 'Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?', answer: 'Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup.' },
       { question: 'Will HBW service my Lake Ontario boat without me storing it on Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and MerCruiser.' },
-      { question: 'Does HBW offer pickup or delivery for Port Hope boats?', answer: 'No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.' },
+      { question: 'Does HBW offer pickup or delivery for Port Hope boats?', answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Trailer parking is available on site for drop-offs.' },
     ],
     content: `## Quick Answer
 
@@ -33570,7 +33603,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 **Trailer-in for Lake Ontario boats**
 Port Hope customers with Lake Ontario boats can trailer up for major service. Half-hour drive each way works fine for routine maintenance.
@@ -33612,10 +33645,10 @@ Yes, we install a lot of them, especially for Port Hope and Cobourg anglers runn
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We have trailer parking on site for drop-offs.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats. Customers may also bring the boat to us, and we have trailer parking on site for drop-offs.
 
 **Can I trade in my current boat or motor?**
 Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
@@ -33635,7 +33668,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
     image: '/lovable-uploads/hero-mercury-dealer-lindsay.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -33644,7 +33677,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · 5369 Harris Boat Works Rd,
       { question: 'Is there a Mercury Premier dealer in Lindsay?', answer: 'Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Premier Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Premier-tier service, HBW is the closest option. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'Is HBW worth the 45-minute drive for routine service?', answer: 'For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.' },
       { question: 'Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?', answer: 'Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and MerCruiser; for other brands we will point you to the right specialist.' },
-      { question: 'Can I store my boat at HBW through the winter if I am based in Lindsay?', answer: "Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April." },
+      { question: 'Can I store my boat at HBW through the winter if I am based in Lindsay?', answer: "Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April." },
       { question: 'Does HBW install ProKickers on Sturgeon Lake fishing boats?', answer: 'Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing boats. A full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.' },
     ],
     content: `## Quick Answer
@@ -33711,7 +33744,7 @@ For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, r
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 ## What Lindsay buyers tell us most often
 
@@ -33753,10 +33786,10 @@ Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls lan
 Yes, many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats. Customers may also bring the boat to us, and we have trailer parking on site.
 
 Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
@@ -33774,7 +33807,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     imageAlt: 'Harris Boat Works technician installing and inspecting a Mercury outboard in the Gores Landing service shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '5 min read',
@@ -33832,7 +33865,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) leaves it close to Rice Lake when we reopen in early April.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -33891,10 +33924,10 @@ Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine rep
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD number. Most repowers in the typical Northumberland boat range land in the $13,000-$25,000 installed range including HST.
 
 **Can I store my boat with you through the winter?**
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 **Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats. Customers may also bring the boat to us.
 
 **Do you sell new boats?**
 Yes. We're also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged.
@@ -34933,7 +34966,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -34969,7 +35002,7 @@ Here is a planning grid for the first sizing conversation. The capacity plate an
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS range matched to the capacity plate and load |
 | 26 ft | 3 | 10+ adults | Higher-horsepower Pro XS range where the hull permits |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their lift-to-cruise dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
 
@@ -35209,7 +35242,7 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
     imageAlt: 'Mercury 90 HP FourStroke main outboard paired with a 9.9 HP ProKicker on an aluminum fishing boat for trolling.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-08-15',
+    dateModified: '2026-08-27',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -35323,6 +35356,8 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
+
 ---
 `,
   },
@@ -35335,7 +35370,7 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
@@ -35372,7 +35407,7 @@ In Ontario, [every new outboard purchase](/blog/mercury-repower-cost-ontario-202
 | Mercury 115 Pro XS | $17,490 | $2,274 | $349 | $20,113 |
 | Mercury 150 Pro XS | $24,349 | $3,165 | $349 | $27,863 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The first payment table below assumes HST is paid separately but includes the mandatory $349 DealerPlan fee. The worked examples later show both fee-only and HST-included totals.
 
@@ -35450,7 +35485,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
 
 `,
     faqs: [
-      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms." },
+      { question: "What is the current promotional APR through HBW?", answer: getFinancingHeadlineFaqAnswer() },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
       { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
@@ -35458,7 +35493,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
       { question: "What fee is added to a financed purchase?", answer: "A mandatory DealerPlan documentation fee is added after HST to every financed purchase; the current amount appears on your mercuryrepower.ca quote. The payment example must include it." },
-      { question: "Where do I find the current promotional financing rate?", answer: "The current headline rate is {{LIVE_RATE}} through December 31, 2026 on eligible purchases (OAC), with a contract up to 60 months and amortization up to 240 months. A balance may remain due at maturity. Check mercuryrepower.ca/promotions and the signed lender disclosure." }
+      { question: "Where do I find the current promotional financing rate?", answer: `${getFinancingHeadlineFaqAnswer()} The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.` }
     ]
   },
   {
@@ -35654,7 +35689,7 @@ We'll check the serial number against Mercury's current eligibility information 
     imageAlt: 'Official-reference Mercury 250 Pro XS and Honda BF250 outboards shown side by side for an Ontario comparison',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: "2026-08-19",
+    dateModified: "2026-08-26",
     publishDate: '2026-05-28',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -35683,7 +35718,7 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Where Honda actually wins
 
@@ -36361,7 +36396,7 @@ We quote both the motor-only price and the all-in installed price so customers s
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
 | 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 
@@ -36466,7 +36501,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-26',
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Premier dealer Ontario", "Yamaha trade-in Mercury"],
@@ -36729,7 +36764,7 @@ Start with the capacity label, current motor, hull details, controls, steering, 
     imageAlt: "Marine technician with a clipboard standing between an old 2-stroke outboard on a stand and a new Mercury 90 FourStroke ready for install, in an HBW service bay.",
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-26",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -36775,7 +36810,7 @@ When you trade in a motor to an HST-registered dealer as part of the same repowe
 
 That can be a real number. On a $14,960 motor (a Mercury 90 ELPT FourStroke at our current price) with a $3,000 trade-in credit, you pay HST on $11,960 instead of the full price. At 13%, that keeps about $390 in your pocket. We're not tax advisors and your situation may vary, but this is how the transaction generally works in Ontario, and we apply it correctly on every repower.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 If you have questions about how this applies to your specific situation, your accountant or the CRA is the right call.
 
@@ -38480,7 +38515,7 @@ Shopping instead of troubleshooting? See our [Legend and Mercury package guide](
     imageAlt: 'Mercury Precision Parts maintenance items on a shop bench: water separating fuel filter, impeller replacement kit, anode kit, oil filter, spark plugs and a drive belt',
     author: 'Jay Harris',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-08-26',
     publishDate: '2026-08-11',
     category: 'Service',
     readTime: '~11 min read',
@@ -38672,7 +38707,7 @@ Mid-range motors (40-115 HP) use anode kit 8M0107547. Larger families split by g
 
 The parts counter tells the same story every spring. Someone winterized their own 115 last fall, ordered the filter their forum thread recommended, and it was the 1.7L filter for a 2.1L motor. Or a Verado owner grabbed the pre-2B144123 kit for a post-break motor and ended up with two returns and a lost weekend.
 
-Out of 584 winterizations and 507 paid service jobs last season, the pattern is consistent: the motors that hit trouble are rarely the ones that missed a spec. They're the ones where the right part got guessed at instead of looked up. Serial number first. Every time. That habit is most of what separates a 20-year motor from a 10-year one.
+Out of 584 completed winterization records from August through November 2025 and 507 paid service jobs last season, the pattern is consistent: the motors that hit trouble are rarely the ones that missed a spec. They're the ones where the right part got guessed at instead of looked up. Serial number first. Every time. That habit is most of what separates a 20-year motor from a 10-year one.
 
 ---
 

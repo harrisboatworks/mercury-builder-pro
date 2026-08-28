@@ -814,7 +814,7 @@ const superlativeRouteContracts = [
     forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim']],
     required: [
       [ajaxPartsQualification, 'Jay-approved Ajax parts qualification'],
-      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
+      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage|do not offer indoor or heated boat storage[\s\S]{0,160}don't offer climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
       [/physical service resumes when we reopen in early April/i, 'protected early-April reopening wording'],
     ],
   },
@@ -1064,8 +1064,9 @@ check(
   'Repower-process article contains a retired percentage deposit, U.S.-associated financing name, or off-site service promise.',
 );
 check(
-  /drop-off only and does not provide boat pickup, hauling, delivery, or mobile service/.test(repowerProcessArticle),
-  'Repower-process article must preserve the drop-off-only logistics boundary.',
+  /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./.test(repowerProcessArticle) &&
+    /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service/.test(repowerProcessArticle),
+  'Repower-process article must preserve conditional boat pickup and the no-delivery / no-mobile boundary.',
 );
 const articleSource = (slug) =>
   blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
