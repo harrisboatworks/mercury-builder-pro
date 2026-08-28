@@ -249,4 +249,19 @@ describe('quote funnel UX contract', () => {
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
   });
+
+  it('keeps the motor-search name aligned with its visible prompt', () => {
+    const searchSource = read('src/components/motors/HybridMotorSearch.tsx');
+    const inputMarkup = searchSource.match(/<input\b[\s\S]*?placeholder=""[\s\S]*?\/>/)?.[0];
+    const placeholderMarkup = searchSource.match(
+      /\{!query && \([\s\S]*?<div[\s\S]*?<\/div>[\s\S]*?\)\}/,
+    )?.[0];
+
+    expect(inputMarkup).toBeTruthy();
+    expect(inputMarkup).toContain('placeholder=""');
+    expect(inputMarkup).toContain(
+      "aria-label={isDark ? 'Search motors by HP, model, or feature' : 'Find a motor'}",
+    );
+    expect(placeholderMarkup).toContain('aria-hidden="true"');
+  });
 });
