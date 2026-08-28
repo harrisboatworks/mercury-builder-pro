@@ -52,7 +52,7 @@ export const HARRIS_BOAT_WORKS_BRAND_FAQS = [
   {
     question: 'Are you open in winter?',
     answer:
-      "The marina is closed December 1 through April 1. We don't take winter visits or do winter service work.",
+      'The physical marina operates seasonally. Check the current Google-synced hours on this page before visiting. Quote planning can continue online.',
   },
 ];
 
@@ -129,7 +129,7 @@ export function buildHarrisBoatWorksBrandPageNoscript() {
     '<section><h2>Where we are</h2>' +
     '<p>5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on Rice Lake.</p>' +
     '<p>Phone <a href="tel:+19053422153">905-342-2153</a>. Text <a href="sms:+16479522153">647-952-2153</a>. Email <a href="mailto:info@harrisboatworks.ca">info@harrisboatworks.ca</a>.</p>' +
-    '<p>In-season hours: Monday to Saturday 8:00 a.m. to 5:00 p.m., Sunday 9:00 a.m. to 4:00 p.m. The marina is closed December 1 through April 1. We don\'t take winter visits or do winter service work.</p>' +
+    '<p>Current hours are maintained in Google Business Profile and loaded on the live page.</p>' +
     `<p><a href="${escapeHtml(HARRIS_BOAT_WORKS_DIRECTIONS_HREF)}">Get directions</a></p></section>` +
     `<section><h2>What we do</h2><ul>${services}</ul>` +
     '<p>Pickup and drop-off only at Gores Landing. No delivery, no shipping, no mobile or dockside service.</p></section>' +

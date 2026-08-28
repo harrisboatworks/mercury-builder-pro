@@ -78,6 +78,7 @@ describe('Harris Boat Works brand-search landing page', () => {
   it('has a full static-prerender definition with matching crawlable fields', () => {
     const prerender = read('scripts/static-prerender.mjs');
     const data = read('src/data/harrisBoatWorksBrandPage.js');
+    const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 
     expect(prerender).toContain("from '../src/data/harrisBoatWorksBrandPage.js'");
     expect(prerender).toContain('getHarrisBoatWorksBrandPagePrerender()');
@@ -92,7 +93,13 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(data).toContain('5369 Harris Boat Works Rd');
     expect(data).toContain('Rice Lake');
     expect(data).toContain('Gores Landing');
-    expect(data).toContain('December 1');
+    expect(data).toContain('Google Business Profile');
+    expect(data).not.toContain('Monday to Saturday');
+    expect(data).not.toContain('Sunday 9:00');
+    expect(read('src/pages/HarrisBoatWorks.tsx')).toContain('useGooglePlaceData');
+    expect(read('src/pages/HarrisBoatWorks.tsx')).toContain('OpeningHoursDisplay');
+    expect(globalSeo).toContain("from '@/data/google-places-cache.json'");
+    expect(globalSeo).toContain('"openingHoursSpecification": LIVE_OPENING_HOURS');
     expect(data).toContain(HISTORY);
     expect(data).toContain('/quote/motor-selection');
     expect(data).toContain('https://hbw.wiki/service');
