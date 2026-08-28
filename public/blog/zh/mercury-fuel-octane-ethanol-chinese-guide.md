@@ -295,7 +295,13 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
-Harris Boat Works，家族经营始于 1947 年，1965 年起成为 Mercury 经销商，Mercury Marine Premier Dealer，位于 Rice Lake 南岸 Gores Landing。
+Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
+
+Harris Boat Works 的家族经营始于 1947 年。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 电话：905-342-2153
 
@@ -350,4 +356,3 @@ Harris Boat Works，家族经营始于 1947 年，1965 年起成为 Mercury 经�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -344,7 +344,13 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     faqs: [
       { question: 'Rice Lake可以吃到的鱼安全吗？', answer: '食用建议取决于水域、鱼种、鱼体大小和食用者类别。留鱼和进食前请查 Ontario 的 Guide to Eating Ontario Fish，不要用“大部分都安全”代替当前建议。' },
       { question: '没有船可以钓鱼吗？', answer: '可以，但岸钓点的合法进入、停车和开放状态会变化。出发前请向当地政府或经营者确认，不要把私人岸线当作公共入口。' },
@@ -1776,7 +1782,13 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     faqs: [
       { question: '在安省租船一定要有 PCOC 吗？', answer: '不一定。Transport Canada 允许租船操作者完成 Rental Boat Safety Checklist 作为 proof of competency。这个简介通常由租船公司在租船前提供，免费，约 30 分钟。' },
       { question: 'Rental Boat Safety Checklist 跟 PCOC 有什么不同？', answer: 'PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $50。Rental Boat Safety Checklist 仅当次租船有效、免费、现场完成。两者法律效力在租船场景下相同。' },
@@ -4536,7 +4548,13 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
-Harris Boat Works，家族经营始于 1947 年，1965 年起成为 Mercury 经销商，Mercury Marine Premier Dealer，位于 Rice Lake 南岸 Gores Landing。
+Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
+
+Harris Boat Works 的家族经营始于 1947 年。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 电话：905-342-2153
 
