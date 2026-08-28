@@ -760,6 +760,18 @@ function checkArticleContract(slug, text, push) {
   }
 }
 
+// Keep in sync with scripts/check-blog-output-hygiene.ts.
+// Retired global denials that HBW never picks up boats. Motor pickup-only,
+// customer collection, no-delivery / no-mobile boundaries, and the Dec 1-Apr 1
+// closure remain allowed.
+const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
+  /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
+
+function checkStaleBoatPickupPolicy(text, push) {
+  const match = text.match(STALE_HBW_BOAT_PICKUP_DENIAL_RX);
+  if (match) push('stale-hard-no-boat-pickup', match[0]);
+}
+
 
 // ----- Drive ----------------------------------------------------------------
 
@@ -778,17 +790,19 @@ for (const file of BLOG_FILES) {
     // body answer cannot leave a contradictory structured answer behind.
     checkDealerSeasonalClaims(a.slug, a.raw, localPush);
     checkArticleContract(a.slug, text, localPush);
+    checkStaleBoatPickupPolicy(a.raw, localPush);
   }
 }
 
 // Generated Markdown twins are public content surfaces too. Scan every twin
-// so a stale or hand-edited dealer page cannot bypass the canonical source
-// checks, including article body copy and rendered FAQ content.
+// so a stale or hand-edited page cannot bypass the canonical source checks,
+// including dealer seasonal claims and the boat-pickup policy.
 for (const file of BLOG_TWIN_FILES) {
   const slug = file.slice('public/blog/'.length, -'.md'.length);
   const text = readFileSync(file, 'utf8');
   const localPush = (rule, snippet) => push(file, slug, rule, snippet);
   checkDealerSeasonalClaims(slug, text, localPush);
+  checkStaleBoatPickupPolicy(text, localPush);
 }
 
 const categoryCtaFile = 'src/components/blog/CategoryCTA.tsx';
