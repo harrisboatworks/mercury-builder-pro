@@ -93,6 +93,8 @@ function validateHtmlFile(file) {
   const html = readFileSync(file, 'utf8');
   const blocks = extractJsonLd(html);
   const aggregateRatingOwners = new Map();
+  const proXsOffers = [];
+  const isProXsPage = relative(DIST, file).replaceAll('\\', '/') === 'mercury-pro-xs/index.html';
   blocks.forEach((raw, i) => {
     let parsed;
     try { parsed = JSON.parse(raw); }
@@ -126,6 +128,7 @@ function validateHtmlFile(file) {
             errors.push(`${file} block[${i}]: Offer missing required field "${f}" (under ${parentType || 'root'})`);
           }
         }
+        if (isProXsPage && parentType === 'Product') proXsOffers.push(node);
       }
     });
   });
@@ -135,6 +138,16 @@ function validateHtmlFile(file) {
       `${file}: schema entity "${id}" declares aggregateRating in multiple JSON-LD blocks ` +
       `(${ownerBlocks.join(', ')}). Google requires one aggregate rating per entity.`
     );
+  }
+  if (isProXsPage) {
+    if (proXsOffers.length !== 4) {
+      errors.push(`${file}: expected 4 Pro XS Product offers, found ${proXsOffers.length}.`);
+    }
+    for (const offer of proXsOffers) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(offer.validFrom || ''))) {
+        errors.push(`${file}: Pro XS Product offer is missing a valid canonical "validFrom" date.`);
+      }
+    }
   }
 }
 

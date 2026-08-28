@@ -21,6 +21,7 @@ const warn = (condition, message) => {
 
 const read = (path) => readFileSync(path, 'utf8');
 const proXsSeo = read('src/components/seo/MercuryProXSSEO.tsx');
+const proXsOffers = read('src/data/mercuryProXSOffers.js');
 const proXsPage = read('src/pages/landing/MercuryProXS.tsx');
 const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
@@ -274,7 +275,10 @@ check(
 );
 
 check(
-  /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
+  /CANONICAL_SKUS/.test(proXsSeo) &&
+    /buildMercuryProXSOffers/.test(proXsSeo) &&
+    /skus:\s*CANONICAL_SKUS/.test(proXsSeo) &&
+    /sku\.family === 'ProXS'/.test(proXsOffers),
   'MercuryProXSSEO must derive prices from CANONICAL_SKUS.',
 );
 check(
