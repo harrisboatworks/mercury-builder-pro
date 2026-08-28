@@ -1,37 +1,49 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-08-02
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)"
-description: "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance."
+title: "Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)"
+description: "What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-27
+date_modified: 2026-08-02
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
-# Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)
+# Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)
 
-> Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.
+> What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next.
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 
-# Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)
-
-> **Quick answer:** Milky or coffee-coloured gearcase oil means water is getting into your lower unit, usually past a worn seal. Caught at the annual oil change, it's typically a pressure test and a seal job. Ignored for a season, water can destroy gears and bearings, and gearcases cost thousands. Our shop has pressure-tested 364 gearcases; most started as a milky drain. Book at hbw.wiki/service.
+> **Quick answer:** Milky or coffee-coloured gearcase lubricant can indicate water intrusion. Stop treating it as a routine oil change. A technician needs to identify the source, often with pressure and vacuum testing, then inspect the seals and internal condition before quoting the repair. Mercury warns that water in the lubricant can damage bearings and can freeze inside the gearcase.
 
 There's a ten-second moment in every gearcase oil change that matters more than the oil itself: watching what comes out.
 
-Amber and clean means all good. Dark but oily means it did its job. And milky, like coffee with too much cream, means water got in where water must never be. Across 7,417 gearcase jobs in our system since 2013, that drain-plug moment is where the expensive problems announce themselves cheaply.
+Amber and clean is reassuring. Dark but oily may simply be used lubricant. Milky, creamy, or separated water is different: it is evidence that the gearcase needs inspection, not just a refill. That drain-plug moment is one reason the annual lubricant change matters.
 
 Here's how to read it, what fixing it costs, and why this is the single best argument for the annual service.
+
+## What the HBW Service Count Actually Measures
+
+The original article analysis reported **7,417 gearcase-related service records** and **364 pressure-test records** in HBW's Lightspeed history from 2013 through its 2026 publication snapshot. Those are shop records, not 7,417 unique boats and not 364 confirmed cases caused by milky oil.
+
+We rechecked the aggregate on August 2, 2026 using a broader, documented text match. The current public service-history view contained **8,130 matching job rows across 7,474 distinct repair orders** from December 4, 2013 through July 29, 2026. Within that set, **497 job rows across 447 repair orders** contained pressure or vacuum language. The recheck corroborates the scale of the original Lightspeed analysis; it does not turn a broad text match into a diagnosis or a failure rate.
+
+That is the useful lesson: HBW has seen thousands of gearcase-related service records, but your repair still depends on what drains out of your gearcase and what a model-specific inspection finds.
 
 ---
 
@@ -64,16 +76,16 @@ The magnet on the drain screw is the second tell: fine grey paste is normal wear
 
 ---
 
-## What Fixing It Costs
+## What Changes the Repair Scope
 
-Real talk from our work orders, with the usual caveat that rates are as of summer 2026 and confirmed when you book:
+There is no responsible fixed price from oil colour alone. The scope depends on what the inspection finds:
 
-- **Caught at the annual service:** the drain itself is already part of your winterize-and-service (see the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario) for those all-in numbers). Finding milk adds the diagnostic step, not a crisis.
-- **The pressure test:** the gearcase gets pressurized and vacuum-checked to find which seal leaks. It's careful work, and we've done 364 of them; time and cost are quoted when you book.
-- **The reseal:** parts are modest (seal kits are not the expensive part); the labour depends on which seal and whether the prop shaft or driveshaft has to come out. Quoted per motor once the test points at the culprit.
-- **The ignored case:** water run all season, or frozen over winter, can mean gears, bearings, or a complete gearcase. On common Mercury families that's a four-figure repair that started as a two-figure seal.
+- **Caught during scheduled service:** the lubricant is already being drained, so the abnormal colour is found before the gearcase is refilled.
+- **Pressure and vacuum testing:** this helps identify whether the gearcase is holding pressure and where the sealing problem may be.
+- **Seal repair:** labour changes with the failed seal, the gearcase design, corrosion, and whether a shaft or bearing carrier must be removed.
+- **Internal damage:** water-contaminated lubricant, metal particles, or freeze damage can move the job beyond seals into bearings, gears, or gearcase replacement.
 
-That last line is the entire economics of this post. The annual drain is the cheapest gearcase insurance that exists.
+The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service); HBW confirms the scope before repair work is approved.
 
 ---
 
@@ -110,7 +122,7 @@ Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-ca
 
 ## What HBW checks before your gearcase goes back in the water
 
-Every gearcase drain at our shop gets the same eyes: oil colour read before it hits the pan, the drain-screw magnet checked, and anything suspicious written on your file with a recommendation. Milk means a pressure test before refill, because refilling a leaking case just schedules a bigger bill. That discipline across 7,417 gearcase jobs is why our customers' lower units mostly die of old age instead of drowning.
+Every gearcase drain at our shop gets the same basic inspection: lubricant colour before it hits the pan, the drain-screw magnet checked, and anything suspicious recorded with a recommendation. Milky lubricant means the cause should be investigated before the case is simply refilled.
 
 ---
 
@@ -123,18 +135,13 @@ If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody
 
 HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
 
-**Related guides:**
-- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
-- [Mercury Water Pump Replacement Cost](/blog/mercury-water-pump-replacement-cost-ontario)
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-
 ---
 
 ## Sources
 
-- HBW service records, Rice Lake: 7,417 gearcase jobs and 364 gearcase pressure tests, 2013-2026
+- HBW Lightspeed service history: original 7,417 gearcase-record and 364 pressure-test-record publication snapshots; aggregate recheck August 2, 2026 (8,130 matching job rows across 7,474 distinct repair orders; pressure/vacuum language in 497 rows across 447 repair orders; no customer data used)
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 
 ## FAQs
@@ -145,7 +152,7 @@ Water has gotten into your lower unit and emulsified with the gear oil, almost a
 
 ### Can I just change the oil and keep boating?
 
-For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake.
+No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation.
 
 ### How much does a gearcase pressure test cost?
 
@@ -157,21 +164,35 @@ Fishing line wrapped behind the prop is the classic killer; age, impact, and cor
 
 ### How often should gearcase oil be changed?
 
-Every 100 hours or annually, whichever comes first, which for most Ontario boats means every fall as part of the winterize-and-service. The change doubles as your yearly water-intrusion check; skipping it means nobody's watching the one gauge that matters.
+Follow the schedule for your exact engine and serial number. Many Mercury FourStroke schedules include gearcase lubricant at the 100-hour or annual service, and fall is a practical time for seasonal Ontario boats because the drained lubricant can be checked before freezing weather.
 
 ### Is milky oil covered by warranty?
 
 Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service.
 
+## Related guides
+
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
+- [Mercury 100-Hour Service Cost in Ontario: What's Included (2026)](/blog/mercury-100-hour-service-cost-ontario), what the 100-hour service covers
+- [Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)](/blog/spring-commissioning-cost-ontario), spring commissioning costs in Ontario
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -47,6 +47,29 @@ describe('decodeTradeInModel — model tokens', () => {
     expect(r.strokeConfidence).toBe('high');
   });
 
+  it('pre-2018 Pro XS resolves automatically to OptiMax', () => {
+    const r = decodeTradeInModel('150 Pro XS', { brand: 'Mercury', year: 2017 });
+    expect(r.hp).toBe(150);
+    expect(r.stroke).toBe('OptiMax');
+    expect(r.strokeConfidence).toBe('high');
+    expect(r.strokeReasons.join(' ')).toMatch(/2017 Pro XS.*OptiMax/i);
+  });
+
+  it('2018 Pro XS resolves automatically to FourStroke', () => {
+    const r = decodeTradeInModel('150 ProXS', { brand: 'Mercury', year: 2018 });
+    expect(r.hp).toBe(150);
+    expect(r.stroke).toBe('4-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+    expect(r.strokeReasons.join(' ')).toMatch(/2018 Pro XS.*FourStroke/i);
+  });
+
+  it('Pro XS without a year asks for the year instead of the stroke', () => {
+    const r = decodeTradeInModel('150 Pro-XS', { brand: 'Mercury' });
+    expect(r.stroke).toBeNull();
+    expect(r.strokeConfidence).toBe('low');
+    expect(r.warnings.some((w) => /Enter the model year/i.test(w))).toBe(true);
+  });
+
   it('"FOURSTROKE 90" → 4-Stroke high', () => {
     const r = decodeTradeInModel('FOURSTROKE 90');
     expect(r.stroke).toBe('4-Stroke');
@@ -129,29 +152,23 @@ describe('decodeTradeInModel — model tokens', () => {
   });
 });
 
-describe('decodeTradeInModel — year edge cases (bare HP)', () => {
-  it('"90" + 2015 → 4-Stroke medium', () => {
+describe('decodeTradeInModel — year must not guess architecture', () => {
+  it('"90" + 2015 Mercury remains ambiguous', () => {
     const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2015 });
-    expect(r.stroke).toBe('4-Stroke');
-    expect(r.strokeConfidence).toBe('medium');
-    expect(r.strokeReasons.join(' ')).toMatch(/≥ 2007/);
+    expect(r.stroke).toBeNull();
+    expect(r.strokeConfidence).toBe('low');
+    expect(r.warnings.some((w) => /Stroke unclear/i.test(w))).toBe(true);
   });
 
-  it('"90" + 2007 (boundary) → 4-Stroke medium', () => {
-    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2007 });
-    expect(r.stroke).toBe('4-Stroke');
-    expect(r.strokeConfidence).toBe('medium');
+  it('"115 ELPT" + 2008 Mercury remains ambiguous', () => {
+    const r = decodeTradeInModel('115 ELPT', { brand: 'Mercury', year: 2008 });
+    expect(r.hp).toBe(115);
+    expect(r.stroke).toBeNull();
+    expect(r.strokeConfidence).toBe('low');
   });
 
-  it('"90" + 1995 → 2-Stroke medium', () => {
+  it('"90" + 1995 Mercury remains ambiguous', () => {
     const r = decodeTradeInModel('90', { brand: 'Mercury', year: 1995 });
-    expect(r.stroke).toBe('2-Stroke');
-    expect(r.strokeConfidence).toBe('medium');
-    expect(r.strokeReasons.join(' ')).toMatch(/< 2000/);
-  });
-
-  it('"90" + 2003 (gap zone) → stroke null, low, ambiguity warning', () => {
-    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2003 });
     expect(r.stroke).toBeNull();
     expect(r.strokeConfidence).toBe('low');
     expect(r.warnings.some((w) => /Stroke unclear/i.test(w))).toBe(true);
@@ -164,7 +181,7 @@ describe('decodeTradeInModel — year edge cases (bare HP)', () => {
     expect(r.warnings.some((w) => /full model|4S/i.test(w))).toBe(true);
   });
 
-  it('does not apply Mercury-era assumptions to a 2016 Evinrude', () => {
+  it('does not apply year-based assumptions to a 2016 Evinrude', () => {
     const r = decodeTradeInModel('90', { brand: 'Evinrude', year: 2016 });
     expect(r.stroke).toBeNull();
     expect(r.strokeConfidence).toBe('low');
@@ -253,6 +270,14 @@ describe('decodeTradeInModelFields — persisted quote data', () => {
     });
     expect(decodeTradeInModelFields('2008 90 ELPT', { brand: 'Mercury', year: 2008 })).toEqual({
       horsepower: 90,
+      engineType: undefined,
+    });
+    expect(decodeTradeInModelFields('150 Pro XS', { brand: 'Mercury', year: 2017 })).toEqual({
+      horsepower: 150,
+      engineType: 'optimax',
+    });
+    expect(decodeTradeInModelFields('150 Pro XS', { brand: 'Mercury', year: 2018 })).toEqual({
+      horsepower: 150,
       engineType: '4-stroke',
     });
   });

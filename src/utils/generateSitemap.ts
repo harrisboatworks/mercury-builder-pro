@@ -3,8 +3,13 @@ import { frenchBlogArticles } from '../data/frenchBlogArticles';
 import { koreanBlogArticles } from '../data/koreanBlogArticles';
 import { mandarinBlogArticles } from '../data/mandarinBlogArticles';
 import { spanishBlogArticles } from '../data/spanishBlogArticles';
+import { punjabiBlogArticles } from '../data/punjabiBlogArticles';
+import { urduBlogArticles } from '../data/urduBlogArticles';
+import { tagalogBlogArticles } from '../data/tagalogBlogArticles';
+import { hindiBlogArticles } from '../data/hindiBlogArticles';
 import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
+import { getBlogHreflangAlternates } from '../data/blogI18nRegistry.js';
 
 // Multilingual blog index pages and standalone hardcoded translated posts.
 // Translated posts are emitted at /blog/{lang}/{slug} with a lower priority than
@@ -22,6 +27,10 @@ function buildMultilingualBlogEntries(today: string): SitemapEntry[] {
     { lang: 'ko', articles: koreanBlogArticles },
     { lang: 'zh', articles: mandarinBlogArticles },
     { lang: 'es', articles: spanishBlogArticles },
+    { lang: 'pa', articles: punjabiBlogArticles },
+    { lang: 'ur', articles: urduBlogArticles },
+    { lang: 'tl', articles: tagalogBlogArticles },
+    { lang: 'hi', articles: hindiBlogArticles },
   ];
   const entries: SitemapEntry[] = sets.flatMap(({ lang, articles }) =>
     articles.map((a) => ({
@@ -89,6 +98,65 @@ function notRedirected(entry: SitemapEntry): boolean {
   return !getRedirectSourcePaths().has(entry.loc);
 }
 
+const LOCALIZED_BLOG_PREFIX = /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/;
+const ENGLISH_BLOG_PREFIX = /^\/blog\/([^/]+)$/;
+const BLOG_INDEX_SLUGS = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);
+
+function sitemapHreflangBlock(loc: string): string {
+  const localized = loc.match(LOCALIZED_BLOG_PREFIX);
+  const english = loc.match(ENGLISH_BLOG_PREFIX);
+  const locale = localized?.[1] || (english && !BLOG_INDEX_SLUGS.has(english[1]) ? 'en' : null);
+  const slug = localized?.[2] || (locale === 'en' ? english?.[1] : undefined);
+  if (!locale || !slug) return '';
+
+  const links = getBlogHreflangAlternates(locale, slug).map(
+    ({ hrefLang, path }: { hrefLang: string; path: string }) =>
+      `    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${BASE_URL}${path}" />`,
+  );
+  return links.length ? `\n${links.join('\n')}` : '';
+}
+
+function dedupeSitemapEntries(entries: SitemapEntry[]): SitemapEntry[] {
+  const seen = new Map<string, SitemapEntry>();
+  for (const entry of entries) {
+    if (!seen.has(entry.loc)) seen.set(entry.loc, entry);
+  }
+  return [...seen.values()];
+}
+
+function renderSitemapXml(entries: SitemapEntry[]): string {
+  const unique = dedupeSitemapEntries(entries);
+  const urlEntries = unique
+    .map((entry) => {
+      let xml = `  <url>
+    <loc>${BASE_URL}${entry.loc}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
+    <changefreq>${entry.changefreq}</changefreq>
+    <priority>${entry.priority}</priority>`;
+
+      if (entry.image) {
+        xml += `
+    <image:image>
+      <image:loc>${entry.image.url}</image:loc>
+      ${entry.image.title ? `<image:title><![CDATA[${entry.image.title}]]></image:title>` : ''}
+    </image:image>`;
+      }
+
+      xml += sitemapHreflangBlock(entry.loc);
+      xml += `
+  </url>`;
+      return xml;
+    })
+    .join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlEntries}
+</urlset>`;
+}
+
 
 // Static pages with their metadata
 const getStaticPages = (): SitemapEntry[] => {
@@ -134,15 +202,17 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/electric/mercury-avator', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     { loc: '/motors/mercury-9-9-tiller-kicker-guide', lastmod: today, changefreq: 'weekly', priority: 0.85 },
-    // Language hub pages (only /zh and /fr exist as routes; Korean and
-    // Spanish articles are served under /blog/ko and /blog/es without a hub)
-    // WARNING: scripts/static-prerender.mjs regenerates sitemap.xml AFTER the
-    // build and overwrites this generator's output in dist/ and public/. Any
-    // static route added here must ALSO be added to staticSitemapEntries in
-    // scripts/static-prerender.mjs, or it will never reach production.
+    // Language hub pages. WARNING: scripts/static-prerender.mjs regenerates
+    // sitemap.xml AFTER the build and overwrites this generator's output in
+    // dist/ and public/. Any static route added here must ALSO be added to
+    // staticSitemapEntries in scripts/static-prerender.mjs.
     { loc: '/zh', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/fr', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', lastmod: today, changefreq: 'monthly', priority: 0.65 },
+    { loc: '/ko', lastmod: today, changefreq: 'monthly', priority: 0.7 },
+    { loc: '/es', lastmod: today, changefreq: 'monthly', priority: 0.7 },
+    { loc: '/pa', lastmod: today, changefreq: 'monthly', priority: 0.7 },
+    { loc: '/ur', lastmod: today, changefreq: 'monthly', priority: 0.7 },
+    { loc: '/tl', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
@@ -163,37 +233,12 @@ export function generateSitemapXML(): string {
       title: article.title
     } : undefined
   }));
-  
+
   const today = new Date().toISOString().split('T')[0];
   const multilingualEntries = buildMultilingualBlogEntries(today);
 
   const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries].filter(notRedirected);
-  
-  const urlEntries = allEntries.map(entry => {
-    let xml = `  <url>
-    <loc>${BASE_URL}${entry.loc}</loc>
-    <lastmod>${entry.lastmod}</lastmod>
-    <changefreq>${entry.changefreq}</changefreq>
-    <priority>${entry.priority}</priority>`;
-    
-    if (entry.image) {
-      xml += `
-    <image:image>
-      <image:loc>${entry.image.url}</image:loc>
-      ${entry.image.title ? `<image:title><![CDATA[${entry.image.title}]]></image:title>` : ''}
-    </image:image>`;
-    }
-    
-    xml += `
-  </url>`;
-    return xml;
-  }).join('\n');
-  
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${urlEntries}
-</urlset>`;
+  return renderSitemapXml(allEntries);
 }
 
 // Generate RSS feed XML
@@ -202,15 +247,15 @@ export function generateRssXML(): string {
     .filter(isArticlePublished)
     .sort((a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime());
 
-  const lastBuildDate = publishedArticles[0] 
+  const lastBuildDate = publishedArticles[0]
     ? new Date(publishedArticles[0].dateModified || publishedArticles[0].datePublished).toUTCString()
     : new Date().toUTCString();
 
   const items = publishedArticles.map(article => {
-    const imageUrl = article.image.startsWith('/') 
-      ? `${BASE_URL}${article.image}` 
+    const imageUrl = article.image.startsWith('/')
+      ? `${BASE_URL}${article.image}`
       : article.image;
-    
+
     return `    <item>
       <title><![CDATA[${article.title}]]></title>
       <link>${BASE_URL}/blog/${article.slug}</link>
@@ -347,30 +392,5 @@ export async function generateFullSitemapXML(): Promise<string> {
   const multilingualEntries = buildMultilingualBlogEntries(today);
 
   const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries].filter(notRedirected);
-  
-  const urlEntries = allEntries.map(entry => {
-    let xml = `  <url>
-    <loc>${BASE_URL}${entry.loc}</loc>
-    <lastmod>${entry.lastmod}</lastmod>
-    <changefreq>${entry.changefreq}</changefreq>
-    <priority>${entry.priority}</priority>`;
-    
-    if (entry.image) {
-      xml += `
-    <image:image>
-      <image:loc>${entry.image.url}</image:loc>
-      ${entry.image.title ? `<image:title><![CDATA[${entry.image.title}]]></image:title>` : ''}
-    </image:image>`;
-    }
-    
-    xml += `
-  </url>`;
-    return xml;
-  }).join('\n');
-  
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${urlEntries}
-</urlset>`;
+  return renderSitemapXml(allEntries);
 }

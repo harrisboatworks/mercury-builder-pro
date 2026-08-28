@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를
 description: "온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지."
 category: "정비 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["선외기 겨울 보관","Mercury 겨울 정비","온타리오 보트 윈터라이제이션","Mercury winterization guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: service
 ---
 
 # Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 정비 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 
@@ -33,7 +34,7 @@ language: ko-KR
 **온타리오 겨울(-20~-30°C)에서 선외기를 보관하려면 6단계 정비가 필수. 건너뛰면 봄에 엔진 블록 균열이나 카뷰레터 막힘으로 수천 달러 수리비가 발생할 수 있습니다.**
 
 - **6단계 순서**: 연료 안정화 → 실린더 포깅 → 기어 오일 교환 → 배터리 분리 → 윤활 → 커버 보관
-- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함 — HBW는 에탄올 무첨가 휘발유 판매
+- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
 - **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
 
@@ -144,16 +145,15 @@ HBW 현장에서 판매합니다. 겨울 보관 전 방문 시 급유하는 것�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

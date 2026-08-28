@@ -16,6 +16,7 @@ keywords: ["electric outboard repower Ontario","Mercury Avator repower","electri
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-15  
-**Last updated:** 2026-07-28
+**Last reviewed:** 2026-07-28  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake
 
@@ -140,7 +141,7 @@ The Avator conversation at our counter is almost never "should I replace my 115 
 
 That's the honest state of electric boating in cottage country in 2026: it's not replacing the main gas motor on Rice Lake yet, and anyone who tells you otherwise is selling something. It is quietly winning the small-motor jobs, one dock at a time.
 
-We're bringing Avator into the lineup now, with pricing being finalized. If you want to be first in line when numbers land, get on the list through our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) or call us.
+We're bringing Avator into the lineup now, with Mercury Canada pricing still being finalized. We will not invent a placeholder number. Use our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) for current availability and the configuration path.
 
 ---
 
@@ -176,7 +177,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 
 ### Is Harris Boat Works actually selling the Mercury Avator now?
 
-Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup.
+Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 ### How far does an Avator go on one charge?
 
@@ -204,15 +205,15 @@ All three make legitimate motors. Avator's edge is the Mercury dealer network be
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

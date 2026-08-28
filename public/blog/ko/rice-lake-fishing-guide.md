@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리�
 description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-27
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 낚시 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-08-27  
 **Read time:** 10 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 
@@ -33,7 +34,7 @@ language: ko-KR
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch — walleye 시즌은 5월 둘째 토요일 개막
+- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch, walleye 시즌은 5월 둘째 토요일 개막
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 
@@ -88,14 +89,16 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 어종별 시즌 (FMZ 17 기준)
 
-| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) |
-|---|---|---|---|
-| Walleye(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 |
-| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 |
-| Muskie(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 |
-| Yellow Perch(옐로 퍼치) | 연중 개방 |, | 50마리 |
+이 표는 Sport(S) licence 기준입니다.
 
-**반드시 매년 온타리오 정부 사이트에서 최신 시즌 날짜와 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
+| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) | 소지 크기 |
+|---|---|---|---|---|
+| Walleye/Sauger(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 | 35~50 cm만 |
+| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 | 제한 없음 |
+| Muskellunge(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 | 112 cm 초과 |
+| Yellow Perch(옐로 퍼치) | 연중 개방 | 없음 | 50마리 | 제한 없음 |
+
+**반드시 매년 온타리오 공식 [FMZ 17 규정](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)에서 최신 시즌 날짜, 소지 크기, 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
 
 ---
 
@@ -111,9 +114,17 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 실용 정보
 
-**HBW 렌탈 보트:** Rice Lake에 9척 규모의 렌탈 보트 선단 운영. 자기 낚시 장비만 가져오면 당일 출발 가능. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다. 렌탈 예약: [harrisboatworks.ca](https://harrisboatworks.ca)
+**HBW 렌탈 보트:** Rice Lake에서 폰툰과 낚시 보트를 대여합니다. 현재 보트 종류, 정원, 요금, 예약 가능 날짜는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 확인하고 온라인으로 예약하세요. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다.
 
-**언어 안내:** HBW 직원들은 영어로 소통합니다. 한국어 서비스는 없지만 한인 낚시객을 환영하며 최선을 다해 도와드립니다.
+---
+
+## 언어 안내
+
+이 한국어 가이드는 토론토와 GTA 한인 낚시객이 Rice Lake 가는 길, 낚시 면허, FMZ 17 시즌과 어획 한도를 한국어로 먼저 파악할 수 있도록 만든 것입니다.
+
+HBW 직원의 상담과 서비스는 영어로 진행됩니다. 방문 시 영어가 가능한 가족이나 친구와 함께 오시거나, 휴대폰 번역 앱을 사용하시면 현장에서 소통이 수월합니다.
+
+한국어 서비스는 제공하지 않습니다. 한인 방문객이 오시면 천천히 맞춰 도와드리겠습니다.
 
 ---
 
@@ -136,31 +147,18 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ---
 
-## 자주 묻는 질문
-
-**Rice Lake에서 walleye 낚시 최적 시기는?** 
-5월 둘째 토요일 개장 직후 봄철이 가장 활발합니다. 해 뜨기 전후 2시간이 황금 시간대입니다.
-
-**HBW에서 낚시 장비도 빌릴 수 있나요?** 
-보트만 대여합니다. 낚시 장비는 별도로 준비해오세요.
-
-**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?** 
-용도에 따라 다릅니다. Walleye를 목표로 한다면 Rice Lake가 더 특화되어 있습니다. Lake Simcoe는 Lake trout와 perch로 더 잘 알려져 있습니다.
-
----
-
 ## 내부 링크
 - 온타리오 보트 면허 및 안전 규정
 - 온타리오 보트 구매 가이드
 - Mercury 115 vs 150 비교
 
-**렌탈 보트 예약 및 보트 재고 확인:** 
+**렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**엔진 견적:** 
+**엔진 견적:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-**전화:** 905-342-2153 
+**전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
 
@@ -188,16 +186,15 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

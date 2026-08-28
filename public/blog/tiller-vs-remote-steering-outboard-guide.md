@@ -16,6 +16,7 @@ keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote s
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-07-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -34,30 +35,33 @@ language: en-CA
 
 ---
 
-::decision-card
-eyebrow: Mercury control type decision
-heading: Tiller-steer or remote-helm Mercury?
-subhead: More than just where the stick goes. The tiller-vs-remote decision changes how you fish, how you drive, and how you trailer. Here's how to pick.
-leftLabel: Tiller-steer
-leftCriteria:
-  - You fish solo or 1-2 people and want to spot-cast from the back of the boat
-  - You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
-  - You like having open deck space in the front of the boat
-  - You don't need bilge gauges, fancy electronics, or a wheel
-  - 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
-leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
-leftVariant: alternative
-rightLabel: Remote helm
-rightCriteria:
-  - You run with passengers, family, or kids who need a windshield to hide behind
-  - You're 16-22+ ft and want gauges, electronics, livewell controls at your fingertips
-  - You go further from the launch and value sitting forward at speed
-  - You want power steering, hydraulic trim, SmartCraft displays
-  - 60 HP and up, especially 90 HP+
-rightOutcome: More comfortable, more capable, more expensive. Mercury 90 HP remote with mechanical controls, $14K-$17K installed. Add $2-4K for full SmartCraft / hydraulic upgrade.
-rightVariant: recommended
-whenInDoubt: If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
-::
+*Mercury control type decision*
+
+### Tiller-steer or remote-helm Mercury?
+
+More than just where the stick goes. The tiller-vs-remote decision changes how you fish, how you drive, and how you trailer. Here's how to pick.
+
+#### Tiller-steer
+
+- You fish solo or 1-2 people and want to spot-cast from the back of the boat
+- You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
+- You like having open deck space in the front of the boat
+- You don't need bilge gauges, fancy electronics, or a wheel
+- 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
+
+**Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.**
+
+#### Remote helm
+
+- You run with passengers, family, or kids who need a windshield to hide behind
+- You're 16-22+ ft and want gauges, electronics, livewell controls at your fingertips
+- You go further from the launch and value sitting forward at speed
+- You want power steering, hydraulic trim, SmartCraft displays
+- 60 HP and up, especially 90 HP+
+
+**More comfortable, more capable, more expensive. Mercury 90 HP remote with mechanical controls, $14K-$17K installed. Add $2-4K for full SmartCraft / hydraulic upgrade.**
+
+If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
 
 ## Tiller vs remote steering at a glance
 
@@ -180,14 +184,6 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ---
 
-## Related posts
-- [Portable Mercury Outboard Guide: 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-
----
-
 ## Ready to choose?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
@@ -206,7 +202,7 @@ Tiller is not harder to learn, it's different. The main adjustment is that tille
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
-Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. On a typical 16-18 ft planing aluminum V-hull, HBW starts with the standard gearcase; Command Thrust is for pontoons, workboats, and special displacement or load cases.
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 
@@ -234,24 +230,23 @@ For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI 
 
 ## Related guides
 
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

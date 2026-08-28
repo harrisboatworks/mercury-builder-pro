@@ -4,6 +4,7 @@ import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
 import { z } from "npm:zod@3.22.4";
 import { buildEmail, buildAdminEmail, detailsCard, esc as escLayout } from "../_shared/email-layout.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -155,6 +156,7 @@ const handler = async (req: Request): Promise<Response> => {
       from: "Harris Boat Works <info@mercuryrepower.ca>",
       replyTo: "info@harrisboatworks.ca",
       to: [inquiryData.email],
+      bcc: [GROK_BOT_AGENTMAIL],
       subject: "We received your inquiry | Harris Boat Works",
       html: customerHtml,
     });
@@ -180,6 +182,7 @@ const handler = async (req: Request): Promise<Response> => {
     const adminEmailResponse = await resend.emails.send({
       from: "Harris Boat Works <info@mercuryrepower.ca>",
       to: ["info@harrisboatworks.ca"],
+      bcc: [GROK_BOT_AGENTMAIL],
       subject: adminSubject,
       html: buildAdminEmail({
         preheader: `${inquiryData.name} - ${inquiryData.inquiry_type}`,

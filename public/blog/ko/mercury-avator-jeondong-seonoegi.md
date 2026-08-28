@@ -16,6 +16,7 @@ keywords: ["머큐리 Avator","전동 선외기","전기 보트 모터","Mercury
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # 머큐리 Avator 전동 선외기: 가격과 항속거리
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
+**마지막 검토:** 2026-06-08  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 
@@ -128,16 +129,15 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

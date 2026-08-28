@@ -16,6 +16,7 @@ keywords: ["mercury avator 7.5e review","avator 7.5e electric outboard","mercury
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Avator 7.5e: Review, Range, and Best Uses (2026)
@@ -24,13 +25,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-07-18  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 
-> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; call for a configuration and current price.
+> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; see the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 HBW sells gas outboards and is preparing Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
@@ -57,7 +58,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Price (CAD) | Call for the current configured price: 905-342-2153 | See pricing reference | See pricing reference |
+| Price (CAD) | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | See [pricing reference](/pricing-reference) | See [pricing reference](/pricing-reference) |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Selection basis | Boat fit, load, route, range, mounting, and charger | Boat fit, load, route, fuel range, and mounting | Boat fit, load, route, fuel range, and mounting |
 
@@ -127,7 +128,7 @@ It may suit quiet, low-speed operation on a compatible boat. HBW would confirm t
 
 ### How much does the Avator 7.5e cost installed?
 
-Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.
+Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration path. Pickup is at Gores Landing.
 
 ### What charges the Avator battery?
 
@@ -140,23 +141,22 @@ Warranty coverage is confirmed for the exact motor and battery package when HBW 
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo), Avator vs Torqeedo
+- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock), charging the Avator at a cottage dock
+- [Mercury Avator Electric Outboard Range on Rice Lake (2026)](/blog/mercury-avator-range-rice-lake-cottage), Avator range on Rice Lake
+- [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](/blog/electric-vs-gas-repower-guide-rice-lake)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

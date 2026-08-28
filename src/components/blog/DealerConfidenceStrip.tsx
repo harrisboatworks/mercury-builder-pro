@@ -11,8 +11,6 @@ interface DealerConfidenceStripProps {
 export function DealerConfidenceStrip({ showQuoteLink = true }: DealerConfidenceStripProps) {
   const items = [
     { label: 'Mercury Premier Dealer' },
-    { label: 'Family-owned since 1947' },
-    { label: 'Mercury dealer since 1965' },
     { label: 'Gores Landing, ON' },
     ...(showQuoteLink ? [{ label: 'Quote builder available', href: '/quote/motor-selection' }] : []),
   ];

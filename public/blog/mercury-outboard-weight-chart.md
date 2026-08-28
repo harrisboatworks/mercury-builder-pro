@@ -16,6 +16,7 @@ keywords: ["mercury outboard weight","mercury outboard weight chart","how much d
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Outboard Weight Chart (2.5 to 300 HP)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-07-23  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -47,14 +48,14 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 | 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
 | 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
 | 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
-| 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) (55 to 57 kg) | Kicker-duty gearcase and controls; range covers ProKicker variants |
+| 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) | Kicker-duty gearcase and controls; range covers ProKicker variants |
 | 15 EFI | 45 kg (99 lb) | |
 | 20 EFI | 45 kg (99 lb) | |
 | 25 EFI | 60 kg (132 lb) | |
 | 30 EFI | 66 kg (145 lb) | |
 | 40 EFI | 98 kg (216 lb) | 3-cylinder; the 4-cylinder 40 is 118 kg (260 lb) |
 | 50 EFI | 112 kg (247 lb) | |
-| 60 EFI | 112 kg (247 lb) | Command Thrust runs a few pounds heavier |
+| 60 EFI | 112 kg (247 lb) | Command Thrust runs a couple of kg (a few pounds) heavier |
 | 75 | 163 kg (359 lb) | Shares 2.1L block with 90/115 |
 | 90 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
 | 115 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
@@ -138,23 +139,22 @@ The 300 HP Mercury FourStroke V8 is 239 kg (527 lb) dry, and the 300 HP Pro XS V
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
+- [Mercury SeaPro Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide), SeaPro commercial-duty guide
+- [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario), Mercury Avator electric outboards
+- [Mercury Avator 7.5e: Review, Range, and Best Uses (2026)](/blog/mercury-avator-7-5e-review), Avator 7.5e review
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

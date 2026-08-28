@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-07-24
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
-date_modified: 2026-07-24
+date_modified: 2026-08-19
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury for Family Runabout 2026
@@ -24,13 +25,9 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
----
 
 ## Quick Answer
 
@@ -38,28 +35,31 @@ For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke*
 
 ---
 
-::decision-card
-eyebrow: Runabout use-case decision
-heading: Calm cruising or active watersports?
-subhead: Same boat length, two very different right answers on motor and gearcase.
-leftLabel: Primary use is calm cruising and dinner runs
-leftCriteria:
-  - Mostly 2 to 4 people, light loading
-  - Occasional tubing for the kids
-  - Fuel economy and quiet matter most
-  - You want lower upfront cost
-leftOutcome: 90 to 115 HP FourStroke, standard gearcase
-leftVariant: recommended
-rightLabel: You tow watersports regularly
-rightCriteria:
-  - Skiing, wakeboarding, or wakesurfing most weekends
-  - 4 to 6 people aboard with full gear
-  - Hole shot with the boat loaded matters
-  - Boat is 19 ft or larger
-rightOutcome: 150 to 200 HP, Pro XS if hole shot is critical
-rightVariant: alternative
-whenInDoubt: Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
-::
+*Runabout use-case decision*
+
+### Calm cruising or active watersports?
+
+Same boat length, two very different right answers on motor and gearcase.
+
+#### Primary use is calm cruising and dinner runs
+
+- Mostly 2 to 4 people, light loading
+- Occasional tubing for the kids
+- Fuel economy and quiet matter most
+- You want lower upfront cost
+
+**90 to 115 HP FourStroke, standard gearcase**
+
+#### You tow watersports regularly
+
+- Skiing, wakeboarding, or wakesurfing most weekends
+- 4 to 6 people aboard with full gear
+- Hole shot with the boat loaded matters
+- Boat is 19 ft or larger
+
+**150 to 200 HP, Pro XS if hole shot is critical**
+
+Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
 
 ## Full Article
 
@@ -135,8 +135,6 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 - **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/canada/en/) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
 - **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
 ### Pricing, What to Expect in CAD
@@ -145,7 +143,7 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 
 | Motor | All-In (CAD, before HST) |
 |---|---|
-| 90 HP FourStroke | $15,500 to $18,500 |
+| 90 HP FourStroke | [Live motor price](/pricing-reference) plus quoted rigging, prop, and installation |
 | 115 HP FourStroke | $17,500 to $22,500 |
 | 150 HP FourStroke | $23,000 to $30,000 |
 | 175 HP V6 FourStroke | $26,000 to $32,500 |
@@ -168,30 +166,10 @@ If you're genuinely unsure between two HP ratings, call us before you build a qu
 
 ---
 
----
-
-## Related at HBW
-
-The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-
----
-
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
-
----
-
 Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
 
 Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -218,28 +196,27 @@ Significantly. Modern Mercury 4-strokes are conversation-quiet at cruise; old 2-
 
 ### How much should fuel cost on a typical family Saturday?
 
-$80-$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
+It varies a lot depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
+- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

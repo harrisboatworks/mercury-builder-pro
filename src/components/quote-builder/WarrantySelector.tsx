@@ -7,6 +7,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface WarrantyPricing {
   hp_min: number;
@@ -27,7 +28,7 @@ interface WarrantyOption {
 
 export function WarrantySelector() {
   const { state, dispatch } = useQuote();
-  const { getTotalWarrantyBonusYears, getWarrantyPromotions, loading: promotionsLoading } = useActivePromotions();
+  const { promotions, loading: promotionsLoading } = useActivePromotions();
   const [warrantyPricing, setWarrantyPricing] = useState<WarrantyPricing | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -71,9 +72,8 @@ export function WarrantySelector() {
 
   // Calculate current warranty coverage
   const standardYears = 3;
-  // Get actual warranty bonus years from active promotions
-  const promoYears = getTotalWarrantyBonusYears();
-  const warrantyPromotions = getWarrantyPromotions();
+  const appliedPromotion = getAppliedPromotion(promotions);
+  const promoYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const currentTotalYears = standardYears + promoYears;
   const maxTotalYears = 8;
   const availableYears = maxTotalYears - currentTotalYears;
@@ -187,9 +187,9 @@ export function WarrantySelector() {
                 <div className="font-medium flex items-center gap-1">
                   +{promoYears} years <Badge variant="secondary" className="text-xs">FREE</Badge>
                 </div>
-                {warrantyPromotions.length > 0 && (
+                {appliedPromotion && (
                   <div className="text-xs text-muted-foreground mt-1">
-                    From: {warrantyPromotions.map(p => p.name).join(', ')}
+                    From: {appliedPromotion.name}
                   </div>
                 )}
               </div>

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw.md
-last_updated: 2026-07-17
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -9,26 +9,27 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Pickering: 50 Minutes from Rice Lake"
 description: "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners."
-category: "Service Area"
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-17
+date_modified: 2026-08-19
 keywords: ["mercury dealer pickering","mercury repower pickering","mercury outboard pickering ontario","boat motor dealer pickering"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer for Pickering: 50 Minutes from Rice Lake
 
 > Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-17  
+**Last reviewed:** 2026-08-19  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Pickering boaters drive to Harris Boat Works: about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
 
-# Mercury Dealer for Pickering: You're Closer Than You Think
+## Mercury Dealer for Pickering: You're Closer Than You Think
 
 Pickering is where the GTA starts to thin out. You're already east of the Don Valley, already past most of the traffic that makes the rest of the GTA's relationship with cottage country complicated.
 
@@ -58,9 +59,9 @@ This isn't accidental. It's a process designed to put a salesperson in the conve
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) does the opposite. Real installed pricing in Canadian dollars, in about three minutes, before any conversation starts. You see the number. You think it over. You engage us when you're ready. Prefer to scan the list first? [What each Mercury motor costs](/pricing-reference) is published on our price reference.
 
-## Mercury Premier, Third Generation
+## What Mercury Premier Means on a Repower
 
-Mercury Premier is the top tier in their dealer program. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
+Mercury Premier is the top tier in their dealer program. Harris Boat Works has held it for years. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
 
 ---
 
@@ -70,10 +71,10 @@ Mercury Premier is the top tier in their dealer program. Harris Boat Works has h
 Full lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll talk through what makes sense for your specific hull and use case.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find it more convenient to store with us than to search for storage locally, especially if the boat is already being serviced here.
@@ -84,8 +85,6 @@ Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find
 ---
 
 ## Getting to Harris Boat Works from Pickering
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Mostly highway until the last 15 minutes, which is rural county road.
 
@@ -116,7 +115,7 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -132,8 +131,6 @@ Why Pickering boaters choose HBW for repower:
 - **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ---
 
 ## FAQs
@@ -148,28 +145,27 @@ Closer than you might think (similar to a typical Toronto commute), Mercury Prem
 
 ### Can I quote and order remotely?
 
-Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install/delivery from there.
+Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install and pickup timing from there.
 
 ## Related guides
 
+- [Mercury Dealer Richmond Hill HBW](/blog/mercury-dealer-richmond-hill-ontario-hbw), Mercury dealer for Richmond Hill
+- [Mercury Dealer Vaughan Ontario HBW](/blog/mercury-dealer-vaughan-ontario-hbw), Mercury dealer for Vaughan
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
 - [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

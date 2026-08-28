@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-07-18
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
 description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
-date_modified: 2026-07-18
+date_modified: 2026-08-19
 keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Pro XS Repower for Rice Lake & Kawartha Anglers
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers
 
@@ -65,27 +66,29 @@ The other reason matters less in marketing copy but a lot in real life: when you
 
 ## Choosing your Pro XS HP
 
-::decision-card
-heading: Which Pro XS for your fishing?
-subhead: Hull rating is the hard limit. After that, fishing style decides.
-leftLabel: 115–150 Pro XS
-leftCriteria:
-  - Smaller bass boats (16–17 ft aluminum or fiberglass)
-  - Single-angler or two-angler max
-  - Tight-water lakes and weed-edge fishing
-  - 150 Pro XS = inline-4, lighter rigged package
-leftOutcome: Best for light, tight-water bass rigs
-leftVariant: standard
-rightLabel: 175–225 Pro XS V6
-rightCriteria:
-  - 18–20 ft aluminum or fiberglass angler hulls
-  - Multi-lake days across Rice, Pigeon, Stoney
-  - Two- or three-up fishing, full livewells
-  - Top end of roughly 50–58 mph depending on hull
-rightOutcome: Sweet spot for most Kawartha anglers
-rightVariant: recommended
-whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
-::
+### Which Pro XS for your fishing?
+
+Hull rating is the hard limit. After that, fishing style decides.
+
+#### 115–150 Pro XS
+
+- Smaller bass boats (16–17 ft aluminum or fiberglass)
+- Single-angler or two-angler max
+- Tight-water lakes and weed-edge fishing
+- 150 Pro XS = inline-4, lighter rigged package
+
+**Best for light, tight-water bass rigs**
+
+#### 175–225 Pro XS
+
+- 18–20 ft aluminum or fiberglass angler hulls
+- Multi-lake days across Rice, Pigeon, Stoney
+- Two- or three-up fishing, full livewells
+- Top end varies by hull, load, and setup; ask us for real-world numbers on your rig
+
+**Sweet spot for most Kawartha anglers**
+
+Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V8 with the standard gearcase.
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
 
@@ -113,8 +116,6 @@ Honest framing matters. We sell both because they're both right for different pe
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
@@ -140,10 +141,10 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Prop (stainless for performance hulls)
 - Steering (hydraulic on most Pro XS V6 installs)
 - Install labour
-- Sea trial and tuning
+- Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS V6 build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 
@@ -157,10 +158,10 @@ The practical walk-through:
 2. **Quote.** We build a real CAD quote with motor, rigging, prop, steering, install, and taxes. Financing options laid out if you want them.
 3. **Order.** Motor goes on order with Mercury. Lead time depends on HP, shaft length, and current allocation.
 4. **Install.** Two to four working days in the shop once motor and parts are in hand. Rigging done clean, not over the top of the old harness.
-5. **Sea trial.** We run the boat on Rice Lake, set throttle and shift, confirm WOT RPM is in spec, and prop accordingly.
+5. **Lake test.** We run the boat on Rice Lake, set throttle and shift, confirm WOT RPM is in spec, and prop accordingly.
 6. **Handoff.** Walk-through on the new motor, paperwork, warranty registration, and how to use SmartCraft features if you're new to them.
 
-Most anglers schedule repowers between October and April so the boat is ready for opening day. The shop is calmer, lead times are shorter, and you're not losing fishing days.
+Most anglers plan repowers over the winter so the boat is ready for opening day. We take orders all winter (the shop itself is closed December 1 through April 1), lead times are shorter, and you're not losing fishing days.
 
 ---
 
@@ -178,7 +179,7 @@ Honest counter-positioning. Pro XS is the wrong answer if:
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-> Related guide: [Boat trim basics for Rice Lake](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim basics for Rice Lake](/blog/how-to-trim-boat-mercury-outboard).
 
 > Related guide: [DTS vs mechanical controls, what Pro XS buyers should know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
 
@@ -194,7 +195,6 @@ Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Premier Dealer. Established 1947.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -217,7 +217,7 @@ No. Pro XS is a performance motor for planing V-hull bass and angler boats, and 
 
 ### How long does a Pro XS repower take at HBW?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, and a sea trial on Rice Lake. Motor lead time is separate: in-stock Pro XS ships immediately, special-order shaft-and-gearcase combos wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Most anglers schedule repowers in the off-season (October through April) so the boat is ready for opening day.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Your boat stays with you until the drop-off date is confirmed.
 
 ### Can I repower a 1990s bass boat with a modern Pro XS?
 
@@ -225,32 +225,31 @@ Often yes, but the transom and stringers have to be sound. We see a lot of 1990s
 
 ### What's the warranty on a Mercury Pro XS?
 
-Mercury Pro XS comes with the applicable Mercury limited warranty in Canada. Optional Mercury Product Protection Platinum can bring eligible factory warranty plus paid protection to a maximum of 8 combined years. HBW verifies the serial record, available term and current promotion before registration. As a Mercury Premier dealer, HBW handles warranty and Product Protection claims in-house.
+Mercury Pro XS comes with the applicable Mercury limited warranty in Canada. Optional Mercury Product Protection Platinum can extend eligible factory warranty plus paid protection for several years, with the maximum combined term set by Mercury's current program rules. HBW verifies the serial record, available term and current promotion before registration. As a Mercury Premier dealer, HBW handles warranty and Product Protection claims in-house.
 
 ### Does HBW finance repowers?
 
-Yes, on repowers above $5,000 CAD. We offer financing through Mercury's preferred lenders with rates that depend on the financed amount, under $10,000 CAD is one rate tier, $10,000 and above is a slightly lower rate tier. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
+Yes, on repowers above $5,000 CAD. We offer financing through Mercury's repower financing program, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

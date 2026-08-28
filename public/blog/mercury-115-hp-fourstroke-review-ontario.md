@@ -16,6 +16,7 @@ keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-07-27  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
@@ -159,7 +160,7 @@ Choose Command Thrust for a pontoon or a specific heavy-duty application that ne
 
 Don't buy it as a generic upgrade for a recreational V-hull. The larger case can carry load and produce lift, but it also adds drag. On an ordinary aluminum or fibreglass runabout, the standard gearcase is normally the better choice.
 
-[Read the full Command Thrust explanation](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) if another dealer has told you CT simply means “more torque.”
+[Read the full Command Thrust explanation](/blog/mercury-command-thrust-complete-guide-2026) if another dealer has told you CT simply means “more torque.”
 
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
@@ -286,7 +287,7 @@ The propeller allowance in our quote builder is there for a reason.
 
 At HBW, motor pricing from 25 HP and up doesn't include a propeller. We match the starting prop to the boat, then check the result during water testing. If a customer already has a suitable prop, we can account for that, but “it fits the shaft” doesn't mean it is the right prop.
 
-An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any bonus coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
+An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any additional promotional coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
 
 We check:
 
@@ -396,23 +397,22 @@ Pricing varies by calibration, gearcase, shaft length and current Mercury progra
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

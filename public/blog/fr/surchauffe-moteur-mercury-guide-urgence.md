@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence.md
-last_updated: 2026-05-13
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,22 +11,23 @@ title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-08-21
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: service
 ---
 
 # Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)
 
 > Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines...
 
-**Category:** Dépannage  
-**Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
+**Catégorie :** Dépannage\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-21\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
 ## Réponse rapide
 
@@ -89,7 +90,7 @@ La turbine est une roue à pales en caoutchouc dans l'embase qui pousse l'eau de
 
 **Symptômes :** Jet témoin faible au ralenti qui s'améliore à régime plus élevé, alarme intermittente.
 
-**Intervalle d'entretien :** Mercury recommande de remplacer la turbine de la pompe à eau tous les 2 à 3 ans ou 200 heures, selon la première éventualité.
+**Intervalle d'entretien :** Suivez le manuel d'utilisation et d'entretien de votre moteur, pour votre numéro de série exact. Les intervalles varient d'un modèle à l'autre, alors ne vous fiez pas à une règle universelle. Faites inspecter le circuit de refroidissement après une surchauffe, si le jet témoin faiblit, après une utilisation en eau chargée de sédiments, ou si l'historique d'entretien est incertain.
 
 ### 3. Défaillance du thermostat
 
@@ -117,13 +118,13 @@ Sur les moteurs plus vieux ou ceux fonctionnant en eau dure, le tartre et les d�
 
 ---
 
-## Quand prendre rendez-vous pour le service
+## Quand demander du service
 
 Après tout événement de surchauffe, même un qui s'est résolu sur l'eau, faites vérifier le moteur.
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Si vous soupçonnez un problème du système de refroidissement, prenez rendez-vous avant votre prochaine sortie : [hbw.wiki/service](https://hbw.wiki/service).
+Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbw.wiki/service avant votre prochaine sortie.
 
 ---
 
@@ -132,35 +133,22 @@ Si vous soupçonnez un problème du système de refroidissement, prenez rendez-v
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 
-## Questions fréquentes
-
-**L'alarme s'est déclenchée une fois mais le moteur semble bien maintenant. Dois-je l'apporter?**
-Oui. Un événement de surchauffe unique qui s'est résolu lui-même devrait quand même être diagnostiqué.
-
-**À quoi ressemble le jet témoin quand il est normal?**
-Un jet d'eau continu et régulier, pas hésitant ou intermittent, et perceptible à tous les régimes y compris au ralenti.
-
-**Puis-je remplacer la turbine de la pompe à eau moi-même?**
-Sur les plus petits moteurs, c'est une tâche DIY gérable.
-
-**Comment savoir si la turbine est usée sans démonter l'embase?**
-Le comportement du jet témoin est le meilleur indicateur.
-
-**La surchauffe endommage-t-elle le moteur même si je l'arrête rapidement?**
-Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
-
----
-
 ## Liens internes
 
 - [Intervalles d'entretien Mercury](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ## Appel à l'action
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -168,7 +156,7 @@ Téléphone : 905-342-2153
 
 ## Portée de service
 
-Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+Si vous soumettez une demande de service chez HBW, voici la limite importante à connaître :
 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
@@ -198,18 +186,17 @@ Pas directement, la surchauffe est un problème du côté refroidissement, pas d
 
 Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

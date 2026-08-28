@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-07-04
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Repair, Repower or Sell? Ontario Decision Guide"
 description: "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-07-04
+date_modified: 2026-08-08
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Repair, Repower or Sell? Ontario Decision Guide
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-04  
+**Last reviewed:** 2026-08-08  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
-# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
+## Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
 
 ## Quick answer
 
@@ -116,8 +117,6 @@ If your answer is "I'm not sure," repair is the conservative choice. You can alw
 
 **What we recommend:** a good Mercury shop for the install, with Mercury Product Protection (MPP) for extended warranty coverage. Match motor horsepower carefully to your boat's capacity plate. Read our [Complete Boat Repower Guide for the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) for the full process walkthrough.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **The honest math:** a new Mercury 90 HP repower on a typical Ontario aluminum boat lands in the $13,000-$15,000 range in 2026 including controls, rigging, and labour. For most owners, that buys a full factory warranty (3 years, with current promotions often extending factory-backed coverage) and 15-20 years of expected motor life. The cost-per-year math is usually better than people expect.
 
 For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guide](/blog/new-vs-used-mercury-outboard-ontario) covers the trade-offs.
@@ -136,7 +135,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
 
-**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect. One number private sellers miss: when you trade in through an Ontario dealer, HST applies only to the difference between the new purchase and your trade value, not the full price. On a larger purchase that tax savings can close most of the gap between trade value and private-sale value.
+**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/outboard-trade-in-value-ontario-hbw) covers what to expect. One number private sellers miss: when you trade in through an Ontario dealer, HST applies only to the difference between the new purchase and your trade value, not the full price. On a larger purchase that tax savings can close most of the gap between trade value and private-sale value.
 
 ![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 
@@ -181,7 +180,7 @@ Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone own
 
 ### Can I finance just a repower without buying the whole boat?
 
-Yes. Mercury Marine financing programs (current rates available through your Mercury dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates.
+Yes. HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check mercuryrepower.ca/promotions for current terms.
 
 ### What's the resale impact of doing a repower right before selling?
 
@@ -201,24 +200,23 @@ Yes. We are not a parts-volume shop. We make our long-term business by being hon
 
 ## Related guides
 
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 - [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

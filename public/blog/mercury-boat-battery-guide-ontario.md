@@ -16,6 +16,7 @@ keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Boat Battery Guide Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-04-01  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
-# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
+## The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
 
 > **Quick answer:** Battery-related no-starts are HBW's #1 spring service call. Most Mercury 4-strokes 75 HP and up need at least 800 MCA at startup. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise. Disconnect or use a battery switch for winter storage, top up monthly with a maintenance charger, and replace at 5-7 years even if it still cranks.
 
@@ -42,25 +43,39 @@ This guide is the preventive medicine version of that service call. Battery type
 
 ---
 
-::diagnostic-flow
-heading: Battery won't crank? Diagnose in this order.
-eyebrow: Marine battery triage
-subhead: Most marine battery "failures" are one of these four things. Walk in order, don't guess.
-step1Label: Load test
-step1Question: Does the battery hold above 9.5V under starter load?
-step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
-step2Label: Terminals and cables
-step2Question: Are the terminals clean and the cable connections tight?
-step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
-step3Label: Charging system (alternator output)
-step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
-step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
-step4Label: Age and replacement
-step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
-step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
-escalationLabel: Want HBW to diagnose?
-escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
-::
+*Marine battery triage*
+
+### Battery won't crank? Diagnose in this order.
+
+Most marine battery "failures" are one of these four things. Walk in order, don't guess.
+
+#### Load test
+
+**Does the battery hold above 9.5V under starter load?**
+
+Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
+
+#### Terminals and cables
+
+**Are the terminals clean and the cable connections tight?**
+
+White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+
+#### Charging system (alternator output)
+
+**With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?**
+
+Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
+
+#### Age and replacement
+
+**Is the battery 5+ years old, or did it spend a winter without a maintainer?**
+
+Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
+
+#### Want HBW to diagnose?
+
+We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
 
 ## Why Batteries Are Our #1 Spring Service Call
 
@@ -148,8 +163,6 @@ This is how boats come in dead every spring: the switch was left on **BOTH** all
 One more note: never switch directly from 1 to 2 while the engine is running. Switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
 
 ### Adding an ACR or VSR
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 An Automatic Charging Relay (ACR) or Voltage Sensitive Relay (VSR) monitors both battery banks and automatically connects them for charging when the engine runs, then isolates them when it shuts off. Both batteries charge on every engine run. Neither can drain the other in storage. No operator input required. If you're doing a dual battery upgrade, an ACR is worth the investment.
 
@@ -286,8 +299,6 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 
 Phone: 905-342-2153
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What size battery does a Mercury outboard need?
@@ -317,23 +328,22 @@ Bring the battery to a full charge before storage, never store at 50 percent. Tu
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

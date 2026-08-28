@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Motor Seasonal Care Ontario"
 description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work."
 category: "Maintenance"
 date_published: 2024-05-20
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["mercury motor maintenance","outboard winterization","boat motor service","mercury service schedule","outboard maintenance tips"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Motor Seasonal Care Ontario
@@ -24,21 +25,19 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2024-05-20  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 
-# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
+> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, submit hbw.wiki/service about one to two weeks before your planned drop-off; mid-November is the practical last call.
 
-> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
-
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
 Most preventable service problems start with skipped maintenance, old fuel, restricted cooling water, or a storage procedure that did not match the engine. A model-specific schedule costs less than guessing after a warning horn or no-start.
 
-The annual maintenance budget for a typical Mercury repower is small compared with a major repair. The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
+The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
 
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Use the seasonal cycle below to organize the exact work listed in the manual for your motor.
 
@@ -48,7 +47,7 @@ Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
 - **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
-- **[Storage conditions](/blog/boat-storage-kawartha-lakes).** A dry, secure cover and correct engine position matter. HBW offers outdoor shrinkwrapped storage only.
+- **[Storage conditions](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).** A dry, secure cover and correct engine position matter. HBW offers outdoor shrinkwrapped storage only.
 - **Motor family and age.** Current FourStrokes, older two-strokes, SeaPro, ProKicker, and Verado models do not all share one checklist. The serial-number manual decides the cadence.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
@@ -103,7 +102,7 @@ If winterization is done correctly, the motor mostly takes care of itself over w
 
 - Battery: it can remain in the boat if disconnected and maintained according to the battery maker's instructions
 - Storage cover: snow load can damage seats, electronics, and canvas
-- Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
+- Mid-winter check (for boats stored at home): a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
 We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
 
@@ -124,8 +123,6 @@ We see these every year:
 6. **Running on a weak battery.** A weak battery can create slow cranking, unreliable starts, and misleading electrical symptoms. Load-test it, maintain clean connections, and replace it based on condition and the battery maker's guidance instead of one universal age rule.
 
 7. **Ignoring the prop.** A nicked or bent prop costs you fuel economy and stresses the motor. We inspect and recommend prop replacement when needed during winterization.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## What HBW checks at every service visit
 
@@ -163,9 +160,9 @@ For exact intervals on your specific motor model, the Mercury owner's manual is 
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
 
-## Ready to book service?
+## Ready to request service?
 
-Spring service slots fill up in March and April. Fall winterization slots fill in October. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+HBW handles fall winterization and outdoor storage first come, first served. You do not need to reserve capacity. Submit the service request about one to two weeks before your planned drop-off; mid-November is the practical last call because HBW closes December 1.
 
 [**Request Service**](https://hbw.wiki/service)
 
@@ -179,19 +176,7 @@ Not sure what your specific motor needs? Put in a service request at [hbw.wiki/s
 
 ---
 
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
-
----
-
-## Related at HBW
-
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
+_Service pricing varies by motor, condition, and work due. HBW confirms the current scope and price from the service request and the exact engine details._
 
 ---
 
@@ -219,7 +204,7 @@ For most current recreational Mercury FourStrokes, change engine oil at 100 hour
 
 ### Can I do my own Mercury outboard maintenance?
 
-You can handle several tasks yourself: checking and changing oil, replacing fuel filters, inspecting and replacing spark plugs, lubricating grease fittings, checking and replacing anodes, and inspecting the propeller. What you should leave to a certified technician: water pump impeller replacement, throttle and shift cable adjustment, ignition timing diagnostics, and any electronic system work on SmartCraft or digital throttle systems. For engine repairs at Harris Boat Works, we only service Mercury and Mercruiser.
+You can handle several tasks yourself: checking and changing oil, replacing fuel filters, inspecting and replacing spark plugs, lubricating grease fittings, checking and replacing anodes, and inspecting the propeller. What you should leave to a certified technician: water pump impeller replacement, throttle and shift cable adjustment, ignition timing diagnostics, and any electronic system work on SmartCraft or digital throttle systems. For engine repairs at Harris Boat Works, we only service Mercury and MerCruiser.
 
 ### When should I winterize my outboard in Ontario?
 
@@ -239,22 +224,22 @@ The price depends on the exact engine, the items due in its manual, service hist
 
 ## Related guides
 
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

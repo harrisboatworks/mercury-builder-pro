@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-06-09
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
 description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-08-19
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Charging a Mercury Avator at Your Cottage Dock (2026)
@@ -24,14 +25,14 @@ language: en-CA
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-19  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
+Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger Avator models use different battery and charger combinations, so confirm the package and electrical requirements before planning turnaround time. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
 
 ## What charging actually requires
 
@@ -47,15 +48,15 @@ For a cottage with existing dock or boathouse power, the setup is usually straig
 
 ### Avator 7.5e (integrated 1 kWh battery)
 
-- **Standard 110V outlet**: 3-4 hours from empty to full
-- **240V charging**: not applicable for this model (single integrated battery, 110V charger only)
+- **Included 110 W charger with a standard household outlet**: about nine hours from fully depleted
+- **Optional faster charger**: confirm the current compatible charger and input requirements with Mercury
 
 For typical cottage use (a few hours on the water, then dock for the night), [the 7.5e's overnight 110V charge](/blog/mercury-avator-7-5e-review) is comfortable.
 
 ### Avator 20e and 35e (external 2,300 Wh packs, up to 3-4 packs)
 
 - **Standard 110V outlet, single pack**: ~10-12 hours
-- **240V charger, single pack**: ~3-4 hours
+- **Higher-output charger, single pack**: confirm the current compatible charger and pack with Mercury before planning turnaround time
 - **Multiple packs simultaneously**: depends on charger configuration
 
 For multi-pack setups, overnight 110V charging works if you have outlets to spare. A single 240V charger is the better answer for serious use.
@@ -88,7 +89,7 @@ For a dedicated Avator charging outlet at the dock:
 - **Properly grounded**: marine-grade grounding to prevent stray current corrosion
 - **Wire gauge rated for the load**: typically 12 AWG for 20A circuits, heavier for 240V
 
-Have a licensed electrician do the dock outlet install. Marine electrical near water is one of the few areas where a DIY approach creates real safety risk. Cost typically runs $400-800 for a 110V dedicated outlet, $800-1,500 for a 240V install, plus any cottage panel work required.
+Have a licensed electrician do the dock outlet install. Marine electrical near water is one of the few areas where a DIY approach creates real safety risk. Cost varies a lot with the run length and panel condition, so get a quote from a licensed electrician; a 240V install or panel work runs well above a basic 110V outlet.
 
 ## Charging logistics for cottage trips
 
@@ -133,7 +134,7 @@ The other common situation: cottagers who add Avator without consulting their co
 
 ### Can I charge a Mercury Avator from a standard cottage outlet?
 
-For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
+Yes. The 7.5e includes a 110 W charger for a standard household outlet. Mercury's current Avator family brochure lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger.
 
 ### Do I need a special charger?
 
@@ -166,23 +167,22 @@ Charging stops, the battery stays at whatever level it reached. When power retur
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](/blog/electric-vs-gas-repower-guide-rice-lake)
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

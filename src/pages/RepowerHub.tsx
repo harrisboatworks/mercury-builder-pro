@@ -55,7 +55,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Rigging, Controls & Fit',
     cards: [
       { title: 'Mercury DTS vs Mechanical Controls', description: 'When digital throttle and shift is worth the rigging cost.', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower' },
-      { title: 'Horsepower & Capacity Plate Guide', description: 'Reading the legal HP ceiling on your transom before you spec a motor.', to: '/blog/repower-horsepower-capacity-plate-guide' },
+      { title: 'Horsepower & Capacity Plate Guide', description: 'Use the hull manufacturer\'s maximum recommended safe power, then match the motor to the actual boat.', to: '/blog/repower-horsepower-capacity-plate-guide' },
       { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', description: 'How hull type changes HP, gearcase, and rigging choices.', to: '/blog/repower-pontoon-aluminum-v-hull-differences' },
     ],
   },
@@ -223,7 +223,7 @@ export default function RepowerHub() {
           <h3>Key facts</h3>
           <ul>
             <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
-            <li>Family-owned since 1947, Mercury dealer since 1965, current Premier tier</li>
+             <li>Family-owned since 1947, Mercury dealer since 1965, Premier tier today</li>
             <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
             <li>Your boat is with us: 2 to 5 days, drop-off to pickup. We don't take it in until your motor arrives.</li>
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>

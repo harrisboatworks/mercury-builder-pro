@@ -15,6 +15,12 @@ import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
+import { Mercury99MHSalePage } from '@/components/motors/Mercury99MHSalePage';
+import {
+  MERCURY_99_MH_ALTERNATE_NAMES,
+  buildMercury99MhFaqs,
+} from '@/lib/mercury99MhSaleContent';
+import { resolveMotorAvailability } from '@/lib/motorAvailability';
 import { SITE_URL } from '@/lib/site';
 import speedboatFallback from '@/assets/speedboat-transparent.png';
 
@@ -64,6 +70,24 @@ type ManualOverrides = {
   sale_price?: number | string | null;
   base_price?: number | string | null;
 };
+
+interface PublicMotorApiRecord {
+  id: string;
+  slug: string;
+  modelDisplay: string | null;
+  modelNumber: string | null;
+  family: string | null;
+  motorType: string | null;
+  horsepower: number | null;
+  shaftLength: string | null;
+  controlType: string | null;
+  msrp: number | null;
+  sellingPrice: number | null;
+  availability: string | null;
+  inStock: boolean | null;
+  stockQuantity?: number | null;
+  imageUrl: string | null;
+}
 
 function resolveSellingPrice(m: MotorRow): number | null {
   const overrides = (m.manual_overrides || {}) as ManualOverrides;
@@ -166,7 +190,7 @@ export default function MotorPage() {
         .from('motor_models')
         .select(MOTOR_SELECT)
         .eq('model_key', modelKey)
-        .neq('availability', 'Exclude')
+        .or('availability.is.null,availability.neq.Exclude')
         .limit(1)
         .maybeSingle();
 
@@ -176,7 +200,7 @@ export default function MotorPage() {
           .from('motor_models')
           .select(MOTOR_SELECT)
           .ilike('model_key', `%${modelKey}%`)
-          .neq('availability', 'Exclude')
+          .or('availability.is.null,availability.neq.Exclude')
           .limit(1)
           .maybeSingle();
         data = fuzzy;
@@ -186,7 +210,7 @@ export default function MotorPage() {
         const { data: candidates } = await supabase
           .from('motor_models')
           .select(MOTOR_SELECT)
-          .neq('availability', 'Exclude')
+          .or('availability.is.null,availability.neq.Exclude')
           .order('horsepower', { ascending: true })
           .limit(500);
         data = ((candidates || []) as MotorRow[]).find((candidate) => publicMotorSlug(candidate) === slug) || null;
@@ -201,7 +225,7 @@ export default function MotorPage() {
           );
           if (res.ok) {
             const json = await res.json();
-            const match = (json?.motors || []).find((m: any) => m.slug === slug);
+            const match = ((json?.motors || []) as PublicMotorApiRecord[]).find((m) => m.slug === slug);
             if (match) {
               data = {
                 id: match.id,
@@ -218,12 +242,13 @@ export default function MotorPage() {
                 start_type: null,
                 control_type: match.controlType,
                 msrp: match.msrp,
-                sale_price: match.salePrice,
-                dealer_price: match.dealerPrice,
+                sale_price: match.sellingPrice,
+                dealer_price: null,
                 base_price: null,
                 manual_overrides: null,
                 availability: match.availability,
                 in_stock: match.inStock,
+                stock_quantity: match.stockQuantity ?? null,
                 hero_media_id: null,
                 hero_image_url: match.imageUrl,
                 image_url: match.imageUrl,
@@ -296,6 +321,72 @@ export default function MotorPage() {
   const inStock = motor.in_stock || motor.availability === 'In Stock';
   const image = motorImageUrl || motor.hero_image_url || motor.image_url || speedboatFallback;
   const schemaImage = toAbsoluteImageUrl(image);
+  const pageUrl = `https://www.mercuryrepower.ca/motors/${slug}`;
+  const isMercury99MhSale = modelNo === '1A10201LK' && price != null;
+
+  if (isMercury99MhSale) {
+    const saleAvailability = resolveMotorAvailability(motor);
+    const saleTitle = `Mercury 9.9 Outboard for Sale Ontario | ${formatCAD(price)} CAD`;
+    const saleDescription = `New Mercury 9.9 MH FourStroke for sale in Ontario at ${formatCAD(price)} CAD before HST. Manual start, 15-inch short shaft, battery-free EFI. ${saleAvailability.label}.`;
+    const faqs = buildMercury99MhFaqs(price, saleAvailability);
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    };
+
+    return (
+      <>
+        <Helmet>
+          <title>{saleTitle}</title>
+          <link rel="canonical" href={pageUrl} />
+          <meta name="description" content={saleDescription} />
+          <meta property="og:title" content={saleTitle} />
+          <meta property="og:description" content={saleDescription} />
+          <meta property="og:type" content="product" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:image" content={schemaImage} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={saleTitle} />
+          <meta name="twitter:description" content={saleDescription} />
+          <meta name="twitter:image" content={schemaImage} />
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        </Helmet>
+        <MotorPageSEO
+          name="Mercury 9.9 MH FourStroke"
+          alternateNames={MERCURY_99_MH_ALTERNATE_NAMES}
+          hp={9.9}
+          family="FourStroke"
+          shaft="15 inch"
+          startType="Manual"
+          controlType="Tiller"
+          modelNumber="1A10201LK"
+          image={schemaImage}
+          priceCAD={price}
+          inStock={saleAvailability.inStock}
+          offerAvailability={saleAvailability.schemaAvailability}
+          priceValidUntil={null}
+          url={pageUrl}
+        />
+        <Mercury99MHSalePage
+          display="Mercury 9.9 MH FourStroke"
+          price={price}
+          msrp={motor.msrp}
+          image={image}
+          modelId={motor.id}
+          availability={saleAvailability}
+        />
+      </>
+    );
+  }
 
   // Title pattern (competitor-parity, city in ranked position for AI answer engines):
   //   Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
@@ -322,8 +413,6 @@ export default function MotorPage() {
   const ogDescription = `${display} - ${hp} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${
     price ? `${formatCAD(price)} CAD` : 'Contact for CAD pricing'
   }. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
-  const pageUrl = `https://www.mercuryrepower.ca/motors/${slug}`;
-
   return (
     <>
       <Helmet>

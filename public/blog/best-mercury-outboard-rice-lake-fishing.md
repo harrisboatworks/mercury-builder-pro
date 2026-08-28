@@ -1,30 +1,31 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Best Mercury for Rice Lake Fishing 2026"
-description: "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup."
+title: "Best Mercury Outboard Setup for Rice Lake Fishing"
+description: "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-07-23
-keywords: ["rice lake fishing guide","rice lake walleye","rice lake fishing regulations 2026","rice lake muskie","mercury 9.9 prokicker walleye","best mercury outboard rice lake fishing"]
+date_modified: 2026-08-19
+keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
-# Best Mercury for Rice Lake Fishing 2026
+# Best Mercury Outboard Setup for Rice Lake Fishing
 
-> A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup.
+> Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -36,15 +37,11 @@ In close to 80 seasons of watching people fish this water, we have learned one t
 
 It is shallow. It is weedy. It runs 32 km east to west with nothing to stop the wind. It has a sunken 19th-century railway across the middle of it, underwater, waiting for your lower unit. And it holds some of the best walleye, muskie, bass, and crappie in Southern Ontario.
 
-This is our home water. This guide is everything we know about fishing it properly: the species, the seasons, the local spots, the 2026 regulations, and the right Mercury for every setup.
+This is our home water. This guide stays focused on the boat: how Rice Lake conditions change main-motor, kicker, propeller, and rigging decisions. For species, seasons, current FMZ 17 rules, and the submerged railway, use the separate [Rice Lake fishing outlook for 2026](/blog/2026-rice-lake-fishing-season-outlook).
 
----
+## The fishing context behind the setup
 
-## 2026 Ontario Fishing Regulations: Rice Lake (FMZ 17)
-
-Rules first, because there is a walleye slot limit that catches people off guard every single season.
-
-Rice Lake sits in Ontario **Fisheries Management Zone 17**. The following are in effect for 2026 under the FMZ 17 variation order.
+The short reference below explains why a Rice Lake fishing boat needs low-speed control, enough reserve power for changing conditions, and a setup that stays within the hull manufacturer's limits. Check Ontario's current rules before fishing; the linked annual outlook is the better page to bookmark for season planning.
 
 | Species | Opens | Closes | Sport limit | Key rule |
 |---|---|---|---|---|
@@ -223,7 +220,7 @@ Generic outboard advice does not apply here. These are the specific conditions t
 
 **Trent-Severn access.** The east end of Rice Lake connects to 386 km of the [Trent-Severn Waterway](/blog/trent-severn-waterway-boating-guide-2026). Boats that run the system need consistent mid-range cruise performance for lock-to-lock days.
 
-**The ramp.** Most public launches on Rice Lake are adequate. The Harris Boat Works two-lane concrete ramp at Gores Landing is the only 24/7 full-service option on the lake: open 365 days, marine fuel, parking for oversized trailers, $20 per day or a season pass.
+**The ramp.** Most public launches on Rice Lake are adequate. The Harris Boat Works two-lane concrete ramp at Gores Landing is the best-equipped option on the lake: marine fuel and oversized-trailer parking in season, $20 per day or a season pass.
 
 ---
 
@@ -271,7 +268,7 @@ A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard 
 
 **The "I'll add the kicker later" plan.** Nobody adds the kicker later cleanly. They do add it, but it costs more, takes longer, and means undoing half the wiring we already ran. Put it on at repower time. Your future self, and your walleye numbers, will thank you.
 
-**The wrong prop.** A mismatched prop is like running in the wrong size boots. You can do it, but you are never quite right. We test props on the water during every sea trial. It matters more than most people think, and it is cheap to get right at install time.
+**The wrong prop.** A mismatched prop is like running in the wrong size boots. You can do it, but you are never quite right. Prop verification matters more than most people think, and the scope depends on the specific motor, hull, rigging, work order, and safe seasonal testing conditions.
 
 **Underbuying horsepower for real-world use.** There is a specific conversation we have every August with someone who bought a 60 HP in May, then discovered they are running a loaded 19-footer into afternoon west winds across 32 km of open lake. Match the motor to how you actually fish, not the minimum on the capacity plate.
 
@@ -286,7 +283,7 @@ A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard 
 Before we put a motor number in front of anyone, we want to know:
 
 - Hull length, type, and weight
-- Capacity plate HP rating, which is the legal ceiling and one we never exceed
+- Manufacturer's maximum recommended safe power for the exact hull
 - Primary fishery and fishing style (walleye troller, bass run-and-gun, muskie angler)
 - Solo use or family use with full loads
 - Trolling-heavy, or mostly running between spots
@@ -310,8 +307,6 @@ The capacity plate sets the ceiling. Real-world use sets the target. Three gener
 | Hiawatha (Paudash St.) | North shore | Popular ice-fishing shore access |
 
 The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. Daily parking, overflow space for large trailers, marine gas, and a dock. Whether you are launching at 5 AM for the walleye bite or coming off the water after dark, the lights are on.
-
----
 
 ---
 
@@ -381,23 +376,22 @@ Yes. Father's Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 
 ## Related guides
 
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

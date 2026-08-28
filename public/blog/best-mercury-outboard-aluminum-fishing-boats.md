@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,56 +8,60 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Best Mercury for Aluminum Boats 2026"
-description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide."
+description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-06-09
+date_modified: 2026-08-19
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Mercury for Aluminum Boats 2026
 
-> The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide.
+> The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide.
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
 ---
 
-> **Quick answer:** For most aluminum fishing boats in the 14–18 ft range, a Mercury 40–115 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** For most aluminum fishing boats, size to the hull: 40-60 HP for 14-16 ft, 60-115 HP for 16-18 ft. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
-::decision-card
-eyebrow: Hull material decision
-heading: Aluminum or fiberglass? Same question, two right answers.
-subhead: Both materials make great boats, but they reward different priorities. Here's the framework we use with HBW customers.
-leftLabel: Aluminum
-leftCriteria:
-  - You fish, run shallow water, hit logs or rocks occasionally
-  - You trailer regularly and want a lighter rig
-  - You launch at unimproved ramps where dragging happens
-  - You want lower maintenance and won't repaint or gel-coat-fix
-  - Repair-ability matters to you (welding > fiberglass work)
-leftOutcome: Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.
-leftVariant: recommended
-rightLabel: Fiberglass
-rightCriteria:
-  - You want a quieter, smoother ride on bigger water
-  - Cosmetics, gel coat depth, and resale curb appeal matter
-  - You're 18-22+ ft for runabout, bowrider, or wakeboard use
-  - You can absorb higher maintenance (gel coat, blisters, hull cleaning)
-  - You'll keep the boat 8+ years and value the smoother trip
-rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.
-rightVariant: alternative
-whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
-::
+*Hull material decision*
+
+### Aluminum or fiberglass? Same question, two right answers.
+
+Both materials make great boats, but they reward different priorities. Here's the framework we use with HBW customers.
+
+#### Aluminum
+
+- You fish, run shallow water, hit logs or rocks occasionally
+- You trailer regularly and want a lighter rig
+- You launch at unimproved ramps where dragging happens
+- You want lower maintenance and won't repaint or gel-coat-fix
+- Repair-ability matters to you (welding > fiberglass work)
+
+**Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.**
+
+#### Fiberglass
+
+- You want a quieter, smoother ride on bigger water
+- Cosmetics, gel coat depth, and resale curb appeal matter
+- You're 18-22+ ft for runabout, bowrider, or wakeboard use
+- You can absorb higher maintenance (gel coat, blisters, hull cleaning)
+- You'll keep the boat 8+ years and value the smoother trip
+
+**Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.**
+
+Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
 
 ## How we think about aluminum fishing boats
 
@@ -111,8 +115,6 @@ For serious fishing on Rice Lake or the Kawarthas, a kicker motor isn't optional
 
 **Trolling speed control.** A main motor at idle is almost always too fast for walleye trolling at 1–2 mph. The 9.9 ProKicker idles down to true trolling speed.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
 
 **Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph wastes fuel. A 9.9 at the same speed sips it.
@@ -121,19 +123,20 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 The Mercury 9.9 ProKicker is the standard, long shaft, high-thrust gearcase, purpose-built for fishing applications. We rig kickers as part of most fishing boat repower projects.
 
-The customers who skip the kicker to save money almost always wish they hadn't. The customers who buy a kicker rarely regret it.
+A kicker can be worth the added cost when slow trolling, backup propulsion, or long runs from shore are central to how you use the boat. Compare the configured price, added weight, controls, maintenance, and the actual backup range you need.
 
 ---
 
 ## Common mistakes on aluminum fishing boat repowers
 
-heading: Common mistakes on aluminum fishing boat repowers
+### Common mistakes on aluminum fishing boat repowers
+
 - **Underbuying HP.**  
   A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
 - **Skipping the kicker.**  
   Two seasons later, they wish they'd bought it. Buy it once.
 - **Wrong prop.**  
-  A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
+  A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. Prop verification follows the motor, hull, rigging, work order, and safe seasonal testing conditions.
 - **You need Command Thrust on a heavier aluminum V-hull.**  
   CT is a pontoon and workboat gearcase; on a V-hull it just adds drag. Standard gearcase is the right call on 14-20 ft aluminum fishing boats, loaded or not.
 - **Buying Pro XS when FourStroke would do.**  
@@ -141,20 +144,9 @@ heading: Common mistakes on aluminum fishing boat repowers
 
 ---
 
-## Related posts
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide)
-- [Portable Mercury Outboard Guide](/blog/portable-outboard-mercury-guide-2-20hp)
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-
----
-
 ## Ready to find your motor?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
-
----
 
 ---
 
@@ -178,7 +170,7 @@ For most serious anglers on aluminum fishing boats, tiller is better, specifical
 
 ### Should I get Command Thrust on my Mercury outboard?
 
-On an aluminum V-hull fishing boat, no. Command Thrust is a pontoon and workboat gearcase; on a planing V-hull it just adds drag and costs top-end speed with no meaningful benefit, even in weedy shallow water. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.
+Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.
 
 ### What shaft length do I need for an aluminum fishing boat?
 
@@ -186,7 +178,7 @@ Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft o
 
 ### How much does it cost to power an aluminum fishing boat in Ontario in 2026?
 
-For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.
+As of August 8, 2026, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail for a 14-16ft boat. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) because shaft length and configuration change the figure. These are planning figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a configured quote at mercuryrepower.ca/quote/motor-selection.
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 
@@ -210,16 +202,15 @@ The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -67,6 +67,12 @@ interface LooseMotorBattery {
   decision?: 'add' | 'own' | 'later';
 }
 
+interface QuoteUiFlags {
+  [key: string]: unknown;
+  motorOnlyExpress?: boolean;
+  suppressAdditionalPromoSavings?: boolean;
+}
+
 export interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
@@ -96,9 +102,7 @@ export interface QuoteState {
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
-  uiFlags: {
-    // Can add other UI flags here if needed in the future
-  };
+  uiFlags: QuoteUiFlags;
   // Admin quote fields
   isAdminQuote: boolean;
   editingQuoteId: string | null;
@@ -114,6 +118,7 @@ export interface QuoteState {
 }
 
 export type QuoteAction =
+  | { type: 'START_MOTOR_ONLY_QUOTE'; payload: Motor }
   | { type: 'SET_MOTOR'; payload: Motor }
   | { type: 'SET_PREVIEW_MOTOR'; payload: Motor | null }
   | { type: 'SET_CONFIGURATOR_STEP'; payload: string | null }
@@ -121,6 +126,7 @@ export type QuoteAction =
   | { type: 'SET_PURCHASE_PATH'; payload: 'loose' | 'installed' }
   | { type: 'SET_BOAT_INFO'; payload: BoatInfo }
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
+  | { type: 'PROMOTE_TRADE_IN'; payload: any }
   | { type: 'SET_FUEL_TANK_CONFIG'; payload: any }
   | { type: 'SET_INSTALL_CONFIG'; payload: any }
   | { type: 'SET_LOOSE_MOTOR_BATTERY'; payload: LooseMotorBattery | null }
@@ -218,6 +224,35 @@ const getMotorIdentity = (motor: Motor | null): string | null => {
 
 export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
+    case 'START_MOTOR_ONLY_QUOTE': {
+      const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
+
+      // This is an express purchase path, not a merge with a saved configurator.
+      // Reset every boat-, install-, trade-, accessory-, warranty-, promotion-,
+      // customer-, and admin-specific field so the summary contains the motor only.
+      return {
+        ...initialState,
+        motor: action.payload,
+        motorSpecs,
+        purchasePath: 'loose',
+        selectedPackage: {
+          id: 'good',
+          label: 'Motor-only pickup',
+          priceBeforeTax: 0,
+        },
+        selectedPaymentMethod: 'cash_purchase',
+        completedSteps: [1, 2, 3, 4, 5],
+        currentStep: 6,
+        isLoading: false,
+        uiFlags: {
+          motorOnlyExpress: true,
+          // This express path reserves the published sale price. Any
+          // time-limited factory rebate is confirmed separately after HBW
+          // verifies ETA and delivery eligibility.
+          suppressAdditionalPromoSavings: true,
+        },
+      };
+    }
     case 'SET_MOTOR': {
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
 
@@ -283,6 +318,15 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       return { ...state, boatInfo: action.payload };
     case 'SET_TRADE_IN_INFO':
       return { ...state, tradeInInfo: action.payload };
+    case 'PROMOTE_TRADE_IN':
+      // The standalone estimator hands off both pieces of quote state as one
+      // reducer transition. Persistence can never observe a trade payload
+      // while hasTradein is still false.
+      return {
+        ...state,
+        tradeInInfo: { ...action.payload, hasTradeIn: true },
+        hasTradein: true,
+      };
     case 'SET_FUEL_TANK_CONFIG':
       return { ...state, fuelTankConfig: action.payload };
     case 'SET_INSTALL_CONFIG':

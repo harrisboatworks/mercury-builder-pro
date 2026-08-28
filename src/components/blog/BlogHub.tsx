@@ -21,6 +21,7 @@ export interface BlogHubStrings {
   heroTitleLine1: string;          // white
   heroTitleLine2: string;          // red
   heroSubhead: string;
+  skipLinkLabel: string;
   searchLabel: string;
   searchPlaceholder: string;
   trustItems: string[];
@@ -257,6 +258,12 @@ export function BlogHub({
 
   return (
     <div className="min-h-screen bg-repower-paper">
+      <a
+        href="#blog-main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-3 focus:font-sans focus:font-semibold focus:text-repower-navy-900 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-repower-mercury-red"
+      >
+        {strings.skipLinkLabel}
+      </a>
       <RepowerHeader />
 
       {/* HERO */}
@@ -338,7 +345,11 @@ export function BlogHub({
         </div>
       </section>
 
-      <main className="container mx-auto px-6 md:px-14 max-w-[1200px] py-14 md:py-20">
+      <main
+        id="blog-main-content"
+        tabIndex={-1}
+        className="container mx-auto px-6 md:px-14 max-w-[1200px] py-14 md:py-20"
+      >
         {/* INTENT TILES */}
         <section aria-labelledby="intent-heading" className="mb-16 md:mb-20">
           <h2 id="intent-heading" className="sr-only">

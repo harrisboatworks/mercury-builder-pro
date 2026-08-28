@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Command Thrust Guide 2026"
 description: "Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-08-19
 keywords: ["mercury command thrust guide","mercury command thrust models","what is command thrust mercury","command thrust vs standard gearcase","mercury 9.9 prokicker","mercury 115 command thrust","pro xs command thrust","seapro command thrust"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Command Thrust Guide 2026
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check.
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -64,7 +65,7 @@ Mercury Marine's own gearcase comparison demo shows the size difference clearly.
 **What it does NOT do:**
 - Does not add horsepower. A 90 HP Command Thrust makes the same peak HP as a 90 HP standard.
 - Does not increase top speed. On most boats, you give up 2 to 4 MPH at WOT because the prop is geared for thrust, not speed.
-- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, [the standard gearcase usually outperforms CT](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) in top end and fuel.
+- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, the standard gearcase usually outperforms CT in top end and fuel.
 - Does not retrofit easily. The gearcase, driveshaft, water pump, and prop are all different parts. Converting a non-CT motor to CT means swapping the entire lower unit, which is usually within striking distance of [trading the entire motor](/blog/mercury-repower-cost-ontario-2026-cad).
 
 That last point is the most common misconception at the shop. People with an existing standard-gearcase motor often ask if we can "add Command Thrust." The honest answer is rarely yes. For the full retrofit decision, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026).
@@ -86,7 +87,13 @@ Different hulls, different answers. The honest matrix:
 | Trolling-only fishing pontoon | **No, save the money** | Standard fine at trolling speeds |
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
 
-If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a same-day yes or no.
+If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a fit assessment.
+
+## The BigFoot Story
+
+Back in the 1990s, pontoon boats were taking off, and they created a problem the outboard industry had not fully solved. A pontoon sits high on the water, does not plane like a V-hull, and carries big loads at modest speeds. A standard mid-range gearcase spinning a small prop just was not moving that kind of boat well.
+
+Mercury's answer was BigFoot: take a 40-60 HP powerhead and hang it over a much bigger gearcase, with a larger driveshaft and a propshaft closer to what a 90 HP class motor carries. The bigger case swings a bigger, deeper prop through a taller gear ratio (2.33:1 vs 1.83:1 on the 60). The result is push power, the ability to move a heavy, high-sitting boat with authority at the speeds it actually runs. Mercury's own literature at the time called BigFoot "the industry's only outboard engine made specifically for pontoons." Around 2014, Mercury quietly renamed BigFoot to Command Thrust. New name, same idea.
 
 ## The full Mercury Command Thrust lineup
 
@@ -120,13 +127,13 @@ For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/
 
 ### Pontoons (the biggest CT use case)
 
-[Pontoons are where Command Thrust earns its reputation](/blog/mercury-command-thrust-guide-pontoon-boats). The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
+Pontoons are where Command Thrust earns its reputation. The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
 
 - **20+ ft twin tube pontoon:** plan on CT unless the boat is rarely loaded.
 - **Tritoon any HP:** plan on CT. The third tube means more drag and CT's thrust overcomes it cleanly.
 - **16-18 ft cruising pontoon:** standard gearcase usually wins. CT gives up top speed without the load benefit kicking in.
 
-For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026) and the [Mercury Command Thrust pontoon canonical guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026).
 
 ### Aluminum deep-V fishing boats
 
@@ -152,6 +159,18 @@ Common pairings:
 
 Charter fishing boats, water taxis, marine police, and government workboats running daily hours. SeaPro CT is engineered for the duty cycle. If you are running 1,000+ hours a year, the SeaPro premium pays back in maintenance interval and longevity. Not a recreational decision.
 
+## The V-Hull Test: The 6 MPH Nobody Mentions
+
+A planing V-hull plays a completely different game from a pontoon. It climbs on top of the water and slices; past hole-shot, what it wants is low drag and efficient shaft speed. Put a CT gearcase on that boat and you are dragging a case nearly three-quarters of an inch fatter and several inches deeper through the water at 30+ mph, swinging a prop tuned for push instead of speed.
+
+We tested it. Two 16-foot Legend hulls on Rice Lake, one with a standard-gearcase Mercury 60, one with a Command Thrust 60. The CT boat gave up 6 mph on top speed. Same hull, same HP, and the only difference in the water was the gearcase. On a 16-footer that tops out in the mid-30s, that is roughly a sixth of your top speed handed to a gearcase the boat never asked for, at extra cost.
+
+The honest engineering summary: CT trades top-end efficiency for low-speed push. Pontoons live where the push matters. V-hulls live where the efficiency matters. That is the whole decision, and the GPS does not care what the brochure said. If a salesperson specs CT on your planing V-hull, ask them what your top speed will be against the standard gearcase.
+
+## Command Thrust Prop Selection
+
+A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props will not fit or perform correctly. CT props typically run larger diameter than standard, use a lower pitch range optimized for hole shot and load handling, lean on 4-blade designs for hole shot and smoother trolling, and come in aluminum or stainless depending on HP class and use. For pontoons, a 4-blade aluminum is the common starting point. Final prop selection depends on the hull, load, motor, and safe seasonal testing.
+
 ## How to know if Command Thrust is right for YOUR boat
 
 Five things to check before you commit. The same five we ask every customer who emails or calls us asking the CT question.
@@ -162,7 +181,7 @@ Five things to check before you commit. The same five we ask every customer who 
 4. **Boat geometry (transom height, tube count for pontoons).** Some older transoms do not accommodate the taller CT lower unit. Worth measuring before ordering.
 5. **Existing motor's age + hours.** Decides whether retrofit-thinking is realistic vs full repower.
 
-Email a cowl plate photo + capacity plate photo + an honest description of how you use the boat to info@harrisboatworks.ca. We respond same-day with a yes, no, or specific HP recommendation.
+Email a cowl plate photo, capacity plate photo, and an honest description of how you use the boat to info@harrisboatworks.ca. We will review the fit and follow up with a recommendation or any information still needed.
 
 For motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model identification.
 
@@ -172,7 +191,7 @@ We have quoted hundreds of Command Thrust repowers since the option came on the 
 
 The first pattern: customers who try Command Thrust on a heavy pontoon almost never go back to standard. The hole shot improvement under load is not subtle. You feel it the first time you punch the throttle with the family aboard. Standard gearcase customers on the same pontoon do not have a frame of reference, so they assume the boat is just slow. CT customers know.
 
-The second pattern: the regret stories are almost always light pontoons or small aluminums where the owner insisted on CT despite our pushback. We see them three years later trading down to standard gearcase, complaining about top speed. The honest conversation at the shop on the front end saves four grand and a year of frustration.
+The second pattern: the regret stories are almost always light pontoons or small aluminums where the owner insisted on CT despite our pushback. We see them three years later trading down to standard gearcase, complaining about top speed. The honest conversation at the shop on the front end can save real money and a year of frustration.
 
 The third pattern, specific to Rice Lake and the Kawartha Lakes: late-season shallow water. The back bays of Rice Lake and the lakes around Bobcaygeon and Lakefield drop several inches in August and September. Pontoons that floated fine in June can be touching bottom on the way out of the cottage in September. CT's stronger reverse thrust pays off here. Customers who learned the hard way by dragging tubes through soft mud are some of our most loyal CT advocates.
 
@@ -208,7 +227,7 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 ## Ready to talk Command Thrust for your boat?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for same-day fit check)
+**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for a fit check)
 **Quote a CT repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -250,23 +269,22 @@ Usually no. Bass boats want top speed and quick acceleration on light loads, whi
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

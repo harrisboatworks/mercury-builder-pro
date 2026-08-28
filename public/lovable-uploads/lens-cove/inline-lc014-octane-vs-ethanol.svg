@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Octane and ethanol are different fuel questions</title>
+  <desc id="desc">Octane measures resistance to knock. Ethanol content identifies the alcohol blend. Check both against the engine manual.</desc>
+  <rect width="1200" height="700" rx="36" fill="#071b33"/>
+  <path d="M0 0h1200v12H0z" fill="#c9972b"/>
+  <text x="70" y="90" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">One pump. Two separate questions.</text>
+  <text x="70" y="132" fill="#b9c9d9" font-family="Arial, sans-serif" font-size="23">Check the octane number and the ethanol label independently.</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(70 184)">
+      <rect width="500" height="356" rx="28" fill="#102b4a" stroke="#315b7e"/>
+      <circle cx="68" cy="72" r="39" fill="#16a6a1"/>
+      <text x="68" y="82" fill="#fff" font-size="29" text-anchor="middle" font-weight="700">87</text>
+      <text x="128" y="68" fill="#fff" font-size="31" font-weight="700">Octane</text>
+      <text x="128" y="100" fill="#a9c5d9" font-size="19">Anti-knock rating</text>
+      <path d="M42 146h416" stroke="#315b7e"/>
+      <text x="42" y="193" fill="#dbe7f1" font-size="23">What it tells you</text>
+      <text x="42" y="229" fill="#fff" font-size="20">Resistance to engine knock.</text>
+      <text x="42" y="282" fill="#dbe7f1" font-size="23">What it does not tell you</text>
+      <text x="42" y="318" fill="#fff" font-size="20">Whether the fuel contains ethanol.</text>
+    </g>
+    <g transform="translate(630 184)">
+      <rect width="500" height="356" rx="28" fill="#102b4a" stroke="#315b7e"/>
+      <circle cx="68" cy="72" r="39" fill="#c9972b"/>
+      <text x="68" y="82" fill="#071b33" font-size="29" text-anchor="middle" font-weight="700">E10</text>
+      <text x="128" y="68" fill="#fff" font-size="31" font-weight="700">Ethanol</text>
+      <text x="128" y="100" fill="#a9c5d9" font-size="19">Alcohol blend percentage</text>
+      <path d="M42 146h416" stroke="#315b7e"/>
+      <text x="42" y="193" fill="#dbe7f1" font-size="23">What it tells you</text>
+      <text x="42" y="229" fill="#fff" font-size="20">Up to 10% ethanol by volume.</text>
+      <text x="42" y="282" fill="#dbe7f1" font-size="23">What it does not tell you</text>
+      <text x="42" y="318" fill="#fff" font-size="20">Whether octane suits your engine.</text>
+    </g>
+  </g>
+  <path d="M190 591h820" stroke="#315b7e" stroke-width="3"/>
+  <circle cx="600" cy="591" r="14" fill="#16a6a1"/>
+  <text x="600" y="638" fill="#fff" font-family="Arial, sans-serif" font-size="25" text-anchor="middle" font-weight="700">The cowl label and serial-number manual decide</text>
+  <text x="600" y="674" fill="#8eacc5" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Current Mercury gasoline engines allow no more than E10.</text>
+</svg>

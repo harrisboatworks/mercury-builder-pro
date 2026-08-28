@@ -33,6 +33,8 @@ jobs:
       # No npm install needed — scripts use only Node built-ins.
       - name: Check lockfile sync
         run: node scripts/check-lockfile-sync.mjs
+      - name: Validate full npm lockfile graph
+        run: npm ci --ignore-scripts --dry-run --no-audit --no-fund > /dev/null
       - name: Regenerate canonical pricing
         run: node scripts/generate-canonical-pricing.mjs
       - name: Check blog pricing drift

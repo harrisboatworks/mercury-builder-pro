@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/cobourg-northumberland-mercury
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false

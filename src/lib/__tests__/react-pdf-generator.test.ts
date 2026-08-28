@@ -74,6 +74,21 @@ describe('professional quote PDF normalization', () => {
     expect(result.recommendedDepositAmount).toBe(200);
   });
 
+  it('carries the express 9.9 reservation amount and confirmation wording flag', () => {
+    const result = buildProfessionalQuotePdfData({
+      quoteNumber: 'HBW-99-EXPRESS',
+      customerName: 'Express Customer',
+      customerEmail: 'express@example.com',
+      motor: { model: '9.9 MH FourStroke', hp: 9.9, msrp: 3860 },
+      pricing: { msrp: 3860, discount: 861, promoValue: 0, motorSubtotal: 2999, subtotal: 2999, hst: 389.87, totalCashPrice: 3388.87, savings: 861 },
+      recommendedDepositAmount: 100,
+      reservationRequiresConfirmation: true,
+    });
+
+    expect(result.recommendedDepositAmount).toBe(100);
+    expect(result.reservationRequiresConfirmation).toBe(true);
+  });
+
   it('normalizes a stale 60-month contract default to a selected 24-month promotion', () => {
     const result = buildProfessionalQuotePdfData({
       quoteNumber: 'HBW-PROMO-24',

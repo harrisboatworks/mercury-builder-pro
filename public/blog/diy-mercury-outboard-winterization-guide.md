@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "DIY Mercury Outboard Winterization"
 description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # DIY Mercury Outboard Winterization
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -34,7 +35,9 @@ language: en-CA
 
 You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
 
-For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
+[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
+
+For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
 
 **Watch Mercury's official winterization checklist first:**
 
@@ -44,28 +47,45 @@ https://www.youtube.com/watch?v=YGuQjF6vuao
 
 ---
 
-::diagnostic-flow
-heading: Winterizing your Mercury? Start with the exact manual
-eyebrow: Safe fall checklist
-subhead: The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
-step1Label: Identify
-step1Question: Do you have the operation and maintenance manual for the exact engine?
-step1Tip: Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
-step2Label: Fuel
-step2Question: Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?
-step2Tip: Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
-step3Label: Gearcase
-step3Question: Is the lubricant due, and did it show water or metal?
-step3Tip: Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
-step4Label: Engine protection
-step4Question: Are you following the exact internal-protection and flushing method?
-step4Tip: Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
-step5Label: Battery and position
-step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
-step5Tip: The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
-escalationLabel: Need the model-specific scope?
-escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
-::
+*Safe fall checklist*
+
+### Winterizing your Mercury? Start with the exact manual
+
+The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
+
+#### Identify
+
+**Do you have the operation and maintenance manual for the exact engine?**
+
+Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
+
+#### Fuel
+
+**Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?**
+
+Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
+
+#### Gearcase
+
+**Is the lubricant due, and did it show water or metal?**
+
+Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
+
+#### Engine protection
+
+**Are you following the exact internal-protection and flushing method?**
+
+Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
+
+#### Battery and position
+
+**Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?**
+
+The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+
+#### Need the model-specific scope?
+
+Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
 
 ---
 
@@ -97,7 +117,7 @@ Late-season winterizations, from August through November, are one of the busiest
 - You're rushed and likely to skip or hurry steps
 - The motor is stored somewhere you can't access it easily for prep
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -158,8 +178,6 @@ The lower unit gearcase contains gear lube that absorbs water through the seals 
 
 Use Mercury-branded gear lube appropriate for your motor. The spec is in your owner's manual.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Step 5: Lubricate All Grease Points
 
 Every Mercury has grease fittings on the steering and tilt/trim pivot points. These need marine grease before storage. Dry or under-greased pivot points seize over winter and result in stiff, damaged components in spring.
@@ -212,35 +230,15 @@ If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/serv
 
 ---
 
----
-
-## Related at HBW
-
-The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
-
----
-
-## Related reading
-- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-
----
-
 ## Reviewed by
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 **Want it done right without the Saturday morning?** 
 Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
@@ -287,23 +285,23 @@ Fuel preparation, internal engine protection, oil service, flushing, and storage
 
 ## Related guides
 
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -16,6 +16,7 @@ keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-25  
-**Last updated:** 2026-05-04  
+**Last reviewed:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 
-# Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
+## Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
 
 ## Quick answer
 For Rice Lake under $30,000, your three realistic paths are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon with a repower budget built in, or a clean used hull paired with a current Mercury at HBW. The used-hull-plus-repower path typically gives you the most boat for the money. Build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -79,8 +80,6 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 ![16-foot aluminum boat with Mercury 40 outboard on Rice Lake, representing an affordable repower option under $30,000.](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Path 3: Clean used hull plus a Mercury repower at HBW
 
 This is the path the most experienced buyers take. They find a hull that someone else has neglected the motor on (usually priced accordingly) and bring it to HBW for a new Mercury. The hull gets another fifteen-plus years. The motor is brand new with full warranty.
@@ -126,18 +125,6 @@ If you have a specific hull in mind and want to know if a repower makes sense be
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What is the best boat for Rice Lake under $30,000?
@@ -167,23 +154,22 @@ For small aluminum boats on sheltered water, a 9.9 to 15 HP tiller is the classi
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
+- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -9,7 +9,7 @@ verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 motor_id: e5317ef2-8420-494f-8d84-a6abef00e5d8
 slug: proxs-150hp-150-elpt-proxs
-family: ProXS
+family: Pro XS
 horsepower: 150
 model_number: 1152F131D
 availability: in_stock
@@ -18,13 +18,13 @@ price_cad: 24349
 
 # 150 ELPT ProXS
 
-Mercury ProXS 150 HP outboard motor (model 1152F131D).
+Mercury Pro XS 150 HP outboard motor (model 1152F131D).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
 - **Model:** 150 ELPT ProXS
-- **Family:** Mercury ProXS
+- **Family:** Mercury Pro XS
 - **Horsepower:** 150 HP
 - **Model number:** 1152F131D
 
@@ -42,11 +42,11 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer �
 
 ## Best fit for
 
-Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
+Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.
 
 ## Build a quote
 
@@ -74,6 +74,6 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 ## Notes
 
 - Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
-- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 - Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

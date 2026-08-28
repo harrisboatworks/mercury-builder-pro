@@ -122,7 +122,7 @@ const STALE_YEAR_RX = /\b(2024|2025)\b/g;
 // 1) Preceded by a historical/connector word in EN, ES, FR.
 const HISTORICAL_WORD_RX = /\b(?:since|in|during|from|by|of|before|after|early|late|mid|through|throughout|until|acquired|founded|established|spring|summer|fall|winter|season|desde|depuis|del|en|le|du|de)\s*$/i;
 // 2) Preceded by a month-day phrase (e.g. "December 31, ", "31 de diciembre de ").
-const MONTH_NAMES = '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|fevrier|f\u00e9vrier|mars|avril|mai|juin|juillet|aout|ao\u00fbt|septembre|octobre|novembre|decembre|d\u00e9cembre)';
+const MONTH_NAMES = '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|fevrier|f\u00e9vrier|mars|avril|mai|juin|juillet|aout|ao\u00fbt|septembre|octobre|novembre|decembre|d\u00e9cembre|nobyembre|اگست|نومبر)';
 const MONTH_DAY_PREFIX_RX = new RegExp(`(?:${MONTH_NAMES})\\.?\\s+(?:\\d{1,2}(?:st|nd|rd|th)?,?\\s*)?$|\\d{1,2}\\s+de\\s+\\w+\\s+de\\s*$`, 'i');
 const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPro|Avator|lineup|model|models|season|release|launch|recall|shift-?shaft|rebrand|spring|summer|fall|winter|or\s+(?:newer|later|earlier|older))\b/i;
 // 4) CJK year suffix immediately after the year (Korean 년 / Chinese-Japanese 年)
@@ -133,6 +133,12 @@ const PAREN_YEAR = (before, after) => /\(\s*$/.test(before) && /^\s*\)/.test(aft
 // 6) A source-list citation to HBW's own dated operating data is historical
 // evidence, not a stale customer-facing offer or current-year claim.
 const FIRST_PARTY_DATA_RX = /Boat Works\s*$/i;
+// 7) Explicit first-party records are also dated evidence. Require both an
+// HBW/Our attribution before the year and a records noun after it so a loose
+// current-year marketing claim cannot pass through this exception.
+const FIRST_PARTY_RECORDS_RX = (before, after) =>
+  /(?:\bOur|Harris Boat Works)\s*$/i.test(before) &&
+  /^\s+(?:(?:customer-paid|service|rental|sales|operating)\s+)*records?\b/i.test(after);
 const staleYearLeaks = [];
 
 function extractProseChunks(src) {
@@ -189,6 +195,7 @@ for (const file of BLOG_FILES) {
       if (CJK_YEAR_SUFFIX_RX.test(after)) continue;
       if (PAREN_YEAR(before, after)) continue;
       if (FIRST_PARTY_DATA_RX.test(before) && /^\s+rental operations data\s*\(first-party\)/i.test(after)) continue;
+      if (FIRST_PARTY_RECORDS_RX(before, after)) continue;
       // A year used as a URL path segment identifies a dated source; it is
       // not a stale current-year claim in the surrounding article prose.
       if (/\/$/.test(before) && /^\//.test(after)) continue;

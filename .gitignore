@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 .vercel
 supabase/.temp
+
+# Generated maintenance reports
+reports/*.json
+
+# Build-generated 1200x630 social cards
+public/generated-og/

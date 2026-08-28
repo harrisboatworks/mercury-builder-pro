@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Dealer Toronto: Why Drive to HBW"
 description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip."
 category: "Mercury Outboards"
 date_published: 2026-05-12
-date_modified: 2026-07-24
+date_modified: 2026-08-27
 keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Premier dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Toronto: Why Drive to HBW
@@ -24,19 +25,19 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
-# Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
+## Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
 
-> **Quick answer:** HBW is not in Toronto. We are a Mercury Marine Premier dealer in Gores Landing on Rice Lake. The drive can make sense when you want a written installed quote, Mercury-specific rigging, and an on-water test before pickup. It does not make sense if you cannot bring the boat to us and return for pickup. HBW does not ship, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** HBW is not in Toronto. We are a Mercury Marine Premier dealer in Gores Landing on Rice Lake. The drive can make sense when you want a written installed quote, Mercury-specific rigging, and an on-water test before pickup. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 Choosing a dealer by distance alone is easy. Choosing by the complete job takes a little more work.
 
 For a portable outboard, the nearest authorized dealer may be the practical answer. For a full repower, the better comparison is the written scope: motor, controls, rigging, propeller, installation, testing, warranty registration, and the support you will receive after pickup.
 
-HBW has sold Mercury outboards since 1965 and operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
+HBW operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
 
 ---
 
@@ -69,27 +70,23 @@ HBW starts with the boat's capacity label or manufacturer's rating, then checks 
 
 ### A water test before handoff
 
-Every HBW repower is tested on Rice Lake before pickup. We check starting, shifting, steering, charging, cooling, gauge operation, wide-open-throttle RPM, and general behaviour under load. If the propeller or setup needs attention, we want to find it before the boat leaves.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test can cover starting, shifting, steering, charging, cooling, gauge operation, wide-open-throttle RPM, and general behaviour under load. Any alternate acceptance plan is documented with the customer.
 
 ---
 
 ## From the Shop: The Logistics
 
-HBW is a customer drop-off and pickup operation.
-
-For a repower, you bring the boat and trailer to Gores Landing, leave them for the scheduled work, and return after the installation and water test are complete. Routine service also requires a drop-off and a later pickup unless the approved work order says otherwise.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat and trailer to Gores Landing and return after the installation and water test are complete.
 
 HBW does not provide:
 
-- Pickup or delivery
-- Boat hauling
+- Boat delivery
 - Mobile service
 - Shipping of outboards
 - Courier or third-party release
-- Transport coordination
 - Transport referrals or transport-price estimates
 
-If you cannot move the boat yourself, arrange your own solution before booking. Do not assume HBW will find a carrier.
+Pickup is subject to availability for the boat and location. HBW does not recommend third-party carriers.
 
 For a motor-only purchase, pickup is in person at Gores Landing after HBW confirms the exact release requirements and safe loading plan. A mounted repower is the better fit when the boat needs rigging, setup, and an on-water test.
 
@@ -103,11 +100,11 @@ The drive is worth considering when:
 - You want the boat water-tested before handoff
 - Your project includes controls, gauges, steering, or substantial rigging
 - You want current Mercury pricing before the first visit
-- You are prepared to handle both drop-off and pickup
+- You can bring the boat or HBW confirms pickup availability for your boat and location
 
 The closest dealer may be the better answer when:
 
-- You cannot tow or otherwise move the boat yourself
+- You cannot move the boat and HBW cannot confirm pickup availability for your boat and location
 - The boat needs emergency service at its current marina
 - The job is simple routine work and distance is the deciding factor
 - You need another outboard brand serviced
@@ -122,7 +119,7 @@ The marina is closed December 1 through April 1. No service, repower, installati
 
 Planning can continue remotely. You can use the pricing tools, submit boat details, review a proposed configuration, and approve a spring work order while the physical shop is closed. The boat work begins after reopening.
 
-If your boat is stored at HBW, it remains inaccessible during the closure. HBW offers outdoor shrinkwrap storage only, not indoor, heated, climate-controlled, or year-round storage.
+If your boat is stored at HBW, it remains inaccessible during the closure. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage.
 
 ---
 
@@ -152,12 +149,6 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
 **Phone:** 905-342-2153
 **Pickup location:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
-- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
-
 ## FAQs
 
 ### Is Harris Boat Works located in Toronto?
@@ -166,7 +157,7 @@ No. HBW is in Gores Landing, Ontario, on the south shore of Rice Lake. Check cur
 
 ### Does HBW pick up or deliver boats in the GTA?
 
-No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### Does HBW ship Mercury outboards?
 
@@ -187,23 +178,22 @@ HBW can assess Mercury service and warranty requests regardless of the selling d
 ## Related guides
 
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw), Mercury dealer for Port Hope
-- [Mercury Dealer Lindsay Ontario HBW](/blog/mercury-dealer-lindsay-ontario-hbw), Mercury dealer for Lindsay
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

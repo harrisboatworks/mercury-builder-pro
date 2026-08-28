@@ -67,6 +67,7 @@ export interface ReactPdfQuoteData {
   financingRate?: number;
   savedQuoteQrCode?: string;
   recommendedDepositAmount?: number;
+  reservationRequiresConfirmation?: boolean;
   promotionalFinancingAlternative?: {
     rate: number;
     termMonths: number;
@@ -234,6 +235,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
     recommendedDepositAmount: data.recommendedDepositAmount
       ?? getRecommendedDeposit(Number(motor.hp || 0)),
+    reservationRequiresConfirmation: data.reservationRequiresConfirmation,
     promotionalFinancingAlternative: data.promotionalFinancingAlternative,
     googleRating: data.googleRating,
     googleReviewCount: data.googleReviewCount,

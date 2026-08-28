@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Pontoon vs V-Hull, Honestly Compared for Ontario Boaters"
 description: "Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family use, fishing, rough water, fuel economy."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-08-19
 keywords: ["pontoon vs v-hull","pontoon vs fishing boat ontario","pontoon boat ontario","v-hull boat comparison","which boat type ontario","rice lake boat type","legend pontoon vs legend v-hull"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
@@ -24,11 +25,9 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
-
-# Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
 
 > **Quick answer:** Choose a pontoon for calm-water family days, big groups, shore lounging, and shallow Rice Lake bays. Choose a V-hull for rough water, serious fishing, watersports, and trailering to bigger lakes like Simcoe or Ontario. On Rice Lake and most of the Kawarthas either works most of the season; once the wind picks up on open water, the V-hull is the safer call. The honest decision comes down to two questions: how many people are usually aboard, and what water do you actually run.
 
@@ -105,7 +104,7 @@ For a Rice Lake primary boater who plans to occasionally trailer to bigger water
 
 If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
 
-Send us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+Tell us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
 
 ## What we actually sell at Harris Boat Works
 
@@ -119,8 +118,6 @@ The Mercury power package is matched to the hull (Command Thrust gearcase for tr
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
 
-::walkaround-lead-capture
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
@@ -131,8 +128,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - Mercury Marine outboard pairing guide ([mercurymarine.com/ca/en](https://www.mercurymarine.com/ca/en/))
 - Transport Canada Pleasure Craft Safety Guide
 - HBW dealer experience, 2018-2026 customer purchases
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
@@ -163,23 +158,22 @@ The smaller LE-series Legend pontoons with a Mercury 60 ELPT come in well under 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000), Rice Lake boats under $30K
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
+- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

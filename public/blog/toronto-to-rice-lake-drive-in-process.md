@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-07-24
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,33 +8,32 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Toronto to Rice Lake: How HBW Drive-In Service Works"
-description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit."
+description: "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-07-24
+date_modified: 2026-08-27
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Toronto to Rice Lake: How HBW Drive-In Service Works
 
-> Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.
+> Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-27  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
-# Toronto to Rice Lake: How HBW Drive-In Service Works
-
-> **Quick answer:** Book first, confirm that the job fits HBW, then bring the boat and trailer to Gores Landing at the approved drop-off time. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. Drop-off and pickup are two separate trips. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup. Ask us about availability for your boat and location. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
-The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot do that, do not assume HBW will solve the transport.
+The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot bring the boat, ask whether pickup is available for your boat and location before scheduling; do not assume an arrangement is confirmed until HBW says so.
 
 ---
 
@@ -84,7 +83,7 @@ Before leaving:
 - Remove valuables and personal items
 - Confirm the trailer plate and vehicle insurance documents
 
-If the trailer is unsafe, repair it before the trip. HBW does not provide roadside towing or trailer transport.
+If the trailer is unsafe, do not tow it to HBW. HBW does not provide roadside towing. For a planned inbound boat pickup, ask whether HBW can arrange pickup for your boat and location.
 
 ---
 
@@ -98,7 +97,7 @@ At the confirmed time, HBW will:
 4. Confirm contact and approval instructions
 5. Confirm whether the trailer remains with the boat
 
-The final scope comes from the work order. Do not leave expecting unapproved repairs, transport, launch work, or storage to be added automatically.
+The final scope comes from the work order. Do not leave expecting unapproved repairs, delivery, launch work, or storage to be added automatically.
 
 After sign-in, you leave the boat and return home. HBW contacts you if the diagnosis changes the scope or approval is required.
 
@@ -114,15 +113,15 @@ The schedule depends on the job:
 - Repowers depend on the complete motor and rigging package being available
 - Water testing depends on the work and safe operating conditions
 
-A clean repower is normally in the shop for 2 to 5 days after the complete package is ready. Service and diagnostic jobs do not have one universal turnaround.
+Repower timing depends on the approved scope, complete parts package, findings, current shop capacity, and safe test conditions. Service and diagnostic jobs do not have one universal turnaround.
 
 HBW will provide the update for the specific work order.
 
 ---
 
-## Step 6: Return for Pickup
+## Step 6: Collect the Boat
 
-Pickup is a separate trip from drop-off.
+HBW does not deliver finished boats. If you brought the boat to Gores Landing, collection is a separate trip from drop-off. If HBW arranged inbound boat pickup, you are still responsible for collecting the boat after service.
 
 Wait until HBW confirms:
 
@@ -134,35 +133,35 @@ Wait until HBW confirms:
 
 At handoff, review the work performed, parts or findings, operating instructions, maintenance notes, and any follow-up.
 
-For a repower, HBW completes an on-water test on Rice Lake before pickup.
+For a repower, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer.
 
 ---
 
-## Transport Rules
+## Boat Pickup and Transport Rules
 
-HBW does not provide:
+HBW can generally arrange inbound boat pickup. Ask about availability for your boat and location, and wait for confirmation before relying on that option.
 
-- Pickup from a home, cottage, or marina
-- Delivery after service
-- Boat hauling
-- Mobile or dockside service
-- Transport coordination
-- Towing-company or carrier referrals
-- Transport-price estimates
+HBW does not:
 
-Customers are responsible for both drop-off and pickup. HBW will not promise a third-party solution.
+- Deliver boats after service
+- Ship motors
+- Offer mobile, dockside, or on-site service
+- Recommend transport providers
+- Quote third-party transport
+
+Customers can also bring the boat to Gores Landing. After service, customers are responsible for collecting the boat because HBW does not deliver it.
 
 ---
 
 ## Winter Storage Does Not Create Winter Access
 
-HBW offers outdoor shrinkwrap storage only.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 The marina is closed December 1 through April 1. During that period there is no service, repower, installation, inspection, or customer access on site. Planning and approvals may continue remotely.
 
 Do not plan on HBW performing maintenance while the shop is closed. Physical work and spring commissioning begin after reopening.
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 ---
 
@@ -170,7 +169,7 @@ Spring commissioning is included for HBW winter-storage customers. As of July 20
 
 Put safety first. Stop operating if the alarm, overheating, steering, fuel, electrical, or mechanical condition makes continued use unsafe.
 
-HBW can discuss whether a future shop booking is appropriate, but we do not provide house calls, on-water rescue, roadside towing, or transport arrangements. Use the appropriate local emergency or on-water assistance available where the boat is located.
+HBW can discuss whether a future shop booking and planned inbound boat pickup are available, but we do not provide house calls, on-water rescue, roadside towing, boat delivery, transport-provider recommendations, or third-party transport quotes. Use the appropriate local emergency or on-water assistance available where the boat is located.
 
 Do not attempt a "limp home" procedure based on generic advice when the cause is unknown.
 
@@ -184,12 +183,6 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
-- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
-
 ## FAQs
 
 ### Do I need an appointment before driving to HBW?
@@ -198,15 +191,15 @@ Yes. Submit the motor and boat details first and wait for a confirmed drop-off a
 
 ### Is drop-off and pickup one trip?
 
-No. They are separate trips unless you independently make another arrangement that does not involve HBW transport.
+If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service.
 
 ### Does HBW pick up or deliver boats?
 
-No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### How long will HBW keep the boat?
 
-It depends on diagnosis, approval, parts, workload, and required testing. A clean repower is normally 2 to 5 days once the complete package is ready.
+It depends on diagnosis, approval, parts, current shop capacity, and required testing. HBW provides the applicable update for the specific work order rather than a generic turnaround promise.
 
 ### Can HBW work on a stored boat during winter?
 
@@ -214,32 +207,31 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ### Does HBW offer indoor storage?
 
-No. HBW offers outdoor shrinkwrap storage only.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 ### Is spring commissioning included with storage?
 
-Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
 
 ## Related guides
 
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 - [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw), Mercury dealer for Port Hope
-- [Mercury Dealer Lindsay Ontario HBW](/blog/mercury-dealer-lindsay-ontario-hbw), Mercury dealer for Lindsay
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,16 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-06-09
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-08-19
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Boat Electrical Safety Ontario
@@ -19,11 +25,11 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
-# Boat Electrical Safety Checklist for Ontario Freshwater Boats
+## Boat Electrical Safety Checklist for Ontario Freshwater Boats
 
 ## Quick answer
 
@@ -81,7 +87,7 @@ The bilge pump is the most under-tested piece of safety equipment on most boats.
 - Pump discharge hose is clear and properly routed to the through-hull fitting
 - The pump runs smoothly when activated, no unusual noise
 
-**Fix:** if the float switch is stuck or the pump doesn't run when the float is raised, replace it. A bilge pump kit is typically $80-$150 in parts.
+**Fix:** if the float switch is stuck or the pump doesn't run when the float is raised, replace it. A bilge pump kit is a fairly modest parts cost; check current pricing at your marine supplier.
 
 This is a safety item, not a maintenance item. A failed bilge pump is how boats sink at the dock during heavy rain.
 
@@ -96,11 +102,9 @@ Visually inspect any wiring you can see, especially around connections to the he
 - Automotive-grade plastic crimp connectors (NOT marine-grade, will corrode)
 - Routing through areas where the wire can chafe or be pinched
 
-**Fix:** replace any connection that uses automotive-grade terminals with marine-grade tinned-copper terminals and adhesive-lined heat-shrink butt connectors. The right tool for the job costs $5-$10 more per connection and lasts 10+ years.
+**Fix:** replace any connection that uses automotive-grade terminals with marine-grade tinned-copper terminals and adhesive-lined heat-shrink butt connectors. The right tool for the job costs only a few dollars more per connection and holds up for years.
 
 This is the single most common pattern we see when diagnosing intermittent electrical issues at our service shop. Amateur wiring with the wrong terminals creates resistance, the resistance creates voltage drops, and the voltage drops create faults that look mysterious until you trace them back to a corroded crimp.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 For the broader battery conversation, our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers selection and care in more detail.
 
@@ -150,11 +154,11 @@ If you have shore power and aren't 100 percent sure your boat's setup is complia
 
 The single most common electrical pattern we diagnose is intermittent SmartCraft faults that trace back to a corroded amateur wiring connection somewhere in the boat. Customer brings in a Mercury that "keeps throwing different alarms," we hook up the diagnostic, the faults are real but they come and go. Tracing them back, the issue is usually a $5 crimp connector behind the console, installed by a previous owner, that has corroded enough to create a voltage drop.
 
-The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: $150-$200. Compared to what owners spend chasing the gremlins, this is cheap and final.
+The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: quoted at our current shop rate; see /pricing-reference. Compared to what owners spend chasing the gremlins, this is cheap and final.
 
 For a structured electrical inspection or to fix a known issue, our service intake is at hbw.wiki/service.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ## Sources
 
@@ -167,9 +171,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## About the author
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 ## FAQs
 
@@ -200,20 +202,26 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

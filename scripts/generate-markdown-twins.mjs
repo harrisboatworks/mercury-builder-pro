@@ -2,6 +2,16 @@ import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
+import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
+import { isBlogPullQuoteSuppressed } from '../src/lib/blogPullQuotePolicy.js';
+import {
+  BLOG_REVENUE_DRIVER,
+  getBlogRevenueDriver,
+  getBlogRevenuePath,
+  normalizeBlogCategory,
+} from '../src/lib/blogRevenueDriver.js';
+import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -12,7 +22,13 @@ const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
 const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
-const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+// Localized corpus loading resolves Vite asset imports across nine languages.
+// A cold CI filesystem can legitimately take longer than 30 seconds.
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 120000);
+// Publishable (anon) key is safe to embed and is already committed in the
+// browser client. Sharing it keeps both motor loaders resilient when the
+// public edge function is temporarily unavailable.
+const FALLBACK_SUPABASE_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
 const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
@@ -95,6 +111,7 @@ function loadLocalizedBlogArticles() {
     import { frenchBlogArticles } from '../src/data/frenchBlogArticles.ts';
     import { koreanBlogArticles } from '../src/data/koreanBlogArticles.ts';
     import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles.ts';
+    import { traditionalChineseBlogArticles } from '../src/data/traditionalChineseBlogArticles.ts';
     import { spanishBlogArticles } from '../src/data/spanishBlogArticles.ts';
     import { punjabiBlogArticles } from '../src/data/punjabiBlogArticles.ts';
     import { urduBlogArticles } from '../src/data/urduBlogArticles.ts';
@@ -109,16 +126,18 @@ function loadLocalizedBlogArticles() {
       ...a,
       description: getCleanDescription(a),
     }));
-    process.stdout.write(JSON.stringify([
+    const localizedGroups = [
       { prefix: 'fr', language: 'fr-CA', articles: clean(frenchBlogArticles) },
       { prefix: 'ko', language: 'ko-KR', articles: clean(koreanBlogArticles) },
       { prefix: 'zh', language: 'zh-CN', articles: clean(mandarinBlogArticles) },
+      { prefix: 'zh-hant', language: 'zh-Hant', articles: clean(traditionalChineseBlogArticles) },
       { prefix: 'es', language: 'es', articles: clean(spanishBlogArticles) },
       { prefix: 'pa', language: 'pa', articles: clean(punjabiBlogArticles) },
       { prefix: 'ur', language: 'ur', articles: clean(urduBlogArticles) },
       { prefix: 'tl', language: 'tl', articles: clean(tagalogBlogArticles) },
       { prefix: 'hi', language: 'hi', articles: clean(hindiBlogArticles) },
-    ]));
+    ];
+    process.stdout.write(JSON.stringify(localizedGroups), () => process.exit(0));
   `;
   const tmpFile = join(ROOT, 'scripts', '.localized-blog-twins-dump.ts');
   writeFileSync(tmpFile, dumpScript);
@@ -138,10 +157,7 @@ function loadLocalizedBlogArticles() {
 // replaced with public-motors-api (which only returns in-stock motors).
 async function loadAllQuoteBuilderMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  // Publishable (anon) key is safe to embed, same key is committed in src/integrations/supabase/client.ts
-  // Fallback ensures Vercel builds succeed even if VITE_SUPABASE_PUBLISHABLE_KEY env var isn't set in the build environment.
-  const FALLBACK_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
   }
@@ -199,14 +215,48 @@ async function loadMotors() {
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&availability=neq.Exclude&order=horsepower.asc&limit=500`;
   const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
-  return res.json();
+  const rows = await res.json();
+  return (rows || [])
+    .filter((m) => !String(m.model_display || m.model || '').toLowerCase().includes('verado'))
+    .map((m) => {
+      const display = m.model_display || m.model || '';
+      const family = m.family ||
+        (/pro\s*xs|proxs/i.test(display) ? 'Pro XS' :
+          /sea\s*pro|seapro/i.test(display) ? 'SeaPro' :
+            /racing/i.test(display) ? 'Racing' : 'FourStroke');
+      const slug = `${family}-${m.horsepower}hp-${display}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      const overrides = m.manual_overrides || {};
+      const sellingPrice = [
+        overrides.sale_price,
+        overrides.base_price,
+        m.sale_price,
+        m.dealer_price,
+        m.msrp,
+        m.base_price,
+      ]
+        .map((value) => typeof value === 'string' ? Number.parseFloat(value) : value)
+        .find((value) => Number.isFinite(value) && value > 0) || null;
+      return {
+        ...m,
+        model_key: slug,
+        model: 'Outboard',
+        model_display: display,
+        mercury_model_no: m.model_number || m.mercury_model_no,
+        family,
+        shaft: m.shaft_code || m.shaft,
+        _resolvedSellingPrice: sellingPrice,
+      };
+    });
 }
 
 function motorSlug(modelKey) {
@@ -286,22 +336,101 @@ function mdFrontmatter(
 // legacy inline FAQ section when the article has a faqs[] array. Mirrors
 // the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
 // what readers see.
-function cleanBlogContent(content, hasFaqs) {
-  let c = String(content || '');
-  c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
-  c = c.replace(/^##\s+CTA\s*$/gim, '');
-  c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+const SUPPRESSED_PULL_QUOTE_MARKERS = new Map([
+  ['breaking-in-new-mercury-motor-guide', ['Greg T.']],
+  ['complete-guide-boat-repower-kawarthas', ['Brian K.']],
+  ['evinrude-to-mercury-repower-ontario-guide', ['Dave M.']],
+  ['harris-boat-works-since-1947-rice-lake-institution', ['Mike S.']],
+  ['mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', ['Tom K.']],
+  ['mercury-9-9-efi-review-ontario', ['Steve H.']],
+  ['outboard-trade-in-value-ontario-hbw', ['Mark T.']],
+]);
+
+function mapFencedMarkdown(markdown, mapBlock) {
+  const output = [];
+  let fenced = null;
+  let block = [];
+  let blockIndex = 0;
+
+  for (const line of String(markdown || '').split('\n')) {
+    const marker = line.match(/^\s{0,3}(`{3,}|~{3,})/);
+    if (!fenced) {
+      if (!marker) {
+        output.push(line);
+        continue;
+      }
+      fenced = { char: marker[1][0], length: marker[1].length };
+      block = [line];
+      continue;
+    }
+
+    block.push(line);
+    if (!marker || marker[1][0] !== fenced.char || marker[1].length < fenced.length) continue;
+    if (!/^\s{0,3}(?:`+|~+)\s*$/.test(line)) continue;
+
+    output.push(mapBlock(block.join('\n'), blockIndex));
+    blockIndex += 1;
+    fenced = null;
+    block = [];
+  }
+
+  // An unclosed fence is ordinary source text for this transform. Preserve it
+  // so later validation can report the actual authoring problem.
+  if (block.length) output.push(...block);
+  return output.join('\n');
+}
+
+function cleanBlogContent(content, hasFaqs, context = {}) {
+  let c = cleanLegacyBlogContent(content, {
+    hasStructuredFaqs: hasFaqs,
+  });
+  // Protect fenced examples before directive matching. A code sample can
+  // legitimately demonstrate `::name` or `:::name` syntax and must remain
+  // byte-for-byte content rather than being interpreted as an article block.
+  const fencedBlocks = [];
+  c = mapFencedMarkdown(c, (block, index) => {
+    const token = `@@HBW_FENCED_BLOCK_${index}@@`;
+    fencedBlocks.push(block);
+    return token;
+  });
+  // Some visual CTAs are intentionally bodiless. Remove them before matching
+  // block directives so they cannot swallow the next closed directive.
+  c = c.replace(/^:{2,3}walkaround-lead-capture\s*$/gim, '');
+  // Replace the visual MyBoatCard helper with an equivalent text-first block
+  // so the markdown twin keeps the customer guidance and referral disclosure.
+  c = c.replace(
+    /^::boat-card-help(?:\s*\nvariant:\s*full\s*\n::)?\s*$/gim,
+    [
+      '### Before your rental',
+      '',
+      "HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.",
+      '',
+      '*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*',
+    ].join('\n'),
+  );
   // Convert embedded YouTube cards to ordinary links before removing custom
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(
     /^:::youtube-embed\s*\nid:\s*([A-Za-z0-9_-]+)(?:\ntitle:\s*([^\n]+))?\n:::\s*$/gim,
     (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})`,
   );
-  // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
-  // The inner block content is kept verbatim as plain markdown so AI agents
-  // reading the twin don't see raw fence markup as junk.
-  c = c.replace(/^:::[a-z-]*\s*$/gim, '');
+  // Twins-only: convert visual directives into text-first Markdown. Leaving
+  // their YAML-like properties in the twin exposes authoring instructions to
+  // readers and agents.
+  c = c.replace(
+    /^:::([a-z-]+)\s*\n([\s\S]*?)\n:::\s*$/gim,
+    (_match, name, body) => {
+      const rendered = renderBlogDirectiveMarkdown(name, body, context);
+      return rendered ? `\n\n${rendered}\n\n` : '';
+    },
+  );
+  c = c.replace(
+    /^::([a-z-]+)\s*\n([\s\S]*?)\n::\s*$/gim,
+    (_match, name, body) => {
+      const rendered = renderBlogDirectiveMarkdown(name, body, context);
+      return rendered ? `\n\n${rendered}\n\n` : '';
+    },
+  );
   // Rewrite YAML-ish claim/rebuttal and quote/response bullet blocks
   // (used in "Common mistakes" and "Customer language we hear" sections)
   // into rich markdown bullets so the twin renders the content instead of
@@ -314,13 +443,286 @@ function cleanBlogContent(content, hasFaqs) {
     /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
     '- **"$1"**  \n  $2',
   );
-  if (hasFaqs) {
-    c = c.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-      '\n',
+  c = c.replace(/\n{3,}/g, '\n\n').trim();
+  return c.replace(/@@HBW_FENCED_BLOCK_(\d+)@@/g, (_match, index) => fencedBlocks[Number(index)] || '');
+}
+
+function parseDirectiveFields(body) {
+  const fields = [];
+  let current = null;
+  for (const line of String(body || '').split('\n')) {
+    const field = line.match(/^([A-Za-z][A-Za-z0-9]*):\s*(.*)$/);
+    if (field) {
+      current = { key: field[1], value: field[2].trim(), items: [] };
+      fields.push(current);
+      continue;
+    }
+    const item = line.match(/^\s+-\s+(.+)$/);
+    if (item && current) {
+      current.items.push(item[1].trim());
+      continue;
+    }
+    if (/^\s+\S/.test(line) && current) {
+      current.value = [current.value, line.trim()].filter(Boolean).join(' ');
+      continue;
+    }
+    if (line.trim()) return fields.length > 0 ? null : [];
+  }
+  return fields;
+}
+
+function directiveFieldsByKey(fields) {
+  return Object.fromEntries(fields.map((field) => [field.key, field]));
+}
+
+function assertDirectiveFields(slug, directive, fields, allowed) {
+  const unexpected = fields.map((field) => field.key).filter((key) => !allowed.test(key));
+  if (unexpected.length) {
+    throw new Error(
+      `[markdown-twins] ${slug}: unsupported ${directive} field(s): ${unexpected.join(', ')}`,
     );
   }
-  return c.replace(/\n{3,}/g, '\n\n').trim();
+}
+
+function renderDirectiveHeading(byKey) {
+  return [
+    byKey.eyebrow?.value ? `*${byKey.eyebrow.value}*` : '',
+    byKey.heading?.value ? `### ${byKey.heading.value}` : '',
+    byKey.subhead?.value || '',
+  ].filter(Boolean);
+}
+
+function directiveFieldIndexes(byKey, prefix) {
+  return [...new Set(
+    Object.keys(byKey)
+      .map((key) => key.match(new RegExp(`^${prefix}(\\d+)`))?.[1])
+      .filter(Boolean)
+      .map(Number),
+  )].sort((a, b) => a - b);
+}
+
+function renderDecisionCardMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const side of ['left', 'right']) {
+    const label = byKey[`${side}Label`]?.value;
+    const criteria = byKey[`${side}Criteria`]?.items || [];
+    const outcome = byKey[`${side}Outcome`]?.value;
+    if (label) output.push(`#### ${label}`);
+    if (criteria.length) output.push(criteria.map((item) => `- ${item}`).join('\n'));
+    if (outcome) output.push(`**${outcome}**`);
+  }
+  if (byKey.whenInDoubt?.value) output.push(byKey.whenInDoubt.value);
+  return output.join('\n\n');
+}
+
+function renderDiagnosticFlowMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const step of directiveFieldIndexes(byKey, 'step')) {
+    const label = byKey[`step${step}Label`]?.value;
+    const question = byKey[`step${step}Question`]?.value;
+    const tip = byKey[`step${step}Tip`]?.value;
+    if (!label && !question && !tip) continue;
+    if (label) output.push(`#### ${label}`);
+    if (question) output.push(`**${question}**`);
+    if (tip) output.push(tip);
+  }
+  if (byKey.escalationLabel?.value) output.push(`#### ${byKey.escalationLabel.value}`);
+  if (byKey.escalationBody?.value) output.push(byKey.escalationBody.value);
+  return output.join('\n\n');
+}
+
+function renderCostStackMarkdown(byKey) {
+  const output = renderDirectiveHeading(byKey);
+  for (const item of directiveFieldIndexes(byKey, 'item')) {
+    const label = byKey[`item${item}Label`]?.value;
+    const value = byKey[`item${item}Value`]?.value;
+    const note = byKey[`item${item}Note`]?.value;
+    if (!label && !value && !note) continue;
+    if (label) output.push(`#### ${label}`);
+    if (value) output.push(`**${value}**`);
+    if (note) output.push(note);
+  }
+  if (byKey.totalLabel?.value) output.push(`#### ${byKey.totalLabel.value}`);
+  if (byKey.totalValue?.value) output.push(`**${byKey.totalValue.value}**`);
+  if (byKey.caveat?.value) output.push(`*${byKey.caveat.value}*`);
+  return output.join('\n\n');
+}
+
+function localizedEyebrow(value, language) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  if (!String(language).startsWith('zh')) return text;
+  const translated = text.split('/').map((part) => part.trim()).find((part) => /[\u3400-\u9fff]/.test(part));
+  return translated || (/[\u3400-\u9fff]/.test(text) ? text : '');
+}
+
+function renderTrustBlockMarkdown(byKey, language) {
+  const isChinese = String(language).startsWith('zh');
+  const heading = isChinese
+    ? byKey.headingTranslated?.value
+    : byKey.heading?.value;
+  const eyebrow = localizedEyebrow(byKey.eyebrow?.value, language);
+  const output = [eyebrow ? `*${eyebrow}*` : '', heading ? `### ${heading}` : ''].filter(Boolean);
+  const localizedItems = directiveFieldIndexes(byKey, 'item')
+    .map((item) => (isChinese
+      ? byKey[`item${item}Zh`]?.value
+      : byKey[`item${item}En`]?.value))
+    .filter(Boolean);
+  const items = filterToOneBlogCredibilityAnchor(localizedItems)
+    .map((value) => `- ${value}`);
+  if (items.length) output.push(items.join('\n'));
+
+  const ctaLabel = isChinese ? byKey.ctaZh?.value : byKey.ctaEn?.value;
+  if (ctaLabel && byKey.ctaHref?.value) {
+    output.push(`[${ctaLabel}](${byKey.ctaHref.value})`);
+  }
+  return output.join('\n\n');
+}
+
+function renderPullQuoteMarkdown(byKey) {
+  const quote = byKey.quote?.value;
+  if (!quote) return '';
+  const footer = [byKey.attribution?.value, byKey.source?.value].filter(Boolean).join(', ');
+  return [
+    `> ${quote}`,
+    footer ? `>\n> ${footer}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+function renderCtaMarkdown(byKey) {
+  const output = [];
+  if (byKey.heading?.value) output.push(`### ${byKey.heading.value}`);
+  if (byKey.body?.value) output.push(byKey.body.value);
+  if (byKey.primaryHref?.value && byKey.primaryLabel?.value) {
+    output.push(`[${byKey.primaryLabel.value}](${byKey.primaryHref.value})`);
+  }
+  if (byKey.secondaryHref?.value && byKey.secondaryLabel?.value) {
+    output.push(`[${byKey.secondaryLabel.value}](${byKey.secondaryHref.value})`);
+  }
+  if (byKey.phone?.value) output.push(byKey.phone.value);
+  if (byKey.footer?.value) output.push(byKey.footer.value);
+  return output.join('\n\n');
+}
+
+function renderBlogDirectiveMarkdown(name, body, context = {}) {
+  const directive = String(name || '').toLowerCase();
+  const cleanBody = String(body || '').trim();
+  const { slug = 'unknown', language = 'en-CA', routePrefix = '/blog' } = context;
+
+  // These directive bodies already contain valid Markdown or a generated
+  // Markdown table. Only their transport fences need to disappear.
+  if (directive === 'mythbuster') {
+    const heading = cleanBody.match(/^heading:\s*(.+)(?:\n|$)/i);
+    return heading
+      ? `### ${heading[1].trim()}\n\n${cleanBody.slice(heading[0].length).trim()}`
+      : cleanBody;
+  }
+  if (['customer-voice', 'mercury-capacity-lookup'].includes(directive)) {
+    return cleanBody;
+  }
+  if (directive === 'related-posts') {
+    return cleanBody.split('\n').map((item) => item.trim().replace(/^-\s+/, '')).filter(Boolean)
+      .map((item) => `- [${item}](${routePrefix}/${item})`).join('\n');
+  }
+
+  const fields = parseDirectiveFields(cleanBody);
+  if (fields === null) {
+    throw new Error(`[markdown-twins] ${slug}: malformed ${directive} directive field schema`);
+  }
+  if (fields.length === 0) {
+    if (directive === 'decision-card') return cleanBody;
+    throw new Error(`[markdown-twins] ${slug}: ${directive} directive has no renderable field schema`);
+  }
+  const byKey = directiveFieldsByKey(fields);
+
+  if (directive === 'image-placeholder') {
+    assertDirectiveFields(slug, directive, fields, /^(?:slug|type|aspect|description|prompt|image)$/);
+    const image = byKey.image?.value;
+    const alt = byKey.description?.value || byKey.slug?.value || 'Article visual';
+    return image ? `![${alt}](${image})` : '';
+  }
+  if (directive === 'pull-quote') {
+    assertDirectiveFields(slug, directive, fields, /^(?:quote|attribution|source)$/);
+    if (isBlogPullQuoteSuppressed(slug)) return '';
+    return renderPullQuoteMarkdown(byKey);
+  }
+  if (directive === 'cta') {
+    assertDirectiveFields(slug, directive, fields, /^(?:variant|heading|body|primaryLabel|primaryHref|secondaryLabel|secondaryHref|phone|footer)$/);
+    return renderCtaMarkdown(byKey);
+  }
+  if (directive === 'decision-card') {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|left(?:Label|Criteria|Outcome|Variant)|right(?:Label|Criteria|Outcome|Variant)|whenInDoubt)$/);
+    return renderDecisionCardMarkdown(byKey);
+  }
+  if (['diagnostic-flow', 'step-flow'].includes(directive)) {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|step\d+(?:Label|Question|Tip)|escalation(?:Label|Body))$/);
+    return renderDiagnosticFlowMarkdown(byKey);
+  }
+  if (directive === 'cost-stack') {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|subhead|item\d+(?:Label|Value|Note|Accent)|total(?:Label|Value)|caveat)$/);
+    return renderCostStackMarkdown(byKey);
+  }
+  if (['bilingual-trust', 'bilingual-trust-card', 'trust-block'].includes(directive)) {
+    assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|headingTranslated|item\d+(?:En|Zh)|cta(?:En|Zh|Href))$/);
+    return renderTrustBlockMarkdown(byKey, language);
+  }
+  if (directive === 'mercury-price-table') {
+    assertDirectiveFields(slug, directive, fields, /^(?:group|minHp|maxHp)$/);
+    return language === 'en-CA'
+      ? '[See current Mercury outboard pricing](/pricing-reference)'
+      : '';
+  }
+
+  // A new schema-backed directive must get a deliberate template. Never fall
+  // back to exposing `key: value` authoring properties in a public twin.
+  throw new Error(`[markdown-twins] ${slug}: no Markdown template for ${directive} directive`);
+}
+
+function normalizeHeadingText(value) {
+  return String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .match(/[\p{L}\p{N}]+/gu)?.join(' ') || '';
+}
+
+function normalizeBlogTwinStructure(content, articleTitle) {
+  const normalizedTitle = normalizeHeadingText(articleTitle);
+  const output = [];
+  let fence = null;
+
+  for (const originalLine of String(content || '').split('\n')) {
+    let line = originalLine;
+    const fenceMarker = line.match(/^\s{0,3}(`{3,}|~{3,})/);
+    if (fence) {
+      output.push(line);
+      if (fenceMarker && fenceMarker[1][0] === fence.char && fenceMarker[1].length >= fence.length) {
+        fence = null;
+      }
+      continue;
+    }
+    if (fenceMarker) {
+      fence = { char: fenceMarker[1][0], length: fenceMarker[1].length };
+      output.push(line);
+      continue;
+    }
+    const h1 = line.match(/^#\s+(.+)$/);
+    if (h1) {
+      if (normalizeHeadingText(h1[1]) === normalizedTitle) continue;
+      line = `## ${h1[1]}`;
+    }
+
+    // The twin header already owns publication, author, and read-time fields.
+    if (/^\*\*(?:Published|Updated|Author|Reading time|Read time):\*\*/i.test(line)) continue;
+
+    if (line.trim() === '---') {
+      let previous = output.length - 1;
+      while (previous >= 0 && output[previous].trim() === '') previous -= 1;
+      if (previous >= 0 && output[previous].trim() === '---') continue;
+    }
+    output.push(line);
+  }
+
+  return output.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function motorBestFit(family, hp) {
@@ -433,7 +835,7 @@ function motorMarkdown(m) {
     '',
     isVerado ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.' : null,
     `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
-    '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
+    WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
@@ -650,7 +1052,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
-    '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
+    WARRANTY_AGENT_NOTE_BOLD,
     `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
@@ -733,10 +1135,28 @@ function substituteLiveRateTokens(text) {
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
 }
 
+// Markdown twins are read raw (AI crawlers, .md URLs), so render ::cta
+// directive blocks as plain markdown instead of shipping raw template syntax.
+function renderCtaBlocks(text) {
+  if (!text) return text;
+  return String(text).replace(/^::cta\s*\n([\s\S]*?)\n::\s*$/gm, (_m, body) => {
+    const fields = {};
+    for (const line of body.split('\n')) {
+      const m = line.match(/^(\w+):\s*(.*)$/);
+      if (m) fields[m[1]] = m[2].trim();
+    }
+    const parts = [];
+    if (fields.heading) parts.push(`**${fields.heading}**`);
+    if (fields.body) parts.push(fields.body);
+    if (fields.primaryLabel && fields.primaryHref) parts.push(`[${fields.primaryLabel}](${fields.primaryHref})`);
+    return parts.length ? `> ${parts.join(' ')}` : '';
+  });
+}
+
 function writePublicMd(relPath, content) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, substituteLiveRateTokens(content), 'utf8');
+  writeFileSync(outFile, renderCtaBlocks(substituteLiveRateTokens(content)), 'utf8');
 }
 
 
@@ -815,78 +1235,251 @@ function isDiagnosticBlogArticle(article) {
   );
 }
 
+function isFaultCodeBlogArticle(article) {
+  const slug = String(article.slug || '').toLowerCase();
+  return /(?:fault-code|alarm-code|alarm-decoder|beeping-codes|smartcraft-alarm)/.test(slug);
+}
+
+function lintBlogTwin(slug, markdown) {
+  // Code samples can legitimately contain shell comments or Markdown-looking
+  // text. Structural lint applies to the document outside fenced examples.
+  const structuralMarkdown = mapFencedMarkdown(markdown, () => '');
+  const h1Count = (structuralMarkdown.match(/^#\s+/gm) || []).length;
+  if (h1Count !== 1) {
+    throw new Error(`[markdown-twins] ${slug}: expected exactly one H1, found ${h1Count}`);
+  }
+  const leakedFence = structuralMarkdown.match(/^:{2,3}(?:[a-z-]+)?\s*$/im);
+  if (leakedFence) {
+    throw new Error(`[markdown-twins] ${slug}: raw directive fence leaked into twin (${leakedFence[0]})`);
+  }
+  const rawSchemaProperty = /^(?:eyebrow|heading|headingTranslated|subhead|left(?:Label|Criteria|Outcome|Variant)|right(?:Label|Criteria|Outcome|Variant)|whenInDoubt|step\d+(?:Label|Question|Tip)|escalation(?:Label|Body)|item\d+(?:Label|Value|Note|Accent|En|Zh)|total(?:Label|Value)|caveat|quote|attribution|source|primary(?:Label|Href)|secondary(?:Label|Href)|cta(?:En|Zh|Href))\s*:.*$/m;
+  const boldTitleSchemaProperty = /^\*\*(?:Eyebrow|Heading(?:\s+Translated)?|Subhead|Left\s+(?:Label|Criteria|Outcome|Variant)|Right\s+(?:Label|Criteria|Outcome|Variant)|When\s+In\s+Doubt|Step\s+\d+\s+(?:Label|Question|Tip)|Escalation\s+(?:Label|Body)|Item\s+\d+\s+(?:Label|Value|Note|Accent|En|Zh)|Total\s+(?:Label|Value)|Caveat|Primary\s+(?:Label|Href)|Secondary\s+(?:Label|Href)|Cta\s+(?:En|Zh|Href)):\*\*.*$/im;
+  const leakedProperty = structuralMarkdown.match(rawSchemaProperty)
+    || structuralMarkdown.match(boldTitleSchemaProperty);
+  if (leakedProperty) {
+    throw new Error(`[markdown-twins] ${slug}: directive property leaked into twin (${leakedProperty[0]})`);
+  }
+  if (/(?:^|\n)---[ \t]*\n(?:[ \t]*\n)*---[ \t]*(?=\n|$)/m.test(structuralMarkdown)) {
+    throw new Error(`[markdown-twins] ${slug}: repeated horizontal-rule run remains`);
+  }
+  const bareSlug = String(slug).split('/').pop();
+  for (const marker of SUPPRESSED_PULL_QUOTE_MARKERS.get(bareSlug) || []) {
+    if (structuralMarkdown.includes(marker)) {
+      throw new Error(`[markdown-twins] ${slug}: unresolved testimonial marker leaked into twin (${marker})`);
+    }
+  }
+}
+function blogTwinLabels(language) {
+  if (language === 'fr-CA') {
+    return {
+      category: 'Catégorie',
+      published: 'Publié le',
+      lastReviewed: 'Dernière révision',
+      readTime: 'Temps de lecture',
+      canonical: 'URL canonique (HTML pour les lecteurs)',
+      nextSteps: 'Prochaines étapes',
+      pickupContact: 'Lieu de ramassage et coordonnées',
+    };
+  }
+
+  return {
+    category: 'Category',
+    published: 'Published',
+    lastReviewed: lastReviewedLabel(language),
+    readTime: 'Read time',
+    canonical: 'Canonical (HTML for humans)',
+    nextSteps: 'Next steps',
+    pickupContact: 'Pickup location & contact',
+  };
+}
+
+function blogNextStepsSection(markdown, language = 'en-CA') {
+  const heading = blogTwinLabels(language).nextSteps.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return markdown.match(new RegExp(`## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n##\\s|$)`))?.[1] || '';
+}
+
+function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language = 'en-CA') {
+  const isFrench = language === 'fr-CA';
+  if (isFaultCode) {
+    if (isFrench) {
+      return [
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        "- Indiquez le code exact, le numéro de série du moteur, le nombre d'heures et joignez une photo complète de l'écran.",
+      ];
+    }
+    return [
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- Include the exact code, engine serial number, hours, and a photo of the full display.',
+    ];
+  }
+  if (isDiagnostic) {
+    if (isFrench) {
+      return [
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        "- Indiquez le numéro de série du moteur, les symptômes, joignez des photos nettes et précisez tout entretien ou changement récent au montage ou aux commandes.",
+      ];
+    }
+    return [
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
+    ];
+  }
+
+  if (isFrench) {
+    switch (revenueDriver) {
+      case BLOG_REVENUE_DRIVER.SERVICE:
+        return ["- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service"];
+      case BLOG_REVENUE_DRIVER.RENTALS:
+        return ['- Consultez la flotte de location actuelle sur le lac Rice et les disponibilités : https://harrisboatworks.ca/rentals'];
+      case BLOG_REVENUE_DRIVER.REPOWER:
+        return [`- Bâtissez votre soumission Mercury : ${SITE_URL}/quote/motor-selection`];
+      case BLOG_REVENUE_DRIVER.AVATOR:
+        return [`- Comparez les modèles Mercury Avator et leur disponibilité actuelle chez HBW : ${SITE_URL}/electric/mercury-avator`];
+      case BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION:
+        return [`- Consultez le barème actuel de la Protection de produit Mercury : ${SITE_URL}/mercury-product-protection`];
+      case BLOG_REVENUE_DRIVER.COMMERCIAL:
+        return [`- Demandez une soumission commerciale SeaPro à HBW : ${SITE_URL}/contact`];
+      default:
+        return [];
+    }
+  }
+
+  switch (revenueDriver) {
+    case BLOG_REVENUE_DRIVER.SERVICE:
+      return ['- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service'];
+    case BLOG_REVENUE_DRIVER.RENTALS:
+      return ['- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals'];
+    case BLOG_REVENUE_DRIVER.REPOWER:
+      return [`- Build your own Mercury quote: ${SITE_URL}/quote/motor-selection`];
+    case BLOG_REVENUE_DRIVER.AVATOR:
+      return [`- Compare Mercury Avator models and current HBW availability: ${SITE_URL}/electric/mercury-avator`];
+    case BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION:
+      return [`- Review the current Mercury Product Protection rate card: ${SITE_URL}/mercury-product-protection`];
+    case BLOG_REVENUE_DRIVER.COMMERCIAL:
+      return [`- Request a SeaPro commercial quote from HBW: ${SITE_URL}/contact`];
+    default:
+      return [];
+  }
+}
+
+function blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode) {
+  const commonFacts = [
+    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+    '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
+    '- Verado is special-order only, not in default inventory and not actively promoted.',
+    WARRANTY_AGENT_NOTE,
+    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+  ];
+
+  if (isFaultCode) {
+    return [
+      '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
+      '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
+      ...commonFacts,
+    ];
+  }
+  if (isDiagnostic) {
+    return [
+      '- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.',
+      '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- A symptom is not a confirmed root cause. Preserve the article\'s test order and escalation limits.',
+      ...commonFacts,
+    ];
+  }
+
+  const driverNote = {
+    [BLOG_REVENUE_DRIVER.SERVICE]: '- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.',
+    [BLOG_REVENUE_DRIVER.RENTALS]: '- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.',
+    [BLOG_REVENUE_DRIVER.REPOWER]: '- The only commercial next step for this article is the Mercury quote configurator.',
+    [BLOG_REVENUE_DRIVER.AVATOR]: '- Keep the commercial next step focused on the Mercury Avator page.',
+    [BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION]: '- Keep the commercial next step focused on the Product Protection rate card.',
+    [BLOG_REVENUE_DRIVER.COMMERCIAL]: '- Keep the commercial next step focused on a SeaPro inquiry to HBW.',
+    [BLOG_REVENUE_DRIVER.NONE]: '- This heritage article has no commercial call to action.',
+  }[revenueDriver];
+
+  return [driverNote, ...commonFacts].filter(Boolean);
+}
+function lastReviewedLabel(language) {
+  if (language === 'fr-CA') return 'Dernière révision';
+  if (language === 'ko-KR') return '마지막 검토';
+  if (language === 'zh-CN') return '最后审核';
+  if (language === 'zh-Hant') return '最後審核';
+  if (language === 'es') return 'Última revisión';
+  if (language === 'pa') return 'ਆਖਰੀ ਸਮੀਖਿਆ';
+  if (language === 'ur') return 'آخری جائزہ';
+  if (language === 'tl') return 'Huling sinuri';
+  if (language === 'hi') return 'अंतिम समीक्षा';
+  return 'Last reviewed';
+}
+
 function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'en-CA') {
   const url = `${SITE_URL}${routePrefix}/${article.slug}`;
   const isDiagnostic = isDiagnosticBlogArticle(article);
+  const isFaultCode = isFaultCodeBlogArticle(article);
+  const revenueDriver = getBlogRevenueDriver(article.category, article.slug);
+  const normalizedCategory = normalizeBlogCategory(article.category || 'Guide');
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
     `description: ${JSON.stringify(article.description)}`,
-    `category: ${JSON.stringify(article.category || 'Guide')}`,
+    `category: ${JSON.stringify(normalizedCategory)}`,
     `date_published: ${article.datePublished}`,
     `date_modified: ${article.dateModified}`,
     `keywords: ${JSON.stringify(article.keywords || [])}`,
     `author: Harris Boat Works`,
     `content_type: blog_article`,
     `language: ${language}`,
+    `revenue_driver: ${revenueDriver}`,
   ];
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
     ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
-  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
+  const cleanedContent = normalizeBlogTwinStructure(
+    cleanBlogContent(article.content, faqs.length > 0, {
+      slug: article.slug,
+      language,
+      routePrefix,
+    }),
+    article.title,
+  );
   const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
+  const labels = blogTwinLabels(language);
+  const labelSeparator = language === 'fr-CA' ? ' :' : ':';
+  const metadataLineBreak = language === 'fr-CA' ? '\\' : '  ';
+  const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language);
 
 
   return [
-    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated, !isDiagnostic),
+    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
     '',
-    `**Category:** ${article.category || 'Guide'}  `,
-    `**Published:** ${article.datePublished}  `,
-    `**Last updated:** ${lastUpdated}  `,
-    `**Read time:** ${article.readTime || ''}  `,
-    `**Canonical (HTML for humans):** ${url}`,
+    `**${labels.category}${labelSeparator}** ${normalizedCategory}${metadataLineBreak}`,
+    `**${labels.published}${labelSeparator}** ${article.datePublished}${metadataLineBreak}`,
+    `**${labels.lastReviewed}${labelSeparator}** ${lastUpdated}${metadataLineBreak}`,
+    `**${labels.readTime}${labelSeparator}** ${article.readTime || ''}${metadataLineBreak}`,
+    `**${labels.canonical}${labelSeparator}** ${url}`,
     '',
     cleanedContent,
     '',
     faqBlock || null,
     relatedGuidesMd,
     relatedGuidesMd ? '' : null,
-    '## Next steps',
+    `## ${labels.nextSteps}`,
     '',
-    ...(isDiagnostic
-      ? [
-          '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
-          '- Include the exact code, engine serial number, hours, and a photo of the full display.',
-        ]
-      : [
-          `- Build a quote: ${SITE_URL}/quote/motor-selection`,
-          `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
-          `- Repower information: ${SITE_URL}/repower`,
-          '- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153',
-        ]),
+    ...nextSteps,
+    `- ${labels.pickupContact}${labelSeparator} Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
     '',
     '## Notes for AI agents',
     '',
-    ...(isDiagnostic
-      ? [
-          '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
-          '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
-          '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
-          '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
-        ]
-      : [
-          '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
-          '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
-          '- Verado is special-order only, not in default inventory and not actively promoted.',
-          '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
-          '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
-        ]),
+    ...blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode),
     '',
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
@@ -1197,15 +1790,37 @@ console.log(`[markdown-twins] loaded blog cluster data for ${Object.keys(blogClu
 const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
-  writePublicMd(path, blogMarkdown(article, blogClusterData));
-  blogTwinSummaries.push({ path, title: article.title });
+  const markdown = blogMarkdown(article, blogClusterData);
+  lintBlogTwin(article.slug, markdown);
+  writePublicMd(path, markdown);
+  verifyPublicMd(path, 'English blog twin freshness', ['**Last reviewed:**']);
+  blogTwinSummaries.push({
+    path,
+    title: article.title,
+    language: 'en-CA',
+    isDiagnostic: isDiagnosticBlogArticle(article),
+    revenueDriver: getBlogRevenueDriver(article.category, article.slug),
+  });
 }
 
 for (const group of localizedBlogGroups) {
   for (const article of group.articles) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
-    writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
-    blogTwinSummaries.push({ path, title: `${article.title} [${group.language}]` });
+    const markdown = blogMarkdown(article, null, `/blog/${group.prefix}`, group.language);
+    lintBlogTwin(`${group.prefix}/${article.slug}`, markdown);
+    writePublicMd(path, markdown);
+    const localizedLabelSeparator = group.language === 'fr-CA' ? ' :' : ':';
+    verifyPublicMd(path, `${group.language} blog twin`, [
+      `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
+      `**${lastReviewedLabel(group.language)}${localizedLabelSeparator}**`,
+    ]);
+    blogTwinSummaries.push({
+      path,
+      title: `${article.title} [${group.language}]`,
+      language: group.language,
+      isDiagnostic: isDiagnosticBlogArticle(article),
+      revenueDriver: getBlogRevenueDriver(article.category, article.slug),
+    });
   }
 }
 // Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
@@ -1224,7 +1839,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
 }
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Service and maintenance', 'maintenance.md', '## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'service_dropoff_only: true', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage', 'reopens in early April', 'hbw.wiki/service']);
+verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'boat_pickup_available: generally', 'delivery_offered: false', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service', 'effective September 2026', 'reopens in early April', 'hbw.wiki/service']);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection
@@ -1250,32 +1865,54 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+const commercialBlogSample = blogTwinSummaries.find(twin => twin.revenueDriver === BLOG_REVENUE_DRIVER.REPOWER);
+if (commercialBlogSample) verifyPublicMd(commercialBlogSample.path, 'sample commercial blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+for (const twin of blogTwinSummaries) {
+  const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
+  const frontmatter = twinText.split('---')[1] || '';
+  const nextSteps = blogNextStepsSection(twinText, twin.language);
+  const expectedPath = getBlogRevenuePath(twin.revenueDriver);
+
+  for (const required of ['currency: CAD', 'pickup_only: true', 'delivery_offered: false', 'final_quote_requires_dealer_confirmation: true', 'verado_status:', 'revenue_driver:']) {
+    if (!frontmatter.includes(required)) throw new Error(`[markdown-twins] blog twin missing hard fact ${required}: ${twin.path}`);
+  }
+  if (!twinText.includes('Public Quote API') || !twinText.includes(PUBLIC_QUOTE_API)) {
+    throw new Error(`[markdown-twins] blog twin missing Public Quote API fact: ${twin.path}`);
+  }
+  if (!nextSteps.includes('Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153')) {
+    throw new Error(`[markdown-twins] blog twin missing NAP in Next steps: ${twin.path}`);
+  }
+  if (/^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at /im.test(twinText)) {
+    throw new Error(`[markdown-twins] blog twin leaked injected mid-body repower CTA: ${twin.path}`);
+  }
+
+  const commercialPaths = [
+    `${SITE_URL}/quote/motor-selection`,
+    'https://hbw.wiki/service',
+    'https://harrisboatworks.ca/rentals',
+    `${SITE_URL}/electric/mercury-avator`,
+    `${SITE_URL}/mercury-product-protection`,
+    `${SITE_URL}/contact`,
+  ].filter((path) => nextSteps.includes(path));
+  const expectedAbsolutePath = expectedPath?.startsWith('/') ? `${SITE_URL}${expectedPath}` : expectedPath;
+  if (expectedAbsolutePath && !commercialPaths.includes(expectedAbsolutePath)) {
+    throw new Error(`[markdown-twins] ${twin.revenueDriver} blog twin missing revenue path ${expectedAbsolutePath}: ${twin.path}`);
+  }
+  if (commercialPaths.length !== (expectedAbsolutePath ? 1 : 0)) {
+    throw new Error(`[markdown-twins] blog twin has competing commercial paths: ${twin.path} (${commercialPaths.join(', ')})`);
+  }
+}
 for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
   const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');
-  const frontmatter = twinText.split('---')[1] || '';
-  const nextSteps = twinText.split('## Next steps')[1] || '';
-  for (const irrelevantField of [
-    'currency:',
-    'pickup_only:',
-    'delivery_offered:',
-    'final_quote_requires_dealer_confirmation:',
-    'verado_status:',
-  ]) {
-    if (frontmatter.includes(irrelevantField)) {
-      throw new Error(
-        `[markdown-twins] diagnostic blog twin has irrelevant commerce field ${irrelevantField} ${relPath}`,
-      );
-    }
-  }
+  const nextSteps = twinText.match(/## Next steps\s*\n([\s\S]*?)(?=\n##\s|$)/)?.[1] || '';
   if (!nextSteps.includes('https://hbw.wiki/service')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
   }
-  if (!nextSteps.includes('Gores Landing') || !nextSteps.includes('Do not offer phone or remote diagnosis')) {
+  if (!nextSteps.includes('Gores Landing') || !twinText.includes('Do not offer phone or remote diagnosis')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing in-shop/regional service boundary: ${relPath}`);
   }
-  for (const forbidden of ['905-342-2153', '/quote/motor-selection', 'Public Quote API']) {
+  for (const forbidden of ['/quote/motor-selection']) {
     if (nextSteps.includes(forbidden)) {
       throw new Error(`[markdown-twins] diagnostic blog twin contains forbidden sales/phone next step "${forbidden}": ${relPath}`);
     }
@@ -1283,7 +1920,53 @@ for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
 }
 const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));
 if (localizedTwinSummaries.length === 0) throw new Error('[markdown-twins] Refusing build with zero localized blog twins');
-verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', '## Next steps']);
+const localizedSample = localizedTwinSummaries[0];
+verifyPublicMd(localizedSample.path, 'sample localized blog twin', [
+  'canonical:',
+  'language:',
+  'content_type: blog_article',
+  'revenue_driver:',
+  `## ${blogTwinLabels(localizedSample.language).nextSteps}`,
+]);
+
+const frenchTwinSummaries = blogTwinSummaries.filter(twin => twin.language === 'fr-CA');
+const expectedFrenchTwinCount = localizedBlogGroups.find(group => group.language === 'fr-CA')?.articles.length || 0;
+if (expectedFrenchTwinCount === 0 || frenchTwinSummaries.length !== expectedFrenchTwinCount) {
+  throw new Error(`[markdown-twins] expected ${expectedFrenchTwinCount} French blog twins from source, found ${frenchTwinSummaries.length}`);
+}
+const frenchRequired = [
+  '**Catégorie :**',
+  '**Publié le :**',
+  '**Dernière révision :**',
+  '**Temps de lecture :**',
+  '**URL canonique (HTML pour les lecteurs) :**',
+  '## Prochaines étapes',
+  '- Lieu de ramassage et coordonnées :',
+];
+const frenchForbidden = [
+  '**Category:**',
+  '**Published:**',
+  '**Read time:**',
+  '**Canonical (HTML for humans):**',
+  '## Next steps',
+  '- Pickup location & contact:',
+  'Build your own Mercury quote',
+  'submit a service request',
+];
+for (const twin of frenchTwinSummaries) {
+  const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
+  const customerFacingText = twinText.split('\n## Notes for AI agents')[0];
+  for (const required of frenchRequired) {
+    if (!twinText.includes(required)) {
+      throw new Error(`[markdown-twins] French blog twin missing localized boilerplate ${required}: ${twin.path}`);
+    }
+  }
+  for (const forbidden of frenchForbidden) {
+    if (customerFacingText.includes(forbidden)) {
+      throw new Error(`[markdown-twins] French blog twin leaked English boilerplate ${forbidden}: ${twin.path}`);
+    }
+  }
+}
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-06-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-06-02
+date_modified: 2026-08-19
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Outboard Prices Ontario (2026): CAD Guide
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-06-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -55,7 +56,7 @@ Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V
 **V10 Verado (350-400 HP), $46,000-$54,000+**
 Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
 
-**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and sea trial. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
+**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and lake test. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
 
 Getting a straight answer on Mercury outboard prices in Ontario used to mean calling four dealers, waiting on hold, and getting four different numbers, none of which told you what was actually included.
 
@@ -63,13 +64,13 @@ We got tired of that. So did our customers.
 
 Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
-Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
+Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and lake test. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
 
 ## How Mercury outboard pricing actually works in Canada
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices land at or below that number. HBW publishes both side by side: what Mercury says it's worth, and what we actually charge.
 
-We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
+We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." Active promotion details appear in the configurator after HBW updates them; the dated written quote controls the transaction.
 
 Some dealers post MSRP and call it a "price." We don't.
 
@@ -84,7 +85,7 @@ Every Mercury model name is a code. Here's how to decode it:
 - **L**, Long shaft (20")
 - **XL**, Extra long shaft (25")
 - **PT**, Power trim and tilt
-- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
+- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-complete-guide-2026)
 
 **Example:** A "9.9 ELHPT Command Thrust ProKicker EFI FourStroke" means: 9.9 HP, electric start, long shaft, tiller handle, power trim, Command Thrust gearcase, set up as a ProKicker trolling motor, with EFI and four-stroke architecture.
 
@@ -103,7 +104,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 ### Things to know about the mid-range tier
 
-**Command Thrust matters on pontoons.** If you're putting a 60-115 HP motor on a 20-24 ft pontoon, Command Thrust is the right call in almost every case. The premium is $300-$500 over the standard gearcase, and it pays for itself the first weekend the boat planes on the first try with a full load.
+**Command Thrust matters on some pontoons.** On a 60-115 HP pontoon, compare tube count, loaded weight, capacity plate, intended speed, watersports use, and propeller options. The configured price difference changes by motor, and the benefit must be judged on the actual hull rather than a promised payback.
 
 **Pontoon HP sizing reality.** A 20 ft pontoon needs at least 60 HP CT to get up on plane reliably with a normal cottage load. 90 CT is the sweet spot for most. 115 CT is for tritoons or anyone who tows tubes regularly. Underbuying the motor is one of the most common mistakes we see. The capacity plate is the ceiling, not a suggestion.
 
@@ -129,13 +130,13 @@ For the motor price itself, Premier and Bronze dealers are generally within a fe
 
 Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
 
-## Mercury promotional pricing and bonus warranty
+## Mercury promotional pricing and coverage
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms.
+Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.
 
 ## About the author
 
@@ -149,7 +150,7 @@ Three ways to get a real price:
 - **Look up a specific model:** mercuryrepower.ca/pricing-reference, live database with model codes, shaft options, stock status.
 - **Talk to us:** Call 905-342-2153 or submit a service request at hbw.wiki/service.
 
-We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. But we rig every motor in our shop, and every install includes an on-water test on Rice Lake before pickup. No exceptions.
+We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 
 ---
 
@@ -173,7 +174,7 @@ MSRP is Mercury Canada's suggested retail. Dealer price is what we actually sell
 
 ### Does the motor price include installation?
 
-No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
+No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and lake test are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
 
 ### Can I buy Mercury cheaper in the US?
 
@@ -181,7 +182,7 @@ Sometimes the headline price looks lower. But cross-border duty, brokerage, ship
 
 ### How long is the Mercury warranty?
 
-Standard is 3 years, concurrent, in Canada. Bonus coverage applies only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Eligible pleasure-use motors in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. Both run concurrently, not as six stacked years. Additional promotional coverage applies only when written terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.
 
 ### Can I order any model, or only what's in stock?
 
@@ -201,16 +202,15 @@ The dealer price shown is the motor price. Final out-the-door price depends on c
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

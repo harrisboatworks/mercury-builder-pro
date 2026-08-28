@@ -114,4 +114,47 @@ describe('GlobalCtaTracker customer handoffs', () => {
 
     expect(analytics.trackEvent).not.toHaveBeenCalled();
   });
+
+  it('tracks directions, service-request, and contact-page handoffs', () => {
+    render(
+      <>
+        <GlobalCtaTracker />
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=HBW"
+          onClick={(event) => event.preventDefault()}
+        >
+          Get directions
+        </a>
+        <a href="https://hbw.wiki/service" onClick={(event) => event.preventDefault()}>
+          Request service
+        </a>
+        <a href="/contact" onClick={(event) => event.preventDefault()}>
+          Contact us
+        </a>
+      </>,
+    );
+
+    fireEvent.click(screen.getByRole('link', { name: 'Get directions' }));
+    fireEvent.click(screen.getByRole('link', { name: 'Request service' }));
+    fireEvent.click(screen.getByRole('link', { name: 'Contact us' }));
+
+    expect(analytics.trackEvent).toHaveBeenNthCalledWith(1, 'directions_click', {
+      entry_page: '/pricing-reference',
+      page_category: 'money',
+      device_type: 'desktop',
+      entry_cta: 'untagged_directions_link',
+    });
+    expect(analytics.trackEvent).toHaveBeenNthCalledWith(2, 'appointment_click', {
+      entry_page: '/pricing-reference',
+      page_category: 'money',
+      device_type: 'desktop',
+      entry_cta: 'untagged_service_link',
+    });
+    expect(analytics.trackEvent).toHaveBeenNthCalledWith(3, 'contact_click', {
+      entry_page: '/pricing-reference',
+      page_category: 'money',
+      device_type: 'desktop',
+      entry_cta: 'untagged_contact_link',
+    });
+  });
 });
