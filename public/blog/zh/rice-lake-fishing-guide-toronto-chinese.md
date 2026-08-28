@@ -204,7 +204,13 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
 ## FAQs
 
@@ -237,4 +243,3 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
