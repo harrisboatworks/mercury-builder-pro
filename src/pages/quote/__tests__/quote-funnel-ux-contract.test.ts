@@ -250,14 +250,18 @@ describe('quote funnel UX contract', () => {
     expect(depositSource).toContain('before anything is ordered');
   });
 
-  it('gives the motor-search input a persistent accessible name', () => {
+  it('keeps the motor-search name aligned with its visible prompt', () => {
     const searchSource = read('src/components/motors/HybridMotorSearch.tsx');
     const inputMarkup = searchSource.match(/<input\b[\s\S]*?placeholder=""[\s\S]*?\/>/)?.[0];
+    const placeholderMarkup = searchSource.match(
+      /\{!query && \([\s\S]*?<div[\s\S]*?<\/div>[\s\S]*?\)\}/,
+    )?.[0];
 
     expect(inputMarkup).toBeTruthy();
     expect(inputMarkup).toContain('placeholder=""');
-
-    const accessibleName = inputMarkup?.match(/\baria-label="([^"]*)"/)?.[1]?.trim();
-    expect(accessibleName).toBeTruthy();
+    expect(inputMarkup).toContain(
+      "aria-label={isDark ? 'Search motors by HP, model, or feature' : 'Find a motor'}",
+    );
+    expect(placeholderMarkup).toContain('aria-hidden="true"');
   });
 });
