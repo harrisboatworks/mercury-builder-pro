@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, MapPin, Phone, MessageSquare, Mail } from 'lucide-react';
+import { ChevronRight, Clock, Phone, MessageSquare, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -11,6 +11,8 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { HarrisBoatWorksBrandPageSEO } from '@/components/seo/HarrisBoatWorksBrandPageSEO';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
+import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import { BUSINESS_GEO, COMPANY_INFO } from '@/lib/companyInfo';
 import {
   HARRIS_BOAT_WORKS_BRAND_FAQS,
@@ -32,6 +34,8 @@ const smsHref = `sms:${COMPANY_INFO.contact.sms.replace(/[^0-9+]/g, '')}`;
 const mailHref = `mailto:${COMPANY_INFO.contact.email}`;
 
 export default function HarrisBoatWorks() {
+  const { data: placeData, isLoading: hoursLoading, error: hoursError } = useGooglePlaceData();
+
   return (
     <div className="min-h-screen bg-repower-paper">
       <HarrisBoatWorksBrandPageSEO />
@@ -194,15 +198,17 @@ export default function HarrisBoatWorks() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-repower-gold" aria-hidden="true" />
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-repower-gold" aria-hidden="true" />
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-repower-navy-900/50">
                     Hours
                   </dt>
-                  <dd className="text-repower-navy-900/80 leading-relaxed">
-                    In-season hours: Monday to Saturday 8:00 a.m. to 5:00 p.m., Sunday 9:00 a.m.
-                    to 4:00 p.m. The marina is closed December 1 through April 1. Don't plan a
-                    winter visit or winter service work.
+                  <dd className="mt-1">
+                    <OpeningHoursDisplay
+                      openingHours={placeData?.openingHours}
+                      loading={hoursLoading}
+                      error={!!hoursError}
+                    />
                   </dd>
                 </div>
               </div>
@@ -318,8 +324,8 @@ export default function HarrisBoatWorks() {
               Choose your next step
             </h2>
             <p className="mx-auto mt-4 max-w-xl font-sans text-base leading-relaxed text-repower-cream/75">
-              Check the seasonal hours above before you drive. Call with a question, or use the
-              quote builder and service form if you already know what you need.
+              Check the Google-synced hours above before you drive. Call with a question, or use
+              the quote builder and service form if you already know what you need.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button

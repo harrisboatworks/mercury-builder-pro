@@ -17,6 +17,12 @@ vi.mock('@/components/maps/GoogleMapEmbed', () => ({
     </div>
   ),
 }));
+vi.mock('@/hooks/useGooglePlaceData', () => ({
+  useGooglePlaceData: () => ({ data: null, isLoading: false, error: null }),
+}));
+vi.mock('@/components/business/OpeningHoursDisplay', () => ({
+  OpeningHoursDisplay: () => <div>Google-synced hours</div>,
+}));
 
 describe('Harris Boat Works brand page render', () => {
   it('answers who, where, and the next action in the first screen of markup', () => {
@@ -39,7 +45,9 @@ describe('Harris Boat Works brand page render', () => {
     expect(html).toContain('https://hbw.wiki/service');
     expect(html).toContain('/blog/harris-boat-works-since-1947-rice-lake-institution');
     expect(html).toContain('not the family history');
-    expect(html).toContain('December 1');
+    expect(html).toContain('Google-synced hours');
+    expect(html).not.toContain('Monday to Saturday');
+    expect(html).not.toContain('Sunday 9:00');
     expect(html).toContain('Who is Harris Boat Works?');
     expect(html).toContain('data-latitude="44.121684"');
     expect(html).toContain('data-longitude="-78.241502"');
