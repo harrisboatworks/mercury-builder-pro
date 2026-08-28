@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Oakville Ontario HBW"
 description: "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury dealer oakville","mercury repower oakville","mercury outboard oakville ontario","boat motor service oakville"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
 
@@ -81,7 +81,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you drive.
@@ -152,7 +152,7 @@ Oakville customers cite three reasons: transparent online CAD pricing, Mercury P
 
 ### Can I do most of the buying process remotely?
 
-Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.
+Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Most Oakville customers do 90% remotely.
 
 ## Related guides
 

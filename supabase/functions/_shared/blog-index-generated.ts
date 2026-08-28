@@ -2381,7 +2381,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What does boat winterization cost at Harris Boat Works?",
-        "a": "HBW does not publish a generic winterization range. The current quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service."
+        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service."
       },
       {
         "q": "What does a proper Mercury winterization include?",
@@ -4803,7 +4803,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "toronto-to-rice-lake-drive-in-process",
     "title": "Toronto to Rice Lake: How HBW Drive-In Service Works",
-    "description": "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
+    "description": "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.",
     "category": "Service & Maintenance",
     "publishDate": "2026-05-15",
     "keywords": [
@@ -4823,7 +4823,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is drop-off and pickup one trip?",
-        "a": "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
+        "a": "If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service."
       },
       {
         "q": "Does HBW pick up or deliver boats?",

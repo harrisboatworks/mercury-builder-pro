@@ -464,7 +464,7 @@ export const locations: LocationPageData[] = [
     ],
     relatedCaseStudySlugs: ['aluminum-fishing-60-to-90-fourstroke', 'bass-boat-150-to-150-pro-xs'],
     faqs: [
-      { question: 'Do you offer Durham delivery?', answer: 'No. Pickup only at Gores Landing on Rice Lake.' },
+      { question: 'Can HBW pick up my boat in Durham Region?', answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location.' },
       { question: 'Do you do mobile service in Durham?', answer: 'No. Harris Boat Works is shop-based at Gores Landing, no on-site installs, no driveway service, no marina visits.' },
       { question: 'Can Durham customers finalize a Mercury order online?', answer: 'You build the quote online and we confirm the build by phone before pickup.' },
     ],
