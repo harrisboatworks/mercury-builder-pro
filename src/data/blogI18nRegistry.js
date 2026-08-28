@@ -134,6 +134,10 @@ export const BLOG_TRANSLATION_GROUPS = [
   { en: 'total-cost-of-owning-a-boat-ontario-2026', zh: 'boat-ownership-cost-ontario-chinese' },
   { zh: 'gta-chinese-rent-to-buy-boat-roadmap' },
   { en: 'first-time-boat-rental-rice-lake-guide', zh: 'first-boat-rental-rice-lake-chinese-guide' },
+  {
+    en: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
+    zh: 'mercury-fuel-octane-ethanol-chinese-guide',
+  },
 ];
 
 const routeToGroup = new Map();

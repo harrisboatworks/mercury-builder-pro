@@ -29,10 +29,6 @@ revenue_driver: repower
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
----
-
 ## Quick Answer
 
 For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
