@@ -29,7 +29,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -104,7 +104,7 @@ En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inic
 **Ventajas:** precio menor, la depreciación inicial ya ocurrió
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para reparaciones de motor, solamente damos servicio a Mercury y Mercruiser.
 
 Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
@@ -112,7 +112,7 @@ Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcacio
 
 Esta opción a menudo es pasada por alto pero puede ser la más inteligente. Si tienes un casco en buenas condiciones y el motor está al final de su vida útil, reemplazar solo el motor puede costar significativamente menos que comprar un conjunto nuevo, y te da un motor moderno con garantía completa.
 
-Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,220 CAD MSRP antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
+Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,030 CAD MSRP (115ELPT FourStroke, 1115F132D) antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
 
 ---
 
@@ -143,13 +143,13 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 78 años de operación continua en Rice Lake
+- 79 años de operación continua en Rice Lake
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
+Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
@@ -180,7 +180,7 @@ Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presu
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -216,7 +216,7 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
