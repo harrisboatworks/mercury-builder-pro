@@ -189,7 +189,11 @@ function checkDealerSeasonalClaims(slug, text, push) {
     if (match) push(check.rule, match[0]);
   }
   if (SEASONAL_STORAGE_DEALER_SLUGS.has(slug)) {
-    if (!/don['’]t offer indoor, heated, climate-controlled, summer, or year-round storage/i.test(text)) {
+    if (
+      !/don['’]t offer indoor, heated, climate-controlled, summer, or year-round storage/i.test(text) &&
+      !/do not offer indoor or heated boat storage[\s\S]{0,160}don['’]t offer climate-controlled, summer, or year-round storage/i.test(text) &&
+      !/do not offer indoor or heated boat storage[\s\S]{0,160}do not offer climate-controlled, summer, or year-round storage/i.test(text)
+    ) {
       push('storage-denial-required', 'Missing the approved outdoor-winter-storage boundary.');
     }
     if (!/when we reopen in early April/i.test(text)) {
@@ -209,12 +213,20 @@ const GTA_DRIVE_IN_REQUIRED = [
     rule: 'winter-closure',
   },
   {
-    rx: /does not pick up, deliver, haul, provide mobile service, coordinate transport, (?:or )?recommend transport providers/i,
-    rule: 'customer-transport-only',
+    rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+    rule: 'conditional-boat-pickup',
+  },
+  {
+    rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+    rule: 'no-delivery-or-mobile',
   },
 ];
 
 const GTA_DRIVE_IN_FORBIDDEN = [
+  {
+    rx: /does not pick up, deliver, haul/i,
+    rule: 'no-stale-hard-no-pickup',
+  },
   {
     rx: /commercial boat transport services|work with several Ontario marine transport services/i,
     rule: 'no-third-party-transport',
@@ -241,7 +253,7 @@ const ARTICLE_CONTRACTS = {
   'winter-storage-near-toronto-hbw': {
     required: [
       {
-        rx: /outdoor shrinkwrap storage only/i,
+        rx: /offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
         rule: 'storage-outdoor-only',
       },
       {
@@ -249,8 +261,12 @@ const ARTICLE_CONTRACTS = {
         rule: 'winter-closure',
       },
       {
-        rx: /does not provide pickup, delivery, hauling, mobile service, or transport referrals/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
       },
     ],
     forbidden: [
@@ -295,11 +311,11 @@ const ARTICLE_CONTRACTS = {
   'winter-boat-storage-shrinkwrap-vs-indoor-ontario': {
     required: [
       {
-        rx: /HBW offers outdoor shrinkwrap storage only/i,
+        rx: /HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
         rule: 'storage-outdoor-only',
       },
       {
-        rx: /don't offer indoor, heated, climate-controlled, or year-round storage/i,
+        rx: /do not offer indoor or heated boat storage[\s\S]{0,80}don't offer climate-controlled or year-round storage/i,
         rule: 'no-indoor-or-year-round-storage',
       },
       {
@@ -307,8 +323,12 @@ const ARTICLE_CONTRACTS = {
         rule: 'winter-closure',
       },
       {
-        rx: /don't provide pickup, delivery, hauling, mobile service, or transport referrals/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
       },
       {
         rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
@@ -357,11 +377,11 @@ const ARTICLE_CONTRACTS = {
   'outdoor-boat-storage-shrinkwrap-rice-lake': {
     required: [
       {
-        rx: /offers outdoor winter boat storage with shrinkwrap/i,
+        rx: /offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
         rule: 'storage-outdoor-only',
       },
       {
-        rx: /do not offer indoor, heated, climate-controlled, or year-round storage/i,
+        rx: /do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled or year-round storage/i,
         rule: 'no-indoor-or-year-round-storage',
       },
       {
@@ -369,15 +389,19 @@ const ARTICLE_CONTRACTS = {
         rule: 'winter-closure',
       },
       {
-        rx: /does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
       },
       {
         rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
         rule: 'commissioning-price-canon',
       },
       {
-        rx: /battery is healthy, disconnected[\s\S]{0,120}Battery removal is not a universal requirement/i,
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan/,
         rule: 'battery-disconnect-not-removal',
       },
     ],
@@ -427,11 +451,15 @@ const ARTICLE_CONTRACTS = {
         rule: 'mercury-service-only',
       },
       {
-        rx: /does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
       },
       {
-        rx: /outdoor winter storage with shrinkwrap[\s\S]{0,180}does not offer indoor, heated, climate-controlled, summer, or year-round storage/i,
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled, summer, or year-round storage/i,
         rule: 'storage-outdoor-only',
       },
       {
@@ -443,7 +471,7 @@ const ARTICLE_CONTRACTS = {
         rule: 'commissioning-price-canon',
       },
       {
-        rx: /may remain in place when disconnected[\s\S]{0,160}removal is not a universal requirement/i,
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan/,
         rule: 'battery-disconnect-not-removal',
       },
       {
@@ -497,8 +525,8 @@ const ARTICLE_CONTRACTS = {
   'boat-winterization-cost-ontario-2026': {
     required: [
       {
-        rx: /does not publish a one-price-fits-all winterization range/i,
-        rule: 'no-unapproved-winterization-pricing',
+        rx: /publishes its current 2026[–-]27 winterization and storage rates/i,
+        rule: 'canonical-winterization-pricing',
       },
       {
         rx: /spring commissioning is included for HBW winter-storage customers and is \$99 for non-storage customers/i,
@@ -509,15 +537,19 @@ const ARTICLE_CONTRACTS = {
         rule: 'winter-closure',
       },
       {
-        rx: /does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
       },
       {
-        rx: /outdoor winter storage with shrinkwrap only[\s\S]{0,180}do not offer indoor, heated, climate-controlled, summer, or year-round storage/i,
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
+      },
+      {
+        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled, summer, or year-round storage/i,
         rule: 'storage-outdoor-only',
       },
       {
-        rx: /healthy battery may remain in the boat[\s\S]{0,180}Removal is not a universal HBW requirement/i,
+        rx: /A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan[\s\S]{0,80}Removal is not a universal HBW requirement/,
         rule: 'battery-disconnect-not-removal',
       },
       {
@@ -525,7 +557,7 @@ const ARTICLE_CONTRACTS = {
         rule: 'winterization-versus-repair-scope',
       },
       {
-        rx: /584 winterizations from August through November 2025/i,
+        rx: /584 completed winterization records from August through November 2025/,
         rule: 'verified-winterization-volume',
       },
       {
@@ -595,8 +627,12 @@ const ARTICLE_CONTRACTS = {
         rule: 'winter-closure',
       },
       {
-        rx: /does not provide boat pickup, hauling, delivery, or mobile repower service/i,
-        rule: 'customer-transport-only',
+        rx: /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./,
+        rule: 'conditional-boat-pickup',
+      },
+      {
+        rx: /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport/,
+        rule: 'no-delivery-or-mobile',
       },
       {
         rx: /HBW does not buy used motors outright/i,
@@ -724,6 +760,18 @@ function checkArticleContract(slug, text, push) {
   }
 }
 
+// Keep in sync with scripts/check-blog-output-hygiene.ts.
+// Retired global denials that HBW never picks up boats. Motor pickup-only,
+// customer collection, no-delivery / no-mobile boundaries, and the Dec 1-Apr 1
+// closure remain allowed.
+const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
+  /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
+
+function checkStaleBoatPickupPolicy(text, push) {
+  const match = text.match(STALE_HBW_BOAT_PICKUP_DENIAL_RX);
+  if (match) push('stale-hard-no-boat-pickup', match[0]);
+}
+
 
 // ----- Drive ----------------------------------------------------------------
 
@@ -742,17 +790,19 @@ for (const file of BLOG_FILES) {
     // body answer cannot leave a contradictory structured answer behind.
     checkDealerSeasonalClaims(a.slug, a.raw, localPush);
     checkArticleContract(a.slug, text, localPush);
+    checkStaleBoatPickupPolicy(a.raw, localPush);
   }
 }
 
 // Generated Markdown twins are public content surfaces too. Scan every twin
-// so a stale or hand-edited dealer page cannot bypass the canonical source
-// checks, including article body copy and rendered FAQ content.
+// so a stale or hand-edited page cannot bypass the canonical source checks,
+// including dealer seasonal claims and the boat-pickup policy.
 for (const file of BLOG_TWIN_FILES) {
   const slug = file.slice('public/blog/'.length, -'.md'.length);
   const text = readFileSync(file, 'utf8');
   const localPush = (rule, snippet) => push(file, slug, rule, snippet);
   checkDealerSeasonalClaims(slug, text, localPush);
+  checkStaleBoatPickupPolicy(text, localPush);
 }
 
 const categoryCtaFile = 'src/components/blog/CategoryCTA.tsx';

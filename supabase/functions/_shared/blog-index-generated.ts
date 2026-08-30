@@ -289,7 +289,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury 100-hour service cost in Ontario?",
-        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can…"
+        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours."
       },
       {
         "q": "Is the 100-hour service the same as winterization?",
@@ -2032,7 +2032,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "When will 2027 Mercury pricing be available?",
-        "a": "Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers."
+        "a": "Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers."
       },
       {
         "q": "What's the best Mercury for a fishing boat on Rice Lake?",
@@ -2289,7 +2289,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the current financing rate?",
-        "a": "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms."
+        "a": "The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
       },
       {
         "q": "What's the difference between the standing rate and a \"promo rate\"?",
@@ -2381,7 +2381,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What does boat winterization cost at Harris Boat Works?",
-        "a": "HBW does not publish a generic winterization range. The current quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service."
+        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service."
       },
       {
         "q": "What does a proper Mercury winterization include?",
@@ -2393,7 +2393,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can the battery stay in the boat over winter?",
-        "a": "A healthy battery may remain when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. The battery must not be left connected where parasitic loads can discharge it."
+        "a": "A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The battery must not be left connected where parasitic loads can discharge it."
       }
     ]
   },
@@ -2752,7 +2752,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need to bring my boat to HBW for the walk-around?",
-        "a": "Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first, but customers arrange transport to and from the shop. HBW does not provide boat pickup, hauling, delivery, or mobile service."
+        "a": "Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site…"
       },
       {
         "q": "What happens if my transom has soft spots?",
@@ -3073,7 +3073,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Does HBW offer indoor or heated boat storage?",
-        "a": "No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage."
+        "a": "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage."
       },
       {
         "q": "Can I access my boat at HBW during winter?",
@@ -3085,7 +3085,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does HBW remove every battery for storage?",
-        "a": "No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions."
+        "a": "No. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control."
       }
     ]
   },
@@ -3242,7 +3242,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does HBW pick up or deliver boats in the GTA?",
-        "a": "No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "Does HBW ship Mercury outboards?",
@@ -3311,7 +3311,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does HBW arrange transport from Toronto or the GTA?",
-        "a": "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "Can I plan a repower while HBW is closed?",
@@ -3336,7 +3336,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Does HBW pick up or deliver GTA boats?",
-        "a": "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "How long does Mercury service take at HBW?",
@@ -3402,15 +3402,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does winter boat storage cost at HBW?",
-        "a": "The current price depends on boat length, trailer and shrinkwrap requirements, engine configuration, and the approved winterization scope. HBW offers outdoor shrinkwrap storage only. Request the current written scope and price at hbw.wiki/service."
+        "a": "The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current wri…"
       },
       {
         "q": "How do I get my boat from the GTA to HBW for storage?",
-        "a": "Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, transport referrals, or third-party transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "Does HBW offer indoor or heated winter storage?",
-        "a": "No. HBW offers outdoor shrinkwrap storage only."
+        "a": "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage."
       },
       {
         "q": "Do I need to do anything if my boat is shrinkwrapped and winterized?",
@@ -3695,7 +3695,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is 90 HP enough for a 22 ft pontoon?",
-        "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase sw…"
+        "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pull…"
       },
       {
         "q": "Why do pontoons need more HP than runabouts?",
@@ -3742,7 +3742,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
     "title": "Mercury Outboard Octane and Ethanol Guide for Ontario",
-    "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+    "description": "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.",
     "category": "Service",
     "publishDate": "2026-04-11",
     "keywords": [
@@ -3764,7 +3764,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is premium gasoline ethanol-free in Ontario?",
-        "a": "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump."
+        "a": "No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but ass…"
       },
       {
         "q": "Does Harris Boat Works sell ethanol-free marine gas?",
@@ -3949,11 +3949,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Does HBW offer indoor or heated boat storage?",
-        "a": "No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage."
+        "a": "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage."
       },
       {
         "q": "Does HBW pick up or deliver boats for storage?",
-        "a": "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "Can I access my stored boat during winter?",
@@ -4327,7 +4327,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I get a quote and place a Mercury order without visiting?",
-        "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and the Lake Test, then trailer it home."
+        "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You…"
       }
     ]
   },
@@ -4408,7 +4408,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I do most of the buying process remotely?",
-        "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely."
+        "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Most Oakville customers do 90% remotely."
       }
     ]
   },
@@ -4435,7 +4435,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I quote and order remotely?",
-        "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test. Service is drop-off, we do not pick up, deliver, or arrange hauling."
+        "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and the Lake Test, or ask about boat pickup. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party trans…"
       }
     ]
   },
@@ -4796,14 +4796,14 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does HBW pick up or deliver boats?",
-        "a": "No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       }
     ]
   },
   {
     "slug": "toronto-to-rice-lake-drive-in-process",
     "title": "Toronto to Rice Lake: How HBW Drive-In Service Works",
-    "description": "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
+    "description": "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements.",
     "category": "Service & Maintenance",
     "publishDate": "2026-05-15",
     "keywords": [
@@ -4823,11 +4823,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is drop-off and pickup one trip?",
-        "a": "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
+        "a": "If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service."
       },
       {
         "q": "Does HBW pick up or deliver boats?",
-        "a": "No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport."
       },
       {
         "q": "How long will HBW keep the boat?",
@@ -5221,7 +5221,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does HBW offer pickup or delivery for Cobourg customers?",
-        "a": "No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs."
+        "a": "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. Trailer parking is available on site for drop-offs."
       }
     ]
   },
@@ -5283,7 +5283,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I store my boat at HBW through the winter if I am based in Lindsay?",
-        "a": "Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April."
+        "a": "Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April."
       }
     ]
   },
@@ -5659,7 +5659,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the current promotional APR through HBW?",
-        "a": "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
+        "a": "The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms."
       },
       {
         "q": "Does HBW require a down payment to finance a Mercury repower?",

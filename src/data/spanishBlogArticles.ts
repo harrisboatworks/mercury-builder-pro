@@ -12,7 +12,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-15',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
@@ -29,7 +29,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -104,7 +104,7 @@ En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inic
 **Ventajas:** precio menor, la depreciación inicial ya ocurrió
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para reparaciones de motor, solamente damos servicio a Mercury y Mercruiser.
 
 Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
@@ -112,7 +112,7 @@ Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcacio
 
 Esta opción a menudo es pasada por alto pero puede ser la más inteligente. Si tienes un casco en buenas condiciones y el motor está al final de su vida útil, reemplazar solo el motor puede costar significativamente menos que comprar un conjunto nuevo, y te da un motor moderno con garantía completa.
 
-Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,220 CAD MSRP antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
+Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,030 CAD MSRP (115ELPT FourStroke, 1115F132D) antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
 
 ---
 
@@ -130,7 +130,7 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 | Mantenimiento / servicio | $200–$600 CAD |
 | Slip de marina / amarre | $1,000–$3,000+ CAD |
 
-Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+Harris Boat Works tiene **584 registros de preparación invernal completados entre agosto y noviembre de 2025**, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
 **Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
@@ -143,13 +143,13 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 78 años de operación continua en Rice Lake
+- 79 años de operación continua en Rice Lake
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
+Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
@@ -180,7 +180,7 @@ Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presu
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -216,7 +216,7 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
@@ -379,14 +379,14 @@ harrisboatworks.ca | 905-342-2153
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Mantenimiento',
     readTime: '11 min',
     keywords: ['preparar motor fuera de borda invierno Ontario', 'winterization motor Mercury', 'preparación invernal bote Ontario'],
     content: `### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario cubre seis pasos esenciales: estabilizar el combustible, hacer el fogging (lubricación interna), drenar el aceite de engranajes (gear lube), retirar y almacenar la batería, engrasar las conexiones y puntos de articulación, y hacer un enjuague con agua dulce. Omitir cualquiera de estos pasos puede resultar en una reparación costosa en primavera. Para reservar su preparación invernal, visite hbw.wiki/service.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -394,7 +394,7 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
 
 ---
 
@@ -442,11 +442,11 @@ Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltra
 
 **¿Qué pasa si lo omite?** Carcasa agrietada por congelación, reparación mayor.
 
-### 4. Batería: retiro y almacenamiento
+### 4. Batería: plan aprobado
 
-No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daño permanente. Retírela, limpie los terminales, y guárdela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (*trickle charger*). Una batería bien almacenada dura dos a tres veces más.
+Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. El retiro no es un requisito universal de HBW.
 
-**¿Qué pasa si lo omite?** Batería muerta o dañada permanentemente, reemplazo costoso.
+**¿Qué pasa si la deja conectada?** Las cargas parásitas pueden descargarla.
 
 ### 5. Engrase de conexiones y puntos de articulación
 
@@ -469,7 +469,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
 | Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
-| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo necesario |
+| Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
 | Enjuague con agua dulce | Elimina depósitos minerales | Corrosión acelerada del sistema de enfriamiento |
 
@@ -479,7 +479,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-No espere demasiado: los talleres se llenan rápido al inicio y al final de la temporada.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -487,7 +487,7 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
 
 ---
 
@@ -506,7 +506,7 @@ La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consul
 Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
 
 **¿Cuándo es el mejor momento para hacer la preparación invernal?**
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 **¿Cuánto tiempo tarda la preparación invernal?**
 Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
@@ -527,8 +527,8 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
-      { question: '¿Cuándo debo reservar?', answer: 'Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido después de Thanksgiving.' },
-      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. Manejamos 311 contratos de almacenamiento por año, interior y exterior.' },
+      { question: '¿Cuándo debo reservar?', answer: 'Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
+      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.' },
       { question: '¿Qué pasa si no hago la preparación invernal?', answer: 'En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño interno severo por corrosión o agua congelada, reparaciones que pueden costar miles de dólares.' },
     ],
   },
@@ -839,12 +839,6 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-*End of file, 12 posts total*
-
-
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.' },

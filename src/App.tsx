@@ -55,6 +55,7 @@ const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
 const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
+const QuoteConsultationDocumentPage = lazy(() => import("@/pages/quote/QuoteConsultationDocumentPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
@@ -120,6 +121,7 @@ const AvatorLanding = lazy(() => import("./pages/AvatorLanding"));
 const Mercury99KickerGuide = lazy(() => import("./pages/Mercury99KickerGuide"));
 const About = lazy(() => import("./pages/About"));
 const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
+const HarrisBoatWorks = lazy(() => import("./pages/HarrisBoatWorks"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
@@ -278,6 +280,7 @@ function AnimatedRoutes() {
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />
+        <Route path="/quote/document" element={<QuoteConsultationDocumentPage />} />
         <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
         
         {/* User Account Routes */}
@@ -583,6 +586,7 @@ function AnimatedRoutes() {
         {/* About Page */}
         <Route path="/about" element={<About />} />
         <Route path="/about/jay-harris" element={<AboutJayHarris />} />
+        <Route path="/harris-boat-works" element={<HarrisBoatWorks />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />

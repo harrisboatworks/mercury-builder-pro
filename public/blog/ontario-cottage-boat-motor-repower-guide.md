@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
@@ -126,7 +126,7 @@ We look at trailers as part of cottage repower projects.
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starting point on motor and rigging costs. If you want to talk through your specific hull before you build, call us at 905-342-2153.
 
-HBW is drop-off only for repower projects. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also bring the boat to our Gores Landing shop.
 
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
@@ -168,7 +168,7 @@ Usually no. Old Evinrudes and older Mercurys have limited practical value as bac
 
 ### How do I get my cottage boat to HBW for a repower?
 
-HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also bring the boat to our Gores Landing shop.
 
 ## Related guides
 

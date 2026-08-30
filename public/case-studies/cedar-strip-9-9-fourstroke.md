@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 case_study_id: CS04
 slug: cedar-strip-9-9-fourstroke
 boat_type: "Small utility / cedar-strip boat"
@@ -16,7 +16,7 @@ is_illustrative: true
 
 # Cedar-strip utility setup: small 9.9HP FourStroke
 
-A lightweight small-horsepower package for cottage and protected-water use. Real photography still pending.
+A lightweight small-horsepower package for cottage and protected-water use.
 
 > **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 

@@ -117,6 +117,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.mercuryrepower.ca/harris-boat-works</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.mercuryrepower.ca/tools</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -1092,7 +1098,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1335,7 +1341,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1345,7 +1351,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1388,7 +1394,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1398,7 +1404,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1408,7 +1414,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1444,7 +1450,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1538,7 +1544,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1558,13 +1564,16 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp</image:loc>
       <image:title><![CDATA[Mercury Outboard Octane and Ethanol Guide for Ontario]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide</loc>
@@ -1625,7 +1634,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1920,7 +1929,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2063,7 +2072,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2073,7 +2082,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2750,7 +2759,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake" />
@@ -2837,6 +2846,15 @@
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario" />
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide</loc>
@@ -4570,7 +4588,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Mississauga HBW"
 description: "What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury dealer mississauga","mercury repower mississauga","mercury outboard mississauga ontario","boat motor dealer mississauga","harris boat works mississauga customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw
 
@@ -83,7 +83,7 @@ Full repower: motor, rigging, controls, throttle and shift cables, prop selectio
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number you see is real.
@@ -162,7 +162,7 @@ Mississauga customers cite three reasons: transparent online CAD pricing (no cal
 
 ### Can I get a quote and place a Mercury order without visiting?
 
-Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and the Lake Test, then trailer it home.
+Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also trailer the boat to us for install and the Lake Test.
 
 ## Related guides
 

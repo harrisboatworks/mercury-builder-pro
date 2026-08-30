@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-08-07
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Financing Ontario (2026): Rates"
 description: "How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-08-07
+date_modified: 2026-08-26
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last reviewed:** 2026-08-07  
+**Last reviewed:** 2026-08-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
@@ -39,9 +39,9 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 
 ## Who this is for
 
-Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers are willing to trailer to us at Gores Landing (service is drop-off only).
+Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers can trailer to us at Gores Landing, or ask about boat pickup.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## How HBW financing actually works
 
@@ -151,7 +151,7 @@ Yes. HBW arranges eligible applications through DealerPlan and participating Can
 
 ### What's the current financing rate?
 
-The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms.
+The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms.
 
 ### What's the difference between the standing rate and a "promo rate"?
 

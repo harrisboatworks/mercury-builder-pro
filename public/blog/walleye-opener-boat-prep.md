@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
@@ -114,7 +114,7 @@ Walleye opener often means early starts and late returns in low light. Nav light
 
 #### Want HBW to do the opener prep?
 
-We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at /service or call (905) 342-2153.
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -226,7 +226,7 @@ Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blo
 
 ### Can HBW pick up my boat for opener prep?
 
-No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. [Contact us](/contact) to book a service slot.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
 
 ### What's the most common opener morning failure?
 

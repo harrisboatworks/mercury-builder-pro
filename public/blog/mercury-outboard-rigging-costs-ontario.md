@@ -29,10 +29,6 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
----
-
 ## Quick Answer
 
 Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.

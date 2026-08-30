@@ -31,8 +31,6 @@ revenue_driver: repower
 
 > **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's dealer-installed list as of our last review starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
-
 ---
 
 ## Full Article

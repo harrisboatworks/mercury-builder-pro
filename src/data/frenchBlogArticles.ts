@@ -11,7 +11,7 @@ export const frenchBlogArticles: BlogArticle[] = [
     imageAlt: 'Harris Boat Works, concessionnaire Mercury Premier à Gores Landing en Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Concessionnaire Mercury',
     readTime: '5 min',
@@ -52,7 +52,7 @@ Le statut du concessionnaire ne remplace toutefois pas la vérification du batea
 
 ## Service, hivernisation et entreposage
 
-Les travaux sont pris selon le principe du premier arrivé, premier servi. Pour l'hivernisation ou l'entreposage, il n'est pas nécessaire de réserver une place à la fin de l'été. La pratique recommandée est de remplir la [demande de service](https://hbw.wiki/service) une ou deux semaines avant le dépôt prévu. Harris Boat Works ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ## Garantie Mercury
 
@@ -77,7 +77,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
       },
       {
         question: 'Comment planifier une hivernisation ou un entreposage?',
-        answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Il n'est pas nécessaire de réserver une place des mois à l'avance. Remplissez la demande de service une ou deux semaines avant le dépôt prévu. L'entreprise ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.",
+        answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.",
       },
       {
         question: 'Expédiez-vous ou livrez-vous les moteurs?',
@@ -438,14 +438,14 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: 'Entretien',
     readTime: '8 min',
     keywords: ['hivernisation moteur Mercury Ontario', 'entretien moteur hors-bord hiver', 'préparation hivernale bateau Ontario', 'winterization Mercury'],
     content: `### Réponse rapide
 
-En Ontario, la fenêtre d'hivernisation se situe généralement entre octobre et novembre. Pour un moteur Mercury hors-bord, les étapes essentielles sont : stabiliser le carburant, lubrifier l'intérieur du moteur (fogging), vidanger et remplacer l'huile d'engrenage, retirer et entreposer la batterie, et graisser tous les raccords et points d'articulation. Si vous manquez une de ces étapes, vous risquez des dommages coûteux au printemps. Harris Boat Works réalise 584 hivernisations par année.
+Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -483,9 +483,9 @@ La lubrification interne consiste à vaporiser une huile protectrice dans les cy
 
 L'huile du pied de moteur doit être vidangée et remplacée chaque automne. Si de l'eau s'est infiltrée dans la boîte via des joints usés, ce qui arrive plus souvent qu'on ne le croit, elle va geler, se dilater, et fissurer le carter. Une vidange régulière permet aussi de détecter si l'huile est laiteuse ou grisâtre, signe d'une infiltration d'eau à corriger.
 
-### 4. Batterie : retrait et entreposage
+### 4. Batterie : plan approuvé
 
-Ne laissez pas votre batterie dans le bateau pendant l'hiver. Les batteries marines exposées au gel se déchargent rapidement et peuvent subir des dommages permanents. Retirez-la, nettoyez les bornes, et entreposez-la dans un endroit hors gel, idéalement sur un chargeur de maintien (trickle charger). Une batterie bien entreposée dure deux à trois fois plus longtemps.
+Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Le retrait n'est pas une exigence universelle de HBW.
 
 ### 5. Graissage des raccords et points d'articulation
 
@@ -509,7 +509,7 @@ Pour la mise à l'eau au printemps, la fenêtre habituelle se situe entre la mi-
 
 Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'expérience, les bons produits, et que vous ne sautez aucune étape. Les oublis les plus courants : la lubrification interne (fogging), la vérification des infiltrations d'eau dans le pied de moteur, et le graissage complet de tous les points d'articulation.
 
-À Harris Boat Works, nous effectuons 584 hivernisations par année. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
+À Harris Boat Works, nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
 
 Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
@@ -527,7 +527,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 ## Questions fréquentes
 
 **Quand dois-je hiverniser mon moteur Mercury en Ontario?** 
-Entre la mi-octobre et la fin novembre pour la plupart des régions. N'attendez pas la première gelée sévère, les places se remplissent en octobre.
+Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
 
 **Puis-je hiverniser moi-même mon moteur Mercury?** 
 Oui, si vous avez l'expérience et les bons produits. Les étapes les plus souvent omises par les propriétaires DIY : le fogging et la vidange d'huile d'engrenage. Ne les sautez pas.
@@ -536,10 +536,10 @@ Oui, si vous avez l'expérience et les bons produits. Les étapes les plus souve
 L'éthanol absorbe l'humidité et se sépare du carburant lors d'un stockage prolongé. Ce mélange eau-éthanol peut colmater les injecteurs ou le carburateur et causer de la corrosion interne. Carburant sans éthanol ou stabilisant de qualité, ou idéalement les deux.
 
 **Est-ce que Harris Boat Works offre le service d'hivernisation?** 
-Oui. Nous effectuons 584 hivernisations par année à Gores Landing. Soumettez votre demande à [hbw.wiki/service](https://hbw.wiki/service) le plus tôt possible; l'automne est très occupé.
+Oui. Nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025 à Gores Landing. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 **Est-ce que je dois enlever ma batterie pour l'hiver?** 
-Absolument. Une batterie marine laissée dans le bateau par temps de gel se décharge et peut subir des dommages permanents. Retirez-la, entreposez-la hors gel, et idéalement mettez-la sur un chargeur de maintien.
+Pas nécessairement. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi.
 
 ---
 
@@ -549,8 +549,7 @@ Absolument. Une batterie marine laissée dans le bateau par temps de gel se déc
 
 ## Appel à l'action
 
-**N'attendez pas la dernière minute.** Les places pour l'hivernisation se remplissent en octobre. 
-Soumettez votre demande de service en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
+Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -569,18 +568,18 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       },
       {
         question: 'Quand devrais-je demander mon hivernisation?',
-        answer: 'Idéalement en septembre ou début octobre. Les places se remplissent vite après l\'Action de grâces.'
+        answer: 'Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d\'ouverture. La marina est fermée du 1er décembre au 1er avril.'
       },
       {
         question: 'Est-ce que Harris Boat Works offre aussi l\'entreposage?',
-        answer: 'Oui. Nous gérons 311 contrats d\'entreposage par année , intérieur et extérieur.'
+        answer: 'Oui. HBW offre l\'entreposage extérieur avec pellicule rétractable professionnelle, l\'entreposage extérieur non couvert et le service de pellicule rétractable seulement. Nous n\'offrons pas d\'entreposage intérieur ou chauffé.'
       }
     ],
     howToSteps: [
       { name: 'Stabiliser le carburant', text: 'Ajoutez un stabilisant approuvé dans votre réservoir et faites tourner le moteur quelques minutes pour faire circuler le produit.' },
       { name: 'Lubrification interne (fogging)', text: 'Vaporisez une huile protectrice dans les cylindres pendant que le moteur tourne, puis arrêtez-le.' },
       { name: 'Vidanger l\'huile d\'engrenage', text: 'Vidangez et remplacez l\'huile du pied de moteur pour prévenir les dommages causés par l\'eau infiltrée.' },
-      { name: 'Retirer et entreposer la batterie', text: 'Retirez la batterie, nettoyez les bornes, entreposez hors gel sur un chargeur de maintien.' },
+      { name: 'Plan de batterie approuvé', text: 'Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d\'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d\'entreposage approuvé font foi.' },
       { name: 'Graisser les raccords', text: 'Appliquez de la graisse marine sur le gouvernail, la timonerie, les câbles et les points d\'articulation.' },
       { name: 'Rinçage à l\'eau douce', text: 'Rincez le circuit de refroidissement si votre embarcation a été utilisée en eau salée ou calcaire.' }
     ]

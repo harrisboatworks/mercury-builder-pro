@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
@@ -4309,7 +4310,7 @@ const HUB_DEFS = [
       { question: 'How long does a Mercury last with proper maintenance?', answer: 'There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim.' },
       { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
       { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-      { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+      { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
       { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service.' },
     ],
   },
@@ -4630,7 +4631,7 @@ const REPOWER_COST_EXTRA = () => commercialBodyHtml({
 
 const REPOWER_PROCESS_FAQS = [
   { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
-  { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
+  { q: 'Do I need to bring my boat to Rice Lake?', a: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to 5369 Harris Boat Works Rd, Gores Landing. HBW does not deliver boats, ship motors, or offer mobile, dockside, or on-site service.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
   { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
   { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
@@ -5066,6 +5067,7 @@ const routes = [
     schemas: [aboutPageSchema()],
     extraNoscript: ABOUT_EXTRA
   },
+  getHarrisBoatWorksBrandPagePrerender(),
   {
     path: '/about/jay-harris',
     title: 'Jay Harris, Owner of Harris Boat Works (3rd Generation)',
@@ -5884,6 +5886,28 @@ function computePageId(pathname) {
 
 function stamp(route) {
   let html = shell;
+  if (route.stripInheritedShellSeo) {
+    html = html.replace(
+      /(<script\b[^>]*\bdata-rh=["']true["'][^>]*\btype=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,
+      (match, openTag, json, closeTag) => {
+        try {
+          const parsed = JSON.parse(json);
+          if (!Array.isArray(parsed?.['@graph'])) return match;
+          const inheritedHomepageIds = new Set([
+            `${SITE_URL}/#webpage`,
+            `${SITE_URL}/#breadcrumb`,
+          ]);
+          const graph = parsed['@graph'].filter(
+            (node) => !inheritedHomepageIds.has(node?.['@id'])
+          );
+          return `${openTag}${JSON.stringify({ ...parsed, '@graph': graph })}${closeTag}`;
+        } catch {
+          return match;
+        }
+      }
+    );
+    html = html.replace(/\s*<noscript>[\s\S]*?<\/noscript>/gi, '');
+  }
   const langCode = detectLang(route.path);
   const dirAttr = route.path === '/blog/ur' || route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
@@ -5990,6 +6014,12 @@ function stamp(route) {
       { re: /<meta\s+property=["']og:image:height["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:height" content="630" />' },
       { re: /<meta\s+property=["']og:image:type["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:type" content="image/webp" />' },
     );
+  }
+  if (route.ogImageAlt) {
+    socialReplacements.push({
+      re: /<meta\s+property=["']og:image:alt["'][^>]*>/gi,
+      tag: `<meta data-rh="true" property="og:image:alt" content="${escapeHtml(route.ogImageAlt)}" />`,
+    });
   }
   for (const { re, tag } of socialReplacements) {
     if (re.test(html)) {
@@ -6098,6 +6128,7 @@ const staticSitemapEntries = [
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
   { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
@@ -7195,7 +7226,7 @@ verifyMd({
   label: 'Mercury service and maintenance index',
   requireSubstrings: [
     'content_type: service_index',
-    'service_dropoff_only: true',
+    'boat_pickup_available: generally',
     'mobile_service: false',
     'Mercury and MerCruiser',
     '100-hour',

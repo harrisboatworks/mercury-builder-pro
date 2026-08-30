@@ -1,4 +1,3 @@
-#!/usr/bin/env bun
 /**
  * Verify that every recently-updated blog article:
  *   1) is sitemap-eligible (isArticleSitemapEligible === true)
@@ -8,8 +7,8 @@
  * Exits non-zero if any check fails.
  *
  * Usage:
- *   bun scripts/verify-updated-hero-eligibility.ts
- *   bun scripts/verify-updated-hero-eligibility.ts slug-a slug-b ...
+ *   npm run verify:updated-hero-eligibility
+ *   npm run verify:updated-hero-eligibility -- slug-a slug-b ...
  */
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';

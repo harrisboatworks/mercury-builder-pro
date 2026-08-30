@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Sparkles } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
+import { getMobileLauncherBottom } from './chatLayout';
 
 interface AIChatButtonProps {
   onOpenChat: () => void;
@@ -10,10 +12,13 @@ interface AIChatButtonProps {
 }
 
 export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }) => {
-  const isMobileOrTablet = useIsMobileOrTablet();
+  const location = useLocation();
+  const isSmallScreen = useIsMobileOrTablet();
   const { unreadCount, isLoading } = useAIChat();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(isOpen);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPulse(false), 10000);
@@ -24,23 +29,37 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     if (hasInteracted) setShowPulse(false);
   }, [hasInteracted]);
 
+  useEffect(() => {
+    const wasOpen = wasOpenRef.current;
+    wasOpenRef.current = isOpen;
+    if (!wasOpen || isOpen) return;
+    const frame = requestAnimationFrame(() => buttonRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [isOpen]);
+
   const handleClick = () => {
     setHasInteracted(true);
     onOpenChat();
   };
 
-  // Hide on mobile/tablet (handled by UnifiedMobileBar) or when chat is open
-  if (isMobileOrTablet || isOpen) return null;
+  if (isOpen) return null;
+
+  const positionClass = isSmallScreen ? 'left-4' : 'right-4';
+  const bottom = isSmallScreen
+    ? getMobileLauncherBottom(location.pathname)
+    : '1rem';
 
   return (
     <motion.button
+      ref={buttonRef}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
       onClick={handleClick}
-      className="fixed bottom-4 right-4 z-40 flex items-center justify-center h-12 w-12 bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group"
-      aria-label="Open AI Chat Assistant"
+      style={{ bottom }}
+      className={`fixed ${positionClass} z-40 flex items-center justify-center h-12 w-12 bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group`}
+      aria-label="Open Mercury Expert chat"
     >
       {showPulse && (
         <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />
