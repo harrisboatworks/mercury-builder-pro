@@ -3911,13 +3911,15 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
         );
       }
       return (
+        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong> This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.</aside>' : '') +
         `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
         `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
-        `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
-        `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
+        `<section><h2>${s.isIllustrative ? 'Why this configuration may fit' : 'Why it worked'}</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
+        (s.isIllustrative
+          ? `<section><h2>Planning takeaway</h2><p>${escapeHtml(s.customerQuote)}</p></section>`
+          : `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>`) +
         `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
-        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
-        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong> This is not a customer testimonial, completed-job record, or fixed-price quote. HBW confirms the actual boat, motor, rigging, availability, and current pricing before making a recommendation.</aside>' : '')
+        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>`
       );
     },
   };

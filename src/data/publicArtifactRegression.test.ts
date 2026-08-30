@@ -79,6 +79,22 @@ describe('public artifact regression', () => {
       '<strong>Illustrative planning scenario.</strong>',
     );
     expect(prerender).not.toMatch(PHOTOGRAPHY_PENDING);
+
+    const compactRouteStart = prerender.indexOf(
+      "      return (\n        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong>",
+    );
+    expect(compactRouteStart).toBeGreaterThan(-1);
+    const compactRoute = prerender.slice(
+      compactRouteStart,
+      prerender.indexOf('    },\n  };\n});', compactRouteStart),
+    );
+    expect(compactRoute.indexOf('Illustrative planning scenario.')).toBeLessThan(
+      compactRoute.indexOf('What changed'),
+    );
+    expect(compactRoute).toContain(
+      "s.isIllustrative ? 'Why this configuration may fit' : 'Why it worked'",
+    );
+    expect(compactRoute).toContain('<h2>Planning takeaway</h2>');
   });
 
   it('removes the Spanish terminal file-count artifact', () => {
@@ -105,6 +121,18 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('until real photos arrive');
     expect(leakCheck).toContain('illustrative pending real photography');
     expect(leakCheck).toContain('Canonical URL');
+
+    const packageJson = JSON.parse(read('package.json')) as {
+      scripts: { build: string };
+    };
+    const prerenderIndex = packageJson.scripts.build.indexOf(
+      'node scripts/static-prerender.mjs',
+    );
+    const finalLeakScanIndex = packageJson.scripts.build.lastIndexOf(
+      'npm run check:blog-leaks',
+    );
+    expect(prerenderIndex).toBeGreaterThan(-1);
+    expect(finalLeakScanIndex).toBeGreaterThan(prerenderIndex);
   });
 
   it('resolves generated-index live-rate tokens through the canonical helper', () => {
