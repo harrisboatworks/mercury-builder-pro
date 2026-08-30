@@ -753,13 +753,14 @@ Updated: ${now}
 
 ## Deposit Tiers
 
-Secure your motor with a refundable deposit based on horsepower:
+Secure your motor with a deposit based on horsepower. Refundability follows stock status, not the deposit amount.
 
 | Motor Size | HP Range | Deposit Amount |
 |------------|----------|----------------|
-| Portable | 0-25 HP | $200 |
-| Mid-Range | 30-115 HP | $500 |
-| High-Power | 150+ HP | $1,000 |
+| Standard | up to 25 HP | $200 |
+| Standard | over 25 through 115 HP | $500 |
+| Standard | over 115 HP | $1,000 |
+| 9.9 MH express | model 1A10201LK | $100 |
 
 ## Payment Methods
 
@@ -777,9 +778,11 @@ Our checkout supports fast, secure payment options:
 ## Reservation Policies
 
 ### Refund Policy
-- Deposits are **fully refundable** if you change your mind
-- No restocking fees or penalties
-- Refund processed within 5-7 business days
+- Refundability follows stock status, not the deposit amount
+- If the motor is in stock, the deposit is refundable
+- If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing
+- Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice
+- Nothing is ordered before that confirmation and written approval
 
 ### What Your Deposit Secures
 - Holds the specific motor for you
@@ -802,7 +805,7 @@ All motor pickups require:
 ## Talking Points for Voice
 
 When a customer asks about reserving:
-- "A $[X] deposit locks it in, and it's fully refundable"
+- "A $[X] deposit holds the quote. If the motor is in stock, that deposit is refundable. Special-order deposits stay refundable until written approval, then become non-refundable after HBW places the order."
 - "You can use Apple Pay for a quick checkout"
 - "We'll reach out within a day to schedule everything"
 - "The deposit just holds the price — balance at pickup"

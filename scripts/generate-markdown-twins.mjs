@@ -12,6 +12,7 @@ import {
   normalizeBlogCategory,
 } from '../src/lib/blogRevenueDriver.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
+import { resolveBuildContentSupabase } from './lib/build-content-supabase.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -25,10 +26,6 @@ const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000
 // Localized corpus loading resolves Vite asset imports across nine languages.
 // A cold CI filesystem can legitimately take longer than 30 seconds.
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 120000);
-// Publishable (anon) key is safe to embed and is already committed in the
-// browser client. Sharing it keeps both motor loaders resilient when the
-// public edge function is temporarily unavailable.
-const FALLBACK_SUPABASE_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
 const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
@@ -155,9 +152,14 @@ function loadLocalizedBlogArticles() {
 //   - exclude model containing "jet"
 // This is the source of truth for /pricing-reference.md and must NOT be
 // replaced with public-motors-api (which only returns in-stock motors).
+function resolveTwinsContentSupabase(reason) {
+  const resolved = resolveBuildContentSupabase(process.env);
+  console.log(`[markdown-twins] ${reason} via ${resolved.source} ${resolved.url}`);
+  return resolved;
+}
+
 async function loadAllQuoteBuilderMotors() {
-  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
+  const { url: SUPABASE_URL, key: SUPABASE_KEY } = resolveTwinsContentSupabase('quote-builder motor_models');
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
   }
@@ -214,8 +216,7 @@ async function loadMotors() {
     console.warn('[markdown-twins] public-motors-api error:', err.message, ' -  falling back to Supabase');
   }
 
-  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
+  const { url: SUPABASE_URL, key: SUPABASE_KEY } = resolveTwinsContentSupabase('motor_models REST fallback');
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }

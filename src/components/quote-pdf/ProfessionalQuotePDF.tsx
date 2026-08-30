@@ -12,6 +12,13 @@ import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
+import {
+  DEPOSIT_POLICY_PUBLIC_SUMMARY,
+  customerPolicyText,
+  fulfilmentText,
+  parseDepositPolicySnapshot,
+  type DepositPolicySnapshot,
+} from '../../../supabase/functions/_shared/deposit-policy';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
 import mercuryLogoBlack from '@/assets/mercury-logo.png';
 
@@ -271,6 +278,7 @@ export interface QuotePDFProps {
     customerName: string;
     customerEmail: string;
     customerPhone: string;
+    customerAddress?: string;
     productName: string;
     horsepower: string;
     category: string;
@@ -300,6 +308,7 @@ export interface QuotePDFProps {
     financingContractTerm?: number;
     savedQuoteQrCode?: string;
     recommendedDepositAmount?: number;
+    depositPolicySnapshot?: DepositPolicySnapshot | null;
     reservationRequiresConfirmation?: boolean;
     promotionalFinancingAlternative?: { rate: number; termMonths: number };
     /** @deprecated Use savedQuoteQrCode. */
@@ -472,6 +481,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const alternatePromotion = quoteData.promotionalFinancingAlternative;
   const recommendedDeposit = quoteData.recommendedDepositAmount
     ?? getRecommendedDeposit(Number.parseFloat(quoteData.horsepower) || 0);
+  const depositPolicy = parseDepositPolicySnapshot(quoteData.depositPolicySnapshot);
+  const depositPolicyText = depositPolicy
+    ? customerPolicyText(depositPolicy.policyCode)
+    : DEPOSIT_POLICY_PUBLIC_SUMMARY;
+  const depositFulfilmentText = depositPolicy ? fulfilmentText(depositPolicy.purchasePath) : null;
   const showAlternatePromotion = Boolean(
     alternatePromotion
       && (!hasFinancing
@@ -631,6 +645,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Customer</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerName}</Text></View>
               {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Email</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerEmail}</Text></View> : null}
               {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Phone</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerPhone}</Text></View> : null}
+              {quoteData.customerAddress ? quoteData.customerAddress.split('\n').map((line, index) => (
+                <View key={`address-${index}`} style={styles.infoRow}>
+                  <Text style={firstPageInfoLabelStyle}>{index === 0 ? 'Address' : ' '}</Text>
+                  <Text style={firstPageInfoValueStyle}>{line}</Text>
+                </View>
+              )) : null}
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Quote #</Text><Text style={firstPageInfoValueStyle}>{quoteData.quoteNumber}</Text></View>
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Issued</Text><Text style={firstPageInfoValueStyle}>{quoteData.date}</Text></View>
               <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Valid until</Text><Text style={[...firstPageInfoValueStyle, { fontWeight: 'bold' }]}>{expiry}</Text></View>
@@ -644,20 +664,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {!quoteData.depositInfo ? (
               <View style={styles.card}>
-                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Ready to lock this in?</Text>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Reservation details</Text>
                 <View style={styles.qrRow}>
                   {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
                   <View style={styles.qrCopy}>
                     {savedQuoteQrCode ? <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this exact quote</Text> : null}
                     <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
-                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>{quoteData.reservationRequiresConfirmation
-                      ? 'Fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing.'
-                      : 'The deposit holds the motor and applies to your final invoice.'}</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>{depositPolicyText}</Text>
                   </View>
                 </View>
-                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>{quoteData.reservationRequiresConfirmation
-                  ? 'After written approval, the deposit becomes non-refundable and is credited to your final invoice.'
-                  : 'Refundability depends on stock or special-order status and when the order is committed.'}</Text>
+                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>{depositFulfilmentText || 'HBW does not pick up or deliver customer boats.'}</Text>
               </View>
             ) : (
               <View style={styles.card}>
@@ -735,9 +751,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
         <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
         <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
-          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{quoteData.reservationRequiresConfirmation
-            ? `Your $${money(recommendedDeposit).replace('.00', '')} deposit is refundable while HBW confirms the exact motor, price, availability and ETA. It becomes non-refundable and is credited to your final invoice only after you approve the order in writing.`
-            : `A $${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.`}</StepCard>
+          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{`Your $${money(recommendedDeposit).replace('.00', '')} CAD deposit. ${depositPolicyText}`}</StepCard>
           {quoteData.includesInstallation ? (
             <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
           ) : (

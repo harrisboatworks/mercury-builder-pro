@@ -1,6 +1,29 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  assertStripeDepositChargeMatches,
+  boundSavedQuoteIdFromDeposit,
+  classifyNotificationOutcomeWrite,
+  depositNotificationOutcomeGuard,
+  depositReplayOwnershipClaimFilter,
+  lookupDepositBySession,
+  resolveDepositWebhookSmsGate,
+  shouldClaimDepositReplayOwnership,
+  shouldSendFirstClaimSms,
+  stripeBillingAddressFromCheckout,
+} from "../_shared/deposit-deal-record.ts";
+import {
+  DEPOSIT_OUTBOX_SCHEMA_KEY,
+  DEPOSIT_OUTBOX_SCHEMA_VERSION,
+  deliveriesIndicateFailure,
+  hasDepositOutboxSchema,
+  legacyNotificationStatusFromAudienceResults,
+  planDepositWebhookMailer,
+  seedDepositEmailDeliveryRows,
+  stripeWebhookStatusAfterHandler,
+} from "../_shared/deposit-email-deliveries.ts";
+import { shouldSuppressDepositStagingSms } from "../_shared/deposit-staging-guard.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -9,6 +32,13 @@ const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+function stagingRuntimeEnv() {
+  return {
+    DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+    SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+  };
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -40,6 +70,7 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  let paymentReconciled = false;
   try {
     const signature = req.headers.get("stripe-signature");
     const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
@@ -83,8 +114,8 @@ serve(async (req) => {
       
       logStep("Checkout session completed", {
         sessionId: session.id,
+        eventId: event.id,
         paymentType: session.metadata?.payment_type,
-        customerEmail: session.customer_email,
       });
 
       if (session.payment_status !== "paid") {
@@ -100,62 +131,59 @@ serve(async (req) => {
 
       if (session.metadata?.payment_type === "motor_deposit") {
         const depositAmount = session.metadata.deposit_amount;
-        const customerName = session.metadata.customer_name || "Customer";
-        const customerEmail = session.customer_email || session.metadata.customer_email;
-        const customerPhone = session.metadata.customer_phone || "";
         const paymentIntentId = typeof session.payment_intent === "string" 
           ? session.payment_intent 
           : session.payment_intent?.id;
         const savedQuoteId = session.metadata.saved_quote_id || "";
-        
-        let motorInfo = null;
-        if (session.metadata.motor_info) {
-          try {
-            motorInfo = JSON.parse(session.metadata.motor_info);
-          } catch {
-            logStep("Could not parse motor_info metadata");
-          }
-        }
+        const billingAddress = stripeBillingAddressFromCheckout(session.customer_details);
 
         logStep("Processing deposit confirmation", {
-          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, savedQuoteId,
+          sessionId: session.id,
+          eventId: event.id,
+          paymentIntentId,
+          savedQuoteId,
         });
 
-        // The row created before checkout is the authoritative binding. Claim
-        // pending -> paid atomically before sending any customer/admin side
-        // effects, so a retry or concurrent delivery cannot notify twice.
-        const { data: existingDeposit, error: findError } = await supabase
+        const { data: promotedDeposit, error: findError } = await supabase
           .from("customer_quotes")
           .select("*")
           .eq("lead_source", "deposit")
-          .contains("quote_data", { stripe_session_id: session.id })
+          .eq("stripe_checkout_session_id", session.id)
           .maybeSingle();
 
-        if (findError || !existingDeposit) {
-          throw new Error(`Bound deposit record lookup failed: ${findError?.message || "not found"}`);
+        let existingDeposit = !findError && promotedDeposit
+          ? lookupDepositBySession([promotedDeposit], session.id)
+          : null;
+
+        if (!existingDeposit) {
+          const { data: legacyDeposit, error: legacyError } = await supabase
+            .from("customer_quotes")
+            .select("*")
+            .eq("lead_source", "deposit")
+            .contains("quote_data", { stripe_session_id: session.id })
+            .maybeSingle();
+          if (legacyError || !legacyDeposit) {
+            throw new Error(`Bound deposit record lookup failed: ${legacyError?.message || "not found"}`);
+          }
+          existingDeposit = legacyDeposit;
         }
 
         const boundQuoteData = existingDeposit.quote_data || {};
-        const boundSavedQuoteId = boundQuoteData.saved_quote_id || "";
+        const boundSavedQuoteId = boundSavedQuoteIdFromDeposit(existingDeposit);
         if (
           Number(existingDeposit.deposit_amount) !== Number(depositAmount)
           || boundSavedQuoteId !== savedQuoteId
         ) {
           throw new Error("Stripe deposit metadata does not match the bound record");
         }
-        motorInfo = boundQuoteData.motor_info || motorInfo;
+        const motorInfo = boundQuoteData.motor_info || null;
+        const customerName = existingDeposit.customer_name || "Customer";
+        const customerEmail = existingDeposit.customer_email || "";
+        const customerPhone = existingDeposit.customer_phone || "";
+        const alreadyPaid = existingDeposit.payment_status === "paid"
+          || boundQuoteData.payment_status === "paid";
 
-        if (boundQuoteData.payment_status === "paid" && notificationsComplete(boundQuoteData)) {
-          logStep("Deposit session already processed", { sessionId: session.id });
-          return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-            status: 200,
-          });
-        }
-        if (boundQuoteData.payment_status === "paid" && notificationLeaseIsActive(boundQuoteData)) {
-          throw new Error("Deposit notification delivery is already in progress");
-        }
-
+        const paidAt = new Date().toISOString();
         const paidQuoteData = {
           ...boundQuoteData,
           deposit_amount: depositAmount,
@@ -164,44 +192,99 @@ serve(async (req) => {
           stripe_payment_intent: paymentIntentId,
           payment_status: "paid",
           motor_info: motorInfo,
+          ...(billingAddress ? { payment_billing_address: billingAddress } : {}),
           notification_status: "processing",
           notification_event_id: event.id,
-          notification_lease_expires_at: notificationLeaseExpiresAt(),
+          notification_lease_expires_at: alreadyPaid ? boundQuoteData.notification_lease_expires_at : notificationLeaseExpiresAt(),
+          ...(alreadyPaid ? {} : { [DEPOSIT_OUTBOX_SCHEMA_KEY]: DEPOSIT_OUTBOX_SCHEMA_VERSION }),
         };
-        let claimQuery = supabase
-          .from("customer_quotes")
-          .update({ lead_status: "scheduled", quote_data: paidQuoteData })
-          .eq("id", existingDeposit.id);
-        claimQuery = boundQuoteData.payment_status === "paid"
-          ? claimQuery.contains("quote_data", {
-              payment_status: "paid",
-              notification_status: "processing",
-              notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
-            })
-          : claimQuery.contains("quote_data", { payment_status: "pending" });
-        const { data: claimedDeposit, error: updateError } = await claimQuery
-          .select("*")
-          .maybeSingle();
 
-        if (updateError) {
-          throw new Error(`Failed to reconcile paid deposit: ${updateError.message}`);
-        }
-        if (!claimedDeposit) {
-          const { data: concurrentDeposit, error: concurrentError } = await supabase
+        let claimedDeposit = existingDeposit;
+        let claimWon = alreadyPaid;
+        let concurrentPaidDeposit: { payment_status?: string | null; quote_data?: Record<string, unknown> | null } | null = null;
+        if (!alreadyPaid) {
+          assertStripeDepositChargeMatches({
+            amountTotal: session.amount_total,
+            currency: session.currency,
+            depositAmount,
+          });
+          const claimQuery = supabase
             .from("customer_quotes")
-            .select("id, quote_data")
+            .update({
+              lead_status: "scheduled",
+              payment_status: "paid",
+              stripe_checkout_session_id: session.id,
+              stripe_payment_intent_id: paymentIntentId || existingDeposit.stripe_payment_intent_id,
+              payment_paid_at: paidAt,
+              saved_quote_id: boundSavedQuoteId || existingDeposit.saved_quote_id,
+              ...(billingAddress ? { stripe_billing_address: billingAddress } : {}),
+              quote_data: paidQuoteData,
+            })
             .eq("id", existingDeposit.id)
+            .contains("quote_data", { payment_status: "pending" });
+          const { data: claimed, error: updateError } = await claimQuery
+            .select("*")
             .maybeSingle();
-          if (!concurrentError && concurrentDeposit?.quote_data && notificationsComplete(concurrentDeposit.quote_data)) {
-            logStep("Deposit session completed by another delivery", { sessionId: session.id });
-            return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
-              status: 200,
-            });
+
+          if (updateError) {
+            throw new Error(`Failed to reconcile paid deposit: ${updateError.message}`);
           }
-          throw new Error("Deposit notification lease could not be atomically claimed");
+          if (!claimed) {
+            const { data: concurrentDeposit, error: concurrentError } = await supabase
+              .from("customer_quotes")
+              .select("id, quote_data, payment_status")
+              .eq("id", existingDeposit.id)
+              .maybeSingle();
+            if (
+              !concurrentError
+              && (
+                concurrentDeposit?.payment_status === "paid"
+                || (concurrentDeposit?.quote_data && notificationsComplete(concurrentDeposit.quote_data))
+              )
+            ) {
+              logStep("Deposit session completed by another delivery", { sessionId: session.id });
+              claimedDeposit = { ...existingDeposit, ...concurrentDeposit };
+              concurrentPaidDeposit = concurrentDeposit;
+            } else {
+              throw new Error("Deposit notification lease could not be atomically claimed");
+            }
+          } else {
+            claimedDeposit = claimed;
+            claimWon = true;
+          }
+          logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id, savedQuoteId: boundSavedQuoteId });
+        } else {
+          logStep("Deposit session already paid; retrying missing email only", {
+            sessionId: session.id,
+            quoteId: existingDeposit.id,
+          });
+          if (shouldClaimDepositReplayOwnership({
+            alreadyPaid,
+            hasOutboxSchema: hasDepositOutboxSchema(boundQuoteData),
+          })) {
+            const { data: replayClaimed, error: replayClaimError } = await supabase
+              .from("customer_quotes")
+              .update({ quote_data: paidQuoteData })
+              .eq("id", existingDeposit.id)
+              .contains("quote_data", depositReplayOwnershipClaimFilter())
+              .select("*")
+              .maybeSingle();
+            const replayClaimOutcome = classifyNotificationOutcomeWrite({
+              written: replayClaimed,
+              writeError: replayClaimError,
+            });
+            if (replayClaimOutcome === "written") {
+              claimedDeposit = replayClaimed;
+              claimWon = true;
+            } else {
+              claimWon = false;
+              logStep("WARNING: replay ownership claim did not persist; leaving existing notification state", {
+                sessionId: session.id,
+                quoteId: existingDeposit.id,
+              });
+            }
+          }
         }
-        logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id });
 
         // Update saved_quotes record with deposit confirmation
         if (savedQuoteId && savedQuoteId === boundSavedQuoteId && customerEmail) {
@@ -246,42 +329,95 @@ serve(async (req) => {
           });
         }
 
-        // Send confirmation emails
-        const motorLabel = motorInfo?.model || motorInfo?.name || motorInfo?.displayName || "Mercury motor";
-        let emailFailed = false;
-        try {
-          const { error: emailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
-            body: { stripeSessionId: session.id },
-          });
+        paymentReconciled = true;
 
-          if (emailError) {
-            emailFailed = true;
-            logStep("ERROR: Failed to send confirmation email", { error: emailError.message });
-          } else {
-            logStep("Confirmation email sent successfully");
-          }
-        } catch (e: any) {
-          emailFailed = true;
-          logStep("ERROR: Deposit confirmation email threw", { error: e?.message });
+        try {
+        const { data: existingDeliveries, error: existingDeliveriesError } = await supabase
+          .from("deposit_email_deliveries")
+          .select("audience, status")
+          .eq("customer_quote_id", claimedDeposit.id);
+        const mailerPlan = planDepositWebhookMailer({
+          alreadyPaid,
+          deliveryRows: existingDeliveries,
+          deliveryReadError: Boolean(existingDeliveriesError),
+          hasOutboxSchema: hasDepositOutboxSchema(claimedDeposit.quote_data),
+          legacyLeaseActive: notificationLeaseIsActive(boundQuoteData),
+        });
+        if (existingDeliveriesError) {
+          logStep("WARNING: Could not read deposit email deliveries; skipping automatic mailer", {
+            sessionId: session.id,
+            quoteId: claimedDeposit.id,
+          });
         }
 
-        // Safety-net admin SMS if confirmation email failed
-        if (emailFailed) {
+        if (mailerPlan.seed) {
+          const deliverySeeds = seedDepositEmailDeliveryRows({
+            customerQuoteId: claimedDeposit.id,
+            savedQuoteId: boundSavedQuoteId,
+          });
+          const { error: seedError } = await supabase
+            .from("deposit_email_deliveries")
+            .upsert(deliverySeeds, { onConflict: "customer_quote_id,audience", ignoreDuplicates: true });
+          if (seedError) {
+            logStep("WARNING: Could not seed deposit email deliveries", { code: seedError.code });
+          }
+        } else if (alreadyPaid && !mailerPlan.invoke) {
+          logStep("Historical paid deposit has no email outbox; skipping automatic seed and mailer", {
+            sessionId: session.id,
+            quoteId: existingDeposit.id,
+          });
+        }
+
+        const motorLabel = motorInfo?.model || motorInfo?.name || motorInfo?.displayName || "Mercury motor";
+        let emailFailed = false;
+        let mailerDeliveries: Record<string, string> | null = null;
+        if (mailerPlan.invoke) {
+          try {
+            const { data: emailData, error: emailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
+              body: { stripeSessionId: session.id },
+            });
+            mailerDeliveries = emailData?.deliveries ?? null;
+
+            if (
+              emailError
+              || emailData?.success === false
+              || deliveriesIndicateFailure(emailData?.deliveries)
+            ) {
+              emailFailed = true;
+              logStep("ERROR: Failed to send confirmation email", { sessionId: session.id });
+            } else {
+              logStep("Confirmation email pipeline invoked", { sessionId: session.id });
+            }
+          } catch {
+            emailFailed = true;
+            logStep("ERROR: Deposit confirmation email threw", { sessionId: session.id });
+          }
+        }
+
+        const smsGate = resolveDepositWebhookSmsGate({
+          alreadyPaid,
+          boundQuoteData,
+          claimWon,
+          concurrent: concurrentPaidDeposit,
+        });
+        const sendSms = shouldSendFirstClaimSms(smsGate)
+          && !shouldSuppressDepositStagingSms(stagingRuntimeEnv());
+
+        if (sendSms && emailFailed) {
           try {
             await supabase.functions.invoke("send-sms", {
               body: {
                 to: "admin",
-                message: `Deposit email FAILED for ${customerEmail || "(no email)"} - follow up manually`,
+                message: `Deposit email FAILED for session ${session.id} - follow up from admin`,
                 messageType: "hot_lead",
               },
             });
           } catch (e: any) {
-            logStep("WARNING: Admin email-failure SMS failed", { error: e?.message });
+            logStep("WARNING: Admin email-failure SMS failed", { sessionId: session.id });
           }
         }
 
-        // Customer SMS confirmation
-        if (customerPhone) {
+        if (sendSms && customerPhone) {
           try {
             await supabase.functions.invoke("send-sms", {
               body: {
@@ -291,44 +427,79 @@ serve(async (req) => {
                 customerName,
               },
             });
-            logStep("Customer SMS confirmation sent");
+            logStep("Customer SMS confirmation sent", { sessionId: session.id });
           } catch (e: any) {
-            logStep("WARNING: Customer SMS failed", { error: e?.message });
+            logStep("WARNING: Customer SMS failed", { sessionId: session.id });
           }
         }
 
-        // Admin SMS notification
-        try {
-          await supabase.functions.invoke("send-sms", {
-            body: {
-              to: "admin",
-              message: `Deposit paid: ${customerName}, ${motorLabel}, $${depositAmount}`,
-              messageType: "hot_lead",
-            },
-          });
-        } catch (e: any) {
-          logStep("WARNING: Admin deposit SMS failed", { error: e?.message });
+        if (sendSms) {
+          try {
+            await supabase.functions.invoke("send-sms", {
+              body: {
+                to: "admin",
+                message: `Deposit paid: ${customerName}, ${motorLabel}, $${depositAmount}`,
+                messageType: "hot_lead",
+              },
+            });
+          } catch (e: any) {
+            logStep("WARNING: Admin deposit SMS failed", { sessionId: session.id });
+          }
         }
 
-        const { data: notificationUpdate, error: notificationUpdateError } = await supabase
-          .from("customer_quotes")
-          .update({
-            quote_data: {
-              ...paidQuoteData,
-              notification_status: emailFailed ? "manual_follow_up" : "delivered",
-              notification_completed_at: new Date().toISOString(),
-              notification_lease_expires_at: null,
-            },
+        const notificationStatus = mailerPlan.invoke
+          ? legacyNotificationStatusFromAudienceResults(mailerDeliveries, {
+            invoked: true,
+            invokeFailed: emailFailed,
           })
-          .eq("id", claimedDeposit.id)
-          .contains("quote_data", {
-            notification_status: "processing",
-            notification_event_id: event.id,
-          })
-          .select("id")
-          .maybeSingle();
-        if (notificationUpdateError || !notificationUpdate) {
-          throw new Error(`Could not record notification outcome: ${notificationUpdateError?.message || "claim lost"}`);
+          : (typeof boundQuoteData.notification_status === "string"
+            ? boundQuoteData.notification_status
+            : "not_sent");
+        const mayWriteLegacyNotification = !alreadyPaid
+          || shouldClaimDepositReplayOwnership({
+            alreadyPaid,
+            hasOutboxSchema: hasDepositOutboxSchema(boundQuoteData),
+          });
+        if (mayWriteLegacyNotification) {
+          // Mailer already ran and its RPC patches notification_status off
+          // processing. This event-scoped contains-guard then loses ownership
+          // instead of overwriting the RPC.
+          const { data: notificationWrite, error: notificationWriteError } = await supabase
+            .from("customer_quotes")
+            .update({
+              quote_data: {
+                ...paidQuoteData,
+                notification_status: notificationStatus,
+                notification_completed_at: new Date().toISOString(),
+                notification_lease_expires_at: null,
+                sms_notification_status: sendSms ? "sent" : (smsGate.smsStatus || "skipped"),
+              },
+            })
+            .eq("id", claimedDeposit.id)
+            .contains("quote_data", depositNotificationOutcomeGuard(event.id))
+            .select("id")
+            .maybeSingle();
+          const notificationWriteOutcome = classifyNotificationOutcomeWrite({
+            written: notificationWrite,
+            writeError: notificationWriteError,
+          });
+          if (notificationWriteOutcome === "lost_ownership") {
+            logStep("WARNING: notification outcome ownership lost; leaving existing state", {
+              sessionId: session.id,
+              quoteId: claimedDeposit.id,
+            });
+          } else if (notificationWriteOutcome !== "written") {
+            logStep("WARNING: notification status write failed", {
+              sessionId: session.id,
+              quoteId: claimedDeposit.id,
+            });
+          }
+        }
+        } catch (notificationError: unknown) {
+          logStep("WARNING: notification pipeline failed after payment reconciliation", {
+            sessionId: session.id,
+            error: notificationError instanceof Error ? notificationError.name : "notification_error",
+          });
         }
       } else if (session.metadata?.payment_type === "quote") {
         // Quote-path payment: mark quote paid and notify admins
@@ -405,20 +576,26 @@ serve(async (req) => {
         const motorLabel = quoteRow.motor_model || "Mercury motor";
         logStep("Quote marked paid", { quoteId: quoteRow.id, customerEmail, amountTotal });
 
-        // Admin SMS
+        // Admin SMS. Staging mode is a hard kill switch for every SMS path.
         let quoteSmsFailed = false;
-        try {
-          const { error: quoteSmsError } = await supabase.functions.invoke("send-sms", {
-            body: {
-              to: "admin",
-              message: `Quote payment received: ${customerName}, ${motorLabel}, $${amountTotal}`,
-              messageType: "hot_lead",
-            },
+        if (shouldSuppressDepositStagingSms(stagingRuntimeEnv())) {
+          logStep("Quote-payment SMS skipped; deposit staging mode is enabled", {
+            sessionId: session.id,
           });
-          if (quoteSmsError) throw quoteSmsError;
-        } catch (e: any) {
-          quoteSmsFailed = true;
-          logStep("WARNING: Admin quote-payment SMS failed", { error: e?.message });
+        } else {
+          try {
+            const { error: quoteSmsError } = await supabase.functions.invoke("send-sms", {
+              body: {
+                to: "admin",
+                message: `Quote payment received: ${customerName}, ${motorLabel}, $${amountTotal}`,
+                messageType: "hot_lead",
+              },
+            });
+            if (quoteSmsError) throw quoteSmsError;
+          } catch (e: any) {
+            quoteSmsFailed = true;
+            logStep("WARNING: Admin quote-payment SMS failed", { error: e?.message });
+          }
         }
 
         // Admin email notification (reuse deposit confirmation function in adminOnly mode)
@@ -471,9 +648,17 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: any) {
-    logStep("ERROR: Webhook handler failed", { error: error.message });
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
+    const status = stripeWebhookStatusAfterHandler({
+      paymentReconciled,
+      failed: true,
+    });
+    logStep(status === 200
+      ? "WARNING: Webhook failed after payment reconciliation"
+      : "ERROR: Webhook handler failed", { error: error.message });
+    return new Response(JSON.stringify(status === 200
+      ? { received: true, notificationFailed: true }
+      : { error: error.message }), {
+      status,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }

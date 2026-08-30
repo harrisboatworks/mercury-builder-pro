@@ -635,7 +635,19 @@ export type Database = {
           customer_name: string
           customer_notes: string | null
           customer_phone: string | null
+          customer_address_line1: string | null
+          customer_address_line2: string | null
+          customer_city: string | null
+          customer_region: string | null
+          customer_postal_code: string | null
+          customer_country: string | null
           deposit_amount: number
+          payment_paid_at: string | null
+          payment_status: string | null
+          saved_quote_id: string | null
+          stripe_billing_address: Json | null
+          stripe_checkout_session_id: string | null
+          stripe_payment_intent_id: string | null
           discount_amount: number | null
           final_price: number
           follow_up_date: string | null
@@ -675,7 +687,19 @@ export type Database = {
           customer_name: string
           customer_notes?: string | null
           customer_phone?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_region?: string | null
+          customer_postal_code?: string | null
+          customer_country?: string | null
           deposit_amount: number
+          payment_paid_at?: string | null
+          payment_status?: string | null
+          saved_quote_id?: string | null
+          stripe_billing_address?: Json | null
+          stripe_checkout_session_id?: string | null
+          stripe_payment_intent_id?: string | null
           discount_amount?: number | null
           final_price: number
           follow_up_date?: string | null
@@ -715,7 +739,19 @@ export type Database = {
           customer_name?: string
           customer_notes?: string | null
           customer_phone?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_region?: string | null
+          customer_postal_code?: string | null
+          customer_country?: string | null
           deposit_amount?: number
+          payment_paid_at?: string | null
+          payment_status?: string | null
+          saved_quote_id?: string | null
+          stripe_billing_address?: Json | null
+          stripe_checkout_session_id?: string | null
+          stripe_payment_intent_id?: string | null
           discount_amount?: number | null
           final_price?: number
           follow_up_date?: string | null
@@ -756,6 +792,13 @@ export type Database = {
             columns: ["promotion_id"]
             isOneToOne: false
             referencedRelation: "promotions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "customer_quotes_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: false
+            referencedRelation: "saved_quotes"
             referencedColumns: ["id"]
           },
         ]
@@ -819,6 +862,72 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      deposit_email_deliveries: {
+        Row: {
+          id: string
+          customer_quote_id: string
+          saved_quote_id: string
+          audience: string
+          status: string
+          provider_id: string | null
+          attempt_count: number
+          last_error: string | null
+          last_attempted_at: string | null
+          sent_at: string | null
+          claim_token: string | null
+          claim_expires_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          customer_quote_id: string
+          saved_quote_id: string
+          audience: string
+          status?: string
+          provider_id?: string | null
+          attempt_count?: number
+          last_error?: string | null
+          last_attempted_at?: string | null
+          sent_at?: string | null
+          claim_token?: string | null
+          claim_expires_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          customer_quote_id?: string
+          saved_quote_id?: string
+          audience?: string
+          status?: string
+          provider_id?: string | null
+          attempt_count?: number
+          last_error?: string | null
+          last_attempted_at?: string | null
+          sent_at?: string | null
+          claim_token?: string | null
+          claim_expires_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deposit_email_deliveries_customer_quote_id_fkey"
+            columns: ["customer_quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "deposit_email_deliveries_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: false
+            referencedRelation: "saved_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       diagnostic_brief_versions: {
         Row: {
@@ -3795,6 +3904,14 @@ export type Database = {
           access_count: number | null
           converted_to_quote_id: string | null
           created_at: string | null
+          customer_full_name: string | null
+          customer_phone: string | null
+          customer_address_line1: string | null
+          customer_address_line2: string | null
+          customer_city: string | null
+          customer_region: string | null
+          customer_postal_code: string | null
+          customer_country: string | null
           deposit_amount: number | null
           deposit_paid_at: string | null
           deposit_pdf_path: string | null
@@ -3818,6 +3935,14 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          customer_full_name?: string | null
+          customer_phone?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_region?: string | null
+          customer_postal_code?: string | null
+          customer_country?: string | null
           deposit_amount?: number | null
           deposit_paid_at?: string | null
           deposit_pdf_path?: string | null
@@ -3841,6 +3966,14 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          customer_full_name?: string | null
+          customer_phone?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_region?: string | null
+          customer_postal_code?: string | null
+          customer_country?: string | null
           deposit_amount?: number | null
           deposit_paid_at?: string | null
           deposit_pdf_path?: string | null
@@ -6194,6 +6327,30 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_lease_seconds?: number
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
+      }
       claim_due_hbw_bot_reminders: {
         Args: {
           p_gateway_secret: string
@@ -6250,6 +6407,30 @@ export type Database = {
           deleted_failed_or_dead: number
           deleted_succeeded: number
         }[]
+      }
+      complete_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_provider_id: string
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
       }
       complete_hbw_bot_reminder: {
         Args: { p_gateway_secret: string; p_id: string }
@@ -6615,6 +6796,30 @@ export type Database = {
           p_retry_after_seconds?: number
         }
         Returns: undefined
+      }
+      fail_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_last_error: string
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
       }
       fail_openclaw_slack_fallback_job: {
         Args: {
@@ -7082,6 +7287,10 @@ export type Database = {
           start_date: string
           total_qty: number
         }[]
+      }
+      reconcile_deposit_notification_status: {
+        Args: { p_customer_quote_id: string }
+        Returns: string
       }
       reconcile_hbw_call_transcription_links: {
         Args: { p_gateway_secret: string; p_limit?: number }

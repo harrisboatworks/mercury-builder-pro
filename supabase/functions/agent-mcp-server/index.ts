@@ -264,7 +264,7 @@ function brandRules() {
       "10k_plus": "7.99% APR",
       max_term_months: 144,
     },
-    deposits_cad: { under_75hp: 200, "75_to_199hp": 500, "200hp_plus": 1000 },
+    deposits_cad: { up_to_25hp: 200, over_25_through_115hp: 500, over_115hp: 1000, express_9_9_mh_1A10201LK: 100 },
     warranty: "Standard 3-year Mercury (promo bonuses revert to 3y if promo ends)",
     voice: "Warm, local, family-owned. No hype. Plainspoken expertise.",
     docs: `${SITE_URL}/agents`,

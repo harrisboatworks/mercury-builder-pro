@@ -4,7 +4,45 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { resolveAllowedBrowserOrigin } from "../_shared/browser-origin.ts";
-import { assertDepositRequestHasSavedQuoteId } from "../_shared/deposit-payment-guard.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import { createPaymentCustomerInfoSchema } from "../_shared/create-payment-request.ts";
+import {
+  assertQuoteCheckoutAuthenticated,
+  decideCreatePaymentStripeAccess,
+  isJsonRequestSyntaxError,
+  mapCreatePaymentCaughtError,
+  readRequiredStripeSecret,
+} from "../_shared/deposit-payment-guard.ts";
+import {
+  depositStagingModeEnabled,
+  resolveDepositStripePriceId,
+} from "../_shared/deposit-staging-guard.ts";
+import {
+  depositIdentitiesMatch,
+  parseDepositIdentity,
+  parseSavedQuoteIdentity,
+} from "../_shared/deposit-identity.ts";
+import {
+  assertRecoverStripeBillingRequest,
+  boundCheckoutSessionIdFromDeposit,
+  buildDepositCustomerQuoteRow,
+  buildStripeDepositMetadata,
+  classifyDepositPersistOutcome,
+  classifyExistingDepositCheckoutSession,
+  classifyOpenCheckoutPolicyUpgrade,
+  classifyOptimisticRecoveryWrite,
+  assertReusableDepositCheckoutAmount,
+  depositPricingFromBoundSnapshot,
+  planVerifiedStripeRecovery,
+  stripeCheckoutIdempotencyKey,
+  stripeDerivedPaidAt,
+} from "../_shared/deposit-deal-record.ts";
+import {
+  assertAuthoritativeDepositTier,
+  assertDepositPolicyReadyForCheckout,
+  type DepositPolicySnapshot,
+} from "../_shared/deposit-policy.ts";
+import { assertNoCallerDocumentPath } from "../_shared/deposit-email-deliveries.ts";
 import {
   assertCanonicalQuoteDocumentReady,
   canonicalQuoteDocumentPath,
@@ -32,14 +70,9 @@ const DEPOSIT_PRICES: Record<string, string | null> = {
 const EXPRESS_MOTOR_ID = "e920cfdf-223a-408a-850b-6f112e15c4d7";
 const EXPRESS_MOTOR_MODEL_NUMBER = "1A10201LK";
 
-// Input validation schemas
-const customerInfoSchema = z.object({
-  name: z.string().trim().min(1).max(100).optional(),
-  email: z.string().trim().email().max(255).optional().or(z.literal('')).or(z.null()),
-  phone: z.string().trim().min(7).max(20).regex(/^[0-9+().\s-]+$/)
-    .refine(value => value.replace(/\D/g, '').length >= 7, "Phone number must include at least 7 digits")
-    .optional(),
-}).optional();
+// Base customerInfo stays backward-compatible for quote payments.
+// Deposit identity is enforced later by decideCreatePaymentStripeAccess.
+const customerInfoSchema = createPaymentCustomerInfoSchema(z);
 
 const quoteDataSchema = z.object({
   motorId: z.string().uuid().optional(),
@@ -75,6 +108,193 @@ const verificationRequestSchema = z.object({
   action: z.literal("verify"),
   sessionId: z.string().trim().regex(/^cs_(?:test_|live_)?[A-Za-z0-9]+$/).max(255),
 });
+
+const recoverStripeBillingSchema = z.object({
+  action: z.literal("recover_stripe_billing"),
+  savedQuoteId: z.string().uuid(),
+}).strict();
+
+async function recoverHistoricalStripeBilling(options: {
+  req: Request;
+  body: { action: "recover_stripe_billing"; savedQuoteId: string };
+  rawBody: Record<string, unknown>;
+  corsHeaders: Record<string, string>;
+}): Promise<Response> {
+  const jsonHeaders = { ...options.corsHeaders, "Content-Type": "application/json" };
+  const reject = (status: number, error: string) => new Response(
+    JSON.stringify({ error }),
+    { status, headers: jsonHeaders },
+  );
+
+  try {
+    assertNoCallerDocumentPath(options.rawBody);
+    assertRecoverStripeBillingRequest(options.rawBody);
+  } catch (error) {
+    return reject(400, error instanceof Error ? error.message : "Invalid recovery request");
+  }
+
+  const auth = await requireAdmin(options.req, options.corsHeaders);
+  if (auth instanceof Response) return auth;
+
+  const stripeKey = readRequiredStripeSecret(Deno.env);
+
+  const supabaseAdmin = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+  );
+
+  const recoverySelect = "id, saved_quote_id, stripe_checkout_session_id, stripe_payment_intent_id, stripe_billing_address, payment_status, payment_paid_at, lead_status, lead_source, deposit_amount, quote_data";
+  let { data: deposit, error: depositError } = await supabaseAdmin
+    .from("customer_quotes")
+    .select(recoverySelect)
+    .eq("lead_source", "deposit")
+    .eq("saved_quote_id", options.body.savedQuoteId)
+    .maybeSingle();
+  if (depositError) {
+    return reject(409, "Ambiguous or unreadable deposit record");
+  }
+  if (!deposit) {
+    const legacy = await supabaseAdmin
+      .from("customer_quotes")
+      .select(recoverySelect)
+      .eq("lead_source", "deposit")
+      .contains("quote_data", { saved_quote_id: options.body.savedQuoteId })
+      .maybeSingle();
+    if (legacy.error) {
+      return reject(409, "Ambiguous or unreadable deposit record");
+    }
+    deposit = legacy.data;
+  }
+  if (!deposit) {
+    return reject(404, "Paid deposit record not found");
+  }
+
+  const { data: savedQuote, error: savedQuoteError } = await supabaseAdmin
+    .from("saved_quotes")
+    .select("id, deposit_status, deposit_amount, deposit_paid_at")
+    .eq("id", options.body.savedQuoteId)
+    .maybeSingle();
+  if (savedQuoteError || !savedQuote) {
+    return reject(404, "Saved quote not found");
+  }
+
+  const boundSessionId = boundCheckoutSessionIdFromDeposit(deposit);
+  if (!boundSessionId) {
+    return reject(409, "No bound checkout session");
+  }
+
+  const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+  const session = await stripe.checkout.sessions.retrieve(boundSessionId, {
+    expand: ["payment_intent"],
+  });
+  const paidAt = stripeDerivedPaidAt(session);
+  if (!paidAt) {
+    return reject(409, "Stripe payment timestamp is unavailable");
+  }
+
+  let plan;
+  try {
+    plan = planVerifiedStripeRecovery({
+      savedQuoteId: options.body.savedQuoteId,
+      deposit,
+      savedQuote,
+      session,
+      paidAt,
+    });
+  } catch (error) {
+    return reject(409, error instanceof Error ? error.message : "Checkout session binding failed");
+  }
+
+  const expectedPaymentStatus = deposit.payment_status ?? null;
+  const expectedCheckoutSessionId = deposit.stripe_checkout_session_id ?? null;
+  let recoveryWriteQuery = supabaseAdmin
+    .from("customer_quotes")
+    .update(plan.customerQuotePatch)
+    .eq("id", deposit.id)
+    .eq("lead_source", "deposit");
+  recoveryWriteQuery = expectedPaymentStatus == null
+    ? recoveryWriteQuery.is("payment_status", null)
+    : recoveryWriteQuery.eq("payment_status", expectedPaymentStatus);
+  recoveryWriteQuery = expectedCheckoutSessionId == null
+    ? recoveryWriteQuery.is("stripe_checkout_session_id", null)
+    : recoveryWriteQuery.eq("stripe_checkout_session_id", expectedCheckoutSessionId);
+  const { data: writtenRow, error: writeError } = await recoveryWriteQuery
+    .select("id, stripe_billing_address, payment_status")
+    .maybeSingle();
+  let written = writtenRow;
+  if (writeError) {
+    return reject(500, "Could not persist verified Stripe recovery");
+  }
+  if (!written) {
+    const { data: rereadDeposit } = await supabaseAdmin
+      .from("customer_quotes")
+      .select("id, payment_status, stripe_checkout_session_id, stripe_billing_address")
+      .eq("id", deposit.id)
+      .maybeSingle();
+    const recoveryOutcome = classifyOptimisticRecoveryWrite({
+      written: null,
+      reread: rereadDeposit,
+      expectedSessionId: boundSessionId,
+    });
+    if (recoveryOutcome !== "already_completed" || !rereadDeposit?.id) {
+      return reject(409, "Could not persist verified Stripe recovery");
+    }
+    written = rereadDeposit;
+  }
+
+  let savedQuoteDepositStatus = plan.savedQuoteDepositStatus;
+  if (plan.savedQuotePatch) {
+    const expectedSavedDepositStatus = savedQuote.deposit_status ?? null;
+    let savedWriteQuery = supabaseAdmin
+      .from("saved_quotes")
+      .update(plan.savedQuotePatch)
+      .eq("id", savedQuote.id);
+    savedWriteQuery = expectedSavedDepositStatus == null
+      ? savedWriteQuery.is("deposit_status", null)
+      : savedWriteQuery.eq("deposit_status", expectedSavedDepositStatus);
+    const { data: savedWrite, error: savedWriteError } = await savedWriteQuery
+      .select("id, deposit_status")
+      .maybeSingle();
+    if (savedWriteError) {
+      return reject(500, "Could not persist verified saved-quote recovery");
+    }
+    if (!savedWrite) {
+      const { data: rereadSaved } = await supabaseAdmin
+        .from("saved_quotes")
+        .select("id, deposit_status")
+        .eq("id", savedQuote.id)
+        .maybeSingle();
+      if (rereadSaved?.deposit_status !== "paid") {
+        return reject(409, "Could not persist verified saved-quote recovery");
+      }
+      savedQuoteDepositStatus = "already_paid";
+    } else {
+      savedQuoteDepositStatus = savedWrite.deposit_status === "paid" ? "paid" : plan.savedQuoteDepositStatus;
+    }
+  }
+
+  logStep("Recovered verified Stripe deposit", {
+    savedQuoteId: options.body.savedQuoteId,
+    customerQuoteId: written.id,
+    promotedCustomerQuoteFields: plan.promotedCustomerQuoteFields,
+    promotedSavedQuoteFields: plan.promotedSavedQuoteFields,
+  });
+
+  return new Response(JSON.stringify({
+    success: true,
+    source: "stripe_checkout_billing",
+    stripeBillingAddress: plan.stripeBillingAddress,
+    promoted: {
+      customerQuoteFields: plan.promotedCustomerQuoteFields,
+      savedQuoteFields: plan.promotedSavedQuoteFields,
+      paymentStatus: written.payment_status,
+      savedQuoteDepositStatus,
+    },
+  }), {
+    status: 200,
+    headers: jsonHeaders,
+  });
+}
 
 const logStep = (step: string, details?: unknown) => {
   const detailsStr = details ? ` - ${JSON.stringify(details)}` : '';
@@ -116,25 +336,42 @@ serve(async (req) => {
 
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
-    logStep("Stripe key verified");
-
-    // Create Supabase client using the anon key for user authentication
-    const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
-    );
-
-    // Parse and fail-closed on deposit identity before any Stripe client or API call.
-    const rawBody = await req.json();
+    // Parse and fail-closed on deposit identity/savedQuoteId before Stripe
+    // secret, Stripe client, Supabase client, or any Stripe/Supabase network.
+    let rawBody: unknown;
+    try {
+      rawBody = await req.json();
+    } catch (error) {
+      if (isJsonRequestSyntaxError(error)) {
+        return new Response(JSON.stringify({ error: "Invalid input data" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      throw error;
+    }
+    if (rawBody && typeof rawBody === "object" && (rawBody as { action?: unknown }).action === "recover_stripe_billing") {
+      const recoverResult = recoverStripeBillingSchema.safeParse(rawBody);
+      if (!recoverResult.success) {
+        return new Response(JSON.stringify({ error: "Invalid recovery request" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      return await recoverHistoricalStripeBilling({
+        req,
+        body: recoverResult.data,
+        rawBody: rawBody as Record<string, unknown>,
+        corsHeaders,
+      });
+    }
     const verificationResult = verificationRequestSchema.safeParse(rawBody);
     const validationResult = paymentRequestSchema.safeParse(rawBody);
 
     let depositSavedQuoteId: string | null = null;
     if (!verificationResult.success) {
       if (!validationResult.success) {
-        logStep("Validation failed", validationResult.error.errors);
+        logStep("Validation failed", { issueCount: validationResult.error.errors.length });
         return new Response(JSON.stringify({
           error: "Invalid input data",
           details: validationResult.error.errors.map(e => ({
@@ -146,12 +383,48 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      depositSavedQuoteId = assertDepositRequestHasSavedQuoteId(validationResult.data);
+      const stripeAccess = decideCreatePaymentStripeAccess(validationResult.data);
+      if (!stripeAccess.allowStripeAccess) {
+        logStep("Deposit rejected before Stripe access", { error: stripeAccess.error });
+        return new Response(JSON.stringify({ error: stripeAccess.error }), {
+          status: stripeAccess.status,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      depositSavedQuoteId = stripeAccess.savedQuoteId;
     }
 
-    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+    // Create the anon client before the Stripe secret so omitted-paymentType
+    // quote checkout can require a signed-in user without a secret-presence oracle.
+    const supabaseClient = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
+    );
+
+    let user = null;
+    const authHeader = req.headers.get("Authorization");
+    if (authHeader) {
+      try {
+        const token = authHeader.replace("Bearer ", "");
+        const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
+        if (!userError && userData.user?.email) {
+          user = userData.user;
+          logStep("User authenticated", { userId: user.id });
+        }
+      } catch (error) {
+        logStep("Auth failed, proceeding as guest", { error: error instanceof Error ? error.message : "Unknown" });
+      }
+    }
+
+    if (!verificationResult.success && validationResult.success) {
+      assertQuoteCheckoutAuthenticated(validationResult.data, user);
+    }
+
+    const stripeKey = readRequiredStripeSecret(Deno.env);
+    logStep("Stripe key verified");
 
     if (verificationResult.success) {
+      const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
       const session = await stripe.checkout.sessions.retrieve(
         verificationResult.data.sessionId,
         { expand: ["payment_intent"] },
@@ -215,12 +488,9 @@ serve(async (req) => {
       quoteSnapshot,
     } = validationResult.data;
 
-    if (
-      (paymentType === "deposit" || depositAmount)
-      && (!customerInfo?.name || !customerInfo.email || !customerInfo.phone)
-    ) {
-      throw new Error("Customer information required for deposit");
-    }
+    const submittedIdentity = (paymentType === "deposit" || depositAmount)
+      ? parseDepositIdentity(customerInfo)
+      : null;
 
     if (quoteSnapshot && JSON.stringify(quoteSnapshot).length > 50_000) {
       throw new Error("Invalid quote snapshot");
@@ -228,30 +498,9 @@ serve(async (req) => {
     
     logStep("Request validated", { paymentType: paymentType || "quote", depositAmount });
 
-    // Handle authentication - required for quote payments, optional for deposits
     const isDepositRequest = paymentType === "deposit" || Boolean(depositAmount);
-    let user = null;
-    let userEmail = customerInfo?.email;
-    
-    const authHeader = req.headers.get("Authorization");
-    if (authHeader) {
-      try {
-        const token = authHeader.replace("Bearer ", "");
-        const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-        if (!userError && userData.user?.email) {
-          user = userData.user;
-          if (!isDepositRequest) userEmail = user.email;
-          logStep("User authenticated", { userId: user.id, email: user.email });
-        }
-      } catch (error) {
-        logStep("Auth failed, proceeding as guest", { error: error instanceof Error ? error.message : 'Unknown' });
-      }
-    }
-
-    // For quote payments, require authentication
-    if (paymentType === "quote" && !user) {
-      throw new Error("Authentication required for quote payments");
-    }
+    let userEmail = submittedIdentity?.email || customerInfo?.email;
+    if (user && !isDepositRequest) userEmail = user.email;
     // Initialize service role client early (needed for both deposit and quote paths)
     const supabaseService = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
@@ -259,87 +508,88 @@ serve(async (req) => {
       { auth: { persistSession: false } }
     );
 
-    // Check if customer exists
-    let customerId;
-    if (userEmail) {
-      const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
-      if (customers.data.length > 0) {
-        customerId = customers.data[0].id;
-        logStep("Existing Stripe customer found", { customerId });
-      } else {
-        logStep("No existing customer found, will create new one");
-      }
-    }
-
     // Handle deposit payments vs quote payments
     if (paymentType === "deposit" || depositAmount) {
       if (!depositAmount || !(depositAmount in DEPOSIT_PRICES)) {
         throw new Error(`Invalid deposit amount. Available: ${Object.keys(DEPOSIT_PRICES).join(", ")}`);
       }
+      const priceId = resolveDepositStripePriceId(depositAmount, {
+        DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+        SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+        STRIPE_DEPOSIT_PRICE_500: Deno.env.get("STRIPE_DEPOSIT_PRICE_500"),
+      }, DEPOSIT_PRICES);
 
       let verifiedMotorInfo = requestedMotorInfo || null;
+      let depositPolicy: DepositPolicySnapshot | null = null;
 
-      // This express offer is intentionally bound to the exact 9.9 MH sale
-      // model. Resolve identity from the authoritative row rather than
-      // trusting client-supplied model or horsepower values.
+      logStep("Processing deposit payment", { depositAmount, priceId });
+
+      const origin = paymentOrigin;
+
+      if (!depositSavedQuoteId || !submittedIdentity) {
+        throw new Error("Invalid saved quote for deposit");
+      }
+
+      const { data: savedQuote, error: savedQuoteError } = await supabaseService
+        .from("saved_quotes")
+        .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256, quote_state, customer_full_name, customer_phone, customer_address_line1, customer_address_line2, customer_city, customer_region, customer_postal_code, customer_country")
+        .eq("id", depositSavedQuoteId)
+        .maybeSingle();
+
+      let storedIdentity;
+      try {
+        storedIdentity = savedQuote ? parseSavedQuoteIdentity(savedQuote) : null;
+      } catch {
+        storedIdentity = null;
+      }
+
+      const savedMotorId = (savedQuote?.quote_state as { motor?: { id?: string } } | null)?.motor?.id;
+      if (
+        savedQuoteError
+        || !savedQuote
+        || !storedIdentity
+        || !depositIdentitiesMatch(submittedIdentity, storedIdentity)
+        || savedQuote.deposit_status !== "pending"
+        || Number(savedQuote.deposit_amount) !== Number(depositAmount)
+        || !savedMotorId
+        || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
+      ) {
+        throw new Error("Invalid saved quote for deposit");
+      }
+
+      const { data: reservationMotor, error: reservationMotorError } = await supabaseService
+        .from("motor_models")
+        .select("id, model, model_display, horsepower, mercury_model_no, model_number, stock_quantity, in_stock, availability")
+        .eq("id", savedMotorId)
+        .maybeSingle();
+
+      const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
       if (depositAmount === "100") {
-        if (quoteData?.motorId !== EXPRESS_MOTOR_ID) {
-          throw new Error("Invalid deposit amount for selected motor");
-        }
-
-        const { data: reservationMotor, error: reservationMotorError } = await supabaseService
-          .from("motor_models")
-          .select("model, model_display, horsepower, mercury_model_no, model_number")
-          .eq("id", quoteData.motorId)
-          .single();
-
-        const resolvedModelNumber = reservationMotor?.mercury_model_no || reservationMotor?.model_number;
         if (
-          reservationMotorError
+          quoteData?.motorId !== EXPRESS_MOTOR_ID
+          || savedMotorId !== EXPRESS_MOTOR_ID
+          || reservationMotorError
           || !reservationMotor
           || reservationMotor.horsepower == null
           || resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER
         ) {
           throw new Error("Invalid deposit amount for selected motor");
         }
-
-        verifiedMotorInfo = {
-          model: reservationMotor.model_display || reservationMotor.model,
-          hp: Number(reservationMotor.horsepower),
-        };
       }
 
-      const priceId = DEPOSIT_PRICES[depositAmount];
-      logStep("Processing deposit payment", { depositAmount, priceId });
-
-      const origin = paymentOrigin;
-      
-      const customerName = customerInfo!.name!;
-      const customerPhone = customerInfo!.phone!;
-
-      // A saved quote is required for every deposit. The object key is derived
-      // server-side and revalidated immediately before Stripe checkout.
-      if (!depositSavedQuoteId) {
-        throw new Error("Invalid saved quote for deposit");
+      if (reservationMotorError || !reservationMotor) {
+        throw new Error("Deposit policy cannot be resolved");
       }
 
-      const { data: savedQuote, error: savedQuoteError } = await supabaseService
-        .from("saved_quotes")
-        .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_amount, quote_pdf_path, quote_pdf_sha256, quote_state")
-        .eq("id", depositSavedQuoteId)
-        .maybeSingle();
-
-      const savedMotorId = (savedQuote?.quote_state as Record<string, any> | null)?.motor?.id;
-      if (
-        savedQuoteError
-        || !savedQuote
-        || savedQuote.email?.trim().toLowerCase() !== customerInfo!.email!.trim().toLowerCase()
-        || savedQuote.deposit_status !== "pending"
-        || Number(savedQuote.deposit_amount) !== Number(depositAmount)
-        || (quoteData?.motorId && savedMotorId !== quoteData.motorId)
-      ) {
-        throw new Error("Invalid saved quote for deposit");
-      }
+      depositPolicy = assertDepositPolicyReadyForCheckout({
+        savedMotorId,
+        motorRow: reservationMotor,
+        quoteState: savedQuote.quote_state,
+      });
+      verifiedMotorInfo = {
+        model: reservationMotor.model_display || reservationMotor.model,
+        hp: reservationMotor.horsepower == null ? undefined : Number(reservationMotor.horsepower),
+      };
 
       const { data: quoteDocument, error: quoteDocumentError } = await supabaseService
         .storage
@@ -365,6 +615,128 @@ serve(async (req) => {
       }
 
       const savedQuoteId = savedQuote.id;
+      const { data: existingDeposit, error: existingDepositError } = await supabaseService
+        .from("customer_quotes")
+        .select("id, stripe_checkout_session_id, payment_status, deposit_amount")
+        .eq("saved_quote_id", savedQuoteId)
+        .eq("lead_source", "deposit")
+        .maybeSingle();
+      if (existingDepositError) {
+        logStep("ERROR: Failed to read existing deposit", { code: existingDepositError.code });
+        throw new Error("Unable to prepare reservation checkout");
+      }
+
+      if (existingDeposit?.payment_status === "paid") {
+        throw new Error("Invalid saved quote for deposit");
+      }
+
+      const authoritativeDepositAmount = assertAuthoritativeDepositTier({
+        requestedAmount: depositAmount,
+        savedQuoteAmount: savedQuote.deposit_amount,
+        existingDepositAmount: existingDeposit ? existingDeposit.deposit_amount : undefined,
+        horsepower: reservationMotor.horsepower,
+        expressMotor: {
+          quoteMotorId: quoteData?.motorId,
+          savedMotorId,
+          modelNumber: resolvedModelNumber,
+          motorRowPresent: true,
+          expressMotorId: EXPRESS_MOTOR_ID,
+          expressModelNumber: EXPRESS_MOTOR_MODEL_NUMBER,
+        },
+        priceId,
+        catalog: DEPOSIT_PRICES,
+        stagingPriceOverride: depositStagingModeEnabled({
+          DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+        }) && depositAmount === "500",
+      });
+
+      const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+
+      let customerId: string | undefined;
+      if (userEmail) {
+        const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
+        if (customers.data.length > 0) {
+          customerId = customers.data[0].id;
+          logStep("Existing Stripe customer found", { customerId });
+        }
+      }
+
+      if (existingDeposit?.stripe_checkout_session_id) {
+        const existingSession = await stripe.checkout.sessions.retrieve(
+          existingDeposit.stripe_checkout_session_id,
+        );
+        const existingSessionDisposition = classifyExistingDepositCheckoutSession(existingSession);
+        if (existingSessionDisposition === "reuse_open" || existingSessionDisposition === "renew_expired") {
+          assertReusableDepositCheckoutAmount({
+            session: existingSession,
+            depositAmount: authoritativeDepositAmount,
+            savedQuoteId,
+          });
+        }
+        if (existingSessionDisposition === "reuse_open") {
+          if (!existingDeposit.id || !depositPolicy || !existingSession.url) {
+            throw new Error("Unable to prepare reservation checkout");
+          }
+          const reuseDepositRow = buildDepositCustomerQuoteRow({
+            identity: storedIdentity,
+            savedQuoteId,
+            userId: user?.id || null,
+            sessionId: existingSession.id,
+            depositAmount: authoritativeDepositAmount,
+            motorInfo: verifiedMotorInfo,
+            quoteSnapshot,
+            quoteState: savedQuote.quote_state,
+            pricing: depositPricingFromBoundSnapshot(savedQuote.quote_state, quoteSnapshot),
+            depositPolicy,
+          });
+          const { data: upgradedDeposit, error: upgradeError } = await supabaseService
+            .from("customer_quotes")
+            .update(reuseDepositRow)
+            .eq("id", existingDeposit.id)
+            .or("payment_status.is.null,payment_status.eq.pending")
+            .eq("stripe_checkout_session_id", existingSession.id)
+            .select("id, payment_status, stripe_checkout_session_id, quote_data")
+            .maybeSingle();
+          const { data: upgradedReadback, error: upgradeReadError } = await supabaseService
+            .from("customer_quotes")
+            .select("id, payment_status, stripe_checkout_session_id, quote_data")
+            .eq("id", existingDeposit.id)
+            .eq("lead_source", "deposit")
+            .maybeSingle();
+          const upgradeOutcome = classifyOpenCheckoutPolicyUpgrade({
+            expectedSessionId: existingSession.id,
+            expectedPolicy: depositPolicy,
+            existing: existingDeposit,
+            wrote: upgradedDeposit,
+            writeError: upgradeError,
+            reread: upgradeReadError ? null : upgradedReadback,
+          });
+          if (upgradeOutcome === "already_paid") {
+            logStep("Deposit already paid during open checkout reuse", { savedQuoteId });
+            throw new Error("Invalid saved quote for deposit");
+          }
+          if (upgradeOutcome !== "upgraded") {
+            logStep("ERROR: Failed to persist deposit policy on open checkout reuse", {
+              savedQuoteId,
+              reason: upgradeOutcome,
+            });
+            throw new Error("Unable to prepare reservation checkout");
+          }
+          logStep("Reusing open deposit checkout session", { sessionId: existingSession.id });
+          return new Response(JSON.stringify({ url: existingSession.url, sessionId: existingSession.id }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            status: 200,
+          });
+        }
+        if (existingSessionDisposition === "already_complete") {
+          logStep("Existing deposit checkout session is already complete", { sessionId: existingSession.id });
+          throw new Error("Invalid saved quote for deposit");
+        }
+        if (existingSessionDisposition !== "renew_expired") {
+          logStep("Existing deposit checkout session is not renewable", { sessionId: existingSession.id });
+          throw new Error("Unable to prepare reservation checkout");
+        }
+      }
       
       const depositLineItem: Stripe.Checkout.SessionCreateParams.LineItem = priceId
         ? { price: priceId, quantity: 1 }
@@ -375,7 +747,7 @@ serve(async (req) => {
                 name: "Mercury motor reservation deposit",
                 description: "Reservation deposit pending Harris Boat Works confirmation",
               },
-              unit_amount: Number(depositAmount) * 100,
+              unit_amount: authoritativeDepositAmount * 100,
             },
             quantity: 1,
           };
@@ -386,15 +758,10 @@ serve(async (req) => {
         billing_address_collection: "required",
         success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${origin}/payment-canceled`,
-        metadata: {
-          deposit_amount: depositAmount,
-          payment_type: "motor_deposit",
-          customer_name: customerName,
-          customer_email: userEmail || customerInfo?.email || "",
-          customer_phone: customerPhone,
-          motor_info: verifiedMotorInfo ? JSON.stringify(verifiedMotorInfo) : "",
-          saved_quote_id: savedQuoteId,
-        }
+        metadata: buildStripeDepositMetadata({
+          depositAmount: String(authoritativeDepositAmount),
+          savedQuoteId,
+        }),
       };
 
       if (customerId) {
@@ -403,43 +770,88 @@ serve(async (req) => {
         sessionData.customer_email = userEmail;
       }
 
-      const session = await stripe.checkout.sessions.create(sessionData);
-      logStep("Deposit payment session created", { sessionId: session.id });
-
-      // Persist the server binding before returning a usable checkout URL. If
-      // persistence fails, expire the just-created Stripe session so a paid
-      // deposit can never exist without an authoritative reconciliation row.
-      const { error: depositSaveError } = await supabaseService.from("customer_quotes").insert({
-          user_id: user?.id || null,
-          anonymous_session_id: user ? null : (session.id || crypto.randomUUID()),
-          customer_name: customerName,
-          customer_email: userEmail || customerInfo?.email || "",
-          customer_phone: customerPhone || null,
-          base_price: 0,
-          final_price: 0,
-          deposit_amount: parseInt(depositAmount),
-          total_cost: 0,
-          loan_amount: 0,
-          monthly_payment: 0,
-          term_months: 0,
-          lead_status: "downloaded",
-          lead_source: "deposit",
-          quote_data: {
-            deposit_amount: depositAmount,
-            payment_type: "motor_deposit",
-            stripe_session_id: session.id,
-            payment_status: "pending",
-            motor_info: verifiedMotorInfo,
-            saved_quote_id: savedQuoteId || null,
-            ...(quoteSnapshot ? { quote_snapshot: quoteSnapshot } : {}),
-          },
+      const session = await stripe.checkout.sessions.create(sessionData, {
+        idempotencyKey: stripeCheckoutIdempotencyKey({
+          savedQuoteId,
+          existingSessionId: existingDeposit?.stripe_checkout_session_id,
+        }),
       });
-      if (depositSaveError) {
-        logStep("ERROR: Failed to save deposit record", { error: depositSaveError.message });
+      logStep("Deposit payment session created", { sessionId: session.id, savedQuoteId });
+
+      const depositRow = buildDepositCustomerQuoteRow({
+        identity: storedIdentity,
+        savedQuoteId,
+        userId: user?.id || null,
+        sessionId: session.id,
+        depositAmount: authoritativeDepositAmount,
+        motorInfo: verifiedMotorInfo,
+        quoteSnapshot,
+        quoteState: savedQuote.quote_state,
+        pricing: depositPricingFromBoundSnapshot(savedQuote.quote_state, quoteSnapshot),
+        depositPolicy,
+      });
+
+      const persistSelect = "id, payment_status, stripe_checkout_session_id";
+      const persistResult = existingDeposit?.id
+        ? await (existingDeposit.stripe_checkout_session_id
+          ? supabaseService
+            .from("customer_quotes")
+            .update(depositRow)
+            .eq("id", existingDeposit.id)
+            .or("payment_status.is.null,payment_status.eq.pending")
+            .eq("stripe_checkout_session_id", existingDeposit.stripe_checkout_session_id)
+            .select(persistSelect)
+            .maybeSingle()
+          : supabaseService
+            .from("customer_quotes")
+            .update(depositRow)
+            .eq("id", existingDeposit.id)
+            .or("payment_status.is.null,payment_status.eq.pending")
+            .is("stripe_checkout_session_id", null)
+            .select(persistSelect)
+            .maybeSingle())
+        : await supabaseService
+          .from("customer_quotes")
+          .insert(depositRow)
+          .select(persistSelect)
+          .maybeSingle();
+      const { data: persistedDeposit, error: depositSaveError } = persistResult;
+      const persistOutcome = depositSaveError || !persistedDeposit?.id
+        ? classifyDepositPersistOutcome({
+          mode: existingDeposit?.id ? "update" : "insert",
+          wrote: persistedDeposit,
+          writeError: depositSaveError,
+          createdSessionId: session.id,
+          reread: (await supabaseService
+            .from("customer_quotes")
+            .select("id, stripe_checkout_session_id, payment_status")
+            .eq("saved_quote_id", savedQuoteId)
+            .eq("lead_source", "deposit")
+            .maybeSingle()).data,
+        })
+        : classifyDepositPersistOutcome({
+          mode: existingDeposit?.id ? "update" : "insert",
+          wrote: persistedDeposit,
+          createdSessionId: session.id,
+        });
+      if (persistOutcome === "already_paid") {
+        logStep("Deposit already paid during persist race", { savedQuoteId });
+        await stripe.checkout.sessions.expire(session.id);
+        throw new Error("Invalid saved quote for deposit");
+      }
+      if (persistOutcome === "reused_same_session" && session.url) {
+        logStep("Reusing concurrently persisted deposit checkout", { savedQuoteId });
+        return new Response(JSON.stringify({ url: session.url, sessionId: session.id }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        });
+      }
+      if (persistOutcome !== "saved") {
+        logStep("ERROR: Failed to save deposit record", { code: depositSaveError?.code });
         await stripe.checkout.sessions.expire(session.id);
         throw new Error("Unable to prepare reservation checkout");
       }
-      logStep("Deposit record saved to customer_quotes");
+      logStep("Deposit record saved to customer_quotes", { savedQuoteId });
 
       return new Response(JSON.stringify({ url: session.url, sessionId: session.id }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -449,6 +861,15 @@ serve(async (req) => {
 
     // Quote payment flow with server-side validation
     if (!quoteData) throw new Error("Quote data is required for quote payments");
+    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+    let customerId: string | undefined;
+    if (userEmail) {
+      const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
+      if (customers.data.length > 0) {
+        customerId = customers.data[0].id;
+        logStep("Existing Stripe customer found", { customerId });
+      }
+    }
     logStep("Quote data received", { totalPrice: quoteData.totalPrice });
 
     // Server-side price validation (supabaseService already initialized above)
@@ -609,33 +1030,10 @@ serve(async (req) => {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in create-payment", { message: errorMessage });
-    
-    // Return safe error messages to clients — never expose raw internal details.
-    // Buyer/request errors should not be reported as server failures.
-    const isAuthError = errorMessage.includes("Authentication required");
-    const isClientError = errorMessage.includes("Invalid deposit amount")
-      || errorMessage.includes("Customer information required")
-      || errorMessage.includes("Invalid saved quote")
-      || errorMessage.includes("Invalid saved quote document")
-      || errorMessage.includes("Invalid quote snapshot")
-      || errorMessage.includes("Price validation failed")
-      || errorMessage.includes("Quote data is required")
-      || errorMessage.includes("Unexpected end of JSON input");
-
-    const safeMessage = isAuthError ? "Authentication required"
-      : errorMessage.includes("Invalid deposit amount") ? "Invalid deposit amount"
-      : errorMessage.includes("Customer information required") ? "Name, email, and phone are required for a deposit"
-      : errorMessage.includes("Invalid saved quote document") ? "The saved quote document could not be verified. Please refresh and try again."
-      : errorMessage.includes("Invalid saved quote") ? "The saved quote could not be verified. Please refresh and try again."
-      : errorMessage.includes("Invalid quote snapshot") ? "Invalid quote data"
-      : errorMessage.includes("Price validation failed") ? "Price validation failed. Please refresh and try again."
-      : errorMessage.includes("Quote data is required") ? "Quote data is required"
-      : errorMessage.includes("Unexpected end of JSON input") ? "Invalid input data"
-      : "An error occurred processing your payment. Please try again.";
-    
-    return new Response(JSON.stringify({ error: safeMessage }), {
+    const mapped = mapCreatePaymentCaughtError(error);
+    return new Response(JSON.stringify({ error: mapped.error }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
-      status: isAuthError ? 401 : isClientError ? 400 : 500,
+      status: mapped.status,
     });
   }
 });

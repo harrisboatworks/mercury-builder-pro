@@ -90,7 +90,6 @@ const AdminQuoteActivity = lazy(() => import("./pages/AdminQuoteActivity"));
 const UpdateMotorImages = lazy(() => import("./components/motors/UpdateMotorImages"));
 
 // Payment pages
-const Deposits = lazy(() => import("./pages/Deposits"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
 const PaymentCanceled = lazy(() => import("./pages/PaymentCanceled"));
 
@@ -505,7 +504,7 @@ function AnimatedRoutes() {
         />
         
         {/* Payment Routes */}
-        <Route path="/deposits" element={<Deposits />} />
+        <Route path="/deposits" element={<Navigate to="/quote" replace />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/payment-canceled" element={<PaymentCanceled />} />
         

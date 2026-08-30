@@ -47,7 +47,7 @@ content_update_frequency: weekly
 - Located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - We do NOT offer delivery — all pickups are at our Gores Landing location
 - In-season hours (April 1-November 30): Monday-Saturday 8am-5pm, Sunday 9am-4pm. Marina closed for winter December 1-April 1.
-- Deposits are tiered: $200 (<75HP), $500 (75-199HP), $1000 (200+HP)
+- Deposits are tiered: $200 up to 25 HP, $500 over 25 through 115 HP, $1,000 over 115 HP. Model 1A10201LK 9.9 MH uses a $100 express deposit; that amount does not change the refund rule.
 - We service all of Ontario, Canada
 - Mercury Verado is special-order only — not in default inventory and not actively promoted
 

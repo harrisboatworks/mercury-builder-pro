@@ -10,6 +10,12 @@ import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySke
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
 import { getExpressReservationDeposit, getRecommendedDeposit } from '@/lib/deposit';
+import {
+  formatDepositAddress,
+  parseDepositIdentity,
+  quoteStateCustomerPatch,
+  savedQuoteIdentityColumns,
+} from '@/lib/deposit-identity';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
@@ -58,6 +64,12 @@ import {
   resolveQuoteMotorImage,
   type QuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
+import {
+  DEPOSIT_POLICY_PUBLIC_SUMMARY,
+  DEPOSIT_POLICY_QUOTE_STATE_KEY,
+  customerPolicyText,
+  tryBuildDepositPolicySnapshot,
+} from '../../../supabase/functions/_shared/deposit-policy';
 
 // Animation variants
 const sectionVariants = {
@@ -294,6 +306,15 @@ export default function QuoteSummaryPage() {
   const depositAmount = isMotorOnlyExpress
     ? getExpressReservationDeposit(hp)
     : getRecommendedDeposit(hp);
+  const depositPolicySnapshot = useMemo(
+    () => tryBuildDepositPolicySnapshot({
+      motorId: state.motor?.id,
+      motor: state.motor,
+      purchasePath: state.purchasePath,
+    }),
+    [state.motor, state.purchasePath],
+  );
+  const canReserveMotor = Boolean(depositPolicySnapshot);
 
   // Spec pills
   const specs = [
@@ -721,7 +742,14 @@ export default function QuoteSummaryPage() {
               id: savedQuoteId,
               email: state.customerEmail || 'pdf-download@placeholder.com',
               resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
+              quote_state: {
+                ...state,
+                frozenPricing: frozenPricingSnapshot,
+                pdfSnapshot,
+                ...(depositPolicySnapshot
+                  ? { [DEPOSIT_POLICY_QUOTE_STATE_KEY]: depositPolicySnapshot }
+                  : {}),
+              } as any,
               user_id: user?.id || null,
               expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
             } as any);
@@ -758,7 +786,8 @@ export default function QuoteSummaryPage() {
         snapshot: pdfSnapshot,
         savedQuoteQrCode,
         recommendedDepositAmount: depositAmount,
-        reservationRequiresConfirmation: isMotorOnlyExpress,
+        depositPolicySnapshot,
+        reservationRequiresConfirmation: depositPolicySnapshot?.policyCode === 'special_order_until_written_approval',
         googleRating,
         googleReviewCount,
         promotionalFinancingAlternative: (() => {
@@ -873,6 +902,14 @@ export default function QuoteSummaryPage() {
 
   // Open the deposit info dialog (replaces direct payment flow)
   const handleReserveDeposit = () => {
+    if (!depositPolicySnapshot) {
+      toast({
+        title: 'Reservation terms unavailable',
+        description: 'The reservation terms could not be verified. Please refresh and try again.',
+        variant: 'destructive',
+      });
+      return;
+    }
     trackEvent('quote_deposit_dialog_opened', {
       motor_hp: hp,
       deposit_amount: depositAmount,
@@ -886,6 +923,8 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
+      const identity = parseDepositIdentity(customerInfo);
+      const customerPatch = quoteStateCustomerPatch(identity);
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       const savedQuoteId = crypto.randomUUID();
       const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
@@ -893,38 +932,48 @@ export default function QuoteSummaryPage() {
         resumeTokenEntropy,
         (byte) => byte.toString(16).padStart(2, '0'),
       ).join('')}`;
+      if (!depositPolicySnapshot) {
+        throw new Error('The reservation terms could not be verified. Please refresh and try again.');
+      }
+      const quoteStateSnapshot = {
+        ...state,
+        ...customerPatch,
+        frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
+        pdfSnapshot,
+        [DEPOSIT_POLICY_QUOTE_STATE_KEY]: depositPolicySnapshot,
+      };
       
       const basePdfData = {
         quoteNumber,
-        customerName: customerInfo.name,
-        customerEmail: customerInfo.email,
-        customerPhone: customerInfo.phone,
+        customerName: identity.fullName,
+        customerEmail: identity.email,
+        customerPhone: identity.phone,
+        customerAddress: formatDepositAddress(identity.address),
         snapshot: pdfSnapshot,
         recommendedDepositAmount: depositAmount,
-        reservationRequiresConfirmation: isMotorOnlyExpress,
+        depositPolicySnapshot,
+        reservationRequiresConfirmation: depositPolicySnapshot.policyCode === 'special_order_until_written_approval',
       };
 
-      // A motor reservation must have its durable quote binding before a
-      // customer can be sent to Stripe. Generate the ID client-side so an
-      // anonymous insert does not depend on SELECT permission to return it.
+      // Persist identity/address before the immutable PDF is bound.
       const { error: sqError } = await supabase
         .from('saved_quotes')
         .insert({
           id: savedQuoteId,
-          email: customerInfo.email,
+          email: identity.email,
           resume_token: resumeToken,
-          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          quote_state: quoteStateSnapshot as any,
           user_id: user?.id || null,
           expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
           quote_pdf_path: null,
           deposit_pdf_path: null,
           deposit_status: 'pending',
           deposit_amount: depositAmount,
+          ...savedQuoteIdentityColumns(identity),
         } as any);
       if (sqError) {
         throw new Error('Could not prepare this motor reservation. Please try again.');
       }
-      console.log('Saved quote created for deposit tracking:', savedQuoteId);
 
       // Store the customer document through the server-authorized private
       // document boundary before creating a usable Stripe checkout.
@@ -982,9 +1031,15 @@ export default function QuoteSummaryPage() {
           paymentType: 'deposit',
           depositAmount: String(depositAmount),
           customerInfo: {
-            name: customerInfo.name,
-            email: customerInfo.email,
-            phone: customerInfo.phone,
+            name: identity.fullName,
+            email: identity.email,
+            phone: identity.phone,
+            addressLine1: identity.address.addressLine1,
+            addressLine2: identity.address.addressLine2 || '',
+            city: identity.address.city,
+            region: identity.address.region,
+            postalCode: identity.address.postalCode,
+            country: identity.address.country,
           },
           quoteData: {
             motorId: state.motor?.id,
@@ -1012,11 +1067,11 @@ export default function QuoteSummaryPage() {
         return;
       }
       throw new Error('Secure checkout did not return a payment link.');
-    } catch (error: any) {
-      console.error('Deposit error:', error);
+    } catch (error: unknown) {
+      console.error('Deposit error');
       toast({
         title: 'Payment Error',
-        description: error.message || 'Failed to initiate deposit. Please try again.',
+        description: error instanceof Error ? error.message : 'Failed to initiate deposit. Please try again.',
         variant: 'destructive'
       });
     } finally {
@@ -1031,7 +1086,7 @@ export default function QuoteSummaryPage() {
     };
     window.addEventListener('initiate-deposit', handleInitiateDeposit);
     return () => window.removeEventListener('initiate-deposit', handleInitiateDeposit);
-  }, [depositAmount, user, motorName, hp, modelYear]);
+  }, [depositAmount, user, motorName, hp, modelYear, depositPolicySnapshot]);
 
   // Plain-language inclusions for the configured quote. Product Protection is
   // presented separately and is not bundled into customer-facing package tiers.
@@ -1081,6 +1136,9 @@ export default function QuoteSummaryPage() {
         onOpenChange={setShowDepositDialog}
         onSubmit={handleDepositSubmit}
         depositAmount={depositAmount}
+        policyText={depositPolicySnapshot
+          ? customerPolicyText(depositPolicySnapshot.policyCode)
+          : DEPOSIT_POLICY_PUBLIC_SUMMARY}
         defaultValues={{
           name: state.customerName || user?.user_metadata?.full_name || '',
           email: state.customerEmail || user?.email || '',
@@ -1126,7 +1184,9 @@ export default function QuoteSummaryPage() {
                         Review the pickup total below, then reserve this exact motor with a ${depositAmount.toLocaleString()} deposit. HBW confirms availability and ETA before anything is ordered.
                       </p>
                       <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
+                        {depositPolicySnapshot
+                          ? customerPolicyText(depositPolicySnapshot.policyCode)
+                          : DEPOSIT_POLICY_PUBLIC_SUMMARY}
                       </p>
                       <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
                         Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
@@ -1243,8 +1303,8 @@ export default function QuoteSummaryPage() {
                 <div className="lg:hidden space-y-3">
                   <button
                     onClick={handleReserveDeposit}
-                    disabled={isProcessingDeposit || noMotorSelected}
-                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    disabled={isProcessingDeposit || noMotorSelected || !canReserveMotor}
+                    title={noMotorSelected ? 'Select a motor first' : !canReserveMotor ? 'Reservation terms could not be verified' : undefined}
                     className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -1336,6 +1396,7 @@ export default function QuoteSummaryPage() {
                   }}
                   onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
+                  reserveDisabled={!canReserveMotor}
                   isProcessingPayment={isProcessingDeposit}
                   quoteValidUntil={quoteValidUntil}
                 />

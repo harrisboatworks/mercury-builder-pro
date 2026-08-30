@@ -36,19 +36,16 @@ describe('private quote document storage contract', () => {
     expect(myQuotes).not.toContain('deposit_pdf_path');
     expect(myQuotes).not.toContain("storage.from('quotes')");
 
-    const depositGuard = payment.indexOf('assertDepositRequestHasSavedQuoteId');
-    const stripeConstruct = payment.indexOf('new Stripe(');
+    const depositGuard = payment.indexOf('decideCreatePaymentStripeAccess(validationResult.data)');
     const documentCheck = payment.indexOf('assertCanonicalQuoteDocumentReady({');
-    const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData)');
-    expect(payment).toContain('assertDepositRequestHasSavedQuoteId(validationResult.data)');
-    expect(payment).toContain('if (!depositSavedQuoteId)');
+    const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData');
+    expect(payment).toContain('decideCreatePaymentStripeAccess(validationResult.data)');
+    expect(payment).toContain('if (!depositSavedQuoteId || !submittedIdentity)');
     expect(payment).toContain('assertCanonicalQuoteDocumentReady({');
     expect(payment).toContain('canonicalQuoteDocumentPath(savedQuote.id)');
     expect(payment).toContain('email, expires_at, is_soft_lead, deposit_status');
     expect(depositGuard).toBeGreaterThan(-1);
-    expect(stripeConstruct).toBeGreaterThan(depositGuard);
-    expect(payment.indexOf('new Stripe(', stripeConstruct + 1)).toBe(-1);
-    expect(documentCheck).toBeGreaterThan(-1);
+    expect(documentCheck).toBeGreaterThan(depositGuard);
     expect(stripeCreate).toBeGreaterThan(documentCheck);
     expect(payment).not.toContain('quotePdfPath');
     expect(payment).not.toContain('quote_pdf_path:');
@@ -60,13 +57,15 @@ describe('private quote document storage contract', () => {
     expect(webhook).not.toContain('quotePdfPath');
     expect(webhook).not.toContain('quote_pdf_path:');
 
-    expect(mailer).toContain('"quotePdfPath" in requestBody');
-    expect(mailer).toContain('"quote_pdf_path" in requestBody');
-    expect(mailer).toContain('This email does not attach a quote PDF.');
+    expect(mailer).toContain('assertNoCallerDocumentPath(requestBody)');
+    expect(mailer).toContain('deriveDepositMailAttachmentKey(savedQuote.id)');
+    expect(mailer).toContain('.download(canonicalPath)');
+    expect(mailer).toContain('attachments: pdfAttachment');
+    expect(mailer).toContain('createDepositConfirmationEmailHtml');
+    expect(read('supabase/functions/_shared/deposit-email-templates.ts')).toContain('Your PDF quote is attached to this email.');
     expect(mailer).not.toContain('quoteData.quote_pdf_path');
-    expect(mailer).not.toContain('storage.from("quotes").download');
-    expect(mailer).not.toContain('attachments');
-    expect(mailer).not.toContain('attached to this email');
+    expect(mailer).not.toContain('getPublicUrl');
+    expect(mailer).not.toContain('This email does not attach a quote PDF.');
   });
 
   it('serves only canonical immutable PDFs through the private edge boundary', () => {

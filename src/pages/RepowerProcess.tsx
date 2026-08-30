@@ -13,7 +13,7 @@ const steps = [
   {
     name: 'Deposit locks the motor and your slot',
     text:
-      "$200 for portables, $500 mid-range, $1,000 for Pro XS / Verado / big-block. The deposit goes against your final invoice. Refundable up until we place the order with Mercury; after that, Mercury Canada's policy applies.",
+      "$200 up to 25 HP, $500 over 25 through 115 HP, $1,000 over 115 HP. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit; that amount does not change the refund rule. The deposit is credited to your final invoice. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable.",
   },
   {
     name: 'Boat into the bay',
@@ -78,9 +78,9 @@ export default function RepowerProcess() {
           { key: 'refund', label: 'Refundable' },
         ],
         rows: [
-          { class: 'Portable', deposit: '$200', refund: 'Until Mercury order placed' },
-          { class: 'Mid-range', deposit: '$500', refund: 'Until Mercury order placed' },
-          { class: 'Pro XS / Verado / big-block', deposit: '$1,000', refund: 'Until Mercury order placed' },
+          { class: 'Portable', deposit: '$200', refund: 'By stock status, not amount' },
+          { class: 'Mid-range', deposit: '$500', refund: 'By stock status, not amount' },
+          { class: 'Pro XS / Verado / big-block', deposit: '$1,000', refund: 'By stock status, not amount' },
         ],
         footnote: <>Deposit goes against your final invoice. After Mercury order placement, Mercury Canada's policy applies.</>,
       }}

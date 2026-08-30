@@ -1,31 +1,59 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import {
+  createDepositConfirmationEmailHtml,
+  createGrokDealEmailHtml,
+  createInternalDealEmailHtml,
+  customerDepositEmailSubject,
+  hbwDepositEmailSubject,
+} from "../_shared/deposit-email-templates.ts";
+import { authoritativeQuoteTotal, readPersistedDepositPolicy } from "../_shared/deposit-policy.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
+import { authenticatedBrowserCors, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import {
+  depositRecordIsPaid,
+  formatDealAddressForEmail,
+  resolveDealAddress,
+  resolveDepositMailContact,
+} from "../_shared/deposit-identity.ts";
+import { boundSavedQuoteIdFromDeposit } from "../_shared/deposit-deal-record.ts";
+import {
+  assertDeliveryOutboxReady,
+  assertNoCallerDocumentPath,
+  assertResendApiKeyConfigured,
+  audiencesNeedingDelivery,
+  DEPOSIT_EMAIL_CLAIM_LEASE_SECONDS,
+  DepositEmailOutboxError,
+  deliveriesIndicateFailure,
+  deriveDepositMailAttachmentKey,
+  generateDepositReference,
+  mailerNotificationReconcileResult,
+  reportableDeliveryStatus,
+  resendFailureCode,
+  resendIdempotencyKey,
+  sanitizeDeliveryError,
+  seedDepositEmailDeliveryRows,
+  sendResendEmailWithIdempotency,
+  stableDepositTimestamp,
+  type DepositEmailAudience,
+  type DepositEmailStatus,
+} from "../_shared/deposit-email-deliveries.ts";
+import { resolveDepositAudienceRecipients } from "../_shared/deposit-staging-guard.ts";
+import {
+  assertCanonicalPaidQuoteDocument,
+  QuoteDocumentUnavailableError,
+} from "../_shared/quote-document-policy.ts";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const resendApiKey = Deno.env.get("RESEND_API_KEY") || "";
+const resend = new Resend(resendApiKey);
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-const responseHeaders = { "Content-Type": "application/json" };
-
-interface DepositConfirmationRequest {
-  stripeSessionId?: string;
-  customerEmail: string;
-  customerName: string;
-  customerPhone?: string;
-  customerAddress?: Record<string, unknown>;
-  depositAmount: string;
-  paymentId?: string;
-  motorInfo?: { model?: string; hp?: number; year?: number };
-  sendAdminNotification?: boolean;
-  adminOnly?: boolean;
-  pricingData?: any;
-  quoteUrl?: string;
-}
+const jsonHeaders = { "Content-Type": "application/json" };
 
 const ADMIN_EMAILS = ["jayharris97@gmail.com", "harrisboatworks@hotmail.com"];
 
@@ -48,9 +76,21 @@ function isAuthorizedInternalRequest(req: Request): boolean {
   return constantTimeEqual(authorization, `Bearer ${supabaseServiceKey}`);
 }
 
-function generateReferenceNumber(paymentId?: string): string {
-  if (paymentId) return `HBW-${paymentId.slice(-8).toUpperCase()}`;
-  return `HBW-${Date.now().toString(36).toUpperCase()}`;
+function stagingMailerEnv() {
+  return {
+    DEPOSIT_STAGING_MODE: Deno.env.get("DEPOSIT_STAGING_MODE"),
+    DEPOSIT_STAGING_CUSTOMER_EMAIL: Deno.env.get("DEPOSIT_STAGING_CUSTOMER_EMAIL"),
+    DEPOSIT_STAGING_HBW_EMAIL: Deno.env.get("DEPOSIT_STAGING_HBW_EMAIL"),
+    DEPOSIT_STAGING_GROK_EMAIL: Deno.env.get("DEPOSIT_STAGING_GROK_EMAIL"),
+    SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+  };
+}
+
+function generateReferenceNumber(paymentId?: string, savedQuoteId = ""): string {
+  return generateDepositReference({
+    paymentIntentId: paymentId,
+    savedQuoteId: savedQuoteId || "00000000-0000-4000-8000-000000000000",
+  });
 }
 
 function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number }): string {
@@ -58,93 +98,36 @@ function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number 
   return motorInfo.model;
 }
 
-function createDepositConfirmationEmail(
-  customerName: string,
-  depositAmount: string,
-  referenceNumber: string,
-  motorLabel: string,
-  paymentId: string,
-  quoteUrl?: string,
-): string {
-  const dateStr = new Date().toLocaleDateString("en-CA", {
-    year: "numeric", month: "long", day: "numeric", timeZone: "America/Toronto",
-  });
-
-  const rows: Array<{ label: string; value: string }> = [];
-  if (motorLabel) rows.push({ label: "Motor", value: esc(motorLabel) });
-  rows.push({ label: "Deposit", value: `$${esc(depositAmount)} CAD` });
-  rows.push({ label: "Reference", value: esc(referenceNumber) });
-  if (paymentId && paymentId !== "TEMPLATE-PREVIEW") {
-    rows.push({ label: "Payment ID", value: `<span style="font-family:monospace;font-size:12px;font-weight:500;">${esc(paymentId)}</span>` });
+function bytesToBase64(bytes: Uint8Array): string {
+  let binary = "";
+  for (let index = 0; index < bytes.length; index += 1) {
+    binary += String.fromCharCode(bytes[index]);
   }
-  rows.push({ label: "Date", value: esc(dateStr) });
-
-  const motorPhrase = motorLabel ? ` for your ${esc(motorLabel)}` : "";
-  const reservationPolicy = Number(depositAmount) === 100
-    ? `<div style="margin:18px 0 0 0;padding:14px 16px;border:1px solid #d7dee8;background:#f7f4ee;border-radius:6px;color:#1f2430;font-size:14px;line-height:1.55;"><strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.</div>`
-    : "";
-
-  const body = `
-    <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
-    <p style="margin:0 0 14px 0;">We received your reservation deposit${motorPhrase}. Harris Boat Works will confirm availability and ETA with you before any motor is ordered.</p>
-    ${detailsCard(rows)}
-    ${reservationPolicy}
-    <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What happens next</h2>
-    <ol style="margin:0;padding-left:20px;color:#1f2430;">
-      <li style="margin:0 0 8px 0;">We call you within one business day to confirm the exact motor, availability, ETA, and any fit questions.</li>
-      <li style="margin:0 0 8px 0;">After those details are confirmed, we arrange the next step with you.</li>
-      <li style="margin:0 0 8px 0;">Pickup is at our shop in Gores Landing. Please come in person and bring valid government-issued photo ID.</li>
-    </ol>
-    <p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">Sign in to My Quotes to download your reservation document. This email does not attach a quote PDF.</p>
-    <p style="margin:22px 0 0 0;">Questions? Reply to this email or call us at <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
-    <p style="margin:16px 0 0 0;">Thanks for choosing Harris Boat Works.</p>
-  `;
-
-  return buildEmail({
-    preheader: `Reservation deposit received. HBW will confirm ${motorLabel || "the motor"} and ETA.`,
-    heading: "Your reservation deposit is confirmed",
-    bodyHtml: body,
-    ctaText: quoteUrl ? "View your quote" : undefined,
-    ctaUrl: quoteUrl,
-    footerNote: "Pickup is in person at our Gores Landing shop. Please bring valid photo ID.",
-  });
+  return btoa(binary);
 }
 
-function createAdminNotificationEmail(
-  customerName: string, customerEmail: string, customerPhone: string,
-  depositAmount: string, referenceNumber: string, paymentId: string,
-  motorInfo?: { model?: string; hp?: number; year?: number },
-): string {
-  const now = new Date().toLocaleString("en-CA", { timeZone: "America/Toronto" });
-  const motorLine = getMotorLabel(motorInfo) || "Not specified";
-  const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
-
-  const body = `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
-      <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Customer</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(customerName)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${esc(customerEmail)}" style="color:#0f2a43;">${esc(customerEmail || "Not provided")}</a></td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Phone</td><td style="padding:6px 0;">${customerPhone ? `<a href="tel:${esc(customerPhone)}" style="color:#0f2a43;">${esc(customerPhone)}</a>` : "Not provided"}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(motorLine)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Deposit</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${esc(depositAmount)} CAD</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Reference</td><td style="padding:6px 0;color:#1f2430;">${esc(referenceNumber)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Stripe</td><td style="padding:6px 0;font-family:monospace;font-size:12px;color:#1f2430;">${esc(paymentId || "N/A")}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Time</td><td style="padding:6px 0;color:#1f2430;">${esc(now)} ET</td></tr>
-    </table>
-    <p style="margin:14px 0 0 0;font-size:13px;color:#1f2430;">Action: contact customer within 24 hours to confirm rigging and schedule pickup or install.</p>
-    <p style="margin:10px 0 0 0;font-size:12px;color:#6b7280;">Open in admin: <a href="${appUrl}/admin/quotes" style="color:#0f2a43;">${appUrl}/admin/quotes</a></p>
-  `;
-
-  return buildAdminEmail({
-    preheader: `${customerName} - ${motorLine} - $${depositAmount}`,
-    heading: `${customerName} - ${motorLine} - $${depositAmount}`,
-    bodyHtml: body,
-    tag: "Deposit",
-  });
+async function authorizeMailer(
+  req: Request,
+  corsHeaders: Record<string, string>,
+): Promise<Response | { ok: true; actor: "service_role" | "admin" }> {
+  if (isAuthorizedInternalRequest(req)) {
+    return { ok: true, actor: "service_role" };
+  }
+  const admin = await requireAdmin(req, corsHeaders);
+  if (admin instanceof Response) return admin;
+  return { ok: true, actor: "admin" };
 }
 
 serve(async (req) => {
+  const cors = authenticatedBrowserCors(req);
+  const responseHeaders = { ...jsonHeaders, ...cors.headers };
+
+  if (cors.forbiddenOrigin) {
+    return forbiddenOriginResponse(responseHeaders);
+  }
+
   if (req.method === "OPTIONS") {
-    return new Response(null, { status: 204, headers: { Allow: "POST, OPTIONS" } });
+    return new Response(null, { status: 204, headers: { ...responseHeaders, Allow: "POST, OPTIONS" } });
   }
 
   if (req.method !== "POST") {
@@ -154,124 +137,442 @@ serve(async (req) => {
     });
   }
 
-  if (!isAuthorizedInternalRequest(req)) {
+  const auth = await authorizeMailer(req, responseHeaders);
+  if (auth instanceof Response) {
     logStep("Rejected unauthorized request");
-    return new Response(JSON.stringify({ error: "Unauthorized" }), {
-      status: 401,
-      headers: responseHeaders,
-    });
+    return auth;
   }
 
   try {
-    const requestBody: DepositConfirmationRequest = await req.json();
-    let {
-      customerEmail, customerName, customerPhone, depositAmount,
-      paymentId, motorInfo, sendAdminNotification, adminOnly, quoteUrl,
-    } = requestBody;
+    const requestBody = await req.json() as Record<string, unknown>;
+    assertNoCallerDocumentPath(requestBody);
 
-    if (requestBody.stripeSessionId) {
-      if (!/^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(requestBody.stripeSessionId)) {
-        throw new Error("Invalid Stripe session ID");
-      }
+    const stripeSessionId = typeof requestBody.stripeSessionId === "string"
+      ? requestBody.stripeSessionId
+      : "";
+    const savedQuoteDealId = typeof requestBody.savedQuoteId === "string"
+      ? requestBody.savedQuoteId
+      : "";
 
-      const { data: depositRecord, error: depositError } = await supabase
-        .from("customer_quotes")
-        .select("customer_name, customer_email, customer_phone, deposit_amount, quote_data")
-        .eq("lead_source", "deposit")
-        .contains("quote_data", { stripe_session_id: requestBody.stripeSessionId })
-        .maybeSingle();
+    if (stripeSessionId && !/^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(stripeSessionId)) {
+      throw new Error("Invalid Stripe session ID");
+    }
 
-      const quoteData = depositRecord?.quote_data as Record<string, unknown> | null;
-      if (depositError || !depositRecord || quoteData?.payment_status !== "paid") {
-        throw new Error("Paid deposit record not found");
-      }
-
-      customerEmail = depositRecord.customer_email || "";
-      customerName = depositRecord.customer_name || "Customer";
-      customerPhone = depositRecord.customer_phone || "";
-      depositAmount = String(depositRecord.deposit_amount ?? quoteData.deposit_amount ?? "");
-      paymentId = typeof quoteData.stripe_payment_intent === "string"
-        ? quoteData.stripe_payment_intent
-        : "";
-      motorInfo = quoteData.motor_info && typeof quoteData.motor_info === "object"
-        ? quoteData.motor_info as DepositConfirmationRequest["motorInfo"]
-        : undefined;
-      quoteUrl = undefined;
-      sendAdminNotification = true;
-      adminOnly = !customerEmail;
-    } else {
-      // The only legacy call is an internal, admin-only full-quote alert. It
-      // may not send customer mail or read a caller-supplied storage path.
-      if (
-        !adminOnly
-        || !sendAdminNotification
-        || "quotePdfPath" in requestBody
-        || "quote_pdf_path" in requestBody
-      ) {
+    const adminOnly = requestBody.adminOnly === true;
+    const sendAdminNotification = requestBody.sendAdminNotification === true;
+    if (!stripeSessionId && !savedQuoteDealId) {
+      if (!adminOnly || !sendAdminNotification) {
         throw new Error("A bound Stripe session is required");
       }
-    }
-
-    if (!customerName || !depositAmount) {
-      throw new Error("Incomplete payment notification data");
-    }
-
-    logStep("Processing deposit emails", { customerEmail, customerName, depositAmount, paymentId });
-
-    const referenceNumber = generateReferenceNumber(paymentId);
-    const motorLabel = getMotorLabel(motorInfo);
-
-    if (!adminOnly && customerEmail) {
-      const emailHtml = createDepositConfirmationEmail(
-        customerName, depositAmount, referenceNumber, motorLabel,
-        paymentId || "", quoteUrl,
-      );
-      const customerSubject = motorLabel
-        ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
-        : `Reservation deposit received | Harris Boat Works`;
-
-      const emailResponse = await resend.emails.send({
-        from: "Harris Boat Works <deposits@mercuryrepower.ca>",
-        reply_to: "info@harrisboatworks.ca",
-        to: [customerEmail],
-        subject: customerSubject,
-        html: emailHtml,
-        bcc: ["info@harrisboatworks.ca", GROK_BOT_AGENTMAIL],
-      });
-      if (emailResponse.error) {
-        throw new Error(`Customer confirmation email failed: ${emailResponse.error.message}`);
+      const customerName = typeof requestBody.customerName === "string" ? requestBody.customerName : "";
+      const depositAmount = String(requestBody.depositAmount || "");
+      const paymentId = typeof requestBody.paymentId === "string" ? requestBody.paymentId : "";
+      const motorInfo = requestBody.motorInfo && typeof requestBody.motorInfo === "object"
+        ? requestBody.motorInfo as { model?: string; hp?: number; year?: number }
+        : undefined;
+      if (!customerName || !depositAmount) {
+        throw new Error("Incomplete payment notification data");
       }
-      logStep("Customer email sent", { id: emailResponse?.data?.id });
-    }
-
-    if (sendAdminNotification || adminOnly) {
-      const adminHtml = createAdminNotificationEmail(
-        customerName, customerEmail || "", customerPhone || "",
-        depositAmount, referenceNumber, paymentId || "", motorInfo,
-      );
-      const adminSubject = `[DEPOSIT] ${customerName} - ${motorLabel || "motor"} - $${depositAmount}`;
-
+      const adminHtml = createInternalDealEmailHtml({
+        customerName,
+        customerEmail: "",
+        customerPhone: typeof requestBody.customerPhone === "string" ? requestBody.customerPhone : "",
+        customerAddress: "",
+        depositAmount,
+        quoteTotal: null,
+        remainingBalance: null,
+        referenceNumber: generateReferenceNumber(paymentId),
+        paymentId,
+        sessionId: "",
+        savedQuoteId: "",
+        customerQuoteId: "",
+        motorLabel: getMotorLabel(motorInfo),
+        policy: null,
+        appUrl: Deno.env.get("APP_URL") || "https://mercuryrepower.ca",
+      });
+      const adminRecipients = resolveDepositAudienceRecipients({
+        customerEmail: "",
+        adminEmails: ADMIN_EMAILS,
+        grokEmail: GROK_BOT_AGENTMAIL,
+        env: stagingMailerEnv(),
+      });
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
-        to: ADMIN_EMAILS,
-        bcc: [GROK_BOT_AGENTMAIL],
-        subject: adminSubject,
+        to: adminRecipients.hbw,
+        subject: hbwDepositEmailSubject(customerName, getMotorLabel(motorInfo), depositAmount),
         html: adminHtml,
       });
       if (adminResponse.error) {
-        throw new Error(`Admin deposit email failed: ${adminResponse.error.message}`);
+        throw new Error("Unable to send deposit confirmation");
       }
-      logStep("Admin notification sent", { id: adminResponse?.data?.id });
+      return new Response(JSON.stringify({ success: true, referenceNumber: generateReferenceNumber(paymentId) }), {
+        status: 200,
+        headers: responseHeaders,
+      });
     }
 
-    return new Response(JSON.stringify({ success: true, referenceNumber }), {
+    let depositQuery = supabase
+      .from("customer_quotes")
+      .select("*")
+      .eq("lead_source", "deposit");
+    depositQuery = stripeSessionId
+      ? depositQuery.eq("stripe_checkout_session_id", stripeSessionId)
+      : depositQuery.eq("saved_quote_id", savedQuoteDealId);
+
+    let { data: depositRecord, error: depositError } = (stripeSessionId || savedQuoteDealId)
+      ? await depositQuery.maybeSingle()
+      : { data: null, error: null };
+    if ((depositError || !depositRecord) && stripeSessionId) {
+      const legacy = await supabase
+        .from("customer_quotes")
+        .select("*")
+        .eq("lead_source", "deposit")
+        .contains("quote_data", { stripe_session_id: stripeSessionId })
+        .maybeSingle();
+      depositRecord = legacy.data;
+      depositError = legacy.error;
+    }
+    if ((depositError || !depositRecord) && savedQuoteDealId) {
+      const legacyByQuote = await supabase
+        .from("customer_quotes")
+        .select("*")
+        .eq("lead_source", "deposit")
+        .contains("quote_data", { saved_quote_id: savedQuoteDealId })
+        .maybeSingle();
+      depositRecord = legacyByQuote.data;
+      depositError = legacyByQuote.error;
+    }
+
+    const quoteData = depositRecord?.quote_data as Record<string, unknown> | null;
+    const savedQuoteId = depositRecord ? boundSavedQuoteIdFromDeposit(depositRecord) : "";
+    if (depositError || !depositRecord || !savedQuoteId) {
+      throw new Error("Paid deposit record not found");
+    }
+
+    const { data: savedQuote, error: savedQuoteError } = await supabase
+      .from("saved_quotes")
+      .select("id, email, expires_at, is_soft_lead, deposit_status, deposit_paid_at, created_at, quote_pdf_path, quote_pdf_sha256, quote_state, customer_full_name, customer_phone, customer_address_line1, customer_address_line2, customer_city, customer_region, customer_postal_code, customer_country")
+      .eq("id", savedQuoteId)
+      .maybeSingle();
+    if (
+      savedQuoteError
+      || !savedQuote
+      || !depositRecordIsPaid({
+        savedQuoteDepositStatus: savedQuote.deposit_status,
+        customerQuotePaymentStatus: depositRecord.payment_status,
+        quoteDataPaymentStatus: quoteData?.payment_status,
+      })
+    ) {
+      throw new Error("Paid deposit record not found");
+    }
+
+    const contact = resolveDepositMailContact({
+      savedQuote,
+      customerQuote: depositRecord,
+    });
+    if (!contact) {
+      throw new Error("Paid deposit contact is incomplete");
+    }
+    const depositPolicy = readPersistedDepositPolicy(quoteData);
+    if (!depositPolicy) {
+      throw new Error("Deposit policy snapshot is missing");
+    }
+    const resolvedAddress = resolveDealAddress({
+      savedQuote,
+      customerQuote: depositRecord,
+    });
+    const canonicalPath = deriveDepositMailAttachmentKey(savedQuote.id);
+    const { data: quoteDocument, error: quoteDocumentError } = await supabase
+      .storage
+      .from("quotes")
+      .download(canonicalPath);
+
+    const attachmentBytes = quoteDocument
+      ? new Uint8Array(await quoteDocument.arrayBuffer())
+      : null;
+    try {
+      const verified = await assertCanonicalPaidQuoteDocument({
+        row: savedQuote,
+        savedQuoteId: savedQuote.id,
+        object: quoteDocumentError || !attachmentBytes
+          ? null
+          : {
+              bytes: attachmentBytes,
+              contentType: quoteDocument?.type || "application/pdf",
+            },
+      });
+      if (verified.path !== canonicalPath || !attachmentBytes) {
+        throw new QuoteDocumentUnavailableError();
+      }
+    } catch {
+      throw new Error("Canonical reservation document is unavailable");
+    }
+
+    const attachment = {
+      filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`,
+      content: bytesToBase64(attachmentBytes),
+    };
+
+    const { error: seedError } = await supabase
+      .from("deposit_email_deliveries")
+      .upsert(
+        seedDepositEmailDeliveryRows({
+          customerQuoteId: depositRecord.id,
+          savedQuoteId: savedQuote.id,
+        }),
+        { onConflict: "customer_quote_id,audience", ignoreDuplicates: true },
+      );
+    if (seedError) {
+      throw new DepositEmailOutboxError();
+    }
+
+    const { data: deliveryRows, error: deliveryReadError } = await supabase
+      .from("deposit_email_deliveries")
+      .select("audience, status, attempt_count, provider_id, claim_token, claim_expires_at")
+      .eq("customer_quote_id", depositRecord.id);
+    if (deliveryReadError) {
+      throw new DepositEmailOutboxError();
+    }
+    assertDeliveryOutboxReady(deliveryRows);
+
+    const pendingAudiences = audiencesNeedingDelivery(deliveryRows);
+    const customerName = contact.fullName;
+    const customerEmail = contact.email;
+    const customerPhone = contact.phone;
+    const customerAddress = formatDealAddressForEmail(resolvedAddress);
+    const depositAmount = String(depositRecord.deposit_amount ?? quoteData?.deposit_amount ?? "");
+    const paymentId = typeof depositRecord.stripe_payment_intent_id === "string"
+      ? depositRecord.stripe_payment_intent_id
+      : typeof quoteData?.stripe_payment_intent === "string"
+        ? quoteData.stripe_payment_intent
+        : "";
+    const sessionId = depositRecord.stripe_checkout_session_id
+      || (typeof quoteData?.stripe_session_id === "string" ? quoteData.stripe_session_id : stripeSessionId);
+    const motorInfo = quoteData?.motor_info && typeof quoteData.motor_info === "object"
+      ? quoteData.motor_info as { model?: string; hp?: number; year?: number }
+      : undefined;
+    const paidAt = stableDepositTimestamp([
+      depositRecord.payment_paid_at,
+      savedQuote.deposit_paid_at,
+      depositRecord.created_at,
+      savedQuote.created_at,
+    ]);
+    const referenceNumber = generateDepositReference({
+      paymentIntentId: paymentId,
+      savedQuoteId: savedQuote.id,
+    });
+    const motorLabel = getMotorLabel(motorInfo);
+    const pdfAttachment = [attachment];
+
+    logStep("Processing deposit emails", {
+      savedQuoteId: savedQuote.id,
+      customerQuoteId: depositRecord.id,
+      audiences: pendingAudiences,
+      actor: auth.actor,
+    });
+
+    const results: Record<DepositEmailAudience, DepositEmailStatus> = {
+      customer: (deliveryRows.find((row) => row.audience === "customer")?.status || "pending") as DepositEmailStatus,
+      hbw: (deliveryRows.find((row) => row.audience === "hbw")?.status || "pending") as DepositEmailStatus,
+      grok_bot: (deliveryRows.find((row) => row.audience === "grok_bot")?.status || "pending") as DepositEmailStatus,
+    };
+
+    const markFailed = async (audience: DepositEmailAudience, claimToken: string, error: unknown) => {
+      const { error: failError } = await supabase.rpc("fail_deposit_email_delivery", {
+        p_customer_quote_id: depositRecord.id,
+        p_audience: audience,
+        p_claim_token: claimToken,
+        p_last_error: sanitizeDeliveryError(error),
+      });
+      results[audience] = "failed";
+      if (failError) {
+        logStep("Audience fail persist failed", { audience, savedQuoteId: savedQuote.id });
+      }
+    };
+
+    const sendAudience = async (
+      audience: DepositEmailAudience,
+      payload: Parameters<typeof sendResendEmailWithIdempotency>[0]["payload"],
+    ) => {
+      const claimToken = crypto.randomUUID();
+      const { data: claimed, error: claimError } = await supabase.rpc("claim_deposit_email_delivery", {
+        p_customer_quote_id: depositRecord.id,
+        p_audience: audience,
+        p_claim_token: claimToken,
+        p_lease_seconds: DEPOSIT_EMAIL_CLAIM_LEASE_SECONDS,
+      });
+      if (claimError) {
+        results[audience] = "failed";
+        logStep("Audience claim failed", { audience, savedQuoteId: savedQuote.id });
+        return;
+      }
+      if (!claimed) {
+        const current = deliveryRows.find((row) => row.audience === audience);
+        results[audience] = current?.status === "sent" ? "sent" : (current?.status || "pending");
+        return;
+      }
+
+      try {
+        if (!assertResendApiKeyConfigured(resendApiKey)) {
+          await markFailed(audience, claimToken, new Error("resend_api_key_missing"));
+          logStep("Audience email failed", { audience, savedQuoteId: savedQuote.id, reason: "resend_api_key_missing" });
+          return;
+        }
+
+        const provider = await sendResendEmailWithIdempotency({
+          apiKey: resendApiKey,
+          idempotencyKey: resendIdempotencyKey(depositRecord.id, audience),
+          payload,
+        });
+        if (provider.kind !== "sent") {
+          await markFailed(audience, claimToken, new Error(resendFailureCode(provider)));
+          logStep("Audience email failed", { audience, savedQuoteId: savedQuote.id, reason: provider.kind });
+          return;
+        }
+
+        const { data: completed, error: completeError } = await supabase.rpc("complete_deposit_email_delivery", {
+          p_customer_quote_id: depositRecord.id,
+          p_audience: audience,
+          p_claim_token: claimToken,
+          p_provider_id: provider.id,
+        });
+        const status = reportableDeliveryStatus({ completed, persistError: completeError });
+        if (status !== "sent") {
+          await markFailed(audience, claimToken, new Error("completion_failed"));
+          results[audience] = "failed";
+          logStep("Audience completion failed", { audience, savedQuoteId: savedQuote.id });
+          return;
+        }
+        results[audience] = "sent";
+        logStep("Audience email sent", { audience, providerId: provider.id, savedQuoteId: savedQuote.id });
+      } catch (providerError) {
+        await markFailed(audience, claimToken, providerError);
+        logStep("Audience email failed", { audience, savedQuoteId: savedQuote.id, reason: "provider_exception" });
+      }
+    };
+
+    const audienceRecipients = resolveDepositAudienceRecipients({
+      customerEmail,
+      adminEmails: ADMIN_EMAILS,
+      grokEmail: GROK_BOT_AGENTMAIL,
+      env: stagingMailerEnv(),
+    });
+
+    const quoteTotal = authoritativeQuoteTotal(depositRecord.final_price)
+      ?? authoritativeQuoteTotal(depositRecord.total_cost)
+      ?? null;
+    const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+    const customerHtml = createDepositConfirmationEmailHtml({
+      customerName,
+      depositAmount,
+      referenceNumber,
+      motorLabel,
+      paidAt,
+      policy: depositPolicy,
+    });
+    const internalInput = {
+      customerName,
+      customerEmail,
+      customerPhone,
+      customerAddress,
+      depositAmount,
+      quoteTotal,
+      remainingBalance: null,
+      referenceNumber,
+      paymentId: paymentId || "",
+      sessionId,
+      savedQuoteId: savedQuote.id,
+      customerQuoteId: depositRecord.id,
+      motorLabel,
+      paidAt,
+      policy: depositPolicy,
+      appUrl,
+    };
+    const internalHtml = createInternalDealEmailHtml(internalInput);
+    const grokHtml = createGrokDealEmailHtml(internalInput);
+    const internalSubject = hbwDepositEmailSubject(customerName, motorLabel, depositAmount);
+
+    if (pendingAudiences.includes("customer") && audienceRecipients.customer[0]) {
+      await sendAudience("customer", {
+        from: "Harris Boat Works <deposits@mercuryrepower.ca>",
+        reply_to: audienceRecipients.replyTo,
+        to: audienceRecipients.customer,
+        subject: customerDepositEmailSubject(motorLabel),
+        html: customerHtml,
+        attachments: pdfAttachment,
+      });
+    }
+
+    if (pendingAudiences.includes("hbw")) {
+      await sendAudience("hbw", {
+        from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
+        to: audienceRecipients.hbw,
+        subject: internalSubject,
+        html: internalHtml,
+        attachments: pdfAttachment,
+      });
+    }
+
+    if (pendingAudiences.includes("grok_bot")) {
+      await sendAudience("grok_bot", {
+        from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
+        to: audienceRecipients.grok_bot,
+        subject: internalSubject,
+        html: grokHtml,
+        attachments: pdfAttachment,
+      });
+    }
+
+    const { data: notificationStatus, error: reconcileError } = await supabase.rpc(
+      "reconcile_deposit_notification_status",
+      { p_customer_quote_id: depositRecord.id },
+    );
+    if (reconcileError) {
+      logStep("WARNING: quote notification reconciliation failed", {
+        savedQuoteId: savedQuote.id,
+      });
+    }
+    const notificationReconcile = mailerNotificationReconcileResult({
+      status: typeof notificationStatus === "string" ? notificationStatus : null,
+      error: reconcileError,
+    });
+
+    return new Response(JSON.stringify({
+      success: !deliveriesIndicateFailure(results),
+      referenceNumber,
+      savedQuoteId: savedQuote.id,
+      deliveries: results,
+      notification_status: notificationReconcile.notification_status,
+      notification_reconciled: notificationReconcile.notification_reconciled,
+    }), {
       status: 200,
       headers: responseHeaders,
     });
-  } catch (error: any) {
-    logStep("ERROR", { error: error.message });
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
+  } catch (error: unknown) {
+    if (error instanceof DepositEmailOutboxError) {
+      logStep("ERROR", { error: "delivery_outbox_unavailable" });
+      return new Response(JSON.stringify({
+        success: false,
+        reason: "delivery_outbox_unavailable",
+        deliveries: { customer: "pending", hbw: "pending", grok_bot: "pending" },
+      }), {
+        status: 200,
+        headers: responseHeaders,
+      });
+    }
+    logStep("ERROR", { error: error instanceof Error ? error.name : "delivery_error" });
+    const message = error instanceof Error && (
+      error.message === "Paid deposit record not found"
+      || error.message === "A bound Stripe session is required"
+      || error.message === "Invalid Stripe session ID"
+      || error.message === "Caller document paths are not accepted"
+      || error.message === "Public document URLs are not accepted"
+      || error.message === "Canonical reservation document is unavailable"
+      || error.message === "Paid deposit contact is incomplete"
+      || error.message === "Deposit policy snapshot is missing"
+    ) ? error.message : "Unable to send deposit confirmation";
+    return new Response(JSON.stringify({ error: message }), {
+      status: message === "Unable to send deposit confirmation" ? 500 : 400,
       headers: responseHeaders,
     });
   }

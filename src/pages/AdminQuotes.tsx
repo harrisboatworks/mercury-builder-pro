@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import AdminNav from '@/components/admin/AdminNav';
 import { useQuote } from '@/contexts/QuoteContext';
+import { dedupeAdminDealPacketRows, resolveAdminDealPacketId } from '@/lib/admin-deal-packet';
 
 interface UnifiedQuoteRow {
   id: string;
@@ -41,12 +42,16 @@ interface UnifiedQuoteRow {
   notes?: string | null;
   follow_up_date?: string | null;
   // Unified source tracking
+  saved_quote_id?: string | null;
+  payment_status?: string | null;
+  stripe_checkout_session_id?: string | null;
   _source: 'customer_quotes' | 'saved_quotes';
   _source_label: string;
   _motor_info?: string;
   _deposit_status?: string | null;
   _is_soft_lead?: boolean;
   _reference_number?: string | null;
+  _deal_packet_id?: string;
 }
 
 const AdminQuotes = () => {
@@ -129,10 +134,11 @@ const AdminQuotes = () => {
 
     return {
       id: sq.id,
+      saved_quote_id: sq.id,
       created_at: sq.created_at,
-      customer_name: customerName,
+      customer_name: sq.customer_full_name || customerName,
       customer_email: isAnonymous ? '' : sq.email,
-      customer_phone: qs.customerPhone || null,
+      customer_phone: sq.customer_phone || qs.customerPhone || null,
       base_price: qs.basePrice || motor.price || 0,
       final_price: qs.finalPrice || qs.frozenPricing?.total || 0,
       deposit_amount: sq.deposit_amount || 0,
@@ -152,6 +158,7 @@ const AdminQuotes = () => {
       _deposit_status: sq.deposit_status,
       _is_soft_lead: isSoftLead || isAnonymous,
       _reference_number: sq.reference_number || null,
+      _deal_packet_id: sq.id,
     };
   };
 
@@ -186,17 +193,28 @@ const AdminQuotes = () => {
       toast({ title: 'Error', description: 'Failed to load customer quotes', variant: 'destructive' });
     }
 
+    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
+    const knownSavedQuoteIds = new Set(sqRows.map((row) => row.id));
+
     const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
       ...r,
+      saved_quote_id: r.saved_quote_id || null,
+      payment_status: r.payment_status || null,
+      stripe_checkout_session_id: r.stripe_checkout_session_id || r.quote_data?.stripe_session_id || null,
       _source: 'customer_quotes' as const,
-      _source_label: 'Lead',
-      _motor_info: '',
-      _deposit_status: null,
+      _source_label: r.lead_source === 'deposit' ? 'Deposit' : 'Lead',
+      _motor_info: r.quote_data?.motor_info?.model || '',
+      _deposit_status: r.payment_status || null,
       _is_soft_lead: false,
       _reference_number: null,
+      _deal_packet_id: resolveAdminDealPacketId({
+        id: r.id,
+        saved_quote_id: r.saved_quote_id || null,
+        lead_source: r.lead_source,
+        quote_data: r.quote_data,
+        _source: 'customer_quotes',
+      }, knownSavedQuoteIds),
     }));
-
-    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
 
     setCustomerQuoteRows(cqRows);
     setSavedQuoteRows(sqRows);
@@ -215,7 +233,7 @@ const AdminQuotes = () => {
     let merged: UnifiedQuoteRow[] = [];
 
     if (quoteSourceFilter === 'all') {
-      merged = [...customerQuoteRows, ...savedQuoteRows];
+      merged = dedupeAdminDealPacketRows(customerQuoteRows, savedQuoteRows);
     } else if (quoteSourceFilter === 'leads') {
       merged = customerQuoteRows;
     } else if (quoteSourceFilter === 'saved') {
@@ -390,7 +408,7 @@ const AdminQuotes = () => {
               onChange={(e) => setQuoteSourceFilter(e.target.value)}
               className="text-sm border rounded px-2 py-1"
             >
-              <option value="all">All ({customerQuoteRows.length + savedQuoteRows.length})</option>
+              <option value="all">All ({dedupeAdminDealPacketRows(customerQuoteRows, savedQuoteRows).length})</option>
               <option value="leads">Leads ({customerQuoteRows.length})</option>
               <option value="saved">Saved Quotes ({savedQuoteRows.filter(r => !r._is_soft_lead && r._deposit_status !== 'paid').length})</option>
               <option value="anonymous">Anonymous / PDF ({savedQuoteRows.filter(r => r._is_soft_lead).length})</option>
@@ -580,7 +598,7 @@ const AdminQuotes = () => {
                     <TableRow
                       key={`${r._source}-${r.id}`}
                       className="cursor-pointer"
-                      onClick={() => navigate(`/admin/quotes/${r.id}`)}
+                      onClick={() => navigate(`/admin/quotes/${r._deal_packet_id || r.id}`)}
                     >
                       <TableCell className="text-xs font-mono font-medium text-primary">{r._reference_number || '-'}</TableCell>
                       <TableCell className="text-xs whitespace-nowrap">{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>

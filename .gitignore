@@ -25,6 +25,9 @@ dist-ssr
 .vercel
 supabase/.temp
 
+# Disposable local acceptance clusters (never a remote or Homebrew default datadir)
+.tmp/
+
 # Generated maintenance reports
 reports/*.json
 
