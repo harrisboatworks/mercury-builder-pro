@@ -21,15 +21,45 @@ const normalizeSql = (sql: string): string =>
 const financingApplicationsTablePattern =
   String.raw`(?:(?:"public"|public)\s*\.\s*)?(?:"financing_applications"|financing_applications)`;
 
-const unsafePublicWriteGrantPattern = new RegExp(
-  `GRANT\\s+(?=[^;]*\\b(?:ALL(?:\\s+PRIVILEGES)?|INSERT|UPDATE|DELETE)\\b)[^;]*?\\bON\\s+(?:TABLE\\s+)?${financingApplicationsTablePattern}(?=\\s|$)[^;]*\\bTO\\s+[^;]*(?:\\banon\\b|\\bPUBLIC\\b)`,
-  'i',
-);
-
 const disabledRlsPattern = new RegExp(
   `ALTER\\s+TABLE\\s+(?:IF\\s+EXISTS\\s+)?(?:ONLY\\s+)?${financingApplicationsTablePattern}(?:\\s+\\*)?\\s+DISABLE\\s+ROW\\s+LEVEL\\s+SECURITY\\b`,
   'i',
 );
+
+const directFinancingGrantTargetPattern = new RegExp(
+  `(?:^|,)\\s*(?:TABLE\\s+)?${financingApplicationsTablePattern}(?=\\s*(?:,|$))`,
+  'i',
+);
+
+const findUnsafePublicGrant = (sql: string): string | undefined =>
+  normalizeSql(sql)
+    .split(';')
+    .map((statement) => statement.trim())
+    .find((statement) => {
+      const grant = statement.match(/\bGRANT\s+(.+?)\s+ON\s+(.+?)\s+TO\s+(.+)$/i);
+      if (!grant) return false;
+
+      const [, privileges, targets, rawGrantees] = grant;
+      const hasUnsafePrivilege = /\b(?:ALL(?:\s+PRIVILEGES)?|INSERT|UPDATE|DELETE|TRUNCATE|REFERENCES|TRIGGER|MAINTAIN)\b/i
+        .test(privileges);
+      if (!hasUnsafePrivilege) return false;
+
+      const allTablesInSchema = targets.match(/^ALL\s+TABLES\s+IN\s+SCHEMA\s+(.+)$/i);
+      const targetsPublicSchema = allTablesInSchema?.[1]
+        .split(',')
+        .map((schema) => schema.trim().replace(/^"|"$/g, '').toLowerCase())
+        .includes('public') ?? false;
+      if (!directFinancingGrantTargetPattern.test(targets) && !targetsPublicSchema) {
+        return false;
+      }
+
+      const grantees = rawGrantees
+        .replace(/\bWITH\s+GRANT\s+OPTION\b[\s\S]*$/i, '')
+        .replace(/\bGRANTED\s+BY\b[\s\S]*$/i, '')
+        .split(',')
+        .map((role) => role.trim().replace(/^GROUP\s+/i, '').replace(/^"|"$/g, '').toLowerCase());
+      return grantees.some((role) => role === 'anon' || role === 'public');
+    });
 
 const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
   normalizeSql(sql)
@@ -49,10 +79,9 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
         return false;
       }
       const policyTail = statement.slice(tableMatch.index + tableMatch[0].length);
+      const declarationTail = policyTail.split(/\b(?:USING|WITH\s+CHECK)\b/i, 1)[0];
 
-      const roleMatch = policyTail.match(
-        /\bTO\s+(.+?)(?=\bUSING\b|\bWITH\s+CHECK\b|$)/i,
-      );
+      const roleMatch = declarationTail.match(/\bTO\s+(.+)$/i);
       const roles = (roleMatch?.[1] ?? 'PUBLIC')
         .replace(/["']/g, '')
         .split(/[\s,]+/)
@@ -69,7 +98,7 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
       }
 
       // PostgreSQL defaults an omitted CREATE command to ALL and role to PUBLIC.
-      const command = policyTail.match(/\bFOR\s+(ALL|SELECT|INSERT|UPDATE|DELETE)\b/i)?.[1]
+      const command = declarationTail.match(/\bFOR\s+(ALL|SELECT|INSERT|UPDATE|DELETE)\b/i)?.[1]
         ?.toUpperCase() ?? 'ALL';
       if (!['ALL', 'INSERT', 'UPDATE', 'DELETE'].includes(command)) return false;
 
@@ -105,7 +134,7 @@ describe('financing application write authority', () => {
         /CREATE\s+POLICY\s+"?(?:Anon can create anonymous applications|Users can create own applications|Users can update own draft applications)"?/i,
       );
       expect(findUnsafePublicWritePolicy(normalizedSql)).toBeUndefined();
-      expect(normalizedSql).not.toMatch(unsafePublicWriteGrantPattern);
+      expect(findUnsafePublicGrant(normalizedSql)).toBeUndefined();
       expect(normalizedSql).not.toMatch(disabledRlsPattern);
     }
   });
@@ -156,18 +185,45 @@ describe('financing application write authority', () => {
       ALTER POLICY "service writes" ON public.financing_applications
       TO service_role USING (true) WITH CHECK (true);
     `)).toBeUndefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "predicate mentions a role" ON public.financing_applications
+      FOR UPDATE USING (applicant_data->>'scope' = 'to service_role');
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "predicate mentions a command" ON public.financing_applications
+      USING (applicant_data->>'scope' = 'for select');
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "service predicate mentions a public role" ON public.financing_applications
+      FOR ALL TO service_role USING (applicant_data->>'scope' = 'to public');
+    `)).toBeUndefined();
   });
 
   it('recognizes qualified, unqualified, and quoted table names in companion guards', () => {
-    expect('GRANT DELETE ON financing_applications TO PUBLIC').toMatch(
-      unsafePublicWriteGrantPattern,
-    );
-    expect('GRANT INSERT ON TABLE "public"."financing_applications" TO anon').toMatch(
-      unsafePublicWriteGrantPattern,
-    );
-    expect('GRANT SELECT, UPDATE ON financing_applications TO app_role, anon').toMatch(
-      unsafePublicWriteGrantPattern,
-    );
+    expect(findUnsafePublicGrant(
+      'GRANT DELETE ON financing_applications TO PUBLIC',
+    )).toBeDefined();
+    expect(findUnsafePublicGrant(
+      'GRANT INSERT ON TABLE "public"."financing_applications" TO anon',
+    )).toBeDefined();
+    expect(findUnsafePublicGrant(
+      'GRANT SELECT, UPDATE ON financing_applications TO app_role, anon',
+    )).toBeDefined();
+    expect(findUnsafePublicGrant(
+      'GRANT TRUNCATE ON public.other_table, public.financing_applications TO app_role, "anon"',
+    )).toBeDefined();
+    expect(findUnsafePublicGrant(
+      'GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA private, public TO PUBLIC',
+    )).toBeDefined();
+    expect(findUnsafePublicGrant(
+      'GRANT SELECT ON public.financing_applications TO PUBLIC',
+    )).toBeUndefined();
+    expect(findUnsafePublicGrant(
+      'GRANT UPDATE ON public.other_table TO anon',
+    )).toBeUndefined();
+    expect(findUnsafePublicGrant(
+      'GRANT UPDATE ON public.financing_applications TO service_role',
+    )).toBeUndefined();
     expect('ALTER TABLE financing_applications DISABLE ROW LEVEL SECURITY').toMatch(
       disabledRlsPattern,
     );
@@ -192,7 +248,12 @@ describe('financing application write authority', () => {
     expect(api).toContain("const admin = createClient(supabaseUrl, serviceKey");
     expect(api).toContain(".eq('id', applicationId)");
     expect(api).toContain(".eq('resume_token', resumeToken)");
-    expect(api.match(/\.eq\('status', 'draft'\)/g)).toHaveLength(2);
+    expect(api).toMatch(
+      /\.update\([\s\S]{0,2000}?\.eq\('id', applicationId\)[\s\S]{0,300}?\.eq\('resume_token', resumeToken\)[\s\S]{0,300}?\.eq\('status', 'draft'\)/,
+    );
+    expect(api).toMatch(
+      /\.update\([\s\S]{0,2000}?\.eq\('id', input\.applicationId\)[\s\S]{0,300}?\.eq\('resume_token', input\.resumeToken\)[\s\S]{0,300}?\.eq\('status', 'draft'\)/,
+    );
     expect(api).toContain("status: 'draft'");
     expect(api).toContain("status: 'pending'");
     expect(client).toContain("supabase.functions.invoke('financing-application-api'");
