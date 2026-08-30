@@ -12,6 +12,41 @@ const sourceFiles = (directory: string): string[] =>
     return entry.isDirectory() ? sourceFiles(path) : [path];
   });
 
+const normalizeSql = (sql: string): string =>
+  sql
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .replace(/--.*$/gm, ' ')
+    .replace(/\s+/g, ' ');
+
+const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
+  normalizeSql(sql)
+    .split(';')
+    .map((statement) => statement.trim())
+    .find((statement) => {
+      if (
+        !/CREATE\s+POLICY\b/i.test(statement) ||
+        !/\bON\s+public\.financing_applications\b/i.test(statement)
+      ) {
+        return false;
+      }
+
+      // PostgreSQL defaults an omitted command to ALL and an omitted role to PUBLIC.
+      const command = statement.match(/\bFOR\s+(ALL|SELECT|INSERT|UPDATE|DELETE)\b/i)?.[1]
+        ?.toUpperCase() ?? 'ALL';
+      if (!['ALL', 'INSERT', 'UPDATE', 'DELETE'].includes(command)) return false;
+
+      const roleClause = statement.match(
+        /\bTO\s+(.+?)(?=\bUSING\b|\bWITH\s+CHECK\b|$)/i,
+      )?.[1] ?? 'PUBLIC';
+      const roles = roleClause
+        .replace(/["']/g, '')
+        .split(/[\s,]+/)
+        .filter(Boolean)
+        .map((role) => role.toLowerCase());
+
+      return roles.some((role) => ['public', 'anon', 'authenticated'].includes(role));
+    });
+
 describe('financing application write authority', () => {
   it('removes public and customer-side table writes without weakening admin or customer reads', () => {
     const migration = source(migrationPath);
@@ -35,20 +70,12 @@ describe('financing application write authority', () => {
       .map((name) => ({ name, sql: source(`supabase/migrations/${name}`) }));
 
     for (const { sql } of migrationAndLater) {
-      const normalizedSql = sql
-        .replace(/\/\*[\s\S]*?\*\//g, ' ')
-        .replace(/--.*$/gm, ' ')
-        .replace(/\s+/g, ' ');
+      const normalizedSql = normalizeSql(sql);
 
       expect(normalizedSql).not.toMatch(
         /CREATE\s+POLICY\s+"?(?:Anon can create anonymous applications|Users can create own applications|Users can update own draft applications)"?/i,
       );
-      expect(normalizedSql).not.toMatch(
-        /CREATE\s+POLICY\b[^;]*\bON\s+public\.financing_applications\b[^;]*\bFOR\s+(?:ALL|INSERT|UPDATE)\b[^;]*\bTO\s+anon\b/i,
-      );
-      expect(normalizedSql).not.toMatch(
-        /CREATE\s+POLICY\b[^;]*\bON\s+public\.financing_applications\b[^;]*\bFOR\s+(?:ALL|INSERT|UPDATE)\b[^;]*\bTO\s+authenticated\b/i,
-      );
+      expect(findUnsafePublicWritePolicy(normalizedSql)).toBeUndefined();
       expect(normalizedSql).not.toMatch(
         /GRANT\s+(?:ALL(?:\s+PRIVILEGES)?|INSERT|UPDATE)[^;]*\bON\s+(?:TABLE\s+)?public\.financing_applications\b[^;]*\bTO\s+anon\b/i,
       );
@@ -56,6 +83,33 @@ describe('financing application write authority', () => {
         /ALTER\s+TABLE\s+(?:ONLY\s+)?public\.financing_applications\s+DISABLE\s+ROW\s+LEVEL\s+SECURITY\b/i,
       );
     }
+  });
+
+  it('interprets omitted policy command and role clauses using PostgreSQL defaults', () => {
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "open writes" ON public.financing_applications
+      USING (true) WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "anonymous inserts" ON public.financing_applications
+      FOR INSERT WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "customer updates" ON public.financing_applications
+      FOR UPDATE TO PUBLIC USING (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "customer deletes" ON public.financing_applications
+      FOR DELETE TO authenticated USING (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "public reads" ON public.financing_applications
+      FOR SELECT USING (true);
+    `)).toBeUndefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "service writes" ON public.financing_applications
+      FOR ALL TO service_role USING (true) WITH CHECK (true);
+    `)).toBeUndefined();
   });
 
   it('keeps customer mutations behind the service-role API invariants', () => {
