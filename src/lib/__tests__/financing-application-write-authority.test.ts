@@ -18,6 +18,19 @@ const normalizeSql = (sql: string): string =>
     .replace(/--.*$/gm, ' ')
     .replace(/\s+/g, ' ');
 
+const financingApplicationsTablePattern =
+  String.raw`(?:(?:"public"|public)\s*\.\s*)?(?:"financing_applications"|financing_applications)`;
+
+const unsafePublicWriteGrantPattern = new RegExp(
+  `GRANT\\s+(?=[^;]*\\b(?:ALL(?:\\s+PRIVILEGES)?|INSERT|UPDATE|DELETE)\\b)[^;]*?\\bON\\s+(?:TABLE\\s+)?${financingApplicationsTablePattern}(?=\\s|$)[^;]*\\bTO\\s+[^;]*(?:\\banon\\b|\\bPUBLIC\\b)`,
+  'i',
+);
+
+const disabledRlsPattern = new RegExp(
+  `ALTER\\s+TABLE\\s+(?:ONLY\\s+)?${financingApplicationsTablePattern}\\s+DISABLE\\s+ROW\\s+LEVEL\\s+SECURITY\\b`,
+  'i',
+);
+
 const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
   normalizeSql(sql)
     .split(';')
@@ -26,7 +39,7 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
       const policyAction = statement.match(/\b(CREATE|ALTER)\s+POLICY\b/i)?.[1]
         ?.toUpperCase();
       const tableMatch = statement.match(
-        /\bON\s+(?:(?:"public"|public)\s*\.\s*)?(?:"financing_applications"|financing_applications)(?=\s|$)/i,
+        new RegExp(`\\bON\\s+${financingApplicationsTablePattern}(?=\\s|$)`, 'i'),
       );
       if (
         !policyAction ||
@@ -92,12 +105,8 @@ describe('financing application write authority', () => {
         /CREATE\s+POLICY\s+"?(?:Anon can create anonymous applications|Users can create own applications|Users can update own draft applications)"?/i,
       );
       expect(findUnsafePublicWritePolicy(normalizedSql)).toBeUndefined();
-      expect(normalizedSql).not.toMatch(
-        /GRANT\s+(?:ALL(?:\s+PRIVILEGES)?|INSERT|UPDATE)[^;]*\bON\s+(?:TABLE\s+)?public\.financing_applications\b[^;]*\bTO\s+anon\b/i,
-      );
-      expect(normalizedSql).not.toMatch(
-        /ALTER\s+TABLE\s+(?:ONLY\s+)?public\.financing_applications\s+DISABLE\s+ROW\s+LEVEL\s+SECURITY\b/i,
-      );
+      expect(normalizedSql).not.toMatch(unsafePublicWriteGrantPattern);
+      expect(normalizedSql).not.toMatch(disabledRlsPattern);
     }
   });
 
@@ -147,6 +156,24 @@ describe('financing application write authority', () => {
       ALTER POLICY "service writes" ON public.financing_applications
       TO service_role USING (true) WITH CHECK (true);
     `)).toBeUndefined();
+  });
+
+  it('recognizes qualified, unqualified, and quoted table names in companion guards', () => {
+    expect('GRANT DELETE ON financing_applications TO PUBLIC').toMatch(
+      unsafePublicWriteGrantPattern,
+    );
+    expect('GRANT INSERT ON TABLE "public"."financing_applications" TO anon').toMatch(
+      unsafePublicWriteGrantPattern,
+    );
+    expect('GRANT SELECT, UPDATE ON financing_applications TO app_role, anon').toMatch(
+      unsafePublicWriteGrantPattern,
+    );
+    expect('ALTER TABLE financing_applications DISABLE ROW LEVEL SECURITY').toMatch(
+      disabledRlsPattern,
+    );
+    expect(
+      'ALTER TABLE ONLY "public"."financing_applications" DISABLE ROW LEVEL SECURITY',
+    ).toMatch(disabledRlsPattern);
   });
 
   it('keeps customer mutations behind the service-role API invariants', () => {
