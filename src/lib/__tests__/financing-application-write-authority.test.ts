@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { basename, relative, resolve } from 'node:path';
+import ts from 'typescript';
 import { describe, expect, it } from 'vitest';
 
 const source = (path: string) => readFileSync(resolve(process.cwd(), path), 'utf8');
@@ -31,11 +32,27 @@ const directFinancingGrantTargetPattern = new RegExp(
   'i',
 );
 
-const findUnsafePublicGrant = (sql: string): string | undefined =>
-  normalizeSql(sql)
-    .split(';')
-    .map((statement) => statement.trim())
-    .find((statement) => {
+const findUnsafePublicGrant = (sql: string): string | undefined => {
+  const normalizedSql = normalizeSql(sql);
+  const dynamicGrant = normalizedSql
+    .split(/\b(?:EXECUTE|format\s*\()/i)
+    .slice(1)
+    .map((fragment) => fragment.split(';', 1)[0])
+    .find(
+      (fragment) =>
+        /\bGRANT\b/i.test(fragment) &&
+        new RegExp(financingApplicationsTablePattern, 'i').test(fragment),
+    );
+  // Dynamic grants are deliberately review-gated even when the visible role
+  // looks safe: concatenation and format placeholders can hide the grantee.
+  if (dynamicGrant) return dynamicGrant;
+
+  const grantStatements = normalizedSql
+    .split(/\bGRANT\b/i)
+    .slice(1)
+    .map((fragment) => `GRANT ${fragment.split(/(?:;|'|\$[A-Za-z0-9_]*\$|\bEND\b)/i, 1)[0].trim()}`);
+
+  return grantStatements.find((statement) => {
       const grant = statement.match(/\bGRANT\s+(.+?)\s+ON\s+(.+?)\s+TO\s+(.+)$/i);
       if (!grant) return false;
 
@@ -60,6 +77,48 @@ const findUnsafePublicGrant = (sql: string): string | undefined =>
         .map((role) => role.trim().replace(/^GROUP\s+/i, '').replace(/^"|"$/g, '').toLowerCase());
       return grantees.some((role) => role === 'anon' || role === 'public');
     });
+};
+
+const financingApplicationUpdateStatements = (typescript: string): string[] =>
+  (() => {
+    const sourceFile = ts.createSourceFile(
+      'financing-application-api.ts',
+      typescript,
+      ts.ScriptTarget.Latest,
+      true,
+      ts.ScriptKind.TS,
+    );
+    const updateChains: string[] = [];
+
+    const visit = (node: ts.Node) => {
+      if (
+        ts.isCallExpression(node) &&
+        ts.isPropertyAccessExpression(node.expression) &&
+        node.expression.name.text === 'update' &&
+        new RegExp(`\\.from\\(\\s*['"]financing_applications['"]\\s*\\)`).test(
+          node.getText(sourceFile),
+        )
+      ) {
+        let chain: ts.Node = node;
+        while (
+          chain.parent &&
+          ts.isPropertyAccessExpression(chain.parent) &&
+          chain.parent.expression === chain &&
+          chain.parent.parent &&
+          ts.isCallExpression(chain.parent.parent) &&
+          chain.parent.parent.expression === chain.parent
+        ) {
+          chain = chain.parent.parent;
+        }
+        updateChains.push(chain.getText(sourceFile));
+      }
+
+      ts.forEachChild(node, visit);
+    };
+
+    visit(sourceFile);
+    return updateChains;
+  })();
 
 const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
   normalizeSql(sql)
@@ -224,6 +283,34 @@ describe('financing application write authority', () => {
     expect(findUnsafePublicGrant(
       'GRANT UPDATE ON public.financing_applications TO service_role',
     )).toBeUndefined();
+    expect(findUnsafePublicGrant(`
+      DO $$
+      BEGIN
+        EXECUTE 'GRANT UPDATE ON public.financing_applications TO anon';
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicGrant(`
+      DO $grant$
+      BEGIN
+        EXECUTE 'GRANT UPDATE ON public.financing_applications TO service_role';
+      END $grant$;
+    `)).toBeDefined();
+    expect(findUnsafePublicGrant(`
+      DO $$
+      BEGIN
+        EXECUTE 'GRANT UPDATE ON public.financing_applications TO ' || 'anon';
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicGrant(`
+      DO $$
+      BEGIN
+        EXECUTE format(
+          'GRANT UPDATE ON %I TO %I',
+          'financing_applications',
+          'anon'
+        );
+      END $$;
+    `)).toBeDefined();
     expect('ALTER TABLE financing_applications DISABLE ROW LEVEL SECURITY').toMatch(
       disabledRlsPattern,
     );
@@ -245,14 +332,19 @@ describe('financing application write authority', () => {
     const resume = source('src/pages/FinancingResume.tsx');
     const context = source('src/contexts/FinancingContext.tsx');
 
-    expect(api).toContain("const admin = createClient(supabaseUrl, serviceKey");
-    expect(api).toContain(".eq('id', applicationId)");
-    expect(api).toContain(".eq('resume_token', resumeToken)");
-    expect(api).toMatch(
-      /\.update\([\s\S]{0,2000}?\.eq\('id', applicationId\)[\s\S]{0,300}?\.eq\('resume_token', resumeToken\)[\s\S]{0,300}?\.eq\('status', 'draft'\)/,
+    const updateStatements = financingApplicationUpdateStatements(api);
+    const savedDraftUpdate = updateStatements.find((statement) => statement.includes('.update({'));
+    const submittedDraftUpdate = updateStatements.find((statement) =>
+      statement.includes('.update(submission)'),
     );
-    expect(api).toMatch(
-      /\.update\([\s\S]{0,2000}?\.eq\('id', input\.applicationId\)[\s\S]{0,300}?\.eq\('resume_token', input\.resumeToken\)[\s\S]{0,300}?\.eq\('status', 'draft'\)/,
+
+    expect(api).toContain("const admin = createClient(supabaseUrl, serviceKey");
+    expect(updateStatements).toHaveLength(2);
+    expect(savedDraftUpdate).toMatch(
+      /\.update\(\{[\s\S]*\}\)[\s\S]*\.eq\('id', applicationId\)[\s\S]*\.eq\('resume_token', resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
+    );
+    expect(submittedDraftUpdate).toMatch(
+      /\.update\(submission\)[\s\S]*\.eq\('id', input\.applicationId\)[\s\S]*\.eq\('resume_token', input\.resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
     );
     expect(api).toContain("status: 'draft'");
     expect(api).toContain("status: 'pending'");
@@ -262,6 +354,25 @@ describe('financing application write authority', () => {
       expect(publicClient).not.toContain("from('financing_applications')");
       expect(publicClient).not.toContain('from("financing_applications")');
     }
+  });
+
+  it('does not borrow ownership predicates from a later query chain', () => {
+    const updateStatements = financingApplicationUpdateStatements(`
+      const broken = admin
+        .from('financing_applications')
+        .update({ status: 'draft' })
+      const unrelated = admin
+        .from('financing_applications')
+        .select('id')
+        .eq('id', applicationId)
+        .eq('resume_token', resumeToken)
+        .eq('status', 'draft')
+    `);
+
+    expect(updateStatements).toHaveLength(1);
+    expect(updateStatements[0]).not.toContain(".eq('id', applicationId)");
+    expect(updateStatements[0]).not.toContain(".eq('resume_token', resumeToken)");
+    expect(updateStatements[0]).not.toContain(".eq('status', 'draft')");
   });
 
   it('keeps all browser-side direct table access inside the reviewed admin surface', () => {
@@ -275,7 +386,7 @@ describe('financing application write authority', () => {
           file.includes('.from("financing_applications")')
         );
       })
-      .map((path) => relative(process.cwd(), resolve(process.cwd(), path)));
+      .map((path) => relative(process.cwd(), resolve(process.cwd(), path)).replace(/\\/g, '/'));
 
     const unexpectedFiles = directClientFiles.filter(
       (path) =>
