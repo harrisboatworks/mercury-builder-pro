@@ -34,6 +34,8 @@ export function SaveQuoteDialog({
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [savedQuotePersisted, setSavedQuotePersisted] = useState(false);
+  const [savedEmailSent, setSavedEmailSent] = useState(false);
   const { toast } = useToast();
   const { user } = useAuth();
   const isMobile = useIsMobile();
@@ -102,81 +104,85 @@ export function SaveQuoteDialog({
       const tokenArray = new Uint8Array(24);
       crypto.getRandomValues(tokenArray);
       const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
+      const savedQuoteId = crypto.randomUUID();
       const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
+      const persistedQuoteState = {
+        ...quoteData,
+        customerName: name.trim(),
+        customerEmail: email.trim(),
+        ...(typeof finalPrice === 'number' && Number.isFinite(finalPrice) ? { finalPrice } : {}),
+      };
 
-      const { data: savedQuote, error: savedQuoteError } = await supabase
+      const { error: savedQuoteError } = await supabase
         .from('saved_quotes')
         .insert({
+          id: savedQuoteId,
           email: email,
           resume_token: resumeToken,
-          quote_state: quoteData, // Full QuoteContext state
+          quote_state: persistedQuoteState, // Full QuoteContext state plus the exact save-time display facts
           user_id: user?.id || null, // Link to user if logged in
           expires_at: expiresAt.toISOString(),
-        })
-        .select()
-        .single();
+        });
 
       if (savedQuoteError) {
         console.error('Error saving quote state:', savedQuoteError);
-        // Continue anyway - we have the customer_quotes record
-      } else if (savedQuote?.id) {
+        setSavedQuotePersisted(false);
+      } else {
+        setSavedQuotePersisted(true);
+
         // Store saved quote ID for QR code generation
-        localStorage.setItem('current_saved_quote_id', savedQuote.id);
-        console.log('Saved quote ID for QR code:', savedQuote.id);
+        localStorage.setItem('current_saved_quote_id', savedQuoteId);
+        console.log('Saved quote ID for QR code:', savedQuoteId);
+
+        trackAgentEvent({
+          event_type: 'quote_saved',
+          motor_model: motorModel ?? null,
+          quote_value: finalPrice ?? null,
+          metadata: { has_phone: !!phone, has_name: !!name },
+        });
+
+        // If user is not logged in, send magic link for account creation
+        if (!user) {
+          const siteUrl = window.location.origin;
+          const { error: otpError } = await supabase.auth.signInWithOtp({
+            email: email,
+            options: {
+              emailRedirectTo: `${siteUrl}/my-quotes`,
+              data: {
+                full_name: name || undefined,
+                phone: phone || undefined,
+              }
+            }
+          });
+
+          if (otpError) {
+            console.error('Error sending magic link:', otpError);
+            // Don't fail the save if magic link fails
+          }
+        }
+
+        // Send only after the durable saved quote exists. The Edge Function
+        // derives every email fact from that row and treats the token as proof.
+        const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
+          body: {
+            savedQuoteId,
+            resumeToken,
+          }
+        });
+
+        if (emailError) {
+          console.error('Error sending email:', emailError);
+        }
+        setSavedEmailSent(!emailError);
       }
 
-      // Analytics: quote_saved + lead_submitted
-      trackAgentEvent({
-        event_type: 'quote_saved',
-        motor_model: motorModel ?? null,
-        quote_value: finalPrice ?? null,
-        metadata: { has_phone: !!phone, has_name: !!name },
-      });
+      // Lead capture is durable even when the saved-quote insert is degraded.
       trackAgentEvent({
         event_type: 'lead_submitted',
         motor_model: motorModel ?? null,
         quote_value: finalPrice ?? null,
         metadata: { source: 'save_quote_dialog' },
       });
-
-      // If user is not logged in, send magic link for account creation
-      if (!user) {
-        const siteUrl = window.location.origin;
-        const { error: otpError } = await supabase.auth.signInWithOtp({
-          email: email,
-          options: {
-            emailRedirectTo: `${siteUrl}/my-quotes`,
-            data: {
-              full_name: name || undefined,
-              phone: phone || undefined,
-            }
-          }
-        });
-
-        if (otpError) {
-          console.error('Error sending magic link:', otpError);
-          // Don't fail the save if magic link fails
-        }
-      }
-
-      // Send email with quote link
-      const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
-        body: {
-          customerEmail: email,
-          customerName: name || 'Valued Customer',
-          quoteId: leadRecord.id,
-          savedQuoteId: savedQuote?.id,
-          resumeToken: resumeToken,
-          motorModel: motorModel || 'Mercury Motor',
-          finalPrice: finalPrice || 0,
-          quoteData: quoteData,
-          includeAccountInfo: !user, // Flag to include account access info
-        }
-      });
-
-      if (emailError) {
-        console.error('Error sending email:', emailError);
-      }
 
       // Notify admin about new saved quote (email + SMS)
       try {
@@ -230,6 +236,8 @@ export function SaveQuoteDialog({
       setEmail("");
       setName("");
       setPhone("");
+      setSavedQuotePersisted(false);
+      setSavedEmailSent(false);
     }, 300);
   };
 
@@ -239,17 +247,25 @@ export function SaveQuoteDialog({
       <div className="flex items-center justify-center">
         <CheckCircle className="h-12 w-12 text-repower-gold" strokeWidth={1.5} />
       </div>
-      <div className="text-xl font-semibold">Quote Saved!</div>
+      <div className="text-xl font-semibold">
+        {savedQuotePersisted ? 'Quote Saved!' : 'Quote Request Received'}
+      </div>
       <div className="space-y-3 text-muted-foreground">
-        <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
-        {!user && (
+        {!savedQuotePersisted ? (
+          <p>We received your details, but could not create a reopenable saved quote or send its confirmation link. Please call us at (905) 342-2153 if you need the link.</p>
+        ) : savedEmailSent ? (
+          <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
+        ) : (
+          <p>Your configuration is saved, but the confirmation email could not be sent. Please call us at (905) 342-2153 if you need the link.</p>
+        )}
+        {!user && savedQuotePersisted && savedEmailSent && (
           <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
             <div className="flex items-start gap-3">
               <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <div className="text-sm">
                 <p className="font-medium text-foreground">Check your email</p>
                 <p className="text-muted-foreground mt-1">
-                  Click the link in your email to access your account and view all your saved quotes anytime.
+                  Use the saved quote link in that email to reopen this configuration. If your sign-in email arrived, you can also view saved quotes in My Quotes.
                 </p>
               </div>
             </div>
