@@ -79,6 +79,45 @@ describe('persistSoftLeadQuote', () => {
     expect(persist.mock.calls.map(([input]) => input.quoteState)).toEqual([stateA, stateB, stateA]);
   });
 
+  it('persists the same snapshot again when the browser session changes', async () => {
+    const persist = vi.fn().mockResolvedValue('row-a');
+    const coordinator = createSoftLeadSaveCoordinator({ persist });
+    const stateA = { motor: { id: 'motor-1' }, customerNotes: 'A' };
+    const snapshotKey = buildSoftLeadSnapshotKey(stateA);
+
+    await coordinator.enqueue({
+      sessionId: 'qa_0123456789abcdef01234567',
+      quoteState: stateA,
+      snapshotKey,
+    });
+    await coordinator.enqueue({
+      sessionId: 'qa_89abcdef0123456701234567',
+      quoteState: stateA,
+      snapshotKey,
+    });
+
+    expect(persist).toHaveBeenCalledTimes(2);
+    expect(persist.mock.calls.map(([input]) => input.sessionId)).toEqual([
+      'qa_0123456789abcdef01234567',
+      'qa_89abcdef0123456701234567',
+    ]);
+  });
+
+  it('deduplicates the same completed snapshot within one browser session', async () => {
+    const persist = vi.fn().mockResolvedValue('row-a');
+    const coordinator = createSoftLeadSaveCoordinator({ persist });
+    const request = {
+      sessionId: 'qa_0123456789abcdef01234567',
+      quoteState: { motor: { id: 'motor-1' }, customerNotes: 'A' },
+      snapshotKey: 'snapshot-a',
+    };
+
+    await coordinator.enqueue(request);
+    await coordinator.enqueue({ ...request });
+
+    expect(persist).toHaveBeenCalledOnce();
+  });
+
   it('repersists the desired state after an ambiguous in-flight write failure', async () => {
     let rejectMiddleWrite: ((error: Error) => void) | undefined;
     const onError = vi.fn();

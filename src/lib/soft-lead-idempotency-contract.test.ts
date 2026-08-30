@@ -29,7 +29,8 @@ describe('soft-lead idempotency contract', () => {
     expect(saveSection).toContain('isQuotePdfSnapshot(state.pdfSnapshot)');
     expect(saveSection).toContain('buildSoftLeadSnapshotKey(state.pdfSnapshot)');
     expect(saveSection).toContain('buildSoftLeadSnapshotKey(quoteStateSnapshot)');
-    expect(saveSection).toContain('coordinator.enqueue');
+    expect(saveSection).toContain('softLeadSaveCoordinator.enqueue');
+    expect(summary).not.toContain('createSoftLeadSaveCoordinator');
     expect(saveSection).not.toContain(".from('saved_quotes')");
     expect(saveSection).not.toContain('snapshot-pending');
     expect(saveSection).not.toContain('state.pdfSnapshot?.createdAt');
@@ -60,6 +61,8 @@ describe('soft-lead idempotency contract', () => {
     );
     expect(migration).not.toMatch(/DELETE\s+FROM\s+public\.saved_quotes/i);
     expect(softLeadSave).toContain(".setHeader('x-quote-session-id', sessionId)");
+    expect(softLeadSave).toContain('export const softLeadSaveCoordinator =');
+    expect(softLeadSave).toContain('JSON.stringify([sessionId, snapshotKey])');
     expect(client).not.toContain("'x-quote-session-id'");
     expect(quoteSession).toContain("const QUOTE_SESSION_KEY = 'quote_activity_session_id'");
     expect(types).toContain('upsert_soft_lead_quote: {');

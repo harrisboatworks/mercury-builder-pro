@@ -45,7 +45,7 @@ import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
-import { buildSoftLeadSnapshotKey, createSoftLeadSaveCoordinator } from '@/lib/soft-lead-save';
+import { buildSoftLeadSnapshotKey, softLeadSaveCoordinator } from '@/lib/soft-lead-save';
 import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
@@ -118,16 +118,9 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
-  // The soft-lead coordinator serializes writes and continually reconciles to
-  // the latest desired state so rapid cross-render changes cannot finish out
-  // of order.
+  // The session-scoped soft-lead coordinator survives page remounts and keeps
+  // all anonymous snapshot writes in one ordered queue.
   const softLeadAnalyticsTrackedRef = useRef(false);
-  const softLeadSaveCoordinatorRef = useRef<ReturnType<typeof createSoftLeadSaveCoordinator> | null>(null);
-  if (!softLeadSaveCoordinatorRef.current) {
-    softLeadSaveCoordinatorRef.current = createSoftLeadSaveCoordinator({
-      onError: (error) => console.warn('Soft-lead save failed after retry:', error),
-    });
-  }
 
   // Listen for quote-saved-via-auth event to show phone capture
   useEffect(() => {
@@ -633,10 +626,7 @@ export default function QuoteSummaryPage() {
       });
     }
 
-    const coordinator = softLeadSaveCoordinatorRef.current;
-    if (!coordinator) return;
-
-    void coordinator.enqueue({
+    void softLeadSaveCoordinator.enqueue({
       sessionId: getOrCreateSessionId(),
       quoteState: quoteStateSnapshot,
       snapshotKey,

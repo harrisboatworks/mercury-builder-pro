@@ -42,47 +42,57 @@ export function createSoftLeadSaveCoordinator({
   onError = () => undefined,
 }: SoftLeadSaveCoordinatorOptions = {}) {
   let desired: SoftLeadSaveRequest | null = null;
-  let persistedKey: string | null = null;
+  let persistedIdentity: string | null = null;
   let drainPromise: Promise<void> | null = null;
-  let recoveryAttemptedKey: string | null = null;
+  let recoveryAttemptedIdentity: string | null = null;
+
+  const requestIdentity = ({ sessionId, snapshotKey }: SoftLeadSaveRequest) =>
+    JSON.stringify([sessionId, snapshotKey]);
 
   const drain = async () => {
-    while (desired && desired.snapshotKey !== persistedKey) {
+    while (desired && requestIdentity(desired) !== persistedIdentity) {
       const request = desired;
+      const identity = requestIdentity(request);
       try {
         await persist({
           sessionId: request.sessionId,
           quoteState: request.quoteState,
         });
-        persistedKey = request.snapshotKey;
-        recoveryAttemptedKey = null;
+        persistedIdentity = identity;
+        recoveryAttemptedIdentity = null;
       } catch (error) {
         // A network failure can be ambiguous: the RPC may have committed even
         // though the response was lost. Treat completion as unknown. If the
         // desired state changed while this request was in flight, immediately
         // reconcile that newer state; otherwise make one delayed recovery.
-        persistedKey = null;
+        persistedIdentity = null;
         onError(error);
-        if (desired?.snapshotKey !== request.snapshotKey) {
-          recoveryAttemptedKey = null;
+        if (desired && requestIdentity(desired) !== identity) {
+          recoveryAttemptedIdentity = null;
           continue;
         }
 
         // The lower-level writer already retries once. Make one additional,
         // delayed idempotent reconciliation for an unchanged desired state so
         // a transient outage does not require another UI change to recover.
-        if (recoveryAttemptedKey === request.snapshotKey) return;
-        recoveryAttemptedKey = request.snapshotKey;
+        if (recoveryAttemptedIdentity === identity) {
+          desired = null;
+          return;
+        }
+        recoveryAttemptedIdentity = identity;
         await new Promise((resolve) => setTimeout(resolve, COORDINATOR_RECOVERY_DELAY_MS));
       }
     }
+
+    // Retain only the identity needed for deduplication, not the full quote.
+    desired = null;
   };
 
   return {
     enqueue(request: SoftLeadSaveRequest): Promise<void> {
       desired = request;
       if (!drainPromise) {
-        recoveryAttemptedKey = null;
+        recoveryAttemptedIdentity = null;
         drainPromise = drain().finally(() => {
           drainPromise = null;
         });
@@ -91,6 +101,12 @@ export function createSoftLeadSaveCoordinator({
     },
   };
 }
+
+// Keep one coordinator for the browser session so a pending write remains in
+// the same ordered queue when the summary page unmounts and mounts again.
+export const softLeadSaveCoordinator = createSoftLeadSaveCoordinator({
+  onError: (error) => console.warn('Soft-lead save failed after retry:', error),
+});
 
 /**
  * Persist the latest anonymous quote snapshot through the atomic database RPC.
