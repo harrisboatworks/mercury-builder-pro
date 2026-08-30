@@ -7,7 +7,7 @@
 //   2. Missing required schema.org fields per @type
 //   3. Product offers without priceCurrency/price/availability
 //      (the exact bug class that hit /mercury-outboards-ontario)
-//   4. Self-serving LocalBusiness/Organization aggregate ratings
+//   4. Self-serving aggregate ratings on HBW-owned business entities
 //
 // Service-typed Offers under LocalBusiness.makesOffer are allowed to omit
 // price (legitimate price-on-request); only Product offers are strict.
@@ -50,15 +50,6 @@ const OFFER_REQUIRED = ['priceCurrency', 'price', 'availability'];
 const HBW_BUSINESS_ENTITY_IDS = new Set([
   'https://www.mercuryrepower.ca/#organization',
   'https://www.mercuryrepower.ca/#localbusiness',
-]);
-const ORGANIZATION_RATING_TYPES = new Set([
-  'Organization',
-  'LocalBusiness',
-  'AutomotiveBusiness',
-  'AutoDealer',
-  'AutoRepair',
-  'BoatDealer',
-  'Store',
 ]);
 
 const errors = [];
@@ -105,12 +96,7 @@ function isServiceOffer(offer) {
 
 function isHbwBusinessEntity(node) {
   return HBW_BUSINESS_ENTITY_IDS.has(node['@id'])
-    || (typeof node.name === 'string' && /^Harris Boat Works(?:$|[\s:—–-])/.test(node.name));
-}
-
-function isOrganizationRatingType(node) {
-  const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
-  return types.some(type => ORGANIZATION_RATING_TYPES.has(type));
+    || (typeof node.name === 'string' && /^Harris Boat Works(?:$|[,\s:—–-])/.test(node.name));
 }
 
 function validateHtmlFile(file) {
@@ -141,8 +127,7 @@ function validateHtmlFile(file) {
         }
       }
       if (
-        isOrganizationRatingType(node)
-        && isHbwBusinessEntity(node)
+        isHbwBusinessEntity(node)
         && node.aggregateRating
       ) {
         errors.push(

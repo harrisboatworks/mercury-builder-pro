@@ -49,12 +49,17 @@ describe('self-serving business rating schema guard', () => {
     [
       ['Store', 'LocalBusiness'],
       'https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness',
-      'Harris Boat Works: Mercury Premier Dealer',
+      'Harris Boat Works, Mercury Premier Dealer',
     ],
     [
       'BoatDealer',
       'https://www.mercuryrepower.ca/motors/example#seller',
       'Harris Boat Works',
+    ],
+    [
+      'FinancialService',
+      'https://www.mercuryrepower.ca/financing-application#financing',
+      'Harris Boat Works Marine Financing',
     ],
   ] as const)('rejects HBW %s aggregate ratings', (type, id, name) => {
     const result = runStructuredDataCheck({
