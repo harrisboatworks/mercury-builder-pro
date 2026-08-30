@@ -47,6 +47,19 @@ const REQUIRED_FIELDS = {
 };
 
 const OFFER_REQUIRED = ['priceCurrency', 'price', 'availability'];
+const HBW_BUSINESS_ENTITY_IDS = new Set([
+  'https://www.mercuryrepower.ca/#organization',
+  'https://www.mercuryrepower.ca/#localbusiness',
+]);
+const ORGANIZATION_RATING_TYPES = new Set([
+  'Organization',
+  'LocalBusiness',
+  'AutomotiveBusiness',
+  'AutoDealer',
+  'AutoRepair',
+  'BoatDealer',
+  'Store',
+]);
 
 const errors = [];
 const warnings = [];
@@ -90,6 +103,16 @@ function isServiceOffer(offer) {
   return t === 'Service';
 }
 
+function isHbwBusinessEntity(node) {
+  return HBW_BUSINESS_ENTITY_IDS.has(node['@id'])
+    || (typeof node.name === 'string' && /^Harris Boat Works(?:$|[\s:—–-])/.test(node.name));
+}
+
+function isOrganizationRatingType(node) {
+  const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+  return types.some(type => ORGANIZATION_RATING_TYPES.has(type));
+}
+
 function validateHtmlFile(file) {
   const html = readFileSync(file, 'utf8');
   const blocks = extractJsonLd(html);
@@ -117,7 +140,11 @@ function validateHtmlFile(file) {
           }
         }
       }
-      if ((type === 'LocalBusiness' || type === 'Organization') && node.aggregateRating) {
+      if (
+        isOrganizationRatingType(node)
+        && isHbwBusinessEntity(node)
+        && node.aggregateRating
+      ) {
         errors.push(
           `${file} block[${i}]: ${type} declares a self-serving aggregateRating. ` +
           `Google does not show review stars for a business or organization that controls the reviewed page.`
