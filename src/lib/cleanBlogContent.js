@@ -14,6 +14,8 @@ const ITALIC_RELATED_RE =
   /^\s*\*\s*Related(?:\s+(?:guides?|posts?|articles?))?\s*:[^*]*\*\s*$/i;
 const INJECTED_REPOWER_CTA_RE =
   /^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at (?:the )?\[Mercury Repower Centre\]\(https:\/\/www\.mercuryrepower\.ca\/quote\/motor-selection\)\.\s*$/i;
+const CANONICAL_URL_LINE_RE =
+  /^\s*\*\*Canonical URL:\*\*\s+\S+/i;
 
 /**
  * Remove legacy authoring scaffolding before blog content reaches readers,
@@ -49,6 +51,7 @@ export function cleanBlogContent(
     if (
       LAST_REVIEWED_RE.test(line) ||
       LANGUAGE_RE.test(line) ||
+      CANONICAL_URL_LINE_RE.test(line) ||
       INJECTED_REPOWER_CTA_RE.test(line.trim())
     ) continue;
 

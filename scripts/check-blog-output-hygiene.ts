@@ -34,7 +34,7 @@ const generatedBlogTwins = readdirSync('public/blog', { recursive: true })
 const unsupportedOperationalClaims = [
   {
     label: 'visible raw editorial metadata',
-    pattern: /^\s*\*\*(?:URL slug|Meta description):\*\*/im,
+    pattern: /^\s*\*\*(?:URL slug|Meta description|Canonical URL):\*\*/im,
   },
   {
     label: 'double-escaped Unicode artifact',

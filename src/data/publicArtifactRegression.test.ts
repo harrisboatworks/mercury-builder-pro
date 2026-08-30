@@ -19,7 +19,8 @@ import { spanishBlogArticles } from './spanishBlogArticles';
 
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
-const PHOTOGRAPHY_PENDING = 'Real photography still pending.';
+const PHOTOGRAPHY_PENDING =
+  /\b(?:Real photography still pending|until real photos arrive)\b/i;
 const SPANISH_EOF_ARTIFACT = 'End of file, 12 posts total';
 
 const NAMED_ENGLISH_SLUGS = [
@@ -57,13 +58,21 @@ describe('public artifact regression', () => {
     expect(study!.excerpt).toBe(
       'A lightweight small-horsepower package for cottage and protected-water use.',
     );
-    expect(study!.excerpt).not.toContain(PHOTOGRAPHY_PENDING);
+    expect(study!.whyItWorked).toContain(
+      'Clearly labelled as an illustrative planning scenario',
+    );
+    expect(
+      [study!.excerpt, ...study!.whyItWorked].join('\n'),
+    ).not.toMatch(PHOTOGRAPHY_PENDING);
 
     const twin = read('public/case-studies/cedar-strip-9-9-fourstroke.md');
     expect(twin).toContain(
       'A lightweight small-horsepower package for cottage and protected-water use.',
     );
-    expect(twin).not.toContain(PHOTOGRAPHY_PENDING);
+    expect(twin).toContain(
+      '- Clearly labelled as an illustrative planning scenario',
+    );
+    expect(twin).not.toMatch(PHOTOGRAPHY_PENDING);
   });
 
   it('removes the Spanish terminal file-count artifact', () => {
@@ -75,6 +84,16 @@ describe('public artifact regression', () => {
 
     const twin = read('public/blog/es/remotorizacion-vs-bote-nuevo.md');
     expect(twin).not.toContain(SPANISH_EOF_ARTIFACT);
+  });
+
+  it('keeps the pre-publish leak scanner aligned with source and twin artifact surfaces', () => {
+    const leakCheck = read('scripts/check-blog-leaks.mjs');
+    expect(leakCheck).toContain("'src/data/caseStudies.ts'");
+    expect(leakCheck).toContain("'src/data/caseStudiesLongForm.ts'");
+    expect(leakCheck).toContain("walk('public/blog', ['.md'])");
+    expect(leakCheck).toContain("walk('public/case-studies', ['.md'])");
+    expect(leakCheck).toContain('/\\bEnd of file,\\s*\\d+\\s+posts total\\b/i');
+    expect(leakCheck).toContain('until real photos arrive');
   });
 
   it('resolves generated-index live-rate tokens through the canonical helper', () => {
