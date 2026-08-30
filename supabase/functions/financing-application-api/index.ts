@@ -6,6 +6,12 @@ import { corsHeaders } from '../_shared/cors.ts';
 import { buildEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 import { isAllowedOrigin, forbiddenOriginResponse } from '../_shared/origin-check.ts';
 import { checkRateLimit, rateLimitedResponse } from '../_shared/rate-limit.ts';
+import {
+  isMatchingSubmittedApplication,
+  preserveFinancingOwner,
+  requiresUnownedOwnerGuard,
+  type ExistingFinancingApplication,
+} from './state-policy.ts';
 
 const MAX_BODY_BYTES = 128 * 1024;
 const TOTAL_STEPS = 7;
@@ -42,6 +48,7 @@ const submitSchema = z.object({
   action: z.literal('submit'),
   applicationId: z.string().uuid().optional(),
   resumeToken: z.string().uuid().optional(),
+  submissionId: z.string().uuid().optional(),
   applicantSinEncrypted: z.string().min(16).max(4096),
   coApplicantSinEncrypted: z.string().min(16).max(4096).optional(),
   application: draftSchema.omit({ currentStep: true, completedSteps: true }).extend({
@@ -209,10 +216,24 @@ serve(async (req: Request): Promise<Response> => {
       let resumeToken = input.resumeToken;
 
       if (applicationId && resumeToken) {
-        const { data, error } = await admin
+        const { data: existingDraft, error: existingDraftError } = await admin
+          .from('financing_applications')
+          .select('id, user_id')
+          .eq('id', applicationId)
+          .eq('resume_token', resumeToken)
+          .eq('status', 'draft')
+          .is('deleted_at', null)
+          .maybeSingle();
+
+        if (existingDraftError || !existingDraft) {
+          return json({ error: 'Saved application could not be updated' }, 404);
+        }
+
+        const ownerId = preserveFinancingOwner(existingDraft.user_id, userId);
+        let updateDraft = admin
           .from('financing_applications')
           .update({
-            user_id: userId,
+            user_id: ownerId,
             quote_id: input.draft.quoteId,
             purchase_data: input.draft.purchaseDetails || {},
             applicant_data: safeApplicant || {},
@@ -227,6 +248,15 @@ serve(async (req: Request): Promise<Response> => {
           .eq('id', applicationId)
           .eq('resume_token', resumeToken)
           .eq('status', 'draft')
+          .is('deleted_at', null);
+
+        // Compare-and-set every row observed as anonymous. This prevents an
+        // anonymous retry from clearing an owner claimed after the read.
+        if (requiresUnownedOwnerGuard(existingDraft.user_id)) {
+          updateDraft = updateDraft.is('user_id', null);
+        }
+
+        const { data, error } = await updateDraft
           .select('id, resume_token')
           .maybeSingle();
 
@@ -285,7 +315,6 @@ serve(async (req: Request): Promise<Response> => {
     const safeApplicant = stripSin(input.application.applicant);
     const safeCoApplicant = stripSin(input.application.coApplicant);
     const submission = {
-      user_id: userId,
       quote_id: input.application.quoteId,
       purchase_data: input.application.purchaseDetails || {},
       applicant_data: safeApplicant || {},
@@ -303,25 +332,120 @@ serve(async (req: Request): Promise<Response> => {
     };
 
     if (input.applicationId && input.resumeToken) {
-      const { data, error } = await admin
+      const { data: existingApplication, error: existingApplicationError } = await admin
         .from('financing_applications')
-        .update(submission)
+        .select('id, user_id, status, submission_id')
+        .eq('id', input.applicationId)
+        .eq('resume_token', input.resumeToken)
+        .is('deleted_at', null)
+        .maybeSingle();
+
+      if (existingApplicationError || !existingApplication) {
+        return json({ error: 'Saved application could not be submitted' }, 404);
+      }
+
+      const existingState = existingApplication as ExistingFinancingApplication;
+      if (isMatchingSubmittedApplication(existingState, input.submissionId)) {
+        return json({ applicationId: existingState.id });
+      }
+      if (existingState.status !== 'draft') {
+        return json({ error: 'This application has already been submitted' }, 409);
+      }
+
+      const ownerId = preserveFinancingOwner(existingState.user_id, userId);
+      let submitDraft = admin
+        .from('financing_applications')
+        .update({
+          ...submission,
+          user_id: ownerId,
+          submission_id: input.submissionId || null,
+        })
         .eq('id', input.applicationId)
         .eq('resume_token', input.resumeToken)
         .eq('status', 'draft')
+        .is('deleted_at', null);
+
+      if (requiresUnownedOwnerGuard(existingState.user_id)) {
+        submitDraft = submitDraft.is('user_id', null);
+      }
+
+      const { data, error } = await submitDraft
         .select('id')
         .maybeSingle();
 
-      if (error || !data) {
-        console.error('[financing-application-api] Draft submit failed:', error?.message);
-        return json({ error: 'Saved application could not be submitted' }, 404);
+      if (data) return json({ applicationId: data.id });
+
+      // A concurrent retry can win the draft -> pending transition. Read the
+      // resulting state before reporting failure to the customer.
+      const { data: retryState, error: retryStateError } = await admin
+        .from('financing_applications')
+        .select('id, user_id, status, submission_id')
+        .eq('id', input.applicationId)
+        .eq('resume_token', input.resumeToken)
+        .is('deleted_at', null)
+        .maybeSingle();
+
+      if (
+        retryState
+        && isMatchingSubmittedApplication(
+          retryState as ExistingFinancingApplication,
+          input.submissionId,
+        )
+      ) {
+        return json({ applicationId: retryState.id });
       }
-      return json({ applicationId: data.id });
+
+      console.error(
+        '[financing-application-api] Draft submit failed:',
+        error?.message || retryStateError?.message,
+      );
+      return json(
+        { error: retryState && retryState.status !== 'draft'
+          ? 'This application has already been submitted'
+          : 'Saved application could not be submitted' },
+        retryState && retryState.status !== 'draft' ? 409 : 500,
+      );
     }
 
+    const newSubmission = {
+      ...submission,
+      user_id: userId,
+      submission_id: input.submissionId || null,
+    };
+
+    if (input.submissionId) {
+      const { data, error } = await admin
+        .from('financing_applications')
+        .upsert(newSubmission, {
+          onConflict: 'submission_id',
+          ignoreDuplicates: true,
+        })
+        .select('id')
+        .maybeSingle();
+
+      if (data) return json({ applicationId: data.id });
+
+      const { data: existingSubmission, error: existingSubmissionError } = await admin
+        .from('financing_applications')
+        .select('id')
+        .eq('submission_id', input.submissionId)
+        .is('deleted_at', null)
+        .maybeSingle();
+
+      if (existingSubmission) return json({ applicationId: existingSubmission.id });
+
+      console.error(
+        '[financing-application-api] Idempotent submission insert failed:',
+        error?.message || existingSubmissionError?.message,
+      );
+      return json({ error: 'Application could not be submitted' }, 500);
+    }
+
+    // Backward-compatible path for an older browser tab loaded before
+    // submissionId shipped. New clients always use the idempotent path above.
     const { data, error } = await admin
       .from('financing_applications')
-      .insert(submission)
+      .insert(newSubmission)
       .select('id')
       .single();
 
