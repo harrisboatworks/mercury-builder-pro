@@ -333,18 +333,20 @@ describe('financing application write authority', () => {
     const context = source('src/contexts/FinancingContext.tsx');
 
     const updateStatements = financingApplicationUpdateStatements(api);
-    const savedDraftUpdate = updateStatements.find((statement) => statement.includes('.update({'));
+    const savedDraftUpdate = updateStatements.find((statement) =>
+      statement.includes(".eq('id', applicationId)"),
+    );
     const submittedDraftUpdate = updateStatements.find((statement) =>
-      statement.includes('.update(submission)'),
+      statement.includes(".eq('id', input.applicationId)"),
     );
 
     expect(api).toContain("const admin = createClient(supabaseUrl, serviceKey");
     expect(updateStatements).toHaveLength(2);
     expect(savedDraftUpdate).toMatch(
-      /\.update\(\{[\s\S]*\}\)[\s\S]*\.eq\('id', applicationId\)[\s\S]*\.eq\('resume_token', resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
+      /\.update\([\s\S]*\)[\s\S]*\.eq\('id', applicationId\)[\s\S]*\.eq\('resume_token', resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
     );
     expect(submittedDraftUpdate).toMatch(
-      /\.update\(submission\)[\s\S]*\.eq\('id', input\.applicationId\)[\s\S]*\.eq\('resume_token', input\.resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
+      /\.update\([\s\S]*\)[\s\S]*\.eq\('id', input\.applicationId\)[\s\S]*\.eq\('resume_token', input\.resumeToken\)[\s\S]*\.eq\('status', 'draft'\)/,
     );
     expect(api).toContain("status: 'draft'");
     expect(api).toContain("status: 'pending'");
