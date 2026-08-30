@@ -1254,6 +1254,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-fourstroke-vs-verado-comparison.md",
+      "destination": "/blog/fourstroke-vs-pro-xs.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/troubleshooting-outboard-overheating",
       "destination": "/blog/outboard-overheating-emergency-guide",
       "statusCode": 301

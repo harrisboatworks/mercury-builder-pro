@@ -51,6 +51,11 @@ describe('Mercury family guide canonical route', () => {
     });
     expect(redirects.get('/blog/mercury-fourstroke-vs-verado-comparison')?.destination)
       .toBe(`/blog/${canonicalSlug}`);
+    expect(redirects.get('/blog/mercury-fourstroke-vs-verado-comparison.md')).toEqual({
+      source: '/blog/mercury-fourstroke-vs-verado-comparison.md',
+      destination: `/blog/${canonicalSlug}.md`,
+      statusCode: 301,
+    });
     expect(redirects.has(`/blog/${canonicalSlug}`)).toBe(false);
     expect(redirects.has(`/blog/${canonicalSlug}.md`)).toBe(false);
   });
