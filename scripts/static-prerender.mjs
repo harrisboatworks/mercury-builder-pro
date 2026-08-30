@@ -3917,7 +3917,7 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
         `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
         `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
         `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
-        (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : '')
+        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong> This is not a customer testimonial, completed-job record, or fixed-price quote. HBW confirms the actual boat, motor, rigging, availability, and current pricing before making a recommendation.</aside>' : '')
       );
     },
   };

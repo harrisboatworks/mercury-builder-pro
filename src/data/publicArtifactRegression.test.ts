@@ -20,7 +20,7 @@ import { spanishBlogArticles } from './spanishBlogArticles';
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
 const PHOTOGRAPHY_PENDING =
-  /\b(?:Real photography still pending|until real photos arrive)\b/i;
+  /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i;
 const SPANISH_EOF_ARTIFACT = 'End of file, 12 posts total';
 
 const NAMED_ENGLISH_SLUGS = [
@@ -73,6 +73,12 @@ describe('public artifact regression', () => {
       '- Clearly labelled as an illustrative planning scenario',
     );
     expect(twin).not.toMatch(PHOTOGRAPHY_PENDING);
+
+    const prerender = read('scripts/static-prerender.mjs');
+    expect(prerender).toContain(
+      '<strong>Illustrative planning scenario.</strong>',
+    );
+    expect(prerender).not.toMatch(PHOTOGRAPHY_PENDING);
   });
 
   it('removes the Spanish terminal file-count artifact', () => {
@@ -90,10 +96,12 @@ describe('public artifact regression', () => {
     const leakCheck = read('scripts/check-blog-leaks.mjs');
     expect(leakCheck).toContain("'src/data/caseStudies.ts'");
     expect(leakCheck).toContain("'src/data/caseStudiesLongForm.ts'");
+    expect(leakCheck).toContain("'scripts/static-prerender.mjs'");
     expect(leakCheck).toContain("walk('public/blog', ['.md'])");
     expect(leakCheck).toContain("walk('public/case-studies', ['.md'])");
     expect(leakCheck).toContain('/\\bEnd of file,\\s*\\d+\\s+posts total\\b/i');
     expect(leakCheck).toContain('until real photos arrive');
+    expect(leakCheck).toContain('illustrative pending real photography');
   });
 
   it('resolves generated-index live-rate tokens through the canonical helper', () => {
