@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-07
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"
 date_published: 2026-05-04
-date_modified: 2026-05-07
+date_modified: 2026-08-19
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Electric Trolling Motor vs Kicker Guide
@@ -24,39 +25,42 @@ language: en-CA
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-07  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
-# Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
+## Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
 
 ## Quick answer
 On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-::decision-card
-heading: Trolling motor or kicker motor for your boat?
-eyebrow: Honest auxiliary pick
-subhead: Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
-leftLabel: Choose a trolling motor if
-leftCriteria:
-  - You fish predominantly in 8 to 15 ft of water
-  - Spot-Lock and GPS-anchor are important
-  - Stealth matters (no gas engine running while fishing)
-  - Battery management is something you can handle
-  - Primary use is bass, walleye drifting, or controlled presentations
-leftOutcome: Pick a trolling motor (Minn Kota or Lowrance)
-leftVariant: recommended
-rightLabel: Choose a kicker motor if
-rightCriteria:
-  - You troll for salmon or lake trout in deep water (40 ft or more)
-  - All-day trolling outlasts any practical battery
-  - You don't want to babysit charging schedules
-  - Boat is on bigger water (Lake Ontario, Simcoe deep zones)
-  - You want simpler, less maintenance, more range
-rightOutcome: Pick a Mercury 9.9 EFI kicker
-rightVariant: alternative
-whenInDoubt: For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
-::
+*Honest auxiliary pick*
+
+### Trolling motor or kicker motor for your boat?
+
+Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
+
+#### Choose a trolling motor if
+
+- You fish predominantly in 8 to 15 ft of water
+- Spot-Lock and GPS-anchor are important
+- Stealth matters (no gas engine running while fishing)
+- Battery management is something you can handle
+- Primary use is bass, walleye drifting, or controlled presentations
+
+**Pick a trolling motor (Minn Kota or Lowrance)**
+
+#### Choose a kicker motor if
+
+- You troll for salmon or lake trout in deep water (40 ft or more)
+- All-day trolling outlasts any practical battery
+- You don't want to babysit charging schedules
+- Boat is on bigger water (Lake Ontario, Simcoe deep zones)
+- You want simpler, less maintenance, more range
+
+**Pick a Mercury 9.9 EFI kicker**
+
+For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
 
 ## What each one actually does
 
@@ -112,8 +116,6 @@ This is what kickers were made for. [Walleye trolling on Rice Lake](/blog/best-m
 ### You fish big water or serious chop
 [Lake Simcoe](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ### Your main motor is a V6 or V8
 Larger Mercury 4-strokes (175 HP and up) are not built to idle at 600 to 800 RPM for hours. Extended low-RPM operation glazes cylinders and burns oil. Trolling on a dedicated kicker instead of lugging your main motor at idle will extend your powerhead life measurably.
 
@@ -129,7 +131,7 @@ Mercury makes both [a standard 9.9 FourStroke](/blog/mercury-9-9-efi-review-onta
 - Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
 
-Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Approximate installed cost (CAD) varies with options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why most serious anglers end up running both
 
@@ -168,11 +170,9 @@ We rig both setups regularly:
 - Lithium battery upgrades for boaters running heavy draw on the bow electric
 - Annual kicker service (oil, impeller, plugs) and battery health checks on the electric side
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -205,23 +205,22 @@ Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice L
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
+- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario), used-boat walkaround inspection
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

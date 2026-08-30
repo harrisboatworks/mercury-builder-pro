@@ -1,16 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-07-03
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them"
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-07-03
+date_modified: 2026-08-19
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
@@ -19,11 +25,9 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last updated:** 2026-07-03  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
-
-# The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
 
 > **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
 
@@ -54,7 +58,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.
@@ -294,7 +298,7 @@ If your boat sits in the water unattended for any stretch of time, this is worth
 
 Freshwater is less corrosive than saltwater. There's no marine growth and no salt accelerating oxidation on every fitting. That doesn't mean your bilge is a gentle environment for electrical connections, though.
 
-[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw from November through April. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
+[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw through the winter storage season. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
 
 That's how a float switch ends up corroded without anyone noticing, until the boat's sitting low at the dock in July.
 
@@ -304,7 +308,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed; confirm current WOWranty component coverage with Legend before you buy, one of the most comprehensive component warranties in the recreational boat industry.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 
@@ -397,20 +401,26 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

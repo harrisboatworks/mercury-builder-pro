@@ -2,35 +2,42 @@ import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Download, Home, Phone, Mail, Clock } from "lucide-react";
+import { CheckCircle, Home, Phone, Mail, Clock, CircleAlert, LoaderCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 import confetti from "canvas-confetti";
 import { COMPANY_INFO } from "@/lib/companyInfo";
 
 import { useNoIndex } from '@/hooks/useNoIndex';
-const timelineSteps = [
-  { icon: CheckCircle, label: "Payment Confirmed", description: "Your deposit has been processed successfully", complete: true },
-  { icon: Mail, label: "Confirmation Email", description: "You'll receive a confirmation email with your quote PDF attached", complete: false, timing: "Within 5 minutes" },
-  { icon: Phone, label: "We'll Be In Touch", description: "Our team will contact you to discuss next steps, timing, and any questions", complete: false, timing: "Within 1 business day" },
-];
+interface PaymentVerification {
+  verified: boolean;
+  paymentStatus: string;
+  checkoutStatus: string | null;
+  paymentIntentStatus: string | null;
+  paymentType: string | null;
+  amountPaid: number | null;
+  currency: string | null;
+  motorModel: string | null;
+  createdAt: string;
+}
 
 export default function PaymentSuccess() {
   useNoIndex();
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [loading, setLoading] = useState(true);
-  const [quoteData, setQuoteData] = useState<any>(null);
+  const [verification, setVerification] = useState<PaymentVerification | null>(null);
+  const [verificationError, setVerificationError] = useState(false);
+  const [processing, setProcessing] = useState(false);
   const [visibleSteps, setVisibleSteps] = useState(0);
   const { triggerHaptic } = useHapticFeedback();
 
   useEffect(() => {
-    document.title = "Payment Successful - Harris Boat Works";
-    
-    // Celebration haptic pattern for payment success
+    if (!verification?.verified) return;
+
+    document.title = "Payment Confirmed - Harris Boat Works";
     triggerHaptic('addedToQuote');
-    
-    // Trigger celebration confetti
+
     const duration = 3000;
     const end = Date.now() + duration;
 
@@ -56,10 +63,9 @@ export default function PaymentSuccess() {
     };
     frame();
 
-    // Animate timeline steps
     const stepInterval = setInterval(() => {
       setVisibleSteps(prev => {
-        if (prev >= timelineSteps.length) {
+        if (prev >= 3) {
           clearInterval(stepInterval);
           return prev;
         }
@@ -68,35 +74,55 @@ export default function PaymentSuccess() {
     }, 300);
 
     return () => clearInterval(stepInterval);
-  }, []);
+  }, [triggerHaptic, verification?.verified]);
 
   useEffect(() => {
-    const fetchQuoteData = async () => {
+    let cancelled = false;
+
+    const verifyPayment = async () => {
       if (!sessionId) {
+        setVerificationError(true);
         setLoading(false);
         return;
       }
 
       try {
-        const { data: quotes, error } = await supabase
-          .from('quotes')
-          .select('*')
-          .contains('quote_data', { stripe_session_id: sessionId })
-          .single();
+        for (let attempt = 0; attempt < 15; attempt += 1) {
+          const { data, error } = await supabase.functions.invoke('create-payment', {
+            body: { action: 'verify', sessionId },
+          });
+          if (cancelled) return;
+          if (error) throw error;
+          if (data?.verified) {
+            setVerification(data as PaymentVerification);
+            setProcessing(false);
+            return;
+          }
 
-        if (error) {
-          console.error('Error fetching quote:', error);
-        } else {
-          setQuoteData(quotes);
+          const isDelayedPayment = data?.checkoutStatus === 'complete'
+            && data?.paymentStatus === 'unpaid'
+            && data?.paymentIntentStatus === 'processing';
+          if (!isDelayedPayment) throw new Error('Payment is not verified');
+
+          setProcessing(true);
+          setLoading(false);
+          if (attempt < 14) {
+            await new Promise(resolve => window.setTimeout(resolve, 2000));
+          }
         }
       } catch (error) {
-        console.error('Error:', error);
+        if (cancelled) return;
+        console.error('Payment verification failed:', error);
+        setVerificationError(true);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
-    fetchQuoteData();
+    verifyPayment();
+    return () => {
+      cancelled = true;
+    };
   }, [sessionId]);
 
   if (loading) {
@@ -109,6 +135,68 @@ export default function PaymentSuccess() {
       </div>
     );
   }
+
+  if (processing && !verification?.verified) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/20 flex items-center justify-center p-4">
+        <Card className="w-full max-w-xl border-0 shadow-2xl overflow-hidden">
+          <CardHeader className="text-center bg-repower-navy-900 text-white py-10">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+              <LoaderCircle className="h-9 w-9 animate-spin" />
+            </div>
+            <CardTitle className="text-2xl font-bold">Your payment is processing</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-5 p-7 text-center">
+            <p className="text-muted-foreground">
+              Stripe has not confirmed the payment yet. Keep your Stripe receipt; Harris Boat Works will email you after the payment clears.
+            </p>
+            <p className="text-sm text-muted-foreground">You can safely close this page.</p>
+            <Button asChild variant="outline">
+              <a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`}>Call {COMPANY_INFO.contact.phone}</a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (verificationError || !verification?.verified) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/20 flex items-center justify-center p-4">
+        <Card className="w-full max-w-xl border-0 shadow-2xl overflow-hidden">
+          <CardHeader className="text-center bg-repower-navy-900 text-white py-10">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+              <CircleAlert className="h-9 w-9" />
+            </div>
+            <CardTitle className="text-2xl font-bold">We could not verify this payment</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-5 p-7 text-center">
+            <p className="text-muted-foreground">
+              No payment has been confirmed on this page. If Stripe charged your card, contact Harris Boat Works and we will verify it using your receipt.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="outline" className="flex-1">
+                <a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`}>Call {COMPANY_INFO.contact.phone}</a>
+              </Button>
+              <Button asChild className="flex-1">
+                <Link to="/"><Home className="mr-2 h-4 w-4" />Return Home</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  const isDeposit = verification.paymentType === 'motor_deposit';
+  const isMercury99MhReservation = isDeposit && verification.amountPaid === 100;
+  const timelineSteps = [
+    { icon: CheckCircle, label: "Payment Confirmed", description: isDeposit ? "Your reservation deposit has been processed successfully" : "Your payment has been processed successfully", complete: true },
+    isDeposit
+      ? { icon: Mail, label: "Confirmation Email", description: "You'll receive a reservation-deposit confirmation email", complete: false, timing: "Usually within a few minutes" }
+      : { icon: Clock, label: "Order Review", description: "Harris Boat Works will match the payment to your quote and review the order", complete: false, timing: "Within 1 business day" },
+    { icon: Phone, label: "We'll Be In Touch", description: isDeposit ? "Our team will confirm the exact motor, availability, ETA, and next steps" : "Our team will contact you about the next steps for your order", complete: false, timing: "Within 1 business day" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/20 flex items-center justify-center p-4">
@@ -125,31 +213,41 @@ export default function PaymentSuccess() {
         </CardHeader>
         
         <CardContent className="p-6 md:p-8 space-y-8">
-          {/* Order Summary */}
-          {quoteData && (
-            <div className="bg-gradient-to-br from-secondary/50 to-secondary/30 rounded-xl p-6 border border-border/50 animate-fade-in" style={{ animationDelay: '200ms' }}>
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-primary" />
-                Deposit Summary
-              </h3>
-              <div className="space-y-3">
+          <div className="bg-gradient-to-br from-secondary/50 to-secondary/30 rounded-xl p-6 border border-border/50 animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              {isDeposit ? 'Reservation Deposit Summary' : 'Payment Summary'}
+            </h3>
+            <div className="space-y-3">
+              {verification.motorModel && (
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
                   <span className="text-muted-foreground">Motor Model</span>
-                  <span className="font-medium">{quoteData.motor_model}</span>
+                  <span className="font-medium">{verification.motorModel}</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-muted-foreground">Order Date</span>
-                  <span className="font-medium">{new Date(quoteData.created_at).toLocaleDateString('en-CA', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</span>
-                </div>
-                <div className="flex justify-between items-center py-3 bg-primary/5 rounded-lg px-3 -mx-3">
-                  <span className="font-semibold">Total Paid</span>
-                  <span className="text-2xl font-bold text-primary">${quoteData.total_price?.toLocaleString()}</span>
-                </div>
+              )}
+              <div className="flex justify-between items-center py-2 border-b border-border/50">
+                <span className="text-muted-foreground">Payment Date</span>
+                <span className="font-medium">{new Date(verification.createdAt).toLocaleDateString('en-CA', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}</span>
               </div>
+              <div className="flex justify-between items-center py-3 bg-primary/5 rounded-lg px-3 -mx-3">
+                <span className="font-semibold">Total Paid</span>
+                <span className="text-2xl font-bold text-primary">
+                  {new Intl.NumberFormat('en-CA', {
+                    style: 'currency',
+                    currency: verification.currency || 'CAD',
+                  }).format(verification.amountPaid || 0)}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {isMercury99MhReservation && (
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 text-sm leading-relaxed text-foreground">
+              <strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
             </div>
           )}
 
@@ -199,18 +297,6 @@ export default function PaymentSuccess() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
-            {quoteData?.pdf_url && (
-              <Button 
-                variant="outline" 
-                className="flex-1 h-12 border-2 hover:bg-secondary transition-all duration-300" 
-                asChild
-              >
-                <a href={quoteData.pdf_url} target="_blank" rel="noopener noreferrer">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Receipt
-                </a>
-              </Button>
-            )}
             <Button 
               className="flex-1 h-12 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary transition-all duration-300" 
               asChild

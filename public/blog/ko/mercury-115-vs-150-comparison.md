@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트�
 description: "Mercury 115 FourStroke와 150 FourStroke의 실질적 차이를 비교합니다. 배기량, 무게, 연비, 적합 보트 크기까지, 한국어로 쉽게 설명합니다."
 category: "엔진 비교"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["Mercury 115 vs 150 비교","Mercury 선외기 선택","Mercury 마력 비교","Mercury 115 vs 150 Korean"]
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 엔진 비교  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison
 
@@ -34,7 +35,7 @@ language: ko-KR
 
 - **115 HP**: 2.1L 4기통, 약 163kg, 16-19피트 알루미늄/폰툰, 2-3인 탑승
 - **150 HP**: 3.0L 4기통, 약 206kg, 19-22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
-- **무게 차이**: 약 43kg — 보트 트랜섬 무게 제한 반드시 확인
+- **무게 차이**: 약 43kg, 보트 트랜섬 무게 제한 반드시 확인
 - **가격**: [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 투명한 CAD 가격 확인 가능
 
 ---
@@ -125,19 +126,6 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ---
 
-## 자주 묻는 질문
-
-**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?** 
-보트 크기와 용도에 따라 다릅니다. 정확한 견적과 추천을 위해 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 사양을 입력해보세요.
-
-**두 엔진의 가격 차이는 얼마나 되나요?** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca)에서 실시간으로 두 엔진을 나란히 비교할 수 있습니다.
-
-**Pro XS 버전은 얼마나 더 비싼가요?** 
-Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가격은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 확인하세요.
-
----
-
 ## 내부 링크
 - 온타리오 보트 구매 가이드
 - Rice Lake 낚시 가이드
@@ -169,16 +157,15 @@ Pro XS는 고회전에서 더 강한 출력을 내는 퍼포먼스 버전입니�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

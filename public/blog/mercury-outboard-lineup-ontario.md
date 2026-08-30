@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario.md
-last_updated: 2026-07-09
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)"
 description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes."
 category: "Buying Guide"
 date_published: 2026-07-09
-date_modified: 2026-07-09
+date_modified: 2026-08-26
 keywords: ["mercury outboard lineup","mercury 2027 outboards","mercury outboard models ontario","mercury fourstroke vs pro xs","mercury dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)
@@ -24,11 +25,9 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-09  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-26  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
-
-# Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)
 
 > **Quick answer:** Mercury's current lineup for the 2027 model year covers four gas families: FourStroke (2.5 to 300 hp) for everyday boating, Pro XS (115 to 300 hp) for performance fishing, SeaPro for commercial duty, and Verado (special order only). Most Rice Lake and Kawarthas boats land in the FourStroke 40 to 150 hp range. Build a live CAD quote at mercuryrepower.ca.
 
@@ -36,7 +35,7 @@ Mercury's model year rolled over to 2027 on July 1, 2026. If that sentence makes
 
 What the flip does change is the conversation. The spec sheet you're shopping is now the 2027 lineup, official 2027 announcements are trickling out from Mercury through the summer, and pricing is in transition. This guide covers both halves: which Mercury family actually fits your boat, and how to handle the model year change without overthinking it.
 
-We've been selling Mercury since 1965, from the same Rice Lake dock the family has run since 1947. Here's the honest version.
+We've been selling Mercury since 1965 from our Rice Lake dock. Here's our take.
 
 ## The Mercury Families, Explained
 
@@ -46,11 +45,11 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 **HP range:** 2.5 to 300 hp. This is [the volume seller in Ontario](/blog/mercury-fourstroke-buyer-guide-ontario) because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
 
-**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), [it pairs a larger gearcase with a bigger prop](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
+**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), [it pairs a larger gearcase with a bigger prop](/blog/mercury-command-thrust-complete-guide-2026) for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
 
 ### Pro XS: performance fishing
 
-**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. [In the Ontario tournament world, Pro XS is the standard](/blog/mercury-pro-xs-buyer-guide-ontario). The current architecture is the inline-4 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
+**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. [In the Ontario tournament world, Pro XS is the standard](/blog/mercury-pro-xs-buyer-guide-ontario). The current architecture is the inline-4 115 to 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
 
 Honest note: buyers who pick Pro XS for the badge usually find a correctly propped FourStroke would have done the job for less money and less fuel. Pick by use case, not by name.
 
@@ -62,9 +61,9 @@ Honest note: buyers who pick Pro XS for the badge usually find a correctly propp
 
 Verado (250 to 600 hp, naturally aspirated V8/V10/V12) is engineered for large offshore centre consoles and multi-engine installs. Almost no boater on Rice Lake, the Kawarthas, or Lake Simcoe needs one. **We don't stock Verado; it's available as a special order**, quoted individually. If you're running a 20-foot fishing boat, a FourStroke 150 or 200 is the better call.
 
-### Avator electric: brochure only, for now
+### Avator electric: build-to-order
 
-[Mercury's Avator electric line](/blog/mercury-avator-electric-boating-ontario) (currently the 7.5e and 20e in production) is build-to-order from the brochure, not something we stock on the floor. Avator outboards are rated by output power in kilowatts and equivalent thrust, not by direct gas-engine HP comparison. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Larger Avator models have been previewed but we don't have firm 2027 availability dates yet. When Mercury confirms, we'll update this post.
+[Mercury's current Avator electric line](/blog/mercury-avator-electric-boating-ontario) includes the 7.5e, 20e, 35e, 75e and 110e. HBW treats Avator as build-to-order rather than floor stock. Mercury rates the models by prop-shaft output: 0.75, 2.2, 3.7, 7.5 and 11 kW respectively. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice; Avator fit depends on the exact boat, load, route, battery configuration and charging access.
 
 ## Matching the Motor to Your Ontario Boat
 
@@ -91,13 +90,13 @@ The July 1 flip is a calendar event, not a redesign event. Here's the honest bre
 
 Mercury hasn't released the complete 2027 spec detail as of this writing (July 2026). Where 2027 specifics are unconfirmed, we're saying so plainly rather than guessing. If Mercury announces something that changes this picture, we'll update this post and call out the change.
 
-## Pricing: Where Things Stand as of July 2026
+## Pricing: Where Things Stand as of September 2026
 
-Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of July 2026.
+Straight talk: the model year is now 2027, but **our posted pricing is still built on Mercury's 2026 model year dealer pricelist**. Mercury updates dealer pricing with each model year, and until the 2027 pricelist lands and we process it, the numbers you see at [mercuryrepower.ca/pricing-reference](/pricing-reference) reflect 2026-model-year pricing, current as of September 2026.
 
 What that means for you:
 
-- Quotes built today are real, honest numbers on in-stock and orderable motors, as of July 2026.
+- Quotes built today are real, honest numbers on in-stock and orderable motors, as of September 2026.
 - When the 2027 pricelist arrives, prices may move. Sometimes flat, sometimes a modest increase. We don't know yet and we won't pretend to.
 - The quote builder at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) always reflects our current live pricing, whichever pricelist is in effect. That's the source of truth, not this post.
 
@@ -108,7 +107,7 @@ If a closeout incentive shows up on remaining 2026-built inventory late this sum
 | Factor | Buy now | Wait |
 |---|---|---|
 | Install timing | You want the boat ready for spring 2027 | You're 12+ months out |
-| Pricing | Lock a quote on current (2026-MY) pricing, as of July 2026 | Wait for Mercury's 2027 pricing release |
+| Pricing | Lock a quote on current (2026-MY) pricing, as of September 2026 | Wait for Mercury's 2027 pricing release |
 | Tech | The current spec sheet meets your needs | You're chasing a specific previewed feature (e.g., a larger Avator) |
 | Resale | Keeping the boat 5+ years | Selling within 2 years |
 
@@ -120,7 +119,7 @@ One more timing reality: we close for the season roughly December 1 to April 1, 
 
 We've watched a lot of model year flips since 1965, and the pattern barely changes. June brings a surge of customers who want "this year's motor" before the calendar turns. July is quiet while Mercury rolls out announcements and dealer training. September through November is when spring install slots actually get booked, and that's the deadline that matters, not July 1.
 
-The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: we're a drop-off only shop, so plan to bring the boat to us in Gores Landing rather than waiting on a mobile service call.
+The other thing we see every year: the customer who waited all summer "to see what's new," discovered the new model year is the same motor with a different decal, and is now at the back of the spring install line. The flip is marketing. The install calendar is real. Service note for repower customers: We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## Common mistakes
 
@@ -147,7 +146,7 @@ The model year flip doesn't change the basic questions: what motor fits your boa
 
 ### What Mercury outboards does Harris Boat Works stock for the 2027 model year?
 
-We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.
+We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.
 
 ### Is a 2026-built Mercury still worth buying after the July 1 flip?
 
@@ -155,7 +154,7 @@ Yes. It's mechanically identical to early 2027 stock, carries the same 3-year fa
 
 ### When will 2027 Mercury pricing be available?
 
-Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
+Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.
 
 ### What's the best Mercury for a fishing boat on Rice Lake?
 
@@ -180,23 +179,22 @@ Not meaningfully. Trade values move with brand, age, hours, and condition, not w
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
-- [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
-- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury Avator 7.5e: Review, Range, and Best Uses (2026)](/blog/mercury-avator-7-5e-review), Avator 7.5e review
+- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo), Avator vs Torqeedo
+- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock), charging the Avator at a cottage dock
+- [Mercury Avator Electric Outboard Range on Rice Lake (2026)](/blog/mercury-avator-range-rice-lake-cottage), Avator range on Rice Lake
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

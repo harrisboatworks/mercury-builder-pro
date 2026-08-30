@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu.md
-last_updated: 2026-06-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Canada mein purani kashti kharidne ki checklist | استعمال شدہ 
 description: "Canada mein purani kashti kharidne ki checklist: motor، transom، storage aur repower جانچ اردو میں۔ Rice Lake کے تجربہ کار marina کی طرف سے مکمل رہنمائی۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-19
 keywords: ["یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)","سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)","پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)","استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)","اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
 language: ur
+revenue_driver: repower
 ---
 
 # Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ
@@ -24,7 +25,7 @@ language: ur
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**آخری جائزہ:** 2026-08-19  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
 
@@ -80,32 +81,9 @@ Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licenc
 
 لیکن سچ یہ ہے کہ ہماری ٹیم انگریزی میں خدمات پیش کرتی ہے۔ پریشان نہ ہوں: انگریزی بولنے والا کوئی دوست یا خاندان کا فرد ساتھ لائیں، یا اپنے فون پر ترجمے کی ایپ استعمال کریں۔ ہم صبر سے کام لیں گے اور مل کر مسئلہ حل کریں گے۔
 
-## اکثر پوچھے جانے والے سوالات | FAQ
-
-**یوزڈ کشتی خریدتے وقت سب سے اہم چیز کیا ہے جسے چیک کیا جائے؟**
-بغیر کسی شک کے، انجن کی صحت۔ کمپریشن ٹیسٹ، سروس ریکارڈ، اور پانی میں چلانے کا ٹیسٹ، یہ تین چیزیں بہت کچھ بتا دیتی ہیں۔ دوسرا نمبر ٹرانسوم کی حالت ہے۔
-
-**بیچنے والے کی طرف سے دھوکے سے کیسے بچا جائے؟**
-کبھی بھی PCL (Pleasure Craft Licence) کے بغیر کشتی نہ خریدیں، جب تک بیچنے والا اسے منتقل کرنے اور درست نشانات دکھانے کو تیار نہ ہو۔ بہت زیادہ جلدی کرانے والے بیچنے والے، پانی میں ٹیسٹ سے انکار، یا بہت کم قیمت پر اعلیٰ ماڈل، یہ عام دھوکے کی نشانیاں ہیں۔
-
-**پرانے کشتی کے انجن کی صحت خود کیسے جانچی جا سکتی ہے؟**
-اگر آپ کو مکینک کا تھوڑا بھی تجربہ ہے تو کمپریشن ٹیسٹر خرید کر خود سلنڈر پریشر چیک کر سکتے ہیں۔ عام آدمی انجن چلتے وقت عجیب آوازوں، دھوئیں کے رنگ (نیلا دھواں تیل جلنے کا اشارہ ہے)، اور شروع ہونے میں دشواری پر دھیان دے سکتا ہے۔ لیکن بہتر یہی ہے کہ کسی قابل بھروسہ دکان سے معائنہ کروایا جائے۔
-
-**استعمال شدہ کشتی کی مناسب قیمت کا اندازہ کیسے لگائیں؟**
-اسی ماڈل اور سال کی دوسری کشتیوں کے آن لائن اعلانات دیکھیں، خاص طور پر Kijiji اور Facebook Marketplace پر۔ اپنے علاقے کے حساب سے قیمت کا موازنہ کریں۔ یاد رکھیں، اگر ایک کشتی کا انجن خراب ہے تو اس کی اصل قیمت اسی کے حساب سے کم ہوگی۔ بہتر ہے خریداری سے پہلے معائنہ کروا کر ہی بات چیت کریں۔
-
-**اونٹاریو میں یوزڈ بوٹ مارکیٹ کیسی ہے؟ کیا سردیوں میں خریدنا بہتر ہے؟**
-GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہت بڑی مارکیٹ ہے۔ سردیوں میں (دسمبر سے مارچ) لوگ کشتیاں بیچنے کے لیے زیادہ تیار ہوتے ہیں کیونکہ وہ اسٹوریج کے اخراجات بچانا چاہتے ہیں، لیکن اس دوران پانی میں ٹیسٹ کرنا مشکل ہو سکتا ہے، اس لیے معائنے پر زیادہ انحصار کرنا پڑتا ہے۔
-
-**کیا مجھے کشتی خریدنے سے پہلے پانی میں ٹیسٹ ضرور کرنا چاہیے؟**
-ہاں، بالکل۔ پانی میں چلائے بغیر آپ انجن کی لوڈ کے تحت کارکردگی، گیئر شفٹنگ، اور ہل میں لیکیج کبھی نہیں جان پائیں گے۔ اگر بیچنے والا ٹیسٹ نہیں کروانا چاہتا، تو خریداری نہ کریں۔
-
-**کیا HBW میں مجھے اردو میں سروس مل سکتی ہے؟**
-صاف بات یہ ہے کہ ہماری ٹیم انگریزی میں ہی خدمات دیتی ہے۔ لیکن پریشان نہ ہوں: کوئی انگریزی بولنے والا رشتہ دار یا دوست ساتھ لائیں، یا ترجمے کی ایپ استعمال کریں۔ ہم صبر اور خوش دلی سے ہر چیز سمجھانے کی کوشش کریں گے۔
-
 ## اب آگے کیا کرنا ہے
 
-اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے کی بکنگ یا سوال کے لیے https://hbw.wiki/service پر جائیں۔
+اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
 اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
 
@@ -145,16 +123,15 @@ GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہ�
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

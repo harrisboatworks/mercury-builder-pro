@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1180" width="1080" height="1180" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Mercury overheat alarm decision flow</title>
+<desc id="d">Start at the alarm. A strong telltale does not rule out overheating; follow the display and manual, and shut down if the alarm persists. With weak or stopped flow, shut down and check the intake.</desc>
+<rect width="1080" height="1180" fill="#faf9f6"/>
+<rect x="0" y="0" width="1080" height="118" fill="#0a1628"/>
+<rect x="0" y="118" width="1080" height="5" fill="#c8a84b"/>
+<text x="56" y="52" fill="#c8a84b" font-size="19" letter-spacing="3.2" font-weight="600">HARRIS BOAT WORKS &#183; ON THE WATER</text>
+<text x="56" y="98" fill="#ffffff" font-size="38" font-weight="700">Overheat alarm: what is it actually telling you?</text>
+<rect x="520" y="158" width="360" height="76" rx="10" fill="#0a1628"/>
+<text x="700" y="192" fill="#ffffff" font-size="21" font-weight="700" text-anchor="middle">The alarm is sounding</text>
+<text x="700" y="218" fill="#9fb0c4" font-size="16" text-anchor="middle">Throttle down first. Then work down this page.</text>
+<line x1="700" y1="234" x2="700" y2="275" stroke="#2b3442" stroke-width="3"/>
+<polygon points="700,286 691,271 709,271" fill="#2b3442"/>
+<polygon points="700,286 886,372 700,458 514,372" fill="#ffffff" stroke="#2b3442" stroke-width="2.5"/>
+<text x="700" y="380" fill="#1d2430" font-size="23" font-weight="700" text-anchor="middle">Telltale flowing strong?</text>
+<line x1="514" y1="372" x2="463" y2="372" stroke="#3b6d11" stroke-width="3"/>
+<polygon points="452,372 467,363 467,381" fill="#3b6d11"/>
+<text x="483" y="358" fill="#3b6d11" font-size="18" font-weight="700" text-anchor="middle">YES</text>
+<rect x="56" y="286" width="396" height="176" rx="10" fill="#ffffff" stroke="#3b6d11" stroke-width="2.5"/>
+<path d="M56,296 a10,10 0 0 1 10,-10 h376 a10,10 0 0 1 10,10 v28 h-396 z" fill="#3b6d11"/>
+<text x="254" y="313" fill="#ffffff" font-size="17" font-weight="700" letter-spacing="1.2" text-anchor="middle">FLOW DOES NOT RULE OUT HEAT</text>
+<text x="78" y="356" fill="#1d2430" font-size="17" font-weight="700">Follow the display and manual.</text>
+<text x="78" y="384" fill="#1d2430" font-size="16">A strong telltale only proves the indicator</text>
+<text x="78" y="408" fill="#1d2430" font-size="16">circuit has flow. If the alarm persists,</text>
+<text x="78" y="432" fill="#1d2430" font-size="16">shut down and arrange service.</text>
+<line x1="700" y1="458" x2="700" y2="509" stroke="#2b3442" stroke-width="3"/>
+<polygon points="700,520 691,505 709,505" fill="#2b3442"/>
+<text x="716" y="495" fill="#2b3442" font-size="18" font-weight="700">NO</text>
+<polygon points="700,520 886,606 700,692 514,606" fill="#ffffff" stroke="#2b3442" stroke-width="2.5"/>
+<text x="700" y="602" fill="#1d2430" font-size="23" font-weight="700" text-anchor="middle">Power dropped?</text>
+<text x="700" y="632" fill="#5f6670" font-size="17" text-anchor="middle">(Guardian mode)</text>
+<line x1="514" y1="606" x2="463" y2="606" stroke="#b07d12" stroke-width="3"/>
+<polygon points="452,606 467,597 467,615" fill="#b07d12"/>
+<text x="483" y="592" fill="#b07d12" font-size="18" font-weight="700" text-anchor="middle">YES</text>
+<rect x="56" y="520" width="396" height="176" rx="10" fill="#ffffff" stroke="#b07d12" stroke-width="2.5"/>
+<path d="M56,530 a10,10 0 0 1 10,-10 h376 a10,10 0 0 1 10,10 v28 h-396 z" fill="#b07d12"/>
+<text x="254" y="547" fill="#ffffff" font-size="17" font-weight="700" letter-spacing="1.2" text-anchor="middle">GUARDIAN MODE</text>
+<text x="78" y="590" fill="#1d2430" font-size="17" font-weight="700">The ECM is protecting the engine.</text>
+<text x="78" y="618" fill="#1d2430" font-size="16">Do not override it. Follow the display and</text>
+<text x="78" y="642" fill="#1d2430" font-size="16">manual. If overheat persists, shut down.</text>
+<text x="78" y="666" fill="#1d2430" font-size="16">Diagnose the trigger before restarting.</text>
+<line x1="700" y1="692" x2="700" y2="745" stroke="#a32d2d" stroke-width="3"/>
+<polygon points="700,756 691,741 709,741" fill="#a32d2d"/>
+<text x="716" y="730" fill="#a32d2d" font-size="18" font-weight="700">NO</text>
+<rect x="440" y="756" width="520" height="196" rx="10" fill="#ffffff" stroke="#a32d2d" stroke-width="3"/>
+<path d="M440,766 a10,10 0 0 1 10,-10 h500 a10,10 0 0 1 10,10 v32 h-520 z" fill="#a32d2d"/>
+<text x="700" y="787" fill="#ffffff" font-size="19" font-weight="700" letter-spacing="1.2" text-anchor="middle">REAL HEAT. SHUT IT DOWN.</text>
+<text x="464" y="836" fill="#1d2430" font-size="18" font-weight="700">Telltale weak or stopped, no power cut yet.</text>
+<text x="464" y="868" fill="#1d2430" font-size="17">Shut the motor down before you do more damage.</text>
+<text x="464" y="894" fill="#1d2430" font-size="17">Lift it and check the intake for weeds. A tow home</text>
+<text x="464" y="920" fill="#1d2430" font-size="17">costs a great deal less than a powerhead.</text>
+<text x="56" y="1000" fill="#5f6670" font-size="16">Patterns vary by motor, year and rigging. Always confirm against your operator manual and any SmartCraft message.</text>
+<rect x="0" y="1084" width="1080" height="96" fill="#0a1628"/>
+<text x="56" y="1124" fill="#ffffff" font-size="21" font-weight="600">Harris Boat Works &#183; Mercury Premier Dealer &#183; Gores Landing, Rice Lake</text>
+<text x="56" y="1154" fill="#c8a84b" font-size="20">hbw.wiki/service &#183; (905) 342-2153</text>
+</svg>

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-10
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-19
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: rentals
 ---
 
 # Rice Lake Boating Guide 2026
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last reviewed:** 2026-08-19  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -34,7 +35,7 @@ language: en-CA
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works has a private ramp in Gores Landing.
 
 ---
 
@@ -102,15 +103,13 @@ Big news for boaters this year: lockage on the Trent-Severn is **free from June 
 
 For Rice Lake visitors, this opens up affordable multi-day trips through the Kawartha Lakes and the broader Trent-Severn system. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
-**Lockage permits in person only, 2026 season.** Parks Canada has eliminated online lockage permit sales for the 2026 season. Lockage permits must be picked up in person at a lockstation, including the free Canada Strong Pass sticker during the June 19 to September 7 window.
+**Lockage permits in person only, 2026 season.** According to Parks Canada's current information, online lockage permit sales are not available for the 2026 season. Lockage permits must be picked up in person at a lockstation, including the free Canada Strong Pass sticker during the June 19 to September 7 window.
 
 ---
 
 ## Boat Rentals and Borrowing
 
-If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+If you don't have a boat, HBW offers pontoon and fishing-boat rentals on Rice Lake. The current lineup, live rates, capacity, equipment, and availability are listed at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals); rental bookings are online only.
 
 Other rental options exist around Bewdley, but availability and quality vary. Call ahead before driving up.
 
@@ -118,9 +117,9 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 ## Safety, The Stuff People Skip
 
-**PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
+**PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
-**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
 
 **[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
@@ -137,8 +136,6 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
 For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
-
----
 
 ---
 
@@ -166,7 +163,6 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 
 ## FAQs
@@ -177,11 +173,11 @@ It runs roughly north-south across the middle of the lake, between Hiawatha (nor
 
 ### What's the launch fee at Harris Boat Works?
 
-$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches.
+$20 per day or $200 for a seasonal pass (April through November) at our current published rates, which can change season to season. At those rates, the seasonal pass breaks even after 10 launches. The seasonal pass breaks even after 10 launches.
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
-No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary "rental boat safety checklist", but most full-day rentals (including ours) require a PCOC.
+Not if you may drive an HBW rental. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers do not need one, and the rental checklist does not replace the card at HBW.
 
 ### Is Rice Lake too shallow for a 21-foot pontoon?
 
@@ -205,16 +201,15 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

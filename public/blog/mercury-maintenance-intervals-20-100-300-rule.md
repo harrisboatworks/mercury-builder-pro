@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-07-30
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Outboard Maintenance: 100 and 300 Hours"
 description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean."
 category: "Service & Maintenance"
 date_published: 2026-05-12
-date_modified: 2026-07-30
+date_modified: 2026-08-17
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Maintenance: 100 and 300 Hours
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-08-17  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
@@ -117,7 +118,7 @@ At HBW:
 
 - Submit fall service before the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
-- Spring service resumes after the April 1 reopening.
+- Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.
 
 Low hours do not automatically erase a calendar interval. The exact manual still decides what is due.
@@ -128,7 +129,7 @@ We ask for the engine serial number, current hours, last documented service, war
 
 No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
 
-## Sources
+---
 
 - [Mercury Marine, Welcome Aboard: A New Owner's Guide to Mercury Outboards](https://www.mercurymarine.com/us/en/lifestyle/dockline/welcome-aboard--a-new-owner-s-guide-to-mercury-outboards)
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
@@ -168,20 +169,19 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-07-23
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-07-23
+date_modified: 2026-08-08
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Ontario Boating Season Tips 2026
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-08  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
-# Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
+## Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 
@@ -47,7 +48,7 @@ Spring is the high-stakes phase. The first run of the year reveals every shortcu
 **What HBW commissioning covers:**
 
 - Pull the cover, inspect for winter damage
-- Battery test and reinstall (most batteries fail the first or third spring after install)
+- Battery reconnect and load test (the battery stays in the boat, disconnected and maintained over winter)
 - Fuel system inspection, fresh fuel, ethanol treatment
 - Lower unit oil change and seal inspection
 - Cooling system check, impeller inspection (replace at the 3-year mark or sooner)
@@ -93,7 +94,7 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 - Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
-- Battery prep (off the boat, on a tender)
+- Battery prep: leave it in the boat, disconnect it, and maintain it according to the battery maker's instructions
 - Cover or shrinkwrap (we offer outdoor shrinkwrap, indoor heated isn't our setup)
 - Note any spring service that should be queued
 
@@ -119,7 +120,7 @@ A few things don't follow the seasons.
 
 - **Skipping winterization to save $300.** The cracked-block math always wins this argument. Winterize.
 - **DIY impeller jobs without the right tools.** The gearcase has to come off, the housing has to be inspected, the wear plate matters. Most DIY impellers we see come back as full lower-unit rebuilds. $40 part, $4,500 risk.
-- **Storing the battery on the boat over winter.** Cold kills batteries faster than discharge. Off the boat, on a tender, in a heated space.
+- **Leaving the battery connected over winter.** Parasitic draw, not cold, is the usual problem. Leave the battery in the boat, disconnect it, and maintain it according to the battery maker's instructions.
 - **Running on last year's fuel after a long winter.** Ethanol absorbs moisture. Drain, treat, or replace.
 - **Pushing the season too far in November.** Cold-water survival is short. A motor stall on a 45-degree morning is a different problem than a stall on a July afternoon.
 - **Booking spring commissioning in March.** Booking in March means you're competing with every other procrastinator for an April-mid slot. Book in October when you book winterization.
@@ -184,23 +185,22 @@ Fall is the busiest trade-in window because customers swap before winter storage
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
+- [Mercury 100-Hour Service Cost in Ontario: What's Included (2026)](/blog/mercury-100-hour-service-cost-ontario), what the 100-hour service covers
+- [Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)](/blog/spring-commissioning-cost-ontario), spring commissioning costs in Ontario
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-17
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-07-31
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Read Mercury Outboard Serial Number
@@ -24,13 +25,15 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last reviewed:** 2026-07-31  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
-# How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
+## How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
 
 > **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+
+[Download the Mercury Serial Number & Service Request Prep Sheet](/downloads/mercury-service-request-prep-sheet-hbw.pdf) before you photograph the motor or start a service request.
 
 Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -132,8 +135,6 @@ The **model number** isn't the serial, it's the configuration code. It tells you
 
 ### Putting it together
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 A model code like **115ELPT** decodes as:
 
 - **115**, 115 horsepower
@@ -152,8 +153,6 @@ A more loaded code like **115EXLPT-CT**:
 The cowl says "115 FourStroke." The model number says exactly which 115 FourStroke you have, what shaft, and what gearcase. Different parts depending on the answer.
 
 ---
-
-::walkaround-lead-capture
 
 ## Decoding the Year (When the Year Isn't Printed)
 
@@ -241,8 +240,6 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
 
 ---
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### My motor's plate is unreadable. Is the motor worthless?
@@ -268,23 +265,22 @@ No. The **model number** is the configuration (115ELPT). The **serial number** i
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

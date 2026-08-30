@@ -1,0 +1,83 @@
+#!/usr/bin/env node
+
+import fs from 'node:fs';
+
+const checks = [
+  {
+    file: 'public/blog/es/guia-comprar-bote-ontario.md',
+    expected: ['$40–$50 CAD', '14–18 pies', '25–90 HP', '$800–$2,500 CAD', '$1,000–$3,000+ CAD'],
+  },
+  {
+    file: 'public/blog/es/guia-pesca-rice-lake-ontario.md',
+    expected: ['3–8 metros', '8–15 pies', '1.3–1.8 mph', '$9–$11 CAD', '7:30–11:00 AM'],
+  },
+  {
+    file: 'public/blog/es/mercury-115-vs-150-comparacion.md',
+    expected: ['5,000–6,000 RPM', '16–19 pies', '2–3 personas', '60–70%', '$2,000–$5,000+ CAD'],
+  },
+  {
+    file: 'public/blog/fr/mercury-115-vs-150-hp-comparaison.md',
+    expected: ['5 000–6 000 tr/min', '16–19 pieds', '60–70 %', '3–4 personnes'],
+  },
+  {
+    file: 'public/blog/best-mercury-outboard-lake-ontario-salmon-trout.md',
+    expected: ['300 HP Pro XS V8 or 300–350 HP SeaPro', 'plus 15 HP ProKicker'],
+  },
+];
+
+const forbidden = [
+  '5,000, 6,000 RPM',
+  '5,000, 5,800 RPM',
+  '5 000, 6 000 tr/min',
+  '5 000, 5 800 tr/min',
+  '16, 19 pies',
+  '19, 22 pies',
+  '16, 19 pieds',
+  '19, 22 pieds',
+  '$2,000, $5,000+ CAD',
+  '300–400 HP 300-350 HP',
+  'plus 9.9 ProKicker',
+];
+
+const sourceSurface = [
+  'src/data/blogArticles.ts',
+  'src/data/spanishBlogArticles.ts',
+  'src/data/frenchBlogArticles.ts',
+].map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+
+const failures = [];
+
+for (const token of forbidden) {
+  if (sourceSurface.includes(token)) failures.push(`source data: corrupt range remains "${token}"`);
+}
+
+for (const check of checks) {
+  if (!fs.existsSync(check.file)) {
+    failures.push(`${check.file}: missing Markdown twin`);
+    continue;
+  }
+
+  const markdown = fs.readFileSync(check.file, 'utf8');
+  for (const token of check.expected) {
+    if (!markdown.includes(token)) failures.push(`${check.file}: missing restored range "${token}"`);
+  }
+  for (const token of forbidden) {
+    if (markdown.includes(token)) failures.push(`${check.file}: corrupt range remains "${token}"`);
+  }
+
+  const corruptTableRows = markdown
+    .split('\n')
+    .filter((line) => line.startsWith('|'))
+    .filter((line) => /(?:\$?\d[\d,.]*),\s+(?:\$?\d[\d,.]*)\s*(?:HP|RPM|tr\/min|pies|pieds|CAD|%)/.test(line));
+  if (corruptTableRows.length) {
+    failures.push(`${check.file}: comma-separated numeric range remains in table: ${corruptTableRows[0]}`);
+  }
+}
+
+if (failures.length) {
+  console.error('Blog range-integrity check failed:');
+  failures.forEach((failure) => console.error(`- ${failure}`));
+  process.exit(1);
+}
+
+console.log(`Blog range-integrity check passed for ${checks.length} routes.`);

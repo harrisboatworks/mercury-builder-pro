@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-07-24
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Shrinkwrap vs Indoor Boat Storage Ontario"
 description: "Shrinkwrap vs indoor boat storage in Ontario: honest comparison on cost, protection, and what happens without winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-13
-date_modified: 2026-07-24
+date_modified: 2026-08-27
 keywords: ["shrinkwrap vs indoor boat storage Ontario","winter boat storage Rice Lake","boat shrinkwrap cost Ontario 2026","heated indoor boat storage Ontario","what happens if you don't winterize"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Shrinkwrap vs Indoor Boat Storage Ontario
@@ -24,17 +25,17 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 
-# Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
+## Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-> **Quick answer:** HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage, and we don't provide pickup, delivery, hauling, mobile service, or transport referrals. Customers handle fall drop-off and spring pickup. The marina is closed December 1 through April 1. Compare storage quotes by written scope, not an old per-foot number.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number.
 
 The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
-HBW has one storage model: outdoor storage with shrinkwrap at Gores Landing. If indoor storage is non-negotiable, HBW isn't the right storage provider for that boat.
+HBW storage is outdoor: professional shrink wrap, uncovered, or shrink-wrap-only at Gores Landing. If indoor or heated storage is non-negotiable, HBW isn't the right storage provider for that boat.
 
 This guide explains the tradeoffs without pretending every Ontario facility sells the same package.
 
@@ -50,7 +51,7 @@ This guide explains the tradeoffs without pretending every Ontario facility sell
 
 No storage label replaces the engine owner's manual. A heated building also doesn't give you permission to ignore fuel, battery, lubrication, corrosion, or manufacturer storage instructions.
 
-HBW provides the first option only. We don't have indoor or heated storage on site.
+HBW provides outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We don't have indoor or heated storage on site.
 
 ---
 
@@ -68,7 +69,7 @@ A written winterization scope should address the items that apply to that engine
 - Battery condition and storage arrangement
 - Documentation of the work completed
 
-The battery does not automatically need to be removed. At HBW it may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
 Ask what the provider will actually do. "Stored indoors" and "professionally winterized" are different promises.
 
@@ -88,7 +89,7 @@ Don't use an old blog rate as a budget.
 
 ## What HBW's Outdoor Storage Model Means
 
-HBW offers outdoor shrinkwrap storage only. The shrinkwrap portion uses a fitted film, support frame, vents, and strapping appropriate to the boat and approved scope.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. The shrinkwrap portion uses a fitted film, support frame, vents, and strapping appropriate to the boat and approved scope.
 
 Engine work is separate from the word "storage." The work order confirms whether winterization, gearcase service, battery handling, spring commissioning, or another item is included.
 
@@ -97,19 +98,20 @@ HBW does not offer:
 - Indoor or heated storage
 - Climate-controlled storage
 - Year-round storage
-- Pickup or delivery
-- Boat hauling
-- Mobile service
+- Boat delivery
+- Motor shipping
+- Mobile, dockside, or on-site service
 - Transport referrals
+- Third-party transport quotes
 - Winter customer access
 
-Customers bring the boat to Gores Landing in the fall and pick it up in the spring. If that logistics model doesn't fit, choose a provider whose service model does.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
 
 ---
 
 ## Access, Transport, and the Winter Closure
 
-HBW is a customer drop-off and pickup operation. We don't move boats from GTA homes, cottage properties, or other marinas, and we don't arrange third-party transport.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 The marina is closed December 1 through April 1. During that period:
 
@@ -151,7 +153,7 @@ HBW does not offer either indoor tier. We also don't promise referrals, availabi
 
 ## Spring Commissioning
 
-Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
 
 Physical commissioning begins after the marina reopens. A spring work order may still need separate authorization for repairs, parts, or model-specific service beyond the commissioning scope.
 
@@ -159,7 +161,7 @@ Physical commissioning begins after the marina reopens. A spring work order may 
 
 ## Sources and Review Notes
 
-- HBW operating rules reviewed July 24, 2026: outdoor shrinkwrap storage only; customer drop-off and pickup; no indoor, heated, climate-controlled, or year-round storage
+- HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW winter closure: December 1 through April 1, with no physical work or customer access
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
 - Mercury storage procedures vary by engine. Follow the exact owner's manual and authorized service literature.
@@ -178,7 +180,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
 
 ### Does HBW offer indoor or heated boat storage?
 
-No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage.
+No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage.
 
 ### Can I access my boat at HBW during winter?
 
@@ -190,11 +192,11 @@ No. Shrinkwrap protects the boat from weather. Engine storage procedures follow 
 
 ### Does HBW remove every battery for storage?
 
-No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
+No. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
 ### Does HBW pick up, deliver, haul, or service boats at my location?
 
-No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### How much does HBW outdoor winter storage cost?
 
@@ -202,28 +204,27 @@ The current quote depends on the boat, trailer, length, shrinkwrap requirements,
 
 ### Is spring commissioning included?
 
-It is included for HBW winter-storage customers. As of July 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
+It is included for HBW winter-storage customers. As of September 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

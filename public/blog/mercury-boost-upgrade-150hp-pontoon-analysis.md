@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-07-18
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-07-18
+date_modified: 2026-08-19
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Boost and 150 HP Pontoons: Check Eligibility First
@@ -24,19 +25,11 @@ language: en-CA
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last updated:** 2026-07-18  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
-> **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's published dealer-installed list starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
-
----
-
-## Quick Answer
-
-For most owners of a standard Mercury 150 FourStroke pontoon motor, the first question has a simple answer: the motor is not on Mercury's currently published dealer-installed Boost eligibility list. Do not compare gains or pricing until a Mercury dealer has checked the exact engine family and serial number. If the motor is eligible, Boost is an automatic software calibration that can improve mid-range acceleration without changing rated horsepower.
+> **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's dealer-installed list as of our last review starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
 
 ---
 
@@ -52,7 +45,7 @@ For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligib
 
 Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Call HBW with a photo of the serial-number plate for an eligibility and pricing check.
+Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
 
 Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
@@ -71,28 +64,31 @@ The hierarchy of what actually drives pontoon performance:
 
 Boost cannot compensate for an ineligible motor, an underpowered boat, or an incorrect propeller. Confirm those fundamentals first.
 
-::decision-card
-eyebrow: Boost eligibility check
-heading: Is your setup actually a Boost candidate?
-subhead: Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
-leftLabel: Boost is worth the conversation
-leftCriteria:
-  - Mercury has confirmed the exact serial number is eligible
-  - The boat is correctly powered and propped
-  - Mid-range acceleration is the specific concern
-  - You understand that horsepower and top speed do not increase
-leftOutcome: Talk to us about Boost
-leftVariant: recommended
-rightLabel: Boost is not the right lever
-rightCriteria:
-  - Standard Mercury 150 FourStroke, not the Racing 150R
-  - Serial number outside Mercury's published range
-  - The boat is underpowered for its rating and load
-  - Propeller or setup has not been checked
-rightOutcome: Skip Boost, check the prop
-rightVariant: alternative
-whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
-::
+*Boost eligibility check*
+
+### Is your setup actually a Boost candidate?
+
+Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+
+#### Boost is worth the conversation
+
+- Mercury has confirmed the exact serial number is eligible
+- The boat is correctly powered and propped
+- Mid-range acceleration is the specific concern
+- You understand that horsepower and top speed do not increase
+
+**Talk to us about Boost**
+
+#### Boost is not the right lever
+
+- Standard Mercury 150 FourStroke, not the Racing 150R
+- Serial number outside Mercury's published range
+- The boat is underpowered for its rating and load
+- Propeller or setup has not been checked
+
+**Skip Boost, check the prop**
+
+A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
 
 ### When Boost Actually Makes Sense
 
@@ -122,13 +118,11 @@ When customers ask about Boost, we want to know:
 
 For a standard 150 FourStroke pontoon, we start with eligibility and usually move directly to propeller, setup, and load checks because the common 150 FourStroke is not on the current retrofit list.
 
-::cta
-variant: inline
-heading: Wondering what the upgrade runs?
-body: Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
-primaryLabel: Price your upgrade
-primaryHref: /pricing-reference
-::
+### Wondering what the upgrade runs?
+
+Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
+
+[Price your upgrade](/pricing-reference)
 
 ---
 
@@ -136,20 +130,18 @@ Wondering if Boost makes sense for your specific pontoon? We'll tell you straigh
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
-> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+### Worth it? Run your own numbers.
 
-::cta
-variant: banner
-heading: Worth it? Run your own numbers.
-body: Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
-primaryLabel: Build Your Quote
-primaryHref: /quote/motor-selection
-secondaryLabel: See current financing offers
-secondaryHref: /promotions
-phone: 905-342-2153
-::
+Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
+
+[Build Your Quote](/quote/motor-selection)
+
+[See current financing offers](/promotions)
+
+905-342-2153
+
 ---
 
 ## FAQs
@@ -172,7 +164,7 @@ Boost follows Mercury's authorized process on an eligible motor. HBW confirms th
 
 ### How much does Mercury Boost cost in Canada?
 
-HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### What is the difference between Mercury Boost and re-propping?
 
@@ -192,28 +184,27 @@ Confirm the propeller is correctly sized and pitched before evaluating Boost. An
 
 ### Is Mercury Boost available in Ontario?
 
-Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.
+Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Send the exact model and a clear serial-number-plate photo through the [HBW contact page](/contact) to confirm software status, boat configuration and the current Canadian price in writing.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
+- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

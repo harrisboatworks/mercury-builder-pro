@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-07-24
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-07-24
+date_modified: 2026-08-26
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
@@ -24,19 +25,17 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
-
 ---
 
-![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water lake test, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **2 to 5 days** at the shop once scheduled. Spring rush can add booking lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW moves from a configurator starting point to a boat-specific written scope, scheduled drop-off in Gores Landing, installation and rigging, testing, then pickup and handoff. Timing depends on the approved work, parts, findings, current shop capacity, and safe test conditions. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -54,7 +53,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Order over the off-season to lock the motor and an early-spring install slot. HBW's winter closure begins December 1, and the marina reopens April 6. Spring rush (April through May) can add booking lead time before the shop can start.
+**Time of year.** Planning in the off-season can give HBW more time to confirm motor availability and a realistic shop window. The physical marina is closed from December 1 through April 1, with no on-site work or customer access during that period. Spring demand can add booking lead time, so use the confirmed written schedule rather than an assumed launch date.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
@@ -70,14 +69,14 @@ Customer brings the boat to HBW in Gores Landing for the physical walk-around. D
 - Fuel system condition
 - Customer use case
 
-We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. Harris Boat Works is drop-off only and does not provide boat pickup, hauling, delivery, or mobile service.
+We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 #### Step 2: Motor Selection and Written Quote
 
 Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or works with us to configure. The quote includes:
 
 - Specific Mercury model, shaft length, and controls type
-- Prop selection (or noted as determined during sea trial)
+- Prop selection (or noted as determined during lake test)
 - Rigging package
 - Install labour
 - HST (13% Ontario)
@@ -128,13 +127,11 @@ Mercury-certified technician installs:
 - Mercury SmartCraft display (if specified) installed and configured
 - Trim/tilt tested for full range of motion
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 All connections double-checked. Motor is started on muffs (water-cooling adapter) to verify cooling, ignition, and basic operation before launch.
 
-#### Step 8: Sea Trial with Prop Testing, Typically Half a Day
+#### Step 8: Documented Acceptance Check
 
-Boat is launched on Rice Lake. On-water testing:
+When safe seasonal conditions allow and the work order calls for it, the boat is launched on Rice Lake for applicable on-water checks such as:
 
 - **Cooling verification**, Telltale water flow within 10 seconds of start
 - **WOT RPM check**, Motor reaches mid-band of rated WOT RPM with typical loading
@@ -143,20 +140,20 @@ Boat is launched on Rice Lake. On-water testing:
 - **Trim sensitivity**, Responsiveness tested
 - **All electronics check**, Gauges, GPS, fish finder all working with the new motor
 
-If WOT RPM is off, we swap props and re-test. We have a prop test kit at HBW for this reason. The boat doesn't leave until the prop is right.
+If the result points to a prop change, HBW documents the recommendation and gets the customer's approval before changing the work-order scope. The final checks depend on the motor, hull, rigging, load, and safe conditions.
 
-If the customer is available, they ride along to confirm the boat feels right before delivery.
+If an on-water check is not possible, HBW documents the alternate acceptance plan with the customer before pickup. Any customer participation is arranged in advance and is not assumed.
 
 #### Step 9: Final Adjustments and Documentation
 
 Back at the shop:
-- Tighten any connections that loosened during sea trial
+- Tighten any connections that loosened during lake test
 - Document final configuration in service log
 - Complete Mercury warranty registration
-- Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
+- Give the owner the motor information needed to confirm whether the [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) must be updated; a dealer needs the owner's authorization to apply on their behalf
 - Print final documentation for customer
 
-#### Step 10: Pickup and Break-In Coaching, 30-60 Minutes
+#### Step 10: Pickup and Break-In Coaching
 
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
@@ -175,9 +172,7 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 
 **Transom inspection during install.** Some shops bolt a new motor to a transom they didn't inspect. We inspect every transom with the motor off. This is where problems hide.
 
-**Sea trial with prop testing before delivery.** Some shops install the motor and tell the customer to come back if something doesn't feel right. We test on the water and confirm the prop is correct before you leave.
-
----
+**Documented acceptance before pickup.** The checks follow the specific motor, hull, rigging, work order, and safe seasonal conditions. When an on-water check is not possible, HBW documents the alternate acceptance plan with the customer.
 
 ---
 
@@ -185,30 +180,29 @@ Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://w
 
 Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
 
 ### How long does a Mercury repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 
-Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first, but customers arrange transport to and from the shop. HBW does not provide boat pickup, hauling, delivery, or mobile service.
+Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### What happens if my transom has soft spots?
 
 We contact you with options: fix transom now and proceed with repower, fix transom and delay repower until done, or step back and reconsider whether the hull is worth keeping. Most transoms are solid; this is a small percentage of cases.
 
-### What if my Mercury can't reach rated RPM during sea-trial?
+### What if my Mercury can't reach rated RPM during the Lake Test?
 
-We change the prop and re-test. Pitch is the most common issue. Sometimes the right prop is the second or third one we try. The right prop is the one that lets the motor reach mid-band of its rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
+The result is assessed against the motor's rated operating range, hull, load, rigging, and prop. If a prop change is recommended, HBW documents it and gets customer approval before changing the work-order scope. Any on-water re-check depends on safe seasonal conditions and the documented acceptance plan. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
 
 ### What's included in the repower price?
 
-The all-in price on [the motor selection page](/quote/motor-selection) includes motor, rigging, prop, install labor, sea-trial, and Mercury warranty registration. PCL update paperwork is also handled. HST (13%) is added at quote completion.
+The all-in price on [the motor selection page](/quote/motor-selection) includes motor, rigging, prop, install labor, lake-test, and Mercury warranty registration. PCL update paperwork is also handled. HST (13%) is added at quote completion.
 
 ### What's not included?
 
@@ -237,23 +231,22 @@ Motor lead times vary by model and season, and spring is busy. If you are planni
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide), switching from Honda to Mercury
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-07-30
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Premier Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-07-30._
+_Last updated 2026-08-19._
 
 All prices shown on this page are live from our current Mercury pricelist feed, updated regularly. Every figure is in Canadian dollars and reflects the dealer price at our Rice Lake yard.
 
@@ -104,7 +104,7 @@ All prices shown on this page are live from our current Mercury pricelist feed, 
 | 50 | 50ELPT FourStroke | 1F51413GZ | 20" | Remote | $10,599 _(MSRP $11,805)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=44987d46-af33-45b2-85a2-651b8556b1bd) |
 | 50 | 50ELPT Command Thrust FourStroke | 1F51453GZ | 20" | Remote | $11,017 _(MSRP $12,275)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=03a7f1ce-1077-4b0f-826f-e5eb0fc918a1) |
 | 50 | 50ELHPT FourStroke | 1F5145TJZ | 20" | Tiller | $11,484 _(MSRP $12,795)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=bf09e400-9e56-4d1c-9f6b-d4fdbdbfdaec) |
-| 60 | 60ELPT FourStroke | 1F60413GZ | 20" | Remote | $12,040 _(MSRP $13,415)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5744e979-5c77-4550-a955-d9e83ecdb26c) |
+| 60 | 60ELPT FourStroke | 1F60413GZ | 20" | Remote | $12,040 _(MSRP $13,415)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5744e979-5c77-4550-a955-d9e83ecdb26c) |
 | 60 | 60ELHPT FourStroke Tiller | 1F6041TJZ | 20" | Tiller | $12,700 _(MSRP $14,150)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5316074a-fcd2-4e58-b57b-65c877699ba8) |
 | 60 | 60ELPT Command Thrust FourStroke | 1F60453GZ | 20" | Remote | $12,342 _(MSRP $13,750)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=8f7b62e5-e3d4-41d5-8489-9aa50c476d46) |
 | 60 | 60ELHPT Command Thrust FourStroke Tiller | 1F6045TJZ | 20" | Tiller | $13,057 _(MSRP $14,545)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=c54bc296-0a5c-437c-accc-f6df2fcd83c2) |
@@ -113,7 +113,7 @@ All prices shown on this page are live from our current Mercury pricelist feed, 
 | 90 | 90ELPT FourStroke | 1F904132D | 20" | Remote | $14,960 _(MSRP $16,665)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=b16ac296-e506-4357-ad69-18a0aa347cbf) |
 | 90 | 90ELPT Command Thrust FourStroke | 1F904532D | 20" | Remote | $15,428 _(MSRP $17,185)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7) |
 | 90 | 90EXLPT FourStroke | 1F904632D | 25" | Remote | $15,477 _(MSRP $17,240)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=a7ff5af0-b210-44e8-aab6-f2910435782a) |
-| 115 | 115ELPT FourStroke | 1115F132D | 20" | Remote | $17,083 _(MSRP $19,030)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eee34e36-54e0-4563-b276-aa5c4f751798) |
+| 115 | 115ELPT FourStroke | 1115F132D | 20" | Remote | $17,083 _(MSRP $19,030)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eee34e36-54e0-4563-b276-aa5c4f751798) |
 | 115 | 115EXLPT FourStroke | 1115F232D | 25" | Remote | $17,441 _(MSRP $19,430)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=fc97c532-e0ae-4a5f-b5b9-e0b95471c483) |
 | 115 | 115ELPT Command Thrust FourStroke | 1115F532D | 20" | Remote | $17,540 _(MSRP $19,540)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=609932bd-755a-49ce-a54d-8c6c9c5c75f8) |
 | 115 | 115EXLPT Command Thrust FourStroke | 1115F632D | 25" | Remote | $17,892 _(MSRP $19,930)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=837317a4-c76b-4079-9160-e25a4bdfeba9) |

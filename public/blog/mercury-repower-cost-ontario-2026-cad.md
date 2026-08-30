@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-07-24
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It"
 description: "What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Premier dealer on Rice Lake."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
-date_modified: 2026-07-24
+date_modified: 2026-08-26
 keywords: ["Mercury repower cost Ontario","Mercury repower cost Canada 2026","Mercury outboard price CAD","boat repower cost Ontario","Mercury engine price Canada"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Repower Guide: Cost, Timeline & When It's Worth It
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-04-17  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 
@@ -109,7 +110,7 @@ There are two separate clocks:
 
 HBW does not promise a universal number of days in an article. The confirmed quote and schedule are the authority for both clocks.
 
-The physical marina is closed December 1 through April 1. No physical repower, installation, inspection, customer drop-off, or pickup happens during that closure. Customers arrange their own transport to and from Gores Landing when the job is scheduled. HBW does not provide boat pickup, hauling, delivery, or mobile repower service.
+The physical marina is closed December 1 through April 1. No physical repower, installation, inspection, or customer access happens during that closure. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## The HBW Repower Process
 
@@ -187,7 +188,7 @@ HBW does not buy used motors outright. An accepted trade applies only toward a n
 
 ### Does HBW pick up or deliver the boat?
 
-No. Customers arrange their own transport to and from HBW in Gores Landing for the confirmed drop-off and pickup dates. HBW does not provide boat pickup, hauling, delivery, or mobile repower service.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### Do you finance repowers?
 
@@ -197,22 +198,21 @@ Yes, subject to lender approval and the current written terms. HBW arranges fina
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

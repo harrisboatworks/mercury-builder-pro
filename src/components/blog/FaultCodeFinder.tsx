@@ -10,6 +10,34 @@ interface FaultCodeFinderProps {
   content: string;
 }
 
+const MERCURY_OWNER_RESOURCES_URL =
+  'https://www.mercurymarine.com/ca/en/service-and-support/owners-resources';
+const OWNER_MANUAL_REFERENCE = /serial-specific owner manual/i;
+
+function GuidanceWithManualLink({ guidance }: { guidance: string }) {
+  const match = guidance.match(OWNER_MANUAL_REFERENCE);
+
+  if (!match || match.index === undefined) return <>{guidance}</>;
+
+  const before = guidance.slice(0, match.index);
+  const after = guidance.slice(match.index + match[0].length);
+
+  return (
+    <>
+      {before}
+      <a
+        href={MERCURY_OWNER_RESOURCES_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-repower-mercury-red underline decoration-repower-mercury-red/40 underline-offset-2 hover:decoration-repower-mercury-red"
+      >
+        {match[0]}
+      </a>
+      {after}
+    </>
+  );
+}
+
 export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
   const inputId = useId();
   const [query, setQuery] = useState('');
@@ -171,7 +199,7 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
                     <strong>
                       {row.source === 'modern' ? 'What to do now: ' : 'Scope: '}
                     </strong>
-                    {row.guidance}
+                    <GuidanceWithManualLink guidance={row.guidance} />
                   </p>
                 </article>
               ))}

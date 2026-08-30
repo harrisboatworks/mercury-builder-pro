@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 90 HP FourStroke Review: Standard vs Command Thrust"
 description: "An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-07-27
+date_modified: 2026-08-19
 keywords: ["mercury 90 hp review","mercury 90 hp fourstroke review","mercury 90 command thrust","mercury 90 standard vs command thrust","mercury 90 real world performance","mercury 90 owner reviews","mercury 90 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 90 HP FourStroke Review: Standard vs Command Thrust
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-08-19  
 **Read time:** 17 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
 
@@ -144,7 +145,7 @@ Choose Command Thrust when carrying load matters more than minimizing gearcase d
 
 Pontoons are the obvious case. Their tubes and broad deck create drag, and family loads change from one trip to the next. The 2.38:1 ratio lets the motor turn a larger propeller that can hold the water better and carry that load.
 
-[Our Command Thrust guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) goes deeper into why CT is a fitment choice, not an automatic upgrade.
+[Our Command Thrust guide](/blog/mercury-command-thrust-complete-guide-2026) goes deeper into why CT is a fitment choice, not an automatic upgrade.
 
 ## Real Freshwater Results, With the Boat Attached
 
@@ -155,7 +156,7 @@ These are exact examples, not speed promises.
 | [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 17.8 L/h (4.7 US gal/h) |
 | [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 15.5 L/h (4.1 US gal/h) |
 | [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 15.9 L/h (4.2 US gal/h) |
-| [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | Rigger considered trying 17 pitch after verifying rpm and handling |
+| [1968 Boston Whaler 17 repower and lake test](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | [Rigger considered trying 17 pitch after verifying rpm and handling](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) |
 
 Mercury's Crestliner test page labels that setup 2.08:1, while the current operation manual gives the standard production ratio as 2.07:1. The table keeps Mercury's test-page wording rather than silently changing it.
 
@@ -167,7 +168,7 @@ The motor did not forget how to make 90 HP. The boat changed.
 
 https://www.youtube.com/watch?v=F1Js6zGC6-s
 
-*Boat Trader's 2026 sea trial of a classic 17-ft Boston Whaler repowered with a current-generation Mercury 90 FourStroke.*
+*Boat Trader's 2026 lake test of a classic 17-ft Boston Whaler repowered with a current-generation Mercury 90 FourStroke.*
 
 ## The Propeller Can Change the Whole Review
 
@@ -177,7 +178,7 @@ For the recreational 90, that full range is 5,000–6,000 rpm.
 
 The phrase **normally loaded** matters. A propeller chosen with one person, half a tank and no gear may pull the engine too low once the boat gets its batteries, trolling motor, canvas, cooler, passengers and full fuel back aboard.
 
-On the Boston Whaler sea trial, the 16-pitch Vengeance put the boat around 43–44 mph and the rigger still considered a 17-pitch test. That does not mean every 90 wants 16 or 17 pitch. It shows the proper sequence:
+On the Boston Whaler lake test, the 16-pitch Vengeance put the boat around 43–44 mph and the rigger still considered a 17-pitch test. That does not mean every 90 wants 16 or 17 pitch. It shows the proper sequence:
 
 1. Confirm the boat, capacity plate, transom and shaft length.
 2. Start with a propeller matched to the hull and gearcase.
@@ -272,7 +273,7 @@ We do not freeze motor prices into review articles. The live price link is delib
 - [Mercury performance test: Manitou Aurora LE Angler with 90 Command Thrust](https://performancedata.mercurymarine.com/performance-test/243)
 - [Mercury performance test: Harris Cruiser 210 with 90 FourStroke](https://performancedata.mercurymarine.com/performance-test/209)
 - [Mercury U.S. and Canada warranty coverage chart](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/coverage-duration/US%20and%20Canada%20warranty%20chart.pdf)
-- [Boat Trader: 17-ft Boston Whaler Mercury 90 repower sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/)
+- [Boat Trader: 17-ft Boston Whaler Mercury 90 repower lake test](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/)
 - [Boats.com: introduction and test of the current 2.1-litre 75/90/115 platform](https://www.boats.com/reviews/mercury-debuts-new-75-hp-90-hp-115-hp-fourstroke-outboards/)
 - [Boats.com Boston Whaler 170 Montauk review with current 90 FourStroke](https://www.boats.com/reviews/boston-whaler-170-montauk-video-boat-review/)
 - [ContinuousWave current 2.1-litre Mercury 90 modification discussion](https://continuouswave.com/forum/viewtopic.php?t=63)
@@ -325,23 +326,22 @@ Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

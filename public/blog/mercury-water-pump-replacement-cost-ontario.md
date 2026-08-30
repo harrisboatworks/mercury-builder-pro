@@ -1,40 +1,50 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario.md
-last_updated: 2026-07-02
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)"
-description: "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it."
+title: "Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)"
+description: "HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-02
+date_modified: 2026-08-02
 keywords: ["mercury water pump replacement cost","outboard impeller replacement cost ontario","water pump kit cost mercury","weak telltale outboard","outboard water pump service"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
-# Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)
+# Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)
 
-> What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.
+> HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote.
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-02  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario
 
-# Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)
+> **Quick answer:** In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about **$210 in labour plus $76 in pump parts**, before HST. Those are historical shop medians, not a package price or quote. The engine, gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners and any cooling-system diagnosis can change both numbers.
 
-> **Quick answer:** At our Rice Lake shop, the median dedicated water pump job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST (as of summer 2026, confirmed when you book); full kits with housing run higher by model. It's the cooling system's only moving part and the cheapest insurance an outboard can buy. Book at hbw.wiki/service.
+Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and timing. The next question at the counter is simpler: what changes the bill?
 
-Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) answered WHEN water pumps fail, with 766 jobs of evidence. The question people ask next at the counter is simpler: what does it cost to just do it?
+The useful answer starts with what is actually inside the job and when "impeller" becomes "impeller, housing, wear plate, seals, and diagnosis."
 
-Here are the real numbers from 112 dedicated water pump jobs since 2023, plus what's actually inside that bill and when "impeller" quietly becomes "impeller, kit, and thermostat."
+## What 112 HBW Jobs Billed
+
+| Line in the frozen 2023-July 2026 dataset | Median before HST | What it means |
+|---|---:|---|
+| Labour | About $210 | Access the pump, inspect the components, replace the approved scope, reassemble and test |
+| Pump parts | About $76 | The median parts total; a complete kit with housing can cost more |
+
+The dataset contains dedicated water-pump jobs, not every annual service that happened to include an impeller and not every overheat diagnosis. Medians describe the middle of that historical group. They do not promise that a specific engine will land on either number.
+
+The exact engine serial number still matters. A clean, familiar gearcase needing a routine impeller scope is not the same job as corroded fasteners, a scored housing, a full pump kit, or an engine that has already overheated.
 
 ---
 
@@ -58,24 +68,23 @@ The water pump lives at the top of your gearcase, driven by the driveshaft. Gett
 
 https://www.youtube.com/watch?v=AQIV2UddocM
 
-*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). This is the real sequence our techs follow; the video shows why the labour is the cost.*
+*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). The sequence shows why access, inspection, alignment, and reassembly are a substantial part of the job.*
 
-That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" [during other gearcase work](/blog/milky-gearcase-oil-meaning-cost-ontario) saves real money.
+The impeller is only one component. Accessing the pump, checking the housing and wear plate, aligning the shift linkage and driveshaft, and water-testing the result are what separate a complete job from a part swap.
 
 ---
 
-## The Real Numbers
+## What Determines the Cost
 
-From our completed work orders (2023 to present, before HST; as of July 2026, confirmed when you book):
+| Cost factor | Why it matters |
+|---|---|
+| Exact engine, serial number, and gearcase | These identify the correct Mercury parts and service procedure. |
+| Impeller-only versus complete pump kit | A scored housing or worn plate changes the parts list. |
+| Corrosion or seized fasteners | Extra disassembly time may be needed before the lower unit can be serviced safely. |
+| Cooling-system diagnosis | A weak telltale or overheat alarm may come from an obstruction, thermostat, poppet, sensor, or another issue rather than the pump alone. |
+| Related gearcase findings | Milky lubricant, damaged seals, or metal particles create a separate inspection and approval step. |
 
-| Line | Median at our counter | Notes |
-|---|---|---|
-| Labour | ~$210 (about 2 hours) | Drop lower unit, replace pump components, reassemble, test |
-| Pump parts on the median job | ~$76 | Impeller plus gaskets/wear items on the median job |
-| Full pump kit with housing | Higher, by model | Quoted per motor when the liner is scored |
-| Indicative all-in | Labour + parts medians land near $300 | Derived, before HST; V6/V8 and corroded hardware run higher |
-
-What moves it up: a scored housing (full kit instead of impeller-and-plate), seized lower unit bolts on saltwater or neglected motors, a thermostat added while the cooling system is open, and any surprise the [gearcase drain](/blog/milky-gearcase-oil-meaning-cost-ontario) reveals while the unit is off.
+HBW confirms the scope from the serial number and inspection. That is more useful than publishing a single package price that fits some engines and misleads everyone else.
 
 What keeps it down: bundling. If your motor is already in for its [annual winterize-and-service](/blog/mercury-100-hour-service-cost-ontario), the lower unit conversation is already half-done.
 
@@ -95,7 +104,7 @@ We put it on your file either way: what we found, what we installed, and when th
 
 ## Common mistakes
 
-- **Waiting for the failure.** An impeller dies of heat in July, not politely in the driveway. The [766-job dataset](/blog/mercury-impeller-replacement-when-they-fail) shows midsummer is exactly when neglected pumps quit.
+- **Waiting for the failure.** Heat, load, weeds, silt, and restricted water flow are harder on a marginal pump than a brief dockside check. Follow the schedule and act on warning signs.
 - **Judging by the telltale alone.** A strong stream is necessary, not sufficient; rubber ages on the calendar even when the stream looks fine. Interval beats vibes.
 - **Running dry "just for a second."** A few seconds without water can take years off an impeller. Muffs on before the key, every time.
 - **Skipping the wear plate and gaskets to save a few dollars.** The labour is the cost; reusing worn sealing parts against fresh rubber is how a two-year job becomes an annual one.
@@ -104,7 +113,7 @@ We put it on your file either way: what we found, what we installed, and when th
 
 ## What HBW checks before your motor goes back on the water
 
-Every pump job here ends the same way: reassembled to torque, run on water, telltale verified strong, and the interval noted on your file so the next one is planned instead of discovered. It's a small job done carefully, which is the entire point of it; 112 of them since 2023 and the come-backs are the motors we haven't met yet.
+A completed pump job should include correct reassembly, cooling-flow verification, and a record of what was replaced. The point is not merely to install fresh rubber; it is to restore the cooling system correctly and identify anything else the inspection uncovered.
 
 ---
 
@@ -120,18 +129,19 @@ Tell us the motor, the hours, and the last time anyone was in there.
 
 ## Sources
 
-- HBW service records, Rice Lake: 112 dedicated water pump jobs, 2023-2026 (medians before HST)
-- Mercury Marine maintenance schedules (your owner's manual governs your model)
+- HBW Lightspeed service history: frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026 (median labour about $210 and median pump parts about $76, before HST; no customer data used)
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 
 ## FAQs
 
 ### How much does a Mercury water pump replacement cost in Ontario?
 
-At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service.
+In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about $210 in labour plus $76 in pump parts, before HST. Those are historical medians, not a package price or quote; the engine, gearcase, kit scope, corrosion and diagnosis can change both numbers.
 
 ### How often should the water pump be serviced?
 
-Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our maintenance intervals guide lays out the schedule.
+Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner.
 
 ### Can I replace just the impeller and skip the kit?
 
@@ -143,32 +153,31 @@ No; the telltale outlet itself clogs with debris easily, and thermostat and popp
 
 ### Can I do the water pump myself?
 
-Handy owners with a shop manual manage it, and the parts are affordable. The traps are shift-linkage alignment, driveshaft seal damage on reinstall, and torque on the housing. If any of that reads like a foreign language, two hours of shop labour is cheap tuition avoided.
+Some owners can do it with the correct service manual, tools, and torque specifications. Shift-linkage alignment, driveshaft handling, seal surfaces, and correct kit selection are the common traps. If the engine has overheated or the lower unit is corroded, diagnosis matters more than swapping a part.
 
 ### When's the best time to book it?
 
-Fall, bundled with your winterize-and-service while the shop's already working on the motor, or early spring before the rush. Mid-July, when everyone's pump fails at once, is the expensive time to need one.
+Scheduled pump work is easiest to combine with planned maintenance before peak boating season. If the engine is overheating, the alarm sounds, or water flow drops, stop running it and investigate now rather than waiting for a convenient month.
 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)](/blog/spring-commissioning-cost-ontario), spring commissioning costs in Ontario
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

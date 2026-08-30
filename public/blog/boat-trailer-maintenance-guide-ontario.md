@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "The Five-Minute Boat-Trailer Check Before Every Trip"
 description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance."
 category: "Service"
 date_published: 2026-05-26
-date_modified: 2026-07-30
+date_modified: 2026-07-31
 keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # The Five-Minute Boat-Trailer Check Before Every Trip
@@ -24,17 +25,17 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-07-31  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
-
-# The Five-Minute Boat-Trailer Check Before Every Trip
 
 > **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, don't move the trailer until it's fixed.
 
 A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+
+[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 
@@ -184,23 +185,22 @@ Don’t start the trip with a failed required light. Repair the lamp, wiring, co
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

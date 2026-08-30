@@ -4,7 +4,7 @@ import { Menu, ChevronRight } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { useAuth } from '@/components/auth/AuthProvider';
-import { RepowerMobileMenu } from './RepowerMobileMenu';
+import { RepowerMobileMenu, SITE_MOBILE_MENU_ID } from './RepowerMobileMenu';
 
 const PRIMARY_NAV_LINKS = [
   { to: '/quote/motor-selection', label: 'Outboards' },
@@ -104,9 +104,13 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
               </Link>
             )}
             <button
+              type="button"
               className="inline-flex items-center gap-2 p-2 text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
+              aria-haspopup="dialog"
+              aria-expanded={menuOpen}
+              aria-controls={SITE_MOBILE_MENU_ID}
             >
               <span className="hidden lg:inline font-sans text-[11px] font-semibold uppercase tracking-[0.12em]">
                 More

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,27 +8,28 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Mississauga HBW"
-description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake."
-category: "Service Area"
+description: "What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake."
+category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-07-24
+date_modified: 2026-08-26
 keywords: ["mercury dealer mississauga","mercury repower mississauga","mercury outboard mississauga ontario","boat motor dealer mississauga","harris boat works mississauga customers"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Dealer Mississauga HBW
 
-> What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.
+> What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake.
 
-**Category:** Service Area  
+**Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-24  
+**Last reviewed:** 2026-08-26  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -36,7 +37,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ![Why Mississauga boaters drive to Harris Boat Works: about 90 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-mississauga-worth-the-drive.png)
 
-# Mercury Dealer for Mississauga: When the Drive Is the Point
+## Mercury Dealer for Mississauga: When the Drive Is the Point
 
 Mississauga is not a short drive from Rice Lake. Let's be direct about that. Ninety minutes northeast on the 401 is a real commitment, and we'd rather acknowledge it upfront than pretend you wouldn't notice.
 
@@ -66,7 +67,7 @@ Mercury Premier is the top tier in their dealer program. It means deeper parts i
 
 ## A Business Built on Repeat, Not Volume
 
-Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not a high-volume sales floor, we're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
+We're not a high-volume sales floor. We're a family marina where the next customer is often a referral from the last one. That dynamic makes us careful. We're not trying to maximize what we extract from a single transaction. We're trying to be the shop someone calls first for the next twenty years.
 
 ---
 
@@ -76,13 +77,13 @@ Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not 
 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what makes sense for your boat and use case.
 
 **Repower service**
-Full repower: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's half the job.
+Full repower: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. The rigging isn't an afterthought, it's half the job.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number you see is real.
@@ -92,8 +93,6 @@ Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and on
 ## Getting to Harris Boat Works from Mississauga
 
 **Route:** Highway 401 east through Toronto, then Highway 115 east, then County Road 28 north into Gores Landing.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Approximate drive time:** Around 90 minutes outside rush hour. On a weekday morning or Saturday before 9 a.m., the 401 through Toronto can be manageable. Midday Saturday or Sunday afternoon, plan for more. The last 30 minutes from 115 to Gores Landing is rural, genuinely pleasant drive once you're off the highway.
 
@@ -124,12 +123,12 @@ We're not going to tell you to repower when you shouldn't. If the hull isn't wor
 
 We're going to rig the motor the right way, not the fast way.
 
-That's the deal. It's been the deal since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
 ---
 
@@ -144,8 +143,6 @@ Why Mississauga boaters trailer to HBW:
 - **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
 - **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
 - **Mercury Premier depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -165,28 +162,27 @@ Mississauga customers cite three reasons: transparent online CAD pricing (no cal
 
 ### Can I get a quote and place a Mercury order without visiting?
 
-Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home.
+Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also trailer the boat to us for install and the Lake Test.
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw), Mercury dealer for Oshawa
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw), Mercury dealer for Pickering
+- [Mercury Dealer Richmond Hill HBW](/blog/mercury-dealer-richmond-hill-ontario-hbw), Mercury dealer for Richmond Hill
+- [Mercury Dealer Vaughan Ontario HBW](/blog/mercury-dealer-vaughan-ontario-hbw), Mercury dealer for Vaughan
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

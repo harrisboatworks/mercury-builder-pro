@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario.md
-last_updated: 2026-06-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Old Motor Trade-In, HST and Disposal in Ontario"
 description: "Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-06-10
+date_modified: 2026-08-02
 keywords: ["repower trade-in ontario","old outboard trade in","hst credit boat motor","outboard disposal ontario","mercury repower harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Old Motor Trade-In, HST and Disposal in Ontario
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-10  
+**Last reviewed:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
 
@@ -105,7 +106,7 @@ Some motors aren't worth trading. If you're replacing a 1998 two-stroke Evinrude
 
 If your old motor has no trade value, leave it with us when you repower. No charge. We route dead outboards through certified recycling channels so the oil, fuel, and metals are handled properly.
 
-Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster. Disposal done right is better for Rice Lake. That's not a slogan, the lake is about 80 feet from our shop.
+Old marine two-strokes contain oil, fuel, and metals that should not go in a dumpster. Responsible handling matters at a marina beside Rice Lake.
 
 ---
 
@@ -120,7 +121,7 @@ When you repower with us, we give you:
 
 The motor price is the easy number. The installed, net-of-trade price is the honest one.
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 
@@ -147,28 +148,27 @@ No. We take used motors as trade-ins against a repower or new motor purchase, bu
 
 ### Does a repower include an on-water test?
 
-Yes. Every repower at Harris Boat Works gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers), Pro XS repower for Kawartha anglers
+- [Mercury DTS vs Mechanical Ontario](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS vs mechanical controls on a repower
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

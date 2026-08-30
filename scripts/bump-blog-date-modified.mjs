@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
- * Auto-bump blog `dateModified` to TODAY whenever an article's prose
- * (its `content` template literal) changes versus HEAD. Leaves unchanged
- * articles untouched. Intended to run as a git pre-commit hook via husky.
+ * Auto-bump blog `dateModified` to TODAY whenever an article's public block
+ * changes versus HEAD. This includes body copy, titles, descriptions, FAQs,
+ * image alt text, and other article metadata. Leaves unchanged articles
+ * untouched. Intended to run as a git pre-commit hook via husky.
  *
  * Behavior:
  *   - Inspects every staged blog data file: src/data/blogArticles.ts and
@@ -20,7 +21,15 @@ import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 function sh(cmd, opts = {}) {
-  return execSync(cmd, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'], ...opts });
+  return execSync(cmd, {
+    encoding: 'utf8',
+    stdio: ['pipe', 'pipe', 'pipe'],
+    // blogArticles.ts is larger than Node's 1 MiB execSync default buffer.
+    // Without an explicit ceiling, `git show` fails with ENOBUFS and the
+    // date-bump hook can silently skip every changed English article.
+    maxBuffer: 16 * 1024 * 1024,
+    ...opts,
+  });
 }
 
 function todayISO() {
@@ -31,9 +40,10 @@ function todayISO() {
   return fmt.format(new Date());
 }
 
-// Extract { slug -> content } from a file source. Uses the same
-// backtick-aware scanner as the validator so we don't depend on tsx.
-function extractSlugContent(src) {
+// Extract { slug -> article fingerprint } from a file source. Comparing the
+// complete article block catches FAQ-only and metadata-only editorial changes.
+// Normalize dateModified itself so a previous bump is not treated as content.
+function extractSlugFingerprint(src) {
   const out = new Map();
   const slugRx = /slug:\s*['"]([^'"]+)['"]/g;
   const positions = [];
@@ -42,23 +52,13 @@ function extractSlugContent(src) {
   positions.push({ slug: null, start: src.length });
   for (let i = 0; i < positions.length - 1; i++) {
     const block = src.slice(positions[i].start, positions[i + 1].start);
-    out.set(positions[i].slug, readTemplate(block, 'content'));
+    const fingerprint = block.replace(
+      /dateModified:\s*(['"])\d{4}-\d{2}-\d{2}\1/,
+      "dateModified: '<normalized>'",
+    );
+    out.set(positions[i].slug, fingerprint);
   }
   return out;
-}
-
-function readTemplate(block, field) {
-  const rx = new RegExp(`${field}:\\s*\``);
-  const m = block.match(rx);
-  if (!m) return '';
-  const start = m.index + m[0].length;
-  let i = start;
-  while (i < block.length) {
-    if (block[i] === '\\') { i += 2; continue; }
-    if (block[i] === '`') return block.slice(start, i);
-    i++;
-  }
-  return block.slice(start);
 }
 
 // Rewrite the `dateModified` line of a single article (matched by slug) to
@@ -100,20 +100,29 @@ const restage = [];
 
 for (const file of targets) {
   if (!existsSync(file)) continue;
+  try {
+    sh(`git cat-file -e HEAD:"${file}"`);
+  } catch {
+    // New file with no prior content to compare.
+    continue;
+  }
   let headSrc = '';
   try {
     headSrc = sh(`git show HEAD:"${file}"`);
-  } catch {
-    // File not in HEAD (newly added). No prior content to diff against - skip.
-    continue;
+  } catch (error) {
+    console.error(
+      `[bump-blog-date-modified] failed to read HEAD version of ${file}:`,
+      error instanceof Error ? error.message : String(error),
+    );
+    process.exit(1);
   }
-  const headMap = extractSlugContent(headSrc);
+  const headMap = extractSlugFingerprint(headSrc);
   let workingSrc = readFileSync(file, 'utf8');
-  const workingMap = extractSlugContent(workingSrc);
+  const workingMap = extractSlugFingerprint(workingSrc);
   const changed = [];
-  for (const [slug, content] of workingMap) {
+  for (const [slug, fingerprint] of workingMap) {
     const prev = headMap.get(slug);
-    if (prev !== undefined && prev !== content) changed.push(slug);
+    if (prev !== undefined && prev !== fingerprint) changed.push(slug);
   }
   if (changed.length === 0) continue;
 

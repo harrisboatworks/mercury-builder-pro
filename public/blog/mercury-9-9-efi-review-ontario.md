@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-19
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 9.9 EFI Review Ontario
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -36,8 +37,6 @@ The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable wi
 
 ---
 
-### Full Article
-
 Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
 Here is what the "MH EFI" means before we go further:
@@ -46,7 +45,7 @@ Here is what the "MH EFI" means before we go further:
 - **H**, Tiller handle
 - **EFI**, Electronic fuel injection
 
-Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
+Shaft length: 15-inch short shaft. Displacement: 209 cc. External 12L / 3.2 gal fuel tank with fuel line.
 
 ---
 
@@ -91,12 +90,6 @@ The 9.9 MH EFI is the wrong motor if:
 
 ---
 
-::pull-quote
-quote: Bought the 9.9 EFI as a kicker for trolling. **Ended up using it more than the main motor** on small-lake mornings. Quietest motor I've owned and the EFI starts on the first pull every time.
-attribution: Steve H.
-source: Peterborough
-::
-
 ## Standard 9.9 EFI vs. ProKicker-Style Use
 
 "Mercury 9.9 EFI" means different things depending on the version. The motor in this review is the standard 9.9 MH EFI: manual start, tiller handle, short shaft, standard gearcase.
@@ -105,15 +98,13 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## The Price, What HBW Has Published
 
 As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-**Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+**Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
 ---
 
@@ -121,7 +112,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 ## Our Honest Take
 
-If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and Mercruiser.
+If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and MerCruiser.
 
 The 9.9 MH EFI solves the problem most small-boat owners on Rice Lake and the Kawarthas actually have: a simple portable motor that starts reliably, runs clean on EFI, and does not require a battery project to operate. The carburetor drama that shows up on older small outboards after six months of storage is the problem this motor is designed to avoid.
 
@@ -139,13 +130,11 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 38 kg (84 lb) |
+| Displacement | 209 cc |
+| Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
-
----
 
 ---
 
@@ -167,9 +156,6 @@ Or call 905-342-2153.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
 ---
 
 ## FAQs
@@ -184,7 +170,7 @@ Mercury says the manual-start 9.9 EFI models do not require a cranking battery b
 
 ### How much does the Mercury 9.9 MH EFI weigh?
 
-Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight.
+Mercury Canada's exact-SKU listing gives model 1A10201LK a dry weight of 88 lb. Mercury's broader 9.9 family specifications can show lighter figures for other configurations.
 
 ### What shaft length is the Mercury 9.9 MH EFI?
 
@@ -209,23 +195,22 @@ Based on visible Canadian listings reviewed in May 2026, it is a very strong pos
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

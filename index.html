@@ -5,13 +5,24 @@
     <script>window.dataLayer = window.dataLayer || [];</script>
     <!-- GTM-PLACEHOLDER: GTM container snippet goes here once the GTM-XXXXXXX container ID is provided. Do not add GA4 gtag here. -->
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
+    <!-- Google Analytics 4 with Consent Mode v2.
+         The consent default MUST be pushed before gtag('config') so GA starts
+         in cookieless pings until the visitor answers the banner. The banner
+         (src/lib/analytics.ts) replays the stored choice via gtag('consent','update'). -->
     <script>
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
       gtag('js', new Date());
       gtag('config', 'G-0JNMHD89YJ');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />
@@ -34,7 +45,7 @@
     <meta name="apple-mobile-web-app-title" content="Mercury Quote" />
     <link rel="apple-touch-icon" href="/pwa-192x192.png" />
     <link rel="mask-icon" href="/pwa-512x512.png" color="#c8102e" />
-    <link rel="icon" type="image/png" href="https://storage.googleapis.com/gpt-engineer-file-uploads/zNApRsScJDMvkCR69EaDsjJ13Lt2/uploads/1770236442025-harris_boat_works_black_logo.png">
+    <link rel="icon" type="image/png" href="/harris-boat-works-black-logo.png">
     
     <!-- @NS Prefetch & Preconnect for Performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">

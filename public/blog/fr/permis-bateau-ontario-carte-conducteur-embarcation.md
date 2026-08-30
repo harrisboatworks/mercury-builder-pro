@@ -16,17 +16,18 @@ keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Permis de conduire une embarcation au Canada : Ce que vous devez savoir
 
 > Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et...
 
-**Category:** Réglementation  
-**Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
-**Read time:** 8 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
+**Catégorie :** Réglementation\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-04-12\
+**Temps de lecture :** 8 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
 ### Réponse rapide
 
@@ -129,25 +130,6 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## Questions fréquentes
-
-**Est-ce que la CCEP expire?** 
-Non. Vous réussissez le test une fois et la carte est valide à vie.
-
-**Peut-on passer le test en français?** 
-Oui. Plusieurs fournisseurs accrédités par Transports Canada offrent le test en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
-
-**Quelle est la différence entre la CCEP et la licence d'embarcation?** 
-La CCEP est la certification de l'opérateur (vous). La licence d'embarcation ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) est le numéro d'immatriculation du bateau. Les deux sont nécessaires, mais ce sont deux choses distinctes.
-
-**Est-ce que la CCEP est reconnue dans d'autres provinces?** 
-Oui. La CCEP est une certification fédérale valide partout au Canada.
-
-**Où puis-je vérifier les exigences d'équipements de sécurité complètes?** 
-Sur le site de Transports Canada. Les exigences varient selon la longueur et le type de l'embarcation, la liste dans cet article est un résumé, pas la liste officielle complète.
-
----
-
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Guide d'hivernisation du moteur Mercury Ontario
@@ -185,18 +167,17 @@ Non , seulement pour les embarcations motorisées. Les kayaks, canots et planche
 
 Non. La CCEP concerne la compétence du conducteur; l'immatriculation (licence de plaisance) concerne l'embarcation elle-même.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -156,7 +156,6 @@ ${SEASONAL_CONTEXT.fall.tips.map(t => `- ${t}`).join('\n')}
 ### Boat License (PCOC)
 Get your Pleasure Craft Operator Card through our partner:
 - **Provider:** ${HARRIS_PARTNERS.boat_license.provider}
-- **Discount:** ${HARRIS_PARTNERS.boat_license.discount_amount} with code ${HARRIS_PARTNERS.boat_license.discount_code}
 - **Link:** ${HARRIS_PARTNERS.boat_license.url}
 
 ### Marine Parts Catalogue

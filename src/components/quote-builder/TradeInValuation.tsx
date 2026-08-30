@@ -12,10 +12,10 @@ import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type DecodeResult } from './tradeInModelDecoder';
-import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
+import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult, type HBWValuationFailure } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
+import { clearTradeInValuation, isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 
 
 
@@ -38,6 +38,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [apiUnavailable, setApiUnavailable] = useState(false);
+  // 'rate_limited' means the visitor ran more estimates than the proxy allows,
+  // not that anything is broken — say so rather than claiming an outage.
+  const [failureReason, setFailureReason] = useState<HBWValuationFailure>('unavailable');
   const [showValidation, setShowValidation] = useState(false);
   const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -52,6 +55,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   }>({});
   const [hpOverrideInput, setHpOverrideInput] = useState<string>('');
 
+  const updateValuationInput = (changes: Partial<TradeInInfo>) => {
+    onTradeInChange(clearTradeInValuation(tradeInInfo, changes));
+  };
+
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
 
   // Shared writer for the model input + suggestion clicks.
@@ -64,8 +71,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
     });
-    onTradeInChange({
-      ...tradeInInfo,
+    updateValuationInput({
       model: raw,
       horsepower: decodedFields.horsepower,
       engineType: decodedFields.engineType,
@@ -85,7 +91,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride((prev) => ({ ...prev, hp: n }));
     if (n !== null) {
-      onTradeInChange({ ...tradeInInfo, horsepower: n });
+      updateValuationInput({ horsepower: n });
     }
   };
 
@@ -94,7 +100,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride((prev) => ({ ...prev, stroke: s }));
     const et = strokeToEngineType(s);
-    onTradeInChange({ ...tradeInInfo, engineType: et });
+    updateValuationInput({ engineType: et });
   };
 
   const clearHpOverride = () => {
@@ -111,7 +117,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       const { stroke, ...rest } = prev;
       return rest;
     });
-    onTradeInChange({ ...tradeInInfo, engineType: undefined });
+    updateValuationInput({ engineType: undefined });
   };
 
 
@@ -147,7 +153,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       setEstimate(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition]);
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition, tradeInInfo.engineType, tradeInInfo.engineHours]);
 
 
   // Check if required fields are missing
@@ -158,6 +164,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
+  const modelTextForDecoding = (
+    tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')
+  ).trim();
+  const currentDecodedModel = decodeTradeInModel(modelTextForDecoding, {
+    brand: tradeInInfo.brand,
+    year: tradeInInfo.year,
+  });
+  const effectiveDecodedStroke = decodeOverride.stroke !== undefined
+    ? decodeOverride.stroke
+    : currentDecodedModel.stroke as '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
+  const effectiveEngineType = strokeToEngineType(effectiveDecodedStroke);
+  const requiresStrokeConfirmation = hasModelOrHp && !effectiveEngineType;
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
@@ -173,7 +191,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || !effectiveEngineType) {
       console.log('Missing required fields');
       return;
     }
@@ -181,7 +199,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(true);
     setApiUnavailable(false);
 
-    // Stroke is always inferred by the HBW API from the model code.
+    // Send the decoded or manually confirmed architecture. Configuration
+    // suffixes such as ELPT and EFI do not reliably distinguish two-stroke
+    // from four-stroke motors, so the API must not silently choose for us.
     const hbwResult = await fetchHBWValuation({
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
@@ -189,19 +209,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       condition: tradeInInfo.condition,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
+      stroke: effectiveEngineType,
     });
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
-    if (hbwResult) {
-      console.log('✅ HBW API returned valuation:', hbwResult);
-      tradeEstimate = hbwResult;
+    if (hbwResult.ok === true) {
+      console.log('✅ HBW API returned valuation:', hbwResult.value);
+      tradeEstimate = hbwResult.value;
     } else {
       // Live valuation API unreachable. We deliberately do NOT fall back to the
       // local table — it drifts out of sync with the canonical HBW engine
       // (hbw-valuation on Vercel) and quietly shows customers numbers we never
       // quoted. Fail honestly: offer retry + a direct line instead.
-      console.warn('⚠️ HBW valuation API unavailable — showing retry/contact message (no local fallback)');
+      console.warn(`⚠️ HBW valuation unavailable (${hbwResult.reason}) — showing retry/contact message (no local fallback)`);
+      setFailureReason(hbwResult.reason);
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
@@ -211,8 +233,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setEstimate(tradeEstimate);
     
     // Update the trade-in info with the rounded median value ($25 increments)
-    const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
-    // Build report URL for persistence, let the API decode stroke from model.
+    const finalValue = hbwResult.value.average;
+    // Build the report URL with the same confirmed architecture used for the
+    // estimate so the detailed report cannot silently recalculate a new value.
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
       ? buildHBWReportUrl({
           brand: tradeInInfo.brand,
@@ -221,12 +244,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
-          name: customerName || undefined,
+          stroke: effectiveEngineType,
         })
       : undefined;
 
     onTradeInChange({
       ...tradeInInfo,
+      engineType: effectiveEngineType,
       estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
       rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
@@ -246,8 +270,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   };
 
   const medianValue = estimate 
-    ? medianRoundedTo25(estimate.low, estimate.high) 
+    ? estimate.average
     : 0;
+  const penaltyMessage = estimate
+    && 'penaltyMessage' in estimate
+    && typeof estimate.penaltyMessage === 'string'
+    ? estimate.penaltyMessage
+    : null;
 
   return (
     <motion.div
@@ -407,7 +436,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     onValueChange={(value) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, brand: value });
+                      setDecodeOverride({});
+                      updateValuationInput({ brand: value, engineType: undefined });
                     }}
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
@@ -417,7 +447,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
-                    <SelectContent>
+                    {/* Avoid the popper ResizeObserver loop reported by iOS Safari (#176). */}
+                    <SelectContent position="item-aligned">
                       {brandOptions.map(brand => (
                         <SelectItem key={brand} value={brand} className="font-sans">{brand}</SelectItem>
                       ))}
@@ -445,16 +476,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
                           <p className="font-medium mb-1">Why the year matters</p>
                           <p className="font-sans">
-                            For Mercury motors, a bare HP number (like "90") can use the year as a
-                            clue. Other brands still need the full model or an explicit "4S" / "2S".
+                            Year and HP alone cannot distinguish overlapping two-stroke, OptiMax,
+                            and FourStroke lineups. Confirm the architecture before we calculate.
                           </p>
                           <ul className="mt-1 list-disc space-y-0.5 pl-4 font-sans">
-                            <li><span className="font-medium">Mercury, 2007 or newer</span> → likely 4-Stroke</li>
-                            <li><span className="font-medium">Mercury, before 2000</span> → likely 2-Stroke</li>
-                            <li><span className="font-medium">Any uncertainty</span> → add the full model, "4S", or "2S"</li>
+                            <li><span className="font-medium">Explicit FourStroke, 4S, 2S, or OptiMax text</span> → use that architecture</li>
+                            <li><span className="font-medium">ELPT and EFI suffixes</span> → configuration clues, not stroke proof</li>
+                            <li><span className="font-medium">Any uncertainty</span> → pick the stroke under the model field</li>
                           </ul>
                           <p className="mt-1 font-sans">
-                            Picking a year updates the "Based on" reasons under the model field automatically.
+                            We will not show a number until the stroke is confirmed.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -470,8 +501,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     onChange={(event) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
+                      setDecodeOverride({});
                       const year = Number.parseInt(event.target.value, 10);
-                      onTradeInChange({ ...tradeInInfo, year: Number.isFinite(year) ? year : 0 });
+                      updateValuationInput({
+                        year: Number.isFinite(year) ? year : 0,
+                        engineType: undefined,
+                      });
                     }}
                     placeholder="e.g. 2003"
                     aria-describedby={showValidation && missingFields.year ? 'trade-year-error' : undefined}
@@ -509,9 +544,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                   {(() => {
-                    const raw = (tradeInInfo.model || '').trim();
+                    const raw = modelTextForDecoding;
                     if (!raw) return null;
-                    const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
+                    const decoded = currentDecodedModel;
 
                     // Apply manual overrides
                     const hpOverridden = decodeOverride.hp !== undefined;
@@ -779,7 +814,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         triggerHaptic('light');
                         setEstimate(null);
                         autoEstimateTriggered.current = false;
-                        onTradeInChange({ ...tradeInInfo, condition: option.value as any });
+                        updateValuationInput({ condition: option.value as TradeInInfo['condition'] });
                       }}
                     >
                       <div className={`font-display text-lg font-semibold ${tradeInInfo.condition === option.value ? 'text-white' : 'text-repower-navy-900'}`}>{option.label}</div>
@@ -826,7 +861,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         id="trade-hours"
                         type="number"
                         value={tradeInInfo.engineHours || ''}
-                        onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
+                        onChange={(e) => updateValuationInput({ engineHours: parseFloat(e.target.value) || undefined })}
                         placeholder="e.g., 250"
                         min="0"
                         max="20000"
@@ -852,7 +887,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               </Collapsible>
 
               {/* Get Estimate button */}
-              {!estimate && !isLoading && !hasMissingFields && (
+              {!estimate && !isLoading && !hasMissingFields && !requiresStrokeConfirmation && (
                 <Button
                   type="button"
                   onClick={handleGetEstimate}
@@ -877,9 +912,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <div className="flex items-start gap-3">
                     <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div className="space-y-2">
-                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">Live estimate temporarily unavailable</h3>
+                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">
+                        {failureReason === 'rate_limited'
+                          ? "That's a few estimates in a row"
+                          : failureReason === 'input_rejected'
+                            ? 'Check the motor details'
+                            : 'Live estimate temporarily unavailable'}
+                      </h3>
                       <p className="font-sans text-sm leading-relaxed text-repower-navy-900/70">
-                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day.
+                        {failureReason === 'rate_limited'
+                          ? "Nothing's broken — we just cap how many estimates run back to back. Wait up to 10 minutes and try again, or send us your motor details and we'll usually reply with a real number within one business day."
+                          : failureReason === 'input_rejected'
+                            ? 'One of the year, horsepower, condition, or stroke details was not accepted. Review those fields and try again.'
+                            : "We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day."}
                       </p>
                       <p className="font-sans text-sm text-repower-navy-900/70">
                         Call <a href="tel:9053422153" className="underline font-medium">(905) 342-2153</a> or text <a href="sms:6479522153" className="underline font-medium">(647) 952-2153</a>
@@ -944,11 +989,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     )}
 
-                    {(estimate as any).penaltyMessage && (
+                    {penaltyMessage && (
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="font-sans text-sm text-repower-gold">{(estimate as any).penaltyMessage}</p>
+                          <p className="font-sans text-sm text-repower-gold">{penaltyMessage}</p>
                         </div>
                       </div>
                     )}
@@ -967,18 +1012,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   </Card>
 
                   {/* View Full Report, subtle text link */}
-                  {(estimate as HBWValuationResult).fromHBW && (
+                  {(estimate as HBWValuationResult).fromHBW && tradeInInfo.valuationReportUrl && (
                     <div className="text-center">
                       <a
-                        href={tradeInInfo.valuationReportUrl || buildHBWReportUrl({
-                          brand: tradeInInfo.brand,
-                          year: tradeInInfo.year,
-                          hp: tradeInInfo.horsepower,
-                          condition: tradeInInfo.condition,
-                          hours: tradeInInfo.engineHours,
-                          model: tradeInInfo.model,
-                          name: customerName || undefined,
-                        })}
+                        href={tradeInInfo.valuationReportUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 font-sans text-sm text-repower-navy-900/55 underline underline-offset-2 transition-colors hover:text-repower-navy-900"
@@ -996,15 +1033,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </AlertDescription>
                   </Alert>
 
-                  {/* Continue button */}
-                  <Button
-                    type="button"
-                    onClick={() => onAutoAdvance?.()}
-                    className="mt-4 min-h-[52px] w-full rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
-                  >
-                    Continue →
-                  </Button>
                 </motion.div>
+              )}
+
+              {!standalone && tradeInInfo.hasTradeIn && onAutoAdvance && (
+                <Button
+                  data-testid="trade-in-continue"
+                  type="button"
+                  onClick={onAutoAdvance}
+                  className="mt-4 min-h-[52px] w-full rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
+                >
+                  Continue →
+                </Button>
               )}
             </motion.div>
           )}

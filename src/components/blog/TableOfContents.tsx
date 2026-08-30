@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useId } from 'react';
 import { ChevronDown, List } from 'lucide-react';
 import { TOCItem } from '@/utils/slugify';
 import { cn } from '@/lib/utils';
@@ -10,6 +10,7 @@ interface TableOfContentsProps {
 export function TableOfContents({ items }: TableOfContentsProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeId, setActiveId] = useState<string>('');
+  const panelId = useId();
 
   // Track scroll position and highlight current section
   useEffect(() => {
@@ -38,17 +39,23 @@ export function TableOfContents({ items }: TableOfContentsProps) {
     return () => observer.disconnect();
   }, [items]);
 
-  const handleClick = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -100;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-      setIsOpen(false);
-    }
-  };
-
   if (items.length === 0) return null;
+
+  const handleItemClick = (id: string) => {
+    setIsOpen(false);
+
+    // The mobile panel changes the document height when it closes. Wait for
+    // that layout to settle, then let the browser honour the heading's
+    // scroll-margin. The real href still owns history and copyable links.
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(id);
+        if (!target) return;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
+  };
 
   // Group items by H2 with nested H3s
   const groupedItems: { h2: TOCItem; h3s: TOCItem[] }[] = [];
@@ -76,9 +83,11 @@ export function TableOfContents({ items }: TableOfContentsProps) {
     >
       {/* Mobile: Collapsible */}
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-4 text-left md:hidden"
         aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span className="flex items-center gap-2 font-medium text-foreground">
           <List className="h-4 w-4" />
@@ -100,6 +109,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
 
       {/* Content */}
       <div 
+        id={panelId}
         className={cn(
           "md:block px-4 pb-4",
           isOpen ? "block" : "hidden"
@@ -108,10 +118,12 @@ export function TableOfContents({ items }: TableOfContentsProps) {
         <ul className="space-y-1">
           {groupedItems.map((group) => (
             <li key={group.h2.id}>
-              <button
-                onClick={() => handleClick(group.h2.id)}
+              <a
+                href={`#${group.h2.id}`}
+                onClick={() => handleItemClick(group.h2.id)}
+                aria-current={activeId === group.h2.id ? 'location' : undefined}
                 className={cn(
-                  "w-full text-left py-1.5 px-3 rounded-md text-sm transition-colors",
+                  "block w-full text-left py-1.5 px-3 rounded-md text-sm transition-colors",
                   "hover:bg-muted hover:text-foreground",
                   activeId === group.h2.id
                     ? "bg-primary/10 text-primary font-medium"
@@ -119,16 +131,18 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                 )}
               >
                 {group.h2.text}
-              </button>
+              </a>
               
               {group.h3s.length > 0 && (
                 <ul className="ml-4 mt-1 space-y-0.5">
                   {group.h3s.map((h3) => (
                     <li key={h3.id}>
-                      <button
-                        onClick={() => handleClick(h3.id)}
+                      <a
+                        href={`#${h3.id}`}
+                        onClick={() => handleItemClick(h3.id)}
+                        aria-current={activeId === h3.id ? 'location' : undefined}
                         className={cn(
-                          "w-full text-left py-1 px-3 rounded-md text-sm transition-colors",
+                          "block w-full text-left py-1 px-3 rounded-md text-sm transition-colors",
                           "hover:bg-muted hover:text-foreground",
                           activeId === h3.id
                             ? "text-primary font-medium"
@@ -136,7 +150,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                         )}
                       >
                         {h3.text}
-                      </button>
+                      </a>
                     </li>
                   ))}
                 </ul>

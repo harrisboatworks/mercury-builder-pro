@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-07-09
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
 description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical."
 category: "Maintenance"
 date_published: 2026-03-30
-date_modified: 2026-07-09
+date_modified: 2026-08-19
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Spring Outboard Commissioning Checklist (2026 Ontario)
@@ -24,11 +25,13 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-03-30  
-**Last updated:** 2026-07-09  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
 > **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+
+[Print the Spring Launch & First-Run Checklist](/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf) and work through it at the boat.
 
 ---
 
@@ -42,7 +45,7 @@ Spring commissioning is not the same job every time. Five things affect how aggr
 
 **Quality of last fall's winterization.** A properly winterized motor needs verification. A skipped or rushed winterization is a different conversation.
 
-**[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
+**[Storage conditions](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
 
 **Motor age.** Older motors, pre-2010 FourStrokes, 2-stroke carbureted engines, often need more attention on the fuel system and ignition.
 
@@ -95,33 +98,50 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 ### Step 4, Cooling System
 
 - **Check the water-pump schedule and cooling symptoms.** Many Mercury manuals place water-pump service at an expanded interval around 300 hours or three years, while other models or conditions differ. A weak telltale, reduced water pressure, or overheat warning needs diagnosis now.
-- **Check telltale stream.** This is the small stream of water from the side of the lower unit. You should see it within 10 seconds of startup on muffs. No stream = stop the motor immediately.
+- **Check telltale stream.** This is the small stream of water from the side of the lower unit. Look for it right away; if there is no steady stream within 30 seconds, shut the motor down.
 - **Inspect anodes.** Replace them according to the exact manual, commonly when about half consumed, and use the correct material for the water.
 
 ---
 
-::diagnostic-flow
-eyebrow: First start of the season
-heading: Spring commissioning in the order that matters
-subhead: Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
-step1Label: Fuel system check
-step1Question: Is the fuel from last fall still in the tank, and was it stabilized?
-step1Tip: Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
-step2Label: Water pump and impeller
-step2Question: Has the impeller been replaced or inspected within the last two seasons?
-step2Tip: A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A $40 impeller saves a $2,500 powerhead.
-step3Label: Battery and electrical
-step3Question: Does the battery hold a load test, and are all connections clean?
-step3Tip: A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
-step4Label: Flush and dry start on muffs
-step4Question: Will the motor start, idle, and reach operating temp on muffs?
-step4Tip: Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
-step5Label: First water trial
-step5Question: Does the motor reach its rated WOT RPM with normal load?
-step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
-escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at hbw.wiki/service.
-::
+*First start of the season*
+
+### Spring commissioning in the order that matters
+
+Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
+
+#### Fuel system check
+
+**Is the fuel from last fall still in the tank, and was it stabilized?**
+
+Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
+
+#### Water pump and impeller
+
+**Has the impeller been replaced or inspected within the last two seasons?**
+
+A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A cheap impeller saves an expensive powerhead.
+
+#### Battery and electrical
+
+**Does the battery hold a load test, and are all connections clean?**
+
+A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
+
+#### Flush and dry start on muffs
+
+**Will the motor start, idle, and reach operating temp on muffs?**
+
+Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
+
+#### First water trial
+
+**Does the motor reach its rated WOT RPM with normal load?**
+
+Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
+
+#### Want us to handle it?
+
+Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a lake test when possible. Book at hbw.wiki/service.
 
 ### Step 5, Lubrication
 
@@ -151,8 +171,6 @@ escalationBody: Spring commissioning at HBW is free for HBW winter storage custo
 ### Step 8, Test Run on Muffs
 
 This is the gate before the boat goes in the water:
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 - **Connect muffs** to the lower unit cooling water intakes. Make sure they're snug and water is flowing through them before you crank.
 - **Start the motor.** It should start within 3–5 cranks on a properly winterized motor. Slow or no-start indicates a fuel or ignition issue.
@@ -187,11 +205,9 @@ If anything sounds wrong, smells wrong, or shows a warning light, stop. That's a
 
 If you'd rather have us handle commissioning:
 
-We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, sea-trial after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and Mercruiser.
+We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, lake-test after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and MerCruiser.
 
 Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
-
----
 
 ---
 
@@ -201,15 +217,12 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 
 ---
 
----
-
 ## Ready to Book Spring Service?
 
 Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Want the boat ready for the long weekend? Get on the schedule now at [hbw.wiki/service](https://hbw.wiki/service).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
 
 ## FAQs
@@ -224,7 +237,7 @@ No. Proper winterization protects the motor over winter, but commissioning is ab
 
 ### When should I change the gear oil on my outboard?
 
-Change gear oil every season or every 100 hours, whichever comes first. Spring commissioning is an ideal time if it wasn't changed at fall winterization. The critical check is for milky oil: milky gear oil means water has entered the lower unit through a damaged seal. If you see milky oil, do not run the motor, get it to a service shop immediately. Harris Boat Works services Mercury and Mercruiser engines.
+Change gear oil every season or every 100 hours, whichever comes first. Spring commissioning is an ideal time if it wasn't changed at fall winterization. The critical check is for milky oil: milky gear oil means water has entered the lower unit through a damaged seal. If you see milky oil, do not run the motor, get it to a service shop immediately. Harris Boat Works services Mercury and MerCruiser engines.
 
 ### How do I know if water got in the lower unit of my outboard?
 
@@ -244,7 +257,7 @@ You do not need to replace the impeller every spring. Follow the exact manual fo
 
 ### Can I do spring commissioning myself, or do I need a dealer?
 
-Most of the commissioning checklist is DIY-friendly: battery check, fuel line inspection, propeller inspection, first start on the muffs, and control checks. Where you need a dealer: EFI diagnostic checks, impeller replacement, fuel injector service, and hydraulic steering work. If you find milky gear oil, unusual start behaviour, or warning alarms, stop and call a dealer. For engine repairs, Harris Boat Works only services Mercury and Mercruiser, call 905-342-2153.
+Most of the commissioning checklist is DIY-friendly: battery check, fuel line inspection, propeller inspection, first start on the muffs, and control checks. Where you need a dealer: EFI diagnostic checks, impeller replacement, fuel injector service, and hydraulic steering work. If you find milky gear oil, unusual start behaviour, or warning alarms, stop and call a dealer. For engine repairs, Harris Boat Works only services Mercury and MerCruiser, call 905-342-2153.
 
 ### Does ethanol in fuel cause problems during spring start-up?
 
@@ -253,23 +266,22 @@ Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before sto
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
+- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
+- [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,16 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Overheating at Idle Fix
@@ -19,7 +25,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -31,7 +37,7 @@ language: en-CA
 
 A Mercury that overheats at idle but runs fine at speed is a classic symptom of a worn water pump impeller. The impeller can generate enough vacuum at high RPM to move cooling water adequately, but loses suction at low RPM. It needs replacement, and the longer you wait, the more likely you are to turn a routine impeller job into a powerhead job. Other causes: blocked cooling intake, thermostat issue, or a sensor fault. Check the tell-tale first.
 
-For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -136,7 +142,7 @@ If the overheat alarm sounds at idle:
 
 After any overheating event, have the motor inspected before the next run. Heat cycling can cause damage that isn't visible externally.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -147,8 +153,6 @@ Book at [hbw.wiki/service](https://hbw.wiki/service).
 Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
 
 The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
-
----
 
 ---
 
@@ -164,7 +168,7 @@ Almost always a partially-blocked or worn water pump impeller. At cruise RPM, en
 
 ### How often should I replace the impeller?
 
-Every 3 years or 300 hours, whichever comes first (Mercury official interval). Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
+Every 3 years or 300 hours is the common Mercury guidance; your model's manual has the exact interval. Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
 
 ### My tell-tale is weak, can I still run it?
 
@@ -181,20 +185,26 @@ Depends on duration and how you responded. If you got the alarm, throttled to id
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
+- [When to Replace a Mercury Impeller: 12 Years of Shop Data](/blog/mercury-impeller-replacement-when-they-fail), when impellers fail and how to replace
+- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

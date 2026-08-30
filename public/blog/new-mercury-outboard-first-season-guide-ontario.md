@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-08-19
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Your New Mercury Outboard's First Season: What to Expect From PDI to First Service
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-28  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -75,13 +76,13 @@ When you're staring at a shiny new motor, it's easy to forget that some things h
 | First weeks (break-in period) | Follow the break-in routine in your owner's manual and our break-in guide. Check for unusual noise, vibration, or warning signals after each outing. |
 | Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it online at hbw.wiki/service if you go this route. |
 | 100 hours or end of season (whichever comes first) | Change engine oil and filter, inspect anodes, check propeller condition, and give the motor a thorough once-over. Mercury's published schedule calls for this at 100 hours or annually. Do not let this slide past the season end. |
-| Every 300 hours or 3 years (Mercury schedule) | Water pump impeller replacement. Around Rice Lake, many boats get the impeller replaced every two to three seasons because of the weedy water; that cadence is local practice, not a Mercury interval. |
+| Roughly every 300 hours or 3 years (per Mercury's current published schedule; confirm in your owner's manual) | Water pump impeller replacement. Around Rice Lake, many boats get the impeller replaced every two to three seasons because of the weedy water; that cadence is local practice, not a Mercury interval. |
 
 If you're running in salt water or in stained, gritty shallows frequently, adjust accordingly. But for most Ontario freshwater boaters, this timeline keeps a new motor healthy without over-servicing.
 
 ## What HBW Checks Before a New Motor Leaves the Dock
 
-A new motor is only as honest as the install. When you repower with us, we don't just bolt it on and hand you the keys. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+A new motor is only as honest as the install. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 
 That test isn't a five-minute idle at the dock. We run the engine under load, check WOT RPM against the prop we selected, confirm SmartCraft data looks clean, and listen for anything that doesn't sound right. If a cooling passage burps, a hose weeps, or a shift cable needs a tweak, we find it before you do.
 
@@ -171,23 +172,22 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
+- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

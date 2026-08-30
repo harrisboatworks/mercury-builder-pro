@@ -1,16 +1,22 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-07-30
+last_updated: 2026-08-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
-date_modified: 2026-07-30
+date_modified: 2026-08-19
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Overheating Emergency Guide
@@ -19,7 +25,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-30  
+**Last reviewed:** 2026-08-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 
@@ -27,28 +33,45 @@ language: en-CA
 
 If an overheat warning appears, reduce throttle immediately, follow the warning instructions on the display or in the serial-specific Mercury owner's manual, and get the boat into a safe position. Check the telltale and cooling-water intakes only when it's safe. A normal telltale doesn't prove the whole cooling system is working. If the warning persists, the telltale is weak or absent, or the manual directs you to stop, shut the engine down and arrange a tow.
 
-::diagnostic-flow
-heading: Mercury overheating? Run this checklist before damage gets expensive
-eyebrow: Emergency diagnostic
-subhead: Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
-step1Label: Stop the boat
-step1Question: Have you throttled down to idle and shifted to neutral?
-step1Tip: Reduce throttle immediately and follow the display or owner's-manual warning procedure for the exact motor. The correct shutdown sequence can vary by model and warning.
-step2Label: Telltale stream
-step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
-step2Tip: A weak or absent stream can mean weeds, debris, or a cooling-system fault. A normal stream doesn't rule out a thermostat, sensor, water-pressure, or internal-flow problem.
-step3Label: Cooling inlet
-step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
-step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
-step4Label: Recheck after clearing
-step4Question: After clearing visible debris and following the manual's restart procedure, does the telltale return and the warning stay off?
-step4Tip: Don't assume the motor is fixed because the stream returns. Head for the nearest safe landing at the speed permitted by the warning procedure, and book an inspection before the next outing.
-step5Label: Alarm persists
-step5Question: Is the overheat alarm still active or coming back at low RPM?
-step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
-escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
-::
+*Emergency diagnostic*
+
+### Mercury overheating? Run this checklist before damage gets expensive
+
+Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
+
+#### Stop the boat
+
+**Have you throttled down to idle and shifted to neutral?**
+
+Reduce throttle immediately and follow the display or owner's-manual warning procedure for the exact motor. The correct shutdown sequence can vary by model and warning.
+
+#### Telltale stream
+
+**Is the telltale (pee stream) flowing, and is it the normal volume?**
+
+A weak or absent stream can mean weeds, debris, or a cooling-system fault. A normal stream doesn't rule out a thermostat, sensor, water-pressure, or internal-flow problem.
+
+#### Cooling inlet
+
+**Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?**
+
+Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
+
+#### Recheck after clearing
+
+**After clearing visible debris and following the manual's restart procedure, does the telltale return and the warning stay off?**
+
+Don't assume the motor is fixed because the stream returns. Head for the nearest safe landing at the speed permitted by the warning procedure, and book an inspection before the next outing.
+
+#### Alarm persists
+
+**Is the overheat alarm still active or coming back at low RPM?**
+
+Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
+
+#### Alarm still on? Don't push it.
+
+Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
 
 ---
 
@@ -153,7 +176,7 @@ The best overheating prevention is straightforward:
 
 After any overheating event, even one that resolved itself on the water, have the motor checked. Overheating can cause invisible damage, head gaskets, warped components, and thermostat failure are not always obvious from the outside.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 If you suspect a cooling system problem, book before your next run: [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -193,20 +216,26 @@ Reduce throttle, get the boat into a safe position, and follow the warning instr
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [When to Replace a Mercury Impeller: 12 Years of Shop Data](/blog/mercury-impeller-replacement-when-they-fail), when impellers fail and how to replace
+- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
-- Include the exact code, engine serial number, hours, and a photo of the full display.
+- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
-- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

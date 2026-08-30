@@ -4,11 +4,13 @@ import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
-import { FR_TO_EN_SLUG } from '@/data/frenchEnglishSlugMap';
+import { BlogHreflangLinks } from '@/components/seo/BlogHreflangLinks';
+import { getBlogOgImagePath } from '@/lib/blogOgImage.js';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -261,7 +263,15 @@ export default function FrenchBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/fr/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
+  const shareImage = getBlogOgImagePath(article.socialImage || article.image);
+  const absoluteShareImage = shareImage
+    ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+    : undefined;
+  const hasGeneratedShareImage = shareImage?.startsWith('/generated-og/');
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -277,7 +287,15 @@ export default function FrenchBlogArticlePage() {
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
         "inLanguage": "fr-CA",
-        "isAccessibleForFree": true
+        "isAccessibleForFree": true,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
+        ...(article.citations?.length ? {
+          "citation": article.citations.map((citation) => ({
+            "@type": "CreativeWork",
+            "name": citation.name,
+            "url": citation.url,
+          })),
+        } : {})
       },
       {
         "@type": "WebPage",
@@ -314,21 +332,21 @@ export default function FrenchBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="alternate" hrefLang="fr-CA" href={url} />
-        {FR_TO_EN_SLUG[article.slug] && (
-          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${FR_TO_EN_SLUG[article.slug]}`} />
-        )}
-        {FR_TO_EN_SLUG[article.slug] && (
-          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${FR_TO_EN_SLUG[article.slug]}`} />
-        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
+        {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
+        {hasGeneratedShareImage && <meta property="og:image:width" content="1200" />}
+        {hasGeneratedShareImage && <meta property="og:image:height" content="630" />}
+        {hasGeneratedShareImage && <meta property="og:image:type" content="image/webp" />}
+        <meta name="twitter:card" content="summary_large_image" />
+        {absoluteShareImage && <meta name="twitter:image" content={absoluteShareImage} />}
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <BlogHreflangLinks locale="fr" slug={article.slug} />
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -370,8 +388,16 @@ export default function FrenchBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <p className="text-sm text-muted-foreground mb-4">
+          <strong>Dernière révision :</strong>{' '}
+          {new Date(`${article.dateModified || article.datePublished}T12:00:00Z`).toLocaleDateString('fr-CA', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Concessionnaire Mercury depuis 1965" />
+          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" />
         </div>
 
         {/* Table of Contents */}
@@ -383,7 +409,7 @@ export default function FrenchBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {!shouldSuppressAutoCTA(article.content) && (

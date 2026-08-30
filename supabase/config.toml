@@ -177,7 +177,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.send-deposit-confirmation-email]
-verify_jwt = false
+verify_jwt = true
 
 [functions.send-get7-campaign]
 verify_jwt = true
@@ -229,4 +229,16 @@ verify_jwt = false
 
 
 [functions.subscribe-walkaround]
+verify_jwt = false
+
+[functions.quote-document-api]
+verify_jwt = true
+
+[functions.consultation-document-api]
+verify_jwt = false
+
+[functions.submit-quote-lead]
+verify_jwt = false
+
+[functions.consultation-document-retention]
 verify_jwt = false

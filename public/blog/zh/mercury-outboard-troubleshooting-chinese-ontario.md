@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 船外机故障排查中文指南"
 description: "Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-08-19
 keywords: ["Mercury 故障排查","outboard troubleshooting","船外机不启动","SmartCraft alarm","安省 Mercury service","HBW service"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: service
 ---
 
 # Mercury 船外机故障排查中文指南
@@ -24,15 +25,15 @@ language: zh-CN
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**最后审核:** 2026-08-19  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 
-# Mercury 船外机故障排查中文指南：先别一直拧钥匙
+## Mercury 船外机故障排查中文指南：先别一直拧钥匙
 
 ## 快速答案
 
-如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再预约专业检查。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽，提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
+如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再通过 https://hbw.wiki/service 提交服务请求。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽，提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
 
 过度试探才是成本最高的"排查"：反复强行启动只会扩损。船外机不是老电视，拍两下不会更好。
 
@@ -78,7 +79,7 @@ Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉�
 - 减速或停止
 - 观察水流、温度、仪表和声音
 - 记录警报出现时的速度、负载、天气、油量和操作
-- 如果不确定，安排 Mercury service
+- 如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求
 
 现代船外机的问题常常不只是马达本体，还可能和线束（rigging）、操控线束、仪表或螺旋桨设置有关。Mercury repower 与安装会涉及完整的线束、操控线缆、仪表更换、螺旋桨匹配、湖测和保修登记，这也是为什么单凭一个症状很难下结论。
 
@@ -111,7 +112,7 @@ HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使�
 
 这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 HBW service request。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbw.wiki/service)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
 ## FAQ
 
@@ -121,7 +122,7 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercur
 
 **Mercury outboard warning beep 可以继续开吗？**
 
-不要默认可以。先减速或停止，记录情况。如果不确定，安排 Mercury service。警报不是背景音乐。
+不要默认可以。先减速或停止，记录情况。如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求。警报不是背景音乐。
 
 **Mercury 船外机过热怎么办？**
 
@@ -137,16 +138,15 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercur
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

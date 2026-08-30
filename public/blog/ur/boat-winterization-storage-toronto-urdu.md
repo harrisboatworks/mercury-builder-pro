@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu.md
-last_updated: 2026-06-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹ�
 description: "Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-19
 keywords: ["boat winterization Toronto Urdu","کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)","boat storage Mississauga ke qareeb (boat storage near Mississauga)","kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)"]
 author: Harris Boat Works
 content_type: blog_article
 language: ur
+revenue_driver: repower
 ---
 
 # Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج
@@ -24,7 +25,7 @@ language: ur
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**آخری جائزہ:** 2026-08-19  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 
@@ -45,7 +46,7 @@ Ontario کا موسم سرما سخت ہوتا ہے۔ نومبر کے بعد د�
 - **انجن سے پانی نکالنا**، Outboard اور stern drive کے تمام واٹر پاسیجز سے پانی ہوا کے ذریعے نکال کر نکاسی یقینی بناتے ہیں۔
 - **Fuel stabilizing**، باقی رہ جانے والے پٹرول میں stabilizer ملایا جاتا ہے تاکہ وہ سردیوں میں خراب نہ ہو اور کاربوریٹر/انجیکٹر بند نہ کریں۔
 - **Lower unit oil تبدیلی**، اگر نچلے حصے میں پانی گھس آیا تو جم کر کریشنگ ہو سکتی ہے، اس لیے تیل تبدیل کیا اور سیل چیک کیے جاتے ہیں۔
-- **بیٹری نکال کر محفوظ کرنا**، بیٹریاں پوری طرح چارج کرکے درجہ حرارت کے محفوظ ماحول میں رکھی جاتی ہیں تاکہ سرد موسم انہیں ختم نہ کرے۔
+- **بیٹری کو کشتی میں چھوڑ کر ڈسکنیکٹ کرنا**، تاکہ سرد موسم اسے نقصان نہ پہنچائے۔
 - **Livewell، bilge، اور تمام پانی کے پمپ خالی کرنا**، کہیں بھی پانی کی ایک بوند نہیں رہنی چاہیے۔
 - **سلنڈر walls کی حفاظت**، انجن کے اندرونی حصے پر تیل کی تہہ (fogging) لگائی جاتی ہے تاکہ زنگ نہ لگے۔
 - **عام معائنہ**، سارے سسٹم، بیلٹ، ہوز، clamps، اور prop دیکھ کر بتا دیا جاتا ہے اگر کوئی چیز اگلے موسم سے پہلے ٹھیک کرانی ہے۔
@@ -75,7 +76,7 @@ Harris Boat Works میں آپ کی winterized کشتی محفوظ طریقے س�
 ## کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ
 
 **کشتی کی winterization کیسے ہوتی ہے؟**  
-سب سے پہلے انجن اور تمام سسٹم سے پانی مکمل نکالا جاتا ہے۔ پھر فیول میں stabilizer ڈالا جاتا ہے، بیٹری نکال کر چارج پر رکھی جاتی ہے، اور lower unit کا تیل تبدیل کیا جاتا ہے۔ آخر میں انجن کے اندرونی حصے پر fogging oil کا سپرے کیا جاتا ہے۔
+سب سے پہلے انجن اور تمام سسٹم سے پانی مکمل نکالا جاتا ہے۔ پھر فیول میں stabilizer ڈالا جاتا ہے، بیٹری کو کشتی میں ہی چھوڑ کر ڈسکنیکٹ کیا جاتا ہے، اور lower unit کا تیل تبدیل کیا جاتا ہے۔ آخر میں انجن کے اندرونی حصے پر fogging oil کا سپرے کیا جاتا ہے۔
 
 **boat winterization کب کرانی چاہیے؟**  
 Ontario میں مثالی وقت اکتوبر سے نومبر کا شروع ہے، جب پالا پڑنے سے پہلے کشتی محفوظ ہو جائے۔ بہت دیر کرنے کا مطلب ہے کہ رات کا درجہ حرارت گرنے سے نقصان کا خطرہ بڑھ جاتا ہے۔
@@ -90,7 +91,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 نہیں۔ Harris Boat Works 1 دسمبر سے 1 اپریل تک بند رہتا ہے اور اس دوران کوئی بھی کشتی pickup نہیں دی جاتی۔ لہٰذا اگر آپ کو سردیوں میں کشتی نکالنی ہے تو یہ بندش شروع ہونے سے پہلے کر لی جائے۔
 
 **سروس کی بکنگ کیسے کروں؟**  
-ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے appointment لے سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
+ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے سروس کی درخواست جمع کر سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
 
 **کیا میں Harris Boat Works میں اردو میں سروس لے سکتا ہوں؟**  
 ہم نے یہ گائیڈ اردو میں لکھی ہے کیونکہ ہم چاہتے ہیں کہ اردو بولنے والے کشتی ران اور ان کے خاندان بغیر خوف کے Rice Lake سے لطف اٹھائیں۔ لیکن ایمانداری کی بات یہ ہے کہ ہماری ٹیم انگریزی میں سروس فراہم کرتی ہے۔ گھبرائیں نہیں، کوئی دوست یا رشتہ دار جو تھوڑی بہت انگریزی بولتا ہے ساتھ لائیں، یا فون پر ترجمے کی app استعمال کریں۔ ہم صبر سے بات سمجھیں گے اور مل کر نتیجہ نکالیں گے۔
@@ -99,7 +100,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 
 سردیوں کا موسم قریب آنے سے پہلے بہترین وقت ہے کہ آپ اپنی کشتی کی winterization کا بندوبست کر لیں۔ Harris Boat Works میں جگہ محدود ہو جاتی ہے، کیونکہ ہر سال سینکڑوں لوگ ہم پر بھروسہ کرتے ہیں۔
 
-اپنی بکنگ کے لیے تشریف لائیں [https://hbw.wiki/service](https://hbw.wiki/service)  
+سروس کی درخواست کے لیے تشریف لائیں [https://hbw.wiki/service](https://hbw.wiki/service)  
 فون: (905) 342-2153  
 ٹیکسٹ: (647) 952-2153  
 پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -108,7 +109,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 
 ### کشتی کی winterization کیسے ہوتی ہے؟
 
-سب سے پہلے انجن اور تمام سسٹم سے پانی مکمل نکالا جاتا ہے۔ پھر فیول میں stabilizer ڈالا جاتا ہے، بیٹری نکال کر چارج پر رکھی جاتی ہے، اور lower unit کا تیل تبدیل کیا جاتا ہے۔ آخر میں انجن کے اندرونی حصے پر fogging oil کا سپرے کیا جاتا ہے۔
+سب سے پہلے انجن اور تمام سسٹم سے پانی مکمل نکالا جاتا ہے۔ پھر فیول میں stabilizer ڈالا جاتا ہے، بیٹری کو کشتی میں ہی چھوڑ کر ڈسکنیکٹ کیا جاتا ہے، اور lower unit کا تیل تبدیل کیا جاتا ہے۔ آخر میں انجن کے اندرونی حصے پر fogging oil کا سپرے کیا جاتا ہے۔
 
 ### boat winterization کب کرانی چاہیے؟
 
@@ -128,7 +129,7 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 
 ### سروس کی بکنگ کیسے کروں؟
 
-ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے appointment لے سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
+ویب سائٹ [https://hbw.wiki/service](https://hbw.wiki/service) پر جا کر آسانی سے سروس کی درخواست جمع کر سکتے ہیں۔ یا ہمیں (905) 342-2153 پر کال کریں، یا (647) 952-2153 پر ٹیکسٹ کریں۔
 
 ### کیا میں Harris Boat Works میں اردو میں سروس لے سکتا ہوں؟
 
@@ -136,16 +137,15 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

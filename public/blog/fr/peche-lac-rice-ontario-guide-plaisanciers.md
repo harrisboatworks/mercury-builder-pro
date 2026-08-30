@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-07-10
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,26 +11,27 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-07-10
+date_modified: 2026-08-19
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers
 
 > Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works.
 
-**Category:** Destination  
-**Published:** 2026-04-12  
-**Last updated:** 2026-07-10  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
+**Catégorie :** Destination\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-08-19\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
 ### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947, avec une flotte de location de neuf embarcations.
+Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
@@ -98,7 +99,7 @@ Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêc
 
 ## Partir à la journée depuis Harris Boat Works
 
-Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent depuis des générations. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
+Notre marina loue des pontons et des bateaux de pêche directement sur le lac Rice. Consultez harrisboatworks.ca/rentals pour connaître les embarcations, les capacités, les tarifs et les disponibilités actuels. Vous n'avez pas besoin de transporter une embarcation depuis un autre lac.
 
 On vend aussi du carburant sans éthanol sur place, un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques lors des périodes d'entreposage.
 
@@ -117,7 +118,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via notre outil de réservation en ligne sur **mercuryrepower.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offrir du contenu francophone sur la pêche et la navigation.
 
@@ -127,22 +128,6 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
-
-## Questions fréquentes
-
-**Quand est l'ouverture de la saison du doré au lac Rice?** 
-Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pour l'année courante sur ontario.ca.
-
-**Peut-on louer un bateau à la journée à Harris Boat Works?** 
-Oui. Notre flotte de neuf embarcations est disponible à la location. Visitez [harrisboatworks.ca](https://harrisboatworks.ca) pour les détails et les réservations.
-
-**A-t-on besoin d'un permis de pêche pour le lac Rice?** 
-Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
-
-**Le lac Rice est-il accessible depuis Montréal?** 
-Oui. Le lac se trouve à moins de trois heures de Montréal via l'autoroute 401 vers l'ouest et la 115 vers le nord jusqu'à Gores Landing.
-
----
 
 ## Liens internes
 - Permis de conduire une embarcation au Canada
@@ -166,7 +151,7 @@ Oui, pour les 18 à 64 ans. Les moins de 18 ans accompagnés d'un adulte licenci
 
 ### Peut-on louer un bateau sur place?
 
-Oui. Harris Boat Works a une flotte de 9 bateaux de location. Consultez harrisboatworks.ca.
+Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; consultez harrisboatworks.ca/rentals pour les bateaux, la capacité, l’équipement, les tarifs et la disponibilité.
 
 ### Quelles espèces vise-t-on?
 
@@ -176,18 +161,17 @@ Doré jaune, achigan (grande et petite bouche), maskinongé.
 
 Environ 1 h 30 par la 401 Est puis la 115 Nord.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

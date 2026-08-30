@@ -12,6 +12,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'ਅਤੇ ਸਿੱਧੇ ਜਵਾਬ।',
   heroSubhead:
     'Rice Lake ਉੱਤੇ ਇੱਕ ਫੈਮਿਲੀ Mercury ਡੀਲਰ ਵੱਲੋਂ ਅਸਲ ਤਜਰਬੇ ਦੀ ਸਲਾਹ। ਰਿਪਾਵਰ, ਟ੍ਰਬਲਸ਼ੂਟਿੰਗ ਅਤੇ ਸਹੀ ਆਊਟਬੋਰਡ ਚੁਣਨਾ — ਉਹਨਾਂ ਲੋਕਾਂ ਦੁਆਰਾ ਲਿਖਿਆ ਜੋ ਖੁਦ ਇਹਨਾਂ ਨੂੰ ਲਗਾਉਂਦੇ ਹਨ।',
+  skipLinkLabel: 'ਬਲੌਗ ਸਮੱਗਰੀ ਉੱਤੇ ਜਾਓ',
   searchLabel: 'ਗਾਈਡ ਖੋਜੋ',
   searchPlaceholder: 'ਗਾਈਡ, ਮਾਡਲ, ਵਿਸ਼ੇ ਖੋਜੋ…',
   trustItems: [],

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf.md
-last_updated: 2026-07-04
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,22 +11,23 @@ title: "Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure optio
 description: "Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-07-04
+date_modified: 2026-08-19
 keywords: ["remotorisation vs bateau neuf","changer moteur ou acheter nouveau bateau","remotorisation avantages","repower vs new boat"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?
 
 > Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing.
 
-**Category:** Guide d'achat  
-**Published:** 2026-04-12  
-**Last updated:** 2026-07-04  
-**Read time:** 7 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
+**Catégorie :** Guide d'achat\
+**Publié le :** 2026-04-12\
+**Dernière révision :** 2026-08-19\
+**Temps de lecture :** 7 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
 
 > **Réponse rapide :** Si votre coque est en bon état et que le problème vient du moteur, remotorisez. Une remotorisation coûte souvent 20 à 40 % du prix d'un bateau neuf équivalent. Si la coque est compromise ou si vous souhaitez un type d'embarcation complètement différent, l'achat d'un bateau neuf est la bonne option. Ni l'une ni l'autre n'est toujours la meilleure : tout dépend de votre situation.
 
@@ -37,7 +38,7 @@ Harris Boat Works, entreprise familiale depuis 1947, vend des bateaux neufs (Leg
 - **Un coût bien inférieur au neuf.** Un bateau neuf complet coûte souvent entre 40 000 $ et 100 000 $ CA et plus. Une remotorisation se chiffre généralement entre 20 et 40 % de ce montant, ce qui laisse une marge confortable pour d'autres projets. Pour connaître le prix exact de votre projet, utilisez le configurateur en ligne sur [mercuryrepower.ca](https://www.mercuryrepower.ca). Vous sélectionnez le type d'embarcation et la puissance, et vous obtenez un prix en dollars canadiens en temps réel, pas de « appelez-nous pour un prix ».
 - **Votre coque a de la valeur.** Une coque en aluminium bien entretenue peut durer facilement 30 à 40 ans; une coque en fibre de verre, plusieurs décennies. Le moteur, lui, vieillit plus vite. Remotoriser, c'est garder une embarcation que vous connaissez, avec un moteur neuf sous garantie Mercury. Vous évitez aussi les tracas administratifs : pas de revente, pas de nouvelle immatriculation, pas de changement d'assureur. Et nous nous occupons de la mise à jour de votre permis d'embarcation de plaisance, sans frais supplémentaires.
 - **La technologie Mercury actuelle, sur votre bateau.** Harris Boat Works propose les gammes FourStroke (2,5 à 300 HP) et Pro XS (pour les pêcheurs). Les moteurs Verado sont disponibles sur commande spéciale pour les applications haute performance. Comparé à un moteur de 15 ans ou plus, un moteur Mercury récent est généralement plus silencieux, plus facile à vivre et plus efficace, vous le sentirez dès la première sortie.
-- **Un délai souvent plus court.** La saison de navigation en Ontario s'étend en gros de mai à octobre. Commander un bateau neuf peut prendre des mois, surtout avec des configurations précises. Une remotorisation bien préparée se réalise généralement en quelques semaines, ce qui vous remet à l'eau pour la saison en cours.
+- **Un délai souvent plus court.** La saison de navigation en Ontario s'étend en gros de mai à octobre. Commander un bateau neuf peut prendre des mois, surtout avec des configurations précises. Une remotorisation bien préparée se planifie à l'avance; commencez par une demande de service à hbw.wiki/service pour votre projet.
 
 ## Quand le bateau neuf a du sens
 
@@ -112,18 +113,17 @@ Non, le configurateur sur mercuryrepower.ca vous donne un prix en temps réel, s
 
 Grosso modo de mai à octobre, soit environ six mois. Une raison de plus de ne pas attendre si vous avez un projet de remotorisation ou d'achat.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

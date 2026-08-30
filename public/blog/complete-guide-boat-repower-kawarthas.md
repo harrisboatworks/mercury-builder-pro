@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Boat Repower in the Kawarthas: Complete Guide
@@ -24,13 +25,13 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
 ## Quick answer
 
-A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
+A repower means a new Mercury on your existing hull. For many Kawartha boats with a sound hull and transom, it can be the practical move: you keep the boat you know and avoid replacing the whole package. Motor availability, rigging, hull condition, parts, and current shop capacity determine the schedule. Build your starting quote at mercuryrepower.ca, then use the written HBW quote and work order for the project-specific timeline.
 
 There is a moment every boat owner on these lakes eventually meets. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
@@ -50,19 +51,13 @@ A 15-year-old aluminum fishing boat with a solid transom and a sound hull is not
 
 **Repower.** Put a new Mercury on the hull you already know. You keep the layout that works, the fit-out you have customized, and a boat that has earned your trust. It costs a fraction of new, the warranty resets to a fresh 3-year term, fuel economy improves over an older motor, and the noise drops noticeably.
 
-Most Kawartha boaters who run the numbers land on the repower. As of 2026, a repower typically costs around half of a comparable new package, often less. For the full line-by-line cost picture in current dollars, see our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad). This guide focuses on the process.
-
-::pull-quote
-quote: My old Johnson 90 finally let go on the Trent-Severn last August. Jay walked me through the new vs used math, and the new Mercury was actually the cheaper play once I ran **5 years out**. Should have done it in 2022.
-attribution: Brian K.
-source: HBW Bewdley repower customer (2025)
-::
+Most Kawartha boaters who run the numbers land on the repower. A repower typically costs well under a comparable new package. For the full line-by-line cost picture in current dollars, see our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad). This guide focuses on the process.
 
 The boaters who regret a repower are almost always the ones who put a new motor on a hull with a soft transom. That is why the transom check comes first, and why we do one before quoting anything.
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial.](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to lake test.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -86,7 +81,7 @@ Honest answer before anything else. Not every hull should get a new motor.
 
 This is the decision that anchors everything else.
 
-**Start with the capacity plate.** Every boat carries a capacity plate that lists the maximum horsepower the hull is rated for. That number is the legal ceiling, not a suggestion for average use. HBW does not overpower a hull.
+**Start with the compliance notice.** On an outboard-powered pleasure craft up to 6 metres, it shows the manufacturer's maximum recommended safe power. Confirm the exact hull documentation, proposed motor weight, transom, steering, and rigging before choosing horsepower. HBW does not use an undocumented oversized setup as the basis for a repower.
 
 **Match the motor to how you actually use the boat,** not how you might use it someday. Three questions move the answer:
 
@@ -113,7 +108,7 @@ The **FourStroke** is the everyday motor: quiet, fuel-efficient, and built for r
 
 ## Step 3: What Else Goes on the Bill, Beyond the Motor
 
-The motor is roughly two-thirds of a repower's total cost. The other third is what the motor needs to actually run on your boat, and it is where budgets get surprised. You do not need exact prices to plan, you need to know what drives them.
+The motor is typically the single largest share of a repower's total cost. The other third is what the motor needs to actually run on your boat, and it is where budgets get surprised. You do not need exact prices to plan, you need to know what drives them.
 
 | Item | What it covers | What drives the cost |
 |---|---|---|
@@ -122,8 +117,8 @@ The motor is roughly two-thirds of a repower's total cost. The other third is wh
 | Propeller | Aluminum or stainless | Aluminum suits most installs up to 115 HP. Higher-HP motors usually want stainless. |
 | Gauges and SmartCraft | Digital display and wiring | Older boats with aged wiring cost more to bring up to a clean digital setup. |
 | Battery and harness | Battery, fuse panel, connectors | Boat age drives this. Older electrical systems need more replaced. |
-| Labour | Shop time for the install | A clean install is one to two days. Hull condition is what moves this number. |
-| Sea-trial | On-water test before delivery | Always included. Never billed separately. |
+| Labour | Shop time for the install | Current rigging, hull condition, parts availability, and project scope determine the schedule. The written quote and work order control. |
+| Acceptance check | Shop checks and, when conditions allow, an on-water test | The scope follows the motor, hull, rigging, safe seasonal conditions, and work order. Any alternate acceptance plan is documented before pickup. |
 
 For the actual dollar ranges in current Canadian pricing, the [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) has the full breakdown, and the configurator at mercuryrepower.ca builds a real number for your exact motor.
 
@@ -133,7 +128,7 @@ For the actual dollar ranges in current Canadian pricing, the [repower cost guid
 
 ## Step 4: The Hull Walk-Around and the Quote
 
-Before we order anything, we look at the boat. Every HBW repower starts with a hull walk-around. It takes about an hour, and here is what we check:
+Before HBW approves a repower configuration, the boat and project details are assessed. The exact inspection scope depends on the hull, transom, current motor, rigging, and information available. Here is what the assessment covers:
 
 - **Transom.** Moisture meter, plus a hands-on push on the motor bracket. A firm transom is what you want to hear. A soft reading means a transom conversation before the motor conversation continues.
 - **Floor and deck.** We walk it. Soft spots mean water intrusion, sometimes cosmetic, sometimes structural.
@@ -155,9 +150,9 @@ Once the quote is signed, we order from Mercury Canada. As a rough guide for 202
 
 ---
 
-## Step 6: The Install and Sea-Trial
+## Step 6: The Install and Acceptance Check
 
-A clean repower, meaning a solid hull, Mercury-to-Mercury controls, and a standard shaft length, takes one to two days of shop time. Here is what happens in those days:
+The schedule depends on the hull, current controls, rigging, parts, and any issues found after disassembly. The written work order is the reliable timeline. A typical installation sequence includes:
 
 1. Old motor removed, lower unit and transom inspected
 2. New motor mounted to the transom
@@ -167,12 +162,12 @@ A clean repower, meaning a solid hull, Mercury-to-Mercury controls, and a standa
 6. Prop installed and torqued
 7. Cooling system and oil levels confirmed
 8. First-start sequence completed in the shop
-9. Sea-trial on Rice Lake: trolling speed, cruise, wide-open throttle, gear shifts, prop pitch verified
-10. Pleasure Craft Licence paperwork updated
+9. On-water checks on Rice Lake when safe seasonal conditions allow, with the scope matched to the motor, hull, rigging, and work order
+10. Customer receives the information needed to confirm any required Pleasure Craft Licence update
 
 ![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
 
-The boat does not leave until it passes the sea-trial. That is not a marketing line. It is how a marina that has been on this water since 1947 protects its name. Transport Canada requires a [Pleasure Craft Licence update](/blog/pleasure-craft-licence-update-repower-ontario) whenever motor horsepower or brand changes, and we handle that for every HBW customer at no extra charge.
+Before pickup, HBW documents the acceptance checks completed for the specific job. When safe seasonal conditions allow, that can include an on-water check on Rice Lake; otherwise, the alternate acceptance plan is documented with the customer. Transport Canada says licence information must be updated within 30 days when listed information changes. The boat owner remains responsible for the licence, and a dealer needs the owner's authorization to apply on their behalf. See our [Pleasure Craft Licence update guide](/blog/pleasure-craft-licence-update-repower-ontario) and confirm the current requirement for your boat.
 
 ---
 
@@ -202,9 +197,9 @@ So we lead with the walk-around, and we tell you what we find even when the find
 
 **Buying the minimum horsepower to save money.** Underpowering a hull for real-world Kawartha use, full loads and afternoon wind, is a decision people regret by August. Match the motor to how you actually boat.
 
-**Carrying over a tired prop.** The prop is what turns horsepower into performance. A wrong or worn prop quietly costs you speed, fuel, and hole-shot. We test prop pitch on every sea-trial.
+**Carrying over a tired prop.** The prop is what turns horsepower into performance. A wrong or worn prop quietly costs you speed, fuel, and hole-shot. Prop verification follows the specific motor, hull, rigging, work order, and safe seasonal testing conditions.
 
-**Waiting until spring to order.** April orders compete for May water. Off-season ordering is the single easiest way to guarantee your boat is ready on opening day.
+**Waiting until spring to plan.** Spring is a busy installation period. Planning earlier gives the dealer more time to confirm motor availability, rigging requirements, and a realistic shop window, but no order date guarantees an opening-day handoff.
 
 **Treating electronics as a "later" job.** Gauges, fish finders, and chartplotters are far cheaper and cleaner to sort at install time than to retrofit around a finished dash.
 
@@ -214,7 +209,7 @@ So we lead with the walk-around, and we tell you what we find even when the find
 
 Not every repower guide is written for this water. A few things specific to where we are:
 
-**Wind.** Rice Lake, the Trent-Severn connecting lakes, and the wider Kawarthas all carry open-water exposure. Rice Lake's 32 km east-west fetch builds real chop in an afternoon west wind. Adequate horsepower is not about ego or top speed. It is about running home safely in conditions that develop faster than they looked at 8 AM.
+**Wind.** Rice Lake, the Trent-Severn connecting lakes, and the wider Kawarthas all carry open-water exposure. Rice Lake's long east-west fetch builds real chop in an afternoon west wind. Adequate horsepower is not about ego or top speed. It is about running home safely in conditions that develop faster than they looked at 8 AM.
 
 **Shallow water and weeds.** Most Kawartha fishing happens in 8 to 17 feet with heavy summer weed growth. Modern Mercury FourStrokes run cleaner in weedy water than older carbureted two-strokes.
 
@@ -226,7 +221,9 @@ Not every repower guide is written for this water. A few things specific to wher
 
 ## Financing
 
-Mercury offers competitive repower financing for qualified buyers, and HBW processes applications right in the shop. Trade-in credit on your old motor, even a dead one, reduces the amount you finance. Off-season Mercury Canada promotions sometimes improve the terms further. For the current rate and any active promotion, check the promotions page or call us.
+HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check [current financing terms](/promotions) before relying on any rate or payment estimate.
+
+Trade-in credit on your old motor, even a dead one, reduces the amount you finance.
 
 ---
 
@@ -256,7 +253,7 @@ Or call **905-342-2153**. We will start with the hull walk-around, work through 
 - Mercury Marine, owner's resources and maintenance schedules: mercurymarine.com/us/en/service-and-support/owners-resources
 - Parks Canada, Trent-Severn Waterway operating season: parks.canada.ca/lhn-nhs/on/trentsevern
 
-*Process details and recommendations are current as of May 2026. Pricing changes through the year, so build a current quote at mercuryrepower.ca and confirm the details for your boat with HBW.*
+*Process details and recommendations are current as of August 2026. Pricing changes through the year, so build a current quote at mercuryrepower.ca and confirm the details for your boat with HBW.*
 
 ---
 
@@ -270,7 +267,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ### What is a boat repower?
 
-Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
+Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a lake-test. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
 
 ### Is repowering worth it on an older boat?
 
@@ -282,7 +279,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
 
 ### Do I need new controls?
 
@@ -302,28 +299,27 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 
 ### When is the best time to book a repower?
 
-October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed December 1 through April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ## Related guides
 
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

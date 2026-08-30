@@ -1,6 +1,11 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md
 last_updated: 2026-07-28
+currency: CAD
+pickup_only: true
+delivery_offered: false
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup"
 description: "Search Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table checked against dealer literature."
@@ -11,6 +16,7 @@ keywords: ["mercury outboard fault codes","mercury fault code list","mercury sma
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: service
 ---
 
 # Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup
@@ -19,7 +25,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-07-23  
-**Last updated:** 2026-07-28  
+**Last reviewed:** 2026-07-28  
 **Read time:** 31 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup
 
@@ -451,15 +457,16 @@ If you can bring the boat to HBW in Gores Landing, send a clear photo of the com
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
+- [Mercury Won't Start After Sitting: Fixes](/blog/mercury-outboard-wont-start-after-sitting), won't-start after sitting fixes
+- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
+- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
 
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
 - Include the exact code, engine serial number, hours, and a photo of the full display.
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
@@ -467,4 +474,9 @@ If you can bring the boat to HBW in Gores Landing, send a clear photo of the com
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
+- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

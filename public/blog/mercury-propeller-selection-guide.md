@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-05-27
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury Propeller Selection Guide 2026"
 description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
 category: "Technical Reference"
 date_published: 2026-05-27
-date_modified: 2026-05-27
+date_modified: 2026-08-19
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury Propeller Selection Guide 2026
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Technical Reference  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 
@@ -48,7 +49,7 @@ Most repower and prop-change conversations at HBW eventually come back to this r
 
 Three things you tune when you select a Mercury prop:
 
-**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase ([Command Thrust uses a larger gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) that fits a larger-diameter prop).
+**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase ([Command Thrust uses a larger gearcase](/blog/mercury-command-thrust-complete-guide-2026) that fits a larger-diameter prop).
 
 **Pitch** is the forward distance per revolution, as above. This is the dial you turn to match the motor's WOT RPM to the spec.
 
@@ -94,12 +95,7 @@ The big-picture matching table. Specific pitch depends on horsepower and how the
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-slug: prop-selection-by-hull-matrix
-type: infographic
-aspect: 16:9
-description: Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family
-prompt: HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/prop-selection-by-hull-matrix.svg
+![Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family](/lovable-uploads/prop-selection-by-hull-matrix.svg)
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 
@@ -154,7 +150,7 @@ Quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) includes a 
 
 If you have a current Mercury setup and the prop is wrong (over-pitched, under-pitched, wrong family for the hull), bring it in for a service visit. We will run the WOT test and recommend the right replacement.
 
-Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: (905) 342-2153
 Text: (647) 952-2153
@@ -199,16 +195,15 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

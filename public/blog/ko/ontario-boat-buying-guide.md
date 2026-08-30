@@ -16,6 +16,7 @@ keywords: ["온타리오 보트 구매 가이드","캐나다 보트 구매","토
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
+revenue_driver: repower
 ---
 
 # 온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지
@@ -24,7 +25,7 @@ language: ko-KR
 
 **Category:** 구매 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**마지막 검토:** 2026-04-12  
 **Read time:** 12 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide
 
@@ -152,22 +153,6 @@ HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지
 
 ---
 
-## 자주 묻는 질문
-
-**PCOC는 어떻게 취득하나요?** 
-Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비용은 약 $40~$50이며, 한 번 취득하면 평생 유효합니다.
-
-**새 보트와 엔진 교체 중 어느 쪽이 나을까요?** 
-선체 상태가 좋다면 엔진 교체가 훨씬 경제적입니다. [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 견적을 먼저 확인해보세요.
-
-**HBW에서 한국어로 서비스를 받을 수 있나요?** 
-한국어 서비스는 제공하지 않습니다. 온라인 견적 도구를 이용하시거나, 이메일에 번역을 함께 보내주시면 최선을 다해 도와드립니다.
-
-**겨울에 보트를 어떻게 보관하나요?** 
-온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbw.wiki/service](https://hbw.wiki/service)에서 예약할 수 있습니다.
-
----
-
 ## 내부 링크
 - Rice Lake 낚시 가이드
 - 온타리오 보트 면허 및 안전 규정
@@ -209,16 +194,15 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -2144,6 +2144,141 @@ export type Database = {
         }
         Relationships: []
       }
+      mercury_post_sale_runs: {
+        Row: {
+          candidates: number
+          error_codes: Json
+          failed: number
+          finished_at: string | null
+          id: number
+          invocation: string
+          mpp_failed: number
+          mpp_updated: number
+          processed: number
+          skipped: number
+          started_at: string
+          status: string
+          svc_failed: number
+          svc_updated: number
+        }
+        Insert: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Update: {
+          candidates?: number
+          error_codes?: Json
+          failed?: number
+          finished_at?: string | null
+          id?: never
+          invocation?: string
+          mpp_failed?: number
+          mpp_updated?: number
+          processed?: number
+          skipped?: number
+          started_at?: string
+          status?: string
+          svc_failed?: number
+          svc_updated?: number
+        }
+        Relationships: []
+      }
+      mercury_post_sale_sends: {
+        Row: {
+          attempt_count: number
+          consent_basis: string
+          consent_expires_at: string | null
+          customer_email: string
+          deal_no: string | null
+          dealid: string
+          entry_method: string
+          last_attempt_at: string | null
+          last_error_code: string | null
+          mailchimp_status: string
+          motor: string | null
+          mpp_status: string
+          processed_at: string
+          sale_date: string | null
+          svc_status: string
+        }
+        Insert: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email: string
+          deal_no?: string | null
+          dealid: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Update: {
+          attempt_count?: number
+          consent_basis?: string
+          consent_expires_at?: string | null
+          customer_email?: string
+          deal_no?: string | null
+          dealid?: string
+          entry_method?: string
+          last_attempt_at?: string | null
+          last_error_code?: string | null
+          mailchimp_status?: string
+          motor?: string | null
+          mpp_status?: string
+          processed_at?: string
+          sale_date?: string | null
+          svc_status?: string
+        }
+        Relationships: []
+      }
+      mercury_post_sale_webhook_events: {
+        Row: {
+          error_code: string | null
+          finished_at: string | null
+          received_at: string
+          resend_email_id: string
+          stage: string
+          status: string
+          svix_id: string
+        }
+        Insert: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id: string
+          stage?: string
+          status?: string
+          svix_id: string
+        }
+        Update: {
+          error_code?: string | null
+          finished_at?: string | null
+          received_at?: string
+          resend_email_id?: string
+          stage?: string
+          status?: string
+          svix_id?: string
+        }
+        Relationships: []
+      }
       motor_custom_sources: {
         Row: {
           created_at: string
@@ -3671,6 +3806,7 @@ export type Database = {
           is_soft_lead: boolean | null
           last_accessed: string | null
           quote_pdf_path: string | null
+          quote_pdf_sha256: string | null
           quote_state: Json
           reference_number: string | null
           resume_token: string
@@ -3693,6 +3829,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state: Json
           reference_number?: string | null
           resume_token: string
@@ -3715,6 +3852,7 @@ export type Database = {
           is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
+          quote_pdf_sha256?: string | null
           quote_state?: Json
           reference_number?: string | null
           resume_token?: string
@@ -3942,6 +4080,9 @@ export type Database = {
           file_url: string
           id: string
           is_published: boolean
+          related_label: string | null
+          related_url: string | null
+          reviewed_on: string | null
           sort_order: number
           title: string
           updated_at: string
@@ -3954,6 +4095,9 @@ export type Database = {
           file_url: string
           id?: string
           is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
           sort_order?: number
           title: string
           updated_at?: string
@@ -3966,6 +4110,9 @@ export type Database = {
           file_url?: string
           id?: string
           is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
           sort_order?: number
           title?: string
           updated_at?: string
@@ -6737,6 +6884,37 @@ export type Database = {
           _user_id: string
         }
         Returns: undefined
+      }
+      mercury_post_sale_candidates: {
+        Args: never
+        Returns: {
+          customer_email: string
+          deal_no: string
+          dealid: string
+          first_name: string
+          last_name: string
+          motor: string
+          motor_hp: number
+          mpp_purchased: boolean
+          sale_date: string
+          season: string
+        }[]
+      }
+      mercury_post_sale_mpp_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_mpp_status: string
+        }[]
+      }
+      mercury_post_sale_svc_refresh: {
+        Args: never
+        Returns: {
+          customer_email: string
+          dealid: string
+          new_svc_status: string
+        }[]
       }
       normalize_phone: { Args: { p: string }; Returns: string }
       open_ro_brief: {

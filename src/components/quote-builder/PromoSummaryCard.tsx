@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, CalendarOff, Percent, Banknote, Check, ChevronRight, Clock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import type { PromoOptionType } from './PromoOptionSelector';
 
@@ -32,6 +33,7 @@ export function PromoSummaryCard({
   endDate,
 }: PromoSummaryCardProps) {
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const warranty = getWarrantyDisplayFromAppliedPromotion(getAppliedPromotion(promotions));
   
   const promo = promotions?.[0];
   if (!promo) return null;
@@ -76,7 +78,7 @@ export function PromoSummaryCard({
         <div className="flex items-center gap-2">
           <img src={mercuryLogo} alt="Mercury" className="h-5" />
           <span className="text-xs font-bold text-repower-mercury-red bg-repower-mercury-red/5 px-2 py-0.5 rounded-full border border-repower-mercury-red/30">
-            7-YEAR WARRANTY
+            {warranty.badgeLabel}
           </span>
         </div>
         {endDate && (
@@ -95,13 +97,13 @@ export function PromoSummaryCard({
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-semibold text-foreground">7 Years Warranty</span>
+              <span className="text-sm font-semibold text-foreground">{warranty.headline}</span>
               <span className="text-[10px] font-medium text-repower-gold bg-repower-cream px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
                 <Check className="w-2.5 h-2.5" />
                 Included
               </span>
             </div>
-            <span className="text-xs text-muted-foreground">3 + 4 FREE years</span>
+            <span className="text-xs text-muted-foreground">{warranty.detail}</span>
           </div>
         </div>
         

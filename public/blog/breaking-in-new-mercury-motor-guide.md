@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-07-23
+date_modified: 2026-08-19
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # How to Break In a New Mercury Outboard (10-Hour Guide)
@@ -24,13 +25,15 @@ language: en-CA
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-07-23  
+**Last reviewed:** 2026-08-19  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
 ---
 
 > **Quick answer:** Mercury's model-specific break-in procedure generally covers the first 10 hours: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle as your owner's manual directs. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. HBW offers an optional early oil-and-filter change around 20 hours as dealer best practice, not a Mercury warranty requirement.
+
+[Download Your New Mercury Owner Guide](/downloads/hbw-your-new-mercury-owner-guide.pdf) and keep it with the paperwork for your motor.
 
 **Mercury's own engine care primer for new owners:**
 
@@ -111,12 +114,6 @@ HBW recommends an optional early oil-and-filter change around 20 hours as dealer
 
 ---
 
-::pull-quote
-quote: First time I bought new, I almost skipped the break-in because another dealer said "just baby it for a few hours." **HBW walked me through the real Mercury procedure step by step.** Two seasons in, the motor still sounds brand new.
-attribution: Greg T.
-source: Cobourg
-::
-
 ## Common break-in mistakes
 
 **Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
@@ -135,9 +132,9 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
 
 ## What we do on new motor delivery at HBW
 
-When a customer takes delivery of a new Mercury from us:
+When a customer picks up a new Mercury from us:
 
-- We run a brief initial sea trial to verify cooling, charging, and basic operation
+- We run a brief initial lake test to verify cooling, charging, and basic operation
 - We walk through the break-in protocol for the specific motor model
 - We explain Mercury's 100-hour or annual schedule and HBW's optional early check
 - We complete Mercury warranty registration with serial number and customer info
@@ -169,8 +166,6 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 ## Need service on your Mercury?
 
 Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
----
 
 ---
 
@@ -219,23 +214,22 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
+- [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

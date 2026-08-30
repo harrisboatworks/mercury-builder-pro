@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md
-last_updated: 2026-06-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Outboard motor service at winterization sa Ontario (Tagalog Guide)"
 description: "Outboard motor service at winterization sa Ontario: kailan, bakit, at saan magpapa-service ng Mercury motor mo. Tagalog guide mula sa Rice Lake na marina."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-02
 keywords: ["mekaniko ng bangka sa Toronto (boat mechanic in Toronto)","pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)","marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)","paano i-winterize ang bangka (how to winterize a boat)","paghahanda ng bangka sa taglamig (preparing boat for winter)","winter storage ng bangka Ontario (winter storage of boat Ontario)","winterization service bangka Toronto (winterization service boat Toronto)","paano ayusin ang Mercury outboard (how to fix Mercury outboard)"]
 author: Harris Boat Works
 content_type: blog_article
 language: tl
+revenue_driver: service
 ---
 
 # Outboard motor service at winterization sa Ontario (Tagalog Guide)
@@ -24,7 +25,7 @@ language: tl
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**Huling sinuri:** 2026-08-02  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog
 
@@ -49,7 +50,7 @@ Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na
 - Pag-fogging ng cylinders, isang protective oil mist na pumoprotekta sa loob ng makina laban sa kalawang.
 - Pagpalit ng lower unit gear oil, at pag-inspect sa seals para walang tubig na pumasok.
 - Pag-check ng propeller, skeg, at anode, at pag-lubricate ng grease fittings.
-- Pag-alis ng battery at pag-store nito sa safe na lugar.
+- Idiskonekta ang battery at iwanan ito sa loob ng bangka sa ligtas na paraan.
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
@@ -89,7 +90,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 9-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
+Drop-off at pick-up ang service sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay para mag-ayos o kumuha ng bangka. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 
@@ -140,16 +141,15 @@ Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: mag
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

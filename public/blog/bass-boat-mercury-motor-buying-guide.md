@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-06-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Choosing the Right Mercury for Your Bass Boat (Ontario 2026)"
 description: "Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing."
 category: "Buying Guide"
 date_published: 2026-03-09
-date_modified: 2026-06-03
+date_modified: 2026-08-19
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Choosing the Right Mercury for Your Bass Boat (Ontario 2026)
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last updated:** 2026-06-03  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 
@@ -34,30 +35,33 @@ language: en-CA
 
 ---
 
-::decision-card
-heading: Mercury Pro XS or FourStroke for your bass boat?
-eyebrow: Honest power family pick
-subhead: Both are great. The real question is how you actually fish.
-leftLabel: Choose Pro XS if
-leftCriteria:
-  - You fish bass tournaments or run in heavy chop
-  - Your boat is rated for the higher RPM and Pro XS horsepower
-  - You want maximum hole shot and top end
-  - You are comfortable trading some fuel economy for performance
-  - The boat will live mostly on lakes you ride hard
-leftOutcome: Pick Pro XS
-leftVariant: recommended
-rightLabel: Choose FourStroke if
-rightCriteria:
-  - You fish recreationally, not tournaments
-  - Boat use includes family time, not just bass runs
-  - You want lower fuel burn and a quieter idle
-  - The Pro XS price gap does not justify the speed gain for your use
-  - You are repowering an older bass boat that was originally FourStroke
-rightOutcome: Pick FourStroke
-rightVariant: alternative
-whenInDoubt: For competitive tournaments, Pro XS pays for itself in time saved between spots. For weekend fishing, FourStroke is the smarter buy.
-::
+*Honest power family pick*
+
+### Mercury Pro XS or FourStroke for your bass boat?
+
+Both are great. The real question is how you actually fish.
+
+#### Choose Pro XS if
+
+- You fish bass tournaments or run in heavy chop
+- Your boat is rated for the higher RPM and Pro XS horsepower
+- You want maximum hole shot and top end
+- You are comfortable trading some fuel economy for performance
+- The boat will live mostly on lakes you ride hard
+
+**Pick Pro XS**
+
+#### Choose FourStroke if
+
+- You fish recreationally, not tournaments
+- Boat use includes family time, not just bass runs
+- You want lower fuel burn and a quieter idle
+- The Pro XS price gap does not justify the speed gain for your use
+- You are repowering an older bass boat that was originally FourStroke
+
+**Pick FourStroke**
+
+For competitive tournaments, decide whether the Pro XS performance premium has real value in your use. For weekend fishing, FourStroke is usually the simpler comparison.
 
 ---
 
@@ -88,8 +92,6 @@ The right Mercury for a bass boat depends on how you fish: competitively or recr
 
 ---
 
-::walkaround-lead-capture
-
 ## HP recommendations for bass boats
 
 **Recreational bass fishing (17–19 ft):** 150–175 HP FourStroke or Pro XS. Plenty of power for Ontario lakes without tournament-level cost.
@@ -114,7 +116,7 @@ If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat ma
 
 Most bass boats run 20-inch shaft with a jack plate. Some hulls with higher transom mounts or deeper set-ups need 25-inch. Check your boat specs or bring it in and we'll measure.
 
-Proper trim is a big deal on performance fishing rigs. Getting WOT RPM and trim dialled in correctly is part of the sea trial on every repower we do.
+Proper trim is a big deal on performance fishing rigs. When safe seasonal conditions allow, an on-water check can verify WOT RPM and trim for the specific motor, hull, load, and prop. The work order and documented acceptance plan control the scope.
 
 ---
 
@@ -125,8 +127,6 @@ Most bass boats don't use a dedicated trolling kicker the way walleye rigs do. B
 What is standard at the tournament level is a bow-mount trolling motor for positioning work. That's different from a transom-mounted kicker, and it doesn't require any modification to the main motor setup.
 
 If you're considering a kicker for a backup or occasional slow-trolling use, not all bass boat hulls are configured for transom-mount kickers. Bring the boat in and we'll assess whether it works for your specific setup.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -148,15 +148,11 @@ Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with ac
 
 ---
 
----
-
 ## What we see at HBW
 
 Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
 
-The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
-
----
+The Verado V8 conversation comes up for the biggest boats (heavy multi-species and big-water Great Lakes rigs). Those are the customers running Champion 220 or Skeeter ZX series.
 
 ---
 
@@ -192,7 +188,7 @@ Stainless on any tournament boat. Aluminum is fine for the 150 FourStroke break-
 
 ### How much does a Mercury Pro XS cost in Canada in 2026?
 
-Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, 250 Pro XS V8 around $33,500-$34,500. Final pricing depends on configuration and live quote.
+Planning-level CAD ranges as of August 8, 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, and 250 Pro XS V8 from $34,848 to $37,741. Check the [live pricing reference](/pricing-reference) because shaft length, controls, and configuration change the figure.
 
 ### What warranty does a Mercury outboard come with in Canada?
 
@@ -201,23 +197,22 @@ Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosio
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
+- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -194,7 +194,7 @@ export function ConfigFilterSheet({
         <Button 
           variant="outline" 
           size="icon"
-          aria-label="Filter motors by configuration"
+          aria-label={activeCount > 0 ? `Filter motors by configuration, ${activeCount} active` : 'Filter motors by configuration'}
           title="More motor filters"
           className={cn("h-9 w-9 md:h-10 md:w-auto md:px-3 shrink-0 gap-2", className)}
         >

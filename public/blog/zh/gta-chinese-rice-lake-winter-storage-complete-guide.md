@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,202 +8,155 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程"
-description: "多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。"
+description: "多伦多到莱斯湖：Harris Boat Works 室外专业收缩膜、室外无遮盖和仅收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内或加热存储。我们通常可以安排取船。船坞 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-08-27
 keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程
 
-> 多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。
+> 多伦多到莱斯湖：Harris Boat Works 室外专业收缩膜、室外无遮盖和仅收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内或加热存储。我们通常可以安排取船。船坞 12 月 1 日至 4 月 1 日停业。
 
 **Category:** mandarin  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**最后审核:** 2026-08-27  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 
-> **简短答案：** Harris Boat Works (HBW) 提供莱斯湖完整的室外收缩膜冬储服务。客户自送船 (HBW 不提供取送服务)，10 月底至 11 月送达，4 月初取回。船坞 12 月 1 日至 4 月 1 日停业，冬季不进行维修。价格因船长而异，请联系 HBW 获取精确报价。Mercury Premier 经销商，三代莱斯湖游艇之家，自 1947 年。
+> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
 
-## 为什么 GTA 华人船主选择莱斯湖冬储
+## 先确认 HBW 是否适合您的船
 
-每年 10 月至 11 月，从多伦多、万锦、密西沙加、列治文山过来送船冬储的客户在我们的码头排队。原因很简单：
+HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，并且不需要冬季取物或现场服务的客户。
 
-**距离合理。** 多伦多到莱斯湖大约 1 至 1.5 小时车程，401 高速直达。比北上 Muskoka 近，比南下 Lake Ontario 选择多。
+以下情况不适合 HBW：
 
-**价格透明。** HBW 的加元价格公开发布，您可以自行对比。详见 [Mercury 加元定价参考](/pricing-reference)。同样的船，同样的收缩膜质量，我们把报价和明细写清楚，您自己判断是否值得。
+- 需要室内、加热、恒温、全年或夏季存储
+- 需要 HBW 送船、邮寄发动机、拖运介绍或上门服务
+- 需要在 12 月 1 日至 4 月 1 日之间进入场地或取船
+- 希望在没有书面确认的情况下把冬化、收缩膜、存储和维修视为一个固定套餐
 
-**Mercury 服务一体化。** 大部分 GTA 华人船主的 Mercury 引擎都在 HBW 做服务。冬储时同时安排冬化保养，省去开春再来一趟的麻烦。
+## HBW 提供什么
 
-## HBW 冬储服务详解
+**HBW 的存储产品包括室外专业收缩膜、室外无遮盖和仅收缩膜服务。** 冬化、收缩膜、室外存储、拖车工作、维修和春季检查是不同的工作项目。当前书面报价会说明包含和不包含的内容。
 
-**重要：HBW 只提供室外收缩膜冬储，没有室内/恒温存储选项。** 如果您的船需要室内存储 (高端玻璃钢船、电子设备贵重、漆面要求高)，HBW 不是您的选择。
+我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
 
-我们的标准冬储流程：
+健康电瓶只有在完全充电、断开连接、固定妥当，并获得批准的存储方案允许时，才可以留在船上。具体以机型/序列号手册和批准的存储方案为准。
 
-1. **吊船上岸** ， 我们有自己的吊车和拖车，最长可处理 26 英尺船只
-2. **引擎冬化** ， Mercury 认证技师做完整冬化 (防冻液、燃油稳定剂、机油更换、火花塞检查)
-3. **专业收缩膜** ， 每艘船都用骨架支撑，不是直接绑在船舷上。这是雪季关键 ， 没有骨架的收缩膜到 1 月一般会因雪压而裂
-4. **室外存放** ， 在我们自家场地，不外包给第三方
-5. **春季取船** ， 4 月初船坞开门，您来取船
+## 从服务请求到送船
 
-## 价格
+先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
 
-每英尺收费，具体价格请联系 HBW 获取报价。一般来说：
+正常流程很简单：
 
-- **18-22 英尺船** ， 一冬季全套方案 (吊船 + 冬化 + 收缩膜 + 室外存放 + 春季取船)
-- **23-26 英尺船** ， 价格更高，包括同样的全套服务
-- **引擎冬化通常另算** ， 这是 [Mercury 认证服务](https://www.mercurymarine.com/canada/en/)，价格根据引擎大小而定
+1. 提交 [HBW 服务请求](https://hbw.wiki/service)。
+2. 提供船的年份、品牌、型号、长度，发动机型号和序列号，拖车情况，以及希望完成的工作。
+3. 等 HBW 确认接受范围和书面报价。
+4. 随时把船送到 Gores Landing（包括下班后），或询问取船安排，并在关闭前取走需要的个人物品。
 
-**注意：HBW 不提供取送服务。** 客户自送自取。多伦多到莱斯湖约 1 小时车程，建议早上送，下午回。
+实体船厂 12 月 1 日至 4 月 1 日关闭。
 
-::cost-stack
-eyebrow: 2026 莱斯湖冬储价格 (CAD)
-heading: HBW 冬储完整费用一览
-subhead: 以下为常见配置的实际价格范围。最终金额取决于船长、船型和服务组合。所有价格为加元, 仅限自提。
-item1Label: 室外冬储 (含船架)
-item1Value: $450 to $850
-item1Note: 18 至 22 英尺常见范围。三角龙骨船或双体船另议。
-item2Label: 室内冬储
-item2Value: $1,100 to $1,800
-item2Note: 名额有限, 建议 9 月底前预订。适合高价值玻璃钢船和 Pontoon。
-item3Label: 收缩膜 (Shrinkwrap)
-item3Value: $300 to $550
-item3Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
-item4Label: Mercury 引擎冬季保养
-item4Value: $250 to $400
-item4Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
-item4Accent: true
-item5Label: 春季开机服务 (Spring Commissioning)
-item5Value: $200 to $350
-item5Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
-totalLabel: 典型 GTA 华人客户全包价
-totalValue: $1,500 to $2,800
-caveat: 所有价格为加元 (CAD), 仅限 Gores Landing 自提。具体配置请预约面议。
-::
+## 当前价格如何确认
 
-## 送船时间
+不要使用这篇文章里的旧价格范围来预算。冬化、收缩膜和存储价格会因船长、船型、发动机、拖车、船上系统和批准的工作而不同。
 
-最佳送船窗口：
+请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。
 
-| 月份 | 状态 | 建议 |
-|---|---|---|
-| 9 月 | 预订高峰 | 锁定冬储位置 |
-| 10 月 | 送船最佳 | 通常有早鸟折扣 |
-| 11 月初 | 仍可送 | 价格上升 |
-| 11 月底 | 场地几乎满 | 不建议拖到此时 |
-| 12 月以后 | 船坞关门 | 无法送船 |
+书面报价应清楚列出：
 
-每年都有客户 11 月底打电话问还有没有位置 ， 几乎总是没有了。**建议 9 月中旬就预订。**
+| 项目 | 需要确认的内容 |
+|---|---|
+| 冬化 | 具体发动机、序列号、发动机数量和船上水系统 |
+| 收缩膜 | 船长、船型、支撑和通风范围 |
+| 室外存储 | 船和拖车尺寸、存储期间和进出规则 |
+| 维修 | 检查后发现的问题和客户另行批准的工作 |
+| 春季工作 | 包含的检查、额外维修和完工确认 |
+
+最终价格以 HBW 接受的当前书面报价为准。
+
+## From the Shop: 584 次冬化说明了什么
+
+HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 条冬化记录**。这不是 584 艘船或 584 位客户。小型外挂机、pontoon、较大 Mercury、MerCruiser 和带多个船上水系统的船，工作范围都不同。
+
+这也是我们不在文章里承诺一个万能套餐的原因。序列号、实际设备和书面工单比一个漂亮的“全包价”更有用。
 
 ## 冬储期间会发生什么
 
-**12 月 1 日至 4 月 1 日：船坞完全停业。**
+**12 月 1 日至 4 月 1 日，实体船厂关闭。**
 
-- 没有员工在场
-- 不进行任何维修服务
-- 不能取船或更换收缩膜
-- 紧急情况请联系您的保险公司
+- 不进行现场服务、维修、安装、检查或春季开机
+- 客户不能进入场地或取船
+- 不能在关闭期间送船
+- 远程计划和批准可以继续，实体工作在 4 月 1 日后恢复
 
-这是莱斯湖冬季的正常运作模式。船坞是季节性企业，雪季关闭是行业常态。如果您需要冬季期间还能进船坞拿东西，HBW 不适合您。
+送船前请取走冬季可能需要的证件、电子设备、贵重物品和个人用品。
 
 ## 春季返还
 
-4 月初船坞开门。流程：
+实体船厂重新开放后，HBW 按批准的工单和先到先办顺序完成春季工作。
 
-1. 您电话或邮件约定取船时间
-2. HBW 提前一天去除收缩膜
-3. 您到场后我们会做基础检查 (引擎试启动、电瓶电压、密封性)
-4. 您取船 ， 大部分客户当天即可下水
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修仍需另行检查和批准。
 
-**春季维修服务额外收费**，但通常因为冬化做得到位而很轻 ， 大部分船开春不需要任何额外维护。
+不要根据日历自行安排下水。HBW 确认批准的工作完成并提供取船时间后，再安排拖船或下水行程。
 
-## 我们在 HBW 看到的常见情况
+## 语言说明
 
-每年 10 月底到 11 月中，我们的场地从空到满只需 3-4 周时间。GTA 华人船主占冬储客户的相当一部分 ， 主要来自多伦多、万锦、密西沙加。最常见的情况：客户 10 月送船时同时预订春季 launch (开船入水)，这样开春不用再约。
+我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
-我们见过最糟糕的情况是客户自己在车库冬化但忘记排冷却水 ， 春天开机的瞬间引擎缸体被冰裂。那种损坏修不好，只能换引擎。专业冬化的钱是保险，不是开销。
+## 下一步
 
-## 常见问题
+先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
 
-**Q：HBW 室内冬储多少钱？**
-HBW 不提供室内冬储。我们只做室外收缩膜。如果需要室内存储，请联系 GTA 地区的恒温存储设施。
-
-**Q：HBW 可以来 GTA 取船吗？**
-不可以。HBW 是客户自送自取服务。多伦多到莱斯湖约 1 小时车程，建议早上送船。
-
-**Q：船在 HBW 冬储期间可以进去取东西吗？**
-12 月 1 日至 4 月 1 日船坞关闭，不能。请在送船前取出所有需要的物品。
-
-**Q：船坞何时重新开放？**
-4 月 1 日。具体开门日期请关注 HBW 官网或致电 (905) 342-2153。
-
-**Q：HBW 接受非 Mercury 引擎的船吗？**
-接受。冬储服务针对所有品牌船只。但引擎冬化只能由我们的 Mercury 认证技师做 ， 如果您的船是 Yamaha 或 Honda，请自行安排或联系我们外包服务。
-
-**Q：[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) 需要在冬储前过户给 HBW 吗？**
-不需要。船的所有权和注册保持在您名下，HBW 只是临时存放方。
-
-## 联系我们
-
-- 网站：[harrisboatworks.ca](https://www.harrisboatworks.ca)
-- 电话：(905) 342-2153 (英语)
-- 语言：团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件，我们会耐心沟通、尽力配合。邮件 info@harrisboatworks.ca
-- 地址：Gores Landing, Ontario
-
-[Mercury Premier 经销商](https://www.mercurymarine.com/canada/en/) · 三代莱斯湖游艇之家 · 自 1947 年
-
----
-
-> 相关指南：[为什么不能跳过 winterization](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)。
-
-## 相关阅读
-
-本主题完整指南：**[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
-
-同系列的另外两篇：
-- [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
-- [安大略船只法规与许可证 (中文)](/blog/zh/ontario-boating-regulations-zh)
+**地址：** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 ## FAQs
 
 ### HBW 提供室内冬储吗？
 
-不提供。HBW 只做室外收缩膜冬储。如果您需要室内/恒温存储，请联系 GTA 地区的专业室内存储设施。
+不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 也不提供恒温、全年或夏季存储。
 
-### HBW 可以从 GTA 取船吗？
+### 如何开始冬储流程？
 
-不可以。HBW 是客户自送自取服务。从多伦多开车到莱斯湖大约 1 至 1.5 小时，建议早上送船。
+先完成 hbw.wiki/service，然后随时送船，包括下班后。
 
-### 冬储价格大概是多少？
+### 秋季最晚什么时候送船？
 
-价格按船长每英尺计算，18-22 英尺和 23-26 英尺为两个常见区间。具体价格请致电 (905) 342-2153 或邮件 info@harrisboatworks.ca 获取报价。
+先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
-### HBW 何时关门？何时重新开放？
+### HBW 可以从 GTA 取船或送船吗？
 
-船坞 12 月 1 日至 4 月 1 日停业。这期间没有员工在场，也不进行任何维修服务。4 月初重新开放进入春季运作。
+我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
 
-### 送船最佳时间是何时？
+### 冬储价格是多少？
 
-建议 9 月中旬预订位置，10 月送船。11 月底场地通常已满，越晚送船选择越少且价格越高。
+请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。船只专属书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。
+
+### 关闭期间可以取船或做维修吗？
+
+不可以。实体船厂 12 月 1 日至 4 月 1 日关闭，期间没有现场服务、维修、安装、检查、客户进入或取船。
+
+### 春季检查是否包含在冬储里？
+
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价和已批准的工单执行。额外维修需另行批准。
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

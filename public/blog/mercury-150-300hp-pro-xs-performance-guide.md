@@ -16,6 +16,7 @@ keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercu
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 150 Pro XS to 300 Compared for Ontario Boats
@@ -24,7 +25,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-27  
+**Last reviewed:** 2026-07-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 
@@ -165,8 +166,6 @@ For higher-horsepower Pro XS conversations, HBW provides:
 
 If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## Sources and Review Notes
 
 This guide was checked July 27, 2026 against Mercury's current product pages and June 2026 Boost instructions. Performance figures stay attached to the exact boat, propeller, load and test conditions that produced them.
@@ -216,28 +215,27 @@ There is no universal top speed. In one official freshwater test, a 150 Pro XS r
 
 ### How much does a Mercury 150 Pro XS cost?
 
-As of July 27, 2026, our pricing reference lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. Build a configured quote or call 905-342-2153.
+Our [live pricing reference](/pricing-reference) lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. [Build a configured quote](/quote/motor-selection) for the complete total.
 
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
-- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
+- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

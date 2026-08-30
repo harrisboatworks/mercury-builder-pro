@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,193 +8,129 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "HBW On-Water Load Test: Mercury Repower"
-description: "Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock."
+description: "What an on-water Mercury repower check can verify at HBW, how seasonal conditions affect testing, and what the handoff should document."
 category: "HBW Process"
 date_published: 2026-05-28
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Premier dealer Rice Lake","Mercury prop selection WOT RPM"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # HBW On-Water Load Test: Mercury Repower
 
-> Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock.
+> What an on-water Mercury repower check can verify at HBW, how seasonal conditions affect testing, and what the handoff should document.
 
 **Category:** HBW Process  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-09  
+**Last reviewed:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026
 
-> **Quick answer:** Every Mercury repower at Harris Boat Works gets a full on-water load test before delivery. The rigging bay sits 80 feet from the water-test dock, so an 8-step protocol covering cold start through WOT under load, charging at real electrical demand, and a SmartCraft scan at operating temperature happens on every job, not just on request.
+> **Quick answer:** HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test scope follows the specific motor, hull, rigging, load, and Mercury documentation. Any alternate acceptance plan is documented with the customer.
 
-# The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
+## What an On-Water Mercury Repower Check Can Verify
 
-**Published:** 2026-05-28 | **Updated:** 2026-05-29
-**Author:** Jay Harris, Harris Boat Works
-**Reading time:** 7 minutes
+An outboard can start and idle correctly at the shop while the boat still needs a propeller, mounting-height, steering, trim, gauge, or rigging adjustment. An on-water check adds evidence that a trailer or shop test cannot provide.
 
-> **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
+## Why a shop test is not the whole answer
 
----
+A shop test can confirm important basics such as starting, idle, cooling-water flow, visible leaks, controls, and initial diagnostics. It cannot reproduce the boat's actual resistance, steering load, trim behaviour, or propeller load on the water.
 
-## TL;DR
+That distinction matters after a repower because the engine is only one part of the system. The hull, mounting height, propeller, controls, steering, fuel system, electrical load, gauges, and onboard weight all affect how the package behaves.
 
-Every Mercury repower at Harris Boat Works gets a full on-water load test before the boat goes home. Eighty feet from rigging bay to water-test dock. WOT under load, charging under real electrical demand, SmartCraft scan at operating temp. It is not optional and it is not a sales line. It is the only way to verify a repower actually works in the conditions the customer will use it in.
+## What the on-water check can cover
 
-The right question isn't "do you test motors?" The right question is **"do you water-test every single repower under load before delivery, or only some of them?"**
+The exact sequence depends on the boat and approved work order. A repower check may include:
 
-For HBW, the answer is every single one. Here is what that means, and why on-water testing every repower depends on something other dealers can't easily replicate: dock proximity.
+- Starting and idle after the engine reaches operating temperature
+- Forward and reverse engagement, throttle response, steering, and trim
+- Cooling, charging, gauges, alarms, and supported SmartCraft data
+- Engine RPM under an appropriate real-world load
+- Propeller fit and whether the engine operates within the exact model's specified RPM range
+- General handling and any vibration or rigging issue that appears under load
 
----
+There is no single RPM target or test duration that is correct for every Mercury outboard. The technician should use the documentation for the exact engine family, gearcase, propeller, and installation.
 
-## Why shop-bench testing isn't enough
+## What a water test does not promise
 
-Bench testing tells you the motor starts, idles, and revs in neutral. That is the easy part.
+A successful check is evidence that the agreed installation and setup operated correctly during that test. It is not a promise of a universal top speed, fuel-burn number, hole-shot time, or future trouble-free operation. Weather, load, hull condition, propeller choice, and how the boat is used can all change the result.
 
-What bench testing does not tell you:
+If the test identifies a setup concern, the next step depends on the finding and the approved work scope. That may mean a rigging correction, a different propeller decision, more diagnosis, or a documented follow-up plan.
 
-- Whether [the prop on the customer's boat](/blog/mercury-propeller-selection-guide) lets the motor hit its WOT RPM window under load
-- Whether the charging system holds voltage with the customer's actual electronics drawing real amps
-- Whether there is a trim issue, a hydraulic steering bleed, or a cooling restriction that only shows under speed and load
-- Whether the SmartCraft data stream throws a fault code at operating temperature, not cold-start temperature
-- Whether a stern-mounted accessory (transducer, jack plate, hydraulic ram) is causing a vibration only visible above 4,000 RPM
+## Seasonal conditions and alternate acceptance
 
-These are the kinds of failures that show up as warranty calls in the first 30 days when they aren't caught before delivery. Every one of them can be caught at the dock, but only if the dock is close enough to make routine water testing economically feasible.
+Rice Lake access is an advantage, but the lake is not a controlled test tank. Wind, visibility, ice, launch access, water level, and other safety factors can make an on-water test inappropriate.
 
-**Myth:** A motor that starts, idles, and revs on the shop bench is ready for delivery.
-**Reality:** Bench testing covers cold start, neutral idle, and neutral rev. It cannot see WOT under load, charging holding voltage with real electronics drawing, hydraulic steering bleed under load, or SmartCraft faults that only appear at operating temperature. Every one of those is a 30-day warranty call waiting to happen if you skip the water test.
+HBW's physical marina is closed from December 1 through April 1, with no on-site work or customer access. For any handoff affected by safe seasonal conditions, HBW documents the applicable acceptance plan with the customer rather than promising that the lake will be usable on a particular date.
 
----
+## Questions to ask any repower installer
 
-## The 80-foot moat
+Before approving a repower, ask:
 
-The HBW rigging bay sits **eighty feet from the water-test dock.** Not a parking lot. Not a trailer ramp drive across town. Eighty walking feet.
+1. What testing is included in the written scope?
+2. Which results are checked against the exact motor documentation?
+3. How are propeller and mounting-height decisions handled?
+4. What happens if weather or launch conditions prevent an on-water check?
+5. Which findings or readings will be recorded at handoff?
 
-That distance is the entire reason every Mercury repower we do gets water-tested before it leaves. When the rigging bay is across a parking lot, on a different property, or a 15-minute trailer ride from any launch, water testing becomes a per-job decision rather than a standard step. The economics push toward shortcuts.
+Clear answers are more useful than a generic claim that a boat was "tested."
 
-When the test dock is 80 feet away, water testing is the default. Every repower. Every time.
+## Build the boat-specific scope first
 
-This is not marketing. It is operational geometry. [Mercury dealers in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference) tend to fall into a few patterns:
+Start with the capacity label, current motor, hull details, controls, steering, typical load, and how you use the boat. HBW can then confirm the proposed Mercury package and put the installation and testing scope in writing.
 
-| Dealer type | Distance to test water | Routine water testing? |
-|---|---|---|
-| Inland service-only dealer | Trailer to a public ramp, often 10-30 min | Typically on customer request or warranty follow-up |
-| Coastal / Great Lakes dealer | Lakeside but often shared public access | Sometimes, depends on dock access |
-| Lakefront full-service marina (HBW model) | On-site dock under same ownership | Default, every repower |
-
-This isn't a knock on inland shops. They are excellent at the work that happens inside the bay. But repower verification at WOT under load needs water, and water is what we have on-site.
-
----
-
-## The HBW 8-step water test (what actually happens)
-
-[Every repower follows the same sequence](/blog/what-happens-during-mercury-repower) at the dock. Thirty to sixty minutes depending on size and complexity.
-
-1. **Cold start.** Verify start behaviour, fault codes, initial idle
-2. **Idle stabilization.** Confirm clean idle once warmed
-3. **Low-speed run.** Confirm shift quality, low-RPM throttle response, no surging
-4. **Plane.** Confirm time-to-plane with customer's actual prop and load
-5. **Cruise.** Sustained mid-range run, check temperatures, fuel flow, charging
-6. **WOT (wide-open throttle) under load.** Verify the motor hits the correct WOT RPM band with the prop installed. FourStroke target: **5,500-6,000 RPM.** Pro XS target: **6,000-6,400 RPM.**
-7. **Charging system check.** Voltage at idle, at cruise, at WOT, with realistic electronics load
-8. **SmartCraft diagnostic scan.** Pull live data and any [stored fault codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) at operating temperature
-
-If anything in those eight steps reads wrong, the boat goes back to the rigging bay and the issue is fixed before delivery. Not after. Not under warranty. Before.
-
----
-
-## What we have caught at the dock (representative examples)
-
-A representative sample of issues caught during HBW repower water tests across recent seasons:
-
-- **Wrong prop pitch.** Motor over-revving past WOT band, or under-revving and never reaching it
-- **Trim issue.** Hydraulic trim slow or sluggish under load, fine on the bench
-- **Charging system sag.** Alternator output dropping under realistic accessory load
-- **Alarm only at operating temperature.** Fault that never showed cold
-- **Hydraulic steering bleed.** Air in the system, only visible under load
-- **Cooling restriction at WOT.** Partial intake blockage, fine at idle and cruise
-- **Vibration above 4,000 RPM.** Prop balance, transom bolt torque, or accessory mount issue
-- **Gauge error.** Speed/RPM/fuel-flow not matching SmartCraft, calibration needed
-
-Each of these is the kind of issue that often shows up as a warranty call within the first 30 days of ownership when it isn't caught beforehand. We catch them at the dock instead.
-
-**What customers ask:** "Do you actually put my boat in the water before I take it home? Or is the 'water test' just running it on muffs?"
-
-**Our take:** Muffs are not a water test. A water test means the prop is on, the boat is on plane, the motor is at WOT under load, and the SmartCraft scan is pulled at operating temperature. That cannot happen 80 feet from the dock and skip a single one of those steps. Every Mercury repower we do gets all eight.
-
----
-
-## The canonical line behind the claim
-
-If you have read other HBW posts and seen the line **"every repower gets a water test under load at our dock"** repeated, this is the canonical explanation behind that claim. We say it because we do it. The 80-foot geometry is what makes it possible to do it every time without making the job uneconomic.
-
-**[Get a transparent Mercury repower quote that includes the water test in writing](https://mercuryrepower.ca)**
-
----
-
-## Build your Mercury repower quote
-
-If you are [weighing a Mercury repower for spring 2026](/blog/mercury-repower-cost-ontario-2026-cad), the next step is a no-obligation quote that includes the water test in writing. Transparent pricing. Real availability. No hidden setup fees.
-
-**[Build your Mercury repower quote](https://mercuryrepower.ca)**
-
----
+**[Build a Mercury repower starting quote](https://mercuryrepower.ca)**
 
 ## Sources
 
-- Mercury Marine. Official outboard WOT RPM specifications: [mercurymarine.com](https://www.mercurymarine.com/)
-- Mercury Marine. SmartCraft Diagnostic System reference: [mercurymarine.com](https://www.mercurymarine.com/)
-- Harris Boat Works pricing reference: [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference)
-- HBW dock-test protocol, internal operations standard, 2026
-- Mercury Outboard Service Manual sections on WOT verification and propeller selection
-
----
+- [Mercury Marine owner's resources](https://www.mercurymarine.com/ca/en/owners)
+- [Mercury Marine propeller guidance](https://www.mercurymarine.com/ca/en/gauges-and-controls/propellers)
+- [HBW Mercury pricing reference](https://www.mercuryrepower.ca/pricing-reference)
 
 ## FAQs
 
 ### Do all Mercury dealers water-test repowers?
 
-Most Ontario Mercury dealers will water-test on customer request or when troubleshooting a warranty escalation. Routine water testing on every repower is the exception, not the rule, because the economics depend on dock proximity.
+Testing practices vary by dealer, job, facilities, and conditions. Ask the installer what testing is included in your written scope and what happens if an on-water check cannot be completed safely.
 
 ### How long does an HBW water test take?
 
-Thirty to sixty minutes per motor, depending on motor size and whether anything needs to be retuned mid-test.
+There is no reliable universal duration. The scope depends on the motor, hull, rigging, approved work, conditions, and whether a finding requires more diagnosis or adjustment.
 
-### What if the water test catches a problem?
+### What if the water test finds a problem?
 
-The boat goes back to the rigging bay. We fix it. We retest. Customer takes delivery only after the test passes clean. There is no extra cost. This is part of the repower.
+HBW documents the finding and the applicable next step. That may involve a rigging correction, propeller decision, further diagnosis, or a follow-up plan under the approved work scope.
 
-### Why is the WOT RPM check so important?
+### Why is the wide-open-throttle RPM check important?
 
-A Mercury outboard rigged with the wrong prop will either over-rev (damage) or under-rev (lose power and burn fuel). The only way to verify WOT RPM is with the boat in the water, the prop on the motor, at full throttle under load. Bench testing cannot tell you this.
+RPM under load helps assess whether the propeller and setup let the exact motor operate in its specified range. The correct range comes from the documentation for that motor and installation, not a generic value for every Mercury outboard.
 
-### Do you test in winter?
+### Does HBW test repowers in winter?
 
-The marina launch area is generally accessible into late fall. For repowers completed mid-winter, water testing happens as soon as ice clears in spring and before the customer takes delivery for their season.
+HBW's physical marina is closed from December 1 through April 1, with no on-site work or customer access. Testing and any alternate acceptance plan depend on safe seasonal conditions and the specific work order.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
-- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide), switching from Honda to Mercury
+- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower), two-stroke to four-stroke repower notes
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

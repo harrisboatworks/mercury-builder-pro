@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T11:58:13.542Z",
-  "count": 414,
+  "generatedAt": "2026-08-15T10:33:48.146Z",
+  "count": 425,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -68,7 +68,10 @@
     "/lovable-uploads/bilge-pump-sizing-chart",
     "/lovable-uploads/bilge-pump-system-diagram",
     "/lovable-uploads/bilge-pump-troubleshooting-flowchart",
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08",
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
+    "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08",
+    "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08",
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
     "/lovable-uploads/boat-winterization-cost-drivers-ontario",
     "/lovable-uploads/bolt-on-motor-installation",
@@ -224,12 +227,14 @@
     "/lovable-uploads/hero-mercury-wont-start-troubleshooting",
     "/lovable-uploads/hero-new-immigrant-boat-buying-checklist",
     "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario",
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario",
     "/lovable-uploads/hero-on-water-load-test",
     "/lovable-uploads/hero-ontario-boating-regulations-zh",
     "/lovable-uploads/hero-ontario-mercury-price-guide",
     "/lovable-uploads/hero-outboard-overheating",
     "/lovable-uploads/hero-outboard-vs-sterndrive",
     "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake",
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand",
     "/lovable-uploads/hero-pcl-repower-licence",
     "/lovable-uploads/hero-pontoon-aluminum-vhull",
     "/lovable-uploads/hero-pontoon-hp-sizing",
@@ -367,6 +372,9 @@
     "/lovable-uploads/mercury-break-in-timeline-hbw",
     "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison",
     "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero",
+    "/lovable-uploads/mercury-maintenance-parts-hero",
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social",
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social",
     "/lovable-uploads/mercury-outboard-beep-codes-action-card",
     "/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree",
     "/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart",
@@ -379,6 +387,9 @@
     "/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360",
     "/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem",
     "/lovable-uploads/mercury-vs-honda-hero-2026",
+    "/lovable-uploads/official-mercury-75-fourstroke",
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp",
+    "/lovable-uploads/official-mercury-seapro-350-v10",
     "/lovable-uploads/ontario-mercury-outboard-price-tier-chart",
     "/lovable-uploads/outboard-shaft-length-transom-measurement-diagram",
     "/lovable-uploads/pontoon-115-ct-detail-real",
@@ -748,7 +759,22 @@
       1024,
       1536
     ],
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08": [
+      640,
+      1024,
+      1600
+    ],
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08": [
+      640,
+      1024,
+      1672
+    ],
+    "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08": [
       640,
       1024,
       1672
@@ -1528,6 +1554,11 @@
       1024,
       1920
     ],
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario": [
+      640,
+      1024,
+      1920
+    ],
     "/lovable-uploads/hero-on-water-load-test": [
       640,
       1024,
@@ -1554,6 +1585,11 @@
       1920
     ],
     "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-overheat-alarm-telltale-hand": [
       640,
       1024,
       1920
@@ -1626,7 +1662,7 @@
     "/lovable-uploads/hero-rice-lake-fishing-morning": [
       640,
       1024,
-      1920
+      1676
     ],
     "/lovable-uploads/hero-service-bills-prevention": [
       640,
@@ -2243,6 +2279,21 @@
       1024,
       1920
     ],
+    "/lovable-uploads/mercury-maintenance-parts-hero": [
+      640,
+      1024,
+      1600
+    ],
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
     "/lovable-uploads/mercury-outboard-beep-codes-action-card": [
       640,
       1024,
@@ -2302,6 +2353,21 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/official-mercury-75-fourstroke": [
+      640,
+      1024,
+      1050
+    ],
+    "/lovable-uploads/official-mercury-portable-fourstroke-2-20hp": [
+      640,
+      696,
+      696
+    ],
+    "/lovable-uploads/official-mercury-seapro-350-v10": [
+      514,
+      514,
+      514
     ],
     "/lovable-uploads/ontario-mercury-outboard-price-tier-chart": [
       640,

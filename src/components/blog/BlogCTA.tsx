@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
+import { BLOG_REVENUE_DRIVER, getBlogRevenueDriver } from '@/lib/blogRevenueDriver.js';
 
 type CTAVariant = 'inline' | 'banner';
 
@@ -19,9 +20,10 @@ interface CTAConfig {
   buttonLabel?: string;
 }
 
-function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAConfig {
-  const cat = category.toLowerCase();
-  const s = slug.toLowerCase();
+function pickCTA(category = '', slug = ''): CTAConfig | null {
+  const revenueDriver = getBlogRevenueDriver(category, slug);
+
+  if (revenueDriver === BLOG_REVENUE_DRIVER.NONE) return null;
 
   // Diagnostic content has one next step: the service intake. Keep phone,
   // sales, pricing, and "diagnose it remotely" language out of these posts.
@@ -36,21 +38,11 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
     };
   }
 
-  // Rentals: route to Harris rentals booking. For the GTA post we allow ONE
-  // motor-pricing CTA at the very end (variant === 'banner') and use the
-  // rentals CTA everywhere else. The shared-access post uses rentals for both.
-  const isRentalGta = s === 'rice-lake-boat-rentals-from-toronto-gta';
-  const isRentalShared = s === 'boat-rentals-shared-access-booming-2026';
-  const isRentalGuide = s === 'rice-lake-boat-rental-guide-2026';
-  const isRentalLicence = s === 'boat-rental-licence-ontario-guide';
-  const isRentalFirstTime = s === 'first-time-boat-rental-rice-lake-guide';
-  const isRentalGroup = s === 'group-boat-rentals-rice-lake';
-  const isRentalVsOwn = s === 'renting-vs-owning-boat-ontario-math';
-  if (isRentalShared || isRentalGuide || isRentalLicence || isRentalFirstTime || isRentalGroup || ((isRentalGta || isRentalVsOwn) && variant === 'inline')) {
+  if (revenueDriver === BLOG_REVENUE_DRIVER.RENTALS) {
     return {
       title: 'Book a boat on Rice Lake',
       description:
-        "Nine boats, live availability, life jackets included. Book online and you're on the water in minutes.",
+        "Live availability, life jackets and safety gear included. Book online to check the current fleet and rates.",
       href: 'https://harrisboatworks.ca/rentals',
       external: true,
       buttonLabel: 'Check Availability',
@@ -59,35 +51,7 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
 
 
 
-  // Trade-in
-  if (s.includes('trade-in') || cat.includes('trade')) {
-    return {
-      title: 'Value Your Trade-In',
-      description: 'Get an instant estimate on your current outboard. Credit applies directly to your new Mercury.',
-      href: '/trade-in-value',
-    };
-  }
-
-  // Financing
-  if (s.includes('financing') || s.includes('finance') || cat.includes('financing')) {
-    return {
-      title: 'Estimate Your Monthly Payment',
-      description: 'See real Mercury financing options with current Ontario rates. No credit check to view.',
-      href: '/financing',
-    };
-  }
-
-  // Maintenance / winterization / troubleshooting / service
-  if (
-    s.includes('maintenance') ||
-    s.includes('winteriz') ||
-    s.includes('service') ||
-    s.includes('commission') ||
-    s.includes('break-in') ||
-    s.includes('troubleshoot') ||
-    cat.includes('maintenance') ||
-    cat.includes('service')
-  ) {
+  if (revenueDriver === BLOG_REVENUE_DRIVER.SERVICE) {
     return {
       title: 'Request Service',
       description: 'Submit the boat, motor, symptoms, and photos before bringing it to our Gores Landing shop.',
@@ -97,32 +61,44 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
     };
   }
 
-  // Repower / cost / comparison
-  if (
-    s.includes('repower') ||
-    s.includes('cost') ||
-    s.includes('vs-') ||
-    s.includes('-vs') ||
-    cat.includes('repower') ||
-    cat.includes('compar')
-  ) {
+  if (revenueDriver === BLOG_REVENUE_DRIVER.AVATOR) {
     return {
-      title: 'Build Your Mercury Repower Quote',
-      description: 'Live pricing on every Mercury we sell. Configure your repower in under 3 minutes.',
-      href: '/quote/motor-selection',
+      title: 'Explore Mercury Avator',
+      description: 'Compare the electric lineup, battery options, charging, and current HBW availability.',
+      href: '/electric/mercury-avator',
+      buttonLabel: 'View the Avator Lineup',
     };
   }
 
-  // Default - buying guides
+  if (revenueDriver === BLOG_REVENUE_DRIVER.PRODUCT_PROTECTION) {
+    return {
+      title: 'Check Product Protection',
+      description: 'Review the current Canadian rate card by horsepower and plan term before HBW confirms eligibility.',
+      href: '/mercury-product-protection',
+      buttonLabel: 'View Product Protection',
+    };
+  }
+
+  if (revenueDriver === BLOG_REVENUE_DRIVER.COMMERCIAL) {
+    return {
+      title: 'Request a SeaPro Quote',
+      description: 'Tell HBW about the boat, annual hours, load, and operating conditions so we can confirm the right commercial model.',
+      href: '/contact',
+      buttonLabel: 'Contact HBW About SeaPro',
+    };
+  }
+
   return {
-    title: 'Browse Live Mercury Pricing',
-    description: 'See current CAD pricing on every Mercury outboard we sell, then build a complete quote when you are ready.',
-    href: '/pricing-reference',
+    title: 'Build Your Mercury Quote',
+    description: 'Choose the motor and options, then see the current CAD total before you send anything to HBW.',
+    href: '/quote/motor-selection',
+    buttonLabel: 'Build Your Own Quote',
   };
 }
 
 export function BlogCTA({ category, slug, variant = 'banner', className = '' }: BlogCTAProps) {
-  const cta = pickCTA(category, slug, variant);
+  const cta = pickCTA(category, slug);
+  if (!cta) return null;
 
   const button = (
     <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors">
@@ -141,14 +117,14 @@ export function BlogCTA({ category, slug, variant = 'banner', className = '' }: 
     <aside className={wrapperClass} aria-label="Call to action">
       {variant === 'banner' && <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />}
       <div className={variant === 'banner' ? '' : 'flex-1'}>
-        <h3
+        <p
           className={`font-display font-bold text-repower-navy-900 ${
             variant === 'banner' ? 'text-xl md:text-2xl mb-3' : 'text-lg md:text-xl mb-1'
           }`}
           style={{ letterSpacing: '-0.02em' }}
         >
           {cta.title}
-        </h3>
+        </p>
         <p
           className={`font-sans text-repower-navy-900/70 ${
             variant === 'banner' ? 'mb-6' : 'text-[15px] mb-0'

@@ -580,7 +580,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
             'Timing depends on the selected tiller or remote configuration, bracket and transom fit, steering clearance, controls or display, and motor availability. HBW confirms the scope and timing in the written quote.',
         },
         {
-          question: 'How does an Avator 7.5e compare to a 3.5 HP gas kicker?',
+          question: 'How does an Avator 7.5e compare to a small gas kicker?',
           answer:
             'Mercury rates the 7.5e at 750 watts at the propeller rather than gasoline horsepower. Compare the complete boat fit, required speed and range, charging, maintenance, and mounting instead of relying on a simple horsepower equivalence.',
         },

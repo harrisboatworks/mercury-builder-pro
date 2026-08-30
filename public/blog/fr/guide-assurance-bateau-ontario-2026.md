@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-07-10
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,22 +11,23 @@ title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026
 description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-07-10
+date_modified: 2026-08-08
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)
 
 > Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par...
 
-**Category:** Assurance  
-**Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
+**Catégorie :** Assurance\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
 ## Réponse rapide
 
@@ -141,9 +142,15 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
@@ -173,18 +180,17 @@ La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entre
 
 Non. L'assurance est vendue par des courtiers autorisés. Nous pouvons recommander de trouver un courtier spécialiste maritime, mais nous n'écrivons pas de polices.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

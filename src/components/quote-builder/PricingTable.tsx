@@ -252,7 +252,8 @@ export function PricingTable({
           <div className="rounded-lg border border-repower-gold/35 bg-repower-cream px-4 py-3">
             <div className="text-sm font-semibold text-repower-navy-900">Cash purchase selected</div>
             <div className="mt-1 text-xs text-repower-navy-900/65">
-              No financing is included. Your eligible Mercury rebate remains applied above.
+              No financing is included.
+              {pricing.promoValue > 0 ? ' Your eligible Mercury rebate remains applied above.' : ''}
             </div>
           </div>
         </div>

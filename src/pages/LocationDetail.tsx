@@ -14,6 +14,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Anchor, Phone, Award, MapPin, Calendar, Wrench } from 'lucide-react';
+import {
+  renderInlineInternalLinks,
+  stripInlineInternalLinks,
+} from '@/components/location/InlineInternalLinks';
 
 const TRUST_ROW = [
   { icon: Award, label: 'Mercury Premier Dealer' },
@@ -219,7 +223,7 @@ export default function LocationDetail() {
         mainEntity: faqs.map((faq) => ({
           '@type': 'Question',
           name: faq.question,
-          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          acceptedAnswer: { '@type': 'Answer', text: stripInlineInternalLinks(faq.answer) },
         })),
       },
       ...(lf
@@ -417,10 +421,7 @@ export default function LocationDetail() {
                   Pickup at Gores Landing
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Customers from {location.region} bring the boat to our shop at{' '}
-                  {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city}, ON for installation,
-                  or pick up a loose Mercury motor for self-install. We do not offer mobile
-                  service, delivery, driveway installs, or marina visits.
+                  {location.serviceBoundary}
                 </p>
                 <p className="mt-3 text-sm text-muted-foreground">
                   Need shop-based Mercury service?{' '}
@@ -448,7 +449,7 @@ export default function LocationDetail() {
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
-                    {faq.answer}
+                    {renderInlineInternalLinks(faq.answer)}
                   </AccordionContent>
                 </AccordionItem>
               ))}

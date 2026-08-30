@@ -3,11 +3,23 @@
 // Node-only — compares declared deps/devDeps/optionalDeps/peerDeps against
 // the root entry in package-lock.json. Catches the common CI failure where
 // `npm ci` rejects a stale lockfile.
+// Also rejects bun.lock / bun.lockb so npm remains the sole package manager.
 
 import { readFileSync, existsSync } from 'node:fs';
 
 const pkgPath = 'package.json';
 const lockPath = 'package-lock.json';
+const forbiddenLockfiles = ['bun.lock', 'bun.lockb'];
+
+const presentForbidden = forbiddenLockfiles.filter((file) => existsSync(file));
+if (presentForbidden.length) {
+  console.error(
+    `❌ npm-only policy: found ${presentForbidden.join(', ')}.\n` +
+      'This repository uses npm as the sole Node package manager.\n' +
+      'Delete bun.lock and bun.lockb; keep package-lock.json as the only lockfile.',
+  );
+  process.exit(1);
+}
 
 if (!existsSync(lockPath)) {
   console.error(`❌ ${lockPath} is missing. Run \`npm install\` and commit it.`);

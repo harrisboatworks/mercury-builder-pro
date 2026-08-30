@@ -16,6 +16,7 @@ keywords: ["Mercury 115 vs 150","Mercury舷外机对比","115马力还是150马�
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
+revenue_driver: repower
 ---
 
 # Mercury 115马力 vs 150马力舷外机：如何选择？
@@ -24,7 +25,7 @@ language: zh-CN
 
 **Category:** 产品对比  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**最后审核:** 2026-04-12  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
 
@@ -34,24 +35,15 @@ language: zh-CN
 
 犹豫的时候，通常选大一个。
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Premier certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+*HBW 信任要点*
+
+### 为什么 GTA 华人船主愿意到 Rice Lake
+
+- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- 透明加元价格，无需讨价还价
+- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+
+[在线获取报价](/quote)
 
 ---
 
@@ -156,22 +148,6 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 ---
 
-## 常见问题
-
-**Q：我的船Capacity Plate写最大115马力，可以装150吗？**
-A：不可以，也不应该。最大马力标牌是安全设计上限，超过可能影响船体稳定性并导致保险失效。请严格遵守Capacity Plate的标示。
-
-**Q：115和150马力的轴长选择有什么不同？**
-A：轴长（Shaft Length）取决于船的Transom高度，与马力选择无关。请确认你的Transom高度后选择Short（15"）、Long（20"）或Extra Long（25"）。
-
-**Q：二手Mercury 115马力和新的115马力差距大吗？**
-A：差距在保固、磨损程度和保养历史。一台有完整保养纪录的二手Mercury可能很值得，但需要由技师评估。Harris Boat Works可协助评估现有发动机状态。
-
-**Q：我现在的旧发动机是90马力，换115还是150？**
-A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbw.wiki/service 提交服务申请，让HBW技师评估你的船和使用需求。
-
----
-
 ## 内部连结
 
 - [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
@@ -209,16 +185,15 @@ Mercury FourStroke标准保修3年。通过Premier 经销商（如Harris Boat Wo
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

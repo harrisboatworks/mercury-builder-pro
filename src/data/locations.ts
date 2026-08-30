@@ -86,6 +86,7 @@ export const locations: LocationPageData[] = [
     whyChooseUs: TRUST_FACTS,
     recommendedLinks: [
       QUOTE_LINK,
+      { label: 'Harris Boat Works in Gores Landing', href: '/harris-boat-works' },
       { label: 'Bass boat repower case study (150 → 150 Pro XS)', href: '/case-studies/bass-boat-150-to-150-pro-xs' },
       { label: 'Walkaround cuddy repower (90 → 115 EFI)', href: '/case-studies/walkaround-cuddy-90-to-115-efi' },
       REPOWER_LINK,
@@ -167,9 +168,15 @@ export const locations: LocationPageData[] = [
       { question: 'Are your recommendations appropriate for Kawartha lake conditions?', answer: 'Yes. We write for real Ontario lake use, Sturgeon, Pigeon, Buckhorn, Balsam, not generic brochure use.' },
       { question: 'Do you quote in USD?', answer: 'No. All pricing is CAD only.' },
       { question: 'Can Kawartha Lakes customers compare motors before driving down?', answer: 'Yes. Use the quote builder or the motor pages, both show live CAD pricing.' },
+      {
+        question: 'Where can I get a Mercury outboard serviced in the Kawarthas?',
+        answer:
+          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All service work happens in our shop. We can generally arrange boat pickup; ask us about availability for your boat and location. You can also bring the boat or motor to Gores Landing and collect it when the work is done. We don't offer delivery or mobile, dockside, driveway, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
+      },
     ],
     pickupPolicy: PICKUP_POLICY,
-    serviceBoundary: boundary('the Kawartha Lakes region'),
+    serviceBoundary:
+      'Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in the Kawartha Lakes region. Service work remains at our Gores Landing shop. We can generally arrange boat pickup; ask us about availability for your boat and location. Customers can also bring their boat to the shop, or pick up a loose Mercury motor for self-install.',
   },
   {
     slug: 'cobourg-northumberland-mercury',
@@ -458,7 +465,7 @@ export const locations: LocationPageData[] = [
     ],
     relatedCaseStudySlugs: ['aluminum-fishing-60-to-90-fourstroke', 'bass-boat-150-to-150-pro-xs'],
     faqs: [
-      { question: 'Do you offer Durham delivery?', answer: 'No. Pickup only at Gores Landing on Rice Lake.' },
+      { question: 'Can HBW pick up my boat in Durham Region?', answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location.' },
       { question: 'Do you do mobile service in Durham?', answer: 'No. Harris Boat Works is shop-based at Gores Landing, no on-site installs, no driveway service, no marina visits.' },
       { question: 'Can Durham customers finalize a Mercury order online?', answer: 'You build the quote online and we confirm the build by phone before pickup.' },
     ],

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-06-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-02
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
 language: hi
+revenue_driver: repower
 ---
 
 # Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein
@@ -24,7 +25,7 @@ language: hi
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**अंतिम समीक्षा:** 2026-08-02  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 
@@ -43,7 +44,7 @@ PCOC बनवाने के लिए नीचे दिए गए सीध
 1. Transport Canada की वेबसाइट पर जाकर मान्यता प्राप्त कोर्स प्रदाताओं की सूची देखें: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters
 2. अपनी पसंद का कोई भी प्रदाता चुनें (सभी सरकार द्वारा मान्य हैं) और उनका ऑनलाइन कोर्स खरीदें। कोर्स और परीक्षा का शुल्क हर प्रदाता का अलग होता है, इसलिए ताज़ा कीमत के लिए उसी वेबसाइट पर जाएँ।
 3. कोर्स पूरा करने के बाद ऑनलाइन परीक्षा दें। परीक्षा में पानी पर सुरक्षा, चिन्ह, और आपात स्थिति से जुड़े सवाल होते हैं। सवाल अंग्रेज़ी या फ्रेंच में होंगे, इसलिए अगर अंग्रेज़ी कमज़ोर है तो कोई मदद करने वाला साथ बैठाएँ या अनुवाद ऐप का उपयोग करें।
-4. पास होते ही आपका कार्ड तुरंत डिजिटल रूप में उपलब्ध होगा और आप उसे डाउनलोड कर सकते हैं। भौतिक कार्ड आने में कुछ सप्ताह लग सकते हैं, लेकिन डिजिटल कॉपी नाव पर साथ रखना मान्य है।
+4. पास होने के बाद प्रदाता से मिलने वाले अस्थायी प्रमाण की शर्तें ध्यान से पढ़ें और स्थायी कार्ड आने पर मूल कार्ड नाव पर साथ रखें। Transport Canada के अनुसार साधारण कागज़ी या इलेक्ट्रॉनिक PCOC कॉपी मान्य नहीं है।
 
 कुल समय आपकी पढ़ाई की रफ़्तार और course provider की process पर निर्भर करता है। “boat chalane ka license kitne din mein milta hai” का जवाब यह है: जितनी जल्दी आप कोर्स ख़त्म कर परीक्षा पास करें, उतनी जल्दी। परीक्षा पास होते ही डिजिटल कार्ड उसी दिन डाउनलोड किया जा सकता है।
 
@@ -68,11 +69,11 @@ Harris Boat Works पर हम नावों की रजिस्ट्र�
 
 Rice Lake Fisheries Management Zone 17 (FMZ 17) में आता है। हर मछली की प्रजाति का अपना मौसम, रोज़ाना पकड़ने की सीमा, और आकार संबंधी नियम होते हैं। कोई एक तारीख नहीं है जब पूरी झील में मछली पकड़ने का मौसम खुलता या बंद होता है। इसलिए “fishing season Ontario kab se hai” का जवाब हर मछली के हिसाब से बदलता है। कंज़र्वेशन लाइसेंस पर रखने की सीमा स्पोर्ट लाइसेंस से कम होती है। यह सुनिश्चित करने के लिए कि आप मौजूदा नियमों का पालन करें, हमेशा ताज़ा Ontario Fishing Regulations Summary (FMZ 17) पढ़ें: https://www.ontario.ca/document/ontario-fishing-regulations-summary। हर साल नया संस्करण आता है, इसलिए हमेशा official लिंक से ही देखें। यह आधिकारिक स्रोत हर बार जीतेगा।
 
-## Bina PCOC ke boat rent karna | बिना PCOC के नाव किराए पर लेना
+## HBW par rental ke liye PCOC | HBW पर किराए के लिए PCOC
 
-क्या आपके पास PCOC नहीं है और आप फिर भी परिवार के साथ नाव चलाना चाहते हैं? अच्छी खबर: अगर आप किसी मान्यता प्राप्त रेंटल सेवा से नाव किराए पर लेते हैं, तो आप पूर्ण PCOC की बजाय एक रेंटल बोट सेफ्टी चेकलिस्ट पूरी कर सकते हैं। यह चेकलिस्ट वहाँ के स्टाफ आपको समझा देते हैं और आप थोड़ी देर में नाव चलाने के लिए तैयार हो जाते हैं।
+Harris Boat Works में हर ड्राइवर को चेक-इन पर वैध बोट ऑपरेटर लाइसेंस दिखाना होता है। किराये की सुरक्षा जाँच सूची फिर भी सुरक्षा ब्रीफिंग के रूप में पूरी की जाती है, लेकिन HBW इसका उपयोग ड्राइवर के लाइसेंस के विकल्प के रूप में नहीं करता। जो यात्री नाव नहीं चलाएँगे, उन्हें PCOC की आवश्यकता नहीं है।
 
-Harris Boat Works पर हमारे पास 9 नावों का किराए का बेड़ा है, जो बिल्कुल ऐसे ही परिवारों के लिए बना है। हमारी टीम आपको नाव के साथ पूरी जानकारी देगी और पानी पर सुरक्षित रहने का तरीका बताएगी। किराए के बारे में पूरी जानकारी यहाँ पाएँ: https://harrisboatworks.ca/rentals
+Harris Boat Works में pontoon और fishing boat rental विकल्प हैं। हमारी टीम आपको नाव के साथ पूरी जानकारी देगी और पानी पर सुरक्षित रहने का तरीका बताएगी। मौजूदा उपलब्धता और चेक-इन नियम यहाँ देखें: https://harrisboatworks.ca/rentals
 
 ## Learn to Fish program | मुफ़्त में मछली पकड़ना सीखें
 
@@ -133,16 +134,15 @@ Rice Lake, Toronto के पास की बेहतरीन मछली �
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-07-18
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,22 +11,23 @@ title: "Mercury Product Protection Platinum : couverture et prix canadiens"
 description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-07-18
+date_modified: 2026-08-08
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
+revenue_driver: repower
 ---
 
 # Mercury Product Protection Platinum : couverture et prix canadiens
 
 > Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les...
 
-**Category:** Garantie  
-**Published:** 2026-05-13  
-**Last updated:** 2026-07-18  
-**Read time:** 9 min  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
+**Catégorie :** Garantie\
+**Publié le :** 2026-05-13\
+**Dernière révision :** 2026-08-08\
+**Temps de lecture :** 9 min\
+**URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 
 ## Réponse rapide
 
@@ -114,6 +115,12 @@ Pour une réclamation, apportez le produit à un concessionnaire Mercury autoris
 
 ---
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 ## Comment obtenir une soumission
 
 Commencez avec la page des [prix Mercury Product Protection](/mercury-product-protection), puis communiquez avec HBW au 905-342-2153 avec le modèle, le numéro de série, les heures et la durée souhaitée. Nous confirmons l'admissibilité, la couverture incluse et le prix final avant l'enregistrement.
@@ -125,7 +132,7 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 
 *Dernière révision : 2026-07-18*
 
-Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
@@ -159,18 +166,17 @@ Non. Les vidanges d'huile, turbines, bougies, anodes, filtres, hélices et autre
 
 La page /mercury-product-protection affiche la fiche de prix HBW par puissance et durée. Les prix sont en CAD avant TVH, et HBW confirme le prix final et l'admissibilité avec le numéro de série.
 
-## Next steps
+## Prochaines étapes
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

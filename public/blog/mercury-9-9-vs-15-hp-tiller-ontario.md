@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-05-18
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,11 +11,12 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-05-18
+date_modified: 2026-08-19
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
+revenue_driver: repower
 ---
 
 # Mercury 9.9 vs 15 HP Tiller for Ontario
@@ -24,11 +25,11 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last updated:** 2026-05-18  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
-# Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
+## Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
 
 > **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 4.5 to 7 kg (10 to 15 lb) weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
@@ -93,7 +94,7 @@ If you're unsure whether your lake has a cap, the Ontario [Boating Restrictions 
 
 ## The Capacity Plate Question
 
-Every boat sold in Canada after the late 1970s has a [capacity plate riveted to the transom](/blog/how-to-read-boat-capacity-plate-ontario) or the inside of the gunwale. The plate states the maximum recommended horsepower for the hull. Exceeding it creates real problems: capacity-plate compliance, insurance liability, potential warranty issues, and steering and handling that the hull was never designed for.
+Most powered pleasure craft under 24 metres require a visible Canadian [compliance notice](/blog/how-to-read-boat-capacity-plate-ontario), subject to exceptions. On an outboard-powered pleasure craft up to 6 metres, the notice also states the manufacturer's maximum recommended safe engine power, people, and load limits. Treat those limits as the boundary and confirm the exact hull documentation before choosing between 9.9 and 15 HP.
 
 For the 9.9 vs 15 conversation, the capacity plate matters when:
 
@@ -101,7 +102,7 @@ For the 9.9 vs 15 conversation, the capacity plate matters when:
 - **Your boat is plated at 15 HP.** Many 14 foot jon boats and 12-14 foot utility hulls cap here. The 15 is the right choice. The 9.9 will feel underpowered, especially loaded with two adults, gear, and a full fuel tank.
 - **Your boat is plated higher than 15 HP.** This guide isn't really for you. A 16 foot hull plated at 25 or 40 HP wants a 25 or 40 HP motor, not a 9.9. Check the [FourStroke buyer guide](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario) for that range.
 
-Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Insurance carriers void coverage for over-powering. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
+Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Over-powering can put insurance coverage at risk, so confirm with your carrier. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
 
 ## What HBW Checks Before Quoting a 9.9 or 15
 
@@ -135,7 +136,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Weight matters more, aft.** Sailboats are sensitive to transom weight. The 7 kg (15 lb) penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
-**Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
+**Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-complete-guide-2026) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
 ## Fuel Economy: The Difference Is Smaller Than You'd Expect
 
@@ -151,11 +152,11 @@ Translation: pick the motor that fits the boat and the use case. Don't pick the 
 
 After decades of small-motor sales on Rice Lake and across the Kawarthas, here's the pattern:
 
-About 70 percent of our small-motor customers walk out with the 15. They're rigging a 14 foot aluminum jon boat plated at 15 HP, or replacing a tired 9.9 on a 16 foot tiller skiff and want a bit more headroom, or running a heavier pontoon kicker that needs the extra HP for upwind trolling.
+In our shop experience, the 15 HP is the more common choice for small boats that are plated for it. Typical buyers are rigging a 14 foot aluminum jon boat, replacing a tired 9.9 on a 16 foot tiller skiff and wanting more headroom, or running a heavier pontoon kicker that needs extra push into the wind.
 
-About 25 percent walk out with the 9.9. They're tournament anglers, sailboat owners replacing an aging Yamaha or Honda auxiliary, or boaters on HP-restricted lakes where the 15 isn't legal.
+The 9.9 is still a common fit for tournament anglers, sailboat owners replacing an aging auxiliary, and boaters on HP-restricted lakes where a 15 is not permitted.
 
-The remaining 5 percent are buying because their old 9.9 or 15 finally died and they're matching what they had. That's a legitimate reason on its own. Familiarity with the controls, the fuel tank you already own, the prop you already own, the bracket you already mounted: all valid.
+Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
 The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
 
@@ -163,7 +164,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Give us a call for current availability on both motors. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -177,7 +178,7 @@ As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short
 
 HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Premier Dealer, which means our service techs are factory-certified on every motor we sell.
 
-We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
+We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from central Toronto in light traffic, on the south shore of Rice Lake. We are pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
 ## Ready to Pick One?
 
@@ -230,23 +231,22 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
 

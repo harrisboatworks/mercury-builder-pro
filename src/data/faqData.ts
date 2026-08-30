@@ -135,7 +135,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Do you offer winterization and storage?',
-        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor seasonal storage with professional shrinkwrap at our Gores Landing facility — we do not offer indoor storage. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service at our Gores Landing facility — we do not offer indoor or heated boat storage. Complete <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a>, then drop off anytime, including after hours, or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },
       {
         question: 'Do you ship Mercury outboards?',
@@ -159,7 +159,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'What is Mercury\'s warranty on new outboards?',
-        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Bonus warranty coverage applies only while an eligible promotion is active. Check <a href="https://www.mercuryrepower.ca/promotions" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">the current promotions page</a> or contact us for the live terms.'
+        answer: 'Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. Both periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check <a href="https://www.mercuryrepower.ca/promotions" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">the current promotions page</a> for live terms.'
       },
       {
         question: 'Where are Mercury outboards made?',
