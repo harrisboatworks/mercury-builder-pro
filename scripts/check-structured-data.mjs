@@ -51,6 +51,16 @@ const HBW_BUSINESS_ENTITY_IDS = new Set([
   'https://www.mercuryrepower.ca/#organization',
   'https://www.mercuryrepower.ca/#localbusiness',
 ]);
+const ORGANIZATION_RATING_TYPES = new Set([
+  'Organization',
+  'LocalBusiness',
+  'AutomotiveBusiness',
+  'AutoDealer',
+  'AutoRepair',
+  'BoatDealer',
+  'FinancialService',
+  'Store',
+]);
 
 const errors = [];
 const warnings = [];
@@ -99,6 +109,11 @@ function isHbwBusinessEntity(node) {
     || (typeof node.name === 'string' && /^Harris Boat Works(?:$|[,\s:—–-])/.test(node.name));
 }
 
+function isOrganizationRatingType(node) {
+  const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+  return types.some(type => ORGANIZATION_RATING_TYPES.has(type));
+}
+
 function validateHtmlFile(file) {
   const html = readFileSync(file, 'utf8');
   const blocks = extractJsonLd(html);
@@ -127,7 +142,8 @@ function validateHtmlFile(file) {
         }
       }
       if (
-        isHbwBusinessEntity(node)
+        isOrganizationRatingType(node)
+        && isHbwBusinessEntity(node)
         && node.aggregateRating
       ) {
         errors.push(

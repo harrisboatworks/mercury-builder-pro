@@ -86,4 +86,17 @@ describe('self-serving business rating schema guard', () => {
       'declares a self-serving aggregateRating',
     );
   });
+
+  it('allows an HBW-branded non-business entity rating', () => {
+    const result = runStructuredDataCheck({
+      type: 'SoftwareApplication',
+      id: 'https://www.mercuryrepower.ca/agents#mcp-server',
+      name: 'Harris Boat Works MCP Server',
+    });
+
+    expect(result.status).toBe(0);
+    expect(`${result.stdout}\n${result.stderr}`).not.toContain(
+      'declares a self-serving aggregateRating',
+    );
+  });
 });
