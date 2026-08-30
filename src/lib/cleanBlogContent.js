@@ -15,7 +15,7 @@ const ITALIC_RELATED_RE =
 const INJECTED_REPOWER_CTA_RE =
   /^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at (?:the )?\[Mercury Repower Centre\]\(https:\/\/www\.mercuryrepower\.ca\/quote\/motor-selection\)\.\s*$/i;
 const CANONICAL_URL_LINE_RE =
-  /^\s*\*\*Canonical URL:\*\*\s+\S+/i;
+  /^\s*\*\*Canonical URL:\*\*(?:\s+\S.*)?\s*$/i;
 
 /**
  * Remove legacy authoring scaffolding before blog content reaches readers,

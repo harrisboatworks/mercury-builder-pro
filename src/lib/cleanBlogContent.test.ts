@@ -101,5 +101,8 @@ The right motor depends on the hull.`;
     expect(cleanBlogContent(content)).toBe(
       '## Quick Answer\n\nThe right motor depends on the hull.',
     );
+    expect(cleanBlogContent('**Canonical URL:**\n\nPublish-ready copy.')).toBe(
+      'Publish-ready copy.',
+    );
   });
 });

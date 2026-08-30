@@ -31,6 +31,7 @@ const LEAK_PATTERNS = [
 
 const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
   { pattern: /\bEnd of file,\s*\d+\s+posts total\b/i, name: 'End-of-file editorial artifact' },
+  { pattern: /\*\*Canonical URL:\*\*/i, name: 'Canonical URL editorial metadata' },
   {
     pattern: /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i,
     name: 'Pending-photography editorial note',
@@ -75,6 +76,8 @@ const PUBLIC_EDITORIAL_ARTIFACT_FILES = [...new Set([
   'src/data/caseStudies.ts',
   'src/data/caseStudiesLongForm.ts',
   'scripts/static-prerender.mjs',
+  'public/blog-index.json',
+  'supabase/functions/_shared/blog-index-generated.ts',
   ...walk('public/blog', ['.md']),
   ...walk('public/case-studies', ['.md']),
 ])];

@@ -97,11 +97,14 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain("'src/data/caseStudies.ts'");
     expect(leakCheck).toContain("'src/data/caseStudiesLongForm.ts'");
     expect(leakCheck).toContain("'scripts/static-prerender.mjs'");
+    expect(leakCheck).toContain("'public/blog-index.json'");
+    expect(leakCheck).toContain("'supabase/functions/_shared/blog-index-generated.ts'");
     expect(leakCheck).toContain("walk('public/blog', ['.md'])");
     expect(leakCheck).toContain("walk('public/case-studies', ['.md'])");
     expect(leakCheck).toContain('/\\bEnd of file,\\s*\\d+\\s+posts total\\b/i');
     expect(leakCheck).toContain('until real photos arrive');
     expect(leakCheck).toContain('illustrative pending real photography');
+    expect(leakCheck).toContain('Canonical URL');
   });
 
   it('resolves generated-index live-rate tokens through the canonical helper', () => {
