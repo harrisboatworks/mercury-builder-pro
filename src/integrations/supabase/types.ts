@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
@@ -309,6 +309,157 @@ export type Database = {
             columns: ["conversation_id"]
             isOneToOne: false
             referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_document_capabilities: {
+        Row: {
+          bound_email: string | null
+          bound_phone: string | null
+          created_at: string
+          document_id: string
+          expires_at: string
+          id: string
+          last_used_at: string | null
+          purpose: string
+          revoked_at: string | null
+          token_hash: string
+          use_count: number
+        }
+        Insert: {
+          bound_email?: string | null
+          bound_phone?: string | null
+          created_at?: string
+          document_id: string
+          expires_at: string
+          id?: string
+          last_used_at?: string | null
+          purpose: string
+          revoked_at?: string | null
+          token_hash: string
+          use_count?: number
+        }
+        Update: {
+          bound_email?: string | null
+          bound_phone?: string | null
+          created_at?: string
+          document_id?: string
+          expires_at?: string
+          id?: string
+          last_used_at?: string | null
+          purpose?: string
+          revoked_at?: string | null
+          token_hash?: string
+          use_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_document_capabilities_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "consultation_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_document_jobs: {
+        Row: {
+          created_at: string
+          document_id: string | null
+          error_name: string | null
+          id: string
+          quote_id: string | null
+          quote_number: string
+          sha256: string | null
+          status: string
+          storage_key: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          document_id?: string | null
+          error_name?: string | null
+          id?: string
+          quote_id?: string | null
+          quote_number: string
+          sha256?: string | null
+          status: string
+          storage_key?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string | null
+          error_name?: string | null
+          id?: string
+          quote_id?: string | null
+          quote_number?: string
+          sha256?: string | null
+          status?: string
+          storage_key?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_document_jobs_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "consultation_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "consultation_document_jobs_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_documents: {
+        Row: {
+          byte_size: number
+          content_type: string
+          created_at: string
+          customer_quote_id: string | null
+          delivery_snapshot: Json
+          id: string
+          quote_number: string
+          sha256: string
+          storage_key: string
+          updated_at: string
+        }
+        Insert: {
+          byte_size: number
+          content_type?: string
+          created_at?: string
+          customer_quote_id?: string | null
+          delivery_snapshot: Json
+          id?: string
+          quote_number: string
+          sha256: string
+          storage_key: string
+          updated_at?: string
+        }
+        Update: {
+          byte_size?: number
+          content_type?: string
+          created_at?: string
+          customer_quote_id?: string | null
+          delivery_snapshot?: Json
+          id?: string
+          quote_number?: string
+          sha256?: string
+          storage_key?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_documents_customer_quote_id_fkey"
+            columns: ["customer_quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
             referencedColumns: ["id"]
           },
         ]
