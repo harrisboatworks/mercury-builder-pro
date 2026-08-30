@@ -27,7 +27,7 @@ const unsafePublicWriteGrantPattern = new RegExp(
 );
 
 const disabledRlsPattern = new RegExp(
-  `ALTER\\s+TABLE\\s+(?:IF\\s+EXISTS\\s+)?(?:ONLY\\s+)?${financingApplicationsTablePattern}\\s+DISABLE\\s+ROW\\s+LEVEL\\s+SECURITY\\b`,
+  `ALTER\\s+TABLE\\s+(?:IF\\s+EXISTS\\s+)?(?:ONLY\\s+)?${financingApplicationsTablePattern}(?:\\s+\\*)?\\s+DISABLE\\s+ROW\\s+LEVEL\\s+SECURITY\\b`,
   'i',
 );
 
@@ -176,6 +176,9 @@ describe('financing application write authority', () => {
     ).toMatch(disabledRlsPattern);
     expect(
       'ALTER TABLE IF EXISTS ONLY financing_applications DISABLE ROW LEVEL SECURITY',
+    ).toMatch(disabledRlsPattern);
+    expect(
+      'ALTER TABLE IF EXISTS ONLY "public"."financing_applications" * DISABLE ROW LEVEL SECURITY',
     ).toMatch(disabledRlsPattern);
   });
 
