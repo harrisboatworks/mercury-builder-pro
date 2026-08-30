@@ -25,7 +25,9 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
     .find((statement) => {
       const policyAction = statement.match(/\b(CREATE|ALTER)\s+POLICY\b/i)?.[1]
         ?.toUpperCase();
-      const tableMatch = statement.match(/\bON\s+public\.financing_applications\b/i);
+      const tableMatch = statement.match(
+        /\bON\s+(?:(?:"public"|public)\s*\.\s*)?(?:"financing_applications"|financing_applications)(?=\s|$)/i,
+      );
       if (
         !policyAction ||
         !tableMatch ||
@@ -124,6 +126,14 @@ describe('financing application write authority', () => {
     expect(findUnsafePublicWritePolicy(`
       ALTER POLICY "Admins have full access to applications"
       ON public.financing_applications USING (true) WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "unqualified open writes" ON financing_applications
+      USING (true) WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "quoted open writes" ON "public"."financing_applications"
+      FOR INSERT TO authenticated WITH CHECK (true);
     `)).toBeDefined();
     expect(findUnsafePublicWritePolicy(`
       CREATE POLICY "public reads" ON public.financing_applications
