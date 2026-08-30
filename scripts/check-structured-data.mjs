@@ -26,6 +26,7 @@
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { isValidDateOnly } from '../src/data/mercuryProXSOffers.js';
 
 const DIST = process.env.SCHEMA_DIST || 'dist';
 const SRC_PRERENDER = 'scripts/static-prerender.mjs';
@@ -144,8 +145,8 @@ function validateHtmlFile(file) {
       errors.push(`${file}: expected 4 Pro XS Product offers, found ${proXsOffers.length}.`);
     }
     for (const offer of proXsOffers) {
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(offer.validFrom || ''))) {
-        errors.push(`${file}: Pro XS Product offer is missing a valid canonical "validFrom" date.`);
+      if (!isValidDateOnly(offer.validFrom)) {
+        errors.push(`${file}: Pro XS Product offer is missing a valid canonical calendar "validFrom" date.`);
       }
     }
   }

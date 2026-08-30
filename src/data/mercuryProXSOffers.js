@@ -7,13 +7,29 @@ const PRO_XS_IMAGE_PATHS = {
   250: '/images/seo/proxs-250.jpeg',
 };
 
-const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
+const DATE_ONLY = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+export function isValidDateOnly(value) {
+  const match = DATE_ONLY.exec(String(value));
+  if (!match) return false;
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const parsed = new Date(0);
+  parsed.setUTCHours(0, 0, 0, 0);
+  parsed.setUTCFullYear(year, month - 1, day);
+
+  return parsed.getUTCFullYear() === year
+    && parsed.getUTCMonth() === month - 1
+    && parsed.getUTCDate() === day;
+}
 
 // Shared by the hydrated SEO component and the crawler-facing prerender.
 // The canonical pricing update date is the truthful start of this published
 // offer snapshot; do not replace it with a build date or hard-coded guess.
 export function buildMercuryProXSOffers({ skus, lastUpdated, siteUrl }) {
-  if (!DATE_ONLY.test(String(lastUpdated))) {
+  if (!isValidDateOnly(lastUpdated)) {
     throw new Error(`Invalid canonical pricing last_updated date: ${lastUpdated}`);
   }
 
