@@ -23,28 +23,42 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
     .split(';')
     .map((statement) => statement.trim())
     .find((statement) => {
+      const policyAction = statement.match(/\b(CREATE|ALTER)\s+POLICY\b/i)?.[1]
+        ?.toUpperCase();
+      const tableMatch = statement.match(/\bON\s+public\.financing_applications\b/i);
       if (
-        !/CREATE\s+POLICY\b/i.test(statement) ||
-        !/\bON\s+public\.financing_applications\b/i.test(statement)
+        !policyAction ||
+        !tableMatch ||
+        tableMatch.index === undefined
       ) {
         return false;
       }
+      const policyTail = statement.slice(tableMatch.index + tableMatch[0].length);
 
-      // PostgreSQL defaults an omitted command to ALL and an omitted role to PUBLIC.
-      const command = statement.match(/\bFOR\s+(ALL|SELECT|INSERT|UPDATE|DELETE)\b/i)?.[1]
-        ?.toUpperCase() ?? 'ALL';
-      if (!['ALL', 'INSERT', 'UPDATE', 'DELETE'].includes(command)) return false;
-
-      const roleClause = statement.match(
+      const roleMatch = policyTail.match(
         /\bTO\s+(.+?)(?=\bUSING\b|\bWITH\s+CHECK\b|$)/i,
-      )?.[1] ?? 'PUBLIC';
-      const roles = roleClause
+      );
+      const roles = (roleMatch?.[1] ?? 'PUBLIC')
         .replace(/["']/g, '')
         .split(/[\s,]+/)
         .filter(Boolean)
         .map((role) => role.toLowerCase());
+      const hasPublicClientRole = roles.some(
+        (role) => ['public', 'anon', 'authenticated'].includes(role),
+      );
 
-      return roles.some((role) => ['public', 'anon', 'authenticated'].includes(role));
+      // ALTER POLICY cannot change its command. Without an explicit role, its
+      // pre-existing role is also unknown here, so require a deliberate review.
+      if (policyAction === 'ALTER') {
+        return !roleMatch || hasPublicClientRole;
+      }
+
+      // PostgreSQL defaults an omitted CREATE command to ALL and role to PUBLIC.
+      const command = policyTail.match(/\bFOR\s+(ALL|SELECT|INSERT|UPDATE|DELETE)\b/i)?.[1]
+        ?.toUpperCase() ?? 'ALL';
+      if (!['ALL', 'INSERT', 'UPDATE', 'DELETE'].includes(command)) return false;
+
+      return hasPublicClientRole;
     });
 
 describe('financing application write authority', () => {
@@ -103,12 +117,25 @@ describe('financing application write authority', () => {
       FOR DELETE TO authenticated USING (true);
     `)).toBeDefined();
     expect(findUnsafePublicWritePolicy(`
+      ALTER POLICY "Admins have full access to applications"
+      ON public.financing_applications TO authenticated
+      USING (true) WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      ALTER POLICY "Admins have full access to applications"
+      ON public.financing_applications USING (true) WITH CHECK (true);
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
       CREATE POLICY "public reads" ON public.financing_applications
       FOR SELECT USING (true);
     `)).toBeUndefined();
     expect(findUnsafePublicWritePolicy(`
       CREATE POLICY "service writes" ON public.financing_applications
       FOR ALL TO service_role USING (true) WITH CHECK (true);
+    `)).toBeUndefined();
+    expect(findUnsafePublicWritePolicy(`
+      ALTER POLICY "service writes" ON public.financing_applications
+      TO service_role USING (true) WITH CHECK (true);
     `)).toBeUndefined();
   });
 
