@@ -39,29 +39,32 @@ export function useAutoSaveQuoteOnAuth() {
         const quoteData = getQuoteData();
         const motorModel = state.motor?.model || 'Mercury Motor';
         const hp = state.motor?.hp || 0;
+        const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
 
         // Generate resume token
         const tokenArray = new Uint8Array(24);
         crypto.getRandomValues(tokenArray);
         const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
+        const savedQuoteId = crypto.randomUUID();
         const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
 
-        const { data: savedQuote, error } = await supabase
+        const { error } = await supabase
           .from('saved_quotes')
           .insert({
+            id: savedQuoteId,
             email: user.email || '',
             resume_token: resumeToken,
             quote_state: {
               ...state,
+              customerName: userName,
+              customerEmail: user.email || '',
               ...(isQuotePdfSnapshot(state.pdfSnapshot) ? {
                 frozenPricing: frozenPricingFromPdfSnapshot(state.pdfSnapshot),
               } : {}),
             } as any,
             user_id: user.id,
             expires_at: expiresAt.toISOString(),
-          })
-          .select()
-          .single();
+          });
 
         if (error) {
           console.error('Auto-save quote error:', error);
@@ -74,9 +77,7 @@ export function useAutoSaveQuoteOnAuth() {
         }
 
         // Store ID for other features (QR, PDF, etc.)
-        if (savedQuote?.id) {
-          localStorage.setItem('current_saved_quote_id', savedQuote.id);
-        }
+        localStorage.setItem('current_saved_quote_id', savedQuoteId);
 
         toast({
           title: '✓ Quote saved to your account',
@@ -86,19 +87,18 @@ export function useAutoSaveQuoteOnAuth() {
         // Dispatch event so QuoteSummaryPage can show phone capture prompt
         setTimeout(() => {
           window.dispatchEvent(new CustomEvent('quote-saved-via-auth', {
-            detail: { savedQuoteId: savedQuote?.id },
+            detail: { savedQuoteId },
           }));
         }, 1500);
 
         // Admin notifications (non-blocking)
-        const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
         const finalPrice = quoteData.motor?.price || 0;
 
         supabase.functions.invoke('send-quote-email', {
           body: {
             customerName: userName,
             customerEmail: user.email,
-            quoteNumber: savedQuote.id?.slice(0, 8)?.toUpperCase() || 'NEW',
+            quoteNumber: savedQuoteId.slice(0, 8).toUpperCase(),
             motorModel,
             totalPrice: finalPrice,
             emailType: 'admin_quote_notification',
@@ -120,15 +120,8 @@ export function useAutoSaveQuoteOnAuth() {
         // Send customer their saved quote email
         supabase.functions.invoke('send-saved-quote-email', {
           body: {
-            customerEmail: user.email,
-            customerName: userName,
-            quoteId: savedQuote.id,
-            savedQuoteId: savedQuote.id,
+            savedQuoteId,
             resumeToken,
-            motorModel,
-            finalPrice,
-            quoteData: state,
-            includeAccountInfo: false,
           },
         }).catch(() => {});
 
