@@ -116,14 +116,14 @@ export function SaveQuoteDialog({
         .select()
         .single();
 
-      if (savedQuoteError) {
+      if (savedQuoteError || !savedQuote?.id) {
         console.error('Error saving quote state:', savedQuoteError);
-        // Continue anyway - we have the customer_quotes record
-      } else if (savedQuote?.id) {
-        // Store saved quote ID for QR code generation
-        localStorage.setItem('current_saved_quote_id', savedQuote.id);
-        console.log('Saved quote ID for QR code:', savedQuote.id);
+        throw savedQuoteError ?? new Error('Saved quote insert returned no ID');
       }
+
+      // Store saved quote ID for QR code generation
+      localStorage.setItem('current_saved_quote_id', savedQuote.id);
+      console.log('Saved quote ID for QR code:', savedQuote.id);
 
       // Analytics: quote_saved + lead_submitted
       trackAgentEvent({
