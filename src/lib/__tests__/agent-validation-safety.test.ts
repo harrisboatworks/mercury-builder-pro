@@ -22,7 +22,7 @@ describe('agent validation safety', () => {
       "--exclude '**/financing-submission-permissions.test.ts'",
     );
     expect(packageJson.scripts['test:integration:financing']).toBe(
-      'node --env-file-if-exists=.env.local scripts/run-financing-integration.mjs',
+      'node scripts/run-financing-integration.mjs',
     );
 
     const integrationTest = readFileSync(
@@ -40,17 +40,23 @@ describe('agent validation safety', () => {
     expect(dedicatedRunner.indexOf('missingCredentials')).toBeLessThan(
       dedicatedRunner.indexOf('const result = spawnSync('),
     );
+    expect(dedicatedRunner.indexOf("loadEnvFile('.env.local')")).toBeLessThan(
+      dedicatedRunner.indexOf('missingCredentials'),
+    );
+    expect(dedicatedRunner).not.toContain('--env-file-if-exists');
     expect(dedicatedRunner).not.toContain('process.env.HBW_FINANCING_TEST_RUNNER =');
   });
 
   it('fails the dedicated financing runner before Vitest when credentials are missing', () => {
     const runner = resolve(repoRoot, 'scripts/run-financing-integration.mjs');
+    const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-financing-missing-env-'));
+    temporaryDirectories.push(fixtureRoot);
     const env = { ...process.env };
     delete env.FINANCING_TEST_EMAIL;
     delete env.FINANCING_TEST_PASSWORD;
 
     const result = spawnSync(process.execPath, [runner], {
-      cwd: repoRoot,
+      cwd: fixtureRoot,
       encoding: 'utf8',
       env,
     });
@@ -75,9 +81,9 @@ describe('agent validation safety', () => {
     const result = spawnSync(
       process.execPath,
       [
-        '--env-file-if-exists=.env.local',
+        '--input-type=module',
         '-e',
-        'process.stdout.write(`${process.env.FINANCING_TEST_EMAIL}|${process.env.FINANCING_TEST_PASSWORD}`)',
+        'import { existsSync } from "node:fs"; import { loadEnvFile } from "node:process"; if (existsSync(".env.local")) loadEnvFile(".env.local"); process.stdout.write(`${process.env.FINANCING_TEST_EMAIL}|${process.env.FINANCING_TEST_PASSWORD}`)',
       ],
       { cwd: fixtureRoot, encoding: 'utf8', env },
     );

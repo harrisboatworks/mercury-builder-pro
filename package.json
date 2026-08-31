@@ -11,7 +11,7 @@
     "dev": "vite",
     "test": "npm run test:unit",
     "test:unit": "vitest run --exclude '**/financing-submission-permissions.test.ts'",
-    "test:integration:financing": "node --env-file-if-exists=.env.local scripts/run-financing-integration.mjs",
+    "test:integration:financing": "node scripts/run-financing-integration.mjs",
     "typecheck": "tsc -p tsconfig.app.json --noEmit --pretty false && tsc -p tsconfig.node.json --noEmit --pretty false",
     "typecheck:api": "tsc -p tsconfig.api.json --noEmit --pretty false",
     "verify:api": "node scripts/check-api-files.mjs && npm run typecheck:api",

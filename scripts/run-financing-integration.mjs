@@ -1,4 +1,8 @@
 import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { loadEnvFile } from 'node:process';
+
+if (existsSync('.env.local')) loadEnvFile('.env.local');
 
 const requiredCredentials = ['FINANCING_TEST_EMAIL', 'FINANCING_TEST_PASSWORD'];
 const missingCredentials = requiredCredentials.filter((name) => !process.env[name]?.trim());
