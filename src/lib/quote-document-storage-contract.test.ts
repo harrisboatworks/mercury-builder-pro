@@ -39,7 +39,9 @@ describe('private quote document storage contract', () => {
     const depositGuard = payment.indexOf('assertDepositRequestHasSavedQuoteId');
     const stripeConstruct = payment.indexOf('new Stripe(');
     const documentCheck = payment.indexOf('assertCanonicalQuoteDocumentReady({');
-    const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData)');
+    const stripeCreate = payment.indexOf(
+      'const session = await stripe.checkout.sessions.create(',
+    );
     expect(payment).toContain('assertDepositRequestHasSavedQuoteId(validationResult.data)');
     expect(payment).toContain('if (!depositSavedQuoteId)');
     expect(payment).toContain('assertCanonicalQuoteDocumentReady({');
