@@ -433,14 +433,11 @@ This is a marina / outboard dealer, not an auto shop. Google may attach reviews 
 
 Historical live `/api/agents/motors` read (2026-08-15): 65 / 101 images missing; 5 relative URLs; shaft/control almost entirely null; all canonical URLs were apex.
 
-Relative to the May 2026 audit (22/25 missing images), the gap was worse in that August 15 snapshot. This is not a current count or current-production status; revalidate the feed and current-main source before opening work.
+Relative to the May 2026 audit (22/25 missing images), the gap was worse in that August 15 snapshot. This is not a current count or current-production status. Merged #337 has since resolved the source-contract subset on current `main`: both public APIs use shared `PUBLIC_SITE_URL`/`toPublicImageUrl`, and `public-motors-api` emits `shaftLength` and `controlType` from the selected columns.
 
 **Conditional action after revalidation**
 
-1. Backfill `hero_image_url` / `image_url` via existing Dropbox sync (data, not a new feature).
-2. In `public-motors-api`, absolutize relative paths against `https://www.mercuryrepower.ca`.
-3. Emit `www` URLs, not apex (apex 301s).
-4. Populate shaft/control from `shaft` / `shaft_code` / `control_type` already selected in the query — the columns are fetched and then dropped.
+Revalidate the current feed before opening new work. If image coverage remains poor, backfill `hero_image_url` / `image_url` through the existing Dropbox/data owner lane. Do not duplicate #337's already-shipped URL normalization, image absolutization, or shaft/control mapping.
 
 #### P1-4. Promotions page — do not cite obsolete 5.48% visible-rate drift
 
@@ -516,17 +513,11 @@ This defeats CDN caching. Sitemap and marketing HTML revalidate every second. Co
 
 **Action:** Keep HTML short-cache if inventory must be fresh, but give `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/assets/*` (already immutable), and markdown twins a real `s-maxage` (sitemap: 1h; twins already have 300/3600). The catch-all `/(.*)` rule currently **overrides** more specific rules depending on Vercel merge order — verify the actual live header per path after any change.
 
-#### P1-12. Apex vs www still leaks into APIs and schema
+#### P1-12. Public API apex URLs resolved by merged #337
 
 Middleware + `vercel.json` 301 apex and `quote.harrisboatworks.ca` → www. Good.
 
-Still emitting apex:
-
-- `public-motors-api` `SITE_URL = 'https://mercuryrepower.ca'`
-- `public-quote-api` `SITE_URL` default
-- Motor `url` fields in the live feed
-
-**Action:** One constant: `https://www.mercuryrepower.ca`. Use it in Edge Functions, prerender, and JSON-LD.
+Current `main` now imports shared `PUBLIC_SITE_URL` in both `public-motors-api` and `public-quote-api`, and constructs motor/quote URLs from the `www` origin. Merged #337 owns that completed source work. Treat the August 15 apex feed values as historical and verify current production before filing any residual data or JSON-LD issue; do not put the API work back into an implementation band.
 
 #### P1-13. Accessibility / UX nits on the money pages
 
@@ -564,7 +555,7 @@ Still emitting apex:
 
 Voice, Dropbox, scrape-mercury-*, ElevenLabs, growth-agent, Zapier, SMS, etc. Many look like one-off ops tools. Each is an auth-review surface.
 
-**Action:** Inventory which are invoked in production cron / UI. Mark the rest `verify_jwt = true` and remove from public docs.
+**Action:** Inventory production cron/UI callers, third-party signed webhooks, and deliberately public consumers. Preserve or replace each function's authentication contract individually: Stripe-style webhooks need provider-signature verification, public APIs need their explicit public/rate-limit contract, and only functions whose callers can supply a Supabase JWT should move to `verify_jwt = true`. Remove genuinely private or retired functions from public docs; never apply a blanket JWT switch to the remainder.
 
 #### P2-5. Scaffold leftovers
 
@@ -619,12 +610,10 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 1. **Twilio half of P0-8** — preserve accepted draft PR #332 and its release sequence. Its exact-head implementation verifies signatures against a configured canonical URL (not `Host`/forwarded-host), early callbacks, monotonic/out-of-order statuses, repeated keys, duplicate rows, signed-row/`MessageSid` targeting, and error-code retention. Draft migrations only; do not apply them here.
 2. **Lightspeed server half of P0-8/P0-9** — merged #331 already removed public browser triggers and the README key instruction. Pause before the remaining function-auth patch until Jay selects and stages a scheduler credential compatible with the deployed cron.
 3. Decide the tracked `.env` policy in a separate reviewed change. Merely adding `.env` to `.gitignore` does nothing while the file is tracked. If untracking is approved, first commit an empty-value `.env.example`, then remove `.env` from the index while retaining the local file and add the ignore rule; do not rewrite history unless Jay asks.
-4. P1-12 www URLs in public motors/quote APIs
-5. P1-3 absolutize image URLs + pass through shaft/control already in the query
-6. P1-5 revalidate the footer cache/fallback and align `ai.txt` generation to the authoritative hours source
-7. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
+4. P1-5 revalidate the footer cache/fallback and align `ai.txt` generation to the authoritative hours source
+5. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
 
-**Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, P0-8 `send-notification` (`#300`), accepted #315 Dropbox/quote-email work, P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step).
+**Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, merged #337 public-API URL/image/shaft/control work, P0-8 `send-notification` (`#300`), accepted #315 Dropbox/quote-email work, P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step).
 
 ### Band B — needs a 10-minute Jay copy/business nod
 
