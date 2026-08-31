@@ -13,6 +13,13 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('Have HBW Review My Quote');
   });
 
+  it('uses a bookmark icon, not a download icon, for mobile Save for Later', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+
+    expect(summarySource).toContain('<Bookmark className="w-4 h-4" aria-hidden="true" />\n                      Save for Later');
+    expect(summarySource).not.toContain('<Download className="w-4 h-4" />\n                      Save for Later');
+  });
+
   it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
     const saleSource = read('src/components/motors/Mercury99MHSalePage.tsx');
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
