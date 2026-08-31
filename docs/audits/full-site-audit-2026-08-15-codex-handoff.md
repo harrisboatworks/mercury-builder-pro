@@ -2,6 +2,7 @@
 
 **Handoff for Codex review**  
 **Date:** 2026-08-15  
+**Current ownership refresh:** 2026-08-30 against `origin/main` `61864aa3`
 **Auditor:** Cursor Cloud Agent (code + live-site read, no production writes)  
 **Repo:** `harrisboatworks/mercury-builder-pro`  
 **Live origin:** https://www.mercuryrepower.ca  
@@ -16,7 +17,7 @@ This is a review brief, not a punch list to blindly implement.
 
 1. Treat **Section 2 (do not regress)** as hard constraints.
 2. Treat **Section 0.1 (ownership)** before Section 5. Do not re-implement work already owned on another draft PR.
-3. Treat **Section 5 (P0/P1)** as the remaining work queue. Confirm each finding before coding. Several original P0s were reclassified on 2026-08-15 after inspecting draft PRs #300, #314, #315, #290, and #288.
+3. Treat **Section 5 (P0/P1)** as historical evidence plus the current ownership refresh below. Confirm each finding against current `main` before coding. Several original P0s were reclassified on 2026-08-15, and their owner lanes changed again by 2026-08-30.
 4. Ask Jay before anything in **Section 8 (business decisions)** or **Section 0.1 JAY DECISION REQUIRED**.
 5. Prefer the smallest safe change. Do not start a rewrite of `blogArticles.ts`, the quote funnel, or the prebuild pipeline unless Jay explicitly scopes it.
 6. After any change, run the relevant existing contract tests listed in Section 10. Do not invent a new test framework.
@@ -24,37 +25,45 @@ This is a review brief, not a punch list to blindly implement.
 
 ---
 
-## 0.1 Execution-order ownership (2026-08-15 correction)
+## 0.1 Execution-order ownership (refreshed 2026-08-30)
 
-Inspected against current `origin/main` (`3d1214b6b`) and the exact diffs on draft PRs #300, #314, #315, #290, and #288. Those PRs do **not** touch Lightspeed inventory sync, `notification-webhook`, or funnel warranty badges.
+Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/diffs. PR #314 is closed and unmerged. PR #315 is still based on the exact #314 head rather than `main`, so it is not a merge-ready current-main owner until it is retargeted/refreshed. Merged PRs #331 and #333 changed two findings that this audit originally called unowned. PR #335 is the verified current-main successor for the safe route/header subset of #314.
 
 ### ALREADY OWNED — do not duplicate
 
-| Draft PR | Exact overlap | Still covers it? |
+| PR | Exact overlap | Current status |
 | --- | --- | --- |
-| **#300** | `send-notification` trust boundary: service-role / internal caller gate + payload policy + tests | Yes. Do not re-auth that function here. |
-| **#314** | `/admin/blog` UI authorization (`SecureRoute requireAdmin={true}`) and baseline response security headers (`nosniff`, Referrer-Policy, `X-Frame-Options: SAMEORIGIN`, Permissions-Policy that does not block mic/payment) | Yes. `/admin/blog` is defense-in-depth, not an open P0. Missing headers are confirmed hardening, not an independently demonstrated exploit. |
-| **#315** | Dropbox OAuth / import / config + quote-email hardening (admin gate, origin-restricted CORS, tokens stay server-side, SSRF/admin-note targeting). Base is #314, not `main`. | Yes. Do not re-do Dropbox or quote-email. |
-| **#290** | Shared-quote data minimization, expiry, soft-lead exclusion, atomic `increment_saved_quote_access` (migration drafted, not applied) | Yes. Keep shared-quote findings separate from financing-resume. |
-| **#288** | Financing table write authority. Drops anon/user write policies on `financing_applications`. **Explicitly keeps** `anon` execute on `encrypt_sin`. | Yes. Do **not** revoke anon execute on `encrypt_sin`. |
+| **#300** | `send-notification` trust boundary: service-role/internal caller gate, payload policy, and tests | Open, ready, current-main, and clean. Do not re-auth that function here. |
+| **#335** | `/admin/blog` UI authorization plus safe baseline response headers | Open, ready, current-main, and clean. This supersedes the safe #314 subset. `/admin/blog` remains defense-in-depth; the baseline headers remain hardening, not a demonstrated exploit. |
+| **#315** | Dropbox OAuth/import/config plus quote-email hardening | Open draft, but still stacked on closed/unmerged #314. Preserve the lane, but do not treat it as merge-ready or duplicate its work; refresh it onto current `main` first. |
+| **#290** | Shared-quote data minimization, expiry, soft-lead exclusion, atomic `increment_saved_quote_access` (migration drafted, not applied) | Open, ready, current-main, and clean. Keep shared-quote findings separate from financing-resume. |
+| **#288** | Financing table write authority. Drops anon/user write policies on `financing_applications`. **Explicitly keeps** `anon` execute on `encrypt_sin`. | Open, ready, current-main, and clean. Do **not** revoke anon execute on `encrypt_sin`. |
+
+### Implementations opened from this audit
+
+| PR | Audit surface | Current status |
+| --- | --- | --- |
+| **#331** | Remove public quote-builder Lightspeed sync triggers and unsafe README service-role-key instructions | **Merged** into `main` as `45e25b3a`. The server-side Edge Function still creates a service-role client without caller authentication; #331 did not change that function or the anon-JWT cron contract. |
+| **#332** | Validate Twilio `notification-webhook` signatures and target status updates safely | Refreshed draft at current-main head `f3fcabd3`; clean/mergeable with exact-head CI, protected preview, Codex, Kimi, and security gates passed for signature, early-callback, monotonic status, URL-normalization, repeated-key, duplicate-row, targeting, and error-code behavior. It remains draft for the #300/migration/config/function release sequence. Do not duplicate it. |
+| **#333** | Derive quote-funnel and legacy SMS warranty copy from promotion data | **Merged** into `main` as `6e482d84`. Current main uses the shared warranty-display contract and focused tests; the quote UI selects the applied promotion, while retained SMS templates accept explicit extra-year data. The original hardcoded-badge finding is resolved. |
 
 ### CORRECTIONS to the original report
 
 - **Do not recommend revoking anon execute on `encrypt_sin`.** The public financing flow currently requires it. Moving encryption server-side would need an atomic replacement design, not a revoke-first change.
-- **`/admin/blog` is missing a UI gate on `main`,** but RLS and `send-blog-notification` authorization reduce the severity. Classify as **defense-in-depth**, already owned by **#314**.
+- **`/admin/blog` is missing a UI gate on `main`,** but RLS and `send-blog-notification` authorization reduce the severity. Classify as **defense-in-depth**, already owned by **#335**. PR #314 is closed and unmerged.
 - **The disabled client login limiter** in `SecureAuth.tsx` is **not** proof that Supabase Auth lacks server-side rate limiting. It is a dead client TODO only.
-- **Missing response security headers** are confirmed hardening work, not an independently demonstrated P0 exploit. Owned by **#314**.
+- **Missing response security headers** are confirmed hardening work, not an independently demonstrated P0 exploit. The safe baseline is owned by **#335**, not closed PR #314.
 - **Public service-role endpoints using explicit `select` lists** are not current `select(*)` vulnerabilities. Keep the lists explicit; do not file them as live select-star bugs.
 - **Separate shared-quote findings from financing-resume findings.** Shared-quote is #290. Financing resume TTL / capability-URL work is a different surface and is not owned by #290.
-- **Production `/promotions` currently presents Summer Savings coherently, including 2.99% financing.** The obsolete 5.48% *visible-rate* claim is removed from this report. Do not revive it from prerender folklore or archived TD copy without a new cache-busted production check.
+- **Production `/promotions` presented Summer Savings coherently, including 2.99% financing, in the 2026-08-15 cache-busted check.** The obsolete 5.48% *visible-rate* claim is removed from this report. Do not revive either historical state as a current claim without a new cache-busted production check.
 - **`/quote/motor-selection` rendered successfully** in desktop and 390×844 mobile verification with **no overflow or lazy-load failure**. Retain the headless `LazyRouteBoundary` (“Couldn't load this page”) only as **unconfirmed monitoring evidence**.
 - **Do not treat stale reports, old promotion copy, or archived plans as current findings** without cache-busted production verification.
 
-### Still unowned after those PRs (this execution order)
+### Current execution state
 
-1. Lightspeed inventory trust boundary — public browser invokes `sync-lightspeed-inventory`; function uses service role with no caller auth.
-2. Twilio `notification-webhook` authenticity — no `X-Twilio-Signature` check before `sms_logs` mutation.
-3. Promotion-derived warranty copy in `PromoSummaryCard` / `PromoSelectionBadge` (and leftover `get7_*` SMS template strings).
+1. **Lightspeed is partially resolved.** Merged #331 removed every public quote-builder trigger and the unsafe README curl. The remaining server-side function still creates a service-role client without caller authentication; changing that contract is blocked on the scheduler-auth decision below.
+2. **Twilio is owned by accepted draft #332.** Preserve its exact current-main implementation and explicit release sequence; do not create a duplicate implementation.
+3. **Promotion-derived warranty copy is resolved.** Merged #333 covers the quote UI and related displays through the applied promotion, while retained `get7_*` SMS templates use the same display helper with explicit extra-year data.
 
 ### JAY DECISION REQUIRED (do not silently change)
 
@@ -143,15 +152,15 @@ These are working systems. A "cleanup" that breaks them is a failed review.
 
 ---
 
-## 3. Live-site snapshot (2026-08-15)
+## 3. Historical live-site snapshot (2026-08-15; revalidate before use)
 
-Checked from this environment against `https://www.mercuryrepower.ca`.
+Checked from this environment against `https://www.mercuryrepower.ca` on 2026-08-15. The figures and response observations in this section are historical evidence, not a current-production attestation. Revalidate exact production identity and cache-busted rendered behavior before acting on them.
 
 | URL | Result |
 | --- | --- |
 | `/` | 200. Hero + dual CTAs (Build Quote + Call). Trust/process/heritage sections render. |
 | `/quote/motor-selection` | 200. **Cache-busted rendered verification succeeded** on desktop and 390×844 mobile: page rendered, no overflow, no lazy-load failure. A headless fetch also surfaced the `LazyRouteBoundary` card ("Couldn't load this page"). Keep that only as **unconfirmed monitoring evidence** — it is not a confirmed production outage and is not a current P0/P1 by itself. |
-| `/promotions` | 200. **Current production presents Summer Savings coherently, including 2.99% financing.** Do not cite an obsolete 5.48% visible-rate claim from older prerender/TD copy as a live finding. Re-verify with a cache-busted render before claiming offer drift again. |
+| `/promotions` | 200. **On 2026-08-15, production presented Summer Savings coherently, including 2.99% financing.** Do not cite an obsolete 5.48% visible-rate claim from older prerender/TD copy as a current finding. Re-verify with a cache-busted render before claiming offer drift again. |
 | `/blog` | 200. ~199 English guides. Cover story + cluster rails look healthy. |
 | `/llms.txt` | 200. Policy text is current. Motor examples are non-Verado. |
 | `/robots.txt` | 200. Last updated 2026-07-15. Allows AI crawlers. Disallows `/admin` and `/api/` after allowing `/api/agents/`. |
@@ -167,9 +176,9 @@ strict-transport-security: max-age=63072000
 server: Vercel
 ```
 
-Missing on current `main` HTML (defined in unused `SECURITY_HEADERS` but not applied at the edge): `Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`. This is **confirmed hardening**, not an independently demonstrated P0 exploit. Baseline headers (without a breaking CSP / without blocking mic or payment) are **already owned by PR #314**.
+Current-main source was rechecked on 2026-08-30: the safe baseline is still absent from `vercel.json` (the unused `SECURITY_HEADERS` object is not applied at the edge). This is **confirmed hardening**, not an independently demonstrated P0 exploit. Baseline headers without a guessed CSP and without blocking microphone/payment are **owned by PR #335**.
 
-**Public motors feed (live)**
+**Public motors feed (historical 2026-08-15 live read)**
 
 - 101 motors (May 2026 audit said 25 — catalog is now brochure-complete, not "in-stock only")
 - 16 in stock, 85 special order
@@ -215,12 +224,12 @@ Inconsistencies:
 
 - `/dashboard` uses `SecureRoute` **without** `requireAdmin`
 - `/settings` uses `ProtectedRoute`
-- `/admin/blog` uses `SecureRoute` **without** `requireAdmin` on `main` — **defense-in-depth**, already owned by **#314**. RLS + `send-blog-notification` `requireAdmin` reduce severity.
+- `/admin/blog` uses `SecureRoute` **without** `requireAdmin` on current `main` — **defense-in-depth**, already owned by **#335**. RLS + `send-blog-notification` `requireAdmin` reduce severity.
 - Login paths: `/auth` and `/login` both exist
 
 ### 4.3 Admin surface
 
-~25 admin routes (quotes, financing, SIN test, Zapier, email, SMS, inventory, stock sync, connectors, growth agent, SEO health, options catalog, pricing import, image update, blog). On `main`, all except `/admin/blog` set `requireAdmin={true}`. The blog UI gate is already owned by **#314**.
+~25 admin routes (quotes, financing, SIN test, Zapier, email, SMS, inventory, stock sync, connectors, growth agent, SEO health, options catalog, pricing import, image update, blog). On current `main`, all except `/admin/blog` set `requireAdmin={true}`. The blog UI gate is already owned by **#335**.
 
 `/admin/sin-encryption-test` is admin-gated but is a production-reachable diagnostic page. Prefer removing from the production router or hiding behind `DEV`.
 
@@ -272,13 +281,13 @@ Each item has: evidence, why it matters, suggested Codex action, and a "do not" 
 
 Status key: **ALREADY OWNED** / **HARDENING (not a demonstrated exploit)** / **STILL UNOWNED** / **DO NOT DO**.
 
-#### P0-1. `/admin/blog` UI gate — ALREADY OWNED by #314 (defense-in-depth)
+#### P0-1. `/admin/blog` UI gate — ALREADY OWNED by #335 (defense-in-depth)
 
 **Evidence on `main`:** `src/App.tsx` still mounts `/admin/blog` as `<SecureRoute>` without `requireAdmin={true}`.
 
 This is **not** an open implement-now P0. RLS on `blog_subscriptions` and `requireAdmin` inside `send-blog-notification` reduce severity. The missing React gate is **defense-in-depth**.
 
-**Owner:** draft **PR #314** adds `requireAdmin={true}`. Do not duplicate.
+**Owner:** ready current-main **PR #335** adds `requireAdmin={true}` with a focused route-security contract. Closed PR #314 is not the active owner. Do not duplicate.
 
 **Do not** treat the `main` snippet as proof the hole is unowned.
 
@@ -290,19 +299,19 @@ That is a dead client TODO. It is **not** evidence that Supabase Auth lacks serv
 
 **Action (low priority hygiene):** delete the misleading TODO or replace it with a comment that server-side Auth limits are the real control. Do not re-enable a client-only counter and call it done.
 
-#### P0-3. Missing response security headers — confirmed hardening, owned by #314
+#### P0-3. Missing response security headers — confirmed hardening, owned by #335
 
-**Evidence:** `src/lib/securityMiddleware.ts` exports `SECURITY_HEADERS`. Live HTML on current production/`main` does not serve that set.
+**Evidence:** `src/lib/securityMiddleware.ts` exports `SECURITY_HEADERS`, but current-main `vercel.json` does not apply that set. The 2026-08-15 live snapshot also lacked the baseline; revalidate live production after any deployment.
 
 This is **confirmed hardening**, not an independently demonstrated P0 exploit (no clickjacking/MIME-sniff PoC was produced). The unused object also has a CSP/`Permissions-Policy` that would break Stripe and ElevenLabs if applied raw.
 
-**Owner:** draft **PR #314** adds a tested baseline (`nosniff`, Referrer-Policy, `X-Frame-Options: SAMEORIGIN`, Permissions-Policy that does not block mic/payment). Do not copy-paste `SECURITY_HEADERS` onto HTML.
+**Owner:** ready current-main **PR #335** adds a tested baseline (`nosniff`, Referrer-Policy, `X-Frame-Options: SAMEORIGIN`, microphone-safe/payment-safe Permissions-Policy). Do not copy-paste `SECURITY_HEADERS` onto HTML.
 
-#### P0-4. README still tells operators to curl Lightspeed sync with the service role key
+#### P0-4. README service-role-key curl — RESOLVED by merged #331
 
-**Evidence:** `README.md` "Manual Inventory Sync Trigger" block.
+**Historical evidence:** the old `README.md` "Manual Inventory Sync Trigger" block instructed operators to paste a service-role key into curl.
 
-**Action:** Replace with an admin-UI or authenticated function invoke. Never document pasting `SERVICE_ROLE_KEY` into a local terminal in the public repo. Pair with the still-unowned Lightspeed function gate (P0-8/P0-9), not with #314 headers.
+**Current main:** merged #331 removed that command, warns against public quote-builder invocation and local service-role-key use, and points manual work to authenticated admin surfaces. Keep that contract. The separate server-side function-auth gap remains under P0-8/P0-9.
 
 #### P0-5. Public Edge Functions run as service role with CORS `*` — not a current select-star bug
 
@@ -340,22 +349,24 @@ Deep-dive confirmed several functions use the service role and accept unauthenti
 | Function | Status |
 | --- | --- |
 | `send-notification` | **ALREADY OWNED by #300** |
-| `get-dropbox-config`, `dropbox-oauth` (and related import/config) | **ALREADY OWNED by #315** |
-| `sync-lightspeed-inventory` | **STILL UNOWNED** — see P0-9. Service-role client is created before any auth. Cron contract is proven anon JWT (Jay decision before changing that contract). |
-| `notification-webhook` | **STILL UNOWNED** — Twilio-style body accepted with **no** `X-Twilio-Signature` check; then service role updates `sms_logs` by `to_phone`. Stripe webhook *does* verify. |
+| `get-dropbox-config`, `dropbox-oauth` (and related import/config) | **OWNED by #315, but dependency-blocked** — the draft still targets closed/unmerged #314 and must be refreshed onto current `main`. |
+| `sync-lightspeed-inventory` | **PARTIALLY RESOLVED by merged #331** — public quote-builder triggers are gone, but current-main function source still creates the service-role client without caller authentication. Cron contract is proven anon JWT (Jay decision before changing that contract). |
+| `notification-webhook` | **OWNED by refreshed draft #332** — current main still accepts unsigned Twilio-style body data, while #332's current-main head implements the signature, early-callback, monotonic-status, canonical-URL, repeated-key, duplicate-row, targeting, and error-code contracts. Keep the release sequence explicit. |
 | `sync-inventory-api`, `mark-out-of-stock`, `scrape-mercury-portal`, `migrate-motor-images`, `motor-health-monitor` | Review later. Not in this execution order. Confirm each before changing — some may already gate. |
 
-**Still-unowned action in this order:** Lightspeed function auth (after/with P0-9) and Twilio signature verification on `notification-webhook`. Do not re-do #300/#315.
+**Remaining action in this order:** preserve #332 and its release order; make the scheduler-auth decision before opening a separate Lightspeed function-auth patch. Do not re-do #300/#315 or the merged #331 browser removal.
 
-#### P0-9. Quote motor-selection auto-invokes Lightspeed sync — STILL UNOWNED
+#### P0-9. Quote motor-selection auto-invokes Lightspeed sync — BROWSER HALF RESOLVED by merged #331
 
-**Evidence:** `src/components/quote-builder/MotorSelection.tsx` (~342–365, ~660–666) calls `supabase.functions.invoke('sync-lightspeed-inventory')` on load when `lastInventoryUpdate` is null, on an hourly interval, and via `?runScrape=1`. The function writes `motor_models` with service-role authority.
+**Historical evidence:** old `MotorSelection.tsx` called `sync-lightspeed-inventory` on load, hourly, and through `?runScrape=1`.
+
+**Current main:** merged #331 removed those triggers and added a focused trust-boundary contract. Current-main quote code contains no `sync-lightspeed-inventory`, `lastInventoryUpdate`, `updateInventory`, or `runScrape` path. The Edge Function itself still creates a service-role client without authenticating the caller, so the server-side half is not resolved.
 
 Legitimate admin callers to **keep:** `AdminStockSync.tsx`, `UnifiedInventoryDashboard.tsx`, `InventoryMonitor.tsx`, `InventoryDiagnostics.tsx`.
 
 **Proven scheduler:** `lightspeed-motor-models-sync-daily` uses **anon JWT**, not `requireAdmin` / `x-internal-secret`. Anon JWT is also what the public browser sends. See §0.1 JAY DECISION REQUIRED.
 
-**Action:** Remove all public browser-triggered sync (mount, hourly, query-string). Keep admin UI. Enforce authorization **before** creating/using the inventory service-role client (admin JWT or configured internal secret or service-role bearer). Never put an internal secret in frontend code. Do not execute a real sync in tests. Do not rewrite production cron in this documentation PR.
+**Remaining action:** preserve #331's browser removal and admin UI. After Jay selects and stages a compatible scheduler credential, enforce authorization **before** creating/using the inventory service-role client (admin JWT, configured internal secret, or service-role bearer). Never put an internal secret in frontend code. Do not execute a real sync in tests. Do not rewrite production cron in this documentation PR.
 
 #### P0-10a. Shared-quote capability URL — ALREADY OWNED by #290
 
@@ -377,15 +388,15 @@ The **public financing flow currently requires anon execute**. Draft **PR #288**
 
 **Do not** revoke anon execute. Moving encryption server-side would need an **atomic replacement design** (Edge Function encrypts, client stops calling the RPC, then revoke). Revoke-first would break production applications.
 
-#### P0-12. Quote-funnel warranty badges still hardcode “7-YEAR WARRANTY” — STILL UNOWNED
+#### P0-12. Quote-funnel warranty badges — RESOLVED by merged #333
 
-Homepage copy was fixed (May audit #9). `PromoSelectionPage` already derives `{3 + warranty_extra_years}`. Two funnel cards were not updated.
+**Historical evidence:** `PromoSummaryCard`, `PromoSelectionBadge`, and retained `get7_*` templates hardcoded seven-year wording even when the applied promotion did not grant four extra years.
 
-**Evidence:** `src/components/quote-builder/PromoSummaryCard.tsx` and `PromoSelectionBadge.tsx` still render “7-YEAR WARRANTY” / “3 + 4 FREE years”.
+**Current main:** merged #333 routes the quote displays through `src/lib/warranty-display.ts`, using the applied promotion's `warranty_extra_years` and a three-year standard term. Retained SMS templates use the same helper with caller-supplied extra-year data. It added focused UI/helper tests and removed the stale card/badge literals.
 
-**Legacy SMS:** `src/lib/smsTemplates.ts` `get7_campaign` / `get7_reminder` hardcode 7-year copy. Confirmed callers of `generateSMSMessage`: `quotesApi.ts` → `quote_confirmation` only; `leadCapture.ts` → `hot_lead` only; `SMSDashboard.tsx` test UI lists hot_lead / quote_confirmation / follow_up / reminder / manual — **not** `get7_*`. `send-get7-campaign` is a separate admin-gated Edge Function with its own 7-year email copy (not this template). Do not send customer messages while editing.
+**Legacy SMS boundary:** `get7_campaign` / `get7_reminder` now accept promotion-derived extra years and fall back to standard warranty wording. `send-get7-campaign` remains a separate admin-gated Edge Function and was not part of #333. Do not send customer messages while verifying copy.
 
-**Action:** Derive displayed warranty from the currently active promotion’s `warranty_extra_years` plus the standard 3-year term. When no valid extension exists (none, zero, or expired), show only standard warranty wording. Bind leftover `get7_*` strings the same way if the templates are kept.
+**Action:** keep #333's applied-promotion selection and no-extension fallback contract green. Reopen only with new current-main or rendered evidence.
 
 ---
 
@@ -418,13 +429,13 @@ This is a marina / outboard dealer, not an auto shop. Google may attach reviews 
 
 **Action:** Confirm with Jay whether mercuryrepower.ca should have its own `LocalBusiness` or a `Department` of HBW. Then fix `@type` (e.g. `LocalBusiness` + `SportsActivityLocation` / marine equivalent — **not** `AutoRepair` unless Jay wants it). Keep `sameAs` links to both domains.
 
-#### P1-3. Motor feed quality is still weak for AI + Product schema
+#### P1-3. Historical motor-feed quality gap — revalidate current data before action
 
-Live `/api/agents/motors` (2026-08-15): 65 / 101 images missing; 5 relative URLs; shaft/control almost entirely null; all canonical URLs are apex.
+Historical live `/api/agents/motors` read (2026-08-15): 65 / 101 images missing; 5 relative URLs; shaft/control almost entirely null; all canonical URLs were apex.
 
-May 2026 audit #1 (22/25 missing images) is **not fixed** — the catalog grew and the gap grew with it.
+Relative to the May 2026 audit (22/25 missing images), the gap was worse in that August 15 snapshot. This is not a current count or current-production status; revalidate the feed and current-main source before opening work.
 
-**Action**
+**Conditional action after revalidation**
 
 1. Backfill `hero_image_url` / `image_url` via existing Dropbox sync (data, not a new feature).
 2. In `public-motors-api`, absolutize relative paths against `https://www.mercuryrepower.ca`.
@@ -433,7 +444,7 @@ May 2026 audit #1 (22/25 missing images) is **not fixed** — the catalog grew a
 
 #### P1-4. Promotions page — do not cite obsolete 5.48% visible-rate drift
 
-**Corrected 2026-08-15:** cache-busted production `/promotions` currently presents **Summer Savings coherently, including 2.99% financing**. The earlier “visible hero is 5.48% while prerender says 2.99%+$700” claim is **obsolete** and is not a current finding.
+**Corrected 2026-08-15:** cache-busted production `/promotions` presented **Summer Savings coherently, including 2.99% financing** on that date. The earlier “visible hero is 5.48% while prerender says 2.99%+$700” claim was obsolete then and is not current proof now; revalidate before changing offer copy.
 
 `src/components/promotions/TDAlwaysOnOffer.tsx` still contains dated TD program copy and a 2027 TODO. That is source/archive material, not proof of what production renders.
 
@@ -579,7 +590,7 @@ Admin-only, but it is a live page that exercises decrypt + audit log. Move behin
 
 | # | Item | Status 2026-08-15 |
 | --- | --- | --- |
-| 1 | Motor images missing | **Still open** (worse: 65/101) |
+| 1 | Motor images missing | **Open in the 2026-08-15 snapshot** (65/101); current feed status requires revalidation. |
 | 2 | Mobile dual CTA | **Still open** |
 | 3 | Competitive comparison pages | **Partial** (blog, not `/compare/...` routes) |
 | 4 | Markdown twins vs catalog | **Improved** (generator in build). Confirm twins for all 101 feed slugs. |
@@ -587,7 +598,7 @@ Admin-only, but it is a live page that exercises decrypt + audit log. Move behin
 | 6 | Stale `ai.txt` date | **Fixed** (Lightspeed line present) |
 | 7 | `motorCount = 128` | **Fixed** |
 | 8 | Provenance footnote on motor pages | **Unknown / likely open** — confirm on a live `/motors/{slug}` |
-| 9 | "7-year warranty available" on homepage | **Homepage + PromoSelectionPage fixed; PromoSummaryCard / PromoSelectionBadge still hardcode 7-year** (P0-12, still unowned) |
+| 9 | "7-year warranty available" on homepage | **Resolved on current main.** Homepage/selection work was followed by merged #333, which covers the remaining quote displays and retained SMS templates. |
 | 10 | Missing tools / Legend / agents | **Partial** (`/tools`, `/agents` exist; no `/legend-boats`; no serial decoder) |
 
 ### Semrush plan — 2026-06-29
@@ -604,19 +615,18 @@ Historical. Re-verify. Do not cite them as current proof. Do not use them to jus
 
 If Jay says "start fixing," do this sequence. Stop after each band for a review.
 
-### Band A — remaining unowned holes (do not re-do owned PRs)
+### Band A — active owner lanes and the remaining auth decision
 
-1. **P0-9 + Lightspeed half of P0-8** — remove public browser inventory sync; auth-gate `sync-lightspeed-inventory` before the service-role client. **Do not change the proven anon-JWT cron contract** until Jay rewrites production cron to `x-internal-secret` or service-role. See §0.1.
-2. **Twilio half of P0-8** — validate `X-Twilio-Signature` on `notification-webhook` against a configured canonical URL (not `Host` / forwarded-host). Prefer `MessageSid` targeting; `sms_logs` currently has no `message_sid` column — draft a migration, do not apply it.
-3. **P0-12** — bind `PromoSummaryCard` / `PromoSelectionBadge` (and leftover `get7_*` template strings if kept) to `warranty_extra_years` + standard 3-year term.
-4. P0-4 README service-role curl (docs only; pair with Lightspeed PR)
-5. Add `.env` to `.gitignore` (keep a committed `.env.example` with empty values; do not rewrite history unless Jay asks)
-6. P1-12 www URLs in public motors/quote APIs
-7. P1-3 absolutize image URLs + pass through shaft/control already in the query
-8. P1-5 hours from one source
-9. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
+1. **Twilio half of P0-8** — preserve accepted draft PR #332 and its release sequence. Its exact-head implementation verifies signatures against a configured canonical URL (not `Host`/forwarded-host), early callbacks, monotonic/out-of-order statuses, repeated keys, duplicate rows, signed-row/`MessageSid` targeting, and error-code retention. Draft migrations only; do not apply them here.
+2. **Lightspeed server half of P0-8/P0-9** — merged #331 already removed public browser triggers and the README key instruction. Pause before the remaining function-auth patch until Jay selects and stages a scheduler credential compatible with the deployed cron.
+3. **#315 dependency repair** — preserve its Dropbox/quote-email scope, but retarget/rebuild it from current `main` rather than closed PR #314.
+4. Add `.env` to `.gitignore` (keep a committed `.env.example` with empty values; do not rewrite history unless Jay asks)
+5. P1-12 www URLs in public motors/quote APIs
+6. P1-3 absolutize image URLs + pass through shaft/control already in the query
+7. P1-5 hours from one source
+8. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
 
-**Do not put in Band A:** P0-1 (`#314`), P0-3 headers (`#314`), P0-8 Dropbox (`#315`), P0-8 `send-notification` (`#300`), P0-10a shared-quote (`#290`), P0-11 revoke `encrypt_sin` (**never** as a first step).
+**Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, P0-8 `send-notification` (`#300`), P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step). Preserve #315's scope while repairing its base.
 
 ### Band B — needs a 10-minute Jay copy/business nod
 
@@ -624,7 +634,7 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 2. P1-2 schema URL + `@type`
 3. P1-4 promotions copy — only after a new cache-busted production check; do not “fix” the obsolete 5.48% claim
 4. P1-6 mobile CTA hierarchy
-5. Security-header *CSP* (baseline headers are #314; a real CSP will break something if guessed)
+5. Security-header *CSP* (safe baseline headers are #335; a real CSP will break something if guessed)
 
 ### Band C — only with an explicit scope
 
@@ -645,7 +655,7 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 - Homepage title/H1 rewrite (brand vs "repower" positioning)
 - Whether mercuryrepower.ca should host Legend boat sales content
 - Whether `LocalBusiness` should live on this domain or only on harrisboatworks.ca
-- Summer Savings / TD copy: production currently presents Summer Savings + 2.99% coherently; ask before changing offer story
+- Summer Savings / TD copy: the 2026-08-15 snapshot presented Summer Savings + 2.99% coherently; revalidate current production and ask before changing the offer story
 - Lightspeed cron rewrite from anon JWT → `x-internal-secret` or service-role **before** deploying a `requireAdmin` gate on `sync-lightspeed-inventory` (see §0.1)
 - 2027 TD program codes (`TDAlwaysOnOffer.tsx` TODO — Sean Beamish / Mercury Canada)
 - Whether brochure / special-order motors should stay in the public feed (101 vs the old 25 in-stock feed). This changes schema `numberOfItems`, AI quotes, and buyer expectations.
@@ -698,7 +708,7 @@ Manual:
 - Chrome mobile 390×844: `/`, `/quote/motor-selection`, `/promotions`, `/financing-application`
 - Confirm cookie banner + chat + quote CTA do not stack over the primary button
 - Hard-refresh mid-quote and confirm resume
-- `/admin/blog` UI gate is owned by #314 — confirm on that PR, not by re-implementing on `main`
+- `/admin/blog` UI gate is owned by #335 — confirm on that PR, not by re-implementing on `main`
 
 ---
 
@@ -706,7 +716,7 @@ Manual:
 
 | Path | Why it matters |
 | --- | --- |
-| `src/App.tsx` | Full route table, DEV gates; `/admin/blog` UI gate owned by #314 |
+| `src/App.tsx` | Full route table, DEV gates; `/admin/blog` UI gate owned by #335 |
 | `src/contexts/QuoteContext.tsx` | Quote state machine |
 | `src/pages/quote/*` | Funnel |
 | `src/pages/quote/__tests__/quote-funnel-ux-contract.test.ts` | Do not break |
@@ -736,31 +746,35 @@ Manual:
 
 ## 12. One-page summary for Jay
 
-The site is a real production system: live CAD quotes, Stripe deposits, financing with SIN encryption, a large Ontario-focused blog, and an AI-agent surface most dealers do not have. The May/June audits already fixed the worst SEO lies (Verado URL, fake 128-motor count, unconditional homepage 7-year badge). Draft PRs #300, #314, #315, #290, and #288 already own several original P0s — do not duplicate them.
+The site is a real production system: live CAD quotes, Stripe deposits, financing with SIN encryption, a large Ontario-focused blog, and an AI-agent surface most dealers do not have. The May/June audits already fixed the worst SEO lies (Verado URL, fake 128-motor count, unconditional homepage 7-year badge). Current owner lanes #300, #335, #315, #290, #288, and #332 cover several original P0s — do not duplicate them. PR #314 is closed/unmerged; #315 must be rebuilt or retargeted off that closed base. PRs #331 and #333 are merged.
 
-What is still unowned and hurting:
+What remains actionable:
 
-1. **Browser-triggered Lightspeed inventory sync** on motor-selection, plus an unauthenticated `sync-lightspeed-inventory` service-role write. Cron today uses **anon JWT** (Jay must rewrite cron before a function-level admin/secret gate can deploy).
-2. **`notification-webhook`** accepts Twilio-style status data with no `X-Twilio-Signature` check, then updates `sms_logs`.
-3. **`PromoSummaryCard` / `PromoSelectionBadge` still hardcode 7-year warranty** even though homepage + `PromoSelectionPage` derive from `warranty_extra_years`.
-4. **Homepage still ranks for a phrase nobody searches**; H1 rotates after hydration.
-5. **101-motor public feed** is image-poor, shaft-blind, and uses apex URLs.
-6. **Build/content** is held together by a very large `blogArticles.ts` and a long prebuild gauntlet. That is a feature until someone bypasses it.
+1. **Lightspeed server authorization remains.** Merged #331 removed browser-triggered sync and unsafe README instructions, but `sync-lightspeed-inventory` still creates a service-role client without caller auth. Cron uses **anon JWT**, so Jay must select and stage a compatible scheduler credential before the function gate can deploy.
+2. **Twilio webhook hardening is owned by accepted draft #332.** Current main still lacks signature validation; #332 is current-main, clean/mergeable, and exact-head verified, but remains draft for release sequencing.
+3. **Route/header hardening is owned by ready #335.** Do not revive closed PR #314.
+4. **Dropbox/quote-email hardening is dependency-blocked in #315.** Preserve its scope, but rebuild it from current `main` instead of closed #314.
+5. **Homepage still ranks for a phrase nobody searches**; H1 rotates after hydration.
+6. **The historical 101-motor feed snapshot** was image-poor, shaft-blind, and used apex URLs; revalidate current production before coding from those counts.
+7. **Build/content** is held together by a very large `blogArticles.ts` and a long prebuild gauntlet. That is a feature until someone bypasses it.
 
 What is **not** a current open P0 (corrected):
 
-- `/admin/blog` UI gate and baseline security headers — **#314** (defense-in-depth / hardening).
+- `/admin/blog` UI gate and baseline security headers — **#335** (defense-in-depth / hardening). Closed #314 is superseded for this safe subset.
 - `send-notification` — **#300**.
-- Dropbox OAuth/import/config + quote-email — **#315**.
+- Dropbox OAuth/import/config + quote-email — **#315**, after current-main dependency repair.
 - Shared-quote minimization / expiry / atomic access count — **#290**.
 - Financing table write authority — **#288**. Do **not** revoke anon `encrypt_sin`.
+- Public quote-builder Lightspeed triggers and the README service-role curl — **resolved by merged #331**. The separate Edge Function auth gap remains.
+- Quote-funnel and retained SMS warranty derivation — **resolved by merged #333**.
+- Twilio `notification-webhook` — **owned by refreshed draft #332**, not unowned.
 - Financing resume tokens are a **separate** capability-URL topic from shared-quote.
-- Production `/promotions` currently presents Summer Savings coherently, including 2.99% financing — do not cite obsolete 5.48% visible-rate drift.
-- `/quote/motor-selection` rendered on desktop and 390×844 with no overflow or lazy-load failure. Headless `LazyRouteBoundary` is unconfirmed monitoring evidence only.
+- On 2026-08-15, production `/promotions` presented Summer Savings coherently, including 2.99% financing. Revalidate before citing either that state or obsolete 5.48% drift as current.
+- On 2026-08-15, `/quote/motor-selection` rendered on desktop and 390×844 with no overflow or lazy-load failure. Headless `LazyRouteBoundary` was unconfirmed monitoring evidence only; revalidate any current claim.
 - Explicit `select` lists on public service-role APIs are not live select-star bugs.
 - A disabled client login limiter is not proof Supabase Auth lacks server-side rate limiting.
 
-Codex should start at the corrected Band A (Lightspeed, Twilio webhook, warranty copy), then pause for copy/business calls on Band B.
+Codex should preserve and review the already-ready current-main lanes (#300, #290, #288, and #335), preserve accepted draft #332 and its release sequence, repair #315's closed-base dependency, and pause for Jay's Lightspeed cron-credential decision before changing the function gate.
 
 ---
 
