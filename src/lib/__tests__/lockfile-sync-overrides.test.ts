@@ -1,8 +1,7 @@
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, rmSync, symlinkSync } from 'node:fs';
+import { existsSync, mkdtempSync, rmSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   collectOverrideErrors,
@@ -50,14 +49,14 @@ describe('lockfile override guard', () => {
   it('runs when invoked through an absolute symlink path', () => {
     const temporaryDirectory = mkdtempSync(join(tmpdir(), 'lockfile-sync-'));
     const symlinkPath = join(temporaryDirectory, 'check-lockfile-sync.mjs');
-    const scriptPath = fileURLToPath(
-      new URL('../../../scripts/check-lockfile-sync.mjs', import.meta.url),
-    );
+    const repositoryRoot = process.cwd();
+    const scriptPath = resolve(repositoryRoot, 'scripts/check-lockfile-sync.mjs');
 
     try {
+      expect(existsSync(scriptPath)).toBe(true);
       symlinkSync(scriptPath, symlinkPath);
       const result = spawnSync(process.execPath, [symlinkPath], {
-        cwd: fileURLToPath(new URL('../../../', import.meta.url)),
+        cwd: repositoryRoot,
         encoding: 'utf8',
       });
 
