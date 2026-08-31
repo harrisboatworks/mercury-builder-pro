@@ -1,3 +1,8 @@
+import { spawnSync } from 'node:child_process';
+import { mkdtempSync, rmSync, symlinkSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   collectOverrideErrors,
@@ -40,5 +45,26 @@ describe('lockfile override guard', () => {
 
   it('passes the current repository package and lock files', () => {
     expect(runLockfileSyncCheck()).toEqual({ ok: true, errors: [] });
+  });
+
+  it('runs when invoked through an absolute symlink path', () => {
+    const temporaryDirectory = mkdtempSync(join(tmpdir(), 'lockfile-sync-'));
+    const symlinkPath = join(temporaryDirectory, 'check-lockfile-sync.mjs');
+    const scriptPath = fileURLToPath(
+      new URL('../../../scripts/check-lockfile-sync.mjs', import.meta.url),
+    );
+
+    try {
+      symlinkSync(scriptPath, symlinkPath);
+      const result = spawnSync(process.execPath, [symlinkPath], {
+        cwd: fileURLToPath(new URL('../../../', import.meta.url)),
+        encoding: 'utf8',
+      });
+
+      expect(result.status).toBe(0);
+      expect(result.stdout).toContain('✓ Lockfile sync check');
+    } finally {
+      rmSync(temporaryDirectory, { recursive: true, force: true });
+    }
   });
 });

@@ -5,7 +5,7 @@
 // Catches the common CI failure where `npm ci` rejects a stale lockfile.
 // Also rejects bun.lock / bun.lockb so npm remains the sole package manager.
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, realpathSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -149,7 +149,8 @@ function main() {
 
 const invokedDirectly =
   Boolean(process.argv[1]) &&
-  fileURLToPath(import.meta.url) === resolve(process.argv[1]);
+  realpathSync(fileURLToPath(import.meta.url)) ===
+    realpathSync(resolve(process.argv[1]));
 
 if (invokedDirectly) {
   main();
