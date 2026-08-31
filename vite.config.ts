@@ -7,7 +7,6 @@ import { componentTagger } from "lovable-tagger";
 // which masked SEO/canonical fixes and caused homepage metadata to bleed
 // onto other routes. Re-enable only when there's a real offline use case.
 // import { VitePWA } from "vite-plugin-pwa";
-import { writeFileSync } from "fs";
 
 const buildId =
   process.env.VERCEL_GIT_COMMIT_SHA ||
@@ -28,33 +27,16 @@ function buildVersionPlugin(): Plugin {
   };
 }
 
-// Sitemap and RSS generation plugin
-function sitemapPlugin(): Plugin {
-  return {
-    name: 'generate-rss',
-    async buildStart() {
-      try {
-        // NOTE: sitemap.xml is authoritatively written by scripts/static-prerender.mjs
-        // after vite build (it includes motor, case-study, and location URLs that
-        // require async data fetching). Writing it here would race and ship a
-        // stale sitemap missing those URLs. RSS stays here — blog-only, no async.
-        const modPath = './src/utils/generateSitemap.ts';
-        const { generateRssXML } = await import(/* @vite-ignore */ modPath);
-        const rss = generateRssXML();
-        writeFileSync('public/rss.xml', rss);
-        const itemCount = (rss.match(/<item>/g) || []).length;
-        console.log(`✓ RSS feed generated with ${itemCount} articles`);
-      } catch (error) {
-        console.warn('RSS generation skipped:', error);
-      }
-    }
-  };
-}
-
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+  },
+  build: {
+    // Vite 8 raises its default browser floor to Safari/iOS 16.4 and
+    // 2023-era Chromium/Firefox. Preserve Vite 5's prior production target so
+    // the dependency upgrade does not silently drop older customer devices.
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
   },
   define: {
     // Build-time date stamp (YYYY-MM-DD) for visible "Page last updated" labels.
@@ -75,7 +57,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
-    mode === 'production' && sitemapPlugin(),
     mode === 'production' && buildVersionPlugin(),
     // VitePWA disabled — see note at top of file.
   ].filter(Boolean),
