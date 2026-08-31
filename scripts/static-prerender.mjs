@@ -23,6 +23,7 @@ import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
+import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
@@ -2035,27 +2036,14 @@ function mercuryDealerGTASchema() {
 // Batch 3: Product hub + Ontario lineup
 // ============================================================
 
-const PRO_XS_IMAGES_PRERENDER = {
-  115: `${SITE_URL}/images/seo/proxs-115.webp`,
-  150: `${SITE_URL}/images/seo/proxs-150.jpg`,
-  200: `${SITE_URL}/images/seo/proxs-200.jpg`,
-  250: `${SITE_URL}/images/seo/proxs-250.jpeg`,
-};
-const { skus: canonicalPricingSkus } = loadCanonicalPricing();
-const PRO_XS_STATIC_OFFERS_PRERENDER = [115, 150, 200, 250].map((hp) => {
-  const matchingSkus = canonicalPricingSkus.filter((sku) => sku.family === 'ProXS' && sku.hp === hp);
-  const prices = matchingSkus.map((sku) => sku.dealer);
-  if (prices.length === 0) throw new Error(`[static-prerender] missing canonical Pro XS pricing for ${hp} HP`);
-  const startingSku = matchingSkus.reduce((lowest, sku) => sku.dealer < lowest.dealer ? sku : lowest);
-  return {
-    hp,
-    name: `Mercury ${hp} Pro XS`,
-    startingAt: Math.min(...prices),
-    image: PRO_XS_IMAGES_PRERENDER[hp],
-    availability: startingSku.status.toLowerCase() === 'in stock'
-      ? 'https://schema.org/InStock'
-      : 'https://schema.org/PreOrder',
-  };
+const {
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+} = loadCanonicalPricing();
+const PRO_XS_STATIC_OFFERS_PRERENDER = buildMercuryProXSOffers({
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+  siteUrl: SITE_URL,
 });
 
 const PRO_XS_FAQ_PRERENDER = [
@@ -2498,6 +2486,7 @@ function mercuryProXSSchema() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
+            "validFrom": v.validFrom,
             "availability": v.availability,
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
