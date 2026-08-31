@@ -330,7 +330,7 @@ This is **confirmed hardening**, not an independently demonstrated P0 exploit (n
 **Action for a later read-only pass:**
 
 - Re-read `encrypt_sin` / `decrypt_sin` / `has_role` / `sin_audit_log` migrations
-- Confirm resume tokens expire; after successful submission, revoke draft read/write authority but retain a bounded idempotent acknowledgement path so a lost submit response can recover only the stable receipt/status
+- Confirm resume tokens expire; after successful submission, revoke draft read/write authority but retain a bounded idempotent acknowledgement path so a lost submit response can recover only the stable receipt/status. A first tokenless submit must also carry a pre-submit idempotency key (or equivalent recovery contract) so a lost first-insert response cannot create a second pending application
 - Confirm `financing_applications` cannot be listed by anon
 - Confirm `/admin/sin-encryption-test` cannot be reached by a non-admin and consider removing it from prod
 
@@ -378,7 +378,9 @@ Legitimate admin callers to **keep:** `AdminStockSync.tsx`, `UnifiedInventoryDas
 
 **Evidence:** `financing-application-api` `load` — 30-day `resumeToken` in email URLs returns employment/financial/applicant data (SIN stripped). January 2025 audits claimed 7-day expiry; that claim is **stale**. Code is 30 days.
 
-**Action (later, not #290):** confirm current TTL with a code read; consider shortening; and do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Preserve the current resume → continued draft saves → submission lifecycle. Keep the existing token valid through that lifecycle unless a separately designed rotation protocol survives a lost save response through an overlap/grace period, acknowledgement, or idempotent replacement-token recovery. After submission, revoke the token's draft-data read/write authority only alongside an idempotent acknowledgement or limited tombstone that lets a lost-response retry recover the stable submitted receipt/status without exposing the sensitive draft. A read-only open or link scanner must not break the customer's next authorized save or submission. Do not mix this finding with shared-quote.
+**Action (later, not #290):** confirm current TTL with a code read; consider shortening; and do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Preserve the current resume → continued draft saves → submission lifecycle. Keep the existing token valid through that lifecycle unless a separately designed rotation protocol survives a lost save response through an overlap/grace period, acknowledgement, or idempotent replacement-token recovery. After submission, revoke the token's draft-data read/write authority only alongside an idempotent acknowledgement or limited tombstone that lets a lost-response retry recover the stable submitted receipt/status without exposing the sensitive draft. A read-only open or link scanner must not break the customer's next authorized save or submission.
+
+Current source also allows a tokenless first submit: `FinancingContext` starts with both IDs null (`applicationId`/`resumeToken`), and `financing-application-api` inserts a new pending row whenever those identifiers are absent. A lost HTTP response on that first insert cannot be recovered by a resume-token tombstone, and the prompted retry creates a second pending application containing the same sensitive data. Any resume-token or lost-response hardening must therefore establish a client-held idempotency key *before* the first submit (or an equivalent tokenless-insert recovery contract) so a retry identifies the already-committed application instead of inserting another. Do not mix this finding with shared-quote.
 
 #### P0-11. `encrypt_sin` executable by `anon` — DO NOT REVOKE
 
@@ -633,7 +635,7 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 6. Unify quote step IDs (UI stepper 1–10 vs reducer guards 1–7 in `QuoteContext` / `quote-progress-steps.ts`)
 7. SIN / RLS re-audit (do not revoke `encrypt_sin` without an atomic replacement)
 8. Edge Function inventory (skip functions already owned by #300/#315)
-9. Financing-resume TTL / capability-URL (P0-10b). Shared-quote is already #290.
+9. Financing-resume TTL / capability-URL plus tokenless first-submit idempotency (P0-10b). Shared-quote is already #290.
 
 ---
 
