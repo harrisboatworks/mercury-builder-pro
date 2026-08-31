@@ -94,7 +94,6 @@ export function MercuryProXSSEO() {
             "priceCurrency": "CAD",
             "price": v.startingAt,
             "validFrom": v.validFrom,
-            "priceValidUntil": "2026-12-31",
             "availability": v.availability,
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },

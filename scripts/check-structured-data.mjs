@@ -148,6 +148,9 @@ function validateHtmlFile(file) {
       if (!isValidDateOnly(offer.validFrom)) {
         errors.push(`${file}: Pro XS Product offer is missing a valid canonical calendar "validFrom" date.`);
       }
+      if (Object.hasOwn(offer, 'priceValidUntil')) {
+        errors.push(`${file}: Pro XS Product offer has an unsupported "priceValidUntil" date.`);
+      }
     }
   }
 }
