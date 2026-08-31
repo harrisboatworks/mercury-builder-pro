@@ -274,25 +274,47 @@ describe("Stripe deposit pre-claim reconciliation", () => {
 
   it("keeps every state and notification side effect after pre-claim validation", () => {
     const source = readFileSync("supabase/functions/stripe-webhook/index.ts", "utf8");
+    const migration = readFileSync(
+      "supabase/migrations/20260830211500_claim_bound_motor_deposit_paid.sql",
+      "utf8",
+    );
     const savedQuoteRead = source.indexOf('.from("saved_quotes")');
     const validation = source.indexOf("validateDepositBeforeClaim(depositPreclaimInput)");
     const duplicateReturn = source.indexOf("Deposit session already processed");
     const gatedClaim = source.indexOf("claimDepositAfterValidation(");
-    const claim = source.indexOf('.update({ lead_status: "scheduled"');
-    const savedQuoteUpdate = source.indexOf("deposit_status: \"paid\"", claim);
+    const atomicClaim = source.indexOf('.rpc("claim_bound_motor_deposit_paid"');
     const notification = source.indexOf('supabase.functions.invoke("send-deposit-confirmation-email"');
+    const customerQuoteLock = migration.indexOf("FROM public.customer_quotes AS cq");
+    const savedQuoteLock = migration.indexOf("FROM public.saved_quotes AS sq");
+    const savedQuoteUpdate = migration.indexOf("UPDATE public.saved_quotes");
+    const customerQuoteUpdate = migration.indexOf("UPDATE public.customer_quotes");
+    const depositStart = source.indexOf('payment_type === "motor_deposit"');
+    const quoteStart = source.indexOf('payment_type === "quote"', depositStart);
+    const depositSource = source.slice(depositStart, quoteStart);
 
     expect(savedQuoteRead).toBeGreaterThan(-1);
     expect(validation).toBeGreaterThan(savedQuoteRead);
     expect(duplicateReturn).toBeGreaterThan(validation);
     expect(gatedClaim).toBeGreaterThan(duplicateReturn);
-    expect(claim).toBeGreaterThan(gatedClaim);
-    expect(savedQuoteUpdate).toBeGreaterThan(claim);
-    expect(notification).toBeGreaterThan(savedQuoteUpdate);
+    expect(atomicClaim).toBeGreaterThan(gatedClaim);
+    expect(notification).toBeGreaterThan(atomicClaim);
+    expect(savedQuoteLock).toBeGreaterThan(customerQuoteLock);
+    expect(savedQuoteUpdate).toBeGreaterThan(savedQuoteLock);
+    expect(customerQuoteUpdate).toBeGreaterThan(savedQuoteUpdate);
+    expect(migration).toContain("FOR UPDATE;");
+    expect(migration).toContain("SECURITY INVOKER");
+    expect(migration).toContain("FROM PUBLIC, anon, authenticated;");
+    expect(migration).toContain("TO service_role;");
+    expect(depositSource).not.toContain('.update({ lead_status: "scheduled"');
+    expect(depositSource).not.toContain('.eq("deposit_status", "pending")');
   });
 
   it("preserves replay-safe claim and notification CAS predicates", () => {
     const source = readFileSync("supabase/functions/stripe-webhook/index.ts", "utf8");
+    const migration = readFileSync(
+      "supabase/migrations/20260830211500_claim_bound_motor_deposit_paid.sql",
+      "utf8",
+    );
     const duplicateCheck = source.indexOf(
       'boundQuoteData.payment_status === "paid" && notificationsComplete(boundQuoteData)',
     );
@@ -300,21 +322,27 @@ describe("Stripe deposit pre-claim reconciliation", () => {
       "JSON.stringify({ received: true, processed: true, duplicate: true })",
       duplicateCheck,
     );
-    const pendingClaim = source.indexOf(
-      '.contains("quote_data", { payment_status: "pending" })',
-      duplicateCheck,
-    );
+    const atomicClaim = source.indexOf('.rpc("claim_bound_motor_deposit_paid"', duplicateCheck);
     const notificationClaim = source.indexOf(
       'notification_event_id: event.id',
-      pendingClaim,
+      duplicateCheck,
     );
 
     expect(duplicateCheck).toBeGreaterThan(-1);
     expect(duplicateResponse).toBeGreaterThan(duplicateCheck);
-    expect(pendingClaim).toBeGreaterThan(duplicateResponse);
-    expect(notificationClaim).toBeGreaterThan(pendingClaim);
-    expect(source).toContain(
-      "notification_event_id: boundQuoteData.notification_event_id",
+    expect(notificationClaim).toBeGreaterThan(duplicateResponse);
+    expect(atomicClaim).toBeGreaterThan(notificationClaim);
+    expect(source).toContain("p_expected_quote_data: boundQuoteData");
+    expect(source).toContain("p_expected_saved_quote_status: boundSavedQuote!.deposit_status");
+    expect(migration).toContain("v_quote_data IS DISTINCT FROM p_expected_quote_data");
+    expect(migration).toContain("v_saved_quote_status IS DISTINCT FROM p_expected_saved_quote_status");
+    expect(migration).toContain("p_expected_saved_quote_status IS NULL");
+    expect(migration).toContain("(p_expected_quote_data ->> 'payment_status') = 'paid'");
+    expect(migration).toContain(
+      "IS DISTINCT FROM (p_paid_quote_data ->> 'stripe_payment_intent')",
+    );
+    expect(migration.indexOf("IF v_expected_deposit_text IS NULL")).toBeLessThan(
+      migration.indexOf("v_expected_deposit_text::numeric"),
     );
   });
 
@@ -332,20 +360,25 @@ describe("Stripe deposit pre-claim reconciliation", () => {
     expect(depositSource).not.toContain("JSON.parse(session.metadata.motor_info)");
   });
 
-  it("accepts an exact concurrent saved-quote winner before notifications", () => {
+  it("revalidates both concurrent rows before accepting a duplicate", () => {
     const source = readFileSync("supabase/functions/stripe-webhook/index.ts", "utf8");
-    const savedQuoteClaim = source.indexOf('.eq("deposit_status", "pending")');
-    const concurrentRead = source.indexOf("concurrentSavedQuote", savedQuoteClaim);
-    const paidCheck = source.indexOf('concurrentSavedQuote.deposit_status !== "paid"', concurrentRead);
+    const failedClaim = source.indexOf("claimSucceeded !== true");
+    const concurrentReads = source.indexOf("Promise.all([", failedClaim);
+    const concurrentValidation = source.indexOf("boundDeposit: concurrentDepositResult.data", concurrentReads);
+    const duplicateCheck = source.indexOf(
+      "notificationsComplete(concurrentDepositResult.data.quote_data || {})",
+      concurrentValidation,
+    );
     const notification = source.indexOf(
       'supabase.functions.invoke("send-deposit-confirmation-email"',
-      paidCheck,
+      duplicateCheck,
     );
 
-    expect(savedQuoteClaim).toBeGreaterThan(-1);
-    expect(concurrentRead).toBeGreaterThan(savedQuoteClaim);
-    expect(paidCheck).toBeGreaterThan(concurrentRead);
-    expect(notification).toBeGreaterThan(paidCheck);
+    expect(failedClaim).toBeGreaterThan(-1);
+    expect(concurrentReads).toBeGreaterThan(failedClaim);
+    expect(concurrentValidation).toBeGreaterThan(concurrentReads);
+    expect(duplicateCheck).toBeGreaterThan(concurrentValidation);
+    expect(notification).toBeGreaterThan(duplicateCheck);
   });
 
   it("keeps customer document paths outside Stripe reconciliation authority", () => {

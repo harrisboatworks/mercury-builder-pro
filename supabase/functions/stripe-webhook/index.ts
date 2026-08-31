@@ -200,90 +200,70 @@ serve(async (req) => {
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),
         };
-        const { data: claimedDeposit, error: updateError } = await claimDepositAfterValidation(
+        const depositPaidAt = new Date().toISOString();
+        const { data: claimSucceeded, error: updateError } = await claimDepositAfterValidation(
           depositPreclaimInput,
-          async () => {
-            let claimQuery = supabase
-              .from("customer_quotes")
-              .update({ lead_status: "scheduled", quote_data: paidQuoteData })
-              .eq("id", existingDeposit.id);
-            claimQuery = boundQuoteData.payment_status === "paid"
-              ? claimQuery.contains("quote_data", {
-                  payment_status: "paid",
-                  notification_status: "processing",
-                  notification_event_id: boundQuoteData.notification_event_id,
-                  notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
-                })
-              : claimQuery.contains("quote_data", { payment_status: "pending" });
-            return await claimQuery
-              .select("*")
-              .maybeSingle();
-          },
+          async () => await supabase.rpc("claim_bound_motor_deposit_paid", {
+            p_customer_quote_id: existingDeposit.id,
+            p_saved_quote_id: savedQuoteId,
+            p_expected_quote_data: boundQuoteData,
+            p_expected_customer_email: existingDeposit.customer_email,
+            p_expected_customer_name: existingDeposit.customer_name,
+            p_expected_customer_phone: existingDeposit.customer_phone,
+            p_expected_deposit_amount: existingDeposit.deposit_amount,
+            p_expected_saved_quote_email: boundSavedQuote!.email,
+            p_expected_saved_quote_amount: boundSavedQuote!.deposit_amount,
+            p_expected_saved_quote_status: boundSavedQuote!.deposit_status,
+            p_paid_quote_data: paidQuoteData,
+            p_deposit_paid_at: depositPaidAt,
+          }),
         );
 
         if (updateError) {
           throw new Error(`Failed to reconcile paid deposit: ${updateError.message}`);
         }
-        if (!claimedDeposit) {
-          const { data: concurrentDeposit, error: concurrentError } = await supabase
-            .from("customer_quotes")
-            .select("id, quote_data")
-            .eq("id", existingDeposit.id)
-            .maybeSingle();
-          if (!concurrentError && concurrentDeposit?.quote_data && notificationsComplete(concurrentDeposit.quote_data)) {
-            logStep("Deposit session completed by another delivery", { sessionId: session.id });
-            return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
-              status: 200,
-            });
-          }
-          throw new Error("Deposit notification lease could not be atomically claimed");
-        }
-        logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id });
-
-        // Reconcile the saved quote before notifications. The exact identity,
-        // email, and amount predicates close the read/claim write race. If a
-        // concurrent delivery won the saved-quote CAS, accept only its exact
-        // already-paid state.
-        if (boundSavedQuote!.deposit_status === "paid") {
-          logStep("saved_quotes deposit was already paid", { savedQuoteId });
-        } else {
-          const { data: savedQuoteUpdate, error: sqUpdateError } = await supabase
-            .from("saved_quotes")
-            .update({
-              deposit_status: "paid",
-              deposit_amount: reconciledDeposit.depositAmount,
-              deposit_paid_at: new Date().toISOString(),
-            })
-            .eq("id", savedQuoteId)
-            .eq("email", boundSavedQuote!.email)
-            .eq("deposit_amount", reconciledDeposit.depositAmount)
-            .eq("deposit_status", "pending")
-            .select("id")
-            .maybeSingle();
-          if (sqUpdateError) {
-            throw new Error(`Failed to reconcile saved quote deposit: ${sqUpdateError.message}`);
-          }
-          if (!savedQuoteUpdate) {
-            const { data: concurrentSavedQuote, error: concurrentSavedQuoteError } = await supabase
+        if (claimSucceeded !== true) {
+          const [concurrentDepositResult, concurrentSavedQuoteResult] = await Promise.all([
+            supabase
+              .from("customer_quotes")
+              .select("*")
+              .eq("id", existingDeposit.id)
+              .maybeSingle(),
+            supabase
               .from("saved_quotes")
               .select("id, email, deposit_status, deposit_amount")
               .eq("id", savedQuoteId)
-              .maybeSingle();
-            if (
-              concurrentSavedQuoteError
-              || !concurrentSavedQuote
-              || concurrentSavedQuote.email?.trim().toLowerCase() !== customerEmail
-              || Number(concurrentSavedQuote.deposit_amount) !== reconciledDeposit.depositAmount
-              || concurrentSavedQuote.deposit_status !== "paid"
-            ) {
-              throw new Error("Failed to reconcile saved quote deposit: claim failed");
+              .maybeSingle(),
+          ]);
+          if (
+            !concurrentDepositResult.error
+            && !concurrentSavedQuoteResult.error
+            && concurrentDepositResult.data
+            && concurrentSavedQuoteResult.data
+          ) {
+            try {
+              validateDepositBeforeClaim({
+                ...depositPreclaimInput,
+                boundDeposit: concurrentDepositResult.data,
+                boundSavedQuote: concurrentSavedQuoteResult.data,
+              });
+              if (notificationsComplete(concurrentDepositResult.data.quote_data || {})) {
+                logStep("Deposit session completed by another delivery", { sessionId: session.id });
+                return new Response(JSON.stringify({ received: true, processed: true, duplicate: true }), {
+                  headers: { ...corsHeaders, "Content-Type": "application/json" },
+                  status: 200,
+                });
+              }
+            } catch {
+              // A conflicting row must fail closed and be retried or reviewed.
             }
-            logStep("saved_quotes deposit was reconciled by another delivery", { savedQuoteId });
-          } else {
-            logStep("saved_quotes deposit status updated to paid", { savedQuoteId });
           }
+          throw new Error("Deposit notification lease could not be atomically claimed");
         }
+        logStep("Deposit and saved quote atomically updated to paid", {
+          quoteId: existingDeposit.id,
+          savedQuoteId,
+        });
 
         // Send confirmation emails
         const motorLabel = motorInfo?.model || motorInfo?.name || motorInfo?.displayName || "Mercury motor";
@@ -359,7 +339,7 @@ serve(async (req) => {
               notification_lease_expires_at: null,
             },
           })
-          .eq("id", claimedDeposit.id)
+          .eq("id", existingDeposit.id)
           .contains("quote_data", {
             notification_status: "processing",
             notification_event_id: event.id,
