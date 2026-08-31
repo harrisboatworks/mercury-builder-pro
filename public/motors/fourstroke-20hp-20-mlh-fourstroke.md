@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-mlh-fourstroke
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false

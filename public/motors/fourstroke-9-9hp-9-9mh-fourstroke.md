@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -12,7 +12,7 @@ slug: fourstroke-9-9hp-9-9mh-fourstroke
 family: FourStroke
 horsepower: 9.9
 model_number: 1A10201LK
-availability: special_order
+availability: in_stock
 price_cad: 2999
 ---
 
@@ -37,7 +37,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Availability
 
-- **Status:** Special order, contact dealer for ETA
+- **Status:** In stock at Gores Landing
 - **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for
