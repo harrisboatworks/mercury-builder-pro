@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  claimDepositAfterValidation,
+  validateDepositBeforeClaim,
+} from "./deposit-reconciliation.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -99,26 +103,18 @@ serve(async (req) => {
       }
 
       if (session.metadata?.payment_type === "motor_deposit") {
-        const depositAmount = session.metadata.deposit_amount;
-        const customerName = session.metadata.customer_name || "Customer";
-        const customerEmail = session.customer_email || session.metadata.customer_email;
-        const customerPhone = session.metadata.customer_phone || "";
+        const metadataDepositAmount = session.metadata.deposit_amount;
+        const metadataSavedQuoteId = session.metadata.saved_quote_id;
+        const stripeReceiptEmail = session.customer_details?.email || session.customer_email || "";
         const paymentIntentId = typeof session.payment_intent === "string" 
           ? session.payment_intent 
           : session.payment_intent?.id;
-        const savedQuoteId = session.metadata.saved_quote_id || "";
-        
-        let motorInfo = null;
-        if (session.metadata.motor_info) {
-          try {
-            motorInfo = JSON.parse(session.metadata.motor_info);
-          } catch {
-            logStep("Could not parse motor_info metadata");
-          }
-        }
 
         logStep("Processing deposit confirmation", {
-          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, savedQuoteId,
+          sessionId: session.id,
+          depositAmount: metadataDepositAmount,
+          savedQuoteId: metadataSavedQuoteId,
+          paymentIntentId,
         });
 
         // The row created before checkout is the authoritative binding. Claim
@@ -136,14 +132,47 @@ serve(async (req) => {
         }
 
         const boundQuoteData = existingDeposit.quote_data || {};
-        const boundSavedQuoteId = boundQuoteData.saved_quote_id || "";
-        if (
-          Number(existingDeposit.deposit_amount) !== Number(depositAmount)
-          || boundSavedQuoteId !== savedQuoteId
-        ) {
-          throw new Error("Stripe deposit metadata does not match the bound record");
+        const boundSavedQuoteId = typeof boundQuoteData.saved_quote_id === "string"
+          ? boundQuoteData.saved_quote_id.trim()
+          : "";
+        if (!boundSavedQuoteId) {
+          throw new Error("Bound saved quote lookup failed: missing binding");
         }
-        motorInfo = boundQuoteData.motor_info || motorInfo;
+
+        const { data: boundSavedQuote, error: boundSavedQuoteError } = await supabase
+          .from("saved_quotes")
+          .select("id, email, deposit_status, deposit_amount")
+          .eq("id", boundSavedQuoteId)
+          .maybeSingle();
+        if (boundSavedQuoteError) {
+          throw new Error(`Bound saved quote lookup failed: ${boundSavedQuoteError.message}`);
+        }
+
+        // Reconcile the complete signed session against both durable records
+        // before duplicate handling, paid claims, or notification side effects.
+        const depositPreclaimInput = {
+          sessionId: session.id,
+          sessionMode: session.mode,
+          sessionStatus: session.status,
+          sessionCurrency: session.currency,
+          sessionAmountTotal: session.amount_total,
+          paymentIntentId,
+          metadataPaymentType: session.metadata.payment_type,
+          metadataDepositAmount,
+          metadataSavedQuoteId,
+          metadataMotorId: session.metadata.motor_id,
+          metadataMotorInfo: session.metadata.motor_info,
+          stripeReceiptEmail,
+          boundDeposit: existingDeposit,
+          boundSavedQuote,
+        };
+        const reconciledDeposit = validateDepositBeforeClaim(depositPreclaimInput);
+        const depositAmount = String(reconciledDeposit.depositAmount);
+        const savedQuoteId = reconciledDeposit.savedQuoteId;
+        const customerEmail = reconciledDeposit.quoteAuthorizationEmail;
+        const customerName = reconciledDeposit.customerName;
+        const customerPhone = reconciledDeposit.customerPhone;
+        const motorInfo = reconciledDeposit.motorInfo;
 
         if (boundQuoteData.payment_status === "paid" && notificationsComplete(boundQuoteData)) {
           logStep("Deposit session already processed", { sessionId: session.id });
@@ -161,27 +190,36 @@ serve(async (req) => {
           deposit_amount: depositAmount,
           payment_type: "motor_deposit",
           stripe_session_id: session.id,
-          stripe_payment_intent: paymentIntentId,
+          stripe_payment_intent: reconciledDeposit.paymentIntentId,
           payment_status: "paid",
           motor_info: motorInfo,
+          ...(reconciledDeposit.stripeReceiptEmail
+            ? { stripe_receipt_email: reconciledDeposit.stripeReceiptEmail }
+            : {}),
           notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),
         };
-        let claimQuery = supabase
-          .from("customer_quotes")
-          .update({ lead_status: "scheduled", quote_data: paidQuoteData })
-          .eq("id", existingDeposit.id);
-        claimQuery = boundQuoteData.payment_status === "paid"
-          ? claimQuery.contains("quote_data", {
-              payment_status: "paid",
-              notification_status: "processing",
-              notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
-            })
-          : claimQuery.contains("quote_data", { payment_status: "pending" });
-        const { data: claimedDeposit, error: updateError } = await claimQuery
-          .select("*")
-          .maybeSingle();
+        const { data: claimedDeposit, error: updateError } = await claimDepositAfterValidation(
+          depositPreclaimInput,
+          async () => {
+            let claimQuery = supabase
+              .from("customer_quotes")
+              .update({ lead_status: "scheduled", quote_data: paidQuoteData })
+              .eq("id", existingDeposit.id);
+            claimQuery = boundQuoteData.payment_status === "paid"
+              ? claimQuery.contains("quote_data", {
+                  payment_status: "paid",
+                  notification_status: "processing",
+                  notification_event_id: boundQuoteData.notification_event_id,
+                  notification_lease_expires_at: boundQuoteData.notification_lease_expires_at,
+                })
+              : claimQuery.contains("quote_data", { payment_status: "pending" });
+            return await claimQuery
+              .select("*")
+              .maybeSingle();
+          },
+        );
 
         if (updateError) {
           throw new Error(`Failed to reconcile paid deposit: ${updateError.message}`);
@@ -203,47 +241,48 @@ serve(async (req) => {
         }
         logStep("Deposit record updated to scheduled", { quoteId: claimedDeposit.id });
 
-        // Update saved_quotes record with deposit confirmation
-        if (savedQuoteId && savedQuoteId === boundSavedQuoteId && customerEmail) {
-          const { data: boundSavedQuote, error: boundSavedQuoteError } = await supabase
+        // Reconcile the saved quote before notifications. The exact identity,
+        // email, and amount predicates close the read/claim write race. If a
+        // concurrent delivery won the saved-quote CAS, accept only its exact
+        // already-paid state.
+        if (boundSavedQuote!.deposit_status === "paid") {
+          logStep("saved_quotes deposit was already paid", { savedQuoteId });
+        } else {
+          const { data: savedQuoteUpdate, error: sqUpdateError } = await supabase
             .from("saved_quotes")
-            .select("id, email, deposit_status")
+            .update({
+              deposit_status: "paid",
+              deposit_amount: reconciledDeposit.depositAmount,
+              deposit_paid_at: new Date().toISOString(),
+            })
             .eq("id", savedQuoteId)
+            .eq("email", boundSavedQuote!.email)
+            .eq("deposit_amount", reconciledDeposit.depositAmount)
+            .eq("deposit_status", "pending")
+            .select("id")
             .maybeSingle();
-          if (
-            boundSavedQuoteError
-            || !boundSavedQuote
-            || boundSavedQuote.email?.trim().toLowerCase() !== customerEmail.trim().toLowerCase()
-          ) {
-            throw new Error("Bound saved quote could not be verified");
+          if (sqUpdateError) {
+            throw new Error(`Failed to reconcile saved quote deposit: ${sqUpdateError.message}`);
           }
-
-          if (boundSavedQuote.deposit_status === "paid") {
-            logStep("saved_quotes deposit was already paid", { savedQuoteId });
-          } else if (boundSavedQuote.deposit_status === "pending") {
-            const { data: savedQuoteUpdate, error: sqUpdateError } = await supabase
+          if (!savedQuoteUpdate) {
+            const { data: concurrentSavedQuote, error: concurrentSavedQuoteError } = await supabase
               .from("saved_quotes")
-              .update({
-                deposit_status: "paid",
-                deposit_amount: parseFloat(depositAmount),
-                deposit_paid_at: new Date().toISOString(),
-              })
+              .select("id, email, deposit_status, deposit_amount")
               .eq("id", savedQuoteId)
-              .eq("deposit_status", "pending")
-              .select("id")
               .maybeSingle();
-            if (sqUpdateError || !savedQuoteUpdate) {
-              throw new Error(`Failed to reconcile saved quote deposit: ${sqUpdateError?.message || "claim failed"}`);
+            if (
+              concurrentSavedQuoteError
+              || !concurrentSavedQuote
+              || concurrentSavedQuote.email?.trim().toLowerCase() !== customerEmail
+              || Number(concurrentSavedQuote.deposit_amount) !== reconciledDeposit.depositAmount
+              || concurrentSavedQuote.deposit_status !== "paid"
+            ) {
+              throw new Error("Failed to reconcile saved quote deposit: claim failed");
             }
-            logStep("saved_quotes deposit status updated to paid", { savedQuoteId });
+            logStep("saved_quotes deposit was reconciled by another delivery", { savedQuoteId });
           } else {
-            throw new Error("Saved quote deposit has an invalid state");
+            logStep("saved_quotes deposit status updated to paid", { savedQuoteId });
           }
-        } else if (savedQuoteId) {
-          logStep("WARNING: Ignoring unbound saved quote metadata", {
-            savedQuoteId,
-            boundSavedQuoteId,
-          });
         }
 
         // Send confirmation emails
