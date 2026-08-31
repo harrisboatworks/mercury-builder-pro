@@ -63,7 +63,9 @@ describe('private quote document storage contract', () => {
     expect(reconciliation).toContain(
       '!boundSavedQuoteId || boundSavedQuoteId !== metadataSavedQuoteId',
     );
-    expect(webhook).toContain('body: { stripeSessionId: session.id }');
+    expect(webhook).toMatch(
+      /body: \{\s*stripeSessionId: session\.id,\s*customerEmail,\s*customerName,\s*customerPhone,\s*depositAmount,\s*paymentId: depositNotification\.paymentId,\s*motorInfo,\s*notificationTimestamp: depositNotificationTimestamp,/,
+    );
     expect(webhook).not.toContain('session.metadata.quote_pdf_path');
     expect(webhook).not.toContain('quotePdfPath');
     expect(webhook).not.toContain('quote_pdf_path:');

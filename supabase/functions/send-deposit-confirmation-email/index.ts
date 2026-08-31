@@ -1,10 +1,12 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+import {
+  paymentEmailIdempotencyKey,
+  paymentEmailRetryWindowExpired,
+  requirePaymentNotificationAttemptedAt,
+} from "../_shared/payment-notification-idempotency.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -14,6 +16,8 @@ const responseHeaders = { "Content-Type": "application/json" };
 
 interface DepositConfirmationRequest {
   stripeSessionId?: string;
+  quotePaymentSessionId?: string;
+  notificationTimestamp?: string;
   customerEmail: string;
   customerName: string;
   customerPhone?: string;
@@ -28,6 +32,15 @@ interface DepositConfirmationRequest {
 }
 
 const ADMIN_EMAILS = ["jayharris97@gmail.com", "harrisboatworks@hotmail.com"];
+
+interface ResendEmailPayload {
+  from: string;
+  to: string[];
+  subject: string;
+  html: string;
+  reply_to?: string;
+  bcc?: string[];
+}
 
 function logStep(step: string, data?: Record<string, unknown>) {
   console.log(`[DEPOSIT-EMAIL] ${step}`, data ? JSON.stringify(data) : "");
@@ -48,14 +61,42 @@ function isAuthorizedInternalRequest(req: Request): boolean {
   return constantTimeEqual(authorization, `Bearer ${supabaseServiceKey}`);
 }
 
-function generateReferenceNumber(paymentId?: string): string {
+function generateReferenceNumber(paymentId?: string, stripeSessionId?: string): string {
   if (paymentId) return `HBW-${paymentId.slice(-8).toUpperCase()}`;
-  return `HBW-${Date.now().toString(36).toUpperCase()}`;
+  if (stripeSessionId) return `HBW-${stripeSessionId.slice(-8).toUpperCase()}`;
+  throw new Error("Stable payment reference is required");
 }
 
 function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number }): string {
   if (!motorInfo?.model) return "";
   return motorInfo.model;
+}
+
+async function sendResendEmail(
+  payload: ResendEmailPayload,
+  idempotencyKey: string,
+): Promise<string> {
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) throw new Error("RESEND_API_KEY is not configured");
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    signal: AbortSignal.timeout(15_000),
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": idempotencyKey,
+    },
+    body: JSON.stringify(payload),
+  });
+  const result = await response.json().catch(() => ({})) as Record<string, unknown>;
+  if (!response.ok || typeof result.id !== "string") {
+    const message = typeof result.message === "string"
+      ? result.message
+      : `Resend request failed with status ${response.status}`;
+    throw new Error(message);
+  }
+  return result.id;
 }
 
 function createDepositConfirmationEmail(
@@ -64,9 +105,10 @@ function createDepositConfirmationEmail(
   referenceNumber: string,
   motorLabel: string,
   paymentId: string,
+  notificationTimestamp: string,
   quoteUrl?: string,
 ): string {
-  const dateStr = new Date().toLocaleDateString("en-CA", {
+  const dateStr = new Date(notificationTimestamp).toLocaleDateString("en-CA", {
     year: "numeric", month: "long", day: "numeric", timeZone: "America/Toronto",
   });
 
@@ -113,9 +155,10 @@ function createDepositConfirmationEmail(
 function createAdminNotificationEmail(
   customerName: string, customerEmail: string, customerPhone: string,
   depositAmount: string, referenceNumber: string, paymentId: string,
+  notificationTimestamp: string,
   motorInfo?: { model?: string; hp?: number; year?: number },
 ): string {
-  const now = new Date().toLocaleString("en-CA", { timeZone: "America/Toronto" });
+  const now = new Date(notificationTimestamp).toLocaleString("en-CA", { timeZone: "America/Toronto" });
   const motorLine = getMotorLabel(motorInfo) || "Not specified";
   const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
 
@@ -164,19 +207,45 @@ serve(async (req) => {
 
   try {
     const requestBody: DepositConfirmationRequest = await req.json();
-    let {
+    const {
       customerEmail, customerName, customerPhone, depositAmount,
-      paymentId, motorInfo, sendAdminNotification, adminOnly, quoteUrl,
+      paymentId, motorInfo,
     } = requestBody;
+    let {
+      sendAdminNotification, adminOnly, quoteUrl,
+    } = requestBody;
+    let notificationTimestamp = "";
+    let customerEmailKey: string | null = null;
+    let adminEmailKey = "";
+    let notificationSessionId = "";
 
     if (requestBody.stripeSessionId) {
-      if (!/^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(requestBody.stripeSessionId)) {
-        throw new Error("Invalid Stripe session ID");
+      if (
+        !requestBody.customerEmail ||
+        !requestBody.customerName ||
+        !requestBody.customerPhone ||
+        !requestBody.depositAmount ||
+        !requestBody.paymentId ||
+        !requestBody.motorInfo?.model ||
+        !requestBody.notificationTimestamp ||
+        "quotePdfPath" in requestBody ||
+        "quote_pdf_path" in requestBody
+      ) {
+        throw new Error("A complete signed deposit snapshot is required");
       }
+      customerEmailKey = paymentEmailIdempotencyKey(
+        "deposit-customer",
+        requestBody.stripeSessionId,
+      );
+      adminEmailKey = paymentEmailIdempotencyKey(
+        "deposit-admin",
+        requestBody.stripeSessionId,
+      );
+      notificationSessionId = requestBody.stripeSessionId;
 
       const { data: depositRecord, error: depositError } = await supabase
         .from("customer_quotes")
-        .select("customer_name, customer_email, customer_phone, deposit_amount, quote_data")
+        .select("id, quote_data")
         .eq("lead_source", "deposit")
         .contains("quote_data", { stripe_session_id: requestBody.stripeSessionId })
         .maybeSingle();
@@ -186,30 +255,39 @@ serve(async (req) => {
         throw new Error("Paid deposit record not found");
       }
 
-      customerEmail = depositRecord.customer_email || "";
-      customerName = depositRecord.customer_name || "Customer";
-      customerPhone = depositRecord.customer_phone || "";
-      depositAmount = String(depositRecord.deposit_amount ?? quoteData.deposit_amount ?? "");
-      paymentId = typeof quoteData.stripe_payment_intent === "string"
-        ? quoteData.stripe_payment_intent
-        : "";
-      motorInfo = quoteData.motor_info && typeof quoteData.motor_info === "object"
-        ? quoteData.motor_info as DepositConfirmationRequest["motorInfo"]
-        : undefined;
       quoteUrl = undefined;
       sendAdminNotification = true;
       adminOnly = !customerEmail;
+      notificationTimestamp = requirePaymentNotificationAttemptedAt(
+        requestBody.notificationTimestamp,
+      );
     } else {
       // The only legacy call is an internal, admin-only full-quote alert. It
       // may not send customer mail or read a caller-supplied storage path.
       if (
         !adminOnly
         || !sendAdminNotification
+        || !requestBody.quotePaymentSessionId
+        || !requestBody.notificationTimestamp
         || "quotePdfPath" in requestBody
         || "quote_pdf_path" in requestBody
       ) {
         throw new Error("A bound Stripe session is required");
       }
+      adminEmailKey = paymentEmailIdempotencyKey(
+        "quote-admin",
+        requestBody.quotePaymentSessionId,
+      );
+      notificationSessionId = requestBody.quotePaymentSessionId;
+      notificationTimestamp = requirePaymentNotificationAttemptedAt(
+        requestBody.notificationTimestamp,
+      );
+    }
+
+    // Keep the provider TTL guard at the mailer boundary too. A service-role
+    // caller cannot bypass the webhook policy and reuse an expired key.
+    if (paymentEmailRetryWindowExpired(notificationTimestamp)) {
+      throw new Error("Provider idempotency retry window expired");
     }
 
     if (!customerName || !depositAmount) {
@@ -218,50 +296,45 @@ serve(async (req) => {
 
     logStep("Processing deposit emails", { customerEmail, customerName, depositAmount, paymentId });
 
-    const referenceNumber = generateReferenceNumber(paymentId);
+    const referenceNumber = generateReferenceNumber(paymentId, notificationSessionId);
     const motorLabel = getMotorLabel(motorInfo);
 
     if (!adminOnly && customerEmail) {
       const emailHtml = createDepositConfirmationEmail(
         customerName, depositAmount, referenceNumber, motorLabel,
-        paymentId || "", quoteUrl,
+        paymentId || "", notificationTimestamp, quoteUrl,
       );
       const customerSubject = motorLabel
         ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
         : `Reservation deposit received | Harris Boat Works`;
 
-      const emailResponse = await resend.emails.send({
+      const emailId = await sendResendEmail({
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
         reply_to: "info@harrisboatworks.ca",
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
         bcc: ["info@harrisboatworks.ca", GROK_BOT_AGENTMAIL],
-      });
-      if (emailResponse.error) {
-        throw new Error(`Customer confirmation email failed: ${emailResponse.error.message}`);
-      }
-      logStep("Customer email sent", { id: emailResponse?.data?.id });
+      }, customerEmailKey!);
+      logStep("Customer email sent", { id: emailId });
     }
 
     if (sendAdminNotification || adminOnly) {
       const adminHtml = createAdminNotificationEmail(
         customerName, customerEmail || "", customerPhone || "",
-        depositAmount, referenceNumber, paymentId || "", motorInfo,
+        depositAmount, referenceNumber, paymentId || "", notificationTimestamp,
+        motorInfo,
       );
       const adminSubject = `[DEPOSIT] ${customerName} - ${motorLabel || "motor"} - $${depositAmount}`;
 
-      const adminResponse = await resend.emails.send({
+      const adminEmailId = await sendResendEmail({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: ADMIN_EMAILS,
         bcc: [GROK_BOT_AGENTMAIL],
         subject: adminSubject,
         html: adminHtml,
-      });
-      if (adminResponse.error) {
-        throw new Error(`Admin deposit email failed: ${adminResponse.error.message}`);
-      }
-      logStep("Admin notification sent", { id: adminResponse?.data?.id });
+      }, adminEmailKey);
+      logStep("Admin notification sent", { id: adminEmailId });
     }
 
     return new Response(JSON.stringify({ success: true, referenceNumber }), {

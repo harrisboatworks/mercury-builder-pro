@@ -78,7 +78,9 @@ describe('quote funnel UX contract', () => {
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
     expect(webhookSource).toContain('Bound deposit record lookup failed');
     expect(webhookSource).toContain('Bound quote record lookup failed');
-    expect(webhookSource).toContain('body: { stripeSessionId: session.id }');
+    expect(webhookSource).toMatch(
+      /body: \{\s*stripeSessionId: session\.id,\s*customerEmail,\s*customerName,\s*customerPhone,\s*depositAmount,\s*paymentId: depositNotification\.paymentId,\s*motorInfo,\s*notificationTimestamp: depositNotificationTimestamp,/,
+    );
     expect(webhookSource).not.toContain('saved_quotes updated via email fallback');
     expect(emailSource).toContain('isAuthorizedInternalRequest(req)');
     expect(emailSource).toContain('Paid deposit record not found');
