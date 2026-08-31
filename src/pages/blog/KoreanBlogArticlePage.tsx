@@ -6,7 +6,7 @@ import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
+import { Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getKoreanArticleBySlug } from '@/data/koreanBlogArticles';
@@ -313,12 +313,7 @@ export default function KoreanBlogArticlePage() {
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Back nav */}
-        <nav className="mb-8">
-          <Link to="/blog" className="text-primary hover:underline text-sm flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" />
-            ← 블로그로 돌아가기
-          </Link>
-        </nav>
+        <BlogBackLink to="/blog" label={'블로그로 돌아가기'} />
 
         {/* Hero image — shared <picture> component */}
         {article.image && (
