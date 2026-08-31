@@ -109,6 +109,7 @@ export function SaveQuoteDialog({
       // insert is enough to bind the resumable quote without requesting a
       // representation that the SELECT policy correctly blocks.
       const savedQuoteId = crypto.randomUUID();
+      localStorage.removeItem('current_saved_quote_id');
       const { error: savedQuoteError } = await supabase
         .from('saved_quotes')
         .insert({
@@ -120,9 +121,9 @@ export function SaveQuoteDialog({
           expires_at: expiresAt.toISOString(),
         });
 
-      if (savedQuoteError || !savedQuoteId) {
+      if (savedQuoteError) {
         console.error('Error saving quote state:', savedQuoteError);
-        throw savedQuoteError ?? new Error('Saved quote insert returned no ID');
+        throw savedQuoteError;
       }
 
       // Store saved quote ID for QR code generation

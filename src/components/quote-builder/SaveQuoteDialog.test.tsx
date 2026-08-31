@@ -57,6 +57,7 @@ vi.mock('@/integrations/supabase/client', () => ({
 
 import { SaveQuoteDialog } from './SaveQuoteDialog';
 
+const STALE_SAVED_QUOTE_ID = 'aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee';
 const storageError = new Error('saved_quotes insert failed');
 
 async function fillAndSubmitSaveForm() {
@@ -76,8 +77,9 @@ describe('SaveQuoteDialog', () => {
     mocks.signInWithOtp.mockResolvedValue({ error: null });
   });
 
-  it('fails closed when resumable storage returns an error', async () => {
+  it('fails closed and clears a stale binding when resumable storage returns an error', async () => {
     mocks.savedQuoteInsert.mockResolvedValue({ error: storageError });
+    localStorage.setItem('current_saved_quote_id', STALE_SAVED_QUOTE_ID);
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined);
 
     render(
