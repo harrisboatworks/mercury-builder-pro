@@ -128,6 +128,9 @@ describe('agent validation safety', () => {
     expect(checkerSource).toContain("'--lock=supabase/functions/deno.lock'");
     expect(checkerSource).toContain("'--frozen'");
     expect(checkerSource).not.toContain("'--no-lock'");
+    expect(checkerSource.indexOf("'--config'")).toBeLessThan(
+      checkerSource.indexOf("'--node-modules-dir=none'"),
+    );
 
     const edgeLock = JSON.parse(
       readFileSync(resolve(repoRoot, 'supabase/functions/deno.lock'), 'utf8'),
@@ -146,7 +149,7 @@ describe('agent validation safety', () => {
     }
   });
 
-  it('fails the Edge checker preflight when a configured npm import is not fully locked', () => {
+  it('fails the Edge checker preflight when configured or direct npm imports are not locked', () => {
     const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-edge-lock-'));
     temporaryDirectories.push(fixtureRoot);
     const functionsDirectory = join(fixtureRoot, 'supabase', 'functions');
@@ -168,7 +171,7 @@ describe('agent validation safety', () => {
 
     expect(incomplete.status).toBe(2);
     expect(incomplete.stderr).toContain(
-      'Edge lockfile is incomplete for configured import: npm:resend@2.0.0',
+      'Edge lockfile is incomplete for configured or direct import: npm:resend@2.0.0',
     );
 
     writeFileSync(
@@ -177,6 +180,35 @@ describe('agent validation safety', () => {
         version: '5',
         specifiers: { 'npm:resend@2.0.0': '2.0.0' },
         npm: { 'resend@2.0.0': { integrity: 'fixture-only' } },
+      }),
+    );
+    writeFileSync(
+      join(functionsDirectory, 'index.ts'),
+      'import md5 from "npm:blueimp-md5";\nvoid md5;\n',
+    );
+    const missingDirectImport = spawnSync(
+      process.execPath,
+      [checker, '--check-lock-only'],
+      { cwd: fixtureRoot, encoding: 'utf8' },
+    );
+
+    expect(missingDirectImport.status).toBe(2);
+    expect(missingDirectImport.stderr).toContain(
+      'Edge lockfile is incomplete for configured or direct import: npm:blueimp-md5',
+    );
+
+    writeFileSync(
+      join(functionsDirectory, 'deno.lock'),
+      JSON.stringify({
+        version: '5',
+        specifiers: {
+          'npm:blueimp-md5@*': '2.19.0',
+          'npm:resend@2.0.0': '2.0.0',
+        },
+        npm: {
+          'blueimp-md5@2.19.0': { integrity: 'fixture-only' },
+          'resend@2.0.0': { integrity: 'fixture-only' },
+        },
       }),
     );
     const complete = spawnSync(process.execPath, [checker, '--check-lock-only'], {
