@@ -38,7 +38,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { useToast } from '@/hooks/use-toast';
-import { Download } from 'lucide-react';
+import { Download, Bookmark } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
@@ -1283,7 +1283,7 @@ export default function QuoteSummaryPage() {
                     className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
-                      <Download className="w-4 h-4" />
+                      <Bookmark className="w-4 h-4" aria-hidden="true" />
                       Save for Later
                     </span>
                   </button>
