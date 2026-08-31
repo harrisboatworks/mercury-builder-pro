@@ -30,6 +30,7 @@ import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
+import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -95,16 +96,6 @@ const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CA
   (band) => Object.values(band.prices).map(Number)
 );
 
-// HTML-escape a string for safe insertion into prerendered markup.
-function escHtml(v) {
-  return String(v ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
 function mercuryProductProtectionNoscriptHtml() {
   const money = (value) => `$${Number(value).toLocaleString('en-CA')}`;
   const rows = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.map((band) =>
@@ -156,6 +147,11 @@ function parseDirectiveBody(body) {
     }
   }
   return { flat, lists };
+}
+
+function renderYouTubeEmbedHtml(body) {
+  const { flat } = parseDirectiveBody(body);
+  return renderYouTubeEmbedLinkHtml({ id: flat.id, title: flat.title });
 }
 
 function renderDecisionCardHtml(body) {
@@ -434,6 +430,9 @@ function expandVisualDirectives(md) {
   md = sub(/^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm, renderMercuryPriceTableHtml);
   // Bodiless mercury-price-table form: a single line `::mercury-price-table`
   md = sub(/^(::mercury-price-table)\s*$/gm, () => renderMercuryPriceTableHtml(''));
+  // Preserve a safe, crawlable link for lazy YouTube cards. The SPA upgrades
+  // this to the click-to-load MercuryVideo facade after hydration.
+  md = sub(/^:::youtube-embed\s*\n([\s\S]*?)\n:::\s*$/gm, renderYouTubeEmbedHtml);
   // Bodiless directive: a single line `::walkaround-lead-capture`.
   md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };

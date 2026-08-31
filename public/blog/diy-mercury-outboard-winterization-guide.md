@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "DIY Mercury Outboard Winterization"
 description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-08-19
+date_modified: 2026-08-31
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-31  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -38,12 +38,6 @@ You can winterize your own Mercury outboard only after identifying the exact sto
 [Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
-
-**Watch Mercury's official winterization checklist first:**
-
-https://www.youtube.com/watch?v=YGuQjF6vuao
-
-*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
 
 ---
 
@@ -81,7 +75,7 @@ Some procedures differ from generic fogging advice. Keep cooling water supplied 
 
 **Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?**
 
-The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The exact engine position must allow proper drainage.
 
 #### Need the model-specific scope?
 
@@ -139,6 +133,12 @@ If the procedure requires the engine to run, use the water-supply method and flo
 ---
 
 ## The Winterization Sequence
+
+**Watch Mercury's official winterization checklist:**
+
+[How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)](https://www.youtube.com/watch?v=YGuQjF6vuao)
+
+*Mercury demonstrates this checklist on one outboard. Use the storage procedure in the operation and maintenance manual for your exact engine and serial number.*
 
 Do these in order. Don't skip steps. If you're not sure what you're looking at at any point, stop and bring the motor in.
 

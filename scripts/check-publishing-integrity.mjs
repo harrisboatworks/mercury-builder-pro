@@ -176,6 +176,41 @@ const sourceArticleSection = (slug) => {
   return blogArticles.slice(start, end);
 };
 
+const contextualOfficialVideoEmbeds = [
+  {
+    slug: 'diy-mercury-outboard-winterization-guide',
+    id: 'YGuQjF6vuao',
+    title: 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)',
+  },
+  {
+    slug: 'mercury-smartcraft-connect-guide-ontario',
+    id: 'lEa_MVfOs7M',
+    title: 'SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)',
+  },
+];
+
+for (const { slug, id, title } of contextualOfficialVideoEmbeds) {
+  const source = sourceArticleSection(slug);
+  const twin = read(`public/blog/${slug}.md`);
+  const directive = `:::youtube-embed\nid: ${id}\ntitle: ${title}\n:::`;
+  const twinLink = `[${title}](https://www.youtube.com/watch?v=${id})`;
+  const count = (surface) => surface.split(id).length - 1;
+
+  check(source.includes(directive), `${slug} must keep video ${id} as a contextual body directive.`);
+  check(count(source) === 1, `${slug} must reference video ${id} exactly once in source.`);
+  check(!/youtubeVideoId\s*:/.test(source), `${slug} must not add a duplicate top-of-article video.`);
+  check(!source.includes(`https://www.youtube.com/watch?v=${id}`), `${slug} source must not retain a duplicate raw video URL.`);
+  check(twin.includes(`${twinLink}\n\n`), `${slug} Markdown twin must preserve video ${id} as a standalone usable link.`);
+  check(count(twin) === 1, `${slug} Markdown twin must reference video ${id} exactly once.`);
+}
+
+const smartCraftConnectSource = sourceArticleSection('mercury-smartcraft-connect-guide-ontario');
+check(
+  !/8M0173129\s*(?:\(|is\s+)?multi-engine/i.test(smartCraftConnectSource) &&
+    /8M0173129[^\n]{0,100}under-helm[^\n]{0,100}(?:one|1)[ -]to[ -](?:four|4) engines/i.test(smartCraftConnectSource),
+  'SmartCraft Connect must describe 8M0173129 as the under-helm one-to-four-engine module, not a multi-engine-only kit.',
+);
+
 const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
 const quickAnswerIntroCount = (surface) => (
   (surface.match(/^> \*\*Quick answer:\*\*/gmi) ?? []).length
