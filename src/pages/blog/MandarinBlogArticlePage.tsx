@@ -6,7 +6,7 @@ import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import {
@@ -144,13 +144,7 @@ export default function MandarinBlogArticlePage() {
 
         <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Back Link */}
-          <Link
-            to="/zh"
-            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            返回中文首页
-          </Link>
+          <BlogBackLink to="/zh" label={'返回中文首页'} withNav={false} className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6" />
 
           {/* Header */}
           <header className="mb-8">
