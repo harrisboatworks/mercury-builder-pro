@@ -330,7 +330,7 @@ This is **confirmed hardening**, not an independently demonstrated P0 exploit (n
 **Action for a later read-only pass:**
 
 - Re-read `encrypt_sin` / `decrypt_sin` / `has_role` / `sin_audit_log` migrations
-- Confirm resume tokens expire and are single-use
+- Confirm resume tokens expire and are invalidated after successful submission; do not make a read-only resume or the first post-resume save consume the only usable token
 - Confirm `financing_applications` cannot be listed by anon
 - Confirm `/admin/sin-encryption-test` cannot be reached by a non-admin and consider removing it from prod
 
@@ -378,7 +378,7 @@ Legitimate admin callers to **keep:** `AdminStockSync.tsx`, `UnifiedInventoryDas
 
 **Evidence:** `financing-application-api` `load` — 30-day `resumeToken` in email URLs returns employment/financial/applicant data (SIN stripped). January 2025 audits claimed 7-day expiry; that claim is **stale**. Code is 30 days.
 
-**Action (later, not #290):** confirm current TTL with a code read; consider shortening; do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Do not mix this finding with shared-quote.
+**Action (later, not #290):** confirm current TTL with a code read; consider shortening; invalidate the capability after successful submission; and do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Preserve the current resume → continued draft saves → submission lifecycle. If rotation is adopted, return and persist the replacement token atomically before invalidating the prior token; a read-only open or link scanner must not break the customer's next authorized save or submission. Do not mix this finding with shared-quote.
 
 #### P0-11. `encrypt_sin` executable by `anon` — DO NOT REVOKE
 
