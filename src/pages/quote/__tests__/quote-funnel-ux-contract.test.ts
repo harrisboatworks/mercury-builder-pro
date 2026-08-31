@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
@@ -59,9 +61,10 @@ describe('quote funnel UX contract', () => {
     expect(depositDialogSource).toContain('you approve the order in writing');
     expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
     expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
-    expect(paymentSource).toContain('if (depositAmount === "100")');
-    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
-    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('const expressOfferVerified = isVerifiedExpressMotorReservation({');
+    expect(paymentSource).toContain('const authoritativeDeposit = getMotorReservationDeposit(');
+    expect(paymentSource).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
+    expect(paymentSource).toContain('.eq("id", savedMotorId)');
     expect(paymentSource).toContain('Customer information required for deposit');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
