@@ -8,6 +8,7 @@
  * - Kept out of sitemap and hreflang until native review approves the pilot.
  */
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { Helmet } from '@/lib/helmet';
 import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
