@@ -9,6 +9,9 @@ describe('private quote document storage contract', () => {
     const myQuotes = read('src/pages/account/MyQuotesPage.tsx');
     const payment = read('supabase/functions/create-payment/index.ts');
     const webhook = read('supabase/functions/stripe-webhook/index.ts');
+    const reconciliation = read(
+      'supabase/functions/stripe-webhook/deposit-reconciliation.ts',
+    );
     const mailer = read('supabase/functions/send-deposit-confirmation-email/index.ts');
 
     expect(summary).toContain("'Content-Type': 'application/pdf'");
@@ -56,7 +59,10 @@ describe('private quote document storage contract', () => {
     expect(payment).not.toContain('quote_pdf_path:');
     expect(payment).not.toMatch(/metadata:[\s\S]*quote_pdf_path/);
 
-    expect(webhook).toContain('boundSavedQuoteId !== savedQuoteId');
+    expect(webhook).toContain('validateDepositBeforeClaim(depositPreclaimInput)');
+    expect(reconciliation).toContain(
+      '!boundSavedQuoteId || boundSavedQuoteId !== metadataSavedQuoteId',
+    );
     expect(webhook).toContain('body: { stripeSessionId: session.id }');
     expect(webhook).not.toContain('session.metadata.quote_pdf_path');
     expect(webhook).not.toContain('quotePdfPath');
