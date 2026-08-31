@@ -6,6 +6,36 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+const UUID_PATTERN = /^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i;
+const HTML_ESCAPES: Record<string, string> = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+};
+
+type MotorSpecSheetRow = {
+  model: string;
+  year: number;
+  horsepower: number | null;
+  msrp: number | null;
+  specifications: Record<string, unknown> | null;
+};
+
+type PromotionSpecSheetRow = {
+  name: string;
+  bonus_description: string | null;
+  description: string | null;
+};
+
+function escapeHtml(value: unknown): string {
+  return String(value ?? '').replace(
+    /[&<>"']/g,
+    (character) => HTML_ESCAPES[character] || character,
+  );
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -14,9 +44,9 @@ serve(async (req) => {
   try {
     const { motorId } = await req.json();
 
-    if (!motorId) {
+    if (typeof motorId !== 'string' || !UUID_PATTERN.test(motorId)) {
       return new Response(
-        JSON.stringify({ error: 'Motor ID is required' }),
+        JSON.stringify({ error: 'A valid motor ID is required' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
       );
     }
@@ -33,7 +63,7 @@ serve(async (req) => {
     ] = await Promise.all([
       supabase
         .from('motor_models')
-        .select('model, model_year, horsepower, msrp, specifications')
+        .select('model, year, horsepower, msrp, specifications')
         .eq('id', motorId)
         .single(),
       supabase
@@ -79,13 +109,16 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error generating spec sheet:', error);
     return new Response(
-      JSON.stringify({ error: 'Internal server error', details: (error instanceof Error ? error.message : String(error)) }),
+      JSON.stringify({ error: 'Internal server error' }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
     );
   }
 });
 
-function generateSpecSheetHTML(motor: any, promotions: any[]): string {
+function generateSpecSheetHTML(
+  motor: MotorSpecSheetRow,
+  promotions: PromotionSpecSheetRow[],
+): string {
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 
@@ -225,13 +258,13 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
     <div class="tagline">Authorized Mercury Marine Dealer - Gores Landing, ON</div>
   </div>
 
-  <div class="motor-title">${motor.model || 'Motor'}</div>
-  <div class="motor-subtitle">${motor.model_year || 2026} Mercury Marine • ${motor.horsepower || ''}HP</div>
+  <div class="motor-title">${escapeHtml(motor.model || 'Motor')}</div>
+  <div class="motor-subtitle">${escapeHtml(motor.year || 2026)} Mercury Marine • ${escapeHtml(motor.horsepower || '')}HP</div>
 
   ${motor.msrp ? `
   <div class="price-box">
     <div class="price-label">MSRP</div>
-    <div class="price-value">$${motor.msrp.toLocaleString()}</div>
+    <div class="price-value">$${escapeHtml(motor.msrp.toLocaleString())}</div>
   </div>
   ` : ''}
 
@@ -240,35 +273,35 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
     <div class="spec-grid">
       <div class="spec-item">
         <div class="spec-label">Horsepower</div>
-        <div class="spec-value">${hpNumber} HP</div>
+        <div class="spec-value">${escapeHtml(hpNumber)} HP</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Engine Type</div>
-        <div class="spec-value">${specs['Engine Type'] || 'FourStroke'}</div>
+        <div class="spec-value">${escapeHtml(specs['Engine Type'] || 'FourStroke')}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Cylinders</div>
-        <div class="spec-value">${specs['Cylinders'] || (hpNumber <= 15 ? '2' : '4')}</div>
+        <div class="spec-value">${escapeHtml(specs['Cylinders'] || (hpNumber <= 15 ? '2' : '4'))}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Displacement</div>
-        <div class="spec-value">${specs['Displacement'] || 'Contact dealer'}</div>
+        <div class="spec-value">${escapeHtml(specs['Displacement'] || 'Contact dealer')}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Starting</div>
-        <div class="spec-value">${specs['Starting'] || 'Electric'}</div>
+        <div class="spec-value">${escapeHtml(specs['Starting'] || 'Electric')}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Fuel System</div>
-        <div class="spec-value">${specs['Fuel System'] || 'EFI'}</div>
+        <div class="spec-value">${escapeHtml(specs['Fuel System'] || 'EFI')}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Weight</div>
-        <div class="spec-value">${specs['Weight'] || 'Contact dealer'}</div>
+        <div class="spec-value">${escapeHtml(specs['Weight'] || 'Contact dealer')}</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">Shaft Length</div>
-        <div class="spec-value">${specs['Shaft Length'] || '20"'}</div>
+        <div class="spec-value">${escapeHtml(specs['Shaft Length'] || '20"')}</div>
       </div>
     </div>
   </div>
@@ -278,7 +311,7 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
     <div class="section-title">Special Offers</div>
     <ul>
       ${promotions.map(promo => `
-        <li><strong>${promo.name}</strong>: ${promo.bonus_description || promo.description || ''}</li>
+        <li><strong>${escapeHtml(promo.name)}</strong>: ${escapeHtml(promo.bonus_description || promo.description || '')}</li>
       `).join('')}
     </ul>
   </div>

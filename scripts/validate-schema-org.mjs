@@ -52,6 +52,8 @@ async function validate(jsonLd) {
     try {
       const res = await fetch(VALIDATOR_URL, {
         method: 'POST',
+        redirect: 'error',
+        signal: AbortSignal.timeout(20_000),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           Accept: 'application/json',
@@ -59,13 +61,29 @@ async function validate(jsonLd) {
         body,
       });
       const text = await res.text();
+      if (!res.ok) {
+        return {
+          _validatorFailure: true,
+          reason: `validator returned HTTP ${res.status}`,
+        };
+      }
       // Validator wraps response with )]}'
       // anti-JSON-hijack prefix.
       const cleaned = text.replace(/^\)\]\}'\n?/, '');
       try {
-        return JSON.parse(cleaned);
+        const result = JSON.parse(cleaned);
+        if (!result || typeof result !== 'object' || !Array.isArray(result.errors)) {
+          return {
+            _validatorFailure: true,
+            reason: 'validator JSON response did not include an errors array',
+          };
+        }
+        return result;
       } catch {
-        return { _parseError: true, raw: text.slice(0, 200) };
+        return {
+          _validatorFailure: true,
+          reason: `validator returned non-JSON response (${text.slice(0, 200)})`,
+        };
       }
     } catch (err) {
       if (attempt === 1) throw err;
@@ -119,8 +137,8 @@ for (const file of files) {
     blocksChecked++;
     try {
       const result = await validate(blocks[i]);
-      if (result?._parseError) {
-        validatorFailures.push(`${file} block[${i}]: validator returned non-JSON response (${result.raw})`);
+      if (result?._validatorFailure) {
+        validatorFailures.push(`${file} block[${i}]: ${result.reason}`);
         await new Promise((r) => setTimeout(r, THROTTLE_MS));
         continue;
       }

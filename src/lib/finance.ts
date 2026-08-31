@@ -279,17 +279,30 @@ export const daysUntil = (iso: string | Date) => {
   const dateOnly = typeof iso === 'string'
     ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
     : null;
-  const end = dateOnly
-    ? new Date(
-        Number(dateOnly[1]),
-        Number(dateOnly[2]) - 1,
-        Number(dateOnly[3]),
-        23,
-        59,
-        59,
-        999,
-      )
-    : new Date(iso);
+  let end: Date;
+
+  if (dateOnly) {
+    const year = Number(dateOnly[1]);
+    const monthIndex = Number(dateOnly[2]) - 1;
+    const day = Number(dateOnly[3]);
+    end = new Date(0);
+    end.setFullYear(year, monthIndex, day);
+    end.setHours(23, 59, 59, 999);
+
+    // Date normalizes impossible values (for example, February 30) into a
+    // different day. Preserve the previous invalid-input behavior instead of
+    // turning a malformed promotion date into a future countdown.
+    if (
+      end.getFullYear() !== year
+      || end.getMonth() !== monthIndex
+      || end.getDate() !== day
+    ) {
+      end = new Date(Number.NaN);
+    }
+  } else {
+    end = new Date(iso);
+  }
+
   return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
 };
 
