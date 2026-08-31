@@ -39,7 +39,7 @@ npm run verify:api
 npm run typecheck:edge -- supabase/functions/<function-name>/index.ts
 ```
 
-The Edge command fails when no entry point is supplied, rejects paths outside `supabase/functions`, pins Deno 2.9.5, and accepts multiple changed TypeScript paths. It uses `--no-lock` because this repository has no tracked Deno lockfile, so validation cannot create or update one. Pair each scoped checker with the relevant focused tests. Running `npm run test:integration:financing` is itself the per-run write opt-in and requires separate authorization, an approved target, and both test credentials; the runner fails before Vitest if either credential is absent. It is never implied by `npm test` or `verify:small`.
+The Edge command fails when no entry point is supplied, rejects paths outside `supabase/functions`, pins Deno 2.9.5, accepts multiple changed TypeScript paths, disables local `node_modules` materialization, and checks the dedicated tracked `supabase/functions/deno.lock` in frozen mode. A dependency change therefore fails until its reviewed lockfile update is committed. Pair each scoped checker with the relevant focused tests. Running `npm run test:integration:financing` is itself the per-run write opt-in and requires separate authorization, an approved target, and both test credentials in the invoking environment or ignored `.env.local`; the runner loads that local file before its credential preflight and fails before Vitest if either value is absent. It is never implied by `npm test` or `verify:small`.
 
 To run one unit test file directly:
 
