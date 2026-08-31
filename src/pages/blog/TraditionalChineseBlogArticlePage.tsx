@@ -8,12 +8,13 @@
  * - Kept out of sitemap and hreflang until native review approves the pilot.
  */
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { Helmet } from '@/lib/helmet';
 import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import {
@@ -104,13 +105,7 @@ export default function TraditionalChineseBlogArticlePage() {
         </Breadcrumb>
 
         <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
-          <Link
-            to="/blog/zh-hant"
-            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            返回中文首頁
-          </Link>
+          <BlogBackLink to="/blog/zh-hant" label={'返回中文首頁'} withNav={false} className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6" />
 
           {hansUrl && (
             <div className="mb-6 rounded-md border border-repower-navy-900/15 bg-repower-paper/60 px-4 py-3 text-sm text-repower-navy-900/75">
