@@ -27,7 +27,7 @@ This is a review brief, not a punch list to blindly implement.
 
 ## 0.1 Execution-order ownership (refreshed 2026-08-30)
 
-Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/diffs. PR #314 is closed and unmerged. PR #315 is still based on the exact #314 head rather than `main`, so it is not a merge-ready current-main owner until it is retargeted/refreshed. Merged PRs #331 and #333 changed two findings that this audit originally called unowned. PR #335 is the verified current-main successor for the safe route/header subset of #314.
+Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/diffs. PR #314 is closed and unmerged. PR #315 has been rebuilt directly onto current `main` at exact head `c0448e2a`; it is open, ready, mergeable/clean, and exact-head verified, so its Dropbox/quote-email scope is an accepted owner lane again. Merged PRs #331 and #333 changed two findings that this audit originally called unowned. PR #335 is the verified current-main successor for the safe route/header subset of #314.
 
 ### ALREADY OWNED — do not duplicate
 
@@ -35,7 +35,7 @@ Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/d
 | --- | --- | --- |
 | **#300** | `send-notification` trust boundary: service-role/internal caller gate, payload policy, and tests | Open, ready, current-main, and clean. Do not re-auth that function here. |
 | **#335** | `/admin/blog` UI authorization plus safe baseline response headers | Open, ready, current-main, and clean. This supersedes the safe #314 subset. `/admin/blog` remains defense-in-depth; the baseline headers remain hardening, not a demonstrated exploit. |
-| **#315** | Dropbox OAuth/import/config plus quote-email hardening | Open draft, but still stacked on closed/unmerged #314. Preserve the lane, but do not treat it as merge-ready or duplicate its work; refresh it onto current `main` first. |
+| **#315** | Dropbox OAuth/import/config plus quote-email hardening | Open, ready, current-main, and mergeable/clean at exact head `c0448e2a`. Local tests/typechecks/Deno/lint, security review, GitHub Test, protected Vercel preview, Kimi, and exact-head Codex review passed. Draft migrations remain unapplied. Do not duplicate this lane. |
 | **#290** | Shared-quote data minimization, expiry, soft-lead exclusion, atomic `increment_saved_quote_access` (migration drafted, not applied) | Open, ready, current-main, and clean. Keep shared-quote findings separate from financing-resume. |
 | **#288** | Financing table write authority. Drops anon/user write policies on `financing_applications`. **Explicitly keeps** `anon` execute on `encrypt_sin`. | Open, ready, current-main, and clean. Do **not** revoke anon execute on `encrypt_sin`. |
 
@@ -349,12 +349,12 @@ Deep-dive confirmed several functions use the service role and accept unauthenti
 | Function | Status |
 | --- | --- |
 | `send-notification` | **ALREADY OWNED by #300** |
-| `get-dropbox-config`, `dropbox-oauth` (and related import/config) | **OWNED by #315, but dependency-blocked** — the draft still targets closed/unmerged #314 and must be refreshed onto current `main`. |
+| `get-dropbox-config`, `dropbox-oauth` (and related import/config) | **OWNED by accepted #315** — rebuilt directly onto current `main` at exact head `c0448e2a`, ready and mergeable/clean with local, security, GitHub Test, protected-preview, Kimi, and exact-head Codex gates passed. Draft migrations remain unapplied. |
 | `sync-lightspeed-inventory` | **PARTIALLY RESOLVED by merged #331** — public quote-builder triggers are gone, but current-main function source still creates the service-role client without caller authentication. Historical repository runbooks describe an anon-JWT cron; the deployed job must be inspected read-only before Jay selects any replacement contract. |
 | `notification-webhook` | **OWNED by refreshed draft #332** — current main still accepts unsigned Twilio-style body data, while #332's current-main head implements the signature, early-callback, monotonic-status, canonical-URL, repeated-key, duplicate-row, targeting, and error-code contracts. Keep the release sequence explicit. |
 | `sync-inventory-api`, `mark-out-of-stock`, `scrape-mercury-portal`, `migrate-motor-images`, `motor-health-monitor` | Review later. Not in this execution order. Confirm each before changing — some may already gate. |
 
-**Remaining action in this order:** preserve #332 and its release order; make the scheduler-auth decision before opening a separate Lightspeed function-auth patch. Do not re-do #300/#315 or the merged #331 browser removal.
+**Remaining action in this order:** preserve #332 and its release order; make the scheduler-auth decision before opening a separate Lightspeed function-auth patch. Do not re-do accepted #300/#315 or the merged #331 browser removal.
 
 #### P0-9. Quote motor-selection auto-invokes Lightspeed sync — BROWSER HALF RESOLVED by merged #331
 
@@ -618,14 +618,13 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 
 1. **Twilio half of P0-8** — preserve accepted draft PR #332 and its release sequence. Its exact-head implementation verifies signatures against a configured canonical URL (not `Host`/forwarded-host), early callbacks, monotonic/out-of-order statuses, repeated keys, duplicate rows, signed-row/`MessageSid` targeting, and error-code retention. Draft migrations only; do not apply them here.
 2. **Lightspeed server half of P0-8/P0-9** — merged #331 already removed public browser triggers and the README key instruction. Pause before the remaining function-auth patch until Jay selects and stages a scheduler credential compatible with the deployed cron.
-3. **#315 dependency repair** — preserve its Dropbox/quote-email scope, but retarget/rebuild it from current `main` rather than closed PR #314.
-4. Decide the tracked `.env` policy in a separate reviewed change. Merely adding `.env` to `.gitignore` does nothing while the file is tracked. If untracking is approved, first commit an empty-value `.env.example`, then remove `.env` from the index while retaining the local file and add the ignore rule; do not rewrite history unless Jay asks.
-5. P1-12 www URLs in public motors/quote APIs
-6. P1-3 absolutize image URLs + pass through shaft/control already in the query
-7. P1-5 revalidate the footer cache/fallback and align `ai.txt` generation to the authoritative hours source
-8. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
+3. Decide the tracked `.env` policy in a separate reviewed change. Merely adding `.env` to `.gitignore` does nothing while the file is tracked. If untracking is approved, first commit an empty-value `.env.example`, then remove `.env` from the index while retaining the local file and add the ignore rule; do not rewrite history unless Jay asks.
+4. P1-12 www URLs in public motors/quote APIs
+5. P1-3 absolutize image URLs + pass through shaft/control already in the query
+6. P1-5 revalidate the footer cache/fallback and align `ai.txt` generation to the authoritative hours source
+7. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
 
-**Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, P0-8 `send-notification` (`#300`), P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step). Preserve #315's scope while repairing its base.
+**Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, P0-8 `send-notification` (`#300`), accepted #315 Dropbox/quote-email work, P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step).
 
 ### Band B — needs a 10-minute Jay copy/business nod
 
@@ -745,14 +744,14 @@ Manual:
 
 ## 12. One-page summary for Jay
 
-The site is a real production system: live CAD quotes, Stripe deposits, financing with SIN encryption, a large Ontario-focused blog, and an AI-agent surface most dealers do not have. The May/June audits already fixed the worst SEO lies (Verado URL, fake 128-motor count, unconditional homepage 7-year badge). Current owner lanes #300, #335, #315, #290, #288, and #332 cover several original P0s — do not duplicate them. PR #314 is closed/unmerged; #315 must be rebuilt or retargeted off that closed base. PRs #331 and #333 are merged.
+The site is a real production system: live CAD quotes, Stripe deposits, financing with SIN encryption, a large Ontario-focused blog, and an AI-agent surface most dealers do not have. The May/June audits already fixed the worst SEO lies (Verado URL, fake 128-motor count, unconditional homepage 7-year badge). Current owner lanes #300, #335, #315, #290, #288, and #332 cover several original P0s — do not duplicate them. PR #314 is closed/unmerged; #315 was rebuilt directly onto current `main` and accepted at exact head `c0448e2a`. PRs #331 and #333 are merged.
 
 What remains actionable:
 
 1. **Lightspeed server authorization remains.** Merged #331 removed browser-triggered sync and unsafe README instructions, but `sync-lightspeed-inventory` still creates a service-role client without caller auth. Historical repository runbooks describe an anon-JWT cron; a fresh credential-redacted read of the deployed job must establish current state before Jay selects and stages any compatible scheduler credential or the function gate deploys.
 2. **Twilio webhook hardening is owned by accepted draft #332.** Current main still lacks signature validation; #332 is current-main, clean/mergeable, and exact-head verified, but remains draft for release sequencing.
 3. **Route/header hardening is owned by ready #335.** Do not revive closed PR #314.
-4. **Dropbox/quote-email hardening is dependency-blocked in #315.** Preserve its scope, but rebuild it from current `main` instead of closed #314.
+4. **Dropbox/quote-email hardening is accepted in #315.** It is current-main, ready, mergeable/clean, and exact-head verified at `c0448e2a`; preserve it as the owner lane and keep its draft migrations unapplied until separately authorized.
 5. **Homepage still ranks for a phrase nobody searches**; H1 rotates after hydration.
 6. **The historical 101-motor feed snapshot** was image-poor, shaft-blind, and used apex URLs; revalidate current production before coding from those counts.
 7. **Build/content** is held together by a very large `blogArticles.ts` and a long prebuild gauntlet. That is a feature until someone bypasses it.
@@ -761,7 +760,7 @@ What is **not** a current open P0 (corrected):
 
 - `/admin/blog` UI gate and baseline security headers — **#335** (defense-in-depth / hardening). Closed #314 is superseded for this safe subset.
 - `send-notification` — **#300**.
-- Dropbox OAuth/import/config + quote-email — **#315**, after current-main dependency repair.
+- Dropbox OAuth/import/config + quote-email — **accepted #315** at current-main exact head `c0448e2a`; draft migrations remain unapplied.
 - Shared-quote minimization / expiry / atomic access count — **#290**.
 - Financing table write authority — **#288**. Do **not** revoke anon `encrypt_sin`.
 - Public quote-builder Lightspeed triggers and the README service-role curl — **resolved by merged #331**. The separate Edge Function auth gap remains.
@@ -773,7 +772,7 @@ What is **not** a current open P0 (corrected):
 - Explicit `select` lists on public service-role APIs are not live select-star bugs.
 - A disabled client login limiter is not proof Supabase Auth lacks server-side rate limiting.
 
-Codex should preserve and review the already-ready current-main lanes (#300, #290, #288, and #335), preserve accepted draft #332 and its release sequence, repair #315's closed-base dependency, and pause for a fresh read-only Lightspeed deployed-cron inspection plus Jay's credential decision before changing the function gate.
+Codex should preserve and review the already-ready current-main lanes (#300, #315, #290, #288, and #335), preserve accepted draft #332 and its release sequence, and pause for a fresh read-only Lightspeed deployed-cron inspection plus Jay's credential decision before changing the function gate.
 
 ---
 
