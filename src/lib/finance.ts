@@ -276,6 +276,7 @@ export const calculateMonthly = (amount: number, rate?: number, termMonths = 60)
 
 export const daysUntil = (iso: string | Date) => {
   const now = new Date();
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
   const dateOnly = typeof iso === 'string'
     ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
     : null;
@@ -297,13 +298,25 @@ export const daysUntil = (iso: string | Date) => {
       || end.getMonth() !== monthIndex
       || end.getDate() !== day
     ) {
-      end = new Date(Number.NaN);
+      return Number.NaN;
     }
+
+    // A date-only deadline represents an inclusive local calendar day. Convert
+    // the local date parts to UTC day numbers so 23/25-hour DST days still count
+    // exactly once.
+    const endDay = new Date(0);
+    endDay.setUTCFullYear(year, monthIndex, day);
+    endDay.setUTCHours(0, 0, 0, 0);
+    const nowDay = new Date(0);
+    nowDay.setUTCFullYear(now.getFullYear(), now.getMonth(), now.getDate());
+    nowDay.setUTCHours(0, 0, 0, 0);
+
+    return Math.max(0, ((endDay.getTime() - nowDay.getTime()) / millisecondsPerDay) + 1);
   } else {
     end = new Date(iso);
   }
 
-  return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+  return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / millisecondsPerDay));
 };
 
 export type QuoteData = {
