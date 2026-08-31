@@ -46,6 +46,10 @@ const canonicalComponent = read('src/components/seo/Canonical.tsx');
 const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
 const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
+const publicBlogIndex = JSON.parse(read('public/blog-index.json'));
+const publicCatalog = read('public/catalog.md');
+const blogI18nRegistry = read('src/data/blogI18nRegistry.js');
+const repowerCostMarkdown = read('public/blog/mercury-repower-cost-ontario-2026-cad.md');
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
 const blogClusters = read('src/data/blogClusters.ts');
@@ -210,6 +214,88 @@ check(
   !/8M0173129\s*(?:\(|is\s+)?multi-engine/i.test(smartCraftConnectSource) &&
     /8M0173129[^\n]{0,100}under-helm[^\n]{0,100}(?:one|1)[ -]to[ -](?:four|4) engines/i.test(smartCraftConnectSource),
   'SmartCraft Connect must describe 8M0173129 as the under-helm one-to-four-engine module, not a multi-engine-only kit.',
+);
+
+const repowerCostSlug = 'mercury-repower-cost-ontario-2026-cad';
+const repowerCostFrenchSlug = 'prix-remotorisation-mercury-ontario';
+const repowerCostHtmlPath = `/blog/${repowerCostSlug}`;
+const repowerCostFrenchHtmlPath = `/blog/fr/${repowerCostFrenchSlug}`;
+const repowerCostHtmlUrl = `https://www.mercuryrepower.ca${repowerCostHtmlPath}`;
+const repowerCostFrenchHtmlUrl = `https://www.mercuryrepower.ca${repowerCostFrenchHtmlPath}`;
+const repowerCostMarkdownUrl = `${repowerCostHtmlUrl}.md`;
+const repowerCostTitle = "Mercury Repower Guide: Cost, Timeline & When It's Worth It";
+const repowerCostArticle = sourceArticleSection(repowerCostSlug);
+const repowerCostIndexEntries = publicBlogIndex.articles.filter(
+  (article) => article.slug === repowerCostSlug,
+);
+const sitemapEntries = publicSitemap.match(/<url>[\s\S]*?<\/url>/g) ?? [];
+const repowerCostSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostHtmlUrl}</loc>`),
+);
+const repowerCostFrenchSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostFrenchHtmlUrl}</loc>`),
+);
+const repowerCostRegistryEntry = `{ en: '${repowerCostSlug}', fr: '${repowerCostFrenchSlug}' }`;
+const repowerCostGeneratorPipeline = caseStudyGenerator.match(
+  /const blogTwinSummaries = \[\];[\s\S]*?\n}\n\nfor \(const group of localizedBlogGroups\)/,
+)?.[0] ?? '';
+const blogTableFallbacks = prerenderScript.match(
+  /const BLOG_TABLE_FALLBACKS = \{[\s\S]*?\n};/,
+)?.[0] ?? '';
+
+check(
+  repowerCostArticle.length > 5_000 &&
+    repowerCostArticle.includes(`title: "${repowerCostTitle}"`) &&
+    /There is no dependable one-price-fits-all installed range/.test(repowerCostArticle),
+  'The canonical Mercury repower-cost article source is missing or unexpectedly empty.',
+);
+check(
+  repowerCostMarkdown.length > 5_000 &&
+    repowerCostMarkdown.includes(`# ${repowerCostTitle}`) &&
+    repowerCostMarkdown.includes(`canonical: ${repowerCostMarkdownUrl}`) &&
+    repowerCostMarkdown.includes(`**Canonical (HTML for humans):** ${repowerCostHtmlUrl}`),
+  'The generated Mercury repower-cost Markdown twin is missing, empty, or points at the wrong canonical.',
+);
+check(
+  repowerCostIndexEntries.length === 1 &&
+    repowerCostIndexEntries[0].title === repowerCostTitle &&
+    repowerCostIndexEntries[0].description?.length > 80,
+  'blog-index.json must contain one complete Mercury repower-cost entry.',
+);
+check(
+  publicCatalog.split(repowerCostMarkdownUrl).length - 1 === 1,
+  'catalog.md must contain one Mercury repower-cost Markdown-twin URL.',
+);
+check(
+  blogI18nRegistry.split(repowerCostRegistryEntry).length - 1 === 1,
+  'The blog hreflang registry must pair the Mercury repower-cost route with its French translation exactly once.',
+);
+check(
+  repowerCostSitemapEntries.length === 1 &&
+    repowerCostFrenchSitemapEntries.length === 1 &&
+    [repowerCostSitemapEntries[0], repowerCostFrenchSitemapEntries[0]].every((entry) =>
+      entry.includes(`hreflang="en-CA" href="${repowerCostHtmlUrl}"`) &&
+      entry.includes(`hreflang="fr-CA" href="${repowerCostFrenchHtmlUrl}"`) &&
+      entry.includes(`hreflang="x-default" href="${repowerCostHtmlUrl}"`)
+    ),
+  'sitemap.xml must contain one reciprocal English/French hreflang pair for the Mercury repower-cost route.',
+);
+check(
+  /function loadBlogArticles\(\)[\s\S]{0,800}getSitemapEligibleArticles/.test(caseStudyGenerator) &&
+    /for \(const article of blogArticlesAll\)/.test(repowerCostGeneratorPipeline) &&
+    /const path = `\/blog\/\$\{article\.slug\}\.md`/.test(repowerCostGeneratorPipeline) &&
+    /writePublicMd\(path, markdown\)/.test(repowerCostGeneratorPipeline),
+  'The Markdown-twin generator must write every sitemap-eligible English article, including the Mercury repower-cost route.',
+);
+check(
+  !(parsedVercelConfig.redirects ?? []).some((redirect) => redirect.source === repowerCostHtmlPath),
+  'vercel.json must not redirect the canonical Mercury repower-cost route.',
+);
+check(
+  blogTableFallbacks.length > 0 &&
+    !blogTableFallbacks.includes(`'${repowerCostSlug}':`) &&
+    !blogTableFallbacks.includes('Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)'),
+  'The prerender must not append the retired installed-range table after the canonical repower-cost article.',
 );
 
 const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
