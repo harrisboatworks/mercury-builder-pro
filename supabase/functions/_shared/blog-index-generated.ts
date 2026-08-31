@@ -3928,7 +3928,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is SmartCraft Connect Mobile the same as VesselView Mobile?",
-        "a": "Yes. Mercury rebranded VesselView Mobile to SmartCraft Connect Mobile in 2024. The function is the same: a small under-cowl module that streams engine data to the free Mercury Marine app on iOS and Android. Current part numbers are 8M0173128 single-engine and 8M0173129 multi-engine."
+        "a": "Yes. Mercury rebranded VesselView Mobile to SmartCraft Connect Mobile in 2024. The function is the same: a small module that streams engine data to the free Mercury Marine app on iOS and Android. Current part numbers are 8M0173128 for an under-cowl single-engine application and 8M0173129 for an under-helm one-to-four-…"
       }
     ]
   },

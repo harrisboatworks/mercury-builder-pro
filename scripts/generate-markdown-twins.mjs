@@ -412,7 +412,7 @@ function cleanBlogContent(content, hasFaqs, context = {}) {
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(
     /^:::youtube-embed\s*\nid:\s*([A-Za-z0-9_-]+)(?:\ntitle:\s*([^\n]+))?\n:::\s*$/gim,
-    (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})`,
+    (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})\n\n`,
   );
   // Twins-only: convert visual directives into text-first Markdown. Leaving
   // their YAML-like properties in the twin exposes authoring instructions to

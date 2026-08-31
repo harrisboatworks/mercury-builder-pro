@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import '@testing-library/jest-dom/vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { MarkdownSectionCards } from './MarkdownSectionCards';
@@ -26,5 +26,33 @@ ctaHref: https://www.mercuryrepower.ca
     expect(screen.getByRole('heading', { name: 'What HBW brings to GTA Chinese boaters' })).toBeInTheDocument();
     expect(screen.getByText('1947 年至今, 三代家族经营')).toBeInTheDocument();
     expect(screen.queryByText(/::bilingual-trust-card/)).not.toBeInTheDocument();
+  });
+});
+
+describe('MarkdownSectionCards YouTube directives', () => {
+  it('renders the lazy Mercury facade before loading the sanitized iframe on click', () => {
+    const title = 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)';
+    const content = `:::youtube-embed
+id: YGuQjF6vuao
+title: ${title}
+:::`;
+
+    const { container } = render(
+      <MarkdownSectionCards content={content} markdownComponents={{}} />,
+    );
+
+    const facade = container.querySelector('[data-mercury-video="YGuQjF6vuao"]');
+    expect(facade).toBeInTheDocument();
+    expect(container.querySelector('iframe')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: `Play: ${title}` }));
+
+    const iframe = container.querySelector('iframe');
+    expect(iframe).toHaveAttribute(
+      'src',
+      'https://www.youtube.com/embed/YGuQjF6vuao?autoplay=1&rel=0',
+    );
+    expect(iframe).toHaveAttribute('title', title);
+    expect(iframe).toHaveAttribute('allowfullscreen');
   });
 });
