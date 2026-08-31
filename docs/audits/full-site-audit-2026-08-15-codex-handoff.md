@@ -43,7 +43,7 @@ Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/d
 
 | PR | Audit surface | Current status |
 | --- | --- | --- |
-| **#331** | Remove public quote-builder Lightspeed sync triggers and unsafe README service-role-key instructions | **Merged** into `main` as `45e25b3a`. The server-side Edge Function still creates a service-role client without caller authentication; #331 did not change that function or the anon-JWT cron contract. |
+| **#331** | Remove public quote-builder Lightspeed sync triggers and unsafe README service-role-key instructions | **Merged** into `main` as `45e25b3a`. The server-side Edge Function still creates a service-role client without caller authentication; #331 did not inspect or change the deployed cron. Historical repository runbooks describe anon JWT, but current cron state requires a fresh read-only check. |
 | **#332** | Validate Twilio `notification-webhook` signatures and target status updates safely | Refreshed draft at current-main head `f3fcabd3`; clean/mergeable with exact-head CI, protected preview, Codex, Kimi, and security gates passed for signature, early-callback, monotonic status, URL-normalization, repeated-key, duplicate-row, targeting, and error-code behavior. It remains draft for the #300/migration/config/function release sequence. Do not duplicate it. |
 | **#333** | Derive quote-funnel and legacy SMS warranty copy from promotion data | **Merged** into `main` as `6e482d84`. Current main uses the shared warranty-display contract and focused tests; the quote UI selects the applied promotion, while retained SMS templates accept explicit extra-year data. The original hardcoded-badge finding is resolved. |
 
@@ -67,7 +67,7 @@ Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/d
 
 ### JAY DECISION REQUIRED (do not silently change)
 
-**Lightspeed cron auth contract is proven and is currently anon JWT.** `docs/runbooks/post-rotation-cron-rewrite.sql` job `lightspeed-motor-models-sync-daily` (jobid 19) posts `Authorization: Bearer <ANON_JWT>` and `{}`. `docs/runbooks/jwt-signing-keys-migration-audit.md` §2.1 says Lightspeed jobs use anon JWT and none use `requireAdmin`; migrating them to `x-internal-secret` was deferred as a separate sprint. Browser `supabase.functions.invoke` also sends the public anon JWT, so anon cannot distinguish cron from a quote-builder visit. Tightening the function to admin / internal-secret / service-role **preserves the scheduled caller only after production cron is rewritten**. That rewrite is a production config change and is **not authorized in this order**. Implementation PRs may add the function gate and must flag the cron rewrite as a merge/deploy gate — they must not execute cron SQL or place an internal secret in frontend code.
+**Lightspeed cron auth requires fresh deployed-state proof before any rollout.** Repository-only evidence is historical: the 2026-05-01 `jwt-signing-keys-migration-audit.md` and the unexecuted `post-rotation-cron-rewrite.sql` draft describe job `lightspeed-motor-models-sync-daily` (jobid 19) using an anon JWT. They do **not** prove the current deployed `cron.job` row. Before prescribing a credential rewrite or function gate, perform a fresh read-only inspection of the deployed job's name, schedule, target, and authorization mode without printing the token. If it still uses anon, remember that browser `supabase.functions.invoke` also sends the public anon JWT, so anon cannot distinguish cron from a quote-builder visit; Jay must then select and stage a compatible server credential before the function gate deploys. Any cron rewrite is a production config change and is **not authorized in this order**. Implementation PRs may add a fail-closed gate only with this read-only preflight and explicit release dependency; they must not execute cron SQL or place an internal secret in frontend code.
 
 **Jay Harris** is the owner (software engineer / dealer operator). Business facts that look "wrong" in copy are often intentional (Verado special-order, pickup-only, CAD-only, no delivery).
 
@@ -107,7 +107,7 @@ Re-inspected against current `origin/main` (`61864aa3`) and the exact PR state/d
 | Chat / voice | Custom AI chat + ElevenLabs |
 | SEO | `react-helmet-async`, static prerender (`scripts/static-prerender.mjs`), IndexNow, RSS, sitemap |
 
-`package.json` name is still the Lovable scaffold (`vite_react_shadcn_ts`). README is still mostly Lovable boilerplate plus a Lightspeed sync curl.
+`package.json` name is still the Lovable scaffold (`vite_react_shadcn_ts`). README is still mostly Lovable boilerplate, but merged #331 removed the unsafe Lightspeed service-role curl; the current manual-sync section explicitly warns against local key use and points operators to authenticated admin surfaces.
 
 ---
 
@@ -245,7 +245,7 @@ Inconsistencies:
 | `create-payment` | Stripe Checkout | Origin allowlist + Zod |
 | `stripe-webhook` | Payment fulfillment | Signature verified |
 | `hbw-valuation-proxy` | Trade-in | Adds private key server-side |
-| `sync-lightspeed-inventory` | Inventory SoT | Cron 05:00 UTC + SMS on failure |
+| `sync-lightspeed-inventory` | Inventory SoT | Repository runbooks record job 19 at 02:15 UTC + SMS on failure; re-read deployed cron before scheduling rollout work |
 | `financing-application-api` | Credit app | SIN encryption path |
 | `ai-chatbot-stream` | Chat | Knowledge + parts regex |
 | `ucp-checkout` | Agent checkout | Exposed at `/api/agents/ucp` |
@@ -350,7 +350,7 @@ Deep-dive confirmed several functions use the service role and accept unauthenti
 | --- | --- |
 | `send-notification` | **ALREADY OWNED by #300** |
 | `get-dropbox-config`, `dropbox-oauth` (and related import/config) | **OWNED by #315, but dependency-blocked** — the draft still targets closed/unmerged #314 and must be refreshed onto current `main`. |
-| `sync-lightspeed-inventory` | **PARTIALLY RESOLVED by merged #331** — public quote-builder triggers are gone, but current-main function source still creates the service-role client without caller authentication. Cron contract is proven anon JWT (Jay decision before changing that contract). |
+| `sync-lightspeed-inventory` | **PARTIALLY RESOLVED by merged #331** — public quote-builder triggers are gone, but current-main function source still creates the service-role client without caller authentication. Historical repository runbooks describe an anon-JWT cron; the deployed job must be inspected read-only before Jay selects any replacement contract. |
 | `notification-webhook` | **OWNED by refreshed draft #332** — current main still accepts unsigned Twilio-style body data, while #332's current-main head implements the signature, early-callback, monotonic-status, canonical-URL, repeated-key, duplicate-row, targeting, and error-code contracts. Keep the release sequence explicit. |
 | `sync-inventory-api`, `mark-out-of-stock`, `scrape-mercury-portal`, `migrate-motor-images`, `motor-health-monitor` | Review later. Not in this execution order. Confirm each before changing — some may already gate. |
 
@@ -364,7 +364,7 @@ Deep-dive confirmed several functions use the service role and accept unauthenti
 
 Legitimate admin callers to **keep:** `AdminStockSync.tsx`, `UnifiedInventoryDashboard.tsx`, `InventoryMonitor.tsx`, `InventoryDiagnostics.tsx`.
 
-**Proven scheduler:** `lightspeed-motor-models-sync-daily` uses **anon JWT**, not `requireAdmin` / `x-internal-secret`. Anon JWT is also what the public browser sends. See §0.1 JAY DECISION REQUIRED.
+**Historical scheduler evidence only:** the May 2026 audit and unexecuted rewrite draft describe `lightspeed-motor-models-sync-daily` using an anon JWT, not `requireAdmin` / `x-internal-secret`. Re-read the deployed `cron.job` row without exposing credentials before treating that as current. If it remains anon, the public browser sends the same class of credential. See §0.1 JAY DECISION REQUIRED.
 
 **Remaining action:** preserve #331's browser removal and admin UI. After Jay selects and stages a compatible scheduler credential, enforce authorization **before** creating/using the inventory service-role client (admin JWT, configured internal secret, or service-role bearer). Never put an internal secret in frontend code. Do not execute a real sync in tests. Do not rewrite production cron in this documentation PR.
 
@@ -450,12 +450,11 @@ Relative to the May 2026 audit (22/25 missing images), the gap was worse in that
 
 **Action:** Do not “fix” live offer drift from this stale claim. If offer copy is touched later, one source of truth (`useActivePromotions` / promo tables) for hero, rebate matrix, FAQ, `llms.txt`, and prerender. Re-verify with a cache-busted render before filing a new inconsistency.
 
-#### P1-5. Footer hours contradict `ai.txt`
+#### P1-5. Footer hours wiring exists; fallback / `ai.txt` consistency still needs verification
 
-Live footer: "Contact us for current hours."  
-`public/.well-known/ai.txt`: in-season Mon–Sat 8–5, Sun 9–4; marina closed Dec 1–Apr 1.
+Current source already wires `SiteFooter` through `useGooglePlaceData()` and passes `placeData.openingHours` to `OpeningHoursDisplay`. "Contact us for current hours" is the no-data/error fallback, not the normal wired behavior. `public/.well-known/ai.txt` separately carries static seasonal hours.
 
-**Action:** Bind hours to the same Google Places cache already used in `GlobalSEO` (`src/data/google-places-cache.json`) or a single constants module. Do not leave AI and humans with different hours.
+**Action:** Revalidate the deployed cache and fallback state before changing UI. If drift remains, make `ai.txt` and its generator consume the same authoritative hours source or explicitly document the fallback; do not duplicate the footer wiring that already exists.
 
 #### P1-6. Dual primary CTAs above the fold (still open from May 2026)
 
@@ -620,10 +619,10 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 1. **Twilio half of P0-8** — preserve accepted draft PR #332 and its release sequence. Its exact-head implementation verifies signatures against a configured canonical URL (not `Host`/forwarded-host), early callbacks, monotonic/out-of-order statuses, repeated keys, duplicate rows, signed-row/`MessageSid` targeting, and error-code retention. Draft migrations only; do not apply them here.
 2. **Lightspeed server half of P0-8/P0-9** — merged #331 already removed public browser triggers and the README key instruction. Pause before the remaining function-auth patch until Jay selects and stages a scheduler credential compatible with the deployed cron.
 3. **#315 dependency repair** — preserve its Dropbox/quote-email scope, but retarget/rebuild it from current `main` rather than closed PR #314.
-4. Add `.env` to `.gitignore` (keep a committed `.env.example` with empty values; do not rewrite history unless Jay asks)
+4. Decide the tracked `.env` policy in a separate reviewed change. Merely adding `.env` to `.gitignore` does nothing while the file is tracked. If untracking is approved, first commit an empty-value `.env.example`, then remove `.env` from the index while retaining the local file and add the ignore rule; do not rewrite history unless Jay asks.
 5. P1-12 www URLs in public motors/quote APIs
 6. P1-3 absolutize image URLs + pass through shaft/control already in the query
-7. P1-5 hours from one source
+7. P1-5 revalidate the footer cache/fallback and align `ai.txt` generation to the authoritative hours source
 8. P1-11 sitemap / `llms.txt` cache headers (after checking Vercel header merge)
 
 **Do not put in Band A:** P0-1/P0-3 (`#335`), merged #331 browser/docs work, merged #333 warranty work, P0-8 `send-notification` (`#300`), P0-10a shared-quote (`#290`), or P0-11 revoke `encrypt_sin` (**never** as a first step). Preserve #315's scope while repairing its base.
@@ -656,7 +655,7 @@ If Jay says "start fixing," do this sequence. Stop after each band for a review.
 - Whether mercuryrepower.ca should host Legend boat sales content
 - Whether `LocalBusiness` should live on this domain or only on harrisboatworks.ca
 - Summer Savings / TD copy: the 2026-08-15 snapshot presented Summer Savings + 2.99% coherently; revalidate current production and ask before changing the offer story
-- Lightspeed cron rewrite from anon JWT → `x-internal-secret` or service-role **before** deploying a `requireAdmin` gate on `sync-lightspeed-inventory` (see §0.1)
+- After a fresh read-only deployed-cron inspection, whether Lightspeed needs an anon-JWT → `x-internal-secret` or service-role rewrite **before** deploying a `requireAdmin` gate on `sync-lightspeed-inventory` (see §0.1)
 - 2027 TD program codes (`TDAlwaysOnOffer.tsx` TODO — Sean Beamish / Mercury Canada)
 - Whether brochure / special-order motors should stay in the public feed (101 vs the old 25 in-stock feed). This changes schema `numberOfItems`, AI quotes, and buyer expectations.
 - Whether to 301 more geo city pages (Semrush said stop adding them)
@@ -740,7 +739,7 @@ Manual:
 | `docs/runbooks/customer-facing-audit-2026-05-01.md` | Prior audit |
 | `public/llms.txt` | AI business rules |
 | `public/.well-known/ai.txt` | Agent policy |
-| `README.md` | Service-role curl |
+| `README.md` | Historical service-role curl; current warning after merged #331 |
 
 ---
 
@@ -750,7 +749,7 @@ The site is a real production system: live CAD quotes, Stripe deposits, financin
 
 What remains actionable:
 
-1. **Lightspeed server authorization remains.** Merged #331 removed browser-triggered sync and unsafe README instructions, but `sync-lightspeed-inventory` still creates a service-role client without caller auth. Cron uses **anon JWT**, so Jay must select and stage a compatible scheduler credential before the function gate can deploy.
+1. **Lightspeed server authorization remains.** Merged #331 removed browser-triggered sync and unsafe README instructions, but `sync-lightspeed-inventory` still creates a service-role client without caller auth. Historical repository runbooks describe an anon-JWT cron; a fresh credential-redacted read of the deployed job must establish current state before Jay selects and stages any compatible scheduler credential or the function gate deploys.
 2. **Twilio webhook hardening is owned by accepted draft #332.** Current main still lacks signature validation; #332 is current-main, clean/mergeable, and exact-head verified, but remains draft for release sequencing.
 3. **Route/header hardening is owned by ready #335.** Do not revive closed PR #314.
 4. **Dropbox/quote-email hardening is dependency-blocked in #315.** Preserve its scope, but rebuild it from current `main` instead of closed #314.
@@ -774,7 +773,7 @@ What is **not** a current open P0 (corrected):
 - Explicit `select` lists on public service-role APIs are not live select-star bugs.
 - A disabled client login limiter is not proof Supabase Auth lacks server-side rate limiting.
 
-Codex should preserve and review the already-ready current-main lanes (#300, #290, #288, and #335), preserve accepted draft #332 and its release sequence, repair #315's closed-base dependency, and pause for Jay's Lightspeed cron-credential decision before changing the function gate.
+Codex should preserve and review the already-ready current-main lanes (#300, #290, #288, and #335), preserve accepted draft #332 and its release sequence, repair #315's closed-base dependency, and pause for a fresh read-only Lightspeed deployed-cron inspection plus Jay's credential decision before changing the function gate.
 
 ---
 
