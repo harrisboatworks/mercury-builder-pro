@@ -21,13 +21,27 @@ The Vite development server runs on `http://localhost:8080`.
 
 ## Quick validation
 
-For a normal small change, run:
+For a normal small frontend change, run:
 
 ```sh
 npm run verify:small
 ```
 
-This runs TypeScript checking followed by the Vitest suite. To run one test file directly:
+This runs frontend and Vite-config TypeScript checking followed by the unit suite. Both `npm test` and `verify:small` deliberately exclude `financing-submission-permissions.test.ts`, because that credential-gated integration test writes a financing log row and is not safe routine validation. Only the dedicated `test:integration:financing` runner supplies its ephemeral write opt-in; do not persist that internal marker in an environment file.
+
+Server changes require an additional scoped check:
+
+```sh
+# Vercel API: syntax-check JavaScript and typecheck every TypeScript entry
+npm run verify:api
+
+# One or more changed Supabase Edge Function entry points
+npm run typecheck:edge -- supabase/functions/<function-name>/index.ts
+```
+
+The Edge command fails when no entry point is supplied, rejects paths outside `supabase/functions`, pins Deno 2.9.5, and accepts multiple changed TypeScript paths. It uses `--no-lock` because this repository has no tracked Deno lockfile, so validation cannot create or update one. Pair each scoped checker with the relevant focused tests. Running `npm run test:integration:financing` is itself the per-run write opt-in and requires separate authorization, an approved target, and its test credentials; it is never implied by `npm test` or `verify:small`.
+
+To run one unit test file directly:
 
 ```sh
 npx vitest run path/to/file.test.ts

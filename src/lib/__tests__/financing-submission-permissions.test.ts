@@ -9,8 +9,10 @@
  * Skipped if no test credentials are provided. To enable locally, set:
  *   FINANCING_TEST_EMAIL=...    (an existing confirmed test user)
  *   FINANCING_TEST_PASSWORD=...
+ * Then, with explicit authorization for the configured target, run:
+ *   npm run test:integration:financing
  *
- * In CI, populate those secrets to run end-to-end.
+ * CI must invoke that dedicated command explicitly; routine `npm test` excludes this file.
  */
 import { describe, it, expect } from 'vitest';
 import { createClient } from '@supabase/supabase-js';
@@ -20,8 +22,12 @@ const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
 const TEST_EMAIL = (import.meta.env.FINANCING_TEST_EMAIL as string) || process.env.FINANCING_TEST_EMAIL;
 const TEST_PASSWORD =
   (import.meta.env.FINANCING_TEST_PASSWORD as string) || process.env.FINANCING_TEST_PASSWORD;
+const WRITE_AUTHORIZED =
+  process.env.HBW_FINANCING_TEST_RUNNER === 'dedicated-financing-integration-runner';
 
-const enabled = Boolean(SUPABASE_URL && SUPABASE_ANON && TEST_EMAIL && TEST_PASSWORD);
+const enabled = Boolean(
+  SUPABASE_URL && SUPABASE_ANON && TEST_EMAIL && TEST_PASSWORD && WRITE_AUTHORIZED,
+);
 
 describe.skipIf(!enabled)('financing submission permissions (integration)', () => {
   it('authenticated users can execute encrypt_sin and write a submission log', async () => {
