@@ -1,5 +1,15 @@
 import { spawnSync } from 'node:child_process';
 
+const requiredCredentials = ['FINANCING_TEST_EMAIL', 'FINANCING_TEST_PASSWORD'];
+const missingCredentials = requiredCredentials.filter((name) => !process.env[name]?.trim());
+
+if (missingCredentials.length > 0) {
+  console.error(
+    `Missing required financing integration credentials: ${missingCredentials.join(', ')}`,
+  );
+  process.exit(2);
+}
+
 const result = spawnSync(
   process.platform === 'win32' ? 'npx.cmd' : 'npx',
   ['vitest', 'run', 'src/lib/__tests__/financing-submission-permissions.test.ts'],

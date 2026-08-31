@@ -39,6 +39,24 @@ describe('agent validation safety', () => {
     expect(dedicatedRunner).toContain(marker);
   });
 
+  it('fails the dedicated financing runner before Vitest when credentials are missing', () => {
+    const runner = resolve(repoRoot, 'scripts/run-financing-integration.mjs');
+    const env = { ...process.env };
+    delete env.FINANCING_TEST_EMAIL;
+    delete env.FINANCING_TEST_PASSWORD;
+
+    const result = spawnSync(process.execPath, [runner], {
+      cwd: repoRoot,
+      encoding: 'utf8',
+      env,
+    });
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'Missing required financing integration credentials: FINANCING_TEST_EMAIL, FINANCING_TEST_PASSWORD',
+    );
+  });
+
   it('fails the API syntax gate when any JavaScript entry is invalid', () => {
     const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-agent-validation-'));
     temporaryDirectories.push(fixtureRoot);
