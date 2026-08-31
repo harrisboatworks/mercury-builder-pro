@@ -104,26 +104,30 @@ export function SaveQuoteDialog({
       const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
       const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
 
-      const { data: savedQuote, error: savedQuoteError } = await supabase
+      // Anonymous visitors may INSERT saved_quotes but cannot SELECT the
+      // row back under RLS. Generate the UUID client-side so a successful
+      // insert is enough to bind the resumable quote without requesting a
+      // representation that the SELECT policy correctly blocks.
+      const savedQuoteId = crypto.randomUUID();
+      const { error: savedQuoteError } = await supabase
         .from('saved_quotes')
         .insert({
+          id: savedQuoteId,
           email: email,
           resume_token: resumeToken,
           quote_state: quoteData, // Full QuoteContext state
           user_id: user?.id || null, // Link to user if logged in
           expires_at: expiresAt.toISOString(),
-        })
-        .select()
-        .single();
+        });
 
-      if (savedQuoteError || !savedQuote?.id) {
+      if (savedQuoteError || !savedQuoteId) {
         console.error('Error saving quote state:', savedQuoteError);
         throw savedQuoteError ?? new Error('Saved quote insert returned no ID');
       }
 
       // Store saved quote ID for QR code generation
-      localStorage.setItem('current_saved_quote_id', savedQuote.id);
-      console.log('Saved quote ID for QR code:', savedQuote.id);
+      localStorage.setItem('current_saved_quote_id', savedQuoteId);
+      console.log('Saved quote ID for QR code:', savedQuoteId);
 
       // Analytics: quote_saved + lead_submitted
       trackAgentEvent({
@@ -165,7 +169,7 @@ export function SaveQuoteDialog({
           customerEmail: email,
           customerName: name || 'Valued Customer',
           quoteId: leadRecord.id,
-          savedQuoteId: savedQuote?.id,
+          savedQuoteId: savedQuoteId,
           resumeToken: resumeToken,
           motorModel: motorModel || 'Mercury Motor',
           finalPrice: finalPrice || 0,

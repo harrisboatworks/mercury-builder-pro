@@ -5,12 +5,16 @@ import type { ReactNode } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+const ANON_SAVED_QUOTE_ID = '11111111-2222-4333-8444-555555555555';
+
 const mocks = vi.hoisted(() => ({
   invoke: vi.fn(),
   saveLead: vi.fn(),
-  savedQuoteSingle: vi.fn(),
+  savedQuoteInsert: vi.fn(),
+  signInWithOtp: vi.fn(),
   toast: vi.fn(),
   trackAgentEvent: vi.fn(),
+  authUser: { id: 'user-1', email: 'boater@example.com' } as { id: string; email: string } | null,
 }));
 
 vi.mock('@/components/ui/dialog', () => ({
@@ -32,7 +36,7 @@ vi.mock('@/components/ui/drawer', () => ({
 }));
 
 vi.mock('@/components/auth/AuthProvider', () => ({
-  useAuth: () => ({ user: { id: 'user-1', email: 'boater@example.com' } }),
+  useAuth: () => ({ user: mocks.authUser }),
 }));
 
 vi.mock('@/hooks/use-mobile', () => ({ useIsMobile: () => false }));
@@ -43,11 +47,9 @@ vi.mock('@/lib/leadCapture', () => ({ saveLead: mocks.saveLead }));
 
 vi.mock('@/integrations/supabase/client', () => ({
   supabase: {
-    auth: { signInWithOtp: vi.fn() },
+    auth: { signInWithOtp: mocks.signInWithOtp },
     from: vi.fn(() => ({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({ single: mocks.savedQuoteSingle })),
-      })),
+      insert: mocks.savedQuoteInsert,
     })),
     functions: { invoke: mocks.invoke },
   },
@@ -57,19 +59,25 @@ import { SaveQuoteDialog } from './SaveQuoteDialog';
 
 const storageError = new Error('saved_quotes insert failed');
 
+async function fillAndSubmitSaveForm() {
+  fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'Pat Boater' } });
+  fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'pat@example.com' } });
+  fireEvent.change(screen.getByLabelText(/Phone/i), { target: { value: '905-555-0100' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Save My Quote' }));
+}
+
 describe('SaveQuoteDialog', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     localStorage.clear();
+    mocks.authUser = { id: 'user-1', email: 'boater@example.com' };
     mocks.saveLead.mockResolvedValue({ id: 'lead-1', lead_score: 10 });
     mocks.invoke.mockResolvedValue({ error: null });
+    mocks.signInWithOtp.mockResolvedValue({ error: null });
   });
 
-  it.each([
-    ['returns an error', { data: null, error: storageError }],
-    ['returns no durable binding ID', { data: null, error: null }],
-  ])('fails closed when resumable storage %s', async (_case, storageResult) => {
-    mocks.savedQuoteSingle.mockResolvedValue(storageResult);
+  it('fails closed when resumable storage returns an error', async () => {
+    mocks.savedQuoteInsert.mockResolvedValue({ error: storageError });
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined);
 
     render(
@@ -82,10 +90,7 @@ describe('SaveQuoteDialog', () => {
       />,
     );
 
-    fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'Pat Boater' } });
-    fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'pat@example.com' } });
-    fireEvent.change(screen.getByLabelText(/Phone/i), { target: { value: '905-555-0100' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Save My Quote' }));
+    await fillAndSubmitSaveForm();
 
     await waitFor(() => {
       expect(mocks.toast).toHaveBeenCalledWith(expect.objectContaining({
@@ -102,8 +107,55 @@ describe('SaveQuoteDialog', () => {
     expect(localStorage.getItem('current_saved_quote_id')).toBeNull();
     expect(mocks.invoke).not.toHaveBeenCalled();
     expect(mocks.trackAgentEvent).not.toHaveBeenCalled();
-    expect(consoleError).toHaveBeenCalledWith('Error saving quote state:', storageResult.error);
+    expect(consoleError).toHaveBeenCalledWith('Error saving quote state:', storageError);
 
     consoleError.mockRestore();
+  });
+
+  it('succeeds on the anonymous manual-email path without requesting a representation', async () => {
+    mocks.authUser = null;
+    mocks.savedQuoteInsert.mockResolvedValue({ error: null });
+    const randomUUID = vi.spyOn(crypto, 'randomUUID').mockReturnValue(ANON_SAVED_QUOTE_ID);
+
+    render(
+      <SaveQuoteDialog
+        open
+        onOpenChange={vi.fn()}
+        quoteData={{ selectedMotor: { id: 'motor-1', hp: 115, msrp: 17000 } }}
+        motorModel="115 ELPT"
+        finalPrice={19000}
+      />,
+    );
+
+    await fillAndSubmitSaveForm();
+
+    await waitFor(() => {
+      expect(screen.getByText('Quote Saved!')).toBeInTheDocument();
+    });
+
+    expect(mocks.savedQuoteInsert).toHaveBeenCalledTimes(1);
+    expect(mocks.savedQuoteInsert).toHaveBeenCalledWith(expect.objectContaining({
+      id: ANON_SAVED_QUOTE_ID,
+      email: 'pat@example.com',
+      user_id: null,
+    }));
+    expect(localStorage.getItem('current_saved_quote_id')).toBe(ANON_SAVED_QUOTE_ID);
+    expect(mocks.signInWithOtp).toHaveBeenCalledWith(expect.objectContaining({
+      email: 'pat@example.com',
+    }));
+    expect(mocks.trackAgentEvent).toHaveBeenCalledWith(expect.objectContaining({
+      event_type: 'quote_saved',
+    }));
+    expect(mocks.invoke).toHaveBeenCalledWith(
+      'send-saved-quote-email',
+      expect.objectContaining({
+        body: expect.objectContaining({ savedQuoteId: ANON_SAVED_QUOTE_ID }),
+      }),
+    );
+    expect(mocks.toast).not.toHaveBeenCalledWith(expect.objectContaining({
+      title: 'Error saving quote',
+    }));
+
+    randomUUID.mockRestore();
   });
 });
