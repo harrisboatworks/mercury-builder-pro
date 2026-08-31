@@ -104,7 +104,14 @@ function pickFiles() {
         changed.filter((f) => f.endsWith('.html') || f.includes('seo') || f.includes('static-prerender'))
       );
       if (relevant.size) {
-        files = files.filter((f) => [...relevant].some((c) => f.endsWith(c)));
+        const filteredFiles = files.filter((f) => [...relevant].some((c) => f.endsWith(c)));
+        if (filteredFiles.length) {
+          files = filteredFiles;
+        } else {
+          console.warn(
+            '[validate-schema-org] LOCAL_DIFF sources did not map directly to emitted HTML; validating the full dist set.',
+          );
+        }
       }
     } catch {
       /* not a git repo, fall through */

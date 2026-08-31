@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import test from 'node:test';
@@ -9,7 +9,35 @@ import test from 'node:test';
 const validatorScript = fileURLToPath(new URL('./validate-schema-org.mjs', import.meta.url));
 const fixtureHtml = `<!doctype html><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Harris Boat Works"}</script>`;
 
-async function runWithFetchStub(stubSource, { html = fixtureHtml, env = {} } = {}) {
+function runGit(fixtureRoot, args) {
+  const result = spawnSync('git', args, {
+    cwd: fixtureRoot,
+    encoding: 'utf8',
+  });
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
+}
+
+async function createChangedSourceCommit(fixtureRoot, changedFile) {
+  runGit(fixtureRoot, ['init', '--quiet']);
+  runGit(fixtureRoot, ['config', 'user.name', 'Schema Validator Test']);
+  runGit(fixtureRoot, ['config', 'user.email', 'schema-validator@example.test']);
+  runGit(fixtureRoot, ['config', 'commit.gpgsign', 'false']);
+  await writeFile(join(fixtureRoot, 'baseline.txt'), 'baseline\n');
+  runGit(fixtureRoot, ['add', 'baseline.txt']);
+  runGit(fixtureRoot, ['commit', '--quiet', '-m', 'baseline']);
+  runGit(fixtureRoot, ['update-ref', 'refs/remotes/origin/main', 'HEAD']);
+
+  const changedPath = join(fixtureRoot, changedFile);
+  await mkdir(dirname(changedPath), { recursive: true });
+  await writeFile(changedPath, 'export const changed = true;\n');
+  runGit(fixtureRoot, ['add', changedFile]);
+  runGit(fixtureRoot, ['commit', '--quiet', '-m', 'change source']);
+}
+
+async function runWithFetchStub(
+  stubSource,
+  { html = fixtureHtml, env = {}, changedFile = null } = {},
+) {
   const fixtureRoot = await mkdtemp(join(tmpdir(), 'schema-validator-test-'));
   try {
     const distDir = join(fixtureRoot, 'dist');
@@ -19,6 +47,9 @@ async function runWithFetchStub(stubSource, { html = fixtureHtml, env = {} } = {
       await writeFile(join(distDir, 'index.html'), html);
     }
     await writeFile(preload, stubSource);
+    if (changedFile) {
+      await createChangedSourceCommit(fixtureRoot, changedFile);
+    }
 
     return spawnSync(process.execPath, ['--import', preload, validatorScript], {
       cwd: fixtureRoot,
@@ -85,6 +116,20 @@ test('fails closed when JSON omits the validator errors contract', async () => {
   assert.equal(result.status, 1, `${result.stdout}\n${result.stderr}`);
   assert.match(result.stderr, /did not include an errors array/);
   assert.doesNotMatch(result.stdout, /validated by schema\.org/);
+});
+
+test('falls back to the full dist set when a changed SEO source has no direct HTML path', async () => {
+  const result = await runWithFetchStub(
+    `globalThis.fetch = async () => new Response(JSON.stringify({ errors: [] }), { status: 200 });`,
+    {
+      changedFile: 'src/components/seo/HomepageSEO.tsx',
+      env: { LOCAL_DIFF: '1' },
+    },
+  );
+
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
+  assert.match(result.stderr, /validating the full dist set/);
+  assert.match(result.stdout, /1 JSON-LD block\(s\).*validated by schema\.org/);
 });
 
 test('reports success only after a JSON-LD block is remotely verified', async () => {
