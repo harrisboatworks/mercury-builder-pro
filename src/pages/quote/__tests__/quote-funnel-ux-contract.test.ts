@@ -20,6 +20,18 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('Have HBW Review My Quote');
   });
 
+  it('does not dress the mobile save action as a download', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const saveHandler = 'user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)';
+    const saveBlock = summarySource.slice(
+      summarySource.indexOf(saveHandler),
+      summarySource.indexOf('Save for Later') + 'Save for Later'.length,
+    );
+
+    expect(saveBlock).toContain('<Bookmark');
+    expect(saveBlock).not.toContain('<Download');
+  });
+
   it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
     const saleSource = read('src/components/motors/Mercury99MHSalePage.tsx');
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
