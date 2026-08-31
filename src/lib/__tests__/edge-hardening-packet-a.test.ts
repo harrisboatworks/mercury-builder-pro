@@ -11,6 +11,7 @@ import {
   resolveAllowedQuotePdfUrl,
 } from "../../../supabase/functions/_shared/quote-pdf-url.ts";
 import {
+  replaceSubjectTemplateVariables,
   replaceTemplateVariables,
   sanitizeEmailSubject,
 } from "../../../supabase/functions/_shared/quote-email-template.ts";
@@ -169,7 +170,7 @@ describe("Packet A edge hardening", () => {
     }, Date.parse("2026-08-14T01:00:00.000Z"))).toBe(true);
   });
 
-  it("escapes every DB-template value and strips subject newlines", () => {
+  it("escapes every DB HTML-template value", () => {
     const rendered = replaceTemplateVariables(
       "{{customerName}}|{{quoteNumber}}|{{motorModel}}|{{totalPrice}}",
       {
@@ -183,8 +184,27 @@ describe("Packet A edge hardening", () => {
     expect(rendered).toContain("&lt;&amp;&#39;&quot;");
     expect(rendered).toContain("&lt;script&gt;x&lt;/script&gt;");
     expect(rendered).not.toContain("<img");
-    expect(sanitizeEmailSubject("Hello\r\nBcc: attacker@example.com")).toBe(
-      "Hello Bcc: attacker@example.com",
+  });
+
+  it("keeps DB subject substitutions plain while stripping header newlines", () => {
+    const rendered = replaceSubjectTemplateVariables(
+      "Your {{motorModel}} quote for {{customerName}} ({{quoteNumber}})",
+      {
+        customerName: "O'Brien & Sons\r\nBcc: attacker@example.com",
+        quoteNumber: '<Q&"1">',
+        motorModel: "Sea <Pro> & Sport",
+        totalPrice: 1234,
+      },
+    );
+
+    expect(rendered).toBe(
+      'Your Sea <Pro> & Sport quote for O\'Brien & Sons Bcc: attacker@example.com (<Q&"1">)',
+    );
+    expect(rendered).not.toContain("&amp;");
+    expect(rendered).not.toMatch(/[\r\n]/);
+    expect(sanitizeEmailSubject("Hello\r\nBcc: attacker@example.com")).toBe("Hello Bcc: attacker@example.com");
+    expect(read("supabase/functions/send-quote-email/index.ts")).toContain(
+      "subject = replaceSubjectTemplateVariables(template.subject, emailData)",
     );
   });
 
