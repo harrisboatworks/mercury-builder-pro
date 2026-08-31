@@ -103,7 +103,7 @@ function generateConsultationQuoteDeliveryEmail(
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: CONSULTATION_CTA_LABEL,
     ctaUrl: documentAccessUrl,
@@ -282,6 +282,21 @@ serve(async (req) => {
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
+    let quotePdfBuffer: ArrayBuffer | null = null;
+    if (!isConsultationPath && emailData.pdfUrl) {
+      try {
+        quotePdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl);
+      } catch (pdfError) {
+        console.error(
+          'Error fetching/validating quote PDF:',
+          pdfError instanceof Error ? pdfError.name : 'unknown',
+        );
+        // Keep public delivery available, but do not claim that an invalid or
+        // unavailable document is attached or link to it as a quote PDF.
+        emailData = { ...emailData, pdfUrl: undefined };
+      }
+    }
+
     const isAdminNotification = emailData.emailType === 'admin_quote_notification';
     const destinations = buildQuoteEmailDestinations({
       isConsultationPath,
@@ -451,22 +466,15 @@ serve(async (req) => {
         filename: `Quote-${emailData.quoteNumber}.pdf`,
         content: pdfBase64,
       }];
-    } else if (emailData.pdfUrl) {
-      try {
-        const pdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl);
-        const pdfBase64 = btoa(
-          new Uint8Array(pdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
-        );
-        
-        emailOptions.attachments = [{
-          filename: `Quote-${emailData.quoteNumber}.pdf`,
-          content: pdfBase64,
-        }];
-      } catch (pdfError) {
-        console.error('Error fetching/attaching PDF:', pdfError instanceof Error ? pdfError.name : 'unknown');
-        // A disallowed redirect is never followed. Preserve public quote
-        // delivery by sending the message without the rejected attachment.
-      }
+    } else if (quotePdfBuffer) {
+      const pdfBase64 = btoa(
+        new Uint8Array(quotePdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+      );
+
+      emailOptions.attachments = [{
+        filename: `Quote-${emailData.quoteNumber}.pdf`,
+        content: pdfBase64,
+      }];
     }
 
     // Send email via Resend

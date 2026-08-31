@@ -16,6 +16,7 @@ import {
 } from "../../../supabase/functions/_shared/quote-email-template.ts";
 import {
   fetchAllowedDropboxFile,
+  readLimitedDropboxFile,
   resolveAllowedDropboxFileUrl,
 } from "../../../supabase/functions/_shared/dropbox-file-url.ts";
 import { isDropboxAccessTokenFresh } from "../../../supabase/functions/_shared/dropbox-token.ts";
@@ -47,13 +48,15 @@ describe("Packet A edge hardening", () => {
 
     expect(await verifyDropboxOAuthState(state, expected, "test-only-secret", 1_001_000)).toMatchObject(expected);
     expect(await verifyDropboxOAuthState(state, { ...expected, sub: "other-user" }, "test-only-secret", 1_001_000)).toBeNull();
+    expect(await verifyDropboxOAuthState(state, expected, "test-only-secret", 1_600_000)).toBeNull();
     expect(await verifyDropboxOAuthState(state, expected, "test-only-secret", 1_601_000)).toBeNull();
     expect(await verifyDropboxOAuthState(`${state}tampered`, expected, "test-only-secret", 1_001_000)).toBeNull();
+    expect(state.length).toBeLessThan(500);
   });
 
   it.each([
     "https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/spec-sheets/id/quote.pdf",
-    "https://www.mercuryrepower.ca/quote/saved/id",
+    "https://www.mercuryrepower.ca/downloads/quote.pdf",
   ])("allows the exact legitimate quote PDF host %s", (url) => {
     expect(resolveAllowedQuotePdfUrl(url)?.toString()).toBe(url);
   });
@@ -69,6 +72,8 @@ describe("Packet A edge hardening", () => {
     "https://127.0.0.1/x.pdf",
     "https://[::1]/x.pdf",
     "https://169.254.169.254/latest/meta-data/",
+    "https://www.mercuryrepower.ca/quote/saved/id",
+    "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/quote.pdf",
   ])("rejects an unsafe quote PDF URL %s", (url) => {
     expect(resolveAllowedQuotePdfUrl(url)).toBeNull();
   });
@@ -93,14 +98,40 @@ describe("Packet A edge hardening", () => {
         status: 302,
         headers: { location: "https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/spec-sheets/q.pdf" },
       }))
-      .mockResolvedValueOnce(new Response("pdf-bytes", { status: 200 }));
+      .mockResolvedValueOnce(new Response("%PDF-1.7\npdf-bytes", {
+        status: 200,
+        headers: { "content-type": "application/pdf" },
+      }));
 
     const bytes = await fetchAllowedQuotePdf(
       "https://www.mercuryrepower.ca/quote.pdf",
       fetchImpl,
     );
-    expect(new TextDecoder().decode(bytes)).toBe("pdf-bytes");
+    expect(new TextDecoder().decode(bytes)).toBe("%PDF-1.7\npdf-bytes");
     expect(fetchImpl).toHaveBeenCalledTimes(2);
+  });
+
+  it("rejects non-PDF and oversized responses from an allowed quote host", async () => {
+    const htmlFetch = vi.fn().mockResolvedValueOnce(new Response("<html>not a PDF</html>", {
+      status: 200,
+      headers: { "content-type": "text/html" },
+    }));
+    await expect(fetchAllowedQuotePdf(
+      "https://www.mercuryrepower.ca/quote/saved/id",
+      htmlFetch,
+    )).rejects.toBeInstanceOf(QuotePdfSecurityError);
+
+    const oversizedFetch = vi.fn().mockResolvedValueOnce(new Response("%PDF-", {
+      status: 200,
+      headers: {
+        "content-type": "application/pdf",
+        "content-length": String(5 * 1024 * 1024 + 1),
+      },
+    }));
+    await expect(fetchAllowedQuotePdf(
+      "https://www.mercuryrepower.ca/quote.pdf",
+      oversizedFetch,
+    )).rejects.toThrow("PDF response is too large");
   });
 
   it("validates every Dropbox file redirect before fetching the next hop", async () => {
@@ -115,6 +146,16 @@ describe("Packet A edge hardening", () => {
       fetchImpl,
     )).rejects.toThrow("Dropbox redirect target is not allowed");
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it("bounds Dropbox file buffering even when content length is absent", async () => {
+    await expect(readLimitedDropboxFile(new Response("123456789"), 8)).rejects.toThrow(
+      "Dropbox file exceeds the import size limit",
+    );
+    await expect(readLimitedDropboxFile(new Response("12345678"), 8)).resolves.toHaveLength(8);
+    await expect(readLimitedDropboxFile(new Response("", {
+      headers: { "content-length": "9" },
+    }), 8)).rejects.toThrow("Dropbox file exceeds the import size limit");
   });
 
   it("treats an expired Dropbox access token as disconnected", () => {
@@ -153,6 +194,10 @@ describe("Packet A edge hardening", () => {
     const handler = read("supabase/functions/dropbox-file-handler/index.ts");
     const integration = read("src/components/admin/media/DropboxIntegration.tsx");
     const compact = read("src/components/admin/media/CompactDropboxImport.tsx");
+    const app = read("src/App.tsx");
+    const callbackPage = read("src/pages/AdminDropbox.tsx");
+    const migration = read("supabase/migrations/20260831012948_store_dropbox_oauth_token_in_vault.sql");
+    const adminQuoteSender = read("src/components/admin/SendQuoteEmail.tsx");
 
     for (const source of [oauth, config, handler]) {
       expect(source).toContain("requireAdmin(req, corsHeaders)");
@@ -166,7 +211,24 @@ describe("Packet A edge hardening", () => {
     expect(compact).not.toContain("setAccessToken");
     expect(compact).not.toMatch(/accessToken\s*:/);
     expect(config).toContain('token_access_type: "offline"');
+    expect(config).toContain('scope: "sharing.read"');
+    expect(config).not.toContain("state,\n        redirectUri");
     expect(handler).toContain("fetchAllowedDropboxFile(fileUrl)");
+    expect(handler).toContain("readLimitedDropboxFile");
+    expect(handler).toContain("/2/sharing/get_shared_link_file");
+    expect(handler).toContain("JSON.stringify({ url: fileUrl })");
+    expect(handler).not.toContain("/2/files/download");
+    expect(handler).not.toContain("pathMatch");
+    expect(integration).toContain("callbackUrl.searchParams.delete('code')");
+    expect(integration).toContain("motorId: motorId.trim() || null");
+    expect(app).toContain('path="/admin/motor-images"');
+    expect(app).toContain("<AdminDropbox />");
+    expect(callbackPage).toContain("<DropboxIntegration />");
+    expect(migration).toContain("SET search_path = ''");
+    expect(migration).toContain("FROM PUBLIC, anon, authenticated");
+    expect(migration).toContain("TO service_role");
+    expect(adminQuoteSender).not.toContain("pdfUrl:");
+    expect(adminQuoteSender).not.toContain("SITE_URL");
   });
 
   it("requires admin auth for quote-note writes and targets the quote id", () => {
@@ -179,5 +241,9 @@ describe("Packet A edge hardening", () => {
     expect(source).toContain("emailData.leadData?.quoteId");
     expect(source).toContain(".eq('id', emailData.leadData.quoteId)");
     expect(source).not.toContain(".eq('quote_number', emailData.quoteNumber)");
+    expect(source.indexOf("quotePdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl)")).toBeLessThan(
+      source.indexOf("Try to get template from database first"),
+    );
+    expect(source).toContain("emailData = { ...emailData, pdfUrl: undefined }");
   });
 });

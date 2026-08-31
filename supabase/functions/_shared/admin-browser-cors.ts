@@ -20,6 +20,7 @@ export function resolveAdminBrowserCors(
   const headers: Record<string, string> = {
     "Access-Control-Allow-Headers": ALLOWED_HEADERS,
     "Access-Control-Allow-Methods": methods,
+    "Cache-Control": "no-store",
     "Vary": "Origin",
   };
 

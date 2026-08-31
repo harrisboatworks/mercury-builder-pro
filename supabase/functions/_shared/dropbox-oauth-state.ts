@@ -70,10 +70,14 @@ export async function verifyDropboxOAuthState(
     if (!validSignature) return null;
 
     const payload = JSON.parse(decoder.decode(fromBase64Url(encodedPayload))) as DropboxOAuthStatePayload;
+    const nowSeconds = Math.floor(nowMs / 1000);
     if (
       payload.v !== 1
-      || !payload.nonce
-      || payload.exp < Math.floor(nowMs / 1000)
+      || typeof payload.nonce !== "string"
+      || payload.nonce.length === 0
+      || typeof payload.exp !== "number"
+      || !Number.isSafeInteger(payload.exp)
+      || payload.exp <= nowSeconds
       || payload.sub !== expected.sub
       || payload.origin !== expected.origin
       || payload.redirectUri !== expected.redirectUri

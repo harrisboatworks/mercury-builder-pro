@@ -1,7 +1,12 @@
-const ALLOWED_QUOTE_PDF_HOSTS = new Set([
-  "eutsoqdpjurknjsshxes.supabase.co",
-  "www.mercuryrepower.ca",
-]);
+import {
+  MAX_QUOTE_DOCUMENT_BYTES,
+  readLimitedStream,
+  validateQuotePdf,
+} from "./quote-document-policy.ts";
+
+const SUPABASE_QUOTE_PDF_HOST = "eutsoqdpjurknjsshxes.supabase.co";
+const CANONICAL_SITE_HOST = "www.mercuryrepower.ca";
+const PUBLIC_SPEC_SHEETS_PREFIX = "/storage/v1/object/public/spec-sheets/";
 
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 
@@ -10,13 +15,18 @@ export class QuotePdfSecurityError extends Error {}
 export function resolveAllowedQuotePdfUrl(rawUrl: string): URL | null {
   try {
     const url = new URL(rawUrl);
+    const hostname = url.hostname.toLowerCase();
+    const pathname = url.pathname.toLowerCase();
+    const allowedPath = hostname === SUPABASE_QUOTE_PDF_HOST
+      ? pathname.startsWith(PUBLIC_SPEC_SHEETS_PREFIX) && pathname.endsWith(".pdf")
+      : hostname === CANONICAL_SITE_HOST && pathname.endsWith(".pdf");
     if (
       url.protocol !== "https:"
       || url.username
       || url.password
       || url.port
       || url.hostname.endsWith(".")
-      || !ALLOWED_QUOTE_PDF_HOSTS.has(url.hostname.toLowerCase())
+      || !allowedPath
     ) return null;
     return url;
   } catch {
@@ -47,7 +57,21 @@ export async function fetchAllowedQuotePdf(
     }
 
     if (!response.ok) throw new Error(`Failed to fetch PDF: ${response.status}`);
-    return response.arrayBuffer();
+
+    const declaredLength = Number(response.headers.get("content-length"));
+    if (Number.isFinite(declaredLength) && declaredLength > MAX_QUOTE_DOCUMENT_BYTES) {
+      throw new QuotePdfSecurityError("PDF response is too large");
+    }
+    if (!response.body) throw new QuotePdfSecurityError("PDF response is empty");
+
+    try {
+      const bytes = await readLimitedStream(response.body, MAX_QUOTE_DOCUMENT_BYTES);
+      const contentType = response.headers.get("content-type")?.split(";", 1)[0].trim() || null;
+      validateQuotePdf(bytes, contentType);
+      return bytes.slice().buffer;
+    } catch {
+      throw new QuotePdfSecurityError("PDF response is invalid");
+    }
   }
 
   throw new QuotePdfSecurityError("PDF redirect limit exceeded");

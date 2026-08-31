@@ -5,7 +5,11 @@ import {
   forbiddenAdminBrowserOrigin,
   resolveAdminBrowserCors,
 } from "../_shared/admin-browser-cors.ts";
-import { fetchAllowedDropboxFile, resolveAllowedDropboxFileUrl } from "../_shared/dropbox-file-url.ts";
+import {
+  fetchAllowedDropboxFile,
+  readLimitedDropboxFile,
+  resolveAllowedDropboxFileUrl,
+} from "../_shared/dropbox-file-url.ts";
 import { getDropboxAccessToken } from "../_shared/dropbox-token.ts";
 
 serve(async (req) => {
@@ -14,6 +18,12 @@ serve(async (req) => {
     return origin ? new Response(null, { headers: corsHeaders }) : forbiddenAdminBrowserOrigin(corsHeaders);
   }
   if (!origin) return forbiddenAdminBrowserOrigin(corsHeaders);
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
 
   const admin = await requireAdmin(req, corsHeaders);
   if (admin instanceof Response) return admin;
@@ -53,22 +63,17 @@ serve(async (req) => {
     // Try authenticated Dropbox API first if we have an access token
     if (accessToken) {
       console.log('Using authenticated Dropbox API');
-      
-      // Extract path from the URL for Dropbox API
-      const urlObj = new URL(fileUrl);
-      const pathMatch = urlObj.pathname.match(/\/s\/[^\/]+\/(.+)$/);
-      const filePath = pathMatch ? `/${pathMatch[1]}` : urlObj.pathname;
-      
-      const apiResponse = await fetch('https://content.dropboxapi.com/2/files/download', {
+
+      const apiResponse = await fetch('https://content.dropboxapi.com/2/sharing/get_shared_link_file', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${accessToken}`,
-          'Dropbox-API-Arg': JSON.stringify({ path: filePath })
+          'Dropbox-API-Arg': JSON.stringify({ url: fileUrl })
         }
       });
 
       if (apiResponse.ok) {
-        fileData = new Uint8Array(await apiResponse.arrayBuffer());
+        fileData = await readLimitedDropboxFile(apiResponse);
         contentType = apiResponse.headers.get('Content-Type') || contentType;
         console.log('Successfully downloaded via Dropbox API');
       } else {
@@ -78,7 +83,7 @@ serve(async (req) => {
         if (!fallbackResponse.ok) {
           throw new Error(`Failed to download file: ${fallbackResponse.status}`);
         }
-        fileData = new Uint8Array(await fallbackResponse.arrayBuffer());
+        fileData = await readLimitedDropboxFile(fallbackResponse);
         contentType = fallbackResponse.headers.get('Content-Type') || contentType;
       }
     } else {
@@ -88,7 +93,7 @@ serve(async (req) => {
       if (!response.ok) {
         throw new Error(`Failed to download file: ${response.status}`);
       }
-      fileData = new Uint8Array(await response.arrayBuffer());
+      fileData = await readLimitedDropboxFile(response);
       contentType = response.headers.get('Content-Type') || contentType;
     }
 
@@ -183,7 +188,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         error: 'File processing failed',
-        details: error.message
+        details: error instanceof Error ? error.message : 'Unknown error'
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },

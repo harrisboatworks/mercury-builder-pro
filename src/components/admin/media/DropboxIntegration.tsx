@@ -48,10 +48,50 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
       try {
         setConfigLoading(true);
         console.log('Loading Dropbox configuration...');
-        
+
+        const callbackUrl = new URL(window.location.href);
+        const oauthCode = callbackUrl.searchParams.get('code');
+        const oauthState = callbackUrl.searchParams.get('state');
+        if (oauthCode || oauthState) {
+          callbackUrl.searchParams.delete('code');
+          callbackUrl.searchParams.delete('state');
+          window.history.replaceState(
+            {},
+            document.title,
+            `${callbackUrl.pathname}${callbackUrl.search}${callbackUrl.hash}`,
+          );
+        }
+
+        if (oauthCode && oauthState) {
+          console.log('Processing OAuth callback...');
+          try {
+            const { data: oauthData, error: oauthError } = await supabase.functions.invoke('dropbox-oauth', {
+              body: { code: oauthCode, state: oauthState }
+            });
+
+            if (oauthError || !oauthData?.ok) {
+              console.error('OAuth exchange failed:', oauthError);
+              toast({
+                title: "OAuth failed",
+                description: "Failed to authenticate with Dropbox.",
+                variant: "destructive",
+              });
+            } else {
+              console.log('OAuth successful; Dropbox token stored server-side');
+            }
+          } catch (error) {
+            console.error('Error processing OAuth:', error);
+            toast({
+              title: "OAuth failed",
+              description: "Failed to authenticate with Dropbox.",
+              variant: "destructive",
+            });
+          }
+        }
+
         // Get the Dropbox configuration (including OAuth capabilities)
         const { data, error } = await supabase.functions.invoke('get-dropbox-config');
-        
+
         if (error) {
           console.error('Failed to get Dropbox config:', error);
           setAppKeyError('Failed to load Dropbox configuration');
@@ -66,36 +106,6 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
 
         setDropboxConfig(data);
         console.log('Successfully loaded Dropbox configuration');
-
-        // Check for OAuth callback in URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const oauthCode = urlParams.get('code');
-        const oauthState = urlParams.get('state');
-        
-        if (oauthCode && oauthState) {
-          console.log('Processing OAuth callback...');
-          try {
-            const { data: oauthData, error: oauthError } = await supabase.functions.invoke('dropbox-oauth', {
-              body: { code: oauthCode, state: oauthState }
-            });
-            
-            if (oauthError || !oauthData?.ok) {
-              console.error('OAuth exchange failed:', oauthError);
-              toast({
-                title: "OAuth failed",
-                description: "Failed to authenticate with Dropbox.",
-                variant: "destructive",
-              });
-            } else {
-              console.log('OAuth successful; Dropbox token stored server-side');
-              setDropboxConfig((current) => ({ ...current, connected: true }));
-              // Clean up URL
-              window.history.replaceState({}, document.title, window.location.pathname);
-            }
-          } catch (error) {
-            console.error('Error processing OAuth:', error);
-          }
-        }
 
         // Load Dropbox Chooser script if not already loaded
         if (!document.getElementById('dropboxjs')) {
@@ -181,7 +191,7 @@ export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: D
                 body: {
                   fileUrl: file.link,
                   fileName: file.name,
-                  motorId: propMotorId || null,
+                  motorId: motorId.trim() || null,
                 }
               });
 

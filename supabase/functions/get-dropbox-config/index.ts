@@ -26,6 +26,12 @@ serve(async (req) => {
     return origin ? new Response(null, { headers: corsHeaders }) : forbiddenAdminBrowserOrigin(corsHeaders);
   }
   if (!origin) return forbiddenAdminBrowserOrigin(corsHeaders);
+  if (req.method !== "GET" && req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
 
   const admin = await requireAdmin(req, corsHeaders);
   if (admin instanceof Response) return admin;
@@ -65,6 +71,7 @@ serve(async (req) => {
       oauthUrl.search = new URLSearchParams({
         client_id: appKey,
         response_type: "code",
+        scope: "sharing.read",
         token_access_type: "offline",
         redirect_uri: redirectUri,
         state,
@@ -72,7 +79,6 @@ serve(async (req) => {
 
       return new Response(JSON.stringify({
         oauthUrl: oauthUrl.toString(),
-        state,
         redirectUri,
         hasOAuth: true,
         connected,

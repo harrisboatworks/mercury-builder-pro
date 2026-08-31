@@ -5,7 +5,7 @@ CREATE OR REPLACE FUNCTION public.store_dropbox_oauth_token(p_token jsonb)
 RETURNS void
 LANGUAGE plpgsql
 SECURITY DEFINER
-SET search_path = public, vault
+SET search_path = ''
 AS $function$
 DECLARE
   existing_id uuid;
@@ -40,7 +40,7 @@ CREATE OR REPLACE FUNCTION public.get_dropbox_oauth_token()
 RETURNS jsonb
 LANGUAGE sql
 SECURITY DEFINER
-SET search_path = public, vault
+SET search_path = ''
 AS $function$
   SELECT decrypted_secret::jsonb
   FROM vault.decrypted_secrets
