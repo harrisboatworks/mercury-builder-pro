@@ -1283,7 +1283,7 @@ export default function QuoteSummaryPage() {
                     className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
-                      <Download className="w-4 h-4" />
+                      <Bookmark className="w-4 h-4" aria-hidden="true" />
                       Save for Later
                     </span>
                   </button>
