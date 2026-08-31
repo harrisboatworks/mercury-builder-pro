@@ -378,7 +378,7 @@ Legitimate admin callers to **keep:** `AdminStockSync.tsx`, `UnifiedInventoryDas
 
 **Evidence:** `financing-application-api` `load` — 30-day `resumeToken` in email URLs returns employment/financial/applicant data (SIN stripped). January 2025 audits claimed 7-day expiry; that claim is **stale**. Code is 30 days.
 
-**Action (later, not #290):** confirm current TTL with a code read; consider shortening; invalidate the capability after successful submission; and do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Preserve the current resume → continued draft saves → submission lifecycle. If rotation is adopted, return and persist the replacement token atomically before invalidating the prior token; a read-only open or link scanner must not break the customer's next authorized save or submission. Do not mix this finding with shared-quote.
+**Action (later, not #290):** confirm current TTL with a code read; consider shortening; invalidate the capability after successful submission; and do not put tokens in referrer-leaking query strings if a POST/fragment option exists. Preserve the current resume → continued draft saves → submission lifecycle. Keep the existing token valid through that lifecycle unless a separately designed rotation protocol survives a lost save response through an overlap/grace period, acknowledgement, or idempotent replacement-token recovery. A read-only open or link scanner must not break the customer's next authorized save or submission. Do not mix this finding with shared-quote.
 
 #### P0-11. `encrypt_sin` executable by `anon` — DO NOT REVOKE
 
