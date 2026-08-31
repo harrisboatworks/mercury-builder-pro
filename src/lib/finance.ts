@@ -11,6 +11,17 @@ export const FINANCING_MINIMUM = financePolicy.minimumCad;
 export const DEALERPLAN_FEE = financePolicy.dealerplanFeeCad;
 
 /**
+ * Ontario HST applied to the motor price before the DealerPlan fee.
+ */
+export const ONTARIO_HST_RATE = 0.13;
+
+/**
+ * Lender contract and maximum amortization limits disclosed to customers.
+ */
+export const FINANCING_CONTRACT_TERM_MONTHS = financePolicy.contractTermMonths;
+export const FINANCING_MAXIMUM_AMORTIZATION_MONTHS = financePolicy.maximumAmortizationMonths;
+
+/**
  * Get default financing rate based on price tier
  * Under $10,000: 8.99% APR
  * $10,000 and up: 7.99% APR
@@ -198,16 +209,20 @@ export const calculatePaymentWithFrequency = (
 ) => {
   const termMonths = termMonthsOverride || getFinancingTerm(price);
   const defaultRate = getDefaultFinancingRate(price);
-  const rate = promoRate || defaultRate;
+  const rate = promoRate !== null && Number.isFinite(promoRate) && promoRate >= 0
+    ? promoRate
+    : defaultRate;
   const paymentsPerYear = getPaymentFrequencyMultiplier(frequency);
   
   // Convert term to payment periods for the selected frequency
   const termPeriods = Math.round((termMonths / 12) * paymentsPerYear);
   
   const periodRate = rate / 100 / paymentsPerYear;
-  const payment = price * 
-    (periodRate * Math.pow(1 + periodRate, termPeriods)) / 
-    (Math.pow(1 + periodRate, termPeriods) - 1);
+  const payment = periodRate === 0
+    ? price / termPeriods
+    : price
+      * (periodRate * Math.pow(1 + periodRate, termPeriods))
+      / (Math.pow(1 + periodRate, termPeriods) - 1);
   
   return {
     payment: Math.round(payment),
@@ -230,6 +245,37 @@ export const calculateMonthlyPayment = (
   termMonthsOverride: number | null = null,
 ) => {
   return calculatePaymentWithFrequency(price, 'monthly', promoRate, termMonthsOverride);
+};
+
+export type MotorFinancingEstimate = ReturnType<typeof calculateMonthlyPayment> & {
+  amountFinanced: number;
+};
+
+/**
+ * Build the monthly estimate shown beside a bare-motor price.
+ *
+ * Eligibility is checked against the before-tax motor price. The payment is
+ * then amortized on the motor price plus Ontario HST and the mandatory
+ * DealerPlan fee. A finite, non-negative supplied APR keeps the card and its
+ * page disclosure aligned; otherwise the current standing/tiered rate applies.
+ */
+export const calculateMotorFinancingEstimate = (
+  motorPrice: number,
+  annualRate: number | null = null,
+): MotorFinancingEstimate | null => {
+  if (!Number.isFinite(motorPrice) || motorPrice < FINANCING_MINIMUM) {
+    return null;
+  }
+
+  const amountFinanced = motorPrice * (1 + ONTARIO_HST_RATE) + DEALERPLAN_FEE;
+  const effectiveRate = annualRate !== null && Number.isFinite(annualRate) && annualRate >= 0
+    ? annualRate
+    : getMotorCalculatorApr(amountFinanced);
+
+  return {
+    ...calculateMonthlyPayment(amountFinanced, effectiveRate),
+    amountFinanced,
+  };
 };
 
 /**
