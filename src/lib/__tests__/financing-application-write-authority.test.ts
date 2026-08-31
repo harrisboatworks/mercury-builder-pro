@@ -120,8 +120,23 @@ const financingApplicationUpdateStatements = (typescript: string): string[] =>
     return updateChains;
   })();
 
-const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
-  normalizeSql(sql)
+const findUnsafePublicWritePolicy = (sql: string): string | undefined => {
+  const normalizedSql = normalizeSql(sql);
+  const dynamicPolicy = normalizedSql
+    .split(/\b(?:EXECUTE|format\s*\()/i)
+    .slice(1)
+    .map((fragment) => fragment.split(';', 1)[0])
+    .find(
+      (fragment) =>
+        /\b(?:CREATE|ALTER)\s+POLICY\b/i.test(fragment) &&
+        new RegExp(financingApplicationsTablePattern, 'i').test(fragment),
+    );
+  // Dynamic policy DDL is deliberately review-gated even when the visible
+  // table/role looks safe: format placeholders and concatenation can hide
+  // the target or grantee at runtime.
+  if (dynamicPolicy) return dynamicPolicy;
+
+  return normalizedSql
     .split(';')
     .map((statement) => statement.trim())
     .find((statement) => {
@@ -163,6 +178,7 @@ const findUnsafePublicWritePolicy = (sql: string): string | undefined =>
 
       return hasPublicClientRole;
     });
+};
 
 describe('financing application write authority', () => {
   it('removes public and customer-side table writes without weakening admin or customer reads', () => {
@@ -255,6 +271,59 @@ describe('financing application write authority', () => {
     expect(findUnsafePublicWritePolicy(`
       CREATE POLICY "service predicate mentions a public role" ON public.financing_applications
       FOR ALL TO service_role USING (applicant_data->>'scope' = 'to public');
+    `)).toBeUndefined();
+  });
+
+  it('review-gates dynamically constructed CREATE and ALTER POLICY fragments', () => {
+    expect(findUnsafePublicWritePolicy(`
+      DO $$
+      BEGIN
+        EXECUTE format(
+          'CREATE POLICY "open writes" ON public.%I FOR ALL TO %I USING (true) WITH CHECK (true)',
+          'financing_applications',
+          'authenticated'
+        );
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      DO $$
+      BEGIN
+        EXECUTE format(
+          'ALTER POLICY "Admins have full access to applications" ON public.%I TO %I USING (true) WITH CHECK (true)',
+          'financing_applications',
+          'anon'
+        );
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      DO $$
+      BEGIN
+        EXECUTE 'CREATE POLICY "open writes" ON public.financing_applications FOR ALL TO public USING (true)';
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      DO $$
+      BEGIN
+        EXECUTE format(
+          'CREATE POLICY "service writes" ON public.%I FOR ALL TO %I USING (true) WITH CHECK (true)',
+          'financing_applications',
+          'service_role'
+        );
+      END $$;
+    `)).toBeDefined();
+    expect(findUnsafePublicWritePolicy(`
+      DO $$
+      BEGIN
+        EXECUTE format(
+          'CREATE POLICY "open writes" ON public.%I FOR ALL TO %I USING (true) WITH CHECK (true)',
+          'other_table',
+          'authenticated'
+        );
+      END $$;
+    `)).toBeUndefined();
+    expect(findUnsafePublicWritePolicy(`
+      CREATE POLICY "service writes" ON public.financing_applications
+      FOR ALL TO service_role USING (true) WITH CHECK (true);
     `)).toBeUndefined();
   });
 
