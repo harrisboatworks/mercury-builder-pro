@@ -36824,7 +36824,7 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-02',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
@@ -36927,6 +36927,8 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to 
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ## Sources
 
