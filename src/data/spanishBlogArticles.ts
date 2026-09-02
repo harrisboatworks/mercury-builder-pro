@@ -540,7 +540,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-02',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
@@ -672,7 +672,7 @@ Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcan
 Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
 
 **¿El equipo de Harris Boat Works habla español?**
-Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
+Nuestro equipo se comunica y presta servicio en inglés. El configurador en mercuryrepower.ca muestra precios claros en un proceso visual, y para preguntas específicas puedes escribirnos en hbw.wiki/service; te responderemos en inglés, así que si lo prefieres pide ayuda a un familiar o amigo que hable inglés o usa una aplicación de traducción.
 
 ---
 

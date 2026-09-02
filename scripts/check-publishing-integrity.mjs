@@ -284,7 +284,7 @@ check(
   /function loadBlogArticles\(\)[\s\S]{0,800}getSitemapEligibleArticles/.test(caseStudyGenerator) &&
     /for \(const article of blogArticlesAll\)/.test(repowerCostGeneratorPipeline) &&
     /const path = `\/blog\/\$\{article\.slug\}\.md`/.test(repowerCostGeneratorPipeline) &&
-    /writePublicMd\(path, markdown\)/.test(repowerCostGeneratorPipeline),
+    /writePublicMd\(path, markdown(?:, article\.dateModified)?\)/.test(repowerCostGeneratorPipeline),
   'The Markdown-twin generator must write every sitemap-eligible English article, including the Mercury repower-cost route.',
 );
 check(
@@ -1327,7 +1327,7 @@ check(
 );
 
 for (const file of blogMarkdownFiles) {
-  check(!/\{\{LIVE_RATE(?:_PCT)?\}\}/.test(read(file)), `${file} contains an unresolved live-rate placeholder.`);
+  check(!/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read(file)), `${file} contains an unresolved live token placeholder.`);
 }
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
   const markdown = read(file);
