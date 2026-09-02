@@ -10202,7 +10202,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 9.9 FourStroke tiller outboard on a 14-foot aluminum boat drifting on a misty Ontario lake at sunrise',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-02',
     publishDate: '2026-04-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -10239,7 +10239,7 @@ The 9.9 FourStroke is the honest ceiling on a 10 HP lake, and it is the motor we
 
 A 14-foot aluminum boat with two adults and a cooler will cruise all day on a 9.9. It will not be fast. On a 10 HP lake, nothing is, and that is rather the point.
 
-If the boat is small and light, the Mercury 8 FourStroke saves a little weight and money and gives up little on a boat that size.
+If the boat is small and light, the Mercury 8 FourStroke saves a little weight but not money (on HBW's pricing reference as of September 2026 the 8 HP lists above the 9.9 HP in every comparable configuration) and gives up little on a boat that size.
 
 ### 20 HP Limit: Mercury 15 or 20 FourStroke
 
@@ -10275,6 +10275,8 @@ Related guides:
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing)
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout)
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas)
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
     `,
@@ -35735,7 +35737,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-02',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
@@ -35838,6 +35840,8 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to 
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ## Sources
 
