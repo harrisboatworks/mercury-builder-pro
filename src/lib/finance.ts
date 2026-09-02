@@ -83,19 +83,46 @@ export const formatFinancingRatePercent = (rate?: number): string => {
   return `${r.toFixed(2)}%`;
 };
 
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
 /**
- * Substitute live-rate tokens in arbitrary text. Single chokepoint that
+ * Format an ISO "YYYY-MM-DD" date as an English month and year, e.g.
+ * "2026-07-14" -> "July 2026". Built from the string parts so the result
+ * never shifts with the runtime timezone. Non-ISO input passes through
+ * unchanged.
+ */
+export const formatPricingAsOf = (dateModified: string): string => {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+};
+
+/**
+ * Substitute live tokens in arbitrary text. Single chokepoint that
  * any rendering surface (markdown content, plain-text descriptions, FAQ
  * answers) can call to inject the current Mercury financing rate.
  *
  *   {{LIVE_RATE}}      -> "5.48% APR"
  *   {{LIVE_RATE_PCT}}  -> "5.48%"
+ *   {{PRICING_ASOF}}   -> "July 2026" (from the article's dateModified)
  */
-export const substituteLiveRateTokens = (text: string): string => {
+export const substituteLiveRateTokens = (
+  text: string,
+  options: { dateModified?: string } = {},
+): string => {
   if (!text) return text;
-  return text
+  let out = text
     .replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate())
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, formatFinancingRatePercent());
+  if (options.dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(options.dateModified));
+  }
+  return out;
 };
 
 
