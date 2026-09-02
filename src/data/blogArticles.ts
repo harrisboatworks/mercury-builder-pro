@@ -4762,7 +4762,7 @@ Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on R
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-18',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -4828,7 +4828,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Long shaft (20 inch) | Available | Available |
 | Best fit | HP-restricted lakes, 9.9-rated kicker class, lightest possible setup | Almost everything else |
 
-The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
+The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail is closer to a thousand dollars than a couple thousand.
 
 ## HP-Restricted Lakes: When the 9.9 Is the Only Legal Choice
 
@@ -4908,13 +4908,13 @@ The 9.9 is still a common fit for tournament anglers, sailboat owners replacing 
 
 Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
-The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
+The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra for the 15.
 
 ## Pricing in 2026 CAD
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of September 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs closer to a thousand dollars more in the same tiller, short-shaft configuration (9.9MH vs 15MH on HBW's pricing reference, September 2026). Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
