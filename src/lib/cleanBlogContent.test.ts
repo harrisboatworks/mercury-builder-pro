@@ -104,4 +104,19 @@ Continue the checklist.`;
       '## Step one\n\nCheck the battery switch.\n\n## Step two\n\nContinue the checklist.',
     );
   });
+
+  it('strips customer-visible Canonical URL editorial lines', () => {
+    const content = `**Canonical URL:** https://www.mercuryrepower.ca/blog/example
+
+## Quick Answer
+
+The right motor depends on the hull.`;
+
+    expect(cleanBlogContent(content)).toBe(
+      '## Quick Answer\n\nThe right motor depends on the hull.',
+    );
+    expect(cleanBlogContent('**Canonical URL:**\n\nPublish-ready copy.')).toBe(
+      'Publish-ready copy.',
+    );
+  });
 });

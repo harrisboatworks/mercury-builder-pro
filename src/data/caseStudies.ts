@@ -110,7 +110,7 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
     whyItWorked: [
       'Right-sized for small transoms and light-duty use',
       'Portable FourStroke practicality',
-      'Will stay clearly marked as illustrative until real photos arrive'
+      'Clearly labelled as an illustrative planning scenario'
     ],
     isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS04'

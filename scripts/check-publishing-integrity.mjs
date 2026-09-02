@@ -1329,6 +1329,14 @@ check(
 for (const file of blogMarkdownFiles) {
   check(!/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read(file)), `${file} contains an unresolved live token placeholder.`);
 }
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('public/blog-index.json')),
+  'public/blog-index.json contains an unresolved live token placeholder.',
+);
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('supabase/functions/_shared/blog-index-generated.ts')),
+  'supabase/functions/_shared/blog-index-generated.ts contains an unresolved live token placeholder.',
+);
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
   const markdown = read(file);
   check(/is_illustrative:\s*true/.test(markdown), `${file} is missing illustrative frontmatter.`);
