@@ -3244,8 +3244,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         hasStructuredFaqs: Boolean(article.faqs?.length),
         articleSlug: article.slug,
       });
+      const faqHeading = langCode === 'fr' ? 'Questions fréquentes' : 'FAQ';
       const faqHtml = (article.faqs && article.faqs.length > 0)
-        ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
+        ? `<section><h2>${faqHeading}</h2><dl>` + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';

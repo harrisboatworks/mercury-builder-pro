@@ -116,7 +116,7 @@ Si vous avez une situation de plaque de capacité ou une question de moteur usag
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-## FAQs
+## Questions fréquentes
 
 ### Pourquoi HBW ne tient-il pas le Mercury 75 HP FourStroke en stock?
 

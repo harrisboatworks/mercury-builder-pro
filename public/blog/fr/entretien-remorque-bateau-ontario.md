@@ -174,7 +174,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
 - [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 
-## FAQs
+## Questions fréquentes
 
 ### À quelle fréquence devrais-je regraisser les roulements de remorque?
 

@@ -148,7 +148,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
 ---
 
-## FAQs
+## Questions fréquentes
 
 ### Combien de temps dure une remotorisation?
 
