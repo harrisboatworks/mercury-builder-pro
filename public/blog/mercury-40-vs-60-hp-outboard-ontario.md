@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ### Quick Answer
 
-For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land. For specs, freshwater tests, and Standard vs Command Thrust on the 60 itself, see the [Mercury 60 HP FourStroke review](/blog/mercury-60-hp-fourstroke-review-ontario).
 
 ---
 

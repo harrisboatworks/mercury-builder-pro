@@ -135,6 +135,7 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
     // PRIORITY 1 — use-case
     // 9.9 portable (non-ProKicker) — surface the dedicated EFI review
     if (hp === 9.9 && !isProKicker) add('mercury-9-9-efi-review-ontario', 130);
+    if (hp === 60) add('mercury-60-hp-fourstroke-review-ontario', 130);
     if (isTiller) add('tiller-vs-remote-steering-outboard-guide', 126);
     if (isCT) add('mercury-command-thrust-complete-guide-2026', 126);
     if (family === 'Pro XS' && hp >= 150 && hp <= 200) add('mercury-boost-upgrade-150hp-pontoon-analysis', 120);
