@@ -412,7 +412,7 @@ export default function BlogArticle() {
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
-                c = substituteLiveRateTokens(c);
+                c = substituteLiveRateTokens(c, { dateModified: article.dateModified });
                 return c;
               })()}
               markdownComponents={{

@@ -441,13 +441,13 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
-function renderArticleBodyHtml(content, { hasStructuredFaqs = false, articleSlug = '' } = {}) {
+function renderArticleBodyHtml(content, { hasStructuredFaqs = false, articleSlug = '', dateModified = '' } = {}) {
   if (!content) return '';
   let s = stripSuppressedBlogPullQuotes(content, articleSlug);
   // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
   // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
   // body never contains literal placeholder strings.
-  s = substituteLiveRateTokens(s);
+  s = substituteLiveRateTokens(s, dateModified);
   s = cleanBlogContent(s, { hasStructuredFaqs });
   // Drop ALL H1 lines from article body. The route H1 is stamped in the
   // prerender header wrapper (<header><h1>{route.h1}</h1></header>), so any
@@ -560,11 +560,28 @@ function loadLiveRateTokensForPrerender() {
   }
 }
 const LIVE_RATE_TOKENS = loadLiveRateTokensForPrerender();
-function substituteLiveRateTokens(text) {
+// Mirrors formatPricingAsOf in src/lib/finance.ts. Duplicated here for the
+// same reason the LIVE_RATE logic is: .mjs build scripts cannot import TS.
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+function formatPricingAsOf(dateModified) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+}
+function substituteLiveRateTokens(text, dateModified) {
   if (!text) return text;
-  return String(text)
+  let out = String(text)
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+  if (dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(dateModified));
+  }
+  return out;
 }
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -3167,9 +3184,10 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
     const bodyHtml = renderArticleBodyHtml(bodySource, {
       hasStructuredFaqs: Boolean(article.faqs?.length),
       articleSlug: article.slug,
+      dateModified: article.dateModified,
     });
     const ctaHtml = ctaSource
-      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false, articleSlug: article.slug })
+      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false, articleSlug: article.slug, dateModified: article.dateModified })
       : '';
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
@@ -3254,6 +3272,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       const bodyHtml = renderArticleBodyHtml(article.content, {
         hasStructuredFaqs: Boolean(article.faqs?.length),
         articleSlug: article.slug,
+        dateModified: article.dateModified,
       });
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
