@@ -108,7 +108,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Common matchups people cross-shop
 

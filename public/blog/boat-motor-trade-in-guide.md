@@ -47,7 +47,7 @@ The rest of this post is the math behind that number, and how the deal actually 
 
 Here's the rule in Ontario: when you trade in a vehicle (including a boat or outboard) toward a new one at the same dealer, **HST is calculated on the difference**, not on the new motor's full price. Trade in your old Mercury for $5,000 against a new $20,000 Mercury, and you pay 13% HST on $15,000, not $20,000. That's $650 of tax savings per $5,000 of trade.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Sell privately for the same $5,000, then buy the $20,000 motor outright, and you pay HST on the full $20,000. Same boat, same buyer, same trade value, but $650 more out of your pocket.
 

@@ -87,7 +87,7 @@ We quote both the motor-only price and the all-in installed price so customers s
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
 | 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 

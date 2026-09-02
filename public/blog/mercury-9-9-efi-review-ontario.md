@@ -104,7 +104,7 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
