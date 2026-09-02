@@ -1128,17 +1128,34 @@ function loadLiveRateTokens() {
   }
 }
 const LIVE_RATE_TOKENS = loadLiveRateTokens();
-function substituteLiveRateTokens(text) {
+// Mirrors formatPricingAsOf in src/lib/finance.ts. Duplicated here for the
+// same reason the LIVE_RATE logic is: .mjs build scripts cannot import TS.
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+function formatPricingAsOf(dateModified) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+}
+function substituteLiveRateTokens(text, dateModified) {
   if (!text) return text;
-  return String(text)
+  let out = String(text)
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+  if (dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(dateModified));
+  }
+  return out;
 }
 
-function writePublicMd(relPath, content) {
+function writePublicMd(relPath, content, dateModified) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, substituteLiveRateTokens(content), 'utf8');
+  writeFileSync(outFile, substituteLiveRateTokens(content, dateModified), 'utf8');
 }
 
 
@@ -1774,7 +1791,7 @@ for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
   const markdown = blogMarkdown(article, blogClusterData);
   lintBlogTwin(article.slug, markdown);
-  writePublicMd(path, markdown);
+  writePublicMd(path, markdown, article.dateModified);
   verifyPublicMd(path, 'English blog twin freshness', ['**Last reviewed:**']);
   blogTwinSummaries.push({
     path,
@@ -1790,7 +1807,7 @@ for (const group of localizedBlogGroups) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
     const markdown = blogMarkdown(article, null, `/blog/${group.prefix}`, group.language);
     lintBlogTwin(`${group.prefix}/${article.slug}`, markdown);
-    writePublicMd(path, markdown);
+    writePublicMd(path, markdown, article.dateModified);
     const localizedLabelSeparator = group.language === 'fr-CA' ? ' :' : ':';
     verifyPublicMd(path, `${group.language} blog twin`, [
       `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,

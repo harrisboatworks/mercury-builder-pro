@@ -1165,7 +1165,7 @@ check(
 );
 
 for (const file of blogMarkdownFiles) {
-  check(!/\{\{LIVE_RATE(?:_PCT)?\}\}/.test(read(file)), `${file} contains an unresolved live-rate placeholder.`);
+  check(!/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read(file)), `${file} contains an unresolved live token placeholder.`);
 }
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
   const markdown = read(file);
