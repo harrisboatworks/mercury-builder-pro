@@ -4768,7 +4768,7 @@ Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on R
     readTime: '~9 min read',
     keywords: ["Mercury 9.9 vs 15 HP", "Mercury tiller motor Ontario", "kicker motor 9.9 vs 15", "sailboat auxiliary outboard", "Mercury 9.9 EFI FourStroke"],
     faqs: [
-      { question: "Can I convert a 15 HP Mercury into a 9.9 with a flash?", answer: "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority before relying on the flash." },
+      { question: "Can I convert a 15 HP Mercury into a 9.9 with a flash?", answer: "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before relying on the flash." },
       { question: "Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?", answer: "Yes. The 9.9 EFI FourStroke is the standard pick for tournament-class kicker use. Most Ontario bass and walleye tournament series cap kicker HP at 9.9. Always check the specific tournament rules before competing." },
       { question: "What shaft length do I need for a sailboat auxiliary?", answer: "Most sailboats need a 20 inch (long) shaft. Larger displacement hulls (28 foot plus) sometimes need 25 inch (extra long). Measure from the top of the transom to the centre of the prop shaft on your old motor, or measure transom height plus 5 to 8 inches. We measure for free if you bring the boat or a photo of the transom." },
       { question: "Will the 9.9 push a loaded 14 foot aluminum jon boat?", answer: "It depends on the load. Empty with one adult, yes. Loaded with two adults, fishing gear, full fuel tank, and live well, the 9.9 will struggle to get the boat onto plane. The 15 handles the same hull and load with margin to spare. Most customers who go 9.9 here end up wishing they'd picked the 15." },
@@ -4836,7 +4836,7 @@ This is the cleanest case for the 9.9. Some Ontario lakes, cottage associations,
 
 A few things worth knowing if HP restriction is in play:
 
-- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still stickered and registered as a 15. Most HP-restricted lakes go by the sticker, not by what's under the cowl. Confirm with your specific lake authority before you spend.
+- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still the same engine underneath, and whether an HP-restricted lake accepts it depends on what the motor's rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before you spend.
 - **"9.9 kicker" motors exist for tournament fishing.** Bass tournaments and walleye derbies often restrict the trolling motor (kicker) to 9.9 HP. The 9.9 EFI FourStroke is the standard pick here.
 - **Cottage associations are often stricter than provincial rules.** Some Kawartha cottage associations and small lakes near the Trent-Severn have 9.9 HP or even 7.5 HP house rules. Read the association bylaws before buying anything bigger.
 
@@ -4934,7 +4934,7 @@ We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from cen
 
 **Can I convert a 15 HP Mercury into a 9.9 with a flash?**
 
-Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority before relying on the flash.
+Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before relying on the flash.
 
 **Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?**
 
