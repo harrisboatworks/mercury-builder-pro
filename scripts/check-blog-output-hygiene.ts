@@ -268,7 +268,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /practical Rice Lake trip planning[^\n.]{0,160}3 to 4 miles[^\n.]{0,100}20 to 25 miles/i,
   ],
   'bilge-pump-troubleshooting-guide': [
-    /0\.91 litres per second \(roughly 866 US GPH, or 14\.4 US gal\/min\)/i,
+    /0\.91 litres per second \(3,276 L\/h, or about 865 US GPH\)/i,
   ],
   'trailer-boat-toronto-to-rice-lake-guide': [
     /Serpent Mounds is not a public launch/i,
