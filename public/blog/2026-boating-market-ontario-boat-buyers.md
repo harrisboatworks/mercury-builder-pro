@@ -106,7 +106,7 @@ If you are shopping for a vessel above the threshold, the tax no longer applies 
 
 The Bank of Canada policy rate eased through a series of cuts in 2025. Those cuts are filtering through to marine lending. On a typical $60,000 boat package, even a 1% rate reduction can take $30 to 40 per month off a five-year loan.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The case for 2026 pre-owned
 

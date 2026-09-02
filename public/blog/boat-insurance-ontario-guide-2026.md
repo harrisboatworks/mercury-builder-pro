@@ -126,7 +126,7 @@ Ranges based on typical 2026 Ontario quotes:
 | 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
 | 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of May 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Cost factors:
 

@@ -93,7 +93,7 @@ The **gimbal bearing** is the support bearing that lets the drive pivot for stee
 
 Replacement is straightforward when the drive is already off the boat for bellows work, that's why we do them together. As a standalone job, $500-$800 in parts plus labour. Catching it early is cheap; ignoring it eats the U-joint, then the bellows, then the engine coupler, then the engine itself.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ### 3. Milky gear lube (water in the drive)
 
