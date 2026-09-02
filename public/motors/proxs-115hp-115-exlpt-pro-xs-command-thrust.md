@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-pro-xs-command-thrust
-last_updated: 2026-08-31
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
