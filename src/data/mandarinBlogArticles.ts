@@ -1963,7 +1963,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
     image: '/lovable-uploads/zh-mercury-repower-guide-gta-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-12',
     category: '成本分析',
     readTime: '10 min read',
@@ -2147,6 +2147,10 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 - [Mercury FourStroke、Pro XS、Verado 中文对比](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
 - [GTA 华人 Mercury service / 保养指南](/blog/zh/gta-chinese-mercury-service-guide)
 - [Rice Lake winter storage：冬季存船要注意什么](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+
+## 语言说明
+
+${ZH_LANGUAGE_NOTE}
 
 ## 行动呼吁
 
@@ -2537,7 +2541,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
     image: '/lovable-uploads/hero-mandarin-pcl-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '11 分钟',
@@ -2563,7 +2567,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 加拿大对船和钓鱼的管理是分层的：船的操作人要有证（联邦），船本身要登记（联邦），钓鱼活动要有证（省级）。中文里这三件事经常都被笼统翻译成"船驾照"或"钓鱼证"，但在加拿大它们是三个独立的法规，由不同部门管理，罚款也是分别开的。
 
-Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 Mercury Marine Premier 经销商。我们不卖任何证照，但每年都会被 GTA 华人客户问这些问题，所以我们把最常见的答案整理在这里，让你在出门之前一次搞清楚。
+Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，Mercury 经销商始于 1965 年，也是 Mercury Marine Premier 经销商。我们不卖任何证照，但每年都会被 GTA 华人客户问这些问题，所以我们把最常见的答案整理在这里，让你在出门之前一次搞清楚。
 
 ---
 
