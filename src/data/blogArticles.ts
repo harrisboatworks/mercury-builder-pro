@@ -11291,7 +11291,6 @@ Honest version: the right month to buy is the month you actually need the boat o
     seoTitle: "Best Mercury Outboard for Family Runabouts (2026)",
     description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case.",
     image: '/lovable-uploads/blog-heroes-2026-08/p0p1/hero-family-runabout-mercury-115-real-2026-08.jpg',
-    socialImage: '/lovable-uploads/blog-heroes-2026-08/p0p1/hero-family-runabout-mercury-115-real-2026-08-social.jpg',
     imageAlt: 'Docked Crestliner family runabout with a black Mercury 115 FourStroke on calm Ontario water.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
