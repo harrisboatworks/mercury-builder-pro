@@ -164,8 +164,6 @@ Stop and request professional service when:
 
 For Mercury owners, start with Mercury's official guidance and then follow the exact manual for the serial number. The related [DIY Mercury outboard winterization guide](/blog/diy-mercury-outboard-winterization-guide) is a decision framework, not a replacement for that manual.
 
-[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) before you start so the motor, fuel, battery, and onboard-system checks stay together.
-
 ## Request the Current Scope
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
