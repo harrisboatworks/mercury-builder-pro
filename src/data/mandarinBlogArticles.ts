@@ -130,7 +130,7 @@ ${ZH_LANGUAGE_NOTE}
     image: '/lovable-uploads/aluminum-fishing-hero-real.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-07',
+    dateModified: '2026-09-02',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
@@ -335,6 +335,10 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
+
+## 语言说明
+
+${ZH_LANGUAGE_NOTE}
 
 ## 准备出发？
 
