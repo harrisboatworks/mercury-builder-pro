@@ -2917,16 +2917,6 @@ function firstParagraph(content, fallback) {
 // <noscript> so crawlers and LLMs see real tabular data even when the
 // markdown content rendered by React doesn't survive a no-JS fetch.
 const BLOG_TABLE_FALLBACKS = {
-  'mercury-repower-cost-ontario-2026-cad':
-    '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
-    '<thead><tr><th scope="col">Project tier</th><th scope="col">HP range</th><th scope="col">All-in range (CAD before HST)</th><th scope="col">Common boats</th></tr></thead>' +
-    '<tbody>' +
-    '<tr><th scope="row">Tiller, motor-only</th><td>9.9 - 25 HP</td><td>$2,000 - $5,500</td><td>Tenders, dinghies, kickers, small aluminum tillers</td></tr>' +
-    '<tr><th scope="row">Small remote</th><td>40 - 60 HP</td><td>$11,000 - $15,000</td><td>14-16 ft aluminum, small consoles</td></tr>' +
-    '<tr><th scope="row">Mid</th><td>75 - 115 HP</td><td>$17,000 - $22,000</td><td>16-19 ft aluminum, small pontoons, fishing boats</td></tr>' +
-    '<tr><th scope="row">150 HP</th><td>150 HP</td><td>$23,000 - $30,000</td><td>18-22 ft pontoons, runabouts, mid-size fishing</td></tr>' +
-    '<tr><th scope="row">High-HP</th><td>200 - 300 HP</td><td>$35,000 - $40,000</td><td>Performance bass, large pontoons, center consoles</td></tr>' +
-    '</tbody></table>',
   'cheapest-mercury-outboard-canada-2026':
     '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2027)</caption>' +
     '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
