@@ -782,7 +782,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can I convert a 15 HP Mercury into a 9.9 with a flash?",
-        "a": "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority be…"
+        "a": "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your sp…"
       },
       {
         "q": "Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?",
