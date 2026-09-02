@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-175hp-175-xl-fourstroke
-last_updated: 2026-09-02
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false

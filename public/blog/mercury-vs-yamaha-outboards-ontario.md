@@ -48,7 +48,7 @@ A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hund
 | Resale value | Strong | Holds value comparably |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The Rice Lake service-network reality
 

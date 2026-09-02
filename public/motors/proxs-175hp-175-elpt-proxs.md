@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-175hp-175-elpt-proxs
-last_updated: 2026-09-02
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false

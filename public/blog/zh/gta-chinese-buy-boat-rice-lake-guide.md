@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-09-02
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-02
+date_modified: 2026-08-03
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-02  
+**最后审核:** 2026-08-03  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
 ## 快速答案
 
-如果你是住在 GTA 的华人家庭，正准备买人生第一艘船：**先决定用途（家庭出游 vs 认真钓鱼），再决定船型，最后再谈发动机和预算**。Rice Lake 离多伦多约 90 分钟车程，是 GTA 最近的"真湖"，也是新手家庭买船最合理的落脚点。Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，Mercury 经销商始于 1965 年，也是 Mercury Marine Premier 经销商，提供看船、报价、交付和冬季存储一条龙服务（团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件）。建议先在 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 中租一两次，确定真的喜欢，再回来看这篇买船指南。
+如果你是住在 GTA 的华人家庭，正准备买人生第一艘船：**先决定用途（家庭出游 vs 认真钓鱼），再决定船型，最后再谈发动机和预算**。Rice Lake 离多伦多约 90 分钟车程，是 GTA 最近的"真湖"，也是新手家庭买船最合理的落脚点。Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，也是 Mercury Marine Premier 经销商，提供看船、报价、交付和冬季存储一条龙服务（团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件）。建议先在 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 中租一两次，确定真的喜欢，再回来看这篇买船指南。
 
 ---
 
@@ -41,7 +41,7 @@ revenue_driver: repower
 
 这篇指南就是为这种家庭写的。我们不会假装"买船很简单"，但也不会把它说得比实际复杂。买船的核心其实只有三件事：**这艘船谁来用、在哪里用、用多久**。把这三件事想清楚，剩下的（船型、发动机、预算、贷款、存储）都只是执行细节。
 
-HBW 是 Rice Lake 上的家族船厂，始于 1947 年，到现在还是 Harris 家族经营。我们从 1965 年起就是 Mercury 经销商，现在是 [Mercury Marine](https://www.mercurymarine.com/canada/en/) 的 Premier 级别经销商，也是 Legend 浮筒船在安省的合作伙伴。我们没有大型连锁的市场预算，但我们认识每一位走进来的客户，也知道每一艘从我们码头交付出去的船现在停在哪里。
+HBW 是 Rice Lake 上的家族船厂，始于 1947 年，到现在还是 Harris 家族经营。我们是 [Mercury Marine](https://www.mercurymarine.com/canada/en/) 的 Premier 级别经销商，也是 Legend 浮筒船在安省的合作伙伴。我们没有大型连锁的市场预算，但我们认识每一位走进来的客户，也知道每一艘从我们码头交付出去的船现在停在哪里。
 
 ---
 

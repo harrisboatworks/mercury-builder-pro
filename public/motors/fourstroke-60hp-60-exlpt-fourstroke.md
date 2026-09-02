@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-exlpt-fourstroke
-last_updated: 2026-09-02
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -16,14 +16,14 @@ availability: special_order
 price_cad: 12689
 ---
 
-# 60 EXLPT Command Thrust FourStroke
+# 60 EXLPT FourStroke
 
 Mercury FourStroke 60 HP outboard motor (model 1F60463GZ).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 60 EXLPT Command Thrust FourStroke
+- **Model:** 60 EXLPT FourStroke
 - **Family:** Mercury FourStroke
 - **Horsepower:** 60 HP
 - **Model number:** 1F60463GZ

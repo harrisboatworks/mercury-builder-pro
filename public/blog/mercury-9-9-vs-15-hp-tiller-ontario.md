@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-09-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-09-02
+date_modified: 2026-08-08
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-08-08  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -78,7 +78,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Long shaft (20 inch) | Available | Available |
 | Best fit | HP-restricted lakes, 9.9-rated kicker class, lightest possible setup | Almost everything else |
 
-The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail is closer to a thousand dollars than a couple thousand.
+The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
 
 ## HP-Restricted Lakes: When the 9.9 Is the Only Legal Choice
 
@@ -86,7 +86,7 @@ This is the cleanest case for the 9.9. Some Ontario lakes, cottage associations,
 
 A few things worth knowing if HP restriction is in play:
 
-- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still the same engine underneath, and whether an HP-restricted lake accepts it depends on what the motor's rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before you spend.
+- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still stickered and registered as a 15. Most HP-restricted lakes go by the sticker, not by what's under the cowl. Confirm with your specific lake authority before you spend.
 - **"9.9 kicker" motors exist for tournament fishing.** Bass tournaments and walleye derbies often restrict the trolling motor (kicker) to 9.9 HP. The 9.9 EFI FourStroke is the standard pick here.
 - **Cottage associations are often stricter than provincial rules.** Some Kawartha cottage associations and small lakes near the Trent-Severn have 9.9 HP or even 7.5 HP house rules. Read the association bylaws before buying anything bigger.
 
@@ -158,13 +158,13 @@ The 9.9 is still a common fit for tournament anglers, sailboat owners replacing 
 
 Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
-The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra for the 15.
+The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
 
 ## Pricing in 2026 CAD
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of September 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs closer to a thousand dollars more in the same tiller, short-shaft configuration (9.9MH vs 15MH on HBW's pricing reference, September 2026). Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -198,7 +198,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 
 ### Can I convert a 15 HP Mercury into a 9.9 with a flash?
 
-Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before relying on the flash.
+Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority before relying on the flash.
 
 ### Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?
 

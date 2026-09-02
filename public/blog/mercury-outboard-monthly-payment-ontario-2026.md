@@ -60,7 +60,7 @@ In Ontario, [every new outboard purchase](/blog/mercury-repower-cost-ontario-202
 | Mercury 115 Pro XS | $17,490 | $2,274 | $349 | $20,113 |
 | Mercury 150 Pro XS | $24,349 | $3,165 | $349 | $27,863 |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The first payment table below assumes HST is paid separately but includes the mandatory $349 DealerPlan fee. The worked examples later show both fee-only and HST-included totals.
 

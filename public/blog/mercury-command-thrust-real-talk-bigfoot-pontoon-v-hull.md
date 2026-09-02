@@ -137,7 +137,7 @@ Boat type and how it actually gets used, first. Then the load reality (a pontoon
 
 As of July 2026, from our live pricing: the 60 ELPT FourStroke is $12,040 and the 60 CT is $12,342, about a $300 difference. The 90 ELPT is $14,960 vs $15,428 for CT. The 115 ELPT is $17,083 vs $17,540 for CT. On the right boat, that few hundred dollars is the best money on the invoice. On the wrong boat, it's paying extra to go slower.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+*Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference).*
 
 ## When to call HBW
 
