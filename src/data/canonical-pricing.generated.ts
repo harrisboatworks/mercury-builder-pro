@@ -506,13 +506,13 @@ export const CANONICAL_SKUS: CanonicalSku[] = [
   },
   {
     "partNo": "1F5145TJZ",
-    "model": "50ELHPT FourStroke",
+    "model": "50ELHPT Command Thrust FourStroke Tiller",
     "family": "FourStroke",
     "hp": 50,
     "dealer": 11484,
     "msrp": 12795,
     "status": "Available to order",
-    "slug": "50elhpt-fourstroke"
+    "slug": "50elhpt-ct-fourstroke-tiller"
   },
   {
     "partNo": "1F60413GZ",
@@ -556,13 +556,13 @@ export const CANONICAL_SKUS: CanonicalSku[] = [
   },
   {
     "partNo": "1F60463GZ",
-    "model": "60EXLPT FourStroke",
+    "model": "60EXLPT Command Thrust FourStroke",
     "family": "FourStroke",
     "hp": 60,
     "dealer": 12689,
     "msrp": 14135,
     "status": "Available to order",
-    "slug": "60exlpt-fourstroke"
+    "slug": "60exlpt-ct-fourstroke"
   },
   {
     "partNo": "1F754132D",
@@ -596,13 +596,13 @@ export const CANONICAL_SKUS: CanonicalSku[] = [
   },
   {
     "partNo": "1F904632D",
-    "model": "90EXLPT FourStroke",
+    "model": "90EXLPT Command Thrust FourStroke",
     "family": "FourStroke",
     "hp": 90,
     "dealer": 15477,
     "msrp": 17240,
     "status": "Available to order",
-    "slug": "90exlpt-fourstroke"
+    "slug": "90exlpt-ct-fourstroke"
   },
   {
     "partNo": "1115F132D",

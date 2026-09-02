@@ -39,18 +39,63 @@ export function familyKey(family: string | null | undefined): string {
   return (family || "").toLowerCase().replace(/\s+/g, "");
 }
 
+type MotorPresentationRow = {
+  model?: string | null;
+  model_display?: string | null;
+  model_key?: string | null;
+  model_number?: string | null;
+  mercury_model_no?: string | null;
+};
+
+// Exact-part presentation corrections retain established same-product public
+// URLs when authoritative names include qualifiers missing from upstream data.
+const MOTOR_OVERRIDES_BY_PART_NUMBER: Readonly<
+  Record<string, Readonly<{ model_display: string; model_key: string }>>
+> = {
+  "1F5145TJZ": {
+    model_display: "50 ELHPT Command Thrust FourStroke Tiller",
+    model_key: "fourstroke-50hp-50-elhpt-fourstroke",
+  },
+  "1F60463GZ": {
+    model_display: "60 EXLPT Command Thrust FourStroke",
+    model_key: "fourstroke-60hp-60-exlpt-fourstroke",
+  },
+  "1F904632D": {
+    model_display: "90 EXLPT Command Thrust FourStroke",
+    model_key: "fourstroke-90hp-90-exlpt-fourstroke",
+  },
+};
+
+function motorPartNumber(row: MotorPresentationRow): string {
+  return String(row.model_number || row.mercury_model_no || "")
+    .trim()
+    .toUpperCase();
+}
+
+export function applyMotorPresentationOverrides<T extends MotorPresentationRow>(
+  row: T,
+): T {
+  const overrides = MOTOR_OVERRIDES_BY_PART_NUMBER[motorPartNumber(row)];
+  return overrides ? ({ ...row, ...overrides } as T) : row;
+}
+
 // Canonical motor slug matching public-motors-api output and the
 // /motors/{slug}.md markdown twins. Uses the raw DB family value (e.g. "ProXS")
 // when present so the slug does not drift from the markdown filenames.
 export function motorSlug(row: {
   model?: string | null;
   model_display?: string | null;
+  model_number?: string | null;
+  mercury_model_no?: string | null;
   family?: string | null;
   motor_type?: string | null;
   horsepower?: number | null;
 }): string {
+  const canonicalRoute =
+    MOTOR_OVERRIDES_BY_PART_NUMBER[motorPartNumber(row)]?.model_key;
+  if (canonicalRoute) return canonicalRoute;
+
   const family = row.family || detectFamily(row.model_display || row.model, row.motor_type, null);
   const display = row.model_display || row.model || "";
   return slugify(`${family}-${row.horsepower}hp-${display}`);
 }
-

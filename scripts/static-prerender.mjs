@@ -16,7 +16,7 @@
  * Replaces the puppeteer-based prerender pipeline, which couldn't run on
  * Vercel's build container (missing Chromium shared libs).
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -29,6 +29,10 @@ import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnch
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
 import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import {
+  buildCanonicalMotorRouteCatalog,
+  mergeMotorRouteSources,
+} from './lib/motor-route-canonicalization.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
 import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
@@ -735,7 +739,24 @@ const REQUIRED_CANONICAL_MOTOR_ROUTES = new Map([
   ['1A25411BK', 'fourstroke-25hp-25-elhpt-fourstroke'],
   ['1A25413BK', 'fourstroke-25hp-25-elpt-fourstroke'],
   ['1A10201LK', 'fourstroke-9-9hp-9-9mh-fourstroke'],
+  ['1F60463GZ', 'fourstroke-60hp-60-exlpt-fourstroke'],
 ]);
+
+function loadCanonicalMotorRouteCatalog() {
+  const motorsDir = join(ROOT, 'public', 'motors');
+  const twins = readdirSync(motorsDir)
+    .filter((filename) => filename.endsWith('.md'))
+    .map((filename) => ({
+      filename,
+      markdown: readFileSync(join(motorsDir, filename), 'utf8'),
+    }));
+  return buildCanonicalMotorRouteCatalog({
+    twins,
+    requiredCanonicalRoutes: REQUIRED_CANONICAL_MOTOR_ROUTES,
+  });
+}
+
+const CANONICAL_MOTOR_ROUTE_CATALOG = loadCanonicalMotorRouteCatalog();
 
 function loadRequiredCanonicalMotorRecords() {
   const pricingPath = join(ROOT, 'public', 'pricing-reference.md');
@@ -786,7 +807,7 @@ async function fetchAllSupabaseMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&model_key=not.is.null&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   try {
     const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
     if (!res.ok) return { ok: false, data: [], reason: `${res.status} ${res.statusText}` };
@@ -863,37 +884,13 @@ async function loadMotors() {
     console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with API plus canonical-route fallbacks`);
   }
 
-  // Merge: canonical routes preserve known public URL contracts when an upstream
-  // feed temporarily omits an orderable motor. Supabase and API records still
-  // win when they carry the same model_key.
-  const byKey = new Map();
-  const supabaseByPartNo = new Map(
-    (sb.ok ? sb.data : [])
-      .filter((m) => m.model_number || m.mercury_model_no)
-      .map((m) => [m.model_number || m.mercury_model_no, m]),
-  );
-  for (const m of canonicalMotors) {
-    const source = supabaseByPartNo.get(m.model_number || m.mercury_model_no);
-    const enriched = source
-      ? {
-          ...m,
-          hero_image_url: m.hero_image_url || source.hero_image_url || null,
-          image_url: m.image_url || source.image_url || null,
-          shaft: m.shaft || source.shaft || null,
-          shaft_code: m.shaft_code || source.shaft_code || null,
-          start_type: m.start_type || source.start_type || null,
-          control_type: m.control_type || source.control_type || null,
-        }
-      : m;
-    if (enriched.model_key) byKey.set(String(enriched.model_key).toLowerCase(), enriched);
-  }
-  for (const m of sb.ok ? sb.data : []) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  for (const m of apiMotors) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  const merged = Array.from(byKey.values());
+  const merged = mergeMotorRouteSources({
+    canonicalMotors,
+    supabaseMotors: sb.ok ? sb.data : [],
+    apiMotors,
+    canonicalRoutesByPartNumber: CANONICAL_MOTOR_ROUTE_CATALOG.byPartNumber,
+    canonicalRoutesById: CANONICAL_MOTOR_ROUTE_CATALOG.byId,
+  });
   console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.ok ? sb.data.length : 0}, canonical fallbacks: ${canonicalMotors.length})`);
   return merged;
 }

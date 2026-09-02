@@ -11,6 +11,7 @@ import {
   getBlogRevenuePath,
   normalizeBlogCategory,
 } from '../src/lib/blogRevenueDriver.js';
+import { applyMotorPresentationOverrides } from '../src/data/motorPresentationOverrides.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -219,7 +220,7 @@ async function loadMotors() {
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
   const rows = await res.json();
@@ -1748,7 +1749,8 @@ const motorRecords = await loadMotors();
 // Full quote-builder universe, same selection rules as MotorSelectionPage.
 // Used by /pricing-reference.md so the reference matches the quote builder
 // (both in-stock and available-to-order motors), not just public-motors-api.
-const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
+const quoteBuilderMotorRecords = (await loadAllQuoteBuilderMotors())
+  .map(applyMotorPresentationOverrides);
 const blogArticlesAll = loadBlogArticles();
 const localizedBlogGroups = loadLocalizedBlogArticles();
 
@@ -1758,7 +1760,8 @@ for (const dir of ['motors', 'case-studies', 'locations', 'blog']) {
 }
 
 const motorTwinSummaries = [];
-for (const m of motorRecords) {
+for (const sourceMotor of motorRecords) {
+  const m = applyMotorPresentationOverrides(sourceMotor);
   if (!m.model_key) continue;
   const s = (m.model_display || m.model || '').toLowerCase();
   if (s.includes('verado')) continue;
