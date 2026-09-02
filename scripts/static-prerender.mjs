@@ -59,8 +59,9 @@ const BUSINESS_SAME_AS = [
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
-// Load Google Places cache (rating, review count, opening hours) so the
-// LocalBusiness JSON-LD always matches what Google itself shows. Refreshed
+// Load Google Places cache (location and opening hours) so the LocalBusiness
+// JSON-LD always matches what Google itself shows. Visible review counts stay
+// in page UI, not in owned-business JSON-LD. Refreshed
 // by scripts/fetch-google-places-data.mjs in the build pipeline.
 let GOOGLE_PLACES_CACHE = {
   ratingValue: '4.6',
@@ -72,14 +73,8 @@ try {
   const cachePath = new URL('../src/data/google-places-cache.json', import.meta.url);
   GOOGLE_PLACES_CACHE = { ...GOOGLE_PLACES_CACHE, ...JSON.parse(readFileSync(cachePath, 'utf8')) };
 } catch (err) {
-  console.warn('[static-prerender] google-places-cache.json missing, using fallback rating/hours.');
+  console.warn('[static-prerender] google-places-cache.json missing, using fallback location/hours.');
 }
-const LIVE_AGGREGATE_RATING = {
-  '@type': 'AggregateRating',
-  ratingValue: GOOGLE_PLACES_CACHE.ratingValue,
-  reviewCount: GOOGLE_PLACES_CACHE.reviewCount,
-  bestRating: '5',
-};
 const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
   ? GOOGLE_PLACES_CACHE.openingHoursSpecification
   : [];
@@ -1170,7 +1165,6 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Legend Boats" }
         ],
         "award": "Mercury Marine Premier Dealer",
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS,
         "sameAs": BUSINESS_SAME_AS
       },
@@ -1336,7 +1330,6 @@ function contactPageSchema() {
           { "@type": "Country", "name": "Canada" }
         ],
         "sameAs": BUSINESS_SAME_AS,
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
