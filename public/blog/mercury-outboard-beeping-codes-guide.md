@@ -73,7 +73,7 @@ Take a photo of the code on the screen so you can text it to us.
 
 #### Still beeping after all 5? Put in a service request at hbw.wiki/service.
 
-Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
+Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
 
 ---
 
