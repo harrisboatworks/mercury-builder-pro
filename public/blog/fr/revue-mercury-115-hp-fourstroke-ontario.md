@@ -171,7 +171,7 @@ Questions sur la version qui convient à votre bateau? Appelez 905-342-2153 ou s
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-## FAQs
+## Questions fréquentes
 
 ### Combien pèse le Mercury 115 HP FourStroke?
 

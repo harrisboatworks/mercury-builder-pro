@@ -158,7 +158,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## FAQs
+## Questions fréquentes
 
 ### Ai-je besoin d'assurance pour un bateau de 9,9 HP en Ontario?
 

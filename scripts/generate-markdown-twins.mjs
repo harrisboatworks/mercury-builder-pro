@@ -1279,6 +1279,7 @@ function blogTwinLabels(language) {
       canonical: 'URL canonique (HTML pour les lecteurs)',
       nextSteps: 'Prochaines étapes',
       pickupContact: 'Lieu de ramassage et coordonnées',
+      faqs: 'Questions fréquentes',
     };
   }
 
@@ -1290,6 +1291,7 @@ function blogTwinLabels(language) {
     canonical: 'Canonical (HTML for humans)',
     nextSteps: 'Next steps',
     pickupContact: 'Pickup location & contact',
+    faqs: 'FAQs',
   };
 }
 
@@ -1433,9 +1435,10 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     `language: ${language}`,
     `revenue_driver: ${revenueDriver}`,
   ];
+  const labels = blogTwinLabels(language);
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
-    ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
+    ? [`## ${labels.faqs}`, '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
   const cleanedContent = normalizeBlogTwinStructure(
     cleanBlogContent(article.content, faqs.length > 0, {
@@ -1449,7 +1452,6 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
-  const labels = blogTwinLabels(language);
   const labelSeparator = language === 'fr-CA' ? ' :' : ':';
   const metadataLineBreak = language === 'fr-CA' ? '\\' : '  ';
   const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language);
@@ -1820,6 +1822,7 @@ for (const group of localizedBlogGroups) {
       language: group.language,
       isDiagnostic: isDiagnosticBlogArticle(article),
       revenueDriver: getBlogRevenueDriver(article.category, article.slug),
+      hasStructuredFaqs: Array.isArray(article.faqs) && article.faqs.length > 0,
     });
   }
 }
@@ -1948,6 +1951,11 @@ const frenchForbidden = [
   '**Published:**',
   '**Read time:**',
   '**Canonical (HTML for humans):**',
+  '## FAQs',
+  '## Foire aux questions',
+  '## Liens internes',
+  "## Appel à l'action",
+  '## Appel à l’action',
   '## Next steps',
   '- Pickup location & contact:',
   'Build your own Mercury quote',
@@ -1956,6 +1964,9 @@ const frenchForbidden = [
 for (const twin of frenchTwinSummaries) {
   const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
   const customerFacingText = twinText.split('\n## Notes for AI agents')[0];
+  if (twin.hasStructuredFaqs && !twinText.includes('## Questions fréquentes')) {
+    throw new Error(`[markdown-twins] French blog twin missing localized FAQ heading: ${twin.path}`);
+  }
   for (const required of frenchRequired) {
     if (!twinText.includes(required)) {
       throw new Error(`[markdown-twins] French blog twin missing localized boilerplate ${required}: ${twin.path}`);

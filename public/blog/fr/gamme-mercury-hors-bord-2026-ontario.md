@@ -116,7 +116,7 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-## FAQs
+## Questions fréquentes
 
 ### Quel est le meilleur moteur Mercury pour un bateau de pêche sur le lac Rice?
 

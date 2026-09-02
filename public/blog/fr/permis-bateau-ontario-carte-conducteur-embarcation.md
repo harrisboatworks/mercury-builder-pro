@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation.md
-last_updated: 2026-04-12
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Permis de conduire une embarcation au Canada : Ce que vous devez savoir"
 description: "Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et..."
 category: "Réglementation"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-09-02
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Réglementation\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-04-12\
+**Dernière révision :** 2026-09-02\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
@@ -39,7 +39,7 @@ Au Canada, toute personne qui conduit une embarcation motorisée doit détenir l
 
 Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario, et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
 
-Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Notre formulaire de contact et notre outil de soumission en ligne à **mercuryrepower.ca** fonctionnent très bien en français.
+Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Utilisez la traduction de votre navigateur ou demandez l'aide d'un proche bilingue pour remplir un formulaire; notre personnel et nos réponses sont en anglais.
 
 ---
 
@@ -130,13 +130,6 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## Liens internes
-- Guide de pêche sur le lac Rice
-- Guide d'hivernisation du moteur Mercury Ontario
-- Concessionnaire Mercury Premier Ontario
-
-## Appel à l'action
-
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
@@ -145,7 +138,7 @@ Demande de service : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez n
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---
 
-## FAQs
+## Questions fréquentes
 
 ### Mon permis de conduire automobile remplace-t-il la CCEP?
 
@@ -166,6 +159,18 @@ Non , seulement pour les embarcations motorisées. Les kayaks, canots et planche
 ### La CCEP est-elle la même chose que l'immatriculation?
 
 Non. La CCEP concerne la compétence du conducteur; l'immatriculation (licence de plaisance) concerne l'embarcation elle-même.
+
+### Est-ce que la CCEP expire?
+
+Non. La Carte de conducteur d'embarcation de plaisance est valide à vie. Gardez-la à bord lorsque vous conduisez une embarcation motorisée.
+
+### Peut-on suivre le cours et passer le test en français?
+
+Oui. La liste de Transports Canada comprend des prestataires de cours agréés qui offrent des services en français, y compris des options avec guide d'étude et examen en ligne. Vérifiez la liste officielle actuelle avant de choisir un prestataire.
+
+### Où puis-je vérifier les exigences complètes en matière d'équipement de sécurité?
+
+Consultez le Guide de sécurité nautique de Transports Canada. L'équipement minimal varie selon le type et la longueur de l'embarcation; la liste dans cet article est seulement un résumé.
 
 ## Prochaines étapes
 

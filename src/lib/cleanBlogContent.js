@@ -1,9 +1,9 @@
 const FAQ_HEADING_RE =
-  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
-const INTERNAL_LINKS_HEADING_RE = /^##\s+Internal Links\s*$/i;
+  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Foire aux questions|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
+const INTERNAL_LINKS_HEADING_RE = /^##\s+(?:Internal Links|Liens internes)\s*$/i;
 const RELATED_HEADING_RE =
   /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/i;
-const CTA_HEADING_RE = /^##\s+CTA\s*$/i;
+const CTA_HEADING_RE = /^##\s+(?:CTA|Appel [àa] l['’]action)\s*$/i;
 const LAST_REVIEWED_RE =
   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/i;
 const LANGUAGE_RE =
@@ -32,6 +32,7 @@ export function cleanBlogContent(
   const out = [];
   let skipSection = false;
   let skipRelatedList = false;
+  let skipInternalLinksList = false;
 
   for (const line of lines) {
     const isH2 = /^##\s+/.test(line);
@@ -44,6 +45,15 @@ export function cleanBlogContent(
     if (skipRelatedList) {
       if (/^\s*[-*]\s+/.test(line) || line.trim() === '') continue;
       skipRelatedList = false;
+    }
+
+    if (skipInternalLinksList) {
+      if (
+        /^\s*[-*]\s+/.test(line) ||
+        /^\s*---\s*$/.test(line) ||
+        line.trim() === ''
+      ) continue;
+      skipInternalLinksList = false;
     }
 
     if (
@@ -60,7 +70,9 @@ export function cleanBlogContent(
     }
 
     if (stripInternalLinks && INTERNAL_LINKS_HEADING_RE.test(line)) {
-      skipSection = true;
+      // Internal-link authoring blocks are lists, but later prose can appear
+      // before the next H2. Remove only the owned list so notices survive.
+      skipInternalLinksList = true;
       continue;
     }
 

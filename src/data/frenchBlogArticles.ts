@@ -272,7 +272,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-02',
     publishDate: '2026-04-12',
     category: 'Comparaison',
     readTime: '7 min',
@@ -418,7 +418,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
     faqs: [
       {
         question: 'Le 150 consomme-t-il beaucoup plus que le 115?',
-        answer: 'En moyenne, environ 15 à 25 % de plus en croisière. Mais un 115 surchargé peut consommer autant qu\'un 150 à charge normale.'
+        answer: 'À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65–70 % de sa capacité sur une grosse embarcation n\'est pas nécessairement plus gourmand qu\'un 115 poussé à fond sur une plus petite.'
       },
       {
         question: 'Les deux moteurs utilisent-ils les mêmes pièces?',
@@ -426,7 +426,27 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
       },
       {
         question: 'Si mon bateau accepte les deux, lequel choisir?',
-        answer: 'Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps , pas selon la sortie idéale une fois par été.'
+        answer: 'Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps, pas selon la sortie idéale une fois par été.'
+      },
+      {
+        question: 'Le 115 HP suffit-il pour un ponton de 20 pieds ?',
+        answer: 'Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d\'être considérés.'
+      },
+      {
+        question: 'Dois-je prendre la version Command Thrust sur un ponton ?',
+        answer: 'Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.'
+      },
+      {
+        question: 'Quelle est la différence entre le FourStroke standard et le Pro XS ?',
+        answer: 'Le FourStroke standard est optimisé pour la croisière confortable, l\'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.'
+      },
+      {
+        question: 'Puis-je obtenir un devis en français ?',
+        answer: 'Le contenu de ce guide est offert en français, mais notre personnel et nos réponses sont en anglais. Le configurateur affiche les prix en dollars canadiens; utilisez la traduction de votre navigateur ou demandez l\'aide d\'un proche bilingue au besoin.'
+      },
+      {
+        question: 'L\'équipe parle-t-elle français ?',
+        answer: 'Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
       }
     ]
   },
@@ -851,7 +871,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-09-02',
     publishDate: '2026-04-12',
     category: 'Réglementation',
     readTime: '8 min',
@@ -866,7 +886,7 @@ Au Canada, toute personne qui conduit une embarcation motorisée doit détenir l
 
 Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario, et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
 
-Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Notre formulaire de contact et notre outil de soumission en ligne à **mercuryrepower.ca** fonctionnent très bien en français.
+Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Utilisez la traduction de votre navigateur ou demandez l'aide d'un proche bilingue pour remplir un formulaire; notre personnel et nos réponses sont en anglais.
 
 ---
 
@@ -1010,6 +1030,18 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
       {
         question: 'La CCEP est-elle la même chose que l\'immatriculation?',
         answer: 'Non. La CCEP concerne la compétence du conducteur; l\'immatriculation (licence de plaisance) concerne l\'embarcation elle-même.'
+      },
+      {
+        question: 'Est-ce que la CCEP expire?',
+        answer: 'Non. La Carte de conducteur d\'embarcation de plaisance est valide à vie. Gardez-la à bord lorsque vous conduisez une embarcation motorisée.'
+      },
+      {
+        question: 'Peut-on suivre le cours et passer le test en français?',
+        answer: 'Oui. La liste de Transports Canada comprend des prestataires de cours agréés qui offrent des services en français, y compris des options avec guide d\'étude et examen en ligne. Vérifiez la liste officielle actuelle avant de choisir un prestataire.'
+      },
+      {
+        question: 'Où puis-je vérifier les exigences complètes en matière d\'équipement de sécurité?',
+        answer: 'Consultez le Guide de sécurité nautique de Transports Canada. L\'équipement minimal varie selon le type et la longueur de l\'embarcation; la liste dans cet article est seulement un résumé.'
       }
     ]
   },
@@ -1022,7 +1054,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     image: '/lovable-uploads/spring-no-start-flowchart.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-13',
     category: 'Dépannage',
     readTime: '12 min',
@@ -1245,7 +1277,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       },
       {
         question: 'Est-ce mauvais de lancer le démarreur d\'un moteur qui ne part pas, à répétition ?',
-        answer: 'Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s\'il y a de l\'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d\'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.'
+        answer: 'Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s\'il y a de l\'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Ne faites jamais tourner le moteur à sec, sans alimentation en eau de refroidissement, car la turbine de la pompe à eau peut être endommagée en quelques secondes. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d\'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.'
       },
       {
         question: 'C\'est quoi le cordon du coupe-circuit Mercury et où s\'attache-t-il ?',
@@ -1254,6 +1286,18 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       {
         question: 'Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?',
         answer: 'Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d\'avertissement se fait entendre et le moteur s\'arrête en protection; vous soupçonnez que de l\'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l\'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.'
+      },
+      {
+        question: 'Combien de temps prend le diagnostic d\'un Mercury qui ne démarre pas ?',
+        answer: 'Le temps varie selon le moteur, les symptômes, l\'accès et les résultats des tests. Certaines causes sont rapides à isoler une fois le bateau à l\'atelier; la cause confirmée et la disponibilité des pièces déterminent ensuite le délai de réparation. Nous n\'estimons pas de délai précis pour un diagnostic à distance.'
+      },
+      {
+        question: 'Devrais-je utiliser un additif pour nettoyer les injecteurs ?',
+        answer: 'Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d\'un nettoyage physique ou d\'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.'
+      },
+      {
+        question: 'Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu\'est-ce qui a changé ?',
+        answer: 'Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l\'interne, ou un système de carburant marginal. Cela peut aussi être le début d\'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.'
       }
     ]
   },
@@ -1470,6 +1514,8 @@ Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass b
 Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
 
 ---
+
+## Coordonnées
 
 **Téléphone :** 905-342-2153
 **Configurateur :** [mercuryrepower.ca](https://www.mercuryrepower.ca)
