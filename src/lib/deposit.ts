@@ -1,3 +1,7 @@
+import { getMotorReservationDeposit } from '../../supabase/functions/_shared/deposit-policy';
+
+export { getMotorReservationDeposit };
+
 /**
  * Recommended quote deposit by motor horsepower.
  *
@@ -5,9 +9,7 @@
  * printed on a downloaded quote always matches the reservation button.
  */
 export function getRecommendedDeposit(hp: number): number {
-  if (hp <= 25) return 200;
-  if (hp <= 115) return 500;
-  return 1000; // Above 115 HP
+  return getMotorReservationDeposit(hp);
 }
 
 /**
@@ -15,6 +17,5 @@ export function getRecommendedDeposit(hp: number): number {
  * Larger motors retain the normal HP-based deposit schedule.
  */
 export function getExpressReservationDeposit(hp: number): number {
-  if (hp <= 25) return 100;
-  return getRecommendedDeposit(hp);
+  return getMotorReservationDeposit(hp, hp <= 25);
 }

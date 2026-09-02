@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
@@ -66,18 +68,51 @@ describe('deposit create-payment savedQuoteId guard', () => {
     })).toBe(true);
   });
 
-  it('constructs the Stripe client only after the deposit savedQuoteId guard', () => {
+  it('keeps every deposit authority check ahead of the first Stripe API call', () => {
     const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
     const guardIdx = source.indexOf('assertDepositRequestHasSavedQuoteId');
     const stripeIdx = source.indexOf('new Stripe(');
     const customersListIdx = source.indexOf('stripe.customers.list');
+    const documentCheckIdx = source.indexOf('await assertCanonicalQuoteDocumentReady({');
+    const motorLookupIdx = source.indexOf('.from("motor_models")');
+    const authoritativeTierIdx = source.indexOf('const authoritativeDeposit = getMotorReservationDeposit(');
+    const bindingAuthorityIdx = source.indexOf(
+      'await supabaseService.rpc("deposit_checkout_binding_authority_ready")',
+    );
+    const boundSessionRefreshIdx = source.indexOf('priorSession = await stripe.checkout.sessions.retrieve(');
     const checkoutCreateIdx = source.indexOf('stripe.checkout.sessions.create');
 
     expect(guardIdx).toBeGreaterThan(-1);
     expect(stripeIdx).toBeGreaterThan(guardIdx);
     expect(source.indexOf('new Stripe(', stripeIdx + 1)).toBe(-1);
-    expect(customersListIdx).toBeGreaterThan(stripeIdx);
+    expect(documentCheckIdx).toBeGreaterThan(stripeIdx);
+    expect(motorLookupIdx).toBeGreaterThan(documentCheckIdx);
+    expect(authoritativeTierIdx).toBeGreaterThan(motorLookupIdx);
+    expect(bindingAuthorityIdx).toBeGreaterThan(authoritativeTierIdx);
+    expect(boundSessionRefreshIdx).toBeGreaterThan(bindingAuthorityIdx);
+    expect(customersListIdx).toBeGreaterThan(boundSessionRefreshIdx);
     expect(checkoutCreateIdx).toBeGreaterThan(customersListIdx);
     expect(source).toContain('if (!depositSavedQuoteId)');
+    expect(source).toContain('|| !savedMotorId');
+    expect(source).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
+    expect(source).toContain('motor_id: savedMotorId');
+  });
+
+  it('makes Stripe creation and durable binding replay-safe', () => {
+    const source = readFileSync('supabase/functions/create-payment/index.ts', 'utf8');
+
+    expect(source).toContain('`motor-reservation:${savedQuoteId}:${idempotencyFingerprint}`');
+    expect(source).toContain('replacesSessionId: expiredBinding?.sessionId || null');
+    expect(source).toContain('depositSaveError.code === "23505"');
+    expect(source).toContain('.contains("quote_data", { saved_quote_id: savedQuoteId })');
+    expect(source).toContain('Replaced expired motor reservation checkout');
+    expect(source).toContain('priorSession.status !== "expired"');
+    expect(source).toContain('priorSession.payment_status !== "unpaid"');
+    expect(source).toContain('Reusing existing motor reservation checkout');
+    expect(source).toContain('bindingMatchesReplaceableLegacyAuthority');
+    expect(source).toContain('priorBindingIsReplaceableLegacy');
+    expect(source).toContain('priorBindingIsExact');
+    expect(source).toContain('currentBinding.state === "missing"');
+    expect(source).toContain('currentBinding.sessionId !== session.id');
   });
 });
