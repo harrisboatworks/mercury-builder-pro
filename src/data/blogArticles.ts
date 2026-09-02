@@ -8698,7 +8698,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
     content: `> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
 
-[Print the Spring Launch & First-Run Checklist](/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf) and work through it at the boat.
+::cta
+variant: inline
+heading: Print the Spring Launch & First-Run Checklist
+body: Use this one-page dockside aid before launch, at first start and during the first water test. The operation and maintenance manual matched to your engine serial number still controls.
+primaryLabel: Download spring checklist (PDF)
+primaryHref: /downloads/mercury-spring-launch-first-run-checklist-hbw.pdf
+::
 
 ---
 
@@ -10965,7 +10971,13 @@ The work that makes the season feel easy happens between seasons. Booked once, p
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed December 1 through April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February to be first in line when install work resumes in April. Build yours at mercuryrepower.ca.
 
-[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
+::cta
+variant: inline
+heading: Bring the boat details into the repower conversation
+body: Use this two-page worksheet to record the hull, current engine, rigging, typical load and performance goals. It starts the assessment; it does not replace HBW's fitment check.
+primaryLabel: Download repower worksheet (PDF)
+primaryHref: /downloads/mercury-repower-planning-worksheet-hbw.pdf
+::
 
 ## Winter Repower Planning
 
@@ -14710,8 +14722,6 @@ Stop and request professional service when:
 
 For Mercury owners, start with Mercury's official guidance and then follow the exact manual for the serial number. The related [DIY Mercury outboard winterization guide](/blog/diy-mercury-outboard-winterization-guide) is a decision framework, not a replacement for that manual.
 
-[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) before you start so the motor, fuel, battery, and onboard-system checks stay together.
-
 ## Request the Current Scope
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
@@ -14787,7 +14797,13 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
 
 You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
 
-[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
+::cta
+variant: inline
+heading: Keep the fall storage work together
+body: This one-page checklist covers appointment prep, fuel and engine work, onboard systems and the record to keep. The storage section in your serial-number manual decides the procedure.
+primaryLabel: Download fall checklist (PDF)
+primaryHref: /downloads/fall-storage-winterization-checklist-hbw.pdf
+::
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -15987,7 +16003,13 @@ The original article analysis counted **537 Lightspeed job records** labelled fo
 
 The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
 
-[Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
+::cta
+variant: inline
+heading: Keep the Alarm & No-Start Action Card aboard
+body: There is no universal Mercury beep dictionary. Use this one-page card to capture the exact warning and display message, work through safe first checks and record what the shop needs.
+primaryLabel: Download action card (PDF)
+primaryHref: /downloads/mercury-alarm-no-start-action-card-hbw.pdf
+::
 
 ## The three "stupid easy" things to check first
 
@@ -18802,7 +18824,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like \`0T123456\` or \`1B234567\`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like \`90ELPT\` or \`1F60413GZ\`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
 
-[Download the Mercury Serial Number & Service Request Prep Sheet](/downloads/mercury-service-request-prep-sheet-hbw.pdf) before you photograph the motor or start a service request.
+::cta
+variant: inline
+heading: Prepare one complete service request
+body: Capture the engine serial number, hours, exact symptoms, fuel history and recent work before contacting the shop. Clear details help HBW start with the correct engine and concern.
+primaryLabel: Download service prep sheet (PDF)
+primaryHref: /downloads/mercury-service-request-prep-sheet-hbw.pdf
+::
 
 Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -23816,7 +23844,13 @@ Here's the safe choice. Make two independent checks:
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
 
-[Download the Marine Fuel & Storage Quick Guide](/downloads/marine-fuel-storage-quick-guide-hbw.pdf) for the pump and storage checklist in one page.
+::cta
+variant: inline
+heading: Take the fuel checks to the pump
+body: Octane and ethanol are separate checks. This one-page guide also covers storage preparation and the details to record when fuel may be contaminated.
+primaryLabel: Download fuel guide (PDF)
+primaryHref: /downloads/marine-fuel-storage-quick-guide-hbw.pdf
+::
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 
@@ -30720,7 +30754,13 @@ A boat trailer can look fine from ten feet away and still have a problem that en
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
-[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
+::cta
+variant: inline
+heading: Keep a five-minute trailer check in the tow vehicle
+body: Use this pre-departure card to check the hitch, safety connections, boat restraints, tires, hubs, lights and Ontario brake threshold before the trailer moves.
+primaryLabel: Download trailer check (PDF)
+primaryHref: /downloads/five-minute-boat-trailer-check-hbw.pdf
+::
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 

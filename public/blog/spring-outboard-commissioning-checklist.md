@@ -31,7 +31,13 @@ revenue_driver: service
 
 > **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
 
-[Print the Spring Launch & First-Run Checklist](/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf) and work through it at the boat.
+::cta
+variant: inline
+heading: Print the Spring Launch & First-Run Checklist
+body: Use this one-page dockside aid before launch, at first start and during the first water test. The operation and maintenance manual matched to your engine serial number still controls.
+primaryLabel: Download spring checklist (PDF)
+primaryHref: /downloads/mercury-spring-launch-first-run-checklist-hbw.pdf
+::
 
 ---
 

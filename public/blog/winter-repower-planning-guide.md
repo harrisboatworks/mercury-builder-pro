@@ -31,7 +31,13 @@ revenue_driver: repower
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed December 1 through April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February to be first in line when install work resumes in April. Build yours at mercuryrepower.ca.
 
-[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
+::cta
+variant: inline
+heading: Bring the boat details into the repower conversation
+body: Use this two-page worksheet to record the hull, current engine, rigging, typical load and performance goals. It starts the assessment; it does not replace HBW's fitment check.
+primaryLabel: Download repower worksheet (PDF)
+primaryHref: /downloads/mercury-repower-planning-worksheet-hbw.pdf
+::
 
 ## Winter Repower Planning
 
