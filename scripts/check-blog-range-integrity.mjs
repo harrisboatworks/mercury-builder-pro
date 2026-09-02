@@ -23,6 +23,10 @@ const checks = [
     file: 'public/blog/best-mercury-outboard-lake-ontario-salmon-trout.md',
     expected: ['300 HP Pro XS V8 or 300–350 HP SeaPro', 'plus 15 HP ProKicker'],
   },
+  {
+    file: 'public/blog/best-mercury-for-family-runabouts.md',
+    expected: ['Mercury FourStroke in the 90–150 HP range'],
+  },
 ];
 
 const forbidden = [
@@ -35,6 +39,7 @@ const forbidden = [
   '16, 19 pieds',
   '19, 22 pieds',
   '$2,000, $5,000+ CAD',
+  'Mercury 90, 150 FourStroke',
   '300–400 HP 300-350 HP',
   'plus 9.9 ProKicker',
 ];
@@ -49,6 +54,12 @@ const failures = [];
 
 for (const token of forbidden) {
   if (sourceSurface.includes(token)) failures.push(`source data: corrupt range remains "${token}"`);
+}
+
+for (const check of checks) {
+  for (const token of check.expected) {
+    if (!sourceSurface.includes(token)) failures.push(`source data: missing restored range "${token}"`);
+  }
 }
 
 for (const check of checks) {

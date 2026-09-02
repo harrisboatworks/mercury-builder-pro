@@ -11294,14 +11294,14 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
     content: `## Quick Answer
 
-For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+For most family runabouts in the 17-20 ft range, a **Mercury FourStroke in the 90–150 HP range** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
