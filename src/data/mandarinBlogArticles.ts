@@ -1949,7 +1949,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
     image: '/lovable-uploads/zh-mercury-repower-guide-gta-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-05-12',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-12',
     category: '成本分析',
     readTime: '10 min read',
@@ -2133,6 +2133,10 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 - [Mercury FourStroke、Pro XS、Verado 中文对比](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
 - [GTA 华人 Mercury service / 保养指南](/blog/zh/gta-chinese-mercury-service-guide)
 - [Rice Lake winter storage：冬季存船要注意什么](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+
+## 语言说明
+
+${ZH_LANGUAGE_NOTE}
 
 ## 行动呼吁
 
