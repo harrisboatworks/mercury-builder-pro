@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { cleanBlogContent } from './cleanBlogContent.js';
 
@@ -52,6 +53,7 @@ Answer.
     'FAQ | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'Aksar puchhe jaande sawaal | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'اکثر پوچھے جانے والے سوالات | FAQ',
+    'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ',
     'FAQ | अक्सर पूछे जाने वाले सवाल',
   ])('removes a localized inline FAQ headed %s', (heading) => {
     const content = `## ${heading}\n\nQuestion and answer.\n\n## Sources\n\n- Source`;
@@ -59,6 +61,18 @@ Answer.
     expect(
       cleanBlogContent(content, { hasStructuredFaqs: true }),
     ).toBe('## Sources\n\n- Source');
+  });
+
+  it('keeps the Urdu winterization twin to one generated FAQ section', () => {
+    const markdown = readFileSync(
+      'public/blog/ur/boat-winterization-storage-toronto-urdu.md',
+      'utf8',
+    );
+
+    expect(markdown).not.toContain(
+      '## کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ',
+    );
+    expect(markdown.match(/^## FAQs$/gm)).toHaveLength(1);
   });
 
   it('removes terminal related-guide variants', () => {
