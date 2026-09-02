@@ -4203,7 +4203,7 @@ const HUB_DEFS = [
         { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' },
       ]},
       { heading: 'Motor family selection', cards: [
-        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
+        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/fourstroke-vs-pro-xs' },
         { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', to: '/blog/mercury-outboard-lineup-ontario' },
         { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
       ]},
@@ -6698,7 +6698,7 @@ const CATALOG_BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
+  'fourstroke-vs-pro-xs',
   'boat-winterization-cost-ontario-2026',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
