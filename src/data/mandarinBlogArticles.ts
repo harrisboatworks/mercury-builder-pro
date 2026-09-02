@@ -749,7 +749,7 @@ Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经�
     image: '/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-06-19',
+    dateModified: '2026-09-02',
     publishDate: '2026-05-10',
     category: '家庭买船指南',
     readTime: '6 分钟',
@@ -807,7 +807,7 @@ Pontoon对很多GTA华人家庭来说不是单纯的水上交通工具，而是�
 | 家庭巡航、常载4至8人 | 90, 115HP是常见研究起点 |
 | 载重大、想要更好起步 | Command Thrust配置值得优先考虑 |
 | 拖水上充气玩具（Tube等） | 不要动力不足，起步和中段推力很重要 |
-| 高级舒适体验、大Pontoon | Verado（特殊订购，仅限服务）或更高配置值得比较 |
+| 高级舒适体验、大Pontoon | Verado（特殊订购）或更高配置值得比较 |
 
 *以上为参考框架，最终须以Pontoon船厂标示的最大马力Rating为准。*
 
@@ -826,14 +826,14 @@ Command Thrust不是一个独立的产品线，而是Mercury在某些马力和�
 
 ---
 
-## FourStroke、Pro XS、Verado（特殊订购，仅限服务）：Pontoon上各自的角色
+## FourStroke、Pro XS、Verado（特殊订购）：Pontoon上各自的角色
 
 | 系列 | Pontoon上的定位 |
 |------|----------------|
 | FourStroke | 最通用，安静、省心，适合多数家庭Pontoon |
 | FourStroke + Command Thrust | 重载或大Pontoon的推荐组合 |
 | Pro XS | 如果想要更强起步和更运动化的反应感 |
-| Verado（特殊订购，仅限服务） | 高级Pontoon、追求静音和精致操控体验 |
+| Verado（特殊订购） | 高级Pontoon、追求静音和精致操控体验 |
 
 对大多数GTA华人家庭，**FourStroke加上Command Thrust配置**是最直接的起点, 可靠、安静、推力足够。
 
@@ -869,8 +869,8 @@ A：不一定。最大马力是上限，不是建议值。你应该根据实际�
 **Q：已有的Pontoon换Mercury需要什么？**
 A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbw.wiki/service 提交申请。
 
-**Q：Pontoon上装Verado（特殊订购，仅限服务）值得吗？**
-A：对绝大多数家庭 pontoon，FourStroke + Command Thrust 是更务实、更省钱的起点。Verado（特殊订购，仅限服务）在 pontoon 上属于小众选择 - 静音和精致感是真的，但价格溢价对一般家庭用途不划算。HBW 不会日常库存 Verado（特殊订购，仅限服务），可以按需特别订货。如果你的 pontoon 是高级型号、常在更大水域使用、或你对静音有特别要求，可以打电话直接聊。
+**Q：Pontoon上装Verado（特殊订购）值得吗？**
+A：对绝大多数家庭 pontoon，FourStroke + Command Thrust 是更务实、更省钱的起点。Verado（特殊订购）在 pontoon 上属于小众选择 - 静音和精致感是真的，但价格溢价对一般家庭用途不划算。HBW 不会日常库存 Verado（特殊订购），可以按需特别订货。如果你的 pontoon 是高级型号、常在更大水域使用、或你对静音有特别要求，可以打电话直接聊。
 
 **Q：带小孩上Pontoon，安全吗？**
 A：Pontoon是最适合带小孩的船型之一, 平台式设计稳定，小孩可以走动，上下船比钓鱼船安全很多。确保每个小孩都有合适尺寸的救生衣是法律要求，也是基本责任。
