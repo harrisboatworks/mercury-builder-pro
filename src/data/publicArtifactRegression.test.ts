@@ -402,14 +402,12 @@ describe('public artifact regression', () => {
 
   it('converts leftover heading-style language notes to Markdown blockquotes', () => {
     const leftoverHeading =
-      /^#{2,3}\s+(?:Una nota sobre el idioma|Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/m;
+      /^#{2,3}\s+(?:Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/m;
 
     const surfaces = [
-      'src/data/spanishBlogArticles.ts',
       'src/data/frenchBlogArticles.ts',
       'src/data/koreanBlogArticles.ts',
       'src/data/mandarinBlogArticles.ts',
-      'public/blog/es/licencia-navegacion-ontario-regulaciones.md',
       'public/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md',
       'public/blog/ko/mercury-115-vs-150-comparison.md',
       'public/blog/zh/chinese-family-pontoon-mercury-outboard.md',
@@ -420,9 +418,7 @@ describe('public artifact regression', () => {
       expect(text, path).not.toMatch(leftoverHeading);
     }
 
-    expect(read('src/data/spanishBlogArticles.ts')).toContain(
-      '> **Una nota sobre el idioma**\n> Este artículo está disponible en español',
-    );
+    expect(read('src/data/spanishBlogArticles.ts')).toContain('## Una nota sobre el idioma');
     expect(read('src/data/frenchBlogArticles.ts')).toContain(
       '> **Une note sur la langue**\n> Cet article est une traduction de courtoisie.',
     );

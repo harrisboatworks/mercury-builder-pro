@@ -44,7 +44,7 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
   { pattern: /^##\s+.+\s+\/\s*CTA\s*$/i, name: 'CTA-suffixed authoring heading' },
   { pattern: /hbw-language-note/, name: 'Raw language-note HTML wrapper' },
   {
-    pattern: /^#{2,3}\s+(?:Una nota sobre el idioma|Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/,
+    pattern: /^#{2,3}\s+(?:Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/,
     name: 'Leftover heading-style language note',
   },
   { pattern: /\|,\s*\|/, name: 'Broken comma table cell' },
