@@ -36,6 +36,7 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
     pattern: /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i,
     name: 'Pending-photography editorial note',
   },
+  { pattern: /\|,\s*\|/, name: 'Broken comma table cell' },
 ];
 
 const BLOG_LANG_RX = /BlogArticles\.ts$/;

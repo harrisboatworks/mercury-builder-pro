@@ -110,6 +110,7 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('until real photos arrive');
     expect(leakCheck).toContain('illustrative pending real photography');
     expect(leakCheck).toContain('Canonical URL');
+    expect(leakCheck).toContain('Broken comma table cell');
 
     const packageJson = JSON.parse(read('package.json')) as {
       scripts: { build: string };
@@ -198,5 +199,36 @@ describe('public artifact regression', () => {
     expect(source).not.toMatch(
       /answer:\s*["'`][^\n]*\{\{LIVE_RATE\}\}[^\n]*(?:Dec(?:ember)? 31, 2026)/,
     );
+  });
+
+  it('repairs leftover #82 truncated metadata and broken table cells', () => {
+    const brokenCell = /\|,\s*\|/;
+    const avator = getArticleBySlug('mercury-avator-range-rice-lake-cottage');
+    expect(avator).toBeDefined();
+    expect(avator!.content).not.toMatch(brokenCell);
+    expect(avator!.content).toContain(
+      '| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |',
+    );
+
+    const families = getArticleBySlug('fourstroke-vs-pro-xs');
+    expect(families).toBeDefined();
+    expect(families!.content).toContain('> *Jay Harris, Harris Boat Works*');
+    expect(families!.content).not.toMatch(/^>: Jay Harris/m);
+
+    const trent = getArticleBySlug('trent-severn-waterway-boating-guide-2026');
+    expect(trent).toBeDefined();
+    expect(trent!.description).toBe(
+      'Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.',
+    );
+    expect(trent!.description).not.toMatch(/By Harris Boat\.$/);
+
+    const french = read('src/data/frenchBlogArticles.ts');
+    expect(french).toContain('| Perchaude | Toute l\'année | aucune | 50 |');
+    expect(french).not.toMatch(brokenCell);
+
+    expect(read('public/blog/mercury-avator-range-rice-lake-cottage.md')).not.toMatch(brokenCell);
+    expect(read('public/blog/fourstroke-vs-pro-xs.md')).toContain('> *Jay Harris, Harris Boat Works*');
+    expect(read('public/blog/trent-severn-waterway-boating-guide-2026.md')).toContain(trent!.description);
+    expect(read('public/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md')).not.toMatch(brokenCell);
   });
 });

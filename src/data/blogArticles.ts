@@ -5182,7 +5182,7 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
->: Jay Harris, Harris Boat Works
+> *Jay Harris, Harris Boat Works*
 
 ## Who this is for
 
@@ -17698,7 +17698,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     relatedSlugs: ['rice-lake-boating-guide-2026', 'rice-lake-boat-launch-guide', '2026-rice-lake-fishing-season-outlook'],
     title: 'Trent-Severn Waterway 2026 Guide',
     seoTitle: "Trent-Severn Waterway 2026: Lockage, Hours, Trip Plan",
-    description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+    description: "Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.",
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
@@ -34763,7 +34763,7 @@ For Rice Lake cottage applications, the Avator vs gas outboard decision usually 
 | Half-day light use | Good fit | Standard answer |
 | Full-day fishing crossing the lake | Range limited | Standard answer |
 | Multi-day trips without charging access | Doesn't work | Standard answer |
-| Quiet operation (early morning fishing) | Major advantage |, |
+| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |
 | Low maintenance | Major advantage | More service required |
 | Cottage charging logistics | Required infrastructure | None |
 | Cold weather operation | Reduced capacity | Standard |

@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Trent-Severn Waterway 2026 Guide"
-description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
+description: "Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake."
 category: "Lifestyle"
 date_published: 2026-05-08
 date_modified: 2026-08-19
@@ -21,7 +21,7 @@ revenue_driver: rentals
 
 # Trent-Severn Waterway 2026 Guide
 
-> 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.
+> Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  

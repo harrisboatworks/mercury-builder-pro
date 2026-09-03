@@ -765,7 +765,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 | Doré jaune | 2e samedi de mai | 15 novembre | 4 |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
 | Maskinongé | 3e samedi de juin | 15 décembre | 1 |
-| Perchaude | Toute l'année |, | 50 |
+| Perchaude | Toute l'année | aucune | 50 |
 
 **Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.** Les dates et limites de prise peuvent changer d'une année à l'autre.
 

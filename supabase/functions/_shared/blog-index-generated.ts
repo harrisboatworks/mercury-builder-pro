@@ -2831,7 +2831,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "trent-severn-waterway-boating-guide-2026",
     "title": "Trent-Severn Waterway 2026 Guide",
-    "description": "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+    "description": "Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.",
     "category": "Lifestyle",
     "publishDate": "2026-05-08",
     "keywords": [
