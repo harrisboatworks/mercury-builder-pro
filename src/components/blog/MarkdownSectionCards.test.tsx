@@ -29,6 +29,21 @@ ctaHref: https://www.mercuryrepower.ca
   });
 });
 
+describe('MarkdownSectionCards Korean tilde ranges', () => {
+  it('does not treat leftover Korean HP tildes as strikethrough', () => {
+    const content = `| 마력대 | 2.5~300 | 115~300 | 250~600 (V8/V12) |`;
+
+    const { container } = render(
+      <MarkdownSectionCards content={content} markdownComponents={{}} />,
+    );
+
+    expect(container.querySelector('del')).not.toBeInTheDocument();
+    expect(container.textContent).toContain('2.5~300');
+    expect(container.textContent).toContain('115~300');
+    expect(container.textContent).toContain('250~600');
+  });
+});
+
 describe('MarkdownSectionCards YouTube directives', () => {
   it('renders the lazy Mercury facade before loading the sanitized iframe on click', () => {
     const title = 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)';

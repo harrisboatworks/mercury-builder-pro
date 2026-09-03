@@ -451,4 +451,9 @@ describe('public artifact regression', () => {
       expect(source, path).toContain(title);
     }
   });
+
+  it('keeps leftover Korean HP tildes from becoming GFM strikethrough', () => {
+    const renderer = read('src/components/blog/MarkdownSectionCards.tsx');
+    expect(renderer).toContain('singleTilde: false');
+  });
 });
