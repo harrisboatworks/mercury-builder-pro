@@ -1,12 +1,13 @@
 const FAQ_HEADING_RE =
   /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Foire aux questions|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
 const INTERNAL_LINKS_HEADING_RE =
-  /^##\s+(?:Internal Links|Liens internes|내부 링크)\s*$/i;
+  /^##\s+(?:Internal Links|Liens internes|내부 링크|内部链接|内部连结|內部連結|內部鏈接)\s*$/i;
 const RELATED_HEADING_RE =
   /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/i;
 const CTA_HEADING_RE = /^##\s+(?:CTA|Appel [àa] l['’]action)\s*$/i;
 const CTA_PREFIX_HEADING_RE = /^##\s+CTA\s*,\s*(.+?)\s*$/i;
 const CTA_SUFFIX_HEADING_RE = /^##\s+(.+?)\s+\/\s*CTA\s*$/i;
+const CTA_PAREN_HEADING_RE = /^##\s+(.+?)\s*[（(]CTA[）)]\s*$/i;
 const FULL_ARTICLE_HEADING_RE =
   /^#{2,3}\s+(?:Artículo completo|Article complet|전체 기사)\s*$/;
 const LAST_REVIEWED_RE =
@@ -81,6 +82,12 @@ export function cleanBlogContent(
     const ctaSuffix = line.match(CTA_SUFFIX_HEADING_RE);
     if (ctaSuffix) {
       out.push(`## ${ctaSuffix[1].trim()}`);
+      continue;
+    }
+
+    const ctaParen = line.match(CTA_PAREN_HEADING_RE);
+    if (ctaParen) {
+      out.push(`## ${ctaParen[1].trim()}`);
       continue;
     }
 

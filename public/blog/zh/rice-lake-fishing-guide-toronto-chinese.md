@@ -173,15 +173,6 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 ---
 
-## 内部连结
-
-- [新移民安大略省买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
-- [大多伦多华人买 Mercury 船外机指南](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
-- [多伦多到 Rice Lake 一日钓鱼游完整指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
-- [安省华人船主入门：PCOC、PCL、钓鱼证](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
-
----
-
 **相关文章**
 
 如果这次是先带家人来 Rice Lake 试试水，下面几篇可以接着看：

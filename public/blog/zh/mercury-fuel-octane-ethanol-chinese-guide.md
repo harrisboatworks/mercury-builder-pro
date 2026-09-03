@@ -280,16 +280,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 ---
 
-## 内部链接
-
-- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
-- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
-- [安省驾船法规中文指南：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
-- 英文原文（含完整资料来源）：[Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario)
-
----
-
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定你那台 Mercury 该加什么油？**
 

@@ -16,6 +16,7 @@ import {
 } from './blogFinancingCopy';
 import { getCaseStudyBySlug } from './caseStudies';
 import { spanishBlogArticles } from './spanishBlogArticles';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
@@ -115,6 +116,8 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('전체 기사');
     expect(leakCheck).toContain('CTA-prefixed authoring heading');
     expect(leakCheck).toContain('CTA-suffixed authoring heading');
+    expect(leakCheck).toContain('CTA-parenthetical authoring heading');
+    expect(leakCheck).toContain('Leftover Chinese internal-link authoring heading');
     expect(leakCheck).toContain('hbw-language-note');
     expect(leakCheck).toContain('Leftover heading-style language note');
     expect(leakCheck).toContain('Raw ::cta authoring fence in Markdown twin');
@@ -123,7 +126,10 @@ describe('public artifact regression', () => {
 
     const cleaner = read('src/lib/cleanBlogContent.js');
     expect(cleaner).toContain('내부 링크');
+    expect(cleaner).toContain('内部链接');
+    expect(cleaner).toContain('内部连结');
     expect(cleaner).toContain('CTA_SUFFIX_HEADING_RE');
+    expect(cleaner).toContain('CTA_PAREN_HEADING_RE');
 
     const packageJson = JSON.parse(read('package.json')) as {
       scripts: { build: string };
@@ -450,6 +456,41 @@ describe('public artifact regression', () => {
       expect(source, path).toContain('bioLabel=');
       expect(source, path).toContain(title);
     }
+  });
+
+  it('strips leftover Chinese internal-link lists and parenthetical CTA headings', () => {
+    const leftoverInternalHeading = /^##\s+(?:内部链接|内部连结)\s*$/m;
+    const leftoverCtaHeading = /^##\s+.+\s*[（(]CTA[）)]\s*$/m;
+    const twins = [
+      'public/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md',
+      'public/blog/zh/chinese-family-pontoon-mercury-outboard.md',
+      'public/blog/zh/mercury-115-vs-150-comparison-zh.md',
+      'public/blog/zh/rice-lake-fishing-guide-toronto-chinese.md',
+      'public/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md',
+      'public/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md',
+      'public/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md',
+    ];
+
+    for (const path of twins) {
+      const text = read(path);
+      expect(text, path).not.toMatch(leftoverInternalHeading);
+      expect(text, path).not.toMatch(leftoverCtaHeading);
+    }
+
+    const source = read('src/data/mandarinBlogArticles.ts');
+    expect(source).not.toMatch(leftoverCtaHeading);
+    expect(source).toContain('## 行动呼吁');
+
+    const cleanedLinks = cleanBlogContent(
+      '## 内部连结\n- [指南](/blog/zh/guide)\n\n## 行动呼吁（CTA）\n\n建立报价。',
+    );
+    expect(cleanedLinks).not.toMatch(leftoverInternalHeading);
+    expect(cleanedLinks).not.toContain('/blog/zh/guide');
+    expect(cleanedLinks).toBe('## 行动呼吁\n\n建立报价。');
+
+    const hygiene = read('scripts/check-blog-output-hygiene.ts');
+    expect(hygiene).toContain('leftover Chinese internal-link authoring heading');
+    expect(hygiene).toContain('leftover parenthetical CTA authoring heading');
   });
 
   it('keeps leftover Korean HP tildes from becoming GFM strikethrough', () => {

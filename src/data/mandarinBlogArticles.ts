@@ -524,7 +524,7 @@ A：这取决于你的船型和使用方式。如果换发动机的同时想升�
 
 ---
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
@@ -898,7 +898,7 @@ A：Pontoon是最适合带小孩的船型之一, 平台式设计稳定，小孩�
 
 > 相关指南：[钓鱼船 vs Pontoon 中文对比](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
@@ -1222,7 +1222,7 @@ A：可以更换，但必须在船体Capacity Plate允许的范围内。建议�
 
 > 相关指南：[Mercury 9.9-150HP 完整马力指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。
@@ -1390,7 +1390,7 @@ A：取决于使用历史和保养状态。如果有完整的服务纪录，某�
 
 > 相关指南：[完整 Mercury 马力选择指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
@@ -4545,7 +4545,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 ---
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定你那台 Mercury 该加什么油？**
 
