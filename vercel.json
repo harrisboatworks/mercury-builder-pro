@@ -1214,6 +1214,11 @@
       "statusCode": 301
     },
     {
+      "source": "/financing",
+      "destination": "/finance-calculator",
+      "statusCode": 301
+    },
+    {
       "source": "/financing/apply",
       "destination": "/financing-application",
       "statusCode": 301
@@ -1685,10 +1690,6 @@
       "destination": "/index.html"
     },
     {
-      "source": "/financing",
-      "destination": "/index.html"
-    },
-    {
       "source": "/financing-application/from-quote",
       "destination": "/index.html"
     },
@@ -1990,6 +1991,22 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=1, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(self)"
         }
       ]
     },
