@@ -29,6 +29,15 @@ const LEAK_PATTERNS = [
   { pattern: /\bGenerate\s+one\s+(?:useful\s+)?infographic\s+per\s+post\b/i, name: 'Visual production instruction' },
 ];
 
+const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
+  { pattern: /\bEnd of file,\s*\d+\s+posts total\b/i, name: 'End-of-file editorial artifact' },
+  { pattern: /\*\*Canonical URL:\*\*/i, name: 'Canonical URL editorial metadata' },
+  {
+    pattern: /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i,
+    name: 'Pending-photography editorial note',
+  },
+];
+
 const BLOG_LANG_RX = /BlogArticles\.ts$/;
 const BLOG_FILES = readdirSync('src/data')
   .filter((f) => f === 'blogArticles.ts' || (BLOG_LANG_RX.test(f) && f !== 'archivedBlogArticles.ts'))
@@ -62,6 +71,17 @@ const USER_FACING_FILES = [
   ...walk('src/pages', ['.ts', '.tsx']),
 ];
 
+const PUBLIC_EDITORIAL_ARTIFACT_FILES = [...new Set([
+  ...BLOG_FILES,
+  'src/data/caseStudies.ts',
+  'src/data/caseStudiesLongForm.ts',
+  'scripts/static-prerender.mjs',
+  'public/blog-index.json',
+  'supabase/functions/_shared/blog-index-generated.ts',
+  ...walk('public/blog', ['.md']),
+  ...walk('public/case-studies', ['.md']),
+])];
+
 const errors = [];
 
 // 1. Legacy blog leak scan
@@ -90,6 +110,20 @@ for (const file of BLOG_FILES) {
         name: `Duplicate Quick answer headings in "${current.slug}"`,
         snippet: `${quickAnswerHeadings.length} headings found`,
       });
+    }
+  }
+}
+
+// These two artifacts appeared outside the legacy blog-source scan. Guard the
+// exact source and generated-twin surfaces that can publish them.
+for (const file of PUBLIC_EDITORIAL_ARTIFACT_FILES) {
+  const src = readFileSync(file, 'utf8');
+  const lines = src.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    for (const { pattern, name } of PUBLIC_EDITORIAL_ARTIFACT_PATTERNS) {
+      if (pattern.test(lines[i])) {
+        errors.push({ file, line: i + 1, name, snippet: lines[i].trim().slice(0, 140) });
+      }
     }
   }
 }
@@ -240,7 +274,9 @@ if (hardFail) {
   console.error(
     `\n${errors.length} editor leak(s), ${rawAgentLeaks.length} raw agent-URL leak(s)` +
     (STRICT_STALE ? `, ${staleYearLeaks.length} stale-year leak(s)` : '') +
-    ` across ${BLOG_FILES.length} blog data files / ${USER_FACING_FILES.length} user-facing files.`
+    ` across ${BLOG_FILES.length} blog data files / ` +
+    `${PUBLIC_EDITORIAL_ARTIFACT_FILES.length} editorial-artifact surfaces / ` +
+    `${USER_FACING_FILES.length} user-facing files.`
   );
   console.error('Strip or rewrite these before publishing. See scripts/check-blog-leaks.mjs for the rules.\n');
   process.exit(1);
@@ -258,6 +294,7 @@ if (staleYearLeaks.length) {
 
 console.log(
   `✓ Pre-publish leak check: 0 editor leaks across ${BLOG_FILES.length} blog data files, ` +
+  `0 public editorial artifacts across ${PUBLIC_EDITORIAL_ARTIFACT_FILES.length} source/twin surfaces, ` +
   `0 raw agent-URL leaks across ${USER_FACING_FILES.length} user-facing files, ` +
   `${staleYearLeaks.length} stale-year warning(s)`
 );

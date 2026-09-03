@@ -19,7 +19,8 @@ import { spanishBlogArticles } from './spanishBlogArticles';
 
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
-const PHOTOGRAPHY_PENDING = 'Real photography still pending.';
+const PHOTOGRAPHY_PENDING =
+  /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i;
 const SPANISH_EOF_ARTIFACT = 'End of file, 12 posts total';
 
 const NAMED_ENGLISH_SLUGS = [
@@ -57,13 +58,70 @@ describe('public artifact regression', () => {
     expect(study!.excerpt).toBe(
       'A lightweight small-horsepower package for cottage and protected-water use.',
     );
-    expect(study!.excerpt).not.toContain(PHOTOGRAPHY_PENDING);
+    expect(study!.whyItWorked).toContain(
+      'Clearly labelled as an illustrative planning scenario',
+    );
+    expect(
+      [study!.excerpt, ...study!.whyItWorked].join('\n'),
+    ).not.toMatch(PHOTOGRAPHY_PENDING);
 
     const twin = read('public/case-studies/cedar-strip-9-9-fourstroke.md');
     expect(twin).toContain(
       'A lightweight small-horsepower package for cottage and protected-water use.',
     );
-    expect(twin).not.toContain(PHOTOGRAPHY_PENDING);
+    expect(twin).toContain(
+      '- Clearly labelled as an illustrative planning scenario',
+    );
+    expect(twin).not.toMatch(PHOTOGRAPHY_PENDING);
+
+    const prerender = read('scripts/static-prerender.mjs');
+    expect(prerender).toContain(
+      '<strong>Illustrative planning scenario.</strong>',
+    );
+    expect(prerender).not.toMatch(PHOTOGRAPHY_PENDING);
+
+    const compactRouteStart = prerender.indexOf(
+      "`<section><h2>What changed</h2><p><strong>Before:</strong>",
+    );
+    expect(compactRouteStart).toBeGreaterThan(-1);
+    const compactRoute = prerender.slice(
+      prerender.lastIndexOf('return (', compactRouteStart),
+      prerender.indexOf('const locationDetailRoutes', compactRouteStart),
+    );
+    expect(compactRoute.indexOf('Illustrative planning scenario.')).toBeLessThan(
+      compactRoute.indexOf('What changed'),
+    );
+    expect(compactRoute).toContain(
+      "s.isIllustrative ? 'Why this configuration may fit' : 'Why it worked'",
+    );
+    expect(compactRoute).toContain('<h2>Planning takeaway</h2>');
+  });
+
+  it('keeps the pre-publish leak scanner aligned with source and twin artifact surfaces', () => {
+    const leakCheck = read('scripts/check-blog-leaks.mjs');
+    expect(leakCheck).toContain("'src/data/caseStudies.ts'");
+    expect(leakCheck).toContain("'src/data/caseStudiesLongForm.ts'");
+    expect(leakCheck).toContain("'scripts/static-prerender.mjs'");
+    expect(leakCheck).toContain("'public/blog-index.json'");
+    expect(leakCheck).toContain("'supabase/functions/_shared/blog-index-generated.ts'");
+    expect(leakCheck).toContain("walk('public/blog', ['.md'])");
+    expect(leakCheck).toContain("walk('public/case-studies', ['.md'])");
+    expect(leakCheck).toContain('/\\bEnd of file,\\s*\\d+\\s+posts total\\b/i');
+    expect(leakCheck).toContain('until real photos arrive');
+    expect(leakCheck).toContain('illustrative pending real photography');
+    expect(leakCheck).toContain('Canonical URL');
+
+    const packageJson = JSON.parse(read('package.json')) as {
+      scripts: { build: string };
+    };
+    const prerenderIndex = packageJson.scripts.build.indexOf(
+      'node scripts/static-prerender.mjs',
+    );
+    const finalLeakScanIndex = packageJson.scripts.build.lastIndexOf(
+      'npm run check:blog-leaks',
+    );
+    expect(prerenderIndex).toBeGreaterThan(-1);
+    expect(finalLeakScanIndex).toBeGreaterThan(prerenderIndex);
   });
 
   it('removes the Spanish terminal file-count artifact', () => {
