@@ -1070,7 +1070,7 @@
     },
     {
       "source": "/blog/tariffs-trade-canadian-boating-2026",
-      "destination": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers",
       "statusCode": 301
     },
     {
@@ -1496,6 +1496,201 @@
     {
       "source": "/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md",
       "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-wont-start-after-sitting",
+      "destination": "/blog/mercury-outboard-wont-start-troubleshooting",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-wont-start-after-sitting.md",
+      "destination": "/blog/mercury-outboard-wont-start-troubleshooting.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-pontoon-eligibility-2026",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-pontoon-eligibility-2026.md",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-your-pontoon-eligible-for-mercury-command-thrust",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-your-pontoon-eligible-for-mercury-command-thrust.md",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/rice-lake-boat-rentals-from-toronto-gta",
+      "destination": "/blog/rice-lake-boat-rental-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/rice-lake-boat-rentals-from-toronto-gta.md",
+      "destination": "/blog/rice-lake-boat-rental-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-warranty-what-you-need-to-know.md",
+      "destination": "/blog/mercury-outboard-warranty-canada-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-markham-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-markham-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-richmond-hill-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-richmond-hill-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-vaughan-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-vaughan-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-mississauga-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-mississauga-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-brampton-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-brampton-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-oakville-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-oakville-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-burlington-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-burlington-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-pickering-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-pickering-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-ajax-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-ajax-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-oshawa-ontario-hbw",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-oshawa-ontario-hbw.md",
+      "destination": "/blog/trailer-boat-toronto-to-rice-lake-guide.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-peterborough-ontario-hbw",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-peterborough-ontario-hbw.md",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-lindsay-ontario-hbw",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-lindsay-ontario-hbw.md",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-cobourg-ontario-hbw",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-cobourg-ontario-hbw.md",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-port-hope-ontario-hbw",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-port-hope-ontario-hbw.md",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-northumberland-county-hbw",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-dealer-northumberland-county-hbw.md",
+      "destination": "/blog/complete-guide-boat-repower-kawarthas.md",
       "statusCode": 301
     }
   ],

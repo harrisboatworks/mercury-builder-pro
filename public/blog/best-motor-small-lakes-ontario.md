@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Outboards for Ontario Small Lakes"
 description: "Match the motor to the lake's rules: electric-only, 10 HP, 20 HP, or open water. Cottage-lake recommendations from the shop that rigs them."
 category: "Buying Guide"
 date_published: 2026-04-17
-date_modified: 2026-08-19
+date_modified: 2026-09-02
 keywords: ["small lake motor","cottage lake outboard","hp restricted lake","electric motor limit lake","ontario lake motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
 
@@ -57,7 +57,7 @@ The 9.9 FourStroke is the honest ceiling on a 10 HP lake, and it is the motor we
 
 A 14-foot aluminum boat with two adults and a cooler will cruise all day on a 9.9. It will not be fast. On a 10 HP lake, nothing is, and that is rather the point.
 
-If the boat is small and light, the Mercury 8 FourStroke saves a little weight and money and gives up little on a boat that size.
+If the boat is small and light, the Mercury 8 FourStroke saves a little weight but not money (on HBW's pricing reference as of September 2026 the 8 HP lists above the 9.9 HP in every comparable configuration) and gives up little on a boat that size.
 
 ### 20 HP Limit: Mercury 15 or 20 FourStroke
 
@@ -91,6 +91,8 @@ Related guides:
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing)
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout)
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas)
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ## FAQs
 

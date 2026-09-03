@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-08-17
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The real story of Harris Boat Works. George Harris opened the shop in 1947, Jim ran it for 37 years, and Jay runs it today. Three generations on the same Rice Lake dock."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-08-17
+date_modified: 2026-08-26
 keywords: ["Harris Boat Works history","family marina Rice Lake","Mercury dealer since 1965","Gores Landing marina","three generation family business Ontario","Rice Lake boat dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: none
 
 **Category:** About HBW  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-08-17  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
@@ -117,7 +117,7 @@ In 2026, the shop George opened runs as:
 - **Legend Boats dealer**, Canadian company, designed for Canadian water
 - **49 seasonal marina slips** on Rice Lake
 - **Rental fleet** of pontoons and fishing boats
-- **Winter storage**, 311+ boats shrink-wrapped and stored each year
+- **Winter storage**, outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service
 - **Service and repair**, from diagnostics to full warranty work
 - **Public launch ramp and ethanol-free 89 marine gas** at the dock
 

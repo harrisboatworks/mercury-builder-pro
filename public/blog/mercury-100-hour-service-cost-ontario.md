@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)"
 description: "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["mercury 100 hour service cost","outboard annual service cost ontario","mercury service cost","100 hour service what's included","boat motor service cost ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-26  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario
 
-> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. At HBW, fall work is first come, first served and there is no need to reserve winterization or storage capacity. Submit the [service request](https://hbw.wiki/service) about one to two weeks before your planned drop-off. Mid-November is the practical last call because the marina closes December 1.
+> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
@@ -113,17 +113,13 @@ Every winterize-and-service at our shop ends with the tech recording recommendat
 
 ## When Should You Submit an HBW Service Request?
 
-You do not need to reserve a winterization slot or storage space months ahead. HBW has capacity, and fall work is handled first come, first served.
-
-The common practice among our customers, and what we recommend, is to complete the [service request](https://hbw.wiki/service) about **one to two weeks before your planned drop-off**. That gives the team the motor details and requested work before the boat arrives without forcing you to predict your last boating day in August.
-
-HBW is closed December 1 to April 1, so **mid-November is the practical last call** for fall winterization and storage intake.
+Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 ---
 
 ## Ready to Book Your Service?
 
-Tell us the motor, its hours, and the work you want covered. Submit the request one to two weeks before your planned drop-off; for fall work, mid-November is the practical last call.
+Tell us the motor, its hours, and the work you want covered. Complete hbw.wiki/service, then drop off anytime, including after hours.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -141,7 +137,7 @@ Tell us the motor, its hours, and the work you want covered. Submit the request 
 
 ### How much does a Mercury 100-hour service cost in Ontario?
 
-There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can scope the right work.
+There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours.
 
 ### Is the 100-hour service the same as winterization?
 
@@ -161,7 +157,7 @@ Follow the maintenance schedule for your exact engine and serial number. Deferri
 
 ### Do you service motors bought somewhere else?
 
-Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is handled first come, first served; there is no need to reserve winterization or storage capacity. Submit hbw.wiki/service about one to two weeks before drop-off, with mid-November as the practical last call before the December 1 closure.
+Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbw.wiki/service, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 ## Related guides
 

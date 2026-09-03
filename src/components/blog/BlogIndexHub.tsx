@@ -13,6 +13,7 @@ import { slugify } from '@/utils/slugify';
 import { BlogIndexPillars, PILLAR_CARDS } from '@/components/blog/BlogIndexPillars';
 import { BlogIndexPostCard } from '@/components/blog/BlogIndexPostCard';
 import { BlogIndexLanguages, LANGUAGE_EDITIONS } from '@/components/blog/BlogIndexLanguages';
+import { BLOG_TOPIC_HUBS } from '@/data/blogTopicHubs';
 
 type CategoryGroup = {
   category: string;
@@ -121,6 +122,36 @@ export function BlogIndexHub() {
 
         <BlogIndexPillars />
 
+        {/* Browse by topic — the five topic hub collections. */}
+        <section aria-labelledby="topic-hub-heading" className="mb-10 md:mb-12">
+          <h2
+            id="topic-hub-heading"
+            className="font-display font-bold text-xl md:text-2xl text-repower-navy-900"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            Browse by topic
+          </h2>
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+            {BLOG_TOPIC_HUBS.map((hub) => (
+              <Link
+                key={hub.slug}
+                to={`/blog/${hub.slug}`}
+                className="group flex flex-col p-4 bg-surface-card rounded-md border border-repower-navy-900/10 hover:border-repower-navy-900/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/60"
+              >
+                <span
+                  className="font-display text-base font-semibold text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors"
+                  style={{ letterSpacing: '-0.015em' }}
+                >
+                  {hub.navLabel}
+                </span>
+                <span className="mt-1.5 font-sans text-[13px] text-repower-navy-900/60 leading-snug">
+                  {hub.blurb}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <div className="sticky top-[64px] lg:top-[72px] z-20 -mx-6 md:-mx-14 px-6 md:px-14 py-4 mb-10 bg-repower-paper/95 backdrop-blur border-y border-repower-navy-900/10">
           <form role="search" onSubmit={(event) => event.preventDefault()} className="max-w-xl">
             <label htmlFor="blog-index-search" className="sr-only">
@@ -226,6 +257,16 @@ export function BlogIndexHub() {
       </main>
 
       <noscript>
+        <section>
+          <h2>Browse by topic</h2>
+          <ul>
+            {BLOG_TOPIC_HUBS.map((hub) => (
+              <li key={`ns-hub-${hub.slug}`}>
+                <a href={`/blog/${hub.slug}`}>{hub.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
         <section>
           <h2>Start here</h2>
           <ul>
