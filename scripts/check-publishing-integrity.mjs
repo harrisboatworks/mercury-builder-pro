@@ -654,7 +654,6 @@ check(
 );
 
 const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
-const ajaxPartsQualification = 'HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock.';
 const originalMarketRelatedLink = '[Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
 const marketRelatedOverride = blogClusters.match(/["']why-mercury-dominates-outboard-market["']\s*:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
 const marketRelatedOverrideSlugs = [...marketRelatedOverride.matchAll(/["']([a-z0-9-]+)["']/g)].map((match) => match[1]);
