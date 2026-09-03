@@ -140,7 +140,7 @@ For Rice Lake cottage use, brand matters less than configuration. The right leng
 
 We recommend lift storage where the cottage allows it.
 
-For HBW winter storage, we offer outdoor storage with shrinkwrap (no indoor heated storage). Call 905-342-2153 for current rates.
+For HBW winter storage, we offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. See [the winter-storage rate page](https://www.harrisboatworks.ca/winter-storage) or call 905-342-2153.
 
 ## Ready for your Rice Lake pontoon?
 
@@ -186,7 +186,7 @@ Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Fu
 
 ### Does HBW handle pontoon service and storage?
 
-Yes. Service, repower, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
+Yes. HBW handles pontoon service and repower work, plus outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Call 905-342-2153 for specifics.
 
 ## Related guides
 

@@ -33,6 +33,11 @@ const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
 const UNCONDITIONAL_WATER_TEST_RX =
   /\b(?:(?:every|each) (?:single )?(?:installed )?(?:HBW |Mercury |full )?(?:repower|install|motor|job)[^\n.]{0,240}(?:(?:water|lake|on-water)[- ]test(?:ed)?|on-water|tested on Rice Lake|sea[- ]trial|real (?:Rice Lake )?water test)|(?:water|lake)[- ]tests? (?:every|each) (?:installed )?(?:repower|install|motor|job|Mercury)|(?:sea[- ]trial|on-water test)[^\n.]{0,80}(?:always included|before delivery|of every)|boat does not leave[^\n.]{0,80}sea[- ]trial|we (?:test props|sea[- ]trial|water[- ]test)[^\n.]{0,120}\bevery\b[^\n.]{0,60}(?:repower|install|motor|job|Mercury|sea[- ]trial)|lake test is included before the boat leaves|we don['’]t hand over a motor we haven['’]t run|on-water (?:Rice Lake )?test before every|we test every install|every repower, no exceptions|why every motor gets a real (?:Rice Lake )?water test|test every motor here|every motor still gets the same Rice Lake water test)\b/i;
 
+// Leftover shrinkwrap-only winter-storage claims that omit uncovered
+// and shrink-wrap-only as distinct HBW products.
+const STALE_SHRINKWRAP_ONLY_STORAGE_RX =
+  /(?:outdoor winter (?:boat )?storage with shrinkwrap|we (?:do|offer) outdoor storage with shrinkwrap|Yes\. Outdoor storage with shrinkwrap|This is HBW's storage model)/i;
+
 const WATER_TEST_CLAIM_SURFACES = [
   'src/components/repower/ObjectionStrip.tsx',
   'src/pages/landing/HowToRepower.tsx',
@@ -102,6 +107,10 @@ const unsupportedOperationalClaims = [
   {
     label: 'unconditional water-test promise',
     pattern: UNCONDITIONAL_WATER_TEST_RX,
+  },
+  {
+    label: 'leftover shrinkwrap-only winter-storage claim',
+    pattern: STALE_SHRINKWRAP_ONLY_STORAGE_RX,
   },
   {
     label: 'unsupported on-water towing promise',
@@ -446,7 +455,12 @@ const generatedLocationTwins = readdirSync('public/locations')
   .filter((file) => String(file).endsWith('.md'))
   .map((file) => `public/locations/${file}`);
 
-for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...WATER_TEST_CLAIM_SURFACES]) {
+const STORAGE_CLAIM_SURFACES = [
+  ...WATER_TEST_CLAIM_SURFACES,
+  'src/data/harrisBoatWorksBrandPage.js',
+];
+
+for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...STORAGE_CLAIM_SURFACES]) {
   const twinSource = readFileSync(file, 'utf8');
   if (generatedBlogTwins.includes(file) && STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
     failures.push(`${file}: hard-no HBW boat pickup policy`);
@@ -456,6 +470,9 @@ for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...WATER_T
   }
   if (UNCONDITIONAL_WATER_TEST_RX.test(twinSource)) {
     failures.push(`${file}: unconditional water-test promise`);
+  }
+  if (STALE_SHRINKWRAP_ONLY_STORAGE_RX.test(twinSource)) {
+    failures.push(`${file}: leftover shrinkwrap-only winter-storage claim`);
   }
 }
 

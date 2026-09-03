@@ -74,7 +74,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Northumberland boaters who already boat on Rice Lake, [keeping the boat at HBW through winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) leaves it close to Rice Lake when we reopen in early April.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.

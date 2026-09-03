@@ -87,7 +87,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Mercury sales and service (the core business)
 - Legend Boats sales
 - Haul-out and launch services at the marina
-- Outdoor winter storage with shrinkwrap (we do not offer indoor heated storage)
+- HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 - Winterization and spring commissioning services
 - Used boat sales and trade-ins
 - Pleasure Craft Licence (PCL) administration for repower customers
@@ -141,7 +141,7 @@ Yes. Repower financing is available at 5.48% APR through TD Financing (via Deale
 
 ### Does Harris Boat Works offer boat storage?
 
-Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Pricing varies by boat size. See https://www.harrisboatworks.ca/winter-storage.
 
 ### Can I bring a non-Mercury motor to Harris Boat Works for service?
 

@@ -80,7 +80,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Ajax customers who boat on Rice Lake or the Kawarthas, keeping the boat at HBW through winter makes logistical sense. The boat stays close to the water, and physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Ajax.

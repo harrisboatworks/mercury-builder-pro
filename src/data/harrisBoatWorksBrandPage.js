@@ -42,7 +42,7 @@ export const HARRIS_BOAT_WORKS_BRAND_FAQS = [
   {
     question: 'What does Harris Boat Works do?',
     answer:
-      'Mercury outboard sales and repower, Mercury and MerCruiser service, genuine Mercury parts, boat rentals, seasonal slips, a launch ramp, ethanol-free marine fuel, and outdoor winter storage with shrinkwrap.',
+      'Mercury outboard sales and repower, Mercury and MerCruiser service, genuine Mercury parts, boat rentals, seasonal slips, a launch ramp, ethanol-free marine fuel, and outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service.',
   },
   {
     question: 'Can you ship a motor or come to my dock?',
@@ -64,7 +64,7 @@ export const HARRIS_BOAT_WORKS_SERVICES = [
   'Seasonal slips',
   'Launch ramp',
   'Ethanol-free marine fuel',
-  'Outdoor winter storage with shrinkwrap',
+  'Outdoor winter storage (shrink wrap, uncovered, or wrap-only)',
 ];
 
 function escapeHtml(value) {

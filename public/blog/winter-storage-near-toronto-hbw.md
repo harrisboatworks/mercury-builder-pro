@@ -43,7 +43,7 @@ HBW is a fit when you want outdoor storage at Gores Landing and the same Mercury
 
 | Storage option | What it provides | Fit for HBW? |
 |---------------|------------------|--------------|
-| **Outdoor storage with shrinkwrap** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. This is HBW's storage model.** |
+| **Outdoor storage (shrink wrap, uncovered, or wrap-only)** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. These are HBW's outdoor storage options.** |
 | **Indoor unheated storage** | A roof and enclosure, but freezing temperatures may still occur | **No. HBW does not offer indoor storage.** |
 | **Indoor heated storage** | Heated indoor space with different layup requirements | **No. HBW does not offer heated storage.** |
 | **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.** |

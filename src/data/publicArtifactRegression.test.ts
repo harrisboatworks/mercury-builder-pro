@@ -360,4 +360,29 @@ describe('public artifact regression', () => {
     expect(twin).toContain('### Can a multi-brand dealer offer a better Mercury price?');
     expect(twin).not.toContain('## Common questions about HBW');
   });
+
+  it('replaces leftover shrinkwrap-only winter-storage claims with the three-option canon', () => {
+    const leftover = /outdoor winter (?:boat )?storage with shrinkwrap|we (?:do|offer) outdoor storage with shrinkwrap|Yes\. Outdoor storage with shrinkwrap|This is HBW's storage model/i;
+    const storageCanon =
+      'outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service';
+
+    const whyHarris = getArticleBySlug('why-harris-boat-works-mercury-dealer');
+    const storageFaq = whyHarris!.faqs!.find(
+      (faq) => faq.question === 'Does Harris Boat Works offer boat storage?',
+    );
+    expect(storageFaq?.answer).toContain(storageCanon);
+    expect(storageFaq?.answer).not.toMatch(leftover);
+
+    const whyHarrisTwin = read('public/blog/why-harris-boat-works-mercury-dealer.md');
+    expect(whyHarrisTwin).toContain(storageCanon);
+    expect(whyHarrisTwin).not.toMatch(leftover);
+
+    const brand = read('public/.well-known/brand.json');
+    expect(brand).toContain(storageCanon);
+    expect(brand).not.toMatch(leftover);
+
+    const brandPage = read('src/data/harrisBoatWorksBrandPage.js');
+    expect(brandPage).toContain(storageCanon);
+    expect(brandPage).not.toMatch(leftover);
+  });
 });
