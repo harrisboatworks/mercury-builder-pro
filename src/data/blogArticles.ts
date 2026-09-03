@@ -32090,7 +32090,7 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
       },
       {
         question: "How much does a Pro XS repower cost in Ontario?",
-        answer: "It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range, including motor, controls, gauges, prop, steering, install labour, and taxes, runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
+        answer: "It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-4 build sits lower. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
       },
       {
         question: "Do I need Command Thrust on my Pro XS?",
@@ -32228,7 +32228,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+Installed cost depends on HP, rigging, and what we can reuse from the existing setup. A 150 Pro XS inline-4 build sits lower. A 300 Pro XS V8 build sits higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 

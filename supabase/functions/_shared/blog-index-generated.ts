@@ -4896,7 +4896,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a Pro XS repower cost in Ontario?",
-        "a": "It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range, including motor, controls, gauges, prop, steering, install labour, and taxes, runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 b…"
+        "a": "It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-…"
       },
       {
         "q": "Do I need Command Thrust on my Pro XS?",

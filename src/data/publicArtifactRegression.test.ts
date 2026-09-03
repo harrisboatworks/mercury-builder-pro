@@ -199,4 +199,28 @@ describe('public artifact regression', () => {
       /answer:\s*["'`][^\n]*\{\{LIVE_RATE\}\}[^\n]*(?:Dec(?:ember)? 31, 2026)/,
     );
   });
+
+  it('keeps Pro XS cost copy on the quote builder instead of leftover planning-range dollars', () => {
+    const fabricatedRange = /high teens of thousands|mid-thirties of thousands/i;
+    const article = getArticleBySlug('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
+    expect(article).toBeDefined();
+    expect(article!.content).not.toMatch(fabricatedRange);
+    expect(JSON.stringify(article!.faqs)).not.toMatch(fabricatedRange);
+    expect(article!.content).toContain('Installed cost depends on HP, rigging, and what we can reuse');
+    expect(article!.faqs?.some((faq) => faq.answer.includes('175 HP V6 and the 200–250 HP V8'))).toBe(true);
+
+    const twin = read('public/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md');
+    expect(twin).not.toMatch(fabricatedRange);
+    expect(twin).toContain('175 HP V6 and the 200–250 HP V8');
+
+    const publicIndex = read('public/blog-index.json');
+    const generatedTs = read('supabase/functions/_shared/blog-index-generated.ts');
+    expect(publicIndex).not.toMatch(fabricatedRange);
+    expect(generatedTs).not.toMatch(fabricatedRange);
+
+    const hygiene = read('scripts/check-blog-output-hygiene.ts');
+    const priceHygiene = read('scripts/check-blog-price-hygiene.mjs');
+    expect(hygiene).toContain('fabricated Pro XS planning-range dollars');
+    expect(priceHygiene).toContain('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
+  });
 });
