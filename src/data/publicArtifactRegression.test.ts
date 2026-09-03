@@ -118,6 +118,7 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('hbw-language-note');
     expect(leakCheck).toContain('Raw ::cta authoring fence in Markdown twin');
     expect(leakCheck).toContain('PUBLIC_TWIN_DIRECTIVE_PATTERNS');
+    expect(leakCheck).toContain('Broken comma table cell');
 
     const cleaner = read('src/lib/cleanBlogContent.js');
     expect(cleaner).toContain('내부 링크');
@@ -306,5 +307,36 @@ describe('public artifact regression', () => {
     const twin = read('public/blog/mercury-dealer-port-hope-ontario-hbw.md');
     expect(twin).toContain(portHope!.description);
     expect(twin).not.toMatch(/^description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope/m);
+  });
+
+  it('repairs leftover #82 truncated metadata and broken table cells', () => {
+    const brokenCell = /\|,\s*\|/;
+    const avator = getArticleBySlug('mercury-avator-range-rice-lake-cottage');
+    expect(avator).toBeDefined();
+    expect(avator!.content).not.toMatch(brokenCell);
+    expect(avator!.content).toContain(
+      '| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |',
+    );
+
+    const families = getArticleBySlug('fourstroke-vs-pro-xs');
+    expect(families).toBeDefined();
+    expect(families!.content).toContain('> *Jay Harris, Harris Boat Works*');
+    expect(families!.content).not.toMatch(/^>: Jay Harris/m);
+
+    const trent = getArticleBySlug('trent-severn-waterway-boating-guide-2026');
+    expect(trent).toBeDefined();
+    expect(trent!.description).toBe(
+      'Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.',
+    );
+    expect(trent!.description).not.toMatch(/By Harris Boat\.$/);
+
+    const french = read('src/data/frenchBlogArticles.ts');
+    expect(french).toContain('| Perchaude | Toute l\'année | aucune | 50 |');
+    expect(french).not.toMatch(brokenCell);
+
+    expect(read('public/blog/mercury-avator-range-rice-lake-cottage.md')).not.toMatch(brokenCell);
+    expect(read('public/blog/fourstroke-vs-pro-xs.md')).toContain('> *Jay Harris, Harris Boat Works*');
+    expect(read('public/blog/trent-severn-waterway-boating-guide-2026.md')).toContain(trent!.description);
+    expect(read('public/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md')).not.toMatch(brokenCell);
   });
 });

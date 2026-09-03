@@ -43,6 +43,7 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
   { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
   { pattern: /^##\s+.+\s+\/\s*CTA\s*$/i, name: 'CTA-suffixed authoring heading' },
   { pattern: /hbw-language-note/, name: 'Raw language-note HTML wrapper' },
+  { pattern: /\|,\s*\|/, name: 'Broken comma table cell' },
 ];
 
 const BLOG_LANG_RX = /BlogArticles\.ts$/;
