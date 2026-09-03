@@ -27,6 +27,33 @@ const checks = [
     file: 'public/blog/best-mercury-for-family-runabouts.md',
     expected: ['Mercury FourStroke in the 90–150 HP range'],
   },
+  {
+    file: 'public/blog/mercury-40-vs-60-hp-outboard-ontario.md',
+    expected: ['5,500–6,000'],
+  },
+  {
+    file: 'public/blog/mercury-9-9-efi-review-ontario.md',
+    expected: ['5,000–6,000'],
+  },
+  {
+    file: 'public/blog/mercury-75-hp-fourstroke-review-ontario.md',
+    expected: ['4,500–5,500', '5,000–6,000'],
+  },
+  {
+    file: 'public/blog/ko/mercury-115-vs-150-comparison.md',
+    expected: ['5,000–6,000', '5,000–5,800', '16–19피트', '19–22피트'],
+  },
+  {
+    file: 'public/blog/zh/mercury-115-vs-150-comparison-zh.md',
+    expected: ['16–19英尺', '18–22英尺'],
+  },
+  {
+    file: 'public/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md',
+    expected: [
+      'FourStroke V6 (3.4L) | 175–225 HP',
+      'FourStroke V8 (4.6L) | 250–300 HP',
+    ],
+  },
 ];
 
 const forbidden = [
@@ -42,12 +69,21 @@ const forbidden = [
   'Mercury 90, 150 FourStroke',
   '300–400 HP 300-350 HP',
   'plus 9.9 ProKicker',
+  '5,500, 6,000',
+  '4,500, 5,500',
+  '16, 19피트',
+  '19, 22피트',
+  '16, 19英尺',
+  '18, 22英尺',
+  'FourStroke V8 (4.6L) | 175-250 HP',
 ];
 
 const sourceSurface = [
   'src/data/blogArticles.ts',
   'src/data/spanishBlogArticles.ts',
   'src/data/frenchBlogArticles.ts',
+  'src/data/koreanBlogArticles.ts',
+  'src/data/mandarinBlogArticles.ts',
 ].map((file) => fs.readFileSync(file, 'utf8')).join('\n');
 
 const failures = [];
@@ -79,7 +115,7 @@ for (const check of checks) {
   const corruptTableRows = markdown
     .split('\n')
     .filter((line) => line.startsWith('|'))
-    .filter((line) => /(?:\$?\d[\d,.]*),\s+(?:\$?\d[\d,.]*)\s*(?:HP|RPM|tr\/min|pies|pieds|CAD|%)/.test(line));
+    .filter((line) => /(?:\$?\d[\d,.]*),\s+(?:\$?\d[\d,.]*)\s*(?:HP|RPM|tr\/min|pies|pieds|피트|英尺|CAD|%)/.test(line));
   if (corruptTableRows.length) {
     failures.push(`${check.file}: comma-separated numeric range remains in table: ${corruptTableRows[0]}`);
   }

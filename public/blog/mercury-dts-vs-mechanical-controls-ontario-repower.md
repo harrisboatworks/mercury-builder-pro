@@ -59,7 +59,8 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 |---|---|---|---|
 | FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
-| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
+| FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
 | Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
