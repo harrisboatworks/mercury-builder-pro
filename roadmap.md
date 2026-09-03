@@ -40,6 +40,17 @@ phases. Regenerate markdown twins + blog-index.json after each content phase.
   'best-motor-small-lakes-ontario' is older). Do NOT edit that record here.
 - [ ] Edit 14: STOPPED, awaiting Jay. SmartCraft record has 0 "As of May 2026"; the file's 2 hits
   are May-dated price-check claims in 'mercury-9-9-efi-review-ontario'. Need his call before relabelling.
-- [ ] Task 15: pontoon HP sizing inline SVG. Plan delivered, awaiting approval to implement.
-  Finding: only ONE tier is missing (300 to 400+ HP, 26+ ft luxury tritoon). The 200-250
-  tritoon tier is already in the graphic. SVG also carries one em dash ("Worth it - 60 CT").
+- [x] Task 15: pontoon HP sizing inline SVG. Plan approved and implemented 2026-09-03,
+  commit ac3f576cc. Added the 26+ ft luxury tritoon / 300 to 400+ HP row (Command Thrust
+  cell = "Standard"), extended geometry by 50px, updated <desc>, removed the em dash
+  ("Worth it, 60 CT"). Do not re-surface the plan card.
+
+## Origin sync check (2026-09-03, before any further blog edits)
+
+- git fetch origin succeeded. Behind origin/main by 3 commits, ahead by 108.
+- The 3 upstream commits touch ONLY docs/lovable-github-sync-canary-2026-08-15.md and
+  src/integrations/supabase/types.ts. Zero blog content changed (src/data, public/blog).
+- 'best-motor-small-lakes-ontario' is byte-identical between HEAD and origin/main
+  (both the record in src/data/blogArticles.ts and public/blog/best-motor-small-lakes-ontario.md).
+- Merge NOT performed: stateful git operations are out of scope for this environment. Nothing
+  blog-related was pending anyway, so Phases 1A-2 did not run on stale content.
