@@ -54,9 +54,8 @@ Harris Boat Works는 1947년부터 Rice Lake에 자리를 잡은 가족 경영 �
 
 ---
 
-## 언어 안내
-
-Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbw.wiki/service를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
+> **언어 안내**
+> Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbw.wiki/service를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
 
 ---
 

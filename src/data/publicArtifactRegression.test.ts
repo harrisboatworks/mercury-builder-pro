@@ -116,6 +116,7 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('CTA-prefixed authoring heading');
     expect(leakCheck).toContain('CTA-suffixed authoring heading');
     expect(leakCheck).toContain('hbw-language-note');
+    expect(leakCheck).toContain('Leftover heading-style language note');
     expect(leakCheck).toContain('Raw ::cta authoring fence in Markdown twin');
     expect(leakCheck).toContain('PUBLIC_TWIN_DIRECTIVE_PATTERNS');
     expect(leakCheck).toContain('Broken comma table cell');
@@ -397,5 +398,32 @@ describe('public artifact regression', () => {
       expect(text).toContain('16–19피트 알루미늄');
       expect(text).not.toMatch(leftoverHyphen);
     }
+  });
+
+  it('converts leftover heading-style language notes to Markdown blockquotes', () => {
+    const leftoverHeading =
+      /^#{2,3}\s+(?:Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/m;
+
+    const surfaces = [
+      'src/data/frenchBlogArticles.ts',
+      'src/data/koreanBlogArticles.ts',
+      'src/data/mandarinBlogArticles.ts',
+      'public/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md',
+      'public/blog/ko/mercury-115-vs-150-comparison.md',
+      'public/blog/zh/chinese-family-pontoon-mercury-outboard.md',
+    ];
+
+    for (const path of surfaces) {
+      const text = read(path);
+      expect(text, path).not.toMatch(leftoverHeading);
+    }
+
+    expect(read('src/data/spanishBlogArticles.ts')).toContain('## Una nota sobre el idioma');
+    expect(read('src/data/frenchBlogArticles.ts')).toContain(
+      '> **Une note sur la langue**\n> Cet article est une traduction de courtoisie.',
+    );
+    expect(read('src/data/koreanBlogArticles.ts')).toContain('> **언어 안내**');
+    expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **语言说明**\n> ${ZH_LANGUAGE_NOTE}');
+    expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **关于语言的说明**');
   });
 });
