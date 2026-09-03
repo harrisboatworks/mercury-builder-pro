@@ -669,7 +669,7 @@ const checkJoystickPackageTruth = (surface, label) => {
   );
 };
 
-checkSpecRoute('mercury-command-thrust-pontoon-eligibility-2026', (surface, label) => {
+checkSpecRoute('mercury-command-thrust-complete-guide-2026', (surface, label) => {
   const availabilitySection = surface.match(/## HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
   const listing = availabilitySection
     .split(/\n\s*\n/)
@@ -826,8 +826,8 @@ check(
   `Product-spec integrity must cover exactly nine route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
 );
 
-const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
 const ajaxPartsQualification = 'HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock.';
+const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
 const originalMarketRelatedLink = '[Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
 const marketRelatedOverride = blogClusters.match(/["']why-mercury-dominates-outboard-market["']\s*:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
 const marketRelatedOverrideSlugs = [...marketRelatedOverride.matchAll(/["']([a-z0-9-]+)["']/g)].map((match) => match[1]);
@@ -935,10 +935,11 @@ const superlativeRouteContracts = [
     twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
   },
   {
-    slug: 'mercury-dealer-ajax-ontario-hbw',
+    // Ajax post retired in Phase 1C; the GTA-east dealer contract now rides on Bowmanville.
+    slug: 'mercury-dealer-bowmanville-ontario-hbw',
     forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim']],
     required: [
-      [ajaxPartsQualification, 'Jay-approved Ajax parts qualification'],
+      [ajaxPartsQualification, 'Jay-approved parts qualification (was the Ajax post before Phase 1C)'],
       [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage|do not offer indoor or heated boat storage[\s\S]{0,160}don't offer climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
       [/physical service resumes when we reopen in early April/i, 'protected early-April reopening wording'],
     ],
@@ -1206,32 +1207,8 @@ check(
 );
 const dealerHeroCanon = [
   {
-    slug: 'mercury-dealer-markham-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-richmond-hill-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-northumberland-county-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-mississauga-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-vaughan-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
-  },
-  {
     slug: 'mercury-dealer-whitby-ontario-hbw',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-oshawa-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
   },
 ];
 for (const { slug, image } of dealerHeroCanon) {
@@ -1279,7 +1256,7 @@ for (const { slug, image } of authenticatedServiceHeroCanon) {
     `${slug} must not regress to the synthetic Mercury service-bay hero.`,
   );
 }
-for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {
+for (const slug of ['mercury-dealer-whitby-ontario-hbw']) {
   const source = articleSource(slug);
   check(
     /standard repower lineup is FourStroke and Pro XS/.test(source) &&

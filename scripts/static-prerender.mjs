@@ -6100,6 +6100,11 @@ const today = new Date().toISOString().split('T')[0];
 // with getStaticEntries() in src/utils/generateSitemap.ts.
 const staticSitemapEntries = [
   { loc: '/', priority: 1.0, changefreq: 'daily' },
+  { loc: '/blog/diagnostics', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/reviews', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/repower', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/rice-lake', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/pricing', priority: 0.75, changefreq: 'weekly' },
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
   { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-product-protection', priority: 0.85, changefreq: 'monthly' },
