@@ -139,7 +139,7 @@ export default function TraditionalChineseBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Harris Boat Works 負責人" />
+                <AuthorByline name="Jay Harris" title="Harris Boat Works 負責人" byLabel="作者" bioLabel="查看作者簡介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('zh-Hant', { year: 'numeric', month: 'long', day: 'numeric' })}

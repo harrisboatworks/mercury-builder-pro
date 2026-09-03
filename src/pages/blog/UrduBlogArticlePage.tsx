@@ -347,7 +347,7 @@ export default function UrduBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Harris Boat Works کے مالک" />
+          <AuthorByline name="Jay Harris" title="Harris Boat Works کے مالک" byLabel="مصنف" bioLabel="مصنف کا تعارف" />
         </div>
 
         {tocItems.length > 2 && (

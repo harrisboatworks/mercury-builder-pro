@@ -426,4 +426,29 @@ describe('public artifact regression', () => {
     expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **语言说明**\n> ${ZH_LANGUAGE_NOTE}');
     expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **关于语言的说明**');
   });
+
+  it('adds leftover localized AuthorByline labels without rewriting titles', () => {
+    const byline = read('src/components/blog/AuthorByline.tsx');
+    expect(byline).toContain('byLabel = \'By\'');
+    expect(byline).toContain('bioLabel = \'View author bio\'');
+
+    const pages: Array<[string, string, string]> = [
+      ['src/pages/blog/SpanishBlogArticlePage.tsx', 'byLabel="Por"', 'title="Propietario, Harris Boat Works"'],
+      ['src/pages/blog/FrenchBlogArticlePage.tsx', 'byLabel="Par"', 'title="Propriétaire, Harris Boat Works"'],
+      ['src/pages/blog/KoreanBlogArticlePage.tsx', 'byLabel="작성자"', 'title="Harris Boat Works 소유주"'],
+      ['src/pages/blog/HindiBlogArticlePage.tsx', 'byLabel="लेखक"', 'title="Harris Boat Works के मालिक"'],
+      ['src/pages/blog/PunjabiBlogArticlePage.tsx', 'byLabel="ਲੇਖਕ"', 'title="Harris Boat Works ਦੇ ਮਾਲਕ"'],
+      ['src/pages/blog/TagalogBlogArticlePage.tsx', 'byLabel="Ni"', 'title="May-ari, Harris Boat Works"'],
+      ['src/pages/blog/UrduBlogArticlePage.tsx', 'byLabel="مصنف"', 'title="Harris Boat Works کے مالک"'],
+      ['src/pages/blog/MandarinBlogArticlePage.tsx', 'byLabel="作者"', 'title="Harris Boat Works 负责人"'],
+      ['src/pages/blog/TraditionalChineseBlogArticlePage.tsx', 'byLabel="作者"', 'title="Harris Boat Works 負責人"'],
+    ];
+
+    for (const [path, byLabel, title] of pages) {
+      const source = read(path);
+      expect(source, path).toContain(byLabel);
+      expect(source, path).toContain('bioLabel=');
+      expect(source, path).toContain(title);
+    }
+  });
 });
