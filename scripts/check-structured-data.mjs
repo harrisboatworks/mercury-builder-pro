@@ -7,6 +7,7 @@
 //   2. Missing required schema.org fields per @type
 //   3. Product offers without priceCurrency/price/availability
 //      (the exact bug class that hit /mercury-outboards-ontario)
+//   4. Self-serving aggregate ratings on HBW-owned business entities
 //
 // Service-typed Offers under LocalBusiness.makesOffer are allowed to omit
 // price (legitimate price-on-request); only Product offers are strict.
@@ -26,6 +27,7 @@
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { isValidDateOnly } from '../src/data/mercuryProXSOffers.js';
 
 const DIST = process.env.SCHEMA_DIST || 'dist';
 const SRC_PRERENDER = 'scripts/static-prerender.mjs';
@@ -46,6 +48,20 @@ const REQUIRED_FIELDS = {
 };
 
 const OFFER_REQUIRED = ['priceCurrency', 'price', 'availability'];
+const HBW_BUSINESS_ENTITY_IDS = new Set([
+  'https://www.mercuryrepower.ca/#organization',
+  'https://www.mercuryrepower.ca/#localbusiness',
+]);
+const ORGANIZATION_RATING_TYPES = new Set([
+  'Organization',
+  'LocalBusiness',
+  'AutomotiveBusiness',
+  'AutoDealer',
+  'AutoRepair',
+  'BoatDealer',
+  'FinancialService',
+  'Store',
+]);
 
 const errors = [];
 const warnings = [];
@@ -89,10 +105,22 @@ function isServiceOffer(offer) {
   return t === 'Service';
 }
 
+function isHbwBusinessEntity(node) {
+  return HBW_BUSINESS_ENTITY_IDS.has(node['@id'])
+    || (typeof node.name === 'string' && /^Harris Boat Works(?:$|[,\s:—–-])/.test(node.name));
+}
+
+function isOrganizationRatingType(node) {
+  const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+  return types.some(type => ORGANIZATION_RATING_TYPES.has(type));
+}
+
 function validateHtmlFile(file) {
   const html = readFileSync(file, 'utf8');
   const blocks = extractJsonLd(html);
   const aggregateRatingOwners = new Map();
+  const proXsOffers = [];
+  const isProXsPage = relative(DIST, file).replaceAll('\\', '/') === 'mercury-pro-xs/index.html';
   blocks.forEach((raw, i) => {
     let parsed;
     try { parsed = JSON.parse(raw); }
@@ -126,6 +154,17 @@ function validateHtmlFile(file) {
             errors.push(`${file} block[${i}]: Offer missing required field "${f}" (under ${parentType || 'root'})`);
           }
         }
+        if (isProXsPage && parentType === 'Product') proXsOffers.push(node);
+      }
+      if (
+        isOrganizationRatingType(node)
+        && isHbwBusinessEntity(node)
+        && node.aggregateRating
+      ) {
+        errors.push(
+          `${file} block[${i}]: ${type} declares a self-serving aggregateRating. ` +
+          `Google does not show review stars for a business or organization that controls the reviewed page.`
+        );
       }
     });
   });
@@ -135,6 +174,19 @@ function validateHtmlFile(file) {
       `${file}: schema entity "${id}" declares aggregateRating in multiple JSON-LD blocks ` +
       `(${ownerBlocks.join(', ')}). Google requires one aggregate rating per entity.`
     );
+  }
+  if (isProXsPage) {
+    if (proXsOffers.length !== 4) {
+      errors.push(`${file}: expected 4 Pro XS Product offers, found ${proXsOffers.length}.`);
+    }
+    for (const offer of proXsOffers) {
+      if (!isValidDateOnly(offer.validFrom)) {
+        errors.push(`${file}: Pro XS Product offer is missing a valid canonical calendar "validFrom" date.`);
+      }
+      if (Object.hasOwn(offer, 'priceValidUntil')) {
+        errors.push(`${file}: Pro XS Product offer has an unsupported "priceValidUntil" date.`);
+      }
+    }
   }
 }
 

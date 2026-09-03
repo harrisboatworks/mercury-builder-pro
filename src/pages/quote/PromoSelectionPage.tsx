@@ -16,6 +16,7 @@ import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finan
 import { promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
@@ -58,7 +59,10 @@ export default function PromoSelectionPage() {
   // Ref for auto-scrolling to rate selector
   const rateSelectorRef = useRef<HTMLDivElement>(null);
 
-  const activePromo = promotions.length > 0 ? promotions[0] : null;
+  const activePromo = getAppliedPromotion(promotions);
+  const appliedWarrantyExtraYears = getAppliedWarrantyExtraYears(activePromo);
+  const appliedWarrantyTotalYears = 3 + appliedWarrantyExtraYears;
+  const productProtectionIncludedYears = Math.min(appliedWarrantyTotalYears, 8);
   const endDate = activePromo?.end_date ? promoEndOfDay(activePromo.end_date) : null;
 
   // Get dynamic values based on motor HP
@@ -247,19 +251,18 @@ export default function PromoSelectionPage() {
 
     // For warranty-only promos, auto-apply the warranty and skip
     if (activePromo && !hasPromotionOptions) {
-      const includedCoverageYears = Math.min(3 + (activePromo.warranty_extra_years || 0), 8);
       dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
       dispatch({
         type: 'SET_WARRANTY_CONFIG',
         payload: reconcileWarrantyConfig(
           Number(motorHP),
-          includedCoverageYears,
+          productProtectionIncludedYears,
           state.warrantyConfig,
         ),
       });
     }
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
+  }, [promoLoading, activePromo, productProtectionIncludedYears, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
 
   const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
@@ -302,13 +305,12 @@ export default function PromoSelectionPage() {
       persistFinancingRate(selectedRate);
     }
 
-    const totalWarrantyYears = Math.min(3 + (activePromo?.warranty_extra_years ?? 0), 8);
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
     dispatch({
       type: 'SET_WARRANTY_CONFIG',
       payload: reconcileWarrantyConfig(
         Number(motorHP),
-        totalWarrantyYears,
+        productProtectionIncludedYears,
         state.warrantyConfig,
       ),
     });
@@ -360,20 +362,20 @@ export default function PromoSelectionPage() {
               className="text-3xl md:text-5xl font-bold text-foreground mb-4"
               style={{ opacity: 1 }}
             >
-              {(activePromo.warranty_extra_years ?? 0) > 0
-                ? `${3 + (activePromo.warranty_extra_years ?? 0)}-Year Factory-Backed Warranty`
+              {appliedWarrantyExtraYears > 0
+                ? `${appliedWarrantyTotalYears}-Year Factory-Backed Warranty`
                 : (activePromo.bonus_title || activePromo.name || 'Current Mercury Promotion')}
             </motion.h1>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              {(activePromo.warranty_extra_years ?? 0) > 0
-                ? `Every new Mercury outboard from Harris Boat Works during this promotion comes with ${3 + (activePromo.warranty_extra_years ?? 0)} years of factory warranty.`
+              {appliedWarrantyExtraYears > 0
+                ? `Every new Mercury outboard from Harris Boat Works during this promotion comes with ${appliedWarrantyTotalYears} years of factory warranty.`
                 : (activePromo.bonus_description || 'Choose the bonus that works best for you.')}
             </p>
 
 
             {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
-            {(activePromo.warranty_extra_years ?? 0) > 0 && (
+            {appliedWarrantyExtraYears > 0 && (
               <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">
                 {/* Shimmer overlay */}
                 <div 
@@ -394,10 +396,10 @@ export default function PromoSelectionPage() {
                 </motion.div>
                 <div className="text-left">
                   <div className="text-foreground font-bold text-lg">
-                    {3 + (activePromo.warranty_extra_years ?? 0)} Years Factory Warranty
+                    {appliedWarrantyTotalYears} Years Factory Warranty
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    3 years standard + {activePromo.warranty_extra_years} years FREE extension
+                    3 years standard + {appliedWarrantyExtraYears} years FREE extension
                   </div>
                 </div>
                 {/* Pulsing INCLUDED Badge */}

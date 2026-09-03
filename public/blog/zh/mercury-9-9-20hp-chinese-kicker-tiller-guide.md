@@ -133,17 +133,9 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 
 ---
 
-## 内部连结
-
-- [40至60马力Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-- [安大略省船只法规与安全要求：华人船主必知](/blog/zh/ontario-boating-regulations-zh)
-
----
-
 > 相关指南：[Mercury 9.9-150HP 完整马力指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。

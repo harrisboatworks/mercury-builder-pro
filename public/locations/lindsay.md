@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/lindsay
-last_updated: 2026-09-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Lindsay Mercury Repower
-Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. The standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
 ## Factbox
 - **Region:** Lindsay
 - **Drive time:** about 60 minutes east of Lindsay
@@ -43,7 +43,7 @@ Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Kawartha Lakes Mercury Outboards](https://www.mercuryrepower.ca/locations/kawartha-lakes-mercury-outboards)

@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
@@ -352,7 +351,12 @@ export default function FrenchBlogArticlePage() {
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Back nav */}
-        <BlogBackLink to="/fr" label={"Retour à la page d'accueil en français"} />
+        <nav className="mb-8">
+          <Link to="/fr" className="text-primary hover:underline text-sm flex items-center gap-1">
+            <ArrowLeft className="w-4 h-4" />
+            ← Retour à la page d'accueil en français
+          </Link>
+        </nav>
 
         {/* Hero image — shared <picture> component */}
         {article.image && (
@@ -393,7 +397,7 @@ export default function FrenchBlogArticlePage() {
           })}
         </p>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" />
+          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" byLabel="Par" bioLabel="Voir la biographie" />
         </div>
 
         {/* Table of Contents */}

@@ -60,7 +60,7 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
 | 重量 | 约183公斤 | 约204公斤 |
-| 适配船长参考 | 16, 19英尺 | 18, 22英尺 |
+| 适配船长参考 | 16–19英尺 | 18–22英尺 |
 
 *规格以Mercury官方当前资料为准，购买前请确认。*
 
@@ -148,15 +148,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 ---
 
-## 内部连结
-
-- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-- [换新发动机还是买新船？安大略省华人船主的现实判断](/blog/zh/mercury-repower-guide-gta)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-
----
-
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。

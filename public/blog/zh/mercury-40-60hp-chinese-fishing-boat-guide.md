@@ -134,17 +134,9 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 ---
 
-## 内部连结
-
-- [Mercury 9.9至20HP：钓鱼小船、Kicker、Tiller中文选购指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-- [Mercury FourStroke、Pro XS、Verado差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-
----
-
 > 相关指南：[完整 Mercury 马力选择指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。

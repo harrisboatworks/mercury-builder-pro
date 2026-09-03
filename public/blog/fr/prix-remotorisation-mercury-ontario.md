@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md
-last_updated: 2026-06-19
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide de remotorisation Mercury : prix, délais, rentabilité"
 description: "Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-21
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-06-19\
+**Dernière révision :** 2026-08-21\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 
@@ -39,15 +39,13 @@ Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état
 
 Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+> **Une note sur la langue**
+> Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
+> Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
-Harris Boat Works est une marina familiale de troisième génération sur le lac Rice, en activité depuis 1947. Nous sommes concessionnaire Mercury Marine Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/), et nous réalisons des dizaines de remotoriations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
 ---
 
@@ -85,9 +83,9 @@ L'installation par des techniciens certifiés Mercury prend du temps et requiert
 
 ---
 
-## Fourchettes de prix par catégorie de puissance
+## Catégories de puissance et facteurs de coût
 
-Ces fourchettes couvrent le moteur, le câblage, les commandes, l'hélice et la main-d'œuvre, l'ensemble du projet de remotorisation, avant les taxes. Vérifiez les prix actuels en dollars canadiens sur mercuryrepower.ca.
+Voici ce que chaque catégorie de puissance représente et ce qui fait varier le coût. Un projet de remotorisation comprend le moteur, le câblage, les commandes, l'hélice et la main-d'œuvre, avant les taxes. Nous ne publions pas de totaux installés fixes ici, parce qu'ils dépendent de votre embarcation et de son état. Pour un prix réel en dollars canadiens, utilisez le configurateur sur mercuryrepower.ca.
 
 ### Petits moteurs : 9,9 à 20 HP
 
@@ -95,7 +93,7 @@ La catégorie la plus accessible. Chaloupes, embarcations à fond plat, dinghies
 
 ### Moteurs de milieu de gamme : 40 à 60 HP
 
-Très populaires. Embarcations familiales de 14 à 17 pieds, chaloupes en aluminium, petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une grande part des remotoriations que nous réalisons chaque saison.
+Très populaires. Embarcations familiales de 14 à 17 pieds, chaloupes en aluminium, petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une grande part des remotorisations que nous réalisons chaque saison.
 
 ### Moteurs performants : 90 à 115 HP
 
@@ -133,28 +131,6 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
-## Foire aux questions
-
-**Est-ce que ça vaut vraiment la peine de remplacer un vieux moteur ?** 
-Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
-
-**Comment savoir si ma coque est en bon état ?** 
-Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
-
-**Est-ce que je peux obtenir un prix sans parler à quelqu'un ?** 
-Oui. L'outil de configuration sur mercuryrepower.ca vous donne un vrai prix en dollars canadiens, sans avoir besoin de parler à l'équipe. Entrez les informations sur votre embarcation et choisissez la puissance.
-
-**L'équipe peut-elle communiquer en français ?** 
-L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
-
-**Faut-il amener le bateau sur place pour obtenir un devis ?** 
-Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
-
-**Est-ce que vous installez des moteurs d'autres marques ?** 
-Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.
-
----
-
 ## Comment obtenir votre prix
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
@@ -170,7 +146,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
 ---
 
-## FAQs
+## Questions fréquentes
 
 ### Combien de temps dure une remotorisation?
 
@@ -186,11 +162,27 @@ Oui. Les moteurs Mercury FourStroke neufs sont couverts par une garantie limité
 
 ### Une remotorisation coûte-t-elle moins cher qu'un bateau neuf?
 
-Dans la plupart des cas, oui , si la coque est saine.
+Dans la plupart des cas, oui, si la coque est saine. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
 
 ### Puis-je obtenir un prix sans appeler?
 
 Oui. mercuryrepower.ca affiche un prix en ligne, en dollars canadiens.
+
+### Comment savoir si ma coque est en bon état?
+
+Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
+
+### L'équipe peut-elle communiquer en français?
+
+L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+
+### Faut-il amener le bateau sur place pour obtenir un devis?
+
+Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut aider à évaluer l'état de la coque et le câblage existant.
+
+### Est-ce que vous installez des moteurs d'autres marques?
+
+Non. Pour les réparations et les installations, nous travaillons exclusivement avec Mercury et Mercruiser.
 
 ## Prochaines étapes
 

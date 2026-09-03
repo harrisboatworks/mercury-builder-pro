@@ -70,7 +70,7 @@ export default function MotorSelectionHub() {
         {
           heading: 'Motor family selection',
           cards: [
-            { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', description: 'Family-by-family Mercury overview.', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
+            { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', description: 'Family-by-family Mercury overview.', to: '/blog/fourstroke-vs-pro-xs' },
             { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', description: 'Full Mercury 2027 model year lineup snapshot.', to: '/blog/mercury-outboard-lineup-ontario' },
             { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', description: 'Tiller and portable picks.', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
           ],
@@ -80,7 +80,7 @@ export default function MotorSelectionHub() {
           cards: [
             { title: 'Best Mercury Outboard for Aluminum Fishing Boats', description: 'Aluminum console pairing.', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
             { title: 'Best Mercury Outboard for Pontoon Boats', description: 'Pontoon-specific Mercury picks.', to: '/blog/best-mercury-outboard-pontoon-boats' },
-            { title: 'Mercury Command Thrust Guide for Pontoons', description: 'When you need the big gearcase.', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+            { title: 'Mercury Command Thrust: The Complete Guide', description: 'When you need the big gearcase.', to: '/blog/mercury-command-thrust-complete-guide-2026' },
           ],
         },
         {
@@ -104,7 +104,7 @@ export default function MotorSelectionHub() {
         { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
         { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
         { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },
-        { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. We test props on the water during sea-trial of every repower.' },
+        { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. When safe seasonal conditions allow, we test props on the water during the on-water check. Any alternate acceptance plan is documented with the customer.' },
         { question: 'Is Mercury better than Yamaha or Honda?', answer: 'Mechanically, all three brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders.' },
         { question: 'Can I run a bigger motor than my capacity plate says?', answer: 'No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty on over-powered hulls. We will not install a motor above the rated HP.' },
         { question: 'Does HBW sell Verado?', answer: 'By special order. Verado is built for offshore center consoles and twin/triple installations. Most Ontario freshwater boaters do not need Verado. Contact us for special-order quotes.' },

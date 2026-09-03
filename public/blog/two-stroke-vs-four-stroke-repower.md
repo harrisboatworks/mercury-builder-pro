@@ -142,7 +142,7 @@ It depends on the exact motor, controls, steering, rigging, propeller, removal, 
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
-- [Mercruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
+- [MerCruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
 - [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
 - [Pontoon vs Aluminum vs V-Hull Repower](/blog/repower-pontoon-aluminum-v-hull-differences), repower differences by hull type
 

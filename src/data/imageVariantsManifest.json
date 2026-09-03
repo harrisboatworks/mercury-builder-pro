@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-17T20:19:37.862Z",
-  "count": 428,
+  "generatedAt": "2026-09-02T20:34:32.412Z",
+  "count": 426,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -72,6 +72,7 @@
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
     "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08",
     "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08",
+    "/lovable-uploads/blog-heroes-2026-08/p0p1/hero-family-runabout-mercury-115-real-2026-08",
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
     "/lovable-uploads/boat-winterization-cost-drivers-ontario",
     "/lovable-uploads/bolt-on-motor-installation",
@@ -338,8 +339,6 @@
     "/lovable-uploads/inline/inline-winter-storage-yard",
     "/lovable-uploads/inline/inline-wrong-trim-porpoising",
     "/lovable-uploads/inline/mercury-90-fourstroke-official-studio",
-    "/lovable-uploads/jim-and-jay-harris-office-1990",
-    "/lovable-uploads/jim-harris-mercury-1965",
     "/lovable-uploads/kawartha-boat-storage-decision-map",
     "/lovable-uploads/ko-mercury-115-vs-150-comparison-hero",
     "/lovable-uploads/ko-mercury-outboard-winterization-guide-hero",
@@ -413,7 +412,6 @@
     "/lovable-uploads/spring-commissioning-checklist-card",
     "/lovable-uploads/spring-no-start-flowchart",
     "/lovable-uploads/td-financing-2026-rate-card",
-    "/lovable-uploads/three-generations-harris-fishing-rice-lake",
     "/lovable-uploads/toronto-chinese-rice-lake-rental-checklist",
     "/lovable-uploads/wont-start-causes-hbw",
     "/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero",
@@ -781,6 +779,11 @@
       640,
       1024,
       1672
+    ],
+    "/lovable-uploads/blog-heroes-2026-08/p0p1/hero-family-runabout-mercury-115-real-2026-08": [
+      640,
+      1024,
+      1600
     ],
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero": [
       640,
@@ -2112,16 +2115,6 @@
       1024,
       1600
     ],
-    "/lovable-uploads/jim-and-jay-harris-office-1990": [
-      640,
-      1024,
-      1600
-    ],
-    "/lovable-uploads/jim-harris-mercury-1965": [
-      640,
-      931,
-      931
-    ],
     "/lovable-uploads/kawartha-boat-storage-decision-map": [
       640,
       1024,
@@ -2486,11 +2479,6 @@
       640,
       1024,
       1024
-    ],
-    "/lovable-uploads/three-generations-harris-fishing-rice-lake": [
-      640,
-      1024,
-      1600
     ],
     "/lovable-uploads/toronto-chinese-rice-lake-rental-checklist": [
       640,

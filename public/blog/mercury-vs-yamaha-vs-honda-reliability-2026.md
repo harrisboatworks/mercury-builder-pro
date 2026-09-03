@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha vs Honda: Reliability 2026"
 description: "Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes."
 category: "Buying Guide"
 date_published: 2026-04-24
-date_modified: 2026-08-08
+date_modified: 2026-08-26
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 
@@ -56,7 +56,7 @@ _Prices here are planning figures as of August 2026. For live Mercury motor pric
 
 ## Let us be honest about who is writing this
 
-We are a Mercury dealer. We have been since 1965. We do not sell Yamaha or Honda. For engine repairs, we only service Mercury and Mercruiser. When a customer with a Yamaha or Honda asks about service, we send them to a brand-specific dealer.
+We are a Mercury dealer. We have been since 1965. We do not sell Yamaha or Honda. For engine repairs, we only service Mercury and MerCruiser. When a customer with a Yamaha or Honda asks about service, we send them to a brand-specific dealer.
 
 This is a conflict of interest. We are declaring it upfront, not burying it, because we think you are better served by a dealer who is straight about their bias than one who pretends to be neutral.
 
@@ -87,7 +87,7 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 
 **Where to be careful:** Older generation Pro XS motors had some early production issues that were worked out in subsequent model years. Current-generation Mercury is a mature product.
 
-**Our honest take:** This is what we sell and what we service. We can back up every motor we sell for the full life of that motor.
+**Our honest take:** This is what we sell and what we service. We service what we sell, year after year.
 
 ### Yamaha
 **Strengths:** A genuinely well-earned reputation for durability, especially in saltwater applications. The Yamaha 4.2L V6 engine family is widely respected in the offshore fishing community.
@@ -213,7 +213,7 @@ Mercury has long-running relationships with Canadian boat manufacturers, broad d
 
 ### Why is HBW only a Mercury dealer?
 
-We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Premier dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.
+We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Premier dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and MerCruiser.
 
 ## Related guides
 
@@ -221,7 +221,7 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
+- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
 
 ## Next steps
 

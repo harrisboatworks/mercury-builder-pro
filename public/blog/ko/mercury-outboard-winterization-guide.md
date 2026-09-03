@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를
 description: "온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지."
 category: "정비 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["선외기 겨울 보관","Mercury 겨울 정비","온타리오 보트 윈터라이제이션","Mercury winterization guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** 정비 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 
@@ -34,7 +34,7 @@ revenue_driver: service
 **온타리오 겨울(-20~-30°C)에서 선외기를 보관하려면 6단계 정비가 필수. 건너뛰면 봄에 엔진 블록 균열이나 카뷰레터 막힘으로 수천 달러 수리비가 발생할 수 있습니다.**
 
 - **6단계 순서**: 연료 안정화 → 실린더 포깅 → 기어 오일 교환 → 배터리 분리 → 윤활 → 커버 보관
-- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함 — HBW는 에탄올 무첨가 휘발유 판매
+- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
 - **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
 
@@ -44,9 +44,8 @@ revenue_driver: service
 
 온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 연료 안정화, 엔진 내부 포깅(fogging), 기어 오일 교환, 배터리 분리 보관, 윤활, 커버 보호입니다.
 
-### 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.
 
 ### 겨울 정비 핵심 항목 요약
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion.md
-last_updated: 2026-09-02
+last_updated: 2026-08-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP: Comparación completa para remotorización"
 description: "Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso."
 category: "Comparación de motores"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-08-08
 keywords: ["Mercury 115 vs 150","motor fuera de borda 115 o 150 HP","Mercury FourStroke comparación","remotorización Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparación de motores  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-02  
+**Última revisión:** 2026-08-08  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 
@@ -35,15 +35,11 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 ---
 
-### Artículo completo
-
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 Este artículo te da las especificaciones reales, la diferencia práctica en el agua, y una forma de decidir sin necesidad de memorizar hojas de datos técnicos.
 
@@ -143,7 +139,7 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 
 ---
 
-## CTA, Compara precios y configura tu motor
+## Compara precios y configura tu motor
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 

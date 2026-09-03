@@ -30,7 +30,7 @@ import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
-import { CreditCard } from 'lucide-react';
+import { Bookmark, CreditCard, Download } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -38,7 +38,6 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { useToast } from '@/hooks/use-toast';
-import { Download, Bookmark } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
@@ -49,6 +48,7 @@ import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
@@ -89,13 +89,13 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
-  const promoYears = suppressAdditionalPromoSavings
-    ? 0
-    : (getTotalWarrantyBonusYears?.() ?? 0);
+  const currentPromotion = getAppliedPromotion(promotions);
+  const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
+  const promoYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const currentCoverageYears = useMemo(
     () => Math.min(baseCoverageYears + promoYears, 8),
     [promoYears],
@@ -538,8 +538,6 @@ export default function QuoteSummaryPage() {
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
     state.selectedPromoTerm != null;
-  const currentPromotion = promotions[0] ?? null;
-  const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (promo?.rate || null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
@@ -887,8 +885,13 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
-      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const savedQuoteId = crypto.randomUUID();
+      const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
+      const resumeToken = `dep_${Array.from(
+        resumeTokenEntropy,
+        (byte) => byte.toString(16).padStart(2, '0'),
+      ).join('')}`;
       
       const basePdfData = {
         quoteNumber,
@@ -900,48 +903,45 @@ export default function QuoteSummaryPage() {
         reservationRequiresConfirmation: isMotorOnlyExpress,
       };
 
-      // Generate the quote before checkout. Payment confirmation is created
-      // only after Stripe's signed webhook reports a completed session.
-      let quotePdfPath: string | undefined;
-      
-      try {
-        const cleanBlob = await generatePDFBlob(basePdfData);
-        const cleanFileName = `deposit-quotes/${quoteNumber}-${Date.now()}.pdf`;
-        const { error: cleanErr } = await supabase.storage
-          .from('quotes')
-          .upload(cleanFileName, cleanBlob, { contentType: 'application/pdf' });
-        if (!cleanErr) {
-          quotePdfPath = cleanFileName;
-          console.log('Clean quote PDF uploaded:', cleanFileName);
-        }
-      } catch (pdfErr) {
-        console.warn('Could not generate quote PDFs for deposit:', pdfErr);
+      // A motor reservation must have its durable quote binding before a
+      // customer can be sent to Stripe. Generate the ID client-side so an
+      // anonymous insert does not depend on SELECT permission to return it.
+      const { error: sqError } = await supabase
+        .from('saved_quotes')
+        .insert({
+          id: savedQuoteId,
+          email: customerInfo.email,
+          resume_token: resumeToken,
+          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          user_id: user?.id || null,
+          expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+          quote_pdf_path: null,
+          deposit_pdf_path: null,
+          deposit_status: 'pending',
+          deposit_amount: depositAmount,
+        } as any);
+      if (sqError) {
+        throw new Error('Could not prepare this motor reservation. Please try again.');
       }
+      console.log('Saved quote created for deposit tracking:', savedQuoteId);
 
-      // Save/update saved_quotes record with PDF paths
-      let savedQuoteId: string | undefined;
-      try {
-        const { data: savedQuote, error: sqError } = await supabase
-          .from('saved_quotes')
-          .insert({
-            email: customerInfo.email,
-            resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
-            user_id: user?.id || null,
-            expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
-            quote_pdf_path: quotePdfPath || null,
-            deposit_pdf_path: null,
-            deposit_status: 'pending',
-            deposit_amount: depositAmount,
-          } as any)
-          .select('id')
-          .single();
-        if (!sqError && savedQuote) {
-          savedQuoteId = savedQuote.id;
-          console.log('Saved quote created for deposit tracking:', savedQuoteId);
-        }
-      } catch (sqErr) {
-        console.warn('Could not create saved_quotes record:', sqErr);
+      // Store the customer document through the server-authorized private
+      // document boundary before creating a usable Stripe checkout.
+      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+      const quotePdf = await generatePDFBlob(basePdfData);
+      const { data: quoteDocument, error: quoteDocumentError } = await supabase.functions.invoke(
+        'quote-document-api',
+        {
+          body: quotePdf,
+          headers: {
+            'Content-Type': 'application/pdf',
+            'x-saved-quote-id': savedQuoteId,
+            'x-resume-token': resumeToken,
+          },
+        },
+      );
+      if (quoteDocumentError || quoteDocument?.success !== true) {
+        throw new Error('Could not securely store this quote. Please try again.');
       }
 
       // Build full quote snapshot for persistence
@@ -996,7 +996,6 @@ export default function QuoteSummaryPage() {
             model: motorName,
             hp: hp,
           },
-          quotePdfPath,
           savedQuoteId,
           quoteSnapshot,
         }
@@ -1283,7 +1282,7 @@ export default function QuoteSummaryPage() {
                     className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
-                      <Bookmark className="w-4 h-4" aria-hidden="true" />
+                      <Bookmark className="w-4 h-4" />
                       Save for Later
                     </span>
                   </button>

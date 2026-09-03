@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/gores-landing
-last_updated: 2026-09-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,7 +43,7 @@ Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the s
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Rice Lake Mercury Repower](https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트�
 description: "Mercury 115 FourStroke와 150 FourStroke의 실질적 차이를 비교합니다. 배기량, 무게, 연비, 적합 보트 크기까지, 한국어로 쉽게 설명합니다."
 category: "엔진 비교"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["Mercury 115 vs 150 비교","Mercury 선외기 선택","Mercury 마력 비교","Mercury 115 vs 150 Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,24 +25,24 @@ revenue_driver: repower
 
 **Category:** 엔진 비교  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison
 
 ## 빠른 답변
 
-**Mercury 115 HP는 평온한 내수면용 16-19피트 보트에, 150 HP는 가족·짐을 가득 싣고 거센 수면에서 운항하는 19-22피트 보트에 적합합니다. 애매하면 150을 선택하는 것이 안전합니다.**
+**Mercury 115 HP는 평온한 내수면용 16–19피트 보트에, 150 HP는 가족·짐을 가득 싣고 거센 수면에서 운항하는 19–22피트 보트에 적합합니다. 애매하면 150을 선택하는 것이 안전합니다.**
 
-- **115 HP**: 2.1L 4기통, 약 163kg, 16-19피트 알루미늄/폰툰, 2-3인 탑승
-- **150 HP**: 3.0L 4기통, 약 206kg, 19-22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
-- **무게 차이**: 약 43kg — 보트 트랜섬 무게 제한 반드시 확인
+- **115 HP**: 2.1L 4기통, 약 163kg, 16–19피트 알루미늄/폰툰, 2-3인 탑승
+- **150 HP**: 3.0L 4기통, 약 206kg, 19–22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
+- **무게 차이**: 약 43kg, 보트 트랜섬 무게 제한 반드시 확인
 - **가격**: [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 투명한 CAD 가격 확인 가능
 
 ---
 
 ### 핵심 요약
 
-Mercury 115 FourStroke는 16~19피트 알루미늄 보트와 폰툰에 적합합니다. 가족 레저, 낚시, 튜빙에 충분합니다. Mercury 150 FourStroke는 19~22피트의 더 큰 보트, 자주 만석으로 탑승하는 경우, 그리고 넓은 호수에서 바람과 파도를 상대해야 할 때 유리합니다. 경계선에 있다면 150이 더 보수적이고 안전한 선택입니다.
+Mercury 115 FourStroke는 16–19피트 알루미늄 보트와 폰툰에 적합합니다. 가족 레저, 낚시, 튜빙에 충분합니다. Mercury 150 FourStroke는 19–22피트의 더 큰 보트, 자주 만석으로 탑승하는 경우, 그리고 넓은 호수에서 바람과 파도를 상대해야 할 때 유리합니다. 경계선에 있다면 150이 더 보수적이고 안전한 선택입니다.
 
 ---
 
@@ -53,20 +53,17 @@ Mercury 115 FourStroke는 16~19피트 알루미늄 보트와 폰툰에 적합합
 | 배기량 | 2.1L | 3.0L |
 | 실린더 | 직렬 4기통 | 직렬 4기통 |
 | 무게 (20" 샤프트) | 약 163kg (359lbs) | 약 206kg (455lbs) |
-| RPM 범위 | 5,000, 6,000 | 5,000, 5,800 |
-| 적합 보트 길이 | 16, 19피트 | 19, 22피트 |
+| RPM 범위 | 5,000–6,000 | 5,000–5,800 |
+| 적합 보트 길이 | 16–19피트 | 19–22피트 |
 
 두 엔진 모두 직렬 4기통입니다. 차이는 실린더 수가 아니라 **배기량과 토크 여유**입니다. 150은 115보다 배기량이 약 43% 큽니다.
 
 ---
 
-### 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
 
 ---
-
-### 전체 기사
 
 HBW에서는 매년 약 65대의 새 Mercury 엔진을 판매합니다. 그중 가장 자주 듣는 질문은 **"115와 150 중 뭘 골라야 하나요?"**입니다.
 
@@ -125,11 +122,6 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 둘 다 가능한 경계선에 있다면, **150이 더 보수적이고 안전한 선택**입니다. 엔진 출력이 남는 것은 괜찮지만, 상시 고부하 운전은 엔진 수명에 불리합니다.
 
 ---
-
-## 내부 링크
-- 온타리오 보트 구매 가이드
-- Rice Lake 낚시 가이드
-- 온타리오 보트 면허 및 안전 규정
 
 **온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격 
 **전화:** 905-342-2153 

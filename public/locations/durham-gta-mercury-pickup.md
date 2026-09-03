@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup
-last_updated: 2026-09-03
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -45,7 +45,7 @@ Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, u
 - Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Whitby](https://www.mercuryrepower.ca/locations/whitby-mercury-dealer)
@@ -57,9 +57,9 @@ Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, u
 - [18-foot aluminum fishing boat: 60HP to 90HP FourStroke](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke.md)
 - [Bass boat refresh: older 150 to Mercury 150 Pro XS](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs.md)
 ## FAQs
-### Do you offer Durham delivery?
+### Can HBW pick up my boat in Durham Region?
 
-No. Pickup only at Gores Landing on Rice Lake.
+We can generally arrange boat pickup. Ask us about availability for your boat and location.
 
 ### Do you do mobile service in Durham?
 

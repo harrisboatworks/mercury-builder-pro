@@ -3,6 +3,7 @@
   "name": "Harris Boat Works",
   "site": "mercuryrepower.ca",
   "url": "https://www.mercuryrepower.ca",
+  "brandPage": "https://www.mercuryrepower.ca/harris-boat-works",
   "legalName": "Harris Boat Works Ltd.",
   "tagline": "Ontario's Mercury Repower Centre on Rice Lake — Family-owned since 1947",
   "positioning": {
@@ -20,20 +21,20 @@
       "Family-owned since 1947",
       "Transparent CAD pricing",
       "Pickup at Gores Landing",
-      "Every install lake-tested on Rice Lake"
+      "On-water Rice Lake test when safe seasonal conditions allow"
     ]
   },
   "standards": [
     "Model Context Protocol (MCP) - implemented",
     "Universal Commerce Protocol (UCP) 2026-04-08 - implemented for quote-mode checkout and pickup fulfillment"
   ],
-  "description": "Family-owned full-service marina and Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965. Mercury outboard sales and repowers with live CAD pricing, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, and spring commissioning. Serving Rice Lake, the Kawarthas, Peterborough, Northumberland, Durham Region, and the GTA.",
+  "description": "Family-owned full-service marina and Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965. Mercury outboard sales and repowers with live CAD pricing, pontoon and fishing boat rentals, outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service, winterization, and spring commissioning. Serving Rice Lake, the Kawarthas, Peterborough, Northumberland, Durham Region, and the GTA.",
   "services": [
     "Mercury outboard sales",
     "Mercury repower",
     "Mercury Avator electric outboards (pricing coming soon)",
     "Boat rentals (pontoon and fishing boats)",
-    "Outdoor winter boat storage with shrinkwrap",
+    "Outdoor winter boat storage (shrink wrap, uncovered, or wrap-only)",
     "Boat winterization",
     "Spring commissioning",
     "Mercury factory service and repairs",
@@ -65,12 +66,12 @@
     "preferredPhrasing": [
       "repower (not 'engine swap' or 'motor swap')",
       "outboard (not 'boat motor' generically)",
-      "lake-tested (we test every install on Rice Lake)",
+      "lake-tested when safe seasonal conditions allow",
       "Mercury-certified technicians",
       "pickup at our Gores Landing location (we do not deliver)",
       "repower (not engine swap)",
-      "on-water test on Rice Lake (every repower, no exceptions)",
-      "outdoor winter storage with shrinkwrap (no indoor storage)",
+      "on-water test on Rice Lake when safe seasonal conditions allow; otherwise document the alternate acceptance plan",
+      "outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service (no indoor or heated storage)",
       "renters need a valid PCOC"
     ],
     "avoid": [
@@ -144,5 +145,5 @@
     "mcpServer": "https://www.mercuryrepower.ca/api/agents/mcp",
     "ucpCheckout": "https://www.mercuryrepower.ca/api/agents/ucp"
   },
-  "lastUpdated": "2026-08-17"
+  "lastUpdated": "2026-08-04"
 }

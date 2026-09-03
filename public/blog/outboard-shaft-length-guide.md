@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
@@ -145,7 +145,7 @@ Three things we do on every repower that prevent wrong-shaft mistakes:
 
 **We know the hull patterns.** Three generations of rigging experience means we know that a typical 16 to 18 ft Lund console takes a 20-inch, a Princecraft pontoon runs 20 or 25 depending on model year, and a Crestliner Tournament series may need 25.
 
-**We sea-trial borderline cases.** If the transom height is between sizes, we install and run the boat before signing off. Wrong shaft gets caught and corrected before it leaves our lot.
+**We lake-test borderline cases.** If the transom height is between sizes, we install and run the boat before signing off. Wrong shaft gets caught and corrected before it leaves our lot.
 
 ## Ready to spec the right shaft?
 
@@ -187,7 +187,7 @@ Yes. A shaft that is too long adds lower-unit drag that costs top speed and fuel
 
 ### What if my transom height is between standard shaft lengths?
 
-Round down to the shorter shaft in most cases. Adjusting mounting height on a slightly-short shaft is simpler than living with the drag of an oversized one. Always verify with a sea-trial before rigging is finalized.
+Round down to the shorter shaft in most cases. Adjusting mounting height on a slightly-short shaft is simpler than living with the drag of an oversized one. Always verify with a lake-test before rigging is finalized.
 
 ### How do I know what shaft length my Mercury currently is?
 
@@ -207,7 +207,7 @@ Find the lowest point of the hull at the transom, where the water contacts the h
 
 ### What shaft length do I need for a 25 inch transom?
 
-A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we sea-trial borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca or call 905-342-2153.
+A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we lake-test borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca or call 905-342-2153.
 
 ## Related guides
 

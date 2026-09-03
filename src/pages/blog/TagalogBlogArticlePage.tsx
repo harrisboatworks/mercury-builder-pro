@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { Helmet } from '@/lib/helmet';
 import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { Calendar, Clock, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getTagalogArticleBySlug } from '@/data/tagalogBlogArticles';
@@ -312,7 +311,12 @@ export default function TagalogBlogArticlePage() {
       <LuxuryHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
-        <BlogBackLink to="/blog" label={'Bumalik sa Blog'} />
+        <nav className="mb-8">
+          <Link to="/blog" className="text-primary hover:underline text-sm flex items-center gap-1">
+            <ArrowLeft className="w-4 h-4" />
+            ← Bumalik sa Blog
+          </Link>
+        </nav>
 
         {article.image && (
           <BlogHeroPicture
@@ -343,7 +347,7 @@ export default function TagalogBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="May-ari, Harris Boat Works" />
+          <AuthorByline name="Jay Harris" title="May-ari, Harris Boat Works" byLabel="Ni" bioLabel="Tingnan ang bio" />
         </div>
 
         {tocItems.length > 2 && (

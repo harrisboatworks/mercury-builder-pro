@@ -31,12 +31,12 @@ revenue_driver: repower
 
 ## 简短答案
 
-**绝大多数 Mercury 船外机，在加拿大加最便宜的 87 号普通汽油就是对的。**
+**辛烷值达标就行，真正要选的是乙醇。**
 
-需要同时满足两个条件，而这两个条件互不相干：
+这两件事里，只有一件算得上「选择」：
 
-1. **辛烷值**达到你这台机器手册要求的最低值。多数现款 Mercury（包括 9.9 这类小马力）最低要求是 **87 AKI**，也就是加拿大加油站最便宜的那一档。
-2. **乙醇含量**不超过 **10%（E10）**。E15、E85 都超标，不能用。
+1. **辛烷值**达到手册要求的最低值就够了，之后不用再想它。多数现款 Mercury（包括 9.9 这类小马力）最低要求是 **87 AKI**，也就是加拿大最便宜的那一档。加更贵的没有意义。
+2. **乙醇**才是决定你燃油系统寿命的那一项。Mercury 允许最多 **10%（E10）**，但「允许」不等于「合适」。**对船用发动机来说，新鲜的无乙醇汽油才是更好的选择**，无乙醇的 marine gas 就是为此存在的。E15、E85 一律不能用。
 
 如果你的手册或机器标签上写着「91」，先别急着去加贵的。**那个 91 很可能是 RON 标号，不是加拿大泵上的 91。** 详见下一节，这是新移民船主最常多花冤枉钱的地方。
 
@@ -149,7 +149,40 @@ Premium 说的是辛烷值档位，无乙醇说的是掺混成分。这是两码
 
 如果两者冲突呢？**辛烷值优先。** 如果你的手册明确要求 89 或 91 AKI，而手边的无乙醇汽油达不到那个标号，就去加达标的 E10，不要为了「无乙醇」去降标号。辛烷值不够会敲缸，这是立刻伤发动机的事；E10 本身在 Mercury 的规格之内。
 
+不过绝大多数情况下这两者并不冲突，而**真正会出问题的是乙醇，不是辛烷值**。乙醇会吸水。一个便携油箱装着半箱油、两三周不动，这几乎是乙醇最不利的场景；我们店里见到的燃油故障，因相分离而起的远多于因辛烷值不够而起的。
+
+所以老实说，优先顺序是这样：
+
+1. **新鲜的、标号达标的无乙醇汽油。** 船用发动机能加到的最好的油。
+2. **在周转快的加油站买新鲜 E10，少量买、尽快用完。** 只要不放着，没问题。
+3. **在油箱里放了几周的油。** 不管什么标号，修理费多半从这里来。
+
+另外，**指望用高标号来躲乙醇，并不可靠。** 想避开乙醇，就去买标明无乙醇的油。
+
 ---
+
+## 无乙醇的 marine gas 为什么存在，而 91 号为什么不再是替代方案
+
+这一段是大多数加油建议不会讲的，但它能把整件事解释清楚。
+
+安省的 Cleaner Transportation Fuels 法规（O. Reg. 663/20）要求燃油供应商在投放安省市场的汽油中掺入可再生成分。这个比例一直在往上走：2020 年起 10%，**目前 11%**，2028 年 13%，2030 年 15%。
+
+但法规允许供应商从需要掺混的总量里**扣除**某些部分。第 9(3) 条列出了这些类别，其中两类跟船主直接相关：
+
+- 供应商合理预期是供**「marine vessels or marine equipment」（船舶或船用设备）**使用的汽油
+- **「antiknock index of 89 or greater」（抗爆指数 89 及以上）**的汽油
+
+这就是无乙醇 marine gas 能够在加油码头存在的法律依据，也是为什么以前想避开乙醇的人都去加高标号。
+
+注意那个「可以」。扣除是被允许的，不是被要求的。它只是让供应商没有必须往这些标号里掺乙醇的压力，并不代表他们会保持无乙醇。而随着掺混比例逐年提高，供应商是往更多产品里掺，不是更少。
+
+91 号的遭遇正是如此。安省的加油站以前会在 91 号泵上贴「无乙醇」标签，2022 年前后这些标签陆续被撕掉，Shell、Canadian Tire 等把 91 号改标为「最多含 10% 乙醇」，被问到时就指向这条法规。
+
+**2026 年的实际结论：**
+
+- **默认公路加油站的每一档都含乙醇。** 91、93 通常比 87、89 含得少，但「少」不等于「没有」，而且你在泵上无法核实。
+- **想要无乙醇，就买明确标示无乙醇的油。** 在安省，这基本上意味着去 marina 的加油码头。
+- **我们就是其中之一。** marina 营业季期间，HBW 在 Gores Landing 码头供应无乙醇 89 号，这就是上面那条扣除条款的实物形态。
 
 ## 泵上看不出来怎么办：与其猜，不如测
 
@@ -247,22 +280,19 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 ---
 
-## 内部链接
-
-- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
-- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
-- [安省驾船法规中文指南：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
-- 英文原文（含完整资料来源）：[Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario)
-
----
-
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定你那台 Mercury 该加什么油？**
 
 把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
-Harris Boat Works，家族经营始于 1947 年，1965 年起成为 Mercury 经销商，Mercury Marine Premier Dealer，位于 Rice Lake 南岸 Gores Landing。
+Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
+
+Harris Boat Works 的家族经营始于 1947 年。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 电话：905-342-2153
 
@@ -317,4 +347,3 @@ Harris Boat Works，家族经营始于 1947 年，1965 年起成为 Mercury 经�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

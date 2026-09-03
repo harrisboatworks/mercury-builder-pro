@@ -35,7 +35,11 @@ A boat trailer can look fine from ten feet away and still have a problem that en
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
-[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
+### Keep a five-minute trailer check in the tow vehicle
+
+Use this pre-departure card to check the hitch, safety connections, boat restraints, tires, hubs, lights and Ontario brake threshold before the trailer moves.
+
+[Download trailer check (PDF)](/downloads/five-minute-boat-trailer-check-hbw.pdf)
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 

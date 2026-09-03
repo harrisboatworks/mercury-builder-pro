@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-09-03
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
 description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online..."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-03
+date_modified: 2026-08-02
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-03  
+**Last reviewed:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
@@ -121,6 +121,8 @@ Every rental includes legally required safety gear, fitted life jackets, and a d
 ## Planning the Drive from the GTA
 
 Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic. Allow more time during GTA and summer-weekend traffic. Plan your route and arrival time before booking, then use the current rental listing to choose the boat, date, and capacity that fit your group.
+
+---
 
 ### A Sample GTA Day-Trip Itinerary
 

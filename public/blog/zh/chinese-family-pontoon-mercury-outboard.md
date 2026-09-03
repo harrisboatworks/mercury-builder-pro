@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard.md
-last_updated: 2026-09-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "华人家庭买 pontoon：Mercury 船外机怎么配才不后悔"
 description: "给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。"
 category: "家庭买船指南"
 date_published: 2026-05-10
-date_modified: 2026-09-02
+date_modified: 2026-08-19
 keywords: ["pontoon Mercury 中文","华人家庭 pontoon","安省 pontoon 船外机","Mercury Command Thrust 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 家庭买船指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-02  
+**最后审核:** 2026-08-19  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
 
@@ -43,9 +43,8 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 [在线获取报价](/quote)
 
-## 关于语言的说明
-
-关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意——Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
+> **关于语言的说明**
+> 我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意：Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
 
 ---
 
@@ -72,7 +71,7 @@ Pontoon对很多GTA华人家庭来说不是单纯的水上交通工具，而是�
 | 家庭巡航、常载4至8人 | 90, 115HP是常见研究起点 |
 | 载重大、想要更好起步 | Command Thrust配置值得优先考虑 |
 | 拖水上充气玩具（Tube等） | 不要动力不足，起步和中段推力很重要 |
-| 高级舒适体验、大Pontoon | Verado（特殊订购）或更高配置值得比较 |
+| 高级舒适体验、大Pontoon | Verado（特殊订购，仅限服务）或更高配置值得比较 |
 
 *以上为参考框架，最终须以Pontoon船厂标示的最大马力Rating为准。*
 
@@ -91,14 +90,14 @@ Command Thrust不是一个独立的产品线，而是Mercury在某些马力和�
 
 ---
 
-## FourStroke、Pro XS、Verado（特殊订购）：Pontoon上各自的角色
+## FourStroke、Pro XS、Verado（特殊订购，仅限服务）：Pontoon上各自的角色
 
 | 系列 | Pontoon上的定位 |
 |------|----------------|
 | FourStroke | 最通用，安静、省心，适合多数家庭Pontoon |
 | FourStroke + Command Thrust | 重载或大Pontoon的推荐组合 |
 | Pro XS | 如果想要更强起步和更运动化的反应感 |
-| Verado（特殊订购） | 高级Pontoon、追求静音和精致操控体验 |
+| Verado（特殊订购，仅限服务） | 高级Pontoon、追求静音和精致操控体验 |
 
 对大多数GTA华人家庭，**FourStroke加上Command Thrust配置**是最直接的起点, 可靠、安静、推力足够。
 
@@ -126,19 +125,11 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 
 ---
 
-## 内部连结
-
-- [6至8人租船指南：Pontoon还是钓鱼船更适合？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
-- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-- [换新发动机还是买新船？给安省华人船主的现实判断](/blog/zh/mercury-repower-guide-gta)
-
----
-
 > 相关指南：[多伦多华人买 pontoon 完整指南](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
 > 相关指南：[钓鱼船 vs Pontoon 中文对比](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。

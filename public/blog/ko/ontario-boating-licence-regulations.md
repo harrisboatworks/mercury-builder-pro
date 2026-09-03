@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations.md
-last_updated: 2026-04-12
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 �
 description: "PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다."
 category: "규정 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-19
 keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC 한국어","Ontario boating regulations Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 규정 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-19  
 **Read time:** 11 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 
@@ -36,7 +36,7 @@ revenue_driver: repower
 - **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
 - **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
-- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요 — HBW가 repower 시 함께 안내
+- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요, HBW가 repower 시 함께 안내
 
 ---
 
@@ -45,8 +45,6 @@ revenue_driver: repower
 캐나다 온타리오에서 동력 보트를 운항하려면 PCOC(여가용 선박 조종 자격증), 선박 면허(PCL), 완비된 안전 장비, 그리고 수상 교통 규칙 준수가 필요합니다. 낚시를 하려면 별도의 낚시 면허도 있어야 합니다. OPP(Ontario Provincial Police) 수상 순찰 적발 시 PCOC/PCL 위반 과태료는 $250부터 시작합니다. 규정의 공식 최신 버전은 반드시 Transport Canada 사이트에서 확인하세요.
 
 ---
-
-### 전체 기사
 
 GTA 한인 분들 중 보트를 산 뒤에야 캐나다 보트 규정이 예상보다 세세하다는 걸 아는 경우가 있습니다. OPP 수상 순찰에 적발되면 과태료가 부과됩니다. 이 가이드는 그 전에 알아야 할 것들을 한국어로 정리한 것입니다.
 
@@ -158,11 +156,6 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 | 미성년 조종 | 연령별 마력 제한 | 감독자 동승 시 제한 완화 |
 
 ---
-
-## 내부 링크
-- 온타리오 보트 구매 가이드
-- Rice Lake 낚시 가이드
-- Mercury 115 vs 150 비교
 
 **규정을 확인했다면, 이제 물 위로 나갈 준비가 됐습니다.**
 

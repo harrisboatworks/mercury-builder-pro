@@ -5,13 +5,24 @@
     <script>window.dataLayer = window.dataLayer || [];</script>
     <!-- GTM-PLACEHOLDER: GTM container snippet goes here once the GTM-XXXXXXX container ID is provided. Do not add GA4 gtag here. -->
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
+    <!-- Google Analytics 4 with Consent Mode v2.
+         The consent default MUST be pushed before gtag('config') so GA starts
+         in cookieless pings until the visitor answers the banner. The banner
+         (src/lib/analytics.ts) replays the stored choice via gtag('consent','update'). -->
     <script>
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
       gtag('js', new Date());
       gtag('config', 'G-0JNMHD89YJ');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />

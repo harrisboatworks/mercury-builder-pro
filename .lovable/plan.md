@@ -1,73 +1,85 @@
-# Pontoon HP sizing SVG: add the missing top tier
+# Audit findings — desktop tables + imperial units
 
-## 1. What the article says
+Article prose column is `max-w-[880px]` (`src/pages/BlogArticle.tsx:282`). At 1440px viewport that leaves ~560px of unused horizontal space; at 1280px, ~400px. That's the "wasted width" the lg-breakout on `MercuryCapacityLookup` reclaimed.
 
-**Alt text** (identical in `src/data/blogArticles.ts:24531` and the twin `public/blog/pontoon-hp-sizing-decision-tree-ontario.md:101`):
+---
 
-> Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 300–400+ HP (26+ ft).
+## PART A — Desktop wide-content overflow
 
-**Body tier list** (section "The Decision Tree: HP by Boat Length and Use Case", H3 headings + bold HP line):
+Headless check at 1440 and 1280: every rendered `<table>` measured 846px wide with `scrollWidth == clientWidth` (no active horizontal scroll inside the card). So none of the other tables silently overflow on desktop the way the capacity lookup did — but several are visually cramped inside the 880px prose column when a wider component would breathe better.
 
-| Body H3 | HP |
-|---|---|
-| 16-18 ft, 2 tubes, 4-6 passengers. Calm water cruise | Mercury 25-40 HP |
-| 18-20 ft, 2 tubes, 4-6 passengers. Mixed cruise and fishing | Mercury 40-60 HP |
-| 20-22 ft, 2 tubes, 6-8 passengers. Family cruise + tube pulling | Mercury 90-115 HP (Command Thrust recommended) |
-| 22-24 ft, 2 tubes, 8-10 passengers. All-around family boat | Mercury 115-150 HP |
-| 22-24 ft, 3 tubes (tritoon), 8-12 passengers. Watersports-capable | Mercury 200-250 HP |
-| 24-26 ft tritoon, 10-12 passengers. Watersports and cruise speed | Mercury 250-300 HP |
-| 26+ ft luxury tritoon. Performance-focused | Mercury 300-400+ HP |
+Ranked (real overflow risk first, then "wasted width" candidates):
 
-## 2. What the SVG actually contains
+| # | Component / file | Article slug(s) | Cols | 1440 / 1280 behaviour | Fix / effort |
+|---|---|---|---|---|---|
+| 1 | `src/components/blog/BlogTable.tsx` (markdown table renderer, `min-w-[640px] md:min-w-full`, wraps everything in `overflow-x-auto`) | 7-col: `mercury-main-and-trolling-motor`; 6-col: `year-end-boat-motor-buying-guide`, `mercury-controls-rigging-guide-ontario`, `mercury-extended-warranty-platinum-ontario`, `mercury-avator-range-rice-lake-cottage`; 5-col: `mercury-outboard-overheat-alarm-decoder`, `mercury-propeller-selection-guide`, `fourstroke-vs-pro-xs`, `best-mercury-outboard-rice-lake-fishing`, `boat-rentals-shared-access-booming-2026`, `2026-rice-lake-fishing-season-outlook`, `mercury-90-hp-fourstroke-review-ontario`, `mercury-250-hp-fourstroke-pro-xs-review-ontario`, `mercury-outboard-monthly-payment-ontario-2026`, `bilge-pump-troubleshooting-guide` | 3–7 | Fits 846px, no scroll. Cells with long text wrap heavily on 6/7-col tables — cramped but not overflowing. | **Medium.** Add an opt-in `wide` prop / detection (≥5 cols) that triggers an lg breakout wrapper mirroring `MercuryCapacityLookup` (`lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))]`). Keep mobile scroll-in-card. Highest payoff on the 7- and 6-col tables above. |
+| 2 | `src/components/blog/visuals/BlogComparison.tsx` (hbw-comparison directive) | No live usages in `blogArticles.ts` or `public/blog/*.md` today | variable | Would overflow whenever ≥5 columns because header cells and row labels are `whitespace-nowrap` and it lives inside 880px prose. | **Low.** No article uses it right now — leave as-is, but when re-enabled, apply the same lg-breakout pattern and drop the `whitespace-nowrap` at lg. |
+| 3 | `src/components/blog/MercuryPriceTable.tsx` | Blog directive; used where authors insert `::mercury-price-table` | 3 | Fits well inside 846px, no overflow observed. | **None.** Fine as-is. |
+| 4 | `src/components/blog/visuals/BlogCostBreakdown.tsx` | List of cards, not a table (uses `min-w-0` for text truncation only) | n/a | No overflow. | **None.** |
+| 5 | `src/components/blog/MultilingualHub.tsx` | Multilingual index page, not article body | n/a | `whitespace-nowrap` only on short chips. No overflow. | **None.** |
 
-`public/lovable-uploads/inline/pontoon-hp-sizing.svg`, 11,755 bytes, `viewBox="0 0 680 632"`, `width="100%"`, `role="img"` with `<title>` and `<desc>`.
+Nothing else in `src/components/blog/` matched `overflow-x-auto`, `min-w-`, `whitespace-nowrap`, or `<table>` in a way that affects article-body layout.
 
-Drawing method: a flat table. Header bar `#20384d` at y=160 h=38, then six 50px zebra rows (`#ffffff` / `#f1f2f3`) clipped to a rounded rect, column dividers at x=287 and x=467, hairline row rules. Three columns: length/use (left, x=88), Recommended HP (centred x=377, red `#c8102e`), Command Thrust (centred x=537). Fonts are a single system stack declared once in `<style>`; classes `.rb` 13px bold, `.rs` 11px, `.hp` 14.5px bold red, `.ct` 11.5px 600. Footer punchline at y=542 and a source line at y=576. Card rect is x=36 y=36 w=608 h=560.
+**Recommendation:** only #1 is worth acting on. A single change to `BlogTable.tsx` (opt-in wide mode) fixes the entire ranked list of 15 articles in one shot, without touching article markdown.
 
-Rows present today: 25 to 40, 40 to 60, 90 to 115, 115 to 150, **200 to 250 (22 to 24 ft tritoon)**, 250 to 300 (24 to 26 ft tritoon).
+---
 
-**Correction to the audit:** the 200-250 tritoon tier is already in the graphic (row at y=398-448). Only **one** tier is missing: **300 to 400+ HP, 26+ ft luxury tritoon**. The alt text promises it, the body has it, the SVG stops at 250-300.
+## PART B — Imperial-first fluid units
 
-Two further findings:
+Bucketed by article slug from `src/data/blogArticles.ts` (markdown twins in `public/blog/*.md` are regenerated from this source, so fixing the TS fixes both).
 
-- **Embedded raster:** yes, one `<image>` at x=520 y=50, 88x62, a base64 PNG (192x134, single colour `#20384d`). It is the genuine Harris Boat Works badge logo, not a fake, and it carries place-specific text baked into the pixels: "SINCE 1947", "HARRIS BOAT WORKS", "Rice Lake, ON". Nothing fabricated, but flagging it since the task asked.
-- **One em dash** in the graphic: `Worth it — 60 CT` (row 2, Command Thrust column). That violates the house rule.
+Ranked by count of imperial fluid mentions (`qt/quart/oz/fl oz/gallon/gal/GPH/mpg`). Only the ones that still present imperial-first or imperial-only for **oil / gear lube / fuel / coolant** capacities:
 
-No external refs, no webfonts, no other place-specific text beyond the logo and `mercuryrepower.ca` in the source line.
+| # | Slug | Hits | What's wrong | Fix / effort |
+|---|---|---|---|---|
+| 1 | `bilge-pump-troubleshooting-guide` | 15 | Pump ratings quoted GPH-only ("1,000 GPH", "600 GPH"). | Add L/h in parentheses (1 US gal = 3.785 L). **Low.** |
+| 2 | `mercury-outboard-oil-capacity-chart` | 12 | Already metric-first from prior fix. Remaining hits are the "(US qt)" parenthetical — correct. | **None — already done.** |
+| 3 | `mercury-outboard-fuel-efficiency-guide` | 8 | Fuel burn quoted GPH-first / gal-only ("6-7 gallons per hour", "1 gallon per 10 HP"). | Swap to L/h primary. **Low–medium** (touch ~8 strings). |
+| 4 | `mercury-9-9-vs-15-hp-tiller-ontario` | 7 | "25 to 50 gallons per season", "15 to 25 gallons", "6-gallon portable tank". Imperial-only. | Metric-first with US gal in parens. **Low.** |
+| 5 | `mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026` | 6 | "7 GPH", "8 GPH" in the cost calc block; also `3.785 L/gal` shown inline (partial metric). | Convert GPH → L/h primary; keep the multiplier. **Low.** |
+| 6 | `best-mercury-for-family-runabouts` | 5 | Fuel burn in GPH-only. | **Low.** |
+| 7 | `mercury-200-hp-fourstroke-pro-xs-review-ontario` | 4 | Mercury perf-test tables cite "US gal/h" (source unit). | Add "(≈X L/h)" once per row or in the table header. **Low.** |
+| 8 | `mercury-90-hp-fourstroke-review-ontario` | 3 | Same — Mercury perf tables cite "US gal/h" and "gallon". | **Low.** |
+| 9 | `mercury-150-hp-fourstroke-pro-xs-review-ontario` | 3 | Same. | **Low.** |
+| 10 | `mercury-9-9-efi-review-ontario` | 2 | "External 12L / 3.2 gal" — already metric-first ✓. Fine. | **None.** |
+| 11 | `mercury-vesselview-smartcraft-plain-english-guide` | 1 | "gallons per hour" in feature-list prose. | Trivial swap. **Low.** |
+| 12 | `ethanol-octane-mercury-outboard-fuel-guide-ontario` | 1 | "less energy per gallon". | Reword to "per litre". **Low.** |
+| 13 | `mercury-40-vs-60-hp-outboard-ontario` | 1 | "3.5-4 gallons per hour", "5-5.5 GPH". | L/h primary. **Low.** |
+| 14 | `mercury-smartcraft-connect-guide-ontario` | 1 | GPH in feature description. | **Low.** |
+| 15 | `mercury-115-hp-fourstroke-review-ontario` | 1 | "US gal/h" in Mercury perf table. | **Low.** |
+| 16 | `mercury-dts-vs-mechanical-controls-ontario-repower` | 1 | "fraction of a gallon at cruise". | Reword. **Low.** |
+| 17 | `boat-trim-explained-rice-lake-ontario` | 1 | "6-7 gallons per hour". | **Low.** |
+| 18 | `mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat` | 1 | Fuel burn "4-5 gallons per hour (15-19 L)" — already dual, just swap order. | **Trivial.** |
 
-## 3. Proposed edit (smallest that works)
+Total: **17 articles** need imperial → metric-first work on fluid volumes (the oil chart is already done).
 
-Add one row. Extend geometry by exactly 50px: `viewBox` 632 -> 682, background rect height 632 -> 682, card rect height 560 -> 610, clip rect height 338 -> 388, table border rect height 338 -> 388, column dividers y2 498 -> 548, and shift the punchline (y=542 -> 592) and source line (y=576 -> 626).
+Guidance for the fix pass (mirrors the oil-chart rules):
+- Fuel burn: L/h primary, US gal/h in parens. 1 US gal = 3.785 L.
+- Tank sizes: L primary, US gal in parens.
+- Pump flow: L/h primary, GPH in parens.
+- Where Mercury publishes both (perf-test tables), just add the L/h once in the table header rather than every cell.
 
-New row band, appended inside the `<g clip-path="url(#tbl)">` group after the last band:
+---
 
-```svg
-<rect x="72" y="498" width="536" height="50" fill="#ffffff"/>
-```
+## Extra flag list — imperial-first NON-fluid measurements (Part B item 5)
 
-New row content, inserted after the `24 to 26 ft` block (before the punchline text):
+Not fixing in this turn — just flagged, per your instruction. Top offenders:
 
-```svg
-<line x1="72" y1="498" x2="608" y2="498" stroke="#20384d" stroke-opacity="0.09" stroke-width="1"/>
-<text class="rb" x="88" y="520.0">26+ ft luxury tritoon</text>
-<text class="rs" x="88" y="536.0">Performance focused</text>
-<text class="hp" x="377" y="528.0" text-anchor="middle">300 to 400+ HP</text>
-<text class="ct" x="537" y="527.0" text-anchor="middle">Standard</text>
-```
+**Weight (lbs-only) — likely wants kg primary:**
+- `mercury-outboard-weight-chart` (31 hits — it's the whole point of the article)
+- `boat-motor-size-calculator-guide` (13)
+- `mercury-250-hp-fourstroke-pro-xs-review-ontario` (8), `-200-` (7), `-150-` (6)
+- Reviews and comparisons with dry-weight callouts: `mercury-9-9-vs-15`, `mercury-75-vs-90-vs-115`, `mercury-40-vs-60`, `mercury-115-hp-fourstroke-review`, `two-stroke-vs-four-stroke-repower`, `mercury-90-vs-115`, plus ~25 others at 1–4 hits each.
 
-Labels come straight from the body H3 "26+ ft luxury tritoon. Performance-focused" and its "Mercury 300-400+ HP" line. Same classes, same x positions, same 50px rhythm, no new fonts, no em dashes, no external refs.
+**Distance/length (ft / in / mi-only) — boat length and shaft length conventions are US-imperial industry-wide, so most are intentional:**
+- Highest counts on shaft-length and boat-sizing guides: `outboard-shaft-length-guide` (32), `center-console-mercury-motor-guide` (28), `2026-rice-lake-fishing-season-outlook` (24), `mercury-40-vs-60` (24), `best-mercury-outboard-rice-lake-fishing` (23), etc. Recommend leaving boat LOA and shaft length in inches/feet (industry standard), but adding cm/m where a Canadian audience would find it useful (transom heights especially).
 
-Two small text fixes in the same pass:
+**Temperature (°F-only):**
+- `late-season-boating-safety` (4 hits) — cold-water safety numbers, add °C.
+- `best-mercury-outboard-rice-lake-fishing` (2), `mercury-boat-battery-guide-ontario` (1).
 
-- `<desc>`: change "up to 250 to 300 HP on a 24 to 26 ft tritoon" to "up to 300 to 400+ HP on a 26+ ft luxury tritoon" so the accessible description matches the table and the alt text.
-- Replace `Worth it — 60 CT` with `Worth it, 60 CT` to clear the em dash.
+---
 
-Nothing else changes: no pricing, no body copy, no alt text, no `dateModified`.
+## No code changes made this turn
 
-## 4. Blast radius
-
-`grep` for `inline/pontoon-hp-sizing.svg` returns exactly two hits, both the same article: `src/data/blogArticles.ts:24531` and its generated twin `public/blog/pontoon-hp-sizing-decision-tree-ontario.md:101`. No other article embeds this graphic. The SVG also appears in `src/data/imageVariantsManifest.json` and image-budget tooling, so if a prebuild gate tracks byte size, the +~450 bytes should be re-checked (the file stays well under any sane budget).
-
-## 5. Open question
-
-Confirm the "Command Thrust" cell for the 26+ ft row should read "Standard" (matching the two tritoon rows above it, and consistent with the body's note that CT tops out at 115 HP). If you would rather it read "Not applicable", say so and I will use that instead.
+Approve this plan to move into a follow-up build turn where you can pick which of Part A #1 (BlogTable wide-mode) and which Part B slugs to actually convert. I'd suggest bundling: (a) BlogTable opt-in wide mode as one commit, (b) fluid units for the 17 slugs as a second commit, and (c) the non-fluid list as a separate future decision.

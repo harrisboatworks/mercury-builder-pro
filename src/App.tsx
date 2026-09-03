@@ -55,6 +55,7 @@ const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
 const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
+const QuoteConsultationDocumentPage = lazy(() => import("@/pages/quote/QuoteConsultationDocumentPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
@@ -120,6 +121,7 @@ const AvatorLanding = lazy(() => import("./pages/AvatorLanding"));
 const Mercury99KickerGuide = lazy(() => import("./pages/Mercury99KickerGuide"));
 const About = lazy(() => import("./pages/About"));
 const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
+const HarrisBoatWorks = lazy(() => import("./pages/HarrisBoatWorks"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
@@ -162,6 +164,7 @@ const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboa
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
+const LocaleHubLanding = lazy(() => import("./pages/LocaleHubLanding"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
@@ -278,6 +281,7 @@ function AnimatedRoutes() {
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />
+        <Route path="/quote/document" element={<QuoteConsultationDocumentPage />} />
         <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
         
         {/* User Account Routes */}
@@ -583,6 +587,7 @@ function AnimatedRoutes() {
         {/* About Page */}
         <Route path="/about" element={<About />} />
         <Route path="/about/jay-harris" element={<AboutJayHarris />} />
+        <Route path="/harris-boat-works" element={<HarrisBoatWorks />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
@@ -597,6 +602,11 @@ function AnimatedRoutes() {
         {/* Multilingual Landing Pages */}
         <Route path="/fr" element={<FrenchLanding />} />
         <Route path="/zh" element={<MandarinLanding />} />
+        <Route path="/ko" element={<LocaleHubLanding />} />
+        <Route path="/es" element={<LocaleHubLanding />} />
+        <Route path="/pa" element={<LocaleHubLanding />} />
+        <Route path="/ur" element={<LocaleHubLanding />} />
+        <Route path="/tl" element={<LocaleHubLanding />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />

@@ -26,6 +26,14 @@ import {
   buildPublicQuoteFinancing,
   PUBLIC_QUOTE_FINANCING_POLICY_VERSION,
 } from "../_shared/public-quote-financing.ts";
+import {
+  applyMotorPresentationOverrides,
+  motorSlug,
+} from "../_shared/motor-slug.ts";
+import {
+  PUBLIC_SITE_URL,
+  toPublicImageUrl,
+} from "../_shared/public-motor-contract.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -43,7 +51,7 @@ const corsHeaders = {
 };
 
 const SITE = "mercuryrepower.ca";
-const SITE_URL = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+const SITE_URL = PUBLIC_SITE_URL;
 const HST_RATE = 0.13;
 const DISCLAIMER =
   "Estimate only. Final out-the-door price, install scheduling, and trade-in require confirmation by Harris Boat Works. CAD only. No Verado. Pickup at Gores Landing, ON.";
@@ -131,7 +139,7 @@ Deno.serve(async (req) => {
           error: err.message,
           code: err.code,
           notes: [
-            "Please retry, or refer the customer to https://mercuryrepower.ca/trade-in-value",
+            `Please retry, or refer the customer to ${SITE_URL}/trade-in-value`,
           ],
         },
         err.status,
@@ -178,11 +186,6 @@ function resolveSellingPrice(motor: any): number | null {
   ];
   for (const v of candidates) if (Number.isFinite(v) && v > 0) return v;
   return null;
-}
-
-function slugify(modelKey?: string | null) {
-  if (!modelKey) return "";
-  return modelKey.toLowerCase().replace(/_/g, "-");
 }
 
 function round2(n: number) {
@@ -233,6 +236,9 @@ function quoteUrl(motorId: string, opts: Record<string, string | number | undefi
 async function listMotors(supabase: any, body: any) {
   const limit = Math.min(Number(body?.limit) || 50, 200);
   const search = String(body?.search || "").trim();
+  const hpSearch = search ? Number.parseFloat(search) : Number.NaN;
+  const textSearch =
+    search && Number.isNaN(hpSearch) ? search.toLowerCase() : "";
   const family = String(body?.family || "").trim();
   const minHp = Number(body?.min_hp) || 0;
   const maxHp = Number(body?.max_hp) || 9999;
@@ -240,18 +246,16 @@ async function listMotors(supabase: any, body: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
+      "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
     )
     .eq("is_brochure", true)
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    .limit(limit);
+    .limit(textSearch ? 500 : limit);
 
   if (search) {
-    const hpNum = parseFloat(search);
-    if (!isNaN(hpNum)) q = q.eq("horsepower", hpNum);
-    else q = q.ilike("model_display", `%${search}%`);
+    if (!Number.isNaN(hpSearch)) q = q.eq("horsepower", hpSearch);
   }
   if (family) q = q.ilike("family", `%${family}%`);
 
@@ -259,10 +263,18 @@ async function listMotors(supabase: any, body: any) {
   if (error) throw new Error(`list_motors failed: ${error.message}`);
 
   const motors = (data || [])
+    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
     .filter((m: any) => !isVerado(m.family, m.model_display))
+    .filter((m: any) =>
+      !textSearch ||
+      `${m.model_display || m.model || ""} ${m.model_number || ""}`
+        .toLowerCase()
+        .includes(textSearch)
+    )
+    .slice(0, limit)
     .map((m: any) => {
       const price = resolveSellingPrice(m);
-      const slug = slugify(m.model_key);
+      const slug = motorSlug(m);
       return {
         id: m.id,
         slug,
@@ -273,7 +285,7 @@ async function listMotors(supabase: any, body: any) {
         sellingPrice: price,
         msrp: Number(m.msrp) || null,
         availability: m.in_stock ? "In Stock" : "Available to Order",
-        imageUrl: m.hero_image_url || m.image_url || null,
+        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
         url: slug ? `${SITE_URL}/motors/${slug}` : null,
         quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
       };
@@ -349,7 +361,7 @@ async function estimateTradeIn(_supabase: any, body: any) {
     source: "HBW Motor Valuation API (canonical)",
     notes: [
       "Trade-in estimate from HBW canonical valuation engine. Final value requires in-person inspection at Gores Landing, ON.",
-      "Customer can get a detailed report at https://mercuryrepower.ca/trade-in-value",
+      `Customer can get a detailed report at ${SITE_URL}/trade-in-value`,
     ],
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
@@ -367,7 +379,7 @@ async function buildQuote(supabase: any, body: any) {
     return json(
       {
         error:
-          "Required: motor_id, OR (horsepower + family). Optional: shaft, controls, trade_in, contact, customer_has_propeller",
+          "Required: motor_id, OR (horsepower + family). Optional: trade_in, contact, customer_has_propeller",
       },
       400,
     );
@@ -379,7 +391,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("id", motorId)
       .maybeSingle();
@@ -389,7 +401,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("is_brochure", true)
       .eq("horsepower", hp)
@@ -402,6 +414,7 @@ async function buildQuote(supabase: any, body: any) {
   }
 
   if (!motor) return json({ error: "Motor not found" }, 404);
+  motor = applyMotorPresentationOverrides(motor);
   if (isVerado(motor.family, motor.model_display)) {
     return json(
       {
@@ -525,7 +538,7 @@ async function buildQuote(supabase: any, body: any) {
   });
 
   // Deep-link prefilled URL for the customer
-  const slug = slugify(motor.model_key);
+  const slug = motorSlug(motor);
   const deepLink = quoteUrl(motor.id, {
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
@@ -590,7 +603,7 @@ async function buildQuote(supabase: any, body: any) {
       family: motor.family,
       horsepower: motorHp,
       url: slug ? `${SITE_URL}/motors/${slug}` : null,
-      imageUrl: motor.hero_image_url || motor.image_url || null,
+      imageUrl: toPublicImageUrl(motor.hero_image_url || motor.image_url),
     },
     purchase_path: purchasePath,
     line_items: items,

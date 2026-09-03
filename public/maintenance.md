@@ -1,11 +1,10 @@
 ---
 canonical: https://www.mercuryrepower.ca/maintenance
-last_updated: 2026-07-26
+last_updated: 2026-08-26
 content_type: service_index
 language: en-CA
 currency: CAD
-service_dropoff_only: true
-customer_transport_required: true
+boat_pickup_available: generally
 delivery_offered: false
 mobile_service: false
 indoor_storage: false
@@ -23,9 +22,9 @@ Harris Boat Works provides shop-based Mercury outboard and MerCruiser engine ser
 ## Direct answer
 
 - **Where work happens:** At the Harris Boat Works shop in Gores Landing.
-- **Service model:** Customers bring the boat or motor to Gores Landing and retrieve it after service. Harris Boat Works does not pick up, transport, ship, or deliver boats or motors, and does not offer mobile, dockside, driveway, or marina service.
+- **Service model:** We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works does not deliver boats, ship motors, or offer mobile, dockside, driveway, or marina service.
 - **Engine repair brands:** Mercury and MerCruiser.
-- **Storage:** Outdoor storage with shrinkwrap only. No heated or unheated indoor storage.
+- **Storage:** Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. No indoor or heated boat storage.
 - **How to start:** Submit the symptoms, engine serial number if available, boat details, and requested timing at [hbw.wiki/service](https://hbw.wiki/service).
 - **Seasonal closure:** No physical service work is performed from December 1 until the marina reopens in early April. Quotes and planning can continue during the closure.
 
@@ -40,7 +39,7 @@ There is no responsible universal lifespan estimate for a Mercury outboard. Engi
 Harris Boat Works does not publish one generic service price because engine size, access, boat configuration, required parts, condition, and the work actually authorized change the total.
 
 - [Mercury 100-hour service cost in Ontario](https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md) uses 4,160 completed Harris Boat Works work orders to show evidence-based planning medians and the factors that change a real invoice.
-- [Winterization and outdoor storage rate card](https://www.harrisboatworks.ca/winter-storage) is the current published Harris Boat Works price source for those services. The page is the 2025 rate card while the 2026 revision is being reviewed, so confirm the current total before booking.
+- [Winterization and outdoor storage rate card](https://www.harrisboatworks.ca/winter-storage) is the current published Harris Boat Works price source for those services, effective September 2026. Confirm the current total before authorizing work.
 - [Boat winterization cost in Ontario](https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md) explains the scope and cost drivers without inventing a universal package price.
 
 All amounts on mercuryrepower.ca are in Canadian dollars unless a page explicitly says otherwise. Confirm the current scope, parts, tax, timing, and total with Harris Boat Works before authorizing work.
@@ -67,10 +66,10 @@ All amounts on mercuryrepower.ca are in Canadian dollars unless a page explicitl
 
 ## Service boundaries
 
-- A customer must bring the motor or boat to Gores Landing. Do not promise mobile, dockside, driveway, or marina service.
-- Harris Boat Works does not offer boat or motor transport and does not deliver boats.
+- We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Do not promise delivery, motor shipping, or mobile, dockside, driveway, or marina service.
+- Harris Boat Works does not deliver boats, ship motors, recommend transport providers, or quote third-party transport.
 - Engine repairs are limited to Mercury and MerCruiser. Ask whether HBW can accept winterization-only work on another brand before bringing it.
-- Storage is outdoors with professional shrinkwrap. Do not describe it as indoor, heated, or unheated indoor storage.
+- Storage is outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. Do not describe it as indoor or heated boat storage.
 - A troubleshooting guide is educational information, not a remote diagnosis. Stop operating an engine when an alarm, loss of cooling water, overheating, abnormal noise, fuel leak, or other unsafe condition is present.
 - Availability, parts, scope, completion timing, and final price require shop confirmation.
 

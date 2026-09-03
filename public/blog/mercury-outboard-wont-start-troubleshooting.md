@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-09-03
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-09-03
+date_modified: 2026-08-02
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-03  
+**Last reviewed:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
@@ -45,7 +45,11 @@ The original article analysis counted **537 Lightspeed job records** labelled fo
 
 The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
 
-[Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
+### Keep the Alarm & No-Start Action Card aboard
+
+There is no universal Mercury beep dictionary. Use this one-page card to capture the exact warning and display message, work through safe first checks and record what the shop needs.
+
+[Download action card (PDF)](/downloads/mercury-alarm-no-start-action-card-hbw.pdf)
 
 ## The three "stupid easy" things to check first
 
@@ -209,7 +213,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 - **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
 - **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
-- **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail (see the winter-sitting checklist above). Nothing has to "break" for a no-start.
+- **"It ran perfect last fall."** We believe you. [Eight months of sitting is exactly how batteries, fuel, and plugs fail](/blog/mercury-outboard-wont-start-troubleshooting). Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?

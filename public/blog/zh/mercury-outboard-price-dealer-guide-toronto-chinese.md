@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-08-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人买 Mercury 船外机：为什么不要只问“最低价
 description: "多伦多华人买 Mercury 船外机前，别只问最低价。要看清安装、舾装、螺旋桨、保修、湖测、售后服务、经销商信誉和落地报价。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-17
 keywords: ["Mercury 报价","最低价 outboard","GTA 华人买 Mercury","Mercury Premier dealer","Harris Boat Works","outboard quote breakdown"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-08-17  
 **Read time:** 13 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese
 
@@ -90,7 +90,7 @@ Mercury 船外机不是一次性交易。买完以后，你还有磨合、保养
 
 ## 下一步
 
-想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 https://hbw.wiki/service。
+想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbw.wiki/service](https://hbw.wiki/service)。
 
 ## 常见问题
 
@@ -116,7 +116,7 @@ HBW Mercury 页面说明换装发动机价格包括拆除与安装、新 Mercury
 
 ### HBW 的报价下一步在哪里？
 
-Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 https://hbw.wiki/service。
+Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbw.wiki/service](https://hbw.wiki/service)。
 
 > 相关指南：[安省华人养船成本中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 

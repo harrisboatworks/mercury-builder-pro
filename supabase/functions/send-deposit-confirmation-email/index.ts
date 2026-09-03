@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -22,7 +23,6 @@ interface DepositConfirmationRequest {
   motorInfo?: { model?: string; hp?: number; year?: number };
   sendAdminNotification?: boolean;
   adminOnly?: boolean;
-  quotePdfPath?: string;
   pricingData?: any;
   quoteUrl?: string;
 }
@@ -58,36 +58,12 @@ function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number 
   return motorInfo.model;
 }
 
-function toBase64(bytes: Uint8Array): string {
-  let binary = "";
-  const chunkSize = 8192;
-  for (let i = 0; i < bytes.length; i += chunkSize) {
-    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
-  }
-  return btoa(binary);
-}
-
-async function downloadQuotePdf(path: string): Promise<Uint8Array | null> {
-  try {
-    const { data, error } = await supabase.storage.from("quotes").download(path);
-    if (error || !data) {
-      logStep("WARNING: Could not download PDF", { error: error?.message });
-      return null;
-    }
-    return new Uint8Array(await data.arrayBuffer());
-  } catch (err: any) {
-    logStep("WARNING: Exception downloading PDF", { error: err.message });
-    return null;
-  }
-}
-
 function createDepositConfirmationEmail(
   customerName: string,
   depositAmount: string,
   referenceNumber: string,
   motorLabel: string,
   paymentId: string,
-  hasPdf: boolean,
   quoteUrl?: string,
 ): string {
   const dateStr = new Date().toLocaleDateString("en-CA", {
@@ -104,9 +80,6 @@ function createDepositConfirmationEmail(
   rows.push({ label: "Date", value: esc(dateStr) });
 
   const motorPhrase = motorLabel ? ` for your ${esc(motorLabel)}` : "";
-  const pdfNote = hasPdf
-    ? `<p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">A copy of your quote is attached to this email.</p>`
-    : "";
   const reservationPolicy = Number(depositAmount) === 100
     ? `<div style="margin:18px 0 0 0;padding:14px 16px;border:1px solid #d7dee8;background:#f7f4ee;border-radius:6px;color:#1f2430;font-size:14px;line-height:1.55;"><strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.</div>`
     : "";
@@ -122,7 +95,7 @@ function createDepositConfirmationEmail(
       <li style="margin:0 0 8px 0;">After those details are confirmed, we arrange the next step with you.</li>
       <li style="margin:0 0 8px 0;">Pickup is at our shop in Gores Landing. Please come in person and bring valid government-issued photo ID.</li>
     </ol>
-    ${pdfNote}
+    <p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">Sign in to My Quotes to download your reservation document. This email does not attach a quote PDF.</p>
     <p style="margin:22px 0 0 0;">Questions? Reply to this email or call us at <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
     <p style="margin:16px 0 0 0;">Thanks for choosing Harris Boat Works.</p>
   `;
@@ -193,7 +166,7 @@ serve(async (req) => {
     const requestBody: DepositConfirmationRequest = await req.json();
     let {
       customerEmail, customerName, customerPhone, depositAmount,
-      paymentId, motorInfo, sendAdminNotification, adminOnly, quotePdfPath, quoteUrl,
+      paymentId, motorInfo, sendAdminNotification, adminOnly, quoteUrl,
     } = requestBody;
 
     if (requestBody.stripeSessionId) {
@@ -223,16 +196,18 @@ serve(async (req) => {
       motorInfo = quoteData.motor_info && typeof quoteData.motor_info === "object"
         ? quoteData.motor_info as DepositConfirmationRequest["motorInfo"]
         : undefined;
-      quotePdfPath = typeof quoteData.quote_pdf_path === "string"
-        ? quoteData.quote_pdf_path
-        : undefined;
       quoteUrl = undefined;
       sendAdminNotification = true;
       adminOnly = !customerEmail;
     } else {
       // The only legacy call is an internal, admin-only full-quote alert. It
       // may not send customer mail or read a caller-supplied storage path.
-      if (!adminOnly || !sendAdminNotification || quotePdfPath) {
+      if (
+        !adminOnly
+        || !sendAdminNotification
+        || "quotePdfPath" in requestBody
+        || "quote_pdf_path" in requestBody
+      ) {
         throw new Error("A bound Stripe session is required");
       }
     }
@@ -246,25 +221,14 @@ serve(async (req) => {
     const referenceNumber = generateReferenceNumber(paymentId);
     const motorLabel = getMotorLabel(motorInfo);
 
-    let finalPdf: { content: string; filename: string } | null = null;
-    if (quotePdfPath) {
-      const pdfBytes = await downloadQuotePdf(quotePdfPath);
-      if (pdfBytes) {
-        finalPdf = { content: toBase64(pdfBytes), filename: `Quote-${referenceNumber}.pdf` };
-      }
-    }
-
     if (!adminOnly && customerEmail) {
       const emailHtml = createDepositConfirmationEmail(
         customerName, depositAmount, referenceNumber, motorLabel,
-        paymentId || "", !!finalPdf, quoteUrl,
+        paymentId || "", quoteUrl,
       );
       const customerSubject = motorLabel
         ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
         : `Reservation deposit received | Harris Boat Works`;
-
-      const attachments: Array<{ filename: string; content: string }> = [];
-      if (finalPdf) attachments.push(finalPdf);
 
       const emailResponse = await resend.emails.send({
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
@@ -272,13 +236,12 @@ serve(async (req) => {
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
-        bcc: ["info@harrisboatworks.ca"],
-        ...(attachments.length > 0 ? { attachments } : {}),
+        bcc: ["info@harrisboatworks.ca", GROK_BOT_AGENTMAIL],
       });
       if (emailResponse.error) {
         throw new Error(`Customer confirmation email failed: ${emailResponse.error.message}`);
       }
-      logStep("Customer email sent", { id: emailResponse?.data?.id, attachments: attachments.length });
+      logStep("Customer email sent", { id: emailResponse?.data?.id });
     }
 
     if (sendAdminNotification || adminOnly) {
@@ -286,17 +249,14 @@ serve(async (req) => {
         customerName, customerEmail || "", customerPhone || "",
         depositAmount, referenceNumber, paymentId || "", motorInfo,
       );
-      const attachments: Array<{ filename: string; content: string }> = [];
-      if (finalPdf) attachments.push(finalPdf);
-
       const adminSubject = `[DEPOSIT] ${customerName} - ${motorLabel || "motor"} - $${depositAmount}`;
 
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: ADMIN_EMAILS,
+        bcc: [GROK_BOT_AGENTMAIL],
         subject: adminSubject,
         html: adminHtml,
-        ...(attachments.length > 0 ? { attachments } : {}),
       });
       if (adminResponse.error) {
         throw new Error(`Admin deposit email failed: ${adminResponse.error.message}`);

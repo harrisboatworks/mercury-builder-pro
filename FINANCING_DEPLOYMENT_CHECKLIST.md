@@ -216,8 +216,6 @@ SELECT * FROM lint_security();
 #### Build Production Bundle
 ```bash
 npm run build
-# or
-bun run build
 ```
 
 - [ ] Build completes without errors

@@ -21,6 +21,7 @@ const warn = (condition, message) => {
 
 const read = (path) => readFileSync(path, 'utf8');
 const proXsSeo = read('src/components/seo/MercuryProXSSEO.tsx');
+const proXsOffers = read('src/data/mercuryProXSOffers.js');
 const proXsPage = read('src/pages/landing/MercuryProXS.tsx');
 const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
@@ -35,6 +36,9 @@ const caseStudyGenerator = read('scripts/generate-markdown-twins.mjs');
 const boostChecker = read('src/components/tools/BoostEligibilityChecker.tsx');
 const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
+const luxuryHeader = read('src/components/ui/luxury-header.tsx');
+const spanishArticlePage = read('src/pages/blog/SpanishBlogArticlePage.tsx');
+const spanishBlogArticles = read('src/data/spanishBlogArticles.ts');
 const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
 const appSource = read('src/App.tsx');
@@ -42,6 +46,10 @@ const canonicalComponent = read('src/components/seo/Canonical.tsx');
 const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
 const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
+const publicBlogIndex = JSON.parse(read('public/blog-index.json'));
+const publicCatalog = read('public/catalog.md');
+const blogI18nRegistry = read('src/data/blogI18nRegistry.js');
+const repowerCostMarkdown = read('public/blog/mercury-repower-cost-ontario-2026-cad.md');
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
 const blogClusters = read('src/data/blogClusters.ts');
@@ -49,6 +57,8 @@ const parsedVercelConfig = JSON.parse(vercelConfig);
 const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
 const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
 const mandarinServiceSurface = `${mandarinServiceGuide}\n${mandarinServiceTwin}`;
+const mandarinHorsepowerTwin = read('public/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese.md');
+const maintenanceTwin = read('public/blog/mercury-maintenance-intervals-20-100-300-rule.md');
 const warrantyCopySource = read('scripts/lib/warranty-copy.mjs');
 const faqDataSource = read('src/data/faqData.ts');
 const warrantySources = [
@@ -118,6 +128,30 @@ check(
     /\| 操作员卡 \/ 钓鱼证 \| 不适用 \| 不销售；请到 ontario\.ca 办理 \|/.test(mandarinServiceSurface),
   'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
 );
+check(
+  !/https:\/\/hbw\.wiki\/service。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
+    /\[hbw\.wiki\/service\]\(https:\/\/hbw\.wiki\/service\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
+  'Mandarin service links must keep Chinese punctuation outside the explicit hbw.wiki/service anchor.',
+);
+check(
+  !maintenanceTwin.includes('\n## Sources\n') &&
+    maintenanceTwin.includes('Mercury Marine Canada, Limited Warranty'),
+  'The maintenance twin must retain citations without exposing a customer-facing Sources heading.',
+);
+check(
+  !luxuryHeader.includes('Award-Winning Service Team') &&
+    luxuryHeader.includes('Family-owned since 1947 • Mercury dealer since 1965 • Mercury Premier Dealer'),
+  'The shared utility header must use the verified 1947/1965/Premier heritage anchor.',
+);
+check(
+  /TableOfContents/.test(spanishArticlePage) && /tocItems\.length > 2/.test(spanishArticlePage) &&
+    /## Una nota sobre el idioma/.test(spanishBlogArticles),
+  'Spanish articles must render a table of contents that includes the language note heading.',
+);
+check(
+  prerenderScript.includes('^::bilingual-trust(?:-card)?'),
+  'Static prerendering must expand both canonical and legacy bilingual trust directives.',
+);
 
 check(
   !/Legend[^.\n]{0,100}(?:built in Whitefish|Canadian-built|built in Canada|Ontario-built|made in Canada|manufactured in Whitefish|manufactured in Canada)/i.test(blogArticles),
@@ -146,6 +180,123 @@ const sourceArticleSection = (slug) => {
   const end = boundaries.length ? start + 1 + Math.min(...boundaries) : blogArticles.length;
   return blogArticles.slice(start, end);
 };
+
+const contextualOfficialVideoEmbeds = [
+  {
+    slug: 'diy-mercury-outboard-winterization-guide',
+    id: 'YGuQjF6vuao',
+    title: 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)',
+  },
+  {
+    slug: 'mercury-smartcraft-connect-guide-ontario',
+    id: 'lEa_MVfOs7M',
+    title: 'SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)',
+  },
+];
+
+for (const { slug, id, title } of contextualOfficialVideoEmbeds) {
+  const source = sourceArticleSection(slug);
+  const twin = read(`public/blog/${slug}.md`);
+  const directive = `:::youtube-embed\nid: ${id}\ntitle: ${title}\n:::`;
+  const twinLink = `[${title}](https://www.youtube.com/watch?v=${id})`;
+  const count = (surface) => surface.split(id).length - 1;
+
+  check(source.includes(directive), `${slug} must keep video ${id} as a contextual body directive.`);
+  check(count(source) === 1, `${slug} must reference video ${id} exactly once in source.`);
+  check(!/youtubeVideoId\s*:/.test(source), `${slug} must not add a duplicate top-of-article video.`);
+  check(!source.includes(`https://www.youtube.com/watch?v=${id}`), `${slug} source must not retain a duplicate raw video URL.`);
+  check(twin.includes(`${twinLink}\n\n`), `${slug} Markdown twin must preserve video ${id} as a standalone usable link.`);
+  check(count(twin) === 1, `${slug} Markdown twin must reference video ${id} exactly once.`);
+}
+
+const smartCraftConnectSource = sourceArticleSection('mercury-smartcraft-connect-guide-ontario');
+check(
+  !/8M0173129\s*(?:\(|is\s+)?multi-engine/i.test(smartCraftConnectSource) &&
+    /8M0173129[^\n]{0,100}under-helm[^\n]{0,100}(?:one|1)[ -]to[ -](?:four|4) engines/i.test(smartCraftConnectSource),
+  'SmartCraft Connect must describe 8M0173129 as the under-helm one-to-four-engine module, not a multi-engine-only kit.',
+);
+
+const repowerCostSlug = 'mercury-repower-cost-ontario-2026-cad';
+const repowerCostFrenchSlug = 'prix-remotorisation-mercury-ontario';
+const repowerCostHtmlPath = `/blog/${repowerCostSlug}`;
+const repowerCostFrenchHtmlPath = `/blog/fr/${repowerCostFrenchSlug}`;
+const repowerCostHtmlUrl = `https://www.mercuryrepower.ca${repowerCostHtmlPath}`;
+const repowerCostFrenchHtmlUrl = `https://www.mercuryrepower.ca${repowerCostFrenchHtmlPath}`;
+const repowerCostMarkdownUrl = `${repowerCostHtmlUrl}.md`;
+const repowerCostTitle = "Mercury Repower Guide: Cost, Timeline & When It's Worth It";
+const repowerCostArticle = sourceArticleSection(repowerCostSlug);
+const repowerCostIndexEntries = publicBlogIndex.articles.filter(
+  (article) => article.slug === repowerCostSlug,
+);
+const sitemapEntries = publicSitemap.match(/<url>[\s\S]*?<\/url>/g) ?? [];
+const repowerCostSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostHtmlUrl}</loc>`),
+);
+const repowerCostFrenchSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostFrenchHtmlUrl}</loc>`),
+);
+const repowerCostRegistryEntry = `{ en: '${repowerCostSlug}', fr: '${repowerCostFrenchSlug}' }`;
+const repowerCostGeneratorPipeline = caseStudyGenerator.match(
+  /const blogTwinSummaries = \[\];[\s\S]*?\n}\n\nfor \(const group of localizedBlogGroups\)/,
+)?.[0] ?? '';
+const blogTableFallbacks = prerenderScript.match(
+  /const BLOG_TABLE_FALLBACKS = \{[\s\S]*?\n};/,
+)?.[0] ?? '';
+
+check(
+  repowerCostArticle.length > 5_000 &&
+    repowerCostArticle.includes(`title: "${repowerCostTitle}"`) &&
+    /There is no dependable one-price-fits-all installed range/.test(repowerCostArticle),
+  'The canonical Mercury repower-cost article source is missing or unexpectedly empty.',
+);
+check(
+  repowerCostMarkdown.length > 5_000 &&
+    repowerCostMarkdown.includes(`# ${repowerCostTitle}`) &&
+    repowerCostMarkdown.includes(`canonical: ${repowerCostMarkdownUrl}`) &&
+    repowerCostMarkdown.includes(`**Canonical (HTML for humans):** ${repowerCostHtmlUrl}`),
+  'The generated Mercury repower-cost Markdown twin is missing, empty, or points at the wrong canonical.',
+);
+check(
+  repowerCostIndexEntries.length === 1 &&
+    repowerCostIndexEntries[0].title === repowerCostTitle &&
+    repowerCostIndexEntries[0].description?.length > 80,
+  'blog-index.json must contain one complete Mercury repower-cost entry.',
+);
+check(
+  publicCatalog.split(repowerCostMarkdownUrl).length - 1 === 1,
+  'catalog.md must contain one Mercury repower-cost Markdown-twin URL.',
+);
+check(
+  blogI18nRegistry.split(repowerCostRegistryEntry).length - 1 === 1,
+  'The blog hreflang registry must pair the Mercury repower-cost route with its French translation exactly once.',
+);
+check(
+  repowerCostSitemapEntries.length === 1 &&
+    repowerCostFrenchSitemapEntries.length === 1 &&
+    [repowerCostSitemapEntries[0], repowerCostFrenchSitemapEntries[0]].every((entry) =>
+      entry.includes(`hreflang="en-CA" href="${repowerCostHtmlUrl}"`) &&
+      entry.includes(`hreflang="fr-CA" href="${repowerCostFrenchHtmlUrl}"`) &&
+      entry.includes(`hreflang="x-default" href="${repowerCostHtmlUrl}"`)
+    ),
+  'sitemap.xml must contain one reciprocal English/French hreflang pair for the Mercury repower-cost route.',
+);
+check(
+  /function loadBlogArticles\(\)[\s\S]{0,800}getSitemapEligibleArticles/.test(caseStudyGenerator) &&
+    /for \(const article of blogArticlesAll\)/.test(repowerCostGeneratorPipeline) &&
+    /const path = `\/blog\/\$\{article\.slug\}\.md`/.test(repowerCostGeneratorPipeline) &&
+    /writePublicMd\(path, markdown(?:, article\.dateModified)?\)/.test(repowerCostGeneratorPipeline),
+  'The Markdown-twin generator must write every sitemap-eligible English article, including the Mercury repower-cost route.',
+);
+check(
+  !(parsedVercelConfig.redirects ?? []).some((redirect) => redirect.source === repowerCostHtmlPath),
+  'vercel.json must not redirect the canonical Mercury repower-cost route.',
+);
+check(
+  blogTableFallbacks.length > 0 &&
+    !blogTableFallbacks.includes(`'${repowerCostSlug}':`) &&
+    !blogTableFallbacks.includes('Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)'),
+  'The prerender must not append the retired installed-range table after the canonical repower-cost article.',
+);
 
 const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
 const quickAnswerIntroCount = (surface) => (
@@ -245,7 +396,10 @@ check(
 );
 
 check(
-  /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
+  /CANONICAL_SKUS/.test(proXsSeo) &&
+    /buildMercuryProXSOffers/.test(proXsSeo) &&
+    /skus:\s*CANONICAL_SKUS/.test(proXsSeo) &&
+    /sku\.family === 'ProXS'/.test(proXsOffers),
   'MercuryProXSSEO must derive prices from CANONICAL_SKUS.',
 );
 check(
@@ -386,6 +540,25 @@ check(
   ),
   'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
 );
+check(
+  parsedVercelConfig.redirects?.some((redirect) =>
+    redirect.source === '/blog/mercury-repower-cost-ontario' &&
+    redirect.destination === '/repower/cost' &&
+    redirect.statusCode === 301
+  ),
+  'vercel.json must permanently redirect the retired bare repower-cost blog slug to /repower/cost.',
+);
+const motorHtmlRoutes = new Set(
+  readdirSync('public/motors')
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => `/motors/${name.slice(0, -3)}`),
+);
+for (const redirect of parsedVercelConfig.redirects ?? []) {
+  check(
+    !motorHtmlRoutes.has(redirect.source) || redirect.destination === redirect.source,
+    `vercel.json must not 301 checked-in motor route ${redirect.source} onto ${redirect.destination}.`,
+  );
+}
 for (const [source, destination] of [
   [
     '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario',
@@ -496,7 +669,7 @@ const checkJoystickPackageTruth = (surface, label) => {
   );
 };
 
-checkSpecRoute('mercury-command-thrust-guide-pontoon-boats', (surface, label) => {
+checkSpecRoute('mercury-command-thrust-complete-guide-2026', (surface, label) => {
   const availabilitySection = surface.match(/## HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
   const listing = availabilitySection
     .split(/\n\s*\n/)
@@ -653,6 +826,7 @@ check(
   `Product-spec integrity must cover exactly nine route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
 );
 
+const ajaxPartsQualification = 'HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock.';
 const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
 const originalMarketRelatedLink = '[Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
 const marketRelatedOverride = blogClusters.match(/["']why-mercury-dominates-outboard-market["']\s*:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
@@ -765,7 +939,8 @@ const superlativeRouteContracts = [
     slug: 'mercury-dealer-bowmanville-ontario-hbw',
     forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim']],
     required: [
-      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
+      [ajaxPartsQualification, 'Jay-approved parts qualification (was the Ajax post before Phase 1C)'],
+      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage|do not offer indoor or heated boat storage[\s\S]{0,160}don't offer climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
       [/physical service resumes when we reopen in early April/i, 'protected early-April reopening wording'],
     ],
   },
@@ -1015,23 +1190,12 @@ check(
   'Repower-process article contains a retired percentage deposit, U.S.-associated financing name, or off-site service promise.',
 );
 check(
-  /drop-off only and does not provide boat pickup, hauling, delivery, or mobile service/.test(repowerProcessArticle),
-  'Repower-process article must preserve the drop-off-only logistics boundary.',
+  /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./.test(repowerProcessArticle) &&
+    /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service/.test(repowerProcessArticle),
+  'Repower-process article must preserve conditional boat pickup and the no-delivery / no-mobile boundary.',
 );
 const articleSource = (slug) =>
   blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
-const mercury90Vs115Article = articleSource('mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat');
-check(
-  /Command Thrust: Who It's Actually For/.test(mercury90Vs115Article) &&
-    /standard gearcase is the right choice for a planing aluminum or fibreglass V-hull/.test(mercury90Vs115Article),
-  'The 90-vs-115 guide must preserve the pontoon/workboat Command Thrust boundary for planing V-hulls.',
-);
-check(
-  !/(?:sensible upgrade that we routinely recommend|CT gearcase is worth considering on either engine|especially with Command Thrust|Pairing it with Command Thrust)/i.test(
-    mercury90Vs115Article,
-  ) && !/6 mph faster/i.test(mercury90Vs115Article),
-  'The 90-vs-115 guide must not recommend Command Thrust as a V-hull load upgrade or hard-code the boat-specific speed delta.',
-);
 const mercury115Vs150Article = articleSource('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
 check(
   /we do not use Command Thrust to make a 115 behave like a 150/.test(mercury115Vs150Article),
@@ -1142,6 +1306,14 @@ check(
 for (const file of blogMarkdownFiles) {
   check(!/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read(file)), `${file} contains an unresolved live token placeholder.`);
 }
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('public/blog-index.json')),
+  'public/blog-index.json contains an unresolved live token placeholder.',
+);
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('supabase/functions/_shared/blog-index-generated.ts')),
+  'supabase/functions/_shared/blog-index-generated.ts contains an unresolved live token placeholder.',
+);
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
   const markdown = read(file);
   check(/is_illustrative:\s*true/.test(markdown), `${file} is missing illustrative frontmatter.`);

@@ -16,19 +16,26 @@
  * Replaces the puppeteer-based prerender pipeline, which couldn't run on
  * Vercel's build container (missing Chromium shared libs).
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
+import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
 import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import {
+  buildCanonicalMotorRouteCatalog,
+  mergeMotorRouteSources,
+} from './lib/motor-route-canonicalization.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
+import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -52,8 +59,9 @@ const BUSINESS_SAME_AS = [
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
-// Load Google Places cache (rating, review count, opening hours) so the
-// LocalBusiness JSON-LD always matches what Google itself shows. Refreshed
+// Load Google Places cache (location and opening hours) so the LocalBusiness
+// JSON-LD always matches what Google itself shows. Visible review counts stay
+// in page UI, not in owned-business JSON-LD. Refreshed
 // by scripts/fetch-google-places-data.mjs in the build pipeline.
 let GOOGLE_PLACES_CACHE = {
   ratingValue: '4.6',
@@ -65,14 +73,8 @@ try {
   const cachePath = new URL('../src/data/google-places-cache.json', import.meta.url);
   GOOGLE_PLACES_CACHE = { ...GOOGLE_PLACES_CACHE, ...JSON.parse(readFileSync(cachePath, 'utf8')) };
 } catch (err) {
-  console.warn('[static-prerender] google-places-cache.json missing, using fallback rating/hours.');
+  console.warn('[static-prerender] google-places-cache.json missing, using fallback location/hours.');
 }
-const LIVE_AGGREGATE_RATING = {
-  '@type': 'AggregateRating',
-  ratingValue: GOOGLE_PLACES_CACHE.ratingValue,
-  reviewCount: GOOGLE_PLACES_CACHE.reviewCount,
-  bestRating: '5',
-};
 const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
   ? GOOGLE_PLACES_CACHE.openingHoursSpecification
   : [];
@@ -93,16 +95,6 @@ const IMAGE_VARIANTS_MANIFEST = JSON.parse(
 const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.flatMap(
   (band) => Object.values(band.prices).map(Number)
 );
-
-// HTML-escape a string for safe insertion into prerendered markup.
-function escHtml(v) {
-  return String(v ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
 
 function mercuryProductProtectionNoscriptHtml() {
   const money = (value) => `$${Number(value).toLocaleString('en-CA')}`;
@@ -155,6 +147,11 @@ function parseDirectiveBody(body) {
     }
   }
   return { flat, lists };
+}
+
+function renderYouTubeEmbedHtml(body) {
+  const { flat } = parseDirectiveBody(body);
+  return renderYouTubeEmbedLinkHtml({ id: flat.id, title: flat.title });
 }
 
 function renderDecisionCardHtml(body) {
@@ -427,12 +424,15 @@ function expandVisualDirectives(md) {
   md = sub(/^::decision-card\s*\n([\s\S]*?)\n::\s*$/gm, renderDecisionCardHtml);
   md = sub(/^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm, renderDiagnosticFlowHtml);
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
-  md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
+  md = sub(/^::bilingual-trust(?:-card)?\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
   md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
   // Bodied mercury-price-table form: `::mercury-price-table\nkey: val\n::`
   md = sub(/^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm, renderMercuryPriceTableHtml);
   // Bodiless mercury-price-table form: a single line `::mercury-price-table`
   md = sub(/^(::mercury-price-table)\s*$/gm, () => renderMercuryPriceTableHtml(''));
+  // Preserve a safe, crawlable link for lazy YouTube cards. The SPA upgrades
+  // this to the click-to-load MercuryVideo facade after hydration.
+  md = sub(/^:::youtube-embed\s*\n([\s\S]*?)\n:::\s*$/gm, renderYouTubeEmbedHtml);
   // Bodiless directive: a single line `::walkaround-lead-capture`.
   md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };
@@ -751,7 +751,24 @@ const REQUIRED_CANONICAL_MOTOR_ROUTES = new Map([
   ['1A25411BK', 'fourstroke-25hp-25-elhpt-fourstroke'],
   ['1A25413BK', 'fourstroke-25hp-25-elpt-fourstroke'],
   ['1A10201LK', 'fourstroke-9-9hp-9-9mh-fourstroke'],
+  ['1F60463GZ', 'fourstroke-60hp-60-exlpt-fourstroke'],
 ]);
+
+function loadCanonicalMotorRouteCatalog() {
+  const motorsDir = join(ROOT, 'public', 'motors');
+  const twins = readdirSync(motorsDir)
+    .filter((filename) => filename.endsWith('.md'))
+    .map((filename) => ({
+      filename,
+      markdown: readFileSync(join(motorsDir, filename), 'utf8'),
+    }));
+  return buildCanonicalMotorRouteCatalog({
+    twins,
+    requiredCanonicalRoutes: REQUIRED_CANONICAL_MOTOR_ROUTES,
+  });
+}
+
+const CANONICAL_MOTOR_ROUTE_CATALOG = loadCanonicalMotorRouteCatalog();
 
 function loadRequiredCanonicalMotorRecords() {
   const pricingPath = join(ROOT, 'public', 'pricing-reference.md');
@@ -802,7 +819,7 @@ async function fetchAllSupabaseMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&model_key=not.is.null&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   try {
     const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
     if (!res.ok) return { ok: false, data: [], reason: `${res.status} ${res.statusText}` };
@@ -879,37 +896,13 @@ async function loadMotors() {
     console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with API plus canonical-route fallbacks`);
   }
 
-  // Merge: canonical routes preserve known public URL contracts when an upstream
-  // feed temporarily omits an orderable motor. Supabase and API records still
-  // win when they carry the same model_key.
-  const byKey = new Map();
-  const supabaseByPartNo = new Map(
-    (sb.ok ? sb.data : [])
-      .filter((m) => m.model_number || m.mercury_model_no)
-      .map((m) => [m.model_number || m.mercury_model_no, m]),
-  );
-  for (const m of canonicalMotors) {
-    const source = supabaseByPartNo.get(m.model_number || m.mercury_model_no);
-    const enriched = source
-      ? {
-          ...m,
-          hero_image_url: m.hero_image_url || source.hero_image_url || null,
-          image_url: m.image_url || source.image_url || null,
-          shaft: m.shaft || source.shaft || null,
-          shaft_code: m.shaft_code || source.shaft_code || null,
-          start_type: m.start_type || source.start_type || null,
-          control_type: m.control_type || source.control_type || null,
-        }
-      : m;
-    if (enriched.model_key) byKey.set(String(enriched.model_key).toLowerCase(), enriched);
-  }
-  for (const m of sb.ok ? sb.data : []) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  for (const m of apiMotors) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  const merged = Array.from(byKey.values());
+  const merged = mergeMotorRouteSources({
+    canonicalMotors,
+    supabaseMotors: sb.ok ? sb.data : [],
+    apiMotors,
+    canonicalRoutesByPartNumber: CANONICAL_MOTOR_ROUTE_CATALOG.byPartNumber,
+    canonicalRoutesById: CANONICAL_MOTOR_ROUTE_CATALOG.byId,
+  });
   console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.ok ? sb.data.length : 0}, canonical fallbacks: ${canonicalMotors.length})`);
   return merged;
 }
@@ -1172,7 +1165,6 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Legend Boats" }
         ],
         "award": "Mercury Marine Premier Dealer",
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS,
         "sameAs": BUSINESS_SAME_AS
       },
@@ -1338,7 +1330,6 @@ function contactPageSchema() {
           { "@type": "Country", "name": "Canada" }
         ],
         "sameAs": BUSINESS_SAME_AS,
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
@@ -1803,7 +1794,7 @@ function howToRepowerSchema() {
           { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock." },
           { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
           { "@type": "HowToStep", "position": 5, "name": "Professional Install & Rigging", "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons." },
-          { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "Every repower is lake-tested on Rice Lake before pickup. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill." },
+          { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill. Any alternate acceptance plan is documented with the customer." },
           { "@type": "HowToStep", "position": 7, "name": "Pickup & Walk-Through", "text": "Pickup is by appointment at Gores Landing, about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you're on the water. Pickup only, no shipping." }
         ]
       },
@@ -2052,27 +2043,14 @@ function mercuryDealerGTASchema() {
 // Batch 3: Product hub + Ontario lineup
 // ============================================================
 
-const PRO_XS_IMAGES_PRERENDER = {
-  115: `${SITE_URL}/images/seo/proxs-115.webp`,
-  150: `${SITE_URL}/images/seo/proxs-150.jpg`,
-  200: `${SITE_URL}/images/seo/proxs-200.jpg`,
-  250: `${SITE_URL}/images/seo/proxs-250.jpeg`,
-};
-const { skus: canonicalPricingSkus } = loadCanonicalPricing();
-const PRO_XS_STATIC_OFFERS_PRERENDER = [115, 150, 200, 250].map((hp) => {
-  const matchingSkus = canonicalPricingSkus.filter((sku) => sku.family === 'ProXS' && sku.hp === hp);
-  const prices = matchingSkus.map((sku) => sku.dealer);
-  if (prices.length === 0) throw new Error(`[static-prerender] missing canonical Pro XS pricing for ${hp} HP`);
-  const startingSku = matchingSkus.reduce((lowest, sku) => sku.dealer < lowest.dealer ? sku : lowest);
-  return {
-    hp,
-    name: `Mercury ${hp} Pro XS`,
-    startingAt: Math.min(...prices),
-    image: PRO_XS_IMAGES_PRERENDER[hp],
-    availability: startingSku.status.toLowerCase() === 'in stock'
-      ? 'https://schema.org/InStock'
-      : 'https://schema.org/PreOrder',
-  };
+const {
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+} = loadCanonicalPricing();
+const PRO_XS_STATIC_OFFERS_PRERENDER = buildMercuryProXSOffers({
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+  siteUrl: SITE_URL,
 });
 
 const PRO_XS_FAQ_PRERENDER = [
@@ -2515,6 +2493,7 @@ function mercuryProXSSchema() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
+            "validFrom": v.validFrom,
             "availability": v.availability,
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
@@ -2948,16 +2927,6 @@ function firstParagraph(content, fallback) {
 // <noscript> so crawlers and LLMs see real tabular data even when the
 // markdown content rendered by React doesn't survive a no-JS fetch.
 const BLOG_TABLE_FALLBACKS = {
-  'mercury-repower-cost-ontario-2026-cad':
-    '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
-    '<thead><tr><th scope="col">Project tier</th><th scope="col">HP range</th><th scope="col">All-in range (CAD before HST)</th><th scope="col">Common boats</th></tr></thead>' +
-    '<tbody>' +
-    '<tr><th scope="row">Tiller, motor-only</th><td>9.9 - 25 HP</td><td>$2,000 - $5,500</td><td>Tenders, dinghies, kickers, small aluminum tillers</td></tr>' +
-    '<tr><th scope="row">Small remote</th><td>40 - 60 HP</td><td>$11,000 - $15,000</td><td>14-16 ft aluminum, small consoles</td></tr>' +
-    '<tr><th scope="row">Mid</th><td>75 - 115 HP</td><td>$17,000 - $22,000</td><td>16-19 ft aluminum, small pontoons, fishing boats</td></tr>' +
-    '<tr><th scope="row">150 HP</th><td>150 HP</td><td>$23,000 - $30,000</td><td>18-22 ft pontoons, runabouts, mid-size fishing</td></tr>' +
-    '<tr><th scope="row">High-HP</th><td>200 - 300 HP</td><td>$35,000 - $40,000</td><td>Performance bass, large pontoons, center consoles</td></tr>' +
-    '</tbody></table>',
   'cheapest-mercury-outboard-canada-2026':
     '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2027)</caption>' +
     '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
@@ -3274,8 +3243,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         articleSlug: article.slug,
         dateModified: article.dateModified,
       });
+      const faqHeading = langCode === 'fr' ? 'Questions fréquentes' : 'FAQ';
       const faqHtml = (article.faqs && article.faqs.length > 0)
-        ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
+        ? `<section><h2>${faqHeading}</h2><dl>` + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';
@@ -3929,13 +3899,15 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
         );
       }
       return (
+        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong> This is not a customer testimonial, completed-job record, performance guarantee, or fixed-price quote. HBW confirms the actual boat, capacity plate, motor, rigging, pricing, and expected performance before recommending a package.</aside>' : '') +
         `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
         `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
-        `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
-        `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
+        `<section><h2>${s.isIllustrative ? 'Why this configuration may fit' : 'Why it worked'}</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
+        (s.isIllustrative
+          ? `<section><h2>Planning takeaway</h2><p>${escapeHtml(s.customerQuote)}</p></section>`
+          : `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>`) +
         `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
-        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
-        (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : '')
+        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>`
       );
     },
   };
@@ -4090,7 +4062,7 @@ const HUB_DEFS = [
       ]},
       { heading: 'Process & What to Expect', cards: [
         { title: 'What Happens During a Mercury Repower', to: '/blog/what-happens-during-mercury-repower', description: 'The 7-step shop walk-through from drop-off to pickup.' },
-        { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026', description: 'Why every motor gets a real Rice Lake water test.' },
+        { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026', description: 'Why the standard handoff includes a Rice Lake water test when conditions allow.' },
         { title: 'Mercury Warranty After a Repower (Ontario)', to: '/blog/mercury-warranty-after-repower-ontario', description: 'How the 3+3 warranty and any active promo extension apply post-repower.' },
         { title: 'Pleasure Craft Licence Update During Repower', to: '/blog/pleasure-craft-licence-update-repower-ontario', description: 'When and how to update Transport Canada paperwork.' },
         { title: 'Winter Repower Planning Guide', to: '/blog/winter-repower-planning-guide', description: 'Why January to March is the smart time to book.' },
@@ -4245,14 +4217,14 @@ const HUB_DEFS = [
         { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' },
       ]},
       { heading: 'Motor family selection', cards: [
-        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
+        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/fourstroke-vs-pro-xs' },
         { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', to: '/blog/mercury-outboard-lineup-ontario' },
         { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
       ]},
       { heading: 'Boat-type matching', cards: [
         { title: 'Best Mercury Outboard for Aluminum Fishing Boats', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
         { title: 'Best Mercury Outboard for Pontoon Boats', to: '/blog/best-mercury-outboard-pontoon-boats' },
-        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-complete-guide-2026' },
       ]},
       { heading: 'Configuration', cards: [
         { title: 'Mercury Propeller Selection Guide', to: '/blog/mercury-propeller-selection-guide' },
@@ -4265,7 +4237,7 @@ const HUB_DEFS = [
       { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
       { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
       { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },
-      { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. We test props on the water during sea-trial of every repower.' },
+      { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. When safe seasonal conditions allow, we test props on the water during the on-water check. Any alternate acceptance plan is documented with the customer.' },
       { question: 'Is Mercury better than Yamaha or Honda?', answer: 'Mechanically, all three brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders.' },
       { question: 'Can I run a bigger motor than my capacity plate says?', answer: 'No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty on over-powered hulls. We will not install a motor above the rated HP.' },
       { question: 'Does HBW sell Verado?', answer: 'By special order. Verado is built for offshore center consoles and twin/triple installations. Most Ontario freshwater boaters do not need Verado.' },
@@ -4328,7 +4300,7 @@ const HUB_DEFS = [
       { question: 'How long does a Mercury last with proper maintenance?', answer: 'There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim.' },
       { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
       { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-      { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+      { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
       { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service.' },
     ],
   },
@@ -4649,9 +4621,9 @@ const REPOWER_COST_EXTRA = () => commercialBodyHtml({
 
 const REPOWER_PROCESS_FAQS = [
   { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
-  { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
+  { q: 'Do I need to bring my boat to Rice Lake?', a: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to 5369 Harris Boat Works Rd, Gores Landing. HBW does not deliver boats, ship motors, or offer mobile, dockside, or on-site service.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
-  { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
+  { q: 'Will you test the motor before pickup?', a: "HBW's standard handoff includes a lake test on Rice Lake before pickup when safe seasonal conditions allow, including WOT RPM check and trim function when that on-water check happens. If a prop needs to change to hit the right WOT range, we swap it. Any alternate acceptance plan is documented with the customer." },
   { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
   { q: 'Do you handle the warranty paperwork?', a: 'Yes. We register the Mercury warranty in your name at install, including any active promotional bonus years, and you get the registration confirmation with your pickup paperwork.' },
 ];
@@ -4954,6 +4926,80 @@ const routes = [
       return linksHtml + articlesSection;
     }
   },
+  ...[
+    {
+      lang: 'ko',
+      articles: koreanBlogArticles,
+      htmlLang: 'ko',
+      title: 'Mercury 한국어 가이드 | Harris Boat Works',
+      h1: 'Mercury 한국어 가이드',
+      intro: '온타리오 보터를 위한 Mercury 한국어 가이드: 선외기, 엔진 교체, 정비, 안전 및 Rice Lake 낚시 정보.',
+      postsHeading: '전체 가이드',
+      disclaimer: 'HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.',
+    },
+    {
+      lang: 'es',
+      articles: spanishBlogArticles,
+      htmlLang: 'es',
+      title: 'Guías Mercury en español | Harris Boat Works',
+      h1: 'Guías Mercury en español',
+      intro: 'Guías Mercury y consejos náuticos en español para Ontario: motores, remotorización, mantenimiento, seguridad y pesca en Rice Lake.',
+      postsHeading: 'Todas las guías',
+      disclaimer: 'Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.',
+    },
+    {
+      lang: 'pa',
+      articles: punjabiBlogArticles,
+      htmlLang: 'pa',
+      title: 'Mercury ਪੰਜਾਬੀ ਗਾਈਡ | Harris Boat Works',
+      h1: 'Mercury ਪੰਜਾਬੀ ਗਾਈਡ',
+      intro: 'Ontario ਦੇ ਬੋਟਰਾਂ ਲਈ Mercury ਪੰਜਾਬੀ ਗਾਈਡ: ਆਊਟਬੋਰਡ, ਰਿਪਾਵਰ, ਮੇਨਟੀਨੈਂਸ, ਸੁਰੱਖਿਆ ਅਤੇ Rice Lake ਸਲਾਹ।',
+      postsHeading: 'ਸਾਰੀਆਂ ਗਾਈਡਾਂ',
+      disclaimer: 'honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।',
+    },
+    {
+      lang: 'ur',
+      articles: urduBlogArticles,
+      htmlLang: 'ur',
+      title: 'Mercury اردو گائیڈ | Harris Boat Works',
+      h1: 'Mercury اردو گائیڈ',
+      intro: 'Ontario کے بوٹرز کے لیے Mercury اردو گائیڈ: آؤٹ بورڈ، ری پاور، دیکھ بھال، حفاظت اور Rice Lake مشورہ۔',
+      postsHeading: 'تمام گائیڈز',
+      disclaimer: 'ایمانداری سے، ہماری ٹیم انگریزی میں کام کرتی ہے، لیکن ہم نے یہ گائیڈ آپ کی سہولت کے لیے اردو میں لکھی۔ آپ کوئی ایسا ساتھی ساتھ لائیں جو انگریزی بولتا ہو، یا ترجمے کی ایپ استعمال کریں، ہم انتظار کریں گے اور مل کر کام کر لیں گے۔',
+    },
+    {
+      lang: 'tl',
+      articles: tagalogBlogArticles,
+      htmlLang: 'tl',
+      title: 'Mga gabay sa Mercury sa Tagalog | Harris Boat Works',
+      h1: 'Mga gabay sa Mercury sa Tagalog',
+      intro: 'Mga Mercury Tagalog na gabay para sa mga boater ng Ontario: outboard, repower, pag-mantine, kaligtasan at payo sa Rice Lake.',
+      postsHeading: 'Lahat ng gabay',
+      disclaimer: 'Sa totoo lang, English ang ginagamit ng team namin kapag nagse-serve. Ginawa namin ang guide na ito sa Tagalog para makatulong sa komunidad, pero sa marina mismo, English ang salita. Huwag mag-alala: magdala ng kaibigan o pamilya na marunong, o gumamit ng translation app. Magiging matiyaga kami at magkakaintindihan tayo.',
+    },
+  ].map(({ lang, articles, htmlLang, title, h1, intro, postsHeading, disclaimer }) => ({
+    path: `/${lang}`,
+    title,
+    description: intro,
+    h1,
+    intro,
+    htmlLang,
+    schemas: [genericPageSchema(`/${lang}`, h1, intro)],
+    extraNoscript: () => {
+      const visible = (articles || []).filter(a => a.isPublished !== false);
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      const cardsHtml = sorted.length
+        ? `<ul>${sorted.map(a => `<li><a href="/blog/${lang}/${a.slug}"><strong>${escapeHtml(a.title || a.slug)}</strong></a></li>`).join('')}</ul>`
+        : '';
+      const articlesSection = cardsHtml
+        ? `<section><h2>${escapeHtml(postsHeading)} (${sorted.length})</h2>${cardsHtml}</section>`
+        : '';
+      const body = `<section><p>${escapeHtml(disclaimer)}</p></section>${articlesSection}<p><a href="/">English</a></p>`;
+      return lang === 'ur' ? `<div dir="rtl">${body}</div>` : body;
+    }
+  })),
   {
     path: '/repower/cost',
     title: 'Mercury Repower Cost in Ontario (2026 CAD) | HBW',
@@ -4968,7 +5014,7 @@ const routes = [
     title: 'Mercury Repower Process: 7 Steps from Quote to Splash (2026)',
     description: 'The 7-step Mercury repower process at Harris Boat Works: quote, deposit, order, rig, install, lake test, pickup. Mercury dealer since 1965 in Gores Landing, Ontario.',
     h1: 'Mercury Repower Process: From Quote to Splash',
-    intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, installs, and lake-tests every motor on Rice Lake.',
+    intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, and installs, and the standard handoff includes a Rice Lake lake test when safe seasonal conditions allow.',
     schemas: [genericPageSchema('/repower/process', 'Mercury Repower Process', 'The 7-step Mercury repower process from quote to splash at Harris Boat Works.'), faqPageSchemaFromList('/repower/process', REPOWER_PROCESS_FAQS)],
     extraNoscript: REPOWER_PROCESS_EXTRA
   },
@@ -5011,6 +5057,7 @@ const routes = [
     schemas: [aboutPageSchema()],
     extraNoscript: ABOUT_EXTRA
   },
+  getHarrisBoatWorksBrandPagePrerender(),
   {
     path: '/about/jay-harris',
     title: 'Jay Harris, Owner of Harris Boat Works (3rd Generation)',
@@ -5776,10 +5823,10 @@ function detectLang(path) {
   if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh-Hans';
   if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko';
   if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es';
-  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa';
-  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur';
-  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl';
-  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa' || path === '/pa') return 'pa';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur' || path === '/ur') return 'ur';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl' || path === '/tl') return 'tl';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi' || path === '/hi') return 'hi';
   return 'en';
 }
 
@@ -5789,10 +5836,10 @@ function detectOgLocale(path) {
   if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh_CN';
   if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko_KR';
   if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es_ES';
-  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa_IN';
-  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur_PK';
-  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl_PH';
-  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi_IN';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa' || path === '/pa') return 'pa_IN';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur' || path === '/ur') return 'ur_PK';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl' || path === '/tl') return 'tl_PH';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi' || path === '/hi') return 'hi_IN';
   return 'en_CA';
 }
 
@@ -5829,8 +5876,30 @@ function computePageId(pathname) {
 
 function stamp(route) {
   let html = shell;
+  if (route.stripInheritedShellSeo) {
+    html = html.replace(
+      /(<script\b[^>]*\bdata-rh=["']true["'][^>]*\btype=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,
+      (match, openTag, json, closeTag) => {
+        try {
+          const parsed = JSON.parse(json);
+          if (!Array.isArray(parsed?.['@graph'])) return match;
+          const inheritedHomepageIds = new Set([
+            `${SITE_URL}/#webpage`,
+            `${SITE_URL}/#breadcrumb`,
+          ]);
+          const graph = parsed['@graph'].filter(
+            (node) => !inheritedHomepageIds.has(node?.['@id'])
+          );
+          return `${openTag}${JSON.stringify({ ...parsed, '@graph': graph })}${closeTag}`;
+        } catch {
+          return match;
+        }
+      }
+    );
+    html = html.replace(/\s*<noscript>[\s\S]*?<\/noscript>/gi, '');
+  }
   const langCode = detectLang(route.path);
-  const dirAttr = route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
+  const dirAttr = route.path === '/blog/ur' || route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
     /<html lang="en">/i,
     `<html lang="${langCode}"${dirAttr}>`
@@ -5936,6 +6005,12 @@ function stamp(route) {
       { re: /<meta\s+property=["']og:image:type["'][^>]*>/gi, tag: '<meta data-rh="true" property="og:image:type" content="image/webp" />' },
     );
   }
+  if (route.ogImageAlt) {
+    socialReplacements.push({
+      re: /<meta\s+property=["']og:image:alt["'][^>]*>/gi,
+      tag: `<meta data-rh="true" property="og:image:alt" content="${escapeHtml(route.ogImageAlt)}" />`,
+    });
+  }
   for (const { re, tag } of socialReplacements) {
     if (re.test(html)) {
       // Replace the FIRST occurrence (any duplicates already in shell) and strip
@@ -5952,10 +6027,11 @@ function stamp(route) {
 
   // <noscript> semantic fallback inside <div id="root">
   const extra = route.extraNoscript ? route.extraNoscript() : '';
+  const contentDir = route.path === '/ur' ? ' dir="rtl"' : '';
   const noscript =
     `<noscript>` +
       `<header><h1>${escapeHtml(route.h1)}</h1></header>` +
-      `<main><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
+      `<main${contentDir}><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
       `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p>` +
       `<p>See all <a href="/pricing-reference">Mercury outboard prices (CAD)</a> · <a href="/repower">Repower guide</a> · <a href="/faq">FAQ</a></p></footer>` +
     `</noscript>`;
@@ -6047,6 +6123,7 @@ const staticSitemapEntries = [
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
   { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
@@ -6063,10 +6140,14 @@ const staticSitemapEntries = [
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
   { loc: '/electric/mercury-avator', priority: 0.8, changefreq: 'weekly' },
   { loc: '/motors/mercury-9-9-tiller-kicker-guide', priority: 0.85, changefreq: 'weekly' },
-  // Language hub pages (only /zh and /fr exist as routes; Korean and
-  // Spanish articles live under /blog/ko and /blog/es without a hub).
+  // Language hub pages
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },
   { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/ko', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/es', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/pa', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/ur', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/tl', priority: 0.7, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
@@ -6187,7 +6268,15 @@ const multilingualBlogSitemapEntries = [
 // hardcoded list caused duplicate <url> entries in sitemap.xml.
 const hardcodedMultilingualPages = [];
 
-const allSitemapEntries = [
+function dedupeSitemapEntries(entries) {
+  const seen = new Map();
+  for (const entry of entries) {
+    if (!seen.has(entry.loc)) seen.set(entry.loc, entry);
+  }
+  return [...seen.values()];
+}
+
+const allSitemapEntries = dedupeSitemapEntries([
   ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
   ...blogSitemapEntries,
   ...multilingualBlogSitemapEntries,
@@ -6195,13 +6284,14 @@ const allSitemapEntries = [
   ...motorSitemapEntries,
   ...caseStudySitemapEntries,
   ...locationSitemapEntries,
-];
+]);
 
 function sitemapHreflangBlock(loc) {
   const localized = loc.match(/^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/);
   const english = loc.match(/^\/blog\/([^/]+)$/);
-  const locale = localized?.[1] || (english ? 'en' : null);
-  const slug = localized?.[2] || english?.[1];
+  const blogIndexSlugs = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);
+  const locale = localized?.[1] || (english && !blogIndexSlugs.has(english[1]) ? 'en' : null);
+  const slug = localized?.[2] || (locale === 'en' ? english?.[1] : undefined);
   if (!locale || !slug) return '';
 
   const links = getBlogHreflangAlternates(locale, slug).map(({ hrefLang, path }) =>
@@ -6627,7 +6717,7 @@ const CATALOG_BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
+  'fourstroke-vs-pro-xs',
   'boat-winterization-cost-ontario-2026',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
@@ -6641,7 +6731,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.',
     '',
     '## Business rules (apply to every entry)',
     '',
@@ -7131,7 +7221,7 @@ verifyMd({
   label: 'Mercury service and maintenance index',
   requireSubstrings: [
     'content_type: service_index',
-    'service_dropoff_only: true',
+    'boat_pickup_available: generally',
     'mobile_service: false',
     'Mercury and MerCruiser',
     '100-hour',

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 发动机维修保养完整指南：从机油到
 description: "多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-08
+date_modified: 2026-08-21
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-08-21  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
@@ -160,7 +160,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 春季开机 / Spring Commissioning
 
-春季检查包括在 HBW 冬储客户的范围内。自 2026 年 7 月起，非冬储客户的春季检查是 $99，HST 另计。具体检查和额外维修以批准的工单为准。
+春季检查包括在 HBW 冬储客户的范围内。非冬储客户的春季检查按书面报价执行。具体检查和额外维修以批准的工单为准。
 
 船厂 12 月 1 日至 4 月 1 日关闭，关闭期间不进行现场开机、维修或取船。实体工作在 4 月 1 日后恢复，并按先到先办处理；只有收到 HBW 的完工和取船确认后，才安排下水或拖船行程。
 
@@ -178,8 +178,8 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 实话实说：HBW 的日常运营语言是英文，**我们没有中文母语的销售或翻译**。这几年我们接待了越来越多的 GTA 华人客户，常用的沟通方式是：
 
-- **欢迎带会英语的亲友同来**，或使用手机翻译软件——我们会耐心沟通、尽力配合
-- **提前用邮件写清楚**：症状、机型、序列号、想要的服务——可以中英文混合，我们能看懂大意
+- **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合
+- **提前用邮件写清楚**：症状、机型、序列号、想要的服务，可以中英文混合，我们能看懂大意
 - **服务请求模板**：[https://hbw.wiki/service](https://hbw.wiki/service) 上提交时同样可以中英文混合
 - **服务报价邮件**：完工前的修理报价我们会写清楚每一项，避免"做了我才告诉你"
 

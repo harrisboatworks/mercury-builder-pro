@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/kawartha-lakes-mercury-outboards
-last_updated: 2026-09-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -46,7 +46,7 @@ Kawartha Lakes boaters use Harris Boat Works for practical Mercury recommendatio
 - Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Pontoon family repower (40 → 115 Command Thrust)](https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust)
@@ -68,12 +68,8 @@ No. All pricing is CAD only.
 
 Yes. Use the quote builder or the motor pages, both show live CAD pricing.
 
-### Where can I get a Mercury outboard serviced in the Kawarthas?
-
-Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All the work happens in our shop, so you arrange transport to us and pick the boat or motor back up when it's done. We don't offer mobile, dockside, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.
-
 ## Service boundary
-Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in the Kawartha Lakes region. Customers from the Kawartha Lakes region bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
+Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in the Kawartha Lakes region. Service work remains at our Gores Landing shop. We can generally arrange boat pickup; ask us about availability for your boat and location. Customers can also bring their boat to the shop, or pick up a loose Mercury motor for self-install.
 ## Notes
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Verado is special-order only, not in default inventory.

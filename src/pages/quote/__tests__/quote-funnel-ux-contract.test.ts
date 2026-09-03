@@ -1,9 +1,18 @@
+/// <reference types="node" />
+
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 const read = (path: string) => readFileSync(path, 'utf8');
 
 describe('quote funnel UX contract', () => {
+  it('lets customers continue when a trade-in estimate is unavailable', () => {
+    const tradeInSource = read('src/components/quote-builder/TradeInValuation.tsx');
+
+    expect(tradeInSource).toContain('!standalone && tradeInInfo.hasTradeIn && onAutoAdvance');
+    expect(tradeInSource).toContain('data-testid="trade-in-continue"');
+  });
+
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
@@ -13,11 +22,16 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('Have HBW Review My Quote');
   });
 
-  it('uses a bookmark icon, not a download icon, for mobile Save for Later', () => {
+  it('does not dress the mobile save action as a download', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const saveHandler = 'user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)';
+    const saveBlock = summarySource.slice(
+      summarySource.indexOf(saveHandler),
+      summarySource.indexOf('Save for Later') + 'Save for Later'.length,
+    );
 
-    expect(summarySource).toContain('<Bookmark className="w-4 h-4" aria-hidden="true" />\n                      Save for Later');
-    expect(summarySource).not.toContain('<Download className="w-4 h-4" />\n                      Save for Later');
+    expect(saveBlock).toContain('<Bookmark');
+    expect(saveBlock).not.toContain('<Download');
   });
 
   it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
@@ -59,9 +73,10 @@ describe('quote funnel UX contract', () => {
     expect(depositDialogSource).toContain('you approve the order in writing');
     expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
     expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
-    expect(paymentSource).toContain('if (depositAmount === "100")');
-    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
-    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('const expressOfferVerified = isVerifiedExpressMotorReservation({');
+    expect(paymentSource).toContain('const authoritativeDeposit = getMotorReservationDeposit(');
+    expect(paymentSource).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
+    expect(paymentSource).toContain('.eq("id", savedMotorId)');
     expect(paymentSource).toContain('Customer information required for deposit');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
@@ -213,6 +228,20 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('Installation is booked only after you approve the quote');
   });
 
+  it('offers only a local PDF download before submit and treats text as later human follow-up', () => {
+    const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
+
+    expect(scheduleSource).toContain('Want a PDF on this device?');
+    expect(scheduleSource).toContain('Download a local copy of this quote. This does not email, text, or store the PDF on Harris Boat Works systems.');
+    expect(scheduleSource).toContain('onClick={generatePDF}');
+    expect(scheduleSource).toContain('downloadPDF');
+    expect(scheduleSource).toContain('Preferred Contact Method');
+    expect(scheduleSource).toContain('<SelectItem value="text">Text Message</SelectItem>');
+    expect(scheduleSource).toContain('Choosing text asks for a later message from a person, not an automated SMS.');
+    expect(scheduleSource).not.toContain('Email Me a Copy');
+    expect(scheduleSource).not.toContain('Text Me a Copy');
+  });
+
   it('explains data use and exposes required quote fields to assistive technology', () => {
     const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
     const reminderSource = read('src/components/quote-builder/PromoReminderModal.tsx');
@@ -234,5 +263,20 @@ describe('quote funnel UX contract', () => {
 
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
+  });
+
+  it('keeps the motor-search name aligned with its visible prompt', () => {
+    const searchSource = read('src/components/motors/HybridMotorSearch.tsx');
+    const inputMarkup = searchSource.match(/<input\b[\s\S]*?placeholder=""[\s\S]*?\/>/)?.[0];
+    const placeholderMarkup = searchSource.match(
+      /\{!query && \([\s\S]*?<div[\s\S]*?<\/div>[\s\S]*?\)\}/,
+    )?.[0];
+
+    expect(inputMarkup).toBeTruthy();
+    expect(inputMarkup).toContain('placeholder=""');
+    expect(inputMarkup).toContain(
+      "aria-label={isDark ? 'Search motors by HP, model, or feature' : 'Find a motor'}",
+    );
+    expect(placeholderMarkup).toContain('aria-hidden="true"');
   });
 });

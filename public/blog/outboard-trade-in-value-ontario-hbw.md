@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Trade-In Value in Ontario (2026)"
 description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST."
 category: "Buying Guide"
 date_published: 2026-05-09
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 
@@ -172,6 +172,19 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 - Aftermarket controls or rigging the next owner has to undo
 - Oil weep at the lower unit seal (typically a $400 to $700 fix)
 - Stale fuel that ran through the system
+
+## Documentation that moves your trade number
+
+You do not need a thousand pages of records. You need the right ones:
+
+- **Original purchase receipt or dealer invoice** if you have it (proves model year and original equipment)
+- **Service records**, even handwritten ones (every winterization, impeller, and oil change you can document is worth real dollars)
+- **Hour meter photo** if your motor has SmartCraft or a dash-mounted hour meter
+- **Warranty paperwork** if anything is still active
+- **Recent service work receipts**, especially for a replaced powerhead, gearcase, or major electrical
+- **Ownership papers** for the boat if you are trading boat and motor as a package
+
+A motor with a clean documented service history can trade 10-25% higher than the same motor with no records. We have seen records move the offer by $1,500 on a 90 HP and $3,000 on a 200 V8. Paperwork is the cheapest way to add value.
 
 ## Trade vs private sale vs scrap
 

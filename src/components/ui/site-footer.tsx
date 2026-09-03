@@ -96,8 +96,8 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                 </span>
               </li>
               <li>
-                <a 
-                  href={`tel:+1${phoneLink}`} 
+                <a
+                  href={`tel:+1${phoneLink}`}
                   className={`flex items-center gap-3 ${footerLinkClass}`}
                 >
                   <Phone className={footerIconClass} />
@@ -105,8 +105,8 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                 </a>
               </li>
               <li>
-                <a 
-                  href={`mailto:${COMPANY_INFO.contact.email}`} 
+                <a
+                  href={`mailto:${COMPANY_INFO.contact.email}`}
                   className={`flex items-center gap-3 ${footerLinkClass}`}
                 >
                   <Mail className={footerIconClass} />
@@ -121,7 +121,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
             <h3 className={sectionTitleClass}>
               Hours
             </h3>
-            <OpeningHoursDisplay 
+            <OpeningHoursDisplay
               openingHours={placeData?.openingHours}
               loading={hoursLoading}
               error={!!hoursError}
@@ -152,17 +152,17 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                   ))}
                 </div>
               </div>
-              
+
               {/* Trust Badges */}
               <div className="flex flex-row items-center gap-3">
-                <img 
-                  src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" 
-                  alt="Mercury CSI Award Winner" 
+                <img
+                  src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
+                  alt="Mercury CSI Award Winner"
                   className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100"
                 />
-                <img 
-                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
-                  alt="Mercury Certified Repower Center" 
+                <img
+                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+                  alt="Mercury Certified Repower Center"
                   className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100"
                 />
               </div>
@@ -182,6 +182,33 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
             Researching with an AI? This site is built for that. Read the AI brief →
           </Link>
         </div>
+
+        <nav
+          aria-label="Language"
+          className="mt-8 flex flex-nowrap items-center justify-center gap-x-3 overflow-x-auto font-sans text-xs text-repower-cream/45"
+        >
+          {[
+            { label: 'English', href: '/' },
+            { label: 'Français', href: '/fr' },
+            { label: '简体中文', href: '/zh' },
+            { label: '한국어', href: '/ko' },
+            { label: 'Español', href: '/es' },
+            { label: 'ਪੰਜਾਬੀ', href: '/pa' },
+            { label: 'اردو', href: '/ur' },
+            { label: 'Tagalog', href: '/tl' },
+          ].map((lang, index, list) => (
+            <span key={lang.href} className="inline-flex items-center gap-x-3">
+              <Link to={lang.href} className="hover:text-repower-cream transition-colors whitespace-nowrap">
+                {lang.label}
+              </Link>
+              {index < list.length - 1 ? (
+                <span aria-hidden="true" className="text-repower-cream/25">
+                  ·
+                </span>
+              ) : null}
+            </span>
+          ))}
+        </nav>
 
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-repower-cream/10 pt-8 md:flex-row">

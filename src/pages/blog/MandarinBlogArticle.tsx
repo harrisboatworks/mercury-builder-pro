@@ -1,10 +1,9 @@
 import { Helmet } from '@/lib/helmet';
 import { Link } from 'react-router-dom';
-import { BlogBackLink } from '@/components/blog/BlogBackLink';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { Navigation } from 'lucide-react';
+import { ArrowLeft, Navigation } from 'lucide-react';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 
 export default function MandarinBlogArticle() {
@@ -100,7 +99,12 @@ export default function MandarinBlogArticle() {
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
         {/* Back nav */}
-        <BlogBackLink to="/zh" label={'返回中文首页'} />
+        <nav className="mb-8">
+          <Link to="/zh" className="text-primary hover:underline text-sm flex items-center gap-1">
+            <ArrowLeft className="w-4 h-4" />
+            ← 返回中文首页
+          </Link>
+        </nav>
 
         <article className="prose prose-lg max-w-none text-foreground">
           <h1

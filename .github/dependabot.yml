@@ -1,0 +1,46 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 5
+    groups:
+      radix-ui:
+        patterns:
+          - "@radix-ui/*"
+        update-types:
+          - "minor"
+          - "patch"
+      eslint-lint:
+        patterns:
+          - "eslint-plugin-react-refresh"
+          - "typescript-eslint"
+        update-types:
+          - "minor"
+          - "patch"
+      toolchain-test:
+        patterns:
+          - "@tailwindcss/typography"
+          - "@vitejs/plugin-react-swc"
+          - "autoprefixer"
+          - "canvas-confetti"
+          - "happy-dom"
+          - "lovable-tagger"
+          - "marked"
+          - "playwright"
+          - "terser"
+          - "tsx"
+          - "vite-plugin-pwa"
+          - "vitest"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    labels:
+      - "dependencies"

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-08-02
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Dealer in Ontario: The HBW Difference (2026)"
 description: "A frank look at what \"best Mercury dealer in Ontario\" actually means, what to look for."
 category: "Mercury Outboards"
 date_published: 2026-05-13
-date_modified: 2026-08-02
+date_modified: 2026-08-27
 keywords: ["best Mercury dealer Ontario","Mercury Premier dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-27  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 
@@ -116,11 +116,11 @@ HBW is usually a strong fit for:
 - Ontario boaters planning a Mercury repower
 - Customers who want one shop to know their boat over time
 - Owners who value a complete written scope and visible pricing
-- Rice Lake, Kawartha, Northumberland, Durham, and GTA boaters willing to bring the boat to Gores Landing
+- Rice Lake, Kawartha, Northumberland, Durham, and GTA boaters who can bring the boat or have HBW confirm pickup availability
 - Customers who want the finished repower tested on the water
 - Mercury owners who need parts, maintenance, diagnostics, or warranty support
 
-If you are near Peterborough, Oshawa, Whitby, Pickering, or Cobourg, our local dealer guides explain the drive and service model honestly. HBW does not provide pickup, delivery, hauling, or mobile service. Customers bring the boat to Gores Landing.
+If you are near Peterborough, Oshawa, Whitby, Pickering, or Cobourg, our local dealer guides explain the drive and service model honestly. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ## When Another Dealer May Be Better
 
@@ -130,7 +130,7 @@ Another dealer may make more sense if:
 - You need a shop within a few minutes for a small portable-motor purchase
 - You want a high-end showroom experience rather than a working family marina
 - You need a specialty we do not handle, such as personal watercraft or inboard tow boats
-- You cannot bring the boat to Gores Landing
+- You cannot bring the boat and HBW cannot confirm pickup availability for your boat and location
 
 The best dealer is not automatically the closest, oldest, biggest, or highest-tier shop. It is the dealer whose capabilities and way of working fit the relationship you want.
 
@@ -150,7 +150,7 @@ Compare us on those points too.
 
 ## Areas We Serve
 
-Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County, Durham Region, and the GTA. Start with the dealer page closest to you: [Peterborough](/blog/mercury-dealer-peterborough-ontario-hbw), [Oshawa](/blog/mercury-dealer-oshawa-ontario-hbw), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/mercury-dealer-pickering-ontario-hbw), or [Cobourg](/blog/mercury-dealer-cobourg-ontario-hbw). For the broader pickup model, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup).
+Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County, Durham Region, and the GTA. Start with the dealer page closest to you: [Peterborough](/blog/complete-guide-boat-repower-kawarthas), [Oshawa](/blog/trailer-boat-toronto-to-rice-lake-guide), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/trailer-boat-toronto-to-rice-lake-guide), or [Cobourg](/blog/complete-guide-boat-repower-kawarthas). For the broader pickup model, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup).
 
 ---
 **Phone:** 905-342-2153

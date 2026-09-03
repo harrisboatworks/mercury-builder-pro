@@ -1,7 +1,8 @@
 /**
  * Blog translation route registry.
  *
- * A group represents one search intent offered in multiple languages. The
+ * A group represents one article offered in one or more languages. Clusters
+ * may only pair true translations; a single-language group is valid. The
  * registry is the only source for article-level hreflang in the hydrated app,
  * prerendered HTML, and sitemap. Traditional Chinese pilot routes remain
  * intentionally excluded while they are noindex and awaiting native review.
@@ -34,29 +35,40 @@ export const BLOG_TRANSLATION_GROUPS = [
     ko: 'mercury-outboard-winterization-guide',
     zh: 'ontario-boat-winterization-guide-chinese',
     es: 'preparacion-invernal-motor-mercury',
-    tl: 'outboard-service-winterization-tagalog',
   },
-  { en: 'boat-repowering-guide-when-to-replace-motor', fr: 'remotorisation-vs-bateau-neuf' },
+  { tl: 'outboard-service-winterization-tagalog' },
   {
-    en: '2026-rice-lake-fishing-season-outlook',
+    en: 'repower-vs-new-boat',
+    fr: 'remotorisation-vs-bateau-neuf',
+    ko: 'repower-vs-new-boat',
+    es: 'remotorizacion-vs-bote-nuevo',
+  },
+  { zh: 'mercury-repower-guide-gta' },
+  {
     fr: 'peche-lac-rice-ontario-guide-plaisanciers',
     ko: 'rice-lake-fishing-guide',
     zh: 'rice-lake-fishing-guide-toronto-chinese',
     es: 'guia-pesca-rice-lake-ontario',
-    pa: 'ontario-fishing-licence-punjabi-guide',
-    ur: 'ontario-fishing-licence-rice-lake-urdu',
-    tl: 'first-time-fishing-rice-lake-tagalog-family-guide',
   },
   {
-    en: 'pleasure-craft-licence-update-repower-ontario',
+    pa: 'ontario-fishing-licence-punjabi-guide',
+    ur: 'ontario-fishing-licence-rice-lake-urdu',
+  },
+  { tl: 'first-time-fishing-rice-lake-tagalog-family-guide' },
+  {
     fr: 'permis-bateau-ontario-carte-conducteur-embarcation',
     ko: 'ontario-boating-licence-regulations',
     zh: 'ontario-boating-regulations-zh',
     es: 'licencia-navegacion-ontario-regulaciones',
+  },
+  {
+    en: 'boat-rental-licence-ontario-guide',
+    zh: 'pcoc-vs-rental-boat-safety-checklist-zh',
     pa: 'boat-licence-rental-ontario-punjabi-pcoc-faq',
     tl: 'ontario-boat-rental-rules-tagalog-pcoc',
-    hi: 'ontario-boat-licence-fishing-licence-hindi',
   },
+  { hi: 'ontario-boat-licence-fishing-licence-hindi' },
+  { zh: 'gta-chinese-pcl-fishing-licence-guide' },
   {
     en: 'mercury-outboard-wont-start-troubleshooting',
     fr: 'mercury-hors-bord-ne-demarre-pas-depannage',
@@ -87,43 +99,31 @@ export const BLOG_TRANSLATION_GROUPS = [
     ko: 'mercury-seonoegi-muge',
   },
   {
-    en: 'repower-vs-new-boat',
-    ko: 'repower-vs-new-boat',
-    zh: 'mercury-repower-guide-gta',
-    es: 'remotorizacion-vs-bote-nuevo',
-  },
-  {
-    en: '2026-boating-market-ontario-boat-buyers',
     ko: 'ontario-boat-buying-guide',
     zh: 'gta-chinese-buy-boat-rice-lake-guide',
     es: 'guia-comprar-bote-ontario',
   },
-  {
-    en: 'outdoor-boat-storage-shrinkwrap-rice-lake',
-    zh: 'gta-chinese-rice-lake-winter-storage-complete-guide',
-    ur: 'boat-winterization-storage-toronto-urdu',
-  },
-  { en: 'best-mercury-outboard-lake-simcoe-walleye-fishing', zh: 'chinese-anglers-lake-simcoe-mercury-outboard' },
-  { en: 'best-mercury-outboard-pontoon-boats', zh: 'chinese-family-pontoon-mercury-outboard' },
-  { en: 'mercury-9-9-vs-15-hp-tiller-ontario', zh: 'mercury-9-9-20hp-chinese-kicker-tiller-guide' },
+  { zh: 'gta-chinese-rice-lake-winter-storage-complete-guide' },
+  { ur: 'boat-winterization-storage-toronto-urdu' },
+  { zh: 'chinese-anglers-lake-simcoe-mercury-outboard' },
+  { zh: 'chinese-family-pontoon-mercury-outboard' },
+  { zh: 'mercury-9-9-20hp-chinese-kicker-tiller-guide' },
   { en: 'mercury-40-vs-60-hp-outboard-ontario', zh: 'mercury-40-60hp-chinese-fishing-boat-guide' },
   {
     en: 'why-harris-boat-works-mercury-dealer',
     fr: 'concessionnaire-mercury-premier-ontario',
-    zh: 'why-chinese-boaters-choose-harris-boat-works',
   },
-  { en: 'boat-rental-licence-ontario-guide', zh: 'pcoc-vs-rental-boat-safety-checklist-zh' },
+  { zh: 'why-chinese-boaters-choose-harris-boat-works' },
   { en: 'pontoon-vs-v-hull-comparison-ontario', zh: 'pontoon-vs-fishing-boat-6-8-people-zh' },
-  { en: 'mercury-100-hour-service-cost-ontario', zh: 'gta-chinese-mercury-service-guide' },
-  { en: 'rice-lake-boat-rental-guide-2026', zh: 'gta-chinese-rice-lake-day-trip-plan' },
-  { en: 'rice-lake-boating-guide-2026', zh: 'gta-chinese-pcl-fishing-licence-guide' },
-  { en: 'best-mercury-outboard-rice-lake-fishing', zh: 'toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas' },
+  { zh: 'gta-chinese-mercury-service-guide' },
+  { zh: 'gta-chinese-rice-lake-day-trip-plan' },
+  { zh: 'toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas' },
   { en: 'how-to-choose-right-horsepower-boat', zh: 'mercury-outboard-horsepower-guide-toronto-chinese' },
   {
     en: 'ontario-mercury-outboard-price-guide',
-    zh: 'mercury-outboard-price-dealer-guide-toronto-chinese',
     pa: 'mercury-outboard-prices-ontario-punjabi',
   },
+  { zh: 'mercury-outboard-price-dealer-guide-toronto-chinese' },
   { en: 'spring-outboard-commissioning-checklist', zh: 'ontario-spring-boat-checklist-chinese' },
   {
     en: 'used-boat-walkaround-inspection-ontario',
@@ -132,7 +132,7 @@ export const BLOG_TRANSLATION_GROUPS = [
   },
   { en: 'mercury-outboard-repair-guide', zh: 'mercury-outboard-troubleshooting-chinese-ontario' },
   { en: 'total-cost-of-owning-a-boat-ontario-2026', zh: 'boat-ownership-cost-ontario-chinese' },
-  { en: 'renting-vs-owning-boat-ontario-math', zh: 'gta-chinese-rent-to-buy-boat-roadmap' },
+  { zh: 'gta-chinese-rent-to-buy-boat-roadmap' },
   { en: 'first-time-boat-rental-rice-lake-guide', zh: 'first-boat-rental-rice-lake-chinese-guide' },
   {
     en: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
@@ -143,7 +143,8 @@ export const BLOG_TRANSLATION_GROUPS = [
 const routeToGroup = new Map();
 
 for (const group of BLOG_TRANSLATION_GROUPS) {
-  if (!group.en) throw new Error('Every blog translation group requires an English route.');
+  const locales = Object.keys(group);
+  if (locales.length === 0) throw new Error('Empty blog translation group.');
   for (const [locale, slug] of Object.entries(group)) {
     if (!BLOG_LOCALES[locale]) throw new Error(`Unknown blog locale: ${locale}`);
     const key = `${locale}:${slug}`;
@@ -165,8 +166,10 @@ export function getBlogHreflangAlternates(locale, slug) {
   });
 
   const english = alternates.find((alternate) => alternate.hrefLang === 'en-CA');
-  if (!english) throw new Error(`Blog translation group has no English alternate: ${locale}:${slug}`);
-  alternates.push({ hrefLang: 'x-default', path: english.path });
+  const xDefaultPath = english?.path ?? alternates[0]?.path;
+  if (xDefaultPath) {
+    alternates.push({ hrefLang: 'x-default', path: xDefaultPath });
+  }
   return alternates;
 }
 

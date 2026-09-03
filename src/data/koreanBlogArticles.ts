@@ -1,5 +1,9 @@
 import { BlogArticle } from './blogArticles';
 
+/** Language-support note reused from existing article copy. Service is English-only. */
+export const KO_LANGUAGE_NOTE =
+  'HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.';
+
 export const koreanBlogArticles: BlogArticle[] = [
   {
     slug: 'ontario-boat-buying-guide',
@@ -8,7 +12,7 @@ export const koreanBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/ko-ontario-boat-buying-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: '구매 가이드',
     readTime: '12 분',
@@ -29,8 +33,6 @@ export const koreanBlogArticles: BlogArticle[] = [
 온타리오에서 보트를 구매하기 전에 네 가지를 먼저 확인하세요: PCOC(선박 조종 자격증), 보트 용도, 보관 방식, 연간 유지비. 새 보트, 중고 보트, 엔진 교체(repower) 세 가지 경로가 있습니다. 엔진 교체는 선체 상태가 좋은 중고 보트에 새 Mercury 엔진을 달아 새 보트보다 훨씬 저렴하게 새 엔진의 성능과 보증을 누리는 방법입니다. 실시간 투명 가격은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 확인하세요.
 
 ---
-
-### 전체 기사
 
 주말에 친구네 가족이 보트를 끌고 낚시 나가는 걸 보면서 "우리도 한번?" 하고 생각해본 적 있으시죠?
 
@@ -84,7 +86,7 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 - **트레일러로 집에 보관:** 가장 흔한 방식. 집 차고나 뒷마당에 두고, 출발 시 근처 boat launch로 견인.
 - **마리나 슬립:** 보트를 마리나에 상시 정박. 편하지만 연간 정박료 발생.
-- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 매년 약 584건의 겨울 정비와 311건의 보관 계약을 처리합니다.
+- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 2025년 8월부터 11월까지 완료된 584건의 윈터라이제이션 기록이 있습니다. 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
 
 ---
 
@@ -132,25 +134,24 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 ---
 
-## 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다. 이메일에 DeepL이나 Google 번역으로 영문을 함께 보내주시면 원활하게 소통할 수 있습니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다. 이메일에 DeepL이나 Google 번역으로 영문을 함께 보내주시면 원활하게 소통할 수 있습니다.
 
 ---
 
 ## 자주 묻는 질문
 
-**PCOC는 어떻게 취득하나요?** 
+**PCOC는 어떻게 취득하나요?**
 Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비용은 약 $40~$50이며, 한 번 취득하면 평생 유효합니다.
 
-**새 보트와 엔진 교체 중 어느 쪽이 나을까요?** 
+**새 보트와 엔진 교체 중 어느 쪽이 나을까요?**
 선체 상태가 좋다면 엔진 교체가 훨씬 경제적입니다. [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 견적을 먼저 확인해보세요.
 
-**HBW에서 한국어로 서비스를 받을 수 있나요?** 
+**HBW에서 한국어로 서비스를 받을 수 있나요?**
 한국어 서비스는 제공하지 않습니다. 온라인 견적 도구를 이용하시거나, 이메일에 번역을 함께 보내주시면 최선을 다해 도와드립니다.
 
-**겨울에 보트를 어떻게 보관하나요?** 
-온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbw.wiki/service](https://hbw.wiki/service)에서 예약할 수 있습니다.
+**겨울에 보트를 어떻게 보관하나요?**
+온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. HBW는 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
 
 ---
 
@@ -159,19 +160,19 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 - 온타리오 보트 면허 및 안전 규정
 - Mercury 115 vs 150 비교
 
-## 다음 단계 / CTA
+## 다음 단계
 
-**엔진 가격을 먼저 확인하고 싶다면:** 
+**엔진 가격을 먼저 확인하고 싶다면:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격, 전화 불필요.
 
-**보트 재고 확인 또는 렌탈 체험:** 
+**보트 재고 확인 또는 렌탈 체험:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**서비스 예약:** 
+**서비스 예약:**
 [hbw.wiki/service](https://hbw.wiki/service)
 
-**전화:** 905-342-2153 
-**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+**전화:** 905-342-2153
+**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 ---`,
     faqs: [
@@ -188,7 +189,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-27',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -199,7 +200,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch — walleye 시즌은 5월 둘째 토요일 개막
+- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch, walleye 시즌은 5월 둘째 토요일 개막
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 
@@ -210,8 +211,6 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 Rice Lake는 토론토에서 약 1.5시간(401 동쪽 → 115 북쪽) 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시를 하려면 낚시 면허(18~64세 필수)가 필요합니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
 
 ---
-
-### 전체 기사
 
 토론토 한인 낚시 커뮤니티에서 Lake Simcoe는 거의 "온타리오 낚시"의 대명사입니다. 얼음낚시 시즌이면 주차장에서 한국어가 들릴 정도입니다. Rice Lake를 아직 가보지 않았다면, Lake Simcoe 못지않은, 어쩌면 더 좋은, 낚시터를 놓치고 있는 것입니다.
 
@@ -254,14 +253,16 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 어종별 시즌 (FMZ 17 기준)
 
-| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) |
-|---|---|---|---|
-| Walleye(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 |
-| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 |
-| Muskie(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 |
-| Yellow Perch(옐로 퍼치) | 연중 개방 |, | 50마리 |
+이 표는 Sport(S) licence 기준입니다.
 
-**반드시 매년 온타리오 정부 사이트에서 최신 시즌 날짜와 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
+| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) | 소지 크기 |
+|---|---|---|---|---|
+| Walleye/Sauger(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 | 35~50 cm만 |
+| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 | 제한 없음 |
+| Muskellunge(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 | 112 cm 초과 |
+| Yellow Perch(옐로 퍼치) | 연중 개방 | 없음 | 50마리 | 제한 없음 |
+
+**반드시 매년 온타리오 공식 [FMZ 17 규정](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)에서 최신 시즌 날짜, 소지 크기, 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
 
 ---
 
@@ -279,7 +280,12 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 **HBW 렌탈 보트:** Rice Lake에서 폰툰과 낚시 보트를 대여합니다. 현재 보트 종류, 정원, 요금, 예약 가능 날짜는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 확인하고 온라인으로 예약하세요. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다.
 
-**언어 안내:** HBW 직원들은 영어로 소통합니다. 한국어 서비스는 없지만 한인 낚시객을 환영하며 최선을 다해 도와드립니다.
+---
+
+> **언어 안내**
+> 이 한국어 가이드는 토론토와 GTA 한인 낚시객이 Rice Lake 가는 길, 낚시 면허, FMZ 17 시즌과 어획 한도를 한국어로 먼저 파악할 수 있도록 만든 것입니다.
+> HBW 직원의 상담과 서비스는 영어로 진행됩니다. 방문 시 영어가 가능한 가족이나 친구와 함께 오시거나, 휴대폰 번역 앱을 사용하시면 현장에서 소통이 수월합니다.
+> 한국어 서비스는 제공하지 않습니다. 한인 방문객이 오시면 천천히 맞춰 도와드리겠습니다.
 
 ---
 
@@ -304,13 +310,13 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 자주 묻는 질문
 
-**Rice Lake에서 walleye 낚시 최적 시기는?** 
+**Rice Lake에서 walleye 낚시 최적 시기는?**
 5월 둘째 토요일 개장 직후 봄철이 가장 활발합니다. 해 뜨기 전후 2시간이 황금 시간대입니다.
 
-**HBW에서 낚시 장비도 빌릴 수 있나요?** 
+**HBW에서 낚시 장비도 빌릴 수 있나요?**
 보트만 대여합니다. 낚시 장비는 별도로 준비해오세요.
 
-**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?** 
+**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?**
 용도에 따라 다릅니다. Walleye를 목표로 한다면 Rice Lake가 더 특화되어 있습니다. Lake Simcoe는 Lake trout와 perch로 더 잘 알려져 있습니다.
 
 ---
@@ -322,13 +328,13 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## CTA
 
-**렌탈 보트 예약 및 보트 재고 확인:** 
+**렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**엔진 견적:** 
+**엔진 견적:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-**전화:** 905-342-2153 
+**전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
@@ -346,7 +352,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
     image: '/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-26',
     publishDate: '2026-04-12',
     category: '정비 가이드',
     readTime: '9 분',
@@ -356,8 +362,8 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 **온타리오 겨울(-20~-30°C)에서 선외기를 보관하려면 6단계 정비가 필수. 건너뛰면 봄에 엔진 블록 균열이나 카뷰레터 막힘으로 수천 달러 수리비가 발생할 수 있습니다.**
 
-- **6단계 순서**: 연료 안정화 → 실린더 포깅 → 기어 오일 교환 → 배터리 분리 → 윤활 → 커버 보관
-- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함 — HBW는 에탄올 무첨가 휘발유 판매
+- **6단계 순서**: 연료 안정화 → 실린더 포깅 → 기어 오일 교환 → 승인된 배터리 계획 → 윤활 → 커버 보관
+- **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
 - **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
 
@@ -366,11 +372,10 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 핵심 요약
 
-온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 연료 안정화, 엔진 내부 포깅(fogging), 기어 오일 교환, 배터리 분리 보관, 윤활, 커버 보호입니다.
+온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 연료 안정화, 엔진 내부 포깅(fogging), 기어 오일 교환, 승인된 배터리 계획, 윤활, 커버 보호입니다. [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 
-### 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다. 걱정하지 마세요. 영어를 할 줄 아는 친구나 가족과 함께 오시거나, 휴대폰의 번역 앱을 사용하셔도 좋습니다. 저희는 천천히, 끝까지 함께 확인해 드리겠습니다.
 
 ### 겨울 정비 핵심 항목 요약
 
@@ -411,9 +416,9 @@ HBW 현장에서 에탄올 무첨가 연료를 판매합니다.
 
 기어박스 내 기어 오일은 한 시즌 사용 후 수분과 금속 마모 입자를 함유합니다. 교환하지 않으면 저온에서 기어와 씰의 부식이 가속화됩니다.
 
-### 4. 배터리 분리·별도 보관
+### 4. 승인된 배터리 계획
 
-배터리를 보트에 둔 채 겨울을 보내면 안 됩니다. 저온은 납축 배터리의 방전을 가속시키며, 심하면 영구 손상됩니다.
+건강한 배터리는 완전히 충전되고, 분리되고, 고정되어 있으며, 승인된 보관 계획이 허용할 때만 보트에 남겨둘 수 있습니다. 모델/시리얼 매뉴얼과 승인된 보관 계획이 기준입니다.
 
 ### 5. 모든 가동 부위 윤활
 
@@ -436,11 +441,11 @@ HBW 현장에서 에탄올 무첨가 연료를 판매합니다.
 - 연료 안정제 용량 오류 또는 기화기 처리 누락
 - 핵심 윤활 지점 누락
 
-HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 모델에 정통합니다.
+HBW에는 2025년 8월부터 11월까지 완료된 584건의 윈터라이제이션 기록이 있으며, 기술자들은 Mercury 전 모델에 정통합니다.
 
-## 겨울 정비 예약
+## 겨울 정비 접수
 
-- **온라인 예약:** [hbw.wiki/service](https://hbw.wiki/service)
+- **서비스 요청:** [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 - **전화:** 905-342-2153
 - **에탄올 무첨가 연료:** 현장 판매
 - **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -448,8 +453,8 @@ HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 �
     faqs: [
       { question: '겨울 정비 비용은 얼마나 드나요?', answer: '엔진 모델과 필요한 서비스에 따라 다릅니다. hbw.wiki/service에서 문의하시면 견적을 안내해드립니다.' },
       { question: '직접 겨울 정비를 해도 되나요?', answer: '일부 단계는 가능하지만, 포깅과 기어 오일 교환을 잘못하면 정비비보다 훨씬 큰 수리비가 발생할 수 있습니다. 전문 처리를 권장합니다.' },
-      { question: '예약은 언제 하는 게 좋나요?', answer: '9월 말~10월 초가 적절합니다. 추수감사절(10월 둘째 월요일) 이후가 가장 바쁜 시기입니다.' },
-      { question: '보트 보관만 맡길 수도 있나요?', answer: '네. HBW는 겨울 정비와 보관 서비스를 별도 또는 함께 제공합니다.' },
+      { question: '예약은 언제 하는 게 좋나요?', answer: 'hbw.wiki/service를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. 마리나는 12월 1일부터 4월 1일까지 휴업합니다.' },
+      { question: '보트 보관만 맡길 수도 있나요?', answer: '네. HBW는 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공합니다. 실내 또는 난방 보트 보관은 제공하지 않습니다.' },
       { question: '에탄올 무첨가 연료는 어디서 살 수 있나요?', answer: 'HBW 현장에서 판매합니다. 겨울 보관 전 방문 시 급유하는 것이 가장 편리합니다.' },
     ],
   },
@@ -460,7 +465,7 @@ HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 �
     image: '/lovable-uploads/ko-mercury-115-vs-150-comparison-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '엔진 비교',
     readTime: '8 분',
@@ -468,18 +473,18 @@ HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 �
     content: `
 ## 빠른 답변
 
-**Mercury 115 HP는 평온한 내수면용 16-19피트 보트에, 150 HP는 가족·짐을 가득 싣고 거센 수면에서 운항하는 19-22피트 보트에 적합합니다. 애매하면 150을 선택하는 것이 안전합니다.**
+**Mercury 115 HP는 평온한 내수면용 16–19피트 보트에, 150 HP는 가족·짐을 가득 싣고 거센 수면에서 운항하는 19–22피트 보트에 적합합니다. 애매하면 150을 선택하는 것이 안전합니다.**
 
-- **115 HP**: 2.1L 4기통, 약 163kg, 16-19피트 알루미늄/폰툰, 2-3인 탑승
-- **150 HP**: 3.0L 4기통, 약 206kg, 19-22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
-- **무게 차이**: 약 43kg — 보트 트랜섬 무게 제한 반드시 확인
+- **115 HP**: 2.1L 4기통, 약 163kg, 16–19피트 알루미늄/폰툰, 2-3인 탑승
+- **150 HP**: 3.0L 4기통, 약 206kg, 19–22피트, 4-5인 + 장비 적재, 거센 물결에서도 여유
+- **무게 차이**: 약 43kg, 보트 트랜섬 무게 제한 반드시 확인
 - **가격**: [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 투명한 CAD 가격 확인 가능
 
 ---
 
 ### 핵심 요약
 
-Mercury 115 FourStroke는 16~19피트 알루미늄 보트와 폰툰에 적합합니다. 가족 레저, 낚시, 튜빙에 충분합니다. Mercury 150 FourStroke는 19~22피트의 더 큰 보트, 자주 만석으로 탑승하는 경우, 그리고 넓은 호수에서 바람과 파도를 상대해야 할 때 유리합니다. 경계선에 있다면 150이 더 보수적이고 안전한 선택입니다.
+Mercury 115 FourStroke는 16–19피트 알루미늄 보트와 폰툰에 적합합니다. 가족 레저, 낚시, 튜빙에 충분합니다. Mercury 150 FourStroke는 19–22피트의 더 큰 보트, 자주 만석으로 탑승하는 경우, 그리고 넓은 호수에서 바람과 파도를 상대해야 할 때 유리합니다. 경계선에 있다면 150이 더 보수적이고 안전한 선택입니다.
 
 ---
 
@@ -490,20 +495,17 @@ Mercury 115 FourStroke는 16~19피트 알루미늄 보트와 폰툰에 적합합
 | 배기량 | 2.1L | 3.0L |
 | 실린더 | 직렬 4기통 | 직렬 4기통 |
 | 무게 (20" 샤프트) | 약 163kg (359lbs) | 약 206kg (455lbs) |
-| RPM 범위 | 5,000, 6,000 | 5,000, 5,800 |
-| 적합 보트 길이 | 16, 19피트 | 19, 22피트 |
+| RPM 범위 | 5,000–6,000 | 5,000–5,800 |
+| 적합 보트 길이 | 16–19피트 | 19–22피트 |
 
 두 엔진 모두 직렬 4기통입니다. 차이는 실린더 수가 아니라 **배기량과 토크 여유**입니다. 150은 115보다 배기량이 약 43% 큽니다.
 
 ---
 
-### 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
 
 ---
-
-### 전체 기사
 
 HBW에서는 매년 약 65대의 새 Mercury 엔진을 판매합니다. 그중 가장 자주 듣는 질문은 **"115와 150 중 뭘 골라야 하나요?"**입니다.
 
@@ -565,13 +567,13 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ## 자주 묻는 질문
 
-**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?** 
+**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?**
 보트 크기와 용도에 따라 다릅니다. 정확한 견적과 추천을 위해 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 사양을 입력해보세요.
 
-**두 엔진의 가격 차이는 얼마나 되나요?** 
+**두 엔진의 가격 차이는 얼마나 되나요?**
 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 실시간으로 두 엔진을 나란히 비교할 수 있습니다.
 
-**Pro XS 버전은 얼마나 더 비싼가요?** 
+**Pro XS 버전은 얼마나 더 비싼가요?**
 Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가격은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 확인하세요.
 
 ---
@@ -583,9 +585,9 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 
 ## CTA
 
-**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격 
-**전화:** 905-342-2153 
-**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service) 
+**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격
+**전화:** 905-342-2153
+**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service)
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
@@ -602,7 +604,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
     image: '/lovable-uploads/ko-repower-vs-new-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '엔진 교체',
     readTime: '9 분',
@@ -615,7 +617,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 - **선체 수명**: 양질의 알루미늄 hull은 30-40년, 적절히 관리한 fiberglass도 25-30년
 - **Repower 적합**: 선체 양호, 현 보트 크기·용도 만족, 짧은 대기 시간
 - **새 보트 적합**: 선체 균열/부식, 다른 종류 보트 필요, 단일 대출 선호
-- **HBW**: Mercury Premier + Legend Boats 딜러 — 양쪽 옵션을 정직하게 안내
+- **HBW**: Mercury Premier + Legend Boats 딜러, 양쪽 옵션을 정직하게 안내
 
 ---
 
@@ -633,9 +635,8 @@ Harris Boat Works는 1947년부터 Rice Lake에 자리를 잡은 가족 경영 �
 
 ---
 
-## 언어 안내
-
-Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbw.wiki/service를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
+> **언어 안내**
+> Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbw.wiki/service를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
 
 ---
 
@@ -667,16 +668,16 @@ Mercury Premier 딜러로서 Harris Boat Works는 FourStroke 표준과 낚시 �
 
 ## 새 보트 구매를 추천하는 경우
 
-**선체가 손상되거나 심하게 부식된 경우.** 
+**선체가 손상되거나 심하게 부식된 경우.**
 알루미늄 선체에 균열, 심한 부식, 구조 변형이 있다면 아무리 좋은 엔진을 달아도 근본적인 문제는 해결되지 않습니다. 선체가 문제라면, 새 보트가 답입니다.
 
-**완전히 다른 종류의 보트가 필요한 경우.** 
+**완전히 다른 종류의 보트가 필요한 경우.**
 오픈형 낚시 보트를 타다가 캐빈이 있는 가족용 보트로 바꾸고 싶다면, 엔진 교체로는 해결되지 않습니다. 보트의 형태 자체를 바꾸려면 새 보트가 필요합니다.
 
-**통합 대출이 재정 관리에 더 유리한 경우.** 
+**통합 대출이 재정 관리에 더 유리한 경우.**
 보트와 엔진을 함께 새로 구매하면 하나의 대출로 월 납입을 관리할 수 있어, 일부 구매자에게는 더 간편하거나 접근하기 쉬운 방식일 수 있습니다.
 
-**보트가 이미 수명을 다한 경우.** 
+**보트가 이미 수명을 다한 경우.**
 나이, 마모, 미뤄진 유지보수가 쌓이면 선체 자체가 한계에 달하는 시점이 옵니다. 겉으로 큰 결함이 없어 보여도, 전반적인 상태가 이미 끝에 가까울 수 있습니다.
 
 ---
@@ -691,13 +692,13 @@ Mercury Premier 딜러로서 Harris Boat Works는 FourStroke 표준과 낚시 �
 
 ## 다음 단계
 
-**엔진 교체를 고려 중이라면:** 
+**엔진 교체를 고려 중이라면:**
 mercuryrepower.ca에서 실시간 견적을 확인하세요. 몇 분이면 캐나다 달러 기준 가격을 확인할 수 있습니다.
 
-**새 보트를 고려 중이라면:** 
+**새 보트를 고려 중이라면:**
 harrisboatworks.ca에서 현재 재고를 확인하세요.
 
-**서비스 요청:** 
+**서비스 요청:**
 hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 **전화:** 905-342-2153
@@ -708,22 +709,22 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 ## 자주 묻는 질문
 
-**엔진 교체 비용은 얼마나 드나요?** 
+**엔진 교체 비용은 얼마나 드나요?**
 보트 종류와 원하는 마력에 따라 크게 다릅니다. 정확한 비용은 mercuryrepower.ca에서 실시간으로 확인하세요. 숨겨진 항목 없이, 실제 비용을 CAD로 보여드립니다.
 
-**선체 상태를 어떻게 확인할 수 있나요?** 
+**선체 상태를 어떻게 확인할 수 있나요?**
 트랜섬(선미판)과 바닥을 눌러보세요. 물렁한 느낌이 나면 구조 문제가 있을 수 있습니다. 확실하지 않다면 보트를 가져오세요, 저희가 직접 살펴보고 솔직하게 말씀드리겠습니다.
 
-**영어로만 소통해야 하나요?** 
+**영어로만 소통해야 하나요?**
 온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbw.wiki/service)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
 
-**Gores Landing까지 얼마나 걸리나요?** 
+**Gores Landing까지 얼마나 걸리나요?**
 GTA에서 차로 약 1시간 30분 거리입니다. Rice Lake와 Kawartha Lakes 지역에서는 더 가깝습니다.
 
-**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?** 
+**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?**
 엔진 수리 및 설치는 Mercury와 Mercruiser만 취급합니다.
 
-**새 Legend 보트는 어떻게 볼 수 있나요?** 
+**새 Legend 보트는 어떻게 볼 수 있나요?**
 harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 
 ---
@@ -745,7 +746,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
     image: '/lovable-uploads/ko-ontario-boating-licence-regulations-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-19',
     publishDate: '2026-04-12',
     category: '규정 가이드',
     readTime: '11 분',
@@ -758,7 +759,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 - **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
 - **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
-- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요 — HBW가 repower 시 함께 안내
+- **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요, HBW가 repower 시 함께 안내
 
 ---
 
@@ -767,8 +768,6 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 캐나다 온타리오에서 동력 보트를 운항하려면 PCOC(여가용 선박 조종 자격증), 선박 면허(PCL), 완비된 안전 장비, 그리고 수상 교통 규칙 준수가 필요합니다. 낚시를 하려면 별도의 낚시 면허도 있어야 합니다. OPP(Ontario Provincial Police) 수상 순찰 적발 시 PCOC/PCL 위반 과태료는 $250부터 시작합니다. 규정의 공식 최신 버전은 반드시 Transport Canada 사이트에서 확인하세요.
 
 ---
-
-### 전체 기사
 
 GTA 한인 분들 중 보트를 산 뒤에야 캐나다 보트 규정이 예상보다 세세하다는 걸 아는 경우가 있습니다. OPP 수상 순찰에 적발되면 과태료가 부과됩니다. 이 가이드는 그 전에 알아야 할 것들을 한국어로 정리한 것입니다.
 
@@ -883,16 +882,16 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 
 ## 자주 묻는 질문
 
-**PCOC 시험은 어디서 볼 수 있나요?** 
+**PCOC 시험은 어디서 볼 수 있나요?**
 Transport Canada 공인 기관에서 온라인으로 응시할 수 있습니다. "pleasure craft operator card test"로 검색하면 여러 공인 기관을 찾을 수 있습니다.
 
-**PCL이 없으면 어떻게 되나요?** 
+**PCL이 없으면 어떻게 되나요?**
 OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작합니다.
 
-**중고 보트를 살 때 PCL이 이전되나요?** 
+**중고 보트를 살 때 PCL이 이전되나요?**
 보트 소유권이 이전되면 새 소유자 이름으로 PCL을 새로 신청해야 합니다.
 
-**HBW에서 보트 서비스를 예약하려면?** 
+**HBW에서 보트 서비스를 예약하려면?**
 [hbw.wiki/service](https://hbw.wiki/service)에서 온라인 양식을 작성하세요.
 
 ---

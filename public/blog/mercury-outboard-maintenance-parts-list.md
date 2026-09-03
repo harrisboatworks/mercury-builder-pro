@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list.md
-last_updated: 2026-08-11
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part N
 description: "Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP."
 category: "Service"
 date_published: 2026-08-11
-date_modified: 2026-08-11
+date_modified: 2026-08-26
 keywords: ["Mercury outboard maintenance parts list","Mercury outboard oil filter part number","Mercury 100 hour maintenance kit","Mercury 300 hour service kit","Mercury outboard impeller part number"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-08-11  
-**Last reviewed:** 2026-08-11  
+**Last reviewed:** 2026-08-26  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list
 
@@ -83,7 +83,7 @@ Oil part numbers: 10W-30 is 8M0142141 per quart; 25W-40 is 8M0078629. That holds
 
 ## 40 to 60 HP: The Cottage Workhorses
 
-Two versions here, and the gearcase is the difference. Command Thrust runs a bigger gearcase with more than double the lube capacity, a different impeller, and different kits. Check your model code before ordering. Our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats) explains what the gearcase actually does.
+Two versions here, and the gearcase is the difference. Command Thrust runs a bigger gearcase with more than double the lube capacity, a different impeller, and different kits. Check your model code before ordering. Our [Command Thrust guide](/blog/mercury-command-thrust-complete-guide-2026) explains what the gearcase actually does.
 
 | Part | 40/50/60 Command Thrust | 40/50/60 Standard Gearcase |
 |---|---|---|
@@ -157,7 +157,7 @@ Verado spans four very different machines, from the older four-cylinder to the V
 | Thermostat | 8M0174561 | 8M0174561 | 8M0174561 | Upper 8M0205186 / Lower 8M0205215 | 8M0177662 |
 | Drive belt | 880566Q14 | 880566Q14 | 880566Q14 | 8M0178243 | 8M0178243 |
 | Gear lube | High Performance, 970 mL (32.8 oz) | High Performance, 970 mL (32.8 oz); 5.44 HD 510 mL (17.2 oz) | High Performance, 970 mL (32.8 oz); 5.44 HD 510 mL (17.2 oz) | High Performance, 1.4 L (1.5 qt) | High Performance, 2.8 L (3 qt) |
-| Impeller / kit | 443026T2 / 8M0100527 | 443026T2 / 8M0100527 | 443026T2 / 8M0100527 | 8M0200115 / 8M0200136 | 8M0177706 / 8M0177997 |
+| Impeller / kit | 43026T2 / 8M0100527 | 43026T2 / 8M0100527 | 43026T2 / 8M0100527 | 8M0200115 / 8M0200136 | 8M0177706 / 8M0177997 |
 | 100-hr kit | None (300-hr only) | 8M0120657 (s/n 2B144122 and below: 8M0097858) | 8M0120657 | 8M0207807 | 200-hr: 8M0179987 |
 | 300-hr kit | 8M0130835 | 8M0133617 (s/n 2B144122 and below: 8M0097859) | 8M0133617 | 8M0207808 | 1000-hr: 8M0179988 |
 | MerCathode kit | 88334A2 | 88334A2 | 88334A2 | 8M0180081 | 8M0180081 |
@@ -204,7 +204,7 @@ Mid-range motors (40-115 HP) use anode kit 8M0107547. Larger families split by g
 
 The parts counter tells the same story every spring. Someone winterized their own 115 last fall, ordered the filter their forum thread recommended, and it was the 1.7L filter for a 2.1L motor. Or a Verado owner grabbed the pre-2B144123 kit for a post-break motor and ended up with two returns and a lost weekend.
 
-Out of 584 winterizations and 507 paid service jobs last season, the pattern is consistent: the motors that hit trouble are rarely the ones that missed a spec. They're the ones where the right part got guessed at instead of looked up. Serial number first. Every time. That habit is most of what separates a 20-year motor from a 10-year one.
+Out of 584 completed winterization records from August through November 2025 and 507 paid service jobs last season, the pattern is consistent: the motors that hit trouble are rarely the ones that missed a spec. They're the ones where the right part got guessed at instead of looked up. Serial number first. Every time. That habit is most of what separates a 20-year motor from a 10-year one.
 
 ---
 

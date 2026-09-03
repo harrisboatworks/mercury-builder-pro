@@ -53,7 +53,7 @@ On Rice Lake, you want to get places. You want to pull a tube. You want to get h
 
 The general rule: **match the motor to the max HP rating on the hull plate, not the minimum**. Most pontoon owners buy to the minimum and call it good enough. It isn't.
 
-If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
+If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
 
 ---
 
@@ -129,7 +129,7 @@ Rice Lake has rock shelves. A hard grounding can crack a weld without obvious le
 
 #### Found something or unsure?
 
-Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
+Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbw.wiki/service or call (905) 342-2153.
 
 ---
 

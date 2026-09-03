@@ -86,14 +86,6 @@ const contracts = [
     required: [fmt(localFacts.proXs250Min), fmt(localFacts.proXs250Max), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],
   },
   {
-    // Retired slug is-2026-good-year-to-buy-boat-canada merged into this winner (301 in vercel.json).
-    // Expectations re-derived from the winner's body: it carries the pricing-reference pointer but
-    // no 115 ELPT figures and no explicit as-of date line, so only the pointer is contractual here.
-    slug: '2026-boating-market-ontario-boat-buyers',
-    stale: ['$19,220 MSRP'],
-    required: ['[Mercury pricing reference](/pricing-reference)'],
-  },
-  {
     slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
     stale: ['$35,000 to $50,000+'],
     required: [fmt(localFacts.salmonPairFloor), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],
@@ -102,6 +94,11 @@ const contracts = [
     slug: 'cheapest-mercury-outboard-canada-2026',
     stale: ['$1,298 - $38,539 CAD'],
     required: [fmt(localFacts.lineupMin), fmt(localFacts.lineupMax), '/pricing-reference', REVIEWED_LABEL],
+  },
+  {
+    slug: 'mercury-pro-xs-repower-rice-lake-kawartha-anglers',
+    stale: ['high teens of thousands', 'mid-thirties of thousands'],
+    required: ['mercuryrepower.ca'],
   },
 ];
 

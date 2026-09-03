@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { cleanBlogContent } from './cleanBlogContent.js';
 
@@ -52,6 +53,7 @@ Answer.
     'FAQ | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'Aksar puchhe jaande sawaal | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'اکثر پوچھے جانے والے سوالات | FAQ',
+    'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ',
     'FAQ | अक्सर पूछे जाने वाले सवाल',
   ])('removes a localized inline FAQ headed %s', (heading) => {
     const content = `## ${heading}\n\nQuestion and answer.\n\n## Sources\n\n- Source`;
@@ -59,6 +61,18 @@ Answer.
     expect(
       cleanBlogContent(content, { hasStructuredFaqs: true }),
     ).toBe('## Sources\n\n- Source');
+  });
+
+  it('keeps the Urdu winterization twin to one generated FAQ section', () => {
+    const markdown = readFileSync(
+      'public/blog/ur/boat-winterization-storage-toronto-urdu.md',
+      'utf8',
+    );
+
+    expect(markdown).not.toContain(
+      '## کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ',
+    );
+    expect(markdown.match(/^## FAQs$/gm)).toHaveLength(1);
   });
 
   it('removes terminal related-guide variants', () => {
@@ -88,6 +102,57 @@ Continue the checklist.`;
 
     expect(cleanBlogContent(content)).toBe(
       '## Step one\n\nCheck the battery switch.\n\n## Step two\n\nContinue the checklist.',
+    );
+  });
+
+  it('strips localized full-article headings and CTA prefixes', () => {
+    const content = `### Artículo completo
+
+## CTA, Próximos pasos
+
+Usa el configurador.
+
+### Article complet
+
+### 전체 기사
+
+Keep this heading.`;
+
+    expect(cleanBlogContent(content)).toBe(
+      '## Próximos pasos\n\nUsa el configurador.\n\nKeep this heading.',
+    );
+    expect(cleanBlogContent('## 다음 단계 / CTA\n\n견적을 확인하세요.')).toBe(
+      '## 다음 단계\n\n견적을 확인하세요.',
+    );
+    expect(
+      cleanBlogContent(
+        '## 내부 링크\n- 가이드\n\n## 본문\n\nKeep the body.',
+      ),
+    ).toBe('## 본문\n\nKeep the body.');
+    expect(
+      cleanBlogContent(
+        '## 内部连结\n- [指南](/blog/zh/guide)\n\n## 行动呼吁（CTA）\n\n建立报价。',
+      ),
+    ).toBe('## 行动呼吁\n\n建立报价。');
+    expect(
+      cleanBlogContent(
+        '## 内部链接\n- [指南](/blog/zh/guide)\n\n## 行动呼吁 (CTA)\n\n建立报价。',
+      ),
+    ).toBe('## 行动呼吁\n\n建立报价。');
+  });
+
+  it('strips customer-visible Canonical URL editorial lines', () => {
+    const content = `**Canonical URL:** https://www.mercuryrepower.ca/blog/example
+
+## Quick Answer
+
+The right motor depends on the hull.`;
+
+    expect(cleanBlogContent(content)).toBe(
+      '## Quick Answer\n\nThe right motor depends on the hull.',
+    );
+    expect(cleanBlogContent('**Canonical URL:**\n\nPublish-ready copy.')).toBe(
+      'Publish-ready copy.',
     );
   });
 });

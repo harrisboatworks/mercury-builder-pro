@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs
-last_updated: 2026-09-03
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false

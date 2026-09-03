@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-07-31
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-07-31
+date_modified: 2026-08-19
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-07-31\
+**Dernière révision :** 2026-08-19\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -198,43 +198,14 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/fr/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 
-## Foire aux questions
-
-**Combien coûte une remotorisation Mercury dans la GTA ?**
-Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.
-
-**Combien de temps prend une remotorisation chez Harris Boat Works ?**
-Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
-
-**Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?**
-Oui. 401 vers l'est jusqu'à Cobourg, vers le nord sur la route régionale 18 jusqu'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.
-
-**Organisez-vous le transport de bateau depuis la GTA ?**
-Nous n'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.
-
-**Mon Mercury sera-t-il admissible à la garantie si je l'ai acheté ailleurs et que je veux le faire entretenir chez Harris Boat Works ?**
-Oui. Le réseau de garantie canadien Mercury honore la couverture chez n'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d'achat; nous enregistrons le travail dans le système central de Mercury.
-
-**Puis-je choisir un Pro XS plutôt qu'un FourStroke pour la remotorisation ?**
-Cela dépend de l'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l'efficacité énergétique, l'usage familial.
-
-**Que se passe-t-il si mon bateau a besoin de plus qu'un moteur ?**
-Scénario fréquent. Les remotoriations font souvent émerger d'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.
-
-**Faites-vous des remotoriations à deux moteurs ?**
-Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d'installation plus long (généralement 2 à 3 semaines pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.
-
-**Quelle est la valeur d'échange de mon moteur actuel ?**
-Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
-
----
+## Coordonnées
 
 **Téléphone :** 905-342-2153
 **Configurateur :** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Demandes de service :** [hbw.wiki/service](https://hbw.wiki/service)
 **Adresse :** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-## FAQs
+## Questions fréquentes
 
 ### Combien coûte une remotorisation Mercury dans la GTA ?
 
@@ -242,7 +213,7 @@ Cela dépend de la puissance et du bateau actuel. Plages typiques : installation
 
 ### Combien de temps prend une remotorisation chez Harris Boat Works ?
 
-Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
+Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury ; nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
 
 ### Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?
 

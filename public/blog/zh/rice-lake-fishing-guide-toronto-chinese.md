@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-09-02
+last_updated: 2026-08-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
 description: "从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-08-07
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-02  
+**最后审核:** 2026-08-07  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
@@ -173,15 +173,6 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 ---
 
-## 内部连结
-
-- [新移民安大略省买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
-- [大多伦多华人买 Mercury 船外机指南](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
-- [多伦多到 Rice Lake 一日钓鱼游完整指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
-- [安省华人船主入门：PCOC、PCL、钓鱼证](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
-
----
-
 **相关文章**
 
 如果这次是先带家人来 Rice Lake 试试水，下面几篇可以接着看：
@@ -198,9 +189,8 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
-## 语言说明
-
-我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ## 准备出发？
 
@@ -208,7 +198,13 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年家族经营 | 自 1965 年起为 Mercury 授权经销商 | Mercury Marine Premier 认证经销商
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
+
+自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
+
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
 ## FAQs
 
@@ -241,4 +237,3 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | 自 1947 年�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

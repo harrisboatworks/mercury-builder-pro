@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-02
+date_modified: 2026-08-31
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,21 +25,19 @@ revenue_driver: service
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-31  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
 ### Quick Answer
 
-Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (single-engine) and 8M0173129 (multi-engine). The Mercury Marine app is free on iOS and Android. No subscription.
+Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (under-cowl, single engine) and 8M0173129 (under-helm, one to four engines). The Mercury Marine app is free on iOS and Android. No subscription.
 
 SmartCraft Connect Mobile is the current name for what Mercury used to call VesselView Mobile (rebranded in 2024). If you are shopping for the old name, this is the same product line.
 
 If the app shows a complete fault number, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) to check the scoped meaning and owner action before treating a component name as a parts diagnosis.
 
 ---
-
-### Full Article
 
 A lot of the best engine data Mercury builds into its motors never makes it to the helm. Fault codes happen. Fuel economy data is collected. Engine hours accumulate. Without a way to read them, all of that stays invisible until something goes wrong.
 
@@ -63,15 +61,39 @@ A small module, roughly the size of a deck of cards, that plugs into the SmartCr
 
 **What it is not:** A chartplotter replacement. A SmartCraft gauge. A Boost upgrade itself. A VesselView dash display.
 
-The module lives under the cowl on a single-engine boat, or under the helm on a multi-engine setup. You never see it. You see its output in the app on your phone.
+The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129 module lives under the helm and supports one to four engines. You never see the module. You see its output in the app on your phone.
 
 ---
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, 2-strokes, and Optimax engines are NOT compatible. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit.
 
-For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
+## Eligibility Edge Cases
+
+**Mercury 25 and 30 HP.** These got SmartCraft in 2022. A 2021 or earlier 25 or 30 has no Connect path; 2022 and newer does. This is the only class where the model-year cutoff is that recent.
+
+**Mercury Avator electric.** The Avator outboards connect to the Mercury Marine app but use a different module than the gas SmartCraft path. Same end-user experience, different install part number. If you have an Avator, ask us for the Avator path specifically.
+
+**Joystick Piloting, Active Trim, or Skyhook boats.** These boats are already deeply SmartCraft-integrated, so the Connect module just joins the existing network. Installs here are usually 30 minutes because the wiring is already in place.
+
+**Twin and triple setups.** SmartCraft Connect handles up to four engines, each reporting independently in the app. For a triple or quad, ask before assuming, because gateway hardware can carry an engine-count limit depending on the year.
+
+**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
+
+## Motors With No Connect Path
+
+**9.9, 15, and 20 HP portables.** Designed as basic, lightweight outboards with no SmartCraft network bus. There is no retrofit path. On a kicker setup, the main engine is the one that connects, not the kicker.
+
+**Pre-2004 Mercury 4-strokes.** SmartCraft rolled out across the lineup around 2004. Earlier 4-strokes use a simpler harness without the data bus, and no retrofit kit makes them compatible.
+
+**Carbureted and EFI 2-strokes.** The classic 2-strokes, including the high-output 200 EFI, 225 EFI, and 250 EFI, use a different engine management protocol. Connect cannot read them and there is no software workaround.
+
+**If your motor has no path** and you want connectivity specifically, [the answer is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Customers who repower from a pre-2004 motor to a current FourStroke pick up SmartCraft Connect on the new motor day one.
+
+## Find Your Serial to Confirm
+
+Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. Once you have it, email info@harrisboatworks.ca and we will check eligibility against the exact motor record. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
 
 To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
 
@@ -82,7 +104,7 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | Part Number | Description | For |
 |---|---|---|
 | 8M0173128 | Under-cowl single-engine module | One Mercury outboard |
-| 8M0173129 | Under-helm 1-to-4 engine module | Twins, triples, quads |
+| 8M0173129 | Under-helm 1-to-4 engine module | One to four engines |
 
 The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -118,7 +140,7 @@ If you've ever forgotten when the last lower-unit service was, Connect tracks it
 
 **SmartCraft Connect Mobile** is the current Mercury phone-app product. The phone is the display. This is what new installs in 2026 should use.
 
-VesselView Mobile was the original name. Mercury rebranded the product to SmartCraft Connect Mobile in 2024, with refreshed module part numbers (8M0173128 single-engine and 8M0173129 multi-engine). If you have a working VesselView Mobile install, the hardware still works and is still supported. Just do not buy a new VesselView-branded module in 2026. Order the SmartCraft Connect part numbers instead.
+VesselView Mobile was the original name. Mercury rebranded the product to SmartCraft Connect Mobile in 2024, with refreshed module part numbers (8M0173128 under-cowl for one engine and 8M0173129 under-helm for one to four engines). If you have a working VesselView Mobile install, the hardware still works and is still supported. Just do not buy a new VesselView-branded module in 2026. Order the SmartCraft Connect part numbers instead.
 
 **SmartCraft Gauges / VesselView dash displays** are hardwired in-dash digital gauges, the same data plus more, in a permanent dashboard display. They pair well with SmartCraft Connect for a backup-data setup.
 
@@ -141,6 +163,10 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 ![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
 
 ## Install: DIY vs. HBW
+
+Mercury's official walkthrough demonstrates the under-cowl 8M0173128 installation for a single-engine boat. Mercury lists 8M0173129 as the under-helm module for one to four engines. The engine must be SmartCraft-capable; confirm the exact boat and engine configuration and follow the current instructions before installation.
+
+[SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)](https://www.youtube.com/watch?v=lEa_MVfOs7M)
 
 The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
 
@@ -216,7 +242,7 @@ No. The 25 HP and 30 HP class only became SmartCraft-compatible from model year 
 
 ### Is SmartCraft Connect Mobile the same as VesselView Mobile?
 
-Yes. Mercury rebranded VesselView Mobile to SmartCraft Connect Mobile in 2024. The function is the same: a small under-cowl module that streams engine data to the free Mercury Marine app on iOS and Android. Current part numbers are 8M0173128 single-engine and 8M0173129 multi-engine.
+Yes. Mercury rebranded VesselView Mobile to SmartCraft Connect Mobile in 2024. The function is the same: a small module that streams engine data to the free Mercury Marine app on iOS and Android. Current part numbers are 8M0173128 for an under-cowl single-engine application and 8M0173129 for an under-helm one-to-four-engine application.
 
 ### Does the Mercury Marine app cost anything?
 

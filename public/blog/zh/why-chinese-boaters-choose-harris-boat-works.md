@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works.md
-last_updated: 2026-08-03
+last_updated: 2026-08-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "为什么 GTA 华人船主选择 Harris Boat Works？"
 description: "Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury Premier 认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、对华人客户的友好接待。"
 category: "HBW 中文介绍"
 date_published: 2026-05-10
-date_modified: 2026-08-03
+date_modified: 2026-08-21
 keywords: ["Harris Boat Works 中文","GTA 华人船主","Mercury Dealer Ontario 中文","Rice Lake marina 中文","MercuryRepower.ca 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** HBW 中文介绍  
 **Published:** 2026-05-10  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-08-21  
 **Read time:** 5 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works
 
@@ -75,7 +75,7 @@ Harris 家族第三代现在主导日常运营：
 
 ## 5. 对华人客户的友好接待
 
-HBW 团队使用英语服务，没有中文母语的销售或翻译。但我们接待过很多 GTA 华人船主，欢迎您带会英语的亲友同来，或使用手机翻译软件——我们会耐心沟通、尽力配合。邮件 info@harrisboatworks.ca / 电话 (905) 342-2153 均为英语沟通。
+HBW 团队使用英语服务，没有中文母语的销售或翻译。但我们接待过很多 GTA 华人船主，欢迎您带会英语的亲友同来，或使用手机翻译软件，我们会耐心沟通、尽力配合。邮件 info@harrisboatworks.ca / 电话 (905) 342-2153 均为英语沟通。
 
 ## 我们在 HBW 看到的实地见证
 
@@ -91,8 +91,8 @@ HBW 团队使用英语服务，没有中文母语的销售或翻译。但我们�
 
 HBW 能为您做：
 
-- Mercury 引擎 (FourStroke / Pro XS / Verado) 销售、维修、保修
-- Legend 船只销售。Legend 是总部位于安大略省 Whitefish 的加拿大公司，船只由美国合同制造商生产
+- Mercury 引擎销售、维修、保修：FourStroke、Pro XS，以及 Verado（HBW 特殊订购）
+- Legend 船只销售。Legend 是总部位于安大略省 Whitefish 的加拿大公司，其官方说法是船只「由加拿大人设计，为加拿大人打造」
 - Mercruiser sterndrive 引擎服务
 - 室外收缩膜冬储 (10 月-11 月送,4 月取)
 - Pre-purchase inspection

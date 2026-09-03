@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-08-17
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The real story of Harris Boat Works. George Harris opened the shop in 1947, Jim ran it for 37 years, and Jay runs it today. Three generations on the same Rice Lake dock."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-08-17
+date_modified: 2026-08-26
 keywords: ["Harris Boat Works history","family marina Rice Lake","Mercury dealer since 1965","Gores Landing marina","three generation family business Ontario","Rice Lake boat dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: none
 
 **Category:** About HBW  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-08-17  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
@@ -33,15 +33,15 @@ revenue_driver: none
 
 There's a black and white photo on our homepage of a teenager working on a Mercury outboard. That's my dad, Jim Harris, in 1965. He was 18.
 
-That photo does a lot of quiet work. 1965 was the year my grandfather George signed on as a Mercury dealer, so the motor under Dad's hands was one of the first Mercurys this shop ever sold. And Dad himself was born in October 1947, the same year Grandpa opened the doors. The business and the man who'd spend his whole life running it arrived together.
+That photo does a lot of quiet work. 1965 was the year my grandfather George signed on as a Mercury dealer, so the motor under Dad's hands was one of the first Mercurys this shop ever sold. And Dad himself was born in October 1947, the same year Grandpa opened the doors. The business and the man who'd spend his whole life in it arrived together.
 
 People ask why they should trust us with a $25,000 repower or a season of storage. The honest answer isn't a slogan. It's three men, one dock, and 79 years. This is the story we'd tell you if you walked in and asked.
 
-![George Harris (right), his son Jim (centre), and grandson Jay heading out fishing from the Gores Landing docks, early 1990s. The motor on the transom is a Mercury 80.](/lovable-uploads/three-generations-harris-fishing-rice-lake.jpg)
+![George Harris (right), his son Jim (centre), and grandson Jay heading out from the Harris Boat Works docks, 1988. The motor on the transom is a Mercury 80.](/lovable-uploads/three-generations-harris-fishing-rice-lake.jpg)
 
-*George Harris (right), his son Jim at the wheel, and grandson Jay, fishing off the Gores Landing docks in the early 1990s.*
+*George Harris (right), his son Jim at the wheel, and grandson Jay, heading out from the HBW docks in 1988.*
 
-That's the three of us above, heading out fishing in the early 1990s. My grandfather George on the right, my dad Jim at the wheel, and me in the very good hat. Three generations in one boat, with a Mercury on the back, at the marina one of them built and the other two would spend their lives running. Nobody was thinking about marketing that morning. We were thinking about fish.
+That's the three of us above, heading out from the docks in 1988. My grandfather George on the right, my dad Jim at the wheel, and me in the very good hat. Three generations in one boat, with a Mercury on the back, at the marina one of them built and the other two would spend their lives running. Nobody was thinking about marketing that morning. We were thinking about fish.
 
 ---
 
@@ -77,7 +77,7 @@ That's Dad's office around 1990, with me attached to his shoulder. Look at the d
 
 Jim ran this place for 37 years. He steered it through 20% interest rates in 1981, the early-90s recession, 2008, and every cold spring and weedy August in between. Every long-running family business has years where somebody had to decide to keep going. Dad made that call more than once, and he made it quietly, at that desk, with the calculator.
 
-He passed away in December 2015. The obituary said "Owner of Harris Boat Works, proud father of Jay." Both things were true in that order his whole life, though he'd have argued the order.
+He passed away in December 2015. The obituary said "Owner of Harris Boat Works, proud father of Jay." Both things were true, though he'd have argued the order.
 
 ## Jay's Shop: 2016 to Now
 
@@ -117,7 +117,7 @@ In 2026, the shop George opened runs as:
 - **Legend Boats dealer**, Canadian company, designed for Canadian water
 - **49 seasonal marina slips** on Rice Lake
 - **Rental fleet** of pontoons and fishing boats
-- **Winter storage**, 311+ boats shrink-wrapped and stored each year
+- **Winter storage**, outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service
 - **Service and repair**, from diagnostics to full warranty work
 - **Public launch ramp and ethanol-free 89 marine gas** at the dock
 
@@ -177,9 +177,9 @@ Yes. We're a working marina. Walk the docks, fuel up, look at the water. The sna
 
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 
 ## Next steps
 

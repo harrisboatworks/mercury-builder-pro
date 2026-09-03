@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -42,7 +42,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures, last reviewed 2026-08-26. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Quick recommendation
 
@@ -52,7 +52,7 @@ There are three honest answers to "when should I repower?":
 2. **This off-season if the motor is "fine" but old (15+ years).** Plan ahead. Old motors die mid-season at the worst time.
 3. **Not now if the motor is reliable and recent.** Modern Mercury FourStrokes have decades of life with proper maintenance.
 
-The customers who plan and order over the off-season (our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter) get first pick of motors and the earliest spring install slots. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
+The customers who plan and order over the off-season (our shop is closed December 1 through April 1, but we take orders by phone and email all winter) get first pick of motors and the earliest spring install slots. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
 
 ## What changes the timing
 
@@ -192,7 +192,7 @@ If you're not sure whether your motor needs replacement, [give us a call at (905
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-26. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
 
 ---
 
@@ -222,7 +222,7 @@ New Mercury motors come with a 3-year factory limited warranty. Current promotio
 
 ### What warranty comes with a Mercury repower?
 
-A Mercury outboard installed as a repower comes with the standard Mercury 3-year limited warranty for recreational use, covering defects in materials and workmanship, regardless of the hull's age. Annual service at an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available at time of repower. At Harris Boat Works, as a Mercury Premier dealer and Certified Repower Center, warranty service and claims are handled directly, no need to deal with Mercury independently.
+A Mercury outboard installed as a repower comes with the standard Mercury 3-year limited warranty for recreational use, covering defects in materials and workmanship, regardless of the hull's age. Keeping coverage valid means following the service requirements in Mercury's current warranty terms. Extended protection plans are available at time of repower. At Harris Boat Works, as a Mercury Premier dealer and Certified Repower Center, warranty service and claims are handled directly, no need to deal with Mercury independently.
 
 ### How long should a Mercury outboard last before it needs repowering?
 
@@ -234,7 +234,7 @@ Yes, in most cases it's worth it. The hull life of a well-built aluminum or fibe
 
 ### What's the best time of year to repower in Ontario?
 
-The best time to plan and order a repower is over the off-season (November through March). Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. The work itself happens when we reopen in early April. Order by January or February to be near the front of the spring queue and on the water for opener.
+The best time to plan and order a repower is over the off-season (November through March). Our marina is closed December 1 through April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. The work itself happens when we reopen in early April. Order by January or February to be near the front of the spring queue and on the water for opener.
 
 ### Can I repower myself or do I need a certified dealer?
 

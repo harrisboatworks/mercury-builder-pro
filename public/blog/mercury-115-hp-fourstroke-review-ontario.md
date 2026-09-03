@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-08-31
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust"
 description: "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-31
+date_modified: 2026-07-27
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-31  
+**Last reviewed:** 2026-07-27  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
@@ -183,6 +183,7 @@ A 2023 115 Pro XS owner tested 19, 20 and 21-pitch props on a 2012 Glastron GT-1
 The 20-pitch prop was fastest. The 21 pulled the engine down and lost speed. The 19 kept the engine closer to the upper part of its range and could still be the better all-around choice once people and gear go aboard.
 
 [Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers](https://www.youtube.com/watch?v=HblsKMvjxCU)
+
 *A current-generation 115 Pro XS owner tests three prop pitches on the same Glastron.*
 
 ### Same pontoon, large pitch correction
@@ -394,17 +395,13 @@ The current 2.1-litre family has been in use since 2014. In the manufacturer tes
 
 Pricing varies by calibration, gearcase, shaft length and current Mercury programs. Use the live Canadian Mercury pricing reference for current HBW pricing, then build a complete quote with controls, rigging, propeller and installation.
 
-### What does CT mean on a Mercury 115?
-
-CT stands for Command Thrust. A 115 CT uses a larger gearcase with a lower 2.38:1 gear ratio and a bigger propeller, so it carries heavy loads better than the standard 2.07:1 case. It also weighs slightly more, about 165 kg (363 lb) against 163 kg (359 lb) for the lightest standard 20-inch configuration. Command Thrust suits pontoons and heavy workboats, while most recreational V-hulls are better on the standard gearcase. If you are not sure which one you have, call Harris Boat Works at 905-342-2153.
-
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 

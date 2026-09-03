@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-09-02
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-09-02
+date_modified: 2026-08-02
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**अंतिम समीक्षा:** 2026-09-02  
+**अंतिम समीक्षा:** 2026-08-02  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 
@@ -50,7 +50,7 @@ PCOC बनवाने के लिए नीचे दिए गए सीध
 
 ## PCOC aur PCL mein fark | PCOC और पी.सी.एल. में अंतर
 
-बहुत से लोग PCOC (ऑपरेटर कार्ड) और Pleasure Craft Licence (PCL) को एक ही समझ बैठते हैं, जबकि दोनों बिल्कुल अलग हैं। PCL एक नाव का पंजीकरण नंबर होता है, जैसे कार की लाइसेंस प्लेट। यदि आप खुद की 10 हॉर्सपावर (HP) या उससे अधिक मोटर वाली नाव रखते हैं, तो आपको उसे Transport Canada से रजिस्टर कराना होता है और उस पर नंबर प्रदर्शित करना होता है। नया, ट्रांसफर किया हुआ या रिन्यू किया हुआ PCL अब 5 साल के लिए वैध होता है और उसके बाद रिन्यू कराना पड़ता है; पुराने बिना-एक्सपायरी वाले लाइसेंस Transport Canada की प्रकाशित समय-सारणी के अनुसार धीरे-धीरे एक्सपायरी तारीख़ पर लाए जा रहे हैं। PCL के लिए आवेदन, रिन्यूअल, ट्रांसफर या डुप्लीकेट पर शुल्क लगता है; जानकारी अपडेट करना या लाइसेंस रद्द करना मुफ़्त है। ताज़ा नियम और शुल्क के लिए Transport Canada का PCL पेज देखें। PCOC चलाने वाले के लिए है, PCL नाव का नंबर है। यह जानकारी आपके एक साथी को “Ontario boat license online hindi” में ढूँढते समय भ्रमित कर सकती है, इसलिए साफ कर दें।
+बहुत से लोग PCOC (ऑपरेटर कार्ड) और Pleasure Craft Licence (PCL) को एक ही समझ बैठते हैं, जबकि दोनों बिल्कुल अलग हैं। PCL एक नाव का पंजीकरण नंबर होता है, जैसे कार की लाइसेंस प्लेट। यदि आप खुद की 10 हॉर्सपावर (HP) या उससे अधिक मोटर वाली नाव रखते हैं, तो आपको उसे Transport Canada से रजिस्टर कराना होता है और उस पर नंबर प्रदर्शित करना होता है। PCL हमेशा के लिए वैध रहता है और मुफ़्त है। PCOC चलाने वाले के लिए है, PCL नाव का नंबर है। यह जानकारी आपके एक साथी को “Ontario boat license online hindi” में ढूँढते समय भ्रमित कर सकती है, इसलिए साफ कर दें।
 
 Harris Boat Works पर हम नावों की रजिस्ट्री नहीं कराते, लेकिन हमारी टीम आपको आधिकारिक प्रक्रिया समझा सकती है।
 

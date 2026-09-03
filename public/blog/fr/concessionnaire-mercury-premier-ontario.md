@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Concessionnaire Mercury Premier en Ontario"
 description: "Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers..."
 category: "Concessionnaire Mercury"
 date_published: 2026-04-12
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["concessionnaire Mercury Premier Ontario","concessionnaire Mercury Gores Landing","moteur Mercury Ontario","remotorisation Mercury Ontario","prix Mercury CAD"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Concessionnaire Mercury\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-02\
+**Dernière révision :** 2026-08-26\
 **Temps de lecture :** 5 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 
@@ -59,7 +59,7 @@ Le statut du concessionnaire ne remplace toutefois pas la vérification du batea
 
 ## Service, hivernisation et entreposage
 
-Les travaux sont pris selon le principe du premier arrivé, premier servi. Pour l'hivernisation ou l'entreposage, il n'est pas nécessaire de réserver une place à la fin de l'été. La pratique recommandée est de remplir la [demande de service](https://hbw.wiki/service) une ou deux semaines avant le dépôt prévu. Harris Boat Works ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ## Garantie Mercury
 
@@ -69,7 +69,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 **Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
 
-## FAQs
+## Questions fréquentes
 
 ### Parlez-vous français chez Harris Boat Works?
 
@@ -85,7 +85,7 @@ Soumettez une demande de service avec le modèle, le numéro de série et les sy
 
 ### Comment planifier une hivernisation ou un entreposage?
 
-HBW prend les travaux selon le principe du premier arrivé, premier servi. Il n'est pas nécessaire de réserver une place des mois à l'avance. Remplissez la demande de service une ou deux semaines avant le dépôt prévu. L'entreprise ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.
+HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ### Expédiez-vous ou livrez-vous les moteurs?
 

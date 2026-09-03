@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-08-02
+date_modified: 2026-08-19
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-19  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
 ---
 
-> **Quick answer:** Start with the manufacturer's maximum recommended safe power for the exact hull, then match the motor to hull condition, exact motor weight, normal load, steering, rigging, use, and water. Do not turn the printed maximum or a boat-length chart into an automatic recommendation.
+> **Quick answer:** There is no single formula that spits out the right HP. Work the sizing in order: read the compliance-plate maximum for your exact hull, weigh your normal load honestly, check the transom's motor-weight limit, then pick the HP that planes that load without running wide open all day. The walkthrough below does each step with real numbers.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -40,7 +40,7 @@ revenue_driver: repower
 
 People tend to arrive at a motor size conversation one of two ways: they've heard "bigger is better" and they want the most HP they can fit, or they've heard "don't waste money" and they're shopping at the bottom of the capacity range.
 
-Both approaches miss the point.
+Both shortcuts skip the number that actually matters.
 
 The right motor size matches the exact hull documentation, proposed motor weight, typical load, use, steering, rigging, and budget. That is a boat-specific problem, not a one-variable calculation.
 
@@ -119,7 +119,7 @@ These ratios give you a working starting point. **Always confirm against your sp
 
 | Performance level | Ratio (boat weight to HP) |
 |--|--|
-| Minimum (gets you moving, not much more) | 25–30 lbs of total boat weight per HP |
+| Minimum (gets you moving, not much more) | 11.3-13.6 kg/HP (25–30 lbs/HP) |
 | Recommended (good performance, typical use) | 6.8-9.1 kg/HP (15–20 lbs/HP) |
 | Optimal (excellent performance, full loads) | 4.5-6.8 kg/HP (10–15 lbs/HP) |
 
@@ -134,13 +134,13 @@ These ratios give you a working starting point. **Always confirm against your sp
 - Passengers and gear (typical): approximately 272 kg (600 lb)
 - Total: approximately 635 kg (1,400 lb)
 - Capacity plate range: check your plate, 16-foot aluminum hulls vary; many rate 60–75 HP, some allow higher
-- **Typical choice: 60 HP FourStroke**, balances hole shot, fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
+- **Typical choice: 60 HP FourStroke**, balances hole shot (how quickly the boat climbs onto plane), fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
 
 ### 22-foot pontoon
 - Hull weight: approximately 907 kg (2,000 lb)
 - Passengers (cottage family): approximately 680 kg (1,500 lb)
 - Total: approximately 1,588 kg (3,500 lb)
-- **Typical choice: 115 HP Command Thrust**, Command Thrust gearcase recommended at 115 HP and above on most pontoons. Handles the load profile pontoons demand.
+- **Typical choice: 115 HP Command Thrust**. CT is the pontoon move in the 90-115 HP range; above that, Mercury's larger motors run a big gearcase as standard. Handles the load profile pontoons demand.
 
 ### 20-foot bass boat
 - Hull weight: approximately 816 kg (1,800 lb)

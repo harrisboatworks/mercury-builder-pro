@@ -421,10 +421,7 @@ export default function LocationDetail() {
                   Pickup at Gores Landing
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Customers from {location.region} bring the boat to our shop at{' '}
-                  {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city}, ON for installation,
-                  or pick up a loose Mercury motor for self-install. We do not offer mobile
-                  service, delivery, driveway installs, or marina visits.
+                  {location.serviceBoundary}
                 </p>
                 <p className="mt-3 text-sm text-muted-foreground">
                   Need shop-based Mercury service?{' '}

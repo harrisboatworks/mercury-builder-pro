@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-08-01
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-01
+date_modified: 2026-08-19
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-01  
+**Last reviewed:** 2026-08-19  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
@@ -66,7 +66,7 @@ These buckets come from real invoices at our service counter, not imagination. S
 | Purchase or payment | The boat itself, financed or not | Live packages at [mercuryrepower.ca](https://mercuryrepower.ca) |
 | Insurance | Liability at minimum, hull if financed | Our [boat insurance guide](/blog/boat-insurance-ontario-guide-2026) |
 | Winterization | Motor protection before freeze-up, non-negotiable | [Winterization cost guide](/blog/boat-winterization-cost-ontario-2026) |
-| Storage | Outdoor shrinkwrapped for the winter | [Kawartha storage guide](/blog/boat-storage-kawartha-lakes) |
+| Storage | Outdoor shrinkwrapped for the winter | [Kawartha storage guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) |
 | Spring commissioning | De-winterize, checks, launch | [Spring checklist](/blog/spring-outboard-commissioning-checklist) |
 | Maintenance | Impellers, oil, plugs, the 100-hour service | [Maintenance intervals guide](/blog/mercury-maintenance-intervals-20-100-300-rule) |
 | Depreciation | The quiet one nobody budgets | Real, especially in years 1 to 5 |
@@ -76,6 +76,19 @@ For the full add-up, our [total cost of owning a boat in Ontario](/blog/total-co
 A rental day has exactly none of those buckets in it. It has a rate you saw before booking, fuel you burned, and worms.
 
 ---
+
+## Rental, Boat Club, Peer-to-Peer, or Ownership
+
+Here is how the four ways to get on the water differ for an Ontario boater. Prices and membership terms change, so compare current written rates before deciding.
+
+| Option | Upfront cost | Ongoing cost | Best for | Watch for |
+|---|---|---|---|---|
+| Marina rental | No ownership purchase | Day rate + fuel, pay per use | Occasional days, visitors, try-before-you-buy | Date and boat availability |
+| Boat club membership | Membership terms vary | Dues, fuel, and possible fees | Repeat use near a club location | Reservation limits and year-round terms |
+| Peer-to-peer app | No ownership purchase | Day rate + platform and service fees | Occasional use near big cities | Condition and maintenance vary by owner, insurance fine print |
+| Ownership | Purchase price or financing | Insurance, storage, winterizing, maintenance, depreciation | Frequent use, anglers, waterfront owners | Fixed costs continue when the boat is not used |
+
+The decision rule is the same as the worksheet below: multiply the current rental rate for the boat you would choose by your realistic number of days, then compare that with your own annual ownership costs.
 
 ## The Worksheet: Honest Inputs
 

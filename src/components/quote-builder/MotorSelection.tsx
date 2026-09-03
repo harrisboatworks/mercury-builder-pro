@@ -221,7 +221,6 @@ export const MotorSelection = ({
   const [motors, setMotors] = useState<Motor[]>([]);
   const { notifications: socialProofNotifications, trackInteraction } = useSocialProofNotifications(motors);
   const [loading, setLoading] = useState(true);
-  const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
 
   // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
@@ -317,52 +316,6 @@ export const MotorSelection = ({
     console.log('[analytics]', name, payload);
   };
 
-
-  // Automatic inventory refresh state
-  const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
-  const needsInventoryUpdate = () => {
-    if (!lastInventoryUpdate) return true;
-    const last = new Date(lastInventoryUpdate);
-    const now = new Date();
-    const hours = (now.getTime() - last.getTime()) / (1000 * 60 * 60);
-    return hours >= 24;
-  };
-  const formatRelativeTime = (timestamp: string) => {
-    const date = new Date(timestamp);
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const hours = Math.floor(diffMs / (1000 * 60 * 60));
-    if (hours < 1) return 'Just now';
-    if (hours === 1) return '1 hour ago';
-    if (hours < 24) return `${hours} hours ago`;
-    if (hours < 48) return 'Yesterday';
-    return `${Math.floor(hours / 24)} days ago`;
-  };
-
-  // Auto-update on load and check hourly
-  useEffect(() => {
-    const checkAndUpdateInventory = async () => {
-      try {
-        if (needsInventoryUpdate()) {
-          await updateInventory();
-        }
-      } catch (e) {
-        console.warn('Auto inventory update skipped:', e);
-      }
-    };
-    checkAndUpdateInventory();
-    const interval = setInterval(checkAndUpdateInventory, 60 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // One-off manual scrape trigger via query param
-  useEffect(() => {
-    const run = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('runScrape') === '1';
-    if (run) {
-      console.log('[inventory] Manual scrape requested via ?runScrape=1');
-      updateInventory();
-    }
-  }, []);
 
   // Load motors from database
   useEffect(() => {
@@ -657,33 +610,6 @@ export const MotorSelection = ({
       bonusOffers
     };
   };
-  const updateInventory = async () => {
-    setUpdating(true);
-    try {
-      const {
-        data,
-        error
-      } = await supabase.functions.invoke('sync-lightspeed-inventory');
-      if (error) throw error;
-
-      // Reload motors after update
-      await loadMotors();
-
-      // Save last update timestamp
-      const nowIso = new Date().toISOString();
-      setLastInventoryUpdate(nowIso);
-      // Silent success - inventory updated
-    } catch (error) {
-      // Log error silently and use cached data
-      console.log('Inventory sync issue - using cached data:', error);
-      
-      // Still reload motors (will use existing cached data)
-      await loadMotors();
-      // Silent fallback to cached data
-    } finally {
-      setUpdating(false);
-    }
-  };
   const categories = [{
     key: 'all',
     label: 'All Motors',
@@ -862,7 +788,7 @@ export const MotorSelection = ({
   };
 
   // Quick View no longer fetches enrichment from a scraper.
-  // Motor descriptions/features/specs now come from the DB (sync-lightspeed-inventory + motor_models).
+  // Motor descriptions/features/specs now come from the DB (Lightspeed inventory + motor_models).
   useEffect(() => {
     if (quickViewMotor) {
       setQuickViewLoading(false);

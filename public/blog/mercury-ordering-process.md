@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-ordering-process.md
-last_updated: 2026-08-15
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-15
+date_modified: 2026-08-26
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,24 +25,26 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-15  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
-> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposit and refund terms are set out in your written quote and sales agreement. Start at mercuryrepower.ca.
+> **Quick answer:** A Mercury order at HBW: build a configurator quote, confirm it with us by phone, put down the deposit, Mercury ships the motor to our Gores Landing shop, you drop the boat off, we install it and run a Lake Test on Rice Lake, and you pick it up. Timing depends on the motor and season; your written quote and sales agreement are the source of truth for dates, deposit, and refund terms. Start at mercuryrepower.ca.
 
-## The Mercury Ordering Process: A Complete Guide
+## How Ordering a Mercury Works at HBW
 
-Whether buying in-stock or ordering, understanding the process ensures a smooth experience. Here is what to expect at each step.
+This is our actual process, not a generic dealer walkthrough. Six steps, in the order they happen.
 
 ### Overview: The 6-Step Process
 
 1. **Configuration** - Choose your motor and options
-2. **Consultation** - Review with your dealer
+2. **Consultation** - Review with us
 3. **Deposit** - Secure your order
 4. **Preparation** - Motor and boat prep
-5. **Installation** - Professional mounting and rigging
-6. **Water Test** - Verification and handover
+5. **Installation** - Mounting and rigging at our shop
+6. **Lake Test** - Verification on Rice Lake and handover
+
+One seasonal note up front: our shop is closed December 1 through April 1. We quote and take orders all winter, and installs happen in season. Ordering in winter is smart; it just means the wrench work starts when we reopen.
 
 ### Step 1: Configuration
 
@@ -50,10 +52,10 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 - Determine horsepower needs
 - Choose motor family (FourStroke, Pro XS, or Verado, which is special order at HBW)
 - Select shaft length
-- Pick options (CT, DTS, color, etc.)
+- Pick options (CT, DTS, colour, etc.)
 
 **Your Preparation**:
-- Know your boat max HP rating
+- Know your boat's max HP rating from the capacity plate
 - Measure transom height accurately
 - List must-have features
 - Set your budget range
@@ -64,23 +66,23 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 ### Step 2: Consultation
 
 **What Happens**:
-- Review motor selection with dealer
+- Review your motor selection with us
 - Discuss rigging requirements
 - Review controls and gauges
 - Get complete pricing quote
 - Understand timeline
 
-**Key Questions**:
+**Key Questions to Ask**:
 - Is this motor in stock or ordered?
 - What is included in the price?
 - How long until installation?
 - What warranty is included?
 
-**Dealer Actions**:
-- Check inventory/order availability
+**What We Do**:
+- Check inventory and order availability
 - Assess your boat (if repower)
 - Identify any needed modifications
-- Provide written quote
+- Provide a written quote
 
 ### Step 3: Deposit
 
@@ -88,14 +90,14 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 **What It Covers**:
 - Reserves your motor
-- Commits installation slot
-- Locks current pricing (usually)
+- Commits an installation slot
+- Locks pricing as set out in your agreement
 - Starts the order process
 
 **Payment Options**:
-- Cash/check
+- Cash/cheque
 - Credit card
-- Financing (if pre-approved)
+- Financing arranged in advance (ask us about current options)
 
 **Important Documents**:
 - Written sales agreement
@@ -105,17 +107,17 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 
 ### Step 4: Preparation
 
-**Dealer Preparation**:
-- Order motor if not in-stock
-- Receive and inspect motor
+**Our Preparation**:
+- Order the motor if not in stock
+- Receive and inspect it when it arrives from Mercury
 - Pre-rig controls and gauges
 - Prepare installation materials
 
 **Your Preparation**:
-- Deliver boat if repower
-- Remove old motor (or pay dealer)
-- Address any transom issues
-- Clear boat for work
+- Drop the boat off at our Gores Landing shop. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+- Old motor removal can be part of the job; ask when quoting
+- Address any transom issues we flagged
+- Clear the boat for work
 
 **Boat Assessment**:
 - Transom condition
@@ -126,16 +128,16 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 ### Step 5: Installation
 
 **What Is Involved**:
-- Mount motor on transom
+- Mount the motor on the transom
 - Install controls (throttle, shift)
 - Connect wiring and gauges
 - Install fuel line connections
 - Set up steering
 - Initial programming
 
-**Timeline**: 
-- New boat rigging: 4-8 hours
-- Repower timing depends on the approved scope, parts, findings, current shop capacity, and safe test conditions
+**Timeline**:
+- Rigging time depends on the boat and the approved scope; your written quote covers it
+- Repower timing depends on parts, findings, current shop capacity, and safe test conditions
 - Complex jobs receive a job-specific written work plan
 
 **Quality Checks**:
@@ -144,31 +146,35 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 - Controls function properly
 - No leaks anywhere
 
-### Step 6: Water Test
+### Step 6: Lake Test
+
+We put the boat in Rice Lake and prove the install before you take it home.
 
 **What Happens**:
-- Motor run-in procedure
+- Motor run-in procedure begins
 - Verify proper operation
 - Adjust trim and settings
 - Test all controls
-- Check gauges accuracy
+- Check gauge accuracy and confirm WOT RPM is in spec
 
 **Your Participation**:
-- Be present if possible
-- Learn motor operation
+- Be there if you can
+- Learn the motor's operation
 - Ask questions
 - Note any concerns
 
-**Handover Includes**:
-- Owner manual review
+**Pickup Includes**:
+- Owner's manual review
 - Break-in instructions
 - Warranty registration
 - Service schedule
 - Emergency procedures
 
+Anything the Lake Test surfaces gets sorted before you pick the boat up. That is the point of testing it ourselves.
+
 ### Timeline Expectations
 
-**In-stock motor:** HBW confirms the installation slot after reviewing the boat, rigging scope, required parts, and current shop capacity. The water test is scheduled after rigging is complete.
+**In-stock motor:** HBW confirms the installation slot after reviewing the boat, rigging scope, required parts, and current shop capacity. The Lake Test is scheduled after rigging is complete.
 
 **Ordered motor:** Mercury availability and freight come first; installation scheduling follows once the exact motor and required rigging are confirmed. The written quote or work plan is the timing source for the job.
 
@@ -188,20 +194,20 @@ Do not plan a launch date around a generic blog estimate. Seasonal demand, boat 
 - Trailer considerations
 
 **For All Purchases**:
-- Financing pre-approval (if using)
+- Financing arrangements, if you're using them
 - Insurance information
 - Planned use details
 
 ### Common Questions During Process
 
 **Can I speed this up?**
-Sometimes. In-stock motors and flexible installation dates help. Rush orders may be possible at premium.
+Sometimes. An in-stock motor and flexible timing on your end help the most. Ask us and we'll tell you straight what's possible.
 
 **What if something changes?**
-Communicate early. Most dealers work with you on timing changes. Specification changes may affect pricing/timeline.
+Tell us early and we'll adjust what we can. Specification changes may affect pricing and timeline.
 
 **When do I pay the balance?**
-Typically when motor is installed and ready for water test. Review payment terms in your agreement.
+Typically when the motor is installed and ready for its Lake Test. Review the payment terms in your agreement.
 
 **[Start Your Order](/quote)**
 

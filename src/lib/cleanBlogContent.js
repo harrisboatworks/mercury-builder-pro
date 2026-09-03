@@ -1,9 +1,15 @@
 const FAQ_HEADING_RE =
-  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
-const INTERNAL_LINKS_HEADING_RE = /^##\s+Internal Links\s*$/i;
+  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Foire aux questions|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
+const INTERNAL_LINKS_HEADING_RE =
+  /^##\s+(?:Internal Links|Liens internes|내부 링크|内部链接|内部连结|內部連結|內部鏈接)\s*$/i;
 const RELATED_HEADING_RE =
   /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/i;
-const CTA_HEADING_RE = /^##\s+CTA\s*$/i;
+const CTA_HEADING_RE = /^##\s+(?:CTA|Appel [àa] l['’]action)\s*$/i;
+const CTA_PREFIX_HEADING_RE = /^##\s+CTA\s*,\s*(.+?)\s*$/i;
+const CTA_SUFFIX_HEADING_RE = /^##\s+(.+?)\s+\/\s*CTA\s*$/i;
+const CTA_PAREN_HEADING_RE = /^##\s+(.+?)\s*[（(]CTA[）)]\s*$/i;
+const FULL_ARTICLE_HEADING_RE =
+  /^#{2,3}\s+(?:Artículo completo|Article complet|전체 기사)\s*$/;
 const LAST_REVIEWED_RE =
   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/i;
 const LANGUAGE_RE =
@@ -14,6 +20,8 @@ const ITALIC_RELATED_RE =
   /^\s*\*\s*Related(?:\s+(?:guides?|posts?|articles?))?\s*:[^*]*\*\s*$/i;
 const INJECTED_REPOWER_CTA_RE =
   /^(?:Ready to price it out\? Build|You can build) a live CAD quote for your repower online at (?:the )?\[Mercury Repower Centre\]\(https:\/\/www\.mercuryrepower\.ca\/quote\/motor-selection\)\.\s*$/i;
+const CANONICAL_URL_LINE_RE =
+  /^\s*\*\*Canonical URL:\*\*(?:\s+\S.*)?\s*$/i;
 
 /**
  * Remove legacy authoring scaffolding before blog content reaches readers,
@@ -32,6 +40,7 @@ export function cleanBlogContent(
   const out = [];
   let skipSection = false;
   let skipRelatedList = false;
+  let skipInternalLinksList = false;
 
   for (const line of lines) {
     const isH2 = /^##\s+/.test(line);
@@ -46,13 +55,41 @@ export function cleanBlogContent(
       skipRelatedList = false;
     }
 
+    if (skipInternalLinksList) {
+      if (
+        /^\s*[-*]\s+/.test(line) ||
+        /^\s*---\s*$/.test(line) ||
+        line.trim() === ''
+      ) continue;
+      skipInternalLinksList = false;
+    }
+
     if (
       LAST_REVIEWED_RE.test(line) ||
       LANGUAGE_RE.test(line) ||
+      CANONICAL_URL_LINE_RE.test(line) ||
       INJECTED_REPOWER_CTA_RE.test(line.trim())
     ) continue;
 
-    if (CTA_HEADING_RE.test(line)) continue;
+    if (CTA_HEADING_RE.test(line) || FULL_ARTICLE_HEADING_RE.test(line)) continue;
+
+    const ctaPrefix = line.match(CTA_PREFIX_HEADING_RE);
+    if (ctaPrefix) {
+      out.push(`## ${ctaPrefix[1].trim()}`);
+      continue;
+    }
+
+    const ctaSuffix = line.match(CTA_SUFFIX_HEADING_RE);
+    if (ctaSuffix) {
+      out.push(`## ${ctaSuffix[1].trim()}`);
+      continue;
+    }
+
+    const ctaParen = line.match(CTA_PAREN_HEADING_RE);
+    if (ctaParen) {
+      out.push(`## ${ctaParen[1].trim()}`);
+      continue;
+    }
 
     if (hasStructuredFaqs && FAQ_HEADING_RE.test(line)) {
       skipSection = true;
@@ -60,7 +97,9 @@ export function cleanBlogContent(
     }
 
     if (stripInternalLinks && INTERNAL_LINKS_HEADING_RE.test(line)) {
-      skipSection = true;
+      // Internal-link authoring blocks are lists, but later prose can appear
+      // before the next H2. Remove only the owned list so notices survive.
+      skipInternalLinksList = true;
       continue;
     }
 
