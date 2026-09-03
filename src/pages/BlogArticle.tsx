@@ -14,6 +14,7 @@ import { AuthorByline } from '@/components/blog/AuthorByline';
 // FloatingShareBar removed — byline BlogShareButtons is the sole share UI.
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
+import { getMoreInHub } from '@/data/blogTopicHubs';
 import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';

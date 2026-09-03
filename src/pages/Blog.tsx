@@ -1,6 +1,7 @@
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogHub, type BlogHubStrings } from '@/components/blog/BlogHub';
 import { getPublishedArticles } from '@/data/blogArticles';
+import { BLOG_TOPIC_HUBS } from '@/data/blogTopicHubs';
 
 const EN_STRINGS: BlogHubStrings = {
   heroTitleLine1: 'Boat motor guides',
@@ -52,7 +53,19 @@ export default function Blog() {
   return (
     <>
       <BlogIndexSEO />
-      <BlogHub strings={EN_STRINGS} articles={articles} basePath="/blog" />
+      <BlogHub
+        strings={EN_STRINGS}
+        articles={articles}
+        basePath="/blog"
+        topicHubStrip={{
+          heading: 'Browse by topic',
+          items: BLOG_TOPIC_HUBS.map((hub) => ({
+            label: hub.navLabel,
+            blurb: hub.blurb,
+            path: `/blog/${hub.slug}`,
+          })),
+        }}
+      />
     </>
   );
 }
