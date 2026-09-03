@@ -41,6 +41,7 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
     name: 'Localized full-article authoring heading',
   },
   { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
+  { pattern: /^##\s+.+\s+\/\s*CTA\s*$/i, name: 'CTA-suffixed authoring heading' },
 ];
 
 const BLOG_LANG_RX = /BlogArticles\.ts$/;

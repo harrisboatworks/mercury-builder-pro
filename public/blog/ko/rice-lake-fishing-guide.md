@@ -145,11 +145,6 @@ HBW 직원의 상담과 서비스는 영어로 진행됩니다. 방문 시 영�
 
 ---
 
-## 내부 링크
-- 온타리오 보트 면허 및 안전 규정
-- 온타리오 보트 구매 가이드
-- Mercury 115 vs 150 비교
-
 **렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 

@@ -121,6 +121,14 @@ Keep this heading.`;
     expect(cleanBlogContent(content)).toBe(
       '## Próximos pasos\n\nUsa el configurador.\n\nKeep this heading.',
     );
+    expect(cleanBlogContent('## 다음 단계 / CTA\n\n견적을 확인하세요.')).toBe(
+      '## 다음 단계\n\n견적을 확인하세요.',
+    );
+    expect(
+      cleanBlogContent(
+        '## 내부 링크\n- 가이드\n\n## 본문\n\nKeep the body.',
+      ),
+    ).toBe('## 본문\n\nKeep the body.');
   });
 
   it('strips customer-visible Canonical URL editorial lines', () => {

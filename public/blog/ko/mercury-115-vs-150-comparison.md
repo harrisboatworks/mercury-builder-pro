@@ -124,11 +124,6 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ---
 
-## 내부 링크
-- 온타리오 보트 구매 가이드
-- Rice Lake 낚시 가이드
-- 온타리오 보트 면허 및 안전 규정
-
 **온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격 
 **전화:** 905-342-2153 
 **서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service) 

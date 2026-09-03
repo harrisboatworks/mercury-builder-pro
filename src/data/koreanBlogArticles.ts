@@ -161,7 +161,7 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 - 온타리오 보트 면허 및 안전 규정
 - Mercury 115 vs 150 비교
 
-## 다음 단계 / CTA
+## 다음 단계
 
 **엔진 가격을 먼저 확인하고 싶다면:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격, 전화 불필요.

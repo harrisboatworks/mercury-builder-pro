@@ -151,12 +151,7 @@ HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지
 
 ---
 
-## 내부 링크
-- Rice Lake 낚시 가이드
-- 온타리오 보트 면허 및 안전 규정
-- Mercury 115 vs 150 비교
-
-## 다음 단계 / CTA
+## 다음 단계
 
 **엔진 가격을 먼저 확인하고 싶다면:** 
 [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격, 전화 불필요.
