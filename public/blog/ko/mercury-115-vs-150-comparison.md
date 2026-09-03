@@ -60,9 +60,8 @@ Mercury 115 FourStroke는 16–19피트 알루미늄 보트와 폰툰에 적합�
 
 ---
 
-### 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다.
 
 ---
 

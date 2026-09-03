@@ -145,9 +145,8 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 ---
 
-## 언어 안내
-
-HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다. 이메일에 DeepL이나 Google 번역으로 영문을 함께 보내주시면 원활하게 소통할 수 있습니다.
+> **언어 안내**
+> HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 온라인 견적 도구 [mercuryrepower.ca](https://www.mercuryrepower.ca)는 언어 소통 없이도 사용 가능합니다. 원하는 사양을 선택하면 가격이 바로 표시됩니다. 이메일에 DeepL이나 Google 번역으로 영문을 함께 보내주시면 원활하게 소통할 수 있습니다.
 
 ---
 

@@ -856,11 +856,9 @@ Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure C
 
 ---
 
-## Una nota sobre el idioma
-
-Este artículo está disponible en español porque queremos que la información sobre navegación en Ontario llegue a más clientes. Es una traducción de cortesía.
-
-Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o llamas, te responderemos en inglés. Puedes pedirle ayuda a un familiar o a un amigo que hable inglés, o usar una aplicación de traducción. Con gusto te atenderemos.
+> **Una nota sobre el idioma**
+> Este artículo está disponible en español porque queremos que la información sobre navegación en Ontario llegue a más clientes. Es una traducción de cortesía.
+> Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o llamas, te responderemos en inglés. Puedes pedirle ayuda a un familiar o a un amigo que hable inglés, o usar una aplicación de traducción. Con gusto te atenderemos.
 
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 

@@ -1972,9 +1972,8 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-### Une note sur la langue
-
-Cet article est une traduction de courtoisie. Notre personnel communique et offre le service en anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais; vous pouvez utiliser une application de traduction ou demander l'aide d'un proche bilingue.
+> **Une note sur la langue**
+> Cet article est une traduction de courtoisie. Notre personnel communique et offre le service en anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais; vous pouvez utiliser une application de traduction ou demander l'aide d'un proche bilingue.
 
 ## Questions fréquentes
 
