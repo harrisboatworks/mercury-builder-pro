@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -80,7 +80,7 @@ FourStroke and Pro XS. Verado and SeaPro available by special order. Honest conv
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 35 minutes.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
+HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
@@ -157,11 +157,11 @@ Yes. Clarington and Newcastle are within the same drive time. We have customers 
 
 ## Related guides
 
-- [Mercury Dealer Brampton Ontario HBW](/blog/mercury-dealer-brampton-ontario-hbw), Mercury dealer for Brampton
-- [Mercury Dealer Burlington Ontario HBW](/blog/mercury-dealer-burlington-ontario-hbw), Mercury dealer for Burlington
-- [Mercury Dealer Markham Ontario HBW](/blog/mercury-dealer-markham-ontario-hbw), Mercury dealer for Markham
-- [Mercury Dealer Mississauga HBW](/blog/mercury-dealer-mississauga-ontario-hbw), Mercury dealer for Mississauga
-- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 
 ## Next steps
 

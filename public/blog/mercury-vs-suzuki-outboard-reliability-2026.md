@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -108,7 +108,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Common matchups people cross-shop
 

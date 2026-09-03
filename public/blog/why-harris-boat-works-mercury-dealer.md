@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works Mercury Dealer Ontario"
 description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service."
 category: "About Us"
 date_published: 2026-05-04
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** About Us  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
@@ -99,7 +99,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Prop selection during the lake-test to confirm performance
 - PCL update as part of the project
 - Service log entry for warranty support and resale value
-- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
+- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of September 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
 - Trade-in evaluation for old motors
 
 We don't push repowers that aren't needed. Sometimes a customer comes in with a motor that has seasons of life left. We tell them that, and they go fish.
@@ -137,7 +137,7 @@ Gores Landing, Ontario, on the south shore of Rice Lake, roughly 1 hour 45 minut
 
 ### Does Harris Boat Works offer financing?
 
-Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.
+Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of September 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.
 
 ### Does Harris Boat Works offer boat storage?
 

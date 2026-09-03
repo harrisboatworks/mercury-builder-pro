@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury 150 Pro XS to 300 Compared for Ontario Boats"
-description: "Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths."
+title: "Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats"
+description: "Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths."
 category: "Buying Guide"
 date_published: 2026-05-13
 date_modified: 2026-07-27
@@ -19,9 +19,9 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury 150 Pro XS to 300 Compared for Ontario Boats
+# Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats
 
-> Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths.
+> Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  

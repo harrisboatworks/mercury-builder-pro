@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -76,7 +76,7 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 

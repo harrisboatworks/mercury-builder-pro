@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-07-09
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-07-09
+date_modified: 2026-08-26
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last reviewed:** 2026-07-09  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -75,7 +75,7 @@ If your boat has a built-in console with windshield, you want remote. If your bo
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The simple version
 

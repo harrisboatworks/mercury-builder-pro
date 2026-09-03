@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "MerCruiser Sterndrive Ontario Guide"
 description: "Ontario guide to MerCruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works."
 category: "Service & Maintenance"
 date_published: 2026-05-14
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["MerCruiser sterndrive Ontario","MerCruiser bellows replacement Ontario","sterndrive winterization Ontario","MerCruiser repower cost","sterndrive to outboard conversion","MerCruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 
@@ -93,7 +93,7 @@ The **gimbal bearing** is the support bearing that lets the drive pivot for stee
 
 Replacement is straightforward when the drive is already off the boat for bellows work, that's why we do them together. As a standalone job, $500-$800 in parts plus labour. Catching it early is cheap; ignoring it eats the U-joint, then the bellows, then the engine coupler, then the engine itself.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ### 3. Milky gear lube (water in the drive)
 
@@ -226,7 +226,7 @@ What we handle:
 - Engine diagnostics and repairs (gas MerCruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
 date_published: 2026-03-05
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
@@ -179,7 +179,7 @@ This is the critical check. Outboard brackets mount to the transom. If the trans
 **When the boat is worth it.**
 A repower should make economic sense for the hull you have. Don't spend $35,000-$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **When you plan to keep the boat.**
 Repowers are long-term plays. If you're keeping the boat for another 10-15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.

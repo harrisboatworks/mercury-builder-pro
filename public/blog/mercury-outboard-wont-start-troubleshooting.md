@@ -117,6 +117,78 @@ If you've ruled out the easy stuff, a compression or leak-down test can help ide
 
 We compare cylinders with each other and then check the serial-specific Mercury service specification. A low or uneven result is a reason to investigate, not a universal diagnosis by itself.
 
+## If it won't start after sitting all winter
+
+A motor that sat for five or six months through an Ontario winter and won't start in spring isn't being difficult. It's showing you exactly what sitting did to it. The good news: most of the causes are predictable, diagnosable by an owner, and fixable without a service call, if you work through them in order.
+
+Boats are remarkably good at turning six months of storage into an educational Saturday. This is the checklist that shortens that Saturday considerably.
+
+### The battery: cold storage takes a toll
+
+This is where most Ontario spring no-starts start and end.
+
+An Ontario winter is genuinely hard on lead-acid marine batteries. The combination of cold temperatures, self-discharge over 5-6 months, and lack of maintenance charging means a battery that was at 100% in October may be at 50% or less in May, and a deeply discharged battery sulfates, which permanently reduces its capacity. It may show voltage on a basic multimeter but collapse under cranking load.
+
+What to check:
+- **Resting voltage:** 12.6V = fully charged. 12.4V = acceptable, charge before using. Below 12.2V = seriously compromised.
+- **Cranking test:** With a load tester (or by watching voltage during crank): should hold above 9.5-10V while the starter runs. Drop below this and the battery can't do the job.
+- **Terminal condition:** White or green deposits on terminals = corrosion = resistance. Clean with a wire brush and baking soda solution, dry, reconnect, then retest.
+- **Cable connections:** All tight? A cable that loosened over the winter creates intermittent no-start symptoms.
+
+**If you put the battery on a tender over winter:** You're in much better shape. A properly maintained battery typically comes out of storage near full charge.
+
+**If you didn't:** Charge it fully first. If it won't take a charge or drops quickly under load, replace it. A new battery is a much less expensive fix than the frustration of diagnosing everything else while the battery is marginal.
+
+### Fuel: old gas is genuinely a problem
+
+E10 fuel (standard Ontario pump gas with 10% ethanol) starts degrading in 30-60 days. Fuel that's been sitting in the tank from last October without stabilizer, or with incorrectly applied stabilizer, may be the issue.
+
+Stale ethanol-blend fuel can:
+- Develop sour-smelling, lacquer-like oxidation byproducts that gum up injectors and carburettors
+- Phase-separate as the ethanol absorbs water, leaving a water-alcohol layer at the tank bottom
+- Cause hard start, rough idle, and poor performance even if the motor eventually runs
+
+What to check:
+- **Smell the fuel.** Fresh gas smells like fuel. Stale gas smells sour or like nail polish remover. If it smells off, it is.
+- **Check the fuel tank for water.** Water is heavier than fuel and sinks. If there's a drain or sump on the tank, check it.
+- **Drain the fuel filter/water separator.** Mercury FourStrokes have one inline. Drain the bowl and look for water droplets or discolouration.
+- **Check the primer bulb.** Should pump firm in 6-8 squeezes and hold pressure. Stays soft = air leak in the fuel line connections or a deteriorated bulb.
+- **Check fuel lines.** Old rubber fuel lines harden and crack. A cracked line lets air in, causing lean running or no-start. Inspect visually and by feel.
+- **Tank vent open?** An unvented tank creates vacuum as fuel draws out. The motor starves.
+
+**If the fuel is suspect:** The cleanest fix is to drain the tank and refill with fresh fuel. On smaller tanks, this is easy. On larger tanks, a quality fuel stabilizer added to the old fuel and running the motor through a flush cycle can help, but fresh fuel is better.
+
+We sell ethanol-free fuel on-site at HBW. For a motor going into storage, finishing the season with ethanol-free is one of the best things you can do for next year's start.
+
+### Spark plugs and ignition
+
+If battery and fuel are confirmed good, spark is next.
+
+After sitting, spark plugs can be fouled (oil or carbon deposits from the last season), gapped incorrectly, or just at end of service life. A plug that looks physically fine can still have an internal failure.
+
+- Remove the plugs and inspect for fouling (oily black = oil/rich fouling; white/chalky = lean/overheating; normal = light tan to grey)
+- Confirm the electrode gap matches your motor's spec (in the owner's manual)
+- Replace any that look doubtful
+
+**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15-20 minutes with plugs out, then reinstall fresh plugs and try again.
+
+### Check for display messages or fault codes
+
+If your boat has a SmartCraft display, VesselView, or any Mercury gauge display, check it before and after attempting to start. Mercury's ECM logs fault codes and displays active alarms.
+
+Take a photo of any message displayed. Include this when booking service, it saves diagnostic time.
+
+### The winterization connection
+
+If the motor wasn't properly winterized last fall, some of the causes above are more likely and some additional ones are possible:
+
+- **Unstabilized fuel** in the system gummed up injectors or carburettor passages
+- **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
+- **Cooling system water not fully drained**, if it froze, there may be physical damage
+- **Battery not tendered or removed**, compromised battery from winter discharge
+
+If you're not sure the motor was properly winterized, tell the dealer. It's relevant to the diagnostic.
+
 ## What we see at HBW
 
 **Control and power checks:** kill switch, neutral-safety position, battery switch, battery condition, cables, and grounds.
@@ -141,7 +213,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 - **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
 - **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
-- **"It ran perfect last fall."** We believe you. [Eight months of sitting is exactly how batteries, fuel, and plugs fail](/blog/mercury-outboard-wont-start-after-sitting). Nothing has to "break" for a no-start.
+- **"It ran perfect last fall."** We believe you. [Eight months of sitting is exactly how batteries, fuel, and plugs fail](/blog/mercury-outboard-wont-start-troubleshooting). Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?

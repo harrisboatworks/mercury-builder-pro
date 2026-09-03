@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Honda Ontario 2026"
 description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
@@ -50,7 +50,7 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Where Honda actually wins
 

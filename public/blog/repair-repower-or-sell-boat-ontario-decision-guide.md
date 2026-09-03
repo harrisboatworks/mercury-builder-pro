@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repair, Repower or Sell? Ontario Decision Guide"
 description: "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-08-26
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -69,7 +69,7 @@ Get a written estimate from a Mercury dealer or qualified service shop. Then loo
 
 The 30 percent threshold is a useful rule of thumb. A $1,500 repair on a $6,000 motor is a 25 percent ratio: easy repair decision. A $4,500 repair on a $6,000 motor is a 75 percent ratio: hard to justify when a new Mercury comes with a [3-year factory warranty](/blog/mercury-outboard-warranty-canada-2026), often extended by current promotions ([see what's active](/promotions)), and 15-20 years of expected service life.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Question 2: the boat itself
 
