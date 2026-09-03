@@ -35,13 +35,11 @@ revenue_driver: service
 
 You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
 
-::cta
-variant: inline
-heading: Keep the fall storage work together
-body: This one-page checklist covers appointment prep, fuel and engine work, onboard systems and the record to keep. The storage section in your serial-number manual decides the procedure.
-primaryLabel: Download fall checklist (PDF)
-primaryHref: /downloads/fall-storage-winterization-checklist-hbw.pdf
-::
+### Keep the fall storage work together
+
+This one-page checklist covers appointment prep, fuel and engine work, onboard systems and the record to keep. The storage section in your serial-number manual decides the procedure.
+
+[Download fall checklist (PDF)](/downloads/fall-storage-winterization-checklist-hbw.pdf)
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
 

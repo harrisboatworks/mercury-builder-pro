@@ -35,8 +35,6 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 ---
 
-### Artículo completo
-
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
 Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
@@ -154,7 +152,7 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 
 ---
 
-## CTA, Reserva tu bote o configura tu próximo motor
+## Reserva tu bote o configura tu próximo motor
 
 **¿Quieres pescar Rice Lake este verano?** 
 Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
