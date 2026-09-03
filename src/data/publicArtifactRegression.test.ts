@@ -339,4 +339,25 @@ describe('public artifact regression', () => {
     expect(read('public/blog/trent-severn-waterway-boating-guide-2026.md')).toContain(trent!.description);
     expect(read('public/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md')).not.toMatch(brokenCell);
   });
+
+  it('adds leftover #82 why-HBW competitive-pricing FAQs without the old inline questions', () => {
+    const article = getArticleBySlug('why-harris-boat-works-mercury-dealer');
+    expect(article).toBeDefined();
+    expect(article!.content).not.toContain('## Common questions about HBW');
+    expect(article!.content).not.toContain('Are you the most competitive on Mercury pricing?');
+
+    const questions = (article!.faqs || []).map((faq) => faq.question);
+    expect(questions).toContain('Are Harris Boat Works prices competitive with other Mercury dealers?');
+    expect(questions).toContain('Can a multi-brand dealer offer a better Mercury price?');
+
+    const competitive = article!.faqs!.find(
+      (faq) => faq.question === 'Are Harris Boat Works prices competitive with other Mercury dealers?',
+    );
+    expect(competitive?.answer).toContain('when safe seasonal conditions allow');
+
+    const twin = read('public/blog/why-harris-boat-works-mercury-dealer.md');
+    expect(twin).toContain('### Are Harris Boat Works prices competitive with other Mercury dealers?');
+    expect(twin).toContain('### Can a multi-brand dealer offer a better Mercury price?');
+    expect(twin).not.toContain('## Common questions about HBW');
+  });
 });
