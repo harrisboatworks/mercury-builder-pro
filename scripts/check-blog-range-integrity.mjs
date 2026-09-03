@@ -42,7 +42,7 @@ const checks = [
   {
     file: 'public/blog/ko/mercury-115-vs-150-comparison.md',
     expected: ['5,000–6,000', '5,000–5,800', '16–19피트', '19–22피트', '16–19피트 알루미늄'],
-    forbidden: ['16~19피트 알루미늄', '19~22피트의 더 큰'],
+    forbidden: ['16~19피트 알루미늄', '19~22피트의 더 큰', '16-19피트', '19-22피트'],
   },
   {
     file: 'public/blog/zh/mercury-115-vs-150-comparison-zh.md',

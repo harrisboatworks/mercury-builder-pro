@@ -385,4 +385,17 @@ describe('public artifact regression', () => {
     expect(brandPage).toContain(storageCanon);
     expect(brandPage).not.toMatch(leftover);
   });
+
+  it('finishes leftover Korean 115-vs-150 hull-length dashes in the quick answer', () => {
+    const source = read('src/data/koreanBlogArticles.ts');
+    const twin = read('public/blog/ko/mercury-115-vs-150-comparison.md');
+    const leftoverHyphen = /16-19피트|19-22피트/;
+
+    for (const text of [source, twin]) {
+      expect(text).toContain('16–19피트');
+      expect(text).toContain('19–22피트');
+      expect(text).toContain('16–19피트 알루미늄');
+      expect(text).not.toMatch(leftoverHyphen);
+    }
+  });
 });
