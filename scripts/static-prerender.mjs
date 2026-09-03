@@ -4855,6 +4855,80 @@ const CONTACT_EXTRA = () => commercialBodyHtml({
   ],
 });
 
+// ============================================================
+// Blog topic hub routes — /blog/{diagnostics,reviews,repower,
+// rice-lake,pricing}. Mirrors src/pages/BlogTopicHubPage.tsx:
+// same <title> (hub.title), <h1> (hub.name), meta description,
+// canonical, and CollectionPage + BreadcrumbList + ItemList
+// JSON-LD, so the SSR-stamped head matches what Helmet renders
+// on hydration. The noscript body lists the hub's "Start here"
+// anchor posts and every remaining assigned post as real
+// <a href> links so crawlers see the internal links without JS.
+// All strings come from loadBlogTopicHubs() (blogTopicHubs.ts).
+// ============================================================
+const BLOG_TOPIC_HUB_ROUTES = blogTopicHubData.map((hub) => {
+  const hubPath = `/blog/${hub.slug}`;
+  const hubUrl = `${SITE_URL}${hubPath}`;
+  const descBySlug = new Map(blogArticles.map(a => [a.slug, a.description || '']));
+  const anchors = hub.articles.slice(0, hub.anchorCount);
+  const rest = hub.articles.slice(hub.anchorCount);
+  const asCard = (a) => ({
+    to: `/blog/${a.slug}`,
+    title: a.title,
+    description: descBySlug.get(a.slug) || '',
+  });
+  const schemas = [{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${hubUrl}#webpage`,
+        "name": hub.title,
+        "description": hub.metaDescription,
+        "url": hubUrl,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+            { "@type": "ListItem", "position": 3, "name": hub.name, "item": hubUrl },
+          ],
+        },
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": hub.articles.map((a, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `${SITE_URL}/blog/${a.slug}`,
+          "name": a.title,
+        })),
+      },
+    ],
+  }];
+  return {
+    path: hubPath,
+    canonical: hubPath,
+    title: hub.title,
+    description: hub.metaDescription,
+    h1: hub.name,
+    intro: hub.intro[0] || hub.metaDescription,
+    schemas,
+    extraNoscript: () =>
+      hub.intro.slice(1).map(p => `<p>${escapeHtml(p)}</p>`).join('') +
+      `<p>${hub.articles.length} guides in this collection.</p>` +
+      hubArticleListHtml([
+        { heading: 'Start here', cards: anchors.map(asCard) },
+        ...(rest.length ? [{ heading: `All ${hub.name} guides`, cards: rest.map(asCard) }] : []),
+      ]) +
+      `<p><a href="/blog">All blog guides</a></p>`,
+  };
+});
+
+
+
 const routes = [
 
   {
