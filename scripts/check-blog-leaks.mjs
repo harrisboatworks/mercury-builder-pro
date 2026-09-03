@@ -36,6 +36,14 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
     pattern: /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i,
     name: 'Pending-photography editorial note',
   },
+  {
+    pattern: /^#{2,3}\s+(?:Artículo completo|Article complet|전체 기사)\s*$/,
+    name: 'Localized full-article authoring heading',
+  },
+  { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
+  { pattern: /^##\s+.+\s+\/\s*CTA\s*$/i, name: 'CTA-suffixed authoring heading' },
+  { pattern: /hbw-language-note/, name: 'Raw language-note HTML wrapper' },
+  { pattern: /\|,\s*\|/, name: 'Broken comma table cell' },
 ];
 
 const BLOG_LANG_RX = /BlogArticles\.ts$/;
@@ -114,6 +122,17 @@ for (const file of BLOG_FILES) {
   }
 }
 
+const PUBLIC_TWIN_FILES = [
+  ...walk('public/blog', ['.md']),
+  ...walk('public/case-studies', ['.md']),
+];
+
+// Raw ::cta fences belong in React article sources. Markdown twins are read
+// as plain text, so leftover authoring fences must already be rendered.
+const PUBLIC_TWIN_DIRECTIVE_PATTERNS = [
+  { pattern: /^::cta\s*$/, name: 'Raw ::cta authoring fence in Markdown twin' },
+];
+
 // These two artifacts appeared outside the legacy blog-source scan. Guard the
 // exact source and generated-twin surfaces that can publish them.
 for (const file of PUBLIC_EDITORIAL_ARTIFACT_FILES) {
@@ -121,6 +140,18 @@ for (const file of PUBLIC_EDITORIAL_ARTIFACT_FILES) {
   const lines = src.split('\n');
   for (let i = 0; i < lines.length; i++) {
     for (const { pattern, name } of PUBLIC_EDITORIAL_ARTIFACT_PATTERNS) {
+      if (pattern.test(lines[i])) {
+        errors.push({ file, line: i + 1, name, snippet: lines[i].trim().slice(0, 140) });
+      }
+    }
+  }
+}
+
+for (const file of PUBLIC_TWIN_FILES) {
+  const src = readFileSync(file, 'utf8');
+  const lines = src.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    for (const { pattern, name } of PUBLIC_TWIN_DIRECTIVE_PATTERNS) {
       if (pattern.test(lines[i])) {
         errors.push({ file, line: i + 1, name, snippet: lines[i].trim().slice(0, 140) });
       }

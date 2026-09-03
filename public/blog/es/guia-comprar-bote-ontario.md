@@ -35,8 +35,6 @@ Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligato
 
 ---
 
-### Artículo completo
-
 Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
@@ -165,7 +163,7 @@ Si tienes preguntas específicas, puedes escribir en español en el formulario d
 
 ---
 
-## CTA, Próximos pasos
+## Próximos pasos
 
 **¿Listo para configurar tu motor o explorar opciones?** 
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.

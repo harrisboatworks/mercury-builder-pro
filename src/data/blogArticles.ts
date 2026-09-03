@@ -5182,7 +5182,7 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
->: Jay Harris, Harris Boat Works
+> *Jay Harris, Harris Boat Works*
 
 ## Who this is for
 
@@ -17698,7 +17698,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     relatedSlugs: ['rice-lake-boating-guide-2026', 'rice-lake-boat-launch-guide', '2026-rice-lake-fishing-season-outlook'],
     title: 'Trent-Severn Waterway 2026 Guide',
     seoTitle: "Trent-Severn Waterway 2026: Lockage, Hours, Trip Plan",
-    description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+    description: "Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.",
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
@@ -24649,7 +24649,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
-| WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
+| WOT RPM range | 5,500–6,000 | 5,500–6,000 |
 | Fuel system | EFI | EFI |
 | Tiller version | 40 ELHPT, yes | 60 ELHPT, yes |
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
@@ -26182,7 +26182,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 209 cc |
 | Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
@@ -28438,7 +28438,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
 | Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Full-throttle RPM | 4,500–5,500 | 5,000–6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |
@@ -28871,7 +28871,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-mississauga-ontario-hbw',
     title: 'Mercury Dealer Mississauga HBW',
-    seoTitle: 'Mercury Repower Cost in Mississauga',
+    seoTitle: 'Mercury Dealer Near Mississauga | Harris Boat Works',
     description: 'What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake.',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
@@ -32090,7 +32090,7 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
       },
       {
         question: "How much does a Pro XS repower cost in Ontario?",
-        answer: "It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range, including motor, controls, gauges, prop, steering, install labour, and taxes, runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
+        answer: "It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-4 build sits lower. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
       },
       {
         question: "Do I need Command Thrust on my Pro XS?",
@@ -32228,7 +32228,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+Installed cost depends on HP, rigging, and what we can reuse from the existing setup. A 150 Pro XS inline-4 build sits lower. A 300 Pro XS V8 build sits higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 
@@ -32892,7 +32892,8 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 |---|---|---|---|
 | FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
-| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
+| FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
 | Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
@@ -33890,7 +33891,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     slug: 'mercury-dealer-port-hope-ontario-hbw',
     title: 'Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake',
     seoTitle: 'Mercury Dealer Port Hope | Repower & Service from Rice Lake',
-    description: 'Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.',
+    description: 'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
     image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
     imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',
@@ -34763,7 +34764,7 @@ For Rice Lake cottage applications, the Avator vs gas outboard decision usually 
 | Half-day light use | Good fit | Standard answer |
 | Full-day fishing crossing the lake | Range limited | Standard answer |
 | Multi-day trips without charging access | Doesn't work | Standard answer |
-| Quiet operation (early morning fishing) | Major advantage |, |
+| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |
 | Low maintenance | Major advantage | More service required |
 | Cottage charging logistics | Required infrastructure | None |
 | Cold weather operation | Reduced capacity | Standard |

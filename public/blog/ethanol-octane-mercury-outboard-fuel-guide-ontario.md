@@ -38,13 +38,11 @@ Here's the safe choice. Make two independent checks:
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
 
-::cta
-variant: inline
-heading: Take the fuel checks to the pump
-body: Octane and ethanol are separate checks. This one-page guide also covers storage preparation and the details to record when fuel may be contaminated.
-primaryLabel: Download fuel guide (PDF)
-primaryHref: /downloads/marine-fuel-storage-quick-guide-hbw.pdf
-::
+### Take the fuel checks to the pump
+
+Octane and ethanol are separate checks. This one-page guide also covers storage preparation and the details to record when fuel may be contaminated.
+
+[Download fuel guide (PDF)](/downloads/marine-fuel-storage-quick-guide-hbw.pdf)
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 

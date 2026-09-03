@@ -37,6 +37,10 @@ const unsupportedOperationalClaims = [
     pattern: /^\s*\*\*(?:URL slug|Meta description|Canonical URL):\*\*/im,
   },
   {
+    label: 'fabricated Pro XS planning-range dollars',
+    pattern: /high teens of thousands|mid-thirties of thousands/i,
+  },
+  {
     label: 'double-escaped Unicode artifact',
     pattern: /\\u[0-9a-f]{4}/i,
   },
@@ -383,7 +387,7 @@ for (const article of contentArticles) {
   const forbiddenOutputPatterns = [
     /\*\*Language:\*\*\s*English/i,
     /^##\s+Internal Links\s*$/im,
-    /^##\s+CTA\s*$/im,
+    /^##\s+CTA(?:\s*,.*)?\s*$/im,
     /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/im,
   ];
 
@@ -415,6 +419,9 @@ for (const file of generatedBlogTwins) {
   const twinSource = readFileSync(file, 'utf8');
   if (STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
     failures.push(`${file}: hard-no HBW boat pickup policy`);
+  }
+  if (/^::cta\s*$/m.test(twinSource)) {
+    failures.push(`${file}: leftover raw ::cta authoring fence`);
   }
 }
 

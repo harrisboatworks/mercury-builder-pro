@@ -133,11 +133,9 @@ Si vous soupçonnez un problème du système de refroidissement, soumettez une d
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+> **Une note sur la langue**
+> Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
+> Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
 Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.

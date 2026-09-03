@@ -180,7 +180,7 @@ Los requisitos de remolque dependen del peso combinado, las dimensiones, los fre
 
 ---
 
-## CTA, ¿Listo para salir al agua legalmente?
+## ¿Listo para salir al agua legalmente?
 
 Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
 

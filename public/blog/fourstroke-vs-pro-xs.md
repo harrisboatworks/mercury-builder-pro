@@ -45,7 +45,7 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
->: Jay Harris, Harris Boat Works
+> *Jay Harris, Harris Boat Works*
 
 ## Who this is for
 

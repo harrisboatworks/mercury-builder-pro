@@ -83,7 +83,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
 | Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Full-throttle RPM | 4,500–5,500 | 5,000–6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |

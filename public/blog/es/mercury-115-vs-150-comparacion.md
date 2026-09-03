@@ -35,8 +35,6 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 ---
 
-### Artículo completo
-
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
 > **Una nota sobre el idioma**
@@ -141,7 +139,7 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 
 ---
 
-## CTA, Compara precios y configura tu motor
+## Compara precios y configura tu motor
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
