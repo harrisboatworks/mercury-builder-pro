@@ -17,6 +17,7 @@ import {
 import { getCaseStudyBySlug } from './caseStudies';
 import { spanishBlogArticles } from './spanishBlogArticles';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { mandarinBlogArticles, ZH_LANGUAGE_NOTE } from './mandarinBlogArticles';
 
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
@@ -431,6 +432,25 @@ describe('public artifact regression', () => {
     expect(read('src/data/koreanBlogArticles.ts')).toContain('> **언어 안내**');
     expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **语言说明**\n> ${ZH_LANGUAGE_NOTE}');
     expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **关于语言的说明**');
+  });
+
+  it('keeps leftover ZH language-note blockquotes in the twins that already have them in source', () => {
+    const noteHeading = '> **语言说明**';
+    const sourcesWithCanonNote = mandarinBlogArticles.filter((article) =>
+      article.content.includes(`${noteHeading}\n> ${ZH_LANGUAGE_NOTE}`),
+    );
+
+    expect(sourcesWithCanonNote.map((article) => article.slug).sort()).toEqual([
+      'gta-chinese-rice-lake-winter-storage-complete-guide',
+      'mercury-repower-guide-gta',
+      'rice-lake-fishing-guide-toronto-chinese',
+    ]);
+
+    for (const article of sourcesWithCanonNote) {
+      const twin = read(`public/blog/zh/${article.slug}.md`);
+      expect(twin, article.slug).toContain(noteHeading);
+      expect(twin, article.slug).toContain(ZH_LANGUAGE_NOTE);
+    }
   });
 
   it('adds leftover localized AuthorByline labels without rewriting titles', () => {
