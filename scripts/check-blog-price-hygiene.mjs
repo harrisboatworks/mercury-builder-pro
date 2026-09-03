@@ -95,6 +95,11 @@ const contracts = [
     stale: ['$1,298 - $38,539 CAD'],
     required: [fmt(localFacts.lineupMin), fmt(localFacts.lineupMax), '/pricing-reference', REVIEWED_LABEL],
   },
+  {
+    slug: 'mercury-pro-xs-repower-rice-lake-kawartha-anglers',
+    stale: ['high teens of thousands', 'mid-thirties of thousands'],
+    required: ['mercuryrepower.ca'],
+  },
 ];
 
 const errors = [];

@@ -37,6 +37,10 @@ const unsupportedOperationalClaims = [
     pattern: /^\s*\*\*(?:URL slug|Meta description|Canonical URL):\*\*/im,
   },
   {
+    label: 'fabricated Pro XS planning-range dollars',
+    pattern: /high teens of thousands|mid-thirties of thousands/i,
+  },
+  {
     label: 'double-escaped Unicode artifact',
     pattern: /\\u[0-9a-f]{4}/i,
   },

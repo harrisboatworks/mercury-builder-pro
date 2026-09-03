@@ -265,4 +265,46 @@ describe('public artifact regression', () => {
     const hygiene = read('scripts/check-blog-output-hygiene.ts');
     expect(hygiene).toContain('leftover raw ::cta authoring fence');
   });
+
+  it('keeps Pro XS cost copy on the quote builder instead of leftover planning-range dollars', () => {
+    const fabricatedRange = /high teens of thousands|mid-thirties of thousands/i;
+    const article = getArticleBySlug('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
+    expect(article).toBeDefined();
+    expect(article!.content).not.toMatch(fabricatedRange);
+    expect(JSON.stringify(article!.faqs)).not.toMatch(fabricatedRange);
+    expect(article!.content).toContain('Installed cost depends on HP, rigging, and what we can reuse');
+    expect(article!.faqs?.some((faq) => faq.answer.includes('175 HP V6 and the 200–250 HP V8'))).toBe(true);
+
+    const twin = read('public/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md');
+    expect(twin).not.toMatch(fabricatedRange);
+    expect(twin).toContain('175 HP V6 and the 200–250 HP V8');
+
+    const publicIndex = read('public/blog-index.json');
+    const generatedTs = read('supabase/functions/_shared/blog-index-generated.ts');
+    expect(publicIndex).not.toMatch(fabricatedRange);
+    expect(generatedTs).not.toMatch(fabricatedRange);
+
+    const hygiene = read('scripts/check-blog-output-hygiene.ts');
+    const priceHygiene = read('scripts/check-blog-price-hygiene.mjs');
+    expect(hygiene).toContain('fabricated Pro XS planning-range dollars');
+    expect(priceHygiene).toContain('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
+  });
+
+  it('restores leftover #82 dealer metadata without the truncated Mississauga title or Port Hope closest claim', () => {
+    const mississauga = getArticleBySlug('mercury-dealer-mississauga-ontario-hbw');
+    expect(mississauga).toBeDefined();
+    expect(mississauga!.seoTitle).toBe('Mercury Dealer Near Mississauga | Harris Boat Works');
+    expect(mississauga!.seoTitle).not.toBe('Mercury Repower Cost in Mississauga');
+
+    const portHope = getArticleBySlug('mercury-dealer-port-hope-ontario-hbw');
+    expect(portHope).toBeDefined();
+    expect(portHope!.description).toBe(
+      'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
+    );
+    expect(portHope!.description).not.toMatch(/closest Mercury Premier dealer for Port Hope/);
+
+    const twin = read('public/blog/mercury-dealer-port-hope-ontario-hbw.md');
+    expect(twin).toContain(portHope!.description);
+    expect(twin).not.toMatch(/^description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope/m);
+  });
 });
