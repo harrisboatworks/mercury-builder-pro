@@ -59,6 +59,7 @@ export default function BlogArticle() {
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 4);
+  const moreInHub = getMoreInHub(article.slug, relatedArticles.map((a) => a.slug), 4);
   const cleanedContent = cleanBlogContent(article.content, {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
