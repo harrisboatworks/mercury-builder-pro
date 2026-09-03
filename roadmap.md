@@ -6,8 +6,8 @@ Jay's answers: ship 1A, 1B, 1C, 2 as FOUR SEPARATE COMMITS, report each, do NOT 
 phases. Regenerate markdown twins + blog-index.json after each content phase.
 
 - [x] Phase 0: inspect how posts, SEO fields, blog index, sitemap and redirects are stored/generated; report findings
-- [ ] Phase 1A: title tag + meta description rewrites (9 posts) — commit 1
-- [ ] Phase 1B: consolidate duplicate posts (merges + 301 redirects) — commit 2
+- [x] Phase 1A: title tag + meta description rewrites (9 posts) — commit b4ddef04f
+- [x] Phase 1B: consolidate duplicate posts (merges + 301 redirects) — done, HEAD 3d12bcea0
   Missing-slug rules from Jay:
   - Search archivedBlogArticles.ts, per-language files, public/blog/*.md by slug AND by content
     (grep "BigFoot"/"Big Foot", warranty "what you need to know", "won't start after sitting", "rental")
@@ -22,9 +22,12 @@ phases. Regenerate markdown twins + blog-index.json after each content phase.
   - BigFoot vs Command Thrust lake-test story: if found, merge verbatim, first-person, own H2 into
     'mercury-command-thrust-complete-guide-2026'
   - Report exactly where each missing slug turned up (live / archive / twin / nowhere)
-- [ ] Phase 1C: retire 15 of 17 city dealer landing posts (301 to Toronto-to-Rice-Lake or Kawartha Repower) — commit 3
-- [ ] Phase 2: five blog hub pages + index hub strip + per-post "More in [Hub]" blocks — commit 4
-- [ ] Final report: commits per phase, redirect list, city->target mapping, hub assignment table, build passing
+- [x] Phase 1C: retire 15 of 17 city dealer landing posts (301 to Toronto-to-Rice-Lake or Kawartha Repower) — done, HEAD fda3aaf48
+- [x] Phase 2: five blog hub pages + index hub strip + per-post "More in [Hub]" blocks — commit 0fae67453
+  Scripts-owned follow-up for Jay: add the 5 hub paths (/blog/diagnostics, /blog/reviews,
+  /blog/repower, /blog/rice-lake, /blog/pricing) to staticSitemapEntries in
+  scripts/static-prerender.mjs, or the post-build sitemap overwrite drops them in prod.
+- [x] Final report: sent 2026-09-03 (hub assignment table lives in src/data/blogTopicHubs.ts HUB_ASSIGNMENTS)
 - [ ] Phase 3: BLOCKED, needs real HBW pricing/service data from Jay. Do not draft:
   - Rebuild of /blog/boat-repowering-guide-when-to-replace-motor as flagship repower guide
   - "Mercury 90 HP: The All-In Cost in Ontario (2026)"
