@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
@@ -309,6 +309,157 @@ export type Database = {
             columns: ["conversation_id"]
             isOneToOne: false
             referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_document_capabilities: {
+        Row: {
+          bound_email: string | null
+          bound_phone: string | null
+          created_at: string
+          document_id: string
+          expires_at: string
+          id: string
+          last_used_at: string | null
+          purpose: string
+          revoked_at: string | null
+          token_hash: string
+          use_count: number
+        }
+        Insert: {
+          bound_email?: string | null
+          bound_phone?: string | null
+          created_at?: string
+          document_id: string
+          expires_at: string
+          id?: string
+          last_used_at?: string | null
+          purpose: string
+          revoked_at?: string | null
+          token_hash: string
+          use_count?: number
+        }
+        Update: {
+          bound_email?: string | null
+          bound_phone?: string | null
+          created_at?: string
+          document_id?: string
+          expires_at?: string
+          id?: string
+          last_used_at?: string | null
+          purpose?: string
+          revoked_at?: string | null
+          token_hash?: string
+          use_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_document_capabilities_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "consultation_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_document_jobs: {
+        Row: {
+          created_at: string
+          document_id: string | null
+          error_name: string | null
+          id: string
+          quote_id: string | null
+          quote_number: string
+          sha256: string | null
+          status: string
+          storage_key: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          document_id?: string | null
+          error_name?: string | null
+          id?: string
+          quote_id?: string | null
+          quote_number: string
+          sha256?: string | null
+          status: string
+          storage_key?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string | null
+          error_name?: string | null
+          id?: string
+          quote_id?: string | null
+          quote_number?: string
+          sha256?: string | null
+          status?: string
+          storage_key?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_document_jobs_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "consultation_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "consultation_document_jobs_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_documents: {
+        Row: {
+          byte_size: number
+          content_type: string
+          created_at: string
+          customer_quote_id: string | null
+          delivery_snapshot: Json
+          id: string
+          quote_number: string
+          sha256: string
+          storage_key: string
+          updated_at: string
+        }
+        Insert: {
+          byte_size: number
+          content_type?: string
+          created_at?: string
+          customer_quote_id?: string | null
+          delivery_snapshot: Json
+          id?: string
+          quote_number: string
+          sha256: string
+          storage_key: string
+          updated_at?: string
+        }
+        Update: {
+          byte_size?: number
+          content_type?: string
+          created_at?: string
+          customer_quote_id?: string | null
+          delivery_snapshot?: Json
+          id?: string
+          quote_number?: string
+          sha256?: string
+          storage_key?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_documents_customer_quote_id_fkey"
+            columns: ["customer_quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
             referencedColumns: ["id"]
           },
         ]
@@ -1530,6 +1681,33 @@ export type Database = {
         }
         Relationships: []
       }
+      grok_oauth_codes: {
+        Row: {
+          code_challenge: string
+          code_hash: string
+          created_at: string
+          expires_at: string
+          redirect_uri: string
+          used_at: string | null
+        }
+        Insert: {
+          code_challenge: string
+          code_hash: string
+          created_at?: string
+          expires_at: string
+          redirect_uri: string
+          used_at?: string | null
+        }
+        Update: {
+          code_challenge?: string
+          code_hash?: string
+          created_at?: string
+          expires_at?: string
+          redirect_uri?: string
+          used_at?: string | null
+        }
+        Relationships: []
+      }
       growth_agent_audit_runs: {
         Row: {
           completed_at: string | null
@@ -1991,6 +2169,66 @@ export type Database = {
           tags?: string[] | null
           topic?: string
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      hbw_receptionist_sms_events_v1: {
+        Row: {
+          body_sha256: string
+          intent: string
+          message_sid: string
+          received_at: string
+          response_text: string
+          sender_hash: string
+        }
+        Insert: {
+          body_sha256: string
+          intent: string
+          message_sid: string
+          received_at: string
+          response_text: string
+          sender_hash: string
+        }
+        Update: {
+          body_sha256?: string
+          intent?: string
+          message_sid?: string
+          received_at?: string
+          response_text?: string
+          sender_hash?: string
+        }
+        Relationships: []
+      }
+      hbw_receptionist_sms_sessions_v1: {
+        Row: {
+          expires_at: string
+          pending_id: string
+          pending_name: string
+          pending_request: string
+          pending_staff_name: string
+          sender_hash: string
+          state: string
+          updated_at: string
+        }
+        Insert: {
+          expires_at: string
+          pending_id: string
+          pending_name?: string
+          pending_request?: string
+          pending_staff_name?: string
+          sender_hash: string
+          state: string
+          updated_at: string
+        }
+        Update: {
+          expires_at?: string
+          pending_id?: string
+          pending_name?: string
+          pending_request?: string
+          pending_staff_name?: string
+          sender_hash?: string
+          state?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -3733,6 +3971,172 @@ export type Database = {
         }
         Relationships: []
       }
+      receptionist_resource_deliveries: {
+        Row: {
+          accepted_at: string | null
+          conversation_id_sha256: string
+          created_at: string
+          delivery_channel: string
+          destination_hint: string
+          destination_sha256: string
+          error_code: string | null
+          id: string
+          origin_sha256: string
+          payload_fingerprint_sha256: string
+          provider: string | null
+          provider_message_id_tail: string | null
+          provider_status: string | null
+          resource_ids: string[]
+          source: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          conversation_id_sha256: string
+          created_at?: string
+          delivery_channel: string
+          destination_hint: string
+          destination_sha256: string
+          error_code?: string | null
+          id: string
+          origin_sha256: string
+          payload_fingerprint_sha256: string
+          provider?: string | null
+          provider_message_id_tail?: string | null
+          provider_status?: string | null
+          resource_ids: string[]
+          source: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          accepted_at?: string | null
+          conversation_id_sha256?: string
+          created_at?: string
+          delivery_channel?: string
+          destination_hint?: string
+          destination_sha256?: string
+          error_code?: string | null
+          id?: string
+          origin_sha256?: string
+          payload_fingerprint_sha256?: string
+          provider?: string | null
+          provider_message_id_tail?: string | null
+          provider_status?: string | null
+          resource_ids?: string[]
+          source?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      receptionist_staff_aliases: {
+        Row: {
+          alias_normalized: string
+          created_at: string
+          staff_id: string
+        }
+        Insert: {
+          alias_normalized: string
+          created_at?: string
+          staff_id: string
+        }
+        Update: {
+          alias_normalized?: string
+          created_at?: string
+          staff_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "receptionist_staff_aliases_staff_id_fkey"
+            columns: ["staff_id"]
+            isOneToOne: false
+            referencedRelation: "receptionist_staff_directory"
+            referencedColumns: ["staff_id"]
+          },
+        ]
+      }
+      receptionist_staff_directory: {
+        Row: {
+          active: boolean
+          created_at: string
+          display_name: string
+          lightspeed_customer_id: number | null
+          lightspeed_match_note: string | null
+          normalized_name: string
+          reviewed_at: string
+          role: string
+          roster_source: string
+          staff_id: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          display_name: string
+          lightspeed_customer_id?: number | null
+          lightspeed_match_note?: string | null
+          normalized_name: string
+          reviewed_at: string
+          role: string
+          roster_source?: string
+          staff_id: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          display_name?: string
+          lightspeed_customer_id?: number | null
+          lightspeed_match_note?: string | null
+          normalized_name?: string
+          reviewed_at?: string
+          role?: string
+          roster_source?: string
+          staff_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      receptionist_staff_routing: {
+        Row: {
+          email_notifications_enabled: boolean
+          notification_email: string | null
+          notification_sms_e164: string | null
+          reviewed_at: string | null
+          sms_notifications_enabled: boolean
+          staff_id: string
+          updated_at: string
+        }
+        Insert: {
+          email_notifications_enabled?: boolean
+          notification_email?: string | null
+          notification_sms_e164?: string | null
+          reviewed_at?: string | null
+          sms_notifications_enabled?: boolean
+          staff_id: string
+          updated_at?: string
+        }
+        Update: {
+          email_notifications_enabled?: boolean
+          notification_email?: string | null
+          notification_sms_e164?: string | null
+          reviewed_at?: string | null
+          sms_notifications_enabled?: boolean
+          staff_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "receptionist_staff_routing_staff_id_fkey"
+            columns: ["staff_id"]
+            isOneToOne: true
+            referencedRelation: "receptionist_staff_directory"
+            referencedColumns: ["staff_id"]
+          },
+        ]
+      }
       review_monitor_state: {
         Row: {
           gbp_account_name: string | null
@@ -3940,11 +4344,24 @@ export type Database = {
           customer_id: number | null
           customer_name: string | null
           customer_phone: string
+          dropoff_at: string | null
+          dropoff_method: string | null
+          form_id: string | null
           id: string
           issue_description: string
+          motor_description: string | null
           notes: string | null
+          pickup_requested_date: string | null
           preferred_date: string | null
           request_type: string
+          services_requested: Json
+          source: string
+          source_message_id: string | null
+          source_payload_sha256: string | null
+          source_received_at: string | null
+          source_submission_id: string | null
+          source_synced_at: string
+          source_transport: string | null
           status: string
         }
         Insert: {
@@ -3953,11 +4370,24 @@ export type Database = {
           customer_id?: number | null
           customer_name?: string | null
           customer_phone: string
+          dropoff_at?: string | null
+          dropoff_method?: string | null
+          form_id?: string | null
           id?: string
           issue_description: string
+          motor_description?: string | null
           notes?: string | null
+          pickup_requested_date?: string | null
           preferred_date?: string | null
           request_type: string
+          services_requested?: Json
+          source?: string
+          source_message_id?: string | null
+          source_payload_sha256?: string | null
+          source_received_at?: string | null
+          source_submission_id?: string | null
+          source_synced_at?: string
+          source_transport?: string | null
           status?: string
         }
         Update: {
@@ -3966,11 +4396,24 @@ export type Database = {
           customer_id?: number | null
           customer_name?: string | null
           customer_phone?: string
+          dropoff_at?: string | null
+          dropoff_method?: string | null
+          form_id?: string | null
           id?: string
           issue_description?: string
+          motor_description?: string | null
           notes?: string | null
+          pickup_requested_date?: string | null
           preferred_date?: string | null
           request_type?: string
+          services_requested?: Json
+          source?: string
+          source_message_id?: string | null
+          source_payload_sha256?: string | null
+          source_received_at?: string | null
+          source_submission_id?: string | null
+          source_synced_at?: string
+          source_transport?: string | null
           status?: string
         }
         Relationships: []
@@ -5887,6 +6330,70 @@ export type Database = {
         }
         Relationships: []
       }
+      receptionist_customer_phone_match_v1: {
+        Row: {
+          company_name: string | null
+          customer_id: number | null
+          customer_name: string | null
+          first_name: string | null
+          last_name: string | null
+          phone10: string | null
+        }
+        Relationships: []
+      }
+      receptionist_lightspeed_context_health_v1: {
+        Row: {
+          all_sources_healthy: boolean | null
+          freshness_evidence: string | null
+          snapshot_at: string | null
+        }
+        Relationships: []
+      }
+      receptionist_open_work_v1: {
+        Row: {
+          customer_id: number | null
+          date_in: string | null
+          last_modified_on: string | null
+          synced_at: string | null
+          unit_hints: string[] | null
+          units_count: number | null
+          work_category: string | null
+        }
+        Relationships: []
+      }
+      receptionist_pending_service_requests_v1: {
+        Row: {
+          boat_hint: string | null
+          customer_id: number | null
+          motor_hint: string | null
+          received_at: string | null
+          request_type: string | null
+        }
+        Insert: {
+          boat_hint?: never
+          customer_id?: number | null
+          motor_hint?: never
+          received_at?: never
+          request_type?: string | null
+        }
+        Update: {
+          boat_hint?: never
+          customer_id?: number | null
+          motor_hint?: never
+          received_at?: never
+          request_type?: string | null
+        }
+        Relationships: []
+      }
+      receptionist_service_history_v1: {
+        Row: {
+          completed_on: string | null
+          customer_id: number | null
+          service_topic: string | null
+          unit_hint: string | null
+        }
+        Relationships: []
+      }
       service_history: {
         Row: {
           action_taken: string | null
@@ -6209,6 +6716,19 @@ export type Database = {
           reminder_text: string
           target: Json
         }[]
+      }
+      claim_hbw_receptionist_resource_delivery_v1: {
+        Args: {
+          _conversation_id_sha256: string
+          _delivery_channel: string
+          _destination_hint: string
+          _destination_sha256: string
+          _id: string
+          _origin_sha256: string
+          _payload_fingerprint_sha256: string
+          _resource_ids: string[]
+        }
+        Returns: Json
       }
       claim_openclaw_slack_fallback_jobs: {
         Args: {
@@ -6591,6 +7111,10 @@ export type Database = {
         }[]
       }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
+      deposit_checkout_binding_authority_ready: {
+        Args: never
+        Returns: boolean
+      }
       dispatch_agent_artifact_rebuild: { Args: never; Returns: boolean }
       encrypt_sin: { Args: { sin_plaintext: string }; Returns: string }
       enqueue_openclaw_slack_fallback_job: {
@@ -6678,6 +7202,27 @@ export type Database = {
         Args: { hp: number; motor_type?: string; specifications?: Json }
         Returns: Json
       }
+      grok_inventory_summary: { Args: never; Returns: Json }
+      grok_oauth_consume_code: {
+        Args: {
+          p_code_challenge: string
+          p_code_hash: string
+          p_redirect_uri: string
+        }
+        Returns: boolean
+      }
+      grok_oauth_store_code: {
+        Args: {
+          p_code_challenge: string
+          p_code_hash: string
+          p_expires_at: string
+          p_redirect_uri: string
+        }
+        Returns: undefined
+      }
+      grok_parts_demand_trends: { Args: { p_months?: number }; Returns: Json }
+      grok_sales_trends: { Args: { p_months?: number }; Returns: Json }
+      grok_service_backlog_summary: { Args: never; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -7397,12 +7942,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -7426,11 +7971,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -7451,11 +7996,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -7476,11 +8021,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -7493,11 +8038,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
