@@ -115,6 +115,7 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('전체 기사');
     expect(leakCheck).toContain('CTA-prefixed authoring heading');
     expect(leakCheck).toContain('CTA-suffixed authoring heading');
+    expect(leakCheck).toContain('hbw-language-note');
 
     const cleaner = read('src/lib/cleanBlogContent.js');
     expect(cleaner).toContain('내부 링크');
