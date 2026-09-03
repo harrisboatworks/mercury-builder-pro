@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sourceVersion": "93928b54eca4d868ec58",
-  "count": 204,
+  "sourceVersion": "40dd1ebe8006101a7b7c",
+  "count": 184,
   "articles": [
     {
       "slug": "new-vs-used-pontoon-boats-ontario",
@@ -195,38 +195,6 @@
         {
           "q": "Is the new V10 Verado reliable yet?",
           "a": "Early indicators are encouraging, but long-term reliability gets established over seasons of real-world use. The V10 is built on a naturally aspirated 5.7L platform with sound engineering fundamentals, and it is not a gamble on exotic technology. Calling it proven at 15 seasons would be premature; it hasn't had 15 sea…"
-        }
-      ]
-    },
-    {
-      "slug": "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
-      "title": "Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)",
-      "description": "Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT.",
-      "category": "Mercury Outboards",
-      "publishDate": "2026-07-12",
-      "keywords": [
-        "mercury command thrust vs standard",
-        "mercury bigfoot outboard",
-        "command thrust pontoon",
-        "command thrust on v hull",
-        "mercury command thrust gear ratio"
-      ],
-      "faqs": [
-        {
-          "q": "Is Command Thrust the same thing as BigFoot?",
-          "a": "Yes. BigFoot was the 1990s name for Mercury's big-gearcase pontoon and workboat option. Mercury renamed it Command Thrust around 2014. Same concept: bigger gearcase, taller gear ratio, bigger prop, more push power at low speed."
-        },
-        {
-          "q": "Does Command Thrust make the same horsepower?",
-          "a": "Yes. A 60 CT and a standard 60 have identical powerheads. CT changes the gearcase, gear ratio, and prop, which changes how the power reaches the water, not how much power there is."
-        },
-        {
-          "q": "Should I get Command Thrust on my pontoon?",
-          "a": "Almost certainly yes if you're 90 HP and up on a 20+ ft pontoon, and it's worth a conversation on smaller setups. CT is the standard pontoon choice at HBW. See the pontoon eligibility guide for size-by-size calls."
-        },
-        {
-          "q": "Should I get Command Thrust on my fishing boat?",
-          "a": "Almost certainly no. On a planing aluminum or fibreglass V-hull, CT adds drag and costs top speed with no meaningful benefit. Standard gearcase with the right prop is the better setup. The exception is workboat duty or a ProKicker for trolling."
         }
       ]
     },
@@ -653,39 +621,6 @@
       ]
     },
     {
-      "slug": "mercury-command-thrust-pontoon-eligibility-2026",
-      "title": "Is Your Pontoon Eligible for Mercury Command Thrust? (2026)",
-      "description": "Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks.",
-      "category": "Mercury Technology",
-      "publishDate": "2026-05-28",
-      "keywords": [
-        "mercury command thrust pontoon eligibility",
-        "command thrust for pontoon",
-        "is command thrust worth it pontoon",
-        "mercury command thrust compatibility",
-        "tritoon command thrust eligibility",
-        "command thrust gearcase pontoon"
-      ],
-      "faqs": [
-        {
-          "q": "Is Command Thrust worth it on a 22-foot pontoon?",
-          "a": "For a 22 ft pontoon, almost always yes, especially if you regularly carry 6+ people, do water sports, or use the boat at full load. On a tritoon of any size, Command Thrust is recommended unless you have a specific reason to skip it. We see the strongest customer satisfaction in the 20-24 ft tritoon range."
-        },
-        {
-          "q": "Will Command Thrust make my pontoon faster?",
-          "a": "No, usually slightly slower at top end. You typically lose 2 to 4 MPH off top speed because the bigger prop is geared for thrust, not speed. What you gain is faster acceleration, faster time-to-cruise, stronger reverse, and the ability to perform under load. If top speed is your priority, standard gearcase is the righ…"
-        },
-        {
-          "q": "Can I add Command Thrust to my existing standard gearcase motor?",
-          "a": "Technically yes, practically rarely worth it. The cost of swapping the lower unit (parts plus labor) is usually within striking distance of the trade-in toward a new Command Thrust motor. Get both quoted before committing. We do both at HBW depending on the customer's situation."
-        },
-        {
-          "q": "Does Command Thrust burn more fuel?",
-          "a": "At cruising RPM, fuel burn is comparable to standard gearcase, sometimes slightly higher because the bigger prop is moving more water. At trolling speeds, CT can burn slightly more. At full load coming up to cruise, CT can actually burn less because you get up on cruise faster and spend less time at the high-fuel-burn…"
-        }
-      ]
-    },
-    {
       "slug": "mercury-smartcraft-connect-eligibility-2026",
       "title": "Will SmartCraft Connect Work With My Mercury? Eligibility Check",
       "description": "Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check.",
@@ -836,7 +771,7 @@
       "faqs": [
         {
           "q": "Can I convert a 15 HP Mercury into a 9.9 with a flash?",
-          "a": "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority be…"
+          "a": "Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your sp…"
         },
         {
           "q": "Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?",
@@ -1112,7 +1047,7 @@
     {
       "slug": "best-mercury-outboard-pontoon-boats",
       "title": "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)",
-      "description": "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard). The gearcase matters more than HP. HBW explains why.",
+      "description": "For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower.",
       "category": "Buying Guide",
       "publishDate": "2026-05-04",
       "keywords": [
@@ -1373,7 +1308,7 @@
     {
       "slug": "mercury-outboard-fuel-efficiency-guide",
       "title": "Mercury Outboard Fuel Economy: How to Get Better MPG",
-      "description": "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats.",
+      "description": "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.",
       "category": "Tips",
       "publishDate": "2026-03-16",
       "keywords": [
@@ -1405,7 +1340,7 @@
     {
       "slug": "center-console-mercury-motor-guide",
       "title": "Mercury for Center Console Boats Ontario",
-      "description": "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length.",
+      "description": "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.",
       "category": "Buying Guide",
       "publishDate": "2026-03-23",
       "keywords": [
@@ -1961,8 +1896,8 @@
     },
     {
       "slug": "mercury-150-300hp-pro-xs-performance-guide",
-      "title": "Mercury 150 Pro XS to 300 Compared for Ontario Boats",
-      "description": "Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths.",
+      "title": "Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats",
+      "description": "Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths.",
       "category": "Buying Guide",
       "publishDate": "2026-05-13",
       "keywords": [
@@ -2757,36 +2692,6 @@
       ]
     },
     {
-      "slug": "is-2026-good-year-to-buy-boat-canada",
-      "title": "Is 2026 a Good Year to Buy a Boat in Canada?",
-      "description": "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative.",
-      "category": "Buying Guide",
-      "publishDate": "2026-04-28",
-      "keywords": [
-        "buy boat canada 2026",
-        "boat market canada",
-        "best time to buy boat"
-      ],
-      "faqs": [
-        {
-          "q": "Is 2026 a good year to buy a boat in Canada?",
-          "a": "2026 is a functional but not exceptional year to buy a boat in Canada. Inventory has normalized after the post-pandemic shortage, and lead times are back to reasonable levels. However, prices are significantly higher than 2019 levels and are not expected to drop meaningfully in the near term, currency pressures and po…"
-        },
-        {
-          "q": "Are boat prices going down in Canada in 2026?",
-          "a": "Boat prices in Canada are largely holding steady or have minor softening at the new-end in 2026, compared to the peak of 2021-2022, but they haven't returned to pre-pandemic levels. Used boat prices have slightly more flexibility as inventory increases, but the elevation from the pandemic price floor has been mostly m…"
-        },
-        {
-          "q": "How do tariffs affect boat prices in Canada in 2026?",
-          "a": "Most major outboard motors and many boat brands sold in Canada have significant U.S.-manufactured content. When tariffs are applied to U.S.-origin goods entering Canada, those costs are typically passed through to consumers via dealer pricing adjustments within one to two model cycles. The specific tariff situation fo…"
-        },
-        {
-          "q": "Is it better to buy a new boat or repower an old one in 2026?",
-          "a": "For many Ontario boaters in 2026, repowering a sound hull is better value than buying a new boat. New boat prices are elevated relative to historical norms, which means you're paying a premium for a new hull whether or not you need one. A Mercury repower on a structurally sound hull gives you upgraded technology, manu…"
-        }
-      ]
-    },
-    {
       "slug": "boat-hull-replacement-vs-repower-decision",
       "title": "Is Your Boat Hull Worth Repowering? A Structural Checklist",
       "description": "Check the transom, floor, stringers, hull damage, layout, steering, and rigging before deciding whether an older boat is worth repowering.",
@@ -3009,7 +2914,7 @@
     {
       "slug": "trent-severn-waterway-boating-guide-2026",
       "title": "Trent-Severn Waterway 2026 Guide",
-      "description": "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+      "description": "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.",
       "category": "Lifestyle",
       "publishDate": "2026-05-08",
       "keywords": [
@@ -3531,39 +3436,6 @@
       ]
     },
     {
-      "slug": "rice-lake-boat-rentals-from-toronto-gta",
-      "title": "Rice Lake Boat Rentals from Toronto",
-      "description": "A Rice Lake rental day from the GTA: drive time, what's included, what to bring, and how to book online with Harris Boat Works.",
-      "category": "Boating Lifestyle",
-      "publishDate": "2026-05-16",
-      "keywords": [
-        "Rice Lake boat rentals",
-        "boat rentals near Toronto",
-        "Kawarthas pontoon rentals",
-        "family boat rental Ontario",
-        "day trip boat rental GTA",
-        "pontoon rental Toronto"
-      ],
-      "faqs": [
-        {
-          "q": "How long does it take to drive from Toronto to Rice Lake?",
-          "a": "Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure."
-        },
-        {
-          "q": "Do I need a boating licence to rent at HBW?",
-          "a": "Every person who may drive must bring a valid temporary or permanent Pleasure Craft Operator Card plus photo ID. Passengers do not need one. HBW does not substitute the rental checklist for the card, including for non-Canadian visitors."
-        },
-        {
-          "q": "What does a rental cost?",
-          "a": "Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking."
-        },
-        {
-          "q": "Can we fish from rental boats?",
-          "a": "Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference…"
-        }
-      ]
-    },
-    {
       "slug": "winter-storage-near-toronto-hbw",
       "title": "Winter Boat Storage Near Toronto HBW",
       "description": "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land.",
@@ -3856,7 +3728,7 @@
     {
       "slug": "pontoon-hp-sizing-decision-tree-ontario",
       "title": "Pontoon HP Sizing Ontario Guide",
-      "description": "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.",
+      "description": "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.",
       "category": "Mercury Outboards",
       "publishDate": "2026-03-26",
       "keywords": [
@@ -3873,7 +3745,7 @@
         },
         {
           "q": "Is 90 HP enough for a 22 ft pontoon?",
-          "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase sw…"
+          "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pull…"
         },
         {
           "q": "Why do pontoons need more HP than runabouts?",
@@ -3919,8 +3791,8 @@
     },
     {
       "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
-      "title": "Mercury Outboard Octane and Ethanol Guide for Ontario",
-      "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+      "title": "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)",
+      "description": "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane.",
       "category": "Service",
       "publishDate": "2026-04-11",
       "keywords": [
@@ -4246,7 +4118,7 @@
     {
       "slug": "mercury-115-hp-fourstroke-review-ontario",
       "title": "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust",
-      "description": "An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice.",
+      "description": "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.",
       "category": "Mercury Buying Guides",
       "publishDate": "2026-05-10",
       "keywords": [
@@ -4414,210 +4286,6 @@
       ]
     },
     {
-      "slug": "mercury-dealer-markham-ontario-hbw",
-      "title": "Mercury Dealer Markham Ontario HBW",
-      "description": "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer markham",
-        "mercury repower markham",
-        "mercury outboard markham ontario",
-        "boat motor dealer markham",
-        "harris boat works markham customers"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury dealer in Markham?",
-          "a": "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program."
-        },
-        {
-          "q": "How far is Harris Boat Works from Markham?",
-          "a": "Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham."
-        },
-        {
-          "q": "Why drive to Rice Lake instead of a closer GTA dealer?",
-          "a": "Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture."
-        },
-        {
-          "q": "Does HBW serve Unionville and Stouffville too?",
-          "a": "Yes. We serve a broad Markham-area customer base including Unionville, Stouffville, and the surrounding York Region communities."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-richmond-hill-ontario-hbw",
-      "title": "Mercury Dealer Richmond Hill HBW",
-      "description": "Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer richmond hill",
-        "mercury repower richmond hill",
-        "mercury outboard richmond hill ontario",
-        "boat motor dealer aurora newmarket",
-        "harris boat works richmond hill customers"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury Premier dealer near Richmond Hill?",
-          "a": "Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28."
-        },
-        {
-          "q": "How far is Harris Boat Works from Richmond Hill?",
-          "a": "Approximately 75 minutes / 115 km depending on which part of Richmond Hill you start from."
-        },
-        {
-          "q": "Does HBW also serve Aurora and Newmarket?",
-          "a": "Yes. Aurora and Newmarket are slightly closer than Richmond Hill - typically 60 to 70 minute drives. We have a regular customer base across all three communities."
-        },
-        {
-          "q": "Can I get a Mercury quote without driving up first?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD pricing, no phone call required."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-mississauga-ontario-hbw",
-      "title": "Mercury Dealer Mississauga HBW",
-      "description": "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer mississauga",
-        "mercury repower mississauga",
-        "mercury outboard mississauga ontario",
-        "boat motor dealer mississauga",
-        "harris boat works mississauga customers"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury dealer near Mississauga?",
-          "a": "Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Premier-tier dealer for west-GTA customers willing to make the 90-minute drive northeast."
-        },
-        {
-          "q": "How long is the drive from Mississauga to Harris Boat Works?",
-          "a": "About 90 minutes outside rush hour, longer in traffic. The route is Highway 401 east to Highway 115 east, then County Road 28 north into Gores Landing."
-        },
-        {
-          "q": "Why drive that far for a Mercury dealer?",
-          "a": "Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Premier-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience."
-        },
-        {
-          "q": "Can I get a quote and place a Mercury order without visiting?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-vaughan-ontario-hbw",
-      "title": "Mercury Dealer Vaughan Ontario HBW",
-      "description": "Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer vaughan",
-        "mercury repower vaughan",
-        "mercury outboard vaughan ontario",
-        "boat motor dealer vaughan woodbridge maple"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Vaughan?",
-          "a": "About 80 minutes via Highway 400 / 404 and Highway 115. Roughly 120 km depending on your part of Vaughan."
-        },
-        {
-          "q": "Does HBW serve Woodbridge and Maple too?",
-          "a": "Yes. Woodbridge and Maple are within the same drive time. We have customers across all three communities."
-        },
-        {
-          "q": "Can I get a Mercury quote without driving up?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote in three minutes. Real CAD pricing, no phone required."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-brampton-ontario-hbw",
-      "title": "Mercury Dealer Brampton Ontario HBW",
-      "description": "Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer brampton",
-        "mercury repower brampton",
-        "mercury outboard brampton ontario",
-        "boat motor dealer brampton caledon"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Brampton?",
-          "a": "About 95 minutes via Highway 410 / 401 and Highway 115. Roughly 140 km depending on your part of Brampton."
-        },
-        {
-          "q": "Does HBW serve Caledon?",
-          "a": "Yes. Caledon is within the same drive time as Brampton. We have customers across the area."
-        },
-        {
-          "q": "Why drive 95 minutes for a Mercury dealer?",
-          "a": "Brampton customers cite transparent online CAD pricing, Mercury Premier-tier technical depth, and a no-pressure family-marina conversation."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-oakville-ontario-hbw",
-      "title": "Mercury Dealer Oakville Ontario HBW",
-      "description": "Mercury Premier dealer near Oakville: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Oakville, Burlington-edge.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer oakville",
-        "mercury repower oakville",
-        "mercury outboard oakville ontario",
-        "boat motor service oakville"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Oakville?",
-          "a": "About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville."
-        },
-        {
-          "q": "Is the drive worth it for a Mercury dealer?",
-          "a": "Oakville customers cite three reasons: transparent online CAD pricing, Mercury Premier-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities."
-        },
-        {
-          "q": "Can I do most of the buying process remotely?",
-          "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-burlington-ontario-hbw",
-      "title": "Mercury Dealer Burlington Ontario HBW",
-      "description": "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer burlington",
-        "mercury repower burlington",
-        "mercury outboard burlington ontario",
-        "boat motor service burlington hamilton"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Burlington?",
-          "a": "About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington."
-        },
-        {
-          "q": "Is there a closer Mercury dealer to Burlington?",
-          "a": "Yes. Burlington-area boaters have closer authorized Mercury options in the Hamilton area. HBW is the Rice Lake option for customers who value Premier-tier Mercury support, an accountable repower process, and transparent online CAD pricing."
-        },
-        {
-          "q": "Can I quote and order remotely?",
-          "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling."
-        }
-      ]
-    },
-    {
       "slug": "mercury-outboard-overheating-at-idle-fix-ontario",
       "title": "Mercury Overheating at Idle Fix",
       "description": "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors.",
@@ -4650,33 +4318,6 @@
       ]
     },
     {
-      "slug": "mercury-dealer-pickering-ontario-hbw",
-      "title": "Mercury Dealer for Pickering: 50 Minutes from Rice Lake",
-      "description": "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer pickering",
-        "mercury repower pickering",
-        "mercury outboard pickering ontario",
-        "boat motor dealer pickering"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Pickering?",
-          "a": "About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Closer than most of the GTA - almost a non-decision drive for repower service."
-        },
-        {
-          "q": "Why drive 50 minutes for a Mercury dealer?",
-          "a": "Closer than you might think (similar to a typical Toronto commute), Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture."
-        },
-        {
-          "q": "Can I quote and order remotely?",
-          "a": "Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install/delivery from there."
-        }
-      ]
-    },
-    {
       "slug": "mercury-dealer-whitby-ontario-hbw",
       "title": "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake",
       "description": "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.",
@@ -4700,60 +4341,6 @@
         {
           "q": "Do you serve Brooklin and north Whitby?",
           "a": "Yes. Boat owners from Brooklin and north Whitby can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-ajax-ontario-hbw",
-      "title": "Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake",
-      "description": "Mercury Premier dealer for Ajax: Harris Boat Works on Rice Lake, 45 minutes via 401 and 115. Repower, sales, parts, winter storage for Durham Region boat owners.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer ajax",
-        "mercury repower ajax",
-        "mercury outboard ajax ontario",
-        "boat motor service durham region ajax"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Ajax?",
-          "a": "About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake."
-        },
-        {
-          "q": "Why drive to Rice Lake from Ajax?",
-          "a": "Mercury Premier tier, transparent CAD pricing online, and no high-pressure dealer culture."
-        },
-        {
-          "q": "Can I use HBW as my primary Mercury dealer?",
-          "a": "Yes. Many Durham Region customers do - spring commissioning, mid-season service, fall winterization. 45 minutes is short enough to make it practical."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-oshawa-ontario-hbw",
-      "title": "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake",
-      "description": "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury dealer oshawa",
-        "mercury repower oshawa",
-        "mercury outboard oshawa ontario",
-        "boat motor service durham region oshawa"
-      ],
-      "faqs": [
-        {
-          "q": "How far is HBW from Oshawa?",
-          "a": "About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One of the closest GTA cities to Rice Lake."
-        },
-        {
-          "q": "Can HBW be my primary Mercury dealer in Oshawa?",
-          "a": "Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
-        },
-        {
-          "q": "Do you serve north Oshawa and Courtice?",
-          "a": "Yes. Boat owners from Courtice and north Oshawa can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic."
         }
       ]
     },
@@ -4813,33 +4400,6 @@
         {
           "q": "Is a single beep at key-on normal?",
           "a": "Yes. Current Mercury manuals describe a brief horn at key-on as a self-test confirming the alarm system is working. If it does not recur during operation, no action is needed."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-outboard-wont-start-after-sitting",
-      "title": "Mercury Won't Start After Sitting: Fixes",
-      "description": "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral.",
-      "category": "Service & Troubleshooting",
-      "publishDate": "2026-05-11",
-      "keywords": [
-        "mercury outboard wont start after sitting",
-        "mercury outboard stale fuel",
-        "mercury outboard spring no start",
-        "outboard wont start after winter storage"
-      ],
-      "faqs": [
-        {
-          "q": "Why will my Mercury outboard not start after winter?",
-          "a": "Common causes include weak battery, loose/corroded terminals, stale fuel, closed tank vent, primer bulb issues, kill switch, neutral safety switch, or fuel system problems."
-        },
-        {
-          "q": "Can old gas stop an outboard from starting?",
-          "a": "Yes. Stale or contaminated fuel can cause hard starting, no-start, rough running, or stalling after storage."
-        },
-        {
-          "q": "Should I keep cranking it?",
-          "a": "No. Repeated cranking can drain the battery and make diagnosis harder. Check basics, then stop and book service if it does not start."
         }
       ]
     },
@@ -5377,157 +4937,6 @@
         {
           "q": "Why does my electrical system seem fine in summer but fail in spring?",
           "a": "Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-peterborough-ontario-hbw",
-      "title": "Mercury Dealer Peterborough HBW",
-      "description": "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-17",
-      "keywords": [
-        "mercury dealer peterborough",
-        "peterborough mercury outboard",
-        "mercury premier dealer ontario",
-        "kawartha mercury repower"
-      ],
-      "faqs": [
-        {
-          "q": "Who is the best Mercury dealer near Peterborough, Ontario?",
-          "a": "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online and water tests repowers on Rice Lake."
-        },
-        {
-          "q": "How far is Harris Boat Works from Peterborough?",
-          "a": "About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore."
-        },
-        {
-          "q": "Is Harris Boat Works a Mercury Premier dealer?",
-          "a": "Yes. Harris Boat Works holds Mercury's Premier dealer status and provides authorized Mercury sales and service on Rice Lake."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-cobourg-ontario-hbw",
-      "title": "Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake",
-      "description": "Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-17",
-      "keywords": [
-        "mercury dealer cobourg",
-        "cobourg mercury outboard",
-        "northumberland mercury dealer",
-        "rice lake mercury dealer"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury dealer in Cobourg?",
-          "a": "Not within town limits at the Premier tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965."
-        },
-        {
-          "q": "How long is the drive from Cobourg to HBW?",
-          "a": "About 25 minutes outside rush hour, straight up County Road 18 into Gores Landing. From the Cobourg harbour or downtown, allow 25 to 30 minutes. From north Cobourg it is closer to 20 minutes. About as simple a route as gets, one road for most of the trip."
-        },
-        {
-          "q": "Does HBW service boats that live on Lake Ontario, not Rice Lake?",
-          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and Mercruiser."
-        },
-        {
-          "q": "Does HBW offer pickup or delivery for Cobourg customers?",
-          "a": "No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-port-hope-ontario-hbw",
-      "title": "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake",
-      "description": "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-17",
-      "keywords": [
-        "mercury dealer port hope",
-        "port hope mercury outboard",
-        "ganaraska mercury dealer",
-        "northumberland mercury premier"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury Premier dealer in Port Hope?",
-          "a": "Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction."
-        },
-        {
-          "q": "How long is the drive from Port Hope to HBW?",
-          "a": "About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter."
-        },
-        {
-          "q": "Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?",
-          "a": "Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup."
-        },
-        {
-          "q": "Will HBW service my Lake Ontario boat without me storing it on Rice Lake?",
-          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-lindsay-ontario-hbw",
-      "title": "Mercury Dealer Lindsay Ontario HBW",
-      "description": "Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-17",
-      "keywords": [
-        "mercury dealer lindsay",
-        "kawartha lakes mercury",
-        "lindsay mercury premier",
-        "sturgeon lake mercury dealer"
-      ],
-      "faqs": [
-        {
-          "q": "Is there a Mercury Premier dealer in Lindsay?",
-          "a": "Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Premier Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Premier-tier service, HBW is the closest opti…"
-        },
-        {
-          "q": "Is HBW worth the 45-minute drive for routine service?",
-          "a": "For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good conditi…"
-        },
-        {
-          "q": "Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?",
-          "a": "Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist."
-        },
-        {
-          "q": "Can I store my boat at HBW through the winter if I am based in Lindsay?",
-          "a": "Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April."
-        }
-      ]
-    },
-    {
-      "slug": "mercury-dealer-northumberland-county-hbw",
-      "title": "Mercury Dealer Northumberland HBW",
-      "description": "Harris Boat Works is the Mercury Premier dealer in Northumberland County. Serving Rice Lake, Cobourg, Port Hope, Hastings, Brighton, and the Trent system.",
-      "category": "Dealer Locations",
-      "publishDate": "2026-05-17",
-      "keywords": [
-        "mercury dealer northumberland county",
-        "northumberland mercury premier",
-        "rice lake mercury dealer",
-        "trent system mercury"
-      ],
-      "faqs": [
-        {
-          "q": "Who is the Mercury dealer for Northumberland County?",
-          "a": "Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercu…"
-        },
-        {
-          "q": "How far is HBW from each Northumberland community?",
-          "a": "Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes via County Roads 18 and 28. Hastings is 25 minutes via County Road 9 east across the Trent. Campbellford is 35 minutes. Colborne is 35 minutes via Highway 401. Trent Hills is 30 minutes. Brighton is the furthest at about 50 minutes via the 4…"
-        },
-        {
-          "q": "Does HBW service Bay of Quinte boats from Brighton?",
-          "a": "Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser."
-        },
-        {
-          "q": "Does HBW sell new boats in addition to Mercury motors?",
-          "a": "Yes. We are also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged. Worth a conversation if you are in the new-boat market."
         }
       ]
     },
@@ -6290,7 +5699,7 @@
     {
       "slug": "mercury-outboard-weight-chart",
       "title": "Mercury Outboard Weight Chart (2.5 to 300 HP)",
-      "description": "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.",
+      "description": "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.",
       "category": "Buying Guide",
       "publishDate": "2026-06-07",
       "keywords": [

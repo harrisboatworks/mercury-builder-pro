@@ -66,6 +66,14 @@ interface BlogHubProps {
    * direct lookup instead of the default English keyword regex.
    */
   categoryToIntent?: Record<string, IntentKey>;
+  /**
+   * Optional "Browse by topic" strip linking to the topic hub collections.
+   * Only the English index passes this; translated indexes have no hub pages.
+   */
+  topicHubStrip?: {
+    heading: string;
+    items: { label: string; blurb: string; path: string }[];
+  };
 }
 
 function matchesIntentDefault(article: BlogListingArticle, intent: IntentKey): boolean {
@@ -179,6 +187,7 @@ export function BlogHub({
   heroImage = '/lovable-uploads/pontoon-family-rice-lake-hero.png',
   featuredSlug,
   categoryToIntent,
+  topicHubStrip,
 }: BlogHubProps) {
   const [query, setQuery] = useState('');
   const [intent, setIntent] = useState<IntentKey | null>(null);
@@ -350,6 +359,38 @@ export function BlogHub({
         tabIndex={-1}
         className="container mx-auto px-6 md:px-14 max-w-[1200px] py-14 md:py-20"
       >
+        {/* TOPIC HUB STRIP */}
+        {topicHubStrip && topicHubStrip.items.length > 0 && (
+          <section aria-labelledby="topic-hub-heading" className="mb-10 md:mb-12">
+            <h2
+              id="topic-hub-heading"
+              className="font-display font-bold text-xl md:text-2xl text-repower-navy-900"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              {topicHubStrip.heading}
+            </h2>
+            <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+              {topicHubStrip.items.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="group flex flex-col p-4 bg-white rounded-md border border-repower-navy-900/10 hover:border-repower-navy-900/30 transition-all"
+                >
+                  <span
+                    className="font-display text-base font-semibold text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors"
+                    style={{ letterSpacing: '-0.015em' }}
+                  >
+                    {item.label}
+                  </span>
+                  <span className="mt-1.5 font-sans text-[13px] text-repower-navy-900/60 leading-snug">
+                    {item.blurb}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* INTENT TILES */}
         <section aria-labelledby="intent-heading" className="mb-16 md:mb-20">
           <h2 id="intent-heading" className="sr-only">

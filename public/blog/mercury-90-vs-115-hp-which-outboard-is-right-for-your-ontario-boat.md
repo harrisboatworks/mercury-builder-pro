@@ -61,7 +61,7 @@ The real-world fuel cost difference over a season of weekend boating on Ontario 
 
 Both the 90 and 115 are available with Mercury's Command Thrust (CT) gearcase, but CT is not a general heavy-load upgrade. Its larger gearcase and propeller trade top-end efficiency for low-speed push, which is useful on pontoons and specific workboats.
 
-The standard gearcase is the right choice for a planing aluminum or fibreglass V-hull. In one HBW back-to-back comparison of two 4.9 m (16 ft) Legend boats with 60 hp, the standard-gearcase boat was faster at the top end. That shop result is boat-specific, but it illustrates the trade-off. If a V-hull struggles under its normal load, check the capacity plate, horsepower, propeller, engine height, and actual load instead of using CT to mask the mismatch. A 9.9 or 15 HP ProKicker with Command Thrust is a different application because the kicker is built for slow trolling. See the [full Command Thrust V-hull and pontoon guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull).
+The standard gearcase is the right choice for a planing aluminum or fibreglass V-hull. In one HBW back-to-back comparison of two 4.9 m (16 ft) Legend boats with 60 hp, the standard-gearcase boat was faster at the top end. That shop result is boat-specific, but it illustrates the trade-off. If a V-hull struggles under its normal load, check the capacity plate, horsepower, propeller, engine height, and actual load instead of using CT to mask the mismatch. A 9.9 or 15 HP ProKicker with Command Thrust is a different application because the kicker is built for slow trolling. See the [full Command Thrust V-hull and pontoon guide](/blog/mercury-command-thrust-complete-guide-2026).
 
 ## Price Difference in Canada (CAD)
 

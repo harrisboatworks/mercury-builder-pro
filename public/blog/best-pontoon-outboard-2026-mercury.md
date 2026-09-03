@@ -49,7 +49,7 @@ Here is a planning grid for the first sizing conversation. The capacity plate an
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS range matched to the capacity plate and load |
 | 26 ft | 3 | 10+ adults | Higher-horsepower Pro XS range where the hull permits |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their lift-to-cruise dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
 

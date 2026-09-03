@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)"
-description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard)."
+description: "For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-08-02
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)
 
-> For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard).
+> For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  

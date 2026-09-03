@@ -2,11 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { BLOG_REVENUE_DRIVER, getBlogRevenueDriver, getBlogRevenuePath, normalizeBlogCategory } from './blogRevenueDriver.js';
 
 const dealerSlugs = [
-  'ajax', 'bowmanville', 'brampton', 'burlington', 'cobourg', 'lindsay',
-  'markham', 'mississauga', 'oakville', 'oshawa', 'peterborough', 'pickering',
-  'port-hope', 'richmond-hill', 'vaughan', 'whitby',
+  'bowmanville', 'whitby',
 ].map((city) => `mercury-dealer-${city}-ontario-hbw`).concat([
-  'mercury-dealer-northumberland-county-hbw',
   'mercury-outboard-dealer-toronto-why-drive-to-hbw',
 ]);
 

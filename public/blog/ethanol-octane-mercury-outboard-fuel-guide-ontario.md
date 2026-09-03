@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Outboard Octane and Ethanol Guide for Ontario"
-description: "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit."
+title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)"
+description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane."
 category: "Service"
 date_published: 2026-04-11
 date_modified: 2026-08-24
@@ -19,15 +19,17 @@ language: en-CA
 revenue_driver: service
 ---
 
-# Mercury Outboard Octane and Ethanol Guide for Ontario
+# Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)
 
-> Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.
+> Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane.
 
 **Category:** Service  
 **Published:** 2026-04-11  
 **Last reviewed:** 2026-08-24  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
+
+## Mercury Outboard Octane and Ethanol Guide for Ontario
 
 > **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
 

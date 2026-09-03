@@ -76,7 +76,7 @@ The 115 Pro XS is the entry into the Pro XS family. It uses the same 2.1L powerh
 - RPM limit higher than FourStroke 115
 - Slightly different sound (more "boat sport" character)
 
-The 115 Pro XS is [available with Command Thrust gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), which is the right choice for performance pontoon setups in this HP range.
+The 115 Pro XS is [available with Command Thrust gearcase](/blog/mercury-command-thrust-complete-guide-2026), which is the right choice for performance pontoon setups in this HP range.
 
 The honest take: most 16-19 ft Ontario boats don't need the Pro XS premium over a 115 FourStroke. The buyers who do benefit are those running serious fishing tournaments or performance pontoons in the 115 HP class. For everyone else, the 115 FourStroke is the smarter spend.
 
@@ -194,11 +194,11 @@ Pro XS resale stays strong. A used Pro XS in good condition from a known service
 
 ## Related guides
 
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 
