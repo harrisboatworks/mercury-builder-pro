@@ -41,7 +41,8 @@ const checks = [
   },
   {
     file: 'public/blog/ko/mercury-115-vs-150-comparison.md',
-    expected: ['5,000–6,000', '5,000–5,800', '16–19피트', '19–22피트'],
+    expected: ['5,000–6,000', '5,000–5,800', '16–19피트', '19–22피트', '16–19피트 알루미늄'],
+    forbidden: ['16~19피트 알루미늄', '19~22피트의 더 큰'],
   },
   {
     file: 'public/blog/zh/mercury-115-vs-150-comparison-zh.md',
@@ -93,6 +94,12 @@ for (const token of forbidden) {
 }
 
 for (const check of checks) {
+  for (const token of check.forbidden || []) {
+    if (sourceSurface.includes(token)) failures.push(`source data: leftover wave-dash range remains "${token}"`);
+  }
+}
+
+for (const check of checks) {
   for (const token of check.expected) {
     if (!sourceSurface.includes(token)) failures.push(`source data: missing restored range "${token}"`);
   }
@@ -108,7 +115,7 @@ for (const check of checks) {
   for (const token of check.expected) {
     if (!markdown.includes(token)) failures.push(`${check.file}: missing restored range "${token}"`);
   }
-  for (const token of forbidden) {
+  for (const token of [...forbidden, ...(check.forbidden || [])]) {
     if (markdown.includes(token)) failures.push(`${check.file}: corrupt range remains "${token}"`);
   }
 
