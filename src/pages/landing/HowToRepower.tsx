@@ -41,7 +41,7 @@ const steps = [
   {
     icon: Waves,
     title: 'Lake Test on Rice Lake',
-    body: 'Every repower is lake-tested on Rice Lake before pickup. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything\'s off, we adjust before you ever see the bill.'
+    body: 'HBW\'s standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything\'s off, we adjust before you ever see the bill. Any alternate acceptance plan is documented with the customer.'
   },
   {
     icon: Key,

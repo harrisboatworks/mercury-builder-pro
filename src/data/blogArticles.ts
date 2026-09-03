@@ -4528,7 +4528,7 @@ As of September 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start,
 
 HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Premier Dealer, which means our service techs are factory-certified on every motor we sell.
 
-We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from central Toronto in light traffic, on the south shore of Rice Lake. We are pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
+We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from central Toronto in light traffic, on the south shore of Rice Lake. We are pickup-only, by design: the standard handoff includes a real water test before you drive home when safe seasonal conditions allow. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
 ## Frequently Asked Questions
 
@@ -24756,7 +24756,7 @@ About $2,602 CAD difference in dealer selling price. The 60 CT over the 40 is ab
 The capacity plate is physical, on the inner transom of your boat. If you're unsure what it says, pull the boat out and look. The HP limit on that plate is not negotiable.
 
 **Does HBW rig motors in the shop or at the launch?** 
-In the shop. Every install is done by our techs at our facility in Gores Landing. Lake test is included before the boat leaves.
+In the shop. Every install is done by our techs at our facility in Gores Landing. HBW's standard handoff includes a lake test before pickup when safe seasonal conditions allow; otherwise the alternate acceptance plan is documented with the customer.
 
 ---
 
@@ -33965,7 +33965,7 @@ Motor pricing: mercuryrepower.ca
 Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite, common on Lake Ontario salmon rigs and on Kawartha bass boats.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, and documented acceptance checks before pickup. When safe seasonal conditions allow, the work order can include an on-water check on Rice Lake; otherwise, HBW documents the alternate acceptance plan with the customer.
 
 **Mercury parts and service**
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and MerCruiser.

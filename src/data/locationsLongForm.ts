@@ -76,7 +76,7 @@ function toLocation(s: SpecInput): LocationPageData {
       'Family-owned in Gores Landing since 1947',
       'Mercury Marine Premier Dealer',
       'Authorized Mercury dealer since 1965',
-      'Every installed repower is lake-tested on Rice Lake before pickup',
+      'Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow',
     ],
     recommendedLinks: s.related,
     faqs: s.faqs,
@@ -526,7 +526,7 @@ const SPECS: SpecInput[] = [
     lng: -78.3833,
     h1: 'Bridgenorth Mercury Repower',
     intro:
-      'Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. The standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~40 min south to Gores Landing',
       'Distance: ~40 km via Peterborough',
@@ -593,7 +593,7 @@ const SPECS: SpecInput[] = [
     lng: -78.7414,
     h1: 'Lindsay Mercury Repower',
     intro:
-      'Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. The standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~60 min east to Gores Landing',
       'Distance: ~70 km via Highway 7A and County Road 9',
@@ -703,7 +703,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Bobcaygeon?', answer: 'About 75 minutes south, roughly 80 km, to Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Bobcaygeon or Pigeon Lake cottages?', answer: 'No. We are pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive south to pick up.' },
       { question: 'What HP Mercury is common for Pigeon and Sturgeon Lake boats?', answer: 'Cruising boats often run mid-range FourStroke 90–150 HP. Properly rated performance pontoons and bigger fiberglass boats may run Pro XS 175–250 HP.' },
-      { question: 'Why drive 75 minutes for a repower?', answer: 'Because we are a Mercury Premier Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.' },
+      { question: 'Why drive 75 minutes for a repower?', answer: 'Because we are a Mercury Premier Dealer, selling Mercury since 1965, the standard handoff includes a Rice Lake water test when safe seasonal conditions allow, and the same techs who write your quote are the ones who do the install.' },
       { question: 'Is Bobcaygeon far enough away that I should book early?', answer: 'Yes. If you want the boat ready for spring, January to April is the best booking window. Ice-out on Rice Lake is usually mid-April.' },
     ],
     visitExtra:

@@ -35,7 +35,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Process & What to Expect',
     cards: [
       { title: 'What Happens During a Mercury Repower', description: 'The 7-step shop walk-through from drop-off to pickup.', to: '/blog/what-happens-during-mercury-repower' },
-      { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', description: 'Why every motor gets a real Rice Lake water test.', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026' },
+      { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', description: 'Why the standard handoff includes a Rice Lake water test when conditions allow.', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026' },
       { title: 'Mercury Warranty After a Repower (Ontario)', description: 'How the 3+3 warranty and any active promo extension apply post-repower.', to: '/blog/mercury-warranty-after-repower-ontario' },
       { title: 'Pleasure Craft Licence Update During Repower', description: 'When and how to update Transport Canada paperwork.', to: '/blog/pleasure-craft-licence-update-repower-ontario' },
       { title: 'Winter Repower Planning Guide', description: 'Why January to March is the smart time to book.', to: '/blog/winter-repower-planning-guide' },
@@ -217,7 +217,7 @@ export default function RepowerHub() {
         <>
           <h2>Boat Repower in Ontario</h2>
           <blockquote>
-            <strong>Quick answer:</strong> A boat repower (sometimes searched as "boat engine repower") is the job of pulling your old outboard off the transom and rigging a new Mercury in its place: motor, controls, cables, prop, fuel connection, water test, the whole package. At Harris Boat Works in Gores Landing, ON, a full repower typically runs $11,000 to $40,000 CAD (2026) depending on horsepower and rigging. We have been a Mercury dealer since 1965, family-owned since 1947, and we water-test every motor on Rice Lake before pickup. Pickup-only, no shipping, no delivery.
+            <strong>Quick answer:</strong> A boat repower (sometimes searched as "boat engine repower") is the job of pulling your old outboard off the transom and rigging a new Mercury in its place: motor, controls, cables, prop, fuel connection, water test, the whole package. At Harris Boat Works in Gores Landing, ON, a full repower typically runs $11,000 to $40,000 CAD (2026) depending on horsepower and rigging. We have been a Mercury dealer since 1965, family-owned since 1947, and the standard handoff includes a Rice Lake water test when safe seasonal conditions allow. Pickup-only, no shipping, no delivery.
           </blockquote>
 
           <h3>Key facts</h3>
@@ -229,7 +229,7 @@ export default function RepowerHub() {
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>
             <li>Distance from Toronto: about 110 km, roughly 90 minutes door-to-door</li>
             <li>Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, running concurrently), with promotional extensions stacked on top of the base coverage when active</li>
-            <li>Pickup-only at Gores Landing. Every motor water-tested on Rice Lake before you take it home</li>
+            <li>Pickup-only at Gores Landing. Standard handoff includes a Rice Lake water test when safe seasonal conditions allow</li>
           </ul>
 
           <h3>Ontario Repower Benchmarks</h3>
@@ -326,7 +326,7 @@ export default function RepowerHub() {
 
           <h3>Where do I pick up my repowered boat?</h3>
           <p>You pick up at the shop: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. We're on the south shore of Rice Lake, about 110 km east of Toronto on the 401, 30 km south of Peterborough, and an easy run from Northumberland County, the Kawarthas, and the GTA.</p>
-          <p>Pickup-only, every time. We don't ship motors and we don't deliver finished repowers. Every motor we rig gets a real water test on Rice Lake before it leaves, and the walk-through at pickup is part of the job.</p>
+          <p>Pickup-only, every time. We don't ship motors and we don't deliver finished repowers. The standard handoff includes a real water test on Rice Lake before pickup when safe seasonal conditions allow, and the walk-through at pickup is part of the job.</p>
 
           <h3>Why pick Harris Boat Works for a Mercury repower?</h3>
           <p>We've been on this land since 1947 and we've been a Mercury dealer since 1965. Three generations. One brand. The reason that matters: when you hand us your boat, the same techs who priced the quote are the ones rigging the motor and running the water test on Rice Lake the next week. No subcontracted install, no parts farmed out, no handoff between sales and service.</p>

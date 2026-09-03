@@ -27,6 +27,34 @@ const failures: string[] = [];
 const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
   /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
 
+// Keep in sync with scripts/check-blog-timeline-facts.mjs no-universal-water-test-claim.
+// Catches water-tested / lake-tested leftovers that slipped the older
+// `water[- ]test` + trailing \b pattern, plus non-blog surfaces.
+const UNCONDITIONAL_WATER_TEST_RX =
+  /\b(?:(?:every|each) (?:single )?(?:installed )?(?:HBW |Mercury |full )?(?:repower|install|motor|job)[^\n.]{0,240}(?:(?:water|lake|on-water)[- ]test(?:ed)?|on-water|tested on Rice Lake|sea[- ]trial|real (?:Rice Lake )?water test)|(?:water|lake)[- ]tests? (?:every|each) (?:installed )?(?:repower|install|motor|job|Mercury)|(?:sea[- ]trial|on-water test)[^\n.]{0,80}(?:always included|before delivery|of every)|boat does not leave[^\n.]{0,80}sea[- ]trial|we (?:test props|sea[- ]trial|water[- ]test)[^\n.]{0,120}\bevery\b[^\n.]{0,60}(?:repower|install|motor|job|Mercury|sea[- ]trial)|lake test is included before the boat leaves|we don['’]t hand over a motor we haven['’]t run|on-water (?:Rice Lake )?test before every|we test every install|every repower, no exceptions|why every motor gets a real (?:Rice Lake )?water test|test every motor here|every motor still gets the same Rice Lake water test)\b/i;
+
+const WATER_TEST_CLAIM_SURFACES = [
+  'src/components/repower/ObjectionStrip.tsx',
+  'src/pages/landing/HowToRepower.tsx',
+  'src/components/seo/HowToRepowerSEO.tsx',
+  'src/pages/Index.tsx',
+  'src/pages/RepowerHub.tsx',
+  'src/pages/RepowerCost.tsx',
+  'src/pages/MotorSelectionHub.tsx',
+  'src/components/quote-pdf/ProfessionalQuotePDF.tsx',
+  'src/data/locations.ts',
+  'src/data/locationsLongForm.ts',
+  'src/data/locationsLongFormUpgrades.ts',
+  'src/data/locationsLongFormExtras.ts',
+  'src/data/blogArticles.ts',
+  'public/llms.txt',
+  'public/.well-known/brand.json',
+  'public/catalog.md',
+  'scripts/static-prerender.mjs',
+  'scripts/generate-markdown-twins.mjs',
+  'supabase/functions/_shared/verified-hbw-authority-facts.ts',
+];
+
 const generatedBlogTwins = readdirSync('public/blog', { recursive: true })
   .filter((file) => String(file).endsWith('.md'))
   .map((file) => `public/blog/${file}`);
@@ -73,8 +101,7 @@ const unsupportedOperationalClaims = [
   },
   {
     label: 'unconditional water-test promise',
-    pattern:
-      /\b(?:(?:every|each) (?:single )?(?:HBW |Mercury |full )?repower[^\n.]{0,240}(?:water[- ]test|on-water|tested on Rice Lake)|(?:sea[- ]trial|on-water test)[^\n.]{0,80}(?:always included|before delivery)|boat does not leave[^\n.]{0,80}sea[- ]trial|we (?:test props|sea[- ]trial|run)[^\n.]{0,120}\bevery\b[^\n.]{0,60}(?:repower|install|sea[- ]trial)|every (?:install|repower)[^\n.]{0,80}(?:water[- ]test|sea[- ]trial))\b/i,
+    pattern: UNCONDITIONAL_WATER_TEST_RX,
   },
   {
     label: 'unsupported on-water towing promise',
@@ -415,13 +442,20 @@ for (const article of contentArticles) {
 
 }
 
-for (const file of generatedBlogTwins) {
+const generatedLocationTwins = readdirSync('public/locations')
+  .filter((file) => String(file).endsWith('.md'))
+  .map((file) => `public/locations/${file}`);
+
+for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...WATER_TEST_CLAIM_SURFACES]) {
   const twinSource = readFileSync(file, 'utf8');
-  if (STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
+  if (generatedBlogTwins.includes(file) && STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
     failures.push(`${file}: hard-no HBW boat pickup policy`);
   }
-  if (/^::cta\s*$/m.test(twinSource)) {
+  if (generatedBlogTwins.includes(file) && /^::cta\s*$/m.test(twinSource)) {
     failures.push(`${file}: leftover raw ::cta authoring fence`);
+  }
+  if (UNCONDITIONAL_WATER_TEST_RX.test(twinSource)) {
+    failures.push(`${file}: unconditional water-test promise`);
   }
 }
 
@@ -530,5 +564,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${generatedBlogTwins.length} Markdown twin(s), ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
+  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${generatedBlogTwins.length} Markdown twin(s), ${generatedLocationTwins.length} location twin(s), ${WATER_TEST_CLAIM_SURFACES.length} water-test surfaces, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
 );
