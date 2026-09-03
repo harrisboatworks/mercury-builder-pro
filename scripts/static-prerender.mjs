@@ -5233,6 +5233,8 @@ const routes = [
       return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
     }
   },
+  // Blog topic hub collection pages (see BLOG_TOPIC_HUB_ROUTES above).
+  ...BLOG_TOPIC_HUB_ROUTES,
   // ============================================================
   // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
   // Without these, Vercel's /blog/:slug rewrite would 404 the hub
