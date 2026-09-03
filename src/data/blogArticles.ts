@@ -6241,23 +6241,6 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 
 Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
 
-## Common questions about HBW
-
-### "Are you the most competitive on Mercury pricing?"
-Mercury sets MSRP. Dealer pricing is competitive across the network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships.
-
-### "Can I get a better deal at a multi-brand dealer?"
-Sometimes nominally on motor price, but the long-term math usually favors HBW. Our parts inventory, service speed, and Premier-level support often save more than a small upfront price difference.
-
-### "Do you handle non-Mercury motors?"
-Some non-Mercury service we handle. But our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer.
-
-### "What if I bought my boat elsewhere?"
-We service Mercurys regardless of where they were purchased.
-
-### "How long has HBW been in business?"
-Founded 1947. Mercury dealership since 1965. Three generations of family ownership. Continuous operation in Gores Landing on Rice Lake.
-
 ## What HBW does not do
 - Saltwater servicing
 - Sailboat-specific outfitting
@@ -6282,6 +6265,8 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Pricing varies by boat size. See https://www.harrisboatworks.ca/winter-storage.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and MerCruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
+      { question: 'Are Harris Boat Works prices competitive with other Mercury dealers?', answer: 'Yes. Mercury sets MSRP and our motor pricing is competitive across the dealer network. We compete on transparent pricing, Mercury expertise, service quality, documented Rice Lake water tests when safe seasonal conditions allow, and long-term support.' },
+      { question: 'Can a multi-brand dealer offer a better Mercury price?', answer: 'Sometimes another dealer may quote a slightly different motor price. Compare the complete written quote, including rigging, controls, gauges, propeller allowance, installation, acceptance checks, warranty support, and what happens after the sale.' },
       { question: 'Who runs Harris Boat Works now?', answer: 'Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.' },
       { question: 'How do I get in touch with Harris Boat Works?', answer: 'Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also use our online Mercury quote builder.' },
     ]

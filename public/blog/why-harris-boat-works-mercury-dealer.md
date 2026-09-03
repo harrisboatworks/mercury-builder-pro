@@ -151,6 +151,14 @@ Some non-Mercury service we handle, but our engine repair depth is Mercury and M
 
 We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.
 
+### Are Harris Boat Works prices competitive with other Mercury dealers?
+
+Yes. Mercury sets MSRP and our motor pricing is competitive across the dealer network. We compete on transparent pricing, Mercury expertise, service quality, documented Rice Lake water tests when safe seasonal conditions allow, and long-term support.
+
+### Can a multi-brand dealer offer a better Mercury price?
+
+Sometimes another dealer may quote a slightly different motor price. Compare the complete written quote, including rigging, controls, gauges, propeller allowance, installation, acceptance checks, warranty support, and what happens after the sale.
+
 ### Who runs Harris Boat Works now?
 
 Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.
