@@ -326,7 +326,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 - 온타리오 보트 구매 가이드
 - Mercury 115 vs 150 비교
 
-## CTA
+## 다음 단계
 
 **렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
@@ -583,7 +583,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 - Rice Lake 낚시 가이드
 - 온타리오 보트 면허 및 안전 규정
 
-## CTA
+## 다음 단계
 
 **온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격
 **전화:** 905-342-2153
@@ -901,7 +901,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 - Rice Lake 낚시 가이드
 - Mercury 115 vs 150 비교
 
-## CTA
+## 다음 단계
 
 **규정을 확인했다면, 이제 물 위로 나갈 준비가 됐습니다.**
 

@@ -142,6 +142,8 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ---
 
+## 다음 단계
+
 **렌탈 보트 예약 및 보트 재고 확인:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
