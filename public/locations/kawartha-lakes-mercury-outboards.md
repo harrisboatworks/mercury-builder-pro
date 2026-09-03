@@ -68,10 +68,6 @@ No. All pricing is CAD only.
 
 Yes. Use the quote builder or the motor pages, both show live CAD pricing.
 
-### Where can I get a Mercury outboard serviced in the Kawarthas?
-
-Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All service work happens in our shop. We can generally arrange boat pickup; ask us about availability for your boat and location. You can also bring the boat or motor to Gores Landing and collect it when the work is done. We don't offer delivery or mobile, dockside, driveway, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.
-
 ## Service boundary
 Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in the Kawartha Lakes region. Service work remains at our Gores Landing shop. We can generally arrange boat pickup; ask us about availability for your boat and location. Customers can also bring their boat to the shop, or pick up a loose Mercury motor for self-install.
 ## Notes
