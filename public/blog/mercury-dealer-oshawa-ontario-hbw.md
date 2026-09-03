@@ -59,7 +59,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 **Winterization:** October drop-off, November shrinkwrap, spring pickup. The whole fall routine makes sense at this distance.
 
-**Storage:** Outdoor winter storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
+**Storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. For Oshawa customers whose boats are already at the lake, keeping them here through winter is more convenient than hauling them back for the season.
 
 ## The Pricing Conversation Starts Before You Arrive
 
@@ -85,7 +85,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 40 minutes, keeping the boat at HBW through winter makes solid logistical sense for many Oshawa boaters. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you even pick up the phone.

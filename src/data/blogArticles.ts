@@ -21315,7 +21315,7 @@ HBW is a fit when you want outdoor storage at Gores Landing and the same Mercury
 
 | Storage option | What it provides | Fit for HBW? |
 |---------------|------------------|--------------|
-| **Outdoor storage with shrinkwrap** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. This is HBW's storage model.** |
+| **Outdoor storage (shrink wrap, uncovered, or wrap-only)** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. These are HBW's outdoor storage options.** |
 | **Indoor unheated storage** | A roof and enclosure, but freezing temperatures may still occur | **No. HBW does not offer indoor storage.** |
 | **Indoor heated storage** | Heated indoor space with different layup requirements | **No. HBW does not offer heated storage.** |
 | **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.** |
@@ -28646,7 +28646,7 @@ No. For engine repairs, we only service Mercury and MerCruiser. If you have a Ya
 The full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, and lake test. Not just the motor dropped on the transom.
 
 **Do you have winter storage for boats coming from Markham?**
-Yes. Outdoor storage with shrinkwrap. No indoor. Some Markham customers store with us and make one trip in fall and one in spring.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Some Markham customers store with us and make one trip in fall and one in spring.
 
 **What if I'm not sure whether to repower or buy new?**
 That's a real conversation. Build a quote for the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca), then call us. We'll tell you honestly if repowering makes sense for your hull and what you'd spend on a comparable new setup.
@@ -29926,7 +29926,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Thre
 No. For engine repairs, we only service Mercury and MerCruiser. Yamaha, Honda, and Suzuki are outside our scope.
 
 **What if I want to store my boat with you but keep it close to home in winter?**
-We do outdoor storage with shrinkwrap on-site. Some Pickering customers store here year-round, boat comes up in fall, stays through winter, we commission in spring, done. One drop-off, one pickup, everything happens here.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Some Pickering customers store here year-round, boat comes up in fall, stays through winter, we commission in spring, done. One drop-off, one pickup, everything happens here.
 
 **I'm between two motor options, can I talk it through before coming up?**
 Absolutely. Call or text: 905-342-2153. Or build both quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca) and compare side by side. That's what the tool is for.

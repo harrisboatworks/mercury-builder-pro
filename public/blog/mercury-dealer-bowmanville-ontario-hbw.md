@@ -83,7 +83,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.

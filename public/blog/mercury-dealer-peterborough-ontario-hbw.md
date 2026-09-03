@@ -90,7 +90,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 **Live installed pricing online**
 mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.

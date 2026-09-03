@@ -92,7 +92,7 @@ For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, r
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, keeping the boat at HBW through winter leaves it close to Rice Lake when we reopen in early April.
 
 ## What Lindsay buyers tell us most often
 
@@ -132,7 +132,7 @@ Yes. We handle Mercury outboards and MerCruiser sterndrives, including full serv
 
 ### Can I store my boat at HBW through the winter if I am based in Lindsay?
 
-Yes. HBW offers outdoor winter storage with shrinkwrap only. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
+Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. Physical service and customer access resume when we reopen in early April.
 
 ### Does HBW install ProKickers on Sturgeon Lake fishing boats?
 

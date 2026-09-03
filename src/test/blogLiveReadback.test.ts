@@ -45,7 +45,7 @@ const goodDoc = (body: string) => ({
 });
 
 const OSHAWA_GOOD = [
-  '**Storage:** Outdoor winter storage with shrinkwrap. Boats stay here through winter.',
+  '**Storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. Boats stay here through winter.',
   "We don't offer indoor, heated, climate-controlled, summer, or year-round storage.",
   'Eligible work resumes when we reopen in early-April.',
 ].join('\n\n');
