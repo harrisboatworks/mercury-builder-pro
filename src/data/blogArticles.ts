@@ -28871,7 +28871,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-mississauga-ontario-hbw',
     title: 'Mercury Dealer Mississauga HBW',
-    seoTitle: 'Mercury Repower Cost in Mississauga',
+    seoTitle: 'Mercury Dealer Near Mississauga | Harris Boat Works',
     description: 'What does a Mercury repower cost in Mississauga? See current Mercury repower pricing at mercuryrepower.ca from Harris Boat Works, a Premier dealer on Rice Lake.',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
     imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
@@ -33890,7 +33890,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     slug: 'mercury-dealer-port-hope-ontario-hbw',
     title: 'Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake',
     seoTitle: 'Mercury Dealer Port Hope | Repower & Service from Rice Lake',
-    description: 'Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.',
+    description: 'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
     image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
     imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',

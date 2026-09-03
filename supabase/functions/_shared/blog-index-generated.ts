@@ -5262,7 +5262,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-dealer-port-hope-ontario-hbw",
     "title": "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake",
-    "description": "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.",
+    "description": "Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.",
     "category": "Dealer Locations",
     "publishDate": "2026-05-17",
     "keywords": [
