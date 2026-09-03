@@ -189,6 +189,9 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+
 ## 准备出发？
 
 如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。

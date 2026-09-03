@@ -196,6 +196,9 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 - [GTA 华人 Mercury service / 保养指南](/blog/zh/gta-chinese-mercury-service-guide)
 - [Rice Lake winter storage：冬季存船要注意什么](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+
 ## 行动呼吁
 
 → **先看透明加元报价：[mercuryrepower.ca](https://www.mercuryrepower.ca)**
