@@ -942,6 +942,43 @@ function loadBlogClusters() {
 const blogClusterData = loadBlogClusters();
 console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
 
+// Load the five blog topic hubs (src/data/blogTopicHubs.ts) so the hub pages
+// (/blog/diagnostics, /blog/reviews, /blog/repower, /blog/rice-lake,
+// /blog/pricing) get real prerendered HTML. Without this, the hub URLs are in
+// the sitemap but Vercel has no dist/blog/{hub}/index.html and returns 404.
+// Names, titles, descriptions, intros, and article ordering all come from the
+// data module (single source of truth shared with BlogTopicHubPage.tsx).
+function loadBlogTopicHubs() {
+  const dumpScript = `
+    import { BLOG_TOPIC_HUBS, getHubArticles } from '../src/data/blogTopicHubs.ts';
+    const hubs = BLOG_TOPIC_HUBS.map(hub => {
+      const articles = getHubArticles(hub);
+      const anchorCount = hub.anchorSlugs.filter(s => articles.some(a => a.slug === s)).length;
+      return {
+        id: hub.id,
+        slug: hub.slug,
+        name: hub.name,
+        title: hub.title,
+        metaDescription: hub.metaDescription,
+        intro: hub.intro,
+        anchorCount,
+        articles: articles.map(a => ({ slug: a.slug, title: a.title })),
+      };
+    });
+    process.stdout.write(JSON.stringify(hubs));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-topic-hubs-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const blogTopicHubData = loadBlogTopicHubs();
+console.log(`[static-prerender] loaded ${blogTopicHubData.length} blog topic hubs (${blogTopicHubData.reduce((n, h) => n + h.articles.length, 0)} assigned articles)`);
+
+
 function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSlugs = []) {
   const siblings = explicitRelatedSlugs.length
     ? explicitRelatedSlugs
