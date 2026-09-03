@@ -68,7 +68,7 @@ export default function RepowerCost() {
           ],
         },
       ]}
-      whyHbwIntro="Mercury-only since 1965, family-owned since 1947, and we water-test every motor on Rice Lake before pickup."
+      whyHbwIntro="Mercury-only since 1965, family-owned since 1947, and the standard handoff includes a Rice Lake water test when safe seasonal conditions allow."
       whyHbw={[
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <DollarSign className="h-5 w-5" aria-hidden="true" />, title: 'Transparent CAD pricing', description: 'Live quote builder, no loss leaders.' },

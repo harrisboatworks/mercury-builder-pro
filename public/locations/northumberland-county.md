@@ -43,7 +43,7 @@ Harris Boat Works is the Mercury Premier repower shop we run in Northumberland C
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Cobourg Northumberland Mercury](https://www.mercuryrepower.ca/locations/cobourg-northumberland-mercury)

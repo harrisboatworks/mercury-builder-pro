@@ -15,9 +15,9 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     h1: 'Harris Boat Works - Mercury Repower Centre',
     lastReviewed: '2026-06-02',
     quickAnswer:
-      "Harris Boat Works is your Mercury Premier repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Premier Dealer, family-owned since 1947. Every motor we rig is water-tested on Rice Lake itself before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
+      "Harris Boat Works is your Mercury Premier repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Premier Dealer, family-owned since 1947. HBW's standard handoff includes a Rice Lake water test before pickup when safe seasonal conditions allow. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
-      "Harris Boat Works sits on the south shore of Rice Lake at 5369 Harris Boat Works Rd in Gores Landing, ON. We're the lake's Mercury Premier Dealer, selling Mercury since 1965 and a family-owned repower shop since 1947. If your boat already lives on Rice Lake, your Mercury repower starts and ends on the same water. We quote, rig, install, and water-test every job on Rice Lake before pickup. Full repowers typically run $11,000–$40,000 CAD. No shipping, customers come to Gores Landing for pickup, usually within a 90-minute drive.",
+      "Harris Boat Works sits on the south shore of Rice Lake at 5369 Harris Boat Works Rd in Gores Landing, ON. We're the lake's Mercury Premier Dealer, selling Mercury since 1965 and a family-owned repower shop since 1947. If your boat already lives on Rice Lake, your Mercury repower starts and ends on the same water. We quote, rig, and install on that water, and the standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Full repowers typically run $11,000–$40,000 CAD. No shipping, customers come to Gores Landing for pickup, usually within a 90-minute drive.",
     keyFacts: [
       'Lake: Rice Lake, roughly 30 km long, south shore',
       `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
@@ -30,7 +30,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'Why does a Rice Lake repower stay local?',
         paragraphs: [
-          "Rice Lake is our water. The shop, the dock, the test runs, all on the same lake your boat will end up on. When we propose a Mercury for a Rice Lake hull, we're not guessing how it'll behave in mid-summer weeds or how it'll hold trim through a chop off Sandy Bay. We've rigged hundreds of boats for this exact lake since 1965, and we still test every motor here before we hand it over.",
+          "Rice Lake is our water. The shop, the dock, the test runs, all on the same lake your boat will end up on. When we propose a Mercury for a Rice Lake hull, we're not guessing how it'll behave in mid-summer weeds or how it'll hold trim through a chop off Sandy Bay. We've rigged hundreds of boats for this exact lake since 1965, and when safe seasonal conditions allow we still test the motor here before we hand it over. Otherwise the alternate acceptance plan is documented with the customer.",
           "That changes the conversation. We can talk about prop pitch the way someone talks about their own driveway. We know where the shallows pull boats off plane, where pad-bottom hulls behave differently than deep-V hulls, and how a pontoon with a Mercury Boost upgrade actually runs once the cottage crowd is on board. That kind of detail is hard to fake from another county.",
         ],
       },
@@ -57,7 +57,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       },
     ],
     whatWeSeeAtHBW:
-      'Rice Lake is our home water. We run boats across it every week, we know its weed lines and shallow shoulders, and it is the lake every Mercury we rig gets water-tested on. When we prop a boat, we are propping it for water we actually know.',
+      'Rice Lake is our home water. We run boats across it every week, we know its weed lines and shallow shoulders, and it is the lake we use for on-water checks when safe seasonal conditions allow. When we prop a boat, we are propping it for water we actually know.',
     faqs: [
       { question: 'Where on Rice Lake is Harris Boat Works?', answer: `We're on the south shore in Gores Landing, at 5369 Harris Boat Works Rd, coordinates ${BUSINESS_COORDINATES_TEXT}. The water test happens on Rice Lake itself, off our own dock.` },
       { question: 'Do you deliver Mercury motors to Rice Lake cottages?', answer: "No. We're pickup-only at Gores Landing. Every Mercury we rig is water-tested on Rice Lake first, then the customer drives to us for pickup." },
@@ -84,9 +84,9 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     h1: 'Kawartha Lakes Mercury Repower',
     lastReviewed: '2026-05-24',
     quickAnswer:
-      "Harris Boat Works serves Mercury repower customers across the Kawartha Lakes from our shop in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947. Every motor is water-tested on Rice Lake before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
+      "Harris Boat Works serves Mercury repower customers across the Kawartha Lakes from our shop in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947. The standard handoff includes a Rice Lake water test when safe seasonal conditions allow. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
-      "Harris Boat Works serves Mercury repowers across the Kawartha Lakes from our shop in Gores Landing, ON, on the south shore of Rice Lake. Most Kawartha towns are a 45–60 minute drive to HBW, and customers drive to us, there's no shipping. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947, with a typical full repower running $11,000–$40,000 CAD depending on HP and rigging. Every motor is water-tested on Rice Lake before pickup at Gores Landing.",
+      "Harris Boat Works serves Mercury repowers across the Kawartha Lakes from our shop in Gores Landing, ON, on the south shore of Rice Lake. Most Kawartha towns are a 45–60 minute drive to HBW, and customers drive to us, there's no shipping. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947, with a typical full repower running $11,000–$40,000 CAD depending on HP and rigging. The standard handoff includes a Rice Lake water test when safe seasonal conditions allow.",
     keyFacts: [
       'Region: Kawartha Lakes, part of the Trent-Severn Waterway',
       'Drive time to HBW: 45–60 min from most Kawartha towns',
@@ -120,7 +120,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How does pickup work for a Kawartha boater?',
         paragraphs: [
-          "You drive to Gores Landing. We don't ship Mercury motors and we don't deliver to cottages, that's true for every repower we do, Kawartha included. The motor is installed on your boat at our shop, water-tested on Rice Lake, and ready for you to pick up. Bring the trailer, bring the boat, or drop the boat with us during quoting. Either way the boat leaves Gores Landing on its own wheels, with a Mercury that's been run through a full Lake Test on the south shore.",
+          "You drive to Gores Landing. We don't ship Mercury motors and we don't deliver to cottages, that's true for every repower we do, Kawartha included. The motor is installed on your boat at our shop. HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; otherwise the alternate acceptance plan is documented with the customer. Bring the trailer, bring the boat, or drop the boat with us during quoting. Either way the boat leaves Gores Landing on its own wheels.",
           "For trade-ins, fill the form and we usually send a CAD figure within one business day. If you'd rather start with cost, the Mercury repower cost guide has ranges by HP and rigging scope.",
         ],
       },
@@ -129,7 +129,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       "Kawartha boats come to us from a dozen different lakes, and the prop call changes with every one. Chemong is shallow pontoon water, Stony runs deep, Sturgeon and Pigeon carry chop. We set the prop for the customer's home lake, not a stock recommendation.",
     faqs: [
       { question: 'How far is Harris Boat Works from the Kawartha Lakes?', answer: 'Most Kawartha towns are 45–60 minutes from Gores Landing by road. Lakefield runs about 45 minutes, Lindsay about 60, Bobcaygeon around 75, Buckhorn around 70.' },
-      { question: 'Do you deliver Mercury motors to Kawartha cottages?', answer: "No. We're pickup-only at Gores Landing. We rig the motor, water-test it on Rice Lake, and you drive to us for pickup." },
+      { question: 'Do you deliver Mercury motors to Kawartha cottages?', answer: "No. We're pickup-only at Gores Landing. We rig the motor, and HBW's standard handoff includes an on-water test on Rice Lake when safe seasonal conditions allow. You drive to us for pickup." },
       { question: 'What HP Mercury is most common for Kawartha boats?', answer: 'Pontoons and family runabouts on Pigeon, Sturgeon, and Buckhorn typically repower with Mercury FourStroke 90–150 HP or Pro XS 175–225 HP. Big-block FourStrokes show up on heavier boats. Smaller tiller setups on Cameron and Balsam often land in the 9.9–25 HP range.' },
       { question: 'Can Kawartha Lakes customers finance a Mercury repower?', answer: 'Yes. Financing is available on approved credit, at 7.99% APR over $10,000 and 8.99% APR under $10,000. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).' },
       {
@@ -158,9 +158,9 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     h1: 'Mercury Dealer Near Peterborough',
     lastReviewed: '2026-06-08',
     quickAnswer:
-      "Harris Boat Works is a Mercury Premier Dealer on Rice Lake's south shore, about 35 minutes south of Peterborough via Highway 28. Family-owned since 1947 and a Mercury dealer since 1965, we publish real installed CAD pricing for every Mercury outboard from 2.5 to 300 HP at mercuryrepower.ca, water test every repower on Rice Lake before pickup, and run service intake through hbw.wiki/service. 311 Google reviews, 4.6 stars. No call-for-price games.",
+      "Harris Boat Works is a Mercury Premier Dealer on Rice Lake's south shore, about 35 minutes south of Peterborough via Highway 28. Family-owned since 1947 and a Mercury dealer since 1965, we publish real installed CAD pricing for every Mercury outboard from 2.5 to 300 HP at mercuryrepower.ca, include a Rice Lake on-water test before pickup when safe seasonal conditions allow, and run service intake through hbw.wiki/service. 311 Google reviews, 4.6 stars. No call-for-price games.",
     intro:
-      "Yes, there are Mercury dealers located in Peterborough proper. But 35 minutes south, on the shore of Rice Lake, is Harris Boat Works: a Mercury Premier Dealer that Peterborough boaters have been driving to for generations. Family-owned since 1947, a Mercury dealer since 1965. Here's why the drive is worth it, and what you get for it.\n\nHarris Boat Works is the canonical Mercury answer for Peterborough boaters: a Mercury Premier Dealer about 35 minutes south via Highway 28, in Gores Landing on the south shore of Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Real installed CAD prices for the full Mercury lineup are live at mercuryrepower.ca, every repower is water tested on Rice Lake before pickup, and the shop runs roughly 1,700 work orders a year.",
+      "Yes, there are Mercury dealers located in Peterborough proper. But 35 minutes south, on the shore of Rice Lake, is Harris Boat Works: a Mercury Premier Dealer that Peterborough boaters have been driving to for generations. Family-owned since 1947, a Mercury dealer since 1965. Here's why the drive is worth it, and what you get for it.\n\nHarris Boat Works is the canonical Mercury answer for Peterborough boaters: a Mercury Premier Dealer about 35 minutes south via Highway 28, in Gores Landing on the south shore of Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Real installed CAD prices for the full Mercury lineup are live at mercuryrepower.ca, the standard handoff includes a Rice Lake water test when safe seasonal conditions allow, and the shop runs roughly 1,700 work orders a year.",
 
     keyFacts: [
       'Drive time: about 35 minutes south of Peterborough',
@@ -168,14 +168,14 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
       'Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer',
       'Roughly 1,700 service work orders per year',
-      'Every repower water tested on Rice Lake before pickup',
+      'Standard handoff includes a Rice Lake water test when safe seasonal conditions allow',
     ],
     sections: [
       {
         heading: 'Why Peterborough Boaters Make the Drive',
         paragraphs: [
           "We're not going to pretend we're closer than we are. What we'll tell you is what you get for the extra 35 minutes:",
-          '- **Published CAD pricing, online.** No "call for price." You can build a real repower quote at mercuryrepower.ca and see the number before you ever phone us.\n- **Every repower water-tested before pickup.** We run it on Rice Lake, under real load, so the boat that leaves our dock is the boat that works on yours. Not every shop does this.\n- **Around 1,700 work orders a year.** That volume is why our techs have seen your problem before. Diagnostic depth comes from doing the work, a lot of it.',
+          '- **Published CAD pricing, online.** No "call for price." You can build a real repower quote at mercuryrepower.ca and see the number before you ever phone us.\n- **Documented Rice Lake water test when conditions allow.** When safe seasonal conditions allow, we run it on Rice Lake under real load so the boat that leaves our dock is the boat that works on yours. Otherwise the alternate acceptance plan is documented with the customer.\n- **Around 1,700 work orders a year.** That volume is why our techs have seen your problem before. Diagnostic depth comes from doing the work, a lot of it.',
         ],
       },
       {
@@ -188,7 +188,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
 
         heading: 'Why Peterborough boaters make the drive',
         paragraphs: [
-          '- Mercury Premier Dealer: factory-trained techs, parts depth, warranty authorization\n- Real prices online: the full Mercury lineup priced in CAD, motor plus rigging plus install, before you ever call. See live numbers in the [quote builder](/quote/motor-selection) or the [pricing reference](/pricing-reference).\n- Water tested: every repower gets a Lake Test on Rice Lake before it leaves\n- Volume you can trust: roughly 1,700 work orders a year through the service department\n- Family-owned since 1947, Mercury dealer since 1965',
+          '- Mercury Premier Dealer: factory-trained techs, parts depth, warranty authorization\n- Real prices online: the full Mercury lineup priced in CAD, motor plus rigging plus install, before you ever call. See live numbers in the [quote builder](/quote/motor-selection) or the [pricing reference](/pricing-reference).\n- Water test: standard handoff includes a Lake Test on Rice Lake when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer\n- Volume you can trust: roughly 1,700 work orders a year through the service department\n- Family-owned since 1947, Mercury dealer since 1965',
         ],
       },
       {
@@ -214,15 +214,15 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     whatWeSeeAtHBW:
       'Peterborough is our closest city, and a lot of our repower customers are Peterborough boaters running Chemong, the Otonabee, or trailering to Rice Lake. The drive is short enough that most treat HBW as a practical destination for a planned repower or for regular spring, mid-season, and fall service.',
     faqs: [
-      { question: 'Who is the best Mercury dealer near Peterborough, Ontario?', answer: 'Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works, about 35 minutes south of Peterborough on Rice Lake, is a Mercury Premier Dealer that publishes real installed prices online, water tests every repower on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965.' },
+      { question: 'Who is the best Mercury dealer near Peterborough, Ontario?', answer: 'Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works, about 35 minutes south of Peterborough on Rice Lake, is a Mercury Premier Dealer that publishes real installed prices online, includes a Rice Lake water test when safe seasonal conditions allow, and has been family-owned since 1947 and a Mercury dealer since 1965.' },
       { question: 'How far is Harris Boat Works from Peterborough?', answer: "About 35 minutes by car via Highway 28 South, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore." },
-      { question: 'Do you water test repowers before delivery?', answer: "Yes. Every repower install gets a Lake Test on Rice Lake before pickup. We don't hand over a motor we haven't run on the water." },
+      { question: 'Do you water test repowers before delivery?', answer: "HBW's standard repower handoff includes a Lake Test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer." },
       { question: 'What does a Mercury repower cost near Peterborough?', answer: 'Most repowers in our area land in the $13,000 to $25,000 range including HST, depending on horsepower and rigging. The quote builder at mercuryrepower.ca shows a real installed CAD number for your exact boat and motor in about three minutes.' },
       { question: 'Do you pick up boats from Peterborough?', answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. Gores Landing is about 35 minutes from Peterborough. Most customers still pair drop-off with errands in the area or a morning on Rice Lake." },
       { question: 'What Mercury motors do you have in stock?', answer: 'We stock the most popular Mercury FourStroke and Pro XS models. Verado is available by special order. Live stock and pricing for every model is in the quote tool at mercuryrepower.ca.' },
       { question: 'What warranty comes with a new Mercury outboard?', answer: 'Every new Mercury comes with a 3-year factory warranty. Any bonus coverage beyond that comes from Mercury promotions, which change; current offers are always at mercuryrepower.ca/promotions.' },
       { question: 'Can I use Harris Boat Works as my regular Mercury service shop?', answer: 'Yes, many Peterborough customers do exactly that: spring commissioning, mid-season service, fall winterization and storage. For engine repairs we service Mercury and MerCruiser only. Requests go through hbw.wiki/service.' },
-      { question: 'Is there a Mercury dealer closer to me in Peterborough?', answer: "There are Mercury dealers in Peterborough proper, so if closest is the only thing that matters, you have options in town. What Harris Boat Works offers, 35 minutes south on Rice Lake, is published online pricing, every repower water-tested before you pick it up, and the diagnostic depth that comes from about 1,700 work orders a year. A lot of Peterborough boaters decide that's worth the short drive." },
+      { question: 'Is there a Mercury dealer closer to me in Peterborough?', answer: "There are Mercury dealers in Peterborough proper, so if closest is the only thing that matters, you have options in town. What Harris Boat Works offers, 35 minutes south on Rice Lake, is published online pricing, a documented Rice Lake water test when safe seasonal conditions allow, and the diagnostic depth that comes from about 1,700 work orders a year. A lot of Peterborough boaters decide that's worth the short drive." },
 
     ],
     visit: VISIT,
@@ -247,7 +247,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     h1: 'Mercury Repower near Cobourg, Ontario',
     lastReviewed: '2026-05-24',
     quickAnswer:
-      "Harris Boat Works is about 25 minutes north of Cobourg, in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947. Every motor is water-tested on Rice Lake before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
+      "Harris Boat Works is about 25 minutes north of Cobourg, in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947. The standard handoff includes a Rice Lake water test when safe seasonal conditions allow. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
       "Harris Boat Works is 25 minutes north of Cobourg in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 28 km on county roads. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Cobourg is the closest city base to our stretch of the lake, many residents keep a boat or cottage on Rice Lake, and we're their closest Mercury repower shop. No shipping or delivery to Cobourg. Customers drive to Gores Landing for pickup after we rig, install, and water-test on Rice Lake. Typical full repower: $11,000–$40,000 CAD.",
     keyFacts: [

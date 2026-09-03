@@ -46,7 +46,7 @@ Kawartha Lakes boaters use Harris Boat Works for practical Mercury recommendatio
 - Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Pontoon family repower (40 → 115 Command Thrust)](https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust)

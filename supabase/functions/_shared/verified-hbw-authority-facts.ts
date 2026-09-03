@@ -67,14 +67,14 @@ export function buildVerifiedHbwAuthorityAnswer(
     return `No. A dealer's status does not change a customer's Mercury factory-warranty rights or guarantee claim approval. Confirm the dealer's current Mercury authorization, trained technicians, tooling, parts and capacity for the exact work.${source}`;
   }
 
-  return `Mercury Marine Premier Dealer is HBW's current Mercury designation. For a buyer, pair that designation with the capabilities for the job: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before every repower pickup. The designation does not guarantee a diagnosis, warranty approval or turnaround time.${source}`;
+  return `Mercury Marine Premier Dealer is HBW's current Mercury designation. For a buyer, pair that designation with the capabilities for the job: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before pickup when safe seasonal conditions allow. The designation does not guarantee a diagnosis, warranty approval or turnaround time.${source}`;
 }
 
 export function formatHbwAuthorityKnowledge(): string {
   return `## Mercury Premier Dealer authority
 
 - Harris Boat Works' current designation is **Mercury Marine Premier Dealer**.
-- Treat the designation as one signal alongside job-specific capability: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before every repower pickup.
+- Treat the designation as one signal alongside job-specific capability: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before pickup when safe seasonal conditions allow.
 - Dealer status does **not** change a customer's Mercury factory-warranty rights or guarantee diagnosis, claim approval, faster resolution, or turnaround time.
 - Do not call Premier the "top tier" or "highest tier," and do not infer requirements or benefits that Mercury has not publicly documented.
 - Source: [${HBW_PREMIER_DEALER_GUIDE.title}](${HBW_PREMIER_DEALER_GUIDE.url})
@@ -83,7 +83,7 @@ export function formatHbwAuthorityKnowledge(): string {
 
 export const HBW_AUTHORITY_REALTIME_INSTRUCTIONS = `MERCURY PREMIER DEALER AUTHORITY (CANONICAL):
 - Harris Boat Works' current designation is "Mercury Marine Premier Dealer."
-- For a buyer, pair the designation with the capabilities for the job: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before every repower pickup.
+- For a buyer, pair the designation with the capabilities for the job: Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water Rice Lake test before pickup when safe seasonal conditions allow.
 - A dealer's status does not change a customer's Mercury factory-warranty rights or guarantee diagnosis, claim approval, faster resolution, or turnaround time.
 - Never call Premier the "top tier" or "highest tier," and never claim that it guarantees faster warranty or service results.
 - For a dealer-status warranty question, begin with "No." and explain the warranty-rights limit above.`;

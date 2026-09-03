@@ -43,7 +43,7 @@ Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Buckhorn](https://www.mercuryrepower.ca/locations/buckhorn)
@@ -65,7 +65,7 @@ Cruising boats often run mid-range FourStroke 90–150 HP. Properly rated perfor
 
 ### Why drive 75 minutes for a repower?
 
-Because we are a Mercury Premier Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.
+Because we are a Mercury Premier Dealer, selling Mercury since 1965, the standard handoff includes a Rice Lake water test when safe seasonal conditions allow, and the same techs who write your quote are the ones who do the install.
 
 ### Is Bobcaygeon far enough away that I should book early?
 
