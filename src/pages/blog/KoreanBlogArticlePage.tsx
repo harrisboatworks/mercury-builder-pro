@@ -351,7 +351,7 @@ export default function KoreanBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Harris Boat Works 소유주" />
+          <AuthorByline name="Jay Harris" title="Harris Boat Works 소유주" byLabel="작성자" bioLabel="작성자 소개" />
         </div>
 
         {/* Table of Contents */}

@@ -397,7 +397,7 @@ export default function FrenchBlogArticlePage() {
           })}
         </p>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" />
+          <AuthorByline name="Jay Harris" title="Propriétaire, Harris Boat Works" byLabel="Par" bioLabel="Voir la biographie" />
         </div>
 
         {/* Table of Contents */}
