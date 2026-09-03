@@ -116,6 +116,8 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('CTA-prefixed authoring heading');
     expect(leakCheck).toContain('CTA-suffixed authoring heading');
     expect(leakCheck).toContain('hbw-language-note');
+    expect(leakCheck).toContain('Raw ::cta authoring fence in Markdown twin');
+    expect(leakCheck).toContain('PUBLIC_TWIN_DIRECTIVE_PATTERNS');
 
     const cleaner = read('src/lib/cleanBlogContent.js');
     expect(cleaner).toContain('내부 링크');
@@ -208,5 +210,59 @@ describe('public artifact regression', () => {
     expect(source).not.toMatch(
       /answer:\s*["'`][^\n]*\{\{LIVE_RATE\}\}[^\n]*(?:Dec(?:ember)? 31, 2026)/,
     );
+  });
+
+  it('renders download-card CTAs in Markdown twins instead of leftover ::cta fences', () => {
+    const downloadCardTwins = [
+      {
+        slug: 'winter-repower-planning-guide',
+        href: '/downloads/mercury-repower-planning-worksheet-hbw.pdf',
+        label: 'Download repower worksheet (PDF)',
+      },
+      {
+        slug: 'spring-outboard-commissioning-checklist',
+        href: '/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf',
+        label: 'Download spring checklist (PDF)',
+      },
+      {
+        slug: 'boat-trailer-maintenance-guide-ontario',
+        href: '/downloads/five-minute-boat-trailer-check-hbw.pdf',
+        label: 'Download trailer check (PDF)',
+      },
+      {
+        slug: 'how-to-read-mercury-outboard-serial-number',
+        href: '/downloads/mercury-service-request-prep-sheet-hbw.pdf',
+        label: 'Download service prep sheet (PDF)',
+      },
+      {
+        slug: 'mercury-outboard-wont-start-troubleshooting',
+        href: '/downloads/mercury-alarm-no-start-action-card-hbw.pdf',
+        label: 'Download action card (PDF)',
+      },
+      {
+        slug: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
+        href: '/downloads/marine-fuel-storage-quick-guide-hbw.pdf',
+        label: 'Download fuel guide (PDF)',
+      },
+      {
+        slug: 'diy-mercury-outboard-winterization-guide',
+        href: '/downloads/fall-storage-winterization-checklist-hbw.pdf',
+        label: 'Download fall checklist (PDF)',
+      },
+    ] as const;
+
+    for (const { slug, href, label } of downloadCardTwins) {
+      const article = getArticleBySlug(slug);
+      expect(article, slug).toBeDefined();
+      expect(article!.content, slug).toContain('::cta');
+      expect(article!.content, slug).toContain(href);
+
+      const twin = read(`public/blog/${slug}.md`);
+      expect(twin, slug).not.toMatch(/^::cta\s*$/m);
+      expect(twin, slug).toContain(`[${label}](${href})`);
+    }
+
+    const hygiene = read('scripts/check-blog-output-hygiene.ts');
+    expect(hygiene).toContain('leftover raw ::cta authoring fence');
   });
 });

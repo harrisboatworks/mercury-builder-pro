@@ -45,13 +45,11 @@ The original article analysis counted **537 Lightspeed job records** labelled fo
 
 The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
 
-::cta
-variant: inline
-heading: Keep the Alarm & No-Start Action Card aboard
-body: There is no universal Mercury beep dictionary. Use this one-page card to capture the exact warning and display message, work through safe first checks and record what the shop needs.
-primaryLabel: Download action card (PDF)
-primaryHref: /downloads/mercury-alarm-no-start-action-card-hbw.pdf
-::
+### Keep the Alarm & No-Start Action Card aboard
+
+There is no universal Mercury beep dictionary. Use this one-page card to capture the exact warning and display message, work through safe first checks and record what the shop needs.
+
+[Download action card (PDF)](/downloads/mercury-alarm-no-start-action-card-hbw.pdf)
 
 ## The three "stupid easy" things to check first
 

@@ -416,6 +416,9 @@ for (const file of generatedBlogTwins) {
   if (STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
     failures.push(`${file}: hard-no HBW boat pickup policy`);
   }
+  if (/^::cta\s*$/m.test(twinSource)) {
+    failures.push(`${file}: leftover raw ::cta authoring fence`);
+  }
 }
 
 for (const slug of diagnosticSlugs) {
