@@ -145,7 +145,7 @@ Choose Command Thrust when carrying load matters more than minimizing gearcase d
 
 Pontoons are the obvious case. Their tubes and broad deck create drag, and family loads change from one trip to the next. The 2.38:1 ratio lets the motor turn a larger propeller that can hold the water better and carry that load.
 
-[Our Command Thrust guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) goes deeper into why CT is a fitment choice, not an automatic upgrade.
+[Our Command Thrust guide](/blog/mercury-command-thrust-complete-guide-2026) goes deeper into why CT is a fitment choice, not an automatic upgrade.
 
 ## Real Freshwater Results, With the Boat Attached
 

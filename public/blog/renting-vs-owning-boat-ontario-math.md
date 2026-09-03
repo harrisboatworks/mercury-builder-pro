@@ -150,7 +150,7 @@ Yes. Renting different available layouts can show you how much passenger space, 
 
 ### If I decide to buy, when's the smart time to do it?
 
-Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
+Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
 
 ### How do I price a Rice Lake rental day?
 

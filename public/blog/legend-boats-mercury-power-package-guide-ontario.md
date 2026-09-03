@@ -71,7 +71,7 @@ The R Series is **riveted aluminum**, not welded, the entry price comes from the
 
 Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000-$22,000** all-in.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Best for:** Budget-conscious anglers, kicker / second-boat buyers, light-duty utility.
 
@@ -152,7 +152,7 @@ The standard motor on each Legend hull is sized for the typical use case, but th
 | **Q 21-23** | Mercury 60 ELPT CT | Mercury 150-250 | Watersports, larger passenger loads |
 | **Halo 19-23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
 
-**[Command Thrust (CT)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) matters on pontoons.** It's a larger gearcase that turns a bigger prop more slowly, way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
+**[Command Thrust (CT)](/blog/mercury-command-thrust-complete-guide-2026) matters on pontoons.** It's a larger gearcase that turns a bigger prop more slowly, way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
 
 **Pro XS** matters on the XT 18 and up. [Performance-tuned variants of the FourStroke](/blog/fourstroke-vs-pro-xs) with sport gearcases and higher RPM ceilings. Adds 3-5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
 

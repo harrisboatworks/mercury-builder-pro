@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta.md
-last_updated: 2026-05-12
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安大略省 Mercury 换新船外机完整指南：GTA 华人船主必�
 description: "你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。"
 category: "成本分析"
 date_published: 2026-05-12
-date_modified: 2026-05-12
+date_modified: 2026-09-02
 keywords: ["mercury repower gta","gta 华人 mercury","mercury 换机 安省","gta chinese boater mercury","rice lake mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 成本分析  
 **Published:** 2026-05-12  
-**最后审核:** 2026-05-12  
+**最后审核:** 2026-09-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
@@ -195,6 +195,10 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 - [Mercury FourStroke、Pro XS、Verado 中文对比](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
 - [GTA 华人 Mercury service / 保养指南](/blog/zh/gta-chinese-mercury-service-guide)
 - [Rice Lake winter storage：冬季存船要注意什么](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+
+## 语言说明
+
+我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ## 行动呼吁
 

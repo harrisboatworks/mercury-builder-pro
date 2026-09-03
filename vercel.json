@@ -161,7 +161,67 @@
     },
     {
       "source": "/blog/tariffs-trade-canadian-boating-2026",
-      "destination": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-wont-start-after-sitting",
+      "destination": "/blog/mercury-outboard-wont-start-troubleshooting",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-wont-start-after-sitting.md",
+      "destination": "/blog/mercury-outboard-wont-start-troubleshooting.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md",
+      "destination": "/blog/mercury-command-thrust-complete-guide-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-pontoon-eligibility-2026",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-pontoon-eligibility-2026.md",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-your-pontoon-eligible-for-mercury-command-thrust",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-your-pontoon-eligible-for-mercury-command-thrust.md",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/is-2026-good-year-to-buy-boat-canada.md",
+      "destination": "/blog/2026-boating-market-ontario-boat-buyers.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/rice-lake-boat-rentals-from-toronto-gta",
+      "destination": "/blog/rice-lake-boat-rental-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/rice-lake-boat-rentals-from-toronto-gta.md",
+      "destination": "/blog/rice-lake-boat-rental-guide-2026.md",
       "statusCode": 301
     },
     {

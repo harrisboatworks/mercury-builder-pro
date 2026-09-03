@@ -115,7 +115,7 @@ export const BLOG_TRANSLATION_GROUPS = [
   { en: 'boat-rental-licence-ontario-guide', zh: 'pcoc-vs-rental-boat-safety-checklist-zh' },
   { en: 'pontoon-vs-v-hull-comparison-ontario', zh: 'pontoon-vs-fishing-boat-6-8-people-zh' },
   { en: 'mercury-100-hour-service-cost-ontario', zh: 'gta-chinese-mercury-service-guide' },
-  { en: 'rice-lake-boat-rentals-from-toronto-gta', zh: 'gta-chinese-rice-lake-day-trip-plan' },
+  { en: 'rice-lake-boat-rental-guide-2026', zh: 'gta-chinese-rice-lake-day-trip-plan' },
   { en: 'rice-lake-boating-guide-2026', zh: 'gta-chinese-pcl-fishing-licence-guide' },
   { en: 'best-mercury-outboard-rice-lake-fishing', zh: 'toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas' },
   { en: 'how-to-choose-right-horsepower-boat', zh: 'mercury-outboard-horsepower-guide-toronto-chinese' },

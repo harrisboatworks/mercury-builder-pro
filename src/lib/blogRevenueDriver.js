@@ -51,7 +51,7 @@ const RENTAL_SLUGS = new Set([
   'docking-boat-in-wind-rice-lake',
   'group-boat-rentals-rice-lake',
   'rice-lake-boat-launch-guide',
-  'rice-lake-boat-rentals-from-toronto-gta',
+  'rice-lake-boat-rental-guide-2026',
   'rice-lake-boating-guide-2026',
   'trent-severn-waterway-boating-guide-2026',
 ]);

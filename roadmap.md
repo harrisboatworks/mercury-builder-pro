@@ -1,12 +1,30 @@
 # Roadmap
 
-## Blog Content Audit work order (2026-09-03)
+## Blog Content Audit work order (2026-09-03) — GO received 2026-09-03 20:49 UTC
+
+Jay's answers: ship 1A, 1B, 1C, 2 as FOUR SEPARATE COMMITS, report each, do NOT stop between
+phases. Regenerate markdown twins + blog-index.json after each content phase.
 
 - [x] Phase 0: inspect how posts, SEO fields, blog index, sitemap and redirects are stored/generated; report findings
-- [ ] Phase 1A: title tag + meta description rewrites (9 posts)
-- [ ] Phase 1B: consolidate duplicate posts (merges + 301 redirects, 7-8 pairs incl. Rice Lake rentals)
-- [ ] Phase 1C: retire 15 of 17 city dealer landing posts (301 to Toronto-to-Rice-Lake or Kawartha Repower)
-- [ ] Phase 2: five blog hub pages + index hub strip + per-post "More in [Hub]" blocks
+- [ ] Phase 1A: title tag + meta description rewrites (9 posts) — commit 1
+- [ ] Phase 1B: consolidate duplicate posts (merges + 301 redirects) — commit 2
+  Missing-slug rules from Jay:
+  - Search archivedBlogArticles.ts, per-language files, public/blog/*.md by slug AND by content
+    (grep "BigFoot"/"Big Foot", warranty "what you need to know", "won't start after sitting", "rental")
+  - Found anywhere -> merge per table, 301 old slug to winner
+  - Found nowhere -> add vercel.json 301 anyway, skip merge, flag in report
+  - 'is-your-pontoon-eligible-for-mercury-command-thrust': loser = 'mercury-command-thrust-pontoon-eligibility-2026';
+    merge its eligibility checklist into 'mercury-command-thrust-guide-pontoon-boats'; 301 BOTH slugs there
+  - 'rice-lake-boat-rentals-from-toronto-gta' is a live 404 from internal links: if no rental article beyond
+    'boat-rentals-shared-access-booming-2026', 301 dead slug to it + repoint internal links and clusters/seasonal
+    config entries; if archived rental posts exist, keep strongest / fold in unique details / redirect rest
+  - 'is-2026-good-year-to-buy-boat-ontario' not existing is fine; just 301 the '-canada' one
+  - BigFoot vs Command Thrust lake-test story: if found, merge verbatim, first-person, own H2 into
+    'mercury-command-thrust-complete-guide-2026'
+  - Report exactly where each missing slug turned up (live / archive / twin / nowhere)
+- [ ] Phase 1C: retire 15 of 17 city dealer landing posts (301 to Toronto-to-Rice-Lake or Kawartha Repower) — commit 3
+- [ ] Phase 2: five blog hub pages + index hub strip + per-post "More in [Hub]" blocks — commit 4
+- [ ] Final report: commits per phase, redirect list, city->target mapping, hub assignment table, build passing
 - [ ] Phase 3: BLOCKED, needs real HBW pricing/service data from Jay. Do not draft:
   - Rebuild of /blog/boat-repowering-guide-when-to-replace-motor as flagship repower guide
   - "Mercury 90 HP: The All-In Cost in Ontario (2026)"

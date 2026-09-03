@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Pontoon HP Sizing Ontario Guide"
-description: "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes."
+description: "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork."
 category: "Mercury Outboards"
 date_published: 2026-03-26
 date_modified: 2026-08-02
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Pontoon HP Sizing Ontario Guide
 
-> Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
+> The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  

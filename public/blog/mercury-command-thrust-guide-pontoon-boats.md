@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-08-02
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
 description: "Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-02
+date_modified: 2026-09-03
 keywords: ["mercury command thrust","command thrust pontoon","mercury gearcase","pontoon repower","mercury fourstroke pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-03  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
 
@@ -93,6 +93,87 @@ We make this call per boat at HBW. The right answer depends on the specific hull
 
 ---
 
+## Is your pontoon eligible?
+
+The fastest path: email a photo of your pontoon plus current motor specs to info@harrisboatworks.ca and we'll tell you yes or no in one reply. The framework below covers the decision logic.
+
+| Pontoon category | Command Thrust eligible? | Notes |
+|---|---|---|
+| 20+ foot pontoon, twin tube (heavy load use) | **Yes, strong fit** | Heavy boats benefit most from CT thrust |
+| Tritoon (any size, 17 ft and up) | **Yes, almost always** | Tritoons carry more weight and want CT |
+| 18 to 20 foot twin tube, moderate use | **Yes, recommended** | The classic Command Thrust sweet spot |
+| 16 to 18 foot twin tube, cruising only | **Probably overkill** | Standard gearcase usually fine for light loads |
+| Heavy work pontoon (cottage hauling) | **Yes** | Load capacity matters more than length here |
+| Water-sports pontoon (skiing, tubing) | **Yes** | Pulling power is the whole reason CT exists |
+| Pontoon used for trolling fishing only | **No, save the money** | Trolling speeds don't need CT thrust |
+| Aluminum V-hull boat | **N/A** | Command Thrust is a pontoon gearcase decision |
+
+If your boat doesn't fit one of these neatly, send us details and we'll work through it.
+
+### Which pontoons are eligible
+
+The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 1,361 kg (3,000 lb), Command Thrust earns its keep. If it's under 907 kg (2,000 lb) loaded, save the money. The middle is where the use case decides.
+
+The four eligibility scenarios worth knowing.
+
+#### Tritoons of any length
+
+A tritoon adds a third center tube. That third tube means more carrying capacity, more freeboard, and more displacement when loaded. Tritoons almost always benefit from Command Thrust, even on smaller 18 or 20 foot models. The third tube creates more drag at displacement speeds, and CT's stronger low-end thrust overcomes that drag much more cleanly.
+
+If you have or are buying a tritoon, plan for Command Thrust unless your dealer talks you out of it for a specific reason.
+
+#### 20-foot and larger twin tube pontoons
+
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 1,134 kg (2,500 lb) or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+
+#### Pontoons used for water sports
+
+Water sports (tubing, light skiing, wakeboarding on bigger pontoons) demand torque at low speeds, exactly what Command Thrust delivers. A pontoon that struggles to come up on cruise with a tube behind it is almost always a hole-shot problem, not a horsepower problem. CT fixes hole shot directly.
+
+#### Cottage-country work pontoons
+
+If you use the pontoon to haul building materials, cottage supplies, or do anything that puts heavy weight on the boat regularly, Command Thrust is the right call. The reverse thrust is also useful in getting off shallow shorelines and around docks.
+
+### Which pontoons are NOT eligible (or shouldn't bother)
+
+Just as important: when standard gearcase is the right answer.
+
+#### 16 to 18 foot light cruising pontoons
+
+A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will come up on cruise easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
+
+#### Trolling-only fishing pontoons
+
+If you trolling motor fish at 3 to 5 MPH all day, you're never using the thrust Command Thrust is engineered for. Standard gearcase is the right call. The bigger CT prop drags more at displacement speeds and slightly hurts fuel economy at trolling speeds.
+
+#### Light loads / small families
+
+Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. Save the money for upgraded seating or a better stereo.
+
+#### Already over-powered
+
+Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+
+### How to check your specific eligibility
+
+Five things to confirm before you commit.
+
+1. **Pontoon length.** Measured at the deck, not the tube ends. Round to the nearest foot.
+2. **Tube count.** Two tubes or three (tritoon). The third tube is a major eligibility factor.
+3. **Loaded weight estimate.** Boat dry weight (in your owner's manual or on the capacity plate) plus typical people and gear. Be honest about what you actually carry.
+4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
+5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
+
+Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll review the fit and reply with a recommendation or any information still needed.
+
+For the long version of motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model decoding.
+
+### HP class availability
+
+As of August 8, 2026, current Canadian listings include 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
+
+Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
+
 ## Command Thrust prop selection
 
 A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props won't fit or perform correctly.
@@ -125,7 +206,7 @@ For pontoons, 4-blade aluminum is a common Command Thrust starting point. Final 
 
 Technically yes, practically rarely worth it. The gearcase, driveshaft, water pump, and prop are all different parts. By the time you add it all up, you're usually within striking distance of a trade-in toward a new Command Thrust motor.
 
-For the full retrofit decision framework, including which scenarios make sense and which don't, see our dedicated eligibility post: [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026).
+For the full retrofit decision framework, including which scenarios make sense and which don't, see the eligibility section above.
 
 We quote both paths (retrofit vs new motor) at HBW. Call 905-342-2153 if you want to compare.
 
@@ -187,9 +268,9 @@ Properly maintained, the same lifespan as the motor itself (1,500 to 2,000+ hour
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
-- [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), straight talk on Command Thrust gearcases
 - [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 
 ## Next steps
 

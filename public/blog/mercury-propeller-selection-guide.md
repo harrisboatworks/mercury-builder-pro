@@ -49,7 +49,7 @@ Most repower and prop-change conversations at HBW eventually come back to this r
 
 Three things you tune when you select a Mercury prop:
 
-**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase ([Command Thrust uses a larger gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) that fits a larger-diameter prop).
+**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase ([Command Thrust uses a larger gearcase](/blog/mercury-command-thrust-complete-guide-2026) that fits a larger-diameter prop).
 
 **Pitch** is the forward distance per revolution, as above. This is the dial you turn to match the motor's WOT RPM to the spec.
 
@@ -188,7 +188,7 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 ## Related guides
 
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
