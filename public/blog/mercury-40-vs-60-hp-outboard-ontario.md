@@ -99,7 +99,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
-| WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
+| WOT RPM range | 5,500–6,000 | 5,500–6,000 |
 | Fuel system | EFI | EFI |
 | Tiller version | 40 ELHPT, yes | 60 ELHPT, yes |
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |

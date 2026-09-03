@@ -133,7 +133,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 209 cc |
 | Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---

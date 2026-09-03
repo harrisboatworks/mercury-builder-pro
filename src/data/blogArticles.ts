@@ -24649,7 +24649,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
-| WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
+| WOT RPM range | 5,500–6,000 | 5,500–6,000 |
 | Fuel system | EFI | EFI |
 | Tiller version | 40 ELHPT, yes | 60 ELHPT, yes |
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
@@ -26182,7 +26182,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 209 cc |
 | Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
@@ -28438,7 +28438,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
 | Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Full-throttle RPM | 4,500–5,500 | 5,000–6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |
@@ -32892,7 +32892,8 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 |---|---|---|---|
 | FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
-| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
+| FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
 | Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
