@@ -42,6 +42,7 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
   },
   { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
   { pattern: /^##\s+.+\s+\/\s*CTA\s*$/i, name: 'CTA-suffixed authoring heading' },
+  { pattern: /^##\s+.+\s*[（(]CTA[）)]\s*$/, name: 'CTA-parenthetical authoring heading' },
   { pattern: /hbw-language-note/, name: 'Raw language-note HTML wrapper' },
   {
     pattern: /^#{2,3}\s+(?:Une note sur la langue|关于语言的说明|语言说明|언어 안내)\s*$/,
@@ -135,6 +136,10 @@ const PUBLIC_TWIN_FILES = [
 // as plain text, so leftover authoring fences must already be rendered.
 const PUBLIC_TWIN_DIRECTIVE_PATTERNS = [
   { pattern: /^::cta\s*$/, name: 'Raw ::cta authoring fence in Markdown twin' },
+  {
+    pattern: /^##\s+(?:内部链接|内部连结|內部連結|內部鏈接)\s*$/,
+    name: 'Leftover Chinese internal-link authoring heading in Markdown twin',
+  },
 ];
 
 // These two artifacts appeared outside the legacy blog-source scan. Guard the

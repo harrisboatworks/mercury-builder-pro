@@ -148,15 +148,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 ---
 
-## 内部连结
-
-- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-- [换新发动机还是买新船？安大略省华人船主的现实判断](/blog/zh/mercury-repower-guide-gta)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-
----
-
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。

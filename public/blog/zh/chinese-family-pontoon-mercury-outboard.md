@@ -125,19 +125,11 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 
 ---
 
-## 内部连结
-
-- [6至8人租船指南：Pontoon还是钓鱼船更适合？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
-- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-- [换新发动机还是买新船？给安省华人船主的现实判断](/blog/zh/mercury-repower-guide-gta)
-
----
-
 > 相关指南：[多伦多华人买 pontoon 完整指南](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
 > 相关指南：[钓鱼船 vs Pontoon 中文对比](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。

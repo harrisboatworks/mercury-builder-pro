@@ -422,8 +422,9 @@ for (const article of contentArticles) {
 
   const forbiddenOutputPatterns = [
     /\*\*Language:\*\*\s*English/i,
-    /^##\s+Internal Links\s*$/im,
+    /^##\s+(?:Internal Links|Liens internes|내부 링크|内部链接|内部连结|內部連結|內部鏈接)\s*$/im,
     /^##\s+CTA(?:\s*,.*)?\s*$/im,
+    /^##\s+.+\s*[（(]CTA[）)]\s*$/m,
     /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/im,
   ];
 
@@ -467,6 +468,15 @@ for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...STORAGE
   }
   if (generatedBlogTwins.includes(file) && /^::cta\s*$/m.test(twinSource)) {
     failures.push(`${file}: leftover raw ::cta authoring fence`);
+  }
+  if (
+    generatedBlogTwins.includes(file) &&
+    /^##\s+(?:内部链接|内部连结|內部連結|內部鏈接)\s*$/m.test(twinSource)
+  ) {
+    failures.push(`${file}: leftover Chinese internal-link authoring heading`);
+  }
+  if (generatedBlogTwins.includes(file) && /^##\s+.+\s*[（(]CTA[）)]\s*$/m.test(twinSource)) {
+    failures.push(`${file}: leftover parenthetical CTA authoring heading`);
   }
   if (UNCONDITIONAL_WATER_TEST_RX.test(twinSource)) {
     failures.push(`${file}: unconditional water-test promise`);
