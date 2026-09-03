@@ -37,8 +37,8 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
     name: 'Pending-photography editorial note',
   },
   {
-    pattern: /^#{2,3}\s+(?:Full article|Artículo completo|Article complet|전체 기사)\s*$/i,
-    name: 'Full-article authoring heading',
+    pattern: /^#{2,3}\s+(?:Artículo completo|Article complet|전체 기사)\s*$/,
+    name: 'Localized full-article authoring heading',
   },
   { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
 ];

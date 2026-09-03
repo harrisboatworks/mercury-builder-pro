@@ -6,7 +6,7 @@ const RELATED_HEADING_RE =
 const CTA_HEADING_RE = /^##\s+(?:CTA|Appel [àa] l['’]action)\s*$/i;
 const CTA_PREFIX_HEADING_RE = /^##\s+CTA\s*,\s*(.+?)\s*$/i;
 const FULL_ARTICLE_HEADING_RE =
-  /^#{2,3}\s+(?:Full article|Artículo completo|Article complet|전체 기사)\s*$/i;
+  /^#{2,3}\s+(?:Artículo completo|Article complet|전체 기사)\s*$/;
 const LAST_REVIEWED_RE =
   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/i;
 const LANGUAGE_RE =
