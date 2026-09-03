@@ -383,7 +383,7 @@ for (const article of contentArticles) {
   const forbiddenOutputPatterns = [
     /\*\*Language:\*\*\s*English/i,
     /^##\s+Internal Links\s*$/im,
-    /^##\s+CTA\s*$/im,
+    /^##\s+CTA(?:\s*,.*)?\s*$/im,
     /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/im,
   ];
 

@@ -36,6 +36,11 @@ const PUBLIC_EDITORIAL_ARTIFACT_PATTERNS = [
     pattern: /\b(?:Real photography still pending|until real photos arrive|illustrative pending real photography)\b/i,
     name: 'Pending-photography editorial note',
   },
+  {
+    pattern: /^#{2,3}\s+(?:Full article|Artículo completo|Article complet|전체 기사)\s*$/i,
+    name: 'Full-article authoring heading',
+  },
+  { pattern: /^##\s+CTA\s*,/i, name: 'CTA-prefixed authoring heading' },
 ];
 
 const BLOG_LANG_RX = /BlogArticles\.ts$/;

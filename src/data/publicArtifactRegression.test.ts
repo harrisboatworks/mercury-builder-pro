@@ -110,6 +110,10 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('until real photos arrive');
     expect(leakCheck).toContain('illustrative pending real photography');
     expect(leakCheck).toContain('Canonical URL');
+    expect(leakCheck).toContain('Artículo completo');
+    expect(leakCheck).toContain('Article complet');
+    expect(leakCheck).toContain('전체 기사');
+    expect(leakCheck).toContain('CTA-prefixed authoring heading');
 
     const packageJson = JSON.parse(read('package.json')) as {
       scripts: { build: string };

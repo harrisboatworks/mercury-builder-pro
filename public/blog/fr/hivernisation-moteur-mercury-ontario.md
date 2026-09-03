@@ -35,8 +35,6 @@ Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du 
 
 ---
 
-### Article complet
-
 L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide, c'est souvent des milliers de dollars de réparations au printemps.
 
 Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing, entreprise familiale depuis 1947.

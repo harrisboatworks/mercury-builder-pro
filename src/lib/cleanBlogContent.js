@@ -4,6 +4,9 @@ const INTERNAL_LINKS_HEADING_RE = /^##\s+(?:Internal Links|Liens internes)\s*$/i
 const RELATED_HEADING_RE =
   /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/i;
 const CTA_HEADING_RE = /^##\s+(?:CTA|Appel [àa] l['’]action)\s*$/i;
+const CTA_PREFIX_HEADING_RE = /^##\s+CTA\s*,\s*(.+?)\s*$/i;
+const FULL_ARTICLE_HEADING_RE =
+  /^#{2,3}\s+(?:Full article|Artículo completo|Article complet|전체 기사)\s*$/i;
 const LAST_REVIEWED_RE =
   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/i;
 const LANGUAGE_RE =
@@ -65,7 +68,13 @@ export function cleanBlogContent(
       INJECTED_REPOWER_CTA_RE.test(line.trim())
     ) continue;
 
-    if (CTA_HEADING_RE.test(line)) continue;
+    if (CTA_HEADING_RE.test(line) || FULL_ARTICLE_HEADING_RE.test(line)) continue;
+
+    const ctaPrefix = line.match(CTA_PREFIX_HEADING_RE);
+    if (ctaPrefix) {
+      out.push(`## ${ctaPrefix[1].trim()}`);
+      continue;
+    }
 
     if (hasStructuredFaqs && FAQ_HEADING_RE.test(line)) {
       skipSection = true;

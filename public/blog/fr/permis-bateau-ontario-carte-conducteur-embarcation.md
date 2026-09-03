@@ -35,8 +35,6 @@ Au Canada, toute personne qui conduit une embarcation motorisée doit détenir l
 
 ---
 
-### Article complet
-
 Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario, et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
 
 Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Utilisez la traduction de votre navigateur ou demandez l'aide d'un proche bilingue pour remplir un formulaire; notre personnel et nos réponses sont en anglais.

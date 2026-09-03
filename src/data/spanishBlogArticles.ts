@@ -23,8 +23,6 @@ Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligato
 
 ---
 
-### Artículo completo
-
 Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
@@ -175,7 +173,7 @@ Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presu
 
 ---
 
-## CTA, Próximos pasos
+## Próximos pasos
 
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
@@ -211,8 +209,6 @@ harrisboatworks.ca
 Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ---
-
-### Artículo completo
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
@@ -350,7 +346,7 @@ Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos 
 
 ---
 
-## CTA, Reserva tu bote o configura tu próximo motor
+## Reserva tu bote o configura tu próximo motor
 
 **¿Quieres pescar Rice Lake este verano?**
 Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
@@ -551,8 +547,6 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 ---
 
-### Artículo completo
-
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
 > **Una nota sobre el idioma**
@@ -676,7 +670,7 @@ Nuestro equipo se comunica y presta servicio en inglés. El configurador en merc
 
 ---
 
-## CTA, Compara precios y configura tu motor
+## Compara precios y configura tu motor
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
@@ -1033,7 +1027,7 @@ La PCOC no equivale a una licencia en otros países. Cada estado tiene sus propi
 
 ---
 
-## CTA, ¿Listo para salir al agua legalmente?
+## ¿Listo para salir al agua legalmente?
 
 Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
 

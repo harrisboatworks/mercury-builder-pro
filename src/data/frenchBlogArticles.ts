@@ -469,8 +469,6 @@ Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du 
 
 ---
 
-### Article complet
-
 L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide, c'est souvent des milliers de dollars de réparations au printemps.
 
 Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing, entreprise familiale depuis 1947.
@@ -720,8 +718,6 @@ Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l
 
 ---
 
-### Article complet
-
 Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à moins de trois heures de Montréal, ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
@@ -881,8 +877,6 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
 Au Canada, toute personne qui conduit une embarcation motorisée doit détenir la Carte de conducteur d'embarcation de plaisance (CCEP). Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
 
 ---
-
-### Article complet
 
 Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario, et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
 

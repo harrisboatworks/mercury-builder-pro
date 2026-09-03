@@ -105,6 +105,24 @@ Continue the checklist.`;
     );
   });
 
+  it('strips localized full-article headings and CTA prefixes', () => {
+    const content = `### Artículo completo
+
+## CTA, Próximos pasos
+
+Usa el configurador.
+
+### Article complet
+
+### 전체 기사
+
+Keep this heading.`;
+
+    expect(cleanBlogContent(content)).toBe(
+      '## Próximos pasos\n\nUsa el configurador.\n\nKeep this heading.',
+    );
+  });
+
   it('strips customer-visible Canonical URL editorial lines', () => {
     const content = `**Canonical URL:** https://www.mercuryrepower.ca/blog/example
 
