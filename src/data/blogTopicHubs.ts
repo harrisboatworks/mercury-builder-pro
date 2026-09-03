@@ -41,7 +41,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     name: 'Diagnostics & Maintenance',
     navLabel: 'Diagnostics',
     blurb: 'Beep codes, alarms, no-starts and the maintenance that prevents them.',
-    title: 'Mercury Outboard Diagnostics & Maintenance | Harris Boat Works',
+    title: 'Mercury Diagnostics & Maintenance | Harris Boat Works',
     metaDescription:
       'Beep codes, overheat alarms, no-start mornings: our Mercury diagnostic and maintenance guides, written from real repair jobs at our Rice Lake shop.',
     intro: [
@@ -144,7 +144,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     blurb: 'What things really cost: repowers, service, financing and warranty.',
     title: 'Mercury Prices & Boat Ownership Costs | Harris Boat Works',
     metaDescription:
-      'What boat ownership really costs in Ontario: repower pricing, service jobs, financing math, trade-in values and warranty answers, with nothing behind forms.',
+      'What boat ownership really costs in Ontario: repower pricing, service jobs, financing math, trade-in values and warranty answers. No forms, no teasers.',
     intro: [
       'Most dealers make you fill out a form to see a price. We publish ours, and these guides explain the numbers behind them.',
       "What's in here: what repowers, rigging, winterization and common service jobs cost in Ontario, how financing and monthly payments work in Canadian dollars, what your trade-in is actually worth, and how Mercury's warranty behaves after a repower. No teaser rates, no \"call for pricing\", no pretending HST doesn't exist.",
