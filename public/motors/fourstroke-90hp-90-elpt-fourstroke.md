@@ -1,18 +1,18 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: b16ac296-e506-4357-ad69-18a0aa347cbf
 slug: fourstroke-90hp-90-elpt-fourstroke
 family: FourStroke
 horsepower: 90
 model_number: 1F904132D
-availability: in_stock
+availability: special_order
 price_cad: 14960
 ---
 
@@ -37,7 +37,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Availability
 
-- **Status:** In stock at Gores Landing
+- **Status:** Special order, contact dealer for ETA
 - **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for

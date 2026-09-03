@@ -1,18 +1,18 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 8f7b62e5-e3d4-41d5-8489-9aa50c476d46
 slug: fourstroke-60hp-60-elpt-command-thrust-fourstroke
 family: FourStroke
 horsepower: 60
 model_number: 1F60453GZ
-availability: in_stock
+availability: special_order
 price_cad: 12342
 ---
 
@@ -37,7 +37,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Availability
 
-- **Status:** In stock at Gores Landing
+- **Status:** Special order, contact dealer for ETA
 - **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for

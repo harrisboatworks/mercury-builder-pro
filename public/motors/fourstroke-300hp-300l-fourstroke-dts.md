@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-300hp-300l-fourstroke-dts
-last_updated: 2026-08-19
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 04967dad-ef07-41e3-bbd0-4c07066a511e
 slug: fourstroke-300hp-300l-fourstroke-dts
 family: FourStroke

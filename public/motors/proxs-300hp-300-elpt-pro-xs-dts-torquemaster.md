@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-300hp-300-elpt-pro-xs-dts-torquemaster
-last_updated: 2026-08-19
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 515f3128-8e4f-4a50-a74e-e83d7c629f58
 slug: proxs-300hp-300-elpt-pro-xs-dts-torquemaster
 family: Pro XS

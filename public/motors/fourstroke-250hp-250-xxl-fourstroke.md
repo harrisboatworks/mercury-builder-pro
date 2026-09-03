@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-250hp-250-xxl-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: ea3d52b3-ce98-4187-83b8-438f9ecd42d5
 slug: fourstroke-250hp-250-xxl-fourstroke
 family: FourStroke
