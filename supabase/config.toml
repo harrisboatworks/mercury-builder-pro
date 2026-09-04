@@ -149,6 +149,12 @@ verify_jwt = false
 # x-internal-secret request can reach the function-level auth gate.
 verify_jwt = false
 
+[functions.sync-lightspeed-inventory]
+# Gateway JWT would reject an x-internal-secret-only scheduler. In-function
+# authorizeInventorySyncRequest is the real gate. BLOCKED: do not deploy
+# until lightspeed-motor-models-sync-daily is rewritten off the public anon JWT.
+verify_jwt = false
+
 [functions.voice-inventory-lookup]
 verify_jwt = false
 
