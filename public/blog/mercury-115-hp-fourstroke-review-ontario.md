@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust"
+title: "Mercury 115 FourStroke Review 2026: Real Ontario Numbers"
 description: "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust
+# Mercury 115 FourStroke Review 2026: Real Ontario Numbers
 
 > An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.
 

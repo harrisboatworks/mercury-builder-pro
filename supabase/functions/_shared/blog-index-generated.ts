@@ -1024,7 +1024,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "best-mercury-outboard-pontoon-boats",
-    "title": "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)",
+    "title": "Best Mercury for a Pontoon: HP by Length + Command Thrust",
     "description": "For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower.",
     "category": "Buying Guide",
     "publishDate": "2026-05-04",
@@ -1253,7 +1253,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-outboard-fuel-efficiency-guide",
-    "title": "Mercury Outboard Fuel Economy: How to Get Better MPG",
+    "title": "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)",
     "description": "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.",
     "category": "Tips",
     "publishDate": "2026-03-16",
@@ -1285,7 +1285,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "center-console-mercury-motor-guide",
-    "title": "Mercury for Center Console Boats Ontario",
+    "title": "Best Mercury for a Center Console 2026: 115 HP to Quad V10",
     "description": "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.",
     "category": "Buying Guide",
     "publishDate": "2026-03-23",
@@ -2797,7 +2797,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "trent-severn-waterway-boating-guide-2026",
-    "title": "Trent-Severn Waterway 2026 Guide",
+    "title": "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan",
     "description": "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.",
     "category": "Lifestyle",
     "publishDate": "2026-05-08",
@@ -3611,7 +3611,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "pontoon-hp-sizing-decision-tree-ontario",
-    "title": "Pontoon HP Sizing Ontario Guide",
+    "title": "Pontoon HP Sizing: The Rice Lake Decision Tree by Length",
     "description": "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.",
     "category": "Mercury Outboards",
     "publishDate": "2026-03-26",
@@ -4035,7 +4035,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-115-hp-fourstroke-review-ontario",
-    "title": "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust",
+    "title": "Mercury 115 FourStroke Review 2026: Real Ontario Numbers",
     "description": "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-05-10",
@@ -5581,7 +5581,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-outboard-weight-chart",
-    "title": "Mercury Outboard Weight Chart (2.5 to 300 HP)",
+    "title": "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights",
     "description": "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.",
     "category": "Buying Guide",
     "publishDate": "2026-06-07",

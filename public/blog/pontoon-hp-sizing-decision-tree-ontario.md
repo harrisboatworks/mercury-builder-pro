@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Pontoon HP Sizing Ontario Guide"
+title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
 description: "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork."
 category: "Mercury Outboards"
 date_published: 2026-03-26
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Pontoon HP Sizing Ontario Guide
+# Pontoon HP Sizing: The Rice Lake Decision Tree by Length
 
 > The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.
 

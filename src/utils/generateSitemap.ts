@@ -165,24 +165,24 @@ const getStaticPages = (): SitemapEntry[] => {
   // page-specific timestamp (it was previously set to the build date, which
   // misleads crawlers). The two dated entries below keep their literal dates.
   return [
-    { loc: '/', lastmod: today, changefreq: 'daily', priority: 1.0 },
-    { loc: '/quote/motor-selection', lastmod: today, changefreq: 'daily', priority: 0.9 },
-    { loc: '/promotions', lastmod: today, changefreq: 'weekly', priority: 0.8 },
-    { loc: '/mercury-product-protection', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/repower', lastmod: today, changefreq: 'monthly', priority: 0.9 },
-    { loc: '/repower/cost', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/repower/process', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/repower/financing', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/repower/trade-in', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/trade-in-value', lastmod: today, changefreq: 'weekly', priority: 0.8 },
-    { loc: '/accessories', lastmod: today, changefreq: 'weekly', priority: 0.7 },
-    { loc: '/compare', lastmod: today, changefreq: 'weekly', priority: 0.7 },
-    { loc: '/faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    { loc: '/financing-application', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/finance-calculator', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/contact', lastmod: today, changefreq: 'monthly', priority: 0.6 },
-    { loc: '/about', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    { loc: '/harris-boat-works', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/', changefreq: 'daily', priority: 1.0 },
+    { loc: '/quote/motor-selection', changefreq: 'daily', priority: 0.9 },
+    { loc: '/promotions', changefreq: 'weekly', priority: 0.8 },
+    { loc: '/mercury-product-protection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/repower', changefreq: 'monthly', priority: 0.9 },
+    { loc: '/repower/cost', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/repower/process', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/repower/financing', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/repower/trade-in', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/trade-in-value', changefreq: 'weekly', priority: 0.8 },
+    { loc: '/accessories', changefreq: 'weekly', priority: 0.7 },
+    { loc: '/compare', changefreq: 'weekly', priority: 0.7 },
+    { loc: '/faq', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/financing-application', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/finance-calculator', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/contact', changefreq: 'monthly', priority: 0.6 },
+    { loc: '/about', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/harris-boat-works', changefreq: 'monthly', priority: 0.8 },
     { loc: '/about/jay-harris', lastmod: '2026-05-10', changefreq: 'yearly', priority: 0.7 },
     { loc: '/tools', lastmod: '2026-05-10', changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', changefreq: 'weekly', priority: 0.8 },
@@ -203,22 +203,22 @@ const getStaticPages = (): SitemapEntry[] => {
     // Pilot SEO landing pages: Batch 4 (Pontoon)
     { loc: '/mercury-pontoon-outboards', changefreq: 'monthly', priority: 0.8 },
     // AI agent integration landing page
-    { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    { loc: '/electric/mercury-avator', lastmod: today, changefreq: 'weekly', priority: 0.8 },
-    { loc: '/motors/mercury-9-9-tiller-kicker-guide', lastmod: today, changefreq: 'weekly', priority: 0.85 },
+    { loc: '/agents', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/electric/mercury-avator', changefreq: 'weekly', priority: 0.8 },
+    { loc: '/motors/mercury-9-9-tiller-kicker-guide', changefreq: 'weekly', priority: 0.85 },
     // Language hub pages. WARNING: scripts/static-prerender.mjs regenerates
     // sitemap.xml AFTER the build and overwrites this generator's output in
     // dist/ and public/. Any static route added here must ALSO be added to
     // staticSitemapEntries in scripts/static-prerender.mjs.
-    { loc: '/zh', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/fr', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/ko', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/es', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/pa', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/ur', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/tl', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
-    { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
+    { loc: '/zh', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/fr', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/ko', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/es', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/pa', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/ur', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/tl', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/privacy', changefreq: 'yearly', priority: 0.3 },
+    { loc: '/terms', changefreq: 'yearly', priority: 0.3 },
   ];
 };
 
@@ -248,8 +248,7 @@ export function generateSitemapXML(): string {
     } : undefined
   }));
 
-  const today = new Date().toISOString().split('T')[0];
-  const multilingualEntries = buildMultilingualBlogEntries(today);
+  const multilingualEntries = buildMultilingualBlogEntries();
 
   const allEntries = [...getStaticPages(), ...getBlogTopicHubPages(), ...blogEntries, ...multilingualEntries].filter(notRedirected);
   return renderSitemapXml(allEntries);

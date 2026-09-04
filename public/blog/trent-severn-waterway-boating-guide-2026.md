@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Trent-Severn Waterway 2026 Guide"
+title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: rentals
 ---
 
-# Trent-Severn Waterway 2026 Guide
+# Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan
 
 > Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.
 
