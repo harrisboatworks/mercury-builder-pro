@@ -6360,17 +6360,20 @@ const locationSitemapEntries = [
 ];
 
 const multilingualBlogSitemapEntries = [
-  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}` })),
-  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
-  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
-  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
-  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
-  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
-  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
-  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
+  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}`, article: a })),
+  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}`, article: a })),
+  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}`, article: a })),
+  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}`, article: a })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}`, article: a })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}`, article: a })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}`, article: a })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}`, article: a })),
 ].map(r => ({
   loc: r.loc,
-  lastmod: today,
+  // Derive lastmod from the article, matching blogSitemapEntries above.
+  // check-blog-hreflang-registry.ts locks translated routes to the
+  // article's dateModified; a build-date fallback drifts on every deploy.
+  lastmod: ((r.article && (r.article.dateModified || r.article.datePublished)) || today).split('T')[0],
   priority: 0.6,
   changefreq: 'monthly',
 }));
