@@ -4242,8 +4242,10 @@ export type Database = {
         Row: {
           created_at: string | null
           error: string | null
+          error_code: string | null
           id: string
           message: string
+          message_sid: string | null
           notification_id: string | null
           status: string | null
           to_phone: string
@@ -4251,8 +4253,10 @@ export type Database = {
         Insert: {
           created_at?: string | null
           error?: string | null
+          error_code?: string | null
           id?: string
           message: string
+          message_sid?: string | null
           notification_id?: string | null
           status?: string | null
           to_phone: string
@@ -4260,8 +4264,10 @@ export type Database = {
         Update: {
           created_at?: string | null
           error?: string | null
+          error_code?: string | null
           id?: string
           message?: string
+          message_sid?: string | null
           notification_id?: string | null
           status?: string | null
           to_phone?: string
