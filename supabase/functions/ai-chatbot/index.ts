@@ -31,6 +31,16 @@ import {
   buildVerifiedHbwAuthorityAnswer,
 } from "../_shared/verified-hbw-authority-facts.ts";
 
+// OpenAI chat model for the site assistant.
+// gpt-5.6-luna replaced gpt-4o-mini on 2026-09-04. Note the 5.6+ API contract:
+//   - `max_tokens` is rejected; use `max_completion_tokens`
+//   - `temperature` only accepts the default (1), so it is omitted
+//   - `top_p` / `presence_penalty` / `frequency_penalty` are unsupported
+//   - `reasoning_effort: 'none'` keeps latency and token spend at chat levels
+//     and is REQUIRED for function tools on /v1/chat/completions
+const CHAT_MODEL = 'gpt-5.6-luna';
+const CHAT_REASONING_EFFORT = 'none';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -846,10 +856,10 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini', // Using gpt-4o-mini for reliability
+        model: CHAT_MODEL,
         messages: messages,
-        max_tokens: 250, // Shorter for punchier, friend-like responses
-        temperature: 0.7,
+        max_completion_tokens: 250, // Shorter for punchier, friend-like responses
+        reasoning_effort: CHAT_REASONING_EFFORT,
       }),
     });
 
