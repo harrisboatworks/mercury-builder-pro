@@ -14,6 +14,7 @@ export interface LeadData {
   lead_source: 'pdf_download' | 'consultation' | 'ai_chat' | 'repower_guide';
   anonymous_session_id?: string;
   quote_data?: any;
+  idempotency_key?: string;
 }
 
 // Generate cryptographically secure session ID
@@ -21,6 +22,13 @@ function generateSecureSessionId(): string {
   const array = new Uint8Array(16);
   crypto.getRandomValues(array);
   return `anon_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
+}
+
+export function isLeadIdempotencyConflict(error: unknown): boolean {
+  const candidate = error as { code?: string; message?: string; details?: string } | null;
+  const description = `${candidate?.message || ''} ${candidate?.details || ''}`;
+  return candidate?.code === '23505'
+    && /uq_customer_quotes_idempotency_key|idempotency_key/i.test(description);
 }
 
 export async function saveLead(leadData: LeadData) {
@@ -49,6 +57,7 @@ export async function saveLead(leadData: LeadData) {
     lead_source: leadData.lead_source,
     anonymous_session_id: sessionId,
     lead_score: leadScore,
+    ...(leadData.idempotency_key ? { idempotency_key: leadData.idempotency_key } : {}),
     // Temporarily set these required fields with default values
     discount_amount: 0,
     penalty_applied: false
@@ -56,11 +65,30 @@ export async function saveLead(leadData: LeadData) {
 
   console.log('Saving lead with enhanced score:', leadScore, leadRecord);
 
-  const { data, error } = await supabase
-    .from('customer_quotes')
-    .insert(leadRecord)
-    .select()
-    .single();
+  let data: any;
+  let error: any;
+
+  if (leadData.idempotency_key) {
+    const id = crypto.randomUUID();
+    const result = await supabase
+      .from('customer_quotes')
+      .insert({ ...leadRecord, id });
+    error = result.error;
+
+    if (isLeadIdempotencyConflict(error)) {
+      console.log('Lead already saved for this PDF quote snapshot');
+      return { ...leadRecord, id: null, idempotent_replay: true };
+    }
+    data = { ...leadRecord, id };
+  } else {
+    const result = await supabase
+      .from('customer_quotes')
+      .insert(leadRecord)
+      .select()
+      .single();
+    data = result.data;
+    error = result.error;
+  }
 
   if (error) {
     console.error('Error saving lead:', error);
