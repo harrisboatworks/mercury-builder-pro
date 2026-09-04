@@ -9,8 +9,13 @@ const INDOOR_STORAGE_TERM =
 const SAFE_NEGATED_STORAGE_TERMS = [
   /\b(?:do|does|did)\s+not\s+(?:currently\s+)?(?:offer|provide|have|include|store|arrange|accommodate)\b[^.!?;]{0,100}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
   /\bdon['’]t\s+(?:currently\s+)?(?:offer|provide|have|include|store|arrange|accommodate)\b[^.!?;]{0,100}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\b(?:never|cannot|can['’]t|will\s+not|won['’]t)\s+(?:currently\s+)?(?:offer|provide|have|include|store|arrange|accommodate)\b[^.!?;]{0,100}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\b(?:do|does|did)\s+not\s+store\s+boats?\s+(?:inside|indoors)\b/gi,
+  /\bdon['’]t\s+store\s+boats?\s+(?:inside|indoors)\b/gi,
   /\bno\s+(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\bnot\s+(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
   /\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\s+(?:is|are|will be)\s+(?:not\s+available|unavailable|not\s+offered)\b/gi,
+  /\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\s+(?:cannot|can['’]t|will\s+not|won['’]t)\s+be\s+(?:offered|provided|arranged|accommodated)\b/gi,
   /\bindoor_storage\s*[:=]\s*false\b/gi,
 ];
 
@@ -43,18 +48,26 @@ function evaluateForbiddenClaims(source, failures) {
   const sentences = source
     .replaceAll('\\n', '\n')
     .match(/[^.!?;\n]+[.!?;]?/g) ?? [];
-  const clauses = sentences.flatMap((sentence) =>
-    sentence.split(/\b(?:but|however|although|whereas)\b/i),
-  );
-  for (const clause of clauses) {
-    if (clause.trimEnd().endsWith('?') || !HBW_CONTEXT.test(clause)) continue;
-    let unnegatedClause = clause;
-    for (const safePattern of SAFE_NEGATED_STORAGE_TERMS) {
-      unnegatedClause = unnegatedClause.replace(safePattern, '');
-    }
-    if (INDOOR_STORAGE_TERM.test(unnegatedClause)) {
-      const message = 'Policy source contains an affirmative HBW indoor-storage claim.';
-      if (!failures.includes(message)) failures.push(message);
+  for (const sentence of sentences) {
+    let hbwContextSeen = false;
+    const clauses = sentence.split(/\b(?:but|however|although|whereas)\b/i);
+    for (const clause of clauses) {
+      const hasExplicitHbwContext = HBW_CONTEXT.test(clause);
+      const inheritsHbwContext = hbwContextSeen &&
+        /^\s*,?\s*(?:does|do|is|are|can|will|indoor|heated|climate)/i.test(clause) &&
+        !/\b(?:other|another|competitor|nearby)\s+(?:marinas?|dealers?|providers?)\b/i.test(clause);
+      if (hasExplicitHbwContext) hbwContextSeen = true;
+      if (clause.trimEnd().endsWith('?') || (!hasExplicitHbwContext && !inheritsHbwContext)) {
+        continue;
+      }
+      let unnegatedClause = clause;
+      for (const safePattern of SAFE_NEGATED_STORAGE_TERMS) {
+        unnegatedClause = unnegatedClause.replace(safePattern, '');
+      }
+      if (INDOOR_STORAGE_TERM.test(unnegatedClause)) {
+        const message = 'Policy source contains an affirmative HBW indoor-storage claim.';
+        if (!failures.includes(message)) failures.push(message);
+      }
     }
   }
 }
