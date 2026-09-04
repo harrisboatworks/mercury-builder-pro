@@ -680,11 +680,12 @@ export class RealtimeVoiceChat {
       
       const data = await tokenResponse.json();
       
-      if (!data.client_secret?.value) {
+      // GA returns the secret as top-level `value`; `client_secret.value` is the
+      // legacy beta shape the edge function still mirrors for older bundles.
+      const EPHEMERAL_KEY = data.value ?? data.client_secret?.value;
+      if (!EPHEMERAL_KEY) {
         throw new Error("Failed to get ephemeral token");
       }
-
-      const EPHEMERAL_KEY = data.client_secret.value;
       this.tokenReceived = true;
       console.log('✅ Ephemeral token received');
       this.updateDiagnostics();
@@ -1000,20 +1001,29 @@ export class RealtimeVoiceChat {
         
         // Send session.update with explicit audio configuration
         if (this.dc?.readyState === 'open') {
+          // Realtime GA shape (migrated 2026-09-04). The beta keys this used to
+          // send (modalities / input_audio_format / output_audio_format /
+          // input_audio_transcription / top-level turn_detection) are rejected by
+          // the GA session, and ['text','audio'] is no longer a legal combination.
           const sessionUpdate = {
             type: 'session.update',
             session: {
-              modalities: ['text', 'audio'],
-              input_audio_format: 'pcm16',
-              output_audio_format: 'pcm16',
-              input_audio_transcription: {
-                model: 'whisper-1'
-              },
-              turn_detection: {
-                type: 'server_vad',
-                threshold: 0.5,
-                prefix_padding_ms: 300,
-                silence_duration_ms: 1000
+              type: 'realtime',
+              output_modalities: ['audio'],
+              audio: {
+                input: {
+                  format: { type: 'audio/pcm', rate: 24000 },
+                  transcription: { model: 'whisper-1' },
+                  turn_detection: {
+                    type: 'server_vad',
+                    threshold: 0.5,
+                    prefix_padding_ms: 300,
+                    silence_duration_ms: 1000
+                  }
+                },
+                output: {
+                  format: { type: 'audio/pcm', rate: 24000 }
+                }
               }
             }
           };
@@ -1038,11 +1048,10 @@ export class RealtimeVoiceChat {
               }
             }));
             
+            // No modalities override: GA rejects ['audio','text'], and the
+            // session's own output_modalities already covers this.
             this.dc.send(JSON.stringify({
-              type: 'response.create',
-              response: {
-                modalities: ['audio', 'text']
-              }
+              type: 'response.create'
             }));
 
             // Extra diagnostics check after greeting
@@ -1062,6 +1071,10 @@ export class RealtimeVoiceChat {
         console.log('✅ Session updated successfully');
         break;
         
+      // GA renamed the audio/transcript response events (response.audio.* ->
+      // response.output_audio.*). Old names kept so a mid-rollout session that
+      // still speaks beta does not go silent.
+      case 'response.output_audio.delta':
       case 'response.audio.delta':
         // In WebRTC mode, audio comes through ontrack (RTCPeerConnection), NOT here
         // This event is only sent in WebSocket mode
@@ -1070,16 +1083,19 @@ export class RealtimeVoiceChat {
         console.log('📢 response.audio.delta received (WebRTC audio flows via ontrack)');
         break;
         
+      case 'response.output_audio.done':
       case 'response.audio.done':
         setTimeout(() => this.onSpeakingChange(false), 500);
         break;
         
+      case 'response.output_audio_transcript.delta':
       case 'response.audio_transcript.delta':
         if (event.delta) {
           this.onTranscript(event.delta, false);
         }
         break;
         
+      case 'response.output_audio_transcript.done':
       case 'response.audio_transcript.done':
         if (event.transcript) {
           this.onTranscript(event.transcript, true);
