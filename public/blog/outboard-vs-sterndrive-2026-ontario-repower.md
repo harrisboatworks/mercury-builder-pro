@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-08-26
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
 date_published: 2026-03-05
-date_modified: 2026-08-26
+date_modified: 2026-09-04
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-04  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
 ## Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
 
-> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
+> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards now account for the clear majority of new recreational marine engines sold, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
 
 We sell both. We service both. We have no axe to grind.
 
@@ -71,7 +71,7 @@ Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders co
 
 | Factor | Outboard | Sterndrive (I/O) |
 |---|---|---|
-| 2026 new-boat share | Above 80% | Declining (was ~50% in 2010) |
+| 2026 new-boat share | Clear majority and still growing | Declining |
 | Failure points | No coolant system, bellows, or gimbal bearing | Bellows / gimbal / water-intrusion risk |
 | Fuel economy | Modern V6/V8 FourStroke more efficient | Older I/O less efficient |
 | Shallow water | Trims up in seconds (Kawartha shoals) | Limited |
@@ -84,7 +84,7 @@ Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders co
 
 This isn't opinion. It's sales data.
 
-In 2010, outboards represented roughly 50% of the recreational marine engine market. By 2026, that number is above 80%. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
+Outboards have taken a steadily larger share of the recreational marine engine market since 2010, and by 2026 they are the clear majority of new installations. We are not going to put a precise share figure on that without a dated primary source that defines the market and the geography it measures. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
 
 Meanwhile, sterndrive R&D has slowed. MerCruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
 
@@ -179,7 +179,7 @@ This is the critical check. Outboard brackets mount to the transom. If the trans
 **When the boat is worth it.**
 A repower should make economic sense for the hull you have. Don't spend $35,000-$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **When you plan to keep the boat.**
 Repowers are long-term plays. If you're keeping the boat for another 10-15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.
