@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: a7ff5af0-b210-44e8-aab6-f2910435782a
 slug: fourstroke-90hp-90-exlpt-fourstroke
 family: FourStroke

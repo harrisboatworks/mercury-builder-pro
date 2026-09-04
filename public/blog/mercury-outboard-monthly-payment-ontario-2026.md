@@ -127,7 +127,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to 
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
-Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
+Family-owned since 1947.
 
 ## Sources
 

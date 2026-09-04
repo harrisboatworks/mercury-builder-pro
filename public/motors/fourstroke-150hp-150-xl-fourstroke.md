@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: e76006ac-288b-42ef-89a3-8c31773a78ab
 slug: fourstroke-150hp-150-xl-fourstroke
 family: FourStroke
