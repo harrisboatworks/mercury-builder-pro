@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs
-last_updated: 2026-08-19
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: ffb1f5fd-fc8a-4a0a-bd21-5a1ac1af917b
 slug: proxs-150hp-150-exlpt-proxs
 family: Pro XS

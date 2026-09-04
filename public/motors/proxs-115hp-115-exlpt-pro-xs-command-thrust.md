@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-pro-xs-command-thrust
-last_updated: 2026-08-19
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 58bbccb4-dd40-4a48-82be-92fc9bc8448c
 slug: proxs-115hp-115-exlpt-pro-xs-command-thrust
 family: Pro XS

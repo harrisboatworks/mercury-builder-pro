@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-225hp-225cxxl-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 7b241624-c247-4da3-b13f-17bfec526cfc
 slug: fourstroke-225hp-225cxxl-fourstroke
 family: FourStroke

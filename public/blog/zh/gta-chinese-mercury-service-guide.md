@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md
-last_updated: 2026-08-21
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 发动机维修保养完整指南：从机油到
 description: "多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-21
+date_modified: 2026-08-26
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-21  
+**最后审核:** 2026-08-26  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
 ## 快速答案
 
-Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理，请在计划送船前 1–2 周通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交请求。
+Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
 
 ---
 
@@ -132,9 +132,9 @@ SmartCraft 报警、过热、漏油、燃油味或明显动力下降都需要按
 
 保修决定取决于具体故障、保修条款和可核对的记录。保存发票、工单和序列号资料，比一句“应该做过”更有用。
 
-### 5. 等到 11 月底才安排冬化
+### 5. 等到关闭后才安排冬化
 
-HBW 不需要客户提前数月抢位置，但实体船厂 12 月 1 日关闭。请在计划送船前 1–2 周提交请求；11 月中旬是实际的秋季最后接收时间。
+HBW 不需要客户提前数月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ---
 
@@ -144,11 +144,11 @@ HBW 不需要客户提前数月抢位置，但实体船厂 12 月 1 日关闭。
 
 ### HBW 冬储范围
 
-HBW 只提供**室外收缩膜冬储**，不提供室内、恒温或全年存储。冬化、收缩膜、室外存储、维修和春季开机是不同的工作项目；最终包含哪些内容，以当前书面报价和工单为准。客户自行安排秋季送船和春季取船，HBW 不提供或安排取送、拖运或上门服务。健康的电瓶在完全充电、断开连接并符合书面存储方案时可以留在船上；拆除并不是所有船的统一要求。
+HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 也不提供恒温或全年存储。冬化、收缩膜、室外存储、维修和春季开机是不同的工作项目；最终包含哪些内容，以当前书面报价和工单为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不运送船只、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。 健康电瓶只有在完全充电、断开连接、固定妥当，并获得批准的存储方案允许时，才可以留在船上。具体以机型/序列号手册和批准的存储方案为准。
 
-### 推荐时间窗
+### 如何送船
 
-HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。通常在计划送船前 **1–2 周**，到 [hbw.wiki/service](https://hbw.wiki/service) 提交完整服务请求，就能让团队安排所需工作。船厂 12 月 1 日关闭，因此实际的秋季最后接收时间通常在 11 月中旬；不要等到关闭前几天才送来。
+HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### 自己做行不行？
 
@@ -224,11 +224,11 @@ HBW 是 Mercury Marine Premier Dealer，可以检查序列号记录并处理符�
 
 ### 什么时候提交秋季服务请求？
 
-通常在计划送船前 1–2 周通过 hbw.wiki/service 提交。HBW 有空间，按先到先办处理；11 月中旬是实际的秋季最后接收时间，因为船厂 12 月 1 日关闭。
+先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### HBW 提供什么冬储？
 
-HBW 只提供室外收缩膜冬储，不提供室内、恒温、全年或夏季存储。客户自行送船和取船。最终范围以当前书面报价和工单为准。
+HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 最终范围以当前书面报价和工单为准。
 
 ### 发动机坏了，修还是换新的更划算？
 

@@ -469,7 +469,7 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
 - [Mercury SeaPro Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide), SeaPro commercial-duty guide
 - [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario), Mercury Avator electric outboards

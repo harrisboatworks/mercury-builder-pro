@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-175hp-175-elpt-proxs
-last_updated: 2026-08-19
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 8372e2b1-0c8f-4450-a265-d7cc4648626f
 slug: proxs-175hp-175-elpt-proxs
 family: Pro XS

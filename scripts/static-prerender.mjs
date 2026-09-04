@@ -942,6 +942,43 @@ function loadBlogClusters() {
 const blogClusterData = loadBlogClusters();
 console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
 
+// Load the five blog topic hubs (src/data/blogTopicHubs.ts) so the hub pages
+// (/blog/diagnostics, /blog/reviews, /blog/repower, /blog/rice-lake,
+// /blog/pricing) get real prerendered HTML. Without this, the hub URLs are in
+// the sitemap but Vercel has no dist/blog/{hub}/index.html and returns 404.
+// Names, titles, descriptions, intros, and article ordering all come from the
+// data module (single source of truth shared with BlogTopicHubPage.tsx).
+function loadBlogTopicHubs() {
+  const dumpScript = `
+    import { BLOG_TOPIC_HUBS, getHubArticles } from '../src/data/blogTopicHubs.ts';
+    const hubs = BLOG_TOPIC_HUBS.map(hub => {
+      const articles = getHubArticles(hub);
+      const anchorCount = hub.anchorSlugs.filter(s => articles.some(a => a.slug === s)).length;
+      return {
+        id: hub.id,
+        slug: hub.slug,
+        name: hub.name,
+        title: hub.title,
+        metaDescription: hub.metaDescription,
+        intro: hub.intro,
+        anchorCount,
+        articles: articles.map(a => ({ slug: a.slug, title: a.title })),
+      };
+    });
+    process.stdout.write(JSON.stringify(hubs));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-topic-hubs-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const blogTopicHubData = loadBlogTopicHubs();
+console.log(`[static-prerender] loaded ${blogTopicHubData.length} blog topic hubs (${blogTopicHubData.reduce((n, h) => n + h.articles.length, 0)} assigned articles)`);
+
+
 function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSlugs = []) {
   const siblings = explicitRelatedSlugs.length
     ? explicitRelatedSlugs
@@ -4818,6 +4855,80 @@ const CONTACT_EXTRA = () => commercialBodyHtml({
   ],
 });
 
+// ============================================================
+// Blog topic hub routes — /blog/{diagnostics,reviews,repower,
+// rice-lake,pricing}. Mirrors src/pages/BlogTopicHubPage.tsx:
+// same <title> (hub.title), <h1> (hub.name), meta description,
+// canonical, and CollectionPage + BreadcrumbList + ItemList
+// JSON-LD, so the SSR-stamped head matches what Helmet renders
+// on hydration. The noscript body lists the hub's "Start here"
+// anchor posts and every remaining assigned post as real
+// <a href> links so crawlers see the internal links without JS.
+// All strings come from loadBlogTopicHubs() (blogTopicHubs.ts).
+// ============================================================
+const BLOG_TOPIC_HUB_ROUTES = blogTopicHubData.map((hub) => {
+  const hubPath = `/blog/${hub.slug}`;
+  const hubUrl = `${SITE_URL}${hubPath}`;
+  const descBySlug = new Map(blogArticles.map(a => [a.slug, a.description || '']));
+  const anchors = hub.articles.slice(0, hub.anchorCount);
+  const rest = hub.articles.slice(hub.anchorCount);
+  const asCard = (a) => ({
+    to: `/blog/${a.slug}`,
+    title: a.title,
+    description: descBySlug.get(a.slug) || '',
+  });
+  const schemas = [{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${hubUrl}#webpage`,
+        "name": hub.title,
+        "description": hub.metaDescription,
+        "url": hubUrl,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+            { "@type": "ListItem", "position": 3, "name": hub.name, "item": hubUrl },
+          ],
+        },
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": hub.articles.map((a, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `${SITE_URL}/blog/${a.slug}`,
+          "name": a.title,
+        })),
+      },
+    ],
+  }];
+  return {
+    path: hubPath,
+    canonical: hubPath,
+    title: hub.title,
+    description: hub.metaDescription,
+    h1: hub.name,
+    intro: hub.intro[0] || hub.metaDescription,
+    schemas,
+    extraNoscript: () =>
+      hub.intro.slice(1).map(p => `<p>${escapeHtml(p)}</p>`).join('') +
+      `<p>${hub.articles.length} guides in this collection.</p>` +
+      hubArticleListHtml([
+        { heading: 'Start here', cards: anchors.map(asCard) },
+        ...(rest.length ? [{ heading: `All ${hub.name} guides`, cards: rest.map(asCard) }] : []),
+      ]) +
+      `<p><a href="/blog">All blog guides</a></p>`,
+  };
+});
+
+
+
 const routes = [
 
   {
@@ -5122,6 +5233,8 @@ const routes = [
       return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
     }
   },
+  // Blog topic hub collection pages (see BLOG_TOPIC_HUB_ROUTES above).
+  ...BLOG_TOPIC_HUB_ROUTES,
   // ============================================================
   // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
   // Without these, Vercel's /blog/:slug rewrite would 404 the hub
@@ -6247,17 +6360,20 @@ const locationSitemapEntries = [
 ];
 
 const multilingualBlogSitemapEntries = [
-  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}` })),
-  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
-  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
-  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
-  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
-  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
-  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
-  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
+  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}`, article: a })),
+  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}`, article: a })),
+  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}`, article: a })),
+  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}`, article: a })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}`, article: a })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}`, article: a })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}`, article: a })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}`, article: a })),
 ].map(r => ({
   loc: r.loc,
-  lastmod: today,
+  // Derive lastmod from the article, matching blogSitemapEntries above.
+  // check-blog-hreflang-registry.ts locks translated routes to the
+  // article's dateModified; a build-date fallback drifts on every deploy.
+  lastmod: ((r.article && (r.article.dateModified || r.article.datePublished)) || today).split('T')[0],
   priority: 0.6,
   changefreq: 'monthly',
 }));

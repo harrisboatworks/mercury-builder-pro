@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury.md
-last_updated: 2026-06-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de preparación invernal para motores Mercury en Ontario"
 description: "Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging."
 category: "Mantenimiento"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-08-26
 keywords: ["preparar motor fuera de borda invierno Ontario","winterization motor Mercury","preparación invernal bote Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Mantenimiento  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-06-19  
+**Última revisión:** 2026-08-26  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
 
 ### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario cubre seis pasos esenciales: estabilizar el combustible, hacer el fogging (lubricación interna), drenar el aceite de engranajes (gear lube), retirar y almacenar la batería, engrasar las conexiones y puntos de articulación, y hacer un enjuague con agua dulce. Omitir cualquiera de estos pasos puede resultar en una reparación costosa en primavera. Para reservar su preparación invernal, visite hbw.wiki/service.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -39,7 +39,7 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
 
 ---
 
@@ -85,11 +85,11 @@ Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltra
 
 **¿Qué pasa si lo omite?** Carcasa agrietada por congelación, reparación mayor.
 
-### 4. Batería: retiro y almacenamiento
+### 4. Batería: plan aprobado
 
-No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daño permanente. Retírela, limpie los terminales, y guárdela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (*trickle charger*). Una batería bien almacenada dura dos a tres veces más.
+Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. El retiro no es un requisito universal de HBW.
 
-**¿Qué pasa si lo omite?** Batería muerta o dañada permanentemente, reemplazo costoso.
+**¿Qué pasa si la deja conectada?** Las cargas parásitas pueden descargarla.
 
 ### 5. Engrase de conexiones y puntos de articulación
 
@@ -112,7 +112,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
 | Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
-| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo necesario |
+| Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
 | Enjuague con agua dulce | Elimina depósitos minerales | Corrosión acelerada del sistema de enfriamiento |
 
@@ -122,7 +122,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-No espere demasiado: los talleres se llenan rápido al inicio y al final de la temporada.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -130,7 +130,7 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
 
 ---
 
@@ -155,11 +155,11 @@ El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki
 
 ### ¿Cuándo debo reservar?
 
-Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido después de Thanksgiving.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ### ¿Harris Boat Works ofrece almacenamiento?
 
-Sí. Manejamos 311 contratos de almacenamiento por año, interior y exterior.
+Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.
 
 ### ¿Qué pasa si no hago la preparación invernal?
 

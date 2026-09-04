@@ -37,7 +37,7 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
@@ -141,29 +141,29 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 
 ## Itinerario de un día desde Toronto
 
-**5:30 AM**, Salida de Toronto por 401E 
-**7:00 AM**, Llegada a Gores Landing, Harris Boat Works 
-**7:15 AM**, Salida al lago (equipo propio o renta) 
-**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye) 
-**11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra 
-**1:00–5:00 PM**, Tarde: bass o perca 
-**5:30 PM**, Regreso a HBW, combustible 
+**5:30 AM**, Salida de Toronto por 401E
+**7:00 AM**, Llegada a Gores Landing, Harris Boat Works
+**7:15 AM**, Salida al lago (equipo propio o renta)
+**7:30–11:00 AM**, Pesca matutina (mejor hora para walleye)
+**11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra
+**1:00–5:00 PM**, Tarde: bass o perca
+**5:30 PM**, Regreso a HBW, combustible
 **6:00–7:00 PM**, Regreso a Toronto
 
 ---
 
 ## Reserva tu bote o configura tu próximo motor
 
-**¿Quieres pescar Rice Lake este verano?** 
+**¿Quieres pescar Rice Lake este verano?**
 Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
 
-**¿Buscas un motor para tu propio bote?** 
+**¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
-¿Preguntas? Escríbenos en hbw.wiki/service (se aceptan mensajes en español).
+¿Preguntas? Escríbenos en hbw.wiki/service (puedes escribirnos en español; te responderemos en inglés).
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca | 905-342-2153
 ---
 

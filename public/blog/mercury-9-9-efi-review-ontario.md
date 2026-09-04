@@ -198,7 +198,7 @@ Based on visible Canadian listings reviewed in May 2026, it is a very strong pos
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 
 ## Next steps
 

@@ -157,7 +157,7 @@ For small aluminum boats on sheltered water, a 9.9 to 15 HP tiller is the classi
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
 - [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 
 ## Next steps
 

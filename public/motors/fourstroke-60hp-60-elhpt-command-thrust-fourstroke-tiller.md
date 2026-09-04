@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elhpt-command-thrust-fourstroke-tiller
-last_updated: 2026-08-19
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: c54bc296-0a5c-437c-accc-f6df2fcd83c2
 slug: fourstroke-60hp-60-elhpt-command-thrust-fourstroke-tiller
 family: FourStroke

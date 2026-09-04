@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion.md
-last_updated: 2026-08-08
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP: Comparación completa para remotorización"
 description: "Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso."
 category: "Comparación de motores"
 date_published: 2026-04-12
-date_modified: 2026-08-08
+date_modified: 2026-09-02
 keywords: ["Mercury 115 vs 150","motor fuera de borda 115 o 150 HP","Mercury FourStroke comparación","remotorización Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparación de motores  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-08  
+**Última revisión:** 2026-09-02  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 
@@ -145,7 +145,7 @@ Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 1
 
 ¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
 
-Harris Boat Works, Gores Landing, Ontario 
+Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
 ---
 
