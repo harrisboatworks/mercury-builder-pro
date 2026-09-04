@@ -2,36 +2,16 @@ export const HBW_STORAGE_POLICY_URL = 'https://www.harrisboatworks.ca/winter-sto
 
 export const HBW_STORAGE_FAQ_QUESTION = 'Do you offer boat storage?';
 
-const FORBIDDEN_INDOOR_STORAGE_CLAIMS = [
-  {
-    label: 'affirmative HBW indoor-storage offer',
-    pattern:
-      /(?<!does )\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has|can accommodate)\s+(?:(?!(?:\bno\b|\bnot\b|don['’]t))[^.!?]){0,80}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?]{0,60}\bstorage\b/i,
-  },
-  {
-    label: 'affirmative HBW indoor-storage offer',
-    pattern:
-      /(?<!does )\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has)\s+(?!no\b|not\b)(?:boat\s+|winter\s+|boat winter\s+)?storage\s+(?:both\s+)?(?:indoors?|heated|climate[- ]controlled)\b/i,
-  },
-  {
-    label: 'affirmative HBW indoor-storage offer',
-    pattern:
-      /\bour storage options?\s+(?:include|includes|feature|features)\s+(?:(?!(?:\bno\b|\bnot\b))[^.!?]){0,80}\b(?:indoor|heated|climate[- ]controlled)\b/i,
-  },
-  {
-    label: 'affirmative HBW indoor-storage offer',
-    pattern:
-      /\bindoor(?:\s+(?:and|or|&|\/)\s+outdoor)?\s+(?:boat\s+|winter\s+|boat winter\s+)?storage\s+(?:is|are)\s+(?:now\s+)?available\s+at\s+(?:Harris Boat Works|HBW)\b/i,
-  },
-  {
-    label: 'affirmative HBW indoor-storage offer',
-    pattern:
-      /\bboats?\s+(?:are|can be)\s+stored\s+(?:securely\s+)?(?:inside|indoors)\s+(?:for winter\s+)?at\s+(?:Harris Boat Works|HBW)\b/i,
-  },
-  {
-    label: 'indoor_storage true flag',
-    pattern: /\bindoor_storage\s*[:=]\s*true\b/i,
-  },
+const HBW_CONTEXT = /\b(?:Harris Boat Works|HBW|we|our)\b/i;
+const INDOOR_STORAGE_TERM =
+  /\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b|\bstorage\b[^.!?;]{0,60}\b(?:indoors?|heated|climate[- ]controlled)\b|\b(?:store|stored)\s+boats?\s+(?:inside|indoors)\b|\bboats?\s+(?:are|can be)\s+stored\s+(?:securely\s+)?(?:inside|indoors)\b/i;
+
+const SAFE_NEGATED_STORAGE_TERMS = [
+  /\b(?:do|does|did)\s+not\s+(?:currently\s+)?(?:offer|provide|have|include|store|arrange|accommodate)\b[^.!?;]{0,100}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\bdon['’]t\s+(?:currently\s+)?(?:offer|provide|have|include|store|arrange|accommodate)\b[^.!?;]{0,100}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\bno\s+(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\b/gi,
+  /\b(?:indoor|heated|climate[- ]controlled)\b[^.!?;]{0,60}\bstorage\s+(?:is|are|will be)\s+(?:not\s+available|unavailable|not\s+offered)\b/gi,
+  /\bindoor_storage\s*[:=]\s*false\b/gi,
 ];
 
 const REQUIRED_STORAGE_FAQ_SIGNALS = [
@@ -56,9 +36,24 @@ function storageFaqWindow(source) {
 }
 
 function evaluateForbiddenClaims(source, failures) {
-  for (const claim of FORBIDDEN_INDOOR_STORAGE_CLAIMS) {
-    if (claim.pattern.test(source)) {
-      const message = `Policy source contains an ${claim.label}.`;
+  if (/\bindoor_storage\s*[:=]\s*true\b/i.test(source)) {
+    failures.push('Policy source contains an indoor_storage true flag.');
+  }
+
+  const sentences = source
+    .replaceAll('\\n', '\n')
+    .match(/[^.!?;\n]+[.!?;]?/g) ?? [];
+  const clauses = sentences.flatMap((sentence) =>
+    sentence.split(/\b(?:but|however|although|whereas)\b/i),
+  );
+  for (const clause of clauses) {
+    if (clause.trimEnd().endsWith('?') || !HBW_CONTEXT.test(clause)) continue;
+    let unnegatedClause = clause;
+    for (const safePattern of SAFE_NEGATED_STORAGE_TERMS) {
+      unnegatedClause = unnegatedClause.replace(safePattern, '');
+    }
+    if (INDOOR_STORAGE_TERM.test(unnegatedClause)) {
+      const message = 'Policy source contains an affirmative HBW indoor-storage claim.';
       if (!failures.includes(message)) failures.push(message);
     }
   }

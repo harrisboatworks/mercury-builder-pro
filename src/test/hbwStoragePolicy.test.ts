@@ -27,7 +27,7 @@ describe('HBW cross-site storage policy', () => {
     `);
 
     expect(result.ok).toBe(false);
-    expect(result.failures).toContain('Policy source contains an affirmative HBW indoor-storage offer.');
+    expect(result.failures).toContain('Policy source contains an affirmative HBW indoor-storage claim.');
   });
 
   it('allows comparison content that does not claim HBW offers indoor storage', () => {
@@ -53,6 +53,11 @@ describe('HBW cross-site storage policy', () => {
     'Harris Boat Works can accommodate boats in climate-controlled indoor storage.',
     'Boats are stored inside for winter at HBW.',
     'indoor_storage: true',
+    'We can offer indoor storage.',
+    'Harris Boat Works accommodates indoor storage.',
+    'Indoor storage is available through Harris Boat Works.',
+    'We store boats indoors for winter.',
+    'Indoor storage can be arranged by HBW.',
   ])('rejects an affirmative offer paraphrase: %s', (answer) => {
     expect(evaluateHbwStoragePolicy(answer).ok).toBe(false);
   });
@@ -63,6 +68,7 @@ describe('HBW cross-site storage policy', () => {
     'We do not offer both indoor and outdoor storage; storage is outdoor only.',
     "We don't offer indoor or heated storage.",
     'We offer outdoor storage and do not have indoor storage.',
+    'We offer outdoor storage; however, indoor storage is not available.',
   ])('allows questions and denials: %s', (text) => {
     expect(evaluateHbwStoragePolicy(text).failures).toEqual([]);
   });
