@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 0f6192df-bdfe-4ca4-add5-1e8042ade8d8
 slug: proxs-250hp-250-elpt-proxs-dts
 family: Pro XS

@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Outboard Weight Chart (2.5 to 300 HP)"
+title: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights"
 description: "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower."
 category: "Buying Guide"
 date_published: 2026-06-07
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury Outboard Weight Chart (2.5 to 300 HP)
+# Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights
 
 > Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.
 

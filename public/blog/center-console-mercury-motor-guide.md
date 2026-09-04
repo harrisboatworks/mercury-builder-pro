@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury for Center Console Boats Ontario"
+title: "Best Mercury for a Center Console 2026: 115 HP to Quad V10"
 description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls."
 category: "Buying Guide"
 date_published: 2026-03-23
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury for Center Console Boats Ontario
+# Best Mercury for a Center Console 2026: 115 HP to Quad V10
 
 > How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.
 

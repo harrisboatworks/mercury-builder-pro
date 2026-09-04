@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard motor service at winterization sa Ontario (Tagalog Guide)"
 description: "Outboard motor service at winterization sa Ontario: kailan, bakit, at saan magpapa-service ng Mercury motor mo. Tagalog guide mula sa Rice Lake na marina."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["mekaniko ng bangka sa Toronto (boat mechanic in Toronto)","pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)","marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)","paano i-winterize ang bangka (how to winterize a boat)","paghahanda ng bangka sa taglamig (preparing boat for winter)","winter storage ng bangka Ontario (winter storage of boat Ontario)","winterization service bangka Toronto (winterization service boat Toronto)","paano ayusin ang Mercury outboard (how to fix Mercury outboard)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Huling sinuri:** 2026-08-02  
+**Huling sinuri:** 2026-08-26  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog
 
@@ -43,18 +43,18 @@ Maraming bagong boat owner sa Greater Toronto Area, lalo na ‘yung galing sa lu
 
 Bakit? Tuwing nagyeyelo ang temperatura, ang tubig na naiiwan sa loob ng engine block, cooling passages, at lower unit ay mag-e-expand at literal na bibiyakin ang metal. Tawag dito ay freeze damage, at ang repair nito ay kadalasang mas mahal pa sa presyo ng lumang motor. Pati fuel system ay naaapektuhan: ang gasolina na naiiwan ay nagfe-phase separate at nag-iiwan ng malagkit na residue na bumabara sa carburetor o fuel injectors. Bukod pa, ang moisture sa loob ng cylinders ay nagdudulot ng kalawang.
 
-Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na bangka** ang ni-winterize namin, ibig sabihin, sanay na sanay na kami. Kasama sa winterization package ang:
+Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong winterization records mula Agosto hanggang Nobyembre 2025**, ibig sabihin, sanay na sanay na kami. Kasama sa winterization package ang:
 
 - Pagda-drain ng lahat ng tubig mula sa engine block, exhaust, at cooling system.
 - Paglalagay ng fuel stabilizer sa tangke para hindi masira ang gasolina habang nakaimbak.
 - Pag-fogging ng cylinders, isang protective oil mist na pumoprotekta sa loob ng makina laban sa kalawang.
 - Pagpalit ng lower unit gear oil, at pag-inspect sa seals para walang tubig na pumasok.
 - Pag-check ng propeller, skeg, at anode, at pag-lubricate ng grease fittings.
-- Idiskonekta ang battery at iwanan ito sa loob ng bangka sa ligtas na paraan.
+- Ang healthy na battery ay puwedeng manatili sa bangka kung fully charged, disconnected, secured, at permitted ng approved storage plan. Ang model/serial manual at approved storage plan ang masusunod.
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kaya huwag kang maghintay ng December bago mag-book. Maagang magpa-schedule para siguradong protektado ang motor bago mag-freeze.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -90,7 +90,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Drop-off at pick-up ang service sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay para mag-ayos o kumuha ng bangka. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
+Karaniwan naming maiaayos ang pickup ng bangka. Itanong sa amin kung available ito para sa bangka at lokasyon mo. Hindi nagde-deliver ang HBW ng bangka, hindi nagpapadala ng motor, hindi nag-aalok ng mobile, dockside, o on-site service, hindi nagrerekomenda ng transport providers, at hindi nagku-quote ng third-party transport. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 
@@ -125,7 +125,7 @@ Ang professional winterization ay binubuo ng pag-drain ng tubig, pag-fog sa cyli
 
 ### Saan ang winter storage ng bangka sa Ontario?
 
-Nag-aalok ang HBW ng winter storage sa aming marina sa Gores Landing, at puwedeng isabay ito sa winterization ng motor. Napupuno ang storage tuwing fall, kaya mag-book nang maaga bago ang December 1. Magtanong sa https://hbw.wiki/service.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ### Paano ayusin ang Mercury outboard?
 

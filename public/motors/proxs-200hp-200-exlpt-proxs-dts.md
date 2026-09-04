@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs-dts
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 91fd550e-a590-47ab-8e9e-e6ffa653965d
 slug: proxs-200hp-200-exlpt-proxs-dts
 family: Pro XS

@@ -232,7 +232,7 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
 - [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
 

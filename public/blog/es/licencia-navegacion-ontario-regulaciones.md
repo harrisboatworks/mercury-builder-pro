@@ -188,8 +188,8 @@ Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el co
 
 ¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---
 

@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/twin-to-single-big-block
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 case_study_id: CS12
 slug: twin-to-single-big-block
 boat_type: "23-foot cabin / walkaround"

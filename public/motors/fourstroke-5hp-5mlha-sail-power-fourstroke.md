@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-5hp-5mlha-sail-power-fourstroke
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 1be6c57f-b96b-4a69-b2ef-d209fa4b42fc
 slug: fourstroke-5hp-5mlha-sail-power-fourstroke
 family: FourStroke

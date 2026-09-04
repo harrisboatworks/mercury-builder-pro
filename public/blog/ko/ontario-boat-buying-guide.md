@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교
 description: "온타리오에서 보트를 처음 구매하려는 한인을 위한 실용 가이드. PCOC 취득, 보트 종류, 보관 방법, 연간 유지비, 신규 구매 vs 중고 vs 엔진 교체(repower)까지 한 번에 정리했습니다."
 category: "구매 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-26
 keywords: ["온타리오 보트 구매 가이드","캐나다 보트 구매","토론토 보트 입문","Ontario boat buying guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-04-12  
+**마지막 검토:** 2026-08-26  
 **Read time:** 12 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide
 
@@ -97,7 +97,7 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 - **트레일러로 집에 보관:** 가장 흔한 방식. 집 차고나 뒷마당에 두고, 출발 시 근처 boat launch로 견인.
 - **마리나 슬립:** 보트를 마리나에 상시 정박. 편하지만 연간 정박료 발생.
-- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 매년 약 584건의 겨울 정비와 311건의 보관 계약을 처리합니다.
+- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 2025년 8월부터 11월까지 완료된 584건의 윈터라이제이션 기록이 있습니다. 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
 
 ---
 
@@ -152,17 +152,17 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 ## 다음 단계
 
-**엔진 가격을 먼저 확인하고 싶다면:** 
+**엔진 가격을 먼저 확인하고 싶다면:**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격, 전화 불필요.
 
-**보트 재고 확인 또는 렌탈 체험:** 
+**보트 재고 확인 또는 렌탈 체험:**
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
-**서비스 예약:** 
+**서비스 예약:**
 [hbw.wiki/service](https://hbw.wiki/service)
 
-**전화:** 905-342-2153 
-**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+**전화:** 905-342-2153
+**주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 ---
 

@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 index_type: agent_catalog
 ---
 
@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.
 
 ## Business rules (apply to every entry)
 
@@ -206,7 +206,7 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario.md)
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide.md)
@@ -239,15 +239,15 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury ProKicker for Rice Lake Walleye](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md)
 - [Harris Boat Works Mercury Dealer Ontario](https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md)
 - [Best Mercury for Aluminum Boats 2026](https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md)
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md)
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md)
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md)
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md)
 - [Ontario Cottage Boat Motor Repower Guide (2026)](https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md)
 - [Best Mercury Outboard Setup for Rice Lake Fishing](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md)
 - [Boat Repower in the Kawarthas: Complete Guide](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md)
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md)
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md)
-- [Mercury for Center Console Boats Ontario](https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md)
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md)
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md)
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md)
 - [Tiller vs Remote Steering Outboard: Which to Choose (2026)](https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md)
 - [Mercury SeaPro Commercial Outboard Guide](https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md)
@@ -294,7 +294,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [What Happens During a Mercury Repower (Step-by-Step Process)](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md)
 - [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md)
 - [Used Outboard Buying Guide Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md)
-- [Trent-Severn Waterway 2026 Guide](https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md)
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md)
 - [Mercury Overheating Emergency Guide](https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md)
 - [Rice Lake Boating Guide 2026](https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md)
 - [MerCruiser Sterndrive Ontario Guide](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md)
@@ -319,7 +319,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Outboard vs Sterndrive 2026 Ontario](https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md)
 - [Used Boat Walkaround Ontario Guide](https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md)
 - [Docking a Boat in Wind: Rice Lake Guide](https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md)
-- [Pontoon HP Sizing Ontario Guide](https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md)
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md)
 - [Mercury Boat Battery Guide Ontario](https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md)
 - [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md)
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md)
@@ -332,7 +332,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Where to Launch Boat on Rice Lake](https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md)
 - [Mercury 9.9 EFI Review Ontario](https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md)
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
+- [Mercury 115 FourStroke Review 2026: Real Ontario Numbers](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
 - [Mercury 150 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md)
@@ -379,7 +379,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [How to Choose Repower Horsepower From Your Capacity Plate](https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md)
 - [Pontoon vs Aluminum vs V-Hull Repower](https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md)
 - [How Your Mercury Warranty Works After a Repower](https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario.md)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md)
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md)
 - [Is a Pontoon Right for Your Family?](https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md)
 - [Canada Day on Rice Lake: Boating Guide](https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend.md)
 - [Mercury Outboard Overheating at High Speed: What to Check](https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md)

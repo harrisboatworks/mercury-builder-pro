@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9-exlpt-command-thrust-prokicker-efi-fourstroke
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: d97e46f7-4845-46a5-80bd-847540c40581
 slug: fourstroke-9-9hp-9-9-exlpt-command-thrust-prokicker-efi-fourstroke
 family: FourStroke

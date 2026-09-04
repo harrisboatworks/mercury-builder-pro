@@ -143,7 +143,7 @@ For engine repairs, HBW services Mercury and MerCruiser products. You can book s
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
-- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
 - [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps

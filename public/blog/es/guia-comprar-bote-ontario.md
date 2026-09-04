@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario.md
-last_updated: 2026-08-15
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía completa para comprar un bote en Ontario"
 description: "Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares."
 category: "Guía de compra"
 date_published: 2026-04-12
-date_modified: 2026-08-15
+date_modified: 2026-08-26
 keywords: ["guía comprar bote Ontario","comprar bote en Canadá","primer bote Ontario","licencia de navegación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Guía de compra  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-15  
+**Última revisión:** 2026-08-26  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
 
@@ -39,7 +39,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -104,17 +104,17 @@ El pontón es excelente para familias que buscan comodidad y espacio. No es el m
 
 ### Opción 1: Bote nuevo
 
-**Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida 
+**Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida
 **Desventajas:** costo inicial más alto, depreciación en los primeros años
 
 En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
 
-**Ventajas:** precio menor, la depreciación inicial ya ocurrió 
+**Ventajas:** precio menor, la depreciación inicial ya ocurrió
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para reparaciones de motor, solamente damos servicio a Mercury y Mercruiser.
 
 Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
@@ -122,7 +122,7 @@ Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcacio
 
 Esta opción a menudo es pasada por alto pero puede ser la más inteligente. Si tienes un casco en buenas condiciones y el motor está al final de su vida útil, reemplazar solo el motor puede costar significativamente menos que comprar un conjunto nuevo, y te da un motor moderno con garantía completa.
 
-Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,220 CAD MSRP antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
+Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,030 CAD MSRP (115ELPT FourStroke, 1115F132D) antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
 
 ---
 
@@ -140,7 +140,7 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 | Mantenimiento / servicio | $200–$600 CAD |
 | Slip de marina / amarre | $1,000–$3,000+ CAD |
 
-Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+Harris Boat Works tiene **584 registros de preparación invernal completados entre agosto y noviembre de 2025**, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
 **Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
@@ -153,25 +153,25 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 78 años de operación continua en Rice Lake
+- 79 años de operación continua en Rice Lake
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
+Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
 ## Próximos pasos
 
-**¿Listo para configurar tu motor o explorar opciones?** 
+**¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---
 
