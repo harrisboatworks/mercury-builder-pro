@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 6448b9e0-2364-469f-819f-ef389e7e8103
 slug: proxs-300hp-300-exlpt-pro-xs
 family: Pro XS

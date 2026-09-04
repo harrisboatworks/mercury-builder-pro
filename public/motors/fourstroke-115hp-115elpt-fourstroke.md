@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: eee34e36-54e0-4563-b276-aa5c4f751798
 slug: fourstroke-115hp-115elpt-fourstroke
 family: FourStroke
