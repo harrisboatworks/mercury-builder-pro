@@ -4036,7 +4036,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-115-hp-fourstroke-review-ontario",
     "title": "Mercury 115 FourStroke Review 2026: Real Ontario Numbers",
-    "description": "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.",
+    "description": "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, real weights, documented speed tests and propeller advice.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-05-10",
     "keywords": [

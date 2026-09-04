@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-08-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury 115 FourStroke Review 2026: Real Ontario Numbers"
-description: "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice."
+description: "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, real weights, documented speed tests and propeller advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-07-27
+date_modified: 2026-08-31
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury 115 FourStroke Review 2026: Real Ontario Numbers
 
-> An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.
+> An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, real weights, documented speed tests and propeller advice.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-08-31  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
@@ -394,6 +394,10 @@ The current 2.1-litre family has been in use since 2014. In the manufacturer tes
 ### What does a Mercury 115 cost in Canada?
 
 Pricing varies by calibration, gearcase, shaft length and current Mercury programs. Use the live Canadian Mercury pricing reference for current HBW pricing, then build a complete quote with controls, rigging, propeller and installation.
+
+### What does CT mean on a Mercury 115?
+
+CT stands for Command Thrust. A 115 CT uses a larger gearcase with a lower 2.38:1 gear ratio and a bigger propeller, so it carries heavy loads better than the standard 2.07:1 case. It also weighs slightly more, about 165 kg (363 lb) against 163 kg (359 lb) for the lightest standard 20-inch configuration. Command Thrust suits pontoons and heavy workboats, while most recreational V-hulls are better on the standard gearcase. If you are not sure which one you have, call Harris Boat Works at 905-342-2153.
 
 ## Related guides
 
