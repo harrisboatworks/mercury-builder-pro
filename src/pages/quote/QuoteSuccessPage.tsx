@@ -8,6 +8,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { useQuote } from '@/contexts/QuoteContext';
 import { clearQuoteId, getQuoteId, trackClaritySubmission, trackEvent } from '@/lib/analytics';
+import { claimSavedQuotesForCurrentUser } from '@/lib/saved-quote-account';
 
 import { useNoIndex } from '@/hooks/useNoIndex';
 export default function QuoteSuccessPage() {
@@ -60,16 +61,10 @@ export default function QuoteSuccessPage() {
     const linkQuoteToUser = async () => {
       if (isOAuthCallback && user && referenceNumber !== 'PENDING') {
         try {
-          // Update saved_quotes to link to the new user
-          const { error: quoteError } = await supabase
-            .from('saved_quotes')
-            .update({ user_id: user.id })
-            .eq('email', user.email)
-            .is('user_id', null);
-          
-          if (quoteError) {
-            console.error('Error linking quote to user:', quoteError);
-          }
+          // The database function derives both identity and confirmed email
+          // from the authenticated session; no account identity comes from the
+          // browser request.
+          await claimSavedQuotesForCurrentUser();
 
           // Update profile with phone if available from OAuth user metadata or contact info
           const phone = contactInfo?.phone || user.user_metadata?.phone;
