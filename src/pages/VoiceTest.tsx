@@ -212,7 +212,9 @@ export default function VoiceTest() {
       // Fetch ephemeral token using the correct edge function
       const { data, error } = await supabase.functions.invoke('realtime-session');
       
-      if (error || !data?.client_secret?.value) {
+      // GA: top-level `value`; `client_secret.value` is the mirrored legacy shape.
+      const ephemeralKey = data?.value ?? data?.client_secret?.value;
+      if (error || !ephemeralKey) {
         updateStep('webrtc', { 
           status: 'failed',
           details: `Token error: ${error?.message || 'No token received'}`,
@@ -268,7 +270,7 @@ export default function VoiceTest() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               sdpOffer: localSdp,
-              ephemeralKey: data.client_secret.value,
+              ephemeralKey,
             }),
             signal: controller.signal,
           }
@@ -361,14 +363,15 @@ export default function VoiceTest() {
       // Fetch ephemeral token
       const { data, error } = await supabase.functions.invoke('realtime-session');
       
-      if (error || !data?.client_secret?.value) {
+      const ephemeralKey = data?.value ?? data?.client_secret?.value;
+      if (error || !ephemeralKey) {
         throw new Error('Failed to get session token');
       }
       
       diagnostics.tokenReceived = true;
       updateStep('playback', { status: 'running', details: 'Token received, establishing audio connection...' });
       
-      const EPHEMERAL_KEY = data.client_secret.value;
+      const EPHEMERAL_KEY = ephemeralKey;
       
       // Create peer connection with STUN servers (matches RealtimeVoice.ts)
       const pc = new RTCPeerConnection({
@@ -542,9 +545,16 @@ export default function VoiceTest() {
               diagnostics.sessionUpdated = true; // Mark as updated since we're skipping it
 
               const sess = event.session ?? event?.session;
-              diagnostics.sessionModalities = Array.isArray(sess?.modalities) ? sess.modalities : null;
-              diagnostics.sessionVoice = typeof sess?.voice === 'string' ? sess.voice : null;
-              diagnostics.sessionOutputFormat = typeof sess?.output_audio_format === 'string' ? sess.output_audio_format : null;
+              // GA moved these: modalities -> output_modalities, voice and
+              // output format -> audio.output.{voice,format}. Beta paths kept as
+              // fallbacks so the diagnostic still reports during rollout.
+              const gaModalities = sess?.output_modalities ?? sess?.modalities;
+              diagnostics.sessionModalities = Array.isArray(gaModalities) ? gaModalities : null;
+              const gaVoice = sess?.audio?.output?.voice ?? sess?.voice;
+              diagnostics.sessionVoice = typeof gaVoice === 'string' ? gaVoice : null;
+              const gaFormat = sess?.audio?.output?.format ?? sess?.output_audio_format;
+              diagnostics.sessionOutputFormat =
+                typeof gaFormat === 'string' ? gaFormat : (gaFormat?.type ?? null);
 
               console.log('[VoiceTest] Session created payload:', sess);
 
@@ -578,11 +588,9 @@ export default function VoiceTest() {
               }));
 
               // Force an audio+text response
+              // GA rejects ['audio','text']; the session's output_modalities governs.
               dc.send(JSON.stringify({
-                type: 'response.create',
-                response: {
-                  modalities: ['audio', 'text'],
-                }
+                type: 'response.create'
               }));
 
               updateStep('playback', { status: 'running', details: `Waiting for AI voice response... ${updateDiagnosticDetails()}` });
@@ -597,13 +605,17 @@ export default function VoiceTest() {
             }
             
             // Detect text-only response (no audio)
-            if (event.type === 'response.text.delta' || event.type === 'response.audio_transcript.delta') {
+            if (
+              event.type === 'response.text.delta' ||
+              event.type === 'response.output_audio_transcript.delta' ||
+              event.type === 'response.audio_transcript.delta'
+            ) {
               if (!diagnostics.receivedAudioDelta) {
                 diagnostics.receivedTextOnly = true;
               }
             }
             
-            if (event.type === 'response.audio.delta') {
+            if (event.type === 'response.output_audio.delta' || event.type === 'response.audio.delta') {
               diagnostics.receivedAudioDelta = true;
               diagnostics.receivedTextOnly = false;
               updateStep('playback', { 

@@ -17,6 +17,20 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// OpenAI Realtime GA API (migrated 2026-09-04).
+// The beta flow this function used - POST /v1/realtime/sessions with a flat
+// session body - was retired by OpenAI and now returns 404, which is why voice
+// was failing in production. GA mints ephemeral secrets at
+// /v1/realtime/client_secrets with the config nested under `session`, and audio
+// settings grouped under `session.audio.{input,output}` rather than the old flat
+// input_audio_format / output_audio_format / voice / turn_detection keys.
+const REALTIME_CLIENT_SECRETS_URL = "https://api.openai.com/v1/realtime/client_secrets";
+const REALTIME_MODEL = "gpt-realtime-2.1-mini";
+// GA rejects ["audio","text"] outright; only ["text"] or ["audio"] are valid.
+// ["audio"] still emits transcripts via the response.output_audio_transcript.* events.
+const REALTIME_OUTPUT_MODALITIES = ["audio"];
+const REALTIME_AUDIO_FORMAT = { type: "audio/pcm", rate: 24000 };
+
 // Input validation schema for realtime session context
 const sessionContextSchema = z.object({
   motorContext: z.object({
@@ -90,23 +104,32 @@ serve(async (req) => {
     console.log('[realtime-session] Fetched shared customer knowledge');
 
     // Request ephemeral token from OpenAI with FULL session configuration
-    const response = await fetch("https://api.openai.com/v1/realtime/sessions", {
+    const response = await fetch(REALTIME_CLIENT_SECRETS_URL, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${OPENAI_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "gpt-4o-realtime-preview-2024-10-01",
-        modalities: ["audio", "text"],
-        voice: "alloy",
-        input_audio_format: "pcm16",
-        output_audio_format: "pcm16",
-        turn_detection: {
-          type: "server_vad",
-          threshold: 0.5,
-          prefix_padding_ms: 300,
-          silence_duration_ms: 200,
+        session: {
+        type: "realtime",
+        model: REALTIME_MODEL,
+        output_modalities: REALTIME_OUTPUT_MODALITIES,
+        audio: {
+          input: {
+            format: REALTIME_AUDIO_FORMAT,
+            transcription: { model: "whisper-1" },
+            turn_detection: {
+              type: "server_vad",
+              threshold: 0.5,
+              prefix_padding_ms: 300,
+              silence_duration_ms: 200,
+            },
+          },
+          output: {
+            format: REALTIME_AUDIO_FORMAT,
+            voice: "alloy",
+          },
         },
         tools: [
           {
@@ -207,6 +230,7 @@ BLOG ARTICLE REFERENCE:
 Harris Boat Works publishes detailed guides on mercuryrepower.ca/blog. When a caller asks about a topic covered by one of these posts, mention the article and offer to text/email them the link (URL pattern: /blog/<slug>). Don't read long URLs out loud. Don't invent posts that aren't on this list:
 
 ${liveBlogTitleIndex}`
+        },
       }),
     });
 
@@ -219,7 +243,15 @@ ${liveBlogTitleIndex}`
     const data = await response.json();
     console.log("Realtime session created successfully");
 
-    return new Response(JSON.stringify(data), {
+    // GA returns the ephemeral secret as a top-level `value`. Older deployed
+    // frontend bundles still read `client_secret.value` (the beta shape), and a
+    // cached bundle would break the moment this deploys, so mirror both.
+    const payload = {
+      ...data,
+      client_secret: { value: data.value, expires_at: data.expires_at },
+    };
+
+    return new Response(JSON.stringify(payload), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
 
