@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Pontoon Outboard 2026: Mercury Buyer's Guide"
 description: "Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["best pontoon outboard mercury","mercury pontoon motor","pontoon repower mercury","command thrust pontoon","mercury 90 hp pontoon","mercury 115 hp pontoon","mercury 150 hp pontoon","pro xs pontoon boost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
 
@@ -49,7 +49,7 @@ Here is a planning grid for the first sizing conversation. The capacity plate an
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS range matched to the capacity plate and load |
 | 26 ft | 3 | 10+ adults | Higher-horsepower Pro XS range where the hull permits |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their lift-to-cruise dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
 

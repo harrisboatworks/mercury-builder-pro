@@ -10,12 +10,15 @@ import {
   MERCURY_PROMO_END_ISO,
 } from '@/lib/finance';
 import { getArticleBySlug } from './blogArticles';
+import { archivedBlogArticles } from './archivedBlogArticles';
 import {
   buildCanonicalBlogFinancingCopy,
   buildCanonicalBlogFinancingFaqCopy,
 } from './blogFinancingCopy';
 import { getCaseStudyBySlug } from './caseStudies';
 import { spanishBlogArticles } from './spanishBlogArticles';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { mandarinBlogArticles, ZH_LANGUAGE_NOTE } from './mandarinBlogArticles';
 
 const INLINE_CANONICAL_BODY = /^\s*\*\*Canonical URL:\*\*/m;
 const LIVE_RATE_TOKEN = /\{\{LIVE_RATE(?:_PCT)?\}\}/;
@@ -115,6 +118,8 @@ describe('public artifact regression', () => {
     expect(leakCheck).toContain('전체 기사');
     expect(leakCheck).toContain('CTA-prefixed authoring heading');
     expect(leakCheck).toContain('CTA-suffixed authoring heading');
+    expect(leakCheck).toContain('CTA-parenthetical authoring heading');
+    expect(leakCheck).toContain('Leftover Chinese internal-link authoring heading');
     expect(leakCheck).toContain('hbw-language-note');
     expect(leakCheck).toContain('Leftover heading-style language note');
     expect(leakCheck).toContain('Raw ::cta authoring fence in Markdown twin');
@@ -123,7 +128,10 @@ describe('public artifact regression', () => {
 
     const cleaner = read('src/lib/cleanBlogContent.js');
     expect(cleaner).toContain('내부 링크');
+    expect(cleaner).toContain('内部链接');
+    expect(cleaner).toContain('内部连结');
     expect(cleaner).toContain('CTA_SUFFIX_HEADING_RE');
+    expect(cleaner).toContain('CTA_PAREN_HEADING_RE');
 
     const packageJson = JSON.parse(read('package.json')) as {
       scripts: { build: string };
@@ -292,22 +300,23 @@ describe('public artifact regression', () => {
     expect(priceHygiene).toContain('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
   });
 
-  it('restores leftover #82 dealer metadata without the truncated Mississauga title or Port Hope closest claim', () => {
-    const mississauga = getArticleBySlug('mercury-dealer-mississauga-ontario-hbw');
+  it('keeps leftover #82 dealer metadata fixes in the archived Mississauga and Port Hope records', () => {
+    // Both city pages were retired in the 2026-09 blog audit and 301 to their
+    // winners; the #82 metadata repairs must survive in the archive.
+    expect(getArticleBySlug('mercury-dealer-mississauga-ontario-hbw')).toBeUndefined();
+    expect(getArticleBySlug('mercury-dealer-port-hope-ontario-hbw')).toBeUndefined();
+
+    const mississauga = archivedBlogArticles.find((a) => a.slug === 'mercury-dealer-mississauga-ontario-hbw');
     expect(mississauga).toBeDefined();
     expect(mississauga!.seoTitle).toBe('Mercury Dealer Near Mississauga | Harris Boat Works');
     expect(mississauga!.seoTitle).not.toBe('Mercury Repower Cost in Mississauga');
 
-    const portHope = getArticleBySlug('mercury-dealer-port-hope-ontario-hbw');
+    const portHope = archivedBlogArticles.find((a) => a.slug === 'mercury-dealer-port-hope-ontario-hbw');
     expect(portHope).toBeDefined();
     expect(portHope!.description).toBe(
       'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
     );
     expect(portHope!.description).not.toMatch(/closest Mercury Premier dealer for Port Hope/);
-
-    const twin = read('public/blog/mercury-dealer-port-hope-ontario-hbw.md');
-    expect(twin).toContain(portHope!.description);
-    expect(twin).not.toMatch(/^description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope/m);
   });
 
   it('repairs leftover #82 truncated metadata and broken table cells', () => {
@@ -327,7 +336,7 @@ describe('public artifact regression', () => {
     const trent = getArticleBySlug('trent-severn-waterway-boating-guide-2026');
     expect(trent).toBeDefined();
     expect(trent!.description).toBe(
-      'Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.',
+      "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.",
     );
     expect(trent!.description).not.toMatch(/By Harris Boat\.$/);
 
@@ -427,6 +436,25 @@ describe('public artifact regression', () => {
     expect(read('src/data/mandarinBlogArticles.ts')).toContain('> **关于语言的说明**');
   });
 
+  it('keeps leftover ZH language-note blockquotes in the twins that already have them in source', () => {
+    const noteHeading = '> **语言说明**';
+    const sourcesWithCanonNote = mandarinBlogArticles.filter((article) =>
+      article.content.includes(`${noteHeading}\n> ${ZH_LANGUAGE_NOTE}`),
+    );
+
+    expect(sourcesWithCanonNote.map((article) => article.slug).sort()).toEqual([
+      'gta-chinese-rice-lake-winter-storage-complete-guide',
+      'mercury-repower-guide-gta',
+      'rice-lake-fishing-guide-toronto-chinese',
+    ]);
+
+    for (const article of sourcesWithCanonNote) {
+      const twin = read(`public/blog/zh/${article.slug}.md`);
+      expect(twin, article.slug).toContain(noteHeading);
+      expect(twin, article.slug).toContain(ZH_LANGUAGE_NOTE);
+    }
+  });
+
   it('adds leftover localized AuthorByline labels without rewriting titles', () => {
     const byline = read('src/components/blog/AuthorByline.tsx');
     expect(byline).toContain('byLabel = \'By\'');
@@ -450,6 +478,41 @@ describe('public artifact regression', () => {
       expect(source, path).toContain('bioLabel=');
       expect(source, path).toContain(title);
     }
+  });
+
+  it('strips leftover Chinese internal-link lists and parenthetical CTA headings', () => {
+    const leftoverInternalHeading = /^##\s+(?:内部链接|内部连结)\s*$/m;
+    const leftoverCtaHeading = /^##\s+.+\s*[（(]CTA[）)]\s*$/m;
+    const twins = [
+      'public/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md',
+      'public/blog/zh/chinese-family-pontoon-mercury-outboard.md',
+      'public/blog/zh/mercury-115-vs-150-comparison-zh.md',
+      'public/blog/zh/rice-lake-fishing-guide-toronto-chinese.md',
+      'public/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md',
+      'public/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md',
+      'public/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md',
+    ];
+
+    for (const path of twins) {
+      const text = read(path);
+      expect(text, path).not.toMatch(leftoverInternalHeading);
+      expect(text, path).not.toMatch(leftoverCtaHeading);
+    }
+
+    const source = read('src/data/mandarinBlogArticles.ts');
+    expect(source).not.toMatch(leftoverCtaHeading);
+    expect(source).toContain('## 行动呼吁');
+
+    const cleanedLinks = cleanBlogContent(
+      '## 内部连结\n- [指南](/blog/zh/guide)\n\n## 行动呼吁（CTA）\n\n建立报价。',
+    );
+    expect(cleanedLinks).not.toMatch(leftoverInternalHeading);
+    expect(cleanedLinks).not.toContain('/blog/zh/guide');
+    expect(cleanedLinks).toBe('## 行动呼吁\n\n建立报价。');
+
+    const hygiene = read('scripts/check-blog-output-hygiene.ts');
+    expect(hygiene).toContain('leftover Chinese internal-link authoring heading');
+    expect(hygiene).toContain('leftover parenthetical CTA authoring heading');
   });
 
   it('keeps leftover Korean HP tildes from becoming GFM strikethrough', () => {

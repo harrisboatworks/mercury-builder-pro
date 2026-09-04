@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (
 description: "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["spring commissioning cost","boat spring startup cost ontario","de-winterize boat cost","spring boat service ontario","boat launch preparation cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
 
@@ -107,7 +107,7 @@ Spring startup at our shop is a real check, not an invoice line with a hopeful n
 
 ## Ready for Launch Day?
 
-If you are bringing us a boat, submit the service form about one to two weeks before your intended drop-off. Work is handled first-come, first-served. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -141,7 +141,7 @@ Most of it, yes; our spring checklist walks every step. The shop earns its hour 
 
 ### When should I submit a spring service request?
 
-HBW reopens in early April and handles service first-come, first-served. If you are bringing us a boat, complete hbw.wiki/service about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so earlier spring drop-offs leave more time if the check uncovers a repair.
+Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
 
 ### Why is my neighbour's spring bill higher than mine?
 

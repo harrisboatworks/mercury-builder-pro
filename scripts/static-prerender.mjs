@@ -21,6 +21,7 @@ import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
+import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
@@ -941,6 +942,43 @@ function loadBlogClusters() {
 }
 const blogClusterData = loadBlogClusters();
 console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
+
+// Load the five blog topic hubs (src/data/blogTopicHubs.ts) so the hub pages
+// (/blog/diagnostics, /blog/reviews, /blog/repower, /blog/rice-lake,
+// /blog/pricing) get real prerendered HTML. Without this, the hub URLs are in
+// the sitemap but Vercel has no dist/blog/{hub}/index.html and returns 404.
+// Names, titles, descriptions, intros, and article ordering all come from the
+// data module (single source of truth shared with BlogTopicHubPage.tsx).
+function loadBlogTopicHubs() {
+  const dumpScript = `
+    import { BLOG_TOPIC_HUBS, getHubArticles } from '../src/data/blogTopicHubs.ts';
+    const hubs = BLOG_TOPIC_HUBS.map(hub => {
+      const articles = getHubArticles(hub);
+      const anchorCount = hub.anchorSlugs.filter(s => articles.some(a => a.slug === s)).length;
+      return {
+        id: hub.id,
+        slug: hub.slug,
+        name: hub.name,
+        title: hub.title,
+        metaDescription: hub.metaDescription,
+        intro: hub.intro,
+        anchorCount,
+        articles: articles.map(a => ({ slug: a.slug, title: a.title })),
+      };
+    });
+    process.stdout.write(JSON.stringify(hubs));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-topic-hubs-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const blogTopicHubData = loadBlogTopicHubs();
+console.log(`[static-prerender] loaded ${blogTopicHubData.length} blog topic hubs (${blogTopicHubData.reduce((n, h) => n + h.articles.length, 0)} assigned articles)`);
+
 
 function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSlugs = []) {
   const siblings = explicitRelatedSlugs.length
@@ -4818,6 +4856,80 @@ const CONTACT_EXTRA = () => commercialBodyHtml({
   ],
 });
 
+// ============================================================
+// Blog topic hub routes — /blog/{diagnostics,reviews,repower,
+// rice-lake,pricing}. Mirrors src/pages/BlogTopicHubPage.tsx:
+// same <title> (hub.title), <h1> (hub.name), meta description,
+// canonical, and CollectionPage + BreadcrumbList + ItemList
+// JSON-LD, so the SSR-stamped head matches what Helmet renders
+// on hydration. The noscript body lists the hub's "Start here"
+// anchor posts and every remaining assigned post as real
+// <a href> links so crawlers see the internal links without JS.
+// All strings come from loadBlogTopicHubs() (blogTopicHubs.ts).
+// ============================================================
+const BLOG_TOPIC_HUB_ROUTES = blogTopicHubData.map((hub) => {
+  const hubPath = `/blog/${hub.slug}`;
+  const hubUrl = `${SITE_URL}${hubPath}`;
+  const descBySlug = new Map(blogArticles.map(a => [a.slug, a.description || '']));
+  const anchors = hub.articles.slice(0, hub.anchorCount);
+  const rest = hub.articles.slice(hub.anchorCount);
+  const asCard = (a) => ({
+    to: `/blog/${a.slug}`,
+    title: a.title,
+    description: descBySlug.get(a.slug) || '',
+  });
+  const schemas = [{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${hubUrl}#webpage`,
+        "name": hub.title,
+        "description": hub.metaDescription,
+        "url": hubUrl,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+            { "@type": "ListItem", "position": 3, "name": hub.name, "item": hubUrl },
+          ],
+        },
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": hub.articles.map((a, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `${SITE_URL}/blog/${a.slug}`,
+          "name": a.title,
+        })),
+      },
+    ],
+  }];
+  return {
+    path: hubPath,
+    canonical: hubPath,
+    title: hub.title,
+    description: hub.metaDescription,
+    h1: hub.name,
+    intro: hub.intro[0] || hub.metaDescription,
+    schemas,
+    extraNoscript: () =>
+      hub.intro.slice(1).map(p => `<p>${escapeHtml(p)}</p>`).join('') +
+      `<p>${hub.articles.length} guides in this collection.</p>` +
+      hubArticleListHtml([
+        { heading: 'Start here', cards: anchors.map(asCard) },
+        ...(rest.length ? [{ heading: `All ${hub.name} guides`, cards: rest.map(asCard) }] : []),
+      ]) +
+      `<p><a href="/blog">All blog guides</a></p>`,
+  };
+});
+
+
+
 const routes = [
 
   {
@@ -5122,6 +5234,8 @@ const routes = [
       return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
     }
   },
+  // Blog topic hub collection pages (see BLOG_TOPIC_HUB_ROUTES above).
+  ...BLOG_TOPIC_HUB_ROUTES,
   // ============================================================
   // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
   // Without these, Vercel's /blog/:slug rewrite would 404 the hub
@@ -6100,6 +6214,11 @@ const today = new Date().toISOString().split('T')[0];
 // with getStaticEntries() in src/utils/generateSitemap.ts.
 const staticSitemapEntries = [
   { loc: '/', priority: 1.0, changefreq: 'daily' },
+  { loc: '/blog/diagnostics', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/reviews', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/repower', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/rice-lake', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/pricing', priority: 0.75, changefreq: 'weekly' },
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
   { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-product-protection', priority: 0.85, changefreq: 'monthly' },
@@ -6119,7 +6238,7 @@ const staticSitemapEntries = [
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
   { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
-  { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/tools', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-10' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
@@ -6201,7 +6320,7 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: normalizeAuthoritativeDate(a.dateModified || a.datePublished),
   imageUrl: (a.socialImage || a.image)
     ? ((a.socialImage || a.image).startsWith('/') ? `${SITE_URL}${a.socialImage || a.image}` : (a.socialImage || a.image))
     : null,
@@ -6210,12 +6329,12 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
 
 const motorSitemapEntries = motorPageRoutes.map(r => {
   const rec = motorRecords.find(m => `/motors/${motorSlug(m.model_key)}` === r.path);
-  const lastmod = rec?.updated_at ? rec.updated_at.split('T')[0] : today;
+  const lastmod = normalizeAuthoritativeDate(rec?.updated_at);
   return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
 });
 
 const caseStudySitemapEntries = [
-  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   ...caseStudies.map((s) => {
     const imageUrl = s.heroImage
       ? (s.heroImage.startsWith('/') ? `${SITE_URL}${s.heroImage}` : s.heroImage)
@@ -6224,7 +6343,7 @@ const caseStudySitemapEntries = [
       loc: `/case-studies/${s.slug}`,
       priority: 0.75,
       changefreq: 'monthly',
-      lastmod: today,
+      lastmod: normalizeAuthoritativeDate(s.dateModified || s.datePublished),
       imageUrl,
       imageTitle: s.title,
     };
@@ -6232,27 +6351,29 @@ const caseStudySitemapEntries = [
 ];
 
 const locationSitemapEntries = [
-  { loc: '/locations', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/locations', priority: 0.8, changefreq: 'monthly' },
   ...locations.map((l) => ({
     loc: `/locations/${l.slug}`,
     priority: 0.8,
     changefreq: 'monthly',
-    lastmod: today,
   })),
 ];
 
 const multilingualBlogSitemapEntries = [
-  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}` })),
-  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
-  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
-  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
-  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
-  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
-  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
-  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
+  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}`, article: a })),
+  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}`, article: a })),
+  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}`, article: a })),
+  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}`, article: a })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}`, article: a })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}`, article: a })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}`, article: a })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}`, article: a })),
 ].map(r => ({
   loc: r.loc,
-  lastmod: today,
+  // Derive lastmod from the article, matching blogSitemapEntries above.
+  // check-blog-hreflang-registry.ts locks translated routes to the
+  // article's dateModified; a build-date fallback drifts on every deploy.
+  lastmod: normalizeAuthoritativeDate(r.article && (r.article.dateModified || r.article.datePublished)),
   priority: 0.6,
   changefreq: 'monthly',
 }));
@@ -6272,7 +6393,7 @@ function dedupeSitemapEntries(entries) {
 }
 
 const allSitemapEntries = dedupeSitemapEntries([
-  ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
+  ...staticSitemapEntries,
   ...blogSitemapEntries,
   ...multilingualBlogSitemapEntries,
   ...hardcodedMultilingualPages,
@@ -6301,8 +6422,9 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allSitemapEntries.map(e => {
   let block = `  <url>
-    <loc>${SITE_URL}${e.loc}</loc>
-    <lastmod>${e.lastmod || today}</lastmod>
+    <loc>${SITE_URL}${e.loc}</loc>`;
+  block += renderSitemapLastmod(e.lastmod);
+  block += `
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>`;
   if (e.imageUrl) {
@@ -6332,7 +6454,7 @@ console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries
 // HTML stays the canonical surface for humans + Google.
 // ============================================================
 
-const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
+const TWIN_DATE = today; // YYYY-MM-DD build stamp for generated Markdown twins only
 const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 
 function mdFrontmatter(canonicalPath, extraLines = []) {

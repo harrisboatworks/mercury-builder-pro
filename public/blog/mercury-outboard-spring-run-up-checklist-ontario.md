@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
@@ -75,7 +75,7 @@ A healthy motor should start within 3-5 seconds of cranking. If it cranks but wo
 
 A weak or intermittent water stream means the water pump impeller needs replacement, which is a routine $200-$400 service item we do dozens of times every spring.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **10. Idle check.** Let the motor idle for 2-3 minutes at the dock. Listen for unusual sounds (knocking, hissing, irregular firing) and watch for smoke beyond the normal first-start exhaust. Brief blue or white smoke at first start is normal as oil burns off. Continuous heavy smoke means something is wrong.
 

@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Pontoon HP Sizing Ontario Guide"
-description: "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes."
+title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
+description: "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork."
 category: "Mercury Outboards"
 date_published: 2026-03-26
 date_modified: 2026-08-26
@@ -19,9 +19,9 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Pontoon HP Sizing Ontario Guide
+# Pontoon HP Sizing: The Rice Lake Decision Tree by Length
 
-> Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
+> The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
@@ -98,7 +98,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ---
 
-![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 250–300 HP (24–26 ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 300–400+ HP (26+ ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 

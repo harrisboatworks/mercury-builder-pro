@@ -189,7 +189,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How far is Harris Boat Works from Peterborough?',
         paragraphs: [
-          'From downtown Peterborough the drive south to Gores Landing is about 35 minutes via Highway 28 South, ending at 5369 Harris Boat Works Rd on Rice Lake. Traffic is generally light outside cottage Friday afternoons. For the long-form directions and what to expect on arrival, see the [Peterborough dealer blog post](/blog/mercury-dealer-peterborough-ontario-hbw).',
+          'From downtown Peterborough the drive south to Gores Landing is about 35 minutes via Highway 28 South, ending at 5369 Harris Boat Works Rd on Rice Lake. Traffic is generally light outside cottage Friday afternoons. For the repower process and what to expect on arrival, see the [Kawarthas boat repower guide](/blog/complete-guide-boat-repower-kawarthas).',
           'We see Peterborough customers across two profiles. Some live in the city and keep a boat on Rice Lake or the Otonabee. Others live in the city, cottage on the Kawarthas, and trailer to us because they want a Mercury Premier shop with a real water test. Both groups make the same drive south.',
         ],
       },
@@ -224,7 +224,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     related: [
       { label: 'Live Mercury pricing reference', href: '/pricing-reference' },
       { label: 'Build a Mercury quote', href: '/quote/motor-selection' },
-      { label: 'Mercury dealer near Peterborough, full blog post', href: '/blog/mercury-dealer-peterborough-ontario-hbw' },
+      { label: 'Complete guide to a boat repower in the Kawarthas', href: '/blog/complete-guide-boat-repower-kawarthas' },
       { label: 'Mercury repower cost in Ontario (2026, CAD)', href: '/blog/mercury-repower-cost-ontario-2026-cad' },
       { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
       { label: 'Kawartha Lakes Mercury Outboards', href: '/locations/kawartha-lakes-mercury-outboards' },

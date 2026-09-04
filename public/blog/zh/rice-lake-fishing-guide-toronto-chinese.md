@@ -173,15 +173,6 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 ---
 
-## 内部连结
-
-- [新移民安大略省买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
-- [大多伦多华人买 Mercury 船外机指南](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
-- [多伦多到 Rice Lake 一日钓鱼游完整指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
-- [安省华人船主入门：PCOC、PCL、钓鱼证](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
-
----
-
 **相关文章**
 
 如果这次是先带家人来 Rice Lake 试试水，下面几篇可以接着看：
@@ -197,6 +188,9 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
+
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ## 准备出发？
 

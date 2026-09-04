@@ -129,6 +129,16 @@ Keep this heading.`;
         '## 내부 링크\n- 가이드\n\n## 본문\n\nKeep the body.',
       ),
     ).toBe('## 본문\n\nKeep the body.');
+    expect(
+      cleanBlogContent(
+        '## 内部连结\n- [指南](/blog/zh/guide)\n\n## 行动呼吁（CTA）\n\n建立报价。',
+      ),
+    ).toBe('## 行动呼吁\n\n建立报价。');
+    expect(
+      cleanBlogContent(
+        '## 内部链接\n- [指南](/blog/zh/guide)\n\n## 行动呼吁 (CTA)\n\n建立报价。',
+      ),
+    ).toBe('## 行动呼吁\n\n建立报价。');
   });
 
   it('strips customer-visible Canonical URL editorial lines', () => {

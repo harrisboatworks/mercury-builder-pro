@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-08-19
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-08-19
+date_modified: 2026-08-26
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-08-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
@@ -140,9 +140,9 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 - You cannot dress appropriately for the conditions
 - The motor is unreliable in cold
 
-When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. The battery may remain in the boat if disconnected and maintained according to its maker's instructions.
+When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
-Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
 
 ---
 

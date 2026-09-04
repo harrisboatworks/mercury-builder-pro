@@ -12,7 +12,7 @@ export const koreanBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/ko-ontario-boat-buying-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-04',
     publishDate: '2026-04-12',
     category: '구매 가이드',
     readTime: '12 분',
@@ -86,7 +86,7 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 - **트레일러로 집에 보관:** 가장 흔한 방식. 집 차고나 뒷마당에 두고, 출발 시 근처 boat launch로 견인.
 - **마리나 슬립:** 보트를 마리나에 상시 정박. 편하지만 연간 정박료 발생.
-- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 2025년 8월부터 11월까지 완료된 584건의 윈터라이제이션 기록이 있습니다. 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
+- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
 
 ---
 
@@ -352,7 +352,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
     image: '/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-04',
     publishDate: '2026-04-12',
     category: '정비 가이드',
     readTime: '9 분',
@@ -441,7 +441,7 @@ HBW 현장에서 에탄올 무첨가 연료를 판매합니다.
 - 연료 안정제 용량 오류 또는 기화기 처리 누락
 - 핵심 윤활 지점 누락
 
-HBW에는 2025년 8월부터 11월까지 완료된 584건의 윈터라이제이션 기록이 있으며, 기술자들은 Mercury 전 모델에 정통합니다.
+HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, Mercury 전 모델에 정통합니다.
 
 ## 겨울 정비 접수
 

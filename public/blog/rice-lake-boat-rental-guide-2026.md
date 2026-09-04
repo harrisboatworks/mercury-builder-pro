@@ -124,6 +124,39 @@ Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 1
 
 ---
 
+### A Sample GTA Day-Trip Itinerary
+
+**7:45 AM**. Leave central Toronto. Stop for coffee on the 401 east.
+**9:30 AM**. Arrive at HBW (5369 Harris Boat Works Rd, Gores Landing). Park, bathroom, snacks at the office.
+**9:45 AM**. Boat briefing + safety walkthrough.
+**10:00 AM**. On the water. Run east toward Hiawatha or west toward Bewdley.
+**11:30 AM**. First swim stop or fishing session.
+**12:30 PM**. Cruise to Bewdley shoreline. Lunch on board or anchor in a bay.
+**1:30 PM**. More fishing, swimming, or cruising.
+**2:30 PM**. Head back toward the marina.
+**3:00 PM**. Dock back at HBW.
+**3:30 PM**. Quick lunch at Lakeview Restaurant in Bewdley (5 min drive, on the lake).
+**4:30 PM**. Drive home.
+**6:00 PM**. Back in Toronto.
+
+Use the live rental rate and add the fuel you actually use. Include your travel, food, fishing-licence, and bait costs rather than relying on a generic family-day estimate.
+
+---
+
+## Things to Know About Rice Lake (the Hazards)
+
+Rice Lake is not flat-empty water. Two specific things to know:
+
+**1. The sunken railway.** A 19th-century railway line is submerged about 4 feet below surface across the middle of the lake (between Hiawatha and Harwood). It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
+
+**2. Weed beds.** Mid-summer, weed beds get thick in the bays. Avoid running through them at speed, they'll wrap your prop. Easy to navigate around once you see them; the briefing covers this.
+
+**3. Wind from the west.** Rice Lake's east-west orientation means a stiff west wind builds chop quickly across the open water. Check the morning forecast; if it's blowing 15+ knots from the west, plan a sheltered cove day rather than open-lake cruising.
+
+Outside the mapped hazards, continue to follow Ontario speed, wake, shoreline-distance, and safe-operation rules.
+
+---
+
 ## Ready to Get on the Water?
 
 Pick your boat and date, and the booking system shows you live availability and rates. Complete the required documents before arrival so check-in can proceed at the office and dock.
@@ -174,7 +207,6 @@ Yes, multi-day rentals can stay at your cottage dock for the duration, and you c
 - [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
 - [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
 - [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 
 ## Next steps
