@@ -28,6 +28,7 @@
     "check:blog-timeline-facts": "node scripts/check-blog-timeline-facts.mjs",
     "check:blog-credibility-anchors": "node scripts/check-blog-credibility-anchors.mjs",
     "check:maintenance-surface": "node scripts/check-maintenance-agent-surface.mjs",
+    "check:hbw-storage-policy": "node scripts/check-hbw-storage-policy.mjs",
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
     "check:pricing-drift": "node scripts/check-blog-pricing-drift.mjs",
     "check:blog-price-hygiene": "node scripts/check-blog-price-hygiene.mjs",
