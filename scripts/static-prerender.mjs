@@ -21,6 +21,7 @@ import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
+import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
@@ -6237,7 +6238,7 @@ const staticSitemapEntries = [
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
   { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
-  { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/tools', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-10' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
@@ -6319,7 +6320,7 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: normalizeAuthoritativeDate(a.dateModified || a.datePublished),
   imageUrl: (a.socialImage || a.image)
     ? ((a.socialImage || a.image).startsWith('/') ? `${SITE_URL}${a.socialImage || a.image}` : (a.socialImage || a.image))
     : null,
@@ -6328,12 +6329,12 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
 
 const motorSitemapEntries = motorPageRoutes.map(r => {
   const rec = motorRecords.find(m => `/motors/${motorSlug(m.model_key)}` === r.path);
-  const lastmod = rec?.updated_at ? rec.updated_at.split('T')[0] : today;
+  const lastmod = normalizeAuthoritativeDate(rec?.updated_at);
   return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
 });
 
 const caseStudySitemapEntries = [
-  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   ...caseStudies.map((s) => {
     const imageUrl = s.heroImage
       ? (s.heroImage.startsWith('/') ? `${SITE_URL}${s.heroImage}` : s.heroImage)
@@ -6342,7 +6343,7 @@ const caseStudySitemapEntries = [
       loc: `/case-studies/${s.slug}`,
       priority: 0.75,
       changefreq: 'monthly',
-      lastmod: today,
+      lastmod: normalizeAuthoritativeDate(s.dateModified || s.datePublished),
       imageUrl,
       imageTitle: s.title,
     };
@@ -6350,12 +6351,11 @@ const caseStudySitemapEntries = [
 ];
 
 const locationSitemapEntries = [
-  { loc: '/locations', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/locations', priority: 0.8, changefreq: 'monthly' },
   ...locations.map((l) => ({
     loc: `/locations/${l.slug}`,
     priority: 0.8,
     changefreq: 'monthly',
-    lastmod: today,
   })),
 ];
 
@@ -6373,7 +6373,7 @@ const multilingualBlogSitemapEntries = [
   // Derive lastmod from the article, matching blogSitemapEntries above.
   // check-blog-hreflang-registry.ts locks translated routes to the
   // article's dateModified; a build-date fallback drifts on every deploy.
-  lastmod: ((r.article && (r.article.dateModified || r.article.datePublished)) || today).split('T')[0],
+  lastmod: normalizeAuthoritativeDate(r.article && (r.article.dateModified || r.article.datePublished)),
   priority: 0.6,
   changefreq: 'monthly',
 }));
@@ -6393,7 +6393,7 @@ function dedupeSitemapEntries(entries) {
 }
 
 const allSitemapEntries = dedupeSitemapEntries([
-  ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
+  ...staticSitemapEntries,
   ...blogSitemapEntries,
   ...multilingualBlogSitemapEntries,
   ...hardcodedMultilingualPages,
@@ -6422,8 +6422,9 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allSitemapEntries.map(e => {
   let block = `  <url>
-    <loc>${SITE_URL}${e.loc}</loc>
-    <lastmod>${e.lastmod || today}</lastmod>
+    <loc>${SITE_URL}${e.loc}</loc>`;
+  block += renderSitemapLastmod(e.lastmod);
+  block += `
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>`;
   if (e.imageUrl) {
@@ -6453,7 +6454,7 @@ console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries
 // HTML stays the canonical surface for humans + Google.
 // ============================================================
 
-const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
+const TWIN_DATE = today; // YYYY-MM-DD build stamp for generated Markdown twins only
 const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 
 function mdFrontmatter(canonicalPath, extraLines = []) {

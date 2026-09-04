@@ -11,6 +11,7 @@ import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
 import { getBlogHreflangAlternates } from '../data/blogI18nRegistry.js';
 import { BLOG_TOPIC_HUBS } from '../data/blogTopicHubs';
+import { renderSitemapLastmod } from '../../scripts/lib/sitemap-lastmod.mjs';
 
 // Multilingual blog index pages and standalone hardcoded translated posts.
 // Translated posts are emitted at /blog/{lang}/{slug} with a lower priority than
@@ -130,8 +131,9 @@ function renderSitemapXml(entries: SitemapEntry[]): string {
   const urlEntries = unique
     .map((entry) => {
       let xml = `  <url>
-    <loc>${BASE_URL}${entry.loc}</loc>
-    <lastmod>${entry.lastmod}</lastmod>
+    <loc>${BASE_URL}${entry.loc}</loc>`;
+      xml += renderSitemapLastmod(entry.lastmod);
+      xml += `
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority}</priority>`;
 
@@ -377,6 +379,7 @@ export async function generateFullSitemapXML(): Promise<string> {
     { loc: '/case-studies', changefreq: 'monthly', priority: 0.8 },
     ...caseStudies.map((study) => ({
       loc: `/case-studies/${study.slug}`,
+      lastmod: study.dateModified || study.datePublished,
       changefreq: 'monthly' as const,
       priority: 0.75,
       image: study.heroImage
