@@ -6399,7 +6399,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'best-mercury-outboard-pontoon-boats',
     seoTitle: "Best Mercury for a Pontoon: HP by Length + Command Thrust",
-    title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)",
+    title: "Best Mercury for a Pontoon: HP by Length + Command Thrust",
     description: "For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower.",
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
     imageAlt: 'A family cruising on a freshwater lake in a pontoon powered by a Mercury 90 HP Command Thrust FourStroke outboard',
@@ -8142,7 +8142,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-fuel-efficiency-guide',
     seoTitle: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)",
     relatedSlugs: ['mercury-propeller-selection-guide', 'fourstroke-vs-pro-xs', 'breaking-in-new-mercury-motor-guide'],
-    title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
+    title: 'Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)',
     description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.",
     image: '/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero.jpg',
     imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 24.6 L/h (6.5 US gal/h) fuel flow at 4200 RPM and 28 MPH.",
@@ -8376,7 +8376,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 12: March 23, 2026
   {
     slug: 'center-console-mercury-motor-guide',
-    title: 'Mercury for Center Console Boats Ontario',
+    title: 'Best Mercury for a Center Console 2026: 115 HP to Quad V10',
     seoTitle: "Best Mercury for a Center Console 2026: 115 HP to Quad V10",
     description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.",
     image: '/lovable-uploads/center-console-mercury-hero.jpg',
@@ -17659,7 +17659,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
   {
     slug: "trent-severn-waterway-boating-guide-2026",
     relatedSlugs: ['rice-lake-boating-guide-2026', 'rice-lake-boat-launch-guide', '2026-rice-lake-fishing-season-outlook'],
-    title: 'Trent-Severn Waterway 2026 Guide',
+    title: 'Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan',
     seoTitle: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan",
     description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.",
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
@@ -22978,7 +22978,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'pontoon-hp-sizing-decision-tree-ontario',
-    title: 'Pontoon HP Sizing Ontario Guide',
+    title: 'Pontoon HP Sizing: The Rice Lake Decision Tree by Length',
     seoTitle: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length",
     description: "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.",
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
@@ -26312,7 +26312,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: "mercury-115-hp-fourstroke-review-ontario",
     relatedSlugs: ['mercury-150-hp-fourstroke-pro-xs-review-ontario', 'mercury-90-hp-fourstroke-review-ontario', 'fourstroke-vs-pro-xs', 'mercury-command-thrust-complete-guide-2026', 'mercury-propeller-selection-guide'],
-    title: 'Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust',
+    title: 'Mercury 115 FourStroke Review 2026: Real Ontario Numbers',
     seoTitle: "Mercury 115 FourStroke Review 2026: Real Ontario Numbers",
     description: "An honest Mercury 115 review from the dealer floor: FourStroke vs Pro XS vs Command Thrust, real weights, documented speed tests and prop advice.",
     image: "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising.png",
@@ -34866,7 +34866,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
   },
   {
     slug: "mercury-outboard-weight-chart",
-    title: "Mercury Outboard Weight Chart (2.5 to 300 HP)",
+    title: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights",
     seoTitle: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights",
     description: "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.",
     image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
