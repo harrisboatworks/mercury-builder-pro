@@ -1,9 +1,12 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+const WRITE_ACTIONS = new Set(['save_message', 'ensure', 'reaction', 'clear']);
 
 interface ChatHistoryRequest {
   session_id: string;
@@ -44,6 +47,16 @@ Deno.serve(async (req) => {
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+
+    const isWrite = WRITE_ACTIONS.has(action);
+    // Keep the shared buckets IP-scoped: `ensure` accepts client-generated opaque
+    // session IDs, so keying only by session would let abusive callers rotate IDs.
+    const allowed = await checkRateLimit(req, {
+      action: isWrite ? 'chat_history_write' : 'chat_history_read',
+      maxAttempts: isWrite ? 60 : 120,
+      windowMinutes: 10,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
