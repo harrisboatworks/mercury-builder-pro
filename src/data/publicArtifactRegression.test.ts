@@ -396,6 +396,27 @@ describe('public artifact regression', () => {
     expect(brandPage).not.toMatch(leftover);
   });
 
+  it('localizes leftover Korean CTA headings to 다음 단계', () => {
+    const leftoverCta = /^## CTA\s*$/m;
+    const source = read('src/data/koreanBlogArticles.ts');
+    expect(source).not.toMatch(leftoverCta);
+    expect(source).toContain('## 다음 단계');
+
+    const twins = [
+      'public/blog/ko/rice-lake-fishing-guide.md',
+      'public/blog/ko/mercury-115-vs-150-comparison.md',
+      'public/blog/ko/ontario-boating-licence-regulations.md',
+      'public/blog/ko/repower-vs-new-boat.md',
+      'public/blog/ko/ontario-boat-buying-guide.md',
+    ];
+
+    for (const path of twins) {
+      const text = read(path);
+      expect(text, path).not.toMatch(leftoverCta);
+      expect(text, path).toContain('## 다음 단계');
+    }
+  });
+
   it('finishes leftover Korean 115-vs-150 hull-length dashes in the quick answer', () => {
     const source = read('src/data/koreanBlogArticles.ts');
     const twin = read('public/blog/ko/mercury-115-vs-150-comparison.md');
