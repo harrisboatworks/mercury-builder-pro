@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 72273ae3-3bc8-4fd9-a529-5bb3bea87578
 slug: fourstroke-250hp-250cxxl-fourstroke
 family: FourStroke

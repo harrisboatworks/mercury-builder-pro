@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 91fee167-20c2-4d7b-8569-b8270241e8fd
 slug: fourstroke-30hp-30-elpt-fourstroke
 family: FourStroke
