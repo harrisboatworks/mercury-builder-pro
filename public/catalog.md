@@ -4,9 +4,9 @@ last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 index_type: agent_catalog
 ---
 
@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.
 
 ## Business rules (apply to every entry)
 
@@ -206,7 +206,7 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario.md)
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide.md)
