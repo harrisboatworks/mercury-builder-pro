@@ -1308,6 +1308,7 @@ export type Database = {
           resume_token: string | null
           source_url: string | null
           status: Database["public"]["Enums"]["financing_application_status"]
+          submission_id: string | null
           updated_at: string
           user_id: string | null
         }
@@ -1336,6 +1337,7 @@ export type Database = {
           resume_token?: string | null
           source_url?: string | null
           status?: Database["public"]["Enums"]["financing_application_status"]
+          submission_id?: string | null
           updated_at?: string
           user_id?: string | null
         }
@@ -1364,6 +1366,7 @@ export type Database = {
           resume_token?: string | null
           source_url?: string | null
           status?: Database["public"]["Enums"]["financing_application_status"]
+          submission_id?: string | null
           updated_at?: string
           user_id?: string | null
         }

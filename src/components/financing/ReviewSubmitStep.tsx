@@ -16,7 +16,7 @@ import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId
 import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -29,6 +29,7 @@ export function ReviewSubmitStep() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const submissionIdRef = useRef(crypto.randomUUID());
   const { getChooseOneOptions } = useActivePromotions({ forceRefresh: true });
   const activeNoPaymentsOption = getChooseOneOptions().find((option) => option.id === 'no_payments');
 
@@ -158,6 +159,7 @@ export function ReviewSubmitStep() {
         const result = await submitFinancingApplication({
           applicationId: state.applicationId,
           resumeToken: state.resumeToken,
+          submissionId: submissionIdRef.current,
           applicantSinEncrypted,
           coApplicantSinEncrypted,
           application: {
