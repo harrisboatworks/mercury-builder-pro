@@ -255,7 +255,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.*
+*Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
 ---
 
