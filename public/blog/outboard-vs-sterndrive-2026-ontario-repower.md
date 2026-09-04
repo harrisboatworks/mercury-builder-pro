@@ -263,7 +263,7 @@ Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](http
 
 ### Should I repower my sterndrive with an outboard or another sterndrive?
 
-In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now over 80 percent of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on reliability, fuel economy, and resale. Big high-deadrise cruisers and dedicated tow boats are the exception.
+In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now the clear majority of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on reliability, fuel economy, and resale. Big high-deadrise cruisers and dedicated tow boats are the exception.
 
 ### When does it still make sense to keep a sterndrive?
 
