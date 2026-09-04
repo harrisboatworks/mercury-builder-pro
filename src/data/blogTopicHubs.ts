@@ -45,7 +45,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     metaDescription:
       'Beep codes, overheat alarms, no-start mornings: our Mercury diagnostic and maintenance guides, written from real repair jobs at our Rice Lake shop.',
     intro: [
-      "Most \"dead\" outboards we see aren't dead. They're telling you exactly what's wrong, in beeps, codes and warning horns, and nobody handed you the decoder ring.",
+      "Most \"dead\" outboards we see aren't dead. They're telling you exactly what's wrong, in beeps, codes and warning horns, and most people just never got the chart.",
       "These guides collect what our techs check first: alarm and beep codes, overheating at idle and at speed, fuel trouble after a winter of sitting, impellers, oil capacities and honest maintenance intervals. If your motor is talking to you, start with the beep code guide. If it's saying nothing at all, start with the won't-start guide.",
       "When a guide points to a repair beyond a driveway fix, book it at hbw.wiki/service and we'll get you on the schedule. One note before you plan: the marina is closed December 1 to April 1, so anything you find over the winter gets booked for a spring slot.",
     ],
@@ -68,7 +68,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
       'Mercury outboard reviews and head-to-head comparisons from a dealer that water-tests what it rigs: FourStroke vs Pro XS, 90 vs 115, SmartCraft and more.',
     intro: [
       "Spec sheets don't tell you how a motor behaves with four people and a cooler aboard. Lake tests do.",
-      "Every review and comparison here comes from motors we rig and run on Rice Lake: FourStroke vs Pro XS, 90 vs 115, VesselView vs SmartCraft, and where Command Thrust actually earns its keep. We're a Mercury dealer, so we won't pretend to be neutral about brands. What we will do is tell you which Mercury not to buy for your boat, because a wrong motor is bad for both of us.",
+      "The reviews and comparisons here come out of our shop and our runs on Rice Lake: FourStroke vs Pro XS, 90 vs 115, VesselView vs SmartCraft, and where Command Thrust actually earns its keep. We're a Mercury dealer, so we won't pretend to be neutral about brands. What we will do is tell you which Mercury not to buy for your boat, because a wrong motor is bad for both of us.",
       "If you're stuck between two motors, start with the head-to-head guides below. When you've picked a winner, you can price it in real Canadian dollars at mercuryrepower.ca, no forms first.",
     ],
     anchorSlugs: [
@@ -92,8 +92,8 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     metaDescription:
       'Repower and motor-buying guides for Ontario boaters: hull checks, horsepower sizing, shaft length, motor weight and what install day actually looks like.',
     intro: [
-      'A good hull outlives its motor, sometimes two or three of them. That is why repowering, hanging a new outboard on a boat you already love, is most of what we do.',
-      'These guides walk the whole decision in order: whether your hull is worth repowering, how to size horsepower from the capacity plate, getting shaft length and motor weight right, when Command Thrust beats a standard gearcase, and what actually happens on install day. The buying guides cover pontoons, bass boats, centre consoles, tillers and kickers, because the right motor depends on the boat behind it.',
+      'A good hull outlives its motor, sometimes two or three of them. That is why repowering, hanging a new outboard on a boat you already love, is a big part of what we do.',
+      'These guides walk the whole decision in order: whether your hull is worth repowering, how to size horsepower from the capacity plate, getting shaft length and motor weight right, when Command Thrust beats a standard gearcase, and what actually happens on install day. The buying guides cover pontoons, bass boats, centre consoles, tillers and kickers, because the right motor depends on the hull carrying it.',
       'When you are ready for numbers instead of theory, the configurator at mercuryrepower.ca builds a real CAD quote for your boat in a few minutes.',
     ],
     anchorSlugs: [
@@ -120,7 +120,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     intro: [
       'Rice Lake looks calm from the launch ramp. Then a west wind stacks rollers over the sunken railway causeway and your easy afternoon turns into a boat-handling lesson.',
       'This is our home water. Harris Boat Works has been on the south shore at Gores Landing since 1947, and these guides cover what living here teaches you: where to launch, how to dock when the wind is up, what the fishing seasons look like, pontoon life, the Trent-Severn Waterway, and the trailer trip up from Toronto and the GTA.',
-      "Thinking about renting before you buy, or sorting out storage before the snow? Those guides live here too. And if a trip brings you past Gores Landing, the coffee at the marina is usually on.",
+      "Thinking about renting before you buy, or sorting out storage before the snow? Those guides live here too.",
     ],
     anchorSlugs: [
       'trent-severn-waterway-boating-guide-2026',
