@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-08-26
+last_updated: 2026-09-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-08-26
+date_modified: 2026-09-04
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-04  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -60,14 +60,14 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 | Motor Category | MSRP Range (CAD) |
 |----------------|------------|
 | 2.5-20hp portable / tiller | $1,385-$6,085 |
-| 25-60hp FourStroke | $5,860-$14,545 |
+| 25-60hp FourStroke | $5,425-$14,545 |
 | 75-115hp FourStroke | $16,125-$19,930 |
 | 115hp Pro XS | $19,485-$20,385 |
 | 150hp FourStroke / Pro XS | $24,780-$27,265 |
 | 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
 | 300hp FourStroke | $40,575-$42,935 |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 *The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
@@ -163,7 +163,7 @@ Oil, gear lube, plugs, water pump check. Keep the records; documented service pr
 
 ### Dealer Promotional Programs
 
-Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions.
+Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 **Current warranty position (verified July 2026)**:
 - Mercury's standard Canadian limited factory warranty is 3 years
@@ -177,7 +177,7 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 ### Financing Your Mercury
 
-**Current promotional financing (as of September 2026)**:
+**Current promotional financing**:
 - TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
 - Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
 - Financing minimum $5,000 before tax
