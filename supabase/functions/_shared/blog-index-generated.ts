@@ -3529,7 +3529,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Should I repower my sterndrive with an outboard or another sterndrive?",
-        "a": "In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now over 80 percent of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on r…"
+        "a": "In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now the clear majority of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins o…"
       },
       {
         "q": "When does it still make sense to keep a sterndrive?",
