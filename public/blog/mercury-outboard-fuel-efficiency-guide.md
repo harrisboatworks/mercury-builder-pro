@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
+title: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)"
 description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats."
 category: "Tips"
 date_published: 2026-03-16
@@ -19,7 +19,7 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury Outboard Fuel Economy: How to Get Better MPG
+# Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)
 
 > Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.
 
