@@ -24,6 +24,8 @@ on:
       - 'scripts/check-hbw-storage-policy.mjs'
       - 'scripts/lib/hbw-storage-policy.mjs'
       - 'src/test/hbwStoragePolicy.test.ts'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/hbw-storage-policy-canary.yml'
   schedule:
     # Daily external-source drift check at 09:23 ET (summer).

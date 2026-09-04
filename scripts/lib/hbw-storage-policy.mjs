@@ -4,19 +4,33 @@ export const HBW_STORAGE_FAQ_QUESTION = 'Do you offer boat storage?';
 
 const FORBIDDEN_INDOOR_STORAGE_CLAIMS = [
   {
-    label: 'indoor-and-outdoor storage offer',
+    label: 'affirmative HBW indoor-storage offer',
     pattern:
-      /\b(?:both\s+)?indoor\s*(?:and|or|&|\/)\s*outdoor\s+(?:boat\s+)?storage(?:\s+options?)?\b/i,
+      /(?<!does )\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has|can accommodate)\s+(?:(?!(?:\bno\b|\bnot\b|don['’]t))[^.!?]){0,80}\b(?:indoor|heated|climate[- ]controlled)\b[^.!?]{0,60}\bstorage\b/i,
   },
   {
     label: 'affirmative HBW indoor-storage offer',
     pattern:
-      /\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has)\s+(?:both\s+)?(?:indoor|heated|climate[- ]controlled)\s+(?:boat\s+|winter\s+|boat winter\s+)?storage\b/i,
+      /(?<!does )\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has)\s+(?!no\b|not\b)(?:boat\s+|winter\s+|boat winter\s+)?storage\s+(?:both\s+)?(?:indoors?|heated|climate[- ]controlled)\b/i,
   },
   {
     label: 'affirmative HBW indoor-storage offer',
     pattern:
-      /\b(?:Harris Boat Works|HBW|we)\s+(?:currently\s+)?(?:offer|offers|provide|provides|have|has)\s+(?:boat\s+|winter\s+|boat winter\s+)?storage\s+(?:both\s+)?(?:indoors?|heated|climate[- ]controlled)\b/i,
+      /\bour storage options?\s+(?:include|includes|feature|features)\s+(?:(?!(?:\bno\b|\bnot\b))[^.!?]){0,80}\b(?:indoor|heated|climate[- ]controlled)\b/i,
+  },
+  {
+    label: 'affirmative HBW indoor-storage offer',
+    pattern:
+      /\bindoor(?:\s+(?:and|or|&|\/)\s+outdoor)?\s+(?:boat\s+|winter\s+|boat winter\s+)?storage\s+(?:is|are)\s+(?:now\s+)?available\s+at\s+(?:Harris Boat Works|HBW)\b/i,
+  },
+  {
+    label: 'affirmative HBW indoor-storage offer',
+    pattern:
+      /\bboats?\s+(?:are|can be)\s+stored\s+(?:securely\s+)?(?:inside|indoors)\s+(?:for winter\s+)?at\s+(?:Harris Boat Works|HBW)\b/i,
+  },
+  {
+    label: 'indoor_storage true flag',
+    pattern: /\bindoor_storage\s*[:=]\s*true\b/i,
   },
 ];
 
@@ -68,41 +82,6 @@ export function evaluateHbwStoragePolicy(policySource) {
   return {
     ok: failures.length === 0,
     storageFaqDetected: faqWindow !== null,
-    failures,
-  };
-}
-
-export function evaluateHbwStorageFaqEntries(entries, { requireExpectedFaq = true } = {}) {
-  const normalizedEntries = entries.map((entry) => ({
-    question: String(entry?.question ?? ''),
-    answer: String(entry?.answer ?? ''),
-  }));
-  const failures = [];
-
-  for (const entry of normalizedEntries) evaluateForbiddenClaims(entry.answer, failures);
-
-  const expectedEntries = normalizedEntries.filter(
-    (entry) => entry.question.trim().toLowerCase() === HBW_STORAGE_FAQ_QUESTION.toLowerCase(),
-  );
-  if (requireExpectedFaq && expectedEntries.length === 0) {
-    failures.push(`Rendered schema is missing the expected "${HBW_STORAGE_FAQ_QUESTION}" FAQ.`);
-  }
-  if (expectedEntries.length > 1) {
-    failures.push(`Rendered schema contains ${expectedEntries.length} copies of the expected storage FAQ.`);
-  }
-
-  for (const entry of expectedEntries) {
-    for (const signal of REQUIRED_STORAGE_FAQ_SIGNALS) {
-      if (!signal.pattern.test(entry.answer)) {
-        failures.push(`The rendered storage FAQ is missing the ${signal.label}.`);
-      }
-    }
-  }
-
-  return {
-    ok: failures.length === 0,
-    storageFaqDetected: expectedEntries.length > 0,
-    expectedFaqCount: expectedEntries.length,
     failures,
   };
 }

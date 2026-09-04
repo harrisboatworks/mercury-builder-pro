@@ -4,12 +4,25 @@ import {
 } from './lib/hbw-storage-policy.mjs';
 import { readFile } from 'node:fs/promises';
 
-const REPOSITORY_POLICY_SURFACES = [
-  'public/maintenance.md',
-  'public/.well-known/brand.json',
-  'src/data/faqData.ts',
-  'src/data/harrisBoatWorksBrandPage.js',
-];
+const REPOSITORY_POLICY_SURFACES = {
+  'public/maintenance.md': [
+    /indoor_storage:\s*false/i,
+    /outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+    /no indoor or heated boat storage/i,
+  ],
+  'public/.well-known/brand.json': [
+    /Outdoor winter boat storage \(shrink wrap, uncovered, or wrap-only\)/,
+    /no indoor or heated storage/i,
+  ],
+  'src/data/faqData.ts': [
+    /offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+    /do not offer indoor or heated boat storage/i,
+  ],
+  'src/data/harrisBoatWorksBrandPage.js': [
+    /outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service/i,
+    /Outdoor winter storage \(shrink wrap, uncovered, or wrap-only\)/,
+  ],
+};
 
 const GTM_CONTAINER_ID = process.env.HBW_GTM_CONTAINER_ID || 'GTM-5TTNCRJ';
 const GTM_URL = new URL('https://www.googletagmanager.com/gtm.js');
@@ -33,27 +46,36 @@ const source = await response.text();
 const result = evaluateHbwStoragePolicy(source);
 const resourceVersion = source.match(/"version":"(\d+)"/)?.[1] ?? null;
 const repositoryChecks = await Promise.all(
-  REPOSITORY_POLICY_SURFACES.map(async (path) => ({
-    path,
-    result: evaluateHbwStoragePolicy(await readFile(path, 'utf8')),
-  })),
+  Object.entries(REPOSITORY_POLICY_SURFACES).map(async ([path, requiredPatterns]) => {
+    const contents = await readFile(path, 'utf8');
+    return {
+      path,
+      result: evaluateHbwStoragePolicy(contents),
+      missingRequiredSignals: requiredPatterns
+        .filter((pattern) => !pattern.test(contents))
+        .map((pattern) => pattern.toString()),
+    };
+  }),
 );
-const repositoryFailures = repositoryChecks.flatMap(({ path, result: check }) =>
-  check.failures.map((failure) => `${path}: ${failure}`),
-);
+const repositoryFailures = repositoryChecks.flatMap(({ path, result: check, missingRequiredSignals }) => [
+  ...check.failures.map((failure) => `${path}: ${failure}`),
+  ...missingRequiredSignals.map((signal) => `${path}: missing required policy signal ${signal}`),
+]);
 
 const output = {
   checkedAt: new Date().toISOString(),
   containerId: GTM_CONTAINER_ID,
   resourceVersion,
-  sourceUrl: GTM_URL.origin + GTM_URL.pathname,
+  requestedSourceUrl: GTM_URL.toString(),
+  responseUrl: response.url,
   canonicalPolicyUrl: HBW_STORAGE_POLICY_URL,
   httpStatus: response.status,
   storageFaqDetected: result.storageFaqDetected,
-  repositorySurfaces: REPOSITORY_POLICY_SURFACES,
-  ok: response.ok && result.ok && result.storageFaqDetected && repositoryFailures.length === 0,
+  repositorySurfaces: Object.keys(REPOSITORY_POLICY_SURFACES),
+  ok: response.ok && resourceVersion !== null && result.ok && result.storageFaqDetected && repositoryFailures.length === 0,
   failures: [
     ...(response.ok ? [] : [`GTM returned HTTP ${response.status}.`]),
+    ...(resourceVersion === null ? ['Public GTM source did not expose a resource version.'] : []),
     ...(result.storageFaqDetected
       ? []
       : [`Public GTM is missing the expected "Do you offer boat storage?" FAQ.`]),

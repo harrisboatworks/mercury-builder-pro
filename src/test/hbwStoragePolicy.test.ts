@@ -1,9 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import {
-  evaluateHbwStorageFaqEntries,
-  evaluateHbwStoragePolicy,
-} from '../../scripts/lib/hbw-storage-policy.mjs';
+import { evaluateHbwStoragePolicy } from '../../scripts/lib/hbw-storage-policy.mjs';
 
 const safeStorageFaq = `
   "name": "Do you offer boat storage?",
@@ -30,7 +27,7 @@ describe('HBW cross-site storage policy', () => {
     `);
 
     expect(result.ok).toBe(false);
-    expect(result.failures).toContain('Policy source contains an indoor-and-outdoor storage offer.');
+    expect(result.failures).toContain('Policy source contains an affirmative HBW indoor-storage offer.');
   });
 
   it('allows comparison content that does not claim HBW offers indoor storage', () => {
@@ -49,8 +46,25 @@ describe('HBW cross-site storage policy', () => {
     'We offer indoor/outdoor storage options.',
     'HBW provides heated winter storage.',
     'Harris Boat Works has boat storage indoors.',
+    'We offer secure indoor storage and outdoor storage.',
+    'We offer covered and heated indoor winter storage.',
+    'Our storage options include indoor and outdoor facilities.',
+    'Indoor and outdoor winter storage are available at Harris Boat Works.',
+    'Harris Boat Works can accommodate boats in climate-controlled indoor storage.',
+    'Boats are stored inside for winter at HBW.',
+    'indoor_storage: true',
   ])('rejects an affirmative offer paraphrase: %s', (answer) => {
     expect(evaluateHbwStoragePolicy(answer).ok).toBe(false);
+  });
+
+  it.each([
+    'Do you offer indoor or outdoor storage?',
+    'Does Harris Boat Works offer indoor storage?',
+    'We do not offer both indoor and outdoor storage; storage is outdoor only.',
+    "We don't offer indoor or heated storage.",
+    'We offer outdoor storage and do not have indoor storage.',
+  ])('allows questions and denials: %s', (text) => {
+    expect(evaluateHbwStoragePolicy(text).failures).toEqual([]);
   });
 
   it('requires the full outdoor-only clarification when the GTM storage FAQ exists', () => {
@@ -61,15 +75,6 @@ describe('HBW cross-site storage policy', () => {
 
     expect(result.ok).toBe(false);
     expect(result.failures).toHaveLength(3);
-  });
-
-  it('fails closed when rendered schema omits the expected GTM FAQ', () => {
-    expect(evaluateHbwStorageFaqEntries([])).toEqual({
-      ok: false,
-      storageFaqDetected: false,
-      expectedFaqCount: 0,
-      failures: ['Rendered schema is missing the expected "Do you offer boat storage?" FAQ.'],
-    });
   });
 
   it('keeps repository-owned HBW policy surfaces contradiction-free', () => {
