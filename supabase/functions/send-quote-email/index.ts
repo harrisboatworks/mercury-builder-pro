@@ -5,6 +5,7 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 import {
   CONSULTATION_DOCUMENTS_BUCKET,
   ConsultationDocumentRequestError,
@@ -25,6 +26,15 @@ import {
   rejectConsultationCallerPdfUrl,
   replaceConsultationTemplateVariables,
 } from "../_shared/consultation-quote-email.ts";
+import {
+  fetchAllowedQuotePdf,
+  resolveAllowedQuotePdfUrl,
+} from "../_shared/quote-pdf-url.ts";
+import {
+  replaceSubjectTemplateVariables,
+  replaceTemplateVariables,
+  sanitizeEmailSubject,
+} from "../_shared/quote-email-template.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -72,15 +82,6 @@ type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 
-// Replace template variables with actual data
-function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
-  return template
-    .replace(/{{customerName}}/g, data.customerName)
-    .replace(/{{quoteNumber}}/g, data.quoteNumber)
-    .replace(/{{motorModel}}/g, data.motorModel)
-    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
-}
-
 function generateConsultationQuoteDeliveryEmail(
   data: QuoteEmailRequest,
   documentAccessUrl: string,
@@ -106,7 +107,7 @@ function generateConsultationQuoteDeliveryEmail(
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: CONSULTATION_CTA_LABEL,
     ctaUrl: documentAccessUrl,
@@ -136,7 +137,7 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
     ctaUrl: data.pdfUrl,
@@ -188,7 +189,7 @@ function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
   `;
   return buildAdminEmail({
     preheader: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
-    heading: `${esc(data.leadData?.customerName || "Lead")} - ${esc(data.motorModel)} - $${data.totalPrice?.toLocaleString()}`,
+    heading: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
     bodyHtml: body,
     tag: "Quote",
   });
@@ -234,7 +235,7 @@ serve(async (req) => {
       });
     }
 
-    const emailData = validationResult.data;
+    let emailData = validationResult.data;
     const isConsultationPath = Boolean(emailData.documentId);
 
     if (isConsultationPath) {
@@ -257,6 +258,15 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+    } else if (emailData.pdfUrl) {
+      const allowedPdfUrl = resolveAllowedQuotePdfUrl(emailData.pdfUrl);
+      if (!allowedPdfUrl) {
+        return new Response(JSON.stringify({ success: false, error: 'Invalid PDF URL' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      emailData = { ...emailData, pdfUrl: allowedPdfUrl.toString() };
     }
 
     const ipAllowed = await checkRateLimit(req, {
@@ -275,6 +285,21 @@ serve(async (req) => {
       failClosed: isConsultationPath,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
+
+    let quotePdfBuffer: ArrayBuffer | null = null;
+    if (!isConsultationPath && emailData.pdfUrl) {
+      try {
+        quotePdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl);
+      } catch (pdfError) {
+        console.error(
+          'Error fetching/validating quote PDF:',
+          pdfError instanceof Error ? pdfError.name : 'unknown',
+        );
+        // Keep public delivery available, but do not claim that an invalid or
+        // unavailable document is attached or link to it as a quote PDF.
+        emailData = { ...emailData, pdfUrl: undefined };
+      }
+    }
 
     const isAdminNotification = emailData.emailType === 'admin_quote_notification';
     const destinations = buildQuoteEmailDestinations({
@@ -320,7 +345,7 @@ serve(async (req) => {
         } else if (template.html_content.includes('{{documentAccessUrl}}')) {
           throw new Error('Template not found, using fallback');
         } else {
-          subject = replaceTemplateVariables(template.subject, emailData);
+          subject = replaceSubjectTemplateVariables(template.subject, emailData);
           htmlContent = replaceTemplateVariables(template.html_content, emailData);
         }
       } else {
@@ -360,6 +385,7 @@ serve(async (req) => {
         }
       }
     }
+    subject = sanitizeEmailSubject(subject);
 
     // Keep customer delivery branded as HBW. Internal quote alerts go to the
     // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
@@ -444,27 +470,15 @@ serve(async (req) => {
         filename: `Quote-${emailData.quoteNumber}.pdf`,
         content: pdfBase64,
       }];
-    } else if (emailData.pdfUrl) {
-      try {
-        const pdfResponse = await fetch(emailData.pdfUrl);
-        
-        if (!pdfResponse.ok) {
-          throw new Error(`Failed to fetch PDF: ${pdfResponse.statusText}`);
-        }
-        
-        const pdfBuffer = await pdfResponse.arrayBuffer();
-        const pdfBase64 = btoa(
-          new Uint8Array(pdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
-        );
-        
-        emailOptions.attachments = [{
-          filename: `Quote-${emailData.quoteNumber}.pdf`,
-          content: pdfBase64,
-        }];
-      } catch (pdfError) {
-        console.error('Error fetching/attaching PDF:', pdfError instanceof Error ? pdfError.name : 'unknown');
-        // Continue sending email without attachment
-      }
+    } else if (quotePdfBuffer) {
+      const pdfBase64 = btoa(
+        new Uint8Array(quotePdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+      );
+
+      emailOptions.attachments = [{
+        filename: `Quote-${emailData.quoteNumber}.pdf`,
+        content: pdfBase64,
+      }];
     }
 
     // Send email via Resend
@@ -472,13 +486,17 @@ serve(async (req) => {
 
     console.log('Email sent successfully:', emailResponse);
 
-    // Log the email activity
-    await supabase
-      .from('customer_quotes')
-      .update({
-        notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
-      })
-      .eq('quote_number', emailData.quoteNumber);
+    // Public quote delivery remains available, but only a verified admin may
+    // write internal quote notes through the service-role client.
+    const admin = await requireAdmin(req, corsHeaders);
+    if (!(admin instanceof Response) && emailData.leadData?.quoteId) {
+      await supabase
+        .from('customer_quotes')
+        .update({
+          notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
+        })
+        .eq('id', emailData.leadData.quoteId);
+    }
 
     return new Response(
       JSON.stringify({ 
