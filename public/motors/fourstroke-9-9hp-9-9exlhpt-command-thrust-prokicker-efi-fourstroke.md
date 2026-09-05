@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9exlhpt-command-thrust-prokicker-efi-fourstroke
-last_updated: 2026-09-04
+last_updated: 2026-09-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
