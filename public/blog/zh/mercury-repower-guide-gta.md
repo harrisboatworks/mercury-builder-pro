@@ -35,7 +35,7 @@ revenue_driver: repower
 
 如果你的船外机已经老旧、频繁出问题，换一台新的船外机（Repower）通常比换一艘新船更划算。船身还好的情况下，Repower 让你用更低的成本获得全新动力。
 
-Harris Boat Works 是安大略省 Rice Lake 的 [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 授权经销商，1947 年创办至今第三代经营。你可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 查看透明的加元报价，不需要打电话，不需要谈判。
+Harris Boat Works 是安大略省 Rice Lake 的 [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 授权经销商，1947 年创办至今第三代经营，Mercury 经销商始于 1965 年。你可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 查看透明的加元报价，不需要打电话，不需要谈判。
 
 *HBW 信任要点*
 

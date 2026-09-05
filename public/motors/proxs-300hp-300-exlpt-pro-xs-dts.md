@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-300hp-300-exlpt-pro-xs-dts
-last_updated: 2026-09-04
+last_updated: 2026-09-05
 currency: CAD
 pickup_only: true
 delivery_offered: false

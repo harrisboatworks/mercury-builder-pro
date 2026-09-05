@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15exlhpt-prokicker-fourstroke
-last_updated: 2026-09-04
+last_updated: 2026-09-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
