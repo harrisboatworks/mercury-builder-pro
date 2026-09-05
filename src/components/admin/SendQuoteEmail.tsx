@@ -1,3 +1,4 @@
+import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
@@ -6,6 +7,7 @@ import { Mail, Loader2, Check } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 
 interface Props {
+  isSubmitted?: boolean;
   quoteId: string;
   customerName: string;
   customerEmail: string;
@@ -13,7 +15,7 @@ interface Props {
   totalPrice: number;
 }
 
-const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, totalPrice }: Props) => {
+const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, totalPrice, isSubmitted }: Props) => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const { toast } = useToast();
@@ -21,7 +23,10 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
   const handleSend = async () => {
     setSending(true);
     try {
-      const { error } = await supabase.functions.invoke('send-quote-email', {
+      if (isSubmitted) {
+        await adminConsultationDocument(quoteId, 'admin-email');
+      } else {
+      const { data, error } = await supabase.functions.invoke('send-quote-email', {
         body: {
           customerEmail,
           customerName,
@@ -35,7 +40,8 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
           },
         },
       });
-      if (error) throw error;
+      if (error || data?.success !== true) throw error || new Error('Quote email could not be sent.');
+      }
       setSent(true);
       toast({ title: 'Email Sent', description: `Quote emailed to ${customerEmail}` });
       setTimeout(() => setSent(false), 5000);
