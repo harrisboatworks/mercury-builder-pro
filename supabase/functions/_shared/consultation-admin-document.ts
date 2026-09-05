@@ -35,7 +35,7 @@ export interface StoredAdminConsultationDocument {
 }
 
 export interface AdminConsultationSavedQuote {
-  convertedToQuoteId: string | null;
+  convertedToQuoteId?: string | null;
   quoteState: Record<string, unknown> | null;
 }
 
@@ -110,9 +110,8 @@ export function resolveAdminConsultationQuoteId(input: {
     throw new ConsultationDocumentUnavailableError();
   }
   try {
-    return parseConsultationDocumentId(
-      input.savedQuote.convertedToQuoteId || state.customerQuoteId,
-    );
+    // converted_to_quote_id references the separate quotes table, not customer_quotes.
+    return parseConsultationDocumentId(state.customerQuoteId);
   } catch {
     throw new ConsultationDocumentUnavailableError();
   }
@@ -259,15 +258,12 @@ export function createSupabaseAdminConsultationDocumentStore(service: {
     async findSavedQuote(quoteId) {
       const { data, error } = await service
         .from("saved_quotes")
-        .select("converted_to_quote_id, quote_state")
+        .select("quote_state")
         .eq("id", quoteId)
         .maybeSingle();
       if (error) throw new ConsultationDocumentUnavailableError();
       if (!data) return null;
       return {
-        convertedToQuoteId: typeof data.converted_to_quote_id === "string"
-          ? data.converted_to_quote_id
-          : null,
         quoteState: isRecord(data.quote_state) ? data.quote_state : null,
       };
     },

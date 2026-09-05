@@ -292,7 +292,6 @@ serve(async (req) => {
         session_id: sessionId,
         is_soft_lead: false,
         is_completed: true,
-        converted_to_quote_id: String(data.id),
         reference_number: quoteNumber,
         expires_at: consultationSavedQuoteExpiry(),
       })
