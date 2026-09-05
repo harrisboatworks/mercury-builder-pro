@@ -10,10 +10,17 @@ export function isAuthorizedAdminAttachment(request: {
     && Boolean(request.quoteId) && !request.documentId && !request.pdfUrl;
 }
 
-export function matchesAdminAttachmentQuote(document: {
+export function matchesConsultationAttachmentQuote(document: {
   customer_quote_id: string | null;
   quote_number: string;
 }, quoteId: string | undefined, quoteNumber: string): boolean {
   return Boolean(quoteId) && document.customer_quote_id === quoteId
     && document.quote_number === quoteNumber;
+}
+
+export function matchesAdminAttachmentQuote(document: {
+  customer_quote_id: string | null;
+  quote_number: string;
+}, quoteId: string | undefined, quoteNumber: string): boolean {
+  return matchesConsultationAttachmentQuote(document, quoteId, quoteNumber);
 }

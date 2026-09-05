@@ -428,6 +428,29 @@ export function assertConsultationStoredDocument(options: {
   return { path, sha256 };
 }
 
+export async function assertConsultationDocumentBytes(options: {
+  bytes: Uint8Array;
+  byteSize: unknown;
+  binding: { path: string; sha256: string };
+  documentId: string;
+}): Promise<void> {
+  try {
+    // Stored object MIME from the bucket is not authoritative; magic + digest are.
+    validateQuotePdf(options.bytes, "application/pdf");
+  } catch {
+    throw new ConsultationDocumentUnavailableError();
+  }
+  const digest = await sha256Hex(options.bytes);
+  const byteSize = typeof options.byteSize === "number" ? options.byteSize : Number(options.byteSize);
+  if (
+    options.bytes.byteLength !== byteSize
+    || !constantTimeEqual(digest, options.binding.sha256)
+    || options.binding.path !== canonicalConsultationDocumentPath(options.documentId)
+  ) {
+    throw new ConsultationDocumentUnavailableError();
+  }
+}
+
 export function authorizeConsultationRedemption(options: {
   capability: ConsultationCapability;
   documentId: string;

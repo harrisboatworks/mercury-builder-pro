@@ -10,12 +10,8 @@ import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 import {
   CONSULTATION_DOCUMENTS_BUCKET,
   ConsultationDocumentRequestError,
-  ConsultationDocumentUnavailableError,
+  assertConsultationDocumentBytes,
   assertConsultationStoredDocument,
-  canonicalConsultationDocumentPath,
-  constantTimeEqual,
-  sha256Hex,
-  validateQuotePdf,
 } from "../_shared/consultation-document-policy.ts";
 import {
   CONSULTATION_ATTACHMENT_STATEMENT,
@@ -406,7 +402,7 @@ serve(async (req) => {
         .select("id, customer_quote_id, storage_key, sha256, byte_size, content_type, quote_number")
         .eq("id", documentId)
         .maybeSingle();
-      if (documentError || !documentRow || (emailData.adminDocumentId && !matchesAdminAttachmentQuote(
+      if (documentError || !documentRow || ((emailData.adminDocumentId || emailData.leadData?.quoteId) && !matchesAdminAttachmentQuote(
         documentRow, emailData.leadData?.quoteId, emailData.quoteNumber,
       ))) {
         return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
@@ -440,15 +436,12 @@ serve(async (req) => {
       }
       const pdfBytes = new Uint8Array(await object.arrayBuffer());
       try {
-        validateQuotePdf(pdfBytes, object.type || documentRow.content_type || "application/pdf");
-        const digest = await sha256Hex(pdfBytes);
-        if (
-          pdfBytes.byteLength !== documentRow.byte_size
-          || !constantTimeEqual(digest, binding.sha256)
-          || binding.path !== canonicalConsultationDocumentPath(documentId)
-        ) {
-          throw new ConsultationDocumentUnavailableError();
-        }
+        await assertConsultationDocumentBytes({
+          bytes: pdfBytes,
+          byteSize: documentRow.byte_size,
+          binding,
+          documentId,
+        });
       } catch {
         return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
           status: 404,

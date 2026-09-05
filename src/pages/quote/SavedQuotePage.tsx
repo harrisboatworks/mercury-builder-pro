@@ -1,3 +1,4 @@
+import { useNoIndex } from '@/hooks/useNoIndex';
 import SubmittedQuote from '@/components/quote-builder/SubmittedQuote';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -5,8 +6,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useQuote } from "@/contexts/QuoteContext";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { isConsultationSubmittedQuote } from "@/lib/submitted-quote";
 
 export default function SavedQuotePage() {
+  useNoIndex();
   const { quoteId } = useParams<{ quoteId: string }>();
   const navigate = useNavigate();
   const { dispatch } = useQuote();
@@ -15,6 +18,9 @@ export default function SavedQuotePage() {
   const [submittedQuote, setSubmittedQuote] = useState<any>(null);
 
   useEffect(() => {
+    let cancelled = false;
+    setSubmittedQuote(null);
+    setIsLoading(true);
     const loadSavedQuote = async () => {
       if (!quoteId) {
         toast({
@@ -32,6 +38,7 @@ export default function SavedQuotePage() {
           body: { quoteId }
         });
 
+        if (cancelled) return;
         if (error || !quote || quote.error) {
           toast({
             title: "Quote not found",
@@ -42,9 +49,10 @@ export default function SavedQuotePage() {
           return;
         }
 
-        // Restore the quote data to context
+        // Nested consultation snapshots are receipts. Restoring them into the
+        // live builder would reprice against today's calculator.
         const quoteData = quote.quote_data;
-        if (quoteData?.source === 'consultation-submit') {
+        if (isConsultationSubmittedQuote(quoteData)) {
           setSubmittedQuote(quoteData);
           return;
         }
@@ -89,6 +97,7 @@ export default function SavedQuotePage() {
         // Navigate to summary page
         navigate('/quote/summary');
       } catch (error) {
+        if (cancelled) return;
         console.error('Error loading saved quote:', error);
         toast({
           title: "Error loading quote",
@@ -97,11 +106,12 @@ export default function SavedQuotePage() {
         });
         navigate('/quote/motor-selection');
       } finally {
-        setIsLoading(false);
+        if (!cancelled) setIsLoading(false);
       }
     };
 
     loadSavedQuote();
+    return () => { cancelled = true; };
   }, [quoteId, dispatch, navigate, toast]);
 
   if (isLoading) {
