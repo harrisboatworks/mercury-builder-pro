@@ -133,6 +133,8 @@ describe('consultation rate-limit call-site contract', () => {
     expect(submit).toContain('consultationPdfBase64(minted.pdfBytes)');
     expect(submit).toContain('assertResendAccepted');
     expect(submit).toContain('parseConsultationCallerQuoteSnapshot');
-    expect(submit).not.toContain('documentId');
+    // Internal attachments use a server-minted ID; public callers cannot select or receive it.
+    expect(submit).not.toMatch(/(?:p|raw)\.documentId/);
+    expect(submit).not.toContain('success: true, documentId');
   });
 });

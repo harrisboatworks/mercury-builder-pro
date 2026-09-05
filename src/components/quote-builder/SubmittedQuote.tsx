@@ -43,6 +43,8 @@ export default function SubmittedQuote({ quote }: { quote: any }) {
       <p>{quote.financing.rate}% APR · {quote.financing.amortizationMonths} months amortization · {quote.financing.contractTermMonths} months term</p>
       <p className="text-sm text-muted-foreground">On approved credit.</p>
     </div>}
+    {quote.includedCoverageYears > 0 && <p>Included coverage: {quote.includedCoverageYears} years</p>}
+    {quote.promotion?.name && <p>{quote.promotion.name}</p>}
     {quote.customerNotes && <p>{quote.customerNotes}</p>}
     <p className="text-sm text-muted-foreground">These are the prices recorded when this quote was submitted.</p>
   </Card>;
