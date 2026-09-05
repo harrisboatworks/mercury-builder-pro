@@ -1,3 +1,4 @@
+import SubmittedQuote from '@/components/quote-builder/SubmittedQuote';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,6 +12,7 @@ export default function SavedQuotePage() {
   const { dispatch } = useQuote();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(true);
+  const [submittedQuote, setSubmittedQuote] = useState<any>(null);
 
   useEffect(() => {
     const loadSavedQuote = async () => {
@@ -42,6 +44,10 @@ export default function SavedQuotePage() {
 
         // Restore the quote data to context
         const quoteData = quote.quote_data;
+        if (quoteData?.source === 'consultation-submit') {
+          setSubmittedQuote(quoteData);
+          return;
+        }
         
         if (quoteData) {
           // Restore motor (handle both 'motor' and 'selectedMotor' keys, plus flat-field fallback for agent-created quotes)
@@ -110,5 +116,5 @@ export default function SavedQuotePage() {
     );
   }
 
-  return null;
+  return submittedQuote ? <main className="max-w-3xl mx-auto p-6"><SubmittedQuote quote={submittedQuote} /></main> : null;
 }

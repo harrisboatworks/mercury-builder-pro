@@ -1,3 +1,5 @@
+import SubmittedQuote from '@/components/quote-builder/SubmittedQuote';
+import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -66,6 +68,8 @@ const AdminQuoteDetail = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const isSubmitted = q?.quote_data?.source === 'consultation-submit';
+  const [privateShareUrl, setPrivateShareUrl] = useState('');
   
   // Promo data
   const { promotions } = useActivePromotions();
@@ -115,14 +119,14 @@ const AdminQuoteDetail = () => {
           const motor = qs.motor || {};
           const isAnonymous = sq.email === 'anonymous@soft-lead.local' || sq.email === 'pdf-download@placeholder.com';
           const isSoftLead = sq.is_soft_lead === true;
-          const finalPrice = qs.finalPrice || qs.frozenPricing?.total || 0;
+          const finalPrice = qs.pricing?.totalPrice ?? qs.finalPrice ?? qs.frozenPricing?.total ?? 0;
           const mapped: QuoteDetail = {
             id: sq.id,
             created_at: sq.created_at,
-            customer_name: qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
+            customer_name: qs.customer?.name || qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
             customer_email: isAnonymous ? '' : (sq.email || ''),
-            customer_phone: qs.customerPhone || null,
-            base_price: qs.basePrice || motor.price || 0,
+            customer_phone: qs.customer?.phone || qs.customerPhone || null,
+            base_price: qs.pricing?.subtotal ?? qs.basePrice ?? motor.price ?? 0,
             final_price: finalPrice,
             deposit_amount: sq.deposit_amount || 0,
             loan_amount: 0,
@@ -399,8 +403,11 @@ const AdminQuoteDetail = () => {
 
   const handleCopyLink = async () => {
     if (!q) return;
-    const shareUrl = `${SITE_URL}/quote/saved/${q.id}`;
     try {
+      const shareUrl = isSubmitted
+        ? (await adminConsultationDocument(q.id, 'admin-share')).documentAccessUrl
+        : `${SITE_URL}/quote/saved/${q.id}`;
+      if (isSubmitted) setPrivateShareUrl(shareUrl);
       await navigator.clipboard.writeText(shareUrl);
       setLinkCopied(true);
       toast({ title: 'Link copied!', description: 'Share URL copied to clipboard.' });
@@ -418,6 +425,15 @@ const AdminQuoteDetail = () => {
     
     setIsGeneratingPDF(true);
     try {
+      if (isSubmitted) {
+        const { signedUrl } = await adminConsultationDocument(q.id, 'admin-download');
+        const anchor = document.createElement('a');
+        anchor.href = signedUrl;
+        anchor.rel = 'noreferrer';
+        anchor.click();
+        toast({ title: 'PDF ready', description: 'Opening the original submitted quote PDF.' });
+        return;
+      }
       const qd = q.quote_data;
       const snapshot = buildLegacyQuotePdfSnapshot(qd, q.created_at || undefined);
       if (!snapshot) {
@@ -518,7 +534,7 @@ const AdminQuoteDetail = () => {
             <Plus className="w-4 h-4 mr-2" />
             New Quote for Customer
           </Button>
-          {q?.quote_data && (
+          {q?.quote_data && !isSubmitted && (
             <Button variant="default" onClick={handleEditQuote}>
               <Edit2 className="w-4 h-4 mr-2" />
               Edit Full Quote
@@ -561,6 +577,8 @@ const AdminQuoteDetail = () => {
             </div>
           </Card>
           
+          {isSubmitted && <SubmittedQuote quote={q.quote_data} />}
+          {!isSubmitted && <>
           {/* Trade-In */}
           <Card className="p-4">
             {(() => {
@@ -776,6 +794,7 @@ const AdminQuoteDetail = () => {
             );
           })()}
 
+          </>}
           {/* Share & Download Card */}
           <Card className="p-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
             <h2 className="font-semibold mb-3 flex items-center gap-2 text-blue-800 dark:text-blue-200">
@@ -810,6 +829,7 @@ const AdminQuoteDetail = () => {
                 </Button>
               </div>
               <SendQuoteEmail
+                isSubmitted={isSubmitted}
                 quoteId={q.id}
                 customerName={q.customer_name}
                 customerEmail={q.customer_email}
@@ -817,7 +837,7 @@ const AdminQuoteDetail = () => {
                 totalPrice={q.final_price}
               />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
-                {SITE_URL}/quote/saved/{q?.id?.slice(0, 8)}...
+                {isSubmitted ? (privateShareUrl || 'Copy Link creates a private link to the original PDF, valid for 30 days.') : `${SITE_URL}/quote/saved/${q?.id?.slice(0, 8)}...`}
               </div>
             </div>
           </Card>
