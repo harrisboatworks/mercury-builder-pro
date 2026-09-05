@@ -132,7 +132,7 @@ describe('admin consultation document policy', () => {
         convertedToQuoteId: CUSTOMER_ID,
         quoteState: { source: CONSULTATION_SAVED_QUOTE_SOURCE, customerQuoteId: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd' },
       },
-    })).toBe(CUSTOMER_ID);
+    })).toBe('dddddddd-dddd-4ddd-8ddd-dddddddddddd');
     expect(resolveAdminConsultationQuoteId({
       quoteId: SAVED_ID,
       savedQuote: {

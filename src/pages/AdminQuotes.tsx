@@ -201,7 +201,7 @@ const AdminQuotes = () => {
     const sqRows: UnifiedQuoteRow[] = (sqResult.data || [])
       .filter((row: any) => row.quote_state?.source !== 'consultation-submit'
         || row.deposit_status === 'paid'
-        || !leadIds.has(row.converted_to_quote_id || row.quote_state?.customerQuoteId))
+        || !leadIds.has(row.quote_state?.customerQuoteId))
       .map(normalizeSavedQuote);
 
     setCustomerQuoteRows(cqRows);
