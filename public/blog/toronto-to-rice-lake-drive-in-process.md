@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Toronto to Rice Lake: How HBW Drive-In Service Works"
 description: "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 

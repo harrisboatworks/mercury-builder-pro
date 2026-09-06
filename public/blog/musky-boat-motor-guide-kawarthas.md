@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Motors for Kawartha Musky Fishing"
 description: "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["musky boat motor","kawartha musky fishing","musky boat setup","mercury for musky","musky fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 

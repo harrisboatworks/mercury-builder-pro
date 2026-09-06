@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 200 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-09-06
 keywords: ["mercury 200 hp review","mercury 200 fourstroke review","mercury 200 pro xs review","mercury 200 fourstroke vs pro xs","mercury 200 real world performance","mercury 200 owner reviews","mercury 200 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-06  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario
 

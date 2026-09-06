@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones.md
-last_updated: 2026-08-15
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Licencia de navegación y regulaciones de seguridad en Ontario"
 description: "Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario."
 category: "Regulaciones"
 date_published: 2026-04-12
-date_modified: 2026-08-15
+date_modified: 2026-09-06
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-15  
+**Última revisión:** 2026-09-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 

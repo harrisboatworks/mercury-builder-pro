@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens"
 description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["gamme Mercury 2026","modèles hors-bord Mercury","Mercury FourStroke 2026","Mercury Verado V10","hors-bord électrique Avator","hors-bord Mercury Ontario","concessionnaire Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 

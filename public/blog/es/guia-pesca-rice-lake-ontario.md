@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-08  
+**Última revisión:** 2026-09-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 

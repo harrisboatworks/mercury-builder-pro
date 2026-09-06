@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与�
 description: "分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。"
 category: "法规安全"
 date_published: 2026-04-12
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["安大略省船只法规","加拿大快艇驾照","船只安全装备要求","Ontario boating regulations Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 法规安全  
 **Published:** 2026-04-12  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-09-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 

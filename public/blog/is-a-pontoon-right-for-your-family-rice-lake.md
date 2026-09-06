@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-07-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-07-27
+date_modified: 2026-09-06
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 

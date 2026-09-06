@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)"
 description: "What milky gearcase oil means, how a technician finds the leak, and how repair scope is determined before any quote. No generic repair price."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 

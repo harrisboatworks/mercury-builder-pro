@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi.md
-last_updated: 2026-06-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 Avator 전동 선외기: 가격과 항속거리"
 description: "머큐리 Avator 전동 선외기: 가격, 실제 항속거리, 그리고 라이스 레이크에 적합한지. 머큐리 Premier 딜러의 정직한 평가."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-09-06
 keywords: ["머큐리 Avator","전동 선외기","전기 보트 모터","Mercury Avator Korean","라이스 레이크 전동 보트"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-06-08  
+**마지막 검토:** 2026-09-06  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 

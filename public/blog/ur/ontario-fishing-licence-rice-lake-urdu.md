@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu.md
-last_updated: 2026-06-12
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشن
 description: "Ontario fishing licence Urdu guide: Outdoors Card، conservation بمقابلہ sport licence، اور Rice Lake FMZ 17 کے اصول۔ اردو میں مکمل اور آسان رہنمائی پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-09-06
 keywords: ["اونٹاریو میں مچھلی پکڑنے کا لائسنس (Fishing license Ontario)","ٹورنٹو کے قریب مچھلی پکڑنے کی جگہیں (Fishing spots near Toronto)","اونٹاریو فشنگ سیزن کیلنڈر (Ontario fishing season calendar)","مچھلی کی اقسام اونٹاریو جھیلوں میں (Fish species in Ontario lakes)","فشنگ رولز اونٹاریو برائے پاکستانی (Fishing rules Ontario for Pakistanis)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-06-12  
+**آخری جائزہ:** 2026-09-06  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
 

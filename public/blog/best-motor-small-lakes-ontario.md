@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Outboards for Ontario Small Lakes"
 description: "Match the motor to the lake's rules: electric-only, 10 HP, 20 HP, or open water. Cottage-lake recommendations from the shop that rigs them."
 category: "Buying Guide"
 date_published: 2026-04-17
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["small lake motor","cottage lake outboard","hp restricted lake","electric motor limit lake","ontario lake motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-17  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Propeller Selection Guide 2026"
 description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
 category: "Technical Reference"
 date_published: 2026-05-27
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Technical Reference  
 **Published:** 2026-05-27  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 

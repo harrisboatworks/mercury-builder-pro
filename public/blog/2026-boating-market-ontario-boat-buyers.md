@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)"
 description: "What dated U.S. and North American market samples do and do not tell Ontario boat buyers in 2026, plus the verified luxury-tax change."
 category: "Market Insight"
 date_published: 2026-02-06
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["2026 boating market","buy boat canada 2026","best time to buy boat","ontario boat buying","boat market forecast","luxury tax boats canada","boat dealer inventory","used boat market"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
 

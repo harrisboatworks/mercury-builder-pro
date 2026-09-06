@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-08-17
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Maintenance: 100 and 300 Hours"
 description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean."
 category: "Service & Maintenance"
 date_published: 2026-05-12
-date_modified: 2026-08-17
+date_modified: 2026-09-06
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last reviewed:** 2026-08-17  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 

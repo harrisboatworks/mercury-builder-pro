@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 華人萊斯湖買船完整指南（繁體版）"
 description: "GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-09-06
 keywords: ["買船","萊斯湖","GTA 華人","繁體","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-06-12  
+**最後審核:** 2026-09-06  
 **Read time:** 6 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 

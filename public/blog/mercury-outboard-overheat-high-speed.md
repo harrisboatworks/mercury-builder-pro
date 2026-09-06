@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md
-last_updated: 2026-06-29
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Overheating at High Speed: What to Check"
 description: "Mercury overheating at high speed? Learn which cooling-system faults a technician checks, how to respond to the warning, and when to stop for service."
 category: "Service"
 date_published: 2026-06-29
-date_modified: 2026-06-29
+date_modified: 2026-09-06
 keywords: ["Mercury outboard overheating at high speed","Mercury overheat alarm high RPM","poppet valve Mercury overheating","outboard overheats at speed not idle","Mercury water pump impeller"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-06-29  
-**Last reviewed:** 2026-06-29  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
 

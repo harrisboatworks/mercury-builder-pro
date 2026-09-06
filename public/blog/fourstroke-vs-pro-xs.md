@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-07-23
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS vs Verado vs FourStroke Compared"
 description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-07-23
+date_modified: 2026-09-06
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 

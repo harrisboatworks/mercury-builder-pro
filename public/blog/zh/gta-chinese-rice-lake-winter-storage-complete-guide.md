@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、�
 description: "多伦多到莱斯湖：Harris Boat Works 室外专业收缩膜、室外无遮盖和仅收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内或加热存储。我们通常可以安排取船。船坞 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-05-16
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-16  
-**最后审核:** 2026-08-27  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 

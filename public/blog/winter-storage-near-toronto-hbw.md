@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Boat Storage Near Toronto HBW"
 description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land."
 category: "Winterization"
 date_published: 2026-05-17
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 

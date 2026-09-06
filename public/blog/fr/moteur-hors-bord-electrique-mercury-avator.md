@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator électrique : prix et autonomie"
 description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury Avator","moteur électrique hors-bord","Avator prix Canada","Avator autonomie"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-06-08\
-**Dernière révision :** 2026-08-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
 

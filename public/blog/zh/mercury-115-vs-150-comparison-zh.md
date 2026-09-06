@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh.md
-last_updated: 2026-04-12
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115马力 vs 150马力舷外机：如何选择？"
 description: "Mercury FourStroke 115马力和150马力舷外机详细对比。价格、性能、油耗、适用船型全面分析，帮助您做出正确选择。"
 category: "产品对比"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-09-06
 keywords: ["Mercury 115 vs 150","Mercury舷外机对比","115马力还是150马力","Mercury outboard comparison Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 产品对比  
 **Published:** 2026-04-12  
-**最后审核:** 2026-04-12  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
 

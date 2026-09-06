@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury VesselView vs SmartCraft Explained (Ontario)"
 description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraft Connect installation","Active Trim Mercury","Digital Throttle and Shift","VesselView Mobile replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 

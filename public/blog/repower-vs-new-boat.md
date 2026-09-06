@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-vs-new-boat.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repower vs Buy New Boat: Compare the Total Cost"
 description: "Compare a boat repower with buying new using current quotes, HST, trailer and rigging needs, hull condition, financing, and how long you plan to keep it."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["repower vs new boat","mercury repower math","should i repower or buy new","repower cost ontario","hull worth repowering","transom rebuild cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-vs-new-boat
 

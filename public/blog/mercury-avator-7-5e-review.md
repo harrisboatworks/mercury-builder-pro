@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review.md
-last_updated: 2026-07-18
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator 7.5e: Review, Range, and Best Uses (2026)"
 description: "Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-07-18
+date_modified: 2026-09-06
 keywords: ["mercury avator 7.5e review","avator 7.5e electric outboard","mercury electric outboard ontario","avator battery life","avator range rice lake","mercury avator price canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-07-18  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 

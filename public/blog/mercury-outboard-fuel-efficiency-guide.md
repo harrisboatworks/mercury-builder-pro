@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)"
 description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range..."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**अंतिम समीक्षा:** 2026-09-02  
+**अंतिम समीक्षा:** 2026-09-06  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 

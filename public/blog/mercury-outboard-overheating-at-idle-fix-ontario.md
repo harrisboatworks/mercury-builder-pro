@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 

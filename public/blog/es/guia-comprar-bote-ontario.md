@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía completa para comprar un bote en Ontario"
 description: "Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares."
 category: "Guía de compra"
 date_published: 2026-04-12
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["guía comprar bote Ontario","comprar bote en Canadá","primer bote Ontario","licencia de navegación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Guía de compra  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-26  
+**Última revisión:** 2026-09-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
 

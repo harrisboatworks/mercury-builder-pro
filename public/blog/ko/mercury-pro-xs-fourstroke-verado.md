@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado.md
-last_updated: 2026-06-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?"
 description: "Pro XS, FourStroke, Verado? 머큐리 세 계열의 차이와 내 보트에 맞는 선택. 머큐리 딜러의 정직한 답변."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-09-06
 keywords: ["머큐리 Pro XS","머큐리 FourStroke","머큐리 Verado","Mercury motor comparison Korean","머큐리 선외기 비교"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-06-08  
+**마지막 검토:** 2026-09-06  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado
 

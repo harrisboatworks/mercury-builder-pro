@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-05-04
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)"
 description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW."
 category: "Buying Guide"
 date_published: 2026-04-25
-date_modified: 2026-05-04
+date_modified: 2026-09-06
 keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-25  
-**Last reviewed:** 2026-05-04  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 

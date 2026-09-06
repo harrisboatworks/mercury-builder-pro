@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide.md
-last_updated: 2026-09-04
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교
 description: "온타리오에서 보트를 처음 구매하려는 한인을 위한 실용 가이드. PCOC 취득, 보트 종류, 보관 방법, 연간 유지비, 신규 구매 vs 중고 vs 엔진 교체(repower)까지 한 번에 정리했습니다."
 category: "구매 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-04
+date_modified: 2026-09-06
 keywords: ["온타리오 보트 구매 가이드","캐나다 보트 구매","토론토 보트 입문","Ontario boat buying guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-04  
+**마지막 검토:** 2026-09-06  
 **Read time:** 12 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide
 

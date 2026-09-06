@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 

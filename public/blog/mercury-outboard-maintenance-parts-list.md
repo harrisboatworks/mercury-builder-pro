@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part N
 description: "A guide to common Mercury outboard maintenance parts: filters, spark plugs, impellers, gear lube and service kits. Check your model and serial number for fitment."
 category: "Service"
 date_published: 2026-08-11
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Mercury outboard maintenance parts list","Mercury outboard oil filter part number","Mercury 100 hour maintenance kit","Mercury 300 hour service kit","Mercury outboard impeller part number"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-08-11  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list
 

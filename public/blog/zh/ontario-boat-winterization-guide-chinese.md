@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省船主冬化与室外冬储清单：什么时候送、要做什么
 description: "安省船主冬化与室外冬储中文指南：分清发动机冬化和存船，按机型确认项目，并了解 HBW 先到先办、随时送船（包括下班后）和 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["冬季保养","冬储","安省","中文","winterization","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-08-26  
+**最后审核:** 2026-09-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 

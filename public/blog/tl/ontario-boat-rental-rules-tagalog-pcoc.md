@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guid
 description: "Kailangan ba ng PCOC para mag-rent ng boat sa Ontario? Rental rules, lifejacket requirements, at checklist bago bumangka. Tagalog guide para sa pamilya mo."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)","kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)","boat operator card Ontario paano (boat operator card Ontario how)","online boat license Ontario Tagalog (online boat license Ontario Tagalog)","PCOC exam Tagalog (PCOC exam Tagalog)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Huling sinuri:** 2026-08-02  
+**Huling sinuri:** 2026-09-06  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc
 

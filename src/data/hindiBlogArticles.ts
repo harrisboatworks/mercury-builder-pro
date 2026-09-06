@@ -24,7 +24,7 @@ export const hindiBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-02',
+    dateModified: '2026-09-06',
     category: 'हिन्दी गाइड',
     readTime: '8 मिनट',
     keywords: ['pcoc kya hai Ontario (What is PCOC in Ontario)', 'boat operator license kaise banwayein Canada (How to get boat operator license in Canada)', 'Ontario boat license online hindi (Ontario boat license online in Hindi)', 'pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)', 'boat chalane ka license kitne din mein milta hai (How many days to get a boating license)', 'Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)', 'Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)', 'Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)', 'fishing season Ontario kab se hai (When does fishing season start in Ontario)', 'best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)'],

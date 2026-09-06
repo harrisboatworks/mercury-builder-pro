@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide.md
-last_updated: 2026-08-01
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ �
 description: "Ontario fishing licence ki kiven laiye? Outdoors Card, conservation vs sport licence, FMZ 17 Rice Lake rules te free Learn to Fish program, sab Punjabi vich."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-08-01
+date_modified: 2026-09-06
 keywords: ["Ontario fishing license keemat online (Ontario fishing license price online)","Toronto de nere fishing spots family layi (fishing spots near Toronto for family)","fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)","Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)","Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)","Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-08-01  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-09-06  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-07-31
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Five-Minute Boat-Trailer Check Before Every Trip"
 description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance."
 category: "Service"
 date_published: 2026-05-26
-date_modified: 2026-07-31
+date_modified: 2026-09-06
 keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-05-26  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 

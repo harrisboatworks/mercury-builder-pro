@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间"
 description: "Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。"
 category: "中马力指南"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-09-06
 keywords: ["Mercury 40 60HP 中文","铝船 Mercury 60HP","华人钓友船外机","安省 fishing boat Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 中马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-05-10  
+**最后审核:** 2026-09-06  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide
 

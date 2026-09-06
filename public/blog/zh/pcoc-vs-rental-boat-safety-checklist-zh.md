@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md
-last_updated: 2026-05-11
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省租船需要驾照吗？PCOC 与租船安全清单一次讲清"
 description: "安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。"
 category: "安省法规中文"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-09-06
 keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety Checklist 中文","多伦多 租船 不需要驾照","华人 租船 安省 规则"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** 安省法规中文  
 **Published:** 2026-05-11  
-**最后审核:** 2026-05-11  
+**最后审核:** 2026-09-06  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 

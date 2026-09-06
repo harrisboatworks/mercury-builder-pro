@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 

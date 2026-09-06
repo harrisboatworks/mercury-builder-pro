@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon vs V-Hull, Honestly Compared for Ontario Boaters"
 description: "Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family use, fishing, rough water, fuel economy."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["pontoon vs v-hull","pontoon vs fishing boat ontario","pontoon boat ontario","v-hull boat comparison","which boat type ontario","rice lake boat type","legend pontoon vs legend v-hull"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
 

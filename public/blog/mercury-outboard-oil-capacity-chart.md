@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
 date_published: 2026-07-24
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-07-24  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 

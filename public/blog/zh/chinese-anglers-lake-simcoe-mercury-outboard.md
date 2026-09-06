@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard.md
-last_updated: 2026-07-04
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Simcoe 华人钓友船外机指南"
 description: "针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。"
 category: "钓鱼指南"
 date_published: 2026-05-10
-date_modified: 2026-07-04
+date_modified: 2026-09-06
 keywords: ["Lake Simcoe 华人钓鱼 Mercury","Lake Simcoe Chinese anglers","Mercury kicker 中文","安省华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-07-04  
+**最后审核:** 2026-09-06  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 

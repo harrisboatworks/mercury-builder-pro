@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?"
 description: "Comparaison des Mercury 115 et 150 FourStroke : cylindrée, poids, performances, consommation et prix pour choisir votre moteur."
 category: "Comparaison"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["Mercury 115 vs 150","moteur hors-bord 115 ou 150 chevaux","Mercury FourStroke comparaison","Mercury 115 150 HP"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Comparaison\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison
 

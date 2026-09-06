@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Trade-In Value in Ontario (2026)"
 description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST."
 category: "Buying Guide"
 date_published: 2026-05-09
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 

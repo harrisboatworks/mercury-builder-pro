@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Used Boat Walkaround Ontario Guide"
 description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"
 date_published: 2026-03-16
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Buying Guide  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 

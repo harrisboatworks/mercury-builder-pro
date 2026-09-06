@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Five Boat Problems That Get Expensive When You Keep Running"
 description: "Five Mercury outboard warning signs Ontario boaters should not run through, plus the safe response and service details that support a sound diagnosis."
 category: "Service"
 date_published: 2026-06-10
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-06-10  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
 

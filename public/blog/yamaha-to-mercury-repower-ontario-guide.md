@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 

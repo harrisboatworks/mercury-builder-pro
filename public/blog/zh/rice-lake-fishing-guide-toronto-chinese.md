@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
 description: "从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-02  
+**最后审核:** 2026-09-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 

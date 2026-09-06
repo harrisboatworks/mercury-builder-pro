@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么
 description: "多伦多华人钓鱼去哪？比较莱斯湖、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程和第一次驾船或钓鱼的选择。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["Rice Lake","Lake Simcoe","Kawarthas","多伦多钓鱼","湖区对比","华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-09-06  
 **Read time:** 16 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md
-last_updated: 2026-08-24
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 �
 description: "安省 Mercury 船外机中文加油指南：RON 与 AKI 标号换算、E10 乙醇上限、E15 已在安省出现、无乙醇汽油怎么选。"
 category: "保养与使用"
 date_published: 2026-08-24
-date_modified: 2026-08-24
+date_modified: 2026-09-06
 keywords: ["Mercury 船外机 加油 中文","加拿大 汽油 标号 87 91","RON AKI 换算","E10 乙醇 船外机","安省 无乙醇汽油"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 保养与使用  
 **Published:** 2026-08-24  
-**最后审核:** 2026-08-24  
+**最后审核:** 2026-09-06  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose Repower Horsepower From Your Capacity Plate"
 description: "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 

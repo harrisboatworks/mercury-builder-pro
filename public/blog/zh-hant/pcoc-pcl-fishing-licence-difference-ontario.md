@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "PCOC、PCL、釣魚證區別：安省新手別搞混"
 description: "安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-08-03  
+**最後審核:** 2026-09-06  
 **Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 

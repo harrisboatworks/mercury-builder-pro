@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Poids des hors-bord Mercury (2,5 à 300 ch)"
 description: "Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["poids moteur Mercury","tableau poids hors-bord","Mercury 115 poids","capacité tableau arrière"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-06-08\
-**Dernière révision :** 2026-08-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 6 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 

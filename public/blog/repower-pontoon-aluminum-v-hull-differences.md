@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon vs Aluminum vs V-Hull Repower"
 description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["repower pontoon","repower aluminum fishing boat","repower v-hull","mercury repower hull types","rice lake repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
 

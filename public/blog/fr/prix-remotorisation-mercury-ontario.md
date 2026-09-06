@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md
-last_updated: 2026-08-21
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide de remotorisation Mercury : prix, délais, rentabilité"
 description: "Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-08-21
+date_modified: 2026-09-06
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-21\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 

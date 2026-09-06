@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/ontario-boat-winterization-guide-chinese.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省船主冬季保養和冬儲清單：第一次過冬怎麼做"
 description: "第一次在安省過冬的船主指南：為什麼必須冬化（結冰會裂缸體）、完整冬化清單、DIY vs 經銷商服務、隨時送船（包括下班後）、HBW 在 Gores Landing 的冬儲服務（12 月 1 日至 4 月 1 日停業）。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["冬季保養","冬儲","安省","繁體","winterization","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-08-02  
+**最後審核:** 2026-09-06  
 **Read time:** 9 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/ontario-boat-winterization-guide-chinese
 

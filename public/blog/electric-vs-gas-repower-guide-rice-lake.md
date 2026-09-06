@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md
-last_updated: 2026-07-28
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury 
 description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat."
 category: "Buying Guide"
 date_published: 2026-07-15
-date_modified: 2026-07-28
+date_modified: 2026-09-06
 keywords: ["electric outboard repower Ontario","Mercury Avator repower","electric vs gas outboard","Avator Rice Lake","electric outboard Ontario lakes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-07-15  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake
 

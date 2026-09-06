@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Day
 description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 

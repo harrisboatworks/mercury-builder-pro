@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock"
 description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 

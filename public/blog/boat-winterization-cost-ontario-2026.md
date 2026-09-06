@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 

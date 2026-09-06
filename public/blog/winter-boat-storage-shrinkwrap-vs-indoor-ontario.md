@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Shrinkwrap vs Indoor Boat Storage Ontario"
 description: "Shrinkwrap vs indoor boat storage in Ontario: honest comparison on cost, protection, and what happens without winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-13
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["shrinkwrap vs indoor boat storage Ontario","winter boat storage Rice Lake","boat shrinkwrap cost Ontario 2026","heated indoor boat storage Ontario","what happens if you don't winterize"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 

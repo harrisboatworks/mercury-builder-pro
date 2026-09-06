@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha vs Honda: Reliability 2026"
 description: "Mercury vs Yamaha vs Honda from an Ontario Mercury dealer: service access, parts, and support trade-offs. No comparative reliability dataset."
 category: "Buying Guide"
 date_published: 2026-04-24
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 

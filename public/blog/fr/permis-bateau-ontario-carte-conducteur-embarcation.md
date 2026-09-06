@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Permis de conduire une embarcation au Canada : Ce que vous devez savoir"
 description: "Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et..."
 category: "Réglementation"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Réglementation\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 

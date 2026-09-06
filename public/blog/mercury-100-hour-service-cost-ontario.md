@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)"
 description: "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury 100 hour service cost","outboard annual service cost ontario","mercury service cost","100 hour service what's included","boat motor service cost ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario
 
