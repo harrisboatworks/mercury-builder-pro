@@ -43,7 +43,7 @@ A typical Mercury repower at HBW moves from a configurator starting point to a b
 
 Most customers don't know what actually happens during a repower. That's worth fixing, because knowing the process helps you plan around realistic timelines, ask better questions during the quote, and recognize when a shop is skipping something important.
 
-A repower isn't just bolting a new motor to your boat. It's a full integration project. The shop time is short; the inspection and verification work is what determines whether you get 20 years from the new motor or 5.
+A repower isn't just bolting a new motor to your boat. It's a full integration project. Shop time is only part of it; the inspection and verification work is what confirms the hull, transom, rigging, controls, and alignment are ready for the new motor.
 
 ### What Changes the Timeline
 
@@ -86,7 +86,7 @@ If you want to talk through the configuration, we do a 15- to 30-minute consulta
 
 #### Step 3: Deposit and Booking
 
-A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and booking confirms the customer-arranged drop-off date and target completion date.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
 
 If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
@@ -186,7 +186,7 @@ Questions about the process for your specific boat? Call **905-342-2153** or com
 
 ### How long does a Mercury repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 

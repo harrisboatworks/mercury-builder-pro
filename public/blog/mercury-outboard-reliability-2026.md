@@ -59,7 +59,7 @@ None of this means the concerns aren't real. The anxiety that sends people searc
 
 We're not going to invent statistics. What we can tell you is what we actually see come through our shop, in qualitative terms.
 
-**Water pump impellers.** Among the most common preventable failures we see. An impeller degrades over time regardless of brand. It's a rubber wear component doing the same job in every outboard on the water. The difference between a $40 impeller replacement and a $4,000 overheated engine is a maintenance interval. We recommend replacement every two to three seasons; Mercury's own schedule caps it at 300 hours or three years, whichever comes first.
+**Water pump impellers.** Among the most common preventable failures we see. An impeller degrades over time regardless of brand. It's a rubber wear component doing the same job in every outboard on the water. The difference between an impeller replacement and an overheated engine is a maintenance interval. We recommend replacement every two to three seasons; Mercury's own schedule caps it at 300 hours or three years, whichever comes first.
 
 **Fuel system problems from ethanol fuel and old gas.** The large majority of "my Mercury won't start" calls trace back to fuel, not the motor. Ethanol-blended gasoline absorbs water and degrades faster than most boaters expect. Gas left in a tank over winter turns to varnish. This is a storage discipline problem, not a Mercury problem, and it's entirely preventable.
 
@@ -147,7 +147,7 @@ No. Mercury's quality control processes are mature, and updates are validated be
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison

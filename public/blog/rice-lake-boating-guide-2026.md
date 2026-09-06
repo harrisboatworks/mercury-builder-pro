@@ -59,7 +59,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
-**The Trent-Severn connection.** Rice Lake is part of a larger navigable waterway. If you want to boat further, you can lock through east toward the Trent River or west toward Peterborough and the Kawarthas. Lockage is free in 2026 from June 19 to September 7 as part of the Canada Strong Pass.
+**The Trent-Severn connection.** Rice Lake is part of a larger navigable waterway. If you want to boat further, you can lock through east toward the Trent River or west toward Peterborough and the Kawarthas. Confirm current Parks Canada lockage fees and seasonal programs before you travel.
 
 ---
 
@@ -73,7 +73,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Crappie, perch, pike.** Mixed-bag panfish fishing is strong, especially for crappie in spring around brush and submerged wood structure.
 
-You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
+You need a valid [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
 
 ---
 
@@ -103,7 +103,7 @@ Big news for boaters this year: lockage on the Trent-Severn is **free from June 
 
 For Rice Lake visitors, this opens up affordable multi-day trips through the Kawartha Lakes and the broader Trent-Severn system. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
-**Lockage permits in person only, 2026 season.** According to Parks Canada's current information, online lockage permit sales are not available for the 2026 season. Lockage permits must be picked up in person at a lockstation, including the free Canada Strong Pass sticker during the June 19 to September 7 window.
+**Lockage permits.** Confirm current Parks Canada lockage-permit, online-sales, and seasonal-pass rules before you travel. Seasonal programs change.
 
 ---
 
@@ -161,7 +161,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 - Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 
@@ -173,7 +173,7 @@ It runs roughly north-south across the middle of the lake, between Hiawatha (nor
 
 ### What's the launch fee at Harris Boat Works?
 
-$20 per day or $200 for a seasonal pass (April through November) at our current published rates, which can change season to season. At those rates, the seasonal pass breaks even after 10 launches. The seasonal pass breaks even after 10 launches.
+$20 per day or $200 for a seasonal pass (April through November) at our current published rates, which can change season to season. At those rates, the seasonal pass breaks even after 10 launches.
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
@@ -189,7 +189,7 @@ Opening day (second Saturday of May) is usually solid. The week after is often t
 
 ### Do you sell fishing licences at HBW?
 
-No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/page/get-fishing-licence) before you head out. Most anglers do this from their phone the night before. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
+No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) before you head out. Most anglers do this from their phone the night before. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
 
 ## Related guides
 

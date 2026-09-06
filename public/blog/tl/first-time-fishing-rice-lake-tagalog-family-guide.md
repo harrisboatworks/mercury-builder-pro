@@ -49,7 +49,7 @@ Halos 90 minuto lang ang biyahe. Mula sa Brampton, Mississauga, Scarborough, o M
 
 ### Fishing licence para sa Ontario
 
-Para makapangisda ang sinumang residente ng Ontario na 18 anyos pataas, kailangan ng dalawang bagay:
+Karaniwang kailangan ng mga residenteng Ontario na edad 18 hanggang 64 ang dalawang bagay na ito para makapangisda:
 
 1. **Outdoors Card**, ito ang plastic card na nagpapatunay na rehistrado ka sa provincial system. Kailangan ito bago ka makabili ng fishing licence tag.
 2. **Fishing licence**, may dalawang uri: **Conservation licence** (mas mababang daily catch limits, mas mura) at **Sport licence** (mas maraming puwedeng ihuli). Para sa pamilyang first-timer, madalas ang conservation licence ang praktikal, sapat na iyon para maranasan ang saya ng pangingisda nang hindi kumplikado.

@@ -38,7 +38,7 @@ For Rice Lake under $30,000, your three realistic paths are a new small aluminum
 
 Most Rice Lake boaters with a $30,000 budget land on a used hull plus a Mercury repower. Not because we tell them to, because the math holds up better than new entry-level boats almost every time.
 
-A five-to-ten-year-old aluminum fishing boat or pontoon with a solid hull, repowered with a current Mercury, gives you 80% of the new-boat experience for meaningfully less money. You skip the steepest portion of the depreciation curve. The motor is brand new with full warranty. And if the hull is right, it has decades of life left.
+A five-to-ten-year-old aluminum fishing boat or pontoon with a solid hull, repowered with a current Mercury, keeps the hull you already know while putting a new motor and full factory warranty on it. You skip the steepest portion of the depreciation curve. And if the hull is right, it has decades of life left.
 
 HBW does sell new Legend Boats and used boats, but we are not trying to be a high-volume boat dealer. Our strongest lane is Mercury repowers, rigging, service, and helping people make a good existing hull work harder for them. So when we tell you a used hull plus a repower is often the smarter path, it is not a trick to avoid showing you boats. It is what we see work out well, year after year, on this lake.
 
@@ -157,7 +157,7 @@ For small aluminum boats on sheltered water, a 9.9 to 15 HP tiller is the classi
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
 - [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 
 ## Next steps
 

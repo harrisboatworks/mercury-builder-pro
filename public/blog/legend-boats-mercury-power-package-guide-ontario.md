@@ -47,7 +47,7 @@ A few facts that matter:
 
 - **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
 - **Sells exclusively in Canada.** Legend isn't trying to be a global brand, every model is sized, equipped, and warrantied for Canadian buyers.
-- **[Mercury Marine](https://www.mercurymarine.com/canada/en/) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
+- **[Mercury Marine](https://www.mercurymarine.com/ca/en) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
 - Legend's warranty coverage on components, hull, and floor differs by model line; check the current warranty terms for the boat you're looking at.
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
@@ -231,7 +231,7 @@ Engine financing options and terms change often; we'll walk you through what's c
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps

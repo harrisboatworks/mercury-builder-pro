@@ -57,7 +57,7 @@ The 9.9 FourStroke is the honest ceiling on a 10 HP lake, and it is the motor we
 
 A 14-foot aluminum boat with two adults and a cooler will cruise all day on a 9.9. It will not be fast. On a 10 HP lake, nothing is, and that is rather the point.
 
-If the boat is small and light, the Mercury 8 FourStroke saves a little weight but not money (on HBW's pricing reference as of September 2026 the 8 HP lists above the 9.9 HP in every comparable configuration) and gives up little on a boat that size.
+On the HBW pricing reference checked September 5, 2026, the 8 HP costs more than the 9.9 HP in four matching tiller configurations: 8MH versus 9.9MH, 8MLH versus 9.9MLH, 8EH versus 9.9EH, and 8ELH versus 9.9ELH. Compare the exact configuration rather than assuming less horsepower means a lower price.
 
 ### 20 HP Limit: Mercury 15 or 20 FourStroke
 

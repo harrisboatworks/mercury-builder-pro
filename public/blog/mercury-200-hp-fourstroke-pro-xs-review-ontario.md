@@ -404,7 +404,6 @@ This review uses current-family evidence and complete Mercury freshwater test re
 - [BBC Boards 200 FourStroke Pathfinder setup and propeller log](https://www.bbcboards.net/showthread.php?t=1096843)
 - [Fishing Media 200 Pro XS 100-hour owner video](https://www.youtube.com/watch?v=ZOzKuopLVYo)
 - [Aj Lynn Mercury 200 Pro XS first run on a Lund 1875 Pro-V video](https://www.youtube.com/watch?v=TOB6-lDjea0)
-- [Reddit discussion of the 200 Pro XS startup sound](https://www.reddit.com/r/boating/comments/1kumurr/who_wants_to_hear_a_600_v12_start_up/)
 - [Reddit 200 Pro XS battery, charging and ground diagnostic discussion](https://www.reddit.com/r/Outboards/comments/1n362rv/2024_merc_pro_xs_200_down_on_power/)
 - [Reddit 200 Pro XS Guardian response after sand ingestion](https://www.reddit.com/r/Outboards/comments/1ud2i8z/2021_mercury_200_pro_xs/)
 
@@ -448,7 +447,7 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
 - [Mercury SeaPro Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide), SeaPro commercial-duty guide
 

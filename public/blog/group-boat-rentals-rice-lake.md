@@ -84,7 +84,7 @@ The live booking system lists the equipment for each pontoon. Every boat carries
 
 **BBQs are welcome on site**, in designated areas only, never on or near the boats. A shore lunch between morning and afternoon cruising works great; just remember rule two: shore time is for your boats' people, not extra guests.
 
-**Alcohol is prohibited on all rental boats, full stop.** Ontario treats a boat like a car, the OPP patrol Rice Lake seriously, and the penalties are severe. For the group planning a celebration: boat dry all day, then raise a glass on dry land once the boats are back. The groups that ignore this rule don't rent twice.
+**Alcohol is prohibited on all rental boats, full stop.** Ontario treats a boat like a car, the OPP patrol Rice Lake seriously, and the penalties are severe. For the group planning a celebration: boat dry all day, then raise a glass on dry land once the boats are back.
 
 **Washrooms:** four on site, key at the office.
 

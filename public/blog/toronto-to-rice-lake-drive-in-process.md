@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
-> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup. Ask us about availability for your boat and location. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup; ask about availability. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats. The full transport limits are in Boat Pickup and Transport Rules.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
@@ -37,7 +37,7 @@ The drive-in model works when the boat owner can safely tow the boat to HBW, lea
 
 ---
 
-## Step 1: Book Before You Leave
+## Step 1: Complete the Service Request
 
 Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
 
@@ -50,9 +50,7 @@ Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
 - Prior diagnostic or service records
 - Your preferred timing
 
-HBW will confirm whether the job fits, what information is missing, and when to bring the boat.
-
-Do not tow to Gores Landing without a confirmed work order or drop-off arrangement.
+Once the service request is completed, you can drop off your boat anytime, including after hours. You do not need to wait for a confirmed drop-off window. HBW reviews the requested work and contacts you about any missing information, approvals, or scheduling.
 
 ---
 
@@ -89,7 +87,9 @@ If the trailer is unsafe, do not tow it to HBW. HBW does not provide roadside to
 
 ## From the Shop: Step 4, Drop Off the Boat
 
-At the confirmed time, HBW will:
+Once you have completed the service request, drop off the boat whenever it suits you, including after hours. An after-hours drop-off does not require an in-person sign-in.
+
+When HBW reviews the boat and service request, the team will:
 
 1. Identify the boat, motor, and keys
 2. Review the complaint or approved work
@@ -99,7 +99,7 @@ At the confirmed time, HBW will:
 
 The final scope comes from the work order. Do not leave expecting unapproved repairs, delivery, launch work, or storage to be added automatically.
 
-After sign-in, you leave the boat and return home. HBW contacts you if the diagnosis changes the scope or approval is required.
+After dropping off the boat, you can return home. HBW contacts you if the diagnosis changes the scope or approval is required.
 
 ---
 
@@ -161,7 +161,7 @@ The marina is closed December 1 through April 1. During that period there is no 
 
 Do not plan on HBW performing maintenance while the shop is closed. Physical work and spring commissioning begin after reopening.
 
-Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
+Spring commissioning is included for HBW winter-storage customers. Non-storage customers should request the current spring-commissioning quote.
 
 ---
 
@@ -187,7 +187,7 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
 
 ### Do I need an appointment before driving to HBW?
 
-Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement.
+Yes. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
 
 ### Is drop-off and pickup one trip?
 
@@ -211,7 +211,7 @@ No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered 
 
 ### Is spring commissioning included with storage?
 
-Yes. It is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers.
+Yes. It is included for HBW winter-storage customers. Non-storage customers should request the current spring-commissioning quote.
 
 ## Related guides
 

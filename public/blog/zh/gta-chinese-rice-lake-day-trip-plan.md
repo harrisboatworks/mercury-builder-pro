@@ -57,7 +57,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 **HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
-如果有人要钓鱼，还要按年龄、居住身份和牌照类型确认自己的[安省钓鱼资格](https://www.ontario.ca/page/fishing-licence)。不开船的乘客不需要因为坐船而办理 PCOC；要驾驶的人则必须在出发前满足 HBW 政策。
+如果有人要钓鱼，还要按年龄、居住身份和牌照类型确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。不开船的乘客不需要因为坐船而办理 PCOC；要驾驶的人则必须在出发前满足 HBW 政策。
 
 ## 第三步：用实时导航，不要背一条“永久正确”的路线
 

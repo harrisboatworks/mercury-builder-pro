@@ -115,7 +115,7 @@ Motor only. ProKicker remote variants land at the top of the range.
 
 Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
 
-#### FourStroke / Pro XS 150 to 250 (V6)
+#### 150 inline-4, 175-225 FourStroke V6, or 200-250 Pro XS / 250 FourStroke V8
 
 **$22,000 - $37,500**
 
@@ -246,7 +246,6 @@ Manufacturer-level programs come and go through the year, so the only list that 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026), financing basics for Ontario buyers
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 

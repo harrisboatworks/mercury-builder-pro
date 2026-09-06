@@ -45,7 +45,7 @@ If you cannot find it, look for a 4x6 inch silver or yellow plate with rivets, o
 
 ## What each field means
 
-A standard Canadian capacity plate has four numbers and one rating:
+The sections below explain maximum persons, recommended engine power, gross load, and the declaration of compliance.
 
 ### 1. Maximum number of persons
 This is the largest number of people included in the manufacturer's recommended safe limits for the boat. It is separate from the weight limit. Transport Canada says the craft reaches capacity when either the people limit or the weight limit is reached, whichever comes first.

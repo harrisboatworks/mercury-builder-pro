@@ -79,7 +79,7 @@ Be honest with yourself about how you boat.
 
 ### What about price?
 
-Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
+Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. The HBW Avator page currently says pricing is being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
 
@@ -109,7 +109,7 @@ The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or a
 
 ### How much does a Mercury Avator cost in Canada?
 
-The total depends on the model, battery count, charger, controls and installation. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.
+The total depends on the model, battery count, charger, controls and installation. The HBW Avator page currently says pricing is being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.
 
 ## Related guides
 

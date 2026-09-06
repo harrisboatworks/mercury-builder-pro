@@ -29,14 +29,9 @@ revenue_driver: repower
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 
-> **Quick answer:** There is no blue book for outboards. Trade-in value comes down to brand, hours, age, condition, and service history, with Mercury and Yamaha 4-strokes holding value best. In Ontario, the trade credit also reduces the taxable amount of your new motor, a 13% HST saving most customers miss. Get a preliminary number in minutes at mercuryrepower.ca.
-
 ## What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
-## Quick answer
-There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-> **Price the complete repower:** Start with the [Mercury quote configurator](/quote/motor-selection) for the replacement motor. HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
+> **Quick answer:** There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. For a typical private recreational trade at an Ontario dealer, the trade credit can reduce the taxable amount of the new motor. Taxable-business or GST/HST-registrant trades are a separate case. Get a preliminary number at [mercuryrepower.ca](https://www.mercuryrepower.ca); HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
 
 *Trade-in value ladder*
 
@@ -112,7 +107,7 @@ Bring it in for a free 30 minute appraisal. We will be honest about both numbers
 
 "What about my old motor?"
 
-It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect.
+It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount. For a typical private recreational trade in Ontario, **the trade-in credit can reduce the taxable amount of the new motor**. Taxable-business or GST/HST-registrant trades need their own tax treatment. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect on a qualifying private-owner trade.
 
 This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
 
@@ -149,7 +144,7 @@ We look at:
 A motor that looks like it has been used and serviced properly is fine. A motor that looks like it sat under a tarp for five winters is a different conversation.
 
 ### 5. Service history
-A service record binder adds 10 to 15% to most trades. Not because we are being generous, it is because a documented motor is one we can resell with confidence.
+A service record binder reduces appraisal uncertainty. A documented motor is one we can resell with more confidence than the same motor with no records.
 
 ## What adds value
 - Mercury or Yamaha brand rather than Honda, Suzuki, or Evinrude
@@ -184,7 +179,7 @@ You do not need a thousand pages of records. You need the right ones:
 - **Recent service work receipts**, especially for a replaced powerhead, gearcase, or major electrical
 - **Ownership papers** for the boat if you are trading boat and motor as a package
 
-A motor with a clean documented service history can trade 10-25% higher than the same motor with no records. We have seen records move the offer by $1,500 on a 90 HP and $3,000 on a 200 V8. Paperwork is the cheapest way to add value.
+A motor with a clean documented service history is easier to appraise and resell than the same motor with no records. Paperwork is the cheapest way to add value.
 
 ## Trade vs private sale vs scrap
 
@@ -198,7 +193,7 @@ The math case for trade: Trade is certain. Private sale has a higher gross numbe
 
 ## The HST savings most customers miss
 
-In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
+When a private recreational customer trades a motor as part of a repower at HBW, **the trade credit can reduce the taxable amount of the new motor**. That is a 13% HST saving on the trade amount in the private-owner example below. Taxable-business or GST/HST-registrant trades are a separate case.
 
 **Worked example.** Say you are [repowering with a Mercury 90 ELPT FourStroke](/blog/mercury-repower-cost-ontario-2026-cad) at $14,960, and we credit $4,000 for your old motor:
 
@@ -232,7 +227,7 @@ Working ranges for freshwater, documented Mercury or Yamaha 4-strokes in working
 | 150 to 200 HP | $9,500 to $14,500 | $6,500 to $10,500 | $4,000 to $7,000 |
 | 225 to 300 HP V6/V8 | $13,000 to $19,000 | $9,000 to $14,500 | $5,500 to $10,000 |
 
-All figures are CAD, before HST, for working motors with no major issues. Add 10 to 15% for documented full service history. Subtract 20 to 40% for non-Mercury/non-Yamaha brands. Subtract 50%+ for Evinrude/OMC. Final number is always confirmed in person after inspection.
+All figures are CAD, before HST, for working motors with no major issues. Documented full service history can support a higher offer; missing records, brand, and condition still move the number. Final value is always confirmed in person after inspection.
 
 ## How to get a preliminary number before you visit
 
@@ -295,7 +290,7 @@ Some go to other customers looking for used motors. Some go to boat brokers or u
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 
 ## Next steps

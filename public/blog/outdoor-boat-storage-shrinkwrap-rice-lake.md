@@ -188,7 +188,7 @@ Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not 
 - HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW seasonal closure reviewed July 24, 2026: physical marina closed December 1 through April 1
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
-- [Mercury owner resources](https://www.mercurymarine.com/us/en/owners/manuals), engine-specific manuals and maintenance scope
+- [Mercury owner resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/owners-manual), engine-specific manuals and maintenance scope
 
 ## Ready to Request Storage?
 
@@ -240,7 +240,7 @@ List the concern in the service request. Repairs require assessment and approval
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 - [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
-- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 
 ## Next steps
 

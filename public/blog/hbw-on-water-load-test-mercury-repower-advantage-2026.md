@@ -86,8 +86,8 @@ Start with the capacity label, current motor, hull details, controls, steering, 
 
 ## Sources
 
-- [Mercury Marine owner's resources](https://www.mercurymarine.com/ca/en/owners)
-- [Mercury Marine propeller guidance](https://www.mercurymarine.com/ca/en/gauges-and-controls/propellers)
+- [Mercury Marine owner's resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury Marine propeller guidance](https://www.mercurymarine.com/ca/en/propellers)
 - [HBW Mercury pricing reference](https://www.mercuryrepower.ca/pricing-reference)
 
 ## FAQs

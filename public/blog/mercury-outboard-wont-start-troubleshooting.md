@@ -82,7 +82,7 @@ If fuel sat through storage, treat fuel quality as a question rather than assumi
 - If you see two distinct layers (gasoline floating on cloudy water-ethanol), the fuel is gone. Drain and refill
 - Use marine stabilizer at every storage event
 
-**HBW sells Ethanol-Free 89 fuel at the dock.** For boats that sit in storage for months, ethanol-free is the cleanest path to avoiding phase separation entirely. We're one of the few Rice Lake / Kawarthas options for non-ethanol marine fuel.
+**HBW sells Ethanol-Free 89 fuel at the dock.** For boats that sit in storage for months, ethanol-free is the cleanest path to avoiding phase separation entirely. Confirm current dock hours and availability before you rely on it.
 
 ### Step 3: Fuel filter and primer bulb
 
@@ -213,7 +213,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 - **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
 - **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
-- **"It ran perfect last fall."** We believe you. [Eight months of sitting is exactly how batteries, fuel, and plugs fail](/blog/mercury-outboard-wont-start-troubleshooting). Nothing has to "break" for a no-start.
+- **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?

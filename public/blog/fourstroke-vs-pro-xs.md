@@ -115,7 +115,7 @@ Most of the motors that leave our shop are FourStrokes, because most of the boat
 
 Verado is the one we'll level with you on. We service them, we know them, and for the right big-water boat they're worth every dollar. But for the boats most of you are running on Rice Lake, it's more motor than the water asks for. We'd rather put you on the right FourStroke or Pro XS and have you spend the difference on the stuff that actually changes your day on the water.
 
-One more local point worth saying plainly: the only Mercury service on Rice Lake is us. Whatever family ends up on your transom, the dealer who rigs it and the dealer who fixes it being the same shop, fifteen minutes from the launch, matters more on year three than the badge does on day one.
+One more local point worth saying plainly: HBW is a Mercury Premier shop on Rice Lake. Whatever family ends up on your transom, the dealer who rigs it and the dealer who fixes it being the same shop, close to the launch, matters more on year three than the badge does on day one.
 
 ## Common mistakes
 
@@ -129,12 +129,9 @@ One more local point worth saying plainly: the only Mercury service on Rice Lake
 Tell us the boat (make, length, what you do with it) and we'll tell you straight which Mercury family fits and why. No upsell to a motor you don't need. You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad), or just call and talk to a person who's rigged a thousand of these.
 
 **Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
 ## Sources
 
@@ -197,7 +194,7 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 ## Related guides
 
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review

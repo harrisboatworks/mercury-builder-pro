@@ -149,9 +149,12 @@ The Yamaha-Torqeedo acquisition is positive for Torqeedo's long-term stability, 
 
 We get more Mercury Avator inquiries than we did even a year ago. The customers who buy Avator successfully tend to be cottage owners running it as a secondary motor on a small dedicated quiet boat, while keeping their primary gas outboard on the main fishing boat.
 
-The customers who try to make Avator (or Torqeedo) their primary motor on a Rice Lake fishing boat consistently report range frustration. Both brands have the same physics constraint, lithium batteries don't yet match gas tanks for full-day Ontario freshwater use cases.
+Range on a Rice Lake fishing day depends on hull, load, throttle, battery capacity, and charging access. Calculate expected runtime from the published battery capacity and the route you actually run, instead of assuming either brand will, or will not, last all day.
 
 For pure side-by-side product comparison without the dealer factor: both brands make legitimate motors. Both will run reliably if installed and maintained properly. The deciding factor is almost always service infrastructure, which for Ontario freshwater buyers tends to favour Mercury Avator.
+
+**Which is better for an HP-restricted lake?**
+Neither brand automatically qualifies for an HP-restricted lake. Check the restriction for the exact waterbody and the motor's rated power. Section 2(3) of the Vessel Operation Restriction Regulations addresses aggregate electric propulsion over 7.5 kW in the waters listed in Schedule 3 of TP 15587, subject to its exceptions; other designated waters have different power or vessel restrictions. A motor being electric is not by itself proof that it is permitted.
 
 - [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
@@ -175,7 +178,7 @@ No. HBW is a Mercury Marine Premier Dealer. For engine repairs, we only service 
 
 ### Does Mercury Avator come with a warranty?
 
-Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models.
+Review the current Canadian limited-warranty terms for the exact Avator motor and battery, including the intended use. Confirm any extended-protection eligibility in writing before including it in a purchase comparison.
 
 ### Will Yamaha discontinue Torqeedo now that they own it?
 
@@ -187,7 +190,7 @@ Probably not. The current product lines from both brands are mature, reliable pr
 
 ### Which is better for an HP-restricted lake?
 
-Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range.
+Neither brand automatically qualifies for an HP-restricted lake. Check the restriction for the exact waterbody and the motor's rated power. Section 2(3) of the Vessel Operation Restriction Regulations addresses aggregate electric propulsion over 7.5 kW in the waters listed in Schedule 3 of TP 15587, subject to its exceptions; other designated waters have different power or vessel restrictions. A motor being electric is not by itself proof that it is permitted.
 
 ## Related guides
 

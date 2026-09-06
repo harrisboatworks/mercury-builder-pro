@@ -137,8 +137,6 @@ We'd lay this out for a customer at the shop:
 
 Fuel burn and range cannot be predicted responsibly from horsepower alone. Hull, propeller, engine height, load, water, weather, throttle setting, and fuel capacity all matter. Use Mercury performance reports for a genuinely comparable boat-and-engine combination, then verify the final setup during the water test.
 
-For current bare-motor pricing, see the [Mercury pricing reference](/pricing-reference).
-
 For service intervals and major service costs on these motors, see [our Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ## Check Boost Eligibility

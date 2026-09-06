@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Why Mercury Dominates the Outboard Market in 2026"
-description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
+title: "Why Mercury Makes Practical Sense for Ontario Boaters (2026)"
+description: "A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit."
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-08-19
@@ -19,9 +19,9 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Why Mercury Dominates the Outboard Market in 2026
+# Why Mercury Makes Practical Sense for Ontario Boaters (2026)
 
-> Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.
+> A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
@@ -40,9 +40,9 @@ Harris Boat Works has sold Mercury exclusively since 1965. We are not a neutral 
 
 ## What "established North American presence" means in practice
 
-[Mercury Marine](https://www.mercurymarine.com/canada/en/) is an established outboard manufacturer with broad Canadian dealer coverage, certified technicians and a mature parts supply chain. Check Mercury's dealer locator for current support near where you boat.
+[Mercury Marine](https://www.mercurymarine.com/ca/en) is an established outboard manufacturer with broad Canadian dealer coverage, certified technicians and a mature parts supply chain. Check Mercury's dealer locator for current support near where you boat.
 
-When your motor needs a water pump impeller on a Thursday in August, that means the part is on a shelf at a local dealer. When you sell the boat in five years, the buyer local dealer already knows the platform.
+When your motor needs a water pump impeller on a Thursday in August, that means the part is on a shelf at a local dealer. When you sell the boat in five years, the buyer's local dealer already knows the platform.
 
 ## The four reasons Mercury makes sense for Ontario boaters
 
@@ -56,7 +56,7 @@ Many aluminum boats sold here, including models from Lund, Crestliner, Princecra
 [Mercury FourStroke covers 2.5 HP through 300 HP](/blog/mercury-outboard-lineup-ontario). Pro XS handles performance fishing. SeaPro covers commercial-duty. Verado covers premium high-horsepower applications (special-order at HBW).
 
 ### 4. Parts and service continuity over the motor life
-A well-maintained Mercury lasts 15 to 25 years. Mercury depth in Ontario means we can service every motor we sell for the full life of that motor.
+A motor's condition, maintenance and service history matter more than a promised lifespan. For an older motor, ask us to check service options and parts availability using its model and serial number.
 
 ## Where Mercury is not automatically the right answer
 
@@ -109,7 +109,7 @@ If you are doing a full repower and the rigging investment is already committed,
 
 ### Is Mercury reliable for cottage use on Rice Lake?
 
-Yes. Most cottage boats in this region came from the factory or previous owners with Mercury motors. At 50 to 150 hours of seasonal use, a properly maintained Mercury lasts 15 to 25 years.
+Yes. Most cottage boats in this region came from the factory or previous owners with Mercury motors. Even at 50 to 150 hours of seasonal use, lifespan varies. Follow the maintenance schedule and assess the condition and service history of the individual motor.
 
 ## Related guides
 

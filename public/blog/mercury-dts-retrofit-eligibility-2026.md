@@ -159,7 +159,7 @@ Email a photo of the motor cowl plate plus the helm controls to info@harrisboatw
 
 A few patterns from our DTS conversations every spring on Rice Lake and the Kawarthas.
 
-The first pattern: more customers already have DTS than realize it. A guy calls asking about retrofitting his "newer Mercury" with DTS, we ask for the serial, look it up, and more often than not the motor already has it. The conversation switches from "can I add it" to "how do I use what I have." Five-minute conversation instead of a $4,000 quote.
+Before considering a DTS retrofit, have the motor serial number checked to establish which controls it supports and which system is already fitted.
 
 The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job, with current figures on our /pricing-reference page. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
 
@@ -167,9 +167,9 @@ The third pattern, specific to Ontario boating: late-season dock approaches in f
 
 Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
 
-> Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
+> A common shop conversation: someone asks about adding DTS to a recent Pro XS, then finds the motor already has it. Checking the helm first can avoid quoting a retrofit you do not need.
 >
-> Most common DTS retrofit conversation at HBW
+> Illustrative HBW conversation pattern, not a named customer or a documented dollar saving
 
 *DTS retrofit decision*
 

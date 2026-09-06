@@ -44,7 +44,7 @@ revenue_driver: repower
 
 ### 为什么 GTA 华人船主愿意到 Rice Lake
 
-- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
@@ -280,7 +280,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 ---
 
-## 行动呼吁
+## 不确定你的 Mercury 该加哪种油？
 
 **不确定你那台 Mercury 该加什么油？**
 
@@ -347,3 +347,4 @@ Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

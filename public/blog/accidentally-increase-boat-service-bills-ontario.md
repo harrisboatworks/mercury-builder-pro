@@ -153,10 +153,10 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
 
 ## Sources
 
-- [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
-- [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
-- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
-- [Mercury Marine, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-maintenance)
+- [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/battery-basics)
+- [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/propeller-maintenance)
+- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
+- [Mercury Marine, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 
 ## FAQs
 
@@ -190,7 +190,7 @@ With the boat stationary and safe, photograph the display message, engine serial
 - [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
 - [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
 - [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
-- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 
 ## Next steps
 

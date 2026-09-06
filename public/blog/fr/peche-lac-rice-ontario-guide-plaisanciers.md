@@ -45,7 +45,7 @@ Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alim
 
 ### Doré jaune (walleye)
 
-Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour les pêcheurs qui préfèrent la légèreté.
+Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
 
 ### Achigan à grande bouche et achigan à petite bouche
 

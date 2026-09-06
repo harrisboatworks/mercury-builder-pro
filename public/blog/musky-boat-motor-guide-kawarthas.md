@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 
-> **Quick answer:** For musky in the Kawarthas, most anglers run a Mercury 90-150 FourStroke main with a 9.9 ProKicker for slow trolling big baits. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly, quote at mercuryrepower.ca.
+> **Quick answer:** For musky in the Kawarthas, a Mercury 90-150 FourStroke main with a 9.9 ProKicker is an 18-21 ft example for slow trolling big baits. Heavier 19-21 ft boats and dedicated 21 ft+ rigs suit the different example bands below. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly; quote at mercuryrepower.ca.
 
 Running a 9.9 ProKicker (Mercury's dedicated trolling kicker motor) for slow trolls and boatside figure-8s? Details on every 9.9 variant are in our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -47,22 +47,21 @@ Musky boats work harder than most: long trolling hours, heavy baits, and rough l
 - Net storage
 - Serious trolling capability
 
-### Power Recommendations
+### Power examples by boat and load
 
-**18ft Musky Boats**:
-- Mercury 115-150HP FourStroke
-- Handles Kawartha conditions well
-- Adequate for trolling and running
+These bands are examples to compare where the exact hull's documented power, transom, and motor-weight limits, steering, usual and heaviest planned load, and use support them.
 
-**19-21ft Musky Boats**:
-- Mercury 150-200HP FourStroke
-- Better rough water capability
-- Power for long runs
+**18ft musky boats**:
+- Mercury 115-150HP FourStroke as an example beside a lighter 90 HP day
+- Must live inside that hull's rated limits
 
-**Dedicated Musky Rigs (21ft+)**:
-- Mercury 200-250HP
-- Often run bow trolling motor
-- May add kicker
+**19-21ft musky boats**:
+- Mercury 150-200HP FourStroke for rough water or long runs
+- A lighter 19 ft day can still suit the 90-150 band
+
+**Dedicated musky rigs (21ft+)**:
+- Mercury 200-250HP for larger rigs
+- Often a bow trolling motor; may add a kicker
 
 ### Why Power Matters for Musky
 
@@ -117,7 +116,7 @@ Pair with main motor for complete musky setup.
 **Kicker**: Mercury 9.9HP Pro Kicker
 **Trolling Motor**: Bow-mount with Spot Lock
 
-That setup covers most of what the Kawarthas throw at a musky boat.
+That is a 19-20 ft Deep-V example inside the 150-200 band.
 
 **[Build Your Musky Motor Setup](/quote)**
 
@@ -136,7 +135,7 @@ Not required, but highly recommended for serious trolling. A kicker gives precis
 
 ### What about running rivers for musky?
 
-Rivers require adequate power to handle current. On the Trent system we usually set boats up with 115 HP or more. More power provides safety margin when water is high.
+Current and operating conditions matter, but 115 HP is not a universal river minimum. On some Trent boats, 115 HP or more may be worth comparing where the manufacturer limits and planned load support it. Match the setup to the actual hull and conditions.
 
 ### Tiller or remote for musky fishing?
 

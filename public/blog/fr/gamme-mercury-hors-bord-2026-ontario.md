@@ -39,7 +39,7 @@ La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 30
 
 Nous sommes un concessionnaire Mercury. Nous le sommes depuis 1965. Voici une analyse honnête de concessionnaire de la gamme Mercury, pas un dépotoir de fiches techniques, mais la réponse pratique à "quel Mercury convient à mon bateau?"
 
-Nous vendons toutes les familles de la gamme ci-dessous (Verado est en commande spéciale seulement).
+Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission ou appelez.
 
 ## Découpage des familles Mercury
 
@@ -73,7 +73,7 @@ Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas 
 
 Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
 
-Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Nous offrons Verado en commande spéciale.
+Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
 
 ### Avator, électrique (en émergence)
 
@@ -130,7 +130,7 @@ Pour la plupart des lacs intérieurs ontariens (lac Rice, Kawarthas, lac Simcoe)
 
 ### Quels moteurs Mercury Harris Boat Works tient-il en stock pour 2026?
 
-Nous tenons en stock et commandons toute la gamme FourStroke, les moteurs de performance Pro XS, les moteurs commerciaux SeaPro, et les hors-bord électriques Mercury Avator. Verado est en commande spéciale seulement.
+La disponibilité dépend du modèle et de la saison. Demandez une soumission pour le moteur souhaité. Verado est en commande spéciale seulement.
 
 ### Quel est le meilleur hors-bord Mercury pour la pêche du doré à la traîne sur le lac Rice?
 

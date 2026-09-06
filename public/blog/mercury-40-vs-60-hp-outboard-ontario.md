@@ -182,6 +182,8 @@ And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP i
 
 *Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
+As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licences are valid for five years. Older licences have their own expiry date or transition deadline; check your licence with Transport Canada. The current fee is $24.41 for a new, transferred, renewed or duplicate licence, while updates and cancellations are free. Fees may change each April 1.
+
 ## Ready to Spec Your 40 or 60 Repower?
 
 Build a complete quote in about three minutes at mercuryrepower.ca. Pick your HP, configuration, shaft length, and prop, see real CAD pricing including controls.
@@ -220,7 +222,7 @@ Maybe. Mercury changed its connector standards in 2014 and again with the SmartC
 
 ### Do I need to update my Pleasure Craft Licence if I change motor HP?
 
-Yes. A change in motor HP is a change in the boat's record and triggers a PCL update within 30 days. Transport Canada updated the rules effective Dec 31, 2025: 5-year renewals, $24 fee, $250 fine for non-compliance. See our Pleasure Craft Licence update guide for details.
+Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update. As checked September 5, 2026, new, transferred and renewed licences are valid for five years, and older licences have their own expiry date or transition deadline. The current fee is $24.41 for a new, transferred, renewed or duplicate licence; updates and cancellations are free. Fees may change each April 1.
 
 ### How long does a Mercury 40 or 60 last?
 
@@ -230,7 +232,7 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
 - [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
 

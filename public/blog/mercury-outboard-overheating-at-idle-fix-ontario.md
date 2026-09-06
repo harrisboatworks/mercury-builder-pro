@@ -59,7 +59,7 @@ Check the tell-tale (the small water stream from the motor cowling) when the ala
 
 | Tell-tale at idle | What it means |
 |---|---|
-| Strong and steady | Water is flowing. Problem is likely thermostat, sensor, or internal blockage, not the pump. |
+| Strong and steady | Water is leaving the telltale. That does not rule out overheat. The cause may still be thermostat, sensor, internal blockage, or another cooling path. Follow the display and the serial-specific manual. |
 | Weak or sputtering | Pump isn't generating enough flow at low RPM. Classic worn impeller. |
 | Strong at cruise, weak at idle | **Classic worn impeller.** At cruise RPM the pump gets by; at idle RPM it can't. |
 | No tell-tale at all | Pump has failed or intake is completely blocked. Shut down. |
@@ -138,7 +138,7 @@ This is why we recommend impeller replacement on schedule rather than waiting fo
 If the overheat alarm sounds at idle:
 - **Don't keep running to see if it clears.** Running an overheated motor at any RPM risks powerhead damage.
 - **If the tell-tale is weak or absent: shut down immediately.**
-- **If the tell-tale is normal: idle very slowly toward shore and book service.**
+- **If the tell-tale looks normal: that does not rule out overheat.** Reduce load, follow the display and the serial-specific manual, and stop when a temperature, oil-pressure, or water-flow warning requires it. Do not treat a limp-back at idle as the default first step.
 
 After any overheating event, have the motor inspected before the next run. Heat cycling can cause damage that isn't visible externally.
 
@@ -150,9 +150,9 @@ Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What we see at HBW
 
-Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
+Rice Lake's central basin can be thick with stumps and milfoil in late July. If an overheat alarm sounds after a weed-heavy run, check the intake screens before assuming the impeller failed.
 
-The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
+Follow the engine manual before inspecting or clearing intake screens. Do not probe or disassemble cooling components based on this summary. Have an overheat alarm diagnosed before the next run.
 
 ---
 
@@ -172,7 +172,7 @@ Every 3 years or 300 hours is the common Mercury guidance; your model's manual h
 
 ### My tell-tale is weak, can I still run it?
 
-Briefly at idle to limp back to dock, yes. Anything more risks the powerhead. The tell-tale stream is your real-time water-flow indicator - if it's weak, the engine is undercooled.
+A weak or missing telltale is a stop-and-assess warning, not permission to keep idling. Reduce load, follow the display and the serial-specific manual, and shut down when a temperature or water-flow warning requires it. A strong stream also does not rule out overheat. Arrange a tow or other safe return rather than using idle as a default limp-home plan.
 
 ### Can I just delete the thermostat to fix overheating?
 
@@ -180,7 +180,7 @@ No. Engines need to reach operating temp to combust properly. A deleted thermost
 
 ### Did I damage the powerhead by overheating?
 
-Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes - usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.
+Depends on duration and how you responded. If you reduced load, followed the display and the serial-specific manual, and shut down when a temperature warning required it, many motors are unharmed. If you kept running through the alarm, you may have damaged the head gasket, rings, or valves. We can pressure-test to confirm.
 
 ## Related guides
 

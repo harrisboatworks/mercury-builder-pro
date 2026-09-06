@@ -33,9 +33,9 @@ revenue_driver: repower
 
 For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
-Let us skip the preamble. If you fish Rice Lake for walleye, you need a kicker motor. That is the whole answer.
+Let us skip the preamble. A kicker is the right tool when you need sustained slow trolling, redundancy, or low-speed control that the main engine and a bow-mount cannot deliver on your hull. It is not the only legal or mechanical way to fish Rice Lake walleye.
 
-Everything below explains why, and which version of the Mercury 9.9 to get, how it differs from the standard 9.9, and what we have learned rigging these on fishing boats on this specific lake. We have been setting up boats on Rice Lake's south shore for three generations, and the kicker is the single most common thing customers wish they had added at purchase instead of a year later.
+Everything below explains when that need is real, which version of the Mercury 9.9 to get, how it differs from the standard 9.9, and what we have learned rigging these on fishing boats on this specific lake. We have been setting up boats on Rice Lake's south shore for three generations, and the kicker is the single most common thing customers wish they had added at purchase instead of a year later.
 
 If you are already sold and just want pricing, go to **mercuryrepower.ca**. If you want to understand why the ProKicker exists and why it matters on Rice Lake, read on.
 
@@ -54,9 +54,9 @@ Two things make the ProKicker a trolling motor instead of just a small outboard:
 - **A high-thrust, four-blade propeller.** This prop is built for low-speed control, not top speed. It gives you precise, repeatable trolling speeds down in the range walleye actually want.
 - **Mercury's heavy-duty Command Thrust gearcase, standard.** The larger lower unit puts more bite in the water, which means better thrust at slow speeds and better control in chop. On the EFI ProKicker this gearcase is not an upgrade. It comes on the motor.
 
-The EFI ProKicker also comes with **power tilt as standard**, so you raise and lower the kicker with a button instead of reaching over the transom. The result is a motor designed to troll at 1 to 2 mph all day without the surging and hunting you get when you ask a standard outboard to run below its comfort zone.
+The EFI ProKicker also comes with **power tilt as standard**, so you raise and lower the kicker with a button instead of reaching over the transom. The result is a motor designed for sustained slow trolling when the hull, prop, load, and conditions allow. That is not a guaranteed 1 to 2 mph on every boat.
 
-The standard 9.9 is not that motor. It can push a small boat. It cannot troll a fishing boat the way Rice Lake walleye demand.
+The standard 9.9 is a primary motor for small boats. It is not purpose-built to troll a larger fishing boat all day the way a ProKicker is.
 
 ---
 
@@ -68,11 +68,21 @@ Rice Lake is a trolling lake. That is just the truth of it.
 
 The walleye fishery, which is the reason most people come here, is built around slow trolling with worm harnesses along weed edges and over shallow flats. The productive speed is 1 to 2 mph. In some conditions, slower than that.
 
-Your main motor cannot do this cleanly, whatever size it is. At true idle in gear, most 60 to 115 HP outboards push a typical aluminum fishing boat at 3 to 4.5 mph. That is not a Rice Lake walleye speed. It spins your harnesses too fast, it puts fish off, and it wastes your day.
+A main motor does not automatically fail this job. Mercury offers fine RPM Troll Control on eligible midrange engines, and published trolling RPM ranges exist for V6/V8 models. Whether the main engine holds a lure's desired speed still depends on hull, prop, load, and conditions. At true idle in gear, many 60 to 115 HP outboards on a typical aluminum fishing boat run faster than a 1 to 2 mph harness wants. That is a common reason to add a kicker, not proof that every main motor is unable to troll.
 
 Noise is the other problem. A big four-stroke at idle is still a big four-stroke at idle. In 8 feet of water over a weed flat, that matters. Shallow-water walleye are spooky.
 
-The ProKicker solves both problems at once. The main motor tilts up out of the water. You run on the kicker: quiet, slow, dialled in. You cover your pattern and you catch fish.
+When you want sustained slow trolling plus a get-home motor, the ProKicker is the clean tool. The main motor tilts up. You run on the kicker: quiet, slow, dialled in.
+
+### Main engine, bow-mount, or kicker?
+
+| What you need | Start with |
+|---|---|
+| Short trolling runs on an eligible midrange with Troll Control | Main engine, if hull, prop, load, and conditions give the lure speed you want |
+| Spot-lock, shallow water, close-quarters boat control | Bow-mount electric |
+| Sustained slow trolling, redundancy, lock approaches, get-home power | Kicker (ProKicker when those needs are real) |
+
+Most serious Rice Lake walleye rigs we see run a kicker, and many also run a bow-mount. That is a use-case recommendation, not a rule that the main motor can never troll.
 
 ![Mercury main outboard and 9.9 ProKicker on an aluminum boat transom, ideal for trolling Rice Lake walleye.](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
 
@@ -106,7 +116,7 @@ Because the EFI ProKicker comes standard with the Command Thrust gearcase and po
 
 **Shaft length.** The ProKicker comes in 20 inch (long) and 25 inch (extra-long) shafts. A kicker mounts on an offset bracket beside your main motor, and the bracket plus your transom height decide what you need. Most 16 to 18 ft aluminum fishing boats take the 20 inch. Taller-transom console boats and many deeper-V hulls need the 25 inch. Do not guess this. Measure your transom, and factor in the bracket. A wrong shaft length puts the prop at the wrong depth and ruins both performance and cavitation behaviour.
 
-**Start type.** Manual start does not require a cranking battery. Pull the rope and the motor charges its own ignition system. Electric start does need a battery, and on most fishing boats you already have one. Electric start matters most on bigger boats where the kicker is a stretch to reach.
+**Start type and battery.** Distinguish the actual model. Mercury's June 2024 EFI 8/9.9 FourStroke announcement supports battery-free manual starting on those portable models. Electric-start, power-tilt, and battery-charging-equipped models are different: the 8/9.9 EFI/CT/ProKicker manual prohibits operating a charging-equipped model with the battery leads disconnected. The EFI ProKicker includes power tilt as standard, so treat it as a battery-connected motor unless the exact serial-matched manual says otherwise. Follow that manual; do not pull the leads on a charging-equipped engine.
 
 **Control type.** Tiller control is simple and standard on most kicker installs. Remote control routes the kicker's throttle and shift to a binnacle or panel near the helm. Some anglers also add a tiller extension so the handle reaches the operator's seat without a stretch.
 
@@ -209,11 +219,11 @@ The ProKicker is purpose-built for trolling. It has a high-thrust four-blade pro
 
 ### Do I need a kicker for Rice Lake walleye?
 
-For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective presentation here. The Mercury 9.9 ProKicker is the standard kicker on Rice Lake fishing boats because it runs the right speed, quietly, for hours.
+Recommend one when you need sustained slow trolling, redundancy, or control the main engine and bow-mount cannot deliver on your hull. Eligible midrange engines with Troll Control can troll; they do not guarantee 1 to 2 mph on every boat. The 9.9 ProKicker is the common Rice Lake kicker because it is built for that job.
 
 ### Does the EFI ProKicker need a battery to start?
 
-The manual-start version does not. Pulling the rope charges the ignition system on its own. The electric-start version does need a cranking battery, which most fishing boats already have.
+Specify the actual model. Current 8/9.9 EFI FourStroke manual-start portables can start without a battery. Electric-start, power-tilt, and charging-equipped models, including the EFI ProKicker with power tilt as standard, must follow the exact manual. Do not disconnect the battery on a charging-equipped model.
 
 ### What shaft length do I need?
 

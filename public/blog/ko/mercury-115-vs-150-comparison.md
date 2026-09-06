@@ -65,7 +65,7 @@ Mercury 115 FourStroke는 16–19피트 알루미늄 보트와 폰툰에 적합�
 
 ---
 
-HBW에서는 매년 약 65대의 새 Mercury 엔진을 판매합니다. 그중 가장 자주 듣는 질문은 **"115와 150 중 뭘 골라야 하나요?"**입니다.
+**"115와 150 중 뭘 골라야 하나요?"** 두 모델을 비교할 때는 선체 허용 마력, 적재량과 사용 목적부터 확인하세요.
 
 정답은 보트 크기, 용도, 예산에 따라 달라집니다.
 
@@ -123,9 +123,9 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ---
 
-**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격 
-**전화:** 905-342-2153 
-**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service) 
+**온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격
+**전화:** 905-342-2153
+**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service)
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
 

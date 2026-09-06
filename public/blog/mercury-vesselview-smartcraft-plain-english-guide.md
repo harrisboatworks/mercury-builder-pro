@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
-## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
+## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/ca/en) App. A Plain-English Guide
 
 > **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
 
@@ -49,7 +49,7 @@ Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, establ
 
 **SmartCraft** is Mercury's name for the engine-side network that talks to gauges, displays, and apps. If your motor is from **2004 or newer at 40 HP and up** (or 2022+ at 25 HP+ with electric start), [it's SmartCraft-capable](/blog/mercury-smartcraft-connect-guide-ontario). That's the foundation.
 
-Everything in this article. VesselView, Active Trim, DTS, the new Mercury Marine App, runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
+Everything in this article (VesselView, Active Trim, DTS, the new Mercury Marine App) runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
 
 You don't "install SmartCraft." It's already in your motor if it's modern enough. What you install are the *modules* and *displays* that connect to it.
 
@@ -57,7 +57,7 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
-Quick history. **VesselView Mobile** has been Mercury's phone app for several years, a Bluetooth module under the cowl talked to your phone, your phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
+Quick history. **VesselView Mobile** has been Mercury's phone app for several years. A Bluetooth module under the cowl talked to your phone, and the phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
 
 What you need to know:
 

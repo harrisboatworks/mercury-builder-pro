@@ -35,7 +35,7 @@ revenue_driver: repower
 
 A Mercury outboard repower comes with a factory warranty. How long that warranty runs, what it covers, and how it's registered depends on the motor model and how the installation is done. This page explains the key facts clearly.
 
-We are a Mercury Marine Premier dealer. That matters for how warranty claims are handled, we explain why below.
+We are a Mercury Marine Premier dealer. That matters for how warranty claims are handled: we explain why below.
 
 ---
 

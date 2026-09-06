@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)"
-description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury..."
+description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet."
 category: "Avis produit"
 date_published: 2026-05-13
 date_modified: 2026-07-31
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)
 
-> Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury...
+> Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet.
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
@@ -141,6 +141,10 @@ Non. La plaque de capacité est le plafond légal. Un 90 sur une coque de 75 HP 
 ### Un Mercury 75 fonctionnera-t-il sur un ponton?
 
 Techniquement oui pour les plus petits pontons sous 20 pi avec des charges légères. Nous ne le recommandons pas. Les pontons demandent du couple et une capacité de charge, ce que le 90 ELPT Command Thrust offre.
+
+### Puis-je obtenir le 75 en version Command Thrust?
+
+La page canadienne actuelle de Mercury indique l'option Command Thrust pour les 90 et 115 ch de cette gamme, pas pour le 75 ch. Avant de commander, confirmez avec le concessionnaire le code de modèle canadien et la configuration exacte; ne présumez pas qu'un 75 Command Thrust est offert.
 
 ### Puis-je obtenir un 75 Mercury usagé?
 

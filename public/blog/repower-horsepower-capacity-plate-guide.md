@@ -55,7 +55,7 @@ The plate lists three things relevant to this conversation:
 2. **Maximum load** stated on the notice
 3. **Maximum number of people** stated on the notice
 
-Do not describe the power figure as an automatic criminal-law ceiling or promise that one insurance result applies to everyone. It is the manufacturer's recommended maximum safe limit. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
+The power figure is the manufacturer's recommended maximum safe limit, not an automatic criminal-law ceiling, and insurance outcomes are not the same for every owner. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
 
 ---
 

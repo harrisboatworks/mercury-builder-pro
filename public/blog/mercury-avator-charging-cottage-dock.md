@@ -154,7 +154,7 @@ No. Mercury recommends bringing battery packs to a heated space at 50-80% charge
 
 ### How long do Avator batteries last (lifecycle)?
 
-Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. For typical cottage use (weekend running through summer), a properly cared-for battery pack lasts 8-12 years before reaching meaningful degradation.
+Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. Calendar life depends on use, storage, charging, and temperature. Check the battery documentation for its rated cycle life and care requirements.
 
 ### Does fast charging shorten battery life?
 

@@ -131,13 +131,11 @@ revenue_driver: rentals
 - 邮件：info@harrisboatworks.ca
 - 网站：[harrisboatworks.ca](https://www.harrisboatworks.ca)
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/canada/en/) · 莱斯湖 Gores Landing · 自 1947 年
-
----
-
 > 相关指南：[买 pontoon：家庭、钓鱼、Rice Lake 怎么配](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
-> 相关指南：[钓鱼船 vs Pontoon 怎么选](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
+
+---
 
 ## 相关阅读
 

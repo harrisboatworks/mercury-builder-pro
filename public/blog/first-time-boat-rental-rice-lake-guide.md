@@ -119,7 +119,7 @@ Motor won't start after your swim stop? Confirm the kill-switch clip is seated a
 
 - **Skipping the operator card until rental morning.** HBW requires every driver to bring a valid PCOC and photo ID. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
-- **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
+- **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers make the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
 - **Overloading the bow.** Spread people around the boat; a nose-heavy pontoon steers worse and rides wetter.
 
@@ -164,7 +164,7 @@ Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and
 
 ### What if the weather looks bad on my rental day?
 
-If conditions are genuinely poor (high winds, rain), HBW's current policy allows cancellation or rescheduling with no penalty and refunds applied deposits and payments. Check the forecast and current policy before departure.
+Review the current cancellation, rescheduling, and deposit terms when you book. If conditions look poor, contact HBW before travelling.
 
 ## Related guides
 

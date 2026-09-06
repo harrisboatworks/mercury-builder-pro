@@ -19,7 +19,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
     content: `### Respuesta rápida
 
-Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de $24.41 CAD y puede ajustarse anualmente. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+Para comprar y operar un bote motorizado en Ontario, la Carta de Operador de Embarcaciones de Placer (PCOC/COEP) es la forma más habitual de demostrar la competencia; Transport Canada también acepta otras pruebas en determinados casos. El costo del curso varía según el proveedor acreditado. La Licencia de Embarcaciones de Placer (PCL) aplica según los criterios de la embarcación, incluso para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de $24.41 CAD ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
 
@@ -35,7 +35,7 @@ Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es obligatoria para toda persona que opere una embarcación motorizada en Canadá, independientemente de la edad o la potencia del motor.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
@@ -51,7 +51,7 @@ El examen está disponible en inglés y francés en el sitio de Transporte Canad
 
 Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
 
-- Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente
+- Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años** (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD** ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril
 - Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
 - La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
 
@@ -154,7 +154,7 @@ Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/servic
 ## Preguntas frecuentes (FAQ)
 
 **¿Necesito licencia de conducir para manejar un bote en Ontario?**
-No una de auto, pero sí necesitas la PCOC (Carta de Operador de Embarcaciones de Placer). Se obtiene en línea y es válida de por vida.
+No una de auto. Para manejar una embarcación de recreo motorizada necesita una prueba de competencia reconocida; la PCOC (Carta de Operador de Embarcaciones de Placer) es la forma más habitual. Se obtiene en línea y es válida de por vida.
 
 **¿Es obligatorio el seguro para embarcaciones en Ontario?**
 No es legalmente obligatorio como en los autos, pero es altamente recomendable. Un accidente sin seguro puede resultar en responsabilidad civil significativa.
@@ -185,7 +185,7 @@ Harris Boat Works
 harrisboatworks.ca
 ---`,
     faqs: [
-      { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Sí. Toda persona que opere una embarcación motorizada necesita la PCOC (Pleasure Craft Operator Card). Se obtiene una sola vez y es válida de por vida.' },
+      { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Para manejar una embarcación de recreo motorizada necesita una prueba de competencia reconocida. La PCOC (Pleasure Craft Operator Card) es la forma más habitual; Transport Canada también acepta otras pruebas en determinados casos. Se obtiene una sola vez y es válida de por vida.' },
       { question: '¿Cuánto cuesta mantener un bote al año?', answer: 'Depende del tamaño y el uso, pero para un bote típico de 16-18 pies, considere entre $3,000 y $7,000 CAD al año incluyendo almacenamiento, combustible, seguro y mantenimiento.' },
       { question: '¿Es mejor comprar nuevo o usado?', answer: 'Si su presupuesto es limitado, un bote usado con un motor Mercury nuevo (remotorización) le da la mejor combinación de valor y confiabilidad.' },
       { question: '¿Puedo obtener un precio sin llamar?', answer: 'Sí. En mercuryrepower.ca puede configurar su motor y ver el precio en dólares canadienses, sin compromiso.' },
@@ -364,7 +364,7 @@ harrisboatworks.ca | 905-342-2153
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
       { question: '¿Qué tan lejos está Rice Lake de Toronto?', answer: 'Aproximadamente 1,5 horas por la 401 Este y luego la 115 Norte.' },
-      { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Sí. Si usted opera una embarcación motorizada, necesita la Pleasure Craft Operator Card. Si no tiene PCOC, para embarcaciones de alquiler también puede aplicarse el rental boat safety checklist durante el período del alquiler.' },
+      { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Transport Canada exige una prueba de competencia reconocida para operar una embarcación de recreo motorizada; la Pleasure Craft Operator Card (PCOC) es la prueba más común, no la única. En Harris Boat Works la política de alquiler es más estricta: cada conductor debe presentar una PCOC u otra licencia de operador válida al recoger el bote. La lista de seguridad de alquiler se completa como briefing y no sustituye ese requisito.' },
       { question: '¿Cuáles son las mejores especies para principiantes?', answer: 'La perca amarilla (perch) se pesca todo el año y es la más accesible para principiantes y familias con niños.' },
     ],
   },
@@ -422,11 +422,9 @@ Si no usa combustible sin etanol, agregue un estabilizante aprobado para motores
 
 ### 2. Lubricación interna (fogging)
 
-El fogging consiste en rociar un aceite protector dentro de los cilindros del motor mientras está en funcionamiento, y luego apagarlo con el aceite todavía en su lugar. Esta película protege las piezas metálicas internas contra la oxidación y la corrosión durante los meses de inactividad.
+La protección interna depende del modelo y del número de serie. Siga el procedimiento del manual Mercury correspondiente; no rocíe aceite en la admisión ni en los cilindros basándose solo en una guía general. Cuando el manual prevé esta protección, la película ayuda a limitar la oxidación y la corrosión durante los meses de inactividad.
 
-Muchos propietarios olvidan o saltan este paso. Lo vemos cada primavera: motores con cilindros oxidados que necesitan reparación cuando un tratamiento de fogging hubiera costado muy poco.
-
-**¿Qué pasa si lo omite?** Oxidación interna, desgaste prematuro, reparación costosa en primavera.
+**¿Qué pasa si omite el procedimiento del manual?** El riesgo depende del motor; el manual del modelo y del número de serie indica qué protección interna corresponde.
 
 ### 3. Drenaje del aceite de engranajes (gear lube)
 
@@ -479,16 +477,16 @@ Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de 
 
 ## ¿Por qué confiar la preparación invernal a profesionales?
 
-Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
+Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos que más se olvidan son: la protección interna cuando el manual la exige, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocen los motores Mercury a fondo.
 
 ---
 
 ## Preguntas frecuentes
 
 **¿Puedo hacer la preparación invernal yo mismo?**
-Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
+Sí, si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos más frecuentemente olvidados son la protección interna prevista en el manual y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
 
 **¿Dónde puedo conseguir combustible sin etanol?**
 Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
@@ -633,7 +631,7 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000–$5,000+ CAD dependiendo de la configuración.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging, los controles y la hélice cambian el total; compare cotizaciones escritas con las mismas fechas y supuestos.
 
 ---
 
@@ -852,7 +850,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
@@ -870,7 +868,7 @@ Esta guía está diseñada para hispanohablantes que quieren entender el sistema
 
 ## PCOC, La "licencia de conducir" del navegante
 
-La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. Es emitida por Transporte Canadá y es obligatoria para cualquier persona que opere una embarcación motorizada en aguas canadienses.
+La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. La emite un proveedor acreditado por Transport Canada. La PCOC es una de las pruebas de competencia aceptadas para manejar una embarcación de recreo motorizada.
 
 ### Características clave:
 
@@ -886,9 +884,9 @@ La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licenci
 
 El examen está actualmente disponible en inglés y francés. A la fecha de publicación no existe una versión certificadora oficial en español, para prepararte, puedes usar materiales de estudio en español de terceros y luego presentar el examen en inglés o francés. Verifica la disponibilidad de idiomas directamente en tc.gc.ca.
 
-### ¿Quién necesita la PCOC?
+### ¿Quién necesita una prueba de competencia?
 
-Toda persona que opere el control de una embarcación motorizada, sin importar:
+La PCOC es una de las pruebas de competencia aceptadas. Quien conduzca una embarcación de recreo motorizada necesita una prueba reconocida, sin importar:
 - Si es propietario o arrendatario
 - Si el motor es pequeño (incluso un motor de pesca eléctrico)
 - Si es residente temporal o permanente
@@ -903,7 +901,7 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 ### Vigencia y tarifa actuales
 
-Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. La tarifa federal actual para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** y puede ajustarse anualmente. Las licencias antiguas sin fecha de vencimiento se están incorporando gradualmente al nuevo esquema; verifica el vencimiento de la tuya en tc.gc.ca.
+Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. Al 5 de septiembre de 2026, la tarifa federal para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. Las licencias antiguas no eran todas vitalicias: Transport Canada fija ahora cohortes de vencimiento; verifica la tuya.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 

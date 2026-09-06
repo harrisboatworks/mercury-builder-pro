@@ -39,6 +39,10 @@ revenue_driver: service
 - **Lumières et câblage** : tester avant chaque sortie; les feux DEL scellés durent 10 fois plus longtemps que les ampoules standard
 - **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; les supports rouillés sont la défaillance numéro un que HBW voit
 
+## Avant chaque trajet
+
+Avant chaque trajet, vérifiez aussi l'attelage, les fixations, les chaînes, les pneus et les feux selon les manuels du véhicule et de la remorque. Ce guide porte sur l'entretien annuel; ces contrôles de départ restent nécessaires à chaque sortie.
+
 ---
 
 ## Pourquoi la plupart des plaisanciers sautent l'entretien jusqu'à la défaillance
@@ -73,7 +77,7 @@ Les roulements sont des cartouches de graisse scellées qui permettent aux roues
 La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à inertie. Les remorques plus grandes utilisent des freins électriques contrôlés depuis le véhicule remorqueur.
 
 **Action :**
-- À inertie : rincer la conduite hydraulique annuellement avec du liquide de freins de qualité marine (DOT 4 ou DOT 5)
+- À inertie : utilisez uniquement le liquide de freins prescrit par le fabricant de votre actionneur et de vos freins. Ne mélangez pas des types de liquide non compatibles; suivez la procédure et l'intervalle d'entretien du fabricant.
 - Électriques : tester la force d'attraction de l'aimant annuellement; remplacer les plaquettes usées
 - Inspecter rotors et tambours pour piqûres de rouille
 
@@ -164,7 +168,7 @@ Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
@@ -184,7 +188,7 @@ Oui. Les pneus Special Trailer (ST) ont des flancs plus rigides et des cotes de 
 
 ### Dois-je immatriculer ma remorque de bateau en Ontario?
 
-Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir un permis et une plaque d'immatriculation de ServiceOntario, peu importe la taille. Coûte environ 34 $ pour le permis plus la vignette annuelle.
+Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir un permis et une plaque d'immatriculation de ServiceOntario, peu importe la taille. En Ontario, une remorque est immatriculée une seule fois : sa plaque et son certificat ne sont pas à renouveler chaque année. Consultez ServiceOntario pour les frais actuels.
 
 ### Combien de temps durent les tasseaux de remorque?
 

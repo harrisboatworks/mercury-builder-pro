@@ -220,7 +220,7 @@ Shopping instead of troubleshooting? See our [Legend and Mercury package guide](
 
 - [Legend Boats WOWranty](https://www.legendboats.com/legend-boats-6-year-wowranty/)
 - [Legend XT Series current warranty summary](https://www.legendboats.com/xt-series/)
-- [Legend Boats Owner's Manual](https://online.flipbuilder.com/jxio/yegf/)
+- [Legend Boats Owner's Manual](https://legend-marketing.s3.amazonaws.com/2023/support/LegendBoats_Current_Owners_Manual_ENG.pdf)
 - [Mercury Canada warranty coverage and product protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection)
 - [ShoreLand'r boat and PWC trailer warranty](https://shorelandr.com/PDF_Docs/SL-Boat-PWC-Trailers-Warranty.pdf)
 - [Minn Kota warranty information](https://minnkota.johnsonoutdoors.com/us/support/warranty)

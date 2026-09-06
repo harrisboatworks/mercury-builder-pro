@@ -221,7 +221,7 @@ The avoidable mistake is usually not a bad conversion. It is matching the right 
 ## Sources and Scope
 
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-27
-- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 
 The Mercury guide says its capacities are based on information believed accurate at publication and tells owners to verify against the engine owner's manual. This HBW lookup preserves the model, year and serial distinctions instead of turning them into a single horsepower rule.

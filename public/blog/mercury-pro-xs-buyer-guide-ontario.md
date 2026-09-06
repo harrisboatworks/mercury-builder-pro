@@ -37,7 +37,7 @@ Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Sam
 
 Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (the flagship V8/V10/V12 line, naturally aspirated, special-order territory). SeaPro is the commercial-grade variant.
 
-Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175 Pro XS uses Mercury's 3.4L V6, and the 200-300 Pro XS run the 4.6L V8, a bigger block than the same-HP FourStroke).
+Pro XS shares dealer and parts overlap with FourStroke, but horsepower does not identify the powerhead. The 115 and 150 Pro XS are inline-four, the 175 is a 3.4 L V6, and the 200, 225, 250, and 300 are 4.6 L V8. A same-HP FourStroke can be a different architecture.
 
 The Pro XS lineup as of 2026:
 
@@ -48,7 +48,7 @@ The Pro XS lineup as of 2026:
 | 200 - 225 | 4.6L V8 | Tournament bass boats, performance fibreglass, larger pontoons |
 | 250 - 300 | 4.6L V8 | Offshore fishing, performance cruisers, large performance pontoons |
 
-The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 and above are V6/V8 architectures that aren't available in FourStroke trim, these are Pro XS-exclusive engine families.
+The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 Pro XS is the remaining V6 rating; 200 and above are V8. Confirm the exact configuration rather than treating every Pro XS above 150 as one family.
 
 ## Who actually needs Pro XS in Ontario
 
@@ -56,11 +56,11 @@ The honest answer: **not most Ontario boaters.** For cruising, family fishing, c
 
 The Ontario customers who do benefit from Pro XS:
 
-**Tournament bass anglers.** Run-times matter. Hole-shot acceleration matters. Top-end speed matters. The 175-200 Pro XS V6 is [the dominant tournament setup in Ontario bass boat circles](/blog/bass-boat-mercury-motor-buying-guide).
+**Tournament bass anglers.** Run-times matter. Hole-shot acceleration matters. Top-end speed matters. The 175 Pro XS V6 and 200 Pro XS V8 are [common tournament setups in Ontario bass boat circles](/blog/bass-boat-mercury-motor-buying-guide).
 
-**Serious walleye anglers running larger waters.** [Lake Simcoe, Bay of Quinte, Lake Nipissing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), big-water fishing where you need to move between spots fast and want to outrun afternoon weather. 150 Pro XS or 175-200 Pro XS V6 common.
+**Serious walleye anglers running larger waters.** [Lake Simcoe, Bay of Quinte, Lake Nipissing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), big-water fishing where you need to move between spots fast and want to outrun afternoon weather. 150 Pro XS inline-four, 175 Pro XS V6, or 200 Pro XS V8 are common.
 
-**Performance pontoon owners.** Triple-tube pontoons running 200-300 HP for water sports or fast cruising. Pro XS V6 or V8 setups.
+**Performance pontoon owners.** Triple-tube pontoons running 200-300 HP for water sports or fast cruising. Confirm whether that rating is a V6 FourStroke or a V8 Pro XS.
 
 **Fast fibreglass runabouts.** 19-21 ft fibreglass cruisers running 200-250 HP for water-ski, wakeboarding, fast lake-running.
 
@@ -89,17 +89,17 @@ For mid-size aluminum fishing boats (18-21 ft) and mid-pontoons running performa
 
 The 150 Pro XS shares some service intervals with the FourStroke 150 but with more aggressive performance calibration.
 
-## The V6 family: 175 / 200 / 225 Pro XS
+## The 175 Pro XS V6 and the 200 / 225 / 250 / 300 V8s
 
-The 175, 200, and 225 Pro XS share Mercury's 3.4L V6 powerhead. This engine family is [the dominant performance fishing motor](/blog/mercury-150-300hp-pro-xs-performance-guide) in Ontario bass boat tournaments and serious walleye applications on larger waters.
+The 175 Pro XS is the remaining 3.4 L V6 rating. The 200, 225, 250, and 300 Pro XS share Mercury's 4.6 L V8, not the V6. Those V8 ratings are [common performance fishing motors](/blog/mercury-150-300hp-pro-xs-performance-guide) in Ontario bass boat tournaments and serious walleye applications on larger waters.
 
-Within this family, the differences are calibration and prop matching, same physical engine, different RPM ceilings and tuning. The 200 is the most-installed of the three on Ontario tournament boats.
+Do not treat 175, 200, and 225 as one physical engine with different stickers. Confirm the exact configuration, gearcase, and controls before quoting.
 
-The V6 Pro XS comes with full SmartCraft compatibility, advanced rigging options, and Mercury's most aggressive throttle mapping. This is serious performance equipment, not casual recreational power.
+These higher-HP Pro XS models come with full SmartCraft compatibility, advanced rigging options, and Mercury's most aggressive throttle mapping. This is serious performance equipment, not casual recreational power.
 
-## The V8 family: 250 / 300 Pro XS
+## The larger V8 ratings: 250 / 300 Pro XS
 
-The 250 and 300 Pro XS use Mercury's 4.6L V8 powerhead. These are large motors for large boats, performance pontoons in the 24-26 ft class, fast fibreglass cruisers, offshore-style fishing rigs.
+The 250 and 300 Pro XS also use Mercury's 4.6 L V8 powerhead. These are large motors for large boats, performance pontoons in the 24-26 ft class, fast fibreglass cruisers, offshore-style fishing rigs.
 
 For most Ontario freshwater applications, the V8 Pro XS is overkill. Where it earns its money: water-ski tournament boats, wakeboard boats, performance pontoons that actually run fast with full loads, fishing rigs targeting Bay of Quinte / Lake Simcoe / Great Lakes shorelines where you need to move between spots fast.
 
@@ -143,7 +143,7 @@ The most common Pro XS mistake we see: Ontario buyers buying Pro XS for "just in
 
 If you don't actively use the performance, you're paying premium for something that's working against your day-to-day experience.
 
-The other observation: Pro XS V6 buyers consistently report they wish they'd gone one HP class higher. The 200 buyer wishes they had a 225, the 225 wishes for a 250, etc. The Pro XS family rewards horsepower headroom. If you're already committing to Pro XS, lean toward the upper end of your boat's capacity rating.
+The other observation: Pro XS buyers often wish they'd gone one HP class higher. The 200 buyer wishes they had a 225, the 225 wishes for a 250, etc. That is preference talk, not proof that those ratings share a powerhead. Stay inside the hull rating.
 
 - [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
@@ -167,11 +167,11 @@ For tournament fishing, performance pontoons, water sports applications, and big
 
 ### What's the most popular Pro XS in Ontario?
 
-The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water.
+The 200 Pro XS V8 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is an inline-four and remains the walleye sweet spot for mid-size aluminum on big water.
 
 ### Does Pro XS use the same powerhead as FourStroke?
 
-The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8.
+The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175 Pro XS uses the 3.4L V6. The 200, 225, 250, and 300 Pro XS use the 4.6L V8. Horsepower alone does not identify the family.
 
 ### Can I get Command Thrust on a Pro XS?
 
@@ -195,7 +195,7 @@ Pro XS resale stays strong. A used Pro XS in good condition from a known service
 
 ## Related guides
 
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review

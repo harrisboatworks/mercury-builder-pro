@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer Toronto: Why Drive to HBW"
-description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip."
+description: "How Toronto-area boaters compare Mercury service and repower shops by written scope, pickup, and no-delivery limits. No competitor drive-time or price table."
 category: "Mercury Outboards"
 date_published: 2026-05-12
 date_modified: 2026-08-27
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury Dealer Toronto: Why Drive to HBW
 
-> A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip.
+> How Toronto-area boaters compare Mercury service and repower shops by written scope, pickup, and no-delivery limits. No competitor drive-time or price table.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  

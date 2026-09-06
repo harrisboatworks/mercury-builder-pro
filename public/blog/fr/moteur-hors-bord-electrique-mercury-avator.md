@@ -76,7 +76,7 @@ Soyez franc avec vous-même sur votre façon de naviguer.
 
 ### Et le prix ?
 
-Le prix total de l'Avator dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. Les prix de Mercury Canada sont encore en cours de finalisation; nous ne publions donc pas un chiffre provisoire. Consultez notre [page Avator](/electric/mercury-avator) pour la disponibilité actuelle et le parcours de configuration.
+Le prix total de l'Avator dépend du modèle, du nombre de batteries, du chargeur, des commandes et de l'installation. Le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. Les prix de Mercury Canada sont encore en cours de finalisation; nous ne publions donc pas un chiffre provisoire. Consultez notre [page Avator](/electric/mercury-avator) pour la disponibilité actuelle et le parcours de configuration.
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 

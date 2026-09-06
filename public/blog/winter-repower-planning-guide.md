@@ -81,47 +81,47 @@ Winter is when the smart repowers get ordered. The boat is doing nothing anyway,
 
 ### What an order-ahead spring repower actually costs
 
-Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+Planning over winter gives you time to compare configurations and discuss scheduling. Confirm availability and installation dates with HBW, and use the live configurator for current CAD estimates.
 
 #### Motor (90 to 150 HP FourStroke)
 
-**$13,500 to $22,000**
+**Live quote**
 
-Range covers Mercury 90 ELPT through 150 ELPT. Pro XS carries a premium over a FourStroke at the same HP; the configurator shows the current delta for your exact motor.
+Price depends on the exact Mercury model. Pro XS carries a premium over a FourStroke at the same HP; the configurator shows the current figure for your exact motor.
 
 #### Install and rigging
 
-**$1,200 to $2,400**
+**Quoted with the boat**
 
-Mounting, hardware, alignment, Lake Test. Higher end if the transom needs reinforcement.
+Mounting, hardware, alignment, and a water check when safe seasonal conditions allow. Transom work, if needed, is a separate line.
 
 #### Control conversion (if needed)
 
-**$800 to $2,000**
+**Quoted if required**
 
 Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
 
 #### New propeller
 
-**$350 to $1,200**
+**Quoted with the setup**
 
-Sized after lake test. Standard allowance applies on most installs.
+Sized to the motor, hull, and load. A standard allowance may apply; confirm the written quote.
 
 #### First-year service
 
-**$200 to $350**
+**Per current schedule**
 
 Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
 
 #### Mercury Product Protection (optional)
 
-**$700 to $1,800**
+**Quoted at purchase**
 
-Up to 8 years of combined factory-plus-MPP coverage on eligible plans; current terms are quoted at purchase. Best value if you finance or plan to keep the boat past year 5.
+Combined factory-plus-MPP coverage on eligible plans; current terms are quoted at purchase. Best value if you finance or plan to keep the boat past year 5.
 
 #### Typical out-the-door range
 
-**$16,000 to $28,000**
+**Build the live quote**
 
 *All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.*
 

@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Boat Motor HP Size Guide Ontario"
-description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
+description: "Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples."
 category: "Buying Guide"
 date_published: 2026-05-11
 date_modified: 2026-08-19
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Boat Motor HP Size Guide Ontario
 
-> Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.
+> Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ---
 
-> **Quick answer:** There is no single formula that spits out the right HP. Work the sizing in order: read the compliance-plate maximum for your exact hull, weigh your normal load honestly, check the transom's motor-weight limit, then pick the HP that planes that load without running wide open all day. The walkthrough below does each step with real numbers.
+> **Quick answer:** There is no single formula that spits out the right HP. Read the hull's documented power and weight limits from the capacity plate and manufacturer documentation, then inventory hull, engine, fuel, equipment, people, and gear for a normal trip and the heaviest planned trip, without double-counting anything already included in a listed weight. Stay inside those limits. Length, percent-of-plate, and weight-per-HP shortcuts are not a verified method.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -64,7 +64,7 @@ The people and load figures matter too. Transport Canada says the craft reaches 
 
 Different hulls have different HP efficiency:
 - **V-hull runabouts:** Efficient hull designs; need less HP for a given speed
-- **Pontoons:** Blunt-fronted tubes with significant drag; need more HP per foot than their length suggests
+- **Pontoons:** Blunt-fronted tubes with significant drag; length and HP-per-foot do not pick the motor
 - **Jon boats:** Light, plane easily, lower HP thresholds
 - **Deep-V hulls:** Need power for rough water performance and stability
 
@@ -72,7 +72,7 @@ Different hulls have different HP efficiency:
 
 This is where most people make their mistake. They size the motor for an empty boat or solo use, then load it up with family, gear, and a full cooler and wonder why it feels underpowered.
 
-Plan for your typical real-world load, not your optimistic empty-boat number.
+Write down a normal trip and the heaviest planned trip, and stay inside the people and weight limits. If a listed hull or trailer weight already includes the engine, fuel, or equipment, do not add those lines again.
 
 **Water conditions**
 
@@ -100,7 +100,7 @@ The right HP target depends as much on how well you know the boat as on what the
 - You'll typically run with mixed loads
 - You want the boat to handle worst-case days
 
-**Size to capacity plate max**
+**Stay within documented power, transom, and motor-weight limits**
 
 #### Repower of a hull you know well
 
@@ -109,44 +109,49 @@ The right HP target depends as much on how well you know the boat as on what the
 - You want efficiency, not max top end
 - Resale is not the primary concern
 
-**Target 70 to 85 percent of plate max**
+**Compare those same limits to how this hull is loaded and used**
 
 The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
 
-## Sizing guidelines
+## Load inventory
 
-These ratios give you a working starting point. **Always confirm against your specific capacity plate.**
+Weight-per-HP ratios are not a verified way to pick an engine, and a hull-plus-max-passenger total is not a complete load.
 
-| Performance level | Ratio (boat weight to HP) |
+| Line | What to record |
 |--|--|
-| Minimum (gets you moving, not much more) | 11.3-13.6 kg/HP (25–30 lbs/HP) |
-| Recommended (good performance, typical use) | 6.8-9.1 kg/HP (15–20 lbs/HP) |
-| Optimal (excellent performance, full loads) | 4.5-6.8 kg/HP (10–15 lbs/HP) |
+| Hull | Documented hull or dry weight; note what it already includes |
+| Engine | Exact proposed motor weight |
+| Fuel | Normal trip and heaviest planned fill |
+| Equipment | Batteries, electronics, furniture, installed gear |
+| People | Usual crew and heaviest planned people |
+| Gear | Coolers, tackle, toys not already listed |
 
-*Total boat weight = hull weight + maximum passenger and gear load.*
+Add a line only if it is not already inside another figure. Then check the exact manufacturer power, people, payload, transom, and motor-weight limits in the documentation and on the capacity plate. Do not read a horsepower answer from the total.
 
 ---
 
 ## Real-world Ontario examples
 
 ### 16-foot aluminum fishing boat
-- Hull weight: approximately 363 kg (800 lb)
-- Passengers and gear (typical): approximately 272 kg (600 lb)
-- Total: approximately 635 kg (1,400 lb)
-- Capacity plate range: check your plate, 16-foot aluminum hulls vary; many rate 60–75 HP, some allow higher
-- **Typical choice: 60 HP FourStroke**, balances hole shot (how quickly the boat climbs onto plane), fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
+- Hull: about 363 kg (800 lb) if that figure is hull only
+- Engine, fuel, equipment: add each only if it is not already inside the hull figure
+- People and gear: about 272 kg (600 lb) as one typical-day illustration, then write the heaviest planned day
+- Limits: this hull's documented power, people, payload, and motor-weight figures from the manufacturer documentation and capacity plate
+- Examples to compare: 40 HP or 60 HP FourStroke, where those limits, steering, both loads, and use support them
 
 ### 22-foot pontoon
-- Hull weight: approximately 907 kg (2,000 lb)
-- Passengers (cottage family): approximately 680 kg (1,500 lb)
-- Total: approximately 1,588 kg (3,500 lb)
-- **Typical choice: 115 HP Command Thrust**. CT is the pontoon move in the 90-115 HP range; above that, Mercury's larger motors run a big gearcase as standard. Handles the load profile pontoons demand.
+- Hull: about 907 kg (2,000 lb) if hull only; skip engine or furniture already inside it
+- Engine, fuel, equipment: add only what the hull figure omitted
+- People and gear: about 680 kg (1,500 lb) as one cottage-family illustration, then the heaviest planned load
+- Limits: this pontoon's documented power, people, payload, and motor-weight figures
+- Example to compare: 115 HP Command Thrust, where that model and those limits support it
 
 ### 20-foot bass boat
-- Hull weight: approximately 816 kg (1,800 lb)
-- Passengers and tournament gear: approximately 227 kg (500 lb)
-- Total: approximately 1,043 kg (2,300 lb)
-- **Typical choice: 200 HP Pro XS**, tournament performance on a 20-foot bass hull. Never exceed the capacity plate; check yours.
+- Hull: about 816 kg (1,800 lb) if hull only
+- Engine, fuel, equipment: add only what is not already counted
+- People and gear: about 227 kg (500 lb) as one tournament-day illustration, then the heaviest planned load
+- Limits: this hull's documented power and motor-weight figures from the manufacturer documentation and capacity plate
+- Example to compare: 200 HP Pro XS, where those limits, steering, both loads, and use support it
 
 ---
 

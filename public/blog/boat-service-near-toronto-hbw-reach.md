@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in the drive-in service model.
 
 "Near Toronto" is not one service model. A mobile technician, a multi-brand marina, and an authorized Mercury dealer can all be useful, but they solve different problems.
 

@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ## Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-> **Quick answer:** A GTA repower at HBW starts with the boat's capacity label, a current quote, and the hull and rigging details. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+> **Quick answer:** A GTA repower at HBW starts with the boat's capacity label, a current quote, and the hull and rigging details. We can generally arrange boat pickup; ask about availability. You can also bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not deliver boats. The full transport limits are in Stage 4.
 
 There are two timelines in every repower:
 
@@ -98,13 +98,11 @@ The marina is closed December 1 through April 1. During that closure, planning a
 
 ## From the Shop: Stage 4, Customer Drop-Off
 
-Bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing at the confirmed time.
+Complete the service request at [hbw.wiki/service](https://hbw.wiki/service), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
 
-We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-You can also bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing.
-
-At drop-off, HBW confirms the boat, motor, controls, keys, visible hull condition, and approved work order.
+After drop-off, HBW reviews the boat, motor, controls, keys, visible hull condition, and work order before proceeding with approved work.
 
 ---
 

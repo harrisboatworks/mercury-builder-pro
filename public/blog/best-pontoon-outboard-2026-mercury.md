@@ -69,7 +69,7 @@ The difference shows up when you load the boat. A standard 115 HP gearcase on a 
 
 The upcharge over the standard motor at the same horsepower varies with the current build sheet, so price the CT option in the configurator at mercuryrepower.ca. On any pontoon 22 feet and up, that is the easiest "yes" upgrade we recommend. On many pontoons, the right horsepower with the wrong gearcase still does a worse job than the right Command Thrust package. That's why we almost never separate horsepower from gearcase when talking pontoons.
 
-For when Command Thrust is NOT worth it on lighter boats, see our [Command Thrust vs Standard Gearcase guide](/blog/mercury-command-thrust-complete-guide-2026) and the pontoon-specific [Command Thrust on Pontoons](/blog/mercury-command-thrust-complete-guide-2026) deep dive.
+For when Command Thrust is not worth it on lighter boats, see the pontoon eligibility tables in our [Command Thrust complete guide](/blog/mercury-command-thrust-complete-guide-2026).
 
 ## When is Pro XS with Boost the right pick for a pontoon?
 
@@ -152,7 +152,7 @@ The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quie
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 - [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
 

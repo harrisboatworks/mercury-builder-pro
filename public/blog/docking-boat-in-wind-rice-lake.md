@@ -259,7 +259,7 @@ If your approach is off by more than 4 feet at 8 feet out, abort. The geometry i
 
 ## Related guides
 
-- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
 - [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 - [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 - [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake

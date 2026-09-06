@@ -42,7 +42,7 @@ The reasons are practical, not marketing:
 - **Fuel efficiency**: modern 4-strokes burn 30-40% less fuel than the 2-strokes they replaced
 - **Quiet operation**: important on the small lakes where Ontario does most of its boating
 - **Long service life**: properly maintained, 15-25 years of useful service is realistic
-- **Mercury dealer network density**: more parts on more shelves across more service shops than any other outboard brand in the country
+- **Mercury dealer and parts support**: confirm the closest authorized shop and current parts availability for the motor you run, rather than treating any brand as automatically densest nationwide
 - **Resale support**: Mercury-powered Ontario boats sell faster and to a wider buyer pool than equivalent setups with other brands
 
 For an Ontario buyer, the FourStroke decision is rarely about whether to choose Mercury. It's about which HP class and which gearcase option.
@@ -202,7 +202,7 @@ Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and
 
 ### Can I tow water-ski with a FourStroke?
 
-Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama.
+Yes, larger FourStrokes can handle ski and wake boats when the hull, load, and prop match. The 150 FourStroke is a 3.0 L inline-four, 175-225 are 3.4 L V6, and 250-300 are 4.6 L V8. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke V6 pulls skiers without any drama.
 
 ### How do I match the prop to a new FourStroke?
 
@@ -215,7 +215,7 @@ Yes, the applicable Mercury limited warranty comes with a new FourStroke. Option
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review

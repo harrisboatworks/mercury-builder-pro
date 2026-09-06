@@ -37,43 +37,43 @@ Mercury outboard beep patterns vary by model, year, and whether the boat has Sma
 
 If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
 
-For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
+If you want a Mercury or MerCruiser shop to read the alarm with you, book at [hbw.wiki/service](https://hbw.wiki/service). You do not have to finish every DIY step before you call.
 
 *Beep diagnostic flow*
 
 ### What to do when your Mercury starts beeping
 
-Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
+Reduce load first, then read the exact display and the serial-specific manual. Horn cadence alone is not a diagnosis.
 
-#### Stop and idle the motor down
+#### Reduce load immediately
 
-**Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.**
+**Pull the throttle back. Do not keep running at speed, and do not restart as a first diagnostic shortcut.**
 
-Continuous beep at idle means stop running it entirely. Tow in.
+If the manual, display, or warning for oil pressure, temperature, or water flow calls for shutdown, stop the engine.
 
-#### Identify the pattern
+#### Read the display and the exact manual
 
-**One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.**
+**Note the exact message, horn length, and whether power dropped. A brief key-on test and a longer warning horn are different events on some families; do not call a long tone normal without that manual.**
 
-#### Check the telltale stream
+#### Check cooling water, but do not stop there
 
-**If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.**
+**Look at the telltale. No stream or a weak stream is a reason to stop. A strong, steady stream does not rule out overheating.**
 
-A strong telltale with continuous beep usually points to oil pressure, not overheat.
+Mercury manuals describe overheating despite steady telltale flow. Treat temperature warnings as temperature warnings.
 
-#### Check oil level (4-strokes)
+#### Separate oil level from oil pressure
 
-**Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.**
+**Oil level and oil pressure are different warnings. Low oil pressure is a stop condition on the manuals that address it. Do not top up and restart to "see if it clears" when a pressure, temperature, or water-flow warning is active.**
 
-#### Pull codes with SmartCraft if equipped
+#### Record the display or fault before calling
 
-**VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.**
+**VesselView or SmartCraft-linked plotters show fault text that the horn alone cannot. Photograph the exact code and conditions before calling the shop.**
 
 Take a photo of the code on the screen so you can text it to us.
 
-#### Still beeping after all 5? Put in a service request at hbw.wiki/service.
+#### Warning still active? Put in a service request at hbw.wiki/service.
 
-Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
+If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
 
 ---
 
@@ -120,8 +120,8 @@ When you call a dealer and say "my motor is beeping," the first question will be
 
 The distinction matters because beep patterns are how Mercury's engine management system tells you which protective function has triggered. The same motor can produce different patterns for different conditions:
 
-- Beeping related to engine temperature (overheating) typically requires immediate response
-- Beeping related to oil level or fuel systems typically allows continued operation while you assess
+- Beeping related to engine temperature or oil pressure typically requires immediate load reduction and, when the manual says so, a shutdown
+- Oil-level and water-in-fuel advisories are not the same as oil-pressure or overheat warnings; read the display before assuming you can keep running
 - Beeping in Guardian mode (power reduction) requires understanding why the system protected the engine
 - Beeping that's intermittent and doesn't correlate with anything may be a sensor or wiring issue
 
@@ -151,7 +151,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **Possible meanings:** This is typically a warning-level alarm. Common causes include overheating, overspeed, or a condition that has triggered protective response.
 
-**What to do:** Take it seriously. Reduce throttle. Check the tell-tale immediately for cooling water flow. Check your display for a message. If the alarm is temperature-related, idle toward shore and shut down if the alarm persists or tell-tale flow is absent. See the [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide) for on-water protocol.
+**What to do:** Take it seriously. Reduce throttle. Check the tell-tale immediately for cooling water flow, and remember a steady stream does not rule out overheat. Check your display for a message. If the alarm is temperature-related or the manual calls for shutdown, stop and investigate rather than idling toward shore on the assumption the cooling system is fine. See the [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide) for on-water protocol.
 
 ### Beeping Plus Power Reduction
 
@@ -173,7 +173,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **Step 2: Look at your display.** If you have SmartCraft, VesselView, or any gauge display, it should show a message corresponding to the alarm. Take a photo of whatever it says, this is the most useful information you can bring to a technician.
 
-**Step 3: Check the tell-tale.** If the alarm might be temperature-related, check cooling water flow immediately.
+**Step 3: Check the tell-tale.** If the alarm might be temperature-related, check cooling water flow immediately. A strong stream is useful information, not clearance to keep running.
 
 **Step 4: Note the exact pattern.** Count the beeps. Note the timing. Note whether it's correlated with RPM, throttle position, or something else.
 
@@ -185,7 +185,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ## Older vs. Newer Motors
 
-Older Mercury 2-strokes had simpler alarm systems, typically a continuous alarm for overheating or oil. Newer Mercury FourStrokes and Verado models have more sophisticated ECM systems with multi-pattern alarms and full SmartCraft integration. The alarm behaviour on a 2005 carbureted 2-stroke is genuinely different from a current EFI FourStroke. Some small EFI FourStrokes (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, and many current SmartCraft engines use a six-second horn rather than repeating beep counts; overspeed protection on newer motors can even cut power with no horn at all.
+Older Mercury 2-strokes had simpler alarm systems, typically a continuous alarm for overheating or oil. Newer Mercury FourStrokes and Verado models have more sophisticated ECM systems with multi-pattern alarms and full SmartCraft integration. The alarm behaviour on a 2005 carbureted 2-stroke is genuinely different from a current EFI FourStroke. Do not transfer an alarm interpretation from another engine family. Use the manual for the exact model and serial-number range, and report the display text and horn pattern to the technician.
 
 If you're not sure what generation of alarm system your motor uses, the operator's manual will have the alarm section, or a dealer can look up the system for your specific motor and year.
 
@@ -202,6 +202,8 @@ When you book a diagnostic related to an alarm, bring:
 - Motor model, year, and serial number
 
 This information cuts diagnostic time significantly.
+
+If the diagnosis later shows the engine is not worth repairing, compare a written repair quote with the [boat engine repower costs](/repower) path. That comparison belongs after the fault is identified, not while the alarm is still sounding.
 
 ---
 
@@ -237,7 +239,7 @@ Bring the exact beep pattern (count, frequency, duration), whether power was red
 
 ### How do I read Mercury outboard alarm codes without a SmartCraft display?
 
-Without SmartCraft you read the alarm by its beep pattern: count the beeps, note how often they repeat, and whether the motor lost power. A continuous or long horn usually signals a serious fault such as overheat or low oil pressure; a beep pattern every two minutes points to oil level or water in fuel. A dealer can pull the exact fault codes from the engine computer at the shop.
+Without SmartCraft you still reduce load first, then count the beeps, note how long the horn lasts, and whether the motor lost power. Cadence alone is not a diagnosis: some manuals distinguish a brief startup test from a longer overheat or low-pressure horn. Oil level and oil pressure are different warnings. Use the serial-specific manual and have a dealer pull the exact fault codes.
 
 ### Are beep codes different on a Mercury 4-stroke?
 

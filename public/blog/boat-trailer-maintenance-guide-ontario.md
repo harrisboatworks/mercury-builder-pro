@@ -157,8 +157,8 @@ If a trailer concern appears while you're preparing the boat for Mercury service
 ## Sources
 
 - [Ontario Ministry of Transportation, Safe and Responsible Driving: Towing](https://www.ontario.ca/document/official-mto-drivers-handbook/towing)
-- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/07/Owners-Manual.pdf)
-- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceManual_Complete_8-17.pdf)
+- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/06/OwnerManual060921lr.pdf)
+- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceOnline.pdf)
 
 ## FAQs
 

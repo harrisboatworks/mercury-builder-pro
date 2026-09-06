@@ -84,7 +84,7 @@ Boat traffic peaks on Canada Day weekend, and a few simple safety habits make a 
 Transport Canada requires an approved lifejacket or PFD of the correct size for every person on board. On a crowded holiday weekend, the law isn't just a formality; OPP marine units will be out on Rice Lake conducting inspections. Wearing your lifejacket rather than just stowing it under a seat is the single most effective thing you can do for safety. Kids should be in properly fitted PFDs the entire time the boat is in motion.
 
 ### Alcohol on board
-As the OPP has emphasized in its seasonal marine safety messaging, operating any watercraft under the influence of alcohol or drugs is illegal and dangerous. Alcohol can only be consumed legally on a boat that has permanent sleeping accommodations, a permanent galley, and a permanent head, and that is anchored or docked. Put simply, open alcohol on a typical fishing boat or pontoon is not legal while underway. Plan to have a sober operator for the entire day, keep the drinks on shore, and save yourself the fine, the boat impoundment, or far worse.
+Operating any watercraft under the influence of alcohol or drugs is illegal and dangerous. Confirm current Ontario liquor and marine enforcement rules before you bring alcohol. A typical fishing boat or pontoon is not automatically a place where open alcohol is legal. Plan to have a sober operator for the entire day and keep the drinks on shore.
 
 ### Weather awareness
 Summer thunderstorms can build quickly over Rice Lake, and Canada Day weekend weather can range from glass-calm mornings to sudden wind shifts and squalls by late afternoon. Check the Environment Canada marine forecast for the Rice Lake region before you launch, and keep an eye on the western sky once you're out. If you see dark clouds building, don't wait; head in early. A VHF radio or a fully charged cell phone in a waterproof case is standard equipment. Let someone on shore know your float plan, especially if you plan to stay out after dark.
@@ -128,7 +128,7 @@ The Township of Hamilton currently lists a boat launch at Gores Landing Waterfro
 
 ### Can I drink alcohol on my boat while watching fireworks on Rice Lake?
 
-In Ontario, alcohol can only be consumed on a boat that has permanent sleeping accommodations, a permanent galley, and a permanent head, and only when the vessel is anchored or docked. Open alcohol on a typical fishing boat or pontoon is not legal, even while anchored. Police marine units conduct routine checks on holiday weekends. A sober operator is required at all times.
+Confirm current Ontario liquor and marine enforcement rules before you bring alcohol. A typical fishing boat or pontoon is not automatically a place where open alcohol is legal. A sober operator is required. Police marine units conduct holiday-weekend checks.
 
 ### What kind of fuel does Rice Lake marinas offer, and why should I use ethanol-free?
 
@@ -143,7 +143,7 @@ For engine repairs, HBW services Mercury and MerCruiser products. You can book s
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
-- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
 - [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps

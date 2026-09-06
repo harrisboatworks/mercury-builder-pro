@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
-description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
+description: "Compare Mercury 115 vs 150 hp by hull design, load, and manufacturer limits, with CAD pricing and guidance on exact-model Command Thrust availability."
 category: "Repower Guide"
 date_published: 2026-05-28
 date_modified: 2026-08-19
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)
 
-> Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.
+> Compare Mercury 115 vs 150 hp by hull design, load, and manufacturer limits, with CAD pricing and guidance on exact-model Command Thrust availability.
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
@@ -29,11 +29,7 @@ revenue_driver: repower
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
-> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW's current sell prices for both motors are on our /pricing-reference page, quoted pre-HST. Build a quote at mercuryrepower.ca. Build a quote at mercuryrepower.ca.
-
-## Quick answer
-
-For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at mercuryrepower.ca.
+> **Quick answer:** On some 18 ft aluminum V-hulls, the Mercury 115 is a strong comparison; at 19 to 20 ft with a heavier crew, the 150 is another. On some 18 to 20 ft pontoons, 60 Command Thrust is worth comparing where that exact CT model and the boat's limits support it; on some 22 to 24 ft tritoons, the 150 is another. Length alone does not decide. HBW current sell prices: 20-inch 115ELPT ProXS $17,490, 20-inch 150ELPT ProXS $24,349 (CAD, bare motor, excluding HST, rigging, controls, and propeller), also listed on /pricing-reference. Build a quote at mercuryrepower.ca.
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
@@ -57,7 +53,7 @@ These are the recommendations we give at our desk. They reflect real-world perfo
 
 ### Pontoon boats (this is where most dealers get it wrong)
 
-**Pontoons 18 to 20 ft:** **Mercury 60 Command Thrust is actually the best choice.** Not 115. Not 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust, fuel economy, and capacity-plate-appropriate HP for an 18 to 20 ft single-tube pontoon. We see pontoons over-powered with 115s routinely, and the math rarely works out in favour of the 115.
+**Pontoons 18 to 20 ft:** **60 Command Thrust is worth comparing.** Use that CT model only if Mercury currently offers it and this pontoon's documented power, transom, motor-weight, steering, and both planned loads support it. A 115 on this length suits a different load and use.
 
 **Pontoons 22 to 24 ft (especially tritoons):** **Mercury 150 HP.** [Tritoons add hull surface and weight](/blog/best-mercury-outboard-pontoon-boats), and on a 22 to 24 ft tritoon the 150 is the right baseline. 115 is undersized for a tritoon of this size.
 
@@ -72,9 +68,9 @@ Our most popular models in these two HP classes:
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
 | Mercury 115 ELPT FourStroke | starts around $17,083 | Standard 115, good for most 18ft V-hulls |
-| Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
+| Mercury 115ELPT ProXS (20-inch) | **$17,490** | Our most popular 115, performance variant, bare motor excluding HST, rigging, controls, and propeller |
 | Mercury 150 L FourStroke | starts around $22,242 | Standard 150 |
-| Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
+| Mercury 150ELPT ProXS (20-inch) | **$24,349** | Our most popular 150, performance variant, bare motor excluding HST, rigging, controls, and propeller |
 
 Pricing as of 2026. [Install costs vary by what's on the boat now](/blog/mercury-repower-cost-ontario-2026-cad). Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
@@ -128,7 +124,7 @@ In the 20-hour illustration, fuel cost isn't the deciding factor. The motor pric
 
 ## Motor price delta over the ownership period
 
-Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
+Mercury 20-inch 150ELPT ProXS at HBW: $24,349. Mercury 20-inch 115ELPT ProXS at HBW: $17,490, both bare motors excluding HST, rigging, controls, and propeller. **Delta: $6,859 plus 13% HST.**
 
 If you keep the motor for 10 years, the $6,859 motor price delta is $686 per year of ownership whether you run 20 or 100 hours per year. Motor price doesn't change with use.
 
@@ -140,11 +136,11 @@ For a customer fishing solo or with one partner, running the boat at idle or low
 
 This deserves its own section because we see it routinely on customer boats that come to us for service.
 
-**[Mercury Command Thrust should ONLY be used on pontoon boats](/blog/mercury-command-thrust-complete-guide-2026) or very specific work boat applications.** Note: Mercury Command Thrust tops out at 115 HP. There is no 150 CT. If a 21+ ft pontoon needs more thrust than a 115 CT delivers, the upgrade path is the standard 150 L Pro XS, not a larger CT.
+**[Command Thrust is a hull, load, and propeller choice](/blog/mercury-command-thrust-complete-guide-2026),** not a pontoon-only switch. HBW still prefers it on many pontoons and some workboats where a current CT model exists; check the exact model's gearcase specifications. If the boat is rated above available CT models, compare a non-CT motor this hull actually allows.
 
 Command Thrust (CT) uses a larger gearcase, larger propeller diameter, lower gear ratio (typically 2.33:1 instead of 2.07:1), and is engineered for low-speed thrust at the expense of top-end speed. It's the right call for:
 
-- Pontoons of any size (improved low-speed handling, planing with heavier loads)
+- A pontoon or workboat only where Mercury offers a current Command Thrust model and this boat's power, transom, motor-weight, steering, rigging, and load support that exact model. CT does not suit every pontoon and does not guarantee planing
 - Commercial work boats that need thrust over speed (push boats, certain barges)
 
 **Command Thrust is the WRONG call for:**
@@ -175,7 +171,7 @@ Repowers combine a new motor with an existing hull and rigging, so the combinati
 - **"I want to do some tubing this summer"** If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
 - **"Can we waterski with this?"** 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
 - **"I'm planning to fish tournaments"** Bass tournament use case usually points at [150 ProXS or 175 ProXS](/blog/mercury-150-300hp-pro-xs-performance-guide) for the headroom.
-- **"Just for cruising the cottage"** If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
+- **"Just for cruising the cottage"** If 18ft V-hull, 115 is worth comparing. If pontoon 18-20ft, 60 CT is worth comparing where that model and the boat limits support it.
 - **"When can you get me in?"** Call 905-342-2153.
 
 ## Ready to talk repower?
@@ -196,15 +192,15 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 
 ### What boat size does the 115 vs 150 decision actually apply to?
 
-For aluminum V-hull boats, the realistic decision range is 18 to 20 feet. For pontoons, the decision is more nuanced: 18 to 20 ft pontoons are usually better served by the Mercury 60 Command Thrust (not 115 or 150), while 22 to 24 ft pontoons and tritoons benefit from the 150.
+Those lengths are the examples in this article, not a qualifying range. On some 18 to 20 ft aluminum V-hulls we compare 115 and 150. On some 18 to 20 ft pontoons we compare 60 CT where that model and the boat limits support it; on some 22 to 24 ft tritoons we compare the 150. The plate, tube count, load, and available models decide, not the foot number.
 
 ### What's the HBW current sell price for the Mercury 115 and 150 Pro XS?
 
-HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,490 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,349 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat.
+HBW's most popular 115 HP model is the Mercury 20-inch 115ELPT ProXS at $17,490 CAD (bare motor, excluding HST, rigging, controls, and propeller). Our most popular 150 is the Mercury 20-inch 150ELPT ProXS at $24,349 CAD (bare motor, excluding HST, rigging, controls, and propeller). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat.
 
 ### Should I get a 115 Command Thrust for my aluminum V-hull?
 
-Almost certainly not. Command Thrust is engineered for pontoons and specific work-boat applications. For a V-hull, the standard 115 ELPT or 115 Pro XS is the correct gearcase choice. We see other dealers rig V-hulls with Command Thrust based on a "more thrust is better" pitch. For a V-hull, the standard gearcase gives you better top-end speed and equivalent low-end performance for typical use.
+Usually not for the planing aluminum V-hulls we see. Command Thrust is engineered for pontoons and specific work-boat applications. HBW's shop recommendation is the standard 115 ELPT or 115 Pro XS; that is a hull, load, and propeller decision, not a universal exclusion. We see other dealers rig V-hulls with Command Thrust based on a "more thrust is better" pitch. Ask for the actual boat, prop, and test result rather than a universal speed claim.
 
 ### Will a 115 plane my 19ft aluminum V-hull with 4 people?
 
@@ -220,7 +216,7 @@ In an illustrative 20-hour light-use season, the fuel-cost delta is roughly $140
 
 ### What's the right pontoon answer if I'm not sure between 115 and 150?
 
-For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer.
+For some 18 to 20 ft pontoons, 60 CT is a comparison where that exact model and the boat's limits support it. 115 CT and 150 suit heavier loads or a larger, rated tritoon. Confirm the actual tube configuration of the hull, and check the rated limits rather than deciding by deck length.
 
 ### Can I run a Mercury 150 on a boat rated up to 115 HP?
 
@@ -232,7 +228,7 @@ No. HBW will not rig above the boat manufacturer's maximum recommended horsepowe
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 - [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 
 ## Next steps
 

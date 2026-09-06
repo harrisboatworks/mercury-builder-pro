@@ -56,7 +56,7 @@ Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depe
 
 **$904**
 
-Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
+Common Rice Lake horsepower band. Compare the plan price with the covered components and exclusions in the current contract.
 
 #### High-HP (75 to 199.9 HP), 3-year plan
 
@@ -198,7 +198,7 @@ For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce t
 
 ## Transferability and Resale Value
 
-Platinum coverage is transferable to a subsequent recreational-use buyer when Mercury's transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
+Platinum coverage is transferable to a subsequent recreational-use buyer when Mercury's transfer requirements are met. Confirm the current Canadian transfer timing, documentation, inspection, and fee rules in the Product Protection contract before you sell.
 
 Remaining transferable coverage can be useful to a buyer because it makes the engine's protection status easier to document. The serial record and approved transfer determine what coverage actually follows the engine.
 
@@ -234,7 +234,7 @@ Before the applicable Mercury factory limited warranty expires. Mercury also app
 
 ### Is Mercury Product Protection transferable when I sell my boat?
 
-Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
+Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. Confirm the current Canadian transfer timing, documentation, inspection, and fee rules in the Product Protection contract before you sell.
 
 ### What is the deductible?
 

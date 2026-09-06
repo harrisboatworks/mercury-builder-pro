@@ -74,13 +74,13 @@ Example: a 20-foot boat tying up overnight at a lock pays $30 for mooring, plus 
 
 ## 2026 Navigation Season and Lock Hours
 
-**Season:** May 15 , October 12, 2026
+**Season:** May 15–October 12, 2026
 
-| Period | Mon, Thu | Fri, Sun + Holidays |
+| Period | Monday–Thursday | Friday–Sunday + Holidays |
 |---|---|---|
-| May 15 , June 18 | 10:00 am , 3:30 pm | 9:00 am , 6:30 pm |
-| June 19 , Sept 7 (peak) | 9:00 am , 5:30 pm | 9:00 am , 6:30 pm |
-| Sept 8 , Oct 12 | 10:00 am , 3:30 pm | 9:00 am , 4:30 pm |
+| May 15–June 18 | 10:00 am–3:30 pm | 9:00 am–6:30 pm |
+| June 19–Sept 7 (peak) | 9:00 am–5:30 pm | 9:00 am–6:30 pm |
+| Sept 8–Oct 12 | 10:00 am–3:30 pm | 9:00 am–4:30 pm |
 
 **The key operational rule:** You must arrive at the blue zone (the boat staging area) by the last lockage time. It is not enough to be nearby. Lockmasters do not open the gates after closing. Build at least 30 minutes of slack into your day's end.
 
@@ -223,7 +223,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 ### Do I need a special licence to lock through the Trent-Severn?
 
-No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours before you go.
+No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licence is required where the craft qualifies; it is not required for every boat. Confirm current [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) and [PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) rules. If you rent from HBW, our rental-driver policy still requires a valid PCOC and photo ID. The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours before you go.
 
 ### How long does it take to lock through?
 

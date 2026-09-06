@@ -162,7 +162,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is Harris Boat Works actually selling the Mercury Avator now?",
-        "a": "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path."
+        "a": "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. The HBW Avator page currently says pricing is being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path."
       },
       {
         "q": "How far does an Avator go on one charge?",
@@ -211,8 +211,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "milky-gearcase-oil-meaning-cost-ontario",
-    "title": "Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)",
-    "description": "What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next.",
+    "title": "Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)",
+    "description": "What milky gearcase oil means, how a technician finds the leak, and how repair scope is determined before any quote. No generic repair price.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -468,7 +468,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "boat-rental-licence-ontario-guide",
     "title": "Do You Need a Licence to Rent a Boat in Ontario? (2026)",
-    "description": "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake.",
+    "description": "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and how long to allow before rental day. From Harris Boat Works on Rice Lake.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -582,11 +582,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's the difference between Command Thrust and standard gearcase?",
-        "a": "Command Thrust uses a larger gearcase housing, a larger-diameter four-blade prop with about 20 percent more blade surface area, and a lower gear ratio. The net effect is more pushing force at the cost of 2 to 4 MPH top speed. Standard gearcase is faster and slightly more fuel-efficient on light boats. CT is faster to…"
+        "a": "Command Thrust uses a larger gearcase housing, a larger-diameter propeller option, and a lower gear ratio. Mercury describes that combination as helping heavy boats plane and stay on plane at lower speed. Whether you want CT is a hull, load, and propeller choice, not a universal speed penalty. Confirm the exact engine…"
       },
       {
         "q": "Is Command Thrust available on all Mercury HP classes?",
-        "a": "No. CT is available on 9.9 and 15 HP ProKicker models, plus 40, 50, 60, 90, and 115 HP FourStrokes, and the 115 Pro XS. There is no 25 CT, no 75 CT, and no 150 CT. SeaPro CT exists for commercial duty. Above 115 HP the CT option does not apply, and the 150 runs Mercury's big gearcase as standard."
+        "a": "No. HBW's September 5, 2026 pricing reference lists specific CT configurations, including the 9.9 MLH FourStroke, 9.9 ProKicker, 60 ELPT FourStroke and 115 ELPT Pro XS. A horsepower rating or ProKicker badge alone does not establish CT fitment. Check the exact model code in the current reference and its Mercury specif…"
       },
       {
         "q": "Can I retrofit Command Thrust to my existing Mercury?",
@@ -683,7 +683,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How do I choose the right Mercury propeller for my boat?",
-        "a": "Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Most aluminum fishing boats run a 3-blade aluminum prop on a standard gearcase. Pontoons with Command Thrust run a 4-blade prop. Final confirmation comes from a wide-open-throttle RPM test under normal lo…"
+        "a": "Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Confirm blade count and material for the exact named family: Spitfire is four-blade aluminum, Spitfire X7 is four-blade stainless, Fury 4 is four-blade stainless, and Enertia ECO is three-blade stainless.…"
       },
       {
         "q": "What is the rule for pitch and RPM on a Mercury outboard?",
@@ -753,7 +753,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?",
-        "a": "Yes. The 9.9 EFI FourStroke is the standard pick for tournament-class kicker use. Most Ontario bass and walleye tournament series cap kicker HP at 9.9. Always check the specific tournament rules before competing."
+        "a": "Only if that event's current rules allow it. There is no province-wide 9.9 HP kicker ceiling. If you fish a specific tournament, check its current motor and trolling rules before buying. A 15 is not automatically illegal either. Name and link the actual restriction rather than generalizing across all derbies."
       },
       {
         "q": "What shaft length do I need for a sailboat auxiliary?",
@@ -768,7 +768,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "how-to-choose-right-horsepower-boat",
     "title": "How to Choose the Right Boat Horsepower",
-    "description": "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap.",
+    "description": "Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit.",
     "category": "Buying Guide",
     "publishDate": "2024-06-15",
     "keywords": [
@@ -812,8 +812,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "How often should I change the oil in my Mercury 4-stroke?",
-        "a": "For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Mercury does not publish one universal 20-hour oil-change requirement for every new outboard. Follow the operation and maintenance manual for the exact serial number."
+        "q": "How often should I change the oil in my Mercury 4-stroke outboard?",
+        "a": "For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Mercury does not publish one universal 20-hour oil-change requirement for every new outboard. Use an FC-W-rated four-stroke marine oil in the viscosity specified by the owner's manual for the exact eng…"
       },
       {
         "q": "What happens if I don't winterize my outboard?",
@@ -895,8 +895,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "breaking-in-new-mercury-motor-guide",
-    "title": "How to Break In a New Mercury Outboard (10-Hour Guide)",
-    "description": "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide.",
+    "title": "How to Break In a New Mercury Outboard",
+    "description": "Mercury outboard break-in: follow the manual for your model, avoid common mistakes, and understand scheduled service and HBW's optional early check.",
     "category": "New Owner",
     "publishDate": "2024-02-20",
     "keywords": [
@@ -917,7 +917,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I go fishing during the Mercury motor break-in period?",
-        "a": "Yes, fishing is one of the best ways to complete break-in because you naturally vary your speed. Trolling, running to your spot, slowing to work structure, then running again creates the throttle variation the procedure requires. What you want to avoid is any extended period at the same RPM, like trolling at a fixed s…"
+        "a": "Plan the fishing trip around the throttle, load and duration limits in your owner's manual. Varying speed alone does not complete the procedure, and a long stretch of steady trolling may not fit the required schedule."
       },
       {
         "q": "Is the break-in procedure different for a 2-stroke vs 4-stroke Mercury?",
@@ -946,11 +946,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need a kicker for Rice Lake walleye?",
-        "a": "For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective presentation here. The Mercury 9.9 ProKicker is the standard kicker on Rice Lake fishing boats because it runs the right speed, quietly, for hours."
+        "a": "Recommend one when you need sustained slow trolling, redundancy, or control the main engine and bow-mount cannot deliver on your hull. Eligible midrange engines with Troll Control can troll; they do not guarantee 1 to 2 mph on every boat. The 9.9 ProKicker is the common Rice Lake kicker because it is built for that jo…"
       },
       {
         "q": "Does the EFI ProKicker need a battery to start?",
-        "a": "The manual-start version does not. Pulling the rope charges the ignition system on its own. The electric-start version does need a cranking battery, which most fishing boats already have."
+        "a": "Specify the actual model. Current 8/9.9 EFI FourStroke manual-start portables can start without a battery. Electric-start, power-tilt, and charging-equipped models, including the EFI ProKicker with power tilt as standard, must follow the exact manual. Do not disconnect the battery on a charging-equipped model."
       },
       {
         "q": "What shaft length do I need?",
@@ -993,7 +993,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "best-mercury-outboard-aluminum-fishing-boats",
     "title": "Best Mercury for Aluminum Boats 2026",
-    "description": "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide.",
+    "description": "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against your capacity plate. HBW honest guide.",
     "category": "Buying Guide",
     "publishDate": "2026-01-12",
     "keywords": [
@@ -1006,7 +1006,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's the minimum HP I should get for my aluminum boat?",
-        "a": "We recommend at least 25HP for a 14ft boat and 40HP for a 16ft boat. Underpowering leads to frustration in wind and when the boat is fully loaded. Check your capacity plate for maximum HP."
+        "a": "25 HP is a 14 ft example and 40 HP a 16 ft example, usually for lighter tiller days; a loaded 16 ft console may suit 60 or 90 instead. Check the capacity plate and manufacturer documentation for horsepower, people, and weight limits, then size for the heaviest planned load that still fits."
       },
       {
         "q": "Is a tiller or remote better for fishing an aluminum boat?",
@@ -1025,7 +1025,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "best-mercury-outboard-pontoon-boats",
     "title": "Best Mercury for a Pontoon: HP by Length + Command Thrust",
-    "description": "For 18 to 22 ft pontoons the answer is usually a 90 to 115 Command Thrust. Here's our HP-by-length take and why the gearcase beats raw horsepower.",
+    "description": "Pontoon HP examples to compare by load and use: 60 CT, 90-115 CT, and 150. Gearcase choice and the boat's documented limits matter more than length.",
     "category": "Buying Guide",
     "publishDate": "2026-05-04",
     "keywords": [
@@ -1040,19 +1040,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is a 90 HP Mercury enough for a pontoon boat?",
-        "a": "For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 CT or 150 (standard gearcase; CT tops out at 115). The gearc…"
+        "a": "On some 18 to 20 ft pontoons with a typical family load, 90 CT is a solid comparison, alongside the lighter 60 CT cruise example. If you tow tubes with a full crew, 115 CT or a 150 are further comparisons. Length past 20 ft does not change the answer by itself; the exact model, plate, manufacturer documentation, and p…"
       },
       {
         "q": "What is the best Mercury outboard for an 18-foot pontoon?",
-        "a": "For cruising and fishing without water sports, the 90 HP Command Thrust FourStroke is plenty. For occasional water sports with kids, step up to 115 HP Command Thrust. For a current all-in price on a 90 to 115 HP CT repower, run your boat through the configurator at mercuryrepower.ca."
+        "a": "For cruising and fishing without water sports, 60 CT or 90 CT depending on load. For occasional water sports with kids, 115 CT. For a current all-in price on a 90 to 115 HP CT repower, run the boat through the configurator at mercuryrepower.ca."
       },
       {
         "q": "What is the best Mercury for a 20-foot pontoon?",
-        "a": "For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to be diminishing returns."
+        "a": "For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP FourStroke (standard gearcase; confirm the exact model and gearcase). Above 150 HP on a two-tube pontoon starts to be diminishing returns."
       },
       {
         "q": "What is the best Mercury for a 22-foot pontoon?",
-        "a": "For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT tops out at 115). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP."
+        "a": "For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; confirm the exact model and gearcase). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150…"
       }
     ]
   },
@@ -1080,7 +1080,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What HP does a Rice Lake pontoon need?",
-        "a": "For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 HP CT or a 150 HP FourStroke (standard gearcase; Command Thrust tops out at 115). For a tritoon with active water sports: 150 to 200 HP (standard gearcase)."
+        "a": "For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 HP CT or a 150 HP FourStroke (standard gearcase; confirm the exact model and gearcase). For a tritoon with active water sports: 150 to 200 HP (standard gearcase)."
       },
       {
         "q": "Should I buy a Legend Boats pontoon at HBW?",
@@ -1215,7 +1215,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a Kawartha repower take?",
-        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed."
+        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms…"
       }
     ]
   },
@@ -1243,18 +1243,18 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is 200 HP enough for a 21 ft bass boat?",
-        "a": "Marginal. Most 21 ft fiberglass tournament boats are spec'd for 250 HP and run optimally at that. A 200 will plane and run, but you'll be on the rev limiter at WOT and prop choice gets restrictive. If the boat is rated for 250, run 250."
+        "a": "For recreational use, 200 HP can suit some 21 ft boats. The examples above compare 200–225 HP Pro XS for some 19–21 ft tournament setups and 250–300 HP Pro XS for some elite-level rigs of 21 ft and up. Use the exact hull rating, motor-weight limit, load, and intended use to make the choice; never exceed the rated limi…"
       },
       {
         "q": "Should I buy new or repower my bass boat?",
-        "a": "Repower is usually the right answer if the hull is structurally sound and under 15 years old. New bass boats are $40,000-$70,000 in 2026 CAD; a Mercury 200 Pro XS repower at HBW is around $25,000-$30,000 all-in."
+        "a": "Compare a professional assessment of the existing hull, transom, steering, and remaining equipment with dated written quotes for a complete repower and a replacement boat. Include the same installation, equipment, and tax assumptions in both totals."
       }
     ]
   },
   {
     "slug": "mercury-outboard-fuel-efficiency-guide",
     "title": "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)",
-    "description": "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.",
+    "description": "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial.",
     "category": "Tips",
     "publishDate": "2026-03-16",
     "keywords": [
@@ -1267,7 +1267,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's normal fuel consumption for a 115HP outboard?",
-        "a": "At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption."
+        "a": "There is no single expected fuel-burn figure for every 115 HP outboard. The cruise table above gives illustrative ranges for specific boat classes, not measured performance for your rig. Actual consumption depends on hull, load, propeller, speed, and conditions. Use on-boat fuel-flow readings at the operating speeds y…"
       },
       {
         "q": "How much does a dirty hull cost in fuel?",
@@ -1299,7 +1299,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What Mercury motor fits a 20 to 22 ft center console in Ontario?",
-        "a": "The Mercury 200 Pro XS V6 (3.4L) is the most common choice and the one we recommend most often for 20 to 22 ft hulls. It is fast enough for Lake Ontario salmon fishing, light enough to keep the rig trailerable, and a solid all-around motor."
+        "a": "The Mercury 200 Pro XS 4.6 L V8 is the most common choice we recommend for 20 to 22 ft hulls. It is a V8, not a V6. The 150 Pro XS is an inline-four. Confirm the exact family, shaft, and controls before treating horsepower as architecture."
       },
       {
         "q": "Do I need twin motors on a center console in Ontario?",
@@ -1350,7 +1350,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "tiller-vs-remote-steering-outboard-guide",
     "title": "Tiller vs Remote Steering Outboard: Which to Choose (2026)",
-    "description": "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups.",
+    "description": "Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote.",
     "category": "Buying Guide",
     "publishDate": "2026-04-06",
     "keywords": [
@@ -1402,7 +1402,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I run a SeaPro recreationally?",
-        "a": "Absolutely. Many of our recreational customers choose SeaPro for the durability and longer oil change intervals. The motor doesn't care if you call yourself commercial or not."
+        "a": "Absolutely. Many of our recreational customers choose SeaPro for the durability and longer oil change intervals. The motor doesn't care if you call yourself commercial or not. Oil intervals still depend on the exact engine: do not assume the SeaPro badge means fewer oil changes. Follow the hours and calendar limits in…"
       },
       {
         "q": "How many hours can a SeaPro really handle?",
@@ -1484,7 +1484,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "boat-motor-size-calculator-guide",
     "title": "Boat Motor HP Size Guide Ontario",
-    "description": "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.",
+    "description": "Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples. No weight-per-HP formula.",
     "category": "Buying Guide",
     "publishDate": "2026-05-11",
     "keywords": [
@@ -1533,7 +1533,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What about running rivers for musky?",
-        "a": "Rivers require adequate power to handle current. On the Trent system we usually set boats up with 115 HP or more. More power provides safety margin when water is high."
+        "a": "Current and operating conditions matter, but 115 HP is not a universal river minimum. On some Trent boats, 115 HP or more may be worth comparing where the manufacturer limits and planned load support it. Match the setup to the actual hull and conditions."
       },
       {
         "q": "Tiller or remote for musky fishing?",
@@ -1757,7 +1757,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is 90 HP enough for an 18-foot family runabout?",
-        "a": "Borderline. For light loads and casual cruise, yes. For full crew + watersports, better with 115 HP. We see more family customers regret going 90 HP than regret going 115 HP. The fuel difference at family-use volumes is small; the performance difference is large."
+        "a": "For light loads and casual cruise, 90 HP can work well. For full crew plus watersports, 115 or 150 are the stronger comparisons. We hear more regret from a 90 that was asked to tow than from a 115 used for family cruise."
       },
       {
         "q": "Should I choose FourStroke or Pro XS for family use?",
@@ -1765,7 +1765,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the best Mercury for towing skiers and wakeboarders?",
-        "a": "For serious watersports, see our dedicated Best Mercury for Ski & Wakeboard Boats guide. Short answer: 175-200 HP V6 minimum on a 19-foot tow boat; consider Pro XS for the hole shot."
+        "a": "For serious watersports, see our dedicated Best Mercury for Ski & Wakeboard Boats guide. Short answer: start the conversation at a 175 FourStroke V6 or a 200 Pro XS V8 on a 19-foot tow boat; horsepower alone does not identify the family. Confirm hull, load, and prop before choosing Pro XS for hole shot."
       },
       {
         "q": "Will my boat be safe with the maximum-rated HP?",
@@ -1891,7 +1891,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does the whole process take?",
-        "a": "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Your boat stays with you until HBW confirms the drop-off date and applicable work plan."
+        "a": "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately."
       },
       {
         "q": "What deposit is required?",
@@ -1903,14 +1903,14 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What if there is a problem during water test?",
-        "a": "Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery."
+        "a": "Issues found during a water test are reviewed before handover. Coverage depends on the written sales agreement and the applicable Mercury warranty or Product Protection terms. Discuss any issues and confirm coverage in writing before handover."
       }
     ]
   },
   {
     "slug": "2026-boating-market-ontario-boat-buyers",
     "title": "Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)",
-    "description": "Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works.",
+    "description": "What dated U.S. and North American market samples do and do not tell Ontario boat buyers in 2026, plus the verified luxury-tax change. Honest advice from Harris Boat Works.",
     "category": "Market Insight",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -1926,7 +1926,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is 2026 a good time to buy a boat in Ontario?",
-        "a": "Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, used prices have corrected from pandemic highs, and financing rates are easing."
+        "a": "Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, and financing rates are easing. Dated U.S. and North American samples are background, not a measure of Ontario prices or HBW sales."
       },
       {
         "q": "Did Canada really repeal the luxury tax on boats?",
@@ -1934,7 +1934,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Are used boat prices coming down in Ontario?",
-        "a": "Used boat prices have softened an estimated 5 to 10% from 2021 to 2022 highs. Prices are still above pre-pandemic levels in many categories, but the correction has happened."
+        "a": "Used-boat pricing varies by segment, age, condition and comparison period. Published U.S. data should be treated as background rather than a valuation for a Rice Lake boat. Compare recent local asking prices, completed-sale evidence where available, condition and documented service history before deciding whether a pa…"
       },
       {
         "q": "Why are new boat sales down if people are still boating?",
@@ -1944,8 +1944,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "why-mercury-dominates-outboard-market",
-    "title": "Why Mercury Dominates the Outboard Market in 2026",
-    "description": "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.",
+    "title": "Why Mercury Makes Practical Sense for Ontario Boaters (2026)",
+    "description": "A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit.",
     "category": "Buying Guide",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -1978,7 +1978,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-lineup-ontario",
     "title": "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)",
-    "description": "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.",
+    "description": "Compare Mercury FourStroke, Pro XS, SeaPro, Verado and Avator for an Ontario boat, with exact-model checks, current pricing references and ordering questions.",
     "category": "Buying Guide",
     "publishDate": "2026-07-09",
     "keywords": [
@@ -1994,12 +1994,12 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca."
       },
       {
-        "q": "Is a 2026-built Mercury still worth buying after the July 1 flip?",
-        "a": "Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The \"previous gen\" label matters slightly for resale framing years from now, not for how the motor runs."
+        "q": "How should I compare a 2026-built Mercury with newer stock?",
+        "a": "Compare the exact model specifications, condition, included equipment, warranty terms, and written price. Do not assume that a different year label proves either identical machinery or a redesign."
       },
       {
         "q": "When will 2027 Mercury pricing be available?",
-        "a": "Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of September 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers."
+        "a": "Live posted pricing is the current HBW pricing reference headed Mercury Outboard Prices in Canada (CAD, 2027), last updated 2026-09-05. The quote builder always shows current live numbers."
       },
       {
         "q": "What's the best Mercury for a fishing boat on Rice Lake?",
@@ -2038,7 +2038,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a Mercury Avator cost in Canada?",
-        "a": "The total depends on the model, battery count, charger, controls and installation. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercur…"
+        "a": "The total depends on the model, battery count, charger, controls and installation. The HBW Avator page currently says pricing is being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote…"
       }
     ]
   },
@@ -2111,7 +2111,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "pleasure-craft-licence-update-repower-ontario",
     "title": "Pleasure Craft Licence Update During Repower (Ontario 2026)",
-    "description": "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge.",
+    "description": "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how the owner submits it with motor specs from the HBW invoice.",
     "category": "Canadian Boating Regulations",
     "publishDate": "2026-04-15",
     "keywords": [
@@ -2124,19 +2124,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need to update my PCL when I change motors?",
-        "a": "Yes, in most cases. When motor HP, brand, or model changes, you must update the PCL within 30 days. Updates are free."
+        "a": "Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. The boat owner submits the update. After a repower at HBW, the invoice lists the motor make, model, year, horsepower and serial numbe…"
       },
       {
         "q": "Is the PCL update free?",
-        "a": "Yes. Updates to existing licence information, including motor specs after a repower, are free. As of August 8, 2026, new licences, renewals, transfers and duplicate documents carry a $24.41 fee. Transport Canada may adjust fees for inflation each April 1."
+        "a": "Yes. Updates to existing licence information, and cancellations, are free. As checked September 5, 2026, a $24.41 fee applies to a new, transferred, renewed or duplicate licence. A duplicate or an update does not renew the licence. Fees may change each April 1."
       },
       {
         "q": "Is the PCL the same as my boater licence?",
-        "a": "No. The PCL is the boat identification document, tied to the hull. The PCOC (Pleasure Craft Operator Card) is your personal operator licence. You need both."
+        "a": "No. The PCL is the boat identification document, tied to the hull, and is required where the craft qualifies. Accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document, is the operator rule. You need the documents that apply to that boat and operator, not a universal pair…"
       },
       {
         "q": "How long is a PCL valid?",
-        "a": "As of December 31, 2025, new and renewed PCLs are valid for 5 years. Older licences without an expiry date have been assigned one based on issue year."
+        "a": "It depends on the cohort. New, transferred and renewed licences under the rules effective December 31, 2025 are valid for five years. A duplicate or information update does not renew that term. Licences issued April 29, 2010 through December 30, 2025 keep their stated 10-year expiry. Older issue dates follow the assig…"
       }
     ]
   },
@@ -2228,7 +2228,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does it cost to switch from Yamaha to Mercury?",
-        "a": "The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca."
+        "a": "The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca."
       },
       {
         "q": "Is Yamaha more reliable than Mercury?",
@@ -2337,7 +2337,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "boat-winterization-cost-ontario-2026",
     "title": "Boat Winterization Cost Ontario 2026",
-    "description": "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap.",
+    "description": "Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price.",
     "category": "Maintenance",
     "publishDate": "2026-04-21",
     "keywords": [
@@ -2412,7 +2412,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a 2.5 HP Mercury cost in Canada?",
-        "a": "Live CAD pricing on the 2.5 MH portable, including HBW's discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in."
+        "a": "Use the [motor selection page](/quote/motor-selection) for the current exact-model price. Confirm supplied accessories, preparation, tax, and any additional charges in the written offer."
       },
       {
         "q": "What is the cheapest Mercury with electric start?",
@@ -2420,14 +2420,14 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is a small Mercury good enough for fishing?",
-        "a": "For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably."
+        "a": "It can be suitable for some sheltered-water and low-speed uses. Confirm the exact hull rating, load, required range, and expected conditions. Do not assume that one horsepower figure guarantees planing or safe performance on every boat."
       }
     ]
   },
   {
     "slug": "mercury-vs-yamaha-vs-honda-reliability-2026",
     "title": "Mercury vs Yamaha vs Honda: Reliability 2026",
-    "description": "Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes.",
+    "description": "Mercury vs Yamaha vs Honda from an Ontario Mercury dealer: service access, parts, and support trade-offs. No comparative reliability dataset.",
     "category": "Buying Guide",
     "publishDate": "2026-04-24",
     "keywords": [
@@ -2623,7 +2623,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What does Mercury Boost actually do to the motor?",
-        "a": "Mercury Boost is an authorized software calibration for eligible motors. Mercury publishes improved mid-range and zero-to-top-speed acceleration, depending on the boat-and-engine combination. It does not add horsepower, top speed, or maximum RPM."
+        "a": "Mercury Boost is an authorized software calibration for eligible motors. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a top-speed gain, and it is not a guaranteed result for every installation. It does not add…"
       },
       {
         "q": "Does Mercury Boost affect fuel economy?",
@@ -2659,11 +2659,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do Mercury prices actually change frequently?",
-        "a": "No. Mercury MSRP changes once a year on July 1 with model year transition. Promotional pricing (rate buy-downs, package incentives) can change quarterly or with promotions. Daily price changes are not a thing."
+        "a": "Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote."
       },
       {
         "q": "Is the price I build at HBW the price I pay?",
-        "a": "Yes for 95% of customers. Brand conversions and unusual configurations may need a conversation. For typical recreational repowers, the configurator is the source of truth and the price you build is the all-in number including rigging, prop, and install before HST."
+        "a": "The configurator provides an itemized CAD estimate for the selected package. Confirm final pricing and scope in the written quote, especially for brand conversions, multiple motors, special orders, or commercial setups."
       }
     ]
   },
@@ -2715,7 +2715,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does a Mercury repower take?",
-        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed."
+        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms…"
       },
       {
         "q": "Do I need to bring my boat to HBW for the walk-around?",
@@ -2812,7 +2812,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need a special licence to lock through the Trent-Severn?",
-        "a": "No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours be…"
+        "a": "No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licen…"
       },
       {
         "q": "How long does it take to lock through?",
@@ -2882,7 +2882,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the launch fee at Harris Boat Works?",
-        "a": "$20 per day or $200 for a seasonal pass (April through November) at our current published rates, which can change season to season. At those rates, the seasonal pass breaks even after 10 launches. The seasonal pass breaks even after 10 launches."
+        "a": "$20 per day or $200 for a seasonal pass (April through November) at our current published rates, which can change season to season. At those rates, the seasonal pass breaks even after 10 launches."
       },
       {
         "q": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
@@ -3137,7 +3137,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is the Mercury warranty really 3 years or 6 years?",
-        "a": "3 years total. The limited warranty (defects) and the corrosion warranty (corrosion) both run concurrently from the day you buy. They cover different things during the same 3-year window, they don't stack to give you six years."
+        "a": "For eligible pleasure-use models, 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack t…"
       },
       {
         "q": "When can I buy MPP, is there still a 1-year purchase deadline?",
@@ -3172,7 +3172,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the most common Mercury alarm code at spring first-start?",
-        "a": "Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh…"
+        "a": "Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. That alert is not itself a confirmed tank diagnosis. Have the tank and fuel condition checked, follow the serial-specific filter procedure, and correct the contamination source before restarting. A filter dra…"
       },
       {
         "q": "Does HBW have Mercury CDS dealer software?",
@@ -3191,7 +3191,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-dealer-toronto-why-drive-to-hbw",
     "title": "Mercury Dealer Toronto: Why Drive to HBW",
-    "description": "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip.",
+    "description": "How Toronto-area boaters compare Mercury service and repower shops by written scope, pickup, and no-delivery limits. No competitor drive-time or price table.",
     "category": "Mercury Outboards",
     "publishDate": "2026-05-12",
     "keywords": [
@@ -3505,7 +3505,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "When does Ontario require trailer brakes on a boat trailer?",
-        "a": "Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying…"
+        "a": "Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more. Confirm with MTO whether a breakaway system is required for your exact trailer and brake type rather than treating breakaway as universal. Most loaded boat trailers with mid-size or larger boats…"
       },
       {
         "q": "Do I need a separate licence plate for my boat trailer in Ontario?",
@@ -3529,7 +3529,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Should I repower my sterndrive with an outboard or another sterndrive?",
-        "a": "In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now the clear majority of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins o…"
+        "a": "Compare a replacement sterndrive with an outboard conversion for your specific hull. Have a qualified marine professional assess the transom, structure, weight distribution, and installation requirements, then compare complete written quotes. Neither approach is automatically the better choice."
       },
       {
         "q": "When does it still make sense to keep a sterndrive?",
@@ -3612,7 +3612,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "pontoon-hp-sizing-decision-tree-ontario",
     "title": "Pontoon HP Sizing: The Rice Lake Decision Tree by Length",
-    "description": "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.",
+    "description": "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart.",
     "category": "Mercury Outboards",
     "publishDate": "2026-03-26",
     "keywords": [
@@ -3625,19 +3625,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What HP do I need for a pontoon boat?",
-        "a": "It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull's max HP rating, not…"
+        "a": "It depends on the boat's documented power, transom, and motor-weight limits, tube count, hull, load, and use. 25 to 40 HP for some 16 to 18 ft cruise boats, 60 to 90 HP for some 20 to 22 ft cruisers, 115 to 150 HP for some 22 to 24 ft loaded family boats, and 200+ HP for some tritoons and watersports setups are exampl…"
       },
       {
         "q": "Is 90 HP enough for a 22 ft pontoon?",
-        "a": "Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pull…"
+        "a": "For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits regular tube pulling. A 60 HP 20-footer is a lighter-cruise comparison. Use CT only where Mercury offers that model and this boat's limits support it. Hole shot still depends on hull, prop, and load."
       },
       {
         "q": "Why do pontoons need more HP than runabouts?",
-        "a": "A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard cat…"
+        "a": "A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hu…"
       },
       {
         "q": "When does Command Thrust matter on a pontoon?",
-        "a": "Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition,…"
+        "a": "CT is model-specific: check the exact model's gearcase specifications before assuming it is available in the horsepower you are considering. Use CT where that exact model is offered and this pontoon's documented power, transom, motor-weight, steering, and load accept it, not because the boat is over 20 feet. A larger-…"
       }
     ]
   },
@@ -3657,7 +3657,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What size battery does a Mercury outboard need?",
-        "a": "For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 0°C (32 degrees F). Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpo…"
+        "a": "Check your engine's owner's manual for the exact minimum cranking-amp requirement for your specific model; do not rely on a generic figure. Use the battery type the manual specifies: a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads."
       },
       {
         "q": "AGM vs flooded lead-acid vs lithium: which marine battery should I buy?",
@@ -3665,11 +3665,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why does my boat battery die over the winter?",
-        "a": "Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you…"
+        "a": "Connected loads and self-discharge both matter. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window. Isolate switched loads, never leave the selector on BOTH,…"
       },
       {
         "q": "Should I leave my battery switch on \"Both\" for storage?",
-        "a": "Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can…"
+        "a": "No. Leaving BOTH selected exposes both banks to connected loads and can leave you without an isolated starting reserve. Follow your boat's storage and charging plan, typically OFF for switched loads. Do not turn a charging system to OFF or disconnect a battery with the engine running. Follow the switch maker's permitt…"
       }
     ]
   },
@@ -3698,7 +3698,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is premium gasoline ethanol-free in Ontario?",
-        "a": "No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but ass…"
+        "a": "No. Do not assume 91 octane is ethanol-free. Read the pump label. Premium may carry less ethanol than 87 or 89, but the octane number does not prove ethanol content. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock."
       },
       {
         "q": "Does Harris Boat Works sell ethanol-free marine gas?",
@@ -3832,7 +3832,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Command Thrust better on a 16-foot aluminum fishing boat?",
-        "a": "Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. The result shows why Command Thrust shouldn't be sold as an automatic upgrade for a recreational V-hull."
+        "a": "Usually not by default. In HBW's comparison on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. Jay Harris confirms that result, but the propeller details were not retained. It is a shop observation, not a controlled test isolating the gearcase or a promised speed differenc…"
       }
     ]
   },
@@ -4035,8 +4035,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-115-hp-fourstroke-review-ontario",
-    "title": "Mercury 115 FourStroke Review 2026: Real Ontario Numbers",
-    "description": "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, real weights, documented speed tests and propeller advice.",
+    "title": "Mercury 115 FourStroke Review 2026: Fit, Features and Performance",
+    "description": "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-05-10",
     "keywords": [
@@ -4052,7 +4052,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is the current Mercury 115 FourStroke a new engine design?",
-        "a": "No. The current 2.1-litre 75/90/115 family dates to 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign."
+        "a": "No. Mercury has built the current 2.1-litre 75 through 115 horsepower EFI FourStroke family since 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign."
       },
       {
         "q": "What is the difference between the Mercury 115 FourStroke and 115 Pro XS?",
@@ -4227,7 +4227,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "My tell-tale is weak, can I still run it?",
-        "a": "Briefly at idle to limp back to dock, yes. Anything more risks the powerhead. The tell-tale stream is your real-time water-flow indicator - if it's weak, the engine is undercooled."
+        "a": "A weak or missing telltale is a stop-and-assess warning, not permission to keep idling. Reduce load, follow the display and the serial-specific manual, and shut down when a temperature or water-flow warning requires it. A strong stream also does not rule out overheat. Arrange a tow or other safe return rather than usi…"
       },
       {
         "q": "Can I just delete the thermostat to fix overheating?",
@@ -4254,7 +4254,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can HBW be my primary Mercury dealer if I live in Whitby?",
-        "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
+        "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collec…"
       },
       {
         "q": "Do you serve Brooklin and north Whitby?",
@@ -4413,7 +4413,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Mercury Product Protection transferable when I sell my boat?",
-        "a": "Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change."
+        "a": "Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. Confirm the current Canadian transfer timing, documentation, inspection, and fee rules in the Product Protection contract before you sell."
       },
       {
         "q": "What is the deductible?",
@@ -4440,7 +4440,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Where is Harris Boat Works?",
-        "a": "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing."
+        "a": "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours."
       },
       {
         "q": "How long has Harris Boat Works operated in Gores Landing?",
@@ -4475,7 +4475,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need an appointment before driving to HBW?",
-        "a": "Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement."
+        "a": "Yes. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
       },
       {
         "q": "Is drop-off and pickup one trip?",
@@ -4501,7 +4501,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       "Mercury Pro XS repower",
       "Pro XS Rice Lake",
       "Pro XS Kawartha anglers",
-      "Mercury 200 Pro XS V6",
+      "Mercury 200 Pro XS V8",
       "Pro XS Command Thrust",
       "bass boat repower Ontario",
       "walleye boat Mercury Pro XS",
@@ -4514,7 +4514,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is the Mercury 150 Pro XS a V6?",
-        "a": "No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight…"
+        "a": "No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. This matters because the 150 is meaningfully lighter than the V6 and V8 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where…"
       },
       {
         "q": "How much does a Pro XS repower cost in Ontario?",
@@ -4522,7 +4522,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need Command Thrust on my Pro XS?",
-        "a": "No. Pro XS is a performance motor for planing V-hull bass and angler boats, and Command Thrust is a pontoon and workboat gearcase. On a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even loaded three-up with a full livewell. Standard gearcase Pro XS is the right call for Rice Lake and Ka…"
+        "a": "Pro XS is a performance motor for planing V-hull bass and angler boats. Command Thrust is a hull, load, and propeller choice. HBW's shop recommendation for most Rice Lake and Kawartha angler boats is the standard-gearcase Pro XS; that is a preference, not a universal V-hull ban. If you want more low-speed trolling con…"
       }
     ]
   },
@@ -4687,7 +4687,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What happens if the DTS digital display fails on the water?",
-        "a": "Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it hasn't left our customers stranded."
+        "a": "A display fault and a throttle or shift-control fault are different problems. Do not assume every DTS fault leaves a usable limited-throttle mode. Follow the warning and troubleshooting instructions for your exact engine and control system, and contact a Mercury dealer. If you cannot control the boat safely, arrange a…"
       },
       {
         "q": "Are mechanical cables really 50-year-old technology?",
@@ -4807,7 +4807,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is it safe to add a trolling motor or fishfinder myself?",
-        "a": "Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it."
+        "a": "Adding a trolling motor or fishfinder creates a new circuit, so have a marine electrician assess and install it. Incorrect installation can cause electrical faults or a fire."
       },
       {
         "q": "My bilge pump runs every few minutes even when the boat is dry. What's wrong?",
@@ -4873,11 +4873,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the most popular Pro XS in Ontario?",
-        "a": "The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water."
+        "a": "The 200 Pro XS V8 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is an inline-four and remains the walleye sweet spot for mid-size aluminum on big water."
       },
       {
         "q": "Does Pro XS use the same powerhead as FourStroke?",
-        "a": "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8."
+        "a": "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175 Pro XS uses the 3.4L V6. The 200, 225, 250, and 300 Pro XS use the 4.6L V8. Horsepower alone does not identify the family."
       },
       {
         "q": "Can I get Command Thrust on a Pro XS?",
@@ -4943,7 +4943,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does Mercury Avator come with a warranty?",
-        "a": "Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models."
+        "a": "Review the current Canadian limited-warranty terms for the exact Avator motor and battery, including the intended use. Confirm any extended-protection eligibility in writing before including it in a purchase comparison."
       }
     ]
   },
@@ -5039,7 +5039,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does the Avator 7.5e cost installed?",
-        "a": "Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration…"
+        "a": "Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. The HBW Avator page currently says pricing is being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the…"
       }
     ]
   },
@@ -5148,7 +5148,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-monthly-payment-ontario-2026",
     "title": "Mercury Outboard Monthly Payment Math (Ontario, 2026)",
-    "description": "What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing.",
+    "description": "What a Mercury outboard costs per month in Ontario: 2026 financing math by HP tier, current promo rate, terms, monthly payment, and remaining-balance guidance.",
     "category": "Repower Cost & Pricing",
     "publishDate": "2026-05-28",
     "keywords": [
@@ -5197,7 +5197,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is Mercury Boost a horsepower increase?",
-        "a": "No. It is a calibration software upgrade that improves eligible mid-range response. Mercury's five published tests show 5-21% quicker zero-to-top-speed acceleration, while rated horsepower, top speed, maximum RPM, and time to plane remain unchanged."
+        "a": "No. It is a calibration software upgrade that improves eligible mid-range response. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a top-speed gain. Rated horsepower, top speed, maximum RPM, and time to plane rem…"
       },
       {
         "q": "Does Boost work on my 300R or 400R?",
@@ -5229,7 +5229,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Does HBW service Honda outboards?",
-        "a": "No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Honda Marine's dealer locator lists certified dealers in the Peterborough area (about 30 km) and Havelock area (about 45 km)."
+        "a": "No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Use Honda Marine's current dealer locator and confirm that the location services your exact model."
       },
       {
         "q": "Is Mercury more reliable than Honda?",
@@ -5237,7 +5237,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Where can I get a Honda Marine outboard serviced near Rice Lake?",
-        "a": "Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km)."
+        "a": "Use Honda Marine's current dealer locator and confirm that the location services your exact model before travelling."
       },
       {
         "q": "Is Honda's warranty longer than Mercury's?",
@@ -5248,7 +5248,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026",
     "title": "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)",
-    "description": "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.",
+    "description": "Compare Mercury 115 vs 150 hp by hull design, load, and manufacturer limits, with CAD pricing and guidance on exact-model Command Thrust availability.",
     "category": "Repower Guide",
     "publishDate": "2026-05-28",
     "keywords": [
@@ -5264,15 +5264,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What boat size does the 115 vs 150 decision actually apply to?",
-        "a": "For aluminum V-hull boats, the realistic decision range is 18 to 20 feet. For pontoons, the decision is more nuanced: 18 to 20 ft pontoons are usually better served by the Mercury 60 Command Thrust (not 115 or 150), while 22 to 24 ft pontoons and tritoons benefit from the 150."
+        "a": "Those lengths are the examples in this article, not a qualifying range. On some 18 to 20 ft aluminum V-hulls we compare 115 and 150. On some 18 to 20 ft pontoons we compare 60 CT where that model and the boat limits support it; on some 22 to 24 ft tritoons we compare the 150. The plate, tube count, load, and available…"
       },
       {
         "q": "What's the HBW current sell price for the Mercury 115 and 150 Pro XS?",
-        "a": "HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,490 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,349 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat."
+        "a": "HBW's most popular 115 HP model is the Mercury 20-inch 115ELPT ProXS at $17,490 CAD (bare motor, excluding HST, rigging, controls, and propeller). Our most popular 150 is the Mercury 20-inch 150ELPT ProXS at $24,349 CAD (bare motor, excluding HST, rigging, controls, and propeller). Standard ELPT and L variants run sli…"
       },
       {
         "q": "Should I get a 115 Command Thrust for my aluminum V-hull?",
-        "a": "Almost certainly not. Command Thrust is engineered for pontoons and specific work-boat applications. For a V-hull, the standard 115 ELPT or 115 Pro XS is the correct gearcase choice. We see other dealers rig V-hulls with Command Thrust based on a \"more thrust is better\" pitch. For a V-hull, the standard gearcase gives…"
+        "a": "Usually not for the planing aluminum V-hulls we see. Command Thrust is engineered for pontoons and specific work-boat applications. HBW's shop recommendation is the standard 115 ELPT or 115 Pro XS; that is a hull, load, and propeller decision, not a universal exclusion. We see other dealers rig V-hulls with Command Th…"
       },
       {
         "q": "Will a 115 plane my 19ft aluminum V-hull with 4 people?",
@@ -5342,7 +5342,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What kicker do you recommend for Lake Ontario salmon trolling?",
-        "a": "Mercury 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy loads, the 15 or 20 ProKicker provides additional thrust margin. The ProKicker line is engineered for sustained low-RPM trolling, which is what salmon fishing requires."
+        "a": "The current Canadian ProKicker line is 9.9, 15, and 25 HP. The 9.9 is the volume choice. Compare a 15 or, after checking weight, shaft, mounting clearance, and controls, a 25 when the boat and load actually need more thrust. Do not spec a current 20 HP ProKicker, and do not treat 25 as automatic on every 22-foot boat."
       },
       {
         "q": "What alternator output do I need for 4 electric downriggers?",
@@ -5535,7 +5535,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is an aluminum fishing boat easy to repower?",
-        "a": "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structu…"
+        "a": "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a motor is a structural issue, quoted separ…"
       },
       {
         "q": "What should I watch for when repowering a fibreglass V-hull?",
@@ -5667,7 +5667,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I drink alcohol on my boat while watching fireworks on Rice Lake?",
-        "a": "In Ontario, alcohol can only be consumed on a boat that has permanent sleeping accommodations, a permanent galley, and a permanent head, and only when the vessel is anchored or docked. Open alcohol on a typical fishing boat or pontoon is not legal, even while anchored. Police marine units conduct routine checks on hol…"
+        "a": "Confirm current Ontario liquor and marine enforcement rules before you bring alcohol. A typical fishing boat or pontoon is not automatically a place where open alcohol is legal. A sober operator is required. Police marine units conduct holiday-weekend checks."
       },
       {
         "q": "What kind of fuel does Rice Lake marinas offer, and why should I use ethanol-free?",
@@ -5678,7 +5678,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-overheat-high-speed",
     "title": "Mercury Outboard Overheating at High Speed: What to Check",
-    "description": "Your Mercury overheat alarm fires at high speed but not at idle? Here's the 5-step check, from intake screens to the poppet valve, plus when to bring it in.",
+    "description": "Mercury overheating at high speed? Learn which cooling-system faults a technician checks, how to respond to the warning, and when to stop for service.",
     "category": "Service",
     "publishDate": "2026-06-29",
     "keywords": [
@@ -5691,19 +5691,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Why does my Mercury overheat at high speed but not at idle?",
-        "a": "Because high-speed running demands far more cooling flow than idle does. A system with marginal flow (a partial intake blockage, a worn impeller, or a stuck poppet valve) handles low demand fine and falls behind under load. The \"cool at idle, hot at speed\" pattern points specifically at flow restriction and the poppet…"
+        "a": "High-speed running asks more of the cooling system than idle does. That RPM pattern is useful context for a technician, not a diagnosis and not proof of one failed part. The exact cooling-system design depends on the engine and serial number. A technician may check intake restriction, the water pump, the thermostat, c…"
       },
       {
         "q": "What is a poppet valve and why does it matter at high RPM?",
-        "a": "The poppet valve is a pressure-relief valve in the cooling system that opens at higher RPM to increase water flow through the powerhead. If it's clogged or weak, it can't open properly, and the motor overheats only at speed. It's the most commonly missed cause of a high-RPM-only overheat."
+        "a": "On engines that have one, a poppet or pressure-relief valve is part of the cooling system and is designed to change flow as pressure and RPM change. It is not fitted on every Mercury, and a high-RPM-only warning does not identify it as the failed part. Whether your engine has one, and whether it is involved, is a tech…"
       },
       {
         "q": "I replaced the impeller and it still overheats at speed. Now what?",
-        "a": "Check the poppet valve and the intake screens. A fresh impeller can't fix a stuck poppet or a partial flow restriction. This is a very common sequence, and it's usually why the impeller swap didn't solve it."
+        "a": "An impeller change does not rule the rest of the cooling system in or out. Do not run the boat back up to high RPM to retest the fault. Record the warning text or code, RPM, and conditions from when it happened, if you can do so safely, and have a Mercury technician inspect that engine and serial number. Intake, pump,…"
       },
       {
         "q": "How long can I run my Mercury while it's overheating?",
-        "a": "Don't. Even a few minutes at temperature can warp components or cook the powerhead. Throttle back to idle the moment the alarm sounds, confirm you have water flow, and limp in. A repair is a fraction of the cost of a new powerhead."
+        "a": "Do not keep operating an overheated engine. Reduce load and follow the exact warning response for your model; stop when the manual directs. A telltale stream is not permission to limp home. Arrange assistance if safe operation cannot be established."
       }
     ]
   },
@@ -5735,7 +5735,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is it safe to run my bilge pump dry to see if it works?",
-        "a": "No. Bilge pumps are built to move water, and running one dry can damage the impeller or motor within seconds. Test with the float arm and a small amount of water, not a dry run."
+        "a": "Follow the installed pump manufacturer's test method. Many submersible centrifugal pumps permit a brief functional test; that is not a licence for prolonged dry running and does not apply to flexible-impeller pumps. Confirm the pump actually discharges water in a wet test."
       }
     ]
   },
@@ -5807,7 +5807,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-maintenance-parts-list",
     "title": "Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)",
-    "description": "Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP.",
+    "description": "A guide to common Mercury outboard maintenance parts: filters, spark plugs, impellers, gear lube and service kits. Check your model and serial number for fitment.",
     "category": "Service",
     "publishDate": "2026-08-11",
     "keywords": [

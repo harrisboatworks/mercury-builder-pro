@@ -95,9 +95,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 ---
 
-> Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
->
-> Jamal R., Mississauga
+Confirm your route and current travel time before you leave.
 
 ## Trailer Weight and Tow Vehicle Considerations
 
@@ -115,7 +113,7 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ## What to Do at the Launch in Gores Landing
 
-If you're launching at [our public ramp at Gores Landing](/blog/best-marina-rice-lake-ontario):
+If you're launching at [the public ramp at Gores Landing](/blog/best-marina-rice-lake-ontario):
 
 1. **Pull into the staging area** before the actual ramp. Get the boat ready to launch (straps off, drain plug in, motor down), not while blocking the ramp.
 2. **Back the trailer down the ramp** until the boat floats off cleanly. Have a friend on the dock to walk the boat to a temporary tie-up.

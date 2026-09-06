@@ -220,7 +220,7 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 
 ### How long does the whole process take?
 
-Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Your boat stays with you until HBW confirms the drop-off date and applicable work plan.
+Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately.
 
 ### What deposit is required?
 
@@ -232,7 +232,7 @@ Yes, but warranty may require dealer installation. DIY installation also means y
 
 ### What if there is a problem during water test?
 
-Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery.
+Issues found during a water test are reviewed before handover. Coverage depends on the written sales agreement and the applicable Mercury warranty or Product Protection terms. Discuss any issues and confirm coverage in writing before handover.
 
 ## Related guides
 

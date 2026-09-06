@@ -180,8 +180,8 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 
 ## Sources
 
-- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.
-- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Required licence and Outdoors Card for the opener.
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) - Required licence and Outdoors Card for the opener.
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
 [Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
@@ -237,7 +237,7 @@ A weak or dead battery is one of the most common opener-morning failures we see,
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
 - [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
-- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 - [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
 
 ## Next steps

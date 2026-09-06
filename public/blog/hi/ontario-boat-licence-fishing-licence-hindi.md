@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-08-02
+last_updated: 2026-09-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-09-02
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**अंतिम समीक्षा:** 2026-08-02  
+**अंतिम समीक्षा:** 2026-09-02  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ## PCOC kya hai Ontario | PCOC क्या है
 
-Ontario में अगर आप किसी भी मोटर वाली नाव (चाहे वह छोटी मछली पकड़ने वाली नाव हो या बड़ी स्पीडबोट) चलाना चाहते हैं, तो आपके पास Pleasure Craft Operator Card (PCOC) होना अनिवार्य है। इसे लोग अक्सर “pcoc kya hai” खोजते हैं। यह कोई ड्राइविंग लाइसेंस नहीं है, बल्कि यह बताता है कि आपने पानी पर सुरक्षा के बुनियादी नियम सीख लिए हैं। एक बार बन जाने के बाद यह जीवनभर मान्य रहता है और इसे रिन्यू करने की ज़रूरत नहीं पड़ती।
+Ontario में अगर आप मोटर वाली मनोरंजन नाव (चाहे वह छोटी मछली पकड़ने वाली नाव हो या बड़ी स्पीडबोट) चलाना चाहते हैं, तो मान्य योग्यता-प्रमाण चाहिए। Pleasure Craft Operator Card (PCOC) इसका सबसे आम रूप है; Transport Canada कुछ अन्य प्रमाण भी स्वीकार करता है। HBW पर किराए की नाव के लिए अलग शर्तें लागू हैं। इसे लोग अक्सर “pcoc kya hai” खोजते हैं। यह कोई ड्राइविंग लाइसेंस नहीं है, बल्कि यह बताता है कि आपने पानी पर सुरक्षा के बुनियादी नियम सीख लिए हैं। एक बार बन जाने के बाद यह जीवनभर मान्य रहता है और इसे रिन्यू करने की ज़रूरत नहीं पड़ती।
 
 कार्ड पाने के लिए एक ऑनलाइन कोर्स करना होता है और फिर एक छोटी परीक्षा पास करनी होती है। सब कुछ आप घर बैठे, अपने फ़ोन या कंप्यूटर पर पूरा कर सकते हैं। पास होते ही आपको डिजिटल कार्ड मिल जाता है जिसे आप प्रिंट कर सकते हैं। बिना पढ़े कोशिश न करें; कोर्स को ध्यान से पूरा करना ही सबसे आसान रास्ता है।
 
@@ -43,14 +43,14 @@ PCOC बनवाने के लिए नीचे दिए गए सीध
 
 1. Transport Canada की वेबसाइट पर जाकर मान्यता प्राप्त कोर्स प्रदाताओं की सूची देखें: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters
 2. अपनी पसंद का कोई भी प्रदाता चुनें (सभी सरकार द्वारा मान्य हैं) और उनका ऑनलाइन कोर्स खरीदें। कोर्स और परीक्षा का शुल्क हर प्रदाता का अलग होता है, इसलिए ताज़ा कीमत के लिए उसी वेबसाइट पर जाएँ।
-3. कोर्स पूरा करने के बाद ऑनलाइन परीक्षा दें। परीक्षा में पानी पर सुरक्षा, चिन्ह, और आपात स्थिति से जुड़े सवाल होते हैं। सवाल अंग्रेज़ी या फ्रेंच में होंगे, इसलिए अगर अंग्रेज़ी कमज़ोर है तो कोई मदद करने वाला साथ बैठाएँ या अनुवाद ऐप का उपयोग करें।
+3. कोर्स पूरा करने के बाद ऑनलाइन परीक्षा दें। परीक्षा में पानी पर सुरक्षा, चिन्ह, और आपात स्थिति से जुड़े सवाल होते हैं। पढ़ाई में परिवार या अनुवाद ऐप मदद कर सकते हैं। परीक्षा के दौरान परिवार को साथ बैठाकर जवाब दिलवाना या बिना मंज़ूरी अनुवाद करवाना अनुमति नहीं है; दुभाषिया या विशेष व्यवस्था मान्यता-प्राप्त प्रदाता से स्वीकृत नियमों के तहत पहले तय करनी होती है। भुगतान से पहले परीक्षा की भाषा और स्वीकृत सहायता प्रदाता से पूछ लें। आधिकारिक नियम: [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)।
 4. पास होने के बाद प्रदाता से मिलने वाले अस्थायी प्रमाण की शर्तें ध्यान से पढ़ें और स्थायी कार्ड आने पर मूल कार्ड नाव पर साथ रखें। Transport Canada के अनुसार साधारण कागज़ी या इलेक्ट्रॉनिक PCOC कॉपी मान्य नहीं है।
 
 कुल समय आपकी पढ़ाई की रफ़्तार और course provider की process पर निर्भर करता है। “boat chalane ka license kitne din mein milta hai” का जवाब यह है: जितनी जल्दी आप कोर्स ख़त्म कर परीक्षा पास करें, उतनी जल्दी। परीक्षा पास होते ही डिजिटल कार्ड उसी दिन डाउनलोड किया जा सकता है।
 
 ## PCOC aur PCL mein fark | PCOC और पी.सी.एल. में अंतर
 
-बहुत से लोग PCOC (ऑपरेटर कार्ड) और Pleasure Craft Licence (PCL) को एक ही समझ बैठते हैं, जबकि दोनों बिल्कुल अलग हैं। PCL एक नाव का पंजीकरण नंबर होता है, जैसे कार की लाइसेंस प्लेट। यदि आप खुद की 10 हॉर्सपावर (HP) या उससे अधिक मोटर वाली नाव रखते हैं, तो आपको उसे Transport Canada से रजिस्टर कराना होता है और उस पर नंबर प्रदर्शित करना होता है। PCL हमेशा के लिए वैध रहता है और मुफ़्त है। PCOC चलाने वाले के लिए है, PCL नाव का नंबर है। यह जानकारी आपके एक साथी को “Ontario boat license online hindi” में ढूँढते समय भ्रमित कर सकती है, इसलिए साफ कर दें।
+बहुत से लोग PCOC (ऑपरेटर कार्ड) और Pleasure Craft Licence (PCL) को एक ही समझ बैठते हैं, जबकि दोनों बिल्कुल अलग हैं। PCL एक नाव का पंजीकरण नंबर होता है, जैसे कार की लाइसेंस प्लेट। यदि आप खुद की 10 हॉर्सपावर (HP) या उससे अधिक मोटर वाली नाव रखते हैं, तो आपको उसे Transport Canada से रजिस्टर कराना होता है और उस पर नंबर प्रदर्शित करना होता है। नया, ट्रांसफर किया हुआ या रिन्यू किया हुआ PCL अब 5 साल के लिए वैध होता है और उसके बाद रिन्यू कराना पड़ता है; पुराने बिना-एक्सपायरी वाले लाइसेंस Transport Canada की प्रकाशित समय-सारणी के अनुसार धीरे-धीरे एक्सपायरी तारीख़ पर लाए जा रहे हैं। PCL के लिए आवेदन, रिन्यूअल, ट्रांसफर या डुप्लीकेट पर 5 सितंबर 2026 तक **$24.41 CAD** लगता है; जानकारी अपडेट करना या लाइसेंस रद्द करना मुफ़्त है। शुल्क हर 1 अप्रैल समायोजित हो सकता है। ताज़ा राशि [Transport Canada fees](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards) पर देखें। PCOC चलाने वाले के लिए है, PCL नाव का नंबर है। यह जानकारी आपके एक साथी को “Ontario boat license online hindi” में ढूँढते समय भ्रमित कर सकती है, इसलिए साफ कर दें।
 
 Harris Boat Works पर हम नावों की रजिस्ट्री नहीं कराते, लेकिन हमारी टीम आपको आधिकारिक प्रक्रिया समझा सकती है।
 
@@ -67,7 +67,7 @@ Harris Boat Works पर हम नावों की रजिस्ट्र�
 
 ## Machli pakadne ke niyam FMZ 17 mein | मछली पकड़ने के नियम एफ.एम.ज़ेड 17 में
 
-Rice Lake Fisheries Management Zone 17 (FMZ 17) में आता है। हर मछली की प्रजाति का अपना मौसम, रोज़ाना पकड़ने की सीमा, और आकार संबंधी नियम होते हैं। कोई एक तारीख नहीं है जब पूरी झील में मछली पकड़ने का मौसम खुलता या बंद होता है। इसलिए “fishing season Ontario kab se hai” का जवाब हर मछली के हिसाब से बदलता है। कंज़र्वेशन लाइसेंस पर रखने की सीमा स्पोर्ट लाइसेंस से कम होती है। यह सुनिश्चित करने के लिए कि आप मौजूदा नियमों का पालन करें, हमेशा ताज़ा Ontario Fishing Regulations Summary (FMZ 17) पढ़ें: https://www.ontario.ca/document/ontario-fishing-regulations-summary। हर साल नया संस्करण आता है, इसलिए हमेशा official लिंक से ही देखें। यह आधिकारिक स्रोत हर बार जीतेगा।
+Rice Lake Fisheries Management Zone 17 (FMZ 17) में आता है। हर मछली की प्रजाति का अपना मौसम, रोज़ाना पकड़ने की सीमा, और आकार संबंधी नियम होते हैं। कोई एक तारीख नहीं है जब पूरी झील में मछली पकड़ने का मौसम खुलता या बंद होता है। इसलिए “fishing season Ontario kab se hai” का जवाब हर मछली के हिसाब से बदलता है। कंज़र्वेशन लाइसेंस पर रखने की सीमा स्पोर्ट लाइसेंस से कम होती है। यह सुनिश्चित करने के लिए कि आप मौजूदा नियमों का पालन करें, हमेशा ताज़ा Ontario Fishing Regulations Summary (FMZ 17) पढ़ें: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। हर साल नया संस्करण आता है, इसलिए हमेशा official लिंक से ही देखें। यह आधिकारिक स्रोत हर बार जीतेगा।
 
 ## HBW par rental ke liye PCOC | HBW पर किराए के लिए PCOC
 
@@ -106,15 +106,15 @@ Rice Lake, GTA के किसी भी कोने से लगभग 90 �
 
 ### PCOC क्या है और क्या मुझे सचमुच इसकी ज़रूरत है?
 
-जी हाँ। PCOC यानी Pleasure Craft Operator Card एक अनिवार्य कार्ड है जो बताता है कि आपने नाव सुरक्षा का प्रशिक्षण ले लिया है। Ontario में बिना इसके कोई भी मोटर वाली नाव चलाना क़ानूनन गलत है। यह जीवनभर चलता है और रिन्यू नहीं कराना पड़ता।
+PCOC यानी Pleasure Craft Operator Card बताता है कि आपने नाव सुरक्षा का प्रशिक्षण ले लिया है। मोटर वाली मनोरंजन नाव चलाने के लिए मान्य योग्यता-प्रमाण चाहिए। PCOC इसका सबसे आम रूप है; Transport Canada कुछ अन्य प्रमाण भी स्वीकार करता है। HBW पर किराए की नाव के लिए अलग शर्तें लागू हैं। यह जीवनभर चलता है और रिन्यू नहीं कराना पड़ता।
 
 ### boat operator license kaise banwayein Canada?
 
-कनाडा में बोट ऑपरेटर लाइसेंस (PCOC) बनवाना बहुत सीधा है: Transport Canada की सूची में से कोई ऑनलाइन कोर्स खरीदें, पाठ्यक्रम पूरा करें, और ऑनलाइन परीक्षा पास करें। परीक्षा अंग्रेज़ी या फ्रेंच में होती है, इसलिए थोड़ी तैयारी करें। पास होते ही कार्ड मिल जाता है।
+कनाडा में बोट ऑपरेटर लाइसेंस (PCOC) बनवाना बहुत सीधा है: Transport Canada की सूची में से कोई ऑनलाइन कोर्स खरीदें, पाठ्यक्रम पूरा करें, और ऑनलाइन परीक्षा पास करें। भुगतान से पहले परीक्षा की भाषा और स्वीकृत सहायता मान्यता-प्राप्त प्रदाता से पूछ लें। पास होते ही कार्ड मिल जाता है।
 
 ### PCOC ka exam pass karne ke tips?
 
-कोर्स को ध्यान से पढ़ें, खासकर बुआय और चिन्हों के बारे में। अभ्यास के लिए मॉक टेस्ट ज़रूर दें (अधिकतर प्रदाता यह सुविधा देते हैं)। अंग्रेज़ी कठिन लगे तो परिवार का कोई सदस्य मदद करे या अनुवाद ऐप का इस्तेमाल करें। शांत दिमाग़ से बैठें और एक बार में निकल जाएगा।
+कोर्स को ध्यान से पढ़ें, खासकर बुआय और चिन्हों के बारे में। अभ्यास के लिए मॉक टेस्ट ज़रूर दें (अधिकतर प्रदाता यह सुविधा देते हैं)। पढ़ाई में परिवार या अनुवाद ऐप मदद कर सकते हैं। परीक्षा सहायता या दुभाषिया मान्यता-प्राप्त प्रदाता से स्वीकृत नियमों के तहत पहले तय करें; परिवार को बिना मंज़ूरी साथ बैठाकर जवाब या अनुवाद न करवाएँ। भुगतान से पहले परीक्षा की भाषा पूछ लें। शांत दिमाग़ से बैठें।
 
 ### Ontario fishing license hindi mein jaankari kahan milegi?
 

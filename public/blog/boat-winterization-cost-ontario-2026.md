@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Boat Winterization Cost Ontario 2026"
-description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
+description: "Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price."
 category: "Maintenance"
 date_published: 2026-04-21
 date_modified: 2026-08-27
@@ -21,7 +21,7 @@ revenue_driver: service
 
 # Boat Winterization Cost Ontario 2026
 
-> Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap.
+> Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price.
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  

@@ -41,7 +41,7 @@ Aluminum hulls are lighter, cheaper to buy, more forgiving on the trailer and at
 
 **Fiberglass hulls** are laminated layers of glass fiber and resin laid over a mould. The result is a rigid, uniform hull with a smooth gelcoat finish on the outside. Fiberglass does not flex; it takes wake impacts as a solid structure. When it fails, it cracks rather than dents.
 
-The chemistry difference creates real-world differences in weight, cost, ride, durability, and repair. Let's go through each.
+The difference between the systems shows up in weight, cost, ride, durability, and repair. Let's go through each.
 
 ## Weight: aluminum wins
 
@@ -55,9 +55,9 @@ For Ontario boaters who trailer regularly between lakes, this is a real ongoing 
 
 ## Cost: aluminum wins on purchase, often ties on lifetime
 
-A new 18-foot aluminum fishing boat from Legend Boats with a Mercury 90 will land in the $30,000-$40,000 CAD range fully rigged in 2026. A comparable 18-foot fiberglass V-hull from a quality builder will land $50,000-$70,000.
+A new 18-foot aluminum fishing boat from Legend Boats with a Mercury 90, and a comparable 18-foot fiberglass V-hull, have to be compared from current written quotes. Package contents, year, and options change the total.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference).
 
 **However**: over 10 years, the gap narrows. Fiberglass hulls hold their resale value better if the gelcoat is maintained. Aluminum hulls depreciate more on purchase but bottom out faster (a well-kept 10-year-old aluminum boat sells for 50-60% of new; the same fiberglass boat might sell for 60-70%). The actual dollar gap over a 10-year ownership window is typically less than the purchase-price gap suggests.
 
@@ -142,7 +142,7 @@ Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boa
 
 ### What's the right Mercury for an aluminum vs a fiberglass boat?
 
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on pontoons and workboats (not on planing V-hulls). Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
+Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
 
 ### Is buying a used aluminum boat safer than buying a used fiberglass boat?
 

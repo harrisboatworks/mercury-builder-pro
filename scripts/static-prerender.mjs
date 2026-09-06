@@ -7015,7 +7015,7 @@ for (const routeSlug of REQUIRED_CANONICAL_MOTOR_ROUTES.values()) {
     verifyErrors.push(`Required canonical motor route canonicalizes to homepage: ${routePath}`);
   }
 }
-const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|By Jay Harris/i;
+const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|(?:^|[\n>])\s*By Jay Harris/i;
 for (const route of blogArticleRoutes) {
   const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
   if (!existsSync(p)) { verifyErrors.push(`${route.path}: missing blog HTML.`); continue; }

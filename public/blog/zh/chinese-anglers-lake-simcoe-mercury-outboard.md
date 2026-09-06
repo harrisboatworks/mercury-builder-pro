@@ -97,7 +97,7 @@ Kicker不是每个人都需要，但对在Lake Simcoe长时间出湖的钓友来
 
 ## FMZ 16规则与钓鱼证
 
-Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季节、尺寸限制和数量限制，另外也属于南部诱饵管理区（Southern Bait Management Zone），对活饵的跨区携带有限制。
+Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季节、尺寸限制和数量限制。活饵、鱼饵携带和跨区规则以当年度官方钓鱼规则为准。
 
 **请以当年度安大略省官方钓鱼规则（Ontario fishing regulations Summary）为准。** 安大略省提供繁体中文钓鱼规则摘要版，适合华人钓友作为入口，但最终仍以英文完整版的规定为准。
 

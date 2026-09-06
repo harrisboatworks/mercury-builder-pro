@@ -31,7 +31,7 @@ revenue_driver: repower
 
 > **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one. Call 905-342-2153 and we'll tell you straight which fits your boat.
 
-**The quietest motor we've ever hung on a transom doesn't burn anything.**
+**Choosing electric propulsion starts with the trip: distance, load, speed, battery capacity, and charging access.**
 
 A few years ago, electric outboards were either tiny trolling motors or trade-show prototypes. Now Mercury's Avator line is real, it's here, and we're getting asked about it at the counter most weeks.
 
@@ -177,7 +177,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 
 ### Is Harris Boat Works actually selling the Mercury Avator now?
 
-Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
+Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. The HBW Avator page currently says pricing is being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 ### How far does an Avator go on one charge?
 
@@ -201,7 +201,7 @@ All three make legitimate motors. Avator's edge is the Mercury dealer network be
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

@@ -103,9 +103,9 @@ Not all ramps handle all boats the same way. Match the ramp to your hull size an
 - Prefer less congestion while you rig the boat
 - Need a ramp that handles larger trailers reliably
 
-**Provincial park ramps east on the lake**
+**Confirm a named ramp, operator, and posted access before you tow a larger rig**
 
-Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
+Gores Landing is one named option on this guide. If you are unsure, call ahead at 905-342-2153 and we will discuss the named ramps listed above for your rig.
 
 ## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
@@ -167,7 +167,7 @@ This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Seve
 
 ## Fishing Regulations and Licences
 
-You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) to fish on Rice Lake or anywhere else in Ontario:
+You need a valid [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) to fish on Rice Lake or anywhere else in Ontario:
 
 - Outdoor Card (one-time purchase)
 - Fishing licence (annual or short-term)
@@ -195,7 +195,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 
-- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## FAQs
 

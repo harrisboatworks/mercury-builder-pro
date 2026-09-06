@@ -45,7 +45,7 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
-| 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
+| 2.5 / 3.5 | 19 kg (41 lb) | Tiller portables |
 | 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
 | 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
 | 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) | Kicker-duty gearcase and controls; range covers ProKicker variants |

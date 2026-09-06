@@ -206,7 +206,7 @@ If you're shopping for *another* boat, not just servicing your current one, the 
 | Ontario resale | Strongest | Declining | Niche (ski/wake) |
 | Best for | Fishing, versatility, repower-friendliness | Family cruising, watersports | Tow sports, wake boats |
 
-**The honest take for most Ontario boaters:** outboards have won the volume war. Sterndrive market share is shrinking, parts will get harder to source over the next 10-20 years, and the I/O fleet still on Ontario lakes is quietly aging out. That said, we have customers running 25-year-old MerCruisers that work perfectly because they were maintained. The propulsion type matters less than the maintenance.
+**The honest take for most Ontario boaters:** outboards have won the volume war. Sterndrive market share is shrinking, and the I/O fleet still on Ontario lakes is quietly aging out. Check current parts availability for your exact MerCruiser model and serial; future supply is not guaranteed. That said, we have customers running 25-year-old MerCruisers that work perfectly because they were maintained. The propulsion type matters less than the maintenance.
 
 If you have a great I/O hull and you love the boat, keep it. We'll keep it running. If the cost-to-keep math is going sideways, repower or convert.
 

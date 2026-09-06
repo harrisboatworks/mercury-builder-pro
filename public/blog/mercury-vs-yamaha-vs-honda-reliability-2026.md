@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury vs Yamaha vs Honda: Reliability 2026"
-description: "Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes."
+description: "Mercury vs Yamaha vs Honda from an Ontario Mercury dealer: service access, parts, and support trade-offs. No comparative reliability dataset."
 category: "Buying Guide"
 date_published: 2026-04-24
 date_modified: 2026-08-26
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury vs Yamaha vs Honda: Reliability 2026
 
-> Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes.
+> Mercury vs Yamaha vs Honda from an Ontario Mercury dealer: service access, parts, and support trade-offs. No comparative reliability dataset.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
@@ -217,7 +217,7 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP

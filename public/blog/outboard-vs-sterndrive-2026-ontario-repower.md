@@ -31,11 +31,11 @@ revenue_driver: repower
 
 ## Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
 
-> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards now account for the clear majority of new recreational marine engines sold, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
+> **Quick answer:** Compare a replacement sterndrive with an outboard conversion for your specific hull. Have a qualified marine professional assess the transom, structure, weight distribution, and installation requirements, then compare complete written quotes. Neither approach is automatically the better choice.
 
 We sell both. We service both. We have no axe to grind.
 
-That's exactly why we can tell you what most dealers won't: in 2026, if you're repowering a sterndrive boat in Ontario, the answer is almost always an outboard. Not because sterndrives are bad. Because the market has moved, the parts supply has tightened, the technology gap has closed, and the math now favours outboards for the overwhelming majority of boat owners.
+Start with the condition and design of your existing boat. An outboard conversion and a replacement sterndrive can involve different structural and installation work; price the complete scope before comparing them.
 
 Here's the full picture, the good, the honest, and the stuff that will actually help you make a decision.
 
@@ -54,7 +54,7 @@ For most Ontario bowriders and runabouts, the math points one way. Big hulls and
 - You want shallow-water trim ability for Kawartha shoals
 - Resale matters in 5 to 10 years
 
-**Go outboard. 2026 market has decisively moved.**
+**Assess an outboard option against the exact hull requirements and installed quote.**
 
 #### Boat is 22+ ft with high-deadrise hull or dedicated tow boat
 
@@ -71,7 +71,7 @@ Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders co
 
 | Factor | Outboard | Sterndrive (I/O) |
 |---|---|---|
-| 2026 new-boat share | Clear majority and still growing | Declining |
+| Installation assessment | Check hull and transom suitability for conversion | Check replacement engine and drive compatibility |
 | Failure points | No coolant system, bellows, or gimbal bearing | Bellows / gimbal / water-intrusion risk |
 | Fuel economy | Modern V6/V8 FourStroke more efficient | Older I/O less efficient |
 | Shallow water | Trims up in seconds (Kawartha shoals) | Limited |
@@ -80,11 +80,9 @@ Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders co
 | Resale after repower | Strongly improves | Tired I/O is a liability |
 | Still makes sense when | Under 20 ft | 22 ft+ high-deadrise or dedicated tow boat |
 
-## The Big Picture: Outboards Have Won the Market
+## Compare the Installation Your Boat Needs
 
-This isn't opinion. It's sales data.
-
-Outboards have taken a steadily larger share of the recreational marine engine market since 2010, and by 2026 they are the clear majority of new installations. We are not going to put a precise share figure on that without a dated primary source that defines the market and the geography it measures. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
+For an existing boat, market share does not establish whether a conversion is suitable. Compare the exact engine options, required structural work, service access, and total installed cost for your hull.
 
 Meanwhile, sterndrive R&D has slowed. MerCruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
 
@@ -123,7 +121,7 @@ These are legitimate advantages. If you're in that category, keep your sterndriv
 
 ## The Case for Going Outboard
 
-This is the longer list. Here's why the repower market has moved.
+Consider these factors when comparing the two installations.
 
 ### Reliability and Service Intervals
 
@@ -222,7 +220,7 @@ Sterndrive owners who want a reliable shop with genuine expertise: [request serv
 
 ## Why HBW Recommends Outboard Repowers in 2026
 
-When we recommend outboards, it's not because we stopped believing in sterndrives. It's because we've watched the market, the parts ecosystem, and the technology trajectory for 79 years, and the direction is clear.
+The recommendation should follow the condition of the boat, the work required, and the intended use.
 
 A few specific reasons we're confident in this recommendation for most Ontario owners:
 
@@ -239,7 +237,7 @@ We're not the biggest dealer in Ontario. But we're on the water, we know Rice La
 Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
 ## The Bottom Line
 
-Outboards have won the market because they deserve to. The technology is excellent, the service access is better, the Ontario freshwater use case fits them well, and the long-term ownership economics are stronger for most boaters.
+Compare service access, installation requirements, and ownership costs for the specific options available for your boat.
 
 If you have a tired sterndrive, a sound hull, and a boat you want to keep running for another decade, a Mercury outboard conversion is worth a serious look.
 
@@ -263,7 +261,7 @@ Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](http
 
 ### Should I repower my sterndrive with an outboard or another sterndrive?
 
-In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now the clear majority of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on reliability, fuel economy, and resale. Big high-deadrise cruisers and dedicated tow boats are the exception.
+Compare a replacement sterndrive with an outboard conversion for your specific hull. Have a qualified marine professional assess the transom, structure, weight distribution, and installation requirements, then compare complete written quotes. Neither approach is automatically the better choice.
 
 ### When does it still make sense to keep a sterndrive?
 

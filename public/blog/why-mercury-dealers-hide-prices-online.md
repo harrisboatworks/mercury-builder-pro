@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/ca/en) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
 
@@ -51,7 +51,7 @@ Here are the five most common explanations dealers offer, ranked from most to le
 False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
 
 **2. "Prices change too frequently"** 
-Mercury motor prices tend to change at the model-year transition (typically July 1), and occasionally with promotional rate buy-downs. They do not change daily. A dealer quoting you verbally expects to honor that number for weeks. The "prices change too fast" argument doesn't survive basic scrutiny.
+Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote. A dated price is more useful than an undated verbal estimate.
 
 **3. "Configuration affects price"** 
 This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
@@ -92,7 +92,7 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 ## What Genuinely Requires a Conversation
 
-For about 95% of recreational customers, the motor selection page is the source of truth. But there are situations where the phone adds real value:
+For typical recreational FourStroke and Pro XS packages, the motor selection page is the source of truth. Special-order, brand-conversion, and multi-engine jobs still need a conversation:
 
 - **Brand conversions from Evinrude or Yamaha:** [Switching brands can add meaningful rigging costs](/blog/yamaha-to-mercury-repower-ontario-guide) above standard repower costs. Worth a call.
 - **Twin or triple engine setups:** Multi-engine rigging is complex. Motors can be quoted online, but rigging benefits from a real conversation.
@@ -105,7 +105,7 @@ For about 95% of recreational customers, the motor selection page is the source 
 
 - **Live pricing in CAD**, no "plus exchange rate" surprises
 - **Full configuration in the quote**, motor, shaft length, controls, prop, rigging, install labor all on one line
-- **Mercury model-year pricing updated within days of July 1**
+- **Mercury model-year pricing updated after the annual transition, once current list data is confirmed**
 - **Promotional rates reflected when active**
 - **Quotes that can be saved, downloaded as PDF, or emailed**
 - **A quote you can build at midnight without needing to leave your name**
@@ -141,11 +141,11 @@ No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any 
 
 ### Do Mercury prices actually change frequently?
 
-No. Mercury MSRP changes once a year on July 1 with model year transition. Promotional pricing (rate buy-downs, package incentives) can change quarterly or with promotions. Daily price changes are not a thing.
+Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote.
 
 ### Is the price I build at HBW the price I pay?
 
-Yes for 95% of customers. Brand conversions and unusual configurations may need a conversation. For typical recreational repowers, the configurator is the source of truth and the price you build is the all-in number including rigging, prop, and install before HST.
+The configurator provides an itemized CAD estimate for the selected package. Confirm final pricing and scope in the written quote, especially for brand conversions, multiple motors, special orders, or commercial setups.
 
 ### How does HBW handle promotional pricing online?
 
@@ -153,7 +153,7 @@ Active promotional rates and package incentives are reflected in the live quote 
 
 ### Can I trust online pricing if it's published?
 
-For HBW, yes. Pricing is verified after Mercury's July 1 model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
+For HBW, yes. Pricing is verified after Mercury's model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
 
 ### What about delivery, taxes, and trade-in?
 

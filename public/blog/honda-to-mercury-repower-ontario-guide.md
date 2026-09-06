@@ -29,11 +29,7 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 
-> **Quick answer:** A Honda-to-Mercury switch is worth comparing when the Mercury product family, local authorized-service route, or rigging plan fits your boat better. It is not an automatic upgrade. Honda currently builds through the BF350 V8; Mercury's Canadian lineup continues above 350 HP. Keep a good Honda kicker if it still does the job. Compare the current motor price and a written installed quote instead of relying on generic ranges.
-
-## Quick answer
-
-Honda outboards are excellent in the 9.9-50 HP class. A switch to Mercury can make sense when the local authorized-service route or the required Mercury product family fits better. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so use a written side-by-side quote rather than a generic range.
+> **Quick answer:** Honda outboards are strong in the 9.9-50 HP class. A Honda-to-Mercury switch is worth comparing when the Mercury product family, local authorized-service route, or rigging plan fits your boat better. It is not an automatic upgrade. Honda currently builds through the BF350 V8; Mercury's Canadian lineup continues above 350 HP. Keep a good Honda kicker if it still does the job. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so compare the current motor price and a written installed quote instead of a generic range.
 
 Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't. Before pricing a brand switch, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) to confirm repower is the right call at all.
 

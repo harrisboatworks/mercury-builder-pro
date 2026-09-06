@@ -182,9 +182,9 @@ _Service pricing varies by motor, condition, and work due. HBW confirms the curr
 
 ## FAQs
 
-### How often should I change the oil in my Mercury 4-stroke?
+### How often should I change the oil in my Mercury 4-stroke outboard?
 
-For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Mercury does not publish one universal 20-hour oil-change requirement for every new outboard. Follow the operation and maintenance manual for the exact serial number.
+For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Mercury does not publish one universal 20-hour oil-change requirement for every new outboard. Use an FC-W-rated four-stroke marine oil in the viscosity specified by the owner's manual for the exact engine, and keep the date, hours, oil specification, and receipt in the service record.
 
 ### What happens if I don't winterize my outboard?
 
@@ -197,10 +197,6 @@ Basic tasks like oil checks, propeller inspection, and battery maintenance are D
 ### How do I know if my water pump needs replacing?
 
 Follow the model-specific replacement schedule and act sooner if you see a weak or inconsistent telltale, reduced water pressure, or an overheating warning. Many Mercury schedules use an expanded interval around 300 hours or three years, but the exact manual controls.
-
-### How often should I change the oil in my Mercury 4-stroke outboard?
-
-For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Use an FC-W-rated four-stroke marine oil in the viscosity specified by the owner's manual for the exact engine. Keep the date, engine hours, oil specification, and receipt in the service record.
 
 ### Can I do my own Mercury outboard maintenance?
 

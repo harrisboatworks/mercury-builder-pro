@@ -57,7 +57,7 @@ The motor is rarely the most expensive thing on a boat. The hull underneath it i
 
 **Repower this boat**
 
-#### Replace the hull if
+#### Inspect and price structure first if
 
 - Transom is soft, cracked, or has obvious water damage
 - Stringers are rotting or the floor is spongy
@@ -65,9 +65,9 @@ The motor is rarely the most expensive thing on a boat. The hull underneath it i
 - The hull is 30 plus years old with no maintenance records
 - Your family use has grown beyond what the boat can carry
 
-**Sell or scrap, buy a different hull**
+**Have a qualified shop inspect and price any structural repair before you sell, scrap, or quote a new motor**
 
-Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
+Get an in-person hull inspection before quoting a major repower. Localized floor or transom damage can be repairable; a qualified assessment decides that. We will not quote a serious motor into a hull that will not outlast the new motor.
 
 ---
 

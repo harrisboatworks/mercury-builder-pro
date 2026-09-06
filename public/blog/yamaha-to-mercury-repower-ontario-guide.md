@@ -29,11 +29,7 @@ revenue_driver: repower
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
-> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, controls, harness, gauges, and prop; the fuel tank, steering, and most electronics usually carry over. Expect a brand-swap rigging premium of roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The swap makes the most sense when Mercury service is closer than your nearest Yamaha dealer. Build a quote at mercuryrepower.ca.
-
-## Quick answer
-
-A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
+> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. Expect a brand-swap rigging premium of roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The swap makes the most sense when Mercury service is closer than your nearest Yamaha dealer. Build a quote at mercuryrepower.ca.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -101,7 +97,7 @@ We do Yamaha-to-Mercury swaps regularly at HBW, primarily in the 90-150 HP class
 
 The first pattern: customers who switch for local service reasons are usually satisfied with the service-access improvement. The "I can get parts and a service appointment in days, not weeks" payoff is the single biggest customer-satisfaction driver. The technical performance delta between modern Mercury FourStroke and modern Yamaha F-series in the same HP class is small enough that most owners don't notice it on the water. They notice the service experience.
 
-The second pattern: customers who switch for performance reasons sometimes regret it. Mercury and Yamaha both make solid motors. If your Yamaha was running fine and your only complaint was "I want more torque" or "I want better fuel economy", the swap probably won't deliver the magnitude of difference you're hoping for. A 115 Mercury FourStroke vs a 115 Yamaha F115 on the same hull are within 1-2 MPH top speed and within 5% fuel burn at cruise. The brand-swap rigging premium usually adds $1,200 to $4,500 depending on HP class and control/gauge setup. That's a lot of money for a small performance gain.
+A brand change alone does not establish a performance improvement. Compare the exact motors on an equivalent hull, load, propeller, and test setup. The brand-swap rigging premium is boat-specific. Compare current written quotes and, if needed, a same-hull test before treating a swap as a performance upgrade.
 
 The third pattern, specific to Ontario: Yamaha has historically had a small edge in idle-quietness and trolling smoothness at very low RPM, which matters for Lake Ontario salmon trollers. Mercury has closed that gap with current FourStroke V6s and the ProKicker 9.9 / 15 / 25 lineup. If trolling is your primary use case, ask us specifically about ProKicker pairings before committing.
 

@@ -38,7 +38,7 @@ On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKi
 
 ### Trolling motor or kicker motor for your boat?
 
-Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
+Different waters, different answers. Boat positioning and sustained trolling need different tools.
 
 #### Choose a trolling motor if
 
@@ -46,7 +46,7 @@ Different waters, different answers. Rice Lake bass and Lake Ontario salmon need
 - Spot-Lock and GPS-anchor are important
 - Stealth matters (no gas engine running while fishing)
 - Battery management is something you can handle
-- Primary use is bass, walleye drifting, or controlled presentations
+- Primary use is boat positioning, drifting, or other controlled presentations
 
 **Pick a trolling motor (Minn Kota or Lowrance)**
 
@@ -56,11 +56,11 @@ Different waters, different answers. Rice Lake bass and Lake Ontario salmon need
 - All-day trolling outlasts any practical battery
 - You don't want to babysit charging schedules
 - Boat is on bigger water (Lake Ontario, Simcoe deep zones)
-- You want simpler, less maintenance, more range
+- You want refuelling at the tank instead of battery charging, plus all-day range
 
 **Pick a Mercury 9.9 EFI kicker**
 
-For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
+An electric trolling motor suits precise positioning; compare a kicker for sustained trolling. Match either setup to the weather, load, and available battery or fuel supply.
 
 ## What each one actually does
 
@@ -103,7 +103,7 @@ The foot pedal or wireless spot-lock anchor changes how you fish. You can land a
 A kicker gearcase still hangs down 18+ inches. A trolling motor runs comfortably in a foot of water.
 
 ### You want spot-lock
-This is the single feature most customers say they wish they had bought sooner. Press a button; the boat holds GPS position against any reasonable wind. We have installed a lot of spot-lock units, and the feedback is consistent: every single customer wants it once they have used it.
+Press a button and the boat holds GPS position against reasonable wind, so you can land a fish, re-bait, or work a spot without resetting an anchor. Range and hold still depend on battery capacity, wind, and current.
 
 ### Honest limitation of electrics
 Battery range is real. A 50 lb-thrust unit running at 70% draws a single deep-cycle battery down in roughly 4 to 5 hours. Lithium (LiFePO4) battery upgrades help significantly but add to the upfront investment.

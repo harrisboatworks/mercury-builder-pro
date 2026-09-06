@@ -37,7 +37,7 @@ revenue_driver: repower
 
 ### 为什么 GTA 华人船主愿意到 Rice Lake
 
-- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 

@@ -52,7 +52,7 @@ If you've seen the "$2,000 for 50 more horsepower" headlines floating around, th
 Mercury Boost is a calibration upgrade that changes how an eligible motor responds during throttle-up. According to Mercury's official material:
 
 - **Improved mid-range acceleration and throttle response**
-- **5% to 21% quicker zero-to-top-speed acceleration in five published tests**
+- **5% to 21% quicker acceleration from zero to top speed in tested boat-and-engine applications, not a top-speed gain**
 - **No change to peak rated horsepower**
 - **No change to top speed, maximum RPM, or time to plane**
 - Automatic activation only when Mercury's throttle and RPM conditions are met
@@ -65,17 +65,19 @@ Mercury's published examples range from 5% quicker on a 20-foot deep-V with a 30
 
 ## Which motors are actually eligible
 
-This is where the early online rumour mill got it most wrong. Mercury's June 2026 documentation lists these dealer-upgrade families, subject to serial-number and configuration requirements:
+This is where the early online rumour mill got it most wrong. As checked September 5, 2026, Mercury's Canadian page lists these dealer-upgrade families. Serial cutoffs alone are not an automatic eligibility guarantee; a dealer still has to confirm the exact serial number, control system and installed calibration.
 
 ### Dealer-installed Boost upgrade (existing motors)
-- **175, 200, 250, 300 HP FourStroke**, serial 2B529482 through 3B612424
-- **175, 200, 225, 250, 300 HP Pro XS**, serial 2B529482 through 3B612424
-- **250, 300 HP Verado**, serial 2B529482 through 3B612424
-- **350 HP Verado**, serial range 3B266064 through 3B578265
-- **Mercury Racing 150R**, serial 3B547096 through 3B612424
+- **175, 200, 250, 300 HP FourStroke**, starting at serial 2B529482
+- **175, 200, 225, 250, 300 HP Pro XS**, starting at serial 2B529482
+- **250, 300 HP Verado**, starting at serial 2B529482
+- **350 HP Verado**, serial range 3B266064 through 3B578266
+- **Mercury Racing 150R**, starting at serial 3B547096
+
+The dated page's mechanical-engine timing footnote and overlapping 350 Verado ranges require dealer confirmation. The current page does not list a 225 HP FourStroke.
 
 ### Factory-equipped Boost
-Some newer motors are factory-equipped starting at published serial thresholds. Model year or build quarter alone is not enough; check the exact serial number because the motor may need a paid unlock, may already include Boost, or may require a dealer software update.
+As checked September 5, 2026, Mercury's Canadian page lists factory-installed Boost on 2026 Pro XS 175, 200, 225, 250 and 300, Verado 250 and 300, and Racing 150R starting at serial 3B612473, and Verado 350 starting at 3B576449. Dealer-upgrade eligibility is a separate list. Model year or build quarter alone is not enough; have a Mercury dealer confirm the exact serial number, control system and installed calibration.
 
 ### NOT eligible (despite what you may have read)
 - **Mercury Racing 200R, 250R, 300R, 400R, and 500R**, not on the eligible list
@@ -181,7 +183,7 @@ We'll check the serial number against Mercury's current eligibility information 
 
 ### Is Mercury Boost a horsepower increase?
 
-No. It is a calibration software upgrade that improves eligible mid-range response. Mercury's five published tests show 5-21% quicker zero-to-top-speed acceleration, while rated horsepower, top speed, maximum RPM, and time to plane remain unchanged.
+No. It is a calibration software upgrade that improves eligible mid-range response. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a top-speed gain. Rated horsepower, top speed, maximum RPM, and time to plane remain unchanged.
 
 ### Does Boost work on my 300R or 400R?
 

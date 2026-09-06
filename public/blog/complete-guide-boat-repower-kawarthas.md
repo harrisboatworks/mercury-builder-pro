@@ -95,10 +95,10 @@ This is the decision that anchors everything else.
 |---|---|---|
 | 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
-| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
-| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, since CT tops out at 115) |
+| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (HBW often prefers standard on these planing V-hulls; CT is hull/load/prop specific) |
+| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, subject to exact-model specification checks) |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
-| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; CT tops out at 115) |
+| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; confirm the exact model and gearcase) |
 
 ### FourStroke or Pro XS?
 
@@ -168,6 +168,8 @@ The schedule depends on the hull, current controls, rigging, parts, and any issu
 ![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
 
 Before pickup, HBW documents the acceptance checks completed for the specific job. When safe seasonal conditions allow, that can include an on-water check on Rice Lake; otherwise, the alternate acceptance plan is documented with the customer. Transport Canada says licence information must be updated within 30 days when listed information changes. The boat owner remains responsible for the licence, and a dealer needs the owner's authorization to apply on their behalf. See our [Pleasure Craft Licence update guide](/blog/pleasure-craft-licence-update-repower-ontario) and confirm the current requirement for your boat.
+
+As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licences are valid for five years. Older licences have their own expiry date or transition deadline; check your licence with Transport Canada. The current fee is $24.41 for a new, transferred, renewed or duplicate licence, while updates and cancellations are free. Fees may change each April 1.
 
 ---
 
@@ -279,7 +281,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need new controls?
 
@@ -291,7 +293,7 @@ At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfor
 
 ### Do I need to update my Pleasure Craft Licence?
 
-Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.
+Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update.
 
 ### What happens to my old motor?
 

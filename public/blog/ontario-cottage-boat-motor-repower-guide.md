@@ -160,7 +160,7 @@ Order over the off-season: November through March. Motor inventory is deepest an
 
 ### Do I need to update my Pleasure Craft Licence after a repower?
 
-Yes, if the motor horsepower, brand, or model changes. The update is free online and takes fifteen minutes. We help HBW customers through it.
+Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. The boat owner submits the update. After a repower at HBW, the invoice lists the motor make, model, year, horsepower and serial number so you have the data on hand. Do not assume the fee for a new or renewed licence applies to an update.
 
 ### Should I keep my old motor as a backup?
 

@@ -113,13 +113,11 @@ Every winterize-and-service at our shop ends with the tech recording recommendat
 
 ## When Should You Submit an HBW Service Request?
 
-Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
+Send the exact engine, hours, and the work you want covered on the [service request](https://hbw.wiki/service). After-hours drop-off and the December 1 through April 1 marina closure are in the quick answer.
 
 ---
 
 ## Ready to Book Your Service?
-
-Tell us the motor, its hours, and the work you want covered. Complete hbw.wiki/service, then drop off anytime, including after hours.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153

@@ -34,7 +34,7 @@ revenue_driver: repower
 ## 一日遊核心要點
 
 - **出發時間：** 早上 8-9 點離開多倫多，避開週末交通。
-- **車程：** 經 404 + 115，約 90 分鐘到 Gores Landing。
+- **車程：** 出發前查看前往 Gores Landing 的即時路線與路況，並預留交通緩衝時間。
 - **租船：** 在 HBW 碼頭辦理，需要相片證件 + 信用卡按金。
 - **釣魚證：** 出發前在 [安省官方頁面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 辦好。
 - **回程：** 下午 5 點前出發，避開 401 晚高峰。

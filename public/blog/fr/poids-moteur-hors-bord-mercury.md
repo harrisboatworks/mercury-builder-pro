@@ -63,7 +63,7 @@ Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arri�
 | 175 ch | 213 kg (470 lb) | V6 3,4 L |
 | 200 / 225 / 250 / 300 ch | 229 kg (505 lb) | V8 4,6 L; oui, les V8 Pro XS sont plus légers que les V8 FourStroke |
 
-Tous les chiffres sont les poids secs publiés par Mercury pour la configuration la plus légère offerte. Les arbres plus longs, les boîtiers Command Thrust et le gréage ajoutent du poids, donc une même puissance peut avoir plus d'un poids publié. Source : [spécifications officielles Mercury Marine](https://www.mercurymarine.com/ca/en/engines/outboard).
+Tous les chiffres sont les poids secs publiés par Mercury pour la configuration la plus légère offerte. Le poids sec indiqué n'est pas le poids total installé. Ajoutez les équipements et fluides applicables selon la configuration, et vérifiez les limites de la coque avant de choisir le moteur. Les arbres plus longs, les boîtiers Command Thrust et le gréage ajoutent du poids, donc une même puissance peut avoir plus d'un poids publié. Source : [spécifications officielles Mercury Marine](https://www.mercurymarine.com/ca/en/engines/outboard).
 
 ### Pourquoi le poids compte plus qu'on le pense
 

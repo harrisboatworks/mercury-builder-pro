@@ -127,7 +127,7 @@ Low hours do not automatically erase a calendar interval. The exact manual still
 
 We ask for the engine serial number, current hours, last documented service, warning history, and how the boat is used. That keeps a 9.9 ProKicker from getting a V6 checklist and keeps an older two-stroke from being forced into a current FourStroke schedule.
 
-No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
+No service history? Start with an inspection and establish a new baseline. If the records do not show the work, treat that history as unverified.
 
 ---
 

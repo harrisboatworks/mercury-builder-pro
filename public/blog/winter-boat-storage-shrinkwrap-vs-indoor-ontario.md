@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number. The full transport limits are in Access, Transport, and the Winter Closure.
 
 The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
@@ -93,19 +93,7 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 Engine work is separate from the word "storage." The work order confirms whether winterization, gearcase service, battery handling, spring commissioning, or another item is included.
 
-HBW does not offer:
-
-- Indoor or heated storage
-- Climate-controlled storage
-- Year-round storage
-- Boat delivery
-- Motor shipping
-- Mobile, dockside, or on-site service
-- Transport referrals
-- Third-party transport quotes
-- Winter customer access
-
-We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+Pickup, drop-off, and the full no-delivery transport policy are in Access, Transport, and the Winter Closure.
 
 ---
 

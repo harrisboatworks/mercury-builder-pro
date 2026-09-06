@@ -55,7 +55,7 @@ Don't waste a long drive. A quick call filters the listings that aren't worth sh
 - **Do you have maintenance records?** On any boat over 5 years old, this matters. No records on an older boat means you're assuming the worst.
 - **Can you send a cold-start video?** Cold start, not a warm idle. A seller who won't do this has a reason.
 - **When was it last in the water?** A boat that's been sitting for two seasons needs extra scrutiny.
-- **Is the ownership clean?** Ontario OHVS registration should be current and match the HIN. Gaps or hesitation here are red flags.
+- **Is the ownership clean?** Ask for the applicable [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) or [Canadian vessel registration](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/apply-manage-vessel-registration/how-apply), plus seller and ownership documents, and confirm they match the HIN. A licence is not itself proof of ownership. Transport Canada does not describe an "Ontario OHVS" vessel document.
 
 If a seller won't answer these questions before you show up, that tells you something.
 

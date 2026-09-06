@@ -90,14 +90,7 @@ If you need a specific Mercury or MerCruiser part, call ahead with the serial nu
 
 ## The 2026 TSW season
 
-Parks Canada's Trent-Severn season typically runs May through October, with 2026 specifics:
-
-- **Full opening:** Parks Canada confirmed the entire waterway opened to navigation on May 29, 2026
-- **Canada Strong Pass free lockage:** June 19 through September 7, 2026 (the 2026 promotion period)
-- **25% off camping and roofed accommodations** during the Canada Strong Pass window
-- **Major event:** Lock & Paddle at the Peterborough Lift Lock, July 18, 2026
-
-Confirm current conditions, hours, dates, and policy changes on the [Parks Canada Trent-Severn page](https://parks.canada.ca/lhn-nhs/on/trentsevern) before your transit.
+Parks Canada's Trent-Severn season typically runs May through October. Confirm current opening dates, lockage fees, seasonal programs, hours, and event windows on the [Parks Canada Trent-Severn page](https://parks.canada.ca/lhn-nhs/on/trentsevern) before your transit.
 
 ## Pre-transit checklist (the mechanical preparation)
 

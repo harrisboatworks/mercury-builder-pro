@@ -124,7 +124,7 @@ The physical marina is closed December 1 through April 1. No physical repower, i
 
 A repower is strongest when the hull, floor, transom, steering, and layout still suit how you use the boat. It is weaker when the boat needs substantial structural work, no longer fits the family, or would still leave you replacing major systems after the motor is installed.
 
-Do not use a generic percentage for "new-boat feeling," fuel savings, or resale recovery. Those results depend on the old engine, new engine, propeller, hull, load, operating speed, maintenance, and local used-boat market. Compare the written repower total with the real repair backlog and the cost of a replacement boat that actually meets the same need.
+Fuel savings, resale recovery, and how the boat feels after a repower depend on the old engine, new engine, propeller, hull, load, operating speed, maintenance, and the local used-boat market. There is no one percentage that covers those results. Compare the written repower total with the real repair backlog and the cost of a replacement boat that actually meets the same need.
 
 ## What Happens to the Old Motor?
 

@@ -50,6 +50,9 @@ Aluminum-fishing-boat sweet spot. 40-60 HP is the working range for most 16-18 f
 **High-HP FourStroke (75-115 HP), $11,500-$19,500**
 The Rice Lake repower bread-and-butter. 90 and 115 HP are our highest-volume Mercury SKUs.
 
+**150 FourStroke (inline-four)**
+See the 150 FourStroke section below for 19-21 ft bowrider repower guidance and an installed-cost example.
+
 **V6 Pro XS or V8 FourStroke (175-300 HP), $22,000-$38,000**
 Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V8 FourStroke is the quiet premium option.
 
@@ -112,11 +115,13 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
+### Things to know about the 150 FourStroke (inline-four)
+
+**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 206 kg (455 lb) vs. the V6 200 FourStroke at roughly 215 kg (475 lb)). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 231 kg (510 lb), and older Yamaha 200-class V6 motors typically land in the 238-254 kg (525-560 lb) range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit.
+
 ### Things to know about the V6 and V8 tier
 
-**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 206 kg (455 lb) vs. the V6 200 FourStroke at roughly 215 kg (475 lb)). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 231 kg (510 lb), and older Yamaha 200-class V6 motors typically land in the 238-254 kg (525-560 lb) range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
-
-**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
+**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
 
 Ready to compare a 150 against a 200? Build both configurations on [mercuryrepower.ca](https://www.mercuryrepower.ca), motor, rigging, prop, and install all in one quote.
 

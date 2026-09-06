@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "How to Choose the Right Boat Horsepower"
-description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap."
+description: "Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit."
 category: "Buying Guide"
 date_published: 2024-06-15
 date_modified: 2026-08-19
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # How to Choose the Right Boat Horsepower
 
-> How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap.
+> Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit.
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ---
 
-> **Quick answer:** Start with the manufacturer's maximum recommended safe power on the boat's compliance notice, then match the motor to the hull, exact motor weight, normal load, steering, rigging, and use. The printed maximum is a boundary, not a target. Going beyond it creates safety and possible insurance, warranty, liability, financing, and resale problems, so verify the boat and policy documentation rather than relying on a rule of thumb.
+> **Quick answer:** Start with the boat manufacturer's documented power, transom, and weight limits, then match the motor to the hull, exact motor weight, usual and heaviest planned load, and intended use. The printed maximum is a boundary, not a target. Going beyond it creates safety and possible insurance, warranty, liability, financing, and resale problems, so verify the boat and policy documentation rather than relying on a rule of thumb.
 
 ---
 
@@ -47,7 +47,7 @@ revenue_driver: repower
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
-Do not use a fixed percentage as a substitute for a boat-specific assessment. Stay within the manufacturer's documented range and choose for the real loaded boat.
+Do not use a fixed percentage as a substitute for a boat-specific assessment. Stay within the boat manufacturer's documented limits and choose for the usual and heaviest loads you will actually carry.
 
 ## The one thing most people get wrong on horsepower
 
@@ -69,7 +69,7 @@ Six variables move the right HP for your specific boat:
 
 **What you actually do on the water.** Solo fishing at 5 mph is a different machine than pulling a tube with four kids aboard. Same boat, totally different right answer.
 
-**How many people and how much gear.** A two-person boat needs meaningfully less HP than one you're routinely loading with six people, a cooler, and a trolling setup. Plan for your real load, not your empty-boat fantasies.
+**How many people and how much gear.** A two-person boat needs meaningfully less HP than one you're routinely loading with six people, a cooler, and a trolling setup. Plan for the usual and heaviest loads you will actually carry.
 
 **Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
 
@@ -83,7 +83,7 @@ Six variables move the right HP for your specific boat:
 
 ### How heavy do you actually load the boat?
 
-The plate max is the ceiling, not the recommendation. Where you target inside that range depends on load.
+The plate max is the ceiling, not the recommendation. Pick inside that range based on your hull, loads, and how you use the boat.
 
 #### Light load (1 to 2 people, fishing gear)
 
@@ -92,7 +92,7 @@ The plate max is the ceiling, not the recommendation. Where you target inside th
 - Calm protected water (Rice Lake, small Kawarthas)
 - You care more about fuel economy than hole shot
 
-**Target 60 to 70 percent of plate max**
+**Stay within manufacturer limits; check your everyday load and occasional fully loaded trips.**
 
 #### Heavy load (4+ people, tubes, full gear)
 
@@ -101,7 +101,7 @@ The plate max is the ceiling, not the recommendation. Where you target inside th
 - Full cooler, full tank, full gear
 - Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
 
-**Target 90 to 100 percent of plate max**
+**Stay within manufacturer limits; assess performance with the full planned load and towing needs.**
 
 Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
 
@@ -134,7 +134,7 @@ Family use including tubing or skiing: **115 HP Command Thrust.** The Command Th
 ### Pontoons (20–24 ft)
 Cruising and fishing: **115 HP Command Thrust.**
 
-Active water sports, tubing, skiing, multiple passengers: **150 HP FourStroke (standard gearcase; CT tops out at 115, and the 150 runs the same big gearcase as standard).** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
+Active water sports, tubing, skiing, multiple passengers: **150 HP FourStroke (standard gearcase; confirm the exact engine and gearcase specification).** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
 
 ### Runabouts and bowriders (18–22 ft)
 Recreational family use: **150 to 200 HP.** The exact answer depends on hull weight and whether water sports are in the picture.
@@ -153,7 +153,7 @@ When someone calls and asks "what HP should I get?" we want to know:
 - Boat make, model, year, and length
 - What the capacity plate says
 - What you actually do on the water
-- Typical passenger and gear load
+- Usual and heaviest planned passenger and gear load
 - Where you launch and run
 - How long you plan to keep the boat
 - What prop and rigging you already have
@@ -225,7 +225,7 @@ For a 16-18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most pra
 
 ### Should I choose the maximum HP my boat is rated for?
 
-For most boat owners, 70-80% of maximum rated HP is the better target rather than the full maximum. Maximum HP is a safety ceiling, not a performance goal. Running at 70-80% gives strong performance, reduces engine strain, and improves fuel efficiency. The exception is if you have specific performance needs, watersports, full passenger loads in rough conditions, or larger lakes where speed matters. In those cases, stepping toward the maximum is reasonable.
+The labelled maximum is a safety ceiling, not a performance goal. Stay within your boat's documented power, transom, and weight limits, then size for the hull, your usual and heaviest planned loads, and how you use it. Watersports, full passenger loads in rough conditions, or bigger lakes may call for a different choice within those limits.
 
 ### What horsepower do I need for a pontoon boat in Ontario?
 

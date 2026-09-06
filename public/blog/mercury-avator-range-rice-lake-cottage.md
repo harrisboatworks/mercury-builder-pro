@@ -179,7 +179,7 @@ Yes, but battery capacity drops in cold water. Late-season shoulder boating with
 
 ### What does an Avator setup cost installed?
 
-The installed total depends on the Avator model, battery count, charger, controls and mounting. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
+The installed total depends on the Avator model, battery count, charger, controls and mounting. The HBW Avator page currently says pricing is being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 ## Related guides
 
