@@ -4475,7 +4475,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need an appointment before driving to HBW?",
-        "a": "Yes. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
+        "a": "No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
       },
       {
         "q": "Is drop-off and pickup one trip?",

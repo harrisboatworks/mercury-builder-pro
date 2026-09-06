@@ -29540,7 +29540,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     faqs: [
       {
         question: "Do I need an appointment before driving to HBW?",
-        answer: "Yes. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
+        answer: "No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
       },
       {
         question: "Is drop-off and pickup one trip?",
@@ -29721,7 +29721,7 @@ Do not attempt a "limp home" procedure based on generic advice when the cause is
 ## Frequently Asked Questions
 
 **Do I need an appointment before driving to HBW?**
-Yes. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
+No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
 
 **Is drop-off and pickup one trip?**
 If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service.
@@ -29743,9 +29743,9 @@ Yes. It is included for HBW winter-storage customers. Non-storage customers shou
 
 ---
 
-## Confirm the Job Before Making the Drive
+## Send the Service Request Before Drop-Off
 
-Send the boat, motor, serial number, photos, and requested work. HBW will confirm whether the job fits and when to arrive.
+Send the boat, motor, serial number, photos, and requested work through the service request, then drop off anytime, including after hours. HBW contacts you about the work scope, approvals, and scheduling.
 
 **Service request:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
