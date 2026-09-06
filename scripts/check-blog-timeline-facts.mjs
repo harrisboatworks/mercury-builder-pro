@@ -730,11 +730,12 @@ const ARTICLE_CONTRACTS = {
     required: [
       ...GTA_DRIVE_IN_REQUIRED,
       {
-        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}Non-storage customers should request the current spring-commissioning quote/i,
         rule: 'commissioning-price-canon',
       },
     ],
     forbidden: [
+      { rx: /\$99\b/, rule: 'no-unconfirmed-commissioning-fee' },
       ...GTA_DRIVE_IN_FORBIDDEN,
       {
         rx: /safe limp-home or temporary fix/i,

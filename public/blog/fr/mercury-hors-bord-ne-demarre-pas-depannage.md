@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)"
 description: "La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["Mercury hors-bord ne démarre pas","dépannage hors-bord Mercury","problème démarrage Mercury","moteur bateau ne part pas printemps","hors-bord Mercury Québec"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,9 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
-
-**Langue :** Français (Québec)
-
----
 
 ## Réponse rapide
 
@@ -162,12 +158,12 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 - [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/fr/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 

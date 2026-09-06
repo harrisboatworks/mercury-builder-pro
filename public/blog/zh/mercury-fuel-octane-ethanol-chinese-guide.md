@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md
-last_updated: 2026-08-24
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 �
 description: "安省 Mercury 船外机中文加油指南：RON 与 AKI 标号换算、E10 乙醇上限、E15 已在安省出现、无乙醇汽油怎么选。"
 category: "保养与使用"
 date_published: 2026-08-24
-date_modified: 2026-08-24
+date_modified: 2026-09-06
 keywords: ["Mercury 船外机 加油 中文","加拿大 汽油 标号 87 91","RON AKI 换算","E10 乙醇 船外机","安省 无乙醇汽油"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 保养与使用  
 **Published:** 2026-08-24  
-**最后审核:** 2026-08-24  
+**最后审核:** 2026-09-06  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide
 
@@ -44,7 +44,7 @@ revenue_driver: repower
 
 ### 为什么 GTA 华人船主愿意到 Rice Lake
 
-- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
@@ -280,7 +280,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 ---
 
-## 行动呼吁
+## 不确定你的 Mercury 该加哪种油？
 
 **不确定你那台 Mercury 该加什么油？**
 
@@ -347,3 +347,4 @@ Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

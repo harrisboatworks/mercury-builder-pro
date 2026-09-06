@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
 description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical."
 category: "Maintenance"
 date_published: 2026-03-30
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-03-30  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
@@ -225,9 +225,7 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 
 ## Ready to Book Spring Service?
 
-Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
-
-Want the boat ready for the long weekend? Get on the schedule now at [hbw.wiki/service](https://hbw.wiki/service).
+Want the boat ready for the long weekend? Book spring service at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
 
@@ -272,7 +270,7 @@ Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before sto
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
 - [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list

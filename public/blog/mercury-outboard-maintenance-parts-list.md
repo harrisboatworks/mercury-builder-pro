@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)"
-description: "Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP."
+description: "A guide to common Mercury outboard maintenance parts: filters, spark plugs, impellers, gear lube and service kits. Check your model and serial number for fitment."
 category: "Service"
 date_published: 2026-08-11
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Mercury outboard maintenance parts list","Mercury outboard oil filter part number","Mercury 100 hour maintenance kit","Mercury 300 hour service kit","Mercury outboard impeller part number"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: service
 
 # Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)
 
-> Every Mercury outboard maintenance part number in one place. Oil filters, spark plugs, impellers, gear lube, and 100/300-hour kits for 2.5-600 HP.
+> A guide to common Mercury outboard maintenance parts: filters, spark plugs, impellers, gear lube and service kits. Check your model and serial number for fitment.
 
 **Category:** Service  
 **Published:** 2026-08-11  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list
 
@@ -204,7 +204,7 @@ Mid-range motors (40-115 HP) use anode kit 8M0107547. Larger families split by g
 
 The parts counter tells the same story every spring. Someone winterized their own 115 last fall, ordered the filter their forum thread recommended, and it was the 1.7L filter for a 2.1L motor. Or a Verado owner grabbed the pre-2B144123 kit for a post-break motor and ended up with two returns and a lost weekend.
 
-Out of 584 completed winterization records from August through November 2025 and 507 paid service jobs last season, the pattern is consistent: the motors that hit trouble are rarely the ones that missed a spec. They're the ones where the right part got guessed at instead of looked up. Serial number first. Every time. That habit is most of what separates a 20-year motor from a 10-year one.
+HBW recorded **584 completed winterization records from August through November 2025**. For parts selection, look up the serial-specific part instead of guessing. Serial number first. Every time. It reduces the risk of ordering a part that does not fit.
 
 ---
 

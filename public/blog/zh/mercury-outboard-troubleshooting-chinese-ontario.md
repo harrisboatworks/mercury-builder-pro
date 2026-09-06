@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 船外机故障排查中文指南"
 description: "Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Mercury 故障排查","outboard troubleshooting","船外机不启动","SmartCraft alarm","安省 Mercury service","HBW service"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-19  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 
@@ -43,7 +43,7 @@ revenue_driver: service
 
 | 症状 | 先做什么 | 不要做什么 |
 |---|---|---|
-| 完全没反应 | 检查电池、安全捞绳（kill switch）、档位是否在空档 | 不要连续长时间打马达 |
+| 完全没反应 | 检查电池、安全拉绳（kill switch）、档位是否在空档 | 不要连续长时间打马达 |
 | 能转但不启动 | 记录燃油状态、电池电压、启动声音和是否有警报 | 不要一直试到电池没电 |
 | 警报响（warning beep） | 立刻减速或停止，记录警报模式和当时情况 | 不要当作"可能没事"继续跑 |
 | 疑似过热 | 停止运行，检查冷却水流是否正常 | 不要继续高速运行 |
@@ -59,7 +59,7 @@ Mercury 船外机无法启动，常见第一步不是拆东西，而是确认基
 
 - 电池是否有电
 - 电池端子是否松动或腐蚀
-- 安全捞绳（kill switch）是否正确插好
+- 安全拉绳（kill switch）是否正确插好
 - 档位是否处于空档（Neutral）
 - 燃油是否足够
 - 燃油管路和油箱透气孔是否正常
@@ -118,7 +118,7 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
 
 **Mercury 船外机无法启动，我应该一直试吗？**
 
-不应该。先检查电池、安全捞绳、空档、燃油和明显警报。连续长时间尝试可能让问题更糟，也会让诊断更乱。
+不应该。先检查电池、安全拉绳、空档、燃油和明显警报。连续长时间尝试可能让问题更糟，也会让诊断更乱。
 
 **Mercury outboard warning beep 可以继续开吗？**
 

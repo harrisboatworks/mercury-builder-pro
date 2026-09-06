@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-09-04
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-09-04
+date_modified: 2026-09-06
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-04  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -115,7 +115,7 @@ Motor only. ProKicker remote variants land at the top of the range.
 
 Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
 
-#### FourStroke / Pro XS 150 to 250 (V6)
+#### 150 inline-4, 175-225 FourStroke V6, or 200-250 Pro XS / 250 FourStroke V8
 
 **$22,000 - $37,500**
 
@@ -246,7 +246,6 @@ Manufacturer-level programs come and go through the year, so the only list that 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026), financing basics for Ontario buyers
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 

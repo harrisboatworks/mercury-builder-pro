@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
-description: "The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork."
+description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: repower
 
 # Pontoon HP Sizing: The Rice Lake Decision Tree by Length
 
-> The decision tree we use at the counter: pontoon HP by length, load and use, from 25 HP on 16-footers to 300-plus HP on big tritoons. No guesswork.
+> Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
 ## Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
 
-> **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
+> **Quick answer:** Pontoon HP depends on the boat's documented power, transom, and motor-weight limits, tube count, hull, steering, usual and heaviest planned people/fuel/gear load, and use. 25-40 HP on some 16-18 ft cruise boats, 60-90 HP on some 20-22 ft cruisers, 115-150 HP on some 22-24 ft loaded family pontoons, and 200+ HP on some tritoon or watersports setups are examples to compare only where those limits support them. They are not minima and do not promise the boat will plane.
 
 ---
 
@@ -59,11 +59,11 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 2,268 kg (5,000 lb). You're pushing a lot of mass.
+**Weight.** A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 680-907 kg (1,500-2,000 lbs) of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
+**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada Safe Boating Guide (2026)](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf).
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -81,7 +81,7 @@ Length matters for weight and drag. Tube count matters just as much, a tritoon (
 
 ### 2. Typical Passenger Load
 
-Are you usually out with your partner and a couple of friends, or are you the family boat with 10 people every weekend? A boat running half-capacity can get away with less HP. A boat that regularly carries 8-12 people needs to be sized for that load, not the optimistic "2-4 passengers" scenario.
+Are you usually out with your partner and a couple of friends, or are you running a hull that is actually rated for a large family load? A boat running half-capacity can get away with less HP. Size the motor for the people and gear the capacity plate allows, not an optimistic two-to-four-passenger scenario or a length-based guess.
 
 ### 3. Intended Use
 
@@ -102,7 +102,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ## The Decision Tree: HP by Boat Length and Use Case
 
-This is where most buyers should start. Find your boat, your load, and your use, and you'll have a real answer.
+The rows below are conditional examples, not a minimum-HP chart and not a promise the boat will plane. Compare a listed band only where this pontoon's documented power, transom, and motor-weight limits, hull, steering, usual and heaviest planned load, and intended use support it.
 
 ---
 
@@ -110,9 +110,9 @@ This is where most buyers should start. Find your boat, your load, and your use,
 
 **Mercury 25-40 HP**
 
-These smaller pontoons are weekend cruisers, cottage dock boats, and fishing platforms. They're not performance machines, and they don't need to be. A Mercury 25 or 30 four-stroke handles calm water cruise duty comfortably. Step up to a 40 if you're regularly at capacity or want better performance in any wind.
+These smaller pontoons are weekend cruisers, cottage dock boats, and fishing platforms. A Mercury 25, 30, or 40 four-stroke is worth comparing for calm-water cruise where the boat's limits, load, and use support it.
 
-Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't come up to cruise properly with a full load. It's not safe in any chop.
+A 15 HP on this size is a different comparison. Check whether the heaviest planned load still sits inside the people, weight, power, and motor-weight limits.
 
 ---
 
@@ -120,9 +120,9 @@ Don't try to save money with a 15 HP on a boat this size. It'll move, but it won
 
 **Mercury 40-60 HP**
 
-This is a versatile size, family weekender, fishing, casual cruising. A 60 HP four-stroke is the right choice here if you're ever running full capacity or dealing with any wind. A 40 HP works for lighter loads and calm conditions but starts to feel underpowered when the boat is full and the water isn't glassy.
+This is a versatile size: family weekender, fishing, casual cruising. A 40 HP suits lighter loads and calm conditions; a 60 HP four-stroke suits fuller loads or windier days.
 
-For anything in this category, the [Mercury 60 FourStroke is the right call](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats), good efficiency, reliable hole shot, and plenty of reserve power.
+The [pontoon motor guide](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats) discusses how load and use affect the choice. Hole shot still depends on this hull, prop, and load.
 
 ---
 
@@ -130,11 +130,11 @@ For anything in this category, the [Mercury 60 FourStroke is the right call](htt
 
 **Mercury 90-115 HP (Command Thrust recommended)**
 
-This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
+This is a common Ontario size, and it is where a light-cruise example and a family-tube example get mixed together. A 60 HP on a 20-footer is a fair comparison for a lighter day.
 
-If you're running 6-8 people and pulling a tube occasionally, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** If tube pulling is a regular part of how you use the boat rather than an occasional thing, skip ahead to the watersports section and size up. The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
+If you're running 6-8 people and pulling a tube occasionally, **90 or 115 HP four-stroke, Command Thrust where Mercury offers that model and the boat accepts it**, is the family-use example. Regular tube pulling is a different use; see the watersports examples.
 
-See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026), if your boat is over 20 feet and you're running a four-stroke at 115 HP or below, Command Thrust is not optional (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard).
+See the [Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) for gearcase context. CT is still an exact-model question: check the exact model's gearcase specifications. There is no rule that every pontoon over 20 feet must have it.
 
 ---
 
@@ -142,9 +142,9 @@ See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](h
 
 **Mercury 115-150 HP**
 
-This is a serious family pontoon, and it needs serious power. A 115 HP gets you there, but a 150 HP is the smarter choice. You'll use the reserve every time you push off the dock with 10 people, into a headwind, heading back across an open bay.
+This is a serious family pontoon only if the boat is actually rated and loaded for that many people. 115 HP and 150 HP are the two examples in this use. A 90 HP motor is a lighter-use comparison on the same length.
 
-At this size and load, a 90 HP motor is underpowered. You'll feel it on every run.
+Ten people applies only where this hull's people and weight limits allow that load.
 
 ---
 
@@ -154,7 +154,7 @@ At this size and load, a 90 HP motor is underpowered. You'll feel it on every ru
 
 Welcome to actual pontoon performance. A tritoon with a 200 or 250 HP Mercury gets on plane fast, handles real chop, and has the power to pull a tube reliably with people still on the deck. This is the setup families with teenage kids or active watersports use should be building to.
 
-Anything less than 200 HP on a loaded tritoon is a constant compromise. You can do it, but you'll feel like you're always short of power.
+A loaded tritoon with less than 200 HP may suit some uses. Check the hull's documented limits and assess performance with the planned load before choosing.
 
 ---
 
@@ -174,14 +174,7 @@ At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor
 
 ---
 
-> **Quick Rule of Thumb:**
->
-> Minimum useful HP per foot of pontoon:
-> - **5 HP/ft**, cruise only (calm water, light load)
-> - **7 HP/ft**, tube pulling (4-6 people on board, pulling a tube)
-> - **10+ HP/ft**, watersports (wakeboarding, wakesurfing, real performance)
->
-> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable, repeated tube pulling. A 115 HP will get a tube up occasionally. It doesn't make that cut as a regular job.
+There is no verified HP-per-foot rule for pontoons. Use the boat's documented limits, both planned loads, and the conditional examples above.
 
 ---
 
@@ -189,9 +182,9 @@ At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor
 
 Every pontoon has a manufacturer-rated HP range, something like "60-115 HP." Most buyers assume the bottom of that range is sufficient. It isn't.
 
-The minimum HP keeps the boat legal and functional. The ideal HP is what makes the boat enjoyable. That gap is typically **30-50% more horsepower** than the bare minimum.
+Read the maximum horsepower on the capacity plate and any further limits in the manufacturer documentation. That ceiling is not a target or a minimum.
 
-A boat rated for 60-115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to come up on cruise. At 115, the boat does what pontoons are supposed to do.
+For a hull rated for up to 115 HP, comparing a 60 with a 115 still requires the actual hull, steering, motor weight, planned loads, and use.
 
 Don't buy the minimum. Buy for the experience you want, not the number that gets the boat off the lot.
 
@@ -203,7 +196,7 @@ The short version: **Command Thrust** is Mercury's designation for a larger gear
 
 Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration comes up on cruise faster, transitions more smoothly, and puts less stress on the motor.
 
-**Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 90-115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard). Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
+**Shop preference:** On many 90-115 HP pontoon quotes we compare Command Thrust where Mercury offers that exact model and the boat's power, transom, motor-weight, and steering accept it. Over 20 feet is not a cutoff. Full details in the [Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
 ---
 
@@ -212,10 +205,10 @@ Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed
 There's a lot of wishful thinking around pontoon watersports. Here's what the real numbers look like:
 
 **Tube pulling (4-6 people on deck, pulling one tube):**
-If tube pulling is a regular priority rather than occasional, minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
+If tube pulling is a regular priority, 150 HP on a 22-foot two-tube and 200 HP on a tritoon are examples worth comparing; lower bands suit more occasional use. None of these numbers promise a consistent pull.
 
-**Wakeboarding or wake surfing:**
-You need a tritoon, and you need 250+ HP. The third tube adds stability and wake shape; the extra horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding. A tritoon at 200 HP starts to get there. At 250-300 HP, you have a genuinely capable platform.
+**Wakeboarding:**
+A tritoon with 250+ HP is a watersports example; 200 HP is a lighter tritoon example. A two-tube pontoon is a different hull conversation. Wake shape and pull still depend on this boat, prop, and load.
 
 If watersports are a real priority, not a "maybe someday", start with the right boat and the right motor. Trying to get there with a two-tube 150 HP on a 22-footer is a frustration exercise.
 
@@ -238,16 +231,16 @@ Sizing right isn't just about performance. It saves you money at the pump and at
 These scenarios come up constantly. If you recognize your situation here, take it seriously.
 
 **1. 60 HP on a 22-foot tritoon.**
-A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it up on cruise with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
+A tritoon at this length is heavier and has more drag only if that hull is actually built and rated that way. 10+ passengers applies only where the people and weight limits allow it. 60 HP is a light-cruise comparison here, not a verdict on performance.
 
 **2. 90 HP on a 24-foot two-tube loaded with family.**
-The boat will technically move. Getting 10 people up on cruise will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
+If this 24-footer is actually rated for that family load, 90 HP is a lighter-use comparison; the heaviest planned day still has to fit the plate and manufacturer documentation.
 
 **3. Matching the old motor on a used boat.**
 The previous owner's choices don't have to be yours. If you're repowering, use the boat's HP range, your actual load, and your actual use, not whatever was on it when you bought it.
 
 **4. Buying a tritoon and stopping at 115 HP.**
-A tritoon is a bigger, heavier boat. It's designed for higher loads and higher performance. 115 HP undersells it badly. If you're in a tritoon, the minimum that makes sense for mixed family use is 175-200 HP.
+Tritoon size, weight, and performance vary by design. Compare 115 HP and 175-200 HP only where the hull's documented limits allow them, and evaluate the planned family load and use.
 
 **5. Ignoring the watersports question at purchase.**
 The most expensive mistake. You buy a 22-foot two-tube with 115 HP for "cruising and maybe pulling a tube." Two summers later, the kids want to wakeboard. Now you're repowering, or worse, you're trying to wakesurf behind a two-tube that isn't set up for it. If watersports are anywhere in your future, spec for it now.
@@ -288,23 +281,23 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 
 ### What HP do I need for a pontoon boat?
 
-It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull's max HP rating, not the minimum.
+It depends on the boat's documented power, transom, and motor-weight limits, tube count, hull, load, and use. 25 to 40 HP for some 16 to 18 ft cruise boats, 60 to 90 HP for some 20 to 22 ft cruisers, 115 to 150 HP for some 22 to 24 ft loaded family boats, and 200+ HP for some tritoons and watersports setups are examples to compare, not minima.
 
 ### Is 90 HP enough for a 22 ft pontoon?
 
-Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people pulling a tube occasionally wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. Step up to 150 HP if tube pulling is a regular priority. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.
+For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits regular tube pulling. A 60 HP 20-footer is a lighter-cruise comparison. Use CT only where Mercury offers that model and this boat's limits support it. Hole shot still depends on hull, prop, and load.
 
 ### Why do pontoons need more HP than runabouts?
 
-A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
+A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
 
 ### When does Command Thrust matter on a pontoon?
 
-Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.
+CT is model-specific: check the exact model's gearcase specifications before assuming it is available in the horsepower you are considering. Use CT where that exact model is offered and this pontoon's documented power, transom, motor-weight, steering, and load accept it, not because the boat is over 20 feet. A larger-diameter prop changes low-speed thrust on some heavy boats; it does not guarantee a given crew will plane.
 
 ### How much horsepower do I need to pull a tube or wakeboard from a pontoon?
 
-For regular tube pulling rather than the occasional run, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.
+For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon are the examples used in the body. For wakeboarding, a tritoon with 250+ HP is an example to compare; 200 HP is a lighter tritoon example. A two-tube pontoon is a different hull.
 
 ## Related guides
 

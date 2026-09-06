@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust Guide 2026"
 description: "Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury command thrust guide","mercury command thrust models","what is command thrust mercury","command thrust vs standard gearcase","mercury 9.9 prokicker","mercury 115 command thrust","pro xs command thrust","seapro command thrust"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,15 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check.
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor): larger housing, larger-diameter propeller options, lower gear ratio. Mercury describes it as helping heavy boats plane and remain there at lower speed. HBW's September 5, 2026 pricing reference includes specific 9.9 FourStroke and ProKicker CT configurations, plus 40, 50, 60, 90 and 115 FourStroke and 115 Pro XS CT configurations. Check the exact model code. Best fit is a hull/load/prop decision, commonly pontoons, heavy boats, kicker rigs, and commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check. [FourStroke 75-150](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp) · [Pro XS 115-150](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs/pro-xs-115-150hp).
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
-This guide covers the whole Command Thrust lineup (9.9 HP ProKicker through 115 HP FourStroke, plus Pro XS and SeaPro CT options), what each model is engineered for, which boats it fits and which it does not, what changes vs the standard gearcase, and the honest answer to the question every customer eventually asks: do I really need it, or am I just paying for a heavier lower unit. We do Command Thrust repowers at HBW every spring on Rice Lake and the Kawarthas, and the patterns are clearer than the forums make it sound.
+This guide explains the Command Thrust configurations identified in the current HBW pricing reference, the boat and load questions that affect fit, and what changes versus a standard gearcase. It is not an exhaustive factory lineup or a substitute for the exact engine specification. The practical question is whether the available CT configuration suits your boat, load and propeller. We do Command Thrust repowers at HBW every spring on Rice Lake and the Kawarthas, and the patterns are clearer than the forums make it sound.
 
 ## What Mercury Command Thrust actually is
 
@@ -42,7 +42,7 @@ Command Thrust is not a separate motor family. The same Mercury FourStroke or Pr
 A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 
 1. **Larger gearcase housing.** Taller and wider lower unit, with more displacement under the water. Acts as a bigger rudder for tighter low-speed control.
-2. **Larger-diameter four-blade propeller.** Roughly 20 percent more blade surface area than the standard three-blade prop, with a lower pitch range. The bigger blade plus lower pitch is what converts horsepower into pushing force.
+2. **Larger-diameter propeller options.** Choose blade count, diameter, pitch, and hub for the exact engine and gearcase. Command Thrust does not make every four-blade prop compatible.
 3. **Lower gear ratio (numerically higher).** More torque multiplication at the prop. Faster acceleration with heavy loads, but lower top-end speed than the standard gearcase at the same RPM.
 
 The three changes work together. You cannot get the benefit by [swapping just the prop on a standard gearcase](/blog/mercury-propeller-selection-guide). You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
@@ -64,13 +64,13 @@ Mercury Marine's own gearcase comparison demo shows the size difference clearly.
 
 **What it does NOT do:**
 - Does not add horsepower. A 90 HP Command Thrust makes the same peak HP as a 90 HP standard.
-- Does not increase top speed. On most boats, you give up 2 to 4 MPH at WOT because the prop is geared for thrust, not speed.
+- Does not automatically raise or cut top speed by a fixed amount. Mercury's current material says Command Thrust can help heavy boats plane without treating top speed as a guaranteed trade. Any speed change is boat-, load-, and prop-specific.
 - Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, the standard gearcase usually outperforms CT in top end and fuel.
 - Does not retrofit easily. The gearcase, driveshaft, water pump, and prop are all different parts. Converting a non-CT motor to CT means swapping the entire lower unit, which is usually within striking distance of [trading the entire motor](/blog/mercury-repower-cost-ontario-2026-cad).
 
-That last point is the most common misconception at the shop. People with an existing standard-gearcase motor often ask if we can "add Command Thrust." The honest answer is rarely yes. For the full retrofit decision, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-complete-guide-2026).
+That last point is the most common misconception at the shop. People with an existing standard-gearcase motor often ask if we can "add Command Thrust." The honest answer is rarely yes. Use the eligibility tables below for pontoon and hull fit; converting a non-CT motor usually means swapping the entire lower unit.
 
-## Real talk: what we saw on the lake with BigFoot vs Command Thrust
+## From BigFoot to Command Thrust: choosing for the boat
 
 Back in the 1990s, pontoon boats were taking off, and they created a problem the outboard industry hadn't fully solved. A pontoon sits high on the water, doesn't plane like a V-hull, and carries big loads at modest speeds. A standard mid-range gearcase spinning a small prop just wasn't moving that kind of boat well.
 
@@ -78,19 +78,11 @@ Mercury's answer was BigFoot. Take a 40-60 HP powerhead and hang it over a much 
 
 Mercury's own literature at the time called BigFoot "the industry's only outboard engine made specifically for pontoons." That's the origin, from the horse's mouth: a pontoon and workboat motor. Around 2014, Mercury quietly renamed BigFoot to Command Thrust. New name, same idea.
 
-A planing V-hull plays a completely different game. It climbs on top of the water and slices; past hole-shot, what it wants is low drag and efficient shaft speed.
+In an HBW comparison on Rice Lake, a 16-foot Legend with a standard-gearcase Mercury 60 ran 6 mph faster than a 16-foot Legend with a Command Thrust 60. Jay Harris confirms that result, but the propeller details were not retained. It is a shop observation, not a controlled test isolating the gearcase or a promised speed difference for another boat.
 
-Put a CT gearcase on that boat and you're dragging a case nearly three-quarters of an inch fatter and several inches deeper through the water at 30+ mph, swinging a prop tuned for push instead of speed. The sales pitch writes itself: it costs more, so it must be better. What the pitch never includes is a number.
+On a planing V-hull, compare both gearcase options using the normal passenger and gear load. Propeller choice, mounting height, acceleration, ability to hold plane and cruising efficiency all matter alongside top speed.
 
-We will, because we tested it. Two 16-foot Legend hulls on Rice Lake, one with a standard-gearcase Mercury 60, one with a Command Thrust 60. The CT boat gave up 6 mph on top speed.
-
-Same hull. Same HP. Six miles an hour gone. The only difference in the water was the gearcase.
-
-On a 16-footer that tops out in the mid-30s, that's roughly a sixth of your top speed handed over to a gearcase your boat never asked for. And you paid about $300 extra for it. That's not an upgrade; that's a downgrade with a markup.
-
-The honest engineering summary: CT trades top-end efficiency for low-speed push. Pontoons live where the push matters. V-hulls live where the efficiency matters. That's the whole decision, and the GPS doesn't care what the brochure said.
-
-If a salesperson specs CT on your planing V-hull, ask them what your top speed will be against the standard gearcase.
+Mercury describes Command Thrust as a way to help heavier boats plane and stay on plane at lower speeds. It does not give every boat a fixed top-speed penalty. Ask your dealer why the proposed engine, gearcase and propeller suit your hull, and what comparable test data support the recommendation.
 
 ## Quick eligibility check
 
@@ -100,11 +92,11 @@ Different hulls, different answers. The honest matrix:
 |---|---|---|
 | Pontoon (any size, 20+ ft twin tube) | **Yes, strong fit** | Heavy load, want hole shot |
 | Tritoon (any HP class) | **Yes, almost always** | Third tube adds weight + drag |
-| Aluminum deep-V fishing boat | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
-| Fiberglass bass boat | **No, save the money** | Top speed matters, mechanical not engineered for it |
-| Center console (V-hull) | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
+| Aluminum deep-V fishing boat | **Hull/load/prop choice; HBW often prefers standard** | Shop recommendation for the planing V-hulls we see, not a universal exclusion |
+| Fiberglass bass boat | **Hull/load/prop choice; HBW often prefers standard** | Mercury offers CT on 115 Pro XS; we still quote standard unless the boat, load, and test say otherwise |
+| Center console (V-hull) | **Hull/load/prop choice; HBW often prefers standard** | Confirm the exact engine, gearcase, and prop rather than excluding every V-hull |
 | Commercial workboat / charter / water taxi | **Yes** | Mercury SeaPro CT exists for this exact use case |
-| Kicker motor (trolling) | **Yes, 9.9/15/25 HP ProKicker CT** | Slow-speed control + alternator output |
+| Kicker motor (trolling) | **Yes on specific ProKicker CT SKUs** | Confirm the current 9.9, 15, or 25 model code; charging output is model-specific |
 | Light 14-16 ft cruising boat | **No, save the money** | Standard gearcase is faster and lighter |
 | Trolling-only fishing pontoon | **No, save the money** | Standard fine at trolling speeds |
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
@@ -124,7 +116,7 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 | Heavy work pontoon (cottage hauling) | **Yes** | Load capacity matters more than length here |
 | Water-sports pontoon (skiing, tubing) | **Yes** | Pulling power is the whole reason CT exists |
 | Pontoon used for trolling fishing only | **No, save the money** | Trolling speeds don't need CT thrust |
-| Aluminum V-hull boat | **N/A** | Command Thrust is a pontoon gearcase decision |
+| Aluminum V-hull boat | **Boat-specific** | HBW often prefers standard on planing V-hulls; label that as a shop recommendation and check the actual hull |
 
 If your boat doesn't fit one of these neatly, send us details and we'll work through it.
 
@@ -158,7 +150,7 @@ Just as important: when standard gearcase is the right answer.
 
 #### 16 to 18 foot light cruising pontoons
 
-A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will come up on cruise easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
+A two-tube 16 or 18 footer used for casual cruising at moderate loads often does not gain much from Command Thrust. The standard gearcase usually comes up on cruise easily. Do not treat a 2 to 4 MPH top-speed bonus as a product fact; compare the actual hull, load, and prop. Unless you're hauling 8 people regularly on a small pontoon, save the money.
 
 #### Trolling-only fishing pontoons
 
@@ -188,7 +180,7 @@ For the long version of motor serial number decoding, our [Mercury Outboard Seri
 
 ### HP class availability
 
-As of August 8, 2026, current Canadian listings include 9.9 HP Command Thrust and ProKicker configurations, plus select 40, 50, 60, 90 and 115 HP FourStroke models. Shaft length, controls and gearcase availability vary by exact model. Check the live [Mercury pricing reference](/pricing-reference) before choosing a configuration.
+As of September 5, 2026, the [HBW pricing reference](/pricing-reference) lists CT configurations in the 9.9, 40, 50, 60, 90 and 115 HP classes, including the 115 Pro XS. These are examples from HBW's published catalog, not an exhaustive factory lineup. Shaft length, controls and gearcase must be checked together for the exact model.
 
 Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
@@ -198,21 +190,21 @@ Rather than list every model and year here (Mercury changes things), we recommen
 
 | HP class | Configuration | Primary application |
 |---|---|---|
-| 9.9 ProKicker CT | ELPT / ELHPT | Kicker motor on offshore + larger fishing rigs |
-| 15 ProKicker CT | ELPT / EXLPT | Kicker motor on heavier fishing boats |
-| (No 25 CT) | Not offered | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
+| 9.9 FourStroke CT | MLH / ELH / EXLH | Listed CT configurations outside the ProKicker range |
+| 9.9 ProKicker CT | ELHPT / ELPT / EXLHPT / EXLPT | Kicker configurations; choose shaft and controls for the boat |
+| 15 and 25 ProKicker | Confirm exact model | The ProKicker name alone does not establish Command Thrust fitment; check the Mercury specification for that model |
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| (No 75 CT) | Not offered | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
+| Other ratings and configurations | Confirm exact model | Use the current model listing and Mercury specification; do not choose a different horsepower just to obtain CT |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
-(ELPT = Electric start, Long shaft, Power tilt and trim. EXLPT = same with eXtra-long shaft. ELHPT = Electric Hand Throttle. Specific availability shifts by model year.)
+(ELPT = Electric start, Long shaft, Power tilt and trim. EXLPT = same with eXtra-long shaft. ELHPT = Electric start, Long shaft, Hand tiller, Power tilt and trim. Specific availability shifts by model year.)
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (115 Pro XS) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT tops out at 115 HP across the lineup; there is no 150 Pro XS CT. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
+The HBW pricing reference lists a 115 ELPT Pro XS Command Thrust configuration. Compare that exact model with the standard-gearcase alternative; do not infer gearcase options from the Pro XS name or horsepower alone. HBW's shop recommendation for most planing V-hull bass and angler boats is still the standard gearcase. That is a boat-specific recommendation, not a universal V-hull exclusion.
 
 ### Mercury SeaPro Command Thrust
 
@@ -230,27 +222,27 @@ Pontoons are where Command Thrust earns its reputation. The combination of heavy
 - **Tritoon any HP:** plan on CT. The third tube means more drag and CT's thrust overcomes it cleanly.
 - **16-18 ft cruising pontoon:** standard gearcase usually wins. CT gives up top speed without the load benefit kicking in.
 
-For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-complete-guide-2026).
+The pontoon eligibility table above is the fit check for this page.
 
 ### Aluminum deep-V fishing boats
 
-Big Lund, Princecraft, StarCraft, and similar. On a planing V-hull, standard gearcase is the right call. CT is a pontoon and workboat gearcase; on a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded with 4 anglers, gear, livewell, and full fuel. Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake.
+Big Lund, Princecraft, StarCraft, and similar. Command Thrust is a hull, load, and propeller choice. HBW's shop recommendation on most planing V-hull fishing boats is the standard gearcase, including when the boat is loaded with anglers, gear, livewell, and full fuel. If another shop specs CT for "more torque," ask for the actual boat, prop, and test result rather than a universal speed deduction.
 
 - Standard gearcase across the 14-19 ft range, solo or crewed.
 - If you want more low-speed thrust for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
 
 ### Fiberglass center consoles + offshore
 
-Standard gearcase. Center console V-hulls are planing boats; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag. Full bait wells and 4-5 anglers don't change that. Match HP to the hull's capacity plate and stay with the standard gearcase.
+Center console V-hulls are usually planing boats. HBW's shop recommendation is still the standard gearcase unless the exact hull, load, and prop argue otherwise. Full bait wells and 4-5 anglers do not create a universal CT exclusion or a universal speed penalty. Match HP to the hull's capacity plate and quote the actual gearcase.
 
 ### Kicker motors (the ProKicker CT story)
 
-The 9.9, 15, and 25 HP ProKicker CT variants are a specific product. ProKicker is Mercury's name for a kicker outboard engineered specifically for trolling and low-speed thrust. The CT gearcase adds bigger displacement and slow-speed control. The Pro Alternator output (60A on 15/25 HP ProKickers) supports troll-motor charging and electronics loads.
+Current Canadian ProKicker listings include 9.9, 15 and 25 HP. HBW's September 5 reference explicitly names 9.9 ProKicker CT configurations. The ProKicker badge by itself does not establish CT fitment on another rating; check the exact Mercury model specification. Charging output is also model-specific: Mercury Canada's 15 ProKicker specification lists 12 amp / 145 watt rated output, and Mercury's 25/30 platform introduction describes 17-amp output. Those are rated maximum figures, not available charging current at trolling RPM. Do not treat a kicker as a guarantee that a trolling battery will recharge without the correct charging arrangement and a load calculation. [ProKicker 9.9-25](https://www.mercurymarine.com/ca/en/engines/outboard/prokicker/fourstroke-prokicker-9-9-25hp).
 
-Common pairings:
-- 9.9 HP ProKicker CT on a bass or walleye boat as trolling backup.
-- 15 HP ProKicker CT on a heavier aluminum or fiberglass rig where you want some kicker punch.
-- 25 HP ProKicker CT on offshore center consoles where the kicker doubles as get-home power.
+Questions to work through with your dealer:
+- 9.9 HP ProKicker, often with CT, on a bass or walleye boat as trolling backup.
+- 15 HP ProKicker when the heavier aluminum or fiberglass rig needs more thrust and the exact model supports it.
+- 25 HP ProKicker only after checking weight, shaft length, mounting clearance, controls, and thrust. Do not treat 25 as an automatic substitute for every larger boat.
 
 ### Commercial / SeaPro applications
 
@@ -284,7 +276,7 @@ The second pattern: the regret stories are almost always light pontoons or small
 
 The third pattern, specific to Rice Lake and the Kawartha Lakes: late-season shallow water. The back bays of Rice Lake and the lakes around Bobcaygeon and Lakefield drop several inches in August and September. Pontoons that floated fine in June can be touching bottom on the way out of the cottage in September. CT's stronger reverse thrust pays off here. Customers who learned the hard way by dragging tubes through soft mud are some of our most loyal CT advocates.
 
-Fourth pattern: ProKicker CT on offshore rigs is underrated. Customers running deep-V fiberglass on Lake Ontario or Lake Simcoe with a 9.9 or 15 ProKicker get a noticeably better trolling experience plus serious alternator output for downriggers and electronics. The CT gearcase on a kicker is one of the cleanest upgrades in the Mercury lineup.
+Fourth pattern: ProKicker CT on offshore rigs is underrated. Customers running deep-V fiberglass on Lake Ontario or Lake Simcoe with a 9.9 or 15 ProKicker often get a better trolling experience. Charging still depends on the exact model's rated output and the load at trolling RPM; it is not a 60-amp system and it does not automatically replenish a trolling battery.
 
 Fifth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they are on a standard gearcase. Repowering with CT solves it without bumping HP class.
 
@@ -311,7 +303,7 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 - **CT will fix my underpowered boat.**  
   Only if the issue is hole shot or low-speed control. If you are underpowered at WOT, CT actually makes top speed worse. You need more HP, not a different gearcase.
 - **All Mercury motors come with the CT option.**  
-  Wrong. Under 40 HP, only the ProKicker variants (9.9, 15, 25) have CT. Over 200 HP, you are into V8 territory where the gearcase options are different. The 40-115 HP FourStroke + 115-150 Pro XS range is the sweet spot.
+  CT is a configuration choice on specific models. HBW lists examples from 9.9 through 115 HP, including 115 Pro XS, but the name of a motor family does not tell you its gearcase. Check the full model code and current Mercury specification.
 
 ## Ready to talk Command Thrust for your boat?
 
@@ -325,11 +317,11 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 ### What's the difference between Command Thrust and standard gearcase?
 
-Command Thrust uses a larger gearcase housing, a larger-diameter four-blade prop with about 20 percent more blade surface area, and a lower gear ratio. The net effect is more pushing force at the cost of 2 to 4 MPH top speed. Standard gearcase is faster and slightly more fuel-efficient on light boats. CT is faster to plane and stronger in reverse on heavy boats.
+Command Thrust uses a larger gearcase housing, a larger-diameter propeller option, and a lower gear ratio. Mercury describes that combination as helping heavy boats plane and stay on plane at lower speed. Whether you want CT is a hull, load, and propeller choice, not a universal speed penalty. Confirm the exact engine, gearcase, and prop before treating either option as faster.
 
 ### Is Command Thrust available on all Mercury HP classes?
 
-No. CT is available on 9.9 and 15 HP ProKicker models, plus 40, 50, 60, 90, and 115 HP FourStrokes, and the 115 Pro XS. There is no 25 CT, no 75 CT, and no 150 CT. SeaPro CT exists for commercial duty. Above 115 HP the CT option does not apply, and the 150 runs Mercury's big gearcase as standard.
+No. HBW's September 5, 2026 pricing reference lists specific CT configurations, including the 9.9 MLH FourStroke, 9.9 ProKicker, 60 ELPT FourStroke and 115 ELPT Pro XS. A horsepower rating or ProKicker badge alone does not establish CT fitment. Check the exact model code in the current reference and its Mercury specifications.
 
 ### Can I retrofit Command Thrust to my existing Mercury?
 
@@ -353,12 +345,12 @@ Yes. CT uses a different prop shaft diameter and a different prop family than st
 
 ### Is Command Thrust right for a bass boat?
 
-Usually no. Bass boats want top speed and quick acceleration on light loads, which is exactly what standard gearcase delivers. The CT prop costs you 2 to 4 MPH at top end that you actually use on a bass boat. The exceptions are heavy tournament-prep aluminums running deep-cycle batteries and a full live well of fish on a long run, where Pro XS CT can pay back.
+It depends on the hull, load, and propeller, not a universal V-hull ban. Mercury offers Command Thrust on the 115 Pro XS and describes acceleration and handling benefits. HBW's shop recommendation for most planing bass and angler V-hulls is still the standard gearcase, based on the specific boats we see. If we prefer standard on your hull, we will say so and show the actual boat, prop, and test result rather than a universal miles-per-hour deduction.
 
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 - [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md
-last_updated: 2026-08-21
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide de remotorisation Mercury : prix, délais, rentabilité"
 description: "Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-08-21
+date_modified: 2026-09-06
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-21\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 
@@ -45,7 +45,7 @@ Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
-Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/ca/en). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
 ---
 
@@ -150,7 +150,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 
 ### Combien de temps dure une remotorisation?
 
-En général, quelques semaines entre la commande et la mise à l'eau. Beaucoup moins long que d'attendre un bateau neuf.
+Confirmez auprès de HBW la disponibilité du moteur, le câblage et le rendez-vous pour votre bateau. Il n'y a pas de délai universel; seuls le devis écrit et l'horaire confirmés font foi.
 
 ### Est-ce que le prix inclut l'installation?
 

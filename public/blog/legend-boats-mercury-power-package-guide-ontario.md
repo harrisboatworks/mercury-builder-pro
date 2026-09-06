@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Legend Boats Mercury Packages Ontario"
 description: "Legend Boats with Mercury power: 2026 lineup, pairings, all-in pricing, and hull recommendations from an Ontario Legend dealer."
 category: "Buying Guide"
 date_published: 2026-05-21
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-21  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 
@@ -47,7 +47,7 @@ A few facts that matter:
 
 - **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
 - **Sells exclusively in Canada.** Legend isn't trying to be a global brand, every model is sized, equipped, and warrantied for Canadian buyers.
-- **[Mercury Marine](https://www.mercurymarine.com/canada/en/) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
+- **[Mercury Marine](https://www.mercurymarine.com/ca/en) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
 - Legend's warranty coverage on components, hull, and floor differs by model line; check the current warranty terms for the boat you're looking at.
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
@@ -231,7 +231,7 @@ Engine financing options and terms change often; we'll walk you through what's c
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps

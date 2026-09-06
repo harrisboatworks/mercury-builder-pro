@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Destination\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-19\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
@@ -45,7 +45,7 @@ Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alim
 
 ### Doré jaune (walleye)
 
-Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour les pêcheurs qui préfèrent la légèreté.
+Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
 
 ### Achigan à grande bouche et achigan à petite bouche
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-07-23
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights"
 description: "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower."
 category: "Buying Guide"
 date_published: 2026-06-07
-date_modified: 2026-07-23
+date_modified: 2026-09-06
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-09-06  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -45,7 +45,7 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
-| 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
+| 2.5 / 3.5 | 19 kg (41 lb) | Tiller portables |
 | 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
 | 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
 | 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) | Kicker-duty gearcase and controls; range covers ProKicker variants |

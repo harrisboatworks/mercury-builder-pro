@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与�
 description: "分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。"
 category: "法规安全"
 date_published: 2026-04-12
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["安大略省船只法规","加拿大快艇驾照","船只安全装备要求","Ontario boating regulations Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 法规安全  
 **Published:** 2026-04-12  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-09-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 
@@ -39,13 +39,13 @@ revenue_driver: repower
 
 ### 2. Pleasure Craft Licence (PCL) 船只牌照
 
-主要在加拿大使用、一个或多个发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经在 Canadian Register of Vessels 注册。新办、续期、转让和补发需要当前服务费；资料更新或取消免费。新办或转让后的牌照有效 5 年，号码必须按规定显示在船头两侧，并把牌照文件放在船上。请使用 [Transport Canada 当前 PCL 页面](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。
+主要在加拿大使用、一个或多个发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经在 Canadian Register of Vessels 注册。2026 年 9 月 5 日核对的 [官方收费表](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards) 显示：新办、续期、转让或补发 **$24.41 CAD**；资料更新或取消免费，每年 4 月 1 日按通胀调整。新办、转让或续期后的牌照有效 5 年。旧牌并非全部终身，请按 Transport Canada 到期批次核对。号码必须按规定显示在船头两侧，并把牌照文件放在船上。请使用 [Transport Canada 当前 PCL 页面](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。
 
 买二手船后，买家应在 30 天内申请把现有 PCL 转到自己名下。PCL 号码跟随船只，卖船时不要先取消牌照。
 
 ### 3. 安大略钓鱼证 (如要钓鱼)
 
-是否需要购买 Outdoors Card 和 Fishing Licence 取决于年龄、居住身份和牌照类型。多数 18–64 岁的 Ontario／Canadian residents 需要两者；18 岁以下或 65 岁及以上的合资格居民通常可携带显示姓名和出生日期的政府身份证件。一日 Sport Fishing Licence 不需要 Outdoors Card。请看 [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 和 [2026 licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
+是否需要购买 Outdoors Card 和 Fishing Licence 取决于年龄、居住身份和牌照类型。多数 18–64 岁的 Ontario／Canadian residents 需要两者；18 岁以下或 65 岁及以上的合资格居民通常可携带显示姓名和出生日期的政府身份证件。一日 Sport Fishing Licence 不需要 Outdoors Card。请看 [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 和 [2026 licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 **重要：** HBW 不销售钓鱼证。需要自己在 ontario.ca 网上申请。
 
@@ -73,14 +73,14 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 - [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 - [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
-- [Ontario：Fishing licence 资格](https://www.ontario.ca/page/fishing-licence)
+- [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## 联系我们
 
 如有关于船只合规、维修或冬储的问题:电话 (905) 342-2153 | 邮件 info@harrisboatworks.ca | [harrisboatworks.ca](https://www.harrisboatworks.ca)
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/canada/en/) · 莱斯湖 Gores Landing · 自 1947 年
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
 
 ---
 

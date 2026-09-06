@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, an
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 
 > **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
 
-A Legend owner walked down to his dock last week and found his boat sitting lower than it should. Not sunk, just low. The kind of low that means water got in overnight and nothing pumped it out.
-
-The pump itself was fine. The float switch that's supposed to wake it up wasn't. We saw three of these in a single week, all with the same root cause: a corroded connector that quietly stopped talking to the pump long before anyone noticed.
+A bilge system needs more than a working pump motor. The automatic switch, electrical supply, connections, intake, and discharge path all need to function. Follow the installed equipment manuals when checking the system.
 
 Here's the thing about bilge pumps. Everybody thinks about the pump. Almost nobody thinks about the switch and the wiring that actually make the pump do its job. That's where most real problems live, and that's what this guide covers: how the whole system works, why it actually fails, how to size and test one properly, and when it's worth calling us instead of guessing.
 
@@ -75,7 +73,7 @@ Most small to mid-size boats use three components working together.
 
 An electric centrifugal submersible pump, the most common type by far, sits at the lowest point of the hull. When power is applied, an internal motor spins an impeller at high speed. The spinning impeller flings water outward and out the discharge port, and as water leaves, it draws more in through the intake. That cycle keeps running as long as power is supplied and water is present.
 
-The pump is built to run submerged. Its motor is sealed against the water it sits in, which is exactly why running one completely dry, with no water to move, can damage the impeller and motor within seconds. Never dry-test a bilge pump.
+The pump is built to run submerged. Use the installed pump manufacturer's test method. Xylem distinguishes submersible, flexible-impeller, and diaphragm pumps, and its submersible pumps permit limited dry running. Rule installation guidance calls for switch tests both with and without water. Distinguish a brief functional test from prolonged dry running, and confirm water discharge in a wet test. Some centrifugal submersible pumps allow a brief dry test under their manufacturer’s instructions. That permission does not extend to prolonged dry running or to a different pump design such as a flexible-impeller pump.
 
 ### 2. The Float Switch
 
@@ -138,9 +136,11 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## Bilge Pump Types: What's in Your Boat
 
-**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Cannot run dry. Best for general bilge duty.
+**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Brief manufacturer-permitted functional tests can be dry; prolonged dry running is a different issue. Confirm discharge with a wet test. Best for general bilge duty.
 
-**Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
+**Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Typically can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
+
+**Flexible-impeller pumps:** a different design from a typical electric submersible bilge pump. Do not treat submersible dry-test permission as applying to a flexible impeller.
 
 **Manual hand pump:** required by law on some Canadian vessels and a smart backup on any boat. Works entirely without electricity, no battery, no wiring, no float switch. If everything electric fails, a manual pump buys you time. Every boat that stays in the water should have one on board.
 
@@ -189,7 +189,7 @@ Two brands dominate the recreational market in Canada: Rule and Attwood. A third
 You don't need to pull the boat to check this. From the dock, in order:
 
 1. **Test the manual override.** Flip the helm switch to manual. If the pump runs and you can see or hear water moving, the pump and its direct wiring are good. Fastest step on this list, ten seconds.
-2. **Test the float switch.** With the helm switch set to auto, gently lift the float arm by hand to where rising water would push it. The pump should kick on within a second or two, usually with an audible click from the switch. If nothing happens, the problem is in the switch circuit, not the pump. (Alternative: pour a small bucket of water slowly into the bilge and watch whether the float switch rises and triggers the pump. Never hold the float arm up for more than a second or two in a dry bilge, you don't want to run the pump without water.)
+2. **Test the float switch.** With the helm switch set to auto, gently lift the float arm by hand to where rising water would push it. The pump should kick on within a second or two, usually with an audible click from the switch. If nothing happens, the problem is in the switch circuit, not the pump. Manufacturer guidance for some submersible pumps includes switch tests with and without water; keep any dry functional test brief, then confirm discharge with water. Do not generalize a dry-run permission to a flexible-impeller pump.
 3. **Check the fuse or breaker.** A blown fuse makes everything look dead even when the pump and switch are both fine.
 4. **Inspect connectors for corrosion.** Disconnect the battery. Check every connector in the bilge circuit, at the pump, at the float switch, and in the harness back toward the helm, for green or white buildup, chalky residue, or a wire that feels loose when tugged gently.
 5. **Check the access port.** Most boats have a small access port near the transom where the pump and switch live. Open it and give the wiring a visual: chafe marks, cracked insulation, or a connector that's come apart.
@@ -355,7 +355,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
 - [Bilge Pumps: The Unsung Heroes of the Boating World](https://www.legendboats.com/?blog=bilge-pumps-the-unsung-heroes-of-the-boating-world), Legend Boats
 - [The great SVB bilge pump test](https://www.svb24.com/en/guide/the-great-svb-bilge-pump-test-a-comparison-of-the-10-best-electric-bilge-pumps.html), SVB24
 - [What size bilge pump do I need?](https://support.jamestowndistributors.com/hc/en-us/articles/360055503513-What-size-bilge-pump-do-I-need), Jamestown Distributors
-- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/bilge-pump-troubleshooting-guide), Fresh Water Systems
+- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/how-to-choose-the-right-bilge-pump-for-your-boat), Fresh Water Systems
 - [Double Duty: backup bilge pumps and high-water alarms](https://www.boatus.com/expert-advice/expert-advice-archive/2026/february/double-duty/), BoatUS
 
 ## FAQs
@@ -374,7 +374,7 @@ Yes. With the helm switch set to auto, gently lift the float arm by hand to wher
 
 ### Is it safe to run my bilge pump dry to see if it works?
 
-No. Bilge pumps are built to move water, and running one dry can damage the impeller or motor within seconds. Test with the float arm and a small amount of water, not a dry run.
+Follow the installed pump manufacturer's test method. Many submersible centrifugal pumps permit a brief functional test; that is not a licence for prolonged dry running and does not apply to flexible-impeller pumps. Confirm the pump actually discharges water in a wet test.
 
 ### Why do bilge connections corrode even on a freshwater lake?
 
@@ -400,7 +400,7 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 

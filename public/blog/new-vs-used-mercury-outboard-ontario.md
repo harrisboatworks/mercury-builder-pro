@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -82,7 +82,7 @@ The used motor saves you roughly $3,500-$6,000 over five years. But the new moto
 
 ## The trade-in wrinkle: HST only on the difference
 
-One more piece of math most buyers miss. In Ontario, when you trade your old motor (or boat) in to a dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. A $3,500 trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
+One more piece of math most buyers miss. For a typical private recreational trade at an Ontario dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. Taxable-business or GST/HST-registrant trades are a separate case. A $3,500 private-owner trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
 
 ## When new is the right answer
 
@@ -122,7 +122,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Sources
 
-- Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
+- Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty))
 - Mercury Product Protection extended warranty program details (Mercury Dealer Portal, reviewed 2026)
 - HBW internal repower pricing data, 2024-2026 service records
 

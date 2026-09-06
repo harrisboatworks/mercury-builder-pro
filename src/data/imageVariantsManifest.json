@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-02T20:34:32.412Z",
-  "count": 426,
+  "generatedAt": "2026-09-05T11:58:07.277Z",
+  "count": 430,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -68,6 +68,10 @@
     "/lovable-uploads/bilge-pump-sizing-chart",
     "/lovable-uploads/bilge-pump-system-diagram",
     "/lovable-uploads/bilge-pump-troubleshooting-flowchart",
+    "/lovable-uploads/blog-audit-2026-09/autumn-boating-text-free",
+    "/lovable-uploads/blog-audit-2026-09/late-season-boating-text-free",
+    "/lovable-uploads/blog-audit-2026-09/opener-preparation-text-free",
+    "/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero",
     "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08",
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
     "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08",
@@ -2559,6 +2563,26 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/blog-audit-2026-09/autumn-boating-text-free": [
+      640,
+      1024,
+      1679
+    ],
+    "/lovable-uploads/blog-audit-2026-09/late-season-boating-text-free": [
+      640,
+      1024,
+      1536
+    ],
+    "/lovable-uploads/blog-audit-2026-09/opener-preparation-text-free": [
+      640,
+      1024,
+      1679
+    ],
+    "/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero": [
+      640,
+      1024,
+      1376
     ]
   }
 }

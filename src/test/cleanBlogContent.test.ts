@@ -151,7 +151,10 @@ describe('French FAQ migration', () => {
     const article = getFrenchArticleBySlug('remotorisation-mercury-gta-toronto');
     expect(article?.faqs).toHaveLength(9);
     expect(article?.faqs?.some(faq => faq.answer.includes('5 500 $ à 7 500 $'))).toBe(true);
-    expect(article?.faqs?.some(faq => faq.answer.includes('300 $ à 600 $'))).toBe(true);
+    const transport = article?.faqs?.find(faq => faq.question === 'Organisez-vous le transport de bateau depuis la GTA ?');
+    expect(transport?.answer).toContain('sous réserve de confirmation');
+    expect(transport?.answer).toContain("HBW n'offre pas de livraison");
+    expect(transport?.answer).not.toContain('300 $ à 600 $');
     const cleaned = cleanBlogContent(article?.content ?? '', { hasStructuredFaqs: true });
     expect(cleaned).toContain('## Coordonnées');
     expect(cleaned).toContain('**Configurateur :**');

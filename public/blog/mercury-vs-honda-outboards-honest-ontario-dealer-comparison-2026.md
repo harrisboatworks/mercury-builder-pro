@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Honda Ontario 2026"
 description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
@@ -64,7 +64,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 ## Where Mercury wins
 
-**Service network density in our region.** In the Kawarthas, Lake Simcoe basin, and Trent-Severn corridor, Mercury has more certified dealer locations than Honda Marine. Brand loyalty is free. Dealer support is not.
+**Service access near the boat.** Check the current Mercury and Honda Marine dealer locators for authorized sales and service near where the boat lives. Brand loyalty is free. Dealer support is not.
 
 **Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP, Mercury offers the 400 and 425 HP Verado V10, the 450R, and the 600 HP Verado V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
 
@@ -136,7 +136,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury
 
 ### Does HBW service Honda outboards?
 
-No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Honda Marine's dealer locator lists certified dealers in the Peterborough area (about 30 km) and Havelock area (about 45 km).
+No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Use Honda Marine's current dealer locator and confirm that the location services your exact model.
 
 ### Is Mercury more reliable than Honda?
 
@@ -144,7 +144,7 @@ Both brands build reliable modern outboards. The real-world reliability differen
 
 ### Where can I get a Honda Marine outboard serviced near Rice Lake?
 
-Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km).
+Use Honda Marine's current dealer locator and confirm that the location services your exact model before travelling.
 
 ### Is Honda's warranty longer than Mercury's?
 
@@ -160,7 +160,7 @@ Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,8
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947

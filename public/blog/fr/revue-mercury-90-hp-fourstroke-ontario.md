@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario.md
-last_updated: 2026-07-31
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme mo
 description: "Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-07-31
+date_modified: 2026-09-06
 keywords: ["revue Mercury 90 HP","Mercury 90 HP FourStroke","Mercury 90 ELPT Ontario","Mercury 90 CT Command Thrust","90 HP ponton","90 HP bateau aluminium"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-07-31\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
 
@@ -39,7 +39,7 @@ Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux
 
 Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
 
-Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
 
 ---
 
@@ -132,7 +132,7 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 ## Guides connexes
 
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
 ## Bâtissez une soumission
@@ -171,7 +171,7 @@ Oui. Tous les Mercury 90 HP FourStroke utilisent l'injection électronique de ca
 
 ### Quelle est la garantie?
 
-Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année qui la porte à 6 ans au total. Demandez-nous le statut promotionnel actuel lors de la soumission.
+Garantie d'usine de 3 ans en standard. Mercury peut ajouter une couverture promotionnelle seulement lorsque l'offre écrite le prévoit; la durée et les conditions varient. Consultez les promotions en vigueur (https://www.mercuryrepower.ca/promotions). Demandez-nous le statut promotionnel actuel lors de la soumission.
 
 ## Prochaines étapes
 

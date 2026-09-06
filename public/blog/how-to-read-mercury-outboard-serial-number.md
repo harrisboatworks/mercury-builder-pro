@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-07-31
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-07-31
+date_modified: 2026-09-06
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
@@ -189,7 +189,7 @@ Mercury issues service bulletins by serial range, known issues, recommended fixe
 [Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
 
 ### 4. Engine hours (on SmartCraft motors)
-Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Can't be tampered with, and it doesn't care if the dashboard meter was disconnected.
+Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Treat the ECM reading as one part of the inspection, alongside the motor condition and available service records.
 
 ### 5. Service history
 If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. We can request it.
@@ -272,7 +272,7 @@ No. The **model number** is the configuration (115ELPT). The **serial number** i
 - [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 
 ## Next steps
 

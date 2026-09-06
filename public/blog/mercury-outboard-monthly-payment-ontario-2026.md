@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Monthly Payment Math (Ontario, 2026)"
-description: "What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing."
+description: "What a Mercury outboard costs per month in Ontario: 2026 financing math by HP tier, current promo rate, terms, monthly payment, and remaining-balance guidance."
 category: "Repower Cost & Pricing"
 date_published: 2026-05-28
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["mercury","repower","financing","ontario","monthly payment","Mercury outboard monthly payment","TD Auto Finance","Dealerplan Peterborough"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury Outboard Monthly Payment Math (Ontario, 2026)
 
-> What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing.
+> What a Mercury outboard costs per month in Ontario: 2026 financing math by HP tier, current promo rate, terms, monthly payment, and remaining-balance guidance.
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
 

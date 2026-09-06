@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026
 description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Catégorie :** Assurance\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
 ## Réponse rapide
 
-**En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Plusieurs propriétaires verront des primes annuelles de quelques centaines de dollars, mais le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
+**En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
 
 - **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
 - **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque
@@ -81,14 +81,7 @@ Exclusions courantes à lire attentivement avant de signer :
 
 ## Combien cela coûte en Ontario
 
-Fourchettes basées sur des soumissions ontariennes typiques de 2026 :
-
-| Type de bateau | Couverture | Prime annuelle |
-|---|---|---|
-| 14 à 16 pi en aluminium + 9,9 à 25 HP | 1 M$ responsabilité, coque de base | 150 $ à 280 $ |
-| 16 à 18 pi en aluminium + 40 à 90 HP | 1 M$ responsabilité, coque valeur convenue | 250 $ à 450 $ |
-| 18 à 22 pi ponton ou vedette + 90 à 150 HP | 2 M$ responsabilité, valeur convenue | 400 $ à 700 $ |
-| 22 à 26 pi croiseur ou center console + 150 à 300 HP | 2 M$ responsabilité, valeur convenue | 700 $ à 1 500 $ |
+Demandez des soumissions datées à un courtier ou à votre assureur; le montant dépend de la valeur du bateau, du moteur, de l'usage et des protections choisies.
 
 Facteurs de coût :
 
@@ -148,19 +141,19 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier.
+Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
 - [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 
 ## Questions fréquentes
 
 ### Ai-je besoin d'assurance pour un bateau de 9,9 HP en Ontario?
 
-Pas légalement, mais la plupart des marinas l'exigent pour tout quai. Une petite police de base coûte 150 $ à 200 $ par année.
+Pas légalement, mais la plupart des marinas l'exigent pour tout quai. Demandez une soumission datée à un courtier; le coût dépend de la valeur, de l'usage et des protections choisies.
 
 ### Mon bateau est-il couvert par ma police habitation?
 

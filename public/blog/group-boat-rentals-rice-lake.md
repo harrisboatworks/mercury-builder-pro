@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Day
 description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
@@ -84,7 +84,7 @@ The live booking system lists the equipment for each pontoon. Every boat carries
 
 **BBQs are welcome on site**, in designated areas only, never on or near the boats. A shore lunch between morning and afternoon cruising works great; just remember rule two: shore time is for your boats' people, not extra guests.
 
-**Alcohol is prohibited on all rental boats, full stop.** Ontario treats a boat like a car, the OPP patrol Rice Lake seriously, and the penalties are severe. For the group planning a celebration: boat dry all day, then raise a glass on dry land once the boats are back. The groups that ignore this rule don't rent twice.
+**Alcohol is prohibited on all rental boats, full stop.** Ontario treats a boat like a car, the OPP patrol Rice Lake seriously, and the penalties are severe. For the group planning a celebration: boat dry all day, then raise a glass on dry land once the boats are back.
 
 **Washrooms:** four on site, key at the office.
 

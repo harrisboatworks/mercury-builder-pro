@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)"
-description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats."
+description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range..."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: repower
 
 # Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)
 
-> Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop alone swings economy 15 to 25% on most boats.
+> Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range...
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
 ## Quick Answer
 
-The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 25% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
+Prop selection is one of the first fuel-efficiency checks on a Mercury outboard. The right prop depends on the hull, the load, and the engine's specified wide-open-throttle RPM range, confirmed on a measured trial. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
@@ -51,9 +51,9 @@ Fuel economy on an outboard comes down to five controllable variables. Fix them 
 
 A wrong prop is the most common cause of poor fuel economy we see at HBW. A prop that's too high in pitch loads the engine down and prevents it from reaching its rated WOT RPM, the engine lugs, burns more fuel, and wears faster. A prop that's too low pitches allows over-revving at WOT, which also wastes fuel at cruise.
 
-The test is simple: at WOT with typical load, your Mercury should reach mid-band of its rated RPM range. Check your owner's manual for the rated range on your specific model. If you're consistently above or below that mid-band, your prop pitch needs adjustment.
+The check is a measured trial: at wide-open throttle with typical load, compare the RPM you actually see with the specified WOT range in the owner's manual for that engine. Hull, load, and that specified range decide the prop. A single pitch drop or a switch from four blades to three is not a universal fix.
 
-On a typical day at HBW, we'll trial a motor two or three times with different props before settling on the right one for a specific hull and load combination. It's not guesswork, it's measurement.
+On a typical day at HBW, we'll trial a motor with different props before settling on the right one for a specific hull and load combination. It's not guesswork, it's measurement.
 
 **2. Trim**
 
@@ -74,8 +74,6 @@ Every unnecessary 45 kg (100 lb) on the boat costs fuel. The cumulative effect o
 Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500-4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
-
-![Ranked list of 5 fuel-saving levers for Mercury outboards: prop selection (15-25% impact), trim (10-20%), hull cleanliness, weight, cruise speed. Setup beats horsepower.](/lovable-uploads/inline/fuel-efficiency-levers.svg)
 
 ## What Horsepower Actually Does to Fuel Economy
 
@@ -121,7 +119,7 @@ Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
 
 **Prop pitch, not horsepower**
 
-*A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.*
+*A mismatched prop can raise fuel use on every line above. Match the prop to hull, load and the engine's specified WOT range on a measured trial.*
 
 ## Practical Fuel Consumption Ranges
 
@@ -174,9 +172,9 @@ Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or 
 
 ## What we see at HBW
 
-Fuel economy on a Mercury depends on three things: prop, RPM, and load. A correctly-propped FourStroke 90 on a 17-foot aluminum runs about 5-6 nautical mph per gallon at 3500-4000 RPM. Same motor over-propped runs 3-4 mpg at the same speed. Big difference.
+Fuel economy depends on the boat, load, propeller and operating speed. Compare fuel used over a measured distance using consistent units, such as litres per 100 kilometres or nautical miles per US gallon. Without a documented test and clear units, the 5–6 versus 3–4 comparison should not be used to predict a customer's fuel savings.
 
-The most common fuel-economy callback at our shop is a 4-blade prop running the motor under its RPM band. Drop pitch by one or switch to a 3-blade and the WOT comes up to spec; fuel burn drops by 15-25%.
+A prop that holds the engine outside its specified WOT range on a measured trial is worth correcting for that hull and load. The next prop is the one that puts RPM in the specified range under the load you actually run, not a universal drop-one-pitch or switch-to-three-blade recipe.
 
 ---
 
@@ -186,7 +184,7 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
 
 **How much does the right prop actually matter?** 
-More than anything else on this list. It is the single biggest efficiency lever on the boat, bigger than horsepower class, and it also affects holeshot, top speed, and engine longevity. The WOT RPM test above is how you check yours.
+A well-matched prop matters to efficiency, acceleration and engine loading. The size of the improvement depends on how well the previous prop suited the boat. Confirm the match with a measured trial against the engine's specified WOT range for your hull and load.
 
 **Does trim really make a meaningful difference?** 
 Yes, and it costs nothing. Trimming out at cruise lets the hull run clean instead of plowing, and a SmartCraft fuel gauge shows the difference in real time. If you never touch the trim switch after the holeshot, you're leaving fuel money on the table.
@@ -210,7 +208,7 @@ Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
 
 ### What's normal fuel consumption for a 115HP outboard?
 
-At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
+There is no single expected fuel-burn figure for every 115 HP outboard. The cruise table above gives illustrative ranges for specific boat classes, not measured performance for your rig. Actual consumption depends on hull, load, propeller, speed, and conditions. Use on-boat fuel-flow readings at the operating speeds you want to compare.
 
 ### How much does a dirty hull cost in fuel?
 
@@ -226,7 +224,7 @@ On Rice Lake, the most fuel-efficient cruising speed for most outboard boats is 
 
 ### Does repowering with a newer Mercury outboard save fuel?
 
-Yes, significantly. A modern Mercury FourStroke EFI outboard is substantially more fuel-efficient than an older two-stroke or early EFI motor of the same horsepower. A customer repowering from a 10-15 year old two-stroke 150HP to a current Mercury 150HP FourStroke typically sees fuel consumption drop by 30-50% at comparable cruising speeds. Over a season, that adds up to hundreds of dollars in fuel savings. The fuel savings alone rarely pay off a repower in the short term, but they meaningfully reduce the ongoing operating cost of the new engine.
+A modern Mercury FourStroke EFI can be more fuel-efficient than an older two-stroke or early EFI motor of the same horsepower, but the size of any improvement depends on the hull, load, propeller, and how you run the boat. Compare fuel used over a measured distance at the same speed. Fuel savings alone rarely pay off a repower in the short term, but they can reduce ongoing operating cost.
 
 ### How do I read my Mercury SmartCraft fuel economy display?
 
@@ -246,7 +244,7 @@ Four-strokes burn noticeably less fuel than carburetted two-strokes of the same 
 
 ### What are the best fuel efficiency tips for outboard motors?
 
-In order of impact: get the prop right so the motor reaches the middle of its rated wide-open RPM band, trim the bow up at cruise so the hull rides clean, keep the hull and prop free of weed and growth, drop unnecessary weight, and settle on your motor's efficient cruise RPM instead of running flat out. Prop and trim deliver the most gain by far. Most fuel-economy complaints we see at Harris Boat Works turn out to be setup problems, not engine problems. For a prop check or lake test, reach us at 905-342-2153.
+Start by matching the prop to hull, load, and the engine's specified wide-open-throttle RPM range on a measured trial, trim the bow up at cruise so the hull rides clean, keep the hull and prop free of weed and growth, drop unnecessary weight, and settle on your motor's efficient cruise RPM instead of running flat out. The relative gains depend on the current setup. Most fuel-economy complaints we see at Harris Boat Works turn out to be setup problems, not engine problems. For a prop check or lake test, reach us at 905-342-2153.
 
 ## Related guides
 

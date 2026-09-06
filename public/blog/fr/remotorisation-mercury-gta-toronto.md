@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-19\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -37,7 +37,7 @@ revenue_driver: repower
 
 Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout de souffle; peut-être qu'une réfection du système de carburant coûte autant qu'un Mercury neuf. Dans tous les cas, vous êtes dans la GTA et vous devez comprendre : **comment ça fonctionne sur le plan logistique quand le concessionnaire est à 90 minutes de route ?**
 
-C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
+C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
 
 ![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
@@ -89,7 +89,7 @@ Vous avez trois options pour amener le bateau à Gores Landing :
 
 **Option A. Le remorquer vous-même.** La plus fréquente. Depuis le centre-ville de Toronto : 90 minutes vers l'est sur la 401, sortie Cobourg, suivez la route régionale 18 vers le nord jusqu'à Gores Landing. Depuis l'ouest de la GTA (Oakville, Burlington) : ajoutez 30 à 60 minutes. Nous avons du stationnement pour les remorques sur le terrain; vous laissez le bateau, vous laissez la remorque ou vous la ramenez chez vous.
 
-**Option B. Engager un transporteur de bateaux.** Plusieurs services de transport de bateaux ontariens font la route GTA à Kawartha. Coût typique : 300 $ à 600 $ pour un aller pour un bateau typique de 18 à 22 pieds. Cherchez « boat transport Ontario » ou demandez-nous, nous connaissons les opérateurs. Utile si vous n'avez pas de véhicule de remorquage ou que vous ne voulez pas conduire une remorque.
+**Option B. Le ramassage peut être organisé.** Selon confirmation de l'embarcation et du lieu, un ramassage peut être arrangé. HBW n'offre pas de livraison. Utile si vous n'avez pas de véhicule de remorquage; vous pouvez aussi remorquer vous-même (option A).
 
 **Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait dès l'ouverture au printemps, sans coût de transport.
 
@@ -117,7 +117,7 @@ Nous appelons quand c'est prêt. Vous revenez. Nous vous expliquons le nouveau m
 **Important : la période de rodage de 10 heures.** Votre Mercury neuf n'est pas prêt au plein régime pour les 10 premières heures. Nous vous expliquons :
 - Premières 2 heures : variez les gaz, pas de plein gaz prolongé, pas de régime élevé soutenu
 - Prochaines 8 heures : élargissez progressivement la plage d'utilisation
-- Après 20 heures : ramenez le bateau pour le **service de rodage de 20 heures** (c'est essentiel)
+- Ensuite : suivez le calendrier de rodage et d'entretien du manuel correspondant au numéro de série. Ne supposez pas qu'un service à 20 heures s'applique à tous les moteurs Mercury.
 
 Vous pouvez essayer le moteur sur le lac Rice avant de partir, ou aller doucement sur la remorque jusqu'à la GTA et faire le rodage sur votre plan d'eau habituel.
 
@@ -157,7 +157,7 @@ Une remotorisation à Toronto chez un concessionnaire Mercury de la GTA est thé
 
 **4. Relation de service sur la prochaine décennie.** Nous documentons tout. L'historique de service de votre moteur reste à notre atelier. Quand des réclamations MPP surviennent dans 5 ans, le concessionnaire qui a vendu le moteur traite la réclamation, c'est ainsi que le système fonctionne le mieux.
 
-**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Nous faisons un essai sur l'eau de chaque installation sur le lac Rice avant la livraison et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
+**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Nous faisons un essai sur l'eau de chaque installation sur le lac Rice avant la récupération et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
 
 ---
 
@@ -167,9 +167,9 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 **1. Acheter un Mercury chez une source non Mercury.** Petites annonces, enchères en ligne, Mercury importés des États-Unis, la plupart n'ont **aucune couverture de garantie canadienne**. Le moteur lui-même est identique; le réseau de garantie ne l'honorera pas. Vous économisez quelques milliers de dollars d'avance, vous en perdez plusieurs en réparations à vos frais sur la durée de vie du moteur.
 
-**2. Sauter le service de rodage de 20 heures.** Essentiel pour la validité de la garantie. Nous le facturons 250 $ à 400 $; le coût de le sauter est potentiellement la garantie au complet.
+**2. Sauter le service de rodage prévu au manuel.** Respectez les exigences de rodage et d'entretien du manuel correspondant au numéro de série, ainsi que les conditions de garantie. Ne supposez pas qu'un service à 20 heures s'applique à tous les moteurs Mercury. Quand ce service est requis, nous le facturons 250 $ à 400 $.
 
-**3. Ne pas inclure le transport au budget.** 300 $ à 600 $ par direction pour un transport engagé, ça s'additionne. Si vous n'avez pas de remorque, planifiez-le.
+**3. Ne pas planifier comment le bateau arrive à l'atelier.** Si vous n'avez pas de remorque, demandez si un ramassage peut être organisé pour votre bateau et votre lieu. HBW n'offre pas de livraison.
 
 **4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Aller à la puissance maximale ou au-dessus crée des problèmes de tenue, des coûts de carburant et du marsouinage sur certaines coques. Adaptez la puissance au design de la coque.
 
@@ -187,7 +187,7 @@ La saison de navigation en Ontario est courte. Le moment de réservation compte 
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.
 - **Automne (septembre à novembre)** : bon, l'atelier est actif mais pas saturé. Moteur prêt pour le printemps suivant.
 
-Si vous envisagez une remotorisation pour le printemps 2026, **commencez le configurateur maintenant et réservez l'installation pour janvier à mars 2026.**
+Si vous envisagez une remotorisation pour le printemps 2026, **commencez le configurateur maintenant et préparez votre projet pendant l'hiver, puis confirmez une date d'installation pendant la saison d'ouverture.**
 
 ---
 
@@ -221,7 +221,7 @@ Oui. 401 vers l'est jusqu'à Cobourg, vers le nord sur la route régionale 18 ju
 
 ### Organisez-vous le transport de bateau depuis la GTA ?
 
-Nous n'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.
+Le ramassage du bateau peut être organisé, sous réserve de confirmation de l'embarcation et du lieu. HBW n'offre pas de livraison.
 
 ### Mon Mercury sera-t-il admissible à la garantie si je l'ai acheté ailleurs ?
 

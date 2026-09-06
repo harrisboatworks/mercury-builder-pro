@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
 description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online..."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
@@ -86,7 +86,7 @@ The current signed rental agreement governs responsibility for damage, including
 
 **To drive the boat**, every person who may take the helm must show a valid temporary or permanent Pleasure Craft Operator Card plus photo ID at check-in. A completed Rental Boat Safety Checklist can satisfy the federal proof-of-competency minimum for some rentals, but HBW has a stricter policy and does not substitute the checklist for the card. Passengers do not need a PCOC. If a driver still needs one, complete the accredited course before rental day at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Full details are in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
-**To fish**, anyone 18 to 64 needs an Outdoors Card plus an Ontario fishing licence, sport or conservation. Under 18 or 65 plus, government ID is your licence. We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/page/get-fishing-licence) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
+**To fish**, Ontario/Canadian residents aged 18 to 64 need an Outdoors Card plus an Ontario fishing licence, sport or conservation. For Ontario/Canadian residents under 18 or 65 plus, government ID is treated as the licence. Most non-Canadian residents aged 65 and over still need a licence. Accompanied foreign minors have a separate exemption and share the licensed adult's catch limits. Check the current [non-Canadian-resident rules](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information). We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
 ---
 
@@ -135,9 +135,7 @@ Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 1
 **1:30 PM**. More fishing, swimming, or cruising.
 **2:30 PM**. Head back toward the marina.
 **3:00 PM**. Dock back at HBW.
-**3:30 PM**. Quick lunch at Lakeview Restaurant in Bewdley (5 min drive, on the lake).
-**4:30 PM**. Drive home.
-**6:00 PM**. Back in Toronto.
+**3:30 PM**. Lunch on shore, then start the drive home. Allow the same travel-time buffer you used in the morning; traffic determines when you get back to Toronto.
 
 Use the live rental rate and add the fuel you actually use. Include your travel, food, fishing-licence, and bait costs rather than relying on a generic family-day estimate.
 
@@ -170,7 +168,8 @@ Pick your boat and date, and the booking system shows you live availability and 
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
 - [Transport Canada: Pleasure Craft Operator Card requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
-- [Ontario fishing licence information](https://www.ontario.ca/page/get-fishing-licence)
+- [Ontario fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
+- [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)
 
 ## FAQs
 

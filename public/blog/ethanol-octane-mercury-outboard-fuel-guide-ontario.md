@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-08-24
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)"
 description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-08-24
+date_modified: 2026-09-06
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last reviewed:** 2026-08-24  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
@@ -162,7 +162,7 @@ That is the legal reason ethanol-free marine gas can exist at a fuel dock, and i
 
 Note the word “may.” The deduction is permitted, not required. It removes the regulatory pressure to blend into those grades; it does not oblige anyone to keep them ethanol-free. As the provincial requirement climbs, suppliers have been blending into more of the pool, not less.
 
-That is exactly what happened to premium. Ontario stations used to sticker their 91 pumps ethanol-free. Around 2022 those stickers came off, and retailers including Shell and Canadian Tire relabelled 91 as “up to 10% ethanol,” pointing at the regulation when customers asked.
+That is why premium is easy to misread. The octane number does not prove ethanol content. Read the pump label. If you want ethanol-free, buy fuel sold as ethanol-free.
 
 The practical translation for 2026:
 
@@ -269,7 +269,7 @@ Yes. Mercury says current gasoline engines are designed for fuel containing no m
 
 ### Is premium gasoline ethanol-free in Ontario?
 
-No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
+No. Do not assume 91 octane is ethanol-free. Read the pump label. Premium may carry less ethanol than 87 or 89, but the octane number does not prove ethanol content. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
 
 ### Does Harris Boat Works sell ethanol-free marine gas?
 

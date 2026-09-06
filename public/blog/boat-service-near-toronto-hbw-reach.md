@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Service Near Toronto HBW Reach"
 description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't."
 category: "Service"
 date_published: 2026-05-15
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
 ## Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
+> **Quick answer:** HBW is a Mercury-only shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in the drive-in service model.
 
 "Near Toronto" is not one service model. A mobile technician, a multi-brand marina, and an authorized Mercury dealer can all be useful, but they solve different problems.
 

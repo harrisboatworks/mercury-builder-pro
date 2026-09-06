@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Best Mercury for Aluminum Boats 2026"
-description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide."
+description: "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against..."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: repower
 
 # Best Mercury for Aluminum Boats 2026
 
-> The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 60-115 HP fits 16-18 ft. HBW honest guide.
+> The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against...
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
 ---
 
-> **Quick answer:** For most aluminum fishing boats, size to the hull: 40-60 HP for 14-16 ft, 60-115 HP for 16-18 ft. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Length alone does not pick the motor. Start with the capacity plate and manufacturer documentation for this hull's horsepower and weight limits, then consider layout, steering, and your usual and heaviest planned load. Where those support it, 40-60 HP is an example to compare for 14-16 ft and 60-115 HP for 16-18 ft. Tiller versus remote still follows the boat. A 9.9 ProKicker is worth considering if you troll walleye. Installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -49,7 +49,7 @@ Both materials make great boats, but they reward different priorities. Here's th
 - You want lower maintenance and won't repaint or gel-coat-fix
 - Repair-ability matters to you (welding > fiberglass work)
 
-**Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.**
+**Lighter, more forgiving, easier to fix. Consider modern welded aluminum (Lund, Princecraft, Legend Tin) when trailering, shallow-water use, and repair options matter to you. For a 16-18 ft example, compare 60-90 HP Mercury where the hull's limits and load support it.**
 
 #### Fiberglass
 
@@ -67,7 +67,7 @@ Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat 
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or over-speccing Command Thrust on a V-hull where it doesn't belong. Fix any one of those and the boat performs noticeably better than before.
+The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or choosing Command Thrust without checking the hull, load, propeller, and rigging. Fix any one of those and the boat performs noticeably better than before.
 
 Here's how to think through each decision.
 
@@ -95,11 +95,11 @@ Here's how to think through each decision.
 
 ### 14–16 ft tiller or console aluminum
 
-**Best fit: 25 to 60 HP.** Tiller versions for boats without consoles; remote versions for console boats. The 60 HP FourStroke is the sweet spot for 16-foot aluminum consoles, enough power for two anglers and gear, planes reliably with three people, and fuel efficient. Installed pricing for this class: build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+**Example to compare: 25 to 60 HP**, tiller without a console, remote with one. For a 16-foot console with two anglers and gear, a 60 HP FourStroke is worth comparing, provided the capacity plate, manufacturer documentation, and your planned loads allow it. Installed pricing: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ### 16–18 ft console aluminum (the most common Kawartha repower)
 
-**Best fit: 90 to 115 HP FourStroke.** The Mercury 90 EXLPT and 115 EXLPT FourStroke are the most common motors we install on aluminum console boats. This is the sweet spot for most Ontario fishing boats in this size class.
+**Examples to compare: 90 to 115 HP FourStroke.** The 90 EXLPT and 115 EXLPT are motors we often install on 16-18 ft consoles where the hull's documented limits, steering, and a heavier family or open-water load support them.
 
 For tournament-style fishing or bigger open water, step up to 115 Pro XS. The Pro XS earns the premium if you actually run it hard. For typical recreational fishing, FourStroke is the better value.
 
@@ -138,7 +138,7 @@ A kicker can be worth the added cost when slow trolling, backup propulsion, or l
 - **Wrong prop.**  
   A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. Prop verification follows the motor, hull, rigging, work order, and safe seasonal testing conditions.
 - **You need Command Thrust on a heavier aluminum V-hull.**  
-  CT is a pontoon and workboat gearcase; on a V-hull it just adds drag. Standard gearcase is the right call on 14-20 ft aluminum fishing boats, loaded or not.
+  Command Thrust is a hull, load, and propeller choice. HBW's shop recommendation on most 14-20 ft planing aluminum fishing boats is the standard gearcase; that is a preference from the boats we see, not a universal V-hull ban.
 - **Buying Pro XS when FourStroke would do.**  
   Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
 
@@ -152,9 +152,9 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricin
 
 ## What we see at HBW
 
-The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI (standard gearcase) is our top recommendation for 17-footers carrying 3-4 people and gear; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag.
+Many 14-17 ft tinnies and modest-load consoles that come through our service bay run a 25-60 HP FourStroke. For some 17-footers carrying 3-4 people and gear, the 60 EFI (standard gearcase) is worth comparing; a 90-115 on a heavier 16-18 ft console suits a different load and water. Command Thrust remains a hull, load, and propeller choice; HBW often prefers standard on these planing V-hulls.
 
-Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
+Read the capacity plate and manufacturer documentation before quoting. The shop still turns down a 90 when that hull is rated for 60.
 
 ---
 
@@ -162,7 +162,7 @@ Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's ma
 
 ### What's the minimum HP I should get for my aluminum boat?
 
-We recommend at least 25HP for a 14ft boat and 40HP for a 16ft boat. Underpowering leads to frustration in wind and when the boat is fully loaded. Check your capacity plate for maximum HP.
+25 HP is a 14 ft example and 40 HP a 16 ft example, usually for lighter tiller days; a loaded 16 ft console may suit 60 or 90 instead. Check the capacity plate and manufacturer documentation for horsepower, people, and weight limits, then size for the heaviest planned load that still fits.
 
 ### Is a tiller or remote better for fishing an aluminum boat?
 
@@ -178,7 +178,7 @@ Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft o
 
 ### How much does it cost to power an aluminum fishing boat in Ontario in 2026?
 
-As of August 8, 2026, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail for a 14-16ft boat. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) because shaft length and configuration change the figure. These are planning figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a configured quote at mercuryrepower.ca/quote/motor-selection.
+Examples from the HBW pricing reference checked September 5, 2026: 40ELPT FourStroke $9,438, 60ELPT FourStroke $12,040, and 75ELPT FourStroke $14,476 CAD. These are bare-motor prices for the listed 20-inch remote-control configurations, excluding HST, rigging, controls, and propeller. Shaft length, tiller versus remote control, and gearcase options change the price. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) rather than relying on a single horsepower-wide estimate. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on aluminum V-hulls. Build a configured quote at mercuryrepower.ca/quote/motor-selection.
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 
@@ -190,14 +190,14 @@ Switching from an older two-stroke to a current Mercury FourStroke EFI is immedi
 
 ### What's the best Mercury outboard for a Lund 1675 in Ontario?
 
-The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative (CT is a pontoon and workboat gearcase and is not recommended on a V-hull like the Lund 1675). The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
+The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on a planing V-hull like the Lund 1675. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
 
 ## Related guides
 
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps

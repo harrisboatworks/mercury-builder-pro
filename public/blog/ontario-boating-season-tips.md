@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
@@ -108,13 +108,13 @@ Full cost breakdown for Ontario: [Boat Winterization Cost Ontario 2026](/blog/bo
 
 A few things don't follow the seasons.
 
-**Pleasure Craft Licence (PCL).** Transport Canada updated the PCL rules in 2026, moving from lifetime to 5-year renewals. If you've owned the boat for a while, your old PCL may need renewal. Full details: [Pleasure Craft Licence Update for Repower Ontario](/blog/pleasure-craft-licence-update-repower-ontario).
+**Pleasure Craft Licence (PCL).** As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licences are valid for five years. Older licences have their own expiry date or transition deadline; check your licence with Transport Canada. The current fee is $24.41 for a new, transferred, renewed or duplicate licence, while updates and cancellations are free. Fees may change each April 1. Full details: [Pleasure Craft Licence Update for Repower Ontario](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **Capacity plate compliance.** Ontario follows Transport Canada's federal capacity-plate rules. Overpowering (motor HP exceeding the plate maximum) creates capacity plate, insurance, liability, and potential warranty problems.
 
 **Boating safety education.** Ontario requires the Pleasure Craft Operator Card (PCOC) for anyone operating a powered boat. The card doesn't expire. If you're new to boating or buying for a kid, get the PCOC online before the boat arrives.
 
-**Fishing regulations (if you fish from the boat).** Ontario fishing regulations vary by Fisheries Management Zone (FMZ). Rice Lake is FMZ 17. Walleye slots, bass season dates, and licence requirements change. Source: [Ontario.ca fishing regulations](https://www.ontario.ca/page/fishing-regulations-summary). HBW does not sell fishing licences, get them at ontario.ca.
+**Fishing regulations (if you fish from the boat).** Ontario fishing regulations vary by Fisheries Management Zone (FMZ). Rice Lake is FMZ 17. Walleye slots, bass season dates, and licence requirements change. Source: [Ontario.ca fishing regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary). HBW does not sell fishing licences, get them at ontario.ca.
 
 ## Common Seasonal Mistakes
 
@@ -182,7 +182,7 @@ Fall is the busiest trade-in window because customers swap before winter storage
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 - [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
 - [Mercury 100-Hour Service Cost in Ontario: What's Included (2026)](/blog/mercury-100-hour-service-cost-ontario), what the 100-hour service covers
 - [Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)](/blog/spring-commissioning-cost-ontario), spring commissioning costs in Ontario

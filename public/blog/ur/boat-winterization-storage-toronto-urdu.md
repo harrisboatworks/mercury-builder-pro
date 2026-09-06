@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹ�
 description: "Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["boat winterization Toronto Urdu","کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)","boat storage Mississauga ke qareeb (boat storage near Mississauga)","kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-08-26  
+**آخری جائزہ:** 2026-09-06  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 
@@ -45,7 +45,7 @@ Ontario کا موسم سرما سخت ہوتا ہے۔ نومبر کے بعد د�
 
 - **انجن سے پانی نکالنا**، Outboard اور stern drive کے تمام واٹر پاسیجز سے پانی ہوا کے ذریعے نکال کر نکاسی یقینی بناتے ہیں۔
 - **Fuel stabilizing**، باقی رہ جانے والے پٹرول میں stabilizer ملایا جاتا ہے تاکہ وہ سردیوں میں خراب نہ ہو اور کاربوریٹر/انجیکٹر بند نہ کریں۔
-- **Lower unit oil تبدیلی**، اگر نچلے حصے میں پانی گھس آیا تو جم کر کریشنگ ہو سکتی ہے، اس لیے تیل تبدیل کیا اور سیل چیک کیے جاتے ہیں۔
+- **Lower unit oil تبدیلی**، اگر نچلے حصے میں پانی گھس آیا تو جم کر ٹوٹ پھوٹ ہو سکتی ہے، اس لیے تیل تبدیل کیا اور سیل چیک کیے جاتے ہیں۔
 - **صحت مند بیٹری صرف اس صورت میں کشتی میں رہ سکتی ہے جب وہ مکمل چارج ہو، ڈسکنیکٹ ہو، محفوظ ہو، اور منظور شدہ اسٹوریج پلان اجازت دے۔** ماڈل/سیریل دستی اور منظور شدہ اسٹوریج پلان فیصلہ کن ہیں۔
 - **Livewell، bilge، اور تمام پانی کے پمپ خالی کرنا**، کہیں بھی پانی کی ایک بوند نہیں رہنی چاہیے۔
 - **سلنڈر walls کی حفاظت**، انجن کے اندرونی حصے پر تیل کی تہہ (fogging) لگائی جاتی ہے تاکہ زنگ نہ لگے۔

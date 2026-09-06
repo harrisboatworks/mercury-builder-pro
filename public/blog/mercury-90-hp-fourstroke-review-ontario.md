@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 HP FourStroke Review: Standard vs Command Thrust"
 description: "An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury 90 hp review","mercury 90 hp fourstroke review","mercury 90 command thrust","mercury 90 standard vs command thrust","mercury 90 real world performance","mercury 90 owner reviews","mercury 90 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 17 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
 

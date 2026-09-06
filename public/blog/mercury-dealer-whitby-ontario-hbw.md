@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
 
@@ -76,7 +76,7 @@ Mercury Premier is the top dealer tier, parts depth, warranty authorization, tec
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
 
 **Mercury parts and service**
-HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
+HBW stocks common Mercury service parts. The exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
 HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 45 minutes, [keeping the boat at HBW through winter makes logistical sense](/blog/winter-storage-near-toronto-hbw). The boat stays close to Rice Lake, and physical service resumes when we reopen in early April.
@@ -88,9 +88,9 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 ## Getting to Harris Boat Works from Whitby
 
-**Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Mostly highway, the transition from 401 to 115 is clean, and the last stretch on County Road 28 is rural driving through cottage country.
+Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht Club is the other local launch point. Many Whitby boaters trailer inland when Lake Ontario is too exposed.
 
-**Approximate drive time:** Around 45 minutes outside rush hour. From north Whitby toward Brooklin, you may get there even a bit faster. From Whitby south near the 401, it's a very manageable drive.
+**Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
@@ -121,20 +121,6 @@ That's the deal. Has been since 1947.
 
 ---
 
-## Where Whitby Boaters Launch and Why HBW Sees Steady Volume from the Area
-
-Whitby has a strong boating community built around **Whitby Harbour Marina**, city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
-
-The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Clear midweek, weekend cottage traffic is the only friction. Tuesday-Thursday mornings are ideal for service trips.
-
-Why some Whitby boaters consider HBW:
-
-- **Mature local boating community.** Owners assessing an older Mercury or another-brand motor can use our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) to compare repair, repower, and replacement without assuming the answer in advance.
-- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
-- **Mercury Premier-level support.** HBW offers Mercury-specific diagnostics, a documented rigging scope, current pricing, and continuity between installation and future service history. No dealer can promise a trouble-free lifespan or a particular warranty outcome.
-
----
-
 ## FAQs
 
 ### How far is HBW from Whitby?
@@ -143,7 +129,7 @@ About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One 
 
 ### Can HBW be my primary Mercury dealer if I live in Whitby?
 
-Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the plan and drop-off window before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
+Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collection.
 
 ### Do you serve Brooklin and north Whitby?
 

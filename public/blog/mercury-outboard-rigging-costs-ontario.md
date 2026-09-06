@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -196,7 +196,7 @@ The walk-around is free. The findings determine where in the range your quote la
 
 ## What we see at HBW
 
-Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, rigging adds $400-800. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
+Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, use the planning table above for Mercury-to-Mercury post-2010 controls in good shape, and confirm the required parts in the written quote. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
 
 The hidden cost: SmartCraft display. Most repower customers want the data screen, which adds $1,200-2,000 with install. Optional but worth it for fuel-burn and engine-data visibility. We don't push it unless the customer asks.
 

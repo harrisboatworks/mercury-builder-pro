@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,15 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
-> **Quick answer:** Controls, steering, gauges, wiring, and prop can add a significant amount to a Mercury repower, depending on HP class. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect; 150 to 225 HP V6s add power-assist steering, VesselView, and dual batteries. Build a configured quote at mercuryrepower.ca.
+> **Quick answer:** Controls, steering, gauges, wiring, and prop can add a significant amount to a Mercury repower, depending on the exact engine, control option, and boat. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect. At 150 HP and above, horsepower does not identify the family: 150 FourStroke and 150 Pro XS are inline-four, FourStroke 175-225 are V6, and 200-300 Pro XS plus FourStroke 250-300 are V8. Build the controls, steering, and gauges for that exact package at mercuryrepower.ca.
 
 ### Quick Answer
 
-A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40-115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150-225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40-225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40-115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. From 150 HP up, rebuild the package around the exact engine and control option. A 150 is an inline-four, not a V6. FourStroke 175-225 are V6; 200-300 Pro XS and FourStroke 250-300 are V8. This guide covers the 40-225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
@@ -47,7 +47,7 @@ Three patterns come up most often at Harris Boat Works:
 
 **Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected only to old analog gauges can hide much of the information the motor makes available, including fault codes, fuel economy data, engine hours and advance warnings.
 
-**Underspeccing steering on a V6.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is the standard recommendation for anything 115 HP and up.
+**Underspeccing steering on a higher-HP motor.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is a common recommendation for many 115 HP and up boats. The exact steering still depends on the engine, control option, and hull.
 
 ---
 
@@ -57,10 +57,10 @@ Three patterns come up most often at Harris Boat Works:
 |---|---|---|---|---|---|
 | 40-60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
 | 75-90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
-| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
-| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500 to $5,500 |
-| 175-200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
-| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
+| 115 HP inline-4 | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
+| 150 HP inline-4 (FourStroke or Pro XS) | Confirm mechanical or DTS for the exact engine | Hydraulic is common; power-assist is option-specific | SmartCraft Connect or VesselView if the package includes it | Dual battery is common, not automatic | $3,500 to $5,500 typical, quote the boat |
+| 175 HP V6 (FourStroke or Pro XS) | Confirm mechanical or DTS for the exact engine | Hydraulic or power-assist per the package | VesselView only if that display is part of the order | Dual battery + ACR when the boat needs it | $4,500 to $6,500 typical, quote the boat |
+| 200-225 FourStroke V6 or 200-225 Pro XS V8 | Do not infer DTS from HP. Build from the engine and control option | Power-assist hydraulic is common on these boats, not proven by cylinder count | VesselView 7 or 9 only when specified | Dual battery + ACR, switch panel when the boat needs it | $4,500 to $7,500 typical, quote the boat |
 
 _Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -100,7 +100,7 @@ Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighte
 
 ### Power-Assist Hydraulic
 
-Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150-225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for many 175-225 HP V6 FourStroke and 200-225 HP V8 Pro XS boats, especially twin-engine setups or boats over 22 feet, when the exact engine and helm support it. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150 HP inline-four and above, lean toward power-assist only after checking the engine, control option, and boat. Do not infer V6 architecture from a 150 HP rating.
 
 ---
 
