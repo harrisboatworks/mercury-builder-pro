@@ -100,29 +100,6 @@ export const useNotifications = () => {
     }
   }
 
-  const sendNotification = async (
-    title: string,
-    message: string,
-    type: 'info' | 'success' | 'warning' | 'error' = 'info',
-    metadata: Record<string, any> = {}
-  ) => {
-    if (!user) return
-
-    const { error } = await supabase.functions.invoke('send-notification', {
-      body: {
-        user_id: user.id,
-        title,
-        message,
-        type,
-        metadata
-      }
-    })
-
-    if (error) {
-      console.error('Failed to send notification:', error)
-    }
-  }
-
   useEffect(() => {
     if (!user) return
 
@@ -174,7 +151,6 @@ export const useNotifications = () => {
     markAsRead,
     markAllAsRead,
     deleteNotification,
-    sendNotification,
     refetch: fetchNotifications
   }
 }

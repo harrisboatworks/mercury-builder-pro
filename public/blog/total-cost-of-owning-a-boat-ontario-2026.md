@@ -43,7 +43,7 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 For the $40,000, 20-foot aluminum example in Section 7, the illustrative annual cash budget is **$5,879.49** (cash-bought, no loan payment). Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment for 120 monthly payments at 8% nominal annual interest is about **$388.25/month**, or **$4,658.98/year**, before any financed taxes or fees. Added together, that is about **$10,538.47/year**. The 8% rate is an assumption, not a current HBW financing offer.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
 
 For a 22-foot pontoon at $55,000, a separate planning assumption (not the Section 7 loan arithmetic) is roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 

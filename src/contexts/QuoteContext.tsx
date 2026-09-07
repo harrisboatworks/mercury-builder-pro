@@ -298,6 +298,7 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         selectedPromoRate: null,
         selectedPromoTerm: null,
         selectedPromoValue: null,
+        selectedPaymentMethod: null,
         completedSteps: [],
         currentStep: 1,
         uiFlags: {},

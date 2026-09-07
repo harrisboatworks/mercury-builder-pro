@@ -1,4 +1,8 @@
 import "@testing-library/jest-dom";
+import { MotionGlobalConfig } from "framer-motion";
+
+// happy-dom 20.14.0 rejects Animation.cancel(); framer-motion unmount has no .catch().
+MotionGlobalConfig.skipAnimations = true;
 
 if (typeof window !== "undefined") {
   Object.defineProperty(window, "matchMedia", {

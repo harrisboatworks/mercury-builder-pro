@@ -18,6 +18,9 @@ verify_jwt = false
 [functions.process-notifications]
 verify_jwt = false
 
+[functions.send-notification]
+verify_jwt = true
+
 [functions.notification-webhook]
 verify_jwt = false
 
