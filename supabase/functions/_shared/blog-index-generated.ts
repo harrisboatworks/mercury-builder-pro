@@ -3155,8 +3155,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-smartcraft-alarm-codes-encyclopedia",
-    "title": "Mercury SmartCraft Alarm Codes Ontario",
-    "description": "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.",
+    "title": "Mercury Alarm Codes List Ontario",
+    "description": "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause.",
     "category": "Troubleshooting",
     "publishDate": "2026-02-06",
     "keywords": [
