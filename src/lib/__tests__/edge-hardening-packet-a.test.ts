@@ -11,10 +11,9 @@ import {
   resolveAllowedQuotePdfUrl,
 } from "../../../supabase/functions/_shared/quote-pdf-url.ts";
 import {
-  replaceSubjectTemplateVariables,
   replaceTemplateVariables,
   sanitizeEmailSubject,
-} from "../../../supabase/functions/_shared/quote-email-template.ts";
+} from "../../../supabase/functions/send-quote-email/template-policy.ts";
 import {
   fetchAllowedDropboxFile,
   readLimitedDropboxFile,
@@ -179,15 +178,16 @@ describe("Packet A edge hardening", () => {
         motorModel: "<script>x</script>",
         totalPrice: 1234,
       },
+      "html",
     );
     expect(rendered).toContain("&lt;img src=x onerror=&quot;alert(1)&quot;&gt;");
-    expect(rendered).toContain("&lt;&amp;&#39;&quot;");
+    expect(rendered).toContain("&lt;&amp;'&quot;");
     expect(rendered).toContain("&lt;script&gt;x&lt;/script&gt;");
     expect(rendered).not.toContain("<img");
   });
 
   it("keeps DB subject substitutions plain while stripping header newlines", () => {
-    const rendered = replaceSubjectTemplateVariables(
+    const rendered = replaceTemplateVariables(
       "Your {{motorModel}} quote for {{customerName}} ({{quoteNumber}})",
       {
         customerName: "O'Brien & Sons\r\nBcc: attacker@example.com",
@@ -195,6 +195,7 @@ describe("Packet A edge hardening", () => {
         motorModel: "Sea <Pro> & Sport",
         totalPrice: 1234,
       },
+      "subject",
     );
 
     expect(rendered).toBe(
@@ -203,9 +204,9 @@ describe("Packet A edge hardening", () => {
     expect(rendered).not.toContain("&amp;");
     expect(rendered).not.toMatch(/[\r\n]/);
     expect(sanitizeEmailSubject("Hello\r\nBcc: attacker@example.com")).toBe("Hello Bcc: attacker@example.com");
-    expect(read("supabase/functions/send-quote-email/index.ts")).toContain(
-      "subject = replaceSubjectTemplateVariables(template.subject, emailData)",
-    );
+    const source = read("supabase/functions/send-quote-email/index.ts");
+    expect(source).toContain('replaceTemplateVariables(template.subject, emailData, "subject")');
+    expect(source).toContain("subject = sanitizeEmailSubject(subject)");
   });
 
   it("keeps Dropbox tokens server-side and gates every privileged Dropbox path", () => {
