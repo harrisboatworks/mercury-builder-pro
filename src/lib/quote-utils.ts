@@ -4,6 +4,7 @@
  */
 
 import { calculateMercuryPlatinumExtensionCost } from '@/data/mercuryProductProtection';
+import { applyTradeCredit } from '@/lib/trade-credit';
 
 export interface PricingBreakdown {
   msrp: number;
@@ -14,6 +15,9 @@ export interface PricingBreakdown {
   tax: number;
   total: number;
   savings: number;
+  appliedTradeCredit?: number;
+  tradeEstimate?: number;
+  tradeTaxSaving?: number;
 }
 
 export interface MonthlyPayment {
@@ -87,24 +91,28 @@ export function computeTotals(data: {
     taxRate = 0.13 // 13% HST for Canada
   } = data;
 
-  // Calculate MSRP (assume motor price includes any dealer discount already applied)
-  const discount = 0; // Motor price is already discounted
+  const discount = 0;
   const msrp = motorPrice;
-  
-  const subtotal = motorPrice + accessoryTotal - tradeInValue;
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
-  const savings = discount + promotionalSavings + tradeInValue;
+  const preTradeSubtotal = motorPrice + accessoryTotal;
+  const applied = applyTradeCredit({
+    preTradeSubtotal,
+    estimatedValue: tradeInValue,
+    taxRate,
+  });
+  const savings = discount + promotionalSavings + applied.credit;
 
   return {
     msrp,
     discount,
     adminDiscount: 0,
     promoValue: promotionalSavings,
-    subtotal,
-    tax,
-    total,
-    savings
+    subtotal: applied.subtotal,
+    tax: applied.tax,
+    total: applied.total,
+    savings,
+    appliedTradeCredit: applied.credit,
+    tradeEstimate: applied.estimate,
+    tradeTaxSaving: applied.taxSaving,
   };
 }
 
@@ -137,22 +145,26 @@ export function calculateQuotePricing(data: {
   const msrp = motorMSRP;
   const discount = motorDiscount;
   const promoValue = promotionalSavings;
-  
-  // Motor after discount + admin discount + accessories + warranty + financing fee - trade-in - promos
-  const subtotal = (msrp - discount - adminDiscount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
-  const savings = discount + adminDiscount + promoValue + tradeInValue;
-  
+  const preTradeSubtotal = (msrp - discount - adminDiscount) + accessoryTotal + warrantyPrice + financingFee - promoValue;
+  const applied = applyTradeCredit({
+    preTradeSubtotal,
+    estimatedValue: tradeInValue,
+    taxRate,
+  });
+  const savings = discount + adminDiscount + promoValue + applied.credit;
+
   return {
     msrp,
     discount,
     adminDiscount,
     promoValue,
-    subtotal,
-    tax,
-    total,
-    savings
+    subtotal: applied.subtotal,
+    tax: applied.tax,
+    total: applied.total,
+    savings,
+    appliedTradeCredit: applied.credit,
+    tradeEstimate: applied.estimate,
+    tradeTaxSaving: applied.taxSaving,
   };
 }
 

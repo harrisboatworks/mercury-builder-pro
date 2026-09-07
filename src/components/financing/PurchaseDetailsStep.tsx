@@ -19,6 +19,7 @@ import {
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { financingAmountToFinance, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -50,6 +51,9 @@ export function PurchaseDetailsStep() {
       promoName: state.purchaseDetails?.promoName || null,
       promoSavings: state.purchaseDetails?.promoSavings ?? null,
       promoCombinationMode: state.purchaseDetails?.promoCombinationMode || null,
+      priceBasis: state.purchaseDetails?.priceBasis,
+      includedTradeInValue: state.purchaseDetails?.includedTradeInValue ?? state.purchaseDetails?.tradeInValue ?? 0,
+      preTradeSubtotal: state.purchaseDetails?.preTradeSubtotal,
     },
   });
 
@@ -58,7 +62,8 @@ export function PurchaseDetailsStep() {
   const downPayment = watch('downPayment');
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
-  const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+  const priceBasis = watch('priceBasis') || state.purchaseDetails?.priceBasis;
+  const amountToFinance = financingAmountToFinance(motorPrice, downPayment, tradeInValue, priceBasis, { includedTradeInValue: watch('includedTradeInValue'), preTradeSubtotal: watch('preTradeSubtotal') });
 
   // Keep the derived amount inside react-hook-form as well as on screen.
   // Without this synchronization the schema continues validating the initial
@@ -143,6 +148,7 @@ export function PurchaseDetailsStep() {
       payload: {
         ...data,
         amountToFinance,
+        priceBasis,
         // Preserve promo details
         promoOption,
         promoRate,
@@ -432,7 +438,7 @@ export function PurchaseDetailsStep() {
       </div>}
 
       {/* Trade-In Value */}
-      {tradeInValue > 0 && (
+      {(tradeInValue > 0 || (state.purchaseDetails?.tradeInValue || 0) > 0) && (
         <div className="space-y-2 animate-fade-in">
           <Label htmlFor="tradeInValue">Trade-In Value (Optional)</Label>
           <div className="relative">
@@ -453,7 +459,9 @@ export function PurchaseDetailsStep() {
           </div>
           <FormErrorMessage error={errors.tradeInValue?.message} field="Trade-in value" />
           <p className="text-sm text-muted-foreground font-light">
-            {money(tradeInValue)} credit applied
+            {priceBasis === FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE
+              ? `${money(tradeInValue)} trade credit; the amount to finance includes the corresponding HST savings`
+              : `${money(tradeInValue)} credit applied`}
           </p>
         </div>
       )}

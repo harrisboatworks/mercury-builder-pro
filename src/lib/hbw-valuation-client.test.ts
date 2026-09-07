@@ -81,6 +81,18 @@ describe('HBW valuation client result contract', () => {
     expect(sentBody).toMatchObject({ hp: 115, model: '115 ELPT', stroke: '2-stroke' });
   });
 
+  it('forwards explicit zero hours in the valuation request body', async () => {
+    let sentBody: Record<string, unknown> | undefined;
+    await fetchHBWValuationFromInvoker(
+      { ...params, hours: 0 },
+      async (_name, options) => {
+        sentBody = options.body;
+        return { data: successPayload, error: null };
+      },
+    );
+    expect(sentBody).toMatchObject({ hours: 0 });
+  });
+
   it.each([400, 422])('classifies HTTP %s as rejected input', async (status) => {
     const result = await fetchHBWValuationFromInvoker(params, async () => ({
       data: null,

@@ -29,6 +29,7 @@ const quoteFieldControlClass =
   'min-h-[48px] rounded-sm border-repower-navy-900/15 bg-repower-paper font-sans text-repower-navy-900';
 
 interface BoatInformationProps {
+  initialBoatInfo?: BoatInfo | null;
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
   selectedMotor: Motor | null;
@@ -36,6 +37,7 @@ interface BoatInformationProps {
   onShowCompatibleMotors?: () => void;
 }
 export const BoatInformation = ({
+  initialBoatInfo,
   onStepComplete,
   onBack,
   selectedMotor,
@@ -54,7 +56,8 @@ export const BoatInformation = ({
     controlType: 'side-mount-external',
     shaftLength: '',
     hasBattery: false,
-    hasCompatibleProp: false
+    hasCompatibleProp: false,
+    ...initialBoatInfo,
   });
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
     hasTradeIn: false,

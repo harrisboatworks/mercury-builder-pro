@@ -3,24 +3,11 @@ import { Link } from 'react-router-dom';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
-import { formatFinancingRate } from '@/lib/finance';
 import { CodeBlock } from '@/components/agents/CodeBlock';
 
-const POST_PROMO_FINANCING_RATES_FAQ =
-  'After the current promotion ends, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance. A $349 DealerPlan fee is added post-tax for financed purchases. Financing minimum is $5,000 CAD; do not show monthly payment estimates below $5,000.';
-
-const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
-  ? `Current headline financing: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers ${formatFinancingRate()} (OAC) on new eligible Mercury outboards. ${POST_PROMO_FINANCING_RATES_FAQ}`
-  : `Current standard financing: ${POST_PROMO_FINANCING_RATES_FAQ.replace('After the current promotion ends, standard tiered rates resume: ', '')} Promotional manufacturer rates run periodically; see /promotions for the current offer.`;
-
-const POST_PROMO_FINANCING_RATES_BULLET =
-  'After the promotion ends, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance.';
-
-const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
-  ? `Current headline financing is ${formatFinancingRate()} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC). ${POST_PROMO_FINANCING_RATES_BULLET}`
-  : `Current standard financing: ${POST_PROMO_FINANCING_RATES_BULLET.replace('After the promotion ends, standard tiered rates resume: ', '')} Promotional manufacturer rates run periodically; see /promotions for the current offer.`;
-
+const FINANCING_RATES_FAQ_TEXT =
+  'Request build_quote for the selected motor and purchase options. Its financing response reports available offers, eligibility, APR, amount financed, fees, amortization and contract term from the active financing records. These are estimates subject to lender approval. Do not substitute a cached headline rate or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.';
+const FINANCING_RATES_BULLET = FINANCING_RATES_FAQ_TEXT;
 
 const AGENTS_API_BASE = 'https://www.mercuryrepower.ca/api/agents';
 const PUBLIC_MOTORS_API = `${AGENTS_API_BASE}/motors`;
@@ -78,7 +65,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do AI agents access live Mercury inventory and pricing from Harris Boat Works?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Three options: (1) Register the MCP server at https://www.mercuryrepower.ca/api/agents/mcp in Claude Desktop, Cursor, or any MCP-compatible client. (2) Call the public REST API at https://www.mercuryrepower.ca/api/agents/motors (GET, no auth, CORS open). (3) Fetch markdown twins for LLM-cheap context. All three return CAD pricing and are cached 5 minutes." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Three options: (1) Register the MCP server at https://www.mercuryrepower.ca/api/agents/mcp in Claude Desktop, Cursor, or any MCP-compatible client. (2) Call the public REST API at https://www.mercuryrepower.ca/api/agents/motors (GET, no auth, CORS open). (3) Fetch markdown twins for LLM-cheap context. All three return CAD pricing; the public REST inventory feed is cached for 5 minutes." }
                 },
                 {
                   "@type": "Question",
@@ -93,7 +80,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do I send a customer to a prefilled Harris Boat Works quote configurator?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, any combination of params is supported. Get MOTOR_ID from list_motors or search_motors." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, supported fields are validated and treated as provisional buyer inputs. Get MOTOR_ID from list_motors or search_motors." }
                 },
                 {
                   "@type": "Question",
@@ -124,7 +111,7 @@ export default function AgentsHub() {
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 
-      <main className="max-w-4xl mx-auto px-4 py-12 prose prose-slate">
+      <main className="[overflow-wrap:anywhere] max-w-4xl mx-auto px-4 py-12 prose prose-slate">
         <h1 className="heading-protected text-4xl font-bold mb-4">
           For AI Agents & Assistants
         </h1>
@@ -133,10 +120,7 @@ export default function AgentsHub() {
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
           specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
-          cannot release a motor to a courier, shipping company, or any other third party. HBW is a live
-          Universal Commerce Protocol merchant (UCP 2026-04-08, verified with Shopify's <code>ucp-cli</code>{' '}
-          on June 11, 2026) with checkout in quote mode and fulfillment capabilities, served over both REST
-          and MCP transports.
+          cannot release a motor to a courier, shipping company, or any other third party. The UCP endpoint declares version 2026-04-08 for quote-mode checkout and pickup fulfillment over REST and MCP transports.
         </p>
 
         <aside className="text-protected mb-8 rounded-lg border border-repower-navy-900/10 bg-white p-5 text-base">
@@ -166,10 +150,7 @@ export default function AgentsHub() {
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
           <p className="m-0">
-            <strong>UCP live and verified.</strong> Harris Boat Works is a live Universal Commerce
-            Protocol merchant (spec 2026-04-08), end-to-end verified with Shopify's official{' '}
-            <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
-            implementing UCP. Discovery profile:{' '}
+            <strong>UCP quote mode.</strong> The endpoint declares spec 2026-04-08 for quote-mode checkout and pickup fulfillment. Discovery profile:{' '}
             <a href="/.well-known/ucp" className="text-primary underline">
               /.well-known/ucp
             </a>
@@ -177,10 +158,10 @@ export default function AgentsHub() {
           </p>
           <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
           <p className="m-0 mt-2">
-            Quote mode: agents can build a real CAD quote (with HST estimate and trade-in context),
+            Quote mode: agents can estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded; use the Public Quote API for an itemized repower estimate,
             but the dealer completes every sale with the buyer in person at Gores Landing with valid
             government photo ID. If an agent includes buyer contact (name + email) in a checkout
-            session, that quote is registered with the dealership for human follow-up.
+            session, check the returned lead-capture status before claiming it was registered for dealership follow-up.
           </p>
         </aside>
 
@@ -293,10 +274,6 @@ export default function AgentsHub() {
     "trade_in": {
       "brand": "Mercury", "year": 2010, "horsepower": 75,
       "condition": "good", "engine_type": "4-stroke", "engine_hours": 800
-    },
-    "contact": {
-      "name": "Jane Doe", "email": "jane@example.com",
-      "referrer": "ChatGPT"
     }
   }'`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
@@ -314,25 +291,21 @@ export default function AgentsHub() {
             Tech Council. Harris Boat Works implements UCP <strong>2026-04-08</strong> with two
             capabilities, <code>dev.ucp.shopping.checkout</code> (quote mode) and{' '}
             <code>dev.ucp.shopping.fulfillment</code>, served over both REST and MCP transports at
-            the same branded endpoint, <code>https://www.mercuryrepower.ca/api/agents/ucp</code>. Verified with Shopify's official{' '}
-            <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
-            implementing UCP.
+            the same branded endpoint, <code>https://www.mercuryrepower.ca/api/agents/ucp</code>. Check the discovery response and implemented tool catalog when building an integration.
           </p>
           <p className="text-protected">
             Discovery profile:{' '}
             <a href="/.well-known/ucp" className="text-primary underline">
               {SITE_URL}/.well-known/ucp
             </a>
-            . Reproduce the verification yourself:
+            . Inspect discovery:
           </p>
           <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
           <p className="text-protected">
-            <strong>Quote mode means:</strong> agents build a real CAD quote with HST estimate and
-            trade-in context, and the dealer completes every sale with the buyer in person at Gores
+            <strong>Quote mode means:</strong> agents estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded, and the dealer completes every sale with the buyer in person at Gores
             Landing with valid government photo ID. Payment is never collected over UCP. This is the
             spec-sanctioned quote-generation use case. If an agent passes buyer contact (name +
-            email) into a checkout session, that quote is registered with the dealership for
-            follow-up.
+            email) into a checkout session, check the returned lead-capture status before claiming it was registered for follow-up.
           </p>
           <p className="text-protected">
             UCP-aligned capabilities at HBW also surface via MCP: catalog search via{' '}
@@ -409,16 +382,9 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
         <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Deep-link prefilled quote URLs</h2>
           <p className="text-protected">
-            Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
-            params is supported:
+            Prefill the selected motor and the boat/trade-in fields shown below. These are provisional buyer inputs; missing details, fitment, valuation and pricing still require confirmation:
           </p>
-          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection
-  ?motor={MOTOR_ID}            // from list_motors response
-  &boat_make=Lund
-  &boat_model=Pro-V
-  &trade_brand=Mercury
-  &trade_year=2010
-  &trade_hp=75`}</CodeBlock>
+          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection?motor={MOTOR_ID}&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75`}</CodeBlock>
         </section>
 
         <section className="mb-10">
@@ -459,8 +425,7 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
               <strong>Financing rates:</strong> {FINANCING_RATES_BULLET}
             </li>
             <li>
-              <strong>Deposits:</strong> Standard amounts are $200 under 75 HP, $500 for 75–199 HP, and $1,000
-              for 200 HP+. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. It is
+              <strong>Deposits:</strong> The quote response supplies the deposit from the shared motor reservation policy. Use that returned amount rather than estimating from horsepower. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. It is
               fully refundable until HBW confirms the exact motor, price, availability and ETA, and the customer
               approves the order in writing. After written approval, it becomes non-refundable and is credited to
               the final invoice. Other motors follow the terms shown in the written quote.

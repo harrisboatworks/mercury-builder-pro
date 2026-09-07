@@ -8,6 +8,7 @@ import { AudioIssuePrompt } from '@/components/chat/AudioIssuePrompt';
 import { VoiceDiagnosticsPanel } from '@/components/chat/VoiceDiagnosticsPanel';
 import { VOICE_NAVIGATION_EVENT, type MotorForQuote } from '@/lib/voiceNavigation';
 import { useToast } from '@/hooks/use-toast';
+import { buildPromoteTradeInFromVoiceCard, isUsableVoiceTradeInCard, type VoiceTradeInCard } from '@/lib/voice-trade-in';
 
 interface VoiceContextType {
   isConnected: boolean;
@@ -215,28 +216,26 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
       
       // Handle apply trade-in
-      if (type === 'apply_trade_in' && payload?.tradeInInfo) {
-        const tradeIn = payload.tradeInInfo as { brand: string; year: number; horsepower: number; estimatedValue: number };
+      if (type === 'apply_trade_in' && (payload?.tradeInInfo || payload?.card)) {
+        const tradeIn = (payload.card || payload.tradeInInfo) as Partial<VoiceTradeInCard>;
         console.log('[VoiceContext] Applying trade-in:', tradeIn);
-        
-        dispatch({ 
-          type: 'SET_TRADE_IN_INFO', 
-          payload: {
-            hasTradeIn: true,
-            brand: tradeIn.brand,
-            year: tradeIn.year,
-            horsepower: tradeIn.horsepower,
-            model: '',
-            serialNumber: '',
-            condition: 'good',
-            estimatedValue: tradeIn.estimatedValue,
-            confidenceLevel: 'medium',
-          }
+        if (!isUsableVoiceTradeInCard(tradeIn)) {
+          toast({
+            title: 'Trade-in not applied',
+            description: 'That estimate is stale or no longer matches the live valuation.',
+            variant: 'destructive',
+          });
+          return;
+        }
+
+        dispatch({
+          type: 'PROMOTE_TRADE_IN',
+          payload: buildPromoteTradeInFromVoiceCard(tradeIn),
         });
         
         toast({
           title: "Trade-in added",
-          description: `Trade-in value: $${tradeIn.estimatedValue.toLocaleString()}`,
+          description: `Trade-in value: $${tradeIn.wholesale.toLocaleString()}`,
         });
       }
       

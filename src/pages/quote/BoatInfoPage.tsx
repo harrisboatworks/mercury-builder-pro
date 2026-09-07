@@ -92,6 +92,7 @@ export default function BoatInfoPage() {
           className="!py-6 md:!py-8"
         >
           <BoatInformation
+            initialBoatInfo={state.boatInfo}
             onStepComplete={handleStepComplete}
             onBack={handleBack}
             selectedMotor={state.motor!}
