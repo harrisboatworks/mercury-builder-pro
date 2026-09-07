@@ -5,6 +5,7 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 import {
   CONSULTATION_DOCUMENTS_BUCKET,
   ConsultationDocumentRequestError,
@@ -536,13 +537,17 @@ serve(async (req) => {
 
     console.log('Email sent successfully:', emailResponse);
 
-    // Log the email activity
-    await supabase
-      .from('customer_quotes')
-      .update({
-        notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
-      })
-      .eq('quote_number', emailData.quoteNumber);
+    // Public quote delivery remains available, but only a verified admin may
+    // write internal quote notes through the service-role client.
+    const admin = await requireAdmin(req, corsHeaders);
+    if (!(admin instanceof Response) && emailData.leadData?.quoteId) {
+      await supabase
+        .from('customer_quotes')
+        .update({
+          notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
+        })
+        .eq('id', emailData.leadData.quoteId);
+    }
 
     return new Response(
       JSON.stringify({ 
