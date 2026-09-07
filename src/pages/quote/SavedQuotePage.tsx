@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useQuote } from "@/contexts/QuoteContext";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { isConsultationSubmittedQuote } from "@/lib/submitted-quote";
+import { isPublicConsultationSubmittedQuote } from "@/lib/submitted-quote";
 
 export default function SavedQuotePage() {
   useNoIndex();
@@ -50,9 +50,10 @@ export default function SavedQuotePage() {
         }
 
         // Nested consultation snapshots are receipts. Restoring them into the
-        // live builder would reprice against today's calculator.
+        // live builder would reprice against today's calculator. The public
+        // DTO strips `source`; get-shared-quote derives this boolean instead.
         const quoteData = quote.quote_data;
-        if (isConsultationSubmittedQuote(quoteData)) {
+        if (isPublicConsultationSubmittedQuote(quoteData)) {
           setSubmittedQuote(quoteData);
           return;
         }

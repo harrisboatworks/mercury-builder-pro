@@ -84,7 +84,10 @@ function sanitizeMotor(value: unknown): JsonRecord | undefined {
   return copyPrimitives(value, MOTOR_KEYS);
 }
 
-function sanitizeTrade(value: unknown): JsonRecord | undefined {
+function sanitizeTrade(
+  value: unknown,
+  mapReceiptValue = false,
+): JsonRecord | undefined {
   if (!isRecord(value)) return undefined;
   const result = copyPrimitives(value, TRADE_KEYS);
 
@@ -99,6 +102,16 @@ function sanitizeTrade(value: unknown): JsonRecord | undefined {
   }
   if (!("confidenceLevel" in result) && isPrimitive(value.confidence)) {
     result.confidenceLevel = value.confidence;
+  }
+  // Consultation receipts store the customer-visible credit as `value`.
+  // Keep the public key `estimatedValue`; never re-emit `value`.
+  if (
+    mapReceiptValue
+    && !("estimatedValue" in result)
+    && typeof value.value === "number"
+    && Number.isFinite(value.value)
+  ) {
+    result.estimatedValue = value.value;
   }
   return result;
 }
@@ -154,9 +167,23 @@ function sanitizeFrozenPricing(value: unknown): JsonRecord | undefined {
   return copyPrimitives(value, FROZEN_PRICING_KEYS);
 }
 
-function sanitizePricing(value: unknown): JsonRecord | undefined {
+function sanitizePricing(
+  value: unknown,
+  mapReceiptTotal = false,
+): JsonRecord | undefined {
   if (!isRecord(value)) return undefined;
-  return copyPrimitives(value, PRICING_KEYS);
+  const result = copyPrimitives(value, PRICING_KEYS);
+  // Consultation receipts persist the emailed cash total as `totalPrice`.
+  // Keep the public key `totalCashPrice`; never re-emit `totalPrice`.
+  if (
+    mapReceiptTotal
+    && !("totalCashPrice" in result)
+    && typeof value.totalPrice === "number"
+    && Number.isFinite(value.totalPrice)
+  ) {
+    result.totalCashPrice = value.totalPrice;
+  }
+  return result;
 }
 
 function sanitizePromotion(value: unknown): JsonRecord | undefined {
@@ -198,6 +225,12 @@ function sanitizePdfSnapshot(value: unknown): JsonRecord | undefined {
   return result;
 }
 
+const CONSULTATION_SUBMITTED_SOURCE = "consultation-submit";
+
+function isConsultationSubmittedSource(value: JsonRecord): boolean {
+  return value.source === CONSULTATION_SUBMITTED_SOURCE;
+}
+
 /**
  * Build the only JSON shape that an unauthenticated UUID bearer may receive.
  * Unknown fields fail closed. Customer contact details, serial numbers, dealer
@@ -207,12 +240,16 @@ function sanitizePdfSnapshot(value: unknown): JsonRecord | undefined {
 export function buildPublicQuoteData(value: unknown): JsonRecord {
   if (!isRecord(value)) return {};
 
+  // Derived from the raw stored source. Never copied from a caller-supplied
+  // flag, and never accompanied by source / quoteNumber / customer.
+  const isConsultationSubmitted = isConsultationSubmittedSource(value);
   const result = copyPrimitives(value, PUBLIC_SCALAR_KEYS);
+  result.isConsultationSubmitted = isConsultationSubmitted;
   const motor = sanitizeMotor(value.motor);
   const selectedMotor = sanitizeMotor(value.selectedMotor);
   const boatInfo = sanitizeBoat(value.boatInfo);
   const tradeInInfo = sanitizeTrade(value.tradeInInfo);
-  const tradeIn = sanitizeTrade(value.tradeIn);
+  const tradeIn = sanitizeTrade(value.tradeIn, isConsultationSubmitted);
   const fuelTankConfig = isRecord(value.fuelTankConfig)
     ? copyPrimitives(value.fuelTankConfig, ["externalTank"])
     : undefined;
@@ -224,11 +261,12 @@ export function buildPublicQuoteData(value: unknown): JsonRecord {
   const warrantyConfig = sanitizeWarranty(value.warrantyConfig);
   const selectedOptions = sanitizeSelectedOptions(value.selectedOptions);
   const selectedPackage = sanitizeSelectedPackage(value.selectedPackage);
-  const accessoryBreakdown = sanitizeLineItems(value.accessoryBreakdown);
+  const accessoryBreakdown = sanitizeLineItems(value.accessoryBreakdown)
+    ?? (isConsultationSubmitted ? sanitizeLineItems(value.accessories) : undefined);
   const adminCustomItems = sanitizeLineItems(value.adminCustomItems);
   const frozenPricing = sanitizeFrozenPricing(value.frozenPricing);
   const pdfSnapshot = sanitizePdfSnapshot(value.pdfSnapshot);
-  const pricing = sanitizePricing(value.pricing);
+  const pricing = sanitizePricing(value.pricing, isConsultationSubmitted);
   const uiFlags = isRecord(value.uiFlags)
     ? copyPrimitives(value.uiFlags, ["motorOnlyExpress", "suppressAdditionalPromoSavings"])
     : undefined;

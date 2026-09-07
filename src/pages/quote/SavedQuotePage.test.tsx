@@ -6,7 +6,8 @@ import {
   exactSubmittedConsultationQuote,
   legacySavedQuote,
 } from '@/test/consultation-submitted-quote.fixtures';
-import { isConsultationSubmittedQuote } from '@/lib/submitted-quote';
+import { isPublicConsultationSubmittedQuote } from '@/lib/submitted-quote';
+import { buildPublicQuoteData } from '../../../supabase/functions/get-shared-quote/public-quote';
 
 const mocks = vi.hoisted(() => ({
   quoteId: '11111111-1111-4111-8111-111111111111',
@@ -44,8 +45,14 @@ describe('SavedQuotePage', () => {
   });
 
   it('renders a consultation snapshot and never restores the live builder', async () => {
-    const quote = exactSubmittedConsultationQuote();
-    expect(isConsultationSubmittedQuote(quote)).toBe(true);
+    const quote = buildPublicQuoteData(exactSubmittedConsultationQuote());
+    expect(isPublicConsultationSubmittedQuote(quote)).toBe(true);
+    expect(quote).not.toHaveProperty('source');
+    expect(quote).not.toHaveProperty('quoteNumber');
+    expect(quote).not.toHaveProperty('customer');
+    expect(quote).not.toHaveProperty('accessories');
+    expect(quote.pricing).not.toHaveProperty('totalPrice');
+    expect(quote.tradeIn).not.toHaveProperty('value');
     mocks.invoke.mockResolvedValue({
       data: {
         quote_data: quote,
@@ -57,7 +64,7 @@ describe('SavedQuotePage', () => {
     render(<SavedQuotePage />);
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'Submitted quote HBW-150193' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Submitted quote' })).toBeInTheDocument();
     });
 
     expect(mocks.invoke).toHaveBeenCalledWith('get-shared-quote', {
@@ -65,6 +72,12 @@ describe('SavedQuotePage', () => {
     });
     expect(screen.getByText('Total cash price').parentElement).toHaveTextContent(SUBMITTED_QUOTE_CAD(18193));
     expect(screen.getByText('150 HP · 2026')).toBeInTheDocument();
+    expect(screen.getByText('Stainless steering kit')).toBeInTheDocument();
+    expect(screen.getByText(SUBMITTED_QUOTE_CAD(-2500))).toBeInTheDocument();
+    expect(screen.queryByText('HBW-150193')).not.toBeInTheDocument();
+    expect(screen.queryByText('Alex Rivera')).not.toBeInTheDocument();
+    expect(screen.queryByText('alex@example.com')).not.toBeInTheDocument();
+    expect(screen.queryByText('Ignored live name')).not.toBeInTheDocument();
     expect(screen.queryByText('Loading your saved quote...')).not.toBeInTheDocument();
     expect(mocks.dispatch).not.toHaveBeenCalled();
     expect(mocks.navigate).not.toHaveBeenCalledWith('/quote/summary');
@@ -72,8 +85,8 @@ describe('SavedQuotePage', () => {
   });
 
   it('still restores a legacy saved quote into the builder and opens summary', async () => {
-    const quote = legacySavedQuote();
-    expect(isConsultationSubmittedQuote(quote)).toBe(false);
+    const quote = buildPublicQuoteData(legacySavedQuote());
+    expect(isPublicConsultationSubmittedQuote(quote)).toBe(false);
     mocks.invoke.mockResolvedValue({
       data: {
         quote_data: quote,

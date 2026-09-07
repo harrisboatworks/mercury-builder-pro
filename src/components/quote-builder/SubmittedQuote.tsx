@@ -5,12 +5,20 @@ const cad = (value: number) => new Intl.NumberFormat('en-CA', { style: 'currency
 /** A submitted quote is a receipt, not input to today's pricing calculator. */
 export default function SubmittedQuote({ quote }: { quote: any }) {
   const p = quote.pricing || {};
+  // Admin receipts keep totalPrice / accessories / tradeIn.value. The public
+  // DTO exposes the same figures as totalCashPrice / accessoryBreakdown /
+  // estimatedValue and never re-widens the stripped keys.
+  const totalCashPrice = typeof p.totalPrice === 'number' ? p.totalPrice : p.totalCashPrice;
+  const accessories = Array.isArray(quote.accessories) ? quote.accessories : quote.accessoryBreakdown;
+  const tradeInValue = typeof quote.tradeIn?.value === 'number'
+    ? quote.tradeIn.value
+    : quote.tradeIn?.estimatedValue;
   const money = (label: string, value: unknown) => typeof value === 'number' && Number.isFinite(value)
     ? <div className="flex justify-between gap-4" key={label}><span>{label}</span><span>{cad(value)}</span></div> : null;
-  const rounding = typeof p.totalPrice === 'number' && typeof p.subtotal === 'number' && typeof p.hst === 'number'
-    ? p.totalPrice - Math.round((p.subtotal + p.hst) * 100) / 100 : 0;
+  const rounding = typeof totalCashPrice === 'number' && typeof p.subtotal === 'number' && typeof p.hst === 'number'
+    ? totalCashPrice - Math.round((p.subtotal + p.hst) * 100) / 100 : 0;
   return <Card className="p-6 space-y-5 md:col-span-2">
-    <div><h2 className="text-xl font-semibold">Submitted quote {quote.quoteNumber}</h2>
+    <div><h2 className="text-xl font-semibold">Submitted quote{quote.quoteNumber ? ` ${quote.quoteNumber}` : ''}</h2>
       <p className="text-muted-foreground">{quote.customer?.name}</p>
       {quote.validUntil && <p className="text-sm">Valid until {new Date(quote.validUntil).toLocaleDateString('en-CA')}</p>}
     </div>
@@ -21,18 +29,18 @@ export default function SubmittedQuote({ quote }: { quote: any }) {
       {money('Motor MSRP', p.msrp)}
       {p.discount > 0 && money('Dealer discount', -p.discount)}
       {money('Motor price', p.motorSubtotal)}
-      {(quote.accessories || []).map((item: any, index: number) => <div key={index}>
+      {(accessories || []).map((item: any, index: number) => <div key={index}>
         {money(item.name, item.price)}
         {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
       </div>)}
-      {quote.tradeIn?.value > 0 && <div>
-        {money('Trade-in credit', -quote.tradeIn.value)}
+      {tradeInValue > 0 && <div>
+        {money('Trade-in credit', -tradeInValue)}
         <p className="text-sm text-muted-foreground">{[quote.tradeIn.year, quote.tradeIn.brand, quote.tradeIn.model].filter(Boolean).join(' ')}</p>
       </div>}
       <div className="border-t pt-3 space-y-2">
         {money('Subtotal', p.subtotal)}{money('HST (13%)', p.hst)}
         {Math.abs(rounding) >= 0.005 && money('Quote rounding', rounding)}
-        <div className="text-lg font-bold">{money('Total cash price', p.totalPrice)}</div>
+        <div className="text-lg font-bold">{money('Total cash price', totalCashPrice)}</div>
       </div>
     </div>
     {quote.financing && <div className="border-t pt-3 space-y-2">
