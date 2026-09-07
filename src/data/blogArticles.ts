@@ -19916,14 +19916,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
-    title: 'Mercury SmartCraft Alarm Codes Ontario',
-    seoTitle: "Mercury SmartCraft Alarm Codes | HBW Reference 2026",
-    description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.",
+    title: 'Mercury Alarm Codes List Ontario',
+    seoTitle: "Mercury Alarm Codes List Ontario | Harris Boat Works",
+    description: "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause.",
     image: '/lovable-uploads/blog-audit-2026-09/alarm-is-information.svg',
     imageAlt: 'Diagram connecting warning information, the engine model and serial number, and the exact manual response. Follow the warning response immediately; record details only when safe.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-07",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -20045,7 +20045,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is VesselView Mobile still available?", answer: "Mercury has superseded VesselView Mobile with SmartCraft Connect Mobile. Legacy VesselView Mobile hardware still uses the VesselView Mobile app, but new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works." },
       { question: "My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?", answer: "False or incorrect Optimax low-oil alarms can come from several causes per Mercury\'s service manual: unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank. Float-magnet separation is one of the causes we see, not the only one. Diagnosis starts with the delivery lines and cap; if the float itself is failed the manual\'s remedy is oil tank replacement." },
       { question: "Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?", answer: "Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure." },
-      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "Current V8/V10/V12 Verados are naturally aspirated. Older supercharged inline-six Verados have different systems and may have supercharger-related faults; use the manual and diagnostics for the actual engine. Those older engines are still in service, so their information is not obsolete." }
+      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "Current V8/V10/V12 Verados are naturally aspirated. Older supercharged inline-six Verados have different systems and may have supercharger-related faults; use the manual and diagnostics for the actual engine. Those older engines are still in service, so their information is not obsolete." },
+      { question: "What does SYS FAULT mean on a Mercury SmartCraft display?", answer: "SYS FAULT means the system has detected a problem; the message alone isn't a diagnosis. Read the full warning and follow its instructions first. Once the boat is safe, photograph the display and note the engine serial number and what was happening when the alarm sounded. Those details help a Mercury technician interpret the fault. For an HBW diagnostic appointment in Gores Landing, call 905-342-2153." },
+      { question: "Is there a Mercury 4-stroke beep code PDF?", answer: "Start with the digital owner's manual for your exact engine, available through Mercury Marine's owner-manual lookup. Use the serial number on the outboard's transom bracket to find it. Warning-horn patterns and responses vary by engine family and model year, so a generic beep-code PDF may describe a different motor. This guide is a practical reference, not a replacement for that manual." },
+      { question: "How do you reset a Mercury SmartCraft alarm?", answer: "Dismissing a warning or restarting the engine doesn't prove the fault is fixed. Follow the warning response in your engine and display manuals, and correct the cause before trying to resume normal operation. Procedures for acknowledging a message, resetting Guardian operation, and clearing diagnostic history are different and depend on the equipment. If the warning persists or you can't identify its cause, have a Mercury dealer diagnose it." },
+      { question: "Why is my Mercury outboard alarm sounding when no code is showing?", answer: "A warning horn can alert you even without a display that shows fault text. Follow the warning-system instructions in the owner's manual for your engine; no visible code doesn't mean it's safe to keep running. Take the required action first and record the horn pattern only when safe. For an overheating or low-oil-pressure warning, stop the engine as directed. Don't treat a visible telltale stream or a normal oil level alone as proof that restarting is safe." }
     ],
   },
   {
