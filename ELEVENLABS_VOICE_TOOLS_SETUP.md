@@ -128,7 +128,7 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
 }
 ```
 
-Condition and architecture are requested conversationally if omitted; missing fields must not produce a numeric valuation. A successful result is an estimate subject to inspection. On unavailable/rate-limited/input-rejected results, explain the returned reason and offer to continue collecting details. Do not reuse an earlier motor's amount. Browser Apply to Quote must use the returned validated card, not an independently calculated value.
+Condition and architecture must be confirmed conversationally before calling estimate_trade_value; unknown is not confirmed. Missing required details must not produce a tool call or numeric valuation. A successful result is an estimate subject to inspection. On unavailable, timeout or rate-limited results, explain only the returned service failure and offer staff help; do not blame a missing model/hours or ask again for already supplied fields. Ask for a missing field only when explicitly identified by the returned error. Do not repeat an identical failed call unless inputs change or the customer requests another attempt. Do not reuse an earlier motor's amount. Browser Apply to Quote must use the returned validated card, not an independently calculated value.
 
 The client hook and MCP server implement the same tool name in different transports. This document is a configuration specification, not proof of the hosted dashboard state. See `docs/voice-trade-in-acceptance.md` for isolated canaries and read-only reconciliation. Do not alter the hosted agent or run customer actions merely to test this guide.
 
@@ -530,7 +530,7 @@ Add these sections to your agent's system prompt for the new capabilities:
 When customers ask about service costs, use estimate_service_cost. Describe the returned scope as an estimate; diagnosis and approved work establish the final invoice. Do not quote on tool failure.
 
 ### Trade-In Valuations
-When customers ask about trade-in value, use estimate_trade_value and wait for its response. Ask for missing condition and engine architecture. Preserve exact HP and known zero hours. On failure, explain the returned reason without quoting a fallback amount. Always caveat that final value requires inspection.
+When customers ask about trade-in value, use estimate_trade_value and wait for its response. Confirm condition and engine architecture before calling the tool; unknown is not confirmed. Preserve exact HP and known zero hours. On failure, explain the returned reason without quoting a fallback amount. Always caveat that final value requires inspection.
 
 ### Motor Recommendations
 When customers ask "what motor should I get?", use recommend_motor. Ask about their boat if you don't know.

@@ -52,6 +52,16 @@ describe('voice session policy and current knowledge', () => {
     expect(VOICE_SYSTEM_PROMPT).toContain('Do not give an estimate on failure');
   });
 
+  it('requires trade inputs before invocation and does not misdiagnose provider outages', () => {
+    const result = composeVoiceSystemPrompt(knowledge);
+    expect(result).toContain('Before calling estimate_trade_value, require both confirmed engine architecture and condition');
+    expect(result).toContain('ask for it first and do not call the tool yet');
+    expect(result).toContain('Unknown is not confirmed');
+    expect(result).toContain('service-unavailable, timeout or rate-limit result is not evidence that model, hours or another input is missing');
+    expect(result).toContain('only when the tool explicitly identifies that field and it has not already been provided');
+    expect(result).toContain('Do not repeat an identical failed call unless the inputs change or the customer explicitly asks');
+  });
+
   it('wires the shared policy into the token response used for website session overrides', () => {
     const tokenSource = readFileSync('supabase/functions/elevenlabs-conversation-token/index.ts', 'utf8');
     const hookSource = readFileSync('src/hooks/useElevenLabsVoice.ts', 'utf8');
