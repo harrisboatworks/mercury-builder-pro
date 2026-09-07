@@ -1,3 +1,7 @@
+import { parseCanonicalHbwValuation, type CanonicalHbwValuationPayload } from '@/lib/hbw-valuation-response';
+
+export type TradeInEngineType = '4-stroke' | '2-stroke' | 'optimax' | 'proxs' | 'etec';
+
 export interface TradeInInfo {
   hasTradeIn: boolean;
   brand: string;
@@ -8,19 +12,23 @@ export interface TradeInInfo {
   condition: 'excellent' | 'good' | 'fair' | 'poor';
   estimatedValue: number;
   confidenceLevel: 'high' | 'medium' | 'low';
-  engineType?: '4-stroke' | '2-stroke' | 'optimax';
+  engineType?: TradeInEngineType;
   startType?: 'manual' | 'electric';
   engineHours?: number;
-  // Optional audit fields for pre/post penalty values
-  rangePrePenaltyLow?: number;
-  rangePrePenaltyHigh?: number;
+  /** Epoch ms when the current canonical valuation was produced. */
+  valuedAt?: number;
+  engineVersion?: string;
+  referenceVersion?: string;
   rangeFinalLow?: number;
   rangeFinalHigh?: number;
-  tradeinValuePrePenalty?: number;
   tradeinValueFinal?: number;
+  valuationReportUrl?: string;
+  // Legacy optional fields retained for saved quotes; not written by new valuations.
+  rangePrePenaltyLow?: number;
+  rangePrePenaltyHigh?: number;
+  tradeinValuePrePenalty?: number;
   penaltyApplied?: boolean;
   penaltyFactor?: number;
-  valuationReportUrl?: string;
 }
 
 export const CANONICAL_HBW_VALUATION_ORIGIN = 'https://valuation.mercuryrepower.ca';
@@ -32,6 +40,10 @@ export interface TradeValueEstimate {
   confidence: 'high' | 'medium' | 'low';
   source: string;
   factors: string[];
+  reportUrl?: string;
+  engineVersion?: string;
+  referenceVersion?: string;
+  effectiveInputs?: CanonicalHbwValuationPayload['effectiveInputs'];
   // Audit fields
   prePenaltyLow?: number;
   prePenaltyHigh?: number;
@@ -120,7 +132,7 @@ export interface HBWValuationParams {
   year: number;
   horsepower?: number;
   condition: TradeInInfo['condition'];
-  stroke: NonNullable<TradeInInfo['engineType']>;
+  stroke: TradeInEngineType;
   hours?: number;
   model?: string;
 }
@@ -176,8 +188,8 @@ export async function fetchHBWValuationFromInvoker(
       return { ok: false, reason };
     }
 
-    const v = data as HBWValuationResponse;
-    if (typeof v.rangeLow !== 'number' || typeof v.rangeHigh !== 'number') {
+    const parsed = parseCanonicalHbwValuation(data);
+    if (!parsed) {
       console.warn('HBW valuation proxy returned unexpected shape:', data);
       return { ok: false, reason: 'unavailable' };
     }
@@ -185,15 +197,19 @@ export async function fetchHBWValuationFromInvoker(
     return {
       ok: true,
       value: {
-        low: v.rangeLow,
-        high: v.rangeHigh,
-        average: v.wholesale,
-        confidence: v.confidence,
+        low: parsed.rangeLow,
+        high: parsed.rangeHigh,
+        average: parsed.wholesale,
+        confidence: parsed.confidence,
         source: 'HBW Motor Valuation API',
-        factors: v.factors || [],
-        listingValue: v.listing,
-        hstSavings: v.hstSavings,
+        factors: parsed.factors,
+        listingValue: parsed.listing,
+        hstSavings: parsed.hstSavings,
         fromHBW: true,
+        reportUrl: parsed.reportUrl,
+        engineVersion: parsed.engineVersion,
+        referenceVersion: parsed.referenceVersion,
+        effectiveInputs: parsed.effectiveInputs,
       },
     };
   } catch (err) {
@@ -236,7 +252,7 @@ export function buildHBWReportUrl(params: {
   query.set('condition', params.condition);
   if (!params.stroke?.trim()) throw new Error('Confirmed stroke is required to build a valuation report URL');
   query.set('stroke', params.stroke);
-  if (params.hours) query.set('hours', String(params.hours));
+  if (params.hours !== undefined && params.hours !== null) query.set('hours', String(params.hours));
   if (params.model) query.set('model', params.model);
   query.set('auto', 'true');
   return `${base}?${query.toString()}`;

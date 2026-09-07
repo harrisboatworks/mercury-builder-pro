@@ -110,4 +110,11 @@ describe('valuation freshness', () => {
     expect(parseTradeInDraft(JSON.stringify(valued), now)?.estimatedValue).toBe(0);
     expect(parseTradeInDraft(serializeTradeInDraft(valued, now - 25 * 60 * 60_000), now)?.estimatedValue).toBe(0);
   });
+
+  it('uses valuedAt for freshness so a later draft save cannot keep a stale amount', () => {
+    const now = 1_800_000_000_000;
+    const staleValued = { ...valued, valuedAt: now - 31 * 60_000 };
+    expect(parseTradeInDraft(serializeTradeInDraft(staleValued, now - 60_000), now)?.estimatedValue).toBe(0);
+    expect(parseTradeInDraft(serializeTradeInDraft(valued, now - 60_000), now)?.estimatedValue).toBe(5000);
+  });
 });

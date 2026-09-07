@@ -273,11 +273,10 @@ describe("public motor agent contract", () => {
       "url: `${SITE_URL}/quote/motor-selection?motor=${m.id}`",
     );
     expect(mcpServer).not.toContain('.neq("availability", "Exclude")');
-    expect(
-      mcpServer.match(
-        /\.or\("availability\.is\.null,availability\.neq\.Exclude"\)/g,
-      ),
-    ).toHaveLength(2);
+    expect(mcpServer.match(/\.or\(PUBLIC_CATALOG_AVAILABILITY_OR\)/g)).toHaveLength(2);
+    expect(motorsApi).toContain("resolvePublicSellingPrice(");
+    expect(quoteApi).toContain("resolvePublicSellingPrice(");
+    expect(mcpServer).toContain("resolvePublicSellingPrice(");
     expect(mcpServer).toContain(".limit(500)");
     expect(mcpServer).toContain(".slice(0, resultLimit)");
 

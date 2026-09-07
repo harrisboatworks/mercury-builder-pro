@@ -192,15 +192,15 @@ export function PricingTable({
             {tradeInValue > 0 && (
               <>
                 <LineItemRow
-                  label="Estimated Trade Value"
-                  amount={tradeInValue}
+                  label="Trade-In Credit"
+                  amount={pricing.appliedTradeCredit ?? tradeInValue}
                   isDiscount
                   description={formatTradeInDescription(tradeInInfo)}
                   className="pl-2 border-l-2 border-repower-mercury-red/30"
                 />
                 <div className="pl-2 border-l-2 border-repower-mercury-red/30 py-1">
                   <div className="text-xs text-repower-mercury-red font-medium">
-                    💡 Tax Savings from Trade-In: ${Math.round(tradeInValue * 0.13).toLocaleString()}
+                    💡 Tax Savings from Trade-In: ${Math.round((pricing.tradeTaxSaving ?? (pricing.appliedTradeCredit ?? tradeInValue) * 0.13)).toLocaleString()}
                   </div>
                   <div className="text-xs text-muted-foreground">
                     HST not charged on trade-in portion

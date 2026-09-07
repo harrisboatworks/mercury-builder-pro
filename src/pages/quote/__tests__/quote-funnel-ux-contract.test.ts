@@ -13,6 +13,13 @@ describe('quote funnel UX contract', () => {
     expect(tradeInSource).toContain('data-testid="trade-in-continue"');
   });
 
+  it('uses the canonical TradeInValuation form on the tools estimator', () => {
+    const estimatorSource = read('src/components/tools/TradeInValueEstimator.tsx');
+    expect(estimatorSource).toContain('TradeInValuation');
+    expect(estimatorSource).toContain('PROMOTE_TRADE_IN');
+    expect(estimatorSource).not.toContain('HP_TABLE');
+  });
+
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 

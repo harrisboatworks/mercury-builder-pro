@@ -107,38 +107,30 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
 
 ### 4. Estimate Trade Value
 **Name:** `estimate_trade_value`  
-**Description:** Estimate trade-in value for a customer's current motor. Use when customer asks about trade-in.
+**Description:** Request the live Harris Boat Works valuation. Ask for condition and engine architecture when unknown; never invent a value or fall back to an HP table.
+
+**Wait for response:** Enabled. Read the returned result before speaking any value.
 
 **Parameters:**
 ```json
 {
   "type": "object",
   "properties": {
-    "brand": {
-      "type": "string",
-      "description": "Brand of the motor (Mercury, Yamaha, Honda, etc.)"
-    },
-    "year": {
-      "type": "number",
-      "description": "Year of the motor"
-    },
-    "horsepower": {
-      "type": "number",
-      "description": "Horsepower of the motor"
-    },
-    "model": {
-      "type": "string",
-      "description": "Model name if known"
-    },
-    "condition": {
-      "type": "string",
-      "enum": ["excellent", "good", "fair", "rough"],
-      "description": "Condition of the motor"
-    }
+    "brand": { "type": "string", "description": "Motor brand" },
+    "year": { "type": "number", "description": "Whole model year" },
+    "horsepower": { "type": "number", "description": "Exact horsepower; preserve decimals such as 9.9" },
+    "condition": { "type": "string", "enum": ["excellent", "good", "fair", "poor", "rough"], "description": "Ask if unknown. Rough maps to poor." },
+    "engine_type": { "type": "string", "enum": ["4-stroke", "2-stroke", "proxs", "optimax", "etec"], "description": "Confirmed engine architecture; do not infer four-stroke from ELPT or EFI alone" },
+    "model": { "type": "string", "description": "Model text if known; explicit FourStroke, OptiMax or E-TEC may identify architecture" },
+    "hours": { "type": "number", "description": "Known engine hours, including explicit zero and fractional hours. Omit when unknown." }
   },
   "required": ["brand", "year", "horsepower"]
 }
 ```
+
+Condition and architecture are requested conversationally if omitted; missing fields must not produce a numeric valuation. A successful result is an estimate subject to inspection. On unavailable/rate-limited/input-rejected results, explain the returned reason and offer to continue collecting details. Do not reuse an earlier motor's amount. Browser Apply to Quote must use the returned validated card, not an independently calculated value.
+
+The client hook and MCP server implement the same tool name in different transports. This document is a configuration specification, not proof of the hosted dashboard state. See `docs/voice-trade-in-acceptance.md` for isolated canaries and read-only reconciliation. Do not alter the hosted agent or run customer actions merely to test this guide.
 
 ---
 
@@ -542,7 +534,7 @@ Add these sections to your agent's system prompt for the new capabilities:
 When customers ask about service costs, use estimate_service_cost. Always mention estimates are approximate and booking confirms final price.
 
 ### Trade-In Valuations
-When customers ask about trade-in value, use estimate_trade_value. Always caveat that final value requires inspection.
+When customers ask about trade-in value, use estimate_trade_value and wait for its response. Ask for missing condition and engine architecture. Preserve exact HP and known zero hours. On failure, explain the returned reason without quoting a fallback amount. Always caveat that final value requires inspection.
 
 ### Motor Recommendations
 When customers ask "what motor should I get?", use recommend_motor. Ask about their boat if you don't know.
