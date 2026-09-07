@@ -78,12 +78,14 @@ const contracts = [
   {
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
     stale: ['$18,000-$21,000'],
-    required: ['[live 115HP FourStroke prices](/pricing-reference)', REVIEWED_LABEL],
+    // This route was refreshed against the live HBW reference on September 5, 2026.
+    required: ['[live 115HP FourStroke prices](/pricing-reference)', 'September 5, 2026'],
   },
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
-    stale: ['$33,500-$34,500'],
-    required: [fmt(localFacts.proXs250Min), fmt(localFacts.proXs250Max), '[live pricing reference](/pricing-reference)', REVIEWED_LABEL],
+    // The September audit replaced unscoped ranges with an exact-model quote.
+    stale: ['$33,500-$34,500', '$34,848 to $37,741'],
+    required: ['[live pricing reference](/pricing-reference)', 'for the exact model', 'separately identifies installation, equipment, and tax'],
   },
   {
     slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
@@ -92,8 +94,14 @@ const contracts = [
   },
   {
     slug: 'cheapest-mercury-outboard-canada-2026',
-    stale: ['$1,298 - $38,539 CAD'],
-    required: [fmt(localFacts.lineupMin), fmt(localFacts.lineupMax), '/pricing-reference', REVIEWED_LABEL],
+    // No fixed lineup maximum or installed cost stack after the September audit.
+    stale: ['$1,298 - $38,539 CAD', '$17,600 - $49,700 CAD'],
+    required: ['[current pricing reference](/pricing-reference)', 'For a portable tiller motor', 'For an installed remote-control repower', 'Compare dated written quotes with the same inclusions'],
+  },
+  {
+    slug: 'mercury-pro-xs-repower-rice-lake-kawartha-anglers',
+    stale: ['high teens of thousands', 'mid-thirties of thousands'],
+    required: ['mercuryrepower.ca'],
   },
 ];
 

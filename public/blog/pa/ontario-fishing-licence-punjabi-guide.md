@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide.md
-last_updated: 2026-08-01
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ �
 description: "Ontario fishing licence ki kiven laiye? Outdoors Card, conservation vs sport licence, FMZ 17 Rice Lake rules te free Learn to Fish program, sab Punjabi vich."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-08-01
+date_modified: 2026-09-06
 keywords: ["Ontario fishing license keemat online (Ontario fishing license price online)","Toronto de nere fishing spots family layi (fishing spots near Toronto for family)","fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)","Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)","Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)","Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,29 +25,29 @@ revenue_driver: repower
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-08-01  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-09-06  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
 
-ਜੇ ਤੁਸੀਂ Brampton, Mississauga, Scarborough ਜਾਂ Markham ਤੋਂ Rice Lake ਉੱਤੇ ਮੱਛੀ ਫੜਨ ਦੀ ਸੋਚ ਰਹੇ ਹੋ, ਤਾਂ ਇਹ ਗਾਈਡ ਤੁਹਾਡੀ ਮਦਦ ਕਰੇਗੀ। Rice Lake, Gores Landing ’ਤੇ ਸਾਡੀ ਮਰੀਨਾ ਤੋਂ ਲਗਭਗ 90 ਮਿੰਟ ਦੀ ਡਰਾਈਵ ਹੈ। ਪਰਿਵਾਰ ਨਾਲ ਮਜ਼ੇਦਾਰ ਦਿਨ ਬਤੀਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, Ontario ਦੇ fishing licence ਦੇ ਨਿਯਮਾਂ ਨੂੰ ਸਮਝਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਸਾਡੀ family marina ਨੂੰ ਤੀਜੀ ਪੀੜ੍ਹੀ ਚਲਾ ਰਹੀ ਹੈ, 1947 ਤੋਂ ਇਸੇ ਝੀਲ ਕੰਢੇ ਹਾਂ, ਅਤੇ Punjabi ਭਾਈਚਾਰੇ ਦੇ ਪਰਿਵਾਰਾਂ ਨੂੰ Rice Lake ਦਾ ਆਨੰਦ ਲੈਂਦੇ ਦੇਖਣਾ ਸਾਨੂੰ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਇਸ ਪੇਜ ਵਿੱਚ, ਅਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਔਖੀ ਕਾਨੂੰਨੀ ਭਾਸ਼ਾ ਦੇ, fishing licence, Outdoors Card, conservation licence ਬਨਾਮ sport licence, FMZ 17, ਅਤੇ ਪਹਿਲੀ ਯਾਤਰਾ ਦੀ ਤਿਆਰੀ ਬਾਰੇ ਸਮਝਾਵਾਂਗੇ।
+ਜੇ ਤੁਸੀਂ Brampton, Mississauga, Scarborough ਜਾਂ Markham ਤੋਂ Rice Lake ਉੱਤੇ ਮੱਛੀ ਫੜਨ ਦੀ ਸੋਚ ਰਹੇ ਹੋ, ਤਾਂ ਇਹ ਗਾਈਡ ਤੁਹਾਡੀ ਮਦਦ ਕਰੇਗੀ। ਸਾਡੀ ਮਰੀਨਾ Gores Landing ਵਿੱਚ Rice Lake ਦੇ ਦੱਖਣੀ ਕੰਢੇ ’ਤੇ ਹੈ। ਯਾਤਰਾ ਦਾ ਸਮਾਂ ਤੁਹਾਡੇ ਰਵਾਨਗੀ ਸਥਾਨ ਅਤੇ ਟ੍ਰੈਫਿਕ ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਪਰਿਵਾਰ ਨਾਲ ਮਜ਼ੇਦਾਰ ਦਿਨ ਬਤੀਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, Ontario ਦੇ fishing licence ਦੇ ਨਿਯਮਾਂ ਨੂੰ ਸਮਝਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਸਾਡੀ family marina ਨੂੰ ਤੀਜੀ ਪੀੜ੍ਹੀ ਚਲਾ ਰਹੀ ਹੈ, 1947 ਤੋਂ ਇਸੇ ਝੀਲ ਕੰਢੇ ਹਾਂ, ਅਤੇ Punjabi ਭਾਈਚਾਰੇ ਦੇ ਪਰਿਵਾਰਾਂ ਨੂੰ Rice Lake ਦਾ ਆਨੰਦ ਲੈਂਦੇ ਦੇਖਣਾ ਸਾਨੂੰ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਇਸ ਪੇਜ ਵਿੱਚ, ਅਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਔਖੀ ਕਾਨੂੰਨੀ ਭਾਸ਼ਾ ਦੇ, fishing licence, Outdoors Card, conservation licence ਬਨਾਮ sport licence, FMZ 17, ਅਤੇ ਪਹਿਲੀ ਯਾਤਰਾ ਦੀ ਤਿਆਰੀ ਬਾਰੇ ਸਮਝਾਵਾਂਗੇ।
 
 ## Outdoors Card te licence di buniyad | ਆਊਟਡੋਰਸ ਕਾਰਡ ਤੇ ਲਾਇਸੰਸ ਦੀ ਬੁਨਿਆਦ
 
 Ontario ਵਿੱਚ, 18 ਤੋਂ 64 ਸਾਲ ਦੇ residents ਅਤੇ ਜ਼ਿਆਦਾਤਰ visitors ਨੂੰ ਮੱਛੀ ਫੜਨ ਲਈ fishing licence ਲੈਣੀ ਪੈਂਦੀ ਹੈ। ਪਰ ਇਹ ਸਿਰਫ ਇੱਕ ਕਾਗਜ਼ ਨਹੀਂ: ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ Outdoors Card ਬਣਾਉਣੀ ਪੈਂਦੀ ਹੈ। Outdoors Card ਇੱਕ ਪਲਾਸਟਿਕ ਕਾਰਡ ਹੈ ਜੋ ਤੁਹਾਡੀ ਪਛਾਣ ਨੰਬਰ ਰੱਖਦਾ ਹੈ, ਅਤੇ ਫਿਰ ਤੁਸੀਂ ਇਸ ’ਤੇ fishing licence ਜੋੜਦੇ ਹੋ, ਇਹ sticker ਜਾਂ ਇਲੈਕਟ੍ਰਾਨਿਕ ਫਾਰਮੈਟ ਵਿੱਚ ਹੋ ਸਕਦੀ ਹੈ। ਮੋਟੇ ਤੌਰ ’ਤੇ ਦੋ ਤਰ੍ਹਾਂ ਦੀ fishing licence ਹੁੰਦੀ ਹੈ: conservation licence ਅਤੇ sport fishing licence। conservation licence ਨਾਲ ਤੁਹਾਡੀ daily catch limit ਘੱਟ ਹੁੰਦੀ ਹੈ, ਪਰ ਫ਼ੀਸ ਵੀ ਘੱਟ ਹੁੰਦੀ ਹੈ। sport licence ਨਾਲ limit ਜ਼ਿਆਦਾ ਹੈ ਅਤੇ ਫ਼ੀਸ ਵੀ ਜ਼ਿਆਦਾ। Rice Lake ’ਤੇ ਮੱਛੀਆਂ ਲਈ ਦੋਵਾਂ ਦੀ limit, species ਅਤੇ season ਅਨੁਸਾਰ ਵੱਖ-ਵੱਖ ਹੁੰਦੀ ਹੈ।
 
-ਧਿਆਨ ਰੱਖੋ: ਅਸੀਂ ਇੱਥੇ ਫ਼ੀਸਾਂ ਦੀ ਕੋਈ ਖਾਸ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਬਦਲ ਸਕਦੀ ਹੈ। ਸਹੀ ਫ਼ੀਸਾਂ ਲਈ Ontario government ਦਾ official fees page ਦੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees। ਇਹ ਸਾਰੀ ਜਾਣਕਾਰੀ ਆਮ ਸਮਝਾਉਣ ਲਈ ਹੈ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਨਿਯਮ ਬਦਲਦੇ ਰਹਿੰਦੇ ਹਨ, ਇਸ ਲਈ official ਸਰੋਤ ਹਮੇਸ਼ਾ ਜਿੱਤਦਾ ਹੈ।
+ਧਿਆਨ ਰੱਖੋ: ਅਸੀਂ ਇੱਥੇ ਫ਼ੀਸਾਂ ਦੀ ਕੋਈ ਖਾਸ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਬਦਲ ਸਕਦੀ ਹੈ। ਸਹੀ ਫ਼ੀਸਾਂ ਲਈ Ontario government ਦਾ official fees page ਦੇਖੋ: [Ontario fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)। ਇਹ ਸਾਰੀ ਜਾਣਕਾਰੀ ਆਮ ਸਮਝਾਉਣ ਲਈ ਹੈ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਨਿਯਮ ਬਦਲਦੇ ਰਹਿੰਦੇ ਹਨ, ਇਸ ਲਈ official ਸਰੋਤ ਹਮੇਸ਼ਾ ਜਿੱਤਦਾ ਹੈ।
 
 ## Kiven online laiye | ਕਿਵੇਂ ਔਨਲਾਈਨ ਲਈਏ
 
-licence online ਲੈਣਾ ਸੌਖਾ ਹੈ, ਪਰ ਕੁਝ ਕਦਮ ਹਨ। Ontario residents ਅਤੇ non-residents ਦੋਵੇਂ Ontario.ca ’ਤੇ ਜਾ ਕੇ ਆਪਣੀ Outdoors Card ਅਤੇ fishing licence ਖ਼ਰੀਦ ਸਕਦੇ ਹਨ। ਇੱਕ ਵਾਰ Outdoors Card ਨੰਬਰ ਮਿਲ ਜਾਵੇ, ਤੁਸੀਂ ਇੱਕ ਸਾਲ, ਤਿੰਨ ਸਾਲ, ਜਾਂ ਕੁਝ ਹੋਰ ਮਿਆਦ ਵਾਲੀ licence ਖਰੀਦ ਸਕਦੇ ਹੋ। ਫ਼ੀਸਾਂ species ਦੀ limit ਤਹਿਤ ਹੀ official page ’ਤੇ ਹੀ ਮਿਲਣਗੀਆਂ, ਅਸੀਂ ਇੱਥੇ ਗਿਣਤੀ ਨਹੀਂ ਦੱਸਾਂਗੇ। ਖ਼ਰੀਦਣ ਤੋਂ ਬਾਅਦ, licence ਦਾ ਡਿਜੀਟਲ version ਆਪਣੇ ਫ਼ੋਨ ’ਤੇ ਰੱਖੋ, ਜਾਂ ਪ੍ਰਿੰਟ ਕਰੋ। ਮੱਛੀ ਫੜਦੇ ਸਮੇਂ government ID ਨਾਲ ਰੱਖੋ। official steps ਲਈ: https://www.ontario.ca/page/get-outdoors-card-and-licence-summary।
+licence online ਲੈਣਾ ਸੌਖਾ ਹੈ, ਪਰ ਕੁਝ ਕਦਮ ਹਨ। Ontario residents ਅਤੇ non-residents ਦੋਵੇਂ Ontario.ca ’ਤੇ ਜਾ ਕੇ ਆਪਣੀ Outdoors Card ਅਤੇ fishing licence ਖ਼ਰੀਦ ਸਕਦੇ ਹਨ। ਇੱਕ ਵਾਰ Outdoors Card ਨੰਬਰ ਮਿਲ ਜਾਵੇ, ਤੁਸੀਂ ਇੱਕ ਸਾਲ, ਤਿੰਨ ਸਾਲ, ਜਾਂ ਕੁਝ ਹੋਰ ਮਿਆਦ ਵਾਲੀ licence ਖਰੀਦ ਸਕਦੇ ਹੋ। ਫ਼ੀਸਾਂ species ਦੀ limit ਤਹਿਤ ਹੀ official page ’ਤੇ ਹੀ ਮਿਲਣਗੀਆਂ, ਅਸੀਂ ਇੱਥੇ ਗਿਣਤੀ ਨਹੀਂ ਦੱਸਾਂਗੇ। ਖ਼ਰੀਦਣ ਤੋਂ ਬਾਅਦ, licence ਦਾ ਡਿਜੀਟਲ version ਆਪਣੇ ਫ਼ੋਨ ’ਤੇ ਰੱਖੋ, ਜਾਂ ਪ੍ਰਿੰਟ ਕਰੋ। ਮੱਛੀ ਫੜਦੇ ਸਮੇਂ government ID ਨਾਲ ਰੱਖੋ। official steps ਲਈ: [Outdoors Card and licence summary](https://www.ontario.ca/page/get-outdoors-card-and-licence-summary)।
 
 ## Rice Lake te FMZ 17 | ਰਾਈਸ ਲੇਕ ਤੇ FMZ 17
 
-Rice Lake Fisheries Management Zone 17 (FMZ 17) ਵਿੱਚ ਆਉਂਦੀ ਹੈ। Ontario ਨੂੰ 20 ਜ਼ੋਨਾਂ ਵਿੱਚ ਵੰਡਿਆ ਗਿਆ ਹੈ, ਹਰ ਜ਼ੋਨ ਵਿੱਚ ਹਰ ਮੱਛੀ ਲਈ ਵੱਖ season, size limit ਅਤੇ daily limit ਹੁੰਦੀ ਹੈ। Rice Lake ਵਿੱਚ walleye, bass, muskie, panfish ਤੇ ਹੋਰ ਮਿਲਦੀਆਂ ਹਨ, ਹਰ ਇੱਕ ਦੇ ਆਪਣੇ rules। ਅਸੀਂ ਇੱਥੇ ਕੋਈ ਖ਼ਾਸ ਮਿਤੀ ਜਾਂ limit ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ। ਬਚਾਓ ਲਈ, Ontario Fishing Regulations Summary ਹਮੇਸ਼ਾ ਤਾਜ਼ਾ ਰਹਿੰਦੀ ਹੈ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਇਸਨੂੰ ਖੋਲ੍ਹੋ, FMZ 17 ਲੱਭੋ, ਅਤੇ ਜੋ ਮੱਛੀ ਤੁਸੀਂ ਫੜਨੀ ਹੈ, ਉਸ ਦਾ season ਖੁੱਲ੍ਹਾ ਹੈ ਜਾਂ ਨਹੀਂ, limit ਕੀ ਹੈ, size ਕਿੰਨੀ ਹੋਣੀ ਚਾਹੀਦੀ, ਸਭ ਪਤਾ ਲੱਗ ਜਾਵੇਗਾ। conservation licence ’ਤੇ ਹਰ species ਦੀ limit sport licence ਨਾਲੋਂ ਘੱਟ ਹੁੰਦੀ ਹੈ, ਇਹ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ।
+Rice Lake Fisheries Management Zone 17 (FMZ 17) ਵਿੱਚ ਆਉਂਦੀ ਹੈ। Ontario ਨੂੰ 20 ਜ਼ੋਨਾਂ ਵਿੱਚ ਵੰਡਿਆ ਗਿਆ ਹੈ, ਹਰ ਜ਼ੋਨ ਵਿੱਚ ਹਰ ਮੱਛੀ ਲਈ ਵੱਖ season, size limit ਅਤੇ daily limit ਹੁੰਦੀ ਹੈ। Rice Lake ਵਿੱਚ walleye, bass, muskie, panfish ਤੇ ਹੋਰ ਮਿਲਦੀਆਂ ਹਨ, ਹਰ ਇੱਕ ਦੇ ਆਪਣੇ rules। ਅਸੀਂ ਇੱਥੇ ਕੋਈ ਖ਼ਾਸ ਮਿਤੀ ਜਾਂ limit ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ। ਬਚਾਓ ਲਈ, Ontario Fishing Regulations Summary ਹਮੇਸ਼ਾ ਤਾਜ਼ਾ ਰਹਿੰਦੀ ਹੈ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਇਸਨੂੰ ਖੋਲ੍ਹੋ, FMZ 17 ਲੱਭੋ, ਅਤੇ ਜੋ ਮੱਛੀ ਤੁਸੀਂ ਫੜਨੀ ਹੈ, ਉਸ ਦਾ season ਖੁੱਲ੍ਹਾ ਹੈ ਜਾਂ ਨਹੀਂ, limit ਕੀ ਹੈ, size ਕਿੰਨੀ ਹੋਣੀ ਚਾਹੀਦੀ, ਸਭ ਪਤਾ ਲੱਗ ਜਾਵੇਗਾ। conservation licence ’ਤੇ ਹਰ species ਦੀ limit sport licence ਨਾਲੋਂ ਘੱਟ ਹੁੰਦੀ ਹੈ, ਇਹ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ।
 
 ## Learn to Fish program bare | ਲਰਨ ਟੂ ਫਿਸ਼ ਪ੍ਰੋਗਰਾਮ ਬਾਰੇ
 
-ਜੇਕਰ ਤੁਹਾਡਾ ਪਰਿਵਾਰ ਮੱਛੀ ਫੜਨ ਵਿੱਚ ਬਿਲਕੁਲ ਨਵਾਂ ਹੈ, ਤਾਂ Ontario government ਦਾ Learn to Fish program ਬਹੁਤ ਵਧੀਆ ਹੈ। ਇਹ free 2-ਘੰਟੇ ਦੇ session ਹੁੰਦੇ ਹਨ, gear government ਮੁਹੱਈਆ ਕਰਦੀ ਹੈ। ਇਹ session ਸਾਡੀ ਮਰੀਨਾ ’ਤੇ ਨਹੀਂ ਹੁੰਦੇ, Ontario ਦੀਆਂ ਕਈ ਹੋਰ ਥਾਵਾਂ ’ਤੇ ਹਨ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ: https://www.ontario.ca/page/learn-fish। ਬੱਚੇ ਤੇ ਨਵੇਂ anglers ਇੱਥੇ ਬੇਝਿਜਕ basic skills ਸਿੱਖ ਸਕਦੇ ਹਨ।
+ਜੇਕਰ ਤੁਹਾਡਾ ਪਰਿਵਾਰ ਮੱਛੀ ਫੜਨ ਵਿੱਚ ਬਿਲਕੁਲ ਨਵਾਂ ਹੈ, ਤਾਂ Ontario government ਦਾ Learn to Fish program ਬਹੁਤ ਵਧੀਆ ਹੈ। ਇਹ free 2-ਘੰਟੇ ਦੇ session ਹੁੰਦੇ ਹਨ, gear government ਮੁਹੱਈਆ ਕਰਦੀ ਹੈ। ਇਹ session ਸਾਡੀ ਮਰੀਨਾ ’ਤੇ ਨਹੀਂ ਹੁੰਦੇ, Ontario ਦੀਆਂ ਕਈ ਹੋਰ ਥਾਵਾਂ ’ਤੇ ਹਨ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ: [Learn to Fish](https://www.ontario.ca/page/learn-fish)। ਬੱਚੇ ਤੇ ਨਵੇਂ anglers ਇੱਥੇ ਬੇਝਿਜਕ basic skills ਸਿੱਖ ਸਕਦੇ ਹਨ।
 
 ## Pehli trip layi checklist | ਪਹਿਲੀ ਯਾਤਰਾ ਲਈ ਚੈਕਲਿਸਟ
 
@@ -79,7 +79,7 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
 
 ### 1. Ontario fishing license di keemat kinna hai online?
 
-licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।
+licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: [Ontario fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)।
 
 ### 2. Toronto de nere family layi fishing spots kaun se ne?
 
@@ -87,7 +87,7 @@ Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’�
 
 ### 3. Fishing seasons Ontario vich kiven pata lagge?
 
-FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
+FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
 
 ### 4. Rice Lake te fishing rules limits ki ne?
 
@@ -95,15 +95,15 @@ rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit s
 
 ### 5. Brampton ton fishing spot kidhar jaayiye?
 
-Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: https://harrisboatworks.ca/rentals।
+Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
 
 ### 6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?
 
-honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।
+honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।
 
 ### 7. Kids layi fishing licence di lod hai?
 
-Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents।
+Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)।
 
 ### 8. Kawartha lakes fishing map video Punjabi vich mildi hai?
 

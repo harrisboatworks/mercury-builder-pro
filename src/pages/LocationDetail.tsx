@@ -115,14 +115,14 @@ export default function LocationDetail() {
   const pageTitle = lf ? `${lf.h1} | Harris Boat Works` : location.title;
   const metaDesc = lf?.metaDescription ?? location.metaDescription;
   const canonical = lf?.canonical ?? url;
-  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6).map(substituteLiveRateTokens);
+  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6).map((t: string) => substituteLiveRateTokens(t));
   const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4).map((f) => ({
     question: substituteLiveRateTokens(f.question),
     answer: substituteLiveRateTokens(f.answer),
   }));
   const lfSections = lf?.sections?.map((sec) => ({
     heading: sec.heading,
-    paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+    paragraphs: sec.paragraphs.map((p: string) => substituteLiveRateTokens(p)),
   }));
   const lfQuickAnswer = lf?.quickAnswer ? substituteLiveRateTokens(lf.quickAnswer) : undefined;
   const lfWhatWeSee = lf?.whatWeSeeAtHBW ? substituteLiveRateTokens(lf.whatWeSeeAtHBW) : undefined;

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,8 +11,8 @@ title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
 description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
-date_modified: 2026-08-19
-keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
+date_modified: 2026-09-06
+keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V8","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers
 
-> **Quick answer:** Mercury Pro XS is the angler-focused outboard family across 115–300 HP. For Rice Lake and Kawartha bass, walleye, and muskie boats, the sweet spot is usually 175–225 HP Pro XS V6, strong hole-shot, fuel-efficient cruise, and proven reliability. The 150 Pro XS is inline-4 (lighter); 300 Pro XS is V8 (heaviest, fastest). The right choice depends on hull rating, fishing style, and budget. Quote: [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Mercury Pro XS is the angler-focused outboard family across 115–300 HP. For Rice Lake and Kawartha bass, walleye, and muskie boats, the sweet spot is usually 175 HP V6 or 200–225 HP V8 Pro XS, strong hole-shot, fuel-efficient cruise, and proven reliability. The 150 Pro XS is inline-4 (lighter); 200 and above are V8. The right choice depends on hull rating, fishing style, and budget. Quote: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -44,7 +44,7 @@ The differences that matter on the water:
 - **Tuned calibration** that responds instantly to the throttle instead of easing in.
 - **Performance gearcase** (Sport Master or similar on the bigger HPs) that handles high-RPM water and aggressive prop choices.
 
-The Pro XS V6 family is the 175, 200, 225, and 250. The 150 Pro XS is an inline-4, meaningfully lighter than the V6 models, which is why it shows up on smaller aluminum bass boats. The 300 Pro XS is a V8, the heaviest and fastest of the line.
+The 115 and 150 Pro XS are inline-four. The remaining V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are 4.6 L V8. The 150 is meaningfully lighter than the V6 and V8 models, which is why it shows up on smaller aluminum bass boats.
 
 The trade for that response: Pro XS isn't a fuel miser. The trade is fuel for response. Tournament anglers happily make that trade. Weekend cruisers usually shouldn't.
 
@@ -54,7 +54,7 @@ The trade for that response: Pro XS isn't a fuel miser. The trade is fuel for re
 
 The anglers we see repowering to Pro XS are usually moving from one of three places:
 
-**Old two-stroke V6** (mid-90s to early 2000s Mercury, OMC, Yamaha). The two-stroke is loud, smoky, fuel-hungry, and getting harder to keep parts for. A modern Pro XS V6 makes more usable power, burns less fuel, runs quieter, and starts every time.
+**Old two-stroke V6** (mid-90s to early 2000s Mercury, OMC, Yamaha). The two-stroke is loud, smoky, fuel-hungry, and getting harder to keep parts for. A modern Pro XS makes more usable power, burns less fuel, runs quieter, and starts every time.
 
 **FourStroke that doesn't have the punch they want.** A FourStroke 200 will get a 19-foot bass boat on plane just fine. A 200 Pro XS will get the same boat on plane noticeably faster, with a sharper throttle response, and a higher top end. For tournament anglers who clear weed lines on [Rice Lake](/blog/best-marina-rice-lake-ontario) and run between spots on Stoney or Buckhorn, that difference is real.
 
@@ -96,9 +96,9 @@ The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tourn
 
 ## Command Thrust on Pro XS
 
-Short version: not on a V-hull. Command Thrust is a pontoon and workboat gearcase. On a planing V-hull angler or bass boat it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded three-up with a full livewell, tackle, and electronics.
+Short version: Command Thrust is a hull, load, and propeller choice, not a universal V-hull ban. HBW's shop recommendation for most planing V-hull angler and bass boats we see, even loaded three-up with a full livewell, tackle, and electronics, is still the standard gearcase.
 
-Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats.
+Other dealers commonly spec CT on those boats claiming "more torque." Ask for the actual boat, prop, and test result. Standard gearcase Pro XS is the usual HBW call for Rice Lake and Kawartha angler boats.
 
 If you want more low-speed control for trolling, that's what a 9.9 or 15 HP ProKicker is for (the ProKicker CT gearcase is a legitimate trolling-motor configuration). Pro XS CT itself only makes sense on the narrow pontoon/workboat applications the CT gearcase was engineered for, and even there it's a niche pick.
 
@@ -108,7 +108,7 @@ If you want more low-speed control for trolling, that's what a 9.9 or 15 HP ProK
 
 Pro XS isn't a fuel miser. That has to be said honestly.
 
-A 200 Pro XS at cruise burns roughly 12–16 L/h depending on hull, load, and prop. A FourStroke 200 at the same cruise typically sits around 10–12 L/h. Real-world numbers vary, but the gap is real and consistent.
+Fuel use depends on hull, load, propeller, RPM, and conditions. Compare on-boat fuel-flow readings at the same speed, or a dated Mercury performance report for a comparable hull, before treating one family as cheaper to run.
 
 For a tournament angler running 60 km in a day, the response wins, you're not buying the motor for fuel economy, you're buying it for hole-shot and top-end. For a weekend fisherman who runs to one spot, anchors, and fishes for six hours, FourStroke makes more sense. Same hull, same HP, less fuel, more quiet, less money up front.
 
@@ -123,7 +123,7 @@ Honest framing matters. We sell both because they're both right for different pe
 Different Kawartha water rewards different things:
 
 - **Rice Lake:** weed lines and shallow flats. Hole-shot dominates. You're up-and-over, not flat-out. **Pro XS shines.**
-- **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **Pro XS V6 in the 200–225 range is the sweet spot.**
+- **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **A 200 or 225 Pro XS V8 is the sweet spot.**
 - **Trent-Severn cruising:** lock-to-lock running with fuel range as a constraint. Top-end and fuel range both matter. **A 200 or 225 Pro XS sized to your hull is hard to beat.**
 - **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up on the standard gearcase.**
 
@@ -139,12 +139,12 @@ A Pro XS repower isn't just the motor. The line items add up:
 - Rigging kit (controls, harnesses, throttle/shift)
 - Gauges (digital SmartCraft displays where applicable)
 - Prop (stainless for performance hulls)
-- Steering (hydraulic on most Pro XS V6 installs)
+- Steering (hydraulic on most 175+ Pro XS installs; confirm the exact engine and helm)
 - Install labour
 - Lake test and tuning
 - Taxes
 
-As a planning range only, pricing depends on configuration, a typical 175–225 Pro XS build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
+Installed cost depends on HP, rigging, and what we can reuse from the existing setup. A 150 Pro XS inline-4 build sits lower. A 300 Pro XS V8 build sits higher.
 
 Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 
@@ -205,19 +205,19 @@ Both are four-stroke outboards, Pro XS is not a two-stroke. The difference is tu
 
 ### Is the Mercury 150 Pro XS a V6?
 
-No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP and up. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
+No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. This matters because the 150 is meaningfully lighter than the V6 and V8 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
 
 ### How much does a Pro XS repower cost in Ontario?
 
-It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range, including motor, controls, gauges, prop, steering, install labour, and taxes, runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-4 build sits lower. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ### Do I need Command Thrust on my Pro XS?
 
-No. Pro XS is a performance motor for planing V-hull bass and angler boats, and Command Thrust is a pontoon and workboat gearcase. On a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even loaded three-up with a full livewell. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats. If you want more low-speed trolling control, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
+Pro XS is a performance motor for planing V-hull bass and angler boats. Command Thrust is a hull, load, and propeller choice. HBW's shop recommendation for most Rice Lake and Kawartha angler boats is the standard-gearcase Pro XS; that is a preference, not a universal V-hull ban. If you want more low-speed trolling control, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
 
 ### How long does a Pro XS repower take at HBW?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Can I repower a 1990s bass boat with a modern Pro XS?
 

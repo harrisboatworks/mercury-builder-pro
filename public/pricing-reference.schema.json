@@ -3149,14 +3149,14 @@
           "position": 47,
           "item": {
             "@type": "Product",
-            "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-50-elhpt-ct-t",
-            "name": "Mercury 50 ELHPT FourStroke",
+            "@id": "https://www.mercuryrepower.ca/pricing-reference#fourstroke-50hp-50-elhpt-fourstroke",
+            "name": "Mercury 50 ELHPT Command Thrust FourStroke Tiller",
             "brand": {
               "@type": "Brand",
               "name": "Mercury Marine"
             },
             "category": "Outboard Motor",
-            "model": "50 ELHPT FourStroke",
+            "model": "50 ELHPT Command Thrust FourStroke Tiller",
             "additionalProperty": [
               {
                 "@type": "PropertyValue",
@@ -3625,14 +3625,14 @@
           "position": 54,
           "item": {
             "@type": "Product",
-            "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-60-exlpt-ct",
-            "name": "Mercury 60 EXLPT FourStroke",
+            "@id": "https://www.mercuryrepower.ca/pricing-reference#fourstroke-60hp-60-exlpt-fourstroke",
+            "name": "Mercury 60 EXLPT Command Thrust FourStroke",
             "brand": {
               "@type": "Brand",
               "name": "Mercury Marine"
             },
             "category": "Outboard Motor",
-            "model": "60 EXLPT FourStroke",
+            "model": "60 EXLPT Command Thrust FourStroke",
             "additionalProperty": [
               {
                 "@type": "PropertyValue",
@@ -3897,14 +3897,14 @@
           "position": 58,
           "item": {
             "@type": "Product",
-            "@id": "https://www.mercuryrepower.ca/pricing-reference#fs-90-exlpt-ct",
-            "name": "Mercury 90 EXLPT FourStroke",
+            "@id": "https://www.mercuryrepower.ca/pricing-reference#fourstroke-90hp-90-exlpt-fourstroke",
+            "name": "Mercury 90 EXLPT Command Thrust FourStroke",
             "brand": {
               "@type": "Brand",
               "name": "Mercury Marine"
             },
             "category": "Outboard Motor",
-            "model": "90 EXLPT FourStroke",
+            "model": "90 EXLPT Command Thrust FourStroke",
             "additionalProperty": [
               {
                 "@type": "PropertyValue",

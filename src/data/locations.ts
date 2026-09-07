@@ -51,7 +51,7 @@ const TRUST_FACTS = [
   'Mercury Marine Premier Dealer (top customer-satisfaction tier)',
   'Authorized Mercury dealer since 1965, Mercury is our only outboard brand',
   'Live CAD pricing online, no "call for price"',
-  'Every installed repower is lake-tested on Rice Lake before pickup',
+  'Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow',
 ];
 
 const QUOTE_LINK: LocationLink = { label: 'Build a Mercury quote (CAD, itemized)', href: '/quote/motor-selection' };
@@ -75,7 +75,7 @@ export const locations: LocationPageData[] = [
     driveTime: 'local, south shore of Rice Lake',
     driveRoute: 'Harris Boat Works Rd, Gores Landing',
     intro:
-      'Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury dealer since 1965, with every installed repower lake-tested on Rice Lake before you take it home.',
+      'Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury dealer since 1965, with a standard on-water test on Rice Lake before pickup when safe seasonal conditions allow.',
     localContext: [
       'On the south shore of Rice Lake, local launches at Gores Landing, Bewdley, Hastings, and Harwood',
       'Trent, Severn Waterway access for cottage-to-cottage cruising',
@@ -168,11 +168,6 @@ export const locations: LocationPageData[] = [
       { question: 'Are your recommendations appropriate for Kawartha lake conditions?', answer: 'Yes. We write for real Ontario lake use, Sturgeon, Pigeon, Buckhorn, Balsam, not generic brochure use.' },
       { question: 'Do you quote in USD?', answer: 'No. All pricing is CAD only.' },
       { question: 'Can Kawartha Lakes customers compare motors before driving down?', answer: 'Yes. Use the quote builder or the motor pages, both show live CAD pricing.' },
-      {
-        question: 'Where can I get a Mercury outboard serviced in the Kawarthas?',
-        answer:
-          "Yes. Kawartha Lakes customers have their Mercury outboard serviced at Harris Boat Works in Gores Landing. All service work happens in our shop. We can generally arrange boat pickup; ask us about availability for your boat and location. You can also bring the boat or motor to Gores Landing and collect it when the work is done. We don't offer delivery or mobile, dockside, driveway, or marina service. Our [maintenance and service page](/maintenance) covers what's included and how to submit a request.",
-      },
     ],
     pickupPolicy: PICKUP_POLICY,
     serviceBoundary:

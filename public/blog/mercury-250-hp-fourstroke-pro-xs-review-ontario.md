@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 250 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 250 HP review for Ontario, comparing the current 4.6 L V8 FourStroke and Pro XS with exact Canadian specs, freshwater tests and owner evidence."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-09-06
 keywords: ["mercury 250 hp review","mercury 250 fourstroke review","mercury 250 pro xs review","mercury 250 fourstroke vs pro xs","mercury 250 real world performance","mercury 250 owner reviews","mercury 250 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-06  
 **Read time:** 19 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
 
@@ -285,7 +285,7 @@ HBW sells ethanol-free 89-octane gasoline at our Rice Lake dock. The engine does
 
 Mercury Boost is relevant to eligible current and compatible earlier 250 FourStroke and Pro XS models, but it is often described badly.
 
-Boost is a dealer-installed software calibration. It improves midrange acceleration. Mercury publishes measured zero-to-top-speed improvements from 5% to 21%, depending on the boat and setup.
+Boost is a dealer-installed software calibration. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications with Boost. That is an acceleration comparison, not a 5% to 21% increase in top speed, and it is not a guaranteed result for this 250 HP installation. Mercury says Boost does not change top speed or time to plane; boat configuration and operating conditions affect the result.
 
 Boost does not:
 
@@ -296,7 +296,7 @@ Boost does not:
 
 It changes how strongly the boat accelerates through the middle of the run.
 
-Eligibility depends on engine family and serial number. We verify the actual serial before quoting it. A general “250 HP” label is not enough.
+As checked September 5, 2026, Mercury's Canadian page lists factory-installed Boost on 2026 Pro XS 175, 200, 225, 250 and 300, Verado 250 and 300, and Racing 150R starting at serial 3B612473, and Verado 350 starting at 3B576449. The same dated page lists dealer upgrades for FourStroke 175, 200, 250 and 300, Pro XS 175, 200, 225, 250 and 300, and Verado 250 and 300 starting at 2B529482; Verado 350 from 3B266064 through 3B578266; and Racing 150R starting at 3B547096. Have a Mercury dealer confirm the exact serial number, control system and installed calibration rather than using a serial cutoff alone. A general “250 HP” label is not enough.
 
 ## Is the Mercury 250 Reliable?
 
@@ -456,7 +456,7 @@ The 250 Pro XS is normally the relevant choice for a properly rated high-perform
 
 ### Can Mercury Boost be installed on a 250 FourStroke or 250 Pro XS?
 
-Eligible current and compatible earlier 250 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. The change is stronger midrange acceleration. It does not raise rated horsepower, increase top speed or shorten time to plane. Eligibility must be checked by model and serial number.
+Eligible current and compatible earlier 250 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a 5% to 21% increase in top speed, and it is not a guaranteed result for this 250 HP installation. It does not raise rated horsepower, increase top speed or shorten time to plane. Eligibility must be checked by model and serial number.
 
 ### Is the Mercury 250 V8 reliable?
 
@@ -469,7 +469,7 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
 - [Mercury SeaPro Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide), SeaPro commercial-duty guide
 - [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario), Mercury Avator electric outboards

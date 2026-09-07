@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -100,9 +100,9 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ## The Price, What HBW Has Published
 
-As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
+Compare the current price for the exact 9.9 MH EFI configuration and confirm tax, preparation, tank, hose, and any other inclusions in the written offer.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
@@ -133,7 +133,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 209 cc |
 | Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
@@ -178,7 +178,7 @@ The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is 
 
 ### What comes with the HBW Mercury 9.9 MH EFI offer?
 
-As of May 2026, HBW's current offer is $2,999 CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep.
+Check the current exact-model listing and confirm the written offer, including the fuel tank, hose, preparation, taxes, and any fees.
 
 ### Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?
 
@@ -188,9 +188,9 @@ It depends on the boat, load, prop, shaft length, weight distribution, and hull 
 
 No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt.
 
-### Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?
+### How should I compare Mercury 9.9 MH EFI prices in Ontario?
 
-Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number.
+Compare the exact model, shaft length, starting system, included tank and hose, preparation, taxes, and fees in dated written offers. Confirm stock and the final total before buying.
 
 ## Related guides
 
@@ -198,7 +198,7 @@ Based on visible Canadian listings reviewed in May 2026, it is a very strong pos
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 
 ## Next steps
 

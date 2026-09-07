@@ -61,7 +61,6 @@ export default function MaintenanceHub() {
           heading: "When something's wrong: troubleshooting guides",
           cards: [
             { title: "Mercury Outboard Won't Start Troubleshooting", description: 'Diagnose spring no-starts step by step.', to: '/blog/mercury-outboard-wont-start-troubleshooting' },
-            { title: "Mercury Won't Start After Sitting", description: 'Storage-related no-start diagnosis.', to: '/blog/mercury-outboard-wont-start-after-sitting' },
             { title: 'Outboard Overheating: Emergency Guide', description: 'What to do on the water right now.', to: '/blog/outboard-overheating-emergency-guide' },
             { title: 'Mercury Overheating at Idle: Fix Guide', description: 'Low-speed overheat causes and fixes.', to: '/blog/mercury-outboard-overheating-at-idle-fix-ontario' },
             { title: 'Mercury Overheat at High Speed', description: 'High-RPM overheat, usually cooling flow.', to: '/blog/mercury-outboard-overheat-high-speed' },

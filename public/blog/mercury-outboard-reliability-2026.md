@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
 description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 
@@ -59,7 +59,7 @@ None of this means the concerns aren't real. The anxiety that sends people searc
 
 We're not going to invent statistics. What we can tell you is what we actually see come through our shop, in qualitative terms.
 
-**Water pump impellers.** Among the most common preventable failures we see. An impeller degrades over time regardless of brand. It's a rubber wear component doing the same job in every outboard on the water. The difference between a $40 impeller replacement and a $4,000 overheated engine is a maintenance interval. We recommend replacement every two to three seasons; Mercury's own schedule caps it at 300 hours or three years, whichever comes first.
+**Water pump impellers.** Among the most common preventable failures we see. An impeller degrades over time regardless of brand. It's a rubber wear component doing the same job in every outboard on the water. The difference between an impeller replacement and an overheated engine is a maintenance interval. We recommend replacement every two to three seasons; Mercury's own schedule caps it at 300 hours or three years, whichever comes first.
 
 **Fuel system problems from ethanol fuel and old gas.** The large majority of "my Mercury won't start" calls trace back to fuel, not the motor. Ethanol-blended gasoline absorbs water and degrades faster than most boaters expect. Gas left in a tank over winter turns to varnish. This is a storage discipline problem, not a Mercury problem, and it's entirely preventable.
 
@@ -118,6 +118,7 @@ Real maintenance, no upsell:
 **Watch Mercury's own walkthrough of the basics:**
 
 [Engine Care Basics for New Owners (Mercury Marine)](https://www.youtube.com/watch?v=ydFfxwUz5yc)
+
 *Video: Engine Care Basics for New Owners (Mercury Marine official channel).*
 
 If you're thinking about a new Mercury rather than servicing your current one: [mercuryrepower.ca](https://www.mercuryrepower.ca) has current information on repowering programs.
@@ -146,7 +147,7 @@ No. Mercury's quality control processes are mature, and updates are validated be
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison

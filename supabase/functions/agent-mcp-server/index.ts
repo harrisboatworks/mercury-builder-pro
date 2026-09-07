@@ -24,7 +24,11 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, mcp-session-id",
 };
 
-import { familyKey, motorSlug } from "../_shared/motor-slug.ts";
+import {
+  applyMotorPresentationOverrides,
+  familyKey,
+  motorSlug,
+} from "../_shared/motor-slug.ts";
 import {
   PUBLIC_SITE_URL,
   toPublicImageUrl,
@@ -151,14 +155,16 @@ async function callPublicApi(action: string, params: Record<string, unknown>) {
 }
 
 async function searchMotors(supabase: any, args: any) {
+  const resultLimit = Math.min(args.limit ?? 25, 100);
+  const wantFamilyKey = args.family ? familyKey(args.family) : null;
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url"
+      "id, model, model_display, model_number, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url"
     )
-    .neq("availability", "Exclude")
+    .or("availability.is.null,availability.neq.Exclude")
     .order("horsepower", { ascending: true })
-    .limit(Math.min(args.limit ?? 25, 100));
+    .limit(500);
 
   if (args.horsepower) q = q.eq("horsepower", args.horsepower);
   if (args.min_hp) q = q.gte("horsepower", args.min_hp);
@@ -168,12 +174,13 @@ async function searchMotors(supabase: any, args: any) {
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
-  const wantFamilyKey = args.family ? familyKey(args.family) : null;
   return (data || [])
+    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
     .filter((m: any) => !(m.model_display || "").toLowerCase().includes("verado"))
     .filter((m: any) =>
       wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
+    .slice(0, resultLimit)
     .map((m: any) => {
       const slug = motorSlug(m);
       return {
@@ -202,9 +209,9 @@ async function getMotor(supabase: any, args: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
+      "id, model, model_display, model_number, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
     )
-    .neq("availability", "Exclude");
+    .or("availability.is.null,availability.neq.Exclude");
   if (args.id) q = q.eq("id", args.id).limit(1);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
@@ -218,6 +225,7 @@ async function getMotor(supabase: any, args: any) {
       .find((r: any) => motorSlug(r) === wanted) ?? null;
   }
   if (!m) return null;
+  m = applyMotorPresentationOverrides(m);
 
   const slug = motorSlug(m);
   return {

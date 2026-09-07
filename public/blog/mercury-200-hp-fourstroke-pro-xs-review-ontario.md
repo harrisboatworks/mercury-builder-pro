@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 200 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-09-06
 keywords: ["mercury 200 hp review","mercury 200 fourstroke review","mercury 200 pro xs review","mercury 200 fourstroke vs pro xs","mercury 200 real world performance","mercury 200 owner reviews","mercury 200 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-06  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario
 
@@ -404,7 +404,6 @@ This review uses current-family evidence and complete Mercury freshwater test re
 - [BBC Boards 200 FourStroke Pathfinder setup and propeller log](https://www.bbcboards.net/showthread.php?t=1096843)
 - [Fishing Media 200 Pro XS 100-hour owner video](https://www.youtube.com/watch?v=ZOzKuopLVYo)
 - [Aj Lynn Mercury 200 Pro XS first run on a Lund 1875 Pro-V video](https://www.youtube.com/watch?v=TOB6-lDjea0)
-- [Reddit discussion of the 200 Pro XS startup sound](https://www.reddit.com/r/boating/comments/1kumurr/who_wants_to_hear_a_600_v12_start_up/)
 - [Reddit 200 Pro XS battery, charging and ground diagnostic discussion](https://www.reddit.com/r/Outboards/comments/1n362rv/2024_merc_pro_xs_200_down_on_power/)
 - [Reddit 200 Pro XS Guardian response after sand ingestion](https://www.reddit.com/r/Outboards/comments/1ud2i8z/2021_mercury_200_pro_xs/)
 
@@ -448,7 +447,7 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
 - [Mercury SeaPro Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide), SeaPro commercial-duty guide
 
