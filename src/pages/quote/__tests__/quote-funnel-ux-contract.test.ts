@@ -73,7 +73,8 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('action: z.literal("verify")');
     expect(paymentSource).toContain('phone: z.string().trim().min(7)');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
-    expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
+    expect(webhookSource).toContain('validateDepositBeforeClaim(depositPreclaimInput)');
+    expect(webhookSource).toContain('sessionAmountTotal: session.amount_total');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
     expect(webhookSource).toContain('Bound deposit record lookup failed');
     expect(webhookSource).toContain('Bound quote record lookup failed');
