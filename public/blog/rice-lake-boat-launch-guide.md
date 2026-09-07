@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Where to Launch Boat on Rice Lake"
 description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp."
 category: "Local Guides"
 date_published: 2026-05-10
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Local Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
 
@@ -103,9 +103,9 @@ Not all ramps handle all boats the same way. Match the ramp to your hull size an
 - Prefer less congestion while you rig the boat
 - Need a ramp that handles larger trailers reliably
 
-**Provincial park ramps east on the lake**
+**Confirm a named ramp, operator, and posted access before you tow a larger rig**
 
-Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
+Gores Landing is one named option on this guide. If you are unsure, call ahead at 905-342-2153 and we will discuss the named ramps listed above for your rig.
 
 ## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
@@ -133,7 +133,7 @@ If you're new to launching, this is the basic flow. Most people do it efficientl
 
 For any powered boat in Ontario waters:
 
-**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada's current guidance is not to accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
 **Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
 
@@ -143,7 +143,7 @@ For any powered boat in Ontario waters:
 
 ## Trent-Severn Free Lockage 2026
 
-If you're launching to lock through the Trent-Severn, big news: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
+If you're launching to lock through the Trent-Severn, here's the current Parks Canada offer: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
 
 This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
@@ -167,7 +167,7 @@ This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Seve
 
 ## Fishing Regulations and Licences
 
-You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) to fish on Rice Lake or anywhere else in Ontario:
+You need a valid [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) to fish on Rice Lake or anywhere else in Ontario:
 
 - Outdoor Card (one-time purchase)
 - Fishing licence (annual or short-term)
@@ -195,7 +195,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 
-- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## FAQs
 
@@ -230,10 +230,10 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+- [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps
 

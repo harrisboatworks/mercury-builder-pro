@@ -59,4 +59,30 @@ describe('PremiumFaq', () => {
       'noopener noreferrer',
     );
   });
+
+  it('does not give static FAQ cards control-like hover affordances', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <PremiumFaq
+          faqs={[
+            {
+              question: 'What does a continuous beep mean?',
+              answer: 'Stop safely and check the engine display before continuing.',
+            },
+          ]}
+        />
+      </MemoryRouter>,
+    );
+
+    const card = screen.getByRole('listitem');
+    expect(card).not.toHaveClass('group', 'hover:shadow-md', 'transition-shadow');
+
+    const icon = card.querySelector('svg');
+    expect(icon).not.toBeNull();
+    expect(icon).not.toHaveClass(
+      'group-hover:text-repower-navy-900/50',
+      'transition-colors',
+    );
+    expect(container.querySelector('a, button, [role="button"], [tabindex]')).toBeNull();
+  });
 });

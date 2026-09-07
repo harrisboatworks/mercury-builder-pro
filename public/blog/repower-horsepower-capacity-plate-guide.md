@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose Repower Horsepower From Your Capacity Plate"
 description: "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 
@@ -55,7 +55,7 @@ The plate lists three things relevant to this conversation:
 2. **Maximum load** stated on the notice
 3. **Maximum number of people** stated on the notice
 
-Do not describe the power figure as an automatic criminal-law ceiling or promise that one insurance result applies to everyone. It is the manufacturer's recommended maximum safe limit. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
+The power figure is the manufacturer's recommended maximum safe limit, not an automatic criminal-law ceiling, and insurance outcomes are not the same for every owner. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
 
 ---
 
@@ -141,8 +141,8 @@ No. The listed maximum is a limit, not a target. Motor weight, transom condition
 - [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
 - [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
 - [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
-- [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat), choosing between a Mercury 90 and 115
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 
 ## Next steps
 

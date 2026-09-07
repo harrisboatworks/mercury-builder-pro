@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间"
 description: "Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。"
 category: "中马力指南"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-09-06
 keywords: ["Mercury 40 60HP 中文","铝船 Mercury 60HP","华人钓友船外机","安省 fishing boat Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 中马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-05-10  
+**最后审核:** 2026-09-06  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide
 
@@ -37,7 +37,7 @@ revenue_driver: repower
 
 ### 为什么 GTA 华人船主愿意到 Rice Lake
 
-- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
@@ -134,17 +134,9 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 ---
 
-## 内部连结
-
-- [Mercury 9.9至20HP：钓鱼小船、Kicker、Tiller中文选购指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-- [Mercury FourStroke、Pro XS、Verado差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
-
----
-
 > 相关指南：[完整 Mercury 马力选择指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。

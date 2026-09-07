@@ -14,12 +14,14 @@ import { AuthorByline } from '@/components/blog/AuthorByline';
 // FloatingShareBar removed — byline BlogShareButtons is the sole share UI.
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
+import { getMoreInHub } from '@/data/blogTopicHubs';
 import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
+import { shouldUnwrapMarkdownImageParagraph } from '@/lib/markdown-paragraph';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -57,6 +59,7 @@ export default function BlogArticle() {
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 4);
+  const moreInHub = getMoreInHub(article.slug, relatedArticles.map((a) => a.slug), 4);
   const cleanedContent = cleanBlogContent(article.content, {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
@@ -411,7 +414,7 @@ export default function BlogArticle() {
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
-                c = substituteLiveRateTokens(c);
+                c = substituteLiveRateTokens(c, { dateModified: article.dateModified });
                 return c;
               })()}
               markdownComponents={{
@@ -450,6 +453,10 @@ export default function BlogArticle() {
                     return <Link to={to} className={linkClass}>{children}</Link>;
                   }
                   return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                },
+                p: ({ node, children, ...props }) => {
+                  if (shouldUnwrapMarkdownImageParagraph(node)) return <>{children}</>;
+                  return <p {...props}>{children}</p>;
                 },
                 img: ({ node, src, alt, title }) => (
                   <ExpandableImage
@@ -569,6 +576,36 @@ export default function BlogArticle() {
           )}
 
         </article>
+
+        {/* More in this topic hub */}
+        {moreInHub && moreInHub.articles.length > 0 && (
+          <section
+            aria-label={`More in ${moreInHub.hub.name}`}
+            className="mt-20 max-w-[1100px] mx-auto"
+          >
+            <div className="mb-8 flex flex-col items-center gap-2 text-center">
+              <h2
+                className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                More in {moreInHub.hub.name}
+              </h2>
+              <Link
+                to={`/blog/${moreInHub.hub.slug}`}
+                className="font-sans text-sm font-semibold text-repower-mercury-red hover:underline underline-offset-4"
+              >
+                View all {moreInHub.hub.name} guides
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {moreInHub.articles.map((hubArticle) => (
+                <article key={hubArticle.slug}>
+                  <BlogCard article={hubArticle} />
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (

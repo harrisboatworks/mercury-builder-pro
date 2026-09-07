@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-07-18
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
-description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
+description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes Mercury prices live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-07-18
+date_modified: 2026-09-06
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,21 +21,19 @@ revenue_driver: repower
 
 # Why Mercury Dealers Hide Prices (HBW Doesn't)
 
-> Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call.
+> Most Mercury dealers hide prices online to control the sales conversation. HBW publishes Mercury prices live so you can compare without a phone call.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-07-18  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
 ### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/ca/en) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
-
-### Full Article
 
 You found the motor you want. You went to the dealer's website. You clicked the page. You saw "Call for Pricing."
 
@@ -53,7 +51,7 @@ Here are the five most common explanations dealers offer, ranked from most to le
 False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
 
 **2. "Prices change too frequently"** 
-Mercury motor prices change once a year at the model-year transition (typically July 1), and occasionally with promotional rate buy-downs. They do not change daily. A dealer quoting you verbally expects to honor that number for weeks. The "prices change too fast" argument doesn't survive basic scrutiny.
+Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote. A dated price is more useful than an undated verbal estimate.
 
 **3. "Configuration affects price"** 
 This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
@@ -94,9 +92,9 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 ## What Genuinely Requires a Conversation
 
-For about 95% of recreational customers, the motor selection page is the source of truth. But there are situations where the phone adds real value:
+For typical recreational FourStroke and Pro XS packages, the motor selection page is the source of truth. Special-order, brand-conversion, and multi-engine jobs still need a conversation:
 
-- **Brand conversions from Evinrude or Yamaha:** [Switching brands can add $1,500 to $3,000 in rigging](/blog/yamaha-to-mercury-repower-ontario-guide) above standard repower costs. Worth a call.
+- **Brand conversions from Evinrude or Yamaha:** [Switching brands can add meaningful rigging costs](/blog/yamaha-to-mercury-repower-ontario-guide) above standard repower costs. Worth a call.
 - **Twin or triple engine setups:** Multi-engine rigging is complex. Motors can be quoted online, but rigging benefits from a real conversation.
 - **Verado V12 600:** Special-order territory. Less than 1% of customers.
 - **[Commercial (SeaPro) applications](/blog/mercury-seapro-commercial-outboard-guide):** Commercial use cycles differ from recreational, and the conversation is worth having.
@@ -107,7 +105,7 @@ For about 95% of recreational customers, the motor selection page is the source 
 
 - **Live pricing in CAD**, no "plus exchange rate" surprises
 - **Full configuration in the quote**, motor, shaft length, controls, prop, rigging, install labor all on one line
-- **Mercury model-year pricing updated within days of July 1**
+- **Mercury model-year pricing updated after the annual transition, once current list data is confirmed**
 - **Promotional rates reflected when active**
 - **Quotes that can be saved, downloaded as PDF, or emailed**
 - **A quote you can build at midnight without needing to leave your name**
@@ -143,11 +141,11 @@ No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any 
 
 ### Do Mercury prices actually change frequently?
 
-No. Mercury MSRP changes once a year on July 1 with model year transition. Promotional pricing (rate buy-downs, package incentives) can change quarterly or with promotions. Daily price changes are not a thing.
+Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote.
 
 ### Is the price I build at HBW the price I pay?
 
-Yes for 95% of customers. Brand conversions and unusual configurations may need a conversation. For typical recreational repowers, the configurator is the source of truth and the price you build is the all-in number including rigging, prop, and install before HST.
+The configurator provides an itemized CAD estimate for the selected package. Confirm final pricing and scope in the written quote, especially for brand conversions, multiple motors, special orders, or commercial setups.
 
 ### How does HBW handle promotional pricing online?
 
@@ -155,7 +153,7 @@ Active promotional rates and package incentives are reflected in the live quote 
 
 ### Can I trust online pricing if it's published?
 
-For HBW, yes. Pricing is verified after Mercury's July 1 model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
+For HBW, yes. Pricing is verified after Mercury's model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
 
 ### What about delivery, taxes, and trade-in?
 
@@ -178,8 +176,8 @@ Build a quote at HBW first and use it as a written reference. Compare the exact 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
 - [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 
 ## Next steps
 

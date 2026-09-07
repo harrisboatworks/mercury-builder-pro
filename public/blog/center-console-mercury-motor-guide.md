@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury for Center Console Boats Ontario"
-description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
+title: "Best Mercury for a Center Console 2026: 115 HP to Quad V10"
+description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls."
 category: "Buying Guide"
 date_published: 2026-03-23
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,20 +19,20 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury for Center Console Boats Ontario
+# Best Mercury for a Center Console 2026: 115 HP to Quad V10
 
-> The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length.
+> How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
 ## Choosing a Mercury Motor for Your Center Console: An Ontario-First Guide
 
 ## Quick answer
-Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is usually a 200 to 250 HP V6 Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP V8 for larger or premium twin configurations. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is often a 200 to 250 HP Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP motor for larger or premium twin configurations. Those 200 to 250 Pro XS ratings are current V8 models, not V6. Confirm the exact family before treating horsepower as architecture. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 *Honest rigging pick*
 
@@ -89,14 +89,14 @@ Mercury's base FourStroke range fits the small end of center consoles: 17 to 20 
 
 **Best for:** 17 to 20 ft hulls, mixed fishing and recreation, customers who prioritize smoothness and fuel economy over peak performance.
 
-### Pro XS (150 to 400 HP)
-The Pro XS line is Mercury's performance-optimized outboard. Available from 150 to 400 HP across V6, V8, and V10 platforms. Purpose-built for fishing use: optimized hole-shot, aggressive mid-range power, and competitive top-end speed.
+### Pro XS (115 to 300 HP)
+The Pro XS line is Mercury's performance-optimized outboard. Current families do not share one architecture: 115 and 150 are inline-four, 175 is V6, and 200, 225, 250, and 300 are V8. Purpose-built for fishing use: optimized hole-shot, aggressive mid-range power, and competitive top-end speed.
 
 For Ontario center consoles, Pro XS is the default recommendation for fishing-focused buyers.
 
-- 200 Pro XS V6 (3.4L): Sweet spot for 20 to 22 ft hulls
-- 250 Pro XS V8 (4.6L): Step up for larger 22 to 25 ft hulls or heavier loads
-- 300 Pro XS V8 (4.6L): Performance upgrade for 23 to 25 ft hulls, tournament application
+- 200 Pro XS 4.6 L V8: Common starting point for 20 to 22 ft hulls
+- 250 Pro XS 4.6 L V8: Step up for larger 22 to 25 ft hulls or heavier loads
+- 300 Pro XS 4.6 L V8: Performance upgrade for 23 to 25 ft hulls, tournament application
 
 **Best for:** Fishing-focused center consoles, 20 to 25 ft hulls, buyers who want aggressive performance and do not need quiet cruise.
 
@@ -115,8 +115,8 @@ For most Ontario fishing-focused center consoles, Verado is more motor than the 
 **Use case:** Bay of Quinte walleye, sheltered Lake Ontario days, river running.
 
 ### 20 to 22 ft trailerable
-**Motor:** Mercury 200 Pro XS V6 (3.4L) is the sweet spot. 150 Pro XS works on the lighter 20 ft hulls.
-**Performance:** 45 to 55 mph two-up with the 200 V6.
+**Motor:** Mercury 200 Pro XS 4.6 L V8 is a common starting point. 150 Pro XS (3.0 L inline-four) works on the lighter 20 ft hulls.
+**Performance:** 45 to 55 mph two-up with the 200 V8, depending on hull, load, and prop.
 **Use case:** Lake Ontario salmon, Bay of Quinte, full-day trips.
 
 This is the most common Ontario center console application.
@@ -147,7 +147,7 @@ If you are buying a 25 to 28 ft center console in Ontario and you plan to run it
 
 **3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. The conventional outboard package uses two or more DTS-equipped engines. Mercury also offers package-specific single-engine systems, but most single-engine rigs do not qualify. The available package has to be confirmed against the exact engine, steering, controls, and hull.
 
-The cost difference is real. A twin-Mercury 250 Pro XS V8 setup gives you 500 total HP and costs roughly 1.8 to 1.9 times as much as a single 300 Pro XS V8. Twins are not an equivalent-horsepower alternative; they are a redundancy and power upgrade. For most Ontario trailerable buyers, single is the right answer.
+The cost difference is real. A twin-Mercury 250 Pro XS V8 setup gives you 500 total HP and typically costs substantially more than a single 300 Pro XS V8; compare both configurations at mercuryrepower.ca. Twins are not an equivalent-horsepower alternative; they are a redundancy and power upgrade. For most Ontario trailerable buyers, single is the right answer.
 
 ## Mercury Joystick Piloting: what it actually does
 
@@ -163,19 +163,19 @@ Conventional Joystick Piloting controls thrust direction across multiple motors,
 
 Single-engine joystick is a narrow, package-specific exception, not a general feature of single-engine Mercury rigs. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) requires an electric-steering Verado or SeaPro V8, V10, or V12 outboard from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Mercury also lists Joystick Steering for Single-Engine Vessels as a separate system. Most single-engine center consoles do not qualify, so confirm the complete package before treating joystick as part of the repower plan.
 
-**Cost:** Roughly $4,000 to $7,000 CAD added to a twin rigging, depending on motor generation and existing controls.
+**Cost:** Varies with motor generation and existing controls; build the full package at mercuryrepower.ca for a current figure.
 
 ## Rigging details that matter for center consoles
 
-**Prop selection:** Aluminum props on a 200+ HP center console are a false economy. Mercury Bravo 1 FS, Bravo 1 XS, or Fury 4 in the right pitch is the standard starting point for V6/V8 power. Budget $700 to $1,300 CAD for the prop on a fresh repower.
+**Prop selection:** Aluminum props on a 200+ HP center console are a false economy. Mercury Bravo 1 FS, Bravo 1 XS, or Fury 4 in the right pitch is a common starting point for these higher-HP families. Confirm hub, gearcase, and part number before ordering. Budget for a quality stainless prop on a fresh repower; current prop pricing is on our /pricing-reference page.
 
-**Hydraulic steering:** Required for V6 and V8 motors. SeaStar Pro hydraulic is our default.
+**Hydraulic steering:** Required on many of these higher-HP motors. SeaStar Pro hydraulic is our default. Confirm the exact engine and control option.
 
 **NMEA 2000 backbone for twins:** If you are running twin motors, plan a proper NMEA 2000 backbone for chartplotter-engine integration and Joystick if applicable.
 
 **Transom bracket check:** Modern center consoles use transom brackets that move the motor 12 to 30 inches aft of the transom. Verify bracket rating before we quote a motor size.
 
-**Spring commissioning:** Center consoles tend to be stored covered, not shrink-wrapped. Annual pre-launch service is worth $400 to $600 and will prevent a $4,000+ cooked impeller from ruining your first week of salmon season.
+**Spring commissioning:** Center consoles tend to be stored covered, not shrink-wrapped. Annual pre-launch service at our current published rate will prevent a cooked impeller from ruining your first week of salmon season.
 
 ## Why Ontario center console buyers come to us
 
@@ -183,7 +183,7 @@ We have been a Mercury dealer on Rice Lake for decades. Center-console repowers 
 
 We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. We recommend Verado when the premium is actually justified by how the boat is being used.
 
-Pickup is at Gores Landing. That is not a downside, it means your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
+Pickup is at Gores Landing, and your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
 
 ---
 
@@ -191,7 +191,7 @@ Pickup is at Gores Landing. That is not a downside, it means your motor was rigg
 
 ### What Mercury motor fits a 20 to 22 ft center console in Ontario?
 
-The Mercury 200 Pro XS V6 (3.4L) is the most common choice and the one we recommend most often for 20 to 22 ft hulls. It is fast enough for Lake Ontario salmon fishing, light enough to keep the rig trailerable, and a solid all-around motor.
+The Mercury 200 Pro XS 4.6 L V8 is the most common choice we recommend for 20 to 22 ft hulls. It is a V8, not a V6. The 150 Pro XS is an inline-four. Confirm the exact family, shaft, and controls before treating horsepower as architecture.
 
 ### Do I need twin motors on a center console in Ontario?
 
@@ -207,7 +207,7 @@ No. Mercury twin-engine architecture requires matched motors, same family, same 
 
 ### How much does a twin Mercury outboard setup cost in Ontario?
 
-As a planning reference: a twin Mercury 250 Pro XS V8 setup is roughly $69,700 to $75,500 CAD for the pair depending on shaft length and controls (a 250ELPT Pro XS is $34,848 each on our current pricing reference), plus $8,000 to $15,000 for rigging, totalling approximately $78,000 to $90,000 installed before HST. Adding Joystick Piloting: another $4,000 to $7,000. Get a current quote at mercuryrepower.ca.
+Installed cost depends on the exact pair of motors, shaft length, controls, rigging, propeller, and whether joystick is part of the approved package. Compare current written quotes with the same assumptions. Build the package at mercuryrepower.ca.
 
 ### What is Mercury Joystick Piloting, and do I need it on a center console?
 

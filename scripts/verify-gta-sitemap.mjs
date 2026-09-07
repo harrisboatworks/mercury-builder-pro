@@ -23,7 +23,7 @@ const POSTS = [
   'mercury-outboard-dealer-toronto-why-drive-to-hbw',
   'best-mercury-dealer-ontario-hbw-difference',
   'boat-service-near-toronto-hbw-reach',
-  'rice-lake-boat-rentals-from-toronto-gta',
+  'rice-lake-boat-rental-guide-2026',
   'winter-storage-near-toronto-hbw',
   'harris-boat-works-since-1947-rice-lake-institution',
   'mercury-repower-gta-toronto-destination',

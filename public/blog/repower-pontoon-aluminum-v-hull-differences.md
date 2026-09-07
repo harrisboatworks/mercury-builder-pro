@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon vs Aluminum vs V-Hull Repower"
 description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["repower pontoon","repower aluminum fishing boat","repower v-hull","mercury repower hull types","rice lake repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
 
@@ -38,7 +38,7 @@ revenue_driver: repower
 | Repower complexity | Medium (mounts vary) | Simplest | Most involved |
 | Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
 | Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
-| Transom check | Holds 82-113 kg (180-250 lb) motor; inspect | Inspect | Can fail internally with no visible signs |
+| Transom check | Check the installed motor and rigging weight; inspect | Inspect | Can fail internally with no visible signs |
 | Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
 | Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
 
@@ -54,7 +54,7 @@ Here's what's different, and what to watch for, across the three most common hul
 
 ### What makes a pontoon repower different
 
-Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about [having enough torque to get that weight moving](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), especially with a full load.
+Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about [having enough torque to get that weight moving](/blog/mercury-command-thrust-complete-guide-2026), especially with a full load.
 
 For the 22 to 24 ft pontoons we see most, carrying 4 to 6 people, [the 90 to 115hp range is the typical recommendation](/blog/pontoon-hp-sizing-decision-tree-ontario). Heavier loads and tritoons push higher. Your capacity plate and how you actually load the boat make the final call.
 
@@ -74,7 +74,7 @@ Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, 
 
 That said:
 
-**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 82-113 kg (180–250 lbs) is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
+**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom supporting an outboard and its rigging is a structural issue, not a cosmetic one. Assess it against the exact installed weight and mounting requirements. We inspect this before every repower and quote transom work separately if it's needed.
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
@@ -119,7 +119,7 @@ Pontoons are heavier and wider and ride on their tubes rather than planing like 
 
 ### Is an aluminum fishing boat easy to repower?
 
-Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structural issue, quoted separately if work is needed.
+Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a motor is a structural issue, quoted separately if work is needed.
 
 ### What should I watch for when repowering a fibreglass V-hull?
 

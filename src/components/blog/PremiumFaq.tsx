@@ -98,7 +98,7 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
           return (
             <li
               key={i}
-              className="group relative rounded-md border border-repower-navy-900/10 bg-repower-cream p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="relative rounded-md border border-repower-navy-900/10 bg-repower-cream p-6 md:p-8 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-3">
                 <span aria-hidden="true" className="h-px w-6 bg-repower-mercury-red" />
@@ -111,7 +111,7 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
                 size={20}
                 strokeWidth={1.75}
                 aria-hidden="true"
-                className="absolute top-6 right-6 md:top-8 md:right-8 text-repower-navy-900/30 group-hover:text-repower-navy-900/50 transition-colors"
+                className="absolute top-6 right-6 md:top-8 md:right-8 text-repower-navy-900/30"
               />
 
               <h3

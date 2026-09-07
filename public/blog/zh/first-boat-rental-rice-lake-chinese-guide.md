@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人第一次租船钓鱼：证件、安全和当天流程"
 description: "多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Rice Lake 租船","中文 多伦多","第一次 租船 钓鱼","安省 钓鱼证","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-08-02  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 
@@ -55,13 +55,13 @@ revenue_driver: rentals
 
 ## 当天流程（典型一日租船）
 
-1. **到店登记（约 15-20 分钟）** ——出示证件，签租船合同，刷信用卡押金。
-2. **安全简报和租船检查清单** ——HBW 工作人员会讲解船只控制、安全设备、救生衣、紧急联系方式和允许航行的水域。清单属于安全流程，但不能替代 HBW 要求每位驾驶者出示的有效 PCOC。
-3. **船只交接和试机** ——工作人员把船开到码头，演示启动、变速、停泊。第一次开建议在码头边试一次起步停止。
-4. **下水使用** ——按约定时长（半天 / 全天）使用。Rice Lake 是浅湖（平均 25 英尺深），适合新手，但**注意中央有部分浅滩和草甸区域**——简报时会标出。
-5. **返航和归还** ——按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，退还押金。
+1. **到店登记（约 15-20 分钟）**：出示证件，签租船合同，刷信用卡押金。
+2. **安全简报和租船检查清单**：HBW 工作人员会讲解船只控制、安全设备、救生衣、紧急联系方式和允许航行的水域。清单属于安全流程，但不能替代 HBW 要求每位驾驶者出示的有效 PCOC。
+3. **船只交接和试机**：工作人员把船开到码头，演示启动、变速、停泊。第一次开建议在码头边试一次起步停止。
+4. **下水使用**：按约定时长（半天 / 全天）使用。Rice Lake 是浅湖（平均 25 英尺深），适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
+5. **返航和归还**：按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，退还押金。
 
-> **典型时间：** 上午 10 点到店、10:30 下水、下午 4 点返航、4:30 离场——足够完成一次完整的钓鱼日。
+> **典型时间：** 上午 10 点到店、10:30 下水、下午 4 点返航、4:30 离场，足够完成一次完整的钓鱼日。
 
 ## 关于 PCOC（船只操作员卡）
 
@@ -84,14 +84,14 @@ revenue_driver: rentals
 - **天气变化快：** 出发前查 Environment Canada 当日预报，雷暴一律返航。
 - **手机信号：** Rice Lake 中央部分区域信号弱，建议提前下载离线地图。
 - **下水后 30 分钟内：** 适应船感，慢速绕一圈，熟悉视野盲区。
-- **燃油：** HBW 通常按用量结算——开船时注意油表，回到码头前 1/4 油量打回头是稳健做法。
+- **燃油：** HBW 通常按用量结算，开船时注意油表，回到码头前 1/4 油量打回头是稳健做法。
 
 ## HBW 的服务说明
 
 > 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 - 地点：Gores Landing, Ontario（莱斯湖南岸）
-- 自送自取（HBW 不提供取送）
+- 租船手续和还船都在 HBW 的 Gores Landing 码头办理。
 - 电话：(905) 342-2153 / info@harrisboatworks.ca
 - 租船详细信息（船型、时长、价格、当前要求的证件清单）：[harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)
 

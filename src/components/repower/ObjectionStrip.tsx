@@ -27,7 +27,7 @@ const CARDS: ObjectionCardData[] = [
   {
     icon: Anchor,
     heading: 'Will it be set up right?',
-    body: 'Every repower gets an on-water test on Rice Lake before pickup. No exceptions.',
+    body: "HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer.",
     linkText: 'What happens at the shop',
     href: '/blog/what-happens-during-mercury-repower',
   },

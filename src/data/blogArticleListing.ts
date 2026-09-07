@@ -31,13 +31,12 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [8, 9, 10, 11, 12, 1, 2, 3],
   'outdoor-boat-storage-shrinkwrap-rice-lake': [8, 9, 10, 11, 12, 1, 2, 3],
   'winter-storage-near-toronto-hbw': [8, 9, 10, 11, 12, 1, 2, 3],
-  'boat-storage-kawartha-lakes': [8, 9, 10, 11, 12, 1, 2, 3],
   'spring-outboard-commissioning-checklist': [3, 4, 5],
   'walleye-opener-boat-prep': [3, 4, 5],
   'late-season-boating-safety': [9, 10, 11],
   'ontario-boating-season-tips': [4, 5, 6, 7, 8, 9, 10],
   'trent-severn-waterway-boating-guide-2026': [4, 5, 6, 7, 8, 9, 10],
-  'rice-lake-boat-rentals-from-toronto-gta': [4, 5, 6, 7, 8, 9],
+  'rice-lake-boat-rental-guide-2026': [4, 5, 6, 7, 8, 9],
 };
 
 export function isArticleInSeason(slug: string, now: Date = new Date()): boolean {

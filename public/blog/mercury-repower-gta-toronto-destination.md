@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower GTA Toronto Guide"
 description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
 category: "Mercury Outboards"
 date_published: 2026-05-19
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
 ## Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-> **Quick answer:** A GTA repower at HBW is a customer drop-off and pickup job. Start with the boat's capacity label, build a current quote, send the hull and rigging details, then bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+> **Quick answer:** A GTA repower at HBW starts with the boat's capacity label, a current quote, and the hull and rigging details. We can generally arrange boat pickup; ask about availability. You can also bring the boat to Gores Landing for the scheduled installation. HBW confirms the applicable shop window after reviewing the boat, parts, and current capacity. HBW does not deliver boats. The full transport limits are in Stage 4.
 
 There are two timelines in every repower:
 
@@ -98,20 +98,11 @@ The marina is closed December 1 through April 1. During that closure, planning a
 
 ## From the Shop: Stage 4, Customer Drop-Off
 
-Bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing at the confirmed time.
+Complete the service request at [hbw.wiki/service](https://hbw.wiki/service), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
 
-HBW is drop-off and pickup only. We do not provide:
+HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-- Pickup or delivery
-- Boat hauling
-- Mobile service
-- Transport coordination
-- Transport referrals
-- Transport-price estimates
-
-Customers are responsible for getting the boat to HBW and taking it home. If you cannot move the boat, solve that independently before reserving the installation slot.
-
-At drop-off, HBW confirms the boat, motor, controls, keys, visible hull condition, and approved work order.
+After drop-off, HBW reviews the boat, motor, controls, keys, visible hull condition, and work order before proceeding with approved work.
 
 ---
 
@@ -182,7 +173,7 @@ HBW confirms the applicable shop window after reviewing the boat, required work,
 
 ### Does HBW arrange transport from Toronto or the GTA?
 
-No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### Can I plan a repower while HBW is closed?
 
@@ -200,9 +191,9 @@ HBW can assess the boat and proposed Mercury configuration, but the motor, warra
 
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw), Mercury dealer for Port Hope
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 
 ## Next steps
 

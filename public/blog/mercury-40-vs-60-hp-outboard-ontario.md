@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,8 +11,8 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-02
-keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
+date_modified: 2026-09-06
+keywords: ["Mercury 40 vs 60 HP","Mercury 40 vs 60 HP comparison","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ### Quick Answer
 
-For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land. For specs, freshwater tests, and Standard vs Command Thrust on the 60 itself, see the [Mercury 60 HP FourStroke review](/blog/mercury-60-hp-fourstroke-review-ontario).
 
 ---
 
@@ -91,7 +91,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 103 kg (227 lb)) vs 60 HP ($12,040, 4-cylinder, 113 kg (250 lb)) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP (3-cylinder, 103 kg (227 lb)) vs 60 HP (4-cylinder, 113 kg (250 lb)) with best-boat and load recommendations; current pricing at mercuryrepower.ca.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|
@@ -99,7 +99,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
-| WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
+| WOT RPM range | 5,500–6,000 | 5,500–6,000 |
 | Fuel system | EFI | EFI |
 | Tiller version | 40 ELHPT, yes | 60 ELHPT, yes |
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
@@ -138,7 +138,7 @@ The 60 CT is the minimum we recommend on a 20 ft pontoon with four people aboard
 
 ## The Command Thrust Question
 
-Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
+Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, a longer gear ratio than the standard 60 (Mercury's published spec sheets have the exact ratios), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
 The configured price difference for Command Thrust changes by model and propeller. On a pontoon repower, judge it by loaded hole shot, low-speed control, reverse authority, and the speed trade-off on the actual hull, not by a generic payback claim.
 
@@ -160,7 +160,7 @@ All prices in CAD, before HST, before any trade-in credit.
 
 | Configuration | All-In Installed (Motor + Rigging + Controls + Prop) |
 |---|---:|
-| 40 ELPT FourStroke | roughly $11,000 to $12,500 |
+| 40 ELPT FourStroke | varies; build a live quote at mercuryrepower.ca |
 | 60 ELPT FourStroke | roughly $13,500 to $15,000 |
 | 60 ELPT Command Thrust | roughly $14,000 to $15,500 |
 
@@ -181,6 +181,8 @@ And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP i
 ---
 
 *Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+
+As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licences are valid for five years. Older licences have their own expiry date or transition deadline; check your licence with Transport Canada. The current fee is $24.41 for a new, transferred, renewed or duplicate licence, while updates and cancellations are free. Fees may change each April 1.
 
 ## Ready to Spec Your 40 or 60 Repower?
 
@@ -220,7 +222,7 @@ Maybe. Mercury changed its connector standards in 2014 and again with the SmartC
 
 ### Do I need to update my Pleasure Craft Licence if I change motor HP?
 
-Yes. A change in motor HP is a change in the boat's record and triggers a PCL update within 30 days. Transport Canada updated the rules effective Dec 31, 2025: 5-year renewals, $24 fee, $250 fine for non-compliance. See our Pleasure Craft Licence update guide for details.
+Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update. As checked September 5, 2026, new, transferred and renewed licences are valid for five years, and older licences have their own expiry date or transition deadline. The current fee is $24.41 for a new, transferred, renewed or duplicate licence; updates and cancellations are free. Fees may change each April 1.
 
 ### How long does a Mercury 40 or 60 last?
 
@@ -229,8 +231,8 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
 - [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
 

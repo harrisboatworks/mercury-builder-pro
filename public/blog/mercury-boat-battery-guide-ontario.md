@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boat Battery Guide Ontario"
 description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend."
 category: "Service"
 date_published: 2026-04-01
-date_modified: 2026-06-09
+date_modified: 2026-09-06
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-04-01  
-**Last reviewed:** 2026-06-09  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
 ## The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
 
-> **Quick answer:** Battery-related no-starts are HBW's #1 spring service call. Most Mercury 4-strokes 75 HP and up need at least 800 MCA at startup. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise. Disconnect or use a battery switch for winter storage, top up monthly with a maintenance charger, and replace at 5-7 years even if it still cranks.
+> **Quick answer:** Battery-related no-starts are HBW's #1 spring service call. Your engine's owner's manual specifies the minimum cranking rating for your exact model; use that figure and the battery type it specifies. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise. Disconnect or use a battery switch for winter storage, top up monthly with a maintenance charger, and replace at 5-7 years even if it still cranks.
 
 It's the first warm weekend of May. The dock is clear. Your family is in the truck. You climb into the boat, turn the key, and get a slow, grinding click.
 
@@ -93,7 +93,7 @@ The boats that never have this problem aren't running special equipment. They're
 
 Starting batteries deliver a massive burst of current for 1 to 3 seconds to crank an outboard, many thin plates, maximum surface area, designed for short bursts. They degrade quickly if repeatedly drawn down to a low state of charge.
 
-**Key spec:** Marine Cranking Amps (MCA), measured at 0°C (32°F). For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
+**Key spec:** Marine Cranking Amps (MCA), measured at 0°C (32°F). Choose the cranking rating, battery type and reserve capacity specified in your engine's manual. MCA and CCA use different test temperatures; compare the rating requested by the manual rather than treating the numbers as interchangeable.
 
 If you have an outboard and nothing else drawing power, a quality starting battery is all you need.
 
@@ -141,26 +141,26 @@ For most recreational boats in Ontario, AGM is the right answer. Lithium makes s
 
 ### Why You Need One
 
-A battery switch isolates your battery from the boat's electrical system. In the OFF position, nothing draws power, parasitic drain stops. It's the most effective storage strategy available, and one of the simplest.
+A battery switch isolates switched loads from the battery bank. In the OFF position, those switched circuits stop drawing. Direct-connected 24-hour circuits, such as some automatic bilge pumps, stay live because they bypass the switch. See [Blue Sea 24-hour circuit guidance](https://www.bluesea.com/support/articles/Circuit_Protection/679/24_Hour_Circuit_Solutions). Do not disable a required automatic bilge circuit while the boat is afloat.
 
 ### Single vs. Dual Battery Setup
 
-A **single battery setup** with a simple On/Off isolator switch is fine for small boats with minimal accessories. Turn it off, parasitic drain stops.
+A **single battery setup** with a simple On/Off isolator switch is fine for small boats with minimal accessories. Turn it off to isolate switched loads, then confirm which circuits remain powered.
 
 A **dual battery setup** runs a dedicated starting battery and a deep cycle battery for accessories, managed through a selector switch.
 
 ### Off / 1 / 2 / Both. What Each Position Does
 
-- **OFF:** All circuits isolated. Use this for storage and any time the boat is unattended.
+- **OFF:** Isolates switched loads. Use this for storage and any time the boat is unattended after confirming which circuits remain powered. Do not disable a required automatic bilge circuit while the boat is afloat.
 - **1:** Powers the boat from Battery 1 only. Battery 2 is isolated.
 - **2:** Powers the boat from Battery 2 only. Battery 1 is isolated.
 - **BOTH:** Both batteries in parallel. Both charge when the engine runs.
 
 ### The "Both" Position Trap
 
-This is how boats come in dead every spring: the switch was left on **BOTH** all winter. With the switch on Both, any parasitic draw pulls from both banks simultaneously. You've doubled your drain exposure. **Never leave the switch on Both for storage.** Turn it to OFF.
+This is how boats come in dead every spring: the switch was left on **BOTH** all winter. Leaving BOTH selected exposes both banks to connected loads and can leave you without an isolated starting reserve. Follow your boat's storage and charging plan. **Never leave the switch on Both for storage.** Turn it to OFF for switched loads.
 
-One more note: never switch directly from 1 to 2 while the engine is running. Switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
+One more note: the safe bank-change path depends on the installed switch and engine, not a generic numbered sequence. Do not turn a charging system to OFF or disconnect a battery with the engine running. Some switches, such as [Blue Sea's 9001e](https://www.bluesea.com/products/9001e/e-Series_Selector_Battery_Switch), use make-before-break contacts and allow bank changes without interrupting power. If the switch is unknown, stop the engine before changing banks.
 
 ### Adding an ACR or VSR
 
@@ -174,7 +174,7 @@ This is where our techs find the most deferred maintenance:
 
 - **Cable sizing:** Undersized cables create voltage drop, your motor sees less voltage than the battery is producing, causing hard starting even with a healthy battery. Match cable gauge to run length and load. When in doubt, go heavier.
 - **Terminals:** Loose or corroded connections add resistance. Inspect and tighten every spring.
-- **Fuse the positive run:** Every positive cable should be fused close to the battery. An unfused positive cable is a fire risk.
+- **Fuse the distribution runs:** Follow the approved engine and boat wiring diagram and have circuit protection checked by a qualified marine technician. Accessory and distribution feeders are typically protected close to the source. Do not improvise a fuse into the starter or cranking cable. See [Blue Sea DC circuit protection](https://www.bluesea.com/support/articles/Circuit_Protection/98/DC_Circuit_Protection).
 - **Ground bus bar:** Individual ground wires back to the battery negative terminal creates a mess. A proper ground bus bar keeps things clean and serviceable.
 
 If you're not confident in your boat's wiring, have a tech look at it. Bad marine wiring doesn't just cause reliability problems, it causes fires.
@@ -195,9 +195,9 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 
 **Solutions, in order of effectiveness:**
 
-1. **Turn the master switch OFF.** Breaks the circuit, stops all parasitic drain. Note: if your boat has an auto bilge pump, verify whether your switch keeps the bilge circuit live, know what you're turning off.
-2. **Disconnect the negative terminal.** Fallback if the switch doesn't fully isolate.
-3. **Leave the battery in the boat, disconnected.** Parasitic drain from staying connected is what kills batteries over winter, not the cold. A maintainer helps if you have power at storage.
+1. **Turn the master switch OFF.** That isolates switched loads. Direct-connected circuits, including some automatic bilge pumps, stay live. Do not disable a required automatic bilge circuit while the boat is afloat.
+2. **For out-of-water storage, use the documented disconnection plan.** Disconnecting the negative terminal reduces external drain if the switch does not isolate every load.
+3. **Leave a suitable battery aboard, fully charged and disconnected** when that matches the boat's storage plan. Disconnection reduces external drain; it does not stop self-discharge or guarantee charge state. A discharged lead-acid battery can freeze and crack at ordinary Ontario winter temperatures. A maintainer helps if you have power at storage. Follow the battery manufacturer's storage and charging limits.
 
 ---
 
@@ -206,7 +206,7 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 **Before storage:**
 - Bring the battery to a full charge before putting it away, never store it at 50%.
 - Turn the master switch to OFF.
-- If you won't have access to check on it, leave the battery in the boat but disconnect it. Cold is not the failure mode; parasitic drain is.
+- If you won't have access to check on it, leave a suitable battery in the boat, fully charged and disconnected. Charge state and the manufacturer's storage limits matter. Cold can damage a discharged lead-acid battery.
 
 **Storing in place with power access:**
 - Connect a **battery maintainer** (smart charger or float charger), not a regular trickle charger. A trickle charger runs a constant low current that will overcharge a battery over 5 months. A smart maintainer monitors voltage and charges only when needed.
@@ -299,11 +299,18 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 
 Phone: 905-342-2153
 
+## Sources
+
+- [Blue Sea Systems: 24-hour circuit solutions](https://www.bluesea.com/support/articles/Circuit_Protection/679/24_Hour_Circuit_Solutions)
+- [Blue Sea Systems: DC circuit protection](https://www.bluesea.com/support/articles/Circuit_Protection/98/DC_Circuit_Protection)
+- [Blue Sea Systems: e-Series selector battery switch](https://www.bluesea.com/products/9001e/e-Series_Selector_Battery_Switch)
+- [Interstate Batteries storage FAQs](https://www.interstatebatteries.com/support/faqs)
+
 ## FAQs
 
 ### What size battery does a Mercury outboard need?
 
-For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 0°C (32 degrees F). Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.
+Check your engine's owner's manual for the exact minimum cranking-amp requirement for your specific model; do not rely on a generic figure. Use the battery type the manual specifies: a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.
 
 ### AGM vs flooded lead-acid vs lithium: which marine battery should I buy?
 
@@ -311,11 +318,11 @@ AGM is the sweet spot for most Ontario boat owners: sealed and maintenance-free,
 
 ### Why does my boat battery die over the winter?
 
-Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you have power access in storage.
+Connected loads and self-discharge both matter. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window. Isolate switched loads, never leave the selector on BOTH, keep the battery charged, and use a smart maintainer if you have power access. Charge state also matters because a discharged lead-acid battery can freeze.
 
 ### Should I leave my battery switch on "Both" for storage?
 
-Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
+No. Leaving BOTH selected exposes both banks to connected loads and can leave you without an isolated starting reserve. Follow your boat's storage and charging plan, typically OFF for switched loads. Do not turn a charging system to OFF or disconnect a battery with the engine running. Follow the switch maker's permitted bank-change path; if the switch is unknown, stop the engine before changing banks.
 
 ### When should I replace my marine battery?
 
@@ -323,15 +330,15 @@ Most marine batteries last 4 to 7 years. Replace when resting voltage is below 1
 
 ### What is the right way to store a marine battery for winter?
 
-Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don't have power access, leave the battery in the boat but disconnect it. Parasitic drain from staying connected is the failure mode, not the cold.
+Bring a suitable battery to a full charge before storage and follow the manufacturer's storage and charging limits. Isolate switched loads with the master switch. For out-of-water storage, use the documented disconnection plan. A disconnected battery still self-discharges, so charge state matters. A discharged lead-acid battery can freeze at ordinary Ontario winter temperatures. Do not disable a required automatic bilge circuit while the boat is afloat.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
 - [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
-- [Boat Motor Trade-In Ontario Guide](/blog/boat-motor-trade-in-guide), trade-in valuation guide
 - [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
+- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 
 ## Next steps
 

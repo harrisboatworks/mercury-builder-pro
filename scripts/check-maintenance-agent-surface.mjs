@@ -42,15 +42,20 @@ for (const [label, text] of [
   requireText(text, 'exact engine model and serial number', label);
   requireText(text, 'no responsible universal hour or year estimate', label);
   requireText(text, 'model-specific storage procedure', label);
+  requireText(text, 'drop the boat off anytime, including after hours', label);
+  forbidText(text, 'Service slots fill', label);
+  forbidText(text, 'Book early', label);
 }
 
 for (const required of [
   'content_type: service_index',
-  'service_dropoff_only: true',
-  'customer_transport_required: true',
+  'boat_pickup_available: generally',
+  'delivery_offered: false',
   'mobile_service: false',
   'Engine repairs are limited to Mercury and MerCruiser',
-  'Outdoor storage with shrinkwrap only',
+  'Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service',
+  'We can generally arrange boat pickup. Ask us about availability for your boat and location.',
+  'effective September 2026',
   'reopens in early April',
   'https://hbw.wiki/service',
   'https://www.harrisboatworks.ca/winter-storage',
@@ -59,7 +64,16 @@ for (const required of [
   requireText(maintenance, required, 'public/maintenance.md');
 }
 
+forbidText(maintenance, '2025 rate card while the 2026 revision is being reviewed', 'public/maintenance.md');
+forbidText(maintenance, 'Outdoor storage with shrinkwrap only', 'public/maintenance.md');
+forbidText(maintenance, 'does not pick up, transport, ship, or deliver boats or motors', 'public/maintenance.md');
+
 requireText(llms, 'https://www.mercuryrepower.ca/maintenance.md', 'public/llms.txt');
+requireText(llms, 'Current September 2026 winter storage and winterization rates', 'public/llms.txt');
+requireText(llms, 'We can generally arrange boat pickup. Ask us about availability for your boat and location.', 'public/llms.txt');
+requireText(llms, 'outdoor uncovered storage, and shrink-wrap-only service', 'public/llms.txt');
+forbidText(llms, 'Outdoor shrinkwrap only', 'public/llms.txt');
+forbidText(llms, 'batteries stay in the boat, disconnected', 'public/llms.txt');
 forbidText(llms, 'fuel stabilization, fogging, gearcase service, cooling drain', 'public/llms.txt');
 requireText(llms, 'model-specific fuel, cooling, internal-corrosion, and gearcase preparation', 'public/llms.txt');
 requireText(catalog, '## Service and maintenance', 'public/catalog.md');

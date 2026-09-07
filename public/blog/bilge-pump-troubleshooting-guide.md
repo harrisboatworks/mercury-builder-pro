@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, an
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 
 > **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
 
-A Legend owner walked down to his dock last week and found his boat sitting lower than it should. Not sunk, just low. The kind of low that means water got in overnight and nothing pumped it out.
-
-The pump itself was fine. The float switch that's supposed to wake it up wasn't. We saw three of these in a single week, all with the same root cause: a corroded connector that quietly stopped talking to the pump long before anyone noticed.
+A bilge system needs more than a working pump motor. The automatic switch, electrical supply, connections, intake, and discharge path all need to function. Follow the installed equipment manuals when checking the system.
 
 Here's the thing about bilge pumps. Everybody thinks about the pump. Almost nobody thinks about the switch and the wiring that actually make the pump do its job. That's where most real problems live, and that's what this guide covers: how the whole system works, why it actually fails, how to size and test one properly, and when it's worth calling us instead of guessing.
 
@@ -55,13 +53,13 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 
 ### What Canadian Law Actually Requires
 
-Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
+Canada's Small Vessel Regulations use separate requirements for pleasure craft and, in sections 734 to 739, non-pleasure vessels over 6 m:
 
-- If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
-- Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
+- For pleasure craft not more than 9 m long, section 206 generally requires carrying a bailer or manual bilge pump. From more than 9 m through 12 m, it requires a manual bilge pump or bilge-pumping arrangements; over 12 m, it requires bilge-pumping arrangements. Section 214's exception applies specifically to the bailer or manual bilge-pump requirement when the craft cannot retain enough water to capsize or its compartments are sealed and not readily accessible.
+- Section 734 says sections 735 to 739 apply in respect of non-pleasure vessels over 6 m. For those vessels, section 736 requires pumping or access for bailing in watertight compartments and, when the bilge is not easily visible from the operating position, an automatic high bilge-water alarm plus the specified pumping arrangement.
+- The automatic bilge pump or bilge pumping system covered by section 736 must have a minimum capacity of 0.91 litres per second (3,276 L/h, or about 865 US GPH). That is not a pleasure-craft sizing floor.
 
-That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.
+For the recreational boats this guide is written for, follow the manufacturer's specifications and the pleasure-craft carry-on rules. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is still the practical standard we recommend in addition to the required equipment.
 
 ---
 
@@ -75,7 +73,7 @@ Most small to mid-size boats use three components working together.
 
 An electric centrifugal submersible pump, the most common type by far, sits at the lowest point of the hull. When power is applied, an internal motor spins an impeller at high speed. The spinning impeller flings water outward and out the discharge port, and as water leaves, it draws more in through the intake. That cycle keeps running as long as power is supplied and water is present.
 
-The pump is built to run submerged. Its motor is sealed against the water it sits in, which is exactly why running one completely dry, with no water to move, can damage the impeller and motor within seconds. Never dry-test a bilge pump.
+The pump is built to run submerged. Use the installed pump manufacturer's test method. Xylem distinguishes submersible, flexible-impeller, and diaphragm pumps, and its submersible pumps permit limited dry running. Rule installation guidance calls for switch tests both with and without water. Distinguish a brief functional test from prolonged dry running, and confirm water discharge in a wet test. Some centrifugal submersible pumps allow a brief dry test under their manufacturer’s instructions. That permission does not extend to prolonged dry running or to a different pump design such as a flexible-impeller pump.
 
 ### 2. The Float Switch
 
@@ -138,9 +136,11 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## Bilge Pump Types: What's in Your Boat
 
-**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Cannot run dry. Best for general bilge duty.
+**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Brief manufacturer-permitted functional tests can be dry; prolonged dry running is a different issue. Confirm discharge with a wet test. Best for general bilge duty.
 
-**Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
+**Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Typically can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
+
+**Flexible-impeller pumps:** a different design from a typical electric submersible bilge pump. Do not treat submersible dry-test permission as applying to a flexible impeller.
 
 **Manual hand pump:** required by law on some Canadian vessels and a smart backup on any boat. Works entirely without electricity, no battery, no wiring, no float switch. If everything electric fails, a manual pump buys you time. Every boat that stays in the water should have one on board.
 
@@ -148,23 +148,21 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## How to Size Your Bilge Pump
 
-Bilge pumps are rated in litres per hour (L/h, or gallons per hour) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 3,800 L/h (1,000 GPH) will actually move about 2,300 L/h (600 GPH) once it's installed and working against real head pressure.
+Bilge pumps are rated in litres per hour (L/h, or US GPH) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 3,800 L/h (1,000 US GPH) will actually move about 2,300 L/h (600 US GPH) once it's installed and working against real head pressure.
 
-A practical sizing guide for Ontario recreational boats:
-
-![Bilge pump sizing chart by boat length in L/h (GPH)](/lovable-uploads/bilge-pump-sizing-chart.png)
+A practical sizing guide for Ontario recreational boats follows. It is not a compliance chart; follow the boat manufacturer's specifications and remember that installed output falls below the pump's open-flow rating.
 
 | Boat length | Recommended capacity | Typical setup |
 |---|---|---|
-| Under 16 ft | 1,900-3,000 L/h (500-800 GPH) | 1 pump |
-| 17-20 ft | 3,000-5,700 L/h (800-1,500 GPH) | 1 pump, consider 2 |
-| 21-26 ft | 5,700-9,500 L/h (1,500-2,500 GPH) | 2 pumps |
-| 27-35 ft | 9,500-13,000 L/h (2,500-3,500 GPH) | 2-3 pumps |
-| 36 ft+ | 13,000-22,700+ L/h (3,500-6,000+ GPH) | 3+ pumps |
+| 16 ft and under | 1,900-3,000 L/h (500-800 US GPH) | 1 pump |
+| Over 16 to 20 ft | 3,000-5,700 L/h (800-1,500 US GPH) | 1 pump, consider 2 |
+| Over 20 to 26 ft | 5,700-9,500 L/h (1,500-2,500 US GPH) | 2 pumps |
+| Over 26 to 35 ft | 9,500-13,000 L/h (2,500-3,500 US GPH) | 2-3 pumps |
+| Over 35 ft | 13,000-22,700+ L/h (3,500-6,000+ US GPH) | 3+ pumps |
 
-When in doubt, size up. A 5,700 L/h (1,500 GPH) pump on a 20-foot boat has real-world output around 3,400 L/h (900 GPH), which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
+When in doubt, add margin within the boat and pump manufacturers' specifications. A 5,700 L/h (1,500 US GPH) pump on a 20-foot boat may deliver closer to 3,400 L/h (900 US GPH) once installed. A higher-rated pump also needs wiring, circuit protection, battery capacity, hose, and an outlet sized for its current draw and flow; putting a larger pump on an undersized circuit or discharge will not deliver the advertised capacity.
 
-**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 1,900 and 3,000 L/h (500 and 800 GPH), which suits the 14-20 foot hull sizes those boats are built around.
+**Note on Legend Boats:** Some Legend fishing boats and deck boats use factory-installed Attwood Tsunami bilge pumps rated between 1,900 and 3,000 L/h (500 and 800 GPH). Verify the exact hull's factory specification and compliance notice.
 
 ---
 
@@ -191,7 +189,7 @@ Two brands dominate the recreational market in Canada: Rule and Attwood. A third
 You don't need to pull the boat to check this. From the dock, in order:
 
 1. **Test the manual override.** Flip the helm switch to manual. If the pump runs and you can see or hear water moving, the pump and its direct wiring are good. Fastest step on this list, ten seconds.
-2. **Test the float switch.** With the helm switch set to auto, gently lift the float arm by hand to where rising water would push it. The pump should kick on within a second or two, usually with an audible click from the switch. If nothing happens, the problem is in the switch circuit, not the pump. (Alternative: pour a small bucket of water slowly into the bilge and watch whether the float switch rises and triggers the pump. Never hold the float arm up for more than a second or two in a dry bilge, you don't want to run the pump without water.)
+2. **Test the float switch.** With the helm switch set to auto, gently lift the float arm by hand to where rising water would push it. The pump should kick on within a second or two, usually with an audible click from the switch. If nothing happens, the problem is in the switch circuit, not the pump. Manufacturer guidance for some submersible pumps includes switch tests with and without water; keep any dry functional test brief, then confirm discharge with water. Do not generalize a dry-run permission to a flexible-impeller pump.
 3. **Check the fuse or breaker.** A blown fuse makes everything look dead even when the pump and switch are both fine.
 4. **Inspect connectors for corrosion.** Disconnect the battery. Check every connector in the bilge circuit, at the pump, at the float switch, and in the harness back toward the helm, for green or white buildup, chalky residue, or a wire that feels loose when tugged gently.
 5. **Check the access port.** Most boats have a small access port near the transom where the pump and switch live. Open it and give the wiring a visual: chafe marks, cracked insulation, or a connector that's come apart.
@@ -298,7 +296,7 @@ If your boat sits in the water unattended for any stretch of time, this is worth
 
 Freshwater is less corrosive than saltwater. There's no marine growth and no salt accelerating oxidation on every fitting. That doesn't mean your bilge is a gentle environment for electrical connections, though.
 
-[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw from November through April. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
+[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw through the winter storage season. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
 
 That's how a float switch ends up corroded without anyone noticing, until the boat's sitting low at the dock in July.
 
@@ -308,7 +306,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips some fishing boats and deck boats with factory-installed Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH). Verify the exact hull's factory specification and compliance notice, and confirm current WOWranty component coverage with Legend before you buy.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 
@@ -357,7 +355,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
 - [Bilge Pumps: The Unsung Heroes of the Boating World](https://www.legendboats.com/?blog=bilge-pumps-the-unsung-heroes-of-the-boating-world), Legend Boats
 - [The great SVB bilge pump test](https://www.svb24.com/en/guide/the-great-svb-bilge-pump-test-a-comparison-of-the-10-best-electric-bilge-pumps.html), SVB24
 - [What size bilge pump do I need?](https://support.jamestowndistributors.com/hc/en-us/articles/360055503513-What-size-bilge-pump-do-I-need), Jamestown Distributors
-- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/bilge-pump-troubleshooting-guide), Fresh Water Systems
+- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/how-to-choose-the-right-bilge-pump-for-your-boat), Fresh Water Systems
 - [Double Duty: backup bilge pumps and high-water alarms](https://www.boatus.com/expert-advice/expert-advice-archive/2026/february/double-duty/), BoatUS
 
 ## FAQs
@@ -376,7 +374,7 @@ Yes. With the helm switch set to auto, gently lift the float arm by hand to wher
 
 ### Is it safe to run my bilge pump dry to see if it works?
 
-No. Bilge pumps are built to move water, and running one dry can damage the impeller or motor within seconds. Test with the float arm and a small amount of water, not a dry run.
+Follow the installed pump manufacturer's test method. Many submersible centrifugal pumps permit a brief functional test; that is not a licence for prolonged dry running and does not apply to flexible-impeller pumps. Confirm the pump actually discharges water in a wet test.
 
 ### Why do bilge connections corrode even on a freshwater lake?
 
@@ -392,7 +390,7 @@ Start with the discharge hose: check for kinks, a partial disconnection, or a bl
 
 ### What size bilge pump do I need for my boat?
 
-As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/h (800-1,500 GPH) for 17-20 feet, and 5,700-9,500 L/h (1,500-2,500 GPH) for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
+For an Ontario recreational boat, start with the boat manufacturer's specification and account for hose length, lift, and voltage drop. As practical guidance, use 1,900-3,000 L/h (500-800 US GPH) at 16 feet and under, 3,000-5,700 L/h (800-1,500 US GPH) over 16 through 20 feet, and 5,700-9,500 L/h (1,500-2,500 US GPH) over 20 through 26 feet, with two pumps once you're over 20 feet. Section 736's 0.91 L/s minimum applies to certain non-pleasure vessels over 6 m; it does not set a pleasure-craft sizing floor.
 
 ### Does my Legend Boats warranty cover the bilge pump?
 
@@ -402,8 +400,8 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 
 ## Next steps

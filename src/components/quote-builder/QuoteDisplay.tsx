@@ -35,6 +35,7 @@ import { PaymentMethodBadges } from '@/components/payments/PaymentMethodBadges';
 import { useQuote } from '@/contexts/QuoteContext';
 import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
 import { promoEndOfDay } from '@/lib/quote-utils';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -85,7 +86,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   const [financingOptions, setFinancingOptions] = useState<any[]>([]);
   const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
   const { promo: activePromo } = useActiveFinancingPromo();
-  const { promotions, getTotalWarrantyBonusYears } = useActivePromotions();
+  const { promotions } = useActivePromotions();
+  const appliedPromotion = getAppliedPromotion(promotions);
   const effectiveRate = (activePromo?.rate ?? quoteData.financing.rate);
 
   // SMS via Zapier
@@ -211,10 +213,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       basePrice: motorPrice,
       horsepower: motorHP,
     });
-    const warrantyValue = promotions.reduce(
-      (total, promo) => total + ((promo.warranty_extra_years || 0) * 200),
-      0,
-    );
+    const warrantyValue = getAppliedWarrantyExtraYears(appliedPromotion) * 200;
     
     return {
       warrantyValue,
@@ -562,7 +561,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                             <span className="font-medium">-{formatCurrency(motorPrice * promo.discount_percentage / 100)}</span>
                           </div>
                         )}
-                        {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
+                        {promo.id === appliedPromotion?.id && promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
                           <div className="flex justify-between text-repower-gold">
                             <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
                             <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>

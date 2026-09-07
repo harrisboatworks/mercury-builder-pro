@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
 ## What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-> **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
+> **Quick answer:** The Section 7 sample is an illustrative CAD budget. Its annual cash total is $5,879.49. Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment on a $40,000 purchase for 120 monthly payments at 8% nominal annual interest produces a payment of about $388.25/month, or $4,658.98/year, before any financed taxes or fees. Added to the $5,879.49 sample annual cash budget, that is about $10,538.47/year. The 8% rate is an assumption, not a current HBW financing offer. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
@@ -41,11 +41,11 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 ## The Two-Number Summary
 
-For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800-$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
+For the $40,000, 20-foot aluminum example in Section 7, the illustrative annual cash budget is **$5,879.49** (cash-bought, no loan payment). Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment for 120 monthly payments at 8% nominal annual interest is about **$388.25/month**, or **$4,658.98/year**, before any financed taxes or fees. Added together, that is about **$10,538.47/year**. The 8% rate is an assumption, not a current HBW financing offer.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
 
-For a 22-foot pontoon at $55,000, scale that up to roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
+For a 22-foot pontoon at $55,000, a separate planning assumption (not the Section 7 loan arithmetic) is roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
 These are *operating* numbers, slip, storage, winterization, insurance, fuel, routine service, PCL, not depreciation or opportunity cost. The full sample budget is in Section 7 below; if you only read one section, read that one.
 
@@ -91,24 +91,29 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 ## 3. Winter Storage and Winterization
 
-In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-lakes). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+In Ontario, you don't get to skip [winter storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
-**HBW pricing 2026:**
+### Effective September 2026
 
-- **Outdoor + shrinkwrap, up to 21 ft:** $33/ft → $693 for 21-ft boat
-- **Outdoor + shrinkwrap, 22 ft+:** $35/ft → $770 for 22-ft pontoon
-- **Outdoor with trailer, no shrinkwrap, up to 21 ft:** $36/ft (storage only)
+The current [HBW 2026–27 winter-storage rate card](https://www.harrisboatworks.ca/winter-storage) lists these trailered-boat rates before HST, shop supplies, and miscellaneous charges:
 
-**Winterization (separate scope, fall):**
-- **40-60 HP 4-stroke:** $337.84
-- **75-115 HP 4-stroke:** $425.71
-- Larger engines, sterndrives, twin setups: $500-$900+
+- **Storage with shrink wrap, up to 21 ft:** $36/ft
+- **Storage with shrink wrap, 22–28 ft:** $38/ft
+- **Outdoor uncovered storage, up to 21 ft:** $28/ft
+- **Outdoor uncovered storage, 22–28 ft:** $30/ft
+- **40-60 HP FourStroke winterization:** $355.94
+- **75-115 HP FourStroke winterization:** $444.49
+- **20 ft storage with shrink wrap:** $720.00
+- **21 ft storage with shrink wrap:** $756.00
+- **21 ft trailered wrapped storage plus 75-115 HP FourStroke winterization:** $1,200.49
+
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **Indoor storage** (we don't offer; some Ontario competitors do):
 - Indoor unheated: $40-$60/ft (~$840-$1,260 for 21-ft boat)
 - Indoor heated: $60-$90/ft (~$1,260-$1,890 for 21-ft boat)
 
-**Annual budget for 21-ft outdoor + winterized:** ~$1,000-$1,200 all-in at HBW.
+**Annual budget for 21-ft outdoor + winterized:** $1,200.49 before HST, shop supplies, and miscellaneous charges.
 
 **The "what if I skip it" cost:** [A cracked engine block from a missed winterization](/blog/boat-winterization-cost-ontario-2026) runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
@@ -166,7 +171,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 ---
 
-## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
+## 6. Pleasure Craft Licence (PCL)
 
 [Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
@@ -178,20 +183,24 @@ This category used to be near-zero. It's still essentially negligible.
 
 ## 7. The Sample Budget, 20-Ft Aluminum, $40K, Cash-Bought
 
+Illustrative CAD budget using the amounts below. Storage and winterization are before HST, shop supplies and miscellaneous charges. Other line items are planning assumptions; tax treatment depends on the item and quote. This is not a final tax-inclusive annual bill.
+
 | Line item | Annual cost |
 |-----------|-------------|
 | Marina slip (HBW seasonal, 20 ft) | $960 |
 | Insurance (1.5% of $40K) | $600 |
-| Winter storage + shrinkwrap (HBW) | $700 |
-| Winterization (90 HP 4-stroke) | $425 |
+| Winter storage + shrinkwrap (HBW, 20 ft trailered wrapped) | $720.00 |
+| Winterization (90 HP FourStroke) | $444.49 |
 | Annual service (100-hour) | $550 |
 | Fuel (75 hrs, ethanol-free) | $2,000 |
 | Maintenance reserve (props, batteries, wear items) | $400 |
 | Trailer maintenance | $200 |
 | PCL amortized | $5 |
-| **Total cash-bought** | **~$5,840** |
+| **Total cash-bought** | **$5,879.49** |
 
-**Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
+That exact sample is **$5,879.49**.
+
+For illustration only, financing $32,000 after an $8,000 down payment on a $40,000 purchase for 120 monthly payments at 8% nominal annual interest produces a payment of about $388.25/month, or $4,658.98/year, before any financed taxes or fees. Added to the $5,879.49 sample annual cash budget, that is about $10,538.47/year. The 8% rate is an assumption, not a current HBW financing offer.
 
 For a higher-tier boat, say a 22-ft pontoon at $55K, scale up about 25-30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
 
@@ -201,15 +210,7 @@ For a higher-tier boat, say a 22-ft pontoon at $55K, scale up about 25-30%. For 
 
 Here's what most online cost calculators get wrong: ownership costs over time **are not stable**. Some years you replace a battery and a prop; some years you replace a powerhead.
 
-Reasonable 10-year planning numbers for the 20-ft, $40K example:
-
-- **Routine (slip + insurance + storage + maintenance + fuel):** ~$50,000 over 10 years
-- **Major repairs / replacements:** ~$5,000-$15,000 (impeller jobs, battery, props, electronics, possible repower)
-- **Loan interest** (if financed): ~$15,000-$20,000
-- **Resale at 10 years:** boats lose 20-30% in year 1, maybe 50-60% by year 10. Recover ~$15,000-$20,000.
-
-**Net cost over 10 years (cash-bought):** ~$50,000-$60,000.
-**Net cost over 10 years (financed):** ~$70,000-$85,000.
+Use one consistent model: purchase price + operating expenses + actual major repairs + financing interest − resale proceeds. In this illustration, remove the $400 annual repair reserve from operating expenses when adding separate actual repair costs, so repairs are not counted twice. That leaves $5,479.49/year of listed operating expenses, or $54,794.90 over 10 years if held constant. With the stated $40,000 purchase price, $5,000–$15,000 major-repair assumption and $15,000–$20,000 resale assumption, the arithmetic gives $79,794.90–$94,794.90 cash-bought. Adding $14,589.80 interest from the illustrative loan gives $94,384.70–$109,384.70 financed. These are scenario calculations, not forecasts; taxes and charges not already included, inflation, finance fees and opportunity cost are excluded. Resale and repair assumptions must be replaced with boat-specific evidence before relying on the result.
 
 That's why people repower. [A $20,000 Mercury repower on a 15-year-old hull](/blog/mercury-repower-cost-ontario-2026-cad) resets the engine clock and extends the boat's useful life another 10-15 years, for about half the cost of buying new.
 
@@ -237,7 +238,7 @@ If you're considering ownership and the math above feels manageable, great. Welc
 
 If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. HBW's current Rice Lake lineup includes pontoon and fishing-boat options, with live rates and rental periods shown online. [Book and check availability at harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
-There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
+Renting can be the better fit when ownership would stretch your budget. Leave room for maintenance as well as the purchase; the goal is to enjoy your time on the water without financial strain.
 
 ---
 
@@ -280,8 +281,8 @@ Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized,
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
 - [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 
 ## Next steps
 

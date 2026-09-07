@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Software Eligibility 2026"
 description: "Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,20 +25,18 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
-> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5 to 21% improvement in zero-to-top-speed acceleration on tested eligible setups. Eligibility is determined by the exact engine and serial number, not model year alone. It covers select FourStroke, Pro XS, Verado, and Racing models and does not change top speed, rated horsepower, maximum RPM, or time to plane.
+> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a 5% to 21% increase in top speed, and it is not a guaranteed result for every installation. Eligibility is determined by the exact engine and serial number, not model year alone. It covers select FourStroke, Pro XS, Verado, and Racing models and does not change top speed, rated horsepower, maximum RPM, or time to plane.
 
 > **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
 ---
 
-### Full Article
+Mercury brought Boost to market in 2026 and has talked about it as the first of a series of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
-Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
-
-Mercury describes the feature as improving mid-range acceleration and throttle response. In five published boat-and-engine tests, zero-to-top-speed acceleration was 5 to 21% quicker, with results varying by the complete setup and conditions.
+Mercury describes the feature as improving mid-range acceleration and throttle response. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a top-speed gain, and results vary by the complete setup and conditions.
 
 ---
 
@@ -67,17 +65,19 @@ Eligibility is by serial number, not model year.
 
 | Engine Family | HP Models | Eligible From Serial Number |
 |---|---|---|
-| FourStroke | 175, 200, 250, 300 HP | 2B529482 to 3B612424 |
-| Pro XS | 175, 200, 225, 250, 300 HP | 2B529482 to 3B612424 |
-| Verado | 250, 300 HP | 2B529482 to 3B612424 |
-| Verado | 350 HP | 3B266064 to 3B578265 |
-| Racing 150R | 150R | 3B547096 to 3B612424 |
+| FourStroke | 175, 200, 250, 300 HP | Starting at 2B529482 |
+| Pro XS | 175, 200, 225, 250, 300 HP | Starting at 2B529482 |
+| Verado | 250, 300 HP | Starting at 2B529482 |
+| Verado | 350 HP | 3B266064 through 3B578266 |
+| Racing 150R | 150R | Starting at 3B547096 |
 
-**Important note on the 350 HP Verado:** The paid dealer-upgrade range is 3B266064 to 3B578265. Mercury lists 3B578266 and above as factory-equipped; some of those engines may still need a dealer software update so the app can interface with Boost.
+As checked September 5, 2026, the same Canadian page lists those dealer upgrades. Its mechanical-engine timing footnote and overlapping 350 Verado ranges require dealer confirmation; do not treat the table as an automatic eligibility guarantee. The current page does not list a 225 HP FourStroke.
+
+**Important note on the 350 HP Verado:** The dated dealer-upgrade range is 3B266064 through 3B578266. Factory-installed Boost on the Verado 350 starts at serial 3B576449. Those ranges overlap, so a Mercury dealer has to confirm the exact serial number, control system and installed calibration.
 
 ### Factory-Equipped Motors
 
-Boost is standard on specified newer engines. Mercury lists 3B612425 and above as factory-equipped for the standard affected families and Racing 150R, and 3B578266 and above for the 350 HP V10. Factory status is identified by exact model and serial threshold, not by build quarter alone. HBW checks the serial because a motor may require a paid unlock, may already be factory-equipped, or may need a dealer software update before the Mercury Marine App can show the correct status.
+As checked September 5, 2026, Mercury's Canadian page lists factory-installed Boost on 2026 Pro XS 175, 200, 225, 250 and 300, Verado 250 and 300, and Racing 150R starting at serial 3B612473, and Verado 350 starting at 3B576449. Dealer-upgrade eligibility is a separate list. Have a Mercury dealer confirm the exact serial number, control system and installed calibration rather than using a serial cutoff alone to decide whether Boost is already installed or available.
 
 ---
 
@@ -111,14 +111,14 @@ Mercury does not publish one universal Canadian retail total that applies to eve
 
 Mid-range acceleration is where the engine is most felt in real use. Not at full throttle, but in the transition from idle to cruising speed, when you are launching off Rice Lake's shallow flats, loading a pontoon with six passengers, or accelerating through a turn.
 
-Mercury's published 5 to 21% figures are zero-to-top-speed test results, not a promised improvement for every boat. The mid-range response change is most relevant on:
+Mercury's published 5% to 21% figures are quicker acceleration from zero to top speed in tested applications, not a top-speed gain and not a promised improvement for every boat. The mid-range response change is most relevant on:
 - Heavily loaded pontoons
 - Family runabouts with full gear and passengers
 - Eligible setups where mid-range response is the actual complaint
 
 Ontario's boating season is short. If your eligible motor qualifies for Boost, getting it done before spring launch is worth a conversation with us.
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 

@@ -25,6 +25,12 @@ const INITIAL_TRADE_IN: TradeInInfo = {
   confidenceLevel: 'medium' as const,
 };
 
+function hasTradeInDetails(info: Partial<TradeInInfo>): boolean {
+  return Boolean(
+    info.brand?.trim() || info.year || info.horsepower || info.model?.trim()
+  );
+}
+
 function loadDraft(): { data: TradeInInfo; restored: boolean } {
   if (typeof window === 'undefined') return { data: INITIAL_TRADE_IN, restored: false };
   try {
@@ -34,9 +40,7 @@ function loadDraft(): { data: TradeInInfo; restored: boolean } {
     if (!parsed || typeof parsed !== 'object') return { data: INITIAL_TRADE_IN, restored: false };
     const merged = { ...INITIAL_TRADE_IN, ...parsed } as TradeInInfo;
     // Only count as "restored" if user actually entered something
-    const hasContent = Boolean(
-      merged.brand || merged.year || merged.horsepower || (merged.model && merged.model.trim())
-    );
+    const hasContent = hasTradeInDetails(merged);
     return { data: merged, restored: hasContent };
   } catch {
     return { data: INITIAL_TRADE_IN, restored: false };
@@ -49,6 +53,8 @@ export default function TradeInValuePage() {
   const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
   const { dispatch } = useQuote();
+  const hasEstimate = tradeInInfo.estimatedValue > 0;
+  const canStartQuote = hasTradeInDetails(tradeInInfo);
 
   // Auto-hide restored banner
   useEffect(() => {
@@ -72,7 +78,9 @@ export default function TradeInValuePage() {
   const handleClearDraft = () => {
     try {
       localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    } catch {
+      // Storage can be unavailable in restricted browser contexts.
+    }
     setTradeInInfo(INITIAL_TRADE_IN);
     setShowRestored(false);
   };
@@ -162,20 +170,24 @@ export default function TradeInValuePage() {
             onAutoAdvance={handleStartQuote}
           />
 
-          {tradeInInfo.estimatedValue > 0 && (
+          {canStartQuote && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mt-8 rounded border border-repower-navy-900/10 bg-repower-cream p-8 text-center"
             >
               <p className="font-display text-[22px] text-repower-navy-900 mb-5">
-                Ready to see how much you'll save on a new Mercury?
+                {hasEstimate
+                  ? "Ready to see how much you'll save on a new Mercury?"
+                  : 'Ready to keep building your Mercury quote?'}
               </p>
               <button
                 onClick={handleStartQuote}
                 className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
               >
-                Start a Quote With This Trade-In
+                {hasEstimate
+                  ? 'Start a Quote With This Trade-In'
+                  : 'Start a Quote With These Trade-In Details'}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </motion.div>

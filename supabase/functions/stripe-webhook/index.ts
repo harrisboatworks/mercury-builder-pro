@@ -121,8 +121,6 @@ serve(async (req) => {
           depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, savedQuoteId,
         });
 
-        const quotePdfPath = session.metadata.quote_pdf_path || "";
-
         // The row created before checkout is the authoritative binding. Claim
         // pending -> paid atomically before sending any customer/admin side
         // effects, so a retry or concurrent delivery cannot notify twice.
@@ -142,7 +140,6 @@ serve(async (req) => {
         if (
           Number(existingDeposit.deposit_amount) !== Number(depositAmount)
           || boundSavedQuoteId !== savedQuoteId
-          || (boundQuoteData.quote_pdf_path || "") !== quotePdfPath
         ) {
           throw new Error("Stripe deposit metadata does not match the bound record");
         }
@@ -167,7 +164,6 @@ serve(async (req) => {
           stripe_payment_intent: paymentIntentId,
           payment_status: "paid",
           motor_info: motorInfo,
-          quote_pdf_path: boundQuoteData.quote_pdf_path || null,
           notification_status: "processing",
           notification_event_id: event.id,
           notification_lease_expires_at: notificationLeaseExpiresAt(),

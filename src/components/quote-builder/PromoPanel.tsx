@@ -2,13 +2,14 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Gift, Shield } from 'lucide-react';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface PromoPanelProps {
   motorHp?: number;
 }
 
 export function PromoPanel({ motorHp }: PromoPanelProps) {
-  const { promotions, loading, getTotalWarrantyBonusYears } = useActivePromotions();
+  const { promotions, loading } = useActivePromotions();
 
   if (loading) {
     return (
@@ -35,7 +36,8 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
     return Math.max(0, diff);
   };
 
-  const warrantyYears = getTotalWarrantyBonusYears?.() || 0;
+  const appliedPromotion = getAppliedPromotion(promotions);
+  const warrantyYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const totalWarranty = 3 + warrantyYears;
 
   return (
@@ -55,7 +57,7 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
             )}
           </div>
           
-          {warrantyYears > 0 && (
+          {promo.id === appliedPromotion?.id && warrantyYears > 0 && (
             <div className="flex items-center gap-2 bg-repower-cream text-repower-gold   px-3 py-2 rounded-lg">
               <Shield className="w-4 h-4" />
               <span className="font-medium">{totalWarranty} Years Factory Coverage</span>

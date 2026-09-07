@@ -4,8 +4,12 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { Phone, Mail, Globe, MapPin, Wrench, Anchor, Ship, Warehouse, Navigation } from 'lucide-react';
+import { getPublishedMandarinArticles } from '@/data/mandarinBlogArticles';
 
 export default function MandarinLanding() {
+  const mandarinArticles = [...getPublishedMandarinArticles()].sort(
+    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
+  );
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -299,34 +303,23 @@ export default function MandarinLanding() {
 
         {/* Blog links */}
         <nav className="mt-4 space-y-2 text-center">
-          <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
-          <Link
-            to="/blog/zh/gta-chinese-buy-boat-rice-lake-guide"
-            className="block text-primary hover:underline text-sm font-semibold"
-          >
-            ⭐ 多伦多华人 Rice Lake 买船完整指南 →
-          </Link>
-          <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
-            舷外机换新指南 →
-          </Link>
-          <Link to="/blog/zh/used-boat-buying-checklist-toronto-chinese" className="block text-primary hover:underline text-sm">
-            二手船购买检查清单 →
-          </Link>
-          <Link to="/blog/zh/rice-lake-fishing-guide-toronto-chinese" className="block text-primary hover:underline text-sm">
-            Rice Lake钓鱼攻略 →
-          </Link>
-          <Link to="/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide" className="block text-primary hover:underline text-sm">
-            冬储完整指南 →
-          </Link>
-          <Link to="/blog/zh/mercury-115-vs-150-comparison-zh" className="block text-primary hover:underline text-sm">
-            Mercury 115 vs 150马力对比 →
-          </Link>
-          <Link to="/blog/zh/boat-ownership-cost-ontario-chinese" className="block text-primary hover:underline text-sm">
-            安省养船成本指南 →
-          </Link>
-          <Link to="/blog/zh/ontario-boating-regulations-zh" className="block text-primary hover:underline text-sm">
-            安大略省船只法规 →
-          </Link>
+          <p className="text-sm font-medium text-foreground mb-3">中文文章 ({mandarinArticles.length})</p>
+          <div className="flex flex-col gap-1.5">
+            {mandarinArticles.map((article) => (
+              <Link
+                key={article.slug}
+                to={`/blog/zh/${article.slug}`}
+                className="text-primary hover:underline text-sm"
+              >
+                {article.title}
+              </Link>
+            ))}
+          </div>
+          <p className="pt-4 text-sm text-muted-foreground">
+            <Link to="/" className="text-primary hover:underline">
+              English
+            </Link>
+          </p>
         </nav>
       </main>
 

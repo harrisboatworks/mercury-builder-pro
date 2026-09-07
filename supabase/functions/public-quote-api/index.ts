@@ -18,6 +18,22 @@ import {
   HbwValuationError,
   normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
+import {
+  fetchActiveFinancing,
+  fetchActivePromotions,
+} from "../_shared/customer-knowledge-context.ts";
+import {
+  buildPublicQuoteFinancing,
+  PUBLIC_QUOTE_FINANCING_POLICY_VERSION,
+} from "../_shared/public-quote-financing.ts";
+import {
+  applyMotorPresentationOverrides,
+  motorSlug,
+} from "../_shared/motor-slug.ts";
+import {
+  PUBLIC_SITE_URL,
+  toPublicImageUrl,
+} from "../_shared/public-motor-contract.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -35,12 +51,8 @@ const corsHeaders = {
 };
 
 const SITE = "mercuryrepower.ca";
-const SITE_URL = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+const SITE_URL = PUBLIC_SITE_URL;
 const HST_RATE = 0.13;
-const FINANCING_MINIMUM = 5000;
-const FIN_RATE_LOW = 0.0799; // $10k+
-const FIN_RATE_HIGH = 0.0899; // under $10k
-const DEFAULT_TERM = 144;
 const DISCLAIMER =
   "Estimate only. Final out-the-door price, install scheduling, and trade-in require confirmation by Harris Boat Works. CAD only. No Verado. Pickup at Gores Landing, ON.";
 
@@ -127,7 +139,7 @@ Deno.serve(async (req) => {
           error: err.message,
           code: err.code,
           notes: [
-            "Please retry, or refer the customer to https://mercuryrepower.ca/trade-in-value",
+            `Please retry, or refer the customer to ${SITE_URL}/trade-in-value`,
           ],
         },
         err.status,
@@ -174,37 +186,6 @@ function resolveSellingPrice(motor: any): number | null {
   ];
   for (const v of candidates) if (Number.isFinite(v) && v > 0) return v;
   return null;
-}
-
-function slugify(modelKey?: string | null) {
-  if (!modelKey) return "";
-  return modelKey.toLowerCase().replace(/_/g, "-");
-}
-
-function financingTier(loanAmount: number) {
-  if (loanAmount < FINANCING_MINIMUM) {
-    return {
-      eligible: false,
-      reason: `Financing requires minimum $${FINANCING_MINIMUM} CAD`,
-    };
-  }
-  const rate = loanAmount >= 10000 ? FIN_RATE_LOW : FIN_RATE_HIGH;
-  const term = DEFAULT_TERM;
-  const monthly = monthlyPayment(loanAmount, rate, term);
-  return {
-    eligible: true,
-    apr: rate,
-    apr_label: `${(rate * 100).toFixed(2)}%`,
-    term_months: term,
-    monthly_payment: round2(monthly),
-    note: "Estimate via LightStream / Financeit. Final approval by lender.",
-  };
-}
-
-function monthlyPayment(principal: number, annualRate: number, months: number) {
-  const r = annualRate / 12;
-  if (r === 0) return principal / months;
-  return (principal * r) / (1 - Math.pow(1 + r, -months));
 }
 
 function round2(n: number) {
@@ -255,6 +236,9 @@ function quoteUrl(motorId: string, opts: Record<string, string | number | undefi
 async function listMotors(supabase: any, body: any) {
   const limit = Math.min(Number(body?.limit) || 50, 200);
   const search = String(body?.search || "").trim();
+  const hpSearch = search ? Number.parseFloat(search) : Number.NaN;
+  const textSearch =
+    search && Number.isNaN(hpSearch) ? search.toLowerCase() : "";
   const family = String(body?.family || "").trim();
   const minHp = Number(body?.min_hp) || 0;
   const maxHp = Number(body?.max_hp) || 9999;
@@ -262,18 +246,16 @@ async function listMotors(supabase: any, body: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
+      "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
     )
     .eq("is_brochure", true)
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    .limit(limit);
+    .limit(textSearch ? 500 : limit);
 
   if (search) {
-    const hpNum = parseFloat(search);
-    if (!isNaN(hpNum)) q = q.eq("horsepower", hpNum);
-    else q = q.ilike("model_display", `%${search}%`);
+    if (!Number.isNaN(hpSearch)) q = q.eq("horsepower", hpSearch);
   }
   if (family) q = q.ilike("family", `%${family}%`);
 
@@ -281,10 +263,18 @@ async function listMotors(supabase: any, body: any) {
   if (error) throw new Error(`list_motors failed: ${error.message}`);
 
   const motors = (data || [])
+    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
     .filter((m: any) => !isVerado(m.family, m.model_display))
+    .filter((m: any) =>
+      !textSearch ||
+      `${m.model_display || m.model || ""} ${m.model_number || ""}`
+        .toLowerCase()
+        .includes(textSearch)
+    )
+    .slice(0, limit)
     .map((m: any) => {
       const price = resolveSellingPrice(m);
-      const slug = slugify(m.model_key);
+      const slug = motorSlug(m);
       return {
         id: m.id,
         slug,
@@ -295,7 +285,7 @@ async function listMotors(supabase: any, body: any) {
         sellingPrice: price,
         msrp: Number(m.msrp) || null,
         availability: m.in_stock ? "In Stock" : "Available to Order",
-        imageUrl: m.hero_image_url || m.image_url || null,
+        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
         url: slug ? `${SITE_URL}/motors/${slug}` : null,
         quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
       };
@@ -371,7 +361,7 @@ async function estimateTradeIn(_supabase: any, body: any) {
     source: "HBW Motor Valuation API (canonical)",
     notes: [
       "Trade-in estimate from HBW canonical valuation engine. Final value requires in-person inspection at Gores Landing, ON.",
-      "Customer can get a detailed report at https://mercuryrepower.ca/trade-in-value",
+      `Customer can get a detailed report at ${SITE_URL}/trade-in-value`,
     ],
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
@@ -389,7 +379,7 @@ async function buildQuote(supabase: any, body: any) {
     return json(
       {
         error:
-          "Required: motor_id, OR (horsepower + family). Optional: shaft, controls, trade_in, contact, customer_has_propeller",
+          "Required: motor_id, OR (horsepower + family). Optional: trade_in, contact, customer_has_propeller",
       },
       400,
     );
@@ -401,7 +391,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("id", motorId)
       .maybeSingle();
@@ -411,7 +401,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("is_brochure", true)
       .eq("horsepower", hp)
@@ -424,6 +414,7 @@ async function buildQuote(supabase: any, body: any) {
   }
 
   if (!motor) return json({ error: "Motor not found" }, 404);
+  motor = applyMotorPresentationOverrides(motor);
   if (isVerado(motor.family, motor.model_display)) {
     return json(
       {
@@ -523,11 +514,31 @@ async function buildQuote(supabase: any, body: any) {
   const finalPrice = round2(adjustedSubtotal + hst);
   const deposit = depositForHp(motorHp);
 
-  // Financing tier
-  const financing = financingTier(finalPrice);
+  // Financing policy is loaded live. Pricing still returns if the lookup
+  // fails, but no stale hardcoded rate is substituted.
+  let activeFinancing: Awaited<ReturnType<typeof fetchActiveFinancing>> = [];
+  let activePromotions: Awaited<ReturnType<typeof fetchActivePromotions>> = [];
+  try {
+    [activeFinancing, activePromotions] = await Promise.all([
+      fetchActiveFinancing(supabase),
+      fetchActivePromotions(supabase),
+    ]);
+  } catch (error) {
+    console.error("public quote financing lookup failed:", error);
+  }
+  const financing = buildPublicQuoteFinancing({
+    beforeTaxSubtotal: adjustedSubtotal,
+    finalPriceWithTax: finalPrice,
+    financing: activeFinancing,
+    promotions: activePromotions,
+    motorInStock: Boolean(motor.in_stock),
+    selectedOfferId: typeof body?.financing_offer_id === "string"
+      ? body.financing_offer_id
+      : null,
+  });
 
   // Deep-link prefilled URL for the customer
-  const slug = slugify(motor.model_key);
+  const slug = motorSlug(motor);
   const deepLink = quoteUrl(motor.id, {
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
@@ -564,9 +575,9 @@ async function buildQuote(supabase: any, body: any) {
           base_price: motorPrice,
           deposit_amount: deposit,
           final_price: finalPrice,
-          loan_amount: financing.eligible ? finalPrice : 0,
+          loan_amount: financing.eligible ? financing.amount_financed : 0,
           monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
-          term_months: financing.eligible ? financing.term_months! : 0,
+          term_months: financing.eligible ? financing.amortization_months! : 0,
           total_cost: finalPrice,
           tradein_value_final: tradeInCredit || null,
           lead_source: "public-quote-api",
@@ -592,7 +603,7 @@ async function buildQuote(supabase: any, body: any) {
       family: motor.family,
       horsepower: motorHp,
       url: slug ? `${SITE_URL}/motors/${slug}` : null,
-      imageUrl: motor.hero_image_url || motor.image_url || null,
+      imageUrl: toPublicImageUrl(motor.hero_image_url || motor.image_url),
     },
     purchase_path: purchasePath,
     line_items: items,
@@ -604,6 +615,8 @@ async function buildQuote(supabase: any, body: any) {
       hst: hst,
       final_price: finalPrice,
       deposit_required: deposit,
+      finance_fee: financing.eligible ? financing.finance_fee : 0,
+      amount_financed: financing.eligible ? financing.amount_financed : 0,
     },
     trade_in: tradeIn,
     financing,
@@ -658,6 +671,7 @@ function docs() {
           horsepower: 90,
           family: "FourStroke",
           purchase_path: "installed | loose",
+          financing_offer_id: "(optional) select an id returned in financing.available_offers; caller-supplied APR or term is ignored",
           customer_has_propeller: false,
           boat_info: { make: "Lund", model: "Pro-V" },
           trade_in: {
@@ -681,7 +695,10 @@ function docs() {
       "All pricing is CAD. Final price requires human confirmation.",
       "No Verado motors — Harris does not sell or service them.",
       "Pickup only at Gores Landing, ON. No delivery.",
-      "Financing minimum: $5,000 CAD. Tiered: 8.99% under $10k, 7.99% $10k+.",
+      "Financing is loaded from the active Canadian financing and promotion records; no stale rate fallback is used.",
+      "Financing eligibility is tested before tax; financed principal includes HST plus the $349 DealerPlan fee.",
+      "The standing offer is the default. Promotional financing is applied only when its returned offer id is explicitly selected and eligible.",
+      `Financing response policy: ${PUBLIC_QUOTE_FINANCING_POLICY_VERSION}.`,
       "Trade-in credits capped at subtotal.",
     ],
     lastUpdated: nowISO(),

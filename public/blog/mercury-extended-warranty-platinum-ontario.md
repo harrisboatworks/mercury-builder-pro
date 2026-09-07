@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-07-17
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Extended Warranty Ontario"
 description: "Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term."
 category: "Warranty & Protection"
 date_published: 2026-05-13
-date_modified: 2026-07-17
+date_modified: 2026-09-06
 keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: product-protection
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-07-17  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 
@@ -56,7 +56,7 @@ Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depe
 
 **$904**
 
-Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
+Common Rice Lake horsepower band. Compare the plan price with the covered components and exclusions in the current contract.
 
 #### High-HP (75 to 199.9 HP), 3-year plan
 
@@ -136,7 +136,7 @@ The actual Canadian Platinum contract controls what is covered or excluded. We v
 - $200 per claim on-water tow allowance
 - $200 per claim hoist/haul-out allowance (boats 26 ft or larger)
 - $50 deductible per claim
-- 30-day satisfaction guarantee from purchase
+- satisfaction guarantee from purchase (see current Mercury Product Protection terms for the window)
 
 **What is NOT covered:**
 - Propellers (wear item)
@@ -198,7 +198,7 @@ For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce t
 
 ## Transferability and Resale Value
 
-Platinum coverage is transferable to a subsequent recreational-use buyer when Mercury's transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
+Platinum coverage is transferable to a subsequent recreational-use buyer when Mercury's transfer requirements are met. Confirm the current Canadian transfer timing, documentation, inspection, and fee rules in the Product Protection contract before you sell.
 
 Remaining transferable coverage can be useful to a buyer because it makes the engine's protection status easier to document. The serial record and approved transfer determine what coverage actually follows the engine.
 
@@ -234,7 +234,7 @@ Before the applicable Mercury factory limited warranty expires. Mercury also app
 
 ### Is Mercury Product Protection transferable when I sell my boat?
 
-Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
+Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. Confirm the current Canadian transfer timing, documentation, inspection, and fee rules in the Product Protection contract before you sell.
 
 ### What is the deductible?
 

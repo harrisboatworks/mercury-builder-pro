@@ -4,6 +4,7 @@ import { corsHeaders } from "../_shared/cors.ts";
 import { buildEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -91,6 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
       from: "Harris Boat Works <quotes@mercuryrepower.ca>",
       replyTo: "info@harrisboatworks.ca",
       to: [customerEmail],
+      bcc: [GROK_BOT_AGENTMAIL],
       subject: `Your Mercury ${motorModel} quote is saved | Harris Boat Works`,
       html,
     });

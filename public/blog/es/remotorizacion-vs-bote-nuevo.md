@@ -43,11 +43,9 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -83,32 +81,32 @@ Con una remotorización, conserva su embarcación y su matrícula, y vuelve al a
 
 ## Cuándo tiene sentido comprar un bote nuevo
 
-**El casco está dañado o estructuralmente comprometido.** 
+**El casco está dañado o estructuralmente comprometido.**
 Delaminación avanzada, reparaciones múltiples, integridad estructural dudosa. Instalar un motor nuevo sobre un casco comprometido no resuelve el problema de fondo.
 
-**Necesita un tipo de embarcación completamente diferente.** 
+**Necesita un tipo de embarcación completamente diferente.**
 La remotorización no cambia la forma del bote. Si quiere pasar de un bote de pesca abierto a uno familiar con cabina, o de un bote a motor a un pontón, necesita un bote nuevo.
 
-**El financiamiento integrado es más accesible para usted.** 
+**El financiamiento integrado es más accesible para usted.**
 Para algunos compradores, financiar un bote nuevo con motor en un solo préstamo es más simple o más accesible. Es una consideración práctica válida.
 
-**La embarcación ya cumplió su vida útil.** 
+**La embarcación ya cumplió su vida útil.**
 Edad, desgaste acumulado y mantenimiento diferido hacen que, en algún punto, un casco haya llegado al final de su vida útil, aunque no tenga un defecto obvio y visible.
 
 ---
 
 ## Cómo tomar la decisión
 
-**Paso 1: Evalúe el casco.** 
+**Paso 1: Evalúe el casco.**
 Haga revisar la estructura por un técnico con experiencia antes de decidir. En Harris Boat Works, evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos, incluso si eso significa perder una venta.
 
-**Paso 2: Obtenga un precio real de remotorización.** 
+**Paso 2: Obtenga un precio real de remotorización.**
 Vaya a mercuryrepower.ca. En unos minutos tiene un precio en dólares canadienses, con todas las opciones desglosadas y sin compromisos.
 
-**Paso 3: Compare con el costo de un bote nuevo equivalente.** 
+**Paso 3: Compare con el costo de un bote nuevo equivalente.**
 Consulte el inventario en harrisboatworks.ca para ver los botes nuevos disponibles. Compare ambos caminos con números reales.
 
-**Paso 4: Pregúntese honestamente si le gusta su embarcación actual.** 
+**Paso 4: Pregúntese honestamente si le gusta su embarcación actual.**
 Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemente es la decisión correcta. Si la respuesta es no, si el formato ya no le conviene, si necesita más espacio, si quiere algo diferente, entonces puede ser el momento de cambiar.
 
 ---
@@ -142,11 +140,6 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-*End of file, 12 posts total*
-
 ---
 
 ## FAQs
