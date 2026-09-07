@@ -249,7 +249,7 @@ describe("Packet A edge hardening", () => {
     expect(migration).toContain("FROM PUBLIC, anon, authenticated");
     expect(migration).toContain("TO service_role");
     expect(adminQuoteSender).not.toContain("pdfUrl:");
-    expect(adminQuoteSender).not.toContain("SITE_URL");
+    expect(adminQuoteSender).toContain("quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`");
   });
 
   it("requires admin auth for quote-note writes and targets the quote id", () => {
@@ -262,9 +262,10 @@ describe("Packet A edge hardening", () => {
     expect(source).toContain("emailData.leadData?.quoteId");
     expect(source).toContain(".eq('id', emailData.leadData.quoteId)");
     expect(source).not.toContain(".eq('quote_number', emailData.quoteNumber)");
-    expect(source.indexOf("quotePdfBuffer = await fetchAllowedQuotePdf(emailData.pdfUrl)")).toBeLessThan(
-      source.indexOf("Try to get template from database first"),
-    );
-    expect(source).toContain("emailData = { ...emailData, pdfUrl: undefined }");
+    expect(source).toContain("normalizeQuoteUrls({");
+    expect(source).toContain("fetchValidatedQuotePdf({");
+    expect(source).toContain("generateQuoteDeliveryEmail(emailData, Boolean(legacyPdfAttachment))");
+    expect(source).not.toContain("fetchAllowedQuotePdf");
+    expect(source).not.toContain("quote-pdf-url.ts");
   });
 });
