@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
 ---
 
-![Diagnostic flowchart for Mercury outboard overheating, guiding owners through tell-tale and RPM checks to prevent damage.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+**Use the exact engine guidance.** Follow the response specified for your motor and any displayed warning. A telltale stream alone does not establish that engine temperature is safe. Record the serial number and warning message for a qualified technician; do not use a generic chart as a diagnosis.
 
 ## Quick Answer
 
@@ -40,8 +40,6 @@ A Mercury that overheats at idle but runs fine at speed is a classic symptom of 
 For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
-
-![Diagnostic flowchart for Mercury outboard overheating alarms, showing steps for checking telltale stream and intake debris.](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 
@@ -121,7 +119,17 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ---
 
-![Mercury outboard engine on a workbench with a service manual and infrared thermometer for overheating diagnostics.](/lovable-uploads/inline/inline-overheating-diagnostic.png)
+**The diagnostic sequence at a glance**
+
+| Step | What you check | What it points to |
+|---|---|---|
+| 1 | The tell-tale stream at idle | Strong at cruise and weak at idle is the classic worn-impeller pattern. No tell-tale at all means shut down. |
+| 2 | The cooling intake screens on the lower unit | Weeds, debris and zebra mussel growth restrict flow, and the restriction bites hardest at idle when flow is lowest. |
+| 3 | The water pump impeller | A worn impeller can keep up at cruise RPM and fall short at idle RPM. The lower unit has to come off to service it. |
+| 4 | The thermostat | A thermostat stuck partially closed restricts flow through the powerhead even when the pump is delivering water. |
+| 5 | The temperature sensor | Less common. Suspect it when the tell-tale looks normal, the motor does not sound like it is struggling, and the alarm is intermittent. Sensor diagnosis needs dealer tools. |
+
+Your serial-number owner's manual controls the exact procedure and service interval for your motor.
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 

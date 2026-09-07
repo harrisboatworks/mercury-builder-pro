@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
-![Illustrated map of Rice Lake, Ontario showing Bewdley at the southwest end, Gores Landing and Harris Boat Works on the south shore, Harwood, Hiawatha and Keene to the north, and the Trent River outlet toward Hastings at the northeast end](/lovable-uploads/rice-lake-map-illustrated.jpg)
+![Illustrated orientation map of Rice Lake, Ontario. Bewdley sits at the southwest end. Gores Landing, Harris Boat Works and Harwood are on the south shore. Hiawatha and Keene are on the north shore. The Otonabee River enters at the west end and the Trent River leaves at the northeast end.](/lovable-uploads/rice-lake-map-illustrated.jpg)
 
 *Rice Lake at a glance. Orientation map, not for navigation.*
 

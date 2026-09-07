@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"
 date_published: 2026-05-04
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
@@ -72,7 +72,7 @@ A **gas kicker** is a small outboard mounted alongside your main motor. It runs 
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
-![Side-by-side comparison of electric trolling motor (shallow, stealth, spot-lock) vs gas kicker (trolling, range, backup). Most anglers run both.](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
+**Compare how each system will be used.** Evaluate steering and position control, desired trolling behaviour, battery or fuel capacity, charging arrangements and installation compatibility. Check the exact equipment specifications. Neither option provides unlimited range or guarantees emergency propulsion.
 
 ## Head-to-head: when each one wins
 

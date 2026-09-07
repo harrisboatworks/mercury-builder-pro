@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { BlogOgImageMeta } from '@/components/seo/BlogOgImageMeta';
-import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
+import {
+  processLocaleInlineMarkdown,
+  renderStandaloneLocaleMarkdownImage,
+} from '@/lib/blogLocaleMarkdown';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
@@ -31,60 +34,7 @@ function renderMarkdownContent(content: string) {
   let tableHeaders: string[] = [];
   let inTable = false;
 
-  const processInline = (text: string): React.ReactNode => {
-    const parts: React.ReactNode[] = [];
-    let remaining = text;
-    let key = 0;
-
-    while (remaining.length > 0) {
-      const boldMatch = remaining.match(/\*\*(.+?)\*\*/);
-      const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
-
-      let earliestIdx = remaining.length;
-      let matchType = '';
-      let match: RegExpMatchArray | null = null;
-
-      if (boldMatch && boldMatch.index !== undefined && boldMatch.index < earliestIdx) {
-        earliestIdx = boldMatch.index;
-        matchType = 'bold';
-        match = boldMatch;
-      }
-      if (linkMatch && linkMatch.index !== undefined && linkMatch.index < earliestIdx) {
-        earliestIdx = linkMatch.index;
-        matchType = 'link';
-        match = linkMatch;
-      }
-
-      if (!match) {
-        parts.push(remaining);
-        break;
-      }
-
-      if (earliestIdx > 0) {
-        parts.push(remaining.substring(0, earliestIdx));
-      }
-
-      if (matchType === 'bold') {
-        parts.push(<strong key={key++}>{match![1]}</strong>);
-        remaining = remaining.substring(earliestIdx + match![0].length);
-      } else if (matchType === 'link') {
-        const isExternal = match![2].startsWith('http');
-        parts.push(
-          <a
-            key={key++}
-            href={match![2]}
-            className="text-primary hover:underline"
-            {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          >
-            {match![1]}
-          </a>
-        );
-        remaining = remaining.substring(earliestIdx + match![0].length);
-      }
-    }
-
-    return parts.length === 1 ? parts[0] : <>{parts}</>;
-  };
+  const processInline = (text: string): React.ReactNode => processLocaleInlineMarkdown(text);
 
   const flushTable = () => {
     if (tableHeaders.length > 0) {
@@ -206,6 +156,13 @@ function renderMarkdownContent(content: string) {
     }
 
     if (line.trim() === '') {
+      i++;
+      continue;
+    }
+
+    const standaloneImage = renderStandaloneLocaleMarkdownImage(line, i);
+    if (standaloneImage) {
+      elements.push(standaloneImage);
       i++;
       continue;
     }

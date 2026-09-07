@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="680" viewBox="0 0 800 680" role="img" aria-label="MerCruiser service planning">
+<rect width="800" height="680" rx="24" fill="#f5f1e9"/>
+<path d="M40 45h64" stroke="#c92332" stroke-width="7"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#132b40">
+<text x="40" y="104" font-size="40" font-weight="700">MerCruiser service planning</text>
+<text x="40" y="155" font-size="29">Three systems to discuss at your service visit.</text>
+<rect x="40" y="195" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="239" font-size="33" font-weight="700">Engine and cooling</text>
+<text x="62" y="279" font-size="29">Match service to the exact engine model.</text>
+<rect x="40" y="320" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="364" font-size="33" font-weight="700">Exhaust system</text>
+<text x="62" y="404" font-size="29">Ask about condition and service history.</text>
+<rect x="40" y="445" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="489" font-size="33" font-weight="700">Sterndrive and transom assembly</text>
+<text x="62" y="529" font-size="29">Include bellows and drive maintenance.</text>
+<text x="40" y="620" font-size="28">Follow the model-specific maintenance instructions.</text>
+</g></svg>

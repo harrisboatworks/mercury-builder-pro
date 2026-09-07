@@ -1299,7 +1299,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-07',
     publishDate: '2026-05-13',
     category: 'Guide d\'achat',
     readTime: '12 min',
@@ -1314,9 +1314,15 @@ Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout
 
 C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
 
-![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
+### Itinéraire vers Harris Boat Works
 
-*D'où viennent nos clients. Le rayon de conduite de 90 minutes couvre la plus grande partie de l'est de la GTA, les Kawarthas, Northumberland, Durham et la baie de Quinte.*
+**Adresse :** 5369 Harris Boat Works Rd, Gores Landing, Ontario, K0K 2E0.
+
+[Obtenir un itinéraire routier vers HBW](https://www.google.com/maps/dir/?api=1&destination=5369%20Harris%20Boat%20Works%20Rd%2C%20Gores%20Landing%2C%20ON%20K0K%202E0).
+
+Le temps de trajet varie selon votre point de départ, la circulation et les conditions routières. HBW se trouve à Gores Landing; cette adresse ne désigne pas une zone de service à domicile.
+
+Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbw.wiki/service). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
 
 ---
 

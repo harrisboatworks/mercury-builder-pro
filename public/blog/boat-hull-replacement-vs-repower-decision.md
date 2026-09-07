@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Boat Hull Worth Repowering? A Structural Checklist"
 description: "Check the transom, floor, stringers, hull damage, layout, steering, and rigging before deciding whether an older boat is worth repowering."
 category: "Repower"
 date_published: 2026-04-29
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-04-29  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
@@ -33,7 +33,11 @@ revenue_driver: repower
 
 ---
 
-![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)
+### Three checks before choosing a repower
+
+1. **Inspect the hull.** Have structural concerns assessed in person before choosing a replacement motor.
+2. **Confirm the boat still fits.** Consider how you use it, its capacity limits and the equipment it needs.
+3. **Compare written totals.** Put hull repairs, repower work and boat replacement on the same basis. Age alone does not decide the outcome.
 
 ## Quick Answer
 

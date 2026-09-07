@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't"
 description: "A candid Mercury 60 HP FourStroke review with current Canadian specs, real freshwater tests, owner feedback and honest Standard vs Command Thrust advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury 60 hp review","mercury 60 fourstroke review","mercury 60 hp command thrust","mercury 60 standard vs command thrust","mercury 60 hp real world performance","mercury 60 owner reviews","mercury 60 hp Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario
 
@@ -130,9 +130,7 @@ For the engineering history and the cases where the larger gearcase really earns
 | The hull does not need a large-diameter propeller | The rig benefits from a larger propeller |
 | The normal load is moderate | The normal load is consistently heavy |
 
-![Mercury standard and Command Thrust gearcases shown side by side.](/lovable-uploads/hero-mercury-command-thrust-vs-standard.webp)
-
-*Mercury standard and Command Thrust gearcases shown side by side. The larger housing is the point, not extra horsepower.*
+**The physical difference, in one line:** the Command Thrust gearcase is a larger housing running a 2.33:1 ratio instead of the standard 1.83:1, so it can swing a larger-diameter propeller. The housing is the point, not extra horsepower.
 
 If a salesperson can't explain what the larger gearcase is solving on your boat, “Command Thrust is better” isn't an explanation.
 
