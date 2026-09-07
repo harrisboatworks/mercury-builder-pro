@@ -620,7 +620,7 @@ export default function QuoteSummaryPage() {
       trackAgentEvent({
         event_type: 'quote_generated',
         motor_model: quoteStateSnapshot.motor?.model || null,
-        motor_hp: quoteStateSnapshot.motor?.hp ?? quoteStateSnapshot.motor?.horsepower ?? null,
+        motor_hp: quoteStateSnapshot.motor?.hp ?? null,
         motor_id: quoteStateSnapshot.motor?.id ?? null,
       });
     }
