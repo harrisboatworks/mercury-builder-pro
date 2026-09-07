@@ -104,11 +104,13 @@ export async function submitFinancingApplication(params: {
   coApplicantSinEncrypted?: string | null;
   applicationId?: string | null;
   resumeToken?: string | null;
+  submissionId: string;
 }): Promise<FinancingApiSubmitResult> {
   return invokeFinancingApi<FinancingApiSubmitResult>({
     action: 'submit',
     applicationId: params.applicationId || undefined,
     resumeToken: params.resumeToken || undefined,
+    submissionId: params.submissionId,
     applicantSinEncrypted: params.applicantSinEncrypted,
     coApplicantSinEncrypted: params.coApplicantSinEncrypted || undefined,
     application: {
