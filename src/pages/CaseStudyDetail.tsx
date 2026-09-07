@@ -30,7 +30,7 @@ export default function CaseStudyDetail() {
     }));
     const lfSections = lf.sections.map((sec) => ({
       heading: sec.heading,
-      paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+      paragraphs: sec.paragraphs.map((p: string) => substituteLiveRateTokens(p)),
     }));
     const lfIntro = substituteLiveRateTokens(lf.intro);
     const lfQuickAnswer = substituteLiveRateTokens(lf.quickAnswer);

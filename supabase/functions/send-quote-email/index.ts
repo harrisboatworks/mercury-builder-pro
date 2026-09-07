@@ -31,10 +31,9 @@ import {
   resolveAllowedQuotePdfUrl,
 } from "../_shared/quote-pdf-url.ts";
 import {
-  replaceSubjectTemplateVariables,
   replaceTemplateVariables,
   sanitizeEmailSubject,
-} from "../_shared/quote-email-template.ts";
+} from "./template-policy.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -345,8 +344,8 @@ serve(async (req) => {
         } else if (template.html_content.includes('{{documentAccessUrl}}')) {
           throw new Error('Template not found, using fallback');
         } else {
-          subject = replaceSubjectTemplateVariables(template.subject, emailData);
-          htmlContent = replaceTemplateVariables(template.html_content, emailData);
+          subject = replaceTemplateVariables(template.subject, emailData, "subject");
+          htmlContent = replaceTemplateVariables(template.html_content, emailData, "html");
         }
       } else {
         throw new Error('Template not found, using fallback');

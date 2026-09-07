@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 到 Rice Lake 租船一日游：预订、证件与当天清单"
 description: "从 GTA 到 Rice Lake 租船的一日游实用指南：在线预订、每位驾驶员证件、实时路线、天气判断、check-in 和安全出发清单。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["多伦多 Rice Lake 一日游","GTA 华人周末出游","Rice Lake 自驾路线","安省一日游中文","Gores Landing 行程","Toronto Chinese day trip Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-08-03  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan
 
@@ -57,7 +57,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 **HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
-如果有人要钓鱼，还要按年龄、居住身份和牌照类型确认自己的[安省钓鱼资格](https://www.ontario.ca/page/fishing-licence)。不开船的乘客不需要因为坐船而办理 PCOC；要驾驶的人则必须在出发前满足 HBW 政策。
+如果有人要钓鱼，还要按年龄、居住身份和牌照类型确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。不开船的乘客不需要因为坐船而办理 PCOC；要驾驶的人则必须在出发前满足 HBW 政策。
 
 ## 第三步：用实时导航，不要背一条“永久正确”的路线
 

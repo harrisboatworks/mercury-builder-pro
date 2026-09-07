@@ -11,6 +11,7 @@ import {
   getBlogRevenuePath,
   normalizeBlogCategory,
 } from '../src/lib/blogRevenueDriver.js';
+import { applyMotorPresentationOverrides } from '../src/data/motorPresentationOverrides.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD } from './lib/warranty-copy.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -219,7 +220,7 @@ async function loadMotors() {
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
   const rows = await res.json();
@@ -412,7 +413,7 @@ function cleanBlogContent(content, hasFaqs, context = {}) {
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(
     /^:::youtube-embed\s*\nid:\s*([A-Za-z0-9_-]+)(?:\ntitle:\s*([^\n]+))?\n:::\s*$/gim,
-    (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})`,
+    (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})\n\n`,
   );
   // Twins-only: convert visual directives into text-first Markdown. Leaving
   // their YAML-like properties in the twin exposes authoring instructions to
@@ -1044,7 +1045,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.',
     '',
     '## Business rules (apply to every entry)',
     '',
@@ -1128,11 +1129,28 @@ function loadLiveRateTokens() {
   }
 }
 const LIVE_RATE_TOKENS = loadLiveRateTokens();
-function substituteLiveRateTokens(text) {
+// Mirrors formatPricingAsOf in src/lib/finance.ts. Duplicated here for the
+// same reason the LIVE_RATE logic is: .mjs build scripts cannot import TS.
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+function formatPricingAsOf(dateModified) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+}
+function substituteLiveRateTokens(text, dateModified) {
   if (!text) return text;
-  return String(text)
+  let out = String(text)
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+  if (dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(dateModified));
+  }
+  return out;
 }
 
 // Markdown twins are read raw (AI crawlers, .md URLs), so render ::cta
@@ -1153,10 +1171,10 @@ function renderCtaBlocks(text) {
   });
 }
 
-function writePublicMd(relPath, content) {
+function writePublicMd(relPath, content, dateModified) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, renderCtaBlocks(substituteLiveRateTokens(content)), 'utf8');
+  writeFileSync(outFile, renderCtaBlocks(substituteLiveRateTokens(content, dateModified)), 'utf8');
 }
 
 
@@ -1174,7 +1192,7 @@ const BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
+  'fourstroke-vs-pro-xs',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
 
@@ -1279,6 +1297,7 @@ function blogTwinLabels(language) {
       canonical: 'URL canonique (HTML pour les lecteurs)',
       nextSteps: 'Prochaines étapes',
       pickupContact: 'Lieu de ramassage et coordonnées',
+      faqs: 'Questions fréquentes',
     };
   }
 
@@ -1290,6 +1309,7 @@ function blogTwinLabels(language) {
     canonical: 'Canonical (HTML for humans)',
     nextSteps: 'Next steps',
     pickupContact: 'Pickup location & contact',
+    faqs: 'FAQs',
   };
 }
 
@@ -1433,9 +1453,10 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     `language: ${language}`,
     `revenue_driver: ${revenueDriver}`,
   ];
+  const labels = blogTwinLabels(language);
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
-    ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
+    ? [`## ${labels.faqs}`, '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
   const cleanedContent = normalizeBlogTwinStructure(
     cleanBlogContent(article.content, faqs.length > 0, {
@@ -1449,7 +1470,6 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
-  const labels = blogTwinLabels(language);
   const labelSeparator = language === 'fr-CA' ? ' :' : ':';
   const metadataLineBreak = language === 'fr-CA' ? '\\' : '  ';
   const nextSteps = blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language);
@@ -1746,7 +1766,8 @@ const motorRecords = await loadMotors();
 // Full quote-builder universe, same selection rules as MotorSelectionPage.
 // Used by /pricing-reference.md so the reference matches the quote builder
 // (both in-stock and available-to-order motors), not just public-motors-api.
-const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
+const quoteBuilderMotorRecords = (await loadAllQuoteBuilderMotors())
+  .map(applyMotorPresentationOverrides);
 const blogArticlesAll = loadBlogArticles();
 const localizedBlogGroups = loadLocalizedBlogArticles();
 
@@ -1756,7 +1777,8 @@ for (const dir of ['motors', 'case-studies', 'locations', 'blog']) {
 }
 
 const motorTwinSummaries = [];
-for (const m of motorRecords) {
+for (const sourceMotor of motorRecords) {
+  const m = applyMotorPresentationOverrides(sourceMotor);
   if (!m.model_key) continue;
   const s = (m.model_display || m.model || '').toLowerCase();
   if (s.includes('verado')) continue;
@@ -1792,7 +1814,7 @@ for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
   const markdown = blogMarkdown(article, blogClusterData);
   lintBlogTwin(article.slug, markdown);
-  writePublicMd(path, markdown);
+  writePublicMd(path, markdown, article.dateModified);
   verifyPublicMd(path, 'English blog twin freshness', ['**Last reviewed:**']);
   blogTwinSummaries.push({
     path,
@@ -1808,7 +1830,7 @@ for (const group of localizedBlogGroups) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
     const markdown = blogMarkdown(article, null, `/blog/${group.prefix}`, group.language);
     lintBlogTwin(`${group.prefix}/${article.slug}`, markdown);
-    writePublicMd(path, markdown);
+    writePublicMd(path, markdown, article.dateModified);
     const localizedLabelSeparator = group.language === 'fr-CA' ? ' :' : ':';
     verifyPublicMd(path, `${group.language} blog twin`, [
       `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
@@ -1820,6 +1842,7 @@ for (const group of localizedBlogGroups) {
       language: group.language,
       isDiagnostic: isDiagnosticBlogArticle(article),
       revenueDriver: getBlogRevenueDriver(article.category, article.slug),
+      hasStructuredFaqs: Array.isArray(article.faqs) && article.faqs.length > 0,
     });
   }
 }
@@ -1948,6 +1971,11 @@ const frenchForbidden = [
   '**Published:**',
   '**Read time:**',
   '**Canonical (HTML for humans):**',
+  '## FAQs',
+  '## Foire aux questions',
+  '## Liens internes',
+  "## Appel à l'action",
+  '## Appel à l’action',
   '## Next steps',
   '- Pickup location & contact:',
   'Build your own Mercury quote',
@@ -1956,6 +1984,9 @@ const frenchForbidden = [
 for (const twin of frenchTwinSummaries) {
   const twinText = readFileSync(join(PUBLIC, twin.path), 'utf8');
   const customerFacingText = twinText.split('\n## Notes for AI agents')[0];
+  if (twin.hasStructuredFaqs && !twinText.includes('## Questions fréquentes')) {
+    throw new Error(`[markdown-twins] French blog twin missing localized FAQ heading: ${twin.path}`);
+  }
   for (const required of frenchRequired) {
     if (!twinText.includes(required)) {
       throw new Error(`[markdown-twins] French blog twin missing localized boilerplate ${required}: ${twin.path}`);

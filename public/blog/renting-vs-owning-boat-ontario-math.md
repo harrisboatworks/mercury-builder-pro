@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,17 +25,13 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
 > **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
 
-We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.
-
-Because HBW sells, services, stores, and rents boats, we can lay out both cost structures. The right answer is math plus personality, and the worksheet below covers both.
-
-Here's both.
+HBW sells, services, stores, and rents boats, so we can lay out both cost structures. The right answer is math plus how you actually use the boat; the worksheet below covers both.
 
 ---
 
@@ -114,7 +110,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 **Things that quietly favour owning:**
 
 - Spontaneity. The 7 pm Tuesday cruise because the lake looks perfect. Renters plan; owners just go.
-- The boat becomes the family gathering place. Three generations of our customers prove this one.
+- The boat can become a family gathering place.
 - Your gear stays aboard. Your setup, your electronics, your rod holders.
 - Equity. Ownership costs real money, but some of it comes back at resale or trade-in. Rental money is spent.
 

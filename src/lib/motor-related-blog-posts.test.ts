@@ -18,6 +18,19 @@ describe('getMotorRelatedBlogSlugs', () => {
     expect(slugs).not.toContain('best-mercury-outboard-pontoon-boats');
   });
 
+  it('surfaces the standalone 60 HP review for a 60 FourStroke', () => {
+    const slugs = getMotorRelatedBlogSlugs({
+      hp: 60,
+      family: 'FourStroke',
+      model: '60 ELPT FourStroke',
+      model_display: '60 ELPT FourStroke',
+    });
+
+    expect(slugs).toContain('mercury-60-hp-fourstroke-review-ontario');
+    expect(slugs).toContain('mercury-40-vs-60-hp-outboard-ontario');
+    expect(slugs[0]).toBe('mercury-60-hp-fourstroke-review-ontario');
+  });
+
   it('keeps kicker and tiller recommendations away from high-horsepower guides', () => {
     const slugs = getMotorRelatedBlogSlugs({
       hp: 9.9,

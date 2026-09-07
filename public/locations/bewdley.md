@@ -43,7 +43,7 @@ Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice La
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Rice Lake Mercury Repower](https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower)

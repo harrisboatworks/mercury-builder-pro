@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock"
 description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 
@@ -119,7 +119,7 @@ Motor won't start after your swim stop? Confirm the kill-switch clip is seated a
 
 - **Skipping the operator card until rental morning.** HBW requires every driver to bring a valid PCOC and photo ID. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
-- **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
+- **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers make the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
 - **Overloading the bow.** Spread people around the boat; a nose-heavy pontoon steers worse and rides wetter.
 
@@ -164,14 +164,13 @@ Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and
 
 ### What if the weather looks bad on my rental day?
 
-If conditions are genuinely poor (high winds, rain), HBW's current policy allows cancellation or rescheduling with no penalty and refunds applied deposits and payments. Check the forecast and current policy before departure.
+Review the current cancellation, rescheduling, and deposit terms when you book. If conditions look poor, contact HBW before travelling.
 
 ## Related guides
 
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
 - [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
 - [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 
 ## Next steps

@@ -46,7 +46,7 @@ Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, 
 - Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Aluminum fishing repower case study (60 → 90)](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke)

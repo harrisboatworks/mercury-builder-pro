@@ -20,8 +20,6 @@
  */
 import { BlogArticle } from './blogArticles';
 
-import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
-
 export const ZH_HANT_LANGUAGE_NOTE =
   '我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';
 
@@ -43,28 +41,30 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '9 分鐘',
     keywords: ['冬季保養', '冬儲', '安省', '繁體', 'winterization', 'Mercury'],
-    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，引擎水道裡殘留的水結冰後會撐裂鋁製缸體，修不好，只能換引擎。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
+    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞；能否維修、需要更換哪個部件，要由技師檢查後判斷。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
 
 ## 為何安省冬天必須冬化
 
 安省的問題不是「冷」，是**反覆結冰解凍**。每年 11 月到 3 月，氣溫會在零度上下來回波動幾十次。每一次水結成冰，體積膨脹約 9%。
 
-引擎裡只要還有一點冷卻水，那點水凍起來就能把缸體或下機箱（lower unit）撐裂。這種損壞無法維修：鋁合金一旦裂開，無法焊補到承受燃燒室壓力的程度，**只能整機更換**。
+冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞。能否維修、需要更換哪個部件，要由技師檢查後判斷；下機箱損壞不等於必須更換整台引擎。
 
 我們每年春天都見到一兩台這樣的引擎，幾乎都是船主自己冬化但漏掉一步（最常見：忘記把冷卻水道排空就直接收起來）。
 
 ## 完整冬化清單
 
+以下是與技師核對的保養項目，不是適用於所有 Mercury 引擎的逐步操作程序。請依照該引擎型號及序列號對應的手冊確認排水、霧化、燃油處理及其他冬化要求。
+
 | 項目 | 為何要做 | DIY 難度 |
 |---|---|---|
 | 排空冷卻水（flush + drain） | 防止缸體凍裂 | 中 |
 | 引擎霧化（fogging oil） | 防止汽缸壁冬季鏽蝕 | 中 |
-| 防凍液灌入水道 | 雙保險，確保殘留水不結冰 | 中 |
+| 依型號手冊確認是否需要防凍液及指定處理方式 | 不同冷卻系統的要求不同，不能一概灌入防凍液 | 依手冊；不確定時交由技師處理 |
 | 燃油加穩定劑、加滿油箱 | 防止汽油氧化、油箱內壁凝水 | 易 |
 | 齒輪油更換並檢查有無乳化（變白代表進水） | 趁早發現密封件失效 | 中 |
 | 更換引擎機油和機油濾芯 | 舊機油酸性會腐蝕軸承 | 中 |
@@ -72,7 +72,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
 | 檢查火咀 / 接頭 / 防水油脂 | 順手做，省春天的錢 | 中 |
 | 收縮膜或室內存放 | 防止積雪壓塌船篷、防止雨水入船 | 難（建議交給船廠） |
 
-> **DIY 還是交給經銷商？** 上面 9 項裡只要漏一項關鍵步驟（排水、霧化、防凍液），代價就是一台新引擎。如果是第一次過冬，強烈建議至少**第一年交給 Mercury 認證技師**，跟著學一遍流程，第二年再考慮自己做哪幾項。
+> **DIY 還是交給經銷商？** 漏掉該機型必要的冬化步驟可能造成嚴重損壞。第一次過冬，或不確定手冊要求時，請讓 Mercury 技師檢查並說明適合這台引擎的程序。
 
 ## 何時送船？
 
@@ -101,7 +101,7 @@ HBW 不提供室內或加熱存放。
 
 - 地點：Gores Landing, Ontario（萊斯湖南岸）
 - 我們通常可以安排取船。請向我們確認您的船和地點是否可安排。HBW 不運送船隻、不郵寄發動機、不上門／碼頭服務，也不推薦運輸商或報價第三方運輸。
-- 服務：[引擎冬化（Mercury 認證技師）](https://www.mercurymarine.com/canada/en/) + 室外專業收縮膜、室外無遮蓋或僅收縮膜 + 春季開機
+- 服務：[引擎冬化（Mercury 認證技師）](https://www.mercurymarine.com/ca/en) + 室外專業收縮膜、室外無遮蓋或僅收縮膜 + 春季開機
 - 價格：見 [現行冬儲價目](https://www.harrisboatworks.ca/winter-storage)
 - 聯絡方式：先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後；(905) 342-2153 / info@harrisboatworks.ca
 
@@ -121,14 +121,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 12 月 1 日至 4 月 1 日船廠關閉，不能。請在送船前取出所有需要的物品。
 
 **Q：自己做冬化最容易漏的步驟是甚麼？**
-冷卻水道排空。很多船主只 flush 了水，但殘留水仍在通道裡。冬化必須在引擎完全垂直的位置 drain 乾淨，再加防凍液做雙保險。
+先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。
 
 > 完整簡體版：[/blog/zh/ontario-boat-winterization-guide-chinese](/blog/zh/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'HBW 提供室內冬儲嗎？', answer: '不提供。HBW 提供室外專業收縮膜存放、室外無遮蓋存放，以及僅收縮膜服務。不提供室內或加熱存放。' },
       { question: '甚麼時候必須送過去？', answer: '先完成 hbw.wiki/service，然後隨時送船，包括下班後。HBW 12 月 1 日至 4 月 1 日完全停業。' },
-      { question: '自己做冬化最容易漏的是哪一步？', answer: '冷卻水道排空。殘留水凍裂鋁製缸體的損壞無法維修，只能換引擎。' },
+      { question: '自己做冬化最容易漏的是哪一步？', answer: '先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],
   },
@@ -220,12 +220,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-03',
+    dateModified: '2026-09-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
-    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；新辦、續期、轉讓或補發需要支付 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
 
 ## 一張表看懂三者區別
 
@@ -235,23 +235,23 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
 | 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
 | 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
-| 費用 | 由 Transport Canada 認可提供商決定 | **按 Transport Canada 當前服務費** | 視類型而定 |
+| 費用 | 由 Transport Canada 認可提供商決定 | 新辦/續期/轉讓/補發 **$24.41 CAD**（2026-09-05）；資料更新或取消免費 | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
 | 中文支援 | 視提供商而定（建議查運輸部認可名單） | 英 / 法文 | **有官方繁體中文摘要** |
 | 換引擎要更新嗎 | 不用 | **要**（HP 變化時） | 不影響 |
 
 ## PCOC：船隻操作員卡
 
-- **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人。
+- **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
 - **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
-- **中文考試是否提供：** 視提供商而定，**不能保證所有提供商都有中文版**，請直接聯繫認可名單上的提供商確認。
+- **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 
 ## PCL：船隻牌照（船身註冊號）
 
 - **誰必須有：** 配 10 HP（7.5 kW）以上引擎的休閒船船主。
-- **怎麼辦：** 使用 [Transport Canada Pleasure Craft Licensing 官方入口](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。新辦、續期、轉讓或補發需要支付當前服務費；更新資料或取消牌照免費。
-- **有效期：** 新辦或轉讓後的 PCL 有效 5 年。
+- **怎麼辦：** 使用 [Transport Canada Pleasure Craft Licensing 官方入口](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。2026 年 9 月 5 日 [官方收費表](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards) 為新辦、續期、轉讓或補發 **$24.41 CAD**；更新資料或取消牌照免費，每年 4 月 1 日調整。
+- **有效期：** 新辦、轉讓或續期後的 PCL 有效 5 年。舊牌並非全部終身，請按 Transport Canada 到期批次核對。
 - **何時必須更新：** 換引擎（HP 變化時）、賣船給新主、地址變更。
 
 ## 安省釣魚證
@@ -274,14 +274,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 常見問題
 
-**Q：PCOC 中文考試在哪裡？** 視 Transport Canada 認可提供商而定。請直接查 [認可名單](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 並聯繫提供商。
+**Q：PCOC 中文考試在哪裡？** 中文複習資料可以用於學習，但正式考試語言可能不同。付款前向 [認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 確認考試語言和經批准的協助，不要假定一定有獲批的中文線上考試。
 
 **Q：換引擎後 PCL 一定要更新嗎？** 引擎資料或 HP 變更時應按 Transport Canada 當前規則更新 PCL 資料；資料更新本身免費。
 
 > 完整簡體版：[/blog/zh/gta-chinese-pcl-fishing-licence-guide](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
 `,
     faqs: [
-      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發會收取 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。' },
+      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發現為 $24.41 CAD（2026-09-05）；新辦、轉讓或續期後有效 5 年（補發不延長有效期）；資料更新免費。' },
       { question: '短期租船一定要 PCOC 嗎？', answer: '在 HBW 必須有。操作租賃船隻的人要持有效 PCOC，並完成租船安全檢查清單。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],
@@ -294,10 +294,10 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     slug: 'gta-chinese-rice-lake-day-trip-plan',
     title: 'GTA → 萊斯湖 一日遊地圖（繁體版）',
     description: '從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。',
-    image: zhFirstRentalHero,
+    image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-03',
+    dateModified: '2026-09-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '5 分鐘',
@@ -307,7 +307,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## 一日遊核心要點
 
 - **出發時間：** 早上 8-9 點離開多倫多，避開週末交通。
-- **車程：** 經 404 + 115，約 90 分鐘到 Gores Landing。
+- **車程：** 出發前查看前往 Gores Landing 的即時路線與路況，並預留交通緩衝時間。
 - **租船：** 在 HBW 碼頭辦理，需要相片證件 + 信用卡按金。
 - **釣魚證：** 出發前在 [安省官方頁面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 辦好。
 - **回程：** 下午 5 點前出發，避開 401 晚高峰。
@@ -327,10 +327,10 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     slug: 'gta-chinese-buy-boat-rice-lake-guide',
     title: 'GTA 華人萊斯湖買船完整指南（繁體版）',
     description: 'GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。',
-    image: zhFirstRentalHero,
+    image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-09-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '6 分鐘',
@@ -340,7 +340,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## 買船核心要點
 
 - **第一步：** 先決定用途（家庭出遊 vs 認真釣魚），再決定船型。
-- **第二步：** 新船 vs 二手船：第一次買強烈建議買新船，配Premier 經銷商。
+- **第二步：** 新船 vs 二手船：新船、二手船或更換引擎，要按預算、船況、用途和保養安排選擇。第一次買船，先做船況檢查，再比較總費用。
 - **第三步：** Mercury 引擎匹配：船型決定 HP 範圍。
 - **貸款：** 透過 Dealerplan Peterborough 由 TD Auto Finance 提供。**促銷年利率（promotional APR）：{{LIVE_RATE_PCT}}**（TD「Always On」方案，截至 2026 年 6 月，至 2026 年 12 月 31 日止）；**標準／一般年利率（standard APR）：7.99% 至 8.99%**（促銷不適用時）。最低融資金額 $5,000。利率會變動，請致電 905-342-2153 或於 mercuryrepower.ca 建立報價以確認目前適用利率。
 - **交付：** HBW 在 Gores Landing 自取，不提供送貨。

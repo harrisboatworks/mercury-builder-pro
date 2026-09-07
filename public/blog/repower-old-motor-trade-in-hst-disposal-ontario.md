@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-08-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Old Motor Trade-In, HST and Disposal in Ontario"
 description: "Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-08-26
 keywords: ["repower trade-in ontario","old outboard trade in","hst credit boat motor","outboard disposal ontario","mercury repower harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-08-26  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
 
@@ -61,7 +61,7 @@ When you trade in a motor to an HST-registered dealer as part of the same repowe
 
 That can be a real number. On a $14,960 motor (a Mercury 90 ELPT FourStroke at our current price) with a $3,000 trade-in credit, you pay HST on $11,960 instead of the full price. At 13%, that keeps about $390 in your pocket. We're not tax advisors and your situation may vary, but this is how the transaction generally works in Ontario, and we apply it correctly on every repower.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 If you have questions about how this applies to your specific situation, your accountant or the CRA is the right call.
 

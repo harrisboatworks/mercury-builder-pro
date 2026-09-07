@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
 description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
@@ -154,7 +154,7 @@ No. Mercury recommends bringing battery packs to a heated space at 50-80% charge
 
 ### How long do Avator batteries last (lifecycle)?
 
-Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. For typical cottage use (weekend running through summer), a properly cared-for battery pack lasts 8-12 years before reaching meaningful degradation.
+Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. Calendar life depends on use, storage, charging, and temperature. Check the battery documentation for its rated cycle life and care requirements.
 
 ### Does fast charging shorten battery life?
 

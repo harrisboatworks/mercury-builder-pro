@@ -9,22 +9,7 @@ export const BLOG_REVENUE_DRIVER = Object.freeze({
 });
 
 const DEALER_REPOWER_SLUGS = new Set([
-  'mercury-dealer-ajax-ontario-hbw',
   'mercury-dealer-bowmanville-ontario-hbw',
-  'mercury-dealer-brampton-ontario-hbw',
-  'mercury-dealer-burlington-ontario-hbw',
-  'mercury-dealer-cobourg-ontario-hbw',
-  'mercury-dealer-lindsay-ontario-hbw',
-  'mercury-dealer-markham-ontario-hbw',
-  'mercury-dealer-mississauga-ontario-hbw',
-  'mercury-dealer-northumberland-county-hbw',
-  'mercury-dealer-oakville-ontario-hbw',
-  'mercury-dealer-oshawa-ontario-hbw',
-  'mercury-dealer-peterborough-ontario-hbw',
-  'mercury-dealer-pickering-ontario-hbw',
-  'mercury-dealer-port-hope-ontario-hbw',
-  'mercury-dealer-richmond-hill-ontario-hbw',
-  'mercury-dealer-vaughan-ontario-hbw',
   'mercury-dealer-whitby-ontario-hbw',
   'mercury-outboard-dealer-toronto-why-drive-to-hbw',
 ]);
@@ -51,7 +36,7 @@ const RENTAL_SLUGS = new Set([
   'docking-boat-in-wind-rice-lake',
   'group-boat-rentals-rice-lake',
   'rice-lake-boat-launch-guide',
-  'rice-lake-boat-rentals-from-toronto-gta',
+  'rice-lake-boat-rental-guide-2026',
   'rice-lake-boating-guide-2026',
   'trent-severn-waterway-boating-guide-2026',
 ]);

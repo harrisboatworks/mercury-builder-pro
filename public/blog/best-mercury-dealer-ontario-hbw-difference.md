@@ -150,7 +150,7 @@ Compare us on those points too.
 
 ## Areas We Serve
 
-Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County, Durham Region, and the GTA. Start with the dealer page closest to you: [Peterborough](/blog/mercury-dealer-peterborough-ontario-hbw), [Oshawa](/blog/mercury-dealer-oshawa-ontario-hbw), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/mercury-dealer-pickering-ontario-hbw), or [Cobourg](/blog/mercury-dealer-cobourg-ontario-hbw). For the broader pickup model, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup).
+Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County, Durham Region, and the GTA. Start with the dealer page closest to you: [Peterborough](/blog/complete-guide-boat-repower-kawarthas), [Oshawa](/blog/trailer-boat-toronto-to-rice-lake-guide), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/trailer-boat-toronto-to-rice-lake-guide), or [Cobourg](/blog/complete-guide-boat-repower-kawarthas). For the broader pickup model, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup).
 
 ---
 **Phone:** 905-342-2153
@@ -200,7 +200,7 @@ The best fit depends on what you value. Harris Boat Works is in Gores Landing an
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
 - [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw), Mercury dealer for Port Hope
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
 
 ## Next steps
 
