@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table.
 
-**Category:** Repower Guide
-**Published:** 2026-05-28
+**Category:** Repower Guide  
+**Published:** 2026-05-28  
 **Last reviewed:** 2026-09-07  
-**Read time:** 11 min read
+**Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
 *Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
@@ -231,3 +231,4 @@ It depends on year, hours, condition, configuration, and the current Ontario mar
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

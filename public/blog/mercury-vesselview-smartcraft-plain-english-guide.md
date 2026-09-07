@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake.
 
-**Category:** Tech & Features
-**Published:** 2026-05-15
+**Category:** Tech & Features  
+**Published:** 2026-05-15  
 **Last reviewed:** 2026-09-07  
-**Read time:** 9 min read
+**Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
 ## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/ca/en) App. A Plain-English Guide
@@ -237,3 +237,4 @@ Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide.
 
-**Category:** Buying Guide
-**Published:** 2026-05-05
+**Category:** Buying Guide  
+**Published:** 2026-05-05  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
 *Hero graphic: common nominal shaft-length labels, not installation measurements. Use the exact motor and hull instructions to confirm fit.*
@@ -232,3 +232,4 @@ A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury co
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

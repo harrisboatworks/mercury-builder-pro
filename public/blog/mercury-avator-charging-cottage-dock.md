@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage.
 
-**Category:** Electric Boating
-**Published:** 2026-05-17
+**Category:** Electric Boating  
+**Published:** 2026-05-17  
 **Last reviewed:** 2026-09-07  
-**Read time:** 6 min read
+**Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
 *Hero image: Mercury Avator 7.5e on a Lund boat. This photograph illustrates the outboard in use; it does not show a charging installation.*
@@ -187,3 +187,4 @@ Charging stops, the battery stays at whatever level it reached. When power retur
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.
 
-**Category:** Mercury Technology
-**Published:** 2026-05-28
+**Category:** Mercury Technology  
+**Published:** 2026-05-28  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min
+**Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
 *Hero image: Mercury digital-control example. The pictured control does not establish retrofit eligibility; confirm the engine serial number, control part number and complete rigging package.*
@@ -272,3 +272,4 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

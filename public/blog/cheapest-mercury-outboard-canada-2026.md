@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits.
 
-**Category:** Buying Guide
-**Published:** 2026-04-23
+**Category:** Buying Guide  
+**Published:** 2026-04-23  
 **Last reviewed:** 2026-09-07  
-**Read time:** 12 min read
+**Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
 ## Quick Answer
@@ -197,3 +197,4 @@ The cost depends on the hull rating, load, exact motor, controls, and installati
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

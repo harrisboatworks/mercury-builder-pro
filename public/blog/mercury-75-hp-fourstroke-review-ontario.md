@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-05-10
+**Category:** Mercury Buying Guides  
+**Published:** 2026-05-10  
 **Last reviewed:** 2026-09-07  
-**Read time:** 7 min read
+**Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 
 ### Quick Answer
@@ -197,3 +197,4 @@ Sometimes, yes. Used 75s come through the market. We can help assess condition a
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-05-10
+**Category:** Mercury Buying Guides  
+**Published:** 2026-05-10  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
 ### Quick Answer
@@ -150,10 +150,10 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-**See the current price on the Mercury 9.9 MH EFI.**
-[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration.
-Or call 905-342-2153.
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+**See the current price on the Mercury 9.9 MH EFI.** 
+[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
+Or call 905-342-2153. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
 ---
@@ -213,3 +213,4 @@ Compare the exact model, shaft length, starting system, included tank and hose, 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

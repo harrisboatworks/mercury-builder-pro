@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs.
 
-**Category:** Comparison
-**Published:** 2026-01-26
+**Category:** Comparison  
+**Published:** 2026-01-26  
 **Last reviewed:** 2026-09-07  
-**Read time:** 9 min read
+**Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
 ## Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
@@ -300,3 +300,4 @@ For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 g
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

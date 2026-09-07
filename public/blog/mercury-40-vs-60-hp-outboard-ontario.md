@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.
 
-**Category:** Mercury Outboards
-**Published:** 2026-05-09
+**Category:** Mercury Outboards  
+**Published:** 2026-05-09  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~10 min read
+**Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
 > **Quick answer:** For a 15 or 16 ft aluminum fishing boat with two adults, the Mercury 40 HP is enough. The 60 is the smarter long-term pick if you add a third person, tow a tube, or want loaded headroom, and the price gap is about $2,602. On pontoons under 20 ft, most customers land on the 60 Command Thrust. Build a quote at mercuryrepower.ca.
@@ -249,3 +249,4 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

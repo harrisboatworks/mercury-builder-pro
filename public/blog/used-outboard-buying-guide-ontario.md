@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test.
 
-**Category:** Buying Guide
-**Published:** 2026-05-07
+**Category:** Buying Guide  
+**Published:** 2026-05-07  
 **Last reviewed:** 2026-09-07  
-**Read time:** 8 min read
+**Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario
 
 *Hero image: AI-generated editorial scene of a buyer reviewing documents beside a Mercury-powered boat. It does not depict an HBW customer, facility or completed inspection.*
@@ -242,3 +242,4 @@ Contact HBW with the serial number and symptoms so we can confirm service scope 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

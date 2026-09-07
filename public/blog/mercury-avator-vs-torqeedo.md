@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake.
 
-**Category:** Electric Boating
-**Published:** 2026-05-17
+**Category:** Electric Boating  
+**Published:** 2026-05-17  
 **Last reviewed:** 2026-09-07  
-**Read time:** 7 min read
+**Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
 
 *Hero image: Mercury Avator 7.5e on a small boat. The photograph illustrates the Mercury system; it is not a side-by-side Torqeedo test or a range comparison.*
@@ -215,3 +215,4 @@ Neither brand automatically qualifies for an HP-restricted lake. Check the restr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

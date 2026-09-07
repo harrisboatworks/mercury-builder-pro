@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-07-27
+**Category:** Mercury Buying Guides  
+**Published:** 2026-07-27  
 **Last reviewed:** 2026-09-07  
-**Read time:** 18 min read
+**Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario
 
 > **Quick answer:** The Mercury 200 FourStroke is a 3.4-litre V6; the 200 Pro XS is a 4.6-litre V8. Both are rated at 200 HP. The lighter V6 is usually the cleaner family-boat choice. The V8 Pro XS earns a serious look when a responsive fishing or performance hull can use its higher operating range and gearcase options.
@@ -466,3 +466,4 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > How HBW evaluates outboard trades in Ontario: appraisal factors, records to gather, and how to compare a trade with a private sale using your actual quote.
 
-**Category:** Buying Guide
-**Published:** 2026-05-09
+**Category:** Buying Guide  
+**Published:** 2026-05-09  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~10 min read
+**Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 
 ## What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
@@ -219,3 +219,4 @@ Some go to other customers looking for used motors. Some go to boat brokers or u
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

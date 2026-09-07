@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide.
 
-**Category:** Mercury Outboards
-**Published:** 2026-05-08
+**Category:** Mercury Outboards  
+**Published:** 2026-05-08  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~14 min read
+**Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
 ## Quick answer
@@ -218,3 +218,4 @@ The dealer price shown is the motor price. Final out-the-door price depends on c
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

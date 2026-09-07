@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > 你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。
 
-**Category:** 成本分析
-**Published:** 2026-05-12
+**Category:** 成本分析  
+**Published:** 2026-05-12  
 **最后审核:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
 ### 服务与换机：先提交资料，再确认具体工作
@@ -242,3 +242,4 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

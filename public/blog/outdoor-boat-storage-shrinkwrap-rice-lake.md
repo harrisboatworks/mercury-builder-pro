@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter.
 
-**Category:** Service & Maintenance
-**Published:** 2026-05-10
+**Category:** Service & Maintenance  
+**Published:** 2026-05-10  
 **Last reviewed:** 2026-09-07  
-**Read time:** 9 min read
+**Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
 ## Quick Answer
@@ -263,3 +263,4 @@ List the concern in the service request. Repairs require assessment and approval
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

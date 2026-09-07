@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions.
 
-**Category:** Fishing & Local
-**Published:** 2026-04-22
+**Category:** Fishing & Local  
+**Published:** 2026-04-22  
 **Last reviewed:** 2026-09-07  
-**Read time:** 15 min read
+**Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
 *Hero image: AI-generated editorial fishing scene. It illustrates boating context, not an exact ProKicker configuration, location or completed HBW customer installation.*
@@ -218,3 +218,4 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy.
 
-**Category:** Buying Guide
-**Published:** 2026-08-04
+**Category:** Buying Guide  
+**Published:** 2026-08-04  
 **Last reviewed:** 2026-09-07  
-**Read time:** 13 min read
+**Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario
 
 > **Quick answer:** A used pontoon is good value when its lower price survives a proper comparison of structure, motor condition, records, ownership documents, tax, trailer and immediate repairs. A new pontoon buys certainty, current features and warranty, but not automatically a better fit. Compare the complete, water-ready package over your first three seasons, then choose the risk you can inspect and afford.
@@ -220,3 +220,4 @@ Start with each boat’s capacity label and intended load, then compare tube con
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

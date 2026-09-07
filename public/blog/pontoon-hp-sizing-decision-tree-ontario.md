@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart.
 
-**Category:** Mercury Outboards
-**Published:** 2026-03-26
+**Category:** Mercury Outboards  
+**Published:** 2026-03-26  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~12 min read
+**Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
 *Hero image: AI-generated editorial scene with a Mercury-powered pontoon. It is not a customer boat, model specification, horsepower recommendation or documented performance test.*
@@ -322,3 +322,4 @@ For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon a
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

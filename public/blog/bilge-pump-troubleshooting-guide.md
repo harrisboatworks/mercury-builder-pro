@@ -23,10 +23,10 @@ revenue_driver: service
 
 > The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.
 
-**Category:** Service & Troubleshooting
-**Published:** 2026-07-03
+**Category:** Service & Troubleshooting  
+**Published:** 2026-07-03  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~11 min read
+**Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 
 *Hero image: AI-generated editorial illustration of generic bilge-pump components. This is not an installation diagram or an HBW service photograph.*
@@ -427,3 +427,4 @@ Coverage depends on your boat's model year, original warranty terms, the install
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

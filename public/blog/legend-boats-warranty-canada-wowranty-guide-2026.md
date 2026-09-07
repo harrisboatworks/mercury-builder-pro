@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Check the written Legend warranty for your exact boat, identify each equipment provider and prepare the records needed for a warranty claim.
 
-**Category:** Buying Guide
-**Published:** 2026-07-27
+**Category:** Buying Guide  
+**Published:** 2026-07-27  
 **Last reviewed:** 2026-09-07  
-**Read time:** 12 min read
+**Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
 
 > **Quick answer:** A Legend boat package can involve several warranty providers. The written terms for your boat's HIN, model year, delivery date and installed equipment decide coverage. HBW can inspect, document and submit a claim; the warranty provider decides whether it qualifies.
@@ -157,3 +157,4 @@ Complete the service request at hbw.wiki/service, then drop off anytime, includi
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

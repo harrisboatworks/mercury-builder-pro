@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers.
 
-**Category:** Buying Guide
-**Published:** 2026-04-06
+**Category:** Buying Guide  
+**Published:** 2026-04-06  
 **Last reviewed:** 2026-09-07  
-**Read time:** 9 min read
+**Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 
 > **Quick answer:** For musky in the Kawarthas, a Mercury 90-150 FourStroke main with a 9.9 ProKicker is an 18-21 ft example for slow trolling big baits. Heavier 19-21 ft boats and dedicated 21 ft+ rigs suit the different example bands below. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly; quote at mercuryrepower.ca.
@@ -167,3 +167,4 @@ Command Thrust fit is model- and application-specific. On a typical planing musk
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > A candid Mercury 60 HP FourStroke review with current Canadian specs, real freshwater tests, owner feedback and honest Standard vs Command Thrust advice.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-07-27
+**Category:** Mercury Buying Guides  
+**Published:** 2026-07-27  
 **Last reviewed:** 2026-09-07  
-**Read time:** 14 min read
+**Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario
 
 > **Quick answer:** The Mercury 60 HP FourStroke is a quiet, compact and well-proven choice for many 15-to-17-foot Ontario fishing boats. Use the standard gearcase for most planing V-hulls. Choose Command Thrust when a pontoon or heavy, high-drag hull needs a larger propeller and more load-carrying grip.
@@ -302,3 +302,4 @@ For eligible Canadian pleasure-use purchases, Mercury publishes a three-year lim
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Check the transom, floor, stringers, hull damage, layout, steering, and rigging before deciding whether an older boat is worth repowering.
 
-**Category:** Repower
-**Published:** 2026-04-29
+**Category:** Repower  
+**Published:** 2026-04-29  
 **Last reviewed:** 2026-09-07  
-**Read time:** 12 min read
+**Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
 > **Quick answer:** Repower when the hull is structurally sound, the boat still suits how you use it, and the motor is the main problem. Replace or repair the hull first when the transom, floor, stringers, or impact areas show structural concerns. A photo can help with triage, but the final recommendation requires an in-person boat-specific assessment.
@@ -217,3 +217,4 @@ A documented repower may improve buyer confidence and value relative to the same
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps.
 
-**Category:** Maintenance
-**Published:** 2026-05-17
+**Category:** Maintenance  
+**Published:** 2026-05-17  
 **Last reviewed:** 2026-09-07  
-**Read time:** 8 min read
+**Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
 ## Boat Electrical Safety Checklist for Ontario Freshwater Boats
@@ -224,3 +224,4 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

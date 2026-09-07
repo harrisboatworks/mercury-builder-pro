@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.
 
-**Category:** Mercury Outboards
-**Published:** 2026-05-08
+**Category:** Mercury Outboards  
+**Published:** 2026-05-08  
 **Last reviewed:** 2026-09-06  
-**Read time:** ~16 min read
+**Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
 > **Quick answer:** Controls, steering, gauges, wiring, and prop can add a significant amount to a Mercury repower, depending on the exact engine, control option, and boat. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect. At 150 HP and above, horsepower does not identify the family: 150 FourStroke and 150 Pro XS are inline-four, FourStroke 175-225 are V6, and 200-300 Pro XS plus FourStroke 250-300 are V8. Build the controls, steering, and gauges for that exact package at mercuryrepower.ca.
@@ -170,20 +170,20 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
-**Aluminum:** CAD $200 to $500. Cheaper but flexes at higher loads.
+**Aluminum:** CAD $200 to $500. Cheaper but flexes at higher loads. 
 **Stainless:** CAD $500 to $1,200. Holds shape, lasts longer, recovers better after a strike.
 
 ---
 
 ## Real-World Rigging Examples
 
-**18-foot aluminum fishing boat, Mercury 60 ELPT FourStroke:**
+**18-foot aluminum fishing boat, Mercury 60 ELPT FourStroke:** 
 Controls $850 + cable steering $300 + SmartCraft Connect $400 + single battery harness $500 + 13.5"×17" stainless prop $650 + install labor $1,400 = ~$4,100 rigging on top of the motor price.
 
-**21-foot pontoon, Mercury 90 ELPT Command Thrust FourStroke:**
+**21-foot pontoon, Mercury 90 ELPT Command Thrust FourStroke:** 
 Controls $900 + hydraulic steering $1,800 + VesselView 4 $850 + dual battery + ACR $900 + 14"×17" stainless CT prop $750 + install labor $1,800 = ~$7,000 rigging.
 
-**19-foot bowrider, Mercury 150 L FourStroke Repower:**
+**19-foot bowrider, Mercury 150 L FourStroke Repower:** 
 Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual battery $1,000 + prop $850 + install labor $2,200 = ~$9,650 rigging.
 
 ---
@@ -226,9 +226,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 > Related guide: [Mercury DTS vs mechanical controls for Ontario repowers](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
 
-**See real CAD pricing on every rigging line item.**
-Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone.
-Questions? Call 905-342-2153.
+**See real CAD pricing on every rigging line item.** 
+Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
+Questions? Call 905-342-2153. 
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 ---
 
@@ -297,3 +297,4 @@ Yes. If your old Mercury is in workable condition we'll value it at trade-in tim
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

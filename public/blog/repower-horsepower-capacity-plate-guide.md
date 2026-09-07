@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing.
 
-**Category:** Repower
-**Published:** 2026-06-06
+**Category:** Repower  
+**Published:** 2026-06-06  
 **Last reviewed:** 2026-09-07  
-**Read time:** 4 min read
+**Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 
 *Hero graphic: a planning checklist, not a reproduction of a regulatory capacity label.*
@@ -164,3 +164,4 @@ No. The listed maximum is a limit, not a target. Motor weight, transom condition
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: service
 
 > See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.
 
-**Category:** Mercury Outboards
-**Published:** 2026-05-09
+**Category:** Mercury Outboards  
+**Published:** 2026-05-09  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~11 min read
+**Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
 ### Quick Answer
@@ -227,9 +227,9 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-**Add SmartCraft Connect to your repower quote.**
-[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number.
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+**Add SmartCraft Connect to your repower quote.** 
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
 ---
@@ -290,3 +290,4 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

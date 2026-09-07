@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor.
 
-**Category:** Service & Troubleshooting
-**Published:** 2026-05-11
+**Category:** Service & Troubleshooting  
+**Published:** 2026-05-11  
 **Last reviewed:** 2026-09-07  
-**Read time:** 6 min
+**Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
 ---
@@ -210,7 +210,7 @@ If the diagnosis later shows the engine is not worth repairing, compare a writte
 
 ---
 
-**Alarm that came back, or one you can't explain?**
+**Alarm that came back, or one you can't explain?** 
 [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
@@ -277,3 +277,4 @@ A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usuall
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

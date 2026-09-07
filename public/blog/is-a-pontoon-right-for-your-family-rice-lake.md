@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon.
 
-**Category:** Buying Guide
-**Published:** 2026-06-19
+**Category:** Buying Guide  
+**Published:** 2026-06-19  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~9 min read
+**Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
 ## Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
@@ -198,3 +198,4 @@ Yes, and we recommend it. Rent one for a weekend, use it the way your family act
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

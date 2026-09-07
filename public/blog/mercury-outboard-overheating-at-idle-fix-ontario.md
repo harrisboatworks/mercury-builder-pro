@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors.
 
-**Category:** Troubleshooting
-**Published:** 2026-05-11
+**Category:** Troubleshooting  
+**Published:** 2026-05-11  
 **Last reviewed:** 2026-09-07  
-**Read time:** 7 min
+**Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
 ---
@@ -164,7 +164,7 @@ Follow the engine manual before inspecting or clearing intake screens. Do not pr
 
 ---
 
-**Overheating at idle needs to be looked at before your next run.**
+**Overheating at idle needs to be looked at before your next run.** 
 [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
@@ -215,3 +215,4 @@ Depends on duration and how you responded. If you reduced load, followed the dis
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

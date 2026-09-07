@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.
 
-**Category:** Fishing
-**Published:** 2026-02-06
+**Category:** Fishing  
+**Published:** 2026-02-06  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
 *Hero image: AI-generated editorial fishing scene. It illustrates boating context, not an exact ProKicker configuration, location or completed HBW customer installation.*
@@ -272,3 +272,4 @@ Yes. It is used for trolling on the connecting lakes and as a backup motor on cr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

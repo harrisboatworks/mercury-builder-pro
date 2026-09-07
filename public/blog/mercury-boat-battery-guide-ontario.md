@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend.
 
-**Category:** Service
-**Published:** 2026-04-01
+**Category:** Service  
+**Published:** 2026-04-01  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~12 min read
+**Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
 ## The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
@@ -294,7 +294,7 @@ Battery problems are fixable. They're also preventable, if you know what to chec
 
 Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
 
-Harris Boat Works. Gores Landing, ON. Est. 1947.
+Harris Boat Works. Gores Landing, ON. Est. 1947.  
 [hbw.wiki/service](https://hbw.wiki/service)
 
 Phone: 905-342-2153
@@ -353,3 +353,4 @@ Bring a suitable battery to a full charge before storage and follow the manufact
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Ontario guide to MerCruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works.
 
-**Category:** Service & Maintenance
-**Published:** 2026-05-14
+**Category:** Service & Maintenance  
+**Published:** 2026-05-14  
 **Last reviewed:** 2026-09-07  
-**Read time:** 12 min read
+**Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 
 *Hero graphic: service-planning topics, not a component-location or installation diagram.*
@@ -291,3 +291,4 @@ Yes, though gas is more common in Ontario recreational boats. Bring the model an
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

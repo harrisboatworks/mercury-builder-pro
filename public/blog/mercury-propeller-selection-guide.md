@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.
 
-**Category:** Technical Reference
-**Published:** 2026-05-27
+**Category:** Technical Reference  
+**Published:** 2026-05-27  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~8 min read
+**Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 
 *Hero image: AI-generated editorial scene comparing propeller forms. These are unbranded illustrations, not identified Mercury propeller models or an HBW workshop photograph.*
@@ -222,3 +222,4 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

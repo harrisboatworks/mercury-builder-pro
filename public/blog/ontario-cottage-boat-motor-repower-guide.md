@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense.
 
-**Category:** Repowering
-**Published:** 2026-02-02
+**Category:** Repowering  
+**Published:** 2026-02-02  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 
 *Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
@@ -193,3 +193,4 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

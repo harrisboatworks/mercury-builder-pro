@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.
 
-**Category:** Comparison
-**Published:** 2026-05-04
+**Category:** Comparison  
+**Published:** 2026-05-04  
 **Last reviewed:** 2026-09-07  
-**Read time:** 9 min read
+**Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
 ## Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
@@ -223,3 +223,4 @@ Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice L
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

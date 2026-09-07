@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.
 
-**Category:** Mercury Motors
-**Published:** 2026-05-26
+**Category:** Mercury Motors  
+**Published:** 2026-05-26  
 **Last reviewed:** 2026-09-07  
-**Read time:** ~9 min read
+**Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
 ## Quick answer
@@ -219,3 +219,4 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

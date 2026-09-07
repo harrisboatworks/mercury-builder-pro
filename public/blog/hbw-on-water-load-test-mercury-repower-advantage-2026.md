@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > What an on-water Mercury repower check can verify at HBW, how seasonal conditions affect testing, and what the handoff should document.
 
-**Category:** HBW Process
-**Published:** 2026-05-28
+**Category:** HBW Process  
+**Published:** 2026-05-28  
 **Last reviewed:** 2026-09-07  
-**Read time:** 10 min read
+**Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026
 
 *Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
@@ -135,3 +135,4 @@ HBW's physical marina is closed from December 1 through April 1, with no on-site
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

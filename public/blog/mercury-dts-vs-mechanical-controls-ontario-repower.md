@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works.
 
-**Category:** Buying Guides
-**Published:** 2026-05-17
+**Category:** Buying Guides  
+**Published:** 2026-05-17  
 **Last reviewed:** 2026-09-07  
-**Read time:** 7 min read
+**Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
 *Hero image: Mercury digital-control example. Control configuration and compatibility vary by engine and rigging package.*
@@ -185,3 +185,4 @@ Marginal in theory, irrelevant in practice. DTS allows slightly more precise thr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.
 
-**Category:** Buying Guide
-**Published:** 2026-06-07
+**Category:** Buying Guide  
+**Published:** 2026-06-07  
 **Last reviewed:** 2026-09-07  
-**Read time:** 5 min read
+**Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
 ## Quick answer
@@ -160,3 +160,4 @@ The 300 HP Mercury FourStroke V8 is 239 kg (527 lb) dry, and the 300 HP Pro XS V
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+
