@@ -28,7 +28,7 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
           quoteNumber: quoteId.slice(0, 8).toUpperCase(),
           motorModel,
           totalPrice,
-          pdfUrl: `${SITE_URL}/quote/saved/${quoteId}`,
+          quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`,
           emailType: 'quote_delivery',
           leadData: {
             quoteId,
@@ -39,8 +39,9 @@ const SendQuoteEmail = ({ quoteId, customerName, customerEmail, motorModel, tota
       setSent(true);
       toast({ title: 'Email Sent', description: `Quote emailed to ${customerEmail}` });
       setTimeout(() => setSent(false), 5000);
-    } catch (err: any) {
-      toast({ title: 'Failed to Send', description: err.message || 'Could not send email.', variant: 'destructive' });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Could not send email.';
+      toast({ title: 'Failed to Send', description: message, variant: 'destructive' });
     } finally {
       setSending(false);
     }
