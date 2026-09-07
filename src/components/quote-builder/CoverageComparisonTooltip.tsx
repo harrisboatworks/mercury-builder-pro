@@ -3,15 +3,16 @@ import { useQuote } from "@/contexts/QuoteContext";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
 import { money } from "@/lib/money";
 import { calculateMonthlyPayment } from "@/lib/finance";
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from "@/lib/warranty-display";
 
 const BASE_YEARS = 3;
 const MAX_YEARS = 8;
 
 export default function CoverageComparisonTooltip() {
   const { state, dispatch } = useQuote();
-  const { getTotalWarrantyBonusYears } = useActivePromotions();
+  const { promotions } = useActivePromotions();
 
-  const promo = getTotalWarrantyBonusYears?.() ?? 0;
+  const promo = getAppliedWarrantyExtraYears(getAppliedPromotion(promotions));
   const selectedTotal = state?.warrantyConfig?.totalYears ?? (BASE_YEARS + promo);
   const extended = Math.max(0, selectedTotal - (BASE_YEARS + promo));
 

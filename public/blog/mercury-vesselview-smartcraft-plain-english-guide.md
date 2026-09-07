@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-07-13
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury VesselView vs SmartCraft Explained (Ontario)"
 description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
-date_modified: 2026-07-13
+date_modified: 2026-09-06
 keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraft Connect installation","Active Trim Mercury","Digital Throttle and Shift","VesselView Mobile replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-07-13  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
-## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
+## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/ca/en) App. A Plain-English Guide
 
 > **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
 
@@ -49,7 +49,7 @@ Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, establ
 
 **SmartCraft** is Mercury's name for the engine-side network that talks to gauges, displays, and apps. If your motor is from **2004 or newer at 40 HP and up** (or 2022+ at 25 HP+ with electric start), [it's SmartCraft-capable](/blog/mercury-smartcraft-connect-guide-ontario). That's the foundation.
 
-Everything in this article. VesselView, Active Trim, DTS, the new Mercury Marine App, runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
+Everything in this article (VesselView, Active Trim, DTS, the new Mercury Marine App) runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
 
 You don't "install SmartCraft." It's already in your motor if it's modern enough. What you install are the *modules* and *displays* that connect to it.
 
@@ -57,7 +57,7 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
-Quick history. **VesselView Mobile** has been Mercury's phone app for several years, a Bluetooth module under the cowl talked to your phone, your phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
+Quick history. **VesselView Mobile** has been Mercury's phone app for several years. A Bluetooth module under the cowl talked to your phone, and the phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
 
 What you need to know:
 
@@ -66,7 +66,7 @@ What you need to know:
 - **Cost to transition:** zero, same hardware, new software.
 - **Multi-engine boats** now use the **SmartCraft Connect Mobile multi-engine module (part 8M0173129)**, which mounts under the helm and supports up to 4 engines.
 
-If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module runs $225-$275 USD plus installation. We'll spec the right one and install it.
+If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module is a Mercury part priced in USD plus installation, and we'll confirm the current price when we spec yours. We'll spec the right one and install it.
 
 ---
 
@@ -156,7 +156,7 @@ Honest take, customer-by-customer:
 
 We install SmartCraft Connect modules, configure the Mercury Marine App, set up multi-function display integration with Simrad/Garmin/Raymarine over NMEA 2000, and service every SmartCraft-capable Mercury.
 
-Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
+Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit or as a standalone service request.
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 

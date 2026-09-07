@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison.md
-last_updated: 2026-06-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado"
 description: "Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。"
 category: "Mercury 型号比较"
 date_published: 2026-05-10
-date_modified: 2026-06-26
+date_modified: 2026-09-06
 keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","Pro XS 中文","Verado 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,19 +25,18 @@ revenue_driver: repower
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**最后审核:** 2026-06-26  
+**最后审核:** 2026-09-06  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 
-> **简短答案：** Mercury 三大引擎家族针对不同用途：FourStroke 60-150 HP 适合 pontoon + 家庭船 (安静、省油、可靠)。Pro XS 150-300 HP 适合钓鱼 + 速度爱好者 (起步快、最高速度高)。Verado V8/V10/V12 250-600 HP 适合大型 center console + 双引擎 (功率密度最大、最豪华，现行 V8/V10/V12 自然进气，老款 I6 才是增压)。HBW 是 Mercury Premier 经销商，FourStroke 和 Pro XS 日常库存，Verado 按需特别订货。
+> **简短答案：** Mercury 三大引擎家族针对不同用途：FourStroke 常见家庭/pontoon 配置多为 60-150 HP (安静、省油、可靠)，家族可选范围更广。Pro XS 115-300 HP 适合钓鱼 + 速度爱好者 (起步快、最高速度高)。Verado V8/V10/V12 250-600 HP 适合大型 center console + 双引擎 (功率密度最大、最豪华，现行 V8/V10/V12 自然进气，老款 I6 才是增压)。HBW 是 Mercury Premier 经销商，FourStroke 和 Pro XS 日常库存，Verado 按需特别订货。
 
-## 关于语言的说明
-
-关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意——Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
+> **关于语言的说明**
+> 我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意：Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
 
 ## FourStroke 家庭船 + Pontoon 第一选择
 
-**HP 范围：** 2.5 - 150 HP
+**HP 范围：** 2.5 - 300 HP（家庭休闲船和 pontoon 常选 60-150 HP，具体应按船体和载重选择）
 **最佳用途：** Pontoon、家庭 runabout、入门级钓鱼船
 **优势：** 安静、省油、可靠、保养间隔长
 
@@ -56,7 +55,7 @@ FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
 
 ## Pro XS 速度 + 钓鱼专业级
 
-**HP 范围：** 150 - 300 HP
+**HP 范围：** 115 - 300 HP
 **最佳用途：** Bass boat、musky boat、tournament 钓鱼船
 **优势：** 起步快 (hole shot)、最高速度高、油耗中等
 
@@ -65,7 +64,6 @@ Pro XS 是 Mercury 的"运动型"FourStroke。在 FourStroke 基础上做了：
 - 高 RPM 调校 (Pro XS WOT 范围大致 5200-6200 RPM，依型号而定：150 Pro XS 约 5200-6000 RPM；V8 Pro XS 200-300hp 约 5600-6200 RPM)
 - 强化气缸 (针对高负载长时间运行)
 - 红色 Pro XS 涂装 (品牌识别)
-- SC1000 进气优化
 
 GTA 华人 angler 中常见购买理由：
 
@@ -106,7 +104,7 @@ GTA 华人 angler 中常见购买理由：
 
 ## Verado V8/V10/V12：HBW 按需特别订货
 
-**HP 范围：** 200 - 400 HP
+**HP 范围：** 250 - 600 HP（HBW 按需特别订货）
 **最佳用途：** Center console (深海钓鱼) + 大型 cruiser + 双引擎设置
 **优势：** 平稳、低噪音、双引擎组合性能、最高功率密度
 
@@ -115,13 +113,13 @@ Verado 是 Mercury 最豪华、功率最大的家族。V8、V10、V12 配置（�
 - 平稳运行 (V8 比同 HP Pro XS 平稳 50%)
 - 完整 SmartCraft 集成
 - 双引擎设置容易 (digital throttle + shift)
-- 最高 400 HP
+- 现行家族可选至 600 HP
 
 GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。常见使用：
 
 - 30 英尺以上 cabin cruiser (双 Verado 250)
 - Lake Ontario 深海钓鱼 (Trolling 配 Verado 250-300)
-- 商业 charter 用船 (双 Verado 400)
+- 商业 charter 用船 (按船体和用途选择单引擎或双引擎 Verado)
 
 ## 我们在 HBW 看到的实地观察
 
@@ -143,11 +141,9 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 - 邮件：info@harrisboatworks.ca
 - 网站：[harrisboatworks.ca](https://www.harrisboatworks.ca)
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/canada/en/) · 莱斯湖 Gores Landing · 自 1947 年
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
 
 ---
-
-> 相关指南：[Mercury FourStroke vs Pro XS 中文对比](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)。
 
 ## 相关阅读
 

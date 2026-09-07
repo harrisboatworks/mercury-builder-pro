@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Do You Need a Licence to Rent a Boat in Ontario? (2026)"
-description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake."
+description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and how long to allow before rental day."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["licence to rent a boat ontario","boat rental licence ontario","pcoc for rental boat","boating licence rice lake","temporary boat licence ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: rentals
 
 # Do You Need a Licence to Rent a Boat in Ontario? (2026)
 
-> Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake.
+> Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and how long to allow before rental day.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
 
 > **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A completed rental safety checklist can satisfy that rule for some rentals, but Harris Boat Works has a stricter policy: every person who may drive an HBW rental must show a valid Pleasure Craft Operator Card and photo ID. Passengers do not need one.
 
-The easiest rental check-in is the one where the driver arrives with the required proof of competency already complete.
+Getting the PCOC sorted before your rental date keeps check-in to a couple of minutes.
 
 Yes. And it's genuinely not a big deal if you handle it the night before instead of at our counter.
 
@@ -68,7 +68,7 @@ One driver can hand the wheel to another licensed driver mid-day. If you're book
 
 ---
 
-## What It Costs and How Long It Takes
+## How Long the Course Takes
 
 The online boating licence course runs on your phone or laptop and is self-paced. Transport Canada sets a minimum study time, so complete it before rental day rather than counting on a last-minute checkout-line fix.
 
@@ -81,7 +81,7 @@ Showing up without the required proof can delay check-in. Complete the course or
 Two different documents, two different governments:
 
 - **Boat operator licence** (federal, Transport Canada): lets you *drive* the boat. One-time, never expires.
-- **Fishing licence** (provincial, Ontario): lets you *fish*. Ages 18 to 64 need an Outdoors Card plus a fishing licence from [ontario.ca](https://www.ontario.ca/page/get-fishing-licence). Under 18 or 65 plus, your government ID is your licence. Canadian residents also fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
+- **Fishing licence** (provincial, Ontario): lets you *fish*. Ontario/Canadian residents aged 18 to 64 need an Outdoors Card plus a fishing licence from [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees). For Ontario/Canadian residents under 18 or 65 plus, government ID is treated as the licence. Most non-Canadian residents aged 65 and over still need a licence. Accompanied foreign minors have a separate exemption and share the licensed adult's catch limits. See the current [non-Canadian-resident rules](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information). Canadian residents also fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
 We don't sell fishing licences at the marina, so sort that online before you arrive too. Renting a fishing boat with neither document sorted means two apps in the parking lot instead of one.
 
@@ -91,7 +91,7 @@ We don't sell fishing licences at the marina, so sort that online before you arr
 
 - **Assuming a car licence covers it.** It doesn't. Driving a boat needs its own proof of competency, full stop.
 - **Leaving it until rental morning.** The course is easy but it isn't instant. Night before, minimum.
-- **Only licensing one person "to save money."** Fine until that person wants to swim, eat lunch, or hold a fish. Two licensed drivers makes a full day actually relaxing.
+- **Only licensing one person "to save money."** Fine until that person wants to swim, eat lunch, or hold a fish. Two licensed drivers make a full day more relaxing.
 - **Confusing the boat licence with the fishing licence.** Federal vs provincial, drive vs fish. You may well need both for a Rice Lake day.
 - **Thinking passengers need cards.** They don't. Only the helm.
 
@@ -117,7 +117,8 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
 
 - [Transport Canada: Operator competency requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/operator-competency-requirements)
 - [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
-- [Ontario: Get a fishing licence](https://www.ontario.ca/page/get-fishing-licence)
+- [Ontario: Get a fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
+- [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
 
 ## FAQs
@@ -151,7 +152,6 @@ Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-reside
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
 - [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
 - [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
-- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 
 ## Next steps

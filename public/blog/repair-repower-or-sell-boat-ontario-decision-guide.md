@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repair, Repower or Sell? Ontario Decision Guide"
 description: "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -69,7 +69,7 @@ Get a written estimate from a Mercury dealer or qualified service shop. Then loo
 
 The 30 percent threshold is a useful rule of thumb. A $1,500 repair on a $6,000 motor is a 25 percent ratio: easy repair decision. A $4,500 repair on a $6,000 motor is a 75 percent ratio: hard to justify when a new Mercury comes with a [3-year factory warranty](/blog/mercury-outboard-warranty-canada-2026), often extended by current promotions ([see what's active](/promotions)), and 15-20 years of expected service life.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Question 2: the boat itself
 
@@ -117,7 +117,7 @@ If your answer is "I'm not sure," repair is the conservative choice. You can alw
 
 **What we recommend:** a good Mercury shop for the install, with Mercury Product Protection (MPP) for extended warranty coverage. Match motor horsepower carefully to your boat's capacity plate. Read our [Complete Boat Repower Guide for the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) for the full process walkthrough.
 
-**The honest math:** a new Mercury 90 HP repower on a typical Ontario aluminum boat lands in the $13,000-$15,000 range in 2026 including controls, rigging, and labour. For most owners, that buys a full factory warranty (3 years, with current promotions often extending factory-backed coverage) and 15-20 years of expected motor life. The cost-per-year math is usually better than people expect.
+**The honest math:** the listed Mercury 90ELPT FourStroke is $14,960 CAD as of September 5, 2026 for the bare motor, excluding HST, rigging, controls and propeller; the installed total needs a boat-specific written quote. For most owners, that buys a full factory warranty (3 years, with current promotions often extending factory-backed coverage) and 15-20 years of expected motor life. The cost-per-year math is usually better than people expect.
 
 For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guide](/blog/new-vs-used-mercury-outboard-ontario) covers the trade-offs.
 
@@ -135,7 +135,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
 
-**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect. One number private sellers miss: when you trade in through an Ontario dealer, HST applies only to the difference between the new purchase and your trade value, not the full price. On a larger purchase that tax savings can close most of the gap between trade value and private-sale value.
+**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/outboard-trade-in-value-ontario-hbw) covers what to expect. One number private sellers miss: for a typical private recreational trade through an Ontario dealer, HST applies to the difference between the new purchase and your trade value, not the full price. Taxable-business or GST/HST-registrant trades are a separate case. On a larger qualifying purchase that tax savings can close most of the gap between trade value and private-sale value.
 
 ![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 
@@ -161,7 +161,7 @@ For a structured conversation on your specific boat, motor, and budget, email in
 
 ## Sources
 
-- Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
+- Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty))
 - Mercury Product Protection extended warranty program details (Mercury Dealer Portal, 2026)
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - HBW internal repower and trade-in records, 2018-2026

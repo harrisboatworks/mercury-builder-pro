@@ -24,7 +24,7 @@ export const tagalogBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-06',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['bangkang mura sa Ontario (cheap boat in Ontario)', 'paano bumili ng bangka sa Canada (how to buy a boat in Canada)', 'magkano ang bangka sa Toronto (how much is a boat in Toronto)', 'tips sa pagbili ng unang bangka (tips for buying first boat)', 'fishing license Ontario paano kumuha (fishing license Ontario how to get)', 'saan mangisda malapit sa Toronto (where to fish near Toronto)', 'Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)', 'panahon ng pangingisda sa Ontario (fishing season in Ontario)', 'magkano fishing license sa Ontario (how much fishing license in Ontario)', 'pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)'],
@@ -61,7 +61,7 @@ Halos 90 minuto lang ang biyahe. Mula sa Brampton, Mississauga, Scarborough, o M
 
 ### Fishing licence para sa Ontario
 
-Para makapangisda ang sinumang residente ng Ontario na 18 anyos pataas, kailangan ng dalawang bagay:
+Karaniwang kailangan ng mga residenteng Ontario na edad 18 hanggang 64 ang dalawang bagay na ito para makapangisda:
 
 1. **Outdoors Card**, ito ang plastic card na nagpapatunay na rehistrado ka sa provincial system. Kailangan ito bago ka makabili ng fishing licence tag.
 2. **Fishing licence**, may dalawang uri: **Conservation licence** (mas mababang daily catch limits, mas mura) at **Sport licence** (mas maraming puwedeng ihuli). Para sa pamilyang first-timer, madalas ang conservation licence ang praktikal, sapat na iyon para maranasan ang saya ng pangingisda nang hindi kumplikado.
@@ -134,15 +134,15 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-06',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)', 'kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)', 'boat operator card Ontario paano (boat operator card Ontario how)', 'online boat license Ontario Tagalog (online boat license Ontario Tagalog)', 'PCOC exam Tagalog (PCOC exam Tagalog)'],
     faqs: [
       { question: 'Kailangan ba ng boat license para magmaneho ng HBW rental boat?', answer: 'Oo. Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito kapalit ng licence ng driver. Ang mga pasaherong hindi magmamaneho ay hindi kailangan ng PCOC.' },
-      { question: 'Paano kumuha ng boat license (PCOC) sa Ontario?', answer: 'Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Walang official na Tagalog version ang exam; nasa English o French lang ito.' },
+      { question: 'Paano kumuha ng boat license (PCOC) sa Ontario?', answer: 'Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Bago magbayad, tanungin ang accredited provider kung anong wika ang gagamitin sa opisyal na exam at kung anong aprubadong tulong ang available. Ang translated study materials ay iba sa wika ng assessment.' },
       { question: 'May serbisyo ba kayo sa Tagalog sa Harris Boat Works?', answer: 'Sa totoo lang, ang team namin ay nagseserbisyo sa Ingles. Pero huwag mag-alala, magsama ng kaibigan o kapamilya na marunong mag-English, o magdala ng translation app. Magtutulungan tayo. (Basahin ang buong pahayag sa itaas.)' },
-      { question: 'Mayroon bang PCOC exam na Tagalog?', answer: 'Wala pong opisyal na PCOC exam na Tagalog. Lahat ng accredited exams ay nasa English o French. May ilang community-made translation guides na makikita online, pero hindi ito official. Ang pinakamainam na gawin ay mag-aral gamit ang English study guide, at kung nahihirapan, magpatulong sa marunong mag-English. Kayang-kaya ito kapag pamilyar ka sa basic boat terms.' },
+      { question: 'Mayroon bang PCOC exam na Tagalog?', answer: 'Huwag asahan na may opisyal na Tagalog na PCOC exam sa lahat ng accredited provider. Ang translated o community study materials ay pwedeng makatulong sa pag-aaral, pero iba iyon sa opisyal na wika ng assessment. Tanungin ang accredited provider, bago magbayad, kung anong wika ang gagamitin sa exam at kung anong aprubadong interpreter o tulong ang maaaring iayos sa ilalim ng approved rules. Huwag magpaupo ng kapamilya para sagutin o mag-translate sa exam nang walang approval.' },
       { question: 'Ano ang mangyayari kapag nahuli akong may bukas na alak sa bangka?', answer: 'Malaking problema ito. Ang open alcohol sa recreational boat ay ilegal, at ang pagmamaneho habang nakainom ay criminal offense, pwedeng maaresto, mawalan ng lisensya, matiketan ng malaking multa, at ma-impound ang bangka. Huwag nang subukan. Gawin ang inuman sa pampang pagkatapos ng biyahe.' },
       { question: 'Kailangan bang may lifejacket ang bata kahit marunong siyang lumangoy?', answer: 'Oo. Dapat may Canadian-approved lifejacket o PFD na tamang sukat para sa bawat tao sa bangka. Mariin naming inirerekomenda na isuot ito ng mga bata habang nasa tubig, hindi lang itago sa ilalim ng upuan.' },
       { question: 'Pwede bang mag-rent ng bangka kahit wala akong experience?', answer: 'Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gagabayan ka namin mula pagdating hanggang sa maging komportable ka. Pakiusap lang, maging tapat sa amin tungkol sa experience level mo para mas maayos ang briefing.' },
@@ -205,7 +205,7 @@ Hindi kami maglalagay ng presyo dito, ang lahat ng detalye tungkol sa rates at a
 
 Gets namin, maraming nagtatanong tungkol sa boat licence. Kailangan ito ng bawat HBW rental driver, at kakailanganin mo rin ng valid proof of competency kapag magpapatakbo ka ng sarili mong motorized recreational boat.
 
-Ang PCOC ay kinukuha sa pamamagitan ng pagpasa sa isang accredited online exam. Walang praktikal na driving test; puro multiple-choice questions lang tungkol sa boating safety, navigation rules, emergency procedures, at kung paano magbasa ng mga lawa at ilog. Bago mag-exam, mag-aral ka gamit ang study guide mula sa provider. Listahan ng mga accredited provider ay narito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). May bayad ang exam, pero ang card na makukuha mo ay panghabambuhay na, hindi na kailangan i-renew.
+Ang PCOC ay kinukuha sa pamamagitan ng pagpasa sa isang accredited exam. Walang praktikal na driving test; puro multiple-choice questions lang tungkol sa boating safety, navigation rules, emergency procedures, at kung paano magbasa ng mga lawa at ilog. Bago mag-exam, mag-aral ka gamit ang study guide mula sa provider; puwedeng tumulong ang pamilya o translation app sa pag-aaral. Ang wika ng opisyal na assessment at ang aprubadong interpreter o special circumstances ay kailangang iayos sa accredited provider sa ilalim ng approved rules, bago magbayad. Huwag magpaupo ng kapamilya para sagutin o mag-translate sa exam nang walang approval. Listahan ng mga accredited provider ay narito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Opisyal na patakaran: [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program). May bayad ang exam, pero ang card na makukuha mo ay panghabambuhay na, hindi na kailangan i-renew.
 
 Mahalagang paalala: ito ay pangkalahatang impormasyon lamang, hindi ito legal advice. Maaaring magbago ang rules. Palaging panalo ang opisyal na website: [https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc).
 
@@ -221,13 +221,13 @@ Pero maging tapat tayo: ang aming team ay nagseserbisyo sa Ingles. Huwag mag-ala
 Oo. Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito kapalit ng licence ng driver.
 
 **Paano kumuha ng boat license (PCOC) sa Ontario?**  
-Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Walang official na Tagalog version ang exam; nasa English o French lang ito.
+Mag-enroll sa isang accredited online course, mag-aral ng safety materials, at sagutan ang multiple-choice exam. Kapag nakapasa, bibigyan ka ng PCOC na valid habang buhay. Tingnan ang listahan ng providers dito: [https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters). Bago magbayad, tanungin ang accredited provider kung anong wika ang gagamitin sa opisyal na exam at kung anong aprubadong tulong ang available. Ang translated study materials ay iba sa wika ng assessment.
 
 **May serbisyo ba kayo sa Tagalog sa Harris Boat Works?**  
 Sa totoo lang, ang team namin ay nagseserbisyo sa Ingles. Pero huwag mag-alala, magsama ng kaibigan o kapamilya na marunong mag-English, o magdala ng translation app. Magtutulungan tayo. (Basahin ang buong pahayag sa itaas.)
 
 **Mayroon bang PCOC exam na Tagalog?**  
-Wala pong opisyal na PCOC exam na Tagalog. Lahat ng accredited exams ay nasa English o French. May ilang community-made translation guides na makikita online, pero hindi ito official. Ang pinakamainam na gawin ay mag-aral gamit ang English study guide, at kung nahihirapan, magpatulong sa marunong mag-English. Kayang-kaya ito kapag pamilyar ka sa basic boat terms.
+Huwag asahan na may opisyal na Tagalog na PCOC exam sa lahat ng accredited provider. Ang translated o community study materials ay pwedeng makatulong sa pag-aaral, pero iba iyon sa opisyal na wika ng assessment. Tanungin ang accredited provider, bago magbayad, kung anong wika ang gagamitin sa exam at kung anong aprubadong interpreter o tulong ang maaaring iayos sa ilalim ng approved rules. Huwag magpaupo ng kapamilya para sagutin o mag-translate sa exam nang walang approval.
 
 **Ano ang mangyayari kapag nahuli akong may bukas na alak sa bangka?**  
 Malaking problema ito. Ang open alcohol sa recreational boat ay ilegal, at ang pagmamaneho habang nakainom ay criminal offense, pwedeng maaresto, mawalan ng lisensya, matiketan ng malaking multa, at ma-impound ang bangka. Huwag nang subukan. Gawin ang inuman sa pampang pagkatapos ng biyahe.
@@ -260,15 +260,15 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-06',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['mekaniko ng bangka sa Toronto (boat mechanic in Toronto)', 'pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)', 'marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)', 'paano i-winterize ang bangka (how to winterize a boat)', 'paghahanda ng bangka sa taglamig (preparing boat for winter)', 'winter storage ng bangka Ontario (winter storage of boat Ontario)', 'winterization service bangka Toronto (winterization service boat Toronto)', 'paano ayusin ang Mercury outboard (how to fix Mercury outboard)'],
     faqs: [
       { question: 'Saan makakahanap ng mekaniko ng bangka sa Toronto?', answer: 'Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.' },
       { question: 'May marine mechanic ba na Pilipino sa Toronto?', answer: 'Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa Mercury pero ang lengguwahe ng shop ay English. Ang serbisyo namin ay sa English, kaya magdala ng kasamang marunong mag-English o gumamit ng translation app; matiyaga naming aasikasuhin ang kailangan mo.' },
-      { question: 'Paano i-winterize ang bangka?', answer: 'Ang professional winterization ay binubuo ng pag-drain ng tubig, pag-fog sa cylinders, paglalagay ng fuel stabilizer, pagpalit ng gear oil, at marami pang hakbang para protektahan ang makina sa lamig. Puwede mong gawin ito nang sarili kung may experience ka, pero kung bago ka pa lang, mas safe na ipagawa sa certified shop tulad ng HBW. Tingnan ang aming winterization service para sa detalyadong breakdown.' },
-      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng winter storage sa aming marina sa Gores Landing, at puwedeng isabay ito sa winterization ng motor. Napupuno ang storage tuwing fall, kaya mag-book nang maaga bago ang December 1. Magtanong sa https://hbw.wiki/service.' },
+      { question: 'Paano i-winterize ang bangka?', answer: 'Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.' },
+      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.' },
       { question: 'Paano ayusin ang Mercury outboard?', answer: 'Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.' },
       { question: 'Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?', answer: 'Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, mga 90 minuto ang biyahe, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.' },
       { question: 'Puwede ba akong makakuha ng serbisyo sa Tagalog sa HBW?', answer: 'Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: magsama ng kaibigan o pamilya na marunong mag-Ingles, o gumamit ng translation app. Magiging matiyaga kami sa pagpapaliwanag hanggang maintindihan mo nang lubos.' }
@@ -290,18 +290,18 @@ Maraming bagong boat owner sa Greater Toronto Area, lalo na ‘yung galing sa lu
 
 Bakit? Tuwing nagyeyelo ang temperatura, ang tubig na naiiwan sa loob ng engine block, cooling passages, at lower unit ay mag-e-expand at literal na bibiyakin ang metal. Tawag dito ay freeze damage, at ang repair nito ay kadalasang mas mahal pa sa presyo ng lumang motor. Pati fuel system ay naaapektuhan: ang gasolina na naiiwan ay nagfe-phase separate at nag-iiwan ng malagkit na residue na bumabara sa carburetor o fuel injectors. Bukod pa, ang moisture sa loob ng cylinders ay nagdudulot ng kalawang.
 
-Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na bangka** ang ni-winterize namin, ibig sabihin, sanay na sanay na kami. Kasama sa winterization package ang:
+Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong winterization records mula Agosto hanggang Nobyembre 2025**, ibig sabihin, sanay na sanay na kami. Kasama sa winterization package ang:
 
 - Pagda-drain ng lahat ng tubig mula sa engine block, exhaust, at cooling system.
 - Paglalagay ng fuel stabilizer sa tangke para hindi masira ang gasolina habang nakaimbak.
 - Pag-fogging ng cylinders, isang protective oil mist na pumoprotekta sa loob ng makina laban sa kalawang.
 - Pagpalit ng lower unit gear oil, at pag-inspect sa seals para walang tubig na pumasok.
 - Pag-check ng propeller, skeg, at anode, at pag-lubricate ng grease fittings.
-- Idiskonekta ang battery at iwanan ito sa loob ng bangka sa ligtas na paraan.
+- Ang healthy na battery ay puwedeng manatili sa bangka kung fully charged, disconnected, secured, at permitted ng approved storage plan. Ang model/serial manual at approved storage plan ang masusunod.
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kaya huwag kang maghintay ng December bago mag-book. Maagang magpa-schedule para siguradong protektado ang motor bago mag-freeze.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -337,7 +337,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Drop-off at pick-up ang service sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay para mag-ayos o kumuha ng bangka. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
+Karaniwan naming maiaayos ang pickup ng bangka. Itanong sa amin kung available ito para sa bangka at lokasyon mo. Hindi nagde-deliver ang HBW ng bangka, hindi nagpapadala ng motor, hindi nag-aalok ng mobile, dockside, o on-site service, hindi nagrerekomenda ng transport providers, at hindi nagku-quote ng third-party transport. Ang biyahe mula sa GTA ay karaniwang humigit-kumulang 90 hanggang 120 minuto depende sa pinanggalingan at traffic. May ethanol-free fuel kami on site, at makikita ang kasalukuyang pontoon at fishing boat rental listings sa harrisboatworks.ca/rentals.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 
@@ -354,10 +354,10 @@ Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula
 Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa Mercury pero ang lengguwahe ng shop ay English. Ang serbisyo namin ay sa English, kaya magdala ng kasamang marunong mag-English o gumamit ng translation app; matiyaga naming aasikasuhin ang kailangan mo.
 
 **Paano i-winterize ang bangka?**  
-Ang professional winterization ay binubuo ng pag-drain ng tubig, pag-fog sa cylinders, paglalagay ng fuel stabilizer, pagpalit ng gear oil, at marami pang hakbang para protektahan ang makina sa lamig. Puwede mong gawin ito nang sarili kung may experience ka, pero kung bago ka pa lang, mas safe na ipagawa sa certified shop tulad ng HBW. Tingnan ang aming winterization service para sa detalyadong breakdown.
+Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.
 
 **Saan ang winter storage ng bangka sa Ontario?**  
-Nag-aalok ang HBW ng winter storage sa aming marina sa Gores Landing, at puwedeng isabay ito sa winterization ng motor. Napupuno ang storage tuwing fall, kaya mag-book nang maaga bago ang December 1. Magtanong sa https://hbw.wiki/service.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 **Paano ayusin ang Mercury outboard?**  
 Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.

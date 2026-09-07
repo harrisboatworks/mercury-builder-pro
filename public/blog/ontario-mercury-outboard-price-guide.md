@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -50,13 +50,16 @@ Aluminum-fishing-boat sweet spot. 40-60 HP is the working range for most 16-18 f
 **High-HP FourStroke (75-115 HP), $11,500-$19,500**
 The Rice Lake repower bread-and-butter. 90 and 115 HP are our highest-volume Mercury SKUs.
 
+**150 FourStroke (inline-four)**
+See the 150 FourStroke section below for 19-21 ft bowrider repower guidance and an installed-cost example.
+
 **V6 Pro XS or V8 FourStroke (175-300 HP), $22,000-$38,000**
 Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V8 FourStroke is the quiet premium option.
 
 **V10 Verado (350-400 HP), $46,000-$54,000+**
 Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
 
-**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and sea trial. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
+**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and lake test. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
 
 Getting a straight answer on Mercury outboard prices in Ontario used to mean calling four dealers, waiting on hold, and getting four different numbers, none of which told you what was actually included.
 
@@ -64,7 +67,7 @@ We got tired of that. So did our customers.
 
 Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
-Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
+Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and lake test. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
 
 ## How Mercury outboard pricing actually works in Canada
 
@@ -85,7 +88,7 @@ Every Mercury model name is a code. Here's how to decode it:
 - **L**, Long shaft (20")
 - **XL**, Extra long shaft (25")
 - **PT**, Power trim and tilt
-- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
+- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-complete-guide-2026)
 
 **Example:** A "9.9 ELHPT Command Thrust ProKicker EFI FourStroke" means: 9.9 HP, electric start, long shaft, tiller handle, power trim, Command Thrust gearcase, set up as a ProKicker trolling motor, with EFI and four-stroke architecture.
 
@@ -112,11 +115,13 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
+### Things to know about the 150 FourStroke (inline-four)
+
+**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 206 kg (455 lb) vs. the V6 200 FourStroke at roughly 215 kg (475 lb)). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 231 kg (510 lb), and older Yamaha 200-class V6 motors typically land in the 238-254 kg (525-560 lb) range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit.
+
 ### Things to know about the V6 and V8 tier
 
-**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 206 kg (455 lb) vs. the V6 200 FourStroke at roughly 215 kg (475 lb)). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 231 kg (510 lb), and older Yamaha 200-class V6 motors typically land in the 238-254 kg (525-560 lb) range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
-
-**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
+**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
 
 Ready to compare a 150 against a 200? Build both configurations on [mercuryrepower.ca](https://www.mercuryrepower.ca), motor, rigging, prop, and install all in one quote.
 
@@ -174,7 +179,7 @@ MSRP is Mercury Canada's suggested retail. Dealer price is what we actually sell
 
 ### Does the motor price include installation?
 
-No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
+No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and lake test are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.
 
 ### Can I buy Mercury cheaper in the US?
 

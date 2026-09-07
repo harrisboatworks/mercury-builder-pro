@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust"
-description: "An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice."
+title: "Mercury 115 FourStroke Review 2026: Fit, Features and Performance"
+description: "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-07-27
+date_modified: 2026-09-06
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,13 +19,13 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust
+# Mercury 115 FourStroke Review 2026: Fit, Features and Performance
 
-> An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice.
+> An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
@@ -41,7 +41,7 @@ This review covers the current 2.1-litre Mercury 115 FourStroke, the 115 Pro XS 
 
 ## The Current 2.1-Litre Mercury 115
 
-Mercury introduced the current 2.1-litre 75/90/115 FourStroke family in 2014. The 115 Pro XS joined it in 2016.
+Mercury has built the current 2.1-litre 75 through 115 horsepower EFI FourStroke family since 2014 ([Mercury tiller announcement](https://www.mercurymarine.com/us/en/about-us/news/mercury-unveils-all-new-tiller-for-40-115hp-outboards)). The 115 Pro XS joined it in 2016.
 
 That is useful, not disappointing. This is a mature engine family, not a first-year design that Ontario buyers are being asked to test for Mercury.
 
@@ -138,7 +138,7 @@ The 115 sits in the sweet spot where ordinary owners can feel setup changes with
 | 115 FourStroke, standard gearcase | 5,000–6,000 rpm range and lower-drag 2.07:1 gearcase | Recreational aluminum or fibreglass V-hulls | Less performance personality than Pro XS |
 | 115 Pro XS, standard gearcase | Higher 5,300–6,300 rpm range and performance calibration | Light or responsive fishing hulls where setup and acceleration matter | The benefit depends heavily on prop and hull |
 | 115 FourStroke Command Thrust | Larger 2.38:1 gearcase and larger-diameter prop options | Pontoons and specific heavy workboats | More gearcase drag |
-| 115 Pro XS Command Thrust | Pro XS operating range with the larger CT gearcase | Performance-oriented pontoon applications | Not the right gearcase for a normal recreational V-hull |
+| 115 Pro XS Command Thrust | Pro XS operating range with the larger CT gearcase | Performance-oriented pontoon applications | HBW usually prefers standard on a normal recreational V-hull |
 
 ### Best fit: Standard 115 FourStroke
 
@@ -160,7 +160,7 @@ Choose Command Thrust for a pontoon or a specific heavy-duty application that ne
 
 Don't buy it as a generic upgrade for a recreational V-hull. The larger case can carry load and produce lift, but it also adds drag. On an ordinary aluminum or fibreglass runabout, the standard gearcase is normally the better choice.
 
-[Read the full Command Thrust explanation](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) if another dealer has told you CT simply means “more torque.”
+[Read the full Command Thrust explanation](/blog/mercury-command-thrust-complete-guide-2026) if another dealer has told you CT simply means “more torque.”
 
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
@@ -183,6 +183,7 @@ A 2023 115 Pro XS owner tested 19, 20 and 21-pitch props on a 2012 Glastron GT-1
 The 20-pitch prop was fastest. The 21 pulled the engine down and lost speed. The 19 kept the engine closer to the upper part of its range and could still be the better all-around choice once people and gear go aboard.
 
 [Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers](https://www.youtube.com/watch?v=HblsKMvjxCU)
+
 *A current-generation 115 Pro XS owner tests three prop pitches on the same Glastron.*
 
 ### Same pontoon, large pitch correction
@@ -335,7 +336,7 @@ This review uses current-family evidence only. Performance numbers remain attach
 - [Mercury Canada 2.1 L 75–115 maintenance-kit identification](https://www.mercurymarine.com/ca/en/product/mercury-8m0097855-21l-75-115hp-fourstroke-300-hour-maintenance-kit)
 - [Mercury Canada FourStroke family](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
 - [Mercury 75–115 FourStroke and 115 Pro XS owner manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
-- [Mercury Canada history of the 75–115 FourStroke family](https://www.mercurymarine.com/ca/en/lifestyle/dockline/mercury-releases-new-mercury-40---115hp-tiller)
+- [Mercury: 75 through 115 hp EFI FourStroke family built since 2014](https://www.mercurymarine.com/us/en/about-us/news/mercury-unveils-all-new-tiller-for-40-115hp-outboards)
 - [Boats.com report from the 2016 Miami launch of the 115 Pro XS](https://www.boats.com/reviews/new-2016-outboards-mercury-and-seven-marine-make-news-in-miami/)
 - [Mercury 189XF test](https://performancedata.mercurymarine.com/performance-test/144)
 - [Mercury 1750 Hawk test](https://performancedata.mercurymarine.com/performance-test/132)
@@ -360,7 +361,7 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
 
 ### Is the current Mercury 115 FourStroke a new engine design?
 
-No. The current 2.1-litre 75/90/115 family dates to 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign.
+No. Mercury has built the current 2.1-litre 75 through 115 horsepower EFI FourStroke family since 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign.
 
 ### What is the difference between the Mercury 115 FourStroke and 115 Pro XS?
 
@@ -394,13 +395,17 @@ The current 2.1-litre family has been in use since 2014. In the manufacturer tes
 
 Pricing varies by calibration, gearcase, shaft length and current Mercury programs. Use the live Canadian Mercury pricing reference for current HBW pricing, then build a complete quote with controls, rigging, propeller and installation.
 
+### What does CT mean on a Mercury 115?
+
+CT stands for Command Thrust. A 115 CT uses a larger gearcase with a lower 2.38:1 gear ratio and a bigger propeller, so it carries heavy loads better than the standard 2.07:1 case. It also weighs slightly more, about 165 kg (363 lb) against 163 kg (359 lb) for the lightest standard 20-inch configuration. Command Thrust suits pontoons and heavy workboats, while most recreational V-hulls are better on the standard gearcase. If you are not sure which one you have, call Harris Boat Works at 905-342-2153.
+
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review
 - [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 

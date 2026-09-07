@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,9 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
-**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
----
 
 ## Quick Answer
 
@@ -79,7 +75,7 @@ Replaced on every repower as cheap insurance against old fuel parts hurting a ne
 
 **$400 - $500**
 
-Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
+Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test during the Lake Test.
 
 #### Install labour (Mercury-to-Mercury, post-2010)
 
@@ -112,7 +108,7 @@ Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraul
 Hydraulic steering conversion costs $1,650 to $3,500 CAD depending on motor HP and helm complexity.
 
 **Wiring harness** 
-Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
+Connects motor to controls, gauges, and battery. In our shop experience, Mercury has used common harness connectors across motor families for a number of years, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
 **Gauges and displays** 
 Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft Connect Mobile adds several hundred dollars depending on screen size.
@@ -136,7 +132,7 @@ Aluminum 3-blade props are a common starting point for many motors up to 115 HP.
 | Cable to hydraulic steering upgrade | Add $1,650 to $3,500 |
 | Full new re-rig (everything new) | $2,500 to $6,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
@@ -200,7 +196,7 @@ The walk-around is free. The findings determine where in the range your quote la
 
 ## What we see at HBW
 
-Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, rigging adds $400-800. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
+Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, use the planning table above for Mercury-to-Mercury post-2010 controls in good shape, and confirm the required parts in the written quote. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
 
 The hidden cost: SmartCraft display. Most repower customers want the data screen, which adds $1,200-2,000 with install. Optional but worth it for fuel-burn and engine-data visibility. We don't push it unless the customer asks.
 
@@ -240,7 +236,7 @@ SmartCraft is Mercury's digital data and display system. VesselView 4/7/9 displa
 
 ### How much does a new Mercury propeller cost?
 
-Aluminum 3-blade: typically $450 CAD for motors up to 115 HP. Stainless 3 or 4-blade: $800 to $2,000 for 150 HP and up. The right prop is determined during sea-trial.
+Aluminum 3-blade: typically $450 CAD for motors up to 115 HP. Stainless 3 or 4-blade: $800 to $2,000 for 150 HP and up. The right prop is determined during the Lake Test.
 
 ### Can I DIY my Mercury rigging?
 
@@ -257,10 +253,10 @@ In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada), is 2026 the right year to buy?
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 - [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
 date_published: 2026-07-24
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-07-24  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
@@ -221,7 +221,7 @@ The avoidable mistake is usually not a bad conversion. It is matching the right 
 ## Sources and Scope
 
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-27
-- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 
 The Mercury guide says its capacities are based on information believed accurate at publication and tells owners to verify against the engine owner's manual. This HBW lookup preserves the model, year and serial distinctions instead of turning them into a single horsepower rule.
@@ -255,10 +255,10 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 - [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 - [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
 - [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
-- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
 
 ## Next steps
 

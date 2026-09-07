@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
-
 ---
 
-![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water lake test, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 
@@ -45,7 +43,7 @@ A typical Mercury repower at HBW moves from a configurator starting point to a b
 
 Most customers don't know what actually happens during a repower. That's worth fixing, because knowing the process helps you plan around realistic timelines, ask better questions during the quote, and recognize when a shop is skipping something important.
 
-A repower isn't just bolting a new motor to your boat. It's a full integration project. The shop time is short; the inspection and verification work is what determines whether you get 20 years from the new motor or 5.
+A repower isn't just bolting a new motor to your boat. It's a full integration project. Shop time is only part of it; the inspection and verification work is what confirms the hull, transom, rigging, controls, and alignment are ready for the new motor.
 
 ### What Changes the Timeline
 
@@ -71,14 +69,14 @@ Customer brings the boat to HBW in Gores Landing for the physical walk-around. D
 - Fuel system condition
 - Customer use case
 
-We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. Harris Boat Works is drop-off only and does not provide boat pickup, hauling, delivery, or mobile service.
+We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 #### Step 2: Motor Selection and Written Quote
 
 Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or works with us to configure. The quote includes:
 
 - Specific Mercury model, shaft length, and controls type
-- Prop selection (or noted as determined during sea trial)
+- Prop selection (or noted as determined during lake test)
 - Rigging package
 - Install labour
 - HST (13% Ontario)
@@ -88,7 +86,7 @@ If you want to talk through the configuration, we do a 15- to 30-minute consulta
 
 #### Step 3: Deposit and Booking
 
-A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and booking confirms the customer-arranged drop-off date and target completion date.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
 
 If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
@@ -149,7 +147,7 @@ If an on-water check is not possible, HBW documents the alternate acceptance pla
 #### Step 9: Final Adjustments and Documentation
 
 Back at the shop:
-- Tighten any connections that loosened during sea trial
+- Tighten any connections that loosened during lake test
 - Document final configuration in service log
 - Complete Mercury warranty registration
 - Give the owner the motor information needed to confirm whether the [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) must be updated; a dealer needs the owner's authorization to apply on their behalf
@@ -188,23 +186,23 @@ Questions about the process for your specific boat? Call **905-342-2153** or com
 
 ### How long does a Mercury repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 
-Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first, but customers arrange transport to and from the shop. HBW does not provide boat pickup, hauling, delivery, or mobile service.
+Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### What happens if my transom has soft spots?
 
 We contact you with options: fix transom now and proceed with repower, fix transom and delay repower until done, or step back and reconsider whether the hull is worth keeping. Most transoms are solid; this is a small percentage of cases.
 
-### What if my Mercury can't reach rated RPM during sea-trial?
+### What if my Mercury can't reach rated RPM during the Lake Test?
 
 The result is assessed against the motor's rated operating range, hull, load, rigging, and prop. If a prop change is recommended, HBW documents it and gets customer approval before changing the work-order scope. Any on-water re-check depends on safe seasonal conditions and the documented acceptance plan. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
 
 ### What's included in the repower price?
 
-The all-in price on [the motor selection page](/quote/motor-selection) includes motor, rigging, prop, install labor, sea-trial, and Mercury warranty registration. PCL update paperwork is also handled. HST (13%) is added at quote completion.
+The all-in price on [the motor selection page](/quote/motor-selection) includes motor, rigging, prop, install labor, lake-test, and Mercury warranty registration. PCL update paperwork is also handled. HST (13%) is added at quote completion.
 
 ### What's not included?
 

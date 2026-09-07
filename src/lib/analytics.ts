@@ -8,7 +8,10 @@
 declare global {
   interface Window {
     dataLayer: Array<Record<string, any>>;
-    gtag?: (command: 'event', eventName: string, params?: Record<string, any>) => void;
+    gtag?: {
+      (command: 'event', eventName: string, params?: Record<string, any>): void;
+      (command: 'consent', action: 'default' | 'update', state: Record<string, any>): void;
+    };
     clarity?: ClarityFunction;
   }
 }
@@ -139,13 +142,6 @@ const DENIED_STATE = {
   ad_personalization: 'denied',
 } as const;
 
-const GRANTED_STATE = {
-  ad_storage: 'granted',
-  analytics_storage: 'granted',
-  ad_user_data: 'granted',
-  ad_personalization: 'granted',
-} as const;
-
 function readCookie(name: string): string | null {
   if (typeof document === 'undefined') return null;
   const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
@@ -155,24 +151,64 @@ function readCookie(name: string): string | null {
 function writeCookie(name: string, value: string, days: number): void {
   if (typeof document === 'undefined') return;
   const expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+  // Share the cookie between apex and www in production; stay host-only on
+  // previews and localhost where a Domain attribute would be rejected.
+  const host = typeof location !== 'undefined' ? location.hostname : '';
+  const domain = host.endsWith('mercuryrepower.ca') ? '; domain=.mercuryrepower.ca' : '';
+  const secure = typeof location !== 'undefined' && location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax${domain}${secure}`;
 }
 
+function readLocalConsent(): ConsentValue | null {
+  try {
+    const v = localStorage.getItem(CONSENT_COOKIE);
+    return v === 'granted' || v === 'denied' ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+function persistConsent(value: ConsentValue): void {
+  writeCookie(CONSENT_COOKIE, value, CONSENT_DAYS);
+  try { localStorage.setItem(CONSENT_COOKIE, value); } catch { /* noop */ }
+}
+
+/**
+ * Read the stored choice from the cookie OR the localStorage mirror, and
+ * self-heal both stores. Safari caps script-written cookies at ~7 days, so
+ * relying on the cookie alone made the banner reappear for returning
+ * visitors; the mirror plus a refreshed sliding expiry stops that.
+ */
 export function getStoredConsent(): ConsentValue | null {
-  const v = readCookie(CONSENT_COOKIE);
-  return v === 'granted' || v === 'denied' ? v : null;
+  const fromCookie = readCookie(CONSENT_COOKIE);
+  const cookieVal = fromCookie === 'granted' || fromCookie === 'denied' ? fromCookie : null;
+  const stored = cookieVal ?? readLocalConsent();
+  if (stored) persistConsent(stored);
+  return stored;
+}
+
+/** Real Consent Mode v2 call, plus a dataLayer event for GTM visibility. */
+function gtagConsent(command: 'default' | 'update', state: Record<string, string>): void {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('consent', command, state);
+  }
 }
 
 export function pushConsentDefault(): void {
+  gtagConsent('default', { ...DENIED_STATE, wait_for_update: 500 } as any);
   trackEvent('consent_default', { ...DENIED_STATE });
 }
 
 export function pushConsentUpdate(value: ConsentValue): void {
-  trackEvent('consent_update', value === 'granted' ? { ...GRANTED_STATE } : { ...DENIED_STATE });
+  // The banner only asks about analytics cookies, so a grant enables
+  // analytics_storage only; ad signals stay denied either way.
+  const state = value === 'granted' ? { ...DENIED_STATE, analytics_storage: 'granted' } : { ...DENIED_STATE };
+  gtagConsent('update', state);
+  trackEvent('consent_update', state);
 }
 
 export function setConsent(value: ConsentValue): void {
-  writeCookie(CONSENT_COOKIE, value, CONSENT_DAYS);
+  persistConsent(value);
   pushConsentUpdate(value);
 }
 

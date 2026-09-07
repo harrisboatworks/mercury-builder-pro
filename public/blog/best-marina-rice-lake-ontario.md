@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario.md
-last_updated: 2026-07-24
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Rice Lake's Full-Service Marina Since 1947"
-description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals."
+description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals when in season."
 category: "Rice Lake & Local"
 date_published: 2026-05-16
-date_modified: 2026-07-24
+date_modified: 2026-09-06
 keywords: ["best marina rice lake ontario","rice lake marina","harris boat works","gores landing marina","mercury dealer rice lake","rice lake boat slips","rice lake boat launch","rice lake winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,15 +21,15 @@ revenue_driver: repower
 
 # Rice Lake's Full-Service Marina Since 1947
 
-> The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals.
+> The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals when in season.
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-07-24  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 
-> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). Customers bring and collect their own boats. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in Harris Boat Works Scope.
 
 The physical marina is closed December 1 through April 1. There is no on-site service, installation, inspection, commissioning, or customer access during that period. Remote planning and approvals can continue, and physical work begins after reopening.
 
@@ -58,9 +58,9 @@ HBW's Mercury-facing services on this site are deliberately specific:
 
 - **Mercury repower and motor selection:** build a current CAD configuration in the [Mercury quote builder](/quote/motor-selection). The final installed scope depends on the exact engine, controls, steering, propeller, removal, rigging, boat condition, HST, and approved work.
 - **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service).
-- **Outdoor winter storage:** HBW offers outdoor winter storage with shrinkwrap. It does not offer indoor, heated, climate-controlled, summer, or year-round storage.
-- **Spring commissioning:** it is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
-- **Customer transport:** customers arrange fall drop-off, service drop-off, and pickup at Gores Landing. HBW does not provide or arrange transport.
+- **Outdoor winter storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage).
+- **Spring commissioning:** it is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+- **Customer transport:** We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - **Winter closure:** the physical marina is closed December 1 through April 1, with no customer access or on-site work during that period.
 
 Other marina offerings, including seasonal dockage, launch access, fuel, parts-counter service, and rentals, can change with the season and availability. Confirm the current offering before planning a trip.
@@ -73,10 +73,10 @@ Other marina offerings, including seasonal dockage, launch access, fuel, parts-c
 
 For service, storage, or repower work:
 
-1. Submit the boat, engine, trailer, and requested-work details.
-2. Confirm that HBW accepts the requested scope.
-3. Review the written quote, inclusions, exclusions, and approvals.
-4. Receive a drop-off window before towing.
+1. Complete the service request at [hbw.wiki/service](https://hbw.wiki/service) with the boat, engine, trailer, and requested-work details.
+2. Drop off your boat anytime, including after hours. You do not need a confirmed drop-off window.
+3. HBW reviews the requested scope and confirms the work plan and schedule.
+4. Review the written quote, inclusions, exclusions, and approvals before work proceeds.
 5. Authorize any newly discovered work before it proceeds.
 6. Plan pickup only after HBW confirms the approved work is complete.
 
@@ -97,20 +97,20 @@ HBW may be a practical fit when:
 HBW is not the right fit when:
 
 - You need engine repair for another brand
-- You need pickup, delivery, hauling, mobile service, or a transport referral
+- You need boat delivery, motor shipping, mobile service, or a transport referral
 - You need indoor, heated, climate-controlled, summer, or year-round storage
 - You need access to the boat between December 1 and April 1
 - You need a guaranteed turnaround before HBW has inspected and accepted the job
 
 ---
 
-## From the Shop: Confirm Before Towing
+## From the Shop: Prepare Before Towing
 
 Travel time depends on the starting point, traffic, weather, road work, and whether you are towing. Use current navigation for the actual day instead of an old drive-time table.
 
 Before leaving:
 
-- Confirm the appointment or drop-off window
+- Complete the service request at [hbw.wiki/service](https://hbw.wiki/service); drop off anytime, including after hours
 - Check the trailer tires, bearings, lights, coupler, safety chains, winch strap, and tie-downs
 - Confirm the tow vehicle's ratings and the boat's travel height
 - Bring the engine serial number, keys, wheel-lock key, and any requested documentation
@@ -131,13 +131,13 @@ Gores Landing, ON K0K 2E0
 
 ## Winter Storage at HBW
 
-HBW's storage product is outdoor winter storage with shrinkwrap.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
-- Customers arrange their own fall drop-off and spring pickup
+- We can generally arrange boat pickup. Ask us about availability for your boat and location.
 - The physical marina is closed December 1 through April 1
 - There is no winter customer access, inspection service, or on-site repair work during the closure
 - Shrinkwrap, engine winterization, onboard-system winterization, storage, repairs, and spring commissioning should be identified clearly in the written scope
-- A healthy battery may remain in place when disconnected and permitted by the approved storage plan; removal is not a universal requirement
+- A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control
 - Engine repairs are limited to Mercury and MerCruiser
 
 Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) before requesting a quote.
@@ -156,7 +156,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
 
 ### Where is Harris Boat Works?
 
-HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing.
+HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
 
 ### How long has Harris Boat Works operated in Gores Landing?
 
@@ -168,11 +168,11 @@ HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial numb
 
 ### Does HBW pick up or deliver boats?
 
-No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 ### What storage does HBW offer?
 
-Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
 ### Can I access my boat during winter?
 
@@ -184,13 +184,13 @@ No. Each job follows its written work order. Plan pickup or launch only after HB
 
 ### How long is the drive from the GTA?
 
-It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving.
+It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbw.wiki/service before dropping off your boat; drop-off is available anytime, including after hours.
 
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
-- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
 - [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 - [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 

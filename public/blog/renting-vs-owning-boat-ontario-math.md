@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-08-01
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-01
+date_modified: 2026-09-06
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,17 +25,13 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-01  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
 > **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
 
-We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.
-
-Because HBW sells, services, stores, and rents boats, we can lay out both cost structures. The right answer is math plus personality, and the worksheet below covers both.
-
-Here's both.
+HBW sells, services, stores, and rents boats, so we can lay out both cost structures. The right answer is math plus how you actually use the boat; the worksheet below covers both.
 
 ---
 
@@ -66,7 +62,7 @@ These buckets come from real invoices at our service counter, not imagination. S
 | Purchase or payment | The boat itself, financed or not | Live packages at [mercuryrepower.ca](https://mercuryrepower.ca) |
 | Insurance | Liability at minimum, hull if financed | Our [boat insurance guide](/blog/boat-insurance-ontario-guide-2026) |
 | Winterization | Motor protection before freeze-up, non-negotiable | [Winterization cost guide](/blog/boat-winterization-cost-ontario-2026) |
-| Storage | Outdoor shrinkwrapped for the winter | [Kawartha storage guide](/blog/boat-storage-kawartha-lakes) |
+| Storage | Outdoor shrinkwrapped for the winter | [Kawartha storage guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) |
 | Spring commissioning | De-winterize, checks, launch | [Spring checklist](/blog/spring-outboard-commissioning-checklist) |
 | Maintenance | Impellers, oil, plugs, the 100-hour service | [Maintenance intervals guide](/blog/mercury-maintenance-intervals-20-100-300-rule) |
 | Depreciation | The quiet one nobody budgets | Real, especially in years 1 to 5 |
@@ -76,6 +72,19 @@ For the full add-up, our [total cost of owning a boat in Ontario](/blog/total-co
 A rental day has exactly none of those buckets in it. It has a rate you saw before booking, fuel you burned, and worms.
 
 ---
+
+## Rental, Boat Club, Peer-to-Peer, or Ownership
+
+Here is how the four ways to get on the water differ for an Ontario boater. Prices and membership terms change, so compare current written rates before deciding.
+
+| Option | Upfront cost | Ongoing cost | Best for | Watch for |
+|---|---|---|---|---|
+| Marina rental | No ownership purchase | Day rate + fuel, pay per use | Occasional days, visitors, try-before-you-buy | Date and boat availability |
+| Boat club membership | Membership terms vary | Dues, fuel, and possible fees | Repeat use near a club location | Reservation limits and year-round terms |
+| Peer-to-peer app | No ownership purchase | Day rate + platform and service fees | Occasional use near big cities | Condition and maintenance vary by owner, insurance fine print |
+| Ownership | Purchase price or financing | Insurance, storage, winterizing, maintenance, depreciation | Frequent use, anglers, waterfront owners | Fixed costs continue when the boat is not used |
+
+The decision rule is the same as the worksheet below: multiply the current rental rate for the boat you would choose by your realistic number of days, then compare that with your own annual ownership costs.
 
 ## The Worksheet: Honest Inputs
 
@@ -101,7 +110,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 **Things that quietly favour owning:**
 
 - Spontaneity. The 7 pm Tuesday cruise because the lake looks perfect. Renters plan; owners just go.
-- The boat becomes the family gathering place. Three generations of our customers prove this one.
+- The boat can become a family gathering place.
 - Your gear stays aboard. Your setup, your electronics, your rod holders.
 - Equity. Ownership costs real money, but some of it comes back at resale or trade-in. Rental money is spent.
 
@@ -150,7 +159,7 @@ Yes. Renting different available layouts can show you how much passenger space, 
 
 ### If I decide to buy, when's the smart time to do it?
 
-Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
+Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
 
 ### How do I price a Rice Lake rental day?
 

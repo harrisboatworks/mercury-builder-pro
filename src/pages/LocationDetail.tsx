@@ -115,14 +115,14 @@ export default function LocationDetail() {
   const pageTitle = lf ? `${lf.h1} | Harris Boat Works` : location.title;
   const metaDesc = lf?.metaDescription ?? location.metaDescription;
   const canonical = lf?.canonical ?? url;
-  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6).map(substituteLiveRateTokens);
+  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6).map((t: string) => substituteLiveRateTokens(t));
   const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4).map((f) => ({
     question: substituteLiveRateTokens(f.question),
     answer: substituteLiveRateTokens(f.answer),
   }));
   const lfSections = lf?.sections?.map((sec) => ({
     heading: sec.heading,
-    paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+    paragraphs: sec.paragraphs.map((p: string) => substituteLiveRateTokens(p)),
   }));
   const lfQuickAnswer = lf?.quickAnswer ? substituteLiveRateTokens(lf.quickAnswer) : undefined;
   const lfWhatWeSee = lf?.whatWeSeeAtHBW ? substituteLiveRateTokens(lf.whatWeSeeAtHBW) : undefined;
@@ -421,10 +421,7 @@ export default function LocationDetail() {
                   Pickup at Gores Landing
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Customers from {location.region} bring the boat to our shop at{' '}
-                  {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city}, ON for installation,
-                  or pick up a loose Mercury motor for self-install. We do not offer mobile
-                  service, delivery, driveway installs, or marina visits.
+                  {location.serviceBoundary}
                 </p>
                 <p className="mt-3 text-sm text-muted-foreground">
                   Need shop-based Mercury service?{' '}

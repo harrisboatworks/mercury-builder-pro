@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Honda to Mercury Repower: Ontario Guide"
 description: "Switching from Honda to Mercury in Ontario: rigging compatibility, current pricing paths, trade-in questions, and what changes at the transom."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,11 @@ revenue_driver: repower
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 
-> **Quick answer:** A Honda-to-Mercury switch is worth comparing when the Mercury product family, local authorized-service route, or rigging plan fits your boat better. It is not an automatic upgrade. Honda currently builds through the BF350 V8; Mercury's Canadian lineup continues above 350 HP. Keep a good Honda kicker if it still does the job. Compare the current motor price and a written installed quote instead of relying on generic ranges.
-
-## Quick answer
-
-Honda outboards are excellent in the 9.9-50 HP class. A switch to Mercury can make sense when the local authorized-service route or the required Mercury product family fits better. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so use a written side-by-side quote rather than a generic range.
+> **Quick answer:** Honda outboards are strong in the 9.9-50 HP class. A Honda-to-Mercury switch is worth comparing when the Mercury product family, local authorized-service route, or rigging plan fits your boat better. It is not an automatic upgrade. Honda currently builds through the BF350 V8; Mercury's Canadian lineup continues above 350 HP. Keep a good Honda kicker if it still does the job. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so compare the current motor price and a written installed quote instead of a generic range.
 
 Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't. Before pricing a brand switch, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) to confirm repower is the right call at all.
 
@@ -83,13 +79,13 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **The local Mercury support route is better for the boat.** If HBW is the practical service destination and the nearest suitable Honda support is not, that can matter more than a paper specification. Check the current locators and the exact services each dealer provides.
 
-**You're going above 350 HP.** Honda Marine Canada's current line reaches the BF350 V8. Mercury Canada's current Verado range continues through 400 HP, 425 HP, and 600 HP. That is a real lineup difference, but the hull rating, transom, steering, controls, and use case still decide whether any of those motors belongs on the boat.
+**You're going above 350 HP.** Honda Marine Canada's current line reaches the BF350 V8. Mercury Canada's Verado range tops out well past that; check the current model lineup before you count on a specific horsepower. That is a real lineup difference, but the hull rating, transom, steering, controls, and use case still decide whether any of those motors belongs on the boat.
 
 **You want a Mercury SmartCraft or Joystick configuration.** Controls and compatibility are package-specific. If those Mercury systems are part of the goal, quote the entire control and steering package rather than comparing engines alone.
 
 **You want Pro XS performance.** Honda doesn't have a direct Pro XS equivalent. If you're a bass fisherman or runabout owner [wanting Pro XS aggression](/blog/mercury-pro-xs-buyer-guide-ontario), Mercury is the only call.
 
-**Repower planning + warranty.** Mercury Canada offers [3 years limited + 3 years corrosion concurrent](/blog/mercury-outboard-warranty-canada-2026). Honda offers 5 years limited (some markets). Verify current warranty terms before committing because Honda's standard warranty length has historically been a Honda advantage and may still be.
+**Repower planning + warranty.** Mercury Canada offers [3 years limited + 3 years corrosion concurrent](/blog/mercury-outboard-warranty-canada-2026). Honda's limited warranty length varies by market. Verify current warranty terms before committing because Honda's standard warranty length has historically been a Honda advantage and may still be.
 
 ## What we see at HBW
 
@@ -178,7 +174,7 @@ It depends on year, hours, condition, configuration, and the current Ontario mar
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower), two-stroke to four-stroke repower notes
 - [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
-- [Mercruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
+- [MerCruiser Sterndrive Ontario Guide](/blog/mercruiser-sterndrive-guide-ontario), MerCruiser sterndrive service and repower notes
 - [Old Motor Trade-In, HST and Disposal in Ontario](/blog/repower-old-motor-trade-in-hst-disposal-ontario), trade-in, HST and disposal on repowers
 
 ## Next steps

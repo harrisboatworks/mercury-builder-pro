@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -44,7 +45,8 @@ export function PromoSelectionBadge({
   endDate 
 }: PromoSelectionBadgeProps) {
   const navigate = useNavigate();
-  const { getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const warranty = getWarrantyDisplayFromAppliedPromotion(getAppliedPromotion(promotions));
   
   // Get dynamic value based on selection
   const getSelectedValue = () => {
@@ -76,7 +78,7 @@ export function PromoSelectionBadge({
         <div className="flex items-center gap-3">
           <img src={mercuryLogo} alt="Mercury" className="h-5 brightness-0 invert" />
           <span className="text-xs font-bold text-repower-mercury-red bg-repower-mercury-red/50 px-2 py-0.5 rounded-full">
-            7-YEAR WARRANTY
+            {warranty.badgeLabel}
           </span>
         </div>
         {endDate && (
@@ -95,7 +97,7 @@ export function PromoSelectionBadge({
                 <Shield className="w-5 h-5 text-repower-gold" />
               </div>
               <div className="hidden sm:block">
-                <div className="text-sm font-semibold text-foreground">7 Years</div>
+                <div className="text-sm font-semibold text-foreground">{warranty.shortHeadline}</div>
                 <div className="text-xs text-muted-foreground">Warranty</div>
               </div>
             </div>

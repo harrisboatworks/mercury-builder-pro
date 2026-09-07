@@ -677,7 +677,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {spaciousLayout ? (
           <View style={styles.waterTestBand}>
             <Text style={styles.waterTestBandText}>{quoteData.includesInstallation
-              ? 'Every installed repower is water-tested on Rice Lake before pickup.'
+              ? 'Standard installed-repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.'
               : 'Every loose motor is prepared, test-run and commissioned before pickup.'}</Text>
           </View>
         ) : null}

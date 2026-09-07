@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for Lake Ontario Salmon & Trout"
 description: "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-08-08
+date_modified: 2026-08-19
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-08-19  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
@@ -79,7 +79,7 @@ Tournament use rewards the Pro XS for faster acceleration and more water covered
 
 **Recommended:** 26–30+ ft deep-V + Mercury 300 HP Pro XS V8 or 300–350 HP SeaPro commercial-duty variant + 15 HP ProKicker.
 
-Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and Mercruiser.
+Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and MerCruiser.
 
 ### Multi-Species Sport Fishing (Salmon, Walleye, Bass)
 
@@ -139,9 +139,9 @@ We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryre
 
 ## A Note on HBW's Lake Ontario Coverage
 
-Harris Boat Works is on Rice Lake in Gores Landing, we're not a Port Credit or Whitby harbour marina. But we do quote, sell, and install Mercury motors for Lake Ontario anglers, and we service Mercury and Mercruiser motors regardless of where the boat fishes. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works is on Rice Lake in Gores Landing, we're not a Port Credit or Whitby harbour marina. But we do quote, sell, and install Mercury motors for Lake Ontario anglers, and we service Mercury and MerCruiser motors regardless of where the boat fishes. For engine repairs, we only service Mercury and MerCruiser.
 
-If your boat is slip-stored in a Lake Ontario marina and you need engine service there, they'll have their own shop. For motor purchases, repower quotes, and service on boats that come to us, we're the answer.
+If your boat is slip-stored in a Lake Ontario marina and you need engine service there, they'll have their own shop. For motor purchases, repower quotes, and service on boats that come to us, we're the shop to call.
 
 ---
 
@@ -216,3 +216,4 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

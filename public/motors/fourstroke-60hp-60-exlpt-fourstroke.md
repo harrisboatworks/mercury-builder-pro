@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-exlpt-fourstroke
-last_updated: 2026-08-08
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -16,14 +16,14 @@ availability: special_order
 price_cad: 12689
 ---
 
-# 60 EXLPT FourStroke
+# 60 EXLPT Command Thrust FourStroke
 
 Mercury FourStroke 60 HP outboard motor (model 1F60463GZ).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 60 EXLPT FourStroke
+- **Model:** 60 EXLPT Command Thrust FourStroke
 - **Family:** Mercury FourStroke
 - **Horsepower:** 60 HP
 - **Model number:** 1F60463GZ
@@ -73,7 +73,7 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ## Notes
 
-- Financing is available on eligible totals over $5,000 CAD. Confirm the current rate and terms at https://www.mercuryrepower.ca/promotions.
+- Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 - Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

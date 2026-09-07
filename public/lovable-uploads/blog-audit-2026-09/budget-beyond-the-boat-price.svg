@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" xml:lang="en" aria-labelledby="title desc">
+  <title id="title">Budget beyond the boat price</title>
+  <desc id="desc">Concept diagram of annual operating-cost buckets: slip or launch, insurance, storage and winterization, fuel, routine service, and licensing.</desc>
+  <rect width="1200" height="800" fill="#F4EFE4"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="700">
+    <tspan x="600" y="86">Budget beyond</tspan>
+    <tspan x="600" dy="80">the boat price</tspan>
+  </text>
+  <rect x="540" y="186" width="120" height="6" rx="3" fill="#C8102E"/>
+
+  <rect x="48" y="214" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="176" y="236" width="96" height="28" rx="6" fill="#0B1F3A"/>
+  <rect x="188" y="248" width="72" height="8" rx="2" fill="#F4EFE4"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="224" y="328">Slip or</tspan>
+    <tspan x="224" dy="52">launch</tspan>
+  </text>
+
+  <rect x="424" y="214" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="568" y="236" width="64" height="48" rx="8" fill="#0B1F3A"/>
+  <path d="M580 268 L600 248 L620 268" fill="none" stroke="#F4EFE4" stroke-width="5" stroke-linejoin="round"/>
+  <text x="600" y="354" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Insurance</text>
+
+  <rect x="800" y="214" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="944" y="236" width="64" height="48" rx="8" fill="#0B1F3A"/>
+  <rect x="956" y="252" width="40" height="20" rx="3" fill="#F4EFE4"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="976" y="328">Storage and</tspan>
+    <tspan x="976" dy="52">winterization</tspan>
+  </text>
+
+  <rect x="48" y="438" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="192" y="460" width="64" height="48" rx="10" fill="#C8102E"/>
+  <rect x="208" y="472" width="32" height="24" rx="4" fill="#FFFBF3"/>
+  <text x="224" y="580" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Fuel</text>
+
+  <rect x="424" y="438" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="600" cy="484" r="24" fill="#0B1F3A"/>
+  <path d="M600 472 V496 M588 484 H612" stroke="#F4EFE4" stroke-width="5" stroke-linecap="round"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="600" y="554">Routine</tspan>
+    <tspan x="600" dy="52">service</tspan>
+  </text>
+
+  <rect x="800" y="438" width="352" height="200" rx="22" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="944" y="460" width="64" height="48" rx="6" fill="#0B1F3A"/>
+  <rect x="956" y="472" width="40" height="6" rx="2" fill="#F4EFE4"/>
+  <rect x="956" y="486" width="28" height="6" rx="2" fill="#EDE6D6"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="976" y="554">Licensing</tspan>
+    <tspan x="976" dy="52">when due</tspan>
+  </text>
+
+  <rect x="48" y="668" width="1104" height="100" rx="20" fill="#EDE6D6"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="36" font-weight="600">
+    <tspan x="600" y="710">Purchase, financing and resale belong</tspan>
+    <tspan x="600" dy="44">in a separate calculation.</tspan>
+  </text>
+</svg>

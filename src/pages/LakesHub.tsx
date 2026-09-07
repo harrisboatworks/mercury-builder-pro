@@ -89,7 +89,7 @@ export default function LakesHub() {
         { question: 'Do I need a kicker for Ontario fishing?', answer: 'For walleye trolling on most Ontario lakes, yes. The 9.9 ProKicker is the standard for sheltered lakes; the 15 HP ProKicker is the standard for Lake Ontario salmon spreads.' },
         { question: 'Where do most Rice Lake anglers launch?', answer: 'Bewdley, Hastings, and Roseneath public ramps. Each has different characteristics. Many cottagers launch from private docks.' },
         { question: 'Can I fish Lake Simcoe with a Rice Lake setup?', answer: 'Sometimes, with caution. Boats under 17 ft are exposed in moderate Simcoe weather. Most serious Simcoe anglers run bigger.' },
-        { question: 'When does walleye season open in Ontario?', answer: 'For Zone 17 (Kawartha lakes including Rice Lake), typically the second Saturday of May. Confirm current year dates from OMNR.' },
+        { question: 'When does walleye season open in Ontario?', answer: 'For Zone 17 (Kawartha lakes including Rice Lake), typically the second Saturday of May. Confirm current year dates from MNRF.' },
         { question: 'What about ice fishing season?', answer: 'Lake Simcoe is a major ice fishing destination. Rice Lake and Kawartha lakes have ice fishing seasons too. Boat-side, this is the time for repowers, winterization confirmation, and spring planning.' },
       ]}
       secondaryCTA={{

@@ -22,6 +22,8 @@ import {
 } from '@/lib/mercury99MhSaleContent';
 import { resolveMotorAvailability } from '@/lib/motorAvailability';
 import { SITE_URL } from '@/lib/site';
+import { applyMotorPresentationOverrides } from '@/data/motorPresentationOverrides.js';
+import { motorSlug as publicMotorSlug } from '../../supabase/functions/_shared/motor-slug';
 import speedboatFallback from '@/assets/speedboat-transparent.png';
 
 /**
@@ -109,28 +111,6 @@ function resolveSellingPrice(m: MotorRow): number | null {
 function formatCAD(n: number | null): string {
   if (n == null) return 'Contact for pricing';
   return new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
-}
-
-function slugify(s: string): string {
-  return (s || '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
-function detectFamily(model: string | null, motorType: string | null, family: string | null): string {
-  if (family) return family;
-  const source = `${model || ''} ${motorType || ''}`.toLowerCase();
-  if (source.includes('proxs') || source.includes('pro xs')) return 'Pro XS';
-  if (source.includes('seapro') || source.includes('sea pro')) return 'SeaPro';
-  if (source.includes('racing')) return 'Racing';
-  if (source.includes('verado')) return 'Verado';
-  return 'FourStroke';
-}
-
-function publicMotorSlug(motor: MotorRow): string {
-  const family = detectFamily(motor.model_display || motor.model, motor.motor_type, motor.family);
-  return slugify(`${family}-${motor.horsepower}hp-${motor.model_display || motor.model || ''}`);
 }
 
 function toAbsoluteImageUrl(image: string | null | undefined): string {
@@ -268,7 +248,7 @@ export default function MotorPage() {
         setLoading(false);
         return;
       }
-      const resolvedMotor = data as MotorRow;
+      const resolvedMotor = applyMotorPresentationOverrides(data) as MotorRow;
       const imageInfo = await getMotorImageByPriority(resolvedMotor);
       if (cancelled) return;
       setMotor(resolvedMotor);
@@ -572,11 +552,10 @@ export default function MotorPage() {
             )}
             {hp === 60 && (display.toLowerCase().includes('command thrust') || (motor.model_display || '').toLowerCase().includes('command thrust')) && (
               <p>
-                The Mercury 60 ELPT Command Thrust FourStroke is our go-to repower for Ontario aluminum fishing boats
-                and lighter pontoons in the 16–18 ft range. The Command Thrust gearcase swings a bigger prop for more
-                hole-shot and load-carrying ability, exactly what Rice Lake, Kawartha, and Bay of Quinte boats need.
-                Real CAD pricing, in stock at Harris Boat Works, pickup only at Gores Landing. Mercury Premier Dealer
-                since 1965.
+                The {display} pairs Mercury&apos;s Command Thrust gearcase with a larger prop for heavier pontoons and
+                specific work-boat applications. Harris Boat Works confirms the hull rating, shaft length, gearcase,
+                propeller, and current availability before sale. Live CAD pricing is available in the quote builder;
+                pickup is at Gores Landing only. Mercury Premier Dealer since 1965.
               </p>
             )}
             {hp === 150 && family.toLowerCase().includes('proxs') && (

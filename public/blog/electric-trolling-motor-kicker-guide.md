@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-07
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"
 date_published: 2026-05-04
-date_modified: 2026-05-07
+date_modified: 2026-09-06
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-05-07  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
@@ -38,7 +38,7 @@ On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKi
 
 ### Trolling motor or kicker motor for your boat?
 
-Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
+Different waters, different answers. Boat positioning and sustained trolling need different tools.
 
 #### Choose a trolling motor if
 
@@ -46,7 +46,7 @@ Different waters, different answers. Rice Lake bass and Lake Ontario salmon need
 - Spot-Lock and GPS-anchor are important
 - Stealth matters (no gas engine running while fishing)
 - Battery management is something you can handle
-- Primary use is bass, walleye drifting, or controlled presentations
+- Primary use is boat positioning, drifting, or other controlled presentations
 
 **Pick a trolling motor (Minn Kota or Lowrance)**
 
@@ -56,11 +56,11 @@ Different waters, different answers. Rice Lake bass and Lake Ontario salmon need
 - All-day trolling outlasts any practical battery
 - You don't want to babysit charging schedules
 - Boat is on bigger water (Lake Ontario, Simcoe deep zones)
-- You want simpler, less maintenance, more range
+- You want refuelling at the tank instead of battery charging, plus all-day range
 
 **Pick a Mercury 9.9 EFI kicker**
 
-For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
+An electric trolling motor suits precise positioning; compare a kicker for sustained trolling. Match either setup to the weather, load, and available battery or fuel supply.
 
 ## What each one actually does
 
@@ -89,7 +89,7 @@ These are not competing tools. They are complementary. But they cost real money,
 | Upfront cost (CAD, approx.) | $500 to $3,500 (before batteries) | $4,000 to $7,500 installed |
 | Emergency backup propulsion | Limited (battery-dependent) | Full backup |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## When an electric trolling motor wins
 
@@ -103,7 +103,7 @@ The foot pedal or wireless spot-lock anchor changes how you fish. You can land a
 A kicker gearcase still hangs down 18+ inches. A trolling motor runs comfortably in a foot of water.
 
 ### You want spot-lock
-This is the single feature most customers say they wish they had bought sooner. Press a button; the boat holds GPS position against any reasonable wind. We have installed a lot of spot-lock units, and the feedback is consistent: every single customer wants it once they have used it.
+Press a button and the boat holds GPS position against reasonable wind, so you can land a fish, re-bait, or work a spot without resetting an anchor. Range and hold still depend on battery capacity, wind, and current.
 
 ### Honest limitation of electrics
 Battery range is real. A 50 lb-thrust unit running at 70% draws a single deep-cycle battery down in roughly 4 to 5 hours. Lithium (LiFePO4) battery upgrades help significantly but add to the upfront investment.
@@ -131,7 +131,7 @@ Mercury makes both [a standard 9.9 FourStroke](/blog/mercury-9-9-efi-review-onta
 - Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
 
-Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Approximate installed cost (CAD) varies with options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why most serious anglers end up running both
 
@@ -170,7 +170,7 @@ We rig both setups regularly:
 - Lithium battery upgrades for boaters running heavy draw on the bow electric
 - Annual kicker service (oil, impeller, plugs) and battery health checks on the electric side
 
-For engine repairs, we only service Mercury and Mercruiser.
+For engine repairs, we only service Mercury and MerCruiser.
 
 Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

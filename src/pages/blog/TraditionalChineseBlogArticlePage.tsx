@@ -30,6 +30,7 @@ import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { MandarinMarkdownLink } from '@/components/blog/MandarinMarkdownLink';
 import {
   Accordion,
   AccordionContent,
@@ -138,7 +139,7 @@ export default function TraditionalChineseBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Harris Boat Works 負責人" />
+                <AuthorByline name="Jay Harris" title="Harris Boat Works 負責人" byLabel="作者" bioLabel="查看作者簡介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('zh-Hant', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -186,27 +187,11 @@ export default function TraditionalChineseBlogArticlePage() {
                   const text = String(children);
                   return <h3 id={slugify(text)} {...props}>{children}</h3>;
                 },
-                a: ({ node, href, children, ...props }) => {
-                  if (!href) return <a {...props}>{children}</a>;
-                  const stripped = href.replace(/^https?:\/\/[^/]+/, '');
-                  const isInternal =
-                    href.startsWith('/') ||
-                    href.includes('harrisboatworks') ||
-                    href.includes('mercuryquote') ||
-                    href.includes('mercuryrepower');
-                  if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
-                    return (
-                      <Link to={stripped.startsWith('/') ? stripped : href} className="text-primary hover:underline">
-                        {children}
-                      </Link>
-                    );
-                  }
-                  return (
-                    <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" {...props}>
-                      {children}
-                    </a>
-                  );
-                },
+                a: ({ href, children }) => (
+                  <MandarinMarkdownLink href={href} className="text-primary hover:underline">
+                    {children}
+                  </MandarinMarkdownLink>
+                ),
               }}
             />
           </div>

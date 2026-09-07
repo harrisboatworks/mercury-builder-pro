@@ -21,6 +21,7 @@ const warn = (condition, message) => {
 
 const read = (path) => readFileSync(path, 'utf8');
 const proXsSeo = read('src/components/seo/MercuryProXSSEO.tsx');
+const proXsOffers = read('src/data/mercuryProXSOffers.js');
 const proXsPage = read('src/pages/landing/MercuryProXS.tsx');
 const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
@@ -35,6 +36,9 @@ const caseStudyGenerator = read('scripts/generate-markdown-twins.mjs');
 const boostChecker = read('src/components/tools/BoostEligibilityChecker.tsx');
 const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
+const luxuryHeader = read('src/components/ui/luxury-header.tsx');
+const spanishArticlePage = read('src/pages/blog/SpanishBlogArticlePage.tsx');
+const spanishBlogArticles = read('src/data/spanishBlogArticles.ts');
 const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
 const appSource = read('src/App.tsx');
@@ -42,6 +46,10 @@ const canonicalComponent = read('src/components/seo/Canonical.tsx');
 const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
 const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
+const publicBlogIndex = JSON.parse(read('public/blog-index.json'));
+const publicCatalog = read('public/catalog.md');
+const blogI18nRegistry = read('src/data/blogI18nRegistry.js');
+const repowerCostMarkdown = read('public/blog/mercury-repower-cost-ontario-2026-cad.md');
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
 const blogClusters = read('src/data/blogClusters.ts');
@@ -49,6 +57,8 @@ const parsedVercelConfig = JSON.parse(vercelConfig);
 const mandarinServiceGuide = read('src/data/mandarinBlogArticles.ts');
 const mandarinServiceTwin = read('public/blog/zh/gta-chinese-mercury-service-guide.md');
 const mandarinServiceSurface = `${mandarinServiceGuide}\n${mandarinServiceTwin}`;
+const mandarinHorsepowerTwin = read('public/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese.md');
+const maintenanceTwin = read('public/blog/mercury-maintenance-intervals-20-100-300-rule.md');
 const warrantyCopySource = read('scripts/lib/warranty-copy.mjs');
 const faqDataSource = read('src/data/faqData.ts');
 const warrantySources = [
@@ -118,6 +128,30 @@ check(
     /\| 操作员卡 \/ 钓鱼证 \| 不适用 \| 不销售；请到 ontario\.ca 办理 \|/.test(mandarinServiceSurface),
   'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
 );
+check(
+  !/https:\/\/hbw\.wiki\/service。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
+    /\[hbw\.wiki\/service\]\(https:\/\/hbw\.wiki\/service\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
+  'Mandarin service links must keep Chinese punctuation outside the explicit hbw.wiki/service anchor.',
+);
+check(
+  !maintenanceTwin.includes('\n## Sources\n') &&
+    maintenanceTwin.includes('Mercury Marine Canada, Limited Warranty'),
+  'The maintenance twin must retain citations without exposing a customer-facing Sources heading.',
+);
+check(
+  !luxuryHeader.includes('Award-Winning Service Team') &&
+    luxuryHeader.includes('Family-owned since 1947 • Mercury dealer since 1965 • Mercury Premier Dealer'),
+  'The shared utility header must use the verified 1947/1965/Premier heritage anchor.',
+);
+check(
+  /TableOfContents/.test(spanishArticlePage) && /tocItems\.length > 2/.test(spanishArticlePage) &&
+    /## Una nota sobre el idioma/.test(spanishBlogArticles),
+  'Spanish articles must render a table of contents that includes the language note heading.',
+);
+check(
+  prerenderScript.includes('^::bilingual-trust(?:-card)?'),
+  'Static prerendering must expand both canonical and legacy bilingual trust directives.',
+);
 
 check(
   !/Legend[^.\n]{0,100}(?:built in Whitefish|Canadian-built|built in Canada|Ontario-built|made in Canada|manufactured in Whitefish|manufactured in Canada)/i.test(blogArticles),
@@ -146,6 +180,123 @@ const sourceArticleSection = (slug) => {
   const end = boundaries.length ? start + 1 + Math.min(...boundaries) : blogArticles.length;
   return blogArticles.slice(start, end);
 };
+
+const contextualOfficialVideoEmbeds = [
+  {
+    slug: 'diy-mercury-outboard-winterization-guide',
+    id: 'YGuQjF6vuao',
+    title: 'How To Winterize Your Outboard | Winterization Checklist (Mercury Marine)',
+  },
+  {
+    slug: 'mercury-smartcraft-connect-guide-ontario',
+    id: 'lEa_MVfOs7M',
+    title: 'SmartCraft Mobile Installation: Control Your Engine from Your Phone (Mercury Marine)',
+  },
+];
+
+for (const { slug, id, title } of contextualOfficialVideoEmbeds) {
+  const source = sourceArticleSection(slug);
+  const twin = read(`public/blog/${slug}.md`);
+  const directive = `:::youtube-embed\nid: ${id}\ntitle: ${title}\n:::`;
+  const twinLink = `[${title}](https://www.youtube.com/watch?v=${id})`;
+  const count = (surface) => surface.split(id).length - 1;
+
+  check(source.includes(directive), `${slug} must keep video ${id} as a contextual body directive.`);
+  check(count(source) === 1, `${slug} must reference video ${id} exactly once in source.`);
+  check(!/youtubeVideoId\s*:/.test(source), `${slug} must not add a duplicate top-of-article video.`);
+  check(!source.includes(`https://www.youtube.com/watch?v=${id}`), `${slug} source must not retain a duplicate raw video URL.`);
+  check(twin.includes(`${twinLink}\n\n`), `${slug} Markdown twin must preserve video ${id} as a standalone usable link.`);
+  check(count(twin) === 1, `${slug} Markdown twin must reference video ${id} exactly once.`);
+}
+
+const smartCraftConnectSource = sourceArticleSection('mercury-smartcraft-connect-guide-ontario');
+check(
+  !/8M0173129\s*(?:\(|is\s+)?multi-engine/i.test(smartCraftConnectSource) &&
+    /8M0173129[^\n]{0,100}under-helm[^\n]{0,100}(?:one|1)[ -]to[ -](?:four|4) engines/i.test(smartCraftConnectSource),
+  'SmartCraft Connect must describe 8M0173129 as the under-helm one-to-four-engine module, not a multi-engine-only kit.',
+);
+
+const repowerCostSlug = 'mercury-repower-cost-ontario-2026-cad';
+const repowerCostFrenchSlug = 'prix-remotorisation-mercury-ontario';
+const repowerCostHtmlPath = `/blog/${repowerCostSlug}`;
+const repowerCostFrenchHtmlPath = `/blog/fr/${repowerCostFrenchSlug}`;
+const repowerCostHtmlUrl = `https://www.mercuryrepower.ca${repowerCostHtmlPath}`;
+const repowerCostFrenchHtmlUrl = `https://www.mercuryrepower.ca${repowerCostFrenchHtmlPath}`;
+const repowerCostMarkdownUrl = `${repowerCostHtmlUrl}.md`;
+const repowerCostTitle = "Mercury Repower Guide: Cost, Timeline & When It's Worth It";
+const repowerCostArticle = sourceArticleSection(repowerCostSlug);
+const repowerCostIndexEntries = publicBlogIndex.articles.filter(
+  (article) => article.slug === repowerCostSlug,
+);
+const sitemapEntries = publicSitemap.match(/<url>[\s\S]*?<\/url>/g) ?? [];
+const repowerCostSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostHtmlUrl}</loc>`),
+);
+const repowerCostFrenchSitemapEntries = sitemapEntries.filter(
+  (entry) => entry.includes(`<loc>${repowerCostFrenchHtmlUrl}</loc>`),
+);
+const repowerCostRegistryEntry = `{ en: '${repowerCostSlug}', fr: '${repowerCostFrenchSlug}' }`;
+const repowerCostGeneratorPipeline = caseStudyGenerator.match(
+  /const blogTwinSummaries = \[\];[\s\S]*?\n}\n\nfor \(const group of localizedBlogGroups\)/,
+)?.[0] ?? '';
+const blogTableFallbacks = prerenderScript.match(
+  /const BLOG_TABLE_FALLBACKS = \{[\s\S]*?\n};/,
+)?.[0] ?? '';
+
+check(
+  repowerCostArticle.length > 5_000 &&
+    repowerCostArticle.includes(`title: "${repowerCostTitle}"`) &&
+    /There is no dependable one-price-fits-all installed range/.test(repowerCostArticle),
+  'The canonical Mercury repower-cost article source is missing or unexpectedly empty.',
+);
+check(
+  repowerCostMarkdown.length > 5_000 &&
+    repowerCostMarkdown.includes(`# ${repowerCostTitle}`) &&
+    repowerCostMarkdown.includes(`canonical: ${repowerCostMarkdownUrl}`) &&
+    repowerCostMarkdown.includes(`**Canonical (HTML for humans):** ${repowerCostHtmlUrl}`),
+  'The generated Mercury repower-cost Markdown twin is missing, empty, or points at the wrong canonical.',
+);
+check(
+  repowerCostIndexEntries.length === 1 &&
+    repowerCostIndexEntries[0].title === repowerCostTitle &&
+    repowerCostIndexEntries[0].description?.length > 80,
+  'blog-index.json must contain one complete Mercury repower-cost entry.',
+);
+check(
+  publicCatalog.split(repowerCostMarkdownUrl).length - 1 === 1,
+  'catalog.md must contain one Mercury repower-cost Markdown-twin URL.',
+);
+check(
+  blogI18nRegistry.split(repowerCostRegistryEntry).length - 1 === 1,
+  'The blog hreflang registry must pair the Mercury repower-cost route with its French translation exactly once.',
+);
+check(
+  repowerCostSitemapEntries.length === 1 &&
+    repowerCostFrenchSitemapEntries.length === 1 &&
+    [repowerCostSitemapEntries[0], repowerCostFrenchSitemapEntries[0]].every((entry) =>
+      entry.includes(`hreflang="en-CA" href="${repowerCostHtmlUrl}"`) &&
+      entry.includes(`hreflang="fr-CA" href="${repowerCostFrenchHtmlUrl}"`) &&
+      entry.includes(`hreflang="x-default" href="${repowerCostHtmlUrl}"`)
+    ),
+  'sitemap.xml must contain one reciprocal English/French hreflang pair for the Mercury repower-cost route.',
+);
+check(
+  /function loadBlogArticles\(\)[\s\S]{0,800}getSitemapEligibleArticles/.test(caseStudyGenerator) &&
+    /for \(const article of blogArticlesAll\)/.test(repowerCostGeneratorPipeline) &&
+    /const path = `\/blog\/\$\{article\.slug\}\.md`/.test(repowerCostGeneratorPipeline) &&
+    /writePublicMd\(path, markdown(?:, article\.dateModified)?\)/.test(repowerCostGeneratorPipeline),
+  'The Markdown-twin generator must write every sitemap-eligible English article, including the Mercury repower-cost route.',
+);
+check(
+  !(parsedVercelConfig.redirects ?? []).some((redirect) => redirect.source === repowerCostHtmlPath),
+  'vercel.json must not redirect the canonical Mercury repower-cost route.',
+);
+check(
+  blogTableFallbacks.length > 0 &&
+    !blogTableFallbacks.includes(`'${repowerCostSlug}':`) &&
+    !blogTableFallbacks.includes('Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)'),
+  'The prerender must not append the retired installed-range table after the canonical repower-cost article.',
+);
 
 const boostPontoonSlug = 'mercury-boost-upgrade-150hp-pontoon-analysis';
 const quickAnswerIntroCount = (surface) => (
@@ -198,7 +349,7 @@ check(
   'Blog source or Markdown twins revived an audit-identified stale regulatory figure.',
 );
 check(
-  /\$24\.41 fee[\s\S]{0,180}inflation each April 1/.test(regulatorySurface) &&
+  /\$24\.41 fee applies to a new, transferred, renewed or duplicate licence\.[\s\S]{0,80}Fees may change each April 1/.test(regulatorySurface) &&
     /1,360 kg \(3,000 lb\) or more/.test(regulatorySurface) &&
     /Schedule 3 of the Vessel Operation Restriction Regulations[\s\S]{0,220}not a general rule for most freshwater lakes/.test(regulatorySurface),
   'PCL fee, Ontario trailer-brake threshold and Schedule 3 electric allowance must retain current qualification.',
@@ -245,7 +396,10 @@ check(
 );
 
 check(
-  /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
+  /CANONICAL_SKUS/.test(proXsSeo) &&
+    /buildMercuryProXSOffers/.test(proXsSeo) &&
+    /skus:\s*CANONICAL_SKUS/.test(proXsSeo) &&
+    /sku\.family === 'ProXS'/.test(proXsOffers),
   'MercuryProXSSEO must derive prices from CANONICAL_SKUS.',
 );
 check(
@@ -386,6 +540,25 @@ check(
   ),
   'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
 );
+check(
+  parsedVercelConfig.redirects?.some((redirect) =>
+    redirect.source === '/blog/mercury-repower-cost-ontario' &&
+    redirect.destination === '/repower/cost' &&
+    redirect.statusCode === 301
+  ),
+  'vercel.json must permanently redirect the retired bare repower-cost blog slug to /repower/cost.',
+);
+const motorHtmlRoutes = new Set(
+  readdirSync('public/motors')
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => `/motors/${name.slice(0, -3)}`),
+);
+for (const redirect of parsedVercelConfig.redirects ?? []) {
+  check(
+    !motorHtmlRoutes.has(redirect.source) || redirect.destination === redirect.source,
+    `vercel.json must not 301 checked-in motor route ${redirect.source} onto ${redirect.destination}.`,
+  );
+}
 for (const [source, destination] of [
   [
     '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario',
@@ -496,20 +669,23 @@ const checkJoystickPackageTruth = (surface, label) => {
   );
 };
 
-checkSpecRoute('mercury-command-thrust-pontoon-eligibility-2026', (surface, label) => {
-  const availabilitySection = surface.match(/## HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
+checkSpecRoute('mercury-command-thrust-complete-guide-2026', (surface, label) => {
+  const availabilitySection = surface.match(/###? HP class availability[\s\S]*?(?=\n## |$)/i)?.[0] ?? '';
   const listing = availabilitySection
     .split(/\n\s*\n/)
-    .find((paragraph) => /As of August 8, 2026,/i.test(paragraph) && /current Canadian listings/i.test(paragraph)) ?? '';
+    .find((paragraph) => /As of September 5, 2026,/i.test(paragraph) && /HBW pricing reference/i.test(paragraph)) ?? '';
   check(!/25\s*(?:to|[-–])\s*115 HP/i.test(surface), `${label} revived the stale 25-to-115 HP Command Thrust range.`);
   check(
-    /9\.9 HP/i.test(listing) &&
-      /Command Thrust/i.test(listing) &&
-      /ProKicker/i.test(listing) &&
-      /9\.9 HP[\s\S]{0,180}40\s*,\s*50\s*,\s*60\s*,\s*90\s+and\s+115 HP/i.test(listing) &&
+    /CT configurations/i.test(listing) &&
+      /9\.9, 40, 50, 60, 90 and 115 HP/i.test(listing) &&
+      /115 Pro XS/.test(listing) &&
+      /not an exhaustive factory lineup/.test(listing) &&
+      /Shaft length, controls and gearcase must be checked together for the exact model/.test(listing) &&
+      /\| 9\.9 FourStroke CT \|/.test(surface) &&
+      /\| 9\.9 ProKicker CT \|/.test(surface) &&
       canonicalCommandThrustHps.every((hp) => new RegExp(`(?:^|\\D)${String(hp).replace('.', '\\.')}\\b`).test(listing)) &&
       !/\b25\s*HP\b/i.test(listing),
-    `${label} must retain the cache-busted Canadian Command Thrust configurations as of August 8, 2026.`,
+    `${label} must retain the dated HBW Command Thrust catalog examples and exact-model qualifications as of September 5, 2026.`,
   );
   check(surface.includes('/pricing-reference'), `${label} must point readers to the live pricing reference.`);
 });
@@ -653,9 +829,9 @@ check(
   `Product-spec integrity must cover exactly nine route-scoped source/twin contracts; found ${checkedSpecRoutes.size}.`,
 );
 
+const reviewedPartsQualification = 'HBW stocks common Mercury service parts. The exact part still depends on the engine serial number and current stock.';
 const qualifiedFactoryRigging = 'Many aluminum boats sold here, including models from Lund, Crestliner, Princecraft and Lowe, are commonly rigged with Mercury from the factory. Rigging varies by brand, model and package, so confirm what your specific boat came with.';
-const ajaxPartsQualification = 'HBW probably carries the largest Mercury parts inventory in Ontario, but the exact part still depends on the engine serial number and current stock.';
-const originalMarketRelatedLink = '[Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
+const reviewedMarketRelatedLink = '[Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market';
 const marketRelatedOverride = blogClusters.match(/["']why-mercury-dominates-outboard-market["']\s*:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
 const marketRelatedOverrideSlugs = [...marketRelatedOverride.matchAll(/["']([a-z0-9-]+)["']/g)].map((match) => match[1]);
 const expectedMarketRelatedOverride = [
@@ -683,7 +859,7 @@ const superlativeRouteContracts = [
       [/Most aluminum fishing boats sold in Canada[\s\S]{0,120}come Mercury-rigged from the factory/i, 'unqualified factory-rigging claim'],
       [/Why do most aluminum boats sold in Ontario come Mercury-rigged\?/i, 'unqualified factory-rigging FAQ question'],
       [/factories rig with Mercury/i, 'unqualified factory-rigging FAQ answer'],
-      [/Why Mercury Is a Practical (?:Ontario Outboard Choice|Outboard Choice in Ontario)/i, 'unauthorized SEO retitle'],
+      [/Why Mercury Dominates the Outboard Market in 2026|one of the largest dealer networks in Canada|What makes Mercury the default choice in Ontario/i, 'retired unsupported metadata claims'],
     ],
     required: [
       [/Mercury often has practical advantages in Ontario[\s\S]{0,220}service support near where you boat/i, 'qualified quick answer'],
@@ -696,15 +872,15 @@ const superlativeRouteContracts = [
       [/Why is Mercury commonly paired with aluminum boats sold in Ontario\?[\s\S]{0,500}Factory rigging varies by brand, model and package/i, 'qualified factory-rigging FAQ'],
     ],
     sourceRequired: [
-      [/seoTitle:\s*["']Why Mercury Leads the Outboard Market in 2026 \| HBW["']/, 'original SEO title'],
-      [/title:\s*["']Why Mercury Dominates the Outboard Market in 2026["']/, 'original article title'],
-      [/description:\s*"Mercury Marine builds outboards from 2\.5 HP to 600 HP, with one of the largest dealer networks in Canada\. What makes Mercury the default choice in Ontario\."/, 'original description'],
-      [/content:\s*`# Why Mercury Outboards Make Practical Sense for Ontario Boaters \(And Where We Are Biased\)/, 'original body H1'],
+      [/seoTitle:\s*["']Why Mercury Makes Practical Sense for Ontario Boaters \| HBW["']/, 'reviewed SEO title'],
+      [/title:\s*["']Why Mercury Makes Practical Sense for Ontario Boaters \(2026\)["']/, 'reviewed article title'],
+      [/description:\s*"A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit\."/, 'reviewed description'],
+      [/content:\s*`# Why Mercury Outboards Make Practical Sense for Ontario Boaters \(And Where We Are Biased\)/, 'reviewed body H1'],
     ],
     twinRequired: [
-      [/^title: "Why Mercury Dominates the Outboard Market in 2026"$/m, 'original twin title'],
-      [/^description: "Mercury Marine builds outboards from 2\.5 HP to 600 HP, with one of the largest dealer networks in Canada\. What makes Mercury the default choice in Ontario\."$/m, 'original twin description'],
-      [/^# Why Mercury Dominates the Outboard Market in 2026$/m, 'original generated H1'],
+      [/^title: "Why Mercury Makes Practical Sense for Ontario Boaters \(2026\)"$/m, 'reviewed twin title'],
+      [/^description: "A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit\."$/m, 'reviewed twin description'],
+      [/^# Why Mercury Makes Practical Sense for Ontario Boaters \(2026\)$/m, 'reviewed generated H1'],
       [/## Related guides[\s\S]*\[Harris Boat Works: On Rice Lake Since 1947\]\(\/blog\/harris-boat-works-since-1947-rice-lake-institution\), the Harris Boat Works story since 1947/, 'Harris history link in the generated related guides'],
     ],
   },
@@ -719,7 +895,7 @@ const superlativeRouteContracts = [
       [/^## Where Mercury may fit better$/im, 'qualified comparison heading'],
       [/Mercury often benefits from dealer density[\s\S]{0,220}Check local service access, the exact boat package and resale demand before choosing/i, 'qualified comparison FAQ'],
     ],
-    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+    twinRequired: [[reviewedMarketRelatedLink, 'reviewed inbound market-guide label']],
   },
   {
     slug: 'mercury-vs-yamaha-vs-honda-reliability-2026',
@@ -745,7 +921,7 @@ const superlativeRouteContracts = [
       [/For Ontario freshwater, compare the nearby authorized service options for both brands/i, 'qualified saltwater FAQ'],
       [/long-running relationships with Canadian boat manufacturers[\s\S]{0,180}Factory rigging still varies by boat brand, model and package/i, 'qualified manufacturer-relationship FAQ'],
     ],
-    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+    twinRequired: [[reviewedMarketRelatedLink, 'reviewed inbound market-guide label']],
   },
   {
     slug: 'mercury-vs-suzuki-outboard-reliability-2026',
@@ -759,14 +935,15 @@ const superlativeRouteContracts = [
       [/Mercury-powered boats are common in the recreational market[\s\S]{0,220}compare current listings rather than assuming one brand always wins/i, 'qualified resale paragraph'],
       [/90 to 115 HP class[\s\S]{0,300}many nearby service options and a familiar resale market/i, 'qualified 90-to-115 HP comparison'],
     ],
-    twinRequired: [[originalMarketRelatedLink, 'original inbound market-guide label']],
+    twinRequired: [[reviewedMarketRelatedLink, 'reviewed inbound market-guide label']],
   },
   {
-    slug: 'mercury-dealer-ajax-ontario-hbw',
-    forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim']],
+    // Ajax post retired in Phase 1C; the GTA-east dealer contract now rides on Bowmanville.
+    slug: 'mercury-dealer-bowmanville-ontario-hbw',
+    forbidden: [[/Premier-tier parts depth and warranty authorization/i, 'unsupported Premier-tier parts-depth claim'], [/largest Mercury parts inventory in Ontario/i, 'unverified largest-inventory claim']],
     required: [
-      [ajaxPartsQualification, 'Jay-approved Ajax parts qualification'],
-      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
+      [reviewedPartsQualification, 'reviewed common-parts, serial-number and current-stock qualification'],
+      [/we don't offer indoor, heated, climate-controlled, summer, or year-round storage|do not offer indoor or heated boat storage[\s\S]{0,160}don't offer climate-controlled, summer, or year-round storage/i, 'winter-only storage denial'],
       [/physical service resumes when we reopen in early April/i, 'protected early-April reopening wording'],
     ],
   },
@@ -927,11 +1104,13 @@ check(
   /## What This Means on Ontario Water/.test(mercury115Review),
   'The Mercury 115 review must keep its Ontario-use section.',
 );
+for (const surface of [mercury115Review, mercury115Twin]) {
 check(
-  /mercurymarine\.com\/ca\/en\/lifestyle\/dockline\/mercury-releases-new-mercury-40---115hp-tiller/.test(mercury115Review) &&
-    /boats\.com\/reviews\/new-2016-outboards-mercury-and-seven-marine-make-news-in-miami/.test(mercury115Review),
-  'The Mercury 115 review must retain its Canadian family-history and direct 2016 launch sources.',
+  /mercurymarine\.com\/us\/en\/about-us\/news\/mercury-unveils-all-new-tiller-for-40-115hp-outboards/.test(surface) && /built the current 2\.1-litre 75 through 115 horsepower EFI FourStroke family since 2014/.test(surface) && /115 Pro XS joined it in 2016/.test(surface) &&
+    /boats\.com\/reviews\/new-2016-outboards-mercury-and-seven-marine-make-news-in-miami/.test(surface),
+  'The Mercury 115 review must retain its verified official family-history and direct 2016 launch sources.',
 );
+}
 check(
   !/mercurymarine\.com\/ch\/fr\/about-us\/news\/mercury-marine-announces-new-150-pro-xs-outboard/.test(mercury115Review),
   'The Mercury 115 review must not cite the Swiss-French 150 Pro XS article as its launch source.',
@@ -1016,23 +1195,12 @@ check(
   'Repower-process article contains a retired percentage deposit, U.S.-associated financing name, or off-site service promise.',
 );
 check(
-  /drop-off only and does not provide boat pickup, hauling, delivery, or mobile service/.test(repowerProcessArticle),
-  'Repower-process article must preserve the drop-off-only logistics boundary.',
+  /We can generally arrange boat pickup\. Ask us about availability for your boat and location\./.test(repowerProcessArticle) &&
+    /HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service/.test(repowerProcessArticle),
+  'Repower-process article must preserve conditional boat pickup and the no-delivery / no-mobile boundary.',
 );
 const articleSource = (slug) =>
   blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
-const mercury90Vs115Article = articleSource('mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat');
-check(
-  /Command Thrust: Who It's Actually For/.test(mercury90Vs115Article) &&
-    /standard gearcase is the right choice for a planing aluminum or fibreglass V-hull/.test(mercury90Vs115Article),
-  'The 90-vs-115 guide must preserve the pontoon/workboat Command Thrust boundary for planing V-hulls.',
-);
-check(
-  !/(?:sensible upgrade that we routinely recommend|CT gearcase is worth considering on either engine|especially with Command Thrust|Pairing it with Command Thrust)/i.test(
-    mercury90Vs115Article,
-  ) && !/6 mph faster/i.test(mercury90Vs115Article),
-  'The 90-vs-115 guide must not recommend Command Thrust as a V-hull load upgrade or hard-code the boat-specific speed delta.',
-);
 const mercury115Vs150Article = articleSource('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
 check(
   /we do not use Command Thrust to make a 115 behave like a 150/.test(mercury115Vs150Article),
@@ -1044,32 +1212,8 @@ check(
 );
 const dealerHeroCanon = [
   {
-    slug: 'mercury-dealer-markham-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-richmond-hill-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-northumberland-county-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-mississauga-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-vaughan-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
-  },
-  {
     slug: 'mercury-dealer-whitby-ontario-hbw',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
-  },
-  {
-    slug: 'mercury-dealer-oshawa-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
   },
 ];
 for (const { slug, image } of dealerHeroCanon) {
@@ -1117,7 +1261,7 @@ for (const { slug, image } of authenticatedServiceHeroCanon) {
     `${slug} must not regress to the synthetic Mercury service-bay hero.`,
   );
 }
-for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {
+for (const slug of ['mercury-dealer-whitby-ontario-hbw']) {
   const source = articleSource(slug);
   check(
     /standard repower lineup is FourStroke and Pro XS/.test(source) &&
@@ -1165,8 +1309,16 @@ check(
 );
 
 for (const file of blogMarkdownFiles) {
-  check(!/\{\{LIVE_RATE(?:_PCT)?\}\}/.test(read(file)), `${file} contains an unresolved live-rate placeholder.`);
+  check(!/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read(file)), `${file} contains an unresolved live token placeholder.`);
 }
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('public/blog-index.json')),
+  'public/blog-index.json contains an unresolved live token placeholder.',
+);
+check(
+  !/\{\{(?:LIVE_RATE(?:_PCT)?|PRICING_ASOF)\}\}/.test(read('supabase/functions/_shared/blog-index-generated.ts')),
+  'supabase/functions/_shared/blog-index-generated.ts contains an unresolved live token placeholder.',
+);
 for (const file of walk('public/case-studies', (path) => path.endsWith('.md'))) {
   const markdown = read(file);
   check(/is_illustrative:\s*true/.test(markdown), `${file} is missing illustrative frontmatter.`);

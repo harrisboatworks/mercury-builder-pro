@@ -1,8 +1,11 @@
+import { useEffect, useRef } from 'react';
 import { X, ChevronRight, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import type { User } from '@supabase/supabase-js';
 import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo-white.png';
+
+export const SITE_MOBILE_MENU_ID = 'site-mobile-menu';
 
 interface Props {
   isOpen: boolean;
@@ -29,12 +32,69 @@ const NAV_LINKS = [
 
 export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
   const location = useLocation();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
   const isActive = (to: string) =>
     to === '/' ? location.pathname === '/' : location.pathname === to || location.pathname.startsWith(to + '/');
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusables = () => Array.from(menuRef.current?.querySelectorAll<HTMLElement>(focusableSelector) ?? []);
+    const frame = requestAnimationFrame(() => focusables()[0]?.focus());
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onCloseRef.current();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+
+      const items = focusables();
+      if (items.length === 0) {
+        event.preventDefault();
+        menuRef.current?.focus();
+        return;
+      }
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previouslyFocused?.focus();
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] bg-[#050E1C] text-[#F5F1EA] flex flex-col overflow-hidden">
+    <div
+      id={SITE_MOBILE_MENU_ID}
+      ref={menuRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      tabIndex={-1}
+      className="fixed inset-0 z-[80] bg-[#050E1C] text-[#F5F1EA] flex flex-col overflow-hidden"
+    >
       {/* Ambient gold glow */}
       <div
         aria-hidden
@@ -63,6 +123,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
           />
         </Link>
         <button
+          type="button"
           onClick={onClose}
           className="p-2 -mr-2 text-[#F5F1EA] hover:bg-[#F5F1EA]/10 rounded transition-colors shrink-0"
           aria-label="Close menu"

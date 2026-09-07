@@ -1,12 +1,17 @@
 interface GoogleMapEmbedProps {
   className?: string;
   height?: string;
+  center?: {
+    latitude: number;
+    longitude: number;
+  };
 }
 
-export function GoogleMapEmbed({ className = '', height = '100%' }: GoogleMapEmbedProps) {
-  // Using a proper embed URL for Harris Boat Works location
-  // Coordinates: 44.1167, -78.25 (approximate for Gores Landing area)
-  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyCUrKdC-eiCSlmq2TK0I2JqcXPQxTV-9VY&q=Harris+Boat+Works,Gores+Landing,ON&zoom=14`;
+export function GoogleMapEmbed({ className = '', height = '100%', center }: GoogleMapEmbedProps) {
+  const apiKey = 'AIzaSyCUrKdC-eiCSlmq2TK0I2JqcXPQxTV-9VY';
+  const embedUrl = center
+    ? `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${center.latitude},${center.longitude}&zoom=14&maptype=roadmap`
+    : `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Harris+Boat+Works,Gores+Landing,ON&zoom=14`;
 
   return (
     <div className={`relative overflow-hidden rounded-xl bg-muted ${className}`} style={{ height }}>

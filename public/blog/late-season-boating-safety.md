@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-07-23
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-07-23
+date_modified: 2026-09-06
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
 > **Quick answer:** In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
 
 ---
-
-### Full Article
 
 The shoulder seasons on Ontario lakes have a lot going for them, fewer boats, calmer water in the mornings, better walleye and bass fishing. What they also have is cold water, changing weather, and a margin for error that shrinks fast.
 
@@ -112,7 +110,7 @@ A running motor gets you home. A failed motor in October on a cold lake is not t
 
 Cold starts are harder than warm-weather starts. Allow proper warm-up time. Check fuel lines for stiffness. Carry spare spark plugs.
 
-If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and Mercruiser.
+If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -142,9 +140,9 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 - You cannot dress appropriately for the conditions
 - The motor is unreliable in cold
 
-When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. The battery may remain in the boat if disconnected and maintained according to its maker's instructions.
+When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
-Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
+Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
 
 ---
 
@@ -181,7 +179,7 @@ Absolutely. Cold water shock can incapacitate you in seconds. You may not have t
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
-- [Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 - [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
 - [Mercury 100-Hour Service Cost in Ontario: What's Included (2026)](/blog/mercury-100-hour-service-cost-ontario), what the 100-hour service covers
 

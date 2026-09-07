@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -149,6 +150,7 @@ serve(async (req) => {
         await resend.emails.send({
           from: "Harris Boat Works <noreply@mercuryrepower.ca>",
           to: [customerEmail],
+          bcc: [GROK_BOT_AGENTMAIL],
           replyTo: "info@harrisboatworks.ca",
           subject: `You are subscribed to ${motorName} promotions`,
           html,

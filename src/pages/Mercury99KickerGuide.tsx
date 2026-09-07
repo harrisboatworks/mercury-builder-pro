@@ -10,7 +10,7 @@ const FAQS = [
   {
     question: "What's the difference between the Mercury 9.9 and the ProKicker?",
     answer:
-      'Same 9.9 powerhead, different mission. The ProKicker adds EFI, the Command Thrust gearcase, a high-thrust four-blade prop, and power tilt, all tuned for precise low-speed trolling as a kicker motor. The standard 9.9 is the all-purpose version for tinnies and tenders.',
+      'Same 9.9 powerhead, different mission. The ProKicker adds the Command Thrust gearcase, a high-thrust four-blade prop, and power tilt, all tuned for precise low-speed trolling as a kicker motor. The standard 9.9 is the all-purpose version for tinnies and tenders.',
   },
   {
     question: 'How much does a Mercury 9.9 cost in Canada?',

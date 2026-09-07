@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,11 +8,11 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)"
-description: "Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works."
+description: "What dated U.S. and North American market samples do and do not tell Ontario boat buyers in 2026, plus the verified luxury-tax change."
 category: "Market Insight"
 date_published: 2026-02-06
-date_modified: 2026-08-02
-keywords: ["2026 boating market","ontario boat buying","boat market forecast","luxury tax boats canada","boat dealer inventory","used boat market"]
+date_modified: 2026-09-06
+keywords: ["2026 boating market","buy boat canada 2026","best time to buy boat","ontario boat buying","boat market forecast","luxury tax boats canada","boat dealer inventory","used boat market"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
@@ -21,34 +21,34 @@ revenue_driver: repower
 
 # Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)
 
-> Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works.
+> What dated U.S. and North American market samples do and do not tell Ontario boat buyers in 2026, plus the verified luxury-tax change.
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
 
 ## What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, and used-boat values have corrected. The federal luxury tax is no longer payable on subject vessels effective November 5, 2025. Bill C-15 received Royal Assent on March 26, 2026. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, and prices have stopped climbing. Dated U.S. and North American samples are background, not a measure of Ontario prices or HBW sales. The federal luxury tax is no longer payable on subject vessels effective November 5, 2025. Bill C-15 received Royal Assent on March 26, 2026. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
 For two years after the 2020 boating boom, Ontario buyers faced a frustrating market: too little inventory, prices at or above MSRP, take-it-or-leave-it dealers. That market is gone.
 
-NMMA estimated U.S. new powerboat retail unit sales dropped roughly 8 to 9% in 2025, following a similar decline in 2024. Not a collapse, a correction back toward pre-pandemic norms after two years of unsustainable volume.
+In its January 8, 2026 release, NMMA estimated that U.S. new powerboat retail sales fell 8% to 10% in 2025, to about 215,000–225,000 units. This is a U.S. industry estimate, not a measure of Ontario prices or HBW sales.
 
 Overall boating expenditure remained strong through 2025. People kept boating and spending on service, parts, and upgrades. They just got more selective on major new-boat purchases.
 
 ## What dealer inventories are telling you
 
-Industry survey data from the Baird/MRAA Pulse Report: roughly 71% of dealers report new-boat inventory "too high." Service department revenue is the most widely expected growth area for 2026.
+The January 2026 Pulse Report, published February 27, surveyed 50 retailers in North America. It reported 46% considered new-boat inventory too high, down from 71% in December. That describes a dated survey sample; it does not establish the stock position of every Ontario dealer.
 
-"Too high" new inventory is good news for buyers. Selection is back. Dealers are more motivated on pricing.
+A "too high" reading in that sample is still useful background for buyers looking at selection. It is not a statement about every local lot.
 
-Used boat prices have pulled back 5 to 10% from pandemic highs.
+Used-boat pricing varies by segment, age, condition and comparison period. Published U.S. data should be treated as background rather than a valuation for a Rice Lake boat. Compare recent local asking prices, completed-sale evidence where available, condition and documented service history before deciding whether a particular boat is good value.
 
 *2026 Ontario boat market ranges*
 
@@ -94,7 +94,7 @@ Best dollar-per-season value if the hull and trailer are sound. New motor, new w
 
 ## The segments that matter on Rice Lake
 
-The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
+Used-boat pricing varies by segment, age, condition and comparison period. Published U.S. data should be treated as background rather than a valuation for a Rice Lake boat. Compare recent local asking prices, completed-sale evidence where available, condition and documented service history before deciding whether a particular boat is good value.
 
 ## The luxury tax on subject vessels was repealed
 
@@ -106,11 +106,41 @@ If you are shopping for a vessel above the threshold, the tax no longer applies 
 
 The Bank of Canada policy rate eased through a series of cuts in 2025. Those cuts are filtering through to marine lending. On a typical $60,000 boat package, even a 1% rate reduction can take $30 to 40 per month off a five-year loan.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
+## Tariffs and the exchange rate
+
+Most major outboard brands, Mercury included, assemble or source components in the United States, and most aluminum boat brands carry significant U.S. content. That means two things for Canadian buyers: a weaker Canadian dollar puts upward pressure on next-model-year pricing, and any escalation in Canada-U.S. trade tensions tends to raise boat prices over the following 12 to 24 months, not lower them. Waiting for a tariff resolution as a price-drop strategy is a bet on a political outcome nobody can promise. For clarity: every price on [mercuryrepower.ca](https://www.mercuryrepower.ca) is in Canadian dollars, HST extra.
 
 ## The case for 2026 pre-owned
 
-Pre-owned boats typically account for about 80% of all boat transactions in a given year. With prices 5 to 10% below pandemic highs, the 2026 used market is worth a serious look. Every used boat at HBW gets inspected before it goes up for sale. Current inventory at [harrisboatworks.ca](https://harrisboatworks.ca).
+Pre-owned boats typically account for about 80% of all boat transactions in a given year. Used-boat pricing varies by segment, age, condition and comparison period, so treat published U.S. percentages as background rather than a Rice Lake valuation. Every used boat at HBW gets inspected before it goes up for sale. Current inventory at [harrisboatworks.ca](https://harrisboatworks.ca).
+
+*2026 timing decision*
+
+### Buy this season, or wait for fall pricing?
+
+The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+
+#### You need a boat for this season
+
+- You sold or lost your previous boat and want water time in 2026
+- You have a family vacation or cottage booked that needs the boat
+- Current inventory has something close to what you want
+- You can pay or finance now without stretching
+
+**Buy now, the market is what it is. Lose a season chasing a discount.**
+
+#### You can wait until late fall
+
+- You have a working boat that will get through 2026
+- You want a specific model or HP not currently in stock
+- You want to negotiate from a position of patience
+- Fall and year-end dealer flexibility matters to you
+
+**Wait. Off-season pricing and trade-in flexibility are real.**
+
+A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
 
 ## What this means for HBW customers
 
@@ -126,14 +156,14 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 ## Sources
 
 - Canada Revenue Agency, [Luxury Tax Notice LTN5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ltn5/ltn5-luxury-tax-not-payable-subject-aircraft-and-vessels.html) (updated April 2026; Royal Assent March 26, 2026).
-- NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
+- NMMA, January 8, 2026 release on estimated U.S. new powerboat retail sales in 2025.
 - Bank of Canada, policy rate (series of cuts in 2025).
 
 ## FAQs
 
 ### Is 2026 a good time to buy a boat in Ontario?
 
-Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, used prices have corrected from pandemic highs, and financing rates are easing.
+Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, and financing rates are easing. Dated U.S. and North American samples are background, not a measure of Ontario prices or HBW sales.
 
 ### Did Canada really repeal the luxury tax on boats?
 
@@ -141,15 +171,27 @@ Yes. Canada Revenue Agency Luxury Tax Notice LTN5 confirms that the luxury tax i
 
 ### Are used boat prices coming down in Ontario?
 
-Used boat prices have softened an estimated 5 to 10% from 2021 to 2022 highs. Prices are still above pre-pandemic levels in many categories, but the correction has happened.
+Used-boat pricing varies by segment, age, condition and comparison period. Published U.S. data should be treated as background rather than a valuation for a Rice Lake boat. Compare recent local asking prices, completed-sale evidence where available, condition and documented service history before deciding whether a particular boat is good value.
 
 ### Why are new boat sales down if people are still boating?
 
 New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.
 
+### What is the best time of year to buy a boat in Canada?
+
+Fall (September to November) typically offers the best new-boat opportunities: dealers are clearing model-year inventory and are more open to negotiating on leftover stock. Winter boat shows (January and February) bring promotional financing programs. Spring has the widest selection but also peak demand, so dealers are less motivated to discount.
+
+### How do tariffs affect boat prices in Canada in 2026?
+
+Most outboards and many boat brands sold in Canada carry significant U.S.-manufactured content, so tariff costs on U.S.-origin goods are typically passed through to buyers within one to two model cycles. Any escalation in Canada-U.S. trade tensions tends to raise boat prices over the following 12 to 24 months. Waiting for a tariff resolution as a price-drop strategy assumes a political outcome that is uncertain.
+
+### Are the prices on mercuryrepower.ca in Canadian dollars?
+
+Yes. Every price on mercuryrepower.ca is in Canadian dollars, with HST extra. The configurator shows live CAD pricing for the full Mercury lineup, no phone call required.
+
 ### Is Mercury allocation healthy for 2026?
 
-From our position as a Mercury Premier dealer, new motor allocation is healthy.
+From our position as a Mercury Premier dealer, allocation has looked healthy on our recent orders, though it shifts by model and season, so confirm current availability when you call.
 
 ## Related guides
 

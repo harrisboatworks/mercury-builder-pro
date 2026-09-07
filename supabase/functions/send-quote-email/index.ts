@@ -4,25 +4,61 @@ import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
-import { encodeBase64 } from "../_shared/quote-pdf-attachment.ts";
+import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 import {
-  executeQuoteEmailFlow,
-  type QuoteEmailPayload,
-} from "../_shared/quote-email-flow.ts";
+  CONSULTATION_DOCUMENTS_BUCKET,
+  ConsultationDocumentRequestError,
+  ConsultationDocumentUnavailableError,
+  assertConsultationStoredDocument,
+  canonicalConsultationDocumentPath,
+  constantTimeEqual,
+  sha256Hex as sha256Bytes,
+  validateQuotePdf,
+} from "../_shared/consultation-document-policy.ts";
 import {
-  deriveIdempotencyKey,
-  sha256Hex,
-  normalizeRecipient,
+  CONSULTATION_ATTACHMENT_STATEMENT,
+  CONSULTATION_CTA_LABEL,
+  assertConsultationAccessUrl,
+  assertConsultationDocumentId,
+  assertResolvedConsultationTemplate,
+  buildQuoteEmailDestinations,
+  rejectConsultationCallerPdfUrl,
+  replaceConsultationTemplateVariables,
+} from "../_shared/consultation-quote-email.ts";
+import {
+  encodeBase64,
+  fetchQuotePdfAttachment,
+  QuotePdfRejected,
+  resolveQuotePdfUrl,
+} from "../_shared/quote-pdf-attachment.ts";
+import {
   claimQuoteEmailDelivery,
   completeQuoteEmailDelivery,
+  deriveIdempotencyKey,
+  EmailSendFailed,
+  normalizeRecipient,
+  sha256Hex,
+  verifyResendResult,
 } from "../_shared/quote-email-delivery.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
+const HBW_ADMIN_QUOTE_INBOX = 'info@harrisboatworks.ca';
+const GROK_BOT_QUOTE_SENDER = 'Grok Bot - Mercury Repower <grokbot@mercuryrepower.ca>';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-internal-secret',
 };
+
+function isAuthorizedInternalRequest(req: Request): boolean {
+  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  const internalSecret = Deno.env.get('EDGE_INTERNAL_SECRET') || Deno.env.get('CRON_SECRET');
+  const authorization = req.headers.get('authorization') || '';
+  const suppliedSecret = req.headers.get('x-internal-secret') || '';
+  if (internalSecret && suppliedSecret && suppliedSecret === internalSecret) return true;
+  return Boolean(serviceRoleKey && authorization === `Bearer ${serviceRoleKey}`);
+}
 
 // Input validation schema
 const leadDataSchema = z.object({
@@ -41,6 +77,8 @@ const quoteEmailSchema = z.object({
   motorModel: z.string().max(200),
   totalPrice: z.number().min(0).max(2000000),
   pdfUrl: z.string().url().max(2000).optional(),
+  documentId: z.string().uuid().optional(),
+  documentAccessUrl: z.string().url().max(2000).optional(),
   emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
   leadData: leadDataSchema,
   idempotencyKey: z.string().trim().min(8).max(200).optional(),
@@ -75,6 +113,46 @@ function replaceTemplateVariables(template: string, data: QuoteEmailRequest): st
 /** Strip CRLF so a DB-managed subject cannot inject mail headers. */
 function sanitizeEmailSubject(subject: string): string {
   return subject.replace(/[\r\n]+/g, " ").trim();
+}
+
+function jsonResponse(status: number, body: Record<string, unknown>): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  });
+}
+
+function generateConsultationQuoteDeliveryEmail(
+  data: QuoteEmailRequest,
+  documentAccessUrl: string,
+): string {
+  const rows = [
+    { label: "Quote #", value: esc(data.quoteNumber) },
+    { label: "Motor", value: esc(data.motorModel) },
+    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+  ];
+  const body = `
+    <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
+    <p style="margin:0 0 14px 0;">Thanks for your interest. Here is the quote we prepared for you.</p>
+    ${detailsCard(rows)}
+    <p style="margin:18px 0 0 0;color:#6b7280;font-size:14px;">${CONSULTATION_ATTACHMENT_STATEMENT}</p>
+    <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What is next</h2>
+    <ul style="margin:0;padding-left:20px;color:#1f2430;">
+      <li style="margin:0 0 8px 0;">Review the details at your own pace.</li>
+      <li style="margin:0 0 8px 0;">Reply with any questions about rigging, install, or financing.</li>
+      <li style="margin:0 0 8px 0;">When you are ready, we can lock in the price and schedule pickup at our Gores Landing shop.</li>
+    </ul>
+    <p style="margin:22px 0 0 0;">This quote is valid for 30 days.</p>
+    <p style="margin:16px 0 0 0;">Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
+  `;
+  return buildEmail({
+    preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
+    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    bodyHtml: body,
+    ctaText: CONSULTATION_CTA_LABEL,
+    ctaUrl: documentAccessUrl,
+    footerNote: "Pickup is in person at our Gores Landing shop. Please bring valid photo ID.",
+  });
 }
 
 function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
@@ -163,9 +241,12 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Block requests from non-allowed origins (anti brand-abuse / phishing)
-  if (!isAllowedOrigin(req)) {
-    console.log('[send-quote-email] Forbidden origin:', req.headers.get('origin'), req.headers.get('referer'));
+  const internalRequest = isAuthorizedInternalRequest(req);
+
+  // Block browser requests from non-allowed origins. Server-owned consultation
+  // delivery uses the internal secret / service-role bearer instead.
+  if (!internalRequest && !isAllowedOrigin(req)) {
+    console.log('[send-quote-email] Forbidden origin');
     return forbiddenOriginResponse(corsHeaders);
   }
 
@@ -181,25 +262,40 @@ serve(async (req) => {
     const validationResult = quoteEmailSchema.safeParse(rawData);
     if (!validationResult.success) {
       console.log('Validation failed:', validationResult.error.errors);
-      return new Response(JSON.stringify({
+      return jsonResponse(400, {
         success: false,
         error: 'Invalid email data',
         details: validationResult.error.errors.map(e => ({
           field: e.path.join('.'),
           message: e.message
         }))
-      }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
     const emailData = validationResult.data;
+    const isConsultationPath = Boolean(emailData.documentId);
+
+    if (isConsultationPath) {
+      if (!internalRequest) {
+        return jsonResponse(403, { success: false, error: 'Forbidden' });
+      }
+      try {
+        rejectConsultationCallerPdfUrl(emailData.pdfUrl);
+        assertConsultationDocumentId(emailData.documentId);
+        assertConsultationAccessUrl(emailData.documentAccessUrl);
+      } catch (consultationError) {
+        return jsonResponse(400, {
+          success: false,
+          error: consultationError instanceof Error ? consultationError.message : 'Invalid consultation email',
+        });
+      }
+    }
 
     const ipAllowed = await checkRateLimit(req, {
       action: 'send_quote_email_ip',
       maxAttempts: 30,
       windowMinutes: 60,
+      failClosed: isConsultationPath,
     });
     if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
 
@@ -208,14 +304,24 @@ serve(async (req) => {
       action: 'send_quote_email_recipient',
       maxAttempts: 8,
       windowMinutes: 60,
+      failClosed: isConsultationPath,
     });
     if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
-    
-    console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
 
-    // Fetch the active DB template ONCE. Fetching is safe here; RENDERING is
-    // deferred into renderEmail below so nothing is composed until the payload
-    // has had an unusable pdfUrl stripped.
+    const isAdminNotification = emailData.emailType === 'admin_quote_notification';
+    const destinations = buildQuoteEmailDestinations({
+      isConsultationPath,
+      isAdminNotification,
+      customerEmail: emailData.customerEmail,
+      adminRecipients: [GROK_BOT_AGENTMAIL, HBW_ADMIN_QUOTE_INBOX],
+      auditBccRecipient: GROK_BOT_AGENTMAIL,
+    });
+
+    console.log('Sending email:', emailData.emailType);
+
+    // Fetch the active DB template ONCE. Fetching is safe here; RENDERING waits
+    // until a caller pdfUrl has been validated or stripped so a rejected URL
+    // cannot appear in the composed HTML.
     let dbTemplate: { subject: string; html_content: string } | null = null;
     try {
       const { data: template, error: templateError } = await supabase
@@ -226,96 +332,266 @@ serve(async (req) => {
         .single();
       if (template && !templateError) {
         dbTemplate = template;
-        console.log('Using database template for:', emailData.emailType);
       }
     } catch (_templateError) {
       console.log('No database template found, using fallback for:', emailData.emailType);
     }
 
-    function renderEmailFor(effective: QuoteEmailRequest): { subject: string; html: string } {
-      if (dbTemplate) {
-        return {
-          subject: sanitizeEmailSubject(
-            dbTemplate.subject
-              .replace(/{{customerName}}/g, effective.customerName)
-              .replace(/{{quoteNumber}}/g, effective.quoteNumber)
-              .replace(/{{motorModel}}/g, effective.motorModel)
-              .replace(/{{totalPrice}}/g, effective.totalPrice.toLocaleString()),
-          ),
-          html: replaceTemplateVariables(dbTemplate.html_content, effective),
-        };
-      }
+    let attachmentStatus = 'none';
+    let callerPdfBytes: Uint8Array | null = null;
+    let effectiveEmailData: QuoteEmailRequest = emailData;
 
-      switch (effective.emailType) {
-        case 'follow_up':
-        case 'reminder':
-          return {
-            subject: sanitizeEmailSubject(`Following up on your Mercury ${effective.motorModel} quote, ref ${effective.quoteNumber}`),
-            html: generateFollowUpEmail(effective),
-          };
-        case 'admin_quote_notification':
-          return {
-            subject: sanitizeEmailSubject(`[QUOTE] ${effective.leadData?.customerName || "Lead"} - ${effective.motorModel} - $${effective.totalPrice?.toLocaleString()}`),
-            html: generateAdminNotificationEmail(effective),
-          };
-        default:
-          return {
-            subject: sanitizeEmailSubject(`Your Mercury ${effective.motorModel} quote, ref ${effective.quoteNumber} | Harris Boat Works`),
-            html: generateQuoteDeliveryEmail(effective),
-          };
+    if (!isConsultationPath && emailData.pdfUrl) {
+      const resolved = resolveQuotePdfUrl(emailData.pdfUrl);
+      if (!resolved.url) {
+        console.log('[send-quote-email] pdf url rejected', resolved.reason);
+        return jsonResponse(400, {
+          success: false,
+          error: 'Invalid PDF URL',
+          reason: resolved.reason,
+        });
+      }
+      try {
+        const attachment = await fetchQuotePdfAttachment(resolved.url.toString());
+        callerPdfBytes = attachment.bytes;
+        attachmentStatus = `attached:${attachment.byteLength}`;
+      } catch (attachmentError) {
+        attachmentStatus = attachmentError instanceof QuotePdfRejected
+          ? `rejected:${attachmentError.reason}`
+          : 'rejected:fetch-error';
+        console.log('[send-quote-email] pdf attachment refused', attachmentStatus);
+        callerPdfBytes = null;
+        effectiveEmailData = { ...emailData, pdfUrl: undefined };
       }
     }
 
-    // Control flow lives in _shared/quote-email-flow.ts so every branch is
-    // reachable from vitest. Critically, the attachment is resolved and fetched
-    // BEFORE any HTML is rendered: an earlier draft rendered the body (with a
-    // CTA whose href was the caller-supplied pdfUrl) and validated afterwards,
-    // so a rejected URL still shipped a customer-facing link to attacker input.
-    const flowResult = await executeQuoteEmailFlow(emailData as QuoteEmailPayload, {
-      renderEmail: (payload) => renderEmailFor(payload as unknown as QuoteEmailRequest),
-      claim: async ({ idempotencyKey, recipientHash }) =>
-        await claimQuoteEmailDelivery(supabase, {
-          idempotencyKey,
-          emailType: emailData.emailType,
-          quoteNumber: emailData.quoteNumber,
-          quoteId: emailData.leadData?.quoteId,
-          recipientHash,
-          initiator: emailData.emailType === 'admin_quote_notification' ? 'admin' : 'customer',
-        }),
-      complete: async (input) => await completeQuoteEmailDelivery(supabase, input),
-      sendEmail: async (options) => await resend.emails.send({
-        from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
-        replyTo: 'info@harrisboatworks.ca',
-        ...options,
-      }) as unknown as Awaited<ReturnType<typeof resend.emails.send>>,
-      buildIdempotencyKey: (payload) => deriveIdempotencyKey({
-        suppliedKey: payload.idempotencyKey,
-        emailType: payload.emailType,
-        quoteNumber: payload.quoteNumber,
-        quoteId: payload.leadData?.quoteId,
-        recipient: payload.customerEmail,
-      }),
-      hashRecipient: (email) => sha256Hex(normalizeRecipient(email)),
-      encodeAttachment: encodeBase64,
-      log: (message, detail) => console.log(`[send-quote-email] ${message}`, detail ?? ''),
+    let subject: string;
+    let htmlContent: string;
+
+    try {
+      if (dbTemplate) {
+        if (isConsultationPath) {
+          const documentAccessUrl = assertConsultationAccessUrl(effectiveEmailData.documentAccessUrl);
+          subject = sanitizeEmailSubject(replaceConsultationTemplateVariables(dbTemplate.subject, {
+            customerName: effectiveEmailData.customerName,
+            quoteNumber: effectiveEmailData.quoteNumber,
+            motorModel: effectiveEmailData.motorModel,
+            totalPrice: effectiveEmailData.totalPrice,
+            documentAccessUrl,
+          }, { html: false }));
+          htmlContent = replaceConsultationTemplateVariables(dbTemplate.html_content, {
+            customerName: effectiveEmailData.customerName,
+            quoteNumber: effectiveEmailData.quoteNumber,
+            motorModel: effectiveEmailData.motorModel,
+            totalPrice: effectiveEmailData.totalPrice,
+            documentAccessUrl,
+          });
+          assertResolvedConsultationTemplate(htmlContent, documentAccessUrl);
+        } else if (dbTemplate.html_content.includes('{{documentAccessUrl}}')) {
+          throw new Error('Template not found, using fallback');
+        } else {
+          subject = sanitizeEmailSubject(replaceTemplateVariables(dbTemplate.subject, effectiveEmailData));
+          htmlContent = replaceTemplateVariables(dbTemplate.html_content, effectiveEmailData);
+        }
+      } else {
+        throw new Error('Template not found, using fallback');
+      }
+    } catch (templateError) {
+      if (isConsultationPath) {
+        if (templateError instanceof ConsultationDocumentRequestError) {
+          return jsonResponse(400, { success: false, error: templateError.message });
+        }
+        const documentAccessUrl = assertConsultationAccessUrl(effectiveEmailData.documentAccessUrl);
+        subject = sanitizeEmailSubject(`Your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber} | Harris Boat Works`);
+        htmlContent = generateConsultationQuoteDeliveryEmail(effectiveEmailData, documentAccessUrl);
+        assertResolvedConsultationTemplate(htmlContent, documentAccessUrl);
+      } else {
+        console.log('No database template found, using fallback for:', effectiveEmailData.emailType);
+        switch (effectiveEmailData.emailType) {
+          case 'quote_delivery':
+            subject = sanitizeEmailSubject(`Your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber} | Harris Boat Works`);
+            htmlContent = generateQuoteDeliveryEmail(effectiveEmailData);
+            break;
+          case 'follow_up':
+          case 'reminder':
+            subject = sanitizeEmailSubject(`Following up on your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber}`);
+            htmlContent = generateFollowUpEmail(effectiveEmailData);
+            break;
+          case 'admin_quote_notification':
+            subject = sanitizeEmailSubject(`[QUOTE] ${effectiveEmailData.leadData?.customerName || "Lead"} - ${effectiveEmailData.motorModel} - $${effectiveEmailData.totalPrice?.toLocaleString()}`);
+            htmlContent = generateAdminNotificationEmail(effectiveEmailData);
+            break;
+          default:
+            subject = sanitizeEmailSubject(`Your Mercury Motor Quote #${effectiveEmailData.quoteNumber} from Harris Boat Works`);
+            htmlContent = generateQuoteDeliveryEmail(effectiveEmailData);
+        }
+      }
+    }
+
+    // Keep customer delivery branded as HBW. Internal quote alerts go to the
+    // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
+    const emailOptions: {
+      from: string;
+      to: string[];
+      replyTo: string;
+      bcc?: string[];
+      subject: string;
+      html: string;
+      attachments?: Array<{ filename: string; content: string }>;
+      headers?: Record<string, string>;
+    } = {
+      from: isAdminNotification
+        ? GROK_BOT_QUOTE_SENDER
+        : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
+      to: destinations.to,
+      replyTo: 'info@harrisboatworks.ca',
+      subject: subject,
+      html: htmlContent,
+    };
+    if (destinations.bcc) {
+      emailOptions.bcc = destinations.bcc;
+    }
+
+    if (isConsultationPath) {
+      const documentId = assertConsultationDocumentId(effectiveEmailData.documentId);
+      const { data: documentRow, error: documentError } = await supabase
+        .from("consultation_documents")
+        .select("id, storage_key, sha256, byte_size, content_type, quote_number")
+        .eq("id", documentId)
+        .maybeSingle();
+      if (documentError || !documentRow) {
+        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+      }
+      let binding: { path: string; sha256: string };
+      try {
+        binding = assertConsultationStoredDocument({
+          documentId,
+          storageKey: documentRow.storage_key,
+          sha256: documentRow.sha256,
+          byteSize: documentRow.byte_size,
+          contentType: documentRow.content_type,
+        });
+      } catch {
+        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+      }
+      const { data: object, error: downloadError } = await supabase.storage
+        .from(CONSULTATION_DOCUMENTS_BUCKET)
+        .download(binding.path);
+      if (downloadError || !object) {
+        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+      }
+      const pdfBytes = new Uint8Array(await object.arrayBuffer());
+      try {
+        validateQuotePdf(pdfBytes, object.type || documentRow.content_type || "application/pdf");
+        const digest = await sha256Bytes(pdfBytes);
+        if (
+          pdfBytes.byteLength !== documentRow.byte_size
+          || !constantTimeEqual(digest, binding.sha256)
+          || binding.path !== canonicalConsultationDocumentPath(documentId)
+        ) {
+          throw new ConsultationDocumentUnavailableError();
+        }
+      } catch {
+        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+      }
+      attachmentStatus = `attached:${pdfBytes.byteLength}`;
+      emailOptions.attachments = [{
+        filename: `Quote-${effectiveEmailData.quoteNumber}.pdf`,
+        content: encodeBase64(pdfBytes),
+      }];
+    } else if (callerPdfBytes) {
+      emailOptions.attachments = [{
+        filename: `Quote-${effectiveEmailData.quoteNumber}.pdf`,
+        content: encodeBase64(callerPdfBytes),
+      }];
+    }
+
+    const idempotencyKey = await deriveIdempotencyKey({
+      suppliedKey: effectiveEmailData.idempotencyKey,
+      emailType: effectiveEmailData.emailType,
+      quoteNumber: effectiveEmailData.quoteNumber,
+      quoteId: effectiveEmailData.leadData?.quoteId,
+      recipient: effectiveEmailData.customerEmail,
+    });
+    const recipientHash = await sha256Hex(normalizeRecipient(effectiveEmailData.customerEmail));
+    emailOptions.headers = { 'Idempotency-Key': idempotencyKey };
+
+    let claim;
+    try {
+      claim = await claimQuoteEmailDelivery(supabase, {
+        idempotencyKey,
+        emailType: effectiveEmailData.emailType,
+        quoteNumber: effectiveEmailData.quoteNumber,
+        quoteId: effectiveEmailData.leadData?.quoteId,
+        recipientHash,
+        initiator: isAdminNotification ? 'admin' : 'customer',
+      });
+    } catch (claimError) {
+      const detail = claimError instanceof Error ? claimError.message : 'claim failed';
+      console.log('[send-quote-email] delivery claim failed', detail);
+      return jsonResponse(503, { success: false, error: 'Delivery guard unavailable', detail });
+    }
+
+    if (claim.status === 'duplicate') {
+      console.log('[send-quote-email] duplicate suppressed', claim.deliveryId);
+      return jsonResponse(200, {
+        success: true,
+        duplicate: true,
+        messageId: claim.messageId,
+        emailType: effectiveEmailData.emailType,
+        attachmentStatus,
+      });
+    }
+
+    if (claim.status === 'in_flight') {
+      return jsonResponse(409, { success: false, error: 'A send for this quote is already in progress' });
+    }
+
+    if (claim.status === 'mismatch') {
+      console.log('[send-quote-email] idempotency key mismatch', claim.deliveryId);
+      return jsonResponse(409, { success: false, error: 'Idempotency key does not match this message' });
+    }
+
+    let messageId: string;
+    try {
+      const emailResponse = await resend.emails.send(emailOptions);
+      messageId = verifyResendResult(emailResponse).messageId;
+    } catch (sendError) {
+      const detail = sendError instanceof EmailSendFailed
+        ? sendError.detail
+        : sendError instanceof Error
+        ? sendError.message
+        : 'unknown send error';
+      console.log('[send-quote-email] send failed', detail);
+      await completeQuoteEmailDelivery(supabase, {
+        deliveryId: claim.deliveryId,
+        status: 'failed',
+        errorDetail: detail,
+        attachmentStatus,
+      });
+      return jsonResponse(502, { success: false, error: 'Email delivery failed', detail });
+    }
+
+    const audited = await completeQuoteEmailDelivery(supabase, {
+      deliveryId: claim.deliveryId,
+      status: 'sent',
+      messageId,
+      attachmentStatus,
     });
 
-    return new Response(JSON.stringify(flowResult.body), {
-      status: flowResult.status,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    return jsonResponse(200, {
+      success: true,
+      messageId,
+      emailType: effectiveEmailData.emailType,
+      attachmentStatus,
+      ...(audited ? {} : { auditWarning: 'delivery-audit-write-failed' }),
     });
 
   } catch (error) {
     console.error('Error in send-quote-email function:', error);
-    return new Response(
-      JSON.stringify({ 
-        error: error instanceof Error ? error.message : 'Unknown error',
-        success: false 
-      }),
-      { 
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-      }
-    );
+    return jsonResponse(500, {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      success: false
+    });
   }
 });

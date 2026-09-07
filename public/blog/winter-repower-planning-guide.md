@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,17 +25,21 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
-> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed December 1 through April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February to be first in line when install work resumes in April. Build yours at mercuryrepower.ca.
 
-[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
+### Bring the boat details into the repower conversation
+
+Use this two-page worksheet to record the hull, current engine, rigging, typical load and performance goals. It starts the assessment; it does not replace HBW's fitment check.
+
+[Download repower worksheet (PDF)](/downloads/mercury-repower-planning-worksheet-hbw.pdf)
 
 ## Winter Repower Planning
 
-Winter is the perfect time to plan and order a repower. Your boat sits anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
+Winter is when the smart repowers get ordered. The boat is doing nothing anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
 
 ### Why Plan a Repower Over Winter?
 
@@ -46,9 +50,9 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - No mid-season scramble if your old motor fails
 
 **Potential Savings**:
-- Off-season Mercury promotions
+- Any current Mercury promotions (the promotions page has the live list)
 - Finance promotions often available
-- Lock in current pricing before any spring increases
+- Lock in the pricing set out in your written quote
 - Bundle the order with your fall winterization conversation
 
 ### Planning Timeline
@@ -71,53 +75,53 @@ Winter is the perfect time to plan and order a repower. Your boat sits anyway, s
 - Installation performed
 - Lake test when conditions allow
 - Adjustments and setup
-- Delivery before the season
+- Ready for pickup before the season
 
 *Spring repower budget (off-season ordering)*
 
 ### What an order-ahead spring repower actually costs
 
-Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+Planning over winter gives you time to compare configurations and discuss scheduling. Confirm availability and installation dates with HBW, and use the live configurator for current CAD estimates.
 
 #### Motor (90 to 150 HP FourStroke)
 
-**$13,500 to $22,000**
+**Live quote**
 
-Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+Price depends on the exact Mercury model. Pro XS carries a premium over a FourStroke at the same HP; the configurator shows the current figure for your exact motor.
 
 #### Install and rigging
 
-**$1,200 to $2,400**
+**Quoted with the boat**
 
-Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+Mounting, hardware, alignment, and a water check when safe seasonal conditions allow. Transom work, if needed, is a separate line.
 
 #### Control conversion (if needed)
 
-**$800 to $2,000**
+**Quoted if required**
 
 Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
 
 #### New propeller
 
-**$350 to $1,200**
+**Quoted with the setup**
 
-Sized after sea trial. Standard allowance applies on most installs.
+Sized to the motor, hull, and load. A standard allowance may apply; confirm the written quote.
 
 #### First-year service
 
-**$200 to $350**
+**Per current schedule**
 
 Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
 
 #### Mercury Product Protection (optional)
 
-**$700 to $1,800**
+**Quoted at purchase**
 
-8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+Combined factory-plus-MPP coverage on eligible plans; current terms are quoted at purchase. Best value if you finance or plan to keep the boat past year 5.
 
 #### Typical out-the-door range
 
-**$16,000 to $28,000**
+**Build the live quote**
 
 *All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.*
 
@@ -138,7 +142,7 @@ Model-specific break-in guidance and maintenance-schedule review. HBW may recomm
 ### Decision Points
 
 **Repair vs Repower**:
-- Repair cost exceeding $3,000?
+- Repair estimate rivalling a meaningful share of a new motor's cost?
 - Motor over 15 years old?
 - Parts becoming scarce?
 - Want current technology?
@@ -171,15 +175,15 @@ If yes to most, repower makes sense.
 
 ### How far in advance should I plan an order-ahead repower?
 
-Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter.
+Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed December 1 through April 1, but we take orders by phone and email all winter.
 
 ### Will my boat be ready for the May long weekend?
 
-If you lock your order in by January or February, yes. We start install work as soon as we reopen in early April, and customers who ordered over winter are at the front of the spring queue.
+Early orders have the best shot. Lock in by January or February and you are at the front of the spring queue when we reopen in early April. Exact timing still depends on the motor, parts, and weather, so treat your written quote as the real date.
 
 ### What about lake testing in winter?
 
-Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed roughly December 1 to April 1, so no on-water work happens in winter.
+Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed December 1 through April 1, so no on-water work happens in winter.
 
 ### Can I do anything to prepare my boat for repower?
 

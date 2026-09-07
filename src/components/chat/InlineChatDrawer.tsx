@@ -14,8 +14,21 @@ import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
-import { FinancingCTACard, parseFinancingCTA } from './FinancingCTACard';
-import { FINANCING_MINIMUM } from '@/lib/finance';
+import { FinancingCTACard } from './FinancingCTACard';
+import { TradeInCTACard } from './TradeInCTACard';
+import { ServiceCTACard } from './ServiceCTACard';
+import { RepowerCTACard } from './RepowerCTACard';
+import { ChatWriteConsentCard } from './ChatWriteConsentCard';
+import {
+  CHAT_ERROR_TEXT,
+  buildChatMotorContext,
+  buildChatQuoteProgress,
+  parseAssistantCommandMarkers,
+  stripStreamingCommandMarkers,
+  type ChatPendingWrite,
+  type ChatWriteStatus,
+} from './chatSessionHelpers';
+import { getChatPageCategory, getMobileDrawerBottom } from './chatLayout';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
@@ -41,6 +54,11 @@ interface Message {
   };
   activityData?: VoiceActivityEvent;
   financingCTA?: import('./FinancingCTACard').FinancingCTAData;
+  tradeInCTA?: import('./TradeInCTACard').TradeInCTAData;
+  serviceCTA?: import('./ServiceCTACard').ServiceCTAData;
+  repowerCTA?: import('./RepowerCTACard').RepowerCTAData;
+  pendingWrite?: ChatPendingWrite;
+  writeStatus?: ChatWriteStatus;
 }
 
 interface InlineChatDrawerProps {
@@ -83,6 +101,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
   const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
+  const sendInFlightRef = useRef(false);
   
   // Track which motor the user has already interacted with (asked questions about)
   const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
@@ -103,6 +122,19 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const [showHistoryBanner, setShowHistoryBanner] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
 
   // Keyboard-aware positioning for iOS
   useEffect(() => {
@@ -288,21 +320,11 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     });
   }, []);
 
-  // Get page category for context-aware chat reset
-  const getPageCategory = (pathname: string): string => {
-    if (pathname.includes('/repower')) return 'repower';
-    if (pathname.includes('/quote/')) return 'quote';
-    if (pathname.includes('/financing')) return 'financing';
-    if (pathname.includes('/promotions')) return 'promotions';
-    if (pathname.includes('/contact')) return 'contact';
-    return 'general';
-  };
-
   // Reset initialization when page category changes (so chat restarts fresh on new context)
   const currentCategoryRef = useRef<string | null>(null);
   
   useEffect(() => {
-    const newCategory = getPageCategory(location.pathname);
+    const newCategory = getChatPageCategory(location.pathname);
     
     // If category changed since last check, reset initialization
     if (currentCategoryRef.current !== null && currentCategoryRef.current !== newCategory) {
@@ -321,7 +343,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     const initChat = async () => {
       if (!isOpen || hasInitialized || isPersistenceLoading) return;
       
-      const currentCategory = getPageCategory(location.pathname);
+      const currentCategory = getChatPageCategory(location.pathname);
       const storedCategory = localStorage.getItem('chat_page_category');
       
       // Check if page context changed significantly (different category)
@@ -546,8 +568,10 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   }, [clearConversation, saveMessage]);
 
   const handleSend = async (text: string = inputText) => {
-    if (!text.trim() || isLoading) return;
+    if (!text.trim() || isLoading || sendInFlightRef.current) return;
+    sendInFlightRef.current = true;
 
+    setLastFailedMessage(null);
     setSendState('sending');
     triggerHaptic('messageSent');
 
@@ -585,17 +609,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       let fullResponse = '';
       
       const activeMotor = state.previewMotor || state.motor;
-      const quoteProgress = {
-        step: location.pathname.includes('motor-selection') ? 1 :
-              location.pathname.includes('options') ? 2 :
-              location.pathname.includes('purchase-path') ? 3 :
-              location.pathname.includes('trade-in') ? 4 :
-              location.pathname.includes('schedule') ? 5 :
-              location.pathname.includes('summary') ? 6 : 1,
-        total: 6,
-        selectedPackage: state.selectedOptions?.length > 0 ? 'Complete Package' : null,
-        tradeInValue: state.tradeInInfo?.estimatedValue || null
-      };
+      const quoteProgress = buildChatQuoteProgress(location.pathname, state);
       
       // Prepend motor context to message to ensure AI knows which motor we're asking about
       let messageWithContext = text.trim();
@@ -609,15 +623,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         message: messageWithContext,
         conversationHistory,
         context: {
-          currentMotor: activeMotor ? {
-            id: (activeMotor as any).id,
-            model: (activeMotor as any).model_display || activeMotor.model || '',
-            hp: activeMotor.hp || (activeMotor as any).horsepower || 0,
-            price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price || activeMotor.salePrice,
-            family: (activeMotor as any).family,
-            description: (activeMotor as any).description,
-            features: (activeMotor as any).features
-          } : null,
+          currentMotor: buildChatMotorContext(activeMotor),
           currentPage: location.pathname,
           boatInfo: state.boatInfo,
           quoteProgress,
@@ -631,10 +637,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         },
         onDelta: (chunk) => {
           fullResponse += chunk;
-          // Strip CTA markers during streaming to hide them from user
-          const displayText = fullResponse
-            .replace(/\[FINANCING_CTA:.*$/s, '')
-            .trim();
+          const displayText = stripStreamingCommandMarkers(fullResponse);
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
               ? { ...msg, text: displayText, isStreaming: true }
@@ -643,53 +646,61 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           scrollToBottom();
         },
         onDone: async (finalResponse) => {
-          // Parse financing CTA - only show if price meets minimum threshold
-          let displayResponse = finalResponse;
-          let financingCTA: import('./FinancingCTACard').FinancingCTAData | undefined;
-          const { displayText: afterFinancing, ctaData } = parseFinancingCTA(displayResponse);
-          if (ctaData) {
-            displayResponse = afterFinancing;
-            // Only show CTA if motor price meets minimum financing threshold
-            if (ctaData.price >= FINANCING_MINIMUM) {
-              financingCTA = ctaData;
-              console.log('[Chat] Financing CTA parsed:', ctaData);
-            } else {
-              console.log('[Chat] Financing CTA ignored - price below minimum:', ctaData.price);
-            }
-          }
+          const {
+            displayText,
+            financingCTA,
+            tradeInCTA,
+            serviceCTA,
+            repowerCTA,
+            pendingWrite,
+          } = parseAssistantCommandMarkers(finalResponse, {
+            currentPage: location.pathname,
+            motor: activeMotor,
+            conversationHistory,
+          });
           
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA }
+              ? {
+                  ...msg,
+                  text: displayText,
+                  isStreaming: false,
+                  financingCTA,
+                  tradeInCTA,
+                  serviceCTA,
+                  repowerCTA,
+                  pendingWrite,
+                  writeStatus: pendingWrite ? 'needs_consent' : undefined,
+                }
               : msg
           ));
           
           triggerHaptic('responseReceived');
           
-          const assistantDbId = await saveMessage(displayResponse, 'assistant');
+          const assistantDbId = await saveMessage(displayText, 'assistant');
           if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
           
           setConversationHistory(prev => [
             ...prev,
             { role: 'user', content: text.trim() },
-            { role: 'assistant', content: displayResponse }
+            { role: 'assistant', content: displayText }
           ]);
           
+          sendInFlightRef.current = false;
           setIsLoading(false);
-          onAIResponse?.(); // Notify parent that AI responded
+          onAIResponse?.();
         },
         onError: (error) => {
           console.error('Stream error:', error);
           triggerHaptic('error');
-          const errorText = "I'm sorry, I'm having trouble connecting. Tap **Retry** to try again, or text us at 647-952-2153.";
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: errorText, isStreaming: false }
+              ? { ...msg, text: CHAT_ERROR_TEXT, isStreaming: false }
               : msg
           ));
-          saveMessage(errorText, 'assistant');
+          saveMessage(CHAT_ERROR_TEXT, 'assistant');
+          sendInFlightRef.current = false;
           setIsLoading(false);
-          // Store the failed message so user can retry
           setLastFailedMessage(text.trim());
         }
       });
@@ -697,14 +708,14 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     } catch (error) {
       console.error('Chat error:', error);
       triggerHaptic('error');
-      const errorText = "I'm sorry, I'm having trouble connecting. Tap **Retry** to try again, or text us at 647-952-2153.";
       setMessages(prev => prev.map(msg => 
         msg.id === streamingId 
-          ? { ...msg, text: errorText, isStreaming: false }
+          ? { ...msg, text: CHAT_ERROR_TEXT, isStreaming: false }
           : msg
       ));
-      saveMessage(errorText, 'assistant');
+      saveMessage(CHAT_ERROR_TEXT, 'assistant');
       setLastFailedMessage(text.trim());
+      sendInFlightRef.current = false;
       setIsLoading(false);
     }
   };
@@ -744,7 +755,6 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             transition={{ duration: 0.15, ease: 'easeOut' }}
             className="fixed inset-0 z-[70] bg-black/30 backdrop-blur-[4px]"
             onClick={onClose}
-            style={{ bottom: 'calc(5rem + env(safe-area-inset-bottom))' }}
           />
           
           {/* Chat Panel with premium spring animation */}
@@ -767,9 +777,12 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.5 }}
             onDragEnd={handleDragEnd}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mercury Expert chat"
             className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl border-t border-gray-200 w-full max-w-[100vw] overflow-hidden"
             style={{ 
-              bottom: keyboardVisible ? '0px' : 'calc(5rem + env(safe-area-inset-bottom))',
+              bottom: keyboardVisible ? '0px' : getMobileDrawerBottom(),
               maxHeight: keyboardVisible ? '100vh' : '70vh',
               touchAction: 'none'
             }}
@@ -811,6 +824,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                   variant="ghost"
                   size="sm"
                   onClick={onClose}
+                  aria-label="Close AI chat assistant"
                   className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 rounded-full transition-colors"
                 >
                   <ChevronDown className="w-5 h-5" />
@@ -920,6 +934,34 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                               <FinancingCTACard data={message.financingCTA} />
                             </div>
                           )}
+                          {!message.isUser && message.tradeInCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <TradeInCTACard data={message.tradeInCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.serviceCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <ServiceCTACard data={message.serviceCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.repowerCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <RepowerCTACard data={message.repowerCTA} />
+                            </div>
+                          )}
+                          {!message.isUser && message.pendingWrite && message.writeStatus && (
+                            <div className="mt-2 max-w-[85%]">
+                              <ChatWriteConsentCard
+                                write={message.pendingWrite}
+                                status={message.writeStatus}
+                                onStatusChange={(status) => {
+                                  setMessages((prev) => prev.map((item) =>
+                                    item.id === message.id ? { ...item, writeStatus: status } : item
+                                  ));
+                                }}
+                              />
+                            </div>
+                          )}
                         </>
                       )}
                     </motion.div>
@@ -979,6 +1021,16 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 transition={{ delay: 0.16, duration: 0.2, ease: 'easeOut' }}
                 className="px-4 py-3 pb-4 border-t border-gray-100 bg-white shrink-0"
               >
+                {lastFailedMessage && !isLoading && (
+                  <button
+                    type="button"
+                    onClick={handleRetry}
+                    aria-label="Retry last message"
+                    className="mb-2 text-xs text-muted-foreground hover:text-gray-700"
+                  >
+                    Retry
+                  </button>
+                )}
                 <div className="flex flex-row items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2.5">
                   <VoiceButton
                     isConnected={voice.isConnected}
@@ -1000,6 +1052,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     }}
                     onKeyPress={handleKeyPress}
                     placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
+                    aria-label="Ask the Mercury Expert"
                     disabled={voice.isConnected}
                     className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
                       text-sm text-gray-900 placeholder:text-muted-foreground font-light h-8"
@@ -1014,6 +1067,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     <Button
                       size="sm"
                       onClick={() => handleSend()}
+                      aria-label="Send message"
                       disabled={!inputText.trim() || isLoading || voice.isConnected}
                       className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
                         disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-08-07
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Maintenance: 100 and 300 Hours"
 description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean."
 category: "Service & Maintenance"
 date_published: 2026-05-12
-date_modified: 2026-08-07
+date_modified: 2026-09-06
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last reviewed:** 2026-08-07  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
@@ -127,9 +127,9 @@ Low hours do not automatically erase a calendar interval. The exact manual still
 
 We ask for the engine serial number, current hours, last documented service, warning history, and how the boat is used. That keeps a 9.9 ProKicker from getting a V6 checklist and keeps an older two-stroke from being forced into a current FourStroke schedule.
 
-No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
+No service history? Start with an inspection and establish a new baseline. If the records do not show the work, treat that history as unverified.
 
-## Sources
+---
 
 - [Mercury Marine, Welcome Aboard: A New Owner's Guide to Mercury Outboards](https://www.mercurymarine.com/us/en/lifestyle/dockline/welcome-aboard--a-new-owner-s-guide-to-mercury-outboards)
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
