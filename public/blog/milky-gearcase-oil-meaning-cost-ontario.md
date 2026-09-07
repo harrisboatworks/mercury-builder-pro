@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)"
-description: "What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next."
+title: "Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)"
+description: "What milky gearcase oil means, how a technician finds the leak, and how repair scope is determined before any quote. No generic repair price."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,13 +19,13 @@ language: en-CA
 revenue_driver: service
 ---
 
-# Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)
+# Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)
 
-> What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next.
+> What milky gearcase oil means, how a technician finds the leak, and how repair scope is determined before any quote. No generic repair price.
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 
@@ -35,15 +35,7 @@ There's a ten-second moment in every gearcase oil change that matters more than 
 
 Amber and clean is reassuring. Dark but oily may simply be used lubricant. Milky, creamy, or separated water is different: it is evidence that the gearcase needs inspection, not just a refill. That drain-plug moment is one reason the annual lubricant change matters.
 
-Here's how to read it, what fixing it costs, and why this is the single best argument for the annual service.
-
-## What the HBW Service Count Actually Measures
-
-The original article analysis reported **7,417 gearcase-related service records** and **364 pressure-test records** in HBW's Lightspeed history from 2013 through its 2026 publication snapshot. Those are shop records, not 7,417 unique boats and not 364 confirmed cases caused by milky oil.
-
-We rechecked the aggregate on August 2, 2026 using a broader, documented text match. The current public service-history view contained **8,130 matching job rows across 7,474 distinct repair orders** from December 4, 2013 through July 29, 2026. Within that set, **497 job rows across 447 repair orders** contained pressure or vacuum language. The recheck corroborates the scale of the original Lightspeed analysis; it does not turn a broad text match into a diagnosis or a failure rate.
-
-That is the useful lesson: HBW has seen thousands of gearcase-related service records, but your repair still depends on what drains out of your gearcase and what a model-specific inspection finds.
+Here's how to read the colour, why the leak has to be found before anyone can quote a repair, and why the annual drain is the cheapest time to catch it. HBW has seen thousands of gearcase-related service records; the [methodology note](#sources) explains what those counts measure. Your repair still depends on what drains out of your gearcase and what a model-specific inspection finds.
 
 ---
 
@@ -116,6 +108,7 @@ Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-ca
 **Watch Mercury's official gear lube change:**
 
 [Changing Gear Lube on a Mercury 40-300 HP FourStroke](https://www.youtube.com/watch?v=BBbQVH5j0W0)
+
 *Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
 
 ---
@@ -139,10 +132,14 @@ HBW does not diagnose gearcase faults remotely. Include the engine serial number
 
 ## Sources
 
+The original article analysis reported **7,417 gearcase-related service records** and **364 pressure-test records** in HBW's Lightspeed history from 2013 through its 2026 publication snapshot. Those are shop records, not 7,417 unique boats and not 364 confirmed cases caused by milky oil.
+
+We rechecked the aggregate on August 2, 2026 using a broader, documented text match. The current public service-history view contained **8,130 matching job rows across 7,474 distinct repair orders** from December 4, 2013 through July 29, 2026. Within that set, **497 job rows across 447 repair orders** contained pressure or vacuum language. The recheck corroborates the scale of the original Lightspeed analysis; it does not turn a broad text match into a diagnosis or a failure rate.
+
 - HBW Lightspeed service history: original 7,417 gearcase-record and 364 pressure-test-record publication snapshots; aggregate recheck August 2, 2026 (8,130 matching job rows across 7,474 distinct repair orders; pressure/vacuum language in 497 rows across 447 repair orders; no customer data used)
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
-- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 
 ## FAQs
 

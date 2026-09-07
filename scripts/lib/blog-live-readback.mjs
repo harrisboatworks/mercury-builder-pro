@@ -8,7 +8,7 @@
  * A "doc" is: { path, url, ok, status, contentType, body, error, redirected, finalUrl }
  */
 
-export const OSHAWA_ROUTE = '/blog/mercury-dealer-oshawa-ontario-hbw.md';
+export const OSHAWA_ROUTE = '/blog/mercury-dealer-bowmanville-ontario-hbw.md'; // was the retired Oshawa twin; the check verifies shared dealer-page storage wording
 export const PRICING_REFERENCE_ROUTE = '/pricing-reference.md';
 export const SALMON_ROUTE = '/blog/best-mercury-outboard-lake-ontario-salmon-trout.md';
 export const FLAGSHIP_RIGGING_ROUTE = '/blog/why-mercury-dominates-outboard-market.md';

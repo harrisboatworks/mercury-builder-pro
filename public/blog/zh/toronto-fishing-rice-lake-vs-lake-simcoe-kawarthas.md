@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么
 description: "多伦多华人钓鱼去哪？比较莱斯湖、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程和第一次驾船或钓鱼的选择。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["Rice Lake","Lake Simcoe","Kawarthas","多伦多钓鱼","湖区对比","华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-09-06  
 **Read time:** 16 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 
@@ -43,7 +43,7 @@ revenue_driver: repower
 
 | 选择 | 最适合谁 | 优点 | 注意事项 |
 |---|---|---|---|
-| 莱斯湖 | 第一次家庭租船、GTA 一日行程、浮筒船/钓鱼船体验、未来可能买船或换装发动机的人 | HBW 位于莱斯湖，提供租船、下水、船位、保养维修、冬化保养、存放等码头服务 (Harris Boat Works). | 出发前确认租船要求、天气、操船证件和钓鱼法规。 |
+| 莱斯湖 | 第一次家庭租船、GTA 一日行程、浮筒船/钓鱼船体验、未来可能买船或换装发动机的人 | HBW 位于莱斯湖，方便先安排租船一日行程，再决定以后是否继续研究船和发动机 (Harris Boat Works). | 出发前确认租船要求、天气、操船证件和钓鱼法规。 |
 | Lake Simcoe | 熟悉钓鱼的人、冰钓关注者、想比较不同季节鱼种的人 | 社群讨论多，冬季和 Lake Simcoe 相关内容多。 | Lake Simcoe 在 FMZ 16 页面有特定水体例外规定；不能只看渔业管理区通用规定 (Ontario FMZ 16). |
 | Kawarthas | 已经愿意探索多个湖区、船闸、湖边度假屋和行船路线的人 | 选择多，适合长期驾船/钓鱼生活方式。 | 区域大，不同水体规则和条件不同，FMZ 17 页面也提醒有例外规定、禁渔区和鱼饵规定 (Ontario FMZ 17). |
 

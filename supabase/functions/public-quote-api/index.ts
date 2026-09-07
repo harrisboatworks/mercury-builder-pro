@@ -26,7 +26,10 @@ import {
   buildPublicQuoteFinancing,
   PUBLIC_QUOTE_FINANCING_POLICY_VERSION,
 } from "../_shared/public-quote-financing.ts";
-import { motorSlug } from "../_shared/motor-slug.ts";
+import {
+  applyMotorPresentationOverrides,
+  motorSlug,
+} from "../_shared/motor-slug.ts";
 import {
   PUBLIC_SITE_URL,
   toPublicImageUrl,
@@ -233,6 +236,9 @@ function quoteUrl(motorId: string, opts: Record<string, string | number | undefi
 async function listMotors(supabase: any, body: any) {
   const limit = Math.min(Number(body?.limit) || 50, 200);
   const search = String(body?.search || "").trim();
+  const hpSearch = search ? Number.parseFloat(search) : Number.NaN;
+  const textSearch =
+    search && Number.isNaN(hpSearch) ? search.toLowerCase() : "";
   const family = String(body?.family || "").trim();
   const minHp = Number(body?.min_hp) || 0;
   const maxHp = Number(body?.max_hp) || 9999;
@@ -240,18 +246,16 @@ async function listMotors(supabase: any, body: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
+      "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, image_url, hero_image_url, year",
     )
     .eq("is_brochure", true)
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    .limit(limit);
+    .limit(textSearch ? 500 : limit);
 
   if (search) {
-    const hpNum = parseFloat(search);
-    if (!isNaN(hpNum)) q = q.eq("horsepower", hpNum);
-    else q = q.ilike("model_display", `%${search}%`);
+    if (!Number.isNaN(hpSearch)) q = q.eq("horsepower", hpSearch);
   }
   if (family) q = q.ilike("family", `%${family}%`);
 
@@ -259,7 +263,15 @@ async function listMotors(supabase: any, body: any) {
   if (error) throw new Error(`list_motors failed: ${error.message}`);
 
   const motors = (data || [])
+    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
     .filter((m: any) => !isVerado(m.family, m.model_display))
+    .filter((m: any) =>
+      !textSearch ||
+      `${m.model_display || m.model || ""} ${m.model_number || ""}`
+        .toLowerCase()
+        .includes(textSearch)
+    )
+    .slice(0, limit)
     .map((m: any) => {
       const price = resolveSellingPrice(m);
       const slug = motorSlug(m);
@@ -379,7 +391,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("id", motorId)
       .maybeSingle();
@@ -389,7 +401,7 @@ async function buildQuote(supabase: any, body: any) {
     const { data, error } = await supabase
       .from("motor_models")
       .select(
-        "id, model_display, model, model_key, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
+        "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, manual_overrides, in_stock, hero_image_url, image_url",
       )
       .eq("is_brochure", true)
       .eq("horsepower", hp)
@@ -402,6 +414,7 @@ async function buildQuote(supabase: any, body: any) {
   }
 
   if (!motor) return json({ error: "Motor not found" }, 404);
+  motor = applyMotorPresentationOverrides(motor);
   if (isVerado(motor.family, motor.model_display)) {
     return json(
       {

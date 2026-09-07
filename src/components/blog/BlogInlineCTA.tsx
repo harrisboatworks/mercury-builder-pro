@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 export interface BlogInlineCTAProps {
   variant: 'inline' | 'banner';
@@ -24,18 +24,38 @@ function renderInternal(href: string, label: React.ReactNode, kind: 'primary' | 
     'inline-flex items-center justify-center gap-2 px-5 py-2.5 border-2 border-repower-navy-900 text-repower-navy-900 rounded-lg font-medium hover:bg-repower-navy-900 hover:text-white transition-colors no-underline';
   const cls = kind === 'primary' ? primaryClasses : secondaryClasses;
   const isExternal = /^https?:\/\//i.test(href);
+  const isDownload = /\.pdf(?:[?#]|$)/i.test(href);
+  const icon = kind === 'primary'
+    ? isDownload
+      ? <Download className="h-4 w-4" />
+      : <ArrowRight className="h-4 w-4" />
+    : null;
   if (isExternal) {
     return (
-      <a href={href} className={cls} target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        className={cls}
+        target="_blank"
+        rel="noopener noreferrer"
+        download={isDownload || undefined}
+      >
         {label}
-        {kind === 'primary' && <ArrowRight className="h-4 w-4" />}
+        {icon}
+      </a>
+    );
+  }
+  if (isDownload) {
+    return (
+      <a href={href} className={cls} download>
+        {label}
+        {icon}
       </a>
     );
   }
   return (
     <Link to={href} className={cls}>
       {label}
-      {kind === 'primary' && <ArrowRight className="h-4 w-4" />}
+      {icon}
     </Link>
   );
 }
@@ -66,12 +86,13 @@ function renderFooter(footer: string) {
 
 export function BlogInlineCTA(props: BlogInlineCTAProps) {
   const { variant, heading, body, primaryLabel, primaryHref, secondaryLabel, secondaryHref, phone, footer } = props;
+  const isDownloadCard = /\.pdf(?:[?#]|$)/i.test(primaryHref);
 
   if (variant === 'inline') {
     return (
       <aside
         className="not-prose my-8 p-5 md:p-6 bg-repower-cream border border-repower-navy-900/10 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-        aria-label="Call to action"
+        aria-label={isDownloadCard ? 'Downloadable resource' : 'Call to action'}
       >
         <div className="flex-1">
           <h3
@@ -90,7 +111,7 @@ export function BlogInlineCTA(props: BlogInlineCTAProps) {
   return (
     <aside
       className="not-prose mt-14 p-8 md:p-10 bg-repower-cream border border-repower-navy-900/10 rounded-lg text-center"
-      aria-label="Call to action"
+      aria-label={isDownloadCard ? 'Downloadable resource' : 'Call to action'}
     >
       <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />
       <h3

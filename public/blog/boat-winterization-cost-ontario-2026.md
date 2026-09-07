@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Boat Winterization Cost Ontario 2026"
-description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
+description: "Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: service
 
 # Boat Winterization Cost Ontario 2026
 
-> Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap.
+> Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price.
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-08-27  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
@@ -163,8 +163,6 @@ Stop and request professional service when:
 - The work is outside your tools, training, or safe workspace
 
 For Mercury owners, start with Mercury's official guidance and then follow the exact manual for the serial number. The related [DIY Mercury outboard winterization guide](/blog/diy-mercury-outboard-winterization-guide) is a decision framework, not a replacement for that manual.
-
-[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) before you start so the motor, fuel, battery, and onboard-system checks stay together.
 
 ## Request the Current Scope
 

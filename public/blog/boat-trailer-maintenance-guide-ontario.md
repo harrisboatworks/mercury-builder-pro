@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-07-31
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Five-Minute Boat-Trailer Check Before Every Trip"
 description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance."
 category: "Service"
 date_published: 2026-05-26
-date_modified: 2026-07-31
+date_modified: 2026-09-06
 keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-05-26  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 
@@ -35,7 +35,11 @@ A boat trailer can look fine from ten feet away and still have a problem that en
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
-[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
+### Keep a five-minute trailer check in the tow vehicle
+
+Use this pre-departure card to check the hitch, safety connections, boat restraints, tires, hubs, lights and Ontario brake threshold before the trailer moves.
+
+[Download trailer check (PDF)](/downloads/five-minute-boat-trailer-check-hbw.pdf)
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 
@@ -153,8 +157,8 @@ If a trailer concern appears while you're preparing the boat for Mercury service
 ## Sources
 
 - [Ontario Ministry of Transportation, Safe and Responsible Driving: Towing](https://www.ontario.ca/document/official-mto-drivers-handbook/towing)
-- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/07/Owners-Manual.pdf)
-- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceManual_Complete_8-17.pdf)
+- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/06/OwnerManual060921lr.pdf)
+- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceOnline.pdf)
 
 ## FAQs
 

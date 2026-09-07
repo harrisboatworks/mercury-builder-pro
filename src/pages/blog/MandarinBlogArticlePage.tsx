@@ -168,7 +168,7 @@ export default function MandarinBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Harris Boat Works 负责人" />
+                <AuthorByline name="Jay Harris" title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -252,7 +252,7 @@ export default function MandarinBlogArticlePage() {
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="Harris Boat Works 负责人" />
+            <AuthorByline title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
           </div>
 
           {/* FAQ Section */}

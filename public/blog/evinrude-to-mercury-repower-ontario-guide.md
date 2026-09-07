@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Evinrude to Mercury Repower: The Ontario Guide (2026)"
 description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch."
 category: "Repower Guides"
 date_published: 2026-04-16
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Evinrude to Mercury repower","Evinrude to Mercury conversion","replace Evinrude outboard Ontario","Evinrude discontinued repower","Evinrude E-TEC repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
@@ -144,7 +144,7 @@ Every HBW conversion includes:
 - A hull walk-around and transom inspection before anything is ordered
 - The full control-system swap: harness, controls, gauges
 - Prop selection and, when safe seasonal conditions allow, an on-water check on Rice Lake before pickup
-- The Pleasure Craft Licence update, so your licence information stays current with Transport Canada after the motor change, handled for every HBW customer at no extra charge
+- Confirm the Pleasure Craft Licence update requirements with Transport Canada and who will submit any required update. Ask HBW what purchase documentation it supplies.
 - A fresh 3-year Mercury limited warranty on the new motor
 
 ![Removed Evinrude E-TEC beside an Alumacraft boat with a new Mercury FourStroke outboard during a repower project.](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
@@ -201,7 +201,7 @@ Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so
 
 ### Can I keep my Evinrude prop?
 
-Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the lake-test.
+Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We fit the right prop for your Mercury and, when safe seasonal conditions allow, confirm it on the water.
 
 ### How long does the conversion take?
 

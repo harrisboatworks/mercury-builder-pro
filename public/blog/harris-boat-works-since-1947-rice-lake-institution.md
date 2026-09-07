@@ -121,7 +121,7 @@ In 2026, the shop George opened runs as:
 - **Legend Boats dealer**, Canadian company, designed for Canadian water
 - **49 seasonal marina slips** on Rice Lake
 - **Rental fleet** of pontoons and fishing boats
-- **Winter storage**, 311+ boats shrink-wrapped and stored each year
+- **Winter storage**, outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service
 - **Service and repair**, from diagnostics to full warranty work
 - **Public launch ramp and ethanol-free 89 marine gas** at the dock
 
@@ -179,7 +179,7 @@ Yes. We're a working marina. Walk the docks, fuel up, look at the water. The sna
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario

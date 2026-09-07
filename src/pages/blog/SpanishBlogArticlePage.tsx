@@ -351,7 +351,7 @@ export default function SpanishBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Propietario, Harris Boat Works" />
+          <AuthorByline name="Jay Harris" title="Propietario, Harris Boat Works" byLabel="Por" bioLabel="Ver biografía" />
         </div>
 
         {/* Table of Contents */}

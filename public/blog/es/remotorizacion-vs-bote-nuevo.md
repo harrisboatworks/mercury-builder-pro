@@ -43,11 +43,9 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 

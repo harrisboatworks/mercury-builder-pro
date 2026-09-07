@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 華人萊斯湖買船完整指南（繁體版）"
 description: "GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-09-06
 keywords: ["買船","萊斯湖","GTA 華人","繁體","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-06-12  
+**最後審核:** 2026-09-06  
 **Read time:** 6 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
 
@@ -34,7 +34,7 @@ revenue_driver: repower
 ## 買船核心要點
 
 - **第一步：** 先決定用途（家庭出遊 vs 認真釣魚），再決定船型。
-- **第二步：** 新船 vs 二手船：第一次買強烈建議買新船，配Premier 經銷商。
+- **第二步：** 新船 vs 二手船：新船、二手船或更換引擎，要按預算、船況、用途和保養安排選擇。第一次買船，先做船況檢查，再比較總費用。
 - **第三步：** Mercury 引擎匹配：船型決定 HP 範圍。
 - **貸款：** 透過 Dealerplan Peterborough 由 TD Auto Finance 提供。**促銷年利率（promotional APR）：5.48%**（TD「Always On」方案，截至 2026 年 6 月，至 2026 年 12 月 31 日止）；**標準／一般年利率（standard APR）：7.99% 至 8.99%**（促銷不適用時）。最低融資金額 $5,000。利率會變動，請致電 905-342-2153 或於 mercuryrepower.ca 建立報價以確認目前適用利率。
 - **交付：** HBW 在 Gores Landing 自取，不提供送貨。
