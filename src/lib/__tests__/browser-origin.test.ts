@@ -17,6 +17,8 @@ describe("browser origin ownership boundary", () => {
     "https://mercury-builder-pro.vercel.app",
     "https://mercury-builder-pro-hbw.vercel.app",
     "https://mercury-builder-pro-git-main-hbw.vercel.app",
+    "https://mercury-builder-pro-git-fix-consultation-quote-display-hbw.vercel.app",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app",
   ])("allows the exact Vercel project domain %s", (origin) => {
     expect(resolveAllowedBrowserOrigin(origin)).toBe(origin);
   });
@@ -28,6 +30,11 @@ describe("browser origin ownership boundary", () => {
     "https://evil.vercel.app",
     "http://mercury-builder-pro-git-main-hbw.vercel.app",
     "https://mercury-builder-pro-git-main-hbw.vercel.app.",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app.attacker.example",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app:444",
+    "http://mercury-builder-76p5fgnik-hbw.vercel.app",
+    "https://mercury-builder-pro-git-fix-consultation-quote-display-hbw.vercel.app.attacker.example",
+    "https://mercury-builder-pro-git-other-branch-hbw.vercel.app",
   ])("rejects unowned or non-exact Vercel origin %s", (origin) => {
     expect(resolveAllowedBrowserOrigin(origin)).toBeNull();
   });

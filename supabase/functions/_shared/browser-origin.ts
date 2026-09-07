@@ -2,8 +2,12 @@
 //
 // The Vercel aliases below are stable domains attached to Vercel project
 // prj_WlyZxulIxEw8F4zowFtS0vI6TpwL in team team_YZT1UoU1kWj91icpotBPCpVv.
-// Generated deployment and branch aliases are intentionally not matched.
+// Generated deployment and branch aliases are never matched by hostname pattern.
 // Public origins require HTTPS; local development permits HTTP on any port.
+// PR #464: ownership and branch binding verified through the Vercel API.
+export const STAFF_QUOTE_PREVIEW_ORIGIN =
+  "https://mercury-builder-pro-git-fix-consultation-quote-display-hbw.vercel.app";
+
 const ALLOWED_HTTPS_ORIGINS = new Set([
   "https://www.mercuryrepower.ca",
   "https://mercuryrepower.ca",
@@ -13,6 +17,8 @@ const ALLOWED_HTTPS_ORIGINS = new Set([
   "https://mercury-builder-pro.vercel.app",
   "https://mercury-builder-pro-hbw.vercel.app",
   "https://mercury-builder-pro-git-main-hbw.vercel.app",
+  STAFF_QUOTE_PREVIEW_ORIGIN,
+  "https://mercury-builder-76p5fgnik-hbw.vercel.app",
 ]);
 
 export function resolveAllowedBrowserOrigin(rawOrigin: string | null | undefined): string | null {
