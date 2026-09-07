@@ -12,7 +12,7 @@ import {
   assertConsultationStoredDocument,
   canonicalConsultationDocumentPath,
   constantTimeEqual,
-  sha256Hex as sha256Bytes,
+  sha256Hex,
   validateQuotePdf,
 } from "../_shared/consultation-document-policy.ts";
 import {
@@ -26,20 +26,22 @@ import {
   replaceConsultationTemplateVariables,
 } from "../_shared/consultation-quote-email.ts";
 import {
-  encodeBase64,
-  fetchQuotePdfAttachment,
-  QuotePdfRejected,
-  resolveQuotePdfUrl,
-} from "../_shared/quote-pdf-attachment.ts";
-import {
   claimQuoteEmailDelivery,
   completeQuoteEmailDelivery,
   deriveIdempotencyKey,
   EmailSendFailed,
   normalizeRecipient,
-  sha256Hex,
+  sha256Hex as sha256Recipient,
   verifyResendResult,
 } from "../_shared/quote-email-delivery.ts";
+import {
+  fetchValidatedQuotePdf,
+  normalizeQuoteUrls,
+} from "./attachment-policy.ts";
+import {
+  replaceTemplateVariables,
+  sanitizeEmailSubject,
+} from "./template-policy.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -60,6 +62,13 @@ function isAuthorizedInternalRequest(req: Request): boolean {
   return Boolean(serviceRoleKey && authorization === `Bearer ${serviceRoleKey}`);
 }
 
+function jsonResponse(status: number, body: Record<string, unknown>): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  });
+}
+
 // Input validation schema
 const leadDataSchema = z.object({
   customerName: z.string().max(100).optional(),
@@ -77,6 +86,7 @@ const quoteEmailSchema = z.object({
   motorModel: z.string().max(200),
   totalPrice: z.number().min(0).max(2000000),
   pdfUrl: z.string().url().max(2000).optional(),
+  quotePageUrl: z.string().url().max(2000).optional(),
   documentId: z.string().uuid().optional(),
   documentAccessUrl: z.string().url().max(2000).optional(),
   emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
@@ -87,40 +97,6 @@ const quoteEmailSchema = z.object({
 type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
-
-/**
- * Substitute into an active database-managed template.
- *
- * These values are request-controlled on a public (verify_jwt = false)
- * function and were previously injected raw into template HTML, so a crafted
- * customerName/quoteNumber/motorModel could inject markup into a real customer
- * email. buildEmail escapes its own preheader/heading, but the DB template body
- * never passed through it. Every substitution is escaped here.
- */
-function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
-  const values: Record<string, string> = {
-    customerName: data.customerName,
-    quoteNumber: data.quoteNumber,
-    motorModel: data.motorModel,
-    totalPrice: data.totalPrice.toLocaleString(),
-  };
-  return template.replace(
-    /{{(customerName|quoteNumber|motorModel|totalPrice)}}/g,
-    (_match, key: string) => esc(values[key] ?? ""),
-  );
-}
-
-/** Strip CRLF so a DB-managed subject cannot inject mail headers. */
-function sanitizeEmailSubject(subject: string): string {
-  return subject.replace(/[\r\n]+/g, " ").trim();
-}
-
-function jsonResponse(status: number, body: Record<string, unknown>): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-  });
-}
 
 function generateConsultationQuoteDeliveryEmail(
   data: QuoteEmailRequest,
@@ -147,7 +123,7 @@ function generateConsultationQuoteDeliveryEmail(
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: CONSULTATION_CTA_LABEL,
     ctaUrl: documentAccessUrl,
@@ -155,7 +131,22 @@ function generateConsultationQuoteDeliveryEmail(
   });
 }
 
-function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
+function getQuoteCta(
+  data: QuoteEmailRequest,
+  hasPdfAttachment: boolean,
+): { text: string; url: string } | null {
+  if (data.quotePageUrl) return { text: "View your quote", url: data.quotePageUrl };
+  if (hasPdfAttachment && data.pdfUrl) {
+    return { text: "Open quote PDF", url: data.pdfUrl };
+  }
+  return null;
+}
+
+function generateQuoteDeliveryEmail(
+  data: QuoteEmailRequest,
+  hasPdfAttachment: boolean,
+): string {
+  const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
     { label: "Quote #", value: esc(data.quoteNumber) },
     { label: "Motor", value: esc(data.motorModel) },
@@ -165,7 +156,7 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
     <p style="margin:0 0 14px 0;">Thanks for your interest. Here is the quote we prepared for you.</p>
     ${detailsCard(rows)}
-    ${data.pdfUrl ? `<p style="margin:18px 0 0 0;color:#6b7280;font-size:14px;">A PDF copy of your full quote is attached.</p>` : ""}
+    ${hasPdfAttachment ? `<p style="margin:18px 0 0 0;color:#6b7280;font-size:14px;">A PDF copy of your full quote is attached.</p>` : ""}
     <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What is next</h2>
     <ul style="margin:0;padding-left:20px;color:#1f2430;">
       <li style="margin:0 0 8px 0;">Review the details at your own pace.</li>
@@ -177,15 +168,19 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
-    ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
-    ctaUrl: data.pdfUrl,
+    ctaText: cta?.text,
+    ctaUrl: cta?.url,
     footerNote: "Pickup is in person at our Gores Landing shop. Please bring valid photo ID.",
   });
 }
 
-function generateFollowUpEmail(data: QuoteEmailRequest): string {
+function generateFollowUpEmail(
+  data: QuoteEmailRequest,
+  hasPdfAttachment: boolean,
+): string {
+  const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
     { label: "Quote #", value: esc(data.quoteNumber) },
     { label: "Motor", value: esc(data.motorModel) },
@@ -207,12 +202,15 @@ function generateFollowUpEmail(data: QuoteEmailRequest): string {
     preheader: `Following up on your Mercury ${data.motorModel} quote`,
     heading: "Following up on your quote",
     bodyHtml: body,
-    ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
-    ctaUrl: data.pdfUrl,
+    ctaText: cta?.text,
+    ctaUrl: cta?.url,
   });
 }
 
-function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
+function generateAdminNotificationEmail(
+  data: QuoteEmailRequest,
+  hasPdfAttachment: boolean,
+): string {
   const body = `
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
       <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Customer</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(data.leadData?.customerName || "Not provided")}</td></tr>
@@ -224,15 +222,24 @@ function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
       <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(data.motorModel)}</td></tr>
       <tr><td style="padding:6px 0;color:#6b7280;">Total</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${data.totalPrice?.toLocaleString()} CAD</td></tr>
     </table>
-    <p style="margin:12px 0 0 0;font-size:13px;">Open in admin: <a href="https://mercuryrepower.ca/admin/quotes/${esc(data.leadData?.quoteId || "")}" style="color:#0f2a43;">view quote</a>${data.pdfUrl ? ` &nbsp;|&nbsp; <a href="${esc(data.pdfUrl)}" style="color:#0f2a43;">PDF</a>` : ""}</p>
+    <p style="margin:12px 0 0 0;font-size:13px;">Open in admin: <a href="https://mercuryrepower.ca/admin/quotes/${esc(data.leadData?.quoteId || "")}" style="color:#0f2a43;">view quote</a>${hasPdfAttachment && data.pdfUrl ? ` &nbsp;|&nbsp; <a href="${esc(data.pdfUrl)}" style="color:#0f2a43;">PDF</a>` : ""}</p>
     <p style="margin:8px 0 0 0;font-size:12px;color:#6b7280;">Contact within 24 hours via preferred channel.</p>
   `;
   return buildAdminEmail({
     preheader: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
-    heading: `${esc(data.leadData?.customerName || "Lead")} - ${esc(data.motorModel)} - $${data.totalPrice?.toLocaleString()}`,
+    heading: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
     bodyHtml: body,
     tag: "Quote",
   });
+}
+
+function bytesToBase64(bytes: Uint8Array): string {
+  const chunkSize = 0x8000;
+  let binary = "";
+  for (let offset = 0; offset < bytes.byteLength; offset += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(offset, offset + chunkSize));
+  }
+  return btoa(binary);
 }
 
 serve(async (req) => {
@@ -262,31 +269,65 @@ serve(async (req) => {
     const validationResult = quoteEmailSchema.safeParse(rawData);
     if (!validationResult.success) {
       console.log('Validation failed:', validationResult.error.errors);
-      return jsonResponse(400, {
+      return new Response(JSON.stringify({
         success: false,
         error: 'Invalid email data',
         details: validationResult.error.errors.map(e => ({
           field: e.path.join('.'),
           message: e.message
         }))
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
-    const emailData = validationResult.data;
+    const parsedEmailData = validationResult.data;
+    let emailData: QuoteEmailRequest = parsedEmailData;
     const isConsultationPath = Boolean(emailData.documentId);
 
     if (isConsultationPath) {
       if (!internalRequest) {
-        return jsonResponse(403, { success: false, error: 'Forbidden' });
+        return new Response(JSON.stringify({ success: false, error: 'Forbidden' }), {
+          status: 403,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
       }
       try {
         rejectConsultationCallerPdfUrl(emailData.pdfUrl);
+        if (emailData.quotePageUrl) {
+          throw new ConsultationDocumentRequestError(
+            "Consultation email cannot accept a caller quote page URL",
+          );
+        }
         assertConsultationDocumentId(emailData.documentId);
         assertConsultationAccessUrl(emailData.documentAccessUrl);
       } catch (consultationError) {
-        return jsonResponse(400, {
+        return new Response(JSON.stringify({
           success: false,
           error: consultationError instanceof Error ? consultationError.message : 'Invalid consultation email',
+        }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    } else {
+      try {
+        emailData = {
+          ...parsedEmailData,
+          ...normalizeQuoteUrls({
+            pdfUrl: parsedEmailData.pdfUrl,
+            quotePageUrl: parsedEmailData.quotePageUrl,
+            supabaseUrl,
+          }),
+        };
+      } catch (urlError) {
+        return new Response(JSON.stringify({
+          success: false,
+          error: urlError instanceof Error ? urlError.message : "Invalid quote URL",
+        }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
     }
@@ -319,10 +360,32 @@ serve(async (req) => {
 
     console.log('Sending email:', emailData.emailType);
 
-    // Fetch the active DB template ONCE. Fetching is safe here; RENDERING waits
-    // until a caller pdfUrl has been validated or stripped so a rejected URL
-    // cannot appear in the composed HTML.
-    let dbTemplate: { subject: string; html_content: string } | null = null;
+    let attachmentStatus = 'none';
+    let legacyPdfAttachment: { filename: string; content: string } | undefined;
+    if (!isConsultationPath && emailData.pdfUrl) {
+      try {
+        const pdfBytes = await fetchValidatedQuotePdf({
+          rawUrl: emailData.pdfUrl,
+          supabaseUrl,
+        });
+        legacyPdfAttachment = {
+          filename: `Quote-${emailData.quoteNumber}.pdf`,
+          content: bytesToBase64(pdfBytes),
+        };
+        attachmentStatus = `attached:${pdfBytes.byteLength}`;
+        console.log('PDF attachment prepared, size:', pdfBytes.byteLength, 'bytes');
+      } catch (pdfError) {
+        console.error(
+          'PDF attachment skipped:',
+          pdfError instanceof Error ? pdfError.name : 'unknown',
+        );
+      }
+    }
+
+    // Try to get template from database first
+    let subject: string;
+    let htmlContent: string;
+
     try {
       const { data: template, error: templateError } = await supabase
         .from('email_templates')
@@ -330,68 +393,34 @@ serve(async (req) => {
         .eq('type', emailData.emailType)
         .eq('is_active', true)
         .single();
+
       if (template && !templateError) {
-        dbTemplate = template;
-      }
-    } catch (_templateError) {
-      console.log('No database template found, using fallback for:', emailData.emailType);
-    }
-
-    let attachmentStatus = 'none';
-    let callerPdfBytes: Uint8Array | null = null;
-    let effectiveEmailData: QuoteEmailRequest = emailData;
-
-    if (!isConsultationPath && emailData.pdfUrl) {
-      const resolved = resolveQuotePdfUrl(emailData.pdfUrl);
-      if (!resolved.url) {
-        console.log('[send-quote-email] pdf url rejected', resolved.reason);
-        return jsonResponse(400, {
-          success: false,
-          error: 'Invalid PDF URL',
-          reason: resolved.reason,
-        });
-      }
-      try {
-        const attachment = await fetchQuotePdfAttachment(resolved.url.toString());
-        callerPdfBytes = attachment.bytes;
-        attachmentStatus = `attached:${attachment.byteLength}`;
-      } catch (attachmentError) {
-        attachmentStatus = attachmentError instanceof QuotePdfRejected
-          ? `rejected:${attachmentError.reason}`
-          : 'rejected:fetch-error';
-        console.log('[send-quote-email] pdf attachment refused', attachmentStatus);
-        callerPdfBytes = null;
-        effectiveEmailData = { ...emailData, pdfUrl: undefined };
-      }
-    }
-
-    let subject: string;
-    let htmlContent: string;
-
-    try {
-      if (dbTemplate) {
         if (isConsultationPath) {
-          const documentAccessUrl = assertConsultationAccessUrl(effectiveEmailData.documentAccessUrl);
-          subject = sanitizeEmailSubject(replaceConsultationTemplateVariables(dbTemplate.subject, {
-            customerName: effectiveEmailData.customerName,
-            quoteNumber: effectiveEmailData.quoteNumber,
-            motorModel: effectiveEmailData.motorModel,
-            totalPrice: effectiveEmailData.totalPrice,
+          const documentAccessUrl = assertConsultationAccessUrl(emailData.documentAccessUrl);
+          subject = replaceConsultationTemplateVariables(template.subject, {
+            customerName: emailData.customerName,
+            quoteNumber: emailData.quoteNumber,
+            motorModel: emailData.motorModel,
+            totalPrice: emailData.totalPrice,
             documentAccessUrl,
-          }, { html: false }));
-          htmlContent = replaceConsultationTemplateVariables(dbTemplate.html_content, {
-            customerName: effectiveEmailData.customerName,
-            quoteNumber: effectiveEmailData.quoteNumber,
-            motorModel: effectiveEmailData.motorModel,
-            totalPrice: effectiveEmailData.totalPrice,
+          }, { html: false });
+          htmlContent = replaceConsultationTemplateVariables(template.html_content, {
+            customerName: emailData.customerName,
+            quoteNumber: emailData.quoteNumber,
+            motorModel: emailData.motorModel,
+            totalPrice: emailData.totalPrice,
             documentAccessUrl,
           });
           assertResolvedConsultationTemplate(htmlContent, documentAccessUrl);
-        } else if (dbTemplate.html_content.includes('{{documentAccessUrl}}')) {
+        } else if (
+          template.html_content.includes('{{documentAccessUrl}}')
+          || emailData.pdfUrl
+          || emailData.quotePageUrl
+        ) {
           throw new Error('Template not found, using fallback');
         } else {
-          subject = sanitizeEmailSubject(replaceTemplateVariables(dbTemplate.subject, effectiveEmailData));
-          htmlContent = replaceTemplateVariables(dbTemplate.html_content, effectiveEmailData);
+          subject = replaceTemplateVariables(template.subject, emailData, "subject");
+          htmlContent = replaceTemplateVariables(template.html_content, emailData, "html");
         }
       } else {
         throw new Error('Template not found, using fallback');
@@ -399,37 +428,43 @@ serve(async (req) => {
     } catch (templateError) {
       if (isConsultationPath) {
         if (templateError instanceof ConsultationDocumentRequestError) {
-          return jsonResponse(400, { success: false, error: templateError.message });
+          return new Response(JSON.stringify({ success: false, error: templateError.message }), {
+            status: 400,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
         }
-        const documentAccessUrl = assertConsultationAccessUrl(effectiveEmailData.documentAccessUrl);
-        subject = sanitizeEmailSubject(`Your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber} | Harris Boat Works`);
-        htmlContent = generateConsultationQuoteDeliveryEmail(effectiveEmailData, documentAccessUrl);
+        const documentAccessUrl = assertConsultationAccessUrl(emailData.documentAccessUrl);
+        subject = `Your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber} | Harris Boat Works`;
+        htmlContent = generateConsultationQuoteDeliveryEmail(emailData, documentAccessUrl);
         assertResolvedConsultationTemplate(htmlContent, documentAccessUrl);
       } else {
-        console.log('No database template found, using fallback for:', effectiveEmailData.emailType);
-        switch (effectiveEmailData.emailType) {
+        console.log('No database template found, using fallback for:', emailData.emailType);
+        switch (emailData.emailType) {
           case 'quote_delivery':
-            subject = sanitizeEmailSubject(`Your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber} | Harris Boat Works`);
-            htmlContent = generateQuoteDeliveryEmail(effectiveEmailData);
+            subject = `Your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber} | Harris Boat Works`;
+            htmlContent = generateQuoteDeliveryEmail(emailData, Boolean(legacyPdfAttachment));
             break;
           case 'follow_up':
           case 'reminder':
-            subject = sanitizeEmailSubject(`Following up on your Mercury ${effectiveEmailData.motorModel} quote, ref ${effectiveEmailData.quoteNumber}`);
-            htmlContent = generateFollowUpEmail(effectiveEmailData);
+            subject = `Following up on your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber}`;
+            htmlContent = generateFollowUpEmail(emailData, Boolean(legacyPdfAttachment));
             break;
           case 'admin_quote_notification':
-            subject = sanitizeEmailSubject(`[QUOTE] ${effectiveEmailData.leadData?.customerName || "Lead"} - ${effectiveEmailData.motorModel} - $${effectiveEmailData.totalPrice?.toLocaleString()}`);
-            htmlContent = generateAdminNotificationEmail(effectiveEmailData);
+            subject = `[QUOTE] ${emailData.leadData?.customerName || "Lead"} - ${emailData.motorModel} - $${emailData.totalPrice?.toLocaleString()}`;
+            htmlContent = generateAdminNotificationEmail(emailData, Boolean(legacyPdfAttachment));
             break;
           default:
-            subject = sanitizeEmailSubject(`Your Mercury Motor Quote #${effectiveEmailData.quoteNumber} from Harris Boat Works`);
-            htmlContent = generateQuoteDeliveryEmail(effectiveEmailData);
+            subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
+            htmlContent = generateQuoteDeliveryEmail(emailData, Boolean(legacyPdfAttachment));
         }
       }
     }
 
+    subject = sanitizeEmailSubject(subject);
+
     // Keep customer delivery branded as HBW. Internal quote alerts go to the
     // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
+    // Prepare email options
     const emailOptions: {
       from: string;
       to: string[];
@@ -451,16 +486,22 @@ serve(async (req) => {
     if (destinations.bcc) {
       emailOptions.bcc = destinations.bcc;
     }
+    if (legacyPdfAttachment) {
+      emailOptions.attachments = [legacyPdfAttachment];
+    }
 
     if (isConsultationPath) {
-      const documentId = assertConsultationDocumentId(effectiveEmailData.documentId);
+      const documentId = assertConsultationDocumentId(emailData.documentId);
       const { data: documentRow, error: documentError } = await supabase
         .from("consultation_documents")
         .select("id, storage_key, sha256, byte_size, content_type, quote_number")
         .eq("id", documentId)
         .maybeSingle();
       if (documentError || !documentRow) {
-        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+        return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
       }
       let binding: { path: string; sha256: string };
       try {
@@ -472,18 +513,24 @@ serve(async (req) => {
           contentType: documentRow.content_type,
         });
       } catch {
-        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+        return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
       }
       const { data: object, error: downloadError } = await supabase.storage
         .from(CONSULTATION_DOCUMENTS_BUCKET)
         .download(binding.path);
       if (downloadError || !object) {
-        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+        return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
       }
       const pdfBytes = new Uint8Array(await object.arrayBuffer());
       try {
         validateQuotePdf(pdfBytes, object.type || documentRow.content_type || "application/pdf");
-        const digest = await sha256Bytes(pdfBytes);
+        const digest = await sha256Hex(pdfBytes);
         if (
           pdfBytes.byteLength !== documentRow.byte_size
           || !constantTimeEqual(digest, binding.sha256)
@@ -492,37 +539,36 @@ serve(async (req) => {
           throw new ConsultationDocumentUnavailableError();
         }
       } catch {
-        return jsonResponse(404, { success: false, error: "Consultation document unavailable" });
+        return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
       }
       attachmentStatus = `attached:${pdfBytes.byteLength}`;
+      const pdfBase64 = btoa(pdfBytes.reduce((data, byte) => data + String.fromCharCode(byte), ""));
       emailOptions.attachments = [{
-        filename: `Quote-${effectiveEmailData.quoteNumber}.pdf`,
-        content: encodeBase64(pdfBytes),
-      }];
-    } else if (callerPdfBytes) {
-      emailOptions.attachments = [{
-        filename: `Quote-${effectiveEmailData.quoteNumber}.pdf`,
-        content: encodeBase64(callerPdfBytes),
+        filename: `Quote-${emailData.quoteNumber}.pdf`,
+        content: pdfBase64,
       }];
     }
 
     const idempotencyKey = await deriveIdempotencyKey({
-      suppliedKey: effectiveEmailData.idempotencyKey,
-      emailType: effectiveEmailData.emailType,
-      quoteNumber: effectiveEmailData.quoteNumber,
-      quoteId: effectiveEmailData.leadData?.quoteId,
-      recipient: effectiveEmailData.customerEmail,
+      suppliedKey: emailData.idempotencyKey,
+      emailType: emailData.emailType,
+      quoteNumber: emailData.quoteNumber,
+      quoteId: emailData.leadData?.quoteId,
+      recipient: emailData.customerEmail,
     });
-    const recipientHash = await sha256Hex(normalizeRecipient(effectiveEmailData.customerEmail));
+    const recipientHash = await sha256Recipient(normalizeRecipient(emailData.customerEmail));
     emailOptions.headers = { 'Idempotency-Key': idempotencyKey };
 
     let claim;
     try {
       claim = await claimQuoteEmailDelivery(supabase, {
         idempotencyKey,
-        emailType: effectiveEmailData.emailType,
-        quoteNumber: effectiveEmailData.quoteNumber,
-        quoteId: effectiveEmailData.leadData?.quoteId,
+        emailType: emailData.emailType,
+        quoteNumber: emailData.quoteNumber,
+        quoteId: emailData.leadData?.quoteId,
         recipientHash,
         initiator: isAdminNotification ? 'admin' : 'customer',
       });
@@ -538,7 +584,7 @@ serve(async (req) => {
         success: true,
         duplicate: true,
         messageId: claim.messageId,
-        emailType: effectiveEmailData.emailType,
+        emailType: emailData.emailType,
         attachmentStatus,
       });
     }
@@ -582,7 +628,7 @@ serve(async (req) => {
     return jsonResponse(200, {
       success: true,
       messageId,
-      emailType: effectiveEmailData.emailType,
+      emailType: emailData.emailType,
       attachmentStatus,
       ...(audited ? {} : { auditWarning: 'delivery-audit-write-failed' }),
     });
@@ -591,7 +637,7 @@ serve(async (req) => {
     console.error('Error in send-quote-email function:', error);
     return jsonResponse(500, {
       error: error instanceof Error ? error.message : 'Unknown error',
-      success: false
+      success: false,
     });
   }
 });

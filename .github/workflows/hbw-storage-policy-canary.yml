@@ -1,0 +1,48 @@
+name: HBW storage policy canary
+
+on:
+  pull_request:
+    paths:
+      - 'public/maintenance.md'
+      - 'public/.well-known/brand.json'
+      - 'src/data/faqData.ts'
+      - 'src/data/harrisBoatWorksBrandPage.js'
+      - 'scripts/check-hbw-storage-policy.mjs'
+      - 'scripts/lib/hbw-storage-policy.mjs'
+      - 'src/test/hbwStoragePolicy.test.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/hbw-storage-policy-canary.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/maintenance.md'
+      - 'public/.well-known/brand.json'
+      - 'src/data/faqData.ts'
+      - 'src/data/harrisBoatWorksBrandPage.js'
+      - 'scripts/check-hbw-storage-policy.mjs'
+      - 'scripts/lib/hbw-storage-policy.mjs'
+      - 'src/test/hbwStoragePolicy.test.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/hbw-storage-policy-canary.yml'
+  schedule:
+    # Daily external-source drift check at 09:23 ET (summer).
+    - cron: '23 13 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  outdoor-only-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.19.0'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Check repository and public GTM source
+        run: npm run check:hbw-storage-policy
