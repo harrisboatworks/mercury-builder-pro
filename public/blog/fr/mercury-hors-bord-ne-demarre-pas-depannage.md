@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)"
 description: "La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Mercury hors-bord ne démarre pas","dépannage hors-bord Mercury","problème démarrage Mercury","moteur bateau ne part pas printemps","hors-bord Mercury Québec"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,9 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-19\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
-
-**Langue :** Français (Québec)
-
----
 
 ## Réponse rapide
 
@@ -162,37 +158,12 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 - [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/fr/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
-
-## Foire aux questions
-
-**Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?**
-Un technicien avec les bons outils peut généralement identifier la cause en 30 à 90 minutes. Le dépannage par le propriétaire à la maison peut prendre plus de temps sans équipement de test spécialisé. Nous n'estimons pas de délais précis pour des diagnostics à distance.
-
-**Est-ce que je peux endommager le moteur en le lançant à répétition ?**
-Oui, de plusieurs façons : faire tourner à sec (sans eau de refroidissement) endommage la turbine de la pompe à eau en quelques secondes; noyer les cylindres peut pousser du carburant au-delà des segments dans l'huile; et surcharger une batterie marginale à répétition peut accélérer sa défaillance. Faites le dépannage de façon systématique plutôt que de lancer à répétition en espérant que ça parte.
-
-**Le moteur démarre mais s'éteint immédiatement. Qu'est-ce que ça veut dire ?**
-Habituellement un problème d'alimentation en carburant : le moteur démarre sur le carburant déjà dans le système mais ne peut pas maintenir le débit. Vérifiez la poire d'amorçage, le filtre à carburant et les raccords des conduites. Cela peut aussi être le mélange au ralenti sur un moteur à carburateur.
-
-**Devrais-je utiliser un additif pour nettoyer les injecteurs ?**
-Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d'un nettoyage physique ou d'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.
-
-**Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu'est-ce qui a changé ?**
-Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l'interne, ou un système de carburant marginal. Cela peut aussi être le début d'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.
-
----
-
-## Liens internes
-
-- [Hivernisation du moteur Mercury en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario)
-
----
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 
@@ -206,7 +177,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 ---
 
-## FAQs
+## Questions fréquentes
 
 ### Pourquoi mon Mercury hors-bord ne démarre pas après l'hiver ?
 
@@ -238,7 +209,7 @@ Si un Mercury a déclenché un arrêt sur l'eau à cause d'une surchauffe, d'une
 
 ### Est-ce mauvais de lancer le démarreur d'un moteur qui ne part pas, à répétition ?
 
-Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s'il y a de l'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.
+Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s'il y a de l'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Ne faites jamais tourner le moteur à sec, sans alimentation en eau de refroidissement, car la turbine de la pompe à eau peut être endommagée en quelques secondes. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.
 
 ### C'est quoi le cordon du coupe-circuit Mercury et où s'attache-t-il ?
 
@@ -247,6 +218,18 @@ Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) 
 ### Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?
 
 Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
+
+### Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?
+
+Le temps varie selon le moteur, les symptômes, l'accès et les résultats des tests. Certaines causes sont rapides à isoler une fois le bateau à l'atelier; la cause confirmée et la disponibilité des pièces déterminent ensuite le délai de réparation. Nous n'estimons pas de délai précis pour un diagnostic à distance.
+
+### Devrais-je utiliser un additif pour nettoyer les injecteurs ?
+
+Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d'un nettoyage physique ou d'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.
+
+### Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu'est-ce qui a changé ?
+
+Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l'interne, ou un système de carburant marginal. Cela peut aussi être le début d'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.
 
 ## Prochaines étapes
 

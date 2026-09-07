@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard.md
-last_updated: 2026-07-04
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Simcoe 华人钓友船外机指南"
 description: "针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。"
 category: "钓鱼指南"
 date_published: 2026-05-10
-date_modified: 2026-07-04
+date_modified: 2026-09-06
 keywords: ["Lake Simcoe 华人钓鱼 Mercury","Lake Simcoe Chinese anglers","Mercury kicker 中文","安省华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-07-04  
+**最后审核:** 2026-09-06  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 
@@ -97,7 +97,7 @@ Kicker不是每个人都需要，但对在Lake Simcoe长时间出湖的钓友来
 
 ## FMZ 16规则与钓鱼证
 
-Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季节、尺寸限制和数量限制，另外也属于南部诱饵管理区（Southern Bait Management Zone），对活饵的跨区携带有限制。
+Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季节、尺寸限制和数量限制。活饵、鱼饵携带和跨区规则以当年度官方钓鱼规则为准。
 
 **请以当年度安大略省官方钓鱼规则（Ontario fishing regulations Summary）为准。** 安大略省提供繁体中文钓鱼规则摘要版，适合华人钓友作为入口，但最终仍以英文完整版的规定为准。
 

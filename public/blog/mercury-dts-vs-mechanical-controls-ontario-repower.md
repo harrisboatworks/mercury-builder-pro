@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
@@ -35,7 +35,7 @@ revenue_driver: repower
 
 Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother, looks cleaner at the helm, and is required on most Mercury V8 and V10 outboards (150 HP and up depending on model). Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP, and they cost roughly $400-$800 less than the DTS equivalent fully installed. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. For a repower into a Mercury Pro XS 175+ or a Verado, you don't have a choice. We install both at Harris Boat Works, and the right call usually depends on motor size and what the helm looks like today.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## What you're actually choosing between
 
@@ -43,11 +43,11 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 **DTS** is Mercury's digital control system. The control head at the helm is electronic, with a chrome lever, digital display, and a START/STOP button. Instead of cables, the control sends signals over the Mercury SmartCraft network to the motor's electronic throttle and shift actuators. There are no cables to seize, the response is precise, and the system integrates with VesselView, autopilot, and joystick if you have them.
 
-The chemistry difference creates real consequences in compatibility, cost, ride, and serviceability.
+The difference between the systems creates real consequences in compatibility, cost, ride, and serviceability.
 
 ## Compatibility (quick check)
 
-DTS is standard on all current Mercury Verado V8/V10/V12 (250-600 HP, naturally aspirated), most current Pro XS 150 HP and up, and most current FourStroke 200 HP and up. Smaller motors (under 75 HP) use mechanical controls. Older mechanical motors generally cannot be retrofitted to DTS without replacing major engine components.
+DTS is standard on current Mercury Verado V8/V10/V12 packages in the 250-600 HP range. Confirm DTS fitment on the exact Pro XS or FourStroke model rather than inferring it from horsepower. Smaller motors (under 75 HP) typically use mechanical controls. Older mechanical motors generally cannot be retrofitted to DTS without replacing major engine components.
 
 For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
@@ -59,7 +59,8 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 |---|---|---|---|
 | FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
-| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
+| FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
 | Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
@@ -126,7 +127,7 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 
 ## Sources
 
-- Mercury Marine SmartCraft and DTS technical documentation ([mercurymarine.com/ca/en/owner-resources](https://www.mercurymarine.com/ca/en/owner-resources/))
+- [Mercury Marine Digital Throttle & Shift (DTS) guidance](https://www.mercurymarine.com/ca/en/smartcraft/vessel-control/digital-controls)
 - Mercury Marine outboard rigging guide (dealer technical reference, 2026)
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - HBW internal rigging records, 2020-2026
@@ -147,7 +148,7 @@ No. DTS draws power from the standard outboard charging system and the boat's ma
 
 ### What happens if the DTS digital display fails on the water?
 
-Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it hasn't left our customers stranded.
+A display fault and a throttle or shift-control fault are different problems. Do not assume every DTS fault leaves a usable limited-throttle mode. Follow the warning and troubleshooting instructions for your exact engine and control system, and contact a Mercury dealer. If you cannot control the boat safely, arrange assistance rather than relying on a universal fallback. Have the dealer check any applicable campaigns for the specific controls.
 
 ### Are mechanical cables really 50-year-old technology?
 

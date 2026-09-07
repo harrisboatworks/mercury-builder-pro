@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" xml:lang="fr" aria-labelledby="title desc">
+  <title id="title">Mercury ne démarre pas ?</title>
+  <desc id="desc">Vérifications de base du démarrage : cordon et point neutre, batterie, carburant; arrêter en cas de doute et réserver un diagnostic.</desc>
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <text x="600" y="78" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="50" font-weight="700">Mercury ne démarre pas ?</text>
+  <rect x="540" y="96" width="120" height="6" rx="3" fill="#C8102E"/>
+
+  <rect x="56" y="128" width="336" height="248" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="224" cy="184" r="30" fill="#0B1F3A"/>
+  <text x="224" y="195" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="700">1</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="38" font-weight="600">
+    <tspan x="224" y="262">Cordon et</tspan>
+    <tspan x="224" dy="50">point neutre</tspan>
+  </text>
+
+  <rect x="432" y="128" width="336" height="248" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="600" cy="184" r="30" fill="#0B1F3A"/>
+  <text x="600" y="195" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="700">2</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="38" font-weight="600">
+    <tspan x="600" y="262">Batterie et</tspan>
+    <tspan x="600" dy="50">connexions</tspan>
+  </text>
+
+  <rect x="808" y="128" width="336" height="248" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="976" cy="184" r="30" fill="#0B1F3A"/>
+  <text x="976" y="195" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="700">3</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="600">
+    <tspan x="976" y="286">Carburant</tspan>
+  </text>
+
+  <rect x="56" y="412" width="1088" height="332" rx="22" fill="#FFF6F6" stroke="#C8102E" stroke-width="5"/>
+  <text x="600" y="470" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="700">Arrêtez le dépannage si…</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="500">
+    <tspan x="600" y="528">Vous n’êtes pas sûr d’une étape.</tspan>
+    <tspan x="600" dy="48">Code d’erreur, fumée,</tspan>
+    <tspan x="600" dy="46">odeur ou bruit inhabituel.</tspan>
+  </text>
+  <line x1="180" y1="634" x2="1020" y2="634" stroke="#0B1F3A" stroke-width="2"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="600">
+    <tspan x="600" y="682">Réserver un diagnostic :</tspan>
+    <tspan x="600" dy="46">hbw.wiki/service</tspan>
+  </text>
+</svg>

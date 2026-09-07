@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Read a Boat Capacity Plate in Ontario"
 description: "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-08-02
+date_modified: 2026-09-06
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 
@@ -45,7 +45,7 @@ If you cannot find it, look for a 4x6 inch silver or yellow plate with rivets, o
 
 ## What each field means
 
-A standard Canadian capacity plate has four numbers and one rating:
+The sections below explain maximum persons, recommended engine power, gross load, and the declaration of compliance.
 
 ### 1. Maximum number of persons
 This is the largest number of people included in the manufacturer's recommended safe limits for the boat. It is separate from the weight limit. Transport Canada says the craft reaches capacity when either the people limit or the weight limit is reached, whichever comes first.

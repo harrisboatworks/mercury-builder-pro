@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"
 date_published: 2026-04-27
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["portable outboard","small boat motor","dinghy motor","mercury portable","tender motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
 
 ---
 
-> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is a common choice for cottage tin boats and small fishing rigs. Check the exact model for control type, shaft length, starting system, and installation requirements. Configure at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Zeroing in on the 9.9? See our dedicated [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for every variant and its CAD price.
 
@@ -71,7 +71,7 @@ Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice 
 8 to 11-foot small boats. Lightweight and portable.
 
 ### Mercury 9.9 MH (9.9 HP)
-12–14-foot tin boats, kicker motors on bigger boats. The most popular small-boat motor in Canada. 2-cylinder 4-stroke, manual start. The standard cottage fishing setup.
+12–14-foot tin boats, kicker motors on bigger boats. A common cottage fishing and small-boat choice. 2-cylinder 4-stroke, manual start.
 
 *Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
 
@@ -99,7 +99,7 @@ The portable Mercury lineup covers a wide range of jobs. The right choice depend
 
 **Mercury 9.9 to 20 HP EH or ELH**
 
-A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
+A 9.9 EFI is often the more versatile motor in this range when the hull, load, and carrying weight allow it. A 5 HP can be the right call on a lighter dinghy or jon boat that must stay easy to lift. Match horsepower to hull, load, and how you will carry the motor.
 
 ### Mercury 15 MH and 15 EH (15 HP)
 14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.

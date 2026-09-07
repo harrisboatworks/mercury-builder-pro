@@ -2,7 +2,11 @@
 // CORS-open, no-auth. Cached 5 minutes at the edge.
 // Pricing hierarchy: manual_overrides.sale → manual_overrides.base → sale_price → dealer_price → msrp → base_price
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import { detectFamily, motorSlug } from '../_shared/motor-slug.ts';
+import {
+  applyMotorPresentationOverrides,
+  detectFamily,
+  motorSlug,
+} from '../_shared/motor-slug.ts';
 import { PUBLIC_SITE_URL, toPublicImageUrl } from '../_shared/public-motor-contract.ts';
 
 const corsHeaders = {
@@ -78,7 +82,8 @@ Deno.serve(async (req) => {
         if (display.includes('verado')) return false;
         return true;
       })
-      .map((m) => {
+      .map((sourceMotor) => {
+        const m = applyMotorPresentationOverrides(sourceMotor);
         const family = detectFamily(m.model_display || m.model, m.motor_type, m.family);
         const sellingPrice = resolveSellingPrice(m);
         const slug = motorSlug(m);

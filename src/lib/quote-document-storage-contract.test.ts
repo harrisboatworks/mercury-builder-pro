@@ -29,8 +29,9 @@ describe('private quote document storage contract', () => {
     expect(myQuotes).toContain("body: { action: 'download', savedQuoteId: quote.id }");
     expect(myQuotes).toContain('buildLegacyQuotePdfSnapshot');
     expect(myQuotes).toContain('This is not a stored reservation document.');
-    expect(myQuotes).toContain('.from("saved_quotes")');
-    expect(myQuotes).toContain('.select("*")');
+    expect(myQuotes).toContain('loadOwnedSavedQuotes()');
+    expect(myQuotes).not.toContain('.from("saved_quotes")');
+    expect(myQuotes).not.toContain('.select("*")');
     expect(myQuotes).not.toMatch(/\.eq\(\s*["']user_id["']/);
     expect(myQuotes).not.toContain('quote_pdf_path');
     expect(myQuotes).not.toContain('deposit_pdf_path');
@@ -39,7 +40,9 @@ describe('private quote document storage contract', () => {
     const depositGuard = payment.indexOf('assertDepositRequestHasSavedQuoteId');
     const stripeConstruct = payment.indexOf('new Stripe(');
     const documentCheck = payment.indexOf('assertCanonicalQuoteDocumentReady({');
-    const stripeCreate = payment.indexOf('stripe.checkout.sessions.create(sessionData)');
+    const stripeCreate = payment.indexOf(
+      'const session = await stripe.checkout.sessions.create(',
+    );
     expect(payment).toContain('assertDepositRequestHasSavedQuoteId(validationResult.data)');
     expect(payment).toContain('if (!depositSavedQuoteId)');
     expect(payment).toContain('assertCanonicalQuoteDocumentReady({');

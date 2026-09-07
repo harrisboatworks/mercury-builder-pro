@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" xml:lang="en" aria-labelledby="title desc">
+  <title id="title">What a complete quote lists</title>
+  <desc id="desc">Concept diagram of a complete quote: motor and shaft, controls and steering, propeller, rigging, and install labour.</desc>
+  <rect width="1200" height="800" fill="#F4EFE4"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="700">
+    <tspan x="600" y="86">What a complete</tspan>
+    <tspan x="600" dy="80">quote lists</tspan>
+  </text>
+  <rect x="540" y="186" width="120" height="6" rx="3" fill="#C8102E"/>
+
+  <rect x="48" y="214" width="1104" height="76" rx="18" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="48" y="214" width="76" height="76" rx="18" fill="#0B1F3A"/>
+  <path d="M74 268 V236 H98" fill="none" stroke="#F4EFE4" stroke-width="6" stroke-linecap="round"/>
+  <text x="152" y="264" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Motor and shaft</text>
+
+  <rect x="48" y="306" width="1104" height="76" rx="18" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="48" y="306" width="76" height="76" rx="18" fill="#0B1F3A"/>
+  <circle cx="86" cy="344" r="14" fill="none" stroke="#F4EFE4" stroke-width="6"/>
+  <text x="152" y="356" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Controls and steering</text>
+
+  <rect x="48" y="398" width="1104" height="76" rx="18" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="48" y="398" width="76" height="76" rx="18" fill="#0B1F3A"/>
+  <path d="M70 452 L86 416 L102 452 Z" fill="#F4EFE4"/>
+  <text x="152" y="448" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Propeller</text>
+
+  <rect x="48" y="490" width="1104" height="76" rx="18" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="48" y="490" width="76" height="76" rx="18" fill="#0B1F3A"/>
+  <path d="M70 514 H102 M70 528 H102 M70 542 H90" stroke="#F4EFE4" stroke-width="5" stroke-linecap="round"/>
+  <text x="152" y="540" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Rigging</text>
+
+  <rect x="48" y="582" width="1104" height="76" rx="18" fill="#0B1F3A"/>
+  <rect x="72" y="606" width="28" height="28" rx="6" fill="#F4EFE4"/>
+  <text x="152" y="632" fill="#F4EFE4" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">Install labour</text>
+
+  <rect x="48" y="684" width="1104" height="84" rx="20" fill="#EDE6D6"/>
+  <text x="600" y="738" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="600">A motor-only number is not an installed price.</text>
+</svg>

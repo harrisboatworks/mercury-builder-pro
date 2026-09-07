@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" xml:lang="ko" aria-labelledby="title desc">
+  <title id="title">머큐리 선외기 무게</title>
+  <desc id="desc">공식 건조 중량에 장비와 유체 무게를 고려하고 선체의 허용 한도를 확인하는 과정.</desc>
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <text x="600" y="88" text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="56" font-weight="700">머큐리 선외기 무게</text>
+  <rect x="540" y="108" width="120" height="6" rx="3" fill="#C8102E"/>
+
+  <rect x="56" y="168" width="336" height="400" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="224" cy="236" r="36" fill="#0B1F3A"/>
+  <text x="224" y="248" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="32" font-weight="700">1</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="42" font-weight="600">
+    <tspan x="224" y="340">공식 건조</tspan>
+    <tspan x="224" dy="58">중량</tspan>
+  </text>
+
+  <polygon points="414,358 444,378 414,398" fill="#0B1F3A" aria-hidden="true"/>
+
+  <rect x="432" y="168" width="336" height="400" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="600" cy="236" r="36" fill="#0B1F3A"/>
+  <text x="600" y="248" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="32" font-weight="700">2</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="42" font-weight="600">
+    <tspan x="600" y="340">장비와</tspan>
+    <tspan x="600" dy="58">유체 무게</tspan>
+  </text>
+
+  <polygon points="790,358 820,378 790,398" fill="#0B1F3A" aria-hidden="true"/>
+
+  <rect x="808" y="168" width="336" height="400" rx="20" fill="#F7F9FC" stroke="#0B1F3A" stroke-width="4"/>
+  <circle cx="976" cy="236" r="36" fill="#0B1F3A"/>
+  <text x="976" y="248" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="32" font-weight="700">3</text>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="42" font-weight="600">
+    <tspan x="976" y="340">선체의</tspan>
+    <tspan x="976" dy="58">허용 한도</tspan>
+  </text>
+
+  <rect x="56" y="612" width="1088" height="132" rx="18" fill="#EEF2F6"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'AppleGothic', sans-serif" font-size="36" font-weight="600">
+    <tspan x="600" y="664">건조 중량은 실제 설치</tspan>
+    <tspan x="600" dy="48">총중량이 아닙니다.</tspan>
+  </text>
+</svg>

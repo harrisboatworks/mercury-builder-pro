@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -55,7 +55,7 @@ That proximity changes the whole relationship with a dealer. It means:
 
 ## Bowmanville Has a Strong Boating Community
 
-Bowmanville and the broader Clarington area has a genuine boating culture, Lake Ontario access, Rice Lake not far north, the Trent-Severn within reach. A lot of residents here are serious boat owners, not casual ones. They know what a good dealer relationship looks like, and they notice when they're not getting one.
+Bowmanville and the broader Clarington area has Lake Ontario access, Rice Lake not far north, and the Trent-Severn within reach. Local launches are at the Bowmanville waterfront and the Westside Beach area; the shoreline is open and exposed, so many owners fish close to shore or trailer inland when conditions favour it.
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. That's the starting point. Real number, visible before any conversation, no process to navigate. To [see what you would pay for a Mercury](/pricing-reference) without building a quote, our motor price list is published.
 
@@ -80,10 +80,10 @@ FourStroke and Pro XS. Verado and SeaPro available by special order. Honest conv
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 35 minutes.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and MerCruiser.
+HBW stocks common Mercury service parts. The exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-Outdoor winter storage with shrinkwrap. We don't offer indoor, heated, climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.
@@ -125,22 +125,6 @@ This is what a dealer relationship is supposed to feel like.
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
----
-
-## Where Bowmanville Boaters Launch and Why HBW Is the Closest Mercury Premier Dealer
-
-Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed, most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
-
-The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north, the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Premier dealer, period. Driving back into Toronto for service takes longer.
-
-Why Bowmanville boaters choose HBW:
-
-- **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
-- **Seasonal convenience.** Many Bowmanville customers bring their boat to HBW for fall winterization and outdoor storage, then pick it up after we reopen in early April. One marina for the boating-season handoffs that matter.
-- **Mercury Premier depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
-
----
-
 ## FAQs
 
 ### How far is HBW from Bowmanville?
@@ -157,11 +141,11 @@ Yes. Clarington and Newcastle are within the same drive time. We have customers 
 
 ## Related guides
 
-- [Mercury Dealer Brampton Ontario HBW](/blog/mercury-dealer-brampton-ontario-hbw), Mercury dealer for Brampton
-- [Mercury Dealer Burlington Ontario HBW](/blog/mercury-dealer-burlington-ontario-hbw), Mercury dealer for Burlington
-- [Mercury Dealer Markham Ontario HBW](/blog/mercury-dealer-markham-ontario-hbw), Mercury dealer for Markham
-- [Mercury Dealer Mississauga HBW](/blog/mercury-dealer-mississauga-ontario-hbw), Mercury dealer for Mississauga
-- [Mercury Dealer Oakville Ontario HBW](/blog/mercury-dealer-oakville-ontario-hbw), Mercury dealer for Oakville
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 
 ## Next steps
 

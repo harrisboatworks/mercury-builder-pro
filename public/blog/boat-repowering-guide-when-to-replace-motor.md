@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
-> **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
+> **Quick answer:** Repower when the itemized repair no longer compares well with the motor's remaining condition and expected use, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
 The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection). If you are wondering when it is time to replace your motor, read our guide first and then get a [boat repower in Ontario](/repower) from the team at Harris Boat Works.
 
@@ -38,11 +38,11 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Signal | Repower now | Wait for off-season | Not yet |
 |---|---|---|---|
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
-| Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
+| Repair versus full repower | Major work with other unresolved faults | Get itemized quotes for both options | Isolated repair; the rest of the motor checks out |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures, last reviewed 2026-08-26. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Quick recommendation
 
@@ -86,7 +86,7 @@ When these signs appear, plan the repower for the next off-season. Do not wait f
 - **Cooling system needing more attention** (impeller failures, telltale issues)
 - **Spark plug fouling** consistent across plugs
 - **Mid-RPM hesitation** or surging
-- **Repair bills exceeding 25% of motor replacement cost annually**
+- **Repeated major repairs, especially when other faults remain unresolved**
 
 At this stage, the math shifts toward "order a spring repower now." Continued repairs are throwing good money after bad.
 
@@ -168,9 +168,9 @@ The customers who plan ahead pay the same motor price but skip all three costs. 
 
 When a motor has a major problem, the question becomes: repair or repower?
 
-For older motors (15+ years), repair almost never makes sense if the cost is more than 30% of replacement. The repair fixes one problem; the next problem is usually 2 to 3 years away. Cumulative repair costs over a few years exceed replacement cost.
+For older motors (15+ years), compare the complete repair quote with an installed repower quote, including any other work the old motor still needs. The repair fixes one problem; the next problem is usually 2 to 3 years away. Cumulative repair costs over a few years exceed replacement cost.
 
-For mid-age motors (8 to 15 years), repair sometimes makes sense if the cost is less than 25% of replacement and the motor has otherwise been well-maintained.
+For mid-age motors (8 to 15 years), repair sometimes makes sense when the estimate still compares well against a full repower and the motor has otherwise been well-maintained.
 
 For new motors (under 8 years), repair almost always makes sense unless the damage is catastrophic.
 
@@ -192,7 +192,7 @@ If you're not sure whether your motor needs replacement, [give us a call at (905
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-26. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
 
 ---
 
@@ -242,7 +242,7 @@ A DIY repower carries safety and coverage risk because transom condition, shaft 
 
 ### What's the repower vs. repair decision framework I should use?
 
-The clearest framework compares the repair estimate to the motor's current market value: under 30 percent of the motor's value leans repair, 30-60 percent depends on the health of the rest of the motor, and over 60 percent leans repower in almost all cases. Apply this logic iteratively, if significant repair spending has already occurred in the past two seasons and another major expense is looming, the total repair spending matters. A powerhead replacement on an older 90HP two-stroke costing $3,000-$5,000 for a motor worth $1,500-$2,500 on the used market is the clearest repower signal. Parts availability issues and extending lead times are also strong signals. For the full framework, see our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide). Harris Boat Works can give an honest assessment of where any motor sits on this spectrum.
+Compare an itemized repair quote with the full installed repower cost over the time you plan to keep the boat. Include other known faults, expected usage and likely downtime in the decision. Apply this logic iteratively, if significant repair spending has already occurred in the past two seasons and another major expense is looming, the total repair spending matters. A powerhead replacement on an older 90HP two-stroke costing $3,000-$5,000 for a motor worth $1,500-$2,500 on the used market is the clearest repower signal. Parts availability issues and extending lead times are also strong signals. For the full framework, see our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide). Harris Boat Works can give an honest assessment of where any motor sits on this spectrum.
 
 ## Related guides
 

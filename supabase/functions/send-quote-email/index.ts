@@ -29,6 +29,10 @@ import {
   fetchValidatedQuotePdf,
   normalizeQuoteUrls,
 } from "./attachment-policy.ts";
+import {
+  replaceTemplateVariables,
+  sanitizeEmailSubject,
+} from "./template-policy.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -77,15 +81,6 @@ type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
 
-// Replace template variables with actual data
-function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
-  return template
-    .replace(/{{customerName}}/g, data.customerName)
-    .replace(/{{quoteNumber}}/g, data.quoteNumber)
-    .replace(/{{motorModel}}/g, data.motorModel)
-    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
-}
-
 function generateConsultationQuoteDeliveryEmail(
   data: QuoteEmailRequest,
   documentAccessUrl: string,
@@ -111,7 +106,7 @@ function generateConsultationQuoteDeliveryEmail(
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: CONSULTATION_CTA_LABEL,
     ctaUrl: documentAccessUrl,
@@ -156,7 +151,7 @@ function generateQuoteDeliveryEmail(
   `;
   return buildEmail({
     preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
-    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    heading: `Your Mercury ${data.motorModel} quote`,
     bodyHtml: body,
     ctaText: cta?.text,
     ctaUrl: cta?.url,
@@ -215,7 +210,7 @@ function generateAdminNotificationEmail(
   `;
   return buildAdminEmail({
     preheader: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
-    heading: `${esc(data.leadData?.customerName || "Lead")} - ${esc(data.motorModel)} - $${data.totalPrice?.toLocaleString()}`,
+    heading: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
     bodyHtml: body,
     tag: "Quote",
   });
@@ -405,8 +400,8 @@ serve(async (req) => {
         ) {
           throw new Error('Template not found, using fallback');
         } else {
-          subject = replaceTemplateVariables(template.subject, emailData);
-          htmlContent = replaceTemplateVariables(template.html_content, emailData);
+          subject = replaceTemplateVariables(template.subject, emailData, "subject");
+          htmlContent = replaceTemplateVariables(template.html_content, emailData, "html");
         }
       } else {
         throw new Error('Template not found, using fallback');
@@ -445,6 +440,8 @@ serve(async (req) => {
         }
       }
     }
+
+    subject = sanitizeEmailSubject(subject);
 
     // Keep customer delivery branded as HBW. Internal quote alerts go to the
     // dedicated Grok Bot inbox, where AgentMail wakes the bot for triage.
