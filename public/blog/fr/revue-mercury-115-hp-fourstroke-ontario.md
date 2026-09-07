@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md
-last_updated: 2026-08-15
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible
 description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-08-15
+date_modified: 2026-09-06
 keywords: ["revue Mercury 115 HP","Mercury 115 HP FourStroke","Mercury 115 ELPT Ontario","Mercury 115 CT Command Thrust","115 HP ponton","Mercury 115 vs 150","Mercury 115 FourStroke vs Pro XS"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,27 +25,27 @@ revenue_driver: repower
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-15\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 
 ### Réponse rapide
 
-Le Mercury 115 HP FourStroke pèse 359 lb, ce qui en fait le hors-bord 115 HP le plus léger disponible. Il fonctionne sur le même bloc 2,1 L 4 cylindres en ligne que les 75 et 90, calibré à 6 000 RPM. C'est le bon moteur pour les bateaux de pêche en aluminium de 17 à 20 pi et les pontons de taille moyenne à grande (avec Command Thrust), et c'est le choix par défaut pour les plaisanciers ontariens qui veulent une vraie marge sans entrer dans le territoire des V6.
+Le Mercury 115 HP FourStroke appartient à la famille 2,1 L 4 cylindres en ligne des 75 et 90. Mercury le présente comme le hors-bord 115 HP le plus léger disponible; le poids à sec publié dépend de la configuration. Il est calibré à 6 000 RPM. C'est le bon moteur pour les bateaux de pêche en aluminium de 17 à 20 pi et les pontons de taille moyenne à grande (avec Command Thrust), et c'est le choix par défaut pour les plaisanciers ontariens qui veulent une vraie marge sans entrer dans le territoire des V6.
 
 ---
 
 ### Revue du Mercury 115 HP FourStroke
 
-"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Dans l'exemple courant d'un ancien 115 OptiMax d'environ 425 lb, la réduction est d'environ 66 lb. Ce changement affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
+"Le 115 HP le plus léger disponible" n'est pas seulement une formule marketing: le poids à l'arrière change le comportement d'un bateau. Remplacer un vieux 115 OptiMax plus lourd par un 115 FourStroke actuel peut modifier la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque. L'écart exact dépend des deux configurations comparées.
 
-Harris Boat Works est une marina familiale de troisième génération sur le lac Rice depuis 1947, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) depuis 1965 et concessionnaire Mercury Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice depuis 1947, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
 
 ---
 
 ## Pourquoi "le 115 HP le plus léger" compte vraiment
 
-Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est environ 66 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
+Le Mercury 115 ELPT FourStroke est plus léger qu'un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment. L'écart exact dépend des configurations comparées. Sur un bateau de pêche en aluminium de 17 à 20 pi, une réduction de poids à l'arrière peut changer des choses réelles :
 
 - La coque s'assoit plus haut au repos, améliorant l'économie de carburant avant même de tourner la clé.
 - Le bateau plane plus tôt avec la même charge.
@@ -129,7 +129,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 | | 90 ELPT | 115 ELPT | 150 ELPT |
 |---|---|---|---|
 | Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L 4 cyl. en ligne, famille différente |
-| Poids à sec | 359 lb | 359 lb (363 CT) | environ 455 lb |
+| Poids à sec | Même famille 2,1 L; confirmez la fiche | Même famille 2,1 L; confirmez la fiche (CT un peu plus lourd) | Plus lourd; confirmez la fiche |
 | RPM pleins gaz | 5 000 à 6 000 | 5 000 à 6 000 | 5 000 à 5 800 |
 | Plage idéale | 16 à 18 pi alu, pontons moyens | 17 à 20 pi alu, pontons moyens-grands | 19 à 22 pi, plateformes plus grandes |
 | Prix vs 115 | Moins | (référence) | Plus (environ 5 000 $ et plus) |
@@ -154,7 +154,7 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 
 ## Guides connexes
 
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
@@ -174,7 +174,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ### Combien pèse le Mercury 115 HP FourStroke?
 
-359 lb à sec pour le ELPT standard. 363 lb pour la version Command Thrust. Mercury affirme que c'est le hors-bord 115 HP le plus léger disponible.
+Le poids à sec publié dépend de la configuration (arbre, embase). Mercury présente le 115 FourStroke comme le hors-bord 115 HP le plus léger disponible; confirmez le code de modèle avant de commander.
 
 ### Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?
 

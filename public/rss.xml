@@ -265,7 +265,7 @@
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart</guid>
       <pubDate>Sun, 07 Jun 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.]]></description>
+      <description><![CDATA[Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.]]></description>
       <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
@@ -357,14 +357,6 @@
       <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Is Your Pontoon Eligible for Mercury Command Thrust? (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026</guid>
-      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks.]]></description>
-      <category><![CDATA[Mercury Technology]]></category>
-    </item>
-    <item>
       <title><![CDATA[Mercury DTS Retrofit Eligibility 2026]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026</guid>
@@ -411,6 +403,14 @@
       <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.]]></description>
       <category><![CDATA[Service & Troubleshooting]]></category>
+    </item>
+    <item>
+      <title><![CDATA[Mercury Propeller Selection Guide 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</guid>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.]]></description>
+      <category><![CDATA[Technical Reference]]></category>
     </item>
   </channel>
 </rss>

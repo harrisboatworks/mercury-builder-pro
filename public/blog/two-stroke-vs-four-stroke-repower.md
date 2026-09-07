@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-08-15
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2-Stroke vs 4-Stroke Repower: What to Know"
 description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing."
 category: "Repower Guides"
 date_published: 2026-05-24
-date_modified: 2026-08-15
+date_modified: 2026-09-06
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-08-15  
+**Last reviewed:** 2026-09-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
@@ -51,7 +51,7 @@ Here is a modern 90 HP FourStroke against the 90 HP 2-stroke most Ontario custom
 |---|---|---|
 | Dry weight | ~140 to 145 kg | ~163 kg (about 359 lb) |
 | Idle | Lopey, rough | Smooth, quiet |
-| Fuel burn at cruise | ~28 to 32 L/h | ~17 to 22 L/h |
+| Fuel burn at cruise | Compare measured use on the same hull | Compare measured use on the same hull |
 | Oil | Pre-mix or VRO injection | Sump or oil injection |
 | Noise at idle | Loud | Notably quieter |
 | Emissions | High, smoky | Virtually none |
@@ -82,9 +82,7 @@ What we usually check or replace includes the control box and cables, fuel line 
 
 ## How much does it cost to repower a 2-stroke to a Mercury 4-stroke?
 
-We do not publish a static installed price table, because it goes stale faster than motor pricing moves. Start with the live [Mercury pricing reference](/pricing-reference) for the current motor price, then build a quote so the rigging, controls, propeller, removal, and boat-specific findings are priced against your actual boat.
-
-Installed totals vary with the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live [Mercury pricing reference](/pricing-reference) and quote builder for a current starting point, then rely on the written installed scope. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer. Pickup only at Gores Landing. HBW does not ship motors or deliver.
+We do not publish a static installed price table, because it goes stale faster than motor pricing moves. Installed totals vary with the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live [Mercury pricing reference](/pricing-reference) and quote builder for a current starting point, then rely on the written installed scope. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer. Pickup only at Gores Landing. HBW does not ship motors or deliver.
 
 HBW evaluates Mercury 2-stroke trade-ins and other brands case by case. Submit the serial number, hours, condition, and photos through the [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw). Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
 

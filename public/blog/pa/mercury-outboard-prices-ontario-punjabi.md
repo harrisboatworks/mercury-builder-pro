@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi.md
-last_updated: 2026-07-10
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟ
 description: "Mercury outboard motor di keemat Canada vich: HP class anusar price structure, repower cost te live quote tool. Punjabi guide, koi lukiyan hoiyan fees nahi."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-07-10
+date_modified: 2026-09-06
 keywords: ["Mercury outboard motor di keemat Canada vich (Mercury outboard motor price in Canada)","Mercury 90hp outboard price Ontario Punjabi (Mercury 90hp outboard price Ontario Punjabi)","outboard motor dealer near Toronto Punjabi speaking (outboard motor dealer near Toronto who speaks Punjabi)","new outboard motor khareedan di guide Punjabi (guide to buying a new outboard motor in Punjabi)","Mercury vs Yamaha outboard video Punjabi (Mercury vs Yamaha outboard video in Punjabi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-07-10  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-09-06  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
 
-ਸਿੱਧੀ ਗੱਲ: Mercury outboard ਦੀ ਕੋਈ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਹੁੰਦੀ; ਅਸਲ installed cost motor, rigging, propeller, labour ਅਤੇ ਤੁਹਾਡੀ boat ਦੇ setup ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਤਾਜ਼ਾ, transparent ਕੀਮਤ ਲਈ ਸਾਡਾ quote configurator ਵਰਤੋ: https://www.mercuryrepower.ca/quote/motor-selection। Harris Boat Works ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਅਸੀਂ 1965 ਤੋਂ Mercury dealer ਹਾਂ, ਹੁਣ Premier dealer, ਅਤੇ ਸਮਝਣ ਵਾਲੇ ਲੋਕ ਜਾਣਦੇ ਨੇ ਕਿ Brampton, Mississauga, Markham ਵਿੱਚੋਂ family ਆਪਣੀ boat ਲਈ outboard ਦੀ ਕੀਮਤ ਪੁੱਛਦੇ ਆ। ਇਹ guide Punjabi Gurmukhi ਵਿੱਚ ਲਿਖੀ ਗਈ ਹੈ ਤਾਂਕਿ ਤੁਸੀਂ ਖਰੀਦ ਤੋਂ ਪਹਿਲਾਂ ਸਹੀ budget ਬਣਾ ਸਕੋ। ਇੱਕ ਗੱਲ ਪੱਕੀ: internet ਤੇ ਕਿਸੇ ਵੀ outboard ਦੀ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਮਿਲਦੀ, ਪਰ ਅਸਲ ਹਿਸਾਬ-ਕਿਤਾਬ ਸਮਝ ਕੇ ਤੁਸੀਂ ਬੇਫ਼ਿਕਰ deal ਕਰ ਸਕਦੇ ਹੋ। ਅਸੀਂ ਤੁਹਾਨੂੰ ਦੱਸਦੇ ਹਾਂ ਕਿ ਕੀਮਤ ਕਿੰਜ ਬਣਦੀ ਹੈ, ਕਿਹੜੀਆਂ-ਕਿਹੜੀਆਂ ਚੀਜ਼ਾਂ ਖਰਚ ਵਧਾਉਂਦੀਆਂ ਨੇ, ਅਤੇ Mercury ਦੀ ਲੈਣ ਤੋਂ ਬਾਅਦ ਕਿੰਜ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਰਹੇਗੀ। ਕੋਈ dollar amount ਅਸੀਂ ਨਹੀਂ ਲਿਖ ਸਕਦੇ, ਕਿਉਂਕਿ ਹਰੇਕ ਕਿਸ਼ਤੀ ਅਤੇ ਹਰੇਕ setup ਆਪਣਾ ਖਰਚ ਰੱਖਦਾ ਹੈ। ਪਰ ਥੋਨੂੰ ਇੱਕ ਸਹੀ ਰਾਹ ਜ਼ਰੂਰ ਦਿਖਾਵਾਂਗੇ।
+ਸਿੱਧੀ ਗੱਲ: Mercury outboard ਦੀ ਕੋਈ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਹੁੰਦੀ; ਅਸਲ installed cost motor, rigging, propeller, labour ਅਤੇ ਤੁਹਾਡੀ boat ਦੇ setup ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਤਾਜ਼ਾ, transparent ਕੀਮਤ ਲਈ ਸਾਡਾ quote configurator ਵਰਤੋ: [Mercury motor selection](https://www.mercuryrepower.ca/quote/motor-selection)। Harris Boat Works ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਅਸੀਂ 1965 ਤੋਂ Mercury dealer ਹਾਂ, ਹੁਣ Premier dealer, ਅਤੇ ਸਮਝਣ ਵਾਲੇ ਲੋਕ ਜਾਣਦੇ ਨੇ ਕਿ Brampton, Mississauga, Markham ਵਿੱਚੋਂ family ਆਪਣੀ boat ਲਈ outboard ਦੀ ਕੀਮਤ ਪੁੱਛਦੇ ਆ। ਇਹ guide Punjabi Gurmukhi ਵਿੱਚ ਲਿਖੀ ਗਈ ਹੈ ਤਾਂਕਿ ਤੁਸੀਂ ਖਰੀਦ ਤੋਂ ਪਹਿਲਾਂ ਸਹੀ budget ਬਣਾ ਸਕੋ। ਇੱਕ ਗੱਲ ਪੱਕੀ: internet ਤੇ ਕਿਸੇ ਵੀ outboard ਦੀ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਮਿਲਦੀ, ਪਰ ਅਸਲ ਹਿਸਾਬ-ਕਿਤਾਬ ਸਮਝ ਕੇ ਤੁਸੀਂ ਬੇਫ਼ਿਕਰ deal ਕਰ ਸਕਦੇ ਹੋ। ਅਸੀਂ ਤੁਹਾਨੂੰ ਦੱਸਦੇ ਹਾਂ ਕਿ ਕੀਮਤ ਕਿੰਜ ਬਣਦੀ ਹੈ, ਕਿਹੜੀਆਂ-ਕਿਹੜੀਆਂ ਚੀਜ਼ਾਂ ਖਰਚ ਵਧਾਉਂਦੀਆਂ ਨੇ, ਅਤੇ Mercury ਦੀ ਲੈਣ ਤੋਂ ਬਾਅਦ ਕਿੰਜ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਰਹੇਗੀ। ਕੋਈ dollar amount ਅਸੀਂ ਨਹੀਂ ਲਿਖ ਸਕਦੇ, ਕਿਉਂਕਿ ਹਰੇਕ ਕਿਸ਼ਤੀ ਅਤੇ ਹਰੇਕ setup ਆਪਣਾ ਖਰਚ ਰੱਖਦਾ ਹੈ। ਪਰ ਥੋਨੂੰ ਇੱਕ ਸਹੀ ਰਾਹ ਜ਼ਰੂਰ ਦਿਖਾਵਾਂਗੇ।
 
 ## Outboard motor di asal keemat: sirf motor hi nahi | ਆਊਟਬੋਰਡ ਮੋਟਰ ਦੀ ਅਸਲ ਕੀਮਤ: ਸਿਰਫ਼ ਮੋਟਰ ਹੀ ਨਹੀਂ
 
@@ -93,7 +93,7 @@ Phone ਕਰੋ (905) 342-2153, ਜੇ ਕੋਈ ਸਵਾਲ ਹੋਵੇ। �
 
 ### Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?
 
-ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਸਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।
+ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਜੇ ਤੁਹਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਅਸੀਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।
 
 ### Main bina dealer nu mile motor da quote labh sakda haan? | ਮੈਂ ਬਿਨਾਂ ਡੀਲਰ ਨੂੰ ਮਿਲੇ ਮੋਟਰ ਦਾ quote ਲੱਭ ਸਕਦਾ ਹਾਂ?
 

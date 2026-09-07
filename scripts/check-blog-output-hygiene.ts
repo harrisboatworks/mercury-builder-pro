@@ -340,7 +340,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   ],
   'gta-chinese-pcl-fishing-licence-guide': [
     /PCOC（Pleasure Craft Operator Card）/i,
-    /新办、续期、转让或补发 PCL[\s\S]{0,40}需要支付当前服务费/i,
+    /新办、续期、转让或补发(?: PCL)?[\s\S]{0,80}(?:需要支付当前服务费|\$\d+(?:\.\d{2})? CAD)/i,
     /HBW 采用更严格的内部政策/i,
     /18 岁以下或 65 岁及以上/i,
   ],

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Concessionnaire Mercury Premier en Ontario"
 description: "Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers..."
 category: "Concessionnaire Mercury"
 date_published: 2026-04-12
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["concessionnaire Mercury Premier Ontario","concessionnaire Mercury Gores Landing","moteur Mercury Ontario","remotorisation Mercury Ontario","prix Mercury CAD"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Concessionnaire Mercury\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-26\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 5 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 

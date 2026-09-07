@@ -13,7 +13,9 @@ const checks = [
   },
   {
     file: 'public/blog/es/mercury-115-vs-150-comparacion.md',
-    expected: ['5,000–6,000 RPM', '16–19 pies', '2–3 personas', '60–70%', '$2,000–$5,000+ CAD'],
+    expected: ['5,000–6,000 RPM', '16–19 pies', '2–3 personas', '60–70%'],
+    // September audit removed the unsupported rigging price range.
+    forbidden: ['$2,000–$5,000+ CAD'],
   },
   {
     file: 'public/blog/fr/mercury-115-vs-150-hp-comparaison.md',

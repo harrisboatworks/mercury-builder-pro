@@ -10,6 +10,7 @@ import {
   MERCURY_PROMO_END_ISO,
 } from '@/lib/finance';
 import { getArticleBySlug } from './blogArticles';
+import { archivedBlogArticles } from './archivedBlogArticles';
 import {
   buildCanonicalBlogFinancingCopy,
   buildCanonicalBlogFinancingFaqCopy,
@@ -299,22 +300,23 @@ describe('public artifact regression', () => {
     expect(priceHygiene).toContain('mercury-pro-xs-repower-rice-lake-kawartha-anglers');
   });
 
-  it('restores leftover #82 dealer metadata without the truncated Mississauga title or Port Hope closest claim', () => {
-    const mississauga = getArticleBySlug('mercury-dealer-mississauga-ontario-hbw');
+  it('keeps leftover #82 dealer metadata fixes in the archived Mississauga and Port Hope records', () => {
+    // Both city pages were retired in the 2026-09 blog audit and 301 to their
+    // winners; the #82 metadata repairs must survive in the archive.
+    expect(getArticleBySlug('mercury-dealer-mississauga-ontario-hbw')).toBeUndefined();
+    expect(getArticleBySlug('mercury-dealer-port-hope-ontario-hbw')).toBeUndefined();
+
+    const mississauga = archivedBlogArticles.find((a) => a.slug === 'mercury-dealer-mississauga-ontario-hbw');
     expect(mississauga).toBeDefined();
     expect(mississauga!.seoTitle).toBe('Mercury Dealer Near Mississauga | Harris Boat Works');
     expect(mississauga!.seoTitle).not.toBe('Mercury Repower Cost in Mississauga');
 
-    const portHope = getArticleBySlug('mercury-dealer-port-hope-ontario-hbw');
+    const portHope = archivedBlogArticles.find((a) => a.slug === 'mercury-dealer-port-hope-ontario-hbw');
     expect(portHope).toBeDefined();
     expect(portHope!.description).toBe(
       'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
     );
     expect(portHope!.description).not.toMatch(/closest Mercury Premier dealer for Port Hope/);
-
-    const twin = read('public/blog/mercury-dealer-port-hope-ontario-hbw.md');
-    expect(twin).toContain(portHope!.description);
-    expect(twin).not.toMatch(/^description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope/m);
   });
 
   it('repairs leftover #82 truncated metadata and broken table cells', () => {
@@ -334,7 +336,7 @@ describe('public artifact regression', () => {
     const trent = getArticleBySlug('trent-severn-waterway-boating-guide-2026');
     expect(trent).toBeDefined();
     expect(trent!.description).toBe(
-      'Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.',
+      "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it.",
     );
     expect(trent!.description).not.toMatch(/By Harris Boat\.$/);
 

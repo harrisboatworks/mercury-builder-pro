@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't"
 description: "A candid Mercury 60 HP FourStroke review with current Canadian specs, real freshwater tests, owner feedback and honest Standard vs Command Thrust advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["mercury 60 hp review","mercury 60 fourstroke review","mercury 60 hp command thrust","mercury 60 standard vs command thrust","mercury 60 hp real world performance","mercury 60 owner reviews","mercury 60 hp Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-06  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 Same hull. Same 60 horsepower. Very different result.
 
-In a back-to-back Harris Boat Works test on 16-foot Legend hulls, the standard-gearcase Mercury 60 ran six mph faster than the Command Thrust version.
+In an HBW comparison on Rice Lake, a 16-foot Legend with a standard-gearcase Mercury 60 ran 6 mph faster than a 16-foot Legend with a Command Thrust 60. Jay Harris confirms that result, but the propeller details were not retained. It is a shop observation, not a controlled test isolating the gearcase or a promised speed difference for another boat.
 
 Command Thrust is a tool for a specific job, not a worse motor. On a small pontoon, barge or heavily loaded workboat, its larger gearcase can be exactly what the boat needs. On a light recreational V-hull, it can be extra drag with no useful job to do.
 
@@ -117,7 +117,7 @@ That combination can help a high-drag or heavily loaded boat get on plane and st
 
 The standard 1.83:1 gearcase is normally the better starting point for a conventional 15-to-17-foot recreational V-hull. It is lighter and presents less gearcase area to the water.
 
-Our six-mph Legend result is one back-to-back, real-world warning against treating CT as a premium upgrade for every boat.
+Our six-mph Legend result is one shop observation, not a controlled test isolating the gearcase. It is a real-world warning against treating CT as a premium upgrade for every boat.
 
 For the engineering history and the cases where the larger gearcase really earns its keep, read our [plain-English Command Thrust and BigFoot guide](/blog/mercury-command-thrust-complete-guide-2026).
 
@@ -146,7 +146,7 @@ Speed figures are only useful when the boat and setup remain attached. These are
 |---|---|---|
 | Mercury Boat House Bulletin 136 | 17.8-ft Crestliner 179 XFC, standard 1.83:1 gearcase, 14-pitch Spitfire, freshwater | 33.0 mph at 5,652 rpm; 0–20 mph in 4.9 sec |
 | Mercury Boat House Bulletin 253 | 17.5-ft MirroCraft F170T, standard 1.83:1 gearcase, 12-pitch Spitfire, freshwater | 33.6 mph at 6,098 rpm; 0–20 mph in 5.2 sec |
-| Harris Boat Works comparison | 16-ft Legend hulls, one standard 60 and one Command Thrust 60 | Standard version ran 6 mph faster at top end |
+| HBW shop observation, confirmed by Jay Harris | Two 16-ft Legend boats with Mercury 60s; one standard gearcase, one Command Thrust; propeller details not retained | Standard-gearcase boat ran 6 mph faster at top end. This was not a controlled test isolating the gearcase. |
 
 The MirroCraft bulletin recorded 6,098 rpm, slightly above the current published 6,000-rpm upper limit. We wouldn't use that exact setup as a universal target. We included it because it's a transparent Mercury test on a relevant freshwater aluminum boat.
 
@@ -265,7 +265,7 @@ Both are rated at 60 horsepower and use the same 995 cc powerhead. The standard 
 
 ### Is Command Thrust better on a 16-foot aluminum fishing boat?
 
-Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. The result shows why Command Thrust shouldn't be sold as an automatic upgrade for a recreational V-hull.
+Usually not by default. In HBW's comparison on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. Jay Harris confirms that result, but the propeller details were not retained. It is a shop observation, not a controlled test isolating the gearcase or a promised speed difference for another boat.
 
 ### What boats suit a Mercury 60 HP FourStroke?
 
@@ -286,22 +286,22 @@ For eligible Canadian pleasure-use purchases, Mercury publishes a three-year lim
 ## Related guides
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
+- [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
+- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
+- The only commercial next step for this article is the Mercury quote configurator.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -185,6 +185,7 @@ const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePag
 const PunjabiBlogArticlePage = lazy(() => import("./pages/blog/PunjabiBlogArticlePage"));
 const UrduBlogArticlePage = lazy(() => import("./pages/blog/UrduBlogArticlePage"));
 const TagalogBlogArticlePage = lazy(() => import("./pages/blog/TagalogBlogArticlePage"));
+const BlogTopicHubPage = lazy(() => import("./pages/BlogTopicHubPage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -609,6 +610,12 @@ function AnimatedRoutes() {
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
+        {/* Topic hub collections — must stay above the /blog/:slug catch-all */}
+        <Route path="/blog/diagnostics" element={<BlogTopicHubPage hubId="diagnostics" />} />
+        <Route path="/blog/reviews" element={<BlogTopicHubPage hubId="reviews" />} />
+        <Route path="/blog/repower" element={<BlogTopicHubPage hubId="repower" />} />
+        <Route path="/blog/rice-lake" element={<BlogTopicHubPage hubId="rice-lake" />} />
+        <Route path="/blog/pricing" element={<BlogTopicHubPage hubId="pricing" />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
         <Route path="/resources" element={<Resources />} />
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}

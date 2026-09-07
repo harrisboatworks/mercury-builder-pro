@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-ordering-process.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
@@ -220,7 +220,7 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 
 ### How long does the whole process take?
 
-Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Your boat stays with you until HBW confirms the drop-off date and applicable work plan.
+Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately.
 
 ### What deposit is required?
 
@@ -232,7 +232,7 @@ Yes, but warranty may require dealer installation. DIY installation also means y
 
 ### What if there is a problem during water test?
 
-Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery.
+Issues found during a water test are reviewed before handover. Coverage depends on the written sales agreement and the applicable Mercury warranty or Product Protection terms. Discuss any issues and confirm coverage in writing before handover.
 
 ## Related guides
 

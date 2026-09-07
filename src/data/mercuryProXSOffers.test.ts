@@ -112,7 +112,7 @@ describe('buildMercuryProXSOffers', () => {
         priceCurrency: product.offers.priceCurrency,
         availability: product.offers.availability,
         validFrom: product.offers.validFrom,
-        hasExpiry: Object.hasOwn(product.offers, 'priceValidUntil'),
+        hasExpiry: Object.prototype.hasOwnProperty.call(product.offers, 'priceValidUntil'),
       }),
     );
 

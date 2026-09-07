@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario"
 description: "Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne."
 category: "Entretien"
 date_published: 2026-04-12
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["hivernisation moteur Mercury Ontario","entretien moteur hors-bord hiver","préparation hivernale bateau Ontario","winterization Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-26\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario
 
@@ -61,7 +61,7 @@ Ajoutez un stabilisant approuvé pour moteur marin dans votre réservoir, puis f
 
 ### 2. Lubrification interne (fogging)
 
-La lubrification interne consiste à vaporiser une huile protectrice dans les cylindres du moteur pendant qu'il tourne, puis à l'arrêter avec l'huile encore en place. Cette pellicule protège les pièces métalliques internes contre la rouille et la corrosion pendant les mois d'inactivité. C'est une étape que beaucoup de propriétaires DIY oublient ou sautent, et qu'ils regrettent au printemps.
+La protection interne dépend du modèle et du numéro de série. Suivez la procédure du manuel Mercury correspondant; ne vaporisez pas d'huile dans l'admission ou les cylindres sur la seule base d'un guide général. Quand le manuel prévoit cette protection, elle aide à limiter la rouille et la corrosion pendant les mois d'inactivité.
 
 ### 3. Vidange de l'huile d'engrenage
 
@@ -91,7 +91,7 @@ Pour la mise à l'eau au printemps, la fenêtre habituelle se situe entre la mi-
 
 ## Pourquoi confier l'hivernisation à des professionnels?
 
-Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'expérience, les bons produits, et que vous ne sautez aucune étape. Les oublis les plus courants : la lubrification interne (fogging), la vérification des infiltrations d'eau dans le pied de moteur, et le graissage complet de tous les points d'articulation.
+Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'expérience, les bons produits, et que vous suivez le manuel du modèle et du numéro de série. Les oublis les plus courants : la protection interne quand le manuel l'exige, la vérification des infiltrations d'eau dans le pied de moteur, et le graissage complet de tous les points d'articulation.
 
 À Harris Boat Works, nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide.md
-last_updated: 2026-08-27
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리�
 description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"
 date_published: 2026-04-12
-date_modified: 2026-08-27
+date_modified: 2026-09-06
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 낚시 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-08-27  
+**마지막 검토:** 2026-09-06  
 **Read time:** 10 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 
@@ -34,7 +34,7 @@ revenue_driver: repower
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch, walleye 시즌은 5월 둘째 토요일 개막
+- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 
@@ -81,22 +81,15 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 북미 담수어 중 가장 크고 잡기 어려운 어종. 대형 루어와 인내심이 필요합니다. 결과가 나올 때 평생 기억에 남습니다.
 
 ### Yellow Perch(옐로 퍼치)
-연중 낚시 가능. 아이들과 함께 입문하기에 가장 좋은 어종입니다.
+아이들과 함께 입문하기에 흔히 추천되는 어종입니다. 개장 여부와 한도는 당해 FMZ 17 규정을 확인하세요.
 
 ---
 
 ## 어종별 시즌 (FMZ 17 기준)
 
-이 표는 Sport(S) licence 기준입니다.
+시즌 개장·폐장일, 어획 한도, 소지 크기는 해마다 달라질 수 있습니다. 
 
-| 어종 | 개장일 | 폐장일 | 어획 한도 (S licence) | 소지 크기 |
-|---|---|---|---|---|
-| Walleye/Sauger(월아이) | 5월 둘째 토요일 | 11월 15일 | 4마리 | 35~50 cm만 |
-| Bass(배스) | 6월 셋째 토요일 | 12월 15일 | 6마리 | 제한 없음 |
-| Muskellunge(머스키) | 6월 첫째 토요일 | 12월 15일 | 1마리 | 112 cm 초과 |
-| Yellow Perch(옐로 퍼치) | 연중 개방 | 없음 | 50마리 | 제한 없음 |
-
-**반드시 매년 온타리오 공식 [FMZ 17 규정](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)에서 최신 시즌 날짜, 소지 크기, 어획 한도를 확인하세요.** 규정은 매년 변경될 수 있습니다.
+**반드시 매년 온타리오 공식 [FMZ 17 규정](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)에서 최신 시즌 날짜, 소지 크기, 어획 한도를 확인하세요.**
 
 ---
 

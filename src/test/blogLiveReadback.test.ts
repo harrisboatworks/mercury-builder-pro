@@ -83,7 +83,9 @@ const findCheck = (result: ReturnType<typeof evaluateReadback>, id: string, rout
 
 describe('blog live readback route map', () => {
   it('pins the exact punchlist routes so substitution cannot recur', () => {
-    expect(OSHAWA_ROUTE).toBe('/blog/mercury-dealer-oshawa-ontario-hbw.md');
+    // Oshawa retired in the 2026-09 blog audit; the shared dealer-page storage
+    // contract now rides on the Bowmanville twin (see scripts/lib/blog-live-readback.mjs).
+    expect(OSHAWA_ROUTE).toBe('/blog/mercury-dealer-bowmanville-ontario-hbw.md');
     expect(SALMON_ROUTE).toBe('/blog/best-mercury-outboard-lake-ontario-salmon-trout.md');
     expect(FLAGSHIP_RIGGING_ROUTE).toBe('/blog/why-mercury-dominates-outboard-market.md');
     expect(JOYSTICK_ROUTES).toEqual([

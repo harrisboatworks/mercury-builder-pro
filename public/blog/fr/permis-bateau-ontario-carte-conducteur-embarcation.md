@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation.md
-last_updated: 2026-09-02
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Permis de conduire une embarcation au Canada : Ce que vous devez savoir"
 description: "Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et..."
 category: "Réglementation"
 date_published: 2026-04-12
-date_modified: 2026-09-02
+date_modified: 2026-09-06
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Catégorie :** Réglementation\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-02\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
 ### Réponse rapide
 
-Au Canada, toute personne qui conduit une embarcation motorisée doit détenir la Carte de conducteur d'embarcation de plaisance (CCEP). Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
+Au Canada, la Carte de conducteur d'embarcation de plaisance (CCEP) est la preuve de compétence la plus courante pour conduire une embarcation de plaisance motorisée. Transports Canada reconnaît aussi certaines autres preuves de compétence. Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
 
 ---
 
@@ -43,7 +43,7 @@ Notre équipe chez Harris Boat Works travaille principalement en anglais, nous l
 
 ## Qu'est-ce que la Carte de conducteur d'embarcation de plaisance?
 
-La **Carte de conducteur d'embarcation de plaisance (CCEP)**, parfois appelée « permis bateau », est une certification fédérale obligatoire pour quiconque conduit une embarcation motorisée au Canada. Elle est régie par Transports Canada.
+La **Carte de conducteur d'embarcation de plaisance (CCEP)**, parfois appelée « permis bateau », est la preuve de compétence la plus courante pour conduire une embarcation de plaisance motorisée au Canada. Transports Canada reconnaît aussi certaines autres preuves de compétence.
 
 Contrairement à un permis de conduire automobile, la CCEP n'expire pas. Vous réussissez le test une fois, vous recevez votre carte, et elle est valide pour la vie.
 
@@ -51,14 +51,14 @@ Contrairement à un permis de conduire automobile, la CCEP n'expire pas. Vous r�
 
 ## Qui doit l'avoir?
 
-La règle est simple : **toute personne qui opère le moteur d'une embarcation de plaisance motorisée**, que ce soit un moteur hors-bord, un moteur intérieur, ou même un moteur électrique de pêche (trolling motor). Peu importe :
+La règle générale est la suivante : **toute personne qui opère le moteur d'une embarcation de plaisance motorisée** a besoin d'une preuve de compétence reconnue, que ce soit un moteur hors-bord, un moteur intérieur, ou même un moteur électrique de pêche (trolling motor). La CCEP est la preuve la plus courante; Transports Canada en reconnaît aussi d'autres. Cela s'applique peu importe :
 
 - votre âge
 - la puissance du moteur
 - que l'embarcation soit la vôtre ou celle d'un ami
 - que vous soyez sur un lac, une rivière ou une voie maritime
 
-Si vous tenez la commande et que le moteur tourne, vous avez besoin de la carte.
+Si vous tenez la commande et que le moteur tourne, vous avez besoin d'une preuve de compétence reconnue.
 
 **Pour les mineurs :** Les moins de 12 ans peuvent conduire un bateau à moteur de 10 HP maximum sans supervision directe. Les 12 à 15 ans : jusqu'à 40 HP sans supervision. Les moins de 16 ans ne peuvent pas conduire une motomarine (jet ski).
 
@@ -81,7 +81,7 @@ Le processus est entièrement en ligne :
 
 ## Immatriculation de l'embarcation (à ne pas confondre avec la CCEP)
 
-Toute embarcation équipée d'un moteur de 10 HP ou plus doit posséder un numéro de licence d'embarcation de plaisance. Depuis le 31 décembre 2025, cette licence coûte 24 $ et est valide pour 5 ans. Le numéro doit être affiché des deux côtés de la proue en caractères d'au moins 7,5 cm de hauteur.
+Une embarcation de plaisance principalement utilisée au Canada et équipée d'un ou de plusieurs moteurs totalisant au moins 10 HP (7,5 kW) doit généralement avoir une licence, sauf si elle est déjà immatriculée au Registre canadien des bâtiments. Consultez les critères de Transports Canada. Les licences nouvelles, transférées ou renouvelées sont valides 5 ans. Au 5 septembre 2026, le [tableau officiel des droits](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards) de Transports Canada affiche 24,41 $ CA pour une licence nouvelle, transférée, renouvelée ou un duplicata; la mise à jour des renseignements ou l'annulation est gratuite. Les droits sont ajustés chaque 1er avril. Les anciennes licences n'étaient pas toutes à vie : Transports Canada fixe maintenant des cohortes d'expiration, vérifiez la vôtre. Le numéro doit être affiché des deux côtés de la proue en caractères d'au moins 7,5 cm de hauteur.
 
 ---
 
@@ -126,7 +126,7 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
 - [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
@@ -148,7 +148,7 @@ Oui. La Carte de conducteur d'embarcation de plaisance est une certification fé
 
 ### Et si je loue une embarcation?
 
-Si vous opérez le moteur, vous avez besoin de la CCEP , même si l'embarcation est louée. Certains exploitants de location (dont Harris Boat Works) demandent à voir votre carte avant de remettre les clés.
+Pour une location, une liste de vérification de sécurité dûment remplie peut constituer une preuve de compétence reconnue. HBW exige toutefois une CCEP valide pour chaque conducteur lors de la prise en charge.
 
 ### La carte est-elle requise pour un kayak ou un canot?
 

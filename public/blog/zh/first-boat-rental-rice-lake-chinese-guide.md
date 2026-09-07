@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人第一次租船钓鱼：证件、安全和当天流程"
 description: "多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Rice Lake 租船","中文 多伦多","第一次 租船 钓鱼","安省 钓鱼证","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-08-19  
+**最后审核:** 2026-09-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 
@@ -91,7 +91,7 @@ revenue_driver: rentals
 > 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 - 地点：Gores Landing, Ontario（莱斯湖南岸）
-- 自送自取（HBW 不提供取送）
+- 租船手续和还船都在 HBW 的 Gores Landing 码头办理。
 - 电话：(905) 342-2153 / info@harrisboatworks.ca
 - 租船详细信息（船型、时长、价格、当前要求的证件清单）：[harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)
 

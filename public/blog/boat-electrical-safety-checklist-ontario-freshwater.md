@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
@@ -137,7 +137,7 @@ The $5 saved by using automotive parts on a marine project costs hundreds of dol
 - Anything where you're not sure what the existing wiring does
 - ABYC compliance work (the marine industry standard for safe wiring)
 
-The line is: if it's working and clean, an owner can maintain it. If it's broken, dirty, or needs new circuits added, get a pro to do it right.
+The line is: if the system is working, an owner can inspect it and do the listed seasonal maintenance. If it is broken or needs new circuits added, get a pro to do it right.
 
 ## Shore power, briefly
 
@@ -167,7 +167,7 @@ For engine repairs, we only service Mercury and MerCruiser.
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
 - [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
+- [Mercury Marine Canada](https://www.mercurymarine.com/ca/en) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author
 
@@ -177,7 +177,7 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruis
 
 ### Is it safe to add a trolling motor or fishfinder myself?
 
-Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it.
+Adding a trolling motor or fishfinder creates a new circuit, so have a marine electrician assess and install it. Incorrect installation can cause electrical faults or a fire.
 
 ### My bilge pump runs every few minutes even when the boat is dry. What's wrong?
 

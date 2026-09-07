@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence.md
-last_updated: 2026-08-21
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-08-21
+date_modified: 2026-09-06
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-21\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
@@ -138,7 +138,7 @@ Si vous soupçonnez un problème du système de refroidissement, soumettez une d
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -154,7 +154,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 ### Combien de temps puis-je faire fonctionner un hors-bord en surchauffe avant les dommages?
 
-Moins d'une minute, dans le pire des cas. Une turbine fonctionnant à sec cuit en 30 secondes. Un moteur tournant chaud à cause d'un thermostat coincé peut vous donner 2 à 3 minutes avant que les dommages au niveau du joint de culasse commencent. La réponse sécuritaire : arrêtez-le à la première alarme. Ne négociez pas avec la jauge de température.
+En cas de surchauffe, suivez immédiatement les consignes d'alarme du manuel de votre moteur. Il n'existe pas de délai universel pendant lequel continuer à tourner serait sans risque. La réponse sécuritaire : arrêtez-le à la première alarme. Ne négociez pas avec la jauge de température.
 
 ### Mon jet témoin est constant mais mon alarme continue de sonner, qu'est-ce qui se passe?
 

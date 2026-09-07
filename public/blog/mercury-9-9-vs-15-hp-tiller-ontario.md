@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,21 +25,21 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
 ## Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
 
-> **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 4.5 to 7 kg (10 to 15 lb) weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
+> **Quick answer:** Compare the exact currently offered 9.9 and 15 model codes, generation, dry weight, gear ratio, and service parts. They are not proven to be the same block with a calibration-only difference. Current 8/9.9 EFI FourStroke material lists 209.8 cc; do not use older 333 cc family data to claim shared consumables. Pick by capacity plate, lake horsepower rules, and the actual model you can buy. If you fish a tournament, check that event's current motor rules rather than assuming a province-wide 9.9 kicker cap.
 
 For a variant-by-variant breakdown of the 9.9 line itself, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
 There's a moment with every small-motor customer where the conversation lands on the same question. They're standing on the showroom floor, looking at two outboards that visually look identical, and they ask the version of the question that everyone asks: "What actually changes if I spend the extra money?"
 
-It's a fair question. The Mercury 9.9 HP and 15 HP FourStroke tiller models share more than they don't. Same block. Same gearcase. Same external dimensions. Same shape, same colour, same controls. From across the parking lot, you can't tell them apart.
+It's a fair question. From across the parking lot, current 9.9 and 15 tillers can look similar. That is not proof they share a powerhead, gearcase, or parts list.
 
-So here's the honest take from a Mercury Premier dealer that sells both. There are three reasons to pick the 9.9, three reasons to pick the 15, and a couple of edge cases that make the call obvious. By the end of this guide, you'll know which one belongs on your transom.
+So here's the honest take from a Mercury Premier dealer that sells both. Compare the exact current model codes. There are still clear reasons to pick the 9.9 and clear reasons to pick the 15. By the end of this guide, you'll know which conversation belongs on your transom.
 
 ## Who This Is For
 
@@ -53,32 +53,27 @@ This guide is for the boater shopping a new or replacement Mercury tiller in the
 
 If you're shopping bigger (40, 60, 90, 115 HP), check our [Mercury 40 vs 60 HP comparison](https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario) or the [FourStroke buyer guide](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario). This post is the small-motor edition.
 
-## The Plain Truth: They Share More Than You'd Think
+## The Plain Truth: Confirm the Current Generation
 
-Both the 9.9 EFI FourStroke and the 15 EFI FourStroke are built on the same 333cc two-cylinder block. Same crankshaft, same pistons, same fuel-injection system, same gearcase, same shaft, same prop hub. The difference between them is largely a calibration. Mercury tunes the 15 HP version to produce more power from the same hardware.
+Do not treat the current 9.9 EFI FourStroke and 15 EFI FourStroke as one 333 cc block with different stickers. Mercury introduced the EFI 8/9.9 FourStroke and ProKicker in 2024, establishing a newer portable generation. The 2024/2025 8/9.9 EFI owner's material lists **209.8 cc**. Older 333 cc ProKicker/15/20 family data cannot establish current portable 9.9/15 interchangeability.
 
-That's not a knock on either motor. It's how most modern outboard manufacturers handle this size class. Yamaha does the same with their F9.9 and F15. Honda does the same with their BF8 and BF20. Building one block and tuning it for multiple horsepower outputs is good engineering, not corner-cutting.
+That means reliability, parts, dry weight, gear ratio, and consumables have to be read from the exact current model code and the serial-specific latest manual. We will not invent replacement displacements, weights, or a shared-parts list for the current 15 here.
 
-What it means for you: reliability, parts availability, and serviceability are identical. The 15 isn't a more delicate motor. The 9.9 isn't more bulletproof. They're the same machine wearing different stickers.
+[Mercury June 2024 EFI 8/9.9 and ProKicker introduction](https://www.mercurymarine.com/us/en/about-us/news/all-new-efi-fourstroke-and-prokicker-outboard).
 
 ## What's Actually Different
 
-| Spec | Mercury 9.9 EFI FourStroke | Mercury 15 EFI FourStroke |
+| Check | What to confirm on the current 9.9 | What to confirm on the current 15 |
 |---|---|---|
 | Rated horsepower | 9.9 HP | 15 HP |
-| Displacement | 333cc / 2-cylinder | 333cc / 2-cylinder |
-| Dry weight (tiller, manual start, short shaft) | ~38 kg (84 lb) | ~45 kg (99 lb) |
-| Top RPM range | 5000-6000 | 5500-6300 |
-| Fuel burn at WOT | ~2.6 to 3.8 L/h (~0.7-1.0 GPH) | ~3.8 to 5.7 L/h (~1.0-1.5 GPH) |
-| Recommended fuel | Regular unleaded, 87 octane | Regular unleaded, 87 octane |
-| Standard fuel tank | Optional 11 or 23 L (3 or 6 US gal) portable | Optional 11 or 23 L (3 or 6 US gal) portable |
-| Warranty | 3 years limited + 3 years corrosion (concurrent) | 3 years limited + 3 years corrosion (concurrent) |
-| Tiller, remote, electric start options | All available | All available |
-| Command Thrust gearcase option | Available | Available |
-| Long shaft (20 inch) | Available | Available |
-| Best fit | HP-restricted lakes, 9.9-rated kicker class, lightest possible setup | Almost everything else |
+| Model generation and code | Current EFI portable / ProKicker SKU, not an older 333 cc family assumption | Current 15 SKU; do not copy 9.9 displacement onto it |
+| Displacement | 209.8 cc on the documented 8/9.9 EFI generation | Use the serial-specific latest specification; do not guess |
+| Dry weight, gear ratio, shaft options | Read the current model-code sheet | Read the current model-code sheet |
+| Service parts | Serial-specific impeller, plugs, oil, gear lube, filters | Serial-specific; not proven interchangeable with the 9.9 |
+| Fuel and start options | Confirm tiller/remote, manual/electric, tank, CT | Confirm the same options on that 15 SKU |
+| Best first question | Capacity plate, lake HP rule, or a named tournament's current kicker rule | Plate allows 15 and you want more thrust than a 9.9 |
 
-The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
+The useful comparison is still use case and legality, not a shared-block story. The price gap is usually smaller than the cost of buying the wrong generation or the wrong lake/tournament fit.
 
 ## HP-Restricted Lakes: When the 9.9 Is the Only Legal Choice
 
@@ -86,8 +81,8 @@ This is the cleanest case for the 9.9. Some Ontario lakes, cottage associations,
 
 A few things worth knowing if HP restriction is in play:
 
-- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still stickered and registered as a 15. Most HP-restricted lakes go by the sticker, not by what's under the cowl. Confirm with your specific lake authority before you spend.
-- **"9.9 kicker" motors exist for tournament fishing.** Bass tournaments and walleye derbies often restrict the trolling motor (kicker) to 9.9 HP. The 9.9 EFI FourStroke is the standard pick here.
+- **The cap is on the motor's rating, not its actual output.** A 15 HP motor de-rated to 9.9 with a Mercury flash is still the same engine underneath, and whether an HP-restricted lake accepts it depends on what the motor's rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before you spend.
+- **Tournament kicker rules are event-specific.** Some organizers restrict boat or motor size. That is not a province-wide 9.9 HP ceiling, and a 15 is not automatically legal or illegal. Check the current rules for the derby you actually fish.
 - **Cottage associations are often stricter than provincial rules.** Some Kawartha cottage associations and small lakes near the Trent-Severn have 9.9 HP or even 7.5 HP house rules. Read the association bylaws before buying anything bigger.
 
 If you're unsure whether your lake has a cap, the Ontario [Boating Restrictions database](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2008-120/index.html) lists every federally regulated body of water. But house rules at the cottage association level aren't there. Check both.
@@ -122,9 +117,9 @@ The budget. CAD pricing on both motors is similar enough that the call almost al
 
 If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is the standard pick](/blog/mercury-9-9-efi-review-ontario). Three reasons:
 
-- Tournament classes (bass, walleye) cap kicker motors at 9.9 HP. If you ever want to fish a derby on Rice Lake or anywhere in the Kawarthas, the 15 disqualifies you.
-- The 9.9 weighs ~7 kg (15 lb) less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
-- A 15 HP kicker is overkill for trolling. You're running it at idle to 2000 RPM most of the time. The extra 5 HP at the top end isn't doing anything for you.
+- If you fish a specific tournament, check its current motor and trolling rules before buying. Do not treat every Rice Lake or Kawartha derby as a 9.9-only event, and do not assume a 15 is universally legal.
+- Weight still matters on a kicker bracket. Confirm the current model-code dry weights rather than using an older shared-block 7 kg story.
+- A 15 HP kicker is often more motor than a light aluminum needs at idle. Talk through hull, wind, and the named event rules before paying for unused top-end.
 
 The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
 
@@ -134,7 +129,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Shaft length matters more.** Most sailboat transoms are tall. [You'll usually need a 20 inch (long) shaft](/blog/outboard-shaft-length-guide), sometimes a 25 inch (extra long) shaft on bigger displacement hulls. Wrong shaft length on a sailboat auxiliary is a more expensive mistake than on a powerboat because the boat is harder to manoeuvre back to the dock when the motor's cavitating.
 
-**Weight matters more, aft.** Sailboats are sensitive to transom weight. The 7 kg (15 lb) penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
+**Weight matters more, aft.** Sailboats are sensitive to transom weight. Confirm the current 9.9 and 15 dry weights from the model-code sheet rather than assuming a 7 kg shared-block gap. On a small sailboat (~24 to 28 foot) extra transom weight shows up in stern squat.
 
 **Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-complete-guide-2026) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
@@ -154,17 +149,17 @@ After decades of small-motor sales on Rice Lake and across the Kawarthas, here's
 
 In our shop experience, the 15 HP is the more common choice for small boats that are plated for it. Typical buyers are rigging a 14 foot aluminum jon boat, replacing a tired 9.9 on a 16 foot tiller skiff and wanting more headroom, or running a heavier pontoon kicker that needs extra push into the wind.
 
-The 9.9 is still a common fit for tournament anglers, sailboat owners replacing an aging auxiliary, and boaters on HP-restricted lakes where a 15 is not permitted.
+The 9.9 is still a common fit for anglers whose named tournament requires it, sailboat owners replacing an aging auxiliary, and boaters on HP-restricted lakes where a 15 is not permitted.
 
 Some buyers simply replace a failed 9.9 or 15 with the same size. That's a legitimate reason on its own. Familiar controls, fuel tank, prop and bracket all matter.
 
-The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra few hundred dollars for the 15.
+The one thing we don't see often is a customer who buys the 9.9, runs it for a season, and wishes they'd saved the weight. Most of the regret-cases go the other direction: a 9.9 that doesn't quite have the power to push the loaded boat onto plane, and the owner wishes they'd spent the extra for the 15.
 
 ## Pricing in 2026 CAD
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Give us a call for current availability on both motors. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of September 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs closer to a thousand dollars more in the same tiller, short-shaft configuration (9.9MH vs 15MH on HBW's pricing reference, September 2026). Give us a call for current availability on both motors. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -182,7 +177,7 @@ We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from cen
 
 ## Ready to Pick One?
 
-If your capacity plate caps at 9.9 or you're on an HP-restricted lake, the 9.9 EFI FourStroke is the right call. Tournament kicker shoppers and weight-sensitive sailboat owners, also the 9.9. For everyone else, the 15 EFI FourStroke is the better all-around buy.
+If your capacity plate caps at 9.9 or you're on an HP-restricted lake, the 9.9 EFI FourStroke is the right call. If a named tournament restricts kicker size, follow that event's current rules. Weight-sensitive sailboat owners should compare current model-code weights. For everyone else whose plate allows it, the 15 EFI FourStroke is often the stronger all-around boat motor.
 
 Build a quote for either motor in Canadian dollars at the configurator, or call us if you want to talk through capacity plate, shaft length, or tiller-vs-remote first.
 
@@ -194,15 +189,21 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
+## Sources
+
+- [Mercury Marine, all-new EFI FourStroke and ProKicker (June 2024)](https://www.mercurymarine.com/us/en/about-us/news/all-new-efi-fourstroke-and-prokicker-outboard)
+- 2024/2025 Mercury 8/9.9 EFI owner's material lists 209.8 cc. Use the serial-matched owner’s manual and parts list for your 15 HP model.
+- Tournament motor rules are event-specific. Examples of organizer pages to check, not a province-wide ceiling: [Ontario Bass Hank Gibson qualifier rules](https://ontariobass.com/hank-gibson-provincial-qualifier/rules/), [Mitchells Bay Open rules](https://mitchellsbayopen.com/current-tournament/rules/).
+
 ## FAQs
 
 ### Can I convert a 15 HP Mercury into a 9.9 with a flash?
 
-Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority before relying on the flash.
+Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. Whether a de-rated motor is accepted on a given lake depends on what its rating plate and cowl decals show and how that lake's authority reads them. Check the rating plate and confirm with your specific lake authority before relying on the flash.
 
 ### Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?
 
-Yes. The 9.9 EFI FourStroke is the standard pick for tournament-class kicker use. Most Ontario bass and walleye tournament series cap kicker HP at 9.9. Always check the specific tournament rules before competing.
+Only if that event's current rules allow it. There is no province-wide 9.9 HP kicker ceiling. If you fish a specific tournament, check its current motor and trolling rules before buying. A 15 is not automatically illegal either. Name and link the actual restriction rather than generalizing across all derbies.
 
 ### What shaft length do I need for a sailboat auxiliary?
 
@@ -214,7 +215,7 @@ It depends on the load. Empty with one adult, yes. Loaded with two adults, fishi
 
 ### Do the 9.9 and 15 share parts?
 
-Largely yes. Same block, gearcase, cooling system, prop hub, and most consumables (impellers, plugs, oil filter, gear lube). Some calibration-specific parts differ (ECM mapping, throttle stop), but the consumables are interchangeable.
+Do not assume they do. Current 8/9.9 EFI FourStroke material lists 209.8 cc, and older 333 cc ProKicker/15/20 family data cannot prove the current 9.9 and 15 share a block, gearcase, or consumables. Confirm the exact current model codes, generation, and serial-specific service parts before treating impellers, plugs, filters, or gear lube as interchangeable.
 
 ### What's the fuel burn for an average season?
 
@@ -231,8 +232,8 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
 - [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
 
