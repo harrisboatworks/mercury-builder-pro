@@ -27,6 +27,39 @@ const failures: string[] = [];
 const STALE_HBW_BOAT_PICKUP_DENIAL_RX =
   /\b(?:drop[- ]off only|(?:we|HBW|Harris Boat Works)\s+(?:do not|does not|don['’]t|doesn['’]t)\s+pick up|(?:do not|does not|don['’]t|doesn['’]t)\s+(?:provide|offer)\s+(?:boat )?pickup|customers arrange(?: their own)? transport)\b/i;
 
+// Keep in sync with scripts/check-blog-timeline-facts.mjs no-universal-water-test-claim.
+// Catches water-tested / lake-tested leftovers that slipped the older
+// `water[- ]test` + trailing \b pattern, plus non-blog surfaces.
+const UNCONDITIONAL_WATER_TEST_RX =
+  /\b(?:(?:every|each) (?:single )?(?:installed )?(?:HBW |Mercury |full )?(?:repower|install|motor|job)[^\n.]{0,240}(?:(?:water|lake|on-water)[- ]test(?:ed)?|on-water|tested on Rice Lake|sea[- ]trial|real (?:Rice Lake )?water test)|(?:water|lake)[- ]tests? (?:every|each) (?:installed )?(?:repower|install|motor|job|Mercury)|(?:sea[- ]trial|on-water test)[^\n.]{0,80}(?:always included|before delivery|of every)|boat does not leave[^\n.]{0,80}sea[- ]trial|we (?:test props|sea[- ]trial|water[- ]test)[^\n.]{0,120}\bevery\b[^\n.]{0,60}(?:repower|install|motor|job|Mercury|sea[- ]trial)|lake test is included before the boat leaves|we don['’]t hand over a motor we haven['’]t run|on-water (?:Rice Lake )?test before every|we test every install|every repower, no exceptions|why every motor gets a real (?:Rice Lake )?water test|test every motor here|every motor still gets the same Rice Lake water test)\b/i;
+
+// Leftover shrinkwrap-only winter-storage claims that omit uncovered
+// and shrink-wrap-only as distinct HBW products.
+const STALE_SHRINKWRAP_ONLY_STORAGE_RX =
+  /(?:outdoor winter (?:boat )?storage with shrinkwrap|we (?:do|offer) outdoor storage with shrinkwrap|Yes\. Outdoor storage with shrinkwrap|This is HBW's storage model)/i;
+
+const WATER_TEST_CLAIM_SURFACES = [
+  'src/components/repower/ObjectionStrip.tsx',
+  'src/pages/landing/HowToRepower.tsx',
+  'src/components/seo/HowToRepowerSEO.tsx',
+  'src/pages/Index.tsx',
+  'src/pages/RepowerHub.tsx',
+  'src/pages/RepowerCost.tsx',
+  'src/pages/MotorSelectionHub.tsx',
+  'src/components/quote-pdf/ProfessionalQuotePDF.tsx',
+  'src/data/locations.ts',
+  'src/data/locationsLongForm.ts',
+  'src/data/locationsLongFormUpgrades.ts',
+  'src/data/locationsLongFormExtras.ts',
+  'src/data/blogArticles.ts',
+  'public/llms.txt',
+  'public/.well-known/brand.json',
+  'public/catalog.md',
+  'scripts/static-prerender.mjs',
+  'scripts/generate-markdown-twins.mjs',
+  'supabase/functions/_shared/verified-hbw-authority-facts.ts',
+];
+
 const generatedBlogTwins = readdirSync('public/blog', { recursive: true })
   .filter((file) => String(file).endsWith('.md'))
   .map((file) => `public/blog/${file}`);
@@ -34,7 +67,11 @@ const generatedBlogTwins = readdirSync('public/blog', { recursive: true })
 const unsupportedOperationalClaims = [
   {
     label: 'visible raw editorial metadata',
-    pattern: /^\s*\*\*(?:URL slug|Meta description):\*\*/im,
+    pattern: /^\s*\*\*(?:URL slug|Meta description|Canonical URL):\*\*/im,
+  },
+  {
+    label: 'fabricated Pro XS planning-range dollars',
+    pattern: /high teens of thousands|mid-thirties of thousands/i,
   },
   {
     label: 'double-escaped Unicode artifact',
@@ -69,8 +106,11 @@ const unsupportedOperationalClaims = [
   },
   {
     label: 'unconditional water-test promise',
-    pattern:
-      /\b(?:(?:every|each) (?:single )?(?:HBW |Mercury |full )?repower[^\n.]{0,240}(?:water[- ]test|on-water|tested on Rice Lake)|(?:sea[- ]trial|on-water test)[^\n.]{0,80}(?:always included|before delivery)|boat does not leave[^\n.]{0,80}sea[- ]trial|we (?:test props|sea[- ]trial|run)[^\n.]{0,120}\bevery\b[^\n.]{0,60}(?:repower|install|sea[- ]trial)|every (?:install|repower)[^\n.]{0,80}(?:water[- ]test|sea[- ]trial))\b/i,
+    pattern: UNCONDITIONAL_WATER_TEST_RX,
+  },
+  {
+    label: 'leftover shrinkwrap-only winter-storage claim',
+    pattern: STALE_SHRINKWRAP_ONLY_STORAGE_RX,
   },
   {
     label: 'unsupported on-water towing promise',
@@ -268,7 +308,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /practical Rice Lake trip planning[^\n.]{0,160}3 to 4 miles[^\n.]{0,100}20 to 25 miles/i,
   ],
   'bilge-pump-troubleshooting-guide': [
-    /0\.91 litres per second \(roughly 866 US GPH, or 14\.4 US gal\/min\)/i,
+    /0\.91 litres per second \(3,276 L\/h, or about 865 US GPH\)/i,
   ],
   'trailer-boat-toronto-to-rice-lake-guide': [
     /Serpent Mounds is not a public launch/i,
@@ -300,7 +340,7 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   ],
   'gta-chinese-pcl-fishing-licence-guide': [
     /PCOC（Pleasure Craft Operator Card）/i,
-    /新办、续期、转让或补发 PCL[\s\S]{0,40}需要支付当前服务费/i,
+    /新办、续期、转让或补发(?: PCL)?[\s\S]{0,80}(?:需要支付当前服务费|\$\d+(?:\.\d{2})? CAD)/i,
     /HBW 采用更严格的内部政策/i,
     /18 岁以下或 65 岁及以上/i,
   ],
@@ -382,8 +422,9 @@ for (const article of contentArticles) {
 
   const forbiddenOutputPatterns = [
     /\*\*Language:\*\*\s*English/i,
-    /^##\s+Internal Links\s*$/im,
-    /^##\s+CTA\s*$/im,
+    /^##\s+(?:Internal Links|Liens internes|내부 링크|内部链接|内部连结|內部連結|內部鏈接)\s*$/im,
+    /^##\s+CTA(?:\s*,.*)?\s*$/im,
+    /^##\s+.+\s*[（(]CTA[）)]\s*$/m,
     /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/im,
   ];
 
@@ -411,10 +452,37 @@ for (const article of contentArticles) {
 
 }
 
-for (const file of generatedBlogTwins) {
+const generatedLocationTwins = readdirSync('public/locations')
+  .filter((file) => String(file).endsWith('.md'))
+  .map((file) => `public/locations/${file}`);
+
+const STORAGE_CLAIM_SURFACES = [
+  ...WATER_TEST_CLAIM_SURFACES,
+  'src/data/harrisBoatWorksBrandPage.js',
+];
+
+for (const file of [...generatedBlogTwins, ...generatedLocationTwins, ...STORAGE_CLAIM_SURFACES]) {
   const twinSource = readFileSync(file, 'utf8');
-  if (STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
+  if (generatedBlogTwins.includes(file) && STALE_HBW_BOAT_PICKUP_DENIAL_RX.test(twinSource)) {
     failures.push(`${file}: hard-no HBW boat pickup policy`);
+  }
+  if (generatedBlogTwins.includes(file) && /^::cta\s*$/m.test(twinSource)) {
+    failures.push(`${file}: leftover raw ::cta authoring fence`);
+  }
+  if (
+    generatedBlogTwins.includes(file) &&
+    /^##\s+(?:内部链接|内部连结|內部連結|內部鏈接)\s*$/m.test(twinSource)
+  ) {
+    failures.push(`${file}: leftover Chinese internal-link authoring heading`);
+  }
+  if (generatedBlogTwins.includes(file) && /^##\s+.+\s*[（(]CTA[）)]\s*$/m.test(twinSource)) {
+    failures.push(`${file}: leftover parenthetical CTA authoring heading`);
+  }
+  if (UNCONDITIONAL_WATER_TEST_RX.test(twinSource)) {
+    failures.push(`${file}: unconditional water-test promise`);
+  }
+  if (STALE_SHRINKWRAP_ONLY_STORAGE_RX.test(twinSource)) {
+    failures.push(`${file}: leftover shrinkwrap-only winter-storage claim`);
   }
 }
 
@@ -523,5 +591,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${generatedBlogTwins.length} Markdown twin(s), ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
+  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${generatedBlogTwins.length} Markdown twin(s), ${generatedLocationTwins.length} location twin(s), ${WATER_TEST_CLAIM_SURFACES.length} water-test surfaces, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
 );

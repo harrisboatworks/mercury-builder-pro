@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi.md
-last_updated: 2026-06-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 Avator 전동 선외기: 가격과 항속거리"
 description: "머큐리 Avator 전동 선외기: 가격, 실제 항속거리, 그리고 라이스 레이크에 적합한지. 머큐리 Premier 딜러의 정직한 평가."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-09-06
 keywords: ["머큐리 Avator","전동 선외기","전기 보트 모터","Mercury Avator Korean","라이스 레이크 전동 보트"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-06-08  
+**마지막 검토:** 2026-09-06  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 
@@ -42,7 +42,7 @@ revenue_driver: repower
 
 ### 핵심 요약
 
-머큐리 Avator는 호수에서 진지하게 쓸 수 있는 첫 번째 머큐리 전동 선외기 라인업입니다. 디딘기, 카누, 작은 알루미늄, 폰툰 보조 동력까지 다양하게 사용됩니다. 가솔린 선외기를 한 번에 대체하는 제품은 아니지만, 조용함과 무진동, 그리고 모듈식 배터리의 유연성을 원하는 분들에게는 매력적인 선택입니다.
+머큐리 Avator는 호수에서 진지하게 쓸 수 있는 첫 번째 머큐리 전동 선외기 라인업입니다. 딩기, 카누, 작은 알루미늄, 폰툰 보조 동력까지 다양하게 사용됩니다. 가솔린 선외기를 한 번에 대체하는 제품은 아니지만, 조용함과 무진동, 그리고 모듈식 배터리의 유연성을 원하는 분들에게는 매력적인 선택입니다.
 
 ---
 
@@ -50,7 +50,7 @@ revenue_driver: repower
 
 | 모델 | 출력 | 환산 마력 | 주요 용도 |
 |---|---|---|---|
-| 7.5e | 750 W | 약 3.5마력 (가솔린 비교) | 디딘기, 카누, 작은 보트 보조 |
+| 7.5e | 750 W | 약 3.5마력 (가솔린 비교) | 딩기, 카누, 작은 보트 보조 |
 | 20e | 2,200 W | 약 5마력 (가솔린 비교) | 소형 알루미늄, 트롤링 |
 | 35e | 3,800 W | 약 9.9마력 (가솔린 비교) | 14~16피트 알루미늄, 폰툰 보조 |
 | 75e | 7,500 W | 10마력 (프로펠러 축 출력 환산) | 폰툰 보조, 중형 알루미늄 |
@@ -91,7 +91,7 @@ revenue_driver: repower
 - 조용한 호수에서 낚시, 사진, 자연 관찰
 - 코티지에서 가솔린 보관과 운반이 번거로운 분
 - 큰 보트의 보조 트롤링 모터
-- 디딘기, 카누, SUP에 보조 동력이 필요한 분
+- 딩기, 카누, SUP에 보조 동력이 필요한 분
 
 **아직 적합하지 않은 경우**
 - 장거리 크루징

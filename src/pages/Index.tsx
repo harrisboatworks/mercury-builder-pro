@@ -142,7 +142,7 @@ export default function Index() {
           <div className="container mx-auto px-4 py-4 md:py-5 text-center">
             <p className="font-sans text-sm md:text-base text-repower-navy-900/85 leading-relaxed max-w-3xl mx-auto">
               <span className="font-semibold text-repower-navy-900">Pickup at Gores Landing, by design.</span>{' '}
-              Every motor we install gets water-tested on Rice Lake first, so you drive home with a Mercury that has been run, not just bolted on. About 90 minutes from Toronto. Worth the drive.
+              HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow, so you are not just driving home with a motor that was bolted on. About 90 minutes from Toronto. Worth the drive.
             </p>
           </div>
         </section>

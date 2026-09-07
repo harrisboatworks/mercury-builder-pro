@@ -1,42 +1,17 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
-import { CANONICAL_SKUS } from '@/data/canonical-pricing.generated';
+import { CANONICAL_LAST_UPDATED, CANONICAL_SKUS } from '@/data/canonical-pricing.generated';
+import { buildMercuryProXSOffers } from '@/data/mercuryProXSOffers.js';
 
 // Static "starting at" CAD prices for JSON-LD Offer (rich-result safe).
 // Source: the generated canonical pricing reference, never motor_models.base_price.
 // Live inventory is fetched dynamically, but customer-visible price always comes
 // from the same canonical dealer-price source used by /pricing-reference.
-// Image URLs are required by Google Merchant Listings rich-result eligibility.
-// Per-HP Pro XS product photos served from /public/images/seo/ (absolute URLs
-// for valid JSON-LD). Fallback constant retained for safety.
-const PRO_XS_DEFAULT_IMAGE = `${SITE_URL}/social-share.jpg`;
-
-const PRO_XS_IMAGES: Record<number, string> = {
-  115: `${SITE_URL}/images/seo/proxs-115.webp`,
-  150: `${SITE_URL}/images/seo/proxs-150.jpg`,
-  200: `${SITE_URL}/images/seo/proxs-200.jpg`,
-  250: `${SITE_URL}/images/seo/proxs-250.jpeg`,
-};
-
-export const PRO_XS_STATIC_OFFERS = [115, 150, 200, 250].map((hp) => {
-  const matchingSkus = CANONICAL_SKUS.filter((sku) => sku.family === 'ProXS' && sku.hp === hp);
-  const matchingPrices = matchingSkus.map((sku) => sku.dealer);
-
-  if (matchingPrices.length === 0) {
-    throw new Error(`Missing canonical Pro XS pricing for ${hp} HP`);
-  }
-
-  const startingSku = matchingSkus.reduce((lowest, sku) => sku.dealer < lowest.dealer ? sku : lowest);
-  return {
-    hp,
-    name: `Mercury ${hp} Pro XS`,
-    startingAt: Math.min(...matchingPrices),
-    image: PRO_XS_IMAGES[hp] ?? PRO_XS_DEFAULT_IMAGE,
-    availability: startingSku.status.toLowerCase() === 'in stock'
-      ? 'https://schema.org/InStock'
-      : 'https://schema.org/PreOrder',
-  };
+export const PRO_XS_STATIC_OFFERS = buildMercuryProXSOffers({
+  skus: CANONICAL_SKUS,
+  lastUpdated: CANONICAL_LAST_UPDATED,
+  siteUrl: SITE_URL,
 });
 
 export const PRO_XS_FAQ = [
@@ -118,7 +93,7 @@ export function MercuryProXSSEO() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
-            "priceValidUntil": "2026-12-31",
+            "validFrom": v.validFrom,
             "availability": v.availability,
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },

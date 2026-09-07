@@ -1,9 +1,9 @@
 # Security Contact Information
-# Harris Boat Works - https://quote.harrisboatworks.ca
+# Harris Boat Works - https://www.mercuryrepower.ca
 
 Contact: mailto:info@harrisboatworks.ca
 Preferred-Languages: en
-Canonical: https://quote.harrisboatworks.ca/.well-known/security.txt
+Canonical: https://www.mercuryrepower.ca/.well-known/security.txt
 Expires: 2026-12-31T23:59:59.000Z
 
 # If you discover a security vulnerability, please report it to us.

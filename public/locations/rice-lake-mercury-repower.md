@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Harris Boat Works: Mercury Repower on Rice Lake, Gores Landing ON
-Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury dealer since 1965, with every installed repower lake-tested on Rice Lake before you take it home.
+Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury dealer since 1965, with a standard on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 ## Factbox
 - **Region:** Rice Lake
 - **Drive time:** local, south shore of Rice Lake
@@ -47,7 +47,7 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 - Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
-- Every installed repower is lake-tested on Rice Lake before pickup
+- Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Bass boat repower case study (150 → 150 Pro XS)](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs)

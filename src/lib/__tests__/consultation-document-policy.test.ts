@@ -132,7 +132,7 @@ describe('consultation document policy', () => {
     const parsed = await parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': good.contentType },
-      body: good.body,
+      body: good.body as BodyInit,
     }));
     expect(parsed.meta.flow).toBe('submit');
 
@@ -144,7 +144,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': extra.contentType },
-      body: extra.body,
+      body: extra.body as BodyInit,
     }))).rejects.toThrow(/only metadata and a PDF/);
 
     const badMagic = multipartBody([
@@ -154,7 +154,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': badMagic.contentType },
-      body: badMagic.body,
+      body: badMagic.body as BodyInit,
     }))).rejects.toThrow(/signature/);
 
     const oversizedMeta = multipartBody([
@@ -164,7 +164,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': oversizedMeta.contentType },
-      body: oversizedMeta.body,
+      body: oversizedMeta.body as BodyInit,
     }))).rejects.toThrow(ConsultationDocumentRequestError);
 
     expect(MAX_QUOTE_DOCUMENT_BYTES).toBe(5 * 1024 * 1024);

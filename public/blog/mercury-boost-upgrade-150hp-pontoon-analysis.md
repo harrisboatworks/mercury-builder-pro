@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -35,7 +35,7 @@ revenue_driver: repower
 
 ## Full Article
 
-Mercury Boost is a software calibration for specific eligible Mercury outboards. It can improve zero-to-top-speed and mid-range acceleration by 5 to 21 percent depending on the boat-and-engine combination. It does not raise horsepower, top speed, or maximum RPM.
+Mercury Boost is a software calibration for specific eligible Mercury outboards. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a 5% to 21% increase in top speed, and it is not a guaranteed result for a given pontoon. Mercury says Boost does not change top speed or time to plane; boat configuration and operating conditions affect the result. It does not raise horsepower or maximum RPM.
 
 That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
@@ -152,7 +152,7 @@ Only after Mercury confirms the exact motor is eligible. Boost can improve mid-r
 
 ### What does Mercury Boost actually do to the motor?
 
-Mercury Boost is an authorized software calibration for eligible motors. Mercury publishes improved mid-range and zero-to-top-speed acceleration, depending on the boat-and-engine combination. It does not add horsepower, top speed, or maximum RPM.
+Mercury Boost is an authorized software calibration for eligible motors. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a top-speed gain, and it is not a guaranteed result for every installation. It does not add horsepower, top speed, or maximum RPM.
 
 ### Does Mercury Boost affect fuel economy?
 
