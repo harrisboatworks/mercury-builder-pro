@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tips
 **Published:** 2026-05-05
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 

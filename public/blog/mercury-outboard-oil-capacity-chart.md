@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance
 **Published:** 2026-07-24
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 

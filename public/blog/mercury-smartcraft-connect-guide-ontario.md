@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Mercury Outboards
 **Published:** 2026-05-09
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 

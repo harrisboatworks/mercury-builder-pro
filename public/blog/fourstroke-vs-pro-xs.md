@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Motors
 **Published:** 2026-05-26
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 

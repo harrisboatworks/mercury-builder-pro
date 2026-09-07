@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides
 **Published:** 2026-05-17
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 7 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 

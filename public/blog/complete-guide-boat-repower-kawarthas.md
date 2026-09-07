@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering
 **Published:** 2026-02-23
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 

@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating
 **Published:** 2026-05-17
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 6 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 

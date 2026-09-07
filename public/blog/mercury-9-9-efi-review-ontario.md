@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides
 **Published:** 2026-05-10
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 

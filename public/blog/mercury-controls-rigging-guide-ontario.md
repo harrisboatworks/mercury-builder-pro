@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards
 **Published:** 2026-05-08
-**Last reviewed:** 2026-09-06
+**Last reviewed:** 2026-09-06  
 **Read time:** ~16 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 

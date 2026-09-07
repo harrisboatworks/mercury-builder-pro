@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards
 **Published:** 2026-05-08
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~14 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 

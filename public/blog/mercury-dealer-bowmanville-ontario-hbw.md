@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations
 **Published:** 2026-05-11
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 4 min
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 

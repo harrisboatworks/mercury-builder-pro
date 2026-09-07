@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service
 **Published:** 2026-06-29
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~7 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
 

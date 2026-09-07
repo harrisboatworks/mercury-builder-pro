@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance
 **Published:** 2026-05-10
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 

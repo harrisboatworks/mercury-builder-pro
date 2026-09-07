@@ -25,7 +25,7 @@ revenue_driver: none
 
 **Category:** About HBW
 **Published:** 2026-05-18
-**Last reviewed:** 2026-08-30
+**Last reviewed:** 2026-08-30  
 **Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 

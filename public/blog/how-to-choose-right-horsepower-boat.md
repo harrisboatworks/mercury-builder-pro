@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide
 **Published:** 2024-06-15
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 

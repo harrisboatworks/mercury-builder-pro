@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides
 **Published:** 2026-05-16
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 

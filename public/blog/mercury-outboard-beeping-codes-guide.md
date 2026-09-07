@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting
 **Published:** 2026-05-11
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 6 min
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 

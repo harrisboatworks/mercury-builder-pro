@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance
 **Published:** 2026-05-17
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 

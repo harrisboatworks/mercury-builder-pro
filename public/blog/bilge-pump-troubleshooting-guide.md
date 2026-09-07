@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting
 **Published:** 2026-07-03
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 

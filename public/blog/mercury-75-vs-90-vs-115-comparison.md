@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison
 **Published:** 2026-01-26
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 

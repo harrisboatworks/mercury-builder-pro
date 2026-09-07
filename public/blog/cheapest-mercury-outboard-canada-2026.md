@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide
 **Published:** 2026-04-23
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 

@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide
 **Published:** 2026-05-09
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 

@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower
 **Published:** 2026-06-06
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 4 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 

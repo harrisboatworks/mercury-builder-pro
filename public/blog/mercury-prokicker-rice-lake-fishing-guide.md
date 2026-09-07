@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing
 **Published:** 2026-02-06
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 

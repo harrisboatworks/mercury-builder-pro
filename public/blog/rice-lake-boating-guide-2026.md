@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle
 **Published:** 2026-05-10
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 

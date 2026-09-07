@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guide
 **Published:** 2026-05-28
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 

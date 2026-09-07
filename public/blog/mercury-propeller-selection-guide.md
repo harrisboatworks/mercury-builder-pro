@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Technical Reference
 **Published:** 2026-05-27
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** ~8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 

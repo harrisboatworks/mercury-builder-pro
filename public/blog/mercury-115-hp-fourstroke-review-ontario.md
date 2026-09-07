@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides
 **Published:** 2026-05-10
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 18 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 

@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology
 **Published:** 2026-05-28
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 

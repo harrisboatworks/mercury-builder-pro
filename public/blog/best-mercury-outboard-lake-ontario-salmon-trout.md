@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing & Local
 **Published:** 2026-04-22
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-07  
 **Read time:** 15 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
