@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Bad Used Boats to Avoid Ontario"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji."
 category: "Buying Guide"
 date_published: 2026-02-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
@@ -87,7 +87,7 @@ You need a way to spot the traps before you hand over the cash.
 
 These motors had a good run. That run is over.
 
-Carbureted 2-strokes from this era are increasingly difficult to source parts for. Oil mixing is an extra step that a lot of owners either get wrong or skip altogether. Many provinces, and Ontario marinas, are tightening up on emissions, and resale value on these motors is dropping steadily as the market moves toward 4-stroke and direct-injection tech.
+Carbureted 2-strokes from this era are increasingly difficult to source parts for. Oil mixing is an extra step that a lot of owners either get wrong or skip altogether. Buyer interest often shifts toward 4-stroke and later direct-injection motors, but resale and marina rules vary. Confirm current local marina fuel and emissions rules instead of treating this as a provincial ban.
 
 If the used boat you're looking at has an older carbureted 2-stroke hanging off the back, price the motor separately from the hull. Odds are, the motor needs to be factored out of the deal entirely, or you're budgeting for a repower sooner than you think. We've written more about this in our [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario).
 
@@ -130,6 +130,14 @@ Walk the floor of any used fiberglass boat you're seriously considering. Literal
 Stringers are the internal framework that hold a hull together. When they rot, usually from water intrusion through old, cracked gelcoat or improperly sealed fittings, the fix is a gut job. Transom mush (a soft, spongy transom, usually from water penetrating the wood core) can mean the motor mounting surface is compromised. This is not a DIY repair unless you know exactly what you're getting into.
 
 Repair costs for serious stringer or transom work often exceed the value of the boat.
+
+---
+
+### Wet-floor pontoons hiding deck damage
+
+A pontoon can look tidy on the tubes and furniture while the deck underneath is the problem. Soft spots, swollen plywood, rusted fasteners, or a floor that flexes underfoot can hide water that has been sitting in the deck for seasons.
+
+Ask to walk the whole deck, including under furniture and around gates. If the seller will not let you lift a hatch or check under the carpet, treat the floor as unknown. A wet pontoon deck is a structural repair, not a cosmetic refresh, and it belongs in the same walk-away category as a mushy transom until a qualified inspection says otherwise.
 
 ---
 

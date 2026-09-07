@@ -16,14 +16,14 @@ availability: special_order
 price_cad: 11484
 ---
 
-# 50 ELHPT FourStroke
+# 50 ELHPT Command Thrust FourStroke Tiller
 
 Mercury FourStroke 50 HP outboard motor (model 1F5145TJZ).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 50 ELHPT FourStroke
+- **Model:** 50 ELHPT Command Thrust FourStroke Tiller
 - **Family:** Mercury FourStroke
 - **Horsepower:** 50 HP
 - **Model number:** 1F5145TJZ

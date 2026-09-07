@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" xml:lang="en" aria-labelledby="title desc">
+  <title id="title">Break-in is not a service interval</title>
+  <desc id="desc">Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.</desc>
+  <rect width="1200" height="800" fill="#F4EFE4"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="700">
+    <tspan x="600" y="86">Break-in is not a</tspan>
+    <tspan x="600" dy="80">service interval</tspan>
+  </text>
+  <rect x="540" y="186" width="120" height="6" rx="3" fill="#C8102E"/>
+
+  <rect x="48" y="214" width="352" height="424" rx="24" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <path d="M96 360 C140 360 152 280 196 280 C240 280 252 400 304 400 C336 400 352 340 368 340" fill="none" stroke="#C8102E" stroke-width="8" stroke-linecap="round"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="224" y="500">Vary</tspan>
+    <tspan x="224" dy="56">throttle</tspan>
+  </text>
+
+  <rect x="424" y="214" width="352" height="424" rx="24" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <line x1="472" y1="340" x2="728" y2="340" stroke="#0B1F3A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M584 300 L636 380 M636 300 L584 380" stroke="#C8102E" stroke-width="8" stroke-linecap="round"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="600" y="480">Avoid long</tspan>
+    <tspan x="600" dy="56">steady RPM</tspan>
+  </text>
+
+  <rect x="800" y="214" width="352" height="424" rx="24" fill="#FFFBF3" stroke="#0B1F3A" stroke-width="4"/>
+  <rect x="908" y="268" width="136" height="176" rx="12" fill="#0B1F3A"/>
+  <rect x="924" y="292" width="104" height="10" rx="3" fill="#F4EFE4"/>
+  <rect x="924" y="316" width="80" height="8" rx="2" fill="#EDE6D6"/>
+  <rect x="924" y="336" width="88" height="8" rx="2" fill="#EDE6D6"/>
+  <rect x="924" y="356" width="72" height="8" rx="2" fill="#EDE6D6"/>
+  <rect x="924" y="376" width="96" height="8" rx="2" fill="#EDE6D6"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="44" font-weight="600">
+    <tspan x="976" y="500">Follow the</tspan>
+    <tspan x="976" dy="56">serial-specific</tspan>
+    <tspan x="976" dy="56">manual</tspan>
+  </text>
+
+  <rect x="48" y="668" width="1104" height="100" rx="20" fill="#EDE6D6"/>
+  <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="600">
+    <tspan x="600" y="710">An optional dealer check is not</tspan>
+    <tspan x="600" dy="44">Mercury&#8217;s first scheduled service.</tspan>
+  </text>
+</svg>

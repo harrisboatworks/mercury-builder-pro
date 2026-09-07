@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md
-last_updated: 2026-08-21
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide de remotorisation Mercury : prix, délais, rentabilité"
 description: "Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-08-21
+date_modified: 2026-09-06
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-21\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 
@@ -39,15 +39,13 @@ Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état
 
 Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+> **Une note sur la langue**
+> Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
+> Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
-Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/ca/en). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
 ---
 
@@ -148,11 +146,11 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
 ---
 
-## FAQs
+## Questions fréquentes
 
 ### Combien de temps dure une remotorisation?
 
-En général, quelques semaines entre la commande et la mise à l'eau. Beaucoup moins long que d'attendre un bateau neuf.
+Confirmez auprès de HBW la disponibilité du moteur, le câblage et le rendez-vous pour votre bateau. Il n'y a pas de délai universel; seuls le devis écrit et l'horaire confirmés font foi.
 
 ### Est-ce que le prix inclut l'installation?
 

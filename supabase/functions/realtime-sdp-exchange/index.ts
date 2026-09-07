@@ -42,10 +42,15 @@ serve(async (req) => {
 
     console.log('Proxying SDP exchange to OpenAI...');
 
-    // Proxy the SDP exchange to OpenAI
-    // NOTE: using the known-working realtime model endpoint.
+    // Proxy the SDP exchange to OpenAI.
+    // GA endpoint (migrated 2026-09-04). The old beta URL
+    // (/v1/realtime?model=...) now hard-fails with
+    // "The Realtime Beta API is no longer supported. Please use
+    // /v1/realtime/calls for the GA API." The model no longer travels in the
+    // query string - it is baked into the ephemeral secret minted by
+    // realtime-session, so the offer only needs the bearer token.
     const response = await fetch(
-      "https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-10-01",
+      "https://api.openai.com/v1/realtime/calls",
       {
         method: "POST",
         body: sdpOffer,

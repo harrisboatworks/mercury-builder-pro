@@ -16,14 +16,14 @@ availability: special_order
 price_cad: 15477
 ---
 
-# 90 EXLPT FourStroke
+# 90 EXLPT Command Thrust FourStroke
 
 Mercury FourStroke 90 HP outboard motor (model 1F904632D).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 90 EXLPT FourStroke
+- **Model:** 90 EXLPT Command Thrust FourStroke
 - **Family:** Mercury FourStroke
 - **Horsepower:** 90 HP
 - **Model number:** 1F904632D

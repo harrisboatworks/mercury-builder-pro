@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南"
 description: "Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。"
 category: "小马力指南"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-09-06
 keywords: ["Mercury 9.9 20HP 中文","Mercury kicker 中文","tiller 船外机中文","小铝船 Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 小马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-05-10  
+**最后审核:** 2026-09-06  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 
@@ -39,7 +39,7 @@ Mercury 9.9至20HP适合小铝船、轻载钓鱼、Kicker辅助机、Trolling，
 
 ### 为什么 GTA 华人船主愿意到 Rice Lake
 
-- [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 认证经销商
+- [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
@@ -133,17 +133,9 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 
 ---
 
-## 内部连结
-
-- [40至60马力Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
-- [多伦多华人钓友：Rice Lake与Kawarthas钓鱼船马力怎么选](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
-- [安大略省船只法规与安全要求：华人船主必知](/blog/zh/ontario-boating-regulations-zh)
-
----
-
 > 相关指南：[Mercury 9.9-150HP 完整马力指南](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)。
 
-## 行动呼吁（CTA）
+## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。

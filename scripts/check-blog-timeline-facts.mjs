@@ -665,7 +665,7 @@ const ARTICLE_CONTRACTS = {
         rule: 'no-blanket-rigging-compatibility',
       },
       {
-        rx: /Every HBW repower gets[\s\S]{0,120}(?:load-tested|on-water test)|Every repower gets an on-water test|No exceptions/i,
+        rx: /Every HBW repower gets[\s\S]{0,120}(?:load-tested|on-water test|water[- ]test(?:ed)?|lake[- ]test(?:ed)?)|Every (?:repower|install) (?:gets an on-water test|is (?:lake|water)[- ]tested)|every (?:install|repower) gets water[- ]tested|No exceptions/i,
         rule: 'no-universal-water-test-claim',
       },
       {
@@ -730,11 +730,12 @@ const ARTICLE_CONTRACTS = {
     required: [
       ...GTA_DRIVE_IN_REQUIRED,
       {
-        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}Non-storage customers should request the current spring-commissioning quote/i,
         rule: 'commissioning-price-canon',
       },
     ],
     forbidden: [
+      { rx: /\$99\b/, rule: 'no-unconfirmed-commissioning-fee' },
       ...GTA_DRIVE_IN_FORBIDDEN,
       {
         rx: /safe limp-home or temporary fix/i,

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
@@ -33,11 +33,11 @@ revenue_driver: service
 
 ## Quick answer
 
-Before you launch your Mercury outboard for the first time after winter storage, work through this five-minute checklist: check the battery voltage and connections, inspect the fuel for separation or stale fuel, look for damaged or dry-rotted fuel lines, confirm the propeller is tight and undamaged, check the lower unit oil for water contamination, and at the dock, watch for the telltale water stream from the cooling system within 30 seconds of starting. If anything looks wrong, do not run the motor under load. Most Ontario spring no-starts and overheat events are preventable with this exact checklist. It takes longer to read this paragraph than to actually do it.
+Before you launch your Mercury outboard for the first time after winter storage, work through this pre-season checklist. Some checks happen before the engine runs; others happen at the dock or under load. Check the battery voltage and connections, inspect the fuel for separation or stale fuel, look for damaged or dry-rotted fuel lines, confirm the propeller is tight and undamaged, and check the lower unit oil for water contamination. At the dock, follow the exact engine manual for cooling-water supply, starting, and cooling-flow checks. If anything looks wrong, do not run the motor under load. These checks can help identify problems before launch.
 
 ## Why spring run-up matters in Ontario
 
-A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. All three failure modes are predictable. All three are preventable.
+A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. Investigate the cause before running the motor under load.
 
 Every April and May, our service shop sees spring run-up problems that a short structured check before launch would likely have caught. The checklist below covers the patterns we see most often.
 
@@ -75,7 +75,7 @@ A healthy motor should start within 3-5 seconds of cranking. If it cranks but wo
 
 A weak or intermittent water stream means the water pump impeller needs replacement, which is a routine $200-$400 service item we do dozens of times every spring.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **10. Idle check.** Let the motor idle for 2-3 minutes at the dock. Listen for unusual sounds (knocking, hissing, irregular firing) and watch for smoke beyond the normal first-start exhaust. Brief blue or white smoke at first start is normal as oil burns off. Continuous heavy smoke means something is wrong.
 
@@ -141,14 +141,14 @@ No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn'
 
 Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead.
 
-### What's the worst spring issue you've ever seen?
+### Why check cooling flow before leaving the dock?
 
-A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
+Running an engine with inadequate cooling can damage it. Follow the exact engine manual for its cooling-flow checks and alarm response; investigate an abnormal result before operating under load.
 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
+- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
 - [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list

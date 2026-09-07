@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Ski Boats 2026"
 description: "Best Mercury outboard for ski and wakeboard boats. Covers hole shot, Pro XS vs FourStroke, and correct HP for desired wake. Ontario dealer's real-world picks."
 category: "Buying Guide"
 date_published: 2026-05-03
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for watersports","best outboard for skiing","wakesurf outboard motor","best Mercury for ski wakeboard boats","Mercury Pro XS tow boat","Mercury V8 wakeboard","hole shot tow boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-03  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
 
@@ -53,7 +53,7 @@ Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spe
 - Boat is 20 ft or larger with a tow tower
 - Sustained mid-range torque matters more than top end
 
-**225 to 300 HP V6 or V8, more weight, more sustained pull**
+**225 to 300 HP, more weight, more sustained pull. Confirm whether that rating is a V6 FourStroke or a V8 Pro XS.**
 
 If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
 
@@ -70,8 +70,8 @@ This is the version of "what should I put on my tow boat?" we'd give if you walk
 | Use case | Boat length | Recommended Mercury |
 |----------|-------------|---------------------|
 | **Tubing + occasional skiing** | 17-19 ft runabout | 150-175 HP FourStroke |
-| **Slalom water-skiing serious** | 18-20 ft | **175 HP Pro XS** or 200 HP V6 |
-| **Wakeboarding** | 19-21 ft | **200 HP Pro XS** or 225 HP V6 |
+| **Slalom water-skiing serious** | 18-20 ft | **175 HP Pro XS** (V6) or 200 HP Pro XS (V8) |
+| **Wakeboarding** | 19-21 ft | **200 HP Pro XS** (V8) or 225 HP Pro XS (V8) |
 | **Wakesurfing** | 21-23 ft | **250-300 HP V8** + ballast system |
 | **Big-wake everything (multi-sport)** | 22-24 ft | **300-350 HP V10 Verado** (special-order at HBW) |
 
@@ -108,29 +108,31 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 | Motor | All-in pricing (CAD, before HST) |
 |-------|----------------------------------|
 | 175 HP Pro XS | $26,500-$31,500 |
-| 200 HP V6 Pro XS | $29,500-$34,000 |
-| 225 HP V6 Pro XS | $32,000-$36,500 |
+| 200 HP V8 Pro XS | $29,500-$34,000 |
+| 225 HP V8 Pro XS | $32,000-$36,500 |
 | 250 HP V8 Pro XS | $36,500-$40,500 |
 | 300 HP V8 Pro XS | $39,500-$44,000 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
 
 For a tow boat repower, you also typically want:
 - **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300-$700.
 - **Hydraulic steering**, non-negotiable on V6+ for towing precision. $1,500-$2,500 if not already on the boat.
-- **DTS (Digital Throttle & Shift)** if available, much better feel for skier pulls. Standard on V8 Pro XS, optional on V6.
+- **DTS (Digital Throttle & Shift)** if available, much better feel for skier pulls. Confirm the exact engine and control option; do not infer DTS from horsepower or cylinder count alone.
 
 ## V6 vs V8. The Real Decision
 
 For tow boats over 20 feet:
 
-**V6 Pro XS (200-225 HP)**, lighter, more efficient, lower upfront cost. Plenty of pull for skiing and entry-level wakeboarding. **The right call for 19-21 ft outboard tow boats with moderate use.**
+**175 Pro XS (V6)** is the remaining V6 rating in the current Pro XS family. **200, 225, 250, and 300 Pro XS are 4.6 L V8s.** Horsepower alone does not identify the architecture.
 
-**V8 Pro XS (250-300 HP)**, heavier (adds 27-36 kg (60-80 lbs) to transom), uses more fuel, costs more. But the torque difference is real, sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
+**200-225 Pro XS V8**, a common watersports range. Confirm weight, shaft, controls, and prop before treating either rating as a lighter V6.
 
-The V8 also has DTS standard, which on a tow boat is genuinely worth having, smoother throttle, better skier-handle precision.
+**250-300 Pro XS V8**, more transom weight and fuel use, with more room for serious wakeboarding and any wakesurfing. **A common call for 21+ ft tow boats and any boat with significant ballast, after the hull rating and exact package are checked.**
+
+DTS availability depends on the exact engine and control option, not cylinder count. Confirm it before treating it as standard.
 
 ## Verado for Tow Boats. Yes Sometimes
 

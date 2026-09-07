@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Aluminum vs Fiberglass Hull Ontario"
 description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-09-06
 keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hull ontario","boat hull material guide","legend aluminum boat","boat material comparison","rice lake boat material"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-05-16  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 
@@ -41,7 +41,7 @@ Aluminum hulls are lighter, cheaper to buy, more forgiving on the trailer and at
 
 **Fiberglass hulls** are laminated layers of glass fiber and resin laid over a mould. The result is a rigid, uniform hull with a smooth gelcoat finish on the outside. Fiberglass does not flex; it takes wake impacts as a solid structure. When it fails, it cracks rather than dents.
 
-The chemistry difference creates real-world differences in weight, cost, ride, durability, and repair. Let's go through each.
+The difference between the systems shows up in weight, cost, ride, durability, and repair. Let's go through each.
 
 ## Weight: aluminum wins
 
@@ -55,9 +55,9 @@ For Ontario boaters who trailer regularly between lakes, this is a real ongoing 
 
 ## Cost: aluminum wins on purchase, often ties on lifetime
 
-A new 18-foot aluminum fishing boat from Legend Boats with a Mercury 90 will land in the $30,000-$40,000 CAD range fully rigged in 2026. A comparable 18-foot fiberglass V-hull from a quality builder will land $50,000-$70,000.
+A new 18-foot aluminum fishing boat from Legend Boats with a Mercury 90, and a comparable 18-foot fiberglass V-hull, have to be compared from current written quotes. Package contents, year, and options change the total.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference).
 
 **However**: over 10 years, the gap narrows. Fiberglass hulls hold their resale value better if the gelcoat is maintained. Aluminum hulls depreciate more on purchase but bottom out faster (a well-kept 10-year-old aluminum boat sells for 50-60% of new; the same fiberglass boat might sell for 60-70%). The actual dollar gap over a 10-year ownership window is typically less than the purchase-price gap suggests.
 
@@ -142,7 +142,7 @@ Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boa
 
 ### What's the right Mercury for an aluminum vs a fiberglass boat?
 
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on pontoons and workboats (not on planing V-hulls). Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
+Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
 
 ### Is buying a used aluminum boat safer than buying a used fiberglass boat?
 
@@ -154,7 +154,7 @@ Marginally yes, because aluminum hides fewer structural problems and the failure
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000), Rice Lake boats under $30K
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
-- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
 
 ## Next steps
 

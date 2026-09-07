@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 
@@ -37,7 +37,7 @@ If an overheat warning appears, reduce throttle immediately, follow the warning 
 
 ### Mercury overheating? Run this checklist before damage gets expensive
 
-Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
+Some overheats clear with a debris check. Push through an alarm and you risk powerhead damage.
 
 #### Stop the boat
 
@@ -79,13 +79,11 @@ Cooling-system failures get expensive fast. Tow in or trailer the boat, then boo
 
 If you're reading this from the water with the alarm going, skip to the emergency section below. Get yourself safe, then come back for the rest.
 
-If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the telltale, and what the warning system means can be the difference between a straightforward cooling-system repair and a $4,500+ powerhead job.
+If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the telltale, and what the warning system means can be the difference between a straightforward cooling-system repair and a damaged powerhead.
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
 ---
-
-![Five-step Mercury outboard overheat response: reduce throttle, follow the warning instructions, check the telltale and intake, then restart only as directed or arrange a tow. A cooling-system fault can lead to $4,500 or more in powerhead damage.](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 
@@ -118,7 +116,7 @@ Use the cooling and restart procedure in the owner's manual for the exact motor.
 
 Don't fight it. Call for a tow, drift to shore, or use another propulsion method. Running an overheated motor "just to get home" is the decision that turns a serviceable motor into one that needs a new powerhead.
 
-We've seen both kinds of boats at the shop. The one that got towed is always cheaper to repair.
+We've seen both kinds of boats at the shop. Towing protects the motor so the shop can diagnose the cooling fault instead of a damaged powerhead.
 
 ---
 
@@ -207,7 +205,7 @@ Follow the flushing procedure in the serial-specific Mercury owner's manual. The
 
 ### Does ethanol-free fuel affect overheating?
 
-Not directly, overheating is a cooling-side problem, not a fuel-side one. But ethanol pump gas does stress the rest of the motor in ways that compound problems. We sell ethanol-free 89-octane marine gas at the dock for this reason.
+Not directly. Overheating is a cooling-side problem. Follow the model-specific warning and restart procedure. Fuel type does not replace that response. HBW sells ethanol-free 89-octane marine gas at the dock; treat that as a separate fuel-storage choice, not an overheat fix.
 
 ### My boat is on the water and I'm panicking. What do I do?
 

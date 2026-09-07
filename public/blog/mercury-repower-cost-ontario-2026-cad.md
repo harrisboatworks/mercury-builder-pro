@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-08-26
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It"
 description: "What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Premier dealer on Rice Lake."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
-date_modified: 2026-08-26
+date_modified: 2026-09-06
 keywords: ["Mercury repower cost Ontario","Mercury repower cost Canada 2026","Mercury outboard price CAD","boat repower cost Ontario","Mercury engine price Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-04-17  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 
@@ -124,7 +124,7 @@ The physical marina is closed December 1 through April 1. No physical repower, i
 
 A repower is strongest when the hull, floor, transom, steering, and layout still suit how you use the boat. It is weaker when the boat needs substantial structural work, no longer fits the family, or would still leave you replacing major systems after the motor is installed.
 
-Do not use a generic percentage for "new-boat feeling," fuel savings, or resale recovery. Those results depend on the old engine, new engine, propeller, hull, load, operating speed, maintenance, and local used-boat market. Compare the written repower total with the real repair backlog and the cost of a replacement boat that actually meets the same need.
+Fuel savings, resale recovery, and how the boat feels after a repower depend on the old engine, new engine, propeller, hull, load, operating speed, maintenance, and the local used-boat market. There is no one percentage that covers those results. Compare the written repower total with the real repair backlog and the cost of a replacement boat that actually meets the same need.
 
 ## What Happens to the Old Motor?
 

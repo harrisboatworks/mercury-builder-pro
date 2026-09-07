@@ -4,7 +4,7 @@
 import type { BlogArticle } from './blogArticles';
 
 /** Language-support FAQ answer reused wherever the "service in this language?" note appears. */
-export const PA_LANGUAGE_NOTE = `honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।`;
+export const PA_LANGUAGE_NOTE = `honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।`;
 
 interface Wave1Article extends BlogArticle {
   /** Wave 1 native-review status. 'pending' until a native speaker signs off. */
@@ -24,42 +24,42 @@ export const punjabiBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-09-06',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario fishing license keemat online (Ontario fishing license price online)', 'Toronto de nere fishing spots family layi (fishing spots near Toronto for family)', 'fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)', 'Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)', 'Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)', 'Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)'],
     faqs: [
-      { question: '1. Ontario fishing license di keemat kinna hai online?', answer: 'licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।' },
+      { question: '1. Ontario fishing license di keemat kinna hai online?', answer: 'licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: [Ontario fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)।' },
       { question: '2. Toronto de nere family layi fishing spots kaun se ne?', answer: 'Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’ਤੇ ਲਗਭਗ 90 ਤੋਂ 120 ਮਿੰਟ ਦੀ drive ਹੈ, origin ਅਤੇ traffic ’ਤੇ ਨਿਰਭਰ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rentals ਹਨ; ਮੌਜੂਦਾ listings ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ।' },
-      { question: '3. Fishing seasons Ontario vich kiven pata lagge?', answer: 'FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।' },
+      { question: '3. Fishing seasons Ontario vich kiven pata lagge?', answer: 'FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।' },
       { question: '4. Rice Lake te fishing rules limits ki ne?', answer: 'rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।' },
-      { question: '5. Brampton ton fishing spot kidhar jaayiye?', answer: 'Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: https://harrisboatworks.ca/rentals।' },
-      { question: '6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?', answer: 'honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।' },
-      { question: '7. Kids layi fishing licence di lod hai?', answer: 'Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents।' },
+      { question: '5. Brampton ton fishing spot kidhar jaayiye?', answer: 'Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।' },
+      { question: '6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?', answer: 'honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।' },
+      { question: '7. Kids layi fishing licence di lod hai?', answer: 'Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)।' },
       { question: '8. Kawartha lakes fishing map video Punjabi vich mildi hai?', answer: 'video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀਂ, ਪਰ Ontario government fishing map interactive online ਹੈ। Rice Lake ਨੂੰ Kawarthas ਵਿੱਚ select ਕਰਕੇ spots ’ਤੇ information ਮਿਲ ਜਾਵੇਗੀ। regulations summary ਜ਼ਰੂਰ read ਕਰੋ।' }
     ],
     nativeReview: 'pending',
     internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbw.wiki/service'],
     officialSources: ['https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/fishing-licence-non-residents-canada', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees', 'https://www.ontario.ca/page/learn-fish'],
-    content: `ਜੇ ਤੁਸੀਂ Brampton, Mississauga, Scarborough ਜਾਂ Markham ਤੋਂ Rice Lake ਉੱਤੇ ਮੱਛੀ ਫੜਨ ਦੀ ਸੋਚ ਰਹੇ ਹੋ, ਤਾਂ ਇਹ ਗਾਈਡ ਤੁਹਾਡੀ ਮਦਦ ਕਰੇਗੀ। Rice Lake, Gores Landing ’ਤੇ ਸਾਡੀ ਮਰੀਨਾ ਤੋਂ ਲਗਭਗ 90 ਮਿੰਟ ਦੀ ਡਰਾਈਵ ਹੈ। ਪਰਿਵਾਰ ਨਾਲ ਮਜ਼ੇਦਾਰ ਦਿਨ ਬਤੀਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, Ontario ਦੇ fishing licence ਦੇ ਨਿਯਮਾਂ ਨੂੰ ਸਮਝਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਸਾਡੀ family marina ਨੂੰ ਤੀਜੀ ਪੀੜ੍ਹੀ ਚਲਾ ਰਹੀ ਹੈ, 1947 ਤੋਂ ਇਸੇ ਝੀਲ ਕੰਢੇ ਹਾਂ, ਅਤੇ Punjabi ਭਾਈਚਾਰੇ ਦੇ ਪਰਿਵਾਰਾਂ ਨੂੰ Rice Lake ਦਾ ਆਨੰਦ ਲੈਂਦੇ ਦੇਖਣਾ ਸਾਨੂੰ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਇਸ ਪੇਜ ਵਿੱਚ, ਅਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਔਖੀ ਕਾਨੂੰਨੀ ਭਾਸ਼ਾ ਦੇ, fishing licence, Outdoors Card, conservation licence ਬਨਾਮ sport licence, FMZ 17, ਅਤੇ ਪਹਿਲੀ ਯਾਤਰਾ ਦੀ ਤਿਆਰੀ ਬਾਰੇ ਸਮਝਾਵਾਂਗੇ।
+    content: `ਜੇ ਤੁਸੀਂ Brampton, Mississauga, Scarborough ਜਾਂ Markham ਤੋਂ Rice Lake ਉੱਤੇ ਮੱਛੀ ਫੜਨ ਦੀ ਸੋਚ ਰਹੇ ਹੋ, ਤਾਂ ਇਹ ਗਾਈਡ ਤੁਹਾਡੀ ਮਦਦ ਕਰੇਗੀ। ਸਾਡੀ ਮਰੀਨਾ Gores Landing ਵਿੱਚ Rice Lake ਦੇ ਦੱਖਣੀ ਕੰਢੇ ’ਤੇ ਹੈ। ਯਾਤਰਾ ਦਾ ਸਮਾਂ ਤੁਹਾਡੇ ਰਵਾਨਗੀ ਸਥਾਨ ਅਤੇ ਟ੍ਰੈਫਿਕ ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਪਰਿਵਾਰ ਨਾਲ ਮਜ਼ੇਦਾਰ ਦਿਨ ਬਤੀਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, Ontario ਦੇ fishing licence ਦੇ ਨਿਯਮਾਂ ਨੂੰ ਸਮਝਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਸਾਡੀ family marina ਨੂੰ ਤੀਜੀ ਪੀੜ੍ਹੀ ਚਲਾ ਰਹੀ ਹੈ, 1947 ਤੋਂ ਇਸੇ ਝੀਲ ਕੰਢੇ ਹਾਂ, ਅਤੇ Punjabi ਭਾਈਚਾਰੇ ਦੇ ਪਰਿਵਾਰਾਂ ਨੂੰ Rice Lake ਦਾ ਆਨੰਦ ਲੈਂਦੇ ਦੇਖਣਾ ਸਾਨੂੰ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਇਸ ਪੇਜ ਵਿੱਚ, ਅਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਔਖੀ ਕਾਨੂੰਨੀ ਭਾਸ਼ਾ ਦੇ, fishing licence, Outdoors Card, conservation licence ਬਨਾਮ sport licence, FMZ 17, ਅਤੇ ਪਹਿਲੀ ਯਾਤਰਾ ਦੀ ਤਿਆਰੀ ਬਾਰੇ ਸਮਝਾਵਾਂਗੇ।
 
 ## Outdoors Card te licence di buniyad | ਆਊਟਡੋਰਸ ਕਾਰਡ ਤੇ ਲਾਇਸੰਸ ਦੀ ਬੁਨਿਆਦ
 
 Ontario ਵਿੱਚ, 18 ਤੋਂ 64 ਸਾਲ ਦੇ residents ਅਤੇ ਜ਼ਿਆਦਾਤਰ visitors ਨੂੰ ਮੱਛੀ ਫੜਨ ਲਈ fishing licence ਲੈਣੀ ਪੈਂਦੀ ਹੈ। ਪਰ ਇਹ ਸਿਰਫ ਇੱਕ ਕਾਗਜ਼ ਨਹੀਂ: ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ Outdoors Card ਬਣਾਉਣੀ ਪੈਂਦੀ ਹੈ। Outdoors Card ਇੱਕ ਪਲਾਸਟਿਕ ਕਾਰਡ ਹੈ ਜੋ ਤੁਹਾਡੀ ਪਛਾਣ ਨੰਬਰ ਰੱਖਦਾ ਹੈ, ਅਤੇ ਫਿਰ ਤੁਸੀਂ ਇਸ ’ਤੇ fishing licence ਜੋੜਦੇ ਹੋ, ਇਹ sticker ਜਾਂ ਇਲੈਕਟ੍ਰਾਨਿਕ ਫਾਰਮੈਟ ਵਿੱਚ ਹੋ ਸਕਦੀ ਹੈ। ਮੋਟੇ ਤੌਰ ’ਤੇ ਦੋ ਤਰ੍ਹਾਂ ਦੀ fishing licence ਹੁੰਦੀ ਹੈ: conservation licence ਅਤੇ sport fishing licence। conservation licence ਨਾਲ ਤੁਹਾਡੀ daily catch limit ਘੱਟ ਹੁੰਦੀ ਹੈ, ਪਰ ਫ਼ੀਸ ਵੀ ਘੱਟ ਹੁੰਦੀ ਹੈ। sport licence ਨਾਲ limit ਜ਼ਿਆਦਾ ਹੈ ਅਤੇ ਫ਼ੀਸ ਵੀ ਜ਼ਿਆਦਾ। Rice Lake ’ਤੇ ਮੱਛੀਆਂ ਲਈ ਦੋਵਾਂ ਦੀ limit, species ਅਤੇ season ਅਨੁਸਾਰ ਵੱਖ-ਵੱਖ ਹੁੰਦੀ ਹੈ।
 
-ਧਿਆਨ ਰੱਖੋ: ਅਸੀਂ ਇੱਥੇ ਫ਼ੀਸਾਂ ਦੀ ਕੋਈ ਖਾਸ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਬਦਲ ਸਕਦੀ ਹੈ। ਸਹੀ ਫ਼ੀਸਾਂ ਲਈ Ontario government ਦਾ official fees page ਦੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees। ਇਹ ਸਾਰੀ ਜਾਣਕਾਰੀ ਆਮ ਸਮਝਾਉਣ ਲਈ ਹੈ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਨਿਯਮ ਬਦਲਦੇ ਰਹਿੰਦੇ ਹਨ, ਇਸ ਲਈ official ਸਰੋਤ ਹਮੇਸ਼ਾ ਜਿੱਤਦਾ ਹੈ।
+ਧਿਆਨ ਰੱਖੋ: ਅਸੀਂ ਇੱਥੇ ਫ਼ੀਸਾਂ ਦੀ ਕੋਈ ਖਾਸ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਬਦਲ ਸਕਦੀ ਹੈ। ਸਹੀ ਫ਼ੀਸਾਂ ਲਈ Ontario government ਦਾ official fees page ਦੇਖੋ: [Ontario fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)। ਇਹ ਸਾਰੀ ਜਾਣਕਾਰੀ ਆਮ ਸਮਝਾਉਣ ਲਈ ਹੈ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਨਿਯਮ ਬਦਲਦੇ ਰਹਿੰਦੇ ਹਨ, ਇਸ ਲਈ official ਸਰੋਤ ਹਮੇਸ਼ਾ ਜਿੱਤਦਾ ਹੈ।
 
 ## Kiven online laiye | ਕਿਵੇਂ ਔਨਲਾਈਨ ਲਈਏ
 
-licence online ਲੈਣਾ ਸੌਖਾ ਹੈ, ਪਰ ਕੁਝ ਕਦਮ ਹਨ। Ontario residents ਅਤੇ non-residents ਦੋਵੇਂ Ontario.ca ’ਤੇ ਜਾ ਕੇ ਆਪਣੀ Outdoors Card ਅਤੇ fishing licence ਖ਼ਰੀਦ ਸਕਦੇ ਹਨ। ਇੱਕ ਵਾਰ Outdoors Card ਨੰਬਰ ਮਿਲ ਜਾਵੇ, ਤੁਸੀਂ ਇੱਕ ਸਾਲ, ਤਿੰਨ ਸਾਲ, ਜਾਂ ਕੁਝ ਹੋਰ ਮਿਆਦ ਵਾਲੀ licence ਖਰੀਦ ਸਕਦੇ ਹੋ। ਫ਼ੀਸਾਂ species ਦੀ limit ਤਹਿਤ ਹੀ official page ’ਤੇ ਹੀ ਮਿਲਣਗੀਆਂ, ਅਸੀਂ ਇੱਥੇ ਗਿਣਤੀ ਨਹੀਂ ਦੱਸਾਂਗੇ। ਖ਼ਰੀਦਣ ਤੋਂ ਬਾਅਦ, licence ਦਾ ਡਿਜੀਟਲ version ਆਪਣੇ ਫ਼ੋਨ ’ਤੇ ਰੱਖੋ, ਜਾਂ ਪ੍ਰਿੰਟ ਕਰੋ। ਮੱਛੀ ਫੜਦੇ ਸਮੇਂ government ID ਨਾਲ ਰੱਖੋ। official steps ਲਈ: https://www.ontario.ca/page/get-outdoors-card-and-licence-summary।
+licence online ਲੈਣਾ ਸੌਖਾ ਹੈ, ਪਰ ਕੁਝ ਕਦਮ ਹਨ। Ontario residents ਅਤੇ non-residents ਦੋਵੇਂ Ontario.ca ’ਤੇ ਜਾ ਕੇ ਆਪਣੀ Outdoors Card ਅਤੇ fishing licence ਖ਼ਰੀਦ ਸਕਦੇ ਹਨ। ਇੱਕ ਵਾਰ Outdoors Card ਨੰਬਰ ਮਿਲ ਜਾਵੇ, ਤੁਸੀਂ ਇੱਕ ਸਾਲ, ਤਿੰਨ ਸਾਲ, ਜਾਂ ਕੁਝ ਹੋਰ ਮਿਆਦ ਵਾਲੀ licence ਖਰੀਦ ਸਕਦੇ ਹੋ। ਫ਼ੀਸਾਂ species ਦੀ limit ਤਹਿਤ ਹੀ official page ’ਤੇ ਹੀ ਮਿਲਣਗੀਆਂ, ਅਸੀਂ ਇੱਥੇ ਗਿਣਤੀ ਨਹੀਂ ਦੱਸਾਂਗੇ। ਖ਼ਰੀਦਣ ਤੋਂ ਬਾਅਦ, licence ਦਾ ਡਿਜੀਟਲ version ਆਪਣੇ ਫ਼ੋਨ ’ਤੇ ਰੱਖੋ, ਜਾਂ ਪ੍ਰਿੰਟ ਕਰੋ। ਮੱਛੀ ਫੜਦੇ ਸਮੇਂ government ID ਨਾਲ ਰੱਖੋ। official steps ਲਈ: [Outdoors Card and licence summary](https://www.ontario.ca/page/get-outdoors-card-and-licence-summary)।
 
 ## Rice Lake te FMZ 17 | ਰਾਈਸ ਲੇਕ ਤੇ FMZ 17
 
-Rice Lake Fisheries Management Zone 17 (FMZ 17) ਵਿੱਚ ਆਉਂਦੀ ਹੈ। Ontario ਨੂੰ 20 ਜ਼ੋਨਾਂ ਵਿੱਚ ਵੰਡਿਆ ਗਿਆ ਹੈ, ਹਰ ਜ਼ੋਨ ਵਿੱਚ ਹਰ ਮੱਛੀ ਲਈ ਵੱਖ season, size limit ਅਤੇ daily limit ਹੁੰਦੀ ਹੈ। Rice Lake ਵਿੱਚ walleye, bass, muskie, panfish ਤੇ ਹੋਰ ਮਿਲਦੀਆਂ ਹਨ, ਹਰ ਇੱਕ ਦੇ ਆਪਣੇ rules। ਅਸੀਂ ਇੱਥੇ ਕੋਈ ਖ਼ਾਸ ਮਿਤੀ ਜਾਂ limit ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ। ਬਚਾਓ ਲਈ, Ontario Fishing Regulations Summary ਹਮੇਸ਼ਾ ਤਾਜ਼ਾ ਰਹਿੰਦੀ ਹੈ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਇਸਨੂੰ ਖੋਲ੍ਹੋ, FMZ 17 ਲੱਭੋ, ਅਤੇ ਜੋ ਮੱਛੀ ਤੁਸੀਂ ਫੜਨੀ ਹੈ, ਉਸ ਦਾ season ਖੁੱਲ੍ਹਾ ਹੈ ਜਾਂ ਨਹੀਂ, limit ਕੀ ਹੈ, size ਕਿੰਨੀ ਹੋਣੀ ਚਾਹੀਦੀ, ਸਭ ਪਤਾ ਲੱਗ ਜਾਵੇਗਾ। conservation licence ’ਤੇ ਹਰ species ਦੀ limit sport licence ਨਾਲੋਂ ਘੱਟ ਹੁੰਦੀ ਹੈ, ਇਹ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ।
+Rice Lake Fisheries Management Zone 17 (FMZ 17) ਵਿੱਚ ਆਉਂਦੀ ਹੈ। Ontario ਨੂੰ 20 ਜ਼ੋਨਾਂ ਵਿੱਚ ਵੰਡਿਆ ਗਿਆ ਹੈ, ਹਰ ਜ਼ੋਨ ਵਿੱਚ ਹਰ ਮੱਛੀ ਲਈ ਵੱਖ season, size limit ਅਤੇ daily limit ਹੁੰਦੀ ਹੈ। Rice Lake ਵਿੱਚ walleye, bass, muskie, panfish ਤੇ ਹੋਰ ਮਿਲਦੀਆਂ ਹਨ, ਹਰ ਇੱਕ ਦੇ ਆਪਣੇ rules। ਅਸੀਂ ਇੱਥੇ ਕੋਈ ਖ਼ਾਸ ਮਿਤੀ ਜਾਂ limit ਨਹੀਂ ਦੱਸ ਸਕਦੇ, ਕਿਉਂਕਿ ਇਹ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ। ਬਚਾਓ ਲਈ, Ontario Fishing Regulations Summary ਹਮੇਸ਼ਾ ਤਾਜ਼ਾ ਰਹਿੰਦੀ ਹੈ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਇਸਨੂੰ ਖੋਲ੍ਹੋ, FMZ 17 ਲੱਭੋ, ਅਤੇ ਜੋ ਮੱਛੀ ਤੁਸੀਂ ਫੜਨੀ ਹੈ, ਉਸ ਦਾ season ਖੁੱਲ੍ਹਾ ਹੈ ਜਾਂ ਨਹੀਂ, limit ਕੀ ਹੈ, size ਕਿੰਨੀ ਹੋਣੀ ਚਾਹੀਦੀ, ਸਭ ਪਤਾ ਲੱਗ ਜਾਵੇਗਾ। conservation licence ’ਤੇ ਹਰ species ਦੀ limit sport licence ਨਾਲੋਂ ਘੱਟ ਹੁੰਦੀ ਹੈ, ਇਹ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ।
 
 ## Learn to Fish program bare | ਲਰਨ ਟੂ ਫਿਸ਼ ਪ੍ਰੋਗਰਾਮ ਬਾਰੇ
 
-ਜੇਕਰ ਤੁਹਾਡਾ ਪਰਿਵਾਰ ਮੱਛੀ ਫੜਨ ਵਿੱਚ ਬਿਲਕੁਲ ਨਵਾਂ ਹੈ, ਤਾਂ Ontario government ਦਾ Learn to Fish program ਬਹੁਤ ਵਧੀਆ ਹੈ। ਇਹ free 2-ਘੰਟੇ ਦੇ session ਹੁੰਦੇ ਹਨ, gear government ਮੁਹੱਈਆ ਕਰਦੀ ਹੈ। ਇਹ session ਸਾਡੀ ਮਰੀਨਾ ’ਤੇ ਨਹੀਂ ਹੁੰਦੇ, Ontario ਦੀਆਂ ਕਈ ਹੋਰ ਥਾਵਾਂ ’ਤੇ ਹਨ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ: https://www.ontario.ca/page/learn-fish। ਬੱਚੇ ਤੇ ਨਵੇਂ anglers ਇੱਥੇ ਬੇਝਿਜਕ basic skills ਸਿੱਖ ਸਕਦੇ ਹਨ।
+ਜੇਕਰ ਤੁਹਾਡਾ ਪਰਿਵਾਰ ਮੱਛੀ ਫੜਨ ਵਿੱਚ ਬਿਲਕੁਲ ਨਵਾਂ ਹੈ, ਤਾਂ Ontario government ਦਾ Learn to Fish program ਬਹੁਤ ਵਧੀਆ ਹੈ। ਇਹ free 2-ਘੰਟੇ ਦੇ session ਹੁੰਦੇ ਹਨ, gear government ਮੁਹੱਈਆ ਕਰਦੀ ਹੈ। ਇਹ session ਸਾਡੀ ਮਰੀਨਾ ’ਤੇ ਨਹੀਂ ਹੁੰਦੇ, Ontario ਦੀਆਂ ਕਈ ਹੋਰ ਥਾਵਾਂ ’ਤੇ ਹਨ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ: [Learn to Fish](https://www.ontario.ca/page/learn-fish)। ਬੱਚੇ ਤੇ ਨਵੇਂ anglers ਇੱਥੇ ਬੇਝਿਜਕ basic skills ਸਿੱਖ ਸਕਦੇ ਹਨ।
 
 ## Pehli trip layi checklist | ਪਹਿਲੀ ਯਾਤਰਾ ਲਈ ਚੈਕਲਿਸਟ
 
@@ -80,25 +80,25 @@ Rice Lake ’ਤੇ Gores Landing ਆ ਕੇ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’
 ## Aksar puchhe jaande sawaal | FAQ
 
 **1. Ontario fishing license di keemat kinna hai online?**  
-licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।
+licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: [Ontario fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)।
 
 **2. Toronto de nere family layi fishing spots kaun se ne?**  
 Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’ਤੇ ਲਗਭਗ 90 ਤੋਂ 120 ਮਿੰਟ ਦੀ drive ਹੈ, origin ਅਤੇ traffic ’ਤੇ ਨਿਰਭਰ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rentals ਹਨ; ਮੌਜੂਦਾ listings ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ।
 
 **3. Fishing seasons Ontario vich kiven pata lagge?**  
-FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
+FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
 
 **4. Rice Lake te fishing rules limits ki ne?**  
 rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।
 
 **5. Brampton ton fishing spot kidhar jaayiye?**  
-Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: https://harrisboatworks.ca/rentals।
+Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
 
 **6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?**  
-honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।
+honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।
 
 **7. Kids layi fishing licence di lod hai?**  
-Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents।
+Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)।
 
 **8. Kawartha lakes fishing map video Punjabi vich mildi hai?**  
 video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀਂ, ਪਰ Ontario government fishing map interactive online ਹੈ। Rice Lake ਨੂੰ Kawarthas ਵਿੱਚ select ਕਰਕੇ spots ’ਤੇ information ਮਿਲ ਜਾਵੇਗੀ। regulations summary ਜ਼ਰੂਰ read ਕਰੋ।
@@ -121,15 +121,15 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-06',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario vich boat license kinj banaye (how to get a boat license in Ontario)', 'boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)', 'PCOC course online free Punjabi (PCOC course online free in Punjabi)', 'boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)'],
     faqs: [
       { question: 'Ontario vich boat chalaun lai license kinj banayiye?', answer: 'ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ ਪ੍ਰਦਾਤਾਵਾਂ ਰਾਹੀਂ online PCOC ਕੋਰਸ ਕਰੋ। exam pass ਕਰੋ, card lifetime ਲਈ ਮਿਲ ਜਾਵੇਗਾ। official list: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters' },
       { question: 'Je main ik din layi HBW ton boat rent karan, PCOC deni paini hai?', answer: 'ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ।' },
-      { question: 'Kya “boat license” te “boat operator card” different hunde ne?', answer: 'Boat license (PCL) boat ਦੀ registration number ਹੈ; operator card (PCOC) ਤੁਹਾਡੀ training ਦਾ ਸਬੂਤ ਹੈ। ਦੋਵੇਂ ਵਕਤ confuse ਨਾ ਹੋ, official terms PCL ਤੇ PCOC ਯਾਦ ਰੱਖੋ।' },
-      { question: 'PCOC course online muft Punjabi vich mil sakda ae?', answer: 'ਮੁਫ਼ਤ ਦਾ ਨਹੀਂ ਪਤਾ, course providers ਕੀਮਤ ਮੰਗਣਗੇ, ਅਤੇ course English ਜਾਂ French ਵਿੱਚ ਹੀ officially available ਹੈ। Punjabi ਵਿੱਚ approved version Transport Canada ਨਹੀਂ ਰੱਖਿਆ। Phone application translation ਨਾਲ study ਆਸਾਨ ਹੋ ਸਕਦਾ ਹੈ।' },
+      { question: 'Kya “boat license” te “boat operator card” different hunde ne?', answer: 'Boat license (PCL) boat di registration number hai; operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.' },
+      { question: 'PCOC course online muft Punjabi vich mil sakda ae?', answer: 'Muft Punjabi course da bharosa na karo; providers keemat mangange. Translation app naal study asaan ho sakda hai. Official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo. Eh na samjho ke Punjabi exam har thaon milda hai, te eh vi na samjho ke English/French ton bina koi sahaita hi nahi. Family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao.' },
       { question: 'Mere chacha ji apni boat leke Ontario aaye; kya oh bina card de chala sakde?', answer: 'ਨਹੀਂ, motor boat operate ਕਰਨ ਲਈ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ। Temporary visitor ਵੀ online course ਕੀਤਾ ਜਾ ਸਕਦਾ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ।' },
       { question: 'Ki Harris Boat Works te Punjabi vich service mildi hai?', answer: 'ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ ਸੇਵਾ English ਵਿੱਚ ਹੀ ਚੱਲਦੀ ਹੈ। ਨਾਲ English ਦਾ ਬੰਦਾ ਲੈ ਆਓ ਜਾਂ phone translate ਵਰਤੋ, ਅਸੀਂ ਰੁਕ ਕੇ ਸਮਝਾਵਾਂਗੇ, ਕੋਈ ਮੁਸ਼ਕਲ ਨਹੀਂ। (ਉੱਪਰ ਵਾਲੀ ਇਮਾਨਦਾਰੀ ਵਾਲੀ ਗੱਲ ਵੇਖ ਲਓ।)' }
     ],
@@ -147,7 +147,7 @@ PCOC ਇੱਕ ਜੀਵਨ-ਭਰ ਦੀ ਯੋਗਤਾ ਹੈ, ਜੋ ਇਹ 
 
 ## PCOC (operator card) ਤੇ PCL (boat licence) ‘ਚ ਫ਼ਰਕ | Difference between operator card and boat licence
 
-ਇਹ ਭੁਲੇਖਾ ਬਹੁਤ ਸਾਰੇ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਨੂੰ ਹੁੰਦਾ ਹੈ। PCOC ਵਿਅਕਤੀ ਦੀ ਯੋਗਤਾ ਹੈ: ਇਹ ਦੱਸਦੀ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਕਿਸ਼ਤੀ ਚਲਾਉਣ ਦੀ ਸਿਖਲਾਈ ਮਿਲੀ ਹੈ। PCL (Pleasure Craft Licence) ਖ਼ੁਦ ਕਿਸ਼ਤੀ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਹੈ: ਜਿਵੇਂ ਕਾਰ ਦੀ ਨੰਬਰ ਪਲੇਟ, ਜੋ ਕਿਸ਼ਤੀ ’ਤੇ ਨੰਬਰ ਲਗਾਉਣ ਲਈ ਮਿਲਦੀ ਹੈ। PCL Transport Canada ਤੋਂ ਮੁਫ਼ਤ ਜਾਰੀ ਹੁੰਦੀ ਹੈ, ਜੇ ਕਿਸ਼ਤੀ 10 horsepower (10 HP) ਤੋਂ ਵੱਡੀ ਮੋਟਰ ਫਿੱਟ ਹੋਵੇ। PCOC ਜ਼ਰੂਰੀ ਨਿੱਜੀ ਕਾਰਡ ਹੈ, ਜੋ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’ਤੇ ਲੈਣ ਵਾਲੇ ਤੇ ਮਾਲਕ, ਦੋਹਾਂ ਲਈ ਲਾਜ਼ਮੀ ਹੈ। ਕਈ ਲੋਕ PCOC ਨੂੰ "boat license" ਆਖਦੇ ਹਨ, ਪਰ ਅਧਿਕਾਰਤ ਸ਼ਬਦ PCOC ਹੈ, ਇਹੋ ਵਾਕ police ਵਰਤਦੀ ਹੈ।
+ਇਹ ਭੁਲੇਖਾ ਬਹੁਤ ਸਾਰੇ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਨੂੰ ਹੁੰਦਾ ਹੈ। PCOC ਵਿਅਕਤੀ ਦੀ ਯੋਗਤਾ ਹੈ: ਇਹ ਦੱਸਦੀ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਕਿਸ਼ਤੀ ਚਲਾਉਣ ਦੀ ਸਿਖਲਾਈ ਮਿਲੀ ਹੈ। PCL ਤੁਹਾਡੀ ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, ਜੋ ਕਿਸ਼ਤੀ ਦੀ ਮਾਲਕੀ ਦੇ ਦਸਤਾਵੇਜ਼ਾਂ ਅਤੇ ਵੈਸਲ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਤੋਂ ਵੱਖਰਾ ਹੈ। ਕਨੇਡਾ ਦੇ ਪਾਣੀਆਂ ਵਿੱਚ ਮੁੱਖ ਤੌਰ 'ਤੇ ਚਲਾਈ ਅਤੇ ਰੱਖੀ ਜਾਂਦੀ ਮਨੋਰੰਜਕ ਕਿਸ਼ਤੀ ਲਈ PCL ਲੋੜੀਂਦਾ ਹੈ ਜੇ ਉਸ ਵਿੱਚ ਇੱਕ ਜਾਂ ਵੱਧ ਇੰਜਣ ਹੋਣ ਜਿਨ੍ਹਾਂ ਦੀ ਕੁੱਲ ਤਾਕਤ ਘੱਟੋ-ਘੱਟ 10 HP (7.5 kW) ਹੋਵੇ। ਇਹ ਲੋੜ ਤਦ ਵੀ ਲਾਗੂ ਹੁੰਦੀ ਹੈ ਜਦੋਂ ਇੰਜਣ ਅਸਥਾਈ ਤੌਰ 'ਤੇ ਫਿੱਟ ਹੋਵੇ, ਜਦੋਂ ਤੱਕ ਕਿਸ਼ਤੀ ਕਨੇਡਾ ਵਿੱਚ ਰਜਿਸਟਰਡ ਨਾ ਹੋਵੇ। 5 September 2026 tak new, transfer, renew ya duplicate PCL fee **$24.41 CAD** hai; new, transfer te renew PCL 5 saal valid (duplicate validity renew nahi karda); jaankari update ya cancel muft. Fee har 1 April adjust ho sakdi hai ([Transport Canada fees](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)). Puranean licences sarian lifetime nahi san; Transport Canada hun expiry cohorts dinda hai, apni check karo. ਮੋਟਰ ਵਾਲੀਆਂ ਮਨੋਰੰਜਕ ਕਿਸ਼ਤੀਆਂ ਦੇ ਚਾਲਕਾਂ ਲਈ ਮਾਨਤਾਪ੍ਰਾਪਤ ਯੋਗਤਾ ਸਬੂਤ ਲੋੜੀਂਦਾ ਹੈ; PCOC ਆਮ ਰੂਪ ਹੈ, ਪਰ ਫੈਡਰਲ ਨਿਯਮ ਹੋਰ ਵਿਕਲਪ ਵੀ ਮੰਨਦੇ ਹਨ। HBW ਆਪਣੀਆਂ ਰੈਂਟਲਾਂ ਲਈ ਵੱਖਰੇ ਤੌਰ 'ਤੇ ਵੈਧ PCOC ਦੀ ਮੰਗ ਕਰਦਾ ਹੈ। ਕਈ ਲੋਕ PCOC ਨੂੰ "boat license" ਆਖਦੇ ਹਨ, ਪਰ ਅਧਿਕਾਰਤ ਸ਼ਬਦ PCOC ਹੈ, ਇਹੋ ਵਾਕ police ਵਰਤਦੀ ਹੈ।
 
 ## HBW ਤੋਂ boat rent ਕਰਨ ਲਈ PCOC ਚਾਹੀਦੀ ਹੈ? | Do I need a PCOC to rent from HBW?
 
@@ -155,7 +155,7 @@ PCOC ਇੱਕ ਜੀਵਨ-ਭਰ ਦੀ ਯੋਗਤਾ ਹੈ, ਜੋ ਇਹ 
 
 ## PCOC online ਕਿਵੇਂ ਬਣਾਈਏ? | How to get PCOC online
 
-Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ final Transport Canada exam। ਪਾਸ ਹੋਣ ਤੋਂ ਬਾਅਦ provider ਦੇ temporary proof ਦੀਆਂ ਸ਼ਰਤਾਂ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ ਅਤੇ permanent card ਆਉਣ ’ਤੇ ਅਸਲ card ਨਾਲ ਰੱਖੋ; ਆਮ paper ਜਾਂ electronic PCOC copy ਮਨਜ਼ੂਰ ਨਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters। exam English ਜਾਂ French ਵਿੱਚ ਹੁੰਦਾ ਹੈ, Punjabi version ਅਧਿਕਾਰਤ ਤੌਰ ’ਤੇ ਮੌਜੂਦ ਨਹੀਂ। free online "Punjabi PCOC" ਦੇ ਦਾਅਵਿਆਂ ’ਤੇ ਭਰੋਸਾ ਨਾ ਕਰੋ, ਸੁਰੱਖਿਅਤ official route ਹੈ, translation app phone ’ਤੇ ਖੋਲ੍ਹ ਕੇ study ਕਰਨਾ possible ਹੈ।
+Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ final Transport Canada exam। ਪਾਸ ਹੋਣ ਤੋਂ ਬਾਅਦ provider ਦੇ temporary proof ਦੀਆਂ ਸ਼ਰਤਾਂ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ ਅਤੇ permanent card ਆਉਣ ’ਤੇ ਅਸਲ card ਨਾਲ ਰੱਖੋ; ਆਮ paper ਜਾਂ electronic PCOC copy ਮਨਜ਼ੂਰ ਨਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: [Transport Canada education resources](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)। translation app naal study possible hai. official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo; family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao. Punjabi exam har thaon milda hai ya English/French ton bina koi sahaita hi nahi, eh doven dharanavan na banao. Rule: [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program). free online "Punjabi PCOC" de daavian te bharosa na karo.
 
 ## ਬੱਚੇ ਤੇ supervision: umar ਦੇ rules | Kids and supervision rules
 
@@ -180,10 +180,10 @@ A: ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ
 A: ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist briefing ਵਜੋਂ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਲੈਂਦੀ।
 
 **Q: Kya “boat license” te “boat operator card” different hunde ne?**  
-A: Boat license (PCL) boat ਦੀ registration number ਹੈ; operator card (PCOC) ਤੁਹਾਡੀ training ਦਾ ਸਬੂਤ ਹੈ। ਦੋਵੇਂ ਵਕਤ confuse ਨਾ ਹੋ, official terms PCL ਤੇ PCOC ਯਾਦ ਰੱਖੋ।
+A: Boat license (PCL) boat di registration number hai; operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
 
 **Q: PCOC course online muft Punjabi vich mil sakda ae?**  
-A: ਮੁਫ਼ਤ ਦਾ ਨਹੀਂ ਪਤਾ, course providers ਕੀਮਤ ਮੰਗਣਗੇ, ਅਤੇ course English ਜਾਂ French ਵਿੱਚ ਹੀ officially available ਹੈ। Punjabi ਵਿੱਚ approved version Transport Canada ਨਹੀਂ ਰੱਖਿਆ। Phone application translation ਨਾਲ study ਆਸਾਨ ਹੋ ਸਕਦਾ ਹੈ।
+A: Muft Punjabi course da bharosa na karo; providers keemat mangange. Translation app naal study asaan ho sakda hai. Official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo. Eh na samjho ke Punjabi exam har thaon milda hai, te eh vi na samjho ke English/French ton bina koi sahaita hi nahi. Family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao.
 
 **Q: Mere chacha ji apni boat leke Ontario aaye; kya oh bina card de chala sakde?**  
 A: ਨਹੀਂ, motor boat operate ਕਰਨ ਲਈ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ। Temporary visitor ਵੀ online course ਕੀਤਾ ਜਾ ਸਕਦਾ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ।
@@ -193,7 +193,7 @@ A: ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ �
 
 ## Shuru karo apni Rice Lake trip | ਆਪਣੀ ਰਾਈਸ ਲੇਕ ਟ੍ਰਿਪ ਸ਼ੁਰੂ ਕਰੋ
 
-PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: https://harrisboatworks.ca/rentals। service request ਭੇਜਣੀ ਹੈ: hbw.wiki/service। Phone (905) 342-2153, text (647) 952-2153, english ਵਿੱਚ ਜਵਾਬ ਆਵੇਗਾ, ਕਰਕੇ ਦਿਖਾਵਾਂਗੇ, ਦਿਲੋਂ ਸਾਥ ਦਿਆਂਗੇ। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
+PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbw.wiki/service। Phone (905) 342-2153, text (647) 952-2153, english ਵਿੱਚ ਜਵਾਬ ਆਵੇਗਾ, ਕਰਕੇ ਦਿਖਾਵਾਂਗੇ, ਦਿਲੋਂ ਸਾਥ ਦਿਆਂਗੇ। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
   },
   {
     slug: 'mercury-outboard-prices-ontario-punjabi',
@@ -203,7 +203,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-07-10',
+    dateModified: '2026-09-06',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Mercury outboard motor di keemat Canada vich (Mercury outboard motor price in Canada)', 'Mercury 90hp outboard price Ontario Punjabi (Mercury 90hp outboard price Ontario Punjabi)', 'outboard motor dealer near Toronto Punjabi speaking (outboard motor dealer near Toronto who speaks Punjabi)', 'new outboard motor khareedan di guide Punjabi (guide to buying a new outboard motor in Punjabi)', 'Mercury vs Yamaha outboard video Punjabi (Mercury vs Yamaha outboard video in Punjabi)'],
@@ -211,7 +211,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
       { question: 'Mercury 90hp outboard di Ontario vich keemat kitni hai? | ਮਰਕਰੀ 90hp ਆਊਟਬੋਰਡ ਦੀ Ontario ਵਿਚ ਕੀਮਤ ਕਿੰਨੀ ਹੈ?', answer: 'ਕੋਈ ਇੱਕ number ਨਹੀਂ। ਹਰ boat ਲਈ installed price ਵੱਖਰੀ ਹੋਵੇਗੀ। Rigging, propeller, labour ਨਾਲ ਜੋੜ ਕੇ ਹੀ ਅਸਲ cost ਨਿਕਲਦੀ ਹੈ। ਤੁਸੀਂ ਸਾਡੇ pricing reference page (https://www.mercuryrepower.ca/pricing-reference) ’ਤੇ ਮਿਸਾਲ ਦੇ component ਦੇਖ ਸਕਦੇ ਹੋ। ਫੇਰ quote ਲਈ phone ਕਰੋ, ਅਸੀਂ ਤੁਹਾਡੀ specific boat ਲਈ ਬਣ ਕੇ ਦੱਸਾਂਗੇ।' },
       { question: 'Ki Harris Boat Works te Punjabi vich service mildi hai? | ਕੀ Harris Boat Works ’ਤੇ ਪੰਜਾਬੀ ਵਿੱਚ service ਮਿਲਦੀ ਹੈ?', answer: 'ਸਾਡੇ ਕੋਲ Punjabi ਬੋਲਣ ਵਾਲਾ ਕੋਈ staff ਨਹੀਂ ਹੈ। Harris Boat Works ਦੀ team English ਵਿੱਚ ਸੇਵਾ ਦਿੰਦੀ ਹੈ। ਪਰ ਤੁਸੀਂ ਆਪਣੇ ਨਾਲ ਕੋਈ English ਜਾਣਦਾ ਸਾਥੀ ਲੈ ਆ ਸਕਦੇ ਹੋ, ਜਾਂ phone ’ਤੇ translate app ਵਰਤੋ। ਸਾਡੇ ਕੋਲ ਬਹੁਤ ਲੋਕ ਇਸ ਤਰ੍ਹਾਂ ਆਉਂਦੇ ਨੇ, ਤੇ ਕੰਮ ਆਰਾਮ ਨਾਲ ਹੋ ਜਾਂਦਾ ਹੈ। ਕੋਈ ਪਰੇਸ਼ਾਨੀ ਨਹੀਂ ਹੋਵੇਗੀ।' },
       { question: 'Nawa outboard motor khareedan layi kuch tips deyo Punjabi vich? | ਨਵਾਂ ਆਊਟਬੋਰਡ ਮੋਟਰ ਖਰੀਦਣ ਲਈ ਕੁਝ ਟਿਪਸ ਦਿਓ ਪੰਜਾਬੀ ਵਿਚ?', answer: 'ਜ਼ਰੂਰ। (1) ਹਮੇਸ਼ਾ installed quote ਮਨਜ਼ੂਰ ਕਰੋ, ਸਿਰਫ਼ motor ਦਾ ਮੁੱਲ ਪੁੱਛ ਕੇ ਨਾ ਰੁਕੋ। (2) Boat ਦੀ horsepower rating plate ਵੇਖ ਕੇ ਆਪਣਾ HP range ਚੁਣੋ। (3) Mercury ਦੀ 3-year warranty ਬਾਰੇ ਪੁੱਛੋ, ਅਤੇ authorized installation ਦਾ proof ਰੱਖੋ। (4) ਨਵਾਂ control box, propeller, ਅਤੇ wiring update ਕਰਨ ਲਈ ready ਰਹੋ, ਜੇ ਪੁਰਾਣੀ motor 15 ਸਾਲ ਤੋਂ ਵੱਧ ਹੈ। (5) Financing ਦੀ ਪੂਰੀ ਜਾਣਕਾਰੀ ਸਾਡੀ [English financing guide](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026) ਵਿੱਚ ਹੈ।' },
-      { question: 'Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?', answer: 'ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਸਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।' },
+      { question: 'Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?', answer: 'ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਜੇ ਤੁਹਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਅਸੀਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।' },
       { question: 'Main bina dealer nu mile motor da quote labh sakda haan? | ਮੈਂ ਬਿਨਾਂ ਡੀਲਰ ਨੂੰ ਮਿਲੇ ਮੋਟਰ ਦਾ quote ਲੱਭ ਸਕਦਾ ਹਾਂ?', answer: 'ਜੀ ਹਾਂ, ਸਾਡੇ motor selection tool (https://www.mercuryrepower.ca/quote/motor-selection) ’ਤੇ boat details ਪਾ ਕੇ, ਤੁਹਾਨੂੰ ਕੁਝ Mercury model ਦਿਖਾਏ ਜਾਣਗੇ। ਬਾਅਦ ਵਿੱਚ ਸਾਨੂੰ call ਕਰੋ ਤਾਂ installed quote ਦੇ ਸਕਦੇ ਹਾਂ। ਇਹਦੇ ਵਿੱਚ ਕੋਈ loading ਜਾਂ pressure ਨਹੀਂ।' },
       { question: 'Main apni old motor nu trade-in de sakda haan? | ਮੈਂ ਆਪਣੀ ਪੁਰਾਣੀ ਮੋਟਰ ਨੂੰ trade-in ਦੇ ਸਕਦਾ ਹਾਂ?', answer: 'ਕੁਝ ਹਾਲਤਾਂ ਵਿੱਚ ਹੋ ਸਕਦਾ ਹੈ, ਪਰ ਅਸੀਂ ਹਰ ਪੁਰਾਣੀ motor ਨਹੀਂ ਲੈ ਸਕਦੇ। ਪਹਿਲਾਂ photo ਭੇਜ ਕੇ ਪੁੱਛੋ। ਦੂਜੀ ਗੱਲ: trade value installed price ਵਿੱਚ adjust ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਜੇ motor ਦੀ condition ਚੰਗੀ ਹੋਵੇ। Phone ’ਤੇ ਇਸ ਲਈ ਸਾਨੂੰ English ਵਿੱਚ ਗੱਲ ਕਰਨੀ ਹੋਵੇਗੀ, ਉੱਤੇ ਦੱਸੇ ਅਨੁਸਾਰ ਦੋਸਤ ਨਾਲ ਆਓ ਜਾਂ translation app use ਕਰੋ।' },
       { question: 'Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?', answer: 'ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbw.wiki/service ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।' }
@@ -219,7 +219,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
     nativeReview: 'pending',
     internalLinks: ['https://www.mercuryrepower.ca/quote/motor-selection', 'https://www.mercuryrepower.ca/pricing-reference', 'https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026'],
     officialSources: [],
-    content: `ਸਿੱਧੀ ਗੱਲ: Mercury outboard ਦੀ ਕੋਈ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਹੁੰਦੀ; ਅਸਲ installed cost motor, rigging, propeller, labour ਅਤੇ ਤੁਹਾਡੀ boat ਦੇ setup ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਤਾਜ਼ਾ, transparent ਕੀਮਤ ਲਈ ਸਾਡਾ quote configurator ਵਰਤੋ: https://www.mercuryrepower.ca/quote/motor-selection। Harris Boat Works ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਅਸੀਂ 1965 ਤੋਂ Mercury dealer ਹਾਂ, ਹੁਣ Premier dealer, ਅਤੇ ਸਮਝਣ ਵਾਲੇ ਲੋਕ ਜਾਣਦੇ ਨੇ ਕਿ Brampton, Mississauga, Markham ਵਿੱਚੋਂ family ਆਪਣੀ boat ਲਈ outboard ਦੀ ਕੀਮਤ ਪੁੱਛਦੇ ਆ। ਇਹ guide Punjabi Gurmukhi ਵਿੱਚ ਲਿਖੀ ਗਈ ਹੈ ਤਾਂਕਿ ਤੁਸੀਂ ਖਰੀਦ ਤੋਂ ਪਹਿਲਾਂ ਸਹੀ budget ਬਣਾ ਸਕੋ। ਇੱਕ ਗੱਲ ਪੱਕੀ: internet ਤੇ ਕਿਸੇ ਵੀ outboard ਦੀ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਮਿਲਦੀ, ਪਰ ਅਸਲ ਹਿਸਾਬ-ਕਿਤਾਬ ਸਮਝ ਕੇ ਤੁਸੀਂ ਬੇਫ਼ਿਕਰ deal ਕਰ ਸਕਦੇ ਹੋ। ਅਸੀਂ ਤੁਹਾਨੂੰ ਦੱਸਦੇ ਹਾਂ ਕਿ ਕੀਮਤ ਕਿੰਜ ਬਣਦੀ ਹੈ, ਕਿਹੜੀਆਂ-ਕਿਹੜੀਆਂ ਚੀਜ਼ਾਂ ਖਰਚ ਵਧਾਉਂਦੀਆਂ ਨੇ, ਅਤੇ Mercury ਦੀ ਲੈਣ ਤੋਂ ਬਾਅਦ ਕਿੰਜ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਰਹੇਗੀ। ਕੋਈ dollar amount ਅਸੀਂ ਨਹੀਂ ਲਿਖ ਸਕਦੇ, ਕਿਉਂਕਿ ਹਰੇਕ ਕਿਸ਼ਤੀ ਅਤੇ ਹਰੇਕ setup ਆਪਣਾ ਖਰਚ ਰੱਖਦਾ ਹੈ। ਪਰ ਥੋਨੂੰ ਇੱਕ ਸਹੀ ਰਾਹ ਜ਼ਰੂਰ ਦਿਖਾਵਾਂਗੇ।
+    content: `ਸਿੱਧੀ ਗੱਲ: Mercury outboard ਦੀ ਕੋਈ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਹੁੰਦੀ; ਅਸਲ installed cost motor, rigging, propeller, labour ਅਤੇ ਤੁਹਾਡੀ boat ਦੇ setup ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਤਾਜ਼ਾ, transparent ਕੀਮਤ ਲਈ ਸਾਡਾ quote configurator ਵਰਤੋ: [Mercury motor selection](https://www.mercuryrepower.ca/quote/motor-selection)। Harris Boat Works ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਅਸੀਂ 1965 ਤੋਂ Mercury dealer ਹਾਂ, ਹੁਣ Premier dealer, ਅਤੇ ਸਮਝਣ ਵਾਲੇ ਲੋਕ ਜਾਣਦੇ ਨੇ ਕਿ Brampton, Mississauga, Markham ਵਿੱਚੋਂ family ਆਪਣੀ boat ਲਈ outboard ਦੀ ਕੀਮਤ ਪੁੱਛਦੇ ਆ। ਇਹ guide Punjabi Gurmukhi ਵਿੱਚ ਲਿਖੀ ਗਈ ਹੈ ਤਾਂਕਿ ਤੁਸੀਂ ਖਰੀਦ ਤੋਂ ਪਹਿਲਾਂ ਸਹੀ budget ਬਣਾ ਸਕੋ। ਇੱਕ ਗੱਲ ਪੱਕੀ: internet ਤੇ ਕਿਸੇ ਵੀ outboard ਦੀ ਇੱਕ fixed ਕੀਮਤ ਨਹੀਂ ਮਿਲਦੀ, ਪਰ ਅਸਲ ਹਿਸਾਬ-ਕਿਤਾਬ ਸਮਝ ਕੇ ਤੁਸੀਂ ਬੇਫ਼ਿਕਰ deal ਕਰ ਸਕਦੇ ਹੋ। ਅਸੀਂ ਤੁਹਾਨੂੰ ਦੱਸਦੇ ਹਾਂ ਕਿ ਕੀਮਤ ਕਿੰਜ ਬਣਦੀ ਹੈ, ਕਿਹੜੀਆਂ-ਕਿਹੜੀਆਂ ਚੀਜ਼ਾਂ ਖਰਚ ਵਧਾਉਂਦੀਆਂ ਨੇ, ਅਤੇ Mercury ਦੀ ਲੈਣ ਤੋਂ ਬਾਅਦ ਕਿੰਜ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਰਹੇਗੀ। ਕੋਈ dollar amount ਅਸੀਂ ਨਹੀਂ ਲਿਖ ਸਕਦੇ, ਕਿਉਂਕਿ ਹਰੇਕ ਕਿਸ਼ਤੀ ਅਤੇ ਹਰੇਕ setup ਆਪਣਾ ਖਰਚ ਰੱਖਦਾ ਹੈ। ਪਰ ਥੋਨੂੰ ਇੱਕ ਸਹੀ ਰਾਹ ਜ਼ਰੂਰ ਦਿਖਾਵਾਂਗੇ।
 
 ## Outboard motor di asal keemat: sirf motor hi nahi | ਆਊਟਬੋਰਡ ਮੋਟਰ ਦੀ ਅਸਲ ਕੀਮਤ: ਸਿਰਫ਼ ਮੋਟਰ ਹੀ ਨਹੀਂ
 
@@ -271,7 +271,7 @@ A: ਸਾਡੇ ਕੋਲ Punjabi ਬੋਲਣ ਵਾਲਾ ਕੋਈ staff ਨ�
 A: ਜ਼ਰੂਰ। (1) ਹਮੇਸ਼ਾ installed quote ਮਨਜ਼ੂਰ ਕਰੋ, ਸਿਰਫ਼ motor ਦਾ ਮੁੱਲ ਪੁੱਛ ਕੇ ਨਾ ਰੁਕੋ। (2) Boat ਦੀ horsepower rating plate ਵੇਖ ਕੇ ਆਪਣਾ HP range ਚੁਣੋ। (3) Mercury ਦੀ 3-year warranty ਬਾਰੇ ਪੁੱਛੋ, ਅਤੇ authorized installation ਦਾ proof ਰੱਖੋ। (4) ਨਵਾਂ control box, propeller, ਅਤੇ wiring update ਕਰਨ ਲਈ ready ਰਹੋ, ਜੇ ਪੁਰਾਣੀ motor 15 ਸਾਲ ਤੋਂ ਵੱਧ ਹੈ। (5) Financing ਦੀ ਪੂਰੀ ਜਾਣਕਾਰੀ ਸਾਡੀ [English financing guide](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026) ਵਿੱਚ ਹੈ।
 
 **Q: Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?**
-A: ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਸਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।
+A: ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਜੇ ਤੁਹਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਅਸੀਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।
 
 **Q: Main bina dealer nu mile motor da quote labh sakda haan? | ਮੈਂ ਬਿਨਾਂ ਡੀਲਰ ਨੂੰ ਮਿਲੇ ਮੋਟਰ ਦਾ quote ਲੱਭ ਸਕਦਾ ਹਾਂ?**
 A: ਜੀ ਹਾਂ, ਸਾਡੇ motor selection tool (https://www.mercuryrepower.ca/quote/motor-selection) ’ਤੇ boat details ਪਾ ਕੇ, ਤੁਹਾਨੂੰ ਕੁਝ Mercury model ਦਿਖਾਏ ਜਾਣਗੇ। ਬਾਅਦ ਵਿੱਚ ਸਾਨੂੰ call ਕਰੋ ਤਾਂ installed quote ਦੇ ਸਕਦੇ ਹਾਂ। ਇਹਦੇ ਵਿੱਚ ਕੋਈ loading ਜਾਂ pressure ਨਹੀਂ।

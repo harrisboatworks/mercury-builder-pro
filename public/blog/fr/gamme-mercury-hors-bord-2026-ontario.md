@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario.md
-last_updated: 2026-08-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens"
 description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-08-08
+date_modified: 2026-09-06
 keywords: ["gamme Mercury 2026","modèles hors-bord Mercury","Mercury FourStroke 2026","Mercury Verado V10","hors-bord électrique Avator","hors-bord Mercury Ontario","concessionnaire Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-08-08\
+**Dernière révision :** 2026-09-06\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 
@@ -39,7 +39,7 @@ La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 30
 
 Nous sommes un concessionnaire Mercury. Nous le sommes depuis 1965. Voici une analyse honnête de concessionnaire de la gamme Mercury, pas un dépotoir de fiches techniques, mais la réponse pratique à "quel Mercury convient à mon bateau?"
 
-Nous vendons toutes les familles de la gamme ci-dessous (Verado est en commande spéciale seulement).
+Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission ou appelez.
 
 ## Découpage des familles Mercury
 
@@ -73,7 +73,7 @@ Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas 
 
 Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
 
-Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Nous offrons Verado en commande spéciale.
+Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
 
 ### Avator, électrique (en émergence)
 
@@ -101,11 +101,9 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 
 Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+> **Une note sur la langue**
+> Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
+> Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 *Dernière révision : 2026-05-13.*
 
@@ -116,7 +114,7 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-## FAQs
+## Questions fréquentes
 
 ### Quel est le meilleur moteur Mercury pour un bateau de pêche sur le lac Rice?
 
@@ -132,7 +130,7 @@ Pour la plupart des lacs intérieurs ontariens (lac Rice, Kawarthas, lac Simcoe)
 
 ### Quels moteurs Mercury Harris Boat Works tient-il en stock pour 2026?
 
-Nous tenons en stock et commandons toute la gamme FourStroke, les moteurs de performance Pro XS, les moteurs commerciaux SeaPro, et les hors-bord électriques Mercury Avator. Verado est en commande spéciale seulement.
+La disponibilité dépend du modèle et de la saison. Demandez une soumission pour le moteur souhaité. Verado est en commande spéciale seulement.
 
 ### Quel est le meilleur hors-bord Mercury pour la pêche du doré à la traîne sur le lac Rice?
 

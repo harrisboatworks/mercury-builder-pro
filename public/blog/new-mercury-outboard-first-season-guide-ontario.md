@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -74,7 +74,7 @@ When you're staring at a shiny new motor, it's easy to forget that some things h
 |---|---|
 | Day one | Pair the Mercury Marine app via SmartCraft Connect (see our [SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)), verify the key-on horn self-test, and watch the cooling water telltale at idle. |
 | First weeks (break-in period) | Follow the break-in routine in your owner's manual and our break-in guide. Check for unusual noise, vibration, or warning signals after each outing. |
-| Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it online at hbw.wiki/service if you go this route. |
+| Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it if you go this route. |
 | 100 hours or end of season (whichever comes first) | Change engine oil and filter, inspect anodes, check propeller condition, and give the motor a thorough once-over. Mercury's published schedule calls for this at 100 hours or annually. Do not let this slide past the season end. |
 | Roughly every 300 hours or 3 years (per Mercury's current published schedule; confirm in your owner's manual) | Water pump impeller replacement. Around Rice Lake, many boats get the impeller replaced every two to three seasons because of the weedy water; that cadence is local practice, not a Mercury interval. |
 
@@ -110,15 +110,17 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 It helps to know what's supposed to happen and what's a red flag.
 
-**Normal:** A brief horn when you turn the key to the run position. This is the system self-test, and it means the warning system is awake and watching. No horn at all could mean a faulty warning system; submit a service request at hbw.wiki/service and we'll check it.
+**Normal:** A brief horn when you turn the key to the run position. This is the system self-test, and it means the warning system is awake and watching. No horn at all could mean a faulty warning system.
 
-**Not normal:** Any other beep pattern while running. Mercury alarm beep patterns vary by engine family and model year. The owner's manual for your serial number maps them out, and our [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) gives you a practical reference. If you hear something that isn't the brief self-test horn, note the pattern and submit a service request at hbw.wiki/service. Don't guess.
+**Not normal:** Any other beep pattern while running. Mercury alarm beep patterns vary by engine family and model year. The owner's manual for your serial number maps them out, and our [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) gives you a practical reference. If you hear something that isn't the brief self-test horn, note the pattern. Don't guess.
 
 **Normal:** The cooling water telltale (pee stream) changing slightly as the thermostat opens and closes. You might see it weaken and then strengthen again as the engine warms up. That's the cooling system doing its job.
 
-**Not normal:** No telltale stream at all when running, a weak sputter that never improves, or a stream that stops altogether after it had been flowing. That almost always means something's blocked (weeds, debris, mud) or the water pump isn't pumping. Don't run the motor without a strong telltale stream; book a service check.
+**Not normal:** No telltale stream at all when running, a weak sputter that never improves, or a stream that stops altogether after it had been flowing. That almost always means something's blocked (weeds, debris, mud) or the water pump isn't pumping. Don't run the motor without a strong telltale stream.
 
-**Not normal, period:** Sudden power loss, rough running that doesn't clear up, repeated stalling, or any warning lights that stay on. These are not break-in quirks; they're reasons to pull the engine out of service and have us look at it. Use the service request form at hbw.wiki/service.
+**Not normal, period:** Sudden power loss, rough running that doesn't clear up, repeated stalling, or any warning lights that stay on. These are not break-in quirks; they're reasons to pull the engine out of service and have us look at it.
+
+If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## Rice Lake and Kawarthas Reality Check
 
@@ -132,7 +134,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 ## Sources
 
-- [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/parts-and-service/service-and-support/maintenance)
+- [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy)
 - [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 - [Mercury SmartCraft Connect Mobile](https://www.mercurymarine.com/ca/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile)
 
