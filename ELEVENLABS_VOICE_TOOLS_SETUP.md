@@ -56,9 +56,9 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
       "type": "string",
       "description": "Customer's phone number for SMS reminder"
     },
-    "reminder_about": {
+    "reminder_type": {
       "type": "string",
-      "enum": ["current_motor", "promotion", "custom"],
+      "enum": ["motor", "promotion", "service", "custom"],
       "description": "What the reminder is about"
     },
     "when": {
@@ -70,7 +70,7 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
       "description": "Custom message for the reminder"
     }
   },
-  "required": ["customer_phone", "when"]
+  "required": ["customer_phone", "reminder_type", "when"]
 }
 ```
 
@@ -128,7 +128,7 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
 }
 ```
 
-Condition and architecture are requested conversationally if omitted; missing fields must not produce a numeric valuation. A successful result is an estimate subject to inspection. On unavailable/rate-limited/input-rejected results, explain the returned reason and offer to continue collecting details. Do not reuse an earlier motor's amount. Browser Apply to Quote must use the returned validated card, not an independently calculated value.
+Condition and architecture must be confirmed conversationally before calling estimate_trade_value; unknown is not confirmed. Missing required details must not produce a tool call or numeric valuation. A successful result is an estimate subject to inspection. On unavailable, timeout or rate-limited results, explain only the returned service failure and offer staff help; do not blame a missing model/hours or ask again for already supplied fields. Ask for a missing field only when explicitly identified by the returned error. Do not repeat an identical failed call unless inputs change or the customer requests another attempt. Do not reuse an earlier motor's amount. Browser Apply to Quote must use the returned validated card, not an independently calculated value.
 
 The client hook and MCP server implement the same tool name in different transports. This document is a configuration specification, not proof of the hosted dashboard state. See `docs/voice-trade-in-acceptance.md` for isolated canaries and read-only reconciliation. Do not alter the hosted agent or run customer actions merely to test this guide.
 
@@ -250,7 +250,7 @@ The client hook and MCP server implement the same tool name in different transpo
 ---
 
 ### 9. Get Quote Summary
-**Name:** `get_quote_summary`  
+**Name:** `get_quote_status`
 **Description:** Get the current state of the customer's quote. Use when customer asks about their quote progress.
 
 **Parameters:**
@@ -265,7 +265,7 @@ The client hook and MCP server implement the same tool name in different transpo
 ---
 
 ### 10. Set Boat Details
-**Name:** `set_boat_details`  
+**Name:** `update_boat_info`
 **Description:** Update the customer's boat information in their quote.
 
 **Parameters:**
@@ -284,10 +284,6 @@ The client hook and MCP server implement the same tool name in different transpo
     "make": {
       "type": "string",
       "description": "Boat manufacturer"
-    },
-    "currentHp": {
-      "type": "number",
-      "description": "Current motor horsepower"
     }
   },
   "required": []
@@ -319,7 +315,7 @@ The client hook and MCP server implement the same tool name in different transpo
 
 ### 14. Navigate to Promotions
 **Name:** `navigate_to_promotions`  
-**Description:** Navigate to the promotions page to show current deals and special offers. Use when customer asks about deals, specials, promotions, or says "tell me about the Get 7".
+**Description:** Navigate to the promotions page to show current deals and special offers. Use when customer asks about deals, specials, promotions, or asks to see a current offer.
 
 **Parameters:**
 ```json
@@ -354,7 +350,7 @@ The client hook and MCP server implement the same tool name in different transpo
 
 ### 12. Navigate to Motors (CRITICAL - Screen Control)
 **Name:** `navigate_to_motors`  
-**Description:** Navigate to the motor selection page and apply filters based on customer preferences. Use this to SHOW the customer motors on their screen. ALWAYS call this first when discussing motors, then call get_visible_motors to see what's displayed.
+**Description:** Navigate to the motor selection page and apply filters based on customer preferences. Use this to SHOW the customer motors on their screen. Call this when the customer wants to browse motors, then call get_visible_motors to read what is displayed. For the motor already in view, use its verified details or verify_specs instead of needless navigation.
 
 **Parameters:**
 ```json
@@ -414,7 +410,7 @@ The client hook and MCP server implement the same tool name in different transpo
 
 ### 14. Navigate to Promotions
 **Name:** `navigate_to_promotions`  
-**Description:** Navigate to the promotions page to show current deals and special offers. Use when customer asks about deals, specials, wants to see promotion details, or says "show me the Get 7 promotion".
+**Description:** Navigate to the promotions page to show current deals and special offers. Use when customer asks about deals, specials, wants to see promotion details, or asks to see a current offer.
 
 **Wait for response:** ✅ ENABLED
 
@@ -531,10 +527,10 @@ Add these sections to your agent's system prompt for the new capabilities:
 ## ENHANCED CAPABILITIES:
 
 ### Service Cost Estimates
-When customers ask about service costs, use estimate_service_cost. Always mention estimates are approximate and booking confirms final price.
+When customers ask about service costs, use estimate_service_cost. Describe the returned scope as an estimate; diagnosis and approved work establish the final invoice. Do not quote on tool failure.
 
 ### Trade-In Valuations
-When customers ask about trade-in value, use estimate_trade_value and wait for its response. Ask for missing condition and engine architecture. Preserve exact HP and known zero hours. On failure, explain the returned reason without quoting a fallback amount. Always caveat that final value requires inspection.
+When customers ask about trade-in value, use estimate_trade_value and wait for its response. Confirm condition and engine architecture before calling the tool; unknown is not confirmed. Preserve exact HP and known zero hours. On failure, explain the returned reason without quoting a fallback amount. Always caveat that final value requires inspection.
 
 ### Motor Recommendations
 When customers ask "what motor should I get?", use recommend_motor. Ask about their boat if you don't know.
@@ -547,8 +543,8 @@ When customers want to compare two motors, use compare_motors to give them a det
 - Use set_reminder when customer wants to be reminded about something later
 
 ### Quote Control
-- Use get_quote_summary to check what's in their quote
-- Use set_boat_details to update their boat info
+- Use get_quote_status to check what's in their quote
+- Use update_boat_info to update their boat info
 - Use go_to_quote_step to help them navigate
 
 ### Deals & Promotions
@@ -621,7 +617,7 @@ This is a **Server Tool** (not a client tool). Add it in the ElevenLabs dashboar
     "promo_option": {
       "type": "string",
       "enum": ["cash_rebate", "extended_warranty"],
-      "description": "Promotion type (default: cash_rebate)"
+      "description": "Customer-selected eligible promotion option; confirm against the current offer"
     },
     "trade_in": {
       "type": "object",
@@ -635,7 +631,7 @@ This is a **Server Tool** (not a client tool). Add it in the ElevenLabs dashboar
     },
     "warranty_years": {
       "type": "number",
-      "description": "Warranty duration (default: 7 for Get 7 promo)"
+      "description": "Warranty duration only when established by the current selected offer and quote contract; do not assume seven years"
     },
     "purchase_path": {
       "type": "string",
@@ -723,3 +719,12 @@ RULES:
 - After creating, say something like "Your quote is ready — I've put the link on your screen"
 - The motor_id comes from check_inventory or get_visible_motors results
 ```
+
+
+## Shared prompt and runtime authority
+
+The reviewed system policy is `supabase/functions/_shared/voice-system-prompt.ts` (`VOICE_SYSTEM_PROMPT`). Use that exact text in the hosted agent. The website token function composes the same text with current published business, financing and promotion facts plus app context; `useElevenLabsVoice` passes this as the session prompt override. A hosted-only edit does not update the website override.
+
+Do not copy old prompt examples that hardcode hours, dates, rates, fees, warranty gifts, universal boat-length horsepower or suffix-only specifications. Missing published business data must not be presented as a live hours schedule. Create quotes and send messages only when requested, and describe outcomes only after the corresponding successful receipt. `deliver_quote_link` displays a returned link; it does not itself send an email or text.
+
+The implemented quote navigation helpers are `get_quote_status`, `update_boat_info` (length/type/make) and `set_purchase_path` (purchase_type: loose or installed). The implemented reminder field is `reminder_type`, not `reminder_about`. Reconcile hosted schemas with these client implementations before activation.
